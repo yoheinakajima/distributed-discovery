@@ -12,3 +12,9 @@ Inspected source paths and SHA-256 values:
 | `LICENSE` | `a38ea78f852a563f5172121b14a24f144e428b8a259d9e7179f8775e863ea021` |
 
 The actual upstream verifier was executed by `make reproduce-baseline`. Its first two executions completed their research checks but exposed post-run provenance-wrapper defects; those operational failures are preserved and excluded from claim evidence. Run `20260720T190336Z_DD-000_32dd1c32_217c602fa0` completed the full wrapper and is the M1 evidence run.
+
+## Additive paper extension
+
+`patches/0001-distributed-discovery-additions.patch` is generated from the small source fragments in `papers/upstream-extension/fragments/`. Run `make upstream-patch` to fetch/check the pinned source, regenerate the patch, apply it in a disposable detached worktree, compile it with Tectonic 0.16.9, copy the review PDF and build log, and confirm that the canonical cache stayed clean.
+
+The patch preserves the original title, abstract, theorem numbering, results, and conclusion. It adds a working definition, a reframed framework heading, the institutional matrix, two dictionary rows, suggested keywords, and a question-only research-program subsection. Source comments link these additions to existing ledger claims DD-C-0001, DD-C-0002, DD-C-0004, DD-C-0006, DD-C-0007, DD-C-0011, DD-C-0016, and DD-C-0017.

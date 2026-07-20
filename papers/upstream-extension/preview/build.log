@@ -1,0 +1,1102 @@
+note: Running TeX ...
+note: Running BibTeX on The_Shared_Discovery_Paradox.aux ...
+note: Rerunning TeX because bibtex was run ...
+note: Rerunning TeX because "The_Shared_Discovery_Paradox.aux" changed ...
+note: Rerunning TeX because "The_Shared_Discovery_Paradox.aux" changed ...
+note: Running xdvipdfmx ...
+note: Writing `<temporary>/build/The_Shared_Discovery_Paradox.log` (51.349609375 KiB)
+note: Writing `<temporary>/build/The_Shared_Discovery_Paradox.pdf` (243.068359375 KiB)
+note: Writing `<temporary>/build/The_Shared_Discovery_Paradox.blg` (227 B)
+note: Skipped writing 3 intermediate files (use --keep-intermediates to keep them)
+warning: hyperref.sty:4873: Requested font "pzdr" at 0.00002pt
+warning: hyperref.sty:4873:  -> pzdr
+warning: The_Shared_Discovery_Paradox.tex:57:
+Requested font "[TeXGyreTermesX-Regular.otf]/OT" at 10.94997pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Regular.otf]/OT" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Slanted.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-BoldItalic.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-BoldSlanted.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 17.28pt
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 17.28pt
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:
+Requested font "ntx-Regular-tlf-ot1" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntx-Regular-tlf-ot1" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntx-Regular-tlf-ot1" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi7" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi7
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy7" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy7
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59:
+Requested font "ntxmia" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmia" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmia" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59:
+Requested font "ntxsym" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsym" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsym" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59:
+Requested font "ntxsyc" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsyc" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsyc" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntx-Regular-tlf-ot1" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntx-Regular-tlf-ot1" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntx-Regular-tlf-ot1" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi7" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi7
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi5" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi5
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy7" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy7
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy5" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy5
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmia" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmia" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmia" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsym" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsym" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsym" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsyc" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsyc" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsyc" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:61: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:61: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntx-Regular-tlf-ot1" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxmi" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxmi
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxsy" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxsy
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxexx" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxmia" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxsym" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxsyc" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxexa" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:67: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:70: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 14.4pt
+warning: The_Shared_Discovery_Paradox.tex:70: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 14.4pt
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntx-Regular-tlf-ot1" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntx-Regular-tlf-ot1" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntx-Regular-tlf-ot1" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmi" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmi
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmi7" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmi7
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmi5" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmi5
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsy" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsy
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsy7" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsy7
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsy5" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsy5
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexx" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexx" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexx" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmia" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmia" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmia" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsym" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsym" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsym" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsyc" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsyc" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsyc" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexa" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexa" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexa" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:79: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:109: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:148: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:148: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:155: Requested font "ntx-Bold-tlf-ot1" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:155:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:155: Requested font "ntx-Bold-tlf-ot1" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:155:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:155: Requested font "ntx-Bold-tlf-ot1" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:155:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;+sups;mapping=tex-text;" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "[TeXGyreTermesX-Regular.otf]/OT" at 8.99997pt
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;" at 9.00003pt
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;+sups;mapping=tex-text;" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "ntx-Bold-tlf-ot1" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:167:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "ntx-Bold-tlf-ot1" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:167:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "ntx-Bold-tlf-ot1" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:167:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:262:
+Requested font "ntx-Bold-tlf-ot1" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:262:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:304: Overfull \hbox (2.97021pt too wide) detected at line 304
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Regular-tlf-ot1" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmi5" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmi5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsy5" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsy5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexx" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Bold-tlf-ot1" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmia" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsym" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsyc" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexa" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Regular-tlf-ot1" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Regular-tlf-ot1" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmi5" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmi5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmi5" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmi5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsy5" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsy5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsy5" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsy5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexx" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexx" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Bold-tlf-ot1" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Bold-tlf-ot1" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmia" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmia" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsym" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsym" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsyc" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsyc" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexa" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexa" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:354: Overfull \hbox (14.0414pt too wide) detected at line 354
+warning: The_Shared_Discovery_Paradox.tex:568: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:786: Overfull \hbox (30.73819pt too wide) in paragraph at lines 785--786
+warning: The_Shared_Discovery_Paradox.tex:1003: Requested font "[lmmono10-regular]:" at 10.95pt
+warning: hyperref.sty:4873: Requested font "pzdr" at 0.00002pt
+warning: hyperref.sty:4873:  -> pzdr
+warning: The_Shared_Discovery_Paradox.tex:57:
+Requested font "[TeXGyreTermesX-Regular.otf]/OT" at 10.94997pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Regular.otf]/OT" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Slanted.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-BoldItalic.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-BoldSlanted.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 17.28pt
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 17.28pt
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:
+Requested font "ntx-Regular-tlf-ot1" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntx-Regular-tlf-ot1" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntx-Regular-tlf-ot1" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi7" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi7
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy7" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy7
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59:
+Requested font "ntxmia" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmia" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmia" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59:
+Requested font "ntxsym" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsym" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsym" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59:
+Requested font "ntxsyc" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsyc" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsyc" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntx-Regular-tlf-ot1" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntx-Regular-tlf-ot1" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntx-Regular-tlf-ot1" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi7" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi7
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi5" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi5
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy7" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy7
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy5" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy5
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmia" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmia" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmia" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsym" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsym" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsym" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsyc" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsyc" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsyc" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:61: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:61: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntx-Regular-tlf-ot1" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxmi" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxmi
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxsy" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxsy
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxexx" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxmia" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxsym" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxsyc" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxexa" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:67: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:70: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 14.4pt
+warning: The_Shared_Discovery_Paradox.tex:70: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 14.4pt
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntx-Regular-tlf-ot1" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntx-Regular-tlf-ot1" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntx-Regular-tlf-ot1" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmi" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmi
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmi7" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmi7
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmi5" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmi5
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsy" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsy
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsy7" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsy7
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsy5" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsy5
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexx" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexx" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexx" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmia" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmia" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmia" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsym" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsym" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsym" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsyc" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsyc" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsyc" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexa" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexa" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexa" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:79: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:109: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:148: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:148: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:155: Requested font "ntx-Bold-tlf-ot1" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:155:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:155: Requested font "ntx-Bold-tlf-ot1" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:155:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:155: Requested font "ntx-Bold-tlf-ot1" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:155:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;+sups;mapping=tex-text;" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "[TeXGyreTermesX-Regular.otf]/OT" at 8.99997pt
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;" at 9.00003pt
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;+sups;mapping=tex-text;" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "ntx-Bold-tlf-ot1" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:167:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "ntx-Bold-tlf-ot1" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:167:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "ntx-Bold-tlf-ot1" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:167:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:262:
+Requested font "ntx-Bold-tlf-ot1" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:262:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:304: Overfull \hbox (2.97021pt too wide) detected at line 304
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Regular-tlf-ot1" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmi5" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmi5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsy5" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsy5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexx" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Bold-tlf-ot1" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmia" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsym" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsyc" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexa" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Regular-tlf-ot1" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Regular-tlf-ot1" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmi5" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmi5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmi5" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmi5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsy5" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsy5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsy5" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsy5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexx" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexx" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Bold-tlf-ot1" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Bold-tlf-ot1" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmia" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmia" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsym" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsym" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsyc" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsyc" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexa" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexa" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:354: Overfull \hbox (14.0414pt too wide) detected at line 354
+warning: The_Shared_Discovery_Paradox.tex:786: Overfull \hbox (30.73819pt too wide) in paragraph at lines 785--786
+warning: The_Shared_Discovery_Paradox.tex:1003:
+Requested font "[lmmono10-regular]:" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:1017: Overfull \hbox (24.9413pt too wide) in paragraph at lines 1016--1017
+warning: hyperref.sty:4873: Requested font "pzdr" at 0.00002pt
+warning: hyperref.sty:4873:  -> pzdr
+warning: The_Shared_Discovery_Paradox.tex:57:
+Requested font "[TeXGyreTermesX-Regular.otf]/OT" at 10.94997pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Regular.otf]/OT" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Slanted.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-BoldItalic.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-BoldSlanted.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 17.28pt
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 17.28pt
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:
+Requested font "ntx-Regular-tlf-ot1" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntx-Regular-tlf-ot1" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntx-Regular-tlf-ot1" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi7" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi7
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy7" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy7
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59:
+Requested font "ntxmia" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmia" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmia" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59:
+Requested font "ntxsym" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsym" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsym" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59:
+Requested font "ntxsyc" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsyc" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsyc" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntx-Regular-tlf-ot1" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntx-Regular-tlf-ot1" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntx-Regular-tlf-ot1" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi7" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi7
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi5" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi5
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy7" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy7
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy5" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy5
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmia" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmia" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmia" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsym" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsym" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsym" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsyc" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsyc" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsyc" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:61: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:61: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntx-Regular-tlf-ot1" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxmi" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxmi
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxsy" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxsy
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxexx" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxmia" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxsym" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxsyc" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxexa" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:67: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:70: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 14.4pt
+warning: The_Shared_Discovery_Paradox.tex:70: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 14.4pt
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntx-Regular-tlf-ot1" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntx-Regular-tlf-ot1" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntx-Regular-tlf-ot1" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmi" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmi
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmi7" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmi7
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmi5" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmi5
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsy" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsy
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsy7" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsy7
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsy5" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsy5
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexx" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexx" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexx" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmia" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmia" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmia" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsym" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsym" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsym" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsyc" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsyc" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsyc" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexa" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexa" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexa" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:79: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:109: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:148: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:148: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:155: Requested font "ntx-Bold-tlf-ot1" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:155:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:155: Requested font "ntx-Bold-tlf-ot1" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:155:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:155: Requested font "ntx-Bold-tlf-ot1" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:155:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;+sups;mapping=tex-text;" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "[TeXGyreTermesX-Regular.otf]/OT" at 8.99997pt
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;" at 9.00003pt
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;+sups;mapping=tex-text;" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "ntx-Bold-tlf-ot1" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:167:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "ntx-Bold-tlf-ot1" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:167:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "ntx-Bold-tlf-ot1" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:167:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:262:
+Requested font "ntx-Bold-tlf-ot1" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:262:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:304: Overfull \hbox (2.97021pt too wide) detected at line 304
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Regular-tlf-ot1" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmi5" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmi5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsy5" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsy5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexx" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Bold-tlf-ot1" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmia" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsym" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsyc" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexa" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Regular-tlf-ot1" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Regular-tlf-ot1" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmi5" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmi5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmi5" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmi5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsy5" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsy5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsy5" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsy5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexx" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexx" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Bold-tlf-ot1" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Bold-tlf-ot1" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmia" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmia" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsym" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsym" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsyc" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsyc" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexa" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexa" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:354: Overfull \hbox (14.0414pt too wide) detected at line 354
+warning: The_Shared_Discovery_Paradox.tex:783: Overfull \hbox (4.62097pt too wide) in paragraph at lines 782--783
+warning: The_Shared_Discovery_Paradox.tex:1003:
+Requested font "[lmmono10-regular]:" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:1017: Overfull \hbox (24.9413pt too wide) in paragraph at lines 1016--1017
+warning: hyperref.sty:4873: Requested font "pzdr" at 0.00002pt
+warning: hyperref.sty:4873:  -> pzdr
+warning: The_Shared_Discovery_Paradox.tex:57:
+Requested font "[TeXGyreTermesX-Regular.otf]/OT" at 10.94997pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Regular.otf]/OT" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Slanted.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-BoldItalic.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-BoldSlanted.otf]/OT:script=latn;language=dflt;" at 10.95003pt
+warning: The_Shared_Discovery_Paradox.tex:57: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 17.28pt
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 17.28pt
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:
+Requested font "ntx-Regular-tlf-ot1" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntx-Regular-tlf-ot1" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntx-Regular-tlf-ot1" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi7" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi7
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy7" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy7
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59:
+Requested font "ntxmia" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmia" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmia" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59:
+Requested font "ntxsym" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsym" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsym" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59:
+Requested font "ntxsyc" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsyc" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsyc" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 6.6pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 8.8pt
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntx-Regular-tlf-ot1" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntx-Regular-tlf-ot1" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntx-Regular-tlf-ot1" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi7" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi7
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmi5" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmi5
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy7" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy7
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsy5" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsy5
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexx" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmia" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmia" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxmia" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsym" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsym" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsym" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsyc" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsyc" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxsyc" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "ntxexa" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:59:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:59: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:61: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:61: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntx-Regular-tlf-ot1" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxmi" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxmi
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxsy" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxsy
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxexx" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxmia" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxsym" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxsyc" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:62: Requested font "ntxexa" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:62:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:67: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:70: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 14.4pt
+warning: The_Shared_Discovery_Paradox.tex:70: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 14.4pt
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntx-Regular-tlf-ot1" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntx-Regular-tlf-ot1" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntx-Regular-tlf-ot1" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmi" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmi
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmi7" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmi7
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmi5" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmi5
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsy" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsy
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsy7" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsy7
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsy5" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsy5
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexx" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexx" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexx" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmia" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmia" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxmia" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsym" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsym" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsym" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsyc" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsyc" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxsyc" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexa" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexa" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:74: Requested font "ntxexa" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:74:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:79: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:109: Requested font "[TeXGyreTermesX-Bold.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 12.0pt
+warning: The_Shared_Discovery_Paradox.tex:148: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:148: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:155: Requested font "ntx-Bold-tlf-ot1" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:155:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:155: Requested font "ntx-Bold-tlf-ot1" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:155:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:155: Requested font "ntx-Bold-tlf-ot1" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:155:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;+sups;mapping=tex-text;" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "[TeXGyreTermesX-Regular.otf]/OT" at 8.99997pt
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;" at 9.00003pt
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "[TeXGyreTermesX-Regular.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;+sups;mapping=tex-text;" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "ntx-Bold-tlf-ot1" at 9.0pt
+warning: The_Shared_Discovery_Paradox.tex:167:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "ntx-Bold-tlf-ot1" at 7.3pt
+warning: The_Shared_Discovery_Paradox.tex:167:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:167: Requested font "ntx-Bold-tlf-ot1" at 5.5pt
+warning: The_Shared_Discovery_Paradox.tex:167:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:262:
+Requested font "ntx-Bold-tlf-ot1" at 10.0pt
+warning: The_Shared_Discovery_Paradox.tex:262:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:304: Overfull \hbox (2.97021pt too wide) detected at line 304
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 8.0pt
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Regular-tlf-ot1" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmi5" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmi5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsy5" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsy5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexx" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Bold-tlf-ot1" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmia" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsym" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsyc" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexa" at 6.2pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;+tnum;+lnum;mapping=tex-text;" at 6.1pt
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Regular-tlf-ot1" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Regular-tlf-ot1" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Regular-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmi5" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmi5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmi5" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmi5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsy5" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsy5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsy5" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsy5
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexx" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexx" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexx
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Bold-tlf-ot1" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntx-Bold-tlf-ot1" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntx-Bold-tlf-ot1
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmia" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxmia" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxmia
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsym" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsym" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsym
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsyc" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxsyc" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxsyc
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexa" at 4.45297pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:335: Requested font "ntxexa" at 3.35501pt
+warning: The_Shared_Discovery_Paradox.tex:335:  -> ntxexa
+warning: The_Shared_Discovery_Paradox.tex:354: Overfull \hbox (14.0414pt too wide) detected at line 354
+warning: The_Shared_Discovery_Paradox.tex:783: Overfull \hbox (4.62097pt too wide) in paragraph at lines 782--783
+warning: The_Shared_Discovery_Paradox.tex:1003:
+Requested font "[lmmono10-regular]:" at 10.95pt
+warning: The_Shared_Discovery_Paradox.tex:1017: Overfull \hbox (24.9413pt too wide) in paragraph at lines 1016--1017
+warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.

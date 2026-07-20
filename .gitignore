@@ -18,6 +18,7 @@ site/dist/*
 experiments/manifests/tmp/
 *.pdf
 !results/baseline/**/outputs/figures/*.pdf
+!papers/upstream-extension/preview/*.pdf
 *.aux
 *.bbl
 *.blg
@@ -26,5 +27,6 @@ experiments/manifests/tmp/
 *.log
 !results/**/stdout.log
 !results/**/stderr.log
+!papers/upstream-extension/preview/build.log
 *.out
 *.toc

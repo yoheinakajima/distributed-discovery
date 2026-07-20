@@ -1,0 +1,78 @@
+--- a/paper/The_Shared_Discovery_Paradox.tex
++++ b/paper/The_Shared_Discovery_Paradox.tex
+@@ -64,7 +64,7 @@
+ We then replace the planner with self-interested searchers who split a prize. The equal-split game is a potential game. Its anonymous symmetric equilibrium obeys a water-filling rule, and discovery equals $N$ times the common equilibrium payoff. In the canonical instance it achieves $0.5991$: strictly above consensus, but below both private search and the planner. The exact mixed price of anarchy is $2-1/N$, while uniform symmetric mixing yields the familiar $e/(e-1)$ limit. A sole-rescue reward, which pays only an agent who covers the target alone, makes every pure Nash equilibrium first-best. Finally, a latent common-cue model shows how correlated reports collapse effective discovery channels. The centralized planner gain rises strictly with copying, and in the canonical environment the symmetric market overtakes decentralized report-following at copying probability $c=0.788462$. In a proportional large-market limit the five-protocol ordering survives exactly: consensus discovery vanishes while blind, market, private, and portfolio search converge to $0.500$, $0.547$, $0.847$, and $0.874$. The contribution is a compact benchmark that separates information, allocation, incentives, and dependence into exact, reusable quantities.
+ \end{abstract}
+ 
+-\noindent\textbf{Keywords:} collective discovery, organizational search, consensus, congestion games, price of anarchy, information aggregation, correlated signals.\\
++\noindent\textbf{Keywords:} distributed discovery, action allocation, collective discovery, organizational search, consensus, congestion games, price of anarchy, information aggregation, correlated signals.\\
+ \textbf{JEL codes:} C72, D23, D83, O31.
+ 
+ \section{Introduction}
+@@ -74,6 +74,9 @@
+ This paper isolates that mechanism in a deliberately small environment. Sixteen boxes contain one jackpot. Eight searchers receive noisy clues, each naming the correct box with probability $0.20$. If searchers independently follow their own clues, group discovery is $0.8322$. If they pool the clues, identify the posterior mode, and all follow it, the selected box is more accurate than any individual clue, but discovery falls to $0.3835$. If a coordinator instead assigns the same eight available actions to the eight highest-posterior boxes, discovery rises to $0.8594$. Even a coordinator who ignores the clues entirely and opens eight distinct boxes succeeds half the time: no information at all beats informed consensus. The same information supports both failure and improvement; the action protocol determines which one is realized.
+ 
+ Methodologically, the paper follows a familiar benchmark tradition. \citet{Akerlof1970} compresses quality uncertainty into a lemons market; \citet{Schelling1971} compresses local preferences into a checkerboard; and \citet{Arthur1994} compresses strategic crowding into the El Farol problem. Their power comes from making one mechanism visible in a toy environment that later work can extend, calibrate, or reject. Our narrower object is the separation between shared beliefs and diversified search. The comparison is methodological, not a claim of comparable scope. The aim is to make a recurring organizational failure measurable.
++
++% DD-C-0001; DD-C-0017
++We use \emph{distributed discovery} as a working label for the design and analysis of systems that convert dispersed evidence into a finite portfolio of search actions. A discovery architecture has two distinct components. Its information architecture determines what agents can infer, while its action protocol determines how available capacity is distributed across candidates. The shared discovery paradox arises when the information architecture improves the ranking but the action protocol compresses the portfolio. The label organizes the extensions below; it is not a claim that the phrase or the surrounding literatures are new.
+ 
+ The paper develops four layers of the benchmark.
+ 
+@@ -201,7 +204,7 @@
+ \end{equation}
+ Consensus generates exactly one distinct action; the planner generates eight. These counts make the mechanism visible: pooling improves the ranking, while the protocol determines how much of the nominal action budget survives as coverage.
+ 
+-\section{Information value and protocol loss}
++\section{Distributed Discovery: Information Frontiers and Protocol Loss}
+ \label{sec:framework}
+ 
+ Let the target be $\theta\in\Omega$ with prior $\mu$. A decision architecture observes an information sigma-field $\F$. A protocol $\Pi$ maps its information into an action profile $(A_1,\ldots,A_L)$, where repeated actions are allowed. Let $S_\Pi=\{A_1,\ldots,A_L\}$ be the set of distinct searched states. Discovery is
+@@ -249,6 +252,23 @@
+ \Loss_8(\Pi_{\cons};\F^S)=0.859421-0.383469=0.475952.
+ \]
+ Conditional on the same pooled reports and the same nominal budget, the full gap between consensus and the planner is protocol loss. The comparison with private clue-following changes both the information architecture and the assignment authority, so it is a combined organizational benchmark rather than a unique causal decomposition.
++
++% DD-C-0004; DD-C-0006; DD-C-0007; DD-0016
++\subsection{Information and assignment as separate margins}
++
++The benchmark protocols occupy three cells of a simple institutional matrix:
++\begin{center}
++\small
++\begin{tabular}{lll}
++\toprule
++& Autonomous or unassigned & Coordinated or assigned\\
++\midrule
++Local/private evidence & Private clue-following & Private-team frontier\\
++Pooled/shared evidence & Consensus or market & Planner portfolio\\
++\bottomrule
++\end{tabular}
++\end{center}
++The missing private-team cell allows agents to coordinate role-dependent policies ex ante while retaining private, noncommunicated clues at action time. It isolates assignment capacity without also granting pooled information. Comparisons within a row therefore vary assignment authority more cleanly; comparisons within a column vary information access more cleanly. The canonical planner--private gap crosses both margins and should remain described as a combined organizational benchmark.
+ 
+ \subsection{Independent symmetric signals}
+ \label{sec:signals}
+@@ -732,6 +752,9 @@
+ \toprule
+ Object & Interpretation\\
+ \midrule
++% DD-C-0002; DD-C-0011
++Information architecture & What evidence, messages, and histories are available when actions are chosen.\\
++Action protocol & How available capacity is distributed across candidates given that information.\\
+ One-action value $V_1(\F)$ & How accurately the information architecture identifies its best single target.\\
+ Portfolio frontier $V_L(\F)$ & The discovery attainable from $L$ actions under the same posterior.\\
+ Protocol loss $\Loss_L$ & Attainable posterior mass destroyed by the action rule.\\
+@@ -786,6 +809,13 @@
+ Agents connected to the same model, memory, retrieval context, or evaluation rubric may produce individually stronger but highly correlated recommendations. Multi-agent systems should therefore distinguish ensemble size from effective channel count. Posterior sampling, explicit role differentiation, diverse retrieval sources, and marginal-coverage rewards are natural analogues of the benchmark's portfolio mechanisms. The smoothness form of \cref{thm:poa} is directly relevant here: ensembles of adaptive agents running any regret-minimizing update inherit the $2-1/N$ coverage guarantee under equal-split credit, without ever computing an equilibrium. The blind-sentinel negative result is equally actionable: adding uninformed explorer agents to an informed ensemble is dominated in the canonical environment, so useful diversity must be signal-contingent---sampled from the posterior or assigned to distinct evidence---rather than signal-free.
+ 
+ The empirical program is straightforward in principle. Estimate posterior or score distributions, measure repeated-action patterns and source overlap, compare observed coverage with the top-$L$ frontier, and report protocol loss and the recovery budget. The copying parameter is a model, not an observable primitive, but source provenance and correlated failure data can discipline it. So can duplication itself: the expected number of distinct proposals is strictly decreasing in $c$ on the computed grid (from $6.157$ at $c=0$ to $1.362$ at $c=0.95$ in the canonical environment), so matching an observed duplication level to the benchmark's exact curve pins down a latent copying rate, which in turn implies a recovery budget and a planner gain. This is the sense in which the benchmark's quantities serve as reference points for richer models: comparison and inversion, not structural estimation.
++
++% DD-C-0001; DD-C-0017
++\subsection*{A research program in distributed discovery}
++
++The sixteen-box model is the atomic case. A broader research program asks which distinctions survive when evidence is private, sources are correlated, actions overlap, search is sequential, and rewards are strategic. Seven directions are immediate. First, private-information teams can coordinate signal-contingent roles before observing their clues, filling the missing cell in the institutional matrix. Second, information design can ask whether a more informative public disclosure concentrates equilibrium search under a fixed strategic protocol. Third, latent source networks can replace the single common cue and make provenance overlap, rather than nominal report count, the unit of evidence diversity. Fourth, sequential discovery can allocate parallel and adaptive capacity after observed failures. Fifth, overlapping actions and multiple targets replace modular box coverage with set-valued or submodular discovery. Sixth, discovery mechanisms can jointly design reporting, action differentiation, and marginal-contribution credit. Seventh, empirical audits can estimate action concentration, source concentration, duplicate search, recovery budgets, and benchmark-relative protocol loss.
++
++These are questions, not results. The framework supplies common accounting---information frontiers, protocol loss, budgets, redundancy, and provenance---but each extension needs its own feasibility class, objective, identification assumptions, and evidence status. In particular, the top-$L$ rule is special to atomic modular coverage, and the upstream effective-channel count is special to its common-cue process.
+ 
+ \section{Limitations and extensions}
+ \label{sec:limitations}

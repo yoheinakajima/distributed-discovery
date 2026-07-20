@@ -1,4 +1,4 @@
-.PHONY: bootstrap lint typecheck test fetch-upstream reproduce-baseline validate-claims foundations dd001 papers site verify all clean
+.PHONY: bootstrap lint typecheck test fetch-upstream reproduce-baseline upstream-patch validate-claims foundations dd001 papers site verify all clean
 
 UV := uv
 export PYTHONPATH := $(CURDIR)/src
@@ -25,6 +25,9 @@ fetch-upstream:
 
 reproduce-baseline:
 	$(PY) -m distributed_discovery.canonical.reproduce
+
+upstream-patch: fetch-upstream
+	$(PY) scripts/update_upstream_patch.py
 
 validate-claims:
 	$(PY) -m distributed_discovery.validation.claims

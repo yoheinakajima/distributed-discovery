@@ -1,0 +1,11 @@
+{
+  "compile_exit_status": 0,
+  "compiler": "Tectonic 0.16.9",
+  "original_title_preserved": true,
+  "patch_applies": true,
+  "pdf_sha256": "0a43360e59fdbbc4002e2190479871896688b3b4ef640d219313cd9d2ed5acb9",
+  "required_content_present": true,
+  "schema_version": 1,
+  "upstream_clean_before": true,
+  "upstream_commit": "5025cc8e8f2f8ca015dff2066f08f81ad5715a51"
+}

@@ -1,0 +1,1 @@
+distributed discovery, action allocation, collective discovery, organizational search, consensus, congestion games, price of anarchy, information aggregation, correlated signals

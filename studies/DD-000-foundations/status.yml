@@ -1,6 +1,6 @@
 study_id: DD-000
 status: active
 evidence_status: infrastructure-only
-active_milestone: M3
-next_action: prepare additive upstream paper fragments and validated patch
-updated_utc: 2026-07-20T19:18:07Z
+active_milestone: M4
+next_action: build and validate the private companion site extension
+updated_utc: 2026-07-20T19:32:00Z
