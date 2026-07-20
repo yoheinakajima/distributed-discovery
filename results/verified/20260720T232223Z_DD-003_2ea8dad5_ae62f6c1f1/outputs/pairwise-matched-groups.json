@@ -1,0 +1,182 @@
+[
+  {
+    "canonical_labels": [
+      "K2N4:00011110",
+      "K3N4:000100011110"
+    ],
+    "group_id": "M00",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "1/2",
+      "1",
+      "1",
+      "1"
+    ],
+    "private_discovery_values": [
+      "8/9"
+    ]
+  },
+  {
+    "canonical_labels": [
+      "K2N4:01111111",
+      "K2N4:11111111"
+    ],
+    "group_id": "M01",
+    "pairwise_signature": [
+      "3/4",
+      "3/4",
+      "3/4",
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "private_discovery_values": [
+      "31/36"
+    ]
+  },
+  {
+    "canonical_labels": [
+      "K3N4:000100111100",
+      "K3N4:001100111100"
+    ],
+    "group_id": "M02",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "3/4",
+      "1",
+      "1/2",
+      "1/2"
+    ],
+    "private_discovery_values": [
+      "25/27"
+    ]
+  },
+  {
+    "canonical_labels": [
+      "K3N4:000100111101",
+      "K3N4:001100111101"
+    ],
+    "group_id": "M03",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "79/108",
+      "1",
+      "79/108",
+      "79/108"
+    ],
+    "private_discovery_values": [
+      "73/81"
+    ]
+  },
+  {
+    "canonical_labels": [
+      "K3N4:000101101110",
+      "K3N4:000111101110"
+    ],
+    "group_id": "M04",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "1/2",
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "private_discovery_values": [
+      "17/18"
+    ]
+  },
+  {
+    "canonical_labels": [
+      "K3N4:000101111111",
+      "K3N4:000111111111"
+    ],
+    "group_id": "M05",
+    "pairwise_signature": [
+      "79/108",
+      "79/108",
+      "79/108",
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "private_discovery_values": [
+      "287/324"
+    ]
+  },
+  {
+    "canonical_labels": [
+      "K3N4:001101011011",
+      "K3N4:001111011101"
+    ],
+    "group_id": "M06",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "79/108",
+      "3/4",
+      "79/108",
+      "79/108"
+    ],
+    "private_discovery_values": [
+      "151/162"
+    ]
+  },
+  {
+    "canonical_labels": [
+      "K3N4:001101111011",
+      "K3N4:011101111011"
+    ],
+    "group_id": "M07",
+    "pairwise_signature": [
+      "1/2",
+      "79/108",
+      "79/108",
+      "79/108",
+      "79/108",
+      "25/27"
+    ],
+    "private_discovery_values": [
+      "221/243"
+    ]
+  },
+  {
+    "canonical_labels": [
+      "K3N4:001101111111",
+      "K3N4:001111111111"
+    ],
+    "group_id": "M08",
+    "pairwise_signature": [
+      "79/108",
+      "79/108",
+      "3/4",
+      "25/27",
+      "79/108",
+      "79/108"
+    ],
+    "private_discovery_values": [
+      "143/162"
+    ]
+  },
+  {
+    "canonical_labels": [
+      "K3N4:011101111111",
+      "K3N4:011111111111"
+    ],
+    "group_id": "M09",
+    "pairwise_signature": [
+      "79/108",
+      "79/108",
+      "79/108",
+      "25/27",
+      "25/27",
+      "25/27"
+    ],
+    "private_discovery_values": [
+      "632/729"
+    ]
+  }
+]

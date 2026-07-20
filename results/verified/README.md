@@ -19,3 +19,9 @@ DD-002 passing runs:
 - `20260720T225848Z_DD-002_94607423_e29b1460ae`: primary run with independent selection-witness verification and corruption test.
 
 The primary DD-002 run exhausts the declared deterministic partition lattice and verifies a selection-dependent reversal. Randomized disclosure is not implemented.
+
+DD-003 passing run:
+
+- `20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1`: primary complete 51-graph census, independently reproduced orbit counts, exact pairwise-moment bounded null, mean-agreement counterexample, and generated SVG.
+
+The DD-003 null is restricted to the configured three-target, four-searcher, one-to-three-source class at accuracy `2/3`. The weaker mean-agreement scalar and source HHI both have exact counterexamples within the same census.

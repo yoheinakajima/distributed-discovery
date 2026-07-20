@@ -1,0 +1,16 @@
+study_id: DD-003
+targets: 3
+searchers: 4
+source_counts: [1, 2, 3]
+source_accuracy: 2/3
+require_nonisolated_sources: true
+require_nonisolated_searchers: true
+private_tie_breaking: independent-uniform
+report_summary: plurality-winner-set
+consensus_pooling: edge-multiset-without-provenance
+planner_action_budget: 4
+diagnostic_planner_action_budget: 2
+graph_equivalence: source-and-searcher-relabeling
+pairwise_signature: complete-one-hot-first-and-second-moments-up-to-searcher-relabeling
+random_seed: null
+time_budget_seconds: 120

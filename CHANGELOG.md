@@ -7,6 +7,7 @@
 - Complete DD-001A: prove the lossless count/fixed-point policy-signature reduction and exact feasibility criterion, independently reproduce all 21 tiny optima and raw tie counts, and certify the canonical signature state-space barrier without claiming a global objective bound.
 - Complete DD-001B: derive exact two-searcher territorial/hybrid/direct thresholds, certify the continuous unrestricted informative envelope for M=3,4,5, and record anti-informative counterexamples to the all-p extension.
 - Complete the bounded DD-002 deterministic-disclosure fixture: enumerate all partitions and equilibrium correspondences, verify a selection-dependent harmful-information witness, and report the full refinement census.
+- Complete the bounded DD-003 source-network fixture: enumerate 51 nonisomorphic graphs, independently reproduce a full pairwise-moment bounded null, and record exact scalar-diagnostic counterexamples.
 
 - Bootstrap the Distributed Discovery research program (DD-000).
 - Pin and reproduce canonical upstream commit `5025cc8e`; add immutable run provenance, independent finite-model checks, baseline claims, and regressions (DD-000).

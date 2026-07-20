@@ -1,0 +1,9 @@
+{
+  "outputs/agreement-discovery.svg": "60d5d2557d57f1717b8d4b2d287bbdf2e0a6c41bb759d35ffb41db2c36283e67",
+  "outputs/graph-registry.json": "afe3b0d98e618831f3eef71d5ef091b4937080c264f756f6296b36bc4aab9913",
+  "outputs/graph-summary.csv": "af523293df7e7a8b3bd8df2d847abea5aa7d50751cb8df218ebdf070a8ccda0f",
+  "outputs/independent-verification.json": "2b70de49c1e51a2232d16bc4c1689af273844bce599117a48562aa118e29c3f2",
+  "outputs/mean-agreement-counterexample.json": "92132b3bb6411abf2b1c9c27aad5dbfd6074a5ff01e81d1b97a5c97f62a648ea",
+  "outputs/pairwise-matched-groups.json": "3ce758258b28adef9c561a14333053a3b5e8f68d7665292a6222e313c52ec19c",
+  "outputs/pairwise-null-certificate.json": "1c8675d8697a74def4d0798927fb2d477bb95bdd79d220597456dd9378bdca12"
+}

@@ -1,0 +1,16 @@
+{
+  "all_graphs_model_valid": true,
+  "all_registry_graphs_pairwise_nonisomorphic": true,
+  "counts_match": true,
+  "graphs_in_matched_pairwise_groups": 20,
+  "independent_counts": {
+    "1": 1,
+    "2": 8,
+    "3": 42
+  },
+  "matched_pairwise_group_count": 10,
+  "mean_pair_agreement_counterexample_recomputed": true,
+  "pairwise_matrix_bounded_null_recomputed": true,
+  "passed": true,
+  "stored_metrics_and_signatures_recomputed": true
+}

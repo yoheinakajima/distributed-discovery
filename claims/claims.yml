@@ -651,3 +651,66 @@ claims:
     first_added: "2026-07-20"
     last_checked: "2026-07-20"
     notes: Worst- and best-equilibrium results are reported separately; no favorable selection is hidden.
+  - id: DD-C-0032
+    study_id: DD-003
+    short_name: bounded-source-graph-census
+    statement: The bounded DD-003 class has exactly 51 nonisomorphic model-valid bipartite source networks with four searchers and one to three nonisolated sources, split as 1, 8, and 42 graphs by source count.
+    scope: Exactly four searchers, K in {1,2,3}, no isolated declared node, and equivalence under independent source and searcher relabeling.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exhaustive-labeled-enumeration-and-independent-orbit-traversal
+    source_reference: results/verified/20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1/outputs/graph-registry.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/source_networks/model.py, src/distributed_discovery/source_networks/verification.py]
+    run_ids: [20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1]
+    test_paths: [tests/unit/test_source_networks.py]
+    exactness_basis: exhaustive 2^(4K) labeled adjacency enumeration, canonical minimization over K!4! relabelings, and independent orbit traversal plus pairwise nonisomorphism verification
+    rounding_rule: exact integers
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: The valid labeled counts are 1, 79, and 2161 before quotienting; no graph-isomorphism dependency is used.
+  - id: DD-C-0033
+    study_id: DD-003
+    short_name: bounded-pairwise-moment-null
+    statement: In the complete bounded DD-003 class at source accuracy 2/3, ten exact first-and-pairwise scalar-report moment signatures each match two nonisomorphic graphs, and none of the ten matched pairs differs in private discovery.
+    scope: The configured symmetric three-target source law, plurality-winner-set summaries, uniform tie sampling, four searchers, K in {1,2,3}, and the complete pairwise one-hot moment matrix up to searcher relabeling; this is a bounded null, not a general sufficiency theorem.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exhaustive-exact-moment-grouping-with-independent-null-verifier
+    source_reference: results/verified/20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1/outputs/pairwise-null-certificate.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/source_networks/model.py, src/distributed_discovery/source_networks/study.py, src/distributed_discovery/source_networks/verification.py]
+    run_ids: [20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1]
+    test_paths: [tests/unit/test_source_networks.py]
+    exactness_basis: complete 51-orbit registry, exact rational source-state enumeration, canonical six-entry pairwise moment matrices, and separate recomputation of every signature and private-discovery value
+    rounding_rule: exact fractions
+    dependencies: [DD-C-0032]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Twenty graphs lie in the ten matched groups. A failed counterexample search is retained as a bounded null and is not extrapolated beyond the exact class.
+  - id: DD-C-0034
+    study_id: DD-003
+    short_name: mean-pair-agreement-insufficient
+    statement: Graphs K2N4:00011110 and K2N4:01111111 both have mean pairwise scalar-report agreement 3/4, but their exact private discovery probabilities are 8/9 and 31/36, a difference of 1/36.
+    scope: The configured DD-003 signal and protocol model; this refutes sufficiency of the average pair-agreement scalar, not the complete pairwise matrix and not every possible effective-channel diagnostic.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exact-counterexample-with-independent-state-enumeration
+    source_reference: results/verified/20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1/outputs/mean-agreement-counterexample.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/source_networks/model.py, src/distributed_discovery/source_networks/verification.py]
+    run_ids: [20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1]
+    test_paths: [tests/unit/test_source_networks.py]
+    exactness_basis: explicit nonisomorphic canonical adjacencies, exact enumeration of all target/source-signal states and tie samples, and a materially separate verifier with corruption test
+    rounding_rule: exact fractions
+    dependencies: [DD-C-0032]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: The complete census contains 22 graph pairs with matched mean agreement but different discovery and 59 pairs with matched source HHI but different discovery.
