@@ -1,0 +1,28 @@
+schema_version: 1
+study_id: DD-001
+milestone: signature-certificate
+method: exact-signature-enumeration-plus-structural-certificate
+time_budget_seconds: 120
+max_signature_profiles_per_case: 20000
+feasibility_audit_candidates: [2, 3, 4, 5]
+comparison_run_id: 20260720T200447Z_DD-001_6eb12861_ba766d1eba
+tiny_cases:
+  - {candidates: 2, searchers: 2, accuracies: ["1/4", "1/2", "3/4"]}
+  - {candidates: 2, searchers: 4, accuracies: ["1/2", "3/4", "9/10"]}
+  - {candidates: 3, searchers: 2, accuracies: ["1/3", "2/5", "7/15", "1/2", "2/3", "4/5"]}
+  - {candidates: 3, searchers: 3, accuracies: ["1/3", "1/2", "2/3", "4/5"]}
+  - {candidates: 4, searchers: 2, accuracies: ["1/4", "3/10", "13/40", "1/2", "3/4"]}
+canonical:
+  candidates: 16
+  searchers: 8
+  accuracy: "1/5"
+  direct_fraction: "325089/390625"
+  pooled_planner_numerical_upper: 0.859421246199
+  outcome_scope: lossless-reduction-and-documented-certification-barrier
+validation:
+  require_reference_scaled_agreement: true
+  require_raw_signature_optimum_agreement: true
+  require_raw_tie_reconciliation: true
+  require_exact_normalization: true
+  require_direct_lower_pooled_upper: true
+  require_corruption_detection_test: true

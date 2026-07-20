@@ -1,0 +1,1139 @@
+{
+  "M2_N2_p1-2": {
+    "reconstructed_profile": [
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "scaled_failure_sum": 0,
+    "scaled_objective_denominator": 8,
+    "signature_profile": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "value_fraction": "1"
+  },
+  "M2_N2_p1-4": {
+    "reconstructed_profile": [
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "scaled_failure_sum": 0,
+    "scaled_objective_denominator": 32,
+    "signature_profile": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "value_fraction": "1"
+  },
+  "M2_N2_p3-4": {
+    "reconstructed_profile": [
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "scaled_failure_sum": 0,
+    "scaled_objective_denominator": 32,
+    "signature_profile": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "value_fraction": "1"
+  },
+  "M2_N4_p1-2": {
+    "reconstructed_profile": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "scaled_failure_sum": 0,
+    "scaled_objective_denominator": 32,
+    "signature_profile": [
+      [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "value_fraction": "1"
+  },
+  "M2_N4_p3-4": {
+    "reconstructed_profile": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "scaled_failure_sum": 0,
+    "scaled_objective_denominator": 512,
+    "signature_profile": [
+      [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "value_fraction": "1"
+  },
+  "M2_N4_p9-10": {
+    "reconstructed_profile": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "scaled_failure_sum": 0,
+    "scaled_objective_denominator": 20000,
+    "signature_profile": [
+      [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "value_fraction": "1"
+  },
+  "M3_N2_p1-2": {
+    "reconstructed_profile": [
+      [
+        2,
+        2,
+        2
+      ],
+      [
+        0,
+        1,
+        1
+      ]
+    ],
+    "scaled_failure_sum": 12,
+    "scaled_objective_denominator": 48,
+    "signature_profile": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "value_fraction": "3/4"
+  },
+  "M3_N2_p1-3": {
+    "reconstructed_profile": [
+      [
+        2,
+        2,
+        1
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "scaled_failure_sum": 36,
+    "scaled_objective_denominator": 108,
+    "signature_profile": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      [
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "value_fraction": "2/3"
+  },
+  "M3_N2_p2-3": {
+    "reconstructed_profile": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        2
+      ]
+    ],
+    "scaled_failure_sum": 12,
+    "scaled_objective_denominator": 108,
+    "signature_profile": [
+      [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    ],
+    "value_fraction": "8/9"
+  },
+  "M3_N2_p2-5": {
+    "reconstructed_profile": [
+      [
+        2,
+        2,
+        2
+      ],
+      [
+        0,
+        1,
+        1
+      ]
+    ],
+    "scaled_failure_sum": 90,
+    "scaled_objective_denominator": 300,
+    "signature_profile": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "value_fraction": "7/10"
+  },
+  "M3_N2_p4-5": {
+    "reconstructed_profile": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        2
+      ]
+    ],
+    "scaled_failure_sum": 12,
+    "scaled_objective_denominator": 300,
+    "signature_profile": [
+      [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    ],
+    "value_fraction": "24/25"
+  },
+  "M3_N2_p7-15": {
+    "reconstructed_profile": [
+      [
+        2,
+        2,
+        2
+      ],
+      [
+        0,
+        1,
+        1
+      ]
+    ],
+    "scaled_failure_sum": 720,
+    "scaled_objective_denominator": 2700,
+    "signature_profile": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "value_fraction": "11/15"
+  },
+  "M3_N3_p1-2": {
+    "reconstructed_profile": [
+      [
+        2,
+        2,
+        2
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "scaled_failure_sum": 0,
+    "scaled_objective_denominator": 192,
+    "signature_profile": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "value_fraction": "1"
+  },
+  "M3_N3_p1-3": {
+    "reconstructed_profile": [
+      [
+        2,
+        2,
+        2
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "scaled_failure_sum": 0,
+    "scaled_objective_denominator": 648,
+    "signature_profile": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "value_fraction": "1"
+  },
+  "M3_N3_p2-3": {
+    "reconstructed_profile": [
+      [
+        2,
+        2,
+        2
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "scaled_failure_sum": 0,
+    "scaled_objective_denominator": 648,
+    "signature_profile": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "value_fraction": "1"
+  },
+  "M3_N3_p4-5": {
+    "reconstructed_profile": [
+      [
+        2,
+        2,
+        2
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "scaled_failure_sum": 0,
+    "scaled_objective_denominator": 3000,
+    "signature_profile": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "value_fraction": "1"
+  },
+  "M4_N2_p1-2": {
+    "reconstructed_profile": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "scaled_failure_sum": 36,
+    "scaled_objective_denominator": 144,
+    "signature_profile": [
+      [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    ],
+    "value_fraction": "3/4"
+  },
+  "M4_N2_p1-4": {
+    "reconstructed_profile": [
+      [
+        3,
+        3,
+        3,
+        2
+      ],
+      [
+        1,
+        0,
+        1,
+        1
+      ]
+    ],
+    "scaled_failure_sum": 288,
+    "scaled_objective_denominator": 576,
+    "signature_profile": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "value_fraction": "1/2"
+  },
+  "M4_N2_p13-40": {
+    "reconstructed_profile": [
+      [
+        3,
+        3,
+        3,
+        3
+      ],
+      [
+        0,
+        1,
+        2,
+        2
+      ]
+    ],
+    "scaled_failure_sum": 25920,
+    "scaled_objective_denominator": 57600,
+    "signature_profile": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "value_fraction": "11/20"
+  },
+  "M4_N2_p3-10": {
+    "reconstructed_profile": [
+      [
+        3,
+        3,
+        3,
+        3
+      ],
+      [
+        0,
+        1,
+        2,
+        2
+      ]
+    ],
+    "scaled_failure_sum": 1680,
+    "scaled_objective_denominator": 3600,
+    "signature_profile": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "value_fraction": "8/15"
+  },
+  "M4_N2_p3-4": {
+    "reconstructed_profile": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "scaled_failure_sum": 36,
+    "scaled_objective_denominator": 576,
+    "signature_profile": [
+      [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    ],
+    "value_fraction": "15/16"
+  }
+}

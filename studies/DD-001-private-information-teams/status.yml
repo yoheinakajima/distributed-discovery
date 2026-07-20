@@ -1,6 +1,6 @@
 study_id: DD-001
 status: active
-evidence_status: exact-tiny-results-and-canonical-lower-bound
+evidence_status: exact-tiny-results-lossless-signature-reduction-and-canonical-state-space-barrier
 dependency: DD-000
-next_action: execute the bounded signature-certificate configuration from a clean committed implementation
-updated_utc: 2026-07-20T22:10:00Z
+next_action: characterize exact N=2 hybrid thresholds without implying a canonical optimum
+updated_utc: 2026-07-20T22:15:00Z

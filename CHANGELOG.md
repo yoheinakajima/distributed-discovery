@@ -4,6 +4,7 @@
 
 - Reconcile the authorized public MIT repository and Actions-built GitHub Pages state; archive stale operational wording without changing research evidence.
 - Add the missing DD-001 two-agent threshold issue draft and repair paper/site CI by installing pinned Tectonic 0.16.9 plus Poppler's PDF inspection tools.
+- Complete DD-001A: prove the lossless count/fixed-point policy-signature reduction and exact feasibility criterion, independently reproduce all 21 tiny optima and raw tie counts, and certify the canonical signature state-space barrier without claiming a global objective bound.
 
 - Bootstrap the Distributed Discovery research program (DD-000).
 - Pin and reproduce canonical upstream commit `5025cc8e`; add immutable run provenance, independent finite-model checks, baseline claims, and regressions (DD-000).

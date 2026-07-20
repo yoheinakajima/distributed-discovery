@@ -1,0 +1,9 @@
+{
+  "outputs/canonical-state-space.json": "7a416f54e6f8c81a1f7ca29bd99c44ab648994e282f29ff5615e6ba9eddb9e8f",
+  "outputs/certificate-verification.json": "c4f9905448a1e0d0fdd9dd1084c1ff5958a8c70630cd3bab7a340b5bbbcaa06d",
+  "outputs/complexity.json": "8d372fa7d39c3caf223e43127b57d12eae3254887dbf4fb4803fd7778c2ecc06",
+  "outputs/feasibility-audits.json": "460a52a236d49332c1498b231822b921190a2ecc3b29a5ad587d3d9974cd5927",
+  "outputs/optimal-signatures.json": "53519dcc9ead6fec50994b398be33d4f8a572350e1527cf9755cfc3d6600e696",
+  "outputs/reduction-certificate.json": "b7ce5061f37d65ad97f9b3e76bc7889e4d31f63ed2c360312bf3dcfe02ca71e7",
+  "outputs/tiny-signature-grid.csv": "8b5d2b6ef0186aa71b7b165c687e7585e1a6792056345dcb56499c333328521a"
+}

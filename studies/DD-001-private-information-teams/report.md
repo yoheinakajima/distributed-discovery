@@ -2,7 +2,7 @@
 
 ## Evidence run
 
-Primary run: `20260720T200447Z_DD-001_6eb12861_ba766d1eba`. Two earlier passing runs are preserved: the first covered 17 grid points; the second covered the final 21 points before the generated figure was added. The primary run contains the complete configuration, exact policies, phase data/figure, canonical restarts, validation, checksums, seeds, and termination reasons.
+Initial-grid primary run: `20260720T200447Z_DD-001_6eb12861_ba766d1eba`. DD-001A signature primary run: `20260720T221139Z_DD-001_b1d8d431_40bf5b06a5`. Earlier passing runs remain preserved, including preliminary signature run `20260720T220911Z_DD-001_6822d4c6_40bf5b06a5`; the primary runs contain the authoritative presentations for their respective milestones.
 
 ## Certified tiny-grid results
 
@@ -35,4 +35,12 @@ The direct profile is an exact coordinate fixed point. All 16 seeded random star
 
 ## Scope and next actions
 
-Randomization cannot improve the finite common-payoff optimum because every randomized team strategy is a mixture over deterministic profiles (DD-C-0018). This does not address equilibrium mixing, communication, sequential feedback, heterogeneous searchers, or non-atomic coverage. Next work should prove the observed \(N=2\) hybrid thresholds and implement a certified upper-bound method before spending more compute on the canonical instance.
+Randomization cannot improve the finite common-payoff optimum because every randomized team strategy is a mixture over deterministic profiles (DD-C-0018). This does not address equilibrium mixing, communication, sequential feedback, heterogeneous searchers, or non-atomic coverage.
+
+## DD-001A signature reduction
+
+DD-C-0023 proves that `(incoming count, fixed-point indicator)` signatures are lossless for the fixed-profile objective and gives necessary-and-sufficient residual Hall conditions with constructive matching reconstruction. Primary signature run `20260720T221139Z_DD-001_b1d8d431_40bf5b06a5` independently reproduces all 21 tiny optima and raw-policy tie counts (DD-C-0024), while raw enumeration through \(M=5\) agrees with both feasibility implementations.
+
+The exact canonical state-space audit (DD-C-0025) finds 148,348,284,928 feasible labeled signatures and 5,806 individual target orbits. The eight-agent multiset count before a global target quotient has 85 digits. Independently canonicalizing agents is not lossless because relative target alignment matters. This is a proved reduction plus a documented certification barrier, not a canonical upper bound. The direct lower bound and pooled numerical benchmark remain unchanged and global optimality remains unresolved.
+
+Next work is the exact \(N=2\) hybrid-threshold milestone. Future canonical certification must use a joint alignment-preserving state or another independently checkable relaxation before spending large compute.

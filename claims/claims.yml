@@ -462,3 +462,66 @@ claims:
     first_added: "2026-07-20"
     last_checked: "2026-07-20"
     notes: Global optimality is explicitly unresolved; failed improvement search is not a proof.
+  - id: DD-C-0023
+    study_id: DD-001
+    short_name: policy-signature-losslessness-and-feasibility
+    statement: In the finite DD-001 model, a policy's targetwise incoming counts and fixed-point indicators determine its conditional success vector and hence every fixed-profile discovery value; such a signature is realizable exactly when the local count conditions and singleton residual Hall bounds hold.
+    scope: Deterministic policies on a common M-element signal/action/target space under the uniform symmetric clue model; no claim about nonuniform or heterogeneous signals.
+    claim_type: theorem
+    status: derived
+    source_type: local-proof-with-independent-matching-and-exhaustive-small-case-audit
+    source_reference: studies/DD-001-private-information-teams/signature-model.md
+    proof_path: claims/proofs/DD-C-0023.md
+    implementation_paths: [src/distributed_discovery/private_teams/signatures.py]
+    run_ids: [20260720T221139Z_DD-001_b1d8d431_40bf5b06a5]
+    test_paths: [tests/unit/test_private_team_signatures.py]
+    exactness_basis: analytic conditional-probability identity and Hall's marriage theorem; raw policy enumeration through M=5 audits the implementation
+    rounding_rule: null
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: The status remains derived because computation audits the implementation but is not the proof; policy reconstruction is constructive.
+  - id: DD-C-0024
+    study_id: DD-001
+    short_name: signature-reproduction-of-tiny-grid
+    statement: The DD-001A primary signature run independently reproduces all 21 previously certified tiny optima and their raw-policy multiset tie counts, including the M=3, N=2, p=2/5 value 7/10, while exact feasibility and reconstruction agree with every raw policy signature through M=5.
+    scope: The exact `signature-certificate.yml` grid and feasibility audit dimensions M=2 through M=5; no extrapolation to the canonical optimum.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exact-signature-enumeration-plus-independent-matching-and-prior-raw-enumeration
+    source_reference: results/verified/20260720T221139Z_DD-001_b1d8d431_40bf5b06a5/outputs/tiny-signature-grid.csv
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/private_teams/signatures.py, src/distributed_discovery/private_teams/signature_study.py]
+    run_ids: [20260720T200447Z_DD-001_6eb12861_ba766d1eba, 20260720T221139Z_DD-001_b1d8d431_40bf5b06a5]
+    test_paths: [tests/unit/test_private_team_signatures.py, tests/unit/test_private_teams_optimize.py]
+    exactness_basis: complete signature-multiset enumeration with exact scaled integers; signature multiplicities reconcile raw multiset ties and winners match the prior raw-policy exhaustive run plus direct state enumeration
+    rounding_rule: exact fractions and integer counts are authoritative
+    dependencies: [DD-C-0020, DD-C-0023]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: This is a materially distinct representation and search path; it preserves the original tiny-grid evidence boundary.
+  - id: DD-C-0025
+    study_id: DD-001
+    short_name: canonical-signature-state-space-barrier
+    statement: For M=16 there are exactly 148348284928 feasible labeled policy signatures and 5806 individual-signature target-label orbits; without a proved cross-agent target quotient, the eight-agent signature-multiset space has 5817544508742203415773519264794208893444139238056614203268215932897118628684812510720 states.
+    scope: Counting the lossless single-policy signature representation and agent-permutation reduction only; the 5806 individual orbits cannot be independently substituted for aligned agent signatures.
+    claim_type: computational-result
+    status: verified
+    source_type: analytic-combinatorial-count-plus-independent-certificate-checker
+    source_reference: results/verified/20260720T221139Z_DD-001_b1d8d431_40bf5b06a5/outputs/canonical-state-space.json
+    proof_path: claims/proofs/DD-C-0025.md
+    implementation_paths: [src/distributed_discovery/private_teams/signatures.py, src/distributed_discovery/private_teams/signature_certificate.py]
+    run_ids: [20260720T221139Z_DD-001_b1d8d431_40bf5b06a5]
+    test_paths: [tests/unit/test_private_team_signatures.py, tests/unit/test_signature_certificate.py]
+    exactness_basis: closed-form feasible-signature count, bounded-partition orbit count, exact binomial agent-multiset count, and corruption-detecting independent verifier
+    rounding_rule: exact integers
+    dependencies: [DD-C-0023]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: This certifies a structural reduction and a naive-enumeration resource barrier, not a canonical upper bound or global optimum.
