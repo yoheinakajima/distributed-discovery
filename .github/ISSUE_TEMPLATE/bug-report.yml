@@ -1,0 +1,19 @@
+name: Bug report
+description: Report a reproducibility, software, paper, or site defect
+title: "bug: "
+labels: ["type:bug"]
+body:
+  - type: input
+    id: study
+    attributes: {label: Study ID or infrastructure area}
+  - type: textarea
+    id: observed
+    attributes: {label: Observed behavior and exact command}
+    validations: {required: true}
+  - type: textarea
+    id: expected
+    attributes: {label: Expected behavior}
+    validations: {required: true}
+  - type: textarea
+    id: provenance
+    attributes: {label: Commit, run ID, environment, and logs}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "update-upstream-patch"
+  short_description: "Run the update-upstream-patch workflow"
+  default_prompt: "Use $update-upstream-patch to execute this repository workflow reproducibly."

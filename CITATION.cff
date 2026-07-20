@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Citation metadata is provisional; cite the canonical Shared Discovery Paradox paper for the original result."
+title: "Distributed Discovery research workspace"
+type: software
+authors:
+  - family-names: Nakajima
+    given-names: Yohei
+version: 0.0.0
+date-released: 2026-07-20
+repository-code: "https://github.com/yoheinakajima/shared-discovery-paradox"
+abstract: "Private reproducibility and extension workspace; not a public release."

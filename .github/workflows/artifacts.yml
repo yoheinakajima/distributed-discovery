@@ -1,0 +1,15 @@
+name: Paper and site builds
+on:
+  pull_request:
+    paths: ["papers/**", "site/**", "claims/**", "scripts/build_*", ".github/workflows/artifacts.yml"]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv python install 3.12
+      - run: make bootstrap
+      - run: make papers
+      - run: make site

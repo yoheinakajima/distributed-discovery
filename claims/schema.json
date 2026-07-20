@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/distributed-discovery/claims.schema.json",
+  "title": "Distributed Discovery claim ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "claims"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "claims": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/claim"}
+    }
+  },
+  "$defs": {
+    "nullablePath": {"type": ["string", "null"]},
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "study_id", "short_name", "statement", "scope", "claim_type", "status",
+        "source_type", "source_reference", "proof_path", "implementation_paths", "run_ids",
+        "test_paths", "exactness_basis", "rounding_rule", "dependencies", "contradicts",
+        "supersedes", "first_added", "last_checked", "notes"
+      ],
+      "properties": {
+        "id": {"type": "string", "pattern": "^DD-C-[0-9]{4}$"},
+        "study_id": {"type": "string", "pattern": "^DD-[0-9]{3}$"},
+        "short_name": {"type": "string", "minLength": 1},
+        "statement": {"type": "string", "minLength": 1},
+        "scope": {"type": "string", "minLength": 1},
+        "claim_type": {"enum": ["definition", "identity", "upstream-result", "lemma", "proposition", "theorem", "corollary", "computational-result", "numerical-observation", "monte-carlo-estimate", "conjecture", "research-question", "empirical-hypothesis", "negative-result"]},
+        "status": {"enum": ["proposed", "sourced", "derived", "implemented", "checked", "verified", "independently-reproduced", "refuted", "superseded", "retired"]},
+        "source_type": {"type": "string", "minLength": 1},
+        "source_reference": {"$ref": "#/$defs/nullablePath"},
+        "proof_path": {"$ref": "#/$defs/nullablePath"},
+        "implementation_paths": {"type": "array", "items": {"type": "string"}},
+        "run_ids": {"type": "array", "items": {"type": "string"}},
+        "test_paths": {"type": "array", "items": {"type": "string"}},
+        "exactness_basis": {"$ref": "#/$defs/nullablePath"},
+        "rounding_rule": {"$ref": "#/$defs/nullablePath"},
+        "dependencies": {"type": "array", "items": {"type": "string", "pattern": "^DD-C-[0-9]{4}$"}},
+        "contradicts": {"type": "array", "items": {"type": "string", "pattern": "^DD-C-[0-9]{4}$"}},
+        "supersedes": {"type": "array", "items": {"type": "string", "pattern": "^DD-C-[0-9]{4}$"}},
+        "first_added": {"type": "string", "format": "date"},
+        "last_checked": {"type": ["string", "null"], "format": "date"},
+        "notes": {"type": "string"}
+      }
+    }
+  }
+}

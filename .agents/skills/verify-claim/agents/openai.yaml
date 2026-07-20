@@ -1,0 +1,4 @@
+interface:
+  display_name: "verify-claim"
+  short_description: "Run the verify-claim workflow"
+  default_prompt: "Use $verify-claim to execute this repository workflow reproducibly."

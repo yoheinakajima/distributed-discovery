@@ -1,0 +1,6 @@
+study_id: DD-001
+status: registered
+evidence_status: no-results
+dependency: DD-000
+next_action: implement exact fixed-policy evaluator after M2
+updated_utc: 2026-07-20T00:00:00Z

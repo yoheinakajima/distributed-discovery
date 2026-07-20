@@ -1,0 +1,17 @@
+name: Claim verification
+description: Audit a registered claim
+title: "claim: "
+labels: ["status:needs-verification"]
+body:
+  - type: input
+    id: claim
+    attributes: {label: Claim ID}
+    validations: {required: true}
+  - type: textarea
+    id: checks
+    attributes: {label: Required policy checks and evidence paths}
+    validations: {required: true}
+  - type: textarea
+    id: outcome
+    attributes: {label: Promotion, failure, or refutation criteria}
+    validations: {required: true}

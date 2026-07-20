@@ -1,0 +1,23 @@
+schema_version: 1
+claims:
+  - id: DD-C-9999
+    study_id: DD-000
+    short_name: fixture
+    statement: This record exercises the claim schema.
+    scope: Test fixture only.
+    claim_type: definition
+    status: proposed
+    source_type: fixture
+    source_reference: tests/fixtures/valid_claims.yml
+    proof_path: null
+    implementation_paths: []
+    run_ids: []
+    test_paths: [tests/unit/test_claim_validation.py]
+    exactness_basis: null
+    rounding_rule: null
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: null
+    notes: Not a research claim.

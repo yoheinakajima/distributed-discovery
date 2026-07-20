@@ -1,0 +1,17 @@
+name: Reproduction task
+description: Reproduce a pinned sourced result
+title: "reproduction: "
+labels: ["type:reproduction"]
+body:
+  - type: input
+    id: claims
+    attributes: {label: Study and claim IDs}
+    validations: {required: true}
+  - type: textarea
+    id: source
+    attributes: {label: Pinned source, license, and expected outputs}
+    validations: {required: true}
+  - type: textarea
+    id: independent
+    attributes: {label: Upstream execution versus independent method}
+    validations: {required: true}

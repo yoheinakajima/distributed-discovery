@@ -1,0 +1,4 @@
+interface:
+  display_name: "build-paper"
+  short_description: "Run the build-paper workflow"
+  default_prompt: "Use $build-paper to execute this repository workflow reproducibly."

@@ -1,0 +1,44 @@
+schema_version: 1
+claims:
+  - id: DD-C-0001
+    study_id: DD-000
+    short_name: distributed-discovery-definition
+    statement: Distributed Discovery studies how organizations or multi-agent systems convert dispersed evidence into a portfolio of search actions.
+    scope: Program-level working definition; terminology remains subject to literature review.
+    claim_type: definition
+    status: proposed
+    source_type: project-charter
+    source_reference: docs/project-charter.md
+    proof_path: null
+    implementation_paths: []
+    run_ids: []
+    test_paths: []
+    exactness_basis: null
+    rounding_rule: null
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: null
+    notes: Must be reviewed against literature during M2.
+  - id: DD-C-0002
+    study_id: DD-000
+    short_name: information-action-accounting
+    statement: For protocol loss defined by L_B(Pi;I)=V_B(I)-G_B(Pi;I), G_B(Pi;I)=V_B(I)-L_B(Pi;I).
+    scope: Accounting identity wherever the displayed quantities are well-defined; no independent monotonicity or attainability claim.
+    claim_type: identity
+    status: derived
+    source_type: definition
+    source_reference: docs/foundations.md
+    proof_path: claims/proofs/DD-C-0002.md
+    implementation_paths: []
+    run_ids: []
+    test_paths: []
+    exactness_basis: algebraic rearrangement of the definition
+    rounding_rule: null
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Do not describe as a stronger theorem without added content.

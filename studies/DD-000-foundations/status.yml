@@ -1,0 +1,6 @@
+study_id: DD-000
+status: active
+evidence_status: infrastructure-only
+active_milestone: M1
+next_action: make fetch-upstream
+updated_utc: 2026-07-20T18:51:42Z

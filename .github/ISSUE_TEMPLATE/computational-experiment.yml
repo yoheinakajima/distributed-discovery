@@ -1,0 +1,21 @@
+name: Computational experiment
+description: Plan a reproducible bounded computation
+title: "experiment: "
+labels: ["type:experiment"]
+body:
+  - type: input
+    id: study
+    attributes: {label: Study ID}
+    validations: {required: true}
+  - type: textarea
+    id: config
+    attributes: {label: Configuration, method, seeds, and estimator}
+    validations: {required: true}
+  - type: textarea
+    id: budget
+    attributes: {label: Complexity estimate and compute guardrails}
+    validations: {required: true}
+  - type: textarea
+    id: validation
+    attributes: {label: Independent validation and claim limits}
+    validations: {required: true}

@@ -1,0 +1,20 @@
+name: Proof task
+description: Track a proposition and proof audit
+title: "proof: "
+labels: ["type:proof"]
+body:
+  - type: input
+    id: claims
+    attributes: {label: Study and claim IDs}
+    validations: {required: true}
+  - type: textarea
+    id: statement
+    attributes: {label: Scoped statement and assumptions}
+    validations: {required: true}
+  - type: textarea
+    id: strategy
+    attributes: {label: Proof strategy and known failure modes}
+  - type: textarea
+    id: review
+    attributes: {label: Independent consistency review plan}
+    validations: {required: true}

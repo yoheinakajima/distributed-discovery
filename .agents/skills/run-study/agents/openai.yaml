@@ -1,0 +1,4 @@
+interface:
+  display_name: "run-study"
+  short_description: "Run the run-study workflow"
+  default_prompt: "Use $run-study to execute this repository workflow reproducibly."
