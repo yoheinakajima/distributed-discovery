@@ -1,5 +1,5 @@
 study_id: DD-007
 status: registered
-evidence_status: empirical-hypothesis
-next_action: define synthetic data schema
-updated_utc: 2026-07-20T00:00:00Z
+evidence_status: research-question
+next_action: version the event schema and generate the bounded seeded recovery grid
+updated_utc: 2026-07-20T20:17:35Z

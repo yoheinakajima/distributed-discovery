@@ -1,5 +1,5 @@
 study_id: DD-004
 status: registered
 evidence_status: research-question
-next_action: specify failure observation model
-updated_utc: 2026-07-20T00:00:00Z
+next_action: implement the bounded perfect-elimination dynamic program and independent policy-tree check
+updated_utc: 2026-07-20T20:17:35Z

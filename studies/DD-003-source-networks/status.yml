@@ -1,5 +1,5 @@
 study_id: DD-003
 status: registered
 evidence_status: research-question
-next_action: define small graph generator
-updated_utc: 2026-07-20T00:00:00Z
+next_action: enumerate nonisomorphic source-to-searcher graphs with at most three sources and four searchers
+updated_utc: 2026-07-20T20:17:35Z
