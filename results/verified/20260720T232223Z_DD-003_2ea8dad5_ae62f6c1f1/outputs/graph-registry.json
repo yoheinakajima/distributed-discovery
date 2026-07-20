@@ -1,0 +1,2186 @@
+[
+  {
+    "adjacency": [
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "1",
+    "canonical_label": "K1N4:1111",
+    "consensus_discovery": "2/3",
+    "edges": 4,
+    "effective_sources": "1",
+    "expected_distinct_private_actions": "1",
+    "graph_id": "G00",
+    "mean_pair_agreement": "1",
+    "mean_pair_source_overlap": "1",
+    "pairwise_signature": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "5/6",
+    "private_discovery": "2/3",
+    "source_hhi": "1",
+    "sources": 1
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        0
+      ]
+    ],
+    "all_reports_equal_probability": "1/2",
+    "canonical_label": "K2N4:00011110",
+    "consensus_discovery": "2/3",
+    "edges": 4,
+    "effective_sources": "8/5",
+    "expected_distinct_private_actions": "3/2",
+    "graph_id": "G01",
+    "mean_pair_agreement": "3/4",
+    "mean_pair_source_overlap": "1/2",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "1/2",
+      "1",
+      "1",
+      "1"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "11/12",
+    "private_discovery": "8/9",
+    "source_hhi": "5/8",
+    "sources": 2
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "1/2",
+    "canonical_label": "K2N4:00011111",
+    "consensus_discovery": "2/3",
+    "edges": 5,
+    "effective_sources": "25/17",
+    "expected_distinct_private_actions": "5/4",
+    "graph_id": "G02",
+    "mean_pair_agreement": "7/8",
+    "mean_pair_source_overlap": "1",
+    "pairwise_signature": [
+      "3/4",
+      "3/4",
+      "3/4",
+      "1",
+      "1",
+      "1"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "11/12",
+    "private_discovery": "7/9",
+    "source_hhi": "17/25",
+    "sources": 2
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        0
+      ]
+    ],
+    "all_reports_equal_probability": "1/2",
+    "canonical_label": "K2N4:00111100",
+    "consensus_discovery": "2/3",
+    "edges": 4,
+    "effective_sources": "2",
+    "expected_distinct_private_actions": "3/2",
+    "graph_id": "G03",
+    "mean_pair_agreement": "2/3",
+    "mean_pair_source_overlap": "1/3",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "1",
+      "1",
+      "1/2",
+      "1/2"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "11/12",
+    "private_discovery": "8/9",
+    "source_hhi": "1/2",
+    "sources": 2
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "1/2",
+    "canonical_label": "K2N4:00111101",
+    "consensus_discovery": "2/3",
+    "edges": 5,
+    "effective_sources": "25/13",
+    "expected_distinct_private_actions": "3/2",
+    "graph_id": "G04",
+    "mean_pair_agreement": "17/24",
+    "mean_pair_source_overlap": "2/3",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "3/4",
+      "1",
+      "3/4",
+      "3/4"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "11/12",
+    "private_discovery": "8/9",
+    "source_hhi": "13/25",
+    "sources": 2
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "1/2",
+    "canonical_label": "K2N4:00111111",
+    "consensus_discovery": "2/3",
+    "edges": 6,
+    "effective_sources": "9/5",
+    "expected_distinct_private_actions": "11/8",
+    "graph_id": "G05",
+    "mean_pair_agreement": "19/24",
+    "mean_pair_source_overlap": "7/6",
+    "pairwise_signature": [
+      "3/4",
+      "3/4",
+      "3/4",
+      "3/4",
+      "3/4",
+      "1"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "11/12",
+    "private_discovery": "5/6",
+    "source_hhi": "5/9",
+    "sources": 2
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "1/2",
+    "canonical_label": "K2N4:01111011",
+    "consensus_discovery": "2/3",
+    "edges": 6,
+    "effective_sources": "2",
+    "expected_distinct_private_actions": "3/2",
+    "graph_id": "G06",
+    "mean_pair_agreement": "17/24",
+    "mean_pair_source_overlap": "1",
+    "pairwise_signature": [
+      "1/2",
+      "3/4",
+      "3/4",
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "11/12",
+    "private_discovery": "8/9",
+    "source_hhi": "1/2",
+    "sources": 2
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "1/2",
+    "canonical_label": "K2N4:01111111",
+    "consensus_discovery": "2/3",
+    "edges": 7,
+    "effective_sources": "49/25",
+    "expected_distinct_private_actions": "23/16",
+    "graph_id": "G07",
+    "mean_pair_agreement": "3/4",
+    "mean_pair_source_overlap": "3/2",
+    "pairwise_signature": [
+      "3/4",
+      "3/4",
+      "3/4",
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "11/12",
+    "private_discovery": "31/36",
+    "source_hhi": "25/49",
+    "sources": 2
+  },
+  {
+    "adjacency": [
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "1",
+    "canonical_label": "K2N4:11111111",
+    "consensus_discovery": "2/3",
+    "edges": 8,
+    "effective_sources": "2",
+    "expected_distinct_private_actions": "23/16",
+    "graph_id": "G08",
+    "mean_pair_agreement": "3/4",
+    "mean_pair_source_overlap": "2",
+    "pairwise_signature": [
+      "3/4",
+      "3/4",
+      "3/4",
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "11/12",
+    "private_discovery": "31/36",
+    "source_hhi": "1/2",
+    "sources": 2
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        0
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:000100011110",
+    "consensus_discovery": "2/3",
+    "edges": 5,
+    "effective_sources": "25/11",
+    "expected_distinct_private_actions": "3/2",
+    "graph_id": "G09",
+    "mean_pair_agreement": "3/4",
+    "mean_pair_source_overlap": "1/2",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "1/2",
+      "1",
+      "1",
+      "1"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "8/9",
+    "source_hhi": "11/25",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "25/36",
+    "canonical_label": "K3N4:000100011111",
+    "consensus_discovery": "2/3",
+    "edges": 6,
+    "effective_sources": "2",
+    "expected_distinct_private_actions": "137/108",
+    "graph_id": "G10",
+    "mean_pair_agreement": "187/216",
+    "mean_pair_source_overlap": "1",
+    "pairwise_signature": [
+      "79/108",
+      "79/108",
+      "79/108",
+      "1",
+      "1",
+      "1"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "68/81",
+    "source_hhi": "1/2",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        0,
+        0
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:000100101100",
+    "consensus_discovery": "13/18",
+    "edges": 4,
+    "effective_sources": "8/3",
+    "expected_distinct_private_actions": "65/36",
+    "graph_id": "G11",
+    "mean_pair_agreement": "7/12",
+    "mean_pair_source_overlap": "1/6",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "1/2",
+      "1/2",
+      "1/2",
+      "1"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "26/27",
+    "source_hhi": "3/8",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        0,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:000100101101",
+    "consensus_discovery": "2/3",
+    "edges": 5,
+    "effective_sources": "25/11",
+    "expected_distinct_private_actions": "119/72",
+    "graph_id": "G12",
+    "mean_pair_agreement": "2/3",
+    "mean_pair_source_overlap": "1/2",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "1/2",
+      "3/4",
+      "3/4",
+      "1"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "25/27",
+    "source_hhi": "11/25",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:000100101111",
+    "consensus_discovery": "2/3",
+    "edges": 6,
+    "effective_sources": "2",
+    "expected_distinct_private_actions": "209/144",
+    "graph_id": "G13",
+    "mean_pair_agreement": "37/48",
+    "mean_pair_source_overlap": "1",
+    "pairwise_signature": [
+      "5/8",
+      "3/4",
+      "3/4",
+      "3/4",
+      "3/4",
+      "1"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "23/27",
+    "source_hhi": "1/2",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        0
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:000100111100",
+    "consensus_discovery": "7/9",
+    "edges": 5,
+    "effective_sources": "25/9",
+    "expected_distinct_private_actions": "119/72",
+    "graph_id": "G14",
+    "mean_pair_agreement": "5/8",
+    "mean_pair_source_overlap": "1/3",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "3/4",
+      "1",
+      "1/2",
+      "1/2"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "25/27",
+    "source_hhi": "9/25",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "1/2",
+    "canonical_label": "K3N4:000100111101",
+    "consensus_discovery": "13/18",
+    "edges": 6,
+    "effective_sources": "18/7",
+    "expected_distinct_private_actions": "83/54",
+    "graph_id": "G15",
+    "mean_pair_agreement": "151/216",
+    "mean_pair_source_overlap": "2/3",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "79/108",
+      "1",
+      "79/108",
+      "79/108"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "73/81",
+    "source_hhi": "7/18",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        0
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:000100111110",
+    "consensus_discovery": "13/18",
+    "edges": 6,
+    "effective_sources": "18/7",
+    "expected_distinct_private_actions": "227/144",
+    "graph_id": "G16",
+    "mean_pair_agreement": "11/16",
+    "mean_pair_source_overlap": "2/3",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "5/8",
+      "1",
+      "3/4",
+      "3/4"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "49/54",
+    "source_hhi": "7/18",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "1/2",
+    "canonical_label": "K3N4:000100111111",
+    "consensus_discovery": "2/3",
+    "edges": 7,
+    "effective_sources": "7/3",
+    "expected_distinct_private_actions": "101/72",
+    "graph_id": "G17",
+    "mean_pair_agreement": "169/216",
+    "mean_pair_source_overlap": "7/6",
+    "pairwise_signature": [
+      "79/108",
+      "79/108",
+      "79/108",
+      "3/4",
+      "3/4",
+      "1"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "47/54",
+    "source_hhi": "3/7",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:000101101010",
+    "consensus_discovery": "7/9",
+    "edges": 5,
+    "effective_sources": "25/9",
+    "expected_distinct_private_actions": "65/36",
+    "graph_id": "G18",
+    "mean_pair_agreement": "7/12",
+    "mean_pair_source_overlap": "1/3",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "1/2",
+      "1/2",
+      "3/4",
+      "3/4"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "26/27",
+    "source_hhi": "9/25",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:000101101011",
+    "consensus_discovery": "13/18",
+    "edges": 6,
+    "effective_sources": "18/7",
+    "expected_distinct_private_actions": "119/72",
+    "graph_id": "G19",
+    "mean_pair_agreement": "31/48",
+    "mean_pair_source_overlap": "2/3",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "3/4",
+      "3/4",
+      "5/8",
+      "3/4"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "25/27",
+    "source_hhi": "7/18",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        1,
+        0
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:000101101110",
+    "consensus_discovery": "13/18",
+    "edges": 6,
+    "effective_sources": "18/7",
+    "expected_distinct_private_actions": "83/48",
+    "graph_id": "G20",
+    "mean_pair_agreement": "5/8",
+    "mean_pair_source_overlap": "2/3",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "1/2",
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "17/18",
+    "source_hhi": "7/18",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:000101101111",
+    "consensus_discovery": "2/3",
+    "edges": 7,
+    "effective_sources": "7/3",
+    "expected_distinct_private_actions": "149/96",
+    "graph_id": "G21",
+    "mean_pair_agreement": "17/24",
+    "mean_pair_source_overlap": "7/6",
+    "pairwise_signature": [
+      "5/8",
+      "5/8",
+      "3/4",
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "8/9",
+    "source_hhi": "3/7",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "1/2",
+    "canonical_label": "K3N4:000101111011",
+    "consensus_discovery": "7/9",
+    "edges": 7,
+    "effective_sources": "49/19",
+    "expected_distinct_private_actions": "83/54",
+    "graph_id": "G22",
+    "mean_pair_agreement": "151/216",
+    "mean_pair_source_overlap": "1",
+    "pairwise_signature": [
+      "1/2",
+      "79/108",
+      "3/4",
+      "79/108",
+      "3/4",
+      "79/108"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "73/81",
+    "source_hhi": "19/49",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        0
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:000101111110",
+    "consensus_discovery": "7/9",
+    "edges": 7,
+    "effective_sources": "49/19",
+    "expected_distinct_private_actions": "155/96",
+    "graph_id": "G23",
+    "mean_pair_agreement": "2/3",
+    "mean_pair_source_overlap": "1",
+    "pairwise_signature": [
+      "1/2",
+      "5/8",
+      "5/8",
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "11/12",
+    "source_hhi": "19/49",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "1/2",
+    "canonical_label": "K3N4:000101111111",
+    "consensus_discovery": "13/18",
+    "edges": 8,
+    "effective_sources": "32/13",
+    "expected_distinct_private_actions": "635/432",
+    "graph_id": "G24",
+    "mean_pair_agreement": "20/27",
+    "mean_pair_source_overlap": "3/2",
+    "pairwise_signature": [
+      "79/108",
+      "79/108",
+      "79/108",
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "287/324",
+    "source_hhi": "13/32",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        1,
+        0
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:000111101110",
+    "consensus_discovery": "7/9",
+    "edges": 7,
+    "effective_sources": "49/19",
+    "expected_distinct_private_actions": "83/48",
+    "graph_id": "G25",
+    "mean_pair_agreement": "5/8",
+    "mean_pair_source_overlap": "1",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "1/2",
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "17/18",
+    "source_hhi": "19/49",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "1/2",
+    "canonical_label": "K3N4:000111101111",
+    "consensus_discovery": "13/18",
+    "edges": 8,
+    "effective_sources": "32/13",
+    "expected_distinct_private_actions": "19/12",
+    "graph_id": "G26",
+    "mean_pair_agreement": "11/16",
+    "mean_pair_source_overlap": "3/2",
+    "pairwise_signature": [
+      "5/8",
+      "5/8",
+      "5/8",
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "65/72",
+    "source_hhi": "13/32",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "1/2",
+    "canonical_label": "K3N4:000111111111",
+    "consensus_discovery": "7/9",
+    "edges": 9,
+    "effective_sources": "27/11",
+    "expected_distinct_private_actions": "635/432",
+    "graph_id": "G27",
+    "mean_pair_agreement": "20/27",
+    "mean_pair_source_overlap": "2",
+    "pairwise_signature": [
+      "79/108",
+      "79/108",
+      "79/108",
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "287/324",
+    "source_hhi": "11/27",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        0
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:001100111100",
+    "consensus_discovery": "7/9",
+    "edges": 6,
+    "effective_sources": "3",
+    "expected_distinct_private_actions": "119/72",
+    "graph_id": "G28",
+    "mean_pair_agreement": "5/8",
+    "mean_pair_source_overlap": "1/2",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "3/4",
+      "1",
+      "1/2",
+      "1/2"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "25/27",
+    "source_hhi": "1/3",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:001100111101",
+    "consensus_discovery": "7/9",
+    "edges": 7,
+    "effective_sources": "49/17",
+    "expected_distinct_private_actions": "83/54",
+    "graph_id": "G29",
+    "mean_pair_agreement": "151/216",
+    "mean_pair_source_overlap": "5/6",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "79/108",
+      "1",
+      "79/108",
+      "79/108"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "73/81",
+    "source_hhi": "17/49",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "25/36",
+    "canonical_label": "K3N4:001100111111",
+    "consensus_discovery": "13/18",
+    "edges": 8,
+    "effective_sources": "8/3",
+    "expected_distinct_private_actions": "427/324",
+    "graph_id": "G30",
+    "mean_pair_agreement": "131/162",
+    "mean_pair_source_overlap": "4/3",
+    "pairwise_signature": [
+      "79/108",
+      "79/108",
+      "25/27",
+      "1",
+      "79/108",
+      "79/108"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "208/243",
+    "source_hhi": "3/8",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:001101011001",
+    "consensus_discovery": "7/9",
+    "edges": 6,
+    "effective_sources": "3",
+    "expected_distinct_private_actions": "65/36",
+    "graph_id": "G31",
+    "mean_pair_agreement": "133/216",
+    "mean_pair_source_overlap": "1/2",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "79/108",
+      "1/2",
+      "79/108",
+      "79/108"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "26/27",
+    "source_hhi": "1/3",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        0
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:001101011010",
+    "consensus_discovery": "7/9",
+    "edges": 6,
+    "effective_sources": "3",
+    "expected_distinct_private_actions": "83/48",
+    "graph_id": "G32",
+    "mean_pair_agreement": "29/48",
+    "mean_pair_source_overlap": "1/2",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "3/4",
+      "3/4",
+      "1/2",
+      "5/8"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "17/18",
+    "source_hhi": "1/3",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:001101011011",
+    "consensus_discovery": "7/9",
+    "edges": 7,
+    "effective_sources": "49/17",
+    "expected_distinct_private_actions": "361/216",
+    "graph_id": "G33",
+    "mean_pair_agreement": "71/108",
+    "mean_pair_source_overlap": "5/6",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "79/108",
+      "3/4",
+      "79/108",
+      "79/108"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "151/162",
+    "source_hhi": "17/49",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        0
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:001101011110",
+    "consensus_discovery": "7/9",
+    "edges": 7,
+    "effective_sources": "49/17",
+    "expected_distinct_private_actions": "119/72",
+    "graph_id": "G34",
+    "mean_pair_agreement": "31/48",
+    "mean_pair_source_overlap": "5/6",
+    "pairwise_signature": [
+      "1/2",
+      "5/8",
+      "5/8",
+      "3/4",
+      "3/4",
+      "5/8"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "25/27",
+    "source_hhi": "17/49",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:001101011111",
+    "consensus_discovery": "13/18",
+    "edges": 8,
+    "effective_sources": "8/3",
+    "expected_distinct_private_actions": "83/54",
+    "graph_id": "G35",
+    "mean_pair_agreement": "311/432",
+    "mean_pair_source_overlap": "4/3",
+    "pairwise_signature": [
+      "5/8",
+      "79/108",
+      "3/4",
+      "79/108",
+      "3/4",
+      "79/108"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "73/81",
+    "source_hhi": "3/8",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "1/2",
+    "canonical_label": "K3N4:001101111011",
+    "consensus_discovery": "7/9",
+    "edges": 8,
+    "effective_sources": "32/11",
+    "expected_distinct_private_actions": "253/162",
+    "graph_id": "G36",
+    "mean_pair_agreement": "235/324",
+    "mean_pair_source_overlap": "7/6",
+    "pairwise_signature": [
+      "1/2",
+      "79/108",
+      "79/108",
+      "79/108",
+      "79/108",
+      "25/27"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "221/243",
+    "source_hhi": "11/32",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        0
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:001101111100",
+    "consensus_discovery": "7/9",
+    "edges": 7,
+    "effective_sources": "49/17",
+    "expected_distinct_private_actions": "487/288",
+    "graph_id": "G37",
+    "mean_pair_agreement": "5/8",
+    "mean_pair_source_overlap": "5/6",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "3/4",
+      "3/4",
+      "5/8",
+      "5/8"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "101/108",
+    "source_hhi": "17/49",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:001101111101",
+    "consensus_discovery": "7/9",
+    "edges": 8,
+    "effective_sources": "32/11",
+    "expected_distinct_private_actions": "77/48",
+    "graph_id": "G38",
+    "mean_pair_agreement": "293/432",
+    "mean_pair_source_overlap": "7/6",
+    "pairwise_signature": [
+      "1/2",
+      "5/8",
+      "79/108",
+      "3/4",
+      "79/108",
+      "79/108"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "11/12",
+    "source_hhi": "11/32",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "1/2",
+    "canonical_label": "K3N4:001101111111",
+    "consensus_discovery": "7/9",
+    "edges": 9,
+    "effective_sources": "81/29",
+    "expected_distinct_private_actions": "311/216",
+    "graph_id": "G39",
+    "mean_pair_agreement": "497/648",
+    "mean_pair_source_overlap": "5/3",
+    "pairwise_signature": [
+      "79/108",
+      "79/108",
+      "3/4",
+      "25/27",
+      "79/108",
+      "79/108"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "143/162",
+    "source_hhi": "29/81",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "1/2",
+    "canonical_label": "K3N4:001111001111",
+    "consensus_discovery": "13/18",
+    "edges": 8,
+    "effective_sources": "8/3",
+    "expected_distinct_private_actions": "467/288",
+    "graph_id": "G40",
+    "mean_pair_agreement": "2/3",
+    "mean_pair_source_overlap": "4/3",
+    "pairwise_signature": [
+      "5/8",
+      "5/8",
+      "3/4",
+      "3/4",
+      "5/8",
+      "5/8"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "197/216",
+    "source_hhi": "3/8",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:001111011101",
+    "consensus_discovery": "7/9",
+    "edges": 8,
+    "effective_sources": "32/11",
+    "expected_distinct_private_actions": "361/216",
+    "graph_id": "G41",
+    "mean_pair_agreement": "71/108",
+    "mean_pair_source_overlap": "7/6",
+    "pairwise_signature": [
+      "1/2",
+      "1/2",
+      "79/108",
+      "3/4",
+      "79/108",
+      "79/108"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "151/162",
+    "source_hhi": "11/32",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        0
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:001111011110",
+    "consensus_discovery": "7/9",
+    "edges": 8,
+    "effective_sources": "32/11",
+    "expected_distinct_private_actions": "119/72",
+    "graph_id": "G42",
+    "mean_pair_agreement": "31/48",
+    "mean_pair_source_overlap": "7/6",
+    "pairwise_signature": [
+      "5/8",
+      "5/8",
+      "5/8",
+      "5/8",
+      "5/8",
+      "3/4"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "25/27",
+    "source_hhi": "11/32",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:001111011111",
+    "consensus_discovery": "7/9",
+    "edges": 9,
+    "effective_sources": "81/29",
+    "expected_distinct_private_actions": "1357/864",
+    "graph_id": "G43",
+    "mean_pair_agreement": "151/216",
+    "mean_pair_source_overlap": "5/3",
+    "pairwise_signature": [
+      "5/8",
+      "5/8",
+      "79/108",
+      "3/4",
+      "79/108",
+      "79/108"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "589/648",
+    "source_hhi": "29/81",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "1/2",
+    "canonical_label": "K3N4:001111111111",
+    "consensus_discovery": "7/9",
+    "edges": 10,
+    "effective_sources": "25/9",
+    "expected_distinct_private_actions": "311/216",
+    "graph_id": "G44",
+    "mean_pair_agreement": "497/648",
+    "mean_pair_source_overlap": "13/6",
+    "pairwise_signature": [
+      "79/108",
+      "79/108",
+      "3/4",
+      "25/27",
+      "79/108",
+      "79/108"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "143/162",
+    "source_hhi": "9/25",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:011101111011",
+    "consensus_discovery": "7/9",
+    "edges": 9,
+    "effective_sources": "3",
+    "expected_distinct_private_actions": "253/162",
+    "graph_id": "G45",
+    "mean_pair_agreement": "235/324",
+    "mean_pair_source_overlap": "3/2",
+    "pairwise_signature": [
+      "1/2",
+      "79/108",
+      "79/108",
+      "79/108",
+      "79/108",
+      "25/27"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "221/243",
+    "source_hhi": "1/3",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "25/36",
+    "canonical_label": "K3N4:011101111111",
+    "consensus_discovery": "7/9",
+    "edges": 10,
+    "effective_sources": "50/17",
+    "expected_distinct_private_actions": "1313/972",
+    "graph_id": "G46",
+    "mean_pair_agreement": "179/216",
+    "mean_pair_source_overlap": "2",
+    "pairwise_signature": [
+      "79/108",
+      "79/108",
+      "79/108",
+      "25/27",
+      "25/27",
+      "25/27"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "632/729",
+    "source_hhi": "17/50",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:011110111101",
+    "consensus_discovery": "7/9",
+    "edges": 9,
+    "effective_sources": "3",
+    "expected_distinct_private_actions": "77/48",
+    "graph_id": "G47",
+    "mean_pair_agreement": "293/432",
+    "mean_pair_source_overlap": "3/2",
+    "pairwise_signature": [
+      "5/8",
+      "5/8",
+      "79/108",
+      "5/8",
+      "79/108",
+      "79/108"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "11/12",
+    "source_hhi": "1/3",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "11/36",
+    "canonical_label": "K3N4:011110111111",
+    "consensus_discovery": "7/9",
+    "edges": 10,
+    "effective_sources": "50/17",
+    "expected_distinct_private_actions": "1945/1296",
+    "graph_id": "G48",
+    "mean_pair_agreement": "967/1296",
+    "mean_pair_source_overlap": "2",
+    "pairwise_signature": [
+      "5/8",
+      "79/108",
+      "79/108",
+      "79/108",
+      "79/108",
+      "25/27"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "871/972",
+    "source_hhi": "17/50",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "1/2",
+    "canonical_label": "K3N4:011111111111",
+    "consensus_discovery": "7/9",
+    "edges": 11,
+    "effective_sources": "121/41",
+    "expected_distinct_private_actions": "1313/972",
+    "graph_id": "G49",
+    "mean_pair_agreement": "179/216",
+    "mean_pair_source_overlap": "5/2",
+    "pairwise_signature": [
+      "79/108",
+      "79/108",
+      "79/108",
+      "25/27",
+      "25/27",
+      "25/27"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "632/729",
+    "source_hhi": "41/121",
+    "sources": 3
+  },
+  {
+    "adjacency": [
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "all_reports_equal_probability": "1",
+    "canonical_label": "K3N4:111111111111",
+    "consensus_discovery": "7/9",
+    "edges": 12,
+    "effective_sources": "3",
+    "expected_distinct_private_actions": "281/243",
+    "graph_id": "G50",
+    "mean_pair_agreement": "25/27",
+    "mean_pair_source_overlap": "3",
+    "pairwise_signature": [
+      "25/27",
+      "25/27",
+      "25/27",
+      "25/27",
+      "25/27",
+      "25/27"
+    ],
+    "planner_discovery": "1",
+    "planner_two_discovery": "67/72",
+    "private_discovery": "605/729",
+    "source_hhi": "1/3",
+    "sources": 3
+  }
+]

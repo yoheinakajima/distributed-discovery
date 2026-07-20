@@ -1,0 +1,18 @@
+{
+  "canonical_orbit_counts": {
+    "1": 1,
+    "2": 8,
+    "3": 42
+  },
+  "graph_count": 51,
+  "graphs_in_matched_pairwise_groups": 20,
+  "labeled_graph_counts": {
+    "1": 1,
+    "2": 79,
+    "3": 2161
+  },
+  "matched_pairwise_signature_group_count": 10,
+  "mean_pair_agreement_discovery_counterexample_pair_count": 22,
+  "pairwise_matrix_discovery_counterexample_count": 0,
+  "source_hhi_discovery_counterexample_pair_count": 59
+}

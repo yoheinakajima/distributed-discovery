@@ -1,0 +1,26 @@
+{
+  "all_51_graphs_enumerated": true,
+  "canonical_labels_unique": true,
+  "canonical_orbit_counts": {
+    "1": 1,
+    "2": 8,
+    "3": 42
+  },
+  "elapsed_seconds": 1.9993482090067118,
+  "git_clean_at_start": true,
+  "independent_orbit_counts": {
+    "1": 1,
+    "2": 8,
+    "3": 42
+  },
+  "independent_verifier_passed": true,
+  "labeled_graph_counts": {
+    "1": 1,
+    "2": 79,
+    "3": 2161
+  },
+  "mean_pair_agreement_counterexample_verified": true,
+  "pairwise_matrix_bounded_null_verified": true,
+  "passed": true,
+  "time_budget_seconds": 120
+}

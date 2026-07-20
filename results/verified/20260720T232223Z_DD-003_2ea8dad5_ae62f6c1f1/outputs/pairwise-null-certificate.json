@@ -1,0 +1,7 @@
+{
+  "bounded_conclusion": "no counterexample on the complete configured graph class",
+  "graph_count": 51,
+  "graphs_in_matched_groups": 20,
+  "matched_groups_with_different_private_discovery": 0,
+  "matched_pairwise_signature_group_count": 10
+}
