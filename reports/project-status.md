@@ -4,9 +4,9 @@
 
 ## 1. Executive summary
 
-Milestones M0 through M9 remain complete. Milestone A is active on `chore/public-mit-pages-cleanup` under GitHub issue #6. The source repository is public under MIT; Pages is live at `https://yoheinakajima.github.io/distributed-discovery/` from successful workflow run `29779923504` at commit `21bbd5d3bb72231c766a830ed1ce9654d0dc5b58`. Current cleanup reconciles licensing/deployment wording and GitHub organization without changing mathematical results. Canonical upstream remains untouched.
+Milestones M0 through M9 and operational Milestone A are complete. Cleanup issue #6 closed through squash-merged PR #12 at `1add8de5a349c57085928da8aa54da85e49c5077`; CI passed, Pages workflow `29781940577` succeeded, and all five required routes returned HTTP 200. The source repository is public under MIT at `https://yoheinakajima.github.io/distributed-discovery/`. Canonical upstream remains untouched.
 
-The strongest new research result is scoped: on the 21-case DD-001 tiny grid, exact exhaustive enumeration finds an informative hybrid policy at `(M,N,p)=(3,2,2/5)` with discovery `7/10`, versus direct clue-following `16/25`. The canonical `(16,8,1/5)` private-team optimum remains unresolved; coordinate ascent supplies only a lower bound.
+DD-001A is implemented on `research/dd001-signature-certificate` in draft PR #13. It proves the lossless count/fixed-point policy signature and exact Hall feasibility conditions, independently reproduces all 21 tiny-grid optima and raw tie counts, and verifies 148,348,284,928 feasible canonical single-agent signatures. The canonical `(16,8,1/5)` private-team optimum remains unresolved; this is a structural certificate and resource barrier, not an objective upper certificate.
 
 ## 2. Repository map
 
@@ -33,8 +33,10 @@ The strongest new research result is scoped: on the 21-case DD-001 tiny grid, ex
 - M5: deterministic 12-page foundations note with citation/claim/source validation and visual QA.
 - M6: exact DD-001 tiny-grid evaluator, bounded canonical search, five audited claims, and report.
 - M7: actionable, falsifiable DD-002 through DD-007 research briefs; no studies executed.
-- M8: complete local GitHub organization metadata; live application is part of active Milestone A.
+- M8: complete local GitHub organization metadata; prepared issues are live, with settings-only taxonomy blocked on OAuth.
 - M9: clean acceptance reproduction, full builds/audits, navigation refresh, and this handoff.
+- A: public MIT/Pages cleanup, passing squash merge, and live five-route deployment smoke test.
+- DD-001A: lossless signature theorem, exact feasibility/reconstruction, independent tiny-grid reproduction, and canonical state-space certificate; PR #13 awaits final CI/merge.
 
 ## 4. Commands executed
 
@@ -72,6 +74,8 @@ git -C .cache/upstream/shared-discovery-paradox status --porcelain
 
 The two early M1 wrapper failures, initial paper-toolchain failures, first M8 formatting stop, and their corrections remain documented in the master plan. In the final audit, one direct module check initially lacked the Makefile's `PYTHONPATH`, and the new sanitizer test initially needed formatting; both were corrected and the 29-test rerun passed. The pre-commit whitespace gate also flagged CRLF in immutable upstream-generated CSVs; authored files passed after those hash-covered outputs were excluded. None is represented as passing evidence.
 
+DD-001A primary run `20260720T221139Z_DD-001_b1d8d431_40bf5b06a5` started from clean commit `b1d8d431` and completed in 13.73 seconds under a 120-second limit. It passed 21 exact-grid reproductions, raw tie reconciliation, dual feasibility checks, constructive reconstruction, independent objective evaluation, exact normalization, the structural certificate verifier, and manifest validation.
+
 ## 5. Canonical reproduction status
 
 Acceptance run `20260720T202314Z_DD-000_88613408_217c602fa0` started from clean commit `88613408`, executed the pinned upstream verifier, and independently evaluated blind, private, private-distinct, consensus, planner, recovery-budget, normalization, and a tiny consensus fixture. All checks passed. Selected values are blind `0.5`, consensus `0.383468709731`, market `0.599099252439`, private `0.83222784`, planner `0.859421246199`, and recovery budget `7`.
@@ -80,7 +84,7 @@ The run is the current source for the site and foundations note. Claim records r
 
 ## 6. Verified claims
 
-The claim ledger has 22 records. Status `verified` applies to DD-C-0007 (canonical market), DD-C-0009 (copying crossover), DD-C-0015 (72-case grid sign-change observation), and DD-C-0017 (terminology non-uniqueness). DD-C-0012 through DD-C-0014 are explicitly `sourced` upstream theorem statements. DD-C-0002, DD-C-0011, DD-C-0016, DD-C-0018, and DD-C-0019 are scoped `derived` results with algebraic or proof records.
+The claim ledger has 25 records. Status `verified` applies to DD-C-0007, DD-C-0009, DD-C-0015, DD-C-0017, and DD-C-0025, whose exact canonical signature counts have an independent corruption-detecting certificate checker. DD-C-0023 remains `derived` because its Hall proof, not computation, establishes the theorem. DD-C-0012 through DD-C-0014 remain explicitly `sourced` upstream theorem statements.
 
 ## 7. Independently reproduced claims
 
@@ -88,6 +92,7 @@ The claim ledger has 22 records. Status `verified` applies to DD-C-0007 (canonic
 - DD-C-0008: canonical pooled recovery budget `7`.
 - DD-C-0020: all 21 configured DD-001 tiny-case optima by exact agent-symmetric exhaustive enumeration.
 - DD-C-0021: exact hybrid witness `7/10 > 16/25` at `(3,2,2/5)`, checked by a materially distinct evaluator.
+- DD-C-0024: all 21 tiny optima and raw-policy multiset tie counts reproduced by exact signature enumeration, with feasibility audited against raw policies through M=5.
 
 ## 8. Exploratory findings
 
@@ -102,11 +107,11 @@ DD-C-0022 is `checked`, not verified: direct clue-following is an exact coordina
 
 ## 10. Open research questions
 
-The immediate question is a certified upper bound for the canonical DD-001 private-team optimum. DD-002 through DD-007 remain open and unexecuted: disclosure under strategic concentration, latent source networks, sequential feedback, overlapping coverage, discovery mechanisms, and empirical audit identification. Each study's `brief.md` defines its bounded first experiment and completion criteria.
+The immediate question is the exact DD-001B two-searcher hybrid threshold. A later canonical method must preserve joint target alignment and provide an independently checkable admissible bound. DD-002 through DD-007 remain open and unexecuted: disclosure under strategic concentration, latent source networks, sequential feedback, overlapping coverage, discovery mechanisms, and empirical audit identification.
 
 ## 11. Known technical debt
 
-- Canonical DD-001 optimization lacks a global certificate or usable structural reduction.
+- Canonical DD-001 optimization has a lossless single-policy structural reduction but lacks a joint alignment-preserving global certificate.
 - Tectonic 0.16.9 and Poppler are system-level build/inspection dependencies, not managed by `uv`.
 - The static site has automated semantic/link/content/contrast checks but no browser-based accessibility audit.
 - GitHub metadata application is tested offline; prepared issues are live as #7–#11 and issue/PR access works through the connected app, while CLI-only taxonomy/settings await OAuth authorization.
@@ -119,11 +124,11 @@ There is no validation blocker. Public `origin`, Actions, and Pages are active. 
 
 ## 13. Exact resume point
 
-On `chore/public-mit-pages-cleanup`, continue issue #6 through a passing PR and live Pages smoke test. Then sync `main`, create `research/dd001-signature-certificate` for issue #9, and inspect `studies/DD-001-private-information-teams/signature-model.md` or create it. Never describe DD-C-0022 as global optimality.
+On `research/dd001-signature-certificate`, finish PR #13 through passing CI, squash-merge it, and verify the Pages deployment. Then sync `main` and start issue #11 on the DD-001B threshold branch. Never describe the pooled benchmark, DD-C-0022, or the signature state-space count as a private-team optimum certificate.
 
 ## 14. Recommended next three tasks
 
-1. DD-001: derive or compute a certified canonical upper bound with a machine-checkable certificate.
+1. DD-001B: derive and independently reproduce the exact two-searcher hybrid thresholds.
 2. DD-002: enumerate deterministic partitions for the bounded `M=3,N=2` disclosure fixture and report full equilibrium correspondence.
 3. DD-003: enumerate nonisomorphic small source graphs and test whether pairwise report moments are insufficient for discovery prediction.
 
@@ -145,11 +150,11 @@ On `chore/public-mit-pages-cleanup`, continue issue #6 through a passing PR and 
 Suggested title: `Bootstrap the Distributed Discovery research program`
 
 - Study IDs: DD-000 through DD-007; research results only for DD-000/DD-001.
-- Claim IDs: DD-C-0001 through DD-C-0022.
+- Claim IDs: DD-C-0001 through DD-C-0025.
 - Evidence status: mixed and ledger-controlled; exact status is never inferred from directory placement.
 - Commands: `make all`, `make upstream-patch`, PDF inspection, secret/private-path scan, and Git/upstream cleanliness checks.
-- Runs: canonical acceptance `20260720T202314Z_DD-000_88613408_217c602fa0`; DD-001 primary `20260720T200447Z_DD-001_6eb12861_ba766d1eba`.
-- Generated artifacts: foundations PDF SHA-256 `3293b469a50856b1301a20190b17d3483fcb18558e545b2301968d014fa869b5`; patched-preview PDF SHA-256 `0a43360e59fdbbc4002e2190479871896688b3b4ef640d219313cd9d2ed5acb9`; local four-page site.
+- Runs: canonical acceptance `20260720T202314Z_DD-000_88613408_217c602fa0`; DD-001 primary `20260720T200447Z_DD-001_6eb12861_ba766d1eba`; DD-001A primary `20260720T221139Z_DD-001_b1d8d431_40bf5b06a5`.
+- Generated artifacts: foundations PDF SHA-256 `e096183159f8c016f116b1a97fc0721948bbee2aca6dd1ae251d0a2af95a32e4`; patched-preview PDF SHA-256 `0a43360e59fdbbc4002e2190479871896688b3b4ef640d219313cd9d2ed5acb9`; public four-page site.
 - Citation changes: 15 validated bibliography keys; canonical claims trace to the pinned source and/or independent implementation.
 - Upstream impact: none. The review patch applies in a disposable worktree; cached upstream is clean.
-- Historical publication impact at the M9 handoff: repository source and tracked paper artifacts were public by explicit approval, while the companion site and GitHub metadata had not yet been applied. Pages is now live; remaining metadata work is tracked in Milestone A.
+- Publication impact: repository source and tracked paper artifacts are public by explicit approval; Pages is live. Labels, milestones, homepage metadata, and a non-destructive ruleset remain settings-capability blockers.

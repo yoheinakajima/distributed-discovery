@@ -1,0 +1,37 @@
+{
+  "command": "make dd001-signatures",
+  "config_hash_sha256": "40bf5b06a51fb35c069fe51c14f117cd97ed2010bbf63b0d8927a8f24868311f",
+  "dependency_lock_hash_sha256": "44817b839ec69b327bd25a79ba5a14569628e5345ed6e496fd2badfe5c7f5bb5",
+  "ended_utc": "2026-07-20T22:11:52.919468Z",
+  "exit_status": 0,
+  "git_commit": "b1d8d431188457c62648446797dcebdc323ba991",
+  "git_dirty": false,
+  "input_hashes": {
+    "results/verified/20260720T200447Z_DD-001_6eb12861_ba766d1eba/outputs/tiny-phase-grid.csv": "e7112e7dd471a4fa302bbe5336a367dd166ff497bf8ab9095b6526635fe4851e",
+    "src/distributed_discovery/private_teams/model.py": "48978d85df2a92b2951369dafde3ddf20e52e40c8a241c0f04f2a04c7105a277",
+    "src/distributed_discovery/private_teams/optimize.py": "39dc0e236e397f1449613439545b42ee7165a3ebd02fb0d8ec3d58b0c9d30b0d",
+    "src/distributed_discovery/private_teams/signature_certificate.py": "e915118c32f9cfdf5a3d02b0194cbe8ac9d5cd8c8a4f063fb211e857edfb6758",
+    "src/distributed_discovery/private_teams/signature_study.py": "fc83103825bc047d70c9c9aaa833ad45d7e45d9925e28bdfe175bc0e50019df2",
+    "src/distributed_discovery/private_teams/signatures.py": "b4c143937a5764bb927cf6ff3dcb485dc163f4d30afcb93ab6356050cf1a99ca",
+    "studies/DD-001-private-information-teams/configs/signature-certificate.yml": "547185d521f363c3744a5a9e63227bfa2482742d689bc7f9c6c75641a3ceafdb"
+  },
+  "outputs": {
+    "outputs/canonical-state-space.json": "7a416f54e6f8c81a1f7ca29bd99c44ab648994e282f29ff5615e6ba9eddb9e8f",
+    "outputs/certificate-verification.json": "c4f9905448a1e0d0fdd9dd1084c1ff5958a8c70630cd3bab7a340b5bbbcaa06d",
+    "outputs/complexity.json": "8d372fa7d39c3caf223e43127b57d12eae3254887dbf4fb4803fd7778c2ecc06",
+    "outputs/feasibility-audits.json": "460a52a236d49332c1498b231822b921190a2ecc3b29a5ad587d3d9974cd5927",
+    "outputs/optimal-signatures.json": "53519dcc9ead6fec50994b398be33d4f8a572350e1527cf9755cfc3d6600e696",
+    "outputs/reduction-certificate.json": "b7ce5061f37d65ad97f9b3e76bc7889e4d31f63ed2c360312bf3dcfe02ca71e7",
+    "outputs/tiny-signature-grid.csv": "8b5d2b6ef0186aa71b7b165c687e7585e1a6792056345dcb56499c333328521a"
+  },
+  "random_seeds": {
+    "algorithm": null,
+    "model": null
+  },
+  "run_id": "20260720T221139Z_DD-001_b1d8d431_40bf5b06a5",
+  "schema_version": 1,
+  "started_utc": "2026-07-20T22:11:39.149616Z",
+  "study_id": "DD-001",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

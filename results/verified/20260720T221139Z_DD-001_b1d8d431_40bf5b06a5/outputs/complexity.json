@@ -1,0 +1,47 @@
+[
+  {
+    "accuracy_count": 3,
+    "candidates": 2,
+    "feasible_signatures": 4,
+    "raw_agent_multisets": 10,
+    "raw_policies_per_agent": 4,
+    "searchers": 2,
+    "signature_agent_multisets": 10
+  },
+  {
+    "accuracy_count": 3,
+    "candidates": 2,
+    "feasible_signatures": 4,
+    "raw_agent_multisets": 35,
+    "raw_policies_per_agent": 4,
+    "searchers": 4,
+    "signature_agent_multisets": 35
+  },
+  {
+    "accuracy_count": 6,
+    "candidates": 3,
+    "feasible_signatures": 26,
+    "raw_agent_multisets": 378,
+    "raw_policies_per_agent": 27,
+    "searchers": 2,
+    "signature_agent_multisets": 351
+  },
+  {
+    "accuracy_count": 4,
+    "candidates": 3,
+    "feasible_signatures": 26,
+    "raw_agent_multisets": 3654,
+    "raw_policies_per_agent": 27,
+    "searchers": 3,
+    "signature_agent_multisets": 3276
+  },
+  {
+    "accuracy_count": 5,
+    "candidates": 4,
+    "feasible_signatures": 160,
+    "raw_agent_multisets": 32896,
+    "raw_policies_per_agent": 256,
+    "searchers": 2,
+    "signature_agent_multisets": 12880
+  }
+]

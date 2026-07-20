@@ -1,0 +1,50 @@
+[
+  {
+    "all_reconstructions_exact": true,
+    "candidates": 2,
+    "feasible_signature_count": 4,
+    "formula_signature_count": 4,
+    "locally_admissible_candidate_count": 12,
+    "raw_equals_generated": true,
+    "raw_policy_count": 4,
+    "raw_signature_multiplicity_sum": 4,
+    "reference_equals_reduced": true,
+    "target_orbit_count": 3
+  },
+  {
+    "all_reconstructions_exact": true,
+    "candidates": 3,
+    "feasible_signature_count": 26,
+    "formula_signature_count": 26,
+    "locally_admissible_candidate_count": 80,
+    "raw_equals_generated": true,
+    "raw_policy_count": 27,
+    "raw_signature_multiplicity_sum": 27,
+    "reference_equals_reduced": true,
+    "target_orbit_count": 7
+  },
+  {
+    "all_reconstructions_exact": true,
+    "candidates": 4,
+    "feasible_signature_count": 160,
+    "formula_signature_count": 160,
+    "locally_admissible_candidate_count": 560,
+    "raw_equals_generated": true,
+    "raw_policy_count": 256,
+    "raw_signature_multiplicity_sum": 256,
+    "reference_equals_reduced": true,
+    "target_orbit_count": 16
+  },
+  {
+    "all_reconstructions_exact": true,
+    "candidates": 5,
+    "feasible_signature_count": 922,
+    "formula_signature_count": 922,
+    "locally_admissible_candidate_count": 4032,
+    "raw_equals_generated": true,
+    "raw_policy_count": 3125,
+    "raw_signature_multiplicity_sum": 3125,
+    "reference_equals_reduced": true,
+    "target_orbit_count": 31
+  }
+]

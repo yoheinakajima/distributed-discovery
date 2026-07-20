@@ -8,7 +8,7 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-The historical M0–M9 bootstrap is complete. The live source of truth is public GitHub `main` at `21bbd5d3bb72231c766a830ed1ce9654d0dc5b58`; the repository is MIT-licensed and its first Pages workflow succeeded. **Active milestone: A — public/MIT/Pages/GitHub cleanup, issue #6, branch `chore/public-mit-pages-cleanup`.**
+The historical M0–M9 bootstrap and operational Milestone A are complete. Public GitHub `main` is at cleanup merge `1add8de5a349c57085928da8aa54da85e49c5077`, Pages run `29781940577` passed, and all five required routes returned HTTP 200. **Active milestone: B — DD-001A lossless policy signatures, issue #9, branch `research/dd001-signature-certificate`, draft PR #13.**
 
 ## Scope
 
@@ -36,9 +36,9 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - M7 later-study briefs: completed 2026-07-20.
 - M8 GitHub organization: completed 2026-07-20.
 - M9 integration and handoff: completed 2026-07-20.
-- A public/MIT/Pages/GitHub cleanup: active.
-- B DD-001A policy-signature reduction and certified bound: pending A.
-- C DD-001B two-agent hybrid thresholds: pending B.
+- A public/MIT/Pages/GitHub cleanup: completed 2026-07-20.
+- B DD-001A policy-signature reduction and certification barrier: implementation and primary evidence complete; PR #13 validation/merge pending.
+- C DD-001B two-agent hybrid thresholds: next after B merge.
 - D DD-002 bounded disclosure fixture: pending C.
 - E DD-003 bounded source-graph fixture: pending D.
 - Integrated handoff: pending E or a hard execution limit.
@@ -67,8 +67,13 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - [x] Create cleanup issue #6 and branch `chore/public-mit-pages-cleanup` from current `main`.
 - [x] Reconcile MIT licensing and current public/Pages wording.
 - [x] Create all five prepared live issues; record the settings-capability blocker for labels, milestones, homepage, and safe `main` protection.
-- [ ] Merge cleanup PR after CI and verify live Pages.
-- [ ] Execute DD-001A through DD-003 sequentially with one issue/branch/PR each.
+- [x] Merge cleanup PR #12 after passing CI and verify live Pages workflow `29781940577` plus all five routes.
+- [x] Prove the lossless signature objective identity and exact residual Hall feasibility theorem.
+- [x] Implement independent matching/reference and closed-form/scaled signature evaluators with reconstruction and corruption tests.
+- [x] Run the bounded DD-001A primary audit; reproduce all 21 tiny optima and raw tie counts; certify the canonical signature state-space counts.
+- [x] Add DD-C-0023 through DD-C-0025 with proof/check records and calibrated evidence statuses.
+- [ ] Merge DD-001A PR #13 after CI and verify live Pages.
+- [ ] Execute DD-001B through DD-003 sequentially with one issue/branch/PR each.
 
 ## Discoveries and surprises
 
@@ -100,6 +105,9 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - 2026-07-20: `make bootstrap`, `make verify`, `make site`, and `make papers` pass on the cleanup branch; 29 tests, 7 run manifests, 4 site pages, and the 12-page foundations artifact validate. A later post-commit rebuild exposed that the paper's timestamp depended on `HEAD`; this is superseded by the immutable-run epoch fix below.
 - 2026-07-20: cleanup PR #12's first artifact run `29781538938` failed after Tectonic installed successfully because Ubuntu lacked the paper validator's `pdfinfo` executable. The artifact workflow now installs `poppler-utils`; the failed run remains linked evidence and is not represented as passing.
 - 2026-07-20: the foundations builder formerly derived `SOURCE_DATE_EPOCH` from `HEAD`, so every commit changed the tracked PDF and made the next build dirty. It now uses the immutable passing canonical run's timezone-qualified `started_utc`, records that epoch in generated provenance and validation, tests the conversion independently of Git history, and normalizes Tectonic's parallel `Writing` log lines.
+- 2026-07-20: preliminary DD-001A run `20260720T220911Z_DD-001_6822d4c6_40bf5b06a5` passed the computational reduction audit, but claim review found its `certified_interval` output key was too strong because the pooled benchmark is explicitly not a private-team certificate. The run remains immutable and valid as a preliminary audit; presentation was corrected before the primary run.
+- 2026-07-20: primary DD-001A run `20260720T221139Z_DD-001_b1d8d431_40bf5b06a5` started from clean commit `b1d8d431` and passed in 13.73 seconds. It independently reproduced all 21 exact tiny optima and raw-policy multiset tie counts, matched matching/reference and closed-form feasibility through M=5, reconstructed all audited signatures, and passed the independent structural certificate verifier.
+- 2026-07-20: the signature theorem reduces each policy losslessly to targetwise incoming counts and fixed-point indicators. At canonical M=16, exact counts are 148,348,284,928 feasible labeled signatures and 5,806 individual target orbits, but independently quotienting agents loses relative target alignment. The eight-agent multiset count before a global target quotient has 85 digits, so the declared naive enumeration exceeds its resource budget. This is not a private-team objective upper bound.
 
 ## Decision log
 
@@ -132,6 +140,7 @@ Each milestone runs its targeted Make commands plus schema, unit, integration, a
 - M4 `make site`: built four pages from passing canonical run `20260720T190336Z_DD-000_32dd1c32_217c602fa0` and seven study status/question files. Internal links, semantic landmarks/headings, resolved template data, tracking absence, generated provenance, and primary text contrast checks passed; full repository verification reached 16 tests.
 - M5 `make foundations`: generated a canonical table and pooled-frontier figure from validated run artifacts, resolved 15 citation keys and 17 claim IDs, compiled 12 pages with Tectonic 0.16.9, and produced byte-identical PDF SHA-256 `3637f16e...` twice. Poppler rendered all pages; targeted full-resolution review covered data assets, dense lists, and references. Full repository verification reached 18 tests.
 - M6 `make dd001`: primary run completed the 21-point exact grid and 18 canonical restarts in 8.4 seconds inside a 120-second budget. Exact formula/direct enumeration, normalization, exhaustive counts, benchmark bounds, seeds, terminations, output hashes, and generated SVG checks passed. Claim-specific audit commands and targeted tests passed; six run manifests now validate.
+- DD-001A `make dd001-signatures`: primary run completed the 21-point independent signature grid, feasibility/reconstruction audit, and canonical state-space certificate in 13.73 seconds under a 120-second budget. All validation flags passed; the independent checker accepted the certificate and its corruption test rejects a modified count.
 - M7 `make verify`: passed after adding six bounded research briefs and linking their next actions into the study registry; no DD-002 through DD-007 experiment was executed and no result claim was added.
 - M8 `python scripts/setup_github.py`: validated 23 labels, six milestones, and four nonduplicative initial issue drafts in offline dry-run mode. `make verify` passed 28 tests plus claim and run validation.
 - M9 `make all`: formatting, lint, strict typing, 28 unit/integration/regression tests, claim/run validation, a clean canonical reproduction, the 12-page foundations build, and the four-page site build passed. `make upstream-patch`, PDF metadata/render inspection, internal-link/content tests, provenance/hash validation, local-path/token scans, and upstream/Git hygiene checks also passed. A final provenance-sanitizer unit test brought the post-documentation verification total to 29 passing tests; its first format check and a direct audit missing `PYTHONPATH` stopped safely and were corrected before the passing rerun.
@@ -158,14 +167,16 @@ M8 produced label and milestone manifests, six issue forms, four substantive ini
 
 M9 produced a clean canonical acceptance run, refreshed generated paper provenance, revalidated both PDFs and the local site, scrubbed redundant private checkout paths from environment snapshots, updated all navigation/status surfaces, and created the comprehensive project handoff.
 
+Milestone A produced the reconciled public/MIT/Pages state, passing PR #12, deterministic paper artifact workflow, five live research issues, and a successful post-merge Pages smoke test. DD-001A produces the lossless signature theorem and exact feasibility proof, independent implementations and tests, two immutable passing runs, primary reduction/certificate artifacts, claims DD-C-0023 through DD-C-0025, a global report, and a working-paper fragment.
+
 ## Blockers
 
 No current local blocker. GitHub CLI is installed but unauthenticated; the connected GitHub app and SSH cover issue/PR and Git transport operations. Labels, milestones, homepage, and ruleset/repository-setting writes have a precise capability-specific blocker until CLI OAuth or equivalent settings access is available. The prepared issues retain their intended metadata in their bodies.
 
 ## Recovery and restart instructions
 
-On branch `chore/public-mit-pages-cleanup`, commit the validated changes, push, open a draft PR to `main`, and monitor CI for issue #6. After merge, record the Pages run and five-route smoke test, sync `main`, and start DD-001A issue #9 on `research/dd001-signature-certificate`. Do not alter research run provenance.
+On branch `research/dd001-signature-certificate`, finish report/site integration for immutable primary run `20260720T221139Z_DD-001_b1d8d431_40bf5b06a5`, run `make verify`, `make site`, and `make papers`, then commit, push, and monitor draft PR #13. After passing CI, mark ready, squash-merge, verify the Pages deployment and five routes, sync `main`, and begin DD-001B issue #11. Do not alter immutable run provenance or describe the pooled benchmark as a private-team certificate.
 
 ## Outcome and retrospective
 
-M0–M9 meet their criteria and the branch is ready for human review. M2 made no general theorem or novelty claim from the atomic model; it records terminology collisions and treats effective channels/source concentration as model-specific or provisional. M3 keeps that calibration in the patch and does not modify canonical upstream. M4 is tracker-free and un-deployed. M5 clearly attributes restated upstream results and keeps applications/open studies scoped. M6 certifies only bounded tiny cases and explicitly leaves the canonical private-team optimum unresolved. M7 defines bounded next experiments but does not run them or imply results. M8 is locally complete and intentionally unapplied. M9 independently re-exercised the acceptance interface and preserved all remaining evidence limits. The project owner explicitly authorized the public GitHub source repository after completion.
+M0–M9 and Milestone A meet their criteria. DD-001A establishes a substantial structural result while preserving the central evidence limit: the canonical private-team optimum remains unresolved. The exact state-space certificate rules out the declared naive enumeration plan but is neither a complexity lower bound nor an objective upper bound. The next bounded milestone is DD-001B.

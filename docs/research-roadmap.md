@@ -2,8 +2,8 @@
 
 DD-000 establishes the framework and reproduction infrastructure. DD-001 is the active extension. The ranked next work is:
 
-1. prove and validate the DD-001 policy-signature reduction, then pursue a certified canonical bound;
-2. characterize the DD-001 two-agent hybrid thresholds;
+1. characterize the DD-001 two-agent hybrid thresholds using the completed lossless signature reduction;
+2. pursue an alignment-preserving canonical relaxation with an independently checkable bound;
 3. run DD-002's bounded deterministic-disclosure enumeration;
 4. run DD-003's bounded latent-source graph enumeration;
 5. establish DD-005's static overlap counterexamples before adaptive coverage;

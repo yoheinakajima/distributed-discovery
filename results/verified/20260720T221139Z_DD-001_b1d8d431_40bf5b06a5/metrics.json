@@ -1,0 +1,27 @@
+{
+  "canonical": {
+    "accuracy": "1/5",
+    "agent_multiset_search_without_target_quotient": 5817544508742203415773519264794208893444139238056614203268215932897118628684812510720,
+    "candidates": 16,
+    "current_benchmarks": {
+      "lower_fraction": "325089/390625",
+      "upper_is_private_team_certificate": false,
+      "upper_numerical_benchmark": 0.859421246199
+    },
+    "direct_decimal": "0.832227840000",
+    "direct_fraction": "325089/390625",
+    "feasible_signatures_before_target_quotient": 148348284928,
+    "global_optimum_status": "unresolved",
+    "global_target_symmetry_factor_upper_bound": 20922789888000,
+    "individual_orbit_multiset_search_is_lossless": false,
+    "individual_signature_target_orbits": 5806,
+    "minimum_failure_vector_bytes": 744645697119002037219010465893658738360849822471246618018331639410831184471656001372160,
+    "pooled_planner_numerical_upper": 0.859421246199,
+    "raw_policies_per_agent": 18446744073709551616,
+    "root_branching_factor": 148348284928,
+    "searchers": 8,
+    "termination_reason": "state-space audit shows naive exact signature enumeration exceeds declared resources"
+  },
+  "small_feasibility_audit_count": 4,
+  "tiny_case_count": 21
+}

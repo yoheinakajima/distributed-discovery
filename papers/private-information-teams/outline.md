@@ -10,7 +10,7 @@ Uniform one-target prior, independent symmetric private signals, finite determin
 
 ## 3. Exact evaluation and symmetries
 
-Derive conditional-failure factorization; independently enumerate target/signal states; reduce profiles by agent permutation; state exact completeness counts and cost guardrails.
+Derive conditional-failure factorization and the lossless `(count, fixed-point)` policy signature. Prove signature feasibility by residual Hall matching, give constructive reconstruction, and compare the matching checker with the reduced conditions. Independently enumerate target/signal states; reduce profiles by agent permutation; state exact completeness counts and cost guardrails.
 
 ## 4. Tiny phase results
 
@@ -18,7 +18,7 @@ Present the generated 21-point CSV/SVG. Separate \(N\ge M\) territorial coverage
 
 ## 5. Canonical bounds
 
-Report direct clue-following as exact lower bound and coordinate fixed point. Report seeded convergence as a negative heuristic result. Use the pooled planner only as a numerical upper benchmark under greater information/authority; leave global team optimality unresolved.
+Report direct clue-following as exact lower bound and coordinate fixed point. Report seeded convergence as a negative heuristic result. Add the signature state-space measurement and explain why individual target-orbit canonicalization does not preserve cross-agent alignment. Use the pooled planner only as a numerical upper benchmark under greater information/authority; leave global team optimality unresolved unless a separate certificate closes the gap.
 
 ## 6. Next theorems and computations
 
