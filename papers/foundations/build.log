@@ -5,8 +5,8 @@ note: Rerunning TeX because "main.aux" changed ...
 note: Rerunning TeX because "main.aux" changed ...
 note: Running xdvipdfmx ...
 note: Writing `<repository>/papers/foundations/build/main.blg` (204 B)
-note: Writing `<repository>/papers/foundations/build/main.pdf` (95.40625 KiB)
 note: Writing `<repository>/papers/foundations/build/main.log` (45.865234375 KiB)
+note: Writing `<repository>/papers/foundations/build/main.pdf` (95.40625 KiB)
 note: Skipped writing 3 intermediate files (use --keep-intermediates to keep them)
 warning: hyperref.sty:4873: Requested font "pzdr" at 0.00002pt
 warning: hyperref.sty:4873:  -> pzdr
