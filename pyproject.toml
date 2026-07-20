@@ -5,8 +5,9 @@ build-backend = "hatchling.build"
 [project]
 name = "distributed-discovery"
 version = "0.1.0"
-description = "Private reproducibility and research infrastructure for Distributed Discovery"
+description = "Public reproducibility and research infrastructure for Distributed Discovery"
 readme = "README.md"
+license = "MIT"
 requires-python = ">=3.11"
 dependencies = [
   "jsonschema>=4.23,<5",

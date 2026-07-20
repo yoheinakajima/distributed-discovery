@@ -20,7 +20,7 @@ Tests must include relevant hand-checkable cases, normalization and bounds, inva
 
 ## Safety and Git
 
-This repository is public by explicit project-owner decision recorded on 2026-07-20. Never deploy the companion site without separate approval, expose local paths or secrets, commit credentials, force-push, rewrite shared history, or modify/push canonical upstream. Fetch upstream into ignored cache and prepare changes as patches or fragments. Inspect dirty state before edits; preserve unrelated work. Commit coherent, passing milestone states on `codex/*`.
+This repository is public and project-authored content uses the root MIT License by explicit project-owner decision recorded on 2026-07-20. GitHub Pages deployment from generated `site/dist` artifacts is authorized only through the workflow on `main`. Never expose local paths or secrets, commit credentials, force-push, rewrite shared history, or modify/push canonical upstream. Fetch upstream into ignored cache and prepare changes as patches or fragments. Inspect dirty state before edits; preserve unrelated work. Commit coherent, passing milestone states on task branches.
 
 ## Time and artifacts
 

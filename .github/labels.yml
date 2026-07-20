@@ -1,7 +1,7 @@
 labels:
   - {name: "area:foundations", color: "1d76db", description: "Definitions, theory, and research foundations"}
   - {name: "area:paper", color: "5319e7", description: "Manuscripts, references, and paper builds"}
-  - {name: "area:site", color: "0e8a16", description: "Local companion site and content pipeline"}
+  - {name: "area:site", color: "0e8a16", description: "Public companion site and content pipeline"}
   - {name: "area:infrastructure", color: "6f42c1", description: "Repository, validation, and reproducibility infrastructure"}
   - {name: "study:DD-000", color: "0052cc", description: "Foundations and canonical benchmark"}
   - {name: "study:DD-001", color: "0052cc", description: "Private-information teams"}

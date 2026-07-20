@@ -20,4 +20,4 @@ Information aggregation and action allocation are different operations. The cano
 
 ## Governance
 
-Milestones execute sequentially under `plans/MASTER_EXEC_PLAN.md`. Research integrity outranks schedule. Material technical choices require ADRs. Publishing, licensing, and upstream modification require explicit human decisions.
+Milestones execute sequentially under `plans/MASTER_EXEC_PLAN.md`. Research integrity outranks schedule. Material technical choices require ADRs. Public MIT source and Actions-built Pages are authorized; releases, DOI publication, and upstream modification require explicit future human decisions.

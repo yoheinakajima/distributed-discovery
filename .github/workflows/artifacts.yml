@@ -11,5 +11,8 @@ jobs:
       - uses: astral-sh/setup-uv@v6
       - run: uv python install 3.12
       - run: make bootstrap
+      - uses: wtfjoke/setup-tectonic@v4
+        with:
+          tectonic-version: 0.16.9
       - run: make papers
       - run: make site

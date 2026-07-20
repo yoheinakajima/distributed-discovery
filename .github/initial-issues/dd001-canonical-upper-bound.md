@@ -1,5 +1,5 @@
 ---
-title: "proof: bound the canonical DD-001 private-team optimum"
+title: "proof: reduce and bound the canonical DD-001 private-team optimum"
 labels:
   - study:DD-001
   - type:proof
