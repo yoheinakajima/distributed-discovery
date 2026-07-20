@@ -1,0 +1,20 @@
+{
+  "all_21_prior_optima_reproduced": true,
+  "all_reconstructions_exact": true,
+  "canonical_global_optimality_claimed": false,
+  "canonical_outcome": "lossless-reduction-and-documented-certification-barrier",
+  "certificate_verification_passed": true,
+  "direct_and_territorial_policies_verified": true,
+  "direct_lower_and_pooled_upper_relations_verified": true,
+  "elapsed_seconds": 13.418171582976356,
+  "known_hybrid_witness_reproduced": true,
+  "passed": true,
+  "probability_normalization_exact": true,
+  "raw_equals_generated_feasible_signatures": true,
+  "raw_tie_counts_reconciled": true,
+  "reference_equals_reduced_feasibility": true,
+  "reference_equals_scaled_on_grid": true,
+  "signature_objective_lossless_on_grid": true,
+  "termination_reason": "completed-lossless-reduction-audit-and-bounded-state-space-analysis",
+  "time_budget_seconds": 120
+}

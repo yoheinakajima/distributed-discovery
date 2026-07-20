@@ -78,4 +78,4 @@ An individual signature's orbit under target relabeling is determined by the mul
 
 ## Evidence boundary
 
-The theorem and integer identity are analytic. The registered `signature-certificate.yml` run audits their implementations, reproduces the existing 21 certified tiny optima and raw-policy tie counts, and measures the canonical state space before any large search. A successful structural certificate does not by itself solve the canonical optimum.
+The theorem and integer identity are analytic. The registered `signature-certificate.yml` run audits their implementations, reproduces the existing 21 certified tiny optima and raw-policy tie counts, and measures the canonical state space before any large search. A successful structural certificate does not by itself solve the canonical optimum, and the pooled-planner value remains only an external numerical upper benchmark.

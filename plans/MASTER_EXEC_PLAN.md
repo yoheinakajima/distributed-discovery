@@ -100,6 +100,7 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - 2026-07-20: `make bootstrap`, `make verify`, `make site`, and `make papers` pass on the cleanup branch; 29 tests, 7 run manifests, 4 site pages, and the 12-page foundations artifact validate. A later post-commit rebuild exposed that the paper's timestamp depended on `HEAD`; this is superseded by the immutable-run epoch fix below.
 - 2026-07-20: cleanup PR #12's first artifact run `29781538938` failed after Tectonic installed successfully because Ubuntu lacked the paper validator's `pdfinfo` executable. The artifact workflow now installs `poppler-utils`; the failed run remains linked evidence and is not represented as passing.
 - 2026-07-20: the foundations builder formerly derived `SOURCE_DATE_EPOCH` from `HEAD`, so every commit changed the tracked PDF and made the next build dirty. It now uses the immutable passing canonical run's timezone-qualified `started_utc`, records that epoch in generated provenance and validation, tests the conversion independently of Git history, and normalizes Tectonic's parallel `Writing` log lines.
+- 2026-07-20: preliminary DD-001A run `20260720T220911Z_DD-001_6822d4c6_40bf5b06a5` passed the computational reduction audit, but claim review found its `certified_interval` output key was too strong because the pooled benchmark is explicitly not a private-team certificate. The run remains immutable and valid as a preliminary audit; presentation was corrected before the primary run.
 
 ## Decision log
 

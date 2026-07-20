@@ -1,0 +1,72 @@
+{
+  "canonical": {
+    "accuracy": "1/5",
+    "agent_multiset_search_without_target_quotient": 5817544508742203415773519264794208893444139238056614203268215932897118628684812510720,
+    "candidates": 16,
+    "feasible_signatures_before_target_quotient": 148348284928,
+    "global_optimum_status": "unresolved",
+    "global_target_symmetry_factor_upper_bound": 20922789888000,
+    "individual_orbit_multiset_search_is_lossless": false,
+    "individual_signature_target_orbits": 5806,
+    "minimum_failure_vector_bytes": 744645697119002037219010465893658738360849822471246618018331639410831184471656001372160,
+    "raw_policies_per_agent": 18446744073709551616,
+    "root_branching_factor": 148348284928,
+    "searchers": 8,
+    "termination_reason": "state-space audit proves naive exact signature enumeration infeasible"
+  },
+  "feasibility_theorem": "local constraints plus singleton Hall residual bounds are necessary and sufficient",
+  "objective_theorem": "policy profiles with identical signatures have identical discovery",
+  "result_type": "lossless-structural-reduction",
+  "schema_version": 1,
+  "small_feasibility_audits": [
+    {
+      "all_reconstructions_exact": true,
+      "candidates": 2,
+      "feasible_signature_count": 4,
+      "formula_signature_count": 4,
+      "locally_admissible_candidate_count": 12,
+      "raw_equals_generated": true,
+      "raw_policy_count": 4,
+      "raw_signature_multiplicity_sum": 4,
+      "reference_equals_reduced": true,
+      "target_orbit_count": 3
+    },
+    {
+      "all_reconstructions_exact": true,
+      "candidates": 3,
+      "feasible_signature_count": 26,
+      "formula_signature_count": 26,
+      "locally_admissible_candidate_count": 80,
+      "raw_equals_generated": true,
+      "raw_policy_count": 27,
+      "raw_signature_multiplicity_sum": 27,
+      "reference_equals_reduced": true,
+      "target_orbit_count": 7
+    },
+    {
+      "all_reconstructions_exact": true,
+      "candidates": 4,
+      "feasible_signature_count": 160,
+      "formula_signature_count": 160,
+      "locally_admissible_candidate_count": 560,
+      "raw_equals_generated": true,
+      "raw_policy_count": 256,
+      "raw_signature_multiplicity_sum": 256,
+      "reference_equals_reduced": true,
+      "target_orbit_count": 16
+    },
+    {
+      "all_reconstructions_exact": true,
+      "candidates": 5,
+      "feasible_signature_count": 922,
+      "formula_signature_count": 922,
+      "locally_admissible_candidate_count": 4032,
+      "raw_equals_generated": true,
+      "raw_policy_count": 3125,
+      "raw_signature_multiplicity_sum": 3125,
+      "reference_equals_reduced": true,
+      "target_orbit_count": 31
+    }
+  ],
+  "study_id": "DD-001"
+}

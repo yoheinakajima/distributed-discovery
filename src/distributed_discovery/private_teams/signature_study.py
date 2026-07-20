@@ -199,7 +199,8 @@ def _certificate(config: dict[str, Any], audits: list[dict[str, Any]]) -> dict[s
             "individual_orbit_multiset_search_is_lossless": False,
             "global_optimum_status": "unresolved",
             "termination_reason": (
-                "state-space audit proves naive exact signature enumeration infeasible"
+                "state-space audit shows naive exact signature enumeration "
+                "exceeds declared resources"
             ),
         },
         "small_feasibility_audits": audits,
@@ -332,7 +333,7 @@ def main() -> None:
         "direct_fraction": str(canonical_direct),
         "direct_decimal": f"{float(canonical_direct):.12f}",
         "pooled_planner_numerical_upper": canonical["pooled_planner_numerical_upper"],
-        "certified_interval": {
+        "current_benchmarks": {
             "lower_fraction": str(canonical_direct),
             "upper_numerical_benchmark": canonical["pooled_planner_numerical_upper"],
             "upper_is_private_team_certificate": False,
