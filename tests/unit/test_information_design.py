@@ -1,3 +1,4 @@
+from copy import deepcopy
 from fractions import Fraction
 
 from distributed_discovery.information_design.game import (
@@ -8,6 +9,7 @@ from distributed_discovery.information_design.game import (
     refines,
     symmetric_equilibrium,
 )
+from distributed_discovery.information_design.verification import verify_witness
 
 
 def test_four_state_partition_registry_is_complete() -> None:
@@ -57,3 +59,61 @@ def test_fixture_reversal_posteriors_and_equilibria() -> None:
     pure_fine = weight * Fraction(11, 15) + second_weight * Fraction(7, 9)
     assert selected_fine == Fraction(171, 308) < Fraction(5, 9)
     assert pure_fine == Fraction(3, 4) > Fraction(2, 3)
+
+
+def test_witness_verifier_detects_corruption() -> None:
+    likelihood = (
+        (Fraction(1, 2), Fraction(1, 8), Fraction(1, 8), Fraction(1, 4)),
+        (Fraction(1, 4), Fraction(1, 2), Fraction(1, 8), Fraction(1, 8)),
+        (Fraction(1, 8), Fraction(3, 8), Fraction(1, 8), Fraction(3, 8)),
+    )
+    fine_messages = []
+    for block in ((0, 1), (2, 3)):
+        weight, posterior = message_posterior(likelihood, block)
+        symmetric = symmetric_equilibrium(posterior)
+        fine_messages.append(
+            {
+                "probability": weight,
+                "posterior": posterior,
+                "anonymous_symmetric_equilibrium": {
+                    "strategy": symmetric.strategy,
+                    "discovery": symmetric.discovery,
+                },
+                "pure_equilibria": [
+                    {"actions": equilibrium.actions} for equilibrium in pure_equilibria(posterior)
+                ],
+                "planner_discovery": planner_discovery(posterior),
+            }
+        )
+    weight, posterior = message_posterior(likelihood, (0, 1, 2, 3))
+    symmetric = symmetric_equilibrium(posterior)
+    coarse_messages = [
+        {
+            "probability": weight,
+            "posterior": posterior,
+            "anonymous_symmetric_equilibrium": {
+                "strategy": symmetric.strategy,
+                "discovery": symmetric.discovery,
+            },
+            "pure_equilibria": [
+                {"actions": equilibrium.actions} for equilibrium in pure_equilibria(posterior)
+            ],
+            "planner_discovery": planner_discovery(posterior),
+        }
+    ]
+    witness = {
+        "more_informative_partition": ((0, 1), (2, 3)),
+        "less_informative_partition": ((0, 1, 2, 3),),
+        "selected_more": Fraction(171, 308),
+        "selected_less": Fraction(5, 9),
+        "pure_more_values": (Fraction(3, 4),),
+        "pure_less_values": (Fraction(2, 3),),
+        "planner_more": Fraction(3, 4),
+        "planner_less": Fraction(2, 3),
+        "messages_more": fine_messages,
+        "messages_less": coarse_messages,
+    }
+    assert verify_witness(witness, likelihood)["passed"]
+    corrupted = deepcopy(witness)
+    corrupted["selected_more"] += Fraction(1, 100)
+    assert not verify_witness(corrupted, likelihood)["passed"]

@@ -27,6 +27,7 @@ from distributed_discovery.information_design.game import (
     refines,
     symmetric_equilibrium,
 )
+from distributed_discovery.information_design.verification import verify_witness
 from distributed_discovery.validation.bootstrap import repository_root
 
 CONFIG = Path("studies/DD-002-information-design/configs/bounded-disclosure.yml")
@@ -315,6 +316,8 @@ def main() -> None:
         "messages_less": coarse["messages"],
     }
     _write_json(outputs / "selection-reversal-witness.json", witness)
+    witness_verification = verify_witness(witness, likelihood)
+    _write_json(outputs / "witness-verification.json", witness_verification)
 
     all_symmetric_checks = all(
         message["anonymous_symmetric_equilibrium"]["best_response_verified"]
@@ -340,6 +343,7 @@ def main() -> None:
             and all_symmetric_checks
             and planner_monotone
             and witness["selection_dependent_reversal"]
+            and witness_verification["passed"]
             and witness_expected
             and not config["randomized_disclosure_implemented"]
             and elapsed <= float(config["time_budget_seconds"])
@@ -358,6 +362,7 @@ def main() -> None:
         "anonymous_symmetric_equilibria_independently_checked": all_symmetric_checks,
         "all_refinement_planner_values_monotone": planner_monotone,
         "selection_dependent_reversal_verified": witness["selection_dependent_reversal"],
+        "independent_witness_verifier_passed": witness_verification["passed"],
         "configured_exact_values_reproduced": witness_expected,
         "randomized_disclosure_implemented": False,
         "elapsed_seconds": elapsed,
@@ -412,6 +417,7 @@ def main() -> None:
         config_path,
         root / "src/distributed_discovery/information_design/game.py",
         root / "src/distributed_discovery/information_design/study.py",
+        root / "src/distributed_discovery/information_design/verification.py",
     ]
     command = "make dd002-disclosure"
     manifest = {
