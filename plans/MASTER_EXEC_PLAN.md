@@ -6,7 +6,7 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-As inspected on 2026-07-20 UTC, the repository was empty, had no commits or remotes, and was on unborn branch `master`. Work moved to `codex/bootstrap-distributed-discovery`. M0 through M7 are complete. **Active milestone: M8 — GitHub Organization.**
+As inspected on 2026-07-20 UTC, the repository was empty, had no commits or remotes, and was on unborn branch `master`. Work moved to `codex/bootstrap-distributed-discovery`. M0 through M8 are complete. **Active milestone: M9 — Final Integration and Handoff.**
 
 ## Scope
 
@@ -32,8 +32,8 @@ Publishing, deploying, changing upstream, asserting novelty before literature re
 - M5 foundations note: completed 2026-07-20.
 - M6 DD-001 initial research: completed 2026-07-20.
 - M7 later-study briefs: completed 2026-07-20.
-- M8 GitHub organization: active.
-- M9 integration and handoff: pending.
+- M8 GitHub organization: completed 2026-07-20.
+- M9 integration and handoff: active.
 
 ## Progress checklist
 
@@ -53,6 +53,7 @@ Publishing, deploying, changing upstream, asserting novelty before literature re
 - [x] Built and visually validated the 12-page foundations companion note.
 - [x] Specified, implemented, executed, independently checked, and reported the initial DD-001 study.
 - [x] Upgrade DD-002 through DD-007 into serious executable research briefs without starting the studies.
+- [x] Prepare complete local GitHub taxonomy, templates, initial issue drafts, and a guarded setup helper without publishing.
 
 ## Discoveries and surprises
 
@@ -107,6 +108,7 @@ Each milestone runs its targeted Make commands plus schema, unit, integration, a
 - M5 `make foundations`: generated a canonical table and pooled-frontier figure from validated run artifacts, resolved 15 citation keys and 17 claim IDs, compiled 12 pages with Tectonic 0.16.9, and produced byte-identical PDF SHA-256 `3637f16e...` twice. Poppler rendered all pages; targeted full-resolution review covered data assets, dense lists, and references. Full repository verification reached 18 tests.
 - M6 `make dd001`: primary run completed the 21-point exact grid and 18 canonical restarts in 8.4 seconds inside a 120-second budget. Exact formula/direct enumeration, normalization, exhaustive counts, benchmark bounds, seeds, terminations, output hashes, and generated SVG checks passed. Claim-specific audit commands and targeted tests passed; six run manifests now validate.
 - M7 `make verify`: passed after adding six bounded research briefs and linking their next actions into the study registry; no DD-002 through DD-007 experiment was executed and no result claim was added.
+- M8 `python scripts/setup_github.py`: validated 23 labels, six milestones, and four nonduplicative initial issue drafts in offline dry-run mode. `make verify` passed 28 tests plus claim and run validation.
 
 ## Artifacts produced
 
@@ -126,14 +128,16 @@ M6 produced the frozen zero-communication model; rational factorized and direct 
 
 M7 produced six serious research briefs covering the minimum viable model, canonical relationship, estimands, adjacent literature, methods, falsifiable questions, dependencies, risks, first bounded executable experiment, and completion criteria for DD-002 through DD-007.
 
+M8 produced label and milestone manifests, six issue forms, four substantive initial issue drafts, an evidence-complete pull-request template, a non-destructive setup helper, an application checklist, and integration tests. Nothing was applied to GitHub because the repository has no remote.
+
 ## Blockers
 
 No M0 blocker. No Git remote exists, so later push/draft-PR operations are unavailable unless a private origin is configured.
 
 ## Recovery and restart instructions
 
-From the repository root, read the mandatory files in `AGENTS.md`, inspect `git status`, then continue M8. Materialize the required GitHub labels, milestones, issue templates, initial issue drafts, and pull-request checklist as local, reviewable configuration. Because no remote exists, do not publish or invoke mutating GitHub operations.
+From the repository root, read the mandatory files in `AGENTS.md`, inspect `git status`, then continue M9. Run and record the complete integration sequence: formatting, lint, typing, unit/integration/regression tests, claim/run schemas, canonical regression evidence, paper and site builds, links/content, reproducibility smoke checks, secret scan, upstream cleanliness, and Git review. Produce the final handoff without publishing or pushing.
 
 ## Outcome and retrospective
 
-M0–M7 meet their criteria. M2 made no general theorem or novelty claim from the atomic model; it records terminology collisions and treats effective channels/source concentration as model-specific or provisional. M3 keeps that calibration in the patch and does not modify canonical upstream. M4 is private, tracker-free, and un-deployed. M5 clearly attributes restated upstream results and keeps applications/open studies scoped. M6 certifies only bounded tiny cases and explicitly leaves the canonical private-team optimum unresolved. M7 defines bounded next experiments but does not run them or imply results.
+M0–M8 meet their criteria. M2 made no general theorem or novelty claim from the atomic model; it records terminology collisions and treats effective channels/source concentration as model-specific or provisional. M3 keeps that calibration in the patch and does not modify canonical upstream. M4 is private, tracker-free, and un-deployed. M5 clearly attributes restated upstream results and keeps applications/open studies scoped. M6 certifies only bounded tiny cases and explicitly leaves the canonical private-team optimum unresolved. M7 defines bounded next experiments but does not run them or imply results. M8 is locally complete and intentionally unapplied while no private remote is configured.

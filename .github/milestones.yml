@@ -1,0 +1,13 @@
+milestones:
+  - title: M0 Repository Bootstrap
+    description: Repository architecture, policies, validation, and study registry.
+  - title: M1 Canonical Reproduction
+    description: Pinned execution and independent checks of the canonical benchmark.
+  - title: M2 Foundations
+    description: Formal framework, terminology, and literature orientation.
+  - title: M3 Paper and Site Extension
+    description: Additive upstream materials, private companion site, and foundations note.
+  - title: M4 DD-001 Initial Results
+    description: First bounded private-information-team computations and audited claims.
+  - title: M5 Research Program Ready
+    description: Later-study briefs, organizational metadata, and integration handoff.

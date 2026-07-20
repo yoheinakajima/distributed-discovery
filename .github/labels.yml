@@ -1,0 +1,24 @@
+labels:
+  - {name: "area:foundations", color: "1d76db", description: "Definitions, theory, and research foundations"}
+  - {name: "area:paper", color: "5319e7", description: "Manuscripts, references, and paper builds"}
+  - {name: "area:site", color: "0e8a16", description: "Private companion site and content pipeline"}
+  - {name: "area:infrastructure", color: "6f42c1", description: "Repository, validation, and reproducibility infrastructure"}
+  - {name: "study:DD-000", color: "0052cc", description: "Foundations and canonical benchmark"}
+  - {name: "study:DD-001", color: "0052cc", description: "Private-information teams"}
+  - {name: "study:DD-002", color: "0052cc", description: "Information design for discovery"}
+  - {name: "study:DD-003", color: "0052cc", description: "Source networks and effective channels"}
+  - {name: "study:DD-004", color: "0052cc", description: "Sequential discovery"}
+  - {name: "study:DD-005", color: "0052cc", description: "Overlapping coverage"}
+  - {name: "study:DD-006", color: "0052cc", description: "Discovery mechanisms"}
+  - {name: "study:DD-007", color: "0052cc", description: "Empirical discovery audits"}
+  - {name: "type:research", color: "d4c5f9", description: "Research question or design task"}
+  - {name: "type:proof", color: "bfdadc", description: "Formal statement or proof audit"}
+  - {name: "type:experiment", color: "c2e0c6", description: "Bounded computational experiment"}
+  - {name: "type:reproduction", color: "fef2c0", description: "Pinned-source reproduction"}
+  - {name: "type:documentation", color: "0075ca", description: "Documentation-only change"}
+  - {name: "type:bug", color: "d73a4a", description: "Defect in software, artifacts, paper, or site"}
+  - {name: "status:blocked", color: "b60205", description: "Cannot progress without a stated dependency"}
+  - {name: "status:needs-verification", color: "fbca04", description: "Evidence or review is incomplete"}
+  - {name: "status:verified", color: "0e8a16", description: "Required verification has passed"}
+  - {name: "claim:conjecture", color: "f9d0c4", description: "Claim remains conjectural"}
+  - {name: "claim:negative-result", color: "c5def5", description: "Scoped null, impossibility, or counterexample result"}
