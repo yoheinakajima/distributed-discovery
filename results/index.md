@@ -5,4 +5,4 @@
 - [`exploratory/`](exploratory/README.md): observations and lower bounds not promoted.
 - [`refuted/`](refuted/README.md): preserved negative, failed, and superseded results.
 
-M1 canonical evidence is indexed in [`baseline/`](baseline/README.md). DD-001 exact tiny-grid and bounded canonical-search runs are under [`verified/`](verified/README.md); each run's manifest distinguishes certified outputs from heuristic lower bounds.
+The M9 acceptance reproduction is `baseline/20260720T202314Z_DD-000_88613408_217c602fa0`; it started from a clean research commit and passed upstream plus independent checks. Claim records continue to cite their originally audited run IDs. DD-001 exact tiny-grid and bounded canonical-search runs are under [`verified/`](verified/README.md); each run's manifest distinguishes certified outputs from heuristic lower bounds.

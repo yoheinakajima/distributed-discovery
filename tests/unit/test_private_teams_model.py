@@ -8,6 +8,7 @@ from distributed_discovery.private_teams.model import (
     pooled_planner_value,
     territorial_profile,
 )
+from distributed_discovery.private_teams.study import _sanitize_package_snapshot
 
 
 def test_formula_matches_direct_enumeration_and_normalizes() -> None:
@@ -35,3 +36,11 @@ def test_pooled_planner_dominates_fixed_private_profile() -> None:
     accuracy = Fraction(2, 3)
     private = evaluate_formula(direct_profile(3, 2), 3, accuracy)
     assert pooled_planner_value(3, 2, accuracy) >= private
+
+
+def test_package_snapshot_omits_private_local_project_url() -> None:
+    lines = [
+        "attrs==26.1.0",
+        "distributed-discovery @ file:///private/checkout/distributed-discovery",
+    ]
+    assert _sanitize_package_snapshot(lines) == ["attrs==26.1.0"]

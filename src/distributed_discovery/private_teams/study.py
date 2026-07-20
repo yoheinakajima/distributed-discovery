@@ -10,6 +10,7 @@ import os
 import platform
 import subprocess
 import time
+from collections.abc import Iterable
 from datetime import UTC, datetime
 from fractions import Fraction
 from pathlib import Path
@@ -50,6 +51,19 @@ def _sha256(path: Path) -> str:
 
 def _write_json(path: Path, value: Any) -> None:
     path.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def _sanitize_package_snapshot(lines: Iterable[str]) -> list[str]:
+    """Omit the local project URL because its commit and lock are recorded separately."""
+    return sorted(
+        line for line in lines if not line.lower().startswith("distributed-discovery @ file:")
+    )
+
+
+def _package_snapshot(root: Path) -> list[str]:
+    """Capture third-party versions without serializing a private checkout path."""
+    lines = subprocess.check_output(["uv", "pip", "freeze"], cwd=root, text=True).splitlines()
+    return _sanitize_package_snapshot(lines)
 
 
 def _git(root: Path, *args: str) -> str:
@@ -408,9 +422,7 @@ def main() -> None:
             "platform": platform.platform(),
             "machine": platform.machine(),
             "python": platform.python_version(),
-            "packages": subprocess.check_output(
-                ["uv", "pip", "freeze"], cwd=root, text=True
-            ).splitlines(),
+            "packages": _package_snapshot(root),
         },
     )
     outputs = sorted(path for path in output_dir.rglob("*") if path.is_file())

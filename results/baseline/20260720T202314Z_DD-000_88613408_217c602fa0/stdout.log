@@ -1,0 +1,66 @@
+[ok] reciprocal-share identity
+[ok] symmetric equilibrium, pure corner, and G=N lambda (200 posteriors)
+[ok] uniform symmetric-mixing ratio: N=8 -> 1.523482; limit e/(e-1)=1.581977
+     N= 2: tight PoA=1.500000 = 2-1/N
+     N= 8: tight PoA=1.875000 = 2-1/N
+     N=16: tight PoA=1.937500 = 2-1/N
+     N=32: tight PoA=1.968750 = 2-1/N
+[ok] exact mixed price of anarchy is 2-1/N (tight family)
+[ok] sole-rescue fully implements the top-N portfolio in pure Nash equilibrium
+[ok] closed-form likelihood coefficients match direct enumeration on (16,8,0.20), (7,5,0.30), (9,4,0.15)
+[ok] batched equilibrium solver matches the scalar solver on 60 random class posteriors
+[ok] expected distinct private proposals strictly decreasing in c (6.156850 at c=0 to 1.361925 at c=0.95)
+[ok] blind coordinated portfolio N/M = 0.500000 > consensus 0.383469
+     blind uncoordinated 1-(1-1/M)^N = 0.403280526167 (footnote value)
+     blind-sentinel hybrid G_k maximized at k=0 (extensions claim)
+[ok] partial conformity: G(a) strictly decreasing, a=0..8: 0.8322, 0.7913, 0.7461, 0.6967, 0.6429, 0.5848, 0.5222, 0.4551, 0.3835
+[ok] average action quality and redundancy identity N*Q - G = E[(K-1)^+]
+     protocol            Q               G               redundant hits
+     consensus         0.383468709731  0.383468709731  2.684280968119
+     market            0.344136160273  0.599099252439  2.153990029749
+     private           0.200000000000  0.832227840000  0.767772160000
+     planner           0.107427655775  0.859421246199  0.000000000000
+[ok] scaling limits (alpha=0.5, r=3.75): blind=0.500000, private=0.846645033155, portfolio=0.873580202098
+     M=  16, N=  8: consensus~0.3850, private=0.832228, portfolio~0.862252
+     M=  64, N= 32: consensus~0.2342, private=0.842798, portfolio~0.868048
+     M= 256, N=128: consensus~0.1338, private=0.845668, portfolio~0.873583
+[ok] Monte Carlo convergence diagnostic: consensus declines toward 0, private and portfolio approach their limits
+[ok] gap decomposition: private-market = 0.299634496285 = g1 0.287540562834 + collision leak 0.012093933451
+[ok] market scaling limit: Lambda=1.094021073740, G=0.547010536870 (tilted form matches, residual -1.1e-16, active counts >= 2)
+     M=   16, N=   8: market~0.599127 (se 0.000529)
+     M=   64, N=  32: market~0.574026 (se 0.000483)
+     M=  256, N= 128: market~0.558242 (se 0.000424)
+     M= 1024, N= 512: market~0.549421 (se 0.000469)
+[ok] finite-M market values decline monotonically toward the limit
+     M=  16, N=  8, p=0.2: consensus~0.3851
+     M=  64, N= 32, p=0.2: consensus~0.9472
+     M= 256, N=128, p=0.2: consensus~1.0000
+[ok] abundant-evidence regime: fixed-p consensus rises toward one (the paradox is a sparse-evidence phenomenon)
+[ok] grid scan: 72 (M,N,p) combinations, sign changes at most once everywhere (52 single crossings, 0 market-dominant, 20 private-dominant); details in grid_crossings.csv
+
+Canonical independent values
+  consensus              0.383468709731
+  symmetric market       0.599099252439
+  private clue-following 0.832227840000
+  planner portfolio      0.859421246199
+  E distinct (market)    2.673494083278
+  E distinct (private)   6.156849828175
+  crossover c*           0.788461656521 at G=0.433893464268
+  market scaling limit   Lambda=1.094021073740, G=0.547010536870
+
+Common-cue table
+ c     consensus    market       private      planner
+ 0.00  0.383468710  0.599099252  0.832227840  0.859421246
+ 0.10  0.366833773  0.588452868  0.822024649  0.853642320
+ 0.20  0.328971995  0.573444592  0.796069788  0.839337224
+ 0.30  0.288139754  0.572406411  0.758691312  0.819454074
+ 0.40  0.278255961  0.568834717  0.711728795  0.795457603
+ 0.50  0.271297439  0.551553945  0.655495160  0.767925304
+ 0.60  0.258052951  0.519957017  0.589402911  0.736937753
+ 0.70  0.239832038  0.477330438  0.512342648  0.702317142
+ 0.80  0.220757462  0.428236389  0.422888251  0.663759742
+ 0.90  0.205898919  0.387789899  0.319389582  0.620899711
+ 0.95  0.201559317  0.380115632  0.261804244  0.597731316
+
+[ok] figures and CSVs written to results/baseline/20260720T202314Z_DD-000_88613408_217c602fa0/outputs
+All v8.6 checks passed.

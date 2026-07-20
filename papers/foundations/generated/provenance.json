@@ -1,11 +1,11 @@
 {
   "inputs": {
     "bibliography/references.bib": "7b2b89ae14a2234798803bde57bca55c2d907f1a7cdcc2efe69c6144739d27f0",
-    "results/baseline/20260720T190336Z_DD-000_32dd1c32_217c602fa0/metrics.json": "9e732c8cd817440774dcd9fd1e05ebff472eddceb2eefd235c0f7c4d194b61f7",
-    "results/baseline/20260720T190336Z_DD-000_32dd1c32_217c602fa0/outputs/canonical_quality.csv": "542e8e179fb21fc8490198fc03a86f2da5edf54a48c66f82ada73bdbfdbea960",
-    "results/baseline/20260720T190336Z_DD-000_32dd1c32_217c602fa0/outputs/independent_frontier.csv": "4617a7c94acd1e51a4b423dc429fb460d65e5f5e10268ac0a8302d8f46bc13ac"
+    "results/baseline/20260720T202314Z_DD-000_88613408_217c602fa0/metrics.json": "f5571f06034fe44f2b5cb0768504ae517062b7829e54fb803a6f4e4fa3b1fb4e",
+    "results/baseline/20260720T202314Z_DD-000_88613408_217c602fa0/outputs/canonical_quality.csv": "542e8e179fb21fc8490198fc03a86f2da5edf54a48c66f82ada73bdbfdbea960",
+    "results/baseline/20260720T202314Z_DD-000_88613408_217c602fa0/outputs/independent_frontier.csv": "4617a7c94acd1e51a4b423dc429fb460d65e5f5e10268ac0a8302d8f46bc13ac"
   },
-  "run_id": "20260720T190336Z_DD-000_32dd1c32_217c602fa0",
+  "run_id": "20260720T202314Z_DD-000_88613408_217c602fa0",
   "schema_version": 1,
   "upstream_commit": "5025cc8e8f2f8ca015dff2066f08f81ad5715a51"
 }

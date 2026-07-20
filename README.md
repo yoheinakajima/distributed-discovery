@@ -10,7 +10,7 @@ This repository is private and must not be published or deployed. Upstream is re
 
 ## Status and navigation
 
-Verified, sourced, exploratory, refuted, and open claims are distinguished in [`claims/claims.yml`](claims/claims.yml) under the policy in [`docs/claim-status-policy.md`](docs/claim-status-policy.md). The active work and exact resume point are in [`plans/MASTER_EXEC_PLAN.md`](plans/MASTER_EXEC_PLAN.md). See [`studies/index.md`](studies/index.md), [`results/index.md`](results/index.md), and [`docs/index.md`](docs/index.md) for research navigation.
+Verified, sourced, exploratory, refuted, and open claims are distinguished in [`claims/claims.yml`](claims/claims.yml) under the policy in [`docs/claim-status-policy.md`](docs/claim-status-policy.md). DD-000 through DD-001 have reproducible evidence; DD-002 through DD-007 have actionable briefs but no results. The completed execution record and exact resume point are in [`plans/MASTER_EXEC_PLAN.md`](plans/MASTER_EXEC_PLAN.md). See [`reports/project-status.md`](reports/project-status.md), [`studies/index.md`](studies/index.md), [`results/index.md`](results/index.md), and [`docs/index.md`](docs/index.md) for research navigation.
 
 ## Setup and common commands
 
@@ -32,11 +32,11 @@ make foundations          # build/validate the companion note
 make dd001                # run the registered DD-001 baseline configuration
 make papers               # build all paper artifacts
 make site                 # build the private local companion site
-make all                  # complete routine validation
+make all                  # verify, reproduce canonical baseline, build papers and site
 ```
 
-Until M1 and M6 complete, baseline and DD-001 commands may report precise registered blockers rather than research results. Paper and site outputs remain local.
+`make reproduce-baseline` and `make dd001` create new immutable run directories, so use them intentionally. Paper and site outputs remain local; no deployment target exists.
 
 ## Resume protocol
 
-New agents must read `AGENTS.md`, `.agent/PLANS.md`, `plans/MASTER_EXEC_PLAN.md`, `docs/repository-contract.md`, and the active study files. Then inspect Git status and run the acceptance command named at the plan’s restart point.
+New agents must read `AGENTS.md`, `.agent/PLANS.md`, `plans/MASTER_EXEC_PLAN.md`, `docs/repository-contract.md`, and the active study files. Then inspect Git status and run the acceptance command named at the plan’s restart point. The recommended next task is the certified canonical DD-001 upper-bound issue drafted under `.github/initial-issues/`.

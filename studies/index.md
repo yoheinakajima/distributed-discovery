@@ -2,13 +2,13 @@
 
 | ID | Title | Status | First executable work |
 |---|---|---|---|
-| DD-000 | Foundations of Distributed Discovery | active | Reproduce upstream, then formalize definitions |
-| DD-001 | Distributed Discovery with Private Information | active | Prove hybrid thresholds and add certified upper bounds |
-| DD-002 | Information Design for Discovery | registered | Two-action disclosure counterexample search |
-| DD-003 | Effective Channels | registered | Enumerate small latent-source graphs |
-| DD-004 | Sequential Distributed Discovery | registered | Compare parallel/sequential tiny box models |
-| DD-005 | Overlapping Coverage | registered | Test identities on small coverage functions |
-| DD-006 | Discovery Mechanisms | registered | Specify a two-agent reporting game |
-| DD-007 | Empirical Discovery Audits | registered | Synthetic diagnostic recovery study |
+| DD-000 | Foundations of Distributed Discovery | complete foundations | Maintain canonical regression and framework |
+| DD-001 | Distributed Discovery with Private Information | active | Certify a canonical upper bound; characterize hybrid thresholds |
+| DD-002 | Information Design for Discovery | brief ready (priority 2) | Enumerate bounded deterministic disclosure partitions |
+| DD-003 | Effective Channels | brief ready (priority 3) | Enumerate small nonisomorphic latent-source graphs |
+| DD-004 | Sequential Distributed Discovery | brief ready (priority 5) | Validate the perfect-elimination dynamic program |
+| DD-005 | Overlapping Coverage | brief ready (priority 4) | Minimize failures of atomic coverage diagnostics |
+| DD-006 | Discovery Mechanisms | brief ready (priority 6) | Enumerate bounded transfer tables by observability regime |
+| DD-007 | Empirical Discovery Audits | brief ready (priority 7) | Version the synthetic audit event schema |
 
-Each directory contains its question, model, plan, claims view, status, results index, and report. DD-001 is active after completion of the DD-000 foundations milestones.
+Each directory contains its question, model, plan, claims view, status, results index, and report. DD-002 through DD-007 also contain a serious `brief.md`; “brief ready” does not mean the experiment has run.

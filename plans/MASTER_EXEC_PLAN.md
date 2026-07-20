@@ -6,7 +6,7 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-As inspected on 2026-07-20 UTC, the repository was empty, had no commits or remotes, and was on unborn branch `master`. Work moved to `codex/bootstrap-distributed-discovery`. M0 through M8 are complete. **Active milestone: M9 — Final Integration and Handoff.**
+As inspected on 2026-07-20 UTC, the repository was empty, had no commits or remotes, and was on unborn branch `master`. Work moved to `codex/bootstrap-distributed-discovery`. **M0 through M9 are complete. Active research: DD-001 canonical certification.**
 
 ## Scope
 
@@ -33,7 +33,7 @@ Publishing, deploying, changing upstream, asserting novelty before literature re
 - M6 DD-001 initial research: completed 2026-07-20.
 - M7 later-study briefs: completed 2026-07-20.
 - M8 GitHub organization: completed 2026-07-20.
-- M9 integration and handoff: active.
+- M9 integration and handoff: completed 2026-07-20.
 
 ## Progress checklist
 
@@ -54,6 +54,7 @@ Publishing, deploying, changing upstream, asserting novelty before literature re
 - [x] Specified, implemented, executed, independently checked, and reported the initial DD-001 study.
 - [x] Upgrade DD-002 through DD-007 into serious executable research briefs without starting the studies.
 - [x] Prepare complete local GitHub taxonomy, templates, initial issue drafts, and a guarded setup helper without publishing.
+- [x] Run the full acceptance sequence and produce a fresh-checkout handoff.
 
 ## Discoveries and surprises
 
@@ -76,6 +77,9 @@ Publishing, deploying, changing upstream, asserting novelty before literature re
 - 2026-07-20: an initial 17-point exact grid was expanded after a bounded audit found informative `N<M` hybrid gains. Three passing runs are preserved; `20260720T200447Z_DD-001_6eb12861_ba766d1eba` is primary because it contains the final 21 points and generated phase figure.
 - 2026-07-20: direct clue-following is not generally private-team optimal. At `(M,N,p)=(3,2,2/5)`, exhaustive rational enumeration gives `7/10` versus direct `16/25`. By contrast, 18 canonical coordinate-ascent starts all end at direct value `325089/390625`; this is a lower-bound search observation, not proof of global optimality.
 - 2026-07-20: DD-002 through DD-007 can each begin with a bounded exact or seeded synthetic experiment. The briefs make equilibrium selection, latent-source provenance, stopping objectives, overlap assumptions, mechanism observability, and empirical identification explicit before implementation.
+- 2026-07-20: the M9 security scan found a local checkout URL in three DD-001 `uv pip freeze` snapshots. The local-project line was redundant with the committed source/lock and was removed; future snapshots filter it. No credential- or token-shaped secret was found.
+- 2026-07-20: the clean M8 acceptance run `20260720T202314Z_DD-000_88613408_217c602fa0` passed the pinned verifier and all independent checks. The rebuilt foundations PDF is 12 pages; the additive patched preview is 30 pages and still applies to pristine upstream.
+- 2026-07-20: the final staged whitespace audit flagged CRLF endings in upstream-generated CSV evidence as trailing whitespace. Those bytes are covered by the run's output hashes, so the immutable CSVs were preserved and the authored-file whitespace audit was run with that generated output directory excluded.
 
 ## Decision log
 
@@ -109,6 +113,7 @@ Each milestone runs its targeted Make commands plus schema, unit, integration, a
 - M6 `make dd001`: primary run completed the 21-point exact grid and 18 canonical restarts in 8.4 seconds inside a 120-second budget. Exact formula/direct enumeration, normalization, exhaustive counts, benchmark bounds, seeds, terminations, output hashes, and generated SVG checks passed. Claim-specific audit commands and targeted tests passed; six run manifests now validate.
 - M7 `make verify`: passed after adding six bounded research briefs and linking their next actions into the study registry; no DD-002 through DD-007 experiment was executed and no result claim was added.
 - M8 `python scripts/setup_github.py`: validated 23 labels, six milestones, and four nonduplicative initial issue drafts in offline dry-run mode. `make verify` passed 28 tests plus claim and run validation.
+- M9 `make all`: formatting, lint, strict typing, 28 unit/integration/regression tests, claim/run validation, a clean canonical reproduction, the 12-page foundations build, and the four-page site build passed. `make upstream-patch`, PDF metadata/render inspection, internal-link/content tests, provenance/hash validation, local-path/token scans, and upstream/Git hygiene checks also passed. A final provenance-sanitizer unit test brought the post-documentation verification total to 29 passing tests; its first format check and a direct audit missing `PYTHONPATH` stopped safely and were corrected before the passing rerun.
 
 ## Artifacts produced
 
@@ -130,14 +135,16 @@ M7 produced six serious research briefs covering the minimum viable model, canon
 
 M8 produced label and milestone manifests, six issue forms, four substantive initial issue drafts, an evidence-complete pull-request template, a non-destructive setup helper, an application checklist, and integration tests. Nothing was applied to GitHub because the repository has no remote.
 
+M9 produced a clean canonical acceptance run, refreshed generated paper provenance, revalidated both PDFs and the local site, scrubbed redundant private checkout paths from environment snapshots, updated all navigation/status surfaces, and created the comprehensive project handoff.
+
 ## Blockers
 
-No M0 blocker. No Git remote exists, so later push/draft-PR operations are unavailable unless a private origin is configured.
+No validation blocker. No Git remote exists, so push, draft-PR creation, and application of GitHub metadata remain unavailable unless a private origin is explicitly configured.
 
 ## Recovery and restart instructions
 
-From the repository root, read the mandatory files in `AGENTS.md`, inspect `git status`, then continue M9. Run and record the complete integration sequence: formatting, lint, typing, unit/integration/regression tests, claim/run schemas, canonical regression evidence, paper and site builds, links/content, reproducibility smoke checks, secret scan, upstream cleanliness, and Git review. Produce the final handoff without publishing or pushing.
+From the repository root, read the mandatory files in `AGENTS.md`, `reports/project-status.md`, and the DD-001 study files; inspect `git status`; then open `.github/initial-issues/dd001-canonical-upper-bound.md`. Estimate the certification search/proof complexity before implementation. Do not promote the canonical coordinate-ascent observation to global optimality.
 
 ## Outcome and retrospective
 
-M0–M8 meet their criteria. M2 made no general theorem or novelty claim from the atomic model; it records terminology collisions and treats effective channels/source concentration as model-specific or provisional. M3 keeps that calibration in the patch and does not modify canonical upstream. M4 is private, tracker-free, and un-deployed. M5 clearly attributes restated upstream results and keeps applications/open studies scoped. M6 certifies only bounded tiny cases and explicitly leaves the canonical private-team optimum unresolved. M7 defines bounded next experiments but does not run them or imply results. M8 is locally complete and intentionally unapplied while no private remote is configured.
+M0–M9 meet their criteria and the branch is ready for human review. M2 made no general theorem or novelty claim from the atomic model; it records terminology collisions and treats effective channels/source concentration as model-specific or provisional. M3 keeps that calibration in the patch and does not modify canonical upstream. M4 is private, tracker-free, and un-deployed. M5 clearly attributes restated upstream results and keeps applications/open studies scoped. M6 certifies only bounded tiny cases and explicitly leaves the canonical private-team optimum unresolved. M7 defines bounded next experiments but does not run them or imply results. M8 is locally complete and intentionally unapplied while no private remote is configured. M9 independently re-exercised the acceptance interface and preserved all remaining evidence limits.

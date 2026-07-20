@@ -2,7 +2,6 @@
   "machine": "arm64",
   "packages": [
     "attrs==26.1.0",
-    "distributed-discovery @ file:///Users/yoheinakajima/Documents/distributed-discovery",
     "iniconfig==2.3.0",
     "jsonschema==4.26.0",
     "jsonschema-specifications==2025.9.1",
