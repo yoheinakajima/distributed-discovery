@@ -1,0 +1,18 @@
+{
+  "citation_key_count": 15,
+  "citation_keys_resolved": true,
+  "claim_id_count": 17,
+  "claim_ids_resolved": true,
+  "compile_exit_status": 0,
+  "compiler": "Tectonic 0.16.9",
+  "generated_assets": [
+    "generated/canonical-table.tex",
+    "generated/frontier-figure.tex",
+    "generated/provenance.json"
+  ],
+  "page_count": 12,
+  "pdf_sha256": "3637f16e771b9f14042257b812471db1096b0738c3993eb2b5a6fa790ed81b12",
+  "required_sections_present": true,
+  "schema_version": 1,
+  "unresolved_references_or_citations": false
+}

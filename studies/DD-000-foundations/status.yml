@@ -1,6 +1,6 @@
 study_id: DD-000
 status: active
 evidence_status: infrastructure-only
-active_milestone: M5
-next_action: build and visually validate the foundations companion note
-updated_utc: 2026-07-20T19:48:00Z
+active_milestone: complete
+next_action: maintain foundations artifacts while DD-001 becomes active
+updated_utc: 2026-07-20T20:15:00Z

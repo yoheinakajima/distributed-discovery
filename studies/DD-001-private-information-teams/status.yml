@@ -1,6 +1,6 @@
 study_id: DD-001
-status: registered
+status: active
 evidence_status: no-results
 dependency: DD-000
-next_action: implement exact fixed-policy evaluator after M2
-updated_utc: 2026-07-20T00:00:00Z
+next_action: freeze the zero-communication model and implement exact fixed-policy evaluation
+updated_utc: 2026-07-20T20:15:00Z

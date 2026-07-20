@@ -1,0 +1,22 @@
+% Generated from outputs/independent_frontier.csv; do not edit by hand.
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[x=0.82cm,y=0.085cm]
+\draw[->] (0.7,35) -- (8.55,35) node[right] {budget $L$};
+\draw[->] (0.7,35) -- (0.7,91) node[above] {$G$ (percent)};
+\foreach \x in {1,...,8} {\draw (\x,34.4)--(\x,35.6) node[below=4pt] {\small \x};}
+\foreach \y in {40,50,...,90} {\draw (0.62,\y)--(0.78,\y) node[left=3pt] {\small \y};}
+\draw[dashed,private,thick] (0.7,83.222784) -- (8.35,83.222784) node[above left] {\small private benchmark};
+\draw[planner,very thick] plot coordinates {(1,38.346871) (2,52.753226) (3,60.452780) (4,67.058074) (5,73.560421) (6,79.443531) (7,83.601040) (8,85.942125)};
+\fill[planner] (1,38.346871) circle (2pt);
+\fill[planner] (2,52.753226) circle (2pt);
+\fill[planner] (3,60.452780) circle (2pt);
+\fill[planner] (4,67.058074) circle (2pt);
+\fill[planner] (5,73.560421) circle (2pt);
+\fill[planner] (6,79.443531) circle (2pt);
+\fill[planner] (7,83.601040) circle (2pt);
+\fill[planner] (8,85.942125) circle (2pt);
+\end{tikzpicture}
+\caption{Pooled-information discovery frontier by coordinated action budget. The first budget that weakly exceeds private clue-following is seven (DD-C-0008).}
+\label{fig:frontier}
+\end{figure}

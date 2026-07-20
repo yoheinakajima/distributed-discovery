@@ -19,6 +19,7 @@ experiments/manifests/tmp/
 *.pdf
 !results/baseline/**/outputs/figures/*.pdf
 !papers/upstream-extension/preview/*.pdf
+!papers/foundations/Foundations_of_Distributed_Discovery.pdf
 *.aux
 *.bbl
 *.blg
@@ -28,5 +29,6 @@ experiments/manifests/tmp/
 !results/**/stdout.log
 !results/**/stderr.log
 !papers/upstream-extension/preview/build.log
+!papers/foundations/build.log
 *.out
 *.toc
