@@ -1,0 +1,98 @@
+[
+  {
+    "accuracy": "2/5",
+    "candidates": 3,
+    "direct_enumeration": "7/10",
+    "expected": "7/10",
+    "formula": "7/10",
+    "normalization": "1",
+    "passed": true,
+    "profile": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        2
+      ]
+    ],
+    "raw_optimum": "7/10",
+    "signature_optimum": "7/10"
+  },
+  {
+    "accuracy": "7/15",
+    "candidates": 3,
+    "direct_enumeration": "11/15",
+    "expected": "11/15",
+    "formula": "11/15",
+    "normalization": "1",
+    "passed": true,
+    "profile": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        2
+      ]
+    ],
+    "raw_optimum": "11/15",
+    "signature_optimum": "11/15"
+  },
+  {
+    "accuracy": "3/10",
+    "candidates": 4,
+    "direct_enumeration": "8/15",
+    "expected": "8/15",
+    "formula": "8/15",
+    "normalization": "1",
+    "passed": true,
+    "profile": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        2,
+        3
+      ]
+    ],
+    "raw_optimum": "8/15",
+    "signature_optimum": "8/15"
+  },
+  {
+    "accuracy": "13/40",
+    "candidates": 4,
+    "direct_enumeration": "11/20",
+    "expected": "11/20",
+    "formula": "11/20",
+    "normalization": "1",
+    "passed": true,
+    "profile": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        2,
+        3
+      ]
+    ],
+    "raw_optimum": "11/20",
+    "signature_optimum": "11/20"
+  }
+]

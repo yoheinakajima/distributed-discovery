@@ -1,0 +1,34 @@
+{
+  "command": "make dd001-thresholds",
+  "config_hash_sha256": "5e16a90ad131f06d7a8e0278e1897c52f3dbfef776a815b7e75112b76a433cb0",
+  "dependency_lock_hash_sha256": "44817b839ec69b327bd25a79ba5a14569628e5345ed6e496fd2badfe5c7f5bb5",
+  "ended_utc": "2026-07-20T22:39:05.207136Z",
+  "exit_status": 0,
+  "git_commit": "b2cc23f4505c293555a18e90bc4af9e5e139c73d",
+  "git_dirty": false,
+  "input_hashes": {
+    "src/distributed_discovery/private_teams/model.py": "48978d85df2a92b2951369dafde3ddf20e52e40c8a241c0f04f2a04c7105a277",
+    "src/distributed_discovery/private_teams/optimize.py": "39dc0e236e397f1449613439545b42ee7165a3ebd02fb0d8ec3d58b0c9d30b0d",
+    "src/distributed_discovery/private_teams/signatures.py": "b4c143937a5764bb927cf6ff3dcb485dc163f4d30afcb93ab6356050cf1a99ca",
+    "src/distributed_discovery/private_teams/threshold_study.py": "97e940c6198b2f0103a103a0e475e6f3991e4fb4d494810d1a831b0bf685a8cd",
+    "src/distributed_discovery/private_teams/thresholds.py": "883a8f4c70beb4d17381515add5f83917b1df47a34f6cbcfd10c6f9dc3afbd31",
+    "studies/DD-001-private-information-teams/configs/two-agent-thresholds.yml": "6301e4381fc841ba2dfa865a4d0d4ec7e2b44010bc95fa27f347e960113ebaf5"
+  },
+  "outputs": {
+    "outputs/anti-informative-counterexamples.json": "da2d2a8b6854683c85062a1918b3222959e17230e767b2553304a736684870f6",
+    "outputs/known-witnesses.json": "47d933bfc1ae8f611599b91a289747bdc413de5d62428ea599e29cea6e036b7d",
+    "outputs/restricted-phase-table.csv": "36eff4f2bca52d82b9d2953ea0bb1a9107988b93872206a4f78d980d96a286e6",
+    "outputs/restricted-phase-table.svg": "a343eda55ece1433875c0e22dae51a185a54c3f367fc8f7189561dea914ba64c",
+    "outputs/threshold-certificate.json": "a0464639f761ad5c8899303fc94f96413108896384fb9b98e8dcc21ffede5638"
+  },
+  "random_seeds": {
+    "algorithm": null,
+    "model": null
+  },
+  "run_id": "20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1",
+  "schema_version": 1,
+  "started_utc": "2026-07-20T22:38:29.303624Z",
+  "study_id": "DD-001",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

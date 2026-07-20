@@ -1,0 +1,84 @@
+[
+  {
+    "accuracy": "0",
+    "candidates": 3,
+    "signature_profile": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "strict_counterexample": true,
+    "three_family_benchmark": "2/3",
+    "unrestricted_optimum": "11/12"
+  },
+  {
+    "accuracy": "0",
+    "candidates": 4,
+    "signature_profile": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "strict_counterexample": true,
+    "three_family_benchmark": "1/2",
+    "unrestricted_optimum": "2/3"
+  }
+]

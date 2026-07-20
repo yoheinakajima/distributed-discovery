@@ -8,7 +8,7 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-The historical M0–M9 bootstrap and operational Milestone A are complete. Public GitHub `main` is at cleanup merge `1add8de5a349c57085928da8aa54da85e49c5077`, Pages run `29781940577` passed, and all five required routes returned HTTP 200. **Active milestone: B — DD-001A lossless policy signatures, issue #9, branch `research/dd001-signature-certificate`, draft PR #13.**
+The historical M0–M9 bootstrap and operational Milestone A are complete. DD-001A merged as `c16144e8a3f5287d1117b768856f559064a89bc0`; Pages run `29784048496` passed. **Active milestone: C — DD-001B two-searcher thresholds, issue #11, branch `research/dd001-two-agent-thresholds`, draft PR #14.**
 
 ## Scope
 
@@ -37,8 +37,8 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - M8 GitHub organization: completed 2026-07-20.
 - M9 integration and handoff: completed 2026-07-20.
 - A public/MIT/Pages/GitHub cleanup: completed 2026-07-20.
-- B DD-001A policy-signature reduction and certification barrier: implementation and primary evidence complete; PR #13 validation/merge pending.
-- C DD-001B two-agent hybrid thresholds: next after B merge.
+- B DD-001A policy-signature reduction and certification barrier: completed 2026-07-20.
+- C DD-001B two-agent hybrid thresholds: implementation and primary evidence complete; PR #14 validation/merge pending.
 - D DD-002 bounded disclosure fixture: pending C.
 - E DD-003 bounded source-graph fixture: pending D.
 - Integrated handoff: pending E or a hard execution limit.
@@ -72,8 +72,12 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - [x] Implement independent matching/reference and closed-form/scaled signature evaluators with reconstruction and corruption tests.
 - [x] Run the bounded DD-001A primary audit; reproduce all 21 tiny optima and raw tie counts; certify the canonical signature state-space counts.
 - [x] Add DD-C-0023 through DD-C-0025 with proof/check records and calibrated evidence statuses.
-- [ ] Merge DD-001A PR #13 after CI and verify live Pages.
-- [ ] Execute DD-001B through DD-003 sequentially with one issue/branch/PR each.
+- [x] Merge DD-001A PR #13 after CI and verify Pages run `29784048496`.
+- [x] Derive the exact territorial/hybrid/direct threshold theorem for every M at least 3 within the declared families.
+- [x] Certify the continuous unrestricted informative envelope for M=3,4,5 across 438,734 exact signature polynomials.
+- [x] Reproduce all four known witnesses and refute the unrestricted all-p extension with exact anti-informative counterexamples.
+- [ ] Merge DD-001B PR #14 after CI and verify live Pages.
+- [ ] Execute DD-002 and DD-003 sequentially with one issue/branch/PR each.
 
 ## Discoveries and surprises
 
@@ -108,6 +112,7 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - 2026-07-20: preliminary DD-001A run `20260720T220911Z_DD-001_6822d4c6_40bf5b06a5` passed the computational reduction audit, but claim review found its `certified_interval` output key was too strong because the pooled benchmark is explicitly not a private-team certificate. The run remains immutable and valid as a preliminary audit; presentation was corrected before the primary run.
 - 2026-07-20: primary DD-001A run `20260720T221139Z_DD-001_b1d8d431_40bf5b06a5` started from clean commit `b1d8d431` and passed in 13.73 seconds. It independently reproduced all 21 exact tiny optima and raw-policy multiset tie counts, matched matching/reference and closed-form feasibility through M=5, reconstructed all audited signatures, and passed the independent structural certificate verifier.
 - 2026-07-20: the signature theorem reduces each policy losslessly to targetwise incoming counts and fixed-point indicators. At canonical M=16, exact counts are 148,348,284,928 feasible labeled signatures and 5,806 individual target orbits, but independently quotienting agents loses relative target alignment. The eight-agent multiset count before a global target quotient has 85 digits, so the declared naive enumeration exceeds its resource budget. This is not a private-team objective upper bound.
+- 2026-07-20: DD-001B primary run `20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1` passed in 35.86 seconds. It proves the exact three-family thresholds \(1/M\) and \(1/(M-1)\), exhaustively certifies the unrestricted continuous informative envelope for M=3,4,5, and records p=0 counterexamples that refute an all-p extension.
 
 ## Decision log
 
@@ -175,8 +180,8 @@ No current local blocker. GitHub CLI is installed but unauthenticated; the conne
 
 ## Recovery and restart instructions
 
-On branch `research/dd001-signature-certificate`, finish report/site integration for immutable primary run `20260720T221139Z_DD-001_b1d8d431_40bf5b06a5`, run `make verify`, `make site`, and `make papers`, then commit, push, and monitor draft PR #13. After passing CI, mark ready, squash-merge, verify the Pages deployment and five routes, sync `main`, and begin DD-001B issue #11. Do not alter immutable run provenance or describe the pooled benchmark as a private-team certificate.
+On branch `research/dd001-two-agent-thresholds`, finish integration for immutable run `20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1`, validate and merge PR #14, verify Pages, then sync `main` and begin DD-002 issue #7. Preserve the bounded M=3,4,5 scope of the unrestricted threshold certificate.
 
 ## Outcome and retrospective
 
-M0–M9 and Milestone A meet their criteria. DD-001A establishes a substantial structural result while preserving the central evidence limit: the canonical private-team optimum remains unresolved. The exact state-space certificate rules out the declared naive enumeration plan but is neither a complexity lower bound nor an objective upper bound. The next bounded milestone is DD-001B.
+M0–M9, Milestone A, and DD-001A meet their criteria. DD-001B establishes exact restricted thresholds and a bounded continuous unrestricted classification while preserving its M=3,4,5 scope. After PR #14 merges, the next bounded milestone is DD-002.

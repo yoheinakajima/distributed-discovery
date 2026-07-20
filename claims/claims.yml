@@ -525,3 +525,66 @@ claims:
     first_added: "2026-07-20"
     last_checked: "2026-07-20"
     notes: This certifies a structural reduction and a naive-enumeration resource barrier, not a canonical upper bound or global optimum.
+  - id: DD-C-0026
+    study_id: DD-001
+    short_name: two-searcher-three-family-threshold
+    statement: For M at least 3 and N=2, among two direct policies, two distinct constant territories, and the one-reroute constant-plus-signal hybrid, territorial is best below p=1/M, the hybrid is best between 1/M and 1/(M-1), and direct is best above 1/(M-1), with exact adjacent ties at the boundaries.
+    scope: Uniform symmetric DD-001 model and exactly the three stated policy families; this analytic theorem does not claim unrestricted optimality for arbitrary M.
+    claim_type: theorem
+    status: derived
+    source_type: local-proof-with-exact-enumeration-audit
+    source_reference: studies/DD-001-private-information-teams/threshold-model.md
+    proof_path: claims/proofs/DD-C-0026.md
+    implementation_paths: [src/distributed_discovery/private_teams/thresholds.py]
+    run_ids: [20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1]
+    test_paths: [tests/unit/test_private_team_thresholds.py]
+    exactness_basis: exact rational value formulas and factored pairwise differences
+    rounding_rule: null
+    dependencies: [DD-C-0023]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: At p=1 direct and hybrid also tie; M=2 is separately solved by two constants with value one.
+  - id: DD-C-0027
+    study_id: DD-001
+    short_name: bounded-unrestricted-informative-two-searcher-envelope
+    statement: For M in {3,4,5}, N=2, and every p in the continuous informative interval [1/M,1], unrestricted deterministic private-team optimality follows the same hybrid-then-direct envelope, with the switch at p=1/(M-1).
+    scope: Exactly M=3,4,5 and p in the displayed continuous intervals; no all-M theorem or anti-informative extension.
+    claim_type: computational-result
+    status: checked
+    source_type: exhaustive-signature-polynomial-certificate
+    source_reference: results/verified/20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1/outputs/threshold-certificate.json
+    proof_path: claims/proofs/DD-C-0027.md
+    implementation_paths: [src/distributed_discovery/private_teams/thresholds.py, src/distributed_discovery/private_teams/threshold_study.py]
+    run_ids: [20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1]
+    test_paths: [tests/unit/test_private_team_thresholds.py]
+    exactness_basis: complete enumeration of 438734 feasible signature multisets; exact quadratic nonnegativity checked at interval endpoints and every interior convex vertex
+    rounding_rule: exact fractions
+    dependencies: [DD-C-0023, DD-C-0026]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Status remains checked because one symbolic certificate implementation establishes the continuous bounded result; raw enumeration independently audits the four known interior witnesses.
+  - id: DD-C-0028
+    study_id: DD-001
+    short_name: anti-informative-three-family-counterexamples
+    statement: At p=0 and N=2, the unrestricted exact optima are 11/12 for M=3 and 2/3 for M=4, strictly above the corresponding best direct/territorial/one-reroute values 2/3 and 1/2.
+    scope: The two exact finite fixtures at p=0; this refutes extending the three-family phase theorem to all p but does not classify the full anti-informative region.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exhaustive-signature-and-raw-policy-enumeration
+    source_reference: results/verified/20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1/outputs/anti-informative-counterexamples.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/private_teams/thresholds.py, src/distributed_discovery/private_teams/optimize.py]
+    run_ids: [20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1]
+    test_paths: [tests/unit/test_private_team_thresholds.py]
+    exactness_basis: complete signature-multiset enumeration and independent raw-policy multiset enumeration with exact rational evaluation
+    rounding_rule: exact fractions
+    dependencies: [DD-C-0023, DD-C-0026]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: The winning signatures have no fixed points and are signal-dependent; pure territorial is not globally optimal in these anti-informative fixtures.

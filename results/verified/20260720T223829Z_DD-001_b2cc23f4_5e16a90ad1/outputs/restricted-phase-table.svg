@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="798">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<style>text{font-family:monospace;fill:#172033}.h{font-size:18px;font-weight:700}.r{font-size:13px}</style>
+<text class="h" x="24" y="32">DD-001B exact restricted threshold samples</text>
+<text class="r" x="24" y="64">M=3 p=1/3 lower-boundary winner=territorial|one-reroute-hybrid</text>
+<text class="r" x="24" y="94">M=3 p=5/12 hybrid-interior winner=one-reroute-hybrid</text>
+<text class="r" x="24" y="124">M=3 p=1/2 upper-boundary winner=direct|one-reroute-hybrid</text>
+<text class="r" x="24" y="154">M=3 p=3/4 direct-interior winner=direct</text>
+<text class="r" x="24" y="184">M=4 p=1/4 lower-boundary winner=territorial|one-reroute-hybrid</text>
+<text class="r" x="24" y="214">M=4 p=7/24 hybrid-interior winner=one-reroute-hybrid</text>
+<text class="r" x="24" y="244">M=4 p=1/3 upper-boundary winner=direct|one-reroute-hybrid</text>
+<text class="r" x="24" y="274">M=4 p=2/3 direct-interior winner=direct</text>
+<text class="r" x="24" y="304">M=5 p=1/5 lower-boundary winner=territorial|one-reroute-hybrid</text>
+<text class="r" x="24" y="334">M=5 p=9/40 hybrid-interior winner=one-reroute-hybrid</text>
+<text class="r" x="24" y="364">M=5 p=1/4 upper-boundary winner=direct|one-reroute-hybrid</text>
+<text class="r" x="24" y="394">M=5 p=5/8 direct-interior winner=direct</text>
+<text class="r" x="24" y="424">M=6 p=1/6 lower-boundary winner=territorial|one-reroute-hybrid</text>
+<text class="r" x="24" y="454">M=6 p=11/60 hybrid-interior winner=one-reroute-hybrid</text>
+<text class="r" x="24" y="484">M=6 p=1/5 upper-boundary winner=direct|one-reroute-hybrid</text>
+<text class="r" x="24" y="514">M=6 p=3/5 direct-interior winner=direct</text>
+<text class="r" x="24" y="544">M=7 p=1/7 lower-boundary winner=territorial|one-reroute-hybrid</text>
+<text class="r" x="24" y="574">M=7 p=13/84 hybrid-interior winner=one-reroute-hybrid</text>
+<text class="r" x="24" y="604">M=7 p=1/6 upper-boundary winner=direct|one-reroute-hybrid</text>
+<text class="r" x="24" y="634">M=7 p=7/12 direct-interior winner=direct</text>
+<text class="r" x="24" y="664">M=8 p=1/8 lower-boundary winner=territorial|one-reroute-hybrid</text>
+<text class="r" x="24" y="694">M=8 p=15/112 hybrid-interior winner=one-reroute-hybrid</text>
+<text class="r" x="24" y="724">M=8 p=1/7 upper-boundary winner=direct|one-reroute-hybrid</text>
+<text class="r" x="24" y="754">M=8 p=4/7 direct-interior winner=direct</text>
+</svg>
