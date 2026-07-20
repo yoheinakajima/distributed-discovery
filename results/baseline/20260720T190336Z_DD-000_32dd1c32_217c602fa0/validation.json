@@ -1,0 +1,23 @@
+{
+  "completion_marker": true,
+  "independent_matches": {
+    "blind": true,
+    "consensus": true,
+    "normalization": true,
+    "planner": true,
+    "private": true,
+    "private_distinct": true
+  },
+  "passed": true,
+  "rounded_sanity_checks": {
+    "consensus": true,
+    "crossover": true,
+    "market": true,
+    "market_distinct": true,
+    "planner": true,
+    "private": true,
+    "private_distinct": true,
+    "recovery_budget": true
+  },
+  "upstream_exit_zero": true
+}

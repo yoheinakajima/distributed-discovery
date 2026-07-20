@@ -1,0 +1,1 @@
+.cache/upstream/reproduction-venv/bin/python .cache/upstream/shared-discovery-paradox/verify_shared_discovery_v8_6.py --out-dir results/baseline/20260720T190055Z_DD-000_32dd1c32_217c602fa0/outputs

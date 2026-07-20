@@ -1,22 +1,24 @@
 .PHONY: bootstrap lint typecheck test fetch-upstream reproduce-baseline validate-claims foundations dd001 papers site verify all clean
 
 UV := uv
-PY := $(UV) run python
+export PYTHONPATH := $(CURDIR)/src
+RUN := $(UV) run --no-editable
+PY := $(RUN) python
 
 bootstrap:
-	$(UV) sync --locked
+	$(UV) sync --locked --no-editable
 	$(PY) -m distributed_discovery.validation.bootstrap
 	$(PY) -m distributed_discovery.validation.claims --fixture
 
 lint:
-	$(UV) run ruff format --check .
-	$(UV) run ruff check .
+	$(RUN) ruff format --check .
+	$(RUN) ruff check .
 
 typecheck:
-	$(UV) run mypy
+	$(RUN) mypy
 
 test:
-	$(UV) run pytest
+	$(RUN) pytest
 
 fetch-upstream:
 	./scripts/fetch_upstream.sh
@@ -26,6 +28,7 @@ reproduce-baseline:
 
 validate-claims:
 	$(PY) -m distributed_discovery.validation.claims
+	$(PY) -m distributed_discovery.validation.runs
 
 foundations:
 	./scripts/build_papers.sh foundations

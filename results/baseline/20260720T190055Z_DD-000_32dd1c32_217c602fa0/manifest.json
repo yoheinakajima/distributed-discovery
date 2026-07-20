@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "run_id": "20260720T190055Z_DD-000_32dd1c32_217c602fa0",
+  "study_id": "DD-000",
+  "started_utc": "2026-07-20T19:00:55Z",
+  "exit_status": 1,
+  "validation_status": "wrapper-failed-after-upstream-validation",
+  "git_commit": "32dd1c3237ffe5a4db8708478d70c8b15b9dc277",
+  "git_dirty": true,
+  "upstream_commit": "5025cc8e8f2f8ca015dff2066f08f81ad5715a51",
+  "failure_stage": "stale wheel retained package-metadata bug",
+  "claim_evidence_eligible": false
+}

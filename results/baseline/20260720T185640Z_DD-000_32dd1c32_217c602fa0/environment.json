@@ -1,0 +1,17 @@
+{
+  "python": "Python 3.11.15",
+  "packages": [
+    "contourpy==1.3.3",
+    "cycler==0.12.1",
+    "fonttools==4.63.0",
+    "kiwisolver==1.5.0",
+    "matplotlib==3.11.1",
+    "numpy==2.4.6",
+    "packaging==26.2",
+    "pillow==12.3.0",
+    "pyparsing==3.3.2",
+    "python-dateutil==2.9.0.post0",
+    "six==1.17.0"
+  ],
+  "metadata_recovered_utc": "2026-07-20T19:01:00Z"
+}

@@ -1,8 +1,18 @@
 schema_version: 1
 url: https://github.com/yoheinakajima/shared-discovery-paradox.git
-commit: null
-ref: null
-fetched_utc: null
-license_status: pending-inspection
-relevant_paths: []
-status: unpinned
+commit: 5025cc8e8f2f8ca015dff2066f08f81ad5715a51
+ref: main
+fetched_utc: "2026-07-20T18:53:07Z"
+license_status: MIT
+license_path: LICENSE
+relevant_paths:
+  - README.md
+  - LICENSE
+  - requirements.txt
+  - verify_shared_discovery_v8_6.py
+  - paper/The_Shared_Discovery_Paradox.tex
+  - paper/shared_discovery_v8.bib
+  - docs/index.html
+  - data/
+  - figures/
+status: pinned

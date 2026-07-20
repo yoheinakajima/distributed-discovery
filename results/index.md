@@ -5,4 +5,4 @@
 - [`exploratory/`](exploratory/README.md): observations and lower bounds not promoted.
 - [`refuted/`](refuted/README.md): preserved negative, failed, and superseded results.
 
-No numerical research result has yet been produced in this repository.
+M1 canonical evidence is indexed in [`baseline/`](baseline/README.md). No new extension-study result has yet been produced.

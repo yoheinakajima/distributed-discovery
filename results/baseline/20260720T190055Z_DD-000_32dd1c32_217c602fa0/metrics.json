@@ -1,0 +1,18 @@
+{
+  "blind": 0.5,
+  "consensus": 0.383468709731,
+  "crossover": 0.788461656521,
+  "independent_blind": 0.5,
+  "independent_consensus": 0.38346870973123975,
+  "independent_count_probability_sum": 1.0000000000000007,
+  "independent_planner": 0.85942124619944,
+  "independent_private": 0.83222784,
+  "independent_private_distinct": 6.156849828175082,
+  "independent_tiny_consensus_M3_N2_p0.5": 0.5,
+  "market": 0.599099252439,
+  "market_distinct": 2.673494083278,
+  "planner": 0.859421246199,
+  "private": 0.83222784,
+  "private_distinct": 6.156849828175,
+  "recovery_budget": 7
+}

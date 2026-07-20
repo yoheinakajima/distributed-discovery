@@ -1,3 +1,9 @@
 schema_version: 1
-status: pending-M1
-claims: []
+upstream_commit: 5025cc8e8f2f8ca015dff2066f08f81ad5715a51
+evidence_run: 20260720T190336Z_DD-000_32dd1c32_217c602fa0
+claim_ids:
+  independently_reproduced: [DD-C-0003, DD-C-0004, DD-C-0005, DD-C-0006, DD-C-0008]
+  upstream_verified: [DD-C-0007, DD-C-0009, DD-C-0015]
+  mixed_evidence: [DD-C-0010]
+  locally_derived_identity: [DD-C-0011]
+  sourced_pending_local_proof_review: [DD-C-0012, DD-C-0013, DD-C-0014]

@@ -1,0 +1,25 @@
+schema_version: 1
+study_id: DD-000
+upstream_commit: 5025cc8e8f2f8ca015dff2066f08f81ad5715a51
+verification_script: verify_shared_discovery_v8_6.py
+parameters:
+  candidates: 16
+  searchers: 8
+  clue_accuracy: 0.20
+expected_rounded_sanity_checks:
+  consensus: 0.3835
+  market: 0.5991
+  private: 0.8322
+  planner: 0.8594
+  recovery_budget: 7
+  crossover: 0.7885
+  market_distinct: 2.67
+  private_distinct: 6.16
+independent_checks:
+  - blind-discovery
+  - private-clue-discovery
+  - private-distinct-actions
+  - posterior-normalization
+  - tiny-consensus-bruteforce
+  - canonical-consensus-count-enumeration
+  - planner-frontier-count-enumeration

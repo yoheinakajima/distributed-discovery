@@ -17,11 +17,14 @@ site/dist/*
 !site/dist/README.md
 experiments/manifests/tmp/
 *.pdf
+!results/baseline/**/outputs/figures/*.pdf
 *.aux
 *.bbl
 *.blg
 *.fdb_latexmk
 *.fls
 *.log
+!results/**/stdout.log
+!results/**/stderr.log
 *.out
 *.toc

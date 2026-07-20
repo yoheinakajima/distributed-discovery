@@ -1,0 +1,14 @@
+{
+  "outputs/canonical_quality.csv": "542e8e179fb21fc8490198fc03a86f2da5edf54a48c66f82ada73bdbfdbea960",
+  "outputs/copying_results.csv": "49577e0a5f3130dd8fd825dd2812503a5be1add5fbf68adfbb5d0f183e70c2c8",
+  "outputs/figures/canonical_protocols.pdf": "dbabaea18e1149bcceb011f9ed902f0a9daf516acd7f4c7f2927a0c10faa3974",
+  "outputs/figures/canonical_protocols.png": "e1057086e2c3bb3f442d8e414a7b7edeb77375f434e99dcda7e8bc0f3b8183cb",
+  "outputs/figures/copying_protocols.pdf": "571fe22ce3c626f2678c05b0a4427261e62a94d95676aa12ca93f5c0cf577e4f",
+  "outputs/figures/copying_protocols.png": "75e3712ef83f0e89af6d1315cdee820f5207f266aab567333b3ae0ba86701815",
+  "outputs/figures/planner_gain.pdf": "55f3153c9fc080a84e791bb683cc0b914d09ab07f0c680242a9b84c765d1db8c",
+  "outputs/figures/planner_gain.png": "f1d918df72adc07accee029b63dd5f76dbeff365f4c1a3b40d81fbdfc0cc9a33",
+  "outputs/figures/pooled_frontier.pdf": "b4295cb8f391987c7e85e3f4f50b24ccb13541d4fd0215addd7be4d82faf88a3",
+  "outputs/figures/pooled_frontier.png": "f2b89fc8ac0b42d007eeec113568e34a838812d86302dcca0d911ed717f2b47a",
+  "outputs/grid_crossings.csv": "9527e610027389744862bb83f784b30ac6e9694e0d84b89d089b3f86edfc4006",
+  "outputs/independent_frontier.csv": "4617a7c94acd1e51a4b423dc429fb460d65e5f5e10268ac0a8302d8f46bc13ac"
+}

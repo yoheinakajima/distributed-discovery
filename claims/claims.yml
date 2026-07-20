@@ -42,3 +42,276 @@ claims:
     first_added: "2026-07-20"
     last_checked: "2026-07-20"
     notes: Do not describe as a stronger theorem without added content.
+  - id: DD-C-0003
+    study_id: DD-000
+    short_name: canonical-blind-discovery
+    statement: In the canonical M=16, N=8 model, a coordinated blind portfolio of eight distinct boxes discovers the target with probability 0.5.
+    scope: Uniform one-target prior with eight distinct actions.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: pinned-upstream-and-independent-formula
+    source_reference: integrations/shared-discovery-paradox/upstream.lock
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/canonical/model.py]
+    run_ids: [20260720T190336Z_DD-000_32dd1c32_217c602fa0]
+    test_paths: [tests/unit/test_canonical_model.py, tests/regression/test_canonical_values.py]
+    exactness_basis: rational identity N/M under distinct coordinated actions
+    rounding_rule: exact decimal representation
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Independently evaluated as Fraction(8,16).
+  - id: DD-C-0004
+    study_id: DD-000
+    short_name: canonical-private-discovery
+    statement: Canonical private clue-following has discovery probability 0.832227840000.
+    scope: M=16, N=8, p=0.20, conditionally independent clues.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: pinned-upstream-and-independent-formula
+    source_reference: integrations/shared-discovery-paradox/upstream.lock
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/canonical/model.py]
+    run_ids: [20260720T190336Z_DD-000_32dd1c32_217c602fa0]
+    test_paths: [tests/unit/test_canonical_model.py, tests/regression/test_canonical_values.py]
+    exactness_basis: rational formula 1-(1-p)^N
+    rounding_rule: 12 digits after decimal
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Exact rational value is 1-(4/5)^8.
+  - id: DD-C-0005
+    study_id: DD-000
+    short_name: canonical-consensus-discovery
+    statement: Canonical pooled-mode consensus has discovery probability 0.383468709731 to 12 displayed decimal places.
+    scope: M=16, N=8, p=0.20, uniform prior and uniform tie-breaking.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: pinned-upstream-and-independent-enumeration
+    source_reference: integrations/shared-discovery-paradox/upstream.lock
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/canonical/model.py]
+    run_ids: [20260720T190336Z_DD-000_32dd1c32_217c602fa0]
+    test_paths: [tests/unit/test_canonical_model.py, tests/regression/test_canonical_values.py]
+    exactness_basis: exhaustive enumeration of all labeled count vectors; probability mass normalization recorded
+    rounding_rule: nearest value at 12 digits after decimal
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Independent implementation does not import or parse upstream code.
+  - id: DD-C-0006
+    study_id: DD-000
+    short_name: canonical-planner-discovery
+    statement: The canonical pooled top-eight planner portfolio has discovery probability 0.859421246199 to 12 displayed decimal places.
+    scope: M=16, N=8, p=0.20, uniform prior and cutoff tie-breaking.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: pinned-upstream-and-independent-enumeration
+    source_reference: integrations/shared-discovery-paradox/upstream.lock
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/canonical/model.py]
+    run_ids: [20260720T190336Z_DD-000_32dd1c32_217c602fa0]
+    test_paths: [tests/unit/test_canonical_model.py, tests/regression/test_canonical_values.py]
+    exactness_basis: exhaustive enumeration of all labeled count vectors with uniform cutoff inclusion
+    rounding_rule: nearest value at 12 digits after decimal
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Count order equals posterior order because p exceeds the false-clue probability.
+  - id: DD-C-0007
+    study_id: DD-000
+    short_name: canonical-market-discovery
+    statement: The pinned verifier reports canonical anonymous symmetric equal-split market discovery 0.599099252439.
+    scope: Upstream-selected anonymous symmetric equilibrium at M=16, N=8, p=0.20.
+    claim_type: computational-result
+    status: verified
+    source_type: pinned-upstream-execution
+    source_reference: integrations/shared-discovery-paradox/upstream.lock
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/canonical/reproduce.py]
+    run_ids: [20260720T190336Z_DD-000_32dd1c32_217c602fa0]
+    test_paths: [tests/integration/test_canonical_parser.py, tests/regression/test_canonical_values.py]
+    exactness_basis: null
+    rounding_rule: upstream finite enumeration and high-precision equilibrium solve displayed to 12 decimals
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Not independently reproduced; do not label this floating-point equilibrium value exact.
+  - id: DD-C-0008
+    study_id: DD-000
+    short_name: canonical-recovery-budget
+    statement: The smallest coordinated pooled action budget whose canonical frontier weakly exceeds private clue-following is 7.
+    scope: Canonical independent-clue model and budgets 1 through 8.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: pinned-upstream-and-independent-enumeration
+    source_reference: results/baseline/20260720T190336Z_DD-000_32dd1c32_217c602fa0/outputs/independent_frontier.csv
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/canonical/model.py]
+    run_ids: [20260720T190336Z_DD-000_32dd1c32_217c602fa0]
+    test_paths: [tests/unit/test_canonical_model.py, tests/regression/test_canonical_values.py]
+    exactness_basis: exhaustive finite frontier with budgets 6 and 7 bracketing private discovery
+    rounding_rule: integer
+    dependencies: [DD-C-0004, DD-C-0006]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Frontier source contains full displayed precision for every budget.
+  - id: DD-C-0009
+    study_id: DD-000
+    short_name: canonical-copying-crossover
+    statement: The pinned high-precision computation places the canonical market/private crossover at c=0.788461656521.
+    scope: Upstream common-cue copying process and anonymous symmetric market selection.
+    claim_type: computational-result
+    status: verified
+    source_type: pinned-upstream-execution
+    source_reference: integrations/shared-discovery-paradox/upstream.lock
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/canonical/reproduce.py]
+    run_ids: [20260720T190336Z_DD-000_32dd1c32_217c602fa0]
+    test_paths: [tests/integration/test_canonical_parser.py, tests/regression/test_canonical_values.py]
+    exactness_basis: null
+    rounding_rule: upstream root solve displayed to 12 decimals
+    dependencies: [DD-C-0007]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Canonical computational result, not a general single-crossing theorem.
+  - id: DD-C-0010
+    study_id: DD-000
+    short_name: canonical-distinct-actions
+    statement: Expected distinct actions are 2.673494083278 for the canonical symmetric market and 6.156849828175 for private clue-following.
+    scope: Canonical independent-clue model; market uses upstream equilibrium selection.
+    claim_type: computational-result
+    status: checked
+    source_type: mixed-upstream-and-independent
+    source_reference: results/baseline/20260720T190336Z_DD-000_32dd1c32_217c602fa0/metrics.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/canonical/model.py, src/distributed_discovery/canonical/reproduce.py]
+    run_ids: [20260720T190336Z_DD-000_32dd1c32_217c602fa0]
+    test_paths: [tests/unit/test_canonical_model.py, tests/regression/test_canonical_values.py]
+    exactness_basis: private value has exact finite formula; market value is upstream floating-point computation
+    rounding_rule: 12 digits after decimal
+    dependencies: [DD-C-0007]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Private component is independently reproduced; market component is not.
+  - id: DD-C-0011
+    study_id: DD-000
+    short_name: redundancy-identity
+    statement: In the atomic one-target model, NQ-G equals E[(K-1)^+].
+    scope: Q is mean standalone action-hit probability, G is union discovery, and K is the number of target-hitting actions.
+    claim_type: identity
+    status: derived
+    source_type: upstream-and-local-proof
+    source_reference: integrations/shared-discovery-paradox/upstream.lock
+    proof_path: claims/proofs/DD-C-0011.md
+    implementation_paths: []
+    run_ids: [20260720T190336Z_DD-000_32dd1c32_217c602fa0]
+    test_paths: []
+    exactness_basis: pointwise indicator identity followed by expectation
+    rounding_rule: null
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Interpretation matches the pinned paper and verifier.
+  - id: DD-C-0012
+    study_id: DD-000
+    short_name: mixed-price-of-anarchy
+    statement: The upstream paper states and proves a tight mixed discovery price-of-anarchy bound 2-1/N for its equal-split covering game.
+    scope: Equal-split singleton congestion game defined in the pinned paper.
+    claim_type: upstream-result
+    status: sourced
+    source_type: pinned-upstream-paper
+    source_reference: paper/The_Shared_Discovery_Paradox.tex, section The exact price of anarchy
+    proof_path: null
+    implementation_paths: []
+    run_ids: [20260720T190336Z_DD-000_32dd1c32_217c602fa0]
+    test_paths: []
+    exactness_basis: analytic upstream proof and tight family; local proof review pending
+    rounding_rule: null
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Upstream script executed its checks; local independent proof review is pending.
+  - id: DD-C-0013
+    study_id: DD-000
+    short_name: sole-rescue-implementation
+    statement: The upstream paper proves that sole-rescue rewards make every pure Nash equilibrium implement the top-N portfolio under its stated positive-posterior and N<=M assumptions.
+    scope: Pure equilibria only; not dominant strategies or all mixed equilibria.
+    claim_type: upstream-result
+    status: sourced
+    source_type: pinned-upstream-paper
+    source_reference: paper/The_Shared_Discovery_Paradox.tex, section Reward the rescue not the win
+    proof_path: null
+    implementation_paths: []
+    run_ids: [20260720T190336Z_DD-000_32dd1c32_217c602fa0]
+    test_paths: []
+    exactness_basis: analytic upstream proof; local proof review pending
+    rounding_rule: null
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Scope qualification is mandatory.
+  - id: DD-C-0014
+    study_id: DD-000
+    short_name: monotone-planner-gain-copying
+    statement: The upstream paper proves planner gain is strictly increasing in copying probability on (0,1) for its atomic common-cue model with 2<=N<=M and p>1/M.
+    scope: The exact upstream copying process and frictionless centralized benchmark.
+    claim_type: upstream-result
+    status: sourced
+    source_type: pinned-upstream-paper
+    source_reference: paper/The_Shared_Discovery_Paradox.tex, theorem Monotone planner gain
+    proof_path: null
+    implementation_paths: []
+    run_ids: [20260720T190336Z_DD-000_32dd1c32_217c602fa0]
+    test_paths: []
+    exactness_basis: analytic upstream proof; local proof review pending
+    rounding_rule: null
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Do not generalize to arbitrary source networks.
+  - id: DD-C-0015
+    study_id: DD-000
+    short_name: copying-grid-single-crossing-observation
+    statement: On the upstream 72-combination grid, the market-private gap changed sign at most once in every scanned combination; 52 crossed once and 20 stayed private-dominant through c=0.98.
+    scope: Only the recorded finite grid and step choices.
+    claim_type: numerical-observation
+    status: verified
+    source_type: pinned-upstream-execution
+    source_reference: results/baseline/20260720T190336Z_DD-000_32dd1c32_217c602fa0/outputs/grid_crossings.csv
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/canonical/reproduce.py]
+    run_ids: [20260720T190336Z_DD-000_32dd1c32_217c602fa0]
+    test_paths: []
+    exactness_basis: null
+    rounding_rule: grid counts are integers; crossover locations stored to six decimals
+    dependencies: [DD-C-0009]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: This is not evidence of a general theorem beyond the grid.

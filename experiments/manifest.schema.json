@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "run_id", "study_id", "started_utc", "exit_status", "validation_status", "git_commit", "git_dirty", "upstream_commit"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_id": {"type": "string", "pattern": "^[0-9]{8}T[0-9]{6}Z_DD-[0-9]{3}_[0-9a-f]{8}_[0-9a-f]{10}$"},
+    "study_id": {"type": "string", "pattern": "^DD-[0-9]{3}$"},
+    "started_utc": {"type": "string"},
+    "ended_utc": {"type": "string"},
+    "exit_status": {"type": "integer"},
+    "validation_status": {"type": "string"},
+    "git_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "git_dirty": {"type": "boolean"},
+    "upstream_commit": {"type": ["string", "null"]},
+    "command": {"type": "string"},
+    "config_hash_sha256": {"type": "string"},
+    "dependency_lock_hash_sha256": {"type": "string"},
+    "input_hashes": {"type": "object"},
+    "random_seeds": {"type": "object"},
+    "outputs": {"type": "object"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"validation_status": {"const": "passed"}}},
+      "then": {"required": ["ended_utc", "command", "config_hash_sha256", "dependency_lock_hash_sha256", "input_hashes", "random_seeds", "outputs"]}
+    }
+  ]
+}

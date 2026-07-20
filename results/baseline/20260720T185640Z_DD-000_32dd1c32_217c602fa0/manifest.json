@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "run_id": "20260720T185640Z_DD-000_32dd1c32_217c602fa0",
+  "study_id": "DD-000",
+  "started_utc": "2026-07-20T18:56:40Z",
+  "ended_utc": "2026-07-20T18:59:04Z",
+  "exit_status": 1,
+  "validation_status": "wrapper-failed-after-upstream-validation",
+  "git_commit": "32dd1c3237ffe5a4db8708478d70c8b15b9dc277",
+  "git_dirty": true,
+  "upstream_commit": "5025cc8e8f2f8ca015dff2066f08f81ad5715a51",
+  "command": ".cache/upstream/reproduction-venv/bin/python .cache/upstream/shared-discovery-paradox/verify_shared_discovery_v8_6.py --out-dir results/baseline/20260720T185640Z_DD-000_32dd1c32_217c602fa0/outputs",
+  "config_hash_sha256": "217c602fa0a8d14293b10cc63a39513eb6ad19c0277370872fc75737945416c3",
+  "dependency_lock_hash_sha256": "205b6f58694511f58099df7051811d6215ec4e4da3c562dc31d278a2941891c9",
+  "failure_stage": "environment package metadata collection",
+  "claim_evidence_eligible": false
+}

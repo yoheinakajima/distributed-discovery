@@ -1,0 +1,37 @@
+{
+  "command": ".cache/upstream/reproduction-venv/bin/python .cache/upstream/shared-discovery-paradox/verify_shared_discovery_v8_6.py --out-dir results/baseline/20260720T190336Z_DD-000_32dd1c32_217c602fa0/outputs",
+  "config_hash_sha256": "217c602fa0a8d14293b10cc63a39513eb6ad19c0277370872fc75737945416c3",
+  "dependency_lock_hash_sha256": "205b6f58694511f58099df7051811d6215ec4e4da3c562dc31d278a2941891c9",
+  "ended_utc": "2026-07-20T19:05:24.927536Z",
+  "exit_status": 0,
+  "git_commit": "32dd1c3237ffe5a4db8708478d70c8b15b9dc277",
+  "git_dirty": true,
+  "input_hashes": {
+    ".cache/upstream/shared-discovery-paradox/verify_shared_discovery_v8_6.py": "83871228a6743acbcbce9e60806529108860b74bd43c62cc60addbc1eedd75d9",
+    "experiments/configs/canonical-baseline.yml": "217c602fa0a8d14293b10cc63a39513eb6ad19c0277370872fc75737945416c3"
+  },
+  "outputs": {
+    "outputs/canonical_quality.csv": "542e8e179fb21fc8490198fc03a86f2da5edf54a48c66f82ada73bdbfdbea960",
+    "outputs/copying_results.csv": "49577e0a5f3130dd8fd825dd2812503a5be1add5fbf68adfbb5d0f183e70c2c8",
+    "outputs/figures/canonical_protocols.pdf": "dbabaea18e1149bcceb011f9ed902f0a9daf516acd7f4c7f2927a0c10faa3974",
+    "outputs/figures/canonical_protocols.png": "e1057086e2c3bb3f442d8e414a7b7edeb77375f434e99dcda7e8bc0f3b8183cb",
+    "outputs/figures/copying_protocols.pdf": "571fe22ce3c626f2678c05b0a4427261e62a94d95676aa12ca93f5c0cf577e4f",
+    "outputs/figures/copying_protocols.png": "75e3712ef83f0e89af6d1315cdee820f5207f266aab567333b3ae0ba86701815",
+    "outputs/figures/planner_gain.pdf": "55f3153c9fc080a84e791bb683cc0b914d09ab07f0c680242a9b84c765d1db8c",
+    "outputs/figures/planner_gain.png": "f1d918df72adc07accee029b63dd5f76dbeff365f4c1a3b40d81fbdfc0cc9a33",
+    "outputs/figures/pooled_frontier.pdf": "b4295cb8f391987c7e85e3f4f50b24ccb13541d4fd0215addd7be4d82faf88a3",
+    "outputs/figures/pooled_frontier.png": "f2b89fc8ac0b42d007eeec113568e34a838812d86302dcca0d911ed717f2b47a",
+    "outputs/grid_crossings.csv": "9527e610027389744862bb83f784b30ac6e9694e0d84b89d089b3f86edfc4006",
+    "outputs/independent_frontier.csv": "4617a7c94acd1e51a4b423dc429fb460d65e5f5e10268ac0a8302d8f46bc13ac"
+  },
+  "random_seeds": {
+    "independent_checks": null,
+    "upstream_script": "fixed internally; inspect pinned script"
+  },
+  "run_id": "20260720T190336Z_DD-000_32dd1c32_217c602fa0",
+  "schema_version": 1,
+  "started_utc": "2026-07-20T19:03:36.231333Z",
+  "study_id": "DD-000",
+  "upstream_commit": "5025cc8e8f2f8ca015dff2066f08f81ad5715a51",
+  "validation_status": "passed"
+}
