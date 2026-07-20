@@ -6,7 +6,7 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-As inspected on 2026-07-20 UTC, the repository was empty, had no commits or remotes, and was on unborn branch `master`. Work moved to `codex/bootstrap-distributed-discovery`. M0 through M5 are complete. **Active milestone: M6 — Execute DD-001 Private-Information Teams.**
+As inspected on 2026-07-20 UTC, the repository was empty, had no commits or remotes, and was on unborn branch `master`. Work moved to `codex/bootstrap-distributed-discovery`. M0 through M6 are complete. **Active milestone: M7 — Scaffold the Later Research Program.**
 
 ## Scope
 
@@ -30,8 +30,8 @@ Publishing, deploying, changing upstream, asserting novelty before literature re
 - M3 additive paper extensions: completed 2026-07-20.
 - M4 private companion site: completed 2026-07-20.
 - M5 foundations note: completed 2026-07-20.
-- M6 DD-001 initial research: active.
-- M7 later-study briefs: pending.
+- M6 DD-001 initial research: completed 2026-07-20.
+- M7 later-study briefs: active.
 - M8 GitHub organization: pending.
 - M9 integration and handoff: pending.
 
@@ -51,7 +51,8 @@ Publishing, deploying, changing upstream, asserting novelty before literature re
 - [x] Prepared an additive upstream paper extension, review patch, generator/validator, compiled preview, and visual QA record.
 - [x] Built and validated the private companion site extension from generated benchmark and registry data.
 - [x] Built and visually validated the 12-page foundations companion note.
-- [ ] Specify, implement, execute, and report the initial DD-001 study.
+- [x] Specified, implemented, executed, independently checked, and reported the initial DD-001 study.
+- [ ] Upgrade DD-002 through DD-007 into serious executable research briefs.
 
 ## Discoveries and surprises
 
@@ -70,6 +71,9 @@ Publishing, deploying, changing upstream, asserting novelty before literature re
 - 2026-07-20: the pinned upstream guide is a single dependency-free HTML document under MIT license. M4 therefore uses static HTML/CSS, mirrors its typography and color roles, and keeps the canonical public guide as the first link rather than copying or redesigning the interactive sequence.
 - 2026-07-20: the first M5 compile exposed an `amsthm`/font-package order conflict, resolved by matching the validated upstream order. The first complete manuscript was 10 pages; substantive additions on feasible protocol classes, admissible comparisons, evidence discipline, and audit design brought it to the requested 12-page minimum without filler.
 - 2026-07-20: the paper-specific bibliography omits the canonical entry's long repository URL and abbreviates its pinned commit in print because plainnat produced poor line breaks. The source bibliography and generated provenance retain the full authoritative metadata.
+- 2026-07-20: DD-001 agent symmetry reduces exhaustive profiles from `(M^M)^N` to multisets `C(M^M+N-1,N)`. The largest configured search is 32,896 profiles per accuracy; the canonical space remains intentionally unenumerated.
+- 2026-07-20: an initial 17-point exact grid was expanded after a bounded audit found informative `N<M` hybrid gains. Three passing runs are preserved; `20260720T200447Z_DD-001_6eb12861_ba766d1eba` is primary because it contains the final 21 points and generated phase figure.
+- 2026-07-20: direct clue-following is not generally private-team optimal. At `(M,N,p)=(3,2,2/5)`, exhaustive rational enumeration gives `7/10` versus direct `16/25`. By contrast, 18 canonical coordinate-ascent starts all end at direct value `325089/390625`; this is a lower-bound search observation, not proof of global optimality.
 
 ## Decision log
 
@@ -100,6 +104,7 @@ Each milestone runs its targeted Make commands plus schema, unit, integration, a
 - M3 `make upstream-patch`: patch applied in a disposable worktree and Tectonic 0.16.9 compiled the 30-page preview; two consecutive builds had the same PDF SHA-256. Poppler rendered all pages for visual QA.
 - M4 `make site`: built four pages from passing canonical run `20260720T190336Z_DD-000_32dd1c32_217c602fa0` and seven study status/question files. Internal links, semantic landmarks/headings, resolved template data, tracking absence, generated provenance, and primary text contrast checks passed; full repository verification reached 16 tests.
 - M5 `make foundations`: generated a canonical table and pooled-frontier figure from validated run artifacts, resolved 15 citation keys and 17 claim IDs, compiled 12 pages with Tectonic 0.16.9, and produced byte-identical PDF SHA-256 `3637f16e...` twice. Poppler rendered all pages; targeted full-resolution review covered data assets, dense lists, and references. Full repository verification reached 18 tests.
+- M6 `make dd001`: primary run completed the 21-point exact grid and 18 canonical restarts in 8.4 seconds inside a 120-second budget. Exact formula/direct enumeration, normalization, exhaustive counts, benchmark bounds, seeds, terminations, output hashes, and generated SVG checks passed. Claim-specific audit commands and targeted tests passed; six run manifests now validate.
 
 ## Artifacts produced
 
@@ -115,14 +120,16 @@ M4 produced a local four-page static companion, generated canonical/study/claim 
 
 M5 produced the 12-page foundations LaTeX note, generated table and figure source with input checksums, paper-specific validated bibliography, claim/citation/source checks, deterministic PDF, sanitized build log, validation record, source tests, and page-level visual-QA record.
 
+M6 produced the frozen zero-communication model; rational factorized and direct evaluators; agent-symmetric exhaustive optimizer; bounded exact coordinate ascent; a guarded 21-point configuration; three immutable passing runs; exact phase data, policies, and SVG; an informative hybrid counterexample; a canonical lower-bound/upper-benchmark record; two proofs; five audited claim records DD-C-0018 through DD-C-0022; a study/global report; and a calibrated working-paper outline.
+
 ## Blockers
 
 No M0 blocker. No Git remote exists, so later push/draft-PR operations are unavailable unless a private origin is configured.
 
 ## Recovery and restart instructions
 
-From the repository root, read the mandatory files in `AGENTS.md`, inspect `git status`, then continue M6 with DD-001. Freeze the zero-communication team model before computation; implement exact fixed-policy evaluation and exhaustive tiny optimization with two independent paths; record symmetries, randomized-policy scope, run manifests, certificates or explicit lower/upper bounds; and never label a heuristic canonical policy optimal without a certificate.
+From the repository root, read the mandatory files in `AGENTS.md`, inspect `git status`, then continue M7. For each DD-002 through DD-007, make the question, minimum model, canonical relationship, quantities, literature, methods, falsifiable conjectures, dependencies, risks, first executable experiment, and completion criteria explicit. Do not execute the studies during M7.
 
 ## Outcome and retrospective
 
-M0–M5 meet their criteria. M2 made no general theorem or novelty claim from the atomic model; it records terminology collisions and treats effective channels/source concentration as model-specific or provisional. M3 keeps that calibration in the patch and does not modify canonical upstream. M4 is private, tracker-free, and un-deployed. M5 clearly attributes restated upstream results and keeps applications/open studies scoped.
+M0–M6 meet their criteria. M2 made no general theorem or novelty claim from the atomic model; it records terminology collisions and treats effective channels/source concentration as model-specific or provisional. M3 keeps that calibration in the patch and does not modify canonical upstream. M4 is private, tracker-free, and un-deployed. M5 clearly attributes restated upstream results and keeps applications/open studies scoped. M6 certifies only bounded tiny cases and explicitly leaves the canonical private-team optimum unresolved.

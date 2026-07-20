@@ -1,0 +1,25 @@
+run_id=20260720T200245Z_DD-001_6eb12861_ba766d1eba
+cost_audit_cases=5
+max_reduced_profiles=32896
+[exact] M2_N2_p1-4 optimum=1 direct=7/16 profiles=10
+[exact] M2_N2_p1-2 optimum=1 direct=3/4 profiles=10
+[exact] M2_N2_p3-4 optimum=1 direct=15/16 profiles=10
+[exact] M2_N4_p1-2 optimum=1 direct=15/16 profiles=35
+[exact] M2_N4_p3-4 optimum=1 direct=255/256 profiles=35
+[exact] M2_N4_p9-10 optimum=1 direct=9999/10000 profiles=35
+[exact] M3_N2_p1-3 optimum=2/3 direct=5/9 profiles=378
+[exact] M3_N2_p2-5 optimum=7/10 direct=16/25 profiles=378
+[exact] M3_N2_p7-15 optimum=11/15 direct=161/225 profiles=378
+[exact] M3_N2_p1-2 optimum=3/4 direct=3/4 profiles=378
+[exact] M3_N2_p2-3 optimum=8/9 direct=8/9 profiles=378
+[exact] M3_N2_p4-5 optimum=24/25 direct=24/25 profiles=378
+[exact] M3_N3_p1-3 optimum=1 direct=19/27 profiles=3654
+[exact] M3_N3_p1-2 optimum=1 direct=7/8 profiles=3654
+[exact] M3_N3_p2-3 optimum=1 direct=26/27 profiles=3654
+[exact] M3_N3_p4-5 optimum=1 direct=124/125 profiles=3654
+[exact] M4_N2_p1-4 optimum=1/2 direct=7/16 profiles=32896
+[exact] M4_N2_p3-10 optimum=8/15 direct=51/100 profiles=32896
+[exact] M4_N2_p13-40 optimum=11/20 direct=871/1600 profiles=32896
+[exact] M4_N2_p1-2 optimum=3/4 direct=3/4 profiles=32896
+[exact] M4_N2_p3-4 optimum=15/16 direct=15/16 profiles=32896
+[bounded] canonical best=325089/390625 direct=325089/390625 pooled_upper=0.859421246199000 restarts=18

@@ -1,0 +1,15 @@
+{
+  "accuracy": "1/5",
+  "best_known_decimal": "0.832227840000000",
+  "best_known_fraction": "325089/390625",
+  "candidates": 16,
+  "direct_coordinate_fixed": true,
+  "direct_decimal": "0.832227840000000",
+  "direct_fraction": "325089/390625",
+  "global_optimality": "unresolved",
+  "pooled_planner_numerical_upper": 0.859421246199,
+  "restart_count": 18,
+  "role_gain_over_direct_fraction": "0",
+  "searchers": 8,
+  "universal_exact_upper": 1
+}

@@ -1,0 +1,14 @@
+{
+  "canonical_direct_coordinate_fixed": true,
+  "canonical_global_optimality_claimed": false,
+  "canonical_lower_bound_at_least_direct": true,
+  "canonical_lower_bound_below_pooled_upper": true,
+  "elapsed_seconds": 4.641265791957267,
+  "exhaustive_profile_counts_complete": true,
+  "passed": true,
+  "termination_reason": "completed-configured-grid-and-restarts",
+  "time_budget_seconds": 120.0,
+  "tiny_direct_le_optimum_le_pooled": true,
+  "tiny_formula_equals_direct": true,
+  "tiny_probability_normalization_exact": true
+}

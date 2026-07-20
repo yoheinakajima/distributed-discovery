@@ -1,6 +1,6 @@
 study_id: DD-001
 status: active
-evidence_status: no-results
+evidence_status: exact-tiny-results-and-canonical-lower-bound
 dependency: DD-000
-next_action: freeze the zero-communication model and implement exact fixed-policy evaluation
-updated_utc: 2026-07-20T20:15:00Z
+next_action: prove N=2 hybrid thresholds and implement a certified upper-bound method
+updated_utc: 2026-07-20T20:08:00Z

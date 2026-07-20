@@ -1,1 +1,2 @@
 integrations/**/*.patch whitespace=-blank-at-eol
+results/verified/**/*.csv whitespace=-blank-at-eol

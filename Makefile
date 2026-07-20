@@ -37,7 +37,7 @@ foundations:
 	./scripts/build_papers.sh foundations
 
 dd001:
-	$(PY) -m distributed_discovery.private_teams.study --config studies/DD-001-private-information-teams/configs/baseline.yml
+	$(PY) -m distributed_discovery.private_teams.study
 
 papers:
 	./scripts/build_papers.sh all

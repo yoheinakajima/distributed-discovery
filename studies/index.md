@@ -3,7 +3,7 @@
 | ID | Title | Status | First executable work |
 |---|---|---|---|
 | DD-000 | Foundations of Distributed Discovery | active | Reproduce upstream, then formalize definitions |
-| DD-001 | Distributed Discovery with Private Information | active | Exact evaluator and tiny exhaustive cases |
+| DD-001 | Distributed Discovery with Private Information | active | Prove hybrid thresholds and add certified upper bounds |
 | DD-002 | Information Design for Discovery | registered | Two-action disclosure counterexample search |
 | DD-003 | Effective Channels | registered | Enumerate small latent-source graphs |
 | DD-004 | Sequential Distributed Discovery | registered | Compare parallel/sequential tiny box models |

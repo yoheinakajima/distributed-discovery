@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" role="img">
+<title>Certified tiny-case role gains over direct clue-following</title>
+<desc>Lines show exact optimal discovery minus direct clue-following by clue accuracy.</desc>
+<rect width="760" height="430" fill="white"/>
+<line x1="78" y1="364" x2="736" y2="364" stroke="#222"/>
+<line x1="78" y1="42" x2="78" y2="364" stroke="#222"/>
+<line x1="78.0" y1="364" x2="78.0" y2="369" stroke="#222"/>
+<text x="78.0" y="387" text-anchor="middle" font-family="system-ui" font-size="12">0.0</text>
+<line x1="209.6" y1="364" x2="209.6" y2="369" stroke="#222"/>
+<text x="209.6" y="387" text-anchor="middle" font-family="system-ui" font-size="12">0.2</text>
+<line x1="341.2" y1="364" x2="341.2" y2="369" stroke="#222"/>
+<text x="341.2" y="387" text-anchor="middle" font-family="system-ui" font-size="12">0.4</text>
+<line x1="472.8" y1="364" x2="472.8" y2="369" stroke="#222"/>
+<text x="472.8" y="387" text-anchor="middle" font-family="system-ui" font-size="12">0.6</text>
+<line x1="604.4" y1="364" x2="604.4" y2="369" stroke="#222"/>
+<text x="604.4" y="387" text-anchor="middle" font-family="system-ui" font-size="12">0.8</text>
+<line x1="736.0" y1="364" x2="736.0" y2="369" stroke="#222"/>
+<text x="736.0" y="387" text-anchor="middle" font-family="system-ui" font-size="12">1.0</text>
+<line x1="73" y1="364.0" x2="736" y2="364.0" stroke="#ddd"/>
+<text x="68" y="368.0" text-anchor="end" font-family="system-ui" font-size="12">0.000</text>
+<line x1="73" y1="283.5" x2="736" y2="283.5" stroke="#ddd"/>
+<text x="68" y="287.5" text-anchor="end" font-family="system-ui" font-size="12">0.142</text>
+<line x1="73" y1="203.0" x2="736" y2="203.0" stroke="#ddd"/>
+<text x="68" y="207.0" text-anchor="end" font-family="system-ui" font-size="12">0.285</text>
+<line x1="73" y1="122.5" x2="736" y2="122.5" stroke="#ddd"/>
+<text x="68" y="126.5" text-anchor="end" font-family="system-ui" font-size="12">0.427</text>
+<line x1="73" y1="42.0" x2="736" y2="42.0" stroke="#ddd"/>
+<text x="68" y="46.0" text-anchor="end" font-family="system-ui" font-size="12">0.570</text>
+<text x="407.0" y="412" text-anchor="middle" font-family="system-ui" font-size="14">clue accuracy p</text>
+<text transform="translate(20 203.0) rotate(-90)" text-anchor="middle" font-family="system-ui" font-size="14">role gain over direct</text>
+<polyline points="242.5,46.2 407.0,222.8 571.5,328.7" fill="none" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="242.5" cy="46.2" r="4" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="407.0" cy="222.8" r="4" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<circle cx="571.5" cy="328.7" r="4" fill="#2a78d6" stroke="#2a78d6" stroke-width="2"/>
+<line x1="86" y1="19" x2="106" y2="19" stroke="#2a78d6" stroke-width="2"/>
+<text x="112" y="23" font-family="system-ui" font-size="12">M=2, N=2</text>
+<polyline points="407.0,328.7 571.5,361.8 670.2,363.9" fill="none" stroke="#087d26" stroke-width="2"/>
+<circle cx="407.0" cy="328.7" r="4" fill="#087d26" stroke="#087d26" stroke-width="2"/>
+<circle cx="571.5" cy="361.8" r="4" fill="#087d26" stroke="#087d26" stroke-width="2"/>
+<circle cx="670.2" cy="363.9" r="4" fill="#087d26" stroke="#087d26" stroke-width="2"/>
+<line x1="86" y1="37" x2="106" y2="37" stroke="#087d26" stroke-width="2"/>
+<text x="112" y="41" font-family="system-ui" font-size="12">M=2, N=4</text>
+<polyline points="297.3,301.2 341.2,330.1 385.1,354.0 407.0,364.0 516.7,364.0 604.4,364.0" fill="none" stroke="#a76900" stroke-width="2"/>
+<circle cx="297.3" cy="301.2" r="4" fill="#a76900" stroke="#a76900" stroke-width="2"/>
+<circle cx="341.2" cy="330.1" r="4" fill="#a76900" stroke="#a76900" stroke-width="2"/>
+<circle cx="385.1" cy="354.0" r="4" fill="#a76900" stroke="#a76900" stroke-width="2"/>
+<circle cx="407.0" cy="364.0" r="4" fill="white" stroke="#a76900" stroke-width="2"/>
+<circle cx="516.7" cy="364.0" r="4" fill="white" stroke="#a76900" stroke-width="2"/>
+<circle cx="604.4" cy="364.0" r="4" fill="white" stroke="#a76900" stroke-width="2"/>
+<line x1="86" y1="55" x2="106" y2="55" stroke="#a76900" stroke-width="2"/>
+<text x="112" y="59" font-family="system-ui" font-size="12">M=3, N=2</text>
+<polyline points="297.3,196.6 407.0,293.4 516.7,343.1 604.4,359.5" fill="none" stroke="#b4476f" stroke-width="2"/>
+<circle cx="297.3" cy="196.6" r="4" fill="#b4476f" stroke="#b4476f" stroke-width="2"/>
+<circle cx="407.0" cy="293.4" r="4" fill="#b4476f" stroke="#b4476f" stroke-width="2"/>
+<circle cx="516.7" cy="343.1" r="4" fill="#b4476f" stroke="#b4476f" stroke-width="2"/>
+<circle cx="604.4" cy="359.5" r="4" fill="#b4476f" stroke="#b4476f" stroke-width="2"/>
+<line x1="86" y1="73" x2="106" y2="73" stroke="#b4476f" stroke-width="2"/>
+<text x="112" y="77" font-family="system-ui" font-size="12">M=3, N=3</text>
+<polyline points="242.5,328.7 275.4,350.8 291.9,360.8 407.0,364.0 571.5,364.0" fill="none" stroke="#6b5fb5" stroke-width="2"/>
+<circle cx="242.5" cy="328.7" r="4" fill="#6b5fb5" stroke="#6b5fb5" stroke-width="2"/>
+<circle cx="275.4" cy="350.8" r="4" fill="#6b5fb5" stroke="#6b5fb5" stroke-width="2"/>
+<circle cx="291.9" cy="360.8" r="4" fill="#6b5fb5" stroke="#6b5fb5" stroke-width="2"/>
+<circle cx="407.0" cy="364.0" r="4" fill="white" stroke="#6b5fb5" stroke-width="2"/>
+<circle cx="571.5" cy="364.0" r="4" fill="white" stroke="#6b5fb5" stroke-width="2"/>
+<line x1="86" y1="91" x2="106" y2="91" stroke="#6b5fb5" stroke-width="2"/>
+<text x="112" y="95" font-family="system-ui" font-size="12">M=4, N=2</text>
+</svg>

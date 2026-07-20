@@ -1,3 +1,22 @@
-# Plan
+# DD-001 execution plan
 
-After M2, specify symmetries and deterministic/randomized policies; implement two exact evaluation paths; derive tiny formulas; exhaust only documented feasible spaces; use bounded/heuristic optimization deliberately; preserve policies, bounds, failures, seeds, and termination reasons. Do not begin communication extensions until the zero-communication model is stable.
+## Completed initial phase
+
+1. Froze the finite zero-communication common-payoff model and randomized-policy scope.
+2. Derived an exact conditional-failure evaluator and implemented an independent target/signal enumerator.
+3. Reduced exhaustive search by agent permutation and audited every configured profile count.
+4. Certified a 21-point tiny grid through \(M=4,N=2\) and \(M=3,N=3\).
+5. Executed 18 canonical coordinate-ascent starts within a 120-second guardrail and preserved exact policies, seeds, terminations, and bounds.
+6. Generated the phase CSV/SVG, proof records, claim checks, report, and working paper draft.
+
+## Next executable phase
+
+- Derive analytic threshold regions for the constant-plus-signal hybrid observed at \(N=2\).
+- Add location-orbit reduction and a branch-and-bound upper bound for \(M=3\) with larger \(N\), validating against the current exhaustive grid.
+- Formulate a nontrivial canonical upper relaxation tighter than the pooled planner while retaining a checkable certificate.
+- Expand canonical lower-bound search beyond coordinate fixed points only after adding checkpoint/resume support.
+- Keep communication budgets deferred until the zero-communication frontier has stronger bounds.
+
+## Guardrails
+
+No heuristic value is labeled optimal. Every added exhaustive case must record its reduced profile count before execution. New dependencies require an ADR. Long searches need time/memory budgets and checkpoints; failed bounds and searches remain in the record.

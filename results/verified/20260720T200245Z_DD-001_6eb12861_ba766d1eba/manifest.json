@@ -1,0 +1,50 @@
+{
+  "command": "make dd001",
+  "config_hash_sha256": "ba766d1ebabe84f3f6e3260daa9d234adc7d3e5d50efc1b391c88e3ac0408aea",
+  "dependency_lock_hash_sha256": "44817b839ec69b327bd25a79ba5a14569628e5345ed6e496fd2badfe5c7f5bb5",
+  "ended_utc": "2026-07-20T20:02:53.554222Z",
+  "exit_status": 0,
+  "git_commit": "6eb12861bb9ff2fd35bbb92bbdb1b47abbdca240",
+  "git_dirty": true,
+  "input_hashes": {
+    "src/distributed_discovery/private_teams/model.py": "48978d85df2a92b2951369dafde3ddf20e52e40c8a241c0f04f2a04c7105a277",
+    "src/distributed_discovery/private_teams/optimize.py": "39dc0e236e397f1449613439545b42ee7165a3ebd02fb0d8ec3d58b0c9d30b0d",
+    "src/distributed_discovery/private_teams/study.py": "a874b14de8bd8389747d782c5402318a0db797832e7c9facd22e3ee17189b035",
+    "studies/DD-001-private-information-teams/configs/initial-grid.yml": "32776a5748b0487feff5d0ccce465229b5068ff9451805833d750b3c7c65a13b"
+  },
+  "outputs": {
+    "outputs/canonical-best-policy.json": "c1c6c9e88fe866f2cc5b8d9efdc5b38886395467133b37683c78593554026020",
+    "outputs/canonical-metrics.json": "61c0f0a42563a7457f81f2636597e025fe2a42e569ef67cf1f3a4ad4fb80949c",
+    "outputs/canonical-restarts.csv": "6f88440e94057d4115a1ad9f23f9b16291d98928b6740b7edba3b43e89fbad40",
+    "outputs/complexity.json": "50b044f953498777c46de7300b83d8b95324adc598c38331f7d688135dfa26b9",
+    "outputs/optimal-policies.json": "e42e892c1635c6d73895589499528b0558619da99157d3050edce9fb1497cdb9",
+    "outputs/tiny-phase-grid.csv": "e7112e7dd471a4fa302bbe5336a367dd166ff497bf8ab9095b6526635fe4851e"
+  },
+  "random_seeds": {
+    "algorithm": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211,
+      257,
+      307,
+      359,
+      419,
+      487,
+      557,
+      631,
+      709
+    ],
+    "model": null
+  },
+  "run_id": "20260720T200245Z_DD-001_6eb12861_ba766d1eba",
+  "schema_version": 1,
+  "started_utc": "2026-07-20T20:02:45.426782Z",
+  "study_id": "DD-001",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "accuracy_count": 3,
+    "agent_symmetric_profiles": 10,
+    "candidates": 2,
+    "labeled_profiles": 16,
+    "policies_per_agent": 4,
+    "searchers": 2,
+    "signal_profiles": 4
+  },
+  {
+    "accuracy_count": 3,
+    "agent_symmetric_profiles": 35,
+    "candidates": 2,
+    "labeled_profiles": 256,
+    "policies_per_agent": 4,
+    "searchers": 4,
+    "signal_profiles": 16
+  },
+  {
+    "accuracy_count": 4,
+    "agent_symmetric_profiles": 378,
+    "candidates": 3,
+    "labeled_profiles": 729,
+    "policies_per_agent": 27,
+    "searchers": 2,
+    "signal_profiles": 9
+  },
+  {
+    "accuracy_count": 4,
+    "agent_symmetric_profiles": 3654,
+    "candidates": 3,
+    "labeled_profiles": 19683,
+    "policies_per_agent": 27,
+    "searchers": 3,
+    "signal_profiles": 27
+  },
+  {
+    "accuracy_count": 3,
+    "agent_symmetric_profiles": 32896,
+    "candidates": 4,
+    "labeled_profiles": 65536,
+    "policies_per_agent": 256,
+    "searchers": 2,
+    "signal_profiles": 16
+  }
+]

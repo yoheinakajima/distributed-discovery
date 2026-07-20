@@ -357,3 +357,108 @@ claims:
     first_added: "2026-07-20"
     last_checked: "2026-07-20"
     notes: Never claim the phrase or a named field is first or unique.
+  - id: DD-C-0018
+    study_id: DD-001
+    short_name: deterministic-private-team-sufficiency
+    statement: In the finite static common-payoff DD-001 model, some deterministic policy profile weakly dominates every ex-ante randomized team strategy.
+    scope: Finite signal/action spaces, common expected discovery objective, and randomization selected before private signals; not a strategic equilibrium claim.
+    claim_type: proposition
+    status: derived
+    source_type: local-proof
+    source_reference: studies/DD-001-private-information-teams/model.md
+    proof_path: claims/proofs/DD-C-0018.md
+    implementation_paths: [src/distributed_discovery/private_teams/optimize.py]
+    run_ids: []
+    test_paths: [tests/unit/test_private_teams_optimize.py]
+    exactness_basis: finite convex-combination argument
+    rounding_rule: null
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Behavioral randomization is represented by drawing all contingent actions ex ante; the result does not purify strategic mixed equilibria.
+  - id: DD-C-0019
+    study_id: DD-001
+    short_name: private-team-benchmark-bounds
+    statement: Direct clue-following is weakly below the private-team frontier, which is weakly below the pooled planner frontier when the planner observes all private signals and can emulate every private-team action profile.
+    scope: Identical physical action budget and common objective; the upper inequality requires explicit pooled-planner emulation.
+    claim_type: proposition
+    status: derived
+    source_type: local-proof-and-exact-grid-check
+    source_reference: studies/DD-001-private-information-teams/model.md
+    proof_path: claims/proofs/DD-C-0019.md
+    implementation_paths: [src/distributed_discovery/private_teams/model.py, src/distributed_discovery/private_teams/study.py]
+    run_ids: [20260720T200447Z_DD-001_6eb12861_ba766d1eba]
+    test_paths: [tests/unit/test_private_teams_model.py]
+    exactness_basis: feasible-set inclusion and protocol emulation
+    rounding_rule: null
+    dependencies: [DD-C-0016]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: The grid check illustrates the analytic inequalities and is not their proof.
+  - id: DD-C-0020
+    study_id: DD-001
+    short_name: certified-tiny-private-team-grid
+    statement: The DD-001 primary run certifies exact deterministic private-team optima for all 21 configured tiny cases; direct clue-following is optimal at 5 points and strictly suboptimal at 16.
+    scope: The exact rational grid in initial-grid.yml, with M in {2,3,4}, N in {2,3,4}, and only the recorded accuracy values.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exhaustive-agent-symmetric-enumeration-plus-direct-state-enumeration
+    source_reference: results/verified/20260720T200447Z_DD-001_6eb12861_ba766d1eba/outputs/tiny-phase-grid.csv
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/private_teams/model.py, src/distributed_discovery/private_teams/optimize.py, src/distributed_discovery/private_teams/study.py]
+    run_ids: [20260720T200447Z_DD-001_6eb12861_ba766d1eba]
+    test_paths: [tests/unit/test_private_teams_model.py, tests/unit/test_private_teams_optimize.py]
+    exactness_basis: complete enumeration of every policy multiset after agent-permutation reduction; winners re-evaluated by independent target/signal enumeration with Fraction arithmetic and exact normalization
+    rounding_rule: exact fractions are authoritative; decimals display 12 digits after decimal
+    dependencies: [DD-C-0018, DD-C-0019]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Completeness applies only to configured cases; selected policy classification is descriptive.
+  - id: DD-C-0021
+    study_id: DD-001
+    short_name: informative-hybrid-counterexample
+    statement: At M=3, N=2, and p=2/5, the exact private-team optimum is 7/10, strictly above direct clue-following 16/25 by 3/50; a constant-plus-signal hybrid policy attains the optimum.
+    scope: Uniform prior, independent symmetric clues, deterministic zero-communication policies, and union discovery objective.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exhaustive-enumeration-and-independent-direct-evaluator
+    source_reference: results/verified/20260720T200447Z_DD-001_6eb12861_ba766d1eba/outputs/optimal-policies.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/private_teams/model.py, src/distributed_discovery/private_teams/optimize.py]
+    run_ids: [20260720T200447Z_DD-001_6eb12861_ba766d1eba]
+    test_paths: [tests/unit/test_private_teams_model.py, tests/unit/test_private_teams_optimize.py]
+    exactness_basis: 378 agent-symmetric profiles exhaust all 27^2 labeled profiles up to agent permutation; exact winner value matches direct target/signal enumeration
+    rounding_rule: exact fractions
+    dependencies: [DD-C-0020]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: This refutes general clue-following optimality but does not establish a continuous phase boundary.
+  - id: DD-C-0022
+    study_id: DD-001
+    short_name: canonical-coordinate-search-no-improvement
+    statement: In the configured canonical coordinate-ascent search, direct clue-following was an exact coordinate fixed point and all 17 non-direct starts converged to its value 325089/390625; no configured start improved the lower bound.
+    scope: M=16, N=8, p=1/5, cyclic exact best responses, one territorial and 16 recorded random seeds, at most 50 sweeps.
+    claim_type: numerical-observation
+    status: checked
+    source_type: bounded-seeded-coordinate-ascent
+    source_reference: results/verified/20260720T200447Z_DD-001_6eb12861_ba766d1eba/outputs/canonical-restarts.csv
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/private_teams/optimize.py, src/distributed_discovery/private_teams/study.py]
+    run_ids: [20260720T200447Z_DD-001_6eb12861_ba766d1eba]
+    test_paths: [tests/unit/test_private_teams_optimize.py]
+    exactness_basis: exact Fraction evaluation and exact coordinate best responses; search coverage is heuristic
+    rounding_rule: exact fraction is authoritative
+    dependencies: [DD-C-0004, DD-C-0018]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Global optimality is explicitly unresolved; failed improvement search is not a proof.

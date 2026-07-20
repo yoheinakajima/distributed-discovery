@@ -1,0 +1,401 @@
+{
+  "M2_N2_p1-2": {
+    "action_indexing": "zero-based",
+    "classification": "territorial",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "tie_count_in_agent-symmetric_enumeration": 1
+  },
+  "M2_N2_p1-4": {
+    "action_indexing": "zero-based",
+    "classification": "territorial",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "tie_count_in_agent-symmetric_enumeration": 1
+  },
+  "M2_N2_p3-4": {
+    "action_indexing": "zero-based",
+    "classification": "territorial",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "tie_count_in_agent-symmetric_enumeration": 1
+  },
+  "M2_N4_p1-2": {
+    "action_indexing": "zero-based",
+    "classification": "territorial",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "tie_count_in_agent-symmetric_enumeration": 10
+  },
+  "M2_N4_p3-4": {
+    "action_indexing": "zero-based",
+    "classification": "territorial",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "tie_count_in_agent-symmetric_enumeration": 10
+  },
+  "M2_N4_p9-10": {
+    "action_indexing": "zero-based",
+    "classification": "territorial",
+    "profile": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "tie_count_in_agent-symmetric_enumeration": 10
+  },
+  "M3_N2_p1-2": {
+    "action_indexing": "zero-based",
+    "classification": "hybrid",
+    "profile": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        2
+      ]
+    ],
+    "tie_count_in_agent-symmetric_enumeration": 10
+  },
+  "M3_N2_p1-3": {
+    "action_indexing": "zero-based",
+    "classification": "territorial",
+    "profile": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "tie_count_in_agent-symmetric_enumeration": 21
+  },
+  "M3_N2_p2-3": {
+    "action_indexing": "zero-based",
+    "classification": "direct",
+    "profile": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        2
+      ]
+    ],
+    "tie_count_in_agent-symmetric_enumeration": 1
+  },
+  "M3_N2_p2-5": {
+    "action_indexing": "zero-based",
+    "classification": "hybrid",
+    "profile": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        2
+      ]
+    ],
+    "tie_count_in_agent-symmetric_enumeration": 6
+  },
+  "M3_N2_p4-5": {
+    "action_indexing": "zero-based",
+    "classification": "direct",
+    "profile": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        2
+      ]
+    ],
+    "tie_count_in_agent-symmetric_enumeration": 1
+  },
+  "M3_N2_p7-15": {
+    "action_indexing": "zero-based",
+    "classification": "hybrid",
+    "profile": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        2
+      ]
+    ],
+    "tie_count_in_agent-symmetric_enumeration": 6
+  },
+  "M3_N3_p1-2": {
+    "action_indexing": "zero-based",
+    "classification": "territorial",
+    "profile": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        2,
+        2
+      ]
+    ],
+    "tie_count_in_agent-symmetric_enumeration": 1
+  },
+  "M3_N3_p1-3": {
+    "action_indexing": "zero-based",
+    "classification": "territorial",
+    "profile": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        2,
+        2
+      ]
+    ],
+    "tie_count_in_agent-symmetric_enumeration": 1
+  },
+  "M3_N3_p2-3": {
+    "action_indexing": "zero-based",
+    "classification": "territorial",
+    "profile": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        2,
+        2
+      ]
+    ],
+    "tie_count_in_agent-symmetric_enumeration": 1
+  },
+  "M3_N3_p4-5": {
+    "action_indexing": "zero-based",
+    "classification": "territorial",
+    "profile": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        2,
+        2
+      ]
+    ],
+    "tie_count_in_agent-symmetric_enumeration": 1
+  },
+  "M4_N2_p1-2": {
+    "action_indexing": "zero-based",
+    "classification": "direct",
+    "profile": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "tie_count_in_agent-symmetric_enumeration": 1
+  },
+  "M4_N2_p1-4": {
+    "action_indexing": "zero-based",
+    "classification": "territorial",
+    "profile": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "tie_count_in_agent-symmetric_enumeration": 906
+  },
+  "M4_N2_p13-40": {
+    "action_indexing": "zero-based",
+    "classification": "hybrid",
+    "profile": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        2,
+        3
+      ]
+    ],
+    "tie_count_in_agent-symmetric_enumeration": 60
+  },
+  "M4_N2_p3-10": {
+    "action_indexing": "zero-based",
+    "classification": "hybrid",
+    "profile": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        2,
+        3
+      ]
+    ],
+    "tie_count_in_agent-symmetric_enumeration": 60
+  },
+  "M4_N2_p3-4": {
+    "action_indexing": "zero-based",
+    "classification": "direct",
+    "profile": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "tie_count_in_agent-symmetric_enumeration": 1
+  }
+}
