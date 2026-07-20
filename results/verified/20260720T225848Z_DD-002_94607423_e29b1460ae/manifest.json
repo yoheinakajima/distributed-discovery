@@ -1,0 +1,33 @@
+{
+  "command": "make dd002-disclosure",
+  "config_hash_sha256": "e29b1460ae6f3f68ab17e3737924b9adbf42d91f9e5eb9e5a25ba4cf2a24e636",
+  "dependency_lock_hash_sha256": "44817b839ec69b327bd25a79ba5a14569628e5345ed6e496fd2badfe5c7f5bb5",
+  "ended_utc": "2026-07-20T22:58:48.234089Z",
+  "exit_status": 0,
+  "git_commit": "94607423115ac463f7f04bd1f15f848b56fa9c1f",
+  "git_dirty": false,
+  "input_hashes": {
+    "src/distributed_discovery/information_design/game.py": "eb1887621274f88f8ea44ba205f269d98f6a41e15cba26580014997240305a1b",
+    "src/distributed_discovery/information_design/study.py": "d70bd21eb87e6fe76e9fbdf4b54221105c730b58242f220b107e4a734661e1e0",
+    "src/distributed_discovery/information_design/verification.py": "3df4e7a43a8c9bc96be049e80b83140a7dec1db24ee67735232100f6c7b619ed",
+    "studies/DD-002-information-design/configs/bounded-disclosure.yml": "5403edc605be88f82653e700a398e74d8a898685f136937aa7292240eba23c17"
+  },
+  "outputs": {
+    "outputs/equilibrium-registry.json": "693c39f9e29c4b6440797ad5ebca1bf8de8431fc642debe8948a885148365d3f",
+    "outputs/partition-registry.json": "43e9903f4df7de0c37cfdbd9e030fcf19c0374c1b8fe23643cd974f19deca166",
+    "outputs/partition-summary.csv": "4795c160a3822870f8bbc8535fabe6fe5aa22918b47ed48a361c0f02de999882",
+    "outputs/refinement-comparisons.json": "2329feef6361f06206130ee84601e4edaf7703010209998ab15837044c822e61",
+    "outputs/selection-reversal-witness.json": "ff32fc8cb5cb1e315eb152652475af8b4ff9c2f6f9a267c718c85b054b3821c8",
+    "outputs/witness-verification.json": "1d8a9a927e9a5631e51db3d2c6ea27582a10b3f812f8cf0c0eb72397af1a0b0a"
+  },
+  "random_seeds": {
+    "algorithm": null,
+    "model": null
+  },
+  "run_id": "20260720T225848Z_DD-002_94607423_e29b1460ae",
+  "schema_version": 1,
+  "started_utc": "2026-07-20T22:58:48.186254Z",
+  "study_id": "DD-002",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

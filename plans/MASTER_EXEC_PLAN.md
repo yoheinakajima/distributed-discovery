@@ -8,7 +8,7 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-The historical M0–M9 bootstrap and operational Milestone A are complete. DD-001A merged as `c16144e8a3f5287d1117b768856f559064a89bc0`; Pages run `29784048496` passed. **Active milestone: C — DD-001B two-searcher thresholds, issue #11, branch `research/dd001-two-agent-thresholds`, draft PR #14.**
+The historical M0–M9 bootstrap and operational Milestone A are complete. DD-001A merged as `c16144e8a3f5287d1117b768856f559064a89bc0`; DD-001B merged as `7e637c1dc191b90f8de477ae05a779a254e35055`, with Pages run `29785199359` passing. **Active milestone: D — DD-002 bounded deterministic disclosure, issue #7, branch `research/dd002-disclosure-fixture`, draft PR #15.**
 
 ## Scope
 
@@ -38,8 +38,8 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - M9 integration and handoff: completed 2026-07-20.
 - A public/MIT/Pages/GitHub cleanup: completed 2026-07-20.
 - B DD-001A policy-signature reduction and certification barrier: completed 2026-07-20.
-- C DD-001B two-agent hybrid thresholds: implementation and primary evidence complete; PR #14 validation/merge pending.
-- D DD-002 bounded disclosure fixture: pending C.
+- C DD-001B two-agent hybrid thresholds: completed 2026-07-20.
+- D DD-002 bounded disclosure fixture: implementation, primary evidence, and claim audit complete; PR #15 validation/merge pending.
 - E DD-003 bounded source-graph fixture: pending D.
 - Integrated handoff: pending E or a hard execution limit.
 
@@ -76,8 +76,10 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - [x] Derive the exact territorial/hybrid/direct threshold theorem for every M at least 3 within the declared families.
 - [x] Certify the continuous unrestricted informative envelope for M=3,4,5 across 438,734 exact signature polynomials.
 - [x] Reproduce all four known witnesses and refute the unrestricted all-p extension with exact anti-informative counterexamples.
-- [ ] Merge DD-001B PR #14 after CI and verify live Pages.
-- [ ] Execute DD-002 and DD-003 sequentially with one issue/branch/PR each.
+- [x] Merge DD-001B PR #14 after CI and verify live Pages.
+- [x] Execute and independently verify the bounded DD-002 deterministic-disclosure fixture.
+- [ ] Merge DD-002 PR #15 after CI and verify live Pages.
+- [ ] Execute DD-003 with issue #10, one branch, and one PR.
 
 ## Discoveries and surprises
 
@@ -113,6 +115,7 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - 2026-07-20: primary DD-001A run `20260720T221139Z_DD-001_b1d8d431_40bf5b06a5` started from clean commit `b1d8d431` and passed in 13.73 seconds. It independently reproduced all 21 exact tiny optima and raw-policy multiset tie counts, matched matching/reference and closed-form feasibility through M=5, reconstructed all audited signatures, and passed the independent structural certificate verifier.
 - 2026-07-20: the signature theorem reduces each policy losslessly to targetwise incoming counts and fixed-point indicators. At canonical M=16, exact counts are 148,348,284,928 feasible labeled signatures and 5,806 individual target orbits, but independently quotienting agents loses relative target alignment. The eight-agent multiset count before a global target quotient has 85 digits, so the declared naive enumeration exceeds its resource budget. This is not a private-team objective upper bound.
 - 2026-07-20: DD-001B primary run `20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1` passed in 35.86 seconds. It proves the exact three-family thresholds \(1/M\) and \(1/(M-1)\), exhaustively certifies the unrestricted continuous informative envelope for M=3,4,5, and records p=0 counterexamples that refute an all-p extension.
+- 2026-07-20: DD-002 primary run `20260720T225848Z_DD-002_94607423_e29b1460ae` enumerated all 15 deterministic disclosure policies, 37 posterior games, 256 global pure-equilibrium selections, and 45 strict refinement pairs. Exactly one refinement lowers the declared anonymous-symmetric selection, while every pure equilibrium and the planner improve for that witness; the reversal is selection-dependent.
 
 ## Decision log
 
@@ -146,6 +149,8 @@ Each milestone runs its targeted Make commands plus schema, unit, integration, a
 - M5 `make foundations`: generated a canonical table and pooled-frontier figure from validated run artifacts, resolved 15 citation keys and 17 claim IDs, compiled 12 pages with Tectonic 0.16.9, and produced byte-identical PDF SHA-256 `3637f16e...` twice. Poppler rendered all pages; targeted full-resolution review covered data assets, dense lists, and references. Full repository verification reached 18 tests.
 - M6 `make dd001`: primary run completed the 21-point exact grid and 18 canonical restarts in 8.4 seconds inside a 120-second budget. Exact formula/direct enumeration, normalization, exhaustive counts, benchmark bounds, seeds, terminations, output hashes, and generated SVG checks passed. Claim-specific audit commands and targeted tests passed; six run manifests now validate.
 - DD-001A `make dd001-signatures`: primary run completed the 21-point independent signature grid, feasibility/reconstruction audit, and canonical state-space certificate in 13.73 seconds under a 120-second budget. All validation flags passed; the independent checker accepted the certificate and its corruption test rejects a modified count.
+- DD-001B `make dd001-thresholds`: primary run completed the exact restricted-family theorem and bounded unrestricted census in 35.86 seconds; PR #14 and post-merge CI/Pages passed.
+- DD-002 `make dd002-disclosure`: primary run completed the entire bounded deterministic-policy lattice in 0.018 seconds. The independent witness verifier, exact posterior/equilibrium checks, planner monotonicity, corruption test, and run manifest validation passed.
 - M7 `make verify`: passed after adding six bounded research briefs and linking their next actions into the study registry; no DD-002 through DD-007 experiment was executed and no result claim was added.
 - M8 `python scripts/setup_github.py`: validated 23 labels, six milestones, and four nonduplicative initial issue drafts in offline dry-run mode. `make verify` passed 28 tests plus claim and run validation.
 - M9 `make all`: formatting, lint, strict typing, 28 unit/integration/regression tests, claim/run validation, a clean canonical reproduction, the 12-page foundations build, and the four-page site build passed. `make upstream-patch`, PDF metadata/render inspection, internal-link/content tests, provenance/hash validation, local-path/token scans, and upstream/Git hygiene checks also passed. A final provenance-sanitizer unit test brought the post-documentation verification total to 29 passing tests; its first format check and a direct audit missing `PYTHONPATH` stopped safely and were corrected before the passing rerun.
@@ -172,7 +177,7 @@ M8 produced label and milestone manifests, six issue forms, four substantive ini
 
 M9 produced a clean canonical acceptance run, refreshed generated paper provenance, revalidated both PDFs and the local site, scrubbed redundant private checkout paths from environment snapshots, updated all navigation/status surfaces, and created the comprehensive project handoff.
 
-Milestone A produced the reconciled public/MIT/Pages state, passing PR #12, deterministic paper artifact workflow, five live research issues, and a successful post-merge Pages smoke test. DD-001A produces the lossless signature theorem and exact feasibility proof, independent implementations and tests, two immutable passing runs, primary reduction/certificate artifacts, claims DD-C-0023 through DD-C-0025, a global report, and a working-paper fragment.
+Milestone A produced the reconciled public/MIT/Pages state, passing PR #12, deterministic paper artifact workflow, five live research issues, and a successful post-merge Pages smoke test. DD-001A produced the lossless signature theorem and exact feasibility proof, independent implementations and tests, two immutable passing runs, primary reduction/certificate artifacts, claims DD-C-0023 through DD-C-0025, a global report, and a working-paper fragment. DD-001B produced exact restricted thresholds, a bounded unrestricted census, and claims DD-C-0026 through DD-C-0028. DD-002 produced the complete bounded deterministic-disclosure registry, independent reversal verifier, exact refinement census, claims DD-C-0029 through DD-C-0031, and an information-design outline.
 
 ## Blockers
 
@@ -180,8 +185,8 @@ No current local blocker. GitHub CLI is installed but unauthenticated; the conne
 
 ## Recovery and restart instructions
 
-On branch `research/dd001-two-agent-thresholds`, finish integration for immutable run `20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1`, validate and merge PR #14, verify Pages, then sync `main` and begin DD-002 issue #7. Preserve the bounded M=3,4,5 scope of the unrestricted threshold certificate.
+On branch `research/dd002-disclosure-fixture`, validate and commit immutable run `20260720T225848Z_DD-002_94607423_e29b1460ae` plus claims DD-C-0029 through DD-C-0031, finish PR #15, and verify post-merge Pages. Then sync `main` and begin DD-003 issue #10. Preserve the deterministic-policy and selected-equilibrium scope of the DD-002 reversal.
 
 ## Outcome and retrospective
 
-M0–M9, Milestone A, and DD-001A meet their criteria. DD-001B establishes exact restricted thresholds and a bounded continuous unrestricted classification while preserving its M=3,4,5 scope. After PR #14 merges, the next bounded milestone is DD-002.
+M0–M9, Milestone A, DD-001A, and DD-001B meet their criteria. DD-002 establishes a complete bounded deterministic-disclosure census and an exact selection-dependent harmful-information witness; PR #15 is the active integration boundary. After it merges, the next bounded milestone is DD-003.

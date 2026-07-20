@@ -1,0 +1,32 @@
+schema_version: 1
+study_id: DD-002
+milestone: bounded-public-disclosure
+method: exhaustive-deterministic-partitions-and-exact-equilibrium-correspondence
+time_budget_seconds: 120
+candidates: 3
+searchers: 2
+evidence_states: 4
+prior: ["1/3", "1/3", "1/3"]
+likelihood:
+  - ["1/2", "1/8", "1/8", "1/4"]
+  - ["1/4", "1/2", "1/8", "1/8"]
+  - ["1/8", "3/8", "1/8", "3/8"]
+reward_rule: equal-split-unit-prize
+selected_equilibrium: anonymous-symmetric
+comparison:
+  more_informative_partition: [[0, 1], [2, 3]]
+  less_informative_partition: [[0, 1, 2, 3]]
+  expected_more_selected_discovery: "171/308"
+  expected_less_selected_discovery: "5/9"
+  expected_more_pure_discovery: "3/4"
+  expected_less_pure_discovery: "2/3"
+partition_limit: 15
+global_pure_equilibrium_limit_per_partition: 2000
+randomized_disclosure_implemented: false
+validation:
+  require_all_partitions: true
+  require_full_pure_correspondence: true
+  require_anonymous_symmetric_equilibrium: true
+  require_refinement_witness: true
+  require_independent_sample_check: true
+  require_planner_monotonicity_on_all_refinements: true

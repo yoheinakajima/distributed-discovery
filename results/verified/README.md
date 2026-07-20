@@ -12,3 +12,10 @@ DD-001 passing runs:
 - `20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1`: DD-001B primary threshold run; exact three-family theorem audit, continuous unrestricted informative certificates for M=3,4,5, and anti-informative counterexamples.
 
 Within each run, exact-grid optima have exhaustive certificates. Canonical coordinate-ascent values are constructive lower bounds only. The signature primary run certifies a lossless reduction and exact state-space counts, not a canonical private-team objective bound.
+
+DD-002 passing runs:
+
+- `20260720T225701Z_DD-002_a12ba3e8_e29b1460ae`: preliminary complete partition/equilibrium audit.
+- `20260720T225848Z_DD-002_94607423_e29b1460ae`: primary run with independent selection-witness verification and corruption test.
+
+The primary DD-002 run exhausts the declared deterministic partition lattice and verifies a selection-dependent reversal. Randomized disclosure is not implemented.

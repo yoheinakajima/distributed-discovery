@@ -1,0 +1,16 @@
+{
+  "all_15_partitions_enumerated": true,
+  "all_refinement_planner_values_monotone": true,
+  "anonymous_symmetric_equilibria_independently_checked": true,
+  "configured_exact_values_reproduced": true,
+  "elapsed_seconds": 0.017604541033506393,
+  "full_pure_correspondence_stored": true,
+  "git_clean_at_start": true,
+  "independent_witness_verifier_passed": true,
+  "likelihood_rows_normalized": true,
+  "message_label_equivalence_quotiented": true,
+  "passed": true,
+  "randomized_disclosure_implemented": false,
+  "selection_dependent_reversal_verified": true,
+  "time_budget_seconds": 120
+}

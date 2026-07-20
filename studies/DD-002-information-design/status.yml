@@ -1,5 +1,5 @@
 study_id: DD-002
-status: registered
-evidence_status: research-question
-next_action: enumerate deterministic evidence partitions for the bounded M=3 N=2 fixture
-updated_utc: 2026-07-20T20:17:35Z
+status: complete-bounded-fixture
+evidence_status: verified-selection-dependent-reversal-and-complete-refinement-census
+next_action: preserve deterministic-partition regressions; randomized disclosure requires a future ADR
+updated_utc: 2026-07-20T23:00:00Z

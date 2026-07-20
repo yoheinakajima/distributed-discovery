@@ -1,0 +1,7 @@
+{
+  "outputs/equilibrium-registry.json": "693c39f9e29c4b6440797ad5ebca1bf8de8431fc642debe8948a885148365d3f",
+  "outputs/partition-registry.json": "43e9903f4df7de0c37cfdbd9e030fcf19c0374c1b8fe23643cd974f19deca166",
+  "outputs/partition-summary.csv": "4795c160a3822870f8bbc8535fabe6fe5aa22918b47ed48a361c0f02de999882",
+  "outputs/refinement-comparisons.json": "2329feef6361f06206130ee84601e4edaf7703010209998ab15837044c822e61",
+  "outputs/selection-reversal-witness.json": "ff32fc8cb5cb1e315eb152652475af8b4ff9c2f6f9a267c718c85b054b3821c8"
+}

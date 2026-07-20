@@ -1,0 +1,241 @@
+[
+  {
+    "blocks": [
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "canonical_key": "0,1,2,3",
+    "message_count": 1,
+    "partition_id": "P00"
+  },
+  {
+    "blocks": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "canonical_key": "0,1,2|3",
+    "message_count": 2,
+    "partition_id": "P01"
+  },
+  {
+    "blocks": [
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        2
+      ]
+    ],
+    "canonical_key": "0,1,3|2",
+    "message_count": 2,
+    "partition_id": "P02"
+  },
+  {
+    "blocks": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "canonical_key": "0,1|2,3",
+    "message_count": 2,
+    "partition_id": "P03"
+  },
+  {
+    "blocks": [
+      [
+        0,
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "canonical_key": "0,1|2|3",
+    "message_count": 3,
+    "partition_id": "P04"
+  },
+  {
+    "blocks": [
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        1
+      ]
+    ],
+    "canonical_key": "0,2,3|1",
+    "message_count": 2,
+    "partition_id": "P05"
+  },
+  {
+    "blocks": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "canonical_key": "0,2|1,3",
+    "message_count": 2,
+    "partition_id": "P06"
+  },
+  {
+    "blocks": [
+      [
+        0,
+        2
+      ],
+      [
+        1
+      ],
+      [
+        3
+      ]
+    ],
+    "canonical_key": "0,2|1|3",
+    "message_count": 3,
+    "partition_id": "P07"
+  },
+  {
+    "blocks": [
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "canonical_key": "0,3|1,2",
+    "message_count": 2,
+    "partition_id": "P08"
+  },
+  {
+    "blocks": [
+      [
+        0
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "canonical_key": "0|1,2,3",
+    "message_count": 2,
+    "partition_id": "P09"
+  },
+  {
+    "blocks": [
+      [
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "canonical_key": "0|1,2|3",
+    "message_count": 3,
+    "partition_id": "P10"
+  },
+  {
+    "blocks": [
+      [
+        0,
+        3
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "canonical_key": "0,3|1|2",
+    "message_count": 3,
+    "partition_id": "P11"
+  },
+  {
+    "blocks": [
+      [
+        0
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2
+      ]
+    ],
+    "canonical_key": "0|1,3|2",
+    "message_count": 3,
+    "partition_id": "P12"
+  },
+  {
+    "blocks": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "canonical_key": "0|1|2,3",
+    "message_count": 3,
+    "partition_id": "P13"
+  },
+  {
+    "blocks": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "canonical_key": "0|1|2|3",
+    "message_count": 4,
+    "partition_id": "P14"
+  }
+]

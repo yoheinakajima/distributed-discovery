@@ -1,0 +1,8 @@
+{
+  "global_pure_equilibrium_count": 256,
+  "partition_count": 15,
+  "posterior_game_count": 37,
+  "selected_reversal_count": 1,
+  "strict_refinement_pair_count": 45,
+  "worst_pure_reversal_count": 8
+}
