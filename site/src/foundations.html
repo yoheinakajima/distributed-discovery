@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Definitions, notation, identities, and institutional comparisons for Distributed Discovery.">
+  <title>Foundations — Distributed Discovery</title><link rel="stylesheet" href="styles.css"><script src="site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="topbar"><div class="wrap"><a class="brand" href="index.html">Distributed Discovery</a><nav aria-label="Companion pages"><a href="foundations.html" aria-current="page">Foundations</a><a href="open-problems.html">Open Problems</a><a href="applications.html">Applications</a></nav></div></header>
+  <main id="content" class="narrow">
+    <section class="hero"><p class="kicker">Companion page</p><h1 class="page-title">Foundations</h1><p class="lede">A compact vocabulary for separating available information from the protocol that turns it into actions.</p></section>
+    <section class="chapter" aria-labelledby="definitions"><p class="eyebrow">Definitions</p><h2 id="definitions">The basic objects</h2>
+      <div class="grid-2">
+        <article class="card"><h3>Discovery architecture</h3><p>The information structure, action technology, allocation protocol, reward rule, and feedback process that jointly determine feasible search.</p></article>
+        <article class="card"><h3>Information frontier</h3><p>The best attainable expected discovery within a declared budget and feasible protocol class under the available information.</p></article>
+        <article class="card"><h3>Protocol loss</h3><p>The gap between that frontier and discovery under the implemented protocol. It is benchmark-relative.</p></article>
+        <article class="card"><h3>Recovery budget</h3><p>The smallest action budget whose information frontier reaches a declared comparison value.</p></article>
+      </div>
+    </section>
+    <section class="chapter" aria-labelledby="identity"><p class="eyebrow">Accounting identity · DD-C-0002</p><h2 id="identity">Information–Action Decomposition</h2><p class="identity" aria-label="Discovery equals information frontier minus protocol loss">G<sub>B</sub>(Π; I) = V<sub>B</sub>(I) − L<sub>B</sub>(Π; I)</p><p>This is true by definition. It becomes informative only after the budget, action technology, feasible protocols, objective, and information architecture are fixed.</p></section>
+    <section class="chapter" aria-labelledby="matrix"><p class="eyebrow">Institutional matrix</p><h2 id="matrix">Information and assignment are separate margins</h2>
+      <table class="matrix"><thead><tr><th scope="col">Evidence / authority</th><th scope="col">Autonomous or unassigned</th><th scope="col">Coordinated or assigned</th></tr></thead><tbody><tr><th scope="row">Local/private evidence</th><td>Private clue-following</td><td>Private-team frontier</td></tr><tr><th scope="row">Pooled/shared evidence</th><td>Consensus or anonymous market</td><td>Planner portfolio</td></tr></tbody></table>
+      <p>The missing private-team cell is DD-001. Comparing within a row varies assignment more cleanly; comparing within a column varies information access more cleanly. The canonical planner/private comparison crosses both margins.</p>
+    </section>
+    <section class="chapter" aria-labelledby="notation"><p class="eyebrow">Notation</p><h2 id="notation">A minimal dictionary</h2>
+      <dl class="status-list"><div><dt>D</dt><dd>Distributed discovery problem.</dd></div><div><dt>I</dt><dd>Information architecture.</dd></div><div><dt>Π</dt><dd>Action protocol.</dd></div><div><dt>G</dt><dd>Expected discovery value.</dd></div><div><dt>V</dt><dd>Information frontier.</dd></div><div><dt>L</dt><dd>Protocol loss.</dd></div></dl>
+      <p class="source-note">Claim links: <a href="data/claims.yml">machine-readable ledger</a>. Canonical values and their distinct evidence statuses: <a href="data/canonical.json">generated data</a>.</p>
+    </section>
+  </main>
+  <footer><div class="wrap"><span><a href="index.html">Beyond the Paradox</a></span><span>Working definitions · not a unique-field claim</span></div></footer>
+</body>
+</html>

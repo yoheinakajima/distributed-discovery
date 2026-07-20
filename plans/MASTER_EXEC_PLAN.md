@@ -6,7 +6,7 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-As inspected on 2026-07-20 UTC, the repository was empty, had no commits or remotes, and was on unborn branch `master`. Work moved to `codex/bootstrap-distributed-discovery`. M0 through M3 are complete. **Active milestone: M4 — Build the Companion Site Extension.**
+As inspected on 2026-07-20 UTC, the repository was empty, had no commits or remotes, and was on unborn branch `master`. Work moved to `codex/bootstrap-distributed-discovery`. M0 through M4 are complete. **Active milestone: M5 — Create the Foundations Companion Note.**
 
 ## Scope
 
@@ -28,8 +28,8 @@ Publishing, deploying, changing upstream, asserting novelty before literature re
 - M1 pin and reproduce canonical upstream: completed 2026-07-20.
 - M2 formalize foundations: completed 2026-07-20.
 - M3 additive paper extensions: completed 2026-07-20.
-- M4 private companion site: active.
-- M5 foundations note: pending.
+- M4 private companion site: completed 2026-07-20.
+- M5 foundations note: active.
 - M6 DD-001 initial research: pending.
 - M7 later-study briefs: pending.
 - M8 GitHub organization: pending.
@@ -49,7 +49,8 @@ Publishing, deploying, changing upstream, asserting novelty before literature re
 - [x] Completed an orientation literature/terminology review with verified metadata and recorded novelty risks.
 - [x] Committed M2 as `e1192de`.
 - [x] Prepared an additive upstream paper extension, review patch, generator/validator, compiled preview, and visual QA record.
-- [ ] Build and validate the private companion site extension.
+- [x] Built and validated the private companion site extension from generated benchmark and registry data.
+- [ ] Build and visually validate the foundations companion note.
 
 ## Discoveries and surprises
 
@@ -65,6 +66,7 @@ Publishing, deploying, changing upstream, asserting novelty before literature re
 - 2026-07-20: team theory directly anticipates DD-001’s decentralized common-payoff policy object; Bayesian persuasion and informational Braess work directly neighbor DD-002. This changes claim calibration, not the registered research questions.
 - 2026-07-20: Homebrew supplied Tectonic 0.16.9 after no LaTeX compiler was present. A first compile from repository root failed because Tectonic resolved the upstream `figures/` path relative to the manuscript; a second failed because the requested output directory did not yet exist. Both were operational validation failures. The validator now stages figures only in a disposable worktree, creates its output directory, and leaves canonical upstream clean.
 - 2026-07-20: setting `SOURCE_DATE_EPOCH` to the pinned upstream commit timestamp made two consecutive patched-paper builds byte-identical (`0a43360e...`). Full-page rendering and targeted visual inspection found no defects in the additive material.
+- 2026-07-20: the pinned upstream guide is a single dependency-free HTML document under MIT license. M4 therefore uses static HTML/CSS, mirrors its typography and color roles, and keeps the canonical public guide as the first link rather than copying or redesigning the interactive sequence.
 
 ## Decision log
 
@@ -93,6 +95,7 @@ Each milestone runs its targeted Make commands plus schema, unit, integration, a
 - M2 scholarly searches across information ordering/design, team theory, organizational/scientific search, epistemic networks, coverage games, submodularity, robotic redundancy, and terminology collisions; primary/stable records logged in `docs/literature/search-log.md`.
 - M2 `make lint`, `make typecheck`, `make test`, `make validate-claims`: passed; 12 tests and 3 manifests validated.
 - M3 `make upstream-patch`: patch applied in a disposable worktree and Tectonic 0.16.9 compiled the 30-page preview; two consecutive builds had the same PDF SHA-256. Poppler rendered all pages for visual QA.
+- M4 `make site`: built four pages from passing canonical run `20260720T190336Z_DD-000_32dd1c32_217c602fa0` and seven study status/question files. Internal links, semantic landmarks/headings, resolved template data, tracking absence, generated provenance, and primary text contrast checks passed; full repository verification reached 16 tests.
 
 ## Artifacts produced
 
@@ -104,14 +107,16 @@ M2 produced full foundations/glossary/notation documents, pipeline diagram, cano
 
 M3 produced six auditable source fragments, a placement/change memo, a generated review patch against pinned upstream, a patch/apply/compile validator, a deterministic compiled preview with sanitized log and metadata, integration tests, and a visual-QA record.
 
+M4 produced a local four-page static companion, generated canonical/study/claim data, a deterministic builder, semantic/link/content/no-tracking validation, keyboard focus and reduced-motion behavior, responsive light/dark styling, and contrast tests. It was not deployed.
+
 ## Blockers
 
 No M0 blocker. No Git remote exists, so later push/draft-PR operations are unavailable unless a private origin is configured.
 
 ## Recovery and restart instructions
 
-From the repository root, read the mandatory files in `AGENTS.md`, inspect `git status`, then continue M4 in `site/`. Reuse the upstream site’s visual language and simple technology, preserve the original interactive sequence as primary, and add the requested “Beyond the Paradox” research-program section plus generated-data, accessibility, content, and link checks.
+From the repository root, read the mandatory files in `AGENTS.md`, inspect `git status`, then continue M5 in `papers/foundations/`. Build a concise professional LaTeX note from the formal foundations and literature record, generate numerical tables/figures from validated data, validate references and claim IDs, compile with Tectonic, and render every page for visual QA.
 
 ## Outcome and retrospective
 
-M0–M3 meet their criteria. M2 made no general theorem or novelty claim from the atomic model; it records terminology collisions and treats effective channels/source concentration as model-specific or provisional. M3 keeps that calibration in the patch and does not modify canonical upstream.
+M0–M4 meet their criteria. M2 made no general theorem or novelty claim from the atomic model; it records terminology collisions and treats effective channels/source concentration as model-specific or provisional. M3 keeps that calibration in the patch and does not modify canonical upstream. M4 is private, tracker-free, and un-deployed.

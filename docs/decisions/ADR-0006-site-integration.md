@@ -9,6 +9,6 @@ Build a dependency-light private static companion and generate patchable upstrea
 ## Alternatives considered
 Rewrite the site, adopt a heavy framework, deploy a separate public application.
 ## Consequences
-Local review stays simple; exact visual reuse waits for M1 inspection.
+Local review stays simple. The companion reuses the pinned MIT-licensed guide's typography, color roles, compact navigation, cards, light/dark response, and dependency-free HTML/CSS approach without copying its interactive sequence. Result values and study cards are generated from repository evidence rather than duplicated in source templates.
 ## Reversal conditions
 Align with upstream tooling if its pinned architecture makes direct additive patches safer.

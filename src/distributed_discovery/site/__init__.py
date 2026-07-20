@@ -1,0 +1,1 @@
+"""Static companion-site builder."""

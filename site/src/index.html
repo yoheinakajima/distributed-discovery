@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A private companion to the Shared Discovery Paradox: foundations, open problems, and applications.">
+  <title>Beyond the Paradox — Distributed Discovery</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-current="page">Distributed Discovery</a>
+      <nav aria-label="Companion pages">
+        <a href="foundations.html">Foundations</a>
+        <a href="open-problems.html">Open Problems</a>
+        <a href="applications.html">Applications</a>
+      </nav>
+    </div>
+  </header>
+  <main id="content">
+    <section class="hero narrow">
+      <p class="kicker">Beyond the Paradox</p>
+      <h1>A Research Program in Distributed Discovery</h1>
+      <p class="lede">How groups convert dispersed evidence into a finite portfolio of search actions—and what changes when information, assignment, incentives, and feedback no longer move together.</p>
+    </section>
+    <aside class="canonical-first narrow" aria-labelledby="canonical-heading">
+      <h2 id="canonical-heading">Begin with the canonical guide</h2>
+      <p>The original interactive sequence remains the primary six-minute explanation of the Shared Discovery Paradox. This private companion starts where that atomic model ends.</p>
+      <p><a class="primary-link" href="https://yoheinakajima.github.io/shared-discovery-paradox/">Open the canonical interactive guide →</a></p>
+    </aside>
+    <section class="chapter" aria-labelledby="pipeline-heading">
+      <div class="wrap">
+        <p class="eyebrow">The architecture</p>
+        <h2 id="pipeline-heading">From a world to discovery</h2>
+        <p>The {{CANDIDATES}}-box model is the atomic case. Distributed discovery asks how this pipeline changes when evidence is private, sources are correlated, actions overlap, search is sequential, and rewards are strategic.</p>
+        <ol class="pipeline" aria-label="Distributed discovery pipeline">
+          <li>World</li><li>Evidence</li><li>Information</li><li>Protocol</li><li>Actions</li><li>Coverage</li><li>Discovery</li>
+        </ol>
+      </div>
+    </section>
+    <section class="chapter" aria-labelledby="benchmark-heading">
+      <div class="wrap">
+        <p class="eyebrow">Atomic reference point</p>
+        <h2 id="benchmark-heading">One model, different action protocols</h2>
+        <p>With {{SEARCHERS}} searchers and {{CLUE_ACCURACY}} clue accuracy, pooling can improve a ranking while a one-answer rule compresses the available portfolio.</p>
+        <div class="stats" aria-label="Canonical benchmark values">
+          <div class="stat"><span>Consensus discovery</span><b>{{CONSENSUS}}</b></div>
+          <div class="stat"><span>Private clue-following</span><b>{{PRIVATE}}</b></div>
+          <div class="stat"><span>Pooled planner portfolio</span><b>{{PLANNER}}</b></div>
+        </div>
+        <p>The smallest coordinated pooled portfolio that recovers the private benchmark uses {{RECOVERY_BUDGET}} actions.</p>
+        <p class="source-note">Generated from passing run <span class="study-id">{{RUN_ID}}</span>. Evidence status differs by metric; inspect <a href="data/canonical.json">canonical data and provenance</a> or the <a href="data/claims.yml">claim ledger snapshot</a>.</p>
+      </div>
+    </section>
+    <section class="chapter" aria-labelledby="next-heading">
+      <div class="wrap">
+        <p class="eyebrow">Continue the program</p>
+        <h2 id="next-heading">Three ways into the work</h2>
+        <div class="grid-2">
+          <article class="card"><h3><a href="foundations.html">Foundations</a></h3><p>Definitions, identities, notation, and the information–assignment matrix.</p></article>
+          <article class="card"><h3><a href="open-problems.html">Open Problems</a></h3><p>The registered DD-001 through DD-007 questions, with honest evidence status.</p></article>
+          <article class="card"><h3><a href="applications.html">Applications</a></h3><p>Precise mappings to science, R&amp;D, venture portfolios, and multi-agent AI.</p></article>
+          <article class="card"><h3><a href="https://github.com/yoheinakajima/shared-discovery-paradox/tree/{{UPSTREAM_COMMIT}}">Canonical source</a></h3><p>The pinned public paper, guide, verifier, and original result.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap"><span>Private local companion · no analytics or external tracking</span><span>Canonical upstream commit {{UPSTREAM_COMMIT}}</span></div></footer>
+</body>
+</html>

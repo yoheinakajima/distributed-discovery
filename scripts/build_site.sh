@@ -1,4 +1,3 @@
 #!/bin/sh
 set -eu
-echo "site build is registered for M4; no site source exists yet" >&2
-exit 3
+exec uv run --no-editable python -m distributed_discovery.site.build
