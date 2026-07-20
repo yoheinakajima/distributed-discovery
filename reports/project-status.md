@@ -193,4 +193,4 @@ Suggested title: `Bootstrap the Distributed Discovery research program`
 20. **Exact next task:** Register and test an alignment-preserving canonical DD-001 upper-bound method, beginning from the signature barrier rather than treating the pooled planner as a certificate.
 21. **Exact resume command:** `git switch main && git pull --ff-only origin main && make verify`.
 22. **Commit SHAs:** Queue merge SHAs are listed in item 3; primary evidence commits are `b1d8d431` (DD-001A), `b2cc23f4` (DD-001B), `94607423` (DD-002), and `2ea8dad5` (DD-003).
-23. **Pull-request URLs:** `https://github.com/yoheinakajima/distributed-discovery/pull/12` through `/pull/16`; the documentation-only integrated handoff PR is recorded in the master plan after creation.
+23. **Pull-request URLs:** `https://github.com/yoheinakajima/distributed-discovery/pull/12` through `/pull/17`; PR #17 is the documentation-only integrated handoff.

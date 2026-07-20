@@ -8,7 +8,7 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-The historical M0–M9 bootstrap, operational Milestone A, and research milestones DD-001A/B, DD-002, and DD-003 are complete and merged. DD-003 merged through PR #16 as `54b8713fa7f3b30922a88b60a6dc280319432715`; post-merge CI run `29787309515` and Pages run `29787309537` passed, and all five live routes returned HTTP 200 with the final study statuses. **Active milestone: integrated A–E handoff on `codex/final-ae-handoff`.**
+The historical M0–M9 bootstrap, operational Milestone A, and research milestones DD-001A/B, DD-002, and DD-003 are complete and merged. DD-003 merged through PR #16 as `54b8713fa7f3b30922a88b60a6dc280319432715`; post-merge CI run `29787309515` and Pages run `29787309537` passed, and all five live routes returned HTTP 200 with the final study statuses. **Active integration boundary: documentation-only final handoff PR #17 on `codex/final-ae-handoff`.**
 
 ## Scope
 
@@ -41,7 +41,7 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - C DD-001B two-agent hybrid thresholds: completed 2026-07-20.
 - D DD-002 bounded disclosure fixture: completed 2026-07-20.
 - E DD-003 bounded source-graph fixture: completed 2026-07-20.
-- Integrated handoff: active; final documentation and broad acceptance pending.
+- Integrated handoff: documentation and broad local acceptance complete; PR #17 validation/merge pending.
 
 ## Progress checklist
 
@@ -81,7 +81,8 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - [x] Merge DD-002 PR #15 after CI and verify live Pages.
 - [x] Execute and independently verify DD-003 on issue #10 and branch `research/dd003-source-graphs`.
 - [x] Merge DD-003 PR #16 after CI and verify live Pages.
-- [ ] Complete broad final acceptance and merge the integrated handoff PR.
+- [x] Complete broad final acceptance without creating duplicate immutable runs.
+- [ ] Merge documentation-only integrated handoff PR #17 after CI and verify final Pages.
 
 ## Discoveries and surprises
 
@@ -191,8 +192,8 @@ No current local blocker. GitHub CLI is installed but unauthenticated; the conne
 
 ## Recovery and restart instructions
 
-On branch `codex/final-ae-handoff`, inspect `reports/project-status.md`, run `make bootstrap && make verify && make papers && make site`, perform the final secret/stale-wording/license/upstream/Git/GitHub audit, then commit, push, open and merge the documentation-only handoff PR. No research runner should be invoked because that would create duplicate immutable evidence.
+On branch `codex/final-ae-handoff`, finish PR #17 through required CI, review-thread audit, and squash merge. Then sync `main`, verify post-merge CI/Pages and five live routes, and ensure the worktree is clean. No research runner should be invoked because that would create duplicate immutable evidence.
 
 ## Outcome and retrospective
 
-M0–M9, Milestone A, DD-001A/B, DD-002, and DD-003 meet their research, CI, merge, and deployment criteria. Only the documentation-only integrated handoff and its validation/merge remain.
+M0–M9, Milestone A, DD-001A/B, DD-002, and DD-003 meet their research, CI, merge, and deployment criteria. The final broad acceptance also passes; only PR #17 validation/merge and its deployment smoke test remain.
