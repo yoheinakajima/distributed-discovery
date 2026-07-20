@@ -2,5 +2,5 @@ study_id: DD-001
 status: active
 evidence_status: exact-tiny-results-and-canonical-lower-bound
 dependency: DD-000
-next_action: prove signature losslessness and exact feasibility before measuring a canonical certificate search
-updated_utc: 2026-07-20T21:35:13Z
+next_action: execute the bounded signature-certificate configuration from a clean committed implementation
+updated_utc: 2026-07-20T22:10:00Z
