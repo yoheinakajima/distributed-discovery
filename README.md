@@ -10,7 +10,7 @@ This public repository is MIT-licensed. The [companion site](https://yoheinakaji
 
 ## Status and navigation
 
-Verified, sourced, exploratory, refuted, and open claims are distinguished in [`claims/claims.yml`](claims/claims.yml) under the policy in [`docs/claim-status-policy.md`](docs/claim-status-policy.md). DD-000 through DD-001 have reproducible evidence; DD-001A proves a lossless policy-signature reduction, and DD-001B gives exact two-searcher threshold results, while the canonical objective remains unresolved. DD-002 through DD-007 have actionable briefs but no results. The active A–E execution queue and exact resume point are in [`plans/MASTER_EXEC_PLAN.md`](plans/MASTER_EXEC_PLAN.md). See [`reports/project-status.md`](reports/project-status.md), [`studies/index.md`](studies/index.md), [`results/index.md`](results/index.md), and [`docs/index.md`](docs/index.md) for research navigation.
+Verified, sourced, exploratory, refuted, and open claims are distinguished in [`claims/claims.yml`](claims/claims.yml) under the policy in [`docs/claim-status-policy.md`](docs/claim-status-policy.md). DD-000 through DD-002 have reproducible evidence. DD-002 completely enumerates its bounded deterministic-disclosure fixture and verifies a selection-dependent harmful-information witness. DD-003 through DD-007 have actionable briefs but no results. The active A–E execution queue and exact resume point are in [`plans/MASTER_EXEC_PLAN.md`](plans/MASTER_EXEC_PLAN.md). See [`reports/project-status.md`](reports/project-status.md), [`studies/index.md`](studies/index.md), [`results/index.md`](results/index.md), and [`docs/index.md`](docs/index.md) for research navigation.
 
 ## Setup and common commands
 
@@ -32,6 +32,7 @@ make foundations          # build/validate the companion note
 make dd001                # run the registered DD-001 baseline configuration
 make dd001-signatures     # run the registered DD-001A signature audit
 make dd001-thresholds     # run the registered DD-001B threshold audit
+make dd002-disclosure     # run the registered DD-002 disclosure audit
 make papers               # build all paper artifacts
 make site                 # build the public companion site locally
 make all                  # verify, reproduce canonical baseline, build papers and site
@@ -41,4 +42,4 @@ The reproduction and DD-001 run targets create new immutable run directories, so
 
 ## Resume protocol
 
-New agents must read `AGENTS.md`, `.agent/PLANS.md`, `plans/MASTER_EXEC_PLAN.md`, `docs/repository-contract.md`, and the active study files. Then inspect Git status and run the acceptance command named at the plan’s restart point. DD-001A and DD-001B are complete; the next research task is the bounded DD-002 disclosure fixture.
+New agents must read `AGENTS.md`, `.agent/PLANS.md`, `plans/MASTER_EXEC_PLAN.md`, `docs/repository-contract.md`, and the active study files. Then inspect Git status and run the acceptance command named at the plan’s restart point. DD-001A, DD-001B, and the bounded DD-002 fixture are complete; DD-003 is next.

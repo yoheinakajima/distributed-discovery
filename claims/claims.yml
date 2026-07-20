@@ -588,3 +588,66 @@ claims:
     first_added: "2026-07-20"
     last_checked: "2026-07-20"
     notes: The winning signatures have no fixed points and are signal-dependent; pure territorial is not globally optimal in these anti-informative fixtures.
+  - id: DD-C-0029
+    study_id: DD-002
+    short_name: bounded-disclosure-partition-equilibrium-registry
+    statement: The bounded DD-002 fixture has exactly 15 deterministic public disclosure policies up to message-label equivalence; the primary run evaluates all 37 induced posterior games and stores all 256 global pure-equilibrium selections plus the anonymous symmetric equilibrium for every message.
+    scope: The declared M=3, N=2, four-evidence-state likelihood fixture and deterministic set-partition disclosures only; randomized disclosure and general asymmetric mixed equilibria are not included.
+    claim_type: computational-result
+    status: verified
+    source_type: exhaustive-canonical-partition-and-equilibrium-enumeration
+    source_reference: results/verified/20260720T225848Z_DD-002_94607423_e29b1460ae/outputs/equilibrium-registry.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/information_design/game.py, src/distributed_discovery/information_design/study.py]
+    run_ids: [20260720T225848Z_DD-002_94607423_e29b1460ae]
+    test_paths: [tests/unit/test_information_design.py]
+    exactness_basis: Bell-number-complete canonical set partitions, exhaustive labeled pure best-response checks, support-complete anonymous symmetric equilibrium calculation, and exact rational arithmetic
+    rounding_rule: exact fractions
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Full pure correspondence means every message-level pure equilibrium and their Cartesian products; the selected mixed outcome is explicitly anonymous symmetric.
+  - id: DD-C-0030
+    study_id: DD-002
+    short_name: selection-dependent-harmful-disclosure
+    statement: In the bounded DD-002 fixture, disclosure {{0,1},{2,3}} refines full pooling but lowers anonymous-symmetric discovery from 5/9 to 171/308 by 1/2772, while every pure-equilibrium discovery rises from 2/3 to 3/4 and planner discovery rises from 2/3 to 3/4.
+    scope: Exact declared fixture and equilibrium treatments; the reversal is selection-dependent and does not say that information lowers discovery at every equilibrium.
+    claim_type: computational-result
+    status: verified
+    source_type: exact-refinement-witness-with-independent-verifier
+    source_reference: results/verified/20260720T225848Z_DD-002_94607423_e29b1460ae/outputs/selection-reversal-witness.json
+    proof_path: claims/proofs/DD-C-0030.md
+    implementation_paths: [src/distributed_discovery/information_design/game.py, src/distributed_discovery/information_design/verification.py]
+    run_ids: [20260720T225848Z_DD-002_94607423_e29b1460ae]
+    test_paths: [tests/unit/test_information_design.py]
+    exactness_basis: explicit deterministic garbling, exact Bayes posteriors, complete pure best-response sets, checked symmetric mixed best responses, direct state discovery enumeration, and corruption-detecting witness verifier
+    rounding_rule: exact fractions
+    dependencies: [DD-C-0029]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: This is an informational-Braess-style selection result, not a novelty claim and not a Blackwell-frontier violation.
+  - id: DD-C-0031
+    study_id: DD-002
+    short_name: bounded-disclosure-refinement-census
+    statement: Across all 45 strict deterministic refinement pairs in the bounded DD-002 fixture, exactly one lowers anonymous-symmetric discovery, eight lower worst-pure-equilibrium discovery, none lowers best-pure-equilibrium discovery, and none lowers two-action planner discovery.
+    scope: Complete deterministic partition lattice for the declared four-state fixture; randomized disclosure and other likelihood matrices are outside scope.
+    claim_type: computational-result
+    status: verified
+    source_type: exhaustive-refinement-census
+    source_reference: results/verified/20260720T225848Z_DD-002_94607423_e29b1460ae/outputs/refinement-comparisons.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/information_design/game.py, src/distributed_discovery/information_design/study.py]
+    run_ids: [20260720T225848Z_DD-002_94607423_e29b1460ae]
+    test_paths: [tests/unit/test_information_design.py]
+    exactness_basis: complete 15-partition registry, exact refinement relation with deterministic garbling witnesses, full equilibrium correspondence, and exact rational comparisons
+    rounding_rule: exact fractions
+    dependencies: [DD-C-0029]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Worst- and best-equilibrium results are reported separately; no favorable selection is hidden.

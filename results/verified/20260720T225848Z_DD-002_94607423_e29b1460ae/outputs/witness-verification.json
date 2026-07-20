@@ -1,0 +1,7 @@
+{
+  "aggregates_verified": true,
+  "message_games_verified": true,
+  "passed": true,
+  "refinement_verified": true,
+  "selection_dependent_reversal_verified": true
+}

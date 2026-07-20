@@ -6,7 +6,7 @@
 
 Milestones M0 through M9 and operational Milestone A are complete. Cleanup issue #6 closed through squash-merged PR #12 at `1add8de5a349c57085928da8aa54da85e49c5077`; CI passed, Pages workflow `29781940577` succeeded, and all five required routes returned HTTP 200. The source repository is public under MIT at `https://yoheinakajima.github.io/distributed-discovery/`. Canonical upstream remains untouched.
 
-DD-001A is merged. DD-001B is implemented in draft PR #14: it proves exact two-searcher thresholds within three policy families, certifies the unrestricted continuous informative envelope for M=3,4,5, and refutes an all-p extension with anti-informative counterexamples. The canonical `(16,8,1/5)` private-team optimum remains unresolved.
+DD-001A and DD-001B are merged. DD-001B proves exact two-searcher thresholds within three policy families, certifies the unrestricted continuous informative envelope for M=3,4,5, and refutes an all-p extension with anti-informative counterexamples. DD-002 is implemented in draft PR #15: its primary run completely enumerates the bounded deterministic-disclosure fixture and verifies an exact selection-dependent harmful-information witness. The canonical `(16,8,1/5)` private-team optimum remains unresolved.
 
 ## 2. Repository map
 
@@ -32,12 +32,13 @@ DD-001A is merged. DD-001B is implemented in draft PR #14: it proves exact two-s
 - M4: four-page static companion generated from validated evidence; it was local-only when M4 closed and is now deployed through Pages.
 - M5: deterministic 12-page foundations note with citation/claim/source validation and visual QA.
 - M6: exact DD-001 tiny-grid evaluator, bounded canonical search, five audited claims, and report.
-- M7: actionable, falsifiable DD-002 through DD-007 research briefs; no studies executed.
+- M7: actionable, falsifiable DD-002 through DD-007 research briefs; later execution is tracked separately.
 - M8: complete local GitHub organization metadata; prepared issues are live, with settings-only taxonomy blocked on OAuth.
 - M9: clean acceptance reproduction, full builds/audits, navigation refresh, and this handoff.
 - A: public MIT/Pages cleanup, passing squash merge, and live five-route deployment smoke test.
 - DD-001A: lossless signature theorem, exact feasibility/reconstruction, independent tiny-grid reproduction, and canonical state-space certificate; merged.
-- DD-001B: exact restricted-family threshold theorem, bounded continuous unrestricted classification, and anti-informative counterexamples; PR #14 awaits final CI/merge.
+- DD-001B: exact restricted-family threshold theorem, bounded continuous unrestricted classification, and anti-informative counterexamples; merged through PR #14.
+- DD-002: complete bounded deterministic-policy enumeration, exact equilibrium registries, independent reversal verification, and full Blackwell-refinement census; PR #15 awaits final CI/merge.
 
 ## 4. Commands executed
 
@@ -85,7 +86,7 @@ The run is the current source for the site and foundations note. Claim records r
 
 ## 6. Verified claims
 
-The claim ledger has 28 records. DD-C-0026 is the derived restricted-family threshold theorem; DD-C-0027 is the checked continuous bounded classification; DD-C-0028 independently reproduces the anti-informative counterexamples. Earlier evidence statuses remain unchanged.
+The claim ledger has 31 records. DD-C-0026 is the derived restricted-family threshold theorem; DD-C-0027 is the checked continuous bounded classification; DD-C-0028 independently reproduces the anti-informative counterexamples. DD-C-0029 through DD-C-0031 verify the complete bounded DD-002 policy/equilibrium census, exact selection-dependent reversal, and full refinement census. Earlier evidence statuses remain unchanged.
 
 ## 7. Independently reproduced claims
 
@@ -108,7 +109,7 @@ DD-C-0022 is `checked`, not verified: direct clue-following is an exact coordina
 
 ## 10. Open research questions
 
-The immediate queue task is the bounded DD-002 disclosure fixture. A later canonical DD-001 method must preserve joint target alignment and provide an independently checkable admissible bound. DD-002 through DD-007 remain open and unexecuted.
+The immediate queue task is merging and deploying the completed bounded DD-002 disclosure fixture, followed by DD-003 source-graph enumeration. A later canonical DD-001 method must preserve joint target alignment and provide an independently checkable admissible bound. DD-004 through DD-007 remain open and unexecuted.
 
 ## 11. Known technical debt
 
@@ -117,7 +118,8 @@ The immediate queue task is the bounded DD-002 disclosure fixture. A later canon
 - The static site has automated semantic/link/content/contrast checks but no browser-based accessibility audit.
 - GitHub metadata application is tested offline; prepared issues are live as #7–#11 and issue/PR access works through the connected app, while CLI-only taxonomy/settings await OAuth authorization.
 - Three historical DD-001 environment snapshots required an M9 privacy correction: their redundant local-project `file://` line was removed and future capture filters it. Research outputs and hashes were unchanged.
-- DD-002 through DD-007 implementations and schemas intentionally do not exist yet.
+- Randomized DD-002 disclosure and general asymmetric mixed-equilibrium enumeration remain unimplemented by design; expanding scope requires an ADR and certificate plan.
+- DD-003 through DD-007 implementations and study-specific schemas do not exist yet.
 
 ## 12. Blockers
 
@@ -125,13 +127,13 @@ There is no validation blocker. Public `origin`, Actions, and Pages are active. 
 
 ## 13. Exact resume point
 
-On `research/dd001-two-agent-thresholds`, finish PR #14 through passing CI, squash-merge it, and verify Pages. Then sync `main` and start issue #7 on the DD-002 disclosure branch. Preserve the bounded M=3,4,5 scope of DD-C-0027.
+On `research/dd002-disclosure-fixture`, commit the primary DD-002 run and audited claims, finish PR #15 through passing CI, squash-merge it, and verify Pages. Then sync `main` and start issue #10 on the DD-003 source-graph branch. Preserve the deterministic-policy and selected-equilibrium scope of DD-C-0030.
 
 ## 14. Recommended next three tasks
 
-1. DD-002: enumerate deterministic partitions for the bounded `M=3,N=2` disclosure fixture and report full equilibrium correspondence.
-2. DD-003: enumerate nonisomorphic small source graphs and test whether pairwise report moments are insufficient for discovery prediction.
-3. DD-001: seek an alignment-preserving canonical relaxation with a checkable upper bound.
+1. DD-003: enumerate nonisomorphic small source graphs and test whether pairwise report moments are insufficient for discovery prediction.
+2. DD-001: seek an alignment-preserving canonical relaxation with a checkable upper bound.
+3. DD-002: consider randomized disclosure only after an ADR fixes the policy class, equilibrium selection, and validation certificate.
 
 ## 15. Commit list
 
@@ -150,11 +152,11 @@ On `research/dd001-two-agent-thresholds`, finish PR #14 through passing CI, squa
 
 Suggested title: `Bootstrap the Distributed Discovery research program`
 
-- Study IDs: DD-000 through DD-007; research results only for DD-000/DD-001.
-- Claim IDs: DD-C-0001 through DD-C-0025.
+- Study IDs: DD-000 through DD-007; research results for DD-000 through DD-002.
+- Claim IDs: DD-C-0001 through DD-C-0031.
 - Evidence status: mixed and ledger-controlled; exact status is never inferred from directory placement.
 - Commands: `make all`, `make upstream-patch`, PDF inspection, secret/private-path scan, and Git/upstream cleanliness checks.
-- Runs: canonical acceptance `20260720T202314Z_DD-000_88613408_217c602fa0`; DD-001 primary `20260720T200447Z_DD-001_6eb12861_ba766d1eba`; DD-001A primary `20260720T221139Z_DD-001_b1d8d431_40bf5b06a5`.
+- Runs: canonical acceptance `20260720T202314Z_DD-000_88613408_217c602fa0`; DD-001 primary `20260720T200447Z_DD-001_6eb12861_ba766d1eba`; DD-001A primary `20260720T221139Z_DD-001_b1d8d431_40bf5b06a5`; DD-001B primary `20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1`; DD-002 primary `20260720T225848Z_DD-002_94607423_e29b1460ae`.
 - Generated artifacts: foundations PDF SHA-256 `e096183159f8c016f116b1a97fc0721948bbee2aca6dd1ae251d0a2af95a32e4`; patched-preview PDF SHA-256 `0a43360e59fdbbc4002e2190479871896688b3b4ef640d219313cd9d2ed5acb9`; public four-page site.
 - Citation changes: 15 validated bibliography keys; canonical claims trace to the pinned source and/or independent implementation.
 - Upstream impact: none. The review patch applies in a disposable worktree; cached upstream is clean.

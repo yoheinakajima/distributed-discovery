@@ -1,0 +1,1627 @@
+[
+  {
+    "best_pure_difference": "1/12",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0
+    ],
+    "fine_partition": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P00",
+    "more_informative": "P01",
+    "planner_difference": "1/12",
+    "planner_monotone": true,
+    "selected_difference": "16/4815",
+    "worst_pure_difference": "1/12"
+  },
+  {
+    "best_pure_difference": "0",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0
+    ],
+    "fine_partition": [
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        2
+      ]
+    ],
+    "less_informative": "P00",
+    "more_informative": "P02",
+    "planner_difference": "0",
+    "planner_monotone": true,
+    "selected_difference": "0",
+    "worst_pure_difference": "0"
+  },
+  {
+    "best_pure_difference": "1/12",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0
+    ],
+    "fine_partition": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "less_informative": "P00",
+    "more_informative": "P03",
+    "planner_difference": "1/12",
+    "planner_monotone": true,
+    "selected_difference": "-1/2772",
+    "worst_pure_difference": "1/12"
+  },
+  {
+    "best_pure_difference": "1/12",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0,
+      0
+    ],
+    "fine_partition": [
+      [
+        0,
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P00",
+    "more_informative": "P04",
+    "planner_difference": "1/12",
+    "planner_monotone": true,
+    "selected_difference": "19/3960",
+    "worst_pure_difference": "1/12"
+  },
+  {
+    "best_pure_difference": "0",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0,
+      1
+    ],
+    "fine_partition": [
+      [
+        0,
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P01",
+    "more_informative": "P04",
+    "planner_difference": "0",
+    "planner_monotone": true,
+    "selected_difference": "125/84744",
+    "worst_pure_difference": "0"
+  },
+  {
+    "best_pure_difference": "1/12",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        2
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      1,
+      0
+    ],
+    "fine_partition": [
+      [
+        0,
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P02",
+    "more_informative": "P04",
+    "planner_difference": "1/12",
+    "planner_monotone": true,
+    "selected_difference": "19/3960",
+    "worst_pure_difference": "1/12"
+  },
+  {
+    "best_pure_difference": "0",
+    "coarse_partition": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      1,
+      1
+    ],
+    "fine_partition": [
+      [
+        0,
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P03",
+    "more_informative": "P04",
+    "planner_difference": "0",
+    "planner_monotone": true,
+    "selected_difference": "13/2520",
+    "worst_pure_difference": "0"
+  },
+  {
+    "best_pure_difference": "1/8",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0
+    ],
+    "fine_partition": [
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        1
+      ]
+    ],
+    "less_informative": "P00",
+    "more_informative": "P05",
+    "planner_difference": "1/8",
+    "planner_monotone": true,
+    "selected_difference": "47/2016",
+    "worst_pure_difference": "1/8"
+  },
+  {
+    "best_pure_difference": "1/8",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0
+    ],
+    "fine_partition": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "less_informative": "P00",
+    "more_informative": "P06",
+    "planner_difference": "1/8",
+    "planner_monotone": true,
+    "selected_difference": "125/6336",
+    "worst_pure_difference": "1/8"
+  },
+  {
+    "best_pure_difference": "1/6",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0,
+      0
+    ],
+    "fine_partition": [
+      [
+        0,
+        2
+      ],
+      [
+        1
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P00",
+    "more_informative": "P07",
+    "planner_difference": "1/6",
+    "planner_monotone": true,
+    "selected_difference": "869/20160",
+    "worst_pure_difference": "1/6"
+  },
+  {
+    "best_pure_difference": "1/12",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0,
+      1
+    ],
+    "fine_partition": [
+      [
+        0,
+        2
+      ],
+      [
+        1
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P01",
+    "more_informative": "P07",
+    "planner_difference": "1/12",
+    "planner_monotone": true,
+    "selected_difference": "1907/47936",
+    "worst_pure_difference": "1/12"
+  },
+  {
+    "best_pure_difference": "1/24",
+    "coarse_partition": [
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        1
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      1,
+      0
+    ],
+    "fine_partition": [
+      [
+        0,
+        2
+      ],
+      [
+        1
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P05",
+    "more_informative": "P07",
+    "planner_difference": "1/24",
+    "planner_monotone": true,
+    "selected_difference": "19/960",
+    "worst_pure_difference": "1/24"
+  },
+  {
+    "best_pure_difference": "1/24",
+    "coarse_partition": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      1,
+      1
+    ],
+    "fine_partition": [
+      [
+        0,
+        2
+      ],
+      [
+        1
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P06",
+    "more_informative": "P07",
+    "planner_difference": "1/24",
+    "planner_monotone": true,
+    "selected_difference": "9/385",
+    "worst_pure_difference": "1/24"
+  },
+  {
+    "best_pure_difference": "1/8",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0
+    ],
+    "fine_partition": [
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "less_informative": "P00",
+    "more_informative": "P08",
+    "planner_difference": "1/8",
+    "planner_monotone": true,
+    "selected_difference": "1/45",
+    "worst_pure_difference": "1/8"
+  },
+  {
+    "best_pure_difference": "1/8",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "less_informative": "P00",
+    "more_informative": "P09",
+    "planner_difference": "1/8",
+    "planner_monotone": true,
+    "selected_difference": "7/468",
+    "worst_pure_difference": "1/24"
+  },
+  {
+    "best_pure_difference": "1/6",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0,
+      0
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P00",
+    "more_informative": "P10",
+    "planner_difference": "1/6",
+    "planner_monotone": true,
+    "selected_difference": "7/180",
+    "worst_pure_difference": "1/12"
+  },
+  {
+    "best_pure_difference": "1/12",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0,
+      1
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P01",
+    "more_informative": "P10",
+    "planner_difference": "1/12",
+    "planner_monotone": true,
+    "selected_difference": "137/3852",
+    "worst_pure_difference": "0"
+  },
+  {
+    "best_pure_difference": "1/24",
+    "coarse_partition": [
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      1,
+      0
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P08",
+    "more_informative": "P10",
+    "planner_difference": "1/24",
+    "planner_monotone": true,
+    "selected_difference": "1/60",
+    "worst_pure_difference": "-1/24"
+  },
+  {
+    "best_pure_difference": "1/24",
+    "coarse_partition": [
+      [
+        0
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      1,
+      1
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P09",
+    "more_informative": "P10",
+    "planner_difference": "1/24",
+    "planner_monotone": true,
+    "selected_difference": "14/585",
+    "worst_pure_difference": "1/24"
+  },
+  {
+    "best_pure_difference": "1/8",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0,
+      0
+    ],
+    "fine_partition": [
+      [
+        0,
+        3
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "less_informative": "P00",
+    "more_informative": "P11",
+    "planner_difference": "1/8",
+    "planner_monotone": true,
+    "selected_difference": "71/2520",
+    "worst_pure_difference": "1/8"
+  },
+  {
+    "best_pure_difference": "1/8",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        2
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0,
+      1
+    ],
+    "fine_partition": [
+      [
+        0,
+        3
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "less_informative": "P02",
+    "more_informative": "P11",
+    "planner_difference": "1/8",
+    "planner_monotone": true,
+    "selected_difference": "71/2520",
+    "worst_pure_difference": "1/8"
+  },
+  {
+    "best_pure_difference": "0",
+    "coarse_partition": [
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        1
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      1,
+      0
+    ],
+    "fine_partition": [
+      [
+        0,
+        3
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "less_informative": "P05",
+    "more_informative": "P11",
+    "planner_difference": "0",
+    "planner_monotone": true,
+    "selected_difference": "7/1440",
+    "worst_pure_difference": "0"
+  },
+  {
+    "best_pure_difference": "0",
+    "coarse_partition": [
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      1,
+      1
+    ],
+    "fine_partition": [
+      [
+        0,
+        3
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "less_informative": "P08",
+    "more_informative": "P11",
+    "planner_difference": "0",
+    "planner_monotone": true,
+    "selected_difference": "1/168",
+    "worst_pure_difference": "0"
+  },
+  {
+    "best_pure_difference": "1/8",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0,
+      0
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2
+      ]
+    ],
+    "less_informative": "P00",
+    "more_informative": "P12",
+    "planner_difference": "1/8",
+    "planner_monotone": true,
+    "selected_difference": "17/792",
+    "worst_pure_difference": "1/24"
+  },
+  {
+    "best_pure_difference": "1/8",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        2
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0,
+      1
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2
+      ]
+    ],
+    "less_informative": "P02",
+    "more_informative": "P12",
+    "planner_difference": "1/8",
+    "planner_monotone": true,
+    "selected_difference": "17/792",
+    "worst_pure_difference": "1/24"
+  },
+  {
+    "best_pure_difference": "0",
+    "coarse_partition": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      1,
+      0
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2
+      ]
+    ],
+    "less_informative": "P06",
+    "more_informative": "P12",
+    "planner_difference": "0",
+    "planner_monotone": true,
+    "selected_difference": "1/576",
+    "worst_pure_difference": "-1/12"
+  },
+  {
+    "best_pure_difference": "0",
+    "coarse_partition": [
+      [
+        0
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      1,
+      1
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2
+      ]
+    ],
+    "less_informative": "P09",
+    "more_informative": "P12",
+    "planner_difference": "0",
+    "planner_monotone": true,
+    "selected_difference": "67/10296",
+    "worst_pure_difference": "0"
+  },
+  {
+    "best_pure_difference": "1/6",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0,
+      0
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "less_informative": "P00",
+    "more_informative": "P13",
+    "planner_difference": "1/6",
+    "planner_monotone": true,
+    "selected_difference": "5/126",
+    "worst_pure_difference": "1/12"
+  },
+  {
+    "best_pure_difference": "1/12",
+    "coarse_partition": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0,
+      1
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "less_informative": "P03",
+    "more_informative": "P13",
+    "planner_difference": "1/12",
+    "planner_monotone": true,
+    "selected_difference": "37/924",
+    "worst_pure_difference": "0"
+  },
+  {
+    "best_pure_difference": "1/24",
+    "coarse_partition": [
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        1
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      1,
+      0
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "less_informative": "P05",
+    "more_informative": "P13",
+    "planner_difference": "1/24",
+    "planner_monotone": true,
+    "selected_difference": "11/672",
+    "worst_pure_difference": "-1/24"
+  },
+  {
+    "best_pure_difference": "1/24",
+    "coarse_partition": [
+      [
+        0
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      1,
+      1
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "less_informative": "P09",
+    "more_informative": "P13",
+    "planner_difference": "1/24",
+    "planner_monotone": true,
+    "selected_difference": "9/364",
+    "worst_pure_difference": "1/24"
+  },
+  {
+    "best_pure_difference": "1/6",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P00",
+    "more_informative": "P14",
+    "planner_difference": "1/6",
+    "planner_monotone": true,
+    "selected_difference": "113/2520",
+    "worst_pure_difference": "1/12"
+  },
+  {
+    "best_pure_difference": "1/12",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0,
+      0,
+      1
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P01",
+    "more_informative": "P14",
+    "planner_difference": "1/12",
+    "planner_monotone": true,
+    "selected_difference": "2239/53928",
+    "worst_pure_difference": "0"
+  },
+  {
+    "best_pure_difference": "1/6",
+    "coarse_partition": [
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        2
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0,
+      1,
+      0
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P02",
+    "more_informative": "P14",
+    "planner_difference": "1/6",
+    "planner_monotone": true,
+    "selected_difference": "113/2520",
+    "worst_pure_difference": "1/12"
+  },
+  {
+    "best_pure_difference": "1/12",
+    "coarse_partition": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P03",
+    "more_informative": "P14",
+    "planner_difference": "1/12",
+    "planner_monotone": true,
+    "selected_difference": "179/3960",
+    "worst_pure_difference": "0"
+  },
+  {
+    "best_pure_difference": "1/12",
+    "coarse_partition": [
+      [
+        0,
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      0,
+      1,
+      2
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P04",
+    "more_informative": "P14",
+    "planner_difference": "1/12",
+    "planner_monotone": true,
+    "selected_difference": "37/924",
+    "worst_pure_difference": "0"
+  },
+  {
+    "best_pure_difference": "1/24",
+    "coarse_partition": [
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        1
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P05",
+    "more_informative": "P14",
+    "planner_difference": "1/24",
+    "planner_monotone": true,
+    "selected_difference": "31/1440",
+    "worst_pure_difference": "-1/24"
+  },
+  {
+    "best_pure_difference": "1/24",
+    "coarse_partition": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P06",
+    "more_informative": "P14",
+    "planner_difference": "1/24",
+    "planner_monotone": true,
+    "selected_difference": "5569/221760",
+    "worst_pure_difference": "-1/24"
+  },
+  {
+    "best_pure_difference": "0",
+    "coarse_partition": [
+      [
+        0,
+        2
+      ],
+      [
+        1
+      ],
+      [
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      1,
+      0,
+      2
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P07",
+    "more_informative": "P14",
+    "planner_difference": "0",
+    "planner_monotone": true,
+    "selected_difference": "1/576",
+    "worst_pure_difference": "-1/12"
+  },
+  {
+    "best_pure_difference": "1/24",
+    "coarse_partition": [
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      1,
+      1,
+      0
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P08",
+    "more_informative": "P14",
+    "planner_difference": "1/24",
+    "planner_monotone": true,
+    "selected_difference": "19/840",
+    "worst_pure_difference": "-1/24"
+  },
+  {
+    "best_pure_difference": "1/24",
+    "coarse_partition": [
+      [
+        0
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      1,
+      1,
+      1
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P09",
+    "more_informative": "P14",
+    "planner_difference": "1/24",
+    "planner_monotone": true,
+    "selected_difference": "979/32760",
+    "worst_pure_difference": "1/24"
+  },
+  {
+    "best_pure_difference": "0",
+    "coarse_partition": [
+      [
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      1,
+      1,
+      2
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P10",
+    "more_informative": "P14",
+    "planner_difference": "0",
+    "planner_monotone": true,
+    "selected_difference": "1/168",
+    "worst_pure_difference": "0"
+  },
+  {
+    "best_pure_difference": "1/24",
+    "coarse_partition": [
+      [
+        0,
+        3
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      1,
+      2,
+      0
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P11",
+    "more_informative": "P14",
+    "planner_difference": "1/24",
+    "planner_monotone": true,
+    "selected_difference": "1/60",
+    "worst_pure_difference": "-1/24"
+  },
+  {
+    "best_pure_difference": "1/24",
+    "coarse_partition": [
+      [
+        0
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      1,
+      2,
+      1
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P12",
+    "more_informative": "P14",
+    "planner_difference": "1/24",
+    "planner_monotone": true,
+    "selected_difference": "9/385",
+    "worst_pure_difference": "1/24"
+  },
+  {
+    "best_pure_difference": "0",
+    "coarse_partition": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "deterministic_garbling": [
+      0,
+      1,
+      2,
+      2
+    ],
+    "fine_partition": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "less_informative": "P13",
+    "more_informative": "P14",
+    "planner_difference": "0",
+    "planner_monotone": true,
+    "selected_difference": "13/2520",
+    "worst_pure_difference": "0"
+  }
+]
