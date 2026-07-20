@@ -315,3 +315,45 @@ claims:
     first_added: "2026-07-20"
     last_checked: "2026-07-20"
     notes: This is not evidence of a general theorem beyond the grid.
+  - id: DD-C-0016
+    study_id: DD-000
+    short_name: information-frontier-monotonicity
+    statement: If information architecture I2 can emulate every feasible I1 protocol without changing action, budget, timing, or objective constraints, then V_B(I2) is at least V_B(I1).
+    scope: Common discovery objective and explicitly nested/emulable feasible protocol classes.
+    claim_type: proposition
+    status: derived
+    source_type: local-proof-with-Blackwell-lineage
+    source_reference: docs/foundations.md
+    proof_path: claims/proofs/DD-C-0016.md
+    implementation_paths: []
+    run_ids: []
+    test_paths: []
+    exactness_basis: feasible-set inclusion argument
+    rounding_rule: null
+    dependencies: [DD-C-0001, DD-C-0002]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: This frontier result does not order discovery under different implemented protocols.
+  - id: DD-C-0017
+    study_id: DD-000
+    short_name: distributed-discovery-phrase-collision
+    statement: The phrase Distributed Discovery is not unique to this project and appears in prior resource/service/news contexts and in the title of a March 2026 autonomous-science preprint.
+    scope: Terminology search completed 2026-07-20; not a systematic bibliometric census.
+    claim_type: negative-result
+    status: verified
+    source_type: literature-search
+    source_reference: docs/literature/search-log.md
+    proof_path: null
+    implementation_paths: []
+    run_ids: []
+    test_paths: []
+    exactness_basis: verified title and arXiv metadata for arXiv:2603.14312 plus recorded search results
+    rounding_rule: null
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Never claim the phrase or a named field is first or unique.
