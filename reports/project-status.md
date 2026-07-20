@@ -6,7 +6,7 @@
 
 Milestones M0 through M9 and operational Milestone A are complete. Cleanup issue #6 closed through squash-merged PR #12 at `1add8de5a349c57085928da8aa54da85e49c5077`; CI passed, Pages workflow `29781940577` succeeded, and all five required routes returned HTTP 200. The source repository is public under MIT at `https://yoheinakajima.github.io/distributed-discovery/`. Canonical upstream remains untouched.
 
-DD-001A/B and DD-002 are merged. DD-002 PR #15 merged as `526d2f0f19638bc2f87567972135ebac6a74ae63`; CI `29786285311` and Pages `29786285312` passed. DD-003 is implemented in draft PR #16: its clean primary run completely enumerates 51 source graphs, independently reproduces a pairwise-moment bounded null, and verifies scalar-diagnostic counterexamples. The canonical `(16,8,1/5)` private-team optimum remains unresolved.
+The authorized A–E queue is complete and merged. DD-002 PR #15 merged as `526d2f0f19638bc2f87567972135ebac6a74ae63`; DD-003 PR #16 merged as `54b8713fa7f3b30922a88b60a6dc280319432715`. DD-003 post-merge CI `29787309515` and Pages `29787309537` passed, and all five public routes expose the final DD-002/DD-003 statuses. The canonical `(16,8,1/5)` private-team optimum remains unresolved.
 
 ## 2. Repository map
 
@@ -39,7 +39,7 @@ DD-001A/B and DD-002 are merged. DD-002 PR #15 merged as `526d2f0f19638bc2f87567
 - DD-001A: lossless signature theorem, exact feasibility/reconstruction, independent tiny-grid reproduction, and canonical state-space certificate; merged.
 - DD-001B: exact restricted-family threshold theorem, bounded continuous unrestricted classification, and anti-informative counterexamples; merged through PR #14.
 - DD-002: complete bounded deterministic-policy enumeration, exact equilibrium registries, independent reversal verification, and full Blackwell-refinement census; merged through PR #15.
-- DD-003: complete 51-graph census, independently reproduced orbit counts and exact outcomes, pairwise-moment bounded null, and scalar counterexamples; PR #16 awaits final CI/merge.
+- DD-003: complete 51-graph census, independently reproduced orbit counts and exact outcomes, pairwise-moment bounded null, and scalar counterexamples; merged through PR #16 and deployed.
 
 ## 4. Commands executed
 
@@ -115,7 +115,7 @@ DD-C-0022 is `checked`, not verified: direct clue-following is an exact coordina
 
 ## 10. Open research questions
 
-The immediate queue task is merging and deploying the completed DD-003 source-graph fixture, followed by the integrated handoff. A later canonical DD-001 method must preserve joint target alignment and provide an independently checkable admissible bound. DD-004 through DD-007 remain open and unexecuted.
+The A–E queue is complete. The next research task is an alignment-preserving canonical DD-001 method with an independently checkable admissible upper bound. DD-004 through DD-007 remain unexecuted; issue #8 intentionally queues the DD-007 schema only.
 
 ## 11. Known technical debt
 
@@ -130,11 +130,11 @@ The immediate queue task is merging and deploying the completed DD-003 source-gr
 
 ## 12. Blockers
 
-There is no validation blocker. Public `origin`, Actions, and Pages are active. The five prepared research issues are live: DD-002 #7, queued DD-007 #8, DD-001A #9, DD-003 #10, and DD-001B #11. GitHub CLI 2.96.0 is installed but unauthenticated; labels, milestones, homepage, and ruleset changes need CLI OAuth or equivalent settings access. Issue and pull-request operations remain available through the connected GitHub app.
+There is no validation blocker. Public `origin`, Actions, and Pages are active. Issues #6, #7, #9, #10, and #11 are closed; queued DD-007 issue #8 remains open. Only Dependabot PRs #1–#5 remain open. GitHub CLI 2.96.0 is installed but unauthenticated; the 23 prepared project labels, six milestones, homepage metadata, and a non-destructive `main` ruleset remain exact settings-capability blockers. Issue and pull-request operations remain available through the connected GitHub app.
 
 ## 13. Exact resume point
 
-On `research/dd003-source-graphs`, commit primary run `20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1` and claims DD-C-0032 through DD-C-0034, finish PR #16 through passing CI, squash-merge it, and verify Pages. Preserve the full-pairwise-matrix bounded-null and scalar-only counterexample scopes.
+After the documentation-only integrated handoff merges, sync `main`, run `make verify`, and inspect `reports/dd001-signature-certificate.md` before registering the next canonical DD-001 upper-bound approach. Preserve the exact certified interval `[325089/390625, 1]`; the pooled planner value `0.859421246199` is a stronger-information benchmark, not a private-team certificate.
 
 ## 14. Recommended next three tasks
 
@@ -168,3 +168,29 @@ Suggested title: `Bootstrap the Distributed Discovery research program`
 - Citation changes: 15 validated bibliography keys; canonical claims trace to the pinned source and/or independent implementation.
 - Upstream impact: none. The review patch applies in a disposable worktree; cached upstream is clean.
 - Publication impact: repository source and tracked paper artifacts are public by explicit approval; Pages is live. Labels, milestones, homepage metadata, and a non-destructive ruleset remain settings-capability blockers.
+
+## 17. Final A–E integration record
+
+1. **Executive summary:** Cleanup, DD-001A, DD-001B, bounded DD-002, and bounded DD-003 are merged; final research claims stop at DD-C-0034.
+2. **Public/MIT/Pages status:** The repository is intentionally public under the root MIT license. Third-party notices and read-only upstream separation are intact. Pages is public at `https://yoheinakajima.github.io/distributed-discovery/`.
+3. **Branches and PRs merged:** PRs #12–#16 were squash-merged sequentially. Their merge SHAs are `1add8de5a349c57085928da8aa54da85e49c5077`, `c16144e8a3f5287d1117b768856f559064a89bc0`, `7e637c1dc191b90f8de477ae05a779a254e35055`, `526d2f0f19638bc2f87567972135ebac6a74ae63`, and `54b8713fa7f3b30922a88b60a6dc280319432715`.
+4. **Issues:** #6, #7, #9, #10, and #11 are closed. Queued DD-007 issue #8 remains open by design.
+5. **Commands run:** Milestone-specific exact runners plus `make bootstrap`, `make verify`, `make papers`, `make site`, upstream cleanliness checks, secret/local-path scans, Git reviews, GitHub workflow audits, and live route smoke tests. Exact run commands are stored in each immutable run.
+6. **Tests and builds:** The final pre-handoff suite has 66 tests; strict mypy, Ruff, 34-claim validation, 13-run manifest validation, the 12-page foundations build, and the four-page site build pass.
+7. **Pages deployment:** DD-003 post-merge Pages run `29787309537` deployed commit `54b8713fa7f3b30922a88b60a6dc280319432715`; `/`, `foundations.html`, `applications.html`, `open-problems.html`, and `styles.css` returned HTTP 200, and the live page contains both completed study statuses.
+8. **Verified claims:** The ledger contains 34 records. DD-C-0029 through DD-C-0031 cover DD-002; DD-C-0032 through DD-C-0034 cover DD-003 with independent reproduction status.
+9. **Independently reproduced claims:** Canonical benchmark quantities, DD-001 tiny optima and counterexamples, DD-001A tie counts, DD-001B anti-informative witnesses, and all three DD-003 claims have materially separate checks.
+10. **Certified bounds:** The canonical DD-001 private-team value is exactly bounded by `[325089/390625, 1]`. No stronger admissible private-team upper certificate was produced.
+11. **Heuristic lower bounds:** Canonical coordinate ascent returns the exact direct value `325089/390625` from the direct, territorial, and 16 seeded random starts; this remains a constructive lower bound only.
+12. **New counterexamples:** DD-002 gives the exact selection-dependent disclosure reversal `5/9` to `171/308`. DD-003 gives matched mean agreement `3/4` with private discovery `8/9` versus `31/36`.
+13. **Negative and null results:** DD-003 has ten matched complete pairwise-moment graph pairs and zero discovery differences. DD-001B's informative phase does not extend to `p=0`. Randomized DD-002 disclosure was not tested.
+14. **Refuted conjectures:** General direct clue-following optimality, the all-`p` three-family DD-001B extension, unique use of “Distributed Discovery,” and sufficiency of average DD-003 pair agreement are refuted in their stated scopes.
+15. **Current canonical DD-001 interval:** `[325089/390625, 1] = [0.83222784, 1]`. The independently reproduced pooled-planner value `0.859421246199` uses greater information and assignment authority and is not an admissible private-team upper certificate.
+16. **DD-002 bounded outcome:** 15 policies, 37 posterior games, 256 global pure-equilibrium selections, 45 strict refinements, one selected reversal, eight worst-pure reversals, and no best-pure or planner reversals.
+17. **DD-003 bounded outcome:** 51 canonical graphs (`1/8/42` by source count); ten matched pairwise-moment pairs with a bounded null; 22 matched-average-agreement counterexample pairs and 59 source-HHI counterexample pairs.
+18. **Technical debt:** Canonical DD-001 lacks a joint alignment-preserving upper certificate; DD-002 randomized disclosure and general asymmetric mixed equilibria are deferred; DD-003 heterogeneous signal laws and larger exact graph classes are deferred; browser-based accessibility audit remains absent.
+19. **Exact blockers:** No research, CI, build, or deployment blocker. Settings-only blockers are GitHub label/milestone creation, homepage metadata, and a safe `main` ruleset because the CLI lacks OAuth and the connected app does not expose those repository settings.
+20. **Exact next task:** Register and test an alignment-preserving canonical DD-001 upper-bound method, beginning from the signature barrier rather than treating the pooled planner as a certificate.
+21. **Exact resume command:** `git switch main && git pull --ff-only origin main && make verify`.
+22. **Commit SHAs:** Queue merge SHAs are listed in item 3; primary evidence commits are `b1d8d431` (DD-001A), `b2cc23f4` (DD-001B), `94607423` (DD-002), and `2ea8dad5` (DD-003).
+23. **Pull-request URLs:** `https://github.com/yoheinakajima/distributed-discovery/pull/12` through `/pull/17`; PR #17 is the documentation-only integrated handoff.

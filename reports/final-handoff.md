@@ -1,7 +1,7 @@
 # Final handoff
 
-> Archived M0–M9 handoff. Superseded for current operations by `reports/project-status.md` and the A–E queue in `plans/MASTER_EXEC_PLAN.md`; immutable run references below remain valid.
+> Current handoff pointer. Detailed evidence and exact resume instructions are maintained in `reports/project-status.md` and `plans/MASTER_EXEC_PLAN.md`; historical M0–M9 run references remain valid.
 
-The complete handoff is [`project-status.md`](project-status.md). M0 through M9 are complete on `codex/bootstrap-distributed-discovery`; `make all` and the supplemental patch, PDF, provenance, secret, and Git audits pass. A public GitHub source repository was explicitly authorized after M9; the companion site remains un-deployed and GitHub organizational metadata remains unapplied.
+The complete handoff is [`project-status.md`](project-status.md). M0–M9, public/MIT/Pages cleanup, DD-001A/B, bounded DD-002, and bounded DD-003 are complete and merged. The public companion site is deployed from `main`; claims DD-C-0001 through DD-C-0034 and all immutable evidence remain ledger-controlled. Settings-only GitHub taxonomy and `main` ruleset changes remain blocked on an authenticated settings-capable session.
 
-Resume with the bounded DD-001 canonical upper-bound task in `.github/initial-issues/dd001-canonical-upper-bound.md`. The canonical global private-team optimum is unresolved.
+The canonical global private-team optimum remains unresolved. Resume by syncing `main`, running `make verify`, and reading `reports/dd001-signature-certificate.md` before registering an alignment-preserving upper-bound method.

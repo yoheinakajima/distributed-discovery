@@ -8,7 +8,7 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-The historical M0–M9 bootstrap and operational Milestone A are complete. DD-001A/B are merged. DD-002 merged through PR #15 as `526d2f0f19638bc2f87567972135ebac6a74ae63`; post-merge CI run `29786285311` and Pages run `29786285312` passed, and all five live routes returned HTTP 200. **Active milestone: E — DD-003 bounded source graphs, issue #10, branch `research/dd003-source-graphs`.**
+The historical M0–M9 bootstrap, operational Milestone A, and research milestones DD-001A/B, DD-002, and DD-003 are complete and merged. DD-003 merged through PR #16 as `54b8713fa7f3b30922a88b60a6dc280319432715`; post-merge CI run `29787309515` and Pages run `29787309537` passed, and all five live routes returned HTTP 200 with the final study statuses. **Active integration boundary: documentation-only final handoff PR #17 on `codex/final-ae-handoff`.**
 
 ## Scope
 
@@ -40,8 +40,8 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - B DD-001A policy-signature reduction and certification barrier: completed 2026-07-20.
 - C DD-001B two-agent hybrid thresholds: completed 2026-07-20.
 - D DD-002 bounded disclosure fixture: completed 2026-07-20.
-- E DD-003 bounded source-graph fixture: implementation, primary evidence, and claim audit complete; PR #16 validation/merge pending.
-- Integrated handoff: pending E or a hard execution limit.
+- E DD-003 bounded source-graph fixture: completed 2026-07-20.
+- Integrated handoff: documentation and broad local acceptance complete; PR #17 validation/merge pending.
 
 ## Progress checklist
 
@@ -80,7 +80,9 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - [x] Execute and independently verify the bounded DD-002 deterministic-disclosure fixture.
 - [x] Merge DD-002 PR #15 after CI and verify live Pages.
 - [x] Execute and independently verify DD-003 on issue #10 and branch `research/dd003-source-graphs`.
-- [ ] Merge DD-003 PR #16 after CI and verify live Pages.
+- [x] Merge DD-003 PR #16 after CI and verify live Pages.
+- [x] Complete broad final acceptance without creating duplicate immutable runs.
+- [ ] Merge documentation-only integrated handoff PR #17 after CI and verify final Pages.
 
 ## Discoveries and surprises
 
@@ -118,6 +120,7 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - 2026-07-20: DD-001B primary run `20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1` passed in 35.86 seconds. It proves the exact three-family thresholds \(1/M\) and \(1/(M-1)\), exhaustively certifies the unrestricted continuous informative envelope for M=3,4,5, and records p=0 counterexamples that refute an all-p extension.
 - 2026-07-20: DD-002 primary run `20260720T225848Z_DD-002_94607423_e29b1460ae` enumerated all 15 deterministic disclosure policies, 37 posterior games, 256 global pure-equilibrium selections, and 45 strict refinement pairs. Exactly one refinement lowers the declared anonymous-symmetric selection, while every pure equilibrium and the planner improve for that witness; the reversal is selection-dependent.
 - 2026-07-20: DD-003 primary run `20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1` enumerated 51 nonisomorphic source graphs, independently reproducing the 1/8/42 orbit counts. Ten full pairwise-moment signatures each match two graphs with identical discovery, a complete bounded null. Mean agreement alone is insufficient: two graphs match at 3/4 but have discovery 8/9 and 31/36.
+- 2026-07-20: DD-003 PR #16 passed CI `29787235590` and artifact run `29787235603`, then squash-merged as `54b8713fa7f3b30922a88b60a6dc280319432715`. Post-merge CI `29787309515` and Pages `29787309537` passed; the deployed DD-002/DD-003 completion statuses and all five routes were verified live.
 
 ## Decision log
 
@@ -154,6 +157,7 @@ Each milestone runs its targeted Make commands plus schema, unit, integration, a
 - DD-001B `make dd001-thresholds`: primary run completed the exact restricted-family theorem and bounded unrestricted census in 35.86 seconds; PR #14 and post-merge CI/Pages passed.
 - DD-002 `make dd002-disclosure`: primary run completed the entire bounded deterministic-policy lattice in 0.018 seconds. The independent witness verifier, exact posterior/equilibrium checks, planner monotonicity, corruption test, and run manifest validation passed.
 - DD-003 `make dd003-source-graphs`: primary run completed the 51-graph exact census in 2.00 seconds. Independent orbit traversal, pairwise nonisomorphism, direct moment/discovery recomputation, bounded-null verification, scalar counterexample verification, and corruption testing passed.
+- DD-003 PR/post-merge: required branch workflows passed; issue #10 closed automatically on squash merge; five-route Pages smoke test passed and the live open-problems page contains the independently reproduced DD-003 status.
 - M7 `make verify`: passed after adding six bounded research briefs and linking their next actions into the study registry; no DD-002 through DD-007 experiment was executed and no result claim was added.
 - M8 `python scripts/setup_github.py`: validated 23 labels, six milestones, and four nonduplicative initial issue drafts in offline dry-run mode. `make verify` passed 28 tests plus claim and run validation.
 - M9 `make all`: formatting, lint, strict typing, 28 unit/integration/regression tests, claim/run validation, a clean canonical reproduction, the 12-page foundations build, and the four-page site build passed. `make upstream-patch`, PDF metadata/render inspection, internal-link/content tests, provenance/hash validation, local-path/token scans, and upstream/Git hygiene checks also passed. A final provenance-sanitizer unit test brought the post-documentation verification total to 29 passing tests; its first format check and a direct audit missing `PYTHONPATH` stopped safely and were corrected before the passing rerun.
@@ -188,8 +192,8 @@ No current local blocker. GitHub CLI is installed but unauthenticated; the conne
 
 ## Recovery and restart instructions
 
-On branch `research/dd003-source-graphs`, integrate immutable run `20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1` and claims DD-C-0032 through DD-C-0034, run `make verify`, `make site`, and `make papers`, then finish PR #16 through CI, review audit, squash merge, and post-merge Pages verification. Preserve the pairwise-matrix bounded-null and scalar-only counterexample scopes.
+On branch `codex/final-ae-handoff`, finish PR #17 through required CI, review-thread audit, and squash merge. Then sync `main`, verify post-merge CI/Pages and five live routes, and ensure the worktree is clean. No research runner should be invoked because that would create duplicate immutable evidence.
 
 ## Outcome and retrospective
 
-M0–M9, Milestone A, DD-001A/B, and DD-002 meet their criteria. DD-003 meets its local research acceptance criteria; PR #16 and post-merge deployment remain before the final integrated handoff.
+M0–M9, Milestone A, DD-001A/B, DD-002, and DD-003 meet their research, CI, merge, and deployment criteria. The final broad acceptance also passes; only PR #17 validation/merge and its deployment smoke test remain.
