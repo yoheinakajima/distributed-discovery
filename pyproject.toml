@@ -18,7 +18,7 @@ distributed-discovery = "distributed_discovery.cli:main"
 
 [dependency-groups]
 dev = [
-  "mypy>=1.11,<2",
+  "mypy>=2.3.0,<3",
   "pytest>=8.3,<9",
   "ruff>=0.6,<1",
   "types-PyYAML>=6.0,<7",
