@@ -12,6 +12,7 @@ from distributed_discovery.source_networks.model import (
     plurality_report,
     report_law,
 )
+from distributed_discovery.source_networks.verification import verify_registry
 
 
 def test_plurality_report_preserves_ties() -> None:
@@ -65,3 +66,22 @@ def test_pairwise_matrix_null_and_average_counterexample() -> None:
     assert mean_pair_agreement(left, accuracy) == mean_pair_agreement(right, accuracy)
     assert exact_metrics(left, accuracy)["private_discovery"] == Fraction(8, 9)
     assert exact_metrics(right, accuracy)["private_discovery"] == Fraction(31, 36)
+
+
+def test_independent_verifier_rejects_corruption() -> None:
+    accuracy = Fraction(2, 3)
+    graphs = sum((enumerate_graphs(sources, 4) for sources in (1, 2, 3)), [])
+    registry = [
+        {
+            "adjacency": graph,
+            "private_discovery": exact_metrics(graph, accuracy)["private_discovery"],
+            "pairwise_signature": pairwise_signature(graph, accuracy),
+        }
+        for graph in graphs
+    ]
+    left = canonical_graph(((0, 0, 0, 1), (1, 1, 1, 0)))
+    right = canonical_graph(((0, 1, 1, 1), (1, 1, 1, 1)))
+    witness = {"left_adjacency": left, "right_adjacency": right}
+    assert verify_registry(registry, witness)["passed"]
+    registry[0]["private_discovery"] = Fraction(0)
+    assert not verify_registry(registry, witness)["passed"]
