@@ -1,4 +1,4 @@
-.PHONY: bootstrap lint typecheck test fetch-upstream reproduce-baseline upstream-patch validate-claims foundations dd001 dd001-signatures dd001-thresholds papers site verify all clean
+.PHONY: bootstrap lint typecheck test fetch-upstream reproduce-baseline upstream-patch validate-claims foundations dd001 dd001-signatures dd001-thresholds dd002-disclosure papers site verify all clean
 
 UV := uv
 export PYTHONPATH := $(CURDIR)/src
@@ -44,6 +44,9 @@ dd001-signatures:
 
 dd001-thresholds:
 	$(PY) -m distributed_discovery.private_teams.threshold_study
+
+dd002-disclosure:
+	$(PY) -m distributed_discovery.information_design.study
 
 papers:
 	./scripts/build_papers.sh all
