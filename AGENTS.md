@@ -1,6 +1,6 @@
 # Distributed Discovery agent instructions
 
-This private repository develops **Distributed Discovery**: how organizations and multi-agent systems convert dispersed evidence into portfolios of search actions. The canonical public paper and site remain read-only upstream at `yoheinakajima/shared-discovery-paradox`.
+This repository develops **Distributed Discovery**: how organizations and multi-agent systems convert dispersed evidence into portfolios of search actions. The repository is public by explicit project-owner decision; the canonical paper and site remain read-only upstream at `yoheinakajima/shared-discovery-paradox`.
 
 ## Mandatory read order
 
@@ -22,6 +22,6 @@ Use a living ExecPlan for substantial work. Execute registered milestones sequen
 - Validate claim records against `claims/schema.json`; promotion requires evidence and checks.
 - Add hand-checkable tests, invariance/normalization/bound tests, and regressions proportional to each change. Run the relevant Make targets before commit.
 - Update the active ExecPlan, claim ledger, study status, result index, and documentation with material findings or decisions.
-- Make small milestone commits on `codex/*`. Do not force-push, rewrite shared history, commit secrets, publish, deploy, or modify/push to canonical upstream.
+- Make small milestone commits on `codex/*`. Do not force-push, rewrite shared history, commit secrets, deploy the companion site, or modify/push to canonical upstream. Further publication changes require explicit human approval.
 
 Detailed policies live in `docs/`; do not duplicate them here.

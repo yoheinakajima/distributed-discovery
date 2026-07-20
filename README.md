@@ -6,7 +6,7 @@ The Shared Discovery Paradox is the canonical atomic result: pooled evidence may
 
 > The canonical public paper and interactive guide remain in the upstream shared-discovery-paradox repository. This repository contains the broader research program, reproducibility infrastructure, companion materials, and extension studies.
 
-This repository is private and must not be published or deployed. Upstream is read-only.
+This repository is public by explicit project-owner decision. The companion site remains an un-deployed local build, and canonical upstream remains read-only.
 
 ## Status and navigation
 
@@ -31,7 +31,7 @@ make validate-claims      # validate the claim ledger
 make foundations          # build/validate the companion note
 make dd001                # run the registered DD-001 baseline configuration
 make papers               # build all paper artifacts
-make site                 # build the private local companion site
+make site                 # build the local companion site
 make all                  # verify, reproduce canonical baseline, build papers and site
 ```
 

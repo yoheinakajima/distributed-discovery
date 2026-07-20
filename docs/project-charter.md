@@ -2,7 +2,7 @@
 
 ## Mission
 
-Distributed Discovery is the research subject of how organizations and multi-agent systems convert dispersed evidence into portfolios of search actions. This repository provides a private, auditable workspace to reproduce the canonical Shared Discovery Paradox, define the broader framework, prepare additive upstream materials, and execute registered extension studies.
+Distributed Discovery is the research subject of how organizations and multi-agent systems convert dispersed evidence into portfolios of search actions. This repository provides an auditable public workspace to reproduce the canonical Shared Discovery Paradox, define the broader framework, prepare additive upstream materials, and execute registered extension studies.
 
 The research subject is **Distributed Discovery**; the canonical result is **The Shared Discovery Paradox**; the design principle is **Share the evidence. Diversify the actions.** “Foundations of Distributed Discovery” names the initial companion note. “The Art of Distributed Discovery” is reserved for a possible later monograph.
 

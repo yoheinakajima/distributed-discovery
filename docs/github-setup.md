@@ -1,6 +1,6 @@
 # GitHub organization setup
 
-The repository currently has no Git remote, so M8 is represented by local configuration and four nonduplicative initial-issue drafts. Nothing in this setup publishes the private repository.
+The repository has a public GitHub remote by explicit project-owner decision. M8 remains represented by local configuration and four nonduplicative initial-issue drafts because GitHub CLI/API setup has not been applied.
 
 ## Review locally
 
@@ -10,9 +10,9 @@ uv run --no-editable python scripts/setup_github.py
 
 The default mode validates and summarizes `.github/labels.yml`, `.github/milestones.yml`, and `.github/initial-issues/*.md`. It does not call GitHub.
 
-## Apply after a private remote is authorized
+## Apply after GitHub CLI access is authorized
 
-Prerequisites: install `gh`, authenticate it to the intended private repository, verify the exact `OWNER/REPO`, and review every draft. Then run:
+Prerequisites: install `gh`, authenticate it to the intended repository, verify the exact `OWNER/REPO`, and review every draft. Then run:
 
 ```sh
 uv run --no-editable python scripts/setup_github.py --apply --repo OWNER/REPO
@@ -22,7 +22,7 @@ Apply mode upserts labels, creates only missing milestones, and creates an initi
 
 ## Manual checklist
 
-- Confirm the target repository is private and is the intended project, not canonical upstream.
+- Confirm the target repository is the intended project, not canonical upstream.
 - Confirm all 23 labels and six milestones have the names in the manifests.
 - Confirm the six issue forms render and apply their default labels.
 - Review the four initial issue drafts; create no duplicate titles.

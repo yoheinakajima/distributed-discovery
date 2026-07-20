@@ -14,7 +14,7 @@ The generated patch applies to pinned commit `5025cc8e8f2f8ca015dff2066f08f81ad5
 
 The local site preserves the canonical guide as the primary six-minute explanation and appends a “Beyond the Paradox” research-program entry point. Foundations, Open Problems, and Applications pages use the pinned guide’s lightweight visual language without copying its interactive sequence. Benchmark statements are generated from the passing canonical run, while study cards are generated from registry question/status files and label every DD-001 through DD-007 direction as open.
 
-`make site` builds four pages and provenance data, then validates internal links, semantic landmarks and heading order, resolved data markers, and tracking absence. Integration tests also verify generated content and primary light/dark text contrast. The output remains private and un-deployed.
+`make site` builds four pages and provenance data, then validates internal links, semantic landmarks and heading order, resolved data markers, and tracking absence. Integration tests also verify generated content and primary light/dark text contrast. The source is public by explicit project-owner decision; the output remains un-deployed.
 
 ## M5 foundations note
 

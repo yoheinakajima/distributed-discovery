@@ -139,7 +139,7 @@ M9 produced a clean canonical acceptance run, refreshed generated paper provenan
 
 ## Blockers
 
-No validation blocker. No Git remote exists, so push, draft-PR creation, and application of GitHub metadata remain unavailable unless a private origin is explicitly configured.
+No validation blocker. A public GitHub `origin` was explicitly authorized after M9. Draft-PR creation and application of GitHub metadata remain unavailable until `gh` is installed and authenticated.
 
 ## Recovery and restart instructions
 
@@ -147,4 +147,4 @@ From the repository root, read the mandatory files in `AGENTS.md`, `reports/proj
 
 ## Outcome and retrospective
 
-M0–M9 meet their criteria and the branch is ready for human review. M2 made no general theorem or novelty claim from the atomic model; it records terminology collisions and treats effective channels/source concentration as model-specific or provisional. M3 keeps that calibration in the patch and does not modify canonical upstream. M4 is private, tracker-free, and un-deployed. M5 clearly attributes restated upstream results and keeps applications/open studies scoped. M6 certifies only bounded tiny cases and explicitly leaves the canonical private-team optimum unresolved. M7 defines bounded next experiments but does not run them or imply results. M8 is locally complete and intentionally unapplied while no private remote is configured. M9 independently re-exercised the acceptance interface and preserved all remaining evidence limits.
+M0–M9 meet their criteria and the branch is ready for human review. M2 made no general theorem or novelty claim from the atomic model; it records terminology collisions and treats effective channels/source concentration as model-specific or provisional. M3 keeps that calibration in the patch and does not modify canonical upstream. M4 is tracker-free and un-deployed. M5 clearly attributes restated upstream results and keeps applications/open studies scoped. M6 certifies only bounded tiny cases and explicitly leaves the canonical private-team optimum unresolved. M7 defines bounded next experiments but does not run them or imply results. M8 is locally complete and intentionally unapplied. M9 independently re-exercised the acceptance interface and preserved all remaining evidence limits. The project owner explicitly authorized the public GitHub source repository after completion.
