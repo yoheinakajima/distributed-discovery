@@ -18,3 +18,11 @@ DD-001A signature evidence:
 - `certificate-verification.json`: independent recomputation result.
 
 Preliminary run `20260720T220911Z_DD-001_6822d4c6_40bf5b06a5` remains immutable. Its computational audit passed, but the primary run supersedes its overstrong presentation key. Neither run certifies a canonical private-team objective upper bound.
+
+DD-001B threshold evidence:
+
+- Primary run: `../../../results/verified/20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1/`.
+- `threshold-certificate.json`: continuous exact polynomial envelope for unrestricted M=3,4,5.
+- `known-witnesses.json`: all four informative witnesses reproduced by raw and signature enumeration plus independent evaluators.
+- `anti-informative-counterexamples.json`: exact p=0 counterexamples to the all-p three-family extension.
+- `restricted-phase-table.csv` and SVG: generated threshold samples for M=3 through 8.

@@ -1,0 +1,7 @@
+{
+  "outputs/anti-informative-counterexamples.json": "da2d2a8b6854683c85062a1918b3222959e17230e767b2553304a736684870f6",
+  "outputs/known-witnesses.json": "47d933bfc1ae8f611599b91a289747bdc413de5d62428ea599e29cea6e036b7d",
+  "outputs/restricted-phase-table.csv": "36eff4f2bca52d82b9d2953ea0bb1a9107988b93872206a4f78d980d96a286e6",
+  "outputs/restricted-phase-table.svg": "a343eda55ece1433875c0e22dae51a185a54c3f367fc8f7189561dea914ba64c",
+  "outputs/threshold-certificate.json": "a0464639f761ad5c8899303fc94f96413108896384fb9b98e8dcc21ffede5638"
+}

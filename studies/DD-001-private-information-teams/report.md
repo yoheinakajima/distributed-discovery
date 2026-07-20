@@ -44,3 +44,11 @@ DD-C-0023 proves that `(incoming count, fixed-point indicator)` signatures are l
 The exact canonical state-space audit (DD-C-0025) finds 148,348,284,928 feasible labeled signatures and 5,806 individual target orbits. The eight-agent multiset count before a global target quotient has 85 digits. Independently canonicalizing agents is not lossless because relative target alignment matters. This is a proved reduction plus a documented certification barrier, not a canonical upper bound. The direct lower bound and pooled numerical benchmark remain unchanged and global optimality remains unresolved.
 
 Next work is the exact \(N=2\) hybrid-threshold milestone. Future canonical certification must use a joint alignment-preserving state or another independently checkable relaxation before spending large compute.
+
+## DD-001B two-searcher thresholds
+
+The four informative hybrid witnesses share one policy family with exact value \(H_M(p)=[1+(M-2)p]/(M-1)\). Exact factorizations against territorial \(2/M\) and direct \(2p-p^2\) prove the restricted three-family thresholds \(1/M\) and \(1/(M-1)\) for every \(M\ge3\) (DD-C-0026).
+
+Primary run `20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1` exhausts 438,734 two-agent signature multisets and certifies the continuous unrestricted informative envelope for \(M=3,4,5\) (DD-C-0027). Raw and signature enumeration reproduce all four original witnesses. At \(p=0\), exact optima \(11/12\) for \(M=3\) and \(2/3\) for \(M=4\) refute extending the three-family theorem to anti-informative clues (DD-C-0028).
+
+DD-001B is complete. The next queue milestone is the bounded DD-002 disclosure fixture; the canonical DD-001 optimum remains unresolved.

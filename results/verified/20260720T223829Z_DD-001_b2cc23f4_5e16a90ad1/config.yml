@@ -1,0 +1,19 @@
+schema_version: 1
+study_id: DD-001
+milestone: two-agent-thresholds
+method: exact-polynomial-envelope-plus-raw-and-signature-checks
+time_budget_seconds: 120
+certificate_candidates: [3, 4, 5]
+raw_audit_candidates: [3, 4]
+known_witnesses:
+  - {candidates: 3, accuracy: "2/5", expected: "7/10"}
+  - {candidates: 3, accuracy: "7/15", expected: "11/15"}
+  - {candidates: 4, accuracy: "3/10", expected: "8/15"}
+  - {candidates: 4, accuracy: "13/40", expected: "11/20"}
+phase_candidates: [3, 4, 5, 6, 7, 8]
+validation:
+  require_continuous_informative_certificate: true
+  require_raw_signature_agreement: true
+  require_formula_direct_agreement: true
+  require_boundary_ties: true
+  require_anti_informative_counterexample: true

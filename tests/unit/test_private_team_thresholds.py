@@ -3,12 +3,14 @@ from fractions import Fraction
 import pytest
 
 from distributed_discovery.private_teams.model import evaluate_direct, evaluate_formula
+from distributed_discovery.private_teams.optimize import exhaustive_optimum
 from distributed_discovery.private_teams.signatures import signature_from_policy
 from distributed_discovery.private_teams.thresholds import (
     certify_informative_envelope,
     direct_two_value,
     distinct_territorial_value,
     evaluate_quadratic,
+    exact_signature_optimum_fast,
     minimum_on_interval,
     one_reroute_hybrid_profile,
     one_reroute_hybrid_value,
@@ -63,3 +65,10 @@ def test_unrestricted_informative_envelope_certificate(candidates: int) -> None:
     assert certificate.direct_interval_passed
     assert certificate.minimum_hybrid_margin == 0
     assert certificate.minimum_direct_margin == 0
+
+
+@pytest.mark.parametrize(("candidates", "expected"), [(3, Fraction(11, 12)), (4, Fraction(2, 3))])
+def test_anti_informative_optima_match_raw_enumeration(candidates: int, expected: Fraction) -> None:
+    signature_value, _ = exact_signature_optimum_fast(candidates, Fraction(0))
+    raw_value = exhaustive_optimum(candidates, 2, Fraction(0)).value
+    assert signature_value == raw_value == expected

@@ -6,7 +6,7 @@
 
 Milestones M0 through M9 and operational Milestone A are complete. Cleanup issue #6 closed through squash-merged PR #12 at `1add8de5a349c57085928da8aa54da85e49c5077`; CI passed, Pages workflow `29781940577` succeeded, and all five required routes returned HTTP 200. The source repository is public under MIT at `https://yoheinakajima.github.io/distributed-discovery/`. Canonical upstream remains untouched.
 
-DD-001A is implemented on `research/dd001-signature-certificate` in draft PR #13. It proves the lossless count/fixed-point policy signature and exact Hall feasibility conditions, independently reproduces all 21 tiny-grid optima and raw tie counts, and verifies 148,348,284,928 feasible canonical single-agent signatures. The canonical `(16,8,1/5)` private-team optimum remains unresolved; this is a structural certificate and resource barrier, not an objective upper certificate.
+DD-001A is merged. DD-001B is implemented in draft PR #14: it proves exact two-searcher thresholds within three policy families, certifies the unrestricted continuous informative envelope for M=3,4,5, and refutes an all-p extension with anti-informative counterexamples. The canonical `(16,8,1/5)` private-team optimum remains unresolved.
 
 ## 2. Repository map
 
@@ -36,7 +36,8 @@ DD-001A is implemented on `research/dd001-signature-certificate` in draft PR #13
 - M8: complete local GitHub organization metadata; prepared issues are live, with settings-only taxonomy blocked on OAuth.
 - M9: clean acceptance reproduction, full builds/audits, navigation refresh, and this handoff.
 - A: public MIT/Pages cleanup, passing squash merge, and live five-route deployment smoke test.
-- DD-001A: lossless signature theorem, exact feasibility/reconstruction, independent tiny-grid reproduction, and canonical state-space certificate; PR #13 awaits final CI/merge.
+- DD-001A: lossless signature theorem, exact feasibility/reconstruction, independent tiny-grid reproduction, and canonical state-space certificate; merged.
+- DD-001B: exact restricted-family threshold theorem, bounded continuous unrestricted classification, and anti-informative counterexamples; PR #14 awaits final CI/merge.
 
 ## 4. Commands executed
 
@@ -84,7 +85,7 @@ The run is the current source for the site and foundations note. Claim records r
 
 ## 6. Verified claims
 
-The claim ledger has 25 records. Status `verified` applies to DD-C-0007, DD-C-0009, DD-C-0015, DD-C-0017, and DD-C-0025, whose exact canonical signature counts have an independent corruption-detecting certificate checker. DD-C-0023 remains `derived` because its Hall proof, not computation, establishes the theorem. DD-C-0012 through DD-C-0014 remain explicitly `sourced` upstream theorem statements.
+The claim ledger has 28 records. DD-C-0026 is the derived restricted-family threshold theorem; DD-C-0027 is the checked continuous bounded classification; DD-C-0028 independently reproduces the anti-informative counterexamples. Earlier evidence statuses remain unchanged.
 
 ## 7. Independently reproduced claims
 
@@ -107,7 +108,7 @@ DD-C-0022 is `checked`, not verified: direct clue-following is an exact coordina
 
 ## 10. Open research questions
 
-The immediate question is the exact DD-001B two-searcher hybrid threshold. A later canonical method must preserve joint target alignment and provide an independently checkable admissible bound. DD-002 through DD-007 remain open and unexecuted: disclosure under strategic concentration, latent source networks, sequential feedback, overlapping coverage, discovery mechanisms, and empirical audit identification.
+The immediate queue task is the bounded DD-002 disclosure fixture. A later canonical DD-001 method must preserve joint target alignment and provide an independently checkable admissible bound. DD-002 through DD-007 remain open and unexecuted.
 
 ## 11. Known technical debt
 
@@ -124,13 +125,13 @@ There is no validation blocker. Public `origin`, Actions, and Pages are active. 
 
 ## 13. Exact resume point
 
-On `research/dd001-signature-certificate`, finish PR #13 through passing CI, squash-merge it, and verify the Pages deployment. Then sync `main` and start issue #11 on the DD-001B threshold branch. Never describe the pooled benchmark, DD-C-0022, or the signature state-space count as a private-team optimum certificate.
+On `research/dd001-two-agent-thresholds`, finish PR #14 through passing CI, squash-merge it, and verify Pages. Then sync `main` and start issue #7 on the DD-002 disclosure branch. Preserve the bounded M=3,4,5 scope of DD-C-0027.
 
 ## 14. Recommended next three tasks
 
-1. DD-001B: derive and independently reproduce the exact two-searcher hybrid thresholds.
-2. DD-002: enumerate deterministic partitions for the bounded `M=3,N=2` disclosure fixture and report full equilibrium correspondence.
-3. DD-003: enumerate nonisomorphic small source graphs and test whether pairwise report moments are insufficient for discovery prediction.
+1. DD-002: enumerate deterministic partitions for the bounded `M=3,N=2` disclosure fixture and report full equilibrium correspondence.
+2. DD-003: enumerate nonisomorphic small source graphs and test whether pairwise report moments are insufficient for discovery prediction.
+3. DD-001: seek an alignment-preserving canonical relaxation with a checkable upper bound.
 
 ## 15. Commit list
 

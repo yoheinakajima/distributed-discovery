@@ -1,0 +1,10 @@
+{
+  "anti_informative_extension_refuted": true,
+  "continuous_informative_certificates_passed": true,
+  "elapsed_seconds": 35.86226124991663,
+  "git_clean_at_start": true,
+  "global_all_M_informative_theorem_claimed": false,
+  "known_witnesses_reproduced_by_raw_and_signature_enumeration": true,
+  "passed": true,
+  "time_budget_seconds": 120
+}

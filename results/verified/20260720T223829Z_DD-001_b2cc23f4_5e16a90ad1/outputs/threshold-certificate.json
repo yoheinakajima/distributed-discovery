@@ -1,0 +1,63 @@
+{
+  "all_p_extension": "refuted",
+  "bounded_unrestricted_informative_certificates": [
+    {
+      "candidates": 3,
+      "direct_interval": [
+        "1/2",
+        "1"
+      ],
+      "direct_interval_passed": true,
+      "hybrid_interval": [
+        "1/3",
+        "1/2"
+      ],
+      "hybrid_interval_passed": true,
+      "minimum_direct_margin": "0",
+      "minimum_hybrid_margin": "0",
+      "profile_count": 351,
+      "signature_count": 26
+    },
+    {
+      "candidates": 4,
+      "direct_interval": [
+        "1/3",
+        "1"
+      ],
+      "direct_interval_passed": true,
+      "hybrid_interval": [
+        "1/4",
+        "1/3"
+      ],
+      "hybrid_interval_passed": true,
+      "minimum_direct_margin": "0",
+      "minimum_hybrid_margin": "0",
+      "profile_count": 12880,
+      "signature_count": 160
+    },
+    {
+      "candidates": 5,
+      "direct_interval": [
+        "1/4",
+        "1"
+      ],
+      "direct_interval_passed": true,
+      "hybrid_interval": [
+        "1/5",
+        "1/4"
+      ],
+      "hybrid_interval_passed": true,
+      "minimum_direct_margin": "0",
+      "minimum_hybrid_margin": "0",
+      "profile_count": 425503,
+      "signature_count": 922
+    }
+  ],
+  "global_all_M_status": "conjectured for p>=1/M; certified only for listed M",
+  "restricted_theorem": {
+    "direct": "p > 1/(M-1)",
+    "one-reroute-hybrid": "1/M < p < 1/(M-1)",
+    "territorial": "p < 1/M"
+  },
+  "schema_version": 1
+}
