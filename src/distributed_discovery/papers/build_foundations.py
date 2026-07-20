@@ -9,6 +9,7 @@ import os
 import re
 import shutil
 import subprocess
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -20,6 +21,29 @@ from distributed_discovery.validation.bootstrap import repository_root
 
 def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _source_date_epoch(run: Path) -> str:
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    started = datetime.fromisoformat(str(manifest["started_utc"]).replace("Z", "+00:00"))
+    if started.tzinfo is None:
+        raise ValueError("canonical run started_utc must include a timezone")
+    return str(int(started.timestamp()))
+
+
+def _normalized_build_log(raw_log: str, root: Path) -> str:
+    lines = raw_log.replace(str(root), "<repository>").splitlines()
+    writing = sorted(line.rstrip() for line in lines if line.startswith("note: Writing "))
+    normalized: list[str] = []
+    inserted_writing = False
+    for line in lines:
+        if line.startswith("note: Writing "):
+            if not inserted_writing:
+                normalized.extend(writing)
+                inserted_writing = True
+            continue
+        normalized.append(line.rstrip())
+    return "\n".join(normalized) + "\n"
 
 
 def _canonical_table(run: Path) -> str:
@@ -180,9 +204,11 @@ def build(root: Path) -> dict[str, Any]:
         1,
     )
     bibliography.write_text(paper_bibliography, encoding="utf-8")
+    source_epoch = _source_date_epoch(run)
     provenance = {
         "schema_version": 1,
         "run_id": canonical["source_run_id"],
+        "source_date_epoch": source_epoch,
         "upstream_commit": canonical["upstream_commit"],
         "inputs": {
             str(path.relative_to(root)): _sha256(path)
@@ -198,9 +224,6 @@ def build(root: Path) -> dict[str, Any]:
         json.dumps(provenance, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
     source_validation = _validate_source(root, paper, bibliography)
-    source_epoch = subprocess.check_output(
-        ["git", "-C", root, "show", "-s", "--format=%ct", "HEAD"], text=True
-    ).strip()
     compiled = subprocess.run(
         ["tectonic", "main.tex", "--outdir", str(build_dir), "--keep-logs"],
         cwd=paper,
@@ -209,8 +232,8 @@ def build(root: Path) -> dict[str, Any]:
         text=True,
         check=False,
     )
-    raw_log = (compiled.stdout + compiled.stderr).replace(str(root), "<repository>")
-    log = "\n".join(line.rstrip() for line in raw_log.splitlines()) + "\n"
+    raw_log = compiled.stdout + compiled.stderr
+    log = _normalized_build_log(raw_log, root)
     (paper / "build.log").write_text(log, encoding="utf-8")
     unresolved = re.findall(
         r"(?:undefined (?:reference|citation)|citation .* undefined|there were undefined)",
@@ -233,6 +256,7 @@ def build(root: Path) -> dict[str, Any]:
         "schema_version": 1,
         "compiler": subprocess.check_output(["tectonic", "--version"], text=True).strip(),
         "compile_exit_status": compiled.returncode,
+        "source_date_epoch": source_epoch,
         "unresolved_references_or_citations": False,
         "page_count": pages,
         "pdf_sha256": _sha256(output_pdf),

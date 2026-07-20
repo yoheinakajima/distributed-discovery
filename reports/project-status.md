@@ -1,8 +1,10 @@
 # Project status and final handoff
 
+> Current operational status, refreshed 2026-07-20 UTC. The M0–M9 handoff sections below remain the evidence baseline; the active A–E queue is authoritative in `plans/MASTER_EXEC_PLAN.md`.
+
 ## 1. Executive summary
 
-Milestones M0 through M9 are complete on `codex/bootstrap-distributed-discovery`. The repository now provides a reproducible canonical benchmark, a formal foundations layer, an additive upstream patch, a local companion site, a 12-page foundations note, bounded DD-001 results, executable DD-002–DD-007 briefs, and offline GitHub organization metadata. A public GitHub source repository was explicitly authorized after M9; the companion site remains un-deployed and canonical upstream remains untouched.
+Milestones M0 through M9 remain complete. Milestone A is active on `chore/public-mit-pages-cleanup` under GitHub issue #6. The source repository is public under MIT; Pages is live at `https://yoheinakajima.github.io/distributed-discovery/` from successful workflow run `29779923504` at commit `21bbd5d3bb72231c766a830ed1ce9654d0dc5b58`. Current cleanup reconciles licensing/deployment wording and GitHub organization without changing mathematical results. Canonical upstream remains untouched.
 
 The strongest new research result is scoped: on the 21-case DD-001 tiny grid, exact exhaustive enumeration finds an informative hybrid policy at `(M,N,p)=(3,2,2/5)` with discovery `7/10`, versus direct clue-following `16/25`. The canonical `(16,8,1/5)` private-team optimum remains unresolved; coordinate ascent supplies only a lower bound.
 
@@ -16,7 +18,7 @@ The strongest new research result is scoped: on the 21-case DD-001 tiny grid, ex
 | `papers/` | Additive canonical-paper preview and foundations manuscript |
 | `plans/MASTER_EXEC_PLAN.md` | Complete milestone log, failures, decisions, and restart point |
 | `results/` | Immutable baseline and DD-001 run records, separated by evidence class |
-| `site/` | Dependency-free companion source and generated local build |
+| `site/` | Dependency-free companion source and Pages build pipeline |
 | `src/distributed_discovery/` | Independent models, runners, builders, and validators |
 | `studies/DD-000`–`DD-007` | Per-study question, model, plan, status, report, and later-study briefs |
 | `.github/` | CI, issue forms, taxonomy manifests, initial issue drafts, and PR template |
@@ -27,11 +29,11 @@ The strongest new research result is scoped: on the 21-case DD-001 tiny grid, ex
 - M1: pinned canonical execution plus independent finite-model reproduction.
 - M2: foundations, terminology, notation, institutional mapping, and literature orientation.
 - M3: additive paper fragments, generated patch, deterministic 30-page preview, and QA.
-- M4: local four-page static companion, generated from validated evidence; not deployed.
+- M4: four-page static companion generated from validated evidence; it was local-only when M4 closed and is now deployed through Pages.
 - M5: deterministic 12-page foundations note with citation/claim/source validation and visual QA.
 - M6: exact DD-001 tiny-grid evaluator, bounded canonical search, five audited claims, and report.
 - M7: actionable, falsifiable DD-002 through DD-007 research briefs; no studies executed.
-- M8: complete local GitHub organization metadata; intentionally not applied without a remote.
+- M8: complete local GitHub organization metadata; live application is part of active Milestone A.
 - M9: clean acceptance reproduction, full builds/audits, navigation refresh, and this handoff.
 
 ## 4. Commands executed
@@ -107,17 +109,17 @@ The immediate question is a certified upper bound for the canonical DD-001 priva
 - Canonical DD-001 optimization lacks a global certificate or usable structural reduction.
 - Tectonic 0.16.9 and Poppler are system-level build/inspection dependencies, not managed by `uv`.
 - The static site has automated semantic/link/content/contrast checks but no browser-based accessibility audit.
-- GitHub metadata application is tested only in offline dry-run mode because `gh` is unavailable.
+- GitHub metadata application is tested offline; prepared issues are live as #7–#11 and issue/PR access works through the connected app, while CLI-only taxonomy/settings await OAuth authorization.
 - Three historical DD-001 environment snapshots required an M9 privacy correction: their redundant local-project `file://` line was removed and future capture filters it. Research outputs and hashes were unchanged.
 - DD-002 through DD-007 implementations and schemas intentionally do not exist yet.
 
 ## 12. Blockers
 
-There is no validation blocker. The public `origin` was explicitly authorized and configured after M9. Draft pull-request creation and label/milestone/issue application still require installation and authentication of `gh`.
+There is no validation blocker. Public `origin`, Actions, and Pages are active. The five prepared research issues are live: DD-002 #7, queued DD-007 #8, DD-001A #9, DD-003 #10, and DD-001B #11. GitHub CLI 2.96.0 is installed but unauthenticated; labels, milestones, homepage, and ruleset changes need CLI OAuth or equivalent settings access. Issue and pull-request operations remain available through the connected GitHub app.
 
 ## 13. Exact resume point
 
-Read `AGENTS.md`, `.agent/PLANS.md`, this report, `plans/MASTER_EXEC_PLAN.md`, and `studies/DD-001-private-information-teams/`. Inspect `git status`, run `make verify`, then review `.github/initial-issues/dd001-canonical-upper-bound.md`. Estimate the certificate method's state space and memory/time bounds before implementing it. Never describe DD-C-0022 as global optimality.
+On `chore/public-mit-pages-cleanup`, continue issue #6 through a passing PR and live Pages smoke test. Then sync `main`, create `research/dd001-signature-certificate` for issue #9, and inspect `studies/DD-001-private-information-teams/signature-model.md` or create it. Never describe DD-C-0022 as global optimality.
 
 ## 14. Recommended next three tasks
 
@@ -150,4 +152,4 @@ Suggested title: `Bootstrap the Distributed Discovery research program`
 - Generated artifacts: foundations PDF SHA-256 `3293b469a50856b1301a20190b17d3483fcb18558e545b2301968d014fa869b5`; patched-preview PDF SHA-256 `0a43360e59fdbbc4002e2190479871896688b3b4ef640d219313cd9d2ed5acb9`; local four-page site.
 - Citation changes: 15 validated bibliography keys; canonical claims trace to the pinned source and/or independent implementation.
 - Upstream impact: none. The review patch applies in a disposable worktree; cached upstream is clean.
-- Publication impact: repository source and tracked paper artifacts are public by explicit approval; the companion site is not deployed and GitHub metadata remains unapplied.
+- Historical publication impact at the M9 handoff: repository source and tracked paper artifacts were public by explicit approval, while the companion site and GitHub metadata had not yet been applied. Pages is now live; remaining metadata work is tracked in Milestone A.

@@ -3,7 +3,7 @@
 | ID | Title | Status | First executable work |
 |---|---|---|---|
 | DD-000 | Foundations of Distributed Discovery | complete foundations | Maintain canonical regression and framework |
-| DD-001 | Distributed Discovery with Private Information | active | Certify a canonical upper bound; characterize hybrid thresholds |
+| DD-001 | Distributed Discovery with Private Information | active (next research) | Prove signature losslessness/feasibility; measure and certify the canonical search |
 | DD-002 | Information Design for Discovery | brief ready (priority 2) | Enumerate bounded deterministic disclosure partitions |
 | DD-003 | Effective Channels | brief ready (priority 3) | Enumerate small nonisomorphic latent-source graphs |
 | DD-004 | Sequential Distributed Discovery | brief ready (priority 5) | Validate the perfect-elimination dynamic program |

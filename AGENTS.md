@@ -22,6 +22,6 @@ Use a living ExecPlan for substantial work. Execute registered milestones sequen
 - Validate claim records against `claims/schema.json`; promotion requires evidence and checks.
 - Add hand-checkable tests, invariance/normalization/bound tests, and regressions proportional to each change. Run the relevant Make targets before commit.
 - Update the active ExecPlan, claim ledger, study status, result index, and documentation with material findings or decisions.
-- Make small milestone commits on `codex/*`. Do not force-push, rewrite shared history, commit secrets, deploy the companion site, or modify/push to canonical upstream. Further publication changes require explicit human approval.
+- Make small milestone commits on task branches. Do not force-push, rewrite shared history, commit secrets, deploy outside the authorized Pages workflow, or modify/push to canonical upstream. Releases and DOI publication require explicit future approval.
 
 Detailed policies live in `docs/`; do not duplicate them here.

@@ -11,9 +11,10 @@
 
 ## Next executable phase
 
-- Derive analytic threshold regions for the constant-plus-signal hybrid observed at \(N=2\).
-- Add location-orbit reduction and a branch-and-bound upper bound for \(M=3\) with larger \(N\), validating against the current exhaustive grid.
-- Formulate a nontrivial canonical upper relaxation tighter than the pooled planner while retaining a checkable certificate.
+- Prove the policy-signature objective reduction, decide signature feasibility exactly, reconstruct raw policies, and validate losslessness on the 21-point grid.
+- Measure the canonical signature state space before selecting a certified upper-bound method; do not add arbitrary coordinate-ascent restarts.
+- Attempt a bounded canonical certificate only after every reduction and pruning rule passes tiny exhaustive checks.
+- Derive analytic threshold regions for the constant-plus-signal hybrid observed at \(N=2\) after the signature milestone merges.
 - Expand canonical lower-bound search beyond coordinate fixed points only after adding checkpoint/resume support.
 - Keep communication budgets deferred until the zero-communication frontier has stronger bounds.
 

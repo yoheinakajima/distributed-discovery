@@ -56,5 +56,5 @@ def test_github_setup_defaults_to_offline_dry_run() -> None:
         text=True,
         capture_output=True,
     )
-    assert "23 labels, 6 milestones, 4 initial issues" in completed.stdout
+    assert "23 labels, 6 milestones, 5 initial issues" in completed.stdout
     assert "no GitHub calls made" in completed.stdout

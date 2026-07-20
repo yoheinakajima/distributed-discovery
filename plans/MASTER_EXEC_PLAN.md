@@ -1,20 +1,22 @@
 # Master execution plan
 
+> The M0–M9 material below is retained as historical execution evidence. Current operational state and the active A–E queue are recorded in the opening sections, blockers, and recovery instructions; stale no-remote/private statements inside completed-milestone history describe the state at that time.
+
 ## Purpose and intended outcome
 
 Bootstrap and execute a durable, auditable research program for Distributed Discovery while preserving the Shared Discovery Paradox repository as the canonical, read-only public presentation.
 
 ## Current state
 
-As inspected on 2026-07-20 UTC, the repository was empty, had no commits or remotes, and was on unborn branch `master`. Work moved to `codex/bootstrap-distributed-discovery`. **M0 through M9 are complete. Active research: DD-001 canonical certification.**
+The historical M0–M9 bootstrap is complete. The live source of truth is public GitHub `main` at `21bbd5d3bb72231c766a830ed1ce9654d0dc5b58`; the repository is MIT-licensed and its first Pages workflow succeeded. **Active milestone: A — public/MIT/Pages/GitHub cleanup, issue #6, branch `chore/public-mit-pages-cleanup`.**
 
 ## Scope
 
-Milestones M0–M9 in the initiating specification: infrastructure, canonical reproduction, foundations, additive upstream materials, private companion site, foundations note, DD-001, later-study briefs, GitHub organization, and integration.
+Completed M0–M9 infrastructure and evidence, followed by the authorized queue: A public/MIT/Pages cleanup; B DD-001A policy signatures and certification; C DD-001B two-agent thresholds; D bounded DD-002 disclosure; E bounded DD-003 source graphs; integrated handoff.
 
 ## Non-goals
 
-Publishing, deploying, changing upstream, asserting novelty before literature review, or presenting exploratory computations as verified.
+Changing canonical upstream, publishing a release or DOI, adding telemetry, starting DD-004–DD-007 implementations, asserting novelty before literature review, or presenting exploratory computations as verified. Public source and Pages deployment are now explicitly authorized.
 
 ## Assumptions
 
@@ -34,6 +36,12 @@ Publishing, deploying, changing upstream, asserting novelty before literature re
 - M7 later-study briefs: completed 2026-07-20.
 - M8 GitHub organization: completed 2026-07-20.
 - M9 integration and handoff: completed 2026-07-20.
+- A public/MIT/Pages/GitHub cleanup: active.
+- B DD-001A policy-signature reduction and certified bound: pending A.
+- C DD-001B two-agent hybrid thresholds: pending B.
+- D DD-002 bounded disclosure fixture: pending C.
+- E DD-003 bounded source-graph fixture: pending D.
+- Integrated handoff: pending E or a hard execution limit.
 
 ## Progress checklist
 
@@ -55,6 +63,12 @@ Publishing, deploying, changing upstream, asserting novelty before literature re
 - [x] Upgrade DD-002 through DD-007 into serious executable research briefs without starting the studies.
 - [x] Prepare complete local GitHub taxonomy, templates, initial issue drafts, and a guarded setup helper without publishing.
 - [x] Run the full acceptance sequence and produce a fresh-checkout handoff.
+- [x] Inspect live public repository, Actions, Pages, labels, milestones, issues, PRs, and rulesets.
+- [x] Create cleanup issue #6 and branch `chore/public-mit-pages-cleanup` from current `main`.
+- [x] Reconcile MIT licensing and current public/Pages wording.
+- [x] Create all five prepared live issues; record the settings-capability blocker for labels, milestones, homepage, and safe `main` protection.
+- [ ] Merge cleanup PR after CI and verify live Pages.
+- [ ] Execute DD-001A through DD-003 sequentially with one issue/branch/PR each.
 
 ## Discoveries and surprises
 
@@ -80,11 +94,18 @@ Publishing, deploying, changing upstream, asserting novelty before literature re
 - 2026-07-20: the M9 security scan found a local checkout URL in three DD-001 `uv pip freeze` snapshots. The local-project line was redundant with the committed source/lock and was removed; future snapshots filter it. No credential- or token-shaped secret was found.
 - 2026-07-20: the clean M8 acceptance run `20260720T202314Z_DD-000_88613408_217c602fa0` passed the pinned verifier and all independent checks. The rebuilt foundations PDF is 12 pages; the additive patched preview is 30 pages and still applies to pristine upstream.
 - 2026-07-20: the final staged whitespace audit flagged CRLF endings in upstream-generated CSV evidence as trailing whitespace. Those bytes are covered by the run's output hashes, so the immutable CSVs were preserved and the authored-file whitespace audit was run with that generated output directory excluded.
+- 2026-07-20: live `main` advanced to `21bbd5d` with an owner-authored Pages workflow. Run `29779923504` passed, and all five required Pages routes returned HTTP 200. The repository had only 12 default/Dependabot labels, no milestones, no research issues, no rulesets, and five open Dependabot PRs.
+- 2026-07-20: GitHub CLI 2.96.0 was installed, but no CLI OAuth session exists. The connected GitHub app has owner/admin access and can manage issues/PRs; SSH handles Git. CLI-only settings will use an authenticated browser or record a capability-specific blocker.
+- 2026-07-20: all five prepared issue drafts were applied without duplicates: DD-002 #7, queued DD-007 #8, DD-001A #9, DD-003 #10, and DD-001B #11. Their intended taxonomy is retained in each issue body until settings-capable authentication can create the declared labels and milestones.
+- 2026-07-20: `make bootstrap`, `make verify`, `make site`, and `make papers` pass on the cleanup branch; 29 tests, 7 run manifests, 4 site pages, and the 12-page foundations artifact validate. A later post-commit rebuild exposed that the paper's timestamp depended on `HEAD`; this is superseded by the immutable-run epoch fix below.
+- 2026-07-20: cleanup PR #12's first artifact run `29781538938` failed after Tectonic installed successfully because Ubuntu lacked the paper validator's `pdfinfo` executable. The artifact workflow now installs `poppler-utils`; the failed run remains linked evidence and is not represented as passing.
+- 2026-07-20: the foundations builder formerly derived `SOURCE_DATE_EPOCH` from `HEAD`, so every commit changed the tracked PDF and made the next build dirty. It now uses the immutable passing canonical run's timezone-qualified `started_utc`, records that epoch in generated provenance and validation, tests the conversion independently of Git history, and normalizes Tectonic's parallel `Writing` log lines.
 
 ## Decision log
 
 - 2026-07-20: use an isolated upstream cache rather than vendoring, subject to ADR-0001.
 - 2026-07-20: use `uv`, pytest, Ruff, mypy, PyYAML, and jsonschema, subject to ADR-0002.
+- 2026-07-20: project owner explicitly authorizes a public MIT source repository, Actions-built GitHub Pages, GitHub metadata, non-destructive `main` protection, and squash-merging passing queue PRs. Canonical upstream remains read-only.
 
 ## Validation strategy
 
@@ -125,7 +146,7 @@ M2 produced full foundations/glossary/notation documents, pipeline diagram, cano
 
 M3 produced six auditable source fragments, a placement/change memo, a generated review patch against pinned upstream, a patch/apply/compile validator, a deterministic compiled preview with sanitized log and metadata, integration tests, and a visual-QA record.
 
-M4 produced a local four-page static companion, generated canonical/study/claim data, a deterministic builder, semantic/link/content/no-tracking validation, keyboard focus and reduced-motion behavior, responsive light/dark styling, and contrast tests. It was not deployed.
+M4 produced a local four-page static companion, generated canonical/study/claim data, a deterministic builder, semantic/link/content/no-tracking validation, keyboard focus and reduced-motion behavior, responsive light/dark styling, and contrast tests. It was not deployed at the time; the public Pages deployment was added after M9.
 
 M5 produced the 12-page foundations LaTeX note, generated table and figure source with input checksums, paper-specific validated bibliography, claim/citation/source checks, deterministic PDF, sanitized build log, validation record, source tests, and page-level visual-QA record.
 
@@ -139,11 +160,11 @@ M9 produced a clean canonical acceptance run, refreshed generated paper provenan
 
 ## Blockers
 
-No validation blocker. A public GitHub `origin` was explicitly authorized after M9. Draft-PR creation and application of GitHub metadata remain unavailable until `gh` is installed and authenticated.
+No current local blocker. GitHub CLI is installed but unauthenticated; the connected GitHub app and SSH cover issue/PR and Git transport operations. Labels, milestones, homepage, and ruleset/repository-setting writes have a precise capability-specific blocker until CLI OAuth or equivalent settings access is available. The prepared issues retain their intended metadata in their bodies.
 
 ## Recovery and restart instructions
 
-From the repository root, read the mandatory files in `AGENTS.md`, `reports/project-status.md`, and the DD-001 study files; inspect `git status`; then open `.github/initial-issues/dd001-canonical-upper-bound.md`. Estimate the certification search/proof complexity before implementation. Do not promote the canonical coordinate-ascent observation to global optimality.
+On branch `chore/public-mit-pages-cleanup`, commit the validated changes, push, open a draft PR to `main`, and monitor CI for issue #6. After merge, record the Pages run and five-route smoke test, sync `main`, and start DD-001A issue #9 on `research/dd001-signature-certificate`. Do not alter research run provenance.
 
 ## Outcome and retrospective
 

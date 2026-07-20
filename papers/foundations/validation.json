@@ -11,8 +11,9 @@
     "generated/provenance.json"
   ],
   "page_count": 12,
-  "pdf_sha256": "3293b469a50856b1301a20190b17d3483fcb18558e545b2301968d014fa869b5",
+  "pdf_sha256": "e096183159f8c016f116b1a97fc0721948bbee2aca6dd1ae251d0a2af95a32e4",
   "required_sections_present": true,
   "schema_version": 1,
+  "source_date_epoch": "1784578994",
   "unresolved_references_or_citations": false
 }
