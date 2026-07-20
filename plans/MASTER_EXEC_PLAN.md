@@ -8,7 +8,7 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-The historical M0–M9 bootstrap and operational Milestone A are complete. DD-001A merged as `c16144e8a3f5287d1117b768856f559064a89bc0`; DD-001B merged as `7e637c1dc191b90f8de477ae05a779a254e35055`, with Pages run `29785199359` passing. **Active milestone: D — DD-002 bounded deterministic disclosure, issue #7, branch `research/dd002-disclosure-fixture`, draft PR #15.**
+The historical M0–M9 bootstrap and operational Milestone A are complete. DD-001A/B are merged. DD-002 merged through PR #15 as `526d2f0f19638bc2f87567972135ebac6a74ae63`; post-merge CI run `29786285311` and Pages run `29786285312` passed, and all five live routes returned HTTP 200. **Active milestone: E — DD-003 bounded source graphs, issue #10, branch `research/dd003-source-graphs`.**
 
 ## Scope
 
@@ -39,8 +39,8 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - A public/MIT/Pages/GitHub cleanup: completed 2026-07-20.
 - B DD-001A policy-signature reduction and certification barrier: completed 2026-07-20.
 - C DD-001B two-agent hybrid thresholds: completed 2026-07-20.
-- D DD-002 bounded disclosure fixture: implementation, primary evidence, and claim audit complete; PR #15 validation/merge pending.
-- E DD-003 bounded source-graph fixture: pending D.
+- D DD-002 bounded disclosure fixture: completed 2026-07-20.
+- E DD-003 bounded source-graph fixture: active.
 - Integrated handoff: pending E or a hard execution limit.
 
 ## Progress checklist
@@ -78,7 +78,7 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - [x] Reproduce all four known witnesses and refute the unrestricted all-p extension with exact anti-informative counterexamples.
 - [x] Merge DD-001B PR #14 after CI and verify live Pages.
 - [x] Execute and independently verify the bounded DD-002 deterministic-disclosure fixture.
-- [ ] Merge DD-002 PR #15 after CI and verify live Pages.
+- [x] Merge DD-002 PR #15 after CI and verify live Pages.
 - [ ] Execute DD-003 with issue #10, one branch, and one PR.
 
 ## Discoveries and surprises
@@ -185,8 +185,8 @@ No current local blocker. GitHub CLI is installed but unauthenticated; the conne
 
 ## Recovery and restart instructions
 
-On branch `research/dd002-disclosure-fixture`, validate and commit immutable run `20260720T225848Z_DD-002_94607423_e29b1460ae` plus claims DD-C-0029 through DD-C-0031, finish PR #15, and verify post-merge Pages. Then sync `main` and begin DD-003 issue #10. Preserve the deterministic-policy and selected-equilibrium scope of the DD-002 reversal.
+On branch `research/dd003-source-graphs`, inspect `studies/DD-003-source-networks/brief.md`, freeze the bounded graph model and exact cost audit, then implement canonical enumeration without adding a graph-isomorphism dependency. The first acceptance command is the targeted DD-003 unit test, followed by `make verify` before the primary immutable run.
 
 ## Outcome and retrospective
 
-M0–M9, Milestone A, DD-001A, and DD-001B meet their criteria. DD-002 establishes a complete bounded deterministic-disclosure census and an exact selection-dependent harmful-information witness; PR #15 is the active integration boundary. After it merges, the next bounded milestone is DD-003.
+M0–M9, Milestone A, DD-001A/B, and DD-002 meet their criteria. DD-003 source-graph enumeration is the active final research milestone in the authorized queue.

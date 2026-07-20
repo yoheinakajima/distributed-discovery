@@ -1,3 +1,11 @@
-# Minimum viable model
+# Bounded source-network model
 
-Latent sources \(Z_1,\ldots,Z_K\) feed searchers through a source-observation graph. Provenance, source overlap, and effective-channel quantities are provisional until normalization and identifiability are specified.
+The target \(T\) is uniform on three locations. A graph has exactly four searchers and \(K\in\{1,2,3\}\) latent sources. Every source and searcher has positive degree. Conditional on \(T=t\), sources are independent and source \(k\) emits \(Z_k=t\) with probability \(2/3\), and either incorrect label with probability \(1/6\). Graph structure and this fixed signal parameter are stored separately.
+
+An edge means that the searcher observes that source output. Searcher \(i\)'s public-alphabet report is the nonempty set of labels attaining the plurality among its adjacent source outputs. It chooses independently and uniformly from that set under the private protocol. This set-valued convention preserves target-label symmetry without a label-dependent deterministic tie break.
+
+The pooled consensus protocol discards provenance, counts every edge-level observed report (so a high-degree source is repeated), and chooses uniformly among plurality labels. The provenance-aware planner sees every distinct source output. Its actual four-searcher portfolio covers all three locations and therefore has discovery one; a separately labeled capacity-two planner diagnostic remains nontrivial. Discovery is the probability that at least one chosen action equals \(T\).
+
+Graphs are quotiented by independent source and searcher relabeling. The canonical encoding is the lexicographically least row-major adjacency bit string over every such relabeling. No graph-isomorphism dependency is used. Completeness is checked by an independent orbit traversal under adjacent row and column swaps.
+
+For observable moments, each searcher samples a scalar report uniformly from its plurality-winner set; this is also its private action. Target-label symmetry fixes every first one-hot moment at \(1/3\). Each pair's complete unconditional second-moment matrix is determined by its scalar-report agreement probability (all three diagonal cells are equal, as are all six off-diagonal cells). The pairwise signature is the six agreement probabilities, canonically minimized over one common searcher permutation. A separate average-agreement scalar deliberately discards the matrix structure. Higher-order report laws and private discovery are not included in either diagnostic.
