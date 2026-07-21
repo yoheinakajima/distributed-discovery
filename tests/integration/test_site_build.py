@@ -1,3 +1,4 @@
+import hashlib
 import json
 import shutil
 from pathlib import Path
@@ -20,13 +21,23 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         and json.loads(path.read_text())["exit_status"] == 0
         for path in (ROOT / "results").glob("**/manifest.json")
     )
+    expected_publications = sum(
+        (directory / "validation.json").is_file() and len(list(directory.glob("*.pdf"))) == 1
+        for directory in (ROOT / "papers").iterdir()
+        if directory.is_dir()
+    )
     assert report["page_count"] == len(list(output.glob("**/*.html")))
     assert report["study_count"] == expected_studies
     assert report["claim_count"] == expected_claims
     assert report["passing_run_count"] == expected_passing_runs
-    assert report["publication_count"] == 4
+    assert report["publication_count"] == expected_publications
     assert report["internal_links_passed"] is True
     assert report["public_safety_passed"] is True
+    assert report["download_checksums_passed"] is True
+    assert report["local_assets_passed"] is True
+    assert report["no_tracking_passed"] is True
+    assert report["no_javascript_fallbacks_passed"] is True
+    assert report["accessibility_smoke_passed"] is True
 
     research = (output / "research.html").read_text(encoding="utf-8")
     assert "DD-000" in research and "DD-008" in research
@@ -63,9 +74,9 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "evidence-acquisition",
         "atlas",
     ]:
-        page = (output / f"labs/{name}.html").read_text(encoding="utf-8")
-        assert 'type="range"' in page
-        assert "bounded fixture only" in page
+        page_source = (output / f"labs/{name}.html").read_text(encoding="utf-8")
+        assert 'type="range"' in page_source
+        assert "bounded fixture only" in page_source
 
     claims = (output / "claims.html").read_text(encoding="utf-8")
     assert 'id="DD-C-0001"' in claims
@@ -96,11 +107,41 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert common_source["download"] == "downloads/The_Common_Source_Trap.pdf"
 
     routes = json.loads((output / "data/routes.json").read_text(encoding="utf-8"))["routes"]
-    assert {route["path"] for route in routes} == {
-        str(path.relative_to(output)) for path in output.glob("**/*.html")
-    }
+    route_paths = {route["path"] for route in routes}
+    assert route_paths == {str(path.relative_to(output)) for path in output.glob("**/*.html")}
+    assert {
+        "research/dd-008b.html",
+        "research/dd-010.html",
+        "research/dd-011.html",
+        "benchmark.html",
+        "benchmark/tasks.html",
+        "benchmark/protocols.html",
+        "benchmark/metrics.html",
+        "benchmark/results.html",
+        "experiment-kit.html",
+        "experiment-kit/hypotheses.html",
+        "experiment-kit/design.html",
+        "experiment-kit/power.html",
+        "labs/benchmark.html",
+        "labs/experiment-design.html",
+        "publications/common-source-trap.html",
+    } <= route_paths
     assert (output / "robots.txt").is_file()
     assert (output / "sitemap.xml").is_file()
+    sitemap = (output / "sitemap.xml").read_text(encoding="utf-8")
+    assert "404.html" not in sitemap
+    assert all(
+        f"https://yoheinakajima.github.io/distributed-discovery/{route}" in sitemap
+        for route in route_paths - {"404.html"}
+    )
+    download_manifest = json.loads((output / "data/downloads.json").read_text())["downloads"]
+    assert {entry["path"] for entry in download_manifest} == {
+        str(path.relative_to(output)) for path in (output / "downloads").glob("*")
+    }
+    for entry in download_manifest:
+        artifact = output / entry["path"]
+        assert artifact.stat().st_size == entry["bytes"]
+        assert hashlib.sha256(artifact.read_bytes()).hexdigest() == entry["sha256"]
     mechanisms = json.loads((output / "data/labs/mechanisms.json").read_text())
     assert mechanisms["run_id"] == "20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b"
     assert mechanisms["strict_rows"] == 16
