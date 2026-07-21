@@ -1,0 +1,9 @@
+{
+  "binding_rows_verified": 1050,
+  "direct_labeled_states": 3319200,
+  "garbling_rows_verified": 2625,
+  "mechanism_cells_verified": 175,
+  "passed": true,
+  "unique_profiles_verified": 1050,
+  "voluntary_rows_verified": 4025
+}

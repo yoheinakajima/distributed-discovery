@@ -1,5 +1,5 @@
 study_id: DD-013
-status: active
-evidence_status: frozen-model-proof-and-implementation-no-run
-next_action: validate and commit the frozen audience implementation, then execute the single clean immutable frontier
-updated_utc: 2026-07-21T21:49:00Z
+status: complete-bounded-study
+evidence_status: three-verified-theorems-and-independently-reproduced-voluntary-census
+next_action: preserve the run, proofs, firewall registry, and regressions; proceed to DD-014 only after PR merge, CI, Pages, and live-route validation
+updated_utc: 2026-07-21T22:00:01Z

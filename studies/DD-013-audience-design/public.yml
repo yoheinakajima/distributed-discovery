@@ -1,10 +1,22 @@
 study_id: DD-013
 title: Audience Design and Information Firewalls
 slug: dd-013
-phase: registered
-summary: Registered exact study separating binding audiences, voluntary use, garbling, and implementable reader institutions.
+phase: complete-bounded-study
+summary: Exact binding-audience and garbling theorems, a budget-balanced public implementation, and an independently reproduced voluntary-use census.
 public_artifacts:
   - path: studies/DD-013-audience-design/model.md
     description: Registered audience and information-boundary model
   - path: studies/DD-013-audience-design/plan.md
     description: Registered execution and verification plan
+  - path: studies/DD-013-audience-design/proof.md
+    description: Audience, garbling, voluntary-use, and implementation proofs
+  - path: studies/DD-013-audience-design/report.md
+    description: Exact bounded result and verification report
+  - path: results/verified/20260721T215811Z_DD-013_09c07448_cdac4fb512/outputs/summary.json
+    description: Audience-design census summary
+  - path: results/verified/20260721T215811Z_DD-013_09c07448_cdac4fb512/outputs/audience-frontier.json
+    description: Binding and voluntary exact frontier data
+  - path: results/verified/20260721T215811Z_DD-013_09c07448_cdac4fb512/outputs/garbling-frontier.json
+    description: Bounded precision-versus-publicity comparisons
+  - path: results/verified/20260721T215811Z_DD-013_09c07448_cdac4fb512/outputs/institution-registry.json
+    description: Information-firewall observability and commitment registry

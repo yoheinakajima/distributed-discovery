@@ -9,6 +9,7 @@ import html
 import json
 import re
 import shutil
+from fractions import Fraction
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
@@ -33,6 +34,7 @@ PHASES = {
 SAFE_ARTIFACT_SUFFIXES = {".md", ".json", ".csv", ".png", ".svg", ".pdf", ".yml"}
 DD006B_RUN = "20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b"
 DD009_RUN = "20260721T171249Z_DD-009_bc78d249_0c3851c41a"
+DD013_RUN = "20260721T215811Z_DD-013_09c07448_cdac4fb512"
 
 
 class SiteParser(HTMLParser):
@@ -704,6 +706,85 @@ def _experiment_pages(root: Path, output: Path) -> dict[str, object]:
     return {"run_id": run_id, "summary": summary}
 
 
+def _audience_pages(root: Path, output: Path) -> dict[str, object]:
+    run = root / "results/verified" / DD013_RUN
+    source = run / "outputs"
+    summary = json.loads((source / "summary.json").read_text(encoding="utf-8"))
+    cells = json.loads((source / "audience-frontier.json").read_text(encoding="utf-8"))
+    garbling = json.loads((source / "garbling-frontier.json").read_text(encoding="utf-8"))
+    mechanisms = json.loads((source / "mechanism-results.json").read_text(encoding="utf-8"))
+    institutions = json.loads((source / "institution-registry.json").read_text(encoding="utf-8"))
+    agents = sorted({int(cell["agents"]) for cell in cells})
+    accuracies = sorted(
+        {str(cell["private_accuracy"]) for cell in cells}, key=lambda value: Fraction(value)
+    )
+    agent_options = "".join(f'<option value="{n}">{n}</option>' for n in agents)
+    accuracy_options = "".join(
+        f'<option value="{html.escape(value)}">{html.escape(value)}</option>'
+        for value in accuracies
+    )
+    audience_options = "".join(
+        f'<option value="{value}">{value}</option>' for value in range(max(agents) + 1)
+    )
+    binding_rows = "".join(
+        '<tr data-audience-row data-n="{n}" data-p="{p}" data-q="{q}" data-m="{m}"><th scope="row">{n}</th><td>{p}</td><td>{q}</td><td>{m}</td><td>{discovery}</td><td>{quality}</td><td>{distinct}</td><td>{channels}</td><td>{optimal}</td></tr>'.format(
+            n=cell["agents"],
+            p=html.escape(str(cell["private_accuracy"])),
+            q=html.escape(str(cell["shared_accuracy"])),
+            m=row["audience"],
+            discovery=html.escape(str(row["discovery"])),
+            quality=html.escape(str(row["action_quality"])),
+            distinct=html.escape(str(row["expected_distinct_actions"])),
+            channels=row["effective_action_channels"],
+            optimal="yes" if row["audience"] in cell["binding_optima"] else "no",
+        )
+        for cell in cells
+        for row in cell["binding_audiences"]
+    )
+    garbling_rows = "".join(
+        '<tr data-garbling-row data-n="{n}" data-p="{p}" data-q="{q}" data-g="{g}" data-m="{m}"><th scope="row">{n}</th><td>{p}</td><td>{q}</td><td>{g}</td><td>{m}</td><td>{discovery}</td><td>{dominated}</td></tr>'.format(
+            n=cell["agents"],
+            p=html.escape(str(cell["private_accuracy"])),
+            q=html.escape(str(cell["shared_accuracy"])),
+            g=html.escape(str(row["delivered_accuracy"])),
+            m=row["audience"],
+            discovery=html.escape(str(row["discovery"])),
+            dominated="strictly" if row["strictly_dominated_by_binding_optimum"] else "ties",
+        )
+        for cell in garbling
+        for row in cell["rows"]
+    )
+    body = f"""<p class="eyebrow"><a href="../labs.html">Labs</a> / Audience design</p><h1>Audience Lab</h1><p class="lede">Compare precomputed exact binding audiences and feasible symmetric garblings. Access, voluntary use, and enforced action roles are different institutions; this read-only Lab makes no external call.</p><div class="stats"><div class="stat"><span>Binding rows</span><b>{summary["binding_audience_rows"]}</b></div><div class="stat"><span>Voluntary profiles</span><b>{summary["voluntary_profile_rows"]}</b></div><div class="stat"><span>Garbling rows</span><b>{summary["garbling_rows"]}</b></div></div><section class="lab" data-audience-lab><label for="audience-n">Team size</label><select id="audience-n">{agent_options}</select><label for="audience-p">Private accuracy</label><select id="audience-p">{accuracy_options}</select><label for="audience-q">Original shared accuracy</label><select id="audience-q">{accuracy_options}</select><label for="audience-g">Delivered accuracy after garbling</label><select id="audience-g">{accuracy_options}</select><label for="audience-m">Audience size</label><select id="audience-m">{audience_options}</select><p id="audience-status" class="callout" aria-live="polite">Select a registered cell. Exact rows below are filtered in place.</p></section><noscript><p class="callout">JavaScript is off. All {summary["binding_audience_rows"]} binding rows and {summary["garbling_rows"]} feasible garbling rows remain visible in the complete tables.</p></noscript><section><h2>Binding audience frontier</h2><table class="matrix"><caption>Exact binding audience metrics</caption><thead><tr><th>N</th><th>p</th><th>q</th><th>Audience</th><th>Discovery</th><th>Action quality</th><th>Expected distinct actions</th><th>Effective channels</th><th>Optimal</th></tr></thead><tbody>{binding_rows}</tbody></table></section><section><h2>Precision versus publicity</h2><table class="matrix"><caption>Exact feasible symmetric-garbling comparisons</caption><thead><tr><th>N</th><th>p</th><th>q</th><th>g</th><th>Audience</th><th>Discovery</th><th>Versus binding optimum</th></tr></thead><tbody>{garbling_rows}</tbody></table></section><p><a href="../claims.html#DD-C-0062">DD-C-0062</a> · <a href="../claims.html#DD-C-0063">DD-C-0063</a> · <a href="../claims.html#DD-C-0064">DD-C-0064</a> · <a href="../claims.html#DD-C-0065">DD-C-0065</a> · immutable run <a href="{REPOSITORY_URL}/blob/main/results/verified/{DD013_RUN}/manifest.json">{DD013_RUN}</a></p><p><a href="../data/audience/frontier.json">Download audience frontier</a> · <a href="../data/audience/garbling.json">Download garbling frontier</a> · <a href="../data/audience/institutions.json">Download firewall registry</a></p>"""
+    _write(
+        output,
+        "labs/audience.html",
+        _page(
+            "Audience Lab",
+            "Read-only exact binding-audience and symmetric-garbling explorer.",
+            body,
+            "labs/audience.html",
+        ),
+    )
+    data = {
+        "summary.json": {"schema_version": 1, "run_id": DD013_RUN, "summary": summary},
+        "frontier.json": {"schema_version": 1, "run_id": DD013_RUN, "cells": cells},
+        "garbling.json": {"schema_version": 1, "run_id": DD013_RUN, "cells": garbling},
+        "mechanisms.json": {
+            "schema_version": 1,
+            "run_id": DD013_RUN,
+            "cells": mechanisms,
+        },
+        "institutions.json": {
+            "schema_version": 1,
+            "run_id": DD013_RUN,
+            "institutions": institutions,
+        },
+    }
+    for name, value in data.items():
+        _write(output, f"data/audience/{name}", json.dumps(value, indent=2, sort_keys=True) + "\n")
+    return {"run_id": DD013_RUN, "summary": summary}
+
+
 def _render(
     root: Path,
     output: Path,
@@ -960,6 +1041,7 @@ def _render(
     )
     lab_cards += '<article class="card"><p class="eyebrow">Interactive lab</p><h2><a href="labs/benchmark.html">DiscoveryBench</a></h2><p>Filter exact golden task/protocol rows and inspect metric vectors and provenance.</p><p><a href="claims.html#DD-C-0055">DD-C-0055</a> · <a href="evidence.html">passing run</a></p></article>'
     lab_cards += '<article class="card"><p class="eyebrow">Interactive lab</p><h2><a href="labs/experiment-design.html">Experiment design</a></h2><p>Filter conditional synthetic power rows and inspect the frozen no-human-data design.</p><p><a href="claims.html#DD-C-0056">DD-C-0056</a> · <a href="evidence.html">passing run</a></p></article>'
+    lab_cards += '<article class="card"><p class="eyebrow">Interactive lab</p><h2><a href="labs/audience.html">Audience design</a></h2><p>Compare exact binding audiences and bounded precision-versus-publicity designs without conflating access and use.</p><p><a href="claims.html#DD-C-0065">DD-C-0065</a> · <a href="evidence.html">passing run</a></p></article>'
     labs_body = f"""<p class="eyebrow">Public labs</p><h1>Discovery Stack Labs</h1><p class="lede">Small browser-native controls expose bounded fixtures. Every lab has a readable fallback and links to the claim ledger and immutable passing run; controls never call an external API.</p><section class="grid-2">{lab_cards}</section>"""
     _write(
         output,
@@ -980,6 +1062,7 @@ def _render(
         )
     _benchmark_pages(root, output)
     _experiment_pages(root, output)
+    _audience_pages(root, output)
     _write(
         output,
         "404.html",
@@ -1028,7 +1111,10 @@ def validate_site(output: Path, routes: list[dict[str, str]]) -> dict[str, Any]:
             errors.append(f"{relative}: missing description")
         if any(urlsplit(asset).scheme in {"http", "https"} for asset in parser.runtime_assets):
             errors.append(f"{relative}: external runtime asset")
-        if re.search(r"data-(?:benchmark-|experiment-)?lab", source) and "<noscript>" not in source:
+        if (
+            re.search(r"data-(?:(?:benchmark|experiment|audience)-)?lab", source)
+            and "<noscript>" not in source
+        ):
             errors.append(f"{relative}: interactive Lab lacks a no-JavaScript fallback")
         if re.search(
             r"googletagmanager|google-analytics|plausible\.io|segment\.io|mixpanel|hotjar",
@@ -1134,6 +1220,7 @@ def build(root: Path, output: Path) -> dict[str, Any]:
             "atlas_data": "data/labs/atlas.json",
             "benchmark_data": "data/benchmark/results.json",
             "experiment_data": "data/experiment/power.json",
+            "audience_data": "data/audience/frontier.json",
         },
         "labs/mechanisms.json": {
             "schema_version": 1,

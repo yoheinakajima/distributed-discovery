@@ -16,13 +16,13 @@ at `5025cc8e8f2f8ca015dff2066f08f81ad5715a51`, separate, clean, and read-only.
 
 | Measure | Current value |
 | --- | ---: |
-| Ledger claims | 61 |
-| Passing immutable runs | 33 of 36 manifests |
+| Ledger claims | 65 |
+| Passing immutable runs | 34 of 37 manifests |
 | Registered studies | 19 |
 | Python source files | 102 |
-| Public HTML routes | 52 |
-| Public data files | 44 |
-| Laboratory routes | 8 |
+| Public HTML routes | 53 |
+| Public data files | 49 |
+| Laboratory routes | 9 |
 | Validated project papers | 4 |
 | Checksum-registered downloads | 15 |
 | Test suite | 162 collected tests |
@@ -41,10 +41,13 @@ all-attend equilibria. Run
 `20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b` supports DD-C-0059 through
 DD-C-0061.
 
-DD-013 is frozen before its first run: 175 cells, 1,050 binding audience rows,
-4,025 voluntary profiles, 2,625 feasible symmetric-garbling rows, eight
-information-firewall forms, two exact implementation institutions, and a
-separate 3,319,200-state verification path. Registration is not a result.
+DD-013 now has three verified theorems, one independently reproduced bounded
+census, and passing run
+`20260721T215811Z_DD-013_09c07448_cdac4fb512`. It covers 1,050 binding audience
+rows, 4,025 voluntary profiles, 2,625 feasible symmetric-garbling rows, eight
+information-firewall forms, and a separate 3,319,200-state verification path.
+The Audience Lab and public metadata await PR #84's merge, CI, Pages, and live
+route gates.
 
 Program V2 produced:
 

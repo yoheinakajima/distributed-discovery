@@ -1,0 +1,7 @@
+{
+  "binding_audience_classification": true,
+  "exclusive_recipient_voluntary_correspondence": true,
+  "garbling_equality_only_at_optimal_one_reader_design": true,
+  "garbling_weakly_dominated": true,
+  "universal_pooling_implements_binding_optima": true
+}

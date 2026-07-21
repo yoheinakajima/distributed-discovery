@@ -9,6 +9,11 @@
   garbling, and universal-pooling evaluators plus a separate labeled-state
   verifier and four corruption families. No DD-013 run or result claim exists
   yet.
+- Completed run `20260721T215811Z_DD-013_09c07448_cdac4fb512` in 109.147
+  seconds, reproducing 1,050 binding rows, 4,025 voluntary profiles, 2,625
+  garbling rows, and 175 mechanism cells with all four corruptions rejected.
+- Added DD-C-0062 through DD-C-0065 and a static, no-JavaScript-complete
+  Audience Lab backed by five public exact-data files.
 
 ## 2026-07-21 — DD-012 frozen implementation
 
