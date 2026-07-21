@@ -10,6 +10,17 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ### Institutional-theory continuation (current, 2026-07-21)
 
+**Completed continuation addendum (2026-07-21).** T is merged through PR #47;
+U/DD-006A through PR #49; V/DD-008 through PR #51; W, the validated
+*Institutions for Distributed Discovery* synthesis, through PR #54; and X, the
+public Labs surface, through PR #56. `main` is
+`401258f245ea50fcda5be2c61f78603b3c71e2de`. The current program has 51 claims,
+21 passing immutable runs among 24 manifests, three project-authored papers,
+and 26 generated public HTML routes. DD-006A is restricted to its registered
+normalized linear transfer class; DD-007 remains synthetic-only; DD-008 is an
+exact synthetic source-choice fixture. Pages deployment and route validation are
+the final operational checks for this addendum; issue #32 remains settings-only.
+
 `main` is `29c37e347a4cbc74a84cd3a23e4105789f7309e9` after PR #45. The prior
 N–S queue is complete: research-library PR #36, DD-004 PR #38, DD-005 PR #40,
 DD-006 PR #42, DD-007 PR #43, and integration PR #45 are merged. The live
@@ -20,7 +31,7 @@ two project-authored papers. DD-007 remains synthetic-only. Settings issue #32
 remains operational-only because the one required `gh auth status` check found
 no authenticated CLI session; no settings mutation is authorized in this state.
 
-The active sequence is T handoff reconciliation (issue #46), U DD-006A general
+The completed sequence was T handoff reconciliation (issue #46), U DD-006A general
 transfer frontier, V DD-008 endogenous evidence acquisition, W Discovery Stack
 synthesis paper, X interactive labs, then the institutional-program handoff.
 Each research milestone requires a bounded registration, immutable evidence,

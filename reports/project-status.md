@@ -7,6 +7,16 @@
 > DD-006A, then DD-008, the Discovery Stack paper, and public labs. The dated
 > record below is preserved as historical evidence.
 
+> Completion addendum (2026-07-21): PR #47 reconciled the continuation handoff;
+> PR #49 added DD-006A's registered normalized-linear transfer frontier; PR #51
+> added DD-008's synthetic endogenous evidence-acquisition fixture; PR #54
+> published the reproducible three-page *Institutions for Distributed Discovery*
+> synthesis; and PR #56 published six Labs routes. `main` is
+> `401258f245ea50fcda5be2c61f78603b3c71e2de`; the ledger has 51 claims, the
+> repository has 21 passing runs among 24 manifests, and the site generates 26
+> public HTML routes. DD-007 remains synthetic-only. DD-006A makes no claim
+> about arbitrary transfer tables, and DD-008 makes no real-institutional claim.
+
 > Acceptance record prepared 2026-07-21 UTC on `docs/final-continuation-handoff` from merged `main` commit `fa2fd5a473810dc00a5f8b483b4f196a6522f7be`. The documentation-only handoff PR advances `main`; its final merge and deployment identifiers are recorded in that PR and the closing task response.
 
 ## 1. Executive summary
