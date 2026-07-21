@@ -279,6 +279,7 @@ def _publications(root: Path) -> list[dict[str, Any]]:
     for directory, title in (
         ("foundations", "Foundations of Distributed Discovery"),
         ("three-results", "Three Results in Distributed Discovery"),
+        ("discovery-institutions", "Institutions for Distributed Discovery"),
     ):
         validation = json.loads((root / "papers" / directory / "validation.json").read_text())
         candidates = sorted((root / "papers" / directory).glob("*.pdf"))
