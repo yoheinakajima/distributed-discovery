@@ -1,0 +1,8 @@
+study_id: DD-002
+title: Information Design for Discovery
+slug: dd-002
+phase: complete-bounded-study
+summary: Exact disclosure and equilibrium-selection catalogue for a bounded fixture.
+public_artifacts:
+  - path: studies/DD-002-information-design/report.md
+    description: Disclosure evidence report

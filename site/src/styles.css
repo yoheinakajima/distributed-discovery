@@ -50,6 +50,7 @@ a:focus-visible { outline: 3px solid var(--planner); outline-offset: 4px; border
 .narrow { width: min(100% - 2.5rem, 44rem); margin-inline: auto; }
 .topbar { border-bottom: 1px solid var(--grid); font-family: var(--sans); font-size: .79rem; }
 .topbar .wrap { min-height: 3.2rem; display: flex; align-items: center; gap: 1.25rem; }
+.topbar .secondary { min-height: 2.25rem; flex-wrap: wrap; gap: .35rem; padding-block: .35rem; }
 .brand { font-weight: 700; text-decoration: none; white-space: nowrap; }
 .topbar nav { margin-left: auto; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: flex-end; }
 .topbar nav a[aria-current="page"] { font-weight: 700; text-decoration-thickness: 2px; }

@@ -1,0 +1,6 @@
+study_id: DD-004
+title: Sequential Distributed Discovery
+slug: dd-004
+phase: registered
+summary: Registered perfect-elimination baseline for feedback, batching, and stopping.
+public_artifacts: []

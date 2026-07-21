@@ -8,15 +8,17 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-The historical M0–M9 bootstrap, operational Milestone A, research milestones DD-001A/B, bounded DD-002/DD-003, their integrated handoff, and continuation cycles F–L are complete. Research PRs #19, #21, #23, #25, and #27 and maintenance PRs #29–#31 are reviewed, squash-merged, CI-green, Pages-green, and live-smoke-tested. Claims stop at DD-C-0044; the final ledger has 44 claims and 17 immutable manifests. The one authorized settings attempt failed before mutation because GitHub CLI is unauthenticated and is recorded in issue #32. **Active integration boundary: Cycle M local acceptance and documentation are complete in PR #34; only its review, merge, and final Pages smoke test remain.**
+The historical M0–M9 bootstrap, operational Milestone A, research milestones DD-001A/B, bounded DD-002/DD-003, their integrated handoff, and continuation cycles F–M are complete. PR #34 merged as `a3b1f760ff6b4d3d580696e537e5d3f45caf1ed3`; its source checkout is clean on `main`. Claims stop at DD-C-0044; the ledger has 44 claims and 17 immutable manifests. The one authorized settings attempt failed before mutation because GitHub CLI is unauthenticated and is recorded in issue #32. The start-of-phase `gh auth status` check on 2026-07-20 again found no usable CLI session; no settings mutation or retry is authorized.
+
+**Active program phase — research library and bounded extensions.** The next sequence is: (N) build and deploy the public research library; (O) execute/verify DD-004 sequential perfect-elimination baseline; (P) execute/verify DD-005 overlapping-coverage frontiers; (Q) execute/verify a newly registered DD-006 reporting-and-reward fixture; (R) execute/verify DD-007 synthetic audit schema, recovery grid, and identification counterexamples; and (S) integrate the resulting program materials. Each phase requires a bounded issue, coherent branch/PR, immutable evidence, independent check where applicable, claim audit, CI, merge, Pages deployment, and live-route validation.
 
 ## Scope
 
-Completed M0–M9 and A–E evidence, followed by the authorized continuation queue: F exact canonical pooled-frontier certificate; G separate Three Results synthesis paper and public Results page; H alignment-preserving DD-001 upper relaxation; I DD-002 equilibrium-selection robustness; J DD-003 heterogeneous source accuracy; K dependency maintenance; L one repository-settings attempt; M final integration and handoff.
+Completed M0–M9 and A–E evidence, followed by F exact canonical pooled-frontier certificate; G separate Three Results synthesis paper and public Results page; H alignment-preserving DD-001 upper relaxation; I DD-002 equilibrium-selection robustness; J DD-003 heterogeneous source accuracy; K dependency maintenance; L one repository-settings attempt; and M final integration and handoff. Active scope is N–S: research-library site overhaul; exact bounded DD-004 through DD-006 studies; synthetic-only DD-007 audit research; and program integration. Canonical upstream remains read-only.
 
 ## Non-goals
 
-Changing canonical upstream, publishing a release or DOI, adding telemetry, starting DD-004–DD-007 implementations, asserting novelty before literature review, or presenting exploratory computations as verified. Public source and Pages deployment are now explicitly authorized.
+Changing canonical upstream, publishing a release or DOI, adding telemetry, making real-organization claims from DD-007 synthetic data, asserting novelty before literature review, or presenting exploratory computations as verified. Public source and Pages deployment are explicitly authorized.
 
 ## Assumptions
 
@@ -101,6 +103,8 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - [x] Make exactly one settings-capable attempt for repository taxonomy/homepage/protection and record the precise capability result in issue #32.
 - [x] Complete broad continuation acceptance without creating duplicate immutable research runs; 95 tests, 44 claims, 17 manifests, both papers, the site, and eleven live routes pass.
 - [ ] Review, merge, and deploy the documentation-only Cycle M handoff PR; close issue #33.
+- [x] Verify that PR #34 merged as `a3b1f76` and record the unchanged settings-auth blocker without retry.
+- [x] Register issue #35 and build the N research-library source, public metadata contract, route registry, safe evidence/download indexes, automated checks, and bounded browser validation on `site/research-library`.
 
 ## Discoveries and surprises
 

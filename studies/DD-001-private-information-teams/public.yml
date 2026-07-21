@@ -1,0 +1,8 @@
+study_id: DD-001
+title: Private Information Teams
+slug: dd-001
+phase: complete-bounded-study
+summary: Exact private-team role and alignment results under zero communication.
+public_artifacts:
+  - path: studies/DD-001-private-information-teams/report.md
+    description: Private-team evidence report
