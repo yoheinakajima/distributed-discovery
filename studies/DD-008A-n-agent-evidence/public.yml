@@ -1,0 +1,8 @@
+study_id: DD-008A
+title: N-Agent Endogenous Evidence Acquisition
+slug: dd-008a
+phase: registered
+summary: Registered exact extension of the synthetic shared-versus-independent source-choice fixture.
+public_artifacts:
+  - path: studies/DD-008A-n-agent-evidence/model.md
+    description: Frozen registered model

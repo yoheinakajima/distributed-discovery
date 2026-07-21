@@ -220,7 +220,7 @@ def _study_data(
         if phase not in PHASES:
             raise RuntimeError(f"invalid public phase for {study_id}: {phase}")
         slug = public.get("slug")
-        if not isinstance(slug, str) or not re.fullmatch(r"dd-\d{3}", slug):
+        if not isinstance(slug, str) or not re.fullmatch(r"dd-\d{3}[a-z]?", slug):
             raise RuntimeError(f"invalid public slug for {study_id}")
         artifacts = public.get("public_artifacts", [])
         if not isinstance(artifacts, list):

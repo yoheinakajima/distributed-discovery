@@ -1,0 +1,5 @@
+study_id: DD-008A
+status: registered
+evidence_status: registered-no-execution
+next_action: implement exact binomial and direct-enumeration evaluators before any grid run
+updated_utc: 2026-07-21T15:19:12Z
