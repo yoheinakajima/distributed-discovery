@@ -17,6 +17,14 @@ from urllib.parse import urlsplit
 
 import yaml
 
+from distributed_discovery.site.copy import load_copy_map
+from distributed_discovery.site.navigation import (
+    render_breadcrumb,
+    render_footer,
+    render_header,
+    render_section_navigation,
+)
+from distributed_discovery.site.status_labels import human_status
 from distributed_discovery.validation.bootstrap import repository_root
 
 PUBLIC_BASE = "https://yoheinakajima.github.io/distributed-discovery/"
@@ -331,45 +339,85 @@ def _publications(root: Path) -> list[dict[str, Any]]:
 
 
 def _page(title: str, description: str, body: str, current: str) -> str:
-    primary = [
-        ("Foundations", "foundations.html"),
-        ("Research", "research.html"),
-        ("Results", "results.html"),
-        ("Labs", "labs.html"),
-        ("Publications", "publications.html"),
-        ("Applications", "applications.html"),
-    ]
-    secondary = [
-        ("Claims", "claims.html"),
-        ("Evidence", "evidence.html"),
-        ("Benchmark", "benchmark.html"),
-        ("Experiment kit", "experiment-kit.html"),
-        ("Open questions", "open-problems.html"),
-        ("Ideas", "ideas.html"),
-        ("Repo", REPOSITORY_URL),
-    ]
     prefix = "../" if "/" in current else ""
-    nav = "".join(
-        '<a href="{}"{}>{}</a>'.format(
-            prefix + href, ' aria-current="page"' if current == href else "", name
-        )
-        for name, href in primary
-    )
-    subnav = " · ".join(
-        f'<a href="{href if href.startswith("http") else prefix + href}">{name}</a>'
-        for name, href in secondary
-    )
     canonical = f"{PUBLIC_BASE}{current}" if current != "index.html" else PUBLIC_BASE
+    document_title = (
+        "Distributed Discovery" if current == "index.html" else f"{title} — Distributed Discovery"
+    )
+    layout = (
+        "wide"
+        if (
+            current.startswith(("labs/", "benchmark/", "experiment-kit/"))
+            or current
+            in {
+                "research.html",
+                "results.html",
+                "labs.html",
+                "publications.html",
+                "claims.html",
+                "evidence.html",
+            }
+        )
+        else "content"
+    )
+    page_class = current.removesuffix(".html").replace("/", "-") or "home"
+    wrapped_body = _wrap_tables(body)
+    breadcrumb = render_breadcrumb(current, title)
+    section_navigation = render_section_navigation(current)
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{html.escape(title)} — Distributed Discovery</title><meta name="description" content="{html.escape(description)}">
-<link rel="canonical" href="{canonical}"><meta property="og:title" content="{html.escape(title)} — Distributed Discovery"><meta property="og:description" content="{html.escape(description)}"><meta property="og:image" content="{PUBLIC_BASE}og.svg"><meta property="og:type" content="website"><link rel="stylesheet" href="{prefix}styles.css"><script src="{prefix}site.js" defer></script></head>
-<body><a class="skip-link" href="#content">Skip to content</a><header class="topbar"><div class="wrap"><a class="brand" href="{prefix}index.html">Distributed Discovery</a><nav aria-label="Primary navigation">{nav}</nav></div><div class="wrap secondary" aria-label="Research navigation">{subnav}</div></header>
-<main id="content" class="narrow">{body}</main><footer><div class="wrap"><span>Public MIT-licensed research library · no analytics or tracking</span><span><a href="{prefix}index.html">Home</a> · <a href="{REPOSITORY_URL}">Repository</a></span></div></footer></body></html>"""
+<title>{html.escape(document_title)}</title><meta name="description" content="{html.escape(description)}">
+<link rel="canonical" href="{canonical}"><meta property="og:title" content="{html.escape(document_title)}"><meta property="og:description" content="{html.escape(description)}"><meta property="og:image" content="{PUBLIC_BASE}og.png"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="{prefix}styles.css"><script src="{prefix}site.js" defer></script></head>
+<body class="page-{html.escape(page_class)}"><a class="skip-link" href="#content">Skip to content</a>{render_header(current)}
+<main id="content" class="site-main container-{layout}">{breadcrumb}{section_navigation}{wrapped_body}</main>{render_footer(current, REPOSITORY_URL)}</body></html>"""
+
+
+def _wrap_tables(body: str) -> str:
+    """Add a keyboard-focusable, visibly labelled scroll boundary to each table."""
+    return re.sub(
+        r'(<table class="matrix".*?</table>)',
+        r'<div class="table-region" tabindex="0" aria-label="Scrollable data table"><p class="table-hint">Scroll horizontally to see every column.</p>\1</div>',
+        body,
+        flags=re.DOTALL,
+    )
+
+
+def _excerpt(value: object, limit: int = 190) -> str:
+    text = " ".join(str(value or "").split())
+    if len(text) <= limit:
+        return text
+    shortened = text[:limit].rsplit(" ", 1)[0]
+    return shortened.rstrip(".,;:") + "…"
+
+
+def _study_category(study: dict[str, Any]) -> str:
+    study_id = str(study["id"])
+    categories = ["all"]
+    if study_id in {
+        "DD-000",
+        "DD-001",
+        "DD-002",
+        "DD-003",
+        "DD-006B",
+        "DD-008B",
+        "DD-009",
+        "DD-012",
+        "DD-013",
+    }:
+        categories.append("key-results")
+    if study["phase"] == "active-extension":
+        categories.append("active")
+    if study["phase"] in {"registered", "queued", "blocked"}:
+        categories.append("planned")
+    if study_id in {"DD-007", "DD-009", "DD-010", "DD-011"}:
+        categories.append("tools")
+    return " ".join(categories)
 
 
 def _study_card(study: dict[str, Any]) -> str:
-    return f"""<article class="card {html.escape(study["phase"])}"><p class="eyebrow">{html.escape(study["id"])} · {html.escape(study["phase"])}</p><h2><a href="research/{html.escape(study["slug"])}.html">{html.escape(str(study["title"]))}</a></h2><p>{html.escape(str(study["summary"]))}</p><p><span class="badge">{len(study["claim_ids"])} claims · {len(study["run_ids"])} passing runs</span></p></article>"""
+    searchable = " ".join(str(study[key]) for key in ("id", "title", "summary", "question")).lower()
+    status = human_status(study["phase"])
+    return f"""<article class="card study-card {html.escape(study["phase"])}" data-study-card data-category="{html.escape(_study_category(study))}" data-search="{html.escape(searchable)}"><div class="card-meta"><span class="study-id">{html.escape(study["id"])}</span><span class="status-chip">{html.escape(status)}</span></div><h2><a href="research/{html.escape(study["slug"])}.html">{html.escape(str(study["title"]))}</a></h2><p class="card-question">{html.escape(_excerpt(study["question"]))}</p><p class="card-summary">{html.escape(str(study["summary"]))}</p><p class="quiet-meta">{len(study["claim_ids"])} claims · {len(study["run_ids"])} reproducible runs</p><p class="card-link"><a href="research/{html.escape(study["slug"])}.html">Open study <span aria-hidden="true">→</span></a></p></article>"""
 
 
 def _study_page(study: dict[str, Any], claims_by_id: dict[str, dict[str, Any]]) -> str:
@@ -385,7 +433,7 @@ def _study_page(study: dict[str, Any], claims_by_id: dict[str, dict[str, Any]]) 
         or "<li>No substantive claim has been published for this registered study.</li>"
     )
     runs = (
-        "".join(f"<li>{html.escape(run_id)}</li>" for run_id in study["run_ids"])
+        "".join(f"<li><code>{html.escape(run_id)}</code></li>" for run_id in study["run_ids"])
         or "<li>No passing run yet.</li>"
     )
     artifacts = (
@@ -397,7 +445,9 @@ def _study_page(study: dict[str, Any], claims_by_id: dict[str, dict[str, Any]]) 
         )
         or "<li>No public-safe artifact is registered yet.</li>"
     )
-    body = f"""<p class="eyebrow"><a href="../research.html">Research</a> / {html.escape(study["id"])}</p><h1>{html.escape(str(study["title"]))}</h1><p class="lede">{html.escape(str(study["summary"]))}</p><p><span class="badge">{html.escape(study["phase"])}</span> Registry: {html.escape(str(study["registry_status"]))}</p><section><h2 id="question">Question</h2><p>{html.escape(str(study["question"]))}</p></section><section><h2 id="evidence">Evidence boundary</h2><p>{html.escape(str(study["evidence_status"]))}</p><h3>Claims</h3><ul>{claims}</ul><h3>Passing immutable runs</h3><ul>{runs}</ul></section><section><h2 id="sources">Public sources</h2><ul>{artifacts}</ul><p>Next action: {html.escape(str(study["next_action"]))}</p></section>"""
+    phase_label = human_status(study["phase"])
+    evidence_label = human_status(study["evidence_status"], kind="evidence")
+    body = f"""<header class="page-hero"><p class="eyebrow">{html.escape(study["id"])}</p><h1>{html.escape(str(study["title"]))}</h1><p class="lede">{html.escape(str(study["summary"]))}</p><p class="status-row"><span class="status-chip">{html.escape(phase_label)}</span><span class="status-chip subtle">{html.escape(evidence_label)}</span></p></header><section class="content-section prose"><h2 id="question">The question</h2><p>{html.escape(str(study["question"]))}</p></section><section class="content-section"><h2 id="findings">What we found</h2><ul class="claim-list">{claims}</ul></section><section class="content-section prose"><h2 id="boundary">What this result covers</h2><p>{html.escape(evidence_label)}. The formal evidence wording and registry state remain available below.</p><details class="technical-details"><summary>Technical details</summary><dl><div><dt>Study phase</dt><dd><code>{html.escape(str(study["phase"]))}</code></dd></div><div><dt>Registry status</dt><dd><code>{html.escape(str(study["registry_status"]))}</code></dd></div><div><dt>Evidence status</dt><dd><code>{html.escape(str(study["evidence_status"]))}</code></dd></div></dl></details></section><section class="content-section"><h2 id="evidence">Reproducible evidence</h2><ul class="run-list">{runs}</ul></section><section class="content-section"><h2 id="sources">Files and data</h2><ul>{artifacts}</ul></section><section class="content-section prose"><h2 id="next">What comes next</h2><p>{html.escape(str(study["next_action"]))}</p></section>"""
     return _page(str(study["title"]), str(study["summary"]), body, f"research/{study['slug']}.html")
 
 
@@ -441,7 +491,7 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         '<a href="data/benchmark/results.json">results JSON</a> · '
         '<a href="downloads/discoverybench-task-v1.schema.json">task schema</a>'
     )
-    overview = f"""<p class="eyebrow">DiscoveryBench v1</p><h1>Exact golden benchmark</h1><p class="lede">A bounded, auditable suite for evidence-to-action protocols. It is not a hosted leaderboard or a universal measure of real-world agent quality.</p><div class="stats"><div class="stat"><span>Golden tasks</span><b>{summary["task_count"]}</b></div><div class="stat"><span>Built-in protocols</span><b>{summary["protocol_count"]}</b></div><div class="stat"><span>Compatible pairs</span><b>{summary["compatible_pairs"]}</b></div></div><p>{downloads}</p><section><h2>Inspect the contract</h2><ul><li><a href="benchmark/tasks.html">Tasks and declared information</a></li><li><a href="benchmark/protocols.html">Protocols and capabilities</a></li><li><a href="benchmark/metrics.html">Versioned metric registry</a></li><li><a href="benchmark/results.html">Exact result vectors and Pareto report</a></li><li><a href="labs/benchmark.html">Benchmark Lab</a></li></ul></section><section><h2>Reproduce</h2><p><code>distributed-discovery benchmark run-golden</code><br><code>distributed-discovery benchmark verify-run results/verified/{html.escape(run_id)}</code></p><p>Claim DD-C-0055 · immutable run <a href="evidence.html">{html.escape(run_id)}</a>.</p></section>"""
+    overview = f"""<header class="page-hero"><p class="eyebrow">DiscoveryBench v1</p><h1>Compare search strategies</h1><p class="lede">A bounded, auditable suite for comparing how evidence becomes action. It is not a hosted leaderboard or a universal measure of real-world agent quality.</p></header><div class="metric-grid"><article class="metric-card"><span>Benchmark tasks</span><strong>{summary["task_count"]}</strong></article><article class="metric-card"><span>Built-in strategies</span><strong>{summary["protocol_count"]}</strong></article><article class="metric-card"><span>Compatible pairs</span><strong>{summary["compatible_pairs"]}</strong></article></div><p>{downloads}</p><section class="content-section"><h2>Explore the benchmark</h2><div class="card-grid resource-grid"><article class="card"><h3><a href="benchmark/tasks.html">Benchmark tasks</a></h3><p>See the declared information and reference evidence for each task.</p></article><article class="card"><h3><a href="benchmark/protocols.html">What each strategy can see and do</a></h3><p>Compare capability boundaries before comparing results.</p></article><article class="card"><h3><a href="benchmark/metrics.html">How performance is measured</a></h3><p>Inspect every versioned measure and required observable.</p></article><article class="card"><h3><a href="benchmark/results.html">Benchmark results</a></h3><p>Read the exact compatible vectors and scoped Pareto report.</p></article><article class="card"><h3><a href="labs/benchmark.html">Benchmark Lab</a></h3><p>Filter the complete result table by task.</p></article></div></section><section class="content-section prose"><h2>Reproduce</h2><details class="technical-details"><summary>Technical details</summary><p><code>distributed-discovery benchmark run-golden</code><br><code>distributed-discovery benchmark verify-run results/verified/{html.escape(run_id)}</code></p><p>Claim DD-C-0055 · reproducible run <a href="evidence.html">{html.escape(run_id)}</a>.</p></details></section>"""
     _write(
         output,
         "benchmark.html",
@@ -457,7 +507,7 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         f'<tr data-task-family="{html.escape(str(task["task_family"]))}"><th scope="row">{html.escape(str(task["task_id"]))}</th><td>{html.escape(str(task["task_family"]))}</td><td>{html.escape(", ".join(task["compatible_protocols"]))}</td><td>{html.escape(", ".join(task["reference_claims"]))}</td></tr>'
         for task in tasks
     )
-    task_body = f"""<p class="eyebrow"><a href="../benchmark.html">DiscoveryBench</a> / Tasks</p><h1>Golden tasks</h1><p class="lede">Every row declares evidence, information, permissions, objectives, evaluator status, and provenance in the downloadable registry. The table is complete without JavaScript.</p><table class="matrix"><caption>DiscoveryBench exact golden tasks</caption><thead><tr><th>Task</th><th>Family</th><th>Compatible protocol</th><th>Claims</th></tr></thead><tbody>{task_rows}</tbody></table>"""
+    task_body = f"""<header class="page-hero"><p class="eyebrow">DiscoveryBench</p><h1>Benchmark tasks</h1><p class="lede">Every task declares what evidence is available, which actions are allowed, and how results are evaluated. The complete technical registry remains downloadable.</p></header><table class="matrix"><caption>DiscoveryBench exact benchmark tasks</caption><thead><tr><th>Task</th><th>Family</th><th>Compatible strategy</th><th>Claims</th></tr></thead><tbody>{task_rows}</tbody></table>"""
     _write(
         output,
         "benchmark/tasks.html",
@@ -473,7 +523,7 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         f'<tr><th scope="row">{html.escape(str(item["protocol_id"]))}</th><td>{html.escape(str(item["description"]))}</td><td>{len(item["capabilities"])}</td><td>{"enabled" if item["enabled"] else "disabled"}</td></tr>'
         for item in protocols
     )
-    protocol_body = f"""<p class="eyebrow"><a href="../benchmark.html">DiscoveryBench</a> / Protocols</p><h1>Protocol contracts</h1><p class="lede">Protocols receive immutable allow-list views only. External adapters are disabled, credential-free, and never executed in CI.</p><table class="matrix"><caption>Built-in protocol capability contracts</caption><thead><tr><th>Protocol</th><th>Definition</th><th>Capabilities</th><th>Status</th></tr></thead><tbody>{protocol_rows}</tbody></table>"""
+    protocol_body = f"""<header class="page-hero"><p class="eyebrow">DiscoveryBench</p><h1>What each strategy can see and do</h1><p class="lede">Each strategy receives only its declared information and capabilities. External adapters are disabled, credential-free, and never executed in CI.</p></header><table class="matrix"><caption>Built-in strategy capability contracts</caption><thead><tr><th>Strategy</th><th>Definition</th><th>Capabilities</th><th>Status</th></tr></thead><tbody>{protocol_rows}</tbody></table>"""
     _write(
         output,
         "benchmark/protocols.html",
@@ -489,7 +539,7 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         f'<tr><th scope="row">{html.escape(str(item["metric_id"]))}</th><td>{html.escape(str(item["definition"]))}</td><td>{html.escape(str(item["units"]))}</td><td>{html.escape(", ".join(item["required_observables"]))}</td></tr>'
         for item in metrics
     )
-    metric_body = f"""<p class="eyebrow"><a href="../benchmark.html">DiscoveryBench</a> / Metrics</p><h1>Metric registry</h1><p class="lede">A metric is omitted when its required observables are absent. Aggregation preserves task vectors and family profiles; no composite score is active.</p><table class="matrix"><caption>Versioned benchmark metrics and required observables</caption><thead><tr><th>Metric</th><th>Definition</th><th>Units</th><th>Required observables</th></tr></thead><tbody>{metric_rows}</tbody></table>"""
+    metric_body = f"""<header class="page-hero"><p class="eyebrow">DiscoveryBench</p><h1>How performance is measured</h1><p class="lede">A measure is omitted when its required observables are absent. The benchmark preserves task vectors and family profiles; no composite score is active.</p></header><table class="matrix"><caption>Versioned benchmark metrics and required observables</caption><thead><tr><th>Metric</th><th>Definition</th><th>Units</th><th>Required observables</th></tr></thead><tbody>{metric_rows}</tbody></table>"""
     _write(
         output,
         "benchmark/metrics.html",
@@ -505,7 +555,7 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         f'<tr data-task="{html.escape(str(row["task_id"]))}" data-protocol="{html.escape(str(row["protocol_id"]))}"><th scope="row">{html.escape(str(row["task_id"]))}</th><td>{html.escape(str(row["protocol_id"]))}</td><td><code>{html.escape(json.dumps(row["metrics"], sort_keys=True))}</code></td><td>{html.escape(", ".join(row["reference_claims"]))}</td></tr>'
         for row in results
     )
-    results_body = f"""<p class="eyebrow"><a href="../benchmark.html">DiscoveryBench</a> / Results</p><h1>Exact result vectors</h1><p class="lede">All {len(results)} compatible pairs reproduce exact registered fixtures. The other {sum(not row["compatible"] for row in compatibility)} task/protocol pairs are explicit exclusions, not failures.</p><p>{len(pareto)} rows remain in scoped task-level Pareto comparisons. Missing metrics are never imputed.</p><table class="matrix"><caption>Exact compatible task and protocol result vectors</caption><thead><tr><th>Task</th><th>Protocol</th><th>Metric vector</th><th>Claims</th></tr></thead><tbody>{result_rows}</tbody></table>"""
+    results_body = f"""<header class="page-hero"><p class="eyebrow">DiscoveryBench</p><h1>Benchmark results</h1><p class="lede">All {len(results)} compatible pairs reproduce exact registered fixtures. The other {sum(not row["compatible"] for row in compatibility)} task/strategy pairs are explicit exclusions, not failures.</p></header><div class="summary-callout"><strong>{len(pareto)} rows</strong><span>remain in scoped task-level Pareto comparisons. Missing metrics are never imputed.</span></div><table class="matrix"><caption>Exact compatible task and strategy result vectors</caption><thead><tr><th>Task</th><th>Strategy</th><th>Metric vector</th><th>Claims</th></tr></thead><tbody>{result_rows}</tbody></table>"""
     _write(
         output,
         "benchmark/results.html",
@@ -572,7 +622,7 @@ def _experiment_pages(root: Path, output: Path) -> dict[str, object]:
     notice = html.escape(str(design["notice"]))
     warning = f'<aside class="callout" aria-label="No human data warning"><strong>Synthetic package only.</strong> {notice}</aside>'
     downloads = '<a href="downloads/dd011-preregistration-template.md">preregistration template</a> · <a href="downloads/dd011-participant-instructions.md">participant instructions</a> · <a href="downloads/dd011-researcher-protocol.md">researcher protocol</a> · <a href="downloads/dd011-data-dictionary.md">data dictionary</a> · <a href="downloads/dd011-design-v1.schema.json">design schema</a>'
-    overview = f"""<p class="eyebrow">DD-011 experiment kit</p><h1>Experimental design and conditional power</h1>{warning}<p class="lede">A preregistration-ready, read-only package for a proposed acquisition, disclosure, allocation, and reward experiment. It is not preregistered and no live assignment or data collection service exists.</p><div class="stats"><div class="stat"><span>Treatment cells</span><b>{summary["treatment_cells"]}</b></div><div class="stat"><span>Hypotheses</span><b>{summary["hypotheses"]}</b></div><div class="stat"><span>Power rows</span><b>{summary["power_rows"]}</b></div></div><p>{downloads}</p><section><h2>Inspect the frozen package</h2><ul><li><a href="experiment-kit/hypotheses.html">Hypotheses, outcomes, and estimands</a></li><li><a href="experiment-kit/design.html">Treatment matrix and design alternatives</a></li><li><a href="experiment-kit/power.html">Synthetic power, MDEs, and retained failures</a></li><li><a href="labs/experiment-design.html">Read-only experiment-design Lab</a></li></ul></section><section><h2>Reproduce</h2><p><code>make dd011-experiment</code><br><code>distributed-discovery experiment verify {html.escape(run_id)}</code></p><p>Claim <a href="claims.html#DD-C-0056">DD-C-0056</a> · immutable run <a href="evidence.html">{html.escape(run_id)}</a>.</p></section>"""
+    overview = f"""<header class="page-hero"><p class="eyebrow">DD-011 experiment design kit</p><h1>Plan a discovery experiment</h1><p class="lede">A read-only package for a proposed experiment on acquisition, disclosure, allocation, and rewards.</p></header>{warning}<div class="metric-grid"><article class="metric-card"><span>Treatment cells</span><strong>{summary["treatment_cells"]}</strong></article><article class="metric-card"><span>Questions</span><strong>{summary["hypotheses"]}</strong></article><article class="metric-card"><span>Synthetic power rows</span><strong>{summary["power_rows"]}</strong></article></div><section class="content-section"><h2>Explore the proposed experiment</h2><div class="card-grid resource-grid"><article class="card"><h3><a href="experiment-kit/hypotheses.html">What the experiment would test</a></h3><p>Review the frozen questions, outcomes, and estimands.</p></article><article class="card"><h3><a href="experiment-kit/design.html">How participants would be assigned</a></h3><p>Inspect the treatment matrix and bounded alternatives.</p></article><article class="card"><h3><a href="experiment-kit/power.html">Synthetic power estimates</a></h3><p>See scenario-conditional estimates, MDEs, and retained failures.</p></article><article class="card"><h3><a href="labs/experiment-design.html">Experiment-design Lab</a></h3><p>Filter the complete precomputed power table.</p></article></div></section><section class="content-section prose"><h2>Materials and safeguards</h2><p>{downloads}</p><p>This package is not preregistered and no live assignment or data collection service exists.</p><details class="technical-details"><summary>Technical details</summary><p><code>make dd011-experiment</code><br><code>distributed-discovery experiment verify {html.escape(run_id)}</code></p><p>Claim <a href="claims.html#DD-C-0056">DD-C-0056</a> · reproducible run <a href="evidence.html">{html.escape(run_id)}</a>.</p></details></section>"""
     _write(
         output,
         "experiment-kit.html",
@@ -588,7 +638,7 @@ def _experiment_pages(root: Path, output: Path) -> dict[str, object]:
         f'<tr><th scope="row">{html.escape(str(row["hypothesis_id"]))}</th><td>{html.escape(str(row["question"]))}</td><td>{html.escape(str(row["treatment_cell"]))} − {html.escape(str(row["control_cell"]))}</td><td>{html.escape(str(row["outcome"]))}</td><td>{html.escape(str(row["estimand"]))}</td><td>{html.escape(str(row["role"]))}</td></tr>'
         for row in hypotheses
     )
-    hypothesis_body = f"""<p class="eyebrow"><a href="../experiment-kit.html">Experiment kit</a> / Hypotheses</p><h1>Frozen hypotheses and estimands</h1>{warning}<p class="lede">Hypotheses, directions, models, and multiplicity families were fixed before the primary synthetic run.</p><table class="matrix"><caption>Registered DD-011 hypotheses and ITT contrasts</caption><thead><tr><th>ID</th><th>Question</th><th>Contrast</th><th>Outcome</th><th>Estimand</th><th>Role</th></tr></thead><tbody>{hypothesis_rows}</tbody></table><p><a href="../data/experiment/hypotheses.json">Download hypotheses JSON</a> · <a href="../data/experiment/outcomes.json">Download outcome definitions</a></p>"""
+    hypothesis_body = f"""<header class="page-hero"><p class="eyebrow">DD-011 experiment design kit</p><h1>What the experiment would test</h1><p class="lede">Questions, directions, models, and multiplicity families were fixed before the primary synthetic run.</p></header>{warning}<table class="matrix"><caption>Registered DD-011 hypotheses and ITT contrasts</caption><thead><tr><th>ID</th><th>Question</th><th>Contrast</th><th>Outcome</th><th>Estimand</th><th>Role</th></tr></thead><tbody>{hypothesis_rows}</tbody></table><p><a href="../data/experiment/hypotheses.json">Download hypotheses JSON</a> · <a href="../data/experiment/outcomes.json">Download outcome definitions</a></p>"""
     _write(
         output,
         "experiment-kit/hypotheses.html",
@@ -608,7 +658,7 @@ def _experiment_pages(root: Path, output: Path) -> dict[str, object]:
         f'<tr><th scope="row">{html.escape(str(row["design_id"]))}</th><td>{row["cells"]}</td><td>{html.escape(str(row["estimand_coverage"]))}</td><td>{html.escape(str(row["aliasing"]))}</td><td>{"selected" if row["selected"] else html.escape(str(row["reason"]))}</td></tr>'
         for row in design["alternatives"]
     )
-    design_body = f"""<p class="eyebrow"><a href="../experiment-kit.html">Experiment kit</a> / Design</p><h1>Treatment matrix</h1>{warning}<p class="lede">The selected 20-cell fraction covers all eight registered contrasts. Unregistered higher-order interactions remain aliased.</p><table class="matrix"><caption>Comparison of bounded design alternatives</caption><thead><tr><th>Design</th><th>Cells</th><th>Estimand coverage</th><th>Aliasing</th><th>Decision</th></tr></thead><tbody>{alternative_rows}</tbody></table><table class="matrix"><caption>Selected contrast-complete treatment cells</caption><thead><tr><th>Cell</th><th>Acquisition</th><th>Attribution</th><th>Disclosure</th><th>Timing</th><th>Reward</th></tr></thead><tbody>{treatment_rows}</tbody></table><p><a href="../data/experiment/treatments.json">Download treatment JSON</a> · <a href="../data/experiment/randomization.json">Download synthetic assignment manifest</a></p>"""
+    design_body = f"""<header class="page-hero"><p class="eyebrow">DD-011 experiment design kit</p><h1>How participants would be assigned</h1><p class="lede">The proposed 20-cell fraction covers all eight registered contrasts. Unregistered higher-order interactions remain aliased.</p></header>{warning}<table class="matrix"><caption>Comparison of bounded design alternatives</caption><thead><tr><th>Design</th><th>Cells</th><th>Estimand coverage</th><th>Aliasing</th><th>Decision</th></tr></thead><tbody>{alternative_rows}</tbody></table><table class="matrix"><caption>Selected contrast-complete treatment cells</caption><thead><tr><th>Cell</th><th>Acquisition</th><th>Attribution</th><th>Disclosure</th><th>Timing</th><th>Reward</th></tr></thead><tbody>{treatment_rows}</tbody></table><p><a href="../data/experiment/treatments.json">Download treatment JSON</a> · <a href="../data/experiment/randomization.json">Download synthetic assignment manifest</a></p>"""
     _write(
         output,
         "experiment-kit/design.html",
@@ -624,7 +674,7 @@ def _experiment_pages(root: Path, output: Path) -> dict[str, object]:
         f'<tr data-power-scenario="{html.escape(str(row["scenario_id"]))}" data-power-hypothesis="{html.escape(str(row["hypothesis_id"]))}"><th scope="row">{html.escape(str(row["scenario_id"]))}</th><td>{html.escape(str(row["hypothesis_id"]))}</td><td>{row["sample_size"]}</td><td>{html.escape(str(row["assumed_effect"]))}</td><td>{html.escape(str(row["power"]))} [{html.escape(str(row["power_ci_low"]))}, {html.escape(str(row["power_ci_high"]))}]</td><td>{html.escape(str(row["minimum_detectable_effect"]))}</td></tr>'
         for row in power
     )
-    power_body = f"""<p class="eyebrow"><a href="../experiment-kit.html">Experiment kit</a> / Power</p><h1>Conditional synthetic power</h1>{warning}<p class="lede">Every value is a Monte Carlo estimate under a declared response scenario. The {calibration["failure_count"]} failures among {calibration["evaluated_rows"]} rows at sample sizes 640 or more are retained.</p><table class="matrix"><caption>Full registered synthetic power and minimum-detectable-effect grid</caption><thead><tr><th>Scenario</th><th>Hypothesis</th><th>Total N</th><th>Assumed effect</th><th>Power (95% Monte Carlo interval)</th><th>MDE</th></tr></thead><tbody>{power_rows}</tbody></table><p><a href="../data/experiment/power.json">Download power JSON</a> · <a href="../data/experiment/calibration.json">Download retained calibration failures</a></p>"""
+    power_body = f"""<header class="page-hero"><p class="eyebrow">DD-011 experiment design kit</p><h1>Synthetic power estimates</h1><p class="lede">Every value is a Monte Carlo estimate under a declared response scenario. The {calibration["failure_count"]} failures among {calibration["evaluated_rows"]} rows at sample sizes 640 or more are retained.</p></header>{warning}<table class="matrix"><caption>Full registered synthetic power and minimum-detectable-effect grid</caption><thead><tr><th>Scenario</th><th>Hypothesis</th><th>Total N</th><th>Assumed effect</th><th>Power (95% Monte Carlo interval)</th><th>MDE</th></tr></thead><tbody>{power_rows}</tbody></table><p><a href="../data/experiment/power.json">Download power JSON</a> · <a href="../data/experiment/calibration.json">Download retained calibration failures</a></p>"""
     _write(
         output,
         "experiment-kit/power.html",
@@ -882,27 +932,30 @@ def _render(
     publications: list[dict[str, Any]],
 ) -> list[dict[str, str]]:
     cards = "".join(_study_card(study) for study in studies)
-    counts = {phase: sum(study["phase"] == phase for study in studies) for phase in PHASES}
-    home = f"""<section class="hero"><p class="kicker">Research library</p><h1>A research program in Distributed Discovery</h1><p class="lede">Evidence, action allocation, coverage, incentives, and feedback are distinct margins. This library makes the bounded evidence and its limits inspectable.</p></section><section><h2 id="research-map">Research map</h2><p>{len(claims)} ledger claims · {len(runs)} passing immutable runs · {len(publications)} validated publications.</p><div class="grid-2">{cards}</div></section><section><h2 id="incubator">Ideas incubator</h2><p>Speculative extensions are kept separate from results: noisy sequential tests, randomized disclosure, higher-order source laws, mechanism classes beyond the registered fixture, and real-data audits require new registrations and evidence.</p><p><a class="primary-link" href="ideas.html">Browse the incubator and boundary conditions →</a></p></section>"""
+    canonical = _canonical_data(_passing_baseline(root))
+    metrics = canonical["metrics"]
+    joint_summary = json.loads(
+        (root / "results/verified" / DD006B_RUN / "outputs/joint-mechanism-summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    atlas_summary = json.loads(
+        (root / "results/verified" / DD009_RUN / "outputs/atlas-summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    home = f"""<header class="home-hero"><div class="hero-copy"><p class="eyebrow">Collective search under dispersed information</p><h1>Distributed Discovery</h1><p class="tagline">How groups turn evidence into portfolios of action.</p><p class="hero-hook">Better shared information can produce worse collective discovery.</p><p class="lede">A group can improve its best guess and still waste its attempts by sending everyone to the same place. This project studies how evidence, roles, incentives, and timing shape a portfolio of search actions.</p><div class="actions"><a class="button primary" href="https://yoheinakajima.github.io/shared-discovery-paradox/">See the paradox</a><a class="button" href="research.html">Explore the research</a><a class="text-link" href="labs.html">Browse the Labs <span aria-hidden="true">→</span></a></div></div><aside class="paradox-panel" aria-labelledby="paradox-heading"><p class="eyebrow">Evidence is only the first step</p><h2 id="paradox-heading">Same clues. Different ways to search.</h2><p>Pooling improves the group’s ranking, but a one-answer rule compresses the action portfolio.</p><div class="metric-grid compact"><article class="metric-card consensus"><span>One shared answer</span><strong>{html.escape(str(metrics["consensus"]))}</strong></article><article class="metric-card private"><span>Private clue-following</span><strong>{html.escape(str(metrics["private"]))}</strong></article><article class="metric-card planner"><span>Coordinated portfolio</span><strong>{html.escape(str(metrics["planner"]))}</strong></article></div><p class="quiet-meta">Discovery probabilities from run <code>{html.escape(str(canonical["source_run_id"]))}</code>. <a href="research/dd-000.html">Scope and evidence</a>.</p></aside></header><section class="content-section" aria-labelledby="process-heading"><p class="eyebrow">How the system works</p><h2 id="process-heading">From evidence to discovery</h2><p class="section-intro">A discovery architecture determines more than what a group knows. It shapes who sees evidence, which actions are taken, and what the group learns next.</p><ol class="process-grid"><li><span>01</span><strong>Acquire evidence</strong><small>Choose sources and measurements.</small></li><li><span>02</span><strong>Share evidence</strong><small>Decide who can see which signals.</small></li><li><span>03</span><strong>Choose actions</strong><small>Spread attempts across the search space.</small></li><li><span>04</span><strong>Learn and adapt</strong><small>Use outcomes to update the next move.</small></li><li><span>05</span><strong>Reward discovery</strong><small>Align reporting, attention, and effort.</small></li><li><span>06</span><strong>Measure outcomes</strong><small>Track coverage, quality, and discovery.</small></li></ol></section><section class="content-section" aria-labelledby="findings-heading"><p class="eyebrow">Key findings</p><h2 id="findings-heading">Where architecture changes the result</h2><div class="card-grid finding-grid"><article class="card result-card"><p class="card-kicker">Shared Discovery Paradox</p><h3>One better answer can produce fewer discoveries.</h3><p><strong>{html.escape(str(metrics["consensus"]))}</strong> discovery under one shared answer in the canonical fixture.</p><a href="https://yoheinakajima.github.io/shared-discovery-paradox/">See the interactive guide <span aria-hidden="true">→</span></a></article><article class="card result-card"><p class="card-kicker">Common-Source Trap</p><h3>Many reports can still come from one source.</h3><p><strong>p(1−p)/N</strong> is the exact all-common trap width in the frozen model.</p><a href="publications/common-source-trap.html">Read the paper <span aria-hidden="true">→</span></a></article><article class="card result-card"><p class="card-kicker">Truthful discovery mechanisms</p><h3>Rewards can support truthful, differentiated action.</h3><p><strong>{html.escape(str(joint_summary["strict_rows"]))}</strong> strict rows in the registered exact mechanism class.</p><a href="research/dd-006b.html">Open the study <span aria-hidden="true">→</span></a></article><article class="card result-card"><p class="card-kicker">Architecture Atlas</p><h3>Coherent designs reveal real tradeoffs.</h3><p><strong>{html.escape(str(atlas_summary["pareto_cells"]))}</strong> nondominated cells in the bounded synthetic Atlas.</p><a href="labs/atlas.html">Explore the Atlas <span aria-hidden="true">→</span></a></article></div></section><section class="content-section" aria-labelledby="explore-heading"><p class="eyebrow">Explore the work</p><h2 id="explore-heading">Choose your depth</h2><div class="card-grid entry-grid"><article class="card entry-card"><h3><a href="research.html">Research</a></h3><p>Browse every completed, active, and planned study.</p></article><article class="card entry-card"><h3><a href="labs.html">Labs</a></h3><p>Change inputs and inspect precomputed model behavior.</p></article><article class="card entry-card"><h3><a href="publications.html">Papers</a></h3><p>Read the long-form arguments and validated artifacts.</p></article><article class="card entry-card"><h3><a href="benchmark.html">Benchmark</a></h3><p>Compare search strategies on compatible exact tasks.</p></article></div></section><section class="principle"><p>Share the evidence. <strong>Diversify the actions.</strong></p></section>"""
     _write(
         output,
         "index.html",
         _page(
-            "Research Library",
-            "Evidence-indexed public research library for Distributed Discovery.",
+            "Distributed Discovery",
+            "How groups and multi-agent systems turn evidence into portfolios of action.",
             home,
             "index.html",
         ),
     )
-    phase_links = "".join(
-        f'<a href="#{phase}">{phase} ({counts[phase]})</a> '
-        for phase in sorted(PHASES)
-        if counts[phase]
-    )
-    phase_targets = "".join(
-        f'<span id="{phase}"></span>' for phase in sorted(PHASES) if counts[phase]
-    )
-    research = f"""<p class="eyebrow">Research library</p><h1>Studies</h1><p class="lede">All studies are visible without JavaScript. Use the phase anchors to narrow the page, or use browser find to search titles, IDs, and terms.</p><p class="filter-links">{phase_links}</p>{phase_targets}<section class="grid-2">{cards}</section>"""
+    research = f"""<header class="page-hero"><p class="eyebrow">Collective search under dispersed information</p><h1>Research</h1><p class="lede">Browse studies of how evidence, roles, incentives, timing, and action allocation shape collective search.</p></header><section class="catalog" data-research-catalog><div class="research-tools"><div><label for="study-search">Search studies</label><input id="study-search" type="search" placeholder="Search by question, title, or study ID" autocomplete="off"></div><div class="filter-group" aria-label="Filter studies"><button type="button" class="filter-button" data-study-filter="all" aria-pressed="true">All</button><button type="button" class="filter-button" data-study-filter="key-results" aria-pressed="false">Key results</button><button type="button" class="filter-button" data-study-filter="active" aria-pressed="false">Active</button><button type="button" class="filter-button" data-study-filter="planned" aria-pressed="false">Planned</button><button type="button" class="filter-button" data-study-filter="tools" aria-pressed="false">Tools and infrastructure</button></div><p id="study-status" class="result-count" aria-live="polite">{len(studies)} studies shown</p></div><noscript><p class="callout">JavaScript is off. All {len(studies)} studies remain visible; use browser find to search this page.</p></noscript><div class="card-grid study-grid">{cards}</div></section>"""
     _write(
         output,
         "research.html",
@@ -928,7 +981,7 @@ def _render(
         )
         for claim in claims
     )
-    claims_body = f"""<p class="eyebrow">Evidence index</p><h1>Claims</h1><p class="lede">Stable claim anchors expose type, status, statement, and scope. Browser find is the no-JavaScript search control; no unvalidated values are rendered as claims.</p><section class="grid-2">{claim_items}</section>"""
+    claims_body = f"""<header class="page-hero"><p class="eyebrow">Technical evidence</p><h1>Claims</h1><p class="lede">Stable claim anchors connect every formal statement to its scope and evidence. This is the technical ledger; start with <a href="results.html">Results</a> for the plain-language findings.</p><p class="quiet-meta">No unvalidated values are rendered as claims.</p></header><section class="card-grid claim-grid">{claim_items}</section>"""
     _write(
         output,
         "claims.html",
@@ -940,7 +993,7 @@ def _render(
         ),
     )
     evidence_items = "".join(
-        '<article class="card"><h2>{run_id}</h2><p>{study_id} · passed immutable manifest · {output_count} checksum-validated public-safe outputs.</p><p><a href="{repo}/blob/main/{manifest_path}">Manifest source</a> · SHA-256 {manifest_sha}</p></article>'.format(
+        '<article class="card evidence-card"><p class="eyebrow">{study_id} · reproducible evidence</p><h2><code>{run_id}</code></h2><p>Passed validation with {output_count} checksum-validated public-safe outputs.</p><details class="technical-details"><summary>Technical details</summary><p><a href="{repo}/blob/main/{manifest_path}">Manifest source</a></p><p>SHA-256 <code>{manifest_sha}</code></p></details></article>'.format(
             run_id=html.escape(str(run["run_id"])),
             study_id=html.escape(str(run["study_id"])),
             output_count=html.escape(str(run["output_count"])),
@@ -950,7 +1003,7 @@ def _render(
         )
         for run in runs
     )
-    evidence_body = f"""<p class="eyebrow">Evidence index</p><h1>Passing runs</h1><p class="lede">Only manifests with passed validation, exit status zero, repository-relative paths, and checksum-validated safe outputs appear here. Failed and preliminary material is not substantive public evidence.</p><section class="grid-2">{evidence_items}</section>"""
+    evidence_body = f"""<header class="page-hero"><p class="eyebrow">Technical evidence</p><h1>Reproducible runs</h1><p class="lede">Only runs with passed validation, exit status zero, repository-relative paths, and checksum-validated safe outputs appear here. Failed and preliminary material is not substantive public evidence.</p></header><section class="card-grid evidence-grid">{evidence_items}</section>"""
     _write(
         output,
         "evidence.html",
@@ -961,10 +1014,18 @@ def _render(
             "evidence.html",
         ),
     )
+    publication_purposes = {
+        "foundations": "Defines the core objects and separates information quality from action allocation.",
+        "three-results": "Connects exact results on roles, disclosure, and correlated sources.",
+        "discovery-institutions": "Synthesizes how evidence, assignment, incentives, and feedback interact.",
+        "common-source-trap": "Explains why many reports can still behave like one source of evidence.",
+    }
     publication_items = "".join(
-        '<article class="card"><h2><a href="{detail}">{title}</a></h2><p>{page_count} pages · SHA-256 <code>{sha256}</code></p><p><a href="{download}">Download PDF</a> · <a href="{repo}/blob/main/{build_source}">Build source</a></p><p>{citation}</p></article>'.format(
+        '<article class="card paper-card"><div class="card-meta"><span class="status-chip">{status}</span><span>{page_count} pages</span></div><h2><a href="{detail}">{title}</a></h2><p>{purpose}</p><div class="card-actions"><a class="button small" href="{download}">Download PDF</a><a href="{detail}">Paper details</a></div><p class="citation">{citation}</p><details class="technical-details"><summary>Technical details</summary><p><a href="{repo}/blob/main/{build_source}">Build source</a></p><p>SHA-256 <code>{sha256}</code></p></details></article>'.format(
             title=html.escape(str(item["title"])),
             detail=html.escape(str(item["detail"])),
+            purpose=html.escape(publication_purposes[str(item["slug"])]),
+            status=html.escape(human_status(item["status"], kind="publication")),
             page_count=html.escape(str(item["page_count"])),
             sha256=html.escape(str(item["sha256"])),
             download=html.escape(str(item["download"])),
@@ -974,13 +1035,13 @@ def _render(
         )
         for item in publications
     )
-    publications_body = f"""<p class="eyebrow">Publications</p><h1>Validated papers</h1><p class="lede">Downloads are copied only from validation-recorded PDF artifacts. Checksums and page counts are generated from the current repository evidence. <a href="data/downloads.json">Inspect the complete download checksum manifest.</a></p><section class="grid-2">{publication_items}</section>"""
+    publications_body = f"""<header class="page-hero"><p class="eyebrow">Long-form research</p><h1>Papers</h1><p class="lede">Working papers on how groups acquire, share, and convert evidence into portfolios of action.</p></header><section class="card-grid paper-grid">{publication_items}</section><p class="quiet-meta"><a href="data/downloads.json">Complete download checksum manifest</a></p>"""
     _write(
         output,
         "publications.html",
         _page(
-            "Publications",
-            "Validated Distributed Discovery paper downloads and provenance.",
+            "Papers",
+            "Working papers on how groups acquire, share, and convert evidence into portfolios of action.",
             publications_body,
             "publications.html",
         ),
@@ -995,7 +1056,7 @@ def _render(
             status_bits.append("not submitted")
         if item["peer_reviewed"] is False:
             status_bits.append("not peer reviewed")
-        detail_body = f"""<p class="eyebrow"><a href="../publications.html">Publications</a> / Working paper</p><h1>{html.escape(str(item["title"]))}</h1><p class="lede">{html.escape(" · ".join(status_bits))}</p><section><h2>Artifact</h2><p>{html.escape(str(item["page_count"]))} pages. The download is copied only after its SHA-256 matches the committed validation record.</p><p><a class="primary-link" href="../{html.escape(str(item["download"]))}">Download the validated PDF →</a></p><p>SHA-256 <code>{html.escape(str(item["sha256"]))}</code></p></section><section><h2>Citation and source</h2><p>{html.escape(str(item["citation"]))}</p><p><a href="{REPOSITORY_URL}/blob/main/{html.escape(str(item["build_source"]))}">Read the build source</a> · <a href="{REPOSITORY_URL}/tree/main/papers/{html.escape(str(item["slug"]))}">Inspect validation and provenance</a></p></section>"""
+        detail_body = f"""<header class="page-hero"><p class="eyebrow">Working paper</p><h1>{html.escape(str(item["title"]))}</h1><p class="lede">{html.escape(publication_purposes[str(item["slug"])])}</p><p class="status-row"><span class="status-chip">{html.escape(human_status(item["status"], kind="publication"))}</span><span>{html.escape(str(item["page_count"]))} pages</span></p><p><a class="button primary" href="../{html.escape(str(item["download"]))}">Download PDF</a></p></header><section class="content-section prose"><h2>Citation</h2><p>{html.escape(str(item["citation"]))}</p></section><section class="content-section prose"><h2>Source and provenance</h2><p><a href="{REPOSITORY_URL}/blob/main/{html.escape(str(item["build_source"]))}">Read the build source</a> · <a href="{REPOSITORY_URL}/tree/main/papers/{html.escape(str(item["slug"]))}">Inspect validation and provenance</a></p><details class="technical-details"><summary>Technical details</summary><p>{html.escape(" · ".join(status_bits))}</p><p>The download is copied only after its SHA-256 matches the committed validation record.</p><p>SHA-256 <code>{html.escape(str(item["sha256"]))}</code></p></details></section>"""
         _write(
             output,
             str(item["detail"]),
@@ -1012,7 +1073,7 @@ def _render(
         if study["phase"] in {"registered", "queued", "active-extension", "blocked"}
     ]
     open_body = (
-        '<p class="eyebrow">Research agenda</p><h1>Open questions</h1><p class="lede">These are registered next steps, not results.</p><section class="grid-2">'
+        '<header class="page-hero"><p class="eyebrow">Research agenda</p><h1>Open questions</h1><p class="lede">These are registered next steps, not results.</p></header><section class="card-grid study-grid">'
         + "".join(_study_card(study) for study in open_studies)
         + "</section>"
     )
@@ -1026,7 +1087,7 @@ def _render(
             "open-problems.html",
         ),
     )
-    ideas_body = """<p class="eyebrow">Ideas incubator</p><h1>Speculation is not evidence</h1><p class="lede">The following directions are deliberately separated from the claim ledger.</p><ul><li>Noisy or state-coupled sequential tests after DD-004’s perfect-elimination baseline.</li><li>Randomized disclosure and broader equilibrium-selection procedures after DD-002.</li><li>Higher-order report laws and expanded source palettes after DD-003.</li><li>Mechanism classes, equilibrium concepts, and observability variants outside DD-006’s registration.</li><li>Real-data work only after DD-007 privacy, identification, and ethics review.</li></ul>"""
+    ideas_body = """<header class="page-hero"><p class="eyebrow">Ideas incubator</p><h1>Speculation is not evidence</h1><p class="lede">The following directions are deliberately separated from the claim ledger.</p></header><section class="content-section prose"><ul><li>Noisy or state-coupled sequential tests after DD-004’s perfect-elimination baseline.</li><li>Randomized disclosure and broader equilibrium-selection procedures after DD-002.</li><li>Higher-order report laws and expanded source palettes after DD-003.</li><li>Mechanism classes, equilibrium concepts, and observability variants outside DD-006’s registration.</li><li>Real-data work only after DD-007 privacy, identification, and ethics review.</li></ul></section>"""
     _write(
         output,
         "ideas.html",
@@ -1037,7 +1098,7 @@ def _render(
             "ideas.html",
         ),
     )
-    foundations_body = """<p class="eyebrow">Foundations</p><h1>Information and action allocation</h1><p class="lede">The program distinguishes information architecture from the protocol that transforms evidence into a portfolio of actions.</p><p class="identity">G<sub>B</sub>(Π; I) = V<sub>B</sub>(I) − L<sub>B</sub>(Π; I)</p><p>It is an accounting identity, not a universal monotonicity theorem. Consult the <a href="research/dd-000.html">foundations record</a> and <a href="publications.html">validated note</a> for scope and provenance.</p>"""
+    foundations_body = """<header class="page-hero"><p class="eyebrow">Foundations</p><h1>Information and action allocation</h1><p class="lede">Information aggregation is not action allocation. The program separates available evidence from the protocol that turns it into a portfolio of actions.</p></header><section class="content-section prose"><p class="identity">G<sub>B</sub>(Π; I) = V<sub>B</sub>(I) − L<sub>B</sub>(Π; I)</p><p>It is an accounting identity, not a universal monotonicity theorem. Consult the <a href="research/dd-000.html">foundations record</a> and <a href="publications.html">validated note</a> for scope and provenance.</p></section>"""
     _write(
         output,
         "foundations.html",
@@ -1048,26 +1109,18 @@ def _render(
             "foundations.html",
         ),
     )
-    results_body = (
-        """<p class="eyebrow">Results</p><h1>Completed bounded evidence</h1><p class="lede">Exact canonical, private-role, disclosure, and source-network results are bounded by their registered model classes.</p><section class="grid-2">"""
-        + "".join(
-            _study_card(study)
-            for study in studies
-            if study["phase"] in {"foundations", "exact-result", "complete-bounded-study"}
-        )
-        + "</section>"
-    )
+    results_body = f"""<header class="page-hero"><p class="eyebrow">Key findings</p><h1>Results</h1><p class="lede">What the evidence says about gathering information and spreading action across a search portfolio.</p></header><div class="result-groups"><section class="result-group"><p class="eyebrow">How information is gathered</p><h2>The source of a clue changes what agreement means.</h2><article class="finding"><div><span class="status-chip">Exact in this model</span><h3>The all-common source trap has a closed-form width.</h3><p>In the frozen homogeneous equal-prize model, the exact trap width is <strong>p(1−p)/N</strong>; a separate finite audit and negative result define the boundary.</p></div><div class="finding-links"><a href="research/dd-008b.html">Open DD-008B</a><a href="claims.html#DD-C-0057">Technical evidence</a></div></article></section><section class="result-group"><p class="eyebrow">How information is shared</p><h2>More accurate evidence need not belong in every hand.</h2><article class="finding"><div><span class="status-chip">Checked independently</span><h3>One reader can be the discovery-maximizing audience.</h3><p>When shared accuracy q exceeds private accuracy p in the frozen follow/private class, the exact optimum reader count is <strong>1</strong>.</p></div><div class="finding-links"><a href="research/dd-013.html">Open DD-013</a><a href="claims.html#DD-C-0062">Technical evidence</a></div></article></section><section class="result-group"><p class="eyebrow">How actions are allocated</p><h2>A better shared ranking can still concentrate search.</h2><article class="finding"><div><span class="status-chip">Canonical fixture</span><h3>Same clues, different action portfolios.</h3><p>Discovery is <strong>{html.escape(str(metrics["consensus"]))}</strong> under one shared answer, <strong>{html.escape(str(metrics["private"]))}</strong> under private clue-following, and <strong>{html.escape(str(metrics["planner"]))}</strong> under a coordinated pooled portfolio.</p></div><div class="finding-links"><a href="research/dd-000.html">Open DD-000</a><a href="claims.html#DD-C-0005">Technical evidence</a></div></article></section><section class="result-group"><p class="eyebrow">How incentives change behavior</p><h2>Truthful reporting and differentiated action can coexist.</h2><article class="finding"><div><span class="status-chip">Completed finite study</span><h3>A bounded mechanism class contains strict rows.</h3><p>The exact census finds <strong>{html.escape(str(joint_summary["strict_rows"]))}</strong> strict rows, with a maximum all-tie margin of <strong>{html.escape(str(joint_summary["maximum_margin"]))}</strong>.</p></div><div class="finding-links"><a href="research/dd-006b.html">Open DD-006B</a><a href="claims.html#DD-C-0053">Technical evidence</a></div></article></section><section class="result-group"><p class="eyebrow">How discovery is measured</p><h2>No single score captures every architecture.</h2><article class="finding"><div><span class="status-chip">Bounded synthetic Atlas</span><h3>Tradeoffs leave multiple coherent designs standing.</h3><p>Among <strong>{html.escape(str(atlas_summary["valid_cells"]))}</strong> valid cells, <strong>{html.escape(str(atlas_summary["pareto_cells"]))}</strong> are nondominated under the declared objectives.</p></div><div class="finding-links"><a href="research/dd-009.html">Open DD-009</a><a href="labs/atlas.html">Explore the Lab</a></div></article></section></div>"""
     _write(
         output,
         "results.html",
         _page(
             "Results",
-            "Completed bounded results with direct links to claim and run evidence.",
+            "Findings about how groups gather evidence and spread action across search.",
             results_body,
             "results.html",
         ),
     )
-    applications_body = """<p class="eyebrow">Applications</p><h1>Mappings, not results</h1><p class="lede">Science, R&amp;D, venture portfolios, and multi-agent systems can be represented as evidence, action, coverage, and feedback systems. Each mapping needs its own action technology, objective, dependence model, and evidence standard.</p>"""
+    applications_body = """<header class="page-hero"><p class="eyebrow">Applications</p><h1>Mappings, not results</h1><p class="lede">Science, R&amp;D, venture portfolios, and multi-agent systems can be represented as evidence, action, coverage, and feedback systems.</p></header><section class="content-section prose"><p>Each mapping needs its own action technology, objective, dependence model, and evidence standard. These translations identify objects to measure; they do not establish that results from one model transfer to a domain.</p></section>"""
     _write(
         output,
         "applications.html",
@@ -1122,15 +1175,112 @@ def _render(
             "Compare only coherent aligned architecture cells under the registered exact metric and Pareto boundaries.",
         ),
     ]
-    lab_cards = "".join(
-        f'<article class="card"><p class="eyebrow">Interactive lab</p><h2><a href="labs/{slug}.html">{html.escape(title)}</a></h2><p>{html.escape(description)}</p><p><a href="claims.html#{claim}">{claim}</a> · <a href="evidence.html">passing run</a></p></article>'
-        for slug, title, claim, _, description in lab_specs
-    )
-    lab_cards += '<article class="card"><p class="eyebrow">Interactive lab</p><h2><a href="labs/benchmark.html">DiscoveryBench</a></h2><p>Filter exact golden task/protocol rows and inspect metric vectors and provenance.</p><p><a href="claims.html#DD-C-0055">DD-C-0055</a> · <a href="evidence.html">passing run</a></p></article>'
-    lab_cards += '<article class="card"><p class="eyebrow">Interactive lab</p><h2><a href="labs/experiment-design.html">Experiment design</a></h2><p>Filter conditional synthetic power rows and inspect the frozen no-human-data design.</p><p><a href="claims.html#DD-C-0056">DD-C-0056</a> · <a href="evidence.html">passing run</a></p></article>'
-    lab_cards += '<article class="card"><p class="eyebrow">Interactive lab</p><h2><a href="labs/audience.html">Audience design</a></h2><p>Compare exact binding audiences and bounded precision-versus-publicity designs without conflating access and use.</p><p><a href="claims.html#DD-C-0065">DD-C-0065</a> · <a href="evidence.html">passing run</a></p></article>'
-    lab_cards += '<article class="card"><p class="eyebrow">Interactive lab</p><h2><a href="labs/conditional-attention.html">Conditional attention</a></h2><p>Explore exact private-dominant, public-dominant, and contrarian role profiles inside the registered policy class.</p><p><a href="claims.html#DD-C-0067">DD-C-0067</a> · <a href="evidence.html">passing run</a></p></article>'
-    labs_body = f"""<p class="eyebrow">Public labs</p><h1>Discovery Stack Labs</h1><p class="lede">Small browser-native controls expose bounded fixtures. Every lab has a readable fallback and links to the claim ledger and immutable passing run; controls never call an external API.</p><section class="grid-2">{lab_cards}</section>"""
+    lab_details = {
+        "sequential": (
+            "Search and allocation",
+            "Batch schedule",
+            "Actions, rounds, and terminal discovery",
+            "DD-004",
+        ),
+        "coverage": (
+            "Search and allocation",
+            "Action portfolio",
+            "Union coverage and redundancy",
+            "DD-005",
+        ),
+        "evidence-acquisition": (
+            "Information and sources",
+            "Evidence source",
+            "Acquisition and discovery outcomes",
+            "DD-008",
+        ),
+        "audience": (
+            "Information and sources",
+            "Team, accuracy, and audience",
+            "Binding and garbling frontiers",
+            "DD-013",
+        ),
+        "conditional-attention": (
+            "Information and sources",
+            "Conditional policy profile",
+            "Private-, public-, and contrarian-dominant outcomes",
+            "DD-014",
+        ),
+        "mechanisms": (
+            "Incentives and mechanisms",
+            "Mechanism scenario",
+            "Incentive and discovery boundaries",
+            "DD-006B",
+        ),
+        "audit": (
+            "Measurement and experiments",
+            "Synthetic audit scenario",
+            "Recovery and calibration behavior",
+            "DD-007",
+        ),
+        "atlas": (
+            "Measurement and experiments",
+            "Architecture index",
+            "Metric and Pareto tradeoffs",
+            "DD-009",
+        ),
+        "benchmark": (
+            "Measurement and experiments",
+            "Benchmark task",
+            "Compatible strategy result vectors",
+            "DD-010",
+        ),
+        "experiment-design": (
+            "Measurement and experiments",
+            "Synthetic response scenario",
+            "Power and minimum detectable effects",
+            "DD-011",
+        ),
+    }
+    generic_by_slug = {
+        slug: (title, claim, description) for slug, title, claim, _, description in lab_specs
+    }
+    special_labs = {
+        "benchmark": (
+            "DiscoveryBench",
+            "DD-C-0055",
+            "Filter compatible task and strategy rows without submissions or external calls.",
+        ),
+        "experiment-design": (
+            "Experiment design",
+            "DD-C-0056",
+            "Filter conditional synthetic power while preserving the no-human-data boundary.",
+        ),
+        "audience": (
+            "Audience design",
+            "DD-C-0065",
+            "Compare binding audiences and feasible precision-versus-publicity designs.",
+        ),
+        "conditional-attention": (
+            "Conditional attention",
+            "DD-C-0067",
+            "Explore exact private-dominant, public-dominant, and contrarian role profiles.",
+        ),
+    }
+    grouped_labs: list[str] = []
+    for group in (
+        "Search and allocation",
+        "Information and sources",
+        "Incentives and mechanisms",
+        "Measurement and experiments",
+    ):
+        group_cards = []
+        for slug, details in lab_details.items():
+            if details[0] != group:
+                continue
+            title, claim, description = (special_labs | generic_by_slug)[slug]
+            group_cards.append(
+                f'<article class="card lab-card"><p class="eyebrow">Interactive explainer</p><h3><a href="labs/{slug}.html">{html.escape(title)}</a></h3><p>{html.escape(description)}</p><dl><div><dt>What can I change?</dt><dd>{html.escape(details[1])}</dd></div><div><dt>What will I see?</dt><dd>{html.escape(details[2])}</dd></div><div><dt>Supported by</dt><dd>{html.escape(details[3])}</dd></div></dl><p class="card-link"><a href="labs/{slug}.html">Open Lab <span aria-hidden="true">→</span></a></p><details class="technical-details"><summary>Technical details</summary><p><a href="claims.html#{claim}">{claim}</a> · <a href="evidence.html">Reproducible evidence</a></p></details></article>'
+            )
+        grouped_labs.append(
+            f'<section class="lab-group"><h2>{html.escape(group)}</h2><div class="card-grid lab-grid">{"".join(group_cards)}</div></section>'
+        )
+    labs_body = f"""<header class="page-hero"><p class="eyebrow">Interactive explainers</p><h1>Labs</h1><p class="lede">Change inputs and inspect precomputed exact or synthetic models. Every Lab works without an external API and keeps its evidence boundary close at hand.</p></header>{"".join(grouped_labs)}"""
     _write(
         output,
         "labs.html",
@@ -1144,7 +1294,7 @@ def _render(
     for slug, title, claim, run_id, description in lab_specs:
         scenario_count = 20 if slug == "atlas" else 5
         value_label = "Architecture index" if slug == "atlas" else "Scenario index"
-        lab_body = f"""<p class="eyebrow"><a href="../labs.html">Labs</a> / {html.escape(title)}</p><h1>{html.escape(title)}</h1><p class="lede">{html.escape(description)}</p><section class="lab" data-lab="{slug}"><label for="scenario">{value_label}: <output id="scenario-output">1</output></label><input id="scenario" type="range" min="1" max="{scenario_count}" value="1" step="1" aria-describedby="lab-note"><p id="lab-note" class="callout" aria-live="polite">Scenario 1 is the readable default. Adjust the slider to compare {scenario_count} precomputed fixture views.</p></section><noscript><p class="callout">JavaScript is off. The default scenario remains available below.</p></noscript><table class="matrix"><thead><tr><th>Evidence boundary</th><th>Registered interpretation</th></tr></thead><tbody><tr><td>Claim</td><td><a href="../claims.html#{claim}">{claim}</a></td></tr><tr><td>Immutable run</td><td><a href="{REPOSITORY_URL}/blob/main/results/verified/{run_id}/manifest.json">{run_id}</a></td></tr><tr><td>Fallback</td><td>Scenario 1; bounded fixture only, not a recommendation.</td></tr></tbody></table>"""
+        lab_body = f"""<header class="page-hero"><p class="eyebrow">Interactive explainer</p><h1>{html.escape(title)}</h1><p class="lede">{html.escape(description)}</p></header><section class="lab" data-lab="{slug}"><label for="scenario">{value_label}: <output id="scenario-output">1</output></label><input id="scenario" type="range" min="1" max="{scenario_count}" value="1" step="1" aria-describedby="lab-note"><p id="lab-note" class="callout" aria-live="polite">Scenario 1 is the readable default. Adjust the slider to compare {scenario_count} precomputed fixture views.</p></section><noscript><p class="callout">JavaScript is off. The default scenario remains available below.</p></noscript><table class="matrix"><caption>Study support and fallback behavior</caption><thead><tr><th>What this covers</th><th>Registered interpretation</th></tr></thead><tbody><tr><td>Claim</td><td><a href="../claims.html#{claim}">{claim}</a></td></tr><tr><td>Reproducible run</td><td><a href="{REPOSITORY_URL}/blob/main/results/verified/{run_id}/manifest.json">{run_id}</a></td></tr><tr><td>Fallback</td><td>Scenario 1; bounded fixture only, not a recommendation.</td></tr></tbody></table>"""
         _write(
             output, f"labs/{slug}.html", _page(title, description, lab_body, f"labs/{slug}.html")
         )
@@ -1185,6 +1335,18 @@ def validate_site(output: Path, routes: list[dict[str, str]]) -> dict[str, Any]:
             errors.append(f"{relative}: unresolved template marker")
         if not {"main", "nav", "header", "footer"}.issubset(parser.tags):
             errors.append(f"{relative}: missing landmark")
+        header = re.search(r'<header class="site-header".*?</header>', source, re.DOTALL)
+        if header is None:
+            errors.append(f"{relative}: missing global site header")
+        else:
+            header_source = header.group(0)
+            if header_source.count("<nav ") != 1:
+                errors.append(f"{relative}: expected exactly one global nav region")
+            primary = re.search(r'<div class="nav-links">(.*?)</div>', header_source, re.DOTALL)
+            if primary is None or primary.group(1).count("<a ") != 5:
+                errors.append(f"{relative}: expected exactly five primary nav items")
+            if "secondary" in header_source or "Research navigation" in header_source:
+                errors.append(f"{relative}: secondary global navigation is prohibited")
         if not parser.headings or parser.headings[0] != 1:
             errors.append(f"{relative}: first heading must be h1")
         if parser.headings.count(1) != 1:
@@ -1196,6 +1358,8 @@ def validate_site(output: Path, routes: list[dict[str, str]]) -> dict[str, Any]:
             errors.append(f"{relative}: heading hierarchy skips a level")
         if len(parser.ids) != len(parser.id_occurrences):
             errors.append(f"{relative}: duplicate element ID")
+        if source.count("<table") != source.count("<caption"):
+            errors.append(f"{relative}: every table requires a caption")
         if "description" not in parser.meta:
             errors.append(f"{relative}: missing description")
         if any(urlsplit(asset).scheme in {"http", "https"} for asset in parser.runtime_assets):
@@ -1257,6 +1421,12 @@ def validate_site(output: Path, routes: list[dict[str, str]]) -> dict[str, Any]:
         errors.append("stylesheet lacks reduced-motion behavior")
     if ":focus-visible" not in stylesheet and ":focus" not in stylesheet:
         errors.append("stylesheet lacks visible focus behavior")
+    if "repeat(auto-fit, minmax(min(100%, 16rem), 1fr))" not in stylesheet:
+        errors.append("stylesheet lacks responsive auto-fit card grids")
+    if "grid-template-columns: repeat(7" in stylesheet or ".pipeline" in stylesheet:
+        errors.append("stylesheet retains the fixed seven-column pipeline")
+    if not (output / "og.png").is_file():
+        errors.append("missing local social preview image")
     if errors:
         raise RuntimeError("site validation failed:\n" + "\n".join(errors))
     return {
@@ -1275,6 +1445,7 @@ def validate_site(output: Path, routes: list[dict[str, str]]) -> dict[str, Any]:
 
 
 def build(root: Path, output: Path) -> dict[str, Any]:
+    load_copy_map(root / "design/site-refresh/copy-map.yml")
     claims, claims_by_id = _claim_data(root)
     runs, run_ids = _runs(root)
     studies = _study_data(root, claims_by_id, run_ids)
@@ -1283,7 +1454,7 @@ def build(root: Path, output: Path) -> dict[str, Any]:
     if output.exists():
         shutil.rmtree(output)
     output.mkdir(parents=True)
-    for asset in ["styles.css", "site.js", "og.svg"]:
+    for asset in ["styles.css", "site.js", "og.png"]:
         shutil.copy2(source / asset, output / asset)
     routes = _render(root, output, studies, claims, claims_by_id, runs, publications)
     benchmark_run_id = _latest_passing_study_run(root, "DD-010").name
@@ -1295,7 +1466,9 @@ def build(root: Path, output: Path) -> dict[str, Any]:
     atlas_summary = json.loads((atlas_run / "atlas-summary.json").read_text(encoding="utf-8"))
     atlas_rows = json.loads((atlas_run / "architectures.json").read_text(encoding="utf-8"))
     atlas_dominance = json.loads((atlas_run / "dominance.json").read_text(encoding="utf-8"))
+    canonical_data = _canonical_data(_passing_baseline(root))
     data = {
+        "canonical.json": canonical_data,
         "research-index.json": {"schema_version": 1, "studies": studies},
         "claims.json": {"schema_version": 1, "claims": claims},
         "runs.json": {"schema_version": 1, "runs": runs},
