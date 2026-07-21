@@ -50,22 +50,49 @@ def _table(schedule: object, coverage: object, reward: object, acquisition: obje
                     return value[name] if not isinstance(value[name], list) else len(value[name])
         return len(value) if isinstance(value, list) else "registered"
 
+    schedule_count = count(schedule, ("schedules",))
+    coverage_count = count(coverage, ("frontiers",))
+    reward_count = count(reward, ("frontier_rows", "row_count", "rows"))
+    acquisition_count = count(
+        acquisition, ("common_source_trap_cells", "common_source_trap_count", "trap_count")
+    )
     return "\n".join(
         [
             "% Generated evidence asset; do not edit by hand.",
             rf"% Source runs: {', '.join(RUNS.values())}",
             r"\begin{table}[t]\centering\small",
-            r"\caption{Evidence inventory for the Discovery Stack. Each row is a bounded registered result, not a universal institutional law.}",
+            (
+                r"\caption{Evidence inventory for the Discovery Stack. Each row is a bounded "
+                r"registered result, not a universal institutional law.}"
+            ),
             r"\label{tab:stack-evidence}",
             r"\begin{tabularx}{\textwidth}{lXrr}",
             r"\toprule Margin & Registered object & Evidence & Claim\\\midrule",
-            rf"Adapt & {count(schedule, ('schedules',))} schedule records under perfect elimination & exact fixture & DD-C-0045\\",
-            rf"Cover & {count(coverage, ('frontiers',))} coverage-frontier records & bounded witnesses & DD-C-0046, DD-C-0047\\",
-            rf"Reward & {count(reward, ('frontier_rows', 'row_count', 'rows'))} normalized-transfer rows & exhaustive class & DD-C-0050\\",
-            rf"Acquire & {count(acquisition, ('common_source_trap_cells', 'common_source_trap_count', 'trap_count'))} common-source trap cells & exact source-choice grid & DD-C-0051\\",
-            r"Measure & synthetic event generator and recovery checks & synthetic-only & DD-C-0049\\",
+            (
+                rf"Adapt & {schedule_count} schedule records under perfect "
+                r"elimination & exact fixture & DD-C-0045\\"
+            ),
+            (
+                rf"Cover & {coverage_count} coverage-frontier records & "
+                r"bounded witnesses & DD-C-0046, DD-C-0047\\"
+            ),
+            (
+                rf"Reward & {reward_count} "
+                r"normalized-transfer rows & exhaustive class & DD-C-0050\\"
+            ),
+            (
+                rf"Acquire & {acquisition_count} common-source trap cells "
+                r"& exact source-choice grid & DD-C-0051\\"
+            ),
+            (
+                r"Measure & synthetic event generator and recovery checks & synthetic-only "
+                r"& DD-C-0049\\"
+            ),
             r"\bottomrule\end{tabularx}",
-            rf"\par\footnotesize Generator: \texttt{{\detokenize{{{GENERATOR}}}}}; inputs are checksum-validated from immutable manifests.",
+            (
+                rf"\par\footnotesize Generator: \texttt{{\detokenize{{{GENERATOR}}}}}; "
+                r"inputs are checksum-validated from immutable manifests."
+            ),
             r"\end{table}",
             "",
         ]
