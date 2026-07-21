@@ -27,7 +27,7 @@
   },
   "generator": "distributed_discovery.papers.build_three_results",
   "inputs": {
-    "bibliography/references.bib": "f97b2d0dd7fba30afe7a2b0180c3cd5c880429ad3f48dc0c33fe36a10647bbc3",
+    "bibliography/references.bib": "b48ac67b029fca871a15242900829258fb38cea665bd4af2fd2b8ef5de959390",
     "claims/claims.yml": "bf3d145d54780f94c330eb126b2b37b272989eaa157459b7e937f008391ef2a3",
     "results/verified/20260720T200447Z_DD-001_6eb12861_ba766d1eba/outputs/tiny-phase-grid.csv": "e7112e7dd471a4fa302bbe5336a367dd166ff497bf8ab9095b6526635fe4851e",
     "results/verified/20260720T221139Z_DD-001_b1d8d431_40bf5b06a5/outputs/canonical-state-space.json": "7a416f54e6f8c81a1f7ca29bd99c44ab648994e282f29ff5615e6ba9eddb9e8f",

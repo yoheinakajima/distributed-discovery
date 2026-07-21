@@ -1,6 +1,6 @@
 {
   "inputs": {
-    "bibliography/references.bib": "f97b2d0dd7fba30afe7a2b0180c3cd5c880429ad3f48dc0c33fe36a10647bbc3",
+    "bibliography/references.bib": "b48ac67b029fca871a15242900829258fb38cea665bd4af2fd2b8ef5de959390",
     "results/baseline/20260720T202314Z_DD-000_88613408_217c602fa0/metrics.json": "f5571f06034fe44f2b5cb0768504ae517062b7829e54fb803a6f4e4fa3b1fb4e",
     "results/baseline/20260720T202314Z_DD-000_88613408_217c602fa0/outputs/canonical_quality.csv": "542e8e179fb21fc8490198fc03a86f2da5edf54a48c66f82ada73bdbfdbea960",
     "results/baseline/20260720T202314Z_DD-000_88613408_217c602fa0/outputs/independent_frontier.csv": "4617a7c94acd1e51a4b423dc429fb460d65e5f5e10268ac0a8302d8f46bc13ac"

@@ -11,10 +11,14 @@ case "$selection" in
   discovery-institutions)
     uv run --no-editable python -m distributed_discovery.papers.build_discovery_institutions
     ;;
+  common-source-trap)
+    uv run --no-editable python -m distributed_discovery.papers.build_common_source_trap
+    ;;
   all)
     uv run --no-editable python -m distributed_discovery.papers.build_foundations
     uv run --no-editable python -m distributed_discovery.papers.build_three_results
     uv run --no-editable python -m distributed_discovery.papers.build_discovery_institutions
+    uv run --no-editable python -m distributed_discovery.papers.build_common_source_trap
     ;;
   *)
     echo "unknown paper selection: $selection" >&2

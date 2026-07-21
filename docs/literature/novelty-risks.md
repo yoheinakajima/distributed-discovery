@@ -35,3 +35,21 @@
   attrition, and clustering.
 - No claim that attribution, provenance, visibility, or marginal coverage improves
   human behavior is eligible before a separately approved and executed experiment.
+
+## Common-Source Trap controls
+
+- Information acquisition as a public good, costly herding, strategic
+  experimentation, endogenous attention to public/common signals, acquisition-
+  welfare wedges, and scientific division of labor all have direct prior art.
+- Do not use “first,” “novel phenomenon,” or “new learning trap.” The justified
+  contribution is a transparent exact theorem for a particular coverage/prize
+  model plus bounded classifications and a counterexample to overbroad wording.
+- “Common-Source Trap” is a descriptive project label, not a claim that common
+  sources are generally harmful. Shared evidence can be efficient or robust under
+  different objectives, costs, signal laws, and action technologies.
+- The all-common interval is a general finite-`N` theorem only inside the frozen
+  homogeneous-accuracy model. DD-008A remains a separate `N=2,...,8` census.
+- DD-C-0058 forbids a universal under-acquisition interpretation: exact interior
+  over-acquisition occurs at the registered rational counterexample.
+- Institutional remedies are mechanism- and observability-specific. DD-006B is
+  externally subsidized; DD-011 is synthetic power only and no experiment ran.

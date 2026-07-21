@@ -1,0 +1,33 @@
+{
+  "generated_assets": {
+    "atlas-slice.tex": "a0df7e70222ca86419e5086e931c2b6cd2b7105a4b494656d91db780631e7897",
+    "discovery-gap.tex": "83ca3827c2d116a855328ce457a57270e8bc11ff66bc8395386f944df9df7051",
+    "equilibrium-counts.tex": "6720e2943e0869a82f816a1109b7932b32b5495650617ec20066e8524456ef52",
+    "evidence-status-table.tex": "50f746cbe85d2ed955aa6fc84eb6c3dd26549b8ddb7ccf72bb56174c27fc48e2",
+    "experiment-map.tex": "70d55dfe64f964fd93ec0cad8b774871c3963e2e77e05ea1f9d3a94d51be33e2",
+    "independence-gap.tex": "7a1e45e7e9a140c485762d4d479c21b2fefbc03cddadb412ef01ce5d1da7359e",
+    "interventions.tex": "8da995d3ffd6e294a2248ced60399af9d1948e084d4703ab6dc5b32603824ee9",
+    "planner-counts.tex": "a1c357419515a845edadd2e56288ef3814f2c57736b8a94333ce96d54eb25611",
+    "trap-region.tex": "155cad302643335b9ebf4556ad6a4222c6674d08b1b400d3964bf785884d5533",
+    "welfare-gap.tex": "46ca33d78c05d2c8d0b355cc0addf0386c61592a05dfb5deab52dc0be9318670"
+  },
+  "generator": "distributed_discovery.papers.build_common_source_trap",
+  "inputs": {
+    "results/verified/20260721T141527Z_DD-008_0d11dc77_7e0c8f1d66/outputs/source-choice-grid.json": "5e1da8ec2e34378a18cc8431ee11cde6ba78c71cb0bf25be556429b19cb3db9f",
+    "results/verified/20260721T163030Z_DD-008A_8b70668b_06307caab4/outputs/n-agent-census.json": "6df75b7bf2b1f03687d4182ab4e5ab91711d279777bee66769aa7461bf558e7b",
+    "results/verified/20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b/outputs/joint-mechanism-summary.json": "34542e79cb887ca504909eb27842d1b734803fbac0c286f8bd051f13f1e163ad",
+    "results/verified/20260721T171249Z_DD-009_bc78d249_0c3851c41a/outputs/architectures.json": "acf90df6a2dc2271773f831a5c2a8e640e5a88e38a9d97f09acf62221e938a94",
+    "results/verified/20260721T185647Z_DD-011_fa0271d9_fcaa647c55/outputs/hypotheses.json": "0d586f4001c82d6771e0969b3a183b352a120591d84c0a27141c011e1307758f",
+    "results/verified/20260721T192412Z_DD-008B_649deb08_29dbeaf3a9/outputs/summary.json": "a877471e90750a38b48d37c9d37d6e9dfca05bb6f9bdb90217f36b908381465e",
+    "results/verified/20260721T192412Z_DD-008B_649deb08_29dbeaf3a9/outputs/thresholds.json": "a9d7c5143d758e6dca919734ae934dab3f02b23a3fe07c609113834815760ae6"
+  },
+  "schema_version": 1,
+  "source_runs": {
+    "analytic": "20260721T192412Z_DD-008B_649deb08_29dbeaf3a9",
+    "atlas": "20260721T171249Z_DD-009_bc78d249_0c3851c41a",
+    "experiment": "20260721T185647Z_DD-011_fa0271d9_fcaa647c55",
+    "finite_n": "20260721T163030Z_DD-008A_8b70668b_06307caab4",
+    "mechanism": "20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b",
+    "two_agent": "20260721T141527Z_DD-008_0d11dc77_7e0c8f1d66"
+  }
+}

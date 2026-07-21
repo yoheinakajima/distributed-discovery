@@ -1,0 +1,16 @@
+% Generated evidence asset; do not edit by hand.
+% Claim: DD-C-0056
+\begin{figure}[t]\centering
+\begin{tikzpicture}[node distance=8mm and 11mm,every node/.style={align=center,font=\small}]
+\node[draw,rounded corners,fill=planner!10,text width=3.2cm] (factors) {20 treatment cells\\acquisition, attribution, disclosure, timing, reward};
+\node[draw,rounded corners,fill=private!10,text width=3.0cm,right=of factors] (primary) {6 primary hypotheses\\acquisition, truth, action diversity, discovery};
+\node[draw,rounded corners,fill=market!10,text width=3.0cm,right=of primary] (secondary) {2 secondary hypotheses\\precision and interaction};
+\draw[->,very thick] (factors)--(primary);
+\draw[->,very thick] (primary)--(secondary);
+\node[draw,rounded corners,fill=consensus!8,text width=9.6cm,below=of primary] (warning) {Synthetic response scenarios and power calculations only. No participants were recruited; no human data were collected; no experiment was conducted.};
+\draw[->] (factors)--(warning); \draw[->] (primary)--(warning); \draw[->] (secondary)--(warning);
+\end{tikzpicture}
+\caption{DD-011 maps exact-model mechanisms into experimental predictions without turning them into empirical effects. The design is preregistration-ready, not preregistered or deployed.}
+\label{fig:experiment-map}
+\ArtifactNote{Source runs: \path{20260721T185647Z_DD-011_fa0271d9_fcaa647c55}; claims: DD-C-0056; generator: \path{distributed_discovery.papers.build_common_source_trap}; input SHA-256 prefixes: \texttt{0d586f4001c8}.}
+\end{figure}

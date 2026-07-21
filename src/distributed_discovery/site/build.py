@@ -282,6 +282,7 @@ def _publications(root: Path) -> list[dict[str, Any]]:
         ("foundations", "Foundations of Distributed Discovery"),
         ("three-results", "Three Results in Distributed Discovery"),
         ("discovery-institutions", "Institutions for Distributed Discovery"),
+        ("common-source-trap", "The Common-Source Trap"),
     ):
         validation = json.loads((root / "papers" / directory / "validation.json").read_text())
         candidates = sorted((root / "papers" / directory).glob("*.pdf"))
@@ -291,16 +292,28 @@ def _publications(root: Path) -> list[dict[str, Any]]:
         digest = _sha256(pdf)
         if validation.get("pdf_sha256") != digest:
             raise RuntimeError(f"publication checksum mismatch: {pdf}")
+        metadata_path = root / "papers" / directory / "metadata.yml"
+        metadata = _read_yaml(metadata_path) if metadata_path.is_file() else {}
+        if metadata and metadata.get("title") != title:
+            raise RuntimeError(f"publication title mismatch: {metadata_path}")
+        author = str(metadata.get("author", "Distributed Discovery project"))
+        date = str(metadata.get("date", ""))
+        citation = f"{author} ({date}). {title}." if date else f"{author}. {title}."
         publications.append(
             {
                 "title": title,
                 "slug": directory,
+                "detail": f"publications/{directory}.html",
                 "source_pdf": str(pdf.relative_to(root)),
                 "download": f"downloads/{pdf.name}",
                 "sha256": digest,
                 "page_count": validation.get("page_count"),
                 "build_source": f"papers/{directory}/main.tex",
-                "citation": f"Distributed Discovery project ({directory}). {title}.",
+                "citation": citation,
+                "status": metadata.get("status", "validated-repository-paper"),
+                "doi": metadata.get("doi"),
+                "submitted": metadata.get("submitted"),
+                "peer_reviewed": metadata.get("peer_reviewed"),
             }
         )
     return publications
@@ -773,8 +786,9 @@ def _render(
         ),
     )
     publication_items = "".join(
-        '<article class="card"><h2>{title}</h2><p>{page_count} pages · SHA-256 <code>{sha256}</code></p><p><a href="{download}">Download PDF</a> · <a href="{repo}/blob/main/{build_source}">Build source</a></p><p>{citation}</p></article>'.format(
+        '<article class="card"><h2><a href="{detail}">{title}</a></h2><p>{page_count} pages · SHA-256 <code>{sha256}</code></p><p><a href="{download}">Download PDF</a> · <a href="{repo}/blob/main/{build_source}">Build source</a></p><p>{citation}</p></article>'.format(
             title=html.escape(str(item["title"])),
+            detail=html.escape(str(item["detail"])),
             page_count=html.escape(str(item["page_count"])),
             sha256=html.escape(str(item["sha256"])),
             download=html.escape(str(item["download"])),
@@ -795,6 +809,27 @@ def _render(
             "publications.html",
         ),
     )
+    for item in publications:
+        status_bits = [str(item["status"]).replace("-", " ")]
+        if item["doi"]:
+            status_bits.append(f"DOI {item['doi']}")
+        elif item["slug"] == "common-source-trap":
+            status_bits.append("no DOI")
+        if item["submitted"] is False:
+            status_bits.append("not submitted")
+        if item["peer_reviewed"] is False:
+            status_bits.append("not peer reviewed")
+        detail_body = f"""<p class="eyebrow"><a href="../publications.html">Publications</a> / Working paper</p><h1>{html.escape(str(item["title"]))}</h1><p class="lede">{html.escape(" · ".join(status_bits))}</p><section><h2>Artifact</h2><p>{html.escape(str(item["page_count"]))} pages. The download is copied only after its SHA-256 matches the committed validation record.</p><p><a class="primary-link" href="../{html.escape(str(item["download"]))}">Download the validated PDF →</a></p><p>SHA-256 <code>{html.escape(str(item["sha256"]))}</code></p></section><section><h2>Citation and source</h2><p>{html.escape(str(item["citation"]))}</p><p><a href="{REPOSITORY_URL}/blob/main/{html.escape(str(item["build_source"]))}">Read the build source</a> · <a href="{REPOSITORY_URL}/tree/main/papers/{html.escape(str(item["slug"]))}">Inspect validation and provenance</a></p></section>"""
+        _write(
+            output,
+            str(item["detail"]),
+            _page(
+                str(item["title"]),
+                f"Validated publication artifact and provenance for {item['title']}.",
+                detail_body,
+                str(item["detail"]),
+            ),
+        )
     open_studies = [
         study
         for study in studies

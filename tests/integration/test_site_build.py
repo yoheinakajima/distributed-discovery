@@ -24,7 +24,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert report["study_count"] == expected_studies
     assert report["claim_count"] == expected_claims
     assert report["passing_run_count"] == expected_passing_runs
-    assert report["publication_count"] == 3
+    assert report["publication_count"] == 4
     assert report["internal_links_passed"] is True
     assert report["public_safety_passed"] is True
 
@@ -87,6 +87,13 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         download = output / publication["download"]
         assert download.is_file()
         assert download.stat().st_size > 0
+    common_source = next(item for item in publications if item["slug"] == "common-source-trap")
+    common_source_page = output / common_source["detail"]
+    assert common_source_page.is_file()
+    common_source_html = common_source_page.read_text(encoding="utf-8")
+    assert "working paper · no DOI · not submitted · not peer reviewed" in common_source_html
+    assert common_source["sha256"] in common_source_html
+    assert common_source["download"] == "downloads/The_Common_Source_Trap.pdf"
 
     routes = json.loads((output / "data/routes.json").read_text(encoding="utf-8"))["routes"]
     assert {route["path"] for route in routes} == {

@@ -1,0 +1,16 @@
+% Generated evidence asset; do not edit by hand.
+% Claims: DD-C-0051, DD-C-0053, DD-C-0057
+\begin{figure}[t]\centering
+\begin{tikzpicture}[node distance=7mm and 8mm,every node/.style={align=center,font=\small}]
+\node[draw,rounded corners,fill=consensus!10,text width=3.2cm] (base) {Equal-split source choice\\all common can persist\\discovery $2/3$ at $p=2/3$};
+\node[draw,rounded corners,fill=planner!10,text width=3.2cm,right=of base] (assign) {Assign one independent source\\planner count repaired\\discovery $8/9$};
+\node[draw,rounded corners,fill=private!10,text width=3.2cm,right=of assign] (alloc) {Add differentiated allocation\\separate model reaches\\discovery $11/12$};
+\draw[->,very thick] (base)--(assign);
+\draw[->,very thick] (assign)--(alloc);
+\node[draw,rounded corners,fill=market!8,text width=10.7cm,below=of assign] (reward) {DD-006B can strictly implement truthful differentiated behavior in 16 of 60 normalized rows, but requires external subsidy and does not itself solve endogenous source purchase.};
+\draw[->] (reward)--(alloc);
+\end{tikzpicture}
+\caption{Interventions repair different margins. DD-006B's maximum exact strict margin is $13/72$ and best strict discovery is $11/12$; those results use a different two-agent observability/transfer model.}
+\label{fig:interventions}
+\ArtifactNote{Source runs: \path{20260721T141527Z_DD-008_0d11dc77_7e0c8f1d66, 20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b, 20260721T192412Z_DD-008B_649deb08_29dbeaf3a9}; claims: DD-C-0051, DD-C-0053, DD-C-0057; generator: \path{distributed_discovery.papers.build_common_source_trap}; input SHA-256 prefixes: \texttt{5e1da8ec2e34, 34542e79cb88, a877471e9075}.}
+\end{figure}
