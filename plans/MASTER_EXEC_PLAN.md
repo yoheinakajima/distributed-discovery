@@ -8,7 +8,7 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-The historical M0–M9 bootstrap, operational Milestone A, research milestones DD-001A/B, bounded DD-002/DD-003, their integrated handoff, and continuation cycles F–L are complete. Research PRs #19, #21, #23, #25, and #27 and maintenance PRs #29–#31 are reviewed, squash-merged, CI-green, Pages-green, and live-smoke-tested. Claims stop at DD-C-0044; the final ledger has 44 claims and 17 immutable manifests. The one authorized settings attempt failed before mutation because GitHub CLI is unauthenticated and is recorded in issue #32. **Active integration boundary: Cycle M local acceptance and documentation are complete on `docs/final-continuation-handoff`; only the documentation PR review, merge, and final Pages smoke test remain.**
+The historical M0–M9 bootstrap, operational Milestone A, research milestones DD-001A/B, bounded DD-002/DD-003, their integrated handoff, and continuation cycles F–L are complete. Research PRs #19, #21, #23, #25, and #27 and maintenance PRs #29–#31 are reviewed, squash-merged, CI-green, Pages-green, and live-smoke-tested. Claims stop at DD-C-0044; the final ledger has 44 claims and 17 immutable manifests. The one authorized settings attempt failed before mutation because GitHub CLI is unauthenticated and is recorded in issue #32. **Active integration boundary: Cycle M local acceptance and documentation are complete in PR #34; only its review, merge, and final Pages smoke test remain.**
 
 ## Scope
 

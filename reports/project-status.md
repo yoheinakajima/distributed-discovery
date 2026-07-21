@@ -218,5 +218,6 @@ Primary evidence commits are embedded in immutable run IDs/manifests; the four c
 - `https://github.com/yoheinakajima/distributed-discovery/pull/29`
 - `https://github.com/yoheinakajima/distributed-discovery/pull/30`
 - `https://github.com/yoheinakajima/distributed-discovery/pull/31`
+- `https://github.com/yoheinakajima/distributed-discovery/pull/34` — documentation-only final handoff
 
 The exact operational next file is `docs/github-setup.md`, governed by issue #32. The exact next research planning file is `studies/DD-001/PLAN.md` if the project owner chooses to pursue a stronger alignment hierarchy.
