@@ -7,7 +7,9 @@ import json
 import platform
 import subprocess
 from datetime import UTC, datetime
+from fractions import Fraction
 from pathlib import Path
+from typing import cast
 
 import yaml
 
@@ -47,7 +49,19 @@ def main() -> None:
         "frontier_rows": len(rows),
         "weak_rows": sum(bool(r["weak"]) for r in rows),
         "strict_rows": sum(bool(r["strict"]) for r in rows),
-        "maximum_margin": max(str(r["all_tie_margin"]) for r in rows),
+        "maximum_margin": str(max(Fraction(str(r["all_tie_margin"])) for r in rows)),
+        "strict_rows_with_positive_information_weight": sum(
+            bool(r["strict"])
+            and Fraction(str(cast(list[object], r["coefficients"])[0])) > 0
+            for r in rows
+        ),
+        "all_rows_participation": all(
+            bool(accounting["participation"])
+            for row in rows
+            for accounting in cast(
+                list[dict[str, object]], row["accounting_by_tie_role"]
+            )
+        ),
         "independent_verifier": valid,
     }
     write(out / "joint-mechanism-frontier.json", rows)

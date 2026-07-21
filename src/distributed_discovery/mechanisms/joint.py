@@ -107,10 +107,66 @@ def margin(
     return min(gaps)
 
 
+def truthful_accounting(
+    regime: str, coefficients: tuple[Fraction, Fraction, Fraction], tie_role: int
+) -> dict[str, object]:
+    """Return exact ex-ante budget, utility, and transfer-bound certificates."""
+    total_transfer = Fraction()
+    utilities = [Fraction(), Fraction()]
+    for target, signal_0, signal_1 in product(range(3), repeat=3):
+        probability = (
+            Fraction(1, 3)
+            * signal_probability(target, signal_0)
+            * signal_probability(target, signal_1)
+        )
+        reports = (signal_0, signal_1)
+        actions = recommendation(reports, tie_role)
+        for agent in range(2):
+            payment = realized_transfer(
+                regime, coefficients, target, reports, actions, agent, tie_role
+            )
+            total_transfer += probability * payment
+            utilities[agent] += probability * (
+                realized_prize(target, actions, agent) + payment
+            )
+
+    interim = []
+    for agent, signal in product(range(2), range(3)):
+        baseline = cast(
+            tuple[int, int, int],
+            tuple(
+                recommendation((signal, peer) if agent == 0 else (peer, signal), tie_role)[
+                    agent
+                ]
+                for peer in range(3)
+            ),
+        )
+        interim.append(
+            expected_utility(regime, coefficients, agent, signal, signal, baseline, tie_role)
+        )
+
+    transfer_bound = max(
+        abs(realized_transfer(regime, coefficients, target, reports, actions, agent, tie_role))
+        for target, report_0, report_1, action_0, action_1, agent in product(
+            range(3), range(3), range(3), range(3), range(3), range(2)
+        )
+        for reports in [(report_0, report_1)]
+        for actions in [(action_0, action_1)]
+    )
+    return {
+        "expected_total_transfer": str(total_transfer),
+        "expected_agent_utilities": [str(value) for value in utilities],
+        "minimum_interim_utility": str(min(interim)),
+        "participation": min(interim) >= 0,
+        "worst_case_abs_transfer": str(transfer_bound),
+    }
+
+
 def frontier_row(
     regime: str, coefficients: tuple[Fraction, Fraction, Fraction]
 ) -> dict[str, object]:
     margins = [margin(regime, coefficients, role) for role in (0, 1)]
+    accounting = [truthful_accounting(regime, coefficients, role) for role in (0, 1)]
     return {
         "regime": regime,
         "coefficients": [str(x) for x in coefficients],
@@ -119,4 +175,5 @@ def frontier_row(
         "weak": min(margins) >= 0,
         "strict": min(margins) > 0,
         "externally_subsidized": True,
+        "accounting_by_tie_role": accounting,
     }

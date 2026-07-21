@@ -1,4 +1,5 @@
 from copy import deepcopy
+from fractions import Fraction
 
 from distributed_discovery.mechanisms.joint import (
     coefficient_vectors,
@@ -19,3 +20,9 @@ def test_joint_frontier_certificate_and_corruption() -> None:
     bad = deepcopy(row)
     bad["all_tie_margin"] = "99"
     assert not verify_row(bad)
+    accounting = row["accounting_by_tie_role"]
+    assert all(item["participation"] for item in accounting)
+    assert all(Fraction(item["worst_case_abs_transfer"]) >= 0 for item in accounting)
+    bad_accounting = deepcopy(row)
+    bad_accounting["accounting_by_tie_role"][0]["expected_total_transfer"] = "99"
+    assert not verify_row(bad_accounting)
