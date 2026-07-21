@@ -1,0 +1,7 @@
+model: common-independent-source-choice-v1
+candidates: 3
+agents: 2
+accuracies: [1/2, 2/3, 3/4]
+costs: [0, 1/24, 1/12, 1/8, 1/6]
+time_budget_seconds: 30
+resource_estimate: {profiles_per_cell: 4, grid_cells: 15, target_signal_states_per_profile: 27}

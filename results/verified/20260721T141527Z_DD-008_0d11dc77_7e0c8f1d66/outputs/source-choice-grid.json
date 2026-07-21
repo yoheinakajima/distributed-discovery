@@ -1,0 +1,709 @@
+[
+  {
+    "accuracy": "1/2",
+    "common_source_trap": false,
+    "cost": "0",
+    "equilibria": [
+      "CI",
+      "IC",
+      "II"
+    ],
+    "planner": [
+      "CI",
+      "IC",
+      "II"
+    ],
+    "profiles": {
+      "CC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "1/4",
+          "1/4"
+        ],
+        "social_net_value": "1/2"
+      },
+      "CI": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "3/8",
+          "3/8"
+        ],
+        "social_net_value": "3/4"
+      },
+      "IC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "3/8",
+          "3/8"
+        ],
+        "social_net_value": "3/4"
+      },
+      "II": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "3/8",
+          "3/8"
+        ],
+        "social_net_value": "3/4"
+      }
+    }
+  },
+  {
+    "accuracy": "1/2",
+    "common_source_trap": false,
+    "cost": "1/24",
+    "equilibria": [
+      "CI",
+      "IC"
+    ],
+    "planner": [
+      "CI",
+      "IC"
+    ],
+    "profiles": {
+      "CC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "1/4",
+          "1/4"
+        ],
+        "social_net_value": "1/2"
+      },
+      "CI": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "3/8",
+          "1/3"
+        ],
+        "social_net_value": "17/24"
+      },
+      "IC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "1/3",
+          "3/8"
+        ],
+        "social_net_value": "17/24"
+      },
+      "II": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "1/3",
+          "1/3"
+        ],
+        "social_net_value": "2/3"
+      }
+    }
+  },
+  {
+    "accuracy": "1/2",
+    "common_source_trap": false,
+    "cost": "1/12",
+    "equilibria": [
+      "CI",
+      "IC"
+    ],
+    "planner": [
+      "CI",
+      "IC"
+    ],
+    "profiles": {
+      "CC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "1/4",
+          "1/4"
+        ],
+        "social_net_value": "1/2"
+      },
+      "CI": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "3/8",
+          "7/24"
+        ],
+        "social_net_value": "2/3"
+      },
+      "IC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "7/24",
+          "3/8"
+        ],
+        "social_net_value": "2/3"
+      },
+      "II": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "7/24",
+          "7/24"
+        ],
+        "social_net_value": "7/12"
+      }
+    }
+  },
+  {
+    "accuracy": "1/2",
+    "common_source_trap": false,
+    "cost": "1/8",
+    "equilibria": [
+      "CC",
+      "CI",
+      "IC"
+    ],
+    "planner": [
+      "CI",
+      "IC"
+    ],
+    "profiles": {
+      "CC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "1/4",
+          "1/4"
+        ],
+        "social_net_value": "1/2"
+      },
+      "CI": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "3/8",
+          "1/4"
+        ],
+        "social_net_value": "5/8"
+      },
+      "IC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "1/4",
+          "3/8"
+        ],
+        "social_net_value": "5/8"
+      },
+      "II": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "1/4",
+          "1/4"
+        ],
+        "social_net_value": "1/2"
+      }
+    }
+  },
+  {
+    "accuracy": "1/2",
+    "common_source_trap": true,
+    "cost": "1/6",
+    "equilibria": [
+      "CC"
+    ],
+    "planner": [
+      "CI",
+      "IC"
+    ],
+    "profiles": {
+      "CC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "1/4",
+          "1/4"
+        ],
+        "social_net_value": "1/2"
+      },
+      "CI": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "3/8",
+          "5/24"
+        ],
+        "social_net_value": "7/12"
+      },
+      "IC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "5/24",
+          "3/8"
+        ],
+        "social_net_value": "7/12"
+      },
+      "II": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "5/24",
+          "5/24"
+        ],
+        "social_net_value": "5/12"
+      }
+    }
+  },
+  {
+    "accuracy": "2/3",
+    "common_source_trap": false,
+    "cost": "0",
+    "equilibria": [
+      "CI",
+      "IC",
+      "II"
+    ],
+    "planner": [
+      "CI",
+      "IC",
+      "II"
+    ],
+    "profiles": {
+      "CC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "1/3",
+          "1/3"
+        ],
+        "social_net_value": "2/3"
+      },
+      "CI": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "4/9",
+          "4/9"
+        ],
+        "social_net_value": "8/9"
+      },
+      "IC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "4/9",
+          "4/9"
+        ],
+        "social_net_value": "8/9"
+      },
+      "II": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "4/9",
+          "4/9"
+        ],
+        "social_net_value": "8/9"
+      }
+    }
+  },
+  {
+    "accuracy": "2/3",
+    "common_source_trap": false,
+    "cost": "1/24",
+    "equilibria": [
+      "CI",
+      "IC"
+    ],
+    "planner": [
+      "CI",
+      "IC"
+    ],
+    "profiles": {
+      "CC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "1/3",
+          "1/3"
+        ],
+        "social_net_value": "2/3"
+      },
+      "CI": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "4/9",
+          "29/72"
+        ],
+        "social_net_value": "61/72"
+      },
+      "IC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "29/72",
+          "4/9"
+        ],
+        "social_net_value": "61/72"
+      },
+      "II": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "29/72",
+          "29/72"
+        ],
+        "social_net_value": "29/36"
+      }
+    }
+  },
+  {
+    "accuracy": "2/3",
+    "common_source_trap": false,
+    "cost": "1/12",
+    "equilibria": [
+      "CI",
+      "IC"
+    ],
+    "planner": [
+      "CI",
+      "IC"
+    ],
+    "profiles": {
+      "CC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "1/3",
+          "1/3"
+        ],
+        "social_net_value": "2/3"
+      },
+      "CI": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "4/9",
+          "13/36"
+        ],
+        "social_net_value": "29/36"
+      },
+      "IC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "13/36",
+          "4/9"
+        ],
+        "social_net_value": "29/36"
+      },
+      "II": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "13/36",
+          "13/36"
+        ],
+        "social_net_value": "13/18"
+      }
+    }
+  },
+  {
+    "accuracy": "2/3",
+    "common_source_trap": true,
+    "cost": "1/8",
+    "equilibria": [
+      "CC"
+    ],
+    "planner": [
+      "CI",
+      "IC"
+    ],
+    "profiles": {
+      "CC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "1/3",
+          "1/3"
+        ],
+        "social_net_value": "2/3"
+      },
+      "CI": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "4/9",
+          "23/72"
+        ],
+        "social_net_value": "55/72"
+      },
+      "IC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "23/72",
+          "4/9"
+        ],
+        "social_net_value": "55/72"
+      },
+      "II": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "23/72",
+          "23/72"
+        ],
+        "social_net_value": "23/36"
+      }
+    }
+  },
+  {
+    "accuracy": "2/3",
+    "common_source_trap": true,
+    "cost": "1/6",
+    "equilibria": [
+      "CC"
+    ],
+    "planner": [
+      "CI",
+      "IC"
+    ],
+    "profiles": {
+      "CC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "1/3",
+          "1/3"
+        ],
+        "social_net_value": "2/3"
+      },
+      "CI": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "4/9",
+          "5/18"
+        ],
+        "social_net_value": "13/18"
+      },
+      "IC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "5/18",
+          "4/9"
+        ],
+        "social_net_value": "13/18"
+      },
+      "II": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "5/18",
+          "5/18"
+        ],
+        "social_net_value": "5/9"
+      }
+    }
+  },
+  {
+    "accuracy": "3/4",
+    "common_source_trap": false,
+    "cost": "0",
+    "equilibria": [
+      "CI",
+      "IC",
+      "II"
+    ],
+    "planner": [
+      "CI",
+      "IC",
+      "II"
+    ],
+    "profiles": {
+      "CC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "3/8",
+          "3/8"
+        ],
+        "social_net_value": "3/4"
+      },
+      "CI": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "15/32",
+          "15/32"
+        ],
+        "social_net_value": "15/16"
+      },
+      "IC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "15/32",
+          "15/32"
+        ],
+        "social_net_value": "15/16"
+      },
+      "II": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "15/32",
+          "15/32"
+        ],
+        "social_net_value": "15/16"
+      }
+    }
+  },
+  {
+    "accuracy": "3/4",
+    "common_source_trap": false,
+    "cost": "1/24",
+    "equilibria": [
+      "CI",
+      "IC"
+    ],
+    "planner": [
+      "CI",
+      "IC"
+    ],
+    "profiles": {
+      "CC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "3/8",
+          "3/8"
+        ],
+        "social_net_value": "3/4"
+      },
+      "CI": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "15/32",
+          "41/96"
+        ],
+        "social_net_value": "43/48"
+      },
+      "IC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "41/96",
+          "15/32"
+        ],
+        "social_net_value": "43/48"
+      },
+      "II": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "41/96",
+          "41/96"
+        ],
+        "social_net_value": "41/48"
+      }
+    }
+  },
+  {
+    "accuracy": "3/4",
+    "common_source_trap": false,
+    "cost": "1/12",
+    "equilibria": [
+      "CI",
+      "IC"
+    ],
+    "planner": [
+      "CI",
+      "IC"
+    ],
+    "profiles": {
+      "CC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "3/8",
+          "3/8"
+        ],
+        "social_net_value": "3/4"
+      },
+      "CI": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "15/32",
+          "37/96"
+        ],
+        "social_net_value": "41/48"
+      },
+      "IC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "37/96",
+          "15/32"
+        ],
+        "social_net_value": "41/48"
+      },
+      "II": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "37/96",
+          "37/96"
+        ],
+        "social_net_value": "37/48"
+      }
+    }
+  },
+  {
+    "accuracy": "3/4",
+    "common_source_trap": true,
+    "cost": "1/8",
+    "equilibria": [
+      "CC"
+    ],
+    "planner": [
+      "CI",
+      "IC"
+    ],
+    "profiles": {
+      "CC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "3/8",
+          "3/8"
+        ],
+        "social_net_value": "3/4"
+      },
+      "CI": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "15/32",
+          "11/32"
+        ],
+        "social_net_value": "13/16"
+      },
+      "IC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "11/32",
+          "15/32"
+        ],
+        "social_net_value": "13/16"
+      },
+      "II": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "11/32",
+          "11/32"
+        ],
+        "social_net_value": "11/16"
+      }
+    }
+  },
+  {
+    "accuracy": "3/4",
+    "common_source_trap": true,
+    "cost": "1/6",
+    "equilibria": [
+      "CC"
+    ],
+    "planner": [
+      "CI",
+      "IC"
+    ],
+    "profiles": {
+      "CC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "3/8",
+          "3/8"
+        ],
+        "social_net_value": "3/4"
+      },
+      "CI": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "15/32",
+          "29/96"
+        ],
+        "social_net_value": "37/48"
+      },
+      "IC": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "29/96",
+          "15/32"
+        ],
+        "social_net_value": "37/48"
+      },
+      "II": {
+        "direct_enumerator_agrees": true,
+        "payoffs": [
+          "29/96",
+          "29/96"
+        ],
+        "social_net_value": "29/48"
+      }
+    }
+  }
+]

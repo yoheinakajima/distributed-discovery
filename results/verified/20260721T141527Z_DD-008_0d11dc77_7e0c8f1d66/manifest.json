@@ -1,0 +1,29 @@
+{
+  "command": "make dd008-acquisition",
+  "config_hash_sha256": "7e0c8f1d669a168fe2f30163a542e357a8d64bc06771912b2875aea524a1403f",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-21T14:15:27.198249Z",
+  "exit_status": 0,
+  "git_commit": "0d11dc77360573a13588e477145802be77881ab3",
+  "git_dirty": true,
+  "input_hashes": {
+    "src/distributed_discovery/acquisition/model.py": "52bc09ebd7db43af8c8b4e66caac8766468a5f19d7b5f09ef1a69c519dc8c153",
+    "src/distributed_discovery/acquisition/study.py": "335656d28c0b954dca41cddd021acdcbcfc817371a816b5f4aab53d88b53adf2",
+    "src/distributed_discovery/acquisition/verification.py": "4f63009335f5eaad9de90aea66e3e356cd8b319b4dc2ba3a173e4d7a48e85607",
+    "studies/DD-008-endogenous-evidence-acquisition/configs/baseline.yml": "a196ca4ab48dc881caca4ca19a55d06f5076616ad855975e139a52d28dfe657d"
+  },
+  "outputs": {
+    "outputs/source-choice-grid.json": "5e1da8ec2e34378a18cc8431ee11cde6ba78c71cb0bf25be556429b19cb3db9f",
+    "outputs/source-choice-summary.json": "d126c934f990030c6551064cf38330b9cbd02f7a779b8d8b6f1ed31fc4c872c0"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "run_id": "20260721T141527Z_DD-008_0d11dc77_7e0c8f1d66",
+  "schema_version": 1,
+  "started_utc": "2026-07-21T14:15:27.167714Z",
+  "study_id": "DD-008",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}
