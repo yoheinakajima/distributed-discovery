@@ -8,7 +8,7 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-The historical M0–M9 bootstrap, operational Milestone A, research milestones DD-001A/B, DD-002, DD-003, their integrated handoff, and continuation cycles F–H are complete and merged. Alignment PR #23 squash-merged as `df35f80273f106ef86f623c4676fe2a58757b6ad`; post-merge CI `29796429926` and Pages `29796429904` passed, all seven public routes returned HTTP 200, and the live exact optimum/provenance match DD-C-0038. **Active integration boundary: Cycle I evidence is complete in immutable run `20260721T025802Z_DD-002_73a85c71_b0e5b6dc49`; issue #24 and draft PR #25 await final audit, review, merge, and deployment.**
+The historical M0–M9 bootstrap, operational Milestone A, research milestones DD-001A/B, DD-002, DD-003, their integrated handoff, and continuation cycles F–I are complete and merged. Selection PR #25 squash-merged as `993b0899421d446f61348a513d2630e0f424e336`; post-merge CI `29797810807` and Pages `29797810786` passed, all seven public routes returned HTTP 200, and the live selection catalogue/provenance match DD-C-0040/DD-C-0041. **Active integration boundary: DD-003 heterogeneous-source issue #26 on `research/dd003-heterogeneous-sources`.**
 
 ## Scope
 
@@ -45,8 +45,8 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - F exact canonical pooled-frontier certificate: completed 2026-07-20 through PR #19.
 - G Three Results synthesis paper and public Results page: completed 2026-07-20 through PR #21.
 - H alignment-preserving DD-001 upper relaxation: completed 2026-07-20 through PR #23.
-- I DD-002 equilibrium-selection robustness: evidence complete; PR #25 integration active.
-- J DD-003 heterogeneous source accuracy: pending I.
+- I DD-002 equilibrium-selection robustness: completed 2026-07-20 through PR #25.
+- J DD-003 heterogeneous source accuracy: active on issue #26.
 - K dependency and Dependabot maintenance: pending J.
 - L single repository-settings attempt: pending K.
 - M continuation integration and handoff: pending L.

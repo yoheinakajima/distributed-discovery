@@ -6,16 +6,16 @@
 
 Milestones M0 through M9 and operational Milestone A are complete. Cleanup issue #6 closed through squash-merged PR #12 at `1add8de5a349c57085928da8aa54da85e49c5077`; CI passed, Pages workflow `29781940577` succeeded, and all five required routes returned HTTP 200. The source repository is public under MIT at `https://yoheinakajima.github.io/distributed-discovery/`. Canonical upstream remains untouched.
 
-The authorized A–E queue and continuation cycles F–H are complete and merged. Alignment PR #23 merged as `df35f80273f106ef86f623c4676fe2a58757b6ad`; post-merge CI `29796429926` and Pages `29796429904` passed, and all seven public routes expose the exact canonical optimum `325089/390625` with the correct run provenance. Cycle I evidence is complete on DD-002 issue #24 and draft PR #25; final audit, review, merge, and deployment are active.
+The authorized A–E queue and continuation cycles F–I are complete and merged. Selection PR #25 merged as `993b0899421d446f61348a513d2630e0f424e336`; post-merge CI `29797810807` and Pages `29797810786` passed, and all seven public routes expose the exact six-rule catalogue with the correct run provenance. DD-003 heterogeneous-source issue #26 and branch `research/dd003-heterogeneous-sources` are active.
 
 ## Continuation checkpoint
 
-- Current merged baseline: `df35f80273f106ef86f623c4676fe2a58757b6ad`.
+- Current merged baseline: `993b0899421d446f61348a513d2630e0f424e336`.
 - Exact pooled top-eight endpoint: `860391662035297/1001129150390625`.
 - Exact canonical private-team optimum: `325089/390625 = 0.83222784`; the prior pooled interval is valid but superseded.
 - Three Results paper: `papers/three-results/Three_Results_in_Distributed_Discovery.pdf`, 13 pages, visually audited after Cycle I integration.
 - Public Results route: `https://yoheinakajima.github.io/distributed-discovery/results.html`.
-- Active task: finish PR #25 integration of the exact six-rule DD-002 equilibrium-selection catalogue.
+- Active task: freeze and state-size-audit the DD-003 color-preserving heterogeneous-source class under issue #26.
 
 ## 2. Repository map
 
