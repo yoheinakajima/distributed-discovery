@@ -34,3 +34,24 @@ not a claim of WCAG conformance.
 
 The browser check complements the automated site builder tests. It does not test
 assistive technology combinations or claim a complete accessibility audit.
+
+## Deployment verification
+
+PR #89 merged as `427245541ccceb6535f26bd4400d7a7c5662db30`. Its PR-head CI
+and paper/site workflows passed; the subsequent main-branch CI and GitHub Pages
+deployment also completed successfully.
+
+The deployed homepage, Research, DD-014, Conditional Attention Lab, Papers, and
+benchmark-results routes were inspected at 390×844. Each exposed one H1, one
+five-link primary navigation, and zero document-level horizontal overflow. The
+live homepage contained the approved hook, the mobile menu opened to five links,
+and the Papers catalogue contained all five current papers.
+
+Direct deployed requests returned HTTP 200 for:
+
+- `index.html`
+- `research/dd-014.html`
+- `labs/conditional-attention.html`
+- `publications/incentive-to-ignore.html`
+- `downloads/The_Incentive_to_Ignore.pdf` (`application/pdf`, 125,674 bytes)
+- `og.png` (`image/png`, 2,335,582 bytes)

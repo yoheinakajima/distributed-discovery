@@ -51,7 +51,7 @@ two/three-column grids, and a seven-column scrolling pipeline.
 2. Branding, copy map, design tokens, and isolated prototype. **Complete.**
 3. Presentation modules, shell/navigation, page redesign, and tests. **Complete.**
 4. Browser, visual, accessibility, and full repository validation. **Complete.**
-5. Rebase, PR readiness, CI, merge, Pages, and live-route verification. **Active.**
+5. Rebase, PR readiness, CI, merge, Pages, and live-route verification. **Complete.**
 
 ## Progress checklist
 
@@ -65,8 +65,8 @@ two/three-column grids, and a seven-column scrolling pipeline.
 - [x] Integrate presentation changes and tests.
 - [x] Capture after screenshots and complete manual QA.
 - [x] Run all requested Make targets and invariant checks.
-- [ ] Recheck overlap, reconcile the remote branch without force-pushing, update
-  PR #89, and complete remote gates.
+- [x] Recheck overlap, reconcile the remote branch without force-pushing, update
+  and merge PR #89, and complete remote gates.
 
 ## Discoveries and surprises
 
@@ -153,9 +153,7 @@ checks.
 
 ## Blockers
 
-No local blocker. Any newly opened research PR that changes the builder,
-stylesheet, script, route registry, shared shell, or site tests becomes an
-integration blocker until it merges or the overlap is explicitly reconciled.
+None.
 
 ## Recovery and restart instructions
 
@@ -166,4 +164,20 @@ research targets. Preserve `site/dist` only as a rebuildable local artifact.
 
 ## Outcome and retrospective
 
-Pending.
+PR #89 merged on 2026-07-21 as squash commit
+`427245541ccceb6535f26bd4400d7a7c5662db30`. The PR-head CI and paper/site
+workflows passed, followed by successful post-merge CI and GitHub Pages
+deployment runs. The final open-PR query contained only #89, so there was no
+unreconciled research overlap at merge time.
+
+The deployed homepage, Research catalogue, DD-014 study, Conditional Attention
+Lab, Papers catalogue, benchmark results, The Incentive to Ignore detail/PDF,
+and social image were checked directly. All tested HTML/assets returned 200;
+the six browser-reviewed HTML routes each had one H1, one five-link primary
+navigation, and no 390 px document overflow. The live Papers catalogue contains
+all five current-main papers, and the native mobile menu opens to five links.
+
+The refresh met its presentation goals without changes under `studies/`,
+`claims/`, `results/`, or paper source. Preserving upstream work required two
+mid-task integrations (DD-014 and The Incentive to Ignore), validating the plan's
+decision to keep evidence loading separate from presentation helpers.
