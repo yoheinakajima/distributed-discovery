@@ -4,7 +4,7 @@ _Reconciled 2026-07-21 at the DD-012 pre-run implementation gate._
 
 Distributed Discovery Programs V1 and V2 are complete at their registered
 bounded scopes. Program V3, *The Incentive to Ignore*, is active under issue
-#81 after the registration baseline completed through issue #79 and PR #80.
+#83 after DD-012 completed through issue #81 and PR #82.
 Its required queue is DD-012, DD-013, DD-014, a focused paper, benchmark
 and synthetic experiment extensions, public Labs/site integration, and final
 acceptance. DD-015 is optional only after that queue. Registration is not a
@@ -19,13 +19,13 @@ at `5025cc8e8f2f8ca015dff2066f08f81ad5715a51`, separate, clean, and read-only.
 | Ledger claims | 61 |
 | Passing immutable runs | 33 of 36 manifests |
 | Registered studies | 19 |
-| Python source files | 98 |
+| Python source files | 102 |
 | Public HTML routes | 52 |
 | Public data files | 44 |
 | Laboratory routes | 8 |
 | Validated project papers | 4 |
 | Checksum-registered downloads | 15 |
-| Test suite | 150 collected tests |
+| Test suite | 162 collected tests |
 
 The baseline added four registrations, bringing the study registry to 19 and
 the generated site to 52 routes. DD-012 has now added three audited claims and
@@ -40,6 +40,11 @@ the bounded grid instead contains 63 excessive-attention cells and 24
 all-attend equilibria. Run
 `20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b` supports DD-C-0059 through
 DD-C-0061.
+
+DD-013 is frozen before its first run: 175 cells, 1,050 binding audience rows,
+4,025 voluntary profiles, 2,625 feasible symmetric-garbling rows, eight
+information-firewall forms, two exact implementation institutions, and a
+separate 3,319,200-state verification path. Registration is not a result.
 
 Program V2 produced:
 

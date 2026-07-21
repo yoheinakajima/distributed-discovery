@@ -46,6 +46,9 @@ Progress:
   merge, CI, Pages, and live-route checks.
 - [ ] DD-013 binding/voluntary audience frontier, garbling comparison,
   implementable institution, independent verification, claims, and deployment.
+  Active on issue #83 and branch `research/dd013-audience-design`; the bounded
+  grid, proofs, institution registry, implementation, and separate verifier are
+  frozen locally with no run yet.
 - [ ] DD-014 conditional policy class, role-profile census, larger-class audit,
   independent verification, claims, and deployment.
 - [ ] Focused paper, benchmark extension, synthetic experiment extension,

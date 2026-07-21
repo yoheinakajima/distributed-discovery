@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-07-21 — DD-013 frozen implementation
+
+- Froze binding delivery, voluntary ex-ante action modes, public action-role
+  enforcement, bounded symmetric garbling, and eight explicit information-
+  firewall institutions without treating them as interchangeable.
+- Added exact audience, action-quality, distinct-action, voluntary-equilibrium,
+  garbling, and universal-pooling evaluators plus a separate labeled-state
+  verifier and four corruption families. No DD-013 run or result claim exists
+  yet.
+
 ## 2026-07-21 — DD-012 frozen implementation
 
 - Froze the ex-ante access-gated attention model, exact discovery and
