@@ -13,6 +13,7 @@ RUNS = {
     "disclosure": "20260720T225848Z_DD-002_94607423_e29b1460ae",
     "selection": "20260721T025802Z_DD-002_73a85c71_b0e5b6dc49",
     "sources": "20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1",
+    "heterogeneous_sources": "20260721T032358Z_DD-003_84238b76_2cbc13e66a",
     "canonical": "20260721T012208Z_DD-000_8e4b55e2_e8321d1048",
     "alignment": "20260721T022739Z_DD-001_358cb1eb_cd16846ba5",
 }
@@ -49,6 +50,7 @@ def test_three_results_numeric_assets_are_generated_inputs() -> None:
         "roles-figure.tex",
         "disclosure-figure.tex",
         "selection-robustness-table.tex",
+        "heterogeneous-sources-table.tex",
         "sources-figure.tex",
     ]
 
@@ -63,6 +65,7 @@ def test_three_results_generated_assets_have_complete_provenance() -> None:
         "roles-figure.tex",
         "disclosure-figure.tex",
         "selection-robustness-table.tex",
+        "heterogeneous-sources-table.tex",
         "sources-figure.tex",
     }
     assert all(len(checksum) == 64 for checksum in provenance["inputs"].values())

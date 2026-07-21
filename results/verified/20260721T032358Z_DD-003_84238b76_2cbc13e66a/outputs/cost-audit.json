@@ -1,0 +1,16 @@
+{
+  "bounded_before_execution": true,
+  "canonical_orbit_count": 839,
+  "checkpoint_strategy": "atomic immutable outputs; the audited finite census is below the resume threshold",
+  "declared_memory_budget_mb": 512,
+  "declared_time_budget_seconds": 120,
+  "elapsed_seconds": 78.23476933303755,
+  "independent_registry_entry_checks": 839,
+  "interruption_outcome": "no substantive claim; preserve a failed run if manifested",
+  "labeled_colored_object_count": 54578,
+  "maximum_primary_probability_state_count": 67959,
+  "maximum_target_signal_states_per_orbit": 81,
+  "output_bytes_before_manifest": 2974109,
+  "randomness": null,
+  "schema_version": 1
+}

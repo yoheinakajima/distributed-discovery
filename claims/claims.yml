@@ -861,3 +861,66 @@ claims:
     first_added: "2026-07-20"
     last_checked: "2026-07-20"
     notes: The two potential/basin harmful refinements are P06 to P12 and P07 to P14, each with exact change -1/36; they are not the original P00 to P03 witness.
+  - id: DD-C-0042
+    study_id: DD-003
+    short_name: exact-colored-source-census
+    statement: The registered DD-003 heterogeneous base class contains exactly 41612 valid labeled colored source objects and 671 color-preserving orbits; the single three-color expansion adds 12966 labeled objects and 168 orbits, for 839 canonical networks total.
+    scope: Three targets, four searchers, two or three nonisolated conditionally independent sources, the exact accuracy profiles in ADR-0011, plurality-set reports, independent-uniform private actions, and source/searcher relabeling that carries accuracy colors with source rows.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exact-colored-orbit-census-with-independent-adjacent-swap-traversal
+    source_reference: results/verified/20260721T032358Z_DD-003_84238b76_2cbc13e66a/outputs/colored-census-certificate.json
+    proof_path: claims/proofs/DD-C-0042.md
+    implementation_paths: [src/distributed_discovery/source_networks/heterogeneous.py, src/distributed_discovery/source_networks/heterogeneous_verification.py, src/distributed_discovery/source_networks/heterogeneous_study.py]
+    run_ids: [20260721T032358Z_DD-003_84238b76_2cbc13e66a]
+    test_paths: [tests/unit/test_heterogeneous_source_networks.py, tests/integration/test_heterogeneous_source_benchmarks.py]
+    exactness_basis: complete labeled colored-object enumeration, exact canonical minimization, independent adjacent-swap orbit traversal, direct color-preserving nonisomorphism checks, and homogeneous-regression reproduction
+    rounding_rule: exact integers and fractions
+    dependencies: [DD-C-0032]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: The base uses four diagnostic profiles with at most two accuracy levels; the only controlled expansion uses three exact colors on three sources.
+  - id: DD-C-0043
+    study_id: DD-003
+    short_name: full-pairwise-moments-insufficient-with-heterogeneity
+    statement: Two nonisomorphic colored networks with source accuracies 1/2 and 2/3 have identical complete first and pairwise scalar-report moments but exact private discovery 3/4 and 2/3, differing by 1/12.
+    scope: The frozen DD-003 four-searcher model and modest heterogeneous profile; this refutes pairwise-moment sufficiency in the registered colored class but not sufficiency of higher-order report laws or a theorem over arbitrary source models.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exact-colored-counterexample-with-independent-moment-and-discovery-enumeration
+    source_reference: results/verified/20260721T032358Z_DD-003_84238b76_2cbc13e66a/outputs/pairwise-moment-counterexample.json
+    proof_path: claims/proofs/DD-C-0043.md
+    implementation_paths: [src/distributed_discovery/source_networks/heterogeneous.py, src/distributed_discovery/source_networks/heterogeneous_verification.py]
+    run_ids: [20260721T032358Z_DD-003_84238b76_2cbc13e66a]
+    test_paths: [tests/unit/test_heterogeneous_source_networks.py, tests/integration/test_heterogeneous_source_benchmarks.py]
+    exactness_basis: explicit colored adjacencies, all target/source-signal states, exact plurality tie probabilities, full 66-entry moment signatures, exact union discovery, independent recomputation, and corruption rejection
+    rounding_rule: exact fractions
+    dependencies: [DD-C-0042]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: This does not contradict the homogeneous bounded null DD-C-0033; it shows that the null does not survive the registered accuracy heterogeneity.
+  - id: DD-C-0044
+    study_id: DD-003
+    short_name: heterogeneous-pairwise-moment-census
+    statement: Among all 839 registered colored networks, 163 complete first/pairwise-moment signatures match multiple networks, covering 485 networks, and 111 matched groups contain different exact private-discovery values.
+    scope: The exact base profiles and one controlled expansion in ADR-0011; the counts are a complete bounded classification, not a universal result for continuous accuracies, larger graphs, dependent sources, asymmetric priors, or higher-order moments.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: complete-exact-colored-moment-census-with-independent-registry-verifier
+    source_reference: results/verified/20260721T032358Z_DD-003_84238b76_2cbc13e66a/outputs/complete-moment-matched-groups.json
+    proof_path: claims/proofs/DD-C-0044.md
+    implementation_paths: [src/distributed_discovery/source_networks/heterogeneous.py, src/distributed_discovery/source_networks/heterogeneous_verification.py, src/distributed_discovery/source_networks/heterogeneous_study.py]
+    run_ids: [20260721T032358Z_DD-003_84238b76_2cbc13e66a]
+    test_paths: [tests/unit/test_heterogeneous_source_networks.py, tests/integration/test_heterogeneous_source_benchmarks.py]
+    exactness_basis: all 839 exact colored networks, complete 66-entry moment signatures, exact private discovery, independent orbit completeness and nonisomorphism checks, independent reconstruction of every stored signature/value, and corruption rejection
+    rounding_rule: exact integers and fractions
+    dependencies: [DD-C-0042, DD-C-0043]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Mean agreement, source HHI, mean source overlap, mean accuracy, and exposure-weighted accuracy also have discovery-differing matches in this class.

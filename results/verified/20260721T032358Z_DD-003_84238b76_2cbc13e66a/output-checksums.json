@@ -1,0 +1,10 @@
+{
+  "outputs/colored-census-certificate.json": "8f8f28251887cbae65ac368c9812552f6d2a0c4ae2795a29e2c6fa24f519e369",
+  "outputs/colored-network-registry.json": "6ff942d0705a5d26633cf0672d5874b114c90c84df96ae3774efdc3f5a13abd0",
+  "outputs/colored-network-summary.csv": "5ea88cd8d64fb0faa858f7373133ac5905abdff1868191798ae30035b112d199",
+  "outputs/complete-moment-matched-groups.json": "7f323180f7ddaf05a3d0d915fc7750b0dc8e52cd390789951ff2c050fdac23a3",
+  "outputs/cost-audit.json": "ffd8f122bcfe2f45d3ccfb119764fc85ae59319fbdc367942a9351918d62b077",
+  "outputs/independent-verification.json": "28450d1107b0903acf7e0bf434d9d934e127a017d1ef8c803678f58ce95aafd4",
+  "outputs/pairwise-moment-counterexample.json": "8bd4c3bc7f8187a1e925c76b66e4c04c3aec73270ab267c19cdc0eb426785fe7",
+  "outputs/scalar-diagnostic-summary.json": "d0d9ab8a5816de0a5cdbfdeb706f74d3ec04585ae7b0a501e8933985a88d7d1c"
+}

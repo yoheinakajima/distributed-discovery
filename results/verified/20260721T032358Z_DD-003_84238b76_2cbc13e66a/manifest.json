@@ -1,0 +1,38 @@
+{
+  "command": "make dd003-heterogeneous-sources",
+  "config_hash_sha256": "2cbc13e66a47bf6cd48b7db55708d3db3b623b258c5daf34b359bd69452d57a5",
+  "dependency_lock_hash_sha256": "44817b839ec69b327bd25a79ba5a14569628e5345ed6e496fd2badfe5c7f5bb5",
+  "ended_utc": "2026-07-21T03:25:16.828551Z",
+  "exit_status": 0,
+  "git_commit": "84238b76af26e14637b57767b8bff0343d7ea14d",
+  "git_dirty": false,
+  "input_hashes": {
+    "docs/decisions/ADR-0011-dd003-colored-source-census.md": "06c77cee872e4182f58fc7020aee0345031d10977ce30be99d6d952a780aadcf",
+    "results/verified/20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1/outputs/graph-registry.json": "afe3b0d98e618831f3eef71d5ef091b4937080c264f756f6296b36bc4aab9913",
+    "src/distributed_discovery/source_networks/heterogeneous.py": "0e4d1e62c18b28ebceb35bb7e4e6e52815a6537630af2b9941dd058821036a8e",
+    "src/distributed_discovery/source_networks/heterogeneous_study.py": "19af42fd51178d6cb00c45391730182fd0a8544c54ebe876fa230a64a29d1a9c",
+    "src/distributed_discovery/source_networks/heterogeneous_verification.py": "70932e95fe049f354eac6e72eebdf29b106f23819d1e0fdd14ea5c2cdcdaf13b",
+    "src/distributed_discovery/source_networks/model.py": "9499c09a94eca3e82ddcdb11563a89da3f27fadcf465ed62a11c3b26fc5dcb8e",
+    "studies/DD-003-source-networks/configs/heterogeneous-source-accuracy.yml": "49e3d8c09186e4b4ab43dfe6eeca7371881fcbdfb9b23c3b0fdb76b0e185e05c"
+  },
+  "outputs": {
+    "outputs/colored-census-certificate.json": "8f8f28251887cbae65ac368c9812552f6d2a0c4ae2795a29e2c6fa24f519e369",
+    "outputs/colored-network-registry.json": "6ff942d0705a5d26633cf0672d5874b114c90c84df96ae3774efdc3f5a13abd0",
+    "outputs/colored-network-summary.csv": "5ea88cd8d64fb0faa858f7373133ac5905abdff1868191798ae30035b112d199",
+    "outputs/complete-moment-matched-groups.json": "7f323180f7ddaf05a3d0d915fc7750b0dc8e52cd390789951ff2c050fdac23a3",
+    "outputs/cost-audit.json": "ffd8f122bcfe2f45d3ccfb119764fc85ae59319fbdc367942a9351918d62b077",
+    "outputs/independent-verification.json": "28450d1107b0903acf7e0bf434d9d934e127a017d1ef8c803678f58ce95aafd4",
+    "outputs/pairwise-moment-counterexample.json": "8bd4c3bc7f8187a1e925c76b66e4c04c3aec73270ab267c19cdc0eb426785fe7",
+    "outputs/scalar-diagnostic-summary.json": "d0d9ab8a5816de0a5cdbfdeb706f74d3ec04585ae7b0a501e8933985a88d7d1c"
+  },
+  "random_seeds": {
+    "algorithm": null,
+    "model": null
+  },
+  "run_id": "20260721T032358Z_DD-003_84238b76_2cbc13e66a",
+  "schema_version": 1,
+  "started_utc": "2026-07-21T03:23:58.545096Z",
+  "study_id": "DD-003",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

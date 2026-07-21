@@ -6,16 +6,16 @@
 
 Milestones M0 through M9 and operational Milestone A are complete. Cleanup issue #6 closed through squash-merged PR #12 at `1add8de5a349c57085928da8aa54da85e49c5077`; CI passed, Pages workflow `29781940577` succeeded, and all five required routes returned HTTP 200. The source repository is public under MIT at `https://yoheinakajima.github.io/distributed-discovery/`. Canonical upstream remains untouched.
 
-The authorized A–E queue and continuation cycles F–H are complete and merged. Alignment PR #23 merged as `df35f80273f106ef86f623c4676fe2a58757b6ad`; post-merge CI `29796429926` and Pages `29796429904` passed, and all seven public routes expose the exact canonical optimum `325089/390625` with the correct run provenance. Cycle I evidence is complete on DD-002 issue #24 and draft PR #25; final audit, review, merge, and deployment are active.
+The authorized A–E queue and continuation cycles F–I are complete and merged. Selection PR #25 merged as `993b0899421d446f61348a513d2630e0f424e336`; post-merge CI `29797810807` and Pages `29797810786` passed. Cycle J evidence is complete on DD-003 issue #26 and draft PR #27; final audit, review, merge, and deployment are active.
 
 ## Continuation checkpoint
 
-- Current merged baseline: `df35f80273f106ef86f623c4676fe2a58757b6ad`.
+- Current merged baseline: `993b0899421d446f61348a513d2630e0f424e336`.
 - Exact pooled top-eight endpoint: `860391662035297/1001129150390625`.
 - Exact canonical private-team optimum: `325089/390625 = 0.83222784`; the prior pooled interval is valid but superseded.
-- Three Results paper: `papers/three-results/Three_Results_in_Distributed_Discovery.pdf`, 13 pages, visually audited after Cycle I integration.
+- Three Results paper: `papers/three-results/Three_Results_in_Distributed_Discovery.pdf`, 14 pages, visually audited after Cycle J integration.
 - Public Results route: `https://yoheinakajima.github.io/distributed-discovery/results.html`.
-- Active task: finish PR #25 integration of the exact six-rule DD-002 equilibrium-selection catalogue.
+- Active task: finish PR #27 integration of the exact DD-003 colored-source counterexample.
 
 ## 2. Repository map
 
@@ -47,8 +47,8 @@ The authorized A–E queue and continuation cycles F–H are complete and merged
 - A: public MIT/Pages cleanup, passing squash merge, and live five-route deployment smoke test.
 - DD-001A: lossless signature theorem, exact feasibility/reconstruction, independent tiny-grid reproduction, and canonical state-space certificate; merged.
 - DD-001B: exact restricted-family threshold theorem, bounded continuous unrestricted classification, and anti-informative counterexamples; merged through PR #14.
-- DD-002: complete bounded deterministic-policy enumeration and exact six-rule selection catalogue; the base fixture merged through PR #15 and selection robustness is active in PR #25.
-- DD-003: complete 51-graph census, independently reproduced orbit counts and exact outcomes, pairwise-moment bounded null, and scalar counterexamples; merged through PR #16 and deployed.
+- DD-002: complete bounded deterministic-policy enumeration and exact six-rule selection catalogue; merged through PRs #15 and #25.
+- DD-003: complete homogeneous 51-graph census plus a 839-network heterogeneous colored census with an independently reproduced full-pairwise-moment counterexample; base merged through PR #16 and Cycle J is active in PR #27.
 - F: exact canonical pooled-frontier certificate and exact DD-001 interval; merged through PR #19 and deployed.
 - G: separate 12-page Three Results synthesis, generated figures/evidence table, and public Results route; merged through PR #21 and deployed.
 
@@ -98,7 +98,7 @@ The run is the current source for the site and foundations note. Claim records r
 
 ## 6. Verified claims
 
-The claim ledger has 41 records. DD-C-0037 proves the alignment count-budget relaxation is an admissible upper bound; DD-C-0038 independently reproduces the exact canonical deterministic and ex-ante randomized optimum. DD-C-0039 proves the DD-002 exact-potential identity, while DD-C-0040 and DD-C-0041 independently reproduce the known-witness robustness and full six-rule census. DD-C-0036 remains a valid superseded interval.
+The claim ledger has 44 records. DD-C-0037/DD-C-0038 close the canonical private-team optimum; DD-C-0039--DD-C-0041 cover the exact DD-002 selection catalogue; DD-C-0042--DD-C-0044 independently reproduce the colored-source census, exact `3/4` versus `2/3` full-pairwise-moment counterexample, and complete matched-group classification. DD-C-0036 remains a valid superseded interval.
 
 ## 7. Independently reproduced claims
 
@@ -113,6 +113,9 @@ The claim ledger has 41 records. DD-C-0037 proves the alignment count-budget rel
 - DD-C-0038: exact canonical private-team optimum `325089/390625`, where a feasible direct policy meets an independently checked Bellman upper certificate.
 - DD-C-0040: the known DD-002 reversal survives only anonymous-symmetric selection among six audited evaluations.
 - DD-C-0041: exact harmful-refinement counts `1,0,8,2,2,0` across the complete 45-refinement lattice.
+- DD-C-0042: exact 671-orbit base colored census and 168-orbit controlled expansion.
+- DD-C-0043: identical complete first/pairwise moments with exact discovery `3/4` versus `2/3`.
+- DD-C-0044: 163 matched complete-moment groups across 839 networks, with 111 discovery-differing groups.
 
 ## 8. Exploratory findings
 
@@ -126,11 +129,12 @@ DD-C-0022 is `checked`, not verified: direct clue-following is an exact coordina
 - The two early M1 runs are preserved operational failures and excluded from research evidence.
 - DD-003 finds no full pairwise-moment discovery counterexample in the exact 51-graph class; this bounded null is not a general sufficiency theorem.
 - DD-C-0034 refutes sufficiency of average pairwise agreement; the same census also refutes source HHI sufficiency.
+- DD-C-0043 refutes complete first/pairwise scalar-report-moment sufficiency in the registered heterogeneous colored class while preserving the homogeneous bounded null.
 - The first alignment relaxation is strictly loose at `M=3,N=2,p=0`: upper bound `1` versus exact optimum `11/12`; its canonical equality is not extrapolated.
 
 ## 10. Open research questions
 
-The A–E and F–H queues are complete and merged. Cycle I has solved the registered DD-002 selection catalogue and awaits PR #25 integration. DD-003 heterogeneous-source accuracy follows; DD-004 through DD-007 remain unexecuted, and issue #8 intentionally queues the DD-007 schema only.
+The A–E and F–I queues are complete and merged. Cycle J has solved the registered DD-003 heterogeneous-source question and awaits PR #27 integration. Dependency maintenance follows; DD-004 through DD-007 remain unexecuted, and issue #8 intentionally queues the DD-007 schema only.
 
 ## 11. Known technical debt
 
@@ -140,7 +144,7 @@ The A–E and F–H queues are complete and merged. Cycle I has solved the regis
 - GitHub metadata application is tested offline; prepared issues are live as #7–#11 and issue/PR access works through the connected app, while CLI-only taxonomy/settings await OAuth authorization.
 - Three historical DD-001 environment snapshots required an M9 privacy correction: their redundant local-project `file://` line was removed and future capture filters it. Research outputs and hashes were unchanged.
 - Randomized DD-002 disclosure and general asymmetric mixed-equilibrium enumeration remain unimplemented by design; expanding scope requires an ADR and certificate plan.
-- DD-003 is fixed to homogeneous source accuracy and four searchers; heterogeneous laws and larger exact graph classes remain unimplemented.
+- DD-003 remains fixed to finite rational accuracy palettes, conditional source independence, and four searchers; continuous accuracies, dependent laws, and larger exact graph classes remain unimplemented.
 - DD-004 through DD-007 implementations and study-specific schemas do not exist yet.
 
 ## 12. Blockers
@@ -149,13 +153,13 @@ There is no validation blocker. Public `origin`, Actions, and Pages are active. 
 
 ## 13. Exact resume point
 
-On `research/dd002-selection-robustness`, run final full acceptance, push the evidence and public integration commits, update draft PR #25 with exact results, complete review, and merge only after both required workflows pass.
+On `research/dd003-heterogeneous-sources`, run final full acceptance, push the evidence and public integration commits, update draft PR #27 with exact results, complete review, and merge only after both required workflows pass.
 
 ## 14. Recommended next three tasks
 
-1. DD-002: finish review, merge, deployment, and live verification for PR #25.
-2. DD-003: execute the bounded heterogeneous-source-accuracy census.
-3. Maintenance: reconcile dependency updates after the research cycles.
+1. DD-003: finish review, merge, deployment, and live verification for PR #27.
+2. Maintenance: reconcile dependency updates in separate Actions, low-risk Python, and mypy-2 branches.
+3. Settings: make the single authorized metadata/ruleset capability attempt.
 
 ## 15. Commit list
 

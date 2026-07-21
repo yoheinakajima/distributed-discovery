@@ -25,6 +25,7 @@ RUNS = {
     "disclosure": "20260720T225848Z_DD-002_94607423_e29b1460ae",
     "selection": "20260721T025802Z_DD-002_73a85c71_b0e5b6dc49",
     "sources": "20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1",
+    "heterogeneous_sources": "20260721T032358Z_DD-003_84238b76_2cbc13e66a",
     "canonical": "20260721T012208Z_DD-000_8e4b55e2_e8321d1048",
     "alignment": "20260721T022739Z_DD-001_358cb1eb_cd16846ba5",
 }
@@ -312,6 +313,47 @@ def _sources_figure(
     return "\n".join(lines)
 
 
+def _heterogeneous_sources_table(
+    witness: dict[str, Any], certificate: dict[str, Any], hashes: list[str]
+) -> str:
+    agreement = ",".join(witness["pairwise_agreement_signature"])
+    return "\n".join(
+        [
+            "% Generated evidence asset; do not edit by hand.",
+            f"% Source run: {RUNS['heterogeneous_sources']}",
+            "% Claim IDs: DD-C-0042, DD-C-0043, DD-C-0044",
+            f"% Generator: {GENERATOR}",
+            f"% Input SHA-256: {', '.join(hashes)}",
+            r"\begin{table}[H]",
+            r"\centering\small",
+            r"\caption{A heterogeneous-source counterexample with identical complete first "
+            r"and pairwise scalar-report moments.}",
+            r"\label{tab:heterogeneous-sources}",
+            r"\begin{tabularx}{\textwidth}{Yccc}",
+            r"\toprule",
+            r"Network & Degree of $1/2$ source & Degree of $2/3$ source & Discovery\\",
+            r"\midrule",
+            rf"A & 1 & 4 & ${witness['left_private_discovery']}$\\",
+            rf"B & 4 & 1 & ${witness['right_private_discovery']}$\\",
+            r"\bottomrule",
+            r"\end{tabularx}",
+            rf"\vspace{{2pt}}\par\footnotesize Both have pair-agreement signature "
+            rf"$({agreement})$ and the same full 66-entry moment signature. Across "
+            rf"{certificate['total_orbit_count']} colored networks, "
+            rf"{certificate['matched_complete_moment_group_count']} signatures match multiple "
+            rf"networks and {certificate['matched_groups_with_different_private_discovery']} "
+            r"matched groups differ in discovery.",
+            _artifact_note(
+                [RUNS["heterogeneous_sources"]],
+                ["DD-C-0042", "DD-C-0043", "DD-C-0044"],
+                hashes,
+            ),
+            r"\end{table}",
+            "",
+        ]
+    )
+
+
 def _evidence_table(claims: dict[str, dict[str, Any]], source_hash: str) -> str:
     rows = [
         ("Policy-signature theorem", "DD-C-0023", "theorem", "derived"),
@@ -324,9 +366,9 @@ def _evidence_table(claims: dict[str, dict[str, Any]], source_hash: str) -> str:
             "independently reproduced",
         ),
         (
-            "Complete pairwise-moment search",
-            "DD-C-0033",
-            "bounded null",
+            "Heterogeneous pairwise counterexample",
+            "DD-C-0043",
+            "bounded exact",
             "independently reproduced",
         ),
         (
@@ -343,7 +385,7 @@ def _evidence_table(claims: dict[str, dict[str, Any]], source_hash: str) -> str:
     rendered = [
         "% Generated evidence asset; do not edit by hand.",
         "% Source: claims/claims.yml",
-        "% Claim IDs: DD-C-0021, DD-C-0023, DD-C-0030, DD-C-0040, DD-C-0033, DD-C-0038",
+        "% Claim IDs: DD-C-0021, DD-C-0023, DD-C-0030, DD-C-0040, DD-C-0043, DD-C-0038",
         f"% Generator: {GENERATOR}",
         f"% Input SHA-256: {source_hash}",
         r"\begin{table}[H]",
@@ -372,8 +414,8 @@ def _evidence_table(claims: dict[str, dict[str, Any]], source_hash: str) -> str:
             r"six audited rules.\\"
         ),
         (
-            r"Complete pairwise-moment search & DD-C-0033\newline bounded null & independently "
-            r"reproduced & No counterexample in 51 graphs; no sufficiency theorem.\\"
+            r"Heterogeneous pairwise counterexample & DD-C-0043\newline bounded exact & "
+            r"independently reproduced & Exact colored class; not an arbitrary-source theorem.\\"
         ),
         (
             r"Canonical private-team optimum & DD-C-0038\newline exact optimum & independently "
@@ -383,7 +425,7 @@ def _evidence_table(claims: dict[str, dict[str, Any]], source_hash: str) -> str:
         r"\end{tabularx}",
         (
             r"\ArtifactNote{Source: \path{claims/claims.yml}; claims: DD-C-0021, "
-            r"DD-C-0023, DD-C-0030, DD-C-0040, DD-C-0033, DD-C-0038; generator: \path{"
+            r"DD-C-0023, DD-C-0030, DD-C-0040, DD-C-0043, DD-C-0038; generator: \path{"
             f"{GENERATOR}"
             r"}; input SHA-256 prefix: \texttt{"
             f"{source_hash[:12]}"
@@ -515,6 +557,14 @@ def build(root: Path) -> dict[str, Any]:
     source = _json(source_path)
     null_path = _checked_output(root, "sources", "outputs/pairwise-null-certificate.json")
     bounded_null = _json(null_path)
+    heterogeneous_witness_path = _checked_output(
+        root, "heterogeneous_sources", "outputs/pairwise-moment-counterexample.json"
+    )
+    heterogeneous_witness = _json(heterogeneous_witness_path)
+    heterogeneous_certificate_path = _checked_output(
+        root, "heterogeneous_sources", "outputs/colored-census-certificate.json"
+    )
+    heterogeneous_certificate = _json(heterogeneous_certificate_path)
     supporting_paths = [
         _checked_output(root, "signatures", "outputs/canonical-state-space.json"),
         _checked_output(root, "thresholds", "outputs/threshold-certificate.json"),
@@ -541,6 +591,11 @@ def build(root: Path) -> dict[str, Any]:
         "sources-figure.tex": _sources_figure(
             source, bounded_null, [_sha256(source_path), _sha256(null_path)]
         ),
+        "heterogeneous-sources-table.tex": _heterogeneous_sources_table(
+            heterogeneous_witness,
+            heterogeneous_certificate,
+            [_sha256(heterogeneous_witness_path), _sha256(heterogeneous_certificate_path)],
+        ),
         "evidence-status-table.tex": _evidence_table(claims, _sha256(claims_path)),
     }
     for name, content in assets.items():
@@ -557,6 +612,8 @@ def build(root: Path) -> dict[str, Any]:
         selection_certificate_path,
         source_path,
         null_path,
+        heterogeneous_witness_path,
+        heterogeneous_certificate_path,
         *supporting_paths,
         claims_path,
         root / "bibliography/references.bib",

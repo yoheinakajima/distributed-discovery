@@ -9,6 +9,7 @@
 - Complete the bounded DD-002 deterministic-disclosure fixture: enumerate all partitions and equilibrium correspondences, verify a selection-dependent harmful-information witness, and report the full refinement census.
 - Complete the DD-002 selection-robustness catalogue: prove the posterior games are exact potential games, evaluate six rules on all 45 refinements, and show the known reversal survives only anonymous-symmetric selection among the audited alternatives.
 - Complete the bounded DD-003 source-network fixture: enumerate 51 nonisomorphic graphs, independently reproduce a full pairwise-moment bounded null, and record exact scalar-diagnostic counterexamples.
+- Complete the DD-003 heterogeneous-source census: enumerate 839 color-preserving networks, independently verify all complete moment signatures, and give an exact `3/4` versus `2/3` counterexample to pairwise-moment sufficiency.
 - Certify an alignment-preserving DD-001 count-budget upper relaxation; its canonical value meets direct clue-following at `325089/390625`, proving the deterministic and ex-ante randomized zero-communication optima.
 
 - Bootstrap the Distributed Discovery research program (DD-000).

@@ -1,0 +1,29 @@
+{
+  "all_networks_model_valid": true,
+  "all_spec_registries_pairwise_nonisomorphic": true,
+  "corruption_test": {
+    "mutation": "replace the counterexample discovery difference by zero",
+    "rejected": true
+  },
+  "counterexample_recomputed": true,
+  "independent_orbit_counts": {
+    "base:equal-baseline:K2": 8,
+    "base:equal-baseline:K3": 42,
+    "base:modest:K2": 13,
+    "base:modest:K3": 194,
+    "base:near-uninformative:K2": 13,
+    "base:near-uninformative:K3": 194,
+    "base:strong:K2": 13,
+    "base:strong:K3": 194,
+    "expansion:three-level:K3": 168
+  },
+  "matched_complete_moment_group_count": 163,
+  "matched_groups_with_different_private_discovery": 111,
+  "method": "independent labeled colored-object traversal, direct color-preserving isomorphism, target/signal/action enumeration, and full moment reconstruction; no primary heterogeneous-model import",
+  "passed": true,
+  "registry_accuracy_profiles_match_specs": true,
+  "registry_counts_match_independent_orbits": true,
+  "schema_version": 1,
+  "stored_entry_checks": 839,
+  "stored_private_discovery_and_complete_moments_recomputed": true
+}

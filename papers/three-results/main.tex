@@ -61,9 +61,10 @@ anonymous-symmetric selection from $5/9$ to $171/308$, even though every pure
 equilibrium and the planner improve. An exact six-rule catalogue shows that this
 known reversal survives only anonymous-symmetric selection among the audited
 alternatives. Third, among 51 nonisomorphic latent-source
-graphs, complete pairwise report moments yield a bounded null, while the average
-pair-agreement scalar is insufficient: two networks both have agreement $3/4$
-but discovery $8/9$ and $31/36$. We connect these results through a common
+graphs with homogeneous accuracy, complete pairwise report moments yield a bounded
+null. In a registered 839-network colored extension, however, two networks have
+identical complete first/pairwise moments but discovery $3/4$ and $2/3$; average
+agreement is also insufficient. We connect these results through a common
 information--action framework and preserve their distinct evidence boundaries.
 For the canonical private-team fixture, an alignment-preserving exact relaxation
 also meets the direct-policy lower bound, proving direct clue-following globally
@@ -117,11 +118,11 @@ not reproduce that witness.
 
 The third result concerns \emph{representation}. Correlated reports may come from
 latent source networks. One scalar summary of agreement can hide discovery-
-relevant structure, yet even a complete pairwise moment matrix can fail to
-distinguish nonisomorphic networks without changing discovery in a bounded class.
-The positive counterexample and negative search result are both informative: one
-refutes a scalar diagnostic, while the other records where a stronger diagnostic
-did not fail.
+relevant structure. A homogeneous bounded class records where the complete
+pairwise matrix did not fail; exact accuracy colors then produce nonisomorphic
+networks with the same full pairwise object and different discovery. The positive
+counterexamples and preserved negative search identify the perturbation that
+breaks the earlier null.
 
 These mechanisms should not be collapsed into a slogan that ``diversity is good''
 or ``more information is bad.'' Roles change the feasible private policy class;
@@ -440,7 +441,7 @@ are outside the result. The catalogue resolves the planned robustness milestone;
 expanding to randomized disclosure requires a separate solution concept and ADR.
 
 \section{Correlated source networks}
-% Claims: DD-C-0032, DD-C-0033, DD-C-0034
+% Claims: DD-C-0032, DD-C-0033, DD-C-0034, DD-C-0042, DD-C-0043, DD-C-0044
 \subsection{From a copying scalar to provenance graphs}
 
 Four searchers observe reports derived from one to three latent sources. A
@@ -477,6 +478,31 @@ target law. Conversely, the null matters operationally because it prevents a
 failed search from being selectively forgotten and establishes a reproducible
 baseline for the next perturbation.
 
+\subsection{Heterogeneous accuracy breaks the null}
+
+The registered perturbation carries each source accuracy as a color attached to
+its adjacency row. Searchers may still be relabeled, while source relabeling moves
+the exact color with the source. Four base profiles---equal $2/3$, modest
+$\{1/2,2/3\}$, near-uninformative $\{1/3,2/3\}$, and strong
+$\{1/3,5/6\}$---produce 41,612 valid labeled colored objects and 671 orbits. One
+controlled three-color expansion adds 12,966 labeled objects and 168 orbits
+(DD-C-0042). The equal profile reproduces all prior two/three-source values.
+
+The complete-moment null fails already in the modest two-source profile. One
+network attaches the $1/2$ source to one searcher and the $2/3$ source to all four;
+the other reverses those degrees. They are not color-preserving isomorphic. Every
+first action moment and all six $3\times3$ pairwise action-moment matrices match,
+but private union discovery is $3/4$ versus $2/3$ (DD-C-0043).
+
+\input{generated/heterogeneous-sources-table.tex}
+
+Across the full 839-network registry, 163 complete-moment signatures match 485
+networks and 111 matched groups contain different discovery values (DD-C-0044).
+A separate implementation traverses the labeled colored orbits, directly checks
+nonisomorphism, and reconstructs every 66-entry signature and discovery value.
+Thus heterogeneity supplies an exact bounded counterexample, not a universal
+impossibility theorem for all pairwise diagnostics.
+
 \subsection{A scalar counterexample}
 
 Average pair agreement is much weaker. Graphs \texttt{K2N4:00011110} and
@@ -500,7 +526,7 @@ structure can matter beyond nominal report count, but which representation is
 sufficient remains a model-specific question.
 
 \section{Unified implications}
-% Claims: DD-C-0002, DD-C-0016, DD-C-0021, DD-C-0030, DD-C-0040, DD-C-0041, DD-C-0033, DD-C-0034
+% Claims: DD-C-0002, DD-C-0016, DD-C-0021, DD-C-0030, DD-C-0040, DD-C-0041, DD-C-0033, DD-C-0034, DD-C-0043, DD-C-0044
 The three results share an outcome---union discovery---but operate through
 different causal and mathematical margins. It is useful to state the mapping
 exactly:
@@ -513,7 +539,7 @@ Study & Primitive changed & Mathematical object & Main boundary\\
 \midrule
 DD-001 roles & ex-ante policy assignment & common-payoff team frontier & canonical optimum exact; other parameters open\\
 DD-002 disclosure & public signal partition & posterior game plus selection & known reversal survives one of six audited rules\\
-DD-003 sources & joint evidence provenance & colored/bipartite source law & pairwise result is a bounded null\\
+DD-003 sources & joint evidence provenance & colored/bipartite source law & heterogeneity breaks the homogeneous pairwise null\\
 \bottomrule
 \end{tabularx}
 \end{center}
@@ -532,12 +558,12 @@ best-response-basin summaries. A statement that ``information reduced discovery'
 is incomplete without the selection procedure. Frontier monotonicity and realized
 equilibrium performance can move in different directions.
 
-Third, evidence diversity needs a representation. The DD-003 counterexample shows
-that a scalar correlation summary can match while discovery differs; the bounded
-null shows that a richer pairwise object can match while discovery does not differ
-in the current class. A useful diagnostic must be validated against the downstream
-action rule, not chosen solely because it resembles a generic effective sample
-size.
+Third, evidence diversity needs a representation. The homogeneous DD-003 census
+preserves a bounded null for the full pairwise object, while exact source-accuracy
+colors break it: pairwise observational equivalence can coexist with different
+union discovery. A useful diagnostic must be validated against the downstream
+action rule and perturbations of the generative law, not chosen solely because it
+resembles a generic effective sample size.
 
 These points support a layered design workflow. Declare the world and evidence
 kernel; declare what each agent observes; declare the feasible role or assignment
@@ -578,11 +604,12 @@ strict-best-response basin. Because the known witness reverses under only one of
 the six evaluations, the phrase ``harmful disclosure'' must always carry the
 selection qualifier.
 
-Fourth, the source-network model fixes homogeneous accuracy, source independence
-conditional on the target, four searchers, one to three sources, and a particular
-plurality/tie rule. The complete pairwise bounded null may disappear under the
-first heterogeneity perturbation. The average-agreement and source-HHI
-counterexamples do not refute all task-specific channel diagnostics.
+Fourth, the source-network model fixes source independence conditional on the
+target, four searchers, two or three sources for the colored census, a finite
+accuracy palette, and a particular plurality/tie rule. The complete pairwise
+counterexample is exact only there. It does not cover continuous accuracies,
+dependent sources, asymmetric target priors, larger graphs, or higher-order report
+laws.
 
 Fifth, exact enumeration is not equivalent to conceptual independence. The
 repository requires distinct representations and direct state checks where
@@ -610,12 +637,11 @@ best-response absorption witnesses. A future randomized-disclosure study should
 begin only after a separate ADR defines the experiment class, sender objective,
 and solution object; it is not implied by the deterministic catalogue.
 
-For DD-003, source accuracy should vary before the graph class grows. Two rational
-source types create colored graphs whose isomorphisms preserve accuracy. Exact
-colored enumeration can then retest complete pairwise moments, average agreement,
-source concentration, and discovery. A bounded null should remain a null if no
-counterexample appears; one controlled expansion is preferable to an unbounded
-search.
+For DD-003, the registered accuracy perturbation is complete. The two-level base
+and single three-color expansion establish exact full-pairwise counterexamples.
+Any next step should pose a new bounded identification question---for example one
+asymmetric prior or dependent-source law---and audit its state size before
+expanding; no unbounded graph search follows automatically.
 
 Longer-term work introduces feedback, overlapping coverage, mechanism design, and
 empirical audits. Sequential search requires a stopping and information-update
@@ -630,19 +656,20 @@ preserve failed and null results, use immutable run identifiers, and promote
 claims only after every proof, code, run, and test path has been audited.
 
 \section{Conclusion}
-% Claims: DD-C-0021, DD-C-0030, DD-C-0040, DD-C-0041, DD-C-0033, DD-C-0034, DD-C-0037, DD-C-0038
+% Claims: DD-C-0021, DD-C-0030, DD-C-0040, DD-C-0041, DD-C-0033, DD-C-0034, DD-C-0043, DD-C-0044, DD-C-0037, DD-C-0038
 Three finite results expose three distinct ways a collective search can depart
 from a symmetric direct protocol. Roles can reserve coverage without
 communication; public disclosure can change a selected strategic outcome even as
 the planner and pure equilibria improve, while alternative selection rules can
-reject the same reversal; source networks can share a scalar
-agreement level while producing different discovery.
+reject the same reversal; source networks can share complete first and pairwise
+moments while producing different discovery once accuracy is represented as a
+color.
 
 The synthesis is deliberately qualified. The role counterexample is exact but
 finite. The disclosure reversal is exact, selection-dependent, and not robust to
-the other five audited evaluations. The complete
-pairwise source result is a bounded null, while only the scalar counterexample is
-refutational. The canonical private-team optimum is now exact, but only for the
+the other five audited evaluations. The homogeneous pairwise source result remains
+a bounded null, while the heterogeneous colored class supplies an exact bounded
+counterexample. The canonical private-team optimum is exact, but only for the
 frozen zero-communication dimensions and symmetric signal law.
 
 The shared lesson is architectural rather than universal: collective discovery

@@ -1,3 +1,4 @@
 # DD-003 configurations
 
-`bounded-source-graphs.yml` freezes the exact three-target, four-searcher graph class, one-to-three nonisolated sources, rational source accuracy, report summary, protocol definitions, graph equivalence, pairwise-moment signature, and runtime cap used by the primary immutable run.
+- `bounded-source-graphs.yml`: homogeneous `2/3` source-graph census with the frozen protocol definitions and runtime cap.
+- `heterogeneous-source-accuracy.yml`: color-preserving two-level census plus one registered three-color expansion.

@@ -6,7 +6,11 @@
     },
     "evidence-status-table.tex": {
       "generator": "distributed_discovery.papers.build_three_results",
-      "sha256": "64701f4c8cc8c3bd7c62e97f689154510b77a3eb74b08dbfc70794c38ed9baee"
+      "sha256": "8fbb1937a68771060ef41628352ee740c9527033a0dd1ead03ea1aec45731991"
+    },
+    "heterogeneous-sources-table.tex": {
+      "generator": "distributed_discovery.papers.build_three_results",
+      "sha256": "b78cf323f937ca83d1f280170de08f7d0350f6d2757b0a4fa1f2d6ed9a1b467b"
     },
     "roles-figure.tex": {
       "generator": "distributed_discovery.papers.build_three_results",
@@ -24,7 +28,7 @@
   "generator": "distributed_discovery.papers.build_three_results",
   "inputs": {
     "bibliography/references.bib": "7b2b89ae14a2234798803bde57bca55c2d907f1a7cdcc2efe69c6144739d27f0",
-    "claims/claims.yml": "fcc7a5d7927fdea556d5eaf51d7f20b7f37b94006d5fc710479e8f28f0e0dc1f",
+    "claims/claims.yml": "2849247c5df4ac68f6eefdf4eafbcbe85ec826fbcfbcef7e22824833a1aafd94",
     "results/verified/20260720T200447Z_DD-001_6eb12861_ba766d1eba/outputs/tiny-phase-grid.csv": "e7112e7dd471a4fa302bbe5336a367dd166ff497bf8ab9095b6526635fe4851e",
     "results/verified/20260720T221139Z_DD-001_b1d8d431_40bf5b06a5/outputs/canonical-state-space.json": "7a416f54e6f8c81a1f7ca29bd99c44ab648994e282f29ff5615e6ba9eddb9e8f",
     "results/verified/20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1/outputs/anti-informative-counterexamples.json": "da2d2a8b6854683c85062a1918b3222959e17230e767b2553304a736684870f6",
@@ -38,7 +42,9 @@
     "results/verified/20260721T012208Z_DD-000_8e4b55e2_e8321d1048/outputs/canonical-exact-frontier-certificate.json": "c88d31ec7efda0e9e38346e417a0d00db33cc1ec75221f7ec574cf264409fc1e",
     "results/verified/20260721T022739Z_DD-001_358cb1eb_cd16846ba5/outputs/canonical-alignment-bound-certificate.json": "7645c47bde68fa93878c3ebce76e288925bb6f044ea35fc6797e68def0b5e2b0",
     "results/verified/20260721T025802Z_DD-002_73a85c71_b0e5b6dc49/outputs/known-witness-robustness.json": "657474921dcf4ed34e43fec30af441149436e8ffef36e4731376d061a42fe05f",
-    "results/verified/20260721T025802Z_DD-002_73a85c71_b0e5b6dc49/outputs/selection-certificate.json": "2325dc263c5337a64e5300c431bb9ca0d186b06c928553b7c8bcce0d1ddc504c"
+    "results/verified/20260721T025802Z_DD-002_73a85c71_b0e5b6dc49/outputs/selection-certificate.json": "2325dc263c5337a64e5300c431bb9ca0d186b06c928553b7c8bcce0d1ddc504c",
+    "results/verified/20260721T032358Z_DD-003_84238b76_2cbc13e66a/outputs/colored-census-certificate.json": "8f8f28251887cbae65ac368c9812552f6d2a0c4ae2795a29e2c6fa24f519e369",
+    "results/verified/20260721T032358Z_DD-003_84238b76_2cbc13e66a/outputs/pairwise-moment-counterexample.json": "8bd4c3bc7f8187a1e925c76b66e4c04c3aec73270ab267c19cdc0eb426785fe7"
   },
   "schema_version": 1,
   "source_date_epoch": "1784596928",
@@ -46,6 +52,7 @@
     "alignment": "20260721T022739Z_DD-001_358cb1eb_cd16846ba5",
     "canonical": "20260721T012208Z_DD-000_8e4b55e2_e8321d1048",
     "disclosure": "20260720T225848Z_DD-002_94607423_e29b1460ae",
+    "heterogeneous_sources": "20260721T032358Z_DD-003_84238b76_2cbc13e66a",
     "roles": "20260720T200447Z_DD-001_6eb12861_ba766d1eba",
     "selection": "20260721T025802Z_DD-002_73a85c71_b0e5b6dc49",
     "signatures": "20260720T221139Z_DD-001_b1d8d431_40bf5b06a5",
