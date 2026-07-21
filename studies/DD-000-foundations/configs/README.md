@@ -1,3 +1,6 @@
 # DD-000 configurations
 
-M1/M2 configurations are added with their schemas and run commands.
+The pinned canonical upstream configuration lives in each immutable baseline run.
+`exact-frontier.yml` separately freezes the exact pooled-frontier certificate,
+including both expected state counts, endpoint, recovery budget, claim boundaries,
+and the 30-second primary-run budget.
