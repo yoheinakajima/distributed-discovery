@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Distributed Discovery research library</title><desc id="desc">Evidence, action allocation, coverage, incentives, and feedback.</desc>
+  <rect width="1200" height="630" fill="#0d0d0d"/><path d="M88 440h1024" stroke="#c3c2b7" stroke-width="3"/>
+  <text x="88" y="190" fill="#f9f9f7" font-family="Georgia, serif" font-size="76">Distributed Discovery</text>
+  <text x="88" y="275" fill="#c3c2b7" font-family="Arial, sans-serif" font-size="36">Public research library</text>
+  <text x="88" y="510" fill="#f9f9f7" font-family="Arial, sans-serif" font-size="26">Evidence · Actions · Coverage · Incentives · Feedback</text>
+</svg>

@@ -1,8 +1,9 @@
-"""Build and validate the private static companion site from repository evidence."""
+"""Build and validate the public research-library site from repository evidence."""
+
+# ruff: noqa: E501
 
 from __future__ import annotations
 
-import csv
 import hashlib
 import html
 import json
@@ -17,9 +18,23 @@ import yaml
 
 from distributed_discovery.validation.bootstrap import repository_root
 
+PUBLIC_BASE = "https://yoheinakajima.github.io/distributed-discovery/"
+REPOSITORY_URL = "https://github.com/yoheinakajima/distributed-discovery"
+PHASES = {
+    "foundations",
+    "exact-result",
+    "complete-bounded-study",
+    "active-extension",
+    "registered",
+    "queued",
+    "blocked",
+    "retired",
+}
+SAFE_ARTIFACT_SUFFIXES = {".md", ".json", ".csv", ".png", ".svg", ".pdf", ".yml"}
+
 
 class SiteParser(HTMLParser):
-    """Collect structural elements and links for lightweight validation."""
+    """Collect enough document structure for generated-route validation."""
 
     def __init__(self) -> None:
         super().__init__()
@@ -27,6 +42,7 @@ class SiteParser(HTMLParser):
         self.hrefs: list[str] = []
         self.headings: list[int] = []
         self.tags: set[str] = set()
+        self.meta: dict[str, str] = {}
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         self.tags.add(tag)
@@ -35,253 +51,128 @@ class SiteParser(HTMLParser):
             self.ids.add(str(values["id"]))
         if tag == "a" and values.get("href"):
             self.hrefs.append(str(values["href"]))
+        if tag == "meta" and values.get("name") and values.get("content"):
+            self.meta[str(values["name"])] = str(values["content"])
         if re.fullmatch(r"h[1-6]", tag):
             self.headings.append(int(tag[1]))
-
-
-RESULT_RUNS = {
-    "roles": "20260720T200447Z_DD-001_6eb12861_ba766d1eba",
-    "disclosure": "20260720T225848Z_DD-002_94607423_e29b1460ae",
-    "selection": "20260721T025802Z_DD-002_73a85c71_b0e5b6dc49",
-    "sources": "20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1",
-    "heterogeneous_sources": "20260721T032358Z_DD-003_84238b76_2cbc13e66a",
-    "canonical": "20260721T012208Z_DD-000_8e4b55e2_e8321d1048",
-    "alignment": "20260721T022739Z_DD-001_358cb1eb_cd16846ba5",
-}
 
 
 def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def _verified_output(root: Path, run_id: str, relative: str) -> Path:
-    run = root / "results/verified" / run_id
-    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
-    if (
-        manifest.get("run_id") != run_id
-        or manifest.get("validation_status") != "passed"
-        or manifest.get("exit_status") != 0
-    ):
-        raise RuntimeError(f"result source run is not passing: {run_id}")
-    expected = manifest.get("outputs", {}).get(relative)
-    path = run / relative
-    if not isinstance(expected, str) or not path.is_file() or _sha256(path) != expected:
-        raise RuntimeError(f"result source checksum mismatch: {run_id}/{relative}")
-    return path
+def _read_yaml(path: Path) -> dict[str, Any]:
+    value = yaml.safe_load(path.read_text(encoding="utf-8"))
+    if not isinstance(value, dict):
+        raise RuntimeError(f"expected mapping: {path}")
+    return value
 
 
-def _result_data(root: Path) -> dict[str, Any]:
-    roles_path = _verified_output(root, RESULT_RUNS["roles"], "outputs/tiny-phase-grid.csv")
-    role_rows = list(csv.DictReader(roles_path.open(encoding="utf-8")))
-    role = next(row for row in role_rows if row["case"] == "M3_N2_p2-5")
-    disclosure_path = _verified_output(
-        root, RESULT_RUNS["disclosure"], "outputs/selection-reversal-witness.json"
-    )
-    disclosure = json.loads(disclosure_path.read_text(encoding="utf-8"))
-    selection_witness_path = _verified_output(
-        root, RESULT_RUNS["selection"], "outputs/known-witness-robustness.json"
-    )
-    selection_witness = json.loads(selection_witness_path.read_text(encoding="utf-8"))
-    selection_certificate_path = _verified_output(
-        root, RESULT_RUNS["selection"], "outputs/selection-certificate.json"
-    )
-    selection_certificate = json.loads(selection_certificate_path.read_text(encoding="utf-8"))
-    source_path = _verified_output(
-        root, RESULT_RUNS["sources"], "outputs/mean-agreement-counterexample.json"
-    )
-    source = json.loads(source_path.read_text(encoding="utf-8"))
-    null_path = _verified_output(
-        root, RESULT_RUNS["sources"], "outputs/pairwise-null-certificate.json"
-    )
-    bounded_null = json.loads(null_path.read_text(encoding="utf-8"))
-    heterogeneous_witness_path = _verified_output(
-        root,
-        RESULT_RUNS["heterogeneous_sources"],
-        "outputs/pairwise-moment-counterexample.json",
-    )
-    heterogeneous_witness = json.loads(heterogeneous_witness_path.read_text(encoding="utf-8"))
-    heterogeneous_certificate_path = _verified_output(
-        root,
-        RESULT_RUNS["heterogeneous_sources"],
-        "outputs/colored-census-certificate.json",
-    )
-    heterogeneous_certificate = json.loads(
-        heterogeneous_certificate_path.read_text(encoding="utf-8")
-    )
-    canonical_path = _verified_output(
-        root,
-        RESULT_RUNS["canonical"],
-        "outputs/canonical-exact-frontier-certificate.json",
-    )
-    canonical = json.loads(canonical_path.read_text(encoding="utf-8"))
-    interval = canonical["private_team_interval"]
-    alignment_path = _verified_output(
-        root,
-        RESULT_RUNS["alignment"],
-        "outputs/canonical-alignment-bound-certificate.json",
-    )
-    alignment = json.loads(alignment_path.read_text(encoding="utf-8"))
-    exact_optimum = alignment["result"]["discovery_upper_bound"]
-    if exact_optimum != interval["lower_fraction"]:
-        raise RuntimeError("canonical alignment upper bound does not meet the direct lower bound")
-    return {
-        "schema_version": 1,
-        "roles": {
-            "direct_fraction": role["direct_fraction"],
-            "optimum_fraction": role["optimum_fraction"],
-            "gain_fraction": role["role_gain_fraction"],
-            "claim_ids": ["DD-C-0021"],
-        },
-        "disclosure": {
-            "selected_less_fraction": disclosure["selected_less"],
-            "selected_more_fraction": disclosure["selected_more"],
-            "difference_fraction": disclosure["selected_difference"],
-            "pure_less_values": disclosure["pure_less_values"],
-            "pure_more_values": disclosure["pure_more_values"],
-            "planner_less_fraction": disclosure["planner_less"],
-            "planner_more_fraction": disclosure["planner_more"],
-            "claim_ids": ["DD-C-0030", "DD-C-0031"],
-            "selection_rules": selection_witness["rules"],
-            "harmful_refinement_counts": {
-                rule: counts["harmful"]
-                for rule, counts in selection_certificate["refinement_counts"].items()
-            },
-            "selection_claim_ids": ["DD-C-0039", "DD-C-0040", "DD-C-0041"],
-        },
-        "sources": {
-            "mean_pair_agreement_fraction": source["matched_mean_pair_agreement"],
-            "left_discovery_fraction": source["left_private_discovery"],
-            "right_discovery_fraction": source["right_private_discovery"],
-            "difference_fraction": source["private_discovery_difference"],
-            "matched_pairwise_group_count": bounded_null["matched_pairwise_signature_group_count"],
-            "matched_groups_with_different_discovery": bounded_null[
-                "matched_groups_with_different_private_discovery"
-            ],
-            "claim_ids": ["DD-C-0033", "DD-C-0034"],
-            "heterogeneous_left_discovery_fraction": heterogeneous_witness[
-                "left_private_discovery"
-            ],
-            "heterogeneous_right_discovery_fraction": heterogeneous_witness[
-                "right_private_discovery"
-            ],
-            "heterogeneous_difference_fraction": heterogeneous_witness[
-                "private_discovery_difference"
-            ],
-            "colored_network_count": heterogeneous_certificate["total_orbit_count"],
-            "matched_complete_moment_group_count": heterogeneous_certificate[
-                "matched_complete_moment_group_count"
-            ],
-            "different_complete_moment_group_count": heterogeneous_certificate[
-                "matched_groups_with_different_private_discovery"
-            ],
-            "heterogeneous_claim_ids": ["DD-C-0042", "DD-C-0043", "DD-C-0044"],
-        },
-        "canonical_exact_optimum": {
-            "optimum_fraction": exact_optimum,
-            "direct_fraction": interval["lower_fraction"],
-            "prior_pooled_upper_fraction": interval["upper_fraction"],
-            "prior_gap_fraction": interval["gap_fraction"],
-            "deterministic_status": "exact",
-            "ex_ante_randomized_status": "exact",
-            "claim_ids": ["DD-C-0037", "DD-C-0038"],
-        },
-        "provenance": {
-            "source_runs": RESULT_RUNS,
-            "source_artifacts": {
-                str(path.relative_to(root)): _sha256(path)
-                for path in [
-                    roles_path,
-                    disclosure_path,
-                    selection_witness_path,
-                    selection_certificate_path,
-                    source_path,
-                    null_path,
-                    heterogeneous_witness_path,
-                    heterogeneous_certificate_path,
-                    canonical_path,
-                    alignment_path,
-                ]
-            },
-            "generator": "distributed_discovery.site.build._result_data",
-        },
-    }
+def _safe_relative(path: str) -> bool:
+    candidate = Path(path)
+    return not candidate.is_absolute() and ".." not in candidate.parts and "\\" not in path
+
+
+def _claim_data(root: Path) -> tuple[list[dict[str, Any]], dict[str, dict[str, Any]]]:
+    ledger = _read_yaml(root / "claims/claims.yml")
+    raw_claims = ledger.get("claims")
+    if not isinstance(raw_claims, list):
+        raise RuntimeError("claim ledger has no claims list")
+    claims: list[dict[str, Any]] = []
+    by_id: dict[str, dict[str, Any]] = {}
+    for raw in raw_claims:
+        if not isinstance(raw, dict):
+            raise RuntimeError("claim ledger contains a non-mapping")
+        claim_id = raw.get("id")
+        if not isinstance(claim_id, str):
+            raise RuntimeError("claim without ID")
+        summary = {
+            key: raw.get(key)
+            for key in (
+                "id",
+                "study_id",
+                "short_name",
+                "statement",
+                "scope",
+                "claim_type",
+                "status",
+                "source_type",
+                "source_reference",
+                "run_ids",
+                "first_added",
+                "last_checked",
+            )
+        }
+        claims.append(summary)
+        by_id[claim_id] = summary
+    return claims, by_id
+
+
+def _runs(root: Path) -> tuple[list[dict[str, Any]], set[str]]:
+    summaries: list[dict[str, Any]] = []
+    run_ids: set[str] = set()
+    for manifest_path in sorted((root / "results").glob("**/manifest.json")):
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        if manifest.get("validation_status") != "passed" or manifest.get("exit_status") != 0:
+            continue
+        run_id = manifest.get("run_id")
+        study_id = manifest.get("study_id")
+        if not isinstance(run_id, str) or not isinstance(study_id, str):
+            raise RuntimeError(f"invalid passing manifest: {manifest_path}")
+        if run_id != manifest_path.parent.name:
+            raise RuntimeError(f"manifest path does not match run ID: {manifest_path}")
+        outputs = manifest.get("outputs", {})
+        if not isinstance(outputs, dict):
+            raise RuntimeError(f"manifest outputs are invalid: {manifest_path}")
+        for relative, digest in outputs.items():
+            output = manifest_path.parent / relative
+            if (
+                not isinstance(relative, str)
+                or not isinstance(digest, str)
+                or not _safe_relative(relative)
+                or output.suffix not in SAFE_ARTIFACT_SUFFIXES
+                or not output.is_file()
+                or _sha256(output) != digest
+            ):
+                raise RuntimeError(
+                    f"unsafe or invalid public run output: {manifest_path}/{relative}"
+                )
+        relative_manifest = str(manifest_path.relative_to(root))
+        summaries.append(
+            {
+                "run_id": run_id,
+                "study_id": study_id,
+                "started_utc": manifest.get("started_utc"),
+                "ended_utc": manifest.get("ended_utc"),
+                "manifest_path": relative_manifest,
+                "manifest_sha256": _sha256(manifest_path),
+                "output_count": len(outputs),
+                "validation_status": "passed",
+            }
+        )
+        run_ids.add(run_id)
+    return summaries, run_ids
 
 
 def _passing_baseline(root: Path) -> Path:
+    """Return the latest validated canonical baseline for paper builders."""
     candidates: list[Path] = []
     for validation_path in root.glob("results/baseline/*/validation.json"):
         validation = json.loads(validation_path.read_text(encoding="utf-8"))
         manifest_path = validation_path.with_name("manifest.json")
-        if validation.get("passed") and manifest_path.exists():
-            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-            if manifest.get("validation_status") == "passed" and manifest.get("exit_status") == 0:
-                candidates.append(validation_path.parent)
+        if not validation.get("passed") or not manifest_path.is_file():
+            continue
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        if manifest.get("validation_status") == "passed" and manifest.get("exit_status") == 0:
+            candidates.append(validation_path.parent)
     if not candidates:
         raise RuntimeError("no passing canonical baseline run found")
     return sorted(candidates)[-1]
 
 
-def _question_text(path: Path) -> str:
-    lines = [line.strip() for line in path.read_text(encoding="utf-8").splitlines()]
-    return (
-        " ".join(line for line in lines if line and not line.startswith("#"))
-        .replace(r"\(", "")
-        .replace(r"\)", "")
-    )
-
-
-def _study_data(root: Path) -> list[dict[str, str]]:
-    studies: list[dict[str, str]] = []
-    for directory in sorted((root / "studies").glob("DD-00*")):
-        status = yaml.safe_load((directory / "status.yml").read_text(encoding="utf-8"))
-        if status["study_id"] == "DD-000":
-            continue
-        title = directory.name.split("-", 2)[-1].replace("-", " ").title()
-        studies.append(
-            {
-                "id": status["study_id"],
-                "title": title,
-                "question": _question_text(directory / "question.md"),
-                "registry_status": status["status"],
-                "evidence_status": status["evidence_status"],
-                "next_action": status["next_action"],
-                "display_status": "Open question",
-            }
-        )
-    if len(studies) != 7:
-        raise RuntimeError(f"expected seven open studies, found {len(studies)}")
-    return studies
-
-
-def _study_cards(studies: list[dict[str, str]]) -> str:
-    cards: list[str] = []
-    for study in studies:
-        cards.append(
-            "\n".join(
-                [
-                    '<article class="problem-card">',
-                    '  <div class="problem-meta">',
-                    f'    <span class="study-id">{html.escape(study["id"])}</span>',
-                    f'    <span class="badge open">{html.escape(study["display_status"])}</span>',
-                    "  </div>",
-                    f"  <h2>{html.escape(study['title'])}</h2>",
-                    f"  <p>{html.escape(study['question'])}</p>",
-                    '  <dl class="status-list">',
-                    "    <div><dt>Registry</dt><dd>"
-                    f"{html.escape(study['registry_status'])}</dd></div>",
-                    "    <div><dt>Evidence</dt><dd>"
-                    f"{html.escape(study['evidence_status'])}</dd></div>",
-                    f"    <div><dt>Next</dt><dd>{html.escape(study['next_action'])}</dd></div>",
-                    "  </dl>",
-                    "</article>",
-                ]
-            )
-        )
-    return "\n".join(cards)
-
-
 def _canonical_data(run: Path) -> dict[str, Any]:
-    config = yaml.safe_load((run / "config.yml").read_text(encoding="utf-8"))
+    """Return the compatible canonical summary consumed by paper builders."""
+    config = _read_yaml(run / "config.yml")
     metrics = json.loads((run / "metrics.json").read_text(encoding="utf-8"))
     manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
     return {
@@ -291,14 +182,7 @@ def _canonical_data(run: Path) -> dict[str, Any]:
         "parameters": config["parameters"],
         "metrics": {
             key: metrics[key]
-            for key in [
-                "blind",
-                "consensus",
-                "market",
-                "private",
-                "planner",
-                "recovery_budget",
-            ]
+            for key in ["blind", "consensus", "market", "private", "planner", "recovery_budget"]
         },
         "evidence": {
             "blind": "independently-reproduced",
@@ -319,183 +203,489 @@ def _canonical_data(run: Path) -> dict[str, Any]:
     }
 
 
-def _replacements(
-    canonical: dict[str, Any], studies: list[dict[str, str]], results: dict[str, Any]
-) -> dict[str, str]:
-    parameters = canonical["parameters"]
-    metrics = canonical["metrics"]
-
-    def percent(value: float | int) -> str:
-        return f"{100 * value:.2f}%"
-
-    return {
-        "{{CANDIDATES}}": str(parameters["candidates"]),
-        "{{SEARCHERS}}": str(parameters["searchers"]),
-        "{{CLUE_ACCURACY}}": percent(parameters["clue_accuracy"]),
-        "{{CONSENSUS}}": percent(metrics["consensus"]),
-        "{{PRIVATE}}": percent(metrics["private"]),
-        "{{PLANNER}}": percent(metrics["planner"]),
-        "{{RECOVERY_BUDGET}}": str(metrics["recovery_budget"]),
-        "{{RUN_ID}}": str(canonical["source_run_id"]),
-        "{{UPSTREAM_COMMIT}}": str(canonical["upstream_commit"]),
-        "{{STUDY_CARDS}}": _study_cards(studies),
-        "{{ROLES_DIRECT}}": str(results["roles"]["direct_fraction"]),
-        "{{ROLES_OPTIMUM}}": str(results["roles"]["optimum_fraction"]),
-        "{{ROLES_GAIN}}": str(results["roles"]["gain_fraction"]),
-        "{{DISCLOSURE_LESS}}": str(results["disclosure"]["selected_less_fraction"]),
-        "{{DISCLOSURE_MORE}}": str(results["disclosure"]["selected_more_fraction"]),
-        "{{DISCLOSURE_DIFFERENCE}}": str(results["disclosure"]["difference_fraction"]),
-        "{{SELECTION_ALT_LESS}}": str(
-            results["disclosure"]["selection_rules"]["best_pure"]["less_discovery"]
-        ),
-        "{{SELECTION_ALT_MORE}}": str(
-            results["disclosure"]["selection_rules"]["best_pure"]["more_discovery"]
-        ),
-        "{{SELECTION_HARMFUL_COUNTS}}": "/".join(
-            str(results["disclosure"]["harmful_refinement_counts"][rule])
-            for rule in [
-                "anonymous_symmetric",
-                "best_pure",
-                "worst_pure",
-                "uniform_potential_maximum",
-                "uniform_strict_best_response_basin",
-                "planner",
-            ]
-        ),
-        "{{SOURCE_AGREEMENT}}": str(results["sources"]["mean_pair_agreement_fraction"]),
-        "{{SOURCE_LEFT}}": str(results["sources"]["left_discovery_fraction"]),
-        "{{SOURCE_RIGHT}}": str(results["sources"]["right_discovery_fraction"]),
-        "{{NULL_GROUPS}}": str(results["sources"]["matched_pairwise_group_count"]),
-        "{{NULL_DIFFERENCES}}": str(results["sources"]["matched_groups_with_different_discovery"]),
-        "{{HETERO_SOURCE_LEFT}}": str(results["sources"]["heterogeneous_left_discovery_fraction"]),
-        "{{HETERO_SOURCE_RIGHT}}": str(
-            results["sources"]["heterogeneous_right_discovery_fraction"]
-        ),
-        "{{COLORED_NETWORKS}}": str(results["sources"]["colored_network_count"]),
-        "{{HETERO_MATCHED_GROUPS}}": str(results["sources"]["matched_complete_moment_group_count"]),
-        "{{HETERO_DIFFERENT_GROUPS}}": str(
-            results["sources"]["different_complete_moment_group_count"]
-        ),
-        "{{CANONICAL_OPTIMUM}}": str(results["canonical_exact_optimum"]["optimum_fraction"]),
-        "{{PRIOR_POOLED_UPPER}}": str(
-            results["canonical_exact_optimum"]["prior_pooled_upper_fraction"]
-        ),
-        "{{RESULT_RUN_ROLES}}": str(results["provenance"]["source_runs"]["roles"]),
-        "{{RESULT_RUN_DISCLOSURE}}": str(results["provenance"]["source_runs"]["disclosure"]),
-        "{{RESULT_RUN_SELECTION}}": str(results["provenance"]["source_runs"]["selection"]),
-        "{{RESULT_RUN_SOURCES}}": str(results["provenance"]["source_runs"]["sources"]),
-        "{{RESULT_RUN_HETEROGENEOUS_SOURCES}}": str(
-            results["provenance"]["source_runs"]["heterogeneous_sources"]
-        ),
-        "{{RESULT_RUN_CANONICAL}}": str(results["provenance"]["source_runs"]["canonical"]),
-        "{{RESULT_RUN_ALIGNMENT}}": str(results["provenance"]["source_runs"]["alignment"]),
-    }
+def _study_data(
+    root: Path, claims_by_id: dict[str, dict[str, Any]], run_ids: set[str]
+) -> list[dict[str, Any]]:
+    studies: list[dict[str, Any]] = []
+    for directory in sorted((root / "studies").glob("DD-0*")):
+        public_path = directory / "public.yml"
+        if not public_path.is_file():
+            raise RuntimeError(f"missing public metadata: {public_path}")
+        public = _read_yaml(public_path)
+        status = _read_yaml(directory / "status.yml")
+        study_id = status.get("study_id")
+        if public.get("study_id") != study_id or not isinstance(study_id, str):
+            raise RuntimeError(f"study ID mismatch: {public_path}")
+        phase = public.get("phase")
+        if phase not in PHASES:
+            raise RuntimeError(f"invalid public phase for {study_id}: {phase}")
+        slug = public.get("slug")
+        if not isinstance(slug, str) or not re.fullmatch(r"dd-\d{3}", slug):
+            raise RuntimeError(f"invalid public slug for {study_id}")
+        artifacts = public.get("public_artifacts", [])
+        if not isinstance(artifacts, list):
+            raise RuntimeError(f"invalid public artifacts for {study_id}")
+        checked_artifacts: list[dict[str, str]] = []
+        for artifact in artifacts:
+            if not isinstance(artifact, dict):
+                raise RuntimeError(f"invalid public artifact for {study_id}")
+            path = artifact.get("path")
+            description = artifact.get("description")
+            if (
+                not isinstance(path, str)
+                or not isinstance(description, str)
+                or not _safe_relative(path)
+                or Path(path).suffix not in SAFE_ARTIFACT_SUFFIXES
+                or not (root / path).is_file()
+                or re.search(r"(?:secret|token|password|private key)", path, re.IGNORECASE)
+            ):
+                raise RuntimeError(f"unsafe public artifact for {study_id}: {path}")
+            checked_artifacts.append({"path": path, "description": description})
+        study_claims = [claim for claim in claims_by_id.values() if claim["study_id"] == study_id]
+        referenced_runs = sorted(
+            {run_id for claim in study_claims for run_id in (claim.get("run_ids") or [])}
+        )
+        missing_runs = set(referenced_runs) - run_ids
+        if missing_runs:
+            raise RuntimeError(f"claim refers to missing/nonpassing run(s): {sorted(missing_runs)}")
+        question = " ".join(
+            line.strip()
+            for line in (directory / "question.md").read_text(encoding="utf-8").splitlines()
+            if line.strip() and not line.startswith("#")
+        )
+        studies.append(
+            {
+                "id": study_id,
+                "title": public.get("title"),
+                "slug": slug,
+                "phase": phase,
+                "summary": public.get("summary"),
+                "question": question,
+                "registry_status": status.get("status"),
+                "evidence_status": status.get("evidence_status"),
+                "next_action": status.get("next_action"),
+                "claim_ids": [claim["id"] for claim in study_claims],
+                "run_ids": referenced_runs,
+                "public_artifacts": checked_artifacts,
+            }
+        )
+    if len(studies) != 8:
+        raise RuntimeError(f"expected eight public studies, found {len(studies)}")
+    return studies
 
 
-def validate_site(output: Path) -> dict[str, Any]:
-    pages = sorted(output.glob("*.html"))
+def _publications(root: Path) -> list[dict[str, Any]]:
+    publications: list[dict[str, Any]] = []
+    for directory, title in (
+        ("foundations", "Foundations of Distributed Discovery"),
+        ("three-results", "Three Results in Distributed Discovery"),
+    ):
+        validation = json.loads((root / "papers" / directory / "validation.json").read_text())
+        candidates = sorted((root / "papers" / directory).glob("*.pdf"))
+        if len(candidates) != 1:
+            raise RuntimeError(f"expected one public PDF in papers/{directory}")
+        pdf = candidates[0]
+        digest = _sha256(pdf)
+        if validation.get("pdf_sha256") != digest:
+            raise RuntimeError(f"publication checksum mismatch: {pdf}")
+        publications.append(
+            {
+                "title": title,
+                "slug": directory,
+                "source_pdf": str(pdf.relative_to(root)),
+                "download": f"downloads/{pdf.name}",
+                "sha256": digest,
+                "page_count": validation.get("page_count"),
+                "build_source": f"papers/{directory}/main.tex",
+                "citation": f"Distributed Discovery project ({directory}). {title}.",
+            }
+        )
+    return publications
+
+
+def _page(title: str, description: str, body: str, current: str) -> str:
+    primary = [
+        ("Foundations", "foundations.html"),
+        ("Research", "research.html"),
+        ("Results", "results.html"),
+        ("Publications", "publications.html"),
+        ("Applications", "applications.html"),
+    ]
+    secondary = [
+        ("Claims", "claims.html"),
+        ("Evidence", "evidence.html"),
+        ("Open questions", "open-problems.html"),
+        ("Ideas", "ideas.html"),
+        ("Repo", REPOSITORY_URL),
+    ]
+    prefix = "../" if current.startswith("research/") else ""
+    nav = "".join(
+        '<a href="{}"{}>{}</a>'.format(
+            prefix + href, ' aria-current="page"' if current == href else "", name
+        )
+        for name, href in primary
+    )
+    subnav = " · ".join(
+        f'<a href="{href if href.startswith("http") else prefix + href}">{name}</a>'
+        for name, href in secondary
+    )
+    canonical = f"{PUBLIC_BASE}{current}" if current != "index.html" else PUBLIC_BASE
+    return f"""<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{html.escape(title)} — Distributed Discovery</title><meta name="description" content="{html.escape(description)}">
+<link rel="canonical" href="{canonical}"><meta property="og:title" content="{html.escape(title)} — Distributed Discovery"><meta property="og:description" content="{html.escape(description)}"><meta property="og:image" content="{PUBLIC_BASE}og.svg"><meta property="og:type" content="website"><link rel="stylesheet" href="{prefix}styles.css"><script src="{prefix}site.js" defer></script></head>
+<body><a class="skip-link" href="#content">Skip to content</a><header class="topbar"><div class="wrap"><a class="brand" href="{prefix}index.html">Distributed Discovery</a><nav aria-label="Primary navigation">{nav}</nav></div><div class="wrap secondary" aria-label="Research navigation">{subnav}</div></header>
+<main id="content" class="narrow">{body}</main><footer><div class="wrap"><span>Public MIT-licensed research library · no analytics or tracking</span><span><a href="{prefix}index.html">Home</a> · <a href="{REPOSITORY_URL}">Repository</a></span></div></footer></body></html>"""
+
+
+def _study_card(study: dict[str, Any]) -> str:
+    return f"""<article class="card {html.escape(study["phase"])}"><p class="eyebrow">{html.escape(study["id"])} · {html.escape(study["phase"])}</p><h2><a href="research/{html.escape(study["slug"])}.html">{html.escape(str(study["title"]))}</a></h2><p>{html.escape(str(study["summary"]))}</p><p><span class="badge">{len(study["claim_ids"])} claims · {len(study["run_ids"])} passing runs</span></p></article>"""
+
+
+def _study_page(study: dict[str, Any], claims_by_id: dict[str, dict[str, Any]]) -> str:
+    claims = (
+        "".join(
+            '<li><a href="../claims.html#{}">{}</a>: {}</li>'.format(
+                html.escape(claim_id),
+                html.escape(claim_id),
+                html.escape(str(claims_by_id[claim_id]["statement"])),
+            )
+            for claim_id in study["claim_ids"]
+        )
+        or "<li>No substantive claim has been published for this registered study.</li>"
+    )
+    runs = (
+        "".join(f"<li>{html.escape(run_id)}</li>" for run_id in study["run_ids"])
+        or "<li>No passing run yet.</li>"
+    )
+    artifacts = (
+        "".join(
+            '<li><a href="{}/blob/main/{}">{}</a></li>'.format(
+                REPOSITORY_URL, html.escape(item["path"]), html.escape(item["description"])
+            )
+            for item in study["public_artifacts"]
+        )
+        or "<li>No public-safe artifact is registered yet.</li>"
+    )
+    body = f"""<p class="eyebrow"><a href="../research.html">Research</a> / {html.escape(study["id"])}</p><h1>{html.escape(str(study["title"]))}</h1><p class="lede">{html.escape(str(study["summary"]))}</p><p><span class="badge">{html.escape(study["phase"])}</span> Registry: {html.escape(str(study["registry_status"]))}</p><section><h2 id="question">Question</h2><p>{html.escape(str(study["question"]))}</p></section><section><h2 id="evidence">Evidence boundary</h2><p>{html.escape(str(study["evidence_status"]))}</p><h3>Claims</h3><ul>{claims}</ul><h3>Passing immutable runs</h3><ul>{runs}</ul></section><section><h2 id="sources">Public sources</h2><ul>{artifacts}</ul><p>Next action: {html.escape(str(study["next_action"]))}</p></section>"""
+    return _page(str(study["title"]), str(study["summary"]), body, f"research/{study['slug']}.html")
+
+
+def _write(output: Path, relative: str, content: str) -> None:
+    path = output / relative
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(content, encoding="utf-8")
+
+
+def _render(
+    root: Path,
+    output: Path,
+    studies: list[dict[str, Any]],
+    claims: list[dict[str, Any]],
+    claims_by_id: dict[str, dict[str, Any]],
+    runs: list[dict[str, Any]],
+    publications: list[dict[str, Any]],
+) -> list[dict[str, str]]:
+    cards = "".join(_study_card(study) for study in studies)
+    counts = {phase: sum(study["phase"] == phase for study in studies) for phase in PHASES}
+    home = f"""<section class="hero"><p class="kicker">Research library</p><h1>A research program in Distributed Discovery</h1><p class="lede">Evidence, action allocation, coverage, incentives, and feedback are distinct margins. This library makes the bounded evidence and its limits inspectable.</p></section><section><h2 id="research-map">Research map</h2><p>{len(claims)} ledger claims · {len(runs)} passing immutable runs · {len(publications)} validated publications.</p><div class="grid-2">{cards}</div></section><section><h2 id="incubator">Ideas incubator</h2><p>Speculative extensions are kept separate from results: noisy sequential tests, randomized disclosure, higher-order source laws, mechanism classes beyond the registered fixture, and real-data audits require new registrations and evidence.</p><p><a class="primary-link" href="ideas.html">Browse the incubator and boundary conditions →</a></p></section>"""
+    _write(
+        output,
+        "index.html",
+        _page(
+            "Research Library",
+            "Evidence-indexed public research library for Distributed Discovery.",
+            home,
+            "index.html",
+        ),
+    )
+    phase_links = "".join(
+        f'<a href="#{phase}">{phase} ({counts[phase]})</a> '
+        for phase in sorted(PHASES)
+        if counts[phase]
+    )
+    phase_targets = "".join(
+        f'<span id="{phase}"></span>' for phase in sorted(PHASES) if counts[phase]
+    )
+    research = f"""<p class="eyebrow">Research library</p><h1>Studies</h1><p class="lede">All studies are visible without JavaScript. Use the phase anchors to narrow the page, or use browser find to search titles, IDs, and terms.</p><p class="filter-links">{phase_links}</p>{phase_targets}<section class="grid-2">{cards}</section>"""
+    _write(
+        output,
+        "research.html",
+        _page(
+            "Research",
+            "All registered and completed Distributed Discovery studies.",
+            research,
+            "research.html",
+        ),
+    )
+    for study in studies:
+        _write(output, f"research/{study['slug']}.html", _study_page(study, claims_by_id))
+    claim_items = "".join(
+        '<article id="{id}" class="card"><p class="eyebrow">{id} · {status} · {claim_type}</p><h2>{short_name}</h2><p>{statement}</p><p><strong>Scope:</strong> {scope}</p><p><a href="research/dd-{suffix}.html">{study_id}</a></p></article>'.format(
+            id=html.escape(str(claim["id"])),
+            status=html.escape(str(claim["status"])),
+            claim_type=html.escape(str(claim["claim_type"])),
+            short_name=html.escape(str(claim["short_name"])),
+            statement=html.escape(str(claim["statement"])),
+            scope=html.escape(str(claim["scope"])),
+            suffix=str(claim["study_id"])[-3:],
+            study_id=html.escape(str(claim["study_id"])),
+        )
+        for claim in claims
+    )
+    claims_body = f"""<p class="eyebrow">Evidence index</p><h1>Claims</h1><p class="lede">Stable claim anchors expose type, status, statement, and scope. Browser find is the no-JavaScript search control; no unvalidated values are rendered as claims.</p><section class="grid-2">{claim_items}</section>"""
+    _write(
+        output,
+        "claims.html",
+        _page(
+            "Claims",
+            "Stable, scoped claim ledger for Distributed Discovery.",
+            claims_body,
+            "claims.html",
+        ),
+    )
+    evidence_items = "".join(
+        '<article class="card"><h2>{run_id}</h2><p>{study_id} · passed immutable manifest · {output_count} checksum-validated public-safe outputs.</p><p><a href="{repo}/blob/main/{manifest_path}">Manifest source</a> · SHA-256 {manifest_sha}</p></article>'.format(
+            run_id=html.escape(str(run["run_id"])),
+            study_id=html.escape(str(run["study_id"])),
+            output_count=html.escape(str(run["output_count"])),
+            repo=REPOSITORY_URL,
+            manifest_path=html.escape(str(run["manifest_path"])),
+            manifest_sha=html.escape(str(run["manifest_sha256"])),
+        )
+        for run in runs
+    )
+    evidence_body = f"""<p class="eyebrow">Evidence index</p><h1>Passing runs</h1><p class="lede">Only manifests with passed validation, exit status zero, repository-relative paths, and checksum-validated safe outputs appear here. Failed and preliminary material is not substantive public evidence.</p><section class="grid-2">{evidence_items}</section>"""
+    _write(
+        output,
+        "evidence.html",
+        _page(
+            "Evidence",
+            "Safe summaries of checksum-validated immutable research runs.",
+            evidence_body,
+            "evidence.html",
+        ),
+    )
+    publication_items = "".join(
+        '<article class="card"><h2>{title}</h2><p>{page_count} pages · SHA-256 <code>{sha256}</code></p><p><a href="{download}">Download PDF</a> · <a href="{repo}/blob/main/{build_source}">Build source</a></p><p>{citation}</p></article>'.format(
+            title=html.escape(str(item["title"])),
+            page_count=html.escape(str(item["page_count"])),
+            sha256=html.escape(str(item["sha256"])),
+            download=html.escape(str(item["download"])),
+            repo=REPOSITORY_URL,
+            build_source=html.escape(str(item["build_source"])),
+            citation=html.escape(str(item["citation"])),
+        )
+        for item in publications
+    )
+    publications_body = f"""<p class="eyebrow">Publications</p><h1>Validated papers</h1><p class="lede">Downloads are copied only from validation-recorded PDF artifacts. Checksums and page counts are generated from the current repository evidence.</p><section class="grid-2">{publication_items}</section>"""
+    _write(
+        output,
+        "publications.html",
+        _page(
+            "Publications",
+            "Validated Distributed Discovery paper downloads and provenance.",
+            publications_body,
+            "publications.html",
+        ),
+    )
+    open_studies = [
+        study
+        for study in studies
+        if study["phase"] in {"registered", "queued", "active-extension", "blocked"}
+    ]
+    open_body = (
+        '<p class="eyebrow">Research agenda</p><h1>Open questions</h1><p class="lede">These are registered next steps, not results.</p><section class="grid-2">'
+        + "".join(_study_card(study) for study in open_studies)
+        + "</section>"
+    )
+    _write(
+        output,
+        "open-problems.html",
+        _page(
+            "Open Questions",
+            "Registered research directions and explicit evidence boundaries.",
+            open_body,
+            "open-problems.html",
+        ),
+    )
+    ideas_body = """<p class="eyebrow">Ideas incubator</p><h1>Speculation is not evidence</h1><p class="lede">The following directions are deliberately separated from the claim ledger.</p><ul><li>Noisy or state-coupled sequential tests after DD-004’s perfect-elimination baseline.</li><li>Randomized disclosure and broader equilibrium-selection procedures after DD-002.</li><li>Higher-order report laws and expanded source palettes after DD-003.</li><li>Mechanism classes, equilibrium concepts, and observability variants outside DD-006’s registration.</li><li>Real-data work only after DD-007 privacy, identification, and ethics review.</li></ul>"""
+    _write(
+        output,
+        "ideas.html",
+        _page(
+            "Ideas Incubator",
+            "Clearly labelled speculative extensions for future research.",
+            ideas_body,
+            "ideas.html",
+        ),
+    )
+    foundations_body = """<p class="eyebrow">Foundations</p><h1>Information and action allocation</h1><p class="lede">The program distinguishes information architecture from the protocol that transforms evidence into a portfolio of actions.</p><p class="identity">G<sub>B</sub>(Π; I) = V<sub>B</sub>(I) − L<sub>B</sub>(Π; I)</p><p>It is an accounting identity, not a universal monotonicity theorem. Consult the <a href="research/dd-000.html">foundations record</a> and <a href="publications.html">validated note</a> for scope and provenance.</p>"""
+    _write(
+        output,
+        "foundations.html",
+        _page(
+            "Foundations",
+            "Definitions and evidence boundaries for Distributed Discovery.",
+            foundations_body,
+            "foundations.html",
+        ),
+    )
+    results_body = (
+        """<p class="eyebrow">Results</p><h1>Completed bounded evidence</h1><p class="lede">Exact canonical, private-role, disclosure, and source-network results are bounded by their registered model classes.</p><section class="grid-2">"""
+        + "".join(
+            _study_card(study)
+            for study in studies
+            if study["phase"] in {"foundations", "exact-result", "complete-bounded-study"}
+        )
+        + "</section>"
+    )
+    _write(
+        output,
+        "results.html",
+        _page(
+            "Results",
+            "Completed bounded results with direct links to claim and run evidence.",
+            results_body,
+            "results.html",
+        ),
+    )
+    applications_body = """<p class="eyebrow">Applications</p><h1>Mappings, not results</h1><p class="lede">Science, R&amp;D, venture portfolios, and multi-agent systems can be represented as evidence, action, coverage, and feedback systems. Each mapping needs its own action technology, objective, dependence model, and evidence standard.</p>"""
+    _write(
+        output,
+        "applications.html",
+        _page(
+            "Applications",
+            "Scoped application mappings for Distributed Discovery.",
+            applications_body,
+            "applications.html",
+        ),
+    )
+    _write(
+        output,
+        "404.html",
+        _page(
+            "Not found",
+            "The requested research-library route does not exist.",
+            '<h1>Not found</h1><p>Return to the <a href="index.html">research library</a>.</p>',
+            "404.html",
+        ),
+    )
+    routes = [{"path": "index.html", "kind": "home"}]
+    for path in sorted(output.glob("**/*.html")):
+        relative = str(path.relative_to(output))
+        if relative != "index.html":
+            routes.append({"path": relative, "kind": "page"})
+    return routes
+
+
+def validate_site(output: Path, routes: list[dict[str, str]]) -> dict[str, Any]:
     errors: list[str] = []
-    for page in pages:
+    expected = {route["path"] for route in routes}
+    actual = {str(path.relative_to(output)) for path in output.glob("**/*.html")}
+    if expected != actual:
+        errors.append("route registry does not match generated HTML")
+    for relative in sorted(actual):
+        page = output / relative
         source = page.read_text(encoding="utf-8")
         parser = SiteParser()
         parser.feed(source)
-        if "{{" in source or "}}" in source:
-            errors.append(f"{page.name}: unresolved template marker")
-        for required in ["main", "nav", "header", "footer"]:
-            if required not in parser.tags:
-                errors.append(f"{page.name}: missing {required}")
-        expected_navigation = {
-            "foundations.html",
-            "results.html",
-            "open-problems.html",
-            "applications.html",
-        }
-        if not expected_navigation.issubset(set(parser.hrefs)):
-            errors.append(f"{page.name}: incomplete companion navigation")
+        if re.search(r"\{\{[A-Z_]+\}\}", source):
+            errors.append(f"{relative}: unresolved template marker")
+        if not {"main", "nav", "header", "footer"}.issubset(parser.tags):
+            errors.append(f"{relative}: missing landmark")
         if not parser.headings or parser.headings[0] != 1:
-            errors.append(f"{page.name}: first heading must be h1")
-        if any(
-            next_level > level + 1
-            for level, next_level in zip(parser.headings, parser.headings[1:], strict=False)
-        ):
-            errors.append(f"{page.name}: skipped heading level")
-        tracking_markers = ["googletagmanager", "google-analytics.com", "plausible.io/js"]
-        if any(marker in source.lower() for marker in tracking_markers):
-            errors.append(f"{page.name}: tracking-like content found")
+            errors.append(f"{relative}: first heading must be h1")
+        if "description" not in parser.meta:
+            errors.append(f"{relative}: missing description")
         for href in parser.hrefs:
             parsed = urlsplit(href)
             if parsed.scheme in {"http", "https", "mailto"}:
                 continue
             target = page if not parsed.path else (page.parent / parsed.path).resolve()
             if not target.exists():
-                errors.append(f"{page.name}: broken link {href}")
-                continue
-            if parsed.fragment and target.suffix == ".html":
+                errors.append(f"{relative}: broken link {href}")
+            elif parsed.fragment and target.suffix == ".html":
                 target_parser = SiteParser()
                 target_parser.feed(target.read_text(encoding="utf-8"))
                 if parsed.fragment not in target_parser.ids:
-                    errors.append(f"{page.name}: missing fragment {href}")
-    if len(pages) != 5:
-        errors.append(f"expected five HTML pages, found {len(pages)}")
+                    errors.append(f"{relative}: missing fragment {href}")
+        if re.search(r"(?:/Users/|file://|AKIA|ghp_)", source):
+            errors.append(f"{relative}: local path or secret-like content")
+    for download in (output / "downloads").glob("*.pdf"):
+        if download.stat().st_size == 0:
+            errors.append(f"empty download: {download.name}")
     if errors:
         raise RuntimeError("site validation failed:\n" + "\n".join(errors))
     return {
-        "schema_version": 1,
-        "pages": [page.name for page in pages],
-        "page_count": len(pages),
+        "schema_version": 2,
+        "page_count": len(actual),
+        "routes": sorted(expected),
         "internal_links_passed": True,
         "semantic_structure_passed": True,
-        "template_markers_resolved": True,
-        "tracking_absent": True,
+        "public_safety_passed": True,
     }
 
 
 def build(root: Path, output: Path) -> dict[str, Any]:
-    run = _passing_baseline(root)
-    canonical = _canonical_data(run)
-    studies = _study_data(root)
-    results = _result_data(root)
+    claims, claims_by_id = _claim_data(root)
+    runs, run_ids = _runs(root)
+    studies = _study_data(root, claims_by_id, run_ids)
+    publications = _publications(root)
     source = root / "site/src"
     if output.exists():
         shutil.rmtree(output)
     output.mkdir(parents=True)
-    for asset in ["styles.css", "site.js"]:
+    for asset in ["styles.css", "site.js", "og.svg"]:
         shutil.copy2(source / asset, output / asset)
-    replacements = _replacements(canonical, studies, results)
-    for template in sorted(source.glob("*.html")):
-        rendered = template.read_text(encoding="utf-8")
-        for marker, value in replacements.items():
-            rendered = rendered.replace(marker, value)
-        (output / template.name).write_text(rendered, encoding="utf-8")
-    data_dir = output / "data"
-    data_dir.mkdir()
-    (data_dir / "canonical.json").write_text(
-        json.dumps(canonical, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    routes = _render(root, output, studies, claims, claims_by_id, runs, publications)
+    data = {
+        "research-index.json": {"schema_version": 1, "studies": studies},
+        "claims.json": {"schema_version": 1, "claims": claims},
+        "runs.json": {"schema_version": 1, "runs": runs},
+        "publications.json": {"schema_version": 1, "publications": publications},
+        "routes.json": {"schema_version": 1, "routes": routes},
+    }
+    for name, value in data.items():
+        _write(output, f"data/{name}", json.dumps(value, indent=2, sort_keys=True) + "\n")
+    for study in studies:
+        _write(
+            output,
+            f"data/studies/{study['slug']}.json",
+            json.dumps(study, indent=2, sort_keys=True) + "\n",
+        )
+    for publication in publications:
+        source_pdf = root / str(publication["source_pdf"])
+        destination = output / str(publication["download"])
+        destination.parent.mkdir(exist_ok=True)
+        shutil.copy2(source_pdf, destination)
+        if _sha256(destination) != publication["sha256"]:
+            raise RuntimeError(f"download copy checksum mismatch: {destination}")
+    _write(
+        output, "robots.txt", "User-agent: *\nAllow: /\nSitemap: " + PUBLIC_BASE + "sitemap.xml\n"
     )
-    (data_dir / "studies.json").write_text(
-        json.dumps(studies, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    urls = "".join(f"<url><loc>{PUBLIC_BASE}{route['path']}</loc></url>" for route in routes)
+    _write(
+        output,
+        "sitemap.xml",
+        f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>',
     )
-    (data_dir / "results.json").write_text(
-        json.dumps(results, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    report = validate_site(output, routes)
+    report.update(
+        {
+            "study_count": len(studies),
+            "claim_count": len(claims),
+            "passing_run_count": len(runs),
+            "publication_count": len(publications),
+        }
     )
-    shutil.copy2(root / "claims/claims.yml", data_dir / "claims.yml")
-    report = validate_site(output)
-    report["canonical_source_run"] = canonical["source_run_id"]
-    report["study_count"] = len(studies)
-    report["result_source_runs"] = results["provenance"]["source_runs"]
-    (output / "build-report.json").write_text(
-        json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8"
-    )
+    _write(output, "build-report.json", json.dumps(report, indent=2, sort_keys=True) + "\n")
     return report
 
 
 def main() -> None:
-    root = repository_root()
-    report = build(root, root / "site/dist")
-    print(
-        f"site build passed: {report['page_count']} pages, "
-        f"{report['study_count']} open studies, source {report['canonical_source_run']}"
-    )
+    report = build(repository_root(), repository_root() / "site/dist")
+    print(f"site build passed: {report['page_count']} pages, {report['study_count']} studies")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,10 @@
+study_id: DD-000
+title: Foundations of Distributed Discovery
+slug: dd-000
+phase: foundations
+summary: Definitions, canonical reproduction, and exact pooled-frontier evidence.
+public_artifacts:
+  - path: studies/DD-000-foundations/report.md
+    description: Foundations evidence report
+  - path: reports/canonical-exact-frontier.md
+    description: Exact pooled-frontier report

@@ -1,3 +1,5 @@
+import json
+import shutil
 from pathlib import Path
 
 from distributed_discovery.site.build import build
@@ -5,55 +7,72 @@ from distributed_discovery.site.build import build
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def _relative_luminance(color: str) -> float:
-    channels = [int(color[index : index + 2], 16) / 255 for index in (1, 3, 5)]
-    linear = [
-        value / 12.92 if value <= 0.04045 else ((value + 0.055) / 1.055) ** 2.4
-        for value in channels
-    ]
-    return 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2]
+def test_research_library_builds_from_validated_repository_evidence(tmp_path: Path) -> None:
+    output = tmp_path / "site"
+    report = build(ROOT, output)
 
-
-def _contrast(first: str, second: str) -> float:
-    light, dark = sorted([_relative_luminance(first), _relative_luminance(second)], reverse=True)
-    return (light + 0.05) / (dark + 0.05)
-
-
-def test_site_builds_from_repository_evidence(tmp_path: Path) -> None:
-    report = build(ROOT, tmp_path / "site")
-    assert report["page_count"] == 5
-    assert report["study_count"] == 7
+    assert report["page_count"] == 19
+    assert report["study_count"] == 8
+    assert report["claim_count"] == 44
+    assert report["passing_run_count"] == 15
+    assert report["publication_count"] == 2
     assert report["internal_links_passed"] is True
-    index = (tmp_path / "site/index.html").read_text(encoding="utf-8")
-    assert "38.35%" in index
-    assert "{{" not in index
-    problems = (tmp_path / "site/open-problems.html").read_text(encoding="utf-8")
-    assert problems.count('class="badge open"') == 7
-    results = (tmp_path / "site/results.html").read_text(encoding="utf-8")
-    assert "16/25" in results
-    assert "7/10" in results
-    assert "5/9" in results and "171/308" in results
-    assert "2/3" in results and "3/4" in results
-    assert "1/0/8/2/2/0" in results
-    assert "survives only anonymous-symmetric selection" in results
-    assert "8/9" in results and "31/36" in results
-    assert "Same complete moments" in results
-    assert "3/4" in results and "2/3" in results
-    assert "839" in results and "163" in results and "111" in results
-    assert "bounded null, not a theorem" in results.lower()
-    assert "T<sub>8</sub>(16,1/5) = 325089/390625" in results
-    assert "globally optimal" in results
-    generated = (tmp_path / "site/data/results.json").read_text(encoding="utf-8")
-    assert "20260721T012208Z_DD-000_8e4b55e2_e8321d1048" in generated
-    assert "20260721T022739Z_DD-001_358cb1eb_cd16846ba5" in generated
-    assert "20260721T025802Z_DD-002_73a85c71_b0e5b6dc49" in generated
-    assert "20260721T032358Z_DD-003_84238b76_2cbc13e66a" in generated
+    assert report["public_safety_passed"] is True
+
+    research = (output / "research.html").read_text(encoding="utf-8")
+    assert "DD-000" in research and "DD-007" in research
+    assert "complete-bounded-study" in research
+    assert 'href="research/dd-004.html"' in research
+    assert (output / "research/dd-000.html").is_file()
+    assert (output / "research/dd-007.html").is_file()
+
+    claims = (output / "claims.html").read_text(encoding="utf-8")
+    assert 'id="DD-C-0001"' in claims
+    assert 'id="DD-C-0044"' in claims
+    assert "unvalidated values" in claims
+
+    runs = json.loads((output / "data/runs.json").read_text(encoding="utf-8"))["runs"]
+    assert all(run["validation_status"] == "passed" for run in runs)
+    assert all("/Users/" not in run["manifest_path"] for run in runs)
+
+    publications = json.loads((output / "data/publications.json").read_text(encoding="utf-8"))[
+        "publications"
+    ]
+    for publication in publications:
+        download = output / publication["download"]
+        assert download.is_file()
+        assert download.stat().st_size > 0
+
+    routes = json.loads((output / "data/routes.json").read_text(encoding="utf-8"))["routes"]
+    assert {route["path"] for route in routes} == {
+        str(path.relative_to(output)) for path in output.glob("**/*.html")
+    }
+    assert (output / "robots.txt").is_file()
+    assert (output / "sitemap.xml").is_file()
 
 
-def test_primary_text_colors_exceed_wcag_aa() -> None:
-    assert _contrast("#0b0b0b", "#f9f9f7") >= 4.5
-    assert _contrast("#52514e", "#f9f9f7") >= 4.5
-    assert _contrast("#706f69", "#f9f9f7") >= 4.5
-    assert _contrast("#ffffff", "#0d0d0d") >= 4.5
-    assert _contrast("#c3c2b7", "#0d0d0d") >= 4.5
-    assert _contrast("#aaa89f", "#0d0d0d") >= 4.5
+def test_research_library_rejects_missing_public_metadata(tmp_path: Path) -> None:
+    copied = tmp_path / "repo"
+    copied.mkdir()
+    for name in [
+        "claims",
+        "results",
+        "studies",
+        "papers",
+        "reports",
+        "site",
+        "src",
+        "experiments",
+    ]:
+        source = ROOT / name
+        target = copied / name
+        if source.is_dir():
+            shutil.copytree(source, target)
+    missing = copied / "studies/DD-004-sequential-discovery/public.yml"
+    missing.unlink()
+    try:
+        build(copied, copied / "dist")
+    except RuntimeError as error:
+        assert "missing public metadata" in str(error)
+    else:
+        raise AssertionError("missing public metadata was accepted")

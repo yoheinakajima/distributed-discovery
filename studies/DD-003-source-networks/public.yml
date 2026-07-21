@@ -1,0 +1,8 @@
+study_id: DD-003
+title: Effective Channels
+slug: dd-003
+phase: complete-bounded-study
+summary: Exact source-network censuses and a heterogeneous pairwise-moment counterexample.
+public_artifacts:
+  - path: studies/DD-003-source-networks/report.md
+    description: Source-network evidence report
