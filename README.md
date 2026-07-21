@@ -16,8 +16,8 @@ are [`docs/current-state.md`](docs/current-state.md) and
 [`claims/claims.yml`](claims/claims.yml) under the
 [`claim-status policy`](docs/claim-status-policy.md); studies are indexed in
 [`studies/index.md`](studies/index.md). DD-007 is synthetic-only. Program V2's
-DD-008A and DD-006B are merged; DD-009 has a completed local exact bounded
-Architecture Atlas. No real-data work is authorized.
+DD-008A, DD-006B, and the exact bounded DD-009 Architecture Atlas are merged
+and deployed. No real-data work is authorized.
 
 ## Setup and common commands
 
