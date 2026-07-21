@@ -1,0 +1,11 @@
+{
+  "all_common_trap_width": "p*(1-p)/N",
+  "classification_rows": 126,
+  "direct_payoff_checks": 84,
+  "frozen_dd008a_rows_reproduced": 126,
+  "general_n_result": "strict-private-threshold-monotonicity-and-count-characterization",
+  "monotonicity_kernel_checks": 16368,
+  "passed": true,
+  "threshold_rows": 105,
+  "universal_underacquisition": "refuted-by-exact-interior-counterexample"
+}

@@ -38,3 +38,11 @@ The DD-011 Experimental Design and Power run is
 response scenarios, 384 power/MDE rows, 384,000 Monte Carlo draws, all retained
 calibration failures, four exact limiting-model checks, and separate
 recomputation/corruption evidence supporting DD-C-0056. It contains no human data.
+
+The DD-008B Common-Source Analysis run is
+`verified/20260721T192412Z_DD-008B_649deb08_29dbeaf3a9`. It preserves 105 exact
+private/planner threshold rows, reproduces all 126 frozen DD-008A classifications,
+matches 84 separately enumerated payoff margins, checks 16,368 proof-kernel
+instances, and rejects two corruptions. It supports the general finite-`N`
+threshold theorem DD-C-0057 and the exact universal-under-acquisition
+counterexample DD-C-0058.

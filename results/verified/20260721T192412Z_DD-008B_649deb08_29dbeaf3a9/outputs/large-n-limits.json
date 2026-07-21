@@ -1,0 +1,77 @@
+[
+  {
+    "accuracy": "1/2",
+    "k": 0,
+    "private_threshold_limit": "1/4"
+  },
+  {
+    "accuracy": "2/3",
+    "k": 0,
+    "private_threshold_limit": "2/9"
+  },
+  {
+    "accuracy": "3/4",
+    "k": 0,
+    "private_threshold_limit": "3/16"
+  },
+  {
+    "accuracy": "1/2",
+    "k": 1,
+    "private_threshold_limit": "3/16"
+  },
+  {
+    "accuracy": "2/3",
+    "k": 1,
+    "private_threshold_limit": "4/27"
+  },
+  {
+    "accuracy": "3/4",
+    "k": 1,
+    "private_threshold_limit": "15/128"
+  },
+  {
+    "accuracy": "1/2",
+    "k": 2,
+    "private_threshold_limit": "7/48"
+  },
+  {
+    "accuracy": "2/3",
+    "k": 2,
+    "private_threshold_limit": "26/243"
+  },
+  {
+    "accuracy": "3/4",
+    "k": 2,
+    "private_threshold_limit": "21/256"
+  },
+  {
+    "accuracy": "1/2",
+    "k": 3,
+    "private_threshold_limit": "15/128"
+  },
+  {
+    "accuracy": "2/3",
+    "k": 3,
+    "private_threshold_limit": "20/243"
+  },
+  {
+    "accuracy": "3/4",
+    "k": 3,
+    "private_threshold_limit": "255/4096"
+  },
+  {
+    "accuracy": "1/2",
+    "k": 4,
+    "private_threshold_limit": "31/320"
+  },
+  {
+    "accuracy": "2/3",
+    "k": 4,
+    "private_threshold_limit": "242/3645"
+  },
+  {
+    "accuracy": "3/4",
+    "k": 4,
+    "private_threshold_limit": "1023/20480"
+  }
+]

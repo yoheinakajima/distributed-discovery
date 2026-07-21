@@ -14,20 +14,20 @@ Owner authorization now requires sequential completion of DD-010 DiscoveryBench,
 DD-011 Experimental Design and Power, the DD-008B Common-Source analytic gate,
 a focused *Common-Source Trap* working paper, public benchmark/experiment Labs,
 and a final Program V2 handoff. The live baseline is clean `main`
-`62d4cd1c0819ae4a16330b22b059ddfbd86107d6`; CI `29858324779` and Pages
-`29858324517` passed, all eight DD-010 public routes return HTTP 200, and no
+`9caf0f975d176aa01e4d6e6e02f1555c1530c44e`; CI `29860525523` and Pages
+`29860525526` passed, all DD-010 and DD-011 public routes return HTTP 200, and no
 pull request is open. The only settings blocker remains issue #32; the previously required
 single `gh auth status` probe was already exhausted and is not repeated.
 
-The active milestone is DD-011 under issue #69 and branch
-`research/dd011-experiment-kit`. The primary design is capped at 24 treatment
-cells, eight versioned synthetic response scenarios, six sample sizes, and
-1,000 Monte Carlo replications per registered power cell, under a 10-minute and
-2-GB cap. Hypotheses, estimands, multiplicity families, exclusions, seeds, and
-analysis rules are frozen before the primary run. No recruitment, human data,
-deployment, empirical-behavior claim, or real-world power claim is authorized.
-Subsequent milestones become active only after the prior
-issue/PR/CI/Pages/live-route gate passes.
+The active milestone is DD-008B under issue #71 and branch
+`research/dd008b-common-source-analysis`. It is an analytic theorem-development
+gate: derive the general source-count payoff and deviation margins, check fixed
+and general `N`, boundary and interior counts, and large-`N` behavior, then
+compare every formula with DD-008, the DD-008A `N=2,...,8` exact grid, and a
+separate tiny-state enumerator. Executable audits are capped at ten minutes and
+2 GB; exact rational arithmetic is required. A theorem, boundary theorem,
+monotonicity result, counterexample, conjecture, or documented barrier is valid,
+but DD-008A must not be relabeled as a general theorem.
 
 Progress:
 
@@ -39,18 +39,22 @@ Progress:
 - [x] DD-011 issue, bounded design, literature record, hypotheses/estimands,
   randomization, synthetic power run, verifier, materials, ethics boundary,
   and site. Primary run `20260721T185647Z_DD-011_fa0271d9_fcaa647c55` and
-  DD-C-0056 pass locally; PR/CI/Pages/live-route gates remain.
-- [ ] DD-008B analytic gate with exact finite/formula agreement and an honest
-  theorem, counterexample, conjecture, or documented barrier outcome.
+  DD-C-0056 pass; PR #70 squash-merged as `9caf0f97`, post-merge CI/Pages
+  passed, all eight live experiment routes returned HTTP 200, and issue #69
+  closed.
+- [x] DD-008B analytic gate: general finite-N private-threshold monotonicity and
+  equilibrium-count theorem, exact all-common trap width `p(1-p)/N`, and an
+  exact N=3 interior over-acquisition counterexample. Primary run
+  `20260721T192412Z_DD-008B_649deb08_29dbeaf3a9`; DD-C-0057/DD-C-0058 pass
+  locally, with PR/CI/Pages/live-route gates remaining.
 - [ ] Focused Common-Source Trap paper with source-generated figures/tables,
   deterministic PDF, citation audit, all-page Poppler review, merge, and Pages.
 - [ ] Program V2 site/Lab integration and final acceptance/handoff.
 
-Recovery: inspect `git status --short --branch`; resume DD-011 integration from
-`studies/DD-011-experimental-design/report.md`; never rerun the preserved primary
-run. The exact next command is `distributed-discovery experiment verify
-20260721T185647Z_DD-011_fa0271d9_fcaa647c55`, followed by `make verify && make
-site` before PR promotion.
+Recovery: inspect `git status --short --branch`; resume DD-008B release from
+`studies/DD-008B-common-source-analysis/report.md`; never rerun the preserved
+DD-008A, DD-008B, or DD-011 primary runs. The exact next command is `make verify
+&& make papers && make site` before PR promotion.
 
 ### Program V2 baseline (active, 2026-07-21)
 

@@ -1,0 +1,36 @@
+{
+  "command": "make dd008b-analysis",
+  "config_hash_sha256": "29dbeaf3a989ac8062e882bf4163e0123c9c11b134e5ae99aef68c066cad4fe5",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-21T19:24:13.045928Z",
+  "exit_status": 0,
+  "git_commit": "649deb08bd2fcbaa88e22a6078a4a9d2e1e0b011",
+  "git_dirty": false,
+  "input_hashes": {
+    "results/verified/20260721T163030Z_DD-008A_8b70668b_06307caab4/outputs/n-agent-census.json": "6df75b7bf2b1f03687d4182ab4e5ab91711d279777bee66769aa7461bf558e7b",
+    "src/distributed_discovery/acquisition/common_source_analysis.py": "a29edec8ce8cc056a42bf662b88168e21f0920cd0d38f1f288c21c69baa8e616",
+    "src/distributed_discovery/acquisition/common_source_study.py": "cda5fe6138efcc8db83d01ba554ad950ccfd524e5f43e0b2f9d7d9c82596fd2b",
+    "src/distributed_discovery/acquisition/common_source_verification.py": "70fce6247faef7809a597164ab5d2a5d92eb4aba53dc0fff5f7fe3100a09e75b",
+    "studies/DD-008B-common-source-analysis/configs/audit.yml": "0be838be3794ecab2f63c227693673ef5944b6959ca0aed6430779a5da7c1d8f"
+  },
+  "outputs": {
+    "outputs/all-common-boundaries.json": "9f655a16fb3e411a26244ef689c11c8f7b3c48622a693d1908579cce790f568c",
+    "outputs/classifications.json": "c18614b874691b96d8af83ae4a6a12f109d61fb8a5a76cb45ca6390954d58089",
+    "outputs/corruption-tests.json": "f735679dcbc2a5549e8cfef7b7eb3c3413ecbe4d83ef579a01e3f7835cdb96aa",
+    "outputs/counterexamples.json": "6100656740f015200ab52298933b7b6610ba8b75574c2cad26e108d2753859bc",
+    "outputs/large-n-limits.json": "31e1b843a65563a53bd499afac9fda3e4dec5782b4417274460bc01ea0624985",
+    "outputs/summary.json": "a877471e90750a38b48d37c9d37d6e9dfca05bb6f9bdb90217f36b908381465e",
+    "outputs/thresholds.json": "a9d7c5143d758e6dca919734ae934dab3f02b23a3fe07c609113834815760ae6",
+    "outputs/verification.json": "a877471e90750a38b48d37c9d37d6e9dfca05bb6f9bdb90217f36b908381465e"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "run_id": "20260721T192412Z_DD-008B_649deb08_29dbeaf3a9",
+  "schema_version": 1,
+  "started_utc": "2026-07-21T19:24:12.357010Z",
+  "study_id": "DD-008B",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

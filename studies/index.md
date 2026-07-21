@@ -12,6 +12,7 @@
 | DD-007 | Empirical Discovery Audits | complete bounded synthetic study | No real-data use without a data, ethics, and identification review |
 | DD-008 | Endogenous Evidence Acquisition | complete bounded study | Preserve the two-agent Common-Source Trap boundary; N-agent work is DD-008A |
 | DD-008A | N-Agent Endogenous Evidence Acquisition | complete bounded study | Preserve the N=2 through 8 exact accounting regression |
+| DD-008B | Common-Source Analysis | complete bounded study | Preserve the general-N threshold theorem and interior over-acquisition counterexample |
 | DD-006B | Joint Truthful Discovery Mechanisms | complete bounded study | Preserve strict subsidized rows and the hidden-action boundary |
 | DD-009 | Discovery Architecture Atlas | complete bounded study | Preserve the 288-cell validity registry and 20 coherent exact cells |
 | DD-010 | DiscoveryBench | complete bounded study | Preserve v1 exact golden and information-boundary regressions |

@@ -1,0 +1,5 @@
+study_id: DD-008B
+status: complete-bounded-study
+evidence_status: general-n-theorem-with-independent-finite-audit-and-exact-negative-result
+next_action: preserve the theorem and counterexample regressions; use them with explicit scope in the Common-Source Trap paper
+updated_utc: 2026-07-21T19:24:12Z

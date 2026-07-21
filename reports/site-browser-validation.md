@@ -20,6 +20,7 @@ This is a bounded practical browser check, not a claim of WCAG conformance.
 | DD-011 Lab filter | The labelled native scenario selector and polite live region show exactly 48 rows for either `S1-rational` or `S8-learning`, with zero rows from another scenario |
 | DD-011 mobile 390 × 844 | Main content remains 350 px wide; the 514 px power table scrolls within its 350 px container and document-level horizontal overflow is zero |
 | DD-011 no-JS | Generated source contains all 384 power rows plus a `noscript` explanation; the scenario filter is optional enhancement only |
+| DD-008B research route | The generated page loads over HTTP with one H1, ordered H2/H3 hierarchy, both scoped claims, the passing immutable run, all three public-source links, local CSS/JS only, and zero desktop horizontal overflow at 1280 px |
 
 The browser check complements the automated site builder tests. It does not test
 assistive technology combinations or claim a complete accessibility audit.

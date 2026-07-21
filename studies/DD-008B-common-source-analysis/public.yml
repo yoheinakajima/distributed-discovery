@@ -1,0 +1,12 @@
+study_id: DD-008B
+title: Common-Source Analysis
+slug: dd-008b
+phase: complete-bounded-study
+summary: General-N source-choice threshold theorem with a bounded independent audit and exact interior counterexample.
+public_artifacts:
+  - path: studies/DD-008B-common-source-analysis/proof.md
+    description: Human-readable derivation and scope limits
+  - path: studies/DD-008B-common-source-analysis/report.md
+    description: Verification report
+  - path: results/verified/20260721T192412Z_DD-008B_649deb08_29dbeaf3a9/outputs/summary.json
+    description: Exact analytic-audit summary
