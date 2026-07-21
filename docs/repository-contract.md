@@ -6,7 +6,10 @@
 
 ## Research outputs
 
-Every output names one study ID (`DD-000`–`DD-007`). Generated numerical claims cite immutable run IDs. Public-facing sources may hide internal IDs only if nearby source comments or metadata retain them. Source-of-truth data generates every displayed number.
+Every output names one registered study ID. Generated numerical claims cite
+immutable run IDs. Public-facing sources may hide internal IDs only if nearby
+source comments or metadata retain them. Source-of-truth data generates every
+displayed number.
 
 Claims use `claims/claims.yml`, conform to `claims/schema.json`, and follow `docs/claim-status-policy.md`. Definitions, identities, sourced results, proofs, exact computations, reproductions, observations, Monte Carlo estimates, conjectures, questions, hypotheses, and negative results remain distinct.
 

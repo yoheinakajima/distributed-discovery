@@ -1,5 +1,10 @@
 # Final handoff
 
+> This is historical handoff material. For the active program, begin with
+> [`docs/current-state.md`](../docs/current-state.md) and
+> [`docs/current-roadmap.md`](../docs/current-roadmap.md). Program V1 is
+> complete through DD-008; Program V2 is registered but not yet executed.
+
 The complete continuation program through DD-007 is integrated. The current extension record is [`research-program-integration.md`](research-program-integration.md), the broader historical record is [`project-status.md`](project-status.md), and the durable restart history is [`../plans/MASTER_EXEC_PLAN.md`](../plans/MASTER_EXEC_PLAN.md).
 
 The frozen canonical zero-communication private-team optimum is exactly `325089/390625`, because the alignment-preserving upper certificate meets direct clue-following. The prior pooled top-eight value `860391662035297/1001129150390625` remains a valid organizational benchmark but is no longer the best private-team upper bound.

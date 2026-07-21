@@ -1,5 +1,12 @@
 # Project status and final continuation handoff
 
+> Program V2 baseline (2026-07-21): Program V1 is complete through DD-008 on
+> `ae8b52c098d358afc63948b7a54d2245cafd7438`: 51 claims, 21 passing runs among
+> 24 manifests, 111 tests, three papers, and 26 public routes. Current
+> navigation is `docs/current-state.md` and `docs/current-roadmap.md`. DD-008A
+> and DD-006B are registered future work; DD-007 remains synthetic-only and no
+> real-data work is authorized.
+
 > Current-status addendum (2026-07-21): PRs #36, #38, #40, #42, #43, and #45
 > are merged on `main` at `29c37e347a4cbc74a84cd3a23e4105789f7309e9`.
 > DD-004 through DD-007 are complete bounded studies; DD-007 is synthetic-only.
