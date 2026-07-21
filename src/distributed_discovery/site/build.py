@@ -319,6 +319,7 @@ def _page(title: str, description: str, body: str, current: str) -> str:
         ("Claims", "claims.html"),
         ("Evidence", "evidence.html"),
         ("Benchmark", "benchmark.html"),
+        ("Experiment kit", "experiment-kit.html"),
         ("Open questions", "open-problems.html"),
         ("Ideas", "ideas.html"),
         ("Repo", REPOSITORY_URL),
@@ -530,6 +531,155 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
     schema = root / "studies/DD-010-discoverybench/schemas/task-v1.schema.json"
     (output / "downloads").mkdir(exist_ok=True)
     shutil.copy2(schema, output / "downloads/discoverybench-task-v1.schema.json")
+    return {"run_id": run_id, "summary": summary}
+
+
+def _experiment_pages(root: Path, output: Path) -> dict[str, object]:
+    run = _latest_passing_study_run(root, "DD-011")
+    source = run / "outputs"
+    summary = json.loads((source / "synthetic-summary.json").read_text())
+    design = json.loads((source / "design-registry.json").read_text())
+    treatments = json.loads((source / "treatment-matrix.json").read_text())
+    hypotheses = json.loads((source / "hypotheses.json").read_text())
+    power = json.loads((source / "power-table.json").read_text())
+    calibration = json.loads((source / "calibration-report.json").read_text())
+    manifest = json.loads((run / "manifest.json").read_text())
+    run_id = str(manifest["run_id"])
+    notice = html.escape(str(design["notice"]))
+    warning = f'<aside class="callout" aria-label="No human data warning"><strong>Synthetic package only.</strong> {notice}</aside>'
+    downloads = '<a href="downloads/dd011-preregistration-template.md">preregistration template</a> · <a href="downloads/dd011-participant-instructions.md">participant instructions</a> · <a href="downloads/dd011-researcher-protocol.md">researcher protocol</a> · <a href="downloads/dd011-data-dictionary.md">data dictionary</a> · <a href="downloads/dd011-design-v1.schema.json">design schema</a>'
+    overview = f"""<p class="eyebrow">DD-011 experiment kit</p><h1>Experimental design and conditional power</h1>{warning}<p class="lede">A preregistration-ready, read-only package for a proposed acquisition, disclosure, allocation, and reward experiment. It is not preregistered and no live assignment or data collection service exists.</p><div class="stats"><div class="stat"><span>Treatment cells</span><b>{summary["treatment_cells"]}</b></div><div class="stat"><span>Hypotheses</span><b>{summary["hypotheses"]}</b></div><div class="stat"><span>Power rows</span><b>{summary["power_rows"]}</b></div></div><p>{downloads}</p><section><h2>Inspect the frozen package</h2><ul><li><a href="experiment-kit/hypotheses.html">Hypotheses, outcomes, and estimands</a></li><li><a href="experiment-kit/design.html">Treatment matrix and design alternatives</a></li><li><a href="experiment-kit/power.html">Synthetic power, MDEs, and retained failures</a></li><li><a href="labs/experiment-design.html">Read-only experiment-design Lab</a></li></ul></section><section><h2>Reproduce</h2><p><code>make dd011-experiment</code><br><code>distributed-discovery experiment verify {html.escape(run_id)}</code></p><p>Claim <a href="claims.html#DD-C-0056">DD-C-0056</a> · immutable run <a href="evidence.html">{html.escape(run_id)}</a>.</p></section>"""
+    _write(
+        output,
+        "experiment-kit.html",
+        _page(
+            "Experiment kit",
+            "Synthetic DD-011 experimental design and conditional power package.",
+            overview,
+            "experiment-kit.html",
+        ),
+    )
+
+    hypothesis_rows = "".join(
+        f'<tr><th scope="row">{html.escape(str(row["hypothesis_id"]))}</th><td>{html.escape(str(row["question"]))}</td><td>{html.escape(str(row["treatment_cell"]))} − {html.escape(str(row["control_cell"]))}</td><td>{html.escape(str(row["outcome"]))}</td><td>{html.escape(str(row["estimand"]))}</td><td>{html.escape(str(row["role"]))}</td></tr>'
+        for row in hypotheses
+    )
+    hypothesis_body = f"""<p class="eyebrow"><a href="../experiment-kit.html">Experiment kit</a> / Hypotheses</p><h1>Frozen hypotheses and estimands</h1>{warning}<p class="lede">Hypotheses, directions, models, and multiplicity families were fixed before the primary synthetic run.</p><table class="matrix"><caption>Registered DD-011 hypotheses and ITT contrasts</caption><thead><tr><th>ID</th><th>Question</th><th>Contrast</th><th>Outcome</th><th>Estimand</th><th>Role</th></tr></thead><tbody>{hypothesis_rows}</tbody></table><p><a href="../data/experiment/hypotheses.json">Download hypotheses JSON</a> · <a href="../data/experiment/outcomes.json">Download outcome definitions</a></p>"""
+    _write(
+        output,
+        "experiment-kit/hypotheses.html",
+        _page(
+            "Experiment hypotheses",
+            "Frozen DD-011 hypotheses, outcomes, and estimands.",
+            hypothesis_body,
+            "experiment-kit/hypotheses.html",
+        ),
+    )
+
+    treatment_rows = "".join(
+        f'<tr><th scope="row">{html.escape(str(row["cell_id"]))}</th><td>{html.escape(str(row["acquisition"]))}</td><td>{html.escape(str(row["attribution"]))}</td><td>{html.escape(str(row["disclosure"]))}</td><td>{html.escape(str(row["timing"]))}</td><td>{html.escape(str(row["reward"]))}</td></tr>'
+        for row in treatments
+    )
+    alternative_rows = "".join(
+        f'<tr><th scope="row">{html.escape(str(row["design_id"]))}</th><td>{row["cells"]}</td><td>{html.escape(str(row["estimand_coverage"]))}</td><td>{html.escape(str(row["aliasing"]))}</td><td>{"selected" if row["selected"] else html.escape(str(row["reason"]))}</td></tr>'
+        for row in design["alternatives"]
+    )
+    design_body = f"""<p class="eyebrow"><a href="../experiment-kit.html">Experiment kit</a> / Design</p><h1>Treatment matrix</h1>{warning}<p class="lede">The selected 20-cell fraction covers all eight registered contrasts. Unregistered higher-order interactions remain aliased.</p><table class="matrix"><caption>Comparison of bounded design alternatives</caption><thead><tr><th>Design</th><th>Cells</th><th>Estimand coverage</th><th>Aliasing</th><th>Decision</th></tr></thead><tbody>{alternative_rows}</tbody></table><table class="matrix"><caption>Selected contrast-complete treatment cells</caption><thead><tr><th>Cell</th><th>Acquisition</th><th>Attribution</th><th>Disclosure</th><th>Timing</th><th>Reward</th></tr></thead><tbody>{treatment_rows}</tbody></table><p><a href="../data/experiment/treatments.json">Download treatment JSON</a> · <a href="../data/experiment/randomization.json">Download synthetic assignment manifest</a></p>"""
+    _write(
+        output,
+        "experiment-kit/design.html",
+        _page(
+            "Experiment design",
+            "DD-011 treatment matrix and alternative comparison.",
+            design_body,
+            "experiment-kit/design.html",
+        ),
+    )
+
+    power_rows = "".join(
+        f'<tr data-power-scenario="{html.escape(str(row["scenario_id"]))}" data-power-hypothesis="{html.escape(str(row["hypothesis_id"]))}"><th scope="row">{html.escape(str(row["scenario_id"]))}</th><td>{html.escape(str(row["hypothesis_id"]))}</td><td>{row["sample_size"]}</td><td>{html.escape(str(row["assumed_effect"]))}</td><td>{html.escape(str(row["power"]))} [{html.escape(str(row["power_ci_low"]))}, {html.escape(str(row["power_ci_high"]))}]</td><td>{html.escape(str(row["minimum_detectable_effect"]))}</td></tr>'
+        for row in power
+    )
+    power_body = f"""<p class="eyebrow"><a href="../experiment-kit.html">Experiment kit</a> / Power</p><h1>Conditional synthetic power</h1>{warning}<p class="lede">Every value is a Monte Carlo estimate under a declared response scenario. The {calibration["failure_count"]} failures among {calibration["evaluated_rows"]} rows at sample sizes 640 or more are retained.</p><table class="matrix"><caption>Full registered synthetic power and minimum-detectable-effect grid</caption><thead><tr><th>Scenario</th><th>Hypothesis</th><th>Total N</th><th>Assumed effect</th><th>Power (95% Monte Carlo interval)</th><th>MDE</th></tr></thead><tbody>{power_rows}</tbody></table><p><a href="../data/experiment/power.json">Download power JSON</a> · <a href="../data/experiment/calibration.json">Download retained calibration failures</a></p>"""
+    _write(
+        output,
+        "experiment-kit/power.html",
+        _page(
+            "Synthetic power",
+            "Conditional DD-011 synthetic power, MDEs, and retained failures.",
+            power_body,
+            "experiment-kit/power.html",
+        ),
+    )
+
+    options = "".join(
+        f'<option value="{html.escape(str(row["scenario_id"]))}">{html.escape(str(row["scenario_id"]))} — {html.escape(str(row["label"]))}</option>'
+        for row in design["response_scenarios"]
+    )
+    lab_body = f"""<p class="eyebrow"><a href="../labs.html">Labs</a> / Experiment design</p><h1>Experiment-design Lab</h1>{warning}<p class="lede">Filter the precomputed power grid. This read-only control performs no assignment, recruitment, submission, or external call.</p><section class="lab" data-experiment-lab><label for="experiment-scenario">Response scenario</label><select id="experiment-scenario"><option value="all">All scenarios</option>{options}</select><p id="experiment-status" class="callout" aria-live="polite">Showing all {len(power)} synthetic power rows.</p></section><noscript><p class="callout">JavaScript is off. Every power row remains visible below.</p></noscript><table class="matrix"><caption>Filterable synthetic power and MDE grid</caption><thead><tr><th>Scenario</th><th>Hypothesis</th><th>Total N</th><th>Assumed effect</th><th>Power (95% Monte Carlo interval)</th><th>MDE</th></tr></thead><tbody>{power_rows}</tbody></table><p><a href="../data/experiment/power.json">Download power JSON</a> · <a href="../data/experiment/design.json">Download design JSON</a></p>"""
+    _write(
+        output,
+        "labs/experiment-design.html",
+        _page(
+            "Experiment-design Lab",
+            "Read-only DD-011 synthetic power explorer.",
+            lab_body,
+            "labs/experiment-design.html",
+        ),
+    )
+
+    data = {
+        "summary.json": {
+            "schema_version": 1,
+            "run_id": run_id,
+            "summary": summary,
+            "notice": design["notice"],
+        },
+        "design.json": {"schema_version": 1, "run_id": run_id, "design": design},
+        "hypotheses.json": {"schema_version": 1, "run_id": run_id, "hypotheses": hypotheses},
+        "outcomes.json": {"schema_version": 1, "run_id": run_id, "outcomes": design["outcomes"]},
+        "treatments.json": {"schema_version": 1, "run_id": run_id, "treatments": treatments},
+        "power.json": {"schema_version": 1, "run_id": run_id, "power": power},
+        "calibration.json": {"schema_version": 1, "run_id": run_id, "calibration": calibration},
+        "randomization.json": {
+            "schema_version": 1,
+            "run_id": run_id,
+            "randomization": json.loads((source / "randomization-manifest.json").read_text()),
+        },
+        "synthetic-sample.json": {
+            "schema_version": 1,
+            "run_id": run_id,
+            "rows": json.loads((source / "synthetic-sample.json").read_text()),
+        },
+        "exact-checks.json": {
+            "schema_version": 1,
+            "run_id": run_id,
+            "checks": json.loads((source / "exact-model-checks.json").read_text()),
+        },
+    }
+    for name, value in data.items():
+        _write(
+            output, f"data/experiment/{name}", json.dumps(value, indent=2, sort_keys=True) + "\n"
+        )
+    downloads_dir = output / "downloads"
+    downloads_dir.mkdir(exist_ok=True)
+    materials = root / "studies/DD-011-experimental-design/materials"
+    for source_name, public_name in {
+        "preregistration-template.md": "dd011-preregistration-template.md",
+        "participant-instructions.md": "dd011-participant-instructions.md",
+        "researcher-protocol.md": "dd011-researcher-protocol.md",
+        "data-dictionary.md": "dd011-data-dictionary.md",
+        "comprehension-checks.md": "dd011-comprehension-checks.md",
+        "treatment-screens.md": "dd011-treatment-screens.md",
+        "task-examples.md": "dd011-task-examples.md",
+        "analysis-plan.md": "dd011-analysis-plan.md",
+        "NO-HUMAN-DATA.md": "dd011-no-human-data.md",
+    }.items():
+        shutil.copy2(materials / source_name, downloads_dir / public_name)
+    shutil.copy2(
+        root / "studies/DD-011-experimental-design/schemas/design-v1.schema.json",
+        downloads_dir / "dd011-design-v1.schema.json",
+    )
     return {"run_id": run_id, "summary": summary}
 
 
@@ -766,6 +916,7 @@ def _render(
         for slug, title, claim, _, description in lab_specs
     )
     lab_cards += '<article class="card"><p class="eyebrow">Interactive lab</p><h2><a href="labs/benchmark.html">DiscoveryBench</a></h2><p>Filter exact golden task/protocol rows and inspect metric vectors and provenance.</p><p><a href="claims.html#DD-C-0055">DD-C-0055</a> · <a href="evidence.html">passing run</a></p></article>'
+    lab_cards += '<article class="card"><p class="eyebrow">Interactive lab</p><h2><a href="labs/experiment-design.html">Experiment design</a></h2><p>Filter conditional synthetic power rows and inspect the frozen no-human-data design.</p><p><a href="claims.html#DD-C-0056">DD-C-0056</a> · <a href="evidence.html">passing run</a></p></article>'
     labs_body = f"""<p class="eyebrow">Public labs</p><h1>Discovery Stack Labs</h1><p class="lede">Small browser-native controls expose bounded fixtures. Every lab has a readable fallback and links to the claim ledger and immutable passing run; controls never call an external API.</p><section class="grid-2">{lab_cards}</section>"""
     _write(
         output,
@@ -785,6 +936,7 @@ def _render(
             output, f"labs/{slug}.html", _page(title, description, lab_body, f"labs/{slug}.html")
         )
     _benchmark_pages(root, output)
+    _experiment_pages(root, output)
     _write(
         output,
         "404.html",
@@ -885,6 +1037,7 @@ def build(root: Path, output: Path) -> dict[str, Any]:
             "mechanisms_data": "data/labs/mechanisms.json",
             "atlas_data": "data/labs/atlas.json",
             "benchmark_data": "data/benchmark/results.json",
+            "experiment_data": "data/experiment/power.json",
         },
         "labs/mechanisms.json": {
             "schema_version": 1,

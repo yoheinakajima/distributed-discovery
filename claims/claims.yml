@@ -1155,3 +1155,24 @@ claims:
     first_added: "2026-07-21"
     last_checked: "2026-07-21"
     notes: The optional synthetic suite uses eight fixed seeds and 8000 total Bernoulli draws; its mean 0.65737500 is an estimated calibration diagnostic, not an exact or empirical result.
+  - id: DD-C-0056
+    study_id: DD-011
+    short_name: synthetic-experiment-design-power-reproduction
+    statement: DD-011's registered 20-cell fractional design reproducibly assigns 640 synthetic IDs and evaluates 384 power rows (eight hypotheses, eight response scenarios, and six sample sizes) with 1,000 Monte Carlo replications each; all rows are separately recomputed, all eight rational-response effects reach estimated power of at least 0.80 by total sample size 960, and 140 of the 192 rows at sample sizes 640 or greater remain retained calibration failures.
+    scope: The frozen contrast-complete-20 design, registered assumed effects, normal sampling approximation, conservative Bonferroni family alpha, session size eight, explicit attrition/noise/ICC scenario multipliers, fixed seeds, and total sample sizes 200 through 960; this is synthetic conditional power, not a human experiment, empirical behavioral model, recruitment target, real-world feasibility result, or evidence that any treatment works on people.
+    claim_type: monte-carlo-estimate
+    status: verified
+    source_type: seeded-synthetic-power-grid-with-separate-random-stream-recomputation
+    source_reference: results/verified/20260721T185647Z_DD-011_fa0271d9_fcaa647c55/outputs/power-table.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/experimental_design/model.py, src/distributed_discovery/experimental_design/power.py, src/distributed_discovery/experimental_design/verification.py]
+    run_ids: [20260721T185647Z_DD-011_fa0271d9_fcaa647c55]
+    test_paths: [tests/unit/test_experimental_design.py, tests/integration/test_experimental_design_cli.py]
+    exactness_basis: null
+    rounding_rule: power and Wilson interval endpoints are reported to six decimals from exact Monte Carlo rejection counts; MDE values are reported to six decimals from the registered normal approximation
+    dependencies: [DD-C-0051, DD-C-0052, DD-C-0053, DD-C-0054]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: Four exact project-model cells are recovered only as synthetic ground-truth checks. No participant was recruited, no human data were collected, and no experiment was conducted.

@@ -1,0 +1,4497 @@
+{
+  "allocation_concealment": "Generate the signed manifest before any outcome; release only the next opaque synthetic assignment after the identifier is enrolled.",
+  "assignments": [
+    {
+      "assignment_order": 1,
+      "block": "B1",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0001",
+      "session_id": "SYN-S001"
+    },
+    {
+      "assignment_order": 2,
+      "block": "B3",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0002",
+      "session_id": "SYN-S001"
+    },
+    {
+      "assignment_order": 3,
+      "block": "B1",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0003",
+      "session_id": "SYN-S001"
+    },
+    {
+      "assignment_order": 4,
+      "block": "B2",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0004",
+      "session_id": "SYN-S001"
+    },
+    {
+      "assignment_order": 5,
+      "block": "B2",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0005",
+      "session_id": "SYN-S001"
+    },
+    {
+      "assignment_order": 6,
+      "block": "B4",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0006",
+      "session_id": "SYN-S001"
+    },
+    {
+      "assignment_order": 7,
+      "block": "B3",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0007",
+      "session_id": "SYN-S001"
+    },
+    {
+      "assignment_order": 8,
+      "block": "B2",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0008",
+      "session_id": "SYN-S001"
+    },
+    {
+      "assignment_order": 9,
+      "block": "B1",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0009",
+      "session_id": "SYN-S002"
+    },
+    {
+      "assignment_order": 10,
+      "block": "B4",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0010",
+      "session_id": "SYN-S002"
+    },
+    {
+      "assignment_order": 11,
+      "block": "B4",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0011",
+      "session_id": "SYN-S002"
+    },
+    {
+      "assignment_order": 12,
+      "block": "B3",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0012",
+      "session_id": "SYN-S002"
+    },
+    {
+      "assignment_order": 13,
+      "block": "B3",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0013",
+      "session_id": "SYN-S002"
+    },
+    {
+      "assignment_order": 14,
+      "block": "B3",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0014",
+      "session_id": "SYN-S002"
+    },
+    {
+      "assignment_order": 15,
+      "block": "B4",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0015",
+      "session_id": "SYN-S002"
+    },
+    {
+      "assignment_order": 16,
+      "block": "B2",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0016",
+      "session_id": "SYN-S002"
+    },
+    {
+      "assignment_order": 17,
+      "block": "B3",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0017",
+      "session_id": "SYN-S003"
+    },
+    {
+      "assignment_order": 18,
+      "block": "B3",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0018",
+      "session_id": "SYN-S003"
+    },
+    {
+      "assignment_order": 19,
+      "block": "B4",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0019",
+      "session_id": "SYN-S003"
+    },
+    {
+      "assignment_order": 20,
+      "block": "B4",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0020",
+      "session_id": "SYN-S003"
+    },
+    {
+      "assignment_order": 21,
+      "block": "B1",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0021",
+      "session_id": "SYN-S003"
+    },
+    {
+      "assignment_order": 22,
+      "block": "B4",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0022",
+      "session_id": "SYN-S003"
+    },
+    {
+      "assignment_order": 23,
+      "block": "B1",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0023",
+      "session_id": "SYN-S003"
+    },
+    {
+      "assignment_order": 24,
+      "block": "B2",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0024",
+      "session_id": "SYN-S003"
+    },
+    {
+      "assignment_order": 25,
+      "block": "B2",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0025",
+      "session_id": "SYN-S004"
+    },
+    {
+      "assignment_order": 26,
+      "block": "B3",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0026",
+      "session_id": "SYN-S004"
+    },
+    {
+      "assignment_order": 27,
+      "block": "B1",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0027",
+      "session_id": "SYN-S004"
+    },
+    {
+      "assignment_order": 28,
+      "block": "B4",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0028",
+      "session_id": "SYN-S004"
+    },
+    {
+      "assignment_order": 29,
+      "block": "B1",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0029",
+      "session_id": "SYN-S004"
+    },
+    {
+      "assignment_order": 30,
+      "block": "B1",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0030",
+      "session_id": "SYN-S004"
+    },
+    {
+      "assignment_order": 31,
+      "block": "B3",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0031",
+      "session_id": "SYN-S004"
+    },
+    {
+      "assignment_order": 32,
+      "block": "B1",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0032",
+      "session_id": "SYN-S004"
+    },
+    {
+      "assignment_order": 33,
+      "block": "B4",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0033",
+      "session_id": "SYN-S005"
+    },
+    {
+      "assignment_order": 34,
+      "block": "B3",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0034",
+      "session_id": "SYN-S005"
+    },
+    {
+      "assignment_order": 35,
+      "block": "B4",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0035",
+      "session_id": "SYN-S005"
+    },
+    {
+      "assignment_order": 36,
+      "block": "B4",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0036",
+      "session_id": "SYN-S005"
+    },
+    {
+      "assignment_order": 37,
+      "block": "B3",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0037",
+      "session_id": "SYN-S005"
+    },
+    {
+      "assignment_order": 38,
+      "block": "B3",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0038",
+      "session_id": "SYN-S005"
+    },
+    {
+      "assignment_order": 39,
+      "block": "B3",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0039",
+      "session_id": "SYN-S005"
+    },
+    {
+      "assignment_order": 40,
+      "block": "B4",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0040",
+      "session_id": "SYN-S005"
+    },
+    {
+      "assignment_order": 41,
+      "block": "B3",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0041",
+      "session_id": "SYN-S006"
+    },
+    {
+      "assignment_order": 42,
+      "block": "B4",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0042",
+      "session_id": "SYN-S006"
+    },
+    {
+      "assignment_order": 43,
+      "block": "B2",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0043",
+      "session_id": "SYN-S006"
+    },
+    {
+      "assignment_order": 44,
+      "block": "B4",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0044",
+      "session_id": "SYN-S006"
+    },
+    {
+      "assignment_order": 45,
+      "block": "B2",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0045",
+      "session_id": "SYN-S006"
+    },
+    {
+      "assignment_order": 46,
+      "block": "B2",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0046",
+      "session_id": "SYN-S006"
+    },
+    {
+      "assignment_order": 47,
+      "block": "B2",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0047",
+      "session_id": "SYN-S006"
+    },
+    {
+      "assignment_order": 48,
+      "block": "B4",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0048",
+      "session_id": "SYN-S006"
+    },
+    {
+      "assignment_order": 49,
+      "block": "B1",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0049",
+      "session_id": "SYN-S007"
+    },
+    {
+      "assignment_order": 50,
+      "block": "B3",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0050",
+      "session_id": "SYN-S007"
+    },
+    {
+      "assignment_order": 51,
+      "block": "B3",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0051",
+      "session_id": "SYN-S007"
+    },
+    {
+      "assignment_order": 52,
+      "block": "B1",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0052",
+      "session_id": "SYN-S007"
+    },
+    {
+      "assignment_order": 53,
+      "block": "B3",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0053",
+      "session_id": "SYN-S007"
+    },
+    {
+      "assignment_order": 54,
+      "block": "B3",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0054",
+      "session_id": "SYN-S007"
+    },
+    {
+      "assignment_order": 55,
+      "block": "B4",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0055",
+      "session_id": "SYN-S007"
+    },
+    {
+      "assignment_order": 56,
+      "block": "B2",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0056",
+      "session_id": "SYN-S007"
+    },
+    {
+      "assignment_order": 57,
+      "block": "B2",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0057",
+      "session_id": "SYN-S008"
+    },
+    {
+      "assignment_order": 58,
+      "block": "B3",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0058",
+      "session_id": "SYN-S008"
+    },
+    {
+      "assignment_order": 59,
+      "block": "B4",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0059",
+      "session_id": "SYN-S008"
+    },
+    {
+      "assignment_order": 60,
+      "block": "B2",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0060",
+      "session_id": "SYN-S008"
+    },
+    {
+      "assignment_order": 61,
+      "block": "B4",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0061",
+      "session_id": "SYN-S008"
+    },
+    {
+      "assignment_order": 62,
+      "block": "B2",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0062",
+      "session_id": "SYN-S008"
+    },
+    {
+      "assignment_order": 63,
+      "block": "B4",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0063",
+      "session_id": "SYN-S008"
+    },
+    {
+      "assignment_order": 64,
+      "block": "B3",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0064",
+      "session_id": "SYN-S008"
+    },
+    {
+      "assignment_order": 65,
+      "block": "B2",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0065",
+      "session_id": "SYN-S009"
+    },
+    {
+      "assignment_order": 66,
+      "block": "B2",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0066",
+      "session_id": "SYN-S009"
+    },
+    {
+      "assignment_order": 67,
+      "block": "B2",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0067",
+      "session_id": "SYN-S009"
+    },
+    {
+      "assignment_order": 68,
+      "block": "B3",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0068",
+      "session_id": "SYN-S009"
+    },
+    {
+      "assignment_order": 69,
+      "block": "B3",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0069",
+      "session_id": "SYN-S009"
+    },
+    {
+      "assignment_order": 70,
+      "block": "B2",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0070",
+      "session_id": "SYN-S009"
+    },
+    {
+      "assignment_order": 71,
+      "block": "B4",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0071",
+      "session_id": "SYN-S009"
+    },
+    {
+      "assignment_order": 72,
+      "block": "B2",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0072",
+      "session_id": "SYN-S009"
+    },
+    {
+      "assignment_order": 73,
+      "block": "B1",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0073",
+      "session_id": "SYN-S010"
+    },
+    {
+      "assignment_order": 74,
+      "block": "B3",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0074",
+      "session_id": "SYN-S010"
+    },
+    {
+      "assignment_order": 75,
+      "block": "B3",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0075",
+      "session_id": "SYN-S010"
+    },
+    {
+      "assignment_order": 76,
+      "block": "B4",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0076",
+      "session_id": "SYN-S010"
+    },
+    {
+      "assignment_order": 77,
+      "block": "B3",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0077",
+      "session_id": "SYN-S010"
+    },
+    {
+      "assignment_order": 78,
+      "block": "B2",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0078",
+      "session_id": "SYN-S010"
+    },
+    {
+      "assignment_order": 79,
+      "block": "B1",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0079",
+      "session_id": "SYN-S010"
+    },
+    {
+      "assignment_order": 80,
+      "block": "B1",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0080",
+      "session_id": "SYN-S010"
+    },
+    {
+      "assignment_order": 81,
+      "block": "B1",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0081",
+      "session_id": "SYN-S011"
+    },
+    {
+      "assignment_order": 82,
+      "block": "B4",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0082",
+      "session_id": "SYN-S011"
+    },
+    {
+      "assignment_order": 83,
+      "block": "B3",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0083",
+      "session_id": "SYN-S011"
+    },
+    {
+      "assignment_order": 84,
+      "block": "B4",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0084",
+      "session_id": "SYN-S011"
+    },
+    {
+      "assignment_order": 85,
+      "block": "B4",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0085",
+      "session_id": "SYN-S011"
+    },
+    {
+      "assignment_order": 86,
+      "block": "B1",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0086",
+      "session_id": "SYN-S011"
+    },
+    {
+      "assignment_order": 87,
+      "block": "B3",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0087",
+      "session_id": "SYN-S011"
+    },
+    {
+      "assignment_order": 88,
+      "block": "B2",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0088",
+      "session_id": "SYN-S011"
+    },
+    {
+      "assignment_order": 89,
+      "block": "B4",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0089",
+      "session_id": "SYN-S012"
+    },
+    {
+      "assignment_order": 90,
+      "block": "B4",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0090",
+      "session_id": "SYN-S012"
+    },
+    {
+      "assignment_order": 91,
+      "block": "B2",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0091",
+      "session_id": "SYN-S012"
+    },
+    {
+      "assignment_order": 92,
+      "block": "B3",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0092",
+      "session_id": "SYN-S012"
+    },
+    {
+      "assignment_order": 93,
+      "block": "B4",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0093",
+      "session_id": "SYN-S012"
+    },
+    {
+      "assignment_order": 94,
+      "block": "B3",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0094",
+      "session_id": "SYN-S012"
+    },
+    {
+      "assignment_order": 95,
+      "block": "B4",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0095",
+      "session_id": "SYN-S012"
+    },
+    {
+      "assignment_order": 96,
+      "block": "B1",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0096",
+      "session_id": "SYN-S012"
+    },
+    {
+      "assignment_order": 97,
+      "block": "B3",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0097",
+      "session_id": "SYN-S013"
+    },
+    {
+      "assignment_order": 98,
+      "block": "B1",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0098",
+      "session_id": "SYN-S013"
+    },
+    {
+      "assignment_order": 99,
+      "block": "B1",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0099",
+      "session_id": "SYN-S013"
+    },
+    {
+      "assignment_order": 100,
+      "block": "B1",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0100",
+      "session_id": "SYN-S013"
+    },
+    {
+      "assignment_order": 101,
+      "block": "B2",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0101",
+      "session_id": "SYN-S013"
+    },
+    {
+      "assignment_order": 102,
+      "block": "B3",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0102",
+      "session_id": "SYN-S013"
+    },
+    {
+      "assignment_order": 103,
+      "block": "B3",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0103",
+      "session_id": "SYN-S013"
+    },
+    {
+      "assignment_order": 104,
+      "block": "B2",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0104",
+      "session_id": "SYN-S013"
+    },
+    {
+      "assignment_order": 105,
+      "block": "B2",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0105",
+      "session_id": "SYN-S014"
+    },
+    {
+      "assignment_order": 106,
+      "block": "B4",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0106",
+      "session_id": "SYN-S014"
+    },
+    {
+      "assignment_order": 107,
+      "block": "B2",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0107",
+      "session_id": "SYN-S014"
+    },
+    {
+      "assignment_order": 108,
+      "block": "B4",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0108",
+      "session_id": "SYN-S014"
+    },
+    {
+      "assignment_order": 109,
+      "block": "B4",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0109",
+      "session_id": "SYN-S014"
+    },
+    {
+      "assignment_order": 110,
+      "block": "B1",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0110",
+      "session_id": "SYN-S014"
+    },
+    {
+      "assignment_order": 111,
+      "block": "B1",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0111",
+      "session_id": "SYN-S014"
+    },
+    {
+      "assignment_order": 112,
+      "block": "B2",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0112",
+      "session_id": "SYN-S014"
+    },
+    {
+      "assignment_order": 113,
+      "block": "B1",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0113",
+      "session_id": "SYN-S015"
+    },
+    {
+      "assignment_order": 114,
+      "block": "B3",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0114",
+      "session_id": "SYN-S015"
+    },
+    {
+      "assignment_order": 115,
+      "block": "B4",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0115",
+      "session_id": "SYN-S015"
+    },
+    {
+      "assignment_order": 116,
+      "block": "B3",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0116",
+      "session_id": "SYN-S015"
+    },
+    {
+      "assignment_order": 117,
+      "block": "B3",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0117",
+      "session_id": "SYN-S015"
+    },
+    {
+      "assignment_order": 118,
+      "block": "B1",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0118",
+      "session_id": "SYN-S015"
+    },
+    {
+      "assignment_order": 119,
+      "block": "B4",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0119",
+      "session_id": "SYN-S015"
+    },
+    {
+      "assignment_order": 120,
+      "block": "B2",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0120",
+      "session_id": "SYN-S015"
+    },
+    {
+      "assignment_order": 121,
+      "block": "B2",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0121",
+      "session_id": "SYN-S016"
+    },
+    {
+      "assignment_order": 122,
+      "block": "B3",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0122",
+      "session_id": "SYN-S016"
+    },
+    {
+      "assignment_order": 123,
+      "block": "B1",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0123",
+      "session_id": "SYN-S016"
+    },
+    {
+      "assignment_order": 124,
+      "block": "B1",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0124",
+      "session_id": "SYN-S016"
+    },
+    {
+      "assignment_order": 125,
+      "block": "B2",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0125",
+      "session_id": "SYN-S016"
+    },
+    {
+      "assignment_order": 126,
+      "block": "B1",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0126",
+      "session_id": "SYN-S016"
+    },
+    {
+      "assignment_order": 127,
+      "block": "B3",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0127",
+      "session_id": "SYN-S016"
+    },
+    {
+      "assignment_order": 128,
+      "block": "B1",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0128",
+      "session_id": "SYN-S016"
+    },
+    {
+      "assignment_order": 129,
+      "block": "B1",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0129",
+      "session_id": "SYN-S017"
+    },
+    {
+      "assignment_order": 130,
+      "block": "B2",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0130",
+      "session_id": "SYN-S017"
+    },
+    {
+      "assignment_order": 131,
+      "block": "B4",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0131",
+      "session_id": "SYN-S017"
+    },
+    {
+      "assignment_order": 132,
+      "block": "B2",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0132",
+      "session_id": "SYN-S017"
+    },
+    {
+      "assignment_order": 133,
+      "block": "B1",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0133",
+      "session_id": "SYN-S017"
+    },
+    {
+      "assignment_order": 134,
+      "block": "B3",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0134",
+      "session_id": "SYN-S017"
+    },
+    {
+      "assignment_order": 135,
+      "block": "B2",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0135",
+      "session_id": "SYN-S017"
+    },
+    {
+      "assignment_order": 136,
+      "block": "B2",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0136",
+      "session_id": "SYN-S017"
+    },
+    {
+      "assignment_order": 137,
+      "block": "B2",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0137",
+      "session_id": "SYN-S018"
+    },
+    {
+      "assignment_order": 138,
+      "block": "B3",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0138",
+      "session_id": "SYN-S018"
+    },
+    {
+      "assignment_order": 139,
+      "block": "B2",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0139",
+      "session_id": "SYN-S018"
+    },
+    {
+      "assignment_order": 140,
+      "block": "B3",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0140",
+      "session_id": "SYN-S018"
+    },
+    {
+      "assignment_order": 141,
+      "block": "B2",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0141",
+      "session_id": "SYN-S018"
+    },
+    {
+      "assignment_order": 142,
+      "block": "B1",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0142",
+      "session_id": "SYN-S018"
+    },
+    {
+      "assignment_order": 143,
+      "block": "B4",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0143",
+      "session_id": "SYN-S018"
+    },
+    {
+      "assignment_order": 144,
+      "block": "B1",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0144",
+      "session_id": "SYN-S018"
+    },
+    {
+      "assignment_order": 145,
+      "block": "B1",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0145",
+      "session_id": "SYN-S019"
+    },
+    {
+      "assignment_order": 146,
+      "block": "B3",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0146",
+      "session_id": "SYN-S019"
+    },
+    {
+      "assignment_order": 147,
+      "block": "B4",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0147",
+      "session_id": "SYN-S019"
+    },
+    {
+      "assignment_order": 148,
+      "block": "B4",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0148",
+      "session_id": "SYN-S019"
+    },
+    {
+      "assignment_order": 149,
+      "block": "B1",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0149",
+      "session_id": "SYN-S019"
+    },
+    {
+      "assignment_order": 150,
+      "block": "B3",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0150",
+      "session_id": "SYN-S019"
+    },
+    {
+      "assignment_order": 151,
+      "block": "B3",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0151",
+      "session_id": "SYN-S019"
+    },
+    {
+      "assignment_order": 152,
+      "block": "B4",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0152",
+      "session_id": "SYN-S019"
+    },
+    {
+      "assignment_order": 153,
+      "block": "B4",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0153",
+      "session_id": "SYN-S020"
+    },
+    {
+      "assignment_order": 154,
+      "block": "B3",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0154",
+      "session_id": "SYN-S020"
+    },
+    {
+      "assignment_order": 155,
+      "block": "B4",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0155",
+      "session_id": "SYN-S020"
+    },
+    {
+      "assignment_order": 156,
+      "block": "B4",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0156",
+      "session_id": "SYN-S020"
+    },
+    {
+      "assignment_order": 157,
+      "block": "B2",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0157",
+      "session_id": "SYN-S020"
+    },
+    {
+      "assignment_order": 158,
+      "block": "B1",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0158",
+      "session_id": "SYN-S020"
+    },
+    {
+      "assignment_order": 159,
+      "block": "B3",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0159",
+      "session_id": "SYN-S020"
+    },
+    {
+      "assignment_order": 160,
+      "block": "B3",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0160",
+      "session_id": "SYN-S020"
+    },
+    {
+      "assignment_order": 161,
+      "block": "B4",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0161",
+      "session_id": "SYN-S021"
+    },
+    {
+      "assignment_order": 162,
+      "block": "B1",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0162",
+      "session_id": "SYN-S021"
+    },
+    {
+      "assignment_order": 163,
+      "block": "B2",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0163",
+      "session_id": "SYN-S021"
+    },
+    {
+      "assignment_order": 164,
+      "block": "B2",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0164",
+      "session_id": "SYN-S021"
+    },
+    {
+      "assignment_order": 165,
+      "block": "B2",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0165",
+      "session_id": "SYN-S021"
+    },
+    {
+      "assignment_order": 166,
+      "block": "B4",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0166",
+      "session_id": "SYN-S021"
+    },
+    {
+      "assignment_order": 167,
+      "block": "B4",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0167",
+      "session_id": "SYN-S021"
+    },
+    {
+      "assignment_order": 168,
+      "block": "B3",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0168",
+      "session_id": "SYN-S021"
+    },
+    {
+      "assignment_order": 169,
+      "block": "B4",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0169",
+      "session_id": "SYN-S022"
+    },
+    {
+      "assignment_order": 170,
+      "block": "B3",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0170",
+      "session_id": "SYN-S022"
+    },
+    {
+      "assignment_order": 171,
+      "block": "B2",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0171",
+      "session_id": "SYN-S022"
+    },
+    {
+      "assignment_order": 172,
+      "block": "B2",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0172",
+      "session_id": "SYN-S022"
+    },
+    {
+      "assignment_order": 173,
+      "block": "B2",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0173",
+      "session_id": "SYN-S022"
+    },
+    {
+      "assignment_order": 174,
+      "block": "B2",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0174",
+      "session_id": "SYN-S022"
+    },
+    {
+      "assignment_order": 175,
+      "block": "B2",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0175",
+      "session_id": "SYN-S022"
+    },
+    {
+      "assignment_order": 176,
+      "block": "B4",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0176",
+      "session_id": "SYN-S022"
+    },
+    {
+      "assignment_order": 177,
+      "block": "B4",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0177",
+      "session_id": "SYN-S023"
+    },
+    {
+      "assignment_order": 178,
+      "block": "B1",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0178",
+      "session_id": "SYN-S023"
+    },
+    {
+      "assignment_order": 179,
+      "block": "B1",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0179",
+      "session_id": "SYN-S023"
+    },
+    {
+      "assignment_order": 180,
+      "block": "B4",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0180",
+      "session_id": "SYN-S023"
+    },
+    {
+      "assignment_order": 181,
+      "block": "B3",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0181",
+      "session_id": "SYN-S023"
+    },
+    {
+      "assignment_order": 182,
+      "block": "B3",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0182",
+      "session_id": "SYN-S023"
+    },
+    {
+      "assignment_order": 183,
+      "block": "B1",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0183",
+      "session_id": "SYN-S023"
+    },
+    {
+      "assignment_order": 184,
+      "block": "B3",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0184",
+      "session_id": "SYN-S023"
+    },
+    {
+      "assignment_order": 185,
+      "block": "B4",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0185",
+      "session_id": "SYN-S024"
+    },
+    {
+      "assignment_order": 186,
+      "block": "B3",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0186",
+      "session_id": "SYN-S024"
+    },
+    {
+      "assignment_order": 187,
+      "block": "B3",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0187",
+      "session_id": "SYN-S024"
+    },
+    {
+      "assignment_order": 188,
+      "block": "B1",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0188",
+      "session_id": "SYN-S024"
+    },
+    {
+      "assignment_order": 189,
+      "block": "B3",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0189",
+      "session_id": "SYN-S024"
+    },
+    {
+      "assignment_order": 190,
+      "block": "B4",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0190",
+      "session_id": "SYN-S024"
+    },
+    {
+      "assignment_order": 191,
+      "block": "B4",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0191",
+      "session_id": "SYN-S024"
+    },
+    {
+      "assignment_order": 192,
+      "block": "B4",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0192",
+      "session_id": "SYN-S024"
+    },
+    {
+      "assignment_order": 193,
+      "block": "B1",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0193",
+      "session_id": "SYN-S025"
+    },
+    {
+      "assignment_order": 194,
+      "block": "B2",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0194",
+      "session_id": "SYN-S025"
+    },
+    {
+      "assignment_order": 195,
+      "block": "B2",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0195",
+      "session_id": "SYN-S025"
+    },
+    {
+      "assignment_order": 196,
+      "block": "B2",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0196",
+      "session_id": "SYN-S025"
+    },
+    {
+      "assignment_order": 197,
+      "block": "B3",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0197",
+      "session_id": "SYN-S025"
+    },
+    {
+      "assignment_order": 198,
+      "block": "B2",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0198",
+      "session_id": "SYN-S025"
+    },
+    {
+      "assignment_order": 199,
+      "block": "B3",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0199",
+      "session_id": "SYN-S025"
+    },
+    {
+      "assignment_order": 200,
+      "block": "B2",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0200",
+      "session_id": "SYN-S025"
+    },
+    {
+      "assignment_order": 201,
+      "block": "B1",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0201",
+      "session_id": "SYN-S026"
+    },
+    {
+      "assignment_order": 202,
+      "block": "B1",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0202",
+      "session_id": "SYN-S026"
+    },
+    {
+      "assignment_order": 203,
+      "block": "B4",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0203",
+      "session_id": "SYN-S026"
+    },
+    {
+      "assignment_order": 204,
+      "block": "B3",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0204",
+      "session_id": "SYN-S026"
+    },
+    {
+      "assignment_order": 205,
+      "block": "B1",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0205",
+      "session_id": "SYN-S026"
+    },
+    {
+      "assignment_order": 206,
+      "block": "B1",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0206",
+      "session_id": "SYN-S026"
+    },
+    {
+      "assignment_order": 207,
+      "block": "B3",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0207",
+      "session_id": "SYN-S026"
+    },
+    {
+      "assignment_order": 208,
+      "block": "B4",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0208",
+      "session_id": "SYN-S026"
+    },
+    {
+      "assignment_order": 209,
+      "block": "B4",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0209",
+      "session_id": "SYN-S027"
+    },
+    {
+      "assignment_order": 210,
+      "block": "B4",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0210",
+      "session_id": "SYN-S027"
+    },
+    {
+      "assignment_order": 211,
+      "block": "B3",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0211",
+      "session_id": "SYN-S027"
+    },
+    {
+      "assignment_order": 212,
+      "block": "B1",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0212",
+      "session_id": "SYN-S027"
+    },
+    {
+      "assignment_order": 213,
+      "block": "B3",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0213",
+      "session_id": "SYN-S027"
+    },
+    {
+      "assignment_order": 214,
+      "block": "B2",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0214",
+      "session_id": "SYN-S027"
+    },
+    {
+      "assignment_order": 215,
+      "block": "B4",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0215",
+      "session_id": "SYN-S027"
+    },
+    {
+      "assignment_order": 216,
+      "block": "B2",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0216",
+      "session_id": "SYN-S027"
+    },
+    {
+      "assignment_order": 217,
+      "block": "B3",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0217",
+      "session_id": "SYN-S028"
+    },
+    {
+      "assignment_order": 218,
+      "block": "B1",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0218",
+      "session_id": "SYN-S028"
+    },
+    {
+      "assignment_order": 219,
+      "block": "B2",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0219",
+      "session_id": "SYN-S028"
+    },
+    {
+      "assignment_order": 220,
+      "block": "B4",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0220",
+      "session_id": "SYN-S028"
+    },
+    {
+      "assignment_order": 221,
+      "block": "B3",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0221",
+      "session_id": "SYN-S028"
+    },
+    {
+      "assignment_order": 222,
+      "block": "B1",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0222",
+      "session_id": "SYN-S028"
+    },
+    {
+      "assignment_order": 223,
+      "block": "B1",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0223",
+      "session_id": "SYN-S028"
+    },
+    {
+      "assignment_order": 224,
+      "block": "B2",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0224",
+      "session_id": "SYN-S028"
+    },
+    {
+      "assignment_order": 225,
+      "block": "B1",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0225",
+      "session_id": "SYN-S029"
+    },
+    {
+      "assignment_order": 226,
+      "block": "B2",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0226",
+      "session_id": "SYN-S029"
+    },
+    {
+      "assignment_order": 227,
+      "block": "B3",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0227",
+      "session_id": "SYN-S029"
+    },
+    {
+      "assignment_order": 228,
+      "block": "B3",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0228",
+      "session_id": "SYN-S029"
+    },
+    {
+      "assignment_order": 229,
+      "block": "B2",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0229",
+      "session_id": "SYN-S029"
+    },
+    {
+      "assignment_order": 230,
+      "block": "B2",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0230",
+      "session_id": "SYN-S029"
+    },
+    {
+      "assignment_order": 231,
+      "block": "B4",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0231",
+      "session_id": "SYN-S029"
+    },
+    {
+      "assignment_order": 232,
+      "block": "B4",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0232",
+      "session_id": "SYN-S029"
+    },
+    {
+      "assignment_order": 233,
+      "block": "B4",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0233",
+      "session_id": "SYN-S030"
+    },
+    {
+      "assignment_order": 234,
+      "block": "B3",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0234",
+      "session_id": "SYN-S030"
+    },
+    {
+      "assignment_order": 235,
+      "block": "B1",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0235",
+      "session_id": "SYN-S030"
+    },
+    {
+      "assignment_order": 236,
+      "block": "B1",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0236",
+      "session_id": "SYN-S030"
+    },
+    {
+      "assignment_order": 237,
+      "block": "B4",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0237",
+      "session_id": "SYN-S030"
+    },
+    {
+      "assignment_order": 238,
+      "block": "B1",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0238",
+      "session_id": "SYN-S030"
+    },
+    {
+      "assignment_order": 239,
+      "block": "B3",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0239",
+      "session_id": "SYN-S030"
+    },
+    {
+      "assignment_order": 240,
+      "block": "B3",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0240",
+      "session_id": "SYN-S030"
+    },
+    {
+      "assignment_order": 241,
+      "block": "B1",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0241",
+      "session_id": "SYN-S031"
+    },
+    {
+      "assignment_order": 242,
+      "block": "B4",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0242",
+      "session_id": "SYN-S031"
+    },
+    {
+      "assignment_order": 243,
+      "block": "B4",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0243",
+      "session_id": "SYN-S031"
+    },
+    {
+      "assignment_order": 244,
+      "block": "B3",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0244",
+      "session_id": "SYN-S031"
+    },
+    {
+      "assignment_order": 245,
+      "block": "B4",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0245",
+      "session_id": "SYN-S031"
+    },
+    {
+      "assignment_order": 246,
+      "block": "B4",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0246",
+      "session_id": "SYN-S031"
+    },
+    {
+      "assignment_order": 247,
+      "block": "B4",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0247",
+      "session_id": "SYN-S031"
+    },
+    {
+      "assignment_order": 248,
+      "block": "B2",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0248",
+      "session_id": "SYN-S031"
+    },
+    {
+      "assignment_order": 249,
+      "block": "B3",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0249",
+      "session_id": "SYN-S032"
+    },
+    {
+      "assignment_order": 250,
+      "block": "B1",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0250",
+      "session_id": "SYN-S032"
+    },
+    {
+      "assignment_order": 251,
+      "block": "B1",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0251",
+      "session_id": "SYN-S032"
+    },
+    {
+      "assignment_order": 252,
+      "block": "B2",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0252",
+      "session_id": "SYN-S032"
+    },
+    {
+      "assignment_order": 253,
+      "block": "B1",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0253",
+      "session_id": "SYN-S032"
+    },
+    {
+      "assignment_order": 254,
+      "block": "B4",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0254",
+      "session_id": "SYN-S032"
+    },
+    {
+      "assignment_order": 255,
+      "block": "B4",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0255",
+      "session_id": "SYN-S032"
+    },
+    {
+      "assignment_order": 256,
+      "block": "B1",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0256",
+      "session_id": "SYN-S032"
+    },
+    {
+      "assignment_order": 257,
+      "block": "B3",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0257",
+      "session_id": "SYN-S033"
+    },
+    {
+      "assignment_order": 258,
+      "block": "B4",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0258",
+      "session_id": "SYN-S033"
+    },
+    {
+      "assignment_order": 259,
+      "block": "B1",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0259",
+      "session_id": "SYN-S033"
+    },
+    {
+      "assignment_order": 260,
+      "block": "B1",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0260",
+      "session_id": "SYN-S033"
+    },
+    {
+      "assignment_order": 261,
+      "block": "B1",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0261",
+      "session_id": "SYN-S033"
+    },
+    {
+      "assignment_order": 262,
+      "block": "B3",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0262",
+      "session_id": "SYN-S033"
+    },
+    {
+      "assignment_order": 263,
+      "block": "B1",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0263",
+      "session_id": "SYN-S033"
+    },
+    {
+      "assignment_order": 264,
+      "block": "B2",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0264",
+      "session_id": "SYN-S033"
+    },
+    {
+      "assignment_order": 265,
+      "block": "B1",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0265",
+      "session_id": "SYN-S034"
+    },
+    {
+      "assignment_order": 266,
+      "block": "B1",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0266",
+      "session_id": "SYN-S034"
+    },
+    {
+      "assignment_order": 267,
+      "block": "B2",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0267",
+      "session_id": "SYN-S034"
+    },
+    {
+      "assignment_order": 268,
+      "block": "B1",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0268",
+      "session_id": "SYN-S034"
+    },
+    {
+      "assignment_order": 269,
+      "block": "B2",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0269",
+      "session_id": "SYN-S034"
+    },
+    {
+      "assignment_order": 270,
+      "block": "B4",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0270",
+      "session_id": "SYN-S034"
+    },
+    {
+      "assignment_order": 271,
+      "block": "B4",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0271",
+      "session_id": "SYN-S034"
+    },
+    {
+      "assignment_order": 272,
+      "block": "B2",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0272",
+      "session_id": "SYN-S034"
+    },
+    {
+      "assignment_order": 273,
+      "block": "B2",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0273",
+      "session_id": "SYN-S035"
+    },
+    {
+      "assignment_order": 274,
+      "block": "B3",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0274",
+      "session_id": "SYN-S035"
+    },
+    {
+      "assignment_order": 275,
+      "block": "B4",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0275",
+      "session_id": "SYN-S035"
+    },
+    {
+      "assignment_order": 276,
+      "block": "B3",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0276",
+      "session_id": "SYN-S035"
+    },
+    {
+      "assignment_order": 277,
+      "block": "B3",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0277",
+      "session_id": "SYN-S035"
+    },
+    {
+      "assignment_order": 278,
+      "block": "B1",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0278",
+      "session_id": "SYN-S035"
+    },
+    {
+      "assignment_order": 279,
+      "block": "B2",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0279",
+      "session_id": "SYN-S035"
+    },
+    {
+      "assignment_order": 280,
+      "block": "B2",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0280",
+      "session_id": "SYN-S035"
+    },
+    {
+      "assignment_order": 281,
+      "block": "B1",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0281",
+      "session_id": "SYN-S036"
+    },
+    {
+      "assignment_order": 282,
+      "block": "B1",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0282",
+      "session_id": "SYN-S036"
+    },
+    {
+      "assignment_order": 283,
+      "block": "B2",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0283",
+      "session_id": "SYN-S036"
+    },
+    {
+      "assignment_order": 284,
+      "block": "B1",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0284",
+      "session_id": "SYN-S036"
+    },
+    {
+      "assignment_order": 285,
+      "block": "B1",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0285",
+      "session_id": "SYN-S036"
+    },
+    {
+      "assignment_order": 286,
+      "block": "B3",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0286",
+      "session_id": "SYN-S036"
+    },
+    {
+      "assignment_order": 287,
+      "block": "B2",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0287",
+      "session_id": "SYN-S036"
+    },
+    {
+      "assignment_order": 288,
+      "block": "B1",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0288",
+      "session_id": "SYN-S036"
+    },
+    {
+      "assignment_order": 289,
+      "block": "B2",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0289",
+      "session_id": "SYN-S037"
+    },
+    {
+      "assignment_order": 290,
+      "block": "B3",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0290",
+      "session_id": "SYN-S037"
+    },
+    {
+      "assignment_order": 291,
+      "block": "B1",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0291",
+      "session_id": "SYN-S037"
+    },
+    {
+      "assignment_order": 292,
+      "block": "B3",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0292",
+      "session_id": "SYN-S037"
+    },
+    {
+      "assignment_order": 293,
+      "block": "B1",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0293",
+      "session_id": "SYN-S037"
+    },
+    {
+      "assignment_order": 294,
+      "block": "B3",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0294",
+      "session_id": "SYN-S037"
+    },
+    {
+      "assignment_order": 295,
+      "block": "B2",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0295",
+      "session_id": "SYN-S037"
+    },
+    {
+      "assignment_order": 296,
+      "block": "B4",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0296",
+      "session_id": "SYN-S037"
+    },
+    {
+      "assignment_order": 297,
+      "block": "B3",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0297",
+      "session_id": "SYN-S038"
+    },
+    {
+      "assignment_order": 298,
+      "block": "B1",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0298",
+      "session_id": "SYN-S038"
+    },
+    {
+      "assignment_order": 299,
+      "block": "B1",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0299",
+      "session_id": "SYN-S038"
+    },
+    {
+      "assignment_order": 300,
+      "block": "B2",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0300",
+      "session_id": "SYN-S038"
+    },
+    {
+      "assignment_order": 301,
+      "block": "B4",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0301",
+      "session_id": "SYN-S038"
+    },
+    {
+      "assignment_order": 302,
+      "block": "B1",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0302",
+      "session_id": "SYN-S038"
+    },
+    {
+      "assignment_order": 303,
+      "block": "B4",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0303",
+      "session_id": "SYN-S038"
+    },
+    {
+      "assignment_order": 304,
+      "block": "B2",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0304",
+      "session_id": "SYN-S038"
+    },
+    {
+      "assignment_order": 305,
+      "block": "B2",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0305",
+      "session_id": "SYN-S039"
+    },
+    {
+      "assignment_order": 306,
+      "block": "B2",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0306",
+      "session_id": "SYN-S039"
+    },
+    {
+      "assignment_order": 307,
+      "block": "B3",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0307",
+      "session_id": "SYN-S039"
+    },
+    {
+      "assignment_order": 308,
+      "block": "B3",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0308",
+      "session_id": "SYN-S039"
+    },
+    {
+      "assignment_order": 309,
+      "block": "B2",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0309",
+      "session_id": "SYN-S039"
+    },
+    {
+      "assignment_order": 310,
+      "block": "B1",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0310",
+      "session_id": "SYN-S039"
+    },
+    {
+      "assignment_order": 311,
+      "block": "B2",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0311",
+      "session_id": "SYN-S039"
+    },
+    {
+      "assignment_order": 312,
+      "block": "B2",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0312",
+      "session_id": "SYN-S039"
+    },
+    {
+      "assignment_order": 313,
+      "block": "B2",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0313",
+      "session_id": "SYN-S040"
+    },
+    {
+      "assignment_order": 314,
+      "block": "B4",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0314",
+      "session_id": "SYN-S040"
+    },
+    {
+      "assignment_order": 315,
+      "block": "B4",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0315",
+      "session_id": "SYN-S040"
+    },
+    {
+      "assignment_order": 316,
+      "block": "B3",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0316",
+      "session_id": "SYN-S040"
+    },
+    {
+      "assignment_order": 317,
+      "block": "B2",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0317",
+      "session_id": "SYN-S040"
+    },
+    {
+      "assignment_order": 318,
+      "block": "B4",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0318",
+      "session_id": "SYN-S040"
+    },
+    {
+      "assignment_order": 319,
+      "block": "B4",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0319",
+      "session_id": "SYN-S040"
+    },
+    {
+      "assignment_order": 320,
+      "block": "B3",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0320",
+      "session_id": "SYN-S040"
+    },
+    {
+      "assignment_order": 321,
+      "block": "B2",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0321",
+      "session_id": "SYN-S041"
+    },
+    {
+      "assignment_order": 322,
+      "block": "B1",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0322",
+      "session_id": "SYN-S041"
+    },
+    {
+      "assignment_order": 323,
+      "block": "B3",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0323",
+      "session_id": "SYN-S041"
+    },
+    {
+      "assignment_order": 324,
+      "block": "B1",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0324",
+      "session_id": "SYN-S041"
+    },
+    {
+      "assignment_order": 325,
+      "block": "B3",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0325",
+      "session_id": "SYN-S041"
+    },
+    {
+      "assignment_order": 326,
+      "block": "B4",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0326",
+      "session_id": "SYN-S041"
+    },
+    {
+      "assignment_order": 327,
+      "block": "B3",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0327",
+      "session_id": "SYN-S041"
+    },
+    {
+      "assignment_order": 328,
+      "block": "B4",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0328",
+      "session_id": "SYN-S041"
+    },
+    {
+      "assignment_order": 329,
+      "block": "B2",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0329",
+      "session_id": "SYN-S042"
+    },
+    {
+      "assignment_order": 330,
+      "block": "B4",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0330",
+      "session_id": "SYN-S042"
+    },
+    {
+      "assignment_order": 331,
+      "block": "B2",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0331",
+      "session_id": "SYN-S042"
+    },
+    {
+      "assignment_order": 332,
+      "block": "B4",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0332",
+      "session_id": "SYN-S042"
+    },
+    {
+      "assignment_order": 333,
+      "block": "B3",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0333",
+      "session_id": "SYN-S042"
+    },
+    {
+      "assignment_order": 334,
+      "block": "B3",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0334",
+      "session_id": "SYN-S042"
+    },
+    {
+      "assignment_order": 335,
+      "block": "B1",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0335",
+      "session_id": "SYN-S042"
+    },
+    {
+      "assignment_order": 336,
+      "block": "B1",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0336",
+      "session_id": "SYN-S042"
+    },
+    {
+      "assignment_order": 337,
+      "block": "B4",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0337",
+      "session_id": "SYN-S043"
+    },
+    {
+      "assignment_order": 338,
+      "block": "B3",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0338",
+      "session_id": "SYN-S043"
+    },
+    {
+      "assignment_order": 339,
+      "block": "B3",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0339",
+      "session_id": "SYN-S043"
+    },
+    {
+      "assignment_order": 340,
+      "block": "B4",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0340",
+      "session_id": "SYN-S043"
+    },
+    {
+      "assignment_order": 341,
+      "block": "B3",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0341",
+      "session_id": "SYN-S043"
+    },
+    {
+      "assignment_order": 342,
+      "block": "B4",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0342",
+      "session_id": "SYN-S043"
+    },
+    {
+      "assignment_order": 343,
+      "block": "B2",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0343",
+      "session_id": "SYN-S043"
+    },
+    {
+      "assignment_order": 344,
+      "block": "B3",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0344",
+      "session_id": "SYN-S043"
+    },
+    {
+      "assignment_order": 345,
+      "block": "B2",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0345",
+      "session_id": "SYN-S044"
+    },
+    {
+      "assignment_order": 346,
+      "block": "B2",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0346",
+      "session_id": "SYN-S044"
+    },
+    {
+      "assignment_order": 347,
+      "block": "B4",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0347",
+      "session_id": "SYN-S044"
+    },
+    {
+      "assignment_order": 348,
+      "block": "B4",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0348",
+      "session_id": "SYN-S044"
+    },
+    {
+      "assignment_order": 349,
+      "block": "B1",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0349",
+      "session_id": "SYN-S044"
+    },
+    {
+      "assignment_order": 350,
+      "block": "B4",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0350",
+      "session_id": "SYN-S044"
+    },
+    {
+      "assignment_order": 351,
+      "block": "B3",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0351",
+      "session_id": "SYN-S044"
+    },
+    {
+      "assignment_order": 352,
+      "block": "B3",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0352",
+      "session_id": "SYN-S044"
+    },
+    {
+      "assignment_order": 353,
+      "block": "B2",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0353",
+      "session_id": "SYN-S045"
+    },
+    {
+      "assignment_order": 354,
+      "block": "B4",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0354",
+      "session_id": "SYN-S045"
+    },
+    {
+      "assignment_order": 355,
+      "block": "B1",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0355",
+      "session_id": "SYN-S045"
+    },
+    {
+      "assignment_order": 356,
+      "block": "B3",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0356",
+      "session_id": "SYN-S045"
+    },
+    {
+      "assignment_order": 357,
+      "block": "B4",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0357",
+      "session_id": "SYN-S045"
+    },
+    {
+      "assignment_order": 358,
+      "block": "B1",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0358",
+      "session_id": "SYN-S045"
+    },
+    {
+      "assignment_order": 359,
+      "block": "B3",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0359",
+      "session_id": "SYN-S045"
+    },
+    {
+      "assignment_order": 360,
+      "block": "B3",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0360",
+      "session_id": "SYN-S045"
+    },
+    {
+      "assignment_order": 361,
+      "block": "B3",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0361",
+      "session_id": "SYN-S046"
+    },
+    {
+      "assignment_order": 362,
+      "block": "B1",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0362",
+      "session_id": "SYN-S046"
+    },
+    {
+      "assignment_order": 363,
+      "block": "B4",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0363",
+      "session_id": "SYN-S046"
+    },
+    {
+      "assignment_order": 364,
+      "block": "B3",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0364",
+      "session_id": "SYN-S046"
+    },
+    {
+      "assignment_order": 365,
+      "block": "B4",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0365",
+      "session_id": "SYN-S046"
+    },
+    {
+      "assignment_order": 366,
+      "block": "B4",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0366",
+      "session_id": "SYN-S046"
+    },
+    {
+      "assignment_order": 367,
+      "block": "B3",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0367",
+      "session_id": "SYN-S046"
+    },
+    {
+      "assignment_order": 368,
+      "block": "B3",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0368",
+      "session_id": "SYN-S046"
+    },
+    {
+      "assignment_order": 369,
+      "block": "B4",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0369",
+      "session_id": "SYN-S047"
+    },
+    {
+      "assignment_order": 370,
+      "block": "B3",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0370",
+      "session_id": "SYN-S047"
+    },
+    {
+      "assignment_order": 371,
+      "block": "B3",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0371",
+      "session_id": "SYN-S047"
+    },
+    {
+      "assignment_order": 372,
+      "block": "B3",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0372",
+      "session_id": "SYN-S047"
+    },
+    {
+      "assignment_order": 373,
+      "block": "B2",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0373",
+      "session_id": "SYN-S047"
+    },
+    {
+      "assignment_order": 374,
+      "block": "B4",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0374",
+      "session_id": "SYN-S047"
+    },
+    {
+      "assignment_order": 375,
+      "block": "B1",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0375",
+      "session_id": "SYN-S047"
+    },
+    {
+      "assignment_order": 376,
+      "block": "B4",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0376",
+      "session_id": "SYN-S047"
+    },
+    {
+      "assignment_order": 377,
+      "block": "B4",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0377",
+      "session_id": "SYN-S048"
+    },
+    {
+      "assignment_order": 378,
+      "block": "B4",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0378",
+      "session_id": "SYN-S048"
+    },
+    {
+      "assignment_order": 379,
+      "block": "B4",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0379",
+      "session_id": "SYN-S048"
+    },
+    {
+      "assignment_order": 380,
+      "block": "B4",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0380",
+      "session_id": "SYN-S048"
+    },
+    {
+      "assignment_order": 381,
+      "block": "B3",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0381",
+      "session_id": "SYN-S048"
+    },
+    {
+      "assignment_order": 382,
+      "block": "B1",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0382",
+      "session_id": "SYN-S048"
+    },
+    {
+      "assignment_order": 383,
+      "block": "B4",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0383",
+      "session_id": "SYN-S048"
+    },
+    {
+      "assignment_order": 384,
+      "block": "B4",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0384",
+      "session_id": "SYN-S048"
+    },
+    {
+      "assignment_order": 385,
+      "block": "B3",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0385",
+      "session_id": "SYN-S049"
+    },
+    {
+      "assignment_order": 386,
+      "block": "B4",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0386",
+      "session_id": "SYN-S049"
+    },
+    {
+      "assignment_order": 387,
+      "block": "B4",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0387",
+      "session_id": "SYN-S049"
+    },
+    {
+      "assignment_order": 388,
+      "block": "B2",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0388",
+      "session_id": "SYN-S049"
+    },
+    {
+      "assignment_order": 389,
+      "block": "B3",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0389",
+      "session_id": "SYN-S049"
+    },
+    {
+      "assignment_order": 390,
+      "block": "B4",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0390",
+      "session_id": "SYN-S049"
+    },
+    {
+      "assignment_order": 391,
+      "block": "B3",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0391",
+      "session_id": "SYN-S049"
+    },
+    {
+      "assignment_order": 392,
+      "block": "B1",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0392",
+      "session_id": "SYN-S049"
+    },
+    {
+      "assignment_order": 393,
+      "block": "B4",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0393",
+      "session_id": "SYN-S050"
+    },
+    {
+      "assignment_order": 394,
+      "block": "B2",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0394",
+      "session_id": "SYN-S050"
+    },
+    {
+      "assignment_order": 395,
+      "block": "B2",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0395",
+      "session_id": "SYN-S050"
+    },
+    {
+      "assignment_order": 396,
+      "block": "B4",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0396",
+      "session_id": "SYN-S050"
+    },
+    {
+      "assignment_order": 397,
+      "block": "B3",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0397",
+      "session_id": "SYN-S050"
+    },
+    {
+      "assignment_order": 398,
+      "block": "B3",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0398",
+      "session_id": "SYN-S050"
+    },
+    {
+      "assignment_order": 399,
+      "block": "B2",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0399",
+      "session_id": "SYN-S050"
+    },
+    {
+      "assignment_order": 400,
+      "block": "B1",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0400",
+      "session_id": "SYN-S050"
+    },
+    {
+      "assignment_order": 401,
+      "block": "B1",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0401",
+      "session_id": "SYN-S051"
+    },
+    {
+      "assignment_order": 402,
+      "block": "B3",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0402",
+      "session_id": "SYN-S051"
+    },
+    {
+      "assignment_order": 403,
+      "block": "B1",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0403",
+      "session_id": "SYN-S051"
+    },
+    {
+      "assignment_order": 404,
+      "block": "B1",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0404",
+      "session_id": "SYN-S051"
+    },
+    {
+      "assignment_order": 405,
+      "block": "B2",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0405",
+      "session_id": "SYN-S051"
+    },
+    {
+      "assignment_order": 406,
+      "block": "B4",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0406",
+      "session_id": "SYN-S051"
+    },
+    {
+      "assignment_order": 407,
+      "block": "B4",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0407",
+      "session_id": "SYN-S051"
+    },
+    {
+      "assignment_order": 408,
+      "block": "B1",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0408",
+      "session_id": "SYN-S051"
+    },
+    {
+      "assignment_order": 409,
+      "block": "B3",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0409",
+      "session_id": "SYN-S052"
+    },
+    {
+      "assignment_order": 410,
+      "block": "B1",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0410",
+      "session_id": "SYN-S052"
+    },
+    {
+      "assignment_order": 411,
+      "block": "B3",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0411",
+      "session_id": "SYN-S052"
+    },
+    {
+      "assignment_order": 412,
+      "block": "B1",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0412",
+      "session_id": "SYN-S052"
+    },
+    {
+      "assignment_order": 413,
+      "block": "B4",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0413",
+      "session_id": "SYN-S052"
+    },
+    {
+      "assignment_order": 414,
+      "block": "B4",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0414",
+      "session_id": "SYN-S052"
+    },
+    {
+      "assignment_order": 415,
+      "block": "B3",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0415",
+      "session_id": "SYN-S052"
+    },
+    {
+      "assignment_order": 416,
+      "block": "B3",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0416",
+      "session_id": "SYN-S052"
+    },
+    {
+      "assignment_order": 417,
+      "block": "B3",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0417",
+      "session_id": "SYN-S053"
+    },
+    {
+      "assignment_order": 418,
+      "block": "B1",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0418",
+      "session_id": "SYN-S053"
+    },
+    {
+      "assignment_order": 419,
+      "block": "B1",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0419",
+      "session_id": "SYN-S053"
+    },
+    {
+      "assignment_order": 420,
+      "block": "B4",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0420",
+      "session_id": "SYN-S053"
+    },
+    {
+      "assignment_order": 421,
+      "block": "B2",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0421",
+      "session_id": "SYN-S053"
+    },
+    {
+      "assignment_order": 422,
+      "block": "B2",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0422",
+      "session_id": "SYN-S053"
+    },
+    {
+      "assignment_order": 423,
+      "block": "B3",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0423",
+      "session_id": "SYN-S053"
+    },
+    {
+      "assignment_order": 424,
+      "block": "B2",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0424",
+      "session_id": "SYN-S053"
+    },
+    {
+      "assignment_order": 425,
+      "block": "B2",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0425",
+      "session_id": "SYN-S054"
+    },
+    {
+      "assignment_order": 426,
+      "block": "B4",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0426",
+      "session_id": "SYN-S054"
+    },
+    {
+      "assignment_order": 427,
+      "block": "B2",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0427",
+      "session_id": "SYN-S054"
+    },
+    {
+      "assignment_order": 428,
+      "block": "B3",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0428",
+      "session_id": "SYN-S054"
+    },
+    {
+      "assignment_order": 429,
+      "block": "B2",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0429",
+      "session_id": "SYN-S054"
+    },
+    {
+      "assignment_order": 430,
+      "block": "B4",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0430",
+      "session_id": "SYN-S054"
+    },
+    {
+      "assignment_order": 431,
+      "block": "B3",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0431",
+      "session_id": "SYN-S054"
+    },
+    {
+      "assignment_order": 432,
+      "block": "B4",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0432",
+      "session_id": "SYN-S054"
+    },
+    {
+      "assignment_order": 433,
+      "block": "B3",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0433",
+      "session_id": "SYN-S055"
+    },
+    {
+      "assignment_order": 434,
+      "block": "B3",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0434",
+      "session_id": "SYN-S055"
+    },
+    {
+      "assignment_order": 435,
+      "block": "B1",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0435",
+      "session_id": "SYN-S055"
+    },
+    {
+      "assignment_order": 436,
+      "block": "B4",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0436",
+      "session_id": "SYN-S055"
+    },
+    {
+      "assignment_order": 437,
+      "block": "B4",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0437",
+      "session_id": "SYN-S055"
+    },
+    {
+      "assignment_order": 438,
+      "block": "B1",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0438",
+      "session_id": "SYN-S055"
+    },
+    {
+      "assignment_order": 439,
+      "block": "B4",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0439",
+      "session_id": "SYN-S055"
+    },
+    {
+      "assignment_order": 440,
+      "block": "B1",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0440",
+      "session_id": "SYN-S055"
+    },
+    {
+      "assignment_order": 441,
+      "block": "B1",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0441",
+      "session_id": "SYN-S056"
+    },
+    {
+      "assignment_order": 442,
+      "block": "B4",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0442",
+      "session_id": "SYN-S056"
+    },
+    {
+      "assignment_order": 443,
+      "block": "B1",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0443",
+      "session_id": "SYN-S056"
+    },
+    {
+      "assignment_order": 444,
+      "block": "B4",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0444",
+      "session_id": "SYN-S056"
+    },
+    {
+      "assignment_order": 445,
+      "block": "B4",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0445",
+      "session_id": "SYN-S056"
+    },
+    {
+      "assignment_order": 446,
+      "block": "B1",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0446",
+      "session_id": "SYN-S056"
+    },
+    {
+      "assignment_order": 447,
+      "block": "B2",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0447",
+      "session_id": "SYN-S056"
+    },
+    {
+      "assignment_order": 448,
+      "block": "B3",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0448",
+      "session_id": "SYN-S056"
+    },
+    {
+      "assignment_order": 449,
+      "block": "B1",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0449",
+      "session_id": "SYN-S057"
+    },
+    {
+      "assignment_order": 450,
+      "block": "B1",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0450",
+      "session_id": "SYN-S057"
+    },
+    {
+      "assignment_order": 451,
+      "block": "B4",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0451",
+      "session_id": "SYN-S057"
+    },
+    {
+      "assignment_order": 452,
+      "block": "B2",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0452",
+      "session_id": "SYN-S057"
+    },
+    {
+      "assignment_order": 453,
+      "block": "B3",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0453",
+      "session_id": "SYN-S057"
+    },
+    {
+      "assignment_order": 454,
+      "block": "B2",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0454",
+      "session_id": "SYN-S057"
+    },
+    {
+      "assignment_order": 455,
+      "block": "B1",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0455",
+      "session_id": "SYN-S057"
+    },
+    {
+      "assignment_order": 456,
+      "block": "B2",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0456",
+      "session_id": "SYN-S057"
+    },
+    {
+      "assignment_order": 457,
+      "block": "B2",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0457",
+      "session_id": "SYN-S058"
+    },
+    {
+      "assignment_order": 458,
+      "block": "B2",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0458",
+      "session_id": "SYN-S058"
+    },
+    {
+      "assignment_order": 459,
+      "block": "B2",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0459",
+      "session_id": "SYN-S058"
+    },
+    {
+      "assignment_order": 460,
+      "block": "B2",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0460",
+      "session_id": "SYN-S058"
+    },
+    {
+      "assignment_order": 461,
+      "block": "B3",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0461",
+      "session_id": "SYN-S058"
+    },
+    {
+      "assignment_order": 462,
+      "block": "B3",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0462",
+      "session_id": "SYN-S058"
+    },
+    {
+      "assignment_order": 463,
+      "block": "B1",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0463",
+      "session_id": "SYN-S058"
+    },
+    {
+      "assignment_order": 464,
+      "block": "B2",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0464",
+      "session_id": "SYN-S058"
+    },
+    {
+      "assignment_order": 465,
+      "block": "B1",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0465",
+      "session_id": "SYN-S059"
+    },
+    {
+      "assignment_order": 466,
+      "block": "B1",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0466",
+      "session_id": "SYN-S059"
+    },
+    {
+      "assignment_order": 467,
+      "block": "B3",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0467",
+      "session_id": "SYN-S059"
+    },
+    {
+      "assignment_order": 468,
+      "block": "B4",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0468",
+      "session_id": "SYN-S059"
+    },
+    {
+      "assignment_order": 469,
+      "block": "B2",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0469",
+      "session_id": "SYN-S059"
+    },
+    {
+      "assignment_order": 470,
+      "block": "B4",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0470",
+      "session_id": "SYN-S059"
+    },
+    {
+      "assignment_order": 471,
+      "block": "B1",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0471",
+      "session_id": "SYN-S059"
+    },
+    {
+      "assignment_order": 472,
+      "block": "B3",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0472",
+      "session_id": "SYN-S059"
+    },
+    {
+      "assignment_order": 473,
+      "block": "B1",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0473",
+      "session_id": "SYN-S060"
+    },
+    {
+      "assignment_order": 474,
+      "block": "B4",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0474",
+      "session_id": "SYN-S060"
+    },
+    {
+      "assignment_order": 475,
+      "block": "B1",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0475",
+      "session_id": "SYN-S060"
+    },
+    {
+      "assignment_order": 476,
+      "block": "B3",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0476",
+      "session_id": "SYN-S060"
+    },
+    {
+      "assignment_order": 477,
+      "block": "B3",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0477",
+      "session_id": "SYN-S060"
+    },
+    {
+      "assignment_order": 478,
+      "block": "B4",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0478",
+      "session_id": "SYN-S060"
+    },
+    {
+      "assignment_order": 479,
+      "block": "B4",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0479",
+      "session_id": "SYN-S060"
+    },
+    {
+      "assignment_order": 480,
+      "block": "B4",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0480",
+      "session_id": "SYN-S060"
+    },
+    {
+      "assignment_order": 481,
+      "block": "B4",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0481",
+      "session_id": "SYN-S061"
+    },
+    {
+      "assignment_order": 482,
+      "block": "B2",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0482",
+      "session_id": "SYN-S061"
+    },
+    {
+      "assignment_order": 483,
+      "block": "B2",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0483",
+      "session_id": "SYN-S061"
+    },
+    {
+      "assignment_order": 484,
+      "block": "B4",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0484",
+      "session_id": "SYN-S061"
+    },
+    {
+      "assignment_order": 485,
+      "block": "B4",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0485",
+      "session_id": "SYN-S061"
+    },
+    {
+      "assignment_order": 486,
+      "block": "B4",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0486",
+      "session_id": "SYN-S061"
+    },
+    {
+      "assignment_order": 487,
+      "block": "B3",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0487",
+      "session_id": "SYN-S061"
+    },
+    {
+      "assignment_order": 488,
+      "block": "B2",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0488",
+      "session_id": "SYN-S061"
+    },
+    {
+      "assignment_order": 489,
+      "block": "B4",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0489",
+      "session_id": "SYN-S062"
+    },
+    {
+      "assignment_order": 490,
+      "block": "B1",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0490",
+      "session_id": "SYN-S062"
+    },
+    {
+      "assignment_order": 491,
+      "block": "B2",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0491",
+      "session_id": "SYN-S062"
+    },
+    {
+      "assignment_order": 492,
+      "block": "B4",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0492",
+      "session_id": "SYN-S062"
+    },
+    {
+      "assignment_order": 493,
+      "block": "B3",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0493",
+      "session_id": "SYN-S062"
+    },
+    {
+      "assignment_order": 494,
+      "block": "B1",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0494",
+      "session_id": "SYN-S062"
+    },
+    {
+      "assignment_order": 495,
+      "block": "B1",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0495",
+      "session_id": "SYN-S062"
+    },
+    {
+      "assignment_order": 496,
+      "block": "B1",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0496",
+      "session_id": "SYN-S062"
+    },
+    {
+      "assignment_order": 497,
+      "block": "B2",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0497",
+      "session_id": "SYN-S063"
+    },
+    {
+      "assignment_order": 498,
+      "block": "B1",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0498",
+      "session_id": "SYN-S063"
+    },
+    {
+      "assignment_order": 499,
+      "block": "B4",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0499",
+      "session_id": "SYN-S063"
+    },
+    {
+      "assignment_order": 500,
+      "block": "B2",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0500",
+      "session_id": "SYN-S063"
+    },
+    {
+      "assignment_order": 501,
+      "block": "B3",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0501",
+      "session_id": "SYN-S063"
+    },
+    {
+      "assignment_order": 502,
+      "block": "B1",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0502",
+      "session_id": "SYN-S063"
+    },
+    {
+      "assignment_order": 503,
+      "block": "B2",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0503",
+      "session_id": "SYN-S063"
+    },
+    {
+      "assignment_order": 504,
+      "block": "B3",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0504",
+      "session_id": "SYN-S063"
+    },
+    {
+      "assignment_order": 505,
+      "block": "B4",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0505",
+      "session_id": "SYN-S064"
+    },
+    {
+      "assignment_order": 506,
+      "block": "B4",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0506",
+      "session_id": "SYN-S064"
+    },
+    {
+      "assignment_order": 507,
+      "block": "B2",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0507",
+      "session_id": "SYN-S064"
+    },
+    {
+      "assignment_order": 508,
+      "block": "B3",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0508",
+      "session_id": "SYN-S064"
+    },
+    {
+      "assignment_order": 509,
+      "block": "B1",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0509",
+      "session_id": "SYN-S064"
+    },
+    {
+      "assignment_order": 510,
+      "block": "B4",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0510",
+      "session_id": "SYN-S064"
+    },
+    {
+      "assignment_order": 511,
+      "block": "B2",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0511",
+      "session_id": "SYN-S064"
+    },
+    {
+      "assignment_order": 512,
+      "block": "B3",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0512",
+      "session_id": "SYN-S064"
+    },
+    {
+      "assignment_order": 513,
+      "block": "B1",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0513",
+      "session_id": "SYN-S065"
+    },
+    {
+      "assignment_order": 514,
+      "block": "B3",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0514",
+      "session_id": "SYN-S065"
+    },
+    {
+      "assignment_order": 515,
+      "block": "B2",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0515",
+      "session_id": "SYN-S065"
+    },
+    {
+      "assignment_order": 516,
+      "block": "B2",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0516",
+      "session_id": "SYN-S065"
+    },
+    {
+      "assignment_order": 517,
+      "block": "B2",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0517",
+      "session_id": "SYN-S065"
+    },
+    {
+      "assignment_order": 518,
+      "block": "B2",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0518",
+      "session_id": "SYN-S065"
+    },
+    {
+      "assignment_order": 519,
+      "block": "B2",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0519",
+      "session_id": "SYN-S065"
+    },
+    {
+      "assignment_order": 520,
+      "block": "B3",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0520",
+      "session_id": "SYN-S065"
+    },
+    {
+      "assignment_order": 521,
+      "block": "B2",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0521",
+      "session_id": "SYN-S066"
+    },
+    {
+      "assignment_order": 522,
+      "block": "B4",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0522",
+      "session_id": "SYN-S066"
+    },
+    {
+      "assignment_order": 523,
+      "block": "B2",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0523",
+      "session_id": "SYN-S066"
+    },
+    {
+      "assignment_order": 524,
+      "block": "B1",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0524",
+      "session_id": "SYN-S066"
+    },
+    {
+      "assignment_order": 525,
+      "block": "B1",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0525",
+      "session_id": "SYN-S066"
+    },
+    {
+      "assignment_order": 526,
+      "block": "B1",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0526",
+      "session_id": "SYN-S066"
+    },
+    {
+      "assignment_order": 527,
+      "block": "B1",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0527",
+      "session_id": "SYN-S066"
+    },
+    {
+      "assignment_order": 528,
+      "block": "B2",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0528",
+      "session_id": "SYN-S066"
+    },
+    {
+      "assignment_order": 529,
+      "block": "B1",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0529",
+      "session_id": "SYN-S067"
+    },
+    {
+      "assignment_order": 530,
+      "block": "B3",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0530",
+      "session_id": "SYN-S067"
+    },
+    {
+      "assignment_order": 531,
+      "block": "B4",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0531",
+      "session_id": "SYN-S067"
+    },
+    {
+      "assignment_order": 532,
+      "block": "B1",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0532",
+      "session_id": "SYN-S067"
+    },
+    {
+      "assignment_order": 533,
+      "block": "B3",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0533",
+      "session_id": "SYN-S067"
+    },
+    {
+      "assignment_order": 534,
+      "block": "B2",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0534",
+      "session_id": "SYN-S067"
+    },
+    {
+      "assignment_order": 535,
+      "block": "B4",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0535",
+      "session_id": "SYN-S067"
+    },
+    {
+      "assignment_order": 536,
+      "block": "B1",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0536",
+      "session_id": "SYN-S067"
+    },
+    {
+      "assignment_order": 537,
+      "block": "B3",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0537",
+      "session_id": "SYN-S068"
+    },
+    {
+      "assignment_order": 538,
+      "block": "B3",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0538",
+      "session_id": "SYN-S068"
+    },
+    {
+      "assignment_order": 539,
+      "block": "B4",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0539",
+      "session_id": "SYN-S068"
+    },
+    {
+      "assignment_order": 540,
+      "block": "B2",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0540",
+      "session_id": "SYN-S068"
+    },
+    {
+      "assignment_order": 541,
+      "block": "B4",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0541",
+      "session_id": "SYN-S068"
+    },
+    {
+      "assignment_order": 542,
+      "block": "B1",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0542",
+      "session_id": "SYN-S068"
+    },
+    {
+      "assignment_order": 543,
+      "block": "B1",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0543",
+      "session_id": "SYN-S068"
+    },
+    {
+      "assignment_order": 544,
+      "block": "B1",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0544",
+      "session_id": "SYN-S068"
+    },
+    {
+      "assignment_order": 545,
+      "block": "B1",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0545",
+      "session_id": "SYN-S069"
+    },
+    {
+      "assignment_order": 546,
+      "block": "B3",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0546",
+      "session_id": "SYN-S069"
+    },
+    {
+      "assignment_order": 547,
+      "block": "B2",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0547",
+      "session_id": "SYN-S069"
+    },
+    {
+      "assignment_order": 548,
+      "block": "B1",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0548",
+      "session_id": "SYN-S069"
+    },
+    {
+      "assignment_order": 549,
+      "block": "B2",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0549",
+      "session_id": "SYN-S069"
+    },
+    {
+      "assignment_order": 550,
+      "block": "B3",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0550",
+      "session_id": "SYN-S069"
+    },
+    {
+      "assignment_order": 551,
+      "block": "B4",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0551",
+      "session_id": "SYN-S069"
+    },
+    {
+      "assignment_order": 552,
+      "block": "B1",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0552",
+      "session_id": "SYN-S069"
+    },
+    {
+      "assignment_order": 553,
+      "block": "B1",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0553",
+      "session_id": "SYN-S070"
+    },
+    {
+      "assignment_order": 554,
+      "block": "B4",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0554",
+      "session_id": "SYN-S070"
+    },
+    {
+      "assignment_order": 555,
+      "block": "B2",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0555",
+      "session_id": "SYN-S070"
+    },
+    {
+      "assignment_order": 556,
+      "block": "B1",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0556",
+      "session_id": "SYN-S070"
+    },
+    {
+      "assignment_order": 557,
+      "block": "B4",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0557",
+      "session_id": "SYN-S070"
+    },
+    {
+      "assignment_order": 558,
+      "block": "B1",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0558",
+      "session_id": "SYN-S070"
+    },
+    {
+      "assignment_order": 559,
+      "block": "B3",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0559",
+      "session_id": "SYN-S070"
+    },
+    {
+      "assignment_order": 560,
+      "block": "B3",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0560",
+      "session_id": "SYN-S070"
+    },
+    {
+      "assignment_order": 561,
+      "block": "B3",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0561",
+      "session_id": "SYN-S071"
+    },
+    {
+      "assignment_order": 562,
+      "block": "B1",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0562",
+      "session_id": "SYN-S071"
+    },
+    {
+      "assignment_order": 563,
+      "block": "B4",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0563",
+      "session_id": "SYN-S071"
+    },
+    {
+      "assignment_order": 564,
+      "block": "B1",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0564",
+      "session_id": "SYN-S071"
+    },
+    {
+      "assignment_order": 565,
+      "block": "B2",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0565",
+      "session_id": "SYN-S071"
+    },
+    {
+      "assignment_order": 566,
+      "block": "B4",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0566",
+      "session_id": "SYN-S071"
+    },
+    {
+      "assignment_order": 567,
+      "block": "B2",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0567",
+      "session_id": "SYN-S071"
+    },
+    {
+      "assignment_order": 568,
+      "block": "B2",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0568",
+      "session_id": "SYN-S071"
+    },
+    {
+      "assignment_order": 569,
+      "block": "B1",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0569",
+      "session_id": "SYN-S072"
+    },
+    {
+      "assignment_order": 570,
+      "block": "B1",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0570",
+      "session_id": "SYN-S072"
+    },
+    {
+      "assignment_order": 571,
+      "block": "B2",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0571",
+      "session_id": "SYN-S072"
+    },
+    {
+      "assignment_order": 572,
+      "block": "B3",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0572",
+      "session_id": "SYN-S072"
+    },
+    {
+      "assignment_order": 573,
+      "block": "B2",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0573",
+      "session_id": "SYN-S072"
+    },
+    {
+      "assignment_order": 574,
+      "block": "B4",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0574",
+      "session_id": "SYN-S072"
+    },
+    {
+      "assignment_order": 575,
+      "block": "B1",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0575",
+      "session_id": "SYN-S072"
+    },
+    {
+      "assignment_order": 576,
+      "block": "B3",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0576",
+      "session_id": "SYN-S072"
+    },
+    {
+      "assignment_order": 577,
+      "block": "B4",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0577",
+      "session_id": "SYN-S073"
+    },
+    {
+      "assignment_order": 578,
+      "block": "B3",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0578",
+      "session_id": "SYN-S073"
+    },
+    {
+      "assignment_order": 579,
+      "block": "B2",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0579",
+      "session_id": "SYN-S073"
+    },
+    {
+      "assignment_order": 580,
+      "block": "B2",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0580",
+      "session_id": "SYN-S073"
+    },
+    {
+      "assignment_order": 581,
+      "block": "B4",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0581",
+      "session_id": "SYN-S073"
+    },
+    {
+      "assignment_order": 582,
+      "block": "B3",
+      "cell_id": "T16-verifiable-joint",
+      "participant_id": "SYN-P0582",
+      "session_id": "SYN-S073"
+    },
+    {
+      "assignment_order": 583,
+      "block": "B1",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0583",
+      "session_id": "SYN-S073"
+    },
+    {
+      "assignment_order": 584,
+      "block": "B2",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0584",
+      "session_id": "SYN-S073"
+    },
+    {
+      "assignment_order": 585,
+      "block": "B2",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0585",
+      "session_id": "SYN-S074"
+    },
+    {
+      "assignment_order": 586,
+      "block": "B1",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0586",
+      "session_id": "SYN-S074"
+    },
+    {
+      "assignment_order": 587,
+      "block": "B4",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0587",
+      "session_id": "SYN-S074"
+    },
+    {
+      "assignment_order": 588,
+      "block": "B2",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0588",
+      "session_id": "SYN-S074"
+    },
+    {
+      "assignment_order": 589,
+      "block": "B2",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0589",
+      "session_id": "SYN-S074"
+    },
+    {
+      "assignment_order": 590,
+      "block": "B1",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0590",
+      "session_id": "SYN-S074"
+    },
+    {
+      "assignment_order": 591,
+      "block": "B2",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0591",
+      "session_id": "SYN-S074"
+    },
+    {
+      "assignment_order": 592,
+      "block": "B4",
+      "cell_id": "T13-costly-coverage",
+      "participant_id": "SYN-P0592",
+      "session_id": "SYN-S074"
+    },
+    {
+      "assignment_order": 593,
+      "block": "B2",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0593",
+      "session_id": "SYN-S075"
+    },
+    {
+      "assignment_order": 594,
+      "block": "B1",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0594",
+      "session_id": "SYN-S075"
+    },
+    {
+      "assignment_order": 595,
+      "block": "B2",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0595",
+      "session_id": "SYN-S075"
+    },
+    {
+      "assignment_order": 596,
+      "block": "B2",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0596",
+      "session_id": "SYN-S075"
+    },
+    {
+      "assignment_order": 597,
+      "block": "B2",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0597",
+      "session_id": "SYN-S075"
+    },
+    {
+      "assignment_order": 598,
+      "block": "B2",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0598",
+      "session_id": "SYN-S075"
+    },
+    {
+      "assignment_order": 599,
+      "block": "B3",
+      "cell_id": "T03-attribution",
+      "participant_id": "SYN-P0599",
+      "session_id": "SYN-S075"
+    },
+    {
+      "assignment_order": 600,
+      "block": "B4",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0600",
+      "session_id": "SYN-S075"
+    },
+    {
+      "assignment_order": 601,
+      "block": "B1",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0601",
+      "session_id": "SYN-S076"
+    },
+    {
+      "assignment_order": 602,
+      "block": "B2",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0602",
+      "session_id": "SYN-S076"
+    },
+    {
+      "assignment_order": 603,
+      "block": "B2",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0603",
+      "session_id": "SYN-S076"
+    },
+    {
+      "assignment_order": 604,
+      "block": "B4",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0604",
+      "session_id": "SYN-S076"
+    },
+    {
+      "assignment_order": 605,
+      "block": "B1",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0605",
+      "session_id": "SYN-S076"
+    },
+    {
+      "assignment_order": 606,
+      "block": "B1",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0606",
+      "session_id": "SYN-S076"
+    },
+    {
+      "assignment_order": 607,
+      "block": "B1",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0607",
+      "session_id": "SYN-S076"
+    },
+    {
+      "assignment_order": 608,
+      "block": "B2",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0608",
+      "session_id": "SYN-S076"
+    },
+    {
+      "assignment_order": 609,
+      "block": "B1",
+      "cell_id": "T18-costly-attribution",
+      "participant_id": "SYN-P0609",
+      "session_id": "SYN-S077"
+    },
+    {
+      "assignment_order": 610,
+      "block": "B1",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0610",
+      "session_id": "SYN-S077"
+    },
+    {
+      "assignment_order": 611,
+      "block": "B3",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0611",
+      "session_id": "SYN-S077"
+    },
+    {
+      "assignment_order": 612,
+      "block": "B3",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0612",
+      "session_id": "SYN-S077"
+    },
+    {
+      "assignment_order": 613,
+      "block": "B3",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0613",
+      "session_id": "SYN-S077"
+    },
+    {
+      "assignment_order": 614,
+      "block": "B1",
+      "cell_id": "T09-coverage",
+      "participant_id": "SYN-P0614",
+      "session_id": "SYN-S077"
+    },
+    {
+      "assignment_order": 615,
+      "block": "B1",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0615",
+      "session_id": "SYN-S077"
+    },
+    {
+      "assignment_order": 616,
+      "block": "B1",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0616",
+      "session_id": "SYN-S077"
+    },
+    {
+      "assignment_order": 617,
+      "block": "B2",
+      "cell_id": "T01-costly",
+      "participant_id": "SYN-P0617",
+      "session_id": "SYN-S078"
+    },
+    {
+      "assignment_order": 618,
+      "block": "B2",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0618",
+      "session_id": "SYN-S078"
+    },
+    {
+      "assignment_order": 619,
+      "block": "B2",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0619",
+      "session_id": "SYN-S078"
+    },
+    {
+      "assignment_order": 620,
+      "block": "B2",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0620",
+      "session_id": "SYN-S078"
+    },
+    {
+      "assignment_order": 621,
+      "block": "B2",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0621",
+      "session_id": "SYN-S078"
+    },
+    {
+      "assignment_order": 622,
+      "block": "B1",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0622",
+      "session_id": "SYN-S078"
+    },
+    {
+      "assignment_order": 623,
+      "block": "B1",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0623",
+      "session_id": "SYN-S078"
+    },
+    {
+      "assignment_order": 624,
+      "block": "B3",
+      "cell_id": "T14-assigned-coverage",
+      "participant_id": "SYN-P0624",
+      "session_id": "SYN-S078"
+    },
+    {
+      "assignment_order": 625,
+      "block": "B3",
+      "cell_id": "T11-assigned-attribution",
+      "participant_id": "SYN-P0625",
+      "session_id": "SYN-S079"
+    },
+    {
+      "assignment_order": 626,
+      "block": "B2",
+      "cell_id": "T06-visible",
+      "participant_id": "SYN-P0626",
+      "session_id": "SYN-S079"
+    },
+    {
+      "assignment_order": 627,
+      "block": "B4",
+      "cell_id": "T10-joint",
+      "participant_id": "SYN-P0627",
+      "session_id": "SYN-S079"
+    },
+    {
+      "assignment_order": 628,
+      "block": "B2",
+      "cell_id": "T17-assigned-joint",
+      "participant_id": "SYN-P0628",
+      "session_id": "SYN-S079"
+    },
+    {
+      "assignment_order": 629,
+      "block": "B1",
+      "cell_id": "T07-pooling",
+      "participant_id": "SYN-P0629",
+      "session_id": "SYN-S079"
+    },
+    {
+      "assignment_order": 630,
+      "block": "B3",
+      "cell_id": "T12-verifiable-visible",
+      "participant_id": "SYN-P0630",
+      "session_id": "SYN-S079"
+    },
+    {
+      "assignment_order": 631,
+      "block": "B1",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0631",
+      "session_id": "SYN-S079"
+    },
+    {
+      "assignment_order": 632,
+      "block": "B3",
+      "cell_id": "T02-assigned",
+      "participant_id": "SYN-P0632",
+      "session_id": "SYN-S079"
+    },
+    {
+      "assignment_order": 633,
+      "block": "B4",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0633",
+      "session_id": "SYN-S080"
+    },
+    {
+      "assignment_order": 634,
+      "block": "B2",
+      "cell_id": "T00-baseline",
+      "participant_id": "SYN-P0634",
+      "session_id": "SYN-S080"
+    },
+    {
+      "assignment_order": 635,
+      "block": "B4",
+      "cell_id": "T15-public-pooling",
+      "participant_id": "SYN-P0635",
+      "session_id": "SYN-S080"
+    },
+    {
+      "assignment_order": 636,
+      "block": "B3",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0636",
+      "session_id": "SYN-S080"
+    },
+    {
+      "assignment_order": 637,
+      "block": "B3",
+      "cell_id": "T05-verifiable",
+      "participant_id": "SYN-P0637",
+      "session_id": "SYN-S080"
+    },
+    {
+      "assignment_order": 638,
+      "block": "B1",
+      "cell_id": "T08-rescue",
+      "participant_id": "SYN-P0638",
+      "session_id": "SYN-S080"
+    },
+    {
+      "assignment_order": 639,
+      "block": "B1",
+      "cell_id": "T19-visible-coverage",
+      "participant_id": "SYN-P0639",
+      "session_id": "SYN-S080"
+    },
+    {
+      "assignment_order": 640,
+      "block": "B2",
+      "cell_id": "T04-public",
+      "participant_id": "SYN-P0640",
+      "session_id": "SYN-S080"
+    }
+  ],
+  "balance": {
+    "block_cell_count_max": 8,
+    "block_cell_count_min": 8,
+    "cell_count_max": 32,
+    "cell_count_min": 32,
+    "participants": 640,
+    "passed": true,
+    "sessions": 80
+  },
+  "participant_prefix": "SYN-P",
+  "seed": 110011,
+  "session_prefix": "SYN-S"
+}

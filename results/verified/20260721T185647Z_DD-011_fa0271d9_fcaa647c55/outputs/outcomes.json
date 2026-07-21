@@ -1,0 +1,92 @@
+[
+  {
+    "definition": "One if the assigned source choice is an independent channel before evidence is observed.",
+    "outcome_id": "independent_source_acquisition",
+    "role": "primary",
+    "unit": "binary"
+  },
+  {
+    "definition": "One if the submitted report equals the participant's observed synthetic signal.",
+    "outcome_id": "truthful_report",
+    "role": "primary",
+    "unit": "binary"
+  },
+  {
+    "definition": "One if the action equals the treatment-specific recommendation.",
+    "outcome_id": "action_obedience",
+    "role": "primary",
+    "unit": "binary"
+  },
+  {
+    "definition": "Distinct evidence-supported actions divided by the team action budget.",
+    "outcome_id": "distinct_informed_actions",
+    "role": "primary",
+    "unit": "team proportion"
+  },
+  {
+    "definition": "One if at least one team action covers the realized synthetic target.",
+    "outcome_id": "discovery",
+    "role": "primary",
+    "unit": "binary team outcome"
+  },
+  {
+    "definition": "Team discovery value minus declared source and mechanism costs.",
+    "outcome_id": "social_net_value",
+    "role": "primary",
+    "unit": "expected payoff"
+  },
+  {
+    "definition": "Number of submitted treatment-permitted messages.",
+    "outcome_id": "communication_volume",
+    "role": "secondary",
+    "unit": "message count"
+  },
+  {
+    "definition": "Truthful disclosed reports divided by all disclosed reports.",
+    "outcome_id": "disclosure_precision",
+    "role": "secondary",
+    "unit": "proportion"
+  },
+  {
+    "definition": "Sum of squared action shares within a team-round.",
+    "outcome_id": "action_concentration",
+    "role": "secondary",
+    "unit": "Herfindahl index"
+  },
+  {
+    "definition": "Sum of squared source-choice shares within a team-round.",
+    "outcome_id": "source_concentration",
+    "role": "secondary",
+    "unit": "Herfindahl index"
+  },
+  {
+    "definition": "Elapsed synthetic decision time from screen display to submission.",
+    "outcome_id": "response_time",
+    "role": "secondary",
+    "unit": "seconds"
+  },
+  {
+    "definition": "Pre-specified confidence response submitted before outcome feedback.",
+    "outcome_id": "confidence",
+    "role": "secondary",
+    "unit": "0-100 scale"
+  },
+  {
+    "definition": "Declared base reward plus transfer minus evidence cost.",
+    "outcome_id": "individual_payoff",
+    "role": "secondary",
+    "unit": "experimental points"
+  },
+  {
+    "definition": "Total externally financed transfer in a team-round.",
+    "outcome_id": "transfer_budget",
+    "role": "secondary",
+    "unit": "experimental points"
+  },
+  {
+    "definition": "One if behavior lies in the treatment's frozen exact-model response set.",
+    "outcome_id": "equilibrium_consistent_behavior",
+    "role": "secondary",
+    "unit": "binary"
+  }
+]

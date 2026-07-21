@@ -1,0 +1,13 @@
+schema_version: dd011-power-v1
+design_id: contrast-complete-20
+participants_per_cell: 32
+session_size: 8
+randomization_seed: 110011
+sample_seed: 110099
+sample_rows: 120
+scenario_seeds: [110101, 110102, 110103, 110104, 110105, 110106, 110107, 110108]
+sample_sizes: [200, 320, 480, 640, 800, 960]
+replications: 1000
+wall_time_seconds: 600
+memory_mb: 2048
+no_human_data: true

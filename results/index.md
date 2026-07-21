@@ -31,3 +31,10 @@ The DD-010 DiscoveryBench run is
 golden tasks, 13 protocol contracts, 19 metrics, all 195 compatibility decisions,
 16 exact result vectors, separate recomputation, leakage/value corruption tests,
 and a clearly separated 8,000-draw seeded sensitivity suite supporting DD-C-0055.
+
+The DD-011 Experimental Design and Power run is
+`verified/20260721T185647Z_DD-011_fa0271d9_fcaa647c55`. It preserves the frozen
+20-cell design, 640 balanced synthetic assignments, eight hypotheses, eight
+response scenarios, 384 power/MDE rows, 384,000 Monte Carlo draws, all retained
+calibration failures, four exact limiting-model checks, and separate
+recomputation/corruption evidence supporting DD-C-0056. It contains no human data.

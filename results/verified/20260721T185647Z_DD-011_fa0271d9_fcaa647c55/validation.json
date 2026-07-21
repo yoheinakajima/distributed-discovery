@@ -1,0 +1,17 @@
+{
+  "assignments": 640,
+  "calibration_failures_retained": 140,
+  "exact_source_checks": 4,
+  "hypotheses": 8,
+  "monte_carlo_draws": 384000,
+  "no_human_data": true,
+  "no_real_data_boundary": true,
+  "outcomes": 15,
+  "passed": true,
+  "power_rows": 384,
+  "power_rows_verified": 384,
+  "response_scenarios": 8,
+  "sample_sizes": 6,
+  "synthetic_assignments": 640,
+  "treatment_cells": 20
+}

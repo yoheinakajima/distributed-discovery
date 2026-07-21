@@ -38,6 +38,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert (output / "research/dd-006b.html").is_file()
     assert (output / "research/dd-009.html").is_file()
     assert (output / "research/dd-010.html").is_file()
+    assert (output / "research/dd-011.html").is_file()
     assert (output / "benchmark.html").is_file()
     for route in ["tasks", "protocols", "metrics", "results"]:
         assert (output / f"benchmark/{route}.html").is_file()
@@ -45,6 +46,15 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "no submissions" in benchmark_lab
     assert "JavaScript is off" in benchmark_lab
     assert (output / "labs.html").is_file()
+    assert (output / "experiment-kit.html").is_file()
+    for route in ["hypotheses", "design", "power"]:
+        page = output / f"experiment-kit/{route}.html"
+        assert page.is_file()
+        assert "No participants were recruited" in page.read_text()
+    experiment_lab = (output / "labs/experiment-design.html").read_text()
+    assert "data-experiment-lab" in experiment_lab
+    assert "JavaScript is off" in experiment_lab
+    assert "No participants were recruited" in experiment_lab
     for name in [
         "sequential",
         "coverage",
@@ -63,6 +73,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert 'id="DD-C-0053"' in claims
     assert 'id="DD-C-0054"' in claims
     assert 'id="DD-C-0055"' in claims
+    assert 'id="DD-C-0056"' in claims
     assert "unvalidated values" in claims
 
     runs = json.loads((output / "data/runs.json").read_text(encoding="utf-8"))["runs"]
@@ -99,6 +110,19 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert benchmark["summary"]["task_count"] == 15
     assert benchmark["summary"]["compatible_pairs"] == 16
     assert (output / "downloads/discoverybench-task-v1.schema.json").is_file()
+    experiment = json.loads((output / "data/experiment/summary.json").read_text())
+    assert experiment["run_id"] == "20260721T185647Z_DD-011_fa0271d9_fcaa647c55"
+    assert experiment["summary"]["treatment_cells"] == 20
+    assert experiment["summary"]["power_rows"] == 384
+    assert experiment["summary"]["no_human_data"] is True
+    for name in [
+        "dd011-preregistration-template.md",
+        "dd011-participant-instructions.md",
+        "dd011-researcher-protocol.md",
+        "dd011-data-dictionary.md",
+        "dd011-design-v1.schema.json",
+    ]:
+        assert (output / f"downloads/{name}").is_file()
 
 
 def test_research_library_rejects_missing_public_metadata(tmp_path: Path) -> None:

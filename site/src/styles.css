@@ -83,7 +83,7 @@ p { margin: 0 0 1.05rem; }
 .result-card span { display: block; color: var(--ink-2); font: .74rem/1.35 var(--sans); }
 .result-card b { display: block; margin-top: .35rem; overflow-wrap: anywhere; font: 700 1.28rem/1.25 var(--mono); }
 .callout { padding: .8rem 1rem; border-left: 4px solid var(--market); background: var(--card); font-weight: 650; }
-.matrix { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-family: var(--sans); font-size: .84rem; }
+.matrix { display: block; width: 100%; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 1.5rem 0; font-family: var(--sans); font-size: .84rem; -webkit-overflow-scrolling: touch; }
 .matrix th, .matrix td { padding: .7rem; border-bottom: 1px solid var(--grid); text-align: left; vertical-align: top; }
 .matrix th { color: var(--ink-2); }
 .matrix caption { padding: .5rem 0; text-align: left; color: var(--ink-2); font-weight: 700; }

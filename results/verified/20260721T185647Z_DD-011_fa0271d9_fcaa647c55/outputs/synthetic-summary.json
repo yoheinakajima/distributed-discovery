@@ -1,0 +1,12 @@
+{
+  "calibration_failures_retained": 140,
+  "hypotheses": 8,
+  "monte_carlo_draws": 384000,
+  "no_human_data": true,
+  "outcomes": 15,
+  "power_rows": 384,
+  "response_scenarios": 8,
+  "sample_sizes": 6,
+  "synthetic_assignments": 640,
+  "treatment_cells": 20
+}

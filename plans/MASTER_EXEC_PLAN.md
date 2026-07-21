@@ -36,20 +36,21 @@ Progress:
   Pages, and live routes. Primary run
   `20260721T183014Z_DD-010_ce930050_8ec718c242` and DD-C-0055 passed; PR #68
   squash-merged as `62d4cd1c`, post-merge CI/Pages passed, and issue #67 closed.
-- [ ] DD-011 issue, bounded design, literature record, hypotheses/estimands,
+- [x] DD-011 issue, bounded design, literature record, hypotheses/estimands,
   randomization, synthetic power run, verifier, materials, ethics boundary,
-  site, merge, CI, Pages, and live routes.
+  and site. Primary run `20260721T185647Z_DD-011_fa0271d9_fcaa647c55` and
+  DD-C-0056 pass locally; PR/CI/Pages/live-route gates remain.
 - [ ] DD-008B analytic gate with exact finite/formula agreement and an honest
   theorem, counterexample, conjecture, or documented barrier outcome.
 - [ ] Focused Common-Source Trap paper with source-generated figures/tables,
   deterministic PDF, citation audit, all-page Poppler review, merge, and Pages.
 - [ ] Program V2 site/Lab integration and final acceptance/handoff.
 
-Recovery: inspect `git status --short --branch`; resume the sole active milestone
-from `studies/DD-011-experimental-design/plan.md`; never rerun an already
-preserved primary run. Before the DD-011 primary run, validate the frozen design,
-randomization, analysis, ethics, and scenario registries; after it exists, use
-its separate manifest verifier before any claim promotion.
+Recovery: inspect `git status --short --branch`; resume DD-011 integration from
+`studies/DD-011-experimental-design/report.md`; never rerun the preserved primary
+run. The exact next command is `distributed-discovery experiment verify
+20260721T185647Z_DD-011_fa0271d9_fcaa647c55`, followed by `make verify && make
+site` before PR promotion.
 
 ### Program V2 baseline (active, 2026-07-21)
 

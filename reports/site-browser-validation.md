@@ -16,6 +16,10 @@ This is a bounded practical browser check, not a claim of WCAG conformance.
 | DiscoveryBench filter | Selecting `DB-G12` leaves exactly its one compatible result row visible and updates the live status text |
 | DiscoveryBench mobile 390 × 844 | Main content and the captioned result table fit the viewport with no document-level horizontal overflow |
 | DiscoveryBench no-JS | Generated source contains all 16 exact result rows plus a `noscript` explanation; filtering is optional enhancement only |
+| DD-011 experiment kit | Overview and design pages expose one H1, the prominent no-human-data warning, captioned alternative/treatment tables, local CSS/JS only, and no console warnings or errors |
+| DD-011 Lab filter | The labelled native scenario selector and polite live region show exactly 48 rows for either `S1-rational` or `S8-learning`, with zero rows from another scenario |
+| DD-011 mobile 390 × 844 | Main content remains 350 px wide; the 514 px power table scrolls within its 350 px container and document-level horizontal overflow is zero |
+| DD-011 no-JS | Generated source contains all 384 power rows plus a `noscript` explanation; the scenario filter is optional enhancement only |
 
 The browser check complements the automated site builder tests. It does not test
 assistive technology combinations or claim a complete accessibility audit.

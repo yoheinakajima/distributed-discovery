@@ -1,8 +1,14 @@
 study_id: DD-011
 title: Experimental Design and Power
-status: active
-evidence_status: synthetic-design-only
+slug: dd-011
+phase: complete-bounded-study
 summary: Preregistration-ready bounded design and conditional synthetic power package; no human data.
-route: research/dd-011.html
-public: true
-no_human_data: true
+public_artifacts:
+  - path: studies/DD-011-experimental-design/report.md
+    description: Synthetic design and power evidence report
+  - path: studies/DD-011-experimental-design/materials/preregistration-template.md
+    description: Unregistered preregistration-ready template
+  - path: studies/DD-011-experimental-design/materials/NO-HUMAN-DATA.md
+    description: Ethics and no-human-data boundary
+  - path: studies/DD-011-experimental-design/schemas/design-v1.schema.json
+    description: Versioned design schema
