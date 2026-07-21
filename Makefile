@@ -78,6 +78,9 @@ dd006-mechanisms:
 dd006-general-frontier:
 	$(PY) -m distributed_discovery.mechanisms.general_study
 
+dd008-acquisition:
+	$(PY) -m distributed_discovery.acquisition.study
+
 dd007-synthetic-audit:
 	$(PY) -m distributed_discovery.audits.study
 

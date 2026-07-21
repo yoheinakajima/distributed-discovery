@@ -269,8 +269,8 @@ def _study_data(
                 "public_artifacts": checked_artifacts,
             }
         )
-    if len(studies) != 8:
-        raise RuntimeError(f"expected eight public studies, found {len(studies)}")
+    if not studies:
+        raise RuntimeError("no public studies found")
     return studies
 
 

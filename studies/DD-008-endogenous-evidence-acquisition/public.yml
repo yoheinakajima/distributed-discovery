@@ -1,0 +1,8 @@
+study_id: DD-008
+title: Endogenous Evidence Acquisition
+slug: dd-008
+phase: complete-bounded-study
+summary: Exact synthetic common-versus-independent evidence source-choice grid.
+public_artifacts:
+  - path: studies/DD-008-endogenous-evidence-acquisition/report.md
+    description: Bounded source-choice evidence report

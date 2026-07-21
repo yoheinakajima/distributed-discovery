@@ -1,0 +1,5 @@
+study_id: DD-008
+status: complete-bounded-study
+evidence_status: exact-source-choice-grid-with-independent-direct-enumeration
+next_action: preserve the bounded common-source-trap regression; extensions need a new registration
+updated_utc: 2026-07-21T14:15:27Z

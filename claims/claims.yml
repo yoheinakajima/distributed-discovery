@@ -1050,3 +1050,24 @@ claims:
     first_added: "2026-07-21"
     last_checked: "2026-07-21"
     notes: Zero transfer is included among weak rows; weak feasibility is not strict incentive provision.
+  - id: DD-C-0051
+    study_id: DD-008
+    short_name: bounded-common-source-trap
+    statement: In DD-008's registered two-agent source-choice fixture, common/common is a source-choice equilibrium while one-independent-source profiles are planner-optimal at five of fifteen exact grid cells; for example at p=2/3 and c=1/8.
+    scope: Three targets, direct clue-following, common evidence shared exactly by common-source users, conditionally independent I signals, equal split of a unit prize, and social union discovery minus the same source costs; no coordination, disclosure, real data, or general source-choice theorem is claimed.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exact-analytic-source-choice-grid-with-direct-target-signal-enumeration
+    source_reference: results/verified/20260721T141527Z_DD-008_0d11dc77_7e0c8f1d66/outputs/source-choice-grid.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/acquisition/model.py, src/distributed_discovery/acquisition/verification.py]
+    run_ids: [20260721T141527Z_DD-008_0d11dc77_7e0c8f1d66]
+    test_paths: [tests/unit/test_acquisition.py]
+    exactness_basis: closed-form Fraction payoffs and social values agree with direct enumeration of target and source-signal states for every profile and grid cell
+    rounding_rule: exact fractions
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: The descriptive Common-Source Trap label refers only to this registered shared-source and prize-accounting fixture.
