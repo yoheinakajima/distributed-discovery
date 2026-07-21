@@ -1,16 +1,59 @@
-# Final handoff
+# Final handoff — Program V2
 
-> This is historical handoff material. For the active program, begin with
-> [`docs/current-state.md`](../docs/current-state.md) and
-> [`docs/current-roadmap.md`](../docs/current-roadmap.md). Program V1 is
-> complete through DD-008; Program V2 is registered but not yet executed.
+Program V2 is complete at its registered bounded scope. The authoritative
+detailed acceptance record is [`project-status.md`](project-status.md); concise
+navigation begins at [`docs/current-state.md`](../docs/current-state.md) and
+[`docs/current-roadmap.md`](../docs/current-roadmap.md).
 
-The complete continuation program through DD-007 is integrated. The current extension record is [`research-program-integration.md`](research-program-integration.md), the broader historical record is [`project-status.md`](project-status.md), and the durable restart history is [`../plans/MASTER_EXEC_PLAN.md`](../plans/MASTER_EXEC_PLAN.md).
+## Delivered
 
-The frozen canonical zero-communication private-team optimum is exactly `325089/390625`, because the alignment-preserving upper certificate meets direct clue-following. The prior pooled top-eight value `860391662035297/1001129150390625` remains a valid organizational benchmark but is no longer the best private-team upper bound.
+- DD-010 DiscoveryBench: 15 exact golden tasks, 13 protocols, 19 metrics, 16
+  compatible exact vectors, capability-isolated execution, independent
+  verification, corruption tests, and a separated 8,000-draw sensitivity suite.
+- DD-011: a frozen 20-cell, eight-hypothesis design with eight declared response
+  scenarios, 384 power/MDE rows, 384,000 seeded draws, 140 retained
+  large-sample calibration failures, and preregistration-ready read-only
+  materials.
+- DD-008B: a general finite-team private-threshold/equilibrium-count theorem,
+  an exact all-common trap of width `p(1-p)/N`, and an exact interior
+  counterexample to universal under-acquisition.
+- *The Common-Source Trap*: a deterministic, visually audited 20-page working
+  paper, SHA-256
+  `c997bba31c021bd799f2b3a561e8e558a1334f844aa87a448ade10319dac2ad3`.
+- A static, no-tracking public surface with 48 HTML routes, eight Labs, complete
+  no-JavaScript fallbacks, and a 15-artifact download checksum manifest.
 
-DD-002's known disclosure reversal survives only anonymous-symmetric selection among six audited evaluations. DD-003's homogeneous 51-graph class preserves a bounded complete-pairwise-moment null, while its registered 839-network heterogeneous colored extension contains an independently reproduced `3/4` versus `2/3` complete-moment counterexample.
+Primary runs are:
 
-The 14-page synthesis is `papers/three-results/Three_Results_in_Distributed_Discovery.pdf`; the public Results page is `https://yoheinakajima.github.io/distributed-discovery/results.html`. This historical acceptance recorded 95 tests, 44 claims, and 17 immutable manifests; the current reconciliation record is maintained in `plans/MASTER_EXEC_PLAN.md`.
+- DD-010 `20260721T183014Z_DD-010_ce930050_8ec718c242`
+- DD-011 `20260721T185647Z_DD-011_fa0271d9_fcaa647c55`
+- DD-008B `20260721T192412Z_DD-008B_649deb08_29dbeaf3a9`
 
-All stale Dependabot PRs #1–#5 were superseded with passing PRs #29–#31 and closed with explanations. The only blocker is settings issue #32: the one authorized attempt failed before mutation because GitHub CLI is unauthenticated. Resume operationally from `docs/github-setup.md` after intentionally providing settings-capable authentication; do not retry blindly.
+The repository contains 58 claims, 32 passing runs among 35 immutable manifests,
+15 registered studies, four validated papers, 94 Python source files, and 138
+passing tests. Final acceptance created no duplicate immutable run.
+
+> **No participants were recruited. No human data were collected. No experiment
+> was conducted. Separate ethics and institutional review are required before
+> deployment.**
+
+The DD-011 kit is not preregistered or deployed. The paper has no DOI,
+submission, peer review, or verified novelty claim. DiscoveryBench is not a
+hosted leaderboard or universal measure. DD-006B is subsidized and does not
+establish budget balance; DD-009 is a bounded Atlas, not a universal ranking.
+
+All Program V2 research, paper, and site issues/PRs through #75/#76 are closed
+and merged. Issue #77 / PR #78 provide this documentation-only handoff. Stale
+paper issue #52 was closed after reconciliation. Settings issue #32 remains open
+because the single authorized authentication attempt failed before mutation;
+do not retry without intentionally supplied authority.
+
+Resume with:
+
+```sh
+git switch main && git pull --ff-only origin main && make verify
+```
+
+There is no automatic next research task. New theory, benchmark tasks, adapters,
+or human-study work require a fresh bounded registration and the applicable
+evidence/ethics gates.

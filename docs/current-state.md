@@ -1,44 +1,60 @@
 # Current program state
 
-_Reconciled 2026-07-21 after DD-009 deployment._
+_Reconciled 2026-07-21 after Program V2 site integration._
 
-Distributed Discovery Program V1 is complete through DD-008. The repository is
-public and project-authored content is MIT-licensed; the canonical
-Shared Discovery Paradox repository remains pinned, separate, and read-only.
+Distributed Discovery Programs V1 and V2 are complete at their registered
+bounded scopes. The repository is public and project-authored content is
+MIT-licensed; the canonical Shared Discovery Paradox repository remains pinned
+at `5025cc8e8f2f8ca015dff2066f08f81ad5715a51`, separate, clean, and read-only.
 
 | Measure | Current value |
 | --- | ---: |
-| Ledger claims | 54 |
-| Passing immutable runs | 29 of 32 manifests |
-| Python source files | 78 |
-| Public HTML routes | 30 |
-| Public data files | 20 |
-| Laboratory routes | 7 |
-| Project-authored papers | 3 |
-| Test suite | 118 tests |
+| Ledger claims | 58 |
+| Passing immutable runs | 32 of 35 manifests |
+| Registered studies | 15 |
+| Python source files | 94 |
+| Public HTML routes | 48 |
+| Public data files | 40 |
+| Laboratory routes | 8 |
+| Validated project papers | 4 |
+| Checksum-registered downloads | 15 |
+| Test suite | 138 collected tests |
 
-DD-006A is a complete exact census only for its registered normalized linear
-transfer class: 123 rows, 31 weak implementations, no strict implementation,
-and maximum all-tie margin zero. DD-006B's registered subsidized joint class
-has 16 strict rows among 60 and a maximum exact margin of `13/72`; its
-target-visible/action-hidden regime has no weak row. This is not a
-budget-balanced or arbitrary-mechanism result. DD-008 is an exact synthetic two-agent
-source-choice fixture; its Common-Source Trap is not a general theorem. DD-007
-remains synthetic-only. No real-data work, recruitment, intervention, paid API,
-release, DOI, or submission is authorized.
+Program V2 produced:
 
-DD-009 classifies all 288 registered architecture cells, evaluates 20 coherent
-cells exactly, and retains 268 explicit exclusions. Twelve cells are
-nondominated under ADR-0016's six objectives. This is a bounded synthetic atlas,
-not a universal ranking.
+- DD-010 DiscoveryBench: 15 exact golden tasks, 13 protocol contracts, 19
+  metrics, 16 compatible exact result vectors among 195 declared pairs, and a
+  separate 8,000-draw seeded sensitivity suite. It is not a hosted leaderboard
+  or a universal measure.
+- DD-011 Experimental Design and Power: a frozen 20-cell design, eight
+  hypotheses, eight synthetic response scenarios, 384 power/MDE rows, and
+  384,000 seeded Monte Carlo draws. The 140 large-sample calibration failures
+  are retained.
+- DD-008B: a general finite-team private-threshold/equilibrium-count theorem,
+  exact all-common trap width `p(1-p)/N`, and an exact `N=3` counterexample to
+  universal under-acquisition.
+- *The Common-Source Trap*: a deterministic 20-page working paper with SHA-256
+  `c997bba31c021bd799f2b3a561e8e558a1334f844aa87a448ade10319dac2ad3`.
+- Static benchmark, experiment-kit, Lab, study, and publication routes with
+  no-JavaScript fallbacks and a complete download checksum manifest.
 
-The site is static, progressively enhanced, and deployed from `main`. Its Labs
-are bounded-fixture explainers, not recommendation or data-collection tools.
+The DD-006B mechanism remains an exact census only for its registered
+externally subsidized class; it is not a budget-balance or arbitrary-mechanism
+theorem. DD-009 remains a bounded synthetic Atlas, not a universal ranking.
+DD-007 and DD-011 contain synthetic data only.
+
+> **No participants were recruited. No human data were collected. No experiment
+> was conducted. Separate ethics and institutional review are required before
+> deployment.**
+
+No real-data work, recruitment, intervention, paid API, package release, DOI,
+archival deposit, submission, or peer-review claim is authorized. The site is
+static, progressively enhanced, and deployed from `main` without analytics,
+tracking, cookies, accounts, submissions, or server-side user data.
+
 Issue [#32](https://github.com/yoheinakajima/distributed-discovery/issues/32)
-is settings-only: no settings-capable CLI authentication was available, and it
-does not block research.
-
-DD-008A, DD-006B, and DD-009 are merged and deployed. The remaining Program V2
-queue is DD-010, DD-011, a focused working paper, and benchmark site
-integration. See
-[current roadmap](current-roadmap.md) for registration status and boundaries.
+is the sole operational blocker: the single authorized settings attempt found
+no settings-capable GitHub CLI authentication. It does not block the completed
+research program and must not be retried without intentionally supplied
+authority. See the [current roadmap](current-roadmap.md) for bounded next
+questions.

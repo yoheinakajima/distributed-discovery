@@ -1,5 +1,8 @@
 # Result index
 
+Current inventory: 35 immutable manifests, of which 32 have passing validation
+and exit status zero. Final Program V2 acceptance did not create duplicate runs.
+
 - [`baseline/`](baseline/README.md): canonical upstream reproduction artifacts.
 - [`verified/`](verified/README.md): policy-verified results.
 - [`exploratory/`](exploratory/README.md): observations and lower bounds not promoted.
@@ -46,3 +49,7 @@ matches 84 separately enumerated payoff margins, checks 16,368 proof-kernel
 instances, and rejects two corruptions. It supports the general finite-`N`
 threshold theorem DD-C-0057 and the exact universal-under-acquisition
 counterexample DD-C-0058.
+
+The three Program V2 primary runs above are immutable and must not be rerun just
+to refresh timestamps. Their public summaries are generated only after manifest
+and output checksum validation.

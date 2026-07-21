@@ -14,17 +14,16 @@ Owner authorization now requires sequential completion of DD-010 DiscoveryBench,
 DD-011 Experimental Design and Power, the DD-008B Common-Source analytic gate,
 a focused *Common-Source Trap* working paper, public benchmark/experiment Labs,
 and a final Program V2 handoff. The live baseline is clean `main`
-`ee0027f6296f9716dcef885d0317fa9dff5cbedf`; CI `29864137509` and Pages
-`29864138029` passed, all DD-010, DD-011, DD-008B, and Common-Source Trap
+`d478a175aa3326a3be1efc1b50b9542e5e1c2011`; CI `29864943433` and Pages
+`29864943468` passed, all DD-010, DD-011, DD-008B, and Common-Source Trap
 public routes return HTTP 200, and no pull request is open. The only settings blocker remains issue #32; the previously required
 single `gh auth status` probe was already exhausted and is not repeated.
 
-The active milestone is the combined Program V2 public-surface audit under issue
-#75 and branch `site/program-v2-benchmark-experiment`. It reconciles the already
-merged benchmark, experiment kit, DD-008B study, and paper routes; strengthens
-route/download/accessibility/no-JavaScript/public-safety checks; and makes no new
-scientific claim or immutable run. Final documentation acceptance follows on a
-separate branch.
+The active milestone is final Program V2 acceptance and handoff under issue #77
+and branch `docs/program-v2-final-handoff`. It runs the bounded repository,
+certificate, corruption, leakage, schema, synthetic-design, paper, site, scan,
+provenance, upstream, and live-route gates, then reconciles every authoritative
+documentation surface. It makes no new scientific claim or immutable run.
 
 Progress:
 
@@ -48,11 +47,16 @@ Progress:
 - [x] Focused Common-Source Trap paper with source-generated figures/tables,
   deterministic 20-page PDF, citation audit, all-page Poppler review, PR #74
   squash merge `ee0027f6`, post-merge CI/Pages, and live publication/PDF checks.
-- [ ] Program V2 site/Lab integration and final acceptance/handoff.
+- [x] Program V2 site/Lab integration through PR #76 squash merge `d478a175`,
+  post-merge CI `29864943433`, Pages `29864943468`, 15 required live route
+  checks, and a 15-artifact download checksum manifest. Issue #75 is closed.
+- [ ] Final Program V2 acceptance and documentation reconciliation are complete
+  locally on issue #77 / PR #78; merge, post-merge CI/Pages, and final live
+  handoff verification remain.
 
-Recovery: inspect `git status --short --branch`; resume the site audit from
-`tests/integration/test_site_build.py`; never rerun the preserved DD-010,
-DD-011, or DD-008B primary runs. The exact next command is `make site`.
+Recovery: inspect `git status --short --branch`; resume final reconciliation from
+`docs/current-state.md`; never rerun the preserved DD-010, DD-011, or DD-008B
+primary runs. The exact next command is `make bootstrap && make verify`.
 
 ### Program V2 baseline (active, 2026-07-21)
 
