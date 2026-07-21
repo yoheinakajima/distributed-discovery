@@ -1,0 +1,41 @@
+{
+  "byte_reproducible_two_builds": true,
+  "citation_keys_resolved": true,
+  "claim_ids_resolved": true,
+  "compile_exit_status": 0,
+  "generated_assets": [
+    "atlas-slice.tex",
+    "discovery-gap.tex",
+    "equilibrium-counts.tex",
+    "evidence-status-table.tex",
+    "experiment-map.tex",
+    "independence-gap.tex",
+    "interventions.tex",
+    "planner-counts.tex",
+    "trap-region.tex",
+    "welfare-gap.tex"
+  ],
+  "generator": "distributed_discovery.papers.build_common_source_trap",
+  "inputs": {
+    "results/verified/20260721T141527Z_DD-008_0d11dc77_7e0c8f1d66/outputs/source-choice-grid.json": "5e1da8ec2e34378a18cc8431ee11cde6ba78c71cb0bf25be556429b19cb3db9f",
+    "results/verified/20260721T163030Z_DD-008A_8b70668b_06307caab4/outputs/n-agent-census.json": "6df75b7bf2b1f03687d4182ab4e5ab91711d279777bee66769aa7461bf558e7b",
+    "results/verified/20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b/outputs/joint-mechanism-summary.json": "34542e79cb887ca504909eb27842d1b734803fbac0c286f8bd051f13f1e163ad",
+    "results/verified/20260721T171249Z_DD-009_bc78d249_0c3851c41a/outputs/architectures.json": "acf90df6a2dc2271773f831a5c2a8e640e5a88e38a9d97f09acf62221e938a94",
+    "results/verified/20260721T185647Z_DD-011_fa0271d9_fcaa647c55/outputs/hypotheses.json": "0d586f4001c82d6771e0969b3a183b352a120591d84c0a27141c011e1307758f",
+    "results/verified/20260721T192412Z_DD-008B_649deb08_29dbeaf3a9/outputs/summary.json": "a877471e90750a38b48d37c9d37d6e9dfca05bb6f9bdb90217f36b908381465e",
+    "results/verified/20260721T192412Z_DD-008B_649deb08_29dbeaf3a9/outputs/thresholds.json": "a9d7c5143d758e6dca919734ae934dab3f02b23a3fe07c609113834815760ae6"
+  },
+  "page_count": 20,
+  "pdf_sha256": "c997bba31c021bd799f2b3a561e8e558a1334f844aa87a448ade10319dac2ad3",
+  "provenance_validated": true,
+  "schema_version": 1,
+  "source_runs": {
+    "analytic": "20260721T192412Z_DD-008B_649deb08_29dbeaf3a9",
+    "atlas": "20260721T171249Z_DD-009_bc78d249_0c3851c41a",
+    "experiment": "20260721T185647Z_DD-011_fa0271d9_fcaa647c55",
+    "finite_n": "20260721T163030Z_DD-008A_8b70668b_06307caab4",
+    "mechanism": "20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b",
+    "two_agent": "20260721T141527Z_DD-008_0d11dc77_7e0c8f1d66"
+  },
+  "unresolved_references_citations_or_overfull_boxes": false
+}

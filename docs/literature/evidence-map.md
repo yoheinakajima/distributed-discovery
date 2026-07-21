@@ -68,3 +68,18 @@ Whether these choices constitute a novel theoretical contribution remains unasse
 The literature supports the relevance of each broad treatment family and also makes
 clear that none is unprecedented. DD-011's specific contribution is an auditable
 crosswalk from the project's exact models to a bounded proposed design.
+
+## Common-Source Trap paper map
+
+| Paper object | Established adjacent literature | Evidence-specific contribution |
+|---|---|---|
+| Private versus planner acquisition | Private/social value of information; endogenous information-acquisition welfare | Exact thresholds for the frozen equal-split direct-search game, not a general acquisition-welfare theory. |
+| Common-source selection | Costly herding; coordination motives in source attention; complementary-source learning traps | One-shot shared-versus-independent source counts; no sequential social learning or general correlation technology. |
+| Acquisition as a public good | Multi-agent strategic experimentation | Static coverage benefit and prize splitting; no bandit state, experimentation flow, or continuation value. |
+| Cognitive/scientific diversity | Division-of-cognitive-labor and epistemic-landscape models | Source independence is isolated from heuristic diversity, topic choice, network communication, and dynamic landscape search. |
+| Institutional remedies | Information subsidy, assignment, attribution, allocation, and mechanism traditions | Exact DD-006B/DD-009 feasibility links and DD-011 predictions remain model-specific or synthetic-only. |
+
+The strongest paper-specific result is DD-C-0057's general finite-`N` threshold
+theorem. DD-C-0058 is equally important for positioning: it prevents the paper
+from treating equilibrium acquisition as uniformly below the planner at every
+interior source count.

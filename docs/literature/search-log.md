@@ -55,3 +55,26 @@ Stable records: `https://doi.org/10.1007/s00199-011-0615-9`,
 `https://doi.org/10.3982/QE809`, `https://doi.org/10.1073/pnas.1708274114`,
 `https://doi.org/10.1525/collabra.33267`, and
 `https://www.itl.nist.gov/div898/handbook/pri/section3/pri3344.htm`.
+
+## Common-Source Trap paper pass (2026-07-21 UTC)
+
+This focused review used publisher, journal, institutional-repository, and DOI
+records. It is a targeted positioning review, not a systematic review or novelty
+certificate.
+
+| Theme | Primary records retained | Boundary for the paper |
+|---|---|---|
+| Private/social value of information | Hirshleifer (1971) | Information-acquisition externalities and differences between private and social value are established; DD-008B contributes a particular exact source-count threshold result. |
+| Strategic experimentation as a public good | Bolton & Harris (1999); Keller, Rady & Cripps (2005) | Dynamic experimentation already exhibits free-riding, encouragement, role asymmetry, and inefficient rates; the current model is static and rewards one-shot target coverage. |
+| Endogenous source attention and coordination | Hellwig & Veldkamp (2009); Myatt & Wallace (2012); Colombo, Femminis & Pavan (2014) | Strategic complementarity/substitutability and welfare wedges in information acquisition are established. The Common-Source theorem must be presented as a transparent specialization, not the discovery of acquisition inefficiency. |
+| Costly social learning and source traps | Ali (2018); Liang & Mu (2020) | Costly information can strengthen herding, and correlated/complementary source choice can create learning traps. DD-008B has neither a social history nor asymptotic learning and therefore cannot inherit those claims. |
+| Scientific division of labor | Kitcher (1990); Weisberg & Muldoon (2009); Zollman (2010); Alexander, Himmelreich & Thompson (2015) | Diversity and search allocation are established and model-sensitive; contrary results reinforce the need to state the target law and action technology exactly. |
+| Functional problem-solving diversity | Hong & Page (2004); Rzhetsky et al. (2015) | Diverse heuristics and coordinated experiment portfolios have direct prior art; source independence is only one representation of diversity. |
+
+Stable records consulted include DOI/publisher pages for
+`10.1111/1468-0262.00022`, `10.1111/j.1468-0262.2005.00564.x`,
+`10.1111/j.1467-937X.2008.00515.x`, `10.1093/restud/rdr018`,
+`10.1093/restud/rdu015`, `10.1016/j.jet.2018.02.009`,
+`10.1093/qje/qjz033`, `10.1086/644786`, `10.1007/s10670-009-9194-6`,
+`10.1073/pnas.0403723101`, and `10.1086/681766`. No copyrighted paper is
+stored in the repository.

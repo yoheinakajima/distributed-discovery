@@ -1,0 +1,22 @@
+% Generated evidence asset; do not edit by hand.
+% Claims: DD-C-0051, DD-C-0057
+\begin{figure}[t]\centering
+\begin{tikzpicture}[x=10.3cm,y=17cm]
+\draw[->] (0,0)--(1.02,0) node[right] {$p$};
+\draw[->] (0,0)--(0,.275) node[above] {$c$};
+\foreach \x/\lab in {.2/{.2},.4/{.4},.6/{.6},.8/{.8},1/{1}} {\draw (\x,0)--(\x,-.004) node[below] {\small $\lab$};}
+\foreach \y/\lab in {.05/{.05},.10/{.10},.15/{.15},.20/{.20},.25/{.25}} {\draw (0,\y)--(-.008,\y) node[left] {\small $\lab$};}
+\draw[very thick,planner] plot[smooth] coordinates {(0.050,0.04750) (0.100,0.09000) (0.150,0.12750) (0.200,0.16000) (0.250,0.18750) (0.300,0.21000) (0.350,0.22750) (0.400,0.24000) (0.450,0.24750) (0.500,0.25000) (0.550,0.24750) (0.600,0.24000) (0.650,0.22750) (0.700,0.21000) (0.750,0.18750) (0.800,0.16000) (0.850,0.12750) (0.900,0.09000) (0.950,0.04750)};
+\draw[very thick,private] plot[smooth] coordinates {(0.050,0.02375) (0.100,0.04500) (0.150,0.06375) (0.200,0.08000) (0.250,0.09375) (0.300,0.10500) (0.350,0.11375) (0.400,0.12000) (0.450,0.12375) (0.500,0.12500) (0.550,0.12375) (0.600,0.12000) (0.650,0.11375) (0.700,0.10500) (0.750,0.09375) (0.800,0.08000) (0.850,0.06375) (0.900,0.04500) (0.950,0.02375)};
+\draw[dashed,market] plot[smooth] coordinates {(0.050,0.03563) (0.100,0.06750) (0.150,0.09563) (0.200,0.12000) (0.250,0.14062) (0.300,0.15750) (0.350,0.17062) (0.400,0.18000) (0.450,0.18562) (0.500,0.18750) (0.550,0.18562) (0.600,0.18000) (0.650,0.17062) (0.700,0.15750) (0.750,0.14062) (0.800,0.12000) (0.850,0.09563) (0.900,0.06750) (0.950,0.03563)};
+\draw[dotted,inktwo,very thick] plot[smooth] coordinates {(0.050,0.04156) (0.100,0.07875) (0.150,0.11156) (0.200,0.14000) (0.250,0.16406) (0.300,0.18375) (0.350,0.19906) (0.400,0.21000) (0.450,0.21656) (0.500,0.21875) (0.550,0.21656) (0.600,0.21000) (0.650,0.19906) (0.700,0.18375) (0.750,0.16406) (0.800,0.14000) (0.850,0.11156) (0.900,0.07875) (0.950,0.04156)};
+\node[planner,anchor=west] at (.73,.205) {planner $pq$};
+\node[private,anchor=west] at (.73,.093) {$N=2$};
+\node[market,anchor=west] at (.73,.132) {$N=4$};
+\node[inktwo,anchor=west] at (.73,.163) {$N=8$};
+\node[align=center,fill=white,draw,rounded corners] at (.50,.065) {all-common equilibrium below planner boundary\\between each $A_0(N,p)$ curve and $B_0(p)$};
+\end{tikzpicture}
+\caption{The exact all-common trap region. The upper curve is the planner's first-source threshold $B_0=p(1-p)$; lower curves are private thresholds $A_0=p(1-p)(N-1)/N$. The vertical width is $p(1-p)/N$.}
+\label{fig:trap-region}
+\ArtifactNote{Source runs: \path{20260721T141527Z_DD-008_0d11dc77_7e0c8f1d66, 20260721T192412Z_DD-008B_649deb08_29dbeaf3a9}; claims: DD-C-0051, DD-C-0057; generator: \path{distributed_discovery.papers.build_common_source_trap}; input SHA-256 prefixes: \texttt{5e1da8ec2e34, a9d7c5143d75}.}
+\end{figure}
