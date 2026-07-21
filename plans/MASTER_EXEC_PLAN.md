@@ -8,6 +8,47 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
+### Program V2 completion queue (active, 2026-07-21)
+
+Owner authorization now requires sequential completion of DD-010 DiscoveryBench,
+DD-011 Experimental Design and Power, the DD-008B Common-Source analytic gate,
+a focused *Common-Source Trap* working paper, public benchmark/experiment Labs,
+and a final Program V2 handoff. The live baseline is clean `main`
+`9b2096ddcf17585cda84ecc00b6606ef15d791b6`; CI `29852900771` and Pages
+`29852901101` passed, sampled public routes return HTTP 200, and no pull request
+is open. The only settings blocker remains issue #32; the previously required
+single `gh auth status` probe was already exhausted and is not repeated.
+
+The active milestone is DD-010. Its golden registry is capped at 15 tasks and
+the built-in protocol registry at 13 declared protocols; compatibility is
+computed from explicit capabilities rather than by exposing evaluator state.
+The exact primary suite must use immutable task views, exact fractions, a
+separate verifier, task-value and information-boundary corruption tests, and a
+60-second/1-GB cap. Simulated extensions, if included, are bounded, seeded,
+confidence-interval results and are never promoted to exact claims. Subsequent
+milestones become active only after the prior issue/PR/CI/Pages/live-route gate
+passes.
+
+Progress:
+
+- [ ] DD-010 issue, registration, schema, capability boundary, golden tasks,
+  protocols, metrics, CLI, exact run, verifier, claim audit, site, merge, CI,
+  Pages, and live routes.
+- [ ] DD-011 issue, bounded design, literature record, hypotheses/estimands,
+  randomization, synthetic power run, verifier, materials, ethics boundary,
+  site, merge, CI, Pages, and live routes.
+- [ ] DD-008B analytic gate with exact finite/formula agreement and an honest
+  theorem, counterexample, conjecture, or documented barrier outcome.
+- [ ] Focused Common-Source Trap paper with source-generated figures/tables,
+  deterministic PDF, citation audit, all-page Poppler review, merge, and Pages.
+- [ ] Program V2 site/Lab integration and final acceptance/handoff.
+
+Recovery: inspect `git status --short --branch`; resume the sole active milestone
+from its study `plan.md`; never rerun an already preserved primary run. If DD-010
+has not yet produced its immutable run, the exact next command is
+`make dd010-discoverybench`; otherwise use its manifest verifier before any
+claim promotion.
+
 ### Program V2 baseline (active, 2026-07-21)
 
 DD-008A is merged and deployed through PR #61. Clean primary run
