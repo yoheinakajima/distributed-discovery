@@ -1,0 +1,2882 @@
+[
+  {
+    "allocation": "direct",
+    "cell_id": "A001",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "registered coherent architecture",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": true
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A002",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A003",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "registered coherent architecture",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": true
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A004",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "registered coherent architecture",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": true
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A005",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A006",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A007",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A008",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A009",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A010",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A011",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A012",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A013",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A014",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A015",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A016",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A017",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A018",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A019",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A020",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A021",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A022",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A023",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A024",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A025",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A026",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A027",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A028",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A029",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A030",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A031",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A032",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A033",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A034",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A035",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A036",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A037",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A038",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A039",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A040",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A041",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A042",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A043",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A044",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A045",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A046",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A047",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A048",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A049",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A050",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A051",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A052",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A053",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A054",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A055",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "registered coherent architecture",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": true
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A056",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A057",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A058",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A059",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A060",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A061",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A062",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A063",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "registered coherent architecture",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": true
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A064",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A065",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "DD-006 mechanisms require their registered independent-signal law",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A066",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "DD-006 mechanisms require their registered independent-signal law",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A067",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A068",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A069",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A070",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A071",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A072",
+    "disclosure": "private",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A073",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A074",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A075",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A076",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A077",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A078",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A079",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A080",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A081",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A082",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A083",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A084",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A085",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "registered coherent architecture",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": true
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A086",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "registered coherent architecture",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": true
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A087",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A088",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A089",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A090",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A091",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A092",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A093",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A094",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A095",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A096",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A097",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "registered coherent architecture",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": true
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A098",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A099",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A100",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A101",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A102",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A103",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A104",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A105",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A106",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A107",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A108",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A109",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A110",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "registered coherent architecture",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": true
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A111",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A112",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A113",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A114",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A115",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A116",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A117",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A118",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A119",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A120",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A121",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A122",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A123",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A124",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A125",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A126",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A127",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A128",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A129",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A130",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A131",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A132",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A133",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A134",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A135",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A136",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A137",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A138",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A139",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A140",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A141",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A142",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A143",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A144",
+    "disclosure": "pooled",
+    "evidence": "common",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A145",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "registered coherent architecture",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": true
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A146",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A147",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "registered coherent architecture",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": true
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A148",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "registered coherent architecture",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": true
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A149",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A150",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A151",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A152",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A153",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A154",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A155",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A156",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A157",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A158",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A159",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A160",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A161",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A162",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A163",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A164",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A165",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A166",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A167",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A168",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A169",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A170",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A171",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A172",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A173",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A174",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A175",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A176",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A177",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A178",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A179",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A180",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A181",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A182",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A183",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A184",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A185",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A186",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A187",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A188",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A189",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A190",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A191",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A192",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A193",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A194",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A195",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A196",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A197",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A198",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A199",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "registered coherent architecture",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": true
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A200",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A201",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A202",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A203",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A204",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A205",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A206",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A207",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "registered coherent architecture",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": true
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A208",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A209",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "registered coherent architecture",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": true
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A210",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "registered coherent architecture",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": true
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A211",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A212",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A213",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A214",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A215",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A216",
+    "disclosure": "private",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A217",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A218",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A219",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A220",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A221",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A222",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A223",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A224",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A225",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A226",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A227",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "direct",
+    "cell_id": "A228",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A229",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "registered coherent architecture",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": true
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A230",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "registered coherent architecture",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": true
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A231",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A232",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A233",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A234",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A235",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A236",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A237",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A238",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A239",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "consensus",
+    "cell_id": "A240",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A241",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "registered coherent architecture",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": true
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A242",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A243",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A244",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A245",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A246",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A247",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A248",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A249",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A250",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A251",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "market",
+    "cell_id": "A252",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A253",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A254",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "registered coherent architecture",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": true
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A255",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A256",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A257",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A258",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "reward is not registered for this allocation protocol",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A259",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A260",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A261",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A262",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A263",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "planner",
+    "cell_id": "A264",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A265",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A266",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A267",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A268",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A269",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A270",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A271",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A272",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A273",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A274",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A275",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "sequential",
+    "cell_id": "A276",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A277",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "equal-split",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A278",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "pooling",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A279",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "sole-rescue",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A280",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "marginal-coverage",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A281",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006A",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A282",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "allocation and disclosure observability are incompatible",
+    "reward": "DD-006B",
+    "timing": "simultaneous",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A283",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "equal-split",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A284",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "pooling",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A285",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "sole-rescue",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A286",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "marginal-coverage",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A287",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006A",
+    "timing": "sequential",
+    "valid": false
+  },
+  {
+    "allocation": "joint",
+    "cell_id": "A288",
+    "disclosure": "pooled",
+    "evidence": "independent",
+    "reason": "timing must be sequential exactly when allocation is sequential",
+    "reward": "DD-006B",
+    "timing": "sequential",
+    "valid": false
+  }
+]

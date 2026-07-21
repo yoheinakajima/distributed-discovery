@@ -8,7 +8,7 @@ document.querySelectorAll("[data-lab]").forEach((lab) => {
   const name = lab.dataset.lab.replace(/-/g, " ");
   const render = () => {
     output.textContent = slider.value;
-    note.textContent = `${name}: precomputed fixture scenario ${slider.value} of 5. This control changes no evidence or claim status.`;
+    note.textContent = `${name}: precomputed fixture scenario ${slider.value} of ${slider.max}. This control changes no evidence or claim status.`;
   };
   slider.addEventListener("input", render);
   render();

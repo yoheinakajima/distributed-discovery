@@ -20,3 +20,8 @@ The DD-006B joint-mechanism run is
 60-row mechanism registry, incentive slacks, accounting certificates,
 DD-006/DD-006A comparison, and independent row verification supporting
 DD-C-0053.
+
+The DD-009 Architecture Atlas run is
+`verified/20260721T171249Z_DD-009_bc78d249_0c3851c41a`. It preserves all 288
+validity decisions, 20 exact architecture rows, the 12-cell bounded Pareto set,
+and a separate evaluator supporting DD-C-0054.

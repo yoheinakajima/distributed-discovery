@@ -1,0 +1,9 @@
+{
+  "cartesian_cells": 288,
+  "independent_rows_verified": 20,
+  "invalid_cells": 268,
+  "maximum_discovery": "11/12",
+  "maximum_social_net_value": "5/6",
+  "pareto_cells": 12,
+  "valid_cells": 20
+}

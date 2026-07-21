@@ -16,8 +16,8 @@ are [`docs/current-state.md`](docs/current-state.md) and
 [`claims/claims.yml`](claims/claims.yml) under the
 [`claim-status policy`](docs/claim-status-policy.md); studies are indexed in
 [`studies/index.md`](studies/index.md). DD-007 is synthetic-only. Program V2's
-DD-008A evidence is merged and DD-006B has a completed exact bounded frontier;
-the queued Architecture Atlas is next. No real-data work is authorized.
+DD-008A and DD-006B are merged; DD-009 has a completed local exact bounded
+Architecture Atlas. No real-data work is authorized.
 
 ## Setup and common commands
 
@@ -49,6 +49,7 @@ make dd005-coverage         # run the overlapping-coverage frontiers
 make dd006-mechanisms       # run the score-difference mechanism catalogue
 make dd006b-joint-mechanism # run the normalized joint-mechanism frontier
 make dd007-synthetic-audit  # run the synthetic-only recovery audit
+make dd009-atlas             # run the aligned architecture registry and Pareto census
 make papers               # build all paper artifacts
 make site                 # build the public companion site locally
 make all                  # verify, reproduce canonical baseline, build papers and site

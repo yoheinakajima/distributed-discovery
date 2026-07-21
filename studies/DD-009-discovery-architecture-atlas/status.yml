@@ -1,0 +1,5 @@
+study_id: DD-009
+status: complete-bounded-study
+evidence_status: exact-validity-registry-independent-row-evaluation-and-bounded-dominance
+next_action: preserve the 288-cell validity and 20-row metric regressions; new axes or welfare weights require a separate registration
+updated_utc: 2026-07-21T17:12:50Z

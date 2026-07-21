@@ -1,0 +1,10 @@
+study_id: DD-009
+title: Discovery Architecture Atlas
+slug: dd-009
+phase: complete-bounded-study
+summary: Exact aligned 20-cell architecture atlas with 268 explicit validity exclusions and bounded Pareto comparisons.
+public_artifacts:
+  - path: studies/DD-009-discovery-architecture-atlas/model.md
+    description: Frozen aligned architecture model
+  - path: studies/DD-009-discovery-architecture-atlas/report.md
+    description: Bounded exact Atlas report

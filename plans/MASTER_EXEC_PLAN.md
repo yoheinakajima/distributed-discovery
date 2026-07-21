@@ -21,7 +21,13 @@ DD-006B primary run `20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b` exhausts
 16 strict rows, maximum all-tie margin `13/72`, truthful differentiated
 discovery `11/12`, and no weak target-visible/action-hidden row. A separate
 exact evaluator reproduces incentive and accounting certificates. Local
-integration is active; merge, CI, Pages, and live route checks remain.
+integration passed through PR #63, post-merge CI, Pages, and live route checks.
+
+DD-006B merged and deployed through PR #63 as `c4524e7e`. DD-009 primary run
+`20260721T171249Z_DD-009_bc78d249_0c3851c41a` classifies all 288 Cartesian
+cells, evaluates 20 coherent architectures, independently reproduces every row,
+and yields 12 nondominated cells under the declared six objectives. DD-C-0054
+is independently reproduced. DD-009 PR integration is active.
 
 Program V1 is complete through DD-008. The authoritative concise entry points
 are `docs/current-state.md` and `docs/current-roadmap.md`. Reconciliation at
@@ -228,6 +234,7 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, maki
 - 2026-07-21: the first post-integration site test caught removal of the established phrase “bounded null, not a theorem.” The wording was restored. The final 14-page synthesis PDF is byte-reproducible at SHA-256 `53cbfa8ccf6f732b13670206f3a8c25627390cbb29206f6b1b017163ae3735bf`, and all 14 Poppler renders passed visual review.
 - 2026-07-21: DD-006B primary run `20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b` completed from clean commit `f022a1a5` in 22.55 seconds under the 60-second/1-GB registration. The 60-row exact census and separate evaluator agree on all incentive, discovery, participation, subsidy, ex-post transfer-bound, and liability certificates. Sixteen rows are strict, three use an active positive proper score, maximum all-tie margin is `13/72`, and the target-visible/action-hidden regime has no weak row.
 - 2026-07-21: DD-006B integration passed `make verify` with 116 tests and 31 manifests, built a 28-page/11-study site with generated mechanism Lab data, and rebuilt all three papers. The Three Results paper changed only because its generated claim-ledger provenance hash changed; it remains 14 pages, is byte-reproducible at SHA-256 `1ac0700bf2d15a18c58207f2aa45879306f0e09217578ce0de366af2bea0309f`, and all 14 Poppler renders passed visual review.
+- 2026-07-21: DD-009 primary run `20260721T171249Z_DD-009_bc78d249_0c3851c41a` completed from clean commit `bc78d249` in 0.20 seconds under the 30-second/512-MB registration. It classifies 288 cells, evaluates 20 coherent architectures, independently reproduces every row, and records 12 nondominated cells. Local integration passes 118 tests, 32 manifests, a 30-page/12-study site, and all three papers. The 14-page Three Results provenance rebuild is byte-reproducible at SHA-256 `d5c4d8e110b82aa34cf1beb3244204d2ad5902c58aaea44a860b40e442dc7b47`; all 14 Poppler renders passed visual review.
 - 2026-07-21: heterogeneous-source PR #27 passed CI `29798934183` and paper/site build `29798934209`, received no-findings review `4741011022`, and squash-merged as `4a8f53e90b1ffea233de5b377ba970566d92d670`. Post-merge CI `29798998333` and Pages `29798998329` passed; all seven then-required routes and the exact 839-network data were verified live.
 - 2026-07-21: maintenance issue #28 was split by risk class. PR #29 refreshed checkout/setup-uv/Pages actions and Dependabot grouping, PR #30 raised PyYAML/types-jsonschema floors without changing resolved versions, and PR #31 migrated strict checking from mypy 1.20.2 to 2.3.0. All three PRs passed branch and post-merge CI/Pages. Obsolete conflicted Dependabot PRs #1–#5 were closed with replacement links.
 - 2026-07-21: mypy 2.3 produced no new diagnostics across 45 source files under either its standard parser or `--native-parser`. Defaults for local partial types and strict bytes required no compatibility override; no global or targeted suppression was added.
