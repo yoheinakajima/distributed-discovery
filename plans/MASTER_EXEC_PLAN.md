@@ -8,7 +8,7 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-The historical M0–M9 bootstrap, operational Milestone A, research milestones DD-001A/B, DD-002, DD-003, their integrated handoff, and continuation cycle F are complete and merged. Exact-frontier PR #19 squash-merged as `8d63201cb3b6633c873494af2ea21402db8752d6`; post-merge CI run `29793437945` and Pages run `29793437954` passed, and the live claim data exposes DD-C-0036. Cycle G implementation is complete on issue #20 and draft PR #21: the checksum-driven five-page site and reproducible 12-page synthesis paper pass local acceptance. The public repository has five open Dependabot PRs (#1–#5), queued DD-007 issue #8, no rulesets, no milestones, and no repository homepage value. **Active integration boundary: review, merge, and deploy Three Results PR #21 from `docs/three-results-synthesis`.**
+The historical M0–M9 bootstrap, operational Milestone A, research milestones DD-001A/B, DD-002, DD-003, their integrated handoff, and continuation cycles F–G are complete and merged. Three Results PR #21 squash-merged as `007dc15b89f6d7e98e572d1b164f057c7c38c964`; post-merge CI run `29795041418` and Pages run `29795041429` passed. All five live HTML routes and `data/results.json` return HTTP 200, and the deployed Results layout has no horizontal overflow at 1280px or 390px. The public repository has five open Dependabot PRs (#1–#5), queued DD-007 issue #8, no rulesets, no milestones, and no repository homepage value. **Active integration boundary: issue #22 on `research/dd001-alignment-upper-bound`.**
 
 ## Scope
 
@@ -43,8 +43,8 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - E DD-003 bounded source-graph fixture: completed 2026-07-20.
 - Integrated A–E handoff: completed 2026-07-20 through PR #17.
 - F exact canonical pooled-frontier certificate: completed 2026-07-20 through PR #19.
-- G Three Results synthesis paper and public Results page: active.
-- H alignment-preserving DD-001 upper relaxation: pending G.
+- G Three Results synthesis paper and public Results page: completed 2026-07-20 through PR #21.
+- H alignment-preserving DD-001 upper relaxation: active on issue #22.
 - I DD-002 equilibrium-selection robustness: pending H.
 - J DD-003 heterogeneous source accuracy: pending I.
 - K dependency and Dependabot maintenance: pending J.
@@ -149,6 +149,7 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - 2026-07-21: a layout-only rebuild exposed that the synthesis builder's two PDF comparisons shared TeX auxiliary state. The builder now uses two isolated clean compilation directories, normalizes their paths, retains failing logs, and certifies the final 12-page PDF byte-for-byte at SHA-256 `38128dbbb1f531b8ad95151c0ccd4f00b54c04eb8afa1c11ca73f24e5c26b92f`.
 - 2026-07-21: targeted tests initially exercised a stale non-editable local wheel, and the first repository-wide lint/typecheck attempts found one unformatted test and an overly broad inferred provenance value type. Reinstalling the local wheel for the targeted check, formatting, and binding the source epoch as a string resolved these operational failures. Final acceptance passes 72 tests, strict mypy, Ruff, claim/run validation, both 12-page papers, and the five-page site.
 - 2026-07-21: PR #21 artifact run `29794725150` compiled both clean Three Results PDFs on Ubuntu but failed because the builder also required identical compiler logs. The first clean Tectonic invocation can populate its package cache, so log equality is environment-state equality rather than artifact determinism. The gate now requires identical PDF bytes, validates both logs separately for fatal/reference/citation/overfull failures, stores the second warm-cache log, and records normalized log equality as diagnostic metadata.
+- 2026-07-21: Three Results PR #21 passed CI `29794931024` and paper/site build `29794931026`, received complete no-findings review `4740643312`, and squash-merged as `007dc15b89f6d7e98e572d1b164f057c7c38c964`. Post-merge CI `29795041418` and Pages `29795041429` passed; all five pages and result provenance returned HTTP 200 with exact deployed values.
 
 ## Decision log
 
@@ -221,7 +222,7 @@ No current local blocker. GitHub CLI is installed but unauthenticated; the conne
 
 ## Recovery and restart instructions
 
-On branch `docs/three-results-synthesis`, finish draft PR #21: push the completed implementation, wait for CI and artifact checks, review the complete diff and threads, mark ready, squash-merge, sync `main`, and verify post-merge CI/Pages plus all five live HTML routes and `data/results.json`. Thereafter resume the first unchecked continuation checklist item only. Each research cycle uses its own issue and branch, commits implementation before any new clean primary run, preserves immutable run evidence, audits claims, opens a draft PR, waits for required CI, reviews the complete diff and threads, squash-merges, syncs `main`, and verifies post-merge CI/Pages before beginning the next cycle. Never rerun a completed primary configuration merely to refresh timestamps.
+On branch `research/dd001-alignment-upper-bound`, execute issue #22: compare relaxation families, prove the selected alignment-preserving superset, validate all tiny and anti-informative cases, commit implementation before the clean primary run, and preserve an exact independently checkable canonical certificate or barrier. Each research cycle uses its own issue and branch, commits implementation before any new clean primary run, preserves immutable run evidence, audits claims, opens a draft PR, waits for required CI, reviews the complete diff and threads, squash-merges, syncs `main`, and verifies post-merge CI/Pages before beginning the next cycle. Never rerun a completed primary configuration merely to refresh timestamps.
 
 ## Outcome and retrospective
 

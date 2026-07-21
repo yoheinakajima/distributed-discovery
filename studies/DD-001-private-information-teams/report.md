@@ -65,7 +65,9 @@ reduction plus a documented certification barrier, not an alignment-preserving
 improvement over the newly exact pooled upper bound. The direct lower bound and
 pooled upper endpoint remain distinct, and global optimality remains unresolved.
 
-Next work is the exact \(N=2\) hybrid-threshold milestone. Future canonical certification must use a joint alignment-preserving state or another independently checkable relaxation before spending large compute.
+The exact \(N=2\) hybrid-threshold milestone is complete. Active issue #22 now
+requires a joint alignment-preserving state or another independently checkable
+relaxation before any bounded canonical computation.
 
 ## DD-001B two-searcher thresholds
 

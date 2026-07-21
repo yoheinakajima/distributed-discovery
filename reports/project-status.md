@@ -6,7 +6,16 @@
 
 Milestones M0 through M9 and operational Milestone A are complete. Cleanup issue #6 closed through squash-merged PR #12 at `1add8de5a349c57085928da8aa54da85e49c5077`; CI passed, Pages workflow `29781940577` succeeded, and all five required routes returned HTTP 200. The source repository is public under MIT at `https://yoheinakajima.github.io/distributed-discovery/`. Canonical upstream remains untouched.
 
-The authorized A–E queue is complete and merged through handoff PR #17 at `b72c01026be5bf7018b3a3e9a464671dce53bcbb`; post-merge CI `29787687400` and Pages `29787687403` passed. Continuation cycle F is implemented on draft PR #19. Exact run `20260721T012208Z_DD-000_8e4b55e2_e8321d1048` certifies the pooled top-eight endpoint and the valid DD-001 interval while leaving the canonical private-team optimum unresolved.
+The authorized A–E queue and continuation cycles F–G are complete and merged. Exact-frontier PR #19 merged as `8d63201cb3b6633c873494af2ea21402db8752d6`; Three Results PR #21 merged as `007dc15b89f6d7e98e572d1b164f057c7c38c964`. Post-merge CI `29795041418` and Pages `29795041429` passed for the latter. The repository now has 72 tests, 36 claims, 14 immutable manifests, two deterministic 12-page papers, and five deployed HTML pages. Issue #22 and branch `research/dd001-alignment-upper-bound` are the active continuation boundary; the canonical private-team optimum remains unresolved at branch start.
+
+## Continuation checkpoint
+
+- Current merged baseline: `007dc15b89f6d7e98e572d1b164f057c7c38c964`.
+- Exact pooled top-eight endpoint: `860391662035297/1001129150390625`.
+- Current certified private-team interval: `[325089/390625, 860391662035297/1001129150390625]`.
+- Three Results paper: `papers/three-results/Three_Results_in_Distributed_Discovery.pdf`, 12 pages, visually audited.
+- Public Results route: `https://yoheinakajima.github.io/distributed-discovery/results.html`.
+- Active task: prove and certify an alignment-preserving DD-001 upper relaxation under issue #22.
 
 ## 2. Repository map
 
@@ -15,7 +24,7 @@ The authorized A–E queue is complete and merged through handoff PR #17 at `b72
 | `claims/` | Authoritative claim ledger, schema, reviews, and proofs |
 | `docs/` | Foundations, notation, literature evidence, ADRs, policies, and setup guides |
 | `integrations/shared-discovery-paradox/` | Upstream pin, dependency lock, generated patch, and provenance |
-| `papers/` | Additive canonical-paper preview and foundations manuscript |
+| `papers/` | Additive preview plus deterministic Foundations and Three Results manuscripts |
 | `plans/MASTER_EXEC_PLAN.md` | Complete milestone log, failures, decisions, and restart point |
 | `results/` | Immutable baseline and DD-001 run records, separated by evidence class |
 | `site/` | Dependency-free companion source and Pages build pipeline |
@@ -40,6 +49,8 @@ The authorized A–E queue is complete and merged through handoff PR #17 at `b72
 - DD-001B: exact restricted-family threshold theorem, bounded continuous unrestricted classification, and anti-informative counterexamples; merged through PR #14.
 - DD-002: complete bounded deterministic-policy enumeration, exact equilibrium registries, independent reversal verification, and full Blackwell-refinement census; merged through PR #15.
 - DD-003: complete 51-graph census, independently reproduced orbit counts and exact outcomes, pairwise-moment bounded null, and scalar counterexamples; merged through PR #16 and deployed.
+- F: exact canonical pooled-frontier certificate and exact DD-001 interval; merged through PR #19 and deployed.
+- G: separate 12-page Three Results synthesis, generated figures/evidence table, and public Results route; merged through PR #21 and deployed.
 
 ## 4. Commands executed
 
@@ -115,7 +126,7 @@ DD-C-0022 is `checked`, not verified: direct clue-following is an exact coordina
 
 ## 10. Open research questions
 
-The A–E queue is complete and continuation cycle F awaits PR review/merge. The next task is the separate Three Results synthesis paper and public Results page, followed by an alignment-preserving canonical DD-001 relaxation. DD-004 through DD-007 remain unexecuted; issue #8 intentionally queues the DD-007 schema only.
+The A–E and F–G queues are complete. Active issue #22 seeks an alignment-preserving canonical DD-001 relaxation. DD-002 selection robustness and DD-003 heterogeneous-source accuracy follow sequentially; DD-004 through DD-007 remain unexecuted, and issue #8 intentionally queues the DD-007 schema only.
 
 ## 11. Known technical debt
 
@@ -134,13 +145,13 @@ There is no validation blocker. Public `origin`, Actions, and Pages are active. 
 
 ## 13. Exact resume point
 
-On draft PR #19, finish the full claim/diff audit, run acceptance, wait for required CI, merge, sync `main`, and verify post-merge CI/Pages. Preserve the exact certified interval `[325089/390625, 860391662035297/1001129150390625]`; never describe its upper endpoint as attainable or tight.
+On `research/dd001-alignment-upper-bound`, implement issue #22 from merged baseline `007dc15`: write the relaxation ADR/proof, validate against all exact tiny fixtures, create an independent certificate verifier with corruption rejection, and only then execute a bounded clean canonical run. Preserve the current interval until stronger evidence passes claim audit.
 
 ## 14. Recommended next three tasks
 
-1. Build the separate Three Results paper and public Results page from validated run artifacts.
-2. DD-001: seek an alignment-preserving canonical relaxation with a checkable upper bound.
-3. DD-002 and DD-003: execute the registered selection-robustness and heterogeneous-accuracy continuations sequentially.
+1. DD-001: certify an alignment-preserving canonical relaxation or exact scoped barrier.
+2. DD-002: execute the registered equilibrium-selection robustness catalogue.
+3. DD-003: execute the bounded heterogeneous-source-accuracy census.
 
 ## 15. Commit list
 
