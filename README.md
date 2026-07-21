@@ -15,9 +15,9 @@ are [`docs/current-state.md`](docs/current-state.md) and
 [`docs/current-roadmap.md`](docs/current-roadmap.md). Claims remain in
 [`claims/claims.yml`](claims/claims.yml) under the
 [`claim-status policy`](docs/claim-status-policy.md); studies are indexed in
-[`studies/index.md`](studies/index.md). DD-007 is synthetic-only. Program V2
-begins with registered DD-008A N-agent evidence acquisition and DD-006B joint
-truthful-discovery mechanisms; no real-data work is authorized.
+[`studies/index.md`](studies/index.md). DD-007 is synthetic-only. Program V2's
+DD-008A evidence is merged and DD-006B has a completed exact bounded frontier;
+the queued Architecture Atlas is next. No real-data work is authorized.
 
 ## Setup and common commands
 
@@ -47,6 +47,7 @@ make dd003-heterogeneous-sources # run the colored-source accuracy census
 make dd004-sequential       # run the perfect-elimination sequential baseline
 make dd005-coverage         # run the overlapping-coverage frontiers
 make dd006-mechanisms       # run the score-difference mechanism catalogue
+make dd006b-joint-mechanism # run the normalized joint-mechanism frontier
 make dd007-synthetic-audit  # run the synthetic-only recovery audit
 make papers               # build all paper artifacts
 make site                 # build the public companion site locally

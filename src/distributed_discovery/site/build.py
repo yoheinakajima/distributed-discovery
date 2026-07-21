@@ -31,6 +31,7 @@ PHASES = {
     "retired",
 }
 SAFE_ARTIFACT_SUFFIXES = {".md", ".json", ".csv", ".png", ".svg", ".pdf", ".yml"}
+DD006B_RUN = "20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b"
 
 
 class SiteParser(HTMLParser):
@@ -581,9 +582,9 @@ def _render(
         (
             "mechanisms",
             "Mechanisms and Incentives",
-            "DD-C-0050",
-            "20260721T140745Z_DD-006_401ad624_c942f43e42",
-            "Explore the registered normalized-linear transfer frontier; no arbitrary-transfer conclusion is implied.",
+            "DD-C-0053",
+            DD006B_RUN,
+            "Explore the joint proper-score, observable-action, and subsidy frontier; no arbitrary-transfer conclusion is implied.",
         ),
         (
             "audit",
@@ -699,6 +700,10 @@ def build(root: Path, output: Path) -> dict[str, Any]:
     for asset in ["styles.css", "site.js", "og.svg"]:
         shutil.copy2(source / asset, output / asset)
     routes = _render(root, output, studies, claims, claims_by_id, runs, publications)
+    joint_summary_path = (
+        root / "results/verified" / DD006B_RUN / "outputs/joint-mechanism-summary.json"
+    )
+    joint_summary = json.loads(joint_summary_path.read_text(encoding="utf-8"))
     data = {
         "research-index.json": {"schema_version": 1, "studies": studies},
         "claims.json": {"schema_version": 1, "claims": claims},
@@ -709,6 +714,20 @@ def build(root: Path, output: Path) -> dict[str, Any]:
             "schema_version": 1,
             "source": "precomputed bounded fixture controls",
             "scenario_count": 5,
+            "mechanisms_data": "data/labs/mechanisms.json",
+        },
+        "labs/mechanisms.json": {
+            "schema_version": 1,
+            "study_id": "DD-006B",
+            "claim_id": "DD-C-0053",
+            "run_id": DD006B_RUN,
+            "frontier_rows": joint_summary["frontier_rows"],
+            "weak_rows": joint_summary["weak_rows"],
+            "strict_rows": joint_summary["strict_rows"],
+            "maximum_margin": joint_summary["maximum_margin"],
+            "best_strict_discovery": joint_summary["best_strict_discovery"],
+            "regime_results": joint_summary["regime_results"],
+            "boundary": "registered exact subsidized class; not arbitrary mechanisms",
         },
     }
     for name, value in data.items():

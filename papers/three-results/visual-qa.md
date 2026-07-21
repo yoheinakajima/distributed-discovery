@@ -1,8 +1,8 @@
 # Three Results paper visual QA
 
-- Review date: 2026-07-20 (America/Los_Angeles)
+- Review date: 2026-07-21 (America/Los_Angeles)
 - Artifact: `Three_Results_in_Distributed_Discovery.pdf`
-- PDF SHA-256: `53cbfa8ccf6f732b13670206f3a8c25627390cbb29206f6b1b017163ae3735bf`
+- PDF SHA-256: `1ac0700bf2d15a18c58207f2aa45879306f0e09217578ce0de366af2bea0309f`
 - Format: 14 letter-size pages
 - Renderer: Poppler `pdftoppm`, PNG at 120 dpi
 - Scope: every page reviewed at rendered-page scale
@@ -47,6 +47,13 @@ expanded source section on pages 9–10, new degree/discovery table and provenan
 note on page 10, synthesis table, limitations, agenda, conclusion, and references
 are within bounds and legible. The exact fractions, 839/163/111 census counts,
 claim IDs, and run provenance show no overlap, clipping, or broken glyphs.
+
+The DD-006B provenance pass rebuilt the unchanged paper content after the claim
+ledger gained DD-C-0053. It revalidated all citations, references, source
+checksums, and generated claim-status metadata, then rendered and reviewed all
+14 pages at 120 dpi. Pages 1–14 retain readable tables, figures, equations,
+provenance notes, limitations, and references with no clipping, overlap, broken
+glyphs, or unintended blank pages.
 
 The final visual review matches the checksum above. Any PDF checksum change
 invalidates this record and requires a new all-page review.

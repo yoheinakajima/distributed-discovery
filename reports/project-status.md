@@ -1,10 +1,16 @@
 # Project status and final continuation handoff
 
-> DD-008A local completion (2026-07-21): clean primary run
+> DD-006B local completion (2026-07-21): primary clean run
+> `20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b` exhausts 60 normalized rows
+> and 57,600 joint deviations. Sixteen rows are strict, three use an active
+> positive proper score, maximum margin is `13/72`, and the hidden-action
+> regime has no weak row. DD-C-0053 is independently reproduced. PR merge and
+> deployment remain the external gates.
+
+> DD-008A completion (2026-07-21): clean primary run
 > `20260721T163030Z_DD-008A_8b70668b_06307caab4` supports DD-C-0052 within
 > the registered N=2 through 8 grid. Exact binomial and direct enumeration
-> agree; 113 tests and 27 manifests pass. PR #61 merge and deployment remain
-> the final external gates.
+> agree; PR #61 is merged and deployment passed.
 
 > Program V2 baseline (2026-07-21): Program V1 is complete through DD-008 on
 > `ae8b52c098d358afc63948b7a54d2245cafd7438`: 51 claims, 21 passing runs among

@@ -25,3 +25,12 @@ DD-003 passing run:
 - `20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1`: primary complete 51-graph census, independently reproduced orbit counts, exact pairwise-moment bounded null, mean-agreement counterexample, and generated SVG.
 
 The DD-003 null is restricted to the configured three-target, four-searcher, one-to-three-source class at accuracy `2/3`. The weaker mean-agreement scalar and source HHI both have exact counterexamples within the same census.
+
+DD-006B primary run:
+
+- `20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b`: 60-row normalized joint-mechanism frontier, 57,600 exact joint deviations, separate evaluator, and exact incentive, discovery, subsidy, participation, budget-bound, and liability certificates.
+
+The strict-implementation result is restricted to the subsidized quarter-grid
+class and fixed ex-ante tie roles. It is not a budget-balance or
+arbitrary-mechanism result. Earlier DD-006B runs are retained as non-primary
+development provenance and are not cited by DD-C-0053.
