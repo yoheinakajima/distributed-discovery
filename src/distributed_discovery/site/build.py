@@ -41,20 +41,28 @@ class SiteParser(HTMLParser):
     def __init__(self) -> None:
         super().__init__()
         self.ids: set[str] = set()
+        self.id_occurrences: list[str] = []
         self.hrefs: list[str] = []
         self.headings: list[int] = []
         self.tags: set[str] = set()
         self.meta: dict[str, str] = {}
+        self.runtime_assets: list[str] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         self.tags.add(tag)
         values = dict(attrs)
         if values.get("id"):
-            self.ids.add(str(values["id"]))
+            identifier = str(values["id"])
+            self.ids.add(identifier)
+            self.id_occurrences.append(identifier)
         if tag == "a" and values.get("href"):
             self.hrefs.append(str(values["href"]))
         if tag == "meta" and values.get("name") and values.get("content"):
             self.meta[str(values["name"])] = str(values["content"])
+        if tag in {"img", "script"} and values.get("src"):
+            self.runtime_assets.append(str(values["src"]))
+        if tag == "link" and values.get("rel") == "stylesheet" and values.get("href"):
+            self.runtime_assets.append(str(values["href"]))
         if re.fullmatch(r"h[1-6]", tag):
             self.headings.append(int(tag[1]))
 
@@ -798,7 +806,7 @@ def _render(
         )
         for item in publications
     )
-    publications_body = f"""<p class="eyebrow">Publications</p><h1>Validated papers</h1><p class="lede">Downloads are copied only from validation-recorded PDF artifacts. Checksums and page counts are generated from the current repository evidence.</p><section class="grid-2">{publication_items}</section>"""
+    publications_body = f"""<p class="eyebrow">Publications</p><h1>Validated papers</h1><p class="lede">Downloads are copied only from validation-recorded PDF artifacts. Checksums and page counts are generated from the current repository evidence. <a href="data/downloads.json">Inspect the complete download checksum manifest.</a></p><section class="grid-2">{publication_items}</section>"""
     _write(
         output,
         "publications.html",
@@ -1007,8 +1015,27 @@ def validate_site(output: Path, routes: list[dict[str, str]]) -> dict[str, Any]:
             errors.append(f"{relative}: missing landmark")
         if not parser.headings or parser.headings[0] != 1:
             errors.append(f"{relative}: first heading must be h1")
+        if parser.headings.count(1) != 1:
+            errors.append(f"{relative}: expected exactly one h1")
+        if any(
+            current > previous + 1
+            for previous, current in zip(parser.headings, parser.headings[1:], strict=False)
+        ):
+            errors.append(f"{relative}: heading hierarchy skips a level")
+        if len(parser.ids) != len(parser.id_occurrences):
+            errors.append(f"{relative}: duplicate element ID")
         if "description" not in parser.meta:
             errors.append(f"{relative}: missing description")
+        if any(urlsplit(asset).scheme in {"http", "https"} for asset in parser.runtime_assets):
+            errors.append(f"{relative}: external runtime asset")
+        if re.search(r"data-(?:benchmark-|experiment-)?lab", source) and "<noscript>" not in source:
+            errors.append(f"{relative}: interactive Lab lacks a no-JavaScript fallback")
+        if re.search(
+            r"googletagmanager|google-analytics|plausible\.io|segment\.io|mixpanel|hotjar",
+            source,
+            re.IGNORECASE,
+        ):
+            errors.append(f"{relative}: tracking or analytics reference")
         for href in parser.hrefs:
             parsed = urlsplit(href)
             if parsed.scheme in {"http", "https", "mailto"}:
@@ -1023,9 +1050,38 @@ def validate_site(output: Path, routes: list[dict[str, str]]) -> dict[str, Any]:
                     errors.append(f"{relative}: missing fragment {href}")
         if re.search(r"(?:/Users/|file://|AKIA|ghp_)", source):
             errors.append(f"{relative}: local path or secret-like content")
-    for download in (output / "downloads").glob("*.pdf"):
-        if download.stat().st_size == 0:
-            errors.append(f"empty download: {download.name}")
+    download_manifest_path = output / "data/downloads.json"
+    if not download_manifest_path.is_file():
+        errors.append("missing download checksum manifest")
+    else:
+        download_manifest = json.loads(download_manifest_path.read_text(encoding="utf-8"))
+        entries = download_manifest.get("downloads", [])
+        registered = {entry.get("path") for entry in entries if isinstance(entry, dict)}
+        actual_downloads = {
+            str(path.relative_to(output))
+            for path in (output / "downloads").glob("*")
+            if path.is_file()
+        }
+        if registered != actual_downloads:
+            errors.append("download checksum manifest does not match generated downloads")
+        for entry in entries:
+            if not isinstance(entry, dict) or not isinstance(entry.get("path"), str):
+                errors.append("invalid download checksum entry")
+                continue
+            download = output / entry["path"]
+            if (
+                not _safe_relative(entry["path"])
+                or not download.is_file()
+                or download.stat().st_size == 0
+                or entry.get("bytes") != download.stat().st_size
+                or entry.get("sha256") != _sha256(download)
+            ):
+                errors.append(f"invalid download checksum entry: {entry['path']}")
+    stylesheet = (output / "styles.css").read_text(encoding="utf-8")
+    if "prefers-reduced-motion: reduce" not in stylesheet:
+        errors.append("stylesheet lacks reduced-motion behavior")
+    if ":focus-visible" not in stylesheet and ":focus" not in stylesheet:
+        errors.append("stylesheet lacks visible focus behavior")
     if errors:
         raise RuntimeError("site validation failed:\n" + "\n".join(errors))
     return {
@@ -1035,6 +1091,11 @@ def validate_site(output: Path, routes: list[dict[str, str]]) -> dict[str, Any]:
         "internal_links_passed": True,
         "semantic_structure_passed": True,
         "public_safety_passed": True,
+        "download_checksums_passed": True,
+        "local_assets_passed": True,
+        "no_tracking_passed": True,
+        "no_javascript_fallbacks_passed": True,
+        "accessibility_smoke_passed": True,
     }
 
 
@@ -1113,10 +1174,29 @@ def build(root: Path, output: Path) -> dict[str, Any]:
         shutil.copy2(source_pdf, destination)
         if _sha256(destination) != publication["sha256"]:
             raise RuntimeError(f"download copy checksum mismatch: {destination}")
+    download_entries = [
+        {
+            "path": str(path.relative_to(output)),
+            "bytes": path.stat().st_size,
+            "sha256": _sha256(path),
+        }
+        for path in sorted((output / "downloads").glob("*"))
+        if path.is_file()
+    ]
+    _write(
+        output,
+        "data/downloads.json",
+        json.dumps({"schema_version": 1, "downloads": download_entries}, indent=2, sort_keys=True)
+        + "\n",
+    )
     _write(
         output, "robots.txt", "User-agent: *\nAllow: /\nSitemap: " + PUBLIC_BASE + "sitemap.xml\n"
     )
-    urls = "".join(f"<url><loc>{PUBLIC_BASE}{route['path']}</loc></url>" for route in routes)
+    urls = "".join(
+        f"<url><loc>{PUBLIC_BASE}{route['path']}</loc></url>"
+        for route in routes
+        if route["path"] != "404.html"
+    )
     _write(
         output,
         "sitemap.xml",

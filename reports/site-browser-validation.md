@@ -22,6 +22,9 @@ This is a bounded practical browser check, not a claim of WCAG conformance.
 | DD-011 no-JS | Generated source contains all 384 power rows plus a `noscript` explanation; the scenario filter is optional enhancement only |
 | DD-008B research route | The generated page loads over HTTP with one H1, ordered H2/H3 hierarchy, both scoped claims, the passing immutable run, all three public-source links, local CSS/JS only, and zero desktop horizontal overflow at 1280 px |
 | Common-Source Trap publication | The catalogue exposes four cards and links to the dedicated route; the route has one H1, ordered H2 sections, exact working-paper/no-DOI/no-submission/no-peer-review status, local CSS/JS only, zero document overflow, and a PDF link that returns HTTP 200 |
+| Program V2 integrated route sweep | All 15 required DD-008B, DD-010, DD-011, benchmark, experiment-kit, Lab, and paper routes load over HTTP with exactly one H1, ordered headings, local runtime assets only, and zero document-level overflow |
+| Program V2 interactive controls | Selecting `DB-G12` shows exactly one compatible benchmark row; selecting `S8-learning` shows exactly 48 power rows and no rows from another scenario; both Labs retain complete no-JavaScript tables |
+| Download integrity | The generated manifest covers every paper, schema, and read-only experiment material in `downloads/`, recording and validating byte length and SHA-256 for each artifact |
 
 The browser check complements the automated site builder tests. It does not test
 assistive technology combinations or claim a complete accessibility audit.
