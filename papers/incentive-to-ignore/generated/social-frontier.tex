@@ -1,0 +1,16 @@
+% Generated evidence asset; do not edit by hand.
+% Claims: DD-C-0059, DD-C-0060, DD-C-0061
+\begin{figure}[t]\centering
+\begin{tikzpicture}[x=1.45cm,y=6cm]
+\draw[->] (0,0)--(4.35,0) node[right] {$k$};
+\draw[->] (0,.40)--(0,1.02) node[above] {$G_4(k)$};
+\draw[very thick,planner,mark=*] plot coordinates {(0,0.937500) (1,0.968750) (2,0.937500) (3,0.875000) (4,0.750000)};
+\draw[dashed] (1,.40)--(1,1.0);
+\node[anchor=west,planner] at (1.1,.79) {one reader is optimal};
+\node[anchor=west,consensus] at (2.1,.51) {duplicate shared use destroys channels};
+\foreach \x in {0,...,4} {\draw (\x,0)--(\x,-.015) node[below] {\x};}
+\end{tikzpicture}
+\caption{Restricted social discovery by the number $k$ of shared-signal followers for $N=4$, $p=1/2$, and $q=3/4$. First use raises discovery; every duplicate use lowers it.}
+\label{fig:social-frontier}
+\ArtifactNote{Source runs: \path{20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b}; claims: DD-C-0059, DD-C-0060, DD-C-0061; generator: \path{distributed_discovery.papers.build_incentive_to_ignore}; input SHA-256 prefixes: \texttt{b199943481f9}.}
+\end{figure}

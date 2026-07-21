@@ -294,6 +294,7 @@ def _publications(root: Path) -> list[dict[str, Any]]:
         ("three-results", "Three Results in Distributed Discovery"),
         ("discovery-institutions", "Institutions for Distributed Discovery"),
         ("common-source-trap", "The Common-Source Trap"),
+        ("incentive-to-ignore", "The Incentive to Ignore"),
     ):
         validation = json.loads((root / "papers" / directory / "validation.json").read_text())
         candidates = sorted((root / "papers" / directory).glob("*.pdf"))
@@ -989,7 +990,7 @@ def _render(
         status_bits = [str(item["status"]).replace("-", " ")]
         if item["doi"]:
             status_bits.append(f"DOI {item['doi']}")
-        elif item["slug"] == "common-source-trap":
+        else:
             status_bits.append("no DOI")
         if item["submitted"] is False:
             status_bits.append("not submitted")

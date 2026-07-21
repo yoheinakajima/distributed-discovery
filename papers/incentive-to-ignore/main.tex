@@ -1,0 +1,961 @@
+\documentclass[11pt]{article}
+% Evidence claims: DD-C-0059 through DD-C-0068. Generated assets repeat the
+% exact contributing claim IDs, immutable run IDs, and input checksum prefixes.
+\usepackage[letterpaper,margin=0.92in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx,array,enumitem,float,tikz,natbib,graphicx,xcolor}
+\usepackage[hidelinks]{hyperref}
+\definecolor{inktwo}{HTML}{25324A}
+\definecolor{private}{HTML}{3C8D5A}
+\definecolor{consensus}{HTML}{B75D7A}
+\definecolor{planner}{HTML}{3977A8}
+\definecolor{market}{HTML}{C98B32}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prb}{\mathbb{P}}
+\newcommand{\ArtifactNote}[1]{\par\vspace{2pt}{\scriptsize\color{inktwo!72}#1}}
+\newcommand{\Evidence}[1]{\par\noindent\textbf{Evidence status.} #1\par}
+\newcommand{\Boundary}[1]{\par\noindent\textbf{Boundary.} #1\par}
+\setlength{\parskip}{0.35em}
+\sloppy
+\title{\textbf{The Incentive to Ignore}\\[0.35em]\large Selective Attention and Audience Design in Distributed Discovery}
+\author{Yohei Nakajima\\Untapped Capital}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A shared signal can be individually useful and socially harmful when many
+searchers turn the same evidence into the same action. This paper studies that
+tension in a finite exact model of distributed discovery. Each agent has an
+independent private clue and may use a common clue; discovery occurs when at
+least one action finds the target, while correct agents split a unit prize. The
+first shared-signal user adds a potentially superior route. Every duplicate
+user removes an independent route. For any finite team, the discovery optimum
+therefore assigns the shared clue to one role when its accuracy exceeds private
+accuracy, to no role when it is worse, and to zero or one role at equality.
+Private equal-split incentives need not implement that allocation: an exact
+finite census contains excessive use, all-attend equilibria, and welfare-
+relevant multiplicity. Binding audience design restores the one-reader count;
+within a registered symmetric garbling family, reducing precision does not
+repair over-publicity. A budget-balanced universal-pooling rule implements the
+optimal count under public access. Allowing every role to condition on both
+clues does not improve the planner optimum in the complete deterministic,
+agreement-respecting, label-equivariant disagreement class for three labels,
+although equilibrium wedges remain. A larger raw-policy audit supplies a
+counterexample to any unrestricted interpretation. All numerical statements
+come from checksum-validated exact runs. Experimental statements are
+predictions only: no participants were recruited, no human data were collected,
+and no experiment was conducted.
+\end{abstract}
+
+\noindent\textbf{Keywords:} selective attention; shared information; audience
+design; information avoidance; collective search; distributed discovery.
+
+\Evidence{DD-C-0059, DD-C-0060, DD-C-0062--DD-C-0064, and DD-C-0066 are
+verified theorems. DD-C-0061, DD-C-0065, and DD-C-0067 are independently
+reproduced bounded exact classifications. DD-C-0068 is an independently
+reproduced negative scope result. Experimental contrasts are predictions, not
+observations.}
+
+\input{generated/evidence-status.tex}
+
+\section{Introduction}
+
+Organizations often treat information access as an unqualified good. A shared
+report is copied to the entire team, a dashboard is placed in every workflow,
+or the same retrieved context is supplied to every model agent. If the evidence
+is accurate, broad dissemination appears harmless. Yet information matters
+through the actions it induces. When several searchers use the same clue in the
+same way, they may concentrate on one candidate and abandon independent routes
+that would have covered other possibilities. The relevant organizational
+question is therefore not merely whether evidence is useful. It is who should
+use it, under what action rule, and with what incentives.
+
+This paper isolates that question in a deliberately small discovery model.
+There is one target among three labels. Each of $N$ agents observes an
+independent private clue with accuracy $p$. One common clue has accuracy $q$.
+An action directly names a label, and team discovery is the union event that
+at least one action names the target. The first role that follows the common
+clue may replace a weaker private route with a stronger route. A second follower
+does not create another common route: it repeats the first. The planner sees a
+first-use benefit and a duplicate-use loss.
+
+The main theorem is correspondingly sharp. If nobody follows the shared clue,
+failure probability is $(1-p)^N$. If $k\geq1$ roles follow it, failure probability
+is $(1-q)(1-p)^{N-k}$. The first-reader discovery margin is
+$(1-p)^{N-1}(q-p)$; every later margin is strictly negative. Thus exactly one
+reader is optimal when $q>p$, no reader when $q<p$, and zero or one at equality.
+The result is about union discovery inside a frozen follow/private action class.
+It is not a general theorem that public information should be hidden.
+
+Private incentives introduce a second margin. A correct agent splits a unit
+prize with all other correct agents. A role selecting shared-following trades
+the probability of being right against competition from agents taking the same
+action and against the coverage externality imposed on the team. Exact payoff
+thresholds characterize weak and strict pure attention-count equilibria.
+All-ignore is stable exactly when $q\leq p$, so strategic ignorance cannot
+support complete non-use when one reader is uniquely socially optimal. The
+distortion instead appears mainly as duplicate attention: on the registered
+175-cell grid, 63 cells have excessive-use equilibria and 24 admit all-attend
+although exactly one reader is optimal.
+
+Audience design separates receipt from voluntary use. If an institution can
+bind which roles receive the shared clue, the same first-use argument chooses
+an audience of one when $q>p$. Sending a lower-precision version to more roles
+does not dominate that allocation in the registered symmetric garbling family.
+If everyone must retain access, a universal-pooling reward gives every role
+$1/N$ exactly when the team discovers. Each unilateral mode change then has
+the sign of the corresponding discovery change, implementing the optimal count
+without an external subsidy. That rule does not select reader identity, solve
+hidden-discovery problems, or prove robustness to richer policies.
+
+The conditional-policy extension tests whether the value of role differentiation
+is an artifact of unconditional follow-or-ignore behavior. Every role observes
+both clues. When the clues agree, a deterministic label-equivariant policy takes
+the common label. When they disagree, it takes the private label, the public
+label, or the remaining third label. Those three rules are complete within the
+declared symmetry class. For $p\geq1/3$, replacing a contrarian role with a
+private-dominant role weakly improves discovery; the one-public-role planner
+classification survives. Yet a separate two-label audit of every raw
+deterministic table finds complementary constant policies with discovery one.
+That counterexample is not a nuisance to discard. It marks precisely where the
+restricted theorem stops.
+
+The contribution is the exact discovery-portfolio mechanism linking first use,
+duplicate use, private reward, audience design, and conditional action rules.
+Strategic ignorance, information avoidance, rational inattention, partial
+publicity, herding, and contrarian behavior all have substantial prior
+literatures. The paper does not claim ownership of those general concepts or a
+verified novelty certificate. Its narrower contribution is to make one finite
+mechanism auditable from formulas, complete rational grids, independent
+enumerators, corruption tests, immutable run IDs, and public data.
+
+The paper proceeds from literature and model to social discovery, private
+equilibrium, audience design, implementation, conditional policies,
+institutional implications, and experimental predictions. Appendices give
+proofs, evidence categories, finite-grid details, and reproduction information.
+
+\input{generated/social-frontier.tex}
+
+\section{Related literature}
+
+\subsection{Strategic ignorance and information avoidance}
+
+Strategic ignorance is an established economic object. Agents may avoid
+information because remaining uninformed changes later incentives, commitment,
+or responsibility. \citet{CarrilloMariotti2000} analyze ignorance as a
+self-disciplining device. The broad information-avoidance literature spans
+instrumental, hedonic, and strategic motives and documents that people do not
+always demand useful information \citep{GolmanEtAl2017}. Our mechanism differs
+in two respects. First, non-use is an ex-ante action mode in a team discovery
+game, not a claim about psychological avoidance. Second, the social value comes
+from preserving an independent action route, not from protecting a single
+decision maker from temptation or affect.
+
+Those differences matter for language. ``Ignore'' here means that a role does
+not use the common clue as its action guide. Under binding access it literally
+means non-delivery; under universal access it means private-dominant action.
+The model neither observes nor predicts whether a person reads, remembers, or
+emotionally avoids information. It shows how the same behavior can have a
+positive discovery externality in one portfolio technology.
+
+\subsection{Endogenous and rational attention}
+
+Rational-inattention models make information processing an endogenous choice
+under explicit costs or capacity constraints \citep{Sims2003}. That literature
+typically optimizes an information structure or allocation of attention over
+states and actions. The present model freezes two signals and three simple
+action modes. There is no entropy cost and no continuous attention budget. The
+advantage is exact finite accounting: receipt, use, action correlation, and
+coverage can be separated without identifying a reduced-form capacity cost.
+
+The distinction also protects the result from an overbroad inference. The
+one-reader theorem does not say that an organization should employ only one
+attentive person. Every nonreader still uses a private clue. The theorem says
+that one common clue should produce at most one common-following action when the
+objective is union discovery and private clues remain available. Total evidence
+access and effective action-channel count are different quantities.
+
+\subsection{Public information and partial dissemination}
+
+Public information can improve individual decisions yet interact adversely
+with coordination motives. \citet{MorrisShin2002} study the social value of
+public information in a coordination environment. \citet{CornandHeinemann2008}
+analyze partial dissemination as a way to moderate the effects of publicity.
+Those papers establish that audience size can be a policy variable; their
+objectives, signal structures, and strategic actions differ from union
+discovery. Here publicity is costly because multiple users collapse distinct
+search routes into the same route even without a desire to coordinate.
+
+This paper's audience theorem is consequently neither a restatement nor a
+rebuttal of the coordination literature. It is an exact result for a coverage
+technology. The model makes the information boundary operational: a binding
+audience changes who can choose public-following; a voluntary audience changes
+only the available deviation set; a recommendation leaves access intact; and
+an action assignment constrains behavior after information arrives.
+
+\subsection{Herding and contrarian experimentation}
+
+Social-learning and experimentation models study when agents repeat observed
+choices, free-ride on information production, or take contrarian actions that
+generate new evidence. \citet{SmithSorensenTian2021} connect informational
+herding, optimal experimentation, and contrarianism in a dynamic setting. Our
+third-option policy is superficially contrarian but structurally different: it
+chooses the unused third label when private and shared clues disagree, within a
+one-shot model with no learning from outcomes. It creates an alternative action
+channel, not future public evidence.
+
+The raw-policy audit reinforces this caution. When agreement-respecting and
+label-equivariance restrictions are removed in a two-label fixture, two roles
+can choose complementary constants and cover both labels with certainty. Such
+territorial behavior resembles role assignment more than inference. It can be
+socially powerful while being epistemically unresponsive. A theory of efficient
+contrarianism must therefore say whether actions are required to respect
+evidence, whether labels are symmetric, and whether fixed territorial coverage
+is admissible.
+
+\subsection{Collective search and portfolio design}
+
+Distributed discovery treats actions as a portfolio whose union matters. The
+same evidence can be valuable for accuracy and harmful for coverage if it
+correlates actions. That portfolio view connects attention to task allocation,
+organizational design, and multi-agent system architecture. Yet a public clue
+can also improve action quality, reduce wasted searches, or facilitate later
+coordination. Those objectives are recorded separately rather than folded into
+a single composite score.
+
+\Boundary{Related literatures already study strategic ignorance, information
+avoidance, endogenous attention, partial publicity, herding, and contrarian
+experimentation. The evidence here supports only the declared exact discovery
+models and bounded comparisons; it supplies no verified novelty claim.}
+
+\section{Model}
+
+\subsection{Signals and actions}
+
+There are $N\geq2$ agents and a target $\theta\in\{1,2,3\}$ drawn uniformly.
+Each agent $i$ has a private clue $X_i$. A shared clue $Y$ is common across
+roles. Conditional on the target, private clues are mutually independent and
+independent of $Y$. Their laws are
+\[
+ \Prb(X_i=\theta\mid\theta)=p,
+ \qquad
+ \Prb(X_i=x\ne\theta\mid\theta)=\frac{1-p}{2},
+\]
+and likewise with accuracy $q$ for $Y$. Each agent chooses one label. Team
+discovery is
+\[
+ D=\mathbf 1\{\exists i:a_i=\theta\},
+ \qquad G=\E[D].
+\]
+Action quality is the expected fraction of correct actions. Action diversity is
+the expected number of distinct labels. These three metrics are reported
+separately because a design can raise one and lower another.
+
+\subsection{Attention modes}
+
+In DD-012, each role makes an ex-ante choice between private-following,
+$a_i=X_i$, and shared-following, $a_i=Y$. We call the latter role a reader or
+attender as shorthand for use. The count $k$ is the number of shared-following
+roles. The model is anonymous: every profile with the same $k$ has the same
+social discovery and type payoffs.
+
+If at least one agent is correct, a unit prize is divided equally among correct
+agents. Thus agent $i$'s realized reward is
+\[
+ u_i=\frac{\mathbf 1\{a_i=\theta\}}
+ {\sum_j\mathbf 1\{a_j=\theta\}},
+\]
+with zero assigned when nobody is correct. Exact payoff accounting implies
+$\sum_i\E[u_i]=G$. A weak pure attention-count equilibrium permits no strict
+gain from changing one's mode; strict equilibrium requires every available
+unilateral change to lose strictly.
+
+\subsection{Audience and institutions}
+
+DD-013 adds an audience size $m$. Under binding delivery, exactly $m$ roles
+receive the shared clue and follow it. Under voluntary use, recipients choose
+private- or shared-following; nonrecipients cannot choose the latter. Garbling
+replaces $q$ by a symmetric delivered accuracy $g\leq q$ on a registered grid.
+The institution registry separately records delivery, recommendations, action
+assignments, observable outcomes, transfers, commitment, and subsidy.
+
+\subsection{Conditional policies}
+
+DD-014 gives every role both clues. Policies respect agreement: if $X_i=Y$,
+the common label is chosen. On disagreement, a deterministic label-equivariant
+policy chooses $X_i$, chooses $Y$, or chooses the remaining label. The role
+profile $(a,b,c)$ counts private-dominant, public-dominant, and third-option
+contrarian policies. This is the complete disagreement class under the stated
+symmetry and agreement restrictions, not the unrestricted table class.
+
+\subsection{Evidence and scope}
+
+The analytic theorems hold at the scopes stated in their ledger records. Bounded
+censuses use exact rational grids: DD-012 and DD-013 cover $N=2,\ldots,8$ and
+$p,q\in\{1/3,1/2,2/3,3/4,5/6\}$; DD-014 covers $N\in\{2,3,4\}$ on the same
+accuracy grid. Every displayed number traces to an immutable run manifest and
+an independently implemented state enumerator. No human behavior is inferred.
+
+\section{First-use value and duplicate-use loss}
+
+When $k=0$, every action follows an independent private clue. Failure requires
+all $N$ private clues to miss:
+\[
+ G_N(0)=1-(1-p)^N.
+\]
+For $k\geq1$, all shared-followers take the same action. Failure requires the
+shared clue to miss and all $N-k$ remaining private clues to miss:
+\[
+ G_N(k)=1-(1-q)(1-p)^{N-k}.
+\]
+These identities are definitions plus conditional independence; they are not
+asymptotic approximations.
+
+The first-use margin is
+\[
+ G_N(1)-G_N(0)=(1-p)^{N-1}(q-p).
+\]
+Its sign compares shared and private accuracy. For every later user,
+\[
+ G_N(k+1)-G_N(k)=-(1-q)p(1-p)^{N-k-1}<0
+\]
+for interior accuracies. Once the shared route exists, another follower removes
+one private route without creating a new shared route.
+
+This proves the One-Reader Theorem (DD-C-0059): the optimum is uniquely $k=1$
+when $q>p$, uniquely $k=0$ when $q<p$, and exactly $k\in\{0,1\}$ when $q=p$.
+The proof works for every finite $N\geq2$. It distinguishes an extensive margin
+from an intensive margin. The first use changes the route set; duplicate use
+changes only how many roles take the shared route.
+
+The formula also clarifies scaling. The first-use gain is multiplied by
+$(1-p)^{N-1}$ because it matters only when the other private routes fail. In a
+large team with strong private clues, the incremental union value of any one
+route can be small. Duplicate loss likewise depends on remaining private routes.
+The optimal count remains one, but the welfare magnitude need not remain large.
+
+Action quality tells a different story. A shared follower has standalone
+accuracy $q$; replacing a $p$-accurate private follower can raise the expected
+fraction correct when $q>p$. Multiple followers may therefore improve average
+quality while reducing union discovery. An institution optimizing a weighted
+combination could choose a different audience. The paper never calls the union
+optimum universally optimal across objectives.
+
+\input{generated/equilibrium-optimum.tex}
+
+\section{Private attention equilibrium}
+
+The equal-split prize makes correctness and congestion jointly relevant. A
+shared follower is correct whenever $Y=\theta$ but then competes with every
+other shared follower and any private follower who also happens to be correct.
+A private follower has accuracy $p$ and competes with a random number of correct
+roles. Exact binomial expectations give both type payoffs at every attention
+count. Their weighted sum equals discovery.
+
+Let $\Delta_k$ be the gross payoff gain to a private follower who becomes the
+$(k+1)$st shared follower. The proof record derives
+\[
+ \Delta_k=q(1-p)\E\left[\frac{1}{k+1+Z_k}\right]
+ -p(1-q)\E\left[\frac{1}{1+Z_k}\right],
+\]
+where $Z_k$ is the number of correct actions among the appropriate remaining
+private roles. A Bernoulli coupling shows that $\Delta_k$ is strictly decreasing
+in $k$. The sequence completely characterizes weak and strict anonymous pure
+equilibria: entry at $k$ must not gain and exit from $k$ must not gain.
+
+Two boundary conditions are especially interpretable. All-ignore is a weak
+equilibrium exactly when $q\leq p$. Therefore, when $q>p$, the decentralized
+game cannot support complete non-use even though ignorance may be strategically
+valuable elsewhere. All-attend is weak exactly when
+\[
+ q\geq \frac{Np}{1+(N-1)p}.
+\]
+This threshold can hold while the unique social optimum remains one reader.
+Shared evidence can be sufficiently attractive privately that every role uses
+it despite the social loss from duplicate action.
+
+The registered exact census records 1,050 attention profiles across 175 cells.
+It contains 63 excessive-attention cells, three with welfare-relevant
+equilibrium multiplicity, and 24 in which all-attend is an equilibrium although
+one reader is uniquely optimal. These are bounded classifications (DD-C-0061),
+not frequency estimates for organizations. They show existence and structure
+inside the grid.
+
+\input{generated/attention-phase.tex}
+
+\section{The attention wedge}
+
+The attention wedge is the difference between planner discovery and the best
+discovery achieved by a weak equilibrium under a specified reward rule. A zero
+wedge can arise because equilibrium implements the planner count, because
+equilibrium is multiple and includes an optimum, or because several counts tie
+in discovery. Those cases should not be conflated. The phase map records full
+sets rather than selecting a favorable equilibrium silently.
+
+Three mechanisms generate divergence. First, a role does not internalize the
+private route it removes by becoming another shared follower. Second, equal
+prize splitting makes a highly accurate common action privately attractive even
+when it is redundant. Third, identity symmetry can leave multiple agents
+willing to occupy the single socially valuable reader role. These are distinct
+from a cognitive processing cost, a signaling motive, or a desire to coordinate.
+
+The model also identifies an important non-result. Complete ignorance does not
+explain the excessive-use region: all-ignore cannot be stable when $q>p$. The
+incentive to ignore is marginal and role-specific. A well-designed portfolio
+asks most roles to ignore the common action recommendation while one role uses
+it. Calling that pattern ``organizational ignorance'' would obscure the active
+private search performed by nonreaders.
+
+Reward interventions can alter the wedge. Sole-rescue and marginal-coverage
+rewards pay for action contribution rather than duplicated correctness.
+Universal pooling divides the team discovery prize equally among all roles.
+A public-reader license binds the permitted count. In the registered census,
+sole-rescue, marginal-coverage, universal pooling, and the binding license match
+the social-optimum count correspondence in every cell. Off-shared-success
+instead produces unique all-ignore in every cell, and an assigned-reader subsidy
+fails to leave any socially optimal weak equilibrium. Negative mechanism results
+are preserved alongside successful ones.
+
+These rules differ in observability. Marginal coverage requires knowing whether
+a role uniquely rescues discovery. Pooling requires team discovery but not the
+identity of the correct role. A license requires access control and commitment.
+The numerical correspondence alone does not establish implementation under
+hidden outcomes, collusion, limited liability, or endogenous participation.
+
+\section{Audience design}
+
+Binding delivery turns the attention count into an institutional choice. With
+audience $m=0$, failure is $(1-p)^N$. With any $m\geq1$, failure is
+$(1-q)(1-p)^{N-m}$. The same first-use and duplicate-use differences therefore
+yield the Binding Audience Theorem (DD-C-0062): full-precision delivery to one
+recipient is optimal when $q>p$, no delivery when $q<p$, and zero or one at
+equality; every audience of two or more is strictly worse.
+
+The theorem concerns access paired with prescribed following. A recipient may
+instead retain the option to act on a private clue. DD-013 enumerates every
+voluntary profile for each audience. Across 1,050 audience settings and 4,025
+profiles, voluntary use differs from binding use in 656 settings, permits
+excessive use in 273, and exhibits welfare-relevant multiplicity in eight. All
+70 insufficient-use settings have audience zero, so the grid contains no
+positive audience with equilibrium use below the global binding optimum. This
+last count is a bounded observation, not a general theorem that recipients
+never under-attend.
+
+Exclusive delivery has a simple implementation advantage: only one role can
+take the common action. It also creates governance demands. The institution
+must select a recipient, prevent leakage, and ensure that excluded roles retain
+independent evidence. Rotating the recipient can distribute responsibility
+across repeated tasks, but the one-shot theorem contains no repeated-game
+incentive. Random assignment selects identity ex ante without changing the
+optimal count.
+
+\input{generated/audience-frontier.tex}
+
+\subsection{Precision versus publicity}
+
+Reducing signal precision is sometimes proposed as an alternative to limiting
+audience. The registered garbling family replaces accuracy $q$ by
+$g\in\{1/3,1/2,2/3,3/4,5/6\}$ with $1/3\leq g\leq q$, then sends the garbled
+signal to a positive audience. Its failure probability is
+$(1-g)(1-p)^{N-m}$. When $q>p$, this is weakly above the one-recipient
+full-precision failure probability, with equality only at $g=q$ and $m=1$.
+At equality $q=p$, no delivery adds a tie; when $q<p$, any positive use is
+strictly harmful in the frozen action class.
+
+Thus the full-precision binding optimum weakly dominates all 2,625 registered
+garbling rows. Exactly 105 rows tie, each a one-recipient, full-precision design
+with $q\geq p$; the remaining 2,520 are strictly worse (DD-C-0063). This is not
+a Blackwell-order theorem over arbitrary experiments. A richer garbling could
+change actions differently, and a different objective could value broad noisy
+coordination. The result only shows that symmetric precision reduction does not
+repair duplicate-route loss here.
+
+\input{generated/precision-publicity.tex}
+
+\section{Information firewalls and implementation}
+
+An information firewall is not a single mechanism. The DD-013 registry records
+eight institutional forms spanning binding delivery, voluntary receipt,
+recommendations, public action assignment, garbling, licenses, and rewards.
+For each, it states who observes the shared clue, which action choices remain,
+what outcome is observable, whether transfers occur, what commitment is needed,
+and whether an external subsidy is assumed.
+
+Binding exclusive delivery implements the audience count by construction. It
+may be administratively natural when tasks can be partitioned before evidence
+arrives. A recommendation is weaker: if all roles retain access and equal-split
+rewards, the voluntary equilibrium can duplicate the public action. An action
+assignment can force role differentiation but needs enforceability. A payment
+rule can change incentives without restricting receipt, but may require outcome
+verification.
+
+Universal pooling is unusually transparent. Give every role $1/N$ exactly when
+the team discovers and zero otherwise. Each role's expected payoff is
+$G_N(k)/N$. Consequently every unilateral mode change has exactly the sign of
+the corresponding discovery change. The weak equilibrium count correspondence
+equals the binding optimum for every finite $N\geq2$ and interior $p,q$, and is
+strict when $p\ne q$. Realized payments sum to one on discovery and zero on
+failure, so the rule is ex-post budget balanced against the unit discovery
+prize and requires no external subsidy (DD-C-0064).
+
+Pooling implements a count, not an identity. When $q>p$, any one of $N$ roles
+can be the reader. An assignment or rotation rule is still needed if identity
+matters. Pooling also assumes that team discovery is observable and contractible,
+that all roles accept equal ex-post payoffs, and that side transfers or collusion
+do not change incentives. Role aversion, career concerns, or heterogeneous
+costs are outside the proof.
+
+\input{generated/mechanisms.tex}
+
+\section{Conditional attention}
+
+The unconditional model may seem behaviorally brittle. A person who sees both
+clues need not follow one source in every state. DD-014 therefore lets every
+role condition on $(X_i,Y)$. Agreement must select the common label. Under
+determinism and label-equivariance, disagreements form one orbit and exactly
+three outputs survive: the private label, the public label, or the remaining
+third label. This proves completeness inside the declared class.
+
+For a profile $(a,b,c)$, condition on whether the shared clue is correct. If
+there is no public-dominant role, failure probability is
+\[
+ q(1-p)^{a+c}+(1-q)(1-p)^a\left(\frac{1+p}{2}\right)^c.
+\]
+If $b\geq1$, failure probability is
+\[
+ (1-q)(1-p)^a\left(\frac{1+p}{2}\right)^c.
+\]
+When $p\geq1/3$, replacing a contrarian with a private-dominant role weakly
+reduces failure because $1-p\leq(1+p)/2$, strictly when $p>1/3$. The planner
+can therefore remove contrarians without loss and recover the unconditional
+zero-or-one-public-role classification (DD-C-0066).
+
+At $p=1/3$, a private clue is uninformative and contrarian roles can tie private-
+dominant roles. They never improve the optimum. This explains why the 75-cell
+census reports contrarian use in an optimal profile in exactly 15 cells but no
+positive conditional gain over the unconditional class. The conditional action
+space changes the set of tied implementations, not the best discovery value.
+
+Private equilibrium remains nontrivial. Across 775 anonymous profiles, the
+exact census contains 115 weak and 53 strict equilibria. In 49 cells, every weak
+equilibrium is planner-optimal. In 23, even the best weak-equilibrium discovery
+is below the planner optimum. Conditional policies can eliminate a wedge in
+some regions but do not eliminate it generally on the grid (DD-C-0067).
+
+\input{generated/conditional-map.tex}
+
+\subsection{The unrestricted audit}
+
+The symmetry theorem must not be described as an unrestricted policy theorem.
+DD-014 separately audits two agents and two labels at four rational accuracy
+cells. A raw deterministic policy maps four private/shared observation pairs to
+binary actions, yielding sixteen tables and 256 ordered two-role profiles per
+cell. Both exact evaluators enumerate all 1,024 profiles and 16,384 labeled
+states.
+
+Complementary constant policies cover both labels with certainty, so raw
+planner discovery is one in every audit cell. The embedded private/public class
+falls short by $1/16$, $1/12$, or $1/9$. Some raw equilibria also reach values
+outside the restricted class. This negative result (DD-C-0068) exposes the role
+of agreement-respect and evidence responsiveness. It does not solve unrestricted
+$M=3$ conditional attention, but it decisively prevents promotion of the
+restricted theorem.
+
+\section{Institutional implications}
+
+The analysis suggests a sequence of design questions rather than a universal
+prescription. First, identify the objective. Union discovery rewards coverage;
+average accuracy rewards correctness; coordination rewards correlated action.
+Second, identify effective action channels. The number of people receiving a
+report can exceed the number of distinct routes produced. Third, distinguish
+access, use, and assignment. A firewall changes feasible information; a
+recommendation changes advice; a role assignment changes action rights. Fourth,
+match incentives to the observable outcome.
+
+For a research team, one role might be assigned to investigate the leading
+shared hypothesis while others retain independent hypotheses. For an investment
+process, one analyst might own the consensus case while others test orthogonal
+failure modes. For a multi-agent system, one agent might use retrieved common
+context and others use independently sampled or source-separated context. These
+are analogies, not validated field interventions. Real use would require task
+dependence, costs, leakage, skill heterogeneity, and error consequences.
+
+The results favor explicit role differentiation over vague exhortations to
+``think independently.'' A binding audience makes the information boundary
+clear. Universal pooling makes the discovery objective common. A license makes
+the scarce common-following role explicit. Yet each solution creates governance
+questions: who receives the role, how rotation works, how private evidence is
+protected, how discovery is verified, and how failure responsibility is shared.
+
+Precision control is not a substitute for audience control in the registered
+family. Sending a noisier signal widely still correlates actions and sacrifices
+private routes. Likewise, conditional policies are not a complete substitute
+for institutional allocation. Private-dominant behavior preserves dispersion,
+but equal-split incentives can still overuse public-dominant roles. The policy
+space and the reward space interact.
+
+The raw audit adds a countervailing warning. If fixed territorial actions are
+allowed, complete coverage may be achieved without informative evidence. That
+can be useful for exhaustive search but dangerous when actions are costly,
+labels are numerous, or correctness matters beyond discovery. Institutional
+design should record whether actions must respond to evidence rather than
+assuming all diversity is epistemically meaningful.
+
+\section{Experimental predictions}
+
+The exact models generate falsifiable directional predictions for a future
+synthetic or human study, but they do not validate those predictions empirically.
+A broadcast treatment should generate more shared-signal use than a one-reader
+assignment under equal-split rewards. When $q>p$, one-reader access should
+produce higher union discovery than full broadcast in the frozen task. A
+nonbinding recommendation to ignore should fail to reproduce a binding license
+when private incentives favor duplicate use. Universal pooling should shift
+attention counts toward the discovery optimum if participants understand and
+trust the payoff rule.
+
+Conditional-policy treatments distinguish receipt from response. Subjects or
+agents can be asked to choose an ex-ante rule before signals are realized, or
+their realized actions can be classified after both clues appear. The theorem
+predicts no planner gain from third-option contrarian roles for $p\geq1/3$ in
+the symmetric task, though uninformative-private cells permit ties. The bounded
+equilibrium census predicts that conditional choice reduces some but not every
+attention wedge.
+
+An experiment must also measure leakage and compliance. A designated nonreader
+who remembers the public clue is not equivalent to a role denied access. A
+recipient who sees the clue but chooses a private action is not equivalent to a
+recipient forced to follow it. Outcome variables should therefore include
+receipt, recall, chosen rule, realized action, correctness, union discovery,
+distinct actions, and payoffs. Treatment contrasts must state which information
+boundary they manipulate.
+
+The existing DD-011 package is synthetic-only. It registers hypotheses,
+estimands, randomization, response scenarios, and power calculations under
+declared models. Any attention extension must retain calibration failures and
+distinguish rational equilibrium, noisy best response, salience, partial
+compliance, memory leakage, role aversion, and social preferences. Power under
+those scenarios is conditional design evidence, not evidence about humans.
+
+\input{generated/experiment-map.tex}
+
+\noindent\textbf{Ethics gate.} No participants were recruited. No human data
+were collected. No experiment was conducted. Human deployment would require a
+separate ethics, consent, privacy, retention, compensation, and institutional
+review process.
+
+\section{Limitations}
+
+The target is uniform and finite. Wrong signals are symmetric. Private clues are
+homogeneous and conditionally independent. There is one shared clue, one action
+per role, and one-shot timing. Signal acquisition is free inside the attention
+model. Discovery is a binary union event. Correct roles split a unit prize, and
+the principal can sometimes observe discovery or enforce access. Each
+assumption supports exactness and limits external interpretation.
+
+Correlated private errors could make nominally private routes redundant.
+Heterogeneous accuracy could justify assigning shared use to a weak private
+role even when identities matter. Multiple shared sources could create a source-
+selection problem. Reusable evidence could make broad dissemination valuable
+across future tasks. Action costs could favor concentration. False-positive
+harms could make exhaustive coverage undesirable. Sequential observation could
+turn an action into public evidence and introduce experimentation incentives.
+
+The equilibrium analysis is pure and ex ante. It does not characterize mixed
+strategies, learning, bounded rationality, ambiguity, or communication. Equal
+prize splitting is only one reward technology. The successful pooling rule
+relies on observable team discovery and common acceptance of equal shares.
+Institutional costs are not subtracted from welfare.
+
+The audience theorem restricts actions to follow-shared or follow-private. The
+garbling theorem covers a finite symmetric accuracy family, not arbitrary
+information design. The conditional theorem covers deterministic, agreement-
+respecting, label-equivariant policies. The raw audit shows that relaxing those
+conditions can change the optimum drastically. No unrestricted $M=3$ policy
+claim is made.
+
+Grid counts are exact for their registrations but are not probabilities over
+real environments. The figures are selected slices, not empirical response
+surfaces. The literature review establishes adjacency and prior art but does
+not certify novelty. The paper is a working paper: it has no DOI, is not
+submitted, and is not peer reviewed.
+
+\section{Conclusion}
+
+Shared evidence has two different margins in distributed discovery. Its first
+use can add a better route; duplicate use can erase independent routes. In the
+frozen finite model, that distinction yields a one-reader discovery theorem,
+an exact private-attention equilibrium characterization, and bounded evidence
+of excessive common-signal use. Audience design turns the optimal count into an
+access decision. Symmetric garbling does not repair over-publicity, while
+universal pooling implements the optimal count under its observability and
+commitment assumptions.
+
+Allowing joint conditioning on private and shared clues does not overturn the
+planner result inside the complete declared three-label symmetry class.
+Contrarian roles tie only when private information is uninformative, and the
+equilibrium wedge persists in part of the registered grid. The larger raw audit
+shows why that scope statement matters: unrestricted territorial policies can
+achieve full coverage for reasons unrelated to inference.
+
+The practical lesson is not to suppress information reflexively. It is to design
+an action portfolio deliberately. Receipt, use, allocation, rewards, precision,
+and observability are separate levers. The evidence supports exact statements
+about one discovery technology and offers predictions for future tests. It does
+not establish human behavior or a universal rule for public information.
+
+\clearpage
+\appendix
+
+\section{Proof of the one-reader result}
+
+For completeness, fix any target $\theta$. With no shared follower, conditional
+independence gives
+\[
+ \Prb(D=0\mid\theta)=\prod_{i=1}^N\Prb(X_i\ne\theta\mid\theta)=(1-p)^N.
+\]
+The expression is target-independent, so averaging over the uniform prior does
+not change it. With $k\geq1$, every shared follower fails exactly when
+$Y\ne\theta$. Conditional on that event, the $N-k$ private followers fail
+independently, giving $(1-q)(1-p)^{N-k}$. Subtracting adjacent discovery values
+produces the margins in Section 4. Interior $p,q$ make every duplicate margin
+strictly negative. This proves DD-C-0059.
+
+The proof uses neither the equal-split prize nor voluntary choice. It is a social
+identity for a binding count. Strategic equilibrium enters only after type
+payoffs are defined. This separation is useful for verification: the primary
+closed form and the direct target/signal enumerator must agree before any payoff
+or mechanism claim is considered.
+
+\section{Equal-split payoff accounting}
+
+Let $K=\sum_i\mathbf1\{a_i=\theta\}$ be the number of correct actions. Realized
+rewards sum to one when $K>0$ and zero otherwise. Therefore
+\[
+ \sum_i\E[u_i]=\E[\mathbf1\{K>0\}]=G.
+\]
+This identity is checked for every profile. Within an anonymous count, all roles
+of a type have the same expected payoff. Multiplying the type payoff by its
+count and summing must reproduce discovery exactly.
+
+The independent verifier does not call the primary payoff formula. It loops
+over target, shared signal, and every action-relevant private signal state,
+constructs actions, identifies winners, and divides the prize. It reconstructs
+unilateral deviations and equilibrium sets from these direct payoffs. Altered
+discovery, reward, and equilibrium fields are rejected.
+
+\section{Conditional-policy completeness and failure formulas}
+
+The symmetric group on three labels acts transitively on agreement pairs and on
+ordered disagreement pairs. Agreement-respect fixes the output on the diagonal.
+For a representative disagreement $(x,y)$, the stabilizer leaves three
+equivariant choices: $x$, $y$, or the remaining label. Applying relabelings
+generates exactly the private-dominant, public-dominant, and contrarian tables.
+No fourth deterministic label-equivariant disagreement output exists.
+
+When $Y=\theta$, a public-dominant role succeeds surely, while private-dominant
+and contrarian roles succeed exactly when their private clue is correct. When
+$Y\ne\theta$, a private-dominant role succeeds with probability $p$, a public-
+dominant role never succeeds, and a contrarian succeeds when its private clue
+equals the label other than $Y$ and $\theta$, with probability $(1-p)/2$.
+Multiplying independent failure terms gives the formulas in Section 9.
+
+For $p\geq1/3$,
+\[
+ 1-p\leq\frac{1+p}{2}.
+\]
+Replacing a contrarian factor by a private-dominant factor therefore weakly
+reduces both relevant failure expressions. The inequality is strict for
+$p>1/3$. Setting $c=0$ then embeds the unconditional class, completing the
+planner proof for DD-C-0066.
+
+\section{Registered finite evidence}
+
+DD-012 evaluates $N=2$ through 8 and the five-by-five rational accuracy grid.
+Its 175 cells contain 1,050 attention profiles and 6,300 reward/profile rows.
+The separate verifier traverses 3,319,200 labeled states. DD-013 evaluates 1,050
+binding audience rows, 4,025 voluntary profiles, 2,625 feasible garbling rows,
+and 175 mechanism cells using another 3,319,200-state reproduction. DD-014
+evaluates 775 anonymous conditional profiles across 75 cells, verifies 346,275
+main labeled states, and separately audits 1,024 raw profiles and 16,384 states.
+
+Exact fractions are authoritative. Displayed decimals, where used only for
+plotting coordinates, are derived from those fractions and are not separate
+claims. Every run has a clean source commit, configuration hash, dependency-lock
+hash, input hashes, output hashes, UTC timestamps, command, environment record,
+stdout, stderr, validation summary, and corruption record. Passing runs are not
+rerun to refresh timestamps.
+
+\section{Evidence classification and predictions}
+
+A definition states a model object. An identity follows directly from those
+definitions. A theorem has a human-readable proof and the checks required by
+the claim-status policy. A bounded computational result reports only its frozen
+grid. Independent reproduction uses a materially separate evaluator. A negative
+result preserves a failed generalization or counterexample. An experimental
+prediction is implied by a model but unobserved.
+
+The distinction matters for this paper's strongest prose. ``One reader is
+optimal'' is a theorem only inside the follow/private union-discovery class.
+``Sixty-three cells exhibit excessive use'' is an exact bounded count, not a
+population prevalence. ``Broadcast will increase use'' is a prediction, not an
+empirical fact. ``Contrarians never help'' would be false without the stated
+symmetry boundary, as the raw audit demonstrates.
+
+\section{Reproducibility record}
+
+The paper generator validates every source file against the output checksum in
+its immutable run manifest before generating a table or figure. Generated
+assets contain claim IDs, run IDs, generator name, and input checksum prefixes.
+The bibliography is copied from the validated project bibliography; all cited
+keys and claim IDs are resolved. Tectonic compiles twice with a fixed source
+epoch. The two PDF byte strings must match. The build rejects unresolved
+references, unresolved citations, and overfull boxes.
+
+The committed validation record contains the PDF checksum, page count, source
+runs, generated asset names, and all input checksums. Poppler renders every page
+to an image for visual review. The public site copies the PDF only when its
+checksum matches validation, then publishes that checksum alongside the working-
+paper boundary. This workflow supports reproducibility; it does not confer peer
+review, archival status, or a DOI.
+
+\clearpage
+\section{Institutional specification checklist}
+
+An application should specify the following objects before borrowing a result
+from this paper. The checklist is part of the evidence boundary, not an
+implementation theorem.
+
+\begin{enumerate}[leftmargin=*]
+\item \textbf{Target and loss.} State the action universe, the target event,
+and whether the objective is union discovery, average accuracy, false-positive
+control, cost-adjusted value, or a multi-objective vector. A one-reader result
+for union coverage does not rank designs under another loss.
+\item \textbf{Evidence law.} Record private and shared accuracies, dependence,
+heterogeneity, source overlap, and whether evidence persists across tasks.
+Nominally separate retrieval calls do not guarantee independent errors.
+\item \textbf{Information boundary.} Distinguish non-delivery, delivery with a
+recommendation, delivery with a binding action rule, delayed delivery, and
+memory leakage. A recipient set is not automatically a user set.
+\item \textbf{Action map.} State whether roles follow a clue, condition on
+multiple clues, choose an assigned territory, communicate, or observe prior
+actions. The DD-014 raw audit shows that this boundary can dominate results.
+\item \textbf{Payoff and observability.} Specify who is paid, what success is
+observable, whether marginal contribution can be verified, whether transfers
+balance ex post, and whether participation or limited liability binds.
+\item \textbf{Identity rule.} If exactly one common-signal role is desirable,
+state how identity is selected, rotated, or contested. Count implementation
+does not settle distributive fairness or role burden.
+\item \textbf{Leakage and compliance.} Measure receipt, recall, declared mode,
+realized action, and deviations separately. An information firewall with
+unmeasured leakage cannot be interpreted as binding access.
+\item \textbf{Evidence category.} Label a theorem, exact grid result, simulation,
+prediction, or observation accurately. Never use a synthetic power result as a
+completed experiment or a grid frequency as an empirical prevalence.
+\end{enumerate}
+
+For a multi-agent implementation, the checklist can be encoded in a task
+manifest. Each agent should have declared sources, context visibility, action
+rights, and reward outputs. A validation harness should reconstruct effective
+action channels, not merely count messages or contexts. Logs should retain the
+mapping from evidence receipt to action so that correlation induced by common
+context is observable.
+
+For a human study, additional ethics and governance gates are mandatory. The
+task must avoid deceptive responsibility shifting, disclose compensation,
+protect private reasoning traces, define retention and deletion, and separate
+research participation from employment evaluation. Nothing in the present
+synthetic package satisfies those institutional requirements automatically.
+
+\clearpage
+\section{Open extensions and falsification targets}
+
+The most direct theoretical extension introduces heterogeneous private
+accuracies $p_i$. A plausible conjecture is that, when exactly one public role
+is desirable, it should be assigned to a role with relatively weak private
+accuracy. That statement is not proved here: equal-split payoffs and identity-
+specific externalities must be recalculated. A counterexample could arise if a
+high-skill role uses shared evidence more effectively under a richer action map.
+
+Correlated private clues are another priority. Positive dependence reduces the
+effective number of private routes and can change the first-use magnitude. The
+zero-or-one structure may survive for a single duplicated public route under
+some exchangeable laws, but the simple factorization into $(1-p)^N$ does not.
+An extension needs a pinned joint distribution and an independent enumerator;
+pairwise correlation alone is insufficient to identify union failure.
+
+Multiple shared sources create a portfolio problem. The planner may want one
+user per shared source, several users for a particularly strong source, or no
+user when sources overlap. Source choice and audience design then interact.
+The relevant state is a source-action incidence structure rather than one
+attention count. DiscoveryBench tasks should expose that structure explicitly
+instead of scoring only total information access.
+
+Dynamic attention changes both objectives and incentives. A contrarian action
+can reveal information for later roles, and visible successes can induce herding.
+Stopping-time discovery and fixed-budget discovery are different objectives.
+Optional DD-015 remains registered rather than executed in this program because
+the required static evidence, paper, benchmark, and synthetic-design queue took
+priority. No dynamic theorem is inferred from the static conditional audit.
+
+Several observations would falsify a literal behavioral interpretation of the
+registered models. Widespread private-dominant action under very high $q$ could
+indicate role aversion, mistrust, or misunderstanding. Persistent public-
+dominant use under a binding nonreceipt treatment would reveal leakage or a
+failed manipulation. Improved discovery from broad broadcast could indicate
+that private actions were already correlated, that recipients condition in a
+richer way, or that communication creates new routes. Each outcome would call
+for a revised model rather than post-hoc relabeling of the original theorem.
+
+The institutional predictions also invite direct mechanism tests. Compare a
+nonbinding recommendation, a binding license, universal pooling, and a marginal-
+coverage reward while holding signal realization fixed. Record whether the
+rules change attention counts, action diversity, and discovery as predicted.
+Retain comprehension and calibration failures. A null or reversed result would
+be evidence about the behavioral or implementation assumptions, not a numerical
+error in the exact finite calculations.
+
+Finally, external validity requires domain-specific stakes. Search actions can
+be cheap hypotheses, costly experiments, irreversible investments, or harmful
+interventions. Union discovery is compelling only when false positives and
+action costs are controlled. A deployed system should use a registered
+multi-objective evaluation and report tradeoffs rather than promote the
+one-reader count as a universal organizational rule.
+
+\bibliographystyle{plainnat}
+\bibliography{generated/references}
+
+\section*{Artifact declaration}
+
+This document is a project-authored working paper distributed under the
+repository's MIT license. It has no DOI, has not been submitted, and has not
+been peer reviewed. The bibliography positions the model against established
+literatures; it is not a novelty certificate. The author and repository retain
+responsibility for the statements, code, and generated artifact.
+
+The paper's numerical evidence comes from three clean immutable runs:
+`20260721T212943Z\_DD-012\_9ed0928e\_4a3f1ba62b`,
+`20260721T215811Z\_DD-013\_09c07448\_cdac4fb512`, and
+`20260721T222047Z\_DD-014\_f5f099a8\_ea0276dd16`. The experimental map also
+references the synthetic-only DD-011 design run. Each generated figure or table
+prints its contributing run IDs, claim IDs, generator, and input checksum
+prefixes. Full SHA-256 values appear in `generated/provenance.json` and the run
+manifests.
+
+The authoritative evidence labels are in `claims/claims.yml`. Theorems are
+supported by human-readable proofs and exact checks; bounded classifications
+are limited to their registered grids; the raw-policy result is a negative
+scope audit; and treatment statements are unobserved predictions. No
+participant, organization, or deployed multi-agent system was studied.
+
+Reproduction requires the pinned repository dependencies, Tectonic, and
+Poppler. `make incentive-to-ignore` validates every input checksum, regenerates
+nine assets, resolves claim and citation keys, compiles twice under a fixed
+source epoch, rejects unresolved references and overfull boxes, and requires
+byte-identical PDFs. The committed validation record binds the final PDF
+checksum and page count. Any source or PDF checksum change invalidates the
+visual review and requires a complete rebuild and all-page inspection.
+
+\end{document}

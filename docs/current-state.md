@@ -19,19 +19,19 @@ at `5025cc8e8f2f8ca015dff2066f08f81ad5715a51`, separate, clean, and read-only.
 | Ledger claims | 68 |
 | Passing immutable runs | 35 of 38 manifests |
 | Registered studies | 19 |
-| Python source files | 106 |
-| Public HTML routes | 54 |
+| Python source files | 107 |
+| Public HTML routes | 55 |
 | Public data files | 54 |
 | Laboratory routes | 10 |
-| Validated project papers | 4 |
-| Checksum-registered downloads | 15 |
-| Test suite | 166 collected tests |
+| Validated project papers | 5 |
+| Checksum-registered downloads | 16 |
+| Test suite | 168 collected tests |
 
 The baseline added four registrations, bringing the study registry to 19 and
 the generated site to 52 routes. DD-012 has now added three audited claims and
 one passing immutable run. Its exact evaluator, separate state enumerator,
-corruption checks, and public study metadata await PR #82's remaining site,
-merge, CI, Pages, and live-route gates.
+corruption checks, and public study metadata passed PR #82, CI, Pages, and live
+route gates.
 
 DD-012's One-Reader Theorem gives optimum reader count one when `q>p`, zero
 when `q<p`, and `{0,1}` when `q=p` inside the frozen follow/private class. The
@@ -55,9 +55,16 @@ equilibrium census DD-C-0067, and negative scope result DD-C-0068. Passing run
 profiles, and 346,275 independently verified main states. Conditional policies
 do not improve the unconditional optimum on the registered grid, while 23
 cells retain a positive best-equilibrium wedge. A separate all-table two-label
-audit preserves the unrestricted-class counterexample. The Conditional
-Attention Lab passes local generation and browser control checks; merge, CI,
-Pages, and live verification remain.
+audit preserves the unrestricted-class counterexample. PR #87 squash-merged as
+`9bc1a61`; post-merge CI and Pages passed, and the study, Conditional Attention
+Lab, and five public data routes return HTTP 200.
+
+The focused *Incentive to Ignore* working paper now passes locally at 20 pages
+with nine checksum-annotated generated evidence assets and PDF SHA-256
+`ee9e27f741d25a9597994f18caf2bf406098db7aca4d2ed067a7a011f64be250`.
+All pages passed Poppler review. It is a working paper with no DOI, submission,
+peer-review, or human-experiment claim; issue #88, merge, Pages, and live PDF
+checks remain active.
 
 Program V2 produced:
 
