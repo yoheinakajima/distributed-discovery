@@ -65,11 +65,15 @@ Progress:
   Poppler review; post-merge CI/Pages and the live PDF passed. DiscoveryBench
   v2 now passes locally with 20 tasks, 21 protocols, 27 metrics, 28 compatible
   rows, 392 explicit exclusions, v1 regressions, and three corruption gates;
-  its clean immutable run, claim, public surface, merge, and deployment remain.
+  clean run `20260721T230249Z_DD-010_add85590_56c61a2195`, DD-C-0069, PR #93,
+  post-merge CI/Pages, and live public routes passed. DD-011 v2 is active on
+  issue #94 and branch `research/attention-experiment-extension`; its 29-cell,
+  14-hypothesis, 11-scenario implementation and materials pass targeted local
+  verification, while the clean run, claim, public routes, merge, and deployment remain.
 
 Recovery: inspect `git status --short --branch` on
-`benchmark/attention-extension`, commit the verified v2 implementation, run
-`make dd010-attention` from the clean commit, and preserve every prior run.
+`research/attention-experiment-extension`, commit the verified v2 implementation,
+run `make dd011-attention` from the clean commit, and preserve every prior run.
 
 ### Program V2 completion queue (active, 2026-07-21)
 

@@ -35,3 +35,23 @@ def test_experiment_cli_lists_design_and_runs_bounded_power() -> None:
     rows = json.loads(power.stdout)
     assert len(rows) == 64
     assert all(row["sample_size"] == 640 for row in rows)
+
+    attention = subprocess.run(
+        [
+            "python",
+            "-m",
+            "distributed_discovery.cli",
+            "experiment",
+            "--version",
+            "v2",
+            "design",
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+        env=environment,
+    )
+    attention_payload = json.loads(attention.stdout)
+    assert attention_payload["schema_version"] == "dd011-experiment-v2"
+    assert len(attention_payload["treatment_cells"]) == 29
+    assert len(attention_payload["hypotheses"]) == 14

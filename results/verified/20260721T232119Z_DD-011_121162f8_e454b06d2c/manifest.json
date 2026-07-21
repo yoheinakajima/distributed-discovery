@@ -1,0 +1,58 @@
+{
+  "command": "make dd011-attention",
+  "config_hash_sha256": "e454b06d2ce78d1f4eeff43b112272e19bd4ce80cec247a5b90534e29da17cc8",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-21T23:21:19.579130Z",
+  "exit_status": 0,
+  "git_commit": "121162f85d6b3a52f90ba0fbd5d4bc9ef33abd6d",
+  "git_dirty": false,
+  "input_hashes": {
+    "src/distributed_discovery/experimental_design/model.py": "5c7bc173cfa4854d9b9adc65d9bfae0e209da7080fd9fbba17ca79b02aa07b8e",
+    "src/distributed_discovery/experimental_design/power.py": "bb4454510f92732e1ea83c1c8c0f63405d549348c8144452be99c408fa236090",
+    "src/distributed_discovery/experimental_design/study.py": "c088660fb4f8a5ca42c25ad325e5e4a28e97fc9925c33e81245d751144cdf402",
+    "src/distributed_discovery/experimental_design/verification.py": "135e64e9e2cadae7634d02291456f2d4c43159675813e13350d4e40e0a5f1da1",
+    "studies/DD-011-experimental-design/configs/attention-v2.yml": "71cd71b18273538dd921f07e02d2bcc65c06d9bea9b7f2edbb99d12a5093d460",
+    "studies/DD-011-experimental-design/schemas/design-v2.schema.json": "3b3efe0f8318d5d917ba981d66bf2bd19647c632a0db008cf0c954947bc0529b"
+  },
+  "outputs": {
+    "outputs/calibration-report.json": "fb7112a52ed780a29c9ed64a24553406e42aa5be1f6168fdd8c9772a537cc016",
+    "outputs/corruption-tests.json": "5a3fa09bbec3696e7ecdb63dd21e5ba7463d2e1ad6a02da205e3d63f967d81b9",
+    "outputs/design-registry.json": "82fe348a60c01bd94d507ff6f6f6c5442c2c716ccf4c039c5867b80194d8e43a",
+    "outputs/exact-model-checks.json": "9151fb88b7b1d551251f7cd82a079cfe5849db8a0cca8d0c216e5d24016af666",
+    "outputs/hypotheses.json": "5358782c06d5a0f6dc88a81f7fff5f83989bc07e654484bb798ad6e33b0c4e1d",
+    "outputs/mde-table.json": "fce2020d6cbbb38f094d975477037dec112813e050754127d15291de14cac54c",
+    "outputs/outcomes.json": "cf1facbeea81f853d3160ccd605ea57949d729c1dbf4853b7d4f647438d32d2f",
+    "outputs/power-table.json": "16d3c53520f242b67f1b69bf0420c6fee904a6e848dd84f0ca8420f4f19d0fae",
+    "outputs/randomization-manifest.json": "fb37b576cb9460ab9f1ba8ee6f8333b92b4fd6436287fb548867f85799067a13",
+    "outputs/response-scenarios.json": "2c8b9fa0d7ec4f697de3ac1f258c3e15a08f59964cbb1bf58ee2fdb3c3336915",
+    "outputs/synthetic-sample.json": "c2924baac0e9d498e2372e895fe496a816f3d8bdb6f8d7423ff397c9d28e79cc",
+    "outputs/synthetic-summary.json": "3f461eb7f47ae44cc704bdfe25c81c563b1aeff134ca2938aaf473402c093de6",
+    "outputs/treatment-matrix.json": "2ea68fc43ec92527ef4f0d6a8183bd5df759a2a5564f158fb27c5915e2d12aa1",
+    "outputs/verification.json": "c15dd22a7f32f05f25cb518efa4650c1c7e09e7711ac6ba6a179ebe55443c385"
+  },
+  "random_seeds": {
+    "algorithm": [
+      111011
+    ],
+    "model": [
+      111101,
+      111102,
+      111103,
+      111104,
+      111105,
+      111106,
+      111107,
+      111108,
+      111109,
+      111110,
+      111111,
+      111099
+    ]
+  },
+  "run_id": "20260721T232119Z_DD-011_121162f8_e454b06d2c",
+  "schema_version": 1,
+  "started_utc": "2026-07-21T23:21:19.106888Z",
+  "study_id": "DD-011",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

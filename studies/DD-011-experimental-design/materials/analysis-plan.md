@@ -10,3 +10,10 @@ The fixed sample rule prohibits outcome-dependent stopping. Duplicate synthetic 
 assignments outside the manifest, and pre-treatment simulator failures are the only
 registered exclusions. Missing outcomes remain missing in ITT; inverse-probability
 weighting is sensitivity-only. No primary model controls for a post-treatment variable.
+
+The v2 attention contrasts use the same ITT, fixed-sample, session-clustered
+framework. H9, H10, H13, and H14 are corrected within the attention family;
+H11 and H12 are corrected within the implementation family. Public-signal use,
+one-reader alignment, off-signal rescue, and contrarian action are outcomes,
+never exclusions or post-treatment controls. All eleven response scenarios and
+every below-threshold power row remain reported.

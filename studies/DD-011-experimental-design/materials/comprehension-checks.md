@@ -8,3 +8,10 @@
 
 The proposed manipulation check requires all five correct before continuing, with
 one neutral reread opportunity. This rule is a draft, not a deployed exclusion.
+
+Selective-attention v2 adds four draft checks:
+
+6. Does an ignore recommendation remove an already delivered clue? **No.**
+7. How many roles may use a single attention license? **Exactly one.**
+8. Does reduced precision change the audience? **No; they are separate dimensions.**
+9. When is the third-option recommendation available? **Only on registered clue disagreement under that screen.**

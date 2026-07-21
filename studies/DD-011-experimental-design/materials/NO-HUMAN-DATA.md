@@ -21,3 +21,7 @@ Withdrawal draft: a participant may stop without penalty beyond the disclosed
 minimum-payment rule and request deletion before the de-identification cutoff.
 Adverse-event draft: pause the session, preserve no unnecessary narrative detail,
 notify the responsible investigator and ethics body, and do not resume until cleared.
+
+The v2 attention package changes only synthetic registries, assignments, and
+power assumptions. It does not authorize recruitment, signal delivery,
+behavioral measurement, intervention, or analysis of real records.

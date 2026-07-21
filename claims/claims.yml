@@ -1449,3 +1449,24 @@ claims:
     first_added: "2026-07-21"
     last_checked: "2026-07-21"
     notes: The CLI remains v1 by default; v2 is selected explicitly with --version v2. No composite score is active.
+  - id: DD-C-0070
+    study_id: DD-011
+    short_name: synthetic-attention-power-reproduction
+    statement: DD-011 v2 reproducibly extends the synthetic package to 29 treatment cells, 14 hypotheses, 19 outcomes, 11 response scenarios, 928 balanced synthetic assignments, and 924 power rows with 1,000 replications each; 335 of 462 rows at sample sizes 640 or greater remain below the registered 0.80 calibration threshold.
+    scope: The frozen selective-attention-29 design, declared assumed effects, normal sampling approximation, conservative Bonferroni family alpha, session size eight, explicit response multipliers, fixed seeds, and sample sizes 200 through 960; this is conditional synthetic power, not a human experiment, empirical attention model, recruitment target, behavioral finding, or evidence that any treatment works on people.
+    claim_type: monte-carlo-estimate
+    status: verified
+    source_type: versioned-seeded-synthetic-power-grid-with-separate-random-stream-recomputation
+    source_reference: results/verified/20260721T232119Z_DD-011_121162f8_e454b06d2c/outputs/power-table.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/experimental_design/attention_model.py, src/distributed_discovery/experimental_design/power.py, src/distributed_discovery/experimental_design/verification.py]
+    run_ids: [20260721T232119Z_DD-011_121162f8_e454b06d2c]
+    test_paths: [tests/unit/test_experimental_design.py, tests/integration/test_experimental_design_cli.py]
+    exactness_basis: null
+    rounding_rule: power and Wilson interval endpoints are reported to six decimals from integer Monte Carlo rejection counts; MDE values are reported to six decimals from the registered normal approximation
+    dependencies: [DD-C-0056, DD-C-0059, DD-C-0060, DD-C-0062, DD-C-0064, DD-C-0066, DD-C-0067]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: In the rational-attention scenario at N=960, twelve of fourteen assumed effects reach estimated power 0.80; H13 and H14 remain below threshold at 0.764 and 0.632. All failures are retained. No participants were recruited, no human data were collected, and no experiment was conducted.
