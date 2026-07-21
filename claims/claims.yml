@@ -755,4 +755,46 @@ claims:
     supersedes: []
     first_added: "2026-07-20"
     last_checked: "2026-07-20"
-    notes: The upper endpoint is not claimed attainable by a private team; neither endpoint is claimed globally optimal or tight for the unresolved private-team problem.
+    notes: This interval remains valid but is superseded by the equality in DD-C-0038; its former upper endpoint is not attainable in general by the private team.
+  - id: DD-C-0037
+    study_id: DD-001
+    short_name: alignment-count-budget-upper-bound
+    statement: For every M >= 2, N >= 1, and symmetric-report accuracy p in [0,1], the joint-target-column global-count-budget relaxation in ADR-0009 is an admissible upper bound on discovery by deterministic zero-communication private teams.
+    scope: The frozen DD-001 model with a uniform target, conditionally independent symmetric private reports, one deterministic local policy per role, and union discovery; the relaxation drops per-role cross-target feasibility but retains the aligned incoming-count vector within each target.
+    claim_type: proposition
+    status: verified
+    source_type: analytic-embedding-proof-with-exact-bellman-certificate-verifier
+    source_reference: docs/decisions/ADR-0009-alignment-bound-relaxation.md
+    proof_path: claims/proofs/DD-C-0037.md
+    implementation_paths: [src/distributed_discovery/private_teams/alignment_bound.py, src/distributed_discovery/private_teams/alignment_bound_verification.py]
+    run_ids: [20260721T022739Z_DD-001_358cb1eb_cd16846ba5]
+    test_paths: [tests/unit/test_alignment_bound.py, tests/integration/test_alignment_bound_benchmarks.py]
+    exactness_basis: analytic superset embedding plus exact rational Bellman tables whose every lower inequality and one equality predecessor per state are checked without an optimization call
+    rounding_rule: exact fractions
+    dependencies: [DD-C-0023]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Equality on the audited canonical fixture does not imply that this first-level relaxation is tight for every parameter choice; one anti-informative audit case is strictly loose.
+  - id: DD-C-0038
+    study_id: DD-001
+    short_name: canonical-private-team-exact-optimum
+    statement: In the canonical M=16, N=8, p=1/5 fixture, the deterministic and ex-ante randomized zero-communication private-team optima both equal 325089/390625 = 0.83222784, attained by direct clue-following.
+    scope: The frozen DD-001 common-payoff model; randomization may choose a deterministic role-policy profile before reports arrive but cannot condition the shared random seed on the target or reports.
+    claim_type: theorem
+    status: independently-reproduced
+    source_type: attainable-exact-lower-bound-plus-alignment-relaxation-certificate-and-independent-bellman-verifier
+    source_reference: results/verified/20260721T022739Z_DD-001_358cb1eb_cd16846ba5/outputs/canonical-alignment-bound-certificate.json
+    proof_path: claims/proofs/DD-C-0038.md
+    implementation_paths: [src/distributed_discovery/private_teams/model.py, src/distributed_discovery/private_teams/alignment_bound.py, src/distributed_discovery/private_teams/alignment_bound_verification.py]
+    run_ids: [20260720T200447Z_DD-001_6eb12861_ba766d1eba, 20260721T022739Z_DD-001_358cb1eb_cd16846ba5]
+    test_paths: [tests/unit/test_private_teams_model.py, tests/unit/test_alignment_bound.py, tests/integration/test_alignment_bound_benchmarks.py]
+    exactness_basis: direct-policy exact formula meets a certified relaxation upper bound; the certificate is independently checked state-by-state and the randomized extension follows because an ex-ante mixture is an average of deterministic profile values
+    rounding_rule: exact fraction is authoritative; decimal terminates at eight places
+    dependencies: [DD-C-0019, DD-C-0037]
+    contradicts: []
+    supersedes: [DD-C-0036]
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: This closes the canonical private-team optimization problem only for the frozen zero-communication fixture; it is not a claim about arbitrary dimensions, signal laws, or communication.
