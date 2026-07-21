@@ -1,8 +1,7 @@
 from fractions import Fraction
 
-from distributed_discovery.acquisition.verification import agrees
-
 from distributed_discovery.acquisition.model import equilibria, planner
+from distributed_discovery.acquisition.verification import agrees
 
 
 def test_direct_enumerator_matches_closed_forms() -> None:
