@@ -1,0 +1,7 @@
+{
+  "outputs/anti-informative-alignment-bounds.csv": "6e533221313f3bf604432da3d7675f21bdef3919353c7d5303b01082434b447f",
+  "outputs/canonical-alignment-bound-certificate.json": "7645c47bde68fa93878c3ebce76e288925bb6f044ea35fc6797e68def0b5e2b0",
+  "outputs/cost-audit.json": "0f8e04773e386312a400e18b899a48b69a7a1570075a4cd5f82b9933422f08ea",
+  "outputs/independent-verification.json": "465d986ff1d97dfbab001b562fe194054d7cb0068869bd9e2ad4fb43914f5e43",
+  "outputs/tiny-alignment-bounds.csv": "cc787fa01995113f4238ecb6c19f8f29caeb932fd512abad381a8520474e584b"
+}

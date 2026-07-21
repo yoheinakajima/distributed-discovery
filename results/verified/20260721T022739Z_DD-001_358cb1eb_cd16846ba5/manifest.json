@@ -1,0 +1,35 @@
+{
+  "command": "make dd001-alignment-bound",
+  "config_hash_sha256": "cd16846ba5acc60c4bd5c76318e747a1e9a7c93f315cda384d65e4081eb901d8",
+  "dependency_lock_hash_sha256": "44817b839ec69b327bd25a79ba5a14569628e5345ed6e496fd2badfe5c7f5bb5",
+  "ended_utc": "2026-07-21T02:27:39.995582Z",
+  "exit_status": 0,
+  "git_commit": "358cb1eb9833dd87fecfafea122f0219e9aba997",
+  "git_dirty": false,
+  "input_hashes": {
+    "docs/decisions/ADR-0009-alignment-bound-relaxation.md": "68502a040db418e3244698c8a8b68dbbcc3e0b7d91d2d60ab1f68bee2f0101c7",
+    "results/verified/20260720T200447Z_DD-001_6eb12861_ba766d1eba/outputs/tiny-phase-grid.csv": "e7112e7dd471a4fa302bbe5336a367dd166ff497bf8ab9095b6526635fe4851e",
+    "results/verified/20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1/outputs/anti-informative-counterexamples.json": "da2d2a8b6854683c85062a1918b3222959e17230e767b2553304a736684870f6",
+    "src/distributed_discovery/private_teams/alignment_bound.py": "3a11d448a08cdd96fced2fcc7939bc0b5bfb7ee4742a9104dbb609b2c1b5eb6d",
+    "src/distributed_discovery/private_teams/alignment_bound_study.py": "77d5fdf0cea1c00d2351d922033721d4e90d1d4610fd4501d5d67c3ef51df698",
+    "src/distributed_discovery/private_teams/alignment_bound_verification.py": "7ce216e51994b6e1c8c6099c2adc4af636300a07e316aca0864f7022018cf81a",
+    "studies/DD-001-private-information-teams/configs/alignment-upper-bound.yml": "00b2f50a1ebe37c70dc874d745afb7d53ce1b6f8e16b9b2cac786ca9acd3134e"
+  },
+  "outputs": {
+    "outputs/anti-informative-alignment-bounds.csv": "6e533221313f3bf604432da3d7675f21bdef3919353c7d5303b01082434b447f",
+    "outputs/canonical-alignment-bound-certificate.json": "7645c47bde68fa93878c3ebce76e288925bb6f044ea35fc6797e68def0b5e2b0",
+    "outputs/cost-audit.json": "0f8e04773e386312a400e18b899a48b69a7a1570075a4cd5f82b9933422f08ea",
+    "outputs/independent-verification.json": "465d986ff1d97dfbab001b562fe194054d7cb0068869bd9e2ad4fb43914f5e43",
+    "outputs/tiny-alignment-bounds.csv": "cc787fa01995113f4238ecb6c19f8f29caeb932fd512abad381a8520474e584b"
+  },
+  "random_seeds": {
+    "algorithm": null,
+    "model": null
+  },
+  "run_id": "20260721T022739Z_DD-001_358cb1eb_cd16846ba5",
+  "schema_version": 1,
+  "started_utc": "2026-07-21T02:27:39.574603Z",
+  "study_id": "DD-001",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

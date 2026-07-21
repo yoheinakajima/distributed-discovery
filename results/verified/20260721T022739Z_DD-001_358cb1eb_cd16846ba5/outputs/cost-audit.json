@@ -1,0 +1,16 @@
+{
+  "bounded_before_execution": true,
+  "canonical_elapsed_seconds": 0.12127516698092222,
+  "certificate_bytes": 102087,
+  "checkpoint_strategy": "atomic immutable run outputs; state space is bounded below the resume threshold",
+  "column_state_slots": 1161,
+  "column_transition_count": 7752,
+  "declared_memory_budget_mb": 256,
+  "declared_time_budget_seconds": 30,
+  "interruption_outcome": "no substantive claim; preserve a failed run if manifested",
+  "randomness": null,
+  "schema_version": 1,
+  "target_state_slots": 2193,
+  "target_transition_count": 125904,
+  "total_elapsed_seconds": 0.38852316699922085
+}
