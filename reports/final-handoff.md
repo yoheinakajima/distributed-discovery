@@ -6,6 +6,6 @@ The frozen canonical zero-communication private-team optimum is exactly `325089/
 
 DD-002's known disclosure reversal survives only anonymous-symmetric selection among six audited evaluations. DD-003's homogeneous 51-graph class preserves a bounded complete-pairwise-moment null, while its registered 839-network heterogeneous colored extension contains an independently reproduced `3/4` versus `2/3` complete-moment counterexample.
 
-The 14-page synthesis is `papers/three-results/Three_Results_in_Distributed_Discovery.pdf`; the public Results page is `https://yoheinakajima.github.io/distributed-discovery/results.html`. Final acceptance passes 95 tests, strict mypy 2.3 across 45 source files, 44 claims, 17 immutable manifests, both paper builds, all site checks, and eleven live routes.
+The 14-page synthesis is `papers/three-results/Three_Results_in_Distributed_Discovery.pdf`; the public Results page is `https://yoheinakajima.github.io/distributed-discovery/results.html`. This historical acceptance recorded 95 tests, 44 claims, and 17 immutable manifests; the current reconciliation record is maintained in `plans/MASTER_EXEC_PLAN.md`.
 
 All stale Dependabot PRs #1–#5 were superseded with passing PRs #29–#31 and closed with explanations. The only blocker is settings issue #32: the one authorized attempt failed before mutation because GitHub CLI is unauthenticated. Resume operationally from `docs/github-setup.md` after intentionally providing settings-capable authentication; do not retry blindly.

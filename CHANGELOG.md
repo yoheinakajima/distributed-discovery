@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-07-21 — current-program reconciliation
+
+- Recorded completion of DD-004 through DD-007 and PRs #36, #38, #40, #42, #43, and #45.
+- Marked DD-007 as synthetic-only and retained settings issue #32 as operational-only.
+- Opened the institutional-theory continuation: DD-006A, DD-008, synthesis paper, and public laboratories.
+
 ## Unreleased
 
 - Reconcile the authorized public MIT repository and Actions-built GitHub Pages state; archive stale operational wording without changing research evidence.

@@ -4,4 +4,4 @@ The four bounded extensions are complete and public. DD-004 shows schedule-invar
 
 Editorial decision: neither paper is expanded in this cycle. The existing Foundations and Three Results papers are deliberately retained as their source-bounded, independently validated artifacts; the new results are documented in study reports, immutable runs, the claim ledger, and the public research library. A future paper needs a separately registered synthesis scope.
 
-Acceptance after this integration: `make verify site`; immutable runs are validated from manifests, public pages are built from safe study metadata, and the only known operational blocker remains GitHub settings issue #32. No DD-007 artifact is real data or an empirical claim.
+Acceptance after this integration: `make verify site`; immutable runs are validated from manifests, public pages are built from safe study metadata, and the only known operational blocker remains GitHub settings issue #32. No DD-007 artifact is real data or an empirical claim. The next registered work is the DD-006A normalized general-transfer frontier, followed by DD-008 endogenous evidence acquisition.

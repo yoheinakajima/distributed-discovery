@@ -1,5 +1,12 @@
 # Project status and final continuation handoff
 
+> Current-status addendum (2026-07-21): PRs #36, #38, #40, #42, #43, and #45
+> are merged on `main` at `29c37e347a4cbc74a84cd3a23e4105789f7309e9`.
+> DD-004 through DD-007 are complete bounded studies; DD-007 is synthetic-only.
+> The live ledger has 49 claims and 19 passing immutable runs. The next phase is
+> DD-006A, then DD-008, the Discovery Stack paper, and public labs. The dated
+> record below is preserved as historical evidence.
+
 > Acceptance record prepared 2026-07-21 UTC on `docs/final-continuation-handoff` from merged `main` commit `fa2fd5a473810dc00a5f8b483b4f196a6522f7be`. The documentation-only handoff PR advances `main`; its final merge and deployment identifiers are recorded in that PR and the closing task response.
 
 ## 1. Executive summary
