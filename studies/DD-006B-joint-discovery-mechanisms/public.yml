@@ -1,0 +1,10 @@
+study_id: DD-006B
+title: Joint Truthful Discovery Mechanisms
+slug: dd-006b
+phase: complete-bounded-study
+summary: Exact normalized joint-score frontier separating observable strict implementation from the hidden-action boundary.
+public_artifacts:
+  - path: studies/DD-006B-joint-discovery-mechanisms/model.md
+    description: Frozen observability, recommendation, transfer, and equilibrium model
+  - path: studies/DD-006B-joint-discovery-mechanisms/report.md
+    description: Exact bounded joint-mechanism frontier report

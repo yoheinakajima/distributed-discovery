@@ -14,3 +14,9 @@ The canonical alignment-bound run is `verified/20260721T022739Z_DD-001_358cb1eb_
 The DD-002 selection-robustness run is `verified/20260721T025802Z_DD-002_73a85c71_b0e5b6dc49`. It stores the exact six-rule catalogue, potential identities, strict-best-response absorption witnesses, all 45 refinement comparisons, and an independent corruption-detecting verification.
 
 The DD-003 heterogeneous-source run is `verified/20260721T032358Z_DD-003_84238b76_2cbc13e66a`. It stores 839 canonical colored networks, the full exact first/pairwise moment census, a `3/4` versus `2/3` discovery counterexample, scalar-diagnostic audits, and a separate corruption-detecting verifier.
+
+The DD-006B joint-mechanism run is
+`verified/20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b`. It stores the exact
+60-row mechanism registry, incentive slacks, accounting certificates,
+DD-006/DD-006A comparison, and independent row verification supporting
+DD-C-0053.

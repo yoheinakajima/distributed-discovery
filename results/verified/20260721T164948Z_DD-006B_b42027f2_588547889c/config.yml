@@ -1,0 +1,7 @@
+study_id: DD-006B
+coefficient_step: 1/4
+coefficient_sum: 1
+regimes: [target-actions, success-actions, sole-rescue, target-hidden-actions]
+tie_roles: [0, 1]
+time_cap_seconds: 60
+memory_cap_mb: 1024

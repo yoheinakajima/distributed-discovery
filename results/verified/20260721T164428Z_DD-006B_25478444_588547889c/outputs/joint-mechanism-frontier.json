@@ -1,0 +1,962 @@
+[
+  {
+    "all_tie_margin": "1/12",
+    "coefficients": [
+      "0",
+      "0",
+      "1"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "1/12",
+      "1/12"
+    ],
+    "weak": true
+  },
+  {
+    "all_tie_margin": "5/48",
+    "coefficients": [
+      "0",
+      "1/4",
+      "3/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "5/48",
+      "5/48"
+    ],
+    "weak": true
+  },
+  {
+    "all_tie_margin": "5/72",
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "5/72",
+      "5/72"
+    ],
+    "weak": true
+  },
+  {
+    "all_tie_margin": "-7/144",
+    "coefficients": [
+      "0",
+      "3/4",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/144",
+      "-7/144"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-1/6",
+    "coefficients": [
+      "0",
+      "1",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-1/6",
+      "-1/6"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "13/72",
+    "coefficients": [
+      "1/4",
+      "0",
+      "3/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "13/72",
+      "13/72"
+    ],
+    "weak": true
+  },
+  {
+    "all_tie_margin": "1/16",
+    "coefficients": [
+      "1/4",
+      "1/4",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "1/16",
+      "1/16"
+    ],
+    "weak": true
+  },
+  {
+    "all_tie_margin": "-1/18",
+    "coefficients": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-1/18",
+      "-1/18"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-25/144",
+    "coefficients": [
+      "1/4",
+      "3/4",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-25/144",
+      "-25/144"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "1/18",
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "1/18",
+      "1/18"
+    ],
+    "weak": true
+  },
+  {
+    "all_tie_margin": "-1/16",
+    "coefficients": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-1/16",
+      "-1/16"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-13/72",
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-13/72",
+      "-13/72"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-5/72",
+    "coefficients": [
+      "3/4",
+      "0",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-5/72",
+      "-5/72"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-3/16",
+    "coefficients": [
+      "3/4",
+      "1/4",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-3/16",
+      "-3/16"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1",
+      "0",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "1/12",
+    "coefficients": [
+      "0",
+      "0",
+      "1"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "1/12",
+      "1/12"
+    ],
+    "weak": true
+  },
+  {
+    "all_tie_margin": "11/144",
+    "coefficients": [
+      "0",
+      "1/4",
+      "3/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "11/144",
+      "11/144"
+    ],
+    "weak": true
+  },
+  {
+    "all_tie_margin": "-11/72",
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-11/72",
+      "-11/72"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-55/144",
+    "coefficients": [
+      "0",
+      "3/4",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-55/144",
+      "-55/144"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-11/18",
+    "coefficients": [
+      "0",
+      "1",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-11/18",
+      "-11/18"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "1/12",
+    "coefficients": [
+      "1/4",
+      "0",
+      "3/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "1/12",
+      "1/12"
+    ],
+    "weak": true
+  },
+  {
+    "all_tie_margin": "-7/144",
+    "coefficients": [
+      "1/4",
+      "1/4",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/144",
+      "-7/144"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-5/18",
+    "coefficients": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-5/18",
+      "-5/18"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-73/144",
+    "coefficients": [
+      "1/4",
+      "3/4",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-73/144",
+      "-73/144"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "1/18",
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "1/18",
+      "1/18"
+    ],
+    "weak": true
+  },
+  {
+    "all_tie_margin": "-25/144",
+    "coefficients": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-25/144",
+      "-25/144"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-29/72",
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-29/72",
+      "-29/72"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-5/72",
+    "coefficients": [
+      "3/4",
+      "0",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-5/72",
+      "-5/72"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-43/144",
+    "coefficients": [
+      "3/4",
+      "1/4",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-43/144",
+      "-43/144"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1",
+      "0",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "1/12",
+    "coefficients": [
+      "0",
+      "0",
+      "1"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": true,
+    "tie_role_margins": [
+      "1/12",
+      "1/12"
+    ],
+    "weak": true
+  },
+  {
+    "all_tie_margin": "5/48",
+    "coefficients": [
+      "0",
+      "1/4",
+      "3/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": true,
+    "tie_role_margins": [
+      "5/48",
+      "5/48"
+    ],
+    "weak": true
+  },
+  {
+    "all_tie_margin": "5/72",
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": true,
+    "tie_role_margins": [
+      "5/72",
+      "5/72"
+    ],
+    "weak": true
+  },
+  {
+    "all_tie_margin": "-7/144",
+    "coefficients": [
+      "0",
+      "3/4",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/144",
+      "-7/144"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-1/6",
+    "coefficients": [
+      "0",
+      "1",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-1/6",
+      "-1/6"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "1/12",
+    "coefficients": [
+      "1/4",
+      "0",
+      "3/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": true,
+    "tie_role_margins": [
+      "1/12",
+      "1/12"
+    ],
+    "weak": true
+  },
+  {
+    "all_tie_margin": "1/16",
+    "coefficients": [
+      "1/4",
+      "1/4",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": true,
+    "tie_role_margins": [
+      "1/16",
+      "1/16"
+    ],
+    "weak": true
+  },
+  {
+    "all_tie_margin": "-1/18",
+    "coefficients": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-1/18",
+      "-1/18"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-25/144",
+    "coefficients": [
+      "1/4",
+      "3/4",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-25/144",
+      "-25/144"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "1/18",
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": true,
+    "tie_role_margins": [
+      "1/18",
+      "1/18"
+    ],
+    "weak": true
+  },
+  {
+    "all_tie_margin": "-1/16",
+    "coefficients": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-1/16",
+      "-1/16"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-13/72",
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-13/72",
+      "-13/72"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-5/72",
+    "coefficients": [
+      "3/4",
+      "0",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-5/72",
+      "-5/72"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-3/16",
+    "coefficients": [
+      "3/4",
+      "1/4",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-3/16",
+      "-3/16"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1",
+      "0",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "0",
+      "0",
+      "1"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "0",
+      "1/4",
+      "3/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "0",
+      "3/4",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "0",
+      "1",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1/4",
+      "0",
+      "3/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1/4",
+      "1/4",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1/4",
+      "3/4",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "3/4",
+      "0",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "3/4",
+      "1/4",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1",
+      "0",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  }
+]

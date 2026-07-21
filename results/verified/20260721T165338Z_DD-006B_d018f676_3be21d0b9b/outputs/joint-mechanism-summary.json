@@ -1,0 +1,54 @@
+{
+  "all_rows_participation": true,
+  "best_strict_discovery": "11/12",
+  "frontier_rows": 60,
+  "independent_verifier": true,
+  "maximum_margin": "13/72",
+  "minimum_strict_expected_subsidy": "1",
+  "minimum_strict_transfer_bound": "1/2",
+  "regime_results": [
+    {
+      "best_implementable_discovery": "11/12",
+      "maximum_margin": "13/72",
+      "minimum_strict_expected_subsidy": "35/24",
+      "minimum_strict_transfer_bound": "11/12",
+      "regime": "target-actions",
+      "strict_profile_best_response_multiplicity": 1,
+      "strict_rows": 6,
+      "weak_rows": 6
+    },
+    {
+      "best_implementable_discovery": "11/12",
+      "maximum_margin": "1/12",
+      "minimum_strict_expected_subsidy": "1",
+      "minimum_strict_transfer_bound": "1/2",
+      "regime": "success-actions",
+      "strict_profile_best_response_multiplicity": 1,
+      "strict_rows": 4,
+      "weak_rows": 4
+    },
+    {
+      "best_implementable_discovery": "11/12",
+      "maximum_margin": "5/48",
+      "minimum_strict_expected_subsidy": "1",
+      "minimum_strict_transfer_bound": "1/2",
+      "regime": "sole-rescue",
+      "strict_profile_best_response_multiplicity": 1,
+      "strict_rows": 6,
+      "weak_rows": 6
+    },
+    {
+      "best_implementable_discovery": null,
+      "maximum_margin": "-7/36",
+      "minimum_strict_expected_subsidy": null,
+      "minimum_strict_transfer_bound": null,
+      "regime": "target-hidden-actions",
+      "strict_profile_best_response_multiplicity": null,
+      "strict_rows": 0,
+      "weak_rows": 0
+    }
+  ],
+  "strict_rows": 16,
+  "strict_rows_with_positive_information_weight": 8,
+  "weak_rows": 16
+}

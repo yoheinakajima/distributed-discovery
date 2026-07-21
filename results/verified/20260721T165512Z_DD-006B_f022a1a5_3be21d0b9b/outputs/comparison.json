@@ -1,0 +1,20 @@
+{
+  "DD-006": {
+    "reference": "20260721T051457Z_DD-006_d49a50ea_068bce4af3",
+    "rows": 9,
+    "strict_rows": 0
+  },
+  "DD-006A": {
+    "maximum_margin": "0",
+    "reference": "20260721T140745Z_DD-006_401ad624_c942f43e42",
+    "rows": 123,
+    "strict_rows": 0,
+    "weak_rows": 31
+  },
+  "DD-006B": {
+    "maximum_margin": "13/72",
+    "rows": 60,
+    "strict_rows": 16,
+    "weak_rows": 16
+  }
+}

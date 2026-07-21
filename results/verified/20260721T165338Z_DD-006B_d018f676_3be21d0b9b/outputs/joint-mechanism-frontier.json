@@ -1,0 +1,4982 @@
+[
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "2",
+          "2"
+        ],
+        "expected_agent_utilities": [
+          "5/3",
+          "5/4"
+        ],
+        "expected_total_transfer": "2",
+        "minimum_interim_utility": "5/4",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "2",
+          "2"
+        ],
+        "expected_agent_utilities": [
+          "5/4",
+          "5/3"
+        ],
+        "expected_total_transfer": "2",
+        "minimum_interim_utility": "5/4",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "1/12",
+    "coefficients": [
+      "0",
+      "0",
+      "1"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "11/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/12",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "11/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/12",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "1/12",
+      "1/12"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "3/2",
+          "7/4"
+        ],
+        "expected_agent_utilities": [
+          "19/12",
+          "17/16"
+        ],
+        "expected_total_transfer": "83/48",
+        "minimum_interim_utility": "17/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "3/2",
+          "7/4"
+        ],
+        "expected_agent_utilities": [
+          "17/16",
+          "19/12"
+        ],
+        "expected_total_transfer": "83/48",
+        "minimum_interim_utility": "17/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "5/48",
+    "coefficients": [
+      "0",
+      "1/4",
+      "3/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "3/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "5/48",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "3/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "5/48",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "5/48",
+      "5/48"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "1",
+          "3/2"
+        ],
+        "expected_agent_utilities": [
+          "3/2",
+          "7/8"
+        ],
+        "expected_total_transfer": "35/24",
+        "minimum_interim_utility": "7/8",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "1",
+          "3/2"
+        ],
+        "expected_agent_utilities": [
+          "7/8",
+          "3/2"
+        ],
+        "expected_total_transfer": "35/24",
+        "minimum_interim_utility": "7/8",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "5/72",
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "5/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "5/72",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "5/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "5/72",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "5/72",
+      "5/72"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/2",
+          "5/4"
+        ],
+        "expected_agent_utilities": [
+          "17/12",
+          "11/16"
+        ],
+        "expected_total_transfer": "19/16",
+        "minimum_interim_utility": "11/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/2",
+          "5/4"
+        ],
+        "expected_agent_utilities": [
+          "11/16",
+          "17/12"
+        ],
+        "expected_total_transfer": "19/16",
+        "minimum_interim_utility": "11/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "-7/144",
+    "coefficients": [
+      "0",
+      "3/4",
+      "1/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-7/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/144",
+        "report_only_margin": "7/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/144",
+        "report_only_margin": "7/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/144",
+      "-7/144"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "1"
+        ],
+        "expected_agent_utilities": [
+          "4/3",
+          "1/2"
+        ],
+        "expected_total_transfer": "11/12",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "1"
+        ],
+        "expected_agent_utilities": [
+          "1/2",
+          "4/3"
+        ],
+        "expected_total_transfer": "11/12",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "-1/6",
+    "coefficients": [
+      "0",
+      "1",
+      "0"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-1/6",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-1/6",
+        "report_only_margin": "1/6",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-1/6",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-1/6",
+        "report_only_margin": "1/6",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-1/6",
+      "-1/6"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "17/12",
+          "23/12"
+        ],
+        "expected_agent_utilities": [
+          "37/24",
+          "9/8"
+        ],
+        "expected_total_transfer": "7/4",
+        "minimum_interim_utility": "9/8",
+        "participation": true,
+        "worst_case_abs_transfer": "23/24"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "17/12",
+          "23/12"
+        ],
+        "expected_agent_utilities": [
+          "9/8",
+          "37/24"
+        ],
+        "expected_total_transfer": "7/4",
+        "minimum_interim_utility": "9/8",
+        "participation": true,
+        "worst_case_abs_transfer": "23/24"
+      }
+    ],
+    "all_tie_margin": "13/72",
+    "coefficients": [
+      "1/4",
+      "0",
+      "3/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "13/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "13/72",
+        "report_only_margin": "5/24",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "13/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "13/72",
+        "report_only_margin": "5/24",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "13/72",
+      "13/72"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "11/12",
+          "5/3"
+        ],
+        "expected_agent_utilities": [
+          "35/24",
+          "15/16"
+        ],
+        "expected_total_transfer": "71/48",
+        "minimum_interim_utility": "15/16",
+        "participation": true,
+        "worst_case_abs_transfer": "23/24"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "11/12",
+          "5/3"
+        ],
+        "expected_agent_utilities": [
+          "15/16",
+          "35/24"
+        ],
+        "expected_total_transfer": "71/48",
+        "minimum_interim_utility": "15/16",
+        "participation": true,
+        "worst_case_abs_transfer": "23/24"
+      }
+    ],
+    "all_tie_margin": "1/16",
+    "coefficients": [
+      "1/4",
+      "1/4",
+      "1/2"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "1/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/16",
+        "report_only_margin": "11/48",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "1/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/16",
+        "report_only_margin": "11/48",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "1/16",
+      "1/16"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "5/12",
+          "17/12"
+        ],
+        "expected_agent_utilities": [
+          "11/8",
+          "3/4"
+        ],
+        "expected_total_transfer": "29/24",
+        "minimum_interim_utility": "3/4",
+        "participation": true,
+        "worst_case_abs_transfer": "23/24"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "5/12",
+          "17/12"
+        ],
+        "expected_agent_utilities": [
+          "3/4",
+          "11/8"
+        ],
+        "expected_total_transfer": "29/24",
+        "minimum_interim_utility": "3/4",
+        "participation": true,
+        "worst_case_abs_transfer": "23/24"
+      }
+    ],
+    "all_tie_margin": "-1/18",
+    "coefficients": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-1/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-1/18",
+        "report_only_margin": "1/4",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-1/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-1/18",
+        "report_only_margin": "1/4",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-1/18",
+      "-1/18"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/12",
+          "7/6"
+        ],
+        "expected_agent_utilities": [
+          "31/24",
+          "9/16"
+        ],
+        "expected_total_transfer": "15/16",
+        "minimum_interim_utility": "9/16",
+        "participation": true,
+        "worst_case_abs_transfer": "23/24"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/12",
+          "7/6"
+        ],
+        "expected_agent_utilities": [
+          "9/16",
+          "31/24"
+        ],
+        "expected_total_transfer": "15/16",
+        "minimum_interim_utility": "9/16",
+        "participation": true,
+        "worst_case_abs_transfer": "23/24"
+      }
+    ],
+    "all_tie_margin": "-25/144",
+    "coefficients": [
+      "1/4",
+      "3/4",
+      "0"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-25/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-25/144",
+        "report_only_margin": "13/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-25/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-25/144",
+        "report_only_margin": "13/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-25/144",
+      "-25/144"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "5/6",
+          "11/6"
+        ],
+        "expected_agent_utilities": [
+          "17/12",
+          "1"
+        ],
+        "expected_total_transfer": "3/2",
+        "minimum_interim_utility": "1",
+        "participation": true,
+        "worst_case_abs_transfer": "11/12"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "5/6",
+          "11/6"
+        ],
+        "expected_agent_utilities": [
+          "1",
+          "17/12"
+        ],
+        "expected_total_transfer": "3/2",
+        "minimum_interim_utility": "1",
+        "participation": true,
+        "worst_case_abs_transfer": "11/12"
+      }
+    ],
+    "all_tie_margin": "1/18",
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "1/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/18",
+        "report_only_margin": "1/3",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "1/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/18",
+        "report_only_margin": "1/3",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "1/18",
+      "1/18"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/3",
+          "19/12"
+        ],
+        "expected_agent_utilities": [
+          "4/3",
+          "13/16"
+        ],
+        "expected_total_transfer": "59/48",
+        "minimum_interim_utility": "13/16",
+        "participation": true,
+        "worst_case_abs_transfer": "11/12"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/3",
+          "19/12"
+        ],
+        "expected_agent_utilities": [
+          "13/16",
+          "4/3"
+        ],
+        "expected_total_transfer": "59/48",
+        "minimum_interim_utility": "13/16",
+        "participation": true,
+        "worst_case_abs_transfer": "11/12"
+      }
+    ],
+    "all_tie_margin": "-1/16",
+    "coefficients": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-1/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-1/16",
+        "report_only_margin": "17/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-1/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-1/16",
+        "report_only_margin": "17/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-1/16",
+      "-1/16"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/6",
+          "4/3"
+        ],
+        "expected_agent_utilities": [
+          "5/4",
+          "5/8"
+        ],
+        "expected_total_transfer": "23/24",
+        "minimum_interim_utility": "5/8",
+        "participation": true,
+        "worst_case_abs_transfer": "11/12"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/6",
+          "4/3"
+        ],
+        "expected_agent_utilities": [
+          "5/8",
+          "5/4"
+        ],
+        "expected_total_transfer": "23/24",
+        "minimum_interim_utility": "5/8",
+        "participation": true,
+        "worst_case_abs_transfer": "11/12"
+      }
+    ],
+    "all_tie_margin": "-13/72",
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-13/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-13/72",
+        "report_only_margin": "3/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-13/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-13/72",
+        "report_only_margin": "3/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-13/72",
+      "-13/72"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/4",
+          "7/4"
+        ],
+        "expected_agent_utilities": [
+          "31/24",
+          "7/8"
+        ],
+        "expected_total_transfer": "5/4",
+        "minimum_interim_utility": "7/8",
+        "participation": true,
+        "worst_case_abs_transfer": "7/8"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/4",
+          "7/4"
+        ],
+        "expected_agent_utilities": [
+          "7/8",
+          "31/24"
+        ],
+        "expected_total_transfer": "5/4",
+        "minimum_interim_utility": "7/8",
+        "participation": true,
+        "worst_case_abs_transfer": "7/8"
+      }
+    ],
+    "all_tie_margin": "-5/72",
+    "coefficients": [
+      "3/4",
+      "0",
+      "1/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-5/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-5/72",
+        "report_only_margin": "11/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-5/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-5/72",
+        "report_only_margin": "11/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-5/72",
+      "-5/72"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/4",
+          "3/2"
+        ],
+        "expected_agent_utilities": [
+          "29/24",
+          "11/16"
+        ],
+        "expected_total_transfer": "47/48",
+        "minimum_interim_utility": "11/16",
+        "participation": true,
+        "worst_case_abs_transfer": "7/8"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/4",
+          "3/2"
+        ],
+        "expected_agent_utilities": [
+          "11/16",
+          "29/24"
+        ],
+        "expected_total_transfer": "47/48",
+        "minimum_interim_utility": "11/16",
+        "participation": true,
+        "worst_case_abs_transfer": "7/8"
+      }
+    ],
+    "all_tie_margin": "-3/16",
+    "coefficients": [
+      "3/4",
+      "1/4",
+      "0"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-3/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-3/16",
+        "report_only_margin": "23/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-3/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-3/16",
+        "report_only_margin": "23/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-3/16",
+      "-3/16"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/3",
+          "5/3"
+        ],
+        "expected_agent_utilities": [
+          "7/6",
+          "3/4"
+        ],
+        "expected_total_transfer": "1",
+        "minimum_interim_utility": "3/4",
+        "participation": true,
+        "worst_case_abs_transfer": "5/6"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/3",
+          "5/3"
+        ],
+        "expected_agent_utilities": [
+          "3/4",
+          "7/6"
+        ],
+        "expected_total_transfer": "1",
+        "minimum_interim_utility": "3/4",
+        "participation": true,
+        "worst_case_abs_transfer": "5/6"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1",
+      "0",
+      "0"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "7/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "7/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "2",
+          "2"
+        ],
+        "expected_agent_utilities": [
+          "5/3",
+          "5/4"
+        ],
+        "expected_total_transfer": "2",
+        "minimum_interim_utility": "5/4",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "2",
+          "2"
+        ],
+        "expected_agent_utilities": [
+          "5/4",
+          "5/3"
+        ],
+        "expected_total_transfer": "2",
+        "minimum_interim_utility": "5/4",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "1/12",
+    "coefficients": [
+      "0",
+      "0",
+      "1"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "11/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/12",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "11/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/12",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "1/12",
+      "1/12"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "3/2",
+          "7/4"
+        ],
+        "expected_agent_utilities": [
+          "19/12",
+          "17/16"
+        ],
+        "expected_total_transfer": "83/48",
+        "minimum_interim_utility": "17/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "3/2",
+          "7/4"
+        ],
+        "expected_agent_utilities": [
+          "17/16",
+          "19/12"
+        ],
+        "expected_total_transfer": "83/48",
+        "minimum_interim_utility": "17/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "11/144",
+    "coefficients": [
+      "0",
+      "1/4",
+      "3/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "11/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "11/144",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "11/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "11/144",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "11/144",
+      "11/144"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "1",
+          "3/2"
+        ],
+        "expected_agent_utilities": [
+          "3/2",
+          "7/8"
+        ],
+        "expected_total_transfer": "35/24",
+        "minimum_interim_utility": "7/8",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "1",
+          "3/2"
+        ],
+        "expected_agent_utilities": [
+          "7/8",
+          "3/2"
+        ],
+        "expected_total_transfer": "35/24",
+        "minimum_interim_utility": "7/8",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "-11/72",
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-11/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-11/72",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-11/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-11/72",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-11/72",
+      "-11/72"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/2",
+          "5/4"
+        ],
+        "expected_agent_utilities": [
+          "17/12",
+          "11/16"
+        ],
+        "expected_total_transfer": "19/16",
+        "minimum_interim_utility": "11/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/2",
+          "5/4"
+        ],
+        "expected_agent_utilities": [
+          "11/16",
+          "17/12"
+        ],
+        "expected_total_transfer": "19/16",
+        "minimum_interim_utility": "11/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "-55/144",
+    "coefficients": [
+      "0",
+      "3/4",
+      "1/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-55/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-55/144",
+        "report_only_margin": "7/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-55/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-55/144",
+        "report_only_margin": "7/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-55/144",
+      "-55/144"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "1"
+        ],
+        "expected_agent_utilities": [
+          "4/3",
+          "1/2"
+        ],
+        "expected_total_transfer": "11/12",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "1"
+        ],
+        "expected_agent_utilities": [
+          "1/2",
+          "4/3"
+        ],
+        "expected_total_transfer": "11/12",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "-11/18",
+    "coefficients": [
+      "0",
+      "1",
+      "0"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-11/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-11/18",
+        "report_only_margin": "1/6",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-11/18",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-11/18",
+        "report_only_margin": "1/6",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-11/18",
+      "-11/18"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "3/2",
+          "3/2"
+        ],
+        "expected_agent_utilities": [
+          "17/12",
+          "1"
+        ],
+        "expected_total_transfer": "3/2",
+        "minimum_interim_utility": "1",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "3/2",
+          "3/2"
+        ],
+        "expected_agent_utilities": [
+          "1",
+          "17/12"
+        ],
+        "expected_total_transfer": "3/2",
+        "minimum_interim_utility": "1",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      }
+    ],
+    "all_tie_margin": "1/12",
+    "coefficients": [
+      "1/4",
+      "0",
+      "3/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "13/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/12",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "13/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/12",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "1/12",
+      "1/12"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "1",
+          "5/4"
+        ],
+        "expected_agent_utilities": [
+          "4/3",
+          "13/16"
+        ],
+        "expected_total_transfer": "59/48",
+        "minimum_interim_utility": "13/16",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "1",
+          "5/4"
+        ],
+        "expected_agent_utilities": [
+          "13/16",
+          "4/3"
+        ],
+        "expected_total_transfer": "59/48",
+        "minimum_interim_utility": "13/16",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      }
+    ],
+    "all_tie_margin": "-7/144",
+    "coefficients": [
+      "1/4",
+      "1/4",
+      "1/2"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-7/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/144",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/144",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/144",
+      "-7/144"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/2",
+          "1"
+        ],
+        "expected_agent_utilities": [
+          "5/4",
+          "5/8"
+        ],
+        "expected_total_transfer": "23/24",
+        "minimum_interim_utility": "5/8",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/2",
+          "1"
+        ],
+        "expected_agent_utilities": [
+          "5/8",
+          "5/4"
+        ],
+        "expected_total_transfer": "23/24",
+        "minimum_interim_utility": "5/8",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      }
+    ],
+    "all_tie_margin": "-5/18",
+    "coefficients": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-5/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-5/18",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-5/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-5/18",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-5/18",
+      "-5/18"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "3/4"
+        ],
+        "expected_agent_utilities": [
+          "7/6",
+          "7/16"
+        ],
+        "expected_total_transfer": "11/16",
+        "minimum_interim_utility": "7/16",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "3/4"
+        ],
+        "expected_agent_utilities": [
+          "7/16",
+          "7/6"
+        ],
+        "expected_total_transfer": "11/16",
+        "minimum_interim_utility": "7/16",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      }
+    ],
+    "all_tie_margin": "-73/144",
+    "coefficients": [
+      "1/4",
+      "3/4",
+      "0"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-73/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-73/144",
+        "report_only_margin": "7/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-73/144",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-73/144",
+        "report_only_margin": "7/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-73/144",
+      "-73/144"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "1",
+          "1"
+        ],
+        "expected_agent_utilities": [
+          "7/6",
+          "3/4"
+        ],
+        "expected_total_transfer": "1",
+        "minimum_interim_utility": "3/4",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "1",
+          "1"
+        ],
+        "expected_agent_utilities": [
+          "3/4",
+          "7/6"
+        ],
+        "expected_total_transfer": "1",
+        "minimum_interim_utility": "3/4",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      }
+    ],
+    "all_tie_margin": "1/18",
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "1/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/18",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "1/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/18",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "1/18",
+      "1/18"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/2",
+          "3/4"
+        ],
+        "expected_agent_utilities": [
+          "13/12",
+          "9/16"
+        ],
+        "expected_total_transfer": "35/48",
+        "minimum_interim_utility": "9/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/2",
+          "3/4"
+        ],
+        "expected_agent_utilities": [
+          "9/16",
+          "13/12"
+        ],
+        "expected_total_transfer": "35/48",
+        "minimum_interim_utility": "9/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      }
+    ],
+    "all_tie_margin": "-25/144",
+    "coefficients": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-25/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-25/144",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-25/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-25/144",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-25/144",
+      "-25/144"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "1/2"
+        ],
+        "expected_agent_utilities": [
+          "1",
+          "3/8"
+        ],
+        "expected_total_transfer": "11/24",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "1/2"
+        ],
+        "expected_agent_utilities": [
+          "3/8",
+          "1"
+        ],
+        "expected_total_transfer": "11/24",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      }
+    ],
+    "all_tie_margin": "-29/72",
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-29/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-29/72",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-29/72",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-29/72",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-29/72",
+      "-29/72"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/2",
+          "1/2"
+        ],
+        "expected_agent_utilities": [
+          "11/12",
+          "1/2"
+        ],
+        "expected_total_transfer": "1/2",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "1/4"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/2",
+          "1/2"
+        ],
+        "expected_agent_utilities": [
+          "1/2",
+          "11/12"
+        ],
+        "expected_total_transfer": "1/2",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "1/4"
+      }
+    ],
+    "all_tie_margin": "-5/72",
+    "coefficients": [
+      "3/4",
+      "0",
+      "1/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-5/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-5/72",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-5/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-5/72",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-5/72",
+      "-5/72"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "1/4"
+        ],
+        "expected_agent_utilities": [
+          "5/6",
+          "5/16"
+        ],
+        "expected_total_transfer": "11/48",
+        "minimum_interim_utility": "5/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1/4"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "1/4"
+        ],
+        "expected_agent_utilities": [
+          "5/16",
+          "5/6"
+        ],
+        "expected_total_transfer": "11/48",
+        "minimum_interim_utility": "5/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1/4"
+      }
+    ],
+    "all_tie_margin": "-43/144",
+    "coefficients": [
+      "3/4",
+      "1/4",
+      "0"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-43/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-43/144",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-43/144",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-43/144",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-43/144",
+      "-43/144"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "0"
+        ],
+        "expected_agent_utilities": [
+          "2/3",
+          "1/4"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "0"
+        ],
+        "expected_agent_utilities": [
+          "1/4",
+          "2/3"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1",
+      "0",
+      "0"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "2",
+          "2"
+        ],
+        "expected_agent_utilities": [
+          "5/3",
+          "5/4"
+        ],
+        "expected_total_transfer": "2",
+        "minimum_interim_utility": "5/4",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "2",
+          "2"
+        ],
+        "expected_agent_utilities": [
+          "5/4",
+          "5/3"
+        ],
+        "expected_total_transfer": "2",
+        "minimum_interim_utility": "5/4",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "1/12",
+    "coefficients": [
+      "0",
+      "0",
+      "1"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "11/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/12",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "11/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/12",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": true,
+    "tie_role_margins": [
+      "1/12",
+      "1/12"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "3/2",
+          "7/4"
+        ],
+        "expected_agent_utilities": [
+          "19/12",
+          "17/16"
+        ],
+        "expected_total_transfer": "83/48",
+        "minimum_interim_utility": "17/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "3/2",
+          "7/4"
+        ],
+        "expected_agent_utilities": [
+          "17/16",
+          "19/12"
+        ],
+        "expected_total_transfer": "83/48",
+        "minimum_interim_utility": "17/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "5/48",
+    "coefficients": [
+      "0",
+      "1/4",
+      "3/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "3/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "5/48",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "3/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "5/48",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": true,
+    "tie_role_margins": [
+      "5/48",
+      "5/48"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "1",
+          "3/2"
+        ],
+        "expected_agent_utilities": [
+          "3/2",
+          "7/8"
+        ],
+        "expected_total_transfer": "35/24",
+        "minimum_interim_utility": "7/8",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "1",
+          "3/2"
+        ],
+        "expected_agent_utilities": [
+          "7/8",
+          "3/2"
+        ],
+        "expected_total_transfer": "35/24",
+        "minimum_interim_utility": "7/8",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "5/72",
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "5/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "5/72",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "5/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "5/72",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": true,
+    "tie_role_margins": [
+      "5/72",
+      "5/72"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/2",
+          "5/4"
+        ],
+        "expected_agent_utilities": [
+          "17/12",
+          "11/16"
+        ],
+        "expected_total_transfer": "19/16",
+        "minimum_interim_utility": "11/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/2",
+          "5/4"
+        ],
+        "expected_agent_utilities": [
+          "11/16",
+          "17/12"
+        ],
+        "expected_total_transfer": "19/16",
+        "minimum_interim_utility": "11/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "-7/144",
+    "coefficients": [
+      "0",
+      "3/4",
+      "1/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-7/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/144",
+        "report_only_margin": "7/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/144",
+        "report_only_margin": "7/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/144",
+      "-7/144"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "1"
+        ],
+        "expected_agent_utilities": [
+          "4/3",
+          "1/2"
+        ],
+        "expected_total_transfer": "11/12",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "1"
+        ],
+        "expected_agent_utilities": [
+          "1/2",
+          "4/3"
+        ],
+        "expected_total_transfer": "11/12",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "-1/6",
+    "coefficients": [
+      "0",
+      "1",
+      "0"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-1/6",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-1/6",
+        "report_only_margin": "1/6",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-1/6",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-1/6",
+        "report_only_margin": "1/6",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-1/6",
+      "-1/6"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "3/2",
+          "3/2"
+        ],
+        "expected_agent_utilities": [
+          "17/12",
+          "1"
+        ],
+        "expected_total_transfer": "3/2",
+        "minimum_interim_utility": "1",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "3/2",
+          "3/2"
+        ],
+        "expected_agent_utilities": [
+          "1",
+          "17/12"
+        ],
+        "expected_total_transfer": "3/2",
+        "minimum_interim_utility": "1",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      }
+    ],
+    "all_tie_margin": "1/12",
+    "coefficients": [
+      "1/4",
+      "0",
+      "3/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "13/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/12",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "13/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/12",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": true,
+    "tie_role_margins": [
+      "1/12",
+      "1/12"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "1",
+          "5/4"
+        ],
+        "expected_agent_utilities": [
+          "4/3",
+          "13/16"
+        ],
+        "expected_total_transfer": "59/48",
+        "minimum_interim_utility": "13/16",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "1",
+          "5/4"
+        ],
+        "expected_agent_utilities": [
+          "13/16",
+          "4/3"
+        ],
+        "expected_total_transfer": "59/48",
+        "minimum_interim_utility": "13/16",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      }
+    ],
+    "all_tie_margin": "1/16",
+    "coefficients": [
+      "1/4",
+      "1/4",
+      "1/2"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "1/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/16",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "1/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/16",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": true,
+    "tie_role_margins": [
+      "1/16",
+      "1/16"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/2",
+          "1"
+        ],
+        "expected_agent_utilities": [
+          "5/4",
+          "5/8"
+        ],
+        "expected_total_transfer": "23/24",
+        "minimum_interim_utility": "5/8",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/2",
+          "1"
+        ],
+        "expected_agent_utilities": [
+          "5/8",
+          "5/4"
+        ],
+        "expected_total_transfer": "23/24",
+        "minimum_interim_utility": "5/8",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      }
+    ],
+    "all_tie_margin": "-1/18",
+    "coefficients": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-1/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-1/18",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-1/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-1/18",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-1/18",
+      "-1/18"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "3/4"
+        ],
+        "expected_agent_utilities": [
+          "7/6",
+          "7/16"
+        ],
+        "expected_total_transfer": "11/16",
+        "minimum_interim_utility": "7/16",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "3/4"
+        ],
+        "expected_agent_utilities": [
+          "7/16",
+          "7/6"
+        ],
+        "expected_total_transfer": "11/16",
+        "minimum_interim_utility": "7/16",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      }
+    ],
+    "all_tie_margin": "-25/144",
+    "coefficients": [
+      "1/4",
+      "3/4",
+      "0"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-25/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-25/144",
+        "report_only_margin": "7/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-25/144",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-25/144",
+        "report_only_margin": "7/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-25/144",
+      "-25/144"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "1",
+          "1"
+        ],
+        "expected_agent_utilities": [
+          "7/6",
+          "3/4"
+        ],
+        "expected_total_transfer": "1",
+        "minimum_interim_utility": "3/4",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "1",
+          "1"
+        ],
+        "expected_agent_utilities": [
+          "3/4",
+          "7/6"
+        ],
+        "expected_total_transfer": "1",
+        "minimum_interim_utility": "3/4",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      }
+    ],
+    "all_tie_margin": "1/18",
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "1/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/18",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "1/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/18",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": true,
+    "tie_role_margins": [
+      "1/18",
+      "1/18"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/2",
+          "3/4"
+        ],
+        "expected_agent_utilities": [
+          "13/12",
+          "9/16"
+        ],
+        "expected_total_transfer": "35/48",
+        "minimum_interim_utility": "9/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/2",
+          "3/4"
+        ],
+        "expected_agent_utilities": [
+          "9/16",
+          "13/12"
+        ],
+        "expected_total_transfer": "35/48",
+        "minimum_interim_utility": "9/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      }
+    ],
+    "all_tie_margin": "-1/16",
+    "coefficients": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-1/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-1/16",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-1/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-1/16",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-1/16",
+      "-1/16"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "1/2"
+        ],
+        "expected_agent_utilities": [
+          "1",
+          "3/8"
+        ],
+        "expected_total_transfer": "11/24",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "1/2"
+        ],
+        "expected_agent_utilities": [
+          "3/8",
+          "1"
+        ],
+        "expected_total_transfer": "11/24",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      }
+    ],
+    "all_tie_margin": "-13/72",
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-13/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-13/72",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-13/72",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-13/72",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-13/72",
+      "-13/72"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/2",
+          "1/2"
+        ],
+        "expected_agent_utilities": [
+          "11/12",
+          "1/2"
+        ],
+        "expected_total_transfer": "1/2",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "1/4"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "1/2",
+          "1/2"
+        ],
+        "expected_agent_utilities": [
+          "1/2",
+          "11/12"
+        ],
+        "expected_total_transfer": "1/2",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "1/4"
+      }
+    ],
+    "all_tie_margin": "-5/72",
+    "coefficients": [
+      "3/4",
+      "0",
+      "1/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-5/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-5/72",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-5/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-5/72",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-5/72",
+      "-5/72"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "1/4"
+        ],
+        "expected_agent_utilities": [
+          "5/6",
+          "5/16"
+        ],
+        "expected_total_transfer": "11/48",
+        "minimum_interim_utility": "5/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1/4"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "1/4"
+        ],
+        "expected_agent_utilities": [
+          "5/16",
+          "5/6"
+        ],
+        "expected_total_transfer": "11/48",
+        "minimum_interim_utility": "5/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1/4"
+      }
+    ],
+    "all_tie_margin": "-3/16",
+    "coefficients": [
+      "3/4",
+      "1/4",
+      "0"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-3/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-3/16",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-3/16",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-3/16",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-3/16",
+      "-3/16"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "0"
+        ],
+        "expected_agent_utilities": [
+          "2/3",
+          "1/4"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "0"
+        ],
+        "expected_agent_utilities": [
+          "1/4",
+          "2/3"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1",
+      "0",
+      "0"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "0"
+        ],
+        "expected_agent_utilities": [
+          "2/3",
+          "1/4"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "0"
+        ],
+        "expected_agent_utilities": [
+          "1/4",
+          "2/3"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "0",
+      "0",
+      "1"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "0"
+        ],
+        "expected_agent_utilities": [
+          "2/3",
+          "1/4"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "0"
+        ],
+        "expected_agent_utilities": [
+          "1/4",
+          "2/3"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "0",
+      "1/4",
+      "3/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "0"
+        ],
+        "expected_agent_utilities": [
+          "2/3",
+          "1/4"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "0"
+        ],
+        "expected_agent_utilities": [
+          "1/4",
+          "2/3"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "0"
+        ],
+        "expected_agent_utilities": [
+          "2/3",
+          "1/4"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "0"
+        ],
+        "expected_agent_utilities": [
+          "1/4",
+          "2/3"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "0",
+      "3/4",
+      "1/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "0"
+        ],
+        "expected_agent_utilities": [
+          "2/3",
+          "1/4"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "0",
+          "0"
+        ],
+        "expected_agent_utilities": [
+          "1/4",
+          "2/3"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "0",
+      "1",
+      "0"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/12",
+          "5/12"
+        ],
+        "expected_agent_utilities": [
+          "19/24",
+          "3/8"
+        ],
+        "expected_total_transfer": "1/4",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/24"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/12",
+          "5/12"
+        ],
+        "expected_agent_utilities": [
+          "3/8",
+          "19/24"
+        ],
+        "expected_total_transfer": "1/4",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/24"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1/4",
+      "0",
+      "3/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "5/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "5/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/12",
+          "5/12"
+        ],
+        "expected_agent_utilities": [
+          "19/24",
+          "3/8"
+        ],
+        "expected_total_transfer": "1/4",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/24"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/12",
+          "5/12"
+        ],
+        "expected_agent_utilities": [
+          "3/8",
+          "19/24"
+        ],
+        "expected_total_transfer": "1/4",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/24"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1/4",
+      "1/4",
+      "1/2"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "5/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "5/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/12",
+          "5/12"
+        ],
+        "expected_agent_utilities": [
+          "19/24",
+          "3/8"
+        ],
+        "expected_total_transfer": "1/4",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/24"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/12",
+          "5/12"
+        ],
+        "expected_agent_utilities": [
+          "3/8",
+          "19/24"
+        ],
+        "expected_total_transfer": "1/4",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/24"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "5/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "5/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/12",
+          "5/12"
+        ],
+        "expected_agent_utilities": [
+          "19/24",
+          "3/8"
+        ],
+        "expected_total_transfer": "1/4",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/24"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/12",
+          "5/12"
+        ],
+        "expected_agent_utilities": [
+          "3/8",
+          "19/24"
+        ],
+        "expected_total_transfer": "1/4",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/24"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1/4",
+      "3/4",
+      "0"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "5/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "5/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/6",
+          "5/6"
+        ],
+        "expected_agent_utilities": [
+          "11/12",
+          "1/2"
+        ],
+        "expected_total_transfer": "1/2",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "5/12"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/6",
+          "5/6"
+        ],
+        "expected_agent_utilities": [
+          "1/2",
+          "11/12"
+        ],
+        "expected_total_transfer": "1/2",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "5/12"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/3",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/3",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/6",
+          "5/6"
+        ],
+        "expected_agent_utilities": [
+          "11/12",
+          "1/2"
+        ],
+        "expected_total_transfer": "1/2",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "5/12"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/6",
+          "5/6"
+        ],
+        "expected_agent_utilities": [
+          "1/2",
+          "11/12"
+        ],
+        "expected_total_transfer": "1/2",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "5/12"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/3",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/3",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/6",
+          "5/6"
+        ],
+        "expected_agent_utilities": [
+          "11/12",
+          "1/2"
+        ],
+        "expected_total_transfer": "1/2",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "5/12"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/6",
+          "5/6"
+        ],
+        "expected_agent_utilities": [
+          "1/2",
+          "11/12"
+        ],
+        "expected_total_transfer": "1/2",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "5/12"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/3",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/3",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/4",
+          "5/4"
+        ],
+        "expected_agent_utilities": [
+          "25/24",
+          "5/8"
+        ],
+        "expected_total_transfer": "3/4",
+        "minimum_interim_utility": "5/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/8"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/4",
+          "5/4"
+        ],
+        "expected_agent_utilities": [
+          "5/8",
+          "25/24"
+        ],
+        "expected_total_transfer": "3/4",
+        "minimum_interim_utility": "5/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/8"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "3/4",
+      "0",
+      "1/4"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "11/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "11/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/4",
+          "5/4"
+        ],
+        "expected_agent_utilities": [
+          "25/24",
+          "5/8"
+        ],
+        "expected_total_transfer": "3/4",
+        "minimum_interim_utility": "5/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/8"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/4",
+          "5/4"
+        ],
+        "expected_agent_utilities": [
+          "5/8",
+          "25/24"
+        ],
+        "expected_total_transfer": "3/4",
+        "minimum_interim_utility": "5/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/8"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "3/4",
+      "1/4",
+      "0"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "11/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "11/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/3",
+          "5/3"
+        ],
+        "expected_agent_utilities": [
+          "7/6",
+          "3/4"
+        ],
+        "expected_total_transfer": "1",
+        "minimum_interim_utility": "3/4",
+        "participation": true,
+        "worst_case_abs_transfer": "5/6"
+      },
+      {
+        "ex_post_total_transfer_bounds": [
+          "-1/3",
+          "5/3"
+        ],
+        "expected_agent_utilities": [
+          "3/4",
+          "7/6"
+        ],
+        "expected_total_transfer": "1",
+        "minimum_interim_utility": "3/4",
+        "participation": true,
+        "worst_case_abs_transfer": "5/6"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1",
+      "0",
+      "0"
+    ],
+    "deviation_certificates_by_tie_role": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "7/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "7/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "tie_rule": "fixed ex ante and checked for both role assignments",
+    "truthful_discovery_by_tie_role": [
+      "11/12",
+      "11/12"
+    ],
+    "weak": false
+  }
+]

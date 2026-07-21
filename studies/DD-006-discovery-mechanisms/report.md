@@ -25,3 +25,12 @@ report. Of 123 exact frontier rows, 31 weakly implement all declared tie rules;
 none is strict and the maximum all-tie margin is exactly zero. This is a
 complete bounded census for the registered linear class, not an impossibility
 result for arbitrary transfers.
+
+DD-006B is reported separately because it changes the transfer architecture to
+a subsidized convex combination of a quadratic information score, observable
+coverage, and obedience. Primary run
+`20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b` finds 16 strict rows among 60,
+including three with an active positive information score. Its maximum all-tie
+margin is `13/72`, while the target-observable/action-hidden regime has no weak
+row. See the [DD-006B report](../DD-006B-joint-discovery-mechanisms/report.md)
+for budget, liability, participation, discovery, and scope details.

@@ -2,6 +2,8 @@ import json
 import shutil
 from pathlib import Path
 
+import yaml
+
 from distributed_discovery.site.build import build
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -11,10 +13,17 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     output = tmp_path / "site"
     report = build(ROOT, output)
 
-    assert report["page_count"] == 27
-    assert report["study_count"] == 10
-    assert report["claim_count"] == 52
-    assert report["passing_run_count"] == 24
+    expected_studies = len(list((ROOT / "studies").glob("DD-0*/public.yml")))
+    expected_claims = len(yaml.safe_load((ROOT / "claims/claims.yml").read_text())["claims"])
+    expected_passing_runs = sum(
+        json.loads(path.read_text())["validation_status"] == "passed"
+        and json.loads(path.read_text())["exit_status"] == 0
+        for path in (ROOT / "results").glob("**/manifest.json")
+    )
+    assert report["page_count"] == 17 + expected_studies
+    assert report["study_count"] == expected_studies
+    assert report["claim_count"] == expected_claims
+    assert report["passing_run_count"] == expected_passing_runs
     assert report["publication_count"] == 3
     assert report["internal_links_passed"] is True
     assert report["public_safety_passed"] is True
@@ -26,6 +35,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert (output / "research/dd-000.html").is_file()
     assert (output / "research/dd-008.html").is_file()
     assert (output / "research/dd-008a.html").is_file()
+    assert (output / "research/dd-006b.html").is_file()
     assert (output / "labs.html").is_file()
     for name in ["sequential", "coverage", "mechanisms", "audit", "evidence-acquisition"]:
         page = (output / f"labs/{name}.html").read_text(encoding="utf-8")
@@ -35,6 +45,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     claims = (output / "claims.html").read_text(encoding="utf-8")
     assert 'id="DD-C-0001"' in claims
     assert 'id="DD-C-0044"' in claims
+    assert 'id="DD-C-0053"' in claims
     assert "unvalidated values" in claims
 
     runs = json.loads((output / "data/runs.json").read_text(encoding="utf-8"))["runs"]
@@ -55,6 +66,10 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     }
     assert (output / "robots.txt").is_file()
     assert (output / "sitemap.xml").is_file()
+    mechanisms = json.loads((output / "data/labs/mechanisms.json").read_text())
+    assert mechanisms["run_id"] == "20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b"
+    assert mechanisms["strict_rows"] == 16
+    assert mechanisms["maximum_margin"] == "13/72"
 
 
 def test_research_library_rejects_missing_public_metadata(tmp_path: Path) -> None:

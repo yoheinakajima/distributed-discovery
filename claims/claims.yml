@@ -1092,3 +1092,24 @@ claims:
     first_added: "2026-07-21"
     last_checked: "2026-07-21"
     notes: Equilibrium and planner classifications are generated under the same fixed source and prize accounting; no unrestricted intervention result is claimed.
+  - id: DD-C-0053
+    study_id: DD-006B
+    short_name: normalized-joint-mechanism-strict-frontier
+    statement: In DD-006B's 60-row normalized joint-mechanism census, 16 rows strictly implement truthful reporting and the differentiated recommendation for both fixed tie roles; three use an active positive quadratic-score component, the maximum exact all-tie margin is 13/72, and the target-observable/action-hidden regime has no weak row.
+    scope: Two agents, three equiprobable targets, conditionally independent 2/3-accurate signals, 15 nonnegative quarter-grid coefficient vectors summing to one, four registered observability regimes, fixed ex-ante tie roles, externally subsidized transfers, and pure unilateral report/action-rule deviations only; this is not a budget-balanced, arbitrary-transfer, dominant-strategy, collusion, mixed-equilibrium, global-uniqueness, or real-institutional result.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exhaustive-exact-rational-joint-deviation-census-with-separate-evaluator
+    source_reference: results/verified/20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b/outputs/joint-mechanism-frontier.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/mechanisms/joint.py, src/distributed_discovery/mechanisms/joint_verification.py]
+    run_ids: [20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b]
+    test_paths: [tests/unit/test_joint_mechanisms.py]
+    exactness_basis: all 60 registered rows, both fixed tie roles, 57,600 unilateral joint deviations, report-only and action-only margins, participation, truthful discovery, ex-ante subsidy, ex-post transfer bounds, and liability are evaluated with Fraction arithmetic and reproduced by a separately implemented evaluator that rejects corrupted records.
+    rounding_rule: exact fractions
+    dependencies: [DD-C-0048, DD-C-0050]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: Strict rows have one best response against the truthful profile; total equilibrium multiplicity in the full extensive game is not enumerated.

@@ -1,0 +1,2402 @@
+[
+  {
+    "coefficients": [
+      "0",
+      "0",
+      "1"
+    ],
+    "regime": "target-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "11/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/12",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "11/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/12",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "0",
+      "1/4",
+      "3/4"
+    ],
+    "regime": "target-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "3/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "5/48",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "3/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "5/48",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "regime": "target-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "5/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "5/72",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "5/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "5/72",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "0",
+      "3/4",
+      "1/4"
+    ],
+    "regime": "target-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-7/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/144",
+        "report_only_margin": "7/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/144",
+        "report_only_margin": "7/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "0",
+      "1",
+      "0"
+    ],
+    "regime": "target-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-1/6",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-1/6",
+        "report_only_margin": "1/6",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-1/6",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-1/6",
+        "report_only_margin": "1/6",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "0",
+      "3/4"
+    ],
+    "regime": "target-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "13/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "13/72",
+        "report_only_margin": "5/24",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "13/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "13/72",
+        "report_only_margin": "5/24",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "1/4",
+      "1/2"
+    ],
+    "regime": "target-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "1/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/16",
+        "report_only_margin": "11/48",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "1/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/16",
+        "report_only_margin": "11/48",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "regime": "target-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-1/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-1/18",
+        "report_only_margin": "1/4",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-1/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-1/18",
+        "report_only_margin": "1/4",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "3/4",
+      "0"
+    ],
+    "regime": "target-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-25/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-25/144",
+        "report_only_margin": "13/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-25/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-25/144",
+        "report_only_margin": "13/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "regime": "target-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "1/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/18",
+        "report_only_margin": "1/3",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "1/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/18",
+        "report_only_margin": "1/3",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "regime": "target-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-1/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-1/16",
+        "report_only_margin": "17/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-1/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-1/16",
+        "report_only_margin": "17/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "regime": "target-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-13/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-13/72",
+        "report_only_margin": "3/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-13/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-13/72",
+        "report_only_margin": "3/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "3/4",
+      "0",
+      "1/4"
+    ],
+    "regime": "target-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-5/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-5/72",
+        "report_only_margin": "11/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-5/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-5/72",
+        "report_only_margin": "11/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "3/4",
+      "1/4",
+      "0"
+    ],
+    "regime": "target-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-3/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-3/16",
+        "report_only_margin": "23/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-3/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-3/16",
+        "report_only_margin": "23/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1",
+      "0",
+      "0"
+    ],
+    "regime": "target-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "7/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "7/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "0",
+      "0",
+      "1"
+    ],
+    "regime": "success-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "11/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/12",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "11/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/12",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "0",
+      "1/4",
+      "3/4"
+    ],
+    "regime": "success-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "11/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "11/144",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "11/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "11/144",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "regime": "success-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-11/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-11/72",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-11/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-11/72",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "0",
+      "3/4",
+      "1/4"
+    ],
+    "regime": "success-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-55/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-55/144",
+        "report_only_margin": "7/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-55/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-55/144",
+        "report_only_margin": "7/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "0",
+      "1",
+      "0"
+    ],
+    "regime": "success-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-11/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-11/18",
+        "report_only_margin": "1/6",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-11/18",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-11/18",
+        "report_only_margin": "1/6",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "0",
+      "3/4"
+    ],
+    "regime": "success-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "13/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/12",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "13/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/12",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "1/4",
+      "1/2"
+    ],
+    "regime": "success-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-7/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/144",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/144",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "regime": "success-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-5/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-5/18",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-5/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-5/18",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "3/4",
+      "0"
+    ],
+    "regime": "success-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-73/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-73/144",
+        "report_only_margin": "7/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-73/144",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-73/144",
+        "report_only_margin": "7/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "regime": "success-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "1/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/18",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "1/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/18",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "regime": "success-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-25/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-25/144",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-25/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-25/144",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "regime": "success-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-29/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-29/72",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-29/72",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-29/72",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "3/4",
+      "0",
+      "1/4"
+    ],
+    "regime": "success-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-5/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-5/72",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-5/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-5/72",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "3/4",
+      "1/4",
+      "0"
+    ],
+    "regime": "success-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-43/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-43/144",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-43/144",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-43/144",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1",
+      "0",
+      "0"
+    ],
+    "regime": "success-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "0",
+      "0",
+      "1"
+    ],
+    "regime": "sole-rescue",
+    "tie_roles": [
+      {
+        "action_only_margin": "11/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/12",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "11/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/12",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "0",
+      "1/4",
+      "3/4"
+    ],
+    "regime": "sole-rescue",
+    "tie_roles": [
+      {
+        "action_only_margin": "3/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "5/48",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "3/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "5/48",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "regime": "sole-rescue",
+    "tie_roles": [
+      {
+        "action_only_margin": "5/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "5/72",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "5/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "5/72",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "0",
+      "3/4",
+      "1/4"
+    ],
+    "regime": "sole-rescue",
+    "tie_roles": [
+      {
+        "action_only_margin": "-7/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/144",
+        "report_only_margin": "7/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/144",
+        "report_only_margin": "7/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "0",
+      "1",
+      "0"
+    ],
+    "regime": "sole-rescue",
+    "tie_roles": [
+      {
+        "action_only_margin": "-1/6",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-1/6",
+        "report_only_margin": "1/6",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-1/6",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-1/6",
+        "report_only_margin": "1/6",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "0",
+      "3/4"
+    ],
+    "regime": "sole-rescue",
+    "tie_roles": [
+      {
+        "action_only_margin": "13/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/12",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "13/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/12",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "1/4",
+      "1/2"
+    ],
+    "regime": "sole-rescue",
+    "tie_roles": [
+      {
+        "action_only_margin": "1/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/16",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "1/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/16",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "regime": "sole-rescue",
+    "tie_roles": [
+      {
+        "action_only_margin": "-1/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-1/18",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-1/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-1/18",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "3/4",
+      "0"
+    ],
+    "regime": "sole-rescue",
+    "tie_roles": [
+      {
+        "action_only_margin": "-25/144",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-25/144",
+        "report_only_margin": "7/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-25/144",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-25/144",
+        "report_only_margin": "7/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "regime": "sole-rescue",
+    "tie_roles": [
+      {
+        "action_only_margin": "1/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/18",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      },
+      {
+        "action_only_margin": "1/18",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "1/18",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": true,
+        "truthful_profile_is_strict_bne": true
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "regime": "sole-rescue",
+    "tie_roles": [
+      {
+        "action_only_margin": "-1/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-1/16",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-1/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-1/16",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "regime": "sole-rescue",
+    "tie_roles": [
+      {
+        "action_only_margin": "-13/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-13/72",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-13/72",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-13/72",
+        "report_only_margin": "1/8",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "3/4",
+      "0",
+      "1/4"
+    ],
+    "regime": "sole-rescue",
+    "tie_roles": [
+      {
+        "action_only_margin": "-5/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-5/72",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-5/72",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-5/72",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "3/4",
+      "1/4",
+      "0"
+    ],
+    "regime": "sole-rescue",
+    "tie_roles": [
+      {
+        "action_only_margin": "-3/16",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-3/16",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-3/16",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-3/16",
+        "report_only_margin": "5/48",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1",
+      "0",
+      "0"
+    ],
+    "regime": "sole-rescue",
+    "tie_roles": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "0",
+      "0",
+      "1"
+    ],
+    "regime": "target-hidden-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "0",
+      "1/4",
+      "3/4"
+    ],
+    "regime": "target-hidden-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "regime": "target-hidden-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "0",
+      "3/4",
+      "1/4"
+    ],
+    "regime": "target-hidden-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "0",
+      "1",
+      "0"
+    ],
+    "regime": "target-hidden-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          3,
+          3,
+          3
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "0",
+      "3/4"
+    ],
+    "regime": "target-hidden-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "5/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "5/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "1/4",
+      "1/2"
+    ],
+    "regime": "target-hidden-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "5/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "5/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "regime": "target-hidden-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "5/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "5/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "3/4",
+      "0"
+    ],
+    "regime": "target-hidden-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "5/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "5/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "regime": "target-hidden-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/3",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/3",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "regime": "target-hidden-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/3",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/3",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "regime": "target-hidden-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/3",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "1/3",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "3/4",
+      "0",
+      "1/4"
+    ],
+    "regime": "target-hidden-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "11/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "11/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "3/4",
+      "1/4",
+      "0"
+    ],
+    "regime": "target-hidden-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "11/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "11/24",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  },
+  {
+    "coefficients": [
+      "1",
+      "0",
+      "0"
+    ],
+    "regime": "target-hidden-actions",
+    "tie_roles": [
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "7/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      },
+      {
+        "action_only_margin": "-7/36",
+        "best_response_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_margin": "-7/36",
+        "report_only_margin": "7/12",
+        "truthful_profile_is_bne": false,
+        "truthful_profile_is_strict_bne": false
+      }
+    ]
+  }
+]

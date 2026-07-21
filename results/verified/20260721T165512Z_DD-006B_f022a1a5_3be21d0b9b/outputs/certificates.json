@@ -1,0 +1,5 @@
+{
+  "corruption_test": "tests/unit/test_joint_mechanisms.py",
+  "format": "exact-fraction exhaustive-deviation-and-accounting-certificate-v1",
+  "verified_rows": 60
+}

@@ -1,5 +1,5 @@
 study_id: DD-006
 status: complete-bounded-study
-evidence_status: exact-score-difference-and-normalized-linear-transfer-frontiers
-next_action: preserve the registered zero-strict-margin boundary; arbitrary transfer tables require a new registration
-updated_utc: 2026-07-21T14:07:45Z
+evidence_status: exact-score-difference-normalized-linear-and-joint-score-frontiers
+next_action: preserve DD-006A's zero-strict boundary and DD-006B's subsidized strict frontier; broader equilibrium or transfer classes require a new registration
+updated_utc: 2026-07-21T16:55:35Z

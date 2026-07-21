@@ -1,0 +1,602 @@
+[
+  {
+    "coefficients": [
+      "0",
+      "0",
+      "1"
+    ],
+    "mechanism_id": "DD006B-01",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-actions"
+  },
+  {
+    "coefficients": [
+      "0",
+      "1/4",
+      "3/4"
+    ],
+    "mechanism_id": "DD006B-02",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-actions"
+  },
+  {
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "mechanism_id": "DD006B-03",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-actions"
+  },
+  {
+    "coefficients": [
+      "0",
+      "3/4",
+      "1/4"
+    ],
+    "mechanism_id": "DD006B-04",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-actions"
+  },
+  {
+    "coefficients": [
+      "0",
+      "1",
+      "0"
+    ],
+    "mechanism_id": "DD006B-05",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-actions"
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "0",
+      "3/4"
+    ],
+    "mechanism_id": "DD006B-06",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-actions"
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "1/4",
+      "1/2"
+    ],
+    "mechanism_id": "DD006B-07",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-actions"
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "mechanism_id": "DD006B-08",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-actions"
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "3/4",
+      "0"
+    ],
+    "mechanism_id": "DD006B-09",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-actions"
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "mechanism_id": "DD006B-10",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-actions"
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "mechanism_id": "DD006B-11",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-actions"
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "mechanism_id": "DD006B-12",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-actions"
+  },
+  {
+    "coefficients": [
+      "3/4",
+      "0",
+      "1/4"
+    ],
+    "mechanism_id": "DD006B-13",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-actions"
+  },
+  {
+    "coefficients": [
+      "3/4",
+      "1/4",
+      "0"
+    ],
+    "mechanism_id": "DD006B-14",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-actions"
+  },
+  {
+    "coefficients": [
+      "1",
+      "0",
+      "0"
+    ],
+    "mechanism_id": "DD006B-15",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-actions"
+  },
+  {
+    "coefficients": [
+      "0",
+      "0",
+      "1"
+    ],
+    "mechanism_id": "DD006B-16",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "success-actions"
+  },
+  {
+    "coefficients": [
+      "0",
+      "1/4",
+      "3/4"
+    ],
+    "mechanism_id": "DD006B-17",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "success-actions"
+  },
+  {
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "mechanism_id": "DD006B-18",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "success-actions"
+  },
+  {
+    "coefficients": [
+      "0",
+      "3/4",
+      "1/4"
+    ],
+    "mechanism_id": "DD006B-19",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "success-actions"
+  },
+  {
+    "coefficients": [
+      "0",
+      "1",
+      "0"
+    ],
+    "mechanism_id": "DD006B-20",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "success-actions"
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "0",
+      "3/4"
+    ],
+    "mechanism_id": "DD006B-21",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "success-actions"
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "1/4",
+      "1/2"
+    ],
+    "mechanism_id": "DD006B-22",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "success-actions"
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "mechanism_id": "DD006B-23",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "success-actions"
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "3/4",
+      "0"
+    ],
+    "mechanism_id": "DD006B-24",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "success-actions"
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "mechanism_id": "DD006B-25",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "success-actions"
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "mechanism_id": "DD006B-26",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "success-actions"
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "mechanism_id": "DD006B-27",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "success-actions"
+  },
+  {
+    "coefficients": [
+      "3/4",
+      "0",
+      "1/4"
+    ],
+    "mechanism_id": "DD006B-28",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "success-actions"
+  },
+  {
+    "coefficients": [
+      "3/4",
+      "1/4",
+      "0"
+    ],
+    "mechanism_id": "DD006B-29",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "success-actions"
+  },
+  {
+    "coefficients": [
+      "1",
+      "0",
+      "0"
+    ],
+    "mechanism_id": "DD006B-30",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "success-actions"
+  },
+  {
+    "coefficients": [
+      "0",
+      "0",
+      "1"
+    ],
+    "mechanism_id": "DD006B-31",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "sole-rescue"
+  },
+  {
+    "coefficients": [
+      "0",
+      "1/4",
+      "3/4"
+    ],
+    "mechanism_id": "DD006B-32",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "sole-rescue"
+  },
+  {
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "mechanism_id": "DD006B-33",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "sole-rescue"
+  },
+  {
+    "coefficients": [
+      "0",
+      "3/4",
+      "1/4"
+    ],
+    "mechanism_id": "DD006B-34",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "sole-rescue"
+  },
+  {
+    "coefficients": [
+      "0",
+      "1",
+      "0"
+    ],
+    "mechanism_id": "DD006B-35",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "sole-rescue"
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "0",
+      "3/4"
+    ],
+    "mechanism_id": "DD006B-36",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "sole-rescue"
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "1/4",
+      "1/2"
+    ],
+    "mechanism_id": "DD006B-37",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "sole-rescue"
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "mechanism_id": "DD006B-38",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "sole-rescue"
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "3/4",
+      "0"
+    ],
+    "mechanism_id": "DD006B-39",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "sole-rescue"
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "mechanism_id": "DD006B-40",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "sole-rescue"
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "mechanism_id": "DD006B-41",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "sole-rescue"
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "mechanism_id": "DD006B-42",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "sole-rescue"
+  },
+  {
+    "coefficients": [
+      "3/4",
+      "0",
+      "1/4"
+    ],
+    "mechanism_id": "DD006B-43",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "sole-rescue"
+  },
+  {
+    "coefficients": [
+      "3/4",
+      "1/4",
+      "0"
+    ],
+    "mechanism_id": "DD006B-44",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "sole-rescue"
+  },
+  {
+    "coefficients": [
+      "1",
+      "0",
+      "0"
+    ],
+    "mechanism_id": "DD006B-45",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "sole-rescue"
+  },
+  {
+    "coefficients": [
+      "0",
+      "0",
+      "1"
+    ],
+    "mechanism_id": "DD006B-46",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-hidden-actions"
+  },
+  {
+    "coefficients": [
+      "0",
+      "1/4",
+      "3/4"
+    ],
+    "mechanism_id": "DD006B-47",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-hidden-actions"
+  },
+  {
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "mechanism_id": "DD006B-48",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-hidden-actions"
+  },
+  {
+    "coefficients": [
+      "0",
+      "3/4",
+      "1/4"
+    ],
+    "mechanism_id": "DD006B-49",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-hidden-actions"
+  },
+  {
+    "coefficients": [
+      "0",
+      "1",
+      "0"
+    ],
+    "mechanism_id": "DD006B-50",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-hidden-actions"
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "0",
+      "3/4"
+    ],
+    "mechanism_id": "DD006B-51",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-hidden-actions"
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "1/4",
+      "1/2"
+    ],
+    "mechanism_id": "DD006B-52",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-hidden-actions"
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "mechanism_id": "DD006B-53",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-hidden-actions"
+  },
+  {
+    "coefficients": [
+      "1/4",
+      "3/4",
+      "0"
+    ],
+    "mechanism_id": "DD006B-54",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-hidden-actions"
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "mechanism_id": "DD006B-55",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-hidden-actions"
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "mechanism_id": "DD006B-56",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-hidden-actions"
+  },
+  {
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "mechanism_id": "DD006B-57",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-hidden-actions"
+  },
+  {
+    "coefficients": [
+      "3/4",
+      "0",
+      "1/4"
+    ],
+    "mechanism_id": "DD006B-58",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-hidden-actions"
+  },
+  {
+    "coefficients": [
+      "3/4",
+      "1/4",
+      "0"
+    ],
+    "mechanism_id": "DD006B-59",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-hidden-actions"
+  },
+  {
+    "coefficients": [
+      "1",
+      "0",
+      "0"
+    ],
+    "mechanism_id": "DD006B-60",
+    "normalization": "nonnegative coefficients sum to one",
+    "regime": "target-hidden-actions"
+  }
+]

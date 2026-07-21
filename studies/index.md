@@ -8,11 +8,11 @@
 | DD-003 | Effective Channels | complete bounded heterogeneous census | Preserve colored regressions; require a new bounded question before expansion |
 | DD-004 | Sequential Distributed Discovery | complete bounded study | Preserve perfect-elimination schedule regression; noisy tests need a new registration |
 | DD-005 | Overlapping Coverage | complete bounded study | Preserve overlap witnesses; stochastic/adaptive coverage needs a new registration |
-| DD-006 | Discovery Mechanisms | complete bounded study | Preserve weak-implementation boundary; broader transfer classes need a new registration |
+| DD-006 | Discovery Mechanisms | complete bounded study | Preserve the score-difference and normalized-linear boundaries |
 | DD-007 | Empirical Discovery Audits | complete bounded synthetic study | No real-data use without a data, ethics, and identification review |
 | DD-008 | Endogenous Evidence Acquisition | complete bounded study | Preserve the two-agent Common-Source Trap boundary; N-agent work is DD-008A |
-| DD-008A | N-Agent Endogenous Evidence Acquisition | registered | Freeze source-generation and prize accounting before any run |
-| DD-006B | Joint Truthful Discovery Mechanisms | registered | Freeze observability, scoring, allocation, and budget before any run |
+| DD-008A | N-Agent Endogenous Evidence Acquisition | complete bounded study | Preserve the N=2 through 8 exact accounting regression |
+| DD-006B | Joint Truthful Discovery Mechanisms | complete bounded study | Preserve strict subsidized rows and the hidden-action boundary |
 | DD-009 | Discovery Architecture Atlas | queued | Register aligned valid architectures before comparison |
 | DD-010 | DiscoveryBench | queued | Build golden exact tasks before simulated tasks |
 | DD-011 | Experimental Design and Power | queued | Synthetic, preregistration-ready materials only; no deployment |
