@@ -135,11 +135,9 @@ checks.
 - GitHub app open-PR search: zero open PRs.
 - `make site`: expected to generate and validate all existing routes without
   creating research runs.
-- `make bootstrap && make verify && make papers && make site`: expected final
-  repository, paper, and site acceptance with unchanged evidence totals. Passed
-  before the final upstream integration with 177 tests, 38 valid run manifests,
-  four papers, 54 pages, and 19 studies; the same gate must pass again against
-  `8a1255e` before merge.
+- `make bootstrap && make verify && make papers && make site`: passed against
+  `8a1255e` on 2026-07-21 with formatting and type checks, 179 tests, 38 valid
+  run manifests, five paper builds, 55 site pages, and 19 studies.
 
 ## Artifacts produced
 
