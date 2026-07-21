@@ -1,0 +1,33 @@
+{
+  "command": "make dd006b-joint-mechanism",
+  "config_hash_sha256": "3be21d0b9becb51c089d81673e583a9a742b4729c8eb6d74239bc00d75420b2f",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-21T16:55:34.431162Z",
+  "exit_status": 0,
+  "git_commit": "f022a1a5119f4491b2f3ca1bacbba49c837a0f6b",
+  "git_dirty": false,
+  "input_hashes": {
+    "src/distributed_discovery/mechanisms/joint.py": "412a60da50f850aa667fcb1955c6537c437ca5af4356de5be12b0253f900308f",
+    "src/distributed_discovery/mechanisms/joint_study.py": "78a9e067a7c9b3338c0f567d9b6ea2c1203bb7e9fe7371db62f6e0b569c514d0",
+    "src/distributed_discovery/mechanisms/joint_verification.py": "4fa1d4aeea1af234c45bf8058e6d51e8d442f3b9b37691c9af3f3aee4d0c981a",
+    "studies/DD-006-discovery-mechanisms/configs/joint-mechanism.yml": "8d6d2c08e87b8dc628ccdf2ec57b0a8bc3caf3654a8f751fcd036305adb29805"
+  },
+  "outputs": {
+    "outputs/certificates.json": "f27fb58ea2001457d0edd26235731ed3f88fd1d0dae19d77cdaef6608cf905e6",
+    "outputs/comparison.json": "36f1a80cf82a5653a0e022c97145d5eff3ef121b53d07d899c6d422ddbbdcefa",
+    "outputs/incentive-slacks.json": "be9b8a369f64410c89e396aa16d054aa2730a21158b99715a5de5828fcdcd074",
+    "outputs/joint-mechanism-frontier.json": "05557768b999a52121907f5e64d89b269914d801a9fe54e9953e16c6d160b447",
+    "outputs/joint-mechanism-summary.json": "34542e79cb887ca504909eb27842d1b734803fbac0c286f8bd051f13f1e163ad",
+    "outputs/mechanism-registry.json": "5aa686d8cd0e2494a755fae4a7ec3a94b0ef21f4b962a879676dbed4a8cd3207"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "run_id": "20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b",
+  "schema_version": 1,
+  "started_utc": "2026-07-21T16:55:12.100786Z",
+  "study_id": "DD-006B",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}
