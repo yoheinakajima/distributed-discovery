@@ -14,20 +14,17 @@ Owner authorization now requires sequential completion of DD-010 DiscoveryBench,
 DD-011 Experimental Design and Power, the DD-008B Common-Source analytic gate,
 a focused *Common-Source Trap* working paper, public benchmark/experiment Labs,
 and a final Program V2 handoff. The live baseline is clean `main`
-`24252c897c0cccec765364c6087848f08f27ead1`; CI `29861944847` and Pages
-`29861945022` passed, all DD-010, DD-011, and DD-008B public routes return HTTP 200, and no
-pull request is open. The only settings blocker remains issue #32; the previously required
+`ee0027f6296f9716dcef885d0317fa9dff5cbedf`; CI `29864137509` and Pages
+`29864138029` passed, all DD-010, DD-011, DD-008B, and Common-Source Trap
+public routes return HTTP 200, and no pull request is open. The only settings blocker remains issue #32; the previously required
 single `gh auth status` probe was already exhausted and is not repeated.
 
-The active milestone is the focused *Common-Source Trap* working paper under
-issue #73 and branch `paper/common-source-trap`. It integrates DD-008's exact
-two-agent fixture, DD-008A's bounded census, and DD-008B's general threshold
-theorem and interior over-acquisition counterexample with carefully scoped
-institutional and experimental implications. All figures and tables must be
-generated from immutable evidence; the deterministic artifact target is 20–32
-substantive pages with citation validation, checksum provenance, and all-page
-Poppler review. No empirical, universal-under-acquisition, DOI, submission, or
-peer-review claim is authorized.
+The active milestone is the combined Program V2 public-surface audit under issue
+#75 and branch `site/program-v2-benchmark-experiment`. It reconciles the already
+merged benchmark, experiment kit, DD-008B study, and paper routes; strengthens
+route/download/accessibility/no-JavaScript/public-safety checks; and makes no new
+scientific claim or immutable run. Final documentation acceptance follows on a
+separate branch.
 
 Progress:
 
@@ -48,14 +45,14 @@ Progress:
   `20260721T192412Z_DD-008B_649deb08_29dbeaf3a9`; DD-C-0057/DD-C-0058 pass
   through PR #72 squash merge `24252c89`; post-merge CI/Pages passed, live
   routes returned HTTP 200, and issue #71 closed.
-- [ ] Focused Common-Source Trap paper with source-generated figures/tables,
-  deterministic PDF, citation audit, all-page Poppler review, merge, and Pages.
+- [x] Focused Common-Source Trap paper with source-generated figures/tables,
+  deterministic 20-page PDF, citation audit, all-page Poppler review, PR #74
+  squash merge `ee0027f6`, post-merge CI/Pages, and live publication/PDF checks.
 - [ ] Program V2 site/Lab integration and final acceptance/handoff.
 
-Recovery: inspect `git status --short --branch`; resume the paper from
-`papers/common-source-trap/paper.tex` after it is created; never rerun the
-preserved DD-008A, DD-008B, or DD-011 primary runs. The exact next command is
-`make common-source-trap` once the deterministic paper builder and source exist.
+Recovery: inspect `git status --short --branch`; resume the site audit from
+`tests/integration/test_site_build.py`; never rerun the preserved DD-010,
+DD-011, or DD-008B primary runs. The exact next command is `make site`.
 
 ### Program V2 baseline (active, 2026-07-21)
 
