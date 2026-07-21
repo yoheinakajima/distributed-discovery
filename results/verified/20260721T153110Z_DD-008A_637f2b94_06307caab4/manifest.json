@@ -1,0 +1,24 @@
+{
+  "command": "make dd008a-acquisition",
+  "config_hash_sha256": "06307caab4cd64fbe19012caddca8ccc801e4381c1e7f62bbfd1ca39cdbd4604",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-21T15:31:30.509908Z",
+  "exit_status": 0,
+  "git_commit": "637f2b94cba2f1c9b623b8bbb502339efc913497",
+  "git_dirty": true,
+  "input_hashes": {},
+  "outputs": {
+    "outputs/n-agent-census.json": "6df75b7bf2b1f03687d4182ab4e5ab91711d279777bee66769aa7461bf558e7b",
+    "outputs/n-agent-summary.json": "729c15c1d2deab28d756c4ec944dcd02de27b1699ead5f4c4b0af411037567a5"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "run_id": "20260721T153110Z_DD-008A_637f2b94_06307caab4",
+  "schema_version": 1,
+  "started_utc": "2026-07-21T15:31:10.545341Z",
+  "study_id": "DD-008A",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

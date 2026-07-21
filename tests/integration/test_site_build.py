@@ -14,7 +14,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert report["page_count"] == 27
     assert report["study_count"] == 10
     assert report["claim_count"] == 51
-    assert report["passing_run_count"] == 21
+    assert report["passing_run_count"] == 22
     assert report["publication_count"] == 3
     assert report["internal_links_passed"] is True
     assert report["public_safety_passed"] is True
