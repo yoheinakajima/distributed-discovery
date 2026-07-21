@@ -1,6 +1,8 @@
 study_id: DD-004
 title: Sequential Distributed Discovery
 slug: dd-004
-phase: registered
-summary: Registered perfect-elimination baseline for feedback, batching, and stopping.
-public_artifacts: []
+phase: complete-bounded-study
+summary: Exact perfect-elimination batching baseline with distinct terminal, action, and round objectives.
+public_artifacts:
+  - path: studies/DD-004-sequential-discovery/report.md
+    description: Sequential baseline evidence report

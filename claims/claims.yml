@@ -924,3 +924,24 @@ claims:
     first_added: "2026-07-20"
     last_checked: "2026-07-20"
     notes: Mean agreement, source HHI, mean source overlap, mean accuracy, and exposure-weighted accuracy also have discovery-differing matches in this class.
+  - id: DD-C-0045
+    study_id: DD-004
+    short_name: perfect-elimination-terminal-invariance
+    statement: In the registered DD-004 perfect-elimination fixtures, every ordered batch composition of the four-test budget has the same exact terminal discovery as the top-four parallel portfolio, while fully sequential stopping uses fewer expected actions and more expected rounds.
+    scope: The two rational eight-target priors, B=4, costless non-repeated perfect elimination, success stopping, and the exact schedules in the primary certificate; this is not a noisy-test, deadline, or general adaptivity result.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exact-bellman-dp-with-independent-policy-path-enumeration
+    source_reference: results/verified/20260721T050038Z_DD-004_8ab02e7f_71d84de7c4/outputs/schedule-frontier.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/sequential/model.py, src/distributed_discovery/sequential/verification.py]
+    run_ids: [20260721T050038Z_DD-004_8ab02e7f_71d84de7c4]
+    test_paths: [tests/unit/test_sequential.py]
+    exactness_basis: exact Fraction Bellman recursion agrees with a separately implemented exhaustive no-repeat policy-path enumerator on every configured tiny schedule; primary schedules are recomputed with exact rational arithmetic
+    rounding_rule: exact fractions
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: The terminal invariance follows the registered perfect-elimination conditions; expected action and round differences are objective-specific.

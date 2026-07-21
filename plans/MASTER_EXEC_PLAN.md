@@ -12,6 +12,8 @@ The historical M0–M9 bootstrap, operational Milestone A, research milestones D
 
 **Active program phase — research library and bounded extensions.** The next sequence is: (N) build and deploy the public research library; (O) execute/verify DD-004 sequential perfect-elimination baseline; (P) execute/verify DD-005 overlapping-coverage frontiers; (Q) execute/verify a newly registered DD-006 reporting-and-reward fixture; (R) execute/verify DD-007 synthetic audit schema, recovery grid, and identification counterexamples; and (S) integrate the resulting program materials. Each phase requires a bounded issue, coherent branch/PR, immutable evidence, independent check where applicable, claim audit, CI, merge, Pages deployment, and live-route validation.
 
+N completed through merged PR #36 (`1b6f923`) and a successful Pages deployment. O primary run `20260721T050038Z_DD-004_8ab02e7f_71d84de7c4` completed in 0.06 seconds under its 30-second bound: its exact DP and independent tiny policy-path enumerator agree, and terminal discovery is schedule-invariant in the registered perfect-elimination fixtures while expected actions/rounds differ.
+
 ## Scope
 
 Completed M0–M9 and A–E evidence, followed by F exact canonical pooled-frontier certificate; G separate Three Results synthesis paper and public Results page; H alignment-preserving DD-001 upper relaxation; I DD-002 equilibrium-selection robustness; J DD-003 heterogeneous source accuracy; K dependency maintenance; L one repository-settings attempt; and M final integration and handoff. Active scope is N–S: research-library site overhaul; exact bounded DD-004 through DD-006 studies; synthetic-only DD-007 audit research; and program integration. Canonical upstream remains read-only.

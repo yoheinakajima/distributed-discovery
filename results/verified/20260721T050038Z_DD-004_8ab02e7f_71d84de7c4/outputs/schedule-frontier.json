@@ -1,0 +1,114 @@
+[
+  {
+    "case": "asymmetric-eight",
+    "expected_actions": "4",
+    "expected_rounds": "1",
+    "schedule": "4",
+    "terminal_discovery": "7/10"
+  },
+  {
+    "case": "asymmetric-eight",
+    "expected_actions": "13/4",
+    "expected_rounds": "7/4",
+    "schedule": "1+3",
+    "terminal_discovery": "7/10"
+  },
+  {
+    "case": "asymmetric-eight",
+    "expected_actions": "31/10",
+    "expected_rounds": "31/20",
+    "schedule": "2+2",
+    "terminal_discovery": "7/10"
+  },
+  {
+    "case": "asymmetric-eight",
+    "expected_actions": "57/20",
+    "expected_rounds": "23/10",
+    "schedule": "1+1+2",
+    "terminal_discovery": "7/10"
+  },
+  {
+    "case": "asymmetric-eight",
+    "expected_actions": "137/40",
+    "expected_rounds": "57/40",
+    "schedule": "3+1",
+    "terminal_discovery": "7/10"
+  },
+  {
+    "case": "asymmetric-eight",
+    "expected_actions": "117/40",
+    "expected_rounds": "87/40",
+    "schedule": "1+2+1",
+    "terminal_discovery": "7/10"
+  },
+  {
+    "case": "asymmetric-eight",
+    "expected_actions": "119/40",
+    "expected_rounds": "79/40",
+    "schedule": "2+1+1",
+    "terminal_discovery": "7/10"
+  },
+  {
+    "case": "asymmetric-eight",
+    "expected_actions": "109/40",
+    "expected_rounds": "109/40",
+    "schedule": "1+1+1+1",
+    "terminal_discovery": "7/10"
+  },
+  {
+    "case": "uniform-eight",
+    "expected_actions": "4",
+    "expected_rounds": "1",
+    "schedule": "4",
+    "terminal_discovery": "1/2"
+  },
+  {
+    "case": "uniform-eight",
+    "expected_actions": "29/8",
+    "expected_rounds": "15/8",
+    "schedule": "1+3",
+    "terminal_discovery": "1/2"
+  },
+  {
+    "case": "uniform-eight",
+    "expected_actions": "7/2",
+    "expected_rounds": "7/4",
+    "schedule": "2+2",
+    "terminal_discovery": "1/2"
+  },
+  {
+    "case": "uniform-eight",
+    "expected_actions": "27/8",
+    "expected_rounds": "21/8",
+    "schedule": "1+1+2",
+    "terminal_discovery": "1/2"
+  },
+  {
+    "case": "uniform-eight",
+    "expected_actions": "29/8",
+    "expected_rounds": "13/8",
+    "schedule": "3+1",
+    "terminal_discovery": "1/2"
+  },
+  {
+    "case": "uniform-eight",
+    "expected_actions": "27/8",
+    "expected_rounds": "5/2",
+    "schedule": "1+2+1",
+    "terminal_discovery": "1/2"
+  },
+  {
+    "case": "uniform-eight",
+    "expected_actions": "27/8",
+    "expected_rounds": "19/8",
+    "schedule": "2+1+1",
+    "terminal_discovery": "1/2"
+  },
+  {
+    "case": "uniform-eight",
+    "expected_actions": "13/4",
+    "expected_rounds": "13/4",
+    "schedule": "1+1+1+1",
+    "terminal_discovery": "1/2"
+  }
+]

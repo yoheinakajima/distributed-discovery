@@ -1,0 +1,18 @@
+model: perfect-elimination-v1
+max_candidates: 8
+max_budget: 4
+time_budget_seconds: 30
+primary_cases:
+  - name: asymmetric-eight
+    prior: [1/4, 1/5, 1/8, 1/8, 1/10, 1/10, 1/20, 1/20]
+    budget: 4
+  - name: uniform-eight
+    prior: [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8]
+    budget: 4
+tiny_cases:
+  - name: tiny-asymmetric
+    prior: [1/2, 1/3, 1/6]
+    budget: 3
+  - name: tiny-uniform
+    prior: [1/4, 1/4, 1/4, 1/4]
+    budget: 4

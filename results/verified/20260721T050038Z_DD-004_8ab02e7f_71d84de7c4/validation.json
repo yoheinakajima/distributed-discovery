@@ -1,0 +1,7 @@
+{
+  "elapsed_seconds": 0.06036695896182209,
+  "independent_tiny_policy_trees_agree": true,
+  "passed": true,
+  "terminal_value_schedule_invariant_per_case": true,
+  "time_budget_seconds": 30
+}
