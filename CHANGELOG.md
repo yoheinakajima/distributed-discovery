@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-07-21 — Program V2 baseline
+
+- Reconciled the deployed DD-008 continuation state and added concise current
+  state and roadmap entry points.
+- Registered DD-008A, DD-006B, DD-009, DD-010, DD-011, a focused paper, and
+  deeper public labs as future work without creating new research evidence.
+- Retained DD-007's synthetic-only boundary and issue #32 as settings-only.
+
 ## 2026-07-21 — current-program reconciliation
 
 - Recorded completion of DD-004 through DD-007 and PRs #36, #38, #40, #42, #43, and #45.

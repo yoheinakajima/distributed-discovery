@@ -10,7 +10,14 @@ This public repository is MIT-licensed. The [companion site](https://yoheinakaji
 
 ## Status and navigation
 
-Verified, sourced, exploratory, refuted, and open claims are distinguished in [`claims/claims.yml`](claims/claims.yml) under the policy in [`docs/claim-status-policy.md`](docs/claim-status-policy.md). DD-001 certifies the exact canonical zero-communication private-team optimum `325089/390625`. DD-002 verifies an exact-potential selection catalogue and DD-003 gives a heterogeneous-source counterexample. DD-004 and DD-005 establish finite sequential and overlap baselines; DD-006 separates weak from strict incentives in a bounded score-difference family; DD-007 is a synthetic-only recovery audit with explicit identification failures. See [`reports/research-program-integration.md`](reports/research-program-integration.md), [`studies/index.md`](studies/index.md), and [`docs/index.md`](docs/index.md).
+Program V1 bounded studies are complete through DD-008. The concise entry points
+are [`docs/current-state.md`](docs/current-state.md) and
+[`docs/current-roadmap.md`](docs/current-roadmap.md). Claims remain in
+[`claims/claims.yml`](claims/claims.yml) under the
+[`claim-status policy`](docs/claim-status-policy.md); studies are indexed in
+[`studies/index.md`](studies/index.md). DD-007 is synthetic-only. Program V2
+begins with registered DD-008A N-agent evidence acquisition and DD-006B joint
+truthful-discovery mechanisms; no real-data work is authorized.
 
 ## Setup and common commands
 

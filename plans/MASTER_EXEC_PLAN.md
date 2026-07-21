@@ -8,6 +8,24 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
+### Program V2 baseline (active, 2026-07-21)
+
+Program V1 is complete through DD-008. The authoritative concise entry points
+are `docs/current-state.md` and `docs/current-roadmap.md`. Reconciliation at
+`ae8b52c098d358afc63948b7a54d2245cafd7438` found 51 claims (24 independently
+reproduced, 13 verified, 7 derived, 3 checked, 3 sourced, 1 proposed), 21
+passing immutable runs among 24 manifests, 68 Python sources, 26 public HTML
+routes, 15 public data files, six Labs routes, three project-authored papers,
+and 111 tests. CI and Pages succeeded and public root, Labs, and publications
+returned HTTP 200. DD-007 is synthetic-only; issue #32 remains settings-only.
+
+The active sequence is: DD-008A N-agent endogenous evidence acquisition,
+DD-006B joint truthful discovery mechanisms, DD-009 bounded Architecture Atlas,
+DD-010 DiscoveryBench, DD-011 synthetic experimental design, then a focused
+paper and deeper public labs. No real-data work, external model calls,
+recruitment, or intervention is authorized. Milestone A is documentation and
+registration only; it must not create timestamped research runs.
+
 ### Institutional-theory continuation (current, 2026-07-21)
 
 **Completed continuation addendum (2026-07-21).** T is merged through PR #47;

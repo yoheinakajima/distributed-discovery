@@ -10,5 +10,13 @@
 | DD-005 | Overlapping Coverage | complete bounded study | Preserve overlap witnesses; stochastic/adaptive coverage needs a new registration |
 | DD-006 | Discovery Mechanisms | complete bounded study | Preserve weak-implementation boundary; broader transfer classes need a new registration |
 | DD-007 | Empirical Discovery Audits | complete bounded synthetic study | No real-data use without a data, ethics, and identification review |
+| DD-008 | Endogenous Evidence Acquisition | complete bounded study | Preserve the two-agent Common-Source Trap boundary; N-agent work is DD-008A |
+| DD-008A | N-Agent Endogenous Evidence Acquisition | registered | Freeze source-generation and prize accounting before any run |
+| DD-006B | Joint Truthful Discovery Mechanisms | registered | Freeze observability, scoring, allocation, and budget before any run |
+| DD-009 | Discovery Architecture Atlas | queued | Register aligned valid architectures before comparison |
+| DD-010 | DiscoveryBench | queued | Build golden exact tasks before simulated tasks |
+| DD-011 | Experimental Design and Power | queued | Synthetic, preregistration-ready materials only; no deployment |
 
-Each directory contains its question, model, plan, claims view, status, results index, and report. DD-002 through DD-007 also contain a serious `brief.md`; the registry status, not the presence of a brief, records whether work has executed.
+Each executed directory contains its question, model, plan, claims view, status,
+results index, and report. The Program V2 entries are registrations in
+[`docs/current-roadmap.md`](../docs/current-roadmap.md), not executed studies.
