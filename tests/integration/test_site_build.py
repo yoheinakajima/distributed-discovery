@@ -11,8 +11,8 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     output = tmp_path / "site"
     report = build(ROOT, output)
 
-    assert report["page_count"] == 19
-    assert report["study_count"] == 8
+    assert report["page_count"] == 20
+    assert report["study_count"] == 9
     assert report["claim_count"] == 50
     assert report["passing_run_count"] == 20
     assert report["publication_count"] == 2
@@ -20,11 +20,11 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert report["public_safety_passed"] is True
 
     research = (output / "research.html").read_text(encoding="utf-8")
-    assert "DD-000" in research and "DD-007" in research
+    assert "DD-000" in research and "DD-008" in research
     assert "complete-bounded-study" in research
     assert 'href="research/dd-004.html"' in research
     assert (output / "research/dd-000.html").is_file()
-    assert (output / "research/dd-007.html").is_file()
+    assert (output / "research/dd-008.html").is_file()
 
     claims = (output / "claims.html").read_text(encoding="utf-8")
     assert 'id="DD-C-0001"' in claims
