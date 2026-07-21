@@ -77,7 +77,7 @@ def expected_utility(
     agent: int,
     own_signal: int,
     own_report: int,
-    own_action: int,
+    own_action_rule: tuple[int, int, int],
     tie_role: int,
 ) -> Fraction:
     total = Fraction(0)
@@ -89,6 +89,7 @@ def expected_utility(
         )
         reports = (own_report, peer_signal) if agent == 0 else (peer_signal, own_report)
         recommended = recommendation(reports, tie_role)
+        own_action = own_action_rule[peer_signal]
         peer_action = recommended[1 - agent]
         actions = (own_action, peer_action) if agent == 0 else (peer_action, own_action)
         total += probability * transfer(
@@ -107,16 +108,26 @@ def margin_for_tie(
     regime: str, coefficients: tuple[Fraction, Fraction, Fraction, Fraction], tie_role: int
 ) -> Fraction:
     margins: list[Fraction] = []
-    for agent, signal, report, action in product(range(2), range(3), range(3), range(3)):
-        baseline_rec = recommendation((signal, signal), tie_role)[agent]
-        baseline = expected_utility(
-            regime, coefficients, agent, signal, signal, baseline_rec, tie_role
+    for agent, signal, report in product(range(2), range(3), range(3)):
+        baseline_rule = cast(
+            tuple[int, int, int],
+            tuple(
+                recommendation((signal, peer) if agent == 0 else (peer, signal), tie_role)[agent]
+                for peer in range(3)
+            ),
         )
-        if (report, action) != (signal, baseline_rec):
-            margins.append(
-                baseline
-                - expected_utility(regime, coefficients, agent, signal, report, action, tie_role)
-            )
+        baseline = expected_utility(
+            regime, coefficients, agent, signal, signal, baseline_rule, tie_role
+        )
+        for action_rule in product(range(3), repeat=3):
+            candidate_rule = cast(tuple[int, int, int], action_rule)
+            if (report, candidate_rule) != (signal, baseline_rule):
+                margins.append(
+                    baseline
+                    - expected_utility(
+                        regime, coefficients, agent, signal, report, candidate_rule, tie_role
+                    )
+                )
     return min(margins)
 
 

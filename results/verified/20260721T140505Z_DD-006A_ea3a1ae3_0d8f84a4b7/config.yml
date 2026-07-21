@@ -15,5 +15,5 @@ resource_estimate:
  regimes: 3
  tie_rules: 3
  agent_roles: 2
- report_action_rules_per_signal: 81
+ deviations_per_signal: 9
  exact_expectation_terms_per_deviation: 9

@@ -39,7 +39,7 @@ def main() -> None:
     config = yaml.safe_load(config_path.read_text(encoding="utf-8"))
     config_hash = hashlib.sha256(json.dumps(config, sort_keys=True).encode()).hexdigest()
     commit, started = _git(root, "rev-parse", "HEAD"), datetime.now(UTC)
-    run_id = f"{started.strftime('%Y%m%dT%H%M%SZ')}_DD-006A_{commit[:8]}_{config_hash[:10]}"
+    run_id = f"{started.strftime('%Y%m%dT%H%M%SZ')}_DD-006_{commit[:8]}_{config_hash[:10]}"
     run_dir = root / "results/verified" / run_id
     output_dir = run_dir / "outputs"
     run_dir.mkdir(parents=True, exist_ok=False)
