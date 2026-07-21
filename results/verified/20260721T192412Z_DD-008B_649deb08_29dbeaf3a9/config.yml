@@ -1,0 +1,14 @@
+agents: [2, 3, 4, 5, 6, 7, 8]
+direct_agents: [2, 3, 4, 5]
+accuracies: [1/2, 2/3, 3/4]
+costs: [0, 1/24, 1/12, 1/8, 1/6, 1/4]
+symbolic_audit_agents: 32
+boundary_agents: [2, 3, 4, 8, 16, 32, 64]
+fixed_k_limits: [0, 1, 2, 3, 4]
+resource_estimate:
+  threshold_rows: 105
+  classification_rows: 126
+  direct_payoff_checks: 84
+  monotonicity_kernel_checks: 16368
+  wall_time_seconds: 600
+  memory_mb: 2048

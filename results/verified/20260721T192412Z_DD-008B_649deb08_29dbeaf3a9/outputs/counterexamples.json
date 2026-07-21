@@ -1,0 +1,15 @@
+[
+  {
+    "accuracy": "4/5",
+    "agents": 3,
+    "cost": "13/375",
+    "equilibrium_k": [
+      2
+    ],
+    "planner_k": [
+      1
+    ],
+    "planner_threshold_k1": "4/125",
+    "private_threshold_k1": "14/375"
+  }
+]

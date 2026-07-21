@@ -16,8 +16,10 @@ are [`docs/current-state.md`](docs/current-state.md) and
 [`claims/claims.yml`](claims/claims.yml) under the
 [`claim-status policy`](docs/claim-status-policy.md); studies are indexed in
 [`studies/index.md`](studies/index.md). DD-007 is synthetic-only. Program V2's
-DD-008A, DD-006B, and the exact bounded DD-009 Architecture Atlas are merged
-and deployed. No real-data work is authorized.
+DD-008A, DD-006B, the exact bounded DD-009 Architecture Atlas, DiscoveryBench,
+and the synthetic-only DD-011 experiment kit are merged and deployed. DD-008B
+adds a verified general-`N` Common-Source threshold theorem and a scoped exact
+counterexample. No real-data work is authorized.
 
 ## Setup and common commands
 
@@ -49,6 +51,7 @@ make dd005-coverage         # run the overlapping-coverage frontiers
 make dd006-mechanisms       # run the score-difference mechanism catalogue
 make dd006b-joint-mechanism # run the normalized joint-mechanism frontier
 make dd007-synthetic-audit  # run the synthetic-only recovery audit
+make dd008b-analysis         # audit the general-N common-source threshold theorem
 make dd009-atlas             # run the aligned architecture registry and Pareto census
 make dd010-discoverybench    # run the exact golden benchmark and bounded seeded sensitivity
 make dd011-experiment        # run the synthetic design, power grid, and separate verifier

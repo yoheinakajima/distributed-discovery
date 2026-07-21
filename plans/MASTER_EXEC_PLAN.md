@@ -42,17 +42,19 @@ Progress:
   DD-C-0056 pass; PR #70 squash-merged as `9caf0f97`, post-merge CI/Pages
   passed, all eight live experiment routes returned HTTP 200, and issue #69
   closed.
-- [ ] DD-008B analytic gate with exact finite/formula agreement and an honest
-  theorem, counterexample, conjecture, or documented barrier outcome.
+- [x] DD-008B analytic gate: general finite-N private-threshold monotonicity and
+  equilibrium-count theorem, exact all-common trap width `p(1-p)/N`, and an
+  exact N=3 interior over-acquisition counterexample. Primary run
+  `20260721T192412Z_DD-008B_649deb08_29dbeaf3a9`; DD-C-0057/DD-C-0058 pass
+  locally, with PR/CI/Pages/live-route gates remaining.
 - [ ] Focused Common-Source Trap paper with source-generated figures/tables,
   deterministic PDF, citation audit, all-page Poppler review, merge, and Pages.
 - [ ] Program V2 site/Lab integration and final acceptance/handoff.
 
-Recovery: inspect `git status --short --branch`; resume DD-008B from
-`studies/DD-008B-common-source-analysis/plan.md` after it is created; never
-rerun the preserved DD-008A or DD-011 primary runs. The exact next command is
-`uv run --no-editable pytest tests/unit/test_common_source_analysis.py` once the
-analytic module and its independent verifier exist.
+Recovery: inspect `git status --short --branch`; resume DD-008B release from
+`studies/DD-008B-common-source-analysis/report.md`; never rerun the preserved
+DD-008A, DD-008B, or DD-011 primary runs. The exact next command is `make verify
+&& make papers && make site` before PR promotion.
 
 ### Program V2 baseline (active, 2026-07-21)
 

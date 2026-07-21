@@ -1,0 +1,1574 @@
+[
+  {
+    "accuracy": "1/2",
+    "agents": 2,
+    "cost": "0",
+    "equilibrium_k": [
+      1,
+      2
+    ],
+    "gap": 1,
+    "planner_k": [
+      1,
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 2,
+    "cost": "1/24",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 2,
+    "cost": "1/12",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 2,
+    "cost": "1/8",
+    "equilibrium_k": [
+      0,
+      1
+    ],
+    "gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 2,
+    "cost": "1/6",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 2,
+    "cost": "1/4",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 1,
+    "planner_k": [
+      0,
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 2,
+    "cost": "0",
+    "equilibrium_k": [
+      1,
+      2
+    ],
+    "gap": 1,
+    "planner_k": [
+      1,
+      2
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 2,
+    "cost": "1/24",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 2,
+    "cost": "1/12",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 2,
+    "cost": "1/8",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 2,
+    "cost": "1/6",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 2,
+    "cost": "1/4",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 2,
+    "cost": "0",
+    "equilibrium_k": [
+      1,
+      2
+    ],
+    "gap": 1,
+    "planner_k": [
+      1,
+      2
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 2,
+    "cost": "1/24",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 2,
+    "cost": "1/12",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 2,
+    "cost": "1/8",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 2,
+    "cost": "1/6",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 2,
+    "cost": "1/4",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 3,
+    "cost": "0",
+    "equilibrium_k": [
+      2,
+      3
+    ],
+    "gap": 1,
+    "planner_k": [
+      2,
+      3
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 3,
+    "cost": "1/24",
+    "equilibrium_k": [
+      2
+    ],
+    "gap": 0,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 3,
+    "cost": "1/12",
+    "equilibrium_k": [
+      1,
+      2
+    ],
+    "gap": 1,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 3,
+    "cost": "1/8",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 1,
+    "planner_k": [
+      1,
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 3,
+    "cost": "1/6",
+    "equilibrium_k": [
+      0,
+      1
+    ],
+    "gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 3,
+    "cost": "1/4",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 1,
+    "planner_k": [
+      0,
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 3,
+    "cost": "0",
+    "equilibrium_k": [
+      2,
+      3
+    ],
+    "gap": 1,
+    "planner_k": [
+      2,
+      3
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 3,
+    "cost": "1/24",
+    "equilibrium_k": [
+      2
+    ],
+    "gap": 0,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 3,
+    "cost": "1/12",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 3,
+    "cost": "1/8",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 3,
+    "cost": "1/6",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 3,
+    "cost": "1/4",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 3,
+    "cost": "0",
+    "equilibrium_k": [
+      2,
+      3
+    ],
+    "gap": 1,
+    "planner_k": [
+      2,
+      3
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 3,
+    "cost": "1/24",
+    "equilibrium_k": [
+      2
+    ],
+    "gap": 0,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 3,
+    "cost": "1/12",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 3,
+    "cost": "1/8",
+    "equilibrium_k": [
+      0,
+      1
+    ],
+    "gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 3,
+    "cost": "1/6",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 3,
+    "cost": "1/4",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 4,
+    "cost": "0",
+    "equilibrium_k": [
+      3,
+      4
+    ],
+    "gap": 1,
+    "planner_k": [
+      3,
+      4
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 4,
+    "cost": "1/24",
+    "equilibrium_k": [
+      3
+    ],
+    "gap": 0,
+    "planner_k": [
+      3
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 4,
+    "cost": "1/12",
+    "equilibrium_k": [
+      2
+    ],
+    "gap": 0,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 4,
+    "cost": "1/8",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 1,
+    "planner_k": [
+      1,
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 4,
+    "cost": "1/6",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 4,
+    "cost": "1/4",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 1,
+    "planner_k": [
+      0,
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 4,
+    "cost": "0",
+    "equilibrium_k": [
+      3,
+      4
+    ],
+    "gap": 1,
+    "planner_k": [
+      3,
+      4
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 4,
+    "cost": "1/24",
+    "equilibrium_k": [
+      2
+    ],
+    "gap": 0,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 4,
+    "cost": "1/12",
+    "equilibrium_k": [
+      2
+    ],
+    "gap": -1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 4,
+    "cost": "1/8",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 4,
+    "cost": "1/6",
+    "equilibrium_k": [
+      0,
+      1
+    ],
+    "gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 4,
+    "cost": "1/4",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 4,
+    "cost": "0",
+    "equilibrium_k": [
+      3,
+      4
+    ],
+    "gap": 1,
+    "planner_k": [
+      3,
+      4
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 4,
+    "cost": "1/24",
+    "equilibrium_k": [
+      2
+    ],
+    "gap": 0,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 4,
+    "cost": "1/12",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 4,
+    "cost": "1/8",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 4,
+    "cost": "1/6",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 4,
+    "cost": "1/4",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 5,
+    "cost": "0",
+    "equilibrium_k": [
+      4,
+      5
+    ],
+    "gap": 1,
+    "planner_k": [
+      4,
+      5
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 5,
+    "cost": "1/24",
+    "equilibrium_k": [
+      3
+    ],
+    "gap": 0,
+    "planner_k": [
+      3
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 5,
+    "cost": "1/12",
+    "equilibrium_k": [
+      2
+    ],
+    "gap": 0,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 5,
+    "cost": "1/8",
+    "equilibrium_k": [
+      2
+    ],
+    "gap": 0,
+    "planner_k": [
+      1,
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 5,
+    "cost": "1/6",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 5,
+    "cost": "1/4",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 1,
+    "planner_k": [
+      0,
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 5,
+    "cost": "0",
+    "equilibrium_k": [
+      4,
+      5
+    ],
+    "gap": 1,
+    "planner_k": [
+      4,
+      5
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 5,
+    "cost": "1/24",
+    "equilibrium_k": [
+      3
+    ],
+    "gap": -1,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 5,
+    "cost": "1/12",
+    "equilibrium_k": [
+      2
+    ],
+    "gap": -1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 5,
+    "cost": "1/8",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 5,
+    "cost": "1/6",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 5,
+    "cost": "1/4",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 5,
+    "cost": "0",
+    "equilibrium_k": [
+      4,
+      5
+    ],
+    "gap": 1,
+    "planner_k": [
+      4,
+      5
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 5,
+    "cost": "1/24",
+    "equilibrium_k": [
+      2
+    ],
+    "gap": 0,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 5,
+    "cost": "1/12",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 5,
+    "cost": "1/8",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 5,
+    "cost": "1/6",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 5,
+    "cost": "1/4",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 6,
+    "cost": "0",
+    "equilibrium_k": [
+      5,
+      6
+    ],
+    "gap": 1,
+    "planner_k": [
+      5,
+      6
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 6,
+    "cost": "1/24",
+    "equilibrium_k": [
+      4
+    ],
+    "gap": -1,
+    "planner_k": [
+      3
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 6,
+    "cost": "1/12",
+    "equilibrium_k": [
+      3
+    ],
+    "gap": -1,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 6,
+    "cost": "1/8",
+    "equilibrium_k": [
+      2
+    ],
+    "gap": 0,
+    "planner_k": [
+      1,
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 6,
+    "cost": "1/6",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 6,
+    "cost": "1/4",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 1,
+    "planner_k": [
+      0,
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 6,
+    "cost": "0",
+    "equilibrium_k": [
+      5,
+      6
+    ],
+    "gap": 1,
+    "planner_k": [
+      5,
+      6
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 6,
+    "cost": "1/24",
+    "equilibrium_k": [
+      3
+    ],
+    "gap": -1,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 6,
+    "cost": "1/12",
+    "equilibrium_k": [
+      2
+    ],
+    "gap": -1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 6,
+    "cost": "1/8",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 6,
+    "cost": "1/6",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 6,
+    "cost": "1/4",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 6,
+    "cost": "0",
+    "equilibrium_k": [
+      5,
+      6
+    ],
+    "gap": 1,
+    "planner_k": [
+      5,
+      6
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 6,
+    "cost": "1/24",
+    "equilibrium_k": [
+      3
+    ],
+    "gap": -1,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 6,
+    "cost": "1/12",
+    "equilibrium_k": [
+      2
+    ],
+    "gap": -1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 6,
+    "cost": "1/8",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 6,
+    "cost": "1/6",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 6,
+    "cost": "1/4",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 7,
+    "cost": "0",
+    "equilibrium_k": [
+      6,
+      7
+    ],
+    "gap": 1,
+    "planner_k": [
+      6,
+      7
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 7,
+    "cost": "1/24",
+    "equilibrium_k": [
+      5
+    ],
+    "gap": -2,
+    "planner_k": [
+      3
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 7,
+    "cost": "1/12",
+    "equilibrium_k": [
+      3
+    ],
+    "gap": -1,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 7,
+    "cost": "1/8",
+    "equilibrium_k": [
+      2
+    ],
+    "gap": 0,
+    "planner_k": [
+      1,
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 7,
+    "cost": "1/6",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 7,
+    "cost": "1/4",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 1,
+    "planner_k": [
+      0,
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 7,
+    "cost": "0",
+    "equilibrium_k": [
+      6,
+      7
+    ],
+    "gap": 1,
+    "planner_k": [
+      6,
+      7
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 7,
+    "cost": "1/24",
+    "equilibrium_k": [
+      4
+    ],
+    "gap": -2,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 7,
+    "cost": "1/12",
+    "equilibrium_k": [
+      2
+    ],
+    "gap": -1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 7,
+    "cost": "1/8",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 7,
+    "cost": "1/6",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 7,
+    "cost": "1/4",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 7,
+    "cost": "0",
+    "equilibrium_k": [
+      6,
+      7
+    ],
+    "gap": 1,
+    "planner_k": [
+      6,
+      7
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 7,
+    "cost": "1/24",
+    "equilibrium_k": [
+      3
+    ],
+    "gap": -1,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 7,
+    "cost": "1/12",
+    "equilibrium_k": [
+      2
+    ],
+    "gap": -1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 7,
+    "cost": "1/8",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 7,
+    "cost": "1/6",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 7,
+    "cost": "1/4",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 8,
+    "cost": "0",
+    "equilibrium_k": [
+      7,
+      8
+    ],
+    "gap": 1,
+    "planner_k": [
+      7,
+      8
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 8,
+    "cost": "1/24",
+    "equilibrium_k": [
+      5
+    ],
+    "gap": -2,
+    "planner_k": [
+      3
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 8,
+    "cost": "1/12",
+    "equilibrium_k": [
+      3
+    ],
+    "gap": -1,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 8,
+    "cost": "1/8",
+    "equilibrium_k": [
+      2
+    ],
+    "gap": 0,
+    "planner_k": [
+      1,
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 8,
+    "cost": "1/6",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 8,
+    "cost": "1/4",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 1,
+    "planner_k": [
+      0,
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 8,
+    "cost": "0",
+    "equilibrium_k": [
+      7,
+      8
+    ],
+    "gap": 1,
+    "planner_k": [
+      7,
+      8
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 8,
+    "cost": "1/24",
+    "equilibrium_k": [
+      4
+    ],
+    "gap": -2,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 8,
+    "cost": "1/12",
+    "equilibrium_k": [
+      2
+    ],
+    "gap": -1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 8,
+    "cost": "1/8",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 8,
+    "cost": "1/6",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 8,
+    "cost": "1/4",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 8,
+    "cost": "0",
+    "equilibrium_k": [
+      7,
+      8
+    ],
+    "gap": 1,
+    "planner_k": [
+      7,
+      8
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 8,
+    "cost": "1/24",
+    "equilibrium_k": [
+      3
+    ],
+    "gap": -1,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 8,
+    "cost": "1/12",
+    "equilibrium_k": [
+      2
+    ],
+    "gap": -1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 8,
+    "cost": "1/8",
+    "equilibrium_k": [
+      1
+    ],
+    "gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 8,
+    "cost": "1/6",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 8,
+    "cost": "1/4",
+    "equilibrium_k": [
+      0
+    ],
+    "gap": 0,
+    "planner_k": [
+      0
+    ]
+  }
+]

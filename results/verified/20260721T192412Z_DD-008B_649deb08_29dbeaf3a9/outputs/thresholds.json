@@ -1,0 +1,779 @@
+[
+  {
+    "accuracy": "1/2",
+    "agents": 2,
+    "direct_enumeration": "agrees",
+    "k": 0,
+    "planner_threshold": "1/4",
+    "private_threshold": "1/8"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 2,
+    "direct_enumeration": "agrees",
+    "k": 1,
+    "planner_threshold": "0",
+    "private_threshold": "0"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 2,
+    "direct_enumeration": "agrees",
+    "k": 0,
+    "planner_threshold": "2/9",
+    "private_threshold": "1/9"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 2,
+    "direct_enumeration": "agrees",
+    "k": 1,
+    "planner_threshold": "0",
+    "private_threshold": "0"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 2,
+    "direct_enumeration": "agrees",
+    "k": 0,
+    "planner_threshold": "3/16",
+    "private_threshold": "3/32"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 2,
+    "direct_enumeration": "agrees",
+    "k": 1,
+    "planner_threshold": "0",
+    "private_threshold": "0"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 3,
+    "direct_enumeration": "agrees",
+    "k": 0,
+    "planner_threshold": "1/4",
+    "private_threshold": "1/6"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 3,
+    "direct_enumeration": "agrees",
+    "k": 1,
+    "planner_threshold": "1/8",
+    "private_threshold": "1/12"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 3,
+    "direct_enumeration": "agrees",
+    "k": 2,
+    "planner_threshold": "0",
+    "private_threshold": "0"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 3,
+    "direct_enumeration": "agrees",
+    "k": 0,
+    "planner_threshold": "2/9",
+    "private_threshold": "4/27"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 3,
+    "direct_enumeration": "agrees",
+    "k": 1,
+    "planner_threshold": "2/27",
+    "private_threshold": "5/81"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 3,
+    "direct_enumeration": "agrees",
+    "k": 2,
+    "planner_threshold": "0",
+    "private_threshold": "0"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 3,
+    "direct_enumeration": "agrees",
+    "k": 0,
+    "planner_threshold": "3/16",
+    "private_threshold": "1/8"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 3,
+    "direct_enumeration": "agrees",
+    "k": 1,
+    "planner_threshold": "3/64",
+    "private_threshold": "3/64"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 3,
+    "direct_enumeration": "agrees",
+    "k": 2,
+    "planner_threshold": "0",
+    "private_threshold": "0"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 4,
+    "direct_enumeration": "agrees",
+    "k": 0,
+    "planner_threshold": "1/4",
+    "private_threshold": "3/16"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 4,
+    "direct_enumeration": "agrees",
+    "k": 1,
+    "planner_threshold": "1/8",
+    "private_threshold": "11/96"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 4,
+    "direct_enumeration": "agrees",
+    "k": 2,
+    "planner_threshold": "1/16",
+    "private_threshold": "11/192"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 4,
+    "direct_enumeration": "agrees",
+    "k": 3,
+    "planner_threshold": "0",
+    "private_threshold": "0"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 4,
+    "direct_enumeration": "agrees",
+    "k": 0,
+    "planner_threshold": "2/9",
+    "private_threshold": "1/6"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 4,
+    "direct_enumeration": "agrees",
+    "k": 1,
+    "planner_threshold": "2/27",
+    "private_threshold": "7/81"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 4,
+    "direct_enumeration": "agrees",
+    "k": 2,
+    "planner_threshold": "2/81",
+    "private_threshold": "1/27"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 4,
+    "direct_enumeration": "agrees",
+    "k": 3,
+    "planner_threshold": "0",
+    "private_threshold": "0"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 4,
+    "direct_enumeration": "agrees",
+    "k": 0,
+    "planner_threshold": "3/16",
+    "private_threshold": "9/64"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 4,
+    "direct_enumeration": "agrees",
+    "k": 1,
+    "planner_threshold": "3/64",
+    "private_threshold": "17/256"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 4,
+    "direct_enumeration": "agrees",
+    "k": 2,
+    "planner_threshold": "3/256",
+    "private_threshold": "27/1024"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 4,
+    "direct_enumeration": "agrees",
+    "k": 3,
+    "planner_threshold": "0",
+    "private_threshold": "0"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 5,
+    "direct_enumeration": "agrees",
+    "k": 0,
+    "planner_threshold": "1/4",
+    "private_threshold": "1/5"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 5,
+    "direct_enumeration": "agrees",
+    "k": 1,
+    "planner_threshold": "1/8",
+    "private_threshold": "21/160"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 5,
+    "direct_enumeration": "agrees",
+    "k": 2,
+    "planner_threshold": "1/16",
+    "private_threshold": "13/160"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 5,
+    "direct_enumeration": "agrees",
+    "k": 3,
+    "planner_threshold": "1/32",
+    "private_threshold": "13/320"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 5,
+    "direct_enumeration": "agrees",
+    "k": 4,
+    "planner_threshold": "0",
+    "private_threshold": "0"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 5,
+    "direct_enumeration": "agrees",
+    "k": 0,
+    "planner_threshold": "2/9",
+    "private_threshold": "8/45"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 5,
+    "direct_enumeration": "agrees",
+    "k": 1,
+    "planner_threshold": "2/27",
+    "private_threshold": "1/10"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 5,
+    "direct_enumeration": "agrees",
+    "k": 2,
+    "planner_threshold": "2/81",
+    "private_threshold": "22/405"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 5,
+    "direct_enumeration": "agrees",
+    "k": 3,
+    "planner_threshold": "2/243",
+    "private_threshold": "29/1215"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 5,
+    "direct_enumeration": "agrees",
+    "k": 4,
+    "planner_threshold": "0",
+    "private_threshold": "0"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 5,
+    "direct_enumeration": "agrees",
+    "k": 0,
+    "planner_threshold": "3/16",
+    "private_threshold": "3/20"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 5,
+    "direct_enumeration": "agrees",
+    "k": 1,
+    "planner_threshold": "3/64",
+    "private_threshold": "99/1280"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 5,
+    "direct_enumeration": "agrees",
+    "k": 2,
+    "planner_threshold": "3/256",
+    "private_threshold": "101/2560"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 5,
+    "direct_enumeration": "agrees",
+    "k": 3,
+    "planner_threshold": "3/1024",
+    "private_threshold": "21/1280"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 5,
+    "direct_enumeration": "agrees",
+    "k": 4,
+    "planner_threshold": "0",
+    "private_threshold": "0"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 6,
+    "k": 0,
+    "planner_threshold": "1/4",
+    "private_threshold": "5/24"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 6,
+    "k": 1,
+    "planner_threshold": "1/8",
+    "private_threshold": "17/120"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 6,
+    "k": 2,
+    "planner_threshold": "1/16",
+    "private_threshold": "91/960"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 6,
+    "k": 3,
+    "planner_threshold": "1/32",
+    "private_threshold": "19/320"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 6,
+    "k": 4,
+    "planner_threshold": "1/64",
+    "private_threshold": "19/640"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 6,
+    "k": 5,
+    "planner_threshold": "0",
+    "private_threshold": "0"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 6,
+    "k": 0,
+    "planner_threshold": "2/9",
+    "private_threshold": "5/27"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 6,
+    "k": 1,
+    "planner_threshold": "2/27",
+    "private_threshold": "44/405"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 6,
+    "k": 2,
+    "planner_threshold": "2/81",
+    "private_threshold": "157/2430"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 6,
+    "k": 3,
+    "planner_threshold": "2/243",
+    "private_threshold": "133/3645"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 6,
+    "k": 4,
+    "planner_threshold": "2/729",
+    "private_threshold": "179/10935"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 6,
+    "k": 5,
+    "planner_threshold": "0",
+    "private_threshold": "0"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 6,
+    "k": 0,
+    "planner_threshold": "3/16",
+    "private_threshold": "5/32"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 6,
+    "k": 1,
+    "planner_threshold": "3/64",
+    "private_threshold": "27/320"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 6,
+    "k": 2,
+    "planner_threshold": "3/256",
+    "private_threshold": "243/5120"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 6,
+    "k": 3,
+    "planner_threshold": "3/1024",
+    "private_threshold": "263/10240"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 6,
+    "k": 4,
+    "planner_threshold": "3/4096",
+    "private_threshold": "453/40960"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 6,
+    "k": 5,
+    "planner_threshold": "0",
+    "private_threshold": "0"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 7,
+    "k": 0,
+    "planner_threshold": "1/4",
+    "private_threshold": "3/14"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 7,
+    "k": 1,
+    "planner_threshold": "1/8",
+    "private_threshold": "25/168"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 7,
+    "k": 2,
+    "planner_threshold": "1/16",
+    "private_threshold": "29/280"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 7,
+    "k": 3,
+    "planner_threshold": "1/32",
+    "private_threshold": "79/1120"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 7,
+    "k": 4,
+    "planner_threshold": "1/64",
+    "private_threshold": "5/112"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 7,
+    "k": 5,
+    "planner_threshold": "1/128",
+    "private_threshold": "5/224"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 7,
+    "k": 6,
+    "planner_threshold": "0",
+    "private_threshold": "0"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 7,
+    "k": 0,
+    "planner_threshold": "2/9",
+    "private_threshold": "4/21"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 7,
+    "k": 1,
+    "planner_threshold": "2/27",
+    "private_threshold": "65/567"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 7,
+    "k": 2,
+    "planner_threshold": "2/81",
+    "private_threshold": "608/8505"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 7,
+    "k": 3,
+    "planner_threshold": "2/243",
+    "private_threshold": "757/17010"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 7,
+    "k": 4,
+    "planner_threshold": "2/729",
+    "private_threshold": "1984/76545"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 7,
+    "k": 5,
+    "planner_threshold": "2/2187",
+    "private_threshold": "181/15309"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 7,
+    "k": 6,
+    "planner_threshold": "0",
+    "private_threshold": "0"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 7,
+    "k": 0,
+    "planner_threshold": "3/16",
+    "private_threshold": "9/56"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 7,
+    "k": 1,
+    "planner_threshold": "3/64",
+    "private_threshold": "5/56"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 7,
+    "k": 2,
+    "planner_threshold": "3/256",
+    "private_threshold": "237/4480"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 7,
+    "k": 3,
+    "planner_threshold": "3/1024",
+    "private_threshold": "2277/71680"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 7,
+    "k": 4,
+    "planner_threshold": "3/4096",
+    "private_threshold": "643/35840"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 7,
+    "k": 5,
+    "planner_threshold": "3/16384",
+    "private_threshold": "909/114688"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 7,
+    "k": 6,
+    "planner_threshold": "0",
+    "private_threshold": "0"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 8,
+    "k": 0,
+    "planner_threshold": "1/4",
+    "private_threshold": "7/32"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 8,
+    "k": 1,
+    "planner_threshold": "1/8",
+    "private_threshold": "69/448"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 8,
+    "k": 2,
+    "planner_threshold": "1/16",
+    "private_threshold": "295/2688"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 8,
+    "k": 3,
+    "planner_threshold": "1/32",
+    "private_threshold": "699/8960"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 8,
+    "k": 4,
+    "planner_threshold": "1/64",
+    "private_threshold": "967/17920"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 8,
+    "k": 5,
+    "planner_threshold": "1/128",
+    "private_threshold": "247/7168"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 8,
+    "k": 6,
+    "planner_threshold": "1/256",
+    "private_threshold": "247/14336"
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 8,
+    "k": 7,
+    "planner_threshold": "0",
+    "private_threshold": "0"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 8,
+    "k": 0,
+    "planner_threshold": "2/9",
+    "private_threshold": "7/36"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 8,
+    "k": 1,
+    "planner_threshold": "2/27",
+    "private_threshold": "5/42"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 8,
+    "k": 2,
+    "planner_threshold": "2/81",
+    "private_threshold": "130/1701"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 8,
+    "k": 3,
+    "planner_threshold": "2/243",
+    "private_threshold": "142/2835"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 8,
+    "k": 4,
+    "planner_threshold": "2/729",
+    "private_threshold": "1649/51030"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 8,
+    "k": 5,
+    "planner_threshold": "2/2187",
+    "private_threshold": "295/15309"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 8,
+    "k": 6,
+    "planner_threshold": "2/6561",
+    "private_threshold": "409/45927"
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 8,
+    "k": 7,
+    "planner_threshold": "0",
+    "private_threshold": "0"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 8,
+    "k": 0,
+    "planner_threshold": "3/16",
+    "private_threshold": "21/128"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 8,
+    "k": 1,
+    "planner_threshold": "3/64",
+    "private_threshold": "333/3584"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 8,
+    "k": 2,
+    "planner_threshold": "3/256",
+    "private_threshold": "815/14336"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 8,
+    "k": 3,
+    "planner_threshold": "3/1024",
+    "private_threshold": "10347/286720"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 8,
+    "k": 4,
+    "planner_threshold": "3/4096",
+    "private_threshold": "26037/1146880"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 8,
+    "k": 5,
+    "planner_threshold": "3/16384",
+    "private_threshold": "12127/917504"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 8,
+    "k": 6,
+    "planner_threshold": "3/65536",
+    "private_threshold": "21837/3670016"
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 8,
+    "k": 7,
+    "planner_threshold": "0",
+    "private_threshold": "0"
+  }
+]

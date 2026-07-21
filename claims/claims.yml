@@ -1176,3 +1176,45 @@ claims:
     first_added: "2026-07-21"
     last_checked: "2026-07-21"
     notes: Four exact project-model cells are recovered only as synthetic ground-truth checks. No participant was recruited, no human data were collected, and no experiment was conducted.
+  - id: DD-C-0057
+    study_id: DD-008B
+    short_name: general-n-common-source-threshold-theorem
+    statement: For every finite N at least 2 and accuracy p strictly between zero and one in the frozen common-source game, the common-to-independent gross payoff thresholds A_k=p(1-p)E[1/(1+X_k)-1/(N-k+X_k)] are strictly decreasing from A_0=p(1-p)(N-1)/N to A_(N-1)=0 and exactly characterize all weak pure source-count equilibria; planner thresholds are B_k=p(1-p)^(k+1) through k=N-2 and B_(N-1)=0, so the all-common equilibrium/planner-independence trap holds exactly on [p(1-p)(N-1)/N,p(1-p)), an interval of width p(1-p)/N.
+    scope: Arbitrary finite N at least 2, M=3 uniform targets, homogeneous conditional accuracy 0<p<1, one free common source, costly conditionally independent sources, direct clue-following, equal splitting of a unit prize, nonnegative common independent-source cost, pure source-count equilibria, and union discovery net of acquisition costs only; no heterogeneous sources, learning, disclosure, allocation choice, mixed equilibrium, empirical behavior, or real-world welfare claim.
+    claim_type: theorem
+    status: verified
+    source_type: human-readable-general-n-proof-with-separate-exact-finite-and-direct-enumeration-audit
+    source_reference: results/verified/20260721T192412Z_DD-008B_649deb08_29dbeaf3a9/outputs/summary.json
+    proof_path: studies/DD-008B-common-source-analysis/proof.md
+    implementation_paths: [src/distributed_discovery/acquisition/common_source_analysis.py, src/distributed_discovery/acquisition/common_source_verification.py]
+    run_ids: [20260721T192412Z_DD-008B_649deb08_29dbeaf3a9]
+    test_paths: [tests/unit/test_common_source_analysis.py]
+    exactness_basis: The proof couples adjacent binomial counts and reduces each threshold difference to an expectation of a rational kernel whose denominator is positive and whose numerator is (x+1)(x+2)+p(m-2)(2x+m+1)>0; the resulting formulas reproduce all 126 immutable DD-008A grid classifications, 84 separately enumerated payoff margins through N=5, and 16,368 instantiated kernel identities through N=32.
+    rounding_rule: exact fractions; no decimal approximation is authoritative
+    dependencies: [DD-C-0051, DD-C-0052]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: This promotes a new analytic result without relabeling the DD-008A finite census. The all-common trap interval shrinks as N grows; the theorem does not order private and planner acquisition at every interior count.
+  - id: DD-C-0058
+    study_id: DD-008B
+    short_name: universal-underacquisition-counterexample
+    statement: Universal private under-acquisition is false even inside the frozen common-source model; at N=3, p=4/5, and c=13/375, the private threshold at k=1 is 14/375 while the planner threshold is 4/125=12/375, yielding the unique source-count equilibrium k=2 and unique planner optimum k=1.
+    scope: The exact DD-008B model at the single stated rational parameter fixture; this is a counterexample to a universal source-count ordering, not a claim that over-acquisition is typical, empirically observed, or robust to other prize and source structures.
+    claim_type: negative-result
+    status: independently-reproduced
+    source_type: analytic-rational-counterexample-with-independent-target-signal-enumeration
+    source_reference: results/verified/20260721T192412Z_DD-008B_649deb08_29dbeaf3a9/outputs/counterexamples.json
+    proof_path: studies/DD-008B-common-source-analysis/proof.md
+    implementation_paths: [src/distributed_discovery/acquisition/common_source_analysis.py, src/distributed_discovery/acquisition/common_source_verification.py]
+    run_ids: [20260721T192412Z_DD-008B_649deb08_29dbeaf3a9]
+    test_paths: [tests/unit/test_common_source_analysis.py]
+    exactness_basis: Closed-form thresholds and the separate direct target/source-signal enumerator agree exactly; threshold inequalities are 14/375>13/375>12/375, and both the legacy exact classifier and threshold characterization return equilibrium count 2 and planner count 1.
+    rounding_rule: exact fractions
+    dependencies: [DD-C-0057]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: The failed universal ordering is retained as a first-class negative result and bounds the Common-Source Trap paper's language.
