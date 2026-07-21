@@ -20,7 +20,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         and json.loads(path.read_text())["exit_status"] == 0
         for path in (ROOT / "results").glob("**/manifest.json")
     )
-    assert report["page_count"] == 18 + expected_studies
+    assert report["page_count"] == len(list(output.glob("**/*.html")))
     assert report["study_count"] == expected_studies
     assert report["claim_count"] == expected_claims
     assert report["passing_run_count"] == expected_passing_runs
@@ -37,6 +37,13 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert (output / "research/dd-008a.html").is_file()
     assert (output / "research/dd-006b.html").is_file()
     assert (output / "research/dd-009.html").is_file()
+    assert (output / "research/dd-010.html").is_file()
+    assert (output / "benchmark.html").is_file()
+    for route in ["tasks", "protocols", "metrics", "results"]:
+        assert (output / f"benchmark/{route}.html").is_file()
+    benchmark_lab = (output / "labs/benchmark.html").read_text()
+    assert "no submissions" in benchmark_lab
+    assert "JavaScript is off" in benchmark_lab
     assert (output / "labs.html").is_file()
     for name in [
         "sequential",
@@ -55,6 +62,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert 'id="DD-C-0044"' in claims
     assert 'id="DD-C-0053"' in claims
     assert 'id="DD-C-0054"' in claims
+    assert 'id="DD-C-0055"' in claims
     assert "unvalidated values" in claims
 
     runs = json.loads((output / "data/runs.json").read_text(encoding="utf-8"))["runs"]
@@ -86,6 +94,11 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     atlas_page = (output / "labs/atlas.html").read_text()
     assert 'max="20"' in atlas_page
     assert "Architecture index" in atlas_page
+    benchmark = json.loads((output / "data/benchmark/summary.json").read_text())
+    assert benchmark["run_id"] == "20260721T183014Z_DD-010_ce930050_8ec718c242"
+    assert benchmark["summary"]["task_count"] == 15
+    assert benchmark["summary"]["compatible_pairs"] == 16
+    assert (output / "downloads/discoverybench-task-v1.schema.json").is_file()
 
 
 def test_research_library_rejects_missing_public_metadata(tmp_path: Path) -> None:

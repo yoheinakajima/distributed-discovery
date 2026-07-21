@@ -1,0 +1,13 @@
+{
+  "candidate_pairs": 195,
+  "compatible_pairs": 16,
+  "excluded_pairs": 179,
+  "golden_rows_verified": 16,
+  "information_leakage_tests_passed": true,
+  "metric_count": 19,
+  "passed": true,
+  "protocol_count": 13,
+  "simulated_replications": 8000,
+  "simulated_seeds": 8,
+  "task_count": 15
+}

@@ -86,10 +86,14 @@ p { margin: 0 0 1.05rem; }
 .matrix { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-family: var(--sans); font-size: .84rem; }
 .matrix th, .matrix td { padding: .7rem; border-bottom: 1px solid var(--grid); text-align: left; vertical-align: top; }
 .matrix th { color: var(--ink-2); }
+.matrix caption { padding: .5rem 0; text-align: left; color: var(--ink-2); font-weight: 700; }
 .identity { padding: 1.3rem; overflow-x: auto; border: 1px solid var(--grid); border-radius: 12px; background: var(--card); font: 600 1.05rem var(--mono); }
 .lab { margin: 1.5rem 0; padding: 1.2rem; border: 1px solid var(--grid); border-radius: 12px; background: var(--card); }
 .lab label { display: block; margin-bottom: .5rem; font: 700 .85rem var(--sans); }
 .lab input { width: 100%; accent-color: var(--planner); }
+.lab select { width: 100%; max-width: 30rem; padding: .55rem; color: var(--ink); background: var(--page); border: 1px solid var(--grid); }
+.lab select:focus-visible { outline: 3px solid var(--planner); outline-offset: 3px; }
+code { overflow-wrap: anywhere; }
 .problem-grid { display: grid; gap: 1rem; padding-bottom: 4rem; }
 .problem-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; }
 .study-id { overflow-wrap: anywhere; font: 700 .76rem var(--mono); }

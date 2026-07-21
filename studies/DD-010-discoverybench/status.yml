@@ -1,0 +1,5 @@
+study_id: DD-010
+status: complete-bounded-study
+evidence_status: exact-golden-suite-independent-recomputation-and-capability-corruption-audit
+next_action: preserve the v1 golden regressions; new task families or composite weights require a new versioned registration
+updated_utc: 2026-07-21T18:30:15Z
