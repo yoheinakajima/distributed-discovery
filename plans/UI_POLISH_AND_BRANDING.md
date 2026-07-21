@@ -49,9 +49,9 @@ two/three-column grids, and a seven-column scrolling pipeline.
 
 1. Baseline safety, build, screenshots, and audit. **Complete.**
 2. Branding, copy map, design tokens, and isolated prototype. **Complete.**
-3. Presentation modules, shell/navigation, page redesign, and tests. **Active.**
-4. Browser, visual, accessibility, and full repository validation.
-5. Rebase, PR readiness, CI, merge, Pages, and live-route verification.
+3. Presentation modules, shell/navigation, page redesign, and tests. **Complete.**
+4. Browser, visual, accessibility, and full repository validation. **Complete.**
+5. Rebase, PR readiness, CI, merge, Pages, and live-route verification. **Active.**
 
 ## Progress checklist
 
@@ -62,10 +62,11 @@ two/three-column grids, and a seven-column scrolling pipeline.
 - [x] Build the current site and record exact baseline counts.
 - [x] Capture required baseline screenshots.
 - [x] Complete audit, branding report, copy map, tokens, and prototype.
-- [ ] Integrate presentation changes and tests.
-- [ ] Capture after screenshots and complete manual QA.
-- [ ] Run all requested Make targets and invariant checks.
-- [ ] Recheck overlap, rebase, push, open/update PR, and complete remote gates.
+- [x] Integrate presentation changes and tests.
+- [x] Capture after screenshots and complete manual QA.
+- [x] Run all requested Make targets and invariant checks.
+- [ ] Recheck overlap, reconcile the remote branch without force-pushing, update
+  PR #89, and complete remote gates.
 
 ## Discoveries and surprises
 
@@ -86,6 +87,17 @@ two/three-column grids, and a seven-column scrolling pipeline.
 - 2026-07-21T22:18:09Z: The five `site/src/*.html` documents are not consumed by
   the current build; the live page shell and nearly all presentation copy are
   inline in the 1,312-line builder.
+- 2026-07-21: While the refresh was in progress, PR #87 merged DD-014 into
+  `main`, including changes to the shared builder, script, and integration test.
+  The UI branch was rebased onto `9bc1a61`; the one content conflict was resolved
+  by preserving the DD-014 route, data, claims, and Conditional Attention Lab.
+- 2026-07-21: The final 36-capture matrix has zero document-level overflows, one
+  H1 per route, one five-item header navigation per route, and no raw machine
+  status used as a standalone visible label.
+- 2026-07-21: All 54 generated data files shared with current `main` are
+  byte-for-byte identical. The refresh adds only `data/canonical.json`, whose
+  values are loaded from the existing canonical evidence rather than copied by
+  hand. There are no diffs under `studies/`, `claims/`, `results/`, or `papers/`.
 
 ## Decision log
 
@@ -119,7 +131,9 @@ checks.
 - `make site`: expected to generate and validate all existing routes without
   creating research runs.
 - `make bootstrap && make verify && make papers && make site`: expected final
-  repository, paper, and site acceptance with unchanged evidence totals.
+  repository, paper, and site acceptance with unchanged evidence totals. Passed
+  on 2026-07-21: 177 tests, 38 valid run manifests, four papers, 54 pages, and
+  19 studies.
 
 ## Artifacts produced
 
@@ -127,13 +141,15 @@ checks.
 - `reports/ui-refresh/parallel-safety.md`.
 - `reports/ui-refresh/audit.md` and `reports/ui-refresh/branding.md`.
 - `reports/ui-refresh/before/` with 36 screenshots and viewport metrics.
+- `reports/ui-refresh/after/` with 36 screenshots and viewport metrics.
+- `reports/ui-refresh/visual-qa.md` and `accessibility.md`.
 - `design/site-refresh/copy-map.yml`, `tokens.css`, and the isolated homepage
   prototype.
 - This living ExecPlan.
 
 ## Blockers
 
-None at plan creation. Any newly opened research PR that changes the builder,
+No local blocker. Any newly opened research PR that changes the builder,
 stylesheet, script, route registry, shared shell, or site tests becomes an
 integration blocker until it merges or the overlap is explicitly reconciled.
 

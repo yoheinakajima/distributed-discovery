@@ -108,6 +108,7 @@ def render_breadcrumb(current: str, title: str) -> str:
 
 def render_section_navigation(current: str) -> str:
     prefix = prefix_for(current)
+    links: tuple[tuple[str, str], ...]
     if current == "benchmark.html" or current.startswith("benchmark/"):
         links = (
             ("Overview", "benchmark.html"),

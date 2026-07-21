@@ -70,3 +70,19 @@ merged and preserved by rebase.
 5. Preserve every new research route, study, claim, run, download, and Lab.
 6. Rerun `make bootstrap && make verify && make papers && make site`, refresh
    screenshots, and repeat the open-PR query immediately before merge.
+
+## Integration update
+
+PR #87 merged DD-014 after this report's baseline and changed the shared site
+builder, JavaScript, and integration test. The UI branch was rebased onto
+`9bc1a61ee688ba9fce3504c646c6fab540358447`. The single semantic conflict was
+resolved by retaining the new DD-014 research page, exact generated data,
+claims, downloads, JavaScript filter, and Conditional Attention Lab within the
+refreshed presentation system.
+
+After integration, `git diff origin/main -- studies claims results papers` is
+empty. A clean current-main site build and the UI build share 54 data files;
+all 54 have identical SHA-256 hashes. The UI build adds only presentation-facing
+`data/canonical.json`. The complete local validation suite and refreshed
+responsive capture matrix pass. A final open-PR overlap query is still required
+immediately before merge.
