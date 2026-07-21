@@ -1,9 +1,15 @@
 # Current program state
 
-_Reconciled 2026-07-21 after Program V2 site integration._
+_Reconciled 2026-07-21 at the Program V3 registration baseline._
 
 Distributed Discovery Programs V1 and V2 are complete at their registered
-bounded scopes. The repository is public and project-authored content is
+bounded scopes. Program V3, *The Incentive to Ignore*, is active under issue
+#79. Its required queue is DD-012, DD-013, DD-014, a focused paper, benchmark
+and synthetic experiment extensions, public Labs/site integration, and final
+acceptance. DD-015 is optional only after that queue. Registration is not a
+result.
+
+The repository is public and project-authored content is
 MIT-licensed; the canonical Shared Discovery Paradox repository remains pinned
 at `5025cc8e8f2f8ca015dff2066f08f81ad5715a51`, separate, clean, and read-only.
 
@@ -19,6 +25,11 @@ at `5025cc8e8f2f8ca015dff2066f08f81ad5715a51`, separate, clean, and read-only.
 | Validated project papers | 4 |
 | Checksum-registered downloads | 15 |
 | Test suite | 138 collected tests |
+
+The baseline adds four registrations, bringing the study registry to 19 after
+this milestone merges. Claims, manifests, passing runs, papers, and validated
+test evidence remain unchanged until a registered study is executed and
+independently audited.
 
 Program V2 produced:
 
@@ -56,5 +67,5 @@ Issue [#32](https://github.com/yoheinakajima/distributed-discovery/issues/32)
 is the sole operational blocker: the single authorized settings attempt found
 no settings-capable GitHub CLI authentication. It does not block the completed
 research program and must not be retried without intentionally supplied
-authority. See the [current roadmap](current-roadmap.md) for bounded next
-questions.
+authority. See the [Program V3 overview](program-v3.md) and [current
+roadmap](current-roadmap.md) for the active bounded queue.

@@ -1,0 +1,10 @@
+study_id: DD-015
+title: Dynamic Attention and Visible Search
+slug: dd-015
+phase: registered
+summary: Optional registered sequential extension on visible action and dynamic contrarian attention.
+public_artifacts:
+  - path: studies/DD-015-dynamic-attention/model.md
+    description: Optional bounded dynamic model
+  - path: studies/DD-015-dynamic-attention/plan.md
+    description: Optional execution and verification plan

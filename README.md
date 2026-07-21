@@ -10,7 +10,10 @@ This public repository is MIT-licensed. The [companion site](https://yoheinakaji
 
 ## Status and navigation
 
-Programs V1 and V2 are complete at their registered bounded scopes. The concise entry points
+Programs V1 and V2 are complete at their registered bounded scopes. Program V3,
+[*The Incentive to Ignore*](docs/program-v3.md), is active with DD-012 through
+DD-014 required and DD-015 registered as optional. These registrations are not
+results. The concise entry points
 are [`docs/current-state.md`](docs/current-state.md) and
 [`docs/current-roadmap.md`](docs/current-roadmap.md). Claims remain in
 [`claims/claims.yml`](claims/claims.yml) under the
@@ -71,6 +74,6 @@ New agents must read `AGENTS.md`, `.agent/PLANS.md`, `plans/MASTER_EXEC_PLAN.md`
 `docs/repository-contract.md`, and the relevant study files. Then inspect Git
 status and run `git switch main && git pull --ff-only origin main && make verify`.
 Do not rerun completed primary configurations merely to refresh timestamps.
-There is no automatic post-V2 research task; new work needs a bounded issue and
-verification plan. Settings-only issue #32 must not be retried without
-intentionally supplied authority.
+Program V3 executes sequentially under the active ExecPlan; each study still
+needs a bounded issue and verification plan. Settings-only issue #32 must not be
+retried without intentionally supplied authority.

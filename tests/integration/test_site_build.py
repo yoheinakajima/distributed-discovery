@@ -50,6 +50,10 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert (output / "research/dd-009.html").is_file()
     assert (output / "research/dd-010.html").is_file()
     assert (output / "research/dd-011.html").is_file()
+    assert (output / "research/dd-012.html").is_file()
+    assert (output / "research/dd-013.html").is_file()
+    assert (output / "research/dd-014.html").is_file()
+    assert (output / "research/dd-015.html").is_file()
     assert (output / "benchmark.html").is_file()
     for route in ["tasks", "protocols", "metrics", "results"]:
         assert (output / f"benchmark/{route}.html").is_file()

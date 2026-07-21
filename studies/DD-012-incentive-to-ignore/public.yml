@@ -1,0 +1,10 @@
+study_id: DD-012
+title: Incentive to Ignore
+slug: dd-012
+phase: registered
+summary: Registered exact study of access-gated shared-signal use, private incentives, and discovery.
+public_artifacts:
+  - path: studies/DD-012-incentive-to-ignore/model.md
+    description: Frozen baseline model and information-access boundary
+  - path: studies/DD-012-incentive-to-ignore/plan.md
+    description: Registered execution and verification plan

@@ -1,12 +1,18 @@
-# Current roadmap — after Program V2
+# Current roadmap — Program V3
 
-Programs V1 and V2 are complete at their registered scopes. No executable
-research milestone is queued automatically; every extension requires a new
+Programs V1 and V2 are complete at their registered scopes. Program V3 is the
+authorized active sequence. Each research milestone still requires its own
 bounded issue, state-space/resource estimate, evidence category, independent
 verification plan, and corruption test where certificates are used.
 
 | Work | Status | Durable boundary / next question |
 | --- | --- | --- |
+| Program V3 baseline | active on issue #79 | Register DD-012 through DD-015 without producing evidence; validate and deploy the registry before DD-012. |
+| DD-012 Incentive to Ignore | registered | In an ex-ante access-gate model, derive exact discovery/payoff identities and compare pure equilibrium with socially optimal shared-signal use. |
+| DD-013 Audience Design | registered after DD-012 | Separate binding delivery, voluntary use, public role assignment, and garbling; exactly evaluate at least one implementable reader institution. |
+| DD-014 Conditional Attention | registered after DD-013 | Test the complete deterministic label-equivariant disagreement class for `M=3` and audit small fixtures against a larger raw class. |
+| DD-015 Dynamic Attention | optional registration | Begin only after required Program V3 milestones if capacity remains; keep stopping and fixed-budget objectives distinct. |
+| Program V3 paper and integration | queued | Build only from validated DD-012–DD-014 evidence; extend the benchmark and synthetic kit without human data; publish static accessible Labs. |
 | DD-010 DiscoveryBench | complete and deployed | Preserve v1's 15-task exact golden suite and capability isolation. New tasks or adapters require a versioned registration; no public submissions or universal score. |
 | DD-011 Experimental Design and Power | complete synthetic package and deployed | Power is conditional on eight declared synthetic scenarios. Human deployment requires separate ethics, consent, privacy, pilot, and institutional review. |
 | DD-008B Common-Source Analysis | complete and deployed | The general threshold theorem holds only for the frozen homogeneous equal-prize model. Extend to heterogeneous accuracy, source dependence, mixed choice, or dynamics under a new model. |
@@ -23,11 +29,12 @@ High-value benchmark questions are new exact tasks, adapter conformance, and
 robust multi-metric aggregation without collapsing the registry into an
 unexplained score.
 
-Operational resume command:
+Operational resume command for the active baseline:
 
 ```sh
-git switch main && git pull --ff-only origin main && make verify
+git switch docs/program-v3-baseline && make bootstrap && make verify && make site
 ```
 
-The next file to consult is `docs/current-state.md`; for settings-only work, use
-`docs/github-setup.md` and issue #32.
+The next file is `plans/MASTER_EXEC_PLAN.md`; after the baseline merges, DD-012
+begins from its `README.md`, `plan.md`, and `status.yml`. For settings-only work,
+use `docs/github-setup.md` and issue #32.

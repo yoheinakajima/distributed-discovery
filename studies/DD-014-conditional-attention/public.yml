@@ -1,0 +1,10 @@
+study_id: DD-014
+title: Conditional Attention and Contrarian Policies
+slug: dd-014
+phase: registered
+summary: Registered exact census of private-dominant, public-dominant, and third-option contrarian role profiles.
+public_artifacts:
+  - path: studies/DD-014-conditional-attention/model.md
+    description: Frozen conditional policy class and scope
+  - path: studies/DD-014-conditional-attention/plan.md
+    description: Registered execution and verification plan

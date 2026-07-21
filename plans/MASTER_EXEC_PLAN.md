@@ -8,6 +8,48 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
+### Program V3 attention queue (active, 2026-07-21)
+
+Owner authorization now requires sequential execution of DD-012 Incentive to
+Ignore, DD-013 Audience Design and Information Firewalls, DD-014 Conditional
+Attention and Contrarian Policies, a focused *Incentive to Ignore* working
+paper, DiscoveryBench and synthetic experiment-kit attention extensions, public
+Labs/site integration, and a final Program V3 handoff. DD-015 Dynamic Attention
+is optional only after the required queue.
+
+The verified start is clean `main`
+`99e2098c0f03ec64db274aa7cb04c68e95485223`. Baseline acceptance reproduced 138
+tests, 58 claims, 35 manifests of which 32 pass, 15 studies, four validated
+papers, and 48 public HTML routes; ten checked Program V2 live routes returned
+HTTP 200. No PR was open. The sole pre-existing operational blocker remains
+settings issue #32. The one mandated `gh auth status` probe returned no
+authenticated host, so settings mutation is not retried and does not block the
+research queue.
+
+The active milestone is the registration-only Program V3 baseline under issue
+#79 and branch `docs/program-v3-baseline`. It registers DD-012 through DD-015,
+updates governing documentation, and creates no research run or result claim.
+
+Progress:
+
+- [ ] Program V3 baseline: registration and local implementation are active;
+  `make bootstrap`, the pre-edit `make verify` (138 tests), the pre-edit
+  48-route `make site`, and ten live-route checks passed. Post-edit validation,
+  PR, merge, CI, Pages, and deployed registration routes remain.
+- [ ] DD-012 exact model, theorem/proof audit, rational census, independent
+  verifier, reward interventions, claims, public data, and deployment.
+- [ ] DD-013 binding/voluntary audience frontier, garbling comparison,
+  implementable institution, independent verification, claims, and deployment.
+- [ ] DD-014 conditional policy class, role-profile census, larger-class audit,
+  independent verification, claims, and deployment.
+- [ ] Focused paper, benchmark extension, synthetic experiment extension,
+  public Labs/site integration, and final acceptance.
+
+Recovery: inspect `git status --short --branch` on
+`docs/program-v3-baseline`, then run `make bootstrap && make verify && make
+site`. No DD-012 run exists yet and no completed Program V2 primary run should
+be repeated.
+
 ### Program V2 completion queue (active, 2026-07-21)
 
 Owner authorization now requires sequential completion of DD-010 DiscoveryBench,

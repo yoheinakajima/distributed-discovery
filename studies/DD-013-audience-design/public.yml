@@ -1,0 +1,10 @@
+study_id: DD-013
+title: Audience Design and Information Firewalls
+slug: dd-013
+phase: registered
+summary: Registered exact study separating binding audiences, voluntary use, garbling, and implementable reader institutions.
+public_artifacts:
+  - path: studies/DD-013-audience-design/model.md
+    description: Registered audience and information-boundary model
+  - path: studies/DD-013-audience-design/plan.md
+    description: Registered execution and verification plan
