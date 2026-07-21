@@ -1,0 +1,283 @@
+[
+  {
+    "aggregation": "unweighted task-level vectors; no composite score",
+    "metric_vectors": [
+      {
+        "average-action-quality": "5/8",
+        "discovery": "5/6",
+        "expected-actions": "4/3",
+        "expected-rounds": "4/3",
+        "social-net-value": "5/6"
+      }
+    ],
+    "result_count": 1,
+    "task_family": "architecture-atlas"
+  },
+  {
+    "aggregation": "unweighted task-level vectors; no composite score",
+    "metric_vectors": [
+      {
+        "discovery": "1/2",
+        "distinct-actions": "8"
+      },
+      {
+        "discovery": "860391662035297/1001129150390625",
+        "recovery-budget": 7
+      }
+    ],
+    "result_count": 2,
+    "task_family": "canonical-atomic-boxes"
+  },
+  {
+    "aggregation": "unweighted task-level vectors; no composite score",
+    "metric_vectors": [
+      {
+        "discovery": "325089/390625",
+        "protocol-loss": "0"
+      }
+    ],
+    "result_count": 1,
+    "task_family": "canonical-private-team-optimum"
+  },
+  {
+    "aggregation": "unweighted task-level vectors; no composite score",
+    "metric_vectors": [
+      {
+        "discovery": "11/12",
+        "obedience": true,
+        "strict-margin": "0",
+        "transfer-budget": "0",
+        "truthfulness": true
+      }
+    ],
+    "result_count": 1,
+    "task_family": "dd006a-transfer-frontier"
+  },
+  {
+    "aggregation": "unweighted task-level vectors; no composite score",
+    "metric_vectors": [
+      {
+        "discovery": "11/12",
+        "obedience": true,
+        "strict-margin": "13/72",
+        "transfer-budget": "35/24",
+        "truthfulness": true
+      }
+    ],
+    "result_count": 1,
+    "task_family": "dd006b-strict-joint-mechanism"
+  },
+  {
+    "aggregation": "unweighted task-level vectors; no composite score",
+    "metric_vectors": [
+      {
+        "attention-count": 0,
+        "discovery": "15/16",
+        "duplicate-use-loss": "0",
+        "first-use-gain": "1/32",
+        "public-signal-user-count": 0
+      },
+      {
+        "attention-count": 1,
+        "discovery": "31/32",
+        "duplicate-use-loss": "0",
+        "first-use-gain": "1/32",
+        "public-signal-user-count": 1
+      },
+      {
+        "attention-count": 4,
+        "discovery": "3/4",
+        "duplicate-use-loss": "7/32",
+        "first-use-gain": "1/32",
+        "public-signal-user-count": 4
+      }
+    ],
+    "result_count": 3,
+    "task_family": "dd012-attention-profiles"
+  },
+  {
+    "aggregation": "unweighted task-level vectors; no composite score",
+    "metric_vectors": [
+      {
+        "attention-count": 3,
+        "attention-wedge": "3/32",
+        "discovery": "7/8"
+      },
+      {
+        "attention-count": 1,
+        "attention-wedge": "0",
+        "discovery": "31/32"
+      }
+    ],
+    "result_count": 2,
+    "task_family": "dd012-equilibrium-optimum-cell"
+  },
+  {
+    "aggregation": "unweighted task-level vectors; no composite score",
+    "metric_vectors": [
+      {
+        "audience-size": 4,
+        "discovery": "3/4",
+        "publicity-cost": "7/32"
+      },
+      {
+        "audience-size": 1,
+        "discovery": "31/32",
+        "publicity-cost": "0"
+      },
+      {
+        "audience-size": 1,
+        "discovery": "31/32",
+        "publicity-cost": "0"
+      }
+    ],
+    "result_count": 3,
+    "task_family": "dd013-audience-design"
+  },
+  {
+    "aggregation": "unweighted task-level vectors; no composite score",
+    "metric_vectors": [
+      {
+        "audience-size": 1,
+        "discovery": "31/32",
+        "transfer-budget": "0"
+      }
+    ],
+    "result_count": 1,
+    "task_family": "dd013-implementation-mechanism"
+  },
+  {
+    "aggregation": "unweighted task-level vectors; no composite score",
+    "metric_vectors": [
+      {
+        "conditional-attention-category": "private-dominant",
+        "discovery": "15/16"
+      },
+      {
+        "conditional-attention-category": "public-dominant",
+        "discovery": "3/4"
+      },
+      {
+        "conditional-attention-category": "third-option-contrarian",
+        "discovery": "895/1024"
+      }
+    ],
+    "result_count": 3,
+    "task_family": "dd014-conditional-policies"
+  },
+  {
+    "aggregation": "unweighted task-level vectors; no composite score",
+    "metric_vectors": [
+      {
+        "discovery": "5/9"
+      }
+    ],
+    "result_count": 1,
+    "task_family": "deterministic-disclosure-fixture"
+  },
+  {
+    "aggregation": "unweighted task-level vectors; no composite score",
+    "metric_vectors": [
+      {
+        "discovery": "3/4",
+        "source-concentration": "17/25"
+      }
+    ],
+    "result_count": 1,
+    "task_family": "heterogeneous-source-moment-counterexample"
+  },
+  {
+    "aggregation": "unweighted task-level vectors; no composite score",
+    "metric_vectors": [
+      {
+        "discovery": "8/9",
+        "effective-channels": "8/5"
+      }
+    ],
+    "result_count": 1,
+    "task_family": "homogeneous-source-network"
+  },
+  {
+    "aggregation": "unweighted task-level vectors; no composite score",
+    "metric_vectors": [
+      {
+        "discovery": "65535/65536",
+        "effective-channels": "8",
+        "information-cost": "0"
+      }
+    ],
+    "result_count": 1,
+    "task_family": "n-agent-source-choice"
+  },
+  {
+    "aggregation": "unweighted task-level vectors; no composite score",
+    "metric_vectors": [
+      {
+        "distinct-actions": "2",
+        "weighted-coverage": "4"
+      }
+    ],
+    "result_count": 1,
+    "task_family": "overlapping-weighted-coverage"
+  },
+  {
+    "aggregation": "unweighted task-level vectors; no composite score",
+    "metric_vectors": [
+      {
+        "discovery": "7/10",
+        "expected-actions": "109/40",
+        "expected-rounds": "109/40"
+      }
+    ],
+    "result_count": 1,
+    "task_family": "perfect-elimination-sequential"
+  },
+  {
+    "aggregation": "unweighted task-level vectors; no composite score",
+    "metric_vectors": [
+      {
+        "discovery": "7/10",
+        "protocol-loss": "0"
+      }
+    ],
+    "result_count": 1,
+    "task_family": "private-team-role-counterexample"
+  },
+  {
+    "aggregation": "unweighted task-level vectors; no composite score",
+    "metric_vectors": [
+      {
+        "discovery": "8/9",
+        "obedience": true,
+        "strict-margin": "0",
+        "transfer-budget": "0",
+        "truthfulness": true
+      }
+    ],
+    "result_count": 1,
+    "task_family": "score-difference-mechanism"
+  },
+  {
+    "aggregation": "unweighted task-level vectors; no composite score",
+    "metric_vectors": [
+      {
+        "discovery": "171/308",
+        "protocol-loss": "1/2772"
+      }
+    ],
+    "result_count": 1,
+    "task_family": "six-rule-selection-fixture"
+  },
+  {
+    "aggregation": "unweighted task-level vectors; no composite score",
+    "metric_vectors": [
+      {
+        "discovery": "8/9",
+        "information-cost": "1/8",
+        "social-net-value": "55/72"
+      }
+    ],
+    "result_count": 1,
+    "task_family": "two-agent-evidence-acquisition"
+  }
+]

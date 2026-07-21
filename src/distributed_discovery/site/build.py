@@ -435,14 +435,18 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
     pareto = json.loads((source / "pareto-report.json").read_text())
     manifest = json.loads((run / "manifest.json").read_text())
     run_id = str(manifest["run_id"])
+    benchmark_version = str(summary.get("benchmark_version", "v1"))
+    schema_number = 2 if benchmark_version == "v2" else 1
     downloads = (
         '<a href="data/benchmark/tasks.json">tasks JSON</a> · '
         '<a href="data/benchmark/protocols.json">protocols JSON</a> · '
         '<a href="data/benchmark/metrics.json">metrics JSON</a> · '
         '<a href="data/benchmark/results.json">results JSON</a> · '
-        '<a href="downloads/discoverybench-task-v1.schema.json">task schema</a>'
+        f'<a href="downloads/discoverybench-task-{benchmark_version}.schema.json">task schema</a>'
     )
-    overview = f"""<p class="eyebrow">DiscoveryBench v1</p><h1>Exact golden benchmark</h1><p class="lede">A bounded, auditable suite for evidence-to-action protocols. It is not a hosted leaderboard or a universal measure of real-world agent quality.</p><div class="stats"><div class="stat"><span>Golden tasks</span><b>{summary["task_count"]}</b></div><div class="stat"><span>Built-in protocols</span><b>{summary["protocol_count"]}</b></div><div class="stat"><span>Compatible pairs</span><b>{summary["compatible_pairs"]}</b></div></div><p>{downloads}</p><section><h2>Inspect the contract</h2><ul><li><a href="benchmark/tasks.html">Tasks and declared information</a></li><li><a href="benchmark/protocols.html">Protocols and capabilities</a></li><li><a href="benchmark/metrics.html">Versioned metric registry</a></li><li><a href="benchmark/results.html">Exact result vectors and Pareto report</a></li><li><a href="labs/benchmark.html">Benchmark Lab</a></li></ul></section><section><h2>Reproduce</h2><p><code>distributed-discovery benchmark run-golden</code><br><code>distributed-discovery benchmark verify-run results/verified/{html.escape(run_id)}</code></p><p>Claim DD-C-0055 · immutable run <a href="evidence.html">{html.escape(run_id)}</a>.</p></section>"""
+    version_flag = " --version v2" if benchmark_version == "v2" else ""
+    claim_id = "DD-C-0069" if benchmark_version == "v2" else "DD-C-0055"
+    overview = f"""<p class="eyebrow">DiscoveryBench {html.escape(benchmark_version)}</p><h1>Exact golden benchmark</h1><p class="lede">A bounded, auditable suite for evidence-to-action protocols. Version 2 adds selective-attention fixtures while preserving the v1 command default and exact vectors. It is not a hosted leaderboard or a universal measure of real-world agent quality.</p><div class="stats"><div class="stat"><span>Golden tasks</span><b>{summary["task_count"]}</b></div><div class="stat"><span>Built-in protocols</span><b>{summary["protocol_count"]}</b></div><div class="stat"><span>Compatible pairs</span><b>{summary["compatible_pairs"]}</b></div></div><p>{downloads}</p><section><h2>Inspect the contract</h2><ul><li><a href="benchmark/tasks.html">Tasks and declared information</a></li><li><a href="benchmark/protocols.html">Protocols and capabilities</a></li><li><a href="benchmark/metrics.html">Versioned metric registry</a></li><li><a href="benchmark/results.html">Exact result vectors and Pareto report</a></li><li><a href="benchmark/attention.html">Selective-attention extension</a></li><li><a href="labs/benchmark.html">Benchmark Lab</a></li></ul></section><section><h2>Reproduce</h2><p><code>distributed-discovery benchmark{version_flag} run-golden</code><br><code>distributed-discovery benchmark{version_flag} verify-run results/verified/{html.escape(run_id)}</code></p><p>Claim {claim_id} · immutable run <a href="evidence.html">{html.escape(run_id)}</a>.</p></section>"""
     _write(
         output,
         "benchmark.html",
@@ -518,6 +522,25 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         ),
     )
 
+    attention_results = [
+        row for row in results if int(str(row["task_id"]).replace("DB-G", "")) >= 16
+    ]
+    attention_rows = "".join(
+        f'<tr><th scope="row">{html.escape(str(row["task_id"]))}</th><td>{html.escape(str(row["protocol_id"]))}</td><td><code>{html.escape(json.dumps(row["metrics"], sort_keys=True))}</code></td></tr>'
+        for row in attention_results
+    )
+    attention_body = f"""<p class="eyebrow"><a href="../benchmark.html">DiscoveryBench</a> / Selective attention</p><h1>Attention extension</h1><p class="lede">Five exact DD-012--DD-014 tasks expose private-only, public-only, designated-reader, voluntary-equilibrium, audience-optimal, and conditional-policy comparisons. Version 1 remains the CLI default.</p><table class="matrix"><caption>DiscoveryBench v2 selective-attention rows</caption><thead><tr><th>Task</th><th>Protocol</th><th>Exact metric vector</th></tr></thead><tbody>{attention_rows}</tbody></table><p><a href="../labs/benchmark.html">Filter all benchmark rows</a> · <a href="../data/benchmark/results.json">Download v2 results</a></p>"""
+    _write(
+        output,
+        "benchmark/attention.html",
+        _page(
+            "Benchmark attention extension",
+            "Exact DiscoveryBench v2 selective-attention tasks and results.",
+            attention_body,
+            "benchmark/attention.html",
+        ),
+    )
+
     options = "".join(
         f'<option value="{html.escape(str(task["task_id"]))}">{html.escape(str(task["task_id"]))} — {html.escape(str(task["task_family"]))}</option>'
         for task in tasks
@@ -535,27 +558,36 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
     )
 
     data = {
-        "tasks.json": {"schema_version": 1, "run_id": run_id, "tasks": tasks},
-        "protocols.json": {"schema_version": 1, "run_id": run_id, "protocols": protocols},
-        "metrics.json": {"schema_version": 1, "run_id": run_id, "metrics": metrics},
+        "tasks.json": {"schema_version": schema_number, "run_id": run_id, "tasks": tasks},
+        "protocols.json": {
+            "schema_version": schema_number,
+            "run_id": run_id,
+            "protocols": protocols,
+        },
+        "metrics.json": {"schema_version": schema_number, "run_id": run_id, "metrics": metrics},
         "compatibility.json": {
-            "schema_version": 1,
+            "schema_version": schema_number,
             "run_id": run_id,
             "compatibility": compatibility,
         },
         "results.json": {
-            "schema_version": 1,
+            "schema_version": schema_number,
             "run_id": run_id,
             "results": results,
             "pareto": pareto,
         },
-        "summary.json": {"schema_version": 1, "run_id": run_id, "summary": summary},
+        "summary.json": {
+            "schema_version": schema_number,
+            "run_id": run_id,
+            "summary": summary,
+        },
     }
     for name, value in data.items():
         _write(output, f"data/benchmark/{name}", json.dumps(value, indent=2, sort_keys=True) + "\n")
-    schema = root / "studies/DD-010-discoverybench/schemas/task-v1.schema.json"
     (output / "downloads").mkdir(exist_ok=True)
-    shutil.copy2(schema, output / "downloads/discoverybench-task-v1.schema.json")
+    for version in ("v1", "v2"):
+        schema = root / f"studies/DD-010-discoverybench/schemas/task-{version}.schema.json"
+        shutil.copy2(schema, output / f"downloads/discoverybench-task-{version}.schema.json")
     return {"run_id": run_id, "summary": summary}
 
 

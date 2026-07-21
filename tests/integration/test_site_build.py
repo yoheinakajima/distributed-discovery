@@ -67,7 +67,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "DD-C-0065" in audience_study
     assert "20260721T215811Z_DD-013_09c07448_cdac4fb512" in audience_study
     assert (output / "benchmark.html").is_file()
-    for route in ["tasks", "protocols", "metrics", "results"]:
+    for route in ["tasks", "protocols", "metrics", "results", "attention"]:
         assert (output / f"benchmark/{route}.html").is_file()
     benchmark_lab = (output / "labs/benchmark.html").read_text()
     assert "no submissions" in benchmark_lab
@@ -117,6 +117,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert 'id="DD-C-0056"' in claims
     assert 'id="DD-C-0061"' in claims
     assert 'id="DD-C-0065"' in claims
+    assert 'id="DD-C-0069"' in claims
     assert "unvalidated values" in claims
 
     runs = json.loads((output / "data/runs.json").read_text(encoding="utf-8"))["runs"]
@@ -154,6 +155,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "benchmark/protocols.html",
         "benchmark/metrics.html",
         "benchmark/results.html",
+        "benchmark/attention.html",
         "experiment-kit.html",
         "experiment-kit/hypotheses.html",
         "experiment-kit/design.html",
@@ -193,10 +195,12 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert 'max="20"' in atlas_page
     assert "Architecture index" in atlas_page
     benchmark = json.loads((output / "data/benchmark/summary.json").read_text())
-    assert benchmark["run_id"] == "20260721T183014Z_DD-010_ce930050_8ec718c242"
-    assert benchmark["summary"]["task_count"] == 15
-    assert benchmark["summary"]["compatible_pairs"] == 16
+    assert benchmark["run_id"] == "20260721T230249Z_DD-010_add85590_56c61a2195"
+    assert benchmark["schema_version"] == 2
+    assert benchmark["summary"]["task_count"] == 20
+    assert benchmark["summary"]["compatible_pairs"] == 28
     assert (output / "downloads/discoverybench-task-v1.schema.json").is_file()
+    assert (output / "downloads/discoverybench-task-v2.schema.json").is_file()
     experiment = json.loads((output / "data/experiment/summary.json").read_text())
     assert experiment["run_id"] == "20260721T185647Z_DD-011_fa0271d9_fcaa647c55"
     assert experiment["summary"]["treatment_cells"] == 20

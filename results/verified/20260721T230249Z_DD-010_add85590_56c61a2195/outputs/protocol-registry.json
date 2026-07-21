@@ -1,0 +1,590 @@
+[
+  {
+    "capabilities": [
+      "action_space",
+      "budget",
+      "communication_permissions",
+      "feedback",
+      "per_agent_information",
+      "report_message_space",
+      "reward_rule",
+      "source_choice_permissions",
+      "task_family",
+      "task_id",
+      "timing"
+    ],
+    "description": "Coordinate distinct actions without evidence.",
+    "enabled": true,
+    "external": false,
+    "output_fields": [
+      "source_choice",
+      "report",
+      "message",
+      "action",
+      "contingent_policy",
+      "declared_metadata"
+    ],
+    "protocol_id": "blind-distinct",
+    "schema_version": "discoverybench-protocol-v2"
+  },
+  {
+    "capabilities": [
+      "action_space",
+      "budget",
+      "communication_permissions",
+      "feedback",
+      "per_agent_information",
+      "report_message_space",
+      "reward_rule",
+      "source_choice_permissions",
+      "task_family",
+      "task_id",
+      "timing"
+    ],
+    "description": "Act on each agent's declared private clue.",
+    "enabled": true,
+    "external": false,
+    "output_fields": [
+      "source_choice",
+      "report",
+      "message",
+      "action",
+      "contingent_policy",
+      "declared_metadata"
+    ],
+    "protocol_id": "private-clue-following",
+    "schema_version": "discoverybench-protocol-v2"
+  },
+  {
+    "capabilities": [
+      "action_space",
+      "budget",
+      "communication_permissions",
+      "feedback",
+      "per_agent_information",
+      "report_message_space",
+      "reward_rule",
+      "source_choice_permissions",
+      "task_family",
+      "task_id",
+      "timing"
+    ],
+    "description": "Pool declared messages into one repeated action.",
+    "enabled": true,
+    "external": false,
+    "output_fields": [
+      "source_choice",
+      "report",
+      "message",
+      "action",
+      "contingent_policy",
+      "declared_metadata"
+    ],
+    "protocol_id": "consensus",
+    "schema_version": "discoverybench-protocol-v2"
+  },
+  {
+    "capabilities": [
+      "action_space",
+      "budget",
+      "communication_permissions",
+      "feedback",
+      "per_agent_information",
+      "report_message_space",
+      "reward_rule",
+      "source_choice_permissions",
+      "task_family",
+      "task_id",
+      "timing"
+    ],
+    "description": "Assign a declared pooled-information portfolio.",
+    "enabled": true,
+    "external": false,
+    "output_fields": [
+      "source_choice",
+      "report",
+      "message",
+      "action",
+      "contingent_policy",
+      "declared_metadata"
+    ],
+    "protocol_id": "pooled-planner",
+    "schema_version": "discoverybench-protocol-v2"
+  },
+  {
+    "capabilities": [
+      "action_space",
+      "budget",
+      "communication_permissions",
+      "feedback",
+      "per_agent_information",
+      "report_message_space",
+      "reward_rule",
+      "source_choice_permissions",
+      "task_family",
+      "task_id",
+      "timing"
+    ],
+    "description": "Use the registered anonymous selected equilibrium.",
+    "enabled": true,
+    "external": false,
+    "output_fields": [
+      "source_choice",
+      "report",
+      "message",
+      "action",
+      "contingent_policy",
+      "declared_metadata"
+    ],
+    "protocol_id": "anonymous-market",
+    "schema_version": "discoverybench-protocol-v2"
+  },
+  {
+    "capabilities": [
+      "action_space",
+      "budget",
+      "communication_permissions",
+      "feedback",
+      "per_agent_information",
+      "report_message_space",
+      "reward_rule",
+      "source_choice_permissions",
+      "task_family",
+      "task_id",
+      "timing"
+    ],
+    "description": "Sample actions from each declared posterior.",
+    "enabled": true,
+    "external": false,
+    "output_fields": [
+      "source_choice",
+      "report",
+      "message",
+      "action",
+      "contingent_policy",
+      "declared_metadata"
+    ],
+    "protocol_id": "posterior-sampling",
+    "schema_version": "discoverybench-protocol-v2"
+  },
+  {
+    "capabilities": [
+      "action_space",
+      "budget",
+      "communication_permissions",
+      "feedback",
+      "per_agent_information",
+      "report_message_space",
+      "reward_rule",
+      "source_choice_permissions",
+      "task_family",
+      "task_id",
+      "timing"
+    ],
+    "description": "Commit to differentiated contingent roles ex ante.",
+    "enabled": true,
+    "external": false,
+    "output_fields": [
+      "source_choice",
+      "report",
+      "message",
+      "action",
+      "contingent_policy",
+      "declared_metadata"
+    ],
+    "protocol_id": "ex-ante-role-policy",
+    "schema_version": "discoverybench-protocol-v2"
+  },
+  {
+    "capabilities": [
+      "action_space",
+      "budget",
+      "communication_permissions",
+      "feedback",
+      "per_agent_information",
+      "report_message_space",
+      "reward_rule",
+      "source_choice_permissions",
+      "task_family",
+      "task_id",
+      "timing"
+    ],
+    "description": "Use visible feedback in registered greedy order.",
+    "enabled": true,
+    "external": false,
+    "output_fields": [
+      "source_choice",
+      "report",
+      "message",
+      "action",
+      "contingent_policy",
+      "declared_metadata"
+    ],
+    "protocol_id": "sequential-greedy",
+    "schema_version": "discoverybench-protocol-v2"
+  },
+  {
+    "capabilities": [
+      "action_space",
+      "budget",
+      "communication_permissions",
+      "feedback",
+      "per_agent_information",
+      "report_message_space",
+      "reward_rule",
+      "source_choice_permissions",
+      "task_family",
+      "task_id",
+      "timing"
+    ],
+    "description": "Choose the largest declared marginal coverage.",
+    "enabled": true,
+    "external": false,
+    "output_fields": [
+      "source_choice",
+      "report",
+      "message",
+      "action",
+      "contingent_policy",
+      "declared_metadata"
+    ],
+    "protocol_id": "marginal-coverage-greedy",
+    "schema_version": "discoverybench-protocol-v2"
+  },
+  {
+    "capabilities": [
+      "action_space",
+      "budget",
+      "communication_permissions",
+      "feedback",
+      "per_agent_information",
+      "report_message_space",
+      "reward_rule",
+      "source_choice_permissions",
+      "task_family",
+      "task_id",
+      "timing"
+    ],
+    "description": "Respond to the registered sole-rescue reward.",
+    "enabled": true,
+    "external": false,
+    "output_fields": [
+      "source_choice",
+      "report",
+      "message",
+      "action",
+      "contingent_policy",
+      "declared_metadata"
+    ],
+    "protocol_id": "sole-rescue-response",
+    "schema_version": "discoverybench-protocol-v2"
+  },
+  {
+    "capabilities": [
+      "action_space",
+      "budget",
+      "communication_permissions",
+      "feedback",
+      "per_agent_information",
+      "report_message_space",
+      "reward_rule",
+      "source_choice_permissions",
+      "task_family",
+      "task_id",
+      "timing"
+    ],
+    "description": "Use the registered weak DD-006A mechanism row.",
+    "enabled": true,
+    "external": false,
+    "output_fields": [
+      "source_choice",
+      "report",
+      "message",
+      "action",
+      "contingent_policy",
+      "declared_metadata"
+    ],
+    "protocol_id": "dd006a-mechanism",
+    "schema_version": "discoverybench-protocol-v2"
+  },
+  {
+    "capabilities": [
+      "action_space",
+      "budget",
+      "communication_permissions",
+      "feedback",
+      "per_agent_information",
+      "report_message_space",
+      "reward_rule",
+      "source_choice_permissions",
+      "task_family",
+      "task_id",
+      "timing"
+    ],
+    "description": "Use the registered strict DD-006B mechanism row.",
+    "enabled": true,
+    "external": false,
+    "output_fields": [
+      "source_choice",
+      "report",
+      "message",
+      "action",
+      "contingent_policy",
+      "declared_metadata"
+    ],
+    "protocol_id": "dd006b-mechanism",
+    "schema_version": "discoverybench-protocol-v2"
+  },
+  {
+    "capabilities": [
+      "action_space",
+      "budget",
+      "communication_permissions",
+      "feedback",
+      "per_agent_information",
+      "report_message_space",
+      "reward_rule",
+      "source_choice_permissions",
+      "task_family",
+      "task_id",
+      "timing"
+    ],
+    "description": "Execute one registered coherent Atlas cell.",
+    "enabled": true,
+    "external": false,
+    "output_fields": [
+      "source_choice",
+      "report",
+      "message",
+      "action",
+      "contingent_policy",
+      "declared_metadata"
+    ],
+    "protocol_id": "registered-atlas-architecture",
+    "schema_version": "discoverybench-protocol-v2"
+  },
+  {
+    "capabilities": [
+      "action_space",
+      "budget",
+      "communication_permissions",
+      "feedback",
+      "per_agent_information",
+      "report_message_space",
+      "reward_rule",
+      "source_choice_permissions",
+      "task_family",
+      "task_id",
+      "timing"
+    ],
+    "description": "Ignore the public signal and use private signals only.",
+    "enabled": true,
+    "external": false,
+    "output_fields": [
+      "source_choice",
+      "report",
+      "message",
+      "action",
+      "contingent_policy",
+      "declared_metadata"
+    ],
+    "protocol_id": "private-only",
+    "schema_version": "discoverybench-protocol-v2"
+  },
+  {
+    "capabilities": [
+      "action_space",
+      "budget",
+      "communication_permissions",
+      "feedback",
+      "per_agent_information",
+      "report_message_space",
+      "reward_rule",
+      "source_choice_permissions",
+      "task_family",
+      "task_id",
+      "timing"
+    ],
+    "description": "All agents use the public signal.",
+    "enabled": true,
+    "external": false,
+    "output_fields": [
+      "source_choice",
+      "report",
+      "message",
+      "action",
+      "contingent_policy",
+      "declared_metadata"
+    ],
+    "protocol_id": "public-only",
+    "schema_version": "discoverybench-protocol-v2"
+  },
+  {
+    "capabilities": [
+      "action_space",
+      "budget",
+      "communication_permissions",
+      "feedback",
+      "per_agent_information",
+      "report_message_space",
+      "reward_rule",
+      "source_choice_permissions",
+      "task_family",
+      "task_id",
+      "timing"
+    ],
+    "description": "Exactly one designated agent uses the public signal.",
+    "enabled": true,
+    "external": false,
+    "output_fields": [
+      "source_choice",
+      "report",
+      "message",
+      "action",
+      "contingent_policy",
+      "declared_metadata"
+    ],
+    "protocol_id": "designated-reader",
+    "schema_version": "discoverybench-protocol-v2"
+  },
+  {
+    "capabilities": [
+      "action_space",
+      "budget",
+      "communication_permissions",
+      "feedback",
+      "per_agent_information",
+      "report_message_space",
+      "reward_rule",
+      "source_choice_permissions",
+      "task_family",
+      "task_id",
+      "timing"
+    ],
+    "description": "Use the registered voluntary-attention equilibrium count.",
+    "enabled": true,
+    "external": false,
+    "output_fields": [
+      "source_choice",
+      "report",
+      "message",
+      "action",
+      "contingent_policy",
+      "declared_metadata"
+    ],
+    "protocol_id": "voluntary-attention-equilibrium",
+    "schema_version": "discoverybench-protocol-v2"
+  },
+  {
+    "capabilities": [
+      "action_space",
+      "budget",
+      "communication_permissions",
+      "feedback",
+      "per_agent_information",
+      "report_message_space",
+      "reward_rule",
+      "source_choice_permissions",
+      "task_family",
+      "task_id",
+      "timing"
+    ],
+    "description": "Assign the public signal to the registered optimal audience.",
+    "enabled": true,
+    "external": false,
+    "output_fields": [
+      "source_choice",
+      "report",
+      "message",
+      "action",
+      "contingent_policy",
+      "declared_metadata"
+    ],
+    "protocol_id": "audience-optimal-assignment",
+    "schema_version": "discoverybench-protocol-v2"
+  },
+  {
+    "capabilities": [
+      "action_space",
+      "budget",
+      "communication_permissions",
+      "feedback",
+      "per_agent_information",
+      "report_message_space",
+      "reward_rule",
+      "source_choice_permissions",
+      "task_family",
+      "task_id",
+      "timing"
+    ],
+    "description": "Follow private evidence on disagreement.",
+    "enabled": true,
+    "external": false,
+    "output_fields": [
+      "source_choice",
+      "report",
+      "message",
+      "action",
+      "contingent_policy",
+      "declared_metadata"
+    ],
+    "protocol_id": "conditional-private-dominant",
+    "schema_version": "discoverybench-protocol-v2"
+  },
+  {
+    "capabilities": [
+      "action_space",
+      "budget",
+      "communication_permissions",
+      "feedback",
+      "per_agent_information",
+      "report_message_space",
+      "reward_rule",
+      "source_choice_permissions",
+      "task_family",
+      "task_id",
+      "timing"
+    ],
+    "description": "Follow public evidence on disagreement.",
+    "enabled": true,
+    "external": false,
+    "output_fields": [
+      "source_choice",
+      "report",
+      "message",
+      "action",
+      "contingent_policy",
+      "declared_metadata"
+    ],
+    "protocol_id": "conditional-public-dominant",
+    "schema_version": "discoverybench-protocol-v2"
+  },
+  {
+    "capabilities": [
+      "action_space",
+      "budget",
+      "communication_permissions",
+      "feedback",
+      "per_agent_information",
+      "report_message_space",
+      "reward_rule",
+      "source_choice_permissions",
+      "task_family",
+      "task_id",
+      "timing"
+    ],
+    "description": "Choose the third label on disagreement.",
+    "enabled": true,
+    "external": false,
+    "output_fields": [
+      "source_choice",
+      "report",
+      "message",
+      "action",
+      "contingent_policy",
+      "declared_metadata"
+    ],
+    "protocol_id": "third-option-contrarian",
+    "schema_version": "discoverybench-protocol-v2"
+  }
+]
