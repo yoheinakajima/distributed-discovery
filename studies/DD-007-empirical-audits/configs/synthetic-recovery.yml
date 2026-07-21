@@ -1,0 +1,16 @@
+model: synthetic-discovery-audit-v1
+candidates: 4
+actors_per_session: 2
+sessions_per_replicate: 240
+replicate_seeds: [11, 29, 47, 71, 101, 131, 173, 211]
+copying_rates: [0.0, 0.5, 1.0]
+protocols: [private]
+provenance_missing_rates: [0.0, 0.5]
+action_matching_error_rates: [0.0, 0.1]
+uncertainty_method: normal-approximation-agreement-interval
+time_budget_seconds: 30
+resource_estimate:
+grid_cells: 12
+replicates: 8
+sessions: 23040
+events: 46080

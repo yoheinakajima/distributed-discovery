@@ -1,0 +1,50 @@
+{
+  "command": "make dd007-synthetic-audit",
+  "config_hash_sha256": "72fb89c5fce6e5f30d4770e3dcd419d998d9fa348200d0a7ec02accf61d08883",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-21T05:23:09.470268Z",
+  "exit_status": 0,
+  "git_commit": "af4ea13003f070a23a10efe6825233c71968bbca",
+  "git_dirty": true,
+  "input_hashes": {
+    "schemas/discovery-events/v1/event.schema.json": "7ca02eb4598ef0fb6fef1acf7af39cad0b20663b4bcc70281be764197fca6d92",
+    "schemas/discovery-events/v1/session.schema.json": "4c841cba58295c71ccdde05cf43f070f0f423316d395c06092785c653d09b6b4",
+    "schemas/discovery-events/v1/source.schema.json": "9a1dda6c2d6c1d457c8a1757442104ca41033d193dd84e0bfd0778fb3ec5651a",
+    "src/distributed_discovery/audits/model.py": "7137497f97a2178d72f0394bc7ea782e8ab27d80cfd1196d4d672bd48cbc1526",
+    "src/distributed_discovery/audits/study.py": "ce39101e7d5da19520eb7e94d4fa26af0943347c8789b77548cdd0cc60dabb62",
+    "studies/DD-007-empirical-audits/configs/synthetic-recovery.yml": "a51a9dfc8635c65a817a39a7ade48aa5f4d08d258fbc9f95cc928a428eabf236"
+  },
+  "outputs": {
+    "outputs/identification-counterexamples.json": "390833454af9827e8127e4ebf5c41eadc3861fec9d1878c56bd98d89b0148c5a",
+    "outputs/synthetic-recovery-grid.json": "48ab5c051106b5602d69dc558b691dafac6cd184055ff6519e720d36be6ab4a2",
+    "outputs/uncertainty-calibration.json": "7046fc7f4223203839c5c228c6debff53b76f5ebc82017274c04181d02ecd533"
+  },
+  "random_seeds": {
+    "algorithm": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211
+    ],
+    "model": [
+      11,
+      29,
+      47,
+      71,
+      101,
+      131,
+      173,
+      211
+    ]
+  },
+  "run_id": "20260721T052307Z_DD-007_af4ea130_72fb89c5fc",
+  "schema_version": 1,
+  "started_utc": "2026-07-21T05:23:07.546185Z",
+  "study_id": "DD-007",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

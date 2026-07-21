@@ -1,6 +1,8 @@
 study_id: DD-007
 title: Empirical Discovery Audits
 slug: dd-007
-phase: queued
-summary: Queued synthetic audit schema and estimator-recovery program; no real-system claims.
-public_artifacts: []
+phase: complete-bounded-study
+summary: Seeded synthetic estimator-recovery audit with explicit nonidentification and matching-error failures.
+public_artifacts:
+  - path: studies/DD-007-empirical-audits/report.md
+    description: Synthetic-only recovery and identification report

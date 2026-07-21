@@ -1,0 +1,1 @@
+{"event_id":"e-001","session_id":"s-001","timestamp":"2026-01-01T00:00:00Z","actor_id":"agent-0","candidate_id":"candidate-2","action_id":"candidate-2","source_id":"source-2","outcome":{"success":true,"observed":true},"synthetic":true}

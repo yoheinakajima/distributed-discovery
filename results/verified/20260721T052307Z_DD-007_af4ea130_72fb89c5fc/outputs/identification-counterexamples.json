@@ -1,0 +1,26 @@
+[
+  {
+    "identified_copying_rate": false,
+    "observable": "two-action agreement is one",
+    "reason": "When protocol labels are hidden, both worlds produce duplicate action pairs in every session.",
+    "world_a": {
+      "copying_rate": 1.0,
+      "protocol": "private"
+    },
+    "world_b": {
+      "copying_rate": 0.0,
+      "protocol": "consensus"
+    }
+  },
+  {
+    "identified_effective_channels": false,
+    "observable": "source IDs are missing for every event",
+    "reason": "All-null provenance is compatible with both source allocations.",
+    "world_a": {
+      "source_concentration": "one shared source"
+    },
+    "world_b": {
+      "source_concentration": "one private source per action"
+    }
+  }
+]

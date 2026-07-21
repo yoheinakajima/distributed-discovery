@@ -1008,3 +1008,24 @@ claims:
     first_added: "2026-07-21"
     last_checked: "2026-07-21"
     notes: Weak equilibrium does not establish strict incentives; zero-coefficient cases are weakly implementable only by indifference.
+  - id: DD-C-0049
+    study_id: DD-007
+    short_name: synthetic-copying-recovery-and-matching-error-failure
+    statement: In the registered DD-007 synthetic generator, the shared-target-corrected copying estimator covers the known copying rate in all six zero-action-matching-error seed conditions, while 0.1 action-matching error reduces coverage to 0.5 for copying rate 1/2 and 0 for copying rate 1 across each provenance-missingness level.
+    scope: ADR-0013's synthetic-only two-actor four-candidate generator, 240 sessions per replicate, eight fixed seeds, a normal-approximation agreement interval, private protocol labels, and the twelve registered copying/missingness/error conditions; it is not a result about real logs, unlabelled protocols, other error mechanisms, or causal copying identification.
+    claim_type: monte-carlo-estimate
+    status: verified
+    source_type: seeded-synthetic-recovery-grid-with-versioned-schema-validation
+    source_reference: results/verified/20260721T052307Z_DD-007_af4ea130_72fb89c5fc/outputs/uncertainty-calibration.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/audits/model.py, src/distributed_discovery/audits/study.py]
+    run_ids: [20260721T052307Z_DD-007_af4ea130_72fb89c5fc]
+    test_paths: [tests/unit/test_audits.py]
+    exactness_basis: null
+    rounding_rule: reported coverage is an exact count over eight fixed seeded replicates per condition
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: This synthetic recovery result is deliberately accompanied by nonidentification counterexamples and does not support a real-system claim.
