@@ -25,3 +25,9 @@ The DD-009 Architecture Atlas run is
 `verified/20260721T171249Z_DD-009_bc78d249_0c3851c41a`. It preserves all 288
 validity decisions, 20 exact architecture rows, the 12-cell bounded Pareto set,
 and a separate evaluator supporting DD-C-0054.
+
+The DD-010 DiscoveryBench run is
+`verified/20260721T183014Z_DD-010_ce930050_8ec718c242`. It preserves 15 exact
+golden tasks, 13 protocol contracts, 19 metrics, all 195 compatibility decisions,
+16 exact result vectors, separate recomputation, leakage/value corruption tests,
+and a clearly separated 8,000-draw seeded sensitivity suite supporting DD-C-0055.

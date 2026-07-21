@@ -1,7 +1,7 @@
 study_id: DD-010
 title: DiscoveryBench
 slug: dd-010
-phase: active-extension
+phase: complete-bounded-study
 summary: Versioned exact golden benchmark with enforced protocol information boundaries.
 public_artifacts:
   - path: studies/DD-010-discoverybench/report.md

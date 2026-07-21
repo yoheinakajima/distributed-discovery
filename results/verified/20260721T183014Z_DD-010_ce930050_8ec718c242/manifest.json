@@ -1,0 +1,51 @@
+{
+  "command": "make dd010-discoverybench",
+  "config_hash_sha256": "8ec718c242d76b1b7cc6d9667f76fb53c4e0d56f2e41007c54d2a447c38e016a",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-21T18:30:14.959877Z",
+  "exit_status": 0,
+  "git_commit": "ce930050561e6295209589a7ef5a9a555aa6b975",
+  "git_dirty": false,
+  "input_hashes": {
+    "src/distributed_discovery/benchmark/evaluator.py": "58d2615c6cc5e08ec0147b9780792a71e34b4809c4d7d0c1f027510923ff0ac1",
+    "src/distributed_discovery/benchmark/model.py": "1599c53aa2f2967d8b014afe69edaa39b0c47e423e9de78c1c9f124635e3c2a8",
+    "src/distributed_discovery/benchmark/study.py": "a85ca3d4353b222f323fdc82b7b4f86aa1d26cd1d49b29fb7448cadc4d5ecb3a",
+    "src/distributed_discovery/benchmark/verification.py": "526b824f120e4a602b57c36e6c9de435600591c1569285a64ecf50bddd6079dd",
+    "studies/DD-010-discoverybench/configs/benchmark.yml": "6836c7fc45227aff9d647867734361bb6d034956ff8041fa385ac028ec183d85",
+    "studies/DD-010-discoverybench/schemas/task-v1.schema.json": "5bfca5952c35823986137f4c13740d9c56d90ef1fdb0d11ac7f9bd2c0fa90d92"
+  },
+  "outputs": {
+    "outputs/benchmark-summary.json": "8d5fa6525b3b1fb6665e8e6000f92553169cacbfbfd42edba21c5e80cad1ad12",
+    "outputs/compatibility-matrix.json": "52ccd2e7c3b5e8cf417325852c63bbeadf78d8f96dae64390f3eebd3b7fa27ed",
+    "outputs/corruption-tests.json": "61e16fc58b271e8b13c22ae393fce33fc95a056a9d1aaa2498a18413aeb595f7",
+    "outputs/exact-result-matrix.json": "8a257bbc0ef58cc1c0a028611bb97d11dee80494e291a2f7cdb08e58466e500d",
+    "outputs/failures-and-exclusions.json": "01694fc315e9f4c28639218dd1750041188a98fb86c70dd30244c5a52e3a8e1a",
+    "outputs/family-profiles.json": "bbe7cb4e58433faecddd246c60036ae74d761a2164d5f032ff8caebc48148933",
+    "outputs/golden-certificate.json": "6ee1e5f570e294195c10c320edb5dfad6c13d6ae7672566e40072b67c451857b",
+    "outputs/metric-registry.json": "af86a578d5d60570b3d29d05fd687b9e18fdc80731274dce0edb8646ee9881fa",
+    "outputs/pareto-report.json": "8a257bbc0ef58cc1c0a028611bb97d11dee80494e291a2f7cdb08e58466e500d",
+    "outputs/protocol-registry.json": "bf338170cba977f55a8fa6001e1e6fd237619cb748e5f32303f65633bce1094e",
+    "outputs/simulated-results.json": "4702da6cbb40e7bd6b1834e305dd1341caeb176c46fed39dc81c3b064415430b",
+    "outputs/task-registry.json": "b7b5bf0f0fe4e13814e21560cdbf5e3b7d1fb350c3d56fb93e8d058f2752cdd1",
+    "outputs/verification.json": "a8c6b492aaa5430e16288cf2200e0e870b7489a8d4615298ae3af5dce6708845"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": [
+      101,
+      211,
+      307,
+      401,
+      503,
+      601,
+      701,
+      809
+    ]
+  },
+  "run_id": "20260721T183014Z_DD-010_ce930050_8ec718c242",
+  "schema_version": 1,
+  "started_utc": "2026-07-21T18:30:14.494937Z",
+  "study_id": "DD-010",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

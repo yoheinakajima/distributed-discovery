@@ -1,0 +1,241 @@
+[
+  {
+    "aggregation": "task-level; family profiles and Pareto vectors only",
+    "definition": "Expected union discovery or registered coverage value.",
+    "metric_id": "discovery",
+    "required_observables": [
+      "covered_outcomes"
+    ],
+    "schema_version": "discoverybench-metric-v1",
+    "scope": "registered task observables only",
+    "status": "exact-or-estimated-per-result",
+    "units": "probability-or-coverage"
+  },
+  {
+    "aggregation": "task-level; family profiles and Pareto vectors only",
+    "definition": "Expected correct actions divided by actions.",
+    "metric_id": "average-action-quality",
+    "required_observables": [
+      "actions",
+      "target_outcomes"
+    ],
+    "schema_version": "discoverybench-metric-v1",
+    "scope": "registered task observables only",
+    "status": "exact-or-estimated-per-result",
+    "units": "probability"
+  },
+  {
+    "aggregation": "task-level; family profiles and Pareto vectors only",
+    "definition": "Expected number of distinct actions.",
+    "metric_id": "distinct-actions",
+    "required_observables": [
+      "actions"
+    ],
+    "schema_version": "discoverybench-metric-v1",
+    "scope": "registered task observables only",
+    "status": "exact-or-estimated-per-result",
+    "units": "actions"
+  },
+  {
+    "aggregation": "task-level; family profiles and Pareto vectors only",
+    "definition": "Declared weighted union coverage.",
+    "metric_id": "weighted-coverage",
+    "required_observables": [
+      "coverage_sets",
+      "weights"
+    ],
+    "schema_version": "discoverybench-metric-v1",
+    "scope": "registered task observables only",
+    "status": "exact-or-estimated-per-result",
+    "units": "coverage-units"
+  },
+  {
+    "aggregation": "task-level; family profiles and Pareto vectors only",
+    "definition": "Expected successful hits beyond the first.",
+    "metric_id": "redundant-hits",
+    "required_observables": [
+      "target_hits"
+    ],
+    "schema_version": "discoverybench-metric-v1",
+    "scope": "registered task observables only",
+    "status": "exact-or-estimated-per-result",
+    "units": "hits"
+  },
+  {
+    "aggregation": "task-level; family profiles and Pareto vectors only",
+    "definition": "Declared concentration of action shares.",
+    "metric_id": "action-concentration",
+    "required_observables": [
+      "actions"
+    ],
+    "schema_version": "discoverybench-metric-v1",
+    "scope": "registered task observables only",
+    "status": "exact-or-estimated-per-result",
+    "units": "index"
+  },
+  {
+    "aggregation": "task-level; family profiles and Pareto vectors only",
+    "definition": "Declared concentration of source exposure.",
+    "metric_id": "source-concentration",
+    "required_observables": [
+      "source_ids"
+    ],
+    "schema_version": "discoverybench-metric-v1",
+    "scope": "registered task observables only",
+    "status": "exact-or-estimated-per-result",
+    "units": "index"
+  },
+  {
+    "aggregation": "task-level; family profiles and Pareto vectors only",
+    "definition": "Model-defined reciprocal source concentration.",
+    "metric_id": "effective-channels",
+    "required_observables": [
+      "source_ids",
+      "channel_definition"
+    ],
+    "schema_version": "discoverybench-metric-v1",
+    "scope": "registered task observables only",
+    "status": "exact-or-estimated-per-result",
+    "units": "channels"
+  },
+  {
+    "aggregation": "task-level; family profiles and Pareto vectors only",
+    "definition": "Registered frontier minus protocol discovery.",
+    "metric_id": "protocol-loss",
+    "required_observables": [
+      "frontier",
+      "discovery"
+    ],
+    "schema_version": "discoverybench-metric-v1",
+    "scope": "registered task observables only",
+    "status": "exact-or-estimated-per-result",
+    "units": "objective-units"
+  },
+  {
+    "aggregation": "task-level; family profiles and Pareto vectors only",
+    "definition": "Smallest action budget recovering the comparator.",
+    "metric_id": "recovery-budget",
+    "required_observables": [
+      "budget_frontier",
+      "comparator"
+    ],
+    "schema_version": "discoverybench-metric-v1",
+    "scope": "registered task observables only",
+    "status": "exact-or-estimated-per-result",
+    "units": "actions"
+  },
+  {
+    "aggregation": "task-level; family profiles and Pareto vectors only",
+    "definition": "Expected declared source-acquisition cost.",
+    "metric_id": "information-cost",
+    "required_observables": [
+      "source_choices",
+      "costs"
+    ],
+    "schema_version": "discoverybench-metric-v1",
+    "scope": "registered task observables only",
+    "status": "exact-or-estimated-per-result",
+    "units": "payoff-units"
+  },
+  {
+    "aggregation": "task-level; family profiles and Pareto vectors only",
+    "definition": "Expected number of actions used.",
+    "metric_id": "expected-actions",
+    "required_observables": [
+      "actions"
+    ],
+    "schema_version": "discoverybench-metric-v1",
+    "scope": "registered task observables only",
+    "status": "exact-or-estimated-per-result",
+    "units": "actions"
+  },
+  {
+    "aggregation": "task-level; family profiles and Pareto vectors only",
+    "definition": "Expected number of decision rounds.",
+    "metric_id": "expected-rounds",
+    "required_observables": [
+      "rounds"
+    ],
+    "schema_version": "discoverybench-metric-v1",
+    "scope": "registered task observables only",
+    "status": "exact-or-estimated-per-result",
+    "units": "rounds"
+  },
+  {
+    "aggregation": "task-level; family profiles and Pareto vectors only",
+    "definition": "Expected declared private payoff.",
+    "metric_id": "private-payoff",
+    "required_observables": [
+      "rewards",
+      "costs"
+    ],
+    "schema_version": "discoverybench-metric-v1",
+    "scope": "registered task observables only",
+    "status": "exact-or-estimated-per-result",
+    "units": "payoff-units"
+  },
+  {
+    "aggregation": "task-level; family profiles and Pareto vectors only",
+    "definition": "Discovery value net of declared information and transfer costs.",
+    "metric_id": "social-net-value",
+    "required_observables": [
+      "discovery",
+      "information_cost",
+      "transfer_budget"
+    ],
+    "schema_version": "discoverybench-metric-v1",
+    "scope": "registered task observables only",
+    "status": "exact-or-estimated-per-result",
+    "units": "payoff-units"
+  },
+  {
+    "aggregation": "task-level; family profiles and Pareto vectors only",
+    "definition": "Expected external transfer budget.",
+    "metric_id": "transfer-budget",
+    "required_observables": [
+      "transfers"
+    ],
+    "schema_version": "discoverybench-metric-v1",
+    "scope": "registered task observables only",
+    "status": "exact-or-estimated-per-result",
+    "units": "payoff-units"
+  },
+  {
+    "aggregation": "task-level; family profiles and Pareto vectors only",
+    "definition": "Whether truthful reporting satisfies the registered incentive condition.",
+    "metric_id": "truthfulness",
+    "required_observables": [
+      "reports",
+      "deviations"
+    ],
+    "schema_version": "discoverybench-metric-v1",
+    "scope": "registered task observables only",
+    "status": "exact-or-estimated-per-result",
+    "units": "boolean-or-margin"
+  },
+  {
+    "aggregation": "task-level; family profiles and Pareto vectors only",
+    "definition": "Whether recommended action satisfies the registered incentive condition.",
+    "metric_id": "obedience",
+    "required_observables": [
+      "recommendations",
+      "deviations"
+    ],
+    "schema_version": "discoverybench-metric-v1",
+    "scope": "registered task observables only",
+    "status": "exact-or-estimated-per-result",
+    "units": "boolean-or-margin"
+  },
+  {
+    "aggregation": "task-level; family profiles and Pareto vectors only",
+    "definition": "Minimum truthful/obedient payoff advantage over registered deviations.",
+    "metric_id": "strict-margin",
+    "required_observables": [
+      "deviation_payoffs"
+    ],
+    "schema_version": "discoverybench-metric-v1",
+    "scope": "registered task observables only",
+    "status": "exact-or-estimated-per-result",
+    "units": "payoff-units"
+  }
+]

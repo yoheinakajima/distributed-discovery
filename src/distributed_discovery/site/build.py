@@ -432,7 +432,7 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         f'<tr data-task-family="{html.escape(str(task["task_family"]))}"><th scope="row">{html.escape(str(task["task_id"]))}</th><td>{html.escape(str(task["task_family"]))}</td><td>{html.escape(", ".join(task["compatible_protocols"]))}</td><td>{html.escape(", ".join(task["reference_claims"]))}</td></tr>'
         for task in tasks
     )
-    task_body = f"""<p class="eyebrow"><a href="../benchmark.html">DiscoveryBench</a> / Tasks</p><h1>Golden tasks</h1><p class="lede">Every row declares evidence, information, permissions, objectives, evaluator status, and provenance in the downloadable registry. The table is complete without JavaScript.</p><table class="matrix"><thead><tr><th>Task</th><th>Family</th><th>Compatible protocol</th><th>Claims</th></tr></thead><tbody>{task_rows}</tbody></table>"""
+    task_body = f"""<p class="eyebrow"><a href="../benchmark.html">DiscoveryBench</a> / Tasks</p><h1>Golden tasks</h1><p class="lede">Every row declares evidence, information, permissions, objectives, evaluator status, and provenance in the downloadable registry. The table is complete without JavaScript.</p><table class="matrix"><caption>DiscoveryBench exact golden tasks</caption><thead><tr><th>Task</th><th>Family</th><th>Compatible protocol</th><th>Claims</th></tr></thead><tbody>{task_rows}</tbody></table>"""
     _write(
         output,
         "benchmark/tasks.html",
@@ -448,7 +448,7 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         f'<tr><th scope="row">{html.escape(str(item["protocol_id"]))}</th><td>{html.escape(str(item["description"]))}</td><td>{len(item["capabilities"])}</td><td>{"enabled" if item["enabled"] else "disabled"}</td></tr>'
         for item in protocols
     )
-    protocol_body = f"""<p class="eyebrow"><a href="../benchmark.html">DiscoveryBench</a> / Protocols</p><h1>Protocol contracts</h1><p class="lede">Protocols receive immutable allow-list views only. External adapters are disabled, credential-free, and never executed in CI.</p><table class="matrix"><thead><tr><th>Protocol</th><th>Definition</th><th>Capabilities</th><th>Status</th></tr></thead><tbody>{protocol_rows}</tbody></table>"""
+    protocol_body = f"""<p class="eyebrow"><a href="../benchmark.html">DiscoveryBench</a> / Protocols</p><h1>Protocol contracts</h1><p class="lede">Protocols receive immutable allow-list views only. External adapters are disabled, credential-free, and never executed in CI.</p><table class="matrix"><caption>Built-in protocol capability contracts</caption><thead><tr><th>Protocol</th><th>Definition</th><th>Capabilities</th><th>Status</th></tr></thead><tbody>{protocol_rows}</tbody></table>"""
     _write(
         output,
         "benchmark/protocols.html",
@@ -464,7 +464,7 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         f'<tr><th scope="row">{html.escape(str(item["metric_id"]))}</th><td>{html.escape(str(item["definition"]))}</td><td>{html.escape(str(item["units"]))}</td><td>{html.escape(", ".join(item["required_observables"]))}</td></tr>'
         for item in metrics
     )
-    metric_body = f"""<p class="eyebrow"><a href="../benchmark.html">DiscoveryBench</a> / Metrics</p><h1>Metric registry</h1><p class="lede">A metric is omitted when its required observables are absent. Aggregation preserves task vectors and family profiles; no composite score is active.</p><table class="matrix"><thead><tr><th>Metric</th><th>Definition</th><th>Units</th><th>Required observables</th></tr></thead><tbody>{metric_rows}</tbody></table>"""
+    metric_body = f"""<p class="eyebrow"><a href="../benchmark.html">DiscoveryBench</a> / Metrics</p><h1>Metric registry</h1><p class="lede">A metric is omitted when its required observables are absent. Aggregation preserves task vectors and family profiles; no composite score is active.</p><table class="matrix"><caption>Versioned benchmark metrics and required observables</caption><thead><tr><th>Metric</th><th>Definition</th><th>Units</th><th>Required observables</th></tr></thead><tbody>{metric_rows}</tbody></table>"""
     _write(
         output,
         "benchmark/metrics.html",
@@ -480,7 +480,7 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         f'<tr data-task="{html.escape(str(row["task_id"]))}" data-protocol="{html.escape(str(row["protocol_id"]))}"><th scope="row">{html.escape(str(row["task_id"]))}</th><td>{html.escape(str(row["protocol_id"]))}</td><td><code>{html.escape(json.dumps(row["metrics"], sort_keys=True))}</code></td><td>{html.escape(", ".join(row["reference_claims"]))}</td></tr>'
         for row in results
     )
-    results_body = f"""<p class="eyebrow"><a href="../benchmark.html">DiscoveryBench</a> / Results</p><h1>Exact result vectors</h1><p class="lede">All {len(results)} compatible pairs reproduce exact registered fixtures. The other {sum(not row["compatible"] for row in compatibility)} task/protocol pairs are explicit exclusions, not failures.</p><p>{len(pareto)} rows remain in scoped task-level Pareto comparisons. Missing metrics are never imputed.</p><table class="matrix"><thead><tr><th>Task</th><th>Protocol</th><th>Metric vector</th><th>Claims</th></tr></thead><tbody>{result_rows}</tbody></table>"""
+    results_body = f"""<p class="eyebrow"><a href="../benchmark.html">DiscoveryBench</a> / Results</p><h1>Exact result vectors</h1><p class="lede">All {len(results)} compatible pairs reproduce exact registered fixtures. The other {sum(not row["compatible"] for row in compatibility)} task/protocol pairs are explicit exclusions, not failures.</p><p>{len(pareto)} rows remain in scoped task-level Pareto comparisons. Missing metrics are never imputed.</p><table class="matrix"><caption>Exact compatible task and protocol result vectors</caption><thead><tr><th>Task</th><th>Protocol</th><th>Metric vector</th><th>Claims</th></tr></thead><tbody>{result_rows}</tbody></table>"""
     _write(
         output,
         "benchmark/results.html",
@@ -496,7 +496,7 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         f'<option value="{html.escape(str(task["task_id"]))}">{html.escape(str(task["task_id"]))} — {html.escape(str(task["task_family"]))}</option>'
         for task in tasks
     )
-    lab_body = f"""<p class="eyebrow"><a href="../labs.html">Labs</a> / DiscoveryBench</p><h1>Benchmark Lab</h1><p class="lede">Filter exact golden rows and inspect provenance. There are no submissions, accounts, external calls, or leaderboard.</p><section class="lab" data-benchmark-lab><label for="benchmark-task">Task</label><select id="benchmark-task"><option value="all">All tasks</option>{options}</select><p id="benchmark-status" class="callout" aria-live="polite">Showing all {len(results)} exact compatible rows.</p></section><noscript><p class="callout">JavaScript is off. Every exact row remains visible in the table.</p></noscript><table class="matrix"><thead><tr><th>Task</th><th>Protocol</th><th>Metric vector</th><th>Provenance</th></tr></thead><tbody>{result_rows}</tbody></table><p><a href="../data/benchmark/compatibility.json">Download compatibility JSON</a> · <a href="../data/benchmark/results.json">Download result JSON</a></p>"""
+    lab_body = f"""<p class="eyebrow"><a href="../labs.html">Labs</a> / DiscoveryBench</p><h1>Benchmark Lab</h1><p class="lede">Filter exact golden rows and inspect provenance. There are no submissions, accounts, external calls, or leaderboard.</p><section class="lab" data-benchmark-lab><label for="benchmark-task">Task</label><select id="benchmark-task"><option value="all">All tasks</option>{options}</select><p id="benchmark-status" class="callout" aria-live="polite">Showing all {len(results)} exact compatible rows.</p></section><noscript><p class="callout">JavaScript is off. Every exact row remains visible in the table.</p></noscript><table class="matrix"><caption>Filterable exact benchmark result vectors</caption><thead><tr><th>Task</th><th>Protocol</th><th>Metric vector</th><th>Provenance</th></tr></thead><tbody>{result_rows}</tbody></table><p><a href="../data/benchmark/compatibility.json">Download compatibility JSON</a> · <a href="../data/benchmark/results.json">Download result JSON</a></p>"""
     _write(
         output,
         "labs/benchmark.html",
@@ -528,6 +528,7 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
     for name, value in data.items():
         _write(output, f"data/benchmark/{name}", json.dumps(value, indent=2, sort_keys=True) + "\n")
     schema = root / "studies/DD-010-discoverybench/schemas/task-v1.schema.json"
+    (output / "downloads").mkdir(exist_ok=True)
     shutil.copy2(schema, output / "downloads/discoverybench-task-v1.schema.json")
     return {"run_id": run_id, "summary": summary}
 

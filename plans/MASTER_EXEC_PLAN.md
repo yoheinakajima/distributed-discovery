@@ -31,9 +31,10 @@ passes.
 
 Progress:
 
-- [ ] DD-010 issue, registration, schema, capability boundary, golden tasks,
+- [x] DD-010 issue, registration, schema, capability boundary, golden tasks,
   protocols, metrics, CLI, exact run, verifier, claim audit, site, merge, CI,
-  Pages, and live routes.
+  Pages, and live routes. Local evidence and acceptance are complete in primary
+  run `20260721T183014Z_DD-010_ce930050_8ec718c242`; PR/CI/Pages gates remain.
 - [ ] DD-011 issue, bounded design, literature record, hypotheses/estimands,
   randomization, synthetic power run, verifier, materials, ethics boundary,
   site, merge, CI, Pages, and live routes.

@@ -1,0 +1,1172 @@
+[
+  {
+    "compatible": true,
+    "protocol_id": "blind-distinct",
+    "reason": "declared exact fixture",
+    "task_id": "DB-G01"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "private-clue-following",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G01"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "consensus",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G01"
+  },
+  {
+    "compatible": true,
+    "protocol_id": "pooled-planner",
+    "reason": "declared exact fixture",
+    "task_id": "DB-G01"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "anonymous-market",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G01"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "posterior-sampling",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G01"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "ex-ante-role-policy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G01"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sequential-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G01"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "marginal-coverage-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G01"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sole-rescue-response",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G01"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006a-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G01"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006b-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G01"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "registered-atlas-architecture",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G01"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "blind-distinct",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G02"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "private-clue-following",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G02"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "consensus",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G02"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "pooled-planner",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G02"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "anonymous-market",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G02"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "posterior-sampling",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G02"
+  },
+  {
+    "compatible": true,
+    "protocol_id": "ex-ante-role-policy",
+    "reason": "declared exact fixture",
+    "task_id": "DB-G02"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sequential-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G02"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "marginal-coverage-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G02"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sole-rescue-response",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G02"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006a-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G02"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006b-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G02"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "registered-atlas-architecture",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G02"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "blind-distinct",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G03"
+  },
+  {
+    "compatible": true,
+    "protocol_id": "private-clue-following",
+    "reason": "declared exact fixture",
+    "task_id": "DB-G03"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "consensus",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G03"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "pooled-planner",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G03"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "anonymous-market",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G03"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "posterior-sampling",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G03"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "ex-ante-role-policy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G03"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sequential-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G03"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "marginal-coverage-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G03"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sole-rescue-response",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G03"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006a-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G03"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006b-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G03"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "registered-atlas-architecture",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G03"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "blind-distinct",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G04"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "private-clue-following",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G04"
+  },
+  {
+    "compatible": true,
+    "protocol_id": "consensus",
+    "reason": "declared exact fixture",
+    "task_id": "DB-G04"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "pooled-planner",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G04"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "anonymous-market",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G04"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "posterior-sampling",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G04"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "ex-ante-role-policy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G04"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sequential-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G04"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "marginal-coverage-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G04"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sole-rescue-response",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G04"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006a-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G04"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006b-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G04"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "registered-atlas-architecture",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G04"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "blind-distinct",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G05"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "private-clue-following",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G05"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "consensus",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G05"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "pooled-planner",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G05"
+  },
+  {
+    "compatible": true,
+    "protocol_id": "anonymous-market",
+    "reason": "declared exact fixture",
+    "task_id": "DB-G05"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "posterior-sampling",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G05"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "ex-ante-role-policy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G05"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sequential-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G05"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "marginal-coverage-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G05"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sole-rescue-response",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G05"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006a-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G05"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006b-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G05"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "registered-atlas-architecture",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G05"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "blind-distinct",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G06"
+  },
+  {
+    "compatible": true,
+    "protocol_id": "private-clue-following",
+    "reason": "declared exact fixture",
+    "task_id": "DB-G06"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "consensus",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G06"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "pooled-planner",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G06"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "anonymous-market",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G06"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "posterior-sampling",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G06"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "ex-ante-role-policy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G06"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sequential-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G06"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "marginal-coverage-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G06"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sole-rescue-response",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G06"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006a-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G06"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006b-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G06"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "registered-atlas-architecture",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G06"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "blind-distinct",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G07"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "private-clue-following",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G07"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "consensus",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G07"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "pooled-planner",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G07"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "anonymous-market",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G07"
+  },
+  {
+    "compatible": true,
+    "protocol_id": "posterior-sampling",
+    "reason": "declared exact fixture",
+    "task_id": "DB-G07"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "ex-ante-role-policy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G07"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sequential-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G07"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "marginal-coverage-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G07"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sole-rescue-response",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G07"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006a-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G07"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006b-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G07"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "registered-atlas-architecture",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G07"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "blind-distinct",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G08"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "private-clue-following",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G08"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "consensus",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G08"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "pooled-planner",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G08"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "anonymous-market",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G08"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "posterior-sampling",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G08"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "ex-ante-role-policy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G08"
+  },
+  {
+    "compatible": true,
+    "protocol_id": "sequential-greedy",
+    "reason": "declared exact fixture",
+    "task_id": "DB-G08"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "marginal-coverage-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G08"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sole-rescue-response",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G08"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006a-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G08"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006b-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G08"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "registered-atlas-architecture",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G08"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "blind-distinct",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G09"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "private-clue-following",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G09"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "consensus",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G09"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "pooled-planner",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G09"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "anonymous-market",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G09"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "posterior-sampling",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G09"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "ex-ante-role-policy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G09"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sequential-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G09"
+  },
+  {
+    "compatible": true,
+    "protocol_id": "marginal-coverage-greedy",
+    "reason": "declared exact fixture",
+    "task_id": "DB-G09"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sole-rescue-response",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G09"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006a-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G09"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006b-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G09"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "registered-atlas-architecture",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G09"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "blind-distinct",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G10"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "private-clue-following",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G10"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "consensus",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G10"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "pooled-planner",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G10"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "anonymous-market",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G10"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "posterior-sampling",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G10"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "ex-ante-role-policy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G10"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sequential-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G10"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "marginal-coverage-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G10"
+  },
+  {
+    "compatible": true,
+    "protocol_id": "sole-rescue-response",
+    "reason": "declared exact fixture",
+    "task_id": "DB-G10"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006a-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G10"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006b-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G10"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "registered-atlas-architecture",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G10"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "blind-distinct",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G11"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "private-clue-following",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G11"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "consensus",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G11"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "pooled-planner",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G11"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "anonymous-market",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G11"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "posterior-sampling",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G11"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "ex-ante-role-policy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G11"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sequential-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G11"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "marginal-coverage-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G11"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sole-rescue-response",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G11"
+  },
+  {
+    "compatible": true,
+    "protocol_id": "dd006a-mechanism",
+    "reason": "declared exact fixture",
+    "task_id": "DB-G11"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006b-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G11"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "registered-atlas-architecture",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G11"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "blind-distinct",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G12"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "private-clue-following",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G12"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "consensus",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G12"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "pooled-planner",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G12"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "anonymous-market",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G12"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "posterior-sampling",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G12"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "ex-ante-role-policy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G12"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sequential-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G12"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "marginal-coverage-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G12"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sole-rescue-response",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G12"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006a-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G12"
+  },
+  {
+    "compatible": true,
+    "protocol_id": "dd006b-mechanism",
+    "reason": "declared exact fixture",
+    "task_id": "DB-G12"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "registered-atlas-architecture",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G12"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "blind-distinct",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G13"
+  },
+  {
+    "compatible": true,
+    "protocol_id": "private-clue-following",
+    "reason": "declared exact fixture",
+    "task_id": "DB-G13"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "consensus",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G13"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "pooled-planner",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G13"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "anonymous-market",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G13"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "posterior-sampling",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G13"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "ex-ante-role-policy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G13"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sequential-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G13"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "marginal-coverage-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G13"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sole-rescue-response",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G13"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006a-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G13"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006b-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G13"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "registered-atlas-architecture",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G13"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "blind-distinct",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G14"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "private-clue-following",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G14"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "consensus",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G14"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "pooled-planner",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G14"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "anonymous-market",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G14"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "posterior-sampling",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G14"
+  },
+  {
+    "compatible": true,
+    "protocol_id": "ex-ante-role-policy",
+    "reason": "declared exact fixture",
+    "task_id": "DB-G14"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sequential-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G14"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "marginal-coverage-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G14"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sole-rescue-response",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G14"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006a-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G14"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006b-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G14"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "registered-atlas-architecture",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G14"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "blind-distinct",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G15"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "private-clue-following",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G15"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "consensus",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G15"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "pooled-planner",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G15"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "anonymous-market",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G15"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "posterior-sampling",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G15"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "ex-ante-role-policy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G15"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sequential-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G15"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "marginal-coverage-greedy",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G15"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "sole-rescue-response",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G15"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006a-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G15"
+  },
+  {
+    "compatible": false,
+    "protocol_id": "dd006b-mechanism",
+    "reason": "protocol/task contract not registered",
+    "task_id": "DB-G15"
+  },
+  {
+    "compatible": true,
+    "protocol_id": "registered-atlas-architecture",
+    "reason": "declared exact fixture",
+    "task_id": "DB-G15"
+  }
+]

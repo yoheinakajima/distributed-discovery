@@ -6,7 +6,7 @@
     },
     "evidence-status-table.tex": {
       "generator": "distributed_discovery.papers.build_three_results",
-      "sha256": "94143416dffe71264017ca6467e9307b2154a0ba486fc21d4b0fdfcd5ba7befb"
+      "sha256": "e0190fdc902386fa5b700bdef76eafdd36bfb27319f6be0c4e08ab03a1535bba"
     },
     "heterogeneous-sources-table.tex": {
       "generator": "distributed_discovery.papers.build_three_results",
@@ -28,7 +28,7 @@
   "generator": "distributed_discovery.papers.build_three_results",
   "inputs": {
     "bibliography/references.bib": "7b2b89ae14a2234798803bde57bca55c2d907f1a7cdcc2efe69c6144739d27f0",
-    "claims/claims.yml": "f4cfa662e412582657ede3bc5ae7a5bc60b52996d198e9addbc6bc782d5688a0",
+    "claims/claims.yml": "2241903048b5d1fbcf28c2346b7fe8b0b239f1cbafb4949f94ab62143b241228",
     "results/verified/20260720T200447Z_DD-001_6eb12861_ba766d1eba/outputs/tiny-phase-grid.csv": "e7112e7dd471a4fa302bbe5336a367dd166ff497bf8ab9095b6526635fe4851e",
     "results/verified/20260720T221139Z_DD-001_b1d8d431_40bf5b06a5/outputs/canonical-state-space.json": "7a416f54e6f8c81a1f7ca29bd99c44ab648994e282f29ff5615e6ba9eddb9e8f",
     "results/verified/20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1/outputs/anti-informative-counterexamples.json": "da2d2a8b6854683c85062a1918b3222959e17230e767b2553304a736684870f6",

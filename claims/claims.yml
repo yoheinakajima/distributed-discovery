@@ -1134,3 +1134,24 @@ claims:
     first_added: "2026-07-21"
     last_checked: "2026-07-21"
     notes: Incentive labels are displayed but excluded from the Pareto ordering because protocol control, selected equilibrium, weak implementation, and strict implementation are not one cardinal scale.
+  - id: DD-C-0055
+    study_id: DD-010
+    short_name: discoverybench-golden-suite-reproduction
+    statement: DiscoveryBench v1 contains 15 exact golden tasks, 13 capability-declared built-in protocols, and 19 versioned metrics; all 16 declared compatible task/protocol pairs exactly reproduce their registered project values, while 179 incompatible pairs remain explicit exclusions and adversarial hidden-information access is rejected.
+    scope: The fifteen finite task families, declared compatible protocols, exact metric vectors, capability allow lists, and source claim/run mappings in the DD-010 primary configuration; this is a regression benchmark for registered fixtures, not a universal score, hosted leaderboard, public submission service, or predictor of real-world agent quality.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exact-golden-result-matrix-with-separate-formula-fixture-and-capability-verifier
+    source_reference: results/verified/20260721T183014Z_DD-010_ce930050_8ec718c242/outputs/golden-certificate.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/benchmark/model.py, src/distributed_discovery/benchmark/evaluator.py, src/distributed_discovery/benchmark/verification.py]
+    run_ids: [20260721T183014Z_DD-010_ce930050_8ec718c242]
+    test_paths: [tests/unit/test_discoverybench.py, tests/integration/test_discoverybench_cli.py]
+    exactness_basis: all fifteen versioned task contracts validate; every one of the 195 candidate pairs is classified; all sixteen compatible exact result vectors are recomputed by a separate verifier using rational identities and independently checked fixtures; immutable capability views reject seven hidden evaluator/provenance fields; altered task values and leaked target capability are rejected.
+    rounding_rule: exact fractions are authoritative; the separate seeded sensitivity suite is reported to eight decimals and does not support this exact claim
+    dependencies: [DD-C-0003, DD-C-0038, DD-C-0040, DD-C-0043, DD-C-0045, DD-C-0046, DD-C-0048, DD-C-0050, DD-C-0051, DD-C-0052, DD-C-0053, DD-C-0054]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: The optional synthetic suite uses eight fixed seeds and 8000 total Bernoulli draws; its mean 0.65737500 is an estimated calibration diagnostic, not an exact or empirical result.

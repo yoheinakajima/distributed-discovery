@@ -1,5 +1,5 @@
 study_id: DD-010
-status: active-execution
-evidence_status: implementation-and-clean-primary-run-pending
-next_action: execute the clean exact golden suite and independent verifier
-updated_utc: 2026-07-21T18:20:00Z
+status: complete-bounded-study
+evidence_status: exact-golden-suite-independent-recomputation-and-capability-corruption-audit
+next_action: preserve the v1 golden regressions; new task families or composite weights require a new versioned registration
+updated_utc: 2026-07-21T18:30:15Z

@@ -1,0 +1,425 @@
+[
+  {
+    "decision": {
+      "decision": "blind-distinct:finite registered search actions",
+      "declared_metadata": {
+        "schema_version": "discoverybench-protocol-v1"
+      },
+      "protocol_id": "blind-distinct",
+      "task_id": "DB-G01"
+    },
+    "exact": true,
+    "metrics": {
+      "discovery": "1/2",
+      "distinct-actions": "8"
+    },
+    "protocol_id": "blind-distinct",
+    "reference_claims": [
+      "DD-C-0003",
+      "DD-C-0006",
+      "DD-C-0008"
+    ],
+    "reference_runs": [
+      "20260720T190336Z_DD-000_32dd1c32_217c602fa0",
+      "20260721T012208Z_DD-000_8e4b55e2_e8321d1048"
+    ],
+    "schema_version": "discoverybench-result-v1",
+    "task_family": "canonical-atomic-boxes",
+    "task_id": "DB-G01"
+  },
+  {
+    "decision": {
+      "decision": "pooled-planner:finite registered search actions",
+      "declared_metadata": {
+        "schema_version": "discoverybench-protocol-v1"
+      },
+      "protocol_id": "pooled-planner",
+      "task_id": "DB-G01"
+    },
+    "exact": true,
+    "metrics": {
+      "discovery": "860391662035297/1001129150390625",
+      "recovery-budget": 7
+    },
+    "protocol_id": "pooled-planner",
+    "reference_claims": [
+      "DD-C-0003",
+      "DD-C-0006",
+      "DD-C-0008"
+    ],
+    "reference_runs": [
+      "20260720T190336Z_DD-000_32dd1c32_217c602fa0",
+      "20260721T012208Z_DD-000_8e4b55e2_e8321d1048"
+    ],
+    "schema_version": "discoverybench-result-v1",
+    "task_family": "canonical-atomic-boxes",
+    "task_id": "DB-G01"
+  },
+  {
+    "decision": {
+      "decision": "ex-ante-role-policy:finite registered search actions",
+      "declared_metadata": {
+        "schema_version": "discoverybench-protocol-v1"
+      },
+      "protocol_id": "ex-ante-role-policy",
+      "task_id": "DB-G02"
+    },
+    "exact": true,
+    "metrics": {
+      "discovery": "7/10",
+      "protocol-loss": "0"
+    },
+    "protocol_id": "ex-ante-role-policy",
+    "reference_claims": [
+      "DD-C-0021"
+    ],
+    "reference_runs": [
+      "20260720T200447Z_DD-001_6eb12861_ba766d1eba"
+    ],
+    "schema_version": "discoverybench-result-v1",
+    "task_family": "private-team-role-counterexample",
+    "task_id": "DB-G02"
+  },
+  {
+    "decision": {
+      "decision": "private-clue-following:finite registered search actions",
+      "declared_metadata": {
+        "schema_version": "discoverybench-protocol-v1"
+      },
+      "protocol_id": "private-clue-following",
+      "task_id": "DB-G03"
+    },
+    "exact": true,
+    "metrics": {
+      "discovery": "325089/390625",
+      "protocol-loss": "0"
+    },
+    "protocol_id": "private-clue-following",
+    "reference_claims": [
+      "DD-C-0038"
+    ],
+    "reference_runs": [
+      "20260721T022739Z_DD-001_358cb1eb_cd16846ba5"
+    ],
+    "schema_version": "discoverybench-result-v1",
+    "task_family": "canonical-private-team-optimum",
+    "task_id": "DB-G03"
+  },
+  {
+    "decision": {
+      "decision": "consensus:finite registered search actions",
+      "declared_metadata": {
+        "schema_version": "discoverybench-protocol-v1"
+      },
+      "protocol_id": "consensus",
+      "task_id": "DB-G04"
+    },
+    "exact": true,
+    "metrics": {
+      "discovery": "5/9"
+    },
+    "protocol_id": "consensus",
+    "reference_claims": [
+      "DD-C-0030"
+    ],
+    "reference_runs": [
+      "20260720T225848Z_DD-002_94607423_e29b1460ae"
+    ],
+    "schema_version": "discoverybench-result-v1",
+    "task_family": "deterministic-disclosure-fixture",
+    "task_id": "DB-G04"
+  },
+  {
+    "decision": {
+      "decision": "anonymous-market:finite registered search actions",
+      "declared_metadata": {
+        "schema_version": "discoverybench-protocol-v1"
+      },
+      "protocol_id": "anonymous-market",
+      "task_id": "DB-G05"
+    },
+    "exact": true,
+    "metrics": {
+      "discovery": "171/308",
+      "protocol-loss": "1/2772"
+    },
+    "protocol_id": "anonymous-market",
+    "reference_claims": [
+      "DD-C-0040",
+      "DD-C-0041"
+    ],
+    "reference_runs": [
+      "20260721T025802Z_DD-002_73a85c71_b0e5b6dc49"
+    ],
+    "schema_version": "discoverybench-result-v1",
+    "task_family": "six-rule-selection-fixture",
+    "task_id": "DB-G05"
+  },
+  {
+    "decision": {
+      "decision": "private-clue-following:finite registered search actions",
+      "declared_metadata": {
+        "schema_version": "discoverybench-protocol-v1"
+      },
+      "protocol_id": "private-clue-following",
+      "task_id": "DB-G06"
+    },
+    "exact": true,
+    "metrics": {
+      "discovery": "8/9",
+      "effective-channels": "8/5"
+    },
+    "protocol_id": "private-clue-following",
+    "reference_claims": [
+      "DD-C-0032",
+      "DD-C-0033"
+    ],
+    "reference_runs": [
+      "20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1"
+    ],
+    "schema_version": "discoverybench-result-v1",
+    "task_family": "homogeneous-source-network",
+    "task_id": "DB-G06"
+  },
+  {
+    "decision": {
+      "decision": "posterior-sampling:finite registered search actions",
+      "declared_metadata": {
+        "schema_version": "discoverybench-protocol-v1"
+      },
+      "protocol_id": "posterior-sampling",
+      "task_id": "DB-G07"
+    },
+    "exact": true,
+    "metrics": {
+      "discovery": "3/4",
+      "source-concentration": "17/25"
+    },
+    "protocol_id": "posterior-sampling",
+    "reference_claims": [
+      "DD-C-0043",
+      "DD-C-0044"
+    ],
+    "reference_runs": [
+      "20260721T032358Z_DD-003_84238b76_2cbc13e66a"
+    ],
+    "schema_version": "discoverybench-result-v1",
+    "task_family": "heterogeneous-source-moment-counterexample",
+    "task_id": "DB-G07"
+  },
+  {
+    "decision": {
+      "decision": "sequential-greedy:finite registered search actions",
+      "declared_metadata": {
+        "schema_version": "discoverybench-protocol-v1"
+      },
+      "protocol_id": "sequential-greedy",
+      "task_id": "DB-G08"
+    },
+    "exact": true,
+    "metrics": {
+      "discovery": "7/10",
+      "expected-actions": "109/40",
+      "expected-rounds": "109/40"
+    },
+    "protocol_id": "sequential-greedy",
+    "reference_claims": [
+      "DD-C-0045"
+    ],
+    "reference_runs": [
+      "20260721T050038Z_DD-004_8ab02e7f_71d84de7c4"
+    ],
+    "schema_version": "discoverybench-result-v1",
+    "task_family": "perfect-elimination-sequential",
+    "task_id": "DB-G08"
+  },
+  {
+    "decision": {
+      "decision": "marginal-coverage-greedy:finite registered search actions",
+      "declared_metadata": {
+        "schema_version": "discoverybench-protocol-v1"
+      },
+      "protocol_id": "marginal-coverage-greedy",
+      "task_id": "DB-G09"
+    },
+    "exact": true,
+    "metrics": {
+      "distinct-actions": "2",
+      "weighted-coverage": "4"
+    },
+    "protocol_id": "marginal-coverage-greedy",
+    "reference_claims": [
+      "DD-C-0046"
+    ],
+    "reference_runs": [
+      "20260721T050706Z_DD-005_be3b544c_98698dee2f"
+    ],
+    "schema_version": "discoverybench-result-v1",
+    "task_family": "overlapping-weighted-coverage",
+    "task_id": "DB-G09"
+  },
+  {
+    "decision": {
+      "decision": "sole-rescue-response:finite registered search actions",
+      "declared_metadata": {
+        "schema_version": "discoverybench-protocol-v1"
+      },
+      "protocol_id": "sole-rescue-response",
+      "task_id": "DB-G10"
+    },
+    "exact": true,
+    "metrics": {
+      "discovery": "8/9",
+      "obedience": true,
+      "strict-margin": "0",
+      "transfer-budget": "0",
+      "truthfulness": true
+    },
+    "protocol_id": "sole-rescue-response",
+    "reference_claims": [
+      "DD-C-0048"
+    ],
+    "reference_runs": [
+      "20260721T051457Z_DD-006_d49a50ea_068bce4af3"
+    ],
+    "schema_version": "discoverybench-result-v1",
+    "task_family": "score-difference-mechanism",
+    "task_id": "DB-G10"
+  },
+  {
+    "decision": {
+      "decision": "dd006a-mechanism:finite registered search actions",
+      "declared_metadata": {
+        "schema_version": "discoverybench-protocol-v1"
+      },
+      "protocol_id": "dd006a-mechanism",
+      "task_id": "DB-G11"
+    },
+    "exact": true,
+    "metrics": {
+      "discovery": "11/12",
+      "obedience": true,
+      "strict-margin": "0",
+      "transfer-budget": "0",
+      "truthfulness": true
+    },
+    "protocol_id": "dd006a-mechanism",
+    "reference_claims": [
+      "DD-C-0050"
+    ],
+    "reference_runs": [
+      "20260721T140745Z_DD-006_401ad624_c942f43e42"
+    ],
+    "schema_version": "discoverybench-result-v1",
+    "task_family": "dd006a-transfer-frontier",
+    "task_id": "DB-G11"
+  },
+  {
+    "decision": {
+      "decision": "dd006b-mechanism:finite registered search actions",
+      "declared_metadata": {
+        "schema_version": "discoverybench-protocol-v1"
+      },
+      "protocol_id": "dd006b-mechanism",
+      "task_id": "DB-G12"
+    },
+    "exact": true,
+    "metrics": {
+      "discovery": "11/12",
+      "obedience": true,
+      "strict-margin": "13/72",
+      "transfer-budget": "35/24",
+      "truthfulness": true
+    },
+    "protocol_id": "dd006b-mechanism",
+    "reference_claims": [
+      "DD-C-0053"
+    ],
+    "reference_runs": [
+      "20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b"
+    ],
+    "schema_version": "discoverybench-result-v1",
+    "task_family": "dd006b-strict-joint-mechanism",
+    "task_id": "DB-G12"
+  },
+  {
+    "decision": {
+      "decision": "private-clue-following:finite registered search actions",
+      "declared_metadata": {
+        "schema_version": "discoverybench-protocol-v1"
+      },
+      "protocol_id": "private-clue-following",
+      "task_id": "DB-G13"
+    },
+    "exact": true,
+    "metrics": {
+      "discovery": "8/9",
+      "information-cost": "1/8",
+      "social-net-value": "55/72"
+    },
+    "protocol_id": "private-clue-following",
+    "reference_claims": [
+      "DD-C-0051"
+    ],
+    "reference_runs": [
+      "20260721T141527Z_DD-008_0d11dc77_7e0c8f1d66"
+    ],
+    "schema_version": "discoverybench-result-v1",
+    "task_family": "two-agent-evidence-acquisition",
+    "task_id": "DB-G13"
+  },
+  {
+    "decision": {
+      "decision": "ex-ante-role-policy:finite registered search actions",
+      "declared_metadata": {
+        "schema_version": "discoverybench-protocol-v1"
+      },
+      "protocol_id": "ex-ante-role-policy",
+      "task_id": "DB-G14"
+    },
+    "exact": true,
+    "metrics": {
+      "discovery": "65535/65536",
+      "effective-channels": "8",
+      "information-cost": "0"
+    },
+    "protocol_id": "ex-ante-role-policy",
+    "reference_claims": [
+      "DD-C-0052"
+    ],
+    "reference_runs": [
+      "20260721T163030Z_DD-008A_8b70668b_06307caab4"
+    ],
+    "schema_version": "discoverybench-result-v1",
+    "task_family": "n-agent-source-choice",
+    "task_id": "DB-G14"
+  },
+  {
+    "decision": {
+      "decision": "registered-atlas-architecture:finite registered search actions",
+      "declared_metadata": {
+        "schema_version": "discoverybench-protocol-v1"
+      },
+      "protocol_id": "registered-atlas-architecture",
+      "task_id": "DB-G15"
+    },
+    "exact": true,
+    "metrics": {
+      "average-action-quality": "5/8",
+      "discovery": "5/6",
+      "expected-actions": "4/3",
+      "expected-rounds": "4/3",
+      "social-net-value": "5/6"
+    },
+    "protocol_id": "registered-atlas-architecture",
+    "reference_claims": [
+      "DD-C-0054"
+    ],
+    "reference_runs": [
+      "20260721T171249Z_DD-009_bc78d249_0c3851c41a"
+    ],
+    "schema_version": "discoverybench-result-v1",
+    "task_family": "architecture-atlas",
+    "task_id": "DB-G15"
+  }
+]
