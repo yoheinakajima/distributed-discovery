@@ -1,0 +1,19 @@
+model: normalized-linear-transfer-frontier-v1
+candidates: 3
+agents: 2
+signal_accuracy: 2/3
+coefficient_grid: [-1, -1/2, 0, 1/2, 1]
+coefficient_l1_bound: 1
+features: [correct-report, individual-success, sole-rescue, report-action-agreement]
+observability_regimes: [target-identity, individual-success, sole-rescue]
+recommendation: posterior-leading-distinct-actions
+tie_handling: [fixed-role-agent-0, fixed-role-agent-1, public-uniform-role-lottery]
+equilibrium_class: pure-bayes-nash-joint-report-action-deviations
+time_budget_seconds: 30
+resource_estimate:
+ coefficient_vectors: 41
+ regimes: 3
+ tie_rules: 3
+ agent_roles: 2
+ deviations_per_signal: 9
+ exact_expectation_terms_per_deviation: 9

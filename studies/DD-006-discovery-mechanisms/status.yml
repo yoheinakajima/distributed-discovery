@@ -1,5 +1,5 @@
 study_id: DD-006
 status: complete-bounded-study
-evidence_status: exact-score-difference-deviation-census-and-independent-balance-check
-next_action: preserve the weak-implementation boundary; broader transfer classes require a new registration
-updated_utc: 2026-07-21T05:14:57Z
+evidence_status: exact-score-difference-and-normalized-linear-transfer-frontiers
+next_action: preserve the registered zero-strict-margin boundary; arbitrary transfer tables require a new registration
+updated_utc: 2026-07-21T14:07:45Z

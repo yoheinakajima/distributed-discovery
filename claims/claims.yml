@@ -1029,3 +1029,24 @@ claims:
     first_added: "2026-07-21"
     last_checked: "2026-07-21"
     notes: This synthetic recovery result is deliberately accompanied by nonidentification counterexamples and does not support a real-system claim.
+  - id: DD-C-0050
+    study_id: DD-006
+    short_name: normalized-linear-transfer-zero-strict-margin
+    statement: Across all 123 registered regime-and-transfer rows in DD-006A's normalized linear class, 31 weakly implement truthful reporting and the declared differentiated recommendation for both fixed tie roles, but none strictly implements it; the exact maximum all-tie strict margin is zero.
+    scope: ADR-0014's 41 coefficient vectors with L1 norm at most one, three target/outcome observability regimes, two agents, three targets, 2/3-accurate signals, action rules contingent on the public peer report, and pure unilateral joint report/action-rule deviations; this is not a result for arbitrary transfer tables, mixed equilibria, or dominant strategies.
+    claim_type: computational-result
+    status: verified
+    source_type: exhaustive-exact-rational-normalized-linear-transfer-census
+    source_reference: results/verified/20260721T140745Z_DD-006_401ad624_c942f43e42/outputs/general-transfer-summary.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/mechanisms/general.py, src/distributed_discovery/mechanisms/general_verification.py]
+    run_ids: [20260721T140745Z_DD-006_401ad624_c942f43e42]
+    test_paths: [tests/unit/test_general_mechanisms.py]
+    exactness_basis: complete 41-vector coefficient grid times three regimes, Fraction expectations over all target and peer-signal states, exhaustive report/action-rule deviations, and a separate ex-post balance plus corruption check
+    rounding_rule: exact fractions
+    dependencies: [DD-C-0048]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: Zero transfer is included among weak rows; weak feasibility is not strict incentive provision.

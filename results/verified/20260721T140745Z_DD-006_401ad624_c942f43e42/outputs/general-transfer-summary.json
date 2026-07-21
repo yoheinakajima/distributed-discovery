@@ -1,0 +1,9 @@
+{
+  "corruption_rejected": true,
+  "frontier_rows": 123,
+  "independent_balance_verifier": true,
+  "maximum_all_tie_margin": "0",
+  "registered_vectors": 41,
+  "strict_all_tie_rules": 0,
+  "weak_all_tie_rules": 31
+}

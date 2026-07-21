@@ -1,0 +1,2093 @@
+[
+  {
+    "all_tie_rules_margin": "-1/2",
+    "coefficients": [
+      "-1",
+      "0",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-1/2",
+      "-1/2"
+    ],
+    "public_lottery_margin": "-1/2",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-3/4",
+    "coefficients": [
+      "-1/2",
+      "-1/2",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-3/4",
+      "-3/4"
+    ],
+    "public_lottery_margin": "-3/4",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-3/4",
+    "coefficients": [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-3/4",
+      "-3/4"
+    ],
+    "public_lottery_margin": "-3/4",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-7/8",
+    "coefficients": [
+      "-1/2",
+      "0",
+      "0",
+      "-1/2"
+    ],
+    "fixed_role_margins": [
+      "-7/8",
+      "-7/8"
+    ],
+    "public_lottery_margin": "-7/8",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1/4",
+    "coefficients": [
+      "-1/2",
+      "0",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-1/4",
+      "-1/4"
+    ],
+    "public_lottery_margin": "-1/4",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1/2",
+    "coefficients": [
+      "-1/2",
+      "0",
+      "0",
+      "1/2"
+    ],
+    "fixed_role_margins": [
+      "-1/2",
+      "-1/2"
+    ],
+    "public_lottery_margin": "-1/2",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-11/24",
+    "coefficients": [
+      "-1/2",
+      "0",
+      "1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-11/24",
+      "-11/24"
+    ],
+    "public_lottery_margin": "-11/24",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-11/24",
+    "coefficients": [
+      "-1/2",
+      "1/2",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-11/24",
+      "-11/24"
+    ],
+    "public_lottery_margin": "-11/24",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1",
+    "coefficients": [
+      "0",
+      "-1",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-1",
+      "-1"
+    ],
+    "public_lottery_margin": "-1",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1",
+    "coefficients": [
+      "0",
+      "-1/2",
+      "-1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-1",
+      "-1"
+    ],
+    "public_lottery_margin": "-1",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-13/12",
+    "coefficients": [
+      "0",
+      "-1/2",
+      "0",
+      "-1/2"
+    ],
+    "fixed_role_margins": [
+      "-13/12",
+      "-13/12"
+    ],
+    "public_lottery_margin": "-13/12",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1/2",
+    "coefficients": [
+      "0",
+      "-1/2",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-1/2",
+      "-1/2"
+    ],
+    "public_lottery_margin": "-1/2",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1/3",
+    "coefficients": [
+      "0",
+      "-1/2",
+      "0",
+      "1/2"
+    ],
+    "fixed_role_margins": [
+      "-1/3",
+      "-1/3"
+    ],
+    "public_lottery_margin": "-1/3",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "0",
+      "-1/2",
+      "1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-1",
+    "coefficients": [
+      "0",
+      "0",
+      "-1",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-1",
+      "-1"
+    ],
+    "public_lottery_margin": "-1",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-13/12",
+    "coefficients": [
+      "0",
+      "0",
+      "-1/2",
+      "-1/2"
+    ],
+    "fixed_role_margins": [
+      "-13/12",
+      "-13/12"
+    ],
+    "public_lottery_margin": "-13/12",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1/2",
+    "coefficients": [
+      "0",
+      "0",
+      "-1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-1/2",
+      "-1/2"
+    ],
+    "public_lottery_margin": "-1/2",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1/3",
+    "coefficients": [
+      "0",
+      "0",
+      "-1/2",
+      "1/2"
+    ],
+    "fixed_role_margins": [
+      "-1/3",
+      "-1/3"
+    ],
+    "public_lottery_margin": "-1/3",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/4",
+    "coefficients": [
+      "0",
+      "0",
+      "0",
+      "-1"
+    ],
+    "fixed_role_margins": [
+      "-5/4",
+      "-5/4"
+    ],
+    "public_lottery_margin": "-5/4",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/8",
+    "coefficients": [
+      "0",
+      "0",
+      "0",
+      "-1/2"
+    ],
+    "fixed_role_margins": [
+      "-5/8",
+      "-5/8"
+    ],
+    "public_lottery_margin": "-5/8",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-1/4",
+    "coefficients": [
+      "0",
+      "0",
+      "0",
+      "1/2"
+    ],
+    "fixed_role_margins": [
+      "-1/4",
+      "-1/4"
+    ],
+    "public_lottery_margin": "-1/4",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1/2",
+    "coefficients": [
+      "0",
+      "0",
+      "0",
+      "1"
+    ],
+    "fixed_role_margins": [
+      "-1/2",
+      "-1/2"
+    ],
+    "public_lottery_margin": "-1/2",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-11/24",
+    "coefficients": [
+      "0",
+      "0",
+      "1/2",
+      "-1/2"
+    ],
+    "fixed_role_margins": [
+      "-11/24",
+      "-11/24"
+    ],
+    "public_lottery_margin": "-11/24",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/24",
+    "coefficients": [
+      "0",
+      "0",
+      "1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-5/24",
+      "-5/24"
+    ],
+    "public_lottery_margin": "-5/24",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-11/24",
+    "coefficients": [
+      "0",
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "fixed_role_margins": [
+      "-11/24",
+      "-11/24"
+    ],
+    "public_lottery_margin": "-11/24",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/12",
+    "coefficients": [
+      "0",
+      "0",
+      "1",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-5/12",
+      "-5/12"
+    ],
+    "public_lottery_margin": "-5/12",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "0",
+      "1/2",
+      "-1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-11/24",
+    "coefficients": [
+      "0",
+      "1/2",
+      "0",
+      "-1/2"
+    ],
+    "fixed_role_margins": [
+      "-11/24",
+      "-11/24"
+    ],
+    "public_lottery_margin": "-11/24",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/24",
+    "coefficients": [
+      "0",
+      "1/2",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-5/24",
+      "-5/24"
+    ],
+    "public_lottery_margin": "-5/24",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-11/24",
+    "coefficients": [
+      "0",
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "fixed_role_margins": [
+      "-11/24",
+      "-11/24"
+    ],
+    "public_lottery_margin": "-11/24",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/12",
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-5/12",
+      "-5/12"
+    ],
+    "public_lottery_margin": "-5/12",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/12",
+    "coefficients": [
+      "0",
+      "1",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-5/12",
+      "-5/12"
+    ],
+    "public_lottery_margin": "-5/12",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-7/24",
+    "coefficients": [
+      "1/2",
+      "-1/2",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-7/24",
+      "-7/24"
+    ],
+    "public_lottery_margin": "-7/24",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-7/24",
+    "coefficients": [
+      "1/2",
+      "0",
+      "-1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-7/24",
+      "-7/24"
+    ],
+    "public_lottery_margin": "-7/24",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1/2",
+    "coefficients": [
+      "1/2",
+      "0",
+      "0",
+      "-1/2"
+    ],
+    "fixed_role_margins": [
+      "-1/2",
+      "-1/2"
+    ],
+    "public_lottery_margin": "-1/2",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "1/2",
+      "0",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-1/4",
+    "coefficients": [
+      "1/2",
+      "0",
+      "0",
+      "1/2"
+    ],
+    "fixed_role_margins": [
+      "-1/4",
+      "-1/4"
+    ],
+    "public_lottery_margin": "-1/4",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/24",
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-5/24",
+      "-5/24"
+    ],
+    "public_lottery_margin": "-5/24",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/24",
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-5/24",
+      "-5/24"
+    ],
+    "public_lottery_margin": "-5/24",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "1",
+      "0",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "target-identity",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "-1",
+      "0",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-1/2",
+    "coefficients": [
+      "-1/2",
+      "-1/2",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-1/2",
+      "-1/2"
+    ],
+    "public_lottery_margin": "-1/2",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-5/8",
+    "coefficients": [
+      "-1/2",
+      "0",
+      "0",
+      "-1/2"
+    ],
+    "fixed_role_margins": [
+      "-5/8",
+      "-5/8"
+    ],
+    "public_lottery_margin": "-5/8",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "-1/2",
+      "0",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-1/4",
+    "coefficients": [
+      "-1/2",
+      "0",
+      "0",
+      "1/2"
+    ],
+    "fixed_role_margins": [
+      "-1/4",
+      "-1/4"
+    ],
+    "public_lottery_margin": "-1/4",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "-1/2",
+      "0",
+      "1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-5/24",
+    "coefficients": [
+      "-1/2",
+      "1/2",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-5/24",
+      "-5/24"
+    ],
+    "public_lottery_margin": "-5/24",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1",
+    "coefficients": [
+      "0",
+      "-1",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-1",
+      "-1"
+    ],
+    "public_lottery_margin": "-1",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1/2",
+    "coefficients": [
+      "0",
+      "-1/2",
+      "-1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-1/2",
+      "-1/2"
+    ],
+    "public_lottery_margin": "-1/2",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-13/12",
+    "coefficients": [
+      "0",
+      "-1/2",
+      "0",
+      "-1/2"
+    ],
+    "fixed_role_margins": [
+      "-13/12",
+      "-13/12"
+    ],
+    "public_lottery_margin": "-13/12",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1/2",
+    "coefficients": [
+      "0",
+      "-1/2",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-1/2",
+      "-1/2"
+    ],
+    "public_lottery_margin": "-1/2",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1/3",
+    "coefficients": [
+      "0",
+      "-1/2",
+      "0",
+      "1/2"
+    ],
+    "fixed_role_margins": [
+      "-1/3",
+      "-1/3"
+    ],
+    "public_lottery_margin": "-1/3",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1/2",
+    "coefficients": [
+      "0",
+      "-1/2",
+      "1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-1/2",
+      "-1/2"
+    ],
+    "public_lottery_margin": "-1/2",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "0",
+      "0",
+      "-1",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-5/8",
+    "coefficients": [
+      "0",
+      "0",
+      "-1/2",
+      "-1/2"
+    ],
+    "fixed_role_margins": [
+      "-5/8",
+      "-5/8"
+    ],
+    "public_lottery_margin": "-5/8",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "0",
+      "0",
+      "-1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-1/4",
+    "coefficients": [
+      "0",
+      "0",
+      "-1/2",
+      "1/2"
+    ],
+    "fixed_role_margins": [
+      "-1/4",
+      "-1/4"
+    ],
+    "public_lottery_margin": "-1/4",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/4",
+    "coefficients": [
+      "0",
+      "0",
+      "0",
+      "-1"
+    ],
+    "fixed_role_margins": [
+      "-5/4",
+      "-5/4"
+    ],
+    "public_lottery_margin": "-5/4",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/8",
+    "coefficients": [
+      "0",
+      "0",
+      "0",
+      "-1/2"
+    ],
+    "fixed_role_margins": [
+      "-5/8",
+      "-5/8"
+    ],
+    "public_lottery_margin": "-5/8",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-1/4",
+    "coefficients": [
+      "0",
+      "0",
+      "0",
+      "1/2"
+    ],
+    "fixed_role_margins": [
+      "-1/4",
+      "-1/4"
+    ],
+    "public_lottery_margin": "-1/4",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1/2",
+    "coefficients": [
+      "0",
+      "0",
+      "0",
+      "1"
+    ],
+    "fixed_role_margins": [
+      "-1/2",
+      "-1/2"
+    ],
+    "public_lottery_margin": "-1/2",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/8",
+    "coefficients": [
+      "0",
+      "0",
+      "1/2",
+      "-1/2"
+    ],
+    "fixed_role_margins": [
+      "-5/8",
+      "-5/8"
+    ],
+    "public_lottery_margin": "-5/8",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "0",
+      "0",
+      "1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-1/4",
+    "coefficients": [
+      "0",
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "fixed_role_margins": [
+      "-1/4",
+      "-1/4"
+    ],
+    "public_lottery_margin": "-1/4",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "0",
+      "0",
+      "1",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-5/24",
+    "coefficients": [
+      "0",
+      "1/2",
+      "-1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-5/24",
+      "-5/24"
+    ],
+    "public_lottery_margin": "-5/24",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-11/24",
+    "coefficients": [
+      "0",
+      "1/2",
+      "0",
+      "-1/2"
+    ],
+    "fixed_role_margins": [
+      "-11/24",
+      "-11/24"
+    ],
+    "public_lottery_margin": "-11/24",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/24",
+    "coefficients": [
+      "0",
+      "1/2",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-5/24",
+      "-5/24"
+    ],
+    "public_lottery_margin": "-5/24",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-11/24",
+    "coefficients": [
+      "0",
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "fixed_role_margins": [
+      "-11/24",
+      "-11/24"
+    ],
+    "public_lottery_margin": "-11/24",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/24",
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-5/24",
+      "-5/24"
+    ],
+    "public_lottery_margin": "-5/24",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/12",
+    "coefficients": [
+      "0",
+      "1",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-5/12",
+      "-5/12"
+    ],
+    "public_lottery_margin": "-5/12",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1/2",
+    "coefficients": [
+      "1/2",
+      "-1/2",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-1/2",
+      "-1/2"
+    ],
+    "public_lottery_margin": "-1/2",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "1/2",
+      "0",
+      "-1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-5/8",
+    "coefficients": [
+      "1/2",
+      "0",
+      "0",
+      "-1/2"
+    ],
+    "fixed_role_margins": [
+      "-5/8",
+      "-5/8"
+    ],
+    "public_lottery_margin": "-5/8",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "1/2",
+      "0",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-1/4",
+    "coefficients": [
+      "1/2",
+      "0",
+      "0",
+      "1/2"
+    ],
+    "fixed_role_margins": [
+      "-1/4",
+      "-1/4"
+    ],
+    "public_lottery_margin": "-1/4",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-5/24",
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-5/24",
+      "-5/24"
+    ],
+    "public_lottery_margin": "-5/24",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "1",
+      "0",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "individual-success",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "-1",
+      "0",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "-1/2",
+      "-1/2",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-1/2",
+    "coefficients": [
+      "-1/2",
+      "0",
+      "-1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-1/2",
+      "-1/2"
+    ],
+    "public_lottery_margin": "-1/2",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/8",
+    "coefficients": [
+      "-1/2",
+      "0",
+      "0",
+      "-1/2"
+    ],
+    "fixed_role_margins": [
+      "-5/8",
+      "-5/8"
+    ],
+    "public_lottery_margin": "-5/8",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "-1/2",
+      "0",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-1/4",
+    "coefficients": [
+      "-1/2",
+      "0",
+      "0",
+      "1/2"
+    ],
+    "fixed_role_margins": [
+      "-1/4",
+      "-1/4"
+    ],
+    "public_lottery_margin": "-1/4",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/24",
+    "coefficients": [
+      "-1/2",
+      "0",
+      "1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-5/24",
+      "-5/24"
+    ],
+    "public_lottery_margin": "-5/24",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "-1/2",
+      "1/2",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "0",
+      "-1",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-1/2",
+    "coefficients": [
+      "0",
+      "-1/2",
+      "-1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-1/2",
+      "-1/2"
+    ],
+    "public_lottery_margin": "-1/2",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/8",
+    "coefficients": [
+      "0",
+      "-1/2",
+      "0",
+      "-1/2"
+    ],
+    "fixed_role_margins": [
+      "-5/8",
+      "-5/8"
+    ],
+    "public_lottery_margin": "-5/8",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "0",
+      "-1/2",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-1/4",
+    "coefficients": [
+      "0",
+      "-1/2",
+      "0",
+      "1/2"
+    ],
+    "fixed_role_margins": [
+      "-1/4",
+      "-1/4"
+    ],
+    "public_lottery_margin": "-1/4",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/24",
+    "coefficients": [
+      "0",
+      "-1/2",
+      "1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-5/24",
+      "-5/24"
+    ],
+    "public_lottery_margin": "-5/24",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1",
+    "coefficients": [
+      "0",
+      "0",
+      "-1",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-1",
+      "-1"
+    ],
+    "public_lottery_margin": "-1",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-13/12",
+    "coefficients": [
+      "0",
+      "0",
+      "-1/2",
+      "-1/2"
+    ],
+    "fixed_role_margins": [
+      "-13/12",
+      "-13/12"
+    ],
+    "public_lottery_margin": "-13/12",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1/2",
+    "coefficients": [
+      "0",
+      "0",
+      "-1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-1/2",
+      "-1/2"
+    ],
+    "public_lottery_margin": "-1/2",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1/3",
+    "coefficients": [
+      "0",
+      "0",
+      "-1/2",
+      "1/2"
+    ],
+    "fixed_role_margins": [
+      "-1/3",
+      "-1/3"
+    ],
+    "public_lottery_margin": "-1/3",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/4",
+    "coefficients": [
+      "0",
+      "0",
+      "0",
+      "-1"
+    ],
+    "fixed_role_margins": [
+      "-5/4",
+      "-5/4"
+    ],
+    "public_lottery_margin": "-5/4",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/8",
+    "coefficients": [
+      "0",
+      "0",
+      "0",
+      "-1/2"
+    ],
+    "fixed_role_margins": [
+      "-5/8",
+      "-5/8"
+    ],
+    "public_lottery_margin": "-5/8",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-1/4",
+    "coefficients": [
+      "0",
+      "0",
+      "0",
+      "1/2"
+    ],
+    "fixed_role_margins": [
+      "-1/4",
+      "-1/4"
+    ],
+    "public_lottery_margin": "-1/4",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1/2",
+    "coefficients": [
+      "0",
+      "0",
+      "0",
+      "1"
+    ],
+    "fixed_role_margins": [
+      "-1/2",
+      "-1/2"
+    ],
+    "public_lottery_margin": "-1/2",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-11/24",
+    "coefficients": [
+      "0",
+      "0",
+      "1/2",
+      "-1/2"
+    ],
+    "fixed_role_margins": [
+      "-11/24",
+      "-11/24"
+    ],
+    "public_lottery_margin": "-11/24",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/24",
+    "coefficients": [
+      "0",
+      "0",
+      "1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-5/24",
+      "-5/24"
+    ],
+    "public_lottery_margin": "-5/24",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-11/24",
+    "coefficients": [
+      "0",
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "fixed_role_margins": [
+      "-11/24",
+      "-11/24"
+    ],
+    "public_lottery_margin": "-11/24",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/12",
+    "coefficients": [
+      "0",
+      "0",
+      "1",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-5/12",
+      "-5/12"
+    ],
+    "public_lottery_margin": "-5/12",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-1/2",
+    "coefficients": [
+      "0",
+      "1/2",
+      "-1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-1/2",
+      "-1/2"
+    ],
+    "public_lottery_margin": "-1/2",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/8",
+    "coefficients": [
+      "0",
+      "1/2",
+      "0",
+      "-1/2"
+    ],
+    "fixed_role_margins": [
+      "-5/8",
+      "-5/8"
+    ],
+    "public_lottery_margin": "-5/8",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "0",
+      "1/2",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-1/4",
+    "coefficients": [
+      "0",
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "fixed_role_margins": [
+      "-1/4",
+      "-1/4"
+    ],
+    "public_lottery_margin": "-1/4",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/24",
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-5/24",
+      "-5/24"
+    ],
+    "public_lottery_margin": "-5/24",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "0",
+      "1",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "1/2",
+      "-1/2",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-1/2",
+    "coefficients": [
+      "1/2",
+      "0",
+      "-1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-1/2",
+      "-1/2"
+    ],
+    "public_lottery_margin": "-1/2",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/8",
+    "coefficients": [
+      "1/2",
+      "0",
+      "0",
+      "-1/2"
+    ],
+    "fixed_role_margins": [
+      "-5/8",
+      "-5/8"
+    ],
+    "public_lottery_margin": "-5/8",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "1/2",
+      "0",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "-1/4",
+    "coefficients": [
+      "1/2",
+      "0",
+      "0",
+      "1/2"
+    ],
+    "fixed_role_margins": [
+      "-1/4",
+      "-1/4"
+    ],
+    "public_lottery_margin": "-1/4",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "-5/24",
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "-5/24",
+      "-5/24"
+    ],
+    "public_lottery_margin": "-5/24",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": false
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  },
+  {
+    "all_tie_rules_margin": "0",
+    "coefficients": [
+      "1",
+      "0",
+      "0",
+      "0"
+    ],
+    "fixed_role_margins": [
+      "0",
+      "0"
+    ],
+    "public_lottery_margin": "0",
+    "regime": "sole-rescue",
+    "strictly_implements_all_ties": false,
+    "weak_implements_all_ties": true
+  }
+]
