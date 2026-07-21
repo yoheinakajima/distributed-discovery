@@ -1,5 +1,6 @@
 import hashlib
 import json
+import re
 import shutil
 from pathlib import Path
 
@@ -41,7 +42,11 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
 
     research = (output / "research.html").read_text(encoding="utf-8")
     assert "DD-000" in research and "DD-008" in research
-    assert "complete-bounded-study" in research
+    assert "Completed finite study" in research
+    assert ">complete-bounded-study<" not in research
+    assert 'type="search"' in research
+    assert 'data-study-filter="key-results"' in research
+    assert 'aria-live="polite"' in research
     assert 'href="research/dd-004.html"' in research
     assert (output / "research/dd-000.html").is_file()
     assert (output / "research/dd-008.html").is_file()
@@ -221,6 +226,71 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     ]:
         assert (output / f"downloads/{name}").is_file()
 
+    home = (output / "index.html").read_text(encoding="utf-8")
+    assert "How groups turn evidence into portfolios of action." in home
+    assert "Better shared information can produce worse collective discovery." in home
+    assert "Share the evidence. <strong>Diversify the actions.</strong>" in home
+    assert "See the paradox" in home
+    assert (output / "og.png").is_file()
+
+    stylesheet = (output / "styles.css").read_text(encoding="utf-8")
+    assert "repeat(auto-fit, minmax(min(100%, 16rem), 1fr))" in stylesheet
+    assert "grid-template-columns: repeat(7" not in stylesheet
+    assert ".pipeline" not in stylesheet
+    assert "font: 1.025rem/1.62 var(--sans)" in stylesheet
+    assert "position: sticky" in stylesheet
+
+    for page in output.glob("**/*.html"):
+        source = page.read_text(encoding="utf-8")
+        header_match = re.search(r'<header class="site-header".*?</header>', source, re.DOTALL)
+        assert header_match is not None
+        header = header_match.group(0)
+        assert header.count("<nav ") == 1
+        primary = re.search(r'<div class="nav-links">(.*?)</div>', header, re.DOTALL)
+        assert primary is not None
+        assert primary.group(1).count("<a ") == 5
+        assert "Research navigation" not in header
+        assert "secondary" not in header
+        assert source.count("<table") == source.count("<caption")
+
+    for route in [
+        "research/dd-013.html",
+        "labs/audience.html",
+        "benchmark/results.html",
+        "experiment-kit/power.html",
+        "publications/common-source-trap.html",
+    ]:
+        nested = (output / route).read_text(encoding="utf-8")
+        assert 'aria-label="Breadcrumb"' in nested
+        assert 'href="../index.html"' in nested
+
+    study_source = (output / "research/dd-013.html").read_text(encoding="utf-8")
+    assert "The question" in study_source
+    assert "What we found" in study_source
+    assert "What this result covers" in study_source
+    assert "Reproducible evidence" in study_source
+    assert "Files and data" in study_source
+    assert "What comes next" in study_source
+    assert "three-verified-theorems-and-independently-reproduced-voluntary-census" in study_source
+    assert "Technical details" in study_source
+
+    papers = (output / "publications.html").read_text(encoding="utf-8")
+    assert "<h1>Papers</h1>" in papers
+    assert "Validated working paper" in papers
+    assert "SHA-256" in papers
+    assert "Technical details" in papers
+
+    benchmark_overview = (output / "benchmark.html").read_text(encoding="utf-8")
+    assert "Compare search strategies" in benchmark_overview
+    assert "Benchmark tasks" in benchmark_overview
+    assert "What each strategy can see and do" in benchmark_overview
+    assert "How performance is measured" in benchmark_overview
+
+    experiment_overview = (output / "experiment-kit.html").read_text(encoding="utf-8")
+    assert "Plan a discovery experiment" in experiment_overview
+    assert "Materials and safeguards" in experiment_overview
+    assert "No participants were recruited" in experiment_overview
+
 
 def test_research_library_rejects_missing_public_metadata(tmp_path: Path) -> None:
     copied = tmp_path / "repo"
@@ -231,6 +301,7 @@ def test_research_library_rejects_missing_public_metadata(tmp_path: Path) -> Non
         "studies",
         "papers",
         "reports",
+        "design",
         "site",
         "src",
         "experiments",

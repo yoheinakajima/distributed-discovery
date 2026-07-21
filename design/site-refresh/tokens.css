@@ -1,0 +1,63 @@
+:root {
+  color-scheme: light;
+  --dd-page: #f4f6f2;
+  --dd-surface: #fbfcf9;
+  --dd-surface-raised: #ffffff;
+  --dd-border-subtle: #dce1d8;
+  --dd-border-strong: #aeb8aa;
+  --dd-text: #142018;
+  --dd-text-secondary: #435047;
+  --dd-text-muted: #68736b;
+  --dd-accent: #0b6b53;
+  --dd-accent-strong: #075140;
+  --dd-focus: #1769e0;
+  --dd-success: #26734d;
+  --dd-warning: #9a5c00;
+  --dd-planner: #2a78d6;
+  --dd-private: #087d26;
+  --dd-market: #a76900;
+  --dd-consensus: #b4476f;
+  --dd-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --dd-serif: Charter, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --dd-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --dd-space-1: .25rem;
+  --dd-space-2: .5rem;
+  --dd-space-3: .75rem;
+  --dd-space-4: 1rem;
+  --dd-space-5: 1.5rem;
+  --dd-space-6: 2rem;
+  --dd-space-7: 3rem;
+  --dd-space-8: 4rem;
+  --dd-radius-sm: .5rem;
+  --dd-radius-md: .875rem;
+  --dd-radius-lg: 1.25rem;
+  --dd-shadow: 0 1rem 2.5rem rgb(20 32 24 / .08);
+  --dd-shell: 76rem;
+  --dd-content: 68rem;
+  --dd-prose: 44rem;
+  --dd-wide: 88rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --dd-page: #0e1511;
+    --dd-surface: #141d17;
+    --dd-surface-raised: #19231d;
+    --dd-border-subtle: #2d3a31;
+    --dd-border-strong: #526157;
+    --dd-text: #f2f6f2;
+    --dd-text-secondary: #c6d0c8;
+    --dd-text-muted: #98a49b;
+    --dd-accent: #78d5b7;
+    --dd-accent-strong: #a2e5cf;
+    --dd-focus: #78a9ff;
+    --dd-success: #78d5a0;
+    --dd-warning: #f2bd64;
+    --dd-planner: #66a9f4;
+    --dd-private: #62ca78;
+    --dd-market: #e7a82e;
+    --dd-consensus: #e887aa;
+    --dd-shadow: 0 1rem 2.5rem rgb(0 0 0 / .24);
+  }
+}
