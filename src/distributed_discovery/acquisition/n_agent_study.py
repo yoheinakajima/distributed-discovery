@@ -31,6 +31,9 @@ def main() -> None:
     cfg = yaml.safe_load((root / CONFIG).read_text())
     h = hashlib.sha256(json.dumps(cfg, sort_keys=True).encode()).hexdigest()
     commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip()
+    dirty = bool(
+        subprocess.check_output(["git", "status", "--porcelain"], cwd=root, text=True).strip()
+    )
     started = datetime.now(UTC)
     rid = f"{started:%Y%m%dT%H%M%SZ}_DD-008A_{commit[:8]}_{h[:10]}"
     run = root / "results/verified" / rid
@@ -92,9 +95,7 @@ def main() -> None:
         "exit_status": 0,
         "validation_status": "passed",
         "git_commit": commit,
-        "git_dirty": bool(
-            subprocess.check_output(["git", "status", "--porcelain"], cwd=root, text=True).strip()
-        ),
+        "git_dirty": dirty,
         "upstream_commit": None,
         "command": "make dd008a-acquisition",
         "config_hash_sha256": h,
