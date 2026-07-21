@@ -1,0 +1,5 @@
+study_id: DD-008B
+status: implementation
+evidence_status: analytic-derivation-awaiting-clean-run
+next_action: commit the implementation, execute the bounded independent audit, and add claims only after it passes
+updated_utc: 2026-07-21T19:16:00Z

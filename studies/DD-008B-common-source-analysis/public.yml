@@ -1,0 +1,10 @@
+study_id: DD-008B
+title: Common-Source Analysis
+slug: dd-008b
+phase: active-extension
+summary: General-N source-choice threshold derivation with a bounded independent audit.
+public_artifacts:
+  - path: studies/DD-008B-common-source-analysis/proof.md
+    description: Human-readable derivation and scope limits
+  - path: studies/DD-008B-common-source-analysis/report.md
+    description: Verification report
