@@ -1,5 +1,5 @@
 study_id: DD-003
-status: complete-bounded-fixture
-evidence_status: independently-reproduced-census-bounded-null-and-scalar-counterexample
-next_action: preserve exact graph regressions; vary signal laws before proposing any universal effective-channel diagnostic
-updated_utc: 2026-07-20T23:25:00Z
+status: complete-bounded-heterogeneous-census
+evidence_status: independently-reproduced-colored-census-and-full-pairwise-counterexample
+next_action: preserve exact colored regressions; require a new bounded question before expanding the source model
+updated_utc: 2026-07-21T03:30:00Z

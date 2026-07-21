@@ -2,14 +2,14 @@
 
 - Review date: 2026-07-20 (America/Los_Angeles)
 - Artifact: `Three_Results_in_Distributed_Discovery.pdf`
-- PDF SHA-256: `1489d0e2aa3a4dc65b38e1731becaf71dbeb946f3670d09e396a79639415a592`
-- Format: 13 letter-size pages
+- PDF SHA-256: `53cbfa8ccf6f732b13670206f3a8c25627390cbb29206f6b1b017163ae3735bf`
+- Format: 14 letter-size pages
 - Renderer: Poppler `pdftoppm`, PNG at 120 dpi
 - Scope: every page reviewed at rendered-page scale
 
 ## Review record
 
-Pages 1–13 were inspected for clipped or overlapping content, broken glyphs,
+Pages 1–14 were inspected for clipped or overlapping content, broken glyphs,
 unexpected blank pages, incorrect figure placement, illegible tables, unresolved
 references, and bibliography overflow. The first pass identified cramped evidence
 and synthesis tables, overlapping role-figure labels, and awkwardly justified
@@ -40,6 +40,13 @@ discussion on page 8 are fully within the page bounds and legible at rendered-pa
 scale. The remaining figures, synthesis table, limitations, agenda, conclusion,
 and references were rechecked with no clipping, overlap, broken glyphs, or
 unintended blank pages.
+
+The Cycle J pass rendered and reviewed all 14 pages after adding the DD-003
+heterogeneous-source counterexample. The revised abstract and evidence table,
+expanded source section on pages 9–10, new degree/discovery table and provenance
+note on page 10, synthesis table, limitations, agenda, conclusion, and references
+are within bounds and legible. The exact fractions, 839/163/111 census counts,
+claim IDs, and run provenance show no overlap, clipping, or broken glyphs.
 
 The final visual review matches the checksum above. Any PDF checksum change
 invalidates this record and requires a new all-page review.

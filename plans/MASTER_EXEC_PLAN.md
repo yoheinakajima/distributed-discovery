@@ -8,7 +8,7 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-The historical M0–M9 bootstrap, operational Milestone A, research milestones DD-001A/B, DD-002, DD-003, their integrated handoff, and continuation cycles F–I are complete and merged. Selection PR #25 squash-merged as `993b0899421d446f61348a513d2630e0f424e336`; post-merge CI `29797810807` and Pages `29797810786` passed, all seven public routes returned HTTP 200, and the live selection catalogue/provenance match DD-C-0040/DD-C-0041. **Active integration boundary: DD-003 heterogeneous-source issue #26 on `research/dd003-heterogeneous-sources`.**
+The historical M0–M9 bootstrap, operational Milestone A, research milestones DD-001A/B, DD-002, DD-003, their integrated handoff, and continuation cycles F–I are complete and merged. Selection PR #25 squash-merged as `993b0899421d446f61348a513d2630e0f424e336`; post-merge CI `29797810807` and Pages `29797810786` passed, all seven public routes returned HTTP 200, and the live selection catalogue/provenance match DD-C-0040/DD-C-0041. **Active integration boundary: Cycle J evidence is complete in immutable run `20260721T032358Z_DD-003_84238b76_2cbc13e66a`; issue #26 and draft PR #27 await final audit, review, merge, and deployment.**
 
 ## Scope
 
@@ -46,7 +46,7 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - G Three Results synthesis paper and public Results page: completed 2026-07-20 through PR #21.
 - H alignment-preserving DD-001 upper relaxation: completed 2026-07-20 through PR #23.
 - I DD-002 equilibrium-selection robustness: completed 2026-07-20 through PR #25.
-- J DD-003 heterogeneous source accuracy: active on issue #26.
+- J DD-003 heterogeneous source accuracy: evidence complete; PR #27 integration active.
 - K dependency and Dependabot maintenance: pending J.
 - L single repository-settings attempt: pending K.
 - M continuation integration and handoff: pending L.
@@ -95,8 +95,8 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - [x] Replace the numerical DD-001 planner benchmark with an exact certified endpoint while preserving the unresolved private-team optimum.
 - [x] Build and visually audit a separate 12–20 page Three Results paper and add a fifth public Results route with generated provenance.
 - [x] Implement and audit an alignment-preserving DD-001 upper relaxation; its canonical upper bound equals the direct lower bound and closes the frozen zero-communication optimum.
-- [x] Audit the DD-002 witness and all 45 refinements under six declared equilibrium-selection procedures; merge/deployment remains in progress.
-- [ ] Enumerate the bounded DD-003 colored-source class for a rational heterogeneous-accuracy palette and independently verify its result or bounded null.
+- [x] Audit the DD-002 witness and all 45 refinements under six declared equilibrium-selection procedures; merged and deployed through PR #25.
+- [x] Enumerate the bounded DD-003 colored-source class for a rational heterogeneous-accuracy palette and independently verify its exact counterexample; merge/deployment remains in progress.
 - [ ] Reconcile Dependabot PRs #1–#5 in separate Actions, low-risk Python, and mypy-2 maintenance branches; update grouping policy.
 - [ ] Make exactly one settings-capable attempt for repository taxonomy/homepage/protection and record the precise capability result.
 - [ ] Complete the continuation handoff only after every research PR is reviewed, merged, CI-green, deployed, and live-smoke-tested.
@@ -154,6 +154,9 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - 2026-07-21: PR #23 passed CI `29796343151` and paper/site build `29796343110`, received complete no-findings review `4740754564`, and squash-merged as `df35f80273f106ef86f623c4676fe2a58757b6ad`. Post-merge CI `29796429926` and Pages `29796429904` passed. The first live smoke-test shell used `path` as a zsh loop variable, overwriting zsh's special command-search array and making `curl`, `rg`, and `jq` temporarily unavailable inside that process; rerunning with variable `route` returned HTTP 200 for all seven routes and verified the exact deployed value and alignment run ID.
 - 2026-07-21: DD-002 selection run `20260721T025802Z_DD-002_73a85c71_b0e5b6dc49` passed 15 policies, 37 posterior games, 256 pure selections, 45 refinements, 333 profile states, 1,998 potential/deviation checks, 333 Bellman states, and 270 rule comparisons in 0.089 seconds. An independent verifier reproduces the games, potential identities, and absorption equations and rejects a corrupted absorption probability. The known `P00` to `P03` reversal survives only anonymous-symmetric selection; best pure, worst pure, uniform potential maximum, uniform strict-best-response basin, and planner all improve from `2/3` to `3/4`. Across all refinements their harmful counts are `1,0,8,2,2,0` (DD-C-0039--DD-C-0041).
 - 2026-07-21: the first targeted public-integration pytest was deliberately invoked before regenerating the paper artifacts and therefore detected stale provenance; after `make three-results`, all targeted paper/site tests passed. The rebuilt 13-page synthesis PDF is byte-reproducible at SHA-256 `1489d0e2aa3a4dc65b38e1731becaf71dbeb946f3670d09e396a79639415a592`, and all 13 Poppler renders passed visual review.
+- 2026-07-21: PR #25 passed CI `29797737821` and paper/site build `29797737785`, received complete no-findings review `4740900193`, and squash-merged as `993b0899421d446f61348a513d2630e0f424e336`. Post-merge CI `29797810807` and Pages `29797810786` passed; all seven routes returned HTTP 200 and the deployed six-rule counts/run provenance match the immutable source.
+- 2026-07-21: DD-003 heterogeneous run `20260721T032358Z_DD-003_84238b76_2cbc13e66a` passed in 78.23 seconds under 120 seconds and 512 MB. Primary canonicalization and independent adjacent-swap traversal agree on 41,612 base labeled objects/671 orbits and 12,966 expansion labeled objects/168 orbits. Across 839 networks, 163 complete-moment groups cover 485 networks and 111 groups differ in discovery. The simplest exact colored witness has identical 66-entry first/pairwise moments but discovery `3/4` versus `2/3`, difference `1/12`; an independent verifier reconstructs all entries and rejects a zeroed difference (DD-C-0042--DD-C-0044).
+- 2026-07-21: the first post-integration site test caught removal of the established phrase “bounded null, not a theorem.” The wording was restored. The final 14-page synthesis PDF is byte-reproducible at SHA-256 `53cbfa8ccf6f732b13670206f3a8c25627390cbb29206f6b1b017163ae3735bf`, and all 14 Poppler renders passed visual review.
 
 ## Decision log
 

@@ -44,6 +44,7 @@ RESULT_RUNS = {
     "disclosure": "20260720T225848Z_DD-002_94607423_e29b1460ae",
     "selection": "20260721T025802Z_DD-002_73a85c71_b0e5b6dc49",
     "sources": "20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1",
+    "heterogeneous_sources": "20260721T032358Z_DD-003_84238b76_2cbc13e66a",
     "canonical": "20260721T012208Z_DD-000_8e4b55e2_e8321d1048",
     "alignment": "20260721T022739Z_DD-001_358cb1eb_cd16846ba5",
 }
@@ -93,6 +94,20 @@ def _result_data(root: Path) -> dict[str, Any]:
         root, RESULT_RUNS["sources"], "outputs/pairwise-null-certificate.json"
     )
     bounded_null = json.loads(null_path.read_text(encoding="utf-8"))
+    heterogeneous_witness_path = _verified_output(
+        root,
+        RESULT_RUNS["heterogeneous_sources"],
+        "outputs/pairwise-moment-counterexample.json",
+    )
+    heterogeneous_witness = json.loads(heterogeneous_witness_path.read_text(encoding="utf-8"))
+    heterogeneous_certificate_path = _verified_output(
+        root,
+        RESULT_RUNS["heterogeneous_sources"],
+        "outputs/colored-census-certificate.json",
+    )
+    heterogeneous_certificate = json.loads(
+        heterogeneous_certificate_path.read_text(encoding="utf-8")
+    )
     canonical_path = _verified_output(
         root,
         RESULT_RUNS["canonical"],
@@ -143,6 +158,23 @@ def _result_data(root: Path) -> dict[str, Any]:
                 "matched_groups_with_different_private_discovery"
             ],
             "claim_ids": ["DD-C-0033", "DD-C-0034"],
+            "heterogeneous_left_discovery_fraction": heterogeneous_witness[
+                "left_private_discovery"
+            ],
+            "heterogeneous_right_discovery_fraction": heterogeneous_witness[
+                "right_private_discovery"
+            ],
+            "heterogeneous_difference_fraction": heterogeneous_witness[
+                "private_discovery_difference"
+            ],
+            "colored_network_count": heterogeneous_certificate["total_orbit_count"],
+            "matched_complete_moment_group_count": heterogeneous_certificate[
+                "matched_complete_moment_group_count"
+            ],
+            "different_complete_moment_group_count": heterogeneous_certificate[
+                "matched_groups_with_different_private_discovery"
+            ],
+            "heterogeneous_claim_ids": ["DD-C-0042", "DD-C-0043", "DD-C-0044"],
         },
         "canonical_exact_optimum": {
             "optimum_fraction": exact_optimum,
@@ -164,6 +196,8 @@ def _result_data(root: Path) -> dict[str, Any]:
                     selection_certificate_path,
                     source_path,
                     null_path,
+                    heterogeneous_witness_path,
+                    heterogeneous_certificate_path,
                     canonical_path,
                     alignment_path,
                 ]
@@ -333,6 +367,15 @@ def _replacements(
         "{{SOURCE_RIGHT}}": str(results["sources"]["right_discovery_fraction"]),
         "{{NULL_GROUPS}}": str(results["sources"]["matched_pairwise_group_count"]),
         "{{NULL_DIFFERENCES}}": str(results["sources"]["matched_groups_with_different_discovery"]),
+        "{{HETERO_SOURCE_LEFT}}": str(results["sources"]["heterogeneous_left_discovery_fraction"]),
+        "{{HETERO_SOURCE_RIGHT}}": str(
+            results["sources"]["heterogeneous_right_discovery_fraction"]
+        ),
+        "{{COLORED_NETWORKS}}": str(results["sources"]["colored_network_count"]),
+        "{{HETERO_MATCHED_GROUPS}}": str(results["sources"]["matched_complete_moment_group_count"]),
+        "{{HETERO_DIFFERENT_GROUPS}}": str(
+            results["sources"]["different_complete_moment_group_count"]
+        ),
         "{{CANONICAL_OPTIMUM}}": str(results["canonical_exact_optimum"]["optimum_fraction"]),
         "{{PRIOR_POOLED_UPPER}}": str(
             results["canonical_exact_optimum"]["prior_pooled_upper_fraction"]
@@ -341,6 +384,9 @@ def _replacements(
         "{{RESULT_RUN_DISCLOSURE}}": str(results["provenance"]["source_runs"]["disclosure"]),
         "{{RESULT_RUN_SELECTION}}": str(results["provenance"]["source_runs"]["selection"]),
         "{{RESULT_RUN_SOURCES}}": str(results["provenance"]["source_runs"]["sources"]),
+        "{{RESULT_RUN_HETEROGENEOUS_SOURCES}}": str(
+            results["provenance"]["source_runs"]["heterogeneous_sources"]
+        ),
         "{{RESULT_RUN_CANONICAL}}": str(results["provenance"]["source_runs"]["canonical"]),
         "{{RESULT_RUN_ALIGNMENT}}": str(results["provenance"]["source_runs"]["alignment"]),
     }

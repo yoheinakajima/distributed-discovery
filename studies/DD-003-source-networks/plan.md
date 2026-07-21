@@ -5,3 +5,5 @@ Dependency: M1 correlation benchmark and M2 terminology. Enumerate every model-v
 Cost guardrail: at most \(2^{12}=4096\) labeled adjacency matrices occur before validity filtering for the largest source count, each canonicalization checks at most \(3!4!=144\) relabelings, and each graph evaluates at most \(3\cdot3^3=81\) target/source states. No graph-isomorphism dependency is required, so no ADR is added.
 
 Completion additionally requires exact registry/result data, a generated SVG, a separate witness-or-null verifier, claim audit records, study/global reports, site integration, and a clean immutable primary run. The authoritative research questions and stop conditions remain in [brief.md](brief.md).
+
+The heterogeneous continuation is complete at the evidence layer. ADR-0011 registers a 671-orbit two-level base and one 168-orbit three-color expansion. Primary run `20260721T032358Z_DD-003_84238b76_2cbc13e66a` independently verifies a full-pairwise-moment counterexample and the complete 839-network census. Preserve these regressions; any next expansion requires a new bounded question and state-size audit.
