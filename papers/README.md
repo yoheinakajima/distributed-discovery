@@ -1,5 +1,8 @@
 # Papers
 
+- `incentive-to-ignore/` — validated 20-page working paper synthesizing DD-012
+  through DD-014, with source-generated exact figures and prediction labels.
+
 - `foundations/`: companion note (M5).
 - `upstream-extension/`: additive text and patch memo (M3).
 - `private-information-teams/`: DD-001 working draft (M6).

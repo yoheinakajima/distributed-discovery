@@ -1,0 +1,40 @@
+{
+  "byte_reproducible_two_builds": true,
+  "citation_keys_resolved": true,
+  "claim_ids_resolved": true,
+  "compile_exit_status": 0,
+  "generated_assets": [
+    "attention-phase.tex",
+    "audience-frontier.tex",
+    "conditional-map.tex",
+    "equilibrium-optimum.tex",
+    "evidence-status.tex",
+    "experiment-map.tex",
+    "mechanisms.tex",
+    "precision-publicity.tex",
+    "social-frontier.tex"
+  ],
+  "generator": "distributed_discovery.papers.build_incentive_to_ignore",
+  "inputs": {
+    "results/verified/20260721T185647Z_DD-011_fa0271d9_fcaa647c55/outputs/hypotheses.json": "0d586f4001c82d6771e0969b3a183b352a120591d84c0a27141c011e1307758f",
+    "results/verified/20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b/outputs/attention-census.json": "b199943481f9fd585a9ba100730fd96eeb105f46ec2c1769063c5e6a7b2970b6",
+    "results/verified/20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b/outputs/phase-map.json": "838acdc5d7acbf54445e07b392a19a3e35ded13a645dffa2ffe3ac31d5e3fb66",
+    "results/verified/20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b/outputs/summary.json": "81d6a760a71fe9b9eeb7422ddc04f4776472c54a9b25e310c5a450cb814bf36b",
+    "results/verified/20260721T215811Z_DD-013_09c07448_cdac4fb512/outputs/audience-frontier.json": "357e7b32c1dc7b0baec8428a4807dc24c37baba60dc751c1fbf4a047feac2995",
+    "results/verified/20260721T215811Z_DD-013_09c07448_cdac4fb512/outputs/summary.json": "7514d4f97cd4b441b862031cc84a943939782f8e006361c1ffe7d4ae8bf1c8b8",
+    "results/verified/20260721T222047Z_DD-014_f5f099a8_ea0276dd16/outputs/policy-census.json": "5f279f4f4c871ce3d73ae9169bd85e44c0fa581921c5c79e9dbb750e12c1072b",
+    "results/verified/20260721T222047Z_DD-014_f5f099a8_ea0276dd16/outputs/policy-phase-map.json": "7a0bffdd95bddad0b36bcf47f91ce70ab2d8887acf8ff2ef880c41c365ce5a5c",
+    "results/verified/20260721T222047Z_DD-014_f5f099a8_ea0276dd16/outputs/summary.json": "c355420c6b9812498bca89486b0fe9e85a28cb92b063fc59348c13b51678151b"
+  },
+  "page_count": 20,
+  "pdf_sha256": "ee9e27f741d25a9597994f18caf2bf406098db7aca4d2ed067a7a011f64be250",
+  "provenance_validated": true,
+  "schema_version": 1,
+  "source_runs": {
+    "attention": "20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b",
+    "audience": "20260721T215811Z_DD-013_09c07448_cdac4fb512",
+    "conditional": "20260721T222047Z_DD-014_f5f099a8_ea0276dd16",
+    "experiment": "20260721T185647Z_DD-011_fa0271d9_fcaa647c55"
+  },
+  "unresolved_references_citations_or_overfull_boxes": false
+}

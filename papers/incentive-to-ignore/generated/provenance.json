@@ -1,0 +1,32 @@
+{
+  "generated_assets": {
+    "attention-phase.tex": "9d9d5c27a0fa2dddf5403540fcd9c2f155d9387abbce17601194f05fe1bb10cc",
+    "audience-frontier.tex": "6a01b005626da9012936ef0caf74222e65cf17b0ceb95ed04ab9c9ad01e54ef2",
+    "conditional-map.tex": "abe96a98d9fff5a3e91f3ee48506d2c3915ddaa7e07fc491748f84d7e1bfc746",
+    "equilibrium-optimum.tex": "0bc1e87c13191e694fc55a009978fd857ca653c475a49fa84ca58f3d44307831",
+    "evidence-status.tex": "0d015e8c98d500b57183c5bd486d232b18c6db9e2edfbc7e5b11ac633fa04287",
+    "experiment-map.tex": "350186407e66855e0c7b5c3e8dd1f92b447c608904ecfb0dee30aeff8db03d25",
+    "mechanisms.tex": "8bee44702acc2a238c901a8646be2580fd9252761684dc8abbf7b5ed11314113",
+    "precision-publicity.tex": "e1af14e1f08c5388d80ba13b73c3469e6cecfc5f2979031aeec6fd669bc9c48e",
+    "social-frontier.tex": "614be2f16c5e66ab09f187bf091dc73e81ec0cac2f94eda3c073dd389f57074a"
+  },
+  "generator": "distributed_discovery.papers.build_incentive_to_ignore",
+  "inputs": {
+    "results/verified/20260721T185647Z_DD-011_fa0271d9_fcaa647c55/outputs/hypotheses.json": "0d586f4001c82d6771e0969b3a183b352a120591d84c0a27141c011e1307758f",
+    "results/verified/20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b/outputs/attention-census.json": "b199943481f9fd585a9ba100730fd96eeb105f46ec2c1769063c5e6a7b2970b6",
+    "results/verified/20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b/outputs/phase-map.json": "838acdc5d7acbf54445e07b392a19a3e35ded13a645dffa2ffe3ac31d5e3fb66",
+    "results/verified/20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b/outputs/summary.json": "81d6a760a71fe9b9eeb7422ddc04f4776472c54a9b25e310c5a450cb814bf36b",
+    "results/verified/20260721T215811Z_DD-013_09c07448_cdac4fb512/outputs/audience-frontier.json": "357e7b32c1dc7b0baec8428a4807dc24c37baba60dc751c1fbf4a047feac2995",
+    "results/verified/20260721T215811Z_DD-013_09c07448_cdac4fb512/outputs/summary.json": "7514d4f97cd4b441b862031cc84a943939782f8e006361c1ffe7d4ae8bf1c8b8",
+    "results/verified/20260721T222047Z_DD-014_f5f099a8_ea0276dd16/outputs/policy-census.json": "5f279f4f4c871ce3d73ae9169bd85e44c0fa581921c5c79e9dbb750e12c1072b",
+    "results/verified/20260721T222047Z_DD-014_f5f099a8_ea0276dd16/outputs/policy-phase-map.json": "7a0bffdd95bddad0b36bcf47f91ce70ab2d8887acf8ff2ef880c41c365ce5a5c",
+    "results/verified/20260721T222047Z_DD-014_f5f099a8_ea0276dd16/outputs/summary.json": "c355420c6b9812498bca89486b0fe9e85a28cb92b063fc59348c13b51678151b"
+  },
+  "schema_version": 1,
+  "source_runs": {
+    "attention": "20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b",
+    "audience": "20260721T215811Z_DD-013_09c07448_cdac4fb512",
+    "conditional": "20260721T222047Z_DD-014_f5f099a8_ea0276dd16",
+    "experiment": "20260721T185647Z_DD-011_fa0271d9_fcaa647c55"
+  }
+}
