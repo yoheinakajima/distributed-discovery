@@ -1,5 +1,49 @@
 document.documentElement.classList.add("js");
 
+const menu = document.querySelector(".nav-menu");
+if (menu) {
+  const mobile = window.matchMedia("(max-width: 760px)");
+  const syncMenu = () => {
+    if (mobile.matches) menu.removeAttribute("open");
+    else menu.setAttribute("open", "");
+  };
+  syncMenu();
+  mobile.addEventListener("change", syncMenu);
+}
+
+document.querySelectorAll("[data-research-catalog]").forEach((catalog) => {
+  const search = catalog.querySelector("#study-search");
+  const status = catalog.querySelector("#study-status");
+  const cards = Array.from(catalog.querySelectorAll("[data-study-card]"));
+  const buttons = Array.from(catalog.querySelectorAll("[data-study-filter]"));
+  if (!search || !status || !cards.length || !buttons.length) return;
+  let activeFilter = "all";
+  const render = () => {
+    const query = search.value.trim().toLowerCase();
+    let visible = 0;
+    cards.forEach((card) => {
+      const categories = (card.dataset.category || "").split(" ");
+      const matchesFilter = activeFilter === "all" || categories.includes(activeFilter);
+      const matchesQuery = !query || (card.dataset.search || "").includes(query);
+      const show = matchesFilter && matchesQuery;
+      card.hidden = !show;
+      if (show) visible += 1;
+    });
+    status.textContent = `${visible} ${visible === 1 ? "study" : "studies"} shown`;
+  };
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      activeFilter = button.dataset.studyFilter || "all";
+      buttons.forEach((candidate) => {
+        candidate.setAttribute("aria-pressed", String(candidate === button));
+      });
+      render();
+    });
+  });
+  search.addEventListener("input", render);
+  render();
+});
+
 document.querySelectorAll("[data-lab]").forEach((lab) => {
   const slider = lab.querySelector("input[type=range]");
   const output = lab.querySelector("output");

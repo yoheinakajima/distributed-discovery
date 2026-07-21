@@ -1,0 +1,598 @@
+[
+  {
+    "route": "index.html",
+    "size": "390x844",
+    "bodyWidth": 390,
+    "documentWidth": 390,
+    "focusableCount": 37,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Research Library — Distributed Discovery",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    }
+  },
+  {
+    "route": "research.html",
+    "size": "390x844",
+    "bodyWidth": 390,
+    "documentWidth": 390,
+    "focusableCount": 39,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Research — Distributed Discovery",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    }
+  },
+  {
+    "route": "research/dd-013.html",
+    "size": "390x844",
+    "bodyWidth": 390,
+    "documentWidth": 390,
+    "focusableCount": 30,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Audience Design and Information Firewalls — Distributed Discovery",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    }
+  },
+  {
+    "route": "results.html",
+    "size": "390x844",
+    "bodyWidth": 390,
+    "documentWidth": 390,
+    "focusableCount": 34,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Results — Distributed Discovery",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    }
+  },
+  {
+    "route": "labs.html",
+    "size": "390x844",
+    "bodyWidth": 390,
+    "documentWidth": 390,
+    "focusableCount": 44,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Labs — Distributed Discovery",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    }
+  },
+  {
+    "route": "labs/audience.html",
+    "size": "390x844",
+    "bodyWidth": 390,
+    "documentWidth": 390,
+    "focusableCount": 31,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [
+      {
+        "client": 350,
+        "scroll": 597
+      },
+      {
+        "client": 350,
+        "scroll": 409
+      }
+    ],
+    "title": "Audience Lab — Distributed Discovery",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    }
+  },
+  {
+    "route": "publications.html",
+    "size": "390x844",
+    "bodyWidth": 390,
+    "documentWidth": 390,
+    "focusableCount": 30,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Publications — Distributed Discovery",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    }
+  },
+  {
+    "route": "benchmark/results.html",
+    "size": "390x844",
+    "bodyWidth": 390,
+    "documentWidth": 390,
+    "focusableCount": 18,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [
+      {
+        "client": 350,
+        "scroll": 350
+      }
+    ],
+    "title": "Benchmark results — Distributed Discovery",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    }
+  },
+  {
+    "route": "experiment-kit.html",
+    "size": "390x844",
+    "bodyWidth": 390,
+    "documentWidth": 390,
+    "focusableCount": 28,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Experiment kit — Distributed Discovery",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    }
+  },
+  {
+    "route": "index.html",
+    "size": "768x1024",
+    "bodyWidth": 768,
+    "documentWidth": 768,
+    "focusableCount": 37,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Research Library — Distributed Discovery",
+    "viewport": {
+      "height": 1024,
+      "width": 768
+    }
+  },
+  {
+    "route": "research.html",
+    "size": "768x1024",
+    "bodyWidth": 768,
+    "documentWidth": 768,
+    "focusableCount": 39,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Research — Distributed Discovery",
+    "viewport": {
+      "height": 1024,
+      "width": 768
+    }
+  },
+  {
+    "route": "research/dd-013.html",
+    "size": "768x1024",
+    "bodyWidth": 768,
+    "documentWidth": 768,
+    "focusableCount": 30,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Audience Design and Information Firewalls — Distributed Discovery",
+    "viewport": {
+      "height": 1024,
+      "width": 768
+    }
+  },
+  {
+    "route": "results.html",
+    "size": "768x1024",
+    "bodyWidth": 768,
+    "documentWidth": 768,
+    "focusableCount": 34,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Results — Distributed Discovery",
+    "viewport": {
+      "height": 1024,
+      "width": 768
+    }
+  },
+  {
+    "route": "labs.html",
+    "size": "768x1024",
+    "bodyWidth": 768,
+    "documentWidth": 768,
+    "focusableCount": 44,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Labs — Distributed Discovery",
+    "viewport": {
+      "height": 1024,
+      "width": 768
+    }
+  },
+  {
+    "route": "labs/audience.html",
+    "size": "768x1024",
+    "bodyWidth": 768,
+    "documentWidth": 768,
+    "focusableCount": 31,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [
+      {
+        "client": 704,
+        "scroll": 704
+      },
+      {
+        "client": 704,
+        "scroll": 704
+      }
+    ],
+    "title": "Audience Lab — Distributed Discovery",
+    "viewport": {
+      "height": 1024,
+      "width": 768
+    }
+  },
+  {
+    "route": "publications.html",
+    "size": "768x1024",
+    "bodyWidth": 768,
+    "documentWidth": 768,
+    "focusableCount": 30,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Publications — Distributed Discovery",
+    "viewport": {
+      "height": 1024,
+      "width": 768
+    }
+  },
+  {
+    "route": "benchmark/results.html",
+    "size": "768x1024",
+    "bodyWidth": 768,
+    "documentWidth": 768,
+    "focusableCount": 18,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [
+      {
+        "client": 704,
+        "scroll": 704
+      }
+    ],
+    "title": "Benchmark results — Distributed Discovery",
+    "viewport": {
+      "height": 1024,
+      "width": 768
+    }
+  },
+  {
+    "route": "experiment-kit.html",
+    "size": "768x1024",
+    "bodyWidth": 768,
+    "documentWidth": 768,
+    "focusableCount": 28,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Experiment kit — Distributed Discovery",
+    "viewport": {
+      "height": 1024,
+      "width": 768
+    }
+  },
+  {
+    "route": "index.html",
+    "size": "1280x900",
+    "bodyWidth": 1280,
+    "documentWidth": 1280,
+    "focusableCount": 37,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Research Library — Distributed Discovery",
+    "viewport": {
+      "height": 900,
+      "width": 1280
+    }
+  },
+  {
+    "route": "research.html",
+    "size": "1280x900",
+    "bodyWidth": 1280,
+    "documentWidth": 1280,
+    "focusableCount": 39,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Research — Distributed Discovery",
+    "viewport": {
+      "height": 900,
+      "width": 1280
+    }
+  },
+  {
+    "route": "research/dd-013.html",
+    "size": "1280x900",
+    "bodyWidth": 1280,
+    "documentWidth": 1280,
+    "focusableCount": 30,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Audience Design and Information Firewalls — Distributed Discovery",
+    "viewport": {
+      "height": 900,
+      "width": 1280
+    }
+  },
+  {
+    "route": "results.html",
+    "size": "1280x900",
+    "bodyWidth": 1280,
+    "documentWidth": 1280,
+    "focusableCount": 34,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Results — Distributed Discovery",
+    "viewport": {
+      "height": 900,
+      "width": 1280
+    }
+  },
+  {
+    "route": "labs.html",
+    "size": "1280x900",
+    "bodyWidth": 1280,
+    "documentWidth": 1280,
+    "focusableCount": 44,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Labs — Distributed Discovery",
+    "viewport": {
+      "height": 900,
+      "width": 1280
+    }
+  },
+  {
+    "route": "labs/audience.html",
+    "size": "1280x900",
+    "bodyWidth": 1280,
+    "documentWidth": 1280,
+    "focusableCount": 31,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [
+      {
+        "client": 704,
+        "scroll": 704
+      },
+      {
+        "client": 704,
+        "scroll": 704
+      }
+    ],
+    "title": "Audience Lab — Distributed Discovery",
+    "viewport": {
+      "height": 900,
+      "width": 1280
+    }
+  },
+  {
+    "route": "publications.html",
+    "size": "1280x900",
+    "bodyWidth": 1280,
+    "documentWidth": 1280,
+    "focusableCount": 30,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Publications — Distributed Discovery",
+    "viewport": {
+      "height": 900,
+      "width": 1280
+    }
+  },
+  {
+    "route": "benchmark/results.html",
+    "size": "1280x900",
+    "bodyWidth": 1280,
+    "documentWidth": 1280,
+    "focusableCount": 18,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [
+      {
+        "client": 704,
+        "scroll": 704
+      }
+    ],
+    "title": "Benchmark results — Distributed Discovery",
+    "viewport": {
+      "height": 900,
+      "width": 1280
+    }
+  },
+  {
+    "route": "experiment-kit.html",
+    "size": "1280x900",
+    "bodyWidth": 1280,
+    "documentWidth": 1280,
+    "focusableCount": 28,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Experiment kit — Distributed Discovery",
+    "viewport": {
+      "height": 900,
+      "width": 1280
+    }
+  },
+  {
+    "route": "index.html",
+    "size": "1440x1000",
+    "bodyWidth": 1440,
+    "documentWidth": 1440,
+    "focusableCount": 37,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Research Library — Distributed Discovery",
+    "viewport": {
+      "height": 1000,
+      "width": 1440
+    }
+  },
+  {
+    "route": "research.html",
+    "size": "1440x1000",
+    "bodyWidth": 1440,
+    "documentWidth": 1440,
+    "focusableCount": 39,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Research — Distributed Discovery",
+    "viewport": {
+      "height": 1000,
+      "width": 1440
+    }
+  },
+  {
+    "route": "research/dd-013.html",
+    "size": "1440x1000",
+    "bodyWidth": 1440,
+    "documentWidth": 1440,
+    "focusableCount": 30,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Audience Design and Information Firewalls — Distributed Discovery",
+    "viewport": {
+      "height": 1000,
+      "width": 1440
+    }
+  },
+  {
+    "route": "results.html",
+    "size": "1440x1000",
+    "bodyWidth": 1440,
+    "documentWidth": 1440,
+    "focusableCount": 34,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Results — Distributed Discovery",
+    "viewport": {
+      "height": 1000,
+      "width": 1440
+    }
+  },
+  {
+    "route": "labs.html",
+    "size": "1440x1000",
+    "bodyWidth": 1440,
+    "documentWidth": 1440,
+    "focusableCount": 44,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Labs — Distributed Discovery",
+    "viewport": {
+      "height": 1000,
+      "width": 1440
+    }
+  },
+  {
+    "route": "labs/audience.html",
+    "size": "1440x1000",
+    "bodyWidth": 1440,
+    "documentWidth": 1440,
+    "focusableCount": 31,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [
+      {
+        "client": 704,
+        "scroll": 704
+      },
+      {
+        "client": 704,
+        "scroll": 704
+      }
+    ],
+    "title": "Audience Lab — Distributed Discovery",
+    "viewport": {
+      "height": 1000,
+      "width": 1440
+    }
+  },
+  {
+    "route": "publications.html",
+    "size": "1440x1000",
+    "bodyWidth": 1440,
+    "documentWidth": 1440,
+    "focusableCount": 30,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Publications — Distributed Discovery",
+    "viewport": {
+      "height": 1000,
+      "width": 1440
+    }
+  },
+  {
+    "route": "benchmark/results.html",
+    "size": "1440x1000",
+    "bodyWidth": 1440,
+    "documentWidth": 1440,
+    "focusableCount": 18,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [
+      {
+        "client": 704,
+        "scroll": 704
+      }
+    ],
+    "title": "Benchmark results — Distributed Discovery",
+    "viewport": {
+      "height": 1000,
+      "width": 1440
+    }
+  },
+  {
+    "route": "experiment-kit.html",
+    "size": "1440x1000",
+    "bodyWidth": 1440,
+    "documentWidth": 1440,
+    "focusableCount": 28,
+    "h1Count": 1,
+    "navCount": 2,
+    "tableWidths": [],
+    "title": "Experiment kit — Distributed Discovery",
+    "viewport": {
+      "height": 1000,
+      "width": 1440
+    }
+  }
+]

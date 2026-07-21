@@ -1,0 +1,141 @@
+schema_version: 1
+brand:
+  name: Distributed Discovery
+  descriptor: How groups turn evidence into portfolios of action.
+  academic_bridge: Collective search under dispersed information.
+  formal_object: a discovery architecture
+  core_distinction: Information aggregation is not action allocation.
+  public_thesis: Collective intelligence is not sufficient for collective discovery.
+  hook: Better shared information can produce worse collective discovery.
+  explanation: >-
+    A group can improve its best guess and still waste its attempts by sending
+    everyone to the same place. This project studies how evidence, roles,
+    incentives, and timing shape a portfolio of search actions.
+  principle: Share the evidence. Diversify the actions.
+  synthesis_phrase: The Architecture of Distributed Discovery
+navigation:
+  primary:
+    - label: Home
+      route: index.html
+    - label: Research
+      route: research.html
+    - label: Results
+      route: results.html
+    - label: Labs
+      route: labs.html
+    - label: Papers
+      route: publications.html
+  resources:
+    - label: Foundations
+      route: foundations.html
+    - label: Applications
+      route: applications.html
+    - label: Claims
+      route: claims.html
+    - label: Evidence
+      route: evidence.html
+    - label: Benchmark
+      route: benchmark.html
+    - label: Experiment Kit
+      route: experiment-kit.html
+    - label: Ideas
+      route: ideas.html
+    - label: Repository
+      route: https://github.com/yoheinakajima/distributed-discovery
+home:
+  eyebrow: Collective search under dispersed information
+  primary_cta: See the paradox
+  secondary_cta: Explore the research
+  tertiary_cta: Browse the Labs
+  sections:
+    paradox: Evidence is only the first step
+    process: How the system works
+    comparison: Same clues. Different ways to search.
+    findings: Key findings
+    explore: Explore the work
+    next: Where to go next
+research:
+  title: Research
+  description: >-
+    Browse studies of how evidence, roles, incentives, timing, and action
+    allocation shape collective search.
+  search_label: Search studies
+  search_placeholder: Search by question, title, or study ID
+  result_label: studies shown
+  filters:
+    all: All
+    key-results: Key results
+    active: Active
+    planned: Planned
+    tools: Tools and infrastructure
+results:
+  title: Results
+  description: Findings about how groups gather evidence and spread action across search.
+  groups:
+    acquisition: How information is gathered
+    sharing: How information is shared
+    allocation: How actions are allocated
+    incentives: How incentives change behavior
+    measurement: How discovery is measured
+labs:
+  title: Labs
+  description: Interactive explainers for exact and synthetic models in the research program.
+  prompts:
+    change: What can I change?
+    see: What will I see?
+    study: Which study supports it?
+  groups:
+    search: Search and allocation
+    information: Information and sources
+    incentives: Incentives and mechanisms
+    measurement: Measurement and experiments
+papers:
+  title: Papers
+  description: >-
+    Working papers on how groups acquire, share, and convert evidence into
+    portfolios of action.
+benchmark:
+  title: Compare search strategies
+  tasks: Benchmark tasks
+  protocols: What each strategy can see and do
+  metrics: How performance is measured
+  results: Benchmark results
+experiment:
+  title: Plan a discovery experiment
+  hypotheses: What the experiment would test
+  design: How participants would be assigned
+  power: Synthetic power estimates
+  safeguards: Materials and safeguards
+study_sections:
+  question: The question
+  answer: What we found
+  boundary: What this result covers
+  runs: Reproducible evidence
+  sources: Files and data
+  next: What comes next
+technical:
+  details: Technical details
+  table_scroll: Scroll horizontally to see every column.
+metadata:
+  home:
+    title: Distributed Discovery
+    description: How groups and multi-agent systems turn evidence into portfolios of action.
+    social_description: >-
+      Better shared information does not guarantee better collective discovery.
+      The outcome depends on how evidence is acquired, shared, and spread across
+      multiple attempts.
+  research:
+    title: Research — Distributed Discovery
+    description: >-
+      Studies of collective search under dispersed information, covering
+      evidence, roles, incentives, timing, and action allocation.
+  labs:
+    title: Labs — Distributed Discovery
+    description: >-
+      Interactive explainers for the exact and synthetic models in the
+      Distributed Discovery research program.
+  papers:
+    title: Papers — Distributed Discovery
+    description: >-
+      Working papers on how groups acquire, share, and convert evidence into
+      portfolios of action.
