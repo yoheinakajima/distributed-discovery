@@ -17,6 +17,7 @@ from distributed_discovery.validation.bootstrap import repository_root
 
 
 def configure(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument("--version", choices=("v1", "v2"), default="v1")
     commands = parser.add_subparsers(dest="experiment_command", required=True)
     commands.add_parser("design")
     commands.add_parser("hypotheses")
@@ -34,18 +35,36 @@ def _load(path: Path) -> Any:
 
 
 def execute(args: argparse.Namespace) -> object:
+    if args.version == "v1":
+        registry = design_registry()
+        hypothesis_rows = hypotheses()
+    else:
+        from distributed_discovery.experimental_design.attention_model import (
+            design_registry as attention_registry,
+        )
+        from distributed_discovery.experimental_design.attention_model import (
+            hypotheses as attention_hypotheses,
+        )
+
+        registry = attention_registry()
+        hypothesis_rows = attention_hypotheses()
     if args.experiment_command == "design":
-        return design_registry()
+        return registry
     if args.experiment_command == "hypotheses":
-        return hypotheses()
+        return hypothesis_rows
     if args.experiment_command == "assign":
-        return generate_assignments(args.seed, args.participants_per_cell, 8)
+        return generate_assignments(
+            args.seed, args.participants_per_cell, 8, cells_registry=registry["treatment_cells"]
+        )
     if args.experiment_command == "power":
+        scenario_rows = registry["response_scenarios"]
         return simulate_power_table(
-            [110101, 110102, 110103, 110104, 110105, 110106, 110107, 110108],
+            [110101 + index for index in range(len(scenario_rows))],
             [640],
             args.replications,
             8,
+            hypothesis_rows=hypothesis_rows,
+            scenario_rows=scenario_rows,
         )
     root = repository_root()
     outputs = root / "results/verified" / args.run_id / "outputs"
@@ -57,4 +76,4 @@ def execute(args: argparse.Namespace) -> object:
         "exact_model_checks": _load(outputs / "exact-model-checks.json"),
         "synthetic_sample": _load(outputs / "synthetic-sample.json"),
     }
-    return verify_bundle(bundle, root)
+    return verify_bundle(bundle, root, args.version)

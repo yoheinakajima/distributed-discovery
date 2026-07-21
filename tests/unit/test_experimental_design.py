@@ -4,6 +4,12 @@ import copy
 
 import pytest
 
+from distributed_discovery.experimental_design.attention_model import (
+    design_registry as attention_design_registry,
+)
+from distributed_discovery.experimental_design.attention_model import (
+    hypotheses as attention_hypotheses,
+)
 from distributed_discovery.experimental_design.model import design_registry, hypotheses
 from distributed_discovery.experimental_design.power import (
     generate_assignments,
@@ -88,3 +94,35 @@ def test_schema_and_real_data_boundary_fail_closed() -> None:
     leaked["synthetic_sample"][0]["synthetic_only"] = False
     with pytest.raises(ValueError, match="non-synthetic"):
         verify_bundle(leaked, repository_root())
+
+
+def test_attention_v2_extends_the_synthetic_design_and_verifies() -> None:
+    design = attention_design_registry()
+    assert len(design["treatment_cells"]) == 29
+    assert len(design["hypotheses"]) == 14
+    assert len(design["response_scenarios"]) == 11
+    assert design["treatment_cells"][:20] != design_registry()["treatment_cells"]
+    assert [row["cell_id"] for row in design["treatment_cells"][:20]] == [
+        row["cell_id"] for row in design_registry()["treatment_cells"]
+    ]
+    assert {row["hypothesis_id"] for row in attention_hypotheses()[8:]} == {
+        "H9",
+        "H10",
+        "H11",
+        "H12",
+        "H13",
+        "H14",
+    }
+    config = {
+        "randomization_seed": 52,
+        "participants_per_cell": 8,
+        "session_size": 8,
+        "scenario_seeds": list(range(201, 212)),
+        "sample_sizes": [200],
+        "replications": 5,
+        "sample_seed": 199,
+        "sample_rows": 20,
+    }
+    bundle = build_bundle(config, "v2")
+    assert verify_bundle(bundle, repository_root(), "v2")["power_rows_verified"] == 154
+    assert all(corruption_tests(bundle, repository_root(), "v2").values())

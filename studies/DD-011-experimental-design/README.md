@@ -8,3 +8,8 @@ real-world statistical power.
 Primary run: `20260721T185647Z_DD-011_fa0271d9_fcaa647c55`. Verify it with
 `distributed-discovery experiment verify
 20260721T185647Z_DD-011_fa0271d9_fcaa647c55`.
+
+The selective-attention extension is explicit v2 and preserves the v1 CLI
+default. It appends nine treatment cells, six hypotheses, four outcomes, and
+three response scenarios. Inspect it with `distributed-discovery experiment
+--version v2 design`; execute `make dd011-attention` only from a clean commit.

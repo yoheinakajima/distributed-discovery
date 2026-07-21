@@ -26,10 +26,11 @@ def generate_assignments(
     participants_per_cell: int,
     session_size: int,
     blocks: tuple[str, ...] = ("B1", "B2", "B3", "B4"),
+    cells_registry: list[dict[str, str]] | None = None,
 ) -> dict[str, Any]:
     """Generate concealed, blocked assignments for synthetic identifiers only."""
 
-    cells = [cell["cell_id"] for cell in treatment_cells()]
+    cells = [cell["cell_id"] for cell in (cells_registry or treatment_cells())]
     if participants_per_cell % len(blocks) or participants_per_cell % session_size:
         raise ValueError("participants_per_cell must divide evenly across blocks and sessions")
     slots: list[tuple[str, str]] = []
@@ -74,8 +75,8 @@ def generate_assignments(
     }
 
 
-def _family_sizes() -> Counter[str]:
-    return Counter(str(row["multiplicity_family"]) for row in hypotheses())
+def _family_sizes(hypothesis_rows: list[dict[str, Any]]) -> Counter[str]:
+    return Counter(str(row["multiplicity_family"]) for row in hypothesis_rows)
 
 
 def _standard_error(
@@ -111,16 +112,19 @@ def simulate_power_table(
     sample_sizes: list[int],
     replications: int,
     cluster_size: int,
+    hypothesis_rows: list[dict[str, Any]] | None = None,
+    scenario_rows: list[dict[str, Any]] | None = None,
 ) -> list[dict[str, Any]]:
     """Simulate one-sided conditional power for every frozen hypothesis/scenario/sample."""
 
-    scenarios = response_scenarios()
+    scenarios = scenario_rows or response_scenarios()
+    registered_hypotheses = hypothesis_rows or hypotheses()
     if len(scenario_seeds) != len(scenarios):
         raise ValueError("one explicit seed is required per response scenario")
-    family_sizes = _family_sizes()
+    family_sizes = _family_sizes(registered_hypotheses)
     table: list[dict[str, Any]] = []
     for scenario, base_seed in zip(scenarios, scenario_seeds, strict=True):
-        for hypothesis in hypotheses():
+        for hypothesis in registered_hypotheses:
             family = str(hypothesis["multiplicity_family"])
             alpha = 0.05 / family_sizes[family]
             critical = NormalDist().inv_cdf(1.0 - alpha)

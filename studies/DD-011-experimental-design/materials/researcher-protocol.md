@@ -10,3 +10,8 @@
 8. Publish exclusions, missingness, null results, and deviations.
 
 Steps 1–8 are a proposal. This repository performs none of the live operations.
+
+For any separately authorized v2 deployment, freeze the 29-cell manifest before
+outcomes; verify the access gate separately from the recommendation and reward;
+log random-reader and selected-audience assignments before clue realization;
+and never recode noncompliance as missing data. These remain draft procedures.

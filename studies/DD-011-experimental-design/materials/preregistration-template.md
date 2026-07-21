@@ -23,3 +23,14 @@
   code/data availability, and the no-human-data status of the development package.
 
 Completing this file does not constitute preregistration.
+
+## Selective-attention v2 amendment draft
+
+- Questions and hypotheses H9–H14.
+- Nine appended treatment cells T20–T28 and the frozen 29-cell assignment matrix.
+- Attention, implementation, and conditional-policy multiplicity families.
+- Eleven declared synthetic response scenarios, including heterogeneous
+  salience, partial compliance, memory leakage, role aversion, and social
+  preference heterogeneity.
+- Prominent statement: **No participants were recruited. No human data were
+  collected. No experiment was conducted.**

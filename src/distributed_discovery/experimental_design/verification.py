@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import copy
 import json
+import math
 import random
 from collections import Counter
 from pathlib import Path
@@ -24,9 +25,14 @@ def _load(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def _independent_power_checks(power_table: list[dict[str, Any]]) -> int:
-    hypothesis_index = {str(row["hypothesis_id"]): row for row in hypotheses()}
-    scenario_index = {str(row["scenario_id"]): row for row in response_scenarios()}
+def _independent_power_checks(
+    power_table: list[dict[str, Any]],
+    hypothesis_rows: list[dict[str, Any]],
+    scenario_rows: list[dict[str, Any]],
+) -> int:
+    hypothesis_index = {str(row["hypothesis_id"]): row for row in hypothesis_rows}
+    scenario_index = {str(row["scenario_id"]): row for row in scenario_rows}
+    family_sizes = Counter(str(row["multiplicity_family"]) for row in hypothesis_rows)
     verified = 0
     for row in power_table:
         hypothesis = hypothesis_index[str(row["hypothesis_id"])]
@@ -34,9 +40,21 @@ def _independent_power_checks(power_table: list[dict[str, Any]]) -> int:
         expected_effect = float(hypothesis["assumed_effect"]) * float(scenario["effect_multiplier"])
         if abs(float(row["assumed_effect"]) - expected_effect) > 1e-6:
             raise ValueError("power row effect does not match the frozen scenario")
-        alpha = float(row["multiplicity_alpha"])
+        alpha = 0.05 / family_sizes[str(hypothesis["multiplicity_family"])]
+        if abs(float(row["multiplicity_alpha"]) - alpha) > 1e-6:
+            raise ValueError("power row multiplicity threshold mismatch")
         critical = NormalDist().inv_cdf(1.0 - alpha)
-        standard_error = float(row["standard_error"])
+        retained = int(row["sample_size"]) * (1.0 - float(scenario["attrition_rate"]))
+        treated = max(0.01, min(0.99, 0.50 + expected_effect))
+        independent_variance = 0.25 / (retained / 2.0) + treated * (1.0 - treated) / (
+            retained / 2.0
+        )
+        design_effect = 1.0 + 7.0 * float(scenario["intracluster_correlation"])
+        standard_error = math.sqrt(independent_variance * design_effect) * float(
+            scenario["noise_multiplier"]
+        )
+        if abs(float(row["standard_error"]) - standard_error) > 1e-6:
+            raise ValueError("power row standard error mismatch")
         rng = random.Random(int(row["row_seed"]))
         reproduced = sum(
             rng.gauss(expected_effect, standard_error) / standard_error > critical
@@ -104,18 +122,46 @@ def _verify_exact_sources(root: Path) -> int:
     return 4
 
 
-def verify_bundle(bundle: dict[str, Any], root: Path) -> dict[str, Any]:
+def verify_bundle(bundle: dict[str, Any], root: Path, version: str = "v1") -> dict[str, Any]:
     design = bundle["design"]
-    schema = _load(root / "studies/DD-011-experimental-design/schemas/design-v1.schema.json")
+    if version == "v1":
+        cell_rows = treatment_cells()
+        hypothesis_rows = hypotheses()
+        scenario_rows = response_scenarios()
+        expected_counts = (20, 8, 8)
+    elif version == "v2":
+        from distributed_discovery.experimental_design.attention_model import (
+            hypotheses as attention_hypotheses,
+        )
+        from distributed_discovery.experimental_design.attention_model import (
+            response_scenarios as attention_scenarios,
+        )
+        from distributed_discovery.experimental_design.attention_model import (
+            treatment_cells as attention_cells,
+        )
+
+        cell_rows = attention_cells()
+        hypothesis_rows = attention_hypotheses()
+        scenario_rows = attention_scenarios()
+        expected_counts = (29, 14, 11)
+    else:
+        raise ValueError(f"unknown experiment version: {version}")
+    schema = _load(
+        root / f"studies/DD-011-experimental-design/schemas/design-{version}.schema.json"
+    )
     errors = sorted(
         Draft202012Validator(schema).iter_errors(design), key=lambda item: item.json_path
     )
     if errors:
         raise ValueError(f"design schema failed: {errors[0].message}")
-    cells = treatment_cells()
+    cells = cell_rows
     cell_ids = {row["cell_id"] for row in cells}
-    if len(cells) != 20 or len(cell_ids) != 20:
-        raise ValueError("treatment registry must contain 20 unique cells")
+    if len(cells) != expected_counts[0] or len(cell_ids) != expected_counts[0]:
+        raise ValueError("treatment registry has the wrong number of unique cells")
+    if len(design["hypotheses"]) != expected_counts[1]:
+        raise ValueError("hypothesis registry count mismatch")
+    if len(design["response_scenarios"]) != expected_counts[2]:
+        raise ValueError("response-scenario registry count mismatch")
     outcome_ids = {row["outcome_id"] for row in design["outcomes"]}
     for hypothesis in design["hypotheses"]:
         if (
@@ -139,7 +185,9 @@ def verify_bundle(bundle: dict[str, Any], root: Path) -> dict[str, Any]:
         raise ValueError("no-real-data boundary is absent")
     if any(not row["synthetic_only"] for row in bundle["synthetic_sample"]):
         raise ValueError("sample contains a non-synthetic record")
-    verified_power_rows = _independent_power_checks(bundle["power_table"])
+    verified_power_rows = _independent_power_checks(
+        bundle["power_table"], hypothesis_rows, scenario_rows
+    )
     exact_source_checks = _verify_exact_sources(root)
     return {
         "passed": True,
@@ -152,12 +200,12 @@ def verify_bundle(bundle: dict[str, Any], root: Path) -> dict[str, Any]:
     }
 
 
-def corruption_tests(bundle: dict[str, Any], root: Path) -> dict[str, bool]:
+def corruption_tests(bundle: dict[str, Any], root: Path, version: str = "v1") -> dict[str, bool]:
     altered_power = copy.deepcopy(bundle)
     altered_power["power_table"][0]["rejections"] += 1
     power_rejected = False
     try:
-        verify_bundle(altered_power, root)
+        verify_bundle(altered_power, root, version)
     except ValueError:
         power_rejected = True
 
@@ -165,7 +213,7 @@ def corruption_tests(bundle: dict[str, Any], root: Path) -> dict[str, bool]:
     leaked_record["randomization"]["assignments"][0]["participant_id"] = "REAL-001"
     real_data_rejected = False
     try:
-        verify_bundle(leaked_record, root)
+        verify_bundle(leaked_record, root, version)
     except ValueError:
         real_data_rejected = True
 
@@ -173,7 +221,7 @@ def corruption_tests(bundle: dict[str, Any], root: Path) -> dict[str, bool]:
     altered_boundary["design"]["no_human_data"] = False
     boundary_rejected = False
     try:
-        verify_bundle(altered_boundary, root)
+        verify_bundle(altered_boundary, root, version)
     except ValueError:
         boundary_rejected = True
     return {

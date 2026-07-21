@@ -12,7 +12,7 @@ from typing import Any
 
 import yaml
 
-from distributed_discovery.experimental_design.model import design_registry
+from distributed_discovery.experimental_design.model import design_registry as v1_design_registry
 from distributed_discovery.experimental_design.power import (
     calibration_report,
     exact_model_checks,
@@ -35,20 +35,31 @@ def _write(path: Path, value: object) -> None:
     path.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
-def build_bundle(config: dict[str, Any]) -> dict[str, Any]:
+def build_bundle(config: dict[str, Any], version: str = "v1") -> dict[str, Any]:
+    if version == "v1":
+        registry = v1_design_registry()
+    elif version == "v2":
+        from distributed_discovery.experimental_design.attention_model import design_registry
+
+        registry = design_registry()
+    else:
+        raise ValueError(f"unknown experiment version: {version}")
     randomization = generate_assignments(
         int(config["randomization_seed"]),
         int(config["participants_per_cell"]),
         int(config["session_size"]),
+        cells_registry=registry["treatment_cells"],
     )
     table = simulate_power_table(
         [int(seed) for seed in config["scenario_seeds"]],
         [int(size) for size in config["sample_sizes"]],
         int(config["replications"]),
         int(config["session_size"]),
+        hypothesis_rows=registry["hypotheses"],
+        scenario_rows=registry["response_scenarios"],
     )
     return {
-        "design": design_registry(),
+        "design": registry,
         "randomization": randomization,
         "power_table": table,
         "calibration": calibration_report(table),
@@ -59,15 +70,21 @@ def build_bundle(config: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def main() -> None:
+def run_registered(
+    config_relative: Path = CONFIG,
+    version: str = "v1",
+    command: str = "make dd011-experiment",
+) -> str:
     root = repository_root()
-    config_path = root / CONFIG
+    config_path = root / config_relative
     config = yaml.safe_load(config_path.read_text(encoding="utf-8"))
     digest = hashlib.sha256(json.dumps(config, sort_keys=True).encode()).hexdigest()
     commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip()
     dirty = bool(
         subprocess.check_output(["git", "status", "--porcelain"], cwd=root, text=True).strip()
     )
+    if dirty:
+        raise RuntimeError("registered synthetic experiment runs require a clean committed tree")
     started = datetime.now(UTC)
     run_id = f"{started:%Y%m%dT%H%M%SZ}_DD-011_{commit[:8]}_{digest[:10]}"
     run = root / "results/verified" / run_id
@@ -75,9 +92,9 @@ def main() -> None:
     outputs.mkdir(parents=True)
     (run / "config.yml").write_text(config_path.read_text(encoding="utf-8"), encoding="utf-8")
 
-    bundle = build_bundle(config)
-    verification = verify_bundle(bundle, root)
-    corruptions = corruption_tests(bundle, root)
+    bundle = build_bundle(config, version)
+    verification = verify_bundle(bundle, root, version)
+    corruptions = corruption_tests(bundle, root, version)
     if not verification["passed"] or not all(corruptions.values()):
         raise RuntimeError("DD-011 independent verification failed")
     artifacts = {
@@ -110,6 +127,7 @@ def main() -> None:
         _write(outputs / name, value)
     summary = {
         "treatment_cells": len(bundle["design"]["treatment_cells"]),
+        "experiment_version": version,
         "hypotheses": len(bundle["design"]["hypotheses"]),
         "outcomes": len(bundle["design"]["outcomes"]),
         "response_scenarios": len(bundle["design"]["response_scenarios"]),
@@ -128,7 +146,7 @@ def main() -> None:
     (run / "stderr.txt").write_text("", encoding="utf-8")
     input_paths = [
         config_path,
-        root / "studies/DD-011-experimental-design/schemas/design-v1.schema.json",
+        root / f"studies/DD-011-experimental-design/schemas/design-{version}.schema.json",
         root / "src/distributed_discovery/experimental_design/model.py",
         root / "src/distributed_discovery/experimental_design/power.py",
         root / "src/distributed_discovery/experimental_design/verification.py",
@@ -145,7 +163,7 @@ def main() -> None:
         "git_commit": commit,
         "git_dirty": dirty,
         "upstream_commit": None,
-        "command": "make dd011-experiment",
+        "command": command,
         "config_hash_sha256": digest,
         "dependency_lock_hash_sha256": _sha(root / "uv.lock"),
         "input_hashes": {str(path.relative_to(root)): _sha(path) for path in input_paths},
@@ -169,6 +187,11 @@ def main() -> None:
         encoding="utf-8",
     )
     print(run_id)
+    return run_id
+
+
+def main() -> None:
+    run_registered()
 
 
 if __name__ == "__main__":
