@@ -91,3 +91,7 @@ PR #90 subsequently advanced `main` to `8a1255e` with The Incentive to Ignore
 and shared builder/test changes. It merged into the UI branch without conflict.
 The new paper route, download, metadata, and test are preserved; its public card
 uses the same presentation-only purpose layer as the four existing papers.
+
+Final status: the last open-PR query contained only UI PR #89. Its head checks
+passed and it merged as `427245541ccceb6535f26bd4400d7a7c5662db30`; post-merge
+CI and Pages deployment also passed. No parallel research change was displaced.
