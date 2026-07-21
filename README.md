@@ -50,6 +50,7 @@ make dd006-mechanisms       # run the score-difference mechanism catalogue
 make dd006b-joint-mechanism # run the normalized joint-mechanism frontier
 make dd007-synthetic-audit  # run the synthetic-only recovery audit
 make dd009-atlas             # run the aligned architecture registry and Pareto census
+make dd010-discoverybench    # run the exact golden benchmark and bounded seeded sensitivity
 make papers               # build all paper artifacts
 make site                 # build the public companion site locally
 make all                  # verify, reproduce canonical baseline, build papers and site

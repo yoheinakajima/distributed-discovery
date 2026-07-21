@@ -1,0 +1,5 @@
+study_id: DD-010
+status: active-execution
+evidence_status: implementation-and-clean-primary-run-pending
+next_action: execute the clean exact golden suite and independent verifier
+updated_utc: 2026-07-21T18:20:00Z

@@ -13,3 +13,21 @@ document.querySelectorAll("[data-lab]").forEach((lab) => {
   slider.addEventListener("input", render);
   render();
 });
+
+document.querySelectorAll("[data-benchmark-lab]").forEach((lab) => {
+  const select = lab.querySelector("select");
+  const status = lab.querySelector("#benchmark-status");
+  const rows = Array.from(document.querySelectorAll("tr[data-task]"));
+  if (!select || !status) return;
+  const render = () => {
+    let visible = 0;
+    rows.forEach((row) => {
+      const show = select.value === "all" || row.dataset.task === select.value;
+      row.hidden = !show;
+      if (show) visible += 1;
+    });
+    status.textContent = `Showing ${visible} exact compatible row${visible === 1 ? "" : "s"}.`;
+  };
+  select.addEventListener("change", render);
+  render();
+});

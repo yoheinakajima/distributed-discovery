@@ -1,0 +1,18 @@
+study_id: DD-010
+schema_version: discoverybench-suite-v1
+golden_tasks: 15
+built_in_protocols: 13
+candidate_pair_ceiling: 195
+time_cap_seconds: 60
+memory_cap_mb: 1024
+certificate_format: discoverybench-exact-fraction-certificate-v1
+simulated_suite:
+  enabled: true
+  seeds: [101, 211, 307, 401, 503, 601, 701, 809]
+  replications_per_seed: 1000
+  estimator: sample-mean-discovery
+  uncertainty: normal-95-percent-interval
+external_adapters:
+  enabled: false
+  credentials: forbidden
+  execute_in_ci: false

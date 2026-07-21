@@ -1,0 +1,10 @@
+study_id: DD-010
+title: DiscoveryBench
+slug: dd-010
+phase: active-extension
+summary: Versioned exact golden benchmark with enforced protocol information boundaries.
+public_artifacts:
+  - path: studies/DD-010-discoverybench/report.md
+    description: Benchmark evidence report
+  - path: studies/DD-010-discoverybench/schemas/task-v1.schema.json
+    description: Versioned task schema
