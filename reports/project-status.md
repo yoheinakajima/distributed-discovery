@@ -1,11 +1,12 @@
 # Project status and final continuation handoff
 
-> DD-009 local completion (2026-07-21): clean primary run
+> DD-009 completion (2026-07-21): clean primary run
 > `20260721T171249Z_DD-009_bc78d249_0c3851c41a` classifies 288 architecture
 > cells, evaluates 20 coherent rows, independently reproduces every exact
 > metric, and yields 12 nondominated cells under ADR-0016. Maximum discovery is
 > `11/12`; maximum declared social net value is `5/6`. DD-C-0054 is
-> independently reproduced. PR merge and deployment remain external gates.
+> independently reproduced. PR #65, post-merge CI `29852583292`, Pages
+> `29852583377`, and all six live route checks passed.
 
 > DD-006B local completion (2026-07-21): primary clean run
 > `20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b` exhausts 60 normalized rows

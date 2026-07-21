@@ -8,6 +8,13 @@
   deeper public labs as future work without creating new research evidence.
 - Retained DD-007's synthetic-only boundary and issue #32 as settings-only.
 
+## 2026-07-21 — Program V2 evidence execution
+
+- Completed and deployed DD-008A's exact N=2 through 8 evidence-accounting census.
+- Completed and deployed DD-006B's 60-row joint truthful-discovery mechanism frontier.
+- Completed and deployed DD-009's 288-cell validity registry, 20-cell exact
+  Architecture Atlas, bounded Pareto census, and public Atlas Lab.
+
 ## 2026-07-21 — current-program reconciliation
 
 - Recorded completion of DD-004 through DD-007 and PRs #36, #38, #40, #42, #43, and #45.

@@ -1,6 +1,6 @@
 # Current program state
 
-_Reconciled 2026-07-21 after DD-006B deployment and DD-009 local evidence completion._
+_Reconciled 2026-07-21 after DD-009 deployment._
 
 Distributed Discovery Program V1 is complete through DD-008. The repository is
 public and project-authored content is MIT-licensed; the canonical
@@ -38,7 +38,7 @@ Issue [#32](https://github.com/yoheinakajima/distributed-discovery/issues/32)
 is settings-only: no settings-capable CLI authentication was available, and it
 does not block research.
 
-DD-008A and DD-006B are merged and deployed; DD-009 has complete local evidence
-and awaits PR integration. The remaining Program V2 queue is DD-010, DD-011, a
-focused working paper, and benchmark site integration. See
+DD-008A, DD-006B, and DD-009 are merged and deployed. The remaining Program V2
+queue is DD-010, DD-011, a focused working paper, and benchmark site
+integration. See
 [current roadmap](current-roadmap.md) for registration status and boundaries.
