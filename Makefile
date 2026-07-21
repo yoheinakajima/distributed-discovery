@@ -84,6 +84,9 @@ dd006-general-frontier:
 dd008-acquisition:
 	$(PY) -m distributed_discovery.acquisition.study
 
+dd008a-acquisition:
+	$(PY) -m distributed_discovery.acquisition.n_agent_study
+
 dd007-synthetic-audit:
 	$(PY) -m distributed_discovery.audits.study
 

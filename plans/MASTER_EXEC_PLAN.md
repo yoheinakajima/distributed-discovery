@@ -10,6 +10,13 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ### Program V2 baseline (active, 2026-07-21)
 
+DD-008A evidence is complete locally on PR #61. Clean primary run
+`20260721T163030Z_DD-008A_8b70668b_06307caab4` evaluates the registered
+N=2 through 8 rational grid with exact binomial accounting and a direct
+target/source-signal enumerator. DD-C-0052 is independently reproduced. Local
+acceptance passes 113 tests, 27 manifests, and a 27-page site; merge, CI, and
+Pages are the remaining DD-008A gates.
+
 Program V1 is complete through DD-008. The authoritative concise entry points
 are `docs/current-state.md` and `docs/current-roadmap.md`. Reconciliation at
 `ae8b52c098d358afc63948b7a54d2245cafd7438` found 51 claims (24 independently

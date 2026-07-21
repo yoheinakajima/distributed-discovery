@@ -1,0 +1,5 @@
+study_id: DD-008A
+status: complete-bounded-study
+evidence_status: exact-binomial-and-direct-enumeration-census
+next_action: preserve the bounded N=2 through 8 accounting regression; interventions require a separate registered extension
+updated_utc: 2026-07-21T15:31:10Z

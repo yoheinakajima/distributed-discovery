@@ -5,7 +5,7 @@
   "properties": {
     "schema_version": {"const": 1},
     "run_id": {"type": "string", "pattern": "^[0-9]{8}T[0-9]{6}Z_DD-[0-9]{3}[A-Z]?_[0-9a-f]{8}_[0-9a-f]{10}$"},
-    "study_id": {"type": "string", "pattern": "^DD-[0-9]{3}$"},
+    "study_id": {"type": "string", "pattern": "^DD-[0-9]{3}[A-Z]?$"},
     "started_utc": {"type": "string"},
     "ended_utc": {"type": "string"},
     "exit_status": {"type": "integer"},

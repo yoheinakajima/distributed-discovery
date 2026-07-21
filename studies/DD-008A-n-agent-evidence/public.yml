@@ -1,0 +1,10 @@
+study_id: DD-008A
+title: N-Agent Endogenous Evidence Acquisition
+slug: dd-008a
+phase: complete-bounded-study
+summary: Exact bounded N-agent source-count accounting census with independent direct enumeration.
+public_artifacts:
+  - path: studies/DD-008A-n-agent-evidence/model.md
+    description: Frozen registered model
+  - path: studies/DD-008A-n-agent-evidence/report.md
+    description: Exact bounded census report

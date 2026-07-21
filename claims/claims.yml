@@ -1071,3 +1071,24 @@ claims:
     first_added: "2026-07-21"
     last_checked: "2026-07-21"
     notes: The descriptive Common-Source Trap label refers only to this registered shared-source and prize-accounting fixture.
+  - id: DD-C-0052
+    study_id: DD-008A
+    short_name: n-agent-common-source-accounting-census
+    statement: In the registered N=2 through 8 common-versus-independent source census, closed-form binomial discovery and equal-split payoffs agree exactly with direct target-and-signal enumeration for every configured source-count cell.
+    scope: M=3 uniform targets, p in {1/2,2/3,3/4}, the six registered rational costs, direct clue-following, equal-split prizes, and N=2 through 8 only; this is a bounded synthetic accounting census, not a general-N theorem or real-world result.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: closed-form-binomial-accounting-with-direct-target-signal-enumeration
+    source_reference: results/verified/20260721T163030Z_DD-008A_8b70668b_06307caab4/outputs/n-agent-census.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/acquisition/n_agent.py, src/distributed_discovery/acquisition/n_agent_verification.py]
+    run_ids: [20260721T163030Z_DD-008A_8b70668b_06307caab4]
+    test_paths: [tests/unit/test_n_agent_acquisition.py]
+    exactness_basis: Fraction binomial sums and exhaustive target/source-signal enumeration agree in every registered cell, including total prize accounting.
+    rounding_rule: exact fractions
+    dependencies: [DD-C-0051]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: Equilibrium and planner classifications are generated under the same fixed source and prize accounting; no unrestricted intervention result is claimed.

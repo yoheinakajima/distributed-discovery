@@ -1,5 +1,11 @@
 # Project status and final continuation handoff
 
+> DD-008A local completion (2026-07-21): clean primary run
+> `20260721T163030Z_DD-008A_8b70668b_06307caab4` supports DD-C-0052 within
+> the registered N=2 through 8 grid. Exact binomial and direct enumeration
+> agree; 113 tests and 27 manifests pass. PR #61 merge and deployment remain
+> the final external gates.
+
 > Program V2 baseline (2026-07-21): Program V1 is complete through DD-008 on
 > `ae8b52c098d358afc63948b7a54d2245cafd7438`: 51 claims, 21 passing runs among
 > 24 manifests, 111 tests, three papers, and 26 public routes. Current
