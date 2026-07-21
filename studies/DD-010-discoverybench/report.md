@@ -14,3 +14,12 @@ composite score is active. A subsequent sensitivity suite uses eight fixed
 seeds and 1,000 Bernoulli draws per seed, yielding mean discovery estimate
 `0.65737500`; it is a synthetic calibration estimate, not exact evidence or a
 real-world performance claim. DiscoveryBench is not a hosted leaderboard.
+
+Selective-attention v2 run
+`20260721T230249Z_DD-010_add85590_56c61a2195` preserves the complete v1 metric
+matrix and extends the registry to 20 tasks, 21 protocols, and 27 metrics. Its
+420-cell compatibility matrix contains 28 exact compatible rows and 392
+explicit exclusions. The separate verifier recomputes every row, resolves its
+DD-012--DD-014 provenance, and rejects altered values, hidden target-state
+access, and a corrupted compatibility count. Claim DD-C-0069 is limited to
+these registered fixtures; v2 remains opt-in and activates no composite score.

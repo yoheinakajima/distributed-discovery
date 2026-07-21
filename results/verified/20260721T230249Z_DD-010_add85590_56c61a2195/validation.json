@@ -1,0 +1,14 @@
+{
+  "benchmark_version": "v2",
+  "candidate_pairs": 420,
+  "compatible_pairs": 28,
+  "excluded_pairs": 392,
+  "golden_rows_verified": 28,
+  "information_leakage_tests_passed": true,
+  "metric_count": 27,
+  "passed": true,
+  "protocol_count": 21,
+  "simulated_replications": 8000,
+  "simulated_seeds": 8,
+  "task_count": 20
+}

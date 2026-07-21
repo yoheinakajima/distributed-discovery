@@ -1428,3 +1428,24 @@ claims:
     first_added: "2026-07-21"
     last_checked: "2026-07-21"
     notes: This preserved negative result is the reason DD-C-0066 explicitly retains its agreement and label-equivariance boundary.
+  - id: DD-C-0069
+    study_id: DD-010
+    short_name: discoverybench-attention-v2-reproduction
+    statement: DiscoveryBench v2 preserves all v1 defaults and exact vectors while extending the registry to 20 tasks, 21 capability-declared protocols, and 27 metrics; all 28 declared compatible pairs exactly reproduce their registered values and all 392 incompatible pairs remain explicit exclusions.
+    scope: DiscoveryBench v1 plus the five registered DD-012 through DD-014 selective-attention fixtures at N=4, p=1/2, and q=3/4, the eight appended protocols, eight appended metrics, exact rational evaluator, capability gate, and source claim/run mappings; this is not a universal score, hosted leaderboard, external-agent evaluation, behavioral result, or empirical claim.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: versioned-exact-golden-matrix-with-separate-formula-and-capability-verifier
+    source_reference: results/verified/20260721T230249Z_DD-010_add85590_56c61a2195/outputs/golden-certificate.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/benchmark/model.py, src/distributed_discovery/benchmark/evaluator.py, src/distributed_discovery/benchmark/verification.py]
+    run_ids: [20260721T230249Z_DD-010_add85590_56c61a2195]
+    test_paths: [tests/unit/test_discoverybench.py, tests/integration/test_discoverybench_cli.py]
+    exactness_basis: All 20 v2 task contracts validate and every one of 420 candidate pairs is classified. A separate verifier recomputes all 28 exact vectors from rational identities and checked upstream fixtures, resolves every source claim and run, confirms v1 metric-vector preservation, and rejects an altered value, a hidden target-state capability, and a corrupted compatibility count.
+    rounding_rule: exact fractions and integer counts are authoritative; the unchanged seeded sensitivity suite is estimated calibration evidence and does not support this exact claim
+    dependencies: [DD-C-0055, DD-C-0059, DD-C-0060, DD-C-0062, DD-C-0064, DD-C-0066, DD-C-0067]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: The CLI remains v1 by default; v2 is selected explicitly with --version v2. No composite score is active.

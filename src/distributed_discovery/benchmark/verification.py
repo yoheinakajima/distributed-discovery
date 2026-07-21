@@ -18,11 +18,11 @@ from distributed_discovery.benchmark.model import (
 )
 
 
-def independent_expected() -> dict[tuple[str, str], dict[str, str | int | bool]]:
+def independent_expected(version: str = "v1") -> dict[tuple[str, str], dict[str, str | int | bool]]:
     """Recompute values from direct identities and separately checked fixtures."""
     canonical_private = Fraction(1) - Fraction(4, 5) ** 8
     all_independent = Fraction(1) - Fraction(1, 4) ** 8
-    return {
+    expected: dict[tuple[str, str], dict[str, str | int | bool]] = {
         ("DB-G01", "blind-distinct"): {"discovery": str(Fraction(8, 16)), "distinct-actions": "8"},
         ("DB-G01", "pooled-planner"): {
             "discovery": "860391662035297/1001129150390625",
@@ -82,6 +82,84 @@ def independent_expected() -> dict[tuple[str, str], dict[str, str | int | bool]]
             "social-net-value": "5/6",
         },
     }
+    if version == "v1":
+        return expected
+    if version != "v2":
+        raise ValueError(f"unknown benchmark version: {version}")
+    private_only = Fraction(1) - Fraction(1, 2) ** 4
+    designated = Fraction(1) - (1 - Fraction(3, 4)) * (1 - Fraction(1, 2)) ** 3
+    public_only = Fraction(3, 4)
+    equilibrium = Fraction(7, 8)
+    first_gain = designated - private_only
+    duplicate_loss = designated - public_only
+    expected.update(
+        {
+            ("DB-G16", "private-only"): {
+                "discovery": str(private_only),
+                "attention-count": 0,
+                "public-signal-user-count": 0,
+                "first-use-gain": str(first_gain),
+                "duplicate-use-loss": "0",
+            },
+            ("DB-G16", "designated-reader"): {
+                "discovery": str(designated),
+                "attention-count": 1,
+                "public-signal-user-count": 1,
+                "first-use-gain": str(first_gain),
+                "duplicate-use-loss": "0",
+            },
+            ("DB-G16", "public-only"): {
+                "discovery": str(public_only),
+                "attention-count": 4,
+                "public-signal-user-count": 4,
+                "first-use-gain": str(first_gain),
+                "duplicate-use-loss": str(duplicate_loss),
+            },
+            ("DB-G17", "voluntary-attention-equilibrium"): {
+                "discovery": str(equilibrium),
+                "attention-count": 3,
+                "attention-wedge": str(designated - equilibrium),
+            },
+            ("DB-G17", "designated-reader"): {
+                "discovery": str(designated),
+                "attention-count": 1,
+                "attention-wedge": "0",
+            },
+            ("DB-G18", "public-only"): {
+                "discovery": str(public_only),
+                "audience-size": 4,
+                "publicity-cost": str(duplicate_loss),
+            },
+            ("DB-G18", "designated-reader"): {
+                "discovery": str(designated),
+                "audience-size": 1,
+                "publicity-cost": "0",
+            },
+            ("DB-G18", "audience-optimal-assignment"): {
+                "discovery": str(designated),
+                "audience-size": 1,
+                "publicity-cost": "0",
+            },
+            ("DB-G19", "audience-optimal-assignment"): {
+                "discovery": str(designated),
+                "audience-size": 1,
+                "transfer-budget": "0",
+            },
+            ("DB-G20", "conditional-private-dominant"): {
+                "discovery": str(private_only),
+                "conditional-attention-category": "private-dominant",
+            },
+            ("DB-G20", "conditional-public-dominant"): {
+                "discovery": str(public_only),
+                "conditional-attention-category": "public-dominant",
+            },
+            ("DB-G20", "third-option-contrarian"): {
+                "discovery": "895/1024",
+                "conditional-attention-category": "third-option-contrarian",
+            },
+        }
+    )
+    return expected
 
 
 def _result_map(certificate: dict[str, object]) -> dict[tuple[str, str], dict[str, object]]:
@@ -95,8 +173,10 @@ def _result_map(certificate: dict[str, object]) -> dict[tuple[str, str], dict[st
     }
 
 
-def verify_certificate(certificate: dict[str, object], root: Path) -> dict[str, object]:
-    tasks = task_registry()
+def verify_certificate(
+    certificate: dict[str, object], root: Path, version: str = "v1"
+) -> dict[str, object]:
+    tasks = task_registry(version)
     for task in tasks:
         validate_task(task)
     claims_source = (root / "claims/claims.yml").read_text(encoding="utf-8")
@@ -108,21 +188,22 @@ def verify_certificate(certificate: dict[str, object], root: Path) -> dict[str, 
         )
         for task in tasks
     )
-    expected = independent_expected()
+    expected = independent_expected(version)
     observed = _result_map(certificate)
     values_ok = observed == expected
-    matrix = compatibility_matrix()
+    matrix = compatibility_matrix(version)
+    expected_counts = (15, 13, 19, 195, 16, 179) if version == "v1" else (20, 21, 27, 420, 28, 392)
     counts_ok = (
-        certificate.get("task_count") == 15
-        and certificate.get("protocol_count") == 13
-        and certificate.get("metric_count") == 19
-        and certificate.get("candidate_pairs") == 195
-        and certificate.get("compatible_pairs") == len(expected) == 16
-        and certificate.get("excluded_pairs") == 179
-        and len(matrix) == 195
+        certificate.get("task_count") == expected_counts[0]
+        and certificate.get("protocol_count") == expected_counts[1]
+        and certificate.get("metric_count") == expected_counts[2]
+        and certificate.get("candidate_pairs") == expected_counts[3]
+        and certificate.get("compatible_pairs") == len(expected) == expected_counts[4]
+        and certificate.get("excluded_pairs") == expected_counts[5]
+        and len(matrix) == expected_counts[3]
     )
     boundaries_ok = True
-    protocol = next(iter(builtin_protocols().values()))
+    protocol = next(iter(builtin_protocols(version).values()))
     view = task_view(tasks[0], protocol)
     for key in PROHIBITED_CAPABILITIES:
         try:
@@ -146,16 +227,22 @@ def verify_certificate(certificate: dict[str, object], root: Path) -> dict[str, 
     }
 
 
-def corruption_tests(certificate: dict[str, object], root: Path) -> dict[str, bool]:
+def corruption_tests(
+    certificate: dict[str, object], root: Path, version: str = "v1"
+) -> dict[str, bool]:
     corrupted = __import__("copy").deepcopy(certificate)
     results = cast(list[dict[str, object]], corrupted["results"])
     metrics = cast(dict[str, object], results[0]["metrics"])
     metrics["discovery"] = "0"
-    value_rejected = not bool(verify_certificate(corrupted, root)["passed"])
+    value_rejected = not bool(verify_certificate(corrupted, root, version)["passed"])
 
-    protocol = next(iter(builtin_protocols().values()))
+    incompatible = __import__("copy").deepcopy(certificate)
+    incompatible["compatible_pairs"] = int(cast(int, incompatible["compatible_pairs"])) + 1
+    compatibility_rejected = not bool(verify_certificate(incompatible, root, version)["passed"])
+
+    protocol = next(iter(builtin_protocols(version).values()))
     leaked = replace(protocol, capabilities=protocol.capabilities | {"target_state"})
-    view = task_view(task_registry()[0], leaked)
+    view = task_view(task_registry(version)[0], leaked)
     try:
         _ = view["target_state"]
         leakage_rejected = False
@@ -164,4 +251,5 @@ def corruption_tests(certificate: dict[str, object], root: Path) -> dict[str, bo
     return {
         "corrupted_value_rejected": value_rejected,
         "leaked_information_rejected": leakage_rejected,
+        "corrupted_compatibility_rejected": compatibility_rejected,
     }

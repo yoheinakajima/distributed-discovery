@@ -19,11 +19,11 @@ from distributed_discovery.benchmark.model import (
 )
 
 
-def run_pair(task: dict[str, object], protocol_id: str) -> dict[str, object]:
+def run_pair(task: dict[str, object], protocol_id: str, version: str = "v1") -> dict[str, object]:
     compatible = cast(list[str], task["compatible_protocols"])
     if protocol_id not in compatible:
         raise ValueError(f"incompatible pair: {task['task_id']}/{protocol_id}")
-    protocol = builtin_protocols()[protocol_id]
+    protocol = builtin_protocols(version)[protocol_id]
     decision = dict(protocol.run(task_view(task, protocol)))
     expected = task["expected_metrics"]
     if not isinstance(expected, dict) or not isinstance(expected[protocol_id], dict):
@@ -33,7 +33,7 @@ def run_pair(task: dict[str, object], protocol_id: str) -> dict[str, object]:
     if not set(metrics).issubset(declared):
         raise ValueError("metric emitted without required task observables")
     return {
-        "schema_version": "discoverybench-result-v1",
+        "schema_version": f"discoverybench-result-{version}",
         "task_id": task["task_id"],
         "task_family": task["task_family"],
         "protocol_id": protocol_id,
@@ -114,15 +114,15 @@ def family_profiles(rows: list[dict[str, object]]) -> list[dict[str, object]]:
     ]
 
 
-def run_golden_suite() -> dict[str, object]:
-    tasks = task_registry()
-    protocols = protocol_registry()
-    metrics = metric_registry()
+def run_golden_suite(version: str = "v1") -> dict[str, object]:
+    tasks = task_registry(version)
+    protocols = protocol_registry(version)
+    metrics = metric_registry(version)
     for task in tasks:
         validate_task(task)
     metric_ids = {str(metric["metric_id"]) for metric in metrics}
     rows = [
-        run_pair(task, protocol_id)
+        run_pair(task, protocol_id, version)
         for task in tasks
         for protocol_id in cast(list[str], task["compatible_protocols"])
     ]
@@ -130,9 +130,9 @@ def run_golden_suite() -> dict[str, object]:
         result_metrics = row["metrics"]
         if not isinstance(result_metrics, dict) or not set(result_metrics).issubset(metric_ids):
             raise ValueError("unregistered metric emitted")
-    compatibility = compatibility_matrix()
+    compatibility = compatibility_matrix(version)
     return {
-        "schema_version": "discoverybench-golden-suite-v1",
+        "schema_version": f"discoverybench-golden-suite-{version}",
         "task_count": len(tasks),
         "protocol_count": len(protocols),
         "metric_count": len(metrics),

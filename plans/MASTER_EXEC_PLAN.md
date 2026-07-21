@@ -28,46 +28,48 @@ research queue.
 
 The registration-only Program V3 baseline completed through issue #79 and PR
 #80, squash merge `69ba1c392bb0bda9bc4447c0fac842b8e7308fbf`, passing
-post-merge CI and Pages, and live DD-012 through DD-015 routes. The active
-milestone is DD-012 under issue #81 and branch
-`research/dd012-incentive-to-ignore`.
+post-merge CI and Pages, and live DD-012 through DD-015 routes. DD-012 through
+DD-014 and the focused paper are merged, deployed, and live. The active
+milestone is the versioned DiscoveryBench attention extension under issue #91
+and branch `benchmark/attention-extension`.
 
 Progress:
 
 - [x] Program V3 baseline: 19 registered studies, 52 generated routes, 138
   tests, PR #80 merge, post-merge CI/Pages, and all four new live registration
   routes passed.
-- [ ] DD-012 exact model, theorem/proof audit, rational census, independent
+- [x] DD-012 exact model, theorem/proof audit, rational census, independent
   verifier, reward interventions, claims, public data, and deployment. Model,
   proof, seven-rule registry, exact evaluator, separate direct verifier,
   bounded configuration, primary run
   `20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b`, and DD-C-0059 through
-  DD-C-0061 pass locally. PR #82 remains draft pending integration validation,
-  merge, CI, Pages, and live-route checks.
-- [ ] DD-013 binding/voluntary audience frontier, garbling comparison,
+  DD-C-0061, PR #82, post-merge CI/Pages, and live-route checks passed.
+- [x] DD-013 binding/voluntary audience frontier, garbling comparison,
   implementable institution, independent verification, claims, and deployment.
   Issue #83 / PR #84 now contain passing run
   `20260721T215811Z_DD-013_09c07448_cdac4fb512`, DD-C-0062 through DD-C-0065,
-  the eight-institution registry, and the Audience Lab. Local acceptance passes;
-  merge, post-merge CI/Pages, and live-route checks remain.
-- [ ] DD-014 conditional policy class, role-profile census, larger-class audit,
+  the eight-institution registry, Audience Lab, PR #84, post-merge CI/Pages,
+  and live routes passed.
+- [x] DD-014 conditional policy class, role-profile census, larger-class audit,
   independent verification, claims, and deployment. Issue #85 and branch
   `research/dd014-conditional-attention` contain the frozen class, 75-cell
   exact implementation, independent verifier, four corruption tests, and
   adversarial all-table two-label audit. The source commit, immutable run,
-  claim audit, public Lab, merge, and deployment remain. Primary run
+  claim audit, public Lab, merge, and deployment passed. Primary run
   `20260721T222047Z_DD-014_f5f099a8_ea0276dd16` now passes in 10.761 seconds;
-  DD-C-0066 through DD-C-0068 pass their local evidence audits.
+  DD-C-0066 through DD-C-0068, PR #87, post-merge CI/Pages, and live routes passed.
 - [ ] Focused paper, benchmark extension, synthetic experiment extension,
-  public Labs/site integration, and final acceptance. Issue #88 and branch
-  `paper/incentive-to-ignore` contain a deterministic 20-page paper with nine
+  public Labs/site integration, and final acceptance. PR #90 merged the
+  deterministic 20-page paper with nine
   generated evidence assets, PDF SHA-256 `ee9e27f741d2`, and a passing all-page
-  Poppler review. Local integration, PR merge, Pages, and live PDF remain.
+  Poppler review; post-merge CI/Pages and the live PDF passed. DiscoveryBench
+  v2 now passes locally with 20 tasks, 21 protocols, 27 metrics, 28 compatible
+  rows, 392 explicit exclusions, v1 regressions, and three corruption gates;
+  its clean immutable run, claim, public surface, merge, and deployment remain.
 
 Recovery: inspect `git status --short --branch` on
-`research/dd012-incentive-to-ignore`, preserve the completed primary run, and
-run `make bootstrap && make verify && make site`. Never repeat the DD-012
-primary run merely to refresh a timestamp.
+`benchmark/attention-extension`, commit the verified v2 implementation, run
+`make dd010-attention` from the clean commit, and preserve every prior run.
 
 ### Program V2 completion queue (active, 2026-07-21)
 

@@ -8,3 +8,5 @@ public_artifacts:
     description: Benchmark evidence report
   - path: studies/DD-010-discoverybench/schemas/task-v1.schema.json
     description: Versioned task schema
+  - path: studies/DD-010-discoverybench/schemas/task-v2.schema.json
+    description: Versioned selective-attention task schema

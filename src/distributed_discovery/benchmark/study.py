@@ -33,15 +33,21 @@ def _write(path: Path, value: object) -> None:
     path.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
-def main() -> None:
+def run_registered(
+    config_relative: Path = CONFIG,
+    version: str = "v1",
+    command: str = "make dd010-discoverybench",
+) -> str:
     root = repository_root()
-    config_path = root / CONFIG
+    config_path = root / config_relative
     config = yaml.safe_load(config_path.read_text(encoding="utf-8"))
     digest = hashlib.sha256(json.dumps(config, sort_keys=True).encode()).hexdigest()
     commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip()
     dirty = bool(
         subprocess.check_output(["git", "status", "--porcelain"], cwd=root, text=True).strip()
     )
+    if dirty:
+        raise RuntimeError("registered benchmark runs require a clean committed tree")
     started = datetime.now(UTC)
     run_id = f"{started:%Y%m%dT%H%M%SZ}_DD-010_{commit[:8]}_{digest[:10]}"
     run = root / "results/verified" / run_id
@@ -49,9 +55,9 @@ def main() -> None:
     outputs.mkdir(parents=True)
     (run / "config.yml").write_text(config_path.read_text(encoding="utf-8"), encoding="utf-8")
 
-    golden = run_golden_suite()
-    verification = verify_certificate(golden, root)
-    corruption = corruption_tests(golden, root)
+    golden = run_golden_suite(version)
+    verification = verify_certificate(golden, root, version)
+    corruption = corruption_tests(golden, root, version)
     if not verification["passed"] or not all(corruption.values()):
         raise RuntimeError("golden suite verification failed")
     simulation_config = config["simulated_suite"]
@@ -60,6 +66,7 @@ def main() -> None:
     )
     summary = {
         "task_count": golden["task_count"],
+        "benchmark_version": version,
         "protocol_count": golden["protocol_count"],
         "metric_count": golden["metric_count"],
         "candidate_pairs": golden["candidate_pairs"],
@@ -72,10 +79,10 @@ def main() -> None:
         * simulation_config["replications_per_seed"],
     }
     artifacts = {
-        "task-registry.json": task_registry(),
-        "protocol-registry.json": protocol_registry(),
-        "metric-registry.json": metric_registry(),
-        "compatibility-matrix.json": compatibility_matrix(),
+        "task-registry.json": task_registry(version),
+        "protocol-registry.json": protocol_registry(version),
+        "metric-registry.json": metric_registry(version),
+        "compatibility-matrix.json": compatibility_matrix(version),
         "exact-result-matrix.json": golden["results"],
         "family-profiles.json": golden["family_profiles"],
         "pareto-report.json": golden["pareto_results"],
@@ -86,7 +93,7 @@ def main() -> None:
         "benchmark-summary.json": summary,
         "failures-and-exclusions.json": {
             "failures": [],
-            "exclusions": [row for row in compatibility_matrix() if not row["compatible"]],
+            "exclusions": [row for row in compatibility_matrix(version) if not row["compatible"]],
         },
     }
     for name, value in artifacts.items():
@@ -98,7 +105,7 @@ def main() -> None:
     (run / "stderr.txt").write_text("", encoding="utf-8")
     input_paths = [
         config_path,
-        root / "studies/DD-010-discoverybench/schemas/task-v1.schema.json",
+        root / f"studies/DD-010-discoverybench/schemas/task-{version}.schema.json",
         root / "src/distributed_discovery/benchmark/model.py",
         root / "src/distributed_discovery/benchmark/evaluator.py",
         root / "src/distributed_discovery/benchmark/verification.py",
@@ -115,7 +122,7 @@ def main() -> None:
         "git_commit": commit,
         "git_dirty": dirty,
         "upstream_commit": None,
-        "command": "make dd010-discoverybench",
+        "command": command,
         "config_hash_sha256": digest,
         "dependency_lock_hash_sha256": _sha(root / "uv.lock"),
         "input_hashes": {str(path.relative_to(root)): _sha(path) for path in input_paths},
@@ -137,6 +144,11 @@ def main() -> None:
         encoding="utf-8",
     )
     print(run_id)
+    return run_id
+
+
+def main() -> None:
+    run_registered()
 
 
 if __name__ == "__main__":
