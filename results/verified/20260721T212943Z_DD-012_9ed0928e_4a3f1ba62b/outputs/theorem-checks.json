@@ -1,0 +1,6 @@
+{
+  "all_ignore_iff_shared_not_better": true,
+  "all_ignore_when_one_reader_optimal": 0,
+  "private_attention_values_strictly_decrease": true,
+  "social_optimum_classification": true
+}

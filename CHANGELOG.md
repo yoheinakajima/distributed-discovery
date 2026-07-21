@@ -11,6 +11,13 @@
 - Recorded the focused strategic-ignorance, rational-inattention,
   public-information, endogenous-attention, and contrarianism literature
   boundary.
+- Completed immutable run
+  `20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b`: all 1,050 profiles and 6,300
+  reward rows reproduced across 3,319,200 direct labeled states, with three
+  corruptions rejected.
+- Added verified theorems DD-C-0059/DD-C-0060 and independently reproduced
+  bounded intervention result DD-C-0061, retaining excessive-attention and
+  failed-reward findings.
 
 ## 2026-07-21 — Program V3 baseline
 

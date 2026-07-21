@@ -39,8 +39,11 @@ Progress:
   routes passed.
 - [ ] DD-012 exact model, theorem/proof audit, rational census, independent
   verifier, reward interventions, claims, public data, and deployment. Model,
-  proof, seven-rule registry, exact evaluator, separate direct verifier, and
-  bounded configuration are frozen locally; the immutable run has not started.
+  proof, seven-rule registry, exact evaluator, separate direct verifier,
+  bounded configuration, primary run
+  `20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b`, and DD-C-0059 through
+  DD-C-0061 pass locally. PR #82 remains draft pending integration validation,
+  merge, CI, Pages, and live-route checks.
 - [ ] DD-013 binding/voluntary audience frontier, garbling comparison,
   implementable institution, independent verification, claims, and deployment.
 - [ ] DD-014 conditional policy class, role-profile census, larger-class audit,
@@ -49,10 +52,9 @@ Progress:
   public Labs/site integration, and final acceptance.
 
 Recovery: inspect `git status --short --branch` on
-`research/dd012-incentive-to-ignore`, then run the targeted DD-012 static and
-unit checks. Commit the frozen implementation before invoking
-`make dd012-attention`; no DD-012 run exists yet and no completed primary run
-should be repeated.
+`research/dd012-incentive-to-ignore`, preserve the completed primary run, and
+run `make bootstrap && make verify && make site`. Never repeat the DD-012
+primary run merely to refresh a timestamp.
 
 ### Program V2 completion queue (active, 2026-07-21)
 

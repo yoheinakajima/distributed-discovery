@@ -1,0 +1,16 @@
+{
+  "all_attend_when_one_reader_optimal_cells": 24,
+  "all_ignore_when_one_reader_optimal_cells": 0,
+  "category_counts": {
+    "efficient-attention": 39,
+    "efficient-ignorance": 70,
+    "equilibrium-multiplicity-with-welfare-difference": 3,
+    "excessive-attention": 63
+  },
+  "direct_labeled_states": 3319200,
+  "equilibrium_multiplicity_cells": 42,
+  "grid_cells": 175,
+  "profiles": 1050,
+  "reward_profile_rows": 6300,
+  "reward_rules": 7
+}

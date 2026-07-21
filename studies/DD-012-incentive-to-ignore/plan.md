@@ -16,3 +16,8 @@ action-relevant labeled states, a ten-minute/2-GB hard cap, exact fractions,
 and no valid partial claim outcome. The next sequential steps are implementation
 validation, a clean source commit, the single primary run, evidence audit,
 public integration, and repository-wide acceptance.
+
+The primary run completed in 417.135 seconds: the 240-second estimate was low,
+but the run remained inside its 600-second hard cap. This miss is retained in
+the report and claim check. The run is immutable and must not be repeated merely
+to improve timing or refresh provenance.

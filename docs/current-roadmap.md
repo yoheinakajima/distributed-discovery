@@ -8,7 +8,7 @@ verification plan, and corruption test where certificates are used.
 | Work | Status | Durable boundary / next question |
 | --- | --- | --- |
 | Program V3 baseline | complete through PR #80 | DD-012 through DD-015 are registered and deployed without creating research evidence. |
-| DD-012 Incentive to Ignore | active on issue #81 | Frozen model, proof, rational census, direct verifier, and seven-rule registry await the clean immutable run and evidence audit. |
+| DD-012 Incentive to Ignore | local evidence complete on PR #82 | DD-C-0059 through DD-C-0061 and the primary run pass; merge, CI, Pages, and live-route validation remain before DD-013. |
 | DD-013 Audience Design | registered after DD-012 | Separate binding delivery, voluntary use, public role assignment, and garbling; exactly evaluate at least one implementable reader institution. |
 | DD-014 Conditional Attention | registered after DD-013 | Test the complete deterministic label-equivariant disagreement class for `M=3` and audit small fixtures against a larger raw class. |
 | DD-015 Dynamic Attention | optional registration | Begin only after required Program V3 milestones if capacity remains; keep stopping and fixed-budget objectives distinct. |

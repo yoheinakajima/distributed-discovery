@@ -7,5 +7,9 @@ accuracy `q`, with incorrect labels uniform. An ex-ante access gate selects
 nonattenders do not receive it and search their private-clue labels. Successful
 agents split a unit prize equally and social value is union discovery.
 
-The registered extension will use exact rational arithmetic and will state any
-additional reward and observability technologies separately.
+The study uses exact rational arithmetic. The registered reward/access rules
+are equal split, sole rescue, off-shared success, marginal coverage, an
+externally subsidized assigned-reader reward, a binding public-reader license,
+and universal pooling. Their payment, observability, subsidy, and strategic-
+choice assumptions are machine-readable in the immutable reward registry and
+spelled out in ADR-0017; no unrestricted mechanism class is implied.

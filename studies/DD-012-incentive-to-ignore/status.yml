@@ -1,5 +1,5 @@
 study_id: DD-012
-status: active
-evidence_status: frozen-model-proof-and-implementation-no-run
-next_action: validate and commit the frozen implementation, then execute the single clean immutable census
-updated_utc: 2026-07-21T21:26:00Z
+status: complete-bounded-study
+evidence_status: two-verified-theorems-and-independently-reproduced-exact-census
+next_action: preserve the proof, negative mechanism results, immutable run, and regressions; proceed to DD-013 only after merge, CI, Pages, and live-route validation
+updated_utc: 2026-07-21T21:36:41Z

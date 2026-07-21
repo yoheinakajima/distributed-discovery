@@ -16,21 +16,30 @@ at `5025cc8e8f2f8ca015dff2066f08f81ad5715a51`, separate, clean, and read-only.
 
 | Measure | Current value |
 | --- | ---: |
-| Ledger claims | 58 |
-| Passing immutable runs | 32 of 35 manifests |
+| Ledger claims | 61 |
+| Passing immutable runs | 33 of 36 manifests |
 | Registered studies | 19 |
 | Python source files | 98 |
 | Public HTML routes | 52 |
-| Public data files | 40 |
+| Public data files | 44 |
 | Laboratory routes | 8 |
 | Validated project papers | 4 |
 | Checksum-registered downloads | 15 |
 | Test suite | 150 collected tests |
 
 The baseline added four registrations, bringing the study registry to 19 and
-the generated site to 52 routes. Claims, manifests, passing runs, papers, and
-validated test evidence remain unchanged until DD-012 is executed and
-independently audited.
+the generated site to 52 routes. DD-012 has now added three audited claims and
+one passing immutable run. Its exact evaluator, separate state enumerator,
+corruption checks, and public study metadata await PR #82's remaining site,
+merge, CI, Pages, and live-route gates.
+
+DD-012's One-Reader Theorem gives optimum reader count one when `q>p`, zero
+when `q<p`, and `{0,1}` when `q=p` inside the frozen follow/private class. The
+equal-split game cannot sustain all-ignore when one reader is uniquely optimal;
+the bounded grid instead contains 63 excessive-attention cells and 24
+all-attend equilibria. Run
+`20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b` supports DD-C-0059 through
+DD-C-0061.
 
 Program V2 produced:
 

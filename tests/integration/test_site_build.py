@@ -54,6 +54,14 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert (output / "research/dd-013.html").is_file()
     assert (output / "research/dd-014.html").is_file()
     assert (output / "research/dd-015.html").is_file()
+    attention = (output / "research/dd-012.html").read_text(encoding="utf-8")
+    assert "DD-C-0059" in attention
+    assert "DD-C-0060" in attention
+    assert "DD-C-0061" in attention
+    assert "20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b" in attention
+    attention_data = json.loads((output / "data/studies/dd-012.json").read_text(encoding="utf-8"))
+    assert attention_data["phase"] == "complete-bounded-study"
+    assert attention_data["claim_ids"] == ["DD-C-0059", "DD-C-0060", "DD-C-0061"]
     assert (output / "benchmark.html").is_file()
     for route in ["tasks", "protocols", "metrics", "results"]:
         assert (output / f"benchmark/{route}.html").is_file()
@@ -89,6 +97,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert 'id="DD-C-0054"' in claims
     assert 'id="DD-C-0055"' in claims
     assert 'id="DD-C-0056"' in claims
+    assert 'id="DD-C-0061"' in claims
     assert "unvalidated values" in claims
 
     runs = json.loads((output / "data/runs.json").read_text(encoding="utf-8"))["runs"]
