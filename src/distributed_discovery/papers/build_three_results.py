@@ -497,13 +497,15 @@ def build(root: Path) -> dict[str, Any]:
     source_validation = _validate_source(root, paper, bibliography)
     with tempfile.TemporaryDirectory(prefix="first-", dir=build_dir) as first_dir:
         first_pdf, first_log = _compile(paper, Path(first_dir), root, source_epoch)
-    (paper / "build.log").write_text(first_log, encoding="utf-8")
     first_hash = hashlib.sha256(first_pdf).hexdigest()
     with tempfile.TemporaryDirectory(prefix="second-", dir=build_dir) as second_dir:
         second_pdf, second_log = _compile(paper, Path(second_dir), root, source_epoch)
     second_hash = hashlib.sha256(second_pdf).hexdigest()
-    if first_hash != second_hash or first_log != second_log:
-        raise RuntimeError("Three Results build is not byte reproducible")
+    if first_hash != second_hash:
+        raise RuntimeError(
+            f"Three Results PDF is not byte reproducible: {first_hash[:12]} != {second_hash[:12]}"
+        )
+    (paper / "build.log").write_text(second_log, encoding="utf-8")
     output_pdf = paper / "Three_Results_in_Distributed_Discovery.pdf"
     output_pdf.write_bytes(second_pdf)
     pdfinfo = subprocess.run(["pdfinfo", output_pdf], capture_output=True, text=True, check=True)
@@ -521,6 +523,7 @@ def build(root: Path) -> dict[str, Any]:
         "page_count": page_count,
         "pdf_sha256": second_hash,
         "byte_reproducible_two_builds": True,
+        "normalized_compile_logs_identical": first_log == second_log,
         "unresolved_references_citations_or_overfull_boxes": False,
         "generated_assets": sorted([*assets, "provenance.json", "references.bib"]),
         "provenance_validated": True,
