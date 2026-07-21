@@ -11,7 +11,7 @@ license = "MIT"
 requires-python = ">=3.11"
 dependencies = [
   "jsonschema>=4.23,<5",
-  "PyYAML>=6.0,<7",
+  "PyYAML>=6.0.3,<7",
 ]
 
 [project.scripts]
@@ -23,7 +23,7 @@ dev = [
   "pytest>=8.3,<9",
   "ruff>=0.6,<1",
   "types-PyYAML>=6.0,<7",
-  "types-jsonschema>=4.23,<5",
+  "types-jsonschema>=4.26.0.20260518,<5",
 ]
 
 [tool.hatch.build.targets.wheel]
