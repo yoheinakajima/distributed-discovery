@@ -1,0 +1,5546 @@
+[
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.112992",
+    "sample_size": 200,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.089328",
+    "sample_size": 320,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.072936",
+    "sample_size": 480,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.063164",
+    "sample_size": 640,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.056496",
+    "sample_size": 800,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.051573",
+    "sample_size": 960,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.126049",
+    "sample_size": 200,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.099650",
+    "sample_size": 320,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.081364",
+    "sample_size": 480,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.070463",
+    "sample_size": 640,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.063024",
+    "sample_size": 800,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.057533",
+    "sample_size": 960,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.126619",
+    "sample_size": 200,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.100101",
+    "sample_size": 320,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.081732",
+    "sample_size": 480,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.070782",
+    "sample_size": 640,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.063309",
+    "sample_size": 800,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.057793",
+    "sample_size": 960,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.125372",
+    "sample_size": 200,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.099115",
+    "sample_size": 320,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.080927",
+    "sample_size": 480,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.070085",
+    "sample_size": 640,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.062686",
+    "sample_size": 800,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.057224",
+    "sample_size": 960,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.124993",
+    "sample_size": 200,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.098816",
+    "sample_size": 320,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.080683",
+    "sample_size": 480,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.069873",
+    "sample_size": 640,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.062497",
+    "sample_size": 800,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.057051",
+    "sample_size": 960,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.123691",
+    "sample_size": 200,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.097786",
+    "sample_size": 320,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.079842",
+    "sample_size": 480,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.069145",
+    "sample_size": 640,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.061845",
+    "sample_size": 800,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.056457",
+    "sample_size": 960,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.126619",
+    "sample_size": 200,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.100101",
+    "sample_size": 320,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.081732",
+    "sample_size": 480,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.070782",
+    "sample_size": 640,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.063309",
+    "sample_size": 800,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.057793",
+    "sample_size": 960,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.117045",
+    "sample_size": 200,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.092533",
+    "sample_size": 320,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.075553",
+    "sample_size": 480,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.065430",
+    "sample_size": 640,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.058523",
+    "sample_size": 800,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.053424",
+    "sample_size": 960,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.128031",
+    "sample_size": 200,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.101218",
+    "sample_size": 320,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.082644",
+    "sample_size": 480,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.071572",
+    "sample_size": 640,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.064016",
+    "sample_size": 800,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.058438",
+    "sample_size": 960,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.132763",
+    "sample_size": 200,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.104959",
+    "sample_size": 320,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.085698",
+    "sample_size": 480,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.074217",
+    "sample_size": 640,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.066382",
+    "sample_size": 800,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.060598",
+    "sample_size": 960,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.113921",
+    "sample_size": 200,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.090063",
+    "sample_size": 320,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.073536",
+    "sample_size": 480,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.063684",
+    "sample_size": 640,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.056961",
+    "sample_size": 800,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.051998",
+    "sample_size": 960,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.110809",
+    "sample_size": 200,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.087602",
+    "sample_size": 320,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.071527",
+    "sample_size": 480,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.061944",
+    "sample_size": 640,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.055404",
+    "sample_size": 800,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.050577",
+    "sample_size": 960,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.133852",
+    "sample_size": 200,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.105820",
+    "sample_size": 320,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.086401",
+    "sample_size": 480,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.074826",
+    "sample_size": 640,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.066926",
+    "sample_size": 800,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.061095",
+    "sample_size": 960,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.134056",
+    "sample_size": 200,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.105980",
+    "sample_size": 320,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.086533",
+    "sample_size": 480,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.074939",
+    "sample_size": 640,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.067028",
+    "sample_size": 800,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.061188",
+    "sample_size": 960,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.165757",
+    "sample_size": 200,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.131042",
+    "sample_size": 320,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.106995",
+    "sample_size": 480,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.092661",
+    "sample_size": 640,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.082878",
+    "sample_size": 800,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.075657",
+    "sample_size": 960,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.183053",
+    "sample_size": 200,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.144716",
+    "sample_size": 320,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.118160",
+    "sample_size": 480,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.102330",
+    "sample_size": 640,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.091526",
+    "sample_size": 800,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.083552",
+    "sample_size": 960,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.183577",
+    "sample_size": 200,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.145131",
+    "sample_size": 320,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.118499",
+    "sample_size": 480,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.102623",
+    "sample_size": 640,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.091789",
+    "sample_size": 800,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.083791",
+    "sample_size": 960,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.182431",
+    "sample_size": 200,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.144224",
+    "sample_size": 320,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.117759",
+    "sample_size": 480,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.101982",
+    "sample_size": 640,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.091216",
+    "sample_size": 800,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.083268",
+    "sample_size": 960,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.182083",
+    "sample_size": 200,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.143950",
+    "sample_size": 320,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.117534",
+    "sample_size": 480,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.101788",
+    "sample_size": 640,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.091042",
+    "sample_size": 800,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.083109",
+    "sample_size": 960,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.180892",
+    "sample_size": 200,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.143007",
+    "sample_size": 320,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.116765",
+    "sample_size": 480,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.101122",
+    "sample_size": 640,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.090446",
+    "sample_size": 800,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.082565",
+    "sample_size": 960,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.183577",
+    "sample_size": 200,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.145131",
+    "sample_size": 320,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.118499",
+    "sample_size": 480,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.102623",
+    "sample_size": 640,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.091789",
+    "sample_size": 800,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.083791",
+    "sample_size": 960,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.169472",
+    "sample_size": 200,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.133979",
+    "sample_size": 320,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.109394",
+    "sample_size": 480,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.094738",
+    "sample_size": 640,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.084736",
+    "sample_size": 800,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.077353",
+    "sample_size": 960,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.188481",
+    "sample_size": 200,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.149007",
+    "sample_size": 320,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.121664",
+    "sample_size": 480,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.105364",
+    "sample_size": 640,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.094241",
+    "sample_size": 800,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.086029",
+    "sample_size": 960,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.192804",
+    "sample_size": 200,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.152425",
+    "sample_size": 320,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.124454",
+    "sample_size": 480,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.107781",
+    "sample_size": 640,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.096402",
+    "sample_size": 800,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.088002",
+    "sample_size": 960,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.166604",
+    "sample_size": 200,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.131712",
+    "sample_size": 320,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.107543",
+    "sample_size": 480,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.093135",
+    "sample_size": 640,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.083302",
+    "sample_size": 800,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.076044",
+    "sample_size": 960,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.163777",
+    "sample_size": 200,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.129477",
+    "sample_size": 320,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.105718",
+    "sample_size": 480,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.091554",
+    "sample_size": 640,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.081888",
+    "sample_size": 800,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.074754",
+    "sample_size": 960,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.193807",
+    "sample_size": 200,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.153218",
+    "sample_size": 320,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.125102",
+    "sample_size": 480,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.108341",
+    "sample_size": 640,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.096903",
+    "sample_size": 800,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.088460",
+    "sample_size": 960,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.193994",
+    "sample_size": 200,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.153366",
+    "sample_size": 320,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.125223",
+    "sample_size": 480,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.108446",
+    "sample_size": 640,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.096997",
+    "sample_size": 800,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.088546",
+    "sample_size": 960,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.169062",
+    "sample_size": 200,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.133656",
+    "sample_size": 320,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.109129",
+    "sample_size": 480,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.094509",
+    "sample_size": 640,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.084531",
+    "sample_size": 800,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.077166",
+    "sample_size": 960,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.185942",
+    "sample_size": 200,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.147000",
+    "sample_size": 320,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.120025",
+    "sample_size": 480,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.103945",
+    "sample_size": 640,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.092971",
+    "sample_size": 800,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.084870",
+    "sample_size": 960,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.186348",
+    "sample_size": 200,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.147321",
+    "sample_size": 320,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.120287",
+    "sample_size": 480,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.104172",
+    "sample_size": 640,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.093174",
+    "sample_size": 800,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.085056",
+    "sample_size": 960,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.185461",
+    "sample_size": 200,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.146620",
+    "sample_size": 320,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.119714",
+    "sample_size": 480,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.103676",
+    "sample_size": 640,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.092730",
+    "sample_size": 800,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.084651",
+    "sample_size": 960,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.185192",
+    "sample_size": 200,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.146407",
+    "sample_size": 320,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.119541",
+    "sample_size": 480,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.103525",
+    "sample_size": 640,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.092596",
+    "sample_size": 800,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.084528",
+    "sample_size": 960,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.184271",
+    "sample_size": 200,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.145679",
+    "sample_size": 320,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.118946",
+    "sample_size": 480,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.103011",
+    "sample_size": 640,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.092135",
+    "sample_size": 800,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.084108",
+    "sample_size": 960,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.186348",
+    "sample_size": 200,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.147321",
+    "sample_size": 320,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.120287",
+    "sample_size": 480,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.104172",
+    "sample_size": 640,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.093174",
+    "sample_size": 800,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.085056",
+    "sample_size": 960,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.171935",
+    "sample_size": 200,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.135927",
+    "sample_size": 320,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.110984",
+    "sample_size": 480,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.096115",
+    "sample_size": 640,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.085968",
+    "sample_size": 800,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.078477",
+    "sample_size": 960,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.192509",
+    "sample_size": 200,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.152192",
+    "sample_size": 320,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.124264",
+    "sample_size": 480,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.107616",
+    "sample_size": 640,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.096254",
+    "sample_size": 800,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.087868",
+    "sample_size": 960,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.195847",
+    "sample_size": 200,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.154830",
+    "sample_size": 320,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.126419",
+    "sample_size": 480,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.109482",
+    "sample_size": 640,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.097923",
+    "sample_size": 800,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.089391",
+    "sample_size": 960,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.169717",
+    "sample_size": 200,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.134173",
+    "sample_size": 320,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.109552",
+    "sample_size": 480,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.094874",
+    "sample_size": 640,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.084858",
+    "sample_size": 800,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.077465",
+    "sample_size": 960,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.167538",
+    "sample_size": 200,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.132451",
+    "sample_size": 320,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.108145",
+    "sample_size": 480,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.093657",
+    "sample_size": 640,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.083769",
+    "sample_size": 800,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.076470",
+    "sample_size": 960,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.196624",
+    "sample_size": 200,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.155445",
+    "sample_size": 320,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.126920",
+    "sample_size": 480,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.109916",
+    "sample_size": 640,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.098312",
+    "sample_size": 800,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.089746",
+    "sample_size": 960,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.196769",
+    "sample_size": 200,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.155560",
+    "sample_size": 320,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.127014",
+    "sample_size": 480,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.109997",
+    "sample_size": 640,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.098385",
+    "sample_size": 800,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.089812",
+    "sample_size": 960,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.188835",
+    "sample_size": 200,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.149287",
+    "sample_size": 320,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.121893",
+    "sample_size": 480,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.105562",
+    "sample_size": 640,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.094418",
+    "sample_size": 800,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.086191",
+    "sample_size": 960,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.208098",
+    "sample_size": 200,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.164516",
+    "sample_size": 320,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.134327",
+    "sample_size": 480,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.116330",
+    "sample_size": 640,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.104049",
+    "sample_size": 800,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.094983",
+    "sample_size": 960,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.208621",
+    "sample_size": 200,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.164929",
+    "sample_size": 320,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.134664",
+    "sample_size": 480,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.116622",
+    "sample_size": 640,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.104310",
+    "sample_size": 800,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.095222",
+    "sample_size": 960,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.207478",
+    "sample_size": 200,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.164026",
+    "sample_size": 320,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.133927",
+    "sample_size": 480,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.115984",
+    "sample_size": 640,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.103739",
+    "sample_size": 800,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.094700",
+    "sample_size": 960,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.207132",
+    "sample_size": 200,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.163752",
+    "sample_size": 320,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.133703",
+    "sample_size": 480,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.115790",
+    "sample_size": 640,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.103566",
+    "sample_size": 800,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.094542",
+    "sample_size": 960,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.205945",
+    "sample_size": 200,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.162814",
+    "sample_size": 320,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.132937",
+    "sample_size": 480,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.115127",
+    "sample_size": 640,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.102972",
+    "sample_size": 800,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.094001",
+    "sample_size": 960,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.208621",
+    "sample_size": 200,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.164929",
+    "sample_size": 320,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.134664",
+    "sample_size": 480,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.116622",
+    "sample_size": 640,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.104310",
+    "sample_size": 800,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.095222",
+    "sample_size": 960,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.192536",
+    "sample_size": 200,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.152213",
+    "sample_size": 320,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.124282",
+    "sample_size": 480,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.107631",
+    "sample_size": 640,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.096268",
+    "sample_size": 800,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.087880",
+    "sample_size": 960,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.214880",
+    "sample_size": 200,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.169877",
+    "sample_size": 320,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.138704",
+    "sample_size": 480,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.120121",
+    "sample_size": 640,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.107440",
+    "sample_size": 800,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.098079",
+    "sample_size": 960,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.219183",
+    "sample_size": 200,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.173279",
+    "sample_size": 320,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.141482",
+    "sample_size": 480,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.122527",
+    "sample_size": 640,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.109591",
+    "sample_size": 800,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.100043",
+    "sample_size": 960,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.189679",
+    "sample_size": 200,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.149954",
+    "sample_size": 320,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.122437",
+    "sample_size": 480,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.106034",
+    "sample_size": 640,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.094839",
+    "sample_size": 800,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.086576",
+    "sample_size": 960,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.186867",
+    "sample_size": 200,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.147732",
+    "sample_size": 320,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.120622",
+    "sample_size": 480,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.104462",
+    "sample_size": 640,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.093434",
+    "sample_size": 800,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.085293",
+    "sample_size": 960,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.220183",
+    "sample_size": 200,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.174070",
+    "sample_size": 320,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.142128",
+    "sample_size": 480,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.123086",
+    "sample_size": 640,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.110092",
+    "sample_size": 800,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.100499",
+    "sample_size": 960,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.220370",
+    "sample_size": 200,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.174218",
+    "sample_size": 320,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.142248",
+    "sample_size": 480,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.123191",
+    "sample_size": 640,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.110185",
+    "sample_size": 800,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.100585",
+    "sample_size": 960,
+    "scenario_id": "S4-social"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.172774",
+    "sample_size": 200,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.136590",
+    "sample_size": 320,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.111525",
+    "sample_size": 480,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.096584",
+    "sample_size": 640,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.086387",
+    "sample_size": 800,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.078860",
+    "sample_size": 960,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.189362",
+    "sample_size": 200,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.149704",
+    "sample_size": 320,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.122233",
+    "sample_size": 480,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.105857",
+    "sample_size": 640,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.094681",
+    "sample_size": 800,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.086432",
+    "sample_size": 960,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.189665",
+    "sample_size": 200,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.149943",
+    "sample_size": 320,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.122428",
+    "sample_size": 480,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.106026",
+    "sample_size": 640,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.094833",
+    "sample_size": 800,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.086570",
+    "sample_size": 960,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.189004",
+    "sample_size": 200,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.149420",
+    "sample_size": 320,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.122001",
+    "sample_size": 480,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.105656",
+    "sample_size": 640,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.094502",
+    "sample_size": 800,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.086268",
+    "sample_size": 960,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.188803",
+    "sample_size": 200,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.149262",
+    "sample_size": 320,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.121872",
+    "sample_size": 480,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.105544",
+    "sample_size": 640,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.094402",
+    "sample_size": 800,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.086177",
+    "sample_size": 960,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.188118",
+    "sample_size": 200,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.148720",
+    "sample_size": 320,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.121430",
+    "sample_size": 480,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.105161",
+    "sample_size": 640,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.094059",
+    "sample_size": 800,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.085864",
+    "sample_size": 960,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.189665",
+    "sample_size": 200,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.149943",
+    "sample_size": 320,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.122428",
+    "sample_size": 480,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.106026",
+    "sample_size": 640,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.094833",
+    "sample_size": 800,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.086570",
+    "sample_size": 960,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.174912",
+    "sample_size": 200,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.138280",
+    "sample_size": 320,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.112905",
+    "sample_size": 480,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.097779",
+    "sample_size": 640,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.087456",
+    "sample_size": 800,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.079836",
+    "sample_size": 960,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.196967",
+    "sample_size": 200,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.155716",
+    "sample_size": 320,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.127142",
+    "sample_size": 480,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.110108",
+    "sample_size": 640,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.098483",
+    "sample_size": 800,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.089903",
+    "sample_size": 960,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.199449",
+    "sample_size": 200,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.157678",
+    "sample_size": 320,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.128744",
+    "sample_size": 480,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.111495",
+    "sample_size": 640,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.099725",
+    "sample_size": 800,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.091036",
+    "sample_size": 960,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.173260",
+    "sample_size": 200,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.136974",
+    "sample_size": 320,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.111839",
+    "sample_size": 480,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.096855",
+    "sample_size": 640,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.086630",
+    "sample_size": 800,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.079082",
+    "sample_size": 960,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.171643",
+    "sample_size": 200,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.135696",
+    "sample_size": 320,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.110795",
+    "sample_size": 480,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.095951",
+    "sample_size": 640,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.085821",
+    "sample_size": 800,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.078344",
+    "sample_size": 960,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.200029",
+    "sample_size": 200,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.158137",
+    "sample_size": 320,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.129118",
+    "sample_size": 480,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.111819",
+    "sample_size": 640,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.100014",
+    "sample_size": 800,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.091300",
+    "sample_size": 960,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.200137",
+    "sample_size": 200,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.158222",
+    "sample_size": 320,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.129188",
+    "sample_size": 480,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.111880",
+    "sample_size": 640,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.100069",
+    "sample_size": 800,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.091350",
+    "sample_size": 960,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.179821",
+    "sample_size": 200,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.142161",
+    "sample_size": 320,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.116074",
+    "sample_size": 480,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.100523",
+    "sample_size": 640,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.089911",
+    "sample_size": 800,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.082077",
+    "sample_size": 960,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.197416",
+    "sample_size": 200,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.156071",
+    "sample_size": 320,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.127431",
+    "sample_size": 480,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.110359",
+    "sample_size": 640,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.098708",
+    "sample_size": 800,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.090107",
+    "sample_size": 960,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.197787",
+    "sample_size": 200,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.156364",
+    "sample_size": 320,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.127671",
+    "sample_size": 480,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.110566",
+    "sample_size": 640,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.098893",
+    "sample_size": 800,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.090277",
+    "sample_size": 960,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.196976",
+    "sample_size": 200,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.155723",
+    "sample_size": 320,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.127147",
+    "sample_size": 480,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.110113",
+    "sample_size": 640,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.098488",
+    "sample_size": 800,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.089907",
+    "sample_size": 960,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.196730",
+    "sample_size": 200,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.155529",
+    "sample_size": 320,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.126989",
+    "sample_size": 480,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.109976",
+    "sample_size": 640,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.098365",
+    "sample_size": 800,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.089795",
+    "sample_size": 960,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.195890",
+    "sample_size": 200,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.154864",
+    "sample_size": 320,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.126446",
+    "sample_size": 480,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.109506",
+    "sample_size": 640,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.097945",
+    "sample_size": 800,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.089411",
+    "sample_size": 960,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.197787",
+    "sample_size": 200,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.156364",
+    "sample_size": 320,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.127671",
+    "sample_size": 480,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.110566",
+    "sample_size": 640,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.098893",
+    "sample_size": 800,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.090277",
+    "sample_size": 960,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.182444",
+    "sample_size": 200,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.144235",
+    "sample_size": 320,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.117767",
+    "sample_size": 480,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.101989",
+    "sample_size": 640,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.091222",
+    "sample_size": 800,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.083274",
+    "sample_size": 960,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.204886",
+    "sample_size": 200,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.161976",
+    "sample_size": 320,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.132253",
+    "sample_size": 480,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.114534",
+    "sample_size": 640,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.102443",
+    "sample_size": 800,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.093517",
+    "sample_size": 960,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.207932",
+    "sample_size": 200,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.164384",
+    "sample_size": 320,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.134219",
+    "sample_size": 480,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.116237",
+    "sample_size": 640,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.103966",
+    "sample_size": 800,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.094907",
+    "sample_size": 960,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.180418",
+    "sample_size": 200,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.142633",
+    "sample_size": 320,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.116459",
+    "sample_size": 480,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.100857",
+    "sample_size": 640,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.090209",
+    "sample_size": 800,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.082349",
+    "sample_size": 960,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.178432",
+    "sample_size": 200,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.141063",
+    "sample_size": 320,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.115177",
+    "sample_size": 480,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.099746",
+    "sample_size": 640,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.089216",
+    "sample_size": 800,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.081443",
+    "sample_size": 960,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.208642",
+    "sample_size": 200,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.164946",
+    "sample_size": 320,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.134678",
+    "sample_size": 480,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.116634",
+    "sample_size": 640,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.104321",
+    "sample_size": 800,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.095232",
+    "sample_size": 960,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.208775",
+    "sample_size": 200,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.165051",
+    "sample_size": 320,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.134763",
+    "sample_size": 480,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.116709",
+    "sample_size": 640,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.104387",
+    "sample_size": 800,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.095292",
+    "sample_size": 960,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.182225",
+    "sample_size": 200,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.144062",
+    "sample_size": 320,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.117626",
+    "sample_size": 480,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.101867",
+    "sample_size": 640,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.091113",
+    "sample_size": 800,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.083174",
+    "sample_size": 960,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.201240",
+    "sample_size": 200,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.159094",
+    "sample_size": 320,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.129900",
+    "sample_size": 480,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.112497",
+    "sample_size": 640,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.100620",
+    "sample_size": 800,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.091853",
+    "sample_size": 960,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.201816",
+    "sample_size": 200,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.159550",
+    "sample_size": 320,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.130272",
+    "sample_size": 480,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.112819",
+    "sample_size": 640,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.100908",
+    "sample_size": 800,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.092116",
+    "sample_size": 960,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.200557",
+    "sample_size": 200,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.158554",
+    "sample_size": 320,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.129459",
+    "sample_size": 480,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.112114",
+    "sample_size": 640,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.100278",
+    "sample_size": 800,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.091541",
+    "sample_size": 960,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.200174",
+    "sample_size": 200,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.158252",
+    "sample_size": 320,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.129212",
+    "sample_size": 480,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.111901",
+    "sample_size": 640,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.100087",
+    "sample_size": 800,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.091367",
+    "sample_size": 960,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.198864",
+    "sample_size": 200,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.157216",
+    "sample_size": 320,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.128366",
+    "sample_size": 480,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.111168",
+    "sample_size": 640,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.099432",
+    "sample_size": 800,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.090769",
+    "sample_size": 960,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.201816",
+    "sample_size": 200,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.159550",
+    "sample_size": 320,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.130272",
+    "sample_size": 480,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.112819",
+    "sample_size": 640,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.100908",
+    "sample_size": 800,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.092116",
+    "sample_size": 960,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.186310",
+    "sample_size": 200,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.147291",
+    "sample_size": 320,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.120262",
+    "sample_size": 480,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.104150",
+    "sample_size": 640,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.093155",
+    "sample_size": 800,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.085038",
+    "sample_size": 960,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.207208",
+    "sample_size": 200,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.163812",
+    "sample_size": 320,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.133752",
+    "sample_size": 480,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.115833",
+    "sample_size": 640,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.103604",
+    "sample_size": 800,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.094577",
+    "sample_size": 960,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.211960",
+    "sample_size": 200,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.167569",
+    "sample_size": 320,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.136819",
+    "sample_size": 480,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.118489",
+    "sample_size": 640,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.105980",
+    "sample_size": 800,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.096746",
+    "sample_size": 960,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.183157",
+    "sample_size": 200,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.144798",
+    "sample_size": 320,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.118227",
+    "sample_size": 480,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.102388",
+    "sample_size": 640,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.091579",
+    "sample_size": 800,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.083599",
+    "sample_size": 960,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.180049",
+    "sample_size": 200,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.142341",
+    "sample_size": 320,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.116221",
+    "sample_size": 480,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.100650",
+    "sample_size": 640,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.090024",
+    "sample_size": 800,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.082181",
+    "sample_size": 960,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.213062",
+    "sample_size": 200,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.168441",
+    "sample_size": 320,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.137531",
+    "sample_size": 480,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.119106",
+    "sample_size": 640,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.106531",
+    "sample_size": 800,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.097249",
+    "sample_size": 960,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.213269",
+    "sample_size": 200,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.168604",
+    "sample_size": 320,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.137664",
+    "sample_size": 480,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.119221",
+    "sample_size": 640,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.106634",
+    "sample_size": 800,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.097343",
+    "sample_size": 960,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.180333",
+    "sample_size": 200,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.142566",
+    "sample_size": 320,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.116404",
+    "sample_size": 480,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.100809",
+    "sample_size": 640,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.090166",
+    "sample_size": 800,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.082310",
+    "sample_size": 960,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.200092",
+    "sample_size": 200,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.158187",
+    "sample_size": 320,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.129159",
+    "sample_size": 480,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.111855",
+    "sample_size": 640,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.100046",
+    "sample_size": 800,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.091329",
+    "sample_size": 960,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.200821",
+    "sample_size": 200,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.158763",
+    "sample_size": 320,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.129629",
+    "sample_size": 480,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.112262",
+    "sample_size": 640,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.100410",
+    "sample_size": 800,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.091662",
+    "sample_size": 960,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.199227",
+    "sample_size": 200,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.157503",
+    "sample_size": 320,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.128601",
+    "sample_size": 480,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.111371",
+    "sample_size": 640,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.099614",
+    "sample_size": 800,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.090934",
+    "sample_size": 960,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.198743",
+    "sample_size": 200,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.157120",
+    "sample_size": 320,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.128288",
+    "sample_size": 480,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.111101",
+    "sample_size": 640,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.099372",
+    "sample_size": 800,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.090714",
+    "sample_size": 960,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.197082",
+    "sample_size": 200,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.155807",
+    "sample_size": 320,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.127216",
+    "sample_size": 480,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.110172",
+    "sample_size": 640,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.098541",
+    "sample_size": 800,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.089955",
+    "sample_size": 960,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.200821",
+    "sample_size": 200,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.158763",
+    "sample_size": 320,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.129629",
+    "sample_size": 480,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.112262",
+    "sample_size": 640,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.100410",
+    "sample_size": 800,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.091662",
+    "sample_size": 960,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.185507",
+    "sample_size": 200,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.146656",
+    "sample_size": 320,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.119744",
+    "sample_size": 480,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.103701",
+    "sample_size": 640,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.092753",
+    "sample_size": 800,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.084672",
+    "sample_size": 960,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.204722",
+    "sample_size": 200,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.161847",
+    "sample_size": 320,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.132147",
+    "sample_size": 480,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.114443",
+    "sample_size": 640,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.102361",
+    "sample_size": 800,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.093442",
+    "sample_size": 960,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.210751",
+    "sample_size": 200,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.166613",
+    "sample_size": 320,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.136039",
+    "sample_size": 480,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.117813",
+    "sample_size": 640,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.105375",
+    "sample_size": 800,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.096194",
+    "sample_size": 960,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.181516",
+    "sample_size": 200,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.143501",
+    "sample_size": 320,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.117168",
+    "sample_size": 480,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.101471",
+    "sample_size": 640,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.090758",
+    "sample_size": 800,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.082850",
+    "sample_size": 960,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.177563",
+    "sample_size": 200,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.140376",
+    "sample_size": 320,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.114616",
+    "sample_size": 480,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.099261",
+    "sample_size": 640,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.088781",
+    "sample_size": 800,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.081046",
+    "sample_size": 960,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.212144",
+    "sample_size": 200,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.167715",
+    "sample_size": 320,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.136939",
+    "sample_size": 480,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.118592",
+    "sample_size": 640,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.106072",
+    "sample_size": 800,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.096830",
+    "sample_size": 960,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.212405",
+    "sample_size": 200,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.167921",
+    "sample_size": 320,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.137107",
+    "sample_size": 480,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.118738",
+    "sample_size": 640,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.106202",
+    "sample_size": 800,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.096949",
+    "sample_size": 960,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.186031",
+    "sample_size": 200,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.147070",
+    "sample_size": 320,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.120082",
+    "sample_size": 480,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.103994",
+    "sample_size": 640,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.093015",
+    "sample_size": 800,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.084911",
+    "sample_size": 960,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.204762",
+    "sample_size": 200,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.161878",
+    "sample_size": 320,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.132173",
+    "sample_size": 480,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.114465",
+    "sample_size": 640,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.102381",
+    "sample_size": 800,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.093460",
+    "sample_size": 960,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.205235",
+    "sample_size": 200,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.162253",
+    "sample_size": 320,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.132479",
+    "sample_size": 480,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.114730",
+    "sample_size": 640,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.102618",
+    "sample_size": 800,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.093677",
+    "sample_size": 960,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.204200",
+    "sample_size": 200,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.161435",
+    "sample_size": 320,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.131811",
+    "sample_size": 480,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.114151",
+    "sample_size": 640,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.102100",
+    "sample_size": 800,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.093204",
+    "sample_size": 960,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.203887",
+    "sample_size": 200,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.161187",
+    "sample_size": 320,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.131608",
+    "sample_size": 480,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.113976",
+    "sample_size": 640,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.101943",
+    "sample_size": 800,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.093061",
+    "sample_size": 960,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.202813",
+    "sample_size": 200,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.160337",
+    "sample_size": 320,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.130915",
+    "sample_size": 480,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.113376",
+    "sample_size": 640,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.101406",
+    "sample_size": 800,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.092571",
+    "sample_size": 960,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.205235",
+    "sample_size": 200,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.162253",
+    "sample_size": 320,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.132479",
+    "sample_size": 480,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.114730",
+    "sample_size": 640,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.102618",
+    "sample_size": 800,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.093677",
+    "sample_size": 960,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.189381",
+    "sample_size": 200,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.149719",
+    "sample_size": 320,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.122245",
+    "sample_size": 480,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.105867",
+    "sample_size": 640,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.094690",
+    "sample_size": 800,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.086440",
+    "sample_size": 960,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.211775",
+    "sample_size": 200,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.167423",
+    "sample_size": 320,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.136700",
+    "sample_size": 480,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.118386",
+    "sample_size": 640,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.105887",
+    "sample_size": 800,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.096662",
+    "sample_size": 960,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.215669",
+    "sample_size": 200,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.170501",
+    "sample_size": 320,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.139214",
+    "sample_size": 480,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.120563",
+    "sample_size": 640,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.107834",
+    "sample_size": 800,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.098439",
+    "sample_size": 960,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.186794",
+    "sample_size": 200,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.147673",
+    "sample_size": 320,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.120575",
+    "sample_size": 480,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.104421",
+    "sample_size": 640,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.093397",
+    "sample_size": 800,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.085259",
+    "sample_size": 960,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.184251",
+    "sample_size": 200,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.145663",
+    "sample_size": 320,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.118934",
+    "sample_size": 480,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.103000",
+    "sample_size": 640,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.092126",
+    "sample_size": 800,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.084099",
+    "sample_size": 960,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.216575",
+    "sample_size": 200,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.171217",
+    "sample_size": 320,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.139798",
+    "sample_size": 480,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.121069",
+    "sample_size": 640,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.108287",
+    "sample_size": 800,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.098852",
+    "sample_size": 960,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.216744",
+    "sample_size": 200,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.171351",
+    "sample_size": 320,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.139908",
+    "sample_size": 480,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.121164",
+    "sample_size": 640,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.108372",
+    "sample_size": 800,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.098930",
+    "sample_size": 960,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.199030",
+    "sample_size": 200,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.157347",
+    "sample_size": 320,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.128473",
+    "sample_size": 480,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.111261",
+    "sample_size": 640,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.099515",
+    "sample_size": 800,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.090844",
+    "sample_size": 960,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.217806",
+    "sample_size": 200,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.172191",
+    "sample_size": 320,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.140593",
+    "sample_size": 480,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.121757",
+    "sample_size": 640,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.108903",
+    "sample_size": 800,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.099414",
+    "sample_size": 960,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.218098",
+    "sample_size": 200,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.172422",
+    "sample_size": 320,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.140782",
+    "sample_size": 480,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.121921",
+    "sample_size": 640,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.109049",
+    "sample_size": 800,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.099548",
+    "sample_size": 960,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.217460",
+    "sample_size": 200,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.171917",
+    "sample_size": 320,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.140370",
+    "sample_size": 480,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.121564",
+    "sample_size": 640,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.108730",
+    "sample_size": 800,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.099256",
+    "sample_size": 960,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.217267",
+    "sample_size": 200,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.171765",
+    "sample_size": 320,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.140245",
+    "sample_size": 480,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.121456",
+    "sample_size": 640,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.108633",
+    "sample_size": 800,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.099168",
+    "sample_size": 960,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.216606",
+    "sample_size": 200,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.171242",
+    "sample_size": 320,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.139819",
+    "sample_size": 480,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.121087",
+    "sample_size": 640,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.108303",
+    "sample_size": 800,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.098867",
+    "sample_size": 960,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.218098",
+    "sample_size": 200,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.172422",
+    "sample_size": 320,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.140782",
+    "sample_size": 480,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.121921",
+    "sample_size": 640,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.109049",
+    "sample_size": 800,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.099548",
+    "sample_size": 960,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.201092",
+    "sample_size": 200,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.158977",
+    "sample_size": 320,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.129804",
+    "sample_size": 480,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.112414",
+    "sample_size": 640,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.100546",
+    "sample_size": 800,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.091785",
+    "sample_size": 960,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.227015",
+    "sample_size": 200,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.179471",
+    "sample_size": 320,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.146538",
+    "sample_size": 480,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.126906",
+    "sample_size": 640,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.113508",
+    "sample_size": 800,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.103618",
+    "sample_size": 960,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.229408",
+    "sample_size": 200,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.181363",
+    "sample_size": 320,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.148082",
+    "sample_size": 480,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.128243",
+    "sample_size": 640,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.114704",
+    "sample_size": 800,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.104710",
+    "sample_size": 960,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.199498",
+    "sample_size": 200,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.157717",
+    "sample_size": 320,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.128775",
+    "sample_size": 480,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.111523",
+    "sample_size": 640,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.099749",
+    "sample_size": 800,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.091058",
+    "sample_size": 960,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.197941",
+    "sample_size": 200,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.156486",
+    "sample_size": 320,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.127770",
+    "sample_size": 480,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.110652",
+    "sample_size": 640,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.098970",
+    "sample_size": 800,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.090347",
+    "sample_size": 960,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.229968",
+    "sample_size": 200,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.181805",
+    "sample_size": 320,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.148443",
+    "sample_size": 480,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.128556",
+    "sample_size": 640,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.114984",
+    "sample_size": 800,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.104965",
+    "sample_size": 960,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.230072",
+    "sample_size": 200,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.181888",
+    "sample_size": 320,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.148511",
+    "sample_size": 480,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.128614",
+    "sample_size": 640,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.115036",
+    "sample_size": 800,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.105013",
+    "sample_size": 960,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.190615",
+    "sample_size": 200,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.150694",
+    "sample_size": 320,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.123042",
+    "sample_size": 480,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.106557",
+    "sample_size": 640,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.095308",
+    "sample_size": 800,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H1",
+    "minimum_detectable_effect": "0.087003",
+    "sample_size": 960,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.208785",
+    "sample_size": 200,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.165059",
+    "sample_size": 320,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.134770",
+    "sample_size": 480,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.116715",
+    "sample_size": 640,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.104393",
+    "sample_size": 800,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H2",
+    "minimum_detectable_effect": "0.095297",
+    "sample_size": 960,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.209097",
+    "sample_size": 200,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.165306",
+    "sample_size": 320,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.134972",
+    "sample_size": 480,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.116889",
+    "sample_size": 640,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.104549",
+    "sample_size": 800,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H3",
+    "minimum_detectable_effect": "0.095439",
+    "sample_size": 960,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.208416",
+    "sample_size": 200,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.164767",
+    "sample_size": 320,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.134532",
+    "sample_size": 480,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.116508",
+    "sample_size": 640,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.104208",
+    "sample_size": 800,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H4",
+    "minimum_detectable_effect": "0.095129",
+    "sample_size": 960,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.208210",
+    "sample_size": 200,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.164604",
+    "sample_size": 320,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.134399",
+    "sample_size": 480,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.116393",
+    "sample_size": 640,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.104105",
+    "sample_size": 800,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H5",
+    "minimum_detectable_effect": "0.095034",
+    "sample_size": 960,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.207505",
+    "sample_size": 200,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.164047",
+    "sample_size": 320,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.133944",
+    "sample_size": 480,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.115999",
+    "sample_size": 640,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.103752",
+    "sample_size": 800,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H6",
+    "minimum_detectable_effect": "0.094713",
+    "sample_size": 960,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.209097",
+    "sample_size": 200,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.165306",
+    "sample_size": 320,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.134972",
+    "sample_size": 480,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.116889",
+    "sample_size": 640,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.104549",
+    "sample_size": 800,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H7",
+    "minimum_detectable_effect": "0.095439",
+    "sample_size": 960,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.192816",
+    "sample_size": 200,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.152435",
+    "sample_size": 320,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.124463",
+    "sample_size": 480,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.107788",
+    "sample_size": 640,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.096408",
+    "sample_size": 800,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H8",
+    "minimum_detectable_effect": "0.088008",
+    "sample_size": 960,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.217352",
+    "sample_size": 200,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.171832",
+    "sample_size": 320,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.140300",
+    "sample_size": 480,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.121504",
+    "sample_size": 640,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.108676",
+    "sample_size": 800,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H9",
+    "minimum_detectable_effect": "0.099207",
+    "sample_size": 960,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.219907",
+    "sample_size": 200,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.173852",
+    "sample_size": 320,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.141949",
+    "sample_size": 480,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.122932",
+    "sample_size": 640,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.109953",
+    "sample_size": 800,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H10",
+    "minimum_detectable_effect": "0.100373",
+    "sample_size": 960,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.191115",
+    "sample_size": 200,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.151090",
+    "sample_size": 320,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.123364",
+    "sample_size": 480,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.106837",
+    "sample_size": 640,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.095558",
+    "sample_size": 800,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H11",
+    "minimum_detectable_effect": "0.087232",
+    "sample_size": 960,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.189452",
+    "sample_size": 200,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.149775",
+    "sample_size": 320,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.122291",
+    "sample_size": 480,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.105907",
+    "sample_size": 640,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.094726",
+    "sample_size": 800,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H12",
+    "minimum_detectable_effect": "0.086473",
+    "sample_size": 960,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.220504",
+    "sample_size": 200,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.174324",
+    "sample_size": 320,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.142335",
+    "sample_size": 480,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.123265",
+    "sample_size": 640,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.110252",
+    "sample_size": 800,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H13",
+    "minimum_detectable_effect": "0.100646",
+    "sample_size": 960,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.220615",
+    "sample_size": 200,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.174412",
+    "sample_size": 320,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.142407",
+    "sample_size": 480,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.123328",
+    "sample_size": 640,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.110308",
+    "sample_size": 800,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "hypothesis_id": "H14",
+    "minimum_detectable_effect": "0.100697",
+    "sample_size": 960,
+    "scenario_id": "S11-role-aversion"
+  }
+]

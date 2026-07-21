@@ -1,0 +1,13 @@
+{
+  "calibration_failures_retained": 335,
+  "experiment_version": "v2",
+  "hypotheses": 14,
+  "monte_carlo_draws": 924000,
+  "no_human_data": true,
+  "outcomes": 19,
+  "power_rows": 924,
+  "response_scenarios": 11,
+  "sample_sizes": 6,
+  "synthetic_assignments": 928,
+  "treatment_cells": 29
+}

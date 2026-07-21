@@ -20,3 +20,13 @@ altered power count, a real-looking identifier, and removal of the ethics flag.
 > **No participants were recruited. No human data were collected. No experiment
 > was conducted. Separate ethics and institutional review are required before
 > deployment.**
+
+Selective-attention v2 run
+`20260721T232119Z_DD-011_121162f8_e454b06d2c` preserves the v1 package and
+extends it to 29 cells, 14 hypotheses, 19 outcomes, 11 response scenarios, 928
+balanced synthetic assignments, and 924 power rows with 924,000 seeded draws.
+The separate verifier reproduces every rejection count. All 335 below-threshold
+rows among the 462 large-sample checks are retained. Under the rational-attention
+scenario at N=960, H13 and H14 remain below 0.80 at 0.764 and 0.632; these are
+calibration failures, not behavioral results. Claim DD-C-0070 is synthetic
+Monte Carlo evidence only.

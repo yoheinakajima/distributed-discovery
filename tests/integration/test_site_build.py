@@ -79,7 +79,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "JavaScript is off" in benchmark_lab
     assert (output / "labs.html").is_file()
     assert (output / "experiment-kit.html").is_file()
-    for route in ["hypotheses", "design", "power"]:
+    for route in ["hypotheses", "design", "attention", "power"]:
         page = output / f"experiment-kit/{route}.html"
         assert page.is_file()
         assert "No participants were recruited" in page.read_text()
@@ -123,6 +123,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert 'id="DD-C-0061"' in claims
     assert 'id="DD-C-0065"' in claims
     assert 'id="DD-C-0069"' in claims
+    assert 'id="DD-C-0070"' in claims
     assert "unvalidated values" in claims
 
     runs = json.loads((output / "data/runs.json").read_text(encoding="utf-8"))["runs"]
@@ -165,6 +166,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "experiment-kit/hypotheses.html",
         "experiment-kit/design.html",
         "experiment-kit/power.html",
+        "experiment-kit/attention.html",
         "labs/benchmark.html",
         "labs/experiment-design.html",
         "labs/audience.html",
@@ -207,9 +209,12 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert (output / "downloads/discoverybench-task-v1.schema.json").is_file()
     assert (output / "downloads/discoverybench-task-v2.schema.json").is_file()
     experiment = json.loads((output / "data/experiment/summary.json").read_text())
-    assert experiment["run_id"] == "20260721T185647Z_DD-011_fa0271d9_fcaa647c55"
-    assert experiment["summary"]["treatment_cells"] == 20
-    assert experiment["summary"]["power_rows"] == 384
+    assert experiment["run_id"] == "20260721T232119Z_DD-011_121162f8_e454b06d2c"
+    assert experiment["schema_version"] == 2
+    assert experiment["summary"]["treatment_cells"] == 29
+    assert experiment["summary"]["hypotheses"] == 14
+    assert experiment["summary"]["response_scenarios"] == 11
+    assert experiment["summary"]["power_rows"] == 924
     assert experiment["summary"]["no_human_data"] is True
     audience = json.loads((output / "data/audience/summary.json").read_text())
     assert audience["run_id"] == "20260721T215811Z_DD-013_09c07448_cdac4fb512"
@@ -223,6 +228,8 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "dd011-researcher-protocol.md",
         "dd011-data-dictionary.md",
         "dd011-design-v1.schema.json",
+        "dd011-design-v2.schema.json",
+        "dd011-randomization.md",
     ]:
         assert (output / f"downloads/{name}").is_file()
 
