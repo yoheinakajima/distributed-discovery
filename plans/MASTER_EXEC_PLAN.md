@@ -59,7 +59,10 @@ Progress:
   `20260721T222047Z_DD-014_f5f099a8_ea0276dd16` now passes in 10.761 seconds;
   DD-C-0066 through DD-C-0068 pass their local evidence audits.
 - [ ] Focused paper, benchmark extension, synthetic experiment extension,
-  public Labs/site integration, and final acceptance.
+  public Labs/site integration, and final acceptance. Issue #88 and branch
+  `paper/incentive-to-ignore` contain a deterministic 20-page paper with nine
+  generated evidence assets, PDF SHA-256 `ee9e27f741d2`, and a passing all-page
+  Poppler review. Local integration, PR merge, Pages, and live PDF remain.
 
 Recovery: inspect `git status --short --branch` on
 `research/dd012-incentive-to-ignore`, preserve the completed primary run, and

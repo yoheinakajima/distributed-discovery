@@ -142,6 +142,10 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "working paper · no DOI · not submitted · not peer reviewed" in common_source_html
     assert common_source["sha256"] in common_source_html
     assert common_source["download"] == "downloads/The_Common_Source_Trap.pdf"
+    incentive = next(item for item in publications if item["slug"] == "incentive-to-ignore")
+    assert incentive["download"] == "downloads/The_Incentive_to_Ignore.pdf"
+    incentive_html = (output / incentive["detail"]).read_text(encoding="utf-8")
+    assert "working paper · no DOI · not submitted · not peer reviewed" in incentive_html
 
     routes = json.loads((output / "data/routes.json").read_text(encoding="utf-8"))["routes"]
     route_paths = {route["path"] for route in routes}
@@ -164,6 +168,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "labs/audience.html",
         "labs/conditional-attention.html",
         "publications/common-source-trap.html",
+        "publications/incentive-to-ignore.html",
     } <= route_paths
     assert (output / "robots.txt").is_file()
     assert (output / "sitemap.xml").is_file()

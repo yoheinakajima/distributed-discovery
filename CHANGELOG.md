@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-07-21 — The Incentive to Ignore working paper
+
+- Built the focused 20-page working paper *The Incentive to Ignore: Selective
+  Attention and Audience Design in Distributed Discovery* from checksum-
+  validated DD-012 through DD-014 evidence.
+- Added nine generated figures/tables with claim IDs, immutable run IDs,
+  generator identity, and source checksum prefixes; every theorem, bounded
+  classification, negative result, and prediction retains its evidence label.
+- Passed citation, claim-ID, cross-reference, deterministic two-build, and
+  Poppler all-page visual checks. Final PDF SHA-256 is
+  `ee9e27f741d25a9597994f18caf2bf406098db7aca4d2ed067a7a011f64be250`.
+- Retained working-paper, no-DOI, not-submitted, not-peer-reviewed, and
+  no-human-experiment boundaries.
+
 ## 2026-07-21 — DD-014 conditional attention
 
 - Proved completeness of the three deterministic agreement-respecting,
