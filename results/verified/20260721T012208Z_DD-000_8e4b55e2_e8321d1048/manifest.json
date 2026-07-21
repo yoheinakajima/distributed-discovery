@@ -1,0 +1,31 @@
+{
+  "command": "make canonical-exact-frontier",
+  "config_hash_sha256": "e8321d1048443f94f802e2075243a10ac418e30022c1e540a8f259f61c229ae3",
+  "dependency_lock_hash_sha256": "44817b839ec69b327bd25a79ba5a14569628e5345ed6e496fd2badfe5c7f5bb5",
+  "ended_utc": "2026-07-21T01:22:16.543903Z",
+  "exit_status": 0,
+  "git_commit": "8e4b55e2e2cf33c69e3605dccf6ceec9c3dba8d4",
+  "git_dirty": false,
+  "input_hashes": {
+    "src/distributed_discovery/canonical/exact_frontier.py": "849ed0ef0fdb6aedb51983c197f63bf9744727485d962d807618cbc48e11f09a",
+    "src/distributed_discovery/canonical/exact_frontier_study.py": "e1abaa4d60064457cdf9058f7bc8c6f7c52af4c8d254f4e3dbd8c5295c147cc9",
+    "src/distributed_discovery/canonical/exact_frontier_verification.py": "85a1d429074a0975e5dca773dd000679e01543a745af352f5b24d48cc5dd9238",
+    "studies/DD-000-foundations/configs/exact-frontier.yml": "6f3b46e5610e2562acb873da97c566f801104090941bee61a8a0165af5ab7d8b"
+  },
+  "outputs": {
+    "outputs/canonical-exact-frontier-certificate.json": "c88d31ec7efda0e9e38346e417a0d00db33cc1ec75221f7ec574cf264409fc1e",
+    "outputs/cost-audit.json": "e9ef09c8ccbb0519345a40869e7a0ca411f45560cb050c4312f79bafb65e0947",
+    "outputs/exact-frontier.csv": "923a70820426dbe3eb0dc844fde395398e889591848a5e68bee1af8a2ac8b687",
+    "outputs/independent-verification.json": "a9fa763e06a2e2d170968ec709583181b220b0772b070aa488a8ed7caebecec3"
+  },
+  "random_seeds": {
+    "algorithm": null,
+    "model": null
+  },
+  "run_id": "20260721T012208Z_DD-000_8e4b55e2_e8321d1048",
+  "schema_version": 1,
+  "started_utc": "2026-07-21T01:22:08.220670Z",
+  "study_id": "DD-000",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

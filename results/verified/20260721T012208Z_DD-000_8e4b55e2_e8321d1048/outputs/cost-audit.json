@@ -1,0 +1,10 @@
+{
+  "bounded_before_execution": true,
+  "declared_time_budget_seconds": 30,
+  "method_a_elapsed_seconds": 8.281713417032734,
+  "method_a_expected_states": 490314,
+  "method_b_elapsed_seconds": 0.0004341669846326113,
+  "randomness": null,
+  "schema_version": 1,
+  "total_elapsed_seconds": 8.287077000015415
+}

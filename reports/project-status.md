@@ -1,12 +1,12 @@
 # Project status and final handoff
 
-> Current operational status, refreshed 2026-07-20 UTC. The M0–M9 handoff sections below remain the evidence baseline; the active A–E queue is authoritative in `plans/MASTER_EXEC_PLAN.md`.
+> Current operational status, refreshed 2026-07-21 UTC. The M0–M9 and A–E handoff sections below remain the evidence baseline; the continuation queue is authoritative in `plans/MASTER_EXEC_PLAN.md`.
 
 ## 1. Executive summary
 
 Milestones M0 through M9 and operational Milestone A are complete. Cleanup issue #6 closed through squash-merged PR #12 at `1add8de5a349c57085928da8aa54da85e49c5077`; CI passed, Pages workflow `29781940577` succeeded, and all five required routes returned HTTP 200. The source repository is public under MIT at `https://yoheinakajima.github.io/distributed-discovery/`. Canonical upstream remains untouched.
 
-The authorized A–E queue is complete and merged. DD-002 PR #15 merged as `526d2f0f19638bc2f87567972135ebac6a74ae63`; DD-003 PR #16 merged as `54b8713fa7f3b30922a88b60a6dc280319432715`. DD-003 post-merge CI `29787309515` and Pages `29787309537` passed, and all five public routes expose the final DD-002/DD-003 statuses. The canonical `(16,8,1/5)` private-team optimum remains unresolved.
+The authorized A–E queue is complete and merged through handoff PR #17 at `b72c01026be5bf7018b3a3e9a464671dce53bcbb`; post-merge CI `29787687400` and Pages `29787687403` passed. Continuation cycle F is implemented on draft PR #19. Exact run `20260721T012208Z_DD-000_8e4b55e2_e8321d1048` certifies the pooled top-eight endpoint and the valid DD-001 interval while leaving the canonical private-team optimum unresolved.
 
 ## 2. Repository map
 
@@ -87,7 +87,7 @@ The run is the current source for the site and foundations note. Claim records r
 
 ## 6. Verified claims
 
-The claim ledger has 34 records. DD-C-0029 through DD-C-0031 verify the bounded DD-002 policy/equilibrium census, selection-dependent reversal, and refinement census. DD-C-0032 through DD-C-0034 independently reproduce the DD-003 graph census, pairwise-moment bounded null, and mean-agreement scalar counterexample. Earlier evidence statuses remain unchanged.
+The claim ledger has 36 records. DD-C-0035 independently reproduces the complete exact canonical pooled frontier by two state representations plus an independent verifier. DD-C-0036 verifies the exact DD-001 interval under the audited emulation assumptions. DD-C-0029 through DD-C-0034 retain the bounded DD-002 and DD-003 results and statuses.
 
 ## 7. Independently reproduced claims
 
@@ -115,7 +115,7 @@ DD-C-0022 is `checked`, not verified: direct clue-following is an exact coordina
 
 ## 10. Open research questions
 
-The A–E queue is complete. The next research task is an alignment-preserving canonical DD-001 method with an independently checkable admissible upper bound. DD-004 through DD-007 remain unexecuted; issue #8 intentionally queues the DD-007 schema only.
+The A–E queue is complete and continuation cycle F awaits PR review/merge. The next task is the separate Three Results synthesis paper and public Results page, followed by an alignment-preserving canonical DD-001 relaxation. DD-004 through DD-007 remain unexecuted; issue #8 intentionally queues the DD-007 schema only.
 
 ## 11. Known technical debt
 
@@ -134,13 +134,13 @@ There is no validation blocker. Public `origin`, Actions, and Pages are active. 
 
 ## 13. Exact resume point
 
-After the documentation-only integrated handoff merges, sync `main`, run `make verify`, and inspect `reports/dd001-signature-certificate.md` before registering the next canonical DD-001 upper-bound approach. Preserve the exact certified interval `[325089/390625, 1]`; the pooled planner value `0.859421246199` is a stronger-information benchmark, not a private-team certificate.
+On draft PR #19, finish the full claim/diff audit, run acceptance, wait for required CI, merge, sync `main`, and verify post-merge CI/Pages. Preserve the exact certified interval `[325089/390625, 860391662035297/1001129150390625]`; never describe its upper endpoint as attainable or tight.
 
 ## 14. Recommended next three tasks
 
-1. DD-001: seek an alignment-preserving canonical relaxation with a checkable upper bound.
-2. DD-003: vary source accuracies before enlarging the exact graph class.
-3. DD-002: consider randomized disclosure only after an ADR fixes the policy class, equilibrium selection, and validation certificate.
+1. Build the separate Three Results paper and public Results page from validated run artifacts.
+2. DD-001: seek an alignment-preserving canonical relaxation with a checkable upper bound.
+3. DD-002 and DD-003: execute the registered selection-robustness and heterogeneous-accuracy continuations sequentially.
 
 ## 15. Commit list
 
@@ -180,17 +180,17 @@ Suggested title: `Bootstrap the Distributed Discovery research program`
 7. **Pages deployment:** DD-003 post-merge Pages run `29787309537` deployed commit `54b8713fa7f3b30922a88b60a6dc280319432715`; `/`, `foundations.html`, `applications.html`, `open-problems.html`, and `styles.css` returned HTTP 200, and the live page contains both completed study statuses.
 8. **Verified claims:** The ledger contains 34 records. DD-C-0029 through DD-C-0031 cover DD-002; DD-C-0032 through DD-C-0034 cover DD-003 with independent reproduction status.
 9. **Independently reproduced claims:** Canonical benchmark quantities, DD-001 tiny optima and counterexamples, DD-001A tie counts, DD-001B anti-informative witnesses, and all three DD-003 claims have materially separate checks.
-10. **Certified bounds:** The canonical DD-001 private-team value is exactly bounded by `[325089/390625, 1]`. No stronger admissible private-team upper certificate was produced.
+10. **Certified bounds:** The canonical DD-001 private-team value is exactly bounded by `[325089/390625, 860391662035297/1001129150390625]`; gap `27224111644672/1001129150390625`. The upper endpoint is not claimed attainable or tight.
 11. **Heuristic lower bounds:** Canonical coordinate ascent returns the exact direct value `325089/390625` from the direct, territorial, and 16 seeded random starts; this remains a constructive lower bound only.
 12. **New counterexamples:** DD-002 gives the exact selection-dependent disclosure reversal `5/9` to `171/308`. DD-003 gives matched mean agreement `3/4` with private discovery `8/9` versus `31/36`.
 13. **Negative and null results:** DD-003 has ten matched complete pairwise-moment graph pairs and zero discovery differences. DD-001B's informative phase does not extend to `p=0`. Randomized DD-002 disclosure was not tested.
 14. **Refuted conjectures:** General direct clue-following optimality, the all-`p` three-family DD-001B extension, unique use of “Distributed Discovery,” and sufficiency of average DD-003 pair agreement are refuted in their stated scopes.
-15. **Current canonical DD-001 interval:** `[325089/390625, 1] = [0.83222784, 1]`. The independently reproduced pooled-planner value `0.859421246199` uses greater information and assignment authority and is not an admissible private-team upper certificate.
+15. **Current canonical DD-001 interval:** `[325089/390625, 860391662035297/1001129150390625]`, approximately `[0.83222784, 0.8594212461994395]`. The upper inequality is admissible because pooled observation can emulate every fixed private-team profile and conditionally optimize the same physical portfolio.
 16. **DD-002 bounded outcome:** 15 policies, 37 posterior games, 256 global pure-equilibrium selections, 45 strict refinements, one selected reversal, eight worst-pure reversals, and no best-pure or planner reversals.
 17. **DD-003 bounded outcome:** 51 canonical graphs (`1/8/42` by source count); ten matched pairwise-moment pairs with a bounded null; 22 matched-average-agreement counterexample pairs and 59 source-HHI counterexample pairs.
 18. **Technical debt:** Canonical DD-001 lacks a joint alignment-preserving upper certificate; DD-002 randomized disclosure and general asymmetric mixed equilibria are deferred; DD-003 heterogeneous signal laws and larger exact graph classes are deferred; browser-based accessibility audit remains absent.
 19. **Exact blockers:** No research, CI, build, or deployment blocker. Settings-only blockers are GitHub label/milestone creation, homepage metadata, and a safe `main` ruleset because the CLI lacks OAuth and the connected app does not expose those repository settings.
-20. **Exact next task:** Register and test an alignment-preserving canonical DD-001 upper-bound method, beginning from the signature barrier rather than treating the pooled planner as a certificate.
+20. **Exact next task:** Merge/deploy the exact frontier certificate, then build the separate Three Results synthesis before beginning the alignment-preserving DD-001 relaxation.
 21. **Exact resume command:** `git switch main && git pull --ff-only origin main && make verify`.
 22. **Commit SHAs:** Queue merge SHAs are listed in item 3; primary evidence commits are `b1d8d431` (DD-001A), `b2cc23f4` (DD-001B), `94607423` (DD-002), and `2ea8dad5` (DD-003).
 23. **Pull-request URLs:** `https://github.com/yoheinakajima/distributed-discovery/pull/12` through `/pull/17`; PR #17 is the documentation-only integrated handoff.

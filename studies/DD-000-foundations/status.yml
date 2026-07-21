@@ -1,6 +1,6 @@
 study_id: DD-000
 status: active
-evidence_status: infrastructure-only
-active_milestone: complete
-next_action: maintain foundations artifacts while DD-001 becomes active
-updated_utc: 2026-07-20T20:15:00Z
+evidence_status: exact-canonical-frontier-independently-reproduced
+active_milestone: exact-frontier-complete
+next_action: use the certified frontier in the separate Three Results synthesis without changing canonical upstream
+updated_utc: 2026-07-21T01:22:16Z

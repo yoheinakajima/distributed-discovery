@@ -31,7 +31,23 @@ For \(M=16,N=8,p=1/5\), direct clue-following has exact value
 1-(4/5)^8=325089/390625=0.83222784.
 \]
 
-The direct profile is an exact coordinate fixed point. All 16 seeded random starts and one territorial start converged to it; no configured restart improved the lower bound. The pooled-planner value `0.859421246199` is an independently reproduced numerical upper benchmark under greater information and assignment authority; 1 is the universal exact upper bound. Global private-team optimality remains unresolved. The failed improvement search is evidence about this algorithm and seed set only.
+The direct profile is an exact coordinate fixed point. All 16 seeded random starts
+and one territorial start converged to it; no configured restart improved the
+lower bound. The pooled top-eight value is now exactly certified as
+`860391662035297/1001129150390625`. Under the audited emulation proposition it is
+a valid upper bound because the pooled planner can reproduce every fixed role
+profile and then conditionally optimize the portfolio. Thus the canonical exact
+interval is
+
+\[
+\frac{325089}{390625}\le T_8(16,1/5)\le
+\frac{860391662035297}{1001129150390625}.
+\]
+
+Its exact gap is `27224111644672/1001129150390625`, approximately
+`0.0271934061994395`. The pooled endpoint is not claimed attainable, globally
+tight, or equal to the unresolved private-team optimum. The failed improvement
+search is evidence about its algorithm and seed set only.
 
 ## Scope and next actions
 
@@ -41,7 +57,13 @@ Randomization cannot improve the finite common-payoff optimum because every rand
 
 DD-C-0023 proves that `(incoming count, fixed-point indicator)` signatures are lossless for the fixed-profile objective and gives necessary-and-sufficient residual Hall conditions with constructive matching reconstruction. Primary signature run `20260720T221139Z_DD-001_b1d8d431_40bf5b06a5` independently reproduces all 21 tiny optima and raw-policy tie counts (DD-C-0024), while raw enumeration through \(M=5\) agrees with both feasibility implementations.
 
-The exact canonical state-space audit (DD-C-0025) finds 148,348,284,928 feasible labeled signatures and 5,806 individual target orbits. The eight-agent multiset count before a global target quotient has 85 digits. Independently canonicalizing agents is not lossless because relative target alignment matters. This is a proved reduction plus a documented certification barrier, not a canonical upper bound. The direct lower bound and pooled numerical benchmark remain unchanged and global optimality remains unresolved.
+The exact canonical state-space audit (DD-C-0025) finds 148,348,284,928 feasible
+labeled signatures and 5,806 individual target orbits. The eight-agent multiset
+count before a global target quotient has 85 digits. Independently canonicalizing
+agents is not lossless because relative target alignment matters. This is a proved
+reduction plus a documented certification barrier, not an alignment-preserving
+improvement over the newly exact pooled upper bound. The direct lower bound and
+pooled upper endpoint remain distinct, and global optimality remains unresolved.
 
 Next work is the exact \(N=2\) hybrid-threshold milestone. Future canonical certification must use a joint alignment-preserving state or another independently checkable relaxation before spending large compute.
 
@@ -51,4 +73,6 @@ The four informative hybrid witnesses share one policy family with exact value \
 
 Primary run `20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1` exhausts 438,734 two-agent signature multisets and certifies the continuous unrestricted informative envelope for \(M=3,4,5\) (DD-C-0027). Raw and signature enumeration reproduce all four original witnesses. At \(p=0\), exact optima \(11/12\) for \(M=3\) and \(2/3\) for \(M=4\) refute extending the three-family theorem to anti-informative clues (DD-C-0028).
 
-DD-001B is complete. The next queue milestone is the bounded DD-002 disclosure fixture; the canonical DD-001 optimum remains unresolved.
+DD-001B and the exact pooled-frontier certificate are complete. After the separate
+Three Results synthesis, the next DD-001 milestone is an alignment-preserving
+admissible upper relaxation; the canonical optimum remains unresolved.

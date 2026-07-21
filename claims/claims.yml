@@ -108,24 +108,24 @@ claims:
   - id: DD-C-0006
     study_id: DD-000
     short_name: canonical-planner-discovery
-    statement: The canonical pooled top-eight planner portfolio has discovery probability 0.859421246199 to 12 displayed decimal places.
+    statement: The canonical pooled top-eight planner portfolio has exact discovery probability 860391662035297/1001129150390625, approximately 0.8594212461994395.
     scope: M=16, N=8, p=0.20, uniform prior and cutoff tie-breaking.
     claim_type: computational-result
     status: independently-reproduced
-    source_type: pinned-upstream-and-independent-enumeration
-    source_reference: integrations/shared-discovery-paradox/upstream.lock
+    source_type: two-independent-exact-enumerations-plus-partition-verifier
+    source_reference: results/verified/20260721T012208Z_DD-000_8e4b55e2_e8321d1048/outputs/canonical-exact-frontier-certificate.json
     proof_path: null
-    implementation_paths: [src/distributed_discovery/canonical/model.py]
-    run_ids: [20260720T190336Z_DD-000_32dd1c32_217c602fa0]
-    test_paths: [tests/unit/test_canonical_model.py, tests/regression/test_canonical_values.py]
-    exactness_basis: exhaustive enumeration of all labeled count vectors with uniform cutoff inclusion
-    rounding_rule: nearest value at 12 digits after decimal
+    implementation_paths: [src/distributed_discovery/canonical/exact_frontier.py, src/distributed_discovery/canonical/exact_frontier_verification.py]
+    run_ids: [20260720T190336Z_DD-000_32dd1c32_217c602fa0, 20260721T012208Z_DD-000_8e4b55e2_e8321d1048]
+    test_paths: [tests/unit/test_canonical_model.py, tests/unit/test_exact_frontier.py, tests/regression/test_canonical_values.py]
+    exactness_basis: all 490314 labeled count vectors and 67 independently aggregated false-count histogram orbits agree exactly, both normalize to one, and a separate integer-partition verifier accepts the certificate
+    rounding_rule: exact fraction is authoritative; decimal is displayed to 16 places
     dependencies: []
     contradicts: []
     supersedes: []
     first_added: "2026-07-20"
     last_checked: "2026-07-20"
-    notes: Count order equals posterior order because p exceeds the false-clue probability.
+    notes: Count order equals posterior order because p exceeds the false-clue probability; no private-team attainability or tightness claim follows.
   - id: DD-C-0007
     study_id: DD-000
     short_name: canonical-market-discovery
@@ -154,20 +154,20 @@ claims:
     scope: Canonical independent-clue model and budgets 1 through 8.
     claim_type: computational-result
     status: independently-reproduced
-    source_type: pinned-upstream-and-independent-enumeration
-    source_reference: results/baseline/20260720T190336Z_DD-000_32dd1c32_217c602fa0/outputs/independent_frontier.csv
+    source_type: independent-exact-enumerations
+    source_reference: results/verified/20260721T012208Z_DD-000_8e4b55e2_e8321d1048/outputs/exact-frontier.csv
     proof_path: null
-    implementation_paths: [src/distributed_discovery/canonical/model.py]
-    run_ids: [20260720T190336Z_DD-000_32dd1c32_217c602fa0]
-    test_paths: [tests/unit/test_canonical_model.py, tests/regression/test_canonical_values.py]
-    exactness_basis: exhaustive finite frontier with budgets 6 and 7 bracketing private discovery
+    implementation_paths: [src/distributed_discovery/canonical/model.py, src/distributed_discovery/canonical/exact_frontier.py, src/distributed_discovery/canonical/exact_frontier_verification.py]
+    run_ids: [20260720T190336Z_DD-000_32dd1c32_217c602fa0, 20260721T012208Z_DD-000_8e4b55e2_e8321d1048]
+    test_paths: [tests/unit/test_canonical_model.py, tests/unit/test_exact_frontier.py, tests/regression/test_canonical_values.py]
+    exactness_basis: two complete exact finite frontiers with budgets 6 and 7 bracketing exact private discovery, plus independent partition verification
     rounding_rule: integer
     dependencies: [DD-C-0004, DD-C-0006]
     contradicts: []
     supersedes: []
     first_added: "2026-07-20"
     last_checked: "2026-07-20"
-    notes: Frontier source contains full displayed precision for every budget.
+    notes: The new frontier source contains authoritative fractions for every budget and reproduces the earlier decimals.
   - id: DD-C-0009
     study_id: DD-000
     short_name: canonical-copying-crossover
@@ -388,9 +388,9 @@ claims:
     source_type: local-proof-and-exact-grid-check
     source_reference: studies/DD-001-private-information-teams/model.md
     proof_path: claims/proofs/DD-C-0019.md
-    implementation_paths: [src/distributed_discovery/private_teams/model.py, src/distributed_discovery/private_teams/study.py]
-    run_ids: [20260720T200447Z_DD-001_6eb12861_ba766d1eba]
-    test_paths: [tests/unit/test_private_teams_model.py]
+    implementation_paths: [src/distributed_discovery/private_teams/model.py, src/distributed_discovery/private_teams/study.py, src/distributed_discovery/canonical/exact_frontier.py]
+    run_ids: [20260720T200447Z_DD-001_6eb12861_ba766d1eba, 20260721T012208Z_DD-000_8e4b55e2_e8321d1048]
+    test_paths: [tests/unit/test_private_teams_model.py, tests/unit/test_exact_frontier.py]
     exactness_basis: feasible-set inclusion and protocol emulation
     rounding_rule: null
     dependencies: [DD-C-0016]
@@ -398,7 +398,7 @@ claims:
     supersedes: []
     first_added: "2026-07-20"
     last_checked: "2026-07-20"
-    notes: The grid check illustrates the analytic inequalities and is not their proof.
+    notes: The grid check illustrates the analytic inequalities and is not their proof; the exact canonical pooled endpoint now instantiates the upper inequality.
   - id: DD-C-0020
     study_id: DD-001
     short_name: certified-tiny-private-team-grid
@@ -714,3 +714,45 @@ claims:
     first_added: "2026-07-20"
     last_checked: "2026-07-20"
     notes: The complete census contains 22 graph pairs with matched mean agreement but different discovery and 59 pairs with matched source HHI but different discovery.
+  - id: DD-C-0035
+    study_id: DD-000
+    short_name: canonical-exact-pooled-frontier
+    statement: For the canonical M=16, N=8, p=1/5 fixture, the exact pooled top-L frontier for every L from 1 through 8 is the rational vector stored in the primary certificate, with top-eight value 860391662035297/1001129150390625 and exact recovery budget 7.
+    scope: Uniform one-target prior, conditionally independent symmetric reports, distinct top-L pooled portfolio, and uniform inclusion at the cutoff tie.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exhaustive-labeled-count-and-histogram-orbit-enumerations
+    source_reference: results/verified/20260721T012208Z_DD-000_8e4b55e2_e8321d1048/outputs/canonical-exact-frontier-certificate.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/canonical/exact_frontier.py, src/distributed_discovery/canonical/exact_frontier_verification.py, src/distributed_discovery/canonical/exact_frontier_study.py]
+    run_ids: [20260721T012208Z_DD-000_8e4b55e2_e8321d1048]
+    test_paths: [tests/unit/test_exact_frontier.py]
+    exactness_basis: all 490314 labeled count vectors and all 67 false-count histogram orbits agree at every budget with exact unit mass; a separate decreasing-partition verifier recomputes all values and rejects a corrupted numerator
+    rounding_rule: exact fractions are authoritative; decimals display 16 places
+    dependencies: [DD-C-0004]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: This strengthens the numeric representation of the established planner and recovery claims without changing the canonical model.
+  - id: DD-C-0036
+    study_id: DD-001
+    short_name: canonical-private-team-exact-interval
+    statement: The canonical deterministic zero-communication private-team frontier T_8(16,1/5) lies in the exact interval 325089/390625 <= T_8(16,1/5) <= 860391662035297/1001129150390625, whose gap is 27224111644672/1001129150390625, approximately 0.0271934061994395.
+    scope: The frozen DD-001 common-payoff model; the upper inequality requires the pooled planner to observe all private reports and emulate every private-team action vector under the same physical eight-action budget and discovery objective.
+    claim_type: proposition
+    status: verified
+    source_type: feasible-policy-lower-bound-plus-emulation-proof-and-independent-exact-upper-enumerations
+    source_reference: studies/DD-000-foundations/exact-frontier-model.md
+    proof_path: claims/proofs/DD-C-0036.md
+    implementation_paths: [src/distributed_discovery/private_teams/model.py, src/distributed_discovery/canonical/exact_frontier.py, src/distributed_discovery/canonical/exact_frontier_verification.py]
+    run_ids: [20260720T200447Z_DD-001_6eb12861_ba766d1eba, 20260721T012208Z_DD-000_8e4b55e2_e8321d1048]
+    test_paths: [tests/unit/test_private_teams_model.py, tests/unit/test_exact_frontier.py]
+    exactness_basis: exact direct-policy formula for the lower endpoint, protocol-emulation and conditional top-eight optimality for the inequality, and two exact exhaustive enumerations plus an independent verifier for the upper endpoint
+    rounding_rule: exact fractions are authoritative; decimal gap displays 16 places
+    dependencies: [DD-C-0004, DD-C-0019, DD-C-0035]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: The upper endpoint is not claimed attainable by a private team; neither endpoint is claimed globally optimal or tight for the unresolved private-team problem.

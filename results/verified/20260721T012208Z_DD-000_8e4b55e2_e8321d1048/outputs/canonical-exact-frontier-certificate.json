@@ -1,0 +1,116 @@
+{
+  "agreement": {
+    "all_budgets_exact": true,
+    "probability_mass_one_both_methods": true
+  },
+  "formula": {
+    "method_a": "sum over labeled count vectors: multinomial probability times cutoff inclusion share",
+    "method_b": "sum over target count k and false-count histogram h_j with exact orbit multiplicity",
+    "posterior_order_basis": "accuracy exceeds false-label probability, so posterior order equals report-count order"
+  },
+  "frontier": [
+    {
+      "budget": 1,
+      "decimal_16": "0.3834687097312395",
+      "denominator": 98876953125,
+      "exact_fraction": "37916217637/98876953125",
+      "method_a_fraction": "37916217637/98876953125",
+      "method_b_fraction": "37916217637/98876953125",
+      "numerator": 37916217637
+    },
+    {
+      "budget": 2,
+      "decimal_16": "0.5275322625941855",
+      "denominator": 1001129150390625,
+      "exact_fraction": "528127925854561/1001129150390625",
+      "method_a_fraction": "528127925854561/1001129150390625",
+      "method_b_fraction": "528127925854561/1001129150390625",
+      "numerator": 528127925854561
+    },
+    {
+      "budget": 3,
+      "decimal_16": "0.6045278046953616",
+      "denominator": 1001129150390625,
+      "exact_fraction": "605210407502177/1001129150390625",
+      "method_a_fraction": "605210407502177/1001129150390625",
+      "method_b_fraction": "605210407502177/1001129150390625",
+      "numerator": 605210407502177
+    },
+    {
+      "budget": 4,
+      "decimal_16": "0.6705807444476144",
+      "denominator": 333709716796875,
+      "exact_fraction": "223779310319051/333709716796875",
+      "method_a_fraction": "223779310319051/333709716796875",
+      "method_b_fraction": "223779310319051/333709716796875",
+      "numerator": 223779310319051
+    },
+    {
+      "budget": 5,
+      "decimal_16": "0.7356042055046180",
+      "denominator": 1001129150390625,
+      "exact_fraction": "736434813280609/1001129150390625",
+      "method_a_fraction": "736434813280609/1001129150390625",
+      "method_b_fraction": "736434813280609/1001129150390625",
+      "numerator": 736434813280609
+    },
+    {
+      "budget": 6,
+      "decimal_16": "0.7944353135074917",
+      "denominator": 200225830078125,
+      "exact_fraction": "159066470090413/200225830078125",
+      "method_a_fraction": "159066470090413/200225830078125",
+      "method_b_fraction": "159066470090413/200225830078125",
+      "numerator": 159066470090413
+    },
+    {
+      "budget": 7,
+      "decimal_16": "0.8360103976661897",
+      "denominator": 111236572265625,
+      "exact_fraction": "92994931014809/111236572265625",
+      "method_a_fraction": "92994931014809/111236572265625",
+      "method_b_fraction": "92994931014809/111236572265625",
+      "numerator": 92994931014809
+    },
+    {
+      "budget": 8,
+      "decimal_16": "0.8594212461994395",
+      "denominator": 1001129150390625,
+      "exact_fraction": "860391662035297/1001129150390625",
+      "method_a_fraction": "860391662035297/1001129150390625",
+      "method_b_fraction": "860391662035297/1001129150390625",
+      "numerator": 860391662035297
+    }
+  ],
+  "method_a": {
+    "expected_labeled_count_vector_count": 490314,
+    "labeled_count_vector_count": 490314,
+    "probability_mass_fraction": "1",
+    "representation": "labeled weak compositions"
+  },
+  "method_b": {
+    "histogram_orbit_count": 67,
+    "probability_mass_fraction": "1",
+    "representation": "target count plus false-label occupancy histogram"
+  },
+  "parameters": {
+    "accuracy": "1/5",
+    "candidates": 16,
+    "cutoff_rule": "uniform inclusion among labels tied at the top-L cutoff",
+    "false_label_accuracy": "4/75",
+    "fixed_target_label": 0,
+    "reports": 8
+  },
+  "private_team_interval": {
+    "basis": "pooled planner observes all signals and emulates every private-team action profile",
+    "canonical_private_team_optimum_status": "unresolved",
+    "gap_decimal_16": "0.0271934061994395",
+    "gap_fraction": "27224111644672/1001129150390625",
+    "global_tightness_claimed": false,
+    "lower_fraction": "325089/390625",
+    "upper_attainability_claimed": false,
+    "upper_fraction": "860391662035297/1001129150390625"
+  },
+  "recovery_budget": 7,
+  "schema_version": 1
+}
