@@ -8,7 +8,7 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-The historical M0–M9 bootstrap, operational Milestone A, research milestones DD-001A/B, DD-002, DD-003, their integrated handoff, and continuation cycles F–I are complete and merged. Selection PR #25 squash-merged as `993b0899421d446f61348a513d2630e0f424e336`; post-merge CI `29797810807` and Pages `29797810786` passed, all seven public routes returned HTTP 200, and the live selection catalogue/provenance match DD-C-0040/DD-C-0041. **Active integration boundary: Cycle J evidence is complete in immutable run `20260721T032358Z_DD-003_84238b76_2cbc13e66a`; issue #26 and draft PR #27 await final audit, review, merge, and deployment.**
+The historical M0–M9 bootstrap, operational Milestone A, research milestones DD-001A/B, bounded DD-002/DD-003, their integrated handoff, and continuation cycles F–L are complete. Research PRs #19, #21, #23, #25, and #27 and maintenance PRs #29–#31 are reviewed, squash-merged, CI-green, Pages-green, and live-smoke-tested. Claims stop at DD-C-0044; the final ledger has 44 claims and 17 immutable manifests. The one authorized settings attempt failed before mutation because GitHub CLI is unauthenticated and is recorded in issue #32. **Active integration boundary: Cycle M local acceptance and documentation are complete in PR #34; only its review, merge, and final Pages smoke test remain.**
 
 ## Scope
 
@@ -46,10 +46,10 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - G Three Results synthesis paper and public Results page: completed 2026-07-20 through PR #21.
 - H alignment-preserving DD-001 upper relaxation: completed 2026-07-20 through PR #23.
 - I DD-002 equilibrium-selection robustness: completed 2026-07-20 through PR #25.
-- J DD-003 heterogeneous source accuracy: evidence complete; PR #27 integration active.
-- K dependency and Dependabot maintenance: pending J.
-- L single repository-settings attempt: pending K.
-- M continuation integration and handoff: pending L.
+- J DD-003 heterogeneous source accuracy: completed 2026-07-20 through PR #27.
+- K dependency and Dependabot maintenance: completed 2026-07-20 through PRs #29–#31.
+- L single repository-settings attempt: completed 2026-07-20; blocked outcome recorded in issue #32 without retry.
+- M continuation integration and handoff: local acceptance complete; documentation PR integration active.
 
 ## Progress checklist
 
@@ -96,10 +96,11 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - [x] Build and visually audit a separate 12–20 page Three Results paper and add a fifth public Results route with generated provenance.
 - [x] Implement and audit an alignment-preserving DD-001 upper relaxation; its canonical upper bound equals the direct lower bound and closes the frozen zero-communication optimum.
 - [x] Audit the DD-002 witness and all 45 refinements under six declared equilibrium-selection procedures; merged and deployed through PR #25.
-- [x] Enumerate the bounded DD-003 colored-source class for a rational heterogeneous-accuracy palette and independently verify its exact counterexample; merge/deployment remains in progress.
-- [ ] Reconcile Dependabot PRs #1–#5 in separate Actions, low-risk Python, and mypy-2 maintenance branches; update grouping policy.
-- [ ] Make exactly one settings-capable attempt for repository taxonomy/homepage/protection and record the precise capability result.
-- [ ] Complete the continuation handoff only after every research PR is reviewed, merged, CI-green, deployed, and live-smoke-tested.
+- [x] Enumerate the bounded DD-003 colored-source class for a rational heterogeneous-accuracy palette, independently verify its exact counterexample, and merge/deploy PR #27.
+- [x] Reconcile Dependabot PRs #1–#5 in separate Actions, low-risk Python, and mypy-2 maintenance branches; update grouping policy.
+- [x] Make exactly one settings-capable attempt for repository taxonomy/homepage/protection and record the precise capability result in issue #32.
+- [x] Complete broad continuation acceptance without creating duplicate immutable research runs; 95 tests, 44 claims, 17 manifests, both papers, the site, and eleven live routes pass.
+- [ ] Review, merge, and deploy the documentation-only Cycle M handoff PR; close issue #33.
 
 ## Discoveries and surprises
 
@@ -157,6 +158,11 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - 2026-07-21: PR #25 passed CI `29797737821` and paper/site build `29797737785`, received complete no-findings review `4740900193`, and squash-merged as `993b0899421d446f61348a513d2630e0f424e336`. Post-merge CI `29797810807` and Pages `29797810786` passed; all seven routes returned HTTP 200 and the deployed six-rule counts/run provenance match the immutable source.
 - 2026-07-21: DD-003 heterogeneous run `20260721T032358Z_DD-003_84238b76_2cbc13e66a` passed in 78.23 seconds under 120 seconds and 512 MB. Primary canonicalization and independent adjacent-swap traversal agree on 41,612 base labeled objects/671 orbits and 12,966 expansion labeled objects/168 orbits. Across 839 networks, 163 complete-moment groups cover 485 networks and 111 groups differ in discovery. The simplest exact colored witness has identical 66-entry first/pairwise moments but discovery `3/4` versus `2/3`, difference `1/12`; an independent verifier reconstructs all entries and rejects a zeroed difference (DD-C-0042--DD-C-0044).
 - 2026-07-21: the first post-integration site test caught removal of the established phrase “bounded null, not a theorem.” The wording was restored. The final 14-page synthesis PDF is byte-reproducible at SHA-256 `53cbfa8ccf6f732b13670206f3a8c25627390cbb29206f6b1b017163ae3735bf`, and all 14 Poppler renders passed visual review.
+- 2026-07-21: heterogeneous-source PR #27 passed CI `29798934183` and paper/site build `29798934209`, received no-findings review `4741011022`, and squash-merged as `4a8f53e90b1ffea233de5b377ba970566d92d670`. Post-merge CI `29798998333` and Pages `29798998329` passed; all seven then-required routes and the exact 839-network data were verified live.
+- 2026-07-21: maintenance issue #28 was split by risk class. PR #29 refreshed checkout/setup-uv/Pages actions and Dependabot grouping, PR #30 raised PyYAML/types-jsonschema floors without changing resolved versions, and PR #31 migrated strict checking from mypy 1.20.2 to 2.3.0. All three PRs passed branch and post-merge CI/Pages. Obsolete conflicted Dependabot PRs #1–#5 were closed with replacement links.
+- 2026-07-21: mypy 2.3 produced no new diagnostics across 45 source files under either its standard parser or `--native-parser`. Defaults for local partial types and strict bytes required no compatibility override; no global or targeted suppression was added.
+- 2026-07-21: the single settings-capable command validated 23 labels, six milestones, and five issue drafts, then failed at its first `gh repo view` with exit status 4. No mutation occurred and no retry was made. Issue #32 records Issues-write, Metadata-read, and Administration-write as the missing authority plus exact resume calls.
+- 2026-07-21: final acceptance passed 95 tests, a focused 35-test certificate/provenance audit, strict mypy 2.3, 44 claims, 17 manifests, both papers, the five-page site, secret/license/host-path/upstream checks, all-page Three Results visual QA, and eleven HTTP-200 live routes. A broad local-path regex first stopped on the intentional `file:///private/checkout/...` sanitizer fixture; the host-specific scan then passed. `make upstream-patch` also reordered two parallel Tectonic `Writing` log lines while successfully validating the patch; the incidental log-only change was restored.
 
 ## Decision log
 
@@ -225,12 +231,12 @@ Milestone A produced the reconciled public/MIT/Pages state, passing PR #12, dete
 
 ## Blockers
 
-No current local blocker. GitHub CLI is installed but unauthenticated; the connected GitHub app and SSH cover issue/PR and Git transport operations. The continuation authorizes one settings attempt only; if no settings-capable path is available, cycle L will record the exact missing permission, API, and command in a maintenance issue without retrying.
+There is no local research, validation, build, CI, Pages, license, provenance, or Git blocker. The sole operational blocker is issue #32: GitHub CLI lacks a settings-capable authenticated session, so the prepared labels, milestones, homepage, and safe `main` ruleset remain unapplied. The connected GitHub app and SSH cover issue/PR and Git transport operations. Do not repeat the settings attempt until the missing authority is intentionally supplied.
 
 ## Recovery and restart instructions
 
-On branch `research/dd002-selection-robustness`, execute issue #24: freeze the existing finite game, write a selection-catalogue ADR, implement at least three exact or validated procedures, classify the known witness and all 45 refinements, and preserve an independently checked immutable run before claim promotion. Never rerun a completed primary configuration merely to refresh timestamps.
+Start from `main` with `git switch main && git pull --ff-only origin main && make verify`. For the only operational blocker, authenticate intentionally with `gh auth login` and follow issue #32 plus `docs/github-setup.md`; do not retry blindly. For new research, open a new bounded issue with state-space, time, memory, interruption, and certificate plans before extending DD-001, DD-002, DD-003, or starting DD-004–DD-007. Never rerun a completed primary configuration merely to refresh timestamps.
 
 ## Outcome and retrospective
 
-M0–M9, Milestone A, DD-001A/B, DD-002, DD-003, and the A–E handoff meet their research, CI, merge, and deployment criteria. The continuation queue F–M is active; no continuation result is claimed complete until its independent checks, immutable evidence, PR review, merge, deployment, and live verification pass.
+M0–M9, Milestone A, DD-001A/B, bounded DD-002/DD-003, the A–E handoff, and continuation cycles F–L meet their evidence, review, merge, CI, deployment, and live-verification criteria. Cycle M has passed local acceptance and changes documentation only; it is complete when its PR is reviewed, merged, and the final Pages deployment is smoke-tested. The only preserved failure outside completed research is the single settings-authentication blocker in issue #32.
