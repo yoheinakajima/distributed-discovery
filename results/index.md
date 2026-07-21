@@ -8,3 +8,5 @@
 The M9 acceptance reproduction is `baseline/20260720T202314Z_DD-000_88613408_217c602fa0`; it started from a clean research commit and passed upstream plus independent checks. Claim records continue to cite their originally audited run IDs. DD-001 through DD-003 passing research runs are under [`verified/`](verified/README.md); each manifest distinguishes analytic, exhaustive, checked, and heuristic evidence.
 
 Milestone A changed public licensing, deployment, and GitHub organization only. Later milestones add new immutable run IDs without altering earlier provenance.
+
+The canonical alignment-bound run is `verified/20260721T022739Z_DD-001_358cb1eb_cd16846ba5`. Its exact Bellman certificate and separate corruption-detecting verifier close the prior canonical DD-001 interval at `325089/390625` while retaining the earlier pooled frontier as valid superseded evidence.

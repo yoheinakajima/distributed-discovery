@@ -1,6 +1,6 @@
 study_id: DD-001
 status: active
-evidence_status: exact-tiny-results-signature-reduction-two-searcher-thresholds-and-certified-canonical-interval
+evidence_status: exact-tiny-results-signature-reduction-thresholds-and-exact-canonical-optimum
 dependency: DD-000
-next_action: develop an alignment-preserving admissible upper relaxation without assuming cross-agent target alignment away
-updated_utc: 2026-07-21T01:22:16Z
+next_action: characterize when the certified count-budget relaxation is tight outside the canonical fixture
+updated_utc: 2026-07-21T02:45:00Z

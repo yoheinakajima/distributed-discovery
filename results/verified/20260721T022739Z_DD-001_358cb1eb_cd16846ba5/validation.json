@@ -1,0 +1,19 @@
+{
+  "all_tiny_and_anti_certificates_passed": true,
+  "anti_informative_case_count_passed": true,
+  "canonical_global_private_team_optimality_certified": true,
+  "canonical_strictly_improves_pooled_upper": true,
+  "canonical_upper_matches_attainable_direct_lower": true,
+  "canonical_upper_matches_regression": true,
+  "certificate_bytes": 102087,
+  "corruption_test_rejected_modified_certificate": true,
+  "elapsed_seconds": 0.38852316699922085,
+  "git_clean_at_start": true,
+  "independent_bellman_verifier_passed": true,
+  "memory_budget_mb": 256,
+  "passed": true,
+  "time_budget_seconds": 30,
+  "tiny_case_count_passed": true,
+  "upper_valid_all_anti_informative_cases": true,
+  "upper_valid_all_tiny_cases": true
+}

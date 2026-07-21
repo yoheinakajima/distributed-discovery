@@ -1,0 +1,3 @@
+case,candidates,searchers,accuracy,exact_optimum,alignment_upper_bound,relaxation_gap,relaxation_exact,upper_valid,certificate_valid
+M3_N2_p0,3,2,0,11/12,1,1/12,False,True,True
+M4_N2_p0,4,2,0,2/3,2/3,0,True,True,True

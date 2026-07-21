@@ -1,0 +1,28 @@
+{
+  "anti_informative_case_count": 2,
+  "anti_informative_exact_count": 1,
+  "canonical_alignment_upper_fraction": "325089/390625",
+  "canonical_direct_lower_fraction": "325089/390625",
+  "canonical_target_resource_pattern": [
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+  ],
+  "prior_interval_gap_closed_fraction": "27224111644672/1001129150390625",
+  "prior_pooled_upper_fraction": "860391662035297/1001129150390625",
+  "tiny_case_count": 21,
+  "tiny_exact_count": 21
+}

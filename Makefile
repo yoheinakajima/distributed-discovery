@@ -1,4 +1,4 @@
-.PHONY: bootstrap lint typecheck test fetch-upstream reproduce-baseline upstream-patch validate-claims foundations three-results canonical-exact-frontier dd001 dd001-signatures dd001-thresholds dd002-disclosure dd003-source-graphs papers site verify all clean
+.PHONY: bootstrap lint typecheck test fetch-upstream reproduce-baseline upstream-patch validate-claims foundations three-results canonical-exact-frontier dd001 dd001-signatures dd001-thresholds dd001-alignment-bound dd002-disclosure dd003-source-graphs papers site verify all clean
 
 UV := uv
 export PYTHONPATH := $(CURDIR)/src
@@ -50,6 +50,9 @@ dd001-signatures:
 
 dd001-thresholds:
 	$(PY) -m distributed_discovery.private_teams.threshold_study
+
+dd001-alignment-bound:
+	$(PY) -m distributed_discovery.private_teams.alignment_bound_study
 
 dd002-disclosure:
 	$(PY) -m distributed_discovery.information_design.study

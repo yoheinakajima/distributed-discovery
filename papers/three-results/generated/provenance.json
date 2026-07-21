@@ -6,7 +6,7 @@
     },
     "evidence-status-table.tex": {
       "generator": "distributed_discovery.papers.build_three_results",
-      "sha256": "0a47230e14edea7f3553b3e16c50d26c4dece6d2f8140877594f5917d22650cf"
+      "sha256": "3ad5f1f1b797d019cc8b7f8c2f8a32be8ad4f86426fb444988424a9b9cce07ed"
     },
     "roles-figure.tex": {
       "generator": "distributed_discovery.papers.build_three_results",
@@ -20,7 +20,7 @@
   "generator": "distributed_discovery.papers.build_three_results",
   "inputs": {
     "bibliography/references.bib": "7b2b89ae14a2234798803bde57bca55c2d907f1a7cdcc2efe69c6144739d27f0",
-    "claims/claims.yml": "dd07a76dd68cd4cef5d40cbd3e877ed8f3a5e0d4fead99cfc5d6ffefbd226b3c",
+    "claims/claims.yml": "4a8abf38b77808f59badf2e0d14faa5c42b09c6c8eb23eda8be649dfdae1a8f5",
     "results/verified/20260720T200447Z_DD-001_6eb12861_ba766d1eba/outputs/tiny-phase-grid.csv": "e7112e7dd471a4fa302bbe5336a367dd166ff497bf8ab9095b6526635fe4851e",
     "results/verified/20260720T221139Z_DD-001_b1d8d431_40bf5b06a5/outputs/canonical-state-space.json": "7a416f54e6f8c81a1f7ca29bd99c44ab648994e282f29ff5615e6ba9eddb9e8f",
     "results/verified/20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1/outputs/anti-informative-counterexamples.json": "da2d2a8b6854683c85062a1918b3222959e17230e767b2553304a736684870f6",
@@ -31,11 +31,13 @@
     "results/verified/20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1/outputs/graph-registry.json": "afe3b0d98e618831f3eef71d5ef091b4937080c264f756f6296b36bc4aab9913",
     "results/verified/20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1/outputs/mean-agreement-counterexample.json": "92132b3bb6411abf2b1c9c27aad5dbfd6074a5ff01e81d1b97a5c97f62a648ea",
     "results/verified/20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1/outputs/pairwise-null-certificate.json": "1c8675d8697a74def4d0798927fb2d477bb95bdd79d220597456dd9378bdca12",
-    "results/verified/20260721T012208Z_DD-000_8e4b55e2_e8321d1048/outputs/canonical-exact-frontier-certificate.json": "c88d31ec7efda0e9e38346e417a0d00db33cc1ec75221f7ec574cf264409fc1e"
+    "results/verified/20260721T012208Z_DD-000_8e4b55e2_e8321d1048/outputs/canonical-exact-frontier-certificate.json": "c88d31ec7efda0e9e38346e417a0d00db33cc1ec75221f7ec574cf264409fc1e",
+    "results/verified/20260721T022739Z_DD-001_358cb1eb_cd16846ba5/outputs/canonical-alignment-bound-certificate.json": "7645c47bde68fa93878c3ebce76e288925bb6f044ea35fc6797e68def0b5e2b0"
   },
   "schema_version": 1,
   "source_date_epoch": "1784596928",
   "source_runs": {
+    "alignment": "20260721T022739Z_DD-001_358cb1eb_cd16846ba5",
     "canonical": "20260721T012208Z_DD-000_8e4b55e2_e8321d1048",
     "disclosure": "20260720T225848Z_DD-002_94607423_e29b1460ae",
     "roles": "20260720T200447Z_DD-001_6eb12861_ba766d1eba",

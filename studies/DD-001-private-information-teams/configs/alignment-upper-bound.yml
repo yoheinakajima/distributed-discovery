@@ -1,0 +1,27 @@
+schema_version: 1
+study_id: DD-001
+milestone: alignment-preserving-upper-bound
+method: exact-joint-column-global-count-budget-relaxation
+time_budget_seconds: 30
+memory_budget_mb: 256
+canonical:
+  candidates: 16
+  searchers: 8
+  accuracy: "1/5"
+  direct_lower_fraction: "325089/390625"
+  pooled_upper_fraction: "860391662035297/1001129150390625"
+tiny_source:
+  run_id: 20260720T200447Z_DD-001_6eb12861_ba766d1eba
+  artifact: outputs/tiny-phase-grid.csv
+anti_informative_source:
+  run_id: 20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1
+  artifact: outputs/anti-informative-counterexamples.json
+validation:
+  expected_tiny_cases: 21
+  expected_anti_informative_cases: 2
+  require_upper_valid_all_cases: true
+  require_canonical_certificate: true
+  require_independent_bellman_verifier: true
+  require_corruption_rejection: true
+  require_strict_improvement_over_pooled: true
+  regression_canonical_upper_fraction: "325089/390625"

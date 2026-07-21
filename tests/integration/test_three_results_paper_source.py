@@ -13,6 +13,7 @@ RUNS = {
     "disclosure": "20260720T225848Z_DD-002_94607423_e29b1460ae",
     "sources": "20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1",
     "canonical": "20260721T012208Z_DD-000_8e4b55e2_e8321d1048",
+    "alignment": "20260721T022739Z_DD-001_358cb1eb_cd16846ba5",
 }
 
 
@@ -34,8 +35,8 @@ def test_three_results_paper_has_required_structure_and_boundaries() -> None:
         assert rf"\section{{{section}}}" in text
     assert "selection-dependent" in text
     assert "bounded null" in text
-    assert "attainability," in text
-    assert "tightness, and the global optimum remain open" in text
+    assert "alignment-preserving" in text
+    assert "randomized optimum is identical" in text
     assert len(re.findall(r"% Claims: DD-C-", text)) >= 8
 
 

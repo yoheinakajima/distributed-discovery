@@ -1,0 +1,6 @@
+run_id=20260721T022739Z_DD-001_358cb1eb_cd16846ba5
+tiny_cases=21
+anti_informative_cases=2
+canonical_upper=325089/390625
+direct_lower=325089/390625
+validation_status=passed

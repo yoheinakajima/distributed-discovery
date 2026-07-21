@@ -35,8 +35,11 @@ def test_site_builds_from_repository_evidence(tmp_path: Path) -> None:
     assert "5/9" in results and "171/308" in results
     assert "8/9" in results and "31/36" in results
     assert "bounded null, not a theorem" in results.lower()
+    assert "T<sub>8</sub>(16,1/5) = 325089/390625" in results
+    assert "globally optimal" in results
     generated = (tmp_path / "site/data/results.json").read_text(encoding="utf-8")
     assert "20260721T012208Z_DD-000_8e4b55e2_e8321d1048" in generated
+    assert "20260721T022739Z_DD-001_358cb1eb_cd16846ba5" in generated
 
 
 def test_primary_text_colors_exceed_wcag_aa() -> None:

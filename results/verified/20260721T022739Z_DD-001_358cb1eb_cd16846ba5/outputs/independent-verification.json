@@ -1,0 +1,14 @@
+{
+  "certificate_errors": [],
+  "corruption_test": {
+    "errors": [
+      "target Bellman equality witness fails at 16,128",
+      "target resource witness does not attain the certified failure",
+      "average failure bound does not match the target Bellman table"
+    ],
+    "mutation": "replace final target-DP value with zero",
+    "rejected": true
+  },
+  "method": "Bellman lower inequalities plus one exact equality witness per state; no minimization call",
+  "schema_version": 1
+}
