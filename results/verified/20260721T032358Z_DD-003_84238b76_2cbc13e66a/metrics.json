@@ -1,0 +1,41 @@
+{
+  "base_labeled_colored_object_count": 41612,
+  "base_orbit_count": 671,
+  "diagnostic_summary": {
+    "exposure_weighted_accuracy": {
+      "different_private_discovery_pair_count": 12205,
+      "matched_groups_with_different_private_discovery": 62,
+      "matched_value_group_count": 62
+    },
+    "mean_pair_agreement": {
+      "different_private_discovery_pair_count": 3469,
+      "matched_groups_with_different_private_discovery": 124,
+      "matched_value_group_count": 147
+    },
+    "mean_pair_source_overlap": {
+      "different_private_discovery_pair_count": 33878,
+      "matched_groups_with_different_private_discovery": 14,
+      "matched_value_group_count": 14
+    },
+    "mean_source_accuracy": {
+      "different_private_discovery_pair_count": 74132,
+      "matched_groups_with_different_private_discovery": 6,
+      "matched_value_group_count": 6
+    },
+    "source_hhi": {
+      "different_private_discovery_pair_count": 24556,
+      "matched_groups_with_different_private_discovery": 20,
+      "matched_value_group_count": 20
+    }
+  },
+  "expansion_orbit_count": 168,
+  "matched_complete_moment_group_count": 163,
+  "matched_groups_with_different_private_discovery": 111,
+  "networks_in_matched_complete_moment_groups": 485,
+  "primary_counterexample": {
+    "difference": "1/12",
+    "left_private_discovery": "3/4",
+    "right_private_discovery": "2/3"
+  },
+  "total_orbit_count": 839
+}

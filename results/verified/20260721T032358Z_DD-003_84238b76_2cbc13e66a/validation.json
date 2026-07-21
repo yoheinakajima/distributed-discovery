@@ -1,0 +1,16 @@
+{
+  "all_first_action_moments_equal_one_third": true,
+  "controlled_expansion_count": 1,
+  "corruption_test_rejected_modified_difference": true,
+  "elapsed_seconds": 78.23476933303755,
+  "full_pairwise_moment_counterexample_verified": true,
+  "git_clean_at_start": true,
+  "homogeneous_fixture_reproduced": true,
+  "independent_verifier_passed": true,
+  "memory_budget_mb": 512,
+  "output_bytes": 2974109,
+  "passed": true,
+  "primary_and_independent_orbit_counts_match": true,
+  "state_size_matches_registered_audit": true,
+  "time_budget_seconds": 120
+}

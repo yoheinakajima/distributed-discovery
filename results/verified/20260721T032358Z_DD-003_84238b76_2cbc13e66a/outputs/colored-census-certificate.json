@@ -1,0 +1,138 @@
+{
+  "base_labeled_colored_object_count": 41612,
+  "base_orbit_count": 671,
+  "bounded_conclusion": "complete first and pairwise scalar-report moments are insufficient for private discovery in the registered heterogeneous colored-source class",
+  "census": [
+    {
+      "canonical_orbit_count": 8,
+      "independent_orbit_count": 8,
+      "key": "base:equal-baseline:K2",
+      "labeled_colored_object_count": 79,
+      "levels": [
+        "2/3"
+      ],
+      "profile": "equal-baseline",
+      "scope": "base",
+      "sources": 2
+    },
+    {
+      "canonical_orbit_count": 42,
+      "independent_orbit_count": 42,
+      "key": "base:equal-baseline:K3",
+      "labeled_colored_object_count": 2161,
+      "levels": [
+        "2/3"
+      ],
+      "profile": "equal-baseline",
+      "scope": "base",
+      "sources": 3
+    },
+    {
+      "canonical_orbit_count": 13,
+      "independent_orbit_count": 13,
+      "key": "base:modest:K2",
+      "labeled_colored_object_count": 158,
+      "levels": [
+        "1/2",
+        "2/3"
+      ],
+      "profile": "modest",
+      "scope": "base",
+      "sources": 2
+    },
+    {
+      "canonical_orbit_count": 194,
+      "independent_orbit_count": 194,
+      "key": "base:modest:K3",
+      "labeled_colored_object_count": 12966,
+      "levels": [
+        "1/2",
+        "2/3"
+      ],
+      "profile": "modest",
+      "scope": "base",
+      "sources": 3
+    },
+    {
+      "canonical_orbit_count": 13,
+      "independent_orbit_count": 13,
+      "key": "base:near-uninformative:K2",
+      "labeled_colored_object_count": 158,
+      "levels": [
+        "1/3",
+        "2/3"
+      ],
+      "profile": "near-uninformative",
+      "scope": "base",
+      "sources": 2
+    },
+    {
+      "canonical_orbit_count": 194,
+      "independent_orbit_count": 194,
+      "key": "base:near-uninformative:K3",
+      "labeled_colored_object_count": 12966,
+      "levels": [
+        "1/3",
+        "2/3"
+      ],
+      "profile": "near-uninformative",
+      "scope": "base",
+      "sources": 3
+    },
+    {
+      "canonical_orbit_count": 13,
+      "independent_orbit_count": 13,
+      "key": "base:strong:K2",
+      "labeled_colored_object_count": 158,
+      "levels": [
+        "1/3",
+        "5/6"
+      ],
+      "profile": "strong",
+      "scope": "base",
+      "sources": 2
+    },
+    {
+      "canonical_orbit_count": 194,
+      "independent_orbit_count": 194,
+      "key": "base:strong:K3",
+      "labeled_colored_object_count": 12966,
+      "levels": [
+        "1/3",
+        "5/6"
+      ],
+      "profile": "strong",
+      "scope": "base",
+      "sources": 3
+    },
+    {
+      "canonical_orbit_count": 168,
+      "independent_orbit_count": 168,
+      "key": "expansion:three-level:K3",
+      "labeled_colored_object_count": 12966,
+      "levels": [
+        "1/3",
+        "2/3",
+        "5/6"
+      ],
+      "profile": "three-level",
+      "scope": "controlled-expansion",
+      "sources": 3
+    }
+  ],
+  "claim_ids": [],
+  "controlled_expansion_count": 1,
+  "expansion_labeled_colored_object_count": 12966,
+  "expansion_orbit_count": 168,
+  "homogeneous_regression": {
+    "all_private_discovery_and_agreement_signatures_match": true,
+    "expected_network_count": 50,
+    "network_count": 50
+  },
+  "matched_complete_moment_group_count": 163,
+  "matched_groups_with_different_private_discovery": 111,
+  "method": "exact color-preserving enumeration with Fraction probabilities",
+  "networks_in_matched_complete_moment_groups": 485,
+  "schema_version": 1,
+  "total_orbit_count": 839
+}

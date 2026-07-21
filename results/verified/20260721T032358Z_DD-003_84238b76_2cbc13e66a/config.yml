@@ -1,0 +1,33 @@
+study_id: DD-003
+source_run: 20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1
+targets: 3
+searchers: 4
+source_counts: [2, 3]
+base_model:
+  require_nonisolated_sources: true
+  require_nonisolated_searchers: true
+  conditional_source_independence: true
+  private_tie_breaking: independent-uniform
+  report_summary: plurality-winner-set
+  discovery_objective: union-success
+  graph_equivalence: color-preserving-source-and-searcher-relabeling
+accuracy_profiles:
+  equal-baseline: [2/3]
+  modest: [1/2, 2/3]
+  near-uninformative: [1/3, 2/3]
+  strong: [1/3, 5/6]
+require_every_profile_level: true
+controlled_expansion:
+  name: three-level
+  source_count: 3
+  accuracies: [1/3, 2/3, 5/6]
+pairwise_signature: complete-one-hot-first-and-second-action-moments-up-to-searcher-relabeling
+random_seed: null
+time_budget_seconds: 120
+memory_budget_mb: 512
+expected_state_size:
+  base_labeled_colored_objects: 41612
+  base_orbits: 671
+  expansion_labeled_colored_objects: 12966
+  expansion_orbits: 168
+  total_orbits: 839
