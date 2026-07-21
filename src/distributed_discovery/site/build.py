@@ -35,6 +35,7 @@ SAFE_ARTIFACT_SUFFIXES = {".md", ".json", ".csv", ".png", ".svg", ".pdf", ".yml"
 DD006B_RUN = "20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b"
 DD009_RUN = "20260721T171249Z_DD-009_bc78d249_0c3851c41a"
 DD013_RUN = "20260721T215811Z_DD-013_09c07448_cdac4fb512"
+DD014_RUN = "20260721T222047Z_DD-014_f5f099a8_ea0276dd16"
 
 
 class SiteParser(HTMLParser):
@@ -785,6 +786,92 @@ def _audience_pages(root: Path, output: Path) -> dict[str, object]:
     return {"run_id": DD013_RUN, "summary": summary}
 
 
+def _conditional_pages(root: Path, output: Path) -> dict[str, object]:
+    run = root / "results/verified" / DD014_RUN
+    source = run / "outputs"
+    summary = json.loads((source / "summary.json").read_text(encoding="utf-8"))
+    cells = json.loads((source / "policy-census.json").read_text(encoding="utf-8"))
+    phase_map = json.loads((source / "policy-phase-map.json").read_text(encoding="utf-8"))
+    raw_audit = json.loads((source / "raw-policy-audit.json").read_text(encoding="utf-8"))
+    registry = json.loads((source / "policy-registry.json").read_text(encoding="utf-8"))
+    agents = sorted({int(cell["agents"]) for cell in cells})
+    accuracies = sorted(
+        {str(cell["private_accuracy"]) for cell in cells}, key=lambda value: Fraction(value)
+    )
+    profiles = sorted(
+        {
+            tuple(
+                row["counts"][policy]
+                for policy in ("private-dominant", "public-dominant", "contrarian")
+            )
+            for cell in cells
+            for row in cell["profiles"]
+        },
+        key=lambda counts: (sum(counts), counts),
+    )
+    agent_options = "".join(f'<option value="{n}">{n}</option>' for n in agents)
+    accuracy_options = "".join(
+        f'<option value="{html.escape(value)}">{html.escape(value)}</option>'
+        for value in accuracies
+    )
+    profile_options = "".join(
+        f'<option value="{a},{b},{c}" data-n="{a + b + c}">private {a} · public {b} · contrarian {c}</option>'
+        for a, b, c in profiles
+    )
+    rows = "".join(
+        '<tr data-conditional-row data-n="{n}" data-p="{p}" data-q="{q}" data-profile="{profile}"><th scope="row">{n}</th><td>{p}</td><td>{q}</td><td>{a}</td><td>{b}</td><td>{c}</td><td>{discovery}</td><td>{payoffs}</td><td>{equilibrium}</td><td>{optimal}</td><td>{contrarian}</td></tr>'.format(
+            n=cell["agents"],
+            p=html.escape(str(cell["private_accuracy"])),
+            q=html.escape(str(cell["shared_accuracy"])),
+            profile=f"{row['counts']['private-dominant']},{row['counts']['public-dominant']},{row['counts']['contrarian']}",
+            a=row["counts"]["private-dominant"],
+            b=row["counts"]["public-dominant"],
+            c=row["counts"]["contrarian"],
+            discovery=html.escape(str(row["discovery"])),
+            payoffs=html.escape(
+                " · ".join(
+                    f"{policy}: {row['payoffs'][policy] if row['payoffs'][policy] is not None else '—'}"
+                    for policy in ("private-dominant", "public-dominant", "contrarian")
+                )
+            ),
+            equilibrium="weak" if row["weak_equilibrium"] else "no",
+            optimal="yes"
+            if [
+                row["counts"][policy]
+                for policy in ("private-dominant", "public-dominant", "contrarian")
+            ]
+            in cell["planner_profiles"]
+            else "no",
+            contrarian="used" if row["counts"]["contrarian"] else "none",
+        )
+        for cell in cells
+        for row in cell["profiles"]
+    )
+    body = f"""<p class="eyebrow"><a href="../labs.html">Labs</a> / Conditional attention</p><h1>Conditional Attention Lab</h1><p class="lede">Explore every precomputed exact profile in DD-014's complete agreement-respecting label-equivariant disagreement class. Everyone sees both clues; this is not an access gate and not an unrestricted policy class.</p><div class="stats"><div class="stat"><span>Cells</span><b>{summary["grid_cells"]}</b></div><div class="stat"><span>Profiles</span><b>{summary["anonymous_profiles"]}</b></div><div class="stat"><span>Positive wedges</span><b>{summary["cells_with_positive_equilibrium_wedge"]}</b></div></div><section class="lab" data-conditional-lab><label for="conditional-n">Team size</label><select id="conditional-n">{agent_options}</select><label for="conditional-p">Private accuracy</label><select id="conditional-p">{accuracy_options}</select><label for="conditional-q">Shared accuracy</label><select id="conditional-q">{accuracy_options}</select><label for="conditional-policy">Role policy profile</label><select id="conditional-policy">{profile_options}</select><p id="conditional-status" class="callout" aria-live="polite">Select a registered exact profile.</p></section><noscript><p class="callout">JavaScript is off. All {summary["anonymous_profiles"]} exact profiles remain visible in the complete table.</p></noscript><section><h2>Conditional-policy census</h2><table class="matrix"><caption>Exact policy profiles, payoffs, equilibrium, optimum, and contrarian use</caption><thead><tr><th>N</th><th>p</th><th>q</th><th>Private roles</th><th>Public roles</th><th>Contrarian roles</th><th>Discovery</th><th>Type payoffs</th><th>Equilibrium</th><th>Optimal profile</th><th>Contrarian use</th></tr></thead><tbody>{rows}</tbody></table></section><p><a href="../claims.html#DD-C-0066">DD-C-0066</a> · <a href="../claims.html#DD-C-0067">DD-C-0067</a> · <a href="../claims.html#DD-C-0068">DD-C-0068</a> · immutable run <a href="{REPOSITORY_URL}/blob/main/results/verified/{DD014_RUN}/manifest.json">{DD014_RUN}</a></p><p><a href="../research/dd-014.html">Study page</a> · <a href="../data/conditional/census.json">Download policy census</a> · <a href="../data/conditional/phase-map.json">Download phase map</a> · <a href="../data/conditional/raw-audit.json">Download larger-class audit</a></p>"""
+    _write(
+        output,
+        "labs/conditional-attention.html",
+        _page(
+            "Conditional Attention Lab",
+            "Read-only exact conditional-policy profile explorer.",
+            body,
+            "labs/conditional-attention.html",
+        ),
+    )
+    data = {
+        "summary.json": {"schema_version": 1, "run_id": DD014_RUN, "summary": summary},
+        "census.json": {"schema_version": 1, "run_id": DD014_RUN, "cells": cells},
+        "phase-map.json": {"schema_version": 1, "run_id": DD014_RUN, "cells": phase_map},
+        "raw-audit.json": {"schema_version": 1, "run_id": DD014_RUN, "cells": raw_audit},
+        "policy-registry.json": {"schema_version": 1, "run_id": DD014_RUN, "registry": registry},
+    }
+    for name, value in data.items():
+        _write(
+            output, f"data/conditional/{name}", json.dumps(value, indent=2, sort_keys=True) + "\n"
+        )
+    return {"run_id": DD014_RUN, "summary": summary}
+
+
 def _render(
     root: Path,
     output: Path,
@@ -1042,6 +1129,7 @@ def _render(
     lab_cards += '<article class="card"><p class="eyebrow">Interactive lab</p><h2><a href="labs/benchmark.html">DiscoveryBench</a></h2><p>Filter exact golden task/protocol rows and inspect metric vectors and provenance.</p><p><a href="claims.html#DD-C-0055">DD-C-0055</a> · <a href="evidence.html">passing run</a></p></article>'
     lab_cards += '<article class="card"><p class="eyebrow">Interactive lab</p><h2><a href="labs/experiment-design.html">Experiment design</a></h2><p>Filter conditional synthetic power rows and inspect the frozen no-human-data design.</p><p><a href="claims.html#DD-C-0056">DD-C-0056</a> · <a href="evidence.html">passing run</a></p></article>'
     lab_cards += '<article class="card"><p class="eyebrow">Interactive lab</p><h2><a href="labs/audience.html">Audience design</a></h2><p>Compare exact binding audiences and bounded precision-versus-publicity designs without conflating access and use.</p><p><a href="claims.html#DD-C-0065">DD-C-0065</a> · <a href="evidence.html">passing run</a></p></article>'
+    lab_cards += '<article class="card"><p class="eyebrow">Interactive lab</p><h2><a href="labs/conditional-attention.html">Conditional attention</a></h2><p>Explore exact private-dominant, public-dominant, and contrarian role profiles inside the registered policy class.</p><p><a href="claims.html#DD-C-0067">DD-C-0067</a> · <a href="evidence.html">passing run</a></p></article>'
     labs_body = f"""<p class="eyebrow">Public labs</p><h1>Discovery Stack Labs</h1><p class="lede">Small browser-native controls expose bounded fixtures. Every lab has a readable fallback and links to the claim ledger and immutable passing run; controls never call an external API.</p><section class="grid-2">{lab_cards}</section>"""
     _write(
         output,
@@ -1063,6 +1151,7 @@ def _render(
     _benchmark_pages(root, output)
     _experiment_pages(root, output)
     _audience_pages(root, output)
+    _conditional_pages(root, output)
     _write(
         output,
         "404.html",
@@ -1221,6 +1310,7 @@ def build(root: Path, output: Path) -> dict[str, Any]:
             "benchmark_data": "data/benchmark/results.json",
             "experiment_data": "data/experiment/power.json",
             "audience_data": "data/audience/frontier.json",
+            "conditional_data": "data/conditional/census.json",
         },
         "labs/mechanisms.json": {
             "schema_version": 1,

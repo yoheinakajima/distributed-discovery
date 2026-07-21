@@ -1,5 +1,5 @@
 study_id: DD-014
-status: registered
-evidence_status: no-result-registration-only
-next_action: begin only after DD-013 is merged; prove the restricted policy-class statement and freeze the bounded exact census
-updated_utc: 2026-07-21T21:05:32Z
+status: complete-bounded-study
+evidence_status: one-verified-theorem-one-independently-reproduced-census-and-one-independently-reproduced-negative-result
+next_action: preserve the run and scope boundary; complete PR merge, CI, Pages, and live-route validation before the focused paper
+updated_utc: 2026-07-21T22:32:00Z

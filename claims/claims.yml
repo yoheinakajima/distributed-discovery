@@ -1365,3 +1365,66 @@ claims:
     first_added: "2026-07-21"
     last_checked: "2026-07-21"
     notes: The 70 insufficient-use settings are access failures at audience zero, not evidence that informed recipients voluntarily under-attend. Positive audiences can instead overuse the shared clue.
+  - id: DD-C-0066
+    study_id: DD-014
+    short_name: conditional-policy-planner-theorem
+    statement: In the complete deterministic agreement-respecting label-equivariant disagreement class for three labels, if p>=1/3 then replacing any third-option contrarian with a private-dominant role weakly improves discovery, strictly when p>1/3; consequently conditional policies do not improve the DD-012 unconditional planner optimum, and its zero-or-one public-dominant role classification survives.
+    scope: Arbitrary finite N at least 2, three uniform targets, homogeneous conditionally independent private clues, one shared clue, uniform wrong labels, universal access, deterministic agreement-respecting label-equivariant policies, union discovery, and p>=1/3; this is not an unrestricted-policy, raw-table, correlated-signal, dynamic, behavioral, or empirical theorem.
+    claim_type: theorem
+    status: verified
+    source_type: human-readable-failure-event-proof-with-exact-rational-census-and-independent-policy-table-enumeration
+    source_reference: results/verified/20260721T222047Z_DD-014_f5f099a8_ea0276dd16/outputs/theorem-checks.json
+    proof_path: studies/DD-014-conditional-attention/proof.md
+    implementation_paths: [src/distributed_discovery/conditional/model.py, src/distributed_discovery/conditional/verification.py]
+    run_ids: [20260721T222047Z_DD-014_f5f099a8_ea0276dd16]
+    test_paths: [tests/unit/test_conditional.py]
+    exactness_basis: Conditioning on shared-clue correctness yields the stated closed failure formulas; the comparison 1-p<=(1+p)/2 eliminates contrarians without loss for p>=1/3, after which DD-C-0059 applies. The separate table evaluator reproduces all 775 registered profiles across 346,275 labeled states.
+    rounding_rule: exact fractions; no decimal approximation is authoritative
+    dependencies: [DD-C-0059]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: At p=1/3 contrarians can tie private-dominant roles but never add planner value. Completeness applies only to the declared symmetry class.
+  - id: DD-C-0067
+    study_id: DD-014
+    short_name: conditional-attention-equilibrium-census
+    statement: In DD-014's 75-cell rational census, the 775 anonymous conditional-policy profiles contain 115 weak and 53 strict equilibria; 23 cells have a positive gap between planner discovery and the best weak-equilibrium discovery, 49 cells have only planner-optimal weak equilibria, and none has a positive conditional planner gain over the unconditional class.
+    scope: N in {2,3,4}, p,q in {1/3,1/2,2/3,3/4,5/6}, the exact three-policy class in DD-C-0066, equal splitting of a unit discovery prize, pure ex-ante role choice, and all unilateral deviations among the three types; no mixed equilibrium, arbitrary policy, heterogeneous payoff, attention cost, dynamics, behavior, or empirical conclusion is included.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exhaustive-exact-rational-profile-census-with-separate-policy-table-evaluator
+    source_reference: results/verified/20260721T222047Z_DD-014_f5f099a8_ea0276dd16/outputs/policy-phase-map.json
+    proof_path: studies/DD-014-conditional-attention/proof.md
+    implementation_paths: [src/distributed_discovery/conditional/model.py, src/distributed_discovery/conditional/study.py, src/distributed_discovery/conditional/verification.py]
+    run_ids: [20260721T222047Z_DD-014_f5f099a8_ea0276dd16]
+    test_paths: [tests/unit/test_conditional.py]
+    exactness_basis: Fraction arithmetic exhausts all 775 anonymous profiles and unilateral deviations. A separate policy-table evaluator reconstructs every discovery, quality, diversity, payoff, equilibrium, and planner row across 346,275 labeled states and rejects altered discovery, payoff, and equilibrium fields.
+    rounding_rule: exact fractions; counts are exact
+    dependencies: [DD-C-0066, DD-C-0060]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: Conditional policies eliminate the wedge in some cells but not all; this bounded census does not estimate behavioral policy choice.
+  - id: DD-C-0068
+    study_id: DD-014
+    short_name: unrestricted-policy-scope-counterexample
+    statement: In each of DD-014's four two-agent, two-label raw-policy audit cells, all sixteen deterministic policy tables permit discovery one through complementary constant policies, strictly above the best embedded unconditional private/public profile by between 1/16 and 1/9; hence the restricted three-label conditional result cannot be promoted to an unrestricted deterministic-policy claim.
+    scope: M=2, N=2, p,q in {2/3,3/4}, all 256 ordered profiles of the sixteen raw deterministic observation-to-action tables, equal-split prize, and union discovery; this is an adversarial scope audit, not the M=3 registered class or a general characterization of unrestricted equilibria.
+    claim_type: negative-result
+    status: independently-reproduced
+    source_type: exhaustive-exact-raw-policy-audit-with-independent-table-evaluator
+    source_reference: results/verified/20260721T222047Z_DD-014_f5f099a8_ea0276dd16/outputs/raw-policy-audit.json
+    proof_path: studies/DD-014-conditional-attention/proof.md
+    implementation_paths: [src/distributed_discovery/conditional/model.py, src/distributed_discovery/conditional/study.py, src/distributed_discovery/conditional/verification.py]
+    run_ids: [20260721T222047Z_DD-014_f5f099a8_ea0276dd16]
+    test_paths: [tests/unit/test_conditional.py]
+    exactness_basis: Both exact evaluators exhaust 1,024 ordered profiles and 16,384 labeled states. Complementary constants cover both targets deterministically, and the audit computes exact positive gaps of 1/9, 1/12, or 1/16 from the embedded private/public optimum while rejecting an altered raw optimum.
+    rounding_rule: exact fractions
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: This preserved negative result is the reason DD-C-0066 explicitly retains its agreement and label-equivariance boundary.

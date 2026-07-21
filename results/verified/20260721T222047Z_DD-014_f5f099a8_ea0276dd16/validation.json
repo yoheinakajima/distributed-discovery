@@ -1,0 +1,20 @@
+{
+  "anonymous_profiles": 775,
+  "cells_all_equilibria_planner_optimal": 49,
+  "cells_with_contrarian_planner": 15,
+  "cells_with_positive_conditional_gain": 0,
+  "cells_with_positive_equilibrium_wedge": 23,
+  "grid_cells": 75,
+  "main_cells_verified": 75,
+  "main_labeled_states": 346275,
+  "main_profiles_verified": 775,
+  "passed": true,
+  "raw_audit_cells": 4,
+  "raw_cells_verified": 4,
+  "raw_cells_with_restricted_class_gap": 4,
+  "raw_labeled_states": 16384,
+  "raw_ordered_profiles": 1024,
+  "raw_ordered_profiles_verified": 1024,
+  "strict_equilibrium_profiles": 53,
+  "weak_equilibrium_profiles": 115
+}

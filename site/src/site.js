@@ -85,3 +85,31 @@ document.querySelectorAll("[data-audience-lab]").forEach((lab) => {
   m.value = "1";
   render();
 });
+
+document.querySelectorAll("[data-conditional-lab]").forEach((lab) => {
+  const n = lab.querySelector("#conditional-n");
+  const p = lab.querySelector("#conditional-p");
+  const q = lab.querySelector("#conditional-q");
+  const policy = lab.querySelector("#conditional-policy");
+  const status = lab.querySelector("#conditional-status");
+  const rows = Array.from(document.querySelectorAll("tr[data-conditional-row]"));
+  if (!n || !p || !q || !policy || !status) return;
+  const render = () => {
+    const compatible = Array.from(policy.options).filter((option) => option.dataset.n === n.value);
+    Array.from(policy.options).forEach((option) => { option.hidden = option.dataset.n !== n.value; });
+    if (!compatible.some((option) => option.value === policy.value)) policy.value = compatible[0].value;
+    let visible = 0;
+    rows.forEach((row) => {
+      const show = row.dataset.n === n.value && row.dataset.p === p.value &&
+        row.dataset.q === q.value && row.dataset.profile === policy.value;
+      row.hidden = !show;
+      if (show) visible += 1;
+    });
+    status.textContent = `Showing ${visible} exact registered profile. Every role observes both clues.`;
+  };
+  [n, p, q, policy].forEach((control) => control.addEventListener("change", render));
+  n.value = "2";
+  p.value = "1/3";
+  q.value = "1/2";
+  render();
+});

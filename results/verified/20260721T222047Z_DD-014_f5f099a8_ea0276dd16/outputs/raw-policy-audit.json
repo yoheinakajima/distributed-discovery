@@ -1,0 +1,236 @@
+[
+  {
+    "private_accuracy": "2/3",
+    "raw_best_equilibrium_discovery": "8/9",
+    "raw_equilibrium_profiles": [
+      [
+        8,
+        12
+      ],
+      [
+        8,
+        14
+      ],
+      [
+        10,
+        12
+      ],
+      [
+        12,
+        8
+      ],
+      [
+        12,
+        10
+      ],
+      [
+        12,
+        12
+      ],
+      [
+        12,
+        14
+      ],
+      [
+        14,
+        8
+      ],
+      [
+        14,
+        12
+      ]
+    ],
+    "raw_optimum_attained_by_complementary_constants": true,
+    "raw_optimum_discovery": "1",
+    "raw_planner_profiles": [
+      [
+        0,
+        15
+      ],
+      [
+        5,
+        10
+      ],
+      [
+        10,
+        5
+      ],
+      [
+        15,
+        0
+      ]
+    ],
+    "raw_strict_equilibrium_profiles": [],
+    "restricted_unconditional_optimum_discovery": "8/9",
+    "shared_accuracy": "2/3",
+    "unrestricted_gain": "1/9"
+  },
+  {
+    "private_accuracy": "2/3",
+    "raw_best_equilibrium_discovery": "11/12",
+    "raw_equilibrium_profiles": [
+      [
+        8,
+        14
+      ],
+      [
+        10,
+        12
+      ],
+      [
+        12,
+        10
+      ],
+      [
+        14,
+        8
+      ]
+    ],
+    "raw_optimum_attained_by_complementary_constants": true,
+    "raw_optimum_discovery": "1",
+    "raw_planner_profiles": [
+      [
+        0,
+        15
+      ],
+      [
+        5,
+        10
+      ],
+      [
+        10,
+        5
+      ],
+      [
+        15,
+        0
+      ]
+    ],
+    "raw_strict_equilibrium_profiles": [
+      [
+        8,
+        14
+      ],
+      [
+        10,
+        12
+      ],
+      [
+        12,
+        10
+      ],
+      [
+        14,
+        8
+      ]
+    ],
+    "restricted_unconditional_optimum_discovery": "11/12",
+    "shared_accuracy": "3/4",
+    "unrestricted_gain": "1/12"
+  },
+  {
+    "private_accuracy": "3/4",
+    "raw_best_equilibrium_discovery": "15/16",
+    "raw_equilibrium_profiles": [
+      [
+        12,
+        12
+      ]
+    ],
+    "raw_optimum_attained_by_complementary_constants": true,
+    "raw_optimum_discovery": "1",
+    "raw_planner_profiles": [
+      [
+        0,
+        15
+      ],
+      [
+        5,
+        10
+      ],
+      [
+        10,
+        5
+      ],
+      [
+        15,
+        0
+      ]
+    ],
+    "raw_strict_equilibrium_profiles": [
+      [
+        12,
+        12
+      ]
+    ],
+    "restricted_unconditional_optimum_discovery": "15/16",
+    "shared_accuracy": "2/3",
+    "unrestricted_gain": "1/16"
+  },
+  {
+    "private_accuracy": "3/4",
+    "raw_best_equilibrium_discovery": "15/16",
+    "raw_equilibrium_profiles": [
+      [
+        8,
+        12
+      ],
+      [
+        8,
+        14
+      ],
+      [
+        10,
+        12
+      ],
+      [
+        12,
+        8
+      ],
+      [
+        12,
+        10
+      ],
+      [
+        12,
+        12
+      ],
+      [
+        12,
+        14
+      ],
+      [
+        14,
+        8
+      ],
+      [
+        14,
+        12
+      ]
+    ],
+    "raw_optimum_attained_by_complementary_constants": true,
+    "raw_optimum_discovery": "1",
+    "raw_planner_profiles": [
+      [
+        0,
+        15
+      ],
+      [
+        5,
+        10
+      ],
+      [
+        10,
+        5
+      ],
+      [
+        15,
+        0
+      ]
+    ],
+    "raw_strict_equilibrium_profiles": [],
+    "restricted_unconditional_optimum_discovery": "15/16",
+    "shared_accuracy": "3/4",
+    "unrestricted_gain": "1/16"
+  }
+]
