@@ -14,27 +14,28 @@ Owner authorization now requires sequential completion of DD-010 DiscoveryBench,
 DD-011 Experimental Design and Power, the DD-008B Common-Source analytic gate,
 a focused *Common-Source Trap* working paper, public benchmark/experiment Labs,
 and a final Program V2 handoff. The live baseline is clean `main`
-`9b2096ddcf17585cda84ecc00b6606ef15d791b6`; CI `29852900771` and Pages
-`29852901101` passed, sampled public routes return HTTP 200, and no pull request
-is open. The only settings blocker remains issue #32; the previously required
+`62d4cd1c0819ae4a16330b22b059ddfbd86107d6`; CI `29858324779` and Pages
+`29858324517` passed, all eight DD-010 public routes return HTTP 200, and no
+pull request is open. The only settings blocker remains issue #32; the previously required
 single `gh auth status` probe was already exhausted and is not repeated.
 
-The active milestone is DD-010. Its golden registry is capped at 15 tasks and
-the built-in protocol registry at 13 declared protocols; compatibility is
-computed from explicit capabilities rather than by exposing evaluator state.
-The exact primary suite must use immutable task views, exact fractions, a
-separate verifier, task-value and information-boundary corruption tests, and a
-60-second/1-GB cap. Simulated extensions, if included, are bounded, seeded,
-confidence-interval results and are never promoted to exact claims. Subsequent
-milestones become active only after the prior issue/PR/CI/Pages/live-route gate
-passes.
+The active milestone is DD-011 under issue #69 and branch
+`research/dd011-experiment-kit`. The primary design is capped at 24 treatment
+cells, eight versioned synthetic response scenarios, six sample sizes, and
+1,000 Monte Carlo replications per registered power cell, under a 10-minute and
+2-GB cap. Hypotheses, estimands, multiplicity families, exclusions, seeds, and
+analysis rules are frozen before the primary run. No recruitment, human data,
+deployment, empirical-behavior claim, or real-world power claim is authorized.
+Subsequent milestones become active only after the prior
+issue/PR/CI/Pages/live-route gate passes.
 
 Progress:
 
 - [x] DD-010 issue, registration, schema, capability boundary, golden tasks,
   protocols, metrics, CLI, exact run, verifier, claim audit, site, merge, CI,
-  Pages, and live routes. Local evidence and acceptance are complete in primary
-  run `20260721T183014Z_DD-010_ce930050_8ec718c242`; PR/CI/Pages gates remain.
+  Pages, and live routes. Primary run
+  `20260721T183014Z_DD-010_ce930050_8ec718c242` and DD-C-0055 passed; PR #68
+  squash-merged as `62d4cd1c`, post-merge CI/Pages passed, and issue #67 closed.
 - [ ] DD-011 issue, bounded design, literature record, hypotheses/estimands,
   randomization, synthetic power run, verifier, materials, ethics boundary,
   site, merge, CI, Pages, and live routes.
@@ -45,10 +46,10 @@ Progress:
 - [ ] Program V2 site/Lab integration and final acceptance/handoff.
 
 Recovery: inspect `git status --short --branch`; resume the sole active milestone
-from its study `plan.md`; never rerun an already preserved primary run. If DD-010
-has not yet produced its immutable run, the exact next command is
-`make dd010-discoverybench`; otherwise use its manifest verifier before any
-claim promotion.
+from `studies/DD-011-experimental-design/plan.md`; never rerun an already
+preserved primary run. Before the DD-011 primary run, validate the frozen design,
+randomization, analysis, ethics, and scenario registries; after it exists, use
+its separate manifest verifier before any claim promotion.
 
 ### Program V2 baseline (active, 2026-07-21)
 
