@@ -42,6 +42,7 @@ class SiteParser(HTMLParser):
 RESULT_RUNS = {
     "roles": "20260720T200447Z_DD-001_6eb12861_ba766d1eba",
     "disclosure": "20260720T225848Z_DD-002_94607423_e29b1460ae",
+    "selection": "20260721T025802Z_DD-002_73a85c71_b0e5b6dc49",
     "sources": "20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1",
     "canonical": "20260721T012208Z_DD-000_8e4b55e2_e8321d1048",
     "alignment": "20260721T022739Z_DD-001_358cb1eb_cd16846ba5",
@@ -76,6 +77,14 @@ def _result_data(root: Path) -> dict[str, Any]:
         root, RESULT_RUNS["disclosure"], "outputs/selection-reversal-witness.json"
     )
     disclosure = json.loads(disclosure_path.read_text(encoding="utf-8"))
+    selection_witness_path = _verified_output(
+        root, RESULT_RUNS["selection"], "outputs/known-witness-robustness.json"
+    )
+    selection_witness = json.loads(selection_witness_path.read_text(encoding="utf-8"))
+    selection_certificate_path = _verified_output(
+        root, RESULT_RUNS["selection"], "outputs/selection-certificate.json"
+    )
+    selection_certificate = json.loads(selection_certificate_path.read_text(encoding="utf-8"))
     source_path = _verified_output(
         root, RESULT_RUNS["sources"], "outputs/mean-agreement-counterexample.json"
     )
@@ -117,6 +126,12 @@ def _result_data(root: Path) -> dict[str, Any]:
             "planner_less_fraction": disclosure["planner_less"],
             "planner_more_fraction": disclosure["planner_more"],
             "claim_ids": ["DD-C-0030", "DD-C-0031"],
+            "selection_rules": selection_witness["rules"],
+            "harmful_refinement_counts": {
+                rule: counts["harmful"]
+                for rule, counts in selection_certificate["refinement_counts"].items()
+            },
+            "selection_claim_ids": ["DD-C-0039", "DD-C-0040", "DD-C-0041"],
         },
         "sources": {
             "mean_pair_agreement_fraction": source["matched_mean_pair_agreement"],
@@ -145,6 +160,8 @@ def _result_data(root: Path) -> dict[str, Any]:
                 for path in [
                     roles_path,
                     disclosure_path,
+                    selection_witness_path,
+                    selection_certificate_path,
                     source_path,
                     null_path,
                     canonical_path,
@@ -294,6 +311,23 @@ def _replacements(
         "{{DISCLOSURE_LESS}}": str(results["disclosure"]["selected_less_fraction"]),
         "{{DISCLOSURE_MORE}}": str(results["disclosure"]["selected_more_fraction"]),
         "{{DISCLOSURE_DIFFERENCE}}": str(results["disclosure"]["difference_fraction"]),
+        "{{SELECTION_ALT_LESS}}": str(
+            results["disclosure"]["selection_rules"]["best_pure"]["less_discovery"]
+        ),
+        "{{SELECTION_ALT_MORE}}": str(
+            results["disclosure"]["selection_rules"]["best_pure"]["more_discovery"]
+        ),
+        "{{SELECTION_HARMFUL_COUNTS}}": "/".join(
+            str(results["disclosure"]["harmful_refinement_counts"][rule])
+            for rule in [
+                "anonymous_symmetric",
+                "best_pure",
+                "worst_pure",
+                "uniform_potential_maximum",
+                "uniform_strict_best_response_basin",
+                "planner",
+            ]
+        ),
         "{{SOURCE_AGREEMENT}}": str(results["sources"]["mean_pair_agreement_fraction"]),
         "{{SOURCE_LEFT}}": str(results["sources"]["left_discovery_fraction"]),
         "{{SOURCE_RIGHT}}": str(results["sources"]["right_discovery_fraction"]),
@@ -305,6 +339,7 @@ def _replacements(
         ),
         "{{RESULT_RUN_ROLES}}": str(results["provenance"]["source_runs"]["roles"]),
         "{{RESULT_RUN_DISCLOSURE}}": str(results["provenance"]["source_runs"]["disclosure"]),
+        "{{RESULT_RUN_SELECTION}}": str(results["provenance"]["source_runs"]["selection"]),
         "{{RESULT_RUN_SOURCES}}": str(results["provenance"]["source_runs"]["sources"]),
         "{{RESULT_RUN_CANONICAL}}": str(results["provenance"]["source_runs"]["canonical"]),
         "{{RESULT_RUN_ALIGNMENT}}": str(results["provenance"]["source_runs"]["alignment"]),

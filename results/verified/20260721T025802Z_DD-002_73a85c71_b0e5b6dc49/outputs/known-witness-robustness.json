@@ -1,0 +1,43 @@
+{
+  "less_informative": "P00",
+  "more_informative": "P03",
+  "rules": {
+    "anonymous_symmetric": {
+      "difference": "-1/2772",
+      "less_discovery": "5/9",
+      "more_discovery": "171/308",
+      "reversal": true
+    },
+    "best_pure": {
+      "difference": "1/12",
+      "less_discovery": "2/3",
+      "more_discovery": "3/4",
+      "reversal": false
+    },
+    "planner": {
+      "difference": "1/12",
+      "less_discovery": "2/3",
+      "more_discovery": "3/4",
+      "reversal": false
+    },
+    "uniform_potential_maximum": {
+      "difference": "1/12",
+      "less_discovery": "2/3",
+      "more_discovery": "3/4",
+      "reversal": false
+    },
+    "uniform_strict_best_response_basin": {
+      "difference": "1/12",
+      "less_discovery": "2/3",
+      "more_discovery": "3/4",
+      "reversal": false
+    },
+    "worst_pure": {
+      "difference": "1/12",
+      "less_discovery": "2/3",
+      "more_discovery": "3/4",
+      "reversal": false
+    }
+  },
+  "selection_robustness_conclusion": "the known reversal occurs only under the anonymous-symmetric selection; best pure, worst pure, uniform potential maximum, uniform strict-best-response basin, and planner values all improve"
+}

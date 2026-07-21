@@ -1,0 +1,20 @@
+{
+  "all_15_partitions_enumerated": true,
+  "all_256_global_pure_selections_preserved": true,
+  "all_37_posterior_games_evaluated": true,
+  "all_45_refinements_compared": true,
+  "certificate_bytes": 320387,
+  "corruption_test_rejected_modified_absorption": true,
+  "elapsed_seconds": 0.08854849997442216,
+  "frozen_game_partition_values_match": true,
+  "git_clean_at_start": true,
+  "independent_certificate_verifier_passed": true,
+  "known_witness_all_other_declared_rules_improve": true,
+  "known_witness_anonymous_symmetric_reversal_reproduced": true,
+  "memory_budget_mb": 256,
+  "passed": true,
+  "planner_monotone_all_refinements": true,
+  "potential_and_basin_values_equal_all_partitions": true,
+  "randomized_disclosure_implemented": false,
+  "time_budget_seconds": 30
+}

@@ -1,0 +1,17 @@
+{
+  "absorption_bellman_state_count": 333,
+  "action_profile_state_count": 333,
+  "bounded_before_execution": true,
+  "certificate_bytes": 320387,
+  "checkpoint_strategy": "atomic immutable run outputs; the finite state space is below the resume threshold",
+  "declared_memory_budget_mb": 256,
+  "declared_time_budget_seconds": 30,
+  "elapsed_seconds": 0.08854849997442216,
+  "interruption_outcome": "no substantive claim; preserve a failed run if manifested",
+  "partition_count": 15,
+  "posterior_game_count": 37,
+  "randomness": null,
+  "refinement_rule_comparison_count": 270,
+  "schema_version": 1,
+  "unilateral_deviation_checks": 1998
+}

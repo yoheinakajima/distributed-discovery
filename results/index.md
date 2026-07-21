@@ -10,3 +10,5 @@ The M9 acceptance reproduction is `baseline/20260720T202314Z_DD-000_88613408_217
 Milestone A changed public licensing, deployment, and GitHub organization only. Later milestones add new immutable run IDs without altering earlier provenance.
 
 The canonical alignment-bound run is `verified/20260721T022739Z_DD-001_358cb1eb_cd16846ba5`. Its exact Bellman certificate and separate corruption-detecting verifier close the prior canonical DD-001 interval at `325089/390625` while retaining the earlier pooled frontier as valid superseded evidence.
+
+The DD-002 selection-robustness run is `verified/20260721T025802Z_DD-002_73a85c71_b0e5b6dc49`. It stores the exact six-rule catalogue, potential identities, strict-best-response absorption witnesses, all 45 refinement comparisons, and an independent corruption-detecting verification.

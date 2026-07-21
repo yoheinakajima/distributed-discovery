@@ -1,0 +1,9 @@
+{
+  "outputs/cost-audit.json": "f989100b2e86793b383915480abb433042e3a10aff5be82519789d549bbd2ad6",
+  "outputs/independent-verification.json": "510557aeb8c8c8020d4fad011fbd3b97bfa30460db58ff29e8760bd950dc8f19",
+  "outputs/known-witness-robustness.json": "657474921dcf4ed34e43fec30af441149436e8ffef36e4731376d061a42fe05f",
+  "outputs/partition-selection-summary.csv": "93290543a01e0f460f665cb7bab760dc57c13ded2a131e4acadf1dad9d753085",
+  "outputs/selection-catalogue.json": "930ee29d7fab31bc0979a560c959f22d4e3ec1a95f6d95db8bc886adb6cd054a",
+  "outputs/selection-certificate.json": "2325dc263c5337a64e5300c431bb9ca0d186b06c928553b7c8bcce0d1ddc504c",
+  "outputs/selection-refinement-comparisons.json": "e86423d4c246610e56d674115807d1c673fc68226ff0cb4f486116092ec22fb7"
+}

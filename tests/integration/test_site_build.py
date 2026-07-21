@@ -33,6 +33,9 @@ def test_site_builds_from_repository_evidence(tmp_path: Path) -> None:
     assert "16/25" in results
     assert "7/10" in results
     assert "5/9" in results and "171/308" in results
+    assert "2/3" in results and "3/4" in results
+    assert "1/0/8/2/2/0" in results
+    assert "survives only anonymous-symmetric selection" in results
     assert "8/9" in results and "31/36" in results
     assert "bounded null, not a theorem" in results.lower()
     assert "T<sub>8</sub>(16,1/5) = 325089/390625" in results
@@ -40,6 +43,7 @@ def test_site_builds_from_repository_evidence(tmp_path: Path) -> None:
     generated = (tmp_path / "site/data/results.json").read_text(encoding="utf-8")
     assert "20260721T012208Z_DD-000_8e4b55e2_e8321d1048" in generated
     assert "20260721T022739Z_DD-001_358cb1eb_cd16846ba5" in generated
+    assert "20260721T025802Z_DD-002_73a85c71_b0e5b6dc49" in generated
 
 
 def test_primary_text_colors_exceed_wcag_aa() -> None:

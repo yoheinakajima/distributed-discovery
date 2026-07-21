@@ -4,7 +4,7 @@
 |---|---|---|---|
 | DD-000 | Foundations of Distributed Discovery | complete foundations | Maintain canonical regression and framework |
 | DD-001 | Distributed Discovery with Private Information | canonical optimum certified | Characterize count-budget relaxation tightness outside the canonical fixture |
-| DD-002 | Information Design for Discovery | complete bounded fixture | Preserve deterministic-partition regressions; randomized disclosure deferred |
+| DD-002 | Information Design for Discovery | complete bounded selection catalogue | Preserve six-rule regressions; randomized disclosure deferred |
 | DD-003 | Effective Channels | complete bounded fixture | Preserve graph regressions; vary signal laws before enlarging the class |
 | DD-004 | Sequential Distributed Discovery | brief ready (priority 5) | Validate the perfect-elimination dynamic program |
 | DD-005 | Overlapping Coverage | brief ready (priority 4) | Minimize failures of atomic coverage diagnostics |

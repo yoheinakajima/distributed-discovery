@@ -8,7 +8,7 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-The historical M0–M9 bootstrap, operational Milestone A, research milestones DD-001A/B, DD-002, DD-003, their integrated handoff, and continuation cycles F–G are complete and merged. Cycle H has produced a passing immutable alignment certificate, claims DD-C-0037/DD-C-0038, and an exact canonical optimum of `325089/390625`; it remains active until PR #23 passes review, merges, and deploys. The public repository has five open Dependabot PRs (#1–#5), queued DD-007 issue #8, no rulesets, no milestones, and no repository homepage value. **Active integration boundary: issue #22 and draft PR #23 on `research/dd001-alignment-upper-bound`.**
+The historical M0–M9 bootstrap, operational Milestone A, research milestones DD-001A/B, DD-002, DD-003, their integrated handoff, and continuation cycles F–H are complete and merged. Alignment PR #23 squash-merged as `df35f80273f106ef86f623c4676fe2a58757b6ad`; post-merge CI `29796429926` and Pages `29796429904` passed, all seven public routes returned HTTP 200, and the live exact optimum/provenance match DD-C-0038. **Active integration boundary: Cycle I evidence is complete in immutable run `20260721T025802Z_DD-002_73a85c71_b0e5b6dc49`; issue #24 and draft PR #25 await final audit, review, merge, and deployment.**
 
 ## Scope
 
@@ -44,8 +44,8 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - Integrated A–E handoff: completed 2026-07-20 through PR #17.
 - F exact canonical pooled-frontier certificate: completed 2026-07-20 through PR #19.
 - G Three Results synthesis paper and public Results page: completed 2026-07-20 through PR #21.
-- H alignment-preserving DD-001 upper relaxation: evidence complete; PR #23 validation/merge/deploy pending.
-- I DD-002 equilibrium-selection robustness: pending H.
+- H alignment-preserving DD-001 upper relaxation: completed 2026-07-20 through PR #23.
+- I DD-002 equilibrium-selection robustness: evidence complete; PR #25 integration active.
 - J DD-003 heterogeneous source accuracy: pending I.
 - K dependency and Dependabot maintenance: pending J.
 - L single repository-settings attempt: pending K.
@@ -95,7 +95,7 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - [x] Replace the numerical DD-001 planner benchmark with an exact certified endpoint while preserving the unresolved private-team optimum.
 - [x] Build and visually audit a separate 12–20 page Three Results paper and add a fifth public Results route with generated provenance.
 - [x] Implement and audit an alignment-preserving DD-001 upper relaxation; its canonical upper bound equals the direct lower bound and closes the frozen zero-communication optimum.
-- [ ] Audit the DD-002 witness and all 45 refinements under at least three declared equilibrium-selection procedures.
+- [x] Audit the DD-002 witness and all 45 refinements under six declared equilibrium-selection procedures; merge/deployment remains in progress.
 - [ ] Enumerate the bounded DD-003 colored-source class for a rational heterogeneous-accuracy palette and independently verify its result or bounded null.
 - [ ] Reconcile Dependabot PRs #1–#5 in separate Actions, low-risk Python, and mypy-2 maintenance branches; update grouping policy.
 - [ ] Make exactly one settings-capable attempt for repository taxonomy/homepage/protection and record the precise capability result.
@@ -151,6 +151,9 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - 2026-07-21: PR #21 artifact run `29794725150` compiled both clean Three Results PDFs on Ubuntu but failed because the builder also required identical compiler logs. The first clean Tectonic invocation can populate its package cache, so log equality is environment-state equality rather than artifact determinism. The gate now requires identical PDF bytes, validates both logs separately for fatal/reference/citation/overfull failures, stores the second warm-cache log, and records normalized log equality as diagnostic metadata.
 - 2026-07-21: Three Results PR #21 passed CI `29794931024` and paper/site build `29794931026`, received complete no-findings review `4740643312`, and squash-merged as `007dc15b89f6d7e98e572d1b164f057c7c38c964`. Post-merge CI `29795041418` and Pages `29795041429` passed; all five pages and result provenance returned HTTP 200 with exact deployed values.
 - 2026-07-21: alignment-bound run `20260721T022739Z_DD-001_358cb1eb_cd16846ba5` started clean at commit `358cb1eb`, completed in 0.39 seconds, and passed all 21 tiny fixtures plus two anti-informative checks. Its separate verifier checks every Bellman inequality/equality witness without optimizing and rejects a zeroed final value. The canonical upper bound `325089/390625` meets direct clue-following, proving the deterministic and ex-ante randomized optima (DD-C-0037/DD-C-0038); the relaxation is not universally tight because the `M=3,N=2,p=0` case has upper `1` versus exact `11/12`.
+- 2026-07-21: PR #23 passed CI `29796343151` and paper/site build `29796343110`, received complete no-findings review `4740754564`, and squash-merged as `df35f80273f106ef86f623c4676fe2a58757b6ad`. Post-merge CI `29796429926` and Pages `29796429904` passed. The first live smoke-test shell used `path` as a zsh loop variable, overwriting zsh's special command-search array and making `curl`, `rg`, and `jq` temporarily unavailable inside that process; rerunning with variable `route` returned HTTP 200 for all seven routes and verified the exact deployed value and alignment run ID.
+- 2026-07-21: DD-002 selection run `20260721T025802Z_DD-002_73a85c71_b0e5b6dc49` passed 15 policies, 37 posterior games, 256 pure selections, 45 refinements, 333 profile states, 1,998 potential/deviation checks, 333 Bellman states, and 270 rule comparisons in 0.089 seconds. An independent verifier reproduces the games, potential identities, and absorption equations and rejects a corrupted absorption probability. The known `P00` to `P03` reversal survives only anonymous-symmetric selection; best pure, worst pure, uniform potential maximum, uniform strict-best-response basin, and planner all improve from `2/3` to `3/4`. Across all refinements their harmful counts are `1,0,8,2,2,0` (DD-C-0039--DD-C-0041).
+- 2026-07-21: the first targeted public-integration pytest was deliberately invoked before regenerating the paper artifacts and therefore detected stale provenance; after `make three-results`, all targeted paper/site tests passed. The rebuilt 13-page synthesis PDF is byte-reproducible at SHA-256 `1489d0e2aa3a4dc65b38e1731becaf71dbeb946f3670d09e396a79639415a592`, and all 13 Poppler renders passed visual review.
 
 ## Decision log
 
@@ -223,7 +226,7 @@ No current local blocker. GitHub CLI is installed but unauthenticated; the conne
 
 ## Recovery and restart instructions
 
-On branch `research/dd001-alignment-upper-bound`, finish PR #23 acceptance: rebuild and visually audit the updated Three Results paper, build the five-page site, run `make verify`, push, review all checks/threads, merge, and verify Pages. Then sync `main`, create the DD-002 selection-robustness issue/branch, and preserve the frozen game before defining the selection catalogue. Never rerun a completed primary configuration merely to refresh timestamps.
+On branch `research/dd002-selection-robustness`, execute issue #24: freeze the existing finite game, write a selection-catalogue ADR, implement at least three exact or validated procedures, classify the known witness and all 45 refinements, and preserve an independently checked immutable run before claim promotion. Never rerun a completed primary configuration merely to refresh timestamps.
 
 ## Outcome and retrospective
 

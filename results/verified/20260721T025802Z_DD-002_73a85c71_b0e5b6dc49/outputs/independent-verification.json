@@ -1,0 +1,18 @@
+{
+  "certificate_errors": [],
+  "corruption_test": {
+    "errors": [
+      "absorption distribution invalid at P00:0:(0, 0)",
+      "absorption Bellman equation fails at P00:0:(0, 0)",
+      "basin terminal distribution mismatch at P00:0",
+      "basin discovery mismatch at P00:0",
+      "partition values mismatch at P00",
+      "refinement comparison registry mismatch",
+      "refinement count summary mismatch"
+    ],
+    "mutation": "replace one initial-state absorption probability with zero",
+    "rejected": true
+  },
+  "method": "direct posterior/game reconstruction, exact-potential deviation identities, and absorption Bellman equations; no primary selection import",
+  "schema_version": 1
+}

@@ -58,7 +58,9 @@ $7/10$, strictly above direct clue-following $16/25$, and a restricted family ha
 exact territorial--hybrid--direct thresholds. Second, in a complete deterministic
 disclosure fixture, one Blackwell refinement lowers discovery under the declared
 anonymous-symmetric selection from $5/9$ to $171/308$, even though every pure
-equilibrium and the planner improve. Third, among 51 nonisomorphic latent-source
+equilibrium and the planner improve. An exact six-rule catalogue shows that this
+known reversal survives only anonymous-symmetric selection among the audited
+alternatives. Third, among 51 nonisomorphic latent-source
 graphs, complete pairwise report moments yield a bounded null, while the average
 pair-agreement scalar is insufficient: two networks both have agreement $3/4$
 but discovery $8/9$ and $31/36$. We connect these results through a common
@@ -110,7 +112,8 @@ planner can do, but a named equilibrium-selection rule can move toward a more
 concentrated outcome. The finite reversal below is therefore related in spirit to
 informational Braess effects, not to a failure of frontier monotonicity
 \citep{AcemogluEtAl2018}. Its central qualifier is that all pure equilibria improve
-for the same witness.
+for the same witness, and an exact catalogue shows that five alternative rules do
+not reproduce that witness.
 
 The third result concerns \emph{representation}. Correlated reports may come from
 latent source networks. One scalar summary of agreement can hide discovery-
@@ -344,7 +347,7 @@ organizational benchmark, but its exact gap has now been closed for this frozen
 private-team problem.
 
 \section{Information disclosure under strategic search}
-% Claims: DD-C-0029, DD-C-0030, DD-C-0031
+% Claims: DD-C-0029, DD-C-0030, DD-C-0031, DD-C-0039, DD-C-0040, DD-C-0041
 \subsection{A complete bounded fixture}
 
 The disclosure result holds information and the physical action technology apart
@@ -399,12 +402,42 @@ lower the best pure-equilibrium value, and none lower the planner value
 correspondence; reporting only the best equilibrium would hide selection risk.
 Both summaries are needed.
 
+\subsection{Exact selection catalogue}
+
+The same finite fixture admits an exact-potential characterization. For posterior
+target probabilities $\mu$, define
+\[
+\Phi(a,b)=
+\begin{cases}
+3\mu_a/2,&a=b,\\
+\mu_a+\mu_b,&a\ne b.
+\end{cases}
+\]
+Every unilateral payoff difference equals the corresponding potential difference,
+so every strict best-response path terminates (DD-C-0039). This permits an exact
+catalogue beyond the initially declared anonymous-symmetric rule: best and worst
+pure equilibria, uniform selection over global potential maximizers, and a process
+that starts uniformly over the nine labeled profiles and chooses uniformly among
+strict payoff-maximizing player/action moves. The planner remains a nonstrategic
+comparator.
+
+\input{generated/selection-robustness-table.tex}
+
+For the known $P00\to P03$ witness, best pure, worst pure, potential-maximum,
+best-response-basin, and planner values all rise from $2/3$ to $3/4$; only the
+anonymous-symmetric value falls (DD-C-0040). Across all 45 refinements, the harmful
+counts in table order are $1,0,8,2,2,0$. Thus selection risk is not confined to the
+original rule---worst pure and the two dynamic/potential catalogues have other
+harmful refinements---but the named witness itself is not robust across the five
+alternatives (DD-C-0041). An independent implementation checks the posterior
+games, potential identities, absorption Bellman equations, and all rule comparisons.
+
 The census establishes completeness only for the declared four-state partition
 lattice and likelihood fixture. Randomized disclosure was not studied. General
 asymmetric mixed equilibria were not enumerated. Dynamic learning, equilibrium
-refinement, and selection by adaptive processes are outside the result. These
-limits motivate the next DD-002 milestone: apply several explicit selection
-procedures to the same 45 refinements before expanding the disclosure class.
+refinement, and selection processes outside the audited strict-best-response rule
+are outside the result. The catalogue resolves the planned robustness milestone;
+expanding to randomized disclosure requires a separate solution concept and ADR.
 
 \section{Correlated source networks}
 % Claims: DD-C-0032, DD-C-0033, DD-C-0034
@@ -467,7 +500,7 @@ structure can matter beyond nominal report count, but which representation is
 sufficient remains a model-specific question.
 
 \section{Unified implications}
-% Claims: DD-C-0002, DD-C-0016, DD-C-0021, DD-C-0030, DD-C-0033, DD-C-0034
+% Claims: DD-C-0002, DD-C-0016, DD-C-0021, DD-C-0030, DD-C-0040, DD-C-0041, DD-C-0033, DD-C-0034
 The three results share an outcome---union discovery---but operate through
 different causal and mathematical margins. It is useful to state the mapping
 exactly:
@@ -479,7 +512,7 @@ exactly:
 Study & Primitive changed & Mathematical object & Main boundary\\
 \midrule
 DD-001 roles & ex-ante policy assignment & common-payoff team frontier & canonical optimum exact; other parameters open\\
-DD-002 disclosure & public signal partition & posterior game plus selection & reversal is selection-dependent\\
+DD-002 disclosure & public signal partition & posterior game plus selection & known reversal survives one of six audited rules\\
 DD-003 sources & joint evidence provenance & colored/bipartite source law & pairwise result is a bounded null\\
 \bottomrule
 \end{tabularx}
@@ -493,7 +526,9 @@ margin that a direct symmetric protocol leaves unused.
 
 Second, information and behavior must be separated. The DD-002 refinement
 improves the planner and all pure equilibria for its witness while lowering one
-selected symmetric outcome. A statement that ``information reduced discovery''
+selected symmetric outcome. Five audited alternatives do not reproduce that
+witness, although other refinements are harmful under worst-pure, potential, and
+best-response-basin summaries. A statement that ``information reduced discovery''
 is incomplete without the selection procedure. Frontier monotonicity and realized
 equilibrium performance can move in different directions.
 
@@ -537,10 +572,11 @@ its equality with direct clue-following proves the optimum only at the frozen
 canonical fixture.
 
 Third, the disclosure result fixes deterministic partitions of four evidence
-states and one equilibrium selection. It does not enumerate randomized disclosure,
-general asymmetric mixed equilibria, or learning-selected outcomes. Because every
-pure equilibrium improves for the witness, the phrase ``harmful disclosure'' must
-always carry the selection qualifier.
+states and six specified evaluations. It does not enumerate randomized disclosure,
+general asymmetric mixed equilibria, or learning processes beyond the audited
+strict-best-response basin. Because the known witness reverses under only one of
+the six evaluations, the phrase ``harmful disclosure'' must always carry the
+selection qualifier.
 
 Fourth, the source-network model fixes homogeneous accuracy, source independence
 conditional on the target, four searchers, one to three sources, and a particular
@@ -568,12 +604,11 @@ fixtures but is strictly loose at the audited anti-informative
 $(M,N,p)=(3,2,0)$ case. Stronger per-role cross-target consistency can be added as
 a hierarchy only when a new question requires it.
 
-For DD-002, the next step is selection robustness, not a larger disclosure space.
-Several fully specified procedures---for example best pure, worst pure, a basin-
-weighted best-response process, or an explicit stochastic transition rule---
-should classify the known witness and all 45 refinements. Randomized disclosure
-should begin only after that catalogue and a separate ADR define the solution
-object.
+For DD-002, the selection-robustness milestone is complete. Six fully specified
+evaluations now classify the known witness and all 45 refinements, with exact
+best-response absorption witnesses. A future randomized-disclosure study should
+begin only after a separate ADR defines the experiment class, sender objective,
+and solution object; it is not implied by the deterministic catalogue.
 
 For DD-003, source accuracy should vary before the graph class grows. Two rational
 source types create colored graphs whose isomorphisms preserve accuracy. Exact
@@ -595,15 +630,17 @@ preserve failed and null results, use immutable run identifiers, and promote
 claims only after every proof, code, run, and test path has been audited.
 
 \section{Conclusion}
-% Claims: DD-C-0021, DD-C-0030, DD-C-0033, DD-C-0034, DD-C-0037, DD-C-0038
+% Claims: DD-C-0021, DD-C-0030, DD-C-0040, DD-C-0041, DD-C-0033, DD-C-0034, DD-C-0037, DD-C-0038
 Three finite results expose three distinct ways a collective search can depart
 from a symmetric direct protocol. Roles can reserve coverage without
 communication; public disclosure can change a selected strategic outcome even as
-the planner and pure equilibria improve; source networks can share a scalar
+the planner and pure equilibria improve, while alternative selection rules can
+reject the same reversal; source networks can share a scalar
 agreement level while producing different discovery.
 
 The synthesis is deliberately qualified. The role counterexample is exact but
-finite. The disclosure reversal is exact but selection-dependent. The complete
+finite. The disclosure reversal is exact, selection-dependent, and not robust to
+the other five audited evaluations. The complete
 pairwise source result is a bounded null, while only the scalar counterexample is
 refutational. The canonical private-team optimum is now exact, but only for the
 frozen zero-communication dimensions and symmetric signal law.

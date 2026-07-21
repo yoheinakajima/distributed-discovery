@@ -23,6 +23,7 @@ RUNS = {
     "signatures": "20260720T221139Z_DD-001_b1d8d431_40bf5b06a5",
     "thresholds": "20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1",
     "disclosure": "20260720T225848Z_DD-002_94607423_e29b1460ae",
+    "selection": "20260721T025802Z_DD-002_73a85c71_b0e5b6dc49",
     "sources": "20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1",
     "canonical": "20260721T012208Z_DD-000_8e4b55e2_e8321d1048",
     "alignment": "20260721T022739Z_DD-001_358cb1eb_cd16846ba5",
@@ -170,6 +171,63 @@ def _disclosure_figure(witness: dict[str, Any], hashes: list[str]) -> str:
     )
 
 
+def _selection_robustness_table(
+    witness: dict[str, Any], certificate: dict[str, Any], hashes: list[str]
+) -> str:
+    labels = {
+        "anonymous_symmetric": "Anonymous symmetric",
+        "best_pure": "Best pure",
+        "worst_pure": "Worst pure",
+        "uniform_potential_maximum": "Uniform potential maximum",
+        "uniform_strict_best_response_basin": "Uniform strict-BR basin",
+        "planner": "Planner",
+    }
+    order = list(labels)
+    lines = [
+        "% Generated evidence asset; do not edit by hand.",
+        f"% Source run: {RUNS['selection']}",
+        "% Claim IDs: DD-C-0039, DD-C-0040, DD-C-0041",
+        f"% Generator: {GENERATOR}",
+        f"% Input SHA-256: {', '.join(hashes)}",
+        r"\begin{table}[H]",
+        r"\centering\small",
+        (
+            r"\caption{Selection robustness of the known witness and the complete "
+            r"45-refinement census.}"
+        ),
+        r"\label{tab:selection-robustness}",
+        r"\begin{tabularx}{\textwidth}{Ycccc}",
+        r"\toprule",
+        r"Rule & $G(P00)$ & $G(P03)$ & Reversal? & Harmful refinements\\",
+        r"\midrule",
+    ]
+    for rule in order:
+        values = witness["rules"][rule]
+        harmful = certificate["refinement_counts"][rule]["harmful"]
+        reversal = "yes" if values["reversal"] else "no"
+        lines.append(
+            f"{labels[rule]} & ${values['less_discovery']}$ & "
+            f"${values['more_discovery']}$ & {reversal} & {harmful}\\\\"
+        )
+    lines.extend(
+        [
+            r"\bottomrule",
+            r"\end{tabularx}",
+            r"\vspace{2pt}\par\footnotesize Potential-maximum and basin values coincide on all "
+            r"15 policies; five policies nevertheless expose multiple potential discovery values "
+            r"and branch-dependent best-response basins.",
+            _artifact_note(
+                [RUNS["selection"]],
+                ["DD-C-0039", "DD-C-0040", "DD-C-0041"],
+                hashes,
+            ),
+            r"\end{table}",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
 def _graph_edges(adjacency: list[list[int]], xshift: float) -> list[str]:
     edges: list[str] = []
     for source, row in enumerate(adjacency):
@@ -260,6 +318,12 @@ def _evidence_table(claims: dict[str, dict[str, Any]], source_hash: str) -> str:
         ("Hybrid witness $7/10>16/25$", "DD-C-0021", "bounded exact", "independently reproduced"),
         ("Disclosure reversal", "DD-C-0030", "selected exact", "verified"),
         (
+            "Selection robustness census",
+            "DD-C-0040",
+            "bounded exact",
+            "independently reproduced",
+        ),
+        (
             "Complete pairwise-moment search",
             "DD-C-0033",
             "bounded null",
@@ -279,7 +343,7 @@ def _evidence_table(claims: dict[str, dict[str, Any]], source_hash: str) -> str:
     rendered = [
         "% Generated evidence asset; do not edit by hand.",
         "% Source: claims/claims.yml",
-        "% Claim IDs: DD-C-0021, DD-C-0023, DD-C-0030, DD-C-0033, DD-C-0038",
+        "% Claim IDs: DD-C-0021, DD-C-0023, DD-C-0030, DD-C-0040, DD-C-0033, DD-C-0038",
         f"% Generator: {GENERATOR}",
         f"% Input SHA-256: {source_hash}",
         r"\begin{table}[H]",
@@ -303,6 +367,11 @@ def _evidence_table(claims: dict[str, dict[str, Any]], source_hash: str) -> str:
             r"Selection-dependent; pure equilibria and planner improve.\\"
         ),
         (
+            r"Selection robustness census & DD-C-0040\newline bounded exact & independently "
+            r"reproduced & Known reversal survives only anonymous-symmetric selection among "
+            r"six audited rules.\\"
+        ),
+        (
             r"Complete pairwise-moment search & DD-C-0033\newline bounded null & independently "
             r"reproduced & No counterexample in 51 graphs; no sufficiency theorem.\\"
         ),
@@ -314,7 +383,7 @@ def _evidence_table(claims: dict[str, dict[str, Any]], source_hash: str) -> str:
         r"\end{tabularx}",
         (
             r"\ArtifactNote{Source: \path{claims/claims.yml}; claims: DD-C-0021, "
-            r"DD-C-0023, DD-C-0030, DD-C-0033, DD-C-0038; generator: \path{"
+            r"DD-C-0023, DD-C-0030, DD-C-0040, DD-C-0033, DD-C-0038; generator: \path{"
             f"{GENERATOR}"
             r"}; input SHA-256 prefix: \texttt{"
             f"{source_hash[:12]}"
@@ -434,6 +503,14 @@ def build(root: Path) -> dict[str, Any]:
     )
     disclosure_path = _checked_output(root, "disclosure", "outputs/selection-reversal-witness.json")
     disclosure = _json(disclosure_path)
+    selection_witness_path = _checked_output(
+        root, "selection", "outputs/known-witness-robustness.json"
+    )
+    selection_witness = _json(selection_witness_path)
+    selection_certificate_path = _checked_output(
+        root, "selection", "outputs/selection-certificate.json"
+    )
+    selection_certificate = _json(selection_certificate_path)
     source_path = _checked_output(root, "sources", "outputs/mean-agreement-counterexample.json")
     source = _json(source_path)
     null_path = _checked_output(root, "sources", "outputs/pairwise-null-certificate.json")
@@ -456,6 +533,11 @@ def build(root: Path) -> dict[str, Any]:
             role_row, witness, [_sha256(roles_path), _sha256(witness_path)]
         ),
         "disclosure-figure.tex": _disclosure_figure(disclosure, [_sha256(disclosure_path)]),
+        "selection-robustness-table.tex": _selection_robustness_table(
+            selection_witness,
+            selection_certificate,
+            [_sha256(selection_witness_path), _sha256(selection_certificate_path)],
+        ),
         "sources-figure.tex": _sources_figure(
             source, bounded_null, [_sha256(source_path), _sha256(null_path)]
         ),
@@ -471,6 +553,8 @@ def build(root: Path) -> dict[str, Any]:
         roles_path,
         witness_path,
         disclosure_path,
+        selection_witness_path,
+        selection_certificate_path,
         source_path,
         null_path,
         *supporting_paths,

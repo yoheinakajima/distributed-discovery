@@ -1,5 +1,5 @@
 study_id: DD-002
-status: complete-bounded-fixture
-evidence_status: verified-selection-dependent-reversal-and-complete-refinement-census
-next_action: preserve deterministic-partition regressions; randomized disclosure requires a future ADR
-updated_utc: 2026-07-20T23:00:00Z
+status: complete-bounded-selection-catalogue
+evidence_status: independently-reproduced-exact-potential-and-six-rule-refinement-census
+next_action: preserve selection regressions; randomized disclosure requires a separate ADR
+updated_utc: 2026-07-21T03:10:00Z
