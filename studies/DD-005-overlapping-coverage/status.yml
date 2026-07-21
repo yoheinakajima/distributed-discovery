@@ -1,5 +1,5 @@
 study_id: DD-005
-status: registered
-evidence_status: research-question
-next_action: enumerate bounded weighted-coverage portfolios and minimize failures of atomic diagnostics
-updated_utc: 2026-07-20T20:17:35Z
+status: complete-bounded-study
+evidence_status: independently-verified-exact-weighted-coverage-frontiers
+next_action: preserve the exact overlap regressions; stochastic or adaptive coverage needs a new registration
+updated_utc: 2026-07-21T05:07:06Z

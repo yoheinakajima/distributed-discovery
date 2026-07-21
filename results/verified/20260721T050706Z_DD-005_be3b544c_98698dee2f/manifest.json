@@ -1,0 +1,29 @@
+{
+  "command": "make dd005-coverage",
+  "config_hash_sha256": "98698dee2f921210c1dbdb1e79628871b98059092870a08dff18b1e3d57e5fc6",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-21T05:07:06.339862Z",
+  "exit_status": 0,
+  "git_commit": "be3b544c83c8243a5606058e500cad826102471a",
+  "git_dirty": true,
+  "input_hashes": {
+    "src/distributed_discovery/coverage/model.py": "73775ff60653f4e92d96bbb66b79eaf8d0b7b970aa0d42aa795afb2ef75a5f67",
+    "src/distributed_discovery/coverage/study.py": "9b21cad2dc7f66ed1296887768a531349a0ec342602734b9b76685f8b5d0d346",
+    "src/distributed_discovery/coverage/verification.py": "d91678b1924fd55e4dc290cbaedd7636f2bf399cab6f9cad77b78718b2d8d4f3",
+    "studies/DD-005-overlapping-coverage/configs/frontiers.yml": "d1d2fe5cced99a775b5e56dd259585ed38d8418af2599632729bdecdb87587fe"
+  },
+  "outputs": {
+    "outputs/coverage-frontiers.json": "45a4d07c0f9c58e17dc9a2f03e8f1b213f85c070a4c7968bc0278e87615915d6",
+    "outputs/coverage-witnesses.json": "87ba6d83d31d1b677f7271f644889e79374f4ab35e18fb21ad31c728c6b92b47"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "run_id": "20260721T050706Z_DD-005_be3b544c_98698dee2f",
+  "schema_version": 1,
+  "started_utc": "2026-07-21T05:07:06.327069Z",
+  "study_id": "DD-005",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

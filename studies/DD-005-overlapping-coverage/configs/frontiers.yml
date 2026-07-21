@@ -1,0 +1,18 @@
+model: weighted-union-coverage-v1
+max_outcomes: 8
+max_actions: 10
+max_budget: 4
+time_budget_seconds: 30
+fixtures:
+  - name: atomic-control
+    weights: [1, 1, 1, 1]
+    actions: [[0], [1], [2], [3]]
+    budget: 2
+  - name: duplicated-ranking-witness
+    weights: [1, 1, 1, 1]
+    actions: [[0, 1, 2], [0, 1, 2], [3]]
+    budget: 2
+  - name: greedy-recovery-witness
+    weights: [1, 1, 1, 1, 1, 1]
+    actions: [[0, 1, 2, 3], [0, 1, 4], [2, 3, 5]]
+    budget: 2
