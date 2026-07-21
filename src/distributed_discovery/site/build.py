@@ -1020,6 +1020,7 @@ def _render(
         "three-results": "Connects exact results on roles, disclosure, and correlated sources.",
         "discovery-institutions": "Synthesizes how evidence, assignment, incentives, and feedback interact.",
         "common-source-trap": "Explains why many reports can still behave like one source of evidence.",
+        "incentive-to-ignore": "Synthesizes selective attention, audience design, and conditional evidence use.",
     }
     publication_items = "".join(
         '<article class="card paper-card"><div class="card-meta"><span class="status-chip">{status}</span><span>{page_count} pages</span></div><h2><a href="{detail}">{title}</a></h2><p>{purpose}</p><div class="card-actions"><a class="button small" href="{download}">Download PDF</a><a href="{detail}">Paper details</a></div><p class="citation">{citation}</p><details class="technical-details"><summary>Technical details</summary><p><a href="{repo}/blob/main/{build_source}">Build source</a></p><p>SHA-256 <code>{sha256}</code></p></details></article>'.format(

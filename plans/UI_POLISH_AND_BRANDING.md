@@ -98,6 +98,11 @@ two/three-column grids, and a seven-column scrolling pipeline.
   byte-for-byte identical. The refresh adds only `data/canonical.json`, whose
   values are loaded from the existing canonical evidence rather than copied by
   hand. There are no diffs under `studies/`, `claims/`, `results/`, or `papers/`.
+- 2026-07-21: PR #90 then advanced `main` to `8a1255e` with the fifth paper,
+  The Incentive to Ignore, plus a shared builder/test update. The merge was
+  conflict-free. The refresh added only a public-purpose sentence for the new
+  catalogue card and refreshed the four Papers screenshots; the build now has
+  55 pages and five papers.
 
 ## Decision log
 
@@ -132,8 +137,9 @@ checks.
   creating research runs.
 - `make bootstrap && make verify && make papers && make site`: expected final
   repository, paper, and site acceptance with unchanged evidence totals. Passed
-  on 2026-07-21: 177 tests, 38 valid run manifests, four papers, 54 pages, and
-  19 studies.
+  before the final upstream integration with 177 tests, 38 valid run manifests,
+  four papers, 54 pages, and 19 studies; the same gate must pass again against
+  `8a1255e` before merge.
 
 ## Artifacts produced
 

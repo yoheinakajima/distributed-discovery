@@ -86,3 +86,8 @@ all 54 have identical SHA-256 hashes. The UI build adds only presentation-facing
 `data/canonical.json`. The complete local validation suite and refreshed
 responsive capture matrix pass. A final open-PR overlap query is still required
 immediately before merge.
+
+PR #90 subsequently advanced `main` to `8a1255e` with The Incentive to Ignore
+and shared builder/test changes. It merged into the UI branch without conflict.
+The new paper route, download, metadata, and test are preserved; its public card
+uses the same presentation-only purpose layer as the four existing papers.
