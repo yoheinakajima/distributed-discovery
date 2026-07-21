@@ -1,0 +1,8 @@
+{
+  "conditional_weakly_expands_unconditional": true,
+  "probabilities_normalize": true,
+  "raw_audit_exposes_restricted_class_gap": true,
+  "raw_complementary_constants_are_optimal": true,
+  "raw_optimum_is_full_discovery": true,
+  "restricted_policy_count_is_three": true
+}

@@ -55,7 +55,9 @@ Progress:
   `research/dd014-conditional-attention` contain the frozen class, 75-cell
   exact implementation, independent verifier, four corruption tests, and
   adversarial all-table two-label audit. The source commit, immutable run,
-  claim audit, public Lab, merge, and deployment remain.
+  claim audit, public Lab, merge, and deployment remain. Primary run
+  `20260721T222047Z_DD-014_f5f099a8_ea0276dd16` now passes in 10.761 seconds;
+  DD-C-0066 through DD-C-0068 pass their local evidence audits.
 - [ ] Focused paper, benchmark extension, synthetic experiment extension,
   public Labs/site integration, and final acceptance.
 

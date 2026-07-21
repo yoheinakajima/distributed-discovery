@@ -1,0 +1,9 @@
+{
+  "main_cells_verified": 75,
+  "main_labeled_states": 346275,
+  "main_profiles_verified": 775,
+  "passed": true,
+  "raw_cells_verified": 4,
+  "raw_labeled_states": 16384,
+  "raw_ordered_profiles_verified": 1024
+}

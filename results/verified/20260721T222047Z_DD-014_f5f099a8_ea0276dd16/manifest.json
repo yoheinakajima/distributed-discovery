@@ -1,0 +1,37 @@
+{
+  "command": "make dd014-conditional",
+  "config_hash_sha256": "ea0276dd16923642237e4868b35bdaf184ce60e3d8d17e13aeffc9b357bab3db",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-21T22:20:58.522626Z",
+  "exit_status": 0,
+  "git_commit": "f5f099a816f5c422ff82ef9412f2ca2e73fc85c3",
+  "git_dirty": false,
+  "input_hashes": {
+    "src/distributed_discovery/conditional/model.py": "3a3606c8c827939838a44c3a81040ce11416271e4b17de84d16fc76b85a11e33",
+    "src/distributed_discovery/conditional/study.py": "760762d300887bc944c4286704f537de999a4ba823fef63b55d1e52b1bbaa697",
+    "src/distributed_discovery/conditional/verification.py": "9fcd743bcdc7a6a3be47b0396c6dcb486b10d0dca4a66a5cfed443808ae221eb",
+    "studies/DD-014-conditional-attention/configs/census.yml": "f8ddd46c29ab0828db6a1486a365d1aec0de6a43d0f8302454e30d5dad58eb35",
+    "studies/DD-014-conditional-attention/proof.md": "4e1438f68883f570bbaa51a1be1dbced2b658e2163cf35f35eb9fbca10b15a62"
+  },
+  "outputs": {
+    "outputs/corruption-tests.json": "4a194dd4ce6ba2bcae3ceb5370b908b3adb0f088d4875f76454cc2e0bfb8f3ae",
+    "outputs/policy-census.csv": "fa10933e5e30d3071676f227fa407852660342fa0444359dace09ba25232623a",
+    "outputs/policy-census.json": "5f279f4f4c871ce3d73ae9169bd85e44c0fa581921c5c79e9dbb750e12c1072b",
+    "outputs/policy-phase-map.json": "7a0bffdd95bddad0b36bcf47f91ce70ab2d8887acf8ff2ef880c41c365ce5a5c",
+    "outputs/policy-registry.json": "457b4820b6216e69827c8807dcd0b528fa1079a0dc4aa6ef2c530e30505d9686",
+    "outputs/raw-policy-audit.json": "0d57c5b1f0394fdb43e4e25c4a84566509f9e2682455e0c960d867af0b42a537",
+    "outputs/summary.json": "c355420c6b9812498bca89486b0fe9e85a28cb92b063fc59348c13b51678151b",
+    "outputs/theorem-checks.json": "b3871f163edad16444e4f12da5deb7517d5c18526656c6f44c68cebfd0f8a3ec",
+    "outputs/verification.json": "791d0678a9c9a9aabe3ee0266ac6a98291318b47f2e63bf13e287fb8637445fd"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "run_id": "20260721T222047Z_DD-014_f5f099a8_ea0276dd16",
+  "schema_version": 1,
+  "started_utc": "2026-07-21T22:20:47.761359Z",
+  "study_id": "DD-014",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

@@ -89,6 +89,13 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "20260721T215811Z_DD-013_09c07448_cdac4fb512" in audience_lab
     for control in ["audience-n", "audience-p", "audience-q", "audience-g", "audience-m"]:
         assert f'id="{control}"' in audience_lab
+    conditional_lab = (output / "labs/conditional-attention.html").read_text()
+    assert "data-conditional-lab" in conditional_lab
+    assert "JavaScript is off" in conditional_lab
+    assert "DD-C-0068" in conditional_lab
+    assert "20260721T222047Z_DD-014_f5f099a8_ea0276dd16" in conditional_lab
+    for control in ["conditional-n", "conditional-p", "conditional-q", "conditional-policy"]:
+        assert f'id="{control}"' in conditional_lab
     for name in [
         "sequential",
         "coverage",
@@ -150,6 +157,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "labs/benchmark.html",
         "labs/experiment-design.html",
         "labs/audience.html",
+        "labs/conditional-attention.html",
         "publications/common-source-trap.html",
     } <= route_paths
     assert (output / "robots.txt").is_file()

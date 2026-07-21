@@ -1,10 +1,20 @@
 study_id: DD-014
 title: Conditional Attention and Contrarian Policies
 slug: dd-014
-phase: registered
-summary: Registered exact census of private-dominant, public-dominant, and third-option contrarian role profiles.
+phase: complete-bounded-study
+summary: Exact conditional-policy planner theorem, independently reproduced equilibrium census, and a preserved larger-class counterexample.
 public_artifacts:
   - path: studies/DD-014-conditional-attention/model.md
     description: Frozen conditional policy class and scope
   - path: studies/DD-014-conditional-attention/plan.md
     description: Registered execution and verification plan
+  - path: studies/DD-014-conditional-attention/proof.md
+    description: Restricted-class proof and larger-class boundary
+  - path: studies/DD-014-conditional-attention/report.md
+    description: Exact bounded result and verification report
+  - path: results/verified/20260721T222047Z_DD-014_f5f099a8_ea0276dd16/outputs/summary.json
+    description: Conditional-attention census summary
+  - path: results/verified/20260721T222047Z_DD-014_f5f099a8_ea0276dd16/outputs/policy-census.json
+    description: Exact conditional-policy profile data
+  - path: results/verified/20260721T222047Z_DD-014_f5f099a8_ea0276dd16/outputs/raw-policy-audit.json
+    description: Larger raw-policy scope audit

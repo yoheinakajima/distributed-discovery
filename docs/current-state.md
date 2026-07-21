@@ -1,10 +1,10 @@
 # Current program state
 
-_Reconciled 2026-07-21 at the DD-012 pre-run implementation gate._
+_Reconciled 2026-07-21 at the DD-014 local acceptance gate._
 
 Distributed Discovery Programs V1 and V2 are complete at their registered
 bounded scopes. Program V3, *The Incentive to Ignore*, is active under issue
-#83 after DD-012 completed through issue #81 and PR #82.
+#85 after DD-012 and DD-013 merged and deployed.
 Its required queue is DD-012, DD-013, DD-014, a focused paper, benchmark
 and synthetic experiment extensions, public Labs/site integration, and final
 acceptance. DD-015 is optional only after that queue. Registration is not a
@@ -16,16 +16,16 @@ at `5025cc8e8f2f8ca015dff2066f08f81ad5715a51`, separate, clean, and read-only.
 
 | Measure | Current value |
 | --- | ---: |
-| Ledger claims | 65 |
-| Passing immutable runs | 34 of 37 manifests |
+| Ledger claims | 68 |
+| Passing immutable runs | 35 of 38 manifests |
 | Registered studies | 19 |
-| Python source files | 102 |
-| Public HTML routes | 53 |
-| Public data files | 49 |
-| Laboratory routes | 9 |
+| Python source files | 106 |
+| Public HTML routes | 54 |
+| Public data files | 54 |
+| Laboratory routes | 10 |
 | Validated project papers | 4 |
 | Checksum-registered downloads | 15 |
-| Test suite | 162 collected tests |
+| Test suite | 166 collected tests |
 
 The baseline added four registrations, bringing the study registry to 19 and
 the generated site to 52 routes. DD-012 has now added three audited claims and
@@ -46,8 +46,18 @@ census, and passing run
 `20260721T215811Z_DD-013_09c07448_cdac4fb512`. It covers 1,050 binding audience
 rows, 4,025 voluntary profiles, 2,625 feasible symmetric-garbling rows, eight
 information-firewall forms, and a separate 3,319,200-state verification path.
-The Audience Lab and public metadata await PR #84's merge, CI, Pages, and live
+The Audience Lab and public metadata passed PR #84's merge, CI, Pages, and live
 route gates.
+
+DD-014 now has verified planner theorem DD-C-0066, independently reproduced
+equilibrium census DD-C-0067, and negative scope result DD-C-0068. Passing run
+`20260721T222047Z_DD-014_f5f099a8_ea0276dd16` covers 75 cells, 775 anonymous
+profiles, and 346,275 independently verified main states. Conditional policies
+do not improve the unconditional optimum on the registered grid, while 23
+cells retain a positive best-equilibrium wedge. A separate all-table two-label
+audit preserves the unrestricted-class counterexample. The Conditional
+Attention Lab passes local generation and browser control checks; merge, CI,
+Pages, and live verification remain.
 
 Program V2 produced:
 

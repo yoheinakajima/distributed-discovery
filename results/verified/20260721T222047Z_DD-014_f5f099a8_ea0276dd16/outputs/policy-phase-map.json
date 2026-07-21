@@ -1,0 +1,3490 @@
+[
+  {
+    "accuracy_relation": "equal",
+    "agents": 2,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "5/9",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": true,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "5/9",
+    "planner_profiles": [
+      [
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/3",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "5/9",
+    "unconditional_planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 2,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "2/3",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": true,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "2/3",
+    "planner_profiles": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/2",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "2/3",
+    "unconditional_planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 2,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "2/3",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": true,
+    "equilibrium_wedge": "1/9",
+    "planner_discovery": "7/9",
+    "planner_profiles": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "1/3",
+    "shared_accuracy": "2/3",
+    "strict_equilibrium_profiles": [
+      [
+        0,
+        2,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "7/9",
+    "unconditional_planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        2,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 2,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "3/4",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": true,
+    "equilibrium_wedge": "1/12",
+    "planner_discovery": "5/6",
+    "planner_profiles": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "1/3",
+    "shared_accuracy": "3/4",
+    "strict_equilibrium_profiles": [
+      [
+        0,
+        2,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "5/6",
+    "unconditional_planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        2,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 2,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "5/6",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": true,
+    "equilibrium_wedge": "1/18",
+    "planner_discovery": "8/9",
+    "planner_profiles": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "1/3",
+    "shared_accuracy": "5/6",
+    "strict_equilibrium_profiles": [
+      [
+        0,
+        2,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "8/9",
+    "unconditional_planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        2,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 2,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "3/4",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "3/4",
+    "planner_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/3",
+    "strict_equilibrium_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "3/4",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "equal",
+    "agents": 2,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "3/4",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "3/4",
+    "planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/2",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "3/4",
+    "unconditional_planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 2,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "5/6",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "5/6",
+    "planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "1/2",
+    "shared_accuracy": "2/3",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "5/6",
+    "unconditional_planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 2,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "3/4",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "1/8",
+    "planner_discovery": "7/8",
+    "planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "1/2",
+    "shared_accuracy": "3/4",
+    "strict_equilibrium_profiles": [
+      [
+        0,
+        2,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "7/8",
+    "unconditional_planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        2,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 2,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "5/6",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "1/12",
+    "planner_discovery": "11/12",
+    "planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "1/2",
+    "shared_accuracy": "5/6",
+    "strict_equilibrium_profiles": [
+      [
+        0,
+        2,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "11/12",
+    "unconditional_planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        2,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 2,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "8/9",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "8/9",
+    "planner_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/3",
+    "strict_equilibrium_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "8/9",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 2,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "8/9",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "8/9",
+    "planner_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/2",
+    "strict_equilibrium_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "8/9",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "equal",
+    "agents": 2,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "8/9",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "8/9",
+    "planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "2/3",
+    "shared_accuracy": "2/3",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "8/9",
+    "unconditional_planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 2,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "11/12",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "11/12",
+    "planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "2/3",
+    "shared_accuracy": "3/4",
+    "strict_equilibrium_profiles": [
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "11/12",
+    "unconditional_planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        1,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 2,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "5/6",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "1/9",
+    "planner_discovery": "17/18",
+    "planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "2/3",
+    "shared_accuracy": "5/6",
+    "strict_equilibrium_profiles": [
+      [
+        0,
+        2,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "17/18",
+    "unconditional_planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        2,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 2,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "15/16",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "15/16",
+    "planner_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/3",
+    "strict_equilibrium_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "15/16",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 2,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "15/16",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "15/16",
+    "planner_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/2",
+    "strict_equilibrium_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "15/16",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 2,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "15/16",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "15/16",
+    "planner_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "3/4",
+    "shared_accuracy": "2/3",
+    "strict_equilibrium_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "15/16",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "equal",
+    "agents": 2,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "15/16",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "15/16",
+    "planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "3/4",
+    "shared_accuracy": "3/4",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "15/16",
+    "unconditional_planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 2,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "23/24",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "23/24",
+    "planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "3/4",
+    "shared_accuracy": "5/6",
+    "strict_equilibrium_profiles": [
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "23/24",
+    "unconditional_planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        1,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 2,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "35/36",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "35/36",
+    "planner_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "5/6",
+    "shared_accuracy": "1/3",
+    "strict_equilibrium_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "35/36",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 2,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "35/36",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "35/36",
+    "planner_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "5/6",
+    "shared_accuracy": "1/2",
+    "strict_equilibrium_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "35/36",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 2,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "35/36",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "35/36",
+    "planner_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "5/6",
+    "shared_accuracy": "2/3",
+    "strict_equilibrium_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "35/36",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 2,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "35/36",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "35/36",
+    "planner_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "5/6",
+    "shared_accuracy": "3/4",
+    "strict_equilibrium_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "35/36",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        2,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "equal",
+    "agents": 2,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "35/36",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "35/36",
+    "planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "5/6",
+    "shared_accuracy": "5/6",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "35/36",
+    "unconditional_planner_profiles": [
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "equal",
+    "agents": 3,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "19/27",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": true,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "19/27",
+    "planner_profiles": [
+      [
+        0,
+        0,
+        3
+      ],
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        0,
+        2
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        0,
+        1
+      ],
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/3",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "19/27",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        0,
+        3
+      ],
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        0,
+        2
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        0,
+        1
+      ],
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 3,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "2/3",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": true,
+    "equilibrium_wedge": "1/9",
+    "planner_discovery": "7/9",
+    "planner_profiles": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/2",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "7/9",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        2,
+        1
+      ],
+      [
+        1,
+        2,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 3,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "2/3",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": true,
+    "equilibrium_wedge": "5/27",
+    "planner_discovery": "23/27",
+    "planner_profiles": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "1/3",
+    "shared_accuracy": "2/3",
+    "strict_equilibrium_profiles": [
+      [
+        0,
+        3,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "23/27",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        3,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 3,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "3/4",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": true,
+    "equilibrium_wedge": "5/36",
+    "planner_discovery": "8/9",
+    "planner_profiles": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "1/3",
+    "shared_accuracy": "3/4",
+    "strict_equilibrium_profiles": [
+      [
+        0,
+        3,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "8/9",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        3,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 3,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "5/6",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": true,
+    "equilibrium_wedge": "5/54",
+    "planner_discovery": "25/27",
+    "planner_profiles": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "1/3",
+    "shared_accuracy": "5/6",
+    "strict_equilibrium_profiles": [
+      [
+        0,
+        3,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "25/27",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        3,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 3,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "7/8",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "7/8",
+    "planner_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/3",
+    "strict_equilibrium_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "7/8",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "equal",
+    "agents": 3,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "7/8",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "7/8",
+    "planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/2",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "7/8",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 3,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "5/6",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "1/12",
+    "planner_discovery": "11/12",
+    "planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "1/2",
+    "shared_accuracy": "2/3",
+    "strict_equilibrium_profiles": [
+      [
+        1,
+        2,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "11/12",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        1,
+        2,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 3,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "7/8",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "1/16",
+    "planner_discovery": "15/16",
+    "planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "1/2",
+    "shared_accuracy": "3/4",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "15/16",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        3,
+        0
+      ],
+      [
+        1,
+        2,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 3,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "5/6",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "1/8",
+    "planner_discovery": "23/24",
+    "planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "1/2",
+    "shared_accuracy": "5/6",
+    "strict_equilibrium_profiles": [
+      [
+        0,
+        3,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "23/24",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        3,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 3,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "26/27",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "26/27",
+    "planner_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/3",
+    "strict_equilibrium_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "26/27",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 3,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "26/27",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "26/27",
+    "planner_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/2",
+    "strict_equilibrium_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "26/27",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "equal",
+    "agents": 3,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "26/27",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "26/27",
+    "planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "2/3",
+    "shared_accuracy": "2/3",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "26/27",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 3,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "35/36",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "35/36",
+    "planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "2/3",
+    "shared_accuracy": "3/4",
+    "strict_equilibrium_profiles": [
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "35/36",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        2,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 3,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "17/18",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "1/27",
+    "planner_discovery": "53/54",
+    "planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "2/3",
+    "shared_accuracy": "5/6",
+    "strict_equilibrium_profiles": [
+      [
+        1,
+        2,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "53/54",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        1,
+        2,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 3,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "63/64",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "63/64",
+    "planner_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/3",
+    "strict_equilibrium_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "63/64",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 3,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "63/64",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "63/64",
+    "planner_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/2",
+    "strict_equilibrium_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "63/64",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 3,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "63/64",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "63/64",
+    "planner_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "3/4",
+    "shared_accuracy": "2/3",
+    "strict_equilibrium_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "63/64",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "equal",
+    "agents": 3,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "63/64",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "63/64",
+    "planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "3/4",
+    "shared_accuracy": "3/4",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "63/64",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 3,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "95/96",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "95/96",
+    "planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "3/4",
+    "shared_accuracy": "5/6",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "95/96",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        1,
+        2,
+        0
+      ],
+      [
+        2,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 3,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "215/216",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "215/216",
+    "planner_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "5/6",
+    "shared_accuracy": "1/3",
+    "strict_equilibrium_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "215/216",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 3,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "215/216",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "215/216",
+    "planner_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "5/6",
+    "shared_accuracy": "1/2",
+    "strict_equilibrium_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "215/216",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 3,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "215/216",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "215/216",
+    "planner_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "5/6",
+    "shared_accuracy": "2/3",
+    "strict_equilibrium_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "215/216",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 3,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "215/216",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "215/216",
+    "planner_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "5/6",
+    "shared_accuracy": "3/4",
+    "strict_equilibrium_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "215/216",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        3,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "equal",
+    "agents": 3,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "215/216",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "215/216",
+    "planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "5/6",
+    "shared_accuracy": "5/6",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "215/216",
+    "unconditional_planner_profiles": [
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "equal",
+    "agents": 4,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "65/81",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": true,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "65/81",
+    "planner_profiles": [
+      [
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        1,
+        0,
+        3
+      ],
+      [
+        1,
+        1,
+        2
+      ],
+      [
+        2,
+        0,
+        2
+      ],
+      [
+        2,
+        1,
+        1
+      ],
+      [
+        3,
+        0,
+        1
+      ],
+      [
+        3,
+        1,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/3",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "65/81",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        1,
+        0,
+        3
+      ],
+      [
+        1,
+        1,
+        2
+      ],
+      [
+        2,
+        0,
+        2
+      ],
+      [
+        2,
+        1,
+        1
+      ],
+      [
+        3,
+        0,
+        1
+      ],
+      [
+        3,
+        1,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 4,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "7/9",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": true,
+    "equilibrium_wedge": "2/27",
+    "planner_discovery": "23/27",
+    "planner_profiles": [
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        1,
+        1,
+        2
+      ],
+      [
+        2,
+        1,
+        1
+      ],
+      [
+        3,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/2",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "23/27",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        2,
+        2
+      ],
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        2,
+        2,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 4,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "7/9",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": true,
+    "equilibrium_wedge": "10/81",
+    "planner_discovery": "73/81",
+    "planner_profiles": [
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        1,
+        1,
+        2
+      ],
+      [
+        2,
+        1,
+        1
+      ],
+      [
+        3,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "1/3",
+    "shared_accuracy": "2/3",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "73/81",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        3,
+        1
+      ],
+      [
+        0,
+        4,
+        0
+      ],
+      [
+        1,
+        3,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 4,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "3/4",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": true,
+    "equilibrium_wedge": "19/108",
+    "planner_discovery": "25/27",
+    "planner_profiles": [
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        1,
+        1,
+        2
+      ],
+      [
+        2,
+        1,
+        1
+      ],
+      [
+        3,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "1/3",
+    "shared_accuracy": "3/4",
+    "strict_equilibrium_profiles": [
+      [
+        0,
+        4,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "25/27",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        4,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 4,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "5/6",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": true,
+    "equilibrium_wedge": "19/162",
+    "planner_discovery": "77/81",
+    "planner_profiles": [
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        1,
+        1,
+        2
+      ],
+      [
+        2,
+        1,
+        1
+      ],
+      [
+        3,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "1/3",
+    "shared_accuracy": "5/6",
+    "strict_equilibrium_profiles": [
+      [
+        0,
+        4,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "77/81",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        4,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 4,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "15/16",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "15/16",
+    "planner_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/3",
+    "strict_equilibrium_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "15/16",
+    "unconditional_planner_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "equal",
+    "agents": 4,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "15/16",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "15/16",
+    "planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/2",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "15/16",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        3,
+        1,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 4,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "11/12",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "1/24",
+    "planner_discovery": "23/24",
+    "planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "1/2",
+    "shared_accuracy": "2/3",
+    "strict_equilibrium_profiles": [
+      [
+        2,
+        2,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "23/24",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        2,
+        2,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 4,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "7/8",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "3/32",
+    "planner_discovery": "31/32",
+    "planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "1/2",
+    "shared_accuracy": "3/4",
+    "strict_equilibrium_profiles": [
+      [
+        1,
+        3,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "31/32",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        1,
+        3,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 4,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "5/6",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "7/48",
+    "planner_discovery": "47/48",
+    "planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "1/2",
+    "shared_accuracy": "5/6",
+    "strict_equilibrium_profiles": [
+      [
+        0,
+        4,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "47/48",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        0,
+        4,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 4,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "80/81",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "80/81",
+    "planner_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/3",
+    "strict_equilibrium_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "80/81",
+    "unconditional_planner_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 4,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "80/81",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "80/81",
+    "planner_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/2",
+    "strict_equilibrium_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "80/81",
+    "unconditional_planner_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "equal",
+    "agents": 4,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "80/81",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "80/81",
+    "planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "2/3",
+    "shared_accuracy": "2/3",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "80/81",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        3,
+        1,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 4,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "107/108",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "107/108",
+    "planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "2/3",
+    "shared_accuracy": "3/4",
+    "strict_equilibrium_profiles": [
+      [
+        3,
+        1,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "107/108",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        3,
+        1,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 4,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "17/18",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "4/81",
+    "planner_discovery": "161/162",
+    "planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "2/3",
+    "shared_accuracy": "5/6",
+    "strict_equilibrium_profiles": [
+      [
+        1,
+        3,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "161/162",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        1,
+        3,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 4,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "255/256",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "255/256",
+    "planner_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/3",
+    "strict_equilibrium_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "255/256",
+    "unconditional_planner_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 4,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "255/256",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "255/256",
+    "planner_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/2",
+    "strict_equilibrium_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "255/256",
+    "unconditional_planner_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 4,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "255/256",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "255/256",
+    "planner_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "3/4",
+    "shared_accuracy": "2/3",
+    "strict_equilibrium_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "255/256",
+    "unconditional_planner_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "equal",
+    "agents": 4,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "255/256",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "255/256",
+    "planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "3/4",
+    "shared_accuracy": "3/4",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "255/256",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        3,
+        1,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "shared-higher",
+    "agents": 4,
+    "all_equilibria_planner_optimal": false,
+    "best_equilibrium_discovery": "95/96",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "1/128",
+    "planner_discovery": "383/384",
+    "planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ]
+    ],
+    "private_accuracy": "3/4",
+    "shared_accuracy": "5/6",
+    "strict_equilibrium_profiles": [
+      [
+        2,
+        2,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "383/384",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        2,
+        2,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 4,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "1295/1296",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "1295/1296",
+    "planner_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "5/6",
+    "shared_accuracy": "1/3",
+    "strict_equilibrium_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "1295/1296",
+    "unconditional_planner_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 4,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "1295/1296",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "1295/1296",
+    "planner_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "5/6",
+    "shared_accuracy": "1/2",
+    "strict_equilibrium_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "1295/1296",
+    "unconditional_planner_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 4,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "1295/1296",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "1295/1296",
+    "planner_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "5/6",
+    "shared_accuracy": "2/3",
+    "strict_equilibrium_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "1295/1296",
+    "unconditional_planner_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "private-higher",
+    "agents": 4,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "1295/1296",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "1295/1296",
+    "planner_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "5/6",
+    "shared_accuracy": "3/4",
+    "strict_equilibrium_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "unconditional_planner_discovery": "1295/1296",
+    "unconditional_planner_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        4,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "accuracy_relation": "equal",
+    "agents": 4,
+    "all_equilibria_planner_optimal": true,
+    "best_equilibrium_discovery": "1295/1296",
+    "conditional_gain": "0",
+    "contrarian_is_planner_optimal": false,
+    "equilibrium_wedge": "0",
+    "planner_discovery": "1295/1296",
+    "planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "private_accuracy": "5/6",
+    "shared_accuracy": "5/6",
+    "strict_equilibrium_profiles": [],
+    "unconditional_planner_discovery": "1295/1296",
+    "unconditional_planner_profiles": [
+      [
+        3,
+        1,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "weak_equilibrium_profiles": [
+      [
+        3,
+        1,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ]
+    ]
+  }
+]

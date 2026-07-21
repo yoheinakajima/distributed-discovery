@@ -1,0 +1,3 @@
+# DD-014 `20260721T222047Z_DD-014_f5f099a8_ea0276dd16`
+
+Exact bounded conditional-attention census.

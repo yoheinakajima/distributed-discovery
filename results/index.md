@@ -66,6 +66,13 @@ information-firewall institutions, 175 mechanism cells, a separate
 3,319,200-state reproduction, and four rejected corruptions. It supports
 DD-C-0062 through DD-C-0065.
 
+The DD-014 Conditional Attention run is
+`verified/20260721T222047Z_DD-014_f5f099a8_ea0276dd16`. It preserves 75 exact
+cells, 775 anonymous conditional-policy profiles, a separate 1,024-profile raw
+policy audit, 362,659 independently enumerated labeled states, and four rejected
+corruptions. It supports DD-C-0066 through DD-C-0068, including the larger-class
+scope counterexample.
+
 The three Program V2 primary runs above are immutable and must not be rerun just
 to refresh timestamps. Their public summaries are generated only after manifest
 and output checksum validation.

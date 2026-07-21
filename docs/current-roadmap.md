@@ -10,7 +10,7 @@ verification plan, and corruption test where certificates are used.
 | Program V3 baseline | complete through PR #80 | DD-012 through DD-015 are registered and deployed without creating research evidence. |
 | DD-012 Incentive to Ignore | local evidence complete on PR #82 | DD-C-0059 through DD-C-0061 and the primary run pass; merge, CI, Pages, and live-route validation remain before DD-013. |
 | DD-013 Audience Design | local evidence complete on PR #84 | DD-C-0062 through DD-C-0065, the primary run, and Audience Lab pass locally; merge, CI, Pages, and live routes remain. |
-| DD-014 Conditional Attention | registered after DD-013 | Test the complete deterministic label-equivariant disagreement class for `M=3` and audit small fixtures against a larger raw class. |
+| DD-014 Conditional Attention | local evidence complete on issue #85 | DD-C-0066 through DD-C-0068, the passing run, raw larger-class counterexample, and Conditional Attention Lab pass locally; merge, CI, Pages, and live routes remain. |
 | DD-015 Dynamic Attention | optional registration | Begin only after required Program V3 milestones if capacity remains; keep stopping and fixed-budget objectives distinct. |
 | Program V3 paper and integration | queued | Build only from validated DD-012–DD-014 evidence; extend the benchmark and synthetic kit without human data; publish static accessible Labs. |
 | DD-010 DiscoveryBench | complete and deployed | Preserve v1's 15-task exact golden suite and capability isolation. New tasks or adapters require a versioned registration; no public submissions or universal score. |
@@ -29,10 +29,10 @@ High-value benchmark questions are new exact tasks, adapter conformance, and
 robust multi-metric aggregation without collapsing the registry into an
 unexplained score.
 
-Operational resume commands for active DD-012:
+Operational resume commands for active DD-014:
 
 ```sh
-git switch research/dd012-incentive-to-ignore
+git switch research/dd014-conditional-attention
 PYTHONPATH="$PWD/src" uv run --no-editable pytest -q tests/unit/test_attention.py
 ```
 

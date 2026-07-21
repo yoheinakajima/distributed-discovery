@@ -32,9 +32,9 @@ and successful roles split a unit reward equally.
 
 1. Freeze the model and prove restricted-class completeness. **Complete.**
 2. Implement exact evaluators and corruption checks. **Complete.**
-3. Commit the implementation and execute one clean bounded run. **Active.**
-4. Audit claims, report, public data, and Conditional Attention Lab. **Pending.**
-5. Pass acceptance, merge, deploy, and verify live routes. **Pending.**
+3. Commit the implementation and execute one clean bounded run. **Complete.**
+4. Audit claims, report, public data, and Conditional Attention Lab. **Complete.**
+5. Pass acceptance, merge, deploy, and verify live routes. **Active.**
 
 ## Progress checklist
 
@@ -43,9 +43,9 @@ and successful roles split a unit reward equally.
 - [x] Enumerated 775 anonymous profiles in 75 cells exactly.
 - [x] Added a 1,024-profile, 16,384-state raw two-label audit.
 - [x] Added an independent verifier and four corruption tests.
-- [ ] Execute the immutable clean run and record runtime and run ID.
-- [ ] Promote only claims supported by the preserved run and proof audit.
-- [ ] Complete public Lab, CI, Pages, and live-route checks.
+- [x] Execute the immutable clean run and record runtime and run ID.
+- [x] Promote only claims supported by the preserved run and proof audit.
+- [ ] Complete CI, Pages, and live-route checks; local Lab checks pass.
 
 ## Discoveries and surprises
 
@@ -91,4 +91,7 @@ passing primary run. Retain a failed run directory and diagnose from its logs.
 
 ## Outcome and retrospective
 
-Pending the clean run, claim audit, merge, and live deployment.
+Run `20260721T222047Z_DD-014_f5f099a8_ea0276dd16` passed in 10.761 seconds.
+DD-C-0066 through DD-C-0068 and the complete-fallback Lab pass locally. The
+raw audit successfully prevented overpromotion: full discovery exists outside
+the restricted class. Merge and live deployment remain.

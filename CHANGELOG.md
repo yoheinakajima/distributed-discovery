@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-21 — DD-014 conditional attention
+
+- Proved completeness of the three deterministic agreement-respecting,
+  label-equivariant disagreement policies for three labels and retained the
+  explicit restricted-class boundary.
+- Completed immutable run
+  `20260721T222047Z_DD-014_f5f099a8_ea0276dd16`: 75 cells, 775 anonymous
+  profiles, 346,275 independently verified main states, and four rejected
+  corruptions in 10.761 seconds.
+- Preserved a larger two-label negative scope audit: all 1,024 ordered raw
+  profiles and 16,384 states show that complementary constants achieve full
+  discovery and strictly beat the embedded unconditional class.
+- Added DD-C-0066 through DD-C-0068 and the exact-data Conditional Attention
+  Lab with a complete 775-row no-JavaScript fallback.
+
 ## 2026-07-21 — DD-013 frozen implementation
 
 - Froze binding delivery, voluntary ex-ante action modes, public action-role

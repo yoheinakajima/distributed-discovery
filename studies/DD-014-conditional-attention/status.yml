@@ -1,5 +1,5 @@
 study_id: DD-014
-status: implementation-complete-awaiting-primary-run
-evidence_status: pre-run-results-not-for-claim-promotion
-next_action: commit the exact implementation, execute one clean bounded run, and preserve the raw larger-class scope failure
-updated_utc: 2026-07-21T22:23:00Z
+status: complete-bounded-study
+evidence_status: one-verified-theorem-one-independently-reproduced-census-and-one-independently-reproduced-negative-result
+next_action: preserve the run and scope boundary; complete PR merge, CI, Pages, and live-route validation before the focused paper
+updated_utc: 2026-07-21T22:32:00Z
