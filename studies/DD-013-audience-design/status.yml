@@ -1,0 +1,5 @@
+study_id: DD-013
+status: registered
+evidence_status: no-result-registration-only
+next_action: begin only after DD-012 is merged; freeze the exact audience, garbling, equilibrium, and mechanism registry
+updated_utc: 2026-07-21T21:05:32Z

@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-07-21 — Program V3 baseline
+
+- Verified the clean Program V2 handoff at `99e2098`, including 138 tests, 35
+  manifests, a 48-route site build, and ten live HTTP-200 route checks.
+- Registered DD-012 Incentive to Ignore, DD-013 Audience Design and Information
+  Firewalls, DD-014 Conditional Attention and Contrarian Policies, and optional
+  DD-015 Dynamic Attention without creating a research run or result claim.
+- Opened the sequential paper, benchmark, synthetic experiment, public Labs,
+  and final-handoff queue under the living ExecPlan.
+- Retained issue #32 as settings-only after the single authorized authentication
+  probe again found no usable GitHub CLI session; no mutation was retried.
+
 ## 2026-07-21 — Program V2 complete
 
 - Completed and deployed DD-010 DiscoveryBench: 15 exact golden tasks, 13
