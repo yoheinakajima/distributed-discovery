@@ -1,4 +1,5 @@
 """Build the evidence-backed Discovery Stack synthesis paper."""
+
 from __future__ import annotations
 
 import hashlib
@@ -32,8 +33,11 @@ def _checked(root: Path, key: str, relative: str) -> Path:
     run = root / "results/verified" / RUNS[key]
     manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
     path = run / relative
-    if (manifest.get("validation_status") != "passed" or manifest.get("exit_status") != 0
-            or manifest.get("outputs", {}).get(relative) != _sha256(path)):
+    if (
+        manifest.get("validation_status") != "passed"
+        or manifest.get("exit_status") != 0
+        or manifest.get("outputs", {}).get(relative) != _sha256(path)
+    ):
         raise RuntimeError(f"invalid source artifact: {run.name}/{relative}")
     return path
 
@@ -45,27 +49,34 @@ def _table(schedule: object, coverage: object, reward: object, acquisition: obje
                 if name in value:
                     return value[name] if not isinstance(value[name], list) else len(value[name])
         return len(value) if isinstance(value, list) else "registered"
-    return "\n".join([
-        "% Generated evidence asset; do not edit by hand.",
-        rf"% Source runs: {', '.join(RUNS.values())}",
-        r"\begin{table}[t]\centering\small",
-        r"\caption{Evidence inventory for the Discovery Stack. Each row is a bounded registered result, not a universal institutional law.}",
-        r"\label{tab:stack-evidence}",
-        r"\begin{tabularx}{\textwidth}{lXrr}",
-        r"\toprule Margin & Registered object & Evidence & Claim\\\midrule",
-        rf"Adapt & {count(schedule, ('schedules',))} schedule records under perfect elimination & exact fixture & DD-C-0045\\",
-        rf"Cover & {count(coverage, ('frontiers',))} coverage-frontier records & bounded witnesses & DD-C-0046, DD-C-0047\\",
-        rf"Reward & {count(reward, ('frontier_rows', 'row_count', 'rows'))} normalized-transfer rows & exhaustive class & DD-C-0050\\",
-        rf"Acquire & {count(acquisition, ('common_source_trap_cells', 'common_source_trap_count', 'trap_count'))} common-source trap cells & exact source-choice grid & DD-C-0051\\",
-        r"Measure & synthetic event generator and recovery checks & synthetic-only & DD-C-0049\\",
-        r"\bottomrule\end{tabularx}",
-        rf"\par\footnotesize Generator: \texttt{{\detokenize{{{GENERATOR}}}}}; inputs are checksum-validated from immutable manifests.",
-        r"\end{table}", "",
-    ])
+
+    return "\n".join(
+        [
+            "% Generated evidence asset; do not edit by hand.",
+            rf"% Source runs: {', '.join(RUNS.values())}",
+            r"\begin{table}[t]\centering\small",
+            r"\caption{Evidence inventory for the Discovery Stack. Each row is a bounded registered result, not a universal institutional law.}",
+            r"\label{tab:stack-evidence}",
+            r"\begin{tabularx}{\textwidth}{lXrr}",
+            r"\toprule Margin & Registered object & Evidence & Claim\\\midrule",
+            rf"Adapt & {count(schedule, ('schedules',))} schedule records under perfect elimination & exact fixture & DD-C-0045\\",
+            rf"Cover & {count(coverage, ('frontiers',))} coverage-frontier records & bounded witnesses & DD-C-0046, DD-C-0047\\",
+            rf"Reward & {count(reward, ('frontier_rows', 'row_count', 'rows'))} normalized-transfer rows & exhaustive class & DD-C-0050\\",
+            rf"Acquire & {count(acquisition, ('common_source_trap_cells', 'common_source_trap_count', 'trap_count'))} common-source trap cells & exact source-choice grid & DD-C-0051\\",
+            r"Measure & synthetic event generator and recovery checks & synthetic-only & DD-C-0049\\",
+            r"\bottomrule\end{tabularx}",
+            rf"\par\footnotesize Generator: \texttt{{\detokenize{{{GENERATOR}}}}}; inputs are checksum-validated from immutable manifests.",
+            r"\end{table}",
+            "",
+        ]
+    )
 
 
 def build(root: Path) -> dict[str, object]:
-    paper, generated = root / "papers/discovery-institutions", root / "papers/discovery-institutions/generated"
+    paper, generated = (
+        root / "papers/discovery-institutions",
+        root / "papers/discovery-institutions/generated",
+    )
     generated.mkdir(parents=True, exist_ok=True)
     artifacts = {
         "schedule": _checked(root, "adaptation", "outputs/schedule-frontier.json"),
@@ -74,36 +85,90 @@ def build(root: Path) -> dict[str, object]:
         "acquisition": _checked(root, "acquisition", "outputs/source-choice-summary.json"),
         "measurement": _checked(root, "measurement", "outputs/synthetic-recovery-grid.json"),
     }
-    values = {name: json.loads(path.read_text(encoding="utf-8")) for name, path in artifacts.items()}
-    (generated / "stack-evidence-table.tex").write_text(_table(values["schedule"], values["coverage"], values["reward"], values["acquisition"]), encoding="utf-8")
+    values = {
+        name: json.loads(path.read_text(encoding="utf-8")) for name, path in artifacts.items()
+    }
+    (generated / "stack-evidence-table.tex").write_text(
+        _table(values["schedule"], values["coverage"], values["reward"], values["acquisition"]),
+        encoding="utf-8",
+    )
     shutil.copy2(root / "bibliography/references.bib", generated / "references.bib")
-    source = (paper / "main.tex").read_text(encoding="utf-8") + (generated / "stack-evidence-table.tex").read_text(encoding="utf-8")
-    known_claims = {item["id"] for item in yaml.safe_load((root / "claims/claims.yml").read_text(encoding="utf-8"))["claims"]}
+    source = (paper / "main.tex").read_text(encoding="utf-8") + (
+        generated / "stack-evidence-table.tex"
+    ).read_text(encoding="utf-8")
+    known_claims = {
+        item["id"]
+        for item in yaml.safe_load((root / "claims/claims.yml").read_text(encoding="utf-8"))[
+            "claims"
+        ]
+    }
     missing_claims = set(re.findall(r"DD-C-\d{4}", source)) - known_claims
     bib = (generated / "references.bib").read_text(encoding="utf-8")
     bib_keys = set(re.findall(r"^@\w+\{([^,]+),", bib, flags=re.MULTILINE))
-    citations = {key.strip() for group in re.findall(r"\\cite[tp]?\{([^}]+)\}", source) for key in group.split(",")}
+    citations = {
+        key.strip()
+        for group in re.findall(r"\\cite[tp]?\{([^}]+)\}", source)
+        for key in group.split(",")
+    }
     if missing_claims or citations - bib_keys:
         raise RuntimeError("unresolved paper claim or citation")
-    required = ["The Discovery Stack", "Acquisition", "Disclosure and allocation", "Adaptation", "Coverage", "Rewards", "Measurement", "Institutional implications and limitations", "Research agenda"]
+    required = [
+        "The Discovery Stack",
+        "Acquisition",
+        "Disclosure and allocation",
+        "Adaptation",
+        "Coverage",
+        "Rewards",
+        "Measurement",
+        "Institutional implications and limitations",
+        "Research agenda",
+    ]
     if any(rf"\section{{{title}}}" not in source for title in required):
         raise RuntimeError("required synthesis sections missing")
-    build_dir = paper / "build"; build_dir.mkdir(exist_ok=True)
+    build_dir = paper / "build"
+    build_dir.mkdir(exist_ok=True)
     pdfs: list[bytes] = []
     for _ in range(2):
         with tempfile.TemporaryDirectory(dir=build_dir) as temporary:
-            result = subprocess.run(["tectonic", "main.tex", "--outdir", temporary], cwd=paper, env={**os.environ, "SOURCE_DATE_EPOCH": "1784664000"}, capture_output=True, text=True)
-            if result.returncode or re.search(r"undefined (?:reference|citation)|overfull \\hbox", result.stdout + result.stderr, re.I):
+            result = subprocess.run(
+                ["tectonic", "main.tex", "--outdir", temporary],
+                cwd=paper,
+                env={**os.environ, "SOURCE_DATE_EPOCH": "1784664000"},
+                capture_output=True,
+                text=True,
+            )
+            if result.returncode or re.search(
+                r"undefined (?:reference|citation)|overfull \\hbox",
+                result.stdout + result.stderr,
+                re.I,
+            ):
                 raise RuntimeError("Discovery Stack compilation failed")
             pdfs.append((Path(temporary) / "main.pdf").read_bytes())
     hashes = [hashlib.sha256(pdf).hexdigest() for pdf in pdfs]
-    if hashes[0] != hashes[1]: raise RuntimeError("PDF is not byte reproducible")
-    output = paper / "Institutions_for_Distributed_Discovery.pdf"; output.write_bytes(pdfs[-1])
+    if hashes[0] != hashes[1]:
+        raise RuntimeError("PDF is not byte reproducible")
+    output = paper / "Institutions_for_Distributed_Discovery.pdf"
+    output.write_bytes(pdfs[-1])
     info = subprocess.check_output(["pdfinfo", output], text=True)
     match = re.search(r"^Pages:\s+(\d+)$", info, re.M)
-    if not match: raise RuntimeError("pdfinfo failed")
-    validation = {"schema_version": 1, "generator": GENERATOR, "compile_exit_status": 0, "page_count": int(match.group(1)), "pdf_sha256": hashes[0], "byte_reproducible_two_builds": True, "unresolved_references_citations_or_overfull_boxes": False, "claim_ids_resolved": True, "citation_keys_resolved": True, "source_runs": RUNS, "inputs": {str(path.relative_to(root)): _sha256(path) for path in artifacts.values()}}
-    (paper / "validation.json").write_text(json.dumps(validation, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    if not match:
+        raise RuntimeError("pdfinfo failed")
+    validation = {
+        "schema_version": 1,
+        "generator": GENERATOR,
+        "compile_exit_status": 0,
+        "page_count": int(match.group(1)),
+        "pdf_sha256": hashes[0],
+        "byte_reproducible_two_builds": True,
+        "unresolved_references_citations_or_overfull_boxes": False,
+        "claim_ids_resolved": True,
+        "citation_keys_resolved": True,
+        "source_runs": RUNS,
+        "inputs": {str(path.relative_to(root)): _sha256(path) for path in artifacts.values()},
+    }
+    (paper / "validation.json").write_text(
+        json.dumps(validation, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
     return validation
 
 
