@@ -32,3 +32,26 @@ Searches prioritize publisher, society, institutional repository, DOI, and autho
 - https://arxiv.org/abs/2603.14312
 
 No copyrighted PDF is stored in this repository.
+
+## DD-011 focused experimental-design pass (2026-07-21 UTC)
+
+This targeted orientation search used publisher, society, PubMed, institutional,
+DOI, OSF, and NIST records. It is not a systematic review or novelty certificate.
+
+| Theme | Primary or stable records retained | Design implication |
+|---|---|---|
+| Costly information acquisition | Brocas, Carrillo & Palfrey (2012), DOI `10.1007/s00199-011-0615-9` | Acquisition can respond strategically to costs; motivates explicit source-price treatments without treating the DD-008 fixture as behavioral evidence. |
+| Priority and scientific search | Tiokhin & Derex (2019), DOI `10.1098/rsos.180934` | Priority competition can change sampling in a research game; motivates attribution/protection but does not establish the proposed treatment effect. |
+| Information and public goods | Cox & Stoddard (2021), DOI `10.1257/mic.20180275`; Fehr & Gächter (2000), DOI `10.1257/aer.90.4.980` | Communication, truthfulness, and contribution incentives are established experimental topics; disclosure and reward need separate factors. |
+| Organizational communication | Evdokimov & Garfagnini (2019), DOI `10.3982/QE809` | Communication/coordination tradeoffs depend on organizational structure; supports separate disclosure and allocation treatments. |
+| Group incentives | Nalbantian & Schotter (1997), *AER* 87(3):314–341 | Group-reward experiments are established; the DD-006B treatment is one model-specific mechanism comparison. |
+| Venture syndication | Brander, Amit & Antweiler (2002), DOI `10.1111/j.1430-9134.2002.00423.x` | Syndication combines selection and value-added channels; it is an analogy, not evidence for this laboratory design. |
+| Preregistration | Nosek et al. (2018), DOI `10.1073/pnas.1708274114`; OSF registration guidance | Predictions, analysis, stopping, and deviations should be frozen, while an unsubmitted template must not be called preregistered. |
+| Power and sample justification | Lakens (2022), DOI `10.1525/collabra.33267` | Power is only one sample-size justification and is conditional on assumed effects and variance; report sensitivity and Monte Carlo uncertainty. |
+| Fractional designs | NIST/SEMATECH e-Handbook sections 5.3.3.4.3–4 | Fractional designs trade run count for explicit aliasing; compare candidates and identify only registered contrasts. |
+
+Stable records: `https://doi.org/10.1007/s00199-011-0615-9`,
+`https://doi.org/10.1098/rsos.180934`, `https://www.aeaweb.org/articles?id=10.1257/mic.20180275`,
+`https://doi.org/10.3982/QE809`, `https://doi.org/10.1073/pnas.1708274114`,
+`https://doi.org/10.1525/collabra.33267`, and
+`https://www.itl.nist.gov/div898/handbook/pri/section3/pri3344.htm`.

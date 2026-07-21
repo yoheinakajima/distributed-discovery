@@ -31,3 +31,21 @@ document.querySelectorAll("[data-benchmark-lab]").forEach((lab) => {
   select.addEventListener("change", render);
   render();
 });
+
+document.querySelectorAll("[data-experiment-lab]").forEach((lab) => {
+  const select = lab.querySelector("select");
+  const status = lab.querySelector("#experiment-status");
+  const rows = Array.from(document.querySelectorAll("tr[data-power-scenario]"));
+  if (!select || !status) return;
+  const render = () => {
+    let visible = 0;
+    rows.forEach((row) => {
+      const show = select.value === "all" || row.dataset.powerScenario === select.value;
+      row.hidden = !show;
+      if (show) visible += 1;
+    });
+    status.textContent = `Showing ${visible} synthetic power row${visible === 1 ? "" : "s"}.`;
+  };
+  select.addEventListener("change", render);
+  render();
+});

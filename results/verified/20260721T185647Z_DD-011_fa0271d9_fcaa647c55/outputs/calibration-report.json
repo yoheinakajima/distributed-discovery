@@ -1,0 +1,988 @@
+{
+  "criterion": "power >= 0.80 at registered sample sizes of 640 or more",
+  "evaluated_rows": 192,
+  "failure_count": 140,
+  "failures": [
+    {
+      "hypothesis_id": "H8",
+      "power": "0.677000",
+      "sample_size": 640,
+      "scenario_id": "S1-rational",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.767000",
+      "sample_size": 800,
+      "scenario_id": "S1-rational",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H2",
+      "power": "0.456000",
+      "sample_size": 640,
+      "scenario_id": "S2-quantal",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H2",
+      "power": "0.576000",
+      "sample_size": 800,
+      "scenario_id": "S2-quantal",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H2",
+      "power": "0.629000",
+      "sample_size": 960,
+      "scenario_id": "S2-quantal",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H3",
+      "power": "0.318000",
+      "sample_size": 640,
+      "scenario_id": "S2-quantal",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H3",
+      "power": "0.411000",
+      "sample_size": 800,
+      "scenario_id": "S2-quantal",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H3",
+      "power": "0.454000",
+      "sample_size": 960,
+      "scenario_id": "S2-quantal",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H4",
+      "power": "0.593000",
+      "sample_size": 640,
+      "scenario_id": "S2-quantal",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H4",
+      "power": "0.701000",
+      "sample_size": 800,
+      "scenario_id": "S2-quantal",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H4",
+      "power": "0.765000",
+      "sample_size": 960,
+      "scenario_id": "S2-quantal",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H5",
+      "power": "0.653000",
+      "sample_size": 640,
+      "scenario_id": "S2-quantal",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H5",
+      "power": "0.737000",
+      "sample_size": 800,
+      "scenario_id": "S2-quantal",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H7",
+      "power": "0.325000",
+      "sample_size": 640,
+      "scenario_id": "S2-quantal",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H7",
+      "power": "0.384000",
+      "sample_size": 800,
+      "scenario_id": "S2-quantal",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H7",
+      "power": "0.469000",
+      "sample_size": 960,
+      "scenario_id": "S2-quantal",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.268000",
+      "sample_size": 640,
+      "scenario_id": "S2-quantal",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.332000",
+      "sample_size": 800,
+      "scenario_id": "S2-quantal",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.383000",
+      "sample_size": 960,
+      "scenario_id": "S2-quantal",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H2",
+      "power": "0.348000",
+      "sample_size": 640,
+      "scenario_id": "S3-costs",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H2",
+      "power": "0.425000",
+      "sample_size": 800,
+      "scenario_id": "S3-costs",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H2",
+      "power": "0.514000",
+      "sample_size": 960,
+      "scenario_id": "S3-costs",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H3",
+      "power": "0.264000",
+      "sample_size": 640,
+      "scenario_id": "S3-costs",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H3",
+      "power": "0.310000",
+      "sample_size": 800,
+      "scenario_id": "S3-costs",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H3",
+      "power": "0.355000",
+      "sample_size": 960,
+      "scenario_id": "S3-costs",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H4",
+      "power": "0.477000",
+      "sample_size": 640,
+      "scenario_id": "S3-costs",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H4",
+      "power": "0.541000",
+      "sample_size": 800,
+      "scenario_id": "S3-costs",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H4",
+      "power": "0.613000",
+      "sample_size": 960,
+      "scenario_id": "S3-costs",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H5",
+      "power": "0.477000",
+      "sample_size": 640,
+      "scenario_id": "S3-costs",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H5",
+      "power": "0.613000",
+      "sample_size": 800,
+      "scenario_id": "S3-costs",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H5",
+      "power": "0.694000",
+      "sample_size": 960,
+      "scenario_id": "S3-costs",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H6",
+      "power": "0.676000",
+      "sample_size": 640,
+      "scenario_id": "S3-costs",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H6",
+      "power": "0.781000",
+      "sample_size": 800,
+      "scenario_id": "S3-costs",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H7",
+      "power": "0.264000",
+      "sample_size": 640,
+      "scenario_id": "S3-costs",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H7",
+      "power": "0.294000",
+      "sample_size": 800,
+      "scenario_id": "S3-costs",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H7",
+      "power": "0.343000",
+      "sample_size": 960,
+      "scenario_id": "S3-costs",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.208000",
+      "sample_size": 640,
+      "scenario_id": "S3-costs",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.277000",
+      "sample_size": 800,
+      "scenario_id": "S3-costs",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.288000",
+      "sample_size": 960,
+      "scenario_id": "S3-costs",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H2",
+      "power": "0.332000",
+      "sample_size": 640,
+      "scenario_id": "S4-social",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H2",
+      "power": "0.369000",
+      "sample_size": 800,
+      "scenario_id": "S4-social",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H2",
+      "power": "0.473000",
+      "sample_size": 960,
+      "scenario_id": "S4-social",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H3",
+      "power": "0.224000",
+      "sample_size": 640,
+      "scenario_id": "S4-social",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H3",
+      "power": "0.287000",
+      "sample_size": 800,
+      "scenario_id": "S4-social",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H3",
+      "power": "0.323000",
+      "sample_size": 960,
+      "scenario_id": "S4-social",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H4",
+      "power": "0.426000",
+      "sample_size": 640,
+      "scenario_id": "S4-social",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H4",
+      "power": "0.509000",
+      "sample_size": 800,
+      "scenario_id": "S4-social",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H4",
+      "power": "0.609000",
+      "sample_size": 960,
+      "scenario_id": "S4-social",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H5",
+      "power": "0.486000",
+      "sample_size": 640,
+      "scenario_id": "S4-social",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H5",
+      "power": "0.564000",
+      "sample_size": 800,
+      "scenario_id": "S4-social",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H5",
+      "power": "0.654000",
+      "sample_size": 960,
+      "scenario_id": "S4-social",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H6",
+      "power": "0.622000",
+      "sample_size": 640,
+      "scenario_id": "S4-social",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H6",
+      "power": "0.730000",
+      "sample_size": 800,
+      "scenario_id": "S4-social",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H7",
+      "power": "0.203000",
+      "sample_size": 640,
+      "scenario_id": "S4-social",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H7",
+      "power": "0.276000",
+      "sample_size": 800,
+      "scenario_id": "S4-social",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H7",
+      "power": "0.304000",
+      "sample_size": 960,
+      "scenario_id": "S4-social",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.205000",
+      "sample_size": 640,
+      "scenario_id": "S4-social",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.248000",
+      "sample_size": 800,
+      "scenario_id": "S4-social",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.241000",
+      "sample_size": 960,
+      "scenario_id": "S4-social",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H1",
+      "power": "0.692000",
+      "sample_size": 640,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H1",
+      "power": "0.761000",
+      "sample_size": 800,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H2",
+      "power": "0.229000",
+      "sample_size": 640,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H2",
+      "power": "0.305000",
+      "sample_size": 800,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H2",
+      "power": "0.360000",
+      "sample_size": 960,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H3",
+      "power": "0.171000",
+      "sample_size": 640,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H3",
+      "power": "0.227000",
+      "sample_size": 800,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H3",
+      "power": "0.254000",
+      "sample_size": 960,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H4",
+      "power": "0.311000",
+      "sample_size": 640,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H4",
+      "power": "0.422000",
+      "sample_size": 800,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H4",
+      "power": "0.464000",
+      "sample_size": 960,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H5",
+      "power": "0.401000",
+      "sample_size": 640,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H5",
+      "power": "0.451000",
+      "sample_size": 800,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H5",
+      "power": "0.529000",
+      "sample_size": 960,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H6",
+      "power": "0.537000",
+      "sample_size": 640,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H6",
+      "power": "0.631000",
+      "sample_size": 800,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H6",
+      "power": "0.692000",
+      "sample_size": 960,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H7",
+      "power": "0.174000",
+      "sample_size": 640,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H7",
+      "power": "0.211000",
+      "sample_size": 800,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H7",
+      "power": "0.258000",
+      "sample_size": 960,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.147000",
+      "sample_size": 640,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.205000",
+      "sample_size": 800,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.216000",
+      "sample_size": 960,
+      "scenario_id": "S5-compliance",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H1",
+      "power": "0.686000",
+      "sample_size": 640,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H2",
+      "power": "0.273000",
+      "sample_size": 640,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H2",
+      "power": "0.333000",
+      "sample_size": 800,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H2",
+      "power": "0.385000",
+      "sample_size": 960,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H3",
+      "power": "0.195000",
+      "sample_size": 640,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H3",
+      "power": "0.247000",
+      "sample_size": 800,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H3",
+      "power": "0.286000",
+      "sample_size": 960,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H4",
+      "power": "0.343000",
+      "sample_size": 640,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H4",
+      "power": "0.409000",
+      "sample_size": 800,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H4",
+      "power": "0.546000",
+      "sample_size": 960,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H5",
+      "power": "0.413000",
+      "sample_size": 640,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H5",
+      "power": "0.494000",
+      "sample_size": 800,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H5",
+      "power": "0.588000",
+      "sample_size": 960,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H6",
+      "power": "0.565000",
+      "sample_size": 640,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H6",
+      "power": "0.662000",
+      "sample_size": 800,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H6",
+      "power": "0.770000",
+      "sample_size": 960,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H7",
+      "power": "0.178000",
+      "sample_size": 640,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H7",
+      "power": "0.221000",
+      "sample_size": 800,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H7",
+      "power": "0.268000",
+      "sample_size": 960,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.147000",
+      "sample_size": 640,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.189000",
+      "sample_size": 800,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.231000",
+      "sample_size": 960,
+      "scenario_id": "S6-report-error",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H2",
+      "power": "0.362000",
+      "sample_size": 640,
+      "scenario_id": "S7-attrition",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H2",
+      "power": "0.435000",
+      "sample_size": 800,
+      "scenario_id": "S7-attrition",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H2",
+      "power": "0.574000",
+      "sample_size": 960,
+      "scenario_id": "S7-attrition",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H3",
+      "power": "0.253000",
+      "sample_size": 640,
+      "scenario_id": "S7-attrition",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H3",
+      "power": "0.330000",
+      "sample_size": 800,
+      "scenario_id": "S7-attrition",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H3",
+      "power": "0.397000",
+      "sample_size": 960,
+      "scenario_id": "S7-attrition",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H4",
+      "power": "0.508000",
+      "sample_size": 640,
+      "scenario_id": "S7-attrition",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H4",
+      "power": "0.586000",
+      "sample_size": 800,
+      "scenario_id": "S7-attrition",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H4",
+      "power": "0.703000",
+      "sample_size": 960,
+      "scenario_id": "S7-attrition",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H5",
+      "power": "0.569000",
+      "sample_size": 640,
+      "scenario_id": "S7-attrition",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H5",
+      "power": "0.687000",
+      "sample_size": 800,
+      "scenario_id": "S7-attrition",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H5",
+      "power": "0.764000",
+      "sample_size": 960,
+      "scenario_id": "S7-attrition",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H6",
+      "power": "0.732000",
+      "sample_size": 640,
+      "scenario_id": "S7-attrition",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H7",
+      "power": "0.263000",
+      "sample_size": 640,
+      "scenario_id": "S7-attrition",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H7",
+      "power": "0.320000",
+      "sample_size": 800,
+      "scenario_id": "S7-attrition",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H7",
+      "power": "0.404000",
+      "sample_size": 960,
+      "scenario_id": "S7-attrition",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.229000",
+      "sample_size": 640,
+      "scenario_id": "S7-attrition",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.309000",
+      "sample_size": 800,
+      "scenario_id": "S7-attrition",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.308000",
+      "sample_size": 960,
+      "scenario_id": "S7-attrition",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H2",
+      "power": "0.457000",
+      "sample_size": 640,
+      "scenario_id": "S8-learning",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H2",
+      "power": "0.564000",
+      "sample_size": 800,
+      "scenario_id": "S8-learning",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H2",
+      "power": "0.685000",
+      "sample_size": 960,
+      "scenario_id": "S8-learning",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H3",
+      "power": "0.336000",
+      "sample_size": 640,
+      "scenario_id": "S8-learning",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H3",
+      "power": "0.405000",
+      "sample_size": 800,
+      "scenario_id": "S8-learning",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H3",
+      "power": "0.472000",
+      "sample_size": 960,
+      "scenario_id": "S8-learning",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H4",
+      "power": "0.627000",
+      "sample_size": 640,
+      "scenario_id": "S8-learning",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H4",
+      "power": "0.686000",
+      "sample_size": 800,
+      "scenario_id": "S8-learning",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H4",
+      "power": "0.799000",
+      "sample_size": 960,
+      "scenario_id": "S8-learning",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H5",
+      "power": "0.667000",
+      "sample_size": 640,
+      "scenario_id": "S8-learning",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H5",
+      "power": "0.782000",
+      "sample_size": 800,
+      "scenario_id": "S8-learning",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H7",
+      "power": "0.332000",
+      "sample_size": 640,
+      "scenario_id": "S8-learning",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H7",
+      "power": "0.397000",
+      "sample_size": 800,
+      "scenario_id": "S8-learning",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H7",
+      "power": "0.505000",
+      "sample_size": 960,
+      "scenario_id": "S8-learning",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.266000",
+      "sample_size": 640,
+      "scenario_id": "S8-learning",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.332000",
+      "sample_size": 800,
+      "scenario_id": "S8-learning",
+      "threshold": "0.800000"
+    },
+    {
+      "hypothesis_id": "H8",
+      "power": "0.396000",
+      "sample_size": 960,
+      "scenario_id": "S8-learning",
+      "threshold": "0.800000"
+    }
+  ],
+  "retained": true
+}

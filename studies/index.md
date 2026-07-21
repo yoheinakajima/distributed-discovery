@@ -15,8 +15,8 @@
 | DD-006B | Joint Truthful Discovery Mechanisms | complete bounded study | Preserve strict subsidized rows and the hidden-action boundary |
 | DD-009 | Discovery Architecture Atlas | complete bounded study | Preserve the 288-cell validity registry and 20 coherent exact cells |
 | DD-010 | DiscoveryBench | complete bounded study | Preserve v1 exact golden and information-boundary regressions |
-| DD-011 | Experimental Design and Power | queued | Synthetic, preregistration-ready materials only; no deployment |
+| DD-011 | Experimental Design and Power | complete bounded synthetic study | Preserve the frozen design; no human deployment without separate review |
 
 Each executed directory contains its question, model, plan, claims view, status,
-results index, and report. The Program V2 entries are registrations in
-[`docs/current-roadmap.md`](../docs/current-roadmap.md), not executed studies.
+results index, and report. Future Program V2 entries remain governed by
+[`docs/current-roadmap.md`](../docs/current-roadmap.md).

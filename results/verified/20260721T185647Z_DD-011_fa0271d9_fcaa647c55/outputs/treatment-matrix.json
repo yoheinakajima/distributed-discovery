@@ -1,0 +1,162 @@
+[
+  {
+    "acquisition": "free_common",
+    "attribution": "absent",
+    "cell_id": "T00-baseline",
+    "disclosure": "private",
+    "reward": "equal_split",
+    "timing": "simultaneous_hidden"
+  },
+  {
+    "acquisition": "costly_independent",
+    "attribution": "absent",
+    "cell_id": "T01-costly",
+    "disclosure": "private",
+    "reward": "equal_split",
+    "timing": "simultaneous_hidden"
+  },
+  {
+    "acquisition": "assigned_independent",
+    "attribution": "absent",
+    "cell_id": "T02-assigned",
+    "disclosure": "private",
+    "reward": "equal_split",
+    "timing": "simultaneous_hidden"
+  },
+  {
+    "acquisition": "free_common",
+    "attribution": "protected",
+    "cell_id": "T03-attribution",
+    "disclosure": "private",
+    "reward": "equal_split",
+    "timing": "simultaneous_hidden"
+  },
+  {
+    "acquisition": "free_common",
+    "attribution": "absent",
+    "cell_id": "T04-public",
+    "disclosure": "public",
+    "reward": "equal_split",
+    "timing": "simultaneous_hidden"
+  },
+  {
+    "acquisition": "free_common",
+    "attribution": "absent",
+    "cell_id": "T05-verifiable",
+    "disclosure": "public_verifiable",
+    "reward": "equal_split",
+    "timing": "simultaneous_hidden"
+  },
+  {
+    "acquisition": "free_common",
+    "attribution": "absent",
+    "cell_id": "T06-visible",
+    "disclosure": "private",
+    "reward": "equal_split",
+    "timing": "sequential_visible"
+  },
+  {
+    "acquisition": "free_common",
+    "attribution": "absent",
+    "cell_id": "T07-pooling",
+    "disclosure": "private",
+    "reward": "universal_pooling",
+    "timing": "simultaneous_hidden"
+  },
+  {
+    "acquisition": "free_common",
+    "attribution": "absent",
+    "cell_id": "T08-rescue",
+    "disclosure": "private",
+    "reward": "sole_rescue",
+    "timing": "simultaneous_hidden"
+  },
+  {
+    "acquisition": "free_common",
+    "attribution": "absent",
+    "cell_id": "T09-coverage",
+    "disclosure": "private",
+    "reward": "marginal_coverage",
+    "timing": "simultaneous_hidden"
+  },
+  {
+    "acquisition": "free_common",
+    "attribution": "absent",
+    "cell_id": "T10-joint",
+    "disclosure": "private",
+    "reward": "dd006b_joint",
+    "timing": "simultaneous_hidden"
+  },
+  {
+    "acquisition": "assigned_independent",
+    "attribution": "protected",
+    "cell_id": "T11-assigned-attribution",
+    "disclosure": "private",
+    "reward": "equal_split",
+    "timing": "simultaneous_hidden"
+  },
+  {
+    "acquisition": "free_common",
+    "attribution": "absent",
+    "cell_id": "T12-verifiable-visible",
+    "disclosure": "public_verifiable",
+    "reward": "equal_split",
+    "timing": "sequential_visible"
+  },
+  {
+    "acquisition": "costly_independent",
+    "attribution": "absent",
+    "cell_id": "T13-costly-coverage",
+    "disclosure": "private",
+    "reward": "marginal_coverage",
+    "timing": "simultaneous_hidden"
+  },
+  {
+    "acquisition": "assigned_independent",
+    "attribution": "absent",
+    "cell_id": "T14-assigned-coverage",
+    "disclosure": "private",
+    "reward": "marginal_coverage",
+    "timing": "simultaneous_hidden"
+  },
+  {
+    "acquisition": "free_common",
+    "attribution": "absent",
+    "cell_id": "T15-public-pooling",
+    "disclosure": "public",
+    "reward": "universal_pooling",
+    "timing": "simultaneous_hidden"
+  },
+  {
+    "acquisition": "free_common",
+    "attribution": "protected",
+    "cell_id": "T16-verifiable-joint",
+    "disclosure": "public_verifiable",
+    "reward": "dd006b_joint",
+    "timing": "simultaneous_hidden"
+  },
+  {
+    "acquisition": "assigned_independent",
+    "attribution": "protected",
+    "cell_id": "T17-assigned-joint",
+    "disclosure": "public_verifiable",
+    "reward": "dd006b_joint",
+    "timing": "simultaneous_hidden"
+  },
+  {
+    "acquisition": "costly_independent",
+    "attribution": "protected",
+    "cell_id": "T18-costly-attribution",
+    "disclosure": "private",
+    "reward": "equal_split",
+    "timing": "simultaneous_hidden"
+  },
+  {
+    "acquisition": "free_common",
+    "attribution": "absent",
+    "cell_id": "T19-visible-coverage",
+    "disclosure": "private",
+    "reward": "marginal_coverage",
+    "timing": "sequential_visible"
+  }
+]

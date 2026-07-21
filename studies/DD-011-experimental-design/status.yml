@@ -1,0 +1,5 @@
+study_id: DD-011
+status: complete-bounded-study
+evidence_status: seeded-synthetic-power-with-separate-recomputation-and-no-real-data-corruption-audit
+next_action: preserve the frozen package; any human deployment requires separate ethics and institutional authorization
+updated_utc: 2026-07-21T18:56:47Z

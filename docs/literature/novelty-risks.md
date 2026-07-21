@@ -20,3 +20,18 @@
 - Literature metadata supports adjacency statements only; it does not prove exhaustive absence of prior work.
 - Before a paper uses “we introduce” for any general object, add a claim record, targeted search notes, and source-specific comparison.
 - Preserve negative novelty findings; the phrase collision found in M2 is a research output.
+
+## DD-011 controls
+
+- Costly acquisition, information sharing, public-good provision, coordination,
+  group incentives, priority competition, and venture syndication all have direct
+  prior experimental or empirical literatures.
+- The 20-cell design is selected for registered contrast coverage, not claimed as a
+  new factorial method or a uniquely optimal design.
+- DD-006B and DD-008 exact effects are model ground truth, not behavioral priors or
+  evidence that people will comply with the mechanisms.
+- A filled template is “preregistration-ready” or an “unregistered draft,” never
+  “preregistered.” Synthetic power remains conditional on assumed effects, noise,
+  attrition, and clustering.
+- No claim that attribution, provenance, visibility, or marginal coverage improves
+  human behavior is eligible before a separately approved and executed experiment.
