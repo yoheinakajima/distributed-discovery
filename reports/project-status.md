@@ -6,16 +6,16 @@
 
 Milestones M0 through M9 and operational Milestone A are complete. Cleanup issue #6 closed through squash-merged PR #12 at `1add8de5a349c57085928da8aa54da85e49c5077`; CI passed, Pages workflow `29781940577` succeeded, and all five required routes returned HTTP 200. The source repository is public under MIT at `https://yoheinakajima.github.io/distributed-discovery/`. Canonical upstream remains untouched.
 
-The authorized A–E queue and continuation cycles F–H are complete and merged. Alignment PR #23 merged as `df35f80273f106ef86f623c4676fe2a58757b6ad`; post-merge CI `29796429926` and Pages `29796429904` passed, and all seven public routes expose the exact canonical optimum `325089/390625` with the correct run provenance. DD-002 selection-robustness issue #24 and branch `research/dd002-selection-robustness` are active.
+The authorized A–E queue and continuation cycles F–H are complete and merged. Alignment PR #23 merged as `df35f80273f106ef86f623c4676fe2a58757b6ad`; post-merge CI `29796429926` and Pages `29796429904` passed, and all seven public routes expose the exact canonical optimum `325089/390625` with the correct run provenance. Cycle I evidence is complete on DD-002 issue #24 and draft PR #25; final audit, review, merge, and deployment are active.
 
 ## Continuation checkpoint
 
-- Current merged baseline: `007dc15b89f6d7e98e572d1b164f057c7c38c964`.
+- Current merged baseline: `df35f80273f106ef86f623c4676fe2a58757b6ad`.
 - Exact pooled top-eight endpoint: `860391662035297/1001129150390625`.
 - Exact canonical private-team optimum: `325089/390625 = 0.83222784`; the prior pooled interval is valid but superseded.
-- Three Results paper: `papers/three-results/Three_Results_in_Distributed_Discovery.pdf`, 12 pages, visually audited.
+- Three Results paper: `papers/three-results/Three_Results_in_Distributed_Discovery.pdf`, 13 pages, visually audited after Cycle I integration.
 - Public Results route: `https://yoheinakajima.github.io/distributed-discovery/results.html`.
-- Active task: define and execute the exact DD-002 equilibrium-selection catalogue under issue #24.
+- Active task: finish PR #25 integration of the exact six-rule DD-002 equilibrium-selection catalogue.
 
 ## 2. Repository map
 
@@ -47,7 +47,7 @@ The authorized A–E queue and continuation cycles F–H are complete and merged
 - A: public MIT/Pages cleanup, passing squash merge, and live five-route deployment smoke test.
 - DD-001A: lossless signature theorem, exact feasibility/reconstruction, independent tiny-grid reproduction, and canonical state-space certificate; merged.
 - DD-001B: exact restricted-family threshold theorem, bounded continuous unrestricted classification, and anti-informative counterexamples; merged through PR #14.
-- DD-002: complete bounded deterministic-policy enumeration, exact equilibrium registries, independent reversal verification, and full Blackwell-refinement census; merged through PR #15.
+- DD-002: complete bounded deterministic-policy enumeration and exact six-rule selection catalogue; the base fixture merged through PR #15 and selection robustness is active in PR #25.
 - DD-003: complete 51-graph census, independently reproduced orbit counts and exact outcomes, pairwise-moment bounded null, and scalar counterexamples; merged through PR #16 and deployed.
 - F: exact canonical pooled-frontier certificate and exact DD-001 interval; merged through PR #19 and deployed.
 - G: separate 12-page Three Results synthesis, generated figures/evidence table, and public Results route; merged through PR #21 and deployed.
@@ -98,7 +98,7 @@ The run is the current source for the site and foundations note. Claim records r
 
 ## 6. Verified claims
 
-The claim ledger has 38 records. DD-C-0037 proves the alignment count-budget relaxation is an admissible upper bound; DD-C-0038 independently reproduces the exact canonical deterministic and ex-ante randomized optimum. DD-C-0036 remains a valid superseded interval. DD-C-0029 through DD-C-0035 retain the bounded DD-002/DD-003 and exact pooled-frontier results.
+The claim ledger has 41 records. DD-C-0037 proves the alignment count-budget relaxation is an admissible upper bound; DD-C-0038 independently reproduces the exact canonical deterministic and ex-ante randomized optimum. DD-C-0039 proves the DD-002 exact-potential identity, while DD-C-0040 and DD-C-0041 independently reproduce the known-witness robustness and full six-rule census. DD-C-0036 remains a valid superseded interval.
 
 ## 7. Independently reproduced claims
 
@@ -111,6 +111,8 @@ The claim ledger has 38 records. DD-C-0037 proves the alignment count-budget rel
 - DD-C-0033: ten matched pairwise-moment graph pairs and zero private-discovery differences, independently recomputed as a bounded null.
 - DD-C-0034: equal mean agreement `3/4` with private discovery `8/9` versus `31/36`, independently recomputed.
 - DD-C-0038: exact canonical private-team optimum `325089/390625`, where a feasible direct policy meets an independently checked Bellman upper certificate.
+- DD-C-0040: the known DD-002 reversal survives only anonymous-symmetric selection among six audited evaluations.
+- DD-C-0041: exact harmful-refinement counts `1,0,8,2,2,0` across the complete 45-refinement lattice.
 
 ## 8. Exploratory findings
 
@@ -128,7 +130,7 @@ DD-C-0022 is `checked`, not verified: direct clue-following is an exact coordina
 
 ## 10. Open research questions
 
-The A–E and F–G queues are complete. Cycle H has solved the frozen canonical DD-001 optimum and awaits PR #23 integration. DD-002 selection robustness and DD-003 heterogeneous-source accuracy follow sequentially; DD-004 through DD-007 remain unexecuted, and issue #8 intentionally queues the DD-007 schema only.
+The A–E and F–H queues are complete and merged. Cycle I has solved the registered DD-002 selection catalogue and awaits PR #25 integration. DD-003 heterogeneous-source accuracy follows; DD-004 through DD-007 remain unexecuted, and issue #8 intentionally queues the DD-007 schema only.
 
 ## 11. Known technical debt
 
@@ -147,13 +149,13 @@ There is no validation blocker. Public `origin`, Actions, and Pages are active. 
 
 ## 13. Exact resume point
 
-On `research/dd002-selection-robustness`, freeze the current DD-002 game and write the selection-catalogue ADR before implementing or running new procedures. The exact next source file is `src/distributed_discovery/information_design/selection.py` after the ADR fixes the rules.
+On `research/dd002-selection-robustness`, run final full acceptance, push the evidence and public integration commits, update draft PR #25 with exact results, complete review, and merge only after both required workflows pass.
 
 ## 14. Recommended next three tasks
 
-1. DD-002: execute the registered equilibrium-selection robustness catalogue.
+1. DD-002: finish review, merge, deployment, and live verification for PR #25.
 2. DD-003: execute the bounded heterogeneous-source-accuracy census.
-3. DD-003: execute the bounded heterogeneous-source-accuracy census.
+3. Maintenance: reconcile dependency updates after the research cycles.
 
 ## 15. Commit list
 
