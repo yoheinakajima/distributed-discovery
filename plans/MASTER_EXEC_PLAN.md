@@ -1,6 +1,6 @@
 # Master execution plan
 
-> The M0–M9 material below is retained as historical execution evidence. Current operational state and the active A–E queue are recorded in the opening sections, blockers, and recovery instructions; stale no-remote/private statements inside completed-milestone history describe the state at that time.
+> The M0–M9 and A–E material below is retained as historical execution evidence. Current operational state and the active continuation queue are recorded in the opening sections, blockers, and recovery instructions; stale no-remote/private statements inside completed-milestone history describe the state at that time.
 
 ## Purpose and intended outcome
 
@@ -8,11 +8,11 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-The historical M0–M9 bootstrap, operational Milestone A, and research milestones DD-001A/B, DD-002, and DD-003 are complete and merged. DD-003 merged through PR #16 as `54b8713fa7f3b30922a88b60a6dc280319432715`; post-merge CI run `29787309515` and Pages run `29787309537` passed, and all five live routes returned HTTP 200 with the final study statuses. **Active integration boundary: documentation-only final handoff PR #17 on `codex/final-ae-handoff`.**
+The historical M0–M9 bootstrap, operational Milestone A, research milestones DD-001A/B, DD-002, and DD-003, and their integrated handoff are complete and merged. PR #17 squash-merged as `b72c01026be5bf7018b3a3e9a464671dce53bcbb`; post-merge CI run `29787687400` and Pages run `29787687403` passed. The public repository is on clean `main` with five open Dependabot PRs (#1–#5), queued DD-007 issue #8, no rulesets, no milestones, and no repository homepage value. **Active integration boundary: continuation cycle F, exact canonical pooled-frontier certification.**
 
 ## Scope
 
-Completed M0–M9 infrastructure and evidence, followed by the authorized queue: A public/MIT/Pages cleanup; B DD-001A policy signatures and certification; C DD-001B two-agent thresholds; D bounded DD-002 disclosure; E bounded DD-003 source graphs; integrated handoff.
+Completed M0–M9 and A–E evidence, followed by the authorized continuation queue: F exact canonical pooled-frontier certificate; G separate Three Results synthesis paper and public Results page; H alignment-preserving DD-001 upper relaxation; I DD-002 equilibrium-selection robustness; J DD-003 heterogeneous source accuracy; K dependency maintenance; L one repository-settings attempt; M final integration and handoff.
 
 ## Non-goals
 
@@ -41,7 +41,15 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - C DD-001B two-agent hybrid thresholds: completed 2026-07-20.
 - D DD-002 bounded disclosure fixture: completed 2026-07-20.
 - E DD-003 bounded source-graph fixture: completed 2026-07-20.
-- Integrated handoff: documentation and broad local acceptance complete; PR #17 validation/merge pending.
+- Integrated A–E handoff: completed 2026-07-20 through PR #17.
+- F exact canonical pooled-frontier certificate: active.
+- G Three Results synthesis paper and public Results page: pending F.
+- H alignment-preserving DD-001 upper relaxation: pending G.
+- I DD-002 equilibrium-selection robustness: pending H.
+- J DD-003 heterogeneous source accuracy: pending I.
+- K dependency and Dependabot maintenance: pending J.
+- L single repository-settings attempt: pending K.
+- M continuation integration and handoff: pending L.
 
 ## Progress checklist
 
@@ -82,7 +90,16 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - [x] Execute and independently verify DD-003 on issue #10 and branch `research/dd003-source-graphs`.
 - [x] Merge DD-003 PR #16 after CI and verify live Pages.
 - [x] Complete broad final acceptance without creating duplicate immutable runs.
-- [ ] Merge documentation-only integrated handoff PR #17 after CI and verify final Pages.
+- [x] Merge documentation-only integrated handoff PR #17 after CI and verify final Pages.
+- [ ] Certify the exact canonical pooled frontier for budgets 1–8 by independent labeled-count and histogram/orbit evaluators, probability-mass checks, and corruption testing.
+- [ ] Replace the numerical DD-001 planner benchmark with an exact certified endpoint while preserving the unresolved private-team optimum.
+- [ ] Build and visually audit a separate 12–20 page Three Results paper and add a fifth public Results route with generated provenance.
+- [ ] Implement and audit an alignment-preserving DD-001 upper relaxation, documenting either a strict improvement or a certified barrier without overclaiming.
+- [ ] Audit the DD-002 witness and all 45 refinements under at least three declared equilibrium-selection procedures.
+- [ ] Enumerate the bounded DD-003 colored-source class for a rational heterogeneous-accuracy palette and independently verify its result or bounded null.
+- [ ] Reconcile Dependabot PRs #1–#5 in separate Actions, low-risk Python, and mypy-2 maintenance branches; update grouping policy.
+- [ ] Make exactly one settings-capable attempt for repository taxonomy/homepage/protection and record the precise capability result.
+- [ ] Complete the continuation handoff only after every research PR is reviewed, merged, CI-green, deployed, and live-smoke-tested.
 
 ## Discoveries and surprises
 
@@ -121,6 +138,8 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - 2026-07-20: DD-002 primary run `20260720T225848Z_DD-002_94607423_e29b1460ae` enumerated all 15 deterministic disclosure policies, 37 posterior games, 256 global pure-equilibrium selections, and 45 strict refinement pairs. Exactly one refinement lowers the declared anonymous-symmetric selection, while every pure equilibrium and the planner improve for that witness; the reversal is selection-dependent.
 - 2026-07-20: DD-003 primary run `20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1` enumerated 51 nonisomorphic source graphs, independently reproducing the 1/8/42 orbit counts. Ten full pairwise-moment signatures each match two graphs with identical discovery, a complete bounded null. Mean agreement alone is insufficient: two graphs match at 3/4 but have discovery 8/9 and 31/36.
 - 2026-07-20: DD-003 PR #16 passed CI `29787235590` and artifact run `29787235603`, then squash-merged as `54b8713fa7f3b30922a88b60a6dc280319432715`. Post-merge CI `29787309515` and Pages `29787309537` passed; the deployed DD-002/DD-003 completion statuses and all five routes were verified live.
+- 2026-07-20: integrated handoff PR #17 passed validation and squash-merged as `b72c01026be5bf7018b3a3e9a464671dce53bcbb`. Post-merge CI `29787687400` and Pages `29787687403` passed. The next program begins from this clean public baseline.
+- 2026-07-20: the continuation audit found that DD-C-0006's planner frontier is independently enumerated but stored as decimals. Cycle F therefore requires exact rational artifacts and agreement between a labeled count-vector evaluator over all `C(23,15)=490314` vectors and a separately derived false-count-histogram/orbit evaluator before the exact endpoint can support the private-team interval.
 
 ## Decision log
 
@@ -188,12 +207,12 @@ Milestone A produced the reconciled public/MIT/Pages state, passing PR #12, dete
 
 ## Blockers
 
-No current local blocker. GitHub CLI is installed but unauthenticated; the connected GitHub app and SSH cover issue/PR and Git transport operations. Labels, milestones, homepage, and ruleset/repository-setting writes have a precise capability-specific blocker until CLI OAuth or equivalent settings access is available. The prepared issues retain their intended metadata in their bodies.
+No current local blocker. GitHub CLI is installed but unauthenticated; the connected GitHub app and SSH cover issue/PR and Git transport operations. The continuation authorizes one settings attempt only; if no settings-capable path is available, cycle L will record the exact missing permission, API, and command in a maintenance issue without retrying.
 
 ## Recovery and restart instructions
 
-On branch `codex/final-ae-handoff`, finish PR #17 through required CI, review-thread audit, and squash merge. Then sync `main`, verify post-merge CI/Pages and five live routes, and ensure the worktree is clean. No research runner should be invoked because that would create duplicate immutable evidence.
+Start from clean `main` at `b72c01026be5bf7018b3a3e9a464671dce53bcbb`. Resume the first unchecked continuation checklist item only. Each research cycle uses its own issue and branch, commits implementation before the clean primary run, preserves immutable run evidence, audits claims, opens a draft PR, waits for required CI, reviews the complete diff and threads, squash-merges, syncs `main`, and verifies post-merge CI/Pages before beginning the next cycle. Never rerun a completed primary configuration merely to refresh timestamps.
 
 ## Outcome and retrospective
 
-M0–M9, Milestone A, DD-001A/B, DD-002, and DD-003 meet their research, CI, merge, and deployment criteria. The final broad acceptance also passes; only PR #17 validation/merge and its deployment smoke test remain.
+M0–M9, Milestone A, DD-001A/B, DD-002, DD-003, and the A–E handoff meet their research, CI, merge, and deployment criteria. The continuation queue F–M is active; no continuation result is claimed complete until its independent checks, immutable evidence, PR review, merge, deployment, and live verification pass.
