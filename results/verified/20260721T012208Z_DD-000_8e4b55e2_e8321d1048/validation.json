@@ -1,0 +1,16 @@
+{
+  "all_budget_values_agree_exactly": true,
+  "corruption_test_rejected_modified_certificate": true,
+  "elapsed_seconds": 8.287077000015415,
+  "expected_endpoint_passed": true,
+  "git_clean_at_start": true,
+  "global_private_team_optimality_claimed": false,
+  "independent_partition_verifier_passed": true,
+  "method_a_state_count_passed": true,
+  "method_b_orbit_count_passed": true,
+  "passed": true,
+  "probability_mass_one_both_methods": true,
+  "recovery_budget_passed": true,
+  "time_budget_seconds": 30,
+  "upper_endpoint_attainability_claimed": false
+}

@@ -1,0 +1,10 @@
+{
+  "frontier_budget_8_decimal": 0.8594212461994395,
+  "frontier_budget_8_fraction": "860391662035297/1001129150390625",
+  "histogram_orbits": 67,
+  "labeled_count_vectors": 490314,
+  "private_team_interval_gap_decimal": 0.02719340619943948,
+  "private_team_interval_gap_fraction": "27224111644672/1001129150390625",
+  "private_team_lower_fraction": "325089/390625",
+  "recovery_budget": 7
+}

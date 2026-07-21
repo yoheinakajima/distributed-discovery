@@ -18,7 +18,7 @@ Present the generated 21-point CSV/SVG. Separate \(N\ge M\) territorial coverage
 
 ## 5. Canonical bounds
 
-Report direct clue-following as exact lower bound and coordinate fixed point. Report seeded convergence as a negative heuristic result. Add the signature state-space measurement and explain why individual target-orbit canonicalization does not preserve cross-agent alignment. Use the pooled planner only as a numerical upper benchmark under greater information/authority; leave global team optimality unresolved unless a separate certificate closes the gap.
+Report direct clue-following as exact lower bound and coordinate fixed point. Report seeded convergence as a negative heuristic result. Add the signature state-space measurement and explain why individual target-orbit canonicalization does not preserve cross-agent alignment. Use the exactly certified pooled planner as an admissible emulation upper endpoint, explicitly without attainability or tightness; leave global team optimality unresolved unless a separate alignment-preserving certificate closes the gap.
 
 ## 6. Next theorems and computations
 

@@ -21,3 +21,14 @@ The local site preserves the canonical guide as the primary six-minute explanati
 The 12-page companion note formalizes discovery architectures, information frontiers, protocol loss, atomic specialization, institutional comparisons, redundancy and recovery budgets, correlation scope, the seven-study agenda, audit design, applications, and limitations. It cites the canonical paper and 14 adjacent sources, explicitly distinguishes restated upstream results from independent checks, and makes no unsupported phrase or field novelty claim.
 
 `make foundations` generates the canonical table and pooled-frontier figure from run `20260720T190336Z_DD-000_32dd1c32_217c602fa0`, validates 15 citation keys and 17 claim IDs, and compiles with Tectonic 0.16.9. Two consecutive final builds were byte-identical at SHA-256 `3637f16e771b9f14042257b812471db1096b0738c3993eb2b5a6fa790ed81b12`. All pages passed visual QA; the final log has no overfull, undefined-reference, or undefined-citation warning.
+
+## Exact canonical pooled frontier
+
+Run `20260721T012208Z_DD-000_8e4b55e2_e8321d1048` independently certifies all
+eight pooled-frontier budgets by exhaustive labeled counts and false-count
+histogram orbits, with a third partition verifier and corruption test. The exact
+top-eight endpoint is `860391662035297/1001129150390625`. The complete fractions,
+methods, provenance, and claim boundary are in
+`reports/canonical-exact-frontier.md`. The earlier site and foundations decimals
+remain correct rounded presentations; the separate Three Results paper will
+consume the exact run directly.

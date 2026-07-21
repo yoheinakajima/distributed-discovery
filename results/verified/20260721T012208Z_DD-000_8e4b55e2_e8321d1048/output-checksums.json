@@ -1,0 +1,6 @@
+{
+  "outputs/canonical-exact-frontier-certificate.json": "c88d31ec7efda0e9e38346e417a0d00db33cc1ec75221f7ec574cf264409fc1e",
+  "outputs/cost-audit.json": "e9ef09c8ccbb0519345a40869e7a0ca411f45560cb050c4312f79bafb65e0947",
+  "outputs/exact-frontier.csv": "923a70820426dbe3eb0dc844fde395398e889591848a5e68bee1af8a2ac8b687",
+  "outputs/independent-verification.json": "a9fa763e06a2e2d170968ec709583181b220b0772b070aa488a8ed7caebecec3"
+}

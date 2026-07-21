@@ -1,0 +1,12 @@
+{
+  "certificate_errors": [],
+  "corruption_test": {
+    "errors": [
+      "budget 8 exact value mismatch"
+    ],
+    "mutation": "increment final frontier numerator by one",
+    "rejected": true
+  },
+  "method": "independent decreasing-integer-partition enumeration",
+  "schema_version": 1
+}

@@ -2,7 +2,7 @@
 
 ## Outcome
 
-DD-001A achieves the accepted structural-reduction outcome, not a solution of the canonical optimum. The primary immutable run is **20260720T221139Z_DD-001_b1d8d431_40bf5b06a5**; it started from clean commit **b1d8d431188457c62648446797dcebdc323ba991**, completed the configured work in 13.73 seconds under a 120-second budget, and passed every validation. Preliminary passing run **20260720T220911Z_DD-001_6822d4c6_40bf5b06a5** is preserved; its presentation key was corrected before the primary run because the pooled benchmark is not a private-team certificate.
+DD-001A achieves the accepted structural-reduction outcome, not a solution of the canonical optimum. The primary immutable run is **20260720T221139Z_DD-001_b1d8d431_40bf5b06a5**; it started from clean commit **b1d8d431188457c62648446797dcebdc323ba991**, completed the configured work in 13.73 seconds under a 120-second budget, and passed every validation. Preliminary passing run **20260720T220911Z_DD-001_6822d4c6_40bf5b06a5** is preserved; its `certified_interval` presentation key was corrected because that run packaged only a numerical pooled endpoint and did not audit the emulation chain. The later exact-frontier certificate and claim recheck supply the missing evidence separately.
 
 ## Proved reduction
 
@@ -51,6 +51,14 @@ Even retaining only sixteen 64-bit words per multiset state would require 744,64
 
 ## Evidence boundary and next step
 
-The exact direct lower bound remains $325089/390625=0.83222784$. The pooled-planner value 0.859421246199 remains a numerical upper benchmark under greater information and assignment authority; it is explicitly not a private-team certificate. DD-001A therefore records a proved lossless reduction and a documented barrier to naive exact enumeration. It does not produce a private-team certified interval, prove direct optimality, or supply a counterexample.
+The exact direct lower bound remains $325089/390625=0.83222784$. Subsequent run
+`20260721T012208Z_DD-000_8e4b55e2_e8321d1048` certifies the pooled top-eight
+endpoint as $860391662035297/1001129150390625$. Re-audit of DD-C-0019 confirms
+that pooled observation can emulate every fixed role profile, so this endpoint is
+a valid private-team upper certificate under the matched budget and objective.
+The resulting gap is approximately `0.0271934061994395`. It is not an attainable
+private-team construction or a tightness result. DD-001A itself still records a
+proved lossless reduction and a documented barrier to naive exact enumeration; it
+does not prove direct optimality or supply a canonical counterexample.
 
 The next milestone is DD-001B issue #11: exact two-searcher hybrid formulas and thresholds. Any later canonical method must preserve cross-agent target alignment and provide an independently checkable admissible bound.
