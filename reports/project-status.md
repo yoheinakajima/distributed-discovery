@@ -6,16 +6,16 @@
 
 Milestones M0 through M9 and operational Milestone A are complete. Cleanup issue #6 closed through squash-merged PR #12 at `1add8de5a349c57085928da8aa54da85e49c5077`; CI passed, Pages workflow `29781940577` succeeded, and all five required routes returned HTTP 200. The source repository is public under MIT at `https://yoheinakajima.github.io/distributed-discovery/`. Canonical upstream remains untouched.
 
-The authorized A–E queue and continuation cycles F–G are complete and merged. Exact-frontier PR #19 merged as `8d63201cb3b6633c873494af2ea21402db8752d6`; Three Results PR #21 merged as `007dc15b89f6d7e98e572d1b164f057c7c38c964`. Post-merge CI `29795041418` and Pages `29795041429` passed for the latter. The repository now has 72 tests, 36 claims, 14 immutable manifests, two deterministic 12-page papers, and five deployed HTML pages. Issue #22 and branch `research/dd001-alignment-upper-bound` are the active continuation boundary; the canonical private-team optimum remains unresolved at branch start.
+The authorized A–E queue and continuation cycles F–G are complete and merged. Cycle H evidence is complete on issue #22 and draft PR #23: 81 tests, 38 claims, and 15 immutable manifests validate locally before the final paper/site rebuild. The alignment-preserving certificate proves the exact canonical deterministic and ex-ante randomized private-team optimum `325089/390625`. Merge, CI, and deployment remain required before Cycle H closes.
 
 ## Continuation checkpoint
 
 - Current merged baseline: `007dc15b89f6d7e98e572d1b164f057c7c38c964`.
 - Exact pooled top-eight endpoint: `860391662035297/1001129150390625`.
-- Current certified private-team interval: `[325089/390625, 860391662035297/1001129150390625]`.
+- Exact canonical private-team optimum: `325089/390625 = 0.83222784`; the prior pooled interval is valid but superseded.
 - Three Results paper: `papers/three-results/Three_Results_in_Distributed_Discovery.pdf`, 12 pages, visually audited.
 - Public Results route: `https://yoheinakajima.github.io/distributed-discovery/results.html`.
-- Active task: prove and certify an alignment-preserving DD-001 upper relaxation under issue #22.
+- Active task: complete PR #23 acceptance, merge, and deploy; then begin DD-002 selection robustness.
 
 ## 2. Repository map
 
@@ -98,7 +98,7 @@ The run is the current source for the site and foundations note. Claim records r
 
 ## 6. Verified claims
 
-The claim ledger has 36 records. DD-C-0035 independently reproduces the complete exact canonical pooled frontier by two state representations plus an independent verifier. DD-C-0036 verifies the exact DD-001 interval under the audited emulation assumptions. DD-C-0029 through DD-C-0034 retain the bounded DD-002 and DD-003 results and statuses.
+The claim ledger has 38 records. DD-C-0037 proves the alignment count-budget relaxation is an admissible upper bound; DD-C-0038 independently reproduces the exact canonical deterministic and ex-ante randomized optimum. DD-C-0036 remains a valid superseded interval. DD-C-0029 through DD-C-0035 retain the bounded DD-002/DD-003 and exact pooled-frontier results.
 
 ## 7. Independently reproduced claims
 
@@ -110,6 +110,7 @@ The claim ledger has 36 records. DD-C-0035 independently reproduces the complete
 - DD-C-0032: all 51 nonisomorphic bounded source graphs, with independent orbit traversal and pairwise nonisomorphism checks.
 - DD-C-0033: ten matched pairwise-moment graph pairs and zero private-discovery differences, independently recomputed as a bounded null.
 - DD-C-0034: equal mean agreement `3/4` with private discovery `8/9` versus `31/36`, independently recomputed.
+- DD-C-0038: exact canonical private-team optimum `325089/390625`, where a feasible direct policy meets an independently checked Bellman upper certificate.
 
 ## 8. Exploratory findings
 
@@ -123,14 +124,15 @@ DD-C-0022 is `checked`, not verified: direct clue-following is an exact coordina
 - The two early M1 runs are preserved operational failures and excluded from research evidence.
 - DD-003 finds no full pairwise-moment discovery counterexample in the exact 51-graph class; this bounded null is not a general sufficiency theorem.
 - DD-C-0034 refutes sufficiency of average pairwise agreement; the same census also refutes source HHI sufficiency.
+- The first alignment relaxation is strictly loose at `M=3,N=2,p=0`: upper bound `1` versus exact optimum `11/12`; its canonical equality is not extrapolated.
 
 ## 10. Open research questions
 
-The A–E and F–G queues are complete. Active issue #22 seeks an alignment-preserving canonical DD-001 relaxation. DD-002 selection robustness and DD-003 heterogeneous-source accuracy follow sequentially; DD-004 through DD-007 remain unexecuted, and issue #8 intentionally queues the DD-007 schema only.
+The A–E and F–G queues are complete. Cycle H has solved the frozen canonical DD-001 optimum and awaits PR #23 integration. DD-002 selection robustness and DD-003 heterogeneous-source accuracy follow sequentially; DD-004 through DD-007 remain unexecuted, and issue #8 intentionally queues the DD-007 schema only.
 
 ## 11. Known technical debt
 
-- Canonical DD-001 optimization has a lossless single-policy structural reduction but lacks a joint alignment-preserving global certificate.
+- The first DD-001 alignment relaxation is not tight for every parameter; stronger per-role cross-target consistency remains a possible hierarchy extension.
 - Tectonic 0.16.9 and Poppler are system-level build/inspection dependencies, not managed by `uv`.
 - The static site has automated semantic/link/content/contrast checks but no browser-based accessibility audit.
 - GitHub metadata application is tested offline; prepared issues are live as #7–#11 and issue/PR access works through the connected app, while CLI-only taxonomy/settings await OAuth authorization.
@@ -145,11 +147,11 @@ There is no validation blocker. Public `origin`, Actions, and Pages are active. 
 
 ## 13. Exact resume point
 
-On `research/dd001-alignment-upper-bound`, implement issue #22 from merged baseline `007dc15`: write the relaxation ADR/proof, validate against all exact tiny fixtures, create an independent certificate verifier with corruption rejection, and only then execute a bounded clean canonical run. Preserve the current interval until stronger evidence passes claim audit.
+On `research/dd001-alignment-upper-bound`, run the complete paper/site/verification acceptance, visually inspect the rebuilt synthesis PDF, push PR #23, resolve review and CI, merge, and verify live Pages. Then start DD-002 selection robustness from current `main`.
 
 ## 14. Recommended next three tasks
 
-1. DD-001: certify an alignment-preserving canonical relaxation or exact scoped barrier.
+1. DD-001: merge and deploy the completed canonical certificate.
 2. DD-002: execute the registered equilibrium-selection robustness catalogue.
 3. DD-003: execute the bounded heterogeneous-source-accuracy census.
 

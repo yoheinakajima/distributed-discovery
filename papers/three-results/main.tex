@@ -63,6 +63,9 @@ graphs, complete pairwise report moments yield a bounded null, while the average
 pair-agreement scalar is insufficient: two networks both have agreement $3/4$
 but discovery $8/9$ and $31/36$. We connect these results through a common
 information--action framework and preserve their distinct evidence boundaries.
+For the canonical private-team fixture, an alignment-preserving exact relaxation
+also meets the direct-policy lower bound, proving direct clue-following globally
+optimal without communication.
 The paper makes no claim of a new field or universal law.
 \end{abstract}
 
@@ -208,7 +211,7 @@ checkers actually reject altered evidence. These practices do not replace proof
 or peer review; they make the boundary of each claim inspectable.
 
 \section{Private roles without communication}
-% Claims: DD-C-0018, DD-C-0019, DD-C-0020, DD-C-0021, DD-C-0022, DD-C-0023, DD-C-0024, DD-C-0025, DD-C-0026, DD-C-0027, DD-C-0028, DD-C-0036
+% Claims: DD-C-0018, DD-C-0019, DD-C-0020, DD-C-0021, DD-C-0022, DD-C-0023, DD-C-0024, DD-C-0025, DD-C-0026, DD-C-0027, DD-C-0028, DD-C-0037, DD-C-0038
 \subsection{The zero-communication team problem}
 
 The target is uniform on $M$ labels. Agent $i$ receives clue $X_i$ with
@@ -313,28 +316,32 @@ alignment, which enters the product of failure probabilities. The barrier is not
 a proof that exact optimization is impossible; it identifies what a valid next
 quotient or relaxation must preserve.
 
-\subsection{The exact canonical interval}
+\subsection{The exact canonical optimum}
 
 For $(M,N,p)=(16,8,1/5)$, direct clue-following is feasible and has exact value
 \[
 1-(4/5)^8=\frac{325089}{390625}=0.83222784.
 \]
 The direct profile is an exact coordinate fixed point, and 17 additional declared
-starts converged to the same value (DD-C-0022). This is a heuristic lower-bound
-observation, not a global-optimality proof.
+starts converged to the same value (DD-C-0022). Those searches alone were only
+heuristic lower-bound evidence. The new proof instead retains the aligned vector
+of incoming policy counts across all agents inside each target column. It lower-
+bounds each local failure factor, exactly minimizes their product by column
+resource, and then relaxes only cross-target feasibility while preserving the
+globally necessary incoming-count total (DD-C-0037).
 
-Two exact pooled-frontier representations and a third partition verifier certify
-the top-eight endpoint. Combined with the emulation proposition, they give
+The resulting exact Bellman certificate assigns resource eight to each of the
+sixteen targets and lower-bounds average failure by $(4/5)^8$. Hence
 \[
-\boxed{
-\frac{325089}{390625}
-\le T_8(16,1/5)\le
-\frac{860391662035297}{1001129150390625}}
+\boxed{T_8(16,1/5)=\frac{325089}{390625}=0.83222784.}
 \]
-with exact gap $27224111644672/1001129150390625\approx0.0271934061994395$
-(DD-C-0036). The upper endpoint uses pooled reports and assignment authority. It
-is a valid upper bound, not a constructed private-team value; attainability,
-tightness, and the global optimum remain open.
+The upper bound meets the attainable direct value, proving global optimality for
+deterministic teams. An ex-ante randomized policy is a mixture of deterministic
+profiles, so the randomized optimum is identical (DD-C-0038). A separate verifier
+checks every Bellman inequality and equality witness without optimizing and
+rejects a corrupted final value. The former pooled upper endpoint remains a valid
+organizational benchmark, but its exact gap has now been closed for this frozen
+private-team problem.
 
 \section{Information disclosure under strategic search}
 % Claims: DD-C-0029, DD-C-0030, DD-C-0031
@@ -471,7 +478,7 @@ exactly:
 \toprule
 Study & Primitive changed & Mathematical object & Main boundary\\
 \midrule
-DD-001 roles & ex-ante policy assignment & common-payoff team frontier & canonical alignment unresolved\\
+DD-001 roles & ex-ante policy assignment & common-payoff team frontier & canonical optimum exact; other parameters open\\
 DD-002 disclosure & public signal partition & posterior game plus selection & reversal is selection-dependent\\
 DD-003 sources & joint evidence provenance & colored/bipartite source law & pairwise result is a bounded null\\
 \bottomrule
@@ -524,9 +531,10 @@ Second, the role results are asymmetric in their strength. The policy-signature
 identity and residual Hall characterization are general theorems for the finite
 symmetric clue model. The three-family phase result is general only within its
 named families. The unrestricted continuous classification is bounded to
-$M=3,4,5$, and the anti-informative examples are two fixtures. The canonical
-interval is exact, but the private-team optimizer and upper-bound tightness remain
-unknown.
+$M=3,4,5$, and the anti-informative examples are two fixtures. The alignment
+relaxation upper-bounds all symmetric-report parameters, but is not always tight;
+its equality with direct clue-following proves the optimum only at the frozen
+canonical fixture.
 
 Third, the disclosure result fixes deterministic partitions of four evidence
 states and one equilibrium selection. It does not enumerate randomized disclosure,
@@ -553,11 +561,12 @@ the synthesis is an inspectable separation of information, roles, selection, and
 source representation.
 
 \section{Research agenda}
-The immediate DD-001 task is an alignment-preserving upper relaxation. A valid
-method must retain relative target labels across agents or relax them in a proved
-direction. Individual signature-orbit sorting is not admissible. The best outcome
-would strictly improve the exact pooled upper endpoint; an independently verified
-equality or resource barrier would also be informative if its scope is explicit.
+The immediate DD-001 proof task is complete: the first alignment-preserving
+count-budget relaxation equals the direct lower bound canonically. The next
+structural question is when that relaxation is tight. It matches all 21 prior tiny
+fixtures but is strictly loose at the audited anti-informative
+$(M,N,p)=(3,2,0)$ case. Stronger per-role cross-target consistency can be added as
+a hierarchy only when a new question requires it.
 
 For DD-002, the next step is selection robustness, not a larger disclosure space.
 Several fully specified procedures---for example best pure, worst pure, a basin-
@@ -586,7 +595,7 @@ preserve failed and null results, use immutable run identifiers, and promote
 claims only after every proof, code, run, and test path has been audited.
 
 \section{Conclusion}
-% Claims: DD-C-0021, DD-C-0030, DD-C-0033, DD-C-0034, DD-C-0036
+% Claims: DD-C-0021, DD-C-0030, DD-C-0033, DD-C-0034, DD-C-0037, DD-C-0038
 Three finite results expose three distinct ways a collective search can depart
 from a symmetric direct protocol. Roles can reserve coverage without
 communication; public disclosure can change a selected strategic outcome even as
@@ -596,8 +605,8 @@ agreement level while producing different discovery.
 The synthesis is deliberately qualified. The role counterexample is exact but
 finite. The disclosure reversal is exact but selection-dependent. The complete
 pairwise source result is a bounded null, while only the scalar counterexample is
-refutational. The canonical private-team interval is exact, but its upper endpoint
-is not known to be attainable and the global optimum remains open.
+refutational. The canonical private-team optimum is now exact, but only for the
+frozen zero-communication dimensions and symmetric signal law.
 
 The shared lesson is architectural rather than universal: collective discovery
 depends not only on what agents know, but on how roles are assigned, how strategic

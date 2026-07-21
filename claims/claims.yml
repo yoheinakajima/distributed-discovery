@@ -792,7 +792,7 @@ claims:
     test_paths: [tests/unit/test_private_teams_model.py, tests/unit/test_alignment_bound.py, tests/integration/test_alignment_bound_benchmarks.py]
     exactness_basis: direct-policy exact formula meets a certified relaxation upper bound; the certificate is independently checked state-by-state and the randomized extension follows because an ex-ante mixture is an average of deterministic profile values
     rounding_rule: exact fraction is authoritative; decimal terminates at eight places
-    dependencies: [DD-C-0019, DD-C-0037]
+    dependencies: [DD-C-0018, DD-C-0037]
     contradicts: []
     supersedes: [DD-C-0036]
     first_added: "2026-07-20"

@@ -26,3 +26,11 @@ DD-001B threshold evidence:
 - `known-witnesses.json`: all four informative witnesses reproduced by raw and signature enumeration plus independent evaluators.
 - `anti-informative-counterexamples.json`: exact p=0 counterexamples to the all-p three-family extension.
 - `restricted-phase-table.csv` and SVG: generated threshold samples for M=3 through 8.
+
+Alignment-bound evidence:
+
+- Primary run: `../../../results/verified/20260721T022739Z_DD-001_358cb1eb_cd16846ba5/`.
+- `canonical-alignment-bound-certificate.json`: exact two-level Bellman certificate proving the canonical upper bound equals `325089/390625`.
+- `independent-verification.json`: statewise inequality/equality audit plus corruption rejection without an optimizer call.
+- `tiny-alignment-bounds.csv` and `anti-informative-alignment-bounds.csv`: 21 exact tiny matches and two upper-valid anti-informative checks, including one strict gap.
+- `cost-audit.json`: 0.39-second bounded execution, state/transition counts, and certificate size.

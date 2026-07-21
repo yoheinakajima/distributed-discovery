@@ -25,6 +25,7 @@ RUNS = {
     "disclosure": "20260720T225848Z_DD-002_94607423_e29b1460ae",
     "sources": "20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1",
     "canonical": "20260721T012208Z_DD-000_8e4b55e2_e8321d1048",
+    "alignment": "20260721T022739Z_DD-001_358cb1eb_cd16846ba5",
 }
 GENERATOR = "distributed_discovery.papers.build_three_results"
 
@@ -266,19 +267,19 @@ def _evidence_table(claims: dict[str, dict[str, Any]], source_hash: str) -> str:
         ),
         (
             "Canonical private-team optimum",
-            "DD-C-0036",
-            "interval / open optimum",
-            "verified / unresolved",
+            "DD-C-0038",
+            "exact optimum",
+            "independently reproduced",
         ),
     ]
-    for _, claim_id, _, expected in rows[:-1]:
+    for _, claim_id, _, expected in rows:
         actual = str(claims[claim_id]["status"]).replace("-", " ")
         if actual != expected:
             raise RuntimeError(f"evidence table status mismatch for {claim_id}: {actual}")
     rendered = [
         "% Generated evidence asset; do not edit by hand.",
         "% Source: claims/claims.yml",
-        "% Claim IDs: DD-C-0021, DD-C-0023, DD-C-0030, DD-C-0033, DD-C-0036",
+        "% Claim IDs: DD-C-0021, DD-C-0023, DD-C-0030, DD-C-0033, DD-C-0038",
         f"% Generator: {GENERATOR}",
         f"% Input SHA-256: {source_hash}",
         r"\begin{table}[H]",
@@ -306,14 +307,14 @@ def _evidence_table(claims: dict[str, dict[str, Any]], source_hash: str) -> str:
             r"reproduced & No counterexample in 51 graphs; no sufficiency theorem.\\"
         ),
         (
-            r"Canonical private-team optimum & DD-C-0036\newline interval / open & verified / "
-            r"unresolved & Exact endpoints; upper attainability and tightness unresolved.\\"
+            r"Canonical private-team optimum & DD-C-0038\newline exact optimum & independently "
+            r"reproduced & Frozen zero-communication fixture; not an all-parameter theorem.\\"
         ),
         r"\bottomrule",
         r"\end{tabularx}",
         (
             r"\ArtifactNote{Source: \path{claims/claims.yml}; claims: DD-C-0021, "
-            r"DD-C-0023, DD-C-0030, DD-C-0033, DD-C-0036; generator: \path{"
+            r"DD-C-0023, DD-C-0030, DD-C-0033, DD-C-0038; generator: \path{"
             f"{GENERATOR}"
             r"}; input SHA-256 prefix: \texttt{"
             f"{source_hash[:12]}"
@@ -444,6 +445,7 @@ def build(root: Path) -> dict[str, Any]:
         _checked_output(root, "disclosure", "outputs/refinement-comparisons.json"),
         _checked_output(root, "sources", "outputs/graph-registry.json"),
         _checked_output(root, "canonical", "outputs/canonical-exact-frontier-certificate.json"),
+        _checked_output(root, "alignment", "outputs/canonical-alignment-bound-certificate.json"),
     ]
     claims_path = root / "claims/claims.yml"
     claim_records = yaml.safe_load(claims_path.read_text(encoding="utf-8"))["claims"]

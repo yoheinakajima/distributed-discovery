@@ -44,6 +44,7 @@ RESULT_RUNS = {
     "disclosure": "20260720T225848Z_DD-002_94607423_e29b1460ae",
     "sources": "20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1",
     "canonical": "20260721T012208Z_DD-000_8e4b55e2_e8321d1048",
+    "alignment": "20260721T022739Z_DD-001_358cb1eb_cd16846ba5",
 }
 
 
@@ -90,6 +91,15 @@ def _result_data(root: Path) -> dict[str, Any]:
     )
     canonical = json.loads(canonical_path.read_text(encoding="utf-8"))
     interval = canonical["private_team_interval"]
+    alignment_path = _verified_output(
+        root,
+        RESULT_RUNS["alignment"],
+        "outputs/canonical-alignment-bound-certificate.json",
+    )
+    alignment = json.loads(alignment_path.read_text(encoding="utf-8"))
+    exact_optimum = alignment["result"]["discovery_upper_bound"]
+    if exact_optimum != interval["lower_fraction"]:
+        raise RuntimeError("canonical alignment upper bound does not meet the direct lower bound")
     return {
         "schema_version": 1,
         "roles": {
@@ -119,20 +129,27 @@ def _result_data(root: Path) -> dict[str, Any]:
             ],
             "claim_ids": ["DD-C-0033", "DD-C-0034"],
         },
-        "canonical_open_problem": {
-            "lower_fraction": interval["lower_fraction"],
-            "upper_fraction": interval["upper_fraction"],
-            "gap_fraction": interval["gap_fraction"],
-            "upper_attainability_claimed": interval["upper_attainability_claimed"],
-            "global_tightness_claimed": interval["global_tightness_claimed"],
-            "status": interval["canonical_private_team_optimum_status"],
-            "claim_ids": ["DD-C-0036"],
+        "canonical_exact_optimum": {
+            "optimum_fraction": exact_optimum,
+            "direct_fraction": interval["lower_fraction"],
+            "prior_pooled_upper_fraction": interval["upper_fraction"],
+            "prior_gap_fraction": interval["gap_fraction"],
+            "deterministic_status": "exact",
+            "ex_ante_randomized_status": "exact",
+            "claim_ids": ["DD-C-0037", "DD-C-0038"],
         },
         "provenance": {
             "source_runs": RESULT_RUNS,
             "source_artifacts": {
                 str(path.relative_to(root)): _sha256(path)
-                for path in [roles_path, disclosure_path, source_path, null_path, canonical_path]
+                for path in [
+                    roles_path,
+                    disclosure_path,
+                    source_path,
+                    null_path,
+                    canonical_path,
+                    alignment_path,
+                ]
             },
             "generator": "distributed_discovery.site.build._result_data",
         },
@@ -282,12 +299,15 @@ def _replacements(
         "{{SOURCE_RIGHT}}": str(results["sources"]["right_discovery_fraction"]),
         "{{NULL_GROUPS}}": str(results["sources"]["matched_pairwise_group_count"]),
         "{{NULL_DIFFERENCES}}": str(results["sources"]["matched_groups_with_different_discovery"]),
-        "{{INTERVAL_LOWER}}": str(results["canonical_open_problem"]["lower_fraction"]),
-        "{{INTERVAL_UPPER}}": str(results["canonical_open_problem"]["upper_fraction"]),
+        "{{CANONICAL_OPTIMUM}}": str(results["canonical_exact_optimum"]["optimum_fraction"]),
+        "{{PRIOR_POOLED_UPPER}}": str(
+            results["canonical_exact_optimum"]["prior_pooled_upper_fraction"]
+        ),
         "{{RESULT_RUN_ROLES}}": str(results["provenance"]["source_runs"]["roles"]),
         "{{RESULT_RUN_DISCLOSURE}}": str(results["provenance"]["source_runs"]["disclosure"]),
         "{{RESULT_RUN_SOURCES}}": str(results["provenance"]["source_runs"]["sources"]),
         "{{RESULT_RUN_CANONICAL}}": str(results["provenance"]["source_runs"]["canonical"]),
+        "{{RESULT_RUN_ALIGNMENT}}": str(results["provenance"]["source_runs"]["alignment"]),
     }
 
 

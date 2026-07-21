@@ -8,7 +8,7 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-The historical M0–M9 bootstrap, operational Milestone A, research milestones DD-001A/B, DD-002, DD-003, their integrated handoff, and continuation cycles F–G are complete and merged. Three Results PR #21 squash-merged as `007dc15b89f6d7e98e572d1b164f057c7c38c964`; post-merge CI run `29795041418` and Pages run `29795041429` passed. All five live HTML routes and `data/results.json` return HTTP 200, and the deployed Results layout has no horizontal overflow at 1280px or 390px. The public repository has five open Dependabot PRs (#1–#5), queued DD-007 issue #8, no rulesets, no milestones, and no repository homepage value. **Active integration boundary: issue #22 on `research/dd001-alignment-upper-bound`.**
+The historical M0–M9 bootstrap, operational Milestone A, research milestones DD-001A/B, DD-002, DD-003, their integrated handoff, and continuation cycles F–G are complete and merged. Cycle H has produced a passing immutable alignment certificate, claims DD-C-0037/DD-C-0038, and an exact canonical optimum of `325089/390625`; it remains active until PR #23 passes review, merges, and deploys. The public repository has five open Dependabot PRs (#1–#5), queued DD-007 issue #8, no rulesets, no milestones, and no repository homepage value. **Active integration boundary: issue #22 and draft PR #23 on `research/dd001-alignment-upper-bound`.**
 
 ## Scope
 
@@ -44,7 +44,7 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - Integrated A–E handoff: completed 2026-07-20 through PR #17.
 - F exact canonical pooled-frontier certificate: completed 2026-07-20 through PR #19.
 - G Three Results synthesis paper and public Results page: completed 2026-07-20 through PR #21.
-- H alignment-preserving DD-001 upper relaxation: active on issue #22.
+- H alignment-preserving DD-001 upper relaxation: evidence complete; PR #23 validation/merge/deploy pending.
 - I DD-002 equilibrium-selection robustness: pending H.
 - J DD-003 heterogeneous source accuracy: pending I.
 - K dependency and Dependabot maintenance: pending J.
@@ -94,7 +94,7 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - [x] Certify the exact canonical pooled frontier for budgets 1–8 by independent labeled-count and histogram/orbit evaluators, probability-mass checks, and corruption testing.
 - [x] Replace the numerical DD-001 planner benchmark with an exact certified endpoint while preserving the unresolved private-team optimum.
 - [x] Build and visually audit a separate 12–20 page Three Results paper and add a fifth public Results route with generated provenance.
-- [ ] Implement and audit an alignment-preserving DD-001 upper relaxation, documenting either a strict improvement or a certified barrier without overclaiming.
+- [x] Implement and audit an alignment-preserving DD-001 upper relaxation; its canonical upper bound equals the direct lower bound and closes the frozen zero-communication optimum.
 - [ ] Audit the DD-002 witness and all 45 refinements under at least three declared equilibrium-selection procedures.
 - [ ] Enumerate the bounded DD-003 colored-source class for a rational heterogeneous-accuracy palette and independently verify its result or bounded null.
 - [ ] Reconcile Dependabot PRs #1–#5 in separate Actions, low-risk Python, and mypy-2 maintenance branches; update grouping policy.
@@ -150,6 +150,7 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - 2026-07-21: targeted tests initially exercised a stale non-editable local wheel, and the first repository-wide lint/typecheck attempts found one unformatted test and an overly broad inferred provenance value type. Reinstalling the local wheel for the targeted check, formatting, and binding the source epoch as a string resolved these operational failures. Final acceptance passes 72 tests, strict mypy, Ruff, claim/run validation, both 12-page papers, and the five-page site.
 - 2026-07-21: PR #21 artifact run `29794725150` compiled both clean Three Results PDFs on Ubuntu but failed because the builder also required identical compiler logs. The first clean Tectonic invocation can populate its package cache, so log equality is environment-state equality rather than artifact determinism. The gate now requires identical PDF bytes, validates both logs separately for fatal/reference/citation/overfull failures, stores the second warm-cache log, and records normalized log equality as diagnostic metadata.
 - 2026-07-21: Three Results PR #21 passed CI `29794931024` and paper/site build `29794931026`, received complete no-findings review `4740643312`, and squash-merged as `007dc15b89f6d7e98e572d1b164f057c7c38c964`. Post-merge CI `29795041418` and Pages `29795041429` passed; all five pages and result provenance returned HTTP 200 with exact deployed values.
+- 2026-07-21: alignment-bound run `20260721T022739Z_DD-001_358cb1eb_cd16846ba5` started clean at commit `358cb1eb`, completed in 0.39 seconds, and passed all 21 tiny fixtures plus two anti-informative checks. Its separate verifier checks every Bellman inequality/equality witness without optimizing and rejects a zeroed final value. The canonical upper bound `325089/390625` meets direct clue-following, proving the deterministic and ex-ante randomized optima (DD-C-0037/DD-C-0038); the relaxation is not universally tight because the `M=3,N=2,p=0` case has upper `1` versus exact `11/12`.
 
 ## Decision log
 
@@ -222,7 +223,7 @@ No current local blocker. GitHub CLI is installed but unauthenticated; the conne
 
 ## Recovery and restart instructions
 
-On branch `research/dd001-alignment-upper-bound`, execute issue #22: compare relaxation families, prove the selected alignment-preserving superset, validate all tiny and anti-informative cases, commit implementation before the clean primary run, and preserve an exact independently checkable canonical certificate or barrier. Each research cycle uses its own issue and branch, commits implementation before any new clean primary run, preserves immutable run evidence, audits claims, opens a draft PR, waits for required CI, reviews the complete diff and threads, squash-merges, syncs `main`, and verifies post-merge CI/Pages before beginning the next cycle. Never rerun a completed primary configuration merely to refresh timestamps.
+On branch `research/dd001-alignment-upper-bound`, finish PR #23 acceptance: rebuild and visually audit the updated Three Results paper, build the five-page site, run `make verify`, push, review all checks/threads, merge, and verify Pages. Then sync `main`, create the DD-002 selection-robustness issue/branch, and preserve the frozen game before defining the selection catalogue. Never rerun a completed primary configuration merely to refresh timestamps.
 
 ## Outcome and retrospective
 

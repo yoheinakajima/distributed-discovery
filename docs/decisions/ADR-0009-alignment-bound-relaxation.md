@@ -1,6 +1,6 @@
 # ADR-0009: Alignment-preserving DD-001 upper relaxation
 
-**Status:** accepted for bounded exact audit (DD-001)
+**Status:** accepted and certified (DD-001)
 
 ## Context
 

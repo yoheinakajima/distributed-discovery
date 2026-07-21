@@ -8,6 +8,7 @@
 - Complete DD-001B: derive exact two-searcher territorial/hybrid/direct thresholds, certify the continuous unrestricted informative envelope for M=3,4,5, and record anti-informative counterexamples to the all-p extension.
 - Complete the bounded DD-002 deterministic-disclosure fixture: enumerate all partitions and equilibrium correspondences, verify a selection-dependent harmful-information witness, and report the full refinement census.
 - Complete the bounded DD-003 source-network fixture: enumerate 51 nonisomorphic graphs, independently reproduce a full pairwise-moment bounded null, and record exact scalar-diagnostic counterexamples.
+- Certify an alignment-preserving DD-001 count-budget upper relaxation; its canonical value meets direct clue-following at `325089/390625`, proving the deterministic and ex-ante randomized zero-communication optima.
 
 - Bootstrap the Distributed Discovery research program (DD-000).
 - Pin and reproduce canonical upstream commit `5025cc8e`; add immutable run provenance, independent finite-model checks, baseline claims, and regressions (DD-000).
