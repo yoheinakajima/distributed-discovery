@@ -1,0 +1,15 @@
+model: score-difference-mechanisms-v1
+candidates: 3
+agents: 2
+signal_accuracy: 2/3
+transfer_values: [-1, 0, 1]
+observability_regimes: [target-identity, individual-success, sole-rescue]
+equilibrium_class: pure-bayes-nash
+time_budget_seconds: 30
+resource_estimate:
+  reports_per_agent: 3
+  actions_per_agent: 3
+  report_action_deviations_per_type: 8
+  transfer_rules: 3
+  regimes: 3
+  checked_profiles: 27

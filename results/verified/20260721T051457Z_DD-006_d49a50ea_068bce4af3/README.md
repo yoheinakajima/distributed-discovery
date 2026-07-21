@@ -1,0 +1,3 @@
+# DD-006 run `20260721T051457Z_DD-006_d49a50ea_068bce4af3`
+
+Exact bounded score-difference mechanism catalogue.

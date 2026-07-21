@@ -1,0 +1,1550 @@
+[
+  {
+    "coefficient": -1,
+    "deviations": [
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "1/2",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "1/2",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "1/2",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "1/2",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "1/2",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "1/2",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "1/2",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "1/2",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "1/2",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "1/2",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "1/2",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "1/2",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "1/2",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "1/2",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "1/2",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 0,
+        "gain": "1/2",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "1/2",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "1/2",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 2,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 2,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 2,
+        "signal": 2
+      }
+    ],
+    "direct_discovery_probability": "8/9",
+    "regime": "target-identity",
+    "strict_against_joint_deviations": false,
+    "symmetric_action_profile_count": 27,
+    "truthful_direct_pure_bne": false
+  },
+  {
+    "coefficient": 0,
+    "deviations": [
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 2,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 2,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 2,
+        "signal": 2
+      }
+    ],
+    "direct_discovery_probability": "8/9",
+    "regime": "target-identity",
+    "strict_against_joint_deviations": false,
+    "symmetric_action_profile_count": 27,
+    "truthful_direct_pure_bne": true
+  },
+  {
+    "coefficient": 1,
+    "deviations": [
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "-1/2",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "-1/2",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "-1/2",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "-1/2",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "-1/2",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "-1/2",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "-1/2",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "-1/2",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "-1/2",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "-1/2",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "-1/2",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "-1/2",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "-1/2",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "-1/2",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "-1/2",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 0,
+        "gain": "-1/2",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "-1/2",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "-1/2",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 2,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 2,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 2,
+        "signal": 2
+      }
+    ],
+    "direct_discovery_probability": "8/9",
+    "regime": "target-identity",
+    "strict_against_joint_deviations": false,
+    "symmetric_action_profile_count": 27,
+    "truthful_direct_pure_bne": true
+  },
+  {
+    "coefficient": -1,
+    "deviations": [
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "1/2",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "1/2",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "1/2",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "1/2",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "1/2",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "1/2",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "1/2",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "1/2",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "1/2",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "1/2",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "1/2",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "1/2",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "1/2",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "1/2",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 0,
+        "gain": "1/2",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "1/2",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 0,
+        "gain": "1/2",
+        "report": 2,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "1/2",
+        "report": 2,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 2,
+        "signal": 2
+      }
+    ],
+    "direct_discovery_probability": "8/9",
+    "regime": "individual-success",
+    "strict_against_joint_deviations": false,
+    "symmetric_action_profile_count": 8,
+    "truthful_direct_pure_bne": false
+  },
+  {
+    "coefficient": 0,
+    "deviations": [
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 2,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 2,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 2,
+        "signal": 2
+      }
+    ],
+    "direct_discovery_probability": "8/9",
+    "regime": "individual-success",
+    "strict_against_joint_deviations": false,
+    "symmetric_action_profile_count": 27,
+    "truthful_direct_pure_bne": true
+  },
+  {
+    "coefficient": 1,
+    "deviations": [
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "-1/2",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "-1/2",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "-1/2",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "-1/2",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "-1/2",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "-1/2",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "-1/2",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "-1/2",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "-1/2",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "-1/2",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "-1/2",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "-1/2",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "-1/2",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "-1/2",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 0,
+        "gain": "-1/2",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "-1/2",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 0,
+        "gain": "-1/2",
+        "report": 2,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "-1/2",
+        "report": 2,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 2,
+        "signal": 2
+      }
+    ],
+    "direct_discovery_probability": "8/9",
+    "regime": "individual-success",
+    "strict_against_joint_deviations": false,
+    "symmetric_action_profile_count": 1,
+    "truthful_direct_pure_bne": true
+  },
+  {
+    "coefficient": -1,
+    "deviations": [
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "1/2",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "1/2",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "1/2",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "1/2",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "1/2",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "1/2",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "1/2",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "1/2",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "1/2",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "1/2",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "1/2",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "1/2",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "1/2",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "1/2",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 0,
+        "gain": "1/2",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "1/2",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 0,
+        "gain": "1/2",
+        "report": 2,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "1/2",
+        "report": 2,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 2,
+        "signal": 2
+      }
+    ],
+    "direct_discovery_probability": "8/9",
+    "regime": "sole-rescue",
+    "strict_against_joint_deviations": false,
+    "symmetric_action_profile_count": 8,
+    "truthful_direct_pure_bne": false
+  },
+  {
+    "coefficient": 0,
+    "deviations": [
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 2,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 2,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 2,
+        "signal": 2
+      }
+    ],
+    "direct_discovery_probability": "8/9",
+    "regime": "sole-rescue",
+    "strict_against_joint_deviations": false,
+    "symmetric_action_profile_count": 27,
+    "truthful_direct_pure_bne": true
+  },
+  {
+    "coefficient": 1,
+    "deviations": [
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "-1/2",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "-1/2",
+        "report": 0,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "-1/2",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "-1/2",
+        "report": 1,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "0",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 1,
+        "gain": "-1/2",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 2,
+        "gain": "-1/2",
+        "report": 2,
+        "signal": 0
+      },
+      {
+        "action": 0,
+        "gain": "-1/2",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "-1/2",
+        "report": 0,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "-1/2",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "-1/2",
+        "report": 1,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "-1/2",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 1,
+        "gain": "0",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 2,
+        "gain": "-1/2",
+        "report": 2,
+        "signal": 1
+      },
+      {
+        "action": 0,
+        "gain": "-1/2",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "-1/2",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 0,
+        "signal": 2
+      },
+      {
+        "action": 0,
+        "gain": "-1/2",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "-1/2",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 1,
+        "signal": 2
+      },
+      {
+        "action": 0,
+        "gain": "-1/2",
+        "report": 2,
+        "signal": 2
+      },
+      {
+        "action": 1,
+        "gain": "-1/2",
+        "report": 2,
+        "signal": 2
+      },
+      {
+        "action": 2,
+        "gain": "0",
+        "report": 2,
+        "signal": 2
+      }
+    ],
+    "direct_discovery_probability": "8/9",
+    "regime": "sole-rescue",
+    "strict_against_joint_deviations": false,
+    "symmetric_action_profile_count": 1,
+    "truthful_direct_pure_bne": true
+  }
+]

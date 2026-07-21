@@ -987,3 +987,24 @@ claims:
     first_added: "2026-07-21"
     last_checked: "2026-07-21"
     notes: The reported gap is exact only for the registered finite fixture.
+  - id: DD-C-0048
+    study_id: DD-006
+    short_name: score-difference-weak-implementation-boundary
+    statement: In the nine registered two-agent score-difference mechanisms, all realized transfers are exactly budget balanced; each positive-coefficient regime makes truthful reporting with direct action a weak pure Bayesian Nash equilibrium with discovery probability 8/9, and none makes that profile strict against every joint report-action deviation.
+    scope: ADR-0012's two agents, three equiprobable targets, conditionally independent 2/3-accurate signals, deterministic direct recommendations, three named score regimes, coefficients -1, 0, and 1, and pure Bayesian Nash deviations only; it is not a characterization of arbitrary transfer tables, mixed equilibria, dominant strategies, or other observability models.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exact-rational-deviation-census-with-independent-ex-post-balance-check
+    source_reference: results/verified/20260721T051457Z_DD-006_d49a50ea_068bce4af3/outputs/mechanism-catalogue.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/mechanisms/model.py, src/distributed_discovery/mechanisms/verification.py]
+    run_ids: [20260721T051457Z_DD-006_d49a50ea_068bce4af3]
+    test_paths: [tests/unit/test_mechanisms.py]
+    exactness_basis: all 9 registered mechanism-regime pairs, 3 signal types, and all 9 joint report-action deviations per type are evaluated using Fraction arithmetic; every realized report-action-target tuple is separately checked for zero-sum transfers
+    rounding_rule: exact fractions
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: Weak equilibrium does not establish strict incentives; zero-coefficient cases are weakly implementable only by indifference.
