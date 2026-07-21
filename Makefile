@@ -81,6 +81,9 @@ dd006-mechanisms:
 dd006-general-frontier:
 	$(PY) -m distributed_discovery.mechanisms.general_study
 
+dd006b-joint-mechanism:
+	$(PY) -m distributed_discovery.mechanisms.joint_study
+
 dd008-acquisition:
 	$(PY) -m distributed_discovery.acquisition.study
 
