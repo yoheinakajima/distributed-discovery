@@ -8,6 +8,26 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
+### Institutional-theory continuation (current, 2026-07-21)
+
+`main` is `29c37e347a4cbc74a84cd3a23e4105789f7309e9` after PR #45. The prior
+N–S queue is complete: research-library PR #36, DD-004 PR #38, DD-005 PR #40,
+DD-006 PR #42, DD-007 PR #43, and integration PR #45 are merged. The live
+ledger has 49 claims (23 independently reproduced, 12 verified, 7 derived, 3
+checked, 3 sourced, and 1 proposed), 21 manifests of which 19 are passing,
+60 Python source files, 19 public HTML routes, 13 generated data files, and
+two project-authored papers. DD-007 remains synthetic-only. Settings issue #32
+remains operational-only because the one required `gh auth status` check found
+no authenticated CLI session; no settings mutation is authorized in this state.
+
+The active sequence is T handoff reconciliation (issue #46), U DD-006A general
+transfer frontier, V DD-008 endogenous evidence acquisition, W Discovery Stack
+synthesis paper, X interactive labs, then the institutional-program handoff.
+Each research milestone requires a bounded registration, immutable evidence,
+independent verification, calibrated claims, CI, merge, and Pages validation.
+
+### Historical state
+
 The historical M0–M9 bootstrap, operational Milestone A, research milestones DD-001A/B, bounded DD-002/DD-003, their integrated handoff, and continuation cycles F–M are complete. PR #34 merged as `a3b1f760ff6b4d3d580696e537e5d3f45caf1ed3`; its source checkout is clean on `main`. Claims stop at DD-C-0044; the ledger has 44 claims and 17 immutable manifests. The one authorized settings attempt failed before mutation because GitHub CLI is unauthenticated and is recorded in issue #32. The start-of-phase `gh auth status` check on 2026-07-20 again found no usable CLI session; no settings mutation or retry is authorized.
 
 **Active program phase — research library and bounded extensions.** The next sequence is: (N) build and deploy the public research library; (O) execute/verify DD-004 sequential perfect-elimination baseline; (P) execute/verify DD-005 overlapping-coverage frontiers; (Q) execute/verify a newly registered DD-006 reporting-and-reward fixture; (R) execute/verify DD-007 synthetic audit schema, recovery grid, and identification counterexamples; and (S) integrate the resulting program materials. Each phase requires a bounded issue, coherent branch/PR, immutable evidence, independent check where applicable, claim audit, CI, merge, Pages deployment, and live-route validation.
