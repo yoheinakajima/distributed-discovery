@@ -1,0 +1,7 @@
+{
+  "frontier_rows": 60,
+  "independent_verifier": true,
+  "maximum_margin": "5/72",
+  "strict_rows": 16,
+  "weak_rows": 16
+}

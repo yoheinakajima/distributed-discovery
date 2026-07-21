@@ -1,0 +1,29 @@
+{
+  "command": "make dd006b-joint-mechanism",
+  "config_hash_sha256": "588547889c38fa9d6f84d05ceb94f48b6003b930bc61c7f3dd072d3cb995871c",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-21T16:44:42.600308Z",
+  "exit_status": 0,
+  "git_commit": "25478444046e090a1d728a9b7b8421c78269a654",
+  "git_dirty": false,
+  "input_hashes": {
+    "src/distributed_discovery/mechanisms/joint.py": "9d555ec05a3cbdd394af008ad6822a29f0827ab33858977c13687c8a377c4215",
+    "src/distributed_discovery/mechanisms/joint_study.py": "a62463335ee7ada6e7ccca5ee62e9bd46381bab888087c105f07755292ded768",
+    "src/distributed_discovery/mechanisms/joint_verification.py": "44f8af9f8e4b2997d5caf08fa4214dfc3c21ffb4f9a1618204379ab8afb30d91",
+    "studies/DD-006-discovery-mechanisms/configs/joint-mechanism.yml": "7324c0656f8e88fd270e1c6a72e367aecae107289d611c3eef59a6759d3b46d8"
+  },
+  "outputs": {
+    "outputs/joint-mechanism-frontier.json": "824a14e38dca03ca375acd882958321d5f1b0f459d9a6ca60c40b7f7259e14c0",
+    "outputs/joint-mechanism-summary.json": "f620b02b3a1b77cf1fe65f08a6332293479dcfba8b0a2c854ea2954480f0bb9b"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "run_id": "20260721T164428Z_DD-006B_25478444_588547889c",
+  "schema_version": 1,
+  "started_utc": "2026-07-21T16:44:28.908217Z",
+  "study_id": "DD-006B",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}
