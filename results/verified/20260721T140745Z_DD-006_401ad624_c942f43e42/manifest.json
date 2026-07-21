@@ -1,0 +1,29 @@
+{
+  "command": "make dd006-general-frontier",
+  "config_hash_sha256": "c942f43e42e1bf7fef8c0486ae0ad8ce8f4d48cb85f20c328e9084febb38abe7",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-21T14:07:55.593191Z",
+  "exit_status": 0,
+  "git_commit": "401ad6243c0489da905501640dd091d5646e562a",
+  "git_dirty": true,
+  "input_hashes": {
+    "src/distributed_discovery/mechanisms/general.py": "098376d5c8927f702ea38f0cc18defadda0a4f2f48c9f42339c566ed5df1faa7",
+    "src/distributed_discovery/mechanisms/general_study.py": "1a323e6d34ca87cfda6c90250e69734ee70a3505b9ad36093cbc1abe27584d1a",
+    "src/distributed_discovery/mechanisms/general_verification.py": "5fa61a000aec10b2f19d5cfcf21e298354928936fe834c06976e6429ec8f2f0c",
+    "studies/DD-006-discovery-mechanisms/configs/general-transfer-frontier.yml": "1c88d6e3f1f8375d6835dd141775976da1af74425205c9982d86e5b3277e18f3"
+  },
+  "outputs": {
+    "outputs/general-transfer-frontier.json": "5757a9961ae0dda1d23100aa750cb3c7057d588c1c2484739b7074cadd032c8d",
+    "outputs/general-transfer-summary.json": "a40fb426cca8d8198c2f17b2ce9308bcf12ff34db4b2fc1a353741801e57cf8d"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "run_id": "20260721T140745Z_DD-006_401ad624_c942f43e42",
+  "schema_version": 1,
+  "started_utc": "2026-07-21T14:07:45.157052Z",
+  "study_id": "DD-006",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}
