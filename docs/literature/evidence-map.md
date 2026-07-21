@@ -53,3 +53,18 @@ Whether these choices constitute a novel theoretical contribution remains unasse
 - DD-004/DD-005 should test adaptive/submodular conditions before borrowing approximation results.
 - DD-006 inherits covering-game, potential-game, marginal-contribution, and mechanism-design constraints.
 - DD-007 overlaps science-of-science work on experiment choice and redundancy; identification claims require stronger data than descriptive concentration.
+
+## DD-011 experimental-design map
+
+| Proposed margin | Established adjacent work | Remaining status |
+|---|---|---|
+| Costly independent acquisition | Strategic information-acquisition experiments; priority/search games | DD-011 supplies a proposed contrast and synthetic power only. |
+| Attribution and disclosure | Informational public-goods and organizational-communication experiments | The sign and magnitude of H2/H7 remain experimental predictions. |
+| Visible allocation | Coordination and feedback experiments | Action diversity is a project-specific operational outcome, not a literature novelty claim. |
+| Coverage and joint rewards | Public-goods and group-incentive experiments | DD-006B is exact model evidence; behavioral compliance is unknown. |
+| Factorial intervention bundle | Fractional-factorial design methodology | Twenty selected cells identify eight contrasts; unregistered higher-order interactions remain aliased. |
+| Sample size and stopping | Preregistration and sample-size-justification guidance | Reported power is conditional synthetic sensitivity, not real-world feasibility. |
+
+The literature supports the relevance of each broad treatment family and also makes
+clear that none is unprecedented. DD-011's specific contribution is an auditable
+crosswalk from the project's exact models to a bounded proposed design.

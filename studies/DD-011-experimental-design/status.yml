@@ -1,0 +1,6 @@
+study_id: DD-011
+status: active
+evidence_status: design-frozen-before-synthetic-primary-run
+primary_run: null
+claim_ids: []
+no_human_data: true

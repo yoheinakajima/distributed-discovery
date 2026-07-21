@@ -1,0 +1,8 @@
+study_id: DD-011
+title: Experimental Design and Power
+status: active
+evidence_status: synthetic-design-only
+summary: Preregistration-ready bounded design and conditional synthetic power package; no human data.
+route: research/dd-011.html
+public: true
+no_human_data: true
