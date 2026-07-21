@@ -1,0 +1,29 @@
+{
+  "command": "make dd008a-acquisition",
+  "config_hash_sha256": "06307caab4cd64fbe19012caddca8ccc801e4381c1e7f62bbfd1ca39cdbd4604",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-21T16:30:51.859699Z",
+  "exit_status": 0,
+  "git_commit": "8b70668bf0f29acff4f83942a899c5a4f1d2bde3",
+  "git_dirty": true,
+  "input_hashes": {
+    "src/distributed_discovery/acquisition/n_agent.py": "bff91ccc5ff28933f01bfc6f68dcb24d25f45fd1d3bd0c7dbf66de47fd63af81",
+    "src/distributed_discovery/acquisition/n_agent_study.py": "1a576f5fd8e790c0db8a2d808537a07c0c6b0dd15c5a98b87cb5075e4dc89db7",
+    "src/distributed_discovery/acquisition/n_agent_verification.py": "ab1851434fbbc027824bdda75693f3b68900581823097cf3d8bb807d67ffa2b9",
+    "studies/DD-008A-n-agent-evidence/configs/census.yml": "497951a768e5bf219f23407c3dfe6c6ccc6ef1afe057f7b888a689e951fe844a"
+  },
+  "outputs": {
+    "outputs/n-agent-census.json": "6df75b7bf2b1f03687d4182ab4e5ab91711d279777bee66769aa7461bf558e7b",
+    "outputs/n-agent-summary.json": "729c15c1d2deab28d756c4ec944dcd02de27b1699ead5f4c4b0af411037567a5"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "run_id": "20260721T163030Z_DD-008A_8b70668b_06307caab4",
+  "schema_version": 1,
+  "started_utc": "2026-07-21T16:30:30.473039Z",
+  "study_id": "DD-008A",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

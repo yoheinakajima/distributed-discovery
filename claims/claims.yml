@@ -1079,10 +1079,10 @@ claims:
     claim_type: computational-result
     status: independently-reproduced
     source_type: closed-form-binomial-accounting-with-direct-target-signal-enumeration
-    source_reference: results/verified/20260721T153110Z_DD-008A_637f2b94_06307caab4/outputs/n-agent-census.json
+    source_reference: results/verified/20260721T163030Z_DD-008A_8b70668b_06307caab4/outputs/n-agent-census.json
     proof_path: null
     implementation_paths: [src/distributed_discovery/acquisition/n_agent.py, src/distributed_discovery/acquisition/n_agent_verification.py]
-    run_ids: [20260721T153110Z_DD-008A_637f2b94_06307caab4]
+    run_ids: [20260721T163030Z_DD-008A_8b70668b_06307caab4]
     test_paths: [tests/unit/test_n_agent_acquisition.py]
     exactness_basis: Fraction binomial sums and exhaustive target/source-signal enumeration agree in every registered cell, including total prize accounting.
     rounding_rule: exact fractions

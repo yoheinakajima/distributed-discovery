@@ -430,7 +430,7 @@ def _render(
             short_name=html.escape(str(claim["short_name"])),
             statement=html.escape(str(claim["statement"])),
             scope=html.escape(str(claim["scope"])),
-            suffix=str(claim["study_id"])[-3:],
+            suffix=str(claim["study_id"])[3:].lower(),
             study_id=html.escape(str(claim["study_id"])),
         )
         for claim in claims

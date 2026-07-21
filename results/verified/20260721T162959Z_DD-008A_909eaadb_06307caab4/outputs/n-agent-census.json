@@ -1,0 +1,6714 @@
+[
+  {
+    "accuracy": "1/2",
+    "agents": 2,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 2,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      }
+    ],
+    "cost": "0",
+    "independence_gap": 1,
+    "planner_k": [
+      1,
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 2,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "17/24",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 2,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/24",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 2,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "2/3",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 2,
+        "net_value": "7/12",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/12",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 2,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "5/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 2,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/8",
+    "independence_gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 2,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "7/12",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 2,
+        "net_value": "5/12",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/6",
+    "independence_gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 2,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 2,
+        "net_value": "1/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/4",
+    "independence_gap": 1,
+    "planner_k": [
+      0,
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 2,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "8/9",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 2,
+        "net_value": "8/9",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      }
+    ],
+    "cost": "0",
+    "independence_gap": 1,
+    "planner_k": [
+      1,
+      2
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 2,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "61/72",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 2,
+        "net_value": "29/36",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/24",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 2,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "29/36",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 2,
+        "net_value": "13/18",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/12",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 2,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "55/72",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 2,
+        "net_value": "23/36",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/8",
+    "independence_gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 2,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "13/18",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 2,
+        "net_value": "5/9",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/6",
+    "independence_gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 2,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "23/36",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 2,
+        "net_value": "7/18",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/4",
+    "independence_gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 2,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "15/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 2,
+        "net_value": "15/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      }
+    ],
+    "cost": "0",
+    "independence_gap": 1,
+    "planner_k": [
+      1,
+      2
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 2,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "43/48",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 2,
+        "net_value": "41/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/24",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 2,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "41/48",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 2,
+        "net_value": "37/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/12",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 2,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "13/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 2,
+        "net_value": "11/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/8",
+    "independence_gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 2,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "37/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 2,
+        "net_value": "29/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/6",
+    "independence_gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 2,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "11/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 2,
+        "net_value": "7/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/4",
+    "independence_gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 3,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "7/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 3,
+        "net_value": "7/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      }
+    ],
+    "cost": "0",
+    "independence_gap": 1,
+    "planner_k": [
+      2,
+      3
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 3,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "17/24",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "19/24",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 3,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/24",
+    "independence_gap": 0,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 3,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "17/24",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 3,
+        "net_value": "5/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/12",
+    "independence_gap": 1,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 3,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "5/8",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "5/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 3,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/8",
+    "independence_gap": 1,
+    "planner_k": [
+      1,
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 3,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "7/12",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "13/24",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 3,
+        "net_value": "3/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/6",
+    "independence_gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 3,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "3/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 3,
+        "net_value": "1/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/4",
+    "independence_gap": 1,
+    "planner_k": [
+      0,
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 3,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "8/9",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "26/27",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 3,
+        "net_value": "26/27",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      }
+    ],
+    "cost": "0",
+    "independence_gap": 1,
+    "planner_k": [
+      2,
+      3
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 3,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "61/72",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "95/108",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 3,
+        "net_value": "181/216",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/24",
+    "independence_gap": 0,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 3,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "29/36",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "43/54",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 3,
+        "net_value": "77/108",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/12",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 3,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "55/72",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "77/108",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 3,
+        "net_value": "127/216",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/8",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 3,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "13/18",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "17/27",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 3,
+        "net_value": "25/54",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/6",
+    "independence_gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 3,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "23/36",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "25/54",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 3,
+        "net_value": "23/108",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/4",
+    "independence_gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 3,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "15/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "63/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 3,
+        "net_value": "63/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      }
+    ],
+    "cost": "0",
+    "independence_gap": 1,
+    "planner_k": [
+      2,
+      3
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 3,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "43/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "173/192",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 3,
+        "net_value": "55/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/24",
+    "independence_gap": 0,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 3,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "41/48",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "157/192",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 3,
+        "net_value": "47/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/12",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 3,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "13/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "47/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 3,
+        "net_value": "39/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/8",
+    "independence_gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 3,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "37/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "125/192",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 3,
+        "net_value": "31/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/6",
+    "independence_gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 3,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "11/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "31/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 3,
+        "net_value": "15/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/4",
+    "independence_gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 4,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "7/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "15/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 4,
+        "net_value": "15/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      }
+    ],
+    "cost": "0",
+    "independence_gap": 1,
+    "planner_k": [
+      3,
+      4
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 4,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "17/24",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "19/24",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "13/16",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 4,
+        "net_value": "37/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/24",
+    "independence_gap": 0,
+    "planner_k": [
+      3
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 4,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "17/24",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "11/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 4,
+        "net_value": "29/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/12",
+    "independence_gap": 0,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 4,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "5/8",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "5/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "9/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 4,
+        "net_value": "7/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/8",
+    "independence_gap": 1,
+    "planner_k": [
+      1,
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 4,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "7/12",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "13/24",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "7/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 4,
+        "net_value": "13/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/6",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 4,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "3/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "3/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 4,
+        "net_value": "-1/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/4",
+    "independence_gap": 1,
+    "planner_k": [
+      0,
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 4,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "8/9",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "26/27",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "80/81",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 4,
+        "net_value": "80/81",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      }
+    ],
+    "cost": "0",
+    "independence_gap": 1,
+    "planner_k": [
+      3,
+      4
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 4,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "61/72",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "95/108",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "559/648",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 4,
+        "net_value": "133/162",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/24",
+    "independence_gap": 0,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 4,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "29/36",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "43/54",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "239/324",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 4,
+        "net_value": "53/81",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/12",
+    "independence_gap": -1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 4,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "55/72",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "77/108",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "397/648",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 4,
+        "net_value": "79/162",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/8",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 4,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "13/18",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "17/27",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "79/162",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 4,
+        "net_value": "26/81",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/6",
+    "independence_gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 4,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "23/36",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "25/54",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "77/324",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 4,
+        "net_value": "-1/81",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/4",
+    "independence_gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 4,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "15/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "63/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "255/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 4,
+        "net_value": "255/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      }
+    ],
+    "cost": "0",
+    "independence_gap": 1,
+    "planner_k": [
+      3,
+      4
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 4,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "43/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "173/192",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "223/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 4,
+        "net_value": "637/768",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/24",
+    "independence_gap": 0,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 4,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "41/48",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "157/192",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "191/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 4,
+        "net_value": "509/768",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/12",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 4,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "13/16",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "47/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "159/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 4,
+        "net_value": "127/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/8",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 4,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "37/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "125/192",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "127/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 4,
+        "net_value": "253/768",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/6",
+    "independence_gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 4,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "11/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "31/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "63/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 4,
+        "net_value": "-1/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/4",
+    "independence_gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 5,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "7/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "15/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "31/32",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 5,
+        "net_value": "31/32",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      }
+    ],
+    "cost": "0",
+    "independence_gap": 1,
+    "planner_k": [
+      4,
+      5
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 5,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "17/24",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "19/24",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "13/16",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "77/96",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 5,
+        "net_value": "73/96",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/24",
+    "independence_gap": 0,
+    "planner_k": [
+      3
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 5,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "17/24",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "11/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "61/96",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 5,
+        "net_value": "53/96",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/12",
+    "independence_gap": 0,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 5,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "5/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "5/8",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "9/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "15/32",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 5,
+        "net_value": "11/32",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/8",
+    "independence_gap": 0,
+    "planner_k": [
+      1,
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 5,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "7/12",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "13/24",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "7/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "29/96",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 5,
+        "net_value": "13/96",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/6",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 5,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "3/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "3/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "-1/32",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 5,
+        "net_value": "-9/32",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/4",
+    "independence_gap": 1,
+    "planner_k": [
+      0,
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 5,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "8/9",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "26/27",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "80/81",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "242/243",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 5,
+        "net_value": "242/243",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      }
+    ],
+    "cost": "0",
+    "independence_gap": 1,
+    "planner_k": [
+      4,
+      5
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 5,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "61/72",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "95/108",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "559/648",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "403/486",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 5,
+        "net_value": "1531/1944",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/24",
+    "independence_gap": -1,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 5,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "29/36",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "43/54",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "239/324",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "161/243",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 5,
+        "net_value": "563/972",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/12",
+    "independence_gap": -1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 5,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "55/72",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "77/108",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "397/648",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "241/486",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 5,
+        "net_value": "721/1944",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/8",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 5,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "13/18",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "17/27",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "79/162",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "80/243",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 5,
+        "net_value": "79/486",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/6",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 5,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "23/36",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "25/54",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "77/324",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "-1/243",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 5,
+        "net_value": "-247/972",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/4",
+    "independence_gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 5,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "15/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "63/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "255/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "1023/1024",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 5,
+        "net_value": "1023/1024",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      }
+    ],
+    "cost": "0",
+    "independence_gap": 1,
+    "planner_k": [
+      4,
+      5
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 5,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "43/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "173/192",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "223/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "2557/3072",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 5,
+        "net_value": "2429/3072",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/24",
+    "independence_gap": 0,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 5,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "41/48",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "157/192",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "191/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "2045/3072",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 5,
+        "net_value": "1789/3072",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/12",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 5,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "13/16",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "47/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "159/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "511/1024",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 5,
+        "net_value": "383/1024",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/8",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 5,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "37/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "125/192",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "127/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "1021/3072",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 5,
+        "net_value": "509/3072",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/6",
+    "independence_gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 5,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "11/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "31/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "63/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "-1/1024",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 5,
+        "net_value": "-257/1024",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/4",
+    "independence_gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 6,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "7/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "15/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "31/32",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 5,
+        "net_value": "63/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 6,
+        "net_value": "63/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      }
+    ],
+    "cost": "0",
+    "independence_gap": 1,
+    "planner_k": [
+      5,
+      6
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 6,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "17/24",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "19/24",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "13/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "77/96",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 5,
+        "net_value": "149/192",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 6,
+        "net_value": "47/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/24",
+    "independence_gap": -1,
+    "planner_k": [
+      3
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 6,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "17/24",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "11/16",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "61/96",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 5,
+        "net_value": "109/192",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 6,
+        "net_value": "31/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/12",
+    "independence_gap": -1,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 6,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "5/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "5/8",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "9/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "15/32",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 5,
+        "net_value": "23/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 6,
+        "net_value": "15/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/8",
+    "independence_gap": 0,
+    "planner_k": [
+      1,
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 6,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "7/12",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "13/24",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "7/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "29/96",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 5,
+        "net_value": "29/192",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 6,
+        "net_value": "-1/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/6",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 6,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "3/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "3/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "-1/32",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 5,
+        "net_value": "-17/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 6,
+        "net_value": "-33/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/4",
+    "independence_gap": 1,
+    "planner_k": [
+      0,
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 6,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "8/9",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "26/27",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "80/81",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "242/243",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 5,
+        "net_value": "728/729",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 6,
+        "net_value": "728/729",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      }
+    ],
+    "cost": "0",
+    "independence_gap": 1,
+    "planner_k": [
+      5,
+      6
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 6,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "61/72",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "95/108",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "559/648",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "403/486",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 5,
+        "net_value": "4609/5832",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 6,
+        "net_value": "2183/2916",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/24",
+    "independence_gap": -1,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 6,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "29/36",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "43/54",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "239/324",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "161/243",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 5,
+        "net_value": "1697/2916",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 6,
+        "net_value": "727/1458",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/12",
+    "independence_gap": -1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 6,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "55/72",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "77/108",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "397/648",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "241/486",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 5,
+        "net_value": "2179/5832",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 6,
+        "net_value": "725/2916",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/8",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 6,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "13/18",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "17/27",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "79/162",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "80/243",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 5,
+        "net_value": "241/1458",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 6,
+        "net_value": "-1/729",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/6",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 6,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "23/36",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "25/54",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "77/324",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "-1/243",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 5,
+        "net_value": "-733/2916",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 6,
+        "net_value": "-731/1458",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/4",
+    "independence_gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 6,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "15/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "63/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "255/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "1023/1024",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 5,
+        "net_value": "4095/4096",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 6,
+        "net_value": "4095/4096",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      }
+    ],
+    "cost": "0",
+    "independence_gap": 1,
+    "planner_k": [
+      5,
+      6
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 6,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "43/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "173/192",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "223/256",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "2557/3072",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 5,
+        "net_value": "9725/12288",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 6,
+        "net_value": "3071/4096",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/24",
+    "independence_gap": -1,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 6,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "41/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "157/192",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "191/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "2045/3072",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 5,
+        "net_value": "7165/12288",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 6,
+        "net_value": "2047/4096",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/12",
+    "independence_gap": -1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 6,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "13/16",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "47/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "159/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "511/1024",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 5,
+        "net_value": "1535/4096",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 6,
+        "net_value": "1023/4096",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/8",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 6,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "37/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "125/192",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "127/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "1021/3072",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 5,
+        "net_value": "2045/12288",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 6,
+        "net_value": "-1/4096",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/6",
+    "independence_gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 6,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "11/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "31/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "63/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "-1/1024",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 5,
+        "net_value": "-1025/4096",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 6,
+        "net_value": "-2049/4096",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/4",
+    "independence_gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 7,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "7/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "15/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "31/32",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 5,
+        "net_value": "63/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "127/128",
+        "k": 6,
+        "net_value": "127/128",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "127/128",
+        "k": 7,
+        "net_value": "127/128",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      }
+    ],
+    "cost": "0",
+    "independence_gap": 1,
+    "planner_k": [
+      6,
+      7
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 7,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "17/24",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "19/24",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "13/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "77/96",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 5,
+        "net_value": "149/192",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "127/128",
+        "k": 6,
+        "net_value": "95/128",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "127/128",
+        "k": 7,
+        "net_value": "269/384",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/24",
+    "independence_gap": -2,
+    "planner_k": [
+      3
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 7,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "17/24",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "11/16",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "61/96",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 5,
+        "net_value": "109/192",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "127/128",
+        "k": 6,
+        "net_value": "63/128",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "127/128",
+        "k": 7,
+        "net_value": "157/384",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/12",
+    "independence_gap": -1,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 7,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "5/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "5/8",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "9/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "15/32",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 5,
+        "net_value": "23/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "127/128",
+        "k": 6,
+        "net_value": "31/128",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "127/128",
+        "k": 7,
+        "net_value": "15/128",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/8",
+    "independence_gap": 0,
+    "planner_k": [
+      1,
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 7,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "7/12",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "13/24",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "7/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "29/96",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 5,
+        "net_value": "29/192",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "127/128",
+        "k": 6,
+        "net_value": "-1/128",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "127/128",
+        "k": 7,
+        "net_value": "-67/384",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/6",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 7,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "3/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "3/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "-1/32",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 5,
+        "net_value": "-17/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "127/128",
+        "k": 6,
+        "net_value": "-65/128",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "127/128",
+        "k": 7,
+        "net_value": "-97/128",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/4",
+    "independence_gap": 1,
+    "planner_k": [
+      0,
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 7,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "8/9",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "26/27",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "80/81",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "242/243",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 5,
+        "net_value": "728/729",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "2186/2187",
+        "k": 6,
+        "net_value": "2186/2187",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "2186/2187",
+        "k": 7,
+        "net_value": "2186/2187",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      }
+    ],
+    "cost": "0",
+    "independence_gap": 1,
+    "planner_k": [
+      6,
+      7
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 7,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "61/72",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "95/108",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "559/648",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "403/486",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 5,
+        "net_value": "4609/5832",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "2186/2187",
+        "k": 6,
+        "net_value": "6557/8748",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "2186/2187",
+        "k": 7,
+        "net_value": "12385/17496",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/24",
+    "independence_gap": -2,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 7,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "29/36",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "43/54",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "239/324",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "161/243",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 5,
+        "net_value": "1697/2916",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "2186/2187",
+        "k": 6,
+        "net_value": "2185/4374",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "2186/2187",
+        "k": 7,
+        "net_value": "3641/8748",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/12",
+    "independence_gap": -1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 7,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "55/72",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "77/108",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "397/648",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "241/486",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 5,
+        "net_value": "2179/5832",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "2186/2187",
+        "k": 6,
+        "net_value": "2183/8748",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "2186/2187",
+        "k": 7,
+        "net_value": "2179/17496",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/8",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 7,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "13/18",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "17/27",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "79/162",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "80/243",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 5,
+        "net_value": "241/1458",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "2186/2187",
+        "k": 6,
+        "net_value": "-1/2187",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "2186/2187",
+        "k": 7,
+        "net_value": "-731/4374",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/6",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 7,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "23/36",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "25/54",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "77/324",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "-1/243",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 5,
+        "net_value": "-733/2916",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "2186/2187",
+        "k": 6,
+        "net_value": "-2189/4374",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "2186/2187",
+        "k": 7,
+        "net_value": "-6565/8748",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/4",
+    "independence_gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 7,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "15/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "63/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "255/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "1023/1024",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 5,
+        "net_value": "4095/4096",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "16383/16384",
+        "k": 6,
+        "net_value": "16383/16384",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "16383/16384",
+        "k": 7,
+        "net_value": "16383/16384",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      }
+    ],
+    "cost": "0",
+    "independence_gap": 1,
+    "planner_k": [
+      6,
+      7
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 7,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "43/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "173/192",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "223/256",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "2557/3072",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 5,
+        "net_value": "9725/12288",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "16383/16384",
+        "k": 6,
+        "net_value": "12287/16384",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "16383/16384",
+        "k": 7,
+        "net_value": "34813/49152",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/24",
+    "independence_gap": -1,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 7,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "41/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "157/192",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "191/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "2045/3072",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 5,
+        "net_value": "7165/12288",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "16383/16384",
+        "k": 6,
+        "net_value": "8191/16384",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "16383/16384",
+        "k": 7,
+        "net_value": "20477/49152",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/12",
+    "independence_gap": -1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 7,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "13/16",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "47/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "159/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "511/1024",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 5,
+        "net_value": "1535/4096",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "16383/16384",
+        "k": 6,
+        "net_value": "4095/16384",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "16383/16384",
+        "k": 7,
+        "net_value": "2047/16384",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/8",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 7,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "37/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "125/192",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "127/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "1021/3072",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 5,
+        "net_value": "2045/12288",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "16383/16384",
+        "k": 6,
+        "net_value": "-1/16384",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "16383/16384",
+        "k": 7,
+        "net_value": "-8195/49152",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/6",
+    "independence_gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 7,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "11/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "31/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "63/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "-1/1024",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 5,
+        "net_value": "-1025/4096",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "16383/16384",
+        "k": 6,
+        "net_value": "-8193/16384",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "16383/16384",
+        "k": 7,
+        "net_value": "-12289/16384",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/4",
+    "independence_gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 8,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "7/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "15/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "31/32",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 5,
+        "net_value": "63/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "127/128",
+        "k": 6,
+        "net_value": "127/128",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 7,
+        "net_value": "255/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 8,
+        "net_value": "255/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      }
+    ],
+    "cost": "0",
+    "independence_gap": 1,
+    "planner_k": [
+      7,
+      8
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 8,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "17/24",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "19/24",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "13/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "77/96",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 5,
+        "net_value": "149/192",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "127/128",
+        "k": 6,
+        "net_value": "95/128",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 7,
+        "net_value": "541/768",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 8,
+        "net_value": "509/768",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/24",
+    "independence_gap": -2,
+    "planner_k": [
+      3
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 8,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "17/24",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "11/16",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "61/96",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 5,
+        "net_value": "109/192",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "127/128",
+        "k": 6,
+        "net_value": "63/128",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 7,
+        "net_value": "317/768",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 8,
+        "net_value": "253/768",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/12",
+    "independence_gap": -1,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 8,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "5/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "5/8",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "9/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "15/32",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 5,
+        "net_value": "23/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "127/128",
+        "k": 6,
+        "net_value": "31/128",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 7,
+        "net_value": "31/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 8,
+        "net_value": "-1/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/8",
+    "independence_gap": 0,
+    "planner_k": [
+      1,
+      2
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 8,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "7/12",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "13/24",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "7/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "29/96",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 5,
+        "net_value": "29/192",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "127/128",
+        "k": 6,
+        "net_value": "-1/128",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 7,
+        "net_value": "-131/768",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 8,
+        "net_value": "-259/768",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/6",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "1/2",
+    "agents": 8,
+    "cells": [
+      {
+        "gross_discovery": "1/2",
+        "k": 0,
+        "net_value": "1/2",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "3/4",
+        "k": 1,
+        "net_value": "1/2",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "7/8",
+        "k": 2,
+        "net_value": "3/8",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 3,
+        "net_value": "3/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "31/32",
+        "k": 4,
+        "net_value": "-1/32",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 5,
+        "net_value": "-17/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "127/128",
+        "k": 6,
+        "net_value": "-65/128",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 7,
+        "net_value": "-193/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 8,
+        "net_value": "-257/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/4",
+    "independence_gap": 1,
+    "planner_k": [
+      0,
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 8,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "8/9",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "26/27",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "80/81",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "242/243",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 5,
+        "net_value": "728/729",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "2186/2187",
+        "k": 6,
+        "net_value": "2186/2187",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "6560/6561",
+        "k": 7,
+        "net_value": "6560/6561",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "6560/6561",
+        "k": 8,
+        "net_value": "6560/6561",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      }
+    ],
+    "cost": "0",
+    "independence_gap": 1,
+    "planner_k": [
+      7,
+      8
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 8,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "61/72",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "95/108",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "559/648",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "403/486",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 5,
+        "net_value": "4609/5832",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "2186/2187",
+        "k": 6,
+        "net_value": "6557/8748",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "6560/6561",
+        "k": 7,
+        "net_value": "37171/52488",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "6560/6561",
+        "k": 8,
+        "net_value": "4373/6561",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/24",
+    "independence_gap": -2,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 8,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "29/36",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "43/54",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "239/324",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "161/243",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 5,
+        "net_value": "1697/2916",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "2186/2187",
+        "k": 6,
+        "net_value": "2185/4374",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "6560/6561",
+        "k": 7,
+        "net_value": "10931/26244",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "6560/6561",
+        "k": 8,
+        "net_value": "2186/6561",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/12",
+    "independence_gap": -1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 8,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "55/72",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "77/108",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "397/648",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "241/486",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 5,
+        "net_value": "2179/5832",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "2186/2187",
+        "k": 6,
+        "net_value": "2183/8748",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "6560/6561",
+        "k": 7,
+        "net_value": "6553/52488",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "6560/6561",
+        "k": 8,
+        "net_value": "-1/6561",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/8",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 8,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "13/18",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "17/27",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "79/162",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "80/243",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 5,
+        "net_value": "241/1458",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "2186/2187",
+        "k": 6,
+        "net_value": "-1/2187",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "6560/6561",
+        "k": 7,
+        "net_value": "-2189/13122",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "6560/6561",
+        "k": 8,
+        "net_value": "-2188/6561",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/6",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "2/3",
+    "agents": 8,
+    "cells": [
+      {
+        "gross_discovery": "2/3",
+        "k": 0,
+        "net_value": "2/3",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "8/9",
+        "k": 1,
+        "net_value": "23/36",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "26/27",
+        "k": 2,
+        "net_value": "25/54",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "80/81",
+        "k": 3,
+        "net_value": "77/324",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "242/243",
+        "k": 4,
+        "net_value": "-1/243",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "728/729",
+        "k": 5,
+        "net_value": "-733/2916",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "2186/2187",
+        "k": 6,
+        "net_value": "-2189/4374",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "6560/6561",
+        "k": 7,
+        "net_value": "-19687/26244",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "6560/6561",
+        "k": 8,
+        "net_value": "-6562/6561",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/4",
+    "independence_gap": 0,
+    "planner_k": [
+      0
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 8,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "15/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "63/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "255/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "1023/1024",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 5,
+        "net_value": "4095/4096",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "16383/16384",
+        "k": 6,
+        "net_value": "16383/16384",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "65535/65536",
+        "k": 7,
+        "net_value": "65535/65536",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "65535/65536",
+        "k": 8,
+        "net_value": "65535/65536",
+        "strict_equilibrium": false,
+        "weak_equilibrium": true
+      }
+    ],
+    "cost": "0",
+    "independence_gap": 1,
+    "planner_k": [
+      7,
+      8
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 8,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "43/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "173/192",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "223/256",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "2557/3072",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 5,
+        "net_value": "9725/12288",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "16383/16384",
+        "k": 6,
+        "net_value": "12287/16384",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "65535/65536",
+        "k": 7,
+        "net_value": "139261/196608",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "65535/65536",
+        "k": 8,
+        "net_value": "131069/196608",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/24",
+    "independence_gap": -1,
+    "planner_k": [
+      2
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 8,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "41/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "157/192",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "191/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "2045/3072",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 5,
+        "net_value": "7165/12288",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "16383/16384",
+        "k": 6,
+        "net_value": "8191/16384",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "65535/65536",
+        "k": 7,
+        "net_value": "81917/196608",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "65535/65536",
+        "k": 8,
+        "net_value": "65533/196608",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/12",
+    "independence_gap": -1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 8,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "13/16",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "47/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "159/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "511/1024",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 5,
+        "net_value": "1535/4096",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "16383/16384",
+        "k": 6,
+        "net_value": "4095/16384",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "65535/65536",
+        "k": 7,
+        "net_value": "8191/65536",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "65535/65536",
+        "k": 8,
+        "net_value": "-1/65536",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/8",
+    "independence_gap": 0,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 8,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "37/48",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "125/192",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "127/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "1021/3072",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 5,
+        "net_value": "2045/12288",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "16383/16384",
+        "k": 6,
+        "net_value": "-1/16384",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "65535/65536",
+        "k": 7,
+        "net_value": "-32771/196608",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "65535/65536",
+        "k": 8,
+        "net_value": "-65539/196608",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/6",
+    "independence_gap": 1,
+    "planner_k": [
+      1
+    ]
+  },
+  {
+    "accuracy": "3/4",
+    "agents": 8,
+    "cells": [
+      {
+        "gross_discovery": "3/4",
+        "k": 0,
+        "net_value": "3/4",
+        "strict_equilibrium": true,
+        "weak_equilibrium": true
+      },
+      {
+        "gross_discovery": "15/16",
+        "k": 1,
+        "net_value": "11/16",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "63/64",
+        "k": 2,
+        "net_value": "31/64",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "255/256",
+        "k": 3,
+        "net_value": "63/256",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "1023/1024",
+        "k": 4,
+        "net_value": "-1/1024",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "4095/4096",
+        "k": 5,
+        "net_value": "-1025/4096",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "16383/16384",
+        "k": 6,
+        "net_value": "-8193/16384",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "65535/65536",
+        "k": 7,
+        "net_value": "-49153/65536",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      },
+      {
+        "gross_discovery": "65535/65536",
+        "k": 8,
+        "net_value": "-65537/65536",
+        "strict_equilibrium": false,
+        "weak_equilibrium": false
+      }
+    ],
+    "cost": "1/4",
+    "independence_gap": 0,
+    "planner_k": [
+      0
+    ]
+  }
+]

@@ -1,6 +1,6 @@
 # DD-008A report
 
-Primary run `20260721T153110Z_DD-008A_637f2b94_06307caab4` evaluates every
+Primary clean run `20260721T163030Z_DD-008A_8b70668b_06307caab4` evaluates every
 registered `(N,p,c,k)` source-count cell with exact `Fraction` arithmetic. For
 `k<N`, gross discovery is `1-(1-p)^(k+1)`; for `k=N`, it is
 `1-(1-p)^N`. Closed-form binomial equal-split payoffs and a direct enumeration
