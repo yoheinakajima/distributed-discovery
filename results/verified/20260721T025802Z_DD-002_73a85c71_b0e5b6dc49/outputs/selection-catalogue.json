@@ -1,0 +1,12 @@
+{
+  "randomized_disclosure_implemented": false,
+  "rules": {
+    "anonymous_symmetric": "existing exact anonymous symmetric Nash selection",
+    "best_pure": "maximum discovery over the full pure Nash correspondence",
+    "planner": "top-two posterior mass comparator",
+    "uniform_potential_maximum": "uniform over every labeled global maximizer of the exact Rosenthal potential",
+    "uniform_strict_best_response_basin": "uniform initial pure profile and uniform strict payoff-maximizing player-action move",
+    "worst_pure": "minimum discovery over the full pure Nash correspondence"
+  },
+  "schema_version": 1
+}

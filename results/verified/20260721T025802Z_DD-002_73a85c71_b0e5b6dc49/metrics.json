@@ -1,0 +1,78 @@
+{
+  "known_witness": {
+    "anonymous_symmetric": {
+      "difference": "-1/2772",
+      "less_discovery": "5/9",
+      "more_discovery": "171/308",
+      "reversal": true
+    },
+    "best_pure": {
+      "difference": "1/12",
+      "less_discovery": "2/3",
+      "more_discovery": "3/4",
+      "reversal": false
+    },
+    "planner": {
+      "difference": "1/12",
+      "less_discovery": "2/3",
+      "more_discovery": "3/4",
+      "reversal": false
+    },
+    "uniform_potential_maximum": {
+      "difference": "1/12",
+      "less_discovery": "2/3",
+      "more_discovery": "3/4",
+      "reversal": false
+    },
+    "uniform_strict_best_response_basin": {
+      "difference": "1/12",
+      "less_discovery": "2/3",
+      "more_discovery": "3/4",
+      "reversal": false
+    },
+    "worst_pure": {
+      "difference": "1/12",
+      "less_discovery": "2/3",
+      "more_discovery": "3/4",
+      "reversal": false
+    }
+  },
+  "partition_count": 15,
+  "partitions_with_basin_branch_dependence": 5,
+  "partitions_with_potential_discovery_ties": 5,
+  "posterior_game_count": 37,
+  "potential_and_basin_values_equal_all_partitions": true,
+  "refinement_counts": {
+    "anonymous_symmetric": {
+      "harmful": 1,
+      "improving": 43,
+      "tied": 1
+    },
+    "best_pure": {
+      "harmful": 0,
+      "improving": 35,
+      "tied": 10
+    },
+    "planner": {
+      "harmful": 0,
+      "improving": 35,
+      "tied": 10
+    },
+    "uniform_potential_maximum": {
+      "harmful": 2,
+      "improving": 35,
+      "tied": 8
+    },
+    "uniform_strict_best_response_basin": {
+      "harmful": 2,
+      "improving": 35,
+      "tied": 8
+    },
+    "worst_pure": {
+      "harmful": 8,
+      "improving": 24,
+      "tied": 13
+    }
+  },
+  "strict_refinement_pair_count": 45
+}

@@ -1,0 +1,40 @@
+{
+  "command": "make dd002-selection-robustness",
+  "config_hash_sha256": "b0e5b6dc49e87d7cc5bc53ea2b86f10e7eec9f7cab9147e3ca01a5e6316b1c50",
+  "dependency_lock_hash_sha256": "44817b839ec69b327bd25a79ba5a14569628e5345ed6e496fd2badfe5c7f5bb5",
+  "ended_utc": "2026-07-21T02:58:02.458903Z",
+  "exit_status": 0,
+  "git_commit": "73a85c71fbba1aab874ac1ed6fb4877c7afa9f67",
+  "git_dirty": false,
+  "input_hashes": {
+    "docs/decisions/ADR-0010-dd002-selection-catalogue.md": "ba729cdd8a756977c8e3d56d1e20740734b02e6bf9a8c6f24ed8957fc32021d9",
+    "results/verified/20260720T225848Z_DD-002_94607423_e29b1460ae/outputs/equilibrium-registry.json": "693c39f9e29c4b6440797ad5ebca1bf8de8431fc642debe8948a885148365d3f",
+    "results/verified/20260720T225848Z_DD-002_94607423_e29b1460ae/outputs/partition-summary.csv": "4795c160a3822870f8bbc8535fabe6fe5aa22918b47ed48a361c0f02de999882",
+    "results/verified/20260720T225848Z_DD-002_94607423_e29b1460ae/outputs/refinement-comparisons.json": "2329feef6361f06206130ee84601e4edaf7703010209998ab15837044c822e61",
+    "results/verified/20260720T225848Z_DD-002_94607423_e29b1460ae/outputs/selection-reversal-witness.json": "ff32fc8cb5cb1e315eb152652475af8b4ff9c2f6f9a267c718c85b054b3821c8",
+    "src/distributed_discovery/information_design/game.py": "eb1887621274f88f8ea44ba205f269d98f6a41e15cba26580014997240305a1b",
+    "src/distributed_discovery/information_design/selection.py": "bfb1b20f387a630983270afab8c7869844a49e547c73893c1f5eeea972c92f8c",
+    "src/distributed_discovery/information_design/selection_study.py": "9a2d624d8f4b46495ed7c8b04f803b553c9a4ddf6632323721a4a4632dcfb46f",
+    "src/distributed_discovery/information_design/selection_verification.py": "d8bffaf5628450e44b80f5ade840a72fda241441d9be9b44f25e66b12133579d",
+    "studies/DD-002-information-design/configs/selection-robustness.yml": "d8b00b798bcfaa5ae50c7fa1cb3a881765173fc1816377b81875831319a59644"
+  },
+  "outputs": {
+    "outputs/cost-audit.json": "f989100b2e86793b383915480abb433042e3a10aff5be82519789d549bbd2ad6",
+    "outputs/independent-verification.json": "510557aeb8c8c8020d4fad011fbd3b97bfa30460db58ff29e8760bd950dc8f19",
+    "outputs/known-witness-robustness.json": "657474921dcf4ed34e43fec30af441149436e8ffef36e4731376d061a42fe05f",
+    "outputs/partition-selection-summary.csv": "93290543a01e0f460f665cb7bab760dc57c13ded2a131e4acadf1dad9d753085",
+    "outputs/selection-catalogue.json": "930ee29d7fab31bc0979a560c959f22d4e3ec1a95f6d95db8bc886adb6cd054a",
+    "outputs/selection-certificate.json": "2325dc263c5337a64e5300c431bb9ca0d186b06c928553b7c8bcce0d1ddc504c",
+    "outputs/selection-refinement-comparisons.json": "e86423d4c246610e56d674115807d1c673fc68226ff0cb4f486116092ec22fb7"
+  },
+  "random_seeds": {
+    "algorithm": null,
+    "model": null
+  },
+  "run_id": "20260721T025802Z_DD-002_73a85c71_b0e5b6dc49",
+  "schema_version": 1,
+  "started_utc": "2026-07-21T02:58:02.346166Z",
+  "study_id": "DD-002",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

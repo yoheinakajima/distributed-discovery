@@ -1,0 +1,542 @@
+[
+  {
+    "differences": {
+      "anonymous_symmetric": "16/4815",
+      "best_pure": "1/12",
+      "planner": "1/12",
+      "uniform_potential_maximum": "1/12",
+      "uniform_strict_best_response_basin": "1/12",
+      "worst_pure": "1/12"
+    },
+    "less_informative": "P00",
+    "more_informative": "P01"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "0",
+      "best_pure": "0",
+      "planner": "0",
+      "uniform_potential_maximum": "0",
+      "uniform_strict_best_response_basin": "0",
+      "worst_pure": "0"
+    },
+    "less_informative": "P00",
+    "more_informative": "P02"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "-1/2772",
+      "best_pure": "1/12",
+      "planner": "1/12",
+      "uniform_potential_maximum": "1/12",
+      "uniform_strict_best_response_basin": "1/12",
+      "worst_pure": "1/12"
+    },
+    "less_informative": "P00",
+    "more_informative": "P03"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "19/3960",
+      "best_pure": "1/12",
+      "planner": "1/12",
+      "uniform_potential_maximum": "1/12",
+      "uniform_strict_best_response_basin": "1/12",
+      "worst_pure": "1/12"
+    },
+    "less_informative": "P00",
+    "more_informative": "P04"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "125/84744",
+      "best_pure": "0",
+      "planner": "0",
+      "uniform_potential_maximum": "0",
+      "uniform_strict_best_response_basin": "0",
+      "worst_pure": "0"
+    },
+    "less_informative": "P01",
+    "more_informative": "P04"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "19/3960",
+      "best_pure": "1/12",
+      "planner": "1/12",
+      "uniform_potential_maximum": "1/12",
+      "uniform_strict_best_response_basin": "1/12",
+      "worst_pure": "1/12"
+    },
+    "less_informative": "P02",
+    "more_informative": "P04"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "13/2520",
+      "best_pure": "0",
+      "planner": "0",
+      "uniform_potential_maximum": "0",
+      "uniform_strict_best_response_basin": "0",
+      "worst_pure": "0"
+    },
+    "less_informative": "P03",
+    "more_informative": "P04"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "47/2016",
+      "best_pure": "1/8",
+      "planner": "1/8",
+      "uniform_potential_maximum": "1/8",
+      "uniform_strict_best_response_basin": "1/8",
+      "worst_pure": "1/8"
+    },
+    "less_informative": "P00",
+    "more_informative": "P05"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "125/6336",
+      "best_pure": "1/8",
+      "planner": "1/8",
+      "uniform_potential_maximum": "1/8",
+      "uniform_strict_best_response_basin": "1/8",
+      "worst_pure": "1/8"
+    },
+    "less_informative": "P00",
+    "more_informative": "P06"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "869/20160",
+      "best_pure": "1/6",
+      "planner": "1/6",
+      "uniform_potential_maximum": "1/6",
+      "uniform_strict_best_response_basin": "1/6",
+      "worst_pure": "1/6"
+    },
+    "less_informative": "P00",
+    "more_informative": "P07"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "1907/47936",
+      "best_pure": "1/12",
+      "planner": "1/12",
+      "uniform_potential_maximum": "1/12",
+      "uniform_strict_best_response_basin": "1/12",
+      "worst_pure": "1/12"
+    },
+    "less_informative": "P01",
+    "more_informative": "P07"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "19/960",
+      "best_pure": "1/24",
+      "planner": "1/24",
+      "uniform_potential_maximum": "1/24",
+      "uniform_strict_best_response_basin": "1/24",
+      "worst_pure": "1/24"
+    },
+    "less_informative": "P05",
+    "more_informative": "P07"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "9/385",
+      "best_pure": "1/24",
+      "planner": "1/24",
+      "uniform_potential_maximum": "1/24",
+      "uniform_strict_best_response_basin": "1/24",
+      "worst_pure": "1/24"
+    },
+    "less_informative": "P06",
+    "more_informative": "P07"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "1/45",
+      "best_pure": "1/8",
+      "planner": "1/8",
+      "uniform_potential_maximum": "1/8",
+      "uniform_strict_best_response_basin": "1/8",
+      "worst_pure": "1/8"
+    },
+    "less_informative": "P00",
+    "more_informative": "P08"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "7/468",
+      "best_pure": "1/8",
+      "planner": "1/8",
+      "uniform_potential_maximum": "7/72",
+      "uniform_strict_best_response_basin": "7/72",
+      "worst_pure": "1/24"
+    },
+    "less_informative": "P00",
+    "more_informative": "P09"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "7/180",
+      "best_pure": "1/6",
+      "planner": "1/6",
+      "uniform_potential_maximum": "5/36",
+      "uniform_strict_best_response_basin": "5/36",
+      "worst_pure": "1/12"
+    },
+    "less_informative": "P00",
+    "more_informative": "P10"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "137/3852",
+      "best_pure": "1/12",
+      "planner": "1/12",
+      "uniform_potential_maximum": "1/18",
+      "uniform_strict_best_response_basin": "1/18",
+      "worst_pure": "0"
+    },
+    "less_informative": "P01",
+    "more_informative": "P10"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "1/60",
+      "best_pure": "1/24",
+      "planner": "1/24",
+      "uniform_potential_maximum": "1/72",
+      "uniform_strict_best_response_basin": "1/72",
+      "worst_pure": "-1/24"
+    },
+    "less_informative": "P08",
+    "more_informative": "P10"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "14/585",
+      "best_pure": "1/24",
+      "planner": "1/24",
+      "uniform_potential_maximum": "1/24",
+      "uniform_strict_best_response_basin": "1/24",
+      "worst_pure": "1/24"
+    },
+    "less_informative": "P09",
+    "more_informative": "P10"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "71/2520",
+      "best_pure": "1/8",
+      "planner": "1/8",
+      "uniform_potential_maximum": "1/8",
+      "uniform_strict_best_response_basin": "1/8",
+      "worst_pure": "1/8"
+    },
+    "less_informative": "P00",
+    "more_informative": "P11"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "71/2520",
+      "best_pure": "1/8",
+      "planner": "1/8",
+      "uniform_potential_maximum": "1/8",
+      "uniform_strict_best_response_basin": "1/8",
+      "worst_pure": "1/8"
+    },
+    "less_informative": "P02",
+    "more_informative": "P11"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "7/1440",
+      "best_pure": "0",
+      "planner": "0",
+      "uniform_potential_maximum": "0",
+      "uniform_strict_best_response_basin": "0",
+      "worst_pure": "0"
+    },
+    "less_informative": "P05",
+    "more_informative": "P11"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "1/168",
+      "best_pure": "0",
+      "planner": "0",
+      "uniform_potential_maximum": "0",
+      "uniform_strict_best_response_basin": "0",
+      "worst_pure": "0"
+    },
+    "less_informative": "P08",
+    "more_informative": "P11"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "17/792",
+      "best_pure": "1/8",
+      "planner": "1/8",
+      "uniform_potential_maximum": "7/72",
+      "uniform_strict_best_response_basin": "7/72",
+      "worst_pure": "1/24"
+    },
+    "less_informative": "P00",
+    "more_informative": "P12"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "17/792",
+      "best_pure": "1/8",
+      "planner": "1/8",
+      "uniform_potential_maximum": "7/72",
+      "uniform_strict_best_response_basin": "7/72",
+      "worst_pure": "1/24"
+    },
+    "less_informative": "P02",
+    "more_informative": "P12"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "1/576",
+      "best_pure": "0",
+      "planner": "0",
+      "uniform_potential_maximum": "-1/36",
+      "uniform_strict_best_response_basin": "-1/36",
+      "worst_pure": "-1/12"
+    },
+    "less_informative": "P06",
+    "more_informative": "P12"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "67/10296",
+      "best_pure": "0",
+      "planner": "0",
+      "uniform_potential_maximum": "0",
+      "uniform_strict_best_response_basin": "0",
+      "worst_pure": "0"
+    },
+    "less_informative": "P09",
+    "more_informative": "P12"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "5/126",
+      "best_pure": "1/6",
+      "planner": "1/6",
+      "uniform_potential_maximum": "5/36",
+      "uniform_strict_best_response_basin": "5/36",
+      "worst_pure": "1/12"
+    },
+    "less_informative": "P00",
+    "more_informative": "P13"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "37/924",
+      "best_pure": "1/12",
+      "planner": "1/12",
+      "uniform_potential_maximum": "1/18",
+      "uniform_strict_best_response_basin": "1/18",
+      "worst_pure": "0"
+    },
+    "less_informative": "P03",
+    "more_informative": "P13"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "11/672",
+      "best_pure": "1/24",
+      "planner": "1/24",
+      "uniform_potential_maximum": "1/72",
+      "uniform_strict_best_response_basin": "1/72",
+      "worst_pure": "-1/24"
+    },
+    "less_informative": "P05",
+    "more_informative": "P13"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "9/364",
+      "best_pure": "1/24",
+      "planner": "1/24",
+      "uniform_potential_maximum": "1/24",
+      "uniform_strict_best_response_basin": "1/24",
+      "worst_pure": "1/24"
+    },
+    "less_informative": "P09",
+    "more_informative": "P13"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "113/2520",
+      "best_pure": "1/6",
+      "planner": "1/6",
+      "uniform_potential_maximum": "5/36",
+      "uniform_strict_best_response_basin": "5/36",
+      "worst_pure": "1/12"
+    },
+    "less_informative": "P00",
+    "more_informative": "P14"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "2239/53928",
+      "best_pure": "1/12",
+      "planner": "1/12",
+      "uniform_potential_maximum": "1/18",
+      "uniform_strict_best_response_basin": "1/18",
+      "worst_pure": "0"
+    },
+    "less_informative": "P01",
+    "more_informative": "P14"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "113/2520",
+      "best_pure": "1/6",
+      "planner": "1/6",
+      "uniform_potential_maximum": "5/36",
+      "uniform_strict_best_response_basin": "5/36",
+      "worst_pure": "1/12"
+    },
+    "less_informative": "P02",
+    "more_informative": "P14"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "179/3960",
+      "best_pure": "1/12",
+      "planner": "1/12",
+      "uniform_potential_maximum": "1/18",
+      "uniform_strict_best_response_basin": "1/18",
+      "worst_pure": "0"
+    },
+    "less_informative": "P03",
+    "more_informative": "P14"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "37/924",
+      "best_pure": "1/12",
+      "planner": "1/12",
+      "uniform_potential_maximum": "1/18",
+      "uniform_strict_best_response_basin": "1/18",
+      "worst_pure": "0"
+    },
+    "less_informative": "P04",
+    "more_informative": "P14"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "31/1440",
+      "best_pure": "1/24",
+      "planner": "1/24",
+      "uniform_potential_maximum": "1/72",
+      "uniform_strict_best_response_basin": "1/72",
+      "worst_pure": "-1/24"
+    },
+    "less_informative": "P05",
+    "more_informative": "P14"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "5569/221760",
+      "best_pure": "1/24",
+      "planner": "1/24",
+      "uniform_potential_maximum": "1/72",
+      "uniform_strict_best_response_basin": "1/72",
+      "worst_pure": "-1/24"
+    },
+    "less_informative": "P06",
+    "more_informative": "P14"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "1/576",
+      "best_pure": "0",
+      "planner": "0",
+      "uniform_potential_maximum": "-1/36",
+      "uniform_strict_best_response_basin": "-1/36",
+      "worst_pure": "-1/12"
+    },
+    "less_informative": "P07",
+    "more_informative": "P14"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "19/840",
+      "best_pure": "1/24",
+      "planner": "1/24",
+      "uniform_potential_maximum": "1/72",
+      "uniform_strict_best_response_basin": "1/72",
+      "worst_pure": "-1/24"
+    },
+    "less_informative": "P08",
+    "more_informative": "P14"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "979/32760",
+      "best_pure": "1/24",
+      "planner": "1/24",
+      "uniform_potential_maximum": "1/24",
+      "uniform_strict_best_response_basin": "1/24",
+      "worst_pure": "1/24"
+    },
+    "less_informative": "P09",
+    "more_informative": "P14"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "1/168",
+      "best_pure": "0",
+      "planner": "0",
+      "uniform_potential_maximum": "0",
+      "uniform_strict_best_response_basin": "0",
+      "worst_pure": "0"
+    },
+    "less_informative": "P10",
+    "more_informative": "P14"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "1/60",
+      "best_pure": "1/24",
+      "planner": "1/24",
+      "uniform_potential_maximum": "1/72",
+      "uniform_strict_best_response_basin": "1/72",
+      "worst_pure": "-1/24"
+    },
+    "less_informative": "P11",
+    "more_informative": "P14"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "9/385",
+      "best_pure": "1/24",
+      "planner": "1/24",
+      "uniform_potential_maximum": "1/24",
+      "uniform_strict_best_response_basin": "1/24",
+      "worst_pure": "1/24"
+    },
+    "less_informative": "P12",
+    "more_informative": "P14"
+  },
+  {
+    "differences": {
+      "anonymous_symmetric": "13/2520",
+      "best_pure": "0",
+      "planner": "0",
+      "uniform_potential_maximum": "0",
+      "uniform_strict_best_response_basin": "0",
+      "worst_pure": "0"
+    },
+    "less_informative": "P13",
+    "more_informative": "P14"
+  }
+]
