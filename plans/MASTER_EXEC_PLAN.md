@@ -14,20 +14,20 @@ Owner authorization now requires sequential completion of DD-010 DiscoveryBench,
 DD-011 Experimental Design and Power, the DD-008B Common-Source analytic gate,
 a focused *Common-Source Trap* working paper, public benchmark/experiment Labs,
 and a final Program V2 handoff. The live baseline is clean `main`
-`9caf0f975d176aa01e4d6e6e02f1555c1530c44e`; CI `29860525523` and Pages
-`29860525526` passed, all DD-010 and DD-011 public routes return HTTP 200, and no
+`24252c897c0cccec765364c6087848f08f27ead1`; CI `29861944847` and Pages
+`29861945022` passed, all DD-010, DD-011, and DD-008B public routes return HTTP 200, and no
 pull request is open. The only settings blocker remains issue #32; the previously required
 single `gh auth status` probe was already exhausted and is not repeated.
 
-The active milestone is DD-008B under issue #71 and branch
-`research/dd008b-common-source-analysis`. It is an analytic theorem-development
-gate: derive the general source-count payoff and deviation margins, check fixed
-and general `N`, boundary and interior counts, and large-`N` behavior, then
-compare every formula with DD-008, the DD-008A `N=2,...,8` exact grid, and a
-separate tiny-state enumerator. Executable audits are capped at ten minutes and
-2 GB; exact rational arithmetic is required. A theorem, boundary theorem,
-monotonicity result, counterexample, conjecture, or documented barrier is valid,
-but DD-008A must not be relabeled as a general theorem.
+The active milestone is the focused *Common-Source Trap* working paper under
+issue #73 and branch `paper/common-source-trap`. It integrates DD-008's exact
+two-agent fixture, DD-008A's bounded census, and DD-008B's general threshold
+theorem and interior over-acquisition counterexample with carefully scoped
+institutional and experimental implications. All figures and tables must be
+generated from immutable evidence; the deterministic artifact target is 20–32
+substantive pages with citation validation, checksum provenance, and all-page
+Poppler review. No empirical, universal-under-acquisition, DOI, submission, or
+peer-review claim is authorized.
 
 Progress:
 
@@ -46,15 +46,16 @@ Progress:
   equilibrium-count theorem, exact all-common trap width `p(1-p)/N`, and an
   exact N=3 interior over-acquisition counterexample. Primary run
   `20260721T192412Z_DD-008B_649deb08_29dbeaf3a9`; DD-C-0057/DD-C-0058 pass
-  locally, with PR/CI/Pages/live-route gates remaining.
+  through PR #72 squash merge `24252c89`; post-merge CI/Pages passed, live
+  routes returned HTTP 200, and issue #71 closed.
 - [ ] Focused Common-Source Trap paper with source-generated figures/tables,
   deterministic PDF, citation audit, all-page Poppler review, merge, and Pages.
 - [ ] Program V2 site/Lab integration and final acceptance/handoff.
 
-Recovery: inspect `git status --short --branch`; resume DD-008B release from
-`studies/DD-008B-common-source-analysis/report.md`; never rerun the preserved
-DD-008A, DD-008B, or DD-011 primary runs. The exact next command is `make verify
-&& make papers && make site` before PR promotion.
+Recovery: inspect `git status --short --branch`; resume the paper from
+`papers/common-source-trap/paper.tex` after it is created; never rerun the
+preserved DD-008A, DD-008B, or DD-011 primary runs. The exact next command is
+`make common-source-trap` once the deterministic paper builder and source exist.
 
 ### Program V2 baseline (active, 2026-07-21)
 
