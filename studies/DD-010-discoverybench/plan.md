@@ -11,3 +11,9 @@ capability.
 
 The primary ceiling is 15 tasks, 13 protocols, 195 candidate pairs, 60 seconds,
 and 1 GB. No checkpoint may overwrite an immutable run.
+
+The v2 attention extension appends five tasks, eight protocols, and eight
+metrics. Its ceiling is 20 tasks, 21 protocols, 420 candidate pairs, 60 seconds,
+and 1 GB. It must preserve every v1 default and golden vector, independently
+recompute attention values, and reject value, access, and compatibility
+corruptions before any seeded sensitivity calculation.

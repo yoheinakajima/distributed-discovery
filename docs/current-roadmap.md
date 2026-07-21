@@ -8,12 +8,12 @@ verification plan, and corruption test where certificates are used.
 | Work | Status | Durable boundary / next question |
 | --- | --- | --- |
 | Program V3 baseline | complete through PR #80 | DD-012 through DD-015 are registered and deployed without creating research evidence. |
-| DD-012 Incentive to Ignore | local evidence complete on PR #82 | DD-C-0059 through DD-C-0061 and the primary run pass; merge, CI, Pages, and live-route validation remain before DD-013. |
-| DD-013 Audience Design | local evidence complete on PR #84 | DD-C-0062 through DD-C-0065, the primary run, and Audience Lab pass locally; merge, CI, Pages, and live routes remain. |
-| DD-014 Conditional Attention | local evidence complete on issue #85 | DD-C-0066 through DD-C-0068, the passing run, raw larger-class counterexample, and Conditional Attention Lab pass locally; merge, CI, Pages, and live routes remain. |
+| DD-012 Incentive to Ignore | complete and deployed through PR #82 | Preserve DD-C-0059 through DD-C-0061 and the immutable primary run. |
+| DD-013 Audience Design | complete and deployed through PR #84 | Preserve DD-C-0062 through DD-C-0065, the primary run, and Audience Lab. |
+| DD-014 Conditional Attention | complete and deployed through PR #87 | Preserve DD-C-0066 through DD-C-0068, the passing run, bounded class, and raw larger-class counterexample. |
 | DD-015 Dynamic Attention | optional registration | Begin only after required Program V3 milestones if capacity remains; keep stopping and fixed-budget objectives distinct. |
-| Program V3 focused paper | local artifact complete on issue #88 | The deterministic 20-page *Incentive to Ignore* paper, nine generated evidence assets, citation audit, and all-page visual review pass; merge, Pages, and live PDF remain. |
-| Program V3 benchmark, experiment, and site integration | queued | Extend the benchmark and synthetic kit without human data, then publish the final accessible Program V3 surface. |
+| Program V3 focused paper | complete and deployed through PR #90 | The deterministic 20-page *Incentive to Ignore* paper, nine generated evidence assets, citation audit, all-page visual review, Pages, and live PDF pass. |
+| Program V3 benchmark, experiment, and site integration | benchmark v2 implementation passes locally on issue #91 | Commit and run the clean immutable 20-task attention benchmark, then extend the synthetic kit and publish the final accessible surface. |
 | DD-010 DiscoveryBench | complete and deployed | Preserve v1's 15-task exact golden suite and capability isolation. New tasks or adapters require a versioned registration; no public submissions or universal score. |
 | DD-011 Experimental Design and Power | complete synthetic package and deployed | Power is conditional on eight declared synthetic scenarios. Human deployment requires separate ethics, consent, privacy, pilot, and institutional review. |
 | DD-008B Common-Source Analysis | complete and deployed | The general threshold theorem holds only for the frozen homogeneous equal-prize model. Extend to heterogeneous accuracy, source dependence, mixed choice, or dynamics under a new model. |
@@ -30,13 +30,13 @@ High-value benchmark questions are new exact tasks, adapter conformance, and
 robust multi-metric aggregation without collapsing the registry into an
 unexplained score.
 
-Operational resume commands for active DD-014:
+Operational resume commands for the active benchmark extension:
 
 ```sh
-git switch research/dd014-conditional-attention
-PYTHONPATH="$PWD/src" uv run --no-editable pytest -q tests/unit/test_attention.py
+git switch benchmark/attention-extension
+make verify
 ```
 
-The next file is `plans/MASTER_EXEC_PLAN.md`; DD-012 proceeds from its frozen
-implementation to a clean immutable run and claim audit. For settings-only work,
-use `docs/github-setup.md` and issue #32.
+The next file is `plans/MASTER_EXEC_PLAN.md`; DiscoveryBench v2 proceeds from
+its frozen implementation to a clean immutable run and claim audit. For
+settings-only work, use `docs/github-setup.md` and issue #32.

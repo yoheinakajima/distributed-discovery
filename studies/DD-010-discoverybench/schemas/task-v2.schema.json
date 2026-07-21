@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yoheinakajima.github.io/distributed-discovery/schemas/discoverybench-task-v2.json",
+  "title": "DiscoveryBench task v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "task_id", "task_family", "world_space", "prior",
+    "target_law", "evidence_channels", "source_dependence", "agent_count",
+    "per_agent_information", "communication_permissions",
+    "source_choice_permissions", "report_message_space", "action_space",
+    "coverage_function", "budget", "timing", "feedback", "reward_rule",
+    "social_objective", "private_objective", "evaluator", "seed_policy",
+    "reference_claims", "reference_runs", "public_status",
+    "compatible_protocols", "observables", "expected_metrics"
+  ],
+  "properties": {
+    "schema_version": {"const": "discoverybench-task-v2"},
+    "task_id": {"type": "string", "pattern": "^DB-G[0-9]{2}$"},
+    "task_family": {"type": "string", "minLength": 3},
+    "world_space": {"type": "string", "minLength": 1},
+    "prior": {"type": "string", "minLength": 1},
+    "target_law": {"type": "string", "minLength": 1},
+    "evidence_channels": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "source_dependence": {"type": "string", "minLength": 1},
+    "agent_count": {"type": "integer", "minimum": 1},
+    "per_agent_information": {"type": "array", "minItems": 1, "items": {"type": "array", "items": {"type": "string"}}},
+    "communication_permissions": {"type": "string", "minLength": 1},
+    "source_choice_permissions": {"type": "string", "minLength": 1},
+    "report_message_space": {"type": "string", "minLength": 1},
+    "action_space": {"type": "string", "minLength": 1},
+    "coverage_function": {"type": "string", "minLength": 1},
+    "budget": {"type": "string", "minLength": 1},
+    "timing": {"type": "string", "minLength": 1},
+    "feedback": {"type": "string", "minLength": 1},
+    "reward_rule": {"type": "string", "minLength": 1},
+    "social_objective": {"type": "string", "minLength": 1},
+    "private_objective": {"type": "string", "minLength": 1},
+    "evaluator": {"enum": ["exact", "simulated"]},
+    "seed_policy": {"type": "string", "minLength": 1},
+    "reference_claims": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^DD-C-[0-9]{4}$"}},
+    "reference_runs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "public_status": {"enum": ["golden", "simulated", "retired"]},
+    "compatible_protocols": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "observables": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "expected_metrics": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "minProperties": 1,
+        "additionalProperties": {"type": ["string", "integer", "boolean"]}
+      }
+    }
+  }
+}

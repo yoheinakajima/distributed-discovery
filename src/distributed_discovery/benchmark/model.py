@@ -15,6 +15,9 @@ from distributed_discovery.validation.bootstrap import repository_root
 TASK_SCHEMA_VERSION = "discoverybench-task-v1"
 PROTOCOL_SCHEMA_VERSION = "discoverybench-protocol-v1"
 METRIC_SCHEMA_VERSION = "discoverybench-metric-v1"
+ATTENTION_TASK_SCHEMA_VERSION = "discoverybench-task-v2"
+ATTENTION_PROTOCOL_SCHEMA_VERSION = "discoverybench-protocol-v2"
+ATTENTION_METRIC_SCHEMA_VERSION = "discoverybench-metric-v2"
 
 PROHIBITED_CAPABILITIES = frozenset(
     {
@@ -59,6 +62,7 @@ class BuiltinProtocol:
     description: str
     capabilities: frozenset[str]
     output_fields: tuple[str, ...]
+    schema_version: str = PROTOCOL_SCHEMA_VERSION
     external: bool = False
     enabled: bool = True
 
@@ -71,7 +75,7 @@ class BuiltinProtocol:
                 "protocol_id": self.protocol_id,
                 "task_id": task_id,
                 "decision": f"{self.protocol_id}:{action_space}",
-                "declared_metadata": {"schema_version": PROTOCOL_SCHEMA_VERSION},
+                "declared_metadata": {"schema_version": self.schema_version},
             }
         )
 
@@ -98,7 +102,7 @@ class DeterministicMockAdapter:
         return MappingProxyType({"task_id": view["task_id"], "decision": "mock"})
 
 
-def protocol_registry() -> list[dict[str, object]]:
+def protocol_registry(version: str = "v1") -> list[dict[str, object]]:
     specs = [
         ("blind-distinct", "Coordinate distinct actions without evidence."),
         ("private-clue-following", "Act on each agent's declared private clue."),
@@ -114,6 +118,25 @@ def protocol_registry() -> list[dict[str, object]]:
         ("dd006b-mechanism", "Use the registered strict DD-006B mechanism row."),
         ("registered-atlas-architecture", "Execute one registered coherent Atlas cell."),
     ]
+    if version == "v2":
+        specs += [
+            ("private-only", "Ignore the public signal and use private signals only."),
+            ("public-only", "All agents use the public signal."),
+            ("designated-reader", "Exactly one designated agent uses the public signal."),
+            (
+                "voluntary-attention-equilibrium",
+                "Use the registered voluntary-attention equilibrium count.",
+            ),
+            (
+                "audience-optimal-assignment",
+                "Assign the public signal to the registered optimal audience.",
+            ),
+            ("conditional-private-dominant", "Follow private evidence on disagreement."),
+            ("conditional-public-dominant", "Follow public evidence on disagreement."),
+            ("third-option-contrarian", "Choose the third label on disagreement."),
+        ]
+    elif version != "v1":
+        raise ValueError(f"unknown benchmark version: {version}")
     capabilities = frozenset(
         {
             "task_id",
@@ -131,7 +154,9 @@ def protocol_registry() -> list[dict[str, object]]:
     )
     return [
         {
-            "schema_version": PROTOCOL_SCHEMA_VERSION,
+            "schema_version": PROTOCOL_SCHEMA_VERSION
+            if version == "v1"
+            else ATTENTION_PROTOCOL_SCHEMA_VERSION,
             "protocol_id": protocol_id,
             "description": description,
             "capabilities": sorted(capabilities),
@@ -150,7 +175,7 @@ def protocol_registry() -> list[dict[str, object]]:
     ]
 
 
-def builtin_protocols() -> dict[str, BuiltinProtocol]:
+def builtin_protocols(version: str = "v1") -> dict[str, BuiltinProtocol]:
     return {
         str(spec["protocol_id"]): BuiltinProtocol(
             protocol_id=str(spec["protocol_id"]),
@@ -159,12 +184,13 @@ def builtin_protocols() -> dict[str, BuiltinProtocol]:
                 str(value) for value in cast(list[object], spec["capabilities"])
             ),
             output_fields=tuple(str(value) for value in cast(list[object], spec["output_fields"])),
+            schema_version=str(spec["schema_version"]),
         )
-        for spec in protocol_registry()
+        for spec in protocol_registry(version)
     }
 
 
-def metric_registry() -> list[dict[str, object]]:
+def metric_registry(version: str = "v1") -> list[dict[str, object]]:
     definitions = [
         (
             "discovery",
@@ -251,9 +277,64 @@ def metric_registry() -> list[dict[str, object]]:
             ["deviation_payoffs"],
         ),
     ]
+    if version == "v2":
+        definitions += [
+            (
+                "attention-count",
+                "Number of agents using the public signal.",
+                "agents",
+                ["attention_choices"],
+            ),
+            (
+                "public-signal-user-count",
+                "Number of agents whose action uses the public signal.",
+                "agents",
+                ["actions", "public_signal"],
+            ),
+            (
+                "first-use-gain",
+                "Discovery gain from the first public-signal user over private-only play.",
+                "probability",
+                ["discovery_frontier"],
+            ),
+            (
+                "duplicate-use-loss",
+                "Discovery loss from duplicate public-signal use relative to one user.",
+                "probability",
+                ["discovery_frontier"],
+            ),
+            (
+                "attention-wedge",
+                "Planner optimum minus the registered voluntary-attention equilibrium.",
+                "probability",
+                ["planner_optimum", "equilibrium_discovery"],
+            ),
+            (
+                "audience-size",
+                "Number of agents given access to the public signal.",
+                "agents",
+                ["information_permissions"],
+            ),
+            (
+                "publicity-cost",
+                "Discovery loss relative to the optimal audience assignment.",
+                "probability",
+                ["audience_frontier"],
+            ),
+            (
+                "conditional-attention-category",
+                "Registered conditional policy used on disagreement.",
+                "category",
+                ["contingent_policy"],
+            ),
+        ]
+    elif version != "v1":
+        raise ValueError(f"unknown benchmark version: {version}")
     return [
         {
-            "schema_version": METRIC_SCHEMA_VERSION,
+            "schema_version": METRIC_SCHEMA_VERSION
+            if version == "v1"
+            else ATTENTION_METRIC_SCHEMA_VERSION,
             "metric_id": metric_id,
             "definition": definition,
             "scope": "registered task observables only",
@@ -280,10 +361,11 @@ def _task(
     feedback: str = "none",
     coverage: str = "union discovery",
     reward: str = "common discovery objective",
+    schema_version: str = TASK_SCHEMA_VERSION,
 ) -> dict[str, object]:
     observables = sorted({metric for values in metrics.values() for metric in values})
     return {
-        "schema_version": TASK_SCHEMA_VERSION,
+        "schema_version": schema_version,
         "task_id": f"DB-G{number:02d}",
         "task_family": family,
         "world_space": "finite registered world",
@@ -315,9 +397,9 @@ def _task(
     }
 
 
-def task_registry() -> list[dict[str, object]]:
+def task_registry(version: str = "v1") -> list[dict[str, object]]:
     canonical = "20260720T190336Z_DD-000_32dd1c32_217c602fa0"
-    return [
+    tasks = [
         _task(
             1,
             "canonical-atomic-boxes",
@@ -522,12 +604,145 @@ def task_registry() -> list[dict[str, object]]:
             feedback="perfect failure elimination",
         ),
     ]
+    if version == "v1":
+        return tasks
+    if version != "v2":
+        raise ValueError(f"unknown benchmark version: {version}")
+    for task in tasks:
+        task["schema_version"] = ATTENTION_TASK_SCHEMA_VERSION
+    attention_run = "20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b"
+    audience_run = "20260721T215811Z_DD-013_09c07448_cdac4fb512"
+    conditional_run = "20260721T222047Z_DD-014_f5f099a8_ea0276dd16"
+    tasks += [
+        _task(
+            16,
+            "dd012-attention-profiles",
+            4,
+            ["private-only", "designated-reader", "public-only"],
+            {
+                "private-only": {
+                    "discovery": "15/16",
+                    "attention-count": 0,
+                    "public-signal-user-count": 0,
+                    "first-use-gain": "1/32",
+                    "duplicate-use-loss": "0",
+                },
+                "designated-reader": {
+                    "discovery": "31/32",
+                    "attention-count": 1,
+                    "public-signal-user-count": 1,
+                    "first-use-gain": "1/32",
+                    "duplicate-use-loss": "0",
+                },
+                "public-only": {
+                    "discovery": "3/4",
+                    "attention-count": 4,
+                    "public-signal-user-count": 4,
+                    "first-use-gain": "1/32",
+                    "duplicate-use-loss": "7/32",
+                },
+            },
+            ["DD-C-0059"],
+            [attention_run],
+            schema_version=ATTENTION_TASK_SCHEMA_VERSION,
+        ),
+        _task(
+            17,
+            "dd012-equilibrium-optimum-cell",
+            4,
+            ["voluntary-attention-equilibrium", "designated-reader"],
+            {
+                "voluntary-attention-equilibrium": {
+                    "discovery": "7/8",
+                    "attention-count": 3,
+                    "attention-wedge": "3/32",
+                },
+                "designated-reader": {
+                    "discovery": "31/32",
+                    "attention-count": 1,
+                    "attention-wedge": "0",
+                },
+            },
+            ["DD-C-0060", "DD-C-0061"],
+            [attention_run],
+            schema_version=ATTENTION_TASK_SCHEMA_VERSION,
+        ),
+        _task(
+            18,
+            "dd013-audience-design",
+            4,
+            ["public-only", "designated-reader", "audience-optimal-assignment"],
+            {
+                "public-only": {"discovery": "3/4", "audience-size": 4, "publicity-cost": "7/32"},
+                "designated-reader": {
+                    "discovery": "31/32",
+                    "audience-size": 1,
+                    "publicity-cost": "0",
+                },
+                "audience-optimal-assignment": {
+                    "discovery": "31/32",
+                    "audience-size": 1,
+                    "publicity-cost": "0",
+                },
+            },
+            ["DD-C-0062", "DD-C-0063"],
+            [audience_run],
+            schema_version=ATTENTION_TASK_SCHEMA_VERSION,
+        ),
+        _task(
+            19,
+            "dd013-implementation-mechanism",
+            4,
+            ["audience-optimal-assignment"],
+            {
+                "audience-optimal-assignment": {
+                    "discovery": "31/32",
+                    "audience-size": 1,
+                    "transfer-budget": "0",
+                }
+            },
+            ["DD-C-0064", "DD-C-0065"],
+            [audience_run],
+            reward="registered universal-pooling implementation",
+            schema_version=ATTENTION_TASK_SCHEMA_VERSION,
+        ),
+        _task(
+            20,
+            "dd014-conditional-policies",
+            4,
+            [
+                "conditional-private-dominant",
+                "conditional-public-dominant",
+                "third-option-contrarian",
+            ],
+            {
+                "conditional-private-dominant": {
+                    "discovery": "15/16",
+                    "conditional-attention-category": "private-dominant",
+                },
+                "conditional-public-dominant": {
+                    "discovery": "3/4",
+                    "conditional-attention-category": "public-dominant",
+                },
+                "third-option-contrarian": {
+                    "discovery": "895/1024",
+                    "conditional-attention-category": "third-option-contrarian",
+                },
+            },
+            ["DD-C-0066", "DD-C-0067"],
+            [conditional_run],
+            evidence="private and public conditionally independent signals",
+            schema_version=ATTENTION_TASK_SCHEMA_VERSION,
+        ),
+    ]
+    return tasks
 
 
 def validate_task(task: Mapping[str, object], schema_path: Path | None = None) -> None:
-    path = (
-        schema_path
-        or repository_root() / "studies/DD-010-discoverybench/schemas/task-v1.schema.json"
+    path = schema_path or repository_root() / "studies/DD-010-discoverybench/schemas" / (
+        "task-v2.schema.json"
+        if task.get("schema_version") == ATTENTION_TASK_SCHEMA_VERSION
+        else "task-v1.schema.json"
     )
     schema = __import__("json").loads(path.read_text(encoding="utf-8"))
     jsonschema.validate(dict(task), schema)
@@ -549,11 +764,11 @@ def task_view(task: Mapping[str, object], protocol: BuiltinProtocol) -> Capabili
     return CapabilityView(values, protocol.capabilities)
 
 
-def compatibility_matrix() -> list[dict[str, object]]:
+def compatibility_matrix(version: str = "v1") -> list[dict[str, object]]:
     rows = []
-    for task in task_registry():
+    for task in task_registry(version):
         compatible = set(cast(list[str], task["compatible_protocols"]))
-        for protocol in protocol_registry():
+        for protocol in protocol_registry(version):
             protocol_id = str(protocol["protocol_id"])
             rows.append(
                 {

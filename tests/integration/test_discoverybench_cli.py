@@ -17,3 +17,12 @@ def test_discoverybench_cli_registry_and_run_commands() -> None:
     assert suite["exact_reproduction_passed"] is True
     report = run_cli(["render-report"])
     assert report["compatible_pairs"] == 16
+
+
+def test_discoverybench_cli_attention_v2_is_explicit() -> None:
+    assert len(run_cli(["--version", "v2", "list-tasks"])) == 20
+    assert len(run_cli(["--version", "v2", "list-protocols"])) == 21
+    assert len(run_cli(["--version", "v2", "list-metrics"])) == 27
+    row = run_cli(["--version", "v2", "run", "DB-G17", "voluntary-attention-equilibrium"])
+    assert row["metrics"]["attention-wedge"] == "3/32"
+    assert run_cli(["run-golden"])["task_count"] == 15

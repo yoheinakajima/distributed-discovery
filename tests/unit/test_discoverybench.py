@@ -42,6 +42,34 @@ def test_registry_counts_and_exact_golden_results() -> None:
     assert verify_certificate(certificate, repository_root())["passed"] is True
 
 
+def test_attention_v2_extends_v1_without_changing_it() -> None:
+    v1 = run_golden_suite()
+    v2 = run_golden_suite("v2")
+    assert (len(task_registry("v2")), len(protocol_registry("v2")), len(metric_registry("v2"))) == (
+        20,
+        21,
+        27,
+    )
+    assert (v2["candidate_pairs"], v2["compatible_pairs"], v2["excluded_pairs"]) == (
+        420,
+        28,
+        392,
+    )
+    v1_rows = [(row["task_id"], row["protocol_id"], row["metrics"]) for row in v1["results"]]
+    v2_rows = [
+        (row["task_id"], row["protocol_id"], row["metrics"])
+        for row in v2["results"][: len(v1_rows)]
+    ]
+    assert v2_rows == v1_rows
+    assert verify_certificate(v2, repository_root(), "v2")["passed"] is True
+    assert all(corruption_tests(v2, repository_root(), "v2").values())
+    row = run_pair(task_registry("v2")[-1], "third-option-contrarian", "v2")
+    assert row["metrics"] == {
+        "discovery": "895/1024",
+        "conditional-attention-category": "third-option-contrarian",
+    }
+
+
 def test_bad_task_fixtures_reject_ambiguous_information_and_objectives() -> None:
     missing_information = copy.deepcopy(task_registry()[0])
     del missing_information["per_agent_information"]

@@ -18,6 +18,7 @@ from distributed_discovery.validation.bootstrap import repository_root
 
 
 def configure(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument("--version", choices=("v1", "v2"), default="v1")
     commands = parser.add_subparsers(dest="benchmark_command", required=True)
     commands.add_parser("list-tasks")
     describe_task = commands.add_parser("describe-task")
@@ -47,7 +48,8 @@ def _select(values: list[dict[str, object]], key: str, identifier: str) -> dict[
 
 def execute(args: argparse.Namespace) -> object:
     command = args.benchmark_command
-    tasks = task_registry()
+    version = args.version
+    tasks = task_registry(version)
     if command == "list-tasks":
         return [{"task_id": task["task_id"], "task_family": task["task_family"]} for task in tasks]
     if command == "describe-task":
@@ -55,21 +57,21 @@ def execute(args: argparse.Namespace) -> object:
     if command == "list-protocols":
         return [
             {"protocol_id": value["protocol_id"], "description": value["description"]}
-            for value in protocol_registry()
+            for value in protocol_registry(version)
         ]
     if command == "describe-protocol":
-        return _select(protocol_registry(), "protocol_id", args.protocol_id)
+        return _select(protocol_registry(version), "protocol_id", args.protocol_id)
     if command == "list-metrics":
-        return metric_registry()
+        return metric_registry(version)
     if command == "run":
         task = _select(tasks, "task_id", args.task_id)
-        return run_pair(task, args.protocol_id)
+        return run_pair(task, args.protocol_id, version)
     if command in {"run-golden", "run-suite"} and (
         command == "run-golden" or args.suite == "golden"
     ):
-        return run_golden_suite()
+        return run_golden_suite(version)
     if command == "run-suite":
-        golden = run_golden_suite()
+        golden = run_golden_suite(version)
         if not golden["exact_reproduction_passed"]:
             raise RuntimeError("simulation cannot run before the golden suite passes")
         return run_simulated_suite([101, 211, 307, 401, 503, 601, 701, 809], 1000)
@@ -78,12 +80,12 @@ def execute(args: argparse.Namespace) -> object:
         if not run.is_absolute():
             run = repository_root() / run
         certificate = json.loads((run / "outputs/golden-certificate.json").read_text())
-        return verify_certificate(certificate, repository_root())
+        return verify_certificate(certificate, repository_root(), version)
     if command == "render-report":
         if args.certificate:
             certificate = json.loads(Path(args.certificate).read_text())
         else:
-            certificate = run_golden_suite()
+            certificate = run_golden_suite(version)
         return {
             "title": "DiscoveryBench report",
             "tasks": certificate["task_count"],
