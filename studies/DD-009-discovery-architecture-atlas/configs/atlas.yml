@@ -1,0 +1,16 @@
+study_id: DD-009
+targets: 3
+agents: 2
+signal_accuracy: 2/3
+independent_source_cost_per_agent: 1/8
+cartesian_cells: 288
+registered_valid_cells: 20
+time_cap_seconds: 30
+memory_cap_mb: 512
+certificate_format: exact-fraction-state-enumeration-v1
+axes:
+  evidence: [common, independent]
+  disclosure: [private, pooled]
+  allocation: [direct, consensus, market, planner, sequential, joint]
+  timing: [simultaneous, sequential]
+  reward: [equal-split, pooling, sole-rescue, marginal-coverage, DD-006A, DD-006B]

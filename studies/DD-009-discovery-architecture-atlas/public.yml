@@ -1,0 +1,10 @@
+study_id: DD-009
+title: Discovery Architecture Atlas
+slug: dd-009
+phase: registered
+summary: Registered aligned finite architecture comparison with explicit validity rules.
+public_artifacts:
+  - path: studies/DD-009-discovery-architecture-atlas/model.md
+    description: Frozen aligned architecture model
+  - path: studies/DD-009-discovery-architecture-atlas/report.md
+    description: Bounded exact Atlas report

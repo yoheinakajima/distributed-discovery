@@ -13,7 +13,7 @@
 | DD-008 | Endogenous Evidence Acquisition | complete bounded study | Preserve the two-agent Common-Source Trap boundary; N-agent work is DD-008A |
 | DD-008A | N-Agent Endogenous Evidence Acquisition | complete bounded study | Preserve the N=2 through 8 exact accounting regression |
 | DD-006B | Joint Truthful Discovery Mechanisms | complete bounded study | Preserve strict subsidized rows and the hidden-action boundary |
-| DD-009 | Discovery Architecture Atlas | queued | Register aligned valid architectures before comparison |
+| DD-009 | Discovery Architecture Atlas | registered | Execute the 288-cell validity registry and 20 coherent exact cells |
 | DD-010 | DiscoveryBench | queued | Build golden exact tasks before simulated tasks |
 | DD-011 | Experimental Design and Power | queued | Synthetic, preregistration-ready materials only; no deployment |
 
