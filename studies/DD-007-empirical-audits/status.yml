@@ -1,5 +1,5 @@
 study_id: DD-007
-status: registered
-evidence_status: research-question
-next_action: version the event schema and generate the bounded seeded recovery grid
-updated_utc: 2026-07-20T20:17:35Z
+status: complete-bounded-study
+evidence_status: seeded-synthetic-recovery-grid-with-schema-and-identification-audit
+next_action: retain synthetic boundary; real-data work requires a separate data, ethics, and identification review
+updated_utc: 2026-07-21T05:23:07Z
