@@ -18,3 +18,9 @@ def test_closed_form_matches_direct_enumerator_and_prize_accounting() -> None:
 
 def test_two_agent_planner_recovers_one_independent_source() -> None:
     assert planner(2, Fraction(2, 3), Fraction(1, 8)) == [1]
+
+
+def test_corrupted_direct_discovery_is_rejected() -> None:
+    p, c = Fraction(2, 3), Fraction(1, 8)
+    net, _, _ = direct(3, 1, p, c)
+    assert net + Fraction(1, 100) != discovery(3, 1, p) - c
