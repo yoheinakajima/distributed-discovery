@@ -1,0 +1,29 @@
+{
+  "command": "make dd004-sequential",
+  "config_hash_sha256": "71d84de7c4d5eaeaae7be65c02ac812031095d8c2029ef23d5462dc327289d94",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-21T05:00:38.935620Z",
+  "exit_status": 0,
+  "git_commit": "8ab02e7f177297fe2af291f5173d82eb08fbfe64",
+  "git_dirty": true,
+  "input_hashes": {
+    "src/distributed_discovery/sequential/model.py": "a43009fbbf3d1e43b2698269c22a92cc074fb100ee8a6eae7d0c5aeea84db4de",
+    "src/distributed_discovery/sequential/study.py": "d773e24cd8e16c1a147a39aa3838d648be5101789559306ca3d857174dfe8b06",
+    "src/distributed_discovery/sequential/verification.py": "aa9f71692d3b6003a8196cc041b6dbd9e2a8baf06a05af51d2c6a6e77b1de93d",
+    "studies/DD-004-sequential-discovery/configs/perfect-elimination.yml": "455a988e141ca3aeeb1898ccef810751cb8e4a91d84d9ff500aeb495592f0ff1"
+  },
+  "outputs": {
+    "outputs/schedule-frontier.json": "c69b594c96e452ced13b61e3cbe0d5444c36798fe5c87d48df1494a159223291",
+    "outputs/tiny-policy-tree-certificate.json": "a790ae87f4d8b6bffcefbd7d4e1c923fd3a280b295ef399a72a551acbde274c3"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "run_id": "20260721T050038Z_DD-004_8ab02e7f_71d84de7c4",
+  "schema_version": 1,
+  "started_utc": "2026-07-21T05:00:38.854453Z",
+  "study_id": "DD-004",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

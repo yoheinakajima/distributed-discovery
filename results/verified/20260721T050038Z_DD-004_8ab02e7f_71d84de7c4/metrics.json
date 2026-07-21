@@ -1,0 +1,5 @@
+{
+  "model": "perfect-elimination-v1",
+  "primary_schedule_count": 16,
+  "tiny_policy_tree_checks": 12
+}
