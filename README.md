@@ -10,7 +10,7 @@ This public repository is MIT-licensed. The [companion site](https://yoheinakaji
 
 ## Status and navigation
 
-Verified, sourced, exploratory, refuted, and open claims are distinguished in [`claims/claims.yml`](claims/claims.yml) under the policy in [`docs/claim-status-policy.md`](docs/claim-status-policy.md). DD-001 certifies the exact canonical zero-communication private-team optimum `325089/390625`. DD-002 verifies an exact-potential selection catalogue: its known harmful-information witness survives only anonymous-symmetric selection among six audited rules. DD-003 now gives an independently reproduced heterogeneous-source counterexample: complete first and pairwise report moments match while discovery is `3/4` versus `2/3`. DD-004 through DD-007 have actionable briefs but no results. The execution record and exact resume point are in [`plans/MASTER_EXEC_PLAN.md`](plans/MASTER_EXEC_PLAN.md). See [`reports/project-status.md`](reports/project-status.md), [`studies/index.md`](studies/index.md), [`results/index.md`](results/index.md), and [`docs/index.md`](docs/index.md) for research navigation.
+Verified, sourced, exploratory, refuted, and open claims are distinguished in [`claims/claims.yml`](claims/claims.yml) under the policy in [`docs/claim-status-policy.md`](docs/claim-status-policy.md). DD-001 certifies the exact canonical zero-communication private-team optimum `325089/390625`. DD-002 verifies an exact-potential selection catalogue and DD-003 gives a heterogeneous-source counterexample. DD-004 and DD-005 establish finite sequential and overlap baselines; DD-006 separates weak from strict incentives in a bounded score-difference family; DD-007 is a synthetic-only recovery audit with explicit identification failures. See [`reports/research-program-integration.md`](reports/research-program-integration.md), [`studies/index.md`](studies/index.md), and [`docs/index.md`](docs/index.md).
 
 ## Setup and common commands
 
@@ -37,6 +37,10 @@ make dd002-disclosure     # run the registered DD-002 disclosure audit
 make dd002-selection-robustness # run the six-rule DD-002 selection catalogue
 make dd003-source-graphs  # run the registered DD-003 graph census
 make dd003-heterogeneous-sources # run the colored-source accuracy census
+make dd004-sequential       # run the perfect-elimination sequential baseline
+make dd005-coverage         # run the overlapping-coverage frontiers
+make dd006-mechanisms       # run the score-difference mechanism catalogue
+make dd007-synthetic-audit  # run the synthetic-only recovery audit
 make papers               # build all paper artifacts
 make site                 # build the public companion site locally
 make all                  # verify, reproduce canonical baseline, build papers and site
