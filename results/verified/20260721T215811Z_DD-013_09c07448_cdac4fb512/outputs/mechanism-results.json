@@ -1,0 +1,6820 @@
+[
+  {
+    "agents": 2,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 3,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          1,
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 2,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 2,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 2,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 2,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 3,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          1,
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 2,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 2,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 2,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 3,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 2,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 2,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 3,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 2,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 2,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 3,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 4,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 3,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          3
+        ],
+        "weak": [
+          3
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 3,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          3
+        ],
+        "weak": [
+          3
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 3,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          3
+        ],
+        "weak": [
+          3
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 3,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 4,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 3,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          2,
+          3
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 3,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          3
+        ],
+        "weak": [
+          3
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 3,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 4,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 3,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 3,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 4,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          1,
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 3,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 3,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 4,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 5,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 4,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          3,
+          4
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 4,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          4
+        ],
+        "weak": [
+          4
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 4,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          4
+        ],
+        "weak": [
+          4
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 4,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 5,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 4,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          3
+        ],
+        "weak": [
+          3
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 4,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          4
+        ],
+        "weak": [
+          4
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 4,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 5,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 4,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          3
+        ],
+        "weak": [
+          3
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 4,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 5,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 4,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 4,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 5,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 6,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 5,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          4
+        ],
+        "weak": [
+          4
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 5,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          5
+        ],
+        "weak": [
+          5
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 5,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          5
+        ],
+        "weak": [
+          5
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 5,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 6,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 5,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          3
+        ],
+        "weak": [
+          3
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 5,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          4,
+          5
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 5,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 6,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 5,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          3
+        ],
+        "weak": [
+          3
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 5,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 6,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 5,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 5,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 6,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 7,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 6,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          4
+        ],
+        "weak": [
+          4
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 6,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          5,
+          6
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 6,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          6
+        ],
+        "weak": [
+          6
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 6,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 7,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 6,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          4
+        ],
+        "weak": [
+          4
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 6,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          5
+        ],
+        "weak": [
+          5
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 6,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 7,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 6,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          3
+        ],
+        "weak": [
+          3
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 6,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 7,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 6,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 6,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 7,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 8,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 7,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          5
+        ],
+        "weak": [
+          5
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 7,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          6
+        ],
+        "weak": [
+          6
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 7,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          7
+        ],
+        "weak": [
+          7
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 7,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 8,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          3
+        ],
+        "weak": [
+          3
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 7,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          4
+        ],
+        "weak": [
+          4
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 7,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          6
+        ],
+        "weak": [
+          6
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 7,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 8,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 7,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          4
+        ],
+        "weak": [
+          4
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 7,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 8,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          3
+        ],
+        "weak": [
+          3
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 7,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 7,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 8,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 9,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 8,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          5
+        ],
+        "weak": [
+          5
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 8,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          6
+        ],
+        "weak": [
+          6
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 8,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          8
+        ],
+        "weak": [
+          8
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 8,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 9,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          3
+        ],
+        "weak": [
+          3
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 8,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          5
+        ],
+        "weak": [
+          5
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 8,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          6
+        ],
+        "weak": [
+          6
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 8,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 9,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          2
+        ],
+        "weak": [
+          2
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 8,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          4
+        ],
+        "weak": [
+          4
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 8,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 9,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          3
+        ],
+        "weak": [
+          3
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 8,
+        "strict": [
+          1
+        ],
+        "weak": [
+          1
+        ]
+      }
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "5/6"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      0
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 1,
+        "strict": [
+          0
+        ],
+        "weak": [
+          0
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "agents": 8,
+    "binding_optima": [
+      0,
+      1
+    ],
+    "mechanisms": {
+      "binding_exclusive_delivery": {
+        "budget_balance": "unit discovery prize unchanged",
+        "expected_external_subsidy": "0",
+        "implemented_counts": [
+          0,
+          1
+        ],
+        "strict": null,
+        "weak": null
+      },
+      "public_equal_split_nonbinding": {
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      },
+      "public_universal_pooling": {
+        "count_correspondence_matches_optimum": true,
+        "ex_post_budget_balance": true,
+        "expected_external_subsidy": "0",
+        "identity_equilibrium_count": 9,
+        "strict": [],
+        "weak": [
+          0,
+          1
+        ]
+      }
+    },
+    "private_accuracy": "5/6",
+    "shared_accuracy": "5/6"
+  }
+]

@@ -46,6 +46,10 @@ Progress:
   merge, CI, Pages, and live-route checks.
 - [ ] DD-013 binding/voluntary audience frontier, garbling comparison,
   implementable institution, independent verification, claims, and deployment.
+  Issue #83 / PR #84 now contain passing run
+  `20260721T215811Z_DD-013_09c07448_cdac4fb512`, DD-C-0062 through DD-C-0065,
+  the eight-institution registry, and the Audience Lab. Local acceptance passes;
+  merge, post-merge CI/Pages, and live-route checks remain.
 - [ ] DD-014 conditional policy class, role-profile census, larger-class audit,
   independent verification, claims, and deployment.
 - [ ] Focused paper, benchmark extension, synthetic experiment extension,

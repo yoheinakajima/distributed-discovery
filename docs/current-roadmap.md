@@ -9,7 +9,7 @@ verification plan, and corruption test where certificates are used.
 | --- | --- | --- |
 | Program V3 baseline | complete through PR #80 | DD-012 through DD-015 are registered and deployed without creating research evidence. |
 | DD-012 Incentive to Ignore | local evidence complete on PR #82 | DD-C-0059 through DD-C-0061 and the primary run pass; merge, CI, Pages, and live-route validation remain before DD-013. |
-| DD-013 Audience Design | registered after DD-012 | Separate binding delivery, voluntary use, public role assignment, and garbling; exactly evaluate at least one implementable reader institution. |
+| DD-013 Audience Design | local evidence complete on PR #84 | DD-C-0062 through DD-C-0065, the primary run, and Audience Lab pass locally; merge, CI, Pages, and live routes remain. |
 | DD-014 Conditional Attention | registered after DD-013 | Test the complete deterministic label-equivariant disagreement class for `M=3` and audit small fixtures against a larger raw class. |
 | DD-015 Dynamic Attention | optional registration | Begin only after required Program V3 milestones if capacity remains; keep stopping and fixed-budget objectives distinct. |
 | Program V3 paper and integration | queued | Build only from validated DD-012–DD-014 evidence; extend the benchmark and synthetic kit without human data; publish static accessible Labs. |

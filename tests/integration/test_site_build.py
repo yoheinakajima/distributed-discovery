@@ -62,6 +62,10 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     attention_data = json.loads((output / "data/studies/dd-012.json").read_text(encoding="utf-8"))
     assert attention_data["phase"] == "complete-bounded-study"
     assert attention_data["claim_ids"] == ["DD-C-0059", "DD-C-0060", "DD-C-0061"]
+    audience_study = (output / "research/dd-013.html").read_text(encoding="utf-8")
+    assert "DD-C-0062" in audience_study
+    assert "DD-C-0065" in audience_study
+    assert "20260721T215811Z_DD-013_09c07448_cdac4fb512" in audience_study
     assert (output / "benchmark.html").is_file()
     for route in ["tasks", "protocols", "metrics", "results"]:
         assert (output / f"benchmark/{route}.html").is_file()
@@ -78,6 +82,13 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "data-experiment-lab" in experiment_lab
     assert "JavaScript is off" in experiment_lab
     assert "No participants were recruited" in experiment_lab
+    audience_lab = (output / "labs/audience.html").read_text()
+    assert "data-audience-lab" in audience_lab
+    assert "JavaScript is off" in audience_lab
+    assert "DD-C-0065" in audience_lab
+    assert "20260721T215811Z_DD-013_09c07448_cdac4fb512" in audience_lab
+    for control in ["audience-n", "audience-p", "audience-q", "audience-g", "audience-m"]:
+        assert f'id="{control}"' in audience_lab
     for name in [
         "sequential",
         "coverage",
@@ -98,6 +109,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert 'id="DD-C-0055"' in claims
     assert 'id="DD-C-0056"' in claims
     assert 'id="DD-C-0061"' in claims
+    assert 'id="DD-C-0065"' in claims
     assert "unvalidated values" in claims
 
     runs = json.loads((output / "data/runs.json").read_text(encoding="utf-8"))["runs"]
@@ -137,6 +149,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "experiment-kit/power.html",
         "labs/benchmark.html",
         "labs/experiment-design.html",
+        "labs/audience.html",
         "publications/common-source-trap.html",
     } <= route_paths
     assert (output / "robots.txt").is_file()
@@ -176,6 +189,12 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert experiment["summary"]["treatment_cells"] == 20
     assert experiment["summary"]["power_rows"] == 384
     assert experiment["summary"]["no_human_data"] is True
+    audience = json.loads((output / "data/audience/summary.json").read_text())
+    assert audience["run_id"] == "20260721T215811Z_DD-013_09c07448_cdac4fb512"
+    assert audience["summary"]["binding_audience_rows"] == 1050
+    assert audience["summary"]["garbling_rows"] == 2625
+    institutions = json.loads((output / "data/audience/institutions.json").read_text())
+    assert len(institutions["institutions"]) == 8
     for name in [
         "dd011-preregistration-template.md",
         "dd011-participant-instructions.md",

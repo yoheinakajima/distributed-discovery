@@ -5,4 +5,6 @@ conditions. The current sequence runs through ADR-0016, including bounded
 DD-006 mechanism, DD-007 synthetic-audit, and DD-006A transfer-frontier
 registrations. ADR-0016 freezes DD-009's aligned validity registry and Pareto
 objectives. ADR-0017 freezes DD-012's access interpretation, exact grid,
-reward registry, and independent-enumeration boundary.
+reward registry, and independent-enumeration boundary. ADR-0018 separates
+DD-013 binding audiences, voluntary modes, public action assignment, bounded
+garbling, and the observability of its firewall registry.

@@ -1281,3 +1281,87 @@ claims:
     first_added: "2026-07-21"
     last_checked: "2026-07-21"
     notes: Sole-rescue and marginal-coverage are numerically identical in this atomic one-target model but retain distinct observability descriptions. Assigned-reader and off-shared-success are preserved negative mechanism results.
+  - id: DD-C-0062
+    study_id: DD-013
+    short_name: binding-audience-theorem
+    statement: For every finite N at least 2 and interior accuracies p and q in the frozen access-gated follow/private model, full-precision shared evidence is binding-optimal for exactly one recipient when q>p, no recipients when q<p, and either zero or one recipient when q=p; every audience of size at least two is strictly worse.
+    scope: Arbitrary finite N at least 2, three uniform targets, homogeneous conditionally independent private clues, one symmetric shared clue, binding ex-ante delivery, the registered follow-shared/follow-private actions, and union discovery; no voluntary use, arbitrary action rule, robustness value, correlated signal, dynamic, behavioral, or empirical claim is included.
+    claim_type: theorem
+    status: verified
+    source_type: human-readable-failure-event-proof-with-exact-frontier-and-separate-labeled-state-audit
+    source_reference: results/verified/20260721T215811Z_DD-013_09c07448_cdac4fb512/outputs/theorem-checks.json
+    proof_path: studies/DD-013-audience-design/proof.md
+    implementation_paths: [src/distributed_discovery/audience/model.py, src/distributed_discovery/audience/verification.py]
+    run_ids: [20260721T215811Z_DD-013_09c07448_cdac4fb512]
+    test_paths: [tests/unit/test_audience.py]
+    exactness_basis: The proof gives failure probability (1-p)^N with no audience and (1-q)(1-p)^(N-m) for positive audience m; its first margin has sign q-p and every later margin is strictly negative. The exact 175-cell frontier and separate enumerator reproduce all 1,050 audience rows.
+    rounding_rule: exact fractions; no decimal approximation is authoritative
+    dependencies: [DD-C-0059]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: This is a binding delivery theorem inside one action class, not a universal prescription to restrict public information.
+  - id: DD-C-0063
+    study_id: DD-013
+    short_name: bounded-precision-versus-publicity-theorem
+    statement: Within DD-013's symmetric garbling family with delivered accuracy g in the registered grid and 1/3<=g<=q, the binding audience optimum weakly dominates every garbled positive-audience design; equality occurs only at a full-precision one-recipient design when q>=p, and all other 2,520 registered garbling rows are strictly worse.
+    scope: The DD-C-0062 model and only the 2,625 feasible `(N,p,q,g,m)` rows with g drawn from {1/3,1/2,2/3,3/4,5/6}, g<=q, and positive audience m; this is not a Blackwell-order, arbitrary experiment, endogenous-precision, communication-cost, persuasion, or empirical theorem.
+    claim_type: theorem
+    status: verified
+    source_type: human-readable-failure-probability-order-proof-with-bounded-exact-census-and-direct-enumeration
+    source_reference: results/verified/20260721T215811Z_DD-013_09c07448_cdac4fb512/outputs/garbling-frontier.json
+    proof_path: studies/DD-013-audience-design/proof.md
+    implementation_paths: [src/distributed_discovery/audience/model.py, src/distributed_discovery/audience/study.py, src/distributed_discovery/audience/verification.py]
+    run_ids: [20260721T215811Z_DD-013_09c07448_cdac4fb512]
+    test_paths: [tests/unit/test_audience.py]
+    exactness_basis: For q>p, (1-g)(1-p)^(N-m) is at least the one-recipient full-precision failure probability, with equality only when g=q and m=1; q=p adds the no-delivery tie, while q<p makes even the first feasible use strictly harmful. Separate enumeration reproduces all 2,625 rows and rejects altered dominance.
+    rounding_rule: exact fractions; counts are exact
+    dependencies: [DD-C-0062]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: The 105 equality rows are full-precision one-recipient designs for the 105 q>=p cells; reduced precision never repairs over-publicity in this family.
+  - id: DD-C-0064
+    study_id: DD-013
+    short_name: universal-pooling-audience-implementation
+    statement: With full public access and ex-ante choice between the registered follow-shared and follow-private modes, universal pooling—each role receives 1/N exactly when the team discovers—implements the binding-optimal reader-count correspondence for every finite N at least 2 and interior p,q, is strict when p differs from q, is ex-post budget balanced against the unit discovery prize, and needs no external subsidy.
+    scope: The DD-C-0062 signal and discovery model, risk-neutral agents, full access, pure ex-ante two-mode unilateral deviations, team discovery observability, and the stated equal pooling rule; arbitrary signal-contingent policies, mixed equilibrium, collusion, identity selection, hidden discovery, dynamics, and real institutions are excluded.
+    claim_type: theorem
+    status: verified
+    source_type: exact-potential-identity-proof-with-separate-direct-payoff-and-deviation-audit
+    source_reference: results/verified/20260721T215811Z_DD-013_09c07448_cdac4fb512/outputs/mechanism-results.json
+    proof_path: studies/DD-013-audience-design/proof.md
+    implementation_paths: [src/distributed_discovery/audience/model.py, src/distributed_discovery/audience/verification.py]
+    run_ids: [20260721T215811Z_DD-013_09c07448_cdac4fb512]
+    test_paths: [tests/unit/test_audience.py]
+    exactness_basis: Each role's expected payoff is exactly G_N(k)/N, so every unilateral mode-change payoff has the sign of the corresponding discovery change. The binding audience theorem then gives the complete weak and strict count correspondence; realized payments sum to one exactly on discovery and zero otherwise. Direct state enumeration verifies all 175 cells and rejects an altered mechanism equilibrium.
+    rounding_rule: exact fractions; no decimal approximation is authoritative
+    dependencies: [DD-C-0062]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: When q>p there are N symmetric one-reader identity equilibria; a random or rotating assignment selects identity, while the pooling theorem implements only the optimal count.
+  - id: DD-C-0065
+    study_id: DD-013
+    short_name: bounded-voluntary-audience-census
+    statement: In DD-013's 1,050 registered audience settings and 4,025 voluntary profiles, the voluntary weak-equilibrium correspondence differs from binding use in 656 settings, permits excessive use relative to the global binding optimum in 273, and has welfare-relevant multiplicity in eight; all 70 insufficient-use settings have zero audience, so no positive audience has voluntary equilibrium use below the global optimum on this grid.
+    scope: N=2 through 8, p,q in {1/3,1/2,2/3,3/4,5/6}, equal splitting of a unit discovery prize, an ex-ante recipient choice between only follow-shared and follow-private modes, and nonrecipients without shared access; no conditional policy, mixed equilibrium, heterogeneous payoff, attention cost, behavioral, or empirical conclusion is claimed.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exhaustive-exact-voluntary-audience-census-with-separate-labeled-payoff-enumerator
+    source_reference: results/verified/20260721T215811Z_DD-013_09c07448_cdac4fb512/outputs/voluntary-audiences.json
+    proof_path: studies/DD-013-audience-design/proof.md
+    implementation_paths: [src/distributed_discovery/audience/model.py, src/distributed_discovery/audience/study.py, src/distributed_discovery/audience/verification.py]
+    run_ids: [20260721T215811Z_DD-013_09c07448_cdac4fb512]
+    test_paths: [tests/unit/test_audience.py]
+    exactness_basis: Fraction arithmetic exhausts 1,050 audience settings and 4,025 recipient-mode profiles. A separate enumerator traverses 3,319,200 labeled states and reconstructs every equal-split payoff and available recipient deviation, verifies all counts, and rejects an altered voluntary-equilibrium record.
+    rounding_rule: exact fractions; counts are exact
+    dependencies: [DD-C-0060, DD-C-0062]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: The 70 insufficient-use settings are access failures at audience zero, not evidence that informed recipients voluntarily under-attend. Positive audiences can instead overuse the shared clue.

@@ -59,6 +59,13 @@ rejected corruptions. It supports the One-Reader Theorem DD-C-0059, the
 equal-split attention-threshold theorem DD-C-0060, and the bounded intervention
 census DD-C-0061.
 
+The DD-013 Audience Design run is
+`verified/20260721T215811Z_DD-013_09c07448_cdac4fb512`. It preserves 1,050
+binding rows, 4,025 voluntary profiles, 2,625 feasible garbling rows, eight
+information-firewall institutions, 175 mechanism cells, a separate
+3,319,200-state reproduction, and four rejected corruptions. It supports
+DD-C-0062 through DD-C-0065.
+
 The three Program V2 primary runs above are immutable and must not be rerun just
 to refresh timestamps. Their public summaries are generated only after manifest
 and output checksum validation.

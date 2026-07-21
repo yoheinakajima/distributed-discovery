@@ -1,0 +1,82 @@
+[
+  {
+    "access_verifiable": true,
+    "action_verifiable": false,
+    "commitment": "binding delivery gate",
+    "evaluated": true,
+    "external_subsidy": false,
+    "institution_id": "exclusive-delivery",
+    "who_may_act_on_shared": "selected audience only",
+    "who_sees_shared": "selected audience only"
+  },
+  {
+    "access_verifiable": true,
+    "action_verifiable": false,
+    "commitment": "binding randomized delivery",
+    "evaluated": true,
+    "external_subsidy": false,
+    "institution_id": "random-single-reader",
+    "who_may_act_on_shared": "assigned identity",
+    "who_sees_shared": "one uniformly assigned identity"
+  },
+  {
+    "access_verifiable": true,
+    "action_verifiable": false,
+    "commitment": "binding scheduled delivery",
+    "evaluated": true,
+    "external_subsidy": false,
+    "institution_id": "rotating-reader",
+    "who_may_act_on_shared": "scheduled identity",
+    "who_sees_shared": "one identity per round on a public schedule"
+  },
+  {
+    "access_verifiable": true,
+    "action_verifiable": false,
+    "commitment": "exclusive authenticated access",
+    "evaluated": true,
+    "external_subsidy": false,
+    "institution_id": "exclusive-attention-token",
+    "who_may_act_on_shared": "current token holder",
+    "who_sees_shared": "current token holder"
+  },
+  {
+    "access_verifiable": true,
+    "action_verifiable": false,
+    "commitment": "private delivery",
+    "evaluated": true,
+    "external_subsidy": false,
+    "institution_id": "private-recommendation",
+    "who_may_act_on_shared": "addressed recipient",
+    "who_sees_shared": "one privately addressed recipient"
+  },
+  {
+    "access_verifiable": false,
+    "action_verifiable": true,
+    "commitment": "binding action enforcement",
+    "evaluated": true,
+    "external_subsidy": false,
+    "institution_id": "public-plus-binding-role",
+    "who_may_act_on_shared": "one assigned role",
+    "who_sees_shared": "everyone"
+  },
+  {
+    "access_verifiable": false,
+    "action_verifiable": false,
+    "commitment": "none; equal-split voluntary modes",
+    "evaluated": true,
+    "external_subsidy": false,
+    "institution_id": "public-plus-nonbinding-recommendation",
+    "who_may_act_on_shared": "everyone",
+    "who_sees_shared": "everyone"
+  },
+  {
+    "access_verifiable": false,
+    "action_verifiable": false,
+    "commitment": "ex-ante registered follow-shared/follow-private modes",
+    "evaluated": true,
+    "external_subsidy": false,
+    "institution_id": "public-plus-universal-pooling",
+    "who_may_act_on_shared": "everyone",
+    "who_sees_shared": "everyone"
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "command": "make dd013-audience",
+  "config_hash_sha256": "cdac4fb512be788c4da338965b213b1863791edcf47e062b2b2995ce999e457b",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-21T22:00:00.263564Z",
+  "exit_status": 0,
+  "git_commit": "09c0744864697a340f01afd7e9ae68dd60aba061",
+  "git_dirty": false,
+  "input_hashes": {
+    "src/distributed_discovery/attention/model.py": "44f5ea9a70385b037be578c80ebd33cd1da0d601b299678505b1bfc42a5ac05c",
+    "src/distributed_discovery/audience/model.py": "b2b78cf71430cedfd273b91aac0d6649ed66277f643cb1e22257a25b2dbc856b",
+    "src/distributed_discovery/audience/study.py": "cb879e4f97cf5b8619e0d7e8c8c1edcedc0e3e6f8f67d4006ad462a3196a907d",
+    "src/distributed_discovery/audience/verification.py": "7235b0d2be31ac40c768657aff5745afbc219e22f65796028dce02dbacf5bb6c",
+    "studies/DD-013-audience-design/configs/frontier.yml": "ffd3e498ce267b4340d346690b76bb9bf50053fe78f3379097934cf88a5ad823",
+    "studies/DD-013-audience-design/proof.md": "bb99321792c973c4f5fe27a986df56ac348109a298dafd2e840477ebb485ae3a"
+  },
+  "outputs": {
+    "outputs/audience-frontier.csv": "6b59c6ec15ca9117ab42e84ed2fe583c7fb8b145f3ef726a8ff462507b1d37b5",
+    "outputs/audience-frontier.json": "357e7b32c1dc7b0baec8428a4807dc24c37baba60dc751c1fbf4a047feac2995",
+    "outputs/corruption-tests.json": "d59310aa0a27b28f5a882d896cae516c25f9b906830b027493741cf77886b3c6",
+    "outputs/garbling-frontier.json": "a7ab825124530da7246e2bd20d6d16b75c20c5664a35649479843f0307687016",
+    "outputs/institution-registry.json": "e9932e9142521461133e33c719e07f86ae48d11c085db0323b5a5ea3a5f188d1",
+    "outputs/mechanism-results.json": "dfd09ff9bcde4b04832461260f77ef9363bc2eaf8187221b2023126b3032f462",
+    "outputs/summary.json": "7514d4f97cd4b441b862031cc84a943939782f8e006361c1ffe7d4ae8bf1c8b8",
+    "outputs/theorem-checks.json": "12094094e1d514bdb19335f993dbd58dbb198a6685e2921bd3c64d6e5383e674",
+    "outputs/verification.json": "0ae118e4c23612511ee85e0eac8983554d285b254de6e8b3169883a3f99d4b29",
+    "outputs/voluntary-audiences.json": "b914928a3307e7057df53b03ff03e02209300024c33836b11a2203b818c848c7"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "run_id": "20260721T215811Z_DD-013_09c07448_cdac4fb512",
+  "schema_version": 1,
+  "started_utc": "2026-07-21T21:58:11.116422Z",
+  "study_id": "DD-013",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

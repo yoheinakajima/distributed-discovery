@@ -1,5 +1,5 @@
 study_id: DD-013
-status: registered
-evidence_status: no-result-registration-only
-next_action: begin only after DD-012 is merged; freeze the exact audience, garbling, equilibrium, and mechanism registry
-updated_utc: 2026-07-21T21:05:32Z
+status: complete-bounded-study
+evidence_status: three-verified-theorems-and-independently-reproduced-voluntary-census
+next_action: preserve the run, proofs, firewall registry, and regressions; proceed to DD-014 only after PR merge, CI, Pages, and live-route validation
+updated_utc: 2026-07-21T22:00:01Z
