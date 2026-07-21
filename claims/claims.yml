@@ -945,3 +945,45 @@ claims:
     first_added: "2026-07-21"
     last_checked: "2026-07-21"
     notes: The terminal invariance follows the registered perfect-elimination conditions; expected action and round differences are objective-specific.
+  - id: DD-C-0046
+    study_id: DD-005
+    short_name: overlap-breaks-top-individual-portfolio-ranking
+    statement: In the registered four-outcome weighted-union witness, the two highest individual actions have covered value 3 while the exact two-action portfolio has value 4, because the highest actions duplicate coverage.
+    scope: Deterministic unit-weight union coverage, three declared actions, and budget two; this refutes exact top-individual portfolio ranking under overlap, not any stochastic or approximate guarantee.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exhaustive-portfolio-enumeration-with-independent-bitmask-verifier
+    source_reference: results/verified/20260721T050706Z_DD-005_be3b544c_98698dee2f/outputs/coverage-frontiers.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/coverage/model.py, src/distributed_discovery/coverage/verification.py]
+    run_ids: [20260721T050706Z_DD-005_be3b544c_98698dee2f]
+    test_paths: [tests/unit/test_coverage.py]
+    exactness_basis: all budget-two portfolios are enumerated with Fraction arithmetic and a separate bit-mask evaluator agrees on the optimum
+    rounding_rule: exact integers
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: Distinct action labels alone do not encode distinct covered outcomes.
+  - id: DD-C-0047
+    study_id: DD-005
+    short_name: greedy-frontier-gap-under-overlap
+    statement: In the registered six-outcome weighted-union witness, greedy and top-individual portfolios have value 5 while the exact two-action frontier has value 6.
+    scope: Deterministic unit-weight union coverage, three declared actions, and budget two; this is a bounded greedy gap, not a bound on greedy approximation ratios or recovery budgets generally.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exhaustive-portfolio-enumeration-with-independent-bitmask-verifier
+    source_reference: results/verified/20260721T050706Z_DD-005_be3b544c_98698dee2f/outputs/coverage-frontiers.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/coverage/model.py, src/distributed_discovery/coverage/verification.py]
+    run_ids: [20260721T050706Z_DD-005_be3b544c_98698dee2f]
+    test_paths: [tests/unit/test_coverage.py]
+    exactness_basis: all budget-two portfolios are enumerated with Fraction arithmetic and a separate bit-mask evaluator agrees on the optimum
+    rounding_rule: exact integers
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: The reported gap is exact only for the registered finite fixture.

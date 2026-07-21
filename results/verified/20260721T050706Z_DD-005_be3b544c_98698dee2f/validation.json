@@ -1,0 +1,6 @@
+{
+  "greedy_failure_witness": "greedy-recovery-witness",
+  "independent_exact_verifier": true,
+  "passed": true,
+  "top_individual_failure_witness": "duplicated-ranking-witness"
+}

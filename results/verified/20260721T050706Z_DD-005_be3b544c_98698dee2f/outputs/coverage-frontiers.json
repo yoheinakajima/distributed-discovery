@@ -1,0 +1,62 @@
+[
+  {
+    "budget": 2,
+    "exact_portfolio": [
+      0,
+      1
+    ],
+    "exact_value": "2",
+    "fixture": "atomic-control",
+    "greedy_portfolio": [
+      0,
+      1
+    ],
+    "greedy_value": "2",
+    "independent_verifier_passed": true,
+    "top_individual_portfolio": [
+      0,
+      1
+    ],
+    "top_individual_value": "2"
+  },
+  {
+    "budget": 2,
+    "exact_portfolio": [
+      0,
+      2
+    ],
+    "exact_value": "4",
+    "fixture": "duplicated-ranking-witness",
+    "greedy_portfolio": [
+      0,
+      2
+    ],
+    "greedy_value": "4",
+    "independent_verifier_passed": true,
+    "top_individual_portfolio": [
+      0,
+      1
+    ],
+    "top_individual_value": "3"
+  },
+  {
+    "budget": 2,
+    "exact_portfolio": [
+      1,
+      2
+    ],
+    "exact_value": "6",
+    "fixture": "greedy-recovery-witness",
+    "greedy_portfolio": [
+      0,
+      1
+    ],
+    "greedy_value": "5",
+    "independent_verifier_passed": true,
+    "top_individual_portfolio": [
+      0,
+      1
+    ],
+    "top_individual_value": "5"
+  }
+]
