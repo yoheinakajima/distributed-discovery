@@ -88,12 +88,33 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "JavaScript is off" in experiment_lab
     assert "No participants were recruited" in experiment_lab
     audience_lab = (output / "labs/audience.html").read_text()
+    audience_design_lab = (output / "labs/audience-design.html").read_text()
+    assert "data-audience-lab" in audience_design_lab
+    assert "Audience Design Lab" in audience_design_lab
     assert "data-audience-lab" in audience_lab
     assert "JavaScript is off" in audience_lab
     assert "DD-C-0065" in audience_lab
     assert "20260721T215811Z_DD-013_09c07448_cdac4fb512" in audience_lab
-    for control in ["audience-n", "audience-p", "audience-q", "audience-g", "audience-m"]:
+    for control in [
+        "audience-n",
+        "audience-p",
+        "audience-q",
+        "audience-use",
+        "audience-g",
+        "audience-m",
+        "audience-mechanism",
+    ]:
         assert f'id="{control}"' in audience_lab
+    for row_kind in ["audience-row", "voluntary-row", "garbling-row", "mechanism-row"]:
+        assert f"data-{row_kind}" in audience_lab
+    attention_lab = (output / "labs/attention.html").read_text()
+    assert "data-attention-lab" in attention_lab
+    assert "JavaScript is off" in attention_lab
+    assert "DD-C-0060" in attention_lab
+    assert "20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b" in attention_lab
+    assert "Equal-split attention wedge" in attention_lab
+    for control in ["attention-n", "attention-p", "attention-q", "attention-k", "attention-reward"]:
+        assert f'id="{control}"' in attention_lab
     conditional_lab = (output / "labs/conditional-attention.html").read_text()
     assert "data-conditional-lab" in conditional_lab
     assert "JavaScript is off" in conditional_lab
@@ -169,7 +190,9 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "experiment-kit/attention.html",
         "labs/benchmark.html",
         "labs/experiment-design.html",
+        "labs/attention.html",
         "labs/audience.html",
+        "labs/audience-design.html",
         "labs/conditional-attention.html",
         "publications/common-source-trap.html",
         "publications/incentive-to-ignore.html",
@@ -216,6 +239,11 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert experiment["summary"]["response_scenarios"] == 11
     assert experiment["summary"]["power_rows"] == 924
     assert experiment["summary"]["no_human_data"] is True
+    attention_summary = json.loads((output / "data/attention/summary.json").read_text())
+    assert attention_summary["run_id"] == "20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b"
+    assert attention_summary["summary"]["grid_cells"] == 175
+    assert attention_summary["summary"]["profiles"] == 1050
+    assert attention_summary["summary"]["reward_rules"] == 7
     audience = json.loads((output / "data/audience/summary.json").read_text())
     assert audience["run_id"] == "20260721T215811Z_DD-013_09c07448_cdac4fb512"
     assert audience["summary"]["binding_audience_rows"] == 1050
@@ -262,6 +290,8 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
 
     for route in [
         "research/dd-013.html",
+        "labs/attention.html",
+        "labs/audience-design.html",
         "labs/audience.html",
         "benchmark/results.html",
         "experiment-kit/power.html",

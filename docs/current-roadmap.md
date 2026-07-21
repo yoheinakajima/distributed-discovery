@@ -13,7 +13,7 @@ verification plan, and corruption test where certificates are used.
 | DD-014 Conditional Attention | complete and deployed through PR #87 | Preserve DD-C-0066 through DD-C-0068, the passing run, bounded class, and raw larger-class counterexample. |
 | DD-015 Dynamic Attention | optional registration | Begin only after required Program V3 milestones if capacity remains; keep stopping and fixed-budget objectives distinct. |
 | Program V3 focused paper | complete and deployed through PR #90 | The deterministic 20-page *Incentive to Ignore* paper, nine generated evidence assets, citation audit, all-page visual review, Pages, and live PDF pass. |
-| Program V3 benchmark, experiment, and site integration | DiscoveryBench v2 merged/deployed through PR #93; DD-011 v2 active on issue #94 | Commit and run the clean 29-cell synthetic attention package, then publish the final accessible surface. |
+| Program V3 benchmark, experiment, and site integration | DiscoveryBench v2 merged/deployed through PR #93; DD-011 v2 merged/deployed through PR #95; public integration active on issue #96 | Merge and deploy the locally accepted 59-route accessible surface, then execute the final handoff. |
 | DD-010 DiscoveryBench | complete and deployed | Preserve v1's 15-task exact golden suite and capability isolation. New tasks or adapters require a versioned registration; no public submissions or universal score. |
 | DD-011 Experimental Design and Power | complete synthetic package and deployed | Power is conditional on eight declared synthetic scenarios. Human deployment requires separate ethics, consent, privacy, pilot, and institutional review. |
 | DD-008B Common-Source Analysis | complete and deployed | The general threshold theorem holds only for the frozen homogeneous equal-prize model. Extend to heterogeneous accuracy, source dependence, mixed choice, or dynamics under a new model. |
@@ -30,13 +30,13 @@ High-value benchmark questions are new exact tasks, adapter conformance, and
 robust multi-metric aggregation without collapsing the registry into an
 unexplained score.
 
-Operational resume commands for the active benchmark extension:
+Operational resume commands for the active public integration:
 
 ```sh
-git switch benchmark/attention-extension
-make verify
+git switch site/program-v3-attention
+make verify && make site
 ```
 
-The next file is `plans/MASTER_EXEC_PLAN.md`; DiscoveryBench v2 proceeds from
-its frozen implementation to a clean immutable run and claim audit. For
+The next file is `plans/MASTER_EXEC_PLAN.md`; issue #96 proceeds from local
+browser acceptance to PR, CI/Pages, and live-route validation. For
 settings-only work, use `docs/github-setup.md` and issue #32.

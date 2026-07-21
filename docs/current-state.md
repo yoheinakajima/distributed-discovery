@@ -1,10 +1,11 @@
 # Current program state
 
-_Reconciled 2026-07-21 at the DD-014 local acceptance gate._
+_Reconciled 2026-07-21 at the Program V3 public-integration local acceptance gate._
 
 Distributed Discovery Programs V1 and V2 are complete at their registered
 bounded scopes. Program V3, *The Incentive to Ignore*, is active under issue
-#85 after DD-012 and DD-013 merged and deployed.
+#96 after DD-012 through DD-014, the focused paper, DiscoveryBench v2, and the
+DD-011 synthetic attention extension merged and deployed.
 Its required queue is DD-012, DD-013, DD-014, a focused paper, benchmark
 and synthetic experiment extensions, public Labs/site integration, and final
 acceptance. DD-015 is optional only after that queue. Registration is not a
@@ -16,16 +17,16 @@ at `5025cc8e8f2f8ca015dff2066f08f81ad5715a51`, separate, clean, and read-only.
 
 | Measure | Current value |
 | --- | ---: |
-| Ledger claims | 68 |
-| Passing immutable runs | 35 of 38 manifests |
+| Ledger claims | 70 |
+| Passing immutable runs | 37 of 40 manifests |
 | Registered studies | 19 |
-| Python source files | 107 |
-| Public HTML routes | 55 |
-| Public data files | 54 |
-| Laboratory routes | 10 |
+| Python source files | 113 |
+| Public HTML routes | 59 |
+| Public data files | 59 |
+| Laboratory routes | 12 |
 | Validated project papers | 5 |
-| Checksum-registered downloads | 16 |
-| Test suite | 168 collected tests |
+| Checksum-registered downloads | 19 |
+| Test suite | 182 collected tests |
 
 The baseline added four registrations, bringing the study registry to 19 and
 the generated site to 52 routes. DD-012 has now added three audited claims and

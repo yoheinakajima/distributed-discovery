@@ -42,6 +42,7 @@ PHASES = {
 SAFE_ARTIFACT_SUFFIXES = {".md", ".json", ".csv", ".png", ".svg", ".pdf", ".yml"}
 DD006B_RUN = "20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b"
 DD009_RUN = "20260721T171249Z_DD-009_bc78d249_0c3851c41a"
+DD012_RUN = "20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b"
 DD013_RUN = "20260721T215811Z_DD-013_09c07448_cdac4fb512"
 DD014_RUN = "20260721T222047Z_DD-014_f5f099a8_ea0276dd16"
 
@@ -839,6 +840,108 @@ def _experiment_pages(root: Path, output: Path) -> dict[str, object]:
     return {"run_id": run_id, "summary": summary}
 
 
+def _attention_pages(root: Path, output: Path) -> dict[str, object]:
+    run = root / "results/verified" / DD012_RUN
+    source = run / "outputs"
+    summary = json.loads((source / "summary.json").read_text(encoding="utf-8"))
+    cells = json.loads((source / "attention-census.json").read_text(encoding="utf-8"))
+    phase_map = json.loads((source / "phase-map.json").read_text(encoding="utf-8"))
+    rewards = json.loads((source / "reward-registry.json").read_text(encoding="utf-8"))
+    agents = sorted({int(cell["agents"]) for cell in cells})
+    accuracies = sorted(
+        {str(cell["private_accuracy"]) for cell in cells}, key=lambda value: Fraction(value)
+    )
+    reward_ids = [str(row["rule_id"]) for row in rewards]
+    agent_options = "".join(f'<option value="{n}">{n}</option>' for n in agents)
+    accuracy_options = "".join(
+        f'<option value="{html.escape(value)}">{html.escape(value)}</option>'
+        for value in accuracies
+    )
+    attender_options = "".join(
+        f'<option value="{value}">{value}</option>' for value in range(max(agents) + 1)
+    )
+    reward_options = "".join(
+        f'<option value="{html.escape(value)}">{html.escape(value)}</option>'
+        for value in reward_ids
+    )
+    rows: list[str] = []
+    for cell in cells:
+        profiles = cell["profiles"]
+        first_use_gain = Fraction(str(profiles[1]["discovery"])) - Fraction(
+            str(profiles[0]["discovery"])
+        )
+        for profile in profiles:
+            attenders = int(profile["attenders"])
+            duplicate_loss = max(
+                Fraction(0),
+                Fraction(str(profiles[1]["discovery"])) - Fraction(str(profile["discovery"])),
+            )
+            for reward_id in reward_ids:
+                if reward_id == "public-reader-license":
+                    payoff_attend = "—"
+                    payoff_ignore = "—"
+                    budget = profile["discovery"]
+                    equilibrium_counts = cell["reward_equilibria"][reward_id][
+                        "binding_implemented_counts"
+                    ]
+                    equilibrium = (
+                        "binding implementation" if attenders in equilibrium_counts else "no"
+                    )
+                else:
+                    reward = profile["rewards"][reward_id]
+                    payoff_attend = reward["attending"] if reward["attending"] is not None else "—"
+                    payoff_ignore = reward["ignoring"] if reward["ignoring"] is not None else "—"
+                    budget = reward["budget"]
+                    equilibrium = (
+                        "weak"
+                        if attenders in cell["reward_equilibria"][reward_id]["weak"]
+                        else "no"
+                    )
+                rows.append(
+                    '<tr data-attention-row data-n="{n}" data-p="{p}" data-q="{q}" data-k="{k}" data-reward="{reward}"><th scope="row">{n}</th><td>{p}</td><td>{q}</td><td>{k}</td><td>{reward}</td><td>{discovery}</td><td>{attend}</td><td>{ignore}</td><td>{optimum}</td><td>{equilibrium}</td><td>{wedge}</td><td>{first}</td><td>{duplicate}</td><td>{budget}</td></tr>'.format(
+                        n=cell["agents"],
+                        p=html.escape(str(cell["private_accuracy"])),
+                        q=html.escape(str(cell["shared_accuracy"])),
+                        k=attenders,
+                        reward=html.escape(reward_id),
+                        discovery=html.escape(str(profile["discovery"])),
+                        attend=html.escape(str(payoff_attend)),
+                        ignore=html.escape(str(payoff_ignore)),
+                        optimum="yes" if attenders in cell["social_optima"] else "no",
+                        equilibrium=html.escape(equilibrium),
+                        wedge=html.escape(
+                            str(profile["attention_wedge"])
+                            if profile["attention_wedge"] is not None
+                            else "—"
+                        ),
+                        first=html.escape(str(first_use_gain)),
+                        duplicate=html.escape(str(duplicate_loss)),
+                        budget=html.escape(str(budget)),
+                    )
+                )
+    table_rows = "".join(rows)
+    body = f"""<header class="page-hero"><p class="eyebrow">DD-012 interactive explainer</p><h1>Attention Lab</h1><p class="lede">Explore the exact access-gated follow-public/follow-private model. An ignoring role is not given the public clue; the Lab does not assume an informed person can forget.</p></header><div class="metric-grid"><article class="metric-card"><span>Exact cells</span><strong>{summary["grid_cells"]}</strong></article><article class="metric-card"><span>Attention profiles</span><strong>{summary["profiles"]}</strong></article><article class="metric-card"><span>Reward rules</span><strong>{summary["reward_rules"]}</strong></article></div><section class="lab" data-attention-lab><label for="attention-n">Team size</label><select id="attention-n">{agent_options}</select><label for="attention-p">Private accuracy</label><select id="attention-p">{accuracy_options}</select><label for="attention-q">Public accuracy</label><select id="attention-q">{accuracy_options}</select><label for="attention-k">Number of attenders</label><select id="attention-k">{attender_options}</select><label for="attention-reward">Reward rule</label><select id="attention-reward">{reward_options}</select><p id="attention-status" class="callout" aria-live="polite">Select a registered exact attention profile.</p></section><noscript><p class="callout">JavaScript is off. All {len(rows)} exact profile-and-reward rows remain visible in the complete table.</p></noscript><section class="content-section"><h2>Exact attention profiles</h2><table class="matrix"><caption>Discovery, reward payoffs, social optimum, equilibrium, equal-split attention wedge, first-use gain, and duplicate-use loss</caption><thead><tr><th>N</th><th>p</th><th>q</th><th>Attenders</th><th>Reward</th><th>Discovery</th><th>Attending payoff</th><th>Ignoring payoff</th><th>Social optimum</th><th>Equilibrium</th><th>Equal-split attention wedge</th><th>First-use gain</th><th>Duplicate-use loss</th><th>Transfer budget</th></tr></thead><tbody>{table_rows}</tbody></table></section><details class="technical-details"><summary>Technical details</summary><p><a href="../claims.html#DD-C-0059">DD-C-0059</a> · <a href="../claims.html#DD-C-0060">DD-C-0060</a> · <a href="../claims.html#DD-C-0061">DD-C-0061</a> · reproducible run <a href="{REPOSITORY_URL}/blob/main/results/verified/{DD012_RUN}/manifest.json">{DD012_RUN}</a></p></details><p><a href="../research/dd-012.html">Study page</a> · <a href="../data/attention/census.json">Download attention census</a> · <a href="../data/attention/rewards.json">Download reward registry</a> · <a href="../data/attention/phase-map.json">Download phase map</a></p>"""
+    _write(
+        output,
+        "labs/attention.html",
+        _page(
+            "Attention Lab",
+            "Read-only exact DD-012 attention, payoff, and reward-rule explorer.",
+            body,
+            "labs/attention.html",
+        ),
+    )
+    data = {
+        "summary.json": {"schema_version": 1, "run_id": DD012_RUN, "summary": summary},
+        "census.json": {"schema_version": 1, "run_id": DD012_RUN, "cells": cells},
+        "phase-map.json": {"schema_version": 1, "run_id": DD012_RUN, "cells": phase_map},
+        "rewards.json": {"schema_version": 1, "run_id": DD012_RUN, "rewards": rewards},
+    }
+    for name, value in data.items():
+        _write(output, f"data/attention/{name}", json.dumps(value, indent=2, sort_keys=True) + "\n")
+    return {"run_id": DD012_RUN, "summary": summary}
+
+
 def _audience_pages(root: Path, output: Path) -> dict[str, object]:
     run = root / "results/verified" / DD013_RUN
     source = run / "outputs"
@@ -887,7 +990,72 @@ def _audience_pages(root: Path, output: Path) -> dict[str, object]:
         for cell in garbling
         for row in cell["rows"]
     )
-    body = f"""<header class="page-hero"><p class="eyebrow">DD-013 interactive explainer</p><h1>Audience Lab</h1><p class="lede">Compare precomputed exact binding audiences and feasible symmetric garblings. Access, voluntary use, and enforced action roles are different institutions; this read-only Lab makes no external call.</p></header><div class="stats"><div class="stat"><span>Binding rows</span><b>{summary["binding_audience_rows"]}</b></div><div class="stat"><span>Voluntary profiles</span><b>{summary["voluntary_profile_rows"]}</b></div><div class="stat"><span>Garbling rows</span><b>{summary["garbling_rows"]}</b></div></div><section class="lab" data-audience-lab><label for="audience-n">Team size</label><select id="audience-n">{agent_options}</select><label for="audience-p">Private accuracy</label><select id="audience-p">{accuracy_options}</select><label for="audience-q">Original shared accuracy</label><select id="audience-q">{accuracy_options}</select><label for="audience-g">Delivered accuracy after garbling</label><select id="audience-g">{accuracy_options}</select><label for="audience-m">Audience size</label><select id="audience-m">{audience_options}</select><p id="audience-status" class="callout" aria-live="polite">Select a registered cell. Exact rows below are filtered in place.</p></section><noscript><p class="callout">JavaScript is off. All {summary["binding_audience_rows"]} binding rows and {summary["garbling_rows"]} feasible garbling rows remain visible in the complete tables.</p></noscript><section class="content-section"><h2>Binding audience frontier</h2><table class="matrix"><caption>Exact binding audience metrics</caption><thead><tr><th>N</th><th>p</th><th>q</th><th>Audience</th><th>Discovery</th><th>Action quality</th><th>Expected distinct actions</th><th>Effective channels</th><th>Optimal</th></tr></thead><tbody>{binding_rows}</tbody></table></section><section class="content-section"><h2>Precision versus publicity</h2><table class="matrix"><caption>Exact feasible symmetric-garbling comparisons</caption><thead><tr><th>N</th><th>p</th><th>q</th><th>g</th><th>Audience</th><th>Discovery</th><th>Versus binding optimum</th></tr></thead><tbody>{garbling_rows}</tbody></table></section><details class="technical-details"><summary>Technical details</summary><p><a href="../claims.html#DD-C-0062">DD-C-0062</a> · <a href="../claims.html#DD-C-0063">DD-C-0063</a> · <a href="../claims.html#DD-C-0064">DD-C-0064</a> · <a href="../claims.html#DD-C-0065">DD-C-0065</a> · reproducible run <a href="{REPOSITORY_URL}/blob/main/results/verified/{DD013_RUN}/manifest.json">{DD013_RUN}</a></p></details><p><a href="../data/audience/frontier.json">Download audience frontier</a> · <a href="../data/audience/garbling.json">Download garbling frontier</a> · <a href="../data/audience/institutions.json">Download firewall registry</a></p>"""
+    voluntary_rows = "".join(
+        '<tr data-voluntary-row data-n="{n}" data-p="{p}" data-q="{q}" data-m="{m}"><th scope="row">{n}</th><td>{p}</td><td>{q}</td><td>{m}</td><td>{readers}</td><td>{discovery}</td><td>{equilibrium}</td><td>{optimum}</td><td>{implementation}</td></tr>'.format(
+            n=cell["agents"],
+            p=html.escape(str(cell["private_accuracy"])),
+            q=html.escape(str(cell["shared_accuracy"])),
+            m=audience["audience"],
+            readers=profile["readers"],
+            discovery=html.escape(str(profile["discovery"])),
+            equilibrium=(
+                "strict"
+                if profile["strict_equilibrium"]
+                else "weak"
+                if profile["weak_equilibrium"]
+                else "no"
+            ),
+            optimum=html.escape(", ".join(str(value) for value in cell["binding_optima"])),
+            implementation=(
+                "binding use implemented"
+                if audience["binding_use_implemented"]
+                else "implementation gap"
+            ),
+        )
+        for cell in cells
+        for audience in cell["voluntary_audiences"]
+        for profile in audience["profiles"]
+    )
+    mechanism_ids = (
+        "binding_exclusive_delivery",
+        "public_equal_split_nonbinding",
+        "public_universal_pooling",
+    )
+    mechanism_options = "".join(
+        f'<option value="{value}">{html.escape(value.replace("_", " "))}</option>'
+        for value in mechanism_ids
+    )
+    mechanism_rows: list[str] = []
+    for cell in mechanisms:
+        for mechanism_id in mechanism_ids:
+            result = cell["mechanisms"][mechanism_id]
+            if mechanism_id == "binding_exclusive_delivery":
+                equilibrium_use = ", ".join(str(value) for value in result["implemented_counts"])
+                implemented = result["implemented_counts"] == cell["binding_optima"]
+            else:
+                equilibrium_use = "weak: " + ", ".join(str(value) for value in result["weak"])
+                implemented = (
+                    result.get("count_correspondence_matches_optimum") is True
+                    or result["weak"] == cell["binding_optima"]
+                )
+            budget = result.get("expected_external_subsidy", "—")
+            budget_note = result.get("budget_balance")
+            if result.get("ex_post_budget_balance") is True:
+                budget_note = "ex-post budget balanced"
+            mechanism_rows.append(
+                '<tr data-mechanism-row data-n="{n}" data-p="{p}" data-q="{q}" data-mechanism="{mechanism}"><th scope="row">{n}</th><td>{p}</td><td>{q}</td><td>{mechanism}</td><td>{equilibrium}</td><td>{optimum}</td><td>{budget}</td><td>{budget_note}</td><td>{implementation}</td></tr>'.format(
+                    n=cell["agents"],
+                    p=html.escape(str(cell["private_accuracy"])),
+                    q=html.escape(str(cell["shared_accuracy"])),
+                    mechanism=html.escape(mechanism_id),
+                    equilibrium=html.escape(equilibrium_use),
+                    optimum=html.escape(", ".join(str(value) for value in cell["binding_optima"])),
+                    budget=html.escape(str(budget)),
+                    budget_note=html.escape(str(budget_note or "—")),
+                    implementation="yes" if implemented else "no",
+                )
+            )
+    body = f"""<header class="page-hero"><p class="eyebrow">DD-013 interactive explainer</p><h1>Audience Design Lab</h1><p class="lede">Compare precomputed exact binding audiences, voluntary use, feasible symmetric garblings, and registered mechanisms. Access, voluntary use, and enforced action roles are different institutions; this read-only Lab makes no external call.</p></header><div class="stats"><div class="stat"><span>Binding rows</span><b>{summary["binding_audience_rows"]}</b></div><div class="stat"><span>Voluntary profiles</span><b>{summary["voluntary_profile_rows"]}</b></div><div class="stat"><span>Garbling rows</span><b>{summary["garbling_rows"]}</b></div></div><section class="lab" data-audience-lab><label for="audience-n">Team size</label><select id="audience-n">{agent_options}</select><label for="audience-p">Private accuracy</label><select id="audience-p">{accuracy_options}</select><label for="audience-q">Original shared accuracy</label><select id="audience-q">{accuracy_options}</select><label for="audience-use">Audience institution</label><select id="audience-use"><option value="binding">binding</option><option value="voluntary">voluntary</option></select><label for="audience-g">Delivered accuracy after garbling</label><select id="audience-g">{accuracy_options}</select><label for="audience-m">Audience size</label><select id="audience-m">{audience_options}</select><label for="audience-mechanism">Mechanism</label><select id="audience-mechanism">{mechanism_options}</select><p id="audience-status" class="callout" aria-live="polite">Select a registered cell. Exact rows below are filtered in place.</p></section><noscript><p class="callout">JavaScript is off. All {summary["binding_audience_rows"]} binding rows, {summary["voluntary_profile_rows"]} voluntary profiles, and {summary["garbling_rows"]} feasible garbling rows remain visible in the complete tables.</p></noscript><section class="content-section" data-binding-section><h2>Binding audience frontier</h2><table class="matrix"><caption>Exact binding audience metrics</caption><thead><tr><th>N</th><th>p</th><th>q</th><th>Audience</th><th>Discovery</th><th>Action quality</th><th>Expected distinct actions</th><th>Effective channels</th><th>Optimal</th></tr></thead><tbody>{binding_rows}</tbody></table></section><section class="content-section" data-voluntary-section><h2>Voluntary audience use</h2><table class="matrix"><caption>Exact reader-count equilibria conditional on information access</caption><thead><tr><th>N</th><th>p</th><th>q</th><th>Audience</th><th>Readers</th><th>Discovery</th><th>Equilibrium</th><th>Optimal audiences</th><th>Implementation</th></tr></thead><tbody>{voluntary_rows}</tbody></table></section><section class="content-section"><h2>Precision versus publicity</h2><table class="matrix"><caption>Exact feasible symmetric-garbling comparisons</caption><thead><tr><th>N</th><th>p</th><th>q</th><th>g</th><th>Audience</th><th>Discovery</th><th>Versus binding optimum</th></tr></thead><tbody>{garbling_rows}</tbody></table></section><section class="content-section"><h2>Mechanism implementation</h2><table class="matrix"><caption>Registered mechanisms, equilibrium audience use, optimum, transfer budget, and implementation status</caption><thead><tr><th>N</th><th>p</th><th>q</th><th>Mechanism</th><th>Equilibrium use</th><th>Optimal audiences</th><th>External subsidy</th><th>Budget status</th><th>Implements optimum</th></tr></thead><tbody>{"".join(mechanism_rows)}</tbody></table></section><details class="technical-details"><summary>Technical details</summary><p><a href="../claims.html#DD-C-0062">DD-C-0062</a> · <a href="../claims.html#DD-C-0063">DD-C-0063</a> · <a href="../claims.html#DD-C-0064">DD-C-0064</a> · <a href="../claims.html#DD-C-0065">DD-C-0065</a> · reproducible run <a href="{REPOSITORY_URL}/blob/main/results/verified/{DD013_RUN}/manifest.json">{DD013_RUN}</a></p></details><p><a href="../research/dd-013.html">Study page</a> · <a href="../data/audience/frontier.json">Download audience frontier</a> · <a href="../data/audience/garbling.json">Download garbling frontier</a> · <a href="../data/audience/mechanisms.json">Download mechanism results</a> · <a href="../data/audience/institutions.json">Download firewall registry</a></p>"""
     _write(
         output,
         "labs/audience.html",
@@ -896,6 +1064,16 @@ def _audience_pages(root: Path, output: Path) -> dict[str, object]:
             "Read-only exact binding-audience and symmetric-garbling explorer.",
             body,
             "labs/audience.html",
+        ),
+    )
+    _write(
+        output,
+        "labs/audience-design.html",
+        _page(
+            "Audience Design Lab",
+            "Read-only exact binding-audience and symmetric-garbling explorer.",
+            body,
+            "labs/audience-design.html",
         ),
     )
     data = {
@@ -1277,7 +1455,13 @@ def _render(
             "Acquisition and discovery outcomes",
             "DD-008",
         ),
-        "audience": (
+        "attention": (
+            "Information and sources",
+            "Team, accuracy, attenders, and reward",
+            "Discovery, payoffs, equilibria, and attention wedges",
+            "DD-012",
+        ),
+        "audience-design": (
             "Information and sources",
             "Team, accuracy, and audience",
             "Binding and garbling frontiers",
@@ -1324,17 +1508,22 @@ def _render(
         slug: (title, claim, description) for slug, title, claim, _, description in lab_specs
     }
     special_labs = {
+        "attention": (
+            "Attention",
+            "DD-C-0060",
+            "Explore exact access-gated attention profiles, payoffs, equilibria, and rewards.",
+        ),
         "benchmark": (
             "DiscoveryBench",
-            "DD-C-0055",
+            "DD-C-0069",
             "Filter compatible task and strategy rows without submissions or external calls.",
         ),
         "experiment-design": (
             "Experiment design",
-            "DD-C-0056",
+            "DD-C-0070",
             "Filter conditional synthetic power while preserving the no-human-data boundary.",
         ),
-        "audience": (
+        "audience-design": (
             "Audience design",
             "DD-C-0065",
             "Compare binding audiences and feasible precision-versus-publicity designs.",
@@ -1383,6 +1572,7 @@ def _render(
         )
     _benchmark_pages(root, output)
     _experiment_pages(root, output)
+    _attention_pages(root, output)
     _audience_pages(root, output)
     _conditional_pages(root, output)
     _write(

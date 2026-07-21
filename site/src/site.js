@@ -94,24 +94,70 @@ document.querySelectorAll("[data-experiment-lab]").forEach((lab) => {
   render();
 });
 
+document.querySelectorAll("[data-attention-lab]").forEach((lab) => {
+  const n = lab.querySelector("#attention-n");
+  const p = lab.querySelector("#attention-p");
+  const q = lab.querySelector("#attention-q");
+  const k = lab.querySelector("#attention-k");
+  const reward = lab.querySelector("#attention-reward");
+  const status = lab.querySelector("#attention-status");
+  const rows = Array.from(document.querySelectorAll("tr[data-attention-row]"));
+  if (!n || !p || !q || !k || !reward || !status) return;
+  const render = () => {
+    const validCounts = Array.from(k.options).filter((option) => Number(option.value) <= Number(n.value));
+    Array.from(k.options).forEach((option) => { option.hidden = Number(option.value) > Number(n.value); });
+    if (!validCounts.some((option) => option.value === k.value)) k.value = validCounts[0].value;
+    let visible = 0;
+    rows.forEach((row) => {
+      const show = row.dataset.n === n.value && row.dataset.p === p.value &&
+        row.dataset.q === q.value && row.dataset.k === k.value &&
+        row.dataset.reward === reward.value;
+      row.hidden = !show;
+      if (show) visible += 1;
+    });
+    status.textContent = `Showing ${visible} exact attention profile and reward row. Ignoring roles do not receive the public clue.`;
+  };
+  [n, p, q, k, reward].forEach((control) => control.addEventListener("change", render));
+  n.value = "4";
+  p.value = "1/2";
+  q.value = "3/4";
+  k.value = "1";
+  reward.value = "equal-split";
+  render();
+});
+
 document.querySelectorAll("[data-audience-lab]").forEach((lab) => {
   const n = lab.querySelector("#audience-n");
   const p = lab.querySelector("#audience-p");
   const q = lab.querySelector("#audience-q");
+  const use = lab.querySelector("#audience-use");
   const g = lab.querySelector("#audience-g");
   const m = lab.querySelector("#audience-m");
+  const mechanism = lab.querySelector("#audience-mechanism");
   const status = lab.querySelector("#audience-status");
   const bindingRows = Array.from(document.querySelectorAll("tr[data-audience-row]"));
+  const voluntaryRows = Array.from(document.querySelectorAll("tr[data-voluntary-row]"));
   const garblingRows = Array.from(document.querySelectorAll("tr[data-garbling-row]"));
-  if (!n || !p || !q || !g || !m || !status) return;
+  const mechanismRows = Array.from(document.querySelectorAll("tr[data-mechanism-row]"));
+  const bindingSection = document.querySelector("[data-binding-section]");
+  const voluntarySection = document.querySelector("[data-voluntary-section]");
+  if (!n || !p || !q || !use || !g || !m || !mechanism || !status) return;
   const render = () => {
     let bindingVisible = 0;
+    let voluntaryVisible = 0;
     let garblingVisible = 0;
+    let mechanismVisible = 0;
     bindingRows.forEach((row) => {
       const show = row.dataset.n === n.value && row.dataset.p === p.value &&
-        row.dataset.q === q.value && row.dataset.m === m.value;
+        row.dataset.q === q.value && row.dataset.m === m.value && use.value === "binding";
       row.hidden = !show;
       if (show) bindingVisible += 1;
+    });
+    voluntaryRows.forEach((row) => {
+      const show = row.dataset.n === n.value && row.dataset.p === p.value &&
+        row.dataset.q === q.value && row.dataset.m === m.value && use.value === "voluntary";
+      row.hidden = !show;
+      if (show) voluntaryVisible += 1;
     });
     garblingRows.forEach((row) => {
       const show = row.dataset.n === n.value && row.dataset.p === p.value &&
@@ -119,14 +165,24 @@ document.querySelectorAll("[data-audience-lab]").forEach((lab) => {
       row.hidden = !show;
       if (show) garblingVisible += 1;
     });
-    status.textContent = `Showing ${bindingVisible} binding row and ${garblingVisible} feasible garbling row${garblingVisible === 1 ? "" : "s"}. A zero garbling count means g>q or audience zero is outside the positive-audience garbling registry.`;
+    mechanismRows.forEach((row) => {
+      const show = row.dataset.n === n.value && row.dataset.p === p.value &&
+        row.dataset.q === q.value && row.dataset.mechanism === mechanism.value;
+      row.hidden = !show;
+      if (show) mechanismVisible += 1;
+    });
+    if (bindingSection) bindingSection.hidden = use.value !== "binding";
+    if (voluntarySection) voluntarySection.hidden = use.value !== "voluntary";
+    status.textContent = `Showing ${bindingVisible} binding row, ${voluntaryVisible} voluntary profile${voluntaryVisible === 1 ? "" : "s"}, ${garblingVisible} feasible garbling row${garblingVisible === 1 ? "" : "s"}, and ${mechanismVisible} mechanism row. A zero garbling count means g>q or audience zero is outside the positive-audience garbling registry.`;
   };
-  [n, p, q, g, m].forEach((control) => control.addEventListener("change", render));
+  [n, p, q, use, g, m, mechanism].forEach((control) => control.addEventListener("change", render));
   n.value = "2";
   p.value = "1/3";
   q.value = "1/2";
+  use.value = "binding";
   g.value = "1/3";
   m.value = "1";
+  mechanism.value = "binding_exclusive_delivery";
   render();
 });
 

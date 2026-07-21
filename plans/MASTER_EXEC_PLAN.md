@@ -29,9 +29,10 @@ research queue.
 The registration-only Program V3 baseline completed through issue #79 and PR
 #80, squash merge `69ba1c392bb0bda9bc4447c0fac842b8e7308fbf`, passing
 post-merge CI and Pages, and live DD-012 through DD-015 routes. DD-012 through
-DD-014 and the focused paper are merged, deployed, and live. The active
-milestone is the versioned DiscoveryBench attention extension under issue #91
-and branch `benchmark/attention-extension`.
+DD-014, the focused paper, DiscoveryBench v2, and the DD-011 synthetic
+experiment extension are merged, deployed, and live. The active milestone is
+the public Attention/Audience/Conditional Lab integration under issue #96 and
+branch `site/program-v3-attention`.
 
 Progress:
 
@@ -58,22 +59,31 @@ Progress:
   claim audit, public Lab, merge, and deployment passed. Primary run
   `20260721T222047Z_DD-014_f5f099a8_ea0276dd16` now passes in 10.761 seconds;
   DD-C-0066 through DD-C-0068, PR #87, post-merge CI/Pages, and live routes passed.
-- [ ] Focused paper, benchmark extension, synthetic experiment extension,
-  public Labs/site integration, and final acceptance. PR #90 merged the
+- [x] Focused paper, benchmark extension, and synthetic experiment extension.
+  PR #90 merged the
   deterministic 20-page paper with nine
   generated evidence assets, PDF SHA-256 `ee9e27f741d2`, and a passing all-page
   Poppler review; post-merge CI/Pages and the live PDF passed. DiscoveryBench
   v2 now passes locally with 20 tasks, 21 protocols, 27 metrics, 28 compatible
   rows, 392 explicit exclusions, v1 regressions, and three corruption gates;
   clean run `20260721T230249Z_DD-010_add85590_56c61a2195`, DD-C-0069, PR #93,
-  post-merge CI/Pages, and live public routes passed. DD-011 v2 is active on
-  issue #94 and branch `research/attention-experiment-extension`; its 29-cell,
-  14-hypothesis, 11-scenario implementation and materials pass targeted local
-  verification, while the clean run, claim, public routes, merge, and deployment remain.
+  post-merge CI/Pages, and live public routes passed. DD-011 v2's 29-cell,
+  14-hypothesis, 11-scenario package now passes through immutable run
+  `20260721T232119Z_DD-011_121162f8_e454b06d2c`, DD-C-0070, PR #95,
+  post-merge CI/Pages, and live public routes. No participants were recruited
+  and no human data exist.
+- [ ] Public Labs/site integration and final acceptance. Issue #96 adds the
+  exact Attention Lab, expands Audience Design across binding and voluntary
+  use plus three registered mechanisms, preserves the Conditional Attention
+  Lab, and adds the required benchmark/experiment navigation. Local acceptance
+  passes 182 tests, a 59-route site build, public-safety gates, desktop and
+  375-pixel browser interaction, keyboard focus, contained table overflow,
+  reduced motion, and clean browser logs. Commit, PR, CI/Pages, live checks,
+  and the separate final handoff remain.
 
 Recovery: inspect `git status --short --branch` on
-`research/attention-experiment-extension`, commit the verified v2 implementation,
-run `make dd011-attention` from the clean commit, and preserve every prior run.
+`site/program-v3-attention`, rerun `make verify && make site`, then continue the
+issue #96 PR/deployment gates without altering any immutable run.
 
 ### Program V2 completion queue (active, 2026-07-21)
 
