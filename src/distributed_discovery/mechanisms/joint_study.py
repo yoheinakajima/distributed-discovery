@@ -101,17 +101,20 @@ def main() -> None:
         "weak_rows": sum(bool(r["weak"]) for r in rows),
         "strict_rows": sum(bool(r["strict"]) for r in rows),
         "maximum_margin": str(max(Fraction(str(r["all_tie_margin"])) for r in rows)),
-        "strict_rows_with_positive_information_weight": sum(
+        "strict_rows_with_positive_information_coefficient": sum(
+            bool(r["strict"]) and Fraction(str(cast(list[object], r["coefficients"])[0])) > 0
+            for r in rows
+        ),
+        "strict_rows_with_active_positive_information_score": sum(
             bool(r["strict"])
+            and str(r["regime"]).startswith("target")
             and Fraction(str(cast(list[object], r["coefficients"])[0])) > 0
             for r in rows
         ),
         "all_rows_participation": all(
             bool(accounting["participation"])
             for row in rows
-            for accounting in cast(
-                list[dict[str, object]], row["accounting_by_tie_role"]
-            )
+            for accounting in cast(list[dict[str, object]], row["accounting_by_tie_role"])
         ),
         "independent_verifier": valid,
         "regime_results": regime_results,
@@ -134,6 +137,7 @@ def main() -> None:
                 "mechanism_id": f"DD006B-{index:02d}",
                 "regime": row["regime"],
                 "coefficients": row["coefficients"],
+                "active_components": row["active_components"],
                 "normalization": "nonnegative coefficients sum to one",
             }
             for index, row in enumerate(rows, start=1)

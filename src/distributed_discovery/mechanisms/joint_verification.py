@@ -67,9 +67,7 @@ def _expected_utility(
     total = Fraction()
     for target, peer_signal in product(range(3), repeat=2):
         probability = (
-            _signal_probability(target, signal)
-            * _signal_probability(target, peer_signal)
-            / 3
+            _signal_probability(target, signal) * _signal_probability(target, peer_signal) / 3
         )
         reports = (report, peer_signal) if agent == 0 else (peer_signal, report)
         recommended = _recommendation(reports, tie_role)
@@ -115,9 +113,9 @@ def _certificate(
                 obeying_rule = cast(
                     tuple[int, int, int],
                     tuple(
-                        _recommendation(
-                            (report, peer) if agent == 0 else (peer, report), tie_role
-                        )[agent]
+                        _recommendation((report, peer) if agent == 0 else (peer, report), tie_role)[
+                            agent
+                        ]
                         for peer in range(3)
                     ),
                 )
@@ -163,9 +161,7 @@ def _accounting(
         actions = _recommendation(reports, tie_role)
         state_total_transfer = Fraction()
         for agent in range(2):
-            payment = _transfer(
-                regime, coefficients, target, reports, actions, agent, tie_role
-            )
+            payment = _transfer(regime, coefficients, target, reports, actions, agent, tie_role)
             total_transfer += probability * payment
             state_total_transfer += payment
             utilities[agent] += probability * (_prize(target, actions, agent) + payment)
@@ -181,9 +177,7 @@ def _accounting(
             ),
         )
         interim.append(
-            _expected_utility(
-                regime, coefficients, agent, signal, signal, baseline_rule, tie_role
-            )
+            _expected_utility(regime, coefficients, agent, signal, signal, baseline_rule, tie_role)
         )
 
     transfer_bound = max(
@@ -223,13 +217,18 @@ def verify_row(row: dict[str, object]) -> bool:
     margins = [Fraction(str(certificate["joint_margin"])) for certificate in certificates]
     expected = min(margins)
     accounting = row.get("accounting_by_tie_role")
+    active_components = {
+        "information_score": regime.startswith("target"),
+        "coverage": regime != "target-hidden-actions",
+        "obedience": regime != "target-hidden-actions",
+    }
     return (
-        row.get("tie_role_margins") == [str(value) for value in margins]
+        row.get("active_components") == active_components
+        and row.get("tie_role_margins") == [str(value) for value in margins]
         and row.get("deviation_certificates_by_tie_role") == certificates
         and Fraction(str(row.get("all_tie_margin"))) == expected
         and row.get("weak") is (expected >= 0)
         and row.get("strict") is (expected > 0)
         and accounting == [_accounting(regime, values, role) for role in (0, 1)]
-        and row.get("truthful_discovery_by_tie_role")
-        == [str(_discovery(role)) for role in (0, 1)]
+        and row.get("truthful_discovery_by_tie_role") == [str(_discovery(role)) for role in (0, 1)]
     )

@@ -113,9 +113,9 @@ def deviation_certificate(
                 obeying_rule = cast(
                     tuple[int, int, int],
                     tuple(
-                        recommendation(
-                            (report, peer) if agent == 0 else (peer, report), tie_role
-                        )[agent]
+                        recommendation((report, peer) if agent == 0 else (peer, report), tie_role)[
+                            agent
+                        ]
                         for peer in range(3)
                     ),
                 )
@@ -174,9 +174,7 @@ def truthful_accounting(
             )
             total_transfer += probability * payment
             state_total_transfer += payment
-            utilities[agent] += probability * (
-                realized_prize(target, actions, agent) + payment
-            )
+            utilities[agent] += probability * (realized_prize(target, actions, agent) + payment)
         state_total_transfers.append(state_total_transfer)
 
     interim = []
@@ -184,9 +182,7 @@ def truthful_accounting(
         baseline = cast(
             tuple[int, int, int],
             tuple(
-                recommendation((signal, peer) if agent == 0 else (peer, signal), tie_role)[
-                    agent
-                ]
+                recommendation((signal, peer) if agent == 0 else (peer, signal), tie_role)[agent]
                 for peer in range(3)
             ),
         )
@@ -224,6 +220,11 @@ def frontier_row(
     return {
         "regime": regime,
         "coefficients": [str(x) for x in coefficients],
+        "active_components": {
+            "information_score": regime.startswith("target"),
+            "coverage": regime != "target-hidden-actions",
+            "obedience": regime != "target-hidden-actions",
+        },
         "tie_role_margins": [str(x) for x in margins],
         "deviation_certificates_by_tie_role": certificates,
         "all_tie_margin": str(min(margins)),
