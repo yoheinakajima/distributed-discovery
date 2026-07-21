@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-07-21 — DD-012 frozen implementation
+
+- Froze the ex-ante access-gated attention model, exact discovery and
+  equal-split payoff identities, pure attention thresholds, seven-rule
+  intervention registry, rational census, and compute guardrails.
+- Added a separate labeled-state verifier with exact normalization, payoff,
+  deviation, equilibrium, and corruption checks; no immutable run or result
+  claim has yet been created.
+- Recorded the focused strategic-ignorance, rational-inattention,
+  public-information, endogenous-attention, and contrarianism literature
+  boundary.
+
 ## 2026-07-21 — Program V3 baseline
 
 - Verified the clean Program V2 handoff at `99e2098`, including 138 tests, 35

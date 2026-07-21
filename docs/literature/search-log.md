@@ -78,3 +78,25 @@ Stable records consulted include DOI/publisher pages for
 `10.1093/qje/qjz033`, `10.1086/644786`, `10.1007/s10670-009-9194-6`,
 `10.1073/pnas.0403723101`, and `10.1086/681766`. No copyrighted paper is
 stored in the repository.
+
+## DD-012 selective-attention pass (2026-07-21 UTC)
+
+This focused positioning pass used journal, publisher, DOI, and bibliographic
+records. It is an orientation review, not a systematic review or novelty
+certificate.
+
+| Theme | Primary records retained | Boundary for DD-012 |
+|---|---|---|
+| Strategic ignorance and information avoidance | Carrillo & Mariotti (2000), DOI `10.1111/1467-937X.00142`; Golman, Hagmann & Loewenstein (2017), DOI `10.1257/jel.20151245` | Deliberate non-acquisition and avoidance are established. DD-012 uses a binding ex-ante access gate and does not model psychology or forgetting. |
+| Rational inattention | Sims (2003), DOI `10.1016/S0304-3932(03)00029-1` | Scarce attention is established. DD-012 has no information-capacity constraint or endogenous signal precision. |
+| Public-information welfare | Morris & Shin (2002), DOI `10.1257/000282802762024610`; Cornand & Heinemann (2008), DOI `10.1111/j.1468-0297.2008.02139.x` | Publicity can interact with coordination, and dissemination to a subset has direct prior art. DD-012's loss is duplicate target coverage under a fixed follow/private action class. |
+| Endogenous attention and coordination | Hellwig & Veldkamp (2009); Myatt & Wallace (2012) | Strategic information acquisition and attention externalities are established. DD-012 contributes a finite exact specialization, not a general attention theory. |
+| Informational herding and contrarian action | Smith, Sørensen & Tian (2021), DOI `10.1093/restud/rdab001`; Acemoglu et al. (2018) | Contrarianism and information-induced equilibrium losses have adjacent theory. DD-012 excludes contrarian policies; DD-014 is separately registered to study a bounded conditional class. |
+
+Stable records consulted: `https://doi.org/10.1111/1467-937X.00142`,
+`https://www.aeaweb.org/articles?id=10.1257/jel.20151245`,
+`https://doi.org/10.1016/S0304-3932(03)00029-1`,
+`https://www.aeaweb.org/articles?id=10.1257/000282802762024610`,
+`https://doi.org/10.1111/j.1468-0297.2008.02139.x`, and
+`https://doi.org/10.1093/restud/rdab001`. No copyrighted paper is stored in
+the repository.

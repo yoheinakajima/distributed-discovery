@@ -1,5 +1,5 @@
 study_id: DD-012
-status: registered
-evidence_status: no-result-registration-only
-next_action: freeze the rational census and prove or correct the candidate discovery and payoff identities before the first immutable run
-updated_utc: 2026-07-21T21:05:32Z
+status: active
+evidence_status: frozen-model-proof-and-implementation-no-run
+next_action: validate and commit the frozen implementation, then execute the single clean immutable census
+updated_utc: 2026-07-21T21:26:00Z

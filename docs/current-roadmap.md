@@ -7,8 +7,8 @@ verification plan, and corruption test where certificates are used.
 
 | Work | Status | Durable boundary / next question |
 | --- | --- | --- |
-| Program V3 baseline | active on issue #79 | Register DD-012 through DD-015 without producing evidence; validate and deploy the registry before DD-012. |
-| DD-012 Incentive to Ignore | registered | In an ex-ante access-gate model, derive exact discovery/payoff identities and compare pure equilibrium with socially optimal shared-signal use. |
+| Program V3 baseline | complete through PR #80 | DD-012 through DD-015 are registered and deployed without creating research evidence. |
+| DD-012 Incentive to Ignore | active on issue #81 | Frozen model, proof, rational census, direct verifier, and seven-rule registry await the clean immutable run and evidence audit. |
 | DD-013 Audience Design | registered after DD-012 | Separate binding delivery, voluntary use, public role assignment, and garbling; exactly evaluate at least one implementable reader institution. |
 | DD-014 Conditional Attention | registered after DD-013 | Test the complete deterministic label-equivariant disagreement class for `M=3` and audit small fixtures against a larger raw class. |
 | DD-015 Dynamic Attention | optional registration | Begin only after required Program V3 milestones if capacity remains; keep stopping and fixed-budget objectives distinct. |
@@ -29,12 +29,13 @@ High-value benchmark questions are new exact tasks, adapter conformance, and
 robust multi-metric aggregation without collapsing the registry into an
 unexplained score.
 
-Operational resume command for the active baseline:
+Operational resume commands for active DD-012:
 
 ```sh
-git switch docs/program-v3-baseline && make bootstrap && make verify && make site
+git switch research/dd012-incentive-to-ignore
+PYTHONPATH="$PWD/src" uv run --no-editable pytest -q tests/unit/test_attention.py
 ```
 
-The next file is `plans/MASTER_EXEC_PLAN.md`; after the baseline merges, DD-012
-begins from its `README.md`, `plan.md`, and `status.yml`. For settings-only work,
+The next file is `plans/MASTER_EXEC_PLAN.md`; DD-012 proceeds from its frozen
+implementation to a clean immutable run and claim audit. For settings-only work,
 use `docs/github-setup.md` and issue #32.
