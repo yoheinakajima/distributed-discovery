@@ -309,6 +309,7 @@ def _page(title: str, description: str, body: str, current: str) -> str:
         ("Foundations", "foundations.html"),
         ("Research", "research.html"),
         ("Results", "results.html"),
+        ("Labs", "labs.html"),
         ("Publications", "publications.html"),
         ("Applications", "applications.html"),
     ]
@@ -319,7 +320,7 @@ def _page(title: str, description: str, body: str, current: str) -> str:
         ("Ideas", "ideas.html"),
         ("Repo", REPOSITORY_URL),
     ]
-    prefix = "../" if current.startswith("research/") else ""
+    prefix = "../" if "/" in current else ""
     nav = "".join(
         '<a href="{}"{}>{}</a>'.format(
             prefix + href, ' aria-current="page"' if current == href else "", name
@@ -562,6 +563,64 @@ def _render(
             "applications.html",
         ),
     )
+    lab_specs = [
+        (
+            "sequential",
+            "Sequential Discovery",
+            "DD-C-0045",
+            "20260721T050038Z_DD-004_8ab02e7f_71d84de7c4",
+            "Compare registered batch schedules; terminal discovery is held separate from actions and rounds.",
+        ),
+        (
+            "coverage",
+            "Coverage and Redundancy",
+            "DD-C-0046",
+            "20260721T050706Z_DD-005_be3b544c_98698dee2f",
+            "Inspect why a portfolio's union value is not recovered from action labels alone.",
+        ),
+        (
+            "mechanisms",
+            "Mechanisms and Incentives",
+            "DD-C-0050",
+            "20260721T140745Z_DD-006_401ad624_c942f43e42",
+            "Explore the registered normalized-linear transfer frontier; no arbitrary-transfer conclusion is implied.",
+        ),
+        (
+            "audit",
+            "Audit and Calibration",
+            "DD-C-0049",
+            "20260721T052307Z_DD-007_af4ea130_72fb89c5fc",
+            "Examine synthetic recovery and the provenance conditions needed for interpretation.",
+        ),
+        (
+            "evidence-acquisition",
+            "Evidence Acquisition",
+            "DD-C-0051",
+            "20260721T141527Z_DD-008_0d11dc77_7e0c8f1d66",
+            "Compare common and independent evidence sources in the registered two-agent source-choice fixture.",
+        ),
+    ]
+    lab_cards = "".join(
+        f'<article class="card"><p class="eyebrow">Interactive lab</p><h2><a href="labs/{slug}.html">{html.escape(title)}</a></h2><p>{html.escape(description)}</p><p><a href="claims.html#{claim}">{claim}</a> · <a href="evidence.html">passing run</a></p></article>'
+        for slug, title, claim, _, description in lab_specs
+    )
+    labs_body = f"""<p class="eyebrow">Public labs</p><h1>Discovery Stack Labs</h1><p class="lede">Small browser-native controls expose bounded fixtures. Every lab has a readable fallback and links to the claim ledger and immutable passing run; controls never call an external API.</p><section class="grid-2">{lab_cards}</section>"""
+    _write(
+        output,
+        "labs.html",
+        _page(
+            "Labs",
+            "Interactive, evidence-indexed Distributed Discovery labs.",
+            labs_body,
+            "labs.html",
+        ),
+    )
+    for slug, title, claim, run_id, description in lab_specs:
+        value_label = "Scenario index"
+        lab_body = f"""<p class="eyebrow"><a href="../labs.html">Labs</a> / {html.escape(title)}</p><h1>{html.escape(title)}</h1><p class="lede">{html.escape(description)}</p><section class="lab" data-lab="{slug}"><label for="scenario">{value_label}: <output id="scenario-output">1</output></label><input id="scenario" type="range" min="1" max="5" value="1" step="1" aria-describedby="lab-note"><p id="lab-note" class="callout" aria-live="polite">Scenario 1 is the readable default. Adjust the slider to compare the five precomputed fixture views.</p></section><noscript><p class="callout">JavaScript is off. The default scenario remains available below.</p></noscript><table class="matrix"><thead><tr><th>Evidence boundary</th><th>Registered interpretation</th></tr></thead><tbody><tr><td>Claim</td><td><a href="../claims.html#{claim}">{claim}</a></td></tr><tr><td>Immutable run</td><td><a href="{REPOSITORY_URL}/blob/main/results/verified/{run_id}/manifest.json">{run_id}</a></td></tr><tr><td>Fallback</td><td>Scenario 1; bounded fixture only, not a recommendation.</td></tr></tbody></table>"""
+        _write(
+            output, f"labs/{slug}.html", _page(title, description, lab_body, f"labs/{slug}.html")
+        )
     _write(
         output,
         "404.html",
@@ -646,6 +705,11 @@ def build(root: Path, output: Path) -> dict[str, Any]:
         "runs.json": {"schema_version": 1, "runs": runs},
         "publications.json": {"schema_version": 1, "publications": publications},
         "routes.json": {"schema_version": 1, "routes": routes},
+        "labs.json": {
+            "schema_version": 1,
+            "source": "precomputed bounded fixture controls",
+            "scenario_count": 5,
+        },
     }
     for name, value in data.items():
         _write(output, f"data/{name}", json.dumps(value, indent=2, sort_keys=True) + "\n")
