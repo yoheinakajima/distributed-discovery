@@ -1,6 +1,8 @@
 study_id: DD-006
 title: Discovery Mechanisms
 slug: dd-006
-phase: registered
-summary: Registered reporting-and-reward mechanism study with explicit observability limits.
-public_artifacts: []
+phase: complete-bounded-study
+summary: Exact score-difference mechanism census separating weak implementation from strict incentives.
+public_artifacts:
+  - path: studies/DD-006-discovery-mechanisms/report.md
+    description: Mechanism-catalogue evidence report

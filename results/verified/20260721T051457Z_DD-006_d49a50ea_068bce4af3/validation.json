@@ -1,0 +1,7 @@
+{
+  "catalogue_entries": 9,
+  "ex_post_budget_balance": true,
+  "passed": true,
+  "positive_weak_truthful_direct_cases": 3,
+  "strict_truthful_direct_cases": 0
+}

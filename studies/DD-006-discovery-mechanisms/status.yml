@@ -1,5 +1,5 @@
 study_id: DD-006
-status: registered
-evidence_status: research-question
-next_action: enumerate bounded symmetric transfer tables under the three declared observability regimes
-updated_utc: 2026-07-20T20:17:35Z
+status: complete-bounded-study
+evidence_status: exact-score-difference-deviation-census-and-independent-balance-check
+next_action: preserve the weak-implementation boundary; broader transfer classes require a new registration
+updated_utc: 2026-07-21T05:14:57Z
