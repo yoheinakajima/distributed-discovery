@@ -1,0 +1,32 @@
+{
+  "command": "make dd009-atlas",
+  "config_hash_sha256": "0c3851c41a5e14d15e5f7eb91a588feeb7ca3ade027ec1f4d36f238dbff5dccb",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-21T17:12:49.378156Z",
+  "exit_status": 0,
+  "git_commit": "bc78d2499347e08ef1dd84850c4138b74963447f",
+  "git_dirty": false,
+  "input_hashes": {
+    "src/distributed_discovery/atlas/model.py": "04219f641d0aef62b31fb338e2f9511d5aab2a353716bbaeb4931ab648b8f829",
+    "src/distributed_discovery/atlas/study.py": "b5cafd40dca2f51676cea24ff1b8160c7706be7f49e704910f430b95615eb9d5",
+    "src/distributed_discovery/atlas/verification.py": "0c0164a8ef12291af4715ef06a31caafa634b412df177883b7d6ef32258bd29b",
+    "studies/DD-009-discovery-architecture-atlas/configs/atlas.yml": "e3eac7084205c7244db1bd6b003e747f4ab25b730fb59defa2913a377a160b51"
+  },
+  "outputs": {
+    "outputs/architectures.json": "acf90df6a2dc2271773f831a5c2a8e640e5a88e38a9d97f09acf62221e938a94",
+    "outputs/atlas-summary.json": "7c544c7637768ebb952e2d3aea853146eb5a70f97dfcc5c099401a1100704bb3",
+    "outputs/dominance.json": "82c43c511ec5119ccbf6cca228c6c6c3000435c8949fa7372e5b833755b3ac81",
+    "outputs/validity-registry.json": "19657fbb810f2700fe615a0b649a758e9521f38cb6ec6c4c528bed18aa4dcd52",
+    "outputs/verification.json": "16f43561668f6f7093573353ab57b64a48bf5cef50e587448f43f47377c26f85"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "run_id": "20260721T171249Z_DD-009_bc78d249_0c3851c41a",
+  "schema_version": 1,
+  "started_utc": "2026-07-21T17:12:49.358850Z",
+  "study_id": "DD-009",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}
