@@ -798,3 +798,66 @@ claims:
     first_added: "2026-07-20"
     last_checked: "2026-07-20"
     notes: This closes the canonical private-team optimization problem only for the frozen zero-communication fixture; it is not a claim about arbitrary dimensions, signal laws, or communication.
+  - id: DD-C-0039
+    study_id: DD-002
+    short_name: equal-split-location-exact-potential
+    statement: Every two-searcher equal-split location game with posterior masses mu has exact potential Phi(a,b)=3mu_a/2 when a=b and Phi(a,b)=mu_a+mu_b otherwise; consequently every strict best-response path terminates at a pure Nash equilibrium.
+    scope: Two labeled searchers, any finite location set, common posterior masses, and the equal-split unit-prize payoff used by DD-002; this does not cover other congestion, reward, or information structures.
+    claim_type: proposition
+    status: verified
+    source_type: analytic-exact-potential-proof-with-complete-finite-deviation-audit
+    source_reference: docs/decisions/ADR-0010-dd002-selection-catalogue.md
+    proof_path: claims/proofs/DD-C-0039.md
+    implementation_paths: [src/distributed_discovery/information_design/selection.py, src/distributed_discovery/information_design/selection_verification.py]
+    run_ids: [20260721T025802Z_DD-002_73a85c71_b0e5b6dc49]
+    test_paths: [tests/unit/test_information_design_selection.py]
+    exactness_basis: algebraic unilateral-difference identity; the independent verifier checks all 1998 deviations in the frozen 37-game census with exact rational arithmetic
+    rounding_rule: exact fractions
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: Finite strict improvement terminates; weak best-response moves are not claimed acyclic.
+  - id: DD-C-0040
+    study_id: DD-002
+    short_name: known-disclosure-reversal-not-selection-robust
+    statement: For the known refinement P00 to P03, anonymous-symmetric discovery falls from 5/9 to 171/308, but best-pure, worst-pure, uniform-potential-maximum, uniform-strict-best-response-basin, and planner discovery all rise exactly from 2/3 to 3/4.
+    scope: The frozen DD-002 likelihood fixture and the exact procedures defined in ADR-0010; best/worst pure are optimistic/pessimistic correspondence envelopes, while potential and basin ties follow their declared uniform rules.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exact-selection-catalogue-with-independent-game-and-absorption-verifier
+    source_reference: results/verified/20260721T025802Z_DD-002_73a85c71_b0e5b6dc49/outputs/known-witness-robustness.json
+    proof_path: claims/proofs/DD-C-0040.md
+    implementation_paths: [src/distributed_discovery/information_design/selection.py, src/distributed_discovery/information_design/selection_verification.py]
+    run_ids: [20260720T225848Z_DD-002_94607423_e29b1460ae, 20260721T025802Z_DD-002_73a85c71_b0e5b6dc49]
+    test_paths: [tests/unit/test_information_design_selection.py, tests/integration/test_selection_robustness_benchmarks.py]
+    exactness_basis: exact posterior games, complete pure correspondences, exact potential maximizers, rational absorption Bellman tables, frozen-value regression, and a separate corruption-detecting verifier
+    rounding_rule: exact fractions
+    dependencies: [DD-C-0030, DD-C-0039]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: The original reversal remains true under its declared selection but is not robust to the four exact alternative equilibrium treatments.
+  - id: DD-C-0041
+    study_id: DD-002
+    short_name: exact-selection-refinement-census
+    statement: Across all 45 strict deterministic refinements in the frozen DD-002 fixture, harmful counts are 1 anonymous-symmetric, 0 best-pure, 8 worst-pure, 2 uniform-potential-maximum, 2 uniform-strict-best-response-basin, and 0 planner; the potential and basin partition values coincide on all 15 disclosures.
+    scope: The 15 deterministic partitions and exact rule definitions in ADR-0010; five policies have tied potential-maximizer discovery values and basin branch dependence, so the equality is a bounded result rather than process uniqueness or a general theorem.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: complete-exact-refinement-census-with-independent-certificate-verifier
+    source_reference: results/verified/20260721T025802Z_DD-002_73a85c71_b0e5b6dc49/outputs/selection-refinement-comparisons.json
+    proof_path: claims/proofs/DD-C-0041.md
+    implementation_paths: [src/distributed_discovery/information_design/selection.py, src/distributed_discovery/information_design/selection_verification.py]
+    run_ids: [20260721T025802Z_DD-002_73a85c71_b0e5b6dc49]
+    test_paths: [tests/unit/test_information_design_selection.py, tests/integration/test_selection_robustness_benchmarks.py]
+    exactness_basis: all 15 canonical partitions, 37 posterior games, 333 dynamic states, 45 strict refinements, and six exact rule comparisons are recomputed by an independent verifier from rational certificate data
+    rounding_rule: exact fractions and integers
+    dependencies: [DD-C-0029, DD-C-0039]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-20"
+    last_checked: "2026-07-20"
+    notes: The two potential/basin harmful refinements are P06 to P12 and P07 to P14, each with exact change -1/36; they are not the original P00 to P03 witness.
