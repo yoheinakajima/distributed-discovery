@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import csv
+import hashlib
 import html
 import json
 import re
@@ -35,6 +37,106 @@ class SiteParser(HTMLParser):
             self.hrefs.append(str(values["href"]))
         if re.fullmatch(r"h[1-6]", tag):
             self.headings.append(int(tag[1]))
+
+
+RESULT_RUNS = {
+    "roles": "20260720T200447Z_DD-001_6eb12861_ba766d1eba",
+    "disclosure": "20260720T225848Z_DD-002_94607423_e29b1460ae",
+    "sources": "20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1",
+    "canonical": "20260721T012208Z_DD-000_8e4b55e2_e8321d1048",
+}
+
+
+def _sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _verified_output(root: Path, run_id: str, relative: str) -> Path:
+    run = root / "results/verified" / run_id
+    manifest = json.loads((run / "manifest.json").read_text(encoding="utf-8"))
+    if (
+        manifest.get("run_id") != run_id
+        or manifest.get("validation_status") != "passed"
+        or manifest.get("exit_status") != 0
+    ):
+        raise RuntimeError(f"result source run is not passing: {run_id}")
+    expected = manifest.get("outputs", {}).get(relative)
+    path = run / relative
+    if not isinstance(expected, str) or not path.is_file() or _sha256(path) != expected:
+        raise RuntimeError(f"result source checksum mismatch: {run_id}/{relative}")
+    return path
+
+
+def _result_data(root: Path) -> dict[str, Any]:
+    roles_path = _verified_output(root, RESULT_RUNS["roles"], "outputs/tiny-phase-grid.csv")
+    role_rows = list(csv.DictReader(roles_path.open(encoding="utf-8")))
+    role = next(row for row in role_rows if row["case"] == "M3_N2_p2-5")
+    disclosure_path = _verified_output(
+        root, RESULT_RUNS["disclosure"], "outputs/selection-reversal-witness.json"
+    )
+    disclosure = json.loads(disclosure_path.read_text(encoding="utf-8"))
+    source_path = _verified_output(
+        root, RESULT_RUNS["sources"], "outputs/mean-agreement-counterexample.json"
+    )
+    source = json.loads(source_path.read_text(encoding="utf-8"))
+    null_path = _verified_output(
+        root, RESULT_RUNS["sources"], "outputs/pairwise-null-certificate.json"
+    )
+    bounded_null = json.loads(null_path.read_text(encoding="utf-8"))
+    canonical_path = _verified_output(
+        root,
+        RESULT_RUNS["canonical"],
+        "outputs/canonical-exact-frontier-certificate.json",
+    )
+    canonical = json.loads(canonical_path.read_text(encoding="utf-8"))
+    interval = canonical["private_team_interval"]
+    return {
+        "schema_version": 1,
+        "roles": {
+            "direct_fraction": role["direct_fraction"],
+            "optimum_fraction": role["optimum_fraction"],
+            "gain_fraction": role["role_gain_fraction"],
+            "claim_ids": ["DD-C-0021"],
+        },
+        "disclosure": {
+            "selected_less_fraction": disclosure["selected_less"],
+            "selected_more_fraction": disclosure["selected_more"],
+            "difference_fraction": disclosure["selected_difference"],
+            "pure_less_values": disclosure["pure_less_values"],
+            "pure_more_values": disclosure["pure_more_values"],
+            "planner_less_fraction": disclosure["planner_less"],
+            "planner_more_fraction": disclosure["planner_more"],
+            "claim_ids": ["DD-C-0030", "DD-C-0031"],
+        },
+        "sources": {
+            "mean_pair_agreement_fraction": source["matched_mean_pair_agreement"],
+            "left_discovery_fraction": source["left_private_discovery"],
+            "right_discovery_fraction": source["right_private_discovery"],
+            "difference_fraction": source["private_discovery_difference"],
+            "matched_pairwise_group_count": bounded_null["matched_pairwise_signature_group_count"],
+            "matched_groups_with_different_discovery": bounded_null[
+                "matched_groups_with_different_private_discovery"
+            ],
+            "claim_ids": ["DD-C-0033", "DD-C-0034"],
+        },
+        "canonical_open_problem": {
+            "lower_fraction": interval["lower_fraction"],
+            "upper_fraction": interval["upper_fraction"],
+            "gap_fraction": interval["gap_fraction"],
+            "upper_attainability_claimed": interval["upper_attainability_claimed"],
+            "global_tightness_claimed": interval["global_tightness_claimed"],
+            "status": interval["canonical_private_team_optimum_status"],
+            "claim_ids": ["DD-C-0036"],
+        },
+        "provenance": {
+            "source_runs": RESULT_RUNS,
+            "source_artifacts": {
+                str(path.relative_to(root)): _sha256(path)
+                for path in [roles_path, disclosure_path, source_path, null_path, canonical_path]
+            },
+            "generator": "distributed_discovery.site.build._result_data",
+        },
+    }
 
 
 def _passing_baseline(root: Path) -> Path:
@@ -149,7 +251,9 @@ def _canonical_data(run: Path) -> dict[str, Any]:
     }
 
 
-def _replacements(canonical: dict[str, Any], studies: list[dict[str, str]]) -> dict[str, str]:
+def _replacements(
+    canonical: dict[str, Any], studies: list[dict[str, str]], results: dict[str, Any]
+) -> dict[str, str]:
     parameters = canonical["parameters"]
     metrics = canonical["metrics"]
 
@@ -167,6 +271,23 @@ def _replacements(canonical: dict[str, Any], studies: list[dict[str, str]]) -> d
         "{{RUN_ID}}": str(canonical["source_run_id"]),
         "{{UPSTREAM_COMMIT}}": str(canonical["upstream_commit"]),
         "{{STUDY_CARDS}}": _study_cards(studies),
+        "{{ROLES_DIRECT}}": str(results["roles"]["direct_fraction"]),
+        "{{ROLES_OPTIMUM}}": str(results["roles"]["optimum_fraction"]),
+        "{{ROLES_GAIN}}": str(results["roles"]["gain_fraction"]),
+        "{{DISCLOSURE_LESS}}": str(results["disclosure"]["selected_less_fraction"]),
+        "{{DISCLOSURE_MORE}}": str(results["disclosure"]["selected_more_fraction"]),
+        "{{DISCLOSURE_DIFFERENCE}}": str(results["disclosure"]["difference_fraction"]),
+        "{{SOURCE_AGREEMENT}}": str(results["sources"]["mean_pair_agreement_fraction"]),
+        "{{SOURCE_LEFT}}": str(results["sources"]["left_discovery_fraction"]),
+        "{{SOURCE_RIGHT}}": str(results["sources"]["right_discovery_fraction"]),
+        "{{NULL_GROUPS}}": str(results["sources"]["matched_pairwise_group_count"]),
+        "{{NULL_DIFFERENCES}}": str(results["sources"]["matched_groups_with_different_discovery"]),
+        "{{INTERVAL_LOWER}}": str(results["canonical_open_problem"]["lower_fraction"]),
+        "{{INTERVAL_UPPER}}": str(results["canonical_open_problem"]["upper_fraction"]),
+        "{{RESULT_RUN_ROLES}}": str(results["provenance"]["source_runs"]["roles"]),
+        "{{RESULT_RUN_DISCLOSURE}}": str(results["provenance"]["source_runs"]["disclosure"]),
+        "{{RESULT_RUN_SOURCES}}": str(results["provenance"]["source_runs"]["sources"]),
+        "{{RESULT_RUN_CANONICAL}}": str(results["provenance"]["source_runs"]["canonical"]),
     }
 
 
@@ -182,6 +303,14 @@ def validate_site(output: Path) -> dict[str, Any]:
         for required in ["main", "nav", "header", "footer"]:
             if required not in parser.tags:
                 errors.append(f"{page.name}: missing {required}")
+        expected_navigation = {
+            "foundations.html",
+            "results.html",
+            "open-problems.html",
+            "applications.html",
+        }
+        if not expected_navigation.issubset(set(parser.hrefs)):
+            errors.append(f"{page.name}: incomplete companion navigation")
         if not parser.headings or parser.headings[0] != 1:
             errors.append(f"{page.name}: first heading must be h1")
         if any(
@@ -205,8 +334,8 @@ def validate_site(output: Path) -> dict[str, Any]:
                 target_parser.feed(target.read_text(encoding="utf-8"))
                 if parsed.fragment not in target_parser.ids:
                     errors.append(f"{page.name}: missing fragment {href}")
-    if len(pages) != 4:
-        errors.append(f"expected four HTML pages, found {len(pages)}")
+    if len(pages) != 5:
+        errors.append(f"expected five HTML pages, found {len(pages)}")
     if errors:
         raise RuntimeError("site validation failed:\n" + "\n".join(errors))
     return {
@@ -224,13 +353,14 @@ def build(root: Path, output: Path) -> dict[str, Any]:
     run = _passing_baseline(root)
     canonical = _canonical_data(run)
     studies = _study_data(root)
+    results = _result_data(root)
     source = root / "site/src"
     if output.exists():
         shutil.rmtree(output)
     output.mkdir(parents=True)
     for asset in ["styles.css", "site.js"]:
         shutil.copy2(source / asset, output / asset)
-    replacements = _replacements(canonical, studies)
+    replacements = _replacements(canonical, studies, results)
     for template in sorted(source.glob("*.html")):
         rendered = template.read_text(encoding="utf-8")
         for marker, value in replacements.items():
@@ -244,10 +374,14 @@ def build(root: Path, output: Path) -> dict[str, Any]:
     (data_dir / "studies.json").write_text(
         json.dumps(studies, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
+    (data_dir / "results.json").write_text(
+        json.dumps(results, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
     shutil.copy2(root / "claims/claims.yml", data_dir / "claims.yml")
     report = validate_site(output)
     report["canonical_source_run"] = canonical["source_run_id"]
     report["study_count"] = len(studies)
+    report["result_source_runs"] = results["provenance"]["source_runs"]
     (output / "build-report.json").write_text(
         json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
