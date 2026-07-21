@@ -8,3 +8,5 @@ objectives. ADR-0017 freezes DD-012's access interpretation, exact grid,
 reward registry, and independent-enumeration boundary. ADR-0018 separates
 DD-013 binding audiences, voluntary modes, public action assignment, bounded
 garbling, and the observability of its firewall registry.
+ADR-0019 bounds DD-014 to its proved three-label conditional policy class and
+separates the adversarial all-table two-label audit.
