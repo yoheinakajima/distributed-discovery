@@ -1,4 +1,4 @@
-.PHONY: bootstrap lint typecheck test fetch-upstream reproduce-baseline upstream-patch validate-claims foundations three-results canonical-exact-frontier dd001 dd001-signatures dd001-thresholds dd001-alignment-bound dd002-disclosure dd002-selection-robustness dd003-source-graphs papers site verify all clean
+.PHONY: bootstrap lint typecheck test fetch-upstream reproduce-baseline upstream-patch validate-claims foundations three-results canonical-exact-frontier dd001 dd001-signatures dd001-thresholds dd001-alignment-bound dd002-disclosure dd002-selection-robustness dd003-source-graphs dd003-heterogeneous-sources papers site verify all clean
 
 UV := uv
 export PYTHONPATH := $(CURDIR)/src
@@ -62,6 +62,9 @@ dd002-selection-robustness:
 
 dd003-source-graphs:
 	$(PY) -m distributed_discovery.source_networks.study
+
+dd003-heterogeneous-sources:
+	$(PY) -m distributed_discovery.source_networks.heterogeneous_study
 
 papers:
 	./scripts/build_papers.sh all
