@@ -1,0 +1,25 @@
+% Generated evidence asset; do not edit by hand.
+% Source runs: 20260720T200447Z_DD-001_6eb12861_ba766d1eba, 20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1
+% Claim IDs: DD-C-0021, DD-C-0026, DD-C-0027, DD-C-0028
+% Generator: distributed_discovery.papers.build_three_results
+% Input SHA-256: e7112e7dd471a4fa302bbe5336a367dd166ff497bf8ab9095b6526635fe4851e, 47d933bfc1ae8f611599b91a289747bdc413de5d62428ea599e29cea6e036b7d
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm]
+\draw[->] (0,0) -- (5.1,0) node[right] {policy};
+\draw[->] (0,0) -- (0,4.25) node[above] {$G$};
+\foreach \y/\lab in {2.5/{1/2},3/{3/5},3.5/{7/10},4/{4/5}} {\draw (-.08,\y)--(.08,\y) node[left=2pt] {\small $\lab$};}
+\fill[consensus!70] (0.8,0) rectangle (2.1,3.20000000);
+\fill[private!75] (2.9,0) rectangle (4.2,3.50000000);
+\node[above] at (1.45,3.20000000) {\small $\frac{16}{25}$};
+\node[above] at (3.55,3.50000000) {\small $\frac{7}{10}$};
+\node[below] at (1.45,0) {direct};
+\node[below] at (3.55,0) {hybrid};
+\begin{scope}[xshift=6.0cm,yshift=.25cm]
+\node[draw,rounded corners,fill=private!8,text width=6.1cm,align=left,inner sep=8pt] at (2.9,1.65) {\textbf{Exact witness}\quad $M=3,N=2,p=2/5$\\[3pt]Agent 1: \texttt{(0, 0, 0)} (territory 0)\\Agent 2: \texttt{(1, 1, 2)} (reroute signal 0)\\[3pt]Gain: $7/10-16/25=3/50$.};
+\end{scope}
+\end{tikzpicture}
+\caption{Roles can improve discovery without communication. The bars use the exact unrestricted optimum at the displayed finite fixture; the schematic is one optimal representative.}
+\label{fig:roles}
+\ArtifactNote{Source runs: \path{20260720T200447Z_DD-001_6eb12861_ba766d1eba, 20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1}; claims: DD-C-0021, DD-C-0026, DD-C-0027, DD-C-0028; generator: \path{distributed_discovery.papers.build_three_results}; input SHA-256 prefixes: \texttt{e7112e7dd471, 47d933bfc1ae}.}
+\end{figure}

@@ -1,0 +1,610 @@
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsthm,mathtools}
+\IfFileExists{newtxtext.sty}{\usepackage{newtxtext,newtxmath}}{\usepackage{mathptmx}\usepackage{amssymb}}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{booktabs,tabularx,array}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning,calc}
+\usepackage{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\definecolor{planner}{HTML}{2A78D6}
+\definecolor{private}{HTML}{087D26}
+\definecolor{market}{HTML}{A76900}
+\definecolor{consensus}{HTML}{B4476F}
+\definecolor{inktwo}{HTML}{52514E}
+\setstretch{1.035}
+\setlength{\parskip}{0.25em}
+\setlength{\parindent}{1.2em}
+\setlength{\emergencystretch}{2em}
+\Urlmuskip=0mu plus 1mu
+\setlist{leftmargin=1.5em,itemsep=0.2em,topsep=0.3em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Tteam}{T_N(M,p)}
+\newcommand{\ArtifactNote}[1]{\par\begin{minipage}{.96\textwidth}\scriptsize\color{inktwo}#1\end{minipage}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{\textbf{Three Results in Distributed Discovery}\\[0.35em]
+\large Roles, Disclosure, and Source Dependence}
+\author{Yohei Nakajima\\{\normalsize Untapped Capital}}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Collective search depends on more than the quality of a shared ranking. It also
+depends on who is assigned to test what, which strategic outcome is selected, and
+whether nominally separate reports arise from distinct sources. We synthesize
+three finite results around those margins. First, ex-ante role policies can improve
+discovery without communication: at $(M,N,p)=(3,2,2/5)$ a hybrid policy attains
+$7/10$, strictly above direct clue-following $16/25$, and a restricted family has
+exact territorial--hybrid--direct thresholds. Second, in a complete deterministic
+disclosure fixture, one Blackwell refinement lowers discovery under the declared
+anonymous-symmetric selection from $5/9$ to $171/308$, even though every pure
+equilibrium and the planner improve. Third, among 51 nonisomorphic latent-source
+graphs, complete pairwise report moments yield a bounded null, while the average
+pair-agreement scalar is insufficient: two networks both have agreement $3/4$
+but discovery $8/9$ and $31/36$. We connect these results through a common
+information--action framework and preserve their distinct evidence boundaries.
+The paper makes no claim of a new field or universal law.
+\end{abstract}
+
+\noindent\textbf{Keywords:} collective search, team decision, information design,
+source dependence, equilibrium selection, distributed discovery.\\
+\textbf{Evidence note:} All displayed numerics and generated figures are derived
+from checksum-validated immutable runs. Claim IDs refer to the public repository
+ledger; exactness and independence are claim-specific.
+
+\section{Introduction}
+% Claims: DD-C-0001, DD-C-0002, DD-C-0016, DD-C-0017
+Many organizations use the language of ``the best answer'' even when their
+operational task is to allocate several attempts. A research group chooses a
+portfolio of experiments, a venture fund chooses investments, and a multi-agent
+system chooses investigations or tool calls. In each case evidence ranks
+candidates, but discovery depends on the union of actions rather than the quality
+of a single recommendation. The Shared Discovery Paradox isolates this difference:
+pooling improves the leading recommendation, yet a one-answer convention can
+compress several actions into repetition and reduce discovery
+\citep{Nakajima2026SharedDiscovery}.
+
+The broader program calls this conversion from dispersed evidence into a finite
+action portfolio \emph{distributed discovery}. The name is a working definition,
+not a novelty or ownership claim. The phrase has other uses, and the component
+questions belong to established literatures: Blackwell comparison and persuasion
+for information, team theory for private common-payoff decisions, organizational
+and scientific search for division of effort, and coverage games for strategic
+action allocation \citep{Blackwell1953,MarschakRadner1972,KamenicaGentzkow2011,
+March1991,Kitcher1990,Vetta2002}. The contribution here is to place three finite
+results in one explicit architecture while retaining their separate scopes.
+
+The first result concerns \emph{roles}. Agents commit to different mappings from
+private clues to actions before seeing those clues and act without communication.
+Direct clue-following is feasible but need not be optimal. A constant territory
+can reserve a candidate while another agent remains responsive to evidence. This
+mechanism is allocative: no new signal is created, and no report is pooled at
+action time.
+
+The second result concerns \emph{selection}. A public disclosure changes posterior
+games played by autonomous searchers. More informative disclosure expands what a
+planner can do, but a named equilibrium-selection rule can move toward a more
+concentrated outcome. The finite reversal below is therefore related in spirit to
+informational Braess effects, not to a failure of frontier monotonicity
+\citep{AcemogluEtAl2018}. Its central qualifier is that all pure equilibria improve
+for the same witness.
+
+The third result concerns \emph{representation}. Correlated reports may come from
+latent source networks. One scalar summary of agreement can hide discovery-
+relevant structure, yet even a complete pairwise moment matrix can fail to
+distinguish nonisomorphic networks without changing discovery in a bounded class.
+The positive counterexample and negative search result are both informative: one
+refutes a scalar diagnostic, while the other records where a stronger diagnostic
+did not fail.
+
+These mechanisms should not be collapsed into a slogan that ``diversity is good''
+or ``more information is bad.'' Roles change the feasible private policy class;
+disclosure changes a posterior game and its selected equilibrium; source networks
+change the joint evidence law. Our unifying statement is narrower: collective
+discovery depends not only on what agents know, but on how roles are assigned, how
+strategic outcomes are selected, and how source dependence is represented.
+
+The remainder defines the common accounting and evidence discipline, presents the
+three results, draws their limited joint implications, and states the unresolved
+questions. The canonical upstream paper remains the concise source for the atomic
+paradox and its strategic/scaling results. The Foundations note remains the source
+for the general vocabulary. This paper is a results synthesis, not a replacement
+for either.
+
+\section{Framework and evidence discipline}
+% Claims: DD-C-0002, DD-C-0011, DD-C-0016, DD-C-0018, DD-C-0019
+\subsection{Information and action as separate objects}
+
+An atomic discovery problem has a target $\theta\in\{1,\ldots,M\}$ and $N$
+actions. If $S$ is the set of distinct tested labels, discovery is
+$\mathbf 1\{\theta\in S\}$. An information architecture specifies which evidence
+each decision maker observes. A protocol maps that information to a feasible
+action vector. With budget $B$, information architecture $I$, and feasible
+protocol class $\mathcal P_B(I)$, define
+\[
+G_B(\Pi;I)=\Prob_\Pi(\theta\in S),\qquad
+V_B(I)=\sup_{\Pi\in\mathcal P_B(I)}G_B(\Pi;I).
+\]
+Protocol loss is $L_B(\Pi;I)=V_B(I)-G_B(\Pi;I)$, hence
+\[
+G_B(\Pi;I)=V_B(I)-L_B(\Pi;I).
+\]
+This is an accounting identity (DD-C-0002), not an efficiency theorem. Its use is
+to prevent a comparison that changes information, authority, equilibrium
+selection, and source dependence simultaneously from being assigned to only one
+cause.
+
+Frontier monotonicity requires emulation. If every protocol feasible under $I_1$
+can be implemented under $I_2$ with the same outcome distribution, then
+$V_B(I_2)\ge V_B(I_1)$ (DD-C-0016). The condition is stronger than saying that one
+realized protocol sees more information. A richer public signal can change a game
+and its selected outcome even when the planner frontier rises. This distinction is
+the hinge between the disclosure result and Blackwell's decision-theoretic order
+\citep{Blackwell1953,KamenicaGentzkow2011}.
+
+\subsection{Three institutional margins}
+
+The results occupy different cells of an information--authority matrix. A private
+team chooses role policies ex ante, observes only local signals at action time,
+and shares a common discovery objective. A disclosure game gives all agents a
+public posterior but leaves actions strategic under an equal-split reward. A
+source network changes how private reports are jointly generated while holding
+the direct action rule fixed. These are not three algorithms for the same
+feasible set; each changes a different primitive.
+
+For the private team, ex-ante randomization cannot improve the finite common-payoff
+optimum (DD-C-0018). Drawing contingent actions before signals produces a mixture
+over deterministic profiles, and expected discovery is a convex combination of
+their values. This is a team-decision sufficiency result, not purification of a
+strategic mixed equilibrium \citep{MarschakRadner1972}.
+
+A pooled planner provides an important but carefully scoped comparator. It
+observes every private report and can apply any fixed role policy to reproduce the
+team's action vector. Conditional on the reports, an eight-label top-posterior
+portfolio weakly dominates any emulated multiset. Thus direct clue-following is a
+lower bound and the pooled frontier is an upper bound under matched physical
+actions and objective (DD-C-0019). The comparison crosses information and
+assignment margins; it is a valid feasible-set bound, not an attainable private
+policy.
+
+\subsection{Claim-level evidence}
+
+The numerical and mathematical objects below do not share one evidence status.
+A theorem can be derived analytically and audited computationally. A finite
+enumeration can be exact without supporting an all-parameter theorem. A selected
+equilibrium reversal can be verified while remaining selection-dependent. A
+failed exhaustive search over a declared finite class is a bounded null, not a
+general sufficiency statement. Table~\ref{tab:evidence} makes these differences
+visible.
+
+\input{generated/evidence-status-table.tex}
+
+Every computational statement traces to a passing immutable run with a frozen
+configuration, clean source commit, environment, exact or floating arithmetic
+basis, termination condition, output checksums, and validation flags. Independent
+reproduction requires a materially different representation or evaluator, not a
+second invocation of the same code. Corruption tests establish that certificate
+checkers actually reject altered evidence. These practices do not replace proof
+or peer review; they make the boundary of each claim inspectable.
+
+\section{Private roles without communication}
+% Claims: DD-C-0018, DD-C-0019, DD-C-0020, DD-C-0021, DD-C-0022, DD-C-0023, DD-C-0024, DD-C-0025, DD-C-0026, DD-C-0027, DD-C-0028, DD-C-0036
+\subsection{The zero-communication team problem}
+
+The target is uniform on $M$ labels. Agent $i$ receives clue $X_i$ with
+\[
+\Prob(X_i=\theta\mid\theta)=p,
+\qquad
+\Prob(X_i=x\ne\theta\mid\theta)=q=\frac{1-p}{M-1},
+\]
+independently conditional on $\theta$. Before clues are realized, the team commits
+to deterministic role policies $f_i:\{1,\ldots,M\}\to\{1,\ldots,M\}$. Afterward
+agent $i$ searches $f_i(X_i)$ without communication. The team frontier is
+\[
+T_N(M,p)=\max_{f_1,\ldots,f_N}
+\Prob\{\theta\in\{f_1(X_1),\ldots,f_N(X_N)\}\}.
+\]
+
+Direct clue-following uses $f_i(x)=x$. Its value is
+$1-(1-p)^N$. A territorial policy ignores clues and reserves a fixed label.
+Hybrid policies combine both: one role can protect territory while another
+redirects only selected signals. The objective rewards coverage, so sacrificing
+some action-level accuracy can improve union success.
+
+For a fixed profile, let $s_i(t)=\Prob(f_i(X_i)=t\mid\theta=t)$. Conditional
+independence yields the exact factorization
+\[
+G(f_1,\ldots,f_N)=\frac1M\sum_{t=1}^M
+\left[1-\prod_{i=1}^N(1-s_i(t))\right].
+\]
+This evaluator is separate from the direct target/signal enumeration used to
+check winners in the finite grid.
+
+\subsection{An exact role counterexample}
+
+At $M=3$, $N=2$, and $p=2/5$, direct clue-following gives
+\[
+D(p)=1-(1-p)^2=2p-p^2=\frac{16}{25}.
+\]
+The hybrid profile with one constant policy $(0,0,0)$ and one rerouting policy
+$(1,1,2)$ gives $7/10$. Exhaustive enumeration of all agent-symmetric policy
+profiles proves this is the unrestricted deterministic optimum for the fixture;
+raw direct enumeration and a later signature implementation reproduce it
+(DD-C-0021, DD-C-0024). The exact gain is $3/50$.
+
+\input{generated/roles-figure.tex}
+
+The counterexample has a transparent mechanism. The constant role guarantees an
+attempt at label zero. The other role follows signals one and two but maps a zero
+signal to one, avoiding predictable duplication with the territorial agent. It
+does not show that one fixed territory is always best, that communication is
+harmful, or that the same profile is optimal at canonical dimensions. It refutes
+only the general claim that every optimal private team follows its clue directly.
+
+\subsection{A restricted phase theorem}
+
+For $N=2$ and $M\ge3$, compare three families: two direct policies; two distinct
+constant territories; and the one-reroute hybrid above. Their values are
+\[
+D(p)=2p-p^2,\qquad R_M=\frac2M,
+\qquad H_M(p)=\frac{1+(M-2)p}{M-1}.
+\]
+Exact factorization of pairwise differences gives the thresholds
+$p=1/M$ and $p=1/(M-1)$ (DD-C-0026). Territorial is best below $1/M$,
+the hybrid is best between the thresholds, and direct is best above
+$1/(M-1)$, with adjacent ties at the boundaries. This is a theorem within the
+three named families for every $M\ge3$.
+
+The restriction matters. A complete signature-polynomial census certifies that
+the same hybrid-then-direct envelope is unrestricted over the continuous
+informative interval $[1/M,1]$ for $M=3,4,5$ (DD-C-0027). The computation checks
+438,734 feasible signature multisets with exact quadratic nonnegativity at
+endpoints and interior vertices. It does not prove the envelope for all $M$.
+
+Nor does the informative classification extend to every $p$. At $p=0$, exact
+unrestricted optima are $11/12$ for $M=3$ and $2/3$ for $M=4$, strictly above the
+three-family benchmarks $2/3$ and $1/2$ (DD-C-0028). These anti-informative
+counterexamples show why a phase diagram needs an explicit parameter domain.
+
+\subsection{Lossless policy signatures}
+
+Raw policies number $M^M$ per agent. A policy can nevertheless be compressed
+without changing any fixed-profile value. For target $t$, let $c_i(t)$ be the
+number of signals mapped to $t$, and let $d_i(t)$ indicate whether signal $t$ is a
+fixed point. Then
+\[
+s_i(t)=q c_i(t)+(p-q)d_i(t).
+\]
+The targetwise pairs $(c_i(t),d_i(t))$ therefore determine the full conditional
+success vector and every profile objective (DD-C-0023).
+
+Feasibility also has an exact characterization. Remove fixed rows and define
+residual incoming counts $r_t=c_t-d_t$. A duplicated-column bipartite matching
+exists exactly when local count conditions and the singleton residual Hall bounds
+hold. A matching implementation reconstructs policies, while a separate closed-
+form implementation audits feasibility. The signature representation independently
+reproduces all 21 prior tiny optima and their raw-policy tie counts (DD-C-0024).
+
+The compression does not eliminate the canonical difficulty. At $M=16$ there
+are 148,348,284,928 feasible labeled signatures and 5,806 individual target-label
+orbits. Eight-agent multisets before a global target quotient form an 85-digit
+state count (DD-C-0025). Canonicalizing each agent separately loses relative target
+alignment, which enters the product of failure probabilities. The barrier is not
+a proof that exact optimization is impossible; it identifies what a valid next
+quotient or relaxation must preserve.
+
+\subsection{The exact canonical interval}
+
+For $(M,N,p)=(16,8,1/5)$, direct clue-following is feasible and has exact value
+\[
+1-(4/5)^8=\frac{325089}{390625}=0.83222784.
+\]
+The direct profile is an exact coordinate fixed point, and 17 additional declared
+starts converged to the same value (DD-C-0022). This is a heuristic lower-bound
+observation, not a global-optimality proof.
+
+Two exact pooled-frontier representations and a third partition verifier certify
+the top-eight endpoint. Combined with the emulation proposition, they give
+\[
+\boxed{
+\frac{325089}{390625}
+\le T_8(16,1/5)\le
+\frac{860391662035297}{1001129150390625}}
+\]
+with exact gap $27224111644672/1001129150390625\approx0.0271934061994395$
+(DD-C-0036). The upper endpoint uses pooled reports and assignment authority. It
+is a valid upper bound, not a constructed private-team value; attainability,
+tightness, and the global optimum remain open.
+
+\section{Information disclosure under strategic search}
+% Claims: DD-C-0029, DD-C-0030, DD-C-0031
+\subsection{A complete bounded fixture}
+
+The disclosure result holds information and the physical action technology apart
+from strategic selection. There are three target actions, two searchers, four
+evidence states, and a fixed rational likelihood matrix. A deterministic public
+disclosure policy is a set partition of the four evidence states, considered up
+to message-label equivalence. The Bell number gives exactly 15 policies. Across
+their messages the run evaluates 37 posterior games (DD-C-0029).
+
+Agents compete for an equal-split prize: being the sole correct searcher receives
+the whole prize, while duplicate correct searches split it. For each posterior
+game, the computation exhausts labeled pure best responses and calculates the
+anonymous symmetric equilibrium over its support. Cartesian products across
+messages yield 256 global pure-equilibrium selections. This registry keeps the
+correspondence separate from the named symmetric selection.
+
+A disclosure $\pi'$ is more informative than $\pi$ when a deterministic garbling
+maps messages of $\pi'$ to those of $\pi$. The complete partition lattice contains
+45 strict refinement pairs. The planner's two-action value is the posterior mass
+of its two highest-probability targets and therefore cannot fall under a refinement
+when it can ignore the added message detail.
+
+\subsection{The selected reversal}
+
+The unique anonymous-symmetric reversal refines full pooling
+$\{\{0,1,2,3\}\}$ into $\{\{0,1\},\{2,3\}\}$. Under pooling the selected discovery
+is $5/9$. Under refinement it is the probability-weighted value $171/308$, lower
+by $1/2772$ (DD-C-0030).
+
+\input{generated/disclosure-figure.tex}
+
+The qualification is central. Every pure-equilibrium discovery value rises from
+$2/3$ to $3/4$ for this witness. The two-action planner value also rises from
+$2/3$ to $3/4$. The refinement therefore does not make every equilibrium worse,
+does not reduce the feasible information frontier, and does not show that public
+information is intrinsically harmful. It changes the declared anonymous-symmetric
+outcome in a direction that concentrates strategic search.
+
+The witness is informational-Braess-like because information modifies equilibrium
+behavior, while a coordinator could discard the added detail or choose a better
+portfolio \citep{AcemogluEtAl2018}. It is also narrower than a Bayesian-persuasion
+claim: the disclosure policy is not optimized over randomized experiments, the
+sender objective is not solved, and the result does not characterize the concave
+closure of value \citep{KamenicaGentzkow2011}.
+
+\subsection{What the full refinement census says}
+
+Across all 45 strict deterministic refinements, exactly one lowers the selected
+anonymous-symmetric value, eight lower the worst pure-equilibrium value, none
+lower the best pure-equilibrium value, and none lower the planner value
+(DD-C-0031). Reporting only the selected witness would hide the favorable pure
+correspondence; reporting only the best equilibrium would hide selection risk.
+Both summaries are needed.
+
+The census establishes completeness only for the declared four-state partition
+lattice and likelihood fixture. Randomized disclosure was not studied. General
+asymmetric mixed equilibria were not enumerated. Dynamic learning, equilibrium
+refinement, and selection by adaptive processes are outside the result. These
+limits motivate the next DD-002 milestone: apply several explicit selection
+procedures to the same 45 refinements before expanding the disclosure class.
+
+\section{Correlated source networks}
+% Claims: DD-C-0032, DD-C-0033, DD-C-0034
+\subsection{From a copying scalar to provenance graphs}
+
+Four searchers observe reports derived from one to three latent sources. A
+bipartite graph says which source reports each searcher sees; no declared node is
+isolated. Sources are independent conditional on a three-valued target and have
+common accuracy $2/3$. A searcher combines adjacent source reports by a declared
+plurality-winner-set rule with uniform tie sampling, then searches the resulting
+label directly.
+
+This model turns provenance into a graph rather than a single copying rate. Source
+and searcher labels are nuisance symmetries, so graphs are equivalent under
+independent relabeling of the two sides. Exhausting all labeled adjacencies and
+canonicalizing them yields 1, 8, and 42 nonisomorphic graphs for one, two, and
+three sources: 51 total (DD-C-0032). An independent orbit traversal reproduces
+the counts and a pairwise nonisomorphism audit confirms the registry.
+
+For each graph, exact enumeration over target and source-signal states produces
+private discovery and report moments. The complete pairwise object includes every
+searcher pair's one-hot report moment matrix, canonicalized only under searcher
+relabeling. Two networks can have the same scalar mean agreement while differing
+in this matrix, source overlap, and higher-order dependence.
+
+\subsection{A bounded null for complete pairwise moments}
+
+The 51-graph census contains ten complete pairwise-moment signatures that each
+match two nonisomorphic graphs. All twenty graphs in those groups have equal
+private discovery within their matched group. Thus no complete-pairwise-moment
+counterexample exists in the configured class (DD-C-0033).
+
+This is a bounded null, not a sufficiency theorem. It says the declared diagnostic
+survived one complete exact test. A counterexample may appear with heterogeneous
+source quality, more sources, different aggregation, more searchers, or another
+target law. Conversely, the null matters operationally because it prevents a
+failed search from being selectively forgotten and establishes a reproducible
+baseline for the next perturbation.
+
+\subsection{A scalar counterexample}
+
+Average pair agreement is much weaker. Graphs \texttt{K2N4:00011110} and
+\texttt{K2N4:01111111} both have mean pair agreement $3/4$, yet their exact private
+discovery probabilities are $8/9$ and $31/36$, a difference of $1/36$
+(DD-C-0034).
+
+\input{generated/sources-figure.tex}
+
+The two complete pairwise matrices differ, so the example refutes only the scalar
+average. The full census has 22 graph pairs with matched average agreement and
+different discovery. It also has 59 pairs with matched source Herfindahl--
+Hirschman concentration and different discovery. Neither scalar is a sufficient
+effective-channel statistic in this model.
+
+The result does not imply that correlation is always harmful. Shared sources may
+improve individual report quality or coordinate complementary actions in another
+technology. Nor does it establish a universal effective sample size. Diagnostics
+must be tied to the target law, aggregation rule, and action objective. Provenance
+structure can matter beyond nominal report count, but which representation is
+sufficient remains a model-specific question.
+
+\section{Unified implications}
+% Claims: DD-C-0002, DD-C-0016, DD-C-0021, DD-C-0030, DD-C-0033, DD-C-0034
+The three results share an outcome---union discovery---but operate through
+different causal and mathematical margins. It is useful to state the mapping
+exactly:
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{P{.15\textwidth}YYY}
+\toprule
+Study & Primitive changed & Mathematical object & Main boundary\\
+\midrule
+DD-001 roles & ex-ante policy assignment & common-payoff team frontier & canonical alignment unresolved\\
+DD-002 disclosure & public signal partition & posterior game plus selection & reversal is selection-dependent\\
+DD-003 sources & joint evidence provenance & colored/bipartite source law & pairwise result is a bounded null\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+First, allocation can substitute partly for communication. The DD-001 hybrid
+improves coverage using differentiated role mappings while leaving every clue
+private. The result does not say that information sharing lacks value; the exact
+pooled planner remains an upper bound. It says assignment has an independent
+margin that a direct symmetric protocol leaves unused.
+
+Second, information and behavior must be separated. The DD-002 refinement
+improves the planner and all pure equilibria for its witness while lowering one
+selected symmetric outcome. A statement that ``information reduced discovery''
+is incomplete without the selection procedure. Frontier monotonicity and realized
+equilibrium performance can move in different directions.
+
+Third, evidence diversity needs a representation. The DD-003 counterexample shows
+that a scalar correlation summary can match while discovery differs; the bounded
+null shows that a richer pairwise object can match while discovery does not differ
+in the current class. A useful diagnostic must be validated against the downstream
+action rule, not chosen solely because it resembles a generic effective sample
+size.
+
+These points support a layered design workflow. Declare the world and evidence
+kernel; declare what each agent observes; declare the feasible role or assignment
+class; declare rewards and equilibrium selection; declare how actions cover the
+target space. Only then compare protocols. A change that bundles those layers may
+still be useful, but its performance gap should not be given a single causal
+label.
+
+The scientific-search literature already studies richer dynamic divisions of
+labor, communication networks, and experiment choice
+\citep{March1991,Kitcher1990,Zollman2007,RzhetskyEtAl2015}. Submodular and adaptive
+search add overlapping value and feedback \citep{NemhauserEtAl1978,
+GolovinKrause2011}. Robotic coverage makes redundancy valuable for robustness
+\citep{HazonKaminka2008}. The present finite models are best read as diagnostic
+building blocks for those settings, not substitutes for them.
+
+\section{Limitations}
+% Claims: DD-C-0017, DD-C-0022, DD-C-0025, DD-C-0027, DD-C-0030, DD-C-0033
+The first limitation is external validity. Every result is mathematical evidence
+inside a declared model. No observational or experimental dataset establishes
+that a real scientific group, company, market, or multi-agent system occupies the
+same parameterization. Application mappings identify measurable primitives; they
+do not transfer the ordering automatically.
+
+Second, the role results are asymmetric in their strength. The policy-signature
+identity and residual Hall characterization are general theorems for the finite
+symmetric clue model. The three-family phase result is general only within its
+named families. The unrestricted continuous classification is bounded to
+$M=3,4,5$, and the anti-informative examples are two fixtures. The canonical
+interval is exact, but the private-team optimizer and upper-bound tightness remain
+unknown.
+
+Third, the disclosure result fixes deterministic partitions of four evidence
+states and one equilibrium selection. It does not enumerate randomized disclosure,
+general asymmetric mixed equilibria, or learning-selected outcomes. Because every
+pure equilibrium improves for the witness, the phrase ``harmful disclosure'' must
+always carry the selection qualifier.
+
+Fourth, the source-network model fixes homogeneous accuracy, source independence
+conditional on the target, four searchers, one to three sources, and a particular
+plurality/tie rule. The complete pairwise bounded null may disappear under the
+first heterogeneity perturbation. The average-agreement and source-HHI
+counterexamples do not refute all task-specific channel diagnostics.
+
+Fifth, exact enumeration is not equivalent to conceptual independence. The
+repository requires distinct representations and direct state checks where
+feasible, but all implementations share the frozen model. A misspecified
+likelihood, objective, or selection definition could be reproduced perfectly.
+Proof review and model criticism remain necessary.
+
+Finally, the project makes no broad terminology or field novelty claim
+(DD-C-0017). Team theory, information design, organizational search, epistemic
+networks, and coverage games provide direct intellectual ancestry. The value of
+the synthesis is an inspectable separation of information, roles, selection, and
+source representation.
+
+\section{Research agenda}
+The immediate DD-001 task is an alignment-preserving upper relaxation. A valid
+method must retain relative target labels across agents or relax them in a proved
+direction. Individual signature-orbit sorting is not admissible. The best outcome
+would strictly improve the exact pooled upper endpoint; an independently verified
+equality or resource barrier would also be informative if its scope is explicit.
+
+For DD-002, the next step is selection robustness, not a larger disclosure space.
+Several fully specified procedures---for example best pure, worst pure, a basin-
+weighted best-response process, or an explicit stochastic transition rule---
+should classify the known witness and all 45 refinements. Randomized disclosure
+should begin only after that catalogue and a separate ADR define the solution
+object.
+
+For DD-003, source accuracy should vary before the graph class grows. Two rational
+source types create colored graphs whose isomorphisms preserve accuracy. Exact
+colored enumeration can then retest complete pairwise moments, average agreement,
+source concentration, and discovery. A bounded null should remain a null if no
+counterexample appears; one controlled expansion is preferable to an unbounded
+search.
+
+Longer-term work introduces feedback, overlapping coverage, mechanism design, and
+empirical audits. Sequential search requires a stopping and information-update
+model; greedy guarantees require submodularity or adaptive submodularity rather
+than analogy \citep{NemhauserEtAl1978,GolovinKrause2011}. Mechanism design must
+specify observability, budget balance, and credit. Empirical work must distinguish
+descriptive concentration from an identified frontier or protocol-loss estimate.
+
+Across these extensions, the evidence policy should remain constant: preregister
+the feasible class and stopping rule, estimate the state space before computation,
+preserve failed and null results, use immutable run identifiers, and promote
+claims only after every proof, code, run, and test path has been audited.
+
+\section{Conclusion}
+% Claims: DD-C-0021, DD-C-0030, DD-C-0033, DD-C-0034, DD-C-0036
+Three finite results expose three distinct ways a collective search can depart
+from a symmetric direct protocol. Roles can reserve coverage without
+communication; public disclosure can change a selected strategic outcome even as
+the planner and pure equilibria improve; source networks can share a scalar
+agreement level while producing different discovery.
+
+The synthesis is deliberately qualified. The role counterexample is exact but
+finite. The disclosure reversal is exact but selection-dependent. The complete
+pairwise source result is a bounded null, while only the scalar counterexample is
+refutational. The canonical private-team interval is exact, but its upper endpoint
+is not known to be attainable and the global optimum remains open.
+
+The shared lesson is architectural rather than universal: collective discovery
+depends not only on what agents know, but on how roles are assigned, how strategic
+outcomes are selected, and how source dependence is represented. Making those
+margins explicit turns an appealing paradox into a sequence of falsifiable,
+auditable research problems.
+
+\bibliographystyle{plainnat}
+{\raggedright\bibliography{generated/references}\par}
+\end{document}

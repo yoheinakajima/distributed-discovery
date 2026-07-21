@@ -1,0 +1,19 @@
+% Generated evidence asset; do not edit by hand.
+% Source run: 20260720T225848Z_DD-002_94607423_e29b1460ae
+% Claim IDs: DD-C-0029, DD-C-0030, DD-C-0031
+% Generator: distributed_discovery.papers.build_three_results
+% Input SHA-256: ff32fc8cb5cb1e315eb152652475af8b4ff9c2f6f9a267c718c85b054b3821c8
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[node distance=12mm and 18mm]
+\node[draw,rounded corners,fill=planner!7,text width=5.1cm,align=center,inner sep=9pt]
+(less) {\textbf{Pooling $P00$}\\selected $G=5/9$\\pure $G=2/3$; planner $G=2/3$};
+\node[draw,rounded corners,fill=market!8,text width=5.1cm,align=center,inner sep=9pt,right=of less]
+(more) {\textbf{Refinement $P03$}\\selected $G=171/308$\\pure $G=3/4$; planner $G=3/4$};
+\draw[->,very thick] (less) -- node[above]{deterministic refinement} (more);
+\node[below=8mm of $(less)!0.5!(more)$,draw,fill=consensus!8,rounded corners] {selected change $-1/2772$; pure and planner values rise};
+\end{tikzpicture}
+\caption{The bounded disclosure reversal is selection-dependent. The selected anonymous-symmetric outcome falls, whereas every pure-equilibrium value and the two-action planner value rise for the same witness.}
+\label{fig:disclosure}
+\ArtifactNote{Source runs: \path{20260720T225848Z_DD-002_94607423_e29b1460ae}; claims: DD-C-0029, DD-C-0030, DD-C-0031; generator: \path{distributed_discovery.papers.build_three_results}; input SHA-256 prefixes: \texttt{ff32fc8cb5cb}.}
+\end{figure}

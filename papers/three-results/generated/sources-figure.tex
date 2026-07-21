@@ -1,0 +1,43 @@
+% Generated evidence asset; do not edit by hand.
+% Source run: 20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1
+% Claim IDs: DD-C-0032, DD-C-0033, DD-C-0034
+% Generator: distributed_discovery.papers.build_three_results
+% Input SHA-256: 92132b3bb6411abf2b1c9c27aad5dbfd6074a5ff01e81d1b97a5c97f62a648ea, 1c8675d8697a74def4d0798927fb2d477bb95bdd79d220597456dd9378bdca12
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}]
+\node[font=\bfseries] at (2.00,3.65) {Graph A};
+\node[circle,draw,fill=planner!12,minimum size=7mm] at (0.90,2.8) {$S_1$};
+\node[circle,draw,fill=planner!12,minimum size=7mm] at (2.10,2.8) {$S_2$};
+\node[circle,draw,fill=private!10,minimum size=7mm] at (0.30,.8) {$A_1$};
+\node[circle,draw,fill=private!10,minimum size=7mm] at (1.20,.8) {$A_2$};
+\node[circle,draw,fill=private!10,minimum size=7mm] at (2.10,.8) {$A_3$};
+\node[circle,draw,fill=private!10,minimum size=7mm] at (3.00,.8) {$A_4$};
+\draw[inktwo!70] (0.90,2.8) -- (3.00,.8);
+\draw[inktwo!70] (2.10,2.8) -- (0.30,.8);
+\draw[inktwo!70] (2.10,2.8) -- (1.20,.8);
+\draw[inktwo!70] (2.10,2.8) -- (2.10,.8);
+\node[align=center] at (2.00,0) {mean agreement $=3/4$\\discovery $=8/9$};
+\node[font=\bfseries] at (8.20,3.65) {Graph B};
+\node[circle,draw,fill=planner!12,minimum size=7mm] at (7.10,2.8) {$S_1$};
+\node[circle,draw,fill=planner!12,minimum size=7mm] at (8.30,2.8) {$S_2$};
+\node[circle,draw,fill=private!10,minimum size=7mm] at (6.50,.8) {$A_1$};
+\node[circle,draw,fill=private!10,minimum size=7mm] at (7.40,.8) {$A_2$};
+\node[circle,draw,fill=private!10,minimum size=7mm] at (8.30,.8) {$A_3$};
+\node[circle,draw,fill=private!10,minimum size=7mm] at (9.20,.8) {$A_4$};
+\draw[inktwo!70] (7.10,2.8) -- (7.40,.8);
+\draw[inktwo!70] (7.10,2.8) -- (8.30,.8);
+\draw[inktwo!70] (7.10,2.8) -- (9.20,.8);
+\draw[inktwo!70] (8.30,2.8) -- (6.50,.8);
+\draw[inktwo!70] (8.30,2.8) -- (7.40,.8);
+\draw[inktwo!70] (8.30,2.8) -- (8.30,.8);
+\draw[inktwo!70] (8.30,2.8) -- (9.20,.8);
+\node[align=center] at (8.20,0) {mean agreement $=3/4$\\discovery $=31/36$};
+\node[draw,rounded corners,fill=market!7,text width=11.4cm,align=center] at (5.1,-1.05)
+{Complete pairwise moments: 10
+matched groups, 0 discovery differences---a bounded null, not a theorem.};
+\end{tikzpicture}
+\caption{Two nonisomorphic source networks have equal mean pair agreement but different exact private discovery. Their complete pairwise moment matrices differ.}
+\label{fig:sources}
+\ArtifactNote{Source runs: \path{20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1}; claims: DD-C-0032, DD-C-0033, DD-C-0034; generator: \path{distributed_discovery.papers.build_three_results}; input SHA-256 prefixes: \texttt{92132b3bb641, 1c8675d8697a}.}
+\end{figure}

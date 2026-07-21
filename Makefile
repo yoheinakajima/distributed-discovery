@@ -1,4 +1,4 @@
-.PHONY: bootstrap lint typecheck test fetch-upstream reproduce-baseline upstream-patch validate-claims foundations canonical-exact-frontier dd001 dd001-signatures dd001-thresholds dd002-disclosure dd003-source-graphs papers site verify all clean
+.PHONY: bootstrap lint typecheck test fetch-upstream reproduce-baseline upstream-patch validate-claims foundations three-results canonical-exact-frontier dd001 dd001-signatures dd001-thresholds dd002-disclosure dd003-source-graphs papers site verify all clean
 
 UV := uv
 export PYTHONPATH := $(CURDIR)/src
@@ -35,6 +35,9 @@ validate-claims:
 
 foundations:
 	./scripts/build_papers.sh foundations
+
+three-results:
+	./scripts/build_papers.sh three-results
 
 canonical-exact-frontier:
 	$(PY) -m distributed_discovery.canonical.exact_frontier_study

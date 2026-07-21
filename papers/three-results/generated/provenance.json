@@ -1,0 +1,46 @@
+{
+  "generated_assets": {
+    "disclosure-figure.tex": {
+      "generator": "distributed_discovery.papers.build_three_results",
+      "sha256": "4e0bbfade58652884786b5d027f69714cc90da3da33c444ccd0cce1adb260d36"
+    },
+    "evidence-status-table.tex": {
+      "generator": "distributed_discovery.papers.build_three_results",
+      "sha256": "0a47230e14edea7f3553b3e16c50d26c4dece6d2f8140877594f5917d22650cf"
+    },
+    "roles-figure.tex": {
+      "generator": "distributed_discovery.papers.build_three_results",
+      "sha256": "6b8296cccfde4a92cd5103f041e6f1b9ea72fe017dfa51da246b933e94334eb6"
+    },
+    "sources-figure.tex": {
+      "generator": "distributed_discovery.papers.build_three_results",
+      "sha256": "ac7e19dcfe3cf4af18a1e768f3b2086144596052fcc21fe78b3017ad44731241"
+    }
+  },
+  "generator": "distributed_discovery.papers.build_three_results",
+  "inputs": {
+    "bibliography/references.bib": "7b2b89ae14a2234798803bde57bca55c2d907f1a7cdcc2efe69c6144739d27f0",
+    "claims/claims.yml": "dd07a76dd68cd4cef5d40cbd3e877ed8f3a5e0d4fead99cfc5d6ffefbd226b3c",
+    "results/verified/20260720T200447Z_DD-001_6eb12861_ba766d1eba/outputs/tiny-phase-grid.csv": "e7112e7dd471a4fa302bbe5336a367dd166ff497bf8ab9095b6526635fe4851e",
+    "results/verified/20260720T221139Z_DD-001_b1d8d431_40bf5b06a5/outputs/canonical-state-space.json": "7a416f54e6f8c81a1f7ca29bd99c44ab648994e282f29ff5615e6ba9eddb9e8f",
+    "results/verified/20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1/outputs/anti-informative-counterexamples.json": "da2d2a8b6854683c85062a1918b3222959e17230e767b2553304a736684870f6",
+    "results/verified/20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1/outputs/known-witnesses.json": "47d933bfc1ae8f611599b91a289747bdc413de5d62428ea599e29cea6e036b7d",
+    "results/verified/20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1/outputs/threshold-certificate.json": "a0464639f761ad5c8899303fc94f96413108896384fb9b98e8dcc21ffede5638",
+    "results/verified/20260720T225848Z_DD-002_94607423_e29b1460ae/outputs/refinement-comparisons.json": "2329feef6361f06206130ee84601e4edaf7703010209998ab15837044c822e61",
+    "results/verified/20260720T225848Z_DD-002_94607423_e29b1460ae/outputs/selection-reversal-witness.json": "ff32fc8cb5cb1e315eb152652475af8b4ff9c2f6f9a267c718c85b054b3821c8",
+    "results/verified/20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1/outputs/graph-registry.json": "afe3b0d98e618831f3eef71d5ef091b4937080c264f756f6296b36bc4aab9913",
+    "results/verified/20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1/outputs/mean-agreement-counterexample.json": "92132b3bb6411abf2b1c9c27aad5dbfd6074a5ff01e81d1b97a5c97f62a648ea",
+    "results/verified/20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1/outputs/pairwise-null-certificate.json": "1c8675d8697a74def4d0798927fb2d477bb95bdd79d220597456dd9378bdca12",
+    "results/verified/20260721T012208Z_DD-000_8e4b55e2_e8321d1048/outputs/canonical-exact-frontier-certificate.json": "c88d31ec7efda0e9e38346e417a0d00db33cc1ec75221f7ec574cf264409fc1e"
+  },
+  "schema_version": 1,
+  "source_date_epoch": "1784596928",
+  "source_runs": {
+    "canonical": "20260721T012208Z_DD-000_8e4b55e2_e8321d1048",
+    "disclosure": "20260720T225848Z_DD-002_94607423_e29b1460ae",
+    "roles": "20260720T200447Z_DD-001_6eb12861_ba766d1eba",
+    "signatures": "20260720T221139Z_DD-001_b1d8d431_40bf5b06a5",
+    "sources": "20260720T232223Z_DD-003_2ea8dad5_ae62f6c1f1",
+    "thresholds": "20260720T223829Z_DD-001_b2cc23f4_5e16a90ad1"
+  }
+}
