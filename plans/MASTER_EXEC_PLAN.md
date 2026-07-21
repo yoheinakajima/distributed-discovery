@@ -8,7 +8,7 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-The historical M0–M9 bootstrap, operational Milestone A, research milestones DD-001A/B, DD-002, and DD-003, and their integrated handoff are complete and merged. PR #17 squash-merged as `b72c01026be5bf7018b3a3e9a464671dce53bcbb`; post-merge CI run `29787687400` and Pages run `29787687403` passed. The public repository has five open Dependabot PRs (#1–#5), queued DD-007 issue #8, no rulesets, no milestones, and no repository homepage value. **Active integration boundary: exact-frontier issue #18 and draft PR #19 on `research/canonical-exact-frontier`; the primary run passed and claim/acceptance review is in progress.**
+The historical M0–M9 bootstrap, operational Milestone A, research milestones DD-001A/B, DD-002, DD-003, their integrated handoff, and continuation cycle F are complete and merged. Exact-frontier PR #19 squash-merged as `8d63201cb3b6633c873494af2ea21402db8752d6`; post-merge CI run `29793437945` and Pages run `29793437954` passed, and the live claim data exposes DD-C-0036. The public repository has five open Dependabot PRs (#1–#5), queued DD-007 issue #8, no rulesets, no milestones, and no repository homepage value. **Active integration boundary: Three Results issue #20 on `docs/three-results-synthesis`.**
 
 ## Scope
 
@@ -42,8 +42,8 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - D DD-002 bounded disclosure fixture: completed 2026-07-20.
 - E DD-003 bounded source-graph fixture: completed 2026-07-20.
 - Integrated A–E handoff: completed 2026-07-20 through PR #17.
-- F exact canonical pooled-frontier certificate: active.
-- G Three Results synthesis paper and public Results page: pending F.
+- F exact canonical pooled-frontier certificate: completed 2026-07-20 through PR #19.
+- G Three Results synthesis paper and public Results page: active.
 - H alignment-preserving DD-001 upper relaxation: pending G.
 - I DD-002 equilibrium-selection robustness: pending H.
 - J DD-003 heterogeneous source accuracy: pending I.
@@ -143,6 +143,7 @@ Changing canonical upstream, publishing a release or DOI, adding telemetry, star
 - 2026-07-21: primary exact-frontier run `20260721T012208Z_DD-000_8e4b55e2_e8321d1048` started clean at commit `8e4b55e2`, completed in 8.29 seconds under a 30-second budget, and passed. The 490,314-state labeled evaluator, 67-orbit histogram evaluator, and third partition verifier agree at all budgets with exact unit mass; the verifier rejects a one-unit numerator corruption.
 - 2026-07-21: re-audit of the pooled emulation chain establishes the exact valid interval `325089/390625 <= T_8(16,1/5) <= 860391662035297/1001129150390625`, gap `27224111644672/1001129150390625`. The upper endpoint remains unattained and global tightness remains unresolved.
 - 2026-07-21: the first ad hoc targeted pytest invocation omitted the Makefile's `PYTHONPATH=src` and stopped during import collection. The identical targeted set passed 12 tests after using the repository execution environment; the immutable primary run and its evidence were unaffected.
+- 2026-07-21: exact-frontier PR #19 passed CI `29793343243` and artifact build `29793343234`, received a complete no-findings review, and squash-merged as `8d63201cb3b6633c873494af2ea21402db8752d6`. Post-merge CI `29793437945` and Pages `29793437954` passed; all four current HTML routes, CSS, and deployed claim data returned HTTP 200 with the exact interval.
 
 ## Decision log
 
@@ -214,7 +215,7 @@ No current local blocker. GitHub CLI is installed but unauthenticated; the conne
 
 ## Recovery and restart instructions
 
-On branch `research/canonical-exact-frontier`, preserve primary run `20260721T012208Z_DD-000_8e4b55e2_e8321d1048`, finish PR #19 acceptance/review, squash-merge, sync `main`, and verify post-merge CI/Pages before starting cycle G. Thereafter resume the first unchecked continuation checklist item only. Each research cycle uses its own issue and branch, commits implementation before the clean primary run, preserves immutable run evidence, audits claims, opens a draft PR, waits for required CI, reviews the complete diff and threads, squash-merges, syncs `main`, and verifies post-merge CI/Pages before beginning the next cycle. Never rerun a completed primary configuration merely to refresh timestamps.
+On branch `docs/three-results-synthesis`, execute issue #20: generate the separate paper and five-page site only from validated immutable runs, compile and inspect every page, then finish the draft-PR/CI/review/merge/Pages cycle. Thereafter resume the first unchecked continuation checklist item only. Each research cycle uses its own issue and branch, commits implementation before any new clean primary run, preserves immutable run evidence, audits claims, opens a draft PR, waits for required CI, reviews the complete diff and threads, squash-merges, syncs `main`, and verifies post-merge CI/Pages before beginning the next cycle. Never rerun a completed primary configuration merely to refresh timestamps.
 
 ## Outcome and retrospective
 
