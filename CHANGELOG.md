@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-21 — Program V2 complete
+
+- Completed and deployed DD-010 DiscoveryBench: 15 exact golden tasks, 13
+  capability-scoped protocols, 19 metrics, 16 compatible exact vectors, and a
+  separate seeded sensitivity suite.
+- Completed DD-011's frozen 20-cell synthetic design, eight hypotheses, eight
+  response scenarios, 384 power/MDE rows, 384,000 draws, retained calibration
+  failures, and read-only preregistration materials. No participants or human
+  data were involved.
+- Proved DD-008B's general finite-team threshold ordering and all-common trap,
+  and preserved an exact counterexample to universal under-acquisition.
+- Published the deterministic 20-page *Common-Source Trap* working paper with
+  citation, checksum, provenance, and all-page visual audits; no DOI or
+  submission was made.
+- Integrated the benchmark, experiment kit, two new Labs, study pages, paper,
+  and a complete download checksum manifest into the 48-route static site.
+- Passed final acceptance with 138 tests, 58 claims, 35 immutable manifests
+  (32 passing), four papers, 15 studies, and a clean pinned upstream.
+
 ## 2026-07-21 — Program V2 baseline
 
 - Reconciled the deployed DD-008 continuation state and added concise current

@@ -10,7 +10,7 @@ This public repository is MIT-licensed. The [companion site](https://yoheinakaji
 
 ## Status and navigation
 
-Program V1 bounded studies are complete through DD-008. The concise entry points
+Programs V1 and V2 are complete at their registered bounded scopes. The concise entry points
 are [`docs/current-state.md`](docs/current-state.md) and
 [`docs/current-roadmap.md`](docs/current-roadmap.md). Claims remain in
 [`claims/claims.yml`](claims/claims.yml) under the
@@ -19,7 +19,10 @@ are [`docs/current-state.md`](docs/current-state.md) and
 DD-008A, DD-006B, the exact bounded DD-009 Architecture Atlas, DiscoveryBench,
 and the synthetic-only DD-011 experiment kit are merged and deployed. DD-008B
 adds a verified general-`N` Common-Source threshold theorem and a scoped exact
-counterexample. No real-data work is authorized.
+counterexample. The deterministic 20-page
+[*Common-Source Trap* working paper](https://yoheinakajima.github.io/distributed-discovery/publications/common-source-trap.html)
+and its provenance-bound PDF are live. No real-data work is authorized; no
+participants were recruited and no human experiment was conducted.
 
 ## Setup and common commands
 
@@ -64,4 +67,10 @@ The reproduction and registered study targets create new immutable run directori
 
 ## Resume protocol
 
-New agents must read `AGENTS.md`, `.agent/PLANS.md`, `plans/MASTER_EXEC_PLAN.md`, `docs/repository-contract.md`, and the active study files. Then inspect Git status and run the acceptance command named at the plan’s restart point. The authorized A–E queue through bounded DD-003 is complete at the evidence layer; the final merge/deployment handoff is recorded in the plan.
+New agents must read `AGENTS.md`, `.agent/PLANS.md`, `plans/MASTER_EXEC_PLAN.md`,
+`docs/repository-contract.md`, and the relevant study files. Then inspect Git
+status and run `git switch main && git pull --ff-only origin main && make verify`.
+Do not rerun completed primary configurations merely to refresh timestamps.
+There is no automatic post-V2 research task; new work needs a bounded issue and
+verification plan. Settings-only issue #32 must not be retried without
+intentionally supplied authority.

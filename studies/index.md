@@ -19,5 +19,6 @@
 | DD-011 | Experimental Design and Power | complete bounded synthetic study | Preserve the frozen design; no human deployment without separate review |
 
 Each executed directory contains its question, model, plan, claims view, status,
-results index, and report. Future Program V2 entries remain governed by
-[`docs/current-roadmap.md`](../docs/current-roadmap.md).
+results index, and report. Program V2 is complete; post-V2 extensions remain
+governed by [`docs/current-roadmap.md`](../docs/current-roadmap.md) and require a
+new bounded registration. DD-011 remains synthetic-only.

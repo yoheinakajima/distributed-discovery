@@ -50,8 +50,9 @@ Progress:
 - [x] Program V2 site/Lab integration through PR #76 squash merge `d478a175`,
   post-merge CI `29864943433`, Pages `29864943468`, 15 required live route
   checks, and a 15-artifact download checksum manifest. Issue #75 is closed.
-- [ ] Final Program V2 acceptance, documentation reconciliation, merge, CI,
-  Pages, and live handoff verification.
+- [ ] Final Program V2 acceptance and documentation reconciliation are complete
+  locally on issue #77 / PR #78; merge, post-merge CI/Pages, and final live
+  handoff verification remain.
 
 Recovery: inspect `git status --short --branch`; resume final reconciliation from
 `docs/current-state.md`; never rerun the preserved DD-010, DD-011, or DD-008B

@@ -1,267 +1,337 @@
-# Project status and final continuation handoff
+# Program V2 project status and final handoff
 
-> DD-009 completion (2026-07-21): clean primary run
-> `20260721T171249Z_DD-009_bc78d249_0c3851c41a` classifies 288 architecture
-> cells, evaluates 20 coherent rows, independently reproduces every exact
-> metric, and yields 12 nondominated cells under ADR-0016. Maximum discovery is
-> `11/12`; maximum declared social net value is `5/6`. DD-C-0054 is
-> independently reproduced. PR #65, post-merge CI `29852583292`, Pages
-> `29852583377`, and all six live route checks passed.
-
-> DD-006B local completion (2026-07-21): primary clean run
-> `20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b` exhausts 60 normalized rows
-> and 57,600 joint deviations. Sixteen rows are strict, three use an active
-> positive proper score, maximum margin is `13/72`, and the hidden-action
-> regime has no weak row. DD-C-0053 is independently reproduced. PR merge and
-> deployment passed through PR #63.
-
-> DD-008A completion (2026-07-21): clean primary run
-> `20260721T163030Z_DD-008A_8b70668b_06307caab4` supports DD-C-0052 within
-> the registered N=2 through 8 grid. Exact binomial and direct enumeration
-> agree; PR #61 is merged and deployment passed.
-
-> Program V2 baseline (2026-07-21): Program V1 is complete through DD-008 on
-> `ae8b52c098d358afc63948b7a54d2245cafd7438`: 51 claims, 21 passing runs among
-> 24 manifests, 111 tests, three papers, and 26 public routes. Current
-> navigation is `docs/current-state.md` and `docs/current-roadmap.md`. DD-008A
-> and DD-006B are registered future work; DD-007 remains synthetic-only and no
-> real-data work is authorized.
-
-> Current-status addendum (2026-07-21): PRs #36, #38, #40, #42, #43, and #45
-> are merged on `main` at `29c37e347a4cbc74a84cd3a23e4105789f7309e9`.
-> DD-004 through DD-007 are complete bounded studies; DD-007 is synthetic-only.
-> The live ledger has 49 claims and 19 passing immutable runs. The next phase is
-> DD-006A, then DD-008, the Discovery Stack paper, and public labs. The dated
-> record below is preserved as historical evidence.
-
-> Completion addendum (2026-07-21): PR #47 reconciled the continuation handoff;
-> PR #49 added DD-006A's registered normalized-linear transfer frontier; PR #51
-> added DD-008's synthetic endogenous evidence-acquisition fixture; PR #54
-> published the reproducible three-page *Institutions for Distributed Discovery*
-> synthesis; and PR #56 published six Labs routes. `main` is
-> `401258f245ea50fcda5be2c61f78603b3c71e2de`; the ledger has 51 claims, the
-> repository has 21 passing runs among 24 manifests, and the site generates 26
-> public HTML routes. DD-007 remains synthetic-only. DD-006A makes no claim
-> about arbitrary transfer tables, and DD-008 makes no real-institutional claim.
-
-> Acceptance record prepared 2026-07-21 UTC on `docs/final-continuation-handoff` from merged `main` commit `fa2fd5a473810dc00a5f8b483b4f196a6522f7be`. The documentation-only handoff PR advances `main`; its final merge and deployment identifiers are recorded in that PR and the closing task response.
+_Acceptance prepared 2026-07-21 from merged `main`
+`d478a175aa3326a3be1efc1b50b9542e5e1c2011`. This documentation-only handoff
+is issue #77 / PR #78; its final squash SHA and post-merge workflow IDs are
+recorded by GitHub and in the closing response._
 
 ## 1. Executive summary
 
-The M0–M9 bootstrap, public/MIT/Pages integration, DD-001A/B, bounded DD-002/DD-003 studies, and continuation cycles F–L are complete. Research cycles F–J produced four independently checked immutable runs, claims DD-C-0035 through DD-C-0044, a 14-page synthesis paper, and a public Results page. Dependency cycle K replaced all five stale Dependabot PRs with three reviewed, passing maintenance PRs. Cycle L made the authorized settings attempt exactly once; GitHub CLI authentication failed before mutation and issue #32 records the exact missing authority and commands.
+Program V2 is complete at its registered bounded scope. DD-010 provides an
+exact golden benchmark with capability isolation; DD-011 provides a frozen
+synthetic experimental design and conditional power grid; DD-008B proves the
+general finite-team Common-Source thresholds and records a counterexample to a
+tempting universal ordering; the 20-page *Common-Source Trap* working paper is
+reproducible and deployed; and the benchmark, experiment, Labs, studies, paper,
+and 15 checksum-registered downloads are integrated into the static site.
 
-There is no research, validation, CI, build, deployment, license, secret, provenance, or upstream-cleanliness blocker. The only operational blocker is settings-capable GitHub authentication for labels, milestones, repository homepage metadata, and a non-destructive `main` ruleset.
+Final acceptance passed bootstrap, 138 tests, strict mypy over 94 source files,
+Ruff, claim/run validation, a focused 30-test certificate/corruption/leakage/
+schema audit, all four paper builds, all-page paper QA records, a 48-page site
+build, download provenance, secret/host-path/license scans, and pinned-upstream
+cleanliness. No completed primary run was duplicated.
 
 ## 2. Current main SHA
 
-The final-acceptance base is `fa2fd5a473810dc00a5f8b483b4f196a6522f7be` (`chore: migrate to mypy 2 (#31)`). The handoff branch was clean at creation and changes documentation only.
+The final-handoff base is
+`d478a175aa3326a3be1efc1b50b9542e5e1c2011`, the squash merge of site PR #76.
+PR #78 changes documentation only.
 
-## 3. Public, MIT, and Pages status
+## 3. DD-010 task count
 
-- Repository: `https://github.com/yoheinakajima/distributed-discovery`, intentionally public.
-- License: root MIT license; third-party/upstream boundaries are documented in `LICENSE-STATUS.md`.
-- Pages: `https://yoheinakajima.github.io/distributed-discovery/`, live and generated from `main` by Actions.
-- Canonical Shared Discovery Paradox upstream: pinned read-only at `5025cc8e8f2f8ca015dff2066f08f81ad5715a51`; cached worktree clean after final validation.
+DiscoveryBench v1 contains 15 exact golden tasks covering the 15 required
+families.
 
-## 4. Exact planner frontier
+## 4. DD-010 protocol count
 
-Run `20260721T012208Z_DD-000_8e4b55e2_e8321d1048` independently enumerates the complete canonical pooled frontier for budgets one through eight. The exact top-eight value is
+The registry contains 13 protocol contracts. External adapters remain disabled,
+credential-free, and absent from CI execution.
 
-`860391662035297/1001129150390625 = 0.8594212461994395`.
+## 5. Golden task count
 
-The exact recovery budget is seven. Labeled-count and histogram/orbit implementations agree, probability mass is exact, and the independent verifier rejects a corrupted frontier.
+All 15 tasks are golden tasks tied to exact claim/run evidence. No displayed
+decimal was substituted for an available exact fraction.
 
-## 5. Exact canonical DD-001 interval
+## 6. Compatible task/protocol pair count
 
-The frozen deterministic and ex-ante randomized zero-communication private-team frontier is exactly
+Sixteen of 195 declared task/protocol pairs are compatible. The other 179 are
+explicit machine-readable exclusions, not benchmark failures.
 
-`[325089/390625, 325089/390625] = [0.83222784, 0.83222784]`.
+## 7. Golden suite exact reproduction status
 
-Direct clue-following attains the lower endpoint. The alignment-preserving Bellman certificate proves the matching upper endpoint.
+All 16 compatible result vectors pass the separate golden verifier with exact
+fractions and claim/run provenance. Task-value and information-boundary
+corruptions are rejected.
 
-## 6. DD-001 alignment-preserving relaxation
+## 8. Information-leakage test result
 
-Run `20260721T022739Z_DD-001_358cb1eb_cd16846ba5` retains aligned incoming-count vectors within every target, relaxes only cross-target feasibility, and is independently verified. Canonically it improves the earlier pooled upper bound from `860391662035297/1001129150390625` to `325089/390625`, closing the gap exactly. It is not universally tight: at `(M,N,p)=(3,2,0)` its upper value is `1` while the exact optimum is `11/12`.
+Passed. Adversarial protocols cannot read target state, other private signals,
+future outcomes, undeclared source identifiers, or evaluator internals. Protocols
+receive immutable allow-list views.
 
-## 7. DD-002 selection robustness
+## 9. Benchmark primary run
 
-Run `20260721T025802Z_DD-002_73a85c71_b0e5b6dc49` evaluates all 15 policies and 45 strict refinements under six exact procedures. The known pooling-to-refinement reversal survives only anonymous-symmetric selection (`5/9` to `171/308`). Best pure, worst pure, uniform potential maximizer, uniform strict-best-response basin, and planner all improve from `2/3` to `3/4` for that witness. Harmful-refinement counts in that order are `1, 0, 8, 2, 2, 0`.
+`20260721T183014Z_DD-010_ce930050_8ec718c242`, supporting DD-C-0055.
 
-## 8. DD-003 heterogeneous sources
+## 10. DD-011 design cell count
 
-Run `20260721T032358Z_DD-003_84238b76_2cbc13e66a` enumerates 41,612 valid base labeled colored objects into 671 orbits and 12,966 controlled-expansion objects into 168 orbits: 839 networks total. There are 163 complete first/pairwise-moment groups covering 485 networks; 111 matched groups have different discovery. The simplest exact counterexample has identical 66-entry complete first/pairwise scalar-report moments but discovery `3/4` versus `2/3`, difference `1/12`. A materially separate implementation reconstructs all 839 networks and rejects a zeroed difference.
+The selected contrast-complete fractional design contains 20 treatment cells
+from the declared 180-cell full factorial.
 
-## 9. Three Results paper
+## 11. Primary hypotheses
 
-`papers/three-results/Three_Results_in_Distributed_Discovery.pdf` is a deterministic 14-page letter-size PDF with SHA-256 `53cbfa8ccf6f732b13670206f3a8c25627390cbb29206f6b1b017163ae3735bf`. Final acceptance rebuilt it, validated citations/references/provenance, rendered all 14 pages with Poppler, and visually inspected every page without finding clipping, overlap, illegible figures, or malformed references.
+Six hypotheses are primary and two are secondary. The registry contains eight
+frozen hypotheses, 15 outcomes, explicit estimands, directions, analysis models,
+and multiplicity families.
 
-## 10. Results page
+## 12. Synthetic response scenarios
 
-`https://yoheinakajima.github.io/distributed-discovery/results.html` is live. Its generated data exposes the exact canonical optimum, prior pooled benchmark, six-rule disclosure catalogue, homogeneous bounded null, heterogeneous counterexample, claim IDs, run IDs, and checksum-bound source artifacts.
+Eight versioned scenarios cover rational response, quantal noise, heterogeneous
+costs, heterogeneous social preferences, partial mechanism compliance, report
+error, attrition, and learning over rounds. They are assumptions, not empirical
+behavioral models.
 
-## 11. Claim count and statuses
+## 13. Power simulation count
 
-The ledger has 44 claims: 19 independently reproduced, 11 verified, 7 derived, 3 checked, 3 sourced, and 1 proposed. DD-C-0035–DD-C-0044 are the continuation claims. Claim-schema validation passes.
+The run evaluates 8 hypotheses × 8 scenarios × 6 sample sizes × 1,000
+replications = 384 power rows and 384,000 Monte Carlo draws. It also preserves
+640 balanced synthetic assignments.
 
-## 12. Test count
+## 14. Sample-size and MDE results
 
-Final `make verify` passes 95 tests, Ruff formatting/lint, and strict mypy 2.3 across 45 source files. A focused 35-test certificate/provenance suite also passes.
+In the favorable rational-response scenario, all eight assumed effects reach
+estimated power at least 0.80 by total `N=960`, and seven do so by `N=640`.
+First passing sample sizes for H1–H8 are respectively `200, 480, 640, 320, 320,
+200, 640, 960`. Conditional MDEs span `0.063164–0.070782` at `N=640` and
+`0.051573–0.057793` at `N=960`.
 
-## 13. Manifest count
+## 15. Calibration failures
 
-All 17 immutable run manifests validate. Final acceptance deliberately did not rerun the four completed study targets, because each target creates a new timestamped immutable run and the existing primary runs were already executed, independently checked, merged, and deployed.
+The design retains 140 failures among the 192 scenario/hypothesis rows evaluated
+at `N=640`, `800`, or `960` that remain below power 0.80. This sensitivity
+result prevents the rational scenario from being presented as general power.
 
-## 14. Paper page counts
+## 16. No-human-data status
 
-- Foundations: 12 pages, SHA-256 prefix `e096183159f8`.
-- Three Results: 14 pages, SHA-256 `53cbfa8ccf6f732b13670206f3a8c25627390cbb29206f6b1b017163ae3735bf`.
-- Additive upstream preview: 30 pages; its patch revalidated against pristine pinned upstream.
+> **No participants were recruited. No human data were collected. No experiment
+> was conducted. Separate ethics and institutional review are required before
+> deployment.**
 
-## 15. CI run IDs
+The kit is preregistration-ready, not preregistered or deployed.
 
-| PR | Scope | PR CI | PR paper/site | Post-merge CI |
-|---:|---|---:|---:|---:|
-| #19 | exact pooled frontier | `29793343243` | `29793343234` | `29793437945` |
-| #21 | Three Results synthesis | `29794931024` | `29794931026` | `29795041418` |
-| #23 | alignment relaxation | `29796343151` | `29796343110` | `29796429926` |
-| #25 | DD-002 robustness | `29797737821` | `29797737785` | `29797810807` |
-| #27 | DD-003 heterogeneous sources | `29798934183` | `29798934209` | `29798998333` |
-| #29 | Actions refresh | `29799265491` | `29799265526` | `29799347668` |
-| #30 | Python floors | `29799456223` | not path-triggered | `29799522972` |
-| #31 | mypy 2 | `29799629897` | not path-triggered | `29799696893` |
+## 17. DD-008B analytic outcome
 
-All listed runs succeeded. Actions-refresh configuration jobs `29799350447` and `29799350523` also succeeded.
+For `q=1-p`, the private gain after `k` independent users is
+`A_k = pq E[1/(1+X_k)-1/(N-k+X_k)]`, with `X_k ~ Binomial(k,p)`. The sequence
+is strictly decreasing to `A_(N-1)=0`, and count `k` is a weak equilibrium iff
+`A_k <= c <= A_(k-1)` with the boundary inequalities omitted as appropriate.
+Planner margins are `B_k=p(1-p)^(k+1)` through `N-2`, then zero. The all-common
+trap is `[p(1-p)(N-1)/N, p(1-p))`, width `p(1-p)/N`.
 
-## 16. Pages run IDs
+The exact fixture `N=3`, `p=4/5`, `c=13/375` has unique equilibrium count two
+and planner count one. Therefore this is **not** a universal under-acquisition
+theorem. Run `20260721T192412Z_DD-008B_649deb08_29dbeaf3a9` supports theorem
+DD-C-0057 and negative result DD-C-0058.
 
-Post-merge Pages runs succeeded for #19 `29793437954`, #21 `29795041429`, #23 `29796429904`, #25 `29797810786`, #27 `29798998329`, #29 `29799347666`, #30 `29799522952`, and #31 `29799696878`.
+## 18. Common-Source Trap paper title
 
-## 17. Live route checks
+*The Common-Source Trap: Endogenous Independent Evidence in Distributed
+Discovery*.
 
-Final smoke testing returned HTTP 200 for all eleven checked routes:
+## 19. Paper page count
 
-- `/distributed-discovery/`
-- `/distributed-discovery/foundations.html`
-- `/distributed-discovery/results.html`
-- `/distributed-discovery/open-problems.html`
-- `/distributed-discovery/applications.html`
-- `/distributed-discovery/data/canonical.json`
-- `/distributed-discovery/data/results.json`
-- `/distributed-discovery/data/claims.yml`
-- `/distributed-discovery/data/studies.json`
-- `/distributed-discovery/styles.css`
-- `/distributed-discovery/site.js`
+20 substantive letter-size pages.
 
-The live `results.json` exactly matches all four continuation run IDs, `325089/390625`, the 839-network count, and heterogeneous values `3/4` and `2/3`.
+## 20. Paper checksum
 
-## 18. Issues created and closed
+SHA-256
+`c997bba31c021bd799f2b3a561e8e558a1334f844aa87a448ade10319dac2ad3`.
+The PDF is byte-reproducible across isolated builds and all 20 pages passed
+Poppler visual inspection.
 
-Continuation issues #18, #20, #22, #24, #26, and #28 are closed. Settings issue #32 remains open by design. Final-handoff issue #33 closes when the documentation PR merges. Earlier research issues #6, #7, #9, #10, and #11 are closed; queued DD-007 issue #8 remains open.
+## 21. Paper public URL
 
-## 19. Pull requests created and merged
+<https://yoheinakajima.github.io/distributed-discovery/publications/common-source-trap.html>
+with PDF at
+<https://yoheinakajima.github.io/distributed-discovery/downloads/The_Common_Source_Trap.pdf>.
+It is a working paper with no DOI, submission, peer review, or verified novelty
+claim.
 
-Research/synthesis PRs #19, #21, #23, #25, and #27 and maintenance PRs #29, #30, and #31 were reviewed and squash-merged. Their merge commits are respectively `8d63201`, `007dc15`, `df35f80`, `993b089`, `4a8f53e`, `03290fa`, `d043a43`, and `fa2fd5a`. Public/MIT and A–E integration remain in PRs #12–#17. The documentation-only final handoff is the sole remaining integration PR for this program.
+## 22. New site routes
 
-## 20. Dependency PR disposition
+Program V2 exposes `research/dd-008b.html`, `research/dd-010.html`,
+`research/dd-011.html`, `benchmark.html`, four nested benchmark routes,
+`experiment-kit.html`, three nested experiment-kit routes,
+`publications/common-source-trap.html`, `data/downloads.json`, and the validated
+paper PDF. The full site contains 48 HTML routes and 40 public data files.
 
-Stale conflicted Dependabot PRs #1–#5 are closed, each with a replacement explanation. PR #29 updates checkout to v7, setup-uv to immutable v8.3.2, Pages actions to current majors, and groups future minor/patch updates while leaving majors separate. PR #30 raises the already-resolved PyYAML and types-jsonschema floors with no resolved-version change. PR #31 upgrades mypy 1.20.2 to 2.3.0 and adds ast-serialize 0.6.0; standard and native parsers pass strict checking without suppressions. The lock resolves 22 packages and is current for the declared constraints.
+## 23. New Lab routes
 
-## 21. Settings status
+`labs/benchmark.html` and `labs/experiment-design.html`; the site contains eight
+Lab routes total. Browser checks confirm exact filtering, keyboard-native select
+controls, complete no-JavaScript tables, local assets, and zero document
+overflow. The Labs accept no submissions.
 
-The single authorized attempt ran:
+## 24. Claim count
 
-`uv run --no-editable python scripts/setup_github.py --apply --repo yoheinakajima/distributed-discovery`
+58 claims: 29 independently reproduced, 15 verified, 7 derived, 3 checked,
+3 sourced, and 1 proposed.
 
-Local validation found 23 labels, six milestones, and five de-duplicated issue drafts. The first `gh repo view` call failed with exit status 4 because GitHub CLI has no usable authentication, so no setting changed and no retry was made. Issue #32 records the exact token permissions and resume API/commands for labels, milestones, homepage, and the safe `main` ruleset.
+## 25. Test count
 
-## 22. Verified claims
+`make verify` collects and passes 138 tests. The focused final acceptance subset
+passes 30 certificate, corruption, leakage, schema, synthetic-design, run, and
+site tests.
 
-The 11 `verified` claims include upstream facts, bounded censuses, the exact canonical interval before closure, the alignment theorem, and the exact potential-game characterization. Status is claim-specific; no paper-wide peer-review or publication status is implied.
+## 26. Manifest count
 
-## 23. Independently reproduced claims
+All 35 immutable manifests validate; 32 have passing validation status and exit
+status zero. Final acceptance created no new run.
 
-The 19 independently reproduced claims cover canonical benchmark quantities, DD-001 tiny optima/signatures/counterexamples, DD-003 homogeneous counts/nulls/scalar counterexamples, the exact canonical optimum, the six-rule selection catalogue, and the colored-source census/counterexample/classification. Independent checks use materially separate enumeration, reconstruction, or Bellman verification paths.
+## 27. Passing-run count
 
-## 24. Certified lower bounds
+32 passing immutable runs.
 
-- Canonical DD-001: feasible direct policy `325089/390625`.
-- Finite role witness `(3,2,2/5)`: exact unrestricted optimum `7/10`, exceeding direct `16/25`.
-- All lower-bound witnesses are reevaluated exactly; heuristic coordinate ascent is not used as the canonical proof.
+## 28. Paper count
 
-## 25. Certified upper bounds
+Four validated project-authored PDFs: 12-page Foundations, 14-page Three
+Results, 3-page Institutions, and 20-page Common-Source Trap. The additive
+upstream preview remains a separate patch artifact, not a fifth project paper.
 
-- Canonical DD-001 alignment upper bound: `325089/390625`.
-- Superseded but still valid pooled organizational upper bound: `860391662035297/1001129150390625`.
-- The alignment theorem applies to the symmetric-report frozen model; it is not an arbitrary-team universal law.
+## 29. CI run IDs
 
-## 26. Certified intervals
+| Milestone | PR | PR CI | Additional PR artifact | Post-merge CI |
+| --- | ---: | ---: | ---: | ---: |
+| DD-010 | #68 | recorded on PR #68 | path-triggered benchmark/site checks | `29858324779` |
+| DD-011 | #70 | `29860373958` | `29860373814` | `29860525523` |
+| DD-008B | #72 | `29861791351` | `29861791353` | `29861944847` |
+| Common-Source Trap paper | #74 | `29863960868` | `29863960911` | `29864137509` |
+| Program V2 site integration | #76 | `29864826334` | not path-triggered | `29864943433` |
 
-- Current canonical private-team interval: `[325089/390625, 325089/390625]`.
-- Prior pooled interval: `[325089/390625, 860391662035297/1001129150390625]`, valid but superseded for the frozen canonical optimum.
+All listed runs succeeded. PR #78 and its post-merge CI are the final
+documentation-only gates and are recorded in GitHub and the closing response.
 
-## 27. Numerical findings
+## 30. Pages run IDs
 
-DD-C-0010 and DD-C-0022 remain `checked`: expected-distinct-action diagnostics and coordinate-ascent convergence are useful numerical observations but not promoted to exact general results. The canonical coordinate search found direct as a fixed point and 17 additional starts converged to it; the Bellman certificate, not this search, proves optimality.
+Successful post-merge Pages runs: DD-010 `29858324517`, DD-011 `29860525526`,
+DD-008B `29861945022`, paper `29864138029`, and site integration
+`29864943468`. PR #78's final Pages run is recorded after merge.
 
-## 28. Negative and bounded-null results
+## 31. Live route checks
 
-- The homogeneous 51-graph DD-003 census contains ten matched complete-pairwise-moment groups and zero within-group discovery differences: a bounded null, not a theorem.
-- The alignment relaxation is loose at `(3,2,0)`: `1` versus exact `11/12`.
-- Five of six DD-002 evaluations do not reproduce the known selected reversal; best-pure and planner have zero harmful refinements in all 45 pairs.
-- Mypy 2.3 produced no new diagnostics under either parser; no compatibility silencing was needed.
+After site PR #76, 17 checks returned HTTP 200: the three Program V2 study
+routes; the benchmark overview plus four nested routes; the experiment-kit
+overview plus three nested routes; both new Labs; the Common-Source publication
+page; `data/downloads.json`; and the validated PDF. The deployed manifest has
+15 positive-length entries and 64-character SHA-256 values.
 
-## 29. Refuted conjectures
+## 32. Issues opened and closed
 
-- Direct clue-following is not generally private-team optimal.
-- The informative DD-001 three-family phase result does not extend to all `p`.
-- “Distributed Discovery” is not a unique phrase or field-name claim.
-- Mean pair agreement and source HHI are insufficient in the homogeneous graph census.
-- Complete first/pairwise scalar-report moments are insufficient in the registered heterogeneous colored class.
+Program V2 issues #67, #69, #71, #73, and #75 are closed complete. Stale paper
+issue #52 was reconciled and closed after confirming completion through PR #54.
+Final issue #77 closes with PR #78. Settings issue #32 remains open by design.
 
-## 30. Open conjectures and questions
+## 33. PRs opened and merged
 
-- Characterize when the alignment-preserving relaxation is tight and which cross-target constraints strengthen it.
-- Determine DD-002 robustness under randomized disclosure, general asymmetric mixed equilibria, and other learning/selection processes.
-- Extend DD-003 to continuous accuracies, dependent source laws, asymmetric priors, larger graph classes, or higher-order report laws under new bounded registrations.
-- DD-004 through DD-007 remain specified but unexecuted; issue #8 queues only the DD-007 schema.
+DD-010 #68 → `62d4cd1c0819ae4a16330b22b059ddfbd86107d6`;
+DD-011 #70 → `9caf0f975d176aa01e4d6e6e02f1555c1530c44e`;
+DD-008B #72 → `24252c897c0cccec765364c6087848f08f27ead1`;
+paper #74 → `ee0027f6296f9716dcef885d0317fa9dff5cbedf`;
+site #76 → `d478a175aa3326a3be1efc1b50b9542e5e1c2011`.
+Final handoff PR #78 is the only active Program V2 PR while this report is
+prepared.
 
-## 31. Technical debt
+## 34. Exact results
 
-- Tectonic 0.16.9 and Poppler remain system-level paper dependencies outside `uv`.
-- The static site has automated semantic, link, contrast, and no-tracking checks but no browser-based accessibility audit.
-- The upstream patch validator's parallel Tectonic log can reorder two `Writing` lines; final validation passed and the incidental tracked log reorder was restored.
-- Settings manifests are validated offline but not applied.
+DD-010 exactly reproduces 16 compatible golden vectors. DD-008B proves the
+threshold ordering and equilibrium-count characterization, including the exact
+all-common interval. The paper also preserves DD-008's two-agent interval,
+DD-008A's 126-row finite census, DD-006B's 16 strict subsidized mechanism rows,
+and DD-009's 20 coherent exact architectures without merging their models.
 
-## 32. Exact blockers
+## 35. Simulated results
 
-Only issue #32 is blocked: the current GitHub CLI session lacks authentication with Issues-write, Metadata-read, and Administration-write authority. The connected app and SSH remain sufficient for issues, PRs, merges, and Git transport.
+DD-010's sensitivity layer uses 8 explicit seeds and 8,000 draws and supports no
+exact benchmark claim. DD-011 uses 384,000 seeded draws and reports Wilson
+intervals, MDEs, attrition/clustering/noise sensitivity, and conditional power.
+Neither suite is empirical evidence about people or organizations.
 
-## 33. Exact next task
+## 36. Negative and null results
 
-Resolve issue #32 when settings-capable authentication is intentionally supplied. Research expansion should otherwise begin with a new bounded issue and resource/certificate plan, not by silently enlarging any completed census.
+- DD-008B's interior fixture rejects universal under-acquisition.
+- DD-011 retains 140 of 192 large-sample calibration failures.
+- DD-010 retains 179 incompatible task/protocol pairs as exclusions.
+- DD-006B has no weak row in its target-visible/action-hidden regime and no
+  budget-balance theorem.
+- DD-009 rejects 268 incoherent architecture cells and provides no universal
+  ranking.
+- Prior bounded nulls and negative results remain in the claim ledger and
+  immutable evidence rather than being discarded.
 
-## 34. Exact resume command
+## 37. Refuted conjectures
+
+Common-source incentives do not imply equilibrium independence is always below
+the planner count. Pairwise source summaries do not generally identify
+discovery. Direct clue-following is not universally optimal. Information
+refinement is not universally harmful across equilibrium selections. The term
+“Distributed Discovery” has no verified novelty claim.
+
+## 38. Experimental predictions
+
+The frozen DD-011 predictions are: costly independence may be under-acquired
+near the all-common boundary; assignment should mechanically raise independent
+source use; public disclosure can raise agreement without raising discovery;
+and acquisition plus marginal-coverage allocation may be complementary. These
+are untested predictions, not treatment effects.
+
+## 39. Open questions
+
+Heterogeneous source quality, correlated “independent” providers, alternative
+prize sharing, mixed source choice, dynamic acquisition, reusable evidence
+value, and integrated acquisition/truth/allocation with budget balance require
+new models. Benchmark expansion requires versioned exact tasks and adapter
+conformance. Any human study requires a separate ethics and governance gate.
+
+## 40. Technical debt
+
+Tectonic and Poppler remain system paper dependencies outside `uv`. Browser
+smoke tests do not constitute full screen-reader/WCAG conformance. Publication
+discovery remains an explicit four-paper builder registry. Settings manifests
+are validated offline but unapplied.
+
+## 41. Settings status
+
+The single authorized settings command failed at its first authenticated GitHub
+CLI read with exit status 4; no setting changed and no retry was made. Issue #32
+records the required Issues-write, Metadata-read, and Administration-write
+authority for labels, milestones, homepage metadata, and a safe `main` ruleset.
+
+## 42. Exact blockers
+
+There is no research, build, test, paper, site, CI, Pages, license, provenance,
+secret, host-path, download, upstream, or Git blocker. Issue #32 is the sole
+operational blocker and does not block Program V2 completion.
+
+## 43. Exact next task
+
+There is no mandatory Program V2 research task. If settings-capable authority is
+intentionally supplied, resolve issue #32. Any research extension begins with a
+new bounded issue rather than rerunning a completed primary configuration.
+
+## 44. Exact resume command
 
 `git switch main && git pull --ff-only origin main && make verify`
 
-For settings specifically, the next authorized command is `gh auth login`; after successful authentication, follow issue #32.
+For settings only, the next authorized command is `gh auth login`, followed by
+the reviewed steps in `docs/github-setup.md` and issue #32.
 
-## 35. Commit SHAs
+## 45. Commit SHAs
 
-Continuation merge SHAs: `8d63201cb3b6633c873494af2ea21402db8752d6`, `007dc15b89f6d7e98e572d1b164f057c7c38c964`, `df35f80273f106ef86f623c4676fe2a58757b6ad`, `993b0899421d446f61348a513d2630e0f424e336`, `4a8f53e90b1ffea233de5b377ba970566d92d670`, `03290fa66a18c19a76f90f7c9dab5ef56a005f7d`, `d043a438c616e793c00908fa54a7b818466eec82`, and `fa2fd5a473810dc00a5f8b483b4f196a6522f7be`.
+Program V2 merge SHAs are `62d4cd1c0819ae4a16330b22b059ddfbd86107d6`,
+`9caf0f975d176aa01e4d6e6e02f1555c1530c44e`,
+`24252c897c0cccec765364c6087848f08f27ead1`,
+`ee0027f6296f9716dcef885d0317fa9dff5cbedf`, and
+`d478a175aa3326a3be1efc1b50b9542e5e1c2011`. Primary evidence commits are
+embedded in immutable run IDs and manifests.
 
-Primary evidence commits are embedded in immutable run IDs/manifests; the four continuation runs start from `8e4b55e2`, `358cb1eb`, `73a85c71`, and `84238b76`.
+## 46. PR URLs and exact next file
 
-## 36. Pull-request URLs and next file
+- <https://github.com/yoheinakajima/distributed-discovery/pull/68>
+- <https://github.com/yoheinakajima/distributed-discovery/pull/70>
+- <https://github.com/yoheinakajima/distributed-discovery/pull/72>
+- <https://github.com/yoheinakajima/distributed-discovery/pull/74>
+- <https://github.com/yoheinakajima/distributed-discovery/pull/76>
+- <https://github.com/yoheinakajima/distributed-discovery/pull/78>
 
-- `https://github.com/yoheinakajima/distributed-discovery/pull/19`
-- `https://github.com/yoheinakajima/distributed-discovery/pull/21`
-- `https://github.com/yoheinakajima/distributed-discovery/pull/23`
-- `https://github.com/yoheinakajima/distributed-discovery/pull/25`
-- `https://github.com/yoheinakajima/distributed-discovery/pull/27`
-- `https://github.com/yoheinakajima/distributed-discovery/pull/29`
-- `https://github.com/yoheinakajima/distributed-discovery/pull/30`
-- `https://github.com/yoheinakajima/distributed-discovery/pull/31`
-- `https://github.com/yoheinakajima/distributed-discovery/pull/34` — documentation-only final handoff
-
-The exact operational next file is `docs/github-setup.md`, governed by issue #32. The exact next research planning file is `studies/DD-001/PLAN.md` if the project owner chooses to pursue a stronger alignment hierarchy.
+The exact next file for program orientation is `docs/current-state.md`; for the
+only blocker it is `docs/github-setup.md`.
