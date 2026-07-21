@@ -116,6 +116,7 @@ def render_section_navigation(current: str) -> str:
             ("Strategies", "benchmark/protocols.html"),
             ("Measures", "benchmark/metrics.html"),
             ("Results", "benchmark/results.html"),
+            ("Attention", "benchmark/attention.html"),
         )
         label = "Benchmark pages"
     elif current == "experiment-kit.html" or current.startswith("experiment-kit/"):
@@ -123,6 +124,7 @@ def render_section_navigation(current: str) -> str:
             ("Overview", "experiment-kit.html"),
             ("Questions", "experiment-kit/hypotheses.html"),
             ("Assignment", "experiment-kit/design.html"),
+            ("Attention", "experiment-kit/attention.html"),
             ("Power", "experiment-kit/power.html"),
         )
         label = "Experiment Kit pages"

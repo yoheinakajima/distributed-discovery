@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-07-21 — Program V3 public attention surface
+
+- Added a static-complete Attention Lab across 175 exact cells, 1,050 profiles,
+  and seven reward contexts, with discovery, payoffs, optima, equilibria,
+  equal-split attention wedges, marginal gains/losses, and transfer budgets.
+- Expanded Audience Design to expose binding and voluntary use, feasible
+  garbling, and all three registered implementation mechanisms without adding
+  new research claims or mutating immutable runs.
+- Added the canonical Audience Design route and attention navigation for the
+  benchmark and experiment kit; the generated 59-route surface passes local
+  safety, no-JavaScript, accessibility, download, responsive-browser, and
+  interaction checks.
+
 ## 2026-07-21 — The Incentive to Ignore working paper
 
 - Built the focused 20-page working paper *The Incentive to Ignore: Selective
