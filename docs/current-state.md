@@ -1,10 +1,11 @@
 # Current program state
 
-_Reconciled 2026-07-21 at the Program V3 registration baseline._
+_Reconciled 2026-07-21 at the DD-012 pre-run implementation gate._
 
 Distributed Discovery Programs V1 and V2 are complete at their registered
 bounded scopes. Program V3, *The Incentive to Ignore*, is active under issue
-#79. Its required queue is DD-012, DD-013, DD-014, a focused paper, benchmark
+#81 after the registration baseline completed through issue #79 and PR #80.
+Its required queue is DD-012, DD-013, DD-014, a focused paper, benchmark
 and synthetic experiment extensions, public Labs/site integration, and final
 acceptance. DD-015 is optional only after that queue. Registration is not a
 result.
@@ -15,21 +16,30 @@ at `5025cc8e8f2f8ca015dff2066f08f81ad5715a51`, separate, clean, and read-only.
 
 | Measure | Current value |
 | --- | ---: |
-| Ledger claims | 58 |
-| Passing immutable runs | 32 of 35 manifests |
-| Registered studies | 15 |
-| Python source files | 94 |
-| Public HTML routes | 48 |
-| Public data files | 40 |
+| Ledger claims | 61 |
+| Passing immutable runs | 33 of 36 manifests |
+| Registered studies | 19 |
+| Python source files | 98 |
+| Public HTML routes | 52 |
+| Public data files | 44 |
 | Laboratory routes | 8 |
 | Validated project papers | 4 |
 | Checksum-registered downloads | 15 |
-| Test suite | 138 collected tests |
+| Test suite | 150 collected tests |
 
-The baseline adds four registrations, bringing the study registry to 19 after
-this milestone merges. Claims, manifests, passing runs, papers, and validated
-test evidence remain unchanged until a registered study is executed and
-independently audited.
+The baseline added four registrations, bringing the study registry to 19 and
+the generated site to 52 routes. DD-012 has now added three audited claims and
+one passing immutable run. Its exact evaluator, separate state enumerator,
+corruption checks, and public study metadata await PR #82's remaining site,
+merge, CI, Pages, and live-route gates.
+
+DD-012's One-Reader Theorem gives optimum reader count one when `q>p`, zero
+when `q<p`, and `{0,1}` when `q=p` inside the frozen follow/private class. The
+equal-split game cannot sustain all-ignore when one reader is uniquely optimal;
+the bounded grid instead contains 63 excessive-attention cells and 24
+all-attend equilibria. Run
+`20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b` supports DD-C-0059 through
+DD-C-0061.
 
 Program V2 produced:
 

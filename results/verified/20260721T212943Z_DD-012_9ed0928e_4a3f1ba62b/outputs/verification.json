@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "profiles_verified": 1050,
+  "reward_rows_verified": 6300,
+  "state_enumerator": "target/shared/action-relevant-private labeled states"
+}

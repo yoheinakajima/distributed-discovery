@@ -83,3 +83,17 @@ The strongest paper-specific result is DD-C-0057's general finite-`N` threshold
 theorem. DD-C-0058 is equally important for positioning: it prevents the paper
 from treating equilibrium acquisition as uniformly below the planner at every
 interior source count.
+
+## DD-012 selective-attention map
+
+| DD-012 object | Established adjacent literature | Evidence-specific contribution |
+|---|---|---|
+| Ex-ante non-receipt of a shared clue | Strategic ignorance; information avoidance; rational inattention | A binding access-gate interpretation that avoids claiming agents can forget public information. |
+| Socially optimal audience size | Public-information welfare and partial dissemination | An exact one-reader result for union discovery inside the registered follow/private class. |
+| Private attention threshold | Endogenous information acquisition and coordination | Closed-form equal-split deviations and a finite rational census, not a general welfare theorem. |
+| Reward/access interventions | Information design, covering games, and organizational assignment | Seven explicitly observable rules; no unrestricted mechanism-optimality claim. |
+| Conditional or contrarian response | Informational herding and contrarian experimentation | Explicitly excluded from DD-012 and reserved for DD-014's registered policy class. |
+
+The term “incentive to ignore” is project shorthand for an ex-ante role-choice
+margin. It is not evidence of behavioral avoidance and is not a claim that
+ignorance is generally beneficial.

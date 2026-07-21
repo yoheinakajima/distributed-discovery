@@ -1218,3 +1218,66 @@ claims:
     first_added: "2026-07-21"
     last_checked: "2026-07-21"
     notes: The failed universal ordering is retained as a first-class negative result and bounds the Common-Source Trap paper's language.
+  - id: DD-C-0059
+    study_id: DD-012
+    short_name: one-reader-discovery-theorem
+    statement: For every finite N at least 2 and accuracies p and q strictly between zero and one in the frozen access-gated follow/private model, discovery is G_N(0)=1-(1-p)^N and G_N(k)=1-(1-q)(1-p)^(N-k) for k at least 1; its optimum is uniquely one shared-signal reader when q>p, uniquely zero readers when q<p, and exactly zero or one reader when q=p.
+    scope: Arbitrary finite N at least 2, three uniform targets, one shared clue with accuracy q, conditionally independent private clues with homogeneous accuracy p, uniform wrong labels, ex-ante binding access, shared-clue following by readers, private-clue following by non-readers, and union discovery; this is not an unrestricted disclosure, policy, correlated-signal, robustness, dynamic, behavioral, or empirical theorem.
+    claim_type: theorem
+    status: verified
+    source_type: human-readable-proof-with-exact-rational-census-and-separate-labeled-state-audit
+    source_reference: results/verified/20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b/outputs/theorem-checks.json
+    proof_path: studies/DD-012-incentive-to-ignore/proof.md
+    implementation_paths: [src/distributed_discovery/attention/model.py, src/distributed_discovery/attention/verification.py]
+    run_ids: [20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b]
+    test_paths: [tests/unit/test_attention.py]
+    exactness_basis: The proof identifies the failure events directly; the first-reader margin is (1-p)^(N-1)(q-p), and each later margin is the strictly negative quantity -(1-q)p(1-p)^(N-k-1). The finite audit confirms all 175 configured cells and the direct enumerator reproduces all 1,050 exact discovery values.
+    rounding_rule: exact fractions; no decimal approximation is authoritative
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: “One-Reader Theorem” is a project-local label for this frozen action class, not a universal claim about dissemination; ignoring means non-delivery.
+  - id: DD-C-0060
+    study_id: DD-012
+    short_name: equal-split-attention-threshold-theorem
+    statement: In the frozen equal-split attention game, the private gain Delta_k from becoming reader k+1 is strictly decreasing in k and exactly characterizes every weak and strict pure attention-count equilibrium; all-ignore is a weak equilibrium exactly when q<=p, while all-attend is weak exactly when q>=Np/(1+(N-1)p), so all-ignore cannot occur when the unique social optimum is one reader.
+    scope: The DD-C-0059 model plus equal splitting of a unit success prize, risk-neutral ex-ante role choice, anonymous pure attention counts, and gross expected prizes without attention cost; no mixed equilibrium, heterogeneous preferences, arbitrary sharing, behavioral attention, or unrestricted policy response is covered.
+    claim_type: theorem
+    status: verified
+    source_type: human-readable-binomial-coupling-proof-with-exact-payoff-accounting-and-direct-deviation-audit
+    source_reference: results/verified/20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b/outputs/verification.json
+    proof_path: studies/DD-012-incentive-to-ignore/proof.md
+    implementation_paths: [src/distributed_discovery/attention/model.py, src/distributed_discovery/attention/verification.py]
+    run_ids: [20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b]
+    test_paths: [tests/unit/test_attention.py]
+    exactness_basis: The proof derives type payoffs, total-prize accounting, and Delta_k=q(1-p)E[1/(k+1+Z_k)]-p(1-q)E[1/(1+Z_k)], then uses a Bernoulli coupling to show strict decrease. Separate target/shared/private-signal enumeration reproduces every payoff and unilateral deviation in the 1,050-profile census.
+    rounding_rule: exact fractions; no decimal approximation is authoritative
+    dependencies: [DD-C-0059]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: The theorem rules out privately stable complete non-receipt when the shared clue is more accurate; it permits inefficient duplicate attention and does not claim people never avoid information.
+  - id: DD-C-0061
+    study_id: DD-012
+    short_name: bounded-attention-and-reward-census
+    statement: In DD-012's 175-cell rational census, equal-split attention has 63 excessive-attention cells, three equilibrium-multiplicity cells with a welfare difference, and 24 cells where all-attend is an equilibrium although one reader is uniquely optimal; sole-rescue, marginal-coverage, universal-pooling, and a binding public-reader license exactly match the social-optimum correspondence in all 175 cells, while off-shared-success yields unique all-ignore in all cells and the assigned-reader subsidy has no socially optimal weak equilibrium in any cell.
+    scope: N=2 through 8 and p,q in {1/3,1/2,2/3,3/4,5/6} under DD-C-0059's model and the seven precisely registered reward/access rules, observability assumptions, enforcement, and subsidy conventions; this is not a mechanism-optimality, budget-balance, collusion, robustness, human-behavior, or empirical result.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exhaustive-exact-rational-attention-and-reward-census-with-separate-labeled-state-enumerator
+    source_reference: results/verified/20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b/outputs/phase-map.json
+    proof_path: studies/DD-012-incentive-to-ignore/proof.md
+    implementation_paths: [src/distributed_discovery/attention/model.py, src/distributed_discovery/attention/study.py, src/distributed_discovery/attention/verification.py]
+    run_ids: [20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b]
+    test_paths: [tests/unit/test_attention.py]
+    exactness_basis: All 175 parameter cells, 1,050 attention profiles, and 6,300 strategic reward/profile rows use Fraction arithmetic. A materially separate enumerator traverses 3,319,200 target/shared/action-relevant-private labeled states, reproduces normalization, discovery, type payoffs, budgets, deviations, and equilibrium sets, and rejects altered discovery, reward, and equilibrium fields.
+    rounding_rule: exact fractions; counts are exact
+    dependencies: [DD-C-0059, DD-C-0060]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-21"
+    last_checked: "2026-07-21"
+    notes: Sole-rescue and marginal-coverage are numerically identical in this atomic one-target model but retain distinct observability descriptions. Assigned-reader and off-shared-success are preserved negative mechanism results.

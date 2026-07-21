@@ -1,10 +1,18 @@
 study_id: DD-012
 title: Incentive to Ignore
 slug: dd-012
-phase: registered
-summary: Registered exact study of access-gated shared-signal use, private incentives, and discovery.
+phase: complete-bounded-study
+summary: Two exact attention theorems and an independently reproduced 175-cell reward census for ex-ante shared-signal access.
 public_artifacts:
   - path: studies/DD-012-incentive-to-ignore/model.md
     description: Frozen baseline model and information-access boundary
   - path: studies/DD-012-incentive-to-ignore/plan.md
     description: Registered execution and verification plan
+  - path: studies/DD-012-incentive-to-ignore/proof.md
+    description: One-reader and equal-split threshold proofs
+  - path: studies/DD-012-incentive-to-ignore/report.md
+    description: Bounded result and verification report
+  - path: results/verified/20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b/outputs/summary.json
+    description: Exact census summary
+  - path: results/verified/20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b/outputs/phase-map.json
+    description: Exact attention and reward equilibrium map

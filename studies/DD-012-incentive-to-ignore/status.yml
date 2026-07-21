@@ -1,5 +1,5 @@
 study_id: DD-012
-status: registered
-evidence_status: no-result-registration-only
-next_action: freeze the rational census and prove or correct the candidate discovery and payoff identities before the first immutable run
-updated_utc: 2026-07-21T21:05:32Z
+status: complete-bounded-study
+evidence_status: two-verified-theorems-and-independently-reproduced-exact-census
+next_action: preserve the proof, negative mechanism results, immutable run, and regressions; proceed to DD-013 only after merge, CI, Pages, and live-route validation
+updated_utc: 2026-07-21T21:36:41Z

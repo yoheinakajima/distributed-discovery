@@ -1,0 +1,36 @@
+{
+  "command": "make dd012-attention",
+  "config_hash_sha256": "4a3f1ba62bd8af6d5bb19facf20525efd9593ea602c259124a8235c8fefb6e07",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-21T21:36:40.642680Z",
+  "exit_status": 0,
+  "git_commit": "9ed0928e5aacc7b1786fb0c8754a3d03db133ae1",
+  "git_dirty": false,
+  "input_hashes": {
+    "src/distributed_discovery/attention/model.py": "44f5ea9a70385b037be578c80ebd33cd1da0d601b299678505b1bfc42a5ac05c",
+    "src/distributed_discovery/attention/study.py": "7b46c60a4cbed24c6c803122969ade3e719dca85ca5adf04b89a8a7a37368de4",
+    "src/distributed_discovery/attention/verification.py": "8a7387f955186d2ea1f9da737dfeb158cb4aae0901b36570557ccbe0d4df060c",
+    "studies/DD-012-incentive-to-ignore/configs/census.yml": "e5f6b8a8cbca850d2f170bdc4c7dbe42e56470ca7e0ad24f8629c397d02eaefa",
+    "studies/DD-012-incentive-to-ignore/proof.md": "bd19b40ecfe6b11e1d8e02b970a61606b353090dc13e99cabf6f360b35921a34"
+  },
+  "outputs": {
+    "outputs/attention-census.json": "b199943481f9fd585a9ba100730fd96eeb105f46ec2c1769063c5e6a7b2970b6",
+    "outputs/attention-wedge-table.csv": "72fc98ae70159a45705a0dd0916a67e811ba31f51453288f629d25fb9d3aa797",
+    "outputs/corruption-tests.json": "cb06b8e52d4ffe8f83aca06ffea677a08e947d91d5779aae25c85ad6d9f98113",
+    "outputs/phase-map.json": "838acdc5d7acbf54445e07b392a19a3e35ded13a645dffa2ffe3ac31d5e3fb66",
+    "outputs/reward-registry.json": "f847dab7cdf339f4764c4160e19281c3128a908f6a8491ba1b25e53e41715248",
+    "outputs/summary.json": "81d6a760a71fe9b9eeb7422ddc04f4776472c54a9b25e310c5a450cb814bf36b",
+    "outputs/theorem-checks.json": "b0dcefa4a941e4a795f6c99f2cf5a99318ae7b0b17061691fc48ec7a630cadc8",
+    "outputs/verification.json": "4bb1a94d52ddbb4ae3a8ea4434c6ff3e873d9e7671bb2b26a0c2f844da4d0030"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "run_id": "20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b",
+  "schema_version": 1,
+  "started_utc": "2026-07-21T21:29:43.507806Z",
+  "study_id": "DD-012",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

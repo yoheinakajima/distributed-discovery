@@ -1,0 +1,72 @@
+[
+  {
+    "external_subsidy": false,
+    "observability": [
+      "individual action",
+      "target or individual success"
+    ],
+    "payment": "unit success prize divided among all successful agents",
+    "rule_id": "equal-split",
+    "strategic_attention": true
+  },
+  {
+    "external_subsidy": false,
+    "observability": [
+      "all actions",
+      "target or individual success"
+    ],
+    "payment": "one unit only to the unique successful agent",
+    "rule_id": "sole-rescue",
+    "strategic_attention": true
+  },
+  {
+    "external_subsidy": true,
+    "observability": [
+      "shared signal",
+      "all actions",
+      "target"
+    ],
+    "payment": "one unit to each successful action different from the shared recommendation",
+    "rule_id": "off-shared-success",
+    "strategic_attention": true
+  },
+  {
+    "external_subsidy": false,
+    "observability": [
+      "all actions",
+      "target"
+    ],
+    "payment": "one unit to a successful agent only when its action label is unique",
+    "rule_id": "marginal-coverage",
+    "strategic_attention": true
+  },
+  {
+    "external_subsidy": true,
+    "observability": [
+      "access roster",
+      "shared signal",
+      "all actions"
+    ],
+    "payment": "equal-split prize plus 1/N to every registered reader who follows the delivered signal",
+    "rule_id": "assigned-reader-reward",
+    "strategic_attention": true
+  },
+  {
+    "external_subsidy": false,
+    "observability": [
+      "binding signal delivery"
+    ],
+    "payment": "equal-split prize under a binding ex-ante cap on shared-signal recipients",
+    "rule_id": "public-reader-license",
+    "strategic_attention": false
+  },
+  {
+    "external_subsidy": false,
+    "observability": [
+      "team discovery"
+    ],
+    "payment": "every agent receives 1/N when the team discovers the target",
+    "rule_id": "universal-pooling",
+    "strategic_attention": true
+  }
+]

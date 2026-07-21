@@ -26,18 +26,24 @@ settings issue #32. The one mandated `gh auth status` probe returned no
 authenticated host, so settings mutation is not retried and does not block the
 research queue.
 
-The active milestone is the registration-only Program V3 baseline under issue
-#79 and branch `docs/program-v3-baseline`. It registers DD-012 through DD-015,
-updates governing documentation, and creates no research run or result claim.
+The registration-only Program V3 baseline completed through issue #79 and PR
+#80, squash merge `69ba1c392bb0bda9bc4447c0fac842b8e7308fbf`, passing
+post-merge CI and Pages, and live DD-012 through DD-015 routes. The active
+milestone is DD-012 under issue #81 and branch
+`research/dd012-incentive-to-ignore`.
 
 Progress:
 
-- [ ] Program V3 baseline: registration and local implementation are active;
-  `make bootstrap`, the pre-edit `make verify` (138 tests), the pre-edit
-  48-route `make site`, and ten live-route checks passed. Post-edit validation,
-  PR, merge, CI, Pages, and deployed registration routes remain.
+- [x] Program V3 baseline: 19 registered studies, 52 generated routes, 138
+  tests, PR #80 merge, post-merge CI/Pages, and all four new live registration
+  routes passed.
 - [ ] DD-012 exact model, theorem/proof audit, rational census, independent
-  verifier, reward interventions, claims, public data, and deployment.
+  verifier, reward interventions, claims, public data, and deployment. Model,
+  proof, seven-rule registry, exact evaluator, separate direct verifier,
+  bounded configuration, primary run
+  `20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b`, and DD-C-0059 through
+  DD-C-0061 pass locally. PR #82 remains draft pending integration validation,
+  merge, CI, Pages, and live-route checks.
 - [ ] DD-013 binding/voluntary audience frontier, garbling comparison,
   implementable institution, independent verification, claims, and deployment.
 - [ ] DD-014 conditional policy class, role-profile census, larger-class audit,
@@ -46,9 +52,9 @@ Progress:
   public Labs/site integration, and final acceptance.
 
 Recovery: inspect `git status --short --branch` on
-`docs/program-v3-baseline`, then run `make bootstrap && make verify && make
-site`. No DD-012 run exists yet and no completed Program V2 primary run should
-be repeated.
+`research/dd012-incentive-to-ignore`, preserve the completed primary run, and
+run `make bootstrap && make verify && make site`. Never repeat the DD-012
+primary run merely to refresh a timestamp.
 
 ### Program V2 completion queue (active, 2026-07-21)
 

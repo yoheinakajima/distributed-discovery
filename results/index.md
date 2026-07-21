@@ -1,7 +1,8 @@
 # Result index
 
-Current inventory: 35 immutable manifests, of which 32 have passing validation
-and exit status zero. Final Program V2 acceptance did not create duplicate runs.
+Current inventory: 36 immutable manifests, of which 33 have passing validation
+and exit status zero. The DD-012 primary run is the only Program V3 research run
+to date.
 
 - [`baseline/`](baseline/README.md): canonical upstream reproduction artifacts.
 - [`verified/`](verified/README.md): policy-verified results.
@@ -49,6 +50,14 @@ matches 84 separately enumerated payoff margins, checks 16,368 proof-kernel
 instances, and rejects two corruptions. It supports the general finite-`N`
 threshold theorem DD-C-0057 and the exact universal-under-acquisition
 counterexample DD-C-0058.
+
+The DD-012 Incentive to Ignore run is
+`verified/20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b`. It preserves 175 exact
+parameter cells, 1,050 attention profiles, 6,300 strategic reward rows, seven
+reward/access rules, a separate 3,319,200-state labeled enumeration, and three
+rejected corruptions. It supports the One-Reader Theorem DD-C-0059, the
+equal-split attention-threshold theorem DD-C-0060, and the bounded intervention
+census DD-C-0061.
 
 The three Program V2 primary runs above are immutable and must not be rerun just
 to refresh timestamps. Their public summaries are generated only after manifest

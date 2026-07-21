@@ -1,0 +1,28 @@
+schema_version: dd012-attention-census-v1
+study_id: DD-012
+agents: [2, 3, 4, 5, 6, 7, 8]
+accuracies: ["1/3", "1/2", "2/3", "3/4", "5/6"]
+targets: 3
+wrong_signal_rule: uniform-over-other-two-labels
+attention_timing: ex-ante-before-signals
+access_interpretation: shared-signal-withheld-from-ignoring-roles
+reward_rules:
+  - equal-split
+  - sole-rescue
+  - off-shared-success
+  - marginal-coverage
+  - assigned-reader-reward
+  - public-reader-license
+  - universal-pooling
+grid_cells: 175
+attention_profiles: 1050
+strategic_reward_profile_rows: 6300
+direct_labeled_states: 3319200
+full_but_action-irrelevant_state_count: 18820350
+runtime_estimate_seconds: 240
+time_cap_seconds: 600
+memory_estimate_mb: 256
+memory_cap_mb: 2048
+certificate_format: exact-fraction-attention-and-reward-census-v1
+checkpoint_behavior: no-overwrite-preserve-failed-run-if-created
+valid_partial_outcomes: none-for-claim-promotion

@@ -53,3 +53,20 @@
   over-acquisition occurs at the registered rational counterexample.
 - Institutional remedies are mechanism- and observability-specific. DD-006B is
   externally subsidized; DD-011 is synthetic power only and no experiment ran.
+
+## DD-012 controls
+
+- Strategic ignorance, information avoidance, rational inattention, partial
+  public-information dissemination, endogenous attention, and contrarian
+  experimentation have direct prior art.
+- “One-Reader Theorem” is a local name for the exact optimum in the frozen
+  three-target, union-discovery, follow/private policy class. Do not present it
+  as a universal rule for information dissemination.
+- “Ignore” means a shared clue is withheld by an ex-ante access gate. It does
+  not mean an agent forgets or suppresses an already observed public signal.
+- The equal-split equilibrium result is about expected monetary role payoffs,
+  not psychological information avoidance or measured human attention.
+- Reward conclusions are limited to seven registered rules and their stated
+  observability, subsidy, and enforcement assumptions. Coincident rules in the
+  atomic model remain distinct institutional descriptions, not distinct
+  numerical mechanisms.
