@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://distributed-discovery.org/schemas/discovery-events/v1/source.schema.json",
+  "title": "Synthetic discovery source",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["source_id", "synthetic", "source_type"],
+  "properties": {
+    "source_id": {"type": "string", "minLength": 1},
+    "synthetic": {"const": true},
+    "source_type": {"enum": ["private-signal", "common-cue", "assignment"]}
+  }
+}

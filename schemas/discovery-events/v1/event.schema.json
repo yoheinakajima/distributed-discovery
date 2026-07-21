@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://distributed-discovery.org/schemas/discovery-events/v1/event.schema.json",
+  "title": "Synthetic discovery event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["event_id", "session_id", "timestamp", "actor_id", "candidate_id", "action_id", "source_id", "outcome", "synthetic"],
+  "properties": {
+    "event_id": {"type": "string", "minLength": 1},
+    "session_id": {"type": "string", "minLength": 1},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "actor_id": {"type": "string", "minLength": 1},
+    "candidate_id": {"type": "string", "minLength": 1},
+    "action_id": {"type": "string", "minLength": 1},
+    "source_id": {"type": ["string", "null"]},
+    "outcome": {"type": "object", "additionalProperties": false, "required": ["success", "observed"], "properties": {"success": {"type": "boolean"}, "observed": {"type": "boolean"}}},
+    "synthetic": {"const": true}
+  }
+}
