@@ -32,6 +32,7 @@ PHASES = {
 }
 SAFE_ARTIFACT_SUFFIXES = {".md", ".json", ".csv", ".png", ".svg", ".pdf", ".yml"}
 DD006B_RUN = "20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b"
+DD009_RUN = "20260721T171249Z_DD-009_bc78d249_0c3851c41a"
 
 
 class SiteParser(HTMLParser):
@@ -600,6 +601,13 @@ def _render(
             "20260721T141527Z_DD-008_0d11dc77_7e0c8f1d66",
             "Compare common and independent evidence sources in the registered two-agent source-choice fixture.",
         ),
+        (
+            "atlas",
+            "Architecture Atlas",
+            "DD-C-0054",
+            DD009_RUN,
+            "Compare only coherent aligned architecture cells under the registered exact metric and Pareto boundaries.",
+        ),
     ]
     lab_cards = "".join(
         f'<article class="card"><p class="eyebrow">Interactive lab</p><h2><a href="labs/{slug}.html">{html.escape(title)}</a></h2><p>{html.escape(description)}</p><p><a href="claims.html#{claim}">{claim}</a> · <a href="evidence.html">passing run</a></p></article>'
@@ -617,8 +625,9 @@ def _render(
         ),
     )
     for slug, title, claim, run_id, description in lab_specs:
-        value_label = "Scenario index"
-        lab_body = f"""<p class="eyebrow"><a href="../labs.html">Labs</a> / {html.escape(title)}</p><h1>{html.escape(title)}</h1><p class="lede">{html.escape(description)}</p><section class="lab" data-lab="{slug}"><label for="scenario">{value_label}: <output id="scenario-output">1</output></label><input id="scenario" type="range" min="1" max="5" value="1" step="1" aria-describedby="lab-note"><p id="lab-note" class="callout" aria-live="polite">Scenario 1 is the readable default. Adjust the slider to compare the five precomputed fixture views.</p></section><noscript><p class="callout">JavaScript is off. The default scenario remains available below.</p></noscript><table class="matrix"><thead><tr><th>Evidence boundary</th><th>Registered interpretation</th></tr></thead><tbody><tr><td>Claim</td><td><a href="../claims.html#{claim}">{claim}</a></td></tr><tr><td>Immutable run</td><td><a href="{REPOSITORY_URL}/blob/main/results/verified/{run_id}/manifest.json">{run_id}</a></td></tr><tr><td>Fallback</td><td>Scenario 1; bounded fixture only, not a recommendation.</td></tr></tbody></table>"""
+        scenario_count = 20 if slug == "atlas" else 5
+        value_label = "Architecture index" if slug == "atlas" else "Scenario index"
+        lab_body = f"""<p class="eyebrow"><a href="../labs.html">Labs</a> / {html.escape(title)}</p><h1>{html.escape(title)}</h1><p class="lede">{html.escape(description)}</p><section class="lab" data-lab="{slug}"><label for="scenario">{value_label}: <output id="scenario-output">1</output></label><input id="scenario" type="range" min="1" max="{scenario_count}" value="1" step="1" aria-describedby="lab-note"><p id="lab-note" class="callout" aria-live="polite">Scenario 1 is the readable default. Adjust the slider to compare {scenario_count} precomputed fixture views.</p></section><noscript><p class="callout">JavaScript is off. The default scenario remains available below.</p></noscript><table class="matrix"><thead><tr><th>Evidence boundary</th><th>Registered interpretation</th></tr></thead><tbody><tr><td>Claim</td><td><a href="../claims.html#{claim}">{claim}</a></td></tr><tr><td>Immutable run</td><td><a href="{REPOSITORY_URL}/blob/main/results/verified/{run_id}/manifest.json">{run_id}</a></td></tr><tr><td>Fallback</td><td>Scenario 1; bounded fixture only, not a recommendation.</td></tr></tbody></table>"""
         _write(
             output, f"labs/{slug}.html", _page(title, description, lab_body, f"labs/{slug}.html")
         )
@@ -704,6 +713,10 @@ def build(root: Path, output: Path) -> dict[str, Any]:
         root / "results/verified" / DD006B_RUN / "outputs/joint-mechanism-summary.json"
     )
     joint_summary = json.loads(joint_summary_path.read_text(encoding="utf-8"))
+    atlas_run = root / "results/verified" / DD009_RUN / "outputs"
+    atlas_summary = json.loads((atlas_run / "atlas-summary.json").read_text(encoding="utf-8"))
+    atlas_rows = json.loads((atlas_run / "architectures.json").read_text(encoding="utf-8"))
+    atlas_dominance = json.loads((atlas_run / "dominance.json").read_text(encoding="utf-8"))
     data = {
         "research-index.json": {"schema_version": 1, "studies": studies},
         "claims.json": {"schema_version": 1, "claims": claims},
@@ -715,6 +728,7 @@ def build(root: Path, output: Path) -> dict[str, Any]:
             "source": "precomputed bounded fixture controls",
             "scenario_count": 5,
             "mechanisms_data": "data/labs/mechanisms.json",
+            "atlas_data": "data/labs/atlas.json",
         },
         "labs/mechanisms.json": {
             "schema_version": 1,
@@ -728,6 +742,16 @@ def build(root: Path, output: Path) -> dict[str, Any]:
             "best_strict_discovery": joint_summary["best_strict_discovery"],
             "regime_results": joint_summary["regime_results"],
             "boundary": "registered exact subsidized class; not arbitrary mechanisms",
+        },
+        "labs/atlas.json": {
+            "schema_version": 1,
+            "study_id": "DD-009",
+            "claim_id": "DD-C-0054",
+            "run_id": DD009_RUN,
+            "summary": atlas_summary,
+            "architectures": atlas_rows,
+            "dominance": atlas_dominance,
+            "boundary": "registered finite synthetic atlas; not a universal ranking",
         },
     }
     for name, value in data.items():

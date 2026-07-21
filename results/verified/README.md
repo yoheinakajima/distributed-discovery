@@ -34,3 +34,11 @@ The strict-implementation result is restricted to the subsidized quarter-grid
 class and fixed ex-ante tie roles. It is not a budget-balance or
 arbitrary-mechanism result. Earlier DD-006B runs are retained as non-primary
 development provenance and are not cited by DD-C-0053.
+
+DD-009 primary run:
+
+- `20260721T171249Z_DD-009_bc78d249_0c3851c41a`: complete 288-cell validity classification, 20 exact coherent architecture rows, separate row reproduction, and exhaustive bounded dominance relation.
+
+The resulting 12-cell nondominated set uses only ADR-0016's six registered
+objectives. Incentive labels are annotations rather than cardinal Pareto inputs,
+and the atlas is not a universal ranking.

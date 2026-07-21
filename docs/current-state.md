@@ -1,6 +1,6 @@
 # Current program state
 
-_Reconciled 2026-07-21 after DD-008A merge and DD-006B local evidence completion._
+_Reconciled 2026-07-21 after DD-006B deployment and DD-009 local evidence completion._
 
 Distributed Discovery Program V1 is complete through DD-008. The repository is
 public and project-authored content is MIT-licensed; the canonical
@@ -8,14 +8,14 @@ Shared Discovery Paradox repository remains pinned, separate, and read-only.
 
 | Measure | Current value |
 | --- | ---: |
-| Ledger claims | 53 |
-| Passing immutable runs | 28 of 31 manifests |
-| Python source files | 74 |
-| Public HTML routes | 28 |
-| Public data files | 18 |
-| Laboratory routes | 6 |
+| Ledger claims | 54 |
+| Passing immutable runs | 29 of 32 manifests |
+| Python source files | 78 |
+| Public HTML routes | 30 |
+| Public data files | 20 |
+| Laboratory routes | 7 |
 | Project-authored papers | 3 |
-| Test suite | 116 tests |
+| Test suite | 118 tests |
 
 DD-006A is a complete exact census only for its registered normalized linear
 transfer class: 123 rows, 31 weak implementations, no strict implementation,
@@ -27,13 +27,18 @@ source-choice fixture; its Common-Source Trap is not a general theorem. DD-007
 remains synthetic-only. No real-data work, recruitment, intervention, paid API,
 release, DOI, or submission is authorized.
 
+DD-009 classifies all 288 registered architecture cells, evaluates 20 coherent
+cells exactly, and retains 268 explicit exclusions. Twelve cells are
+nondominated under ADR-0016's six objectives. This is a bounded synthetic atlas,
+not a universal ranking.
+
 The site is static, progressively enhanced, and deployed from `main`. Its Labs
 are bounded-fixture explainers, not recommendation or data-collection tools.
 Issue [#32](https://github.com/yoheinakajima/distributed-discovery/issues/32)
 is settings-only: no settings-capable CLI authentication was available, and it
 does not block research.
 
-DD-008A is merged and deployed; DD-006B has complete local primary evidence and
-awaits PR integration. The remaining Program V2 queue is DD-009, DD-010,
-DD-011, a focused working paper, and Atlas/benchmark site integration. See
+DD-008A and DD-006B are merged and deployed; DD-009 has complete local evidence
+and awaits PR integration. The remaining Program V2 queue is DD-010, DD-011, a
+focused working paper, and benchmark site integration. See
 [current roadmap](current-roadmap.md) for registration status and boundaries.
