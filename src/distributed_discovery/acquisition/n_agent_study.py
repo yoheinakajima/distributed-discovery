@@ -99,7 +99,15 @@ def main() -> None:
         "command": "make dd008a-acquisition",
         "config_hash_sha256": h,
         "dependency_lock_hash_sha256": sha(root / "uv.lock"),
-        "input_hashes": {},
+        "input_hashes": {
+            str(path.relative_to(root)): sha(path)
+            for path in [
+                root / CONFIG,
+                root / "src/distributed_discovery/acquisition/n_agent.py",
+                root / "src/distributed_discovery/acquisition/n_agent_verification.py",
+                root / "src/distributed_discovery/acquisition/n_agent_study.py",
+            ]
+        },
         "random_seeds": {"algorithm": [], "model": None},
         "outputs": outputs,
     }
