@@ -5,3 +5,10 @@ regimes: [target-actions, success-actions, sole-rescue, target-hidden-actions]
 tie_roles: [0, 1]
 time_cap_seconds: 60
 memory_cap_mb: 1024
+registered_frontier_rows: 60
+target_signal_states: 27
+unilateral_joint_deviations_per_tie_role_and_row: 480
+total_joint_deviation_checks: 57600
+runtime_estimate_seconds: 30
+memory_estimate_mb: 64
+certificate_format: exact-fraction exhaustive-deviation-and-accounting-certificate-v1

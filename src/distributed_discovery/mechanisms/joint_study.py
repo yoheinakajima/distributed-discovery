@@ -28,6 +28,15 @@ def write(path: Path, value: object) -> None:
     path.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n")
 
 
+def row_fraction(row: dict[str, object], key: str) -> Fraction:
+    return Fraction(str(row[key]))
+
+
+def accounting_values(row: dict[str, object], key: str) -> list[Fraction]:
+    accounting = cast(list[dict[str, object]], row["accounting_by_tie_role"])
+    return [Fraction(str(item[key])) for item in accounting]
+
+
 def main() -> None:
     root = repository_root()
     cp = root / CONFIG
@@ -45,6 +54,48 @@ def main() -> None:
     (run / "config.yml").write_text(cp.read_text())
     rows = [frontier_row(regime, vector) for regime in REGIMES for vector in coefficient_vectors()]
     valid = all(verify_row(row) for row in rows)
+    strict = [row for row in rows if bool(row["strict"])]
+    regime_results = []
+    for regime in REGIMES:
+        subset = [row for row in rows if row["regime"] == regime]
+        strict_subset = [row for row in subset if bool(row["strict"])]
+        regime_results.append(
+            {
+                "regime": regime,
+                "weak_rows": sum(bool(row["weak"]) for row in subset),
+                "strict_rows": len(strict_subset),
+                "maximum_margin": str(max(row_fraction(row, "all_tie_margin") for row in subset)),
+                "minimum_strict_transfer_bound": (
+                    str(
+                        min(
+                            max(accounting_values(row, "worst_case_abs_transfer"))
+                            for row in strict_subset
+                        )
+                    )
+                    if strict_subset
+                    else None
+                ),
+                "minimum_strict_expected_subsidy": (
+                    str(
+                        min(
+                            max(accounting_values(row, "expected_total_transfer"))
+                            for row in strict_subset
+                        )
+                    )
+                    if strict_subset
+                    else None
+                ),
+                "best_implementable_discovery": (
+                    max(
+                        cast(list[str], row["truthful_discovery_by_tie_role"])[0]
+                        for row in strict_subset
+                    )
+                    if strict_subset
+                    else None
+                ),
+                "strict_profile_best_response_multiplicity": 1 if strict_subset else None,
+            }
+        )
     summary = {
         "frontier_rows": len(rows),
         "weak_rows": sum(bool(r["weak"]) for r in rows),
@@ -63,9 +114,73 @@ def main() -> None:
             )
         ),
         "independent_verifier": valid,
+        "regime_results": regime_results,
+        "minimum_strict_transfer_bound": str(
+            min(max(accounting_values(row, "worst_case_abs_transfer")) for row in strict)
+        ),
+        "minimum_strict_expected_subsidy": str(
+            min(max(accounting_values(row, "expected_total_transfer")) for row in strict)
+        ),
+        "best_strict_discovery": max(
+            cast(list[str], row["truthful_discovery_by_tie_role"])[0] for row in strict
+        ),
     }
     write(out / "joint-mechanism-frontier.json", rows)
     write(out / "joint-mechanism-summary.json", summary)
+    write(
+        out / "mechanism-registry.json",
+        [
+            {
+                "mechanism_id": f"DD006B-{index:02d}",
+                "regime": row["regime"],
+                "coefficients": row["coefficients"],
+                "normalization": "nonnegative coefficients sum to one",
+            }
+            for index, row in enumerate(rows, start=1)
+        ],
+    )
+    write(
+        out / "incentive-slacks.json",
+        [
+            {
+                "regime": row["regime"],
+                "coefficients": row["coefficients"],
+                "tie_roles": row["deviation_certificates_by_tie_role"],
+            }
+            for row in rows
+        ],
+    )
+    write(
+        out / "certificates.json",
+        {
+            "format": "exact-fraction exhaustive-deviation-and-accounting-certificate-v1",
+            "verified_rows": sum(verify_row(row) for row in rows),
+            "corruption_test": "tests/unit/test_joint_mechanisms.py",
+        },
+    )
+    write(
+        out / "comparison.json",
+        {
+            "DD-006": {
+                "rows": 9,
+                "strict_rows": 0,
+                "reference": "20260721T051457Z_DD-006_d49a50ea_068bce4af3",
+            },
+            "DD-006A": {
+                "rows": 123,
+                "weak_rows": 31,
+                "strict_rows": 0,
+                "maximum_margin": "0",
+                "reference": "20260721T140745Z_DD-006_401ad624_c942f43e42",
+            },
+            "DD-006B": {
+                "rows": len(rows),
+                "weak_rows": summary["weak_rows"],
+                "strict_rows": summary["strict_rows"],
+                "maximum_margin": summary["maximum_margin"],
+            },
+        },
+    )
     write(run / "validation.json", {"passed": valid, **summary})
     outputs = {str(p.relative_to(run)): sha(p) for p in out.glob("*")}
     inputs = [

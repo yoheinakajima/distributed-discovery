@@ -82,10 +82,13 @@ def expected_utility(
     return total / Fraction(1, 3)
 
 
-def margin(
+def deviation_certificate(
     regime: str, coefficients: tuple[Fraction, Fraction, Fraction], tie_role: int
-) -> Fraction:
-    gaps = []
+) -> dict[str, object]:
+    joint_gaps: list[Fraction] = []
+    report_gaps: list[Fraction] = []
+    action_gaps: list[Fraction] = []
+    best_response_counts: list[int] = []
     for agent, signal in product(range(2), range(3)):
         baseline = cast(
             tuple[int, int, int],
@@ -95,16 +98,58 @@ def margin(
             ),
         )
         value = expected_utility(regime, coefficients, agent, signal, signal, baseline, tie_role)
+        candidate_values = [value]
         for report, rule in product(range(3), product(range(3), repeat=3)):
             candidate = cast(tuple[int, int, int], rule)
             if (report, candidate) != (signal, baseline):
-                gaps.append(
-                    value
-                    - expected_utility(
-                        regime, coefficients, agent, signal, report, candidate, tie_role
-                    )
+                candidate_value = expected_utility(
+                    regime, coefficients, agent, signal, report, candidate, tie_role
                 )
-    return min(gaps)
+                candidate_values.append(candidate_value)
+                gap = value - candidate_value
+                joint_gaps.append(gap)
+                if report == signal:
+                    action_gaps.append(gap)
+                obeying_rule = cast(
+                    tuple[int, int, int],
+                    tuple(
+                        recommendation(
+                            (report, peer) if agent == 0 else (peer, report), tie_role
+                        )[agent]
+                        for peer in range(3)
+                    ),
+                )
+                if report != signal and candidate == obeying_rule:
+                    report_gaps.append(gap)
+        best = max(candidate_values)
+        best_response_counts.append(sum(candidate == best for candidate in candidate_values))
+    return {
+        "report_only_margin": str(min(report_gaps)),
+        "action_only_margin": str(min(action_gaps)),
+        "joint_margin": str(min(joint_gaps)),
+        "best_response_counts": best_response_counts,
+        "truthful_profile_is_bne": min(joint_gaps) >= 0,
+        "truthful_profile_is_strict_bne": min(joint_gaps) > 0,
+    }
+
+
+def margin(
+    regime: str, coefficients: tuple[Fraction, Fraction, Fraction], tie_role: int
+) -> Fraction:
+    return Fraction(str(deviation_certificate(regime, coefficients, tie_role)["joint_margin"]))
+
+
+def truthful_discovery(tie_role: int) -> Fraction:
+    probability = Fraction()
+    for target, signal_0, signal_1 in product(range(3), repeat=3):
+        state_probability = (
+            Fraction(1, 3)
+            * signal_probability(target, signal_0)
+            * signal_probability(target, signal_1)
+        )
+        actions = recommendation((signal_0, signal_1), tie_role)
+        probability += state_probability * Fraction(target in actions)
+    return probability
 
 
 def truthful_accounting(
@@ -113,6 +158,7 @@ def truthful_accounting(
     """Return exact ex-ante budget, utility, and transfer-bound certificates."""
     total_transfer = Fraction()
     utilities = [Fraction(), Fraction()]
+    state_total_transfers: list[Fraction] = []
     for target, signal_0, signal_1 in product(range(3), repeat=3):
         probability = (
             Fraction(1, 3)
@@ -121,14 +167,17 @@ def truthful_accounting(
         )
         reports = (signal_0, signal_1)
         actions = recommendation(reports, tie_role)
+        state_total_transfer = Fraction()
         for agent in range(2):
             payment = realized_transfer(
                 regime, coefficients, target, reports, actions, agent, tie_role
             )
             total_transfer += probability * payment
+            state_total_transfer += payment
             utilities[agent] += probability * (
                 realized_prize(target, actions, agent) + payment
             )
+        state_total_transfers.append(state_total_transfer)
 
     interim = []
     for agent, signal in product(range(2), range(3)):
@@ -156,6 +205,10 @@ def truthful_accounting(
     return {
         "expected_total_transfer": str(total_transfer),
         "expected_agent_utilities": [str(value) for value in utilities],
+        "ex_post_total_transfer_bounds": [
+            str(min(state_total_transfers)),
+            str(max(state_total_transfers)),
+        ],
         "minimum_interim_utility": str(min(interim)),
         "participation": min(interim) >= 0,
         "worst_case_abs_transfer": str(transfer_bound),
@@ -165,15 +218,19 @@ def truthful_accounting(
 def frontier_row(
     regime: str, coefficients: tuple[Fraction, Fraction, Fraction]
 ) -> dict[str, object]:
-    margins = [margin(regime, coefficients, role) for role in (0, 1)]
+    certificates = [deviation_certificate(regime, coefficients, role) for role in (0, 1)]
+    margins = [Fraction(str(certificate["joint_margin"])) for certificate in certificates]
     accounting = [truthful_accounting(regime, coefficients, role) for role in (0, 1)]
     return {
         "regime": regime,
         "coefficients": [str(x) for x in coefficients],
         "tie_role_margins": [str(x) for x in margins],
+        "deviation_certificates_by_tie_role": certificates,
         "all_tie_margin": str(min(margins)),
         "weak": min(margins) >= 0,
         "strict": min(margins) > 0,
         "externally_subsidized": True,
         "accounting_by_tie_role": accounting,
+        "truthful_discovery_by_tie_role": [str(truthful_discovery(role)) for role in (0, 1)],
+        "tie_rule": "fixed ex ante and checked for both role assignments",
     }
