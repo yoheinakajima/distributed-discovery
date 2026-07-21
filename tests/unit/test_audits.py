@@ -24,6 +24,19 @@ def test_synthetic_copying_estimator_recovers_full_copying_without_error() -> No
     assert audit["ci_low"] <= 1.0 <= audit["ci_high"]
 
 
+def test_synthetic_copying_estimator_is_near_zero_for_independent_private_actions() -> None:
+    _, events, _ = generate_sessions(
+        candidates=4,
+        sessions=2_000,
+        copying_rate=0.0,
+        protocol="private",
+        provenance_missing_rate=0.0,
+        matching_error_rate=0.0,
+        seed=29,
+    )
+    assert abs(audit_events(events, 4)["copying_estimate"]) < 0.1
+
+
 def test_event_schema_accepts_valid_fixture_and_rejects_invalid_fixture() -> None:
     schema = json.loads((ROOT / "schemas/discovery-events/v1/event.schema.json").read_text())
     validator = Draft202012Validator(schema)

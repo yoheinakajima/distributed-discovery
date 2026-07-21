@@ -82,7 +82,9 @@ def audit_events(events: list[dict[str, Any]], candidates: int) -> dict[str, flo
         by_session.setdefault(str(event["session_id"]), []).append(event)
     pairs = [pair for pair in by_session.values() if len(pair) == 2]
     agreement = sum(pair[0]["action_id"] == pair[1]["action_id"] for pair in pairs) / len(pairs)
-    baseline = 1 / candidates
+    # Independent private actions agree above 1/M because both respond to the
+    # common latent target: 3/4^2 + (1/4)^2/(M-1) in this registered generator.
+    baseline = 0.75**2 + 0.25**2 / (candidates - 1)
     copying = (agreement - baseline) / (1 - baseline)
     standard_error = math.sqrt(agreement * (1 - agreement) / len(pairs)) / (1 - baseline)
     ci_low = max(0.0, copying - 1.96 * standard_error)
