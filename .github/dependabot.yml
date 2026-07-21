@@ -4,7 +4,15 @@ updates:
     directory: /
     schedule: {interval: monthly}
     open-pull-requests-limit: 3
+    groups:
+      python-minor-patch:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
   - package-ecosystem: github-actions
     directory: /
     schedule: {interval: monthly}
     open-pull-requests-limit: 3
+    groups:
+      actions-minor-patch:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
