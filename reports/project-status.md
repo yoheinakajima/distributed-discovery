@@ -6,7 +6,7 @@
 
 Milestones M0 through M9 and operational Milestone A are complete. Cleanup issue #6 closed through squash-merged PR #12 at `1add8de5a349c57085928da8aa54da85e49c5077`; CI passed, Pages workflow `29781940577` succeeded, and all five required routes returned HTTP 200. The source repository is public under MIT at `https://yoheinakajima.github.io/distributed-discovery/`. Canonical upstream remains untouched.
 
-The authorized A–E queue and continuation cycles F–G are complete and merged. Cycle H evidence is complete on issue #22 and draft PR #23: 81 tests, 38 claims, and 15 immutable manifests validate locally before the final paper/site rebuild. The alignment-preserving certificate proves the exact canonical deterministic and ex-ante randomized private-team optimum `325089/390625`. Merge, CI, and deployment remain required before Cycle H closes.
+The authorized A–E queue and continuation cycles F–H are complete and merged. Alignment PR #23 merged as `df35f80273f106ef86f623c4676fe2a58757b6ad`; post-merge CI `29796429926` and Pages `29796429904` passed, and all seven public routes expose the exact canonical optimum `325089/390625` with the correct run provenance. DD-002 selection-robustness issue #24 and branch `research/dd002-selection-robustness` are active.
 
 ## Continuation checkpoint
 
@@ -15,7 +15,7 @@ The authorized A–E queue and continuation cycles F–G are complete and merged
 - Exact canonical private-team optimum: `325089/390625 = 0.83222784`; the prior pooled interval is valid but superseded.
 - Three Results paper: `papers/three-results/Three_Results_in_Distributed_Discovery.pdf`, 12 pages, visually audited.
 - Public Results route: `https://yoheinakajima.github.io/distributed-discovery/results.html`.
-- Active task: complete PR #23 acceptance, merge, and deploy; then begin DD-002 selection robustness.
+- Active task: define and execute the exact DD-002 equilibrium-selection catalogue under issue #24.
 
 ## 2. Repository map
 
@@ -147,12 +147,12 @@ There is no validation blocker. Public `origin`, Actions, and Pages are active. 
 
 ## 13. Exact resume point
 
-On `research/dd001-alignment-upper-bound`, run the complete paper/site/verification acceptance, visually inspect the rebuilt synthesis PDF, push PR #23, resolve review and CI, merge, and verify live Pages. Then start DD-002 selection robustness from current `main`.
+On `research/dd002-selection-robustness`, freeze the current DD-002 game and write the selection-catalogue ADR before implementing or running new procedures. The exact next source file is `src/distributed_discovery/information_design/selection.py` after the ADR fixes the rules.
 
 ## 14. Recommended next three tasks
 
-1. DD-001: merge and deploy the completed canonical certificate.
-2. DD-002: execute the registered equilibrium-selection robustness catalogue.
+1. DD-002: execute the registered equilibrium-selection robustness catalogue.
+2. DD-003: execute the bounded heterogeneous-source-accuracy census.
 3. DD-003: execute the bounded heterogeneous-source-accuracy census.
 
 ## 15. Commit list
