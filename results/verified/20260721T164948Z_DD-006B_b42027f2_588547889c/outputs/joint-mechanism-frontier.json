@@ -1,0 +1,2282 @@
+[
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "5/3",
+          "5/4"
+        ],
+        "expected_total_transfer": "2",
+        "minimum_interim_utility": "5/4",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "expected_agent_utilities": [
+          "5/4",
+          "5/3"
+        ],
+        "expected_total_transfer": "2",
+        "minimum_interim_utility": "5/4",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "1/12",
+    "coefficients": [
+      "0",
+      "0",
+      "1"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "1/12",
+      "1/12"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "19/12",
+          "17/16"
+        ],
+        "expected_total_transfer": "83/48",
+        "minimum_interim_utility": "17/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "expected_agent_utilities": [
+          "17/16",
+          "19/12"
+        ],
+        "expected_total_transfer": "83/48",
+        "minimum_interim_utility": "17/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "5/48",
+    "coefficients": [
+      "0",
+      "1/4",
+      "3/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "5/48",
+      "5/48"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "3/2",
+          "7/8"
+        ],
+        "expected_total_transfer": "35/24",
+        "minimum_interim_utility": "7/8",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "expected_agent_utilities": [
+          "7/8",
+          "3/2"
+        ],
+        "expected_total_transfer": "35/24",
+        "minimum_interim_utility": "7/8",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "5/72",
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "5/72",
+      "5/72"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "17/12",
+          "11/16"
+        ],
+        "expected_total_transfer": "19/16",
+        "minimum_interim_utility": "11/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "expected_agent_utilities": [
+          "11/16",
+          "17/12"
+        ],
+        "expected_total_transfer": "19/16",
+        "minimum_interim_utility": "11/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "-7/144",
+    "coefficients": [
+      "0",
+      "3/4",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/144",
+      "-7/144"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "4/3",
+          "1/2"
+        ],
+        "expected_total_transfer": "11/12",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "expected_agent_utilities": [
+          "1/2",
+          "4/3"
+        ],
+        "expected_total_transfer": "11/12",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "-1/6",
+    "coefficients": [
+      "0",
+      "1",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-1/6",
+      "-1/6"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "37/24",
+          "9/8"
+        ],
+        "expected_total_transfer": "7/4",
+        "minimum_interim_utility": "9/8",
+        "participation": true,
+        "worst_case_abs_transfer": "23/24"
+      },
+      {
+        "expected_agent_utilities": [
+          "9/8",
+          "37/24"
+        ],
+        "expected_total_transfer": "7/4",
+        "minimum_interim_utility": "9/8",
+        "participation": true,
+        "worst_case_abs_transfer": "23/24"
+      }
+    ],
+    "all_tie_margin": "13/72",
+    "coefficients": [
+      "1/4",
+      "0",
+      "3/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "13/72",
+      "13/72"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "35/24",
+          "15/16"
+        ],
+        "expected_total_transfer": "71/48",
+        "minimum_interim_utility": "15/16",
+        "participation": true,
+        "worst_case_abs_transfer": "23/24"
+      },
+      {
+        "expected_agent_utilities": [
+          "15/16",
+          "35/24"
+        ],
+        "expected_total_transfer": "71/48",
+        "minimum_interim_utility": "15/16",
+        "participation": true,
+        "worst_case_abs_transfer": "23/24"
+      }
+    ],
+    "all_tie_margin": "1/16",
+    "coefficients": [
+      "1/4",
+      "1/4",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "1/16",
+      "1/16"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "11/8",
+          "3/4"
+        ],
+        "expected_total_transfer": "29/24",
+        "minimum_interim_utility": "3/4",
+        "participation": true,
+        "worst_case_abs_transfer": "23/24"
+      },
+      {
+        "expected_agent_utilities": [
+          "3/4",
+          "11/8"
+        ],
+        "expected_total_transfer": "29/24",
+        "minimum_interim_utility": "3/4",
+        "participation": true,
+        "worst_case_abs_transfer": "23/24"
+      }
+    ],
+    "all_tie_margin": "-1/18",
+    "coefficients": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-1/18",
+      "-1/18"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "31/24",
+          "9/16"
+        ],
+        "expected_total_transfer": "15/16",
+        "minimum_interim_utility": "9/16",
+        "participation": true,
+        "worst_case_abs_transfer": "23/24"
+      },
+      {
+        "expected_agent_utilities": [
+          "9/16",
+          "31/24"
+        ],
+        "expected_total_transfer": "15/16",
+        "minimum_interim_utility": "9/16",
+        "participation": true,
+        "worst_case_abs_transfer": "23/24"
+      }
+    ],
+    "all_tie_margin": "-25/144",
+    "coefficients": [
+      "1/4",
+      "3/4",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-25/144",
+      "-25/144"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "17/12",
+          "1"
+        ],
+        "expected_total_transfer": "3/2",
+        "minimum_interim_utility": "1",
+        "participation": true,
+        "worst_case_abs_transfer": "11/12"
+      },
+      {
+        "expected_agent_utilities": [
+          "1",
+          "17/12"
+        ],
+        "expected_total_transfer": "3/2",
+        "minimum_interim_utility": "1",
+        "participation": true,
+        "worst_case_abs_transfer": "11/12"
+      }
+    ],
+    "all_tie_margin": "1/18",
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "1/18",
+      "1/18"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "4/3",
+          "13/16"
+        ],
+        "expected_total_transfer": "59/48",
+        "minimum_interim_utility": "13/16",
+        "participation": true,
+        "worst_case_abs_transfer": "11/12"
+      },
+      {
+        "expected_agent_utilities": [
+          "13/16",
+          "4/3"
+        ],
+        "expected_total_transfer": "59/48",
+        "minimum_interim_utility": "13/16",
+        "participation": true,
+        "worst_case_abs_transfer": "11/12"
+      }
+    ],
+    "all_tie_margin": "-1/16",
+    "coefficients": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-1/16",
+      "-1/16"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "5/4",
+          "5/8"
+        ],
+        "expected_total_transfer": "23/24",
+        "minimum_interim_utility": "5/8",
+        "participation": true,
+        "worst_case_abs_transfer": "11/12"
+      },
+      {
+        "expected_agent_utilities": [
+          "5/8",
+          "5/4"
+        ],
+        "expected_total_transfer": "23/24",
+        "minimum_interim_utility": "5/8",
+        "participation": true,
+        "worst_case_abs_transfer": "11/12"
+      }
+    ],
+    "all_tie_margin": "-13/72",
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-13/72",
+      "-13/72"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "31/24",
+          "7/8"
+        ],
+        "expected_total_transfer": "5/4",
+        "minimum_interim_utility": "7/8",
+        "participation": true,
+        "worst_case_abs_transfer": "7/8"
+      },
+      {
+        "expected_agent_utilities": [
+          "7/8",
+          "31/24"
+        ],
+        "expected_total_transfer": "5/4",
+        "minimum_interim_utility": "7/8",
+        "participation": true,
+        "worst_case_abs_transfer": "7/8"
+      }
+    ],
+    "all_tie_margin": "-5/72",
+    "coefficients": [
+      "3/4",
+      "0",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-5/72",
+      "-5/72"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "29/24",
+          "11/16"
+        ],
+        "expected_total_transfer": "47/48",
+        "minimum_interim_utility": "11/16",
+        "participation": true,
+        "worst_case_abs_transfer": "7/8"
+      },
+      {
+        "expected_agent_utilities": [
+          "11/16",
+          "29/24"
+        ],
+        "expected_total_transfer": "47/48",
+        "minimum_interim_utility": "11/16",
+        "participation": true,
+        "worst_case_abs_transfer": "7/8"
+      }
+    ],
+    "all_tie_margin": "-3/16",
+    "coefficients": [
+      "3/4",
+      "1/4",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-3/16",
+      "-3/16"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "7/6",
+          "3/4"
+        ],
+        "expected_total_transfer": "1",
+        "minimum_interim_utility": "3/4",
+        "participation": true,
+        "worst_case_abs_transfer": "5/6"
+      },
+      {
+        "expected_agent_utilities": [
+          "3/4",
+          "7/6"
+        ],
+        "expected_total_transfer": "1",
+        "minimum_interim_utility": "3/4",
+        "participation": true,
+        "worst_case_abs_transfer": "5/6"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1",
+      "0",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "5/3",
+          "5/4"
+        ],
+        "expected_total_transfer": "2",
+        "minimum_interim_utility": "5/4",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "expected_agent_utilities": [
+          "5/4",
+          "5/3"
+        ],
+        "expected_total_transfer": "2",
+        "minimum_interim_utility": "5/4",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "1/12",
+    "coefficients": [
+      "0",
+      "0",
+      "1"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "1/12",
+      "1/12"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "19/12",
+          "17/16"
+        ],
+        "expected_total_transfer": "83/48",
+        "minimum_interim_utility": "17/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "expected_agent_utilities": [
+          "17/16",
+          "19/12"
+        ],
+        "expected_total_transfer": "83/48",
+        "minimum_interim_utility": "17/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "11/144",
+    "coefficients": [
+      "0",
+      "1/4",
+      "3/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "11/144",
+      "11/144"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "3/2",
+          "7/8"
+        ],
+        "expected_total_transfer": "35/24",
+        "minimum_interim_utility": "7/8",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "expected_agent_utilities": [
+          "7/8",
+          "3/2"
+        ],
+        "expected_total_transfer": "35/24",
+        "minimum_interim_utility": "7/8",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "-11/72",
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-11/72",
+      "-11/72"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "17/12",
+          "11/16"
+        ],
+        "expected_total_transfer": "19/16",
+        "minimum_interim_utility": "11/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "expected_agent_utilities": [
+          "11/16",
+          "17/12"
+        ],
+        "expected_total_transfer": "19/16",
+        "minimum_interim_utility": "11/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "-55/144",
+    "coefficients": [
+      "0",
+      "3/4",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-55/144",
+      "-55/144"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "4/3",
+          "1/2"
+        ],
+        "expected_total_transfer": "11/12",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "expected_agent_utilities": [
+          "1/2",
+          "4/3"
+        ],
+        "expected_total_transfer": "11/12",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "-11/18",
+    "coefficients": [
+      "0",
+      "1",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-11/18",
+      "-11/18"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "17/12",
+          "1"
+        ],
+        "expected_total_transfer": "3/2",
+        "minimum_interim_utility": "1",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      },
+      {
+        "expected_agent_utilities": [
+          "1",
+          "17/12"
+        ],
+        "expected_total_transfer": "3/2",
+        "minimum_interim_utility": "1",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      }
+    ],
+    "all_tie_margin": "1/12",
+    "coefficients": [
+      "1/4",
+      "0",
+      "3/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "1/12",
+      "1/12"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "4/3",
+          "13/16"
+        ],
+        "expected_total_transfer": "59/48",
+        "minimum_interim_utility": "13/16",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      },
+      {
+        "expected_agent_utilities": [
+          "13/16",
+          "4/3"
+        ],
+        "expected_total_transfer": "59/48",
+        "minimum_interim_utility": "13/16",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      }
+    ],
+    "all_tie_margin": "-7/144",
+    "coefficients": [
+      "1/4",
+      "1/4",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/144",
+      "-7/144"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "5/4",
+          "5/8"
+        ],
+        "expected_total_transfer": "23/24",
+        "minimum_interim_utility": "5/8",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      },
+      {
+        "expected_agent_utilities": [
+          "5/8",
+          "5/4"
+        ],
+        "expected_total_transfer": "23/24",
+        "minimum_interim_utility": "5/8",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      }
+    ],
+    "all_tie_margin": "-5/18",
+    "coefficients": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-5/18",
+      "-5/18"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "7/6",
+          "7/16"
+        ],
+        "expected_total_transfer": "11/16",
+        "minimum_interim_utility": "7/16",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      },
+      {
+        "expected_agent_utilities": [
+          "7/16",
+          "7/6"
+        ],
+        "expected_total_transfer": "11/16",
+        "minimum_interim_utility": "7/16",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      }
+    ],
+    "all_tie_margin": "-73/144",
+    "coefficients": [
+      "1/4",
+      "3/4",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-73/144",
+      "-73/144"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "7/6",
+          "3/4"
+        ],
+        "expected_total_transfer": "1",
+        "minimum_interim_utility": "3/4",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      },
+      {
+        "expected_agent_utilities": [
+          "3/4",
+          "7/6"
+        ],
+        "expected_total_transfer": "1",
+        "minimum_interim_utility": "3/4",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      }
+    ],
+    "all_tie_margin": "1/18",
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": true,
+    "tie_role_margins": [
+      "1/18",
+      "1/18"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "13/12",
+          "9/16"
+        ],
+        "expected_total_transfer": "35/48",
+        "minimum_interim_utility": "9/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      },
+      {
+        "expected_agent_utilities": [
+          "9/16",
+          "13/12"
+        ],
+        "expected_total_transfer": "35/48",
+        "minimum_interim_utility": "9/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      }
+    ],
+    "all_tie_margin": "-25/144",
+    "coefficients": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-25/144",
+      "-25/144"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "1",
+          "3/8"
+        ],
+        "expected_total_transfer": "11/24",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      },
+      {
+        "expected_agent_utilities": [
+          "3/8",
+          "1"
+        ],
+        "expected_total_transfer": "11/24",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      }
+    ],
+    "all_tie_margin": "-29/72",
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-29/72",
+      "-29/72"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "11/12",
+          "1/2"
+        ],
+        "expected_total_transfer": "1/2",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "1/4"
+      },
+      {
+        "expected_agent_utilities": [
+          "1/2",
+          "11/12"
+        ],
+        "expected_total_transfer": "1/2",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "1/4"
+      }
+    ],
+    "all_tie_margin": "-5/72",
+    "coefficients": [
+      "3/4",
+      "0",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-5/72",
+      "-5/72"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "5/6",
+          "5/16"
+        ],
+        "expected_total_transfer": "11/48",
+        "minimum_interim_utility": "5/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1/4"
+      },
+      {
+        "expected_agent_utilities": [
+          "5/16",
+          "5/6"
+        ],
+        "expected_total_transfer": "11/48",
+        "minimum_interim_utility": "5/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1/4"
+      }
+    ],
+    "all_tie_margin": "-43/144",
+    "coefficients": [
+      "3/4",
+      "1/4",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-43/144",
+      "-43/144"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "2/3",
+          "1/4"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      },
+      {
+        "expected_agent_utilities": [
+          "1/4",
+          "2/3"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1",
+      "0",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "success-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "5/3",
+          "5/4"
+        ],
+        "expected_total_transfer": "2",
+        "minimum_interim_utility": "5/4",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "expected_agent_utilities": [
+          "5/4",
+          "5/3"
+        ],
+        "expected_total_transfer": "2",
+        "minimum_interim_utility": "5/4",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "1/12",
+    "coefficients": [
+      "0",
+      "0",
+      "1"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": true,
+    "tie_role_margins": [
+      "1/12",
+      "1/12"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "19/12",
+          "17/16"
+        ],
+        "expected_total_transfer": "83/48",
+        "minimum_interim_utility": "17/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "expected_agent_utilities": [
+          "17/16",
+          "19/12"
+        ],
+        "expected_total_transfer": "83/48",
+        "minimum_interim_utility": "17/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "5/48",
+    "coefficients": [
+      "0",
+      "1/4",
+      "3/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": true,
+    "tie_role_margins": [
+      "5/48",
+      "5/48"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "3/2",
+          "7/8"
+        ],
+        "expected_total_transfer": "35/24",
+        "minimum_interim_utility": "7/8",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "expected_agent_utilities": [
+          "7/8",
+          "3/2"
+        ],
+        "expected_total_transfer": "35/24",
+        "minimum_interim_utility": "7/8",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "5/72",
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": true,
+    "tie_role_margins": [
+      "5/72",
+      "5/72"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "17/12",
+          "11/16"
+        ],
+        "expected_total_transfer": "19/16",
+        "minimum_interim_utility": "11/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "expected_agent_utilities": [
+          "11/16",
+          "17/12"
+        ],
+        "expected_total_transfer": "19/16",
+        "minimum_interim_utility": "11/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "-7/144",
+    "coefficients": [
+      "0",
+      "3/4",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/144",
+      "-7/144"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "4/3",
+          "1/2"
+        ],
+        "expected_total_transfer": "11/12",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      },
+      {
+        "expected_agent_utilities": [
+          "1/2",
+          "4/3"
+        ],
+        "expected_total_transfer": "11/12",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "1"
+      }
+    ],
+    "all_tie_margin": "-1/6",
+    "coefficients": [
+      "0",
+      "1",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-1/6",
+      "-1/6"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "17/12",
+          "1"
+        ],
+        "expected_total_transfer": "3/2",
+        "minimum_interim_utility": "1",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      },
+      {
+        "expected_agent_utilities": [
+          "1",
+          "17/12"
+        ],
+        "expected_total_transfer": "3/2",
+        "minimum_interim_utility": "1",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      }
+    ],
+    "all_tie_margin": "1/12",
+    "coefficients": [
+      "1/4",
+      "0",
+      "3/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": true,
+    "tie_role_margins": [
+      "1/12",
+      "1/12"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "4/3",
+          "13/16"
+        ],
+        "expected_total_transfer": "59/48",
+        "minimum_interim_utility": "13/16",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      },
+      {
+        "expected_agent_utilities": [
+          "13/16",
+          "4/3"
+        ],
+        "expected_total_transfer": "59/48",
+        "minimum_interim_utility": "13/16",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      }
+    ],
+    "all_tie_margin": "1/16",
+    "coefficients": [
+      "1/4",
+      "1/4",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": true,
+    "tie_role_margins": [
+      "1/16",
+      "1/16"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "5/4",
+          "5/8"
+        ],
+        "expected_total_transfer": "23/24",
+        "minimum_interim_utility": "5/8",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      },
+      {
+        "expected_agent_utilities": [
+          "5/8",
+          "5/4"
+        ],
+        "expected_total_transfer": "23/24",
+        "minimum_interim_utility": "5/8",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      }
+    ],
+    "all_tie_margin": "-1/18",
+    "coefficients": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-1/18",
+      "-1/18"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "7/6",
+          "7/16"
+        ],
+        "expected_total_transfer": "11/16",
+        "minimum_interim_utility": "7/16",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      },
+      {
+        "expected_agent_utilities": [
+          "7/16",
+          "7/6"
+        ],
+        "expected_total_transfer": "11/16",
+        "minimum_interim_utility": "7/16",
+        "participation": true,
+        "worst_case_abs_transfer": "3/4"
+      }
+    ],
+    "all_tie_margin": "-25/144",
+    "coefficients": [
+      "1/4",
+      "3/4",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-25/144",
+      "-25/144"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "7/6",
+          "3/4"
+        ],
+        "expected_total_transfer": "1",
+        "minimum_interim_utility": "3/4",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      },
+      {
+        "expected_agent_utilities": [
+          "3/4",
+          "7/6"
+        ],
+        "expected_total_transfer": "1",
+        "minimum_interim_utility": "3/4",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      }
+    ],
+    "all_tie_margin": "1/18",
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": true,
+    "tie_role_margins": [
+      "1/18",
+      "1/18"
+    ],
+    "weak": true
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "13/12",
+          "9/16"
+        ],
+        "expected_total_transfer": "35/48",
+        "minimum_interim_utility": "9/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      },
+      {
+        "expected_agent_utilities": [
+          "9/16",
+          "13/12"
+        ],
+        "expected_total_transfer": "35/48",
+        "minimum_interim_utility": "9/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      }
+    ],
+    "all_tie_margin": "-1/16",
+    "coefficients": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-1/16",
+      "-1/16"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "1",
+          "3/8"
+        ],
+        "expected_total_transfer": "11/24",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      },
+      {
+        "expected_agent_utilities": [
+          "3/8",
+          "1"
+        ],
+        "expected_total_transfer": "11/24",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "1/2"
+      }
+    ],
+    "all_tie_margin": "-13/72",
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-13/72",
+      "-13/72"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "11/12",
+          "1/2"
+        ],
+        "expected_total_transfer": "1/2",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "1/4"
+      },
+      {
+        "expected_agent_utilities": [
+          "1/2",
+          "11/12"
+        ],
+        "expected_total_transfer": "1/2",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "1/4"
+      }
+    ],
+    "all_tie_margin": "-5/72",
+    "coefficients": [
+      "3/4",
+      "0",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-5/72",
+      "-5/72"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "5/6",
+          "5/16"
+        ],
+        "expected_total_transfer": "11/48",
+        "minimum_interim_utility": "5/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1/4"
+      },
+      {
+        "expected_agent_utilities": [
+          "5/16",
+          "5/6"
+        ],
+        "expected_total_transfer": "11/48",
+        "minimum_interim_utility": "5/16",
+        "participation": true,
+        "worst_case_abs_transfer": "1/4"
+      }
+    ],
+    "all_tie_margin": "-3/16",
+    "coefficients": [
+      "3/4",
+      "1/4",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-3/16",
+      "-3/16"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "2/3",
+          "1/4"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      },
+      {
+        "expected_agent_utilities": [
+          "1/4",
+          "2/3"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1",
+      "0",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "sole-rescue",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "2/3",
+          "1/4"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      },
+      {
+        "expected_agent_utilities": [
+          "1/4",
+          "2/3"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "0",
+      "0",
+      "1"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "2/3",
+          "1/4"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      },
+      {
+        "expected_agent_utilities": [
+          "1/4",
+          "2/3"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "0",
+      "1/4",
+      "3/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "2/3",
+          "1/4"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      },
+      {
+        "expected_agent_utilities": [
+          "1/4",
+          "2/3"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "0",
+      "1/2",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "2/3",
+          "1/4"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      },
+      {
+        "expected_agent_utilities": [
+          "1/4",
+          "2/3"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "0",
+      "3/4",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "2/3",
+          "1/4"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      },
+      {
+        "expected_agent_utilities": [
+          "1/4",
+          "2/3"
+        ],
+        "expected_total_transfer": "0",
+        "minimum_interim_utility": "1/4",
+        "participation": true,
+        "worst_case_abs_transfer": "0"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "0",
+      "1",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "19/24",
+          "3/8"
+        ],
+        "expected_total_transfer": "1/4",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/24"
+      },
+      {
+        "expected_agent_utilities": [
+          "3/8",
+          "19/24"
+        ],
+        "expected_total_transfer": "1/4",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/24"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1/4",
+      "0",
+      "3/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "19/24",
+          "3/8"
+        ],
+        "expected_total_transfer": "1/4",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/24"
+      },
+      {
+        "expected_agent_utilities": [
+          "3/8",
+          "19/24"
+        ],
+        "expected_total_transfer": "1/4",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/24"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1/4",
+      "1/4",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "19/24",
+          "3/8"
+        ],
+        "expected_total_transfer": "1/4",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/24"
+      },
+      {
+        "expected_agent_utilities": [
+          "3/8",
+          "19/24"
+        ],
+        "expected_total_transfer": "1/4",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/24"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "19/24",
+          "3/8"
+        ],
+        "expected_total_transfer": "1/4",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/24"
+      },
+      {
+        "expected_agent_utilities": [
+          "3/8",
+          "19/24"
+        ],
+        "expected_total_transfer": "1/4",
+        "minimum_interim_utility": "3/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/24"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1/4",
+      "3/4",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "11/12",
+          "1/2"
+        ],
+        "expected_total_transfer": "1/2",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "5/12"
+      },
+      {
+        "expected_agent_utilities": [
+          "1/2",
+          "11/12"
+        ],
+        "expected_total_transfer": "1/2",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "5/12"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1/2",
+      "0",
+      "1/2"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "11/12",
+          "1/2"
+        ],
+        "expected_total_transfer": "1/2",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "5/12"
+      },
+      {
+        "expected_agent_utilities": [
+          "1/2",
+          "11/12"
+        ],
+        "expected_total_transfer": "1/2",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "5/12"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1/2",
+      "1/4",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "11/12",
+          "1/2"
+        ],
+        "expected_total_transfer": "1/2",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "5/12"
+      },
+      {
+        "expected_agent_utilities": [
+          "1/2",
+          "11/12"
+        ],
+        "expected_total_transfer": "1/2",
+        "minimum_interim_utility": "1/2",
+        "participation": true,
+        "worst_case_abs_transfer": "5/12"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1/2",
+      "1/2",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "25/24",
+          "5/8"
+        ],
+        "expected_total_transfer": "3/4",
+        "minimum_interim_utility": "5/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/8"
+      },
+      {
+        "expected_agent_utilities": [
+          "5/8",
+          "25/24"
+        ],
+        "expected_total_transfer": "3/4",
+        "minimum_interim_utility": "5/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/8"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "3/4",
+      "0",
+      "1/4"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "25/24",
+          "5/8"
+        ],
+        "expected_total_transfer": "3/4",
+        "minimum_interim_utility": "5/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/8"
+      },
+      {
+        "expected_agent_utilities": [
+          "5/8",
+          "25/24"
+        ],
+        "expected_total_transfer": "3/4",
+        "minimum_interim_utility": "5/8",
+        "participation": true,
+        "worst_case_abs_transfer": "5/8"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "3/4",
+      "1/4",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  },
+  {
+    "accounting_by_tie_role": [
+      {
+        "expected_agent_utilities": [
+          "7/6",
+          "3/4"
+        ],
+        "expected_total_transfer": "1",
+        "minimum_interim_utility": "3/4",
+        "participation": true,
+        "worst_case_abs_transfer": "5/6"
+      },
+      {
+        "expected_agent_utilities": [
+          "3/4",
+          "7/6"
+        ],
+        "expected_total_transfer": "1",
+        "minimum_interim_utility": "3/4",
+        "participation": true,
+        "worst_case_abs_transfer": "5/6"
+      }
+    ],
+    "all_tie_margin": "-7/36",
+    "coefficients": [
+      "1",
+      "0",
+      "0"
+    ],
+    "externally_subsidized": true,
+    "regime": "target-hidden-actions",
+    "strict": false,
+    "tie_role_margins": [
+      "-7/36",
+      "-7/36"
+    ],
+    "weak": false
+  }
+]
