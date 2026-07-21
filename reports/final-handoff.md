@@ -1,6 +1,6 @@
 # Final handoff
 
-The complete continuation program through research cycles F–J, dependency cycle K, and the single settings attempt in cycle L is integrated. The authoritative evidence/status record is [`project-status.md`](project-status.md), and the durable restart history is [`../plans/MASTER_EXEC_PLAN.md`](../plans/MASTER_EXEC_PLAN.md).
+The complete continuation program through DD-007 is integrated. The current extension record is [`research-program-integration.md`](research-program-integration.md), the broader historical record is [`project-status.md`](project-status.md), and the durable restart history is [`../plans/MASTER_EXEC_PLAN.md`](../plans/MASTER_EXEC_PLAN.md).
 
 The frozen canonical zero-communication private-team optimum is exactly `325089/390625`, because the alignment-preserving upper certificate meets direct clue-following. The prior pooled top-eight value `860391662035297/1001129150390625` remains a valid organizational benchmark but is no longer the best private-team upper bound.
 
