@@ -14,8 +14,9 @@ default. It appends nine treatment cells, six hypotheses, four outcomes, and
 three response scenarios. Inspect it with `distributed-discovery experiment
 --version v2 design`; execute `make dd011-attention` only from a clean commit.
 
-The registered Program V4 extension is explicit v3 and preserves the v1
-default and complete v2 registries. It appends eight threshold/dynamic cells,
-six hypotheses, four outcomes, and three response scenarios. Issue #119 and
-branch `research/synthetic-experiment-v3-program-v4` are active. No v3 run or
-claim exists before the clean-source and draft-PR gate.
+The Program V4 extension is explicit v3 and preserves the v1 default and
+complete v2 registries. It appends eight threshold/dynamic cells, six
+hypotheses, four outcomes, and three response scenarios. Its immutable run is
+`20260722T061958Z_DD-011_5743ccba_19b6517655`; verify it with
+`distributed-discovery experiment --version v3 verify
+20260722T061958Z_DD-011_5743ccba_19b6517655`. No human experiment exists.

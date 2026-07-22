@@ -1601,7 +1601,7 @@ def _render(
         ),
         "experiment-design": (
             "Experiment design",
-            "DD-C-0070",
+            "DD-C-0088",
             "Filter conditional synthetic power while preserving the no-human-data boundary.",
         ),
         "audience-design": (

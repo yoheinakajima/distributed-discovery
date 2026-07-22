@@ -145,6 +145,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert 'id="DD-C-0065"' in claims
     assert 'id="DD-C-0069"' in claims
     assert 'id="DD-C-0070"' in claims
+    assert 'id="DD-C-0088"' in claims
     assert "unvalidated values" in claims
 
     runs = json.loads((output / "data/runs.json").read_text(encoding="utf-8"))["runs"]
@@ -188,6 +189,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "experiment-kit/design.html",
         "experiment-kit/power.html",
         "experiment-kit/attention.html",
+        "experiment-kit/threshold-dynamic.html",
         "labs/benchmark.html",
         "labs/experiment-design.html",
         "labs/attention.html",
@@ -234,12 +236,14 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert (output / "downloads/discoverybench-task-v3.schema.json").is_file()
     assert (output / "downloads/dd011-design-v3.schema.json").is_file()
     experiment = json.loads((output / "data/experiment/summary.json").read_text())
-    assert experiment["run_id"] == "20260721T232119Z_DD-011_121162f8_e454b06d2c"
-    assert experiment["schema_version"] == 2
-    assert experiment["summary"]["treatment_cells"] == 29
-    assert experiment["summary"]["hypotheses"] == 14
-    assert experiment["summary"]["response_scenarios"] == 11
-    assert experiment["summary"]["power_rows"] == 924
+    assert experiment["run_id"] == "20260722T061958Z_DD-011_5743ccba_19b6517655"
+    assert experiment["schema_version"] == 3
+    assert experiment["summary"]["treatment_cells"] == 37
+    assert experiment["summary"]["hypotheses"] == 20
+    assert experiment["summary"]["outcomes"] == 23
+    assert experiment["summary"]["response_scenarios"] == 14
+    assert experiment["summary"]["power_rows"] == 1680
+    assert experiment["summary"]["calibration_failures_retained"] == 644
     assert experiment["summary"]["no_human_data"] is True
     attention_summary = json.loads((output / "data/attention/summary.json").read_text())
     assert attention_summary["run_id"] == "20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b"
@@ -334,6 +338,13 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "Plan a discovery experiment" in experiment_overview
     assert "Materials and safeguards" in experiment_overview
     assert "No participants were recruited" in experiment_overview
+    assert "Threshold and dynamic extension" in experiment_overview
+    threshold_dynamic_experiment = (output / "experiment-kit/threshold-dynamic.html").read_text(
+        encoding="utf-8"
+    )
+    assert "Eight synthetic treatments" in threshold_dynamic_experiment
+    assert "not behavioral findings" in threshold_dynamic_experiment
+    assert "Threshold + dynamics" in threshold_dynamic_experiment
 
     results = (output / "results.html").read_text(encoding="utf-8")
     for phrase in [

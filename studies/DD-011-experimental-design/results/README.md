@@ -8,6 +8,10 @@ Selective-attention v2 run:
 assignments, 924 power/MDE rows, retained failures, verification, and corruption
 artifacts. No participant or human data exist in either run.
 
-Program V4 v3 is registered under issue #119 with 37 cells and no run yet. Do
-not create its immutable result directory before the clean source commit and
-draft PR. Earlier runs must never be overwritten or rerun for freshness.
+Program V4 v3 run:
+`20260722T061958Z_DD-011_5743ccba_19b6517655`. It preserves v1/v2 and adds the
+37-cell design registry, 20 hypotheses, 14 scenarios, 1,184 balanced synthetic
+assignments, 1,680 power/MDE rows, 644 retained large-sample calibration
+failures, verification, and four corruption artifacts. No participant or human
+data exist in any run. Earlier runs and v3 must never be overwritten or rerun
+for freshness.

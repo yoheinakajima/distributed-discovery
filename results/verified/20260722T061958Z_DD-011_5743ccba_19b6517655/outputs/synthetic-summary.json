@@ -1,0 +1,17 @@
+{
+  "calibration_failures_retained": 644,
+  "elapsed_seconds": 0.874741,
+  "experiment_version": "v3",
+  "hypotheses": 20,
+  "memory_cap_mb": 2048,
+  "monte_carlo_draws": 1680000,
+  "no_human_data": true,
+  "outcomes": 23,
+  "peak_memory_mb": 33.094,
+  "power_rows": 1680,
+  "response_scenarios": 14,
+  "sample_sizes": 6,
+  "synthetic_assignments": 1184,
+  "treatment_cells": 37,
+  "wall_time_cap_seconds": 600
+}

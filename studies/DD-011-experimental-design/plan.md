@@ -38,3 +38,21 @@ recompute all v3 random streams, preserve the v2 power rows under shared seeds,
 check four Program V4 source fixtures, and reject all four corruptions. The next
 gate is the frozen source commit and draft PR; only then may the registered v3
 configuration execute once.
+
+Frozen source commit `5743ccb` and draft PR #120 preceded the sole v3 run
+`20260722T061958Z_DD-011_5743ccba_19b6517655`. It passed in 0.874741 seconds at
+33.094 MB, generated 1,184 assignments and 1,680 power rows from 1,680,000
+seeded draws, and independently reproduced every rejection count plus four
+Program V4 source fixtures. All four corruptions were rejected. The 644
+failures among 840 registered large-sample rows are retained; they are
+calibration failures, not behavioral results. DD-C-0088 passed its separate
+Monte Carlo evidence audit. The active gate is final repository/site
+acceptance, evidence commit, PR CI/merge, post-merge CI/Pages, issue closure,
+and live experiment/data/schema routes. The run must not be repeated.
+
+Final local acceptance passed bootstrap, Ruff, MyPy on 133 source files, all
+210 tests, the 88-claim ledger, all 47 manifests, and the 63-page/22-study site.
+The generated experiment kit selects v3, preserves the v2 attention page,
+publishes all three schemas and the complete power/calibration data, links the
+immutable run and DD-C-0088, and exposes the threshold/dynamic page with the
+no-human-data warning. The next action is the evidence commit and push.

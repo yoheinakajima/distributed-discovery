@@ -1,0 +1,114 @@
+[
+  {
+    "attrition_rate": 0.0,
+    "effect_multiplier": 1.0,
+    "intracluster_correlation": 0.0,
+    "label": "rational attention equilibrium",
+    "noise_multiplier": 0.85,
+    "scenario_id": "S1-rational"
+  },
+  {
+    "attrition_rate": 0.0,
+    "effect_multiplier": 0.8,
+    "intracluster_correlation": 0.02,
+    "label": "noisy best response",
+    "noise_multiplier": 1.15,
+    "scenario_id": "S2-quantal"
+  },
+  {
+    "attrition_rate": 0.0,
+    "effect_multiplier": 0.7,
+    "intracluster_correlation": 0.04,
+    "label": "heterogeneous source costs",
+    "noise_multiplier": 1.1,
+    "scenario_id": "S3-costs"
+  },
+  {
+    "attrition_rate": 0.0,
+    "effect_multiplier": 0.75,
+    "intracluster_correlation": 0.05,
+    "label": "social preference heterogeneity",
+    "noise_multiplier": 1.2,
+    "scenario_id": "S4-social"
+  },
+  {
+    "attrition_rate": 0.0,
+    "effect_multiplier": 0.6,
+    "intracluster_correlation": 0.03,
+    "label": "partial compliance",
+    "noise_multiplier": 1.15,
+    "scenario_id": "S5-compliance"
+  },
+  {
+    "attrition_rate": 0.0,
+    "effect_multiplier": 0.65,
+    "intracluster_correlation": 0.03,
+    "label": "report error",
+    "noise_multiplier": 1.2,
+    "scenario_id": "S6-report-error"
+  },
+  {
+    "attrition_rate": 0.15,
+    "effect_multiplier": 0.8,
+    "intracluster_correlation": 0.04,
+    "label": "attrition",
+    "noise_multiplier": 1.1,
+    "scenario_id": "S7-attrition"
+  },
+  {
+    "attrition_rate": 0.05,
+    "effect_multiplier": 0.9,
+    "intracluster_correlation": 0.08,
+    "label": "learning over rounds",
+    "noise_multiplier": 1.05,
+    "scenario_id": "S8-learning"
+  },
+  {
+    "attrition_rate": 0.0,
+    "effect_multiplier": 0.72,
+    "intracluster_correlation": 0.05,
+    "label": "heterogeneous public-clue salience",
+    "noise_multiplier": 1.18,
+    "scenario_id": "S9-salience"
+  },
+  {
+    "attrition_rate": 0.0,
+    "effect_multiplier": 0.55,
+    "intracluster_correlation": 0.06,
+    "label": "memory leakage across attention modes",
+    "noise_multiplier": 1.22,
+    "scenario_id": "S10-memory-leakage"
+  },
+  {
+    "attrition_rate": 0.0,
+    "effect_multiplier": 0.58,
+    "intracluster_correlation": 0.05,
+    "label": "designated-role aversion",
+    "noise_multiplier": 1.2,
+    "scenario_id": "S11-role-aversion"
+  },
+  {
+    "attrition_rate": 0.0,
+    "effect_multiplier": 0.65,
+    "intracluster_correlation": 0.05,
+    "label": "threshold-team coordination loss",
+    "noise_multiplier": 1.15,
+    "scenario_id": "S12-threshold-coordination"
+  },
+  {
+    "attrition_rate": 0.0,
+    "effect_multiplier": 0.7,
+    "intracluster_correlation": 0.05,
+    "label": "visible-history herding response",
+    "noise_multiplier": 1.18,
+    "scenario_id": "S13-visibility-herding"
+  },
+  {
+    "attrition_rate": 0.0,
+    "effect_multiplier": 0.6,
+    "intracluster_correlation": 0.06,
+    "label": "heterogeneous stopping compliance",
+    "noise_multiplier": 1.2,
+    "scenario_id": "S14-stopping-heterogeneity"
+  }
+]

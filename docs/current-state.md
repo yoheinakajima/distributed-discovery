@@ -17,9 +17,10 @@ identifying that selected rule with all equilibria. DD-015 is complete and
 deployed at its bounded dynamic-attention and separately labeled planner-only
 threshold-two scopes. DD-018 is complete and deployed at its bounded
 common-posterior mechanism scope. DiscoveryBench v3 is complete and deployed
-with all earlier versions preserved. Synthetic Experiment v3 is registered as
-issue #119 with a 37-cell synthetic-only design and no v3 run or claim yet. It
-is followed by the focused paper, Labs, and final handoff.
+with all earlier versions preserved. Synthetic Experiment v3 has complete
+bounded evidence pending deployment: all earlier versions are preserved, every
+calibration failure remains public, and no human experiment exists. It is
+followed by the focused paper, Labs, and final handoff.
 
 Program V5, *The Information Sharing Frontier*, is a roadmap direction only
 until Program V4 completes. It will begin with a documentation baseline and one
@@ -31,15 +32,15 @@ canonical Shared Discovery Paradox repository remains pinned at
 
 | Measure | Current value |
 | --- | ---: |
-| Ledger claims | 87 |
-| Passing immutable runs | 43 of 46 manifests |
+| Ledger claims | 88 |
+| Passing immutable runs | 44 of 47 manifests |
 | Registered studies | 22 |
 | Python source files | 133 |
-| Public HTML routes | 62 |
-| Public data files | 66 |
+| Public HTML routes | 63 |
+| Public data files | 62 |
 | Laboratory routes | 12 |
 | Validated project papers | 5 |
-| Checksum-registered downloads | 19 |
+| Checksum-registered downloads | 21 |
 | Test suite | 210 collected tests |
 
 ## Program V4 exact result
@@ -102,6 +103,17 @@ enabled.
 
 - DiscoveryBench v3: `20260722T054447Z_DD-010_d265e480_6930915b02`,
   DD-C-0087.
+
+Synthetic Experiment v3 preserves the v1 default and every shared-seed v2
+power row while adding eight threshold/dynamic cells and six synthetic
+contrasts. Its 37-cell registry contains 20 hypotheses, 23 outcomes, and 14
+response scenarios; 1,184 balanced synthetic assignments support 1,680 power
+rows and 1,680,000 seeded draws. All 644 failures among 840 rows at sample sizes
+640 or greater remain published. These are conditional calibration results,
+not empirical or behavioral evidence.
+
+- Synthetic Experiment v3:
+  `20260722T061958Z_DD-011_5743ccba_19b6517655`, DD-C-0088.
 
 ## Program V3 exact results
 

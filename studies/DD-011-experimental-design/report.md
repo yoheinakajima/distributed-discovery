@@ -30,3 +30,14 @@ rows among the 462 large-sample checks are retained. Under the rational-attentio
 scenario at N=960, H13 and H14 remain below 0.80 at 0.764 and 0.632; these are
 calibration failures, not behavioral results. Claim DD-C-0070 is synthetic
 Monte Carlo evidence only.
+
+Threshold/dynamic v3 run
+`20260722T061958Z_DD-011_5743ccba_19b6517655` preserves v1/v2 and extends the
+registry to 37 cells, 20 hypotheses, 23 outcomes, and 14 response scenarios.
+It generates 1,184 balanced synthetic assignments and 1,680 power rows from
+1,680,000 seeded draws. The separate verifier reproduces every rejection count,
+the complete shared-seed v2 grid, and four immutable Program V4 source fixtures.
+All 644 below-threshold rows among the 840 large-sample checks are retained. In
+the favorable rational scenario at N=960, H15–H20 are respectively 1.000,
+0.999, 0.918, 0.948, 1.000, and 0.999. Claim DD-C-0088 is conditional synthetic
+Monte Carlo evidence only, not a human or behavioral result.

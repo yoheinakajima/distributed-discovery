@@ -266,6 +266,22 @@ before its independent verifier and immutable primary run pass.
   fixtures, and reject altered power, source registry, identifiers, and the
   no-human-data boundary. The next gate is the source commit and draft PR; no
   registered v3 run has executed.
+- 2026-07-22: Synthetic Experiment v3 source froze as `5743ccb` and draft PR
+  #120 opened before the sole run
+  `20260722T061958Z_DD-011_5743ccba_19b6517655`. The run passed in 0.874741
+  seconds at 33.094 MB with 1,184 assignments, 1,680 power rows, 1,680,000
+  seeded draws, complete shared-seed v2 preservation, four independently
+  checked Program V4 source fixtures, and four rejected corruptions. All 644 of
+  840 sub-0.80 large-sample calibration rows are retained. DD-C-0088 passed its
+  separate audit. The active gate is full repository/site acceptance, evidence
+  commit, PR CI/merge, post-merge CI/Pages, issue closure, and live routes; the
+  run must not be repeated.
+- 2026-07-22: Synthetic Experiment v3 final local acceptance passed bootstrap,
+  Ruff, MyPy on 133 source files, all 210 tests, the 88-claim ledger, all 47
+  manifests, and the 63-page/22-study site. The generated experiment surface
+  selects v3, retains all 644 failures, preserves v2 attention and power rows,
+  publishes all three schemas, links DD-C-0088 and the immutable run, and keeps
+  the no-human-data warning. The next action is the evidence commit and push.
 
 ### Program V3 attention queue (complete, 2026-07-21)
 
