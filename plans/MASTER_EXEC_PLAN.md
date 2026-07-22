@@ -65,8 +65,9 @@ conjecture until proof or an exact counterexample supplies the permitted status.
 
 ### Milestones
 
-- **A (active):** governance and publication architecture, issue #133.
-- **B:** next live study, expected DD-020, Incremental Sharing and Independent
+- **A (complete):** governance and publication architecture, issue #133 and
+  PR #134.
+- **B (active):** DD-020 Incremental Sharing and Independent
   Rescue.
 - **C:** editorial theorem gate and synthesis prospectus.
 - **D:** public DD-020 integration and output-connected Lab.
@@ -80,10 +81,8 @@ conjecture until proof or an exact counterexample supplies the permitted status.
 - [x] Audit local Git, worktrees, remote main, open issues/PRs, CI, Pages, live
   routes, and factual inventories; run `gh auth status` exactly once.
 - [x] Create issue #133 and the sole active Milestone A branch.
-- [ ] Complete, validate, merge, deploy, close, and synchronize Milestone A.
-  Local implementation and acceptance pass; PR readiness, merge, post-merge
-  CI/Pages, issue closure, and main synchronization remain.
-- [ ] Register and complete the next live Incremental Sharing study.
+- [x] Complete, validate, merge, deploy, close, and synchronize Milestone A.
+- [ ] Register and complete DD-020 Incremental Sharing and Independent Rescue.
 - [ ] Apply and merge the editorial theorem gate and synthesis prospectus.
 - [ ] Build and deploy the DD-020 public integration and Lab.
 - [ ] Run final acceptance and reconcile every required handoff document.
@@ -104,6 +103,12 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   footer link were absent from that stale package. Re-running with the
   Makefile-equivalent `PYTHONPATH="$PWD/src"` passed all 13 targeted tests; no
   research output or run was created.
+- Milestone A PR #134 passed push CI `29926942819`, PR CI `29926944262`, and
+  paper/site build `29926944328`, squash-merged as `dc32ff17`, and closed issue
+  #133. Post-merge CI `29927131835`, Pages `29927132030`, and the live Program,
+  Research, Papers, and route-registry pages pass. The live registry still ends
+  at DD-019, so issue #135 and branch `research/dd020-incremental-sharing`
+  allocate DD-020.
 
 ### Decision log
 
@@ -118,6 +123,9 @@ conjecture until proof or an exact counterexample supplies the permitted status.
 - `2026-07-22T14:03:38Z`: retain the direct non-editable targeted-test failure
   as an environment-cache observation and use the repository Make targets,
   which export `src`, for authoritative validation.
+- `2026-07-22T14:13:02Z`: mark Milestone A complete only after merge,
+  post-merge CI/Pages, live-route checks, issue closure, and synchronized clean
+  main. Allocate DD-020 only after the repeated live registry and open-PR audit.
 
 ### Validation strategy
 
@@ -164,9 +172,11 @@ rerun any passing primary configuration. If Milestone A is merged, synchronize
 
 ### Outcome and retrospective
 
-Pending. Update after every material decision, failed check, completed
-milestone, immutable run, claim audit, merge, and deployment. Exactly one
-milestone remains active.
+Milestone A is complete and deployed without changing evidence inventories or
+paper PDFs. Its hierarchy resolves the previous ambiguity between a study and
+a paper while keeping program synthesis non-evidentiary. Milestone B is the
+sole active milestone. Update after every material decision, failed check,
+immutable run, claim audit, merge, and deployment.
 
 ## Current state
 

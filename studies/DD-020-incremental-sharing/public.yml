@@ -1,0 +1,14 @@
+study_id: DD-020
+title: Incremental Sharing and Independent Rescue
+slug: dd-020
+phase: registered
+summary: Registered exact study of marginal pooled accuracy and the private rescue action lost as a one-action sharing block expands.
+public_artifacts:
+  - path: studies/DD-020-incremental-sharing/model.md
+    description: Frozen incremental-sharing protocol and baseline semantics
+  - path: studies/DD-020-incremental-sharing/plan.md
+    description: Living bounded execution and validation plan
+  - path: studies/DD-020-incremental-sharing/configs/census.yml
+    description: Frozen exact point-channel census and resource bounds
+claim_ids: []
+run_ids: []
