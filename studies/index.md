@@ -25,6 +25,7 @@
 | DD-017 | Threshold Equilibrium Selection | complete bounded study | Preserve DD-C-0075 through DD-C-0078, the immutable registry, and the distinct coalition concepts |
 | DD-018 | Minimum Viable Team Mechanisms | complete bounded study | Preserve DD-C-0083 through DD-C-0086, the immutable run, and authority/incentive/coalition boundaries |
 | DD-019 | Signal Geometry and the Action-Budget Discovery Profile | complete bounded study; deployed through PR #131 and closeout PR #132 | Preserve DD-C-0089 through DD-C-0091, the immutable run, and private/planner/scalar boundaries |
+| DD-020 | Incremental Sharing and Independent Rescue | complete bounded study; merge pending on PR #136 | Preserve DD-C-0092 through DD-C-0096, the immutable run, theorem scope, and arbitrary-channel counterexample |
 
 Each executed directory contains its question, model, plan, claims view, status,
 results index, and report. Program V3's completed sequence is governed by
@@ -38,6 +39,8 @@ DD-018 has one passing immutable exact run supporting four verified bounded
 computational claims. Its common-posterior input does not test report
 truthfulness, and its pair/tau checks are not coalition-proofness.
 DD-019 has one passing immutable exact run supporting three independently
-reproduced bounded computational claims. Incremental Sharing is the next
-authorized Program V5 package but has no study ID before its live registration
-gate.
+reproduced bounded computational claims. DD-020 has one passing immutable
+exact run supporting three verified analytic results and two independently
+reproduced bounded computational results. Its point-channel theorem does not
+extend to arbitrary channels: the guaranteed shortlist has positive sharing
+increments while the same-accuracy noisy point has negative increments.

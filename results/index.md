@@ -1,7 +1,7 @@
 # Result index
 
-Current inventory: 48 immutable manifests, of which 45 have passing validation
-and exit status zero. DD-019 adds one passing exact primary run without
+Current inventory: 49 immutable manifests, of which 46 have passing validation
+and exit status zero. DD-020 adds one passing exact primary run without
 overwriting prior evidence.
 
 - [`baseline/`](baseline/README.md): canonical upstream reproduction artifacts.
@@ -106,6 +106,13 @@ The DD-019 Signal Geometry run is
 finite channel laws, 15 exact pooled profile entries, independent histogram
 agreement, a same-accuracy profile counterexample, five recovery budgets, and
 three corruption rejections. It supports DD-C-0089 through DD-C-0091.
+
+The DD-020 Incremental Sharing run is
+`verified/20260722T142551Z_DD-020_3854fff6_37c11a850a`. It preserves 2,555
+exact point-protocol rows across 73 `(M,p)` cells, two-method agreement, five
+DD-019 incremental profiles, the same-accuracy opposite-sign counterexample,
+and five corruption rejections. It supports DD-C-0092 through DD-C-0096; the
+general point result is proved analytically rather than promoted from the grid.
 
 All completed primary runs are immutable and must not be rerun just to refresh
 timestamps. Public summaries are generated only after manifest and output

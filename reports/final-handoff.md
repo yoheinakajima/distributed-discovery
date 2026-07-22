@@ -2,9 +2,11 @@
 
 > Historical Program V4 handoff with a current continuation note: Program V5's
 > documentation baseline and DD-019 are now complete and deployed. Current
-> main is `5e6c800213232be2fdcdc2aa19027fb5a8400e85`; Incremental Sharing and
-> Independent Rescue is next after the governance/publication-architecture
-> milestone. The Program V4 evidence below is unchanged.
+> Governance/publication architecture is merged at `dc32ff17`. DD-020
+> Incremental Sharing is evidence-complete on PR #136 with immutable run
+> `20260722T142551Z_DD-020_3854fff6_37c11a850a` and DD-C-0092–0096; merge and
+> deployment precede its editorial theorem gate. The Program V4 evidence below
+> is unchanged.
 
 Program V4, *Threshold Discovery: Coordination, Crowding, and Minimum Viable
 Teams*, is complete at its registered bounded scope. This documentation-only
@@ -88,8 +90,8 @@ paper with no DOI, submission, peer review, or verified novelty claim.
 
 ## Resume point
 
-Program V5's documentation baseline and DD-019 Signal Geometry are complete and
-deployed. Resume with the governance/publication-architecture milestone, then
-allocate the next live study ID to Incremental Sharing and Independent Rescue
-only after its bounded registration passes. Do not rerun a completed primary
-configuration for freshness. Settings-only issue #32 remains separate.
+Program V5's documentation baseline, DD-019, and governance architecture are
+deployed. DD-020 is evidence-complete on PR #136. Resume with its acceptance,
+merge, Pages verification, and issue closure; do not rerun its passing primary
+configuration. Then open only the documentation-only editorial theorem gate.
+Settings-only issue #32 remains separate.

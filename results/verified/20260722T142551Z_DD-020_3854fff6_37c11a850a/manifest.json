@@ -1,0 +1,37 @@
+{
+  "command": "make dd020-incremental-sharing",
+  "config_hash_sha256": "37c11a850af6a6bb11d2b14cc1b3ec51a5174dbb33ab9983cb35cd9809179b55",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-22T14:25:51.534265Z",
+  "exit_status": 0,
+  "git_commit": "3854fff6d37340c6322c4899002ecaade6a111ec",
+  "git_dirty": false,
+  "input_hashes": {
+    "src/distributed_discovery/incremental_sharing/model.py": "900cfe3746a83950b6baf46cb39b851d020dc99055d81a8b00f832cc7462b92f",
+    "src/distributed_discovery/incremental_sharing/study.py": "4ef26c5f4401bd4de54c21bab9737797767dac11a544dc5e9aa02b429af50081",
+    "src/distributed_discovery/incremental_sharing/verification.py": "cd07058b9fa89a05f8ae197d774a89f54f9d827e56598db79f9e8c35cb850219",
+    "src/distributed_discovery/signal_geometry/model.py": "d671aeeccffc2d99953ae671f10b7a3874e4ccdfefabcfcc27570e8d4ec5af64",
+    "studies/DD-020-incremental-sharing/configs/census.yml": "6220cdf26c9f4ed02ca4da7d2b1578295e60e982b253d8ebb748d9d60639fee1",
+    "studies/DD-020-incremental-sharing/literature.md": "3b5149c8c234d2e1696d2d108a4171677f361fa3ec8458fd49c6553009d99970",
+    "studies/DD-020-incremental-sharing/model.md": "8390efe9e157e76d4c1556b3473952420ff20fccd7d3e84f7fbf5e66b25715a7",
+    "studies/DD-020-incremental-sharing/proof-audit.md": "223f862d1eecc9dacf345177d25bbe0d8bcd3acdddd54a236aadb5f2b4b3dac8",
+    "studies/DD-020-incremental-sharing/proof.md": "51a0e0c7ddba44a1f8dd419e8610a0ce0b8de559f44aaee457d367ecf690addb"
+  },
+  "outputs": {
+    "outputs/channel-profiles.json": "a4f63d52f402ce14f91e469d4b425ce65a92740b31530c7da9384cc726030e3a",
+    "outputs/corruption-tests.json": "4b4184dd86115db2579cefd6956595b403406a34955c8d560543b89a34964192",
+    "outputs/point-census.json": "742ece76da5d4746772c5b9065e754b5e24012cae8c899f36d54469c6e796a59",
+    "outputs/summary.json": "0ad5c3249e7d2f04e34591eec8f587dc37729601c985d3a51de41fb6a3e08755",
+    "outputs/verification.json": "4b748e618c5cf0c412d06053b7c1020f81c9c07389e29136bece363f174834af"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "run_id": "20260722T142551Z_DD-020_3854fff6_37c11a850a",
+  "schema_version": 1,
+  "started_utc": "2026-07-22T14:25:51.517376Z",
+  "study_id": "DD-020",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

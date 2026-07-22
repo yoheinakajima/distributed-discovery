@@ -60,6 +60,16 @@ class and fixed ex-ante tie roles. It is not a budget-balance or
 arbitrary-mechanism result. Earlier DD-006B runs are retained as non-primary
 development provenance and are not cited by DD-C-0053.
 
+DD-020 primary run:
+
+- `20260722T142551Z_DD-020_3854fff6_37c11a850a`: 2,555-row exact
+  incremental-sharing census, independent count/occupancy agreement, five
+  DD-019 channel curves, theorem regressions, and five corruption rejections.
+
+The point-channel monotonicity statement is an analytic theorem with a
+separate proof audit. The arbitrary-channel extension is bounded and includes
+the positive-increment guaranteed-shortlist counterexample.
+
 DD-009 primary run:
 
 - `20260721T171249Z_DD-009_bc78d249_0c3851c41a`: complete 288-cell validity classification, 20 exact coherent architecture rows, separate row reproduction, and exhaustive bounded dominance relation.

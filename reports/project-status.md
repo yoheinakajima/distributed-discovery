@@ -3,24 +3,24 @@
 Date: 2026-07-22 (America/Los_Angeles)
 
 Programs V1 through V4 are complete at their registered bounded scopes.
-Program V5 is active: its documentation baseline and DD-019 are complete,
-merged, and deployed. Incremental Sharing and Independent Rescue is the next
-authorized package; it has no study ID or evidence at this reconciliation
-point.
+Program V5 is active: its documentation baseline, DD-019, and governance
+architecture are merged and deployed. DD-020 Incremental Sharing and
+Independent Rescue has a passing immutable run and five audited claims on PR
+#136; merge and deployment remain at this reconciliation point.
 
 ## Inventory
 
 | Measure | Value |
 | --- | ---: |
-| Studies | 23 |
-| Claims | 91 |
-| Immutable manifests | 48 |
-| Passing immutable runs | 45 |
-| Tests | 217 |
+| Studies | 24 |
+| Claims | 96 |
+| Immutable manifests | 49 |
+| Passing immutable runs | 46 |
+| Tests | 224 |
 | Validated project papers | 6 |
 | Paper pages | 89 |
-| Public HTML routes | 69 |
-| Public data files | 67 |
+| Public HTML routes | 71 locally generated |
+| Public data files | 68 |
 | Labs | 16 |
 | Checksum-covered downloads | 22 |
 
@@ -65,9 +65,10 @@ post-merge CI `29900587931` and Pages `29900587930` passed. Labs PR #125
 passed its branch checks; post-merge CI `29902201507` and Pages `29902201604`
 passed. Final handoff PR and post-merge workflow IDs are recorded after merge.
 
-## Next authorized milestone
+## Current Program V5 milestone
 
-DD-019 deployment closeout merged as `5e6c800`; CI `29906411957` and Pages
-`29906411981` passed. Formalize research governance and publication
-architecture without changing evidence, then register Incremental Sharing and
-Independent Rescue under the next live study ID.
+DD-019 deployment closeout merged as `5e6c800`; governance/publication PR #134
+merged as `dc32ff17`. DD-020's sole primary run is
+`20260722T142551Z_DD-020_3854fff6_37c11a850a`; both exact methods and five
+corruptions pass. The next authorized step after PR #136 deploys is the
+documentation-only editorial theorem gate and synthesis prospectus.

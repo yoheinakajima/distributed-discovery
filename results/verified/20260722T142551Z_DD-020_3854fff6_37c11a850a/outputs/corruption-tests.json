@@ -1,0 +1,8 @@
+{
+  "baseline_passes": true,
+  "count_probability_corruption_rejected": true,
+  "discovery_corruption_rejected": true,
+  "pooled_accuracy_corruption_rejected": true,
+  "sign_corruption_rejected": true,
+  "tie_weight_corruption_rejected": true
+}

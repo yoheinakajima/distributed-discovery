@@ -65,9 +65,10 @@ conjecture until proof or an exact counterexample supplies the permitted status.
 
 ### Milestones
 
-- **A (active):** governance and publication architecture, issue #133.
-- **B:** next live study, expected DD-020, Incremental Sharing and Independent
-  Rescue.
+- **A (complete):** governance and publication architecture, issue #133 and
+  PR #134.
+- **B (active, evidence complete):** DD-020 Incremental Sharing and
+  Independent Rescue; acceptance and merge remain.
 - **C:** editorial theorem gate and synthesis prospectus.
 - **D:** public DD-020 integration and output-connected Lab.
 - **Acceptance:** complete repository/paper/site/live audit and final handoff.
@@ -80,10 +81,8 @@ conjecture until proof or an exact counterexample supplies the permitted status.
 - [x] Audit local Git, worktrees, remote main, open issues/PRs, CI, Pages, live
   routes, and factual inventories; run `gh auth status` exactly once.
 - [x] Create issue #133 and the sole active Milestone A branch.
-- [ ] Complete, validate, merge, deploy, close, and synchronize Milestone A.
-  Local implementation and acceptance pass; PR readiness, merge, post-merge
-  CI/Pages, issue closure, and main synchronization remain.
-- [ ] Register and complete the next live Incremental Sharing study.
+- [x] Complete, validate, merge, deploy, close, and synchronize Milestone A.
+- [ ] Merge, deploy, close, and synchronize the completed DD-020 study.
 - [ ] Apply and merge the editorial theorem gate and synthesis prospectus.
 - [ ] Build and deploy the DD-020 public integration and Lab.
 - [ ] Run final acceptance and reconcile every required handoff document.
@@ -104,6 +103,23 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   footer link were absent from that stale package. Re-running with the
   Makefile-equivalent `PYTHONPATH="$PWD/src"` passed all 13 targeted tests; no
   research output or run was created.
+- Milestone A PR #134 passed push CI `29926942819`, PR CI `29926944262`, and
+  paper/site build `29926944328`, squash-merged as `dc32ff17`, and closed issue
+  #133. Post-merge CI `29927131835`, Pages `29927132030`, and the live Program,
+  Research, Papers, and route-registry pages pass. The live registry still ends
+  at DD-019, so issue #135 and branch `research/dd020-incremental-sharing`
+  allocate DD-020.
+- DD-020's analytic progression reached a general finite point-channel
+  monotonicity proof. The uninformative boundary required a separate uniform
+  MAP-draw argument; count ranking is used only for `p>1/M`.
+- Dirty-tree preview values were recorded as diagnostics only. After full
+  pre-run acceptance, clean source commit `3854fff6` produced the sole primary
+  run `20260722T142551Z_DD-020_3854fff6_37c11a850a`; it passed in 2.428850
+  seconds. The run is never repeated for freshness.
+- The five-channel extension refutes arbitrary-channel monotonicity within the
+  registered class: the guaranteed shortlist rises while the same-accuracy
+  noisy point falls. DD-C-0092 through DD-C-0096 preserve the theorem,
+  bounded census, and counterexample boundaries.
 
 ### Decision log
 
@@ -118,6 +134,13 @@ conjecture until proof or an exact counterexample supplies the permitted status.
 - `2026-07-22T14:03:38Z`: retain the direct non-editable targeted-test failure
   as an environment-cache observation and use the repository Make targets,
   which export `src`, for authoritative validation.
+- `2026-07-22T14:13:02Z`: mark Milestone A complete only after merge,
+  post-merge CI/Pages, live-route checks, issue closure, and synchronized clean
+  main. Allocate DD-020 only after the repeated live registry and open-PR audit.
+- `2026-07-22T14:25:51Z`: execute the DD-020 primary configuration exactly
+  once only after PR #136 was open, all 222 tests passed, source was committed,
+  and the tree was clean. Promote theorem statements only after the separate
+  written proof audit; retain computation as regression evidence.
 
 ### Validation strategy
 
@@ -143,11 +166,13 @@ PDF, secret, host-path, license, provenance, and upstream-cleanliness audits.
 
 ### Artifacts produced
 
-Issue #133; draft PR #134; `docs/research-governance.md`;
+Issue #133; PR #134; `docs/research-governance.md`;
 `docs/publication-architecture.md`; `docs/paper-family-map.yml`; the seven-file
 living-synthesis scaffold; the contextual `program.html` builder and tests; and
-`reports/governance-publication-architecture-validation.md`. No DD-020 ID,
-claim, run, or result exists yet.
+`reports/governance-publication-architecture-validation.md`; DD-020 issue #135
+and PR #136; the registered study package; exact implementation and verifier;
+run `20260722T142551Z_DD-020_3854fff6_37c11a850a`; and DD-C-0092 through
+DD-C-0096.
 
 ### Blockers
 
@@ -164,9 +189,11 @@ rerun any passing primary configuration. If Milestone A is merged, synchronize
 
 ### Outcome and retrospective
 
-Pending. Update after every material decision, failed check, completed
-milestone, immutable run, claim audit, merge, and deployment. Exactly one
-milestone remains active.
+Milestone A is complete and deployed without changing evidence inventories or
+paper PDFs. Its hierarchy resolves the previous ambiguity between a study and
+a paper while keeping program synthesis non-evidentiary. Milestone B is the
+sole active milestone. Update after every material decision, failed check,
+immutable run, claim audit, merge, and deployment.
 
 ## Current state
 
