@@ -87,6 +87,36 @@ corruption-test plan; a non-overlap statement; a clear paper, benchmark,
 measurement, or infrastructure role; and an explicit stop condition. Study IDs
 are assigned only when a bounded issue and ExecPlan are created.
 
+## 3A. North-Star theorem hierarchy
+
+The hierarchy below organizes, rather than replaces, the directions in this
+roadmap.
+
+**Tier I — Structural spine**
+
+- Information–Action Separation
+- Action-Budget Discovery Profiles
+- Recovery Budgets
+
+**Tier II — Major theorem families**
+
+- Information Sharing, Attention, and Recovery
+- Source Acquisition and Provenance
+- Reliable Discovery and Action Technology
+- Discovery Implementation
+- Rate–Discovery
+- Dynamic and Adaptive Discovery
+
+**Tier III — Meta-theory**
+
+- Discovery Order for Information Structures
+- Scaling Laws
+- General Theory of Discovery Architectures
+
+Reliable Discovery, Provenance, mechanism theory, Rate–Discovery,
+dynamic/adaptive work, large-team limits, and Discovery Order all retain their
+existing scopes and promotion gates below.
+
 ## 4. Completed Program V4 — Threshold Discovery
 
 **Status: complete at the registered bounded scope.** Program V4 owns threshold

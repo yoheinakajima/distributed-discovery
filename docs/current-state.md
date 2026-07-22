@@ -1,6 +1,6 @@
 # Current program state
 
-_Reconciled 2026-07-22 during the Program V4 final handoff._
+_Reconciled 2026-07-22 after DD-019 deployment closeout._
 
 Programs V1, V2, and the required Program V3 queue are complete at their
 registered bounded scopes. Program V3, *The Incentive to Ignore*, completed
@@ -35,6 +35,11 @@ channel profiles, and three corruptions are rejected. Claims DD-C-0089 through
 DD-C-0091 are independently reproduced exact bounded computational results.
 PR #131, post-merge CI `29905840583`, Pages `29905840831`, and the live study,
 data, claims, evidence, and registry routes pass.
+Deployment closeout PR #132 merged as
+`5e6c800213232be2fdcdc2aa19027fb5a8400e85`; CI `29906411957` and Pages
+`29906411981` pass for that current main commit. Incremental Sharing and
+Independent Rescue is the next authorized Program V5 package and has no study
+ID, claim, run, or result at this reconciliation point.
 
 The repository is public and project-authored content is MIT-licensed. The
 canonical Shared Discovery Paradox repository remains pinned at

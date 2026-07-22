@@ -1,0 +1,20 @@
+schema_version: 1
+source_classes:
+  canonical_upstream:
+    owner: shared-discovery-paradox
+    use: cite the pinned canonical result; do not copy ownership
+  registered_studies:
+    root: studies
+    use: primary model, plan, proof, report, claim, and run routing
+  immutable_runs:
+    root: results
+    use: generated numerical evidence and independent verification
+  theorem_family_papers:
+    root: papers
+    use: long-form arguments with explicit primary family ownership
+  claim_ledger:
+    path: claims/claims.yml
+    use: stable statement, scope, evidence type, status, and provenance
+  infrastructure:
+    paths: [studies/DD-010-discoverybench, site, claims, src/distributed_discovery/validation]
+    use: reproducibility, comparison, public explanation, and audit

@@ -1,0 +1,18 @@
+schema_version: 1
+rule: Every scientific statement in synthesis prose must name an existing claim ID and its primary study; ranges here are routing aids, not new claims.
+sections:
+  foundations:
+    primary_studies: [DD-000, DD-001]
+    claim_ranges: [DD-C-0001--DD-C-0028, DD-C-0037--DD-C-0038]
+  disclosure-and-sources:
+    primary_studies: [DD-002, DD-003, DD-008, DD-008A, DD-008B]
+    claim_ranges: [DD-C-0029--DD-C-0043, DD-C-0050--DD-C-0051, DD-C-0055--DD-C-0058]
+  attention-and-sharing:
+    primary_studies: [DD-012, DD-013, DD-014, DD-019]
+    claim_ranges: [DD-C-0059--DD-C-0068, DD-C-0089--DD-C-0091]
+  action-technologies-and-implementation:
+    primary_studies: [DD-004, DD-005, DD-006, DD-006B, DD-015, DD-016, DD-017, DD-018]
+    claim_ranges: [DD-C-0044--DD-C-0048, DD-C-0052--DD-C-0053, DD-C-0071--DD-C-0086]
+  infrastructure-and-measurement:
+    primary_studies: [DD-007, DD-009, DD-010, DD-011]
+    claim_ranges: [DD-C-0049, DD-C-0054, DD-C-0069--DD-C-0070, DD-C-0087--DD-C-0088]

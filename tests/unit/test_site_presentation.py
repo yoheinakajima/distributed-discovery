@@ -68,6 +68,7 @@ def test_shell_has_one_five_item_global_nav_and_footer_resources() -> None:
     assert header.count("<a ") == 6  # brand plus five primary destinations
     assert 'href="../research.html" aria-current="page"' in header
     assert "Research navigation" not in header
+    assert "Program" in footer
     assert "Foundations" in footer
     assert "Experiment Kit" in footer
     assert "Repository" in footer

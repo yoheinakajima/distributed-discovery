@@ -1,0 +1,90 @@
+schema_version: 1
+program: Distributed Discovery
+synthesis:
+  title: The Architecture of Distributed Discovery
+  subtitle: Foundations, Results, and Open Problems
+families:
+  - family_id: canonical-entry
+    provisional_title: The Shared Discovery Paradox
+    central_question: How can better pooled ranking coexist with worse group discovery under a one-answer rule?
+    source_studies: [DD-000]
+    completed_claims: [DD-C-0003, DD-C-0004, DD-C-0005, DD-C-0006, DD-C-0007, DD-C-0008]
+    open_theorem_targets: [minimal separation conditions, general finite-target boundary]
+    manuscript_status: canonical-entry-paper-upstream
+    admission_gate: already serves as the canonical entry; any submission action needs owner authorization
+    likely_literature: [team decision theory, social learning, collective search, information aggregation]
+    synthesis_chapters: [foundational-objects, canonical-paradox]
+    risks_of_overlap: [foundational information comparison, information sharing]
+    editorial_disposition: potential near-term submission candidate; no action authorized
+  - family_id: information-sharing-attention-recovery
+    provisional_title: Information Sharing, Attention, and Recovery
+    central_question: When does aggregation improve the map faster than common action removes independent rescue?
+    source_studies: [DD-012, DD-013, DD-014, DD-019]
+    completed_claims: [DD-C-0059, DD-C-0060, DD-C-0061, DD-C-0062, DD-C-0063, DD-C-0064, DD-C-0065, DD-C-0066, DD-C-0067, DD-C-0068, DD-C-0089, DD-C-0090, DD-C-0091]
+    open_theorem_targets: [Incremental Sharing, General Sharing Frontier, Recovery Budget]
+    manuscript_status: incentive-to-ignore-working-paper-held-at-theorem-gate
+    admission_gate: decide ownership after the Incremental Sharing theorem gate
+    likely_literature: [information aggregation, jury accuracy, public information, social learning, herding, list decisions, collective search]
+    synthesis_chapters: [canonical-phenomena, information-sharing-frontier]
+    risks_of_overlap: [canonical entry paper, foundational information comparison]
+    editorial_disposition: hold The Incentive to Ignore pending Incremental Sharing
+  - family_id: source-acquisition-provenance
+    provisional_title: Source Acquisition and Provenance
+    central_question: How do endogenous source choice and missing dependence information change discovery?
+    source_studies: [DD-003, DD-008, DD-008A, DD-008B]
+    completed_claims: [DD-C-0042, DD-C-0043, DD-C-0050, DD-C-0051, DD-C-0055, DD-C-0056, DD-C-0057, DD-C-0058]
+    open_theorem_targets: [Price of Missing Provenance, sharp observable-dependent bounds]
+    manuscript_status: common-source-trap-theorem-centered-working-paper
+    admission_gate: assess the provenance theorem boundary separately from source-choice examples
+    likely_literature: [endogenous information acquisition, correlated information, identification, union bounds]
+    synthesis_chapters: [canonical-phenomena, north-star-theory]
+    risks_of_overlap: [information sharing, foundational information comparison]
+    editorial_disposition: potential near-term submission candidate; no action authorized
+  - family_id: reliable-discovery-action-technology
+    provisional_title: Reliable Discovery and Action Technology
+    central_question: When should a discovery architecture diversify, repeat, overlap, or form threshold teams?
+    source_studies: [DD-005, DD-015, DD-016, DD-017, DD-018]
+    completed_claims: [DD-C-0046, DD-C-0071, DD-C-0072, DD-C-0073, DD-C-0074, DD-C-0075, DD-C-0076, DD-C-0077, DD-C-0078, DD-C-0079, DD-C-0080, DD-C-0081, DD-C-0082, DD-C-0083, DD-C-0084, DD-C-0085, DD-C-0086]
+    open_theorem_targets: [reliability allocation, correlated failure, reliability-adjusted recovery budgets]
+    manuscript_status: threshold-discovery-working-paper-held-at-theorem-gate
+    admission_gate: Reliable Discovery must materially strengthen or absorb the threshold result
+    likely_literature: [reliability allocation, coverage, congestion games, coalition formation, team production]
+    synthesis_chapters: [institutions-action-technologies, north-star-theory]
+    risks_of_overlap: [discovery implementation, dynamic architecture]
+    editorial_disposition: hold Threshold Discovery pending Reliable Discovery
+  - family_id: discovery-implementation
+    provisional_title: Discovery Implementation
+    central_question: Which information, action, transfer, and observability rules implement discovery portfolios?
+    source_studies: [DD-002, DD-006, DD-006B, DD-013, DD-018]
+    completed_claims: [DD-C-0029, DD-C-0030, DD-C-0031, DD-C-0039, DD-C-0040, DD-C-0041, DD-C-0047, DD-C-0048, DD-C-0052, DD-C-0053, DD-C-0064, DD-C-0084, DD-C-0085, DD-C-0086]
+    open_theorem_targets: [truth-obedience-budget-balance, randomized information design, selection robustness]
+    manuscript_status: theorem-family-under-development
+    admission_gate: require a necessary-and-sufficient implementation result rather than another finite catalogue
+    likely_literature: [mechanism design, Bayesian persuasion, information design, implementation theory]
+    synthesis_chapters: [institutions-action-technologies]
+    risks_of_overlap: [information sharing, reliable discovery]
+    editorial_disposition: retain as theorem family and synthesis material
+  - family_id: communication-dynamic-architecture
+    provisional_title: Communication and Dynamic Architecture
+    central_question: How much communication and feedback are required to attain a discovery target over time?
+    source_studies: [DD-004, DD-015]
+    completed_claims: [DD-C-0044, DD-C-0045, DD-C-0079, DD-C-0080, DD-C-0081, DD-C-0082]
+    open_theorem_targets: [Rate-Discovery, adaptive marginal conditions, dynamic coalition formation, large-team limits]
+    manuscript_status: roadmap-theorem-family
+    admission_gate: require a named finite theorem and a declared communication or asymptotic regime
+    likely_literature: [communication complexity, sequential search, adaptive submodularity, distributed control]
+    synthesis_chapters: [institutions-action-technologies, north-star-theory]
+    risks_of_overlap: [reliable discovery, discovery implementation]
+    editorial_disposition: synthesize existing evidence while holding paper admission
+  - family_id: foundational-information-comparison
+    provisional_title: Foundational Information Comparison
+    central_question: What order on information structures is appropriate when value depends on a portfolio of actions?
+    source_studies: [DD-000, DD-001, DD-002, DD-019]
+    completed_claims: [DD-C-0002, DD-C-0018, DD-C-0019, DD-C-0029, DD-C-0030, DD-C-0031, DD-C-0089, DD-C-0090, DD-C-0091]
+    open_theorem_targets: [Discovery Order for Information Structures, scaling laws, general theory of discovery architectures]
+    manuscript_status: foundations-and-north-star-program
+    admission_gate: demonstrate decentralized portfolio content beyond classical centralized Blackwell comparison
+    likely_literature: [Blackwell order, statistical experiments, team decision theory, information economics]
+    synthesis_chapters: [foundational-objects, north-star-theory, open-problems-measurement]
+    risks_of_overlap: [canonical entry paper, information sharing]
+    editorial_disposition: living-synthesis spine until a distinct theorem passes admission

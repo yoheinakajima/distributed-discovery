@@ -14,7 +14,14 @@ PRIMARY_LINKS = (
 )
 
 RESOURCE_GROUPS = (
-    ("Understand", (("Foundations", "foundations.html"), ("Applications", "applications.html"))),
+    (
+        "Understand",
+        (
+            ("Program", "program.html"),
+            ("Foundations", "foundations.html"),
+            ("Applications", "applications.html"),
+        ),
+    ),
     ("Verify", (("Claims", "claims.html"), ("Evidence", "evidence.html"))),
     ("Use", (("Benchmark", "benchmark.html"), ("Experiment Kit", "experiment-kit.html"))),
     ("Continue", (("Ideas", "ideas.html"),)),

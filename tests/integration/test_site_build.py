@@ -40,6 +40,14 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert report["no_javascript_fallbacks_passed"] is True
     assert report["accessibility_smoke_passed"] is True
 
+    program = (output / "program.html").read_text(encoding="utf-8")
+    assert "The Distributed Discovery program" in program
+    assert "The Architecture of Distributed Discovery" in program
+    assert "Incremental Sharing and Independent Rescue" in program
+    assert "planned targets are questions, not established results" in program
+    assert "journal submission status" in program
+    assert "DD-019" in program
+
     research = (output / "research.html").read_text(encoding="utf-8")
     assert "DD-000" in research and "DD-008" in research
     assert "Completed finite study" in research
@@ -48,6 +56,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert 'data-study-filter="key-results"' in research
     assert 'aria-live="polite"' in research
     assert 'href="research/dd-004.html"' in research
+    assert 'href="program.html"' in research
     assert (output / "research/dd-000.html").is_file()
     assert (output / "research/dd-008.html").is_file()
     assert (output / "research/dd-008a.html").is_file()
@@ -259,6 +268,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "publications/common-source-trap.html",
         "publications/incentive-to-ignore.html",
         "publications/threshold-discovery.html",
+        "program.html",
     } <= route_paths
     assert (output / "robots.txt").is_file()
     assert (output / "sitemap.xml").is_file()
@@ -422,6 +432,9 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     )
     assert "See the paradox" in home
     assert (output / "og.png").is_file()
+
+    papers_page = (output / "publications.html").read_text(encoding="utf-8")
+    assert 'href="program.html"' in papers_page
 
     stylesheet = (output / "styles.css").read_text(encoding="utf-8")
     assert "repeat(auto-fit, minmax(min(100%, 16rem), 1fr))" in stylesheet
