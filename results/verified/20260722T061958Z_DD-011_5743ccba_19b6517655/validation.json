@@ -1,0 +1,23 @@
+{
+  "assignments": 1184,
+  "calibration_failures_retained": 644,
+  "elapsed_seconds": 0.874741,
+  "exact_source_checks": 4,
+  "experiment_version": "v3",
+  "hypotheses": 20,
+  "memory_cap_mb": 2048,
+  "monte_carlo_draws": 1680000,
+  "no_human_data": true,
+  "no_real_data_boundary": true,
+  "outcomes": 23,
+  "passed": true,
+  "peak_memory_mb": 33.094,
+  "power_rows": 1680,
+  "power_rows_verified": 1680,
+  "program_v4_source_checks": 4,
+  "response_scenarios": 14,
+  "sample_sizes": 6,
+  "synthetic_assignments": 1184,
+  "treatment_cells": 37,
+  "wall_time_cap_seconds": 600
+}

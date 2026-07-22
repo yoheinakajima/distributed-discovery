@@ -250,6 +250,38 @@ before its independent verifier and immutable primary run pass.
   names the immutable run and reports the frozen 24/29/39 registries with 36
   compatible pairs and 660 exclusions. The benchmark half of V4.6 is complete;
   Synthetic Experiment v3 is next, and the benchmark run must not be repeated.
+- 2026-07-22: DiscoveryBench v3 closeout PR #118 merged as `f80112c`; post-merge
+  CI `29895505006` and Pages `29895505051` passed. Synthetic Experiment v3
+  issue #119 and branch `research/synthetic-experiment-v3-program-v4` are the
+  sole active lane. Its frozen registration has 37 cells, 20 hypotheses, 23
+  outcomes, 14 response scenarios, 1,184 assignments, 1,680 power rows, and
+  1,680,000 seeded draws under 600-second/2 GB caps. It preserves v1/v2,
+  retains all calibration failures, checks four Program V4 source fixtures,
+  and prohibits human execution. No v3 run or claim exists before the clean
+  source commit and draft PR.
+- 2026-07-22: Synthetic Experiment v3 pre-run acceptance passed bootstrap,
+  Ruff, MyPy on 133 source files, all 210 tests, the unchanged 87-claim ledger
+  and 46 manifests, and the 62-page/22-study site. Small seeded verifier tests
+  preserve v2 power rows under shared seeds, check all four Program V4 source
+  fixtures, and reject altered power, source registry, identifiers, and the
+  no-human-data boundary. The next gate is the source commit and draft PR; no
+  registered v3 run has executed.
+- 2026-07-22: Synthetic Experiment v3 source froze as `5743ccb` and draft PR
+  #120 opened before the sole run
+  `20260722T061958Z_DD-011_5743ccba_19b6517655`. The run passed in 0.874741
+  seconds at 33.094 MB with 1,184 assignments, 1,680 power rows, 1,680,000
+  seeded draws, complete shared-seed v2 preservation, four independently
+  checked Program V4 source fixtures, and four rejected corruptions. All 644 of
+  840 sub-0.80 large-sample calibration rows are retained. DD-C-0088 passed its
+  separate audit. The active gate is full repository/site acceptance, evidence
+  commit, PR CI/merge, post-merge CI/Pages, issue closure, and live routes; the
+  run must not be repeated.
+- 2026-07-22: Synthetic Experiment v3 final local acceptance passed bootstrap,
+  Ruff, MyPy on 133 source files, all 210 tests, the 88-claim ledger, all 47
+  manifests, and the 63-page/22-study site. The generated experiment surface
+  selects v3, retains all 644 failures, preserves v2 attention and power rows,
+  publishes all three schemas, links DD-C-0088 and the immutable run, and keeps
+  the no-human-data warning. The next action is the evidence commit and push.
 
 ### Program V3 attention queue (complete, 2026-07-21)
 

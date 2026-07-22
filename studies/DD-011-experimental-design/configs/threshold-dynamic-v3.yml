@@ -1,0 +1,13 @@
+schema_version: dd011-power-v3
+design_id: threshold-dynamic-37
+participants_per_cell: 32
+session_size: 8
+randomization_seed: 111012
+sample_seed: 111199
+sample_rows: 120
+scenario_seeds: [111101, 111102, 111103, 111104, 111105, 111106, 111107, 111108, 111109, 111110, 111111, 111212, 111213, 111214]
+sample_sizes: [200, 320, 480, 640, 800, 960]
+replications: 1000
+wall_time_seconds: 600
+memory_mb: 2048
+no_human_data: true

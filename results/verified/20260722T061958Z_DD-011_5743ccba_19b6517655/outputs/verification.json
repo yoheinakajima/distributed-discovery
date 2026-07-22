@@ -1,0 +1,10 @@
+{
+  "assignments": 1184,
+  "exact_source_checks": 4,
+  "hypotheses": 20,
+  "no_real_data_boundary": true,
+  "passed": true,
+  "power_rows_verified": 1680,
+  "program_v4_source_checks": 4,
+  "treatment_cells": 37
+}

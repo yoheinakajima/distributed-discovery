@@ -1827,3 +1827,24 @@ claims:
     first_added: "2026-07-22"
     last_checked: "2026-07-22"
     notes: The CLI remains v1 by default; v2 and v3 require explicit selection. No composite score is active, missing metrics are not imputed, and external adapters remain disabled.
+  - id: DD-C-0088
+    study_id: DD-011
+    short_name: synthetic-threshold-dynamic-power-reproduction
+    statement: DD-011 v3 reproducibly extends the synthetic package to 37 treatment cells, 20 hypotheses, 23 outcomes, 14 response scenarios, 1,184 balanced synthetic assignments, and 1,680 power rows with 1,000 replications each; every v2 power row is preserved under its shared seed, and 644 of 840 rows at sample sizes 640 or greater remain below the registered 0.80 calibration threshold.
+    scope: The frozen threshold-dynamic-37 design, declared assumed effects, normal sampling approximation, conservative Bonferroni family alpha, session size eight, explicit response multipliers, fixed seeds, and sample sizes 200 through 960; this is conditional synthetic power and version preservation, not a human experiment, empirical threshold or dynamic-attention model, recruitment target, behavioral finding, or evidence that any treatment works on people.
+    claim_type: monte-carlo-estimate
+    status: verified
+    source_type: versioned-seeded-synthetic-power-grid-with-separate-random-stream-and-exact-source-recomputation
+    source_reference: results/verified/20260722T061958Z_DD-011_5743ccba_19b6517655/outputs/power-table.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/experimental_design/threshold_dynamic_model.py, src/distributed_discovery/experimental_design/power.py, src/distributed_discovery/experimental_design/verification.py]
+    run_ids: [20260722T061958Z_DD-011_5743ccba_19b6517655]
+    test_paths: [tests/unit/test_experimental_design.py, tests/integration/test_experimental_design_cli.py]
+    exactness_basis: null
+    rounding_rule: power and Wilson interval endpoints are reported to six decimals from integer Monte Carlo rejection counts; MDE values are reported to six decimals from the registered normal approximation
+    dependencies: [DD-C-0070, DD-C-0071, DD-C-0073, DD-C-0079, DD-C-0080, DD-C-0081, DD-C-0082, DD-C-0083, DD-C-0084, DD-C-0085, DD-C-0086]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: In the favorable rational scenario at N=960, H15 through H20 have conditional estimated powers 1.000, 0.999, 0.918, 0.948, 1.000, and 0.999. Across the complete registered large-sample grid, 644 failures remain and are published. No participants were recruited, no human data were collected, and no experiment was conducted.

@@ -1,5 +1,5 @@
 study_id: DD-011
-status: complete-versioned-attention-extension
-evidence_status: v1-preserved-v2-seeded-power-with-separate-recomputation-and-three-corruption-gates
-next_action: publish the v2 experiment surface, merge, deploy, and preserve both immutable runs; human deployment remains prohibited
-updated_utc: 2026-07-21T23:21:20Z
+status: complete-versioned-program-v4-extension
+evidence_status: v1-v2-preserved-v3-seeded-power-with-separate-recomputation-four-source-checks-and-four-corruption-gates
+next_action: preserve all three immutable versions and every calibration failure; complete PR and deployment acceptance without rerunning v3; human deployment remains prohibited
+updated_utc: 2026-07-22T06:22:00Z

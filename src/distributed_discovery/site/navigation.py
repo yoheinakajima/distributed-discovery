@@ -125,6 +125,7 @@ def render_section_navigation(current: str) -> str:
             ("Questions", "experiment-kit/hypotheses.html"),
             ("Assignment", "experiment-kit/design.html"),
             ("Attention", "experiment-kit/attention.html"),
+            ("Threshold + dynamics", "experiment-kit/threshold-dynamic.html"),
             ("Power", "experiment-kit/power.html"),
         )
         label = "Experiment Kit pages"

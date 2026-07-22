@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://distributed-discovery.example/schemas/dd011-design-v3.json",
+  "title": "DD-011 threshold and dynamic synthetic experimental design",
+  "type": "object",
+  "required": ["schema_version", "study_id", "public_status", "no_human_data", "notice", "factor_levels", "alternatives", "treatment_cells", "outcomes", "hypotheses", "response_scenarios", "analysis_plan", "reference_claims", "reference_runs"],
+  "properties": {
+    "schema_version": {"const": "dd011-experiment-v3"},
+    "study_id": {"const": "DD-011"},
+    "public_status": {"const": "synthetic-preregistration-ready-not-preregistered"},
+    "no_human_data": {"const": true},
+    "notice": {"type": "string", "minLength": 80},
+    "factor_levels": {"type": "object", "required": ["acquisition", "attribution", "disclosure", "timing", "reward", "public_access", "public_precision", "attention_institution", "policy_recommendation", "team_threshold", "portfolio_rule", "history_visibility", "action_horizon"]},
+    "alternatives": {"type": "array", "minItems": 3},
+    "treatment_cells": {"type": "array", "minItems": 37, "maxItems": 37, "items": {"type": "object", "required": ["cell_id", "acquisition", "attribution", "disclosure", "timing", "reward", "public_access", "public_precision", "attention_institution", "policy_recommendation", "team_threshold", "portfolio_rule", "history_visibility", "action_horizon"]}},
+    "outcomes": {"type": "array", "minItems": 23, "maxItems": 23, "items": {"type": "object", "required": ["outcome_id", "role", "unit", "definition"]}},
+    "hypotheses": {"type": "array", "minItems": 20, "maxItems": 20, "items": {"type": "object", "required": ["hypothesis_id", "treatment_cell", "control_cell", "outcome", "estimand", "direction", "model", "role", "multiplicity_family", "assumed_effect"]}},
+    "response_scenarios": {"type": "array", "minItems": 14, "maxItems": 14},
+    "analysis_plan": {"type": "object"},
+    "reference_claims": {"type": "array", "minItems": 10},
+    "reference_runs": {"type": "array", "minItems": 8}
+  },
+  "additionalProperties": false
+}

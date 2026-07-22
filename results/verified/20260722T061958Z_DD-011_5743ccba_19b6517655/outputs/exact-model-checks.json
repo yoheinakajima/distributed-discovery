@@ -1,0 +1,114 @@
+[
+  {
+    "check_id": "E1-dd008-trap",
+    "claim_id": "DD-C-0051",
+    "expected": {
+      "common_profile_is_equilibrium": true,
+      "common_social_value": "2/3",
+      "one_independent_net_value": "55/72",
+      "planner_gap": "7/72"
+    },
+    "inputs": {
+      "agents": 2,
+      "cost": "1/8",
+      "p": "2/3"
+    },
+    "interpretation": "exact synthetic source-choice ground truth only",
+    "run_id": "20260721T141527Z_DD-008_0d11dc77_7e0c8f1d66"
+  },
+  {
+    "check_id": "E2-dd008a-census",
+    "claim_id": "DD-C-0052",
+    "expected": {
+      "agent_max": 8,
+      "agent_min": 2,
+      "direct_agreement": true,
+      "grid_cells": 126
+    },
+    "interpretation": "bounded exact N=2 through 8 accounting only",
+    "run_id": "20260721T163030Z_DD-008A_8b70668b_06307caab4"
+  },
+  {
+    "check_id": "E3-dd006b-mechanism",
+    "claim_id": "DD-C-0053",
+    "expected": {
+      "maximum_margin": "13/72",
+      "strict_rows": 16,
+      "truthful_discovery": "11/12"
+    },
+    "interpretation": "exact registered mechanism fixture only",
+    "run_id": "20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b"
+  },
+  {
+    "check_id": "E4-dd009-atlas",
+    "claim_id": "DD-C-0054",
+    "expected": {
+      "maximum_discovery": "11/12",
+      "nondominated_cells": 12,
+      "valid_cells": 20
+    },
+    "interpretation": "bounded exact Architecture Atlas only",
+    "run_id": "20260721T171249Z_DD-009_bc78d249_0c3851c41a"
+  },
+  {
+    "check_id": "E5-dd016-threshold",
+    "claim_ids": [
+      "DD-C-0071",
+      "DD-C-0073"
+    ],
+    "expected": {
+      "common_deterministic_mode": "37916217637/98876953125",
+      "paired_planner": "223779310319051/333709716796875",
+      "threshold_rows": 8
+    },
+    "interpretation": "bounded exact threshold-allocation ground truth only",
+    "run_id": "20260722T021526Z_DD-016_00271ff8_123b2809e3"
+  },
+  {
+    "check_id": "E6-dd015-dynamic",
+    "claim_ids": [
+      "DD-C-0079",
+      "DD-C-0080",
+      "DD-C-0081"
+    ],
+    "expected": {
+      "objective_rows": 64,
+      "planner_strictly_better_rows": 38,
+      "stopping_reduces_expected_actions_rows": 32,
+      "visibility_reduces_discovery_fixed_rows": 18
+    },
+    "interpretation": "bounded exact dynamic-attention ground truth only",
+    "run_id": "20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a"
+  },
+  {
+    "check_id": "E7-dd015-threshold-two",
+    "claim_ids": [
+      "DD-C-0082"
+    ],
+    "expected": {
+      "join_viable_team_rows": 32,
+      "objective_rows": 32,
+      "parameter_cells": 16,
+      "start_new_singleton_rows": 32
+    },
+    "interpretation": "bounded exact dynamic threshold-two ground truth only",
+    "run_id": "20260722T044453Z_DD-015_34bc4379_33e1da478b"
+  },
+  {
+    "check_id": "E8-dd018-mechanisms",
+    "claim_ids": [
+      "DD-C-0083",
+      "DD-C-0084",
+      "DD-C-0085",
+      "DD-C-0086"
+    ],
+    "expected": {
+      "marginal_contribution_planner_stable_rows": 5,
+      "mechanism_fixture_rows": 50,
+      "planner_portfolio_rows": 40,
+      "universal_pooling_planner_rows": 0
+    },
+    "interpretation": "bounded exact common-posterior mechanism ground truth only",
+    "run_id": "20260722T051847Z_DD-018_a193f602_3b3ddac173"
+  }
+]

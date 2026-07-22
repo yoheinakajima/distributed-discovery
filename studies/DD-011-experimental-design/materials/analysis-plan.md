@@ -17,3 +17,11 @@ H11 and H12 are corrected within the implementation family. Public-signal use,
 one-reader alignment, off-signal rescue, and contrarian action are outcomes,
 never exclusions or post-treatment controls. All eleven response scenarios and
 every below-threshold power row remain reported.
+
+V3 preserves those families and adds three threshold hypotheses (H15–H17) and
+three dynamic hypotheses (H18–H20). Bonferroni power thresholds are calculated
+within the frozen families. Fourteen response scenarios, six sample sizes, and
+1,000 replications are fixed in advance; all calibration failures remain in
+the public table. The stopping treatment changes the synthetic task horizon,
+not the fixed simulation sample or the prohibition on outcome-dependent study
+stopping.

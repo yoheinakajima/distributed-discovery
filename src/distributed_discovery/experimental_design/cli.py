@@ -17,7 +17,7 @@ from distributed_discovery.validation.bootstrap import repository_root
 
 
 def configure(parser: argparse.ArgumentParser) -> None:
-    parser.add_argument("--version", choices=("v1", "v2"), default="v1")
+    parser.add_argument("--version", choices=("v1", "v2", "v3"), default="v1")
     commands = parser.add_subparsers(dest="experiment_command", required=True)
     commands.add_parser("design")
     commands.add_parser("hypotheses")
@@ -38,7 +38,7 @@ def execute(args: argparse.Namespace) -> object:
     if args.version == "v1":
         registry = design_registry()
         hypothesis_rows = hypotheses()
-    else:
+    elif args.version == "v2":
         from distributed_discovery.experimental_design.attention_model import (
             design_registry as attention_registry,
         )
@@ -48,6 +48,16 @@ def execute(args: argparse.Namespace) -> object:
 
         registry = attention_registry()
         hypothesis_rows = attention_hypotheses()
+    else:
+        from distributed_discovery.experimental_design.threshold_dynamic_model import (
+            design_registry as program_v4_registry,
+        )
+        from distributed_discovery.experimental_design.threshold_dynamic_model import (
+            hypotheses as program_v4_hypotheses,
+        )
+
+        registry = program_v4_registry()
+        hypothesis_rows = program_v4_hypotheses()
     if args.experiment_command == "design":
         return registry
     if args.experiment_command == "hypotheses":
