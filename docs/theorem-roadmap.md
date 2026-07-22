@@ -35,9 +35,11 @@ DiscoveryBench v3, the synthetic experiment v3 extension, the focused paper,
 and four output-connected public Labs are deployed. Its final handoff creates
 no new research evidence.
 
-Program V5, *The Information Sharing Frontier*, follows the merged Program V4
-handoff. It asks: **When does sharing useful private information improve or
-reduce decentralized group discovery?** Its provisional flagship paper is
+Program V5, *The Information Sharing Frontier*, is active after the merged
+Program V4 handoff. Its documentation baseline, DD-019 Signal Geometry, and
+DD-020 Incremental Sharing are complete, deployed, and exposed through an
+exact output-connected Lab. It asks: **When does sharing useful private
+information improve or reduce decentralized group discovery?** Its provisional flagship paper is
 *When Does Information Sharing Improve Decentralized Discovery?*, with
 provisional subtitle *Signal Geometry, Independent Rescue, and the Cost of
 Common Action*.
@@ -52,9 +54,10 @@ The conceptual center is
 
 `value of sharing = aggregation gain - lost independent rescue value`.
 
-This is a conceptual decomposition until an exact identity is proved for a
-declared model. Existing bounded results remain inputs with their recorded
-scopes, rather than general theorems. Active execution truth is in
+DD-020 proves this exact decomposition for its declared one-action sharing
+block, while its registered-channel comparison shows why no arbitrary-channel
+monotonicity statement follows. Broader uses remain conjectural until their own
+proof or bounded evidence. Active execution truth is in
 [current-roadmap.md](current-roadmap.md); registered evidence is in
 [the study registry](../studies/index.md).
 
@@ -299,8 +302,10 @@ and empirical-boundary interfaces. It is not a program rename.
 
 ## 8. Execution sequence and single-lane dependencies
 
-1. **Active:** Program V4 — Threshold Discovery.
-2. **Next:** Program V5 — The Information Sharing Frontier.
+1. **Complete:** Program V4 — Threshold Discovery.
+2. **Active:** Program V5 — The Information Sharing Frontier; its first two
+   bounded studies and public integration are complete, with no third package
+   registered by this roadmap.
 3. **Then:** Reliable Discovery — Diversity–Redundancy under reliability and
    overlap.
 4. **Then:** The Price of Missing Provenance.
@@ -391,12 +396,13 @@ or imply execution.
 
 ## 15. Provisional next decision points
 
-1. Complete Program V4 sequentially and stabilize the threshold/dynamic/team
-   interfaces before Program V5 research.
-2. Register only the first bounded Program V5 study after its channel model and
-   complexity audit are complete.
-3. Test Signal Geometry before Incremental Sharing; move stochastic information
-   design only after those deterministic interfaces exist.
+1. Preserve the completed Program V4 interfaces and Program V5 DD-019/DD-020
+   evidence without rerunning immutable configurations.
+2. Register any later Program V5 package only through its own bounded question,
+   channel model, resource cap, evidence category, verifier, and corruption
+   plan; this roadmap does not allocate it.
+3. Signal Geometry and Incremental Sharing now supply the deterministic
+   interfaces required before any stochastic information-design package.
 4. Before Provenance, specify observables, source model, and
    sharpness/identification target separately.
 5. Before Rate–Discovery, choose a list, planner-emulation, or portfolio target

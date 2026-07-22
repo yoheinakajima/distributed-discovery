@@ -23,7 +23,9 @@ are complete and deployed. DD-020 has one passing immutable run and five
 audited claims; its editorial gate assigns primary ownership to a future
 Information Sharing Frontier theorem-family paper. Its exact output-connected
 Lab exposes all 2,054 adjacent transitions, separates aggregation gain from
-lost independent rescue, and preserves complete no-JavaScript tables. The concise entry points
+lost independent rescue, and preserves complete no-JavaScript tables. The
+four-milestone continuation and documentation-only final acceptance are
+complete; no later Program V5 study is registered by that closeout. The concise entry points
 are [`docs/current-state.md`](docs/current-state.md) and
 [`docs/current-roadmap.md`](docs/current-roadmap.md). Claims remain in
 [`claims/claims.yml`](claims/claims.yml) under the

@@ -57,3 +57,18 @@ Direct deployed requests returned HTTP 200 for:
 - `publications/incentive-to-ignore.html`
 - `downloads/The_Incentive_to_Ignore.pdf` (`application/pdf`, 125,674 bytes)
 - `og.png` (`image/png`, 2,335,582 bytes)
+
+## DD-020 deployment verification
+
+PR #140 merged as `57270680526120b2e7a595790af6d95e00eff5b8` after push CI
+`29932990915`, PR CI `29932992256`, and paper/site build `29932992268` passed.
+Post-merge CI `29933212532` and Pages `29933212171` passed.
+
+The deployed Incremental Sharing Lab reproduced the default noisy-point
+`-1/8` increment and the same-accuracy guaranteed-shortlist `1/24` increment,
+including exact aggregation gain `1/6` and lost rescue `1/8`. It exposes one
+H1, five primary-navigation links, labeled native controls, a polite live
+region, an accessible profile label, zero desktop or 390 px document overflow,
+and no browser warnings or errors. All 171 generated public files returned HTTP
+200 in the final sweep; both deployed DD-020 source-file hashes matched the
+immutable run.

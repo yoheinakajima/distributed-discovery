@@ -116,6 +116,10 @@ failure; the complete gate was rerun from the beginning and passed.
   2,044 point transitions, ten registered-channel transitions, the exact
   aggregation-minus-rescue decomposition, same-accuracy opposite signs,
   no-JavaScript tables, keyboard focus, mobile containment, and clean logs.
+- `2026-07-22`: PR #140 squash-merged as `57270680`; post-merge CI
+  `29933212532`, Pages `29933212171`, exact live-source checksums, deployed
+  browser QA, and all 171 live files pass. Final acceptance under issue #141
+  and PR #142 preserves the immutable run and registers no later study.
 
 ## Validation strategy
 
@@ -143,7 +147,8 @@ run, report, claim audits, public metadata, CSV, and SVG.
 
 No scientific blocker. Settings issue #32 is unrelated. The primary run is
 complete and must not be rerun. Public integration is presentation-only and
-final acceptance follows its deployment.
+is deployed; final acceptance preserves the evidence boundary and allocates no
+later study.
 
 ## Recovery and restart instructions
 

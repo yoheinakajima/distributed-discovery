@@ -30,6 +30,10 @@ inventory. The Incremental Sharing Lab selects 2,054 exact adjacent transitions
 from the immutable DD-020 outputs, including the same-accuracy opposite-sign
 comparison. Exact static-complete Labs never call a remote service or collect input.
 
+PR #140 deployed this surface. Post-merge CI, Pages, live interaction checks,
+and an HTTP 200 sweep of all 171 generated public files pass; the deployed
+DD-020 source-file checksums match the immutable run exactly.
+
 GitHub Actions builds the same ignored `site/dist` artifact from `main` and
 deploys it to <https://yoheinakajima.github.io/distributed-discovery/>. Never
 commit generated output or add analytics, tracking, advertising, or external

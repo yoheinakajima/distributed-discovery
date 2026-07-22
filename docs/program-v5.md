@@ -102,3 +102,6 @@ ownership to a future Information Sharing Frontier theorem-family paper and
 authorizes no submission. Its output-connected Lab selects the immutable exact
 point and channel transitions without changing evidence status. No later
 Program V5 study ID may be reserved before its own bounded registration gate.
+The four-milestone continuation and its documentation-only final acceptance are
+complete through issues #133, #135, #137, #139, and #141; no later package is
+allocated by that closeout.

@@ -13,5 +13,7 @@ baseline and first two bounded studies are complete and deployed: DD-019
 Signal Geometry and the Action-Budget Discovery Profile, and DD-020 Incremental
 Sharing and Independent Rescue. DD-020's editorial gate assigns its primary
 ownership to a future Information Sharing Frontier theorem-family paper. The
-roadmap preserves every later theorem direction; none is registered by this
-editorial decision.
+exact output-connected Incremental Sharing Lab is deployed from the immutable
+DD-020 run, and the continuation's final acceptance is recorded through issue
+#141 and PR #142. The roadmap preserves every later theorem direction; none is
+registered by this editorial or presentation decision.

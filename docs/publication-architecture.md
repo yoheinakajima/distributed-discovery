@@ -35,3 +35,5 @@ submission, release, DOI, journal contact, or claim of peer review.
 The machine-readable family, study, claim, paper, chapter, overlap, and gate
 relationships are in [`paper-family-map.yml`](paper-family-map.yml). A polished
 PDF is not evidence of admission, submission, acceptance, or peer review.
+DD-020's output-connected Lab is evidence infrastructure and does not alter
+the editorial dispositions or submission boundaries above.

@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-07-22 — Program V5 continuation final acceptance
+
+- Closed the sequential governance, DD-020, editorial, and public-integration
+  continuation with a documentation-only full acceptance under issue #141 and
+  PR #142.
+- Revalidated 224 tests, 96 claims, 49 manifests, six deterministic papers,
+  72 routes, 71 public data files, 17 Labs, 22 checksum-covered downloads, and
+  all 171 deployed files without rerunning a registered study.
+- Preserved all claims, immutable runs, paper PDFs, editorial boundaries,
+  no-human-data status, read-only upstream, and settings issue #32.
+
 ## 2026-07-22 — Incremental Sharing public Lab
 
 - Added an exact output-connected DD-020 Lab with point/channel controls,
