@@ -1701,3 +1701,24 @@ claims:
     first_added: "2026-07-22"
     last_checked: "2026-07-22"
     notes: The null is first-class evidence. Stopping feedback is excluded because continuation reveals failure in addition to the action itself.
+  - id: DD-C-0082
+    study_id: DD-015
+    short_name: threshold-two-dynamic-planner-extension
+    statement: In DD-015's separately labeled threshold-two planner extension, stopping preserves the fixed-budget optimal discovery value and strictly reduces expected actions in all 16 parameter cells; across all 32 objective rows the optimal policy uses, with positive probability, each of starting a singleton, joining a singleton, joining a viable team, following the shared clue, and opposing it.
+    scope: Three targets, three sequential agents, threshold two, the frozen rational shared/private accuracy grid, visible actions, deterministic common-information prescriptions, and the declared fixed/stopping feedback rules; this is a planner-only bounded extension and not a decentralized, equilibrium, mechanism, coalition-proof, or general theorem claim.
+    claim_type: computational-result
+    status: verified
+    source_type: separately-registered-exact-threshold-dp-with-labeled-path-verifier
+    source_reference: results/verified/20260722T044453Z_DD-015_34bc4379_33e1da478b/outputs/threshold-two-summary.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/dynamic_attention/threshold_extension.py]
+    run_ids: [20260722T044453Z_DD-015_34bc4379_33e1da478b]
+    test_paths: [tests/unit/test_dynamic_attention_threshold.py]
+    exactness_basis: Exact Fraction dynamic programming exhausts 27 prescriptions at every public state. Direct enumeration of 3,888 unique labeled target/signal paths reproduces all 32 policy values and action categories, exact fixed/stopping comparisons cover all 16 parameter cells, and altered discovery and expected-action records are rejected.
+    rounding_rule: exact integer counts and fractions
+    dependencies: [DD-C-0071, DD-C-0080]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: Joining a viable team can be optimal on histories where discovery is already secured under fixed budget; its presence is not evidence of decentralized over-crowding.

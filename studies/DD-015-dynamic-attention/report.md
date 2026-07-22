@@ -31,3 +31,13 @@ computational-result, and negative-result audits. The model does not cover
 equal-split congestion, signaling equilibria, mixed strategies, human behavior,
 or threshold-team rewards. The threshold-two extension remains separately
 labeled and must not be inferred from this baseline.
+
+Secondary clean run `20260722T044453Z_DD-015_34bc4379_33e1da478b` evaluates
+the registered threshold-two planner extension over 16 parameter cells and 32
+objective rows. Direct enumeration covers 3,888 unique labeled paths and rejects
+two corruptions. Stopping preserves the fixed-budget planner discovery value in
+all 16 cells while strictly reducing expected actions. Every optimal-policy row
+uses starting a singleton, joining a singleton, joining an already viable team,
+following the shared clue, and opposing it with positive probability across its
+reachable histories. DD-C-0082 records this planner-only bounded result; it is
+not a decentralized implementation claim.

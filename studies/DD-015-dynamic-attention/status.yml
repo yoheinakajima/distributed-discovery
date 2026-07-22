@@ -1,5 +1,5 @@
 study_id: DD-015
-status: baseline-complete-extension-pending
-evidence_status: verified-proposition-exact-census-and-bounded-negative-result
-next_action: preserve the immutable baseline; register the separately labeled threshold-two extension before completing DD-015
-updated_utc: 2026-07-22T04:37:27Z
+status: complete-bounded-study
+evidence_status: verified-proposition-exact-censuses-and-bounded-negative-result
+next_action: preserve both immutable configurations and their planner-versus-equilibrium boundary; complete repository and deployment acceptance
+updated_utc: 2026-07-22T04:45:07Z

@@ -64,7 +64,7 @@ histories in the bounded exact evaluator.
 - [ ] Clean source commit and immutable primary run pass.
 - [ ] Claims and documentation are audited.
 - [x] Baseline claims and documentation are audited.
-- [ ] Separately labeled threshold-two planner extension passes.
+- [x] Separately labeled threshold-two planner extension passes.
 - [ ] Repository/site acceptance, merge, CI, Pages, and live routes pass.
 
 ## Discoveries and surprises
@@ -161,3 +161,8 @@ After the cast correction, extension pre-run acceptance passed Ruff, MyPy on
 manifests. The exact next action is to commit the baseline evidence and frozen
 extension source, then execute the distinct extension configuration once from
 that clean commit.
+
+The separately labeled extension run
+`20260722T044453Z_DD-015_34bc4379_33e1da478b` passed in 13.842954 seconds.
+DD-C-0082 passed its separate audit. The active gate is full repository/site
+acceptance, evidence commit, PR CI, merge, post-merge CI/Pages, and live routes.

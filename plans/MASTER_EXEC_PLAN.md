@@ -188,6 +188,17 @@ before its independent verifier and immutable primary run pass.
   `make verify` passed MyPy on 125 source files, all 198 tests, the unchanged
   78-claim ledger, and all 42 existing manifests. The active gate is bootstrap,
   site validation, the clean source commit, and exactly one primary run.
+- 2026-07-22: DD-015 primary run
+  `20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a` passed in 13.971626 seconds,
+  supporting verified DD-C-0079 through DD-C-0081. Only after that baseline
+  passed, secondary threshold-two run
+  `20260722T044453Z_DD-015_34bc4379_33e1da478b` passed in 13.842954 seconds and
+  supports planner-only DD-C-0082. The baseline retains the 18-of-32 bounded
+  visibility-herding negative result; the threshold extension preserves
+  fixed/stopping discovery and reduces actions in all 16 cells while exercising
+  all registered team-action categories. The active gate is full acceptance,
+  PR #111 CI/merge, post-merge CI/Pages, and live routes. Neither run may be
+  repeated for freshness.
 
 ### Program V3 attention queue (complete, 2026-07-21)
 

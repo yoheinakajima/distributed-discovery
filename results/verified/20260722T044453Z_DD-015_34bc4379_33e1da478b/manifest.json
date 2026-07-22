@@ -1,0 +1,28 @@
+{
+  "command": "make dd015-threshold-extension",
+  "config_hash_sha256": "33e1da478b7a3852949a564d5e8d48875cdd9a8087da3766b49f1b037ffb81f3",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-22T04:45:07.458603Z",
+  "exit_status": 0,
+  "git_commit": "34bc4379708897bd78f63e8d8f0a4b302cdfbcdc",
+  "git_dirty": false,
+  "input_hashes": {
+    "src/distributed_discovery/dynamic_attention/threshold_extension.py": "c034cda2e489882cac951e38a53983c4c503adba340d56dbbd40293de2f8eb3e",
+    "studies/DD-015-dynamic-attention/configs/threshold-two.yml": "0352bc7875061f74ef2d84403e3d11e8cccc489fb7ae4c889384b590a34f4dd6"
+  },
+  "outputs": {
+    "outputs/corruption-tests.json": "780b007a58e9a53f86b16b736da174e13194bfeb16679b608d01c62cc9376afe",
+    "outputs/threshold-two-profile.json": "065d1159711224fa2a5122e3cfbf7f89e2db7ca76a2d43073e556402d2798628",
+    "outputs/threshold-two-summary.json": "0a31654fd47a87c828a5489181af62af150a87b72c6d07c6eab400a0242a1c81"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "run_id": "20260722T044453Z_DD-015_34bc4379_33e1da478b",
+  "schema_version": 1,
+  "started_utc": "2026-07-22T04:44:53.609993Z",
+  "study_id": "DD-015",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}
