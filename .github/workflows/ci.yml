@@ -15,7 +15,9 @@ jobs:
         run: make lint
       - name: Typecheck
         run: make typecheck
-      - name: Test
-        run: make test
+      - name: Integration and regression tests
+        run: uv run --no-editable pytest tests/integration tests/regression
+      - name: Unit tests
+        run: uv run --no-editable pytest tests/unit
       - name: Validate claims and run manifests
         run: make validate-claims
