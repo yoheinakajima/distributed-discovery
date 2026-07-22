@@ -1,6 +1,6 @@
-# Proposed theorem and section map
+# Theorem and section map
 
-This map is editorial planning, not manuscript prose. Claim IDs retain the
+This map records the implemented editorial order. Claim IDs retain the
 evidence status in `claims/claims.yml`.
 
 ## Abstract-level commitments
@@ -14,7 +14,7 @@ evidence status in `claims/claims.yml`.
 5. State that all finite classifications are bounded and use no human or real
    data.
 
-## Proposed sections
+## Implemented sections
 
 | Section | Editorial purpose | Primary claims |
 | --- | --- | --- |

@@ -1,20 +1,22 @@
 # Master execution plan
 
-## Active continuation — Information Sharing Frontier paper admission (2026-07-22)
+## Active continuation — Information Sharing Frontier working paper (2026-07-22)
 
 DD-022 research PR #151 merged as
 `c8a11bd3c9c8c68e6e631bc61ef3a1d8c46e7fe9`; post-merge CI `29959514182`,
-Pages `29959514196`, and all named live routes pass. Issue #152 and branch
-`docs/information-sharing-frontier-paper-admission` own the sole active lane: a
-documentation-only admission decision under PR #154.
+Pages `29959514196`, and all named live routes pass. Issue #153 and branch
+`paper/information-sharing-frontier` own the sole active lane under draft PR
+#155.
 
-The gate admits *When Does Information Sharing Improve Decentralized
-Discovery?* as an archival theorem-paper candidate with an explicit selected-
-equilibrium qualifier and every-equilibrium negative result. Paper issue #153,
-`plans/INFORMATION_SHARING_FRONTIER_PAPER.md`, the theorem/section map, and the
-ownership map are the only paper artifacts authorized. The gate creates no
-study, claim, run, proof, manuscript, PDF, submission, release, DOI, journal
-contact, or upstream mutation.
+The branch implements *When Does Information Sharing Improve Decentralized
+Discovery?* as a 26-page deterministic working paper with an explicit
+selected-equilibrium qualifier and adjacent every-equilibrium negative result.
+Eight figures, eight tables, exact data, literature and novelty audits,
+independent provenance/corruption checks, all-page visual QA, and site
+publication integration pass locally. No DD-019 through DD-022 run was rerun,
+and no study, claim, proof, empirical evidence, submission, release, DOI,
+journal contact, settings change, or upstream mutation is created. The next
+gate is branch CI, then squash merge and live Pages verification.
 
 ## Completed continuation — DD-022 Coordination-Free Positive Sharing (2026-07-22)
 

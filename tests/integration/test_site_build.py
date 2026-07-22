@@ -266,6 +266,14 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert threshold["download"] == "downloads/Threshold_Discovery.pdf"
     threshold_html = (output / threshold["detail"]).read_text(encoding="utf-8")
     assert "working paper · no DOI · not submitted · not peer reviewed" in threshold_html
+    sharing = next(item for item in publications if item["slug"] == "information-sharing-frontier")
+    assert sharing["download"] == (
+        "downloads/When_Does_Information_Sharing_Improve_Decentralized_Discovery.pdf"
+    )
+    sharing_html = (output / sharing["detail"]).read_text(encoding="utf-8")
+    assert "working paper · no DOI · not submitted · not peer reviewed" in sharing_html
+    assert "Nakajima2026InformationSharingFrontier" in sharing_html
+    assert "BibTeX" in sharing_html
 
     routes = json.loads((output / "data/routes.json").read_text(encoding="utf-8"))["routes"]
     route_paths = {route["path"] for route in routes}
@@ -302,6 +310,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "publications/common-source-trap.html",
         "publications/incentive-to-ignore.html",
         "publications/threshold-discovery.html",
+        "publications/information-sharing-frontier.html",
         "program.html",
     } <= route_paths
     assert (output / "robots.txt").is_file()
@@ -400,7 +409,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert relations["entity_counts"]["studies"] == 26
     assert relations["entity_counts"]["findings"] == 15
     assert relations["entity_counts"]["labs"] == 18
-    assert relations["entity_counts"]["papers"] == 6
+    assert relations["entity_counts"]["papers"] == 7
     assert relations["entity_counts"]["benchmark_tasks"] == 24
     assert len(relations["relations"]) == 26
     for relation in relations["relations"]:

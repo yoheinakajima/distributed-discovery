@@ -82,6 +82,7 @@ results:
     study_id: DD-020
     claim_ids: [DD-C-0094]
     lab_slug: incremental-sharing
+    paper_slug: information-sharing-frontier
     order: 2
   - result_id: error-contraction-frontier
     theme: action-portfolios
@@ -91,6 +92,7 @@ results:
     study_id: DD-021
     claim_ids: [DD-C-0097]
     lab_slug: general-sharing-frontier
+    paper_slug: information-sharing-frontier
     order: 3
   - result_id: full-capacity-recovery
     theme: action-portfolios
@@ -100,6 +102,7 @@ results:
     study_id: DD-021
     claim_ids: [DD-C-0098, DD-C-0102]
     lab_slug: general-sharing-frontier
+    paper_slug: information-sharing-frontier
     order: 4
   - result_id: strict-joint-mechanisms
     theme: incentives-equilibrium
@@ -119,6 +122,7 @@ results:
     study_id: DD-022
     claim_ids: [DD-C-0106, DD-C-0107]
     lab_slug: coordination-free-positive-sharing
+    paper_slug: information-sharing-frontier
     data_route: data/coordination-free-positive-sharing/threshold-certificate.json
     order: 2
   - result_id: architecture-pareto-frontier
@@ -148,6 +152,7 @@ results:
     study_id: DD-020
     claim_ids: [DD-C-0096]
     lab_slug: incremental-sharing
+    paper_slug: information-sharing-frontier
     data_route: data/incremental-sharing/channel-profiles.json
     order: 2
   - result_id: bounded-mixed-sharing-null
@@ -158,6 +163,7 @@ results:
     study_id: DD-021
     claim_ids: [DD-C-0099, DD-C-0103]
     lab_slug: general-sharing-frontier
+    paper_slug: information-sharing-frontier
     data_route: data/general-sharing-frontier/registry.json
     order: 3
   - result_id: coordination-free-selection-boundary
@@ -168,5 +174,6 @@ results:
     study_id: DD-022
     claim_ids: [DD-C-0109]
     lab_slug: coordination-free-positive-sharing
+    paper_slug: information-sharing-frontier
     data_route: data/coordination-free-positive-sharing/registry.json
     order: 4

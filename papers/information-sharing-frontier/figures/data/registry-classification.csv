@@ -1,0 +1,5 @@
+class,count,scope
+all-neutral,35,177-scenario bounded registry
+strict-aggregation-dominated,16,177-scenario bounded registry
+strict-compression-dominated,126,177-scenario bounded registry
+mixed,0,bounded null

@@ -1,34 +1,29 @@
-# Project status — DD-021 deployment and editorial gate
+# Project status — Information Sharing Frontier working paper
 
 Date: 2026-07-22 (America/Los_Angeles)
 
 Programs V1 through V4 are complete at their registered bounded scopes.
-Program V5's documentation baseline, DD-019, and governance architecture are
-merged and deployed. DD-020 Incremental Sharing and
-Independent Rescue is merged and deployed through PR #136 with a passing
-immutable run and five audited claims. Its documentation-only editorial gate
-assigns primary ownership without creating research evidence or submission
-authority. PR #140 deployed the exact output-connected public Lab without
-executing or mutating any research run. Issue #141 and PR #142 record the
-documentation-only acceptance. DD-021 subsequently completed and deployed
-through issue #146 and PR #147. Issue #148 applies the separate post-DD-021
-paper gate without allocating a new study.
+Program V5's four studies DD-019 through DD-022 are merged and deployed with
+claims DD-C-0089 through DD-C-0110 and four immutable primary runs. Issue #153
+authorizes the qualified theorem-family working paper. Draft PR #155 contains
+the locally accepted 26-page artifact and public-site integration without
+allocating a study, changing a claim, or rerunning research.
 
 ## Inventory
 
 | Measure | Value |
 | --- | ---: |
-| Studies | 25 |
-| Claims | 103 |
-| Immutable manifests | 50 |
-| Passing immutable runs | 47 |
-| Tests | 235 |
-| Validated project papers | 6 |
-| Paper pages | 89 |
-| Public HTML routes | 74 locally generated |
-| Public data files | 81 |
-| Labs | 17 |
-| Checksum-covered downloads | 22 |
+| Studies | 26 |
+| Claims | 110 |
+| Immutable manifests | 51 |
+| Passing immutable runs | 48 |
+| Tests | 247 |
+| Validated project papers | 7 |
+| Paper pages | 115 |
+| Public HTML routes | 77 locally generated |
+| Public data files | 85 |
+| Labs | 18 |
+| Checksum-covered downloads | 23 |
 
 ## Program V5 continuation milestones
 
@@ -41,20 +36,23 @@ paper gate without allocating a new study.
 | Final acceptance | #141 | #142 | recorded in GitHub after merge |
 | DD-021 General Sharing Frontier | #146 | #147 | `8b444003` |
 | Post-DD-021 paper gate | #148 | #149 | recorded by PR #149 |
+| DD-022 Coordination-Free Positive Sharing | #150 | #151 | `c8a11bd3` |
+| Information Sharing Frontier paper | #153 | #155 | pending branch CI and merge |
 
 ## Current acceptance record
 
-- Bootstrap, Ruff, strict MyPy over 148 source files, all 235 tests, the
-  103-claim ledger, and all 50 immutable manifests pass.
+- Bootstrap, Ruff, strict MyPy over 159 source files, all 247 tests, the
+  110-claim ledger, and all 51 immutable manifests pass.
 - Eighteen saved exact-verification records pass; 66 gates across 18 saved
   corruption records are true.
 - Twelve JSON schemas validate; the synthetic discovery-event valid fixture is
   accepted and its invalid fixture is rejected.
-- Six project papers rebuild deterministically at 12, 14, 3, 20, 20, and 20
-  pages, with valid provenance and unchanged tracked PDFs.
-- The site builds 74 HTML routes for 25 studies, 81 public data files, 17 Labs,
-  and 22 checksum-covered downloads. The DD-021 study, Lab, results, claims,
-  evidence, and exact-data routes return HTTP 200.
+- Seven project papers rebuild deterministically at 12, 14, 3, 20, 20, 20,
+  and 26 pages. The new paper has eight generated figures, eight generated
+  tables, exact data, an independent audit, corruption tests, and all-page QA.
+- The site builds 77 HTML routes for 26 studies, 85 public data files, 18 Labs,
+  and 23 checksum-covered downloads. Live verification of the new publication
+  and download remains the post-merge gate.
 - Browser QA passes substantive point/channel output selection, opposite-sign
   same-accuracy comparison, semantic controls, live status, keyboard focus,
   desktop/mobile containment, internally scrolling tables, and clean logs.

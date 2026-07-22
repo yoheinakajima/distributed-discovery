@@ -1,0 +1,16 @@
+% Generated evidence asset; do not edit by hand.
+\begin{figure}[t]\centering
+\begin{tikzpicture}[x=1.8cm,y=5cm]
+\draw[->] (.7,0)--(4.35,0) node[right] {$s$}; \draw[->] (.8,0)--(.8,1.03) node[above] {$G_s$};
+\draw[very thick,private,mark=*] plot coordinates {(1,0.875000) (2,0.750000) (3,0.583333)};
+\draw[very thick,planner,mark=*] plot coordinates {(1,0.875000) (2,0.916667) (3,0.944444)};
+\draw[very thick,accent,mark=*] plot coordinates {(1,0.947266) (2,0.882812) (3,0.768229)};
+\foreach \x in {1,2,3}{\draw (\x,0)--(\x,-.015) node[below] {\x};}
+\node[private,anchor=west] at (2.1,.63) {noisy point};
+\node[planner,anchor=west] at (1.7,.94) {guaranteed shortlist};
+\node[accent,anchor=west] at (1.25,.84) {confidence point};
+\end{tikzpicture}
+\caption{Incremental-sharing curves at $M=4,N=3$. The half-accurate noisy point declines, the equally accurate guaranteed shortlist rises, and the confidence-point channel declines. The sign is a property of channel geometry and protocol, not accuracy alone.}
+\label{fig:incremental}
+\ArtifactNote{Runs: \path{20260722T142551Z_DD-020_3854fff6_37c11a850a}; claims: DD-C-0094, DD-C-0096; generator: \path{distributed_discovery.papers.build_information_sharing_frontier}; input SHA-256 prefixes: \texttt{a4f63d52f402}.}
+\end{figure}

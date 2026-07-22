@@ -1,0 +1,15 @@
+% Generated evidence asset; do not edit by hand.
+\begin{figure}[t]\centering
+\begin{tikzpicture}[x=2.1cm,y=4.6cm]
+\draw[->] (.7,0)--(3.55,0) node[right] {step $s$}; \draw[->] (.8,0)--(.8,1.05) node[above] {$\rho_s$};
+\draw[dashed,very thick] (.8,.5)--(3.15,.5) node[right] {$1-q=1/2$};
+\draw[very thick,private,mark=*] plot coordinates {(1,1.000000) (2,0.833333)};
+\draw[very thick,planner,mark=*] plot coordinates {(1,0.333333) (2,0.333333)};
+\foreach \x in {1,2}{\draw (\x,0)--(\x,-.015) node[below] {\x};}
+\node[private,anchor=west] at (1.1,.84) {compression: $\rho_s>1-q$};
+\node[planner,anchor=west] at (1.1,.18) {aggregation: $\rho_s<1-q$};
+\end{tikzpicture}
+\caption{Residual-error frontier for the registered half-accurate $M=4,N=3$ point and guaranteed-shortlist channels. A sharing step helps below the rescue threshold, is neutral on it, and hurts above it.}
+\label{fig:error-frontier}
+\ArtifactNote{Runs: \path{20260722T185924Z_DD-021_3cdbbc40_2fea269a9a}; claims: DD-C-0097, DD-C-0100; generator: \path{distributed_discovery.papers.build_information_sharing_frontier}; input SHA-256 prefixes: \texttt{3521286a3415}.}
+\end{figure}

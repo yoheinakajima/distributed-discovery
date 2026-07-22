@@ -1,0 +1,14 @@
+% Generated evidence asset; do not edit by hand.
+\begin{figure}[t]\centering
+\begin{tikzpicture}[x=1.75cm,y=4.6cm]
+\draw[->] (0.65,0)--(4.45,0); \draw[->] (0.75,0)--(0.75,1.08) node[above] {probability};
+\draw[very thick,private,mark=*] plot coordinates {(1,0.583333) (2,0.796296) (3,0.925926)};
+\draw[very thick,planner,mark=*] plot coordinates {(1,0.944444) (2,1.000000) (3,1.000000)};
+\foreach \x/\lab in {1/$V_1$,2/$V_2$,3/$V_3$}{\draw (\x,0)--(\x,-.018) node[below] {\lab};}
+\draw[dashed] (.75,.5)--(3.15,.5) node[right] {one-person accuracy $=1/2$};
+\node[private,anchor=west] at (1.1,.60) {noisy point}; \node[planner,anchor=west] at (1.1,.98) {guaranteed shortlist};
+\end{tikzpicture}
+\caption{Same one-person accuracy, different pooled action-budget profiles. Both channels also have direct private discovery $7/8$, yet the noisy point requires three pooled actions to recover that baseline and the guaranteed shortlist requires one. Exact values are in \cref{tab:profiles}.}
+\label{fig:same-accuracy}
+\ArtifactNote{Runs: \path{20260722T084145Z_DD-019_a77bb786_04a5e9f0c5}; claims: DD-C-0089, DD-C-0090, DD-C-0091; generator: \path{distributed_discovery.papers.build_information_sharing_frontier}; input SHA-256 prefixes: \texttt{a7da8a20aa24}.}
+\end{figure}

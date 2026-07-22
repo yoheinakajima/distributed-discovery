@@ -1,0 +1,6 @@
+channel,G1,G2,G3,d12,d23
+noisy-point-half,7/8,3/4,7/12,-1/8,-1/6
+noisy-shortlist-three-quarters,387/512,11/16,35/64,-35/512,-9/64
+guaranteed-shortlist-two,7/8,11/12,17/18,1/24,1/36
+explicit-exclusion,19/27,17/27,16/27,-2/27,-1/27
+confidence-point,485/512,113/128,295/384,-33/512,-11/96

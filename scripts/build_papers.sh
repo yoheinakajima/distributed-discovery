@@ -20,6 +20,9 @@ case "$selection" in
   threshold-discovery)
     uv run --no-editable python -m distributed_discovery.papers.build_threshold_discovery
     ;;
+  information-sharing-frontier)
+    uv run --no-editable python -m distributed_discovery.papers.build_information_sharing_frontier
+    ;;
   all)
     uv run --no-editable python -m distributed_discovery.papers.build_foundations
     uv run --no-editable python -m distributed_discovery.papers.build_three_results
@@ -27,6 +30,7 @@ case "$selection" in
     uv run --no-editable python -m distributed_discovery.papers.build_common_source_trap
     uv run --no-editable python -m distributed_discovery.papers.build_incentive_to_ignore
     uv run --no-editable python -m distributed_discovery.papers.build_threshold_discovery
+    uv run --no-editable python -m distributed_discovery.papers.build_information_sharing_frontier
     ;;
   *)
     echo "unknown paper selection: $selection" >&2

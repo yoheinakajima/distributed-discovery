@@ -1,0 +1,20 @@
+% Generated evidence asset; do not edit by hand.
+\begin{figure}[p]\centering
+\begin{tikzpicture}[x=9cm,y=6.8cm]
+\draw[->] (0,0)--(1.07,0) node[right] {$\rho$}; \draw[->] (0,0)--(0,1.06) node[above] {discovery};
+\draw[planner,very thick] (0,1)--(1,1) node[anchor=south east] {centralized $V_2=1$};
+\draw[very thick,accent,dashed,mark=*] plot coordinates {(0.000000,0.840000) (0.166667,0.800000) (0.250000,0.780000) (0.500000,0.720000) (0.583333,0.700000) (0.750000,0.660000) (1.000000,0.600000)};
+\draw[very thick,private,solid,mark=*] plot coordinates {(0.000000,0.840000) (0.166667,0.800000) (0.250000,0.780000) (0.500000,0.720000) (0.583333,0.700000) (0.750000,0.710526) (1.000000,0.720000)};
+\draw[very thick,shared,solid,mark=*] plot coordinates {(0.000000,0.720000) (0.166667,0.700000) (0.250000,0.703125) (0.500000,0.710526) (0.583333,0.712500) (0.750000,0.715909) (1.000000,0.720000)};
+\draw[dotted] (0.166667,0)--(0.166667,1.02) node[above,rotate=90,font=\scriptsize] {$1/6$};
+\draw[dash dot] (0.53583372,0)--(0.53583372,1.02) node[above,rotate=90,font=\scriptsize] {$\rho^*$};
+\draw[dotted] (0.583333,0)--(0.583333,1.02) node[above,rotate=90,font=\scriptsize] {$7/12$};
+\draw[accent,dashed,very thick] (.68,.91)--(.76,.91) node[anchor=west] {direct private};
+\draw[private,very thick] (.68,.85)--(.76,.85) node[anchor=west] {private selected};
+\draw[shared,very thick] (.68,.79)--(.76,.79) node[anchor=west] {shared selected};
+\draw (0,0)--(0,-.012) node[below] {0}; \draw (.25,0)--(.25,-.012) node[below] {$1/4$}; \draw (.5,0)--(.5,-.012) node[below] {$1/2$}; \draw (.75,0)--(.75,-.012) node[below] {$3/4$}; \draw (1,0)--(1,-.012) node[below] {1};
+\end{tikzpicture}
+\caption{Discovery versus source dependence at $p=3/5$. The exact theorem compares the private and shared selected equilibria, not direct clue-following. Selected sharing is strictly higher only on $(\rho^*,1)$, where $\rho^*=(5\sqrt{73}-17)/48$; equality returns at one. The selected shared outcome remains below centralized $V_2$. Lines connect registered exact cells for display; the interval theorem comes from the analytic certificate.}
+\label{fig:strategic}
+\ArtifactNote{Runs: \path{20260722T210334Z_DD-022_2376d5b7_ad67765ca8}; claims: DD-C-0104, DD-C-0105, DD-C-0106, DD-C-0110; generator: \path{distributed_discovery.papers.build_information_sharing_frontier}; input SHA-256 prefixes: \texttt{98fb7d475365}.}
+\end{figure}

@@ -1,0 +1,5 @@
+claims,evidence,authority
+DD-C-0089--0091,exact bounded,centralized top-L
+DD-C-0092--0097,identity/theorem,nonstrategic protocol
+DD-C-0098--0103,theorem/bounded/negative,centralized recovery
+DD-C-0104--0110,selected theorem/bounded/negative,decentralized selection and centralized benchmark
