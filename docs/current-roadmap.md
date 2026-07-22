@@ -18,6 +18,7 @@ verification plan, and corruption test where certificates are used.
 | DD-018 Minimum Viable Team Mechanisms | complete and deployed through PR #114 | Preserve DD-C-0083 through DD-C-0086 and the immutable 50-row census; common-posterior allocation does not test report truthfulness, authoritative implementation is not equilibrium, and pair/tau stability is not coalition-proofness. |
 | DiscoveryBench v3 | complete and deployed through PR #117 | Preserve DD-C-0087, the immutable v3 run, v1/v2 defaults and exact vectors, 36 compatible exact rows, 660 exclusions, capability isolation, and no composite score. |
 | Synthetic Experiment v3 | complete and deployed through PR #120 | Preserve DD-C-0088, all three immutable versions, the 644 retained calibration failures, shared-seed v2 power rows, and the absolute no-human-data boundary. |
+| Threshold Discovery paper | local artifact complete on issue #122; deployment pending | Preserve the 20-page deterministic working paper, eight source-generated assets, seven immutable run mappings, claim/citation audit, all-page visual QA, and no-DOI/no-submission boundary. |
 | Program V5 — Information Sharing Frontier | authorized after the merged Program V4 handoff | Begin with a documentation-only baseline, then register only Signal Geometry and the Action-Budget Discovery Profile after its channel-law and complexity audit. Do not start V5 research while V4 is active. |
 | Program V3 focused paper | complete and deployed through PR #90 | The deterministic 20-page *Incentive to Ignore* paper, nine generated evidence assets, citation audit, all-page visual review, Pages, and live PDF pass. |
 | Program V3 benchmark, experiment, and site integration | complete and deployed through PRs #93, #95, and #97 | Preserve version compatibility, static/no-tracking operation, no-JS tables, and exact provenance. |
@@ -52,11 +53,10 @@ git pull --ff-only origin main
 make verify
 ```
 
-The active milestone is the focused paper *Threshold Discovery*, subtitled
-*Coordination, Crowding, and Minimum Viable Teams*. Open one issue and branch
-from synchronized `main`; synthesize DD-016, DD-017, DD-015, DD-018,
-DiscoveryBench v3, and Synthetic Experiment v3 with explicit claim and
-immutable-run links. Require generated figures, a deterministic PDF, citation
-validation, and all-page visual QA. Describe it only as a working paper: do not
-claim a DOI, submission, peer review, or verified novelty. For settings-only
-work, use `docs/github-setup.md` and issue #32.
+The active milestone is issue #122 and branch `paper/threshold-discovery`.
+Finish full repository, paper, and site acceptance for the locally complete
+20-page artifact; commit and push the frozen source; pass PR CI and paper/site
+checks; merge and verify post-merge CI, Pages, the publication page, and live
+PDF. Do not create a DOI, submission, peer-review, or verified-novelty claim.
+The Program V4 Labs issue begins only after this paper deploys. For settings-
+only work, use `docs/github-setup.md` and issue #32.

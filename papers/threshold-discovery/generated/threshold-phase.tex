@@ -1,0 +1,20 @@
+% Generated evidence asset; do not edit by hand.
+% Claims: DD-C-0073, DD-C-0074
+\begin{figure}[t]\centering
+\begin{tikzpicture}[x=1.05cm,y=6.8cm]
+\draw[->] (0.7,0)--(8.45,0) node[right] {$\tau$};
+\draw[->] (0.8,0)--(0.8,.91) node[above] {discovery};
+\draw[very thick,private,mark=*] plot coordinates {(1,0.832228) (2,0.496684) (3,0.203082) (4,0.056282) (5,0.010406) (6,0.001231) (7,0.000084) (8,0.000003)};
+\draw[very thick,consensus,mark=*] plot coordinates {(1,0.383469) (2,0.383469) (3,0.383469) (4,0.383469) (5,0.383469) (6,0.383469) (7,0.383469) (8,0.383469)};
+\draw[very thick,market,mark=*] plot coordinates {(1,0.513796) (2,0.478040) (3,0.438965) (4,0.393070) (5,0.346198) (6,0.311782) (7,0.295262) (8,0.290637)};
+\draw[very thick,planner,mark=*] plot coordinates {(1,0.859421) (2,0.670581) (3,0.527532) (4,0.527532) (5,0.383469) (6,0.383469) (7,0.383469) (8,0.383469)};
+\foreach \x in {1,...,8} {\draw (\x,0)--(\x,-.012) node[below] {\x};}
+\node[anchor=west,private] at (1.1,.88) {private clue-following};
+\node[anchor=west,planner] at (3.7,.64) {planner};
+\node[anchor=west,consensus] at (5.0,.43) {common mode};
+\node[anchor=west,market] at (5.0,.31) {selected tied-mode mix};
+\end{tikzpicture}
+\caption{Exact canonical threshold phase diagram for $M=16$, $N=8$, and clue accuracy $1/5$. Common mode and the registered tied-mode mixture trail private clue-following at thresholds one and two, then exceed it at thresholds three through eight. The deterministic planner remains the comparison frontier.}
+\label{fig:threshold-phase}
+\ArtifactNote{Source runs: \path{20260722T021526Z_DD-016_00271ff8_123b2809e3}; claims: DD-C-0073, DD-C-0074; generator: \path{distributed_discovery.papers.build_threshold_discovery}; input SHA-256 prefixes: \texttt{473fb4ffe40f}.}
+\end{figure}

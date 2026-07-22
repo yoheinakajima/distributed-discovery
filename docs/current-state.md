@@ -19,7 +19,9 @@ threshold-two scopes. DD-018 is complete and deployed at its bounded
 common-posterior mechanism scope. DiscoveryBench v3 and Synthetic Experiment
 v3 are complete and deployed with all earlier versions preserved. Every
 synthetic calibration failure remains public, and no human experiment exists.
-The focused paper is next, followed by Labs and the final handoff.
+The focused *Threshold Discovery* paper has a complete local 20-page,
+byte-reproducible artifact with eight generated assets and all-page visual QA
+on issue #122; deployment remains pending. Labs and the final handoff follow.
 
 Program V5, *The Information Sharing Frontier*, is a roadmap direction only
 until Program V4 completes. It will begin with a documentation baseline and one
@@ -34,13 +36,13 @@ canonical Shared Discovery Paradox repository remains pinned at
 | Ledger claims | 88 |
 | Passing immutable runs | 44 of 47 manifests |
 | Registered studies | 22 |
-| Python source files | 133 |
-| Public HTML routes | 63 |
+| Python source files | 134 |
+| Public HTML routes | 64 |
 | Public data files | 62 |
 | Laboratory routes | 12 |
-| Validated project papers | 5 |
-| Checksum-registered downloads | 21 |
-| Test suite | 210 collected tests |
+| Validated project papers | 6 |
+| Checksum-registered downloads | 22 |
+| Test suite | 212 collected tests |
 
 ## Program V4 exact result
 
