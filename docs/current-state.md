@@ -1,6 +1,6 @@
 # Current program state
 
-_Reconciled 2026-07-22 for DD-020 public integration and final acceptance._
+_Reconciled 2026-07-22 for DD-021 deployment and its paper gate._
 
 Programs V1, V2, and the required Program V3 queue are complete at their
 registered bounded scopes. Program V3, *The Incentive to Ignore*, completed
@@ -56,24 +56,47 @@ security, license, upstream, browser, accessibility, download, and all-file
 live-route audits. It creates no claim, run, paper change, submission action, or
 new study allocation.
 
+DD-021 General Sharing Frontier then completed through issue #146 and PR #147,
+merged as `8b44400333e156440a22b0d9fe3be37f63d35a08`. Its sole clean run
+`20260722T185924Z_DD-021_3cdbbc40_2fea269a9a` supports DD-C-0097 through
+DD-C-0103. Post-merge CI `29951061680`, Pages `29951061715`, and the live
+study, Lab, results, claims, evidence, and exact-data routes pass. The separate
+documentation-only issue #148 holds the proposed decentralized paper for one
+Coordination-Free Positive Sharing theorem package; it creates no research
+evidence or submission authority.
+
 The repository is public and project-authored content is MIT-licensed. The
 canonical Shared Discovery Paradox repository remains pinned at
 `5025cc8e8f2f8ca015dff2066f08f81ad5715a51`, separate, clean, and read-only.
 
 | Measure | Current value |
 | --- | ---: |
-| Ledger claims | 96 |
-| Passing immutable runs | 46 of 49 manifests |
-| Registered studies | 24 |
-| Python source files | 142 |
-| Public HTML routes | 72 locally generated |
-| Public data files | 71 |
+| Ledger claims | 103 |
+| Passing immutable runs | 47 of 50 manifests |
+| Registered studies | 25 |
+| Python source files | 148 |
+| Public HTML routes | 74 locally generated |
+| Public data files | 81 |
 | Laboratory routes | 17 |
 | Validated project papers | 6 |
 | Checksum-registered downloads | 22 |
-| Test suite | 224 collected tests |
+| Test suite | 235 collected tests |
 
 ## Program V5 exact result
+
+DD-021 proves for every declared channel in its protocol that
+`G_s=1-(1-C_s)(1-q)^(N-s)` and
+`G_(s+1)-G_s=(1-q)^(N-s-1)((1-q)(1-C_s)-(1-C_(s+1)))`. Thus the adjacent
+sharing step helps exactly when pooled error contracts by more than the
+remaining independent-rescue factor. Its centralized posterior top-`min(N,M)`
+portfolio weakly dominates the declared direct-private portfolio, so every
+registered scenario has a recovery budget. Across 177 scenarios, the sharing
+curves are 126 strict compression, 16 strict aggregation, 35 all-neutral, and
+zero mixed; recovery budgets are 51/55/64/7 at `L*=1/2/3/4`. The zero mixed
+count is a bounded null, not a general theorem.
+
+- DD-021: `20260722T185924Z_DD-021_3cdbbc40_2fea269a9a`,
+  DD-C-0097–0103.
 
 DD-020 proves for the registered point channel that
 `G_s=1-(1-C_s)(1-p)^(N-s)` and that `G_(s+1)<=G_s`, strictly for `p<1`.

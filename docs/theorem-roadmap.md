@@ -35,10 +35,10 @@ DiscoveryBench v3, the synthetic experiment v3 extension, the focused paper,
 and four output-connected public Labs are deployed. Its final handoff creates
 no new research evidence.
 
-Program V5, *The Information Sharing Frontier*, is active after the merged
-Program V4 handoff. Its documentation baseline, DD-019 Signal Geometry, and
-DD-020 Incremental Sharing are complete, deployed, and exposed through an
-exact output-connected Lab. It asks: **When does sharing useful private
+Program V5, *The Information Sharing Frontier*, has completed and deployed its
+documentation baseline, DD-019 Signal Geometry, DD-020 Incremental Sharing,
+and DD-021 General Sharing Frontier, with exact output-connected Labs. It asks:
+**When does sharing useful private
 information improve or reduce decentralized group discovery?** Its provisional flagship paper is
 *When Does Information Sharing Improve Decentralized Discovery?*, with
 provisional subtitle *Signal Geometry, Independent Rescue, and the Cost of
@@ -54,10 +54,13 @@ The conceptual center is
 
 `value of sharing = aggregation gain - lost independent rescue value`.
 
-DD-020 proves this exact decomposition for its declared one-action sharing
-block, while its registered-channel comparison shows why no arbitrary-channel
-monotonicity statement follows. Broader uses remain conjectural until their own
-proof or bounded evidence. Active execution truth is in
+DD-020 proves this exact decomposition for its point channel. DD-021 proves the
+channel-independent adjacent error-contraction criterion and centralized
+full-capacity recovery within its declared protocol, while its 177-scenario
+mixed-curve null remains bounded. The paper gate is held for one
+Coordination-Free Positive Sharing theorem package because centralized
+top-`L` recovery is not decentralized implementation. Broader uses remain
+conjectural until their own proof or bounded evidence. Active execution truth is in
 [current-roadmap.md](current-roadmap.md); registered evidence is in
 [the study registry](../studies/index.md).
 

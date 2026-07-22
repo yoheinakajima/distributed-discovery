@@ -1,8 +1,8 @@
 # Master execution plan
 
-## Active continuation — DD-021 General Sharing Frontier (2026-07-22)
+## Active continuation — post-DD-021 editorial gate (2026-07-22)
 
-Issue #146 and branch `research/dd021-general-sharing-frontier` register the
+Issue #146 and branch `research/dd021-general-sharing-frontier` registered the
 sole substantive Program V5 lane from clean main
 `a560bb771a8ccaf92958bde8e72280e2c968825f`. DD-021 freezes a finite,
 target-symmetric, conditionally independent, nonstrategic one-hit protocol and
@@ -18,16 +18,21 @@ the largest scenario has 55,550 and 5,000 respectively. Runtime is estimated
 below 30 seconds and capped at 120 seconds; memory is estimated below 256 MB
 and capped at 1 GB. No numerical result, run, or claim exists at registration.
 
-Active milestone: complete research PR #147 acceptance, mark it ready, merge,
-verify CI/Pages and live routes, close issue #146, and synchronize main. Clean
+Research PR #147 merged as `8b44400333e156440a22b0d9fe3be37f63d35a08`;
+issue #146 is closed, post-merge CI `29951061680` and Pages `29951061715`
+passed, and the named live routes return HTTP 200. Clean
 commit `3cdbbc40` produced the sole passing run
 `20260722T185924Z_DD-021_3cdbbc40_2fea269a9a`; DD-C-0097 through DD-C-0103
 separately preserve the two theorems, exact registry, witnesses, recovery
 budgets, and mixed-curve bounded null. The source, report, Findings,
 relationships, exact public data, and real General Sharing Frontier Lab are
-locally integrated. Preserve DD-019 and DD-020 runs unchanged, keep issue #32
-separate, do not touch the ActiveGraph pilot, and do not begin the editorial
-gate before the DD-021 research PR is merged and deployed.
+deployed. Issue #148 and branch
+`docs/dd021-information-sharing-frontier-editorial-gate` own the only active
+lane: a documentation-only paper-admission decision. The gate holds the
+proposed decentralized paper for one separately authorized Coordination-Free
+Positive Sharing package because DD-021's full-capacity recovery theorem is a
+centralized-planner result. Preserve DD-019 through DD-021 runs unchanged,
+keep issue #32 separate, and do not touch the ActiveGraph pilot.
 
 ## Active continuation — Findings, Labs, and relationship navigation repair (2026-07-22)
 

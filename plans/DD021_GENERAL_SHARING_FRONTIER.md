@@ -63,10 +63,10 @@ the frozen declared rule, not an unrestricted team optimum.
 5. **Complete — public gate:** report, Findings, relationships, reverse links,
    real Lab, no-JavaScript data, browser/accessibility validation, and local
    acceptance.
-6. **Active — merge/deploy gate:** ready PR, passing checks, squash merge, issue closure,
-   post-merge CI/Pages, live routes, and synchronized main.
-7. Editorial gate: one documentation-only branch and PR deciding whether the
-   Information Sharing Frontier paper gate passes.
+6. **Complete — merge/deploy gate:** ready PR, passing checks, squash merge,
+   issue closure, post-merge CI/Pages, live routes, and synchronized main.
+7. **Active — editorial gate:** one documentation-only branch and PR deciding
+   whether the Information Sharing Frontier paper gate passes.
 
 ## Progress checklist
 
@@ -83,7 +83,7 @@ the frozen declared rule, not an unrestricted team optimum.
 - [x] Freeze committed source, open draft PR, and run once.
 - [x] Audit claims and integrate exact public evidence.
 - [x] Build and verify the General Sharing Frontier Lab.
-- [ ] Merge/deploy the research PR and close issue #146.
+- [x] Merge/deploy the research PR and close issue #146.
 - [ ] Complete the separate documentation-only editorial gate.
 
 ## Discoveries and surprises
@@ -151,6 +151,11 @@ the frozen declared rule, not an unrestricted team optimum.
 - `2026-07-22T19:12:00Z`: allocate DD-C-0097 through DD-C-0103 only after the
   immutable run passed; keep two analytic theorems, four exact bounded
   computational claims, and one bounded negative result separate.
+- `2026-07-22T19:31:29Z`: after PR #147, post-merge CI `29951061680`, Pages
+  `29951061715`, and all named live routes passed, hold the proposed
+  decentralized paper for one separately registered Coordination-Free
+  Positive Sharing package; centralized `V_L` recovery is not decentralized
+  implementation.
 
 ## Validation strategy
 
@@ -191,12 +196,12 @@ regime, recovery budget, and source checksum.
 
 ## Artifacts produced
 
-Issue #146, draft PR #147, this ExecPlan, complete study records, sole immutable
+Issue #146, PR #147, merge `8b444003`, this ExecPlan, complete study records, sole immutable
 run, seven separately audited claims, exact registry and witnesses, two
 independent enumeration methods, verifier, eight-corruption suite, report,
 Findings, relationships, public data, General Sharing Frontier Lab, browser QA,
-CLI, and tests. Merge/deploy and the later documentation-only editorial gate
-remain; no failed evidence was overwritten.
+CLI, tests, passing post-merge CI/Pages, and live routes. The documentation-only
+editorial gate on issue #148 remains; no failed evidence was overwritten.
 
 ## Blockers
 
@@ -213,5 +218,7 @@ DD-021 primary configuration for freshness.
 
 ## Outcome and retrospective
 
-Pending. Completion requires the research merge/deployment and the separate
-editorial-gate merge; neither registration nor a preliminary table is enough.
+The research package is complete, merged, and deployed. Final completion
+requires the separate editorial-gate merge; neither registration nor a
+preliminary table is enough. The gate holds paper admission for one
+coordination-free positive-sharing package without changing DD-021 evidence.
