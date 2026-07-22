@@ -1,0 +1,11 @@
+study_id: DD-022
+title: Coordination-Free Positive Sharing
+slug: dd-022
+phase: registered
+summary: Registered exact hidden-dependence and anonymous equal-split equilibrium study; no result exists before the clean primary run.
+public_artifacts:
+  - path: studies/DD-022-coordination-free-positive-sharing/model.md
+    description: Frozen source law, coordination-free protocol, equilibrium selections, and comparison baselines
+  - path: studies/DD-022-coordination-free-positive-sharing/plan.md
+    description: Bounded execution and validation gates
+
