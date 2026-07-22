@@ -50,7 +50,7 @@ novelty claim is in scope.
 - [x] Schema, model, implementation, verifier, config, and tests pass.
 - [x] Clean source commit and draft PR precede the sole primary run.
 - [x] Evidence, claims, report, plots, public data, and study page pass locally.
-- [ ] PR, post-merge workflows, and live routes pass.
+- [x] PR, post-merge workflows, and live routes pass.
 
 ## Recovery
 
@@ -71,3 +71,12 @@ primary configuration for freshness.
   `20260722T084145Z_DD-019_a77bb786_04a5e9f0c5`. Both exact methods agree on
   all 15 profile entries; the same-accuracy counterexample and five recovery
   budgets pass separate claim audits. The run must not be repeated.
+
+## Outcome
+
+PR #131 passed all three branch workflows and squash-merged as `59f6f85`,
+closing issue #130. Post-merge CI `29905840583` and Pages `29905840831` passed.
+The live study, study JSON, claims, evidence, and research index returned HTTP
+200 with the exact run and DD-C-0089–0091. Browser QA found one h1/main, the
+three claim links, exact profile and run text, and no document overflow. DD-019
+is complete at its bounded scope.

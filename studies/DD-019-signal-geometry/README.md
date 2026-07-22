@@ -8,3 +8,4 @@ private-portfolio discovery, consensus, and recovery budgets distinct. Issue:
 The initial fixture is `M=4`, `N=3`, `L=1..3`. Primary run
 `20260722T084145Z_DD-019_a77bb786_04a5e9f0c5` passed from clean commit
 `a77bb786`; DD-C-0089 through DD-C-0091 record the bounded exact evidence.
+PR #131 and its post-merge CI/Pages passed; the study and public data are live.
