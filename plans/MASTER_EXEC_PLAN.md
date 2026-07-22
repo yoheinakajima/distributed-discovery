@@ -59,8 +59,8 @@ Progress:
 - [x] V4.7 — Build the focused paper and Program V4 Labs.
 - [x] V4.8 — Run final acceptance, reconcile documentation, and hand off.
 - [x] V5.0 — Merge the Program V5 documentation baseline after V4 handoff.
-- [ ] V5.1 — Register and execute the first bounded Signal Geometry and
-  Action-Budget Discovery Profile study (active as DD-019 on issue #130).
+- [x] V5.1 — Register, execute, verify, merge, and deploy the first bounded
+  Signal Geometry and Action-Budget Discovery Profile study as DD-019.
 
 Validation strategy: use `make bootstrap`, `make verify`, `make papers`, and
 `make site` at the prescribed gates; retain immutable run artifacts and run
@@ -111,6 +111,13 @@ do not register the first V5 study before that baseline merges.
   pages, and passed a new all-page visual review at SHA-256 `8ea2afc82a4a`.
   The exact DD-019 profile SVG also passed visual review. The active action is
   the evidence commit, push, ready PR #131, CI, merge, Pages, and live route.
+- 2026-07-22: DD-019 PR #131 passed CI `29905637596`, paper/site build
+  `29905637109`, and push CI `29905634475`, then squash-merged as `59f6f85`,
+  closing issue #130. Post-merge CI `29905840583` and Pages `29905840831`
+  passed. The live study, study JSON, claims, evidence, and research routes
+  returned HTTP 200 with the immutable run and DD-C-0089–0091. Browser QA
+  confirmed semantic landmarks, exact content, claim links, and width
+  containment. V5.1 is complete; Incremental Sharing remains unregistered.
 
 - 2026-07-22: owner authorization reconciles the long-term theorem portfolio
   with Program V5, the Information Sharing Frontier. Live audit found clean

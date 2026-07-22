@@ -33,6 +33,8 @@ baseline through PR #129. DD-019's bounded `M=4`, `N=3` primary run passes from
 clean source commit `a77bb786`; labeled and histogram methods agree on all five
 channel profiles, and three corruptions are rejected. Claims DD-C-0089 through
 DD-C-0091 are independently reproduced exact bounded computational results.
+PR #131, post-merge CI `29905840583`, Pages `29905840831`, and the live study,
+data, claims, evidence, and registry routes pass.
 
 The repository is public and project-authored content is MIT-licensed. The
 canonical Shared Discovery Paradox repository remains pinned at
