@@ -49,10 +49,10 @@ Progress:
 - [x] V4.1 — Synchronize V3 public copy and validate local public artifacts.
 - [x] V4.2 — Register, execute, independently verify, and integrate DD-016.
 - [x] V4.3 — Register, execute, independently verify, and integrate DD-017.
-- [ ] V4.R — Merge the documentation-only Information Sharing Frontier roadmap
+- [x] V4.R — Merge the documentation-only Information Sharing Frontier roadmap
   reconciliation without changing claims, runs, studies, scientific source,
   papers, site routes, or public data.
-- [ ] V4.4 — Execute DD-015 at its registered baseline, then separately assess
+- [x] V4.4 — Execute DD-015 at its registered baseline, then separately assess
   the bounded threshold extension.
 - [ ] V4.5 — Execute and verify DD-018 mechanisms.
 - [ ] V4.6 — Extend DiscoveryBench and the synthetic experiment kit.
@@ -71,9 +71,10 @@ or provenance.
 
 Recovery: inspect `git status --short --branch`, read this Program V4 section
 and `reports/program-v4/parallel-safety.md`, then continue the first unchecked
-item. During V4.R, the next executable command is `git diff --check`; the next
-file is `docs/theorem-roadmap.md`. After V4.R merges, the next milestone is
-DD-015 and the next file is `studies/DD-015-dynamic-attention/plan.md`.
+item. DD-015 is complete and its immutable runs must not be rerun for
+freshness. The next milestone is DD-018 and the first file is
+`studies/DD-018-minimum-viable-team-mechanisms/plan.md` after the bounded
+issue and branch are created.
 
 ### Program V4 progress log
 
@@ -199,6 +200,11 @@ before its independent verifier and immutable primary run pass.
   all registered team-action categories. The active gate is full acceptance,
   PR #111 CI/merge, post-merge CI/Pages, and live routes. Neither run may be
   repeated for freshness.
+- 2026-07-22: PR #111 passed CI and artifact checks, squash-merged as
+  `9f2fc1e`, and closed issue #110. Post-merge CI run `29892156549` and Pages
+  run `29892156556` passed. The live DD-015 study and JSON returned HTTP 200
+  with both immutable run IDs and DD-C-0079 through DD-C-0082. V4.4 is
+  complete; DD-018 is the next sequential milestone.
 
 ### Program V3 attention queue (complete, 2026-07-21)
 
