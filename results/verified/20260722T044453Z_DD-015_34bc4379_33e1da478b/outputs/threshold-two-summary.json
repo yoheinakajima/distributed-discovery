@@ -1,0 +1,11 @@
+{
+  "corruption_gates": 2,
+  "follow_shared_rows": 32,
+  "join_singleton_rows": 32,
+  "join_viable_team_rows": 32,
+  "labeled_target_signal_paths": 3888,
+  "objective_rows": 32,
+  "oppose_shared_rows": 32,
+  "parameter_cells": 16,
+  "start_new_singleton_rows": 32
+}

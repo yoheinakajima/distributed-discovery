@@ -175,6 +175,30 @@ before its independent verifier and immutable primary run pass.
   29886907217. The live DD-017 study and JSON returned HTTP 200 with the run and
   DD-C-0075 through DD-C-0078. V4.3 is complete; the next sequential milestone
   is V4.4, DD-015 at its original registered boundary.
+- 2026-07-22: roadmap PR #109 squash-merged as `6cd7190`; post-merge CI
+  `29890818431`, Pages `29890818405`, and the public root passed, closing issue
+  #108. DD-015 issue #110 and branch `research/dd015-dynamic-attention` are now
+  the sole active lane. The original baseline freezes 32 parameter cells, 64
+  fixed/stopping objective rows, 5,184 unique labeled target/signal paths, a
+  full-duplicate-credit sequential Bayesian equilibrium, an exact common-
+  information planner DP, and a separate labeled verifier with four corruption
+  gates. Non-evidence preview regression targets include 38 strict planner
+  gains and a bounded null for visibility-improved dispersion. After retained
+  Ruff, MyPy, and public-phase integration failures were corrected, pre-run
+  `make verify` passed MyPy on 125 source files, all 198 tests, the unchanged
+  78-claim ledger, and all 42 existing manifests. The active gate is bootstrap,
+  site validation, the clean source commit, and exactly one primary run.
+- 2026-07-22: DD-015 primary run
+  `20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a` passed in 13.971626 seconds,
+  supporting verified DD-C-0079 through DD-C-0081. Only after that baseline
+  passed, secondary threshold-two run
+  `20260722T044453Z_DD-015_34bc4379_33e1da478b` passed in 13.842954 seconds and
+  supports planner-only DD-C-0082. The baseline retains the 18-of-32 bounded
+  visibility-herding negative result; the threshold extension preserves
+  fixed/stopping discovery and reduces actions in all 16 cells while exercising
+  all registered team-action categories. The active gate is full acceptance,
+  PR #111 CI/merge, post-merge CI/Pages, and live routes. Neither run may be
+  repeated for freshness.
 
 ### Program V3 attention queue (complete, 2026-07-21)
 

@@ -1,0 +1,4874 @@
+[
+  {
+    "cell_id": "p1/3-q1/3-fixed-budget",
+    "objective": "fixed-budget",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "1",
+        "join-singleton": "1",
+        "join-viable-team": "1",
+        "oppose-shared-clue": "2",
+        "start-new-singleton": "1"
+      },
+      "discovery": "1/3",
+      "expected_actions": "3",
+      "expected_rounds": "3",
+      "policy": {
+        "fixed-budget|0|": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|0,0": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 20
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "cell_id": "p1/3-q1/3-stopping-on-success",
+    "objective": "stopping-on-success",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "8/9",
+        "join-singleton": "1",
+        "join-viable-team": "2/3",
+        "oppose-shared-clue": "16/9",
+        "start-new-singleton": "1"
+      },
+      "discovery": "1/3",
+      "expected_actions": "8/3",
+      "expected_rounds": "8/3",
+      "policy": {
+        "stopping-on-success|0|": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|0,0": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 17
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "cell_id": "p1/3-q1/2-fixed-budget",
+    "objective": "fixed-budget",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "7/3",
+        "join-singleton": "1",
+        "join-viable-team": "1/3",
+        "oppose-shared-clue": "2/3",
+        "start-new-singleton": "5/3"
+      },
+      "discovery": "1/2",
+      "expected_actions": "3",
+      "expected_rounds": "3",
+      "policy": {
+        "fixed-budget|0|": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|0": [
+          1,
+          1,
+          1
+        ],
+        "fixed-budget|1|0,1": [
+          1,
+          1,
+          1
+        ],
+        "fixed-budget|2|": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|0": [
+          2,
+          2,
+          2
+        ],
+        "fixed-budget|2|0,2": [
+          2,
+          2,
+          2
+        ]
+      },
+      "state_evaluations": 60
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "cell_id": "p1/3-q1/2-stopping-on-success",
+    "objective": "stopping-on-success",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "13/6",
+        "join-singleton": "1",
+        "join-viable-team": "1/6",
+        "oppose-shared-clue": "1/3",
+        "start-new-singleton": "4/3"
+      },
+      "discovery": "1/2",
+      "expected_actions": "5/2",
+      "expected_rounds": "5/2",
+      "policy": {
+        "stopping-on-success|0|": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|": [
+          1,
+          1,
+          1
+        ],
+        "stopping-on-success|1|1": [
+          1,
+          1,
+          1
+        ],
+        "stopping-on-success|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|": [
+          2,
+          2,
+          2
+        ],
+        "stopping-on-success|2|2": [
+          2,
+          2,
+          2
+        ],
+        "stopping-on-success|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 51
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "cell_id": "p1/3-q2/3-fixed-budget",
+    "objective": "fixed-budget",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "7/3",
+        "join-singleton": "1",
+        "join-viable-team": "1/3",
+        "oppose-shared-clue": "2/3",
+        "start-new-singleton": "5/3"
+      },
+      "discovery": "2/3",
+      "expected_actions": "3",
+      "expected_rounds": "3",
+      "policy": {
+        "fixed-budget|0|": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|0": [
+          1,
+          1,
+          1
+        ],
+        "fixed-budget|1|0,1": [
+          1,
+          1,
+          1
+        ],
+        "fixed-budget|2|": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|0": [
+          2,
+          2,
+          2
+        ],
+        "fixed-budget|2|0,2": [
+          2,
+          2,
+          2
+        ]
+      },
+      "state_evaluations": 60
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "cell_id": "p1/3-q2/3-stopping-on-success",
+    "objective": "stopping-on-success",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "19/9",
+        "join-singleton": "1",
+        "join-viable-team": "1/9",
+        "oppose-shared-clue": "2/9",
+        "start-new-singleton": "11/9"
+      },
+      "discovery": "2/3",
+      "expected_actions": "7/3",
+      "expected_rounds": "7/3",
+      "policy": {
+        "stopping-on-success|0|": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|": [
+          1,
+          1,
+          1
+        ],
+        "stopping-on-success|1|1": [
+          1,
+          1,
+          1
+        ],
+        "stopping-on-success|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|": [
+          2,
+          2,
+          2
+        ],
+        "stopping-on-success|2|2": [
+          2,
+          2,
+          2
+        ],
+        "stopping-on-success|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 51
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "cell_id": "p1/3-q3/4-fixed-budget",
+    "objective": "fixed-budget",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "7/3",
+        "join-singleton": "1",
+        "join-viable-team": "1/3",
+        "oppose-shared-clue": "2/3",
+        "start-new-singleton": "5/3"
+      },
+      "discovery": "3/4",
+      "expected_actions": "3",
+      "expected_rounds": "3",
+      "policy": {
+        "fixed-budget|0|": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|0": [
+          1,
+          1,
+          1
+        ],
+        "fixed-budget|1|0,1": [
+          1,
+          1,
+          1
+        ],
+        "fixed-budget|2|": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|0": [
+          2,
+          2,
+          2
+        ],
+        "fixed-budget|2|0,2": [
+          2,
+          2,
+          2
+        ]
+      },
+      "state_evaluations": 60
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "cell_id": "p1/3-q3/4-stopping-on-success",
+    "objective": "stopping-on-success",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "25/12",
+        "join-singleton": "1",
+        "join-viable-team": "1/12",
+        "oppose-shared-clue": "1/6",
+        "start-new-singleton": "7/6"
+      },
+      "discovery": "3/4",
+      "expected_actions": "9/4",
+      "expected_rounds": "9/4",
+      "policy": {
+        "stopping-on-success|0|": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|": [
+          1,
+          1,
+          1
+        ],
+        "stopping-on-success|1|1": [
+          1,
+          1,
+          1
+        ],
+        "stopping-on-success|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|": [
+          2,
+          2,
+          2
+        ],
+        "stopping-on-success|2|2": [
+          2,
+          2,
+          2
+        ],
+        "stopping-on-success|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 51
+    },
+    "private_accuracy": "1/3",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "cell_id": "p1/2-q1/3-fixed-budget",
+    "objective": "fixed-budget",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "1",
+        "join-singleton": "1",
+        "join-viable-team": "1/8",
+        "oppose-shared-clue": "2",
+        "start-new-singleton": "15/8"
+      },
+      "discovery": "9/16",
+      "expected_actions": "3",
+      "expected_rounds": "3",
+      "policy": {
+        "fixed-budget|0|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|0,1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|0|0,2": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|0|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|0|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|1,2": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|0|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|0|2,1": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|0|2,2": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|0,1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|1|0,2": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|1|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|1,2": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|1|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|1|2,1": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|1|2,2": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|0,1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|2|0,2": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|2|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|2|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|1,2": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|2|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|2|2,1": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 1010
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "cell_id": "p1/2-q1/3-stopping-on-success",
+    "objective": "stopping-on-success",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "11/12",
+        "join-singleton": "1",
+        "join-viable-team": "1/24",
+        "oppose-shared-clue": "11/6",
+        "start-new-singleton": "41/24"
+      },
+      "discovery": "9/16",
+      "expected_actions": "11/4",
+      "expected_rounds": "11/4",
+      "policy": {
+        "stopping-on-success|0|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0,1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|0|0,2": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|0|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|0|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|1,2": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|0|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|0|2,1": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|0|2,2": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|0,1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|1|0,2": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|1|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|1,2": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|1|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|1|2,1": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|1|2,2": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|0,1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|2|0,2": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|2|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|2|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|1,2": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|2|2,1": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 377
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "cell_id": "p1/2-q1/2-fixed-budget",
+    "objective": "fixed-budget",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "1111/768",
+        "join-singleton": "1",
+        "join-viable-team": "19/96",
+        "oppose-shared-clue": "1193/768",
+        "start-new-singleton": "173/96"
+      },
+      "discovery": "37/64",
+      "expected_actions": "3",
+      "expected_rounds": "3",
+      "policy": {
+        "fixed-budget|0|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|0|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|0|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|2": [
+          0,
+          0,
+          1
+        ],
+        "fixed-budget|0|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|0|2,1": [
+          2,
+          2,
+          2
+        ],
+        "fixed-budget|1|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|0": [
+          0,
+          1,
+          1
+        ],
+        "fixed-budget|1|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|0,1": [
+          0,
+          1,
+          1
+        ],
+        "fixed-budget|1|1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|1,0": [
+          1,
+          1,
+          1
+        ],
+        "fixed-budget|1|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|1|2,1": [
+          1,
+          1,
+          1
+        ],
+        "fixed-budget|1|2,2": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|0,1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|2|0,2": [
+          0,
+          2,
+          2
+        ],
+        "fixed-budget|2|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|2|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|1,2": [
+          2,
+          1,
+          2
+        ],
+        "fixed-budget|2|2": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|2,0": [
+          2,
+          2,
+          2
+        ]
+      },
+      "state_evaluations": 2131
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "cell_id": "p1/2-q1/2-stopping-on-success",
+    "objective": "stopping-on-success",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "1043/768",
+        "join-singleton": "1",
+        "join-viable-team": "7/96",
+        "oppose-shared-clue": "973/768",
+        "start-new-singleton": "149/96"
+      },
+      "discovery": "37/64",
+      "expected_actions": "21/8",
+      "expected_rounds": "21/8",
+      "policy": {
+        "stopping-on-success|0|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|0|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|0|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|2": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|0|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|0|2,2": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|0": [
+          0,
+          1,
+          1
+        ],
+        "stopping-on-success|1|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|0,1": [
+          0,
+          1,
+          1
+        ],
+        "stopping-on-success|1|1": [
+          1,
+          1,
+          1
+        ],
+        "stopping-on-success|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|1|2,1": [
+          1,
+          1,
+          1
+        ],
+        "stopping-on-success|1|2,2": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|0,1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|2|0,2": [
+          0,
+          2,
+          2
+        ],
+        "stopping-on-success|2|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|2|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|1,2": [
+          2,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2": [
+          2,
+          2,
+          2
+        ],
+        "stopping-on-success|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 721
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "cell_id": "p1/2-q2/3-fixed-budget",
+    "objective": "fixed-budget",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "1127/576",
+        "join-singleton": "1",
+        "join-viable-team": "11/144",
+        "oppose-shared-clue": "601/576",
+        "start-new-singleton": "277/144"
+      },
+      "discovery": "11/16",
+      "expected_actions": "3",
+      "expected_rounds": "3",
+      "policy": {
+        "fixed-budget|0|": [
+          1,
+          0,
+          0
+        ],
+        "fixed-budget|0|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|0,1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|0|0,2": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|0|1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|1,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|": [
+          1,
+          0,
+          1
+        ],
+        "fixed-budget|1|0": [
+          1,
+          1,
+          1
+        ],
+        "fixed-budget|1|0,1": [
+          1,
+          1,
+          1
+        ],
+        "fixed-budget|1|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|1,0": [
+          0,
+          1,
+          1
+        ],
+        "fixed-budget|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|1,2": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|2|": [
+          2,
+          2,
+          0
+        ],
+        "fixed-budget|2|0": [
+          2,
+          2,
+          2
+        ],
+        "fixed-budget|2|0,2": [
+          2,
+          2,
+          2
+        ],
+        "fixed-budget|2|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|2,0": [
+          0,
+          2,
+          2
+        ],
+        "fixed-budget|2|2,1": [
+          2,
+          1,
+          2
+        ],
+        "fixed-budget|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 2802
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "cell_id": "p1/2-q2/3-stopping-on-success",
+    "objective": "stopping-on-success",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "365/192",
+        "join-singleton": "1",
+        "join-viable-team": "1/48",
+        "oppose-shared-clue": "179/192",
+        "start-new-singleton": "29/16"
+      },
+      "discovery": "11/16",
+      "expected_actions": "17/6",
+      "expected_rounds": "17/6",
+      "policy": {
+        "stopping-on-success|0|": [
+          1,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0,1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|0|0,2": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|0|1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|1,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|": [
+          1,
+          0,
+          1
+        ],
+        "stopping-on-success|1|0": [
+          1,
+          1,
+          1
+        ],
+        "stopping-on-success|1|0,1": [
+          1,
+          1,
+          1
+        ],
+        "stopping-on-success|1|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|1,0": [
+          0,
+          1,
+          1
+        ],
+        "stopping-on-success|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|1,2": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|2|": [
+          2,
+          2,
+          0
+        ],
+        "stopping-on-success|2|0": [
+          2,
+          2,
+          2
+        ],
+        "stopping-on-success|2|0,2": [
+          2,
+          2,
+          2
+        ],
+        "stopping-on-success|2|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2,0": [
+          0,
+          2,
+          2
+        ],
+        "stopping-on-success|2|2,1": [
+          2,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 915
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "cell_id": "p1/2-q3/4-fixed-budget",
+    "objective": "fixed-budget",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "3127/1536",
+        "join-singleton": "1",
+        "join-viable-team": "25/384",
+        "oppose-shared-clue": "1481/1536",
+        "start-new-singleton": "743/384"
+      },
+      "discovery": "193/256",
+      "expected_actions": "3",
+      "expected_rounds": "3",
+      "policy": {
+        "fixed-budget|0|": [
+          1,
+          0,
+          1
+        ],
+        "fixed-budget|0|0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|0,1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|0|1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|1,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|": [
+          0,
+          0,
+          1
+        ],
+        "fixed-budget|1|0": [
+          1,
+          1,
+          1
+        ],
+        "fixed-budget|1|0,1": [
+          1,
+          1,
+          1
+        ],
+        "fixed-budget|1|1": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|1|1,0": [
+          1,
+          1,
+          1
+        ],
+        "fixed-budget|1|1,2": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|2|": [
+          0,
+          2,
+          0
+        ],
+        "fixed-budget|2|0": [
+          2,
+          2,
+          2
+        ],
+        "fixed-budget|2|0,2": [
+          2,
+          2,
+          2
+        ],
+        "fixed-budget|2|2": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|2|2,0": [
+          2,
+          2,
+          2
+        ],
+        "fixed-budget|2|2,1": [
+          2,
+          1,
+          2
+        ]
+      },
+      "state_evaluations": 3000
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "cell_id": "p1/2-q3/4-stopping-on-success",
+    "objective": "stopping-on-success",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "3055/1536",
+        "join-singleton": "1",
+        "join-viable-team": "7/384",
+        "oppose-shared-clue": "1337/1536",
+        "start-new-singleton": "707/384"
+      },
+      "discovery": "193/256",
+      "expected_actions": "183/64",
+      "expected_rounds": "183/64",
+      "policy": {
+        "stopping-on-success|0|": [
+          1,
+          0,
+          1
+        ],
+        "stopping-on-success|0|0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0,1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|0|1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|1,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|": [
+          0,
+          0,
+          1
+        ],
+        "stopping-on-success|1|0": [
+          1,
+          1,
+          1
+        ],
+        "stopping-on-success|1|0,1": [
+          1,
+          1,
+          1
+        ],
+        "stopping-on-success|1|1": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|1,2": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|2|": [
+          0,
+          2,
+          0
+        ],
+        "stopping-on-success|2|0": [
+          2,
+          2,
+          2
+        ],
+        "stopping-on-success|2|0,2": [
+          2,
+          2,
+          2
+        ],
+        "stopping-on-success|2|2": [
+          2,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2,1": [
+          2,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 960
+    },
+    "private_accuracy": "1/2",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "cell_id": "p2/3-q1/3-fixed-budget",
+    "objective": "fixed-budget",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "1",
+        "join-singleton": "1",
+        "join-viable-team": "1/6",
+        "oppose-shared-clue": "2",
+        "start-new-singleton": "11/6"
+      },
+      "discovery": "7/9",
+      "expected_actions": "3",
+      "expected_rounds": "3",
+      "policy": {
+        "fixed-budget|0|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|0,1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|0|0,2": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|0|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|0|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|1,2": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|0|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|0|2,1": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|0|2,2": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|0,1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|1|0,2": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|1|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|1,2": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|1|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|1|2,1": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|1|2,2": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|0,1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|2|0,2": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|2|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|2|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|1,2": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|2|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|2|2,1": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 1010
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "cell_id": "p2/3-q1/3-stopping-on-success",
+    "objective": "stopping-on-success",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "23/27",
+        "join-singleton": "1",
+        "join-viable-team": "1/54",
+        "oppose-shared-clue": "46/27",
+        "start-new-singleton": "83/54"
+      },
+      "discovery": "7/9",
+      "expected_actions": "23/9",
+      "expected_rounds": "23/9",
+      "policy": {
+        "stopping-on-success|0|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0,1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|0|0,2": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|0|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|0|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|1,2": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|0|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|0|2,1": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|0|2,2": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|0,1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|1|0,2": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|1|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|1,2": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|1|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|1|2,1": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|1|2,2": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|0,1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|2|0,2": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|2|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|2|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|1,2": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|2|2,1": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 377
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "cell_id": "p2/3-q1/2-fixed-budget",
+    "objective": "fixed-budget",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "269/216",
+        "join-singleton": "1",
+        "join-viable-team": "1/6",
+        "oppose-shared-clue": "379/216",
+        "start-new-singleton": "11/6"
+      },
+      "discovery": "85/108",
+      "expected_actions": "3",
+      "expected_rounds": "3",
+      "policy": {
+        "fixed-budget|0|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|0,1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|0|0,2": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|0|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|0|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|1,2": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|0|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|0|2,1": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|0|2,2": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|0,1": [
+          0,
+          1,
+          1
+        ],
+        "fixed-budget|1|0,2": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|1|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|1,0": [
+          0,
+          1,
+          1
+        ],
+        "fixed-budget|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|1,2": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|1|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|1|2,1": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|1|2,2": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|0,1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|2|0,2": [
+          0,
+          2,
+          2
+        ],
+        "fixed-budget|2|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|2|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|1,2": [
+          2,
+          1,
+          2
+        ],
+        "fixed-budget|2|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|2,0": [
+          0,
+          2,
+          2
+        ],
+        "fixed-budget|2|2,1": [
+          2,
+          1,
+          2
+        ],
+        "fixed-budget|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 3030
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "cell_id": "p2/3-q1/2-stopping-on-success",
+    "objective": "stopping-on-success",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "79/72",
+        "join-singleton": "1",
+        "join-viable-team": "1/54",
+        "oppose-shared-clue": "35/24",
+        "start-new-singleton": "83/54"
+      },
+      "discovery": "85/108",
+      "expected_actions": "23/9",
+      "expected_rounds": "23/9",
+      "policy": {
+        "stopping-on-success|0|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0,1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|0|0,2": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|0|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|0|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|1,2": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|0|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|0|2,1": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|0|2,2": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|0,1": [
+          0,
+          1,
+          1
+        ],
+        "stopping-on-success|1|0,2": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|1|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|1,0": [
+          0,
+          1,
+          1
+        ],
+        "stopping-on-success|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|1,2": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|1|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|1|2,1": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|1|2,2": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|0,1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|2|0,2": [
+          0,
+          2,
+          2
+        ],
+        "stopping-on-success|2|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|2|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|1,2": [
+          2,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2,0": [
+          0,
+          2,
+          2
+        ],
+        "stopping-on-success|2|2,1": [
+          2,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 999
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "cell_id": "p2/3-q2/3-fixed-budget",
+    "objective": "fixed-budget",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "2123/1296",
+        "join-singleton": "1",
+        "join-viable-team": "25/108",
+        "oppose-shared-clue": "1765/1296",
+        "start-new-singleton": "191/108"
+      },
+      "discovery": "43/54",
+      "expected_actions": "3",
+      "expected_rounds": "3",
+      "policy": {
+        "fixed-budget|0|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|0|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|0|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|2": [
+          0,
+          0,
+          1
+        ],
+        "fixed-budget|0|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|0|2,1": [
+          2,
+          2,
+          2
+        ],
+        "fixed-budget|1|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|0": [
+          0,
+          1,
+          1
+        ],
+        "fixed-budget|1|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|0,1": [
+          0,
+          1,
+          1
+        ],
+        "fixed-budget|1|1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|1,0": [
+          1,
+          1,
+          1
+        ],
+        "fixed-budget|1|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|1|2,1": [
+          1,
+          1,
+          1
+        ],
+        "fixed-budget|1|2,2": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|0,1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|2|0,2": [
+          0,
+          2,
+          2
+        ],
+        "fixed-budget|2|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|2|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|1,2": [
+          2,
+          1,
+          2
+        ],
+        "fixed-budget|2|2": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|2,0": [
+          2,
+          2,
+          2
+        ]
+      },
+      "state_evaluations": 2131
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "cell_id": "p2/3-q2/3-stopping-on-success",
+    "objective": "stopping-on-success",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "1909/1296",
+        "join-singleton": "1",
+        "join-viable-team": "11/324",
+        "oppose-shared-clue": "1211/1296",
+        "start-new-singleton": "445/324"
+      },
+      "discovery": "43/54",
+      "expected_actions": "65/27",
+      "expected_rounds": "65/27",
+      "policy": {
+        "stopping-on-success|0|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|0|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|0|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|2": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|0|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|0|2,2": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|0": [
+          0,
+          1,
+          1
+        ],
+        "stopping-on-success|1|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|0,1": [
+          0,
+          1,
+          1
+        ],
+        "stopping-on-success|1|1": [
+          1,
+          1,
+          1
+        ],
+        "stopping-on-success|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|1|2,1": [
+          1,
+          1,
+          1
+        ],
+        "stopping-on-success|1|2,2": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|0,1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|2|0,2": [
+          0,
+          2,
+          2
+        ],
+        "stopping-on-success|2|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|2|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|1,2": [
+          2,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2": [
+          2,
+          2,
+          2
+        ],
+        "stopping-on-success|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 721
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "cell_id": "p2/3-q3/4-fixed-budget",
+    "objective": "fixed-budget",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "1637/864",
+        "join-singleton": "1",
+        "join-viable-team": "29/432",
+        "oppose-shared-clue": "955/864",
+        "start-new-singleton": "835/432"
+      },
+      "discovery": "181/216",
+      "expected_actions": "3",
+      "expected_rounds": "3",
+      "policy": {
+        "fixed-budget|0|": [
+          1,
+          0,
+          0
+        ],
+        "fixed-budget|0|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|0,1": [
+          0,
+          1,
+          1
+        ],
+        "fixed-budget|0|0,2": [
+          0,
+          2,
+          2
+        ],
+        "fixed-budget|0|1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|1,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|": [
+          1,
+          0,
+          1
+        ],
+        "fixed-budget|1|0": [
+          1,
+          1,
+          1
+        ],
+        "fixed-budget|1|0,1": [
+          1,
+          1,
+          1
+        ],
+        "fixed-budget|1|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|1,2": [
+          2,
+          1,
+          2
+        ],
+        "fixed-budget|2|": [
+          2,
+          2,
+          0
+        ],
+        "fixed-budget|2|0": [
+          2,
+          2,
+          2
+        ],
+        "fixed-budget|2|0,2": [
+          2,
+          2,
+          2
+        ],
+        "fixed-budget|2|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|2|2,1": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 3030
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "cell_id": "p2/3-q3/4-stopping-on-success",
+    "objective": "stopping-on-success",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "1589/864",
+        "join-singleton": "1",
+        "join-viable-team": "5/432",
+        "oppose-shared-clue": "859/864",
+        "start-new-singleton": "787/432"
+      },
+      "discovery": "181/216",
+      "expected_actions": "17/6",
+      "expected_rounds": "17/6",
+      "policy": {
+        "stopping-on-success|0|": [
+          1,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0,1": [
+          0,
+          1,
+          1
+        ],
+        "stopping-on-success|0|0,2": [
+          0,
+          2,
+          2
+        ],
+        "stopping-on-success|0|1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|1,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|": [
+          1,
+          0,
+          1
+        ],
+        "stopping-on-success|1|0": [
+          1,
+          1,
+          1
+        ],
+        "stopping-on-success|1|0,1": [
+          1,
+          1,
+          1
+        ],
+        "stopping-on-success|1|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|1,2": [
+          2,
+          1,
+          2
+        ],
+        "stopping-on-success|2|": [
+          2,
+          2,
+          0
+        ],
+        "stopping-on-success|2|0": [
+          2,
+          2,
+          2
+        ],
+        "stopping-on-success|2|0,2": [
+          2,
+          2,
+          2
+        ],
+        "stopping-on-success|2|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|2|2,1": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 1131
+    },
+    "private_accuracy": "2/3",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "cell_id": "p3/4-q1/3-fixed-budget",
+    "objective": "fixed-budget",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "1",
+        "join-singleton": "1",
+        "join-viable-team": "19/96",
+        "oppose-shared-clue": "2",
+        "start-new-singleton": "173/96"
+      },
+      "discovery": "111/128",
+      "expected_actions": "3",
+      "expected_rounds": "3",
+      "policy": {
+        "fixed-budget|0|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|0,1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|0|0,2": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|0|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|0|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|1,2": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|0|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|0|2,1": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|0|2,2": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|0,1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|1|0,2": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|1|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|1,2": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|1|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|1|2,1": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|1|2,2": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|0,1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|2|0,2": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|2|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|2|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|1,2": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|2|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|2|2,1": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 1010
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "cell_id": "p3/4-q1/3-stopping-on-success",
+    "objective": "stopping-on-success",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "13/16",
+        "join-singleton": "1",
+        "join-viable-team": "1/96",
+        "oppose-shared-clue": "13/8",
+        "start-new-singleton": "137/96"
+      },
+      "discovery": "111/128",
+      "expected_actions": "39/16",
+      "expected_rounds": "39/16",
+      "policy": {
+        "stopping-on-success|0|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0,1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|0|0,2": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|0|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|0|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|1,2": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|0|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|0|2,1": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|0|2,2": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|0,1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|1|0,2": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|1|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|1,2": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|1|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|1|2,1": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|1|2,2": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|0,1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|2|0,2": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|2|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|2|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|1,2": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|2|2,1": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 377
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/3"
+  },
+  {
+    "cell_id": "p3/4-q1/2-fixed-budget",
+    "objective": "fixed-budget",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "1957/1536",
+        "join-singleton": "1",
+        "join-viable-team": "19/96",
+        "oppose-shared-clue": "2651/1536",
+        "start-new-singleton": "173/96"
+      },
+      "discovery": "447/512",
+      "expected_actions": "3",
+      "expected_rounds": "3",
+      "policy": {
+        "fixed-budget|0|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|0,1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|0|0,2": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|0|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|0|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|1,2": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|0|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|0|2,1": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|0|2,2": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|0,1": [
+          0,
+          1,
+          1
+        ],
+        "fixed-budget|1|0,2": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|1|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|1,0": [
+          0,
+          1,
+          1
+        ],
+        "fixed-budget|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|1,2": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|1|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|1|2,1": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|1|2,2": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|0,1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|2|0,2": [
+          0,
+          2,
+          2
+        ],
+        "fixed-budget|2|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|2|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|1,2": [
+          2,
+          1,
+          2
+        ],
+        "fixed-budget|2|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|2,0": [
+          0,
+          2,
+          2
+        ],
+        "fixed-budget|2|2,1": [
+          2,
+          1,
+          2
+        ],
+        "fixed-budget|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 3030
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "cell_id": "p3/4-q1/2-stopping-on-success",
+    "objective": "stopping-on-success",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "1669/1536",
+        "join-singleton": "1",
+        "join-viable-team": "1/96",
+        "oppose-shared-clue": "2075/1536",
+        "start-new-singleton": "137/96"
+      },
+      "discovery": "447/512",
+      "expected_actions": "39/16",
+      "expected_rounds": "39/16",
+      "policy": {
+        "stopping-on-success|0|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0,1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|0|0,2": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|0|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|0|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|1,2": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|0|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|0|2,1": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|0|2,2": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|0,1": [
+          0,
+          1,
+          1
+        ],
+        "stopping-on-success|1|0,2": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|1|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|1,0": [
+          0,
+          1,
+          1
+        ],
+        "stopping-on-success|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|1,2": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|1|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|1|2,1": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|1|2,2": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|0,1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|2|0,2": [
+          0,
+          2,
+          2
+        ],
+        "stopping-on-success|2|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|2|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|1,2": [
+          2,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2,0": [
+          0,
+          2,
+          2
+        ],
+        "stopping-on-success|2|2,1": [
+          2,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 1131
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "1/2"
+  },
+  {
+    "cell_id": "p3/4-q2/3-fixed-budget",
+    "objective": "fixed-budget",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "1171/768",
+        "join-singleton": "1",
+        "join-viable-team": "19/96",
+        "oppose-shared-clue": "1133/768",
+        "start-new-singleton": "173/96"
+      },
+      "discovery": "225/256",
+      "expected_actions": "3",
+      "expected_rounds": "3",
+      "policy": {
+        "fixed-budget|0|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|0,1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|0|0,2": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|0|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|0|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|1,2": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|0|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|0|2,1": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|0|2,2": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|0,1": [
+          0,
+          1,
+          1
+        ],
+        "fixed-budget|1|0,2": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|1|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|1,0": [
+          0,
+          1,
+          1
+        ],
+        "fixed-budget|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|1,2": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|1|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|1|2,1": [
+          1,
+          1,
+          2
+        ],
+        "fixed-budget|1|2,2": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|0,1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|2|0,2": [
+          0,
+          2,
+          2
+        ],
+        "fixed-budget|2|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|2|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|1,2": [
+          2,
+          1,
+          2
+        ],
+        "fixed-budget|2|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|2,0": [
+          0,
+          2,
+          2
+        ],
+        "fixed-budget|2|2,1": [
+          2,
+          1,
+          2
+        ],
+        "fixed-budget|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 3030
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "cell_id": "p3/4-q2/3-stopping-on-success",
+    "objective": "stopping-on-success",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "1027/768",
+        "join-singleton": "1",
+        "join-viable-team": "1/96",
+        "oppose-shared-clue": "845/768",
+        "start-new-singleton": "137/96"
+      },
+      "discovery": "225/256",
+      "expected_actions": "39/16",
+      "expected_rounds": "39/16",
+      "policy": {
+        "stopping-on-success|0|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0,1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|0|0,2": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|0|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|0|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|1,2": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|0|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|0|2,1": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|0|2,2": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|0,1": [
+          0,
+          1,
+          1
+        ],
+        "stopping-on-success|1|0,2": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|1|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|1,0": [
+          0,
+          1,
+          1
+        ],
+        "stopping-on-success|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|1,2": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|1|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|1|2,1": [
+          1,
+          1,
+          2
+        ],
+        "stopping-on-success|1|2,2": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|0,1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|2|0,2": [
+          0,
+          2,
+          2
+        ],
+        "stopping-on-success|2|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|2|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|1,2": [
+          2,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2,0": [
+          0,
+          2,
+          2
+        ],
+        "stopping-on-success|2|2,1": [
+          2,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 1131
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "2/3"
+  },
+  {
+    "cell_id": "p3/4-q3/4-fixed-budget",
+    "objective": "fixed-budget",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "21851/12288",
+        "join-singleton": "1",
+        "join-viable-team": "65/256",
+        "oppose-shared-clue": "15013/12288",
+        "start-new-singleton": "447/256"
+      },
+      "discovery": "903/1024",
+      "expected_actions": "3",
+      "expected_rounds": "3",
+      "policy": {
+        "fixed-budget|0|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|0|0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|0|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|0|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|0|2": [
+          0,
+          0,
+          1
+        ],
+        "fixed-budget|0|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|0|2,1": [
+          2,
+          2,
+          2
+        ],
+        "fixed-budget|1|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|0": [
+          0,
+          1,
+          1
+        ],
+        "fixed-budget|1|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|0,1": [
+          0,
+          1,
+          1
+        ],
+        "fixed-budget|1|1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|1|1,0": [
+          1,
+          1,
+          1
+        ],
+        "fixed-budget|1|2": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|1|2,0": [
+          0,
+          0,
+          2
+        ],
+        "fixed-budget|1|2,1": [
+          1,
+          1,
+          1
+        ],
+        "fixed-budget|1|2,2": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|0": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|0,0": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|0,1": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|2|0,2": [
+          0,
+          2,
+          2
+        ],
+        "fixed-budget|2|1": [
+          0,
+          1,
+          2
+        ],
+        "fixed-budget|2|1,0": [
+          0,
+          1,
+          0
+        ],
+        "fixed-budget|2|1,1": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|1,2": [
+          2,
+          1,
+          2
+        ],
+        "fixed-budget|2|2": [
+          0,
+          0,
+          0
+        ],
+        "fixed-budget|2|2,0": [
+          2,
+          2,
+          2
+        ]
+      },
+      "state_evaluations": 2131
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "3/4"
+  },
+  {
+    "cell_id": "p3/4-q3/4-stopping-on-success",
+    "objective": "stopping-on-success",
+    "planner": {
+      "category_mass": {
+        "follow-shared-clue": "19315/12288",
+        "join-singleton": "1",
+        "join-viable-team": "5/256",
+        "oppose-shared-clue": "8909/12288",
+        "start-new-singleton": "327/256"
+      },
+      "discovery": "903/1024",
+      "expected_actions": "147/64",
+      "expected_rounds": "147/64",
+      "policy": {
+        "stopping-on-success|0|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|0|0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|0|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|0|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|0|2": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|0|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|0|2,2": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|0": [
+          0,
+          1,
+          1
+        ],
+        "stopping-on-success|1|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|0,1": [
+          0,
+          1,
+          1
+        ],
+        "stopping-on-success|1|1": [
+          1,
+          1,
+          1
+        ],
+        "stopping-on-success|1|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|1|2": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|1|2,0": [
+          0,
+          0,
+          2
+        ],
+        "stopping-on-success|1|2,1": [
+          1,
+          1,
+          1
+        ],
+        "stopping-on-success|1|2,2": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|0": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|0,0": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|0,1": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|2|0,2": [
+          0,
+          2,
+          2
+        ],
+        "stopping-on-success|2|1": [
+          0,
+          1,
+          2
+        ],
+        "stopping-on-success|2|1,0": [
+          0,
+          1,
+          0
+        ],
+        "stopping-on-success|2|1,1": [
+          0,
+          0,
+          0
+        ],
+        "stopping-on-success|2|1,2": [
+          2,
+          1,
+          2
+        ],
+        "stopping-on-success|2|2": [
+          2,
+          2,
+          2
+        ],
+        "stopping-on-success|2|2,2": [
+          0,
+          0,
+          0
+        ]
+      },
+      "state_evaluations": 721
+    },
+    "private_accuracy": "3/4",
+    "shared_accuracy": "3/4"
+  }
+]

@@ -1,0 +1,24 @@
+schema_version: dd015-dynamic-attention-v1
+study_id: DD-015
+candidates: 3
+agents: [2, 3]
+private_accuracies: ["1/3", "1/2", "2/3", "3/4"]
+shared_accuracies: ["1/3", "1/2", "2/3", "3/4"]
+wrong_signal_rule: uniform-over-other-two-labels
+objectives: [fixed-budget, stopping-on-success]
+autonomous_reward: full-duplicate-credit
+action_observability: visible-prior-actions
+outcome_observability:
+  fixed-budget: hidden-until-terminal
+  stopping-on-success: failure-observed-on-continuation
+tie_breaking: lowest-action-label
+grid_cells: 32
+labeled_target_signal_paths: 5184
+runtime_estimate_seconds: 30
+time_cap_seconds: 180
+memory_estimate_mb: 128
+memory_cap_mb: 1024
+certificate_format: exact-fraction-common-information-dp-and-labeled-tree-v1
+random_seeds:
+  algorithm: []
+  model: null

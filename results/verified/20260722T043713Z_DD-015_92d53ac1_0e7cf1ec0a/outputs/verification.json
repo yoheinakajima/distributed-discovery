@@ -1,0 +1,902 @@
+{
+  "check_count": 128,
+  "checks": [
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/3-q1/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/3-q1/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/3-q1/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/3-q1/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/3-q1/2-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/3-q1/2-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/3-q1/2-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/3-q1/2-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/3-q2/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/3-q2/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/3-q2/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/3-q2/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/3-q3/4-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/3-q3/4-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/3-q3/4-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/3-q3/4-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/2-q1/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/2-q1/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/2-q1/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/2-q1/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/2-q1/2-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/2-q1/2-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/2-q1/2-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/2-q1/2-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/2-q2/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/2-q2/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/2-q2/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/2-q2/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/2-q3/4-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/2-q3/4-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/2-q3/4-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p1/2-q3/4-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p2/3-q1/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p2/3-q1/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p2/3-q1/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p2/3-q1/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p2/3-q1/2-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p2/3-q1/2-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p2/3-q1/2-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p2/3-q1/2-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p2/3-q2/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p2/3-q2/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p2/3-q2/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p2/3-q2/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p2/3-q3/4-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p2/3-q3/4-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p2/3-q3/4-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p2/3-q3/4-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p3/4-q1/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p3/4-q1/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p3/4-q1/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p3/4-q1/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p3/4-q1/2-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p3/4-q1/2-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p3/4-q1/2-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p3/4-q1/2-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p3/4-q2/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p3/4-q2/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p3/4-q2/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p3/4-q2/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p3/4-q3/4-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p3/4-q3/4-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p3/4-q3/4-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N2-p3/4-q3/4-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/3-q1/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/3-q1/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/3-q1/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/3-q1/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/3-q1/2-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/3-q1/2-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/3-q1/2-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/3-q1/2-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/3-q2/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/3-q2/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/3-q2/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/3-q2/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/3-q3/4-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/3-q3/4-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/3-q3/4-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/3-q3/4-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/2-q1/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/2-q1/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/2-q1/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/2-q1/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/2-q1/2-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/2-q1/2-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/2-q1/2-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/2-q1/2-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/2-q2/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/2-q2/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/2-q2/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/2-q2/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/2-q3/4-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/2-q3/4-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/2-q3/4-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p1/2-q3/4-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p2/3-q1/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p2/3-q1/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p2/3-q1/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p2/3-q1/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p2/3-q1/2-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p2/3-q1/2-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p2/3-q1/2-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p2/3-q1/2-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p2/3-q2/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p2/3-q2/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p2/3-q2/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p2/3-q2/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p2/3-q3/4-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p2/3-q3/4-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p2/3-q3/4-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p2/3-q3/4-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p3/4-q1/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p3/4-q1/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p3/4-q1/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p3/4-q1/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p3/4-q1/2-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p3/4-q1/2-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p3/4-q1/2-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p3/4-q1/2-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p3/4-q2/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p3/4-q2/3-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p3/4-q2/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p3/4-q2/3-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p3/4-q3/4-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p3/4-q3/4-fixed-budget",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p3/4-q3/4-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "autonomous"
+    },
+    {
+      "actions_equal": true,
+      "cell": "N3-p3/4-q3/4-stopping-on-success",
+      "discovery_equal": true,
+      "probability_normalized": true,
+      "protocol": "planner"
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,22 @@
+schema_version: dd015-threshold-two-extension-v1
+study_id: DD-015
+candidates: 3
+agents: 3
+threshold: 2
+private_accuracies: ["1/3", "1/2", "2/3", "3/4"]
+shared_accuracies: ["1/3", "1/2", "2/3", "3/4"]
+objectives: [fixed-budget, stopping-on-success]
+scope: planner-only-separately-labeled-extension
+action_categories: [start-new-singleton, join-singleton, join-viable-team]
+shared_response_categories: [follow-shared-clue, oppose-shared-clue]
+parameter_cells: 16
+objective_rows: 32
+labeled_target_signal_paths: 3888
+runtime_estimate_seconds: 30
+time_cap_seconds: 180
+memory_estimate_mb: 128
+memory_cap_mb: 1024
+certificate_format: exact-fraction-threshold-two-dp-and-labeled-tree-v1
+random_seeds:
+  algorithm: []
+  model: null
