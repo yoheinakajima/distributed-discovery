@@ -58,7 +58,8 @@ Progress:
 - [x] V4.6 — Extend DiscoveryBench and the synthetic experiment kit.
 - [x] V4.7 — Build the focused paper and Program V4 Labs.
 - [x] V4.8 — Run final acceptance, reconcile documentation, and hand off.
-- [ ] V5.0 — Merge the Program V5 documentation baseline after V4 handoff.
+- [ ] V5.0 — Merge the Program V5 documentation baseline after V4 handoff
+  (active on issue #128).
 - [ ] V5.1 — Register and execute the first bounded Signal Geometry and
   Action-Budget Discovery Profile study.
 
@@ -76,6 +77,14 @@ freshness. After the merged handoff, open the documentation-only V5.0 baseline;
 do not register the first V5 study before that baseline merges.
 
 ### Program V4 progress log
+
+- 2026-07-22: Program V4 handoff PR #127 passed both branch workflows and
+  squash-merged as `63c235c`, closing issue #126. Post-merge CI `29903494511`
+  and Pages `29903493659` passed, and the root, route registry, Threshold Lab,
+  and focused-paper routes returned HTTP 200. V5.0 issue #128 and branch
+  `docs/program-v5-information-sharing-frontier` are now the sole active lane.
+  This baseline is documentation-only and creates no study ID, claim, run,
+  result, or scientific source.
 
 - 2026-07-22: owner authorization reconciles the long-term theorem portfolio
   with Program V5, the Information Sharing Frontier. Live audit found clean

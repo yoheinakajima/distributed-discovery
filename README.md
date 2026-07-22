@@ -17,8 +17,8 @@ DD-014, the focused paper, versioned benchmark and synthetic experiment
 extensions, and the public Labs. Program V4, *Threshold Discovery*, is complete
 at its registered bounded scope: DD-015 through DD-018, DiscoveryBench v3, the
 synthetic experiment v3 extension, the 20-page focused paper, and four
-output-connected Labs are deployed. Program V5 begins only after the separate
-documentation baseline following the merged V4 handoff. The concise entry points
+output-connected Labs are deployed. Program V5 is at its documentation-only
+baseline; no V5 study ID, claim, run, or result exists yet. The concise entry points
 are [`docs/current-state.md`](docs/current-state.md) and
 [`docs/current-roadmap.md`](docs/current-roadmap.md). Claims remain in
 [`claims/claims.yml`](claims/claims.yml) under the

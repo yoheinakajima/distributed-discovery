@@ -28,10 +28,10 @@ select exact immutable-run rows and preserve complete no-JavaScript tables.
 The focused paper deployed through PR #123. Issue #126 records the separate
 documentation-only final acceptance and creates no research evidence.
 
-Program V5, *The Information Sharing Frontier*, remains a roadmap direction
-until this handoff merges. It begins with a documentation-only baseline and
-then one bounded Signal Geometry study; no Program V5 study or result exists
-yet.
+Program V5, *The Information Sharing Frontier*, is at its documentation-only
+baseline on issue #128. Its work-package order, finite signal-channel schema
+proposal, and evidence rules are registered in `docs/program-v5.md`. No Program
+V5 study ID, claim, run, or result exists yet.
 
 The repository is public and project-authored content is MIT-licensed. The
 canonical Shared Discovery Paradox repository remains pinned at
