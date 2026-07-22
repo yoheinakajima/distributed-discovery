@@ -47,6 +47,15 @@ Primary run:
 
 - DD-016: `20260722T021526Z_DD-016_00271ff8_123b2809e3`, DD-C-0071–0074.
 
+DD-017 characterizes weak pure Nash occupancies and proves that uniform mixing
+over posterior modes is a symmetric equilibrium for every `tau>=2`, while at
+tau one an outside candidate can be profitable. Its 160-game exact registry
+contains 52 games with zero worst-equilibrium discovery, eight without a
+pairwise-strict-stable pure equilibrium, and 35 without an exact-size-tau-
+strict-stable pure equilibrium. All 21 tied-mode failures occur at tau one.
+
+- DD-017: `20260722T024032Z_DD-017_033452f6_3d2c74fdfb`, DD-C-0075–0078.
+
 ## Program V3 exact results
 
 DD-012's access gate gives

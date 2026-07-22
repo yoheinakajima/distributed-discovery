@@ -1,5 +1,5 @@
 study_id: DD-017
 status: complete-bounded-study
 evidence_status: two-verified-theorems-and-two-independently-reproduced-bounded-censuses
-next_action: complete PR 104 CI, merge, post-merge CI, Pages, and live-route validation before the next Program V4 milestone
-updated_utc: 2026-07-22T02:45:00Z
+next_action: preserve PR 104, the immutable run, and distinct equilibrium concepts; continue the authorized Program V4 queue at DD-015
+updated_utc: 2026-07-22T03:00:00Z

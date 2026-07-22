@@ -43,7 +43,7 @@ Progress:
 
 - [x] V4.1 — Synchronize V3 public copy and validate local public artifacts.
 - [x] V4.2 — Register, execute, independently verify, and integrate DD-016.
-- [ ] V4.3 — Register, execute, independently verify, and integrate DD-017.
+- [x] V4.3 — Register, execute, independently verify, and integrate DD-017.
 - [ ] V4.4 — Execute DD-015 at its registered baseline, then separately assess
   the bounded threshold extension.
 - [ ] V4.5 — Execute and verify DD-018 mechanisms.
@@ -140,6 +140,11 @@ before its independent verifier and immutable primary run pass.
   all 194 tests, the 78-claim ledger, all 42 manifests, and `make site` with 61
   pages and 21 studies. Draft PR #104 can advance after the evidence commit and
   its remote checks pass.
+- 2026-07-22: PR #104 passed CI and artifact checks, squash-merged as 5028802f,
+  closed issue #103, and passed post-merge CI run 29886907269 and Pages run
+  29886907217. The live DD-017 study and JSON returned HTTP 200 with the run and
+  DD-C-0075 through DD-C-0078. V4.3 is complete; the next sequential milestone
+  is V4.4, DD-015 at its original registered boundary.
 
 ### Program V3 attention queue (complete, 2026-07-21)
 

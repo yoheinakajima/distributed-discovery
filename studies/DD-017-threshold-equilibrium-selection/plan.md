@@ -26,7 +26,7 @@ profiles for tied-mode payoff checks. Expected runtime is 60 seconds, capped at
 2. Implement pure, pairwise, tau-player, welfare, and tied-mode checks. **Complete.**
 3. Pass targeted and repository tests; commit the frozen implementation. **Complete.**
 4. Execute one clean immutable registry run and audit any claims separately. **Complete.**
-5. Pass remote acceptance and decide the next bounded extension. **Active.**
+5. Pass remote acceptance and decide the next bounded extension. **Complete.**
 
 ## Validation strategy
 
@@ -69,4 +69,7 @@ directory and never rerun a passing primary configuration for freshness.
 The bounded evidence package is complete. Weak Nash permits zero-discovery
 outcomes, exact-size coalition concepts are not interchangeable, and tied-mode
 mixing is automatically stable only once a unilateral outsider cannot meet the
-threshold alone. Remote acceptance and the next Program V4 registration remain.
+threshold alone. PR #104 merged as `5028802f`; post-merge CI run 29886907269
+and Pages run 29886907217 passed, and the live study and JSON returned HTTP 200
+with the run and all four claim IDs. The next authorized Program V4 milestone
+is DD-015 at its original registered boundary.
