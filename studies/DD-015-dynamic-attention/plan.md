@@ -9,10 +9,10 @@ stopping-on-success objectives.
 
 ## Current state
 
-Program V4's roadmap reconciliation merged through PR #109 as `6cd7190` and
-passed post-merge CI `29890818431` and Pages `29890818405`. Issue #110 and
-branch `research/dd015-dynamic-attention` are active. No DD-015 run or claim
-exists.
+Program V4's roadmap reconciliation merged through PR #109 as `6cd7190`.
+DD-015 merged through PR #111 as `9f2fc1e`; post-merge CI `29892156549`, Pages
+`29892156556`, issue closure, and the live study and JSON all passed. The next
+sequential Program V4 milestone is DD-018.
 
 ## Scope
 
@@ -52,8 +52,9 @@ histories in the bounded exact evaluator.
 4. Pass targeted and repository validation; commit the frozen source.
 5. Execute one clean immutable primary run and audit claims separately.
 6. Add the separately labeled threshold-two extension only after baseline
-   agreement is established. **Active after the passing baseline run.**
+   agreement is established. **Complete.**
 7. Integrate report, public-safe data, study page, CI, Pages, and live routes.
+   **Complete.**
 
 ## Progress checklist
 
@@ -61,11 +62,11 @@ histories in the bounded exact evaluator.
 - [x] Issue and branch created.
 - [x] Original model and resource boundary frozen.
 - [x] Exact implementation and independent verifier pass.
-- [ ] Clean source commit and immutable primary run pass.
-- [ ] Claims and documentation are audited.
+- [x] Clean source commit and immutable primary run pass.
+- [x] Claims and documentation are audited.
 - [x] Baseline claims and documentation are audited.
 - [x] Separately labeled threshold-two planner extension passes.
-- [ ] Repository/site acceptance, merge, CI, Pages, and live routes pass.
+- [x] Repository/site acceptance, merge, CI, Pages, and live routes pass.
 
 ## Discoveries and surprises
 
@@ -136,8 +137,11 @@ run the primary target from a dirty tree and never overwrite a run directory.
 
 ## Outcome and retrospective
 
-Pending. Completion requires a merged evidence package, passing post-merge CI
-and Pages, and live route/data verification.
+Complete at the registered bounded scope. PR #111 squash-merged as `9f2fc1e`;
+post-merge CI run `29892156549` and Pages run `29892156556` passed. The live
+study and JSON returned HTTP 200 with both immutable run IDs and DD-C-0079
+through DD-C-0082. Issue #110 closed as completed. Neither immutable
+configuration should be rerun for freshness.
 
 Pre-run acceptance passed bootstrap, Ruff, MyPy on 125 source files, all 198
 tests, the unchanged 78-claim ledger and 42 manifests, and a 61-page/21-study
@@ -164,5 +168,6 @@ that clean commit.
 
 The separately labeled extension run
 `20260722T044453Z_DD-015_34bc4379_33e1da478b` passed in 13.842954 seconds.
-DD-C-0082 passed its separate audit. The active gate is full repository/site
-acceptance, evidence commit, PR CI, merge, post-merge CI/Pages, and live routes.
+DD-C-0082 passed its separate audit. The full repository/site acceptance,
+merge, post-merge CI/Pages, and live-route gates passed. DD-018 is the next
+authorized substantive milestone.

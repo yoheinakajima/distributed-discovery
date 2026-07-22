@@ -1,22 +1,21 @@
 # Current program state
 
-_Reconciled 2026-07-22 after the DD-017 deployment closeout._
+_Reconciled 2026-07-22 after the DD-015 deployment closeout._
 
 Programs V1, V2, and the required Program V3 queue are complete at their
 registered bounded scopes. Program V3, *The Incentive to Ignore*, completed
 DD-012 through DD-014, the focused working paper, versioned attention
 extensions to DiscoveryBench and the synthetic experiment kit, and the public
-Attention/Audience/Conditional Labs. DD-015 remains an unexecuted registration
-and is now the next authorized Program V4 milestone; registration is not a
-result.
+Attention/Audience/Conditional Labs.
 
 Program V4 is active. DD-016 proves the deterministic minimum-viable-team
 planner value, derives the threshold split-prize payoff identities, and records
 an independently reproduced exact threshold and occupancy census. DD-017 is
 complete and characterizes the bounded pure-Nash occupancy correspondence,
 small-coalition stability, and one symmetric tied-mode mixture without
-identifying that selected rule with all equilibria. DD-015 is next at its
-original registered boundary, followed by DD-018, benchmark and synthetic
+identifying that selected rule with all equilibria. DD-015 is complete and
+deployed at its bounded dynamic-attention and separately labeled planner-only
+threshold-two scopes. DD-018 is next, followed by benchmark and synthetic
 extensions, the focused paper, Labs, and final handoff.
 
 Program V5, *The Information Sharing Frontier*, is a roadmap direction only
@@ -29,10 +28,10 @@ canonical Shared Discovery Paradox repository remains pinned at
 
 | Measure | Current value |
 | --- | ---: |
-| Ledger claims | 78 |
-| Passing immutable runs | 39 of 42 manifests |
+| Ledger claims | 82 |
+| Passing immutable runs | 41 of 44 manifests |
 | Registered studies | 21 |
-| Python source files | 121 |
+| Python source files | 126 |
 | Public HTML routes | 61 |
 | Public data files | 66 |
 | Laboratory routes | 12 |
@@ -63,6 +62,21 @@ pairwise-strict-stable pure equilibrium, and 35 without an exact-size-tau-
 strict-stable pure equilibrium. All 21 tied-mode failures occur at tau one.
 
 - DD-017: `20260722T024032Z_DD-017_033452f6_3d2c74fdfb`, DD-C-0075–0078.
+
+DD-015 separates full-duplicate-credit sequential Bayesian behavior from an
+exact common-information planner under fixed-budget and stopping objectives.
+The planner is strictly better in 38 of 64 baseline objective rows. Visible
+prior action never improves discovery or dispersion relative to the registered
+history-hidden Bayes control; it reduces both in 18 of 32 fixed-budget cells
+and ties in 14, a bounded negative result rather than a general theorem.
+Stopping uses fewer expected actions in all 32 cells. The separate threshold-
+two planner extension preserves discovery and reduces expected actions in all
+16 fixed/stopping cells while exercising every registered team-action category.
+
+- DD-015 baseline: `20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a`,
+  DD-C-0079–0081.
+- DD-015 threshold-two extension:
+  `20260722T044453Z_DD-015_34bc4379_33e1da478b`, DD-C-0082.
 
 ## Program V3 exact results
 

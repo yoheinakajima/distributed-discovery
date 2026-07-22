@@ -9,13 +9,13 @@ verification plan, and corruption test where certificates are used.
 | --- | --- | --- |
 | DD-016 Threshold Discovery | complete and deployed through PR #102 | Preserve DD-C-0071 through DD-C-0074 and the immutable primary run; do not treat tied-mode selection as the equilibrium correspondence. |
 | DD-017 Equilibrium Selection and Coalition Stability | complete and deployed through PR #104 | Preserve DD-C-0075 through DD-C-0078 and distinct weak-Nash, pairwise, tau-player, and symmetric-mixed meanings. |
-| Program V4 later queue | active sequentially after DD-017 | Execute DD-015 at its original boundary, then DD-018 mechanisms, DiscoveryBench v3, synthetic extensions, focused paper, public Labs, and final handoff under separate gates. Program V4 is not complete. |
+| Program V4 later queue | active sequentially after DD-015 | Execute DD-018 mechanisms, DiscoveryBench v3, synthetic extensions, focused paper, public Labs, and final handoff under separate gates. Program V4 is not complete. |
 | Program V3 baseline | complete through PR #80 | DD-012 through DD-015 are registered and deployed without creating research evidence. |
 | DD-012 Incentive to Ignore | complete and deployed through PR #82 | Preserve DD-C-0059 through DD-C-0061 and the immutable primary run. |
 | DD-013 Audience Design | complete and deployed through PR #84 | Preserve DD-C-0062 through DD-C-0065, the primary run, and Audience Lab. |
 | DD-014 Conditional Attention | complete and deployed through PR #87 | Preserve DD-C-0066 through DD-C-0068, the passing run, bounded class, and raw larger-class counterexample. |
-| DD-015 Dynamic Attention | complete bounded evidence; deployment pending | Preserve DD-C-0079 through DD-C-0082, the immutable baseline and separately labeled threshold-two run, the full-credit reward scope, and the bounded visibility-herding null. Merge and deploy before DD-018. |
-| DD-018 Minimum Viable Team Mechanisms | planned after DD-015 | Register and test exact threshold-team mechanisms only after DD-015 merges and deploys; unilateral implementation is not coalition-proofness. |
+| DD-015 Dynamic Attention | complete and deployed through PR #111 | Preserve DD-C-0079 through DD-C-0082, the immutable baseline and separately labeled threshold-two run, the full-credit reward scope, and the bounded visibility-herding null. |
+| DD-018 Minimum Viable Team Mechanisms | next substantive milestone | Register and test exact threshold-team mechanisms; unilateral implementation is not coalition-proofness. |
 | Program V5 — Information Sharing Frontier | authorized after the merged Program V4 handoff | Begin with a documentation-only baseline, then register only Signal Geometry and the Action-Budget Discovery Profile after its channel-law and complexity audit. Do not start V5 research while V4 is active. |
 | Program V3 focused paper | complete and deployed through PR #90 | The deterministic 20-page *Incentive to Ignore* paper, nine generated evidence assets, citation audit, all-page visual review, Pages, and live PDF pass. |
 | Program V3 benchmark, experiment, and site integration | complete and deployed through PRs #93, #95, and #97 | Preserve version compatibility, static/no-tracking operation, no-JS tables, and exact provenance. |
@@ -50,7 +50,7 @@ git pull --ff-only origin main
 make verify
 ```
 
-The next substantive milestone is DD-015. Its first file is
-`studies/DD-015-dynamic-attention/plan.md`; it begins only after the roadmap
-reconciliation issue and pull request merge and deployment checks pass. For
-settings-only work, use `docs/github-setup.md` and issue #32.
+The next substantive milestone is DD-018. Its first files are the new study
+README, plan, status, model, and frozen configuration on branch
+`research/dd018-minimum-viable-team-mechanisms`, after creating the bounded
+issue. For settings-only work, use `docs/github-setup.md` and issue #32.
