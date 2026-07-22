@@ -69,9 +69,10 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   PR #134.
 - **B (complete):** DD-020 Incremental Sharing and Independent Rescue, issue
   #135 and PR #136, merged and deployed as `cf7bc67e`.
-- **C (active):** editorial theorem gate and synthesis prospectus, issue #137,
-  branch `docs/incremental-sharing-editorial-gate`, and draft PR #138.
-- **D:** public DD-020 integration and output-connected Lab.
+- **C (complete):** editorial theorem gate and synthesis prospectus, issue
+  #137 and PR #138, merged and deployed as `9401fbe7`.
+- **D (active):** public DD-020 integration and output-connected Lab, issue
+  #139, draft PR #140, and branch `site/dd020-program-integration`.
 - **Acceptance:** complete repository/paper/site/live audit and final handoff.
 
 ### Progress checklist
@@ -84,8 +85,9 @@ conjecture until proof or an exact counterexample supplies the permitted status.
 - [x] Create issue #133 and the sole active Milestone A branch.
 - [x] Complete, validate, merge, deploy, close, and synchronize Milestone A.
 - [x] Merge, deploy, close, and synchronize the completed DD-020 study.
-- [ ] Apply and merge the editorial theorem gate and synthesis prospectus.
-- [ ] Build and deploy the DD-020 public integration and Lab.
+- [x] Apply and merge the editorial theorem gate and synthesis prospectus.
+- [x] Build and locally validate the DD-020 public integration and Lab.
+- [ ] Merge and deploy the DD-020 public integration and Lab.
 - [ ] Run final acceptance and reconcile every required handoff document.
 
 ### Discoveries and surprises
@@ -120,6 +122,10 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   registered class: the guaranteed shortlist rises while the same-accuracy
   noisy point falls. DD-C-0092 through DD-C-0096 preserve the theorem,
   bounded census, and counterexample boundaries.
+- Milestone D's first full validation stopped on one redundant f-string prefix;
+  after that lint-only correction, strict MyPy exposed two JSON `object` to
+  `int` conversions. Explicit string normalization resolved both. The repeated
+  gate then passed all 224 tests, 96 claims, and 49 manifests.
 
 ### Decision log
 
@@ -153,6 +159,23 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   Discovery* behind one bounded Reliable Discovery theorem attempt, whose
   registered stopping outcomes must include a theorem, sharp counterexample,
   or bounded null/classification. Neither decision authorizes submission.
+- `2026-07-22`: mark Milestone C complete only after PR #138 passed CI
+  `29931193193` and paper/site build `29931193350`, squash-merged as
+  `9401fbe7`, closed issue #137, passed post-merge CI `29931375550` and Pages
+  `29931375465`, synchronized clean main, and exposed the ownership and
+  no-submission language on the live Program route. Issue #139 begins the
+  separate no-research-run public-integration milestone.
+- `2026-07-22T15:15:58Z`: build the DD-020 Lab only from immutable run
+  `20260722T142551Z_DD-020_3854fff6_37c11a850a`. Preserve all 2,044 adjacent
+  point transitions and ten channel transitions, exact source copies, the
+  aggregation-minus-rescue identity, and complete no-JavaScript tables. Local
+  in-app browser QA covers negative and positive increments, terminal point
+  transitions, substantive controls, keyboard focus, mobile containment,
+  internal table scrolling, live status, and zero warning/error logs.
+- `2026-07-22`: accept Milestone D for branch review only after `git diff
+  --check`, bootstrap, Ruff, strict MyPy on 142 source files, all 224 tests, 96
+  claims, 49 manifests, and the 72-route/24-study site build passed. No claim,
+  immutable run, or paper PDF changed.
 
 ### Validation strategy
 
@@ -186,7 +209,8 @@ and PR #136; the registered study package; exact implementation and verifier;
 run `20260722T142551Z_DD-020_3854fff6_37c11a850a`; and DD-C-0092 through
 DD-C-0096; issue #137 and draft PR #138; two editorial gate records; the
 living-synthesis prospectus and maturity map; and the reconciled public program
-page.
+page; issue #139 and draft PR #140; and the exact output-connected Incremental
+Sharing Lab plus immutable-source public data copies.
 
 ### Blockers
 
@@ -203,11 +227,11 @@ rerun any passing primary configuration. If Milestone A is merged, synchronize
 
 ### Outcome and retrospective
 
-Milestone A is complete and deployed without changing evidence inventories or
-paper PDFs. Its hierarchy resolves the previous ambiguity between a study and
-a paper while keeping program synthesis non-evidentiary. Milestone B is the
-sole active milestone. Update after every material decision, failed check,
-immutable run, claim audit, merge, and deployment.
+Milestones A through C are complete and deployed without weakening evidence or
+paper boundaries. Milestone D is built and locally validated; merge, Pages,
+live-route validation, and the final acceptance reconciliation remain. Update
+after every material decision, failed check, immutable run, claim audit, merge,
+and deployment.
 
 ## Current state
 

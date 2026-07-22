@@ -111,6 +111,11 @@ failure; the complete gate was rerun from the beginning and passed.
 - `2026-07-22`: PR #136 squash-merged as `cf7bc67e`; issue #135 closed;
   post-merge CI `29929864642` and Pages `29929864954` passed; main synchronized
   cleanly; and the live study, data, claims, and evidence routes returned 200.
+- `2026-07-22`: issue #139 and draft PR #140 add an output-connected Lab from
+  the sole immutable run without executing research. Local validation covers
+  2,044 point transitions, ten registered-channel transitions, the exact
+  aggregation-minus-rescue decomposition, same-accuracy opposite signs,
+  no-JavaScript tables, keyboard focus, mobile containment, and clean logs.
 
 ## Validation strategy
 
@@ -137,7 +142,8 @@ run, report, claim audits, public metadata, CSV, and SVG.
 ## Blockers
 
 No scientific blocker. Settings issue #32 is unrelated. The primary run is
-complete and must not be rerun. Public integration is a separate milestone.
+complete and must not be rerun. Public integration is presentation-only and
+final acceptance follows its deployment.
 
 ## Recovery and restart instructions
 

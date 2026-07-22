@@ -8,7 +8,8 @@ architecture are merged and deployed. DD-020 Incremental Sharing and
 Independent Rescue is merged and deployed through PR #136 with a passing
 immutable run and five audited claims. Its documentation-only editorial gate
 assigns primary ownership without creating research evidence or submission
-authority.
+authority. Issue #139 and PR #140 add the exact output-connected public Lab
+without executing or mutating any research run.
 
 ## Inventory
 
@@ -21,9 +22,9 @@ authority.
 | Tests | 224 |
 | Validated project papers | 6 |
 | Paper pages | 89 |
-| Public HTML routes | 71 locally generated |
-| Public data files | 68 |
-| Labs | 16 |
+| Public HTML routes | 72 locally generated |
+| Public data files | 71 |
+| Labs | 17 |
 | Checksum-covered downloads | 22 |
 
 ## Program V4 milestones
@@ -72,6 +73,6 @@ passed. Final handoff PR and post-merge workflow IDs are recorded after merge.
 DD-019 deployment closeout merged as `5e6c800`; governance/publication PR #134
 merged as `dc32ff17`. DD-020's sole primary run is
 `20260722T142551Z_DD-020_3854fff6_37c11a850a`; both exact methods and five
-corruptions pass. After the documentation-only editorial theorem gate and
-synthesis prospectus merge, the next authorized step is the public DD-020
-result and output-connected Lab.
+corruptions pass. The documentation-only editorial theorem gate and synthesis
+prospectus are merged. The exact DD-020 result and output-connected Lab are
+built under issue #139; final acceptance follows their merge and deployment.

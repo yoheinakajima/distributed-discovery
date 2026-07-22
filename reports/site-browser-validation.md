@@ -31,6 +31,8 @@ not a claim of WCAG conformance.
 | DD-014 Conditional Attention Lab | Initial registered cell shows one exact profile and explicitly preserves the all-clues evidence boundary |
 | Status presentation | No raw machine status is used as a standalone visible label in the 36-capture route matrix |
 | Download integrity | The generated manifest covers every paper, schema, and read-only experiment material in `downloads/`, recording and validating byte length and SHA-256 for each artifact |
+| DD-020 Incremental Sharing Lab | Exact point/channel controls reproduce negative noisy-point and positive guaranteed-shortlist transitions, including the same-accuracy comparison and `1/9 - 1/12 = 1/36` at `s=2→3` |
+| DD-020 accessibility and responsive check | Seven labeled native selectors, polite live status, visible keyboard outline, chart text alternative, zero 390×844 document overflow, internally scrolling complete tables, and zero browser warnings or errors |
 
 The browser check complements the automated site builder tests. It does not test
 assistive technology combinations or claim a complete accessibility audit.

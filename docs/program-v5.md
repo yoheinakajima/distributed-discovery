@@ -99,5 +99,6 @@ primary run `20260722T084145Z_DD-019_a77bb786_04a5e9f0c5`. DD-020 is complete
 and deployed with DD-C-0092 through DD-C-0096 and immutable primary run
 `20260722T142551Z_DD-020_3854fff6_37c11a850a`. Its editorial gate gives primary
 ownership to a future Information Sharing Frontier theorem-family paper and
-authorizes no submission. No later Program V5 study ID may be reserved before
-its own bounded registration gate.
+authorizes no submission. Its output-connected Lab selects the immutable exact
+point and channel transitions without changing evidence status. No later
+Program V5 study ID may be reserved before its own bounded registration gate.
