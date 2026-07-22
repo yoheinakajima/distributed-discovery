@@ -5,6 +5,10 @@ Its central question is not whether information is intrinsically good or bad,
 but how many search roles should condition their actions on the same signal and
 which access, assignment, and reward institutions can implement that pattern.
 
+The required sequence completed on 2026-07-21. Exact run and claim identifiers,
+negative results, public routes, and acceptance evidence are recorded in
+`docs/current-state.md` and `reports/final-handoff.md`.
+
 The required sequence is:
 
 1. DD-012 — Incentive to Ignore: exact access-gated follow/private model,
@@ -18,9 +22,8 @@ The required sequence is:
 4. A focused working paper, DiscoveryBench and synthetic experiment-kit
    extensions, public Labs, and final acceptance.
 
-DD-015, Dynamic Attention and Visible Search, is registered as optional work
-that may begin only after DD-012 through DD-014 are complete. Registration is
-not a result. No participant recruitment, human data, live intervention, paid
+DD-015, Dynamic Attention and Visible Search, remains an unexecuted optional
+registration. Registration is not a result. No participant recruitment, human data, live intervention, paid
 external model call, DOI, submission, or claim of peer review is authorized.
 
 The program keeps four objects separate throughout: information acquisition,

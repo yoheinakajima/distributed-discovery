@@ -8,7 +8,7 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-### Program V3 attention queue (active, 2026-07-21)
+### Program V3 attention queue (complete, 2026-07-21)
 
 Owner authorization now requires sequential execution of DD-012 Incentive to
 Ignore, DD-013 Audience Design and Information Firewalls, DD-014 Conditional
@@ -30,9 +30,9 @@ The registration-only Program V3 baseline completed through issue #79 and PR
 #80, squash merge `69ba1c392bb0bda9bc4447c0fac842b8e7308fbf`, passing
 post-merge CI and Pages, and live DD-012 through DD-015 routes. DD-012 through
 DD-014, the focused paper, DiscoveryBench v2, and the DD-011 synthetic
-experiment extension are merged, deployed, and live. The active milestone is
-the public Attention/Audience/Conditional Lab integration under issue #96 and
-branch `site/program-v3-attention`.
+experiment extension and public Attention/Audience/Conditional Labs are merged,
+deployed, and live. Final acceptance proceeds through issue #98 and branch
+`docs/program-v3-final-handoff` without duplicating an immutable run.
 
 Progress:
 
@@ -72,20 +72,27 @@ Progress:
   `20260721T232119Z_DD-011_121162f8_e454b06d2c`, DD-C-0070, PR #95,
   post-merge CI/Pages, and live public routes. No participants were recruited
   and no human data exist.
-- [ ] Public Labs/site integration and final acceptance. Issue #96 adds the
-  exact Attention Lab, expands Audience Design across binding and voluntary
-  use plus three registered mechanisms, preserves the Conditional Attention
-  Lab, and adds the required benchmark/experiment navigation. Local acceptance
+- [x] Public Labs/site integration. Issue #96 and PR #97 add the
+  exact Attention Lab, expand Audience Design across binding and voluntary
+  use plus three registered mechanisms, preserve the Conditional Attention
+  Lab, and add the required benchmark/experiment navigation. Local acceptance
   passes 182 tests, a 59-route site build, public-safety gates, desktop and
   375-pixel browser interaction, keyboard focus, contained table overflow,
-  reduced motion, and clean browser logs. Commit, PR, CI/Pages, live checks,
-  and the separate final handoff remain.
+  reduced motion, and clean browser logs. PR #97, post-merge CI `29878042468`,
+  Pages `29878042571`, and all required live routes passed.
+- [x] Final local acceptance. Issue #98 runs `make bootstrap`, `make verify`,
+  `make papers`, and `make site`; 183 tests, 70 claims, all 40 manifests, five
+  papers/69 rendered pages, 19 downloads, focused certificate/corruption/schema
+  checks, secret/host/license/provenance scans, clean upstream, browser checks,
+  and live routes pass. The final documentation PR, post-merge CI/Pages, and
+  closing live verification are the only remaining transaction gates.
 
 Recovery: inspect `git status --short --branch` on
-`site/program-v3-attention`, rerun `make verify && make site`, then continue the
-issue #96 PR/deployment gates without altering any immutable run.
+`docs/program-v3-final-handoff`, rerun `make verify && make papers && make site`,
+then continue issue #98's PR/deployment gates without altering any immutable
+run. After merge, resume from clean `main` and `docs/current-roadmap.md`.
 
-### Program V2 completion queue (active, 2026-07-21)
+### Program V2 completion queue (complete, 2026-07-21)
 
 Owner authorization now requires sequential completion of DD-010 DiscoveryBench,
 DD-011 Experimental Design and Power, the DD-008B Common-Source analytic gate,
@@ -96,7 +103,7 @@ and a final Program V2 handoff. The live baseline is clean `main`
 public routes return HTTP 200, and no pull request is open. The only settings blocker remains issue #32; the previously required
 single `gh auth status` probe was already exhausted and is not repeated.
 
-The active milestone is final Program V2 acceptance and handoff under issue #77
+The final Program V2 acceptance and handoff milestone under issue #77
 and branch `docs/program-v2-final-handoff`. It runs the bounded repository,
 certificate, corruption, leakage, schema, synthetic-design, paper, site, scan,
 provenance, upstream, and live-route gates, then reconciles every authoritative
@@ -135,7 +142,7 @@ Recovery: inspect `git status --short --branch`; resume final reconciliation fro
 `docs/current-state.md`; never rerun the preserved DD-010, DD-011, or DD-008B
 primary runs. The exact next command is `make bootstrap && make verify`.
 
-### Program V2 baseline (active, 2026-07-21)
+### Program V2 baseline (historical, 2026-07-21)
 
 DD-008A is merged and deployed through PR #61. Clean primary run
 `20260721T163030Z_DD-008A_8b70668b_06307caab4` evaluates the registered

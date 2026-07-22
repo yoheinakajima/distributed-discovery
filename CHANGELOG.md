@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-07-21 — Program V3 complete
+
+- Completed the required Program V3 queue through DD-012, DD-013, DD-014, the
+  focused paper, DiscoveryBench v2, synthetic experiment v2, public Labs, and
+  final acceptance; optional DD-015 was not executed.
+- Final acceptance passes 183 tests, 70 claim records, all 40 manifests, five
+  byte-reproducible paper builds and 69-page visual review, 59 public routes,
+  19 download checksums, safety/license/provenance audits, clean pinned
+  upstream, browser/accessibility checks, CI, Pages, and live-route checks.
+- Refreshed the Three Results paper's claim-ledger provenance and visual-QA
+  checksum without changing its mathematical content, and made Program V3
+  paper build logs host-path independent.
+
 ## 2026-07-21 — Program V3 public attention surface
 
 - Added a static-complete Attention Lab across 175 exact cells, 1,050 profiles,

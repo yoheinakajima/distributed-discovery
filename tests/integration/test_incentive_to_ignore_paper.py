@@ -54,3 +54,6 @@ def test_incentive_paper_assets_and_validation_are_complete() -> None:
     assert provenance["generator"] == GENERATOR
     assert len(provenance["generated_assets"]) == 9
     assert all(len(value) == 64 for value in provenance["inputs"].values())
+    build_log = (PAPER / "build.log").read_text(encoding="utf-8")
+    assert "/Users/" not in build_log
+    assert "/home/" not in build_log

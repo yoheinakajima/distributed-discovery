@@ -10,21 +10,24 @@ This public repository is MIT-licensed. The [companion site](https://yoheinakaji
 
 ## Status and navigation
 
-Programs V1 and V2 are complete at their registered bounded scopes. Program V3,
-[*The Incentive to Ignore*](docs/program-v3.md), is active with DD-012 through
-DD-014 required and DD-015 registered as optional. These registrations are not
-results. The concise entry points
+Programs V1, V2, and the required Program V3 queue are complete at their
+registered bounded scopes. Program V3,
+[*The Incentive to Ignore*](docs/program-v3.md), completed DD-012 through
+DD-014, the focused paper, versioned benchmark and synthetic experiment
+extensions, and the public Labs. DD-015 remains an unexecuted optional
+registration, not a result. The concise entry points
 are [`docs/current-state.md`](docs/current-state.md) and
 [`docs/current-roadmap.md`](docs/current-roadmap.md). Claims remain in
 [`claims/claims.yml`](claims/claims.yml) under the
 [`claim-status policy`](docs/claim-status-policy.md); studies are indexed in
 [`studies/index.md`](studies/index.md). DD-007 is synthetic-only. Program V2's
-DD-008A, DD-006B, the exact bounded DD-009 Architecture Atlas, DiscoveryBench,
-and the synthetic-only DD-011 experiment kit are merged and deployed. DD-008B
-adds a verified general-`N` Common-Source threshold theorem and a scoped exact
-counterexample. The deterministic 20-page
+DD-008A, DD-006B, the exact bounded DD-009 Architecture Atlas, DiscoveryBench
+v2, and the synthetic-only DD-011 v2 experiment kit are merged and deployed.
+DD-008B adds a verified general-`N` Common-Source threshold theorem and a scoped
+exact counterexample. The deterministic 20-page
 [*Common-Source Trap* working paper](https://yoheinakajima.github.io/distributed-discovery/publications/common-source-trap.html)
-and its provenance-bound PDF are live. No real-data work is authorized; no
+and the 20-page [*Incentive to Ignore* working paper](https://yoheinakajima.github.io/distributed-discovery/publications/incentive-to-ignore.html)
+are live. No real-data work is authorized; no
 participants were recruited and no human experiment was conducted.
 
 ## Setup and common commands
@@ -60,7 +63,12 @@ make dd007-synthetic-audit  # run the synthetic-only recovery audit
 make dd008b-analysis         # audit the general-N common-source threshold theorem
 make dd009-atlas             # run the aligned architecture registry and Pareto census
 make dd010-discoverybench    # run the exact golden benchmark and bounded seeded sensitivity
+make dd010-attention         # run the versioned selective-attention benchmark extension
 make dd011-experiment        # run the synthetic design, power grid, and separate verifier
+make dd011-attention         # run the versioned synthetic attention design extension
+make dd012-attention         # run the exact access-gated attention census
+make dd013-audience          # run the binding/voluntary audience census
+make dd014-conditional       # run the conditional-policy census and raw audit
 make papers               # build all paper artifacts
 make site                 # build the public companion site locally
 make all                  # verify, reproduce canonical baseline, build papers and site
@@ -74,6 +82,7 @@ New agents must read `AGENTS.md`, `.agent/PLANS.md`, `plans/MASTER_EXEC_PLAN.md`
 `docs/repository-contract.md`, and the relevant study files. Then inspect Git
 status and run `git switch main && git pull --ff-only origin main && make verify`.
 Do not rerun completed primary configurations merely to refresh timestamps.
-Program V3 executes sequentially under the active ExecPlan; each study still
-needs a bounded issue and verification plan. Settings-only issue #32 must not be
-retried without intentionally supplied authority.
+Program V3 primary configurations are complete and must not be rerun merely to
+refresh timestamps. Any extension needs a new bounded issue, state-space cap,
+and verification plan. Settings-only issue #32 must not be retried without
+intentionally supplied authority.

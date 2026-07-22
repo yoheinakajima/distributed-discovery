@@ -1,8 +1,8 @@
 # Result index
 
-Current inventory: 36 immutable manifests, of which 33 have passing validation
-and exit status zero. The DD-012 primary run is the only Program V3 research run
-to date.
+Current inventory: 40 immutable manifests, of which 37 have passing validation
+and exit status zero. Program V3 added five passing primary or versioned runs
+without overwriting prior evidence.
 
 - [`baseline/`](baseline/README.md): canonical upstream reproduction artifacts.
 - [`verified/`](verified/README.md): policy-verified results.
@@ -73,6 +73,19 @@ policy audit, 362,659 independently enumerated labeled states, and four rejected
 corruptions. It supports DD-C-0066 through DD-C-0068, including the larger-class
 scope counterexample.
 
-The three Program V2 primary runs above are immutable and must not be rerun just
-to refresh timestamps. Their public summaries are generated only after manifest
-and output checksum validation.
+The DiscoveryBench attention v2 run is
+`verified/20260721T230249Z_DD-010_add85590_56c61a2195`. It preserves v1 and
+stores 20 tasks, 21 protocols, 27 metrics, 28 compatible exact rows, 392
+explicit exclusions, separate recomputation, leakage rejection, and three
+corruption gates supporting DD-C-0069.
+
+The synthetic experiment attention v2 run is
+`verified/20260721T232119Z_DD-011_121162f8_e454b06d2c`. It preserves v1 and
+stores 29 treatments, 14 hypotheses, 19 outcomes, 11 response scenarios, 928
+balanced synthetic assignments, 924 power rows, 924,000 seeded draws, all
+retained calibration failures, separate recomputation, and three corruption
+gates supporting synthetic-only DD-C-0070. It contains no human data.
+
+All completed primary runs are immutable and must not be rerun just to refresh
+timestamps. Public summaries are generated only after manifest and output
+checksum validation.
