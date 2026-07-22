@@ -27,8 +27,10 @@ all expected values directly from the immutable DD-016, DD-017, DD-015, and
 DD-018 evidence records and repeats schema, provenance, count, capability, and
 three corruption checks. No composite score or external adapter is enabled.
 
-Issue #116, branch `research/discoverybench-v3-program-v4`, and draft PR #117
-are active. The v3 evidence package is complete; remote acceptance remains.
+DiscoveryBench v3 is complete and deployed. PR #117 squash-merged as
+`3b4fdbe`; issue #116, post-merge CI `29895085124`, Pages `29895085148`, and
+the live benchmark, study, schema, and summary routes passed. Synthetic
+Experiment v3 is the next sequential Program V4 milestone.
 
 The first full v3 repository gate stopped at MyPy because a generic JSON-like
 certificate value was passed directly to `int` in the new registered-count
@@ -48,11 +50,15 @@ Frozen source commit `d265e480` and draft PR #117 preceded the sole v3 run
 verified all 36 exact rows, retained 660 exclusions, resolved all provenance,
 and rejected all three corruptions. Direct comparison confirms the first 28 v3
 metric vectors equal the complete v2 output matrix. DD-C-0087 passed its
-separate audit. The active gate is final repository/site acceptance, evidence
-commit, PR CI/merge, post-merge CI/Pages, issue closure, and live routes.
+separate audit. The immutable run must not be repeated.
 
 Final local acceptance passed bootstrap, Ruff, MyPy on 131 source files, all
 208 tests, the 87-claim ledger, all 46 manifests, and the 62-page/22-study site.
 The generated benchmark surface selects v3, preserves the v2-only attention
 page boundary, publishes all three schemas, and links the immutable run and
-DD-C-0087. The next action is the evidence commit and push.
+DD-C-0087. PR #117 passed both required checks and squash-merged as `3b4fdbe`.
+Post-merge CI `29895085124` and Pages `29895085148` passed; issue #116 closed;
+the live benchmark, DD-010 study, v3 schema, and summary routes returned HTTP
+200. The live summary names the immutable run and reports 24 tasks, 29
+protocols, 39 metrics, 36 compatible pairs, and 660 exclusions. The next
+milestone is the separately registered Synthetic Experiment v3.

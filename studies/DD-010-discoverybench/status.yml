@@ -1,5 +1,5 @@
 study_id: DD-010
 status: complete-versioned-program-v4-extension
 evidence_status: v1-v2-preserved-v3-independently-reproduced-exact-matrix
-next_action: preserve all three immutable benchmark versions; commit and push audited v3 evidence, then complete PR and deployment acceptance
-updated_utc: 2026-07-22T05:51:07Z
+next_action: preserve PR 117, all three immutable benchmark versions, capability isolation, and the no-composite-score boundary; continue Program V4 with Synthetic Experiment v3
+updated_utc: 2026-07-22T05:58:00Z
