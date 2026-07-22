@@ -11,4 +11,11 @@ jobs:
         with: {enable-cache: true}
       - run: uv python install 3.12
       - run: make bootstrap
-      - run: make verify
+      - name: Lint
+        run: make lint
+      - name: Typecheck
+        run: make typecheck
+      - name: Test
+        run: make test
+      - name: Validate claims and run manifests
+        run: make validate-claims
