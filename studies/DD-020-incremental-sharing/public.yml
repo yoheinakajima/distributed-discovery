@@ -1,8 +1,8 @@
 study_id: DD-020
 title: Incremental Sharing and Independent Rescue
 slug: dd-020
-phase: registered
-summary: Registered exact study of marginal pooled accuracy and the private rescue action lost as a one-action sharing block expands.
+phase: complete-bounded-study
+summary: Verified exact aggregation-rescue identity and point-channel monotonicity theorem, plus independently reproduced point and five-channel profiles.
 public_artifacts:
   - path: studies/DD-020-incremental-sharing/model.md
     description: Frozen incremental-sharing protocol and baseline semantics
@@ -16,5 +16,19 @@ public_artifacts:
     description: Separate internal proof-consistency audit
   - path: studies/DD-020-incremental-sharing/configs/census.yml
     description: Frozen exact point-channel census and resource bounds
-claim_ids: []
-run_ids: []
+  - path: studies/DD-020-incremental-sharing/report.md
+    description: Audited analytic and bounded exact findings with limitations
+  - path: studies/DD-020-incremental-sharing/results/incremental-profiles.svg
+    description: Exact five-channel incremental-sharing profile plot
+  - path: studies/DD-020-incremental-sharing/results/channel-profiles.csv
+    description: Exact future-Lab channel profile data
+  - path: studies/DD-020-incremental-sharing/results/visual-qa.md
+    description: Rendered figure inspection record
+  - path: results/verified/20260722T142551Z_DD-020_3854fff6_37c11a850a/outputs/point-census.json
+    description: Complete public-safe exact point-channel census
+  - path: results/verified/20260722T142551Z_DD-020_3854fff6_37c11a850a/outputs/channel-profiles.json
+    description: Exact five-channel curves and increments
+  - path: results/verified/20260722T142551Z_DD-020_3854fff6_37c11a850a/outputs/verification.json
+    description: Independent method agreement and exact validation
+claim_ids: [DD-C-0092, DD-C-0093, DD-C-0094, DD-C-0095, DD-C-0096]
+run_ids: [20260722T142551Z_DD-020_3854fff6_37c11a850a]

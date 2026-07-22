@@ -1,0 +1,147 @@
+[
+  {
+    "channel_id": "noisy-point-half",
+    "family": "symmetric-noisy-point",
+    "increments": [
+      "-1/8",
+      "-1/6"
+    ],
+    "independent_pooled_accuracy": [
+      "1/2",
+      "1/2",
+      "7/12"
+    ],
+    "independent_profile": [
+      "7/8",
+      "3/4",
+      "7/12"
+    ],
+    "one_person_accuracy": "1/2",
+    "pooled_accuracy": [
+      "1/2",
+      "1/2",
+      "7/12"
+    ],
+    "profile": [
+      "7/8",
+      "3/4",
+      "7/12"
+    ]
+  },
+  {
+    "channel_id": "noisy-shortlist-three-quarters",
+    "family": "noisy-k-shortlist",
+    "increments": [
+      "-35/512",
+      "-9/64"
+    ],
+    "independent_pooled_accuracy": [
+      "3/8",
+      "1/2",
+      "35/64"
+    ],
+    "independent_profile": [
+      "387/512",
+      "11/16",
+      "35/64"
+    ],
+    "one_person_accuracy": "3/8",
+    "pooled_accuracy": [
+      "3/8",
+      "1/2",
+      "35/64"
+    ],
+    "profile": [
+      "387/512",
+      "11/16",
+      "35/64"
+    ]
+  },
+  {
+    "channel_id": "guaranteed-shortlist-two",
+    "family": "guaranteed-shortlist",
+    "increments": [
+      "1/24",
+      "1/36"
+    ],
+    "independent_pooled_accuracy": [
+      "1/2",
+      "5/6",
+      "17/18"
+    ],
+    "independent_profile": [
+      "7/8",
+      "11/12",
+      "17/18"
+    ],
+    "one_person_accuracy": "1/2",
+    "pooled_accuracy": [
+      "1/2",
+      "5/6",
+      "17/18"
+    ],
+    "profile": [
+      "7/8",
+      "11/12",
+      "17/18"
+    ]
+  },
+  {
+    "channel_id": "explicit-exclusion",
+    "family": "exclusion",
+    "increments": [
+      "-2/27",
+      "-1/27"
+    ],
+    "independent_pooled_accuracy": [
+      "1/3",
+      "4/9",
+      "16/27"
+    ],
+    "independent_profile": [
+      "19/27",
+      "17/27",
+      "16/27"
+    ],
+    "one_person_accuracy": "1/3",
+    "pooled_accuracy": [
+      "1/3",
+      "4/9",
+      "16/27"
+    ],
+    "profile": [
+      "19/27",
+      "17/27",
+      "16/27"
+    ]
+  },
+  {
+    "channel_id": "confidence-point",
+    "family": "confidence-augmented-point",
+    "increments": [
+      "-33/512",
+      "-11/96"
+    ],
+    "independent_pooled_accuracy": [
+      "5/8",
+      "11/16",
+      "295/384"
+    ],
+    "independent_profile": [
+      "485/512",
+      "113/128",
+      "295/384"
+    ],
+    "one_person_accuracy": "5/8",
+    "pooled_accuracy": [
+      "5/8",
+      "11/16",
+      "295/384"
+    ],
+    "profile": [
+      "485/512",
+      "113/128",
+      "295/384"
+    ]
+  }
+]

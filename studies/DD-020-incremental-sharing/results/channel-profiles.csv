@@ -1,0 +1,7 @@
+channel_id,one_person_accuracy,G_1,G_2,G_3,increment_1_to_2,increment_2_to_3
+noisy-point-half,1/2,7/8,3/4,7/12,-1/8,-1/6
+noisy-shortlist-three-quarters,3/8,387/512,11/16,35/64,-35/512,-9/64
+guaranteed-shortlist-two,1/2,7/8,11/12,17/18,1/24,1/36
+explicit-exclusion,1/3,19/27,17/27,16/27,-2/27,-1/27
+confidence-point,5/8,485/512,113/128,295/384,-33/512,-11/96
+

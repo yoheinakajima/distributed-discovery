@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-07-22 — DD-020 Incremental Sharing and Independent Rescue
+
+- Proved the exact aggregation–rescue identity, the arbitrary-`M` two-agent
+  loss, and general finite point-channel monotonicity with separate boundary
+  and proof audits.
+- Preserved immutable run `20260722T142551Z_DD-020_3854fff6_37c11a850a`:
+  2,555 exact point rows, two independent methods, five DD-019 channel curves,
+  and five rejected corruptions.
+- Added DD-C-0092 through DD-C-0096, including the same-accuracy
+  opposite-sign noisy-point/guaranteed-shortlist counterexample. No arbitrary
+  information-sharing or novelty claim is made.
+
 ## 2026-07-22 — Research governance and publication architecture
 
 - Defined the hierarchy from research program through theorem families,

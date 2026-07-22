@@ -18,8 +18,9 @@ extensions, and the public Labs. Program V4, *Threshold Discovery*, is complete
 at its registered bounded scope: DD-015 through DD-018, DiscoveryBench v3, the
 synthetic experiment v3 extension, the 20-page focused paper, and four
 output-connected Labs are deployed. Program V5's documentation baseline and
-DD-019 Signal Geometry are complete and deployed; Incremental Sharing and
-Independent Rescue is next but has no study ID or evidence yet. The concise entry points
+DD-019 Signal Geometry is complete and deployed. DD-020 Incremental Sharing
+and Independent Rescue is complete on its research branch with a passing
+immutable run and five audited claims; deployment is pending PR #136. The concise entry points
 are [`docs/current-state.md`](docs/current-state.md) and
 [`docs/current-roadmap.md`](docs/current-roadmap.md). Claims remain in
 [`claims/claims.yml`](claims/claims.yml) under the
@@ -78,6 +79,7 @@ make dd012-attention         # run the exact access-gated attention census
 make dd013-audience          # run the binding/voluntary audience census
 make dd014-conditional       # run the conditional-policy census and raw audit
 make dd016-threshold         # run the registered exact threshold-discovery census
+make dd020-preview           # inspect DD-020 exact summaries without creating a run
 make dd017-equilibrium       # run the bounded threshold-equilibrium registry
 make papers               # build all paper artifacts
 make site                 # build the public companion site locally

@@ -62,8 +62,9 @@ one-hit actions; binding duplicate block action; named direct-private baseline.
 - [x] Complete human-readable analytic proof and independent proof audit.
 - [x] Implement two exact methods, DD-019 extension, and five corruptions.
 - [x] Pass pre-run validation; commit source; open draft PR.
-- [ ] Execute the primary configuration once from the clean frozen commit.
-- [ ] Audit claims, integrate evidence/public data, and pass full acceptance.
+- [x] Execute the primary configuration once from the clean frozen commit.
+- [x] Audit claims and integrate evidence/public data.
+- [x] Pass full local acceptance.
 - [ ] Merge, deploy, close, synchronize, and verify live routes.
 
 ## Discoveries and surprises
@@ -73,6 +74,9 @@ than only the registered bounded progression. A dirty-tree preview then passed
 the implementation checks and displayed candidate exact values. Those values
 are preliminary diagnostics only: they are not a run, result, or claim and
 cannot be cited until the clean primary execution and claim audit pass.
+The first post-run full acceptance attempt stopped at Ruff's format check for
+the two newly added audit tests. Formatting those files resolved the only
+failure; the complete gate was rerun from the beginning and passed.
 
 ## Decision log
 
@@ -89,6 +93,20 @@ cannot be cited until the clean primary execution and claim audit pass.
   `make site` passed: 222 tests, 91 valid claims, 48 valid run manifests, and
   71 generated pages for 24 studies. Draft PR #136 was already open before
   substantive execution. The next commit freezes the primary-run source.
+- `2026-07-22T14:25:51Z`: the sole primary execution passed as
+  `20260722T142551Z_DD-020_3854fff6_37c11a850a` from clean commit `3854fff6`
+  in 2.428850 seconds. It created 2,555 point rows and five channel profiles;
+  both exact methods, every validation gate, and all five corruptions passed.
+- `2026-07-22`: separate audits approved DD-C-0092 through DD-C-0096. The
+  point theorem is proof-owned; the 73-cell census is regression evidence. The
+  guaranteed shortlist supplies an exact arbitrary-channel monotonicity
+  counterexample and remains public.
+- `2026-07-22`: post-run acceptance passed bootstrap, Ruff, strict MyPy over
+  142 source files, all 224 tests, 96 claims, 49 manifests, all six paper
+  builds, and a 71-page/24-study site. Adding claims legitimately refreshed
+  the Three Results full-ledger provenance checksum; its six owned claims and
+  content remain unchanged, and all 14 regenerated pages passed Poppler visual
+  review. The DD-020 SVG passed a separate render review after label cleanup.
 
 ## Validation strategy
 
@@ -108,14 +126,15 @@ caps, preserve outputs/checksums/logs/environment, and never overwrite.
 
 ## Artifacts produced
 
-At registration: README, question, brief, model, plan, status, public metadata,
-claims view, proof placeholder, literature placeholder, and frozen config.
+README, question, brief, frozen model/config, living plan, literature boundary,
+proof and proof audit, exact implementation and independent verifier, immutable
+run, report, claim audits, public metadata, CSV, and SVG.
 
 ## Blockers
 
 No scientific blocker. Settings issue #32 is unrelated. The primary run is
-blocked by design until literature, proof, implementation, independent
-verification, corruptions, tests, clean source commit, and draft PR pass.
+complete and must not be rerun. Only acceptance, merge, deployment, issue
+closure, and main synchronization remain for this milestone.
 
 ## Recovery and restart instructions
 

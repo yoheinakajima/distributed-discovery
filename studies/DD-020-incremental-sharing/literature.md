@@ -3,6 +3,44 @@
 Search completed `2026-07-22` against publisher pages and stable DOI records.
 The purpose is boundary setting, not a claim that this list is exhaustive.
 
+## Search log
+
+Searches used title/author combinations and the terms “information
+aggregation,” “team decision problems,” “Condorcet jury theorem,” “public
+information,” “social learning,” “herd behavior,” “informational cascades,”
+“consensus,” “collective search,” “diverse problem solvers,” and “set-valued
+classification.” Publisher or society records were preferred; DOI metadata was
+cross-checked where discovery results were incomplete. All links below were
+accessed `2026-07-22`. No citation search was used to infer novelty.
+
+## Evidence map and collision risks
+
+| DD-020 concept | Closest literature | What that literature owns | DD-020 boundary |
+| --- | --- | --- | --- |
+| More signals for one decision | Blackwell; jury theorems | Experiment value and single collective verdicts | One action is compared with a union of independent rescue actions |
+| Common-payoff distributed choice | Radner | General team decision framework | One frozen simultaneous protocol, not team optimality |
+| Shared/public information | Morris–Shin | Information plus strategic coordination motives | No strategic complementarity; portfolio compression is mechanical |
+| Following others | Banerjee; Bikhchandani et al.; Acemoglu et al. | Sequential observational learning and cascades | No observed prior actions or sequential equilibrium |
+| Consensus | DeGroot | Repeated opinion pooling and convergence | No iterative belief averaging |
+| Diverse search | Hong–Page; Lazer–Friedman | Search diversity and communication/network performance | Exact finite Bayesian one-hit discovery |
+| Several candidate decisions | Set-valued classification | Prediction sets and list-size/loss tradeoffs | Actions search targets; DD-020 fixes one pooled action and varies block size |
+
+The main terminology collision is **sharing**: here it means pooling exactly
+`s` declared signals before a one-action MAP rule, not disclosure quality,
+network diffusion, cheap talk, observation of prior choices, or shared reward.
+**Accuracy** means one-person Bayes success, not mutual information or channel
+value. **Consensus** means a duplicated common action, not agreement of
+beliefs. **Rescue** is the exact conditional success contribution of a
+remaining direct action, not a causal or behavioral construct. **Profile** is
+`I_N(W)` over block size and is distinct from DD-019's pooled action-budget
+profile.
+
+Novelty risk is high for any broad slogan about aggregation, majority accuracy,
+public information, herding, or diversity. It is narrower—but not adjudicated
+as field novelty—for the exact aggregation-versus-independent-rescue
+functional. The repository therefore claims only its proved and reproduced
+object and makes no priority statement.
+
 ## Closest foundations
 
 - Blackwell, “Equivalent Comparisons of Experiments,” *Annals of Mathematical

@@ -1,4 +1,4 @@
-# Current roadmap — Program V5 baseline
+# Current roadmap — Program V5 DD-020 theorem gate
 
 Programs V1, V2, and the required Program V3 sequence are complete at their
 registered scopes. Each new research milestone requires its own
@@ -20,8 +20,9 @@ verification plan, and corruption test where certificates are used.
 | Synthetic Experiment v3 | complete and deployed through PR #120 | Preserve DD-C-0088, all three immutable versions, the 644 retained calibration failures, shared-seed v2 power rows, and the absolute no-human-data boundary. |
 | Threshold Discovery paper | complete and deployed through PR #123 | Preserve the 20-page deterministic working paper, eight source-generated assets, seven immutable run mappings, claim/citation audit, all-page visual QA, and no-DOI/no-submission boundary. |
 | Program V4 output-connected Labs | complete and deployed through PR #125 | Preserve exact row selection for all 8 DD-016 threshold rows, 160 DD-017 games, 64 DD-015 objective rows, and 50 DD-018 mechanism rows; every control must alter substantive output and all rows remain available without JavaScript. |
-| Program V5 — Information Sharing Frontier | baseline and first bounded study complete | Open Incremental Sharing only under a new bounded issue, model, complexity audit, and next available study ID. |
+| Program V5 — Information Sharing Frontier | baseline and first two studies evidence-complete | Merge and deploy DD-020, then apply its editorial theorem gate before any new research package. |
 | DD-019 Signal Geometry and the Action-Budget Discovery Profile | complete and deployed through PR #131 | Preserve the five channel laws, two-method exact profiles, same-accuracy counterexample scope, named private baseline, and recovery-budget semantics. |
+| DD-020 Incremental Sharing and Independent Rescue | evidence complete on PR #136; merge pending | Preserve DD-C-0092 through DD-C-0096 and the sole immutable run; the point theorem does not imply arbitrary-channel monotonicity. |
 | Program V3 focused paper | complete and deployed through PR #90 | The deterministic 20-page *Incentive to Ignore* paper, nine generated evidence assets, citation audit, all-page visual review, Pages, and live PDF pass. |
 | Program V3 benchmark, experiment, and site integration | complete and deployed through PRs #93, #95, and #97 | Preserve version compatibility, static/no-tracking operation, no-JS tables, and exact provenance. |
 | Program V3 final acceptance | complete through issue #98 and the final handoff | Preserve the 70-claim/40-manifest audit and do not rerun immutable primary configurations for freshness. |
@@ -50,9 +51,10 @@ the General Sharing Frontier; (4) Recovery Budget; (5) Coordination-Free
 Positive Sharing; (6) Randomized Information Design; (7) the Equilibrium
 Selection Module; and (8) Mechanism and Design Implications. The versioned
 channel proposal and evidence/promotion rules are in
-[`program-v5.md`](program-v5.md). DD-019 completed the first package. Only the
-next sequential package may receive a study ID after its live registry and
-model/complexity gates pass.
+[`program-v5.md`](program-v5.md). DD-019 completed the first package and DD-020
+completed the second package's evidence gate. The editorial ownership gate,
+not the General Sharing Frontier, is the next authorized milestone after
+DD-020 merges.
 
 No long-term direction is removed. Reliable Discovery, the Price of Missing
 Provenance, Truth/Obedience/Budget Balance, Rate–Discovery, Discovery Order,
@@ -67,8 +69,7 @@ git pull --ff-only origin main
 make verify
 ```
 
-DD-019 is complete and deployed. The next authorized Program V5 package is
-Incremental Sharing and Independent Rescue, but it has no study ID, issue,
-branch, claim, or run. Begin it only with a new bounded registration and live
-registry audit. For settings-only work, use `docs/github-setup.md` and issue
-#32.
+DD-019 is complete and deployed. DD-020 is evidence-complete on PR #136 and
+must not be rerun. After it merges, apply the Incremental Sharing editorial
+gate and synthesis prospectus before any further research package. For
+settings-only work, use `docs/github-setup.md` and issue #32.

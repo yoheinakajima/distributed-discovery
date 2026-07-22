@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" role="img" aria-labelledby="title desc">
+  <title id="title">Exact incremental-sharing discovery profiles</title>
+  <desc id="desc">Five lines show exact group discovery as the sharing block grows from one to three agents. The noisy point line falls while the same-accuracy guaranteed shortlist line rises.</desc>
+  <rect width="760" height="470" fill="#fff"/>
+  <g stroke="#cbd5e1" stroke-width="1"><path d="M90 60H700"/><path d="M90 210H700"/><path d="M90 360H700"/></g>
+  <g stroke="#0f172a" stroke-width="2" fill="none"><path d="M90 50V360H710"/></g>
+  <g font-family="system-ui,sans-serif" font-size="14" fill="#0f172a">
+    <text x="365" y="445">Sharing block size s</text>
+    <text transform="translate(24 300) rotate(-90)">Exact group discovery G_s</text>
+    <text x="58" y="65">1</text><text x="52" y="215">3/4</text><text x="52" y="365">1/2</text>
+    <text x="86" y="385">1</text><text x="391" y="385">2</text><text x="696" y="385">3</text>
+  </g>
+  <polyline points="90,135 395,210 700,310" fill="none" stroke="#2563eb" stroke-width="5"/>
+  <polyline points="90,206 395,248 700,332" fill="none" stroke="#f97316" stroke-width="4"/>
+  <polyline points="90,135 395,110 700,93" fill="none" stroke="#16a34a" stroke-width="5"/>
+  <polyline points="90,238 395,282 700,304" fill="none" stroke="#dc2626" stroke-width="4"/>
+  <polyline points="90,92 395,130 700,199" fill="none" stroke="#7c3aed" stroke-width="4"/>
+  <g fill="#fff" stroke-width="3">
+    <g stroke="#2563eb"><circle cx="90" cy="135" r="5"/><circle cx="395" cy="210" r="5"/><circle cx="700" cy="310" r="5"/></g>
+    <g stroke="#16a34a"><circle cx="90" cy="135" r="8"/><circle cx="395" cy="110" r="5"/><circle cx="700" cy="93" r="5"/></g>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="13" font-weight="600">
+    <text x="410" y="92" fill="#16a34a">same accuracy: guaranteed shortlist rises</text>
+    <text x="440" y="225" fill="#2563eb">same accuracy: noisy point falls</text>
+    <text x="455" y="175" fill="#7c3aed">confidence point</text>
+    <text x="465" y="280" fill="#dc2626">exclusion</text>
+    <text x="455" y="345" fill="#f97316">noisy shortlist</text>
+  </g>
+</svg>

@@ -1911,3 +1911,108 @@ claims:
     first_added: "2026-07-22"
     last_checked: "2026-07-22"
     notes: Null would denote no recovery within registered capacity; no registered channel has null recovery.
+  - id: DD-C-0092
+    study_id: DD-020
+    short_name: aggregation-independent-rescue-identity
+    statement: In the registered target-symmetric block-sharing protocol with pooled MAP accuracy C_s and constant conditional private-action accuracy q, group discovery is G_s=1-(1-C_s)(1-q)^(N-s), and its adjacent difference is (1-q)^(N-s-1)[C_(s+1)-C_s-q(1-C_s)].
+    scope: Finite targets, uniform target prior, conditionally independent block and remaining signals, target-symmetric pooled accuracy, constant conditional private-action accuracy, independent tie randomization, one pooled block action, and N-s direct private actions; no arbitrary dependence, strategic behavior, or private-team optimum.
+    claim_type: identity
+    status: verified
+    source_type: conditional-failure-factorization-with-separate-proof-audit-and-exact-regression
+    source_reference: studies/DD-020-incremental-sharing/proof.md
+    proof_path: studies/DD-020-incremental-sharing/proof.md
+    implementation_paths: [src/distributed_discovery/incremental_sharing/model.py, src/distributed_discovery/incremental_sharing/verification.py]
+    run_ids: [20260722T142551Z_DD-020_3854fff6_37c11a850a]
+    test_paths: [tests/unit/test_incremental_sharing.py, tests/integration/test_incremental_sharing_cli.py]
+    exactness_basis: Conditioning on the target makes block failure and every remaining direct-action failure independent, so their exact probabilities multiply; algebraic subtraction gives the adjacent formula. The separate proof audit checks the conditioning and symmetry obligations, and all 2,555 census rows satisfy the identity in exact Fraction arithmetic.
+    rounding_rule: exact fractions; no decimal approximation is authoritative
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: The identity itself does not determine the sign; the bracket compares marginal aggregation with the lost private rescue action.
+  - id: DD-C-0093
+    study_id: DD-020
+    short_name: two-agent-point-pooling-loss
+    statement: For every finite M>=2 and symmetric noisy-point accuracy p in [1/M,1], two-signal uniformly tie-broken pooled MAP accuracy is C_2=p; hence G_1=1-(1-p)^2, G_2=p, and G_2-G_1=-p(1-p), strictly negative for p<1.
+    scope: The DD-020 uniform-prior symmetric noisy-point channel, N=2, one-hit common discovery, direct-private baseline, one-action full pooling, and independent uniform posterior-MAP tie-breaking; no anti-informative p, arbitrary signal channel, or optimal-team claim.
+    claim_type: theorem
+    status: verified
+    source_type: exchangeability-proof-with-boundary-audit-and-exact-census-regression
+    source_reference: studies/DD-020-incremental-sharing/proof.md
+    proof_path: studies/DD-020-incremental-sharing/proof.md
+    implementation_paths: [src/distributed_discovery/incremental_sharing/model.py, src/distributed_discovery/incremental_sharing/verification.py]
+    run_ids: [20260722T142551Z_DD-020_3854fff6_37c11a850a]
+    test_paths: [tests/unit/test_incremental_sharing.py, tests/integration/test_incremental_sharing_cli.py]
+    exactness_basis: Signal exchangeability and symmetric uniform tie-breaking give C_2=p analytically, including the uninformative boundary; DD-C-0092 gives the exact discovery difference. A separate proof audit and both exact census methods check every registered M,p instance.
+    rounding_rule: exact fractions
+    dependencies: [DD-C-0092]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: Strict loss concerns group discovery from two actions versus one duplicated action, even though pooled accuracy equals individual accuracy.
+  - id: DD-C-0094
+    study_id: DD-020
+    short_name: point-channel-incremental-sharing-monotonicity
+    statement: For every finite M>=2, N>=2, symmetric noisy-point accuracy p in [1/M,1], and adjacent block sizes s and s+1, the registered discovery profile satisfies G_(s+1)<=G_s; the inequality is strict for p<1 and equality for p=1.
+    scope: Uniform prior, finite symmetric noisy-point channel, conditionally independent signals, one uniformly tie-broken pooled MAP action duplicated by the sharing block, remaining direct private Bayes actions, and one-hit group discovery; no arbitrary channel, assignment, pooled action list, strategic equilibrium, or global private-team optimum.
+    claim_type: theorem
+    status: verified
+    source_type: posterior-coverage-proof-with-separate-boundary-and-internal-consistency-audit
+    source_reference: studies/DD-020-incremental-sharing/proof.md
+    proof_path: studies/DD-020-incremental-sharing/proof.md
+    implementation_paths: [src/distributed_discovery/incremental_sharing/model.py, src/distributed_discovery/incremental_sharing/verification.py]
+    run_ids: [20260722T142551Z_DD-020_3854fff6_37c11a850a]
+    test_paths: [tests/unit/test_incremental_sharing.py, tests/integration/test_incremental_sharing_cli.py]
+    exactness_basis: For p>1/M, the old pooled MAP and the new direct nomination contain a new pooled MAP after one signal is added, bounding C_(s+1) by C_s+p(1-C_s); a positive-probability strict witness and the DD-C-0092 identity yield the ordering. The p=1/M and p=1 boundaries are handled separately. The proof audit checks each obligation; computation is regression evidence rather than the proof.
+    rounding_rule: exact analytic inequalities
+    dependencies: [DD-C-0092, DD-C-0093]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: This theorem is intentionally not transferred to the DD-019 channel extension, where a new signal need not act as a direct point nomination.
+  - id: DD-C-0095
+    study_id: DD-020
+    short_name: bounded-point-incremental-sharing-census
+    statement: Across DD-020's 73 registered (M,p) cells, N=2 through 8, and all block sizes, the 2,555-row exact census has 1,848 strictly negative adjacent discovery increments, 196 zero increments, and no positive increment; every zero is a p=1 boundary row.
+    scope: M=2 through 8, N=2 through 8, the exact rational accuracy grid in census.yml, all s=1 through N, and the DD-C-0094 protocol; this is a bounded exact census and theorem regression, not an empirical frequency, arbitrary-channel result, or novelty claim.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exact-count-vector-enumeration-with-independent-correct-count-wrong-occupancy-dynamic-program
+    source_reference: results/verified/20260722T142551Z_DD-020_3854fff6_37c11a850a/outputs/point-census.json
+    proof_path: studies/DD-020-incremental-sharing/proof.md
+    implementation_paths: [src/distributed_discovery/incremental_sharing/model.py, src/distributed_discovery/incremental_sharing/verification.py, src/distributed_discovery/incremental_sharing/study.py]
+    run_ids: [20260722T142551Z_DD-020_3854fff6_37c11a850a]
+    test_paths: [tests/unit/test_incremental_sharing.py, tests/unit/test_incremental_sharing_post_run_audit.py, tests/integration/test_incremental_sharing_cli.py]
+    exactness_basis: Method A enumerates full M-part signal-count vectors with exact multinomial probabilities and tie weights. Method B conditions on the correct count and uses a factorial-weighted wrong-occupancy dynamic program. They agree on every pooled accuracy and discovery value; endpoints, bounds, row count, sign labels, and five targeted corruptions pass.
+    rounding_rule: exact integer counts and rational fractions
+    dependencies: [DD-C-0092, DD-C-0094]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: The 196 zero increments are exactly seven p=1 target cells times 28 adjacent N,s positions per cell.
+  - id: DD-C-0096
+    study_id: DD-020
+    short_name: five-channel-incremental-profile-counterexample
+    statement: In the M=4,N=3 DD-019 extension, the noisy point, noisy two-shortlist, guaranteed two-shortlist, explicit exclusion, and confidence-point incremental-sharing profiles are respectively (7/8,3/4,7/12), (387/512,11/16,35/64), (7/8,11/12,17/18), (19/27,17/27,16/27), and (485/512,113/128,295/384); the noisy point and guaranteed shortlist both have one-person accuracy 1/2 but have strictly decreasing versus strictly increasing profiles.
+    scope: The five fixed DD-019 channels, uniform four-target prior, three conditionally independent observations, constant target-symmetric direct-action accuracy, one pooled MAP action for block sizes one through three, remaining direct Bayes actions, and independent uniform ties; not a general arbitrary-channel theorem or claim that one-person accuracy never predicts any other functional.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exact-labeled-signal-enumeration-with-independent-signal-histogram-enumeration
+    source_reference: results/verified/20260722T142551Z_DD-020_3854fff6_37c11a850a/outputs/channel-profiles.json
+    proof_path: studies/DD-020-incremental-sharing/proof.md
+    implementation_paths: [src/distributed_discovery/incremental_sharing/model.py, src/distributed_discovery/incremental_sharing/verification.py, src/distributed_discovery/signal_geometry/model.py]
+    run_ids: [20260722T142551Z_DD-020_3854fff6_37c11a850a]
+    test_paths: [tests/unit/test_incremental_sharing.py, tests/unit/test_signal_geometry.py, tests/integration/test_incremental_sharing_cli.py]
+    exactness_basis: One method exhausts every labeled block-signal sequence and another exhausts signal histograms with exact multinomial weights. Both reproduce all 15 pooled accuracies and all 15 group-discovery values; channel IDs, identity values, same-accuracy equality, unequal profiles, signs, and corruptions pass.
+    rounding_rule: exact rational fractions
+    dependencies: [DD-C-0089, DD-C-0090, DD-C-0092]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: Equal one-person accuracy does not determine the incremental-sharing profile or even its sign in this exact bounded comparison.

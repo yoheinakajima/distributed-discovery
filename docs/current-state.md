@@ -1,6 +1,6 @@
 # Current program state
 
-_Reconciled 2026-07-22 after DD-019 deployment closeout._
+_Reconciled 2026-07-22 after the DD-020 evidence package completed on PR #136._
 
 Programs V1, V2, and the required Program V3 queue are complete at their
 registered bounded scopes. Program V3, *The Incentive to Ignore*, completed
@@ -35,11 +35,13 @@ channel profiles, and three corruptions are rejected. Claims DD-C-0089 through
 DD-C-0091 are independently reproduced exact bounded computational results.
 PR #131, post-merge CI `29905840583`, Pages `29905840831`, and the live study,
 data, claims, evidence, and registry routes pass.
-Deployment closeout PR #132 merged as
-`5e6c800213232be2fdcdc2aa19027fb5a8400e85`; CI `29906411957` and Pages
-`29906411981` pass for that current main commit. Incremental Sharing and
-Independent Rescue is the next authorized Program V5 package and has no study
-ID, claim, run, or result at this reconciliation point.
+Deployment closeout PR #132 merged as `5e6c800`. Governance/publication PR
+#134 then merged as `dc32ff17`, with post-merge CI `29927131835` and Pages
+`29927132030` passing. DD-020 Incremental Sharing and Independent Rescue is
+complete on PR #136: clean run
+`20260722T142551Z_DD-020_3854fff6_37c11a850a` supports DD-C-0092 through
+DD-C-0096. Merge and deployment are the remaining DD-020 steps at this
+reconciliation point.
 
 The repository is public and project-authored content is MIT-licensed. The
 canonical Shared Discovery Paradox repository remains pinned at
@@ -47,18 +49,29 @@ canonical Shared Discovery Paradox repository remains pinned at
 
 | Measure | Current value |
 | --- | ---: |
-| Ledger claims | 91 |
-| Passing immutable runs | 45 of 48 manifests |
-| Registered studies | 23 |
-| Python source files | 138 |
-| Public HTML routes | 69 |
-| Public data files | 67 |
+| Ledger claims | 96 |
+| Passing immutable runs | 46 of 49 manifests |
+| Registered studies | 24 |
+| Python source files | 142 |
+| Public HTML routes | 71 locally generated |
+| Public data files | 68 |
 | Laboratory routes | 16 |
 | Validated project papers | 6 |
 | Checksum-registered downloads | 22 |
-| Test suite | 217 collected tests |
+| Test suite | 224 collected tests |
 
 ## Program V5 exact result
+
+DD-020 proves for the registered point channel that
+`G_s=1-(1-C_s)(1-p)^(N-s)` and that `G_(s+1)<=G_s`, strictly for `p<1`.
+Its 2,555-row exact census has 1,848 negative increments, 196 perfect-signal
+ties, and no positives. In the five-channel extension, the half-accurate noisy
+point falls `(7/8,3/4,7/12)` while the half-accurate guaranteed shortlist rises
+`(7/8,11/12,17/18)`, so one-person accuracy does not determine this profile or
+its sign.
+
+- DD-020: `20260722T142551Z_DD-020_3854fff6_37c11a850a`,
+  DD-C-0092–0096.
 
 DD-019 compares five declared finite channels at `M=4`, `N=3`. The exact
 pooled profiles `(V1,V2,V3)` are `(7/12,43/54,25/27)` for the half-accurate

@@ -1,5 +1,5 @@
 study_id: DD-020
-status: registered
-evidence_status: no-result-registration-only
-next_action: pass full pre-run validation and commit the frozen source before the single primary execution
-updated_utc: 2026-07-22T14:13:02Z
+status: complete-bounded-study
+evidence_status: three-verified-analytic-results-and-two-independently-reproduced-exact-computational-results
+next_action: preserve the immutable run and scope boundaries; use the theorem gate to assign primary editorial ownership
+updated_utc: 2026-07-22T14:25:51Z

@@ -1,0 +1,15 @@
+{
+  "aggregation_rescue_identity": true,
+  "different_incremental_profiles": true,
+  "first_block_pooled_accuracy": true,
+  "full_consensus_endpoint": true,
+  "method_agreement": true,
+  "passed": true,
+  "point_profile_nonincreasing": true,
+  "point_profile_strict_except_perfect": true,
+  "probability_bounds": true,
+  "registered_channel_ids": true,
+  "registered_row_count": true,
+  "same_accuracy_witness": true,
+  "two_agent_pooled_identity": true
+}
