@@ -8,6 +8,85 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
+### Program V4 Threshold Discovery queue (active, 2026-07-22)
+
+Owner authorization on 2026-07-22 starts Program V4, *Threshold Discovery:
+Coordination, Crowding, and Minimum Viable Teams*, sequentially after the
+completed Program V3 handoff at clean `main` commit
+`cb60a882e72056c669871b53ef26d10ae9edee27`. The Program V4 research object is
+posterior-ranked finite search with threshold success; it must distinguish
+deterministic planner allocations, correlated recommendations, and strategic
+decentralized choice. Its public qualification is: when actions require teams,
+form the smallest viable teams and diversify those teams. The program slogan
+remains “Share the evidence. Diversify the actions.”
+
+The required order is: (1) Program V3 editorial synchronization without new
+research evidence; (2) DD-016 threshold discovery; (3) DD-017 equilibrium
+selection and coalition stability; (4) DD-015 at its original registered
+boundary; (5) DD-018 minimum-viable-team mechanisms; (6) DiscoveryBench v3
+and the synthetic experimental extension; (7) the focused paper; (8) public
+Threshold, equilibrium, dynamic, and mechanism Labs; and (9) final acceptance
+and handoff. Each executed study requires a bounded registration, resource
+estimate, immutable primary run, independent verifier, corruption test where
+applicable, claim audit, public-safe data, and local acceptance before any
+remote transaction.
+
+The initial local safety audit is recorded in
+`reports/program-v4/parallel-safety.md`. The checkout is clean. GitHub CLI has
+no authenticated host, so open PR/issue state, remote issue creation, merges,
+CI, Pages, and live-route checks cannot be independently performed in this
+environment; this operational limitation is preserved rather than inferred
+away. No local Program V4 or Labs V2 branch was found. The active milestone is
+V4.1, editorial synchronization; it must not create a research run.
+
+Progress:
+
+- [x] V4.1 — Synchronize V3 public copy and validate local public artifacts.
+- [ ] V4.2 — Register, execute, independently verify, and integrate DD-016.
+- [ ] V4.3 — Register, execute, independently verify, and integrate DD-017.
+- [ ] V4.4 — Execute DD-015 at its registered baseline, then separately assess
+  the bounded threshold extension.
+- [ ] V4.5 — Execute and verify DD-018 mechanisms.
+- [ ] V4.6 — Extend DiscoveryBench and the synthetic experiment kit.
+- [ ] V4.7 — Build the focused paper and Program V4 Labs.
+- [ ] V4.8 — Run final acceptance, reconcile documentation, and hand off.
+
+Validation strategy: use `make bootstrap`, `make verify`, `make papers`, and
+`make site` at the prescribed gates; retain immutable run artifacts and run
+specific certificate, corruption, schema, browser, accessibility, checksum,
+license, host-path, provenance, and upstream-cleanliness checks before final
+acceptance. Do not rerun a passing primary configuration only to refresh time
+or provenance.
+
+Recovery: inspect `git status --short --branch`, read this Program V4 section
+and `reports/program-v4/parallel-safety.md`, then continue the first unchecked
+item. The next executable command is `make bootstrap` after the editorial copy
+and tests are prepared; the next source file is
+`src/distributed_discovery/site/build.py`.
+
+### Program V4 progress log
+
+- 2026-07-22: V4.1 updated the generated home and Results copy without creating
+  research evidence. The home now includes the validated Incentive to Ignore
+  finding after the initial viewport, retains the canonical guide, and preserves
+  the original slogan while adding the team-specific qualification. Results now
+  link DD-012 first- and duplicate-use effects, the exact bounded
+  excessive-attention census, DD-013's audience result, and DD-014's
+  larger-class counterexample. DD-015 stays registered and unexecuted; the
+  metadata-driven Papers surface continues to verify its card, PDF, source,
+  checksum, and citation.
+- 2026-07-22: The focused presentation tests passed 13 tests and make site
+  passed with 59 pages and 19 studies. The first full gate stopped at ruff
+  format --check because the edited generator and test needed formatting; that
+  non-scientific failure is retained. After formatting, make verify passed
+  Ruff, MyPy on 113 source files, and all 183 tests. Make papers passed all
+  five papers, including the 20-page Incentive to Ignore PDF with SHA-256
+  prefix ee9e27f741d2, and make site passed.
+
+Active milestone: V4.2 DD-016 registration, literature review, model/proof,
+and bounded exact implementation. No DD-016 numerical claim may be promoted
+before its independent verifier and immutable primary run pass.
+
 ### Program V3 attention queue (complete, 2026-07-21)
 
 Owner authorization now requires sequential execution of DD-012 Incentive to

@@ -265,6 +265,11 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "How groups turn evidence into portfolios of action." in home
     assert "Better shared information can produce worse collective discovery." in home
     assert "Share the evidence. <strong>Diversify the actions.</strong>" in home
+    assert "The Incentive to Ignore" in home
+    assert (
+        "When actions require teams, form the smallest viable teams and diversify those teams."
+        in home
+    )
     assert "See the paradox" in home
     assert (output / "og.png").is_file()
 
@@ -327,6 +332,15 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "Plan a discovery experiment" in experiment_overview
     assert "Materials and safeguards" in experiment_overview
     assert "No participants were recruited" in experiment_overview
+
+    results = (output / "results.html").read_text(encoding="utf-8")
+    for phrase in [
+        "The first reader can help; duplicate use can reduce discovery.",
+        "63</strong> excessive-attention cells",
+        "One reader can be the discovery-maximizing audience.",
+        "The registered conditional-policy theorem is not unrestricted.",
+    ]:
+        assert phrase in results
 
 
 def test_research_library_rejects_missing_public_metadata(tmp_path: Path) -> None:
