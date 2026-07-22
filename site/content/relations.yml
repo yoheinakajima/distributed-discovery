@@ -178,3 +178,6 @@ studies:
   DD-021:
     program: program-v5
     theorem_family: sharing-frontier
+    result_ids: [error-contraction-frontier, full-capacity-recovery, bounded-mixed-sharing-null]
+    lab_slugs: [general-sharing-frontier]
+    data_routes: [data/labs/general-sharing-frontier.json, data/general-sharing-frontier/registry.json, data/general-sharing-frontier/minimal-witnesses.json, data/general-sharing-frontier/channels.json]

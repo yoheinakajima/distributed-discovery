@@ -297,6 +297,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "labs/dynamic-attention.html",
         "labs/team-mechanisms.html",
         "labs/incremental-sharing.html",
+        "labs/general-sharing-frontier.html",
         "publications/common-source-trap.html",
         "publications/incentive-to-ignore.html",
         "publications/threshold-discovery.html",
@@ -390,14 +391,14 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "explicit rejection reason" in atlas_page
     results_page = (output / "results.html").read_text(encoding="utf-8")
     result_ids = re.findall(r'data-result-id="([^"]+)"', results_page)
-    assert len(result_ids) == len(set(result_ids)) == 10
+    assert len(result_ids) == len(set(result_ids)) == 13
     assert results_page.count('class="finding-stack"') == 6
     assert "Program V3 results" not in results_page
 
     relations = json.loads((output / "data/relations.json").read_text(encoding="utf-8"))
     assert relations["entity_counts"]["studies"] == 25
-    assert relations["entity_counts"]["findings"] == 10
-    assert relations["entity_counts"]["labs"] == 16
+    assert relations["entity_counts"]["findings"] == 13
+    assert relations["entity_counts"]["labs"] == 17
     assert relations["entity_counts"]["papers"] == 6
     assert relations["entity_counts"]["benchmark_tasks"] == 24
     assert len(relations["relations"]) == 25
@@ -489,6 +490,30 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     ).read_bytes()
     assert (output / "data/incremental-sharing/channel-profiles.json").read_bytes() == (
         run_outputs / "channel-profiles.json"
+    ).read_bytes()
+    frontier_page = (output / "labs/general-sharing-frontier.html").read_text(encoding="utf-8")
+    assert "data-frontier-lab" in frontier_page
+    assert frontier_page.count('data-frontier-row=""') == 177
+    assert "JavaScript is off" in frontier_page
+    assert "Percentages lead" in frontier_page
+    assert "DD-C-0097" in frontier_page and "DD-C-0103" in frontier_page
+    assert "20260722T185924Z_DD-021_3cdbbc40_2fea269a9a" in frontier_page
+    for control in [
+        "frontier-family",
+        "frontier-targets",
+        "frontier-agents",
+        "frontier-parameter",
+        "frontier-step",
+        "frontier-budget",
+    ]:
+        assert f'id="{control}"' in frontier_page
+    frontier_lab = json.loads((output / "data/labs/general-sharing-frontier.json").read_text())
+    assert frontier_lab["run_id"] == "20260722T185924Z_DD-021_3cdbbc40_2fea269a9a"
+    assert len(frontier_lab["rows"]) == 177
+    assert frontier_lab["witnesses"]["mixed_sharing_curve"] is None
+    frontier_outputs = ROOT / "results/verified/20260722T185924Z_DD-021_3cdbbc40_2fea269a9a/outputs"
+    assert (output / "data/general-sharing-frontier/registry.json").read_bytes() == (
+        frontier_outputs / "registry.json"
     ).read_bytes()
 
     def distinct_outputs(
@@ -583,6 +608,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "dynamic_attention_data",
         "team_mechanisms_data",
         "incremental_sharing_data",
+        "general_sharing_frontier_data",
     ]:
         assert (output / labs_manifest[data_name]).is_file()
     benchmark = json.loads((output / "data/benchmark/summary.json").read_text())
