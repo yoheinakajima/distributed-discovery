@@ -18,3 +18,7 @@ The public Incremental Sharing Lab is generated directly from that run's
 2,555-row point census and five channel profiles. Its 2,054 adjacent-transition
 table decomposes every displayed increment into aggregation gain and lost
 independent rescue; it does not rerun or interpolate the study.
+
+DD-022 supplies a complementary strategic result: under a hidden-dependence
+source mixture and one posterior-only symmetric selection, sharing can strictly
+improve discovery. It does not extend DD-020's nonstrategic point theorem.

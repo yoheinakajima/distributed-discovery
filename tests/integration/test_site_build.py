@@ -298,6 +298,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "labs/team-mechanisms.html",
         "labs/incremental-sharing.html",
         "labs/general-sharing-frontier.html",
+        "labs/coordination-free-positive-sharing.html",
         "publications/common-source-trap.html",
         "publications/incentive-to-ignore.html",
         "publications/threshold-discovery.html",
@@ -391,14 +392,14 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "explicit rejection reason" in atlas_page
     results_page = (output / "results.html").read_text(encoding="utf-8")
     result_ids = re.findall(r'data-result-id="([^"]+)"', results_page)
-    assert len(result_ids) == len(set(result_ids)) == 13
+    assert len(result_ids) == len(set(result_ids)) == 15
     assert results_page.count('class="finding-stack"') == 6
     assert "Program V3 results" not in results_page
 
     relations = json.loads((output / "data/relations.json").read_text(encoding="utf-8"))
     assert relations["entity_counts"]["studies"] == 26
-    assert relations["entity_counts"]["findings"] == 13
-    assert relations["entity_counts"]["labs"] == 17
+    assert relations["entity_counts"]["findings"] == 15
+    assert relations["entity_counts"]["labs"] == 18
     assert relations["entity_counts"]["papers"] == 6
     assert relations["entity_counts"]["benchmark_tasks"] == 24
     assert len(relations["relations"]) == 26
@@ -514,6 +515,31 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     frontier_outputs = ROOT / "results/verified/20260722T185924Z_DD-021_3cdbbc40_2fea269a9a/outputs"
     assert (output / "data/general-sharing-frontier/registry.json").read_bytes() == (
         frontier_outputs / "registry.json"
+    ).read_bytes()
+    coordination_page = (output / "labs/coordination-free-positive-sharing.html").read_text()
+    assert "data-coordination-lab" in coordination_page
+    assert coordination_page.count('data-coordination-row=""') == 42
+    assert "JavaScript is off" in coordination_page
+    assert "DD-C-0104" in coordination_page and "DD-C-0110" in coordination_page
+    assert "20260722T210334Z_DD-022_2376d5b7_ad67765ca8" in coordination_page
+    for control in [
+        "coordination-accuracy",
+        "coordination-dependence",
+        "coordination-regime",
+        "coordination-baseline",
+    ]:
+        assert f'id="{control}"' in coordination_page
+    coordination_lab = json.loads(
+        (output / "data/labs/coordination-free-positive-sharing.json").read_text()
+    )
+    assert coordination_lab["run_id"] == "20260722T210334Z_DD-022_2376d5b7_ad67765ca8"
+    assert len(coordination_lab["rows"]) == 42
+    assert coordination_lab["threshold_certificate"]["passed"] is True
+    coordination_outputs = (
+        ROOT / "results/verified/20260722T210334Z_DD-022_2376d5b7_ad67765ca8/outputs"
+    )
+    assert (output / "data/coordination-free-positive-sharing/registry.json").read_bytes() == (
+        coordination_outputs / "registry.json"
     ).read_bytes()
 
     def distinct_outputs(

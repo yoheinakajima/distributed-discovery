@@ -111,6 +111,16 @@ results:
     lab_slug: mechanisms
     paper_slug: discovery-institutions
     order: 1
+  - result_id: coordination-free-positive-sharing
+    theme: incentives-equilibrium
+    title: Sharing can strictly improve selected autonomous discovery.
+    summary: At p=3/5, the posterior-only anonymous symmetric shared equilibrium strictly exceeds the private anonymous symmetric Bayes-Nash equilibrium exactly for rho between the certified algebraic threshold and one.
+    scope_label: Verified selected-equilibrium theorem
+    study_id: DD-022
+    claim_ids: [DD-C-0106, DD-C-0107]
+    lab_slug: coordination-free-positive-sharing
+    data_route: data/coordination-free-positive-sharing/threshold-certificate.json
+    order: 2
   - result_id: architecture-pareto-frontier
     theme: measurement-identification
     title: Tradeoffs leave multiple coherent designs standing.
@@ -150,3 +160,13 @@ results:
     lab_slug: general-sharing-frontier
     data_route: data/general-sharing-frontier/registry.json
     order: 3
+  - result_id: coordination-free-selection-boundary
+    theme: limits-counterexamples
+    title: The positive-sharing result depends on equilibrium selection.
+    summary: Constant split private equilibria attain discovery one, and ownership-aware shared rules can split on disagreement, so the strict posterior-only comparison is not an every-equilibrium theorem.
+    scope_label: Preserved selection caveat
+    study_id: DD-022
+    claim_ids: [DD-C-0109]
+    lab_slug: coordination-free-positive-sharing
+    data_route: data/coordination-free-positive-sharing/registry.json
+    order: 4

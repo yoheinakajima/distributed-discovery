@@ -57,9 +57,9 @@ only as an upper comparator.
 2. **Exact implementation (complete):** closed forms, direct state/deviation enumeration,
    complete selected-class and bounded pure correspondences, tests, and exact
    root certificate.
-3. **Immutable evidence:** full pre-run gate, clean source commit, one primary
+3. **Immutable evidence (complete):** full pre-run gate, clean source commit, one primary
    run, result integration, and separate claim audits.
-4. **Public integration and research merge:** Findings, relationships, Lab,
+4. **Public integration and research merge (acceptance passed; merge pending):** Findings, relationships, Lab,
    full local/remote acceptance, merge, Pages, live routes, issue closure, and
    clean synchronized main.
 5. **Paper-admission gate:** separate documentation-only issue/branch/PR after
@@ -79,9 +79,10 @@ only as an upper comparator.
 - [x] Prove the exact selected `p=3/5` positive-sharing threshold.
 - [x] Implement two methods, pure-correspondence audit, and corruptions.
 - [x] Pass pre-run acceptance and commit a clean source state.
-- [ ] Execute the primary configuration exactly once.
-- [ ] Audit claims and integrate exact evidence and public presentation.
-- [ ] Pass full acceptance, merge/deploy, close #150, and synchronize main.
+- [x] Execute the primary configuration exactly once.
+- [x] Audit claims and integrate exact evidence and public presentation.
+- [x] Pass full local acceptance.
+- [ ] Merge/deploy, close #150, and synchronize main.
 - [ ] Execute and merge the documentation-only paper-admission gate.
 
 ## Discoveries and surprises
@@ -105,17 +106,27 @@ only as an upper comparator.
 - `2026-07-22T20:40:56Z`: treat the selected anonymous symmetric equilibrium,
   full pure correspondence, direct-private rule, and centralized benchmark as
   four separately labeled objects.
-- `2026-07-22T22:05:00Z`: independent equilibrium enumeration found that
+- `2026-07-22T21:00:00Z`: independent equilibrium enumeration found that
   signal-ownership-aware symmetric rules split the targets on disagreement.
   Narrow the public theorem to the posterior-only, provenance-blind identical-
   mixing selection; preserve the broader correspondence as a negative result.
-- `2026-07-22T22:05:00Z`: correct the mechanism language: the public agreement
+- `2026-07-22T21:00:00Z`: correct the mechanism language: the public agreement
   pattern updates the latent dependence posterior but does not reveal the
   realized source branch.
-- `2026-07-22T22:18:00Z`: the pre-run gate passed strict Ruff, strict MyPy,
+- `2026-07-22T21:02:00Z`: the pre-run gate passed strict Ruff, strict MyPy,
   all 241 tests, claim and 50-manifest validation, all six paper builds, and a
   75-page site build covering 26 studies. The 42-cell preview classified six
   positive, 18 negative, and 18 neutral selected comparisons.
+- `2026-07-22T21:03:34Z`: execute the sole primary run from clean commit
+  `2376d5b7`; run `20260722T210334Z_DD-022_2376d5b7_ad67765ca8` passed in
+  0.297666 seconds at 21.719 MB peak memory.
+- `2026-07-22T21:15:00Z`: browser QA exercised all four Lab controls, observed
+  exact gain `9/1672` at `p=3/5,rho=3/4`, retained exactly one selected table
+  row, and found no console error.
+- `2026-07-22T21:19:00Z`: final local acceptance passed strict lint/typecheck,
+  all 244 tests, 110 claim records, 51 manifests, all six paper builds, the
+  76-page/26-study site, checksum and relationship validation, focused secret
+  and host-path scans, and clean pinned upstream state.
 
 ## Validation strategy
 

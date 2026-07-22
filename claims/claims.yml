@@ -2163,3 +2163,150 @@ claims:
     first_added: "2026-07-22"
     last_checked: "2026-07-22"
     notes: The null is preserved as evidence rather than promoted into a channel-monotonicity theorem.
+  - id: DD-C-0104
+    study_id: DD-022
+    short_name: private-anonymous-symmetric-equilibrium
+    statement: In DD-022's two-agent hidden-dependence game, let t=2p-1 and A=t^2+rho(1-t^2). Within anonymous label-equivariant strategies that follow a private signal with probability r, the symmetric Bayes-Nash equilibrium is r=1 when A<=3t and r=1/2+3t/(2A) when A>3t, with the separately stated uninformative boundary.
+    scope: Two binary targets, uniform prior, two agents, the registered world-level common-versus-independent signal mixture, equal-split unit prize, and the declared anonymous label-equivariant symmetric behavioral class; not all equilibria, coalition-proofness, arbitrary targets, or arbitrary source laws.
+    claim_type: theorem
+    status: verified
+    source_type: exact-best-response-proof-with-independent-state-and-deviation-enumeration
+    source_reference: studies/DD-022-coordination-free-positive-sharing/proof.md
+    proof_path: studies/DD-022-coordination-free-positive-sharing/proof.md
+    implementation_paths: [src/distributed_discovery/coordination_free_sharing/private_game.py, src/distributed_discovery/coordination_free_sharing/exact.py, src/distributed_discovery/coordination_free_sharing/verification.py]
+    run_ids: [20260722T210334Z_DD-022_2376d5b7_ad67765ca8]
+    test_paths: [tests/unit/test_coordination_free_sharing.py, tests/unit/test_coordination_free_sharing_post_run_audit.py]
+    exactness_basis: Direct conditioning derives the affine payoff difference D(r)=[3t+A(1-2r)]/4 and its fixed points. A separate enumerator sums every target, signal, peer action, and unilateral deviation using exact fractions across all 42 cells and boundary tests.
+    rounding_rule: exact rational algebra; decimals are display-only
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: At p=1/2,rho=0 every r is a symmetric equilibrium and r=1/2 is only the declared selection; asymmetric pure equilibria are outside this theorem.
+  - id: DD-C-0105
+    study_id: DD-022
+    short_name: shared-posterior-only-symmetric-equilibrium
+    statement: In DD-022, public agreement has posterior u=1/2+t/(1+A) on the agreed label and positive-probability disagreement has posterior 1/2. In the selected provenance-blind posterior-only identical-mixing game, the favored target is chosen with probability one when u>=2/3 and with probability 3u-1 otherwise; disagreement selects probability 1/2.
+    scope: The registered two-target equal-split game, positive-probability public profiles, independent private mixing, and strategies depending identically only on the common posterior; excludes signal-ownership conditioning, correlated randomization, roles, recommendations, and every-equilibrium claims.
+    claim_type: theorem
+    status: verified
+    source_type: exact-posterior-game-proof-with-independent-profile-and-action-enumeration
+    source_reference: studies/DD-022-coordination-free-positive-sharing/proof.md
+    proof_path: studies/DD-022-coordination-free-positive-sharing/proof.md
+    implementation_paths: [src/distributed_discovery/coordination_free_sharing/shared_game.py, src/distributed_discovery/coordination_free_sharing/exact.py, src/distributed_discovery/coordination_free_sharing/equilibrium.py]
+    run_ids: [20260722T210334Z_DD-022_2376d5b7_ad67765ca8]
+    test_paths: [tests/unit/test_coordination_free_sharing.py, tests/unit/test_coordination_free_sharing_post_run_audit.py]
+    exactness_basis: Bayes' rule gives the exact posteriors and the action payoff difference (3u-1-x)/2 gives the selected support. Direct signal-profile, state, and action enumeration reproduces all metrics and pure posterior-game correspondences.
+    rounding_rule: exact rational algebra; the rho=1 disagreement profile is off path
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: Agents naturally remember signal ownership; this claim deliberately imposes the narrower posterior-only selection.
+  - id: DD-C-0106
+    study_id: DD-022
+    short_name: selected-positive-sharing-threshold
+    statement: At p=3/5, discovery under DD-022's selected shared posterior-only symmetric equilibrium exceeds discovery under its private anonymous symmetric Bayes-Nash equilibrium exactly when rho lies in ((5sqrt(73)-17)/48,1), with equality at the algebraic root and at rho=1.
+    scope: The exact DD-022 binary two-agent source law, equal-split prize, and the selections in DD-C-0104 and DD-C-0105; not a comparison over every equilibrium, direct clue-following alone, arbitrary p, arbitrary source dependence, or centralized assignment.
+    claim_type: theorem
+    status: verified
+    source_type: piecewise-exact-gain-proof-with-algebraic-root-certificate-and-independent-enumeration
+    source_reference: results/verified/20260722T210334Z_DD-022_2376d5b7_ad67765ca8/outputs/threshold-certificate.json
+    proof_path: studies/DD-022-coordination-free-positive-sharing/proof.md
+    implementation_paths: [src/distributed_discovery/coordination_free_sharing/thresholds.py, src/distributed_discovery/coordination_free_sharing/verification.py]
+    run_ids: [20260722T210334Z_DD-022_2376d5b7_ad67765ca8]
+    test_paths: [tests/unit/test_coordination_free_sharing.py, tests/unit/test_coordination_free_sharing_post_run_audit.py]
+    exactness_basis: Exact substitution yields the piecewise gain and polynomial 24rho^2+17rho-16. The certificate checks discriminant 25*73, exact endpoint signs on (2679/5000,67/125), uniqueness of the positive root, both regime boundaries, and a corrupted interval.
+    rounding_rule: the algebraic expression and exact sign certificate are authoritative
+    dependencies: [DD-C-0104, DD-C-0105]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: The decimal root is approximately 0.5358337235 and is never used to determine a sign.
+  - id: DD-C-0107
+    study_id: DD-022
+    short_name: selected-positive-sharing-payoff
+    statement: On the exact interval in DD-C-0106, sharing also strictly raises each agent's ex-ante expected payoff; total realized and expected payoff equals the discovery indicator and probability, and player symmetry gives each agent exactly one half.
+    scope: Same model and equilibrium selections as DD-C-0106 with the ex-post budget-balanced equal-split unit prize; no welfare weights, transfers, coalitions, or asymmetric equilibrium payoffs.
+    claim_type: corollary
+    status: verified
+    source_type: ex-post-budget-identity-and-player-symmetry-proof-with-exact-accounting-audit
+    source_reference: studies/DD-022-coordination-free-positive-sharing/proof.md
+    proof_path: studies/DD-022-coordination-free-positive-sharing/proof.md
+    implementation_paths: [src/distributed_discovery/coordination_free_sharing/model.py, src/distributed_discovery/coordination_free_sharing/exact.py]
+    run_ids: [20260722T210334Z_DD-022_2376d5b7_ad67765ca8]
+    test_paths: [tests/unit/test_coordination_free_sharing.py, tests/unit/test_coordination_free_sharing_post_run_audit.py]
+    exactness_basis: In every realized action profile the unit prize is split among correct agents exactly when the target is discovered. Exact state enumeration checks the budget identity and equal ex-ante payoffs in every registered cell.
+    rounding_rule: exact fractions
+    dependencies: [DD-C-0106]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: Unequal payoffs can occur in asymmetric pure equilibria and are outside this symmetric corollary.
+  - id: DD-C-0108
+    study_id: DD-022
+    short_name: bounded-selected-sharing-classification
+    statement: DD-022's complete 42-cell rational grid contains six positive, 18 negative, and 18 neutral selected shared-minus-private discovery comparisons.
+    scope: The six registered p values, seven registered rho values, binary two-agent model, and selected equilibria in DD-C-0104 and DD-C-0105; bounded exact counts, not empirical frequencies or a general-p classification.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: closed-form-registry-with-independent-target-signal-action-and-deviation-enumeration
+    source_reference: results/verified/20260722T210334Z_DD-022_2376d5b7_ad67765ca8/outputs/summary.json
+    proof_path: studies/DD-022-coordination-free-positive-sharing/proof.md
+    implementation_paths: [src/distributed_discovery/coordination_free_sharing/verification.py, src/distributed_discovery/coordination_free_sharing/study.py]
+    run_ids: [20260722T210334Z_DD-022_2376d5b7_ad67765ca8]
+    test_paths: [tests/unit/test_coordination_free_sharing.py, tests/unit/test_coordination_free_sharing_post_run_audit.py, tests/integration/test_coordination_free_sharing_cli.py]
+    exactness_basis: Symbolic closed forms and a separate exhaustive enumerator agree on selection, discovery, payoffs, collision, diversity, quality, and boundaries for all 42 cells; exact signs generate the count vector and all ten corruptions are rejected.
+    rounding_rule: exact rational signs and integer counts
+    dependencies: [DD-C-0104, DD-C-0105]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: Neutral cells include uninformative, perfect-signal, and rho=1 boundaries depending on p.
+  - id: DD-C-0109
+    study_id: DD-022
+    short_name: equilibrium-selection-dependence
+    statement: DD-022's positive-sharing comparison does not survive every equilibrium. At p=3/5, opposite constant-target private pure equilibria exist for every rho and attain discovery one; signal-ownership-aware symmetric shared rules can also split targets on disagreement, so the posterior-only mixed result is selection-dependent.
+    scope: Complete labeled private pure Bayesian correspondence in the registered binary game and the ownership-aware disagreement subgame; this is a scope-defining negative result, not a claim about refinements, learning dynamics, coalition-proofness, or arbitrary games.
+    claim_type: negative-result
+    status: verified
+    source_type: complete-finite-pure-correspondence-enumeration-with-best-response-and-discovery-audit
+    source_reference: results/verified/20260722T210334Z_DD-022_2376d5b7_ad67765ca8/outputs/registry.json
+    proof_path: studies/DD-022-coordination-free-positive-sharing/proof.md
+    implementation_paths: [src/distributed_discovery/coordination_free_sharing/equilibrium.py, src/distributed_discovery/coordination_free_sharing/verification.py]
+    run_ids: [20260722T210334Z_DD-022_2376d5b7_ad67765ca8]
+    test_paths: [tests/unit/test_coordination_free_sharing.py, tests/unit/test_coordination_free_sharing_post_run_audit.py]
+    exactness_basis: All 16 private pure strategy profiles are checked at both types for both players in every registered cell. Exact action-game enumeration checks public pure profiles, while a direct ownership-aware deviation calculation establishes the disagreement split equilibria.
+    rounding_rule: exact finite best-response inequalities
+    dependencies: [DD-C-0104, DD-C-0105, DD-C-0106]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: Asymmetric or ownership-conditioned outcomes are not described as the selected coordination-free protocol.
+  - id: DD-C-0110
+    study_id: DD-022
+    short_name: selected-shared-centralized-gap
+    statement: At p=3/5, the gap from DD-021's centralized binary top-two value V_2=1 to DD-022's selected shared discovery is (7+3rho)/25 for rho<=1/6 and (4+3rho)/(13+12rho) for rho>1/6, and is strictly positive throughout rho in [0,1].
+    scope: DD-022 source law and posterior-only shared selection compared with the centralized ability to assign both binary targets; the benchmark is an upper value, not a decentralized or incentive-compatible implementation.
+    claim_type: theorem
+    status: verified
+    source_type: exact-substitution-against-centralized-two-target-coverage-benchmark
+    source_reference: studies/DD-022-coordination-free-positive-sharing/proof.md
+    proof_path: studies/DD-022-coordination-free-positive-sharing/proof.md
+    implementation_paths: [src/distributed_discovery/coordination_free_sharing/shared_game.py, src/distributed_discovery/coordination_free_sharing/verification.py]
+    run_ids: [20260722T210334Z_DD-022_2376d5b7_ad67765ca8]
+    test_paths: [tests/unit/test_coordination_free_sharing.py, tests/unit/test_coordination_free_sharing_post_run_audit.py]
+    exactness_basis: With two actions and two targets, centralized distinct assignment discovers surely. Subtracting the exact piecewise shared discovery formula gives the stated positive rational gaps, reproduced throughout the exact registry.
+    rounding_rule: exact rational formulas
+    dependencies: [DD-C-0098, DD-C-0105]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: The positive gap coexists with role-dependent pure equilibria that attain one; DD-C-0109 preserves that selection boundary.

@@ -61,9 +61,10 @@ merged as `8b44400333e156440a22b0d9fe3be37f63d35a08`. Its sole clean run
 `20260722T185924Z_DD-021_3cdbbc40_2fea269a9a` supports DD-C-0097 through
 DD-C-0103. Post-merge CI `29951061680`, Pages `29951061715`, and the live
 study, Lab, results, claims, evidence, and exact-data routes pass. The separate
-documentation-only issue #148 holds the proposed decentralized paper for one
-Coordination-Free Positive Sharing theorem package; it creates no research
-evidence or submission authority.
+documentation-only issue #148 held the proposed decentralized paper for one
+Coordination-Free Positive Sharing theorem package. DD-022 now supplies that
+selected-equilibrium theorem and an every-equilibrium negative result; the
+required post-merge gate still creates no research evidence or submission authority.
 
 The repository is public and project-authored content is MIT-licensed. The
 canonical Shared Discovery Paradox repository remains pinned at

@@ -1,0 +1,22 @@
+{
+  "all_corruptions_rejected": true,
+  "canonical_checks": true,
+  "canonical_detail": {
+    "canonical_slice_complete": true,
+    "constant_split_private_equilibrium": true,
+    "negative_registered_witness": true,
+    "positive_registered_witness": true,
+    "private_boundary": true,
+    "rho_one_neutral": true,
+    "selection_dependence_exposed": true,
+    "shared_boundary": true
+  },
+  "elapsed_seconds": 0.297666,
+  "memory_cap_mb": 1024,
+  "passed": true,
+  "peak_memory_mb": 21.719,
+  "registered_cells": true,
+  "row_checks": true,
+  "threshold_certificate": true,
+  "time_cap_seconds": 120
+}

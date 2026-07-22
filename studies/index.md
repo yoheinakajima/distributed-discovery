@@ -27,7 +27,7 @@
 | DD-019 | Signal Geometry and the Action-Budget Discovery Profile | complete bounded study; deployed through PR #131 and closeout PR #132 | Preserve DD-C-0089 through DD-C-0091, the immutable run, and private/planner/scalar boundaries |
 | DD-020 | Incremental Sharing and Independent Rescue | complete bounded study; output-connected Lab deployed through PR #140 | Preserve DD-C-0092 through DD-C-0096, the immutable run, theorem scope, exact Lab inputs, and arbitrary-channel counterexample |
 | DD-021 | General Sharing Frontier | complete bounded study; deployed through PR #147 | Preserve DD-C-0097 through DD-C-0103, the sole immutable run, two-method registry, minimal witnesses, centralized-authority boundary, and bounded mixed-curve null |
-| DD-022 | Coordination-Free Positive Sharing | registered; no run or claim | Prove or reject strict sharing improvement under the frozen anonymous equal-split hidden-dependence game before any paper admission. |
+| DD-022 | Coordination-Free Positive Sharing | complete bounded study; research merge pending | Preserve DD-C-0104 through DD-C-0110, the exact run, posterior-only selection scope, and every-equilibrium negative result. |
 
 Each executed directory contains its question, model, plan, claims view, status,
 results index, and report. Program V3's completed sequence is governed by
@@ -54,7 +54,8 @@ post-merge CI `29951061680`, Pages `29951061715`, and the live study, Lab,
 claims, evidence, results, and exact-data routes pass. The separate editorial
 gate holds the proposed decentralized paper for one coordination-free
 positive-sharing theorem package.
-DD-022 is registered under issue #150. Its registration freezes the binary
-world-level source mixture, the private and shared anonymous symmetric
-equilibrium selections, a 42-cell exact grid, two methods, resource caps, and
-ten corruption targets. No DD-022 result or claim exists yet.
+DD-022's sole exact run
+`20260722T210334Z_DD-022_2376d5b7_ad67765ca8` supports DD-C-0104 through
+DD-C-0110. It proves the selected `p=3/5` positive-sharing interval, reproduces
+the 42-cell grid with two methods, and preserves the every-equilibrium negative
+result from role- and ownership-aware strategies.

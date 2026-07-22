@@ -1,0 +1,46 @@
+{
+  "command": "make dd022-coordination-free-positive-sharing",
+  "config_hash_sha256": "ad67765ca823bd95a133126fa8064187753e7ee7765987c082b3cd6661f1b6c5",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-22T21:03:34.900752Z",
+  "exit_status": 0,
+  "git_commit": "2376d5b7f57f9c04bf7d216453c1b1efc011a3e5",
+  "git_dirty": false,
+  "input_hashes": {
+    "src/distributed_discovery/coordination_free_sharing/cli.py": "2315ed67285f1a642024119a0717702fd4f25658440df2adf29896558a71783c",
+    "src/distributed_discovery/coordination_free_sharing/equilibrium.py": "e47cf45868f2ece555134983b75f0a148fe36e2d2d3e299f5c0b595f344b1b18",
+    "src/distributed_discovery/coordination_free_sharing/exact.py": "aaad82327fbf088a9856df800006f7daa9b0f90e87526fa6bb802a46cedadc1f",
+    "src/distributed_discovery/coordination_free_sharing/model.py": "121e548743095753a741d1f1327020fb62cc1752cc4400b585412aa1492d3dc1",
+    "src/distributed_discovery/coordination_free_sharing/private_game.py": "a99de220cc73a62d4bac1ee372b9352179fe1170f8cb83bd36048fd7c04fc2a9",
+    "src/distributed_discovery/coordination_free_sharing/shared_game.py": "9ceff84e1720ecf66bd9f3ab2e128f46228c6b178bcf392629f0894f13cd6318",
+    "src/distributed_discovery/coordination_free_sharing/study.py": "61db6ce4872c7321492a4736e51ac9b9d3ac65d78beef4a98d0f0bdccb8ae734",
+    "src/distributed_discovery/coordination_free_sharing/thresholds.py": "0799a2453c584872b5b8a73dca81ef379f3607f715696fb29934b7acdf6efa2f",
+    "src/distributed_discovery/coordination_free_sharing/verification.py": "526a3eedc578baa0e13b6ae95f82433374c3b459e87f6e01310f374205213a2b",
+    "studies/DD-022-coordination-free-positive-sharing/configs/registry.yml": "6f6b832a21abe749d5d485a323ce778d56a7ffe56cfa35f6dbc89fc09b546fe6",
+    "studies/DD-022-coordination-free-positive-sharing/literature.md": "e1d8281ba2998b78dc675608aaf8d6fb02be7106325b9d6b5d855af6faeace01",
+    "studies/DD-022-coordination-free-positive-sharing/model.md": "1df9613ca87a159959e3858704e7c4271abdb32be5a0d561a1dda02cdf6db442",
+    "studies/DD-022-coordination-free-positive-sharing/proof-audit.md": "01f610659e7f6c2c859e10b22b528769432d4fd1d4ed1053c13a6dd4f9a52594",
+    "studies/DD-022-coordination-free-positive-sharing/proof.md": "034095985dab42d97192e34111e82aca8da15776d08f9cf406e800db6bb3ac9f"
+  },
+  "outputs": {
+    "outputs/corruption-tests.json": "11a31973df25da1fb0d9bd239964b3005aaa634e84679ca4461c156a70ae3568",
+    "outputs/registry.json": "98fb7d475365548fcc723603b3c3721e673b0b0423bc89579c411c3252ac54f1",
+    "outputs/summary.json": "8ae5af15a2f7de115cc3f38ff158eb65f3dd8a529f0fe1bdb2d1824ca1604033",
+    "outputs/threshold-certificate.json": "146dcfba3f74b76285dd9ae83a03bf811ea0ad4a1029b7773d7c5d6079fbd6bf",
+    "outputs/verification.json": "10285907e902a22ffb2afd7cc96f7170c6965444329000c5293e33f71d749125"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "resource_usage": {
+    "elapsed_seconds": 0.297666,
+    "peak_memory_mb": 21.719
+  },
+  "run_id": "20260722T210334Z_DD-022_2376d5b7_ad67765ca8",
+  "schema_version": 1,
+  "started_utc": "2026-07-22T21:03:34.892809Z",
+  "study_id": "DD-022",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

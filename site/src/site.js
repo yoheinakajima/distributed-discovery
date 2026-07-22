@@ -781,3 +781,85 @@ document.querySelectorAll("[data-frontier-lab]").forEach((lab) => {
   });
   render();
 });
+
+document.querySelectorAll("[data-coordination-lab]").forEach((lab) => {
+  const accuracy = lab.querySelector("#coordination-accuracy");
+  const dependence = lab.querySelector("#coordination-dependence");
+  const regime = lab.querySelector("#coordination-regime");
+  const baseline = lab.querySelector("#coordination-baseline");
+  const status = lab.querySelector("#coordination-status");
+  const reset = lab.querySelector("[data-coordination-reset]");
+  const rows = Array.from(document.querySelectorAll("tr[data-coordination-row]"));
+  if (!accuracy || !dependence || !regime || !baseline || !status || !rows.length) return;
+  const fraction = (value) => {
+    const parts = String(value).split("/").map(Number);
+    return parts.length === 2 ? parts[0] / parts[1] : parts[0];
+  };
+  const percentage = (value) => `${(fraction(value) * 100).toFixed(1).replace(/\.0$/, "")}%`;
+  const setMetric = (key, exact) => {
+    const card = lab.querySelector(`[data-coordination-output="${key}"]`);
+    if (!card) return;
+    const strong = card.querySelector("strong");
+    const code = card.querySelector("code");
+    if (strong) strong.textContent = percentage(exact);
+    if (code) code.textContent = exact;
+  };
+  const selectedRow = () => rows.find((row) =>
+    row.dataset.accuracy === accuracy.value && row.dataset.dependence === dependence.value);
+  const render = () => {
+    const selected = selectedRow();
+    rows.forEach((row) => { row.hidden = row !== selected; });
+    if (!selected) {
+      status.textContent = "No exact registered cell matches this selection.";
+      return;
+    }
+    const prefix = regime.value;
+    const discovery = selected.getAttribute(`data-${prefix}-discovery`);
+    setMetric("strategy", selected.dataset.privateR);
+    setMetric("posterior", selected.dataset.agreementPosterior);
+    setMetric("shared-action", selected.dataset.sharedX);
+    setMetric("discovery", discovery);
+    setMetric("payoff", selected.getAttribute(`data-${prefix}-payoff`));
+    setMetric("collision", selected.getAttribute(`data-${prefix}-collision`));
+    setMetric("diversity", selected.getAttribute(`data-${prefix}-diversity`));
+    setMetric("quality", selected.getAttribute(`data-${prefix}-quality`));
+    setMetric("gap", selected.getAttribute(`data-${prefix}-gap`));
+    const gain = prefix === baseline.value
+      ? "0"
+      : selected.getAttribute(`data-${prefix}-minus-${baseline.value}`);
+    setMetric("gain", gain);
+    ["private-regime", "shared-regime"].forEach((key) => {
+      const target = lab.querySelector(`[data-coordination-text="${key}"]`);
+      if (target) target.textContent = selected.getAttribute(`data-${key}`);
+    });
+    const sameAccuracy = rows.filter((row) => row.dataset.accuracy === accuracy.value);
+    const points = Array.from(lab.querySelectorAll("[data-coordination-point]"));
+    points.forEach((point) => {
+      const row = sameAccuracy.find((candidate) => candidate.dataset.dependence === point.dataset.rho);
+      if (!row) return;
+      const privateValue = row.dataset.privateDiscovery;
+      const sharedValue = row.dataset.sharedDiscovery;
+      point.classList.toggle("selected", point.dataset.rho === dependence.value);
+      const privateBar = point.querySelector("[data-coordination-private-bar]");
+      const sharedBar = point.querySelector("[data-coordination-shared-bar]");
+      const value = point.querySelector("[data-coordination-value]");
+      if (privateBar) privateBar.style.setProperty("--profile-value", percentage(privateValue));
+      if (sharedBar) sharedBar.style.setProperty("--profile-value", percentage(sharedValue));
+      if (value) value.textContent = `P ${percentage(privateValue)} · S ${percentage(sharedValue)}`;
+    });
+    const chart = lab.querySelector("[data-coordination-chart]");
+    if (chart) chart.setAttribute("aria-label", `Private and shared exact discovery across registered rho values for p=${accuracy.value}.`);
+    const summary = lab.querySelector("[data-coordination-regime-summary]");
+    if (summary) summary.textContent = `Private: ${selected.dataset.privateRegime}; shared agreement: ${selected.dataset.sharedRegime}; selected gain ${percentage(selected.dataset.selectedGain)}; gap to V2 ${percentage(selected.getAttribute(`data-${prefix}-gap`))}.`;
+    status.textContent = `p=${accuracy.value}, rho=${dependence.value}, ${regime.value} regime versus ${baseline.value} baseline; selected sharing class ${selected.dataset.gainClass}.`;
+  };
+  [accuracy, dependence, regime, baseline].forEach((control) => control.addEventListener("change", render));
+  if (reset) reset.addEventListener("click", () => {
+    accuracy.value = "3/5";
+    dependence.value = "1/2";
+    regime.value = "private";
+    baseline.value = "direct";
+    render();
+  });
+  render();
+});

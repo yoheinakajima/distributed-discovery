@@ -1,5 +1,5 @@
 study_id: DD-022
-status: proof-and-verifier-ready
-evidence_status: pre-run-no-claim
-next_action: pass the full pre-run gate, commit clean source, and execute the registered primary run exactly once
-updated_utc: 2026-07-22T22:05:00Z
+status: complete-bounded-study
+evidence_status: six-verified-results-one-independently-reproduced-bounded-classification-with-selection-negative-result
+next_action: preserve the immutable run, posterior-only selection scope, claims DD-C-0104 through DD-C-0110, and output-connected Lab
+updated_utc: 2026-07-22T21:12:00Z

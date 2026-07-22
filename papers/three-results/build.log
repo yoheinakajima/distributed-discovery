@@ -6,7 +6,7 @@ note: Rerunning TeX because "main.aux" changed ...
 note: Running xdvipdfmx ...
 note: Writing `<build>/main.blg` (204 B)
 note: Writing `<build>/main.log` (48.2529296875 KiB)
-note: Writing `<build>/main.pdf` (106.34375 KiB)
+note: Writing `<build>/main.pdf` (106.3505859375 KiB)
 note: Skipped writing 3 intermediate files (use --keep-intermediates to keep them)
 warning: hyperref.sty:4873: Requested font "pzdr" at 0.00002pt
 warning: hyperref.sty:4873:  -> pzdr

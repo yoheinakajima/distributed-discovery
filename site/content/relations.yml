@@ -184,3 +184,6 @@ studies:
   DD-022:
     program: program-v5
     theorem_family: sharing-frontier
+    result_ids: [coordination-free-positive-sharing, coordination-free-selection-boundary]
+    lab_slugs: [coordination-free-positive-sharing]
+    data_routes: [data/labs/coordination-free-positive-sharing.json, data/coordination-free-positive-sharing/registry.json, data/coordination-free-positive-sharing/threshold-certificate.json]

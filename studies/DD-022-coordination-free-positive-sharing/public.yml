@@ -1,11 +1,24 @@
 study_id: DD-022
 title: Coordination-Free Positive Sharing
 slug: dd-022
-phase: registered
-summary: Registered exact hidden-dependence and anonymous equal-split equilibrium study; no result exists before the clean primary run.
+phase: complete-bounded-study
+summary: Exact private and posterior-only shared symmetric equilibria yield a certified strict positive-sharing interval at p=3/5, with a preserved every-equilibrium negative result.
 public_artifacts:
   - path: studies/DD-022-coordination-free-positive-sharing/model.md
     description: Frozen source law, coordination-free protocol, equilibrium selections, and comparison baselines
   - path: studies/DD-022-coordination-free-positive-sharing/plan.md
     description: Bounded execution and validation gates
-
+  - path: studies/DD-022-coordination-free-positive-sharing/proof.md
+    description: Exact private, shared, threshold, payoff, and implementation-gap proofs
+  - path: studies/DD-022-coordination-free-positive-sharing/proof-audit.md
+    description: Independent equilibrium, algebra, boundary, and selection audit
+  - path: studies/DD-022-coordination-free-positive-sharing/report.md
+    description: Audited results, bounded classification, baselines, and limitations
+  - path: results/verified/20260722T210334Z_DD-022_2376d5b7_ad67765ca8/outputs/registry.json
+    description: Complete 42-cell exact selected-equilibrium and pure-correspondence registry
+  - path: results/verified/20260722T210334Z_DD-022_2376d5b7_ad67765ca8/outputs/threshold-certificate.json
+    description: Algebraic root and exact isolating-interval certificate
+  - path: results/verified/20260722T210334Z_DD-022_2376d5b7_ad67765ca8/outputs/corruption-tests.json
+    description: Ten rejected registered corruptions
+claim_ids: [DD-C-0104, DD-C-0105, DD-C-0106, DD-C-0107, DD-C-0108, DD-C-0109, DD-C-0110]
+run_ids: [20260722T210334Z_DD-022_2376d5b7_ad67765ca8]

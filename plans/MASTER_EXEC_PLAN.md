@@ -4,13 +4,11 @@
 
 Issue #150 and branch `research/dd022-coordination-free-positive-sharing`
 register the sole substantive Program V5 lane from clean main
-`06523c8d9ff6d0f4e66457997f5094b69065ec95`. The package freezes a binary,
-two-agent, hidden common-versus-independent source mixture and compares a
-private-information anonymous symmetric Bayes–Nash equilibrium with a
-posterior-contingent shared-information anonymous symmetric Nash equilibrium
-under an ex-post budget-balanced equal-split unit prize. The living ExecPlan is
-`plans/DD022_COORDINATION_FREE_POSITIVE_SHARING.md`. No run, DD-022 claim, or
-numerical research result exists at registration. After the research lane is
+`06523c8d9ff6d0f4e66457997f5094b69065ec95`. The sole exact run
+`20260722T210334Z_DD-022_2376d5b7_ad67765ca8` supports DD-C-0104 through
+DD-C-0110, including the selected positive-sharing theorem and the preserved
+every-equilibrium limitation. The living ExecPlan is
+`plans/DD022_COORDINATION_FREE_POSITIVE_SHARING.md`. After the research lane is
 merged and deployed, a separate documentation-only gate must decide the held
 Information Sharing Frontier paper; no manuscript or submission is authorized.
 
