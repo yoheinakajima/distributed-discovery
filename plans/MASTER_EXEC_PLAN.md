@@ -67,9 +67,10 @@ conjecture until proof or an exact counterexample supplies the permitted status.
 
 - **A (complete):** governance and publication architecture, issue #133 and
   PR #134.
-- **B (active, evidence complete):** DD-020 Incremental Sharing and
-  Independent Rescue; acceptance and merge remain.
-- **C:** editorial theorem gate and synthesis prospectus.
+- **B (complete):** DD-020 Incremental Sharing and Independent Rescue, issue
+  #135 and PR #136, merged and deployed as `cf7bc67e`.
+- **C (active):** editorial theorem gate and synthesis prospectus, issue #137
+  and branch `docs/incremental-sharing-editorial-gate`.
 - **D:** public DD-020 integration and output-connected Lab.
 - **Acceptance:** complete repository/paper/site/live audit and final handoff.
 
@@ -82,7 +83,7 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   routes, and factual inventories; run `gh auth status` exactly once.
 - [x] Create issue #133 and the sole active Milestone A branch.
 - [x] Complete, validate, merge, deploy, close, and synchronize Milestone A.
-- [ ] Merge, deploy, close, and synchronize the completed DD-020 study.
+- [x] Merge, deploy, close, and synchronize the completed DD-020 study.
 - [ ] Apply and merge the editorial theorem gate and synthesis prospectus.
 - [ ] Build and deploy the DD-020 public integration and Lab.
 - [ ] Run final acceptance and reconcile every required handoff document.
@@ -141,6 +142,11 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   once only after PR #136 was open, all 222 tests passed, source was committed,
   and the tree was clean. Promote theorem statements only after the separate
   written proof audit; retain computation as regression evidence.
+- `2026-07-22`: mark Milestone B complete only after PR #136 squash-merged as
+  `cf7bc67e`, issue #135 closed, post-merge CI `29929864642` and Pages
+  `29929864954` passed, main synchronized cleanly, and the live DD-020 study,
+  data, claims, and evidence routes returned 200. Open issue #137 only after
+  that closeout and perform no research run in the editorial milestone.
 
 ### Validation strategy
 
