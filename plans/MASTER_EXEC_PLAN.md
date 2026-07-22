@@ -94,6 +94,23 @@ do not register the first V5 study before that baseline merges.
   full pre-run acceptance is 216 tests, 88 claims, 47 manifests, and a
   69-page/23-study site. No DD-019 run or claim exists before the clean source
   commit and draft PR.
+- 2026-07-22: DD-019 source froze as `a77bb786` and draft PR #131 opened before
+  the sole primary run `20260722T084145Z_DD-019_a77bb786_04a5e9f0c5`. The run
+  passed exact labeled and independent histogram agreement for all 15 profile
+  entries and rejected three corruptions. The half-accurate point and
+  guaranteed two-shortlist share one-person accuracy `1/2` and direct private
+  discovery `7/8` but have profiles `(7/12,43/54,25/27)` and `(17/18,1,1)`;
+  their recovery budgets are three and one. DD-C-0089 through DD-C-0091 pass
+  separate audits at the bounded computational scope. The active gate is full
+  acceptance, ready PR, merge, post-merge CI/Pages, issue closure, and live
+  routes. The primary run must not be repeated.
+- 2026-07-22: DD-019 final local acceptance passed bootstrap, Ruff, MyPy on
+  138 source files, all 217 tests, the 91-claim ledger, all 48 manifests, six
+  papers totaling 89 pages, and the 69-page/23-study site. The Three Results
+  paper changed only through generated claim-ledger provenance, remains 14
+  pages, and passed a new all-page visual review at SHA-256 `8ea2afc82a4a`.
+  The exact DD-019 profile SVG also passed visual review. The active action is
+  the evidence commit, push, ready PR #131, CI, merge, Pages, and live route.
 
 - 2026-07-22: owner authorization reconciles the long-term theorem portfolio
   with Program V5, the Information Sharing Frontier. Live audit found clean

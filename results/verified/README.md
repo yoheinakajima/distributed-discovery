@@ -2,6 +2,15 @@
 
 Only claims meeting `docs/claim-status-policy.md` are indexed here.
 
+DD-019 primary run:
+
+- `20260722T084145Z_DD-019_a77bb786_04a5e9f0c5`: five exact finite channels,
+  15 labeled/histogram-reproduced pooled profile entries, a same-accuracy
+  counterexample, five recovery budgets, and three corruption rejections.
+
+The private baseline is direct independent Bayes action with declared
+tie-breaking; it is not an unrestricted anonymous or private-team optimum.
+
 DD-016 primary run:
 
 - `20260722T021526Z_DD-016_00271ff8_123b2809e3`: exact minimum-team theorem

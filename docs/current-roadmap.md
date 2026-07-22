@@ -20,8 +20,8 @@ verification plan, and corruption test where certificates are used.
 | Synthetic Experiment v3 | complete and deployed through PR #120 | Preserve DD-C-0088, all three immutable versions, the 644 retained calibration failures, shared-seed v2 power rows, and the absolute no-human-data boundary. |
 | Threshold Discovery paper | complete and deployed through PR #123 | Preserve the 20-page deterministic working paper, eight source-generated assets, seven immutable run mappings, claim/citation audit, all-page visual QA, and no-DOI/no-submission boundary. |
 | Program V4 output-connected Labs | complete and deployed through PR #125 | Preserve exact row selection for all 8 DD-016 threshold rows, 160 DD-017 games, 64 DD-015 objective rows, and 50 DD-018 mechanism rows; every control must alter substantive output and all rows remain available without JavaScript. |
-| Program V5 — Information Sharing Frontier | baseline complete through PR #129; DD-019 active on issue #130 | Execute only the bounded `M=4`, `N=3` Signal Geometry study after its clean-source gate; preserve five declared channel laws and exact/private/planner distinctions. |
-| DD-019 Signal Geometry and the Action-Budget Discovery Profile | registered; source validation passes | Commit the exact channel registry, two evaluators, schema, corruption gates, and tests; open a draft PR before the sole primary run. |
+| Program V5 — Information Sharing Frontier | baseline complete through PR #129; DD-019 evidence integration active on issue #130 | Finish DD-019 acceptance, merge, and deploy before opening Incremental Sharing. |
+| DD-019 Signal Geometry and the Action-Budget Discovery Profile | exact primary run and DD-C-0089–0091 pass locally | Preserve the five channel laws, two-method exact profiles, same-accuracy counterexample scope, named private baseline, and recovery-budget semantics. |
 | Program V3 focused paper | complete and deployed through PR #90 | The deterministic 20-page *Incentive to Ignore* paper, nine generated evidence assets, citation audit, all-page visual review, Pages, and live PDF pass. |
 | Program V3 benchmark, experiment, and site integration | complete and deployed through PRs #93, #95, and #97 | Preserve version compatibility, static/no-tracking operation, no-JS tables, and exact provenance. |
 | Program V3 final acceptance | complete through issue #98 and the final handoff | Preserve the 70-claim/40-manifest audit and do not rerun immutable primary configurations for freshness. |
@@ -66,8 +66,9 @@ git pull --ff-only origin main
 make verify
 ```
 
-The active milestone is DD-019 on issue #130 and branch
-`research/dd019-signal-geometry`. The frozen `M=4`, `N=3` source visits at most
-2,048 target/signal states per channel, uses labeled and histogram exact
-methods, and has no run or claim before the clean-source commit and draft PR.
-For settings-only work, use `docs/github-setup.md` and issue #32.
+The active milestone is DD-019 evidence integration on issue #130 and branch
+`research/dd019-signal-geometry`. Primary run
+`20260722T084145Z_DD-019_a77bb786_04a5e9f0c5` and DD-C-0089–0091 pass. Finish
+full acceptance, ready PR #131, merge, post-merge CI/Pages, and live-route
+checks before opening Incremental Sharing. For settings-only work, use
+`docs/github-setup.md` and issue #32.

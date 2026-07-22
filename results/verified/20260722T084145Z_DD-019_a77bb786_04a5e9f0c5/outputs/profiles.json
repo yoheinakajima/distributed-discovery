@@ -1,0 +1,92 @@
+[
+  {
+    "channel_id": "noisy-point-half",
+    "family": "symmetric-noisy-point",
+    "independent_profile": [
+      "7/12",
+      "43/54",
+      "25/27"
+    ],
+    "one_person_accuracy": "1/2",
+    "private_portfolio_discovery": "7/8",
+    "profile": [
+      "7/12",
+      "43/54",
+      "25/27"
+    ],
+    "recovery_budget": 3,
+    "signal_count": 4
+  },
+  {
+    "channel_id": "noisy-shortlist-three-quarters",
+    "family": "noisy-k-shortlist",
+    "independent_profile": [
+      "35/64",
+      "79/96",
+      "539/576"
+    ],
+    "one_person_accuracy": "3/8",
+    "private_portfolio_discovery": "387/512",
+    "profile": [
+      "35/64",
+      "79/96",
+      "539/576"
+    ],
+    "recovery_budget": 2,
+    "signal_count": 6
+  },
+  {
+    "channel_id": "guaranteed-shortlist-two",
+    "family": "guaranteed-shortlist",
+    "independent_profile": [
+      "17/18",
+      "1",
+      "1"
+    ],
+    "one_person_accuracy": "1/2",
+    "private_portfolio_discovery": "7/8",
+    "profile": [
+      "17/18",
+      "1",
+      "1"
+    ],
+    "recovery_budget": 1,
+    "signal_count": 6
+  },
+  {
+    "channel_id": "explicit-exclusion",
+    "family": "exclusion",
+    "independent_profile": [
+      "16/27",
+      "26/27",
+      "1"
+    ],
+    "one_person_accuracy": "1/3",
+    "private_portfolio_discovery": "19/27",
+    "profile": [
+      "16/27",
+      "26/27",
+      "1"
+    ],
+    "recovery_budget": 2,
+    "signal_count": 4
+  },
+  {
+    "channel_id": "confidence-point",
+    "family": "confidence-augmented-point",
+    "independent_profile": [
+      "295/384",
+      "175/192",
+      "31/32"
+    ],
+    "one_person_accuracy": "5/8",
+    "private_portfolio_discovery": "485/512",
+    "profile": [
+      "295/384",
+      "175/192",
+      "31/32"
+    ],
+    "recovery_budget": 3,
+    "signal_count": 8
+  }
+]

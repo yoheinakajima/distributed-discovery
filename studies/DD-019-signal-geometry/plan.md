@@ -48,8 +48,8 @@ novelty claim is in scope.
 - [x] V5 baseline merged; live registry audited through DD-018.
 - [x] Issue, branch, bounded fixture, resource estimate, and exactness plan set.
 - [x] Schema, model, implementation, verifier, config, and tests pass.
-- [ ] Clean source commit and draft PR precede the sole primary run.
-- [ ] Evidence, claims, report, plots, public data, and study page pass.
+- [x] Clean source commit and draft PR precede the sole primary run.
+- [x] Evidence, claims, report, plots, public data, and study page pass locally.
 - [ ] PR, post-merge workflows, and live routes pass.
 
 ## Recovery
@@ -67,3 +67,7 @@ primary configuration for freshness.
   wheel and reproduced the already-fixed impossible-observation divide-by-zero.
   Reinstalling the local package after adding its new directory resolves this
   environment-cache failure. It created no run or evidence.
+- Clean commit `a77bb786` and draft PR #131 preceded the sole primary run
+  `20260722T084145Z_DD-019_a77bb786_04a5e9f0c5`. Both exact methods agree on
+  all 15 profile entries; the same-accuracy counterexample and five recovery
+  budgets pass separate claim audits. The run must not be repeated.

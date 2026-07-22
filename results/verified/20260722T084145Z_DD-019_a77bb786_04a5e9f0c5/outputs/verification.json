@@ -1,0 +1,8 @@
+{
+  "channel_normalization": true,
+  "different_profiles": true,
+  "method_agreement": true,
+  "passed": true,
+  "profile_bounds_and_monotonicity": true,
+  "same_accuracy": true
+}

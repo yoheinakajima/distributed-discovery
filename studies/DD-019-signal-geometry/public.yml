@@ -1,8 +1,8 @@
 study_id: DD-019
 title: Signal Geometry and the Action-Budget Discovery Profile
 slug: dd-019
-phase: registered
-summary: Registered exact finite comparison of pooled top-L discovery across five declared signal channels; no run or claim yet.
+phase: complete-bounded-study
+summary: Independently reproduced exact pooled top-L profiles for five finite channels expose a same-accuracy counterexample and baseline-specific recovery budgets.
 public_artifacts:
   - path: studies/DD-019-signal-geometry/model.md
     description: Frozen finite channel model and baseline semantics
@@ -10,3 +10,17 @@ public_artifacts:
     description: Living bounded execution and validation plan
   - path: studies/DD-019-signal-geometry/schemas/channel-v1.schema.json
     description: Versioned finite signal-channel schema proposal
+  - path: studies/DD-019-signal-geometry/channels-v1.json
+    description: Five exact public channel records with all required semantic fields
+  - path: studies/DD-019-signal-geometry/report.md
+    description: Audited bounded exact findings and limitations
+  - path: studies/DD-019-signal-geometry/results/profile.svg
+    description: Exact five-channel action-budget profile plot
+  - path: studies/DD-019-signal-geometry/results/recovery-budgets.csv
+    description: Exact recovery-budget table for the named private baseline
+  - path: results/verified/20260722T084145Z_DD-019_a77bb786_04a5e9f0c5/outputs/profiles.json
+    description: Complete public-safe exact profiles
+  - path: results/verified/20260722T084145Z_DD-019_a77bb786_04a5e9f0c5/outputs/verification.json
+    description: Independent histogram agreement and exact validation
+claim_ids: [DD-C-0089, DD-C-0090, DD-C-0091]
+run_ids: [20260722T084145Z_DD-019_a77bb786_04a5e9f0c5]

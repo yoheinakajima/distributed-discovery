@@ -1848,3 +1848,66 @@ claims:
     first_added: "2026-07-22"
     last_checked: "2026-07-22"
     notes: In the favorable rational scenario at N=960, H15 through H20 have conditional estimated powers 1.000, 0.999, 0.918, 0.948, 1.000, and 0.999. Across the complete registered large-sample grid, 644 failures remain and are published. No participants were recruited, no human data were collected, and no experiment was conducted.
+  - id: DD-C-0089
+    study_id: DD-019
+    short_name: signal-geometry-five-channel-profile
+    statement: In the registered M=4, N=3 fixture, the exact pooled top-L profiles for the noisy point, noisy two-shortlist, guaranteed two-shortlist, explicit exclusion, and confidence-point channels are respectively (7/12,43/54,25/27), (35/64,79/96,539/576), (17/18,1,1), (16/27,26/27,1), and (295/384,175/192,31/32).
+    scope: Five declared finite conditionally independent channels, uniform four-target prior, three observations, binding distinct pooled top-L actions, and L=1,2,3; not a general channel theorem, anonymous-private optimum, strategic result, threshold technology, or M=16,N=8 result.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exact-labeled-enumeration-with-independent-histogram-enumeration
+    source_reference: results/verified/20260722T084145Z_DD-019_a77bb786_04a5e9f0c5/outputs/profiles.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/signal_geometry/model.py, src/distributed_discovery/signal_geometry/verification.py, src/distributed_discovery/signal_geometry/study.py]
+    run_ids: [20260722T084145Z_DD-019_a77bb786_04a5e9f0c5]
+    test_paths: [tests/unit/test_signal_geometry.py, tests/integration/test_signal_geometry_cli.py]
+    exactness_basis: The labeled method exhausts every target and ordered signal profile; the independent histogram method exhausts count compositions with multinomial weights. They agree on all 15 profile entries, normalize every channel, verify bounds/monotonicity, and reject a corrupted profile.
+    rounding_rule: exact rational fractions are authoritative
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: V_L is a binding pooled-planner value, not decentralized equilibrium discovery.
+  - id: DD-C-0090
+    study_id: DD-019
+    short_name: same-accuracy-profile-counterexample
+    statement: The registered half-accurate noisy-point channel and guaranteed two-shortlist channel both have one-person Bayes accuracy 1/2 and direct private-portfolio discovery 7/8, yet their pooled profiles differ, (7/12,43/54,25/27) versus (17/18,1,1); therefore one-person accuracy does not determine the complete bounded action-budget discovery profile.
+    scope: Exact M=4, N=3 counterexample for one-person Bayes accuracy (equivalently expected posterior maximum in this comparison) and the declared direct private baseline; it does not address mutual information, entropy reduction, a single likelihood ratio, elimination count, or every scalar summary.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exact-counterexample-with-two-enumeration-methods
+    source_reference: results/verified/20260722T084145Z_DD-019_a77bb786_04a5e9f0c5/outputs/summary.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/signal_geometry/model.py, src/distributed_discovery/signal_geometry/verification.py]
+    run_ids: [20260722T084145Z_DD-019_a77bb786_04a5e9f0c5]
+    test_paths: [tests/unit/test_signal_geometry.py, tests/integration/test_signal_geometry_cli.py]
+    exactness_basis: Both channel laws normalize exactly; exact Bayes accuracy and private baseline equality are checked, and two exhaustive methods reproduce each unequal profile entry.
+    rounding_rule: exact rational fractions and Boolean inequality are authoritative
+    dependencies: [DD-C-0089]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: This is a counterexample to one scalar's sufficiency, not evidence for a universal magic scalar.
+  - id: DD-C-0091
+    study_id: DD-019
+    short_name: signal-geometry-recovery-budgets
+    statement: Relative to each channel's declared direct private-portfolio baseline, the exact recovery budgets across the five registered channels are 3, 2, 1, 2, and 3 in registry order; in particular, the same-accuracy noisy point requires three pooled actions while the guaranteed two-shortlist requires one.
+    scope: The DD-019 M=4, N=3 direct private-portfolio baseline with capacity L<=3 and binding pooled top-L planner authority; recovery budgets change with the baseline and do not identify an unrestricted implementation result.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exact-profile-threshold-comparison-with-independent-profile-verifier
+    source_reference: results/verified/20260722T084145Z_DD-019_a77bb786_04a5e9f0c5/outputs/profiles.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/signal_geometry/model.py, src/distributed_discovery/signal_geometry/verification.py]
+    run_ids: [20260722T084145Z_DD-019_a77bb786_04a5e9f0c5]
+    test_paths: [tests/unit/test_signal_geometry.py, tests/integration/test_signal_geometry_cli.py]
+    exactness_basis: Exact verified profile entries are compared sequentially with exact private baselines; the registered corruption test alters a recovery budget and confirms the underlying threshold inequality rejects it.
+    rounding_rule: exact rational comparisons and integer budgets are authoritative
+    dependencies: [DD-C-0089]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: Null would denote no recovery within registered capacity; no registered channel has null recovery.

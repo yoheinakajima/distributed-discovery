@@ -29,10 +29,10 @@ The focused paper deployed through PR #123. Issue #126 records the separate
 documentation-only final acceptance and creates no research evidence.
 
 Program V5, *The Information Sharing Frontier*, completed its documentation
-baseline through PR #129. DD-019 is the sole registered Program V5 study on
-issue #130. Its bounded `M=4`, `N=3` channel schema, exact source, independent
-histogram verifier, corruption gates, and tests pass locally; no immutable run,
-promoted claim, or result exists before the clean-source gate.
+baseline through PR #129. DD-019's bounded `M=4`, `N=3` primary run passes from
+clean source commit `a77bb786`; labeled and histogram methods agree on all five
+channel profiles, and three corruptions are rejected. Claims DD-C-0089 through
+DD-C-0091 are independently reproduced exact bounded computational results.
 
 The repository is public and project-authored content is MIT-licensed. The
 canonical Shared Discovery Paradox repository remains pinned at
@@ -40,16 +40,29 @@ canonical Shared Discovery Paradox repository remains pinned at
 
 | Measure | Current value |
 | --- | ---: |
-| Ledger claims | 88 |
-| Passing immutable runs | 44 of 47 manifests |
-| Registered studies | 22 |
-| Python source files | 134 |
-| Public HTML routes | 68 |
-| Public data files | 66 |
+| Ledger claims | 91 |
+| Passing immutable runs | 45 of 48 manifests |
+| Registered studies | 23 |
+| Python source files | 138 |
+| Public HTML routes | 69 |
+| Public data files | 67 |
 | Laboratory routes | 16 |
 | Validated project papers | 6 |
 | Checksum-registered downloads | 22 |
-| Test suite | 212 collected tests |
+| Test suite | 217 collected tests |
+
+## Program V5 exact result
+
+DD-019 compares five declared finite channels at `M=4`, `N=3`. The exact
+pooled profiles `(V1,V2,V3)` are `(7/12,43/54,25/27)` for the half-accurate
+noisy point and `(17/18,1,1)` for the guaranteed two-shortlist. Both have
+one-person Bayes accuracy `1/2` and direct private-portfolio discovery `7/8`,
+so one-person accuracy does not determine the complete bounded profile. Their
+recovery budgets are respectively three and one. Across all five channels the
+recovery budgets are `3,2,1,2,3` in registry order.
+
+- DD-019: `20260722T084145Z_DD-019_a77bb786_04a5e9f0c5`,
+  DD-C-0089–0091.
 
 ## Program V4 exact result
 

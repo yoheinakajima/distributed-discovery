@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" role="img" aria-labelledby="title desc">
+  <title id="title">Exact action-budget discovery profiles</title>
+  <desc id="desc">Five lines compare pooled discovery for action budgets one through three.</desc>
+  <rect width="720" height="430" fill="#fff"/>
+  <g stroke="#333" fill="none"><path d="M80 35V360H680"/><path d="M80 360H680"/></g>
+  <g font-family="sans-serif" font-size="14" fill="#222"><text x="350" y="410">Action budget L</text><text transform="translate(20 250) rotate(-90)">Exact pooled discovery V_L</text><text x="75" y="382">1</text><text x="375" y="382">2</text><text x="675" y="382">3</text></g>
+  <polyline points="80,225 380,142 680,59" fill="none" stroke="#1f77b4" stroke-width="4"/>
+  <polyline points="80,237 380,133 680,55" fill="none" stroke="#ff7f0e" stroke-width="4"/>
+  <polyline points="80,53 380,35 680,35" fill="none" stroke="#2ca02c" stroke-width="4"/>
+  <polyline points="80,222 380,47 680,35" fill="none" stroke="#d62728" stroke-width="4"/>
+  <polyline points="80,142 380,64 680,45" fill="none" stroke="#9467bd" stroke-width="4"/>
+  <g font-family="sans-serif" font-size="12"><text x="100" y="55" fill="#2ca02c">guaranteed shortlist</text><text x="100" y="145" fill="#9467bd">confidence point</text><text x="100" y="215" fill="#1f77b4">noisy point</text><text x="100" y="235" fill="#d62728">exclusion</text><text x="100" y="255" fill="#ff7f0e">noisy shortlist</text></g>
+</svg>

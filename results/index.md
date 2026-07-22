@@ -1,8 +1,8 @@
 # Result index
 
-Current inventory: 42 immutable manifests, of which 39 have passing validation
-and exit status zero. Program V4 added passing DD-016 and DD-017 primary runs
-without overwriting prior evidence.
+Current inventory: 48 immutable manifests, of which 45 have passing validation
+and exit status zero. DD-019 adds one passing exact primary run without
+overwriting prior evidence.
 
 - [`baseline/`](baseline/README.md): canonical upstream reproduction artifacts.
 - [`verified/`](verified/README.md): policy-verified results.
@@ -100,6 +100,12 @@ games, 3,728 occupancy states, 87,216 independently checked labeled profiles,
 aggregate coalition-matching verification, direct mixed-payoff checks, and four
 rejected corruptions. It supports DD-C-0075 through DD-C-0078 while keeping
 weak Nash, pairwise, exact-size-tau, and symmetric-mixed concepts distinct.
+
+The DD-019 Signal Geometry run is
+`verified/20260722T084145Z_DD-019_a77bb786_04a5e9f0c5`. It preserves five
+finite channel laws, 15 exact pooled profile entries, independent histogram
+agreement, a same-accuracy profile counterexample, five recovery budgets, and
+three corruption rejections. It supports DD-C-0089 through DD-C-0091.
 
 All completed primary runs are immutable and must not be rerun just to refresh
 timestamps. Public summaries are generated only after manifest and output

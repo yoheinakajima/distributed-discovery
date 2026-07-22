@@ -1,8 +1,8 @@
 # Three Results paper visual QA
 
-- Review date: 2026-07-21 (America/Los_Angeles)
+- Review date: 2026-07-22 (America/Los_Angeles)
 - Artifact: `Three_Results_in_Distributed_Discovery.pdf`
-- PDF SHA-256: `efd76ae8c7524ebfff6c50ec8b42fb43527a6e47c2ad31cdd3192e0d6935ddfd`
+- PDF SHA-256: `8ea2afc82a4a9c759774e506fe857363cc4f71677ab707ca246ef5fabf1e5f8e`
 - Format: 14 letter-size pages
 - Renderer: Poppler `pdftoppm`, PNG at 120 dpi
 - Scope: every page reviewed at rendered-page scale
@@ -92,6 +92,13 @@ unchanged. Poppler renders of every page were inspected at 120 dpi; margins,
 tables, figures, equations, provenance notes, headings, page numbers, and
 references remain legible, resolved, and free of clipping, overlap, broken
 glyphs, or unintended blank pages.
+
+The DD-019 provenance pass rebuilt the paper after DD-C-0089 through
+DD-C-0091 changed the generated claim-ledger evidence table and checksum. The
+mathematical content and 14-page pagination remain unchanged. Poppler renders
+of every page were reviewed together and retain clean margins, readable tables,
+figures, equations, notes, headings, page numbers, and references without a
+blank, clipped, overlapping, or broken page.
 
 The final visual review matches the checksum above. Any PDF checksum change
 invalidates this record and requires a new all-page review.

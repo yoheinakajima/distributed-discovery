@@ -15,6 +15,12 @@ def test_channel_schema_is_valid() -> None:
         (ROOT / "studies/DD-019-signal-geometry/schemas/channel-v1.schema.json").read_text()
     )
     Draft202012Validator.check_schema(schema)
+    registry = json.loads((ROOT / "studies/DD-019-signal-geometry/channels-v1.json").read_text())
+    validator = Draft202012Validator(schema)
+    assert not [error for record in registry for error in validator.iter_errors(record)]
+    assert [record["channel_id"] for record in registry] == [
+        channel["channel_id"] for channel in channels()
+    ]
 
 
 def test_channel_laws_normalize() -> None:
