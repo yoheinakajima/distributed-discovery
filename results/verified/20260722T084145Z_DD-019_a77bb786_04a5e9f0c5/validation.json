@@ -1,0 +1,11 @@
+{
+  "all_corruptions_rejected": true,
+  "channel_normalization": true,
+  "different_profiles": true,
+  "elapsed_seconds": 0.081087,
+  "method_agreement": true,
+  "passed": true,
+  "profile_bounds_and_monotonicity": true,
+  "same_accuracy": true,
+  "time_cap_seconds": 120
+}

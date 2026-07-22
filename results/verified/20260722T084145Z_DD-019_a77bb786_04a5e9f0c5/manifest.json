@@ -1,0 +1,33 @@
+{
+  "command": "make dd019-signal-geometry",
+  "config_hash_sha256": "04a5e9f0c50b214375c41445565a7d9e2f0048064b706141c6fad95bae0f2680",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-22T08:41:45.461449Z",
+  "exit_status": 0,
+  "git_commit": "a77bb7867ba98588ccef3f1c4f45a3306cce299f",
+  "git_dirty": false,
+  "input_hashes": {
+    "src/distributed_discovery/signal_geometry/model.py": "d671aeeccffc2d99953ae671f10b7a3874e4ccdfefabcfcc27570e8d4ec5af64",
+    "src/distributed_discovery/signal_geometry/study.py": "f8bc4e58d506ff0d99464acab6a4d41723ed55a238f1a97933ca1b1e1c4cc188",
+    "src/distributed_discovery/signal_geometry/verification.py": "f606e5295e9be00e83fe5c2d8f2f5fd6f7c438485acc159c9b114b4c2f57b08b",
+    "studies/DD-019-signal-geometry/configs/baseline.yml": "d45ead9472a87602504232d5b3bb859540351c923a53b4b7b56be97bffae5966",
+    "studies/DD-019-signal-geometry/model.md": "203fbc4b735974121dc267ffd9cf497c15a3c44e5bdb9045b8a3504b53b19a72",
+    "studies/DD-019-signal-geometry/schemas/channel-v1.schema.json": "059ac9ebc945e573ea605ba3b9d251ef1fd353a7066bb96057d4007411075351"
+  },
+  "outputs": {
+    "outputs/corruption-tests.json": "e043b54e5e9131ccb5e01f853f903405778a0948f68b2283732338deb0f73883",
+    "outputs/profiles.json": "a7da8a20aa2482e15339a9ffde94843214a5f78c838270c756aa4bb1d28383a3",
+    "outputs/summary.json": "607d03fba773fed21ff542359e89c0d870299f6406a173093d75475f31a84a03",
+    "outputs/verification.json": "986e6900c8bdce2e773c85d2d1e08b68a417bc03b2b9993bb48192f9aaecfbb1"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "run_id": "20260722T084145Z_DD-019_a77bb786_04a5e9f0c5",
+  "schema_version": 1,
+  "started_utc": "2026-07-22T08:41:45.459821Z",
+  "study_id": "DD-019",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

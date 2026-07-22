@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://distributed-discovery.org/schemas/signal-channel/v1",
+  "title": "Finite signal channel",
+  "type": "object",
+  "required": ["schema_version", "channel_id", "target_set", "prior", "signal_alphabet", "conditional_distribution", "symmetry_class", "likelihood_ratios", "posterior_update", "private_bayes_action_correspondence", "tie_breaking", "signal_cost", "source_dependence", "evaluation_mode"],
+  "properties": {
+    "schema_version": {"const": "signal-channel-v1"},
+    "channel_id": {"type": "string", "minLength": 1},
+    "target_set": {"type": "array", "minItems": 2, "uniqueItems": true},
+    "prior": {"type": "array", "minItems": 2, "items": {"type": "string", "pattern": "^[0-9]+/[1-9][0-9]*$"}},
+    "signal_alphabet": {"type": "array", "minItems": 1, "uniqueItems": true},
+    "conditional_distribution": {"type": "object", "minProperties": 2},
+    "symmetry_class": {"type": "string", "minLength": 1},
+    "likelihood_ratios": {"type": "object"},
+    "posterior_update": {"type": "string", "minLength": 1},
+    "private_bayes_action_correspondence": {"type": "string", "minLength": 1},
+    "tie_breaking": {"type": "string", "minLength": 1},
+    "signal_cost": {"type": "string", "pattern": "^[0-9]+/[1-9][0-9]*$"},
+    "source_dependence": {"enum": ["conditionally-independent", "correlated", "copied", "declared-other"]},
+    "evaluation_mode": {"enum": ["exact-rational", "interval-certified", "monte-carlo"]}
+  },
+  "additionalProperties": false
+}

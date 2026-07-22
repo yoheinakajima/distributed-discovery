@@ -24,6 +24,7 @@
 | DD-016 | Threshold Discovery | complete bounded study | Preserve DD-C-0071 through DD-C-0074, the immutable two-method run, and the selected-equilibrium boundary |
 | DD-017 | Threshold Equilibrium Selection | complete bounded study | Preserve DD-C-0075 through DD-C-0078, the immutable registry, and the distinct coalition concepts |
 | DD-018 | Minimum Viable Team Mechanisms | complete bounded study | Preserve DD-C-0083 through DD-C-0086, the immutable run, and authority/incentive/coalition boundaries |
+| DD-019 | Signal Geometry and the Action-Budget Discovery Profile | complete bounded study; deployment pending | Preserve DD-C-0089 through DD-C-0091, the immutable run, and private/planner/scalar boundaries |
 
 Each executed directory contains its question, model, plan, claims view, status,
 results index, and report. Program V3's completed sequence is governed by

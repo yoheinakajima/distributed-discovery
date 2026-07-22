@@ -1,0 +1,19 @@
+schema_version: dd019-signal-geometry-v1
+study_id: DD-019
+candidates: 4
+agents: 3
+action_budgets: [1, 2, 3]
+channel_ids:
+  - noisy-point-half
+  - noisy-shortlist-three-quarters
+  - guaranteed-shortlist-two
+  - explicit-exclusion
+  - confidence-point
+largest_labeled_target_signal_states: 2048
+runtime_estimate_seconds: 10
+time_cap_seconds: 120
+memory_estimate_mb: 64
+memory_cap_mb: 1024
+random_seeds:
+  algorithm: []
+  model: null

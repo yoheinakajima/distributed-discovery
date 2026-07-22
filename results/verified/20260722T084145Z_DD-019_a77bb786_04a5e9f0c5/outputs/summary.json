@@ -1,0 +1,18 @@
+{
+  "channels": 5,
+  "different_profile_witness": true,
+  "point_profile": [
+    "7/12",
+    "43/54",
+    "25/27"
+  ],
+  "point_recovery_budget": 3,
+  "same_accuracy_witness": true,
+  "shortlist_profile": [
+    "17/18",
+    "1",
+    "1"
+  ],
+  "shortlist_recovery_budget": 1,
+  "witness_accuracy": "1/2"
+}
