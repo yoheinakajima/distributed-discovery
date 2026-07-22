@@ -1,5 +1,5 @@
 study_id: DD-010
-status: complete-versioned-attention-extension
-evidence_status: v1-preserved-v2-exact-independent-recomputation-and-three-corruption-gates
-next_action: publish the v2 benchmark surface, merge, deploy, and preserve both immutable runs
-updated_utc: 2026-07-21T23:02:50Z
+status: active-versioned-program-v4-extension
+evidence_status: v1-v2-preservation-and-v3-frozen-source-no-result-yet
+next_action: commit the validated v3 frozen source, open the draft PR, then execute the one benchmark run from the clean commit
+updated_utc: 2026-07-22T05:44:06Z

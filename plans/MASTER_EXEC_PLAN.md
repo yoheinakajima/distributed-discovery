@@ -226,6 +226,14 @@ before its independent verifier and immutable primary run pass.
   `29893840755` and Pages `29893840796` passed. The live study and JSON returned
   HTTP 200 with the immutable run and DD-C-0083 through DD-C-0086. V4.5 is
   complete; DiscoveryBench v3 is the next sequential milestone.
+- 2026-07-22: DD-018 closeout PR #115 merged as `f45c18b` and passed
+  post-merge CI `29894183858` and Pages `29894183861`. DiscoveryBench v3 issue
+  #116 and branch `research/discoverybench-v3-program-v4` are the sole active
+  lane. Its frozen registration has 24 tasks, 29 protocols, 39 metrics, 696
+  candidate pairs, 36 compatible exact rows, and 660 explicit exclusions. It
+  adds four DD-016/017/015/018 tasks while preserving v1 and v2, capability
+  isolation, disabled external adapters, and no composite score. No v3 run or
+  claim exists before the clean-source gate.
 
 ### Program V3 attention queue (complete, 2026-07-21)
 

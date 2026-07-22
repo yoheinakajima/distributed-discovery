@@ -70,6 +70,41 @@ def test_attention_v2_extends_v1_without_changing_it() -> None:
     }
 
 
+def test_threshold_v3_extends_v2_without_changing_earlier_versions() -> None:
+    v1 = run_golden_suite()
+    v2 = run_golden_suite("v2")
+    v3 = run_golden_suite("v3")
+    assert (len(task_registry("v3")), len(protocol_registry("v3")), len(metric_registry("v3"))) == (
+        24,
+        29,
+        39,
+    )
+    assert (v3["candidate_pairs"], v3["compatible_pairs"], v3["excluded_pairs"]) == (
+        696,
+        36,
+        660,
+    )
+    v1_rows = [(row["task_id"], row["protocol_id"], row["metrics"]) for row in v1["results"]]
+    v2_rows = [(row["task_id"], row["protocol_id"], row["metrics"]) for row in v2["results"]]
+    assert [
+        (row["task_id"], row["protocol_id"], row["metrics"])
+        for row in v3["results"][: len(v1_rows)]
+    ] == v1_rows
+    assert [
+        (row["task_id"], row["protocol_id"], row["metrics"])
+        for row in v3["results"][: len(v2_rows)]
+    ] == v2_rows
+    assert v3["composite_score"] is None
+    assert verify_certificate(v3, repository_root(), "v3")["passed"] is True
+    assert all(corruption_tests(v3, repository_root(), "v3").values())
+    mechanism = run_pair(task_registry("v3")[-1], "marginal-team-contribution", "v3")
+    assert mechanism["metrics"] == {
+        "planner-portfolio-rows": 5,
+        "pair-stable-rows": 5,
+        "equilibrium-multiplicity": 21,
+    }
+
+
 def test_bad_task_fixtures_reject_ambiguous_information_and_objectives() -> None:
     missing_information = copy.deepcopy(task_registry()[0])
     del missing_information["per_agent_information"]

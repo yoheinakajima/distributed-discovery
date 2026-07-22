@@ -10,3 +10,5 @@ public_artifacts:
     description: Versioned task schema
   - path: studies/DD-010-discoverybench/schemas/task-v2.schema.json
     description: Versioned selective-attention task schema
+  - path: studies/DD-010-discoverybench/schemas/task-v3.schema.json
+    description: Versioned Program V4 threshold, dynamic, and mechanism task schema

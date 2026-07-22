@@ -8,6 +8,7 @@ import platform
 import subprocess
 from datetime import UTC, datetime
 from pathlib import Path
+from time import perf_counter
 
 import yaml
 
@@ -41,6 +42,7 @@ def run_registered(
     root = repository_root()
     config_path = root / config_relative
     config = yaml.safe_load(config_path.read_text(encoding="utf-8"))
+    started_clock = perf_counter()
     digest = hashlib.sha256(json.dumps(config, sort_keys=True).encode()).hexdigest()
     commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip()
     dirty = bool(
@@ -56,6 +58,20 @@ def run_registered(
     (run / "config.yml").write_text(config_path.read_text(encoding="utf-8"), encoding="utf-8")
 
     golden = run_golden_suite(version)
+    registered_counts = {
+        "golden_tasks": "task_count",
+        "built_in_protocols": "protocol_count",
+        "metrics": "metric_count",
+        "candidate_pairs": "candidate_pairs",
+        "compatible_pairs": "compatible_pairs",
+        "excluded_pairs": "excluded_pairs",
+    }
+    for config_key, result_key in registered_counts.items():
+        result_value = golden[result_key]
+        if not isinstance(result_value, int):
+            raise TypeError(f"benchmark count is not integral: {result_key}")
+        if config_key in config and int(config[config_key]) != result_value:
+            raise RuntimeError(f"registered benchmark count mismatch: {config_key}")
     verification = verify_certificate(golden, root, version)
     corruption = corruption_tests(golden, root, version)
     if not verification["passed"] or not all(corruption.values()):
@@ -64,6 +80,9 @@ def run_registered(
     simulated = run_simulated_suite(
         simulation_config["seeds"], simulation_config["replications_per_seed"]
     )
+    elapsed = perf_counter() - started_clock
+    if elapsed > int(config["time_cap_seconds"]):
+        raise RuntimeError("registered benchmark exceeded its time cap")
     summary = {
         "task_count": golden["task_count"],
         "benchmark_version": version,
@@ -77,6 +96,8 @@ def run_registered(
         "simulated_seeds": len(simulation_config["seeds"]),
         "simulated_replications": len(simulation_config["seeds"])
         * simulation_config["replications_per_seed"],
+        "elapsed_seconds": round(elapsed, 6),
+        "time_cap_seconds": int(config["time_cap_seconds"]),
     }
     artifacts = {
         "task-registry.json": task_registry(version),

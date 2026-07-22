@@ -18,6 +18,9 @@ METRIC_SCHEMA_VERSION = "discoverybench-metric-v1"
 ATTENTION_TASK_SCHEMA_VERSION = "discoverybench-task-v2"
 ATTENTION_PROTOCOL_SCHEMA_VERSION = "discoverybench-protocol-v2"
 ATTENTION_METRIC_SCHEMA_VERSION = "discoverybench-metric-v2"
+THRESHOLD_TASK_SCHEMA_VERSION = "discoverybench-task-v3"
+THRESHOLD_PROTOCOL_SCHEMA_VERSION = "discoverybench-protocol-v3"
+THRESHOLD_METRIC_SCHEMA_VERSION = "discoverybench-metric-v3"
 
 PROHIBITED_CAPABILITIES = frozenset(
     {
@@ -118,7 +121,7 @@ def protocol_registry(version: str = "v1") -> list[dict[str, object]]:
         ("dd006b-mechanism", "Use the registered strict DD-006B mechanism row."),
         ("registered-atlas-architecture", "Execute one registered coherent Atlas cell."),
     ]
-    if version == "v2":
+    if version in {"v2", "v3"}:
         specs += [
             ("private-only", "Ignore the public signal and use private signals only."),
             ("public-only", "All agents use the public signal."),
@@ -135,6 +138,41 @@ def protocol_registry(version: str = "v1") -> list[dict[str, object]]:
             ("conditional-public-dominant", "Follow public evidence on disagreement."),
             ("third-option-contrarian", "Choose the third label on disagreement."),
         ]
+        if version == "v3":
+            specs += [
+                (
+                    "threshold-tied-mode-selection",
+                    "Use the DD-016 registered independent tied-mode selection.",
+                ),
+                (
+                    "threshold-minimum-team-planner",
+                    "Assign minimum teams to the posterior top-L candidates.",
+                ),
+                (
+                    "threshold-equilibrium-census",
+                    "Audit the DD-017 weak-Nash and small-coalition registry.",
+                ),
+                (
+                    "dynamic-autonomous-bayes",
+                    "Use the DD-015 full-credit sequential Bayesian policy.",
+                ),
+                (
+                    "dynamic-common-information-planner",
+                    "Use the DD-015 exact common-information planner.",
+                ),
+                (
+                    "team-token-mechanism",
+                    "Use the DD-018 fixed balanced team-token rule.",
+                ),
+                (
+                    "marginal-team-contribution",
+                    "Use the DD-018 exactly-minimal-team contribution rule.",
+                ),
+                (
+                    "universal-pooling-team",
+                    "Use the DD-018 universal-pooling team response.",
+                ),
+            ]
     elif version != "v1":
         raise ValueError(f"unknown benchmark version: {version}")
     capabilities = frozenset(
@@ -154,9 +192,15 @@ def protocol_registry(version: str = "v1") -> list[dict[str, object]]:
     )
     return [
         {
-            "schema_version": PROTOCOL_SCHEMA_VERSION
-            if version == "v1"
-            else ATTENTION_PROTOCOL_SCHEMA_VERSION,
+            "schema_version": (
+                PROTOCOL_SCHEMA_VERSION
+                if version == "v1"
+                else (
+                    ATTENTION_PROTOCOL_SCHEMA_VERSION
+                    if version == "v2"
+                    else THRESHOLD_PROTOCOL_SCHEMA_VERSION
+                )
+            ),
             "protocol_id": protocol_id,
             "description": description,
             "capabilities": sorted(capabilities),
@@ -277,7 +321,7 @@ def metric_registry(version: str = "v1") -> list[dict[str, object]]:
             ["deviation_payoffs"],
         ),
     ]
-    if version == "v2":
+    if version in {"v2", "v3"}:
         definitions += [
             (
                 "attention-count",
@@ -328,13 +372,94 @@ def metric_registry(version: str = "v1") -> list[dict[str, object]]:
                 ["contingent_policy"],
             ),
         ]
+        if version == "v3":
+            definitions += [
+                (
+                    "planner-discovery",
+                    "Exact deterministic minimum-team planner discovery.",
+                    "probability",
+                    ["planner_frontier"],
+                ),
+                (
+                    "expected-viable-candidates",
+                    "Expected count of candidates meeting the declared threshold.",
+                    "candidates",
+                    ["occupancies", "threshold"],
+                ),
+                (
+                    "zero-worst-equilibrium-games",
+                    "Registered games whose worst weak pure equilibrium has zero discovery.",
+                    "games",
+                    ["equilibrium_registry"],
+                ),
+                (
+                    "pair-instability-games",
+                    "Registered games with no pairwise-strict-stable weak pure equilibrium.",
+                    "games",
+                    ["pair_deviations"],
+                ),
+                (
+                    "tau-instability-games",
+                    "Registered games with no exact-size-tau-strict-stable weak equilibrium.",
+                    "games",
+                    ["tau_deviations"],
+                ),
+                (
+                    "tied-mode-failure-games",
+                    "Registered games where tied-mode uniform mixing is not an equilibrium.",
+                    "games",
+                    ["mixed_action_payoffs"],
+                ),
+                (
+                    "planner-strict-gain-rows",
+                    "Exact rows where the dynamic planner strictly exceeds autonomous play.",
+                    "rows",
+                    ["dynamic_values"],
+                ),
+                (
+                    "visibility-joint-loss-cells",
+                    "Fixed-budget cells where visibility lowers discovery and dispersion.",
+                    "cells",
+                    ["visibility_control"],
+                ),
+                (
+                    "stopping-action-savings-cells",
+                    "Cells where stopping strictly lowers expected actions.",
+                    "cells",
+                    ["fixed_and_stopping_values"],
+                ),
+                (
+                    "planner-portfolio-rows",
+                    "Mechanism rows attaining the minimum-team planner portfolio.",
+                    "rows",
+                    ["mechanism_registry"],
+                ),
+                (
+                    "pair-stable-rows",
+                    "Rows passing the declared strict-member pair-deviation check.",
+                    "rows",
+                    ["pair_deviations"],
+                ),
+                (
+                    "equilibrium-multiplicity",
+                    "Exact pure-equilibrium count or fixture-ordered count vector.",
+                    "count-or-vector",
+                    ["equilibrium_registry"],
+                ),
+            ]
     elif version != "v1":
         raise ValueError(f"unknown benchmark version: {version}")
     return [
         {
-            "schema_version": METRIC_SCHEMA_VERSION
-            if version == "v1"
-            else ATTENTION_METRIC_SCHEMA_VERSION,
+            "schema_version": (
+                METRIC_SCHEMA_VERSION
+                if version == "v1"
+                else (
+                    ATTENTION_METRIC_SCHEMA_VERSION
+                    if version == "v2"
+                    else THRESHOLD_METRIC_SCHEMA_VERSION
+                )
+            ),
             "metric_id": metric_id,
             "definition": definition,
             "scope": "registered task observables only",
@@ -606,7 +731,7 @@ def task_registry(version: str = "v1") -> list[dict[str, object]]:
     ]
     if version == "v1":
         return tasks
-    if version != "v2":
+    if version not in {"v2", "v3"}:
         raise ValueError(f"unknown benchmark version: {version}")
     for task in tasks:
         task["schema_version"] = ATTENTION_TASK_SCHEMA_VERSION
@@ -735,14 +860,124 @@ def task_registry(version: str = "v1") -> list[dict[str, object]]:
             schema_version=ATTENTION_TASK_SCHEMA_VERSION,
         ),
     ]
+    if version == "v2":
+        return tasks
+
+    for task in tasks:
+        task["schema_version"] = THRESHOLD_TASK_SCHEMA_VERSION
+    dd016_run = "20260722T021526Z_DD-016_00271ff8_123b2809e3"
+    dd017_run = "20260722T024032Z_DD-017_033452f6_3d2c74fdfb"
+    dd015_run = "20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a"
+    dd018_run = "20260722T051847Z_DD-018_a193f602_3b3ddac173"
+    tasks += [
+        _task(
+            21,
+            "dd016-threshold-discovery",
+            8,
+            ["threshold-tied-mode-selection", "threshold-minimum-team-planner"],
+            {
+                "threshold-tied-mode-selection": {
+                    "discovery": "275661897594857/576650390625000",
+                    "planner-discovery": "223779310319051/333709716796875",
+                    "expected-viable-candidates": "4605284003019928/3243658447265625",
+                },
+                "threshold-minimum-team-planner": {
+                    "discovery": "223779310319051/333709716796875",
+                    "planner-discovery": "223779310319051/333709716796875",
+                    "expected-viable-candidates": 4,
+                },
+            },
+            ["DD-C-0071", "DD-C-0073"],
+            [dd016_run],
+            coverage="threshold-two atomic discovery",
+            reward="selected equal-split rule or common-payoff planner",
+            schema_version=THRESHOLD_TASK_SCHEMA_VERSION,
+        ),
+        _task(
+            22,
+            "dd017-threshold-equilibrium-registry",
+            6,
+            ["threshold-equilibrium-census"],
+            {
+                "threshold-equilibrium-census": {
+                    "zero-worst-equilibrium-games": 52,
+                    "pair-instability-games": 8,
+                    "tau-instability-games": 35,
+                    "tied-mode-failure-games": 21,
+                }
+            },
+            ["DD-C-0075", "DD-C-0076", "DD-C-0077", "DD-C-0078"],
+            [dd017_run],
+            reward="threshold-adjusted equal split",
+            schema_version=THRESHOLD_TASK_SCHEMA_VERSION,
+        ),
+        _task(
+            23,
+            "dd015-dynamic-attention",
+            3,
+            ["dynamic-autonomous-bayes", "dynamic-common-information-planner"],
+            {
+                "dynamic-autonomous-bayes": {
+                    "visibility-joint-loss-cells": 18,
+                    "stopping-action-savings-cells": 32,
+                },
+                "dynamic-common-information-planner": {
+                    "planner-strict-gain-rows": 38,
+                    "stopping-action-savings-cells": 32,
+                },
+            },
+            ["DD-C-0079", "DD-C-0080", "DD-C-0081"],
+            [dd015_run],
+            timing="sequential",
+            feedback="visible prior actions with fixed-budget or stopping feedback",
+            reward="full duplicate credit or common discovery objective",
+            schema_version=THRESHOLD_TASK_SCHEMA_VERSION,
+        ),
+        _task(
+            24,
+            "dd018-minimum-viable-team-mechanisms",
+            4,
+            [
+                "team-token-mechanism",
+                "marginal-team-contribution",
+                "universal-pooling-team",
+            ],
+            {
+                "team-token-mechanism": {
+                    "planner-portfolio-rows": 5,
+                    "pair-stable-rows": 5,
+                    "equilibrium-multiplicity": 25,
+                },
+                "marginal-team-contribution": {
+                    "planner-portfolio-rows": 5,
+                    "pair-stable-rows": 5,
+                    "equilibrium-multiplicity": 21,
+                },
+                "universal-pooling-team": {
+                    "planner-portfolio-rows": 0,
+                    "pair-stable-rows": 1,
+                    "equilibrium-multiplicity": "21,9,9,3,9",
+                },
+            },
+            ["DD-C-0083", "DD-C-0084", "DD-C-0085", "DD-C-0086"],
+            [dd018_run],
+            coverage="threshold-two atomic discovery",
+            reward="registered common-posterior team mechanism",
+            schema_version=THRESHOLD_TASK_SCHEMA_VERSION,
+        ),
+    ]
     return tasks
 
 
 def validate_task(task: Mapping[str, object], schema_path: Path | None = None) -> None:
     path = schema_path or repository_root() / "studies/DD-010-discoverybench/schemas" / (
-        "task-v2.schema.json"
-        if task.get("schema_version") == ATTENTION_TASK_SCHEMA_VERSION
-        else "task-v1.schema.json"
+        "task-v3.schema.json"
+        if task.get("schema_version") == THRESHOLD_TASK_SCHEMA_VERSION
+        else (
+            "task-v2.schema.json"
+            if task.get("schema_version") == ATTENTION_TASK_SCHEMA_VERSION
+            else "task-v1.schema.json"
+        )
     )
     schema = __import__("json").loads(path.read_text(encoding="utf-8"))
     jsonschema.validate(dict(task), schema)

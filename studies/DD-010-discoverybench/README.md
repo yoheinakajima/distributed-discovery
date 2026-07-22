@@ -15,3 +15,10 @@ five DD-012--DD-014 tasks, eight protocols, and eight metrics while keeping the
 v1 command default and exact output vectors unchanged. Run it from a clean
 commit with `make dd010-attention`, or inspect it with
 `distributed-discovery benchmark --version v2 run-golden`.
+
+The Program V4 extension is explicitly versioned as v3. It appends four exact
+DD-016--DD-018 tasks, eight protocols, and twelve metrics while preserving v1
+as the default and v2 as the unchanged attention extension. Inspect it with
+`distributed-discovery benchmark --version v3 run-golden`. The registered
+primary command is `make dd010-threshold` and may run only from clean committed
+source.
