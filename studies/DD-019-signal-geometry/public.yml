@@ -1,0 +1,12 @@
+study_id: DD-019
+title: Signal Geometry and the Action-Budget Discovery Profile
+slug: dd-019
+phase: registered
+summary: Registered exact finite comparison of pooled top-L discovery across five declared signal channels; no run or claim yet.
+public_artifacts:
+  - path: studies/DD-019-signal-geometry/model.md
+    description: Frozen finite channel model and baseline semantics
+  - path: studies/DD-019-signal-geometry/plan.md
+    description: Living bounded execution and validation plan
+  - path: studies/DD-019-signal-geometry/schemas/channel-v1.schema.json
+    description: Versioned finite signal-channel schema proposal

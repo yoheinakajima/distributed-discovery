@@ -1,0 +1,5 @@
+study_id: DD-019
+status: registered-source-development
+evidence_status: no-run-no-claim
+next_action: implement and validate the frozen exact source before the clean source commit
+updated_utc: 2026-07-22T08:32:00Z

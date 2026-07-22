@@ -58,10 +58,9 @@ Progress:
 - [x] V4.6 — Extend DiscoveryBench and the synthetic experiment kit.
 - [x] V4.7 — Build the focused paper and Program V4 Labs.
 - [x] V4.8 — Run final acceptance, reconcile documentation, and hand off.
-- [ ] V5.0 — Merge the Program V5 documentation baseline after V4 handoff
-  (active on issue #128).
+- [x] V5.0 — Merge the Program V5 documentation baseline after V4 handoff.
 - [ ] V5.1 — Register and execute the first bounded Signal Geometry and
-  Action-Budget Discovery Profile study.
+  Action-Budget Discovery Profile study (active as DD-019 on issue #130).
 
 Validation strategy: use `make bootstrap`, `make verify`, `make papers`, and
 `make site` at the prescribed gates; retain immutable run artifacts and run
@@ -85,6 +84,16 @@ do not register the first V5 study before that baseline merges.
   `docs/program-v5-information-sharing-frontier` are now the sole active lane.
   This baseline is documentation-only and creates no study ID, claim, run,
   result, or scientific source.
+- 2026-07-22: Program V5 baseline PR #129 passed both branch workflows and
+  squash-merged as `ac2fb32`; post-merge CI `29904077156` and Pages
+  `29904077239` passed. The live registry contains 22 studies through DD-018,
+  so issue #130 and branch `research/dd019-signal-geometry` register DD-019.
+  Its exact `M=4`, `N=3`, five-channel source has at most 2,048 labeled
+  target/signal states per channel. Two exact methods, schema and normalization
+  checks, profile bounds, same-accuracy test, and three corruption gates pass;
+  full pre-run acceptance is 216 tests, 88 claims, 47 manifests, and a
+  69-page/23-study site. No DD-019 run or claim exists before the clean source
+  commit and draft PR.
 
 - 2026-07-22: owner authorization reconciles the long-term theorem portfolio
   with Program V5, the Information Sharing Frontier. Live audit found clean

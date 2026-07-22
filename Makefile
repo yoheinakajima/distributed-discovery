@@ -159,6 +159,12 @@ dd018-preview:
 dd018-team-mechanisms:
 	$(PY) -m distributed_discovery.team_mechanisms.study
 
+dd019-preview:
+	$(PY) -m distributed_discovery.signal_geometry.study --preview
+
+dd019-signal-geometry:
+	$(PY) -m distributed_discovery.signal_geometry.study
+
 papers:
 	./scripts/build_papers.sh all
 

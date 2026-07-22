@@ -28,10 +28,11 @@ select exact immutable-run rows and preserve complete no-JavaScript tables.
 The focused paper deployed through PR #123. Issue #126 records the separate
 documentation-only final acceptance and creates no research evidence.
 
-Program V5, *The Information Sharing Frontier*, is at its documentation-only
-baseline on issue #128. Its work-package order, finite signal-channel schema
-proposal, and evidence rules are registered in `docs/program-v5.md`. No Program
-V5 study ID, claim, run, or result exists yet.
+Program V5, *The Information Sharing Frontier*, completed its documentation
+baseline through PR #129. DD-019 is the sole registered Program V5 study on
+issue #130. Its bounded `M=4`, `N=3` channel schema, exact source, independent
+histogram verifier, corruption gates, and tests pass locally; no immutable run,
+promoted claim, or result exists before the clean-source gate.
 
 The repository is public and project-authored content is MIT-licensed. The
 canonical Shared Discovery Paradox repository remains pinned at
