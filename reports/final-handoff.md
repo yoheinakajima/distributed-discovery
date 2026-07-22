@@ -6,8 +6,9 @@
 > Incremental Sharing is merged and deployed through PR #136 with immutable
 > run `20260722T142551Z_DD-020_3854fff6_37c11a850a` and DD-C-0092–0096. Its
 > editorial gate assigns primary ownership to a future Information Sharing
-> Frontier paper and authorizes no submission. The Program V4 evidence below
-> is unchanged.
+> Frontier paper and authorizes no submission. Its output-connected public Lab
+> is built under issue #139 and PR #140 directly from the immutable run. The
+> Program V4 evidence below is unchanged.
 
 Program V4, *Threshold Discovery: Coordination, Crowding, and Minimum Viable
 Teams*, is complete at its registered bounded scope. This documentation-only
@@ -93,7 +94,7 @@ paper with no DOI, submission, peer review, or verified novelty claim.
 
 Program V5's documentation baseline, DD-019, and governance architecture are
 deployed. DD-020 is complete and deployed through PR #136; do not rerun its
-passing primary configuration. Preserve the documentation-only editorial gate
-and synthesis prospectus, then publish the DD-020 result and output-connected
-Lab.
+passing primary configuration. Preserve the documentation-only editorial gate,
+synthesis prospectus, and exact output-connected Lab; complete the final
+repository and live-site acceptance before allocating later research.
 Settings-only issue #32 remains separate.

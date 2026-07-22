@@ -1,5 +1,5 @@
 study_id: DD-020
 status: complete-bounded-study
 evidence_status: three-verified-analytic-results-and-two-independently-reproduced-exact-computational-results
-next_action: preserve the immutable run, scope boundaries, and editorial ownership while publishing the output-connected Lab
-updated_utc: 2026-07-22T14:25:51Z
+next_action: preserve the immutable run, scope boundaries, editorial ownership, and output-connected Lab while completing final acceptance
+updated_utc: 2026-07-22T15:15:58Z

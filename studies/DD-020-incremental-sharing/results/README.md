@@ -5,3 +5,6 @@ The immutable source of record is
 are public summaries derived from its exact `channel-profiles.json`. Exact
 fractions, not plotted positions, are authoritative.
 
+The public Incremental Sharing Lab copies the immutable JSON outputs exactly
+and derives all 2,054 adjacent transitions for selection and decomposition. It
+is a presentation layer, not a new run or source of research evidence.

@@ -13,3 +13,8 @@ Primary run `20260722T142551Z_DD-020_3854fff6_37c11a850a` passed from clean
 commit `3854fff6`. Claims DD-C-0092 through DD-C-0096 record the verified
 identity, two analytic theorems, independently reproduced point census, and
 five-channel counterexample. See `report.md` for exact results and limits.
+
+The public Incremental Sharing Lab is generated directly from that run's
+2,555-row point census and five channel profiles. Its 2,054 adjacent-transition
+table decomposes every displayed increment into aggregation gain and lost
+independent rescue; it does not rerun or interpolate the study.

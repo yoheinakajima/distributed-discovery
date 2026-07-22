@@ -259,3 +259,124 @@ document.querySelectorAll("[data-conditional-lab]").forEach((lab) => {
   q.value = "1/2";
   render();
 });
+
+document.querySelectorAll("[data-incremental-lab]").forEach((lab) => {
+  const mode = lab.querySelector("#incremental-mode");
+  const targets = lab.querySelector("#incremental-targets");
+  const agents = lab.querySelector("#incremental-agents");
+  const accuracy = lab.querySelector("#incremental-accuracy");
+  const channel = lab.querySelector("#incremental-channel");
+  const step = lab.querySelector("#incremental-step");
+  const comparison = lab.querySelector("#incremental-comparison");
+  const status = lab.querySelector("#incremental-status");
+  const pointControls = Array.from(lab.querySelectorAll("[data-point-control]"));
+  const channelControls = Array.from(lab.querySelectorAll("[data-channel-control]"));
+  const outputs = Array.from(lab.querySelectorAll("[data-incremental-output]"));
+  const chart = lab.querySelector("[data-incremental-chart]");
+  const chartPoints = Array.from(lab.querySelectorAll("[data-profile-point]"));
+  const comparisonOutput = lab.querySelector("[data-incremental-comparison]");
+  const rows = Array.from(document.querySelectorAll("tr[data-incremental-row]"));
+  if (!mode || !targets || !agents || !accuracy || !channel || !step ||
+      !comparison || !status || !chart || !comparisonOutput || !rows.length) return;
+
+  const fraction = (value) => {
+    const parts = value.split("/").map(Number);
+    return parts.length === 2 ? parts[0] / parts[1] : parts[0];
+  };
+  const setControlGroup = (controls, enabled) => {
+    controls.forEach((container) => {
+      container.hidden = !enabled;
+      const control = container.querySelector("select");
+      if (control) control.disabled = !enabled;
+    });
+  };
+  const constrainAccuracy = () => {
+    const available = Array.from(accuracy.options).filter((option) =>
+      (option.dataset.targets || "").split(",").includes(targets.value));
+    Array.from(accuracy.options).forEach((option) => {
+      const enabled = available.includes(option);
+      option.hidden = !enabled;
+      option.disabled = !enabled;
+    });
+    if (!available.includes(accuracy.options[accuracy.selectedIndex])) accuracy.value = available[0].value;
+  };
+  const constrainStep = () => {
+    const maximum = mode.value === "channel" ? 2 : Number(agents.value) - 1;
+    const available = Array.from(step.options).filter((option) => Number(option.value) <= maximum);
+    Array.from(step.options).forEach((option) => {
+      const enabled = available.includes(option);
+      option.hidden = !enabled;
+      option.disabled = !enabled;
+    });
+    if (!available.includes(step.options[step.selectedIndex])) step.value = available[0].value;
+  };
+  const rowFor = (channelId = channel.value) => rows.find((row) => {
+    if (row.dataset.mode !== mode.value || row.dataset.blockSize !== step.value) return false;
+    if (mode.value === "channel") return row.dataset.channel === channelId;
+    return row.dataset.targets === targets.value && row.dataset.agents === agents.value &&
+      row.dataset.accuracy === accuracy.value;
+  });
+  const constrainComparison = (selected) => {
+    const selectedAccuracy = selected?.dataset.accuracy;
+    const available = Array.from(comparison.options).filter((option) =>
+      option.value === "none" ||
+      (option.dataset.accuracy === selectedAccuracy && option.value !== channel.value));
+    Array.from(comparison.options).forEach((option) => {
+      const enabled = available.includes(option);
+      option.hidden = !enabled;
+      option.disabled = !enabled;
+    });
+    if (!available.includes(comparison.options[comparison.selectedIndex])) {
+      comparison.value = available.find((option) => option.value !== "none")?.value || "none";
+    }
+  };
+  const render = () => {
+    const channelMode = mode.value === "channel";
+    setControlGroup(pointControls, !channelMode);
+    setControlGroup(channelControls, channelMode);
+    if (!channelMode) constrainAccuracy();
+    constrainStep();
+    const selected = rowFor();
+    if (channelMode) constrainComparison(selected);
+    rows.forEach((row) => { row.hidden = row !== selected; });
+    if (!selected) {
+      outputs.forEach((output) => { output.textContent = "not registered"; });
+      status.textContent = "No exact registered transition matches this selection.";
+      return;
+    }
+    outputs.forEach((output) => {
+      output.textContent = selected.getAttribute(`data-${output.dataset.incrementalOutput}`) || "not applicable";
+    });
+    const profile = (selected.dataset.discoveryProfile || "").split("|");
+    chartPoints.forEach((point, index) => {
+      const value = profile[index];
+      point.hidden = !value;
+      point.classList.toggle("selected", index + 1 === Number(step.value));
+      point.classList.toggle("next", index + 1 === Number(step.value) + 1);
+      if (!value) return;
+      const label = point.querySelector("[data-profile-value]");
+      const bar = point.querySelector("[data-profile-bar]");
+      if (label) label.textContent = value;
+      if (bar) bar.style.setProperty("--profile-value", `${fraction(value) * 100}%`);
+    });
+    chart.setAttribute("aria-label", `Exact discovery profile ${profile.join(", ")}; selected transition s=${step.value} to s=${Number(step.value) + 1}.`);
+    const source = channelMode
+      ? channel.options[channel.selectedIndex].textContent
+      : `M=${targets.value}, N=${agents.value}, p=${accuracy.value}`;
+    status.textContent = `Showing ${source}, s=${step.value}→${Number(step.value) + 1}; net increment ${selected.dataset.netIncrement} (${selected.dataset.sign}).`;
+    if (channelMode && comparison.value !== "none") {
+      const compared = rowFor(comparison.value);
+      const name = comparison.options[comparison.selectedIndex].textContent;
+      comparisonOutput.textContent = compared
+        ? `${name}: ${compared.dataset.groupDiscovery} → ${compared.dataset.nextGroupDiscovery}; net ${compared.dataset.netIncrement} (${compared.dataset.sign}).`
+        : "No same-accuracy comparison is registered for this step.";
+    } else {
+      comparisonOutput.textContent = channelMode
+        ? "No distinct same-accuracy comparison is registered for this channel."
+        : "Switch to registered channels to compare the same-accuracy noisy point and guaranteed shortlist.";
+    }
+  };
+  [mode, targets, agents, accuracy, channel, step, comparison].forEach((control) =>
+    control.addEventListener("change", render));
+  render();
+});

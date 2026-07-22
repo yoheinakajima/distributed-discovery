@@ -2,6 +2,7 @@ import hashlib
 import json
 import re
 import shutil
+from fractions import Fraction
 from pathlib import Path
 
 import yaml
@@ -149,6 +150,25 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         assert 'type="range"' in page_source
         assert "bounded fixture only" in page_source
 
+    incremental_page = (output / "labs/incremental-sharing.html").read_text(encoding="utf-8")
+    assert "data-incremental-lab" in incremental_page
+    assert incremental_page.count('data-incremental-row=""') == 2054
+    assert "JavaScript is off" in incremental_page
+    assert "G<sub>s</sub> = 1 − (1−C<sub>s</sub>)(1−q)<sup>N−s</sup>" in incremental_page
+    assert "Download the full 2,555-row point census" in incremental_page
+    assert "DD-C-0092" in incremental_page and "DD-C-0096" in incremental_page
+    assert "20260722T142551Z_DD-020_3854fff6_37c11a850a" in incremental_page
+    for control in [
+        "incremental-mode",
+        "incremental-targets",
+        "incremental-agents",
+        "incremental-accuracy",
+        "incremental-channel",
+        "incremental-step",
+        "incremental-comparison",
+    ]:
+        assert f'id="{control}"' in incremental_page
+
     program_v4_labs = {
         "threshold": {
             "kind": "threshold",
@@ -271,6 +291,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "labs/equilibrium-selection.html",
         "labs/dynamic-attention.html",
         "labs/team-mechanisms.html",
+        "labs/incremental-sharing.html",
         "publications/common-source-trap.html",
         "publications/incentive-to-ignore.html",
         "publications/threshold-discovery.html",
@@ -318,6 +339,50 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert team_lab["run_id"] == "20260722T051847Z_DD-018_a193f602_3b3ddac173"
     assert len(team_lab["rows"]) == 50
     assert sum(row["implements_planner"] for row in team_lab["rows"]) == 40
+    incremental_lab = json.loads((output / "data/labs/incremental-sharing.json").read_text())
+    assert incremental_lab["run_id"] == "20260722T142551Z_DD-020_3854fff6_37c11a850a"
+    assert len(incremental_lab["point_transitions"]) == 2044
+    assert len(incremental_lab["channel_transitions"]) == 10
+    canonical = next(
+        row
+        for row in incremental_lab["point_transitions"]
+        if row["targets"] == 4
+        and row["agents"] == 3
+        and row["accuracy"] == "1/2"
+        and row["block_size"] == 1
+    )
+    assert canonical["pooled_accuracy"] == "1/2"
+    assert canonical["group_discovery"] == "7/8"
+    assert canonical["aggregation_gain"] == "0"
+    assert canonical["lost_rescue"] == "1/8"
+    assert canonical["net_increment"] == "-1/8"
+    guaranteed = next(
+        row
+        for row in incremental_lab["channel_transitions"]
+        if row["channel_id"] == "guaranteed-shortlist-two" and row["block_size"] == 1
+    )
+    assert guaranteed["aggregation_gain"] == "1/6"
+    assert guaranteed["lost_rescue"] == "1/8"
+    assert guaranteed["net_increment"] == "1/24"
+    assert guaranteed["sign"] == "positive"
+    noisy = next(
+        row
+        for row in incremental_lab["channel_transitions"]
+        if row["channel_id"] == "noisy-point-half" and row["block_size"] == 1
+    )
+    assert noisy["accuracy"] == guaranteed["accuracy"] == "1/2"
+    assert noisy["sign"] == "negative"
+    for row in incremental_lab["point_transitions"] + incremental_lab["channel_transitions"]:
+        assert Fraction(row["aggregation_gain"]) - Fraction(row["lost_rescue"]) == Fraction(
+            row["net_increment"]
+        )
+    run_outputs = ROOT / "results/verified/20260722T142551Z_DD-020_3854fff6_37c11a850a/outputs"
+    assert (output / "data/incremental-sharing/point-census.json").read_bytes() == (
+        run_outputs / "point-census.json"
+    ).read_bytes()
+    assert (output / "data/incremental-sharing/channel-profiles.json").read_bytes() == (
+        run_outputs / "channel-profiles.json"
+    ).read_bytes()
 
     def distinct_outputs(
         rows: list[dict[str, object]],
@@ -363,6 +428,33 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         {"agents": 3, "private_accuracy": "1/2", "shared_accuracy": "3/4"},
     ]:
         assert len(distinct_outputs(dynamic_lab["rows"], fixed, dynamic_output_keys)) > 1
+    incremental_outputs = (
+        "pooled_accuracy",
+        "group_discovery",
+        "aggregation_gain",
+        "lost_rescue",
+        "net_increment",
+    )
+    for fixed in [
+        {"agents": 3, "accuracy": "1/2", "block_size": 2},
+        {"targets": 4, "accuracy": "1/2", "block_size": 1},
+        {"targets": 4, "agents": 3, "block_size": 1},
+        {"targets": 4, "agents": 3, "accuracy": "1/2"},
+    ]:
+        assert (
+            len(distinct_outputs(incremental_lab["point_transitions"], fixed, incremental_outputs))
+            > 1
+        )
+    assert (
+        len(
+            distinct_outputs(
+                incremental_lab["channel_transitions"],
+                {"block_size": 1},
+                incremental_outputs,
+            )
+        )
+        > 1
+    )
     mechanism_output_keys = (
         "discovery",
         "implements_planner",
@@ -383,6 +475,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "equilibrium_selection_data",
         "dynamic_attention_data",
         "team_mechanisms_data",
+        "incremental_sharing_data",
     ]:
         assert (output / labs_manifest[data_name]).is_file()
     benchmark = json.loads((output / "data/benchmark/summary.json").read_text())

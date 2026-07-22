@@ -49,6 +49,7 @@ DD015_RUN = "20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a"
 DD016_RUN = "20260722T021526Z_DD-016_00271ff8_123b2809e3"
 DD017_RUN = "20260722T024032Z_DD-017_033452f6_3d2c74fdfb"
 DD018_RUN = "20260722T051847Z_DD-018_a193f602_3b3ddac173"
+DD020_RUN = "20260722T142551Z_DD-020_3854fff6_37c11a850a"
 
 
 class SiteParser(HTMLParser):
@@ -1581,6 +1582,270 @@ def _program_v4_lab_pages(root: Path, output: Path) -> None:
     )
 
 
+def _incremental_sharing_pages(root: Path, output: Path) -> None:
+    """Render DD-020 controls from the sole immutable exact run."""
+
+    run_outputs = root / "results/verified" / DD020_RUN / "outputs"
+    point_source = run_outputs / "point-census.json"
+    channel_source = run_outputs / "channel-profiles.json"
+    point_rows = json.loads(point_source.read_text(encoding="utf-8"))
+    channels = json.loads(channel_source.read_text(encoding="utf-8"))
+    if not isinstance(point_rows, list) or len(point_rows) != 2555:
+        raise RuntimeError("DD-020 Lab requires all 2,555 exact point rows")
+    if not isinstance(channels, list) or len(channels) != 5:
+        raise RuntimeError("DD-020 Lab requires all five exact channel profiles")
+
+    def exact(value: Fraction) -> str:
+        return str(value.numerator) if value.denominator == 1 else str(value)
+
+    def transition(
+        *,
+        mode: str,
+        targets: int,
+        agents: int,
+        accuracy: str,
+        channel_id: str,
+        block_size: int,
+        pooled_profile: list[str],
+        discovery_profile: list[str],
+    ) -> dict[str, Any]:
+        current_pooled = Fraction(pooled_profile[block_size - 1])
+        next_pooled = Fraction(pooled_profile[block_size])
+        current_discovery = Fraction(discovery_profile[block_size - 1])
+        next_discovery = Fraction(discovery_profile[block_size])
+        private_accuracy = Fraction(accuracy)
+        factor = (1 - private_accuracy) ** (agents - block_size - 1)
+        aggregation_gain = factor * (next_pooled - current_pooled)
+        lost_rescue = factor * private_accuracy * (1 - current_pooled)
+        net_increment = next_discovery - current_discovery
+        sign = "positive" if net_increment > 0 else "negative" if net_increment < 0 else "zero"
+        return {
+            "mode": mode,
+            "targets": targets,
+            "agents": agents,
+            "accuracy": accuracy,
+            "channel_id": channel_id,
+            "block_size": block_size,
+            "next_block_size": block_size + 1,
+            "pooled_accuracy": exact(current_pooled),
+            "next_pooled_accuracy": exact(next_pooled),
+            "group_discovery": exact(current_discovery),
+            "next_group_discovery": exact(next_discovery),
+            "aggregation_gain": exact(aggregation_gain),
+            "lost_rescue": exact(lost_rescue),
+            "net_increment": exact(net_increment),
+            "sign": sign,
+            "private_baseline": discovery_profile[0],
+            "consensus": discovery_profile[-1],
+            "pooled_profile": pooled_profile,
+            "discovery_profile": discovery_profile,
+        }
+
+    point_profiles: dict[tuple[int, int, str], list[dict[str, object]]] = {}
+    for row in point_rows:
+        key = (int(row["targets"]), int(row["agents"]), str(row["accuracy"]))
+        point_profiles.setdefault(key, []).append(row)
+    point_transitions: list[dict[str, Any]] = []
+    for (targets, agents, accuracy), rows in sorted(
+        point_profiles.items(), key=lambda item: (item[0][0], item[0][1], Fraction(item[0][2]))
+    ):
+        ordered = sorted(rows, key=lambda row: int(str(row["block_size"])))
+        pooled_profile = [str(row["pooled_accuracy"]) for row in ordered]
+        discovery_profile = [str(row["group_discovery"]) for row in ordered]
+        for block_size in range(1, agents):
+            point_transitions.append(
+                transition(
+                    mode="point",
+                    targets=targets,
+                    agents=agents,
+                    accuracy=accuracy,
+                    channel_id="symmetric-noisy-point",
+                    block_size=block_size,
+                    pooled_profile=pooled_profile,
+                    discovery_profile=discovery_profile,
+                )
+            )
+    if len(point_transitions) != 2044:
+        raise RuntimeError("DD-020 Lab requires all 2,044 adjacent point transitions")
+
+    channel_transitions: list[dict[str, Any]] = []
+    for channel in channels:
+        for block_size in (1, 2):
+            channel_transitions.append(
+                transition(
+                    mode="channel",
+                    targets=4,
+                    agents=3,
+                    accuracy=str(channel["one_person_accuracy"]),
+                    channel_id=str(channel["channel_id"]),
+                    block_size=block_size,
+                    pooled_profile=[str(value) for value in channel["pooled_accuracy"]],
+                    discovery_profile=[str(value) for value in channel["profile"]],
+                )
+            )
+
+    lab_data = {
+        "schema_version": 1,
+        "study_id": "DD-020",
+        "claim_ids": ["DD-C-0092", "DD-C-0093", "DD-C-0094", "DD-C-0095", "DD-C-0096"],
+        "run_id": DD020_RUN,
+        "point_transitions": point_transitions,
+        "channel_transitions": channel_transitions,
+        "source_sha256": {
+            "point_census": _sha256(point_source),
+            "channel_profiles": _sha256(channel_source),
+        },
+        "boundary": "registered one-action sharing block with remaining direct private actions; not a private-team optimum or arbitrary-channel theorem",
+    }
+    _write(
+        output,
+        "data/labs/incremental-sharing.json",
+        json.dumps(lab_data, indent=2, sort_keys=True) + "\n",
+    )
+    _write(output, "data/incremental-sharing/point-census.json", point_source.read_text())
+    _write(output, "data/incremental-sharing/channel-profiles.json", channel_source.read_text())
+
+    channel_names = {
+        "noisy-point-half": "Noisy point (accuracy 1/2)",
+        "noisy-shortlist-three-quarters": "Noisy shortlist (accuracy 3/8)",
+        "guaranteed-shortlist-two": "Guaranteed shortlist (accuracy 1/2)",
+        "explicit-exclusion": "Explicit exclusion (accuracy 1/3)",
+        "confidence-point": "Confidence point (accuracy 5/8)",
+    }
+
+    def attributes(row: dict[str, Any]) -> str:
+        values = {
+            "incremental-row": "",
+            "mode": row["mode"],
+            "targets": row["targets"],
+            "agents": row["agents"],
+            "accuracy": row["accuracy"],
+            "channel": row["channel_id"],
+            "block-size": row["block_size"],
+            "pooled-accuracy": row["pooled_accuracy"],
+            "next-pooled-accuracy": row["next_pooled_accuracy"],
+            "group-discovery": row["group_discovery"],
+            "next-group-discovery": row["next_group_discovery"],
+            "aggregation-gain": row["aggregation_gain"],
+            "lost-rescue": row["lost_rescue"],
+            "net-increment": row["net_increment"],
+            "sign": row["sign"],
+            "private-baseline": row["private_baseline"],
+            "consensus": row["consensus"],
+            "pooled-profile": "|".join(str(value) for value in row["pooled_profile"]),
+            "discovery-profile": "|".join(str(value) for value in row["discovery_profile"]),
+        }
+        return " ".join(
+            f'data-{key}="{html.escape(str(value), quote=True)}"' for key, value in values.items()
+        )
+
+    def table_row(row: dict[str, Any]) -> str:
+        source = (
+            channel_names[str(row["channel_id"])]
+            if row["mode"] == "channel"
+            else f"M={row['targets']}, N={row['agents']}, p={row['accuracy']}"
+        )
+        return """<tr {attrs}><th scope="row">{source}</th><td>{step}→{next_step}</td><td>{pooled}</td><td>{discovery}</td><td>{gain}</td><td>{rescue}</td><td>{net}</td><td>{sign}</td><td>{private}</td><td>{consensus}</td></tr>""".format(
+            attrs=attributes(row),
+            source=html.escape(source),
+            step=row["block_size"],
+            next_step=row["next_block_size"],
+            pooled=html.escape(str(row["pooled_accuracy"])),
+            discovery=html.escape(str(row["group_discovery"])),
+            gain=html.escape(str(row["aggregation_gain"])),
+            rescue=html.escape(str(row["lost_rescue"])),
+            net=html.escape(str(row["net_increment"])),
+            sign=html.escape(str(row["sign"])),
+            private=html.escape(str(row["private_baseline"])),
+            consensus=html.escape(str(row["consensus"])),
+        )
+
+    default = next(
+        row
+        for row in point_transitions
+        if row["targets"] == 4
+        and row["agents"] == 3
+        and row["accuracy"] == "1/2"
+        and row["block_size"] == 1
+    )
+    target_options = "".join(
+        f'<option value="{value}"{" selected" if value == 4 else ""}>M={value} targets</option>'
+        for value in range(2, 9)
+    )
+    agent_options = "".join(
+        f'<option value="{value}"{" selected" if value == 3 else ""}>N={value} agents</option>'
+        for value in range(2, 9)
+    )
+    accuracy_targets: dict[str, set[int]] = {}
+    for targets, _, accuracy in point_profiles:
+        accuracy_targets.setdefault(accuracy, set()).add(targets)
+    accuracy_options = "".join(
+        '<option value="{}" data-targets="{}"{}>p={}</option>'.format(
+            html.escape(accuracy, quote=True),
+            ",".join(str(value) for value in sorted(targets)),
+            " selected" if accuracy == "1/2" else "",
+            html.escape(accuracy),
+        )
+        for accuracy, targets in sorted(
+            accuracy_targets.items(), key=lambda item: Fraction(item[0])
+        )
+    )
+    step_options = "".join(
+        f'<option value="{value}"{" selected" if value == 1 else ""}>s={value} → {value + 1}</option>'
+        for value in range(1, 8)
+    )
+    channel_options = "".join(
+        f'<option value="{html.escape(channel_id, quote=True)}"{" selected" if channel_id == "noisy-point-half" else ""}>{html.escape(channel_names[channel_id])}</option>'
+        for channel_id in channel_names
+    )
+    comparison_options = '<option value="none">No comparison</option>' + "".join(
+        f'<option value="{html.escape(channel_id, quote=True)}" data-accuracy="{html.escape(str(channel["one_person_accuracy"]), quote=True)}"{" selected" if channel_id == "guaranteed-shortlist-two" else ""}>{html.escape(channel_names[channel_id])}</option>'
+        for channel_id, channel in ((str(channel["channel_id"]), channel) for channel in channels)
+    )
+    chart_points = "".join(
+        '<div class="profile-point" data-profile-point="{index}"{hidden}><span class="profile-value" data-profile-value>{value}</span><span class="profile-bar" data-profile-bar style="--profile-value:{height}%"></span><strong>s={index}</strong></div>'.format(
+            index=index,
+            hidden=" hidden" if index > 3 else "",
+            value=html.escape(default["discovery_profile"][index - 1] if index <= 3 else "0"),
+            height=float(Fraction(default["discovery_profile"][index - 1])) * 100
+            if index <= 3
+            else 0,
+        )
+        for index in range(1, 9)
+    )
+    canonical_profile = [
+        row
+        for row in sorted(
+            point_profiles[(4, 3, "1/2")], key=lambda item: int(str(item["block_size"]))
+        )
+    ]
+    canonical_rows = "".join(
+        f'<tr><th scope="row">{row["block_size"]}</th><td>{html.escape(str(row["pooled_accuracy"]))}</td><td>{html.escape(str(row["group_discovery"]))}</td><td>{html.escape(str(row["increment"] if row["increment"] is not None else "baseline"))}</td></tr>'
+        for row in canonical_profile
+    )
+    channel_rows = "".join(
+        '<tr><th scope="row">{}</th><td>{}</td><td>{}</td><td>{}</td></tr>'.format(
+            html.escape(channel_names[str(channel["channel_id"])]),
+            html.escape(str(channel["one_person_accuracy"])),
+            html.escape(", ".join(str(value) for value in channel["profile"])),
+            html.escape(", ".join(str(value) for value in channel["increments"])),
+        )
+        for channel in channels
+    )
+    all_rows = "".join(table_row(row) for row in point_transitions + channel_transitions)
+    body = f"""<header class="page-hero"><p class="eyebrow">DD-020 exact output Lab</p><h1>Incremental Sharing Lab</h1><p class="lede">Move one signal at a time from independent private search into a one-action pooling block. The Lab separates pooled-accuracy gain from lost independent rescue and selects only rows in the immutable DD-020 run.</p></header><section class="content-section prose"><h2>The registered identity</h2><p class="identity">G<sub>s</sub> = 1 − (1−C<sub>s</sub>)(1−q)<sup>N−s</sup></p><p>The point-channel theorem says each adjacent move weakly lowers discovery, strictly unless signals are perfect. The five-channel audit supplies a scope boundary: the guaranteed shortlist rises, so the point theorem is not an arbitrary-channel monotonicity result.</p></section><section class="lab" data-incremental-lab><div class="lab-controls"><div><label for="incremental-mode">Evidence view</label><select id="incremental-mode"><option value="point" selected>Point-channel census</option><option value="channel">Registered channel comparison</option></select></div><div data-point-control><label for="incremental-targets">Targets</label><select id="incremental-targets">{target_options}</select></div><div data-point-control><label for="incremental-agents">Agents</label><select id="incremental-agents">{agent_options}</select></div><div data-point-control><label for="incremental-accuracy">Private accuracy</label><select id="incremental-accuracy">{accuracy_options}</select></div><div data-channel-control hidden><label for="incremental-channel">Channel</label><select id="incremental-channel" disabled>{channel_options}</select></div><div><label for="incremental-step">Sharing step</label><select id="incremental-step">{step_options}</select></div><div data-channel-control hidden><label for="incremental-comparison">Same-accuracy comparison</label><select id="incremental-comparison" disabled>{comparison_options}</select></div></div><p id="incremental-status" class="callout" aria-live="polite">Showing M=4, N=3, p=1/2, s=1→2 from the exact point census.</p><div class="metric-grid compact"><article class="metric-card"><span>Pooled accuracy C<sub>s</sub></span><strong data-incremental-output="pooled-accuracy">{default["pooled_accuracy"]}</strong></article><article class="metric-card"><span>Next pooled accuracy C<sub>s+1</sub></span><strong data-incremental-output="next-pooled-accuracy">{default["next_pooled_accuracy"]}</strong></article><article class="metric-card planner"><span>Discovery G<sub>s</sub></span><strong data-incremental-output="group-discovery">{default["group_discovery"]}</strong></article><article class="metric-card planner"><span>Next discovery G<sub>s+1</sub></span><strong data-incremental-output="next-group-discovery">{default["next_group_discovery"]}</strong></article><article class="metric-card"><span>Marginal aggregation gain</span><strong data-incremental-output="aggregation-gain">{default["aggregation_gain"]}</strong></article><article class="metric-card"><span>Lost rescue</span><strong data-incremental-output="lost-rescue">{default["lost_rescue"]}</strong></article><article class="metric-card consensus"><span>Net increment</span><strong data-incremental-output="net-increment">{default["net_increment"]}</strong></article><article class="metric-card"><span>Increment sign</span><strong data-incremental-output="sign">{default["sign"]}</strong></article><article class="metric-card private"><span>Private baseline G<sub>1</sub></span><strong data-incremental-output="private-baseline">{default["private_baseline"]}</strong></article><article class="metric-card consensus"><span>Consensus G<sub>N</sub></span><strong data-incremental-output="consensus">{default["consensus"]}</strong></article></div><section class="profile-panel" aria-labelledby="incremental-curve-title"><h2 id="incremental-curve-title">Exact discovery profile</h2><p data-incremental-comparison>Same-accuracy comparison is available in the registered-channel view.</p><div class="profile-plot" role="img" aria-label="Discovery profile by sharing-block size" data-incremental-chart>{chart_points}</div></section></section><noscript><p class="callout">JavaScript is off. The exact canonical point profile and all five channel profiles remain visible below; the complete 2,555-row census is available as a direct data download.</p></noscript><section class="content-section"><h2>Canonical exact point profile</h2><table class="matrix"><caption>M=4, N=3, p=1/2 under the registered symmetric noisy-point channel</caption><thead><tr><th>Block size s</th><th>Pooled accuracy C<sub>s</sub></th><th>Discovery G<sub>s</sub></th><th>Increment</th></tr></thead><tbody>{canonical_rows}</tbody></table></section><section class="content-section"><h2>Registered channel comparison</h2><table class="matrix"><caption>Five exact M=4, N=3 incremental-sharing profiles</caption><thead><tr><th>Channel</th><th>One-person accuracy</th><th>(G<sub>1</sub>, G<sub>2</sub>, G<sub>3</sub>)</th><th>Adjacent increments</th></tr></thead><tbody>{channel_rows}</tbody></table></section><details class="technical-details complete-data"><summary>Inspect all 2,054 exact adjacent transitions</summary><table class="matrix"><caption>Complete point-census and registered-channel transitions used by the Lab</caption><thead><tr><th>Source</th><th>Step</th><th>C<sub>s</sub></th><th>G<sub>s</sub></th><th>Aggregation gain</th><th>Lost rescue</th><th>Net</th><th>Sign</th><th>Private baseline</th><th>Consensus</th></tr></thead><tbody>{all_rows}</tbody></table></details><section class="content-section prose"><h2>Evidence boundary and data</h2><p>These controls select and decompose exact rows from DD-020; they do not recompute the study, interpolate, or change claim status. Marginal aggregation gain and lost rescue are the two exact contributions in the registered adjacent-difference identity.</p><p><a href="../claims.html#DD-C-0092">DD-C-0092</a> · <a href="../claims.html#DD-C-0094">DD-C-0094</a> · <a href="../claims.html#DD-C-0095">DD-C-0095</a> · <a href="../claims.html#DD-C-0096">DD-C-0096</a> · <a href="{REPOSITORY_URL}/blob/main/results/verified/{DD020_RUN}/manifest.json">{DD020_RUN}</a></p><p><a href="../data/incremental-sharing/point-census.json">Download the full 2,555-row point census</a> · <a href="../data/incremental-sharing/channel-profiles.json">Download the five channel profiles</a> · <a href="../data/labs/incremental-sharing.json">Download the Lab transition data</a></p></section>"""
+    _write(
+        output,
+        "labs/incremental-sharing.html",
+        _page(
+            "Incremental Sharing Lab",
+            "Explore exact aggregation gain, lost independent rescue, and net discovery increments in DD-020.",
+            body,
+            "labs/incremental-sharing.html",
+        ),
+    )
+
+
 def _render(
     root: Path,
     output: Path,
@@ -1830,6 +2095,21 @@ def _render(
     </div><div class="finding-links"><a href="research/dd-014.html">Open DD-014</a><a href="claims.html#DD-C-0068">Technical evidence</a></div></article>
     </section></div>"""
     )
+    results_body = (
+        results_body.removesuffix("</div>")
+        + """<section class="result-group">
+    <p class="eyebrow">Program V5 · incremental sharing</p>
+    <h2>Aggregation gain can be smaller than the rescue action it replaces.</h2>
+    <article class="finding"><div><span class="status-chip">Verified finite theorem</span>
+    <h3>Pooling one more point signal weakly lowers discovery.</h3>
+    <p>Under DD-020's registered one-action point-channel protocol, G<sub>s+1</sub> ≤ G<sub>s</sub>, strictly unless signals are perfect. The exact 2,555-row census contains <strong>1,848 negative</strong>, <strong>196 zero</strong>, and <strong>0 positive</strong> adjacent increments.</p>
+    </div><div class="finding-links"><a href="research/dd-020.html">Open DD-020</a><a href="labs/incremental-sharing.html">Explore the Lab</a><a href="claims.html#DD-C-0094">Technical evidence</a></div></article>
+    <article class="finding"><div><span class="status-chip">Scope-defining counterexample</span>
+    <h3>One-person accuracy does not determine the sign.</h3>
+    <p>At the same one-person accuracy 1/2, the noisy-point profile falls from 7/8 to 7/12 while the guaranteed-shortlist profile rises from 7/8 to 17/18. This bounded comparison does not establish a general channel order.</p>
+    </div><div class="finding-links"><a href="claims.html#DD-C-0096">Technical evidence</a><a href="data/incremental-sharing/channel-profiles.json">Download exact profiles</a></div></article>
+    </section></div>"""
+    )
     _write(
         output,
         "results.html",
@@ -1938,6 +2218,12 @@ def _render(
             "Planner, autonomous, private, and history-hidden outcomes",
             "DD-015",
         ),
+        "incremental-sharing": (
+            "Information and sources",
+            "Targets, agents, point accuracy or channel, and sharing step",
+            "Pooled accuracy, discovery, aggregation gain, lost rescue, net increment, and profile",
+            "DD-020",
+        ),
         "audience-design": (
             "Information and sources",
             "Team, accuracy, and audience",
@@ -2011,6 +2297,11 @@ def _render(
             "DD-C-0080",
             "Explore every exact dynamic objective row and separate planner from autonomous behavior.",
         ),
+        "incremental-sharing": (
+            "Incremental sharing",
+            "DD-C-0094",
+            "Separate marginal aggregation gain from lost independent rescue across exact point and channel profiles.",
+        ),
         "team-mechanisms": (
             "Team mechanisms",
             "DD-C-0084",
@@ -2074,6 +2365,7 @@ def _render(
             output, f"labs/{slug}.html", _page(title, description, lab_body, f"labs/{slug}.html")
         )
     _program_v4_lab_pages(root, output)
+    _incremental_sharing_pages(root, output)
     _benchmark_pages(root, output)
     _experiment_pages(root, output)
     _attention_pages(root, output)
@@ -2259,6 +2551,7 @@ def build(root: Path, output: Path) -> dict[str, Any]:
             "equilibrium_selection_data": "data/labs/equilibrium-selection.json",
             "dynamic_attention_data": "data/labs/dynamic-attention.json",
             "team_mechanisms_data": "data/labs/team-mechanisms.json",
+            "incremental_sharing_data": "data/labs/incremental-sharing.json",
             "mechanisms_data": "data/labs/mechanisms.json",
             "atlas_data": "data/labs/atlas.json",
             "benchmark_data": "data/benchmark/results.json",

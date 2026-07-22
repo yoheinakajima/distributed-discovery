@@ -1,6 +1,6 @@
 # Current program state
 
-_Reconciled 2026-07-22 after DD-020 merged and its editorial gate was applied._
+_Reconciled 2026-07-22 for DD-020 public integration and final acceptance._
 
 Programs V1, V2, and the required Program V3 queue are complete at their
 registered bounded scopes. Program V3, *The Incentive to Ignore*, completed
@@ -44,7 +44,10 @@ Pages `29929864954` passing. Its clean run
 DD-C-0096, and the live study, claim, evidence, and data routes pass. The
 documentation-only editorial gate assigns primary ownership to a future
 Information Sharing Frontier paper; it creates no claim, run, PDF, or
-submission action.
+submission action. The output-connected Incremental Sharing Lab consumes only
+the immutable DD-020 point census and five-channel profiles. It exposes 2,044
+point transitions and ten channel transitions, including the same-accuracy
+opposite-sign comparison, without recomputing the study.
 
 The repository is public and project-authored content is MIT-licensed. The
 canonical Shared Discovery Paradox repository remains pinned at
@@ -56,9 +59,9 @@ canonical Shared Discovery Paradox repository remains pinned at
 | Passing immutable runs | 46 of 49 manifests |
 | Registered studies | 24 |
 | Python source files | 142 |
-| Public HTML routes | 71 locally generated |
-| Public data files | 68 |
-| Laboratory routes | 16 |
+| Public HTML routes | 72 locally generated |
+| Public data files | 71 |
+| Laboratory routes | 17 |
 | Validated project papers | 6 |
 | Checksum-registered downloads | 22 |
 | Test suite | 224 collected tests |

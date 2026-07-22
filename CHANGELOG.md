@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-07-22 — Incremental Sharing public Lab
+
+- Added an exact output-connected DD-020 Lab with point/channel controls,
+  aggregation gain, lost independent rescue, net increment, sign, baselines,
+  complete discovery profiles, and the same-accuracy opposite-sign comparison.
+- Published all 2,054 adjacent transitions plus byte-identical copies of the
+  immutable 2,555-row point census and five channel profiles; no study was
+  rerun and no evidence status changed.
+- Preserved complete no-JavaScript tables and passed bounded keyboard,
+  responsive, overflow, live-region, interaction, and console-log browser QA.
+
 ## 2026-07-22 — Incremental Sharing editorial theorem gate
 
 - Passed *The Incentive to Ignore*'s Incremental Sharing gate while retaining
