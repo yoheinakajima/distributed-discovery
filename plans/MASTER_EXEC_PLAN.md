@@ -71,9 +71,11 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   #135 and PR #136, merged and deployed as `cf7bc67e`.
 - **C (complete):** editorial theorem gate and synthesis prospectus, issue
   #137 and PR #138, merged and deployed as `9401fbe7`.
-- **D (active):** public DD-020 integration and output-connected Lab, issue
-  #139, draft PR #140, and branch `site/dd020-program-integration`.
-- **Acceptance:** complete repository/paper/site/live audit and final handoff.
+- **D (complete):** public DD-020 integration and output-connected Lab, issue
+  #139 and PR #140, merged and deployed as `57270680`.
+- **Acceptance (active):** issue #141 and branch
+  `codex/program-v5-final-acceptance`; complete the repository/paper/site/live
+  audit and final handoff without research execution.
 
 ### Progress checklist
 
@@ -87,7 +89,7 @@ conjecture until proof or an exact counterexample supplies the permitted status.
 - [x] Merge, deploy, close, and synchronize the completed DD-020 study.
 - [x] Apply and merge the editorial theorem gate and synthesis prospectus.
 - [x] Build and locally validate the DD-020 public integration and Lab.
-- [ ] Merge and deploy the DD-020 public integration and Lab.
+- [x] Merge and deploy the DD-020 public integration and Lab.
 - [ ] Run final acceptance and reconcile every required handoff document.
 
 ### Discoveries and surprises
@@ -176,6 +178,12 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   --check`, bootstrap, Ruff, strict MyPy on 142 source files, all 224 tests, 96
   claims, 49 manifests, and the 72-route/24-study site build passed. No claim,
   immutable run, or paper PDF changed.
+- `2026-07-22`: PR #140 passed push CI `29932990915`, PR CI `29932992256`,
+  and paper/site build `29932992268`; squash-merged as `57270680`; closed issue
+  #139; and passed post-merge CI `29933212532` and Pages `29933212171`. All nine
+  required live routes returned 200, both public source-file SHA-256 values
+  matched the immutable run, and deployed desktop/mobile browser QA passed.
+  Issue #141 begins the separate documentation-only final acceptance.
 
 ### Validation strategy
 
