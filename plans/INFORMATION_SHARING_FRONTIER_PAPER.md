@@ -79,10 +79,10 @@ attention theorem owned by *The Incentive to Ignore*.
 5. **M5 — complete: deterministic build and visual QA.** Rebuild deterministically, render every page, inspect
    at page and full resolution, record the PDF hash, and run repository-wide
    verification.
-6. **M6 — active: site integration and repository acceptance.** Publish the
+6. **M6 — complete: site integration and repository acceptance.** Publish the
    validated working paper through the existing site, add relationship links,
    and run every focused and repository-wide acceptance gate.
-7. **M7 — pending: GitHub merge and deployment.** Keep one draft PR current,
+7. **M7 — active: GitHub merge and deployment.** Keep one draft PR current,
    mark it ready only after all-page QA and full local acceptance, squash-merge
    after CI, verify post-merge CI/Pages and live routes, and close issue #153.
 
@@ -106,8 +106,8 @@ attention theorem owned by *The Incentive to Ignore*.
 - [x] Produce two byte-identical clean builds and inspect every rendered page.
 - [x] Integrate and validate the public paper page, download, and relationship
   links without adding navigation, analytics, DOI, or submission status.
-- [ ] Pass all focused and repository-wide checks; merge, deploy, verify live
-  routes/checksums, and close issue #153.
+- [ ] Merge, deploy, verify live routes/checksums, and close issue #153; all
+  focused and repository-wide local checks already pass.
 
 ## Discoveries and surprises
 
@@ -149,6 +149,10 @@ attention theorem owned by *The Incentive to Ignore*.
 - `2026-07-22T22:54:18Z`: retain the preferred subtitle. Signal geometry,
   independent rescue, and equilibrium selection all remain theorem-level
   components in the completed manuscript.
+- `2026-07-22T23:00:00Z`: full local acceptance passes Ruff, strict MyPy over
+  159 source files, 247 tests, all 110 claims, all 51 manifests, seven papers
+  totaling 115 pages, and a 77-route/26-study site with 23 checksum-covered
+  downloads.
 
 ## Evidence inputs that must not change
 

@@ -1,6 +1,6 @@
 # Current program state
 
-_Reconciled 2026-07-22 for DD-022 deployment and paper admission._
+_Reconciled 2026-07-22 for the Information Sharing Frontier working paper._
 
 Programs V1, V2, and the required Program V3 queue are complete at their
 registered bounded scopes. Program V3, *The Incentive to Ignore*, completed
@@ -70,8 +70,13 @@ DD-C-0110. Post-merge CI `29959514182`, Pages `29959514196`, and the live study,
 Lab, exact data, claims, evidence, and results routes pass. Documentation-only
 issue #152 admits *When Does Information Sharing Improve Decentralized
 Discovery?* as a qualified archival-paper candidate and creates paper issue
-#153 plus planning and ownership maps. It creates no research evidence,
-manuscript, PDF, submission, release, or DOI authority.
+#153 plus planning and ownership maps. Issue #153 subsequently authorized the
+working-paper build. Draft PR #155 contains a 26-page byte-reproducible paper,
+eight figures, eight tables, exact figure data, independent source and
+corruption audits, all-page visual QA, citation/BibTeX, and a seventh public
+publication route. It creates no study, claim, run, empirical evidence,
+submission, release, DOI, or journal-contact action. Merge and live deployment
+remain pending.
 
 The repository is public and project-authored content is MIT-licensed. The
 canonical Shared Discovery Paradox repository remains pinned at
@@ -82,13 +87,13 @@ canonical Shared Discovery Paradox repository remains pinned at
 | Ledger claims | 110 |
 | Passing immutable runs | 48 of 51 manifests |
 | Registered studies | 26 |
-| Python source files | 158 |
-| Public HTML routes | 76 locally generated |
+| Python source files | 159 |
+| Public HTML routes | 77 locally generated |
 | Public data files | 85 |
 | Laboratory routes | 18 |
-| Validated project papers | 6 |
-| Checksum-registered downloads | 22 |
-| Test suite | 244 collected tests |
+| Validated project papers | 7 |
+| Checksum-registered downloads | 23 |
+| Test suite | 247 collected tests |
 
 ## Program V5 exact result
 
