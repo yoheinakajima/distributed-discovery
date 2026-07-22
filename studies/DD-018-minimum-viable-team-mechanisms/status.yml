@@ -1,0 +1,5 @@
+study_id: DD-018
+status: active-registered-baseline
+evidence_status: no-result-registration-and-frozen-source-only
+next_action: commit the fully validated frozen source, open the draft PR, then execute the one primary run from the clean commit
+updated_utc: 2026-07-22T05:18:16Z
