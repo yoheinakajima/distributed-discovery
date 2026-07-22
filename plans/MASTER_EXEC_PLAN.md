@@ -8,7 +8,7 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-### Program V4 Threshold Discovery queue (active, 2026-07-22)
+### Program V4 and Information Sharing Frontier queue (active, 2026-07-22)
 
 Owner authorization on 2026-07-22 starts Program V4, *Threshold Discovery:
 Coordination, Crowding, and Minimum Viable Teams*, sequentially after the
@@ -20,8 +20,8 @@ decentralized choice. Its public qualification is: when actions require teams,
 form the smallest viable teams and diversify those teams. The program slogan
 remains “Share the evidence. Diversify the actions.”
 
-The required order is: (1) Program V3 editorial synchronization without new
-research evidence; (2) DD-016 threshold discovery; (3) DD-017 equilibrium
+The required Program V4 order is: (1) Program V3 editorial synchronization
+without new research evidence; (2) DD-016 threshold discovery; (3) DD-017 equilibrium
 selection and coalition stability; (4) DD-015 at its original registered
 boundary; (5) DD-018 minimum-viable-team mechanisms; (6) DiscoveryBench v3
 and the synthetic experimental extension; (7) the focused paper; (8) public
@@ -30,6 +30,11 @@ and handoff. Each executed study requires a bounded registration, resource
 estimate, immutable primary run, independent verifier, corruption test where
 applicable, claim audit, public-safe data, and local acceptance before any
 remote transaction.
+
+After the merged Program V4 handoff, Program V5 begins with a
+documentation-only baseline and then one bounded Signal Geometry study. The
+Information Sharing Frontier moves ahead of Reliable Discovery without deleting
+or weakening any later theorem-roadmap direction.
 
 The initial local safety audit is recorded in
 `reports/program-v4/parallel-safety.md`. The checkout is clean. GitHub CLI has
@@ -44,12 +49,18 @@ Progress:
 - [x] V4.1 — Synchronize V3 public copy and validate local public artifacts.
 - [x] V4.2 — Register, execute, independently verify, and integrate DD-016.
 - [x] V4.3 — Register, execute, independently verify, and integrate DD-017.
+- [ ] V4.R — Merge the documentation-only Information Sharing Frontier roadmap
+  reconciliation without changing claims, runs, studies, scientific source,
+  papers, site routes, or public data.
 - [ ] V4.4 — Execute DD-015 at its registered baseline, then separately assess
   the bounded threshold extension.
 - [ ] V4.5 — Execute and verify DD-018 mechanisms.
 - [ ] V4.6 — Extend DiscoveryBench and the synthetic experiment kit.
 - [ ] V4.7 — Build the focused paper and Program V4 Labs.
 - [ ] V4.8 — Run final acceptance, reconcile documentation, and hand off.
+- [ ] V5.0 — Merge the Program V5 documentation baseline after V4 handoff.
+- [ ] V5.1 — Register and execute the first bounded Signal Geometry and
+  Action-Budget Discovery Profile study.
 
 Validation strategy: use `make bootstrap`, `make verify`, `make papers`, and
 `make site` at the prescribed gates; retain immutable run artifacts and run
@@ -60,11 +71,30 @@ or provenance.
 
 Recovery: inspect `git status --short --branch`, read this Program V4 section
 and `reports/program-v4/parallel-safety.md`, then continue the first unchecked
-item. The next executable command is `make bootstrap` after the editorial copy
-and tests are prepared; the next source file is
-`src/distributed_discovery/site/build.py`.
+item. During V4.R, the next executable command is `git diff --check`; the next
+file is `docs/theorem-roadmap.md`. After V4.R merges, the next milestone is
+DD-015 and the next file is `studies/DD-015-dynamic-attention/plan.md`.
 
 ### Program V4 progress log
+
+- 2026-07-22: owner authorization reconciles the long-term theorem portfolio
+  with Program V5, the Information Sharing Frontier. Live audit found clean
+  `main` at `86998dff`, no open pull request, only settings issue #32 open, 78
+  claims, 38 verified-run manifests, 21 study directories, six paper validation
+  records, and no Labs V2 branch or route. `gh auth status` was run exactly once
+  and found no authenticated host; issue and PR work uses the connected GitHub
+  integration and SSH, while settings mutation remains unattempted. Issue #108
+  and branch `docs/information-sharing-frontier-roadmap` are active. This is a
+  documentation-only milestone: it creates no claim, run, study, study ID,
+  scientific code, paper, site route, or public data. Exactly one active
+  milestone is V4.R; after its merge the next milestone is DD-015.
+- 2026-07-22: V4.R local acceptance passed `git diff --check`, `make
+  bootstrap`, Ruff formatting and lint, MyPy on 121 source files, all 194 tests,
+  the 78-claim ledger, and all 42 run manifests. The changed-file audit contains
+  only six documentation and planning files and no claim, result, study,
+  scientific source, paper, site source, generated route, or public-data file.
+  The active gate is the clean documentation commit, draft PR, CI, merge,
+  post-merge CI/Pages verification, issue closure, and main synchronization.
 
 - 2026-07-22: V4.1 updated the generated home and Results copy without creating
   research evidence. The home now includes the validated Incentive to Ignore
