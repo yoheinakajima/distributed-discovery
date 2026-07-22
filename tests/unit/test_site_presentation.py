@@ -30,6 +30,10 @@ def test_copy_map_defines_the_approved_public_navigation() -> None:
     ]
     assert copy_map["brand"]["name"] == "Distributed Discovery"
     assert copy_map["brand"]["principle"] == "Share the evidence. Diversify the actions."
+    assert (
+        copy_map["brand"]["team_qualification"]
+        == "When actions require teams, form the smallest viable teams and diversify those teams."
+    )
 
 
 def test_copy_map_rejects_an_incomplete_primary_navigation(tmp_path: Path) -> None:
