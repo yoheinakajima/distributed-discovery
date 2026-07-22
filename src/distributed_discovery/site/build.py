@@ -3083,7 +3083,8 @@ def _render(
         if item["peer_reviewed"] is False:
             status_bits.append("not peer reviewed")
         bibtex = (
-            f"<h3>BibTeX</h3><pre><code>{html.escape(str(item['citation_bib']))}</code></pre>"
+            f'<h3>BibTeX</h3><pre class="bibtex-block"><code>'
+            f"{html.escape(str(item['citation_bib']))}</code></pre>"
             if item["citation_bib"]
             else ""
         )

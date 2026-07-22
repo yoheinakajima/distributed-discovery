@@ -274,6 +274,10 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "working paper · no DOI · not submitted · not peer reviewed" in sharing_html
     assert "Nakajima2026InformationSharingFrontier" in sharing_html
     assert "BibTeX" in sharing_html
+    assert '<pre class="bibtex-block"><code>' in sharing_html
+    stylesheet = (output / "styles.css").read_text(encoding="utf-8")
+    assert ".bibtex-block" in stylesheet
+    assert "overflow-x: auto" in stylesheet
 
     routes = json.loads((output / "data/routes.json").read_text(encoding="utf-8"))["routes"]
     route_paths = {route["path"] for route in routes}

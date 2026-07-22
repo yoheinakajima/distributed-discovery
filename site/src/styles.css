@@ -86,6 +86,16 @@ summary:focus-visible,
   border-radius: var(--radius-sm);
 }
 code, .study-id { font-family: var(--mono); overflow-wrap: anywhere; }
+.bibtex-block {
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+.bibtex-block code {
+  overflow-wrap: normal;
+  white-space: pre;
+}
 p, ul, ol, dl { margin-block: 0 1rem; }
 img { max-width: 100%; }
 
