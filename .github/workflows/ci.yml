@@ -11,4 +11,13 @@ jobs:
         with: {enable-cache: true}
       - run: uv python install 3.12
       - run: make bootstrap
-      - run: make verify
+      - name: Lint
+        run: make lint
+      - name: Typecheck
+        run: make typecheck
+      - name: Integration and regression tests
+        run: uv run --no-editable python scripts/run_pytest_ci.py tests/integration tests/regression
+      - name: Unit tests
+        run: uv run --no-editable pytest tests/unit
+      - name: Validate claims and run manifests
+        run: make validate-claims

@@ -170,6 +170,10 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert incentive["download"] == "downloads/The_Incentive_to_Ignore.pdf"
     incentive_html = (output / incentive["detail"]).read_text(encoding="utf-8")
     assert "working paper · no DOI · not submitted · not peer reviewed" in incentive_html
+    threshold = next(item for item in publications if item["slug"] == "threshold-discovery")
+    assert threshold["download"] == "downloads/Threshold_Discovery.pdf"
+    threshold_html = (output / threshold["detail"]).read_text(encoding="utf-8")
+    assert "working paper · no DOI · not submitted · not peer reviewed" in threshold_html
 
     routes = json.loads((output / "data/routes.json").read_text(encoding="utf-8"))["routes"]
     route_paths = {route["path"] for route in routes}
@@ -198,6 +202,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "labs/conditional-attention.html",
         "publications/common-source-trap.html",
         "publications/incentive-to-ignore.html",
+        "publications/threshold-discovery.html",
     } <= route_paths
     assert (output / "robots.txt").is_file()
     assert (output / "sitemap.xml").is_file()
@@ -272,6 +277,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "Better shared information can produce worse collective discovery." in home
     assert "Share the evidence. <strong>Diversify the actions.</strong>" in home
     assert "The Incentive to Ignore" in home
+    assert "Threshold Discovery" in home
     assert (
         "When actions require teams, form the smallest viable teams and diversify those teams."
         in home

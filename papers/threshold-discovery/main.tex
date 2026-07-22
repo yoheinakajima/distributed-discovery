@@ -1,0 +1,1047 @@
+\documentclass[11pt]{article}
+% Evidence claims: DD-C-0071 through DD-C-0088. Generated assets repeat the
+% contributing claim IDs, immutable run IDs, and input checksum prefixes.
+\usepackage[letterpaper,margin=0.92in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx,array,enumitem,float,tikz,natbib,graphicx,xcolor}
+\usepackage[hidelinks]{hyperref}
+\definecolor{inktwo}{HTML}{25324A}
+\definecolor{private}{HTML}{3C8D5A}
+\definecolor{consensus}{HTML}{B75D7A}
+\definecolor{planner}{HTML}{3977A8}
+\definecolor{market}{HTML}{C98B32}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prb}{\mathbb{P}}
+\newcommand{\ArtifactNote}[1]{\par\vspace{2pt}{\scriptsize\color{inktwo!72}#1}}
+\newcommand{\Evidence}[1]{\par\noindent\textbf{Evidence status.} #1\par}
+\newcommand{\Boundary}[1]{\par\noindent\textbf{Boundary.} #1\par}
+\setlength{\parskip}{0.35em}
+\sloppy
+\title{\textbf{Threshold Discovery}\\[0.35em]\large Coordination, Crowding, and Minimum Viable Teams}
+\author{Yohei Nakajima\\Untapped Capital}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Some discoveries require a team rather than a single successful action. This
+changes the role of duplication. With a threshold of one, repeated actions are
+pure crowding after the first attempt. With a threshold above one, overlap is
+initially productive because an action does not count until a minimum viable
+team forms. Too little coordination leaves stranded singletons; too much
+coordination collapses the portfolio onto one candidate. This paper develops
+that tension in a finite exact model and synthesizes six bounded components of
+the Distributed Discovery program. A deterministic planner assigns minimum-size
+teams to posterior-ranked candidates and obtains the sum of the largest
+$\min\{\lfloor N/\tau\rfloor,M\}$ posterior masses. Strategic equal-split play
+need not select that portfolio. Exact small-game enumeration contains weak pure
+equilibria with zero discovery and distinguishes unilateral equilibrium from
+pairwise and minimum-team stability. A dynamic extension shows that visible
+actions can increase herding without increasing discovery in its registered
+full-credit grid, while a separate threshold-two planner uses both team joining
+and new-team formation. A mechanism census identifies authoritative,
+eligibility, contribution, mediation, and matching rules that attain the
+two-team planner recommendation in bounded common-posterior fixtures, while
+also preserving equilibrium multiplicity and scope failures. DiscoveryBench v3
+and a synthetic-only experiment package connect these results to auditable
+evaluation and model-derived predictions. Every numerical statement is tied to
+a checksum-validated immutable run and a claim record. No participants were
+recruited, no human data were collected, and no experiment was conducted.
+\end{abstract}
+
+\noindent\textbf{Keywords:} threshold public goods; minimum viable teams;
+coordination; crowding; collective search; distributed discovery.
+
+\Evidence{DD-C-0071, DD-C-0072, DD-C-0075, and DD-C-0076 are verified
+theorem or identity claims. DD-C-0073, DD-C-0074, and DD-C-0077 through
+DD-C-0087 are bounded exact results with the statuses stated in the claim
+ledger. DD-C-0088 is a verified Monte Carlo estimate. Synthetic contrasts are
+predictions, not observations.}
+
+\input{generated/evidence-status.tex}
+
+\section{Introduction}
+
+Discovery is often modeled as if one correct attempt were enough. That is the
+right abstraction for a single searcher opening a file, testing a molecule, or
+checking a candidate answer. It is incomplete when action requires a team. A
+field investigation may need two people for safety. An engineering experiment
+may need several specialties before it can run. A multi-agent system may need a
+minimum number of independent verifiers before a candidate is accepted. In
+these settings, spreading every action across a different candidate produces
+coverage but may produce no executable discovery at all.
+
+The organizational problem becomes a portfolio problem with lumpy capacity.
+Let $N$ agents choose among $M$ candidates, and let candidate $j$ count only if
+at least $\tau$ agents choose it. A planner cannot simply maximize the number of
+distinct actions. The planner must build viable teams. Yet forming teams does
+not make concentration universally good. After the threshold is met, more
+agents on the same candidate add no discovery value in the frozen model. The
+right unit of diversification is therefore not the individual action but the
+minimum viable team.
+
+That observation creates three separate questions. First, what portfolio would
+a planner choose when the posterior over candidates is known? Second, what
+allocations can arise when agents choose strategically and share a discovery
+prize? Third, which institutions can support a high-value team portfolio under
+clearly stated information, authority, transfer, and deviation assumptions?
+Treating those questions as one would conceal the difference between an
+optimum, an equilibrium, and an implementation result.
+
+The planner problem has a simple exact solution. No allocation can open more
+than $\lfloor N/\tau\rfloor$ candidates, and no more than $M$ candidates exist.
+Opening the posterior-ranked candidates is optimal. An attaining allocation
+places exactly $\tau$ agents on each selected candidate before assigning any
+leftovers. The value is
+\begin{equation}
+ V^{P}(\pi,N,\tau)=\sum_{j=1}^{\min\{\lfloor N/\tau\rfloor,M\}}\pi_{(j)},
+ \label{eq:planner}
+\end{equation}
+where $\pi_{(1)}\geq\cdots\geq\pi_{(M)}$. This is an existence and value
+theorem, not uniqueness: posterior ties and leftover agents may generate many
+optimal assignments (DD-C-0071).
+
+The strategic problem is less forgiving. When a target candidate opens, the
+unit prize is split among agents on that candidate. An agent then compares its
+share at the current occupancy with the share after a unilateral move. A pure
+occupancy is a weak Nash equilibrium exactly when none of those finite moves
+improves payoff (DD-C-0075). Weakness matters. If no candidate has reached the
+threshold, one agent may be unable to create value alone. The resulting zero
+payoff indifference can stabilize an allocation with zero discovery even while
+the planner value is positive.
+
+The paper also separates one symmetric mixed construction from the full
+equilibrium correspondence. Uniform independent mixing over tied posterior
+modes is always a symmetric mixed equilibrium for $\tau\geq2$ in the frozen
+game, because a supported mode offers the same positive payoff and an
+unsupported unilateral move cannot form a team. At $\tau=1$, an unsupported
+candidate can instead pay its posterior mass immediately, so a precise outside
+payoff condition is required (DD-C-0076). The selected mixture is useful for
+comparison but is not a universal theory of equilibrium selection.
+
+The synthesis adds time and institutions. In the dynamic model, agents observe
+a shared clue, a private clue, and possibly earlier actions. Under full
+duplicate credit, choosing a posterior mode at every reached information set is
+a sequential Bayesian equilibrium (DD-C-0079). Exact bounded evaluation shows
+that visible actions need not improve discovery and can increase herding
+(DD-C-0081). Under a separately registered threshold-two planner, good policies
+sometimes start a new singleton, sometimes join one, and sometimes reinforce
+an already viable team (DD-C-0082). Timing does not erase the coordination-
+crowding tradeoff; it makes the relevant action depend on the current portfolio.
+
+Finally, institutions can change who is able or rewarded to form which team.
+A ten-mechanism census distinguishes authority, recommendation, eligibility,
+contribution rewards, and matching. Eight mechanisms attain the planner
+portfolio in each of five common-posterior fixtures, while universal pooling
+and sole-team rescue collapse to one candidate and do not (DD-C-0083). Some
+strategic rules support the recommendation against unilateral and specified
+two-person deviations, but retain many other pure equilibria (DD-C-0086).
+Recommendation support is therefore not equilibrium selection.
+
+The contribution is a disciplined map of the threshold-discovery problem. It
+connects an exact planner theorem, bounded equilibrium and stability censuses,
+dynamic attention, mechanism design, benchmark integration, and synthetic
+predictions without upgrading any component beyond its evidence. The paper
+makes no verified novelty claim. It is a working paper, not a DOI-bearing,
+submitted, or peer-reviewed publication.
+
+\section{Related literature}
+
+Threshold discovery sits near several established literatures while using a
+different objective. Threshold public-good and participation games study when
+enough contributors coordinate to provide a good; early analyses emphasize
+the sharp strategic effects of minimum participation requirements
+\citep{PalfreyRosenthal1984,Diekmann1985}. Here the public outcome is not a
+single project. Agents can form several candidate-specific teams, and the
+planner values the posterior mass covered by the resulting portfolio.
+
+Congestion games study how payoffs change with resource occupancy
+\citep{Rosenthal1973}. Equal splitting in the present model creates a form of
+crowding after a candidate is viable, but occupancy below the threshold is
+complementary rather than congested. The same additional teammate can be
+essential when occupancy rises from $\tau-1$ to $\tau$ and redundant when it
+rises from $\tau$ to $\tau+1$. That sign change is the organizing feature of
+the paper.
+
+Coalition formation and hedonic grouping ask which collections of agents are
+stable under different deviation concepts \citep{BogomolnaiaJackson2002}.
+Cooperative-game concepts such as strong equilibrium and coalition-proofness
+also distinguish individual from group deviations
+\citep{Aumann1959,BernheimPelegWhinston1987}. The bounded census below uses
+narrower registered objects: weak pure Nash, strict-member pair deviations,
+and exact-size-$\tau$ strict-member deviations. It does not relabel those checks
+as strong or coalition-proof equilibrium.
+
+Information aggregation and organizational design study how shared evidence
+changes action and coordination \citep{MarschakRadner1972,HellwigVeldkamp2009,
+MyattWallace2012}. The Distributed Discovery framework emphasizes that better
+group ranking can coexist with a worse portfolio of actions
+\citep{Nakajima2026SharedDiscovery,WangEtAl2026DistributedDiscovery}. Thresholds
+add a complementary constraint: maximal action diversity can also be useless
+if no candidate receives enough effort to open.
+
+Collective search and scientific division of labor ask how groups balance
+exploitation and exploration \citep{March1991,Kitcher1990,Zollman2007}. The
+finite model contributes a transparent capacity rule. When each discovery
+requires $\tau$ agents, the planner has at most $\lfloor N/\tau\rfloor$ viable
+search units. This supplies a compact benchmark for more elaborate dynamic,
+heterogeneous, or costly-search models.
+
+Mechanism design adds another distinction. A central assignment can implement
+an allocation by authority. A mediator can recommend actions. A token or right
+can condition prize eligibility. A contribution rule can reward membership in
+an exactly minimal team. These are different institutional objects even when
+their recommended allocations coincide. The paper therefore reports observed
+information, action observability, commitment, transfers, subsidy, identity
+selection, and deviation class rather than treating ``coordination'' as a
+single intervention.
+
+\Boundary{The literature discussion locates the model; it does not certify
+novelty. The formal and numerical claims of this paper are only those linked to
+the repository claim ledger and immutable runs.}
+
+\section{Threshold discovery model}
+
+There is a finite candidate set $\mathcal M=\{1,\ldots,M\}$ and one hidden
+target $\theta$. Conditional on the available evidence, the posterior is
+$\pi=(\pi_1,\ldots,\pi_M)$ with positive entries summing to one. There are $N$
+agents. Each agent chooses one candidate. Let $n_j$ be the occupancy of
+candidate $j$, so $\sum_j n_j=N$.
+
+A candidate is viable when $n_j\geq\tau$. Discovery is the event that the true
+target is among the viable candidates. Conditional expected discovery is
+therefore
+\begin{equation}
+ D(n;\pi,\tau)=\sum_{j=1}^{M}\pi_j\mathbf 1\{n_j\geq\tau\}.
+ \label{eq:discovery}
+\end{equation}
+There is no additional value from occupancy above $\tau$, no execution failure
+once the threshold is met, and no cost in the planner objective. Those
+assumptions make the capacity logic exact. They also define the boundary of
+the result.
+
+For strategic analysis, the target candidate carries a unit prize divided
+equally among agents who selected it, provided it is viable. An agent on
+candidate $j$ obtains posterior expected payoff
+\begin{equation}
+ u_j(n)=
+ \begin{cases}
+   \pi_j/n_j,& n_j\geq\tau,\\
+   0,& n_j<\tau.
+ \end{cases}
+ \label{eq:payoff}
+\end{equation}
+A unilateral move from $j$ to $k$ compares $u_j(n)$ with
+$\pi_k/(n_k+1)$ if $n_k+1\geq\tau$ and with zero otherwise. This finite
+comparison is the basis of DD-C-0075.
+
+The mixed-action identity makes the same threshold visible probabilistically.
+Suppose each of the other $N-1$ agents independently chooses $j$ with
+probability $x_j$, and let $K_j\sim\mathrm{Binomial}(N-1,x_j)$. Choosing $j$
+has expected payoff
+\begin{equation}
+ U_j(x)=V\pi_j\E\left[
+ \frac{\mathbf 1\{K_j\geq\tau-1\}}{K_j+1}
+ \right].
+ \label{eq:mixed-payoff}
+\end{equation}
+At $\tau=1$, the share factor equals
+$[1-(1-x_j)^N]/(Nx_j)$, with the exact zero limit equal to one. At $\tau=2$,
+the $K_j=0$ term is removed and the zero limit is zero. These are verified
+identities, not an equilibrium characterization (DD-C-0072).
+
+Three benchmarks recur. Private clue-following sends each agent to the label
+named by its clue. Common deterministic mode pools the clues and sends everyone
+to a selected posterior mode. Registered tied-mode mixing makes independent
+uniform draws over all posterior modes. The planner allocates minimum-size
+teams to the highest posterior candidates. The first three rules turn evidence
+into actions; the fourth is an allocation frontier. None should be called the
+other.
+
+\section{Minimum viable teams}
+
+\subsection{The planner theorem}
+
+Let $K=\min\{\lfloor N/\tau\rfloor,M\}$. Any allocation opening $q$ candidates
+uses at least $q\tau$ agents, so $q\leq K$. Among all sets with at most $K$
+candidates, the largest posterior mass is the sum of the $K$ largest entries.
+Assigning $\tau$ agents to each of those candidates attains the bound, and any
+leftover agents can be placed without closing an opened candidate. This proves
+Equation~\ref{eq:planner} (DD-C-0071).
+
+The proof yields an institutional rule of thumb: build the smallest teams that
+can act, rank opportunities by posterior value, and diversify at the team
+level. It does not say that every optimum has exactly the same occupancy.
+Leftovers may move freely when they do not change viability. Posterior ties may
+change which candidate labels are selected. If value continues to rise with
+team size, execution can fail, or team members have heterogeneous skills, the
+minimum-team construction need not remain optimal.
+
+\subsection{The canonical phase diagram}
+
+DD-016 freezes a canonical signal model with $M=16$, $N=8$, conditionally
+independent clues, and clue accuracy $1/5$. Exact fraction arithmetic exhausts
+490,314 labeled clue-count vectors. A materially different occupancy-orbit
+enumeration reconstructs the same aggregates. Figure~\ref{fig:threshold-phase}
+and Table~\ref{tab:threshold-phase} are generated directly from that immutable
+output (DD-C-0073 and DD-C-0074).
+
+\input{generated/threshold-phase.tex}
+
+At $\tau=1$, individual diversity is useful because every distinct correct
+action can discover. At $\tau=2$, many private or independently mixed actions
+remain stranded as singletons. Common mode is still too concentrated, but the
+gap between uncoordinated and coordinated portfolios changes. From $\tau=3$
+through $8$, common mode and the registered tied-mode mixture exceed private
+clue-following in the frozen fixture. Coordination becomes necessary to make
+any candidate viable often enough.
+
+The planner remains the appropriate frontier because it chooses whole teams.
+For $\tau=1$ through $4$, it strictly diversifies beyond common mode and earns a
+higher discovery value. For $\tau=5$ through $8$, only one viable coalition can
+form with eight agents, so planner diversification cannot open a second
+candidate and the planner ties common mode. The apparent convergence is a hard
+capacity constraint, not evidence that universal concentration is generally
+optimal.
+
+\input{generated/threshold-table.tex}
+
+The phase diagram also clarifies why ``crowding'' cannot be measured by raw
+collisions alone. Some overlap is necessary: $\tau$ agents must coincide before
+a candidate counts. Excess overlap is occupancy beyond what is needed to form
+the viable teams in the selected portfolio. Failed subthreshold attempts and
+excess members of already viable teams are different losses and demand
+different interventions.
+
+\subsection{Posterior ranking and action diversity}
+
+Posterior ranking determines which teams the planner would form, not how
+private agents come to share the same ranking. A common posterior can be an
+input to an assignment problem. Dispersed private signals create an additional
+information-design problem. The exact canonical census holds the signal
+structure fixed and compares named action rules; it does not prove that pooling
+information is always desirable or always harmful.
+
+This separation matters operationally. An organization may have a high-quality
+central ranking but lack assignment authority. It may have assignment authority
+but unreliable execution. Or it may have decentralized signals that cannot be
+truthfully aggregated. Equation~\ref{eq:planner} answers the allocation problem
+conditional on the posterior. It does not solve the upstream acquisition and
+reporting problems.
+
+\section{Strategic equilibrium and selection}
+
+\subsection{Pure occupancy equilibrium}
+
+The pure equilibrium characterization is deliberately direct. An occupancy is
+a weak Nash equilibrium if and only if every occupied agent weakly prefers the
+current candidate payoff in Equation~\ref{eq:payoff} to every unilateral
+destination payoff after adding one agent there. There are no other pure
+unilateral deviations in the frozen action space, so the condition is necessary
+and sufficient (DD-C-0075).
+
+Weak equilibrium preserves economically meaningful coordination failures.
+Suppose $\tau=2$ and every agent is a singleton. Each receives zero. A unilateral
+move may create one viable pair, but whether it is profitable depends on the
+destination posterior and resulting split. In other states, no single move can
+create a team and all zero-payoff actions are tied. Removing such equilibria by
+assuming strict tie-breaking would change the game rather than merely simplify
+the analysis.
+
+DD-017 registers eight positive rational posterior fixtures with $M$ between
+two and four, $N$ between two and six, and every integer threshold from one to
+$N$. It exhausts 3,728 occupancy states. An independent labeled-profile
+enumerator visits 87,216 profiles, deduplicates their occupancies, and
+reconstructs the same equilibrium correspondence.
+
+\input{generated/equilibrium-census.tex}
+
+In 52 of the 160 games, the worst weak pure equilibrium has zero discovery even
+though the planner value is positive. Under the registered positive-over-zero
+convention, the pure price of anarchy is infinite. This is a bounded exact
+result, not a theorem that every threshold game has an inefficient equilibrium
+(DD-C-0077).
+
+\subsection{One symmetric mixture}
+
+If $m$ candidates tie for the highest posterior and every agent independently
+mixes uniformly over those modes, support payoffs are equal. For $\tau\geq2$,
+an unsupported unilateral deviation cannot form a viable team and pays zero,
+while a supported action has positive probability of joining enough other
+agents. The mixture is therefore a symmetric mixed Nash equilibrium.
+
+At $\tau=1$, an unsupported action immediately opens its candidate. The support
+payoff must weakly exceed every unsupported posterior mass:
+\begin{equation}
+ \pi_{\max}\frac{1-(1-1/m)^N}{N/m}\geq \max_{k\notin S}\pi_k.
+ \label{eq:mixed-boundary}
+\end{equation}
+The condition can fail. All 21 failures in the registered census occur at
+$\tau=1$. This theorem verifies one symmetric construction but neither
+characterizes all mixed equilibria nor supplies a learning or selection
+process (DD-C-0076).
+
+That qualification is essential when interpreting the canonical DD-016
+tied-mode curve. The curve is a registered comparison rule. For thresholds two
+and above it is also one equilibrium under the frozen equal-split game, but it
+does not replace the full pure or mixed equilibrium correspondence. An
+institutional recommendation must say which selection process, if any, makes
+that curve behaviorally relevant.
+
+\subsection{Coalitional stability}
+
+Unilateral equilibrium does not settle whether a team can form by moving
+together. DD-017 therefore asks two bounded questions. A pair blocks only if a
+joint action change makes both named members strictly better. An exact-size-
+$\tau$ coalition blocks only if a joint change makes every named member
+strictly better. The two concepts coincide in coalition size when $\tau=2$ but
+retain separate definitions.
+
+Eight registered games have no pairwise-strict-stable weak pure equilibrium,
+and 35 have no exact-size-$\tau$-strict-stable weak pure equilibrium
+(DD-C-0078). These counts are not nested comparative statics. Exact-size
+stability is not monotone in coalition size, and neither result tests arbitrary
+coalitions, transfers, weak Pareto improvements, strong equilibrium, or
+coalition-proofness.
+
+The substantive lesson is methodological. A mechanism can pass unilateral
+obedience while failing a team deviation. It can pass a minimum-team deviation
+while retaining other bad equilibria. And it can be authoritative, making
+deviation tests not applicable rather than passed. Those labels must remain
+visible in any mechanism comparison.
+
+\section{Dynamic attention}
+
+Static occupancy hides the order in which agents observe and act. DD-015
+freezes a three-target sequential model with two or three agents, one shared
+clue, private clues, visible or hidden action history, and either fixed-budget
+or stopping feedback. The reward in the autonomous game is full duplicate
+credit: an agent receives one whenever its own action is correct, regardless of
+what others do.
+
+Under that reward, an agent's expected payoff from action $a$ is exactly its
+posterior probability that $\theta=a$. Later actions do not change that payoff.
+Choosing a posterior mode at every reached information set is therefore a pure
+sequential Bayesian equilibrium, with the registered lowest-label tie-break
+(DD-C-0079). This proposition does not extend to the equal-split threshold game
+or to contribution and rescue rewards.
+
+The exact grid contains 64 objective rows. The common-payoff planner strictly
+exceeds autonomous full-credit play in 38. Autonomous agents follow a previous
+action with positive probability in 32 rows and lean against a repeated prior
+action with positive probability in 50. Stopping reduces expected actions
+relative to fixed budget in every one of 32 parameter cells (DD-C-0080).
+
+\input{generated/dynamic-summary.tex}
+
+The visibility result is a preserved bounded null. Across 32 fixed-budget
+cells, visible-action inference improves neither discovery nor expected action
+dispersion relative to a history-hidden Bayesian baseline. It strictly lowers
+both in 18 cells and ties in 14 (DD-C-0081). Earlier actions carry information,
+but under full duplicate credit each agent optimizes individual correctness.
+Informational value and portfolio value can therefore move in opposite
+directions.
+
+Stopping feedback is different because continuation reveals failure as well
+as the earlier action. The fixed-budget visibility comparison excludes this
+extra signal. Combining the two would make the negative result appear broader
+than the registered design.
+
+The threshold-two extension is separately registered and planner-only. With
+three sequential agents and $\tau=2$, stopping preserves the fixed-budget
+optimal discovery value while strictly reducing expected actions in all 16
+parameter cells. Across its 32 objective rows, optimal policies use each of
+five action categories with positive probability: start a singleton, join a
+singleton, join a viable team, follow the shared clue, and oppose it
+(DD-C-0082).
+
+Joining a viable team after discovery is already secured can occur under fixed
+budget because remaining actions must still be assigned. Its presence is not
+evidence of decentralized over-crowding. Conversely, starting a singleton is
+not automatically wasteful: it can preserve an option for a later agent. The
+dynamic state determines whether another action completes a team, preserves a
+portfolio, or becomes redundant.
+
+\section{Mechanisms for team formation}
+
+DD-018 fixes three candidates, four agents, threshold two, and five weakly
+descending common posterior fixtures. The planner wants two teams of two on the
+top candidates. Ten institutions are registered with explicit information,
+observability, commitment, transfers, subsidy, anonymity, identity selection,
+and deviation class.
+
+Central assignment and random matching are authoritative after assignment.
+Their planner performance comes from control, so post-assignment unilateral
+obedience is not applicable. Team tokens and exclusive coalition rights make
+prize eligibility depend on identity or charter. A correlated mediator sends
+private recommendations without binding action. Universal pooling uses ordinary
+threshold-adjusted equal splitting at a common lexicographic mode. Sole-team
+rescue pays only when exactly one viable team exists. Marginal coalition
+contribution pays an exactly minimal viable team. A threshold-adjusted
+equal-split recommendation and a pairwise matching market complete the
+registry.
+
+\input{generated/mechanism-table.tex}
+
+Across 50 mechanism-fixture rows, 40 recommendations attain the two-team
+planner value. Central assignment, random matching, team tokens, exclusive
+coalition rights, correlated mediation, marginal coalition contribution,
+threshold-adjusted equal split, and the pairwise matching market attain it in
+all five fixtures. Universal pooling and sole-team rescue attain it in none
+(DD-C-0083).
+
+Among 35 rows where unilateral action changes are meaningful, 31
+recommendations are strictly obedient. Twenty-nine withstand every registered
+strict-member pair deviation and every exact-size-two $\tau$-player deviation.
+All 50 rows satisfy nonnegative participation, weak prize-budget balance, and
+zero external subsidy (DD-C-0084). Report truthfulness is not applicable because
+the common posterior is an input, not elicited from private reports.
+
+The negative mechanism result is as informative as the successes. Universal
+pooling and sole-team rescue place all four agents on the top candidate and
+earn strictly less discovery than the two-team planner in every fixture.
+Universal-pooling collapse is strictly unilaterally obedient in all five
+fixtures but pairwise stable in only one. Sole-team-rescue collapse is strictly
+unilaterally obedient and pairwise stable in all five (DD-C-0085). Even a
+locally stable reward can preserve global concentration.
+
+Team tokens, exclusive coalition rights, and marginal coalition contribution
+support the two-team recommendation with strict unilateral obedience, no
+registered strict-member pair or size-two block, weak budget balance, and no
+subsidy in every fixture. Yet their labeled pure-Nash multiplicities are 25,
+25, and 21 in every fixture (DD-C-0086). Supporting one good recommendation
+does not imply uniqueness or a process that selects it.
+
+The mechanism census suggests an architecture rather than a universal winner.
+Where authority is legitimate, assignment can directly build minimum teams.
+Where action remains voluntary, eligibility or marginal contribution can alter
+the private payoff from joining the intended team. Where identities should be
+anonymous ex ante, a mediator or random matching can distribute roles. Each
+option trades autonomy, information requirements, and selection risk.
+
+\Boundary{The mechanism evidence is a five-fixture exact common-posterior
+census. It does not establish private report truthfulness, arbitrary coalition
+stability, coalition-proofness, endogenous source acquisition, or a general
+implementation theorem.}
+
+\section{Benchmark and synthetic predictions}
+
+Program V4 integrates the exact results into DiscoveryBench v3 and a versioned
+synthetic experiment package. These artifacts serve different purposes. The
+benchmark checks whether capability-declared protocols reproduce registered
+exact task vectors. The experiment package maps model contrasts into treatments,
+outcomes, hypotheses, and conditional power calculations. Neither is a field
+evaluation.
+
+DiscoveryBench v3 preserves every v1 and v2 exact vector while extending the
+opt-in registry to 24 tasks, 29 protocols, and 39 metrics. Thirty-six compatible
+pairs reproduce their exact registered values. The other 660 of 696 candidate
+pairs remain explicit exclusions. Missing metrics are not imputed, hidden
+target-state access is rejected, and no universal composite score is defined
+(DD-C-0087).
+
+Synthetic Experiment v3 preserves the earlier registries and shared-seed v2
+power rows while extending the package to 37 treatment cells, 20 hypotheses,
+23 outcomes, 14 response scenarios, 1,184 balanced synthetic assignments, and
+1,680 power rows with 1,000 replications each. Among 840 registered rows at
+sample sizes 640 or greater, 644 remain below the 0.80 calibration threshold.
+Every failure is retained (DD-C-0088).
+
+\input{generated/integration-table.tex}
+
+The threshold and dynamic treatments are predictions about contrasts, not
+claims about people. The favorable rational-response scenario at sample size
+960 gives estimated powers 1.000, 0.999, 0.918, 0.948, 1.000, and 0.999 for
+H15 through H20. Those values depend on the declared assumed effects, normal
+sampling approximation, Bonferroni family alpha, response multiplier, and
+fixed random streams. A different behavioral response model can produce much
+lower power.
+
+\input{generated/prediction-table.tex}
+
+The experimental design is intentionally honest about failure. A power row
+below 0.80 is not evidence that a treatment has no effect, just as a high
+synthetic power estimate is not evidence that it does. The table is a planning
+calculation conditional on synthetic assumptions. No participants were
+recruited. No human data were collected. No experiment was conducted.
+
+The benchmark likewise does not rank arbitrary agents. It evaluates only
+compatible task-protocol-metric combinations. A protocol that lacks an input
+capability is excluded rather than assigned a poor score; a protocol with
+forbidden target-state access is excluded rather than rewarded. This keeps the
+exact matrix interpretable and prevents a convenient aggregate from hiding
+incommensurable tasks.
+
+\section{Institutional implications}
+
+\subsection{Form teams, then diversify teams}
+
+The planner theorem provides the simplest design principle. When success needs
+$\tau$ agents and additional members add no value, the scarce resource is the
+number of viable teams, not the number of individuals. Organizations should
+first make teams viable and then place successive teams on posterior-ranked
+candidates. This is the threshold counterpart of action diversification.
+
+The principle is conditional. It applies when the posterior is available, team
+members are interchangeable, execution is deterministic at the threshold, and
+there is no scale value beyond it. A surgical team, research group, or model
+ensemble may violate all of those assumptions. In such cases, the minimum-team
+portfolio remains a baseline against which the value of heterogeneity,
+redundancy, and scale can be measured.
+
+\subsection{Measure stranded effort and excess crowding separately}
+
+An occupancy below $\tau$ is a stranded attempt in the frozen one-shot model.
+Occupancy above $\tau$ is excess crowding if those agents could instead complete
+another valuable team. Aggregate concentration measures can mix the two. A
+system can have low concentration yet no viable team, or high concentration
+with exactly the overlap needed for execution.
+
+Useful operational metrics therefore include the number of viable candidates,
+failed subthreshold attempts, excess members on viable candidates, expected
+largest crowd, and posterior mass opened. DD-016 reports all of these as exact
+objects. DiscoveryBench v3 keeps the capabilities and metric definitions
+separate rather than compressing them into one score.
+
+\subsection{Do not confuse support with selection}
+
+A recommendation can be obedient and still coexist with many other
+equilibria. The mechanism census makes multiplicity visible. A deployment
+claim should name not only a supported profile but also the assumed selection
+process: authority, defaults, repeated adjustment, mediation, matching, or
+some other rule. Without that process, ``implements'' may mean only that one
+good equilibrium exists.
+
+The same warning applies to the registered tied-mode mixture. It is one
+symmetric equilibrium for thresholds above one, but it is not the complete
+equilibrium set. Comparing its discovery value with the planner is informative
+about that selection rule and nothing broader.
+
+\subsection{Use dynamic observability deliberately}
+
+Visible actions can convey information and simultaneously induce correlated
+behavior. The DD-015 null shows no discovery or dispersion gain from visibility
+in the registered fixed-budget full-credit grid. This does not justify hiding
+all actions. It just rejects the assumption that more observed history must
+improve portfolio discovery.
+
+Stopping rules add a different signal: continuing reveals that earlier actions
+failed. In the exact dynamic studies, stopping reduces expected actions while
+preserving the relevant planner value in the threshold-two extension. Systems
+should distinguish action visibility, outcome visibility, and continuation
+feedback rather than bundle them as ``transparency.''
+
+\subsection{Match rewards to contribution and rights}
+
+Equal splitting can reward joining an already popular candidate. Eligibility
+rights and marginal contribution can instead attach reward to the intended
+team structure. The bounded mechanism results show that these devices can
+support the two-team planner profile without external subsidy in the registered
+fixtures. They also introduce identity, observability, and enforcement demands.
+
+No rule is free. Tokens require allocation and verification. Coalition rights
+name privileged identities. Contribution rewards require occupancy
+observability and a definition of the minimal team. Mediation requires trusted
+recommendations. Assignment requires authority. The institutional choice
+should report these inputs and not only the achieved discovery number.
+
+\section{Limitations}
+
+The model has one hidden atomic target and a normalized posterior. Actions name
+candidates directly. Agents are homogeneous in capacity, each takes one action,
+and a candidate opens deterministically at a common integer threshold. There is
+no partial progress, execution failure, false positive cost, learning spillover,
+or value from effort above the threshold. Equation~\ref{eq:planner} is exact
+inside that model and should not be exported without restating it.
+
+The strategic game uses a unit target prize split among agents at a viable true
+candidate. Other reward rules produce other equilibria. The pure equilibrium
+theorem covers unilateral deviations; the bounded stability census covers only
+strict-member pairs and exact-size-$\tau$ coalitions. Neither is a strong-
+equilibrium or coalition-proof analysis.
+
+The canonical threshold census uses one $M=16$, $N=8$, $p=1/5$ signal fixture.
+Its phase changes are exact for that fixture but not universal comparative
+statics. The equilibrium census uses 160 small rational games. Counts such as
+52, 8, and 35 are bounded observations, not asymptotic laws.
+
+DD-015 uses three targets and two or three sequential agents. Its autonomous
+equilibrium relies on full duplicate credit and reached information sets. Its
+visibility null excludes stopping feedback from the comparison. Its threshold-
+two extension is planner-only and must not be described as decentralized
+equilibrium evidence.
+
+DD-018 takes a common posterior as input, so it cannot test report truthfulness.
+Its threshold is two and its coalitional checks are correspondingly small. The
+mechanism names denote exact registered rules, not every institution that could
+use the same ordinary-language label. The finding that sole-team rescue fails
+in five fixtures is not a theorem that rescue payments generally fail.
+
+DiscoveryBench v3 is an exact internal benchmark, not a hosted leaderboard or
+universal measure of agent quality. Synthetic Experiment v3 uses declared
+effects and response scenarios. Its Monte Carlo estimates are conditional
+planning evidence only. The 644 retained failures are part of the design record,
+not behavioral null results.
+
+Most importantly, there is no empirical validation. No participant,
+organization, laboratory, or deployed multi-agent system was observed. Human
+deployment would require separate ethics, consent, privacy, retention,
+identification, pilot, and governance review. The paper supplies hypotheses and
+auditable finite benchmarks, not causal evidence.
+
+\section{Conclusion}
+
+Threshold discovery replaces a simple diversity maxim with a portfolio rule.
+When a candidate requires a minimum viable team, some duplication is necessary.
+The planner forms the smallest viable teams on posterior-ranked candidates.
+Uncoordinated diversity can strand effort, while common-mode concentration can
+waste team capacity. The relevant design objective is disciplined overlap.
+
+Strategic behavior complicates that planner rule. Weak equilibria can have zero
+discovery. One natural symmetric mixture is only one selection. Pair and
+minimum-team stability answer different questions. Dynamic observability can
+increase herding without increasing discovery. Mechanisms can support a good
+portfolio while retaining many other equilibria.
+
+The practical message is correspondingly precise: identify the minimum viable
+team, measure both stranded attempts and excess crowding, diversify whole teams,
+and state the authority and reward system that makes the portfolio credible.
+Benchmark capability and calibration failures should remain visible. None of
+these prescriptions is an empirical finding until tested under a separately
+authorized design.
+
+Threshold Discovery is therefore a bridge between information and institution.
+Evidence ranks opportunities; team technology determines the granularity of
+action; incentives and authority determine which portfolio is actually formed;
+feedback changes what later agents know. A discovery architecture is complete
+only when all four are specified.
+
+\appendix
+
+\section{Evidence and reproduction map}
+
+The paper uses seven immutable run IDs. DD-016 supplies the planner proof audit,
+payoff identities, canonical metrics, and eight-row phase diagram. DD-017
+supplies the 160-game equilibrium and coalition census. DD-015 supplies one
+baseline dynamic run and a separately labeled threshold-two extension. DD-018
+supplies the ten-mechanism, five-fixture census. DD-010 and DD-011 supply the
+versioned benchmark and synthetic experiment integration.
+
+Each generated asset prints its contributing claim IDs, run IDs, generator,
+and input checksum prefixes. Full checksums are stored in
+`generated/provenance.json`. The builder first reads each immutable manifest,
+requires passed validation and exit status zero, resolves the named output, and
+compares its SHA-256 with the manifest. A missing or changed source stops the
+build.
+
+The claim audit extracts every token matching \texttt{DD-C-} followed by four digits
+from the manuscript and generated assets, then resolves it against
+\path{claims/claims.yml}. Citation keys are extracted from the manuscript and
+resolved against the generated bibliography. Required sections and every
+generated input are checked before compilation.
+
+Tectonic compiles the manuscript twice with \path{SOURCE_DATE_EPOCH} fixed to the
+DD-016 run start. The builder rejects nonzero exit status, undefined references,
+undefined citations, and overfull boxes. The two PDF byte streams must have the
+same SHA-256. Poppler supplies the page count and renders every page for visual
+review. The committed validation record binds the source inputs, generated
+assets, page count, and final PDF checksum.
+
+\section{Exact claims by component}
+
+DD-C-0071 is the general finite planner theorem. DD-C-0072 is the finite
+binomial payoff identity. DD-C-0073 and DD-C-0074 are independently reproduced
+canonical computational results. Their exact fractions, not displayed
+decimals, determine all labels.
+
+DD-C-0075 characterizes weak pure Nash occupancy in the frozen threshold game.
+DD-C-0076 verifies one symmetric tied-mode mixture and its threshold-one
+boundary. DD-C-0077 and DD-C-0078 report the bounded welfare and coalition
+censuses. The latter do not imply strong or coalition-proof equilibrium.
+
+DD-C-0079 proves the full-credit dynamic posterior-mode equilibrium. DD-C-0080
+is the exact dynamic planner and response census. DD-C-0081 preserves the
+visible-action herding null. DD-C-0082 is a separate planner-only threshold-two
+extension.
+
+DD-C-0083 through DD-C-0086 are exact bounded mechanism results. Their
+verification uses all 81 labeled action profiles per fixture and an independent
+4,050-entry action table. Applicability labels are part of the evidence: an
+authoritative assignment does not ``pass'' a voluntary deviation test.
+
+DD-C-0087 is the independently reproduced DiscoveryBench v3 exact matrix.
+DD-C-0088 is a verified seeded Monte Carlo estimate. The latter has no
+exactness basis and reports power and intervals to six decimals from rejection
+counts. These categories are not interchangeable.
+
+\section{Design checklist for applications}
+
+An application should specify at least the following before using the model as
+a benchmark:
+\begin{enumerate}[leftmargin=2em]
+\item the candidate set and posterior or signal channel;
+\item the number, skills, and action capacity of agents;
+\item the threshold and whether it varies by candidate;
+\item execution probability and value above the threshold;
+\item costs of stranded attempts, false positives, and redundant members;
+\item what information each actor observes and when;
+\item whether actions and outcomes are public, delayed, or private;
+\item who has assignment authority and whether recommendations bind;
+\item the reward, transfer, subsidy, and budget rules;
+\item the relevant unilateral and coalitional deviation classes;
+\item the equilibrium or learning selection process;
+\item the metrics that remain incomparable and therefore unaggregated.
+\end{enumerate}
+
+Failing to specify these dimensions invites category errors. A planner value
+may be reported as an equilibrium. An authoritative assignment may be reported
+as voluntary obedience. Pair stability may be reported as coalition-proofness.
+A synthetic power estimate may be reported as a behavioral effect. The
+repository's evidence policy treats each of those upgrades as invalid.
+
+\section{Interpretive cases}
+
+Consider first a team with $N=8$ and threshold $\tau=2$. Capacity permits four
+viable teams. If the posterior has four clearly dominant candidates, the
+planner places a pair on each. A policy that places eight agents on the top
+candidate spends three team-equivalents without opening any additional target.
+A policy that sends every agent to a different candidate opens none. Both can
+be described as coordinated in ordinary language, but only the four-pair
+portfolio uses capacity efficiently under the frozen objective.
+
+Now consider $N=8$ and $\tau=5$. Only one viable team can form. The planner
+opens the top posterior candidate, and the remaining three agents cannot form a
+second team. Here common-mode concentration and the planner discovery value
+coincide. The tie follows from capacity. It does not imply that extra members
+add value, nor does it generalize to a larger team or smaller threshold.
+
+In a decentralized threshold-two game, two agents may have to move together to
+create a profitable alternative. Unilateral obedience therefore cannot certify
+resistance to pair deviations. Conversely, passing every named pair deviation
+does not test three-person changes or deviations with transfers. The deviation
+class is part of the result, not a footnote.
+
+In a dynamic setting, an earlier action changes both the posterior and the
+portfolio state. Following may exploit information but increase crowding.
+Opposing may diversify action but ignore a strong signal. Joining a singleton
+can complete a team; starting a singleton can create an option; joining a
+viable team can be redundant. A sensible policy must condition on all three
+objects: belief, occupancy, and remaining action capacity.
+
+Finally, compare a central assignment with a token mechanism. Both may support
+the same two-pair portfolio. The assignment uses authority, so voluntary
+obedience after commitment is not the relevant test. Tokens preserve action
+choice but restrict prize eligibility, so obedience and equilibrium
+multiplicity matter. Reporting only expected discovery would erase the central
+institutional difference.
+
+\section{Prediction and measurement boundaries}
+
+The synthetic experiment extension maps the theory to registered contrasts.
+It can ask whether team tokens change viable-team formation, whether visible
+history changes herding, or whether stopping feedback reduces expected actions.
+The power calculation requires an assumed effect and response model. It cannot
+tell whether participants understand the institution, whether identities
+create fairness concerns, or whether the experimental task represents a real
+organization.
+
+Outcome measurement should preserve the portfolio decomposition. Discovery
+alone cannot distinguish a lucky concentrated policy from systematic team
+formation. Expected distinct actions alone rewards stranded singletons. Useful
+outcomes include viable-candidate count, posterior mass opened, failed
+subthreshold attempts, excess overlap, largest crowd, action count, and the
+distribution of rewards. No one of these is a universal composite score.
+
+The benchmark and experiment package also preserve version boundaries.
+DiscoveryBench v1 and v2 remain unchanged prefixes of v3. Synthetic Experiment
+v1 and v2 remain public alongside v3, and shared-seed v2 power rows are exactly
+preserved. Versioning makes changes auditable without rewriting earlier
+evidence.
+
+Human deployment remains outside the current program. A future study would
+need a new issue and registration specifying ethics, consent, privacy,
+retention, recruitment, exclusion, stopping, identification, and governance.
+Nothing in the present PDF authorizes that work.
+
+\section{Planner proof and equilibrium audit detail}
+
+The planner proof can be read as an upper bound followed by a construction.
+For any occupancy $n$, let $O(n)=\{j:n_j\geq\tau\}$ be the opened set. Since
+each opened candidate consumes at least $\tau$ agents,
+$|O(n)|\tau\leq N$. Thus $|O(n)|\leq\lfloor N/\tau\rfloor$. The opened set is
+also a subset of $M$ candidates, so its cardinality is at most $K$. Posterior
+ranking then gives
+\begin{equation}
+ D(n;\pi,\tau)=\sum_{j\in O(n)}\pi_j
+ \leq \sum_{j=1}^{K}\pi_{(j)}.
+\end{equation}
+Assigning exactly $\tau$ agents to each ranked candidate $1$ through $K$ opens
+that set. The number used is $K\tau\leq N$. Placing the remaining
+$N-K\tau$ agents anywhere cannot close an opened candidate, so the bound is
+attained. The argument uses no continuous relaxation and no limiting step.
+
+The DD-016 hand audit tests this theorem on 63 small allocation problems. Three
+posterior fixtures are crossed with $N=1$ through $6$ and every admissible
+threshold. Exhaustive enumeration computes the best value independently of the
+closed form. It also checks normalization and upper and lower bounds. These
+finite tests do not prove the theorem, but they make common implementation
+errors hand-detectable: forgetting the minimum with $M$, assigning a partial
+team, or treating leftover occupancy as an additional opened candidate.
+
+The payoff identity has a similarly direct finite derivation. For $x_j>0$,
+the binomial coefficient relation
+\begin{equation}
+ \frac{1}{k+1}{N-1\choose k}=\frac{1}{Nx_j}{N\choose k+1}x_j
+\end{equation}
+turns the expected equal share at threshold one into
+$[1-(1-x_j)^N]/(Nx_j)$. At threshold two, the $k=0$ term is excluded, producing
+the registered subtraction of $(1-x_j)^{N-1}$. Exact endpoint handling matters:
+the threshold-one zero limit is one, while the threshold-two zero limit is zero.
+
+The pure-equilibrium verifier does not rely on occupancies alone. The primary
+method enumerates aggregate states and applies every candidate-to-candidate
+unilateral comparison. The independent method enumerates labeled action
+profiles, evaluates every named agent's deviation, and deduplicates the
+surviving occupancies. Agreement between 3,728 aggregate states and 87,216
+labeled profiles protects against multiplicity errors that could be hidden by a
+single representation.
+
+Coalitional verification changes representation again. The primary evaluator
+names each coalition and enumerates joint destination actions. The independent
+method removes a coalition from an occupancy, enumerates possible additions,
+and solves the exact payoff-compatible matching problem between named members
+and destination slots. A removed equilibrium, altered best value, and changed
+pair-stability label are targeted corruption tests. Passing them supports the
+bounded census, not a claim beyond its registry.
+
+\section{Institutional audit matrix}
+
+The mechanism comparison is easiest to interpret as a matrix of questions.
+First ask whether the institution controls action. Central assignment and
+authoritative matching do. Their planner values are allocation results, and a
+post-commitment deviation test would be a category error. The pairwise matching
+market binds action within a selected pair but leaves pairs to choose among
+candidates, so pair-level equilibrium remains relevant.
+
+Second ask whether eligibility changes with identity. Team tokens condition
+the prize on a fixed balanced token endowment. Exclusive coalition rights name
+the coalition entitled to the candidate prize. Both can make a deviation
+unattractive even when the physical action is available. This can support the
+intended portfolio, but it requires verifiable identity and a legitimate rule
+for allocating the scarce rights.
+
+Third ask whether recommendations are private and correlated. The correlated
+mediator randomizes over balanced teams and sends individual recommendations.
+Its ex ante anonymity differs from a fixed named assignment. Obedience is a
+posterior comparison conditional on the recommendation. The bounded result does
+not show that agents truthfully report private signals to the mediator because
+the registry starts from a common posterior.
+
+Fourth ask what contribution earns the prize. Universal pooling splits among
+all agents at the successful viable target. Sole-team rescue conditions payment
+on having exactly one viable team. Marginal coalition contribution restricts
+payment to an exactly minimal viable team. Threshold-adjusted equal split uses
+the ordinary team share at the recommended two-pair portfolio. Similar
+recommendations can therefore rest on different counterfactual rewards.
+
+Fifth ask which deviations were actually evaluated. The census records
+unilateral changes, named pair changes, and exact-size-two threshold-team
+changes where they apply. A block requires strict improvement for every member.
+It does not allow side payments or count a weak improvement for one member.
+Those choices preserve a finite exact audit but leave larger coalitions and
+other stability concepts open.
+
+Finally ask what happens away from the recommendation. The complete 81-profile
+table for each fixture and mechanism counts all labeled pure equilibria under
+the registered rule. High multiplicity is not a verification failure. It is an
+institutional risk that would be lost if the audit reported only whether the
+planner profile is supported. The correct conclusion is conditional: several
+rules support a high-discovery team portfolio in the frozen fixtures, while no
+selection theorem identifies that portfolio as the unique realized outcome.
+
+\section{Preserved failures and open questions}
+
+The evidence program retains failures because they determine what the paper
+cannot claim. The canonical threshold result includes regimes where common
+mode raises discovery relative to private clue-following and regimes where it
+lowers it. Reporting only one side would turn a phase diagram into a slogan.
+The capacity transition at threshold five is equally important: once only one
+team can form, the diversified planner cannot improve on a correctly selected
+common mode in the frozen model.
+
+The equilibrium census retains weak zero-discovery equilibria. They are not
+removed because they produce an inconvenient infinite price-of-anarchy label.
+It also retains 21 failures of the tied-mode mixed rule, all at threshold one.
+Those failures identify exactly why the unsupported-action condition in
+Equation~\ref{eq:mixed-boundary} is necessary.
+
+The dynamic program retains the visibility-herding null. Visible histories
+strictly lower discovery and dispersion in 18 fixed-budget cells and tie in the
+other 14; there is no registered cell where they improve either outcome. That
+result is bounded, but it rules out presenting action visibility as uniformly
+helpful within the declared grid. The threshold-two extension remains labeled
+planner-only because no decentralized threshold equilibrium was solved there.
+
+The mechanism program retains the two concentrated failures. Universal pooling
+and sole-team rescue do not attain the two-team planner value in any of the five
+fixtures. It also retains multiplicity for mechanisms that support the planner
+recommendation. A passing obedience check is not converted into uniqueness.
+Not-applicable truthfulness and authority fields remain not applicable rather
+than being counted as favorable results.
+
+The benchmark retains 660 capability exclusions. The experiment package
+retains 644 large-sample calibration failures. Neither artifact fills missing
+values with convenient defaults. This makes the public surface less compact but
+keeps the inference boundary reviewable.
+
+Several questions remain open. Heterogeneous team skills may make a team worth
+more than the sum of interchangeable members. Candidate-specific thresholds
+may change posterior ranking into a knapsack problem. Stochastic execution may
+create value above the minimum team size. Endogenous source acquisition may
+couple who learns with who acts. Private posteriors require an elicitation and
+truthfulness layer absent from DD-018. Larger coalitions and transfers may
+overturn pairwise stability. Learning dynamics may select equilibria that the
+static census merely lists.
+
+These extensions should not be answered by stretching the present labels. Each
+requires a new registered model, resource estimate, verifier, and evidence
+category. A new numerical claim would require a new immutable run; a new
+theorem would require a proof and proportional tests. Until then, they remain
+questions rather than implied conclusions.
+
+\bibliographystyle{plainnat}
+\bibliography{generated/references}
+
+\section*{Artifact declaration}
+
+This document is a project-authored working paper distributed under the
+repository's MIT license. It has no DOI, has not been submitted, and has not
+been peer reviewed. It makes no verified novelty claim. The bibliography
+positions the model against established literatures; it is not a novelty
+certificate.
+
+The authoritative numerical sources are these immutable runs:
+\begin{itemize}[leftmargin=2em,itemsep=0pt,topsep=2pt]
+\item \path{20260722T021526Z_DD-016_00271ff8_123b2809e3};
+\item \path{20260722T024032Z_DD-017_033452f6_3d2c74fdfb};
+\item \path{20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a};
+\item \path{20260722T044453Z_DD-015_34bc4379_33e1da478b};
+\item \path{20260722T051847Z_DD-018_a193f602_3b3ddac173};
+\item \path{20260722T054447Z_DD-010_d265e480_6930915b02}; and
+\item \path{20260722T061958Z_DD-011_5743ccba_19b6517655}.
+\end{itemize}
+They must not be rerun for freshness.
+
+Reproduction requires the pinned repository dependencies, Tectonic, and
+Poppler. \path{make threshold-discovery} validates input checksums, regenerates eight
+assets, resolves claim and citation keys, compiles twice under a fixed source
+epoch, rejects unresolved references and overfull boxes, and requires byte-
+identical PDFs. Any source or PDF checksum change invalidates the visual review
+and requires a complete rebuild and all-page inspection.
+
+No participants were recruited. No human data were collected. No experiment
+was conducted.
+
+\end{document}

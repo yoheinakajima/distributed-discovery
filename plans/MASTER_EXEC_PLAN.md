@@ -289,6 +289,21 @@ before its independent verifier and immutable primary run pass.
   calibration routes returned HTTP 200; the public data confirm the frozen
   counts, all 644 retained failures, and `no_human_data: true`. Milestone V4.6
   is complete. The focused *Threshold Discovery* paper is next.
+- 2026-07-22: Threshold Discovery paper issue #122 and branch
+  `paper/threshold-discovery` opened from synchronized `main`. The local builder
+  checksum-validates seven immutable run families, generates eight evidence
+  assets, resolves claims DD-C-0071 through DD-C-0088 and bibliography keys,
+  and produces a byte-reproducible 20-page PDF with SHA-256
+  `b38bb30f3ce63889526a092d78dd3f202d3beb54178bcdc272aba85c321b1995`.
+  Targeted paper/site tests pass, the site emits 64 routes and six papers, and
+  all 20 Poppler renders passed visual inspection after correcting a generated
+  tau-label escape and improving the run-ID declaration. The all-paper build
+  also refreshed stale Program V4 provenance in the unchanged 14-page Three
+  Results paper; its deterministic SHA-256 is
+  `efd76ae8c7524ebfff6c50ec8b42fb43527a6e47c2ad31cdd3192e0d6935ddfd`, and all
+  14 pages passed a new Poppler review. The active gate is full acceptance,
+  source commit, PR checks/merge, post-merge CI/Pages, issue closure, and live
+  publication/PDF validation.
 
 ### Program V3 attention queue (complete, 2026-07-21)
 

@@ -304,6 +304,7 @@ def _publications(root: Path) -> list[dict[str, Any]]:
         ("discovery-institutions", "Institutions for Distributed Discovery"),
         ("common-source-trap", "The Common-Source Trap"),
         ("incentive-to-ignore", "The Incentive to Ignore"),
+        ("threshold-discovery", "Threshold Discovery"),
     ):
         validation = json.loads((root / "papers" / directory / "validation.json").read_text())
         candidates = sorted((root / "papers" / directory).glob("*.pdf"))
@@ -1259,6 +1260,16 @@ def _render(
         1,
     )
     home = home.replace(
+        '</section><section class="content-section" aria-labelledby="explore-heading">',
+        """</section><section class="content-section" aria-labelledby="threshold-finding">
+        <p class="eyebrow">Key finding · Threshold Discovery</p>
+        <h2 id="threshold-finding">Form the smallest viable teams, then diversify the teams.</h2>
+        <article class="card result-card"><p>When candidates open only after a minimum team forms, too little overlap strands effort and too much overlap crowds the portfolio.</p>
+        <a href="publications/threshold-discovery.html">Read the paper <span aria-hidden="true">→</span></a></article>
+        </section><section class="content-section" aria-labelledby="explore-heading">""",
+        1,
+    )
+    home = home.replace(
         '<section class="principle"><p>Share the evidence. <strong>Diversify the actions.</strong></p></section>',
         '<section class="principle"><p>Share the evidence. <strong>Diversify the actions.</strong></p><p>When actions require teams, form the smallest viable teams and diversify those teams.</p></section>',
         1,
@@ -1338,6 +1349,7 @@ def _render(
         "discovery-institutions": "Synthesizes how evidence, assignment, incentives, and feedback interact.",
         "common-source-trap": "Explains why many reports can still behave like one source of evidence.",
         "incentive-to-ignore": "Synthesizes selective attention, audience design, and conditional evidence use.",
+        "threshold-discovery": "Connects minimum viable teams, equilibrium selection, dynamic attention, and implementable team portfolios.",
     }
     publication_items = "".join(
         '<article class="card paper-card"><div class="card-meta"><span class="status-chip">{status}</span><span>{page_count} pages</span></div><h2><a href="{detail}">{title}</a></h2><p>{purpose}</p><div class="card-actions"><a class="button small" href="{download}">Download PDF</a><a href="{detail}">Paper details</a></div><p class="citation">{citation}</p><details class="technical-details"><summary>Technical details</summary><p><a href="{repo}/blob/main/{build_source}">Build source</a></p><p>SHA-256 <code>{sha256}</code></p></details></article>'.format(

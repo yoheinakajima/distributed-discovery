@@ -1,0 +1,44 @@
+{
+  "byte_reproducible_two_builds": true,
+  "citation_keys_resolved": true,
+  "claim_ids_resolved": true,
+  "compile_exit_status": 0,
+  "generated_assets": [
+    "dynamic-summary.tex",
+    "equilibrium-census.tex",
+    "evidence-status.tex",
+    "integration-table.tex",
+    "mechanism-table.tex",
+    "prediction-table.tex",
+    "threshold-phase.tex",
+    "threshold-table.tex"
+  ],
+  "generator": "distributed_discovery.papers.build_threshold_discovery",
+  "inputs": {
+    "results/verified/20260722T021526Z_DD-016_00271ff8_123b2809e3/outputs/canonical-metrics.json": "d2dac2854a3fa3c3979c0573967f8db9ca39e758946e2496c5f2aa79d0bf9615",
+    "results/verified/20260722T021526Z_DD-016_00271ff8_123b2809e3/outputs/threshold-phase-diagram.json": "473fb4ffe40f8f3b65f3dc584027f7faa89822df727a59ba671a50b6bdc7b895",
+    "results/verified/20260722T024032Z_DD-017_033452f6_3d2c74fdfb/outputs/summary.json": "d658f36d857ef70f5538312aa99c3cad36651f7fee6a98d769b7055eb9f01c46",
+    "results/verified/20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a/outputs/summary.json": "02d4c2d76cbcc6f8ca8de9981e48e5852bfdeb7d0f1a6895f669f28a8d023a37",
+    "results/verified/20260722T044453Z_DD-015_34bc4379_33e1da478b/outputs/threshold-two-summary.json": "0a31654fd47a87c828a5489181af62af150a87b72c6d07c6eab400a0242a1c81",
+    "results/verified/20260722T051847Z_DD-018_a193f602_3b3ddac173/outputs/mechanism-census.json": "6d28c36cc72e27e25cf038503c70f6eaa6304d00a85d3c9cc70874daa5b75a23",
+    "results/verified/20260722T051847Z_DD-018_a193f602_3b3ddac173/outputs/summary.json": "0439b211955c25244c6da1d33eacfff4228cd05465de8d792576d963f7b0218b",
+    "results/verified/20260722T054447Z_DD-010_d265e480_6930915b02/outputs/benchmark-summary.json": "d1bd94a7dd79b67ac4154cd02f54063aeefd7d4bee3fc5171b4b1018878b6526",
+    "results/verified/20260722T061958Z_DD-011_5743ccba_19b6517655/outputs/hypotheses.json": "49a36beb1f035414917a144f0498eb5c5436e7230c824c6aaa657e0ae053838e",
+    "results/verified/20260722T061958Z_DD-011_5743ccba_19b6517655/outputs/power-table.json": "d2c936e7ed55e2be6540e50e3d842ebde2a70373b0338c9c8568581efafa4fb9",
+    "results/verified/20260722T061958Z_DD-011_5743ccba_19b6517655/outputs/synthetic-summary.json": "f1eb762c73c91941f5f139c216922447369e2b3331f7c20004176d80cbb19af4"
+  },
+  "page_count": 20,
+  "pdf_sha256": "b38bb30f3ce63889526a092d78dd3f202d3beb54178bcdc272aba85c321b1995",
+  "provenance_validated": true,
+  "schema_version": 1,
+  "source_runs": {
+    "benchmark": "20260722T054447Z_DD-010_d265e480_6930915b02",
+    "dynamic": "20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a",
+    "dynamic_threshold": "20260722T044453Z_DD-015_34bc4379_33e1da478b",
+    "equilibrium": "20260722T024032Z_DD-017_033452f6_3d2c74fdfb",
+    "experiment": "20260722T061958Z_DD-011_5743ccba_19b6517655",
+    "mechanisms": "20260722T051847Z_DD-018_a193f602_3b3ddac173",
+    "threshold": "20260722T021526Z_DD-016_00271ff8_123b2809e3"
+  },
+  "unresolved_references_citations_or_overfull_boxes": false
+}

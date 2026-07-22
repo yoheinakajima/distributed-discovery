@@ -14,4 +14,4 @@ def test_every_project_paper_visual_review_matches_its_pdf() -> None:
         assert match is not None
         assert hashlib.sha256(pdfs[0].read_bytes()).hexdigest() == match.group(0)
         reviewed += 1
-    assert reviewed == 5
+    assert reviewed == 6

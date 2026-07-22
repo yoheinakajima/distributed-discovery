@@ -1,0 +1,48 @@
+note: Running TeX ...
+note: Running BibTeX on main.aux ...
+note: Rerunning TeX because bibtex was run ...
+note: Rerunning TeX because "main.aux" changed ...
+note: Rerunning TeX because "main.aux" changed ...
+note: Running xdvipdfmx ...
+note: Writing `<build>/main.pdf` (131.822265625 KiB)
+note: Skipped writing 3 intermediate files (use --keep-intermediates to keep them)
+warning: main.tex:1043: Underfull \hbox (badness 10000) in paragraph at lines 1037--1043
+warning: main.bbl:81: Underfull \hbox (badness 3758) in paragraph at lines 74--81
+warning: main.bbl:81: Underfull \hbox (badness 4120) in paragraph at lines 74--81
+warning: main.bbl:81: Underfull \hbox (badness 6110) in paragraph at lines 74--81
+warning: main.tex:1043: Underfull \hbox (badness 10000) in paragraph at lines 1037--1043
+warning: main.bbl:81: Underfull \hbox (badness 3758) in paragraph at lines 74--81
+warning: main.bbl:81: Underfull \hbox (badness 4120) in paragraph at lines 74--81
+warning: main.bbl:81: Underfull \hbox (badness 6110) in paragraph at lines 74--81
+warning: main.tex:1043: Underfull \hbox (badness 10000) in paragraph at lines 1037--1043
+warning: main.bbl:81: Underfull \hbox (badness 3758) in paragraph at lines 74--81
+warning: main.bbl:81: Underfull \hbox (badness 4120) in paragraph at lines 74--81
+warning: main.bbl:81: Underfull \hbox (badness 6110) in paragraph at lines 74--81
+warning: main.tex:1043: Underfull \hbox (badness 10000) in paragraph at lines 1037--1043
+warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.
+
+
+===== deterministic rebuild =====
+
+note: Running TeX ...
+note: Running BibTeX on main.aux ...
+note: Rerunning TeX because bibtex was run ...
+note: Rerunning TeX because "main.aux" changed ...
+note: Rerunning TeX because "main.aux" changed ...
+note: Running xdvipdfmx ...
+note: Writing `<build>/main.pdf` (131.822265625 KiB)
+note: Skipped writing 3 intermediate files (use --keep-intermediates to keep them)
+warning: main.tex:1043: Underfull \hbox (badness 10000) in paragraph at lines 1037--1043
+warning: main.bbl:81: Underfull \hbox (badness 3758) in paragraph at lines 74--81
+warning: main.bbl:81: Underfull \hbox (badness 4120) in paragraph at lines 74--81
+warning: main.bbl:81: Underfull \hbox (badness 6110) in paragraph at lines 74--81
+warning: main.tex:1043: Underfull \hbox (badness 10000) in paragraph at lines 1037--1043
+warning: main.bbl:81: Underfull \hbox (badness 3758) in paragraph at lines 74--81
+warning: main.bbl:81: Underfull \hbox (badness 4120) in paragraph at lines 74--81
+warning: main.bbl:81: Underfull \hbox (badness 6110) in paragraph at lines 74--81
+warning: main.tex:1043: Underfull \hbox (badness 10000) in paragraph at lines 1037--1043
+warning: main.bbl:81: Underfull \hbox (badness 3758) in paragraph at lines 74--81
+warning: main.bbl:81: Underfull \hbox (badness 4120) in paragraph at lines 74--81
+warning: main.bbl:81: Underfull \hbox (badness 6110) in paragraph at lines 74--81
+warning: main.tex:1043: Underfull \hbox (badness 10000) in paragraph at lines 1037--1043
+warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.

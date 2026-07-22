@@ -2,7 +2,7 @@
 
 - Review date: 2026-07-21 (America/Los_Angeles)
 - Artifact: `Three_Results_in_Distributed_Discovery.pdf`
-- PDF SHA-256: `d3346c805483bf923064b7c60633ef6dbed702066ad4da241d884856126cbd6f`
+- PDF SHA-256: `efd76ae8c7524ebfff6c50ec8b42fb43527a6e47c2ad31cdd3192e0d6935ddfd`
 - Format: 14 letter-size pages
 - Renderer: Poppler `pdftoppm`, PNG at 120 dpi
 - Scope: every page reviewed at rendered-page scale
@@ -84,6 +84,14 @@ changed the generated claim-ledger checksum. The mathematical content and
 pagination remain unchanged. Poppler renders of all 14 pages were inspected;
 tables, figures, equations, provenance notes, headings, page numbers, and
 references remain legible and within bounds with no blank or defective page.
+
+The Program V4 Threshold Discovery provenance pass rebuilt the paper after the
+claim ledger, registered-study index, and central bibliography gained the
+Program V4 evidence. The mathematical content and 14-page pagination remain
+unchanged. Poppler renders of every page were inspected at 120 dpi; margins,
+tables, figures, equations, provenance notes, headings, page numbers, and
+references remain legible, resolved, and free of clipping, overlap, broken
+glyphs, or unintended blank pages.
 
 The final visual review matches the checksum above. Any PDF checksum change
 invalidates this record and requires a new all-page review.
