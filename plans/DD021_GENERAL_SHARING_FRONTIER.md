@@ -65,8 +65,8 @@ the frozen declared rule, not an unrestricted team optimum.
    acceptance.
 6. **Complete — merge/deploy gate:** ready PR, passing checks, squash merge,
    issue closure, post-merge CI/Pages, live routes, and synchronized main.
-7. **Active — editorial gate:** one documentation-only branch and PR deciding
-   whether the Information Sharing Frontier paper gate passes.
+7. **Complete — editorial gate:** issue #148 and PR #149 hold the Information
+   Sharing Frontier paper for one Coordination-Free Positive Sharing package.
 
 ## Progress checklist
 
@@ -84,7 +84,7 @@ the frozen declared rule, not an unrestricted team optimum.
 - [x] Audit claims and integrate exact public evidence.
 - [x] Build and verify the General Sharing Frontier Lab.
 - [x] Merge/deploy the research PR and close issue #146.
-- [ ] Complete the separate documentation-only editorial gate.
+- [x] Complete the separate documentation-only editorial gate.
 
 ## Discoveries and surprises
 
@@ -218,7 +218,7 @@ DD-021 primary configuration for freshness.
 
 ## Outcome and retrospective
 
-The research package is complete, merged, and deployed. Final completion
-requires the separate editorial-gate merge; neither registration nor a
-preliminary table is enough. The gate holds paper admission for one
-coordination-free positive-sharing package without changing DD-021 evidence.
+The research package is complete, merged, and deployed. Issue #148 and PR #149
+record the separate gate, which holds paper admission for one coordination-
+free positive-sharing package without changing DD-021 evidence. Neither
+registration nor a preliminary table was treated as completion.

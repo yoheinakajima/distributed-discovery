@@ -40,7 +40,7 @@ paper gate without allocating a new study.
 | Public integration and Incremental Sharing Lab | #139 | #140 | `57270680` |
 | Final acceptance | #141 | #142 | recorded in GitHub after merge |
 | DD-021 General Sharing Frontier | #146 | #147 | `8b444003` |
-| Post-DD-021 paper gate | #148 | documentation-only PR | pending merge |
+| Post-DD-021 paper gate | #148 | #149 | recorded by PR #149 |
 
 ## Current acceptance record
 

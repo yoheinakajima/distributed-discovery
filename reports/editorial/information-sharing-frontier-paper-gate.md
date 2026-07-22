@@ -2,6 +2,7 @@
 
 Date: `2026-07-22`  
 Issue: `#148`  
+Pull request: `#149`
 Evidence class: documentation and editorial judgment; no research output
 
 ## Decision
@@ -99,5 +100,6 @@ The documentation-only diff passes `git diff --check`, `make bootstrap`,
 - `claims/`, `results/`, scientific source, tests, and site implementation have
   no diff from the DD-021 research merge.
 
-This record is not branch CI, merge, post-merge Pages, or live-route evidence.
-Those identifiers are added to the final handoff only after they pass.
+Branch CI runs `29951796692` and `29951810995` passed. This record is not
+post-merge Pages or live-route evidence; those identifiers are retained on
+GitHub only after they pass.
