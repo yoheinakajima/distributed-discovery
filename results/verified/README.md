@@ -11,6 +11,13 @@ DD-016 primary run:
 The tied-mode figures use the declared independent-uniform selection rule and
 do not characterize the full strategic equilibrium correspondence.
 
+DD-017 primary run:
+
+- `20260722T024032Z_DD-017_033452f6_3d2c74fdfb`: 160-game pure-Nash and
+  welfare registry, independent 87,216-profile reproduction, aggregate
+  pair/tau coalition matching, tied-mode boundary checks, and four corruption
+  rejections.
+
 DD-001 passing runs:
 
 - `20260720T200124Z_DD-001_6eb12861_f9bcf73ec7`: initial 17-point exact grid and canonical search.

@@ -7,8 +7,8 @@ verification plan, and corruption test where certificates are used.
 
 | Work | Status | Durable boundary / next question |
 | --- | --- | --- |
-| DD-016 Threshold Discovery | bounded evidence complete in PR #102 | Preserve DD-C-0071 through DD-C-0074 and the immutable primary run; do not treat tied-mode selection as the equilibrium correspondence. |
-| DD-017 Equilibrium Selection and Coalition Stability | next authorized study | Register pure, symmetric-mixed, and correlated objects separately; test pairwise and tau-player deviations without overclaiming implementation. |
+| DD-016 Threshold Discovery | complete and deployed through PR #102 | Preserve DD-C-0071 through DD-C-0074 and the immutable primary run; do not treat tied-mode selection as the equilibrium correspondence. |
+| DD-017 Equilibrium Selection and Coalition Stability | bounded evidence complete in PR #104 | Preserve DD-C-0075 through DD-C-0078 and distinct weak-Nash, pairwise, tau-player, and symmetric-mixed meanings. |
 | Program V4 later queue | authorized sequentially after DD-017 | Execute DD-015 at its original boundary, then DD-018 mechanisms, DiscoveryBench v3, synthetic extensions, focused paper, and public Labs under separate gates. |
 | Program V3 baseline | complete through PR #80 | DD-012 through DD-015 are registered and deployed without creating research evidence. |
 | DD-012 Incentive to Ignore | complete and deployed through PR #82 | Preserve DD-C-0059 through DD-C-0061 and the immutable primary run. |

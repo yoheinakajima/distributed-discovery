@@ -22,6 +22,7 @@
 | DD-014 | Conditional Attention and Contrarian Policies | complete bounded study | Preserve the restricted-class theorem and larger raw-policy counterexample |
 | DD-015 | Dynamic Attention and Visible Search | optional unexecuted registration | Start only under a new authorization; keep stopping and fixed-budget objectives distinct |
 | DD-016 | Threshold Discovery | complete bounded study | Preserve DD-C-0071 through DD-C-0074, the immutable two-method run, and the selected-equilibrium boundary |
+| DD-017 | Threshold Equilibrium Selection | complete bounded study | Preserve DD-C-0075 through DD-C-0078, the immutable registry, and the distinct coalition concepts |
 
 Each executed directory contains its question, model, plan, claims view, status,
 results index, and report. Program V3's completed sequence is governed by
@@ -29,3 +30,5 @@ results index, and report. Program V3's completed sequence is governed by
 synthetic-only; DD-015 has no result. DD-016 has one passing immutable exact run
 supporting two verified proof claims and two independently reproduced bounded
 computational claims.
+DD-017 has one passing immutable exact run supporting two verified theorems and
+two independently reproduced bounded computational claims.

@@ -1,0 +1,35 @@
+schema_version: dd017-threshold-equilibrium-v1
+study_id: DD-017
+agent_grid: [2, 3, 4, 5, 6]
+posterior_fixtures:
+  - name: uniform-two
+    posterior: ["1/2", "1/2"]
+  - name: ranked-two
+    posterior: ["2/3", "1/3"]
+  - name: uniform-three
+    posterior: ["1/3", "1/3", "1/3"]
+  - name: ranked-three
+    posterior: ["1/2", "1/3", "1/6"]
+  - name: tied-top-three
+    posterior: ["2/5", "2/5", "1/5"]
+  - name: tied-edge-three
+    posterior: ["7/20", "7/20", "3/10"]
+  - name: uniform-four
+    posterior: ["1/4", "1/4", "1/4", "1/4"]
+  - name: ranked-four
+    posterior: ["1/2", "1/4", "1/6", "1/12"]
+expected_games: 160
+expected_occupancy_states: 3728
+expected_labeled_profiles: 87216
+runtime_estimate_seconds: 60
+time_cap_seconds: 300
+memory_estimate_mb: 256
+memory_cap_mb: 1024
+coalition_improvement_rule: every-member-strict
+pairwise_coalition_size: 2
+minimum_team_coalition_size: tau
+price_zero_denominator: positive-over-zero-is-infinity
+random_seeds:
+  algorithm: []
+  model: null
+

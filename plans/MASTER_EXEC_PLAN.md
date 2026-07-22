@@ -42,7 +42,7 @@ V4.1, editorial synchronization; it must not create a research run.
 Progress:
 
 - [x] V4.1 — Synchronize V3 public copy and validate local public artifacts.
-- [ ] V4.2 — Register, execute, independently verify, and integrate DD-016.
+- [x] V4.2 — Register, execute, independently verify, and integrate DD-016.
 - [ ] V4.3 — Register, execute, independently verify, and integrate DD-017.
 - [ ] V4.4 — Execute DD-015 at its registered baseline, then separately assess
   the bounded threshold extension.
@@ -111,6 +111,35 @@ before its independent verifier and immutable primary run pass.
   117 source files, all 189 tests, the 74-claim ledger, all 41 manifests, and
   `make site` with 60 pages and 20 studies. Draft PR #102 can advance after the
   evidence commit is pushed and its GitHub checks pass.
+- 2026-07-22: PR #102 passed CI and artifact checks, squash-merged as 571a8ddf,
+  closed issue #101, and passed post-merge CI run 29885814993 and Pages run
+  29885814975. The live DD-016 study and JSON returned HTTP 200 with the run and
+  DD-C-0071 through DD-C-0074. V4.2 is complete and its primary run must not be
+  repeated.
+- 2026-07-22: V4.3 started from merged main on
+  `research/dd017-threshold-equilibrium-selection` with issue #103. The frozen
+  start-gate registry contains 160 games, 3,728 occupancy states, 87,216 labeled
+  verifier profiles, exact strict-member pair and tau-player deviation audits,
+  and a separate tied-mode mixed-payoff check. Preliminary dirty-tree counts are
+  not evidence. The active gate is full validation and a clean source commit
+  before any DD-017 primary run.
+- 2026-07-22: DD-017 pre-run acceptance passed Ruff, MyPy on 121 source files,
+  all 194 tests, the unchanged 74-claim ledger and 41 manifests, and `make site`
+  with 61 pages and 21 studies. The implementation remains non-evidence until
+  committed and executed once from a clean tree.
+- 2026-07-22: DD-017 source was frozen as 033452f and draft PR #104 opened.
+  The one registered primary run
+  `20260722T024032Z_DD-017_033452f6_3d2c74fdfb` passed in 8.234274 seconds from
+  a clean tree. It confirms 52 zero-worst-discovery games, eight games without
+  a pairwise-strict-stable pure equilibrium, 35 without an exact-size-tau-
+  strict-stable pure equilibrium, and 21 tied-mode failures, all at tau one.
+  Separate audits promote DD-C-0075 and DD-C-0076 to verified and DD-C-0077
+  and DD-C-0078 to independently reproduced. The active V4.3 gate is local
+  acceptance, PR CI, merge, post-merge CI, Pages, and live-route validation.
+- 2026-07-22: DD-017 local acceptance passed Ruff, MyPy on 121 source files,
+  all 194 tests, the 78-claim ledger, all 42 manifests, and `make site` with 61
+  pages and 21 studies. Draft PR #104 can advance after the evidence commit and
+  its remote checks pass.
 
 ### Program V3 attention queue (complete, 2026-07-21)
 
