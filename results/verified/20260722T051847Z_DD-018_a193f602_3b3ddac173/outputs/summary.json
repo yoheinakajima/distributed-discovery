@@ -1,0 +1,20 @@
+{
+  "all_corruptions_rejected": true,
+  "all_rows_participation": true,
+  "all_rows_weak_budget_balance": true,
+  "all_rows_zero_external_subsidy": true,
+  "all_truthfulness_not_applicable": true,
+  "independent_action_table_entries": 4050,
+  "labeled_action_profiles_per_fixture": 81,
+  "marginal_contribution_planner_stable_rows": 5,
+  "mechanism_fixture_rows": 50,
+  "mechanisms": 10,
+  "obedient_unilateral_applicable_rows": 31,
+  "pair_stable_unilateral_applicable_rows": 29,
+  "planner_portfolio_rows": 40,
+  "posterior_fixtures": 5,
+  "strict_unilateral_applicable_rows": 31,
+  "tau_stable_unilateral_applicable_rows": 29,
+  "unilateral_applicable_rows": 35,
+  "universal_pooling_planner_rows": 0
+}

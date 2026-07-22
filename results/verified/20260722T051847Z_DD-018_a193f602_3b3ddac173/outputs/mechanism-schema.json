@@ -1,0 +1,125 @@
+{
+  "mechanisms": [
+    {
+      "actions_observed": "assigned actions",
+      "anonymity": "no",
+      "commitment": "authoritative action assignment",
+      "deviation_class": "none after commitment",
+      "identity_selection": "fixed identity order",
+      "information_observed": "common posterior and named agents",
+      "name": "central-assignment",
+      "report_truthfulness": "not-applicable-common-posterior-input",
+      "subsidy": "none",
+      "transfers": "none"
+    },
+    {
+      "actions_observed": "matched-team assignments",
+      "anonymity": "yes ex ante",
+      "commitment": "authoritative random matching and assignment",
+      "deviation_class": "none after commitment",
+      "identity_selection": "uniform random perfect matching",
+      "information_observed": "common posterior",
+      "name": "random-matching",
+      "report_truthfulness": "not-applicable-common-posterior-input",
+      "subsidy": "none",
+      "transfers": "none"
+    },
+    {
+      "actions_observed": "submitted actions",
+      "anonymity": "no after token realization",
+      "commitment": "none; token eligibility is binding",
+      "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+      "identity_selection": "fixed balanced token endowment",
+      "information_observed": "common posterior and own token",
+      "name": "team-tokens",
+      "report_truthfulness": "not-applicable-common-posterior-input",
+      "subsidy": "none",
+      "transfers": "discovery prize restricted to matching tokens"
+    },
+    {
+      "actions_observed": "submitted actions",
+      "anonymity": "no",
+      "commitment": "none; coalition rights are binding",
+      "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+      "identity_selection": "fixed named coalitions",
+      "information_observed": "common posterior and coalition charter",
+      "name": "exclusive-coalition-rights",
+      "report_truthfulness": "not-applicable-common-posterior-input",
+      "subsidy": "none",
+      "transfers": "discovery prize restricted to chartered coalition"
+    },
+    {
+      "actions_observed": "submitted actions",
+      "anonymity": "yes ex ante",
+      "commitment": "nonbinding recommendation",
+      "deviation_class": "obedience, unilateral, pair, and tau-player strict-member deviations",
+      "identity_selection": "uniform correlated team recommendation",
+      "information_observed": "common posterior and private recommendation",
+      "name": "correlated-mediator",
+      "report_truthfulness": "not-applicable-common-posterior-input",
+      "subsidy": "none",
+      "transfers": "threshold-adjusted equal split only"
+    },
+    {
+      "actions_observed": "submitted actions",
+      "anonymity": "yes",
+      "commitment": "none",
+      "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+      "identity_selection": "none; common lexicographic mode",
+      "information_observed": "common posterior",
+      "name": "universal-pooling",
+      "report_truthfulness": "not-applicable-common-posterior-input",
+      "subsidy": "none",
+      "transfers": "threshold-adjusted equal split only"
+    },
+    {
+      "actions_observed": "submitted actions and viable-team count",
+      "anonymity": "yes",
+      "commitment": "none",
+      "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+      "identity_selection": "none; common lexicographic mode",
+      "information_observed": "common posterior",
+      "name": "sole-team-rescue",
+      "report_truthfulness": "not-applicable-common-posterior-input",
+      "subsidy": "none",
+      "transfers": "prize paid only when exactly one candidate is viable"
+    },
+    {
+      "actions_observed": "submitted actions and occupancies",
+      "anonymity": "yes",
+      "commitment": "none",
+      "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+      "identity_selection": "fixed recommendation selects identities",
+      "information_observed": "common posterior",
+      "name": "marginal-coalition-contribution",
+      "report_truthfulness": "not-applicable-common-posterior-input",
+      "subsidy": "none",
+      "transfers": "prize shared only by an exactly minimal viable team"
+    },
+    {
+      "actions_observed": "submitted actions and occupancies",
+      "anonymity": "yes",
+      "commitment": "none",
+      "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+      "identity_selection": "fixed recommendation selects identities",
+      "information_observed": "common posterior",
+      "name": "threshold-adjusted-equal-split",
+      "report_truthfulness": "not-applicable-common-posterior-input",
+      "subsidy": "none",
+      "transfers": "candidate prize split across every member of a viable team"
+    },
+    {
+      "actions_observed": "team candidate choices",
+      "anonymity": "yes across pairs",
+      "commitment": "binding within-pair action; no cross-pair assignment",
+      "deviation_class": "pair deviations; tau-player deviations coincide with pairs",
+      "identity_selection": "fixed pair partition",
+      "information_observed": "common posterior and matched teammate",
+      "name": "pairwise-matching-market",
+      "report_truthfulness": "not-applicable-common-posterior-input",
+      "subsidy": "none",
+      "transfers": "threshold-adjusted equal split only"
+    }
+  ],
+  "schema_version": "dd018-team-mechanisms-v1"
+}

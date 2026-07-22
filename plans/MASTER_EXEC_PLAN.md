@@ -213,6 +213,14 @@ before its independent verifier and immutable primary run pass.
   profiles per fixture, and a 4,050-entry independent action-table audit. No
   DD-018 run or claim exists; the next gate is targeted and repository
   verification before the clean source commit.
+- 2026-07-22: DD-018 source froze as `a193f602` and draft PR #114 opened before
+  the sole primary run `20260722T051847Z_DD-018_a193f602_3b3ddac173`. The run
+  passed in 0.432822 seconds. The primary 81-profile evaluator and independent
+  4,050-entry table agree on all 50 rows, all five planner audits pass, and four
+  corruptions are rejected. Separate audits promote DD-C-0083 through
+  DD-C-0086 as verified bounded computational results. The active gate is full
+  repository/site acceptance, evidence commit, PR CI/merge, post-merge
+  CI/Pages, issue closure, and live routes; the run must not be repeated.
 
 ### Program V3 attention queue (complete, 2026-07-21)
 

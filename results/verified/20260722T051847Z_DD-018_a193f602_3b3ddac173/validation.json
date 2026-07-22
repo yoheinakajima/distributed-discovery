@@ -1,0 +1,10 @@
+{
+  "all_corruptions_rejected": true,
+  "elapsed_seconds": 0.432822,
+  "errors": [],
+  "independent_action_table_entries": 4050,
+  "independent_rows": 50,
+  "passed": true,
+  "planner_exhaustive_fixtures": 5,
+  "time_cap_seconds": 120
+}

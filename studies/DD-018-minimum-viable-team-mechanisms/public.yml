@@ -1,8 +1,8 @@
 study_id: DD-018
 title: Minimum Viable Team Mechanisms
 slug: dd-018
-phase: active-extension
-summary: Active exact comparison of ten common-posterior institutions for forming minimum viable discovery teams; no result yet.
+phase: complete-bounded-study
+summary: Verified exact comparison of ten common-posterior institutions separates authoritative, individually obedient, pair-stable, and inefficient team formation.
 public_artifacts:
   - path: studies/DD-018-minimum-viable-team-mechanisms/model.md
     description: Frozen common-posterior threshold allocation model and mechanism semantics
@@ -10,3 +10,15 @@ public_artifacts:
     description: Living bounded execution and validation plan
   - path: studies/DD-018-minimum-viable-team-mechanisms/literature.md
     description: Focused adjacent-literature and terminology boundary
+  - path: studies/DD-018-minimum-viable-team-mechanisms/proof.md
+    description: Planner specialization, payoff accounting, and exact completeness record
+  - path: studies/DD-018-minimum-viable-team-mechanisms/report.md
+    description: Audited bounded mechanism findings and limitations
+  - path: results/verified/20260722T051847Z_DD-018_a193f602_3b3ddac173/outputs/summary.json
+    description: Public-safe exact mechanism summary
+  - path: results/verified/20260722T051847Z_DD-018_a193f602_3b3ddac173/outputs/mechanism-census.json
+    description: Complete public-safe 50-row mechanism census
+  - path: results/verified/20260722T051847Z_DD-018_a193f602_3b3ddac173/outputs/verification.json
+    description: Independent action-table and exhaustive planner verification
+  - path: results/verified/20260722T051847Z_DD-018_a193f602_3b3ddac173/outputs/corruption-tests.json
+    description: Four registered corruption rejections

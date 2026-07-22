@@ -9,9 +9,10 @@ separate.
 
 ## Current state
 
-DD-015 and its documentation closeout are merged and deployed. Issue #113 and
-branch `research/dd018-minimum-viable-team-mechanisms` are active. No DD-018
-run or claim exists.
+DD-015 and its documentation closeout are merged and deployed. DD-018 issue
+#113, branch `research/dd018-minimum-viable-team-mechanisms`, and draft PR #114
+are active. The bounded evidence package and four audited claims are complete;
+remote acceptance, merge, deployment, and live-route checks remain.
 
 ## Scope
 
@@ -52,8 +53,8 @@ blocking are named finite checks, not coalition-proofness.
 - [x] Issue and isolated branch created.
 - [x] Model, mechanism registry, state count, runtime/memory caps, and exactness plan frozen.
 - [x] Targeted and repository verification pass.
-- [ ] Clean source commit and one immutable primary run pass.
-- [ ] Claims, report, public data, and documentation are audited.
+- [x] Clean source commit and one immutable primary run pass.
+- [x] Claims, report, public data, and documentation are audited.
 - [ ] PR CI, merge, post-merge CI/Pages, issue closure, and live routes pass.
 
 ## Validation strategy
@@ -91,6 +92,15 @@ count.
   unilateral-applicable subset, five of five marginal-contribution planner and
   stability rows, and zero of five universal-pooling planner rows. These are
   regression targets, not research evidence.
+- Frozen source commit `a193f602` and draft PR #114 preceded the sole primary
+  run `20260722T051847Z_DD-018_a193f602_3b3ddac173`. It passed in 0.432822
+  seconds; all 50 rows agree with the independent table, all five planner
+  fixtures pass exhaustive occupancy checks, and all four corruptions are
+  rejected. DD-C-0083 through DD-C-0086 passed separate scoped audits.
+- Final local evidence acceptance passed bootstrap, Ruff, MyPy on 130 source
+  files, all 206 tests, the 86-claim ledger, all 45 manifests, and the
+  62-page/22-study site build. The next action is the evidence commit and push;
+  remote gates remain pending.
 
 ## Commands and expected observations
 
@@ -113,6 +123,10 @@ passing immutable configuration for freshness.
 
 ## Outcome and retrospective
 
-Pending exact execution and evidence audit. Registration and dirty-tree preview
-results are not research evidence. The next action after the repeated full gate
-is the clean source commit; only then may the single primary configuration run.
+The bounded evidence package is complete. Forty of 50 recommendations attain
+planner discovery; collapse can remain individually or pair stable; three
+registered eligibility/contribution rules support the planner recommendation
+in all five fixtures but retain substantial equilibrium multiplicity. These are
+finite common-posterior results, not report-truthfulness or coalition-proofness
+claims. The active gate is final repository/site acceptance, evidence commit,
+PR CI, merge, post-merge CI/Pages, issue closure, and live routes.

@@ -23,7 +23,7 @@
 | DD-015 | Dynamic Attention and Visible Search | complete bounded study | Preserve DD-C-0079 through DD-C-0082, the primary baseline and secondary threshold-two runs, and the planner/equilibrium boundary |
 | DD-016 | Threshold Discovery | complete bounded study | Preserve DD-C-0071 through DD-C-0074, the immutable two-method run, and the selected-equilibrium boundary |
 | DD-017 | Threshold Equilibrium Selection | complete bounded study | Preserve DD-C-0075 through DD-C-0078, the immutable registry, and the distinct coalition concepts |
-| DD-018 | Minimum Viable Team Mechanisms | active registered baseline | Freeze the ten-mechanism common-posterior exact census before one primary run |
+| DD-018 | Minimum Viable Team Mechanisms | complete bounded study | Preserve DD-C-0083 through DD-C-0086, the immutable run, and authority/incentive/coalition boundaries |
 
 Each executed directory contains its question, model, plan, claims view, status,
 results index, and report. Program V3's completed sequence is governed by
@@ -33,5 +33,6 @@ verified proof claims and two independently reproduced bounded computational
 claims.
 DD-017 has one passing immutable exact run supporting two verified theorems and
 two independently reproduced bounded computational claims.
-DD-018 is registered and active; no run or claim exists before its clean-source
-execution gate.
+DD-018 has one passing immutable exact run supporting four verified bounded
+computational claims. Its common-posterior input does not test report
+truthfulness, and its pair/tau checks are not coalition-proofness.
