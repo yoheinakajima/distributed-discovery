@@ -20,7 +20,7 @@ verification plan, and corruption test where certificates are used.
 | Synthetic Experiment v3 | complete and deployed through PR #120 | Preserve DD-C-0088, all three immutable versions, the 644 retained calibration failures, shared-seed v2 power rows, and the absolute no-human-data boundary. |
 | Threshold Discovery paper | complete and deployed through PR #123 | Preserve the 20-page deterministic working paper, eight source-generated assets, seven immutable run mappings, claim/citation audit, all-page visual QA, and no-DOI/no-submission boundary. |
 | Program V4 output-connected Labs | complete and deployed through PR #125 | Preserve exact row selection for all 8 DD-016 threshold rows, 160 DD-017 games, 64 DD-015 objective rows, and 50 DD-018 mechanism rows; every control must alter substantive output and all rows remain available without JavaScript. |
-| Program V5 — Information Sharing Frontier | DD-019 through DD-022 complete and deployed; 26-page working paper passes local acceptance under issue #153 and draft PR #155 | Merge and deploy only after branch CI; preserve the evidence hierarchy, selected-equilibrium qualifier, no-new-research boundary, and no-submission/no-DOI status. |
+| Program V5 — Information Sharing Frontier | DD-019 through DD-022 and the 26-page working paper are complete and deployed through issue #153 and PRs #155–#156 | Preserve the evidence hierarchy, selected-equilibrium qualifier, no-new-research boundary, and no-submission/no-DOI status. |
 | DD-019 Signal Geometry and the Action-Budget Discovery Profile | complete and deployed through PR #131 | Preserve the five channel laws, two-method exact profiles, same-accuracy counterexample scope, named private baseline, and recovery-budget semantics. |
 | DD-020 Incremental Sharing and Independent Rescue | complete and deployed through PR #136 | Preserve DD-C-0092 through DD-C-0096 and the sole immutable run; the point theorem does not imply arbitrary-channel monotonicity. |
 | DD-021 General Sharing Frontier | complete and deployed through PR #147 as `8b444003` | Preserve DD-C-0097 through DD-C-0103, the sole immutable run, centralized-authority boundary, exact Lab inputs, and mixed-curve bounded null. |
@@ -77,8 +77,9 @@ make verify
 ```
 
 DD-019 through DD-022 are complete and deployed; none of their primary runs
-may be rerun for freshness. Issue #153 authorized the qualified working paper,
-which is implemented under draft PR #155 with deterministic build, independent
-audit, all-page QA, and site integration. Submission, DOI, archival release,
-journal contact, and new research remain unauthorized.
+may be rerun for freshness. Issue #153 is closed after the qualified working
+paper merged through PR #155 and its deployed mobile-containment correction
+merged through PR #156. Deterministic build, independent audit, all-page PDF
+QA, live desktop/mobile browser QA, and site integration pass. Submission, DOI,
+archival release, journal contact, and new research remain unauthorized.
 For settings-only work, use `docs/github-setup.md` and issue #32.

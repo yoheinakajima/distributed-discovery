@@ -70,13 +70,19 @@ DD-C-0110. Post-merge CI `29959514182`, Pages `29959514196`, and the live study,
 Lab, exact data, claims, evidence, and results routes pass. Documentation-only
 issue #152 admits *When Does Information Sharing Improve Decentralized
 Discovery?* as a qualified archival-paper candidate and creates paper issue
-#153 plus planning and ownership maps. Issue #153 subsequently authorized the
-working-paper build. Draft PR #155 contains a 26-page byte-reproducible paper,
-eight figures, eight tables, exact figure data, independent source and
-corruption audits, all-page visual QA, citation/BibTeX, and a seventh public
-publication route. It creates no study, claim, run, empirical evidence,
-submission, release, DOI, or journal-contact action. Merge and live deployment
-remain pending.
+#153 plus planning and ownership maps. Issue #153 subsequently authorized and
+now closes the working-paper build. PR #155 merged as
+`45bb498f4811be89b04626b71842d87ee854fcd1`; post-merge CI `29965009706` and
+Pages `29965009711` pass. The deployed artifact is a 26-page byte-reproducible
+paper with eight figures, eight tables, exact figure data, independent source
+and corruption audits, all-page visual QA, citation/BibTeX, and a seventh
+public publication route. Deployed mobile QA found one presentation-only
+BibTeX overflow, corrected on the same branch through PR #156, merged as
+`fae4a81b4628f614adbb6bf602fbce6d6065746e`; branch CI `29965500859`, paper/site
+build `29965500839`, post-merge CI `29965642887`, and Pages `29965642900` pass.
+Final desktop/mobile browser QA and the live PDF checksum pass. This work
+creates no study, claim, run, empirical evidence, submission, release, DOI, or
+journal-contact action.
 
 The repository is public and project-authored content is MIT-licensed. The
 canonical Shared Discovery Paradox repository remains pinned at

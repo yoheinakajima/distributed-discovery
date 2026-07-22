@@ -5,9 +5,10 @@ Date: 2026-07-22 (America/Los_Angeles)
 Programs V1 through V4 are complete at their registered bounded scopes.
 Program V5's four studies DD-019 through DD-022 are merged and deployed with
 claims DD-C-0089 through DD-C-0110 and four immutable primary runs. Issue #153
-authorizes the qualified theorem-family working paper. Draft PR #155 contains
-the locally accepted 26-page artifact and public-site integration without
-allocating a study, changing a claim, or rerunning research.
+is closed after the qualified 26-page theorem-family working paper and public
+integration merged through PR #155, followed by a presentation-only deployed
+mobile-containment correction through PR #156. No study was allocated, no
+claim changed, and no research configuration was rerun.
 
 ## Inventory
 
@@ -37,7 +38,8 @@ allocating a study, changing a claim, or rerunning research.
 | DD-021 General Sharing Frontier | #146 | #147 | `8b444003` |
 | Post-DD-021 paper gate | #148 | #149 | recorded by PR #149 |
 | DD-022 Coordination-Free Positive Sharing | #150 | #151 | `c8a11bd3` |
-| Information Sharing Frontier paper | #153 | #155 | pending branch CI and merge |
+| Information Sharing Frontier paper | #153 | #155 | `45bb498f` |
+| Deployed mobile-containment correction | #153 | #156 | `fae4a81b` |
 
 ## Current acceptance record
 
@@ -51,11 +53,15 @@ allocating a study, changing a claim, or rerunning research.
   and 26 pages. The new paper has eight generated figures, eight generated
   tables, exact data, an independent audit, corruption tests, and all-page QA.
 - The site builds 77 HTML routes for 26 studies, 85 public data files, 18 Labs,
-  and 23 checksum-covered downloads. Live verification of the new publication
-  and download remains the post-merge gate.
+  and 23 checksum-covered downloads. The live publication and download pass;
+  the deployed PDF SHA-256 matches the validation record.
 - Browser QA passes substantive point/channel output selection, opposite-sign
   same-accuracy comparison, semantic controls, live status, keyboard focus,
   desktop/mobile containment, internally scrolling tables, and clean logs.
+- Paper PR #155 passed branch CI `29964870691` and paper/site build
+  `29964870725`, then post-merge CI `29965009706` and Pages `29965009711`.
+  Mobile correction PR #156 passed branch CI `29965500859` and paper/site build
+  `29965500839`, then post-merge CI `29965642887` and Pages `29965642900`.
 - Secret, host-path, license, provenance, Git-cleanliness, and upstream checks
   pass. The upstream clone remains clean at
   `5025cc8e8f2f8ca015dff2066f08f81ad5715a51`.
