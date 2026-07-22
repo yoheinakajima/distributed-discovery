@@ -1,0 +1,5 @@
+study_id: DD-021
+status: registered
+evidence_status: no-run-no-claim
+next_action: implement the exact channel registry, two methods, independent verifier, corruptions, CLI, and tests
+updated_utc: 2026-07-22T18:45:00Z

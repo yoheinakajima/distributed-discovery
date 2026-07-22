@@ -1,0 +1,20 @@
+study_id: DD-021
+title: General Sharing Frontier
+slug: dd-021
+phase: registered
+summary: Registered exact study of error contraction, independent rescue, sharing regimes, and pooled action-budget recovery.
+public_artifacts:
+  - path: studies/DD-021-general-sharing-frontier/model.md
+    description: Frozen finite protocol, baselines, and authority boundary
+  - path: studies/DD-021-general-sharing-frontier/plan.md
+    description: Bounded exact scope, resource audit, and execution gates
+  - path: studies/DD-021-general-sharing-frontier/brief.md
+    description: Theorem, registry, and recovery objectives
+  - path: studies/DD-021-general-sharing-frontier/literature.md
+    description: Primary-source adjacency review and theorem-name boundary
+  - path: studies/DD-021-general-sharing-frontier/proof.md
+    description: Error-contraction and full-capacity analytic proofs
+  - path: studies/DD-021-general-sharing-frontier/proof-audit.md
+    description: Separate internal proof-consistency audit
+claim_ids: []
+run_ids: []

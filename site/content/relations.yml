@@ -175,3 +175,6 @@ studies:
     result_ids: [incremental-point-pooling, same-accuracy-channel-counterexample]
     lab_slugs: [incremental-sharing]
     data_routes: [data/labs/incremental-sharing.json, data/incremental-sharing/channel-profiles.json]
+  DD-021:
+    program: program-v5
+    theorem_family: sharing-frontier

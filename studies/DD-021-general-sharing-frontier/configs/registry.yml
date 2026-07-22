@@ -1,0 +1,35 @@
+schema_version: dd021-general-sharing-frontier-v1
+study_id: DD-021
+targets: [3, 4, 5]
+agents: [2, 3, 4]
+point_accuracies: [uninformative, "1/2", "2/3", "1/1"]
+shortlist_inclusion_accuracies: [uninformative, "1/2", "3/4"]
+shortlist_sizes: all-integers-one-through-M-minus-one
+guaranteed_shortlists: true
+exclusion_sizes: all-integers-one-through-M-minus-one
+confidence_pairs:
+  - [uninformative, "1/2"]
+  - ["1/2", "3/4"]
+  - [uninformative, "3/4"]
+confidence_level_probability: "1/2"
+channel_schema_path: studies/DD-019-signal-geometry/schemas/channel-v1.schema.json
+channel_laws: 59
+scenarios: 177
+labeled_target_profile_states: 936063
+histogram_target_profile_states: 117433
+largest_labeled_target_profile_states: 55550
+largest_histogram_target_profile_states: 5000
+runtime_estimate_seconds: 30
+time_cap_seconds: 120
+memory_estimate_mb: 256
+memory_cap_mb: 1024
+exactness: rational
+method_a: labeled-signal-profile-enumeration
+method_b: signal-histogram-count-state-enumeration
+certificate_format: dd021-general-sharing-frontier-certificate-v1
+minimization_order: [targets, agents, signal-alphabet-size, denominator-complexity, channel-description-complexity]
+corruptions: [channel-probability, tie-weight, pooled-accuracy, private-discovery, top-l-profile, regime-label, recovery-budget, source-checksum]
+valid_partial_outcomes: none-for-claim-promotion
+random_seeds:
+  algorithm: []
+  model: null
