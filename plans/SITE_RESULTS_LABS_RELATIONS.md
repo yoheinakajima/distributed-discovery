@@ -6,7 +6,7 @@ Repair the public research library so findings do not overlap, every Lab control
 
 ## Current state
 
-At `2026-07-22T17:51:33Z`, clean `main`, `origin/main`, and the branch base are `8ac0700`; issue #143 is open; the dedicated branch and worktree exist. Local implementation, visual/browser QA, and all four repository Make gates pass. GitHub PR, CI, merge, Pages, and live-route verification remain.
+Complete at `2026-07-22T18:01:03Z`. PR #144 merged as `be4b380`; issue #143 closed; PR CI run 350, Paper and Site Builds run 72, post-merge CI run 351, and Pages run 76 passed. All 17 required live URLs returned HTTP 200 and the deployed content markers and relation counts matched the validated build.
 
 ## Scope
 
@@ -27,7 +27,7 @@ Existing immutable/public data are authoritative. Controls may use selects, name
 3. **Core Labs (complete):** retire the generic scenario-slider system and rebuild Sequential, Coverage, Mechanisms, Audit, Evidence Acquisition, and Architecture Atlas from verified public data.
 4. **Interpretation (complete):** polish Threshold numeric presentation and improve the remaining output-connected Labs without broadening scientific scope.
 5. **Relations and navigation (complete):** add and validate the presentation relationship registry, generate public JSON and reverse links, and refine contextual navigation while retaining five global items.
-6. **Acceptance (active):** capture final screenshots, complete browser/accessibility/performance/relationship reports, preserve protected inventories, run all four Make gates, rebase, push, open/finish the PR, merge after CI/Pages, and verify live routes.
+6. **Acceptance (complete):** captured final screenshots, completed browser/accessibility/performance/relationship reports, preserved protected inventories, passed all four Make gates, rebased, merged PR #144 after CI, passed Pages deployment, and verified live routes.
 
 ## Progress checklist
 
@@ -43,7 +43,7 @@ Existing immutable/public data are authoritative. Controls may use selects, name
 - [x] Add validated relations and reverse links.
 - [x] Complete final visual, accessibility, performance, and relationship QA.
 - [x] Pass `make bootstrap`, `make verify`, `make papers`, and `make site` without research execution.
-- [ ] Rebase, merge a passing PR, verify Pages and live routes, and close issue #143.
+- [x] Rebase, merge a passing PR, verify Pages and live routes, and close issue #143.
 
 ## Discoveries and surprises
 
@@ -66,6 +66,7 @@ Existing immutable/public data are authoritative. Controls may use selects, name
 - `2026-07-22T16:39:41Z`: treat all work as presentation-only and freeze scientific/paper/run/claim/manifest inventories before implementation.
 - `2026-07-22`: replace both the Results content model and CSS first; a CSS-only patch would preserve the duplicate DD-013 entry and chronological append-only failure mode.
 - `2026-07-22T17:51:33Z`: accept implementation commit `0881230` after all four Make gates, protected-path diff, open-PR query, and 60-before/60-after evidence-count checks pass.
+- `2026-07-22T18:01:03Z`: accept squash merge `be4b380` after PR CI run 350 and Paper and Site Builds run 72 pass; post-merge CI run 351 and Pages run 76 also pass. Verify 17 live URLs at HTTP 200, six live finding stacks with ten findings, zero generic core-Lab placeholders, the DD-012 reverse panel, and all declared relation entity counts.
 
 ## Validation strategy
 
@@ -88,8 +89,8 @@ None at plan creation. A later shared-site branch overlap or unavailable GitHub/
 
 ## Recovery and restart instructions
 
-Open this file, inspect `git status --short --branch`, query open PRs, read the latest decision/progress entry, and resume the sole active milestone. Do not touch auxiliary worktrees or run timestamp-generating research targets.
+No active milestone remains. For a future site continuation, start from `be4b380` or later main, inspect open PRs and worktrees, preserve the protected inventories, and register a new living ExecPlan before substantive work.
 
 ## Outcome and retrospective
 
-Presentation implementation and local QA are complete. Ten unique findings render in six normal-flow thematic stacks with zero intersections or document overflow at all four required widths. Six placeholder Labs now expose substantive registered outputs; Threshold uses readable primary values plus exact secondary values and a phase chart. The validated relation graph spans 5 programs, 9 theorem families, 24 studies, 10 findings, 16 Labs, 6 papers, 24 benchmark tasks, 6 experiment modules, 96 claims, 36 claim-linked runs, and 20 public-data routes. Final GitHub/Pages acceptance remains.
+Presentation implementation, local QA, GitHub acceptance, and live deployment are complete. Ten unique findings render in six normal-flow thematic stacks with zero intersections or document overflow at all four required widths. Six placeholder Labs now expose substantive registered outputs; Threshold uses readable primary values plus exact secondary values and a phase chart. The validated relation graph spans 5 programs, 9 theorem families, 24 studies, 10 findings, 16 Labs, 6 papers, 24 benchmark tasks, 6 experiment modules, 96 claims, 36 claim-linked runs, and 20 public-data routes. PR #144 merged as `be4b380`, issue #143 closed, all required workflows passed, and every required live route returned HTTP 200 with deployed content matching the validated build.
