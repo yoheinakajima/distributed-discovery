@@ -243,6 +243,13 @@ before its independent verifier and immutable primary run pass.
   its separate audit. The active gate is full repository/site acceptance,
   evidence commit, PR CI/merge, post-merge CI/Pages, issue closure, and live
   benchmark/data routes; the run must not be repeated.
+- 2026-07-22: DiscoveryBench v3 PR #117 passed CI and paper/site artifact
+  checks and squash-merged as `3b4fdbe`, closing issue #116. Post-merge CI
+  `29895085124` and Pages `29895085148` passed. The live benchmark, DD-010
+  study, v3 schema, and summary routes returned HTTP 200; the live summary
+  names the immutable run and reports the frozen 24/29/39 registries with 36
+  compatible pairs and 660 exclusions. The benchmark half of V4.6 is complete;
+  Synthetic Experiment v3 is next, and the benchmark run must not be repeated.
 
 ### Program V3 attention queue (complete, 2026-07-21)
 
