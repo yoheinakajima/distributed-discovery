@@ -6,6 +6,154 @@
 
 Bootstrap and execute a durable, auditable research program for Distributed Discovery while preserving the Shared Discovery Paradox repository as the canonical, read-only public presentation.
 
+## Active continuation — Governance and Incremental Sharing (2026-07-22)
+
+### Purpose and intended outcome
+
+Complete the next single-lane Program V5 continuation: formalize the research
+and publication hierarchy; execute and independently verify Incremental Sharing
+and Independent Rescue as the next live study; apply the editorial theorem
+gate; and publish the program map and an output-connected Incremental Sharing
+Lab. Preserve the distinction among registered studies, theorem-family papers,
+the living synthesis, and infrastructure.
+
+### Current state
+
+The live audit at `2026-07-22T13:55:13Z` found clean `main` at
+`5e6c800213232be2fdcdc2aa19027fb5a8400e85`, matching `origin/main`; no open
+pull request; issue #32 as the only pre-existing open issue; 91 claims, 48
+manifests with 45 passing runs, 23 studies, six validated papers, 69 HTML
+routes, 67 public data files, and 16 Labs. CI `29906411957` and Pages
+`29906411981` pass for that main commit, and the root plus DD-019 study/data,
+Claims, and Evidence routes return HTTP 200. The one authorized `gh auth
+status` call found no authenticated CLI host, so settings mutation is not
+retried; SSH and the connected GitHub integration remain available.
+
+Two older auxiliary worktrees exist. The roadmap worktree contains unrelated
+untracked files and neither auxiliary worktree is used or modified by this
+continuation. All substantive work remains in the primary worktree with one
+active branch and pull request at a time.
+
+### Scope
+
+1. Issue #133 and branch `docs/research-governance-publication-architecture`:
+   governance, publication architecture, synthesis scaffold, factual status
+   reconciliation, and the public program page; no research evidence.
+2. After merge, allocate the next live study ID and execute Incremental Sharing
+   under a newly frozen exact model, independent verifier, corruption tests,
+   immutable run, and separate claim audits.
+3. After research merge, apply the Incentive to Ignore and Threshold Discovery
+   editorial gates and add the living-synthesis prospectus; no new run.
+4. After editorial merge, publish the DD-020 result and output-connected Lab,
+   then perform full repository, paper, site, browser, accessibility, security,
+   provenance, and live-route acceptance.
+
+### Non-goals
+
+No General Sharing Frontier stretch study unless all four required milestones
+are merged and capacity remains. No submission, arXiv upload, DOI, release,
+journal contact, human data, real data, settings retry, canonical-upstream
+mutation, or rerun of any passing primary configuration.
+
+### Assumptions
+
+The symmetric noisy-point theorem begins at `p>=1/M`; the registered direct
+private action is the Bayes point action; pooled ties use independent uniform
+randomization; the first research study is simultaneous, common-objective,
+one-hit search without strategic rewards. Every broader statement remains a
+conjecture until proof or an exact counterexample supplies the permitted status.
+
+### Milestones
+
+- **A (active):** governance and publication architecture, issue #133.
+- **B:** next live study, expected DD-020, Incremental Sharing and Independent
+  Rescue.
+- **C:** editorial theorem gate and synthesis prospectus.
+- **D:** public DD-020 integration and output-connected Lab.
+- **Acceptance:** complete repository/paper/site/live audit and final handoff.
+
+### Progress checklist
+
+- [x] Read the governing instructions, required current-state documents,
+  DD-019, DD-012--014, relevant DD-001/DD-002/DD-010 records, and current site
+  builders.
+- [x] Audit local Git, worktrees, remote main, open issues/PRs, CI, Pages, live
+  routes, and factual inventories; run `gh auth status` exactly once.
+- [x] Create issue #133 and the sole active Milestone A branch.
+- [ ] Complete, validate, merge, deploy, close, and synchronize Milestone A.
+- [ ] Register and complete the next live Incremental Sharing study.
+- [ ] Apply and merge the editorial theorem gate and synthesis prospectus.
+- [ ] Build and deploy the DD-020 public integration and Lab.
+- [ ] Run final acceptance and reconcile every required handoff document.
+
+### Discoveries and surprises
+
+- `studies/index.md` still labels DD-019 deployment pending, while PR #131 and
+  deployment closeout PR #132 are merged and current-state/live-route evidence
+  confirms deployment.
+- `reports/project-status.md`, `reports/final-handoff.md`, `site/README.md`, and
+  portions of the roadmap retain pre-DD-019 inventory or resume language.
+- The GitHub Pages builds endpoint returns 404 without settings-capable
+  authentication, but the public Actions API records the successful Pages
+  workflow and live routes pass; this is not a research blocker.
+
+### Decision log
+
+- `2026-07-22T13:55:13Z`: preserve the user-specified four-milestone order and
+  branch names; use the connected GitHub integration for issues/PRs/merges and
+  SSH for Git transport because CLI authentication is unavailable.
+- `2026-07-22T13:55:13Z`: do not remove or clean the unrelated auxiliary
+  worktrees; record them and keep this continuation in the primary worktree.
+- `2026-07-22T13:55:13Z`: Milestone A is documentation/presentation only, so
+  its acceptance must demonstrate unchanged claims, manifests, passing runs,
+  scientific outputs, and paper PDF checksums.
+
+### Validation strategy
+
+Milestone A runs `git diff --check`, `make bootstrap`, `make verify`, and `make
+site`, compares frozen inventories/checksums, then checks branch and post-merge
+CI/Pages plus live routes. Milestone B adds targeted exact-method agreement,
+normalization, bounds, invariance, theorem regressions, all registered
+corruptions, one clean immutable primary run, separate claim audits, paper
+provenance checks if affected, and visual QA. Milestones C and D do not execute
+research targets. Final acceptance runs all named Make gates plus claim,
+manifest, exact-verifier, corruption, schema, route, browser, accessibility,
+PDF, secret, host-path, license, provenance, and upstream-cleanliness audits.
+
+### Commands and expected observations
+
+- `make verify`: the existing suite passes without executing registered long
+  studies; counts rise only when the scoped milestone adds tests or claims.
+- `make site`: all routes, fragments, downloads, no-JavaScript fallbacks, and
+  public-safety checks pass; Milestone A adds `program.html` without changing
+  research inventories.
+- The eventual registered DD-020 primary target runs once from clean committed
+  source after its draft PR opens and writes a new immutable directory.
+
+### Artifacts produced
+
+At this checkpoint: issue #133 and this living ExecPlan update. Later artifacts
+are recorded after they exist; no DD-020 ID, claim, run, or result exists yet.
+
+### Blockers
+
+No scientific blocker. Settings issue #32 remains authority-blocked and
+separate. A genuine environment boundary uses the user-specified hard-session
+checkpoint without presenting incomplete work as completion.
+
+### Recovery and restart instructions
+
+Inspect `git status --short --branch`, read this section and the nearest active
+study files, query open PRs/issues, and resume the first unchecked item. Do not
+rerun any passing primary configuration. If Milestone A is merged, synchronize
+`main` before allocating the next live study ID.
+
+### Outcome and retrospective
+
+Pending. Update after every material decision, failed check, completed
+milestone, immutable run, claim audit, merge, and deployment. Exactly one
+milestone remains active.
+
 ## Current state
 
 ### Program V4 complete; Information Sharing Frontier queue next (2026-07-22)
