@@ -1,0 +1,34 @@
+schema_version: 1
+paper:
+  title: When Does Information Sharing Improve Decentralized Discovery?
+  status: admitted-candidate-planning-only
+  issue: 153
+  primary_family: information-sharing-attention-recovery
+studies:
+  DD-019:
+    role: signal-geometry-and-action-budget-profile
+    claims: [DD-C-0089, DD-C-0090, DD-C-0091]
+    run_ids: [20260722T084145Z_DD-019_a77bb786_04a5e9f0c5]
+  DD-020:
+    role: incremental-sharing-and-independent-rescue
+    claims: [DD-C-0092, DD-C-0093, DD-C-0094, DD-C-0095, DD-C-0096]
+    run_ids: [20260722T142551Z_DD-020_3854fff6_37c11a850a]
+  DD-021:
+    role: general-sharing-frontier-and-centralized-recovery-benchmark
+    claims: [DD-C-0097, DD-C-0098, DD-C-0099, DD-C-0100, DD-C-0101, DD-C-0102, DD-C-0103]
+    run_ids: [20260722T185924Z_DD-021_3cdbbc40_2fea269a9a]
+  DD-022:
+    role: selected-coordination-free-positive-sharing-and-selection-boundary
+    claims: [DD-C-0104, DD-C-0105, DD-C-0106, DD-C-0107, DD-C-0108, DD-C-0109, DD-C-0110]
+    run_ids: [20260722T210334Z_DD-022_2376d5b7_ad67765ca8]
+companions:
+  incentive-to-ignore:
+    relationship: strategic-attention-companion
+    ownership_boundary: retains primary ownership of DD-012 strategic-attention theorem; may cite DD-020 but does not own the frontier synthesis
+  architecture-of-distributed-discovery:
+    relationship: living-synthesis
+    ownership_boundary: may organize and explain claims without taking primary theorem-family ownership
+boundaries:
+  - DD-022 title result is selected-equilibrium, not every-equilibrium.
+  - DD-021 full-capacity recovery is centralized, not an implementation theorem.
+  - Admission authorizes no manuscript, submission, release, DOI, or novelty claim.

@@ -1,6 +1,22 @@
 # Master execution plan
 
-## Active continuation — DD-022 Coordination-Free Positive Sharing (2026-07-22)
+## Active continuation — Information Sharing Frontier paper admission (2026-07-22)
+
+DD-022 research PR #151 merged as
+`c8a11bd3c9c8c68e6e631bc61ef3a1d8c46e7fe9`; post-merge CI `29959514182`,
+Pages `29959514196`, and all named live routes pass. Issue #152 and branch
+`docs/information-sharing-frontier-paper-admission` own the sole active lane: a
+documentation-only admission decision.
+
+The gate admits *When Does Information Sharing Improve Decentralized
+Discovery?* as an archival theorem-paper candidate with an explicit selected-
+equilibrium qualifier and every-equilibrium negative result. Paper issue #153,
+`plans/INFORMATION_SHARING_FRONTIER_PAPER.md`, the theorem/section map, and the
+ownership map are the only paper artifacts authorized. The gate creates no
+study, claim, run, proof, manuscript, PDF, submission, release, DOI, journal
+contact, or upstream mutation.
+
+## Completed continuation — DD-022 Coordination-Free Positive Sharing (2026-07-22)
 
 Issue #150 and branch `research/dd022-coordination-free-positive-sharing`
 register the sole substantive Program V5 lane from clean main
@@ -8,9 +24,10 @@ register the sole substantive Program V5 lane from clean main
 `20260722T210334Z_DD-022_2376d5b7_ad67765ca8` supports DD-C-0104 through
 DD-C-0110, including the selected positive-sharing theorem and the preserved
 every-equilibrium limitation. The living ExecPlan is
-`plans/DD022_COORDINATION_FREE_POSITIVE_SHARING.md`. After the research lane is
-merged and deployed, a separate documentation-only gate must decide the held
-Information Sharing Frontier paper; no manuscript or submission is authorized.
+`plans/DD022_COORDINATION_FREE_POSITIVE_SHARING.md`. Research PR #151 merged as
+`c8a11bd3c9c8c68e6e631bc61ef3a1d8c46e7fe9`; post-merge CI `29959514182` and
+Pages `29959514196` passed, issue #150 closed, and the live DD-022 routes pass.
+The separate paper gate is the active documentation-only continuation above.
 
 ## Active continuation — post-DD-021 editorial gate (2026-07-22)
 

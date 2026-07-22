@@ -36,8 +36,8 @@ and four output-connected public Labs are deployed. Its final handoff creates
 no new research evidence.
 
 Program V5, *The Information Sharing Frontier*, has completed and deployed its
-documentation baseline, DD-019 Signal Geometry, DD-020 Incremental Sharing,
-and DD-021 General Sharing Frontier, with exact output-connected Labs. It asks:
+documentation baseline and DD-019 through DD-022, with exact output-connected
+Labs. It asks:
 **When does sharing useful private
 information improve or reduce decentralized group discovery?** Its provisional flagship paper is
 *When Does Information Sharing Improve Decentralized Discovery?*, with
@@ -57,9 +57,10 @@ The conceptual center is
 DD-020 proves this exact decomposition for its point channel. DD-021 proves the
 channel-independent adjacent error-contraction criterion and centralized
 full-capacity recovery within its declared protocol, while its 177-scenario
-mixed-curve null remains bounded. The paper gate is held for one
-Coordination-Free Positive Sharing theorem package because centralized
-top-`L` recovery is not decentralized implementation. Broader uses remain
+mixed-curve null remains bounded. DD-022 proves an exact strict sharing interval
+in a selected coordination-free equilibrium and preserves the every-equilibrium
+failure. The post-DD-022 gate admits the qualified archival-paper candidate for
+planning only; no manuscript or submission is authorized. Broader uses remain
 conjectural until their own proof or bounded evidence. Active execution truth is in
 [current-roadmap.md](current-roadmap.md); registered evidence is in
 [the study registry](../studies/index.md).
@@ -306,10 +307,10 @@ and empirical-boundary interfaces. It is not a program rename.
 ## 8. Execution sequence and single-lane dependencies
 
 1. **Complete:** Program V4 — Threshold Discovery.
-2. **Active:** Program V5 — The Information Sharing Frontier; its first two
-   bounded studies and public integration are complete, with no third package
-   registered by this roadmap.
-3. **Then:** Reliable Discovery — Diversity–Redundancy under reliability and
+2. **Complete research sequence; paper planning admitted:** Program V5 — The
+   Information Sharing Frontier; DD-019 through DD-022 are deployed and paper
+   issue #153 awaits separate manuscript authorization.
+3. **Next research direction:** Reliable Discovery — Diversity–Redundancy under reliability and
    overlap.
 4. **Then:** The Price of Missing Provenance.
 5. **Then:** Truth, Obedience, and Budget Balance.
