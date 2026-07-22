@@ -9,10 +9,10 @@ separate.
 
 ## Current state
 
-DD-015 and its documentation closeout are merged and deployed. DD-018 issue
-#113, branch `research/dd018-minimum-viable-team-mechanisms`, and draft PR #114
-are active. The bounded evidence package and four audited claims are complete;
-remote acceptance, merge, deployment, and live-route checks remain.
+DD-015 and DD-018 are merged and deployed. DD-018 PR #114 squash-merged as
+`6a533d1`; issue #113, post-merge CI `29893840755`, Pages `29893840796`, and
+the live study and JSON passed. DiscoveryBench v3 is the next sequential
+Program V4 milestone.
 
 ## Scope
 
@@ -55,7 +55,7 @@ blocking are named finite checks, not coalition-proofness.
 - [x] Targeted and repository verification pass.
 - [x] Clean source commit and one immutable primary run pass.
 - [x] Claims, report, public data, and documentation are audited.
-- [ ] PR CI, merge, post-merge CI/Pages, issue closure, and live routes pass.
+- [x] PR CI, merge, post-merge CI/Pages, issue closure, and live routes pass.
 
 ## Validation strategy
 
@@ -123,10 +123,11 @@ passing immutable configuration for freshness.
 
 ## Outcome and retrospective
 
-The bounded evidence package is complete. Forty of 50 recommendations attain
+The bounded study and deployment are complete. Forty of 50 recommendations attain
 planner discovery; collapse can remain individually or pair stable; three
 registered eligibility/contribution rules support the planner recommendation
 in all five fixtures but retain substantial equilibrium multiplicity. These are
 finite common-posterior results, not report-truthfulness or coalition-proofness
-claims. The active gate is final repository/site acceptance, evidence commit,
-PR CI, merge, post-merge CI/Pages, issue closure, and live routes.
+claims. PR #114 merged as `6a533d1`; post-merge CI and Pages passed, issue #113
+closed, and the live route and JSON returned HTTP 200 with the immutable run and
+all four claim IDs. DiscoveryBench v3 is the next authorized milestone.
