@@ -122,6 +122,57 @@ def _verify_exact_sources(root: Path) -> int:
     return 4
 
 
+def _verify_program_v4_sources(root: Path) -> int:
+    threshold = _load(
+        root
+        / (
+            "results/verified/20260722T021526Z_DD-016_00271ff8_123b2809e3/"
+            "outputs/canonical-metrics.json"
+        )
+    )
+    if (
+        threshold["threshold_rows"] != 8
+        or threshold["common_deterministic_mode"] != "37916217637/98876953125"
+        or threshold["paired_planner"] != "223779310319051/333709716796875"
+    ):
+        raise ValueError("DD-016 source summary mismatch")
+    dynamic = _load(
+        root / ("results/verified/20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a/outputs/summary.json")
+    )
+    if (
+        dynamic["objective_rows"] != 64
+        or dynamic["planner_strictly_better_rows"] != 38
+        or dynamic["visibility_reduces_discovery_fixed_rows"] != 18
+        or dynamic["stopping_reduces_expected_actions_rows"] != 32
+    ):
+        raise ValueError("DD-015 dynamic source summary mismatch")
+    threshold_dynamic = _load(
+        root
+        / (
+            "results/verified/20260722T044453Z_DD-015_34bc4379_33e1da478b/"
+            "outputs/threshold-two-summary.json"
+        )
+    )
+    if (
+        threshold_dynamic["parameter_cells"] != 16
+        or threshold_dynamic["objective_rows"] != 32
+        or threshold_dynamic["join_viable_team_rows"] != 32
+        or threshold_dynamic["start_new_singleton_rows"] != 32
+    ):
+        raise ValueError("DD-015 threshold-two source summary mismatch")
+    mechanisms = _load(
+        root / ("results/verified/20260722T051847Z_DD-018_a193f602_3b3ddac173/outputs/summary.json")
+    )
+    if (
+        mechanisms["mechanism_fixture_rows"] != 50
+        or mechanisms["planner_portfolio_rows"] != 40
+        or mechanisms["marginal_contribution_planner_stable_rows"] != 5
+        or mechanisms["universal_pooling_planner_rows"] != 0
+    ):
+        raise ValueError("DD-018 source summary mismatch")
+    return 4
+
+
 def verify_bundle(bundle: dict[str, Any], root: Path, version: str = "v1") -> dict[str, Any]:
     design = bundle["design"]
     if version == "v1":
@@ -144,6 +195,26 @@ def verify_bundle(bundle: dict[str, Any], root: Path, version: str = "v1") -> di
         hypothesis_rows = attention_hypotheses()
         scenario_rows = attention_scenarios()
         expected_counts = (29, 14, 11)
+    elif version == "v3":
+        from distributed_discovery.experimental_design.threshold_dynamic_model import (
+            hypotheses as program_v4_hypotheses,
+        )
+        from distributed_discovery.experimental_design.threshold_dynamic_model import (
+            program_v4_model_checks,
+        )
+        from distributed_discovery.experimental_design.threshold_dynamic_model import (
+            response_scenarios as program_v4_scenarios,
+        )
+        from distributed_discovery.experimental_design.threshold_dynamic_model import (
+            treatment_cells as program_v4_cells,
+        )
+
+        cell_rows = program_v4_cells()
+        hypothesis_rows = program_v4_hypotheses()
+        scenario_rows = program_v4_scenarios()
+        expected_counts = (37, 20, 14)
+        if bundle["exact_model_checks"][-4:] != program_v4_model_checks():
+            raise ValueError("Program V4 model-check registry mismatch")
     else:
         raise ValueError(f"unknown experiment version: {version}")
     schema = _load(
@@ -189,6 +260,7 @@ def verify_bundle(bundle: dict[str, Any], root: Path, version: str = "v1") -> di
         bundle["power_table"], hypothesis_rows, scenario_rows
     )
     exact_source_checks = _verify_exact_sources(root)
+    program_v4_source_checks = _verify_program_v4_sources(root) if version == "v3" else 0
     return {
         "passed": True,
         "treatment_cells": len(cells),
@@ -196,6 +268,7 @@ def verify_bundle(bundle: dict[str, Any], root: Path, version: str = "v1") -> di
         "assignments": len(assignments),
         "power_rows_verified": verified_power_rows,
         "exact_source_checks": exact_source_checks,
+        "program_v4_source_checks": program_v4_source_checks,
         "no_real_data_boundary": True,
     }
 
@@ -224,8 +297,18 @@ def corruption_tests(bundle: dict[str, Any], root: Path, version: str = "v1") ->
         verify_bundle(altered_boundary, root, version)
     except ValueError:
         boundary_rejected = True
-    return {
+    results = {
         "altered_power_rejected": power_rejected,
         "real_identifier_rejected": real_data_rejected,
         "altered_boundary_rejected": boundary_rejected,
     }
+    if version == "v3":
+        altered_source = copy.deepcopy(bundle)
+        altered_source["exact_model_checks"][-1]["expected"]["planner_portfolio_rows"] = 41
+        source_registry_rejected = False
+        try:
+            verify_bundle(altered_source, root, version)
+        except ValueError:
+            source_registry_rejected = True
+        results["altered_program_v4_source_registry_rejected"] = source_registry_rejected
+    return results

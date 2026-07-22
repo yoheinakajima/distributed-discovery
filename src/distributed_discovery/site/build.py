@@ -663,14 +663,25 @@ def _experiment_pages(root: Path, output: Path) -> dict[str, object]:
     manifest = json.loads((run / "manifest.json").read_text())
     run_id = str(manifest["run_id"])
     experiment_version = str(summary.get("experiment_version", "v1"))
-    schema_number = 2 if experiment_version == "v2" else 1
+    schema_number = int(experiment_version.removeprefix("v"))
     notice = html.escape(str(design["notice"]))
     warning = f'<aside class="callout" aria-label="No human data warning"><strong>Synthetic package only.</strong> {notice}</aside>'
     downloads = f'<a href="downloads/dd011-preregistration-template.md">preregistration template</a> · <a href="downloads/dd011-participant-instructions.md">participant instructions</a> · <a href="downloads/dd011-researcher-protocol.md">researcher protocol</a> · <a href="downloads/dd011-data-dictionary.md">data dictionary</a> · <a href="downloads/dd011-randomization.md">randomization</a> · <a href="downloads/dd011-design-{experiment_version}.schema.json">design schema</a>'
-    version_flag = " --version v2" if experiment_version == "v2" else ""
-    make_target = "dd011-attention" if experiment_version == "v2" else "dd011-experiment"
-    claim_id = "DD-C-0070" if experiment_version == "v2" else "DD-C-0056"
-    overview = f"""<header class="page-hero"><p class="eyebrow">DD-011 experiment design kit {html.escape(experiment_version)}</p><h1>Plan a discovery experiment</h1><p class="lede">A read-only synthetic package for a proposed experiment on acquisition, disclosure, selective attention, allocation, and rewards.</p></header>{warning}<div class="metric-grid"><article class="metric-card"><span>Treatment cells</span><strong>{summary["treatment_cells"]}</strong></article><article class="metric-card"><span>Questions</span><strong>{summary["hypotheses"]}</strong></article><article class="metric-card"><span>Synthetic power rows</span><strong>{summary["power_rows"]}</strong></article></div><section class="content-section"><h2>Explore the proposed experiment</h2><div class="card-grid resource-grid"><article class="card"><h3><a href="experiment-kit/hypotheses.html">What the experiment would test</a></h3><p>Review the frozen questions, outcomes, and estimands.</p></article><article class="card"><h3><a href="experiment-kit/design.html">How participants would be assigned</a></h3><p>Inspect the treatment matrix and bounded alternatives.</p></article><article class="card"><h3><a href="experiment-kit/attention.html">Selective-attention extension</a></h3><p>Inspect the nine attention treatments and six appended hypotheses.</p></article><article class="card"><h3><a href="experiment-kit/power.html">Synthetic power estimates</a></h3><p>See scenario-conditional estimates, MDEs, and retained failures.</p></article><article class="card"><h3><a href="labs/experiment-design.html">Experiment-design Lab</a></h3><p>Filter the complete precomputed power table.</p></article></div></section><section class="content-section prose"><h2>Materials and safeguards</h2><p>{downloads}</p><p>This package is not preregistered and no live assignment or data collection service exists.</p><details class="technical-details"><summary>Technical details</summary><p><code>make {make_target}</code><br><code>distributed-discovery experiment{version_flag} verify {html.escape(run_id)}</code></p><p>Claim <a href="claims.html#{claim_id}">{claim_id}</a> · reproducible run <a href="evidence.html">{html.escape(run_id)}</a>.</p></details></section>"""
+    version_flag = "" if experiment_version == "v1" else f" --version {experiment_version}"
+    make_target = {
+        "v1": "dd011-experiment",
+        "v2": "dd011-attention",
+        "v3": "dd011-threshold-dynamic",
+    }[experiment_version]
+    claim_id = {"v1": "DD-C-0056", "v2": "DD-C-0070", "v3": "DD-C-0088"}[experiment_version]
+    program_v4_card = (
+        '<article class="card"><h3><a href="experiment-kit/threshold-dynamic.html">'
+        "Threshold and dynamic extension</a></h3><p>Inspect the eight Program V4 "
+        "treatments and six appended synthetic contrasts.</p></article>"
+        if experiment_version == "v3"
+        else ""
+    )
+    overview = f"""<header class="page-hero"><p class="eyebrow">DD-011 experiment design kit {html.escape(experiment_version)}</p><h1>Plan a discovery experiment</h1><p class="lede">A read-only synthetic package for a proposed experiment on acquisition, disclosure, selective attention, threshold allocation, dynamics, and rewards.</p></header>{warning}<div class="metric-grid"><article class="metric-card"><span>Treatment cells</span><strong>{summary["treatment_cells"]}</strong></article><article class="metric-card"><span>Questions</span><strong>{summary["hypotheses"]}</strong></article><article class="metric-card"><span>Synthetic power rows</span><strong>{summary["power_rows"]}</strong></article></div><section class="content-section"><h2>Explore the proposed experiment</h2><div class="card-grid resource-grid"><article class="card"><h3><a href="experiment-kit/hypotheses.html">What the experiment would test</a></h3><p>Review the frozen questions, outcomes, and estimands.</p></article><article class="card"><h3><a href="experiment-kit/design.html">How participants would be assigned</a></h3><p>Inspect the treatment matrix and bounded alternatives.</p></article><article class="card"><h3><a href="experiment-kit/attention.html">Selective-attention extension</a></h3><p>Inspect the nine attention treatments and six appended hypotheses.</p></article>{program_v4_card}<article class="card"><h3><a href="experiment-kit/power.html">Synthetic power estimates</a></h3><p>See scenario-conditional estimates, MDEs, and retained failures.</p></article><article class="card"><h3><a href="labs/experiment-design.html">Experiment-design Lab</a></h3><p>Filter the complete precomputed power table.</p></article></div></section><section class="content-section prose"><h2>Materials and safeguards</h2><p>{downloads}</p><p>This package is not preregistered and no live assignment or data collection service exists.</p><details class="technical-details"><summary>Technical details</summary><p><code>make {make_target}</code><br><code>distributed-discovery experiment{version_flag} verify {html.escape(run_id)}</code></p><p>Claim <a href="claims.html#{claim_id}">{claim_id}</a> · reproducible run <a href="evidence.html">{html.escape(run_id)}</a>.</p></details></section>"""
     _write(
         output,
         "experiment-kit.html",
@@ -718,12 +729,10 @@ def _experiment_pages(root: Path, output: Path) -> dict[str, object]:
         ),
     )
 
-    attention_treatments = [
-        row
-        for row in treatments
-        if str(row["cell_id"]).startswith("T2") and int(str(row["cell_id"])[1:3]) >= 20
+    attention_treatments = [row for row in treatments if 20 <= int(str(row["cell_id"])[1:3]) <= 28]
+    attention_hypotheses = [
+        row for row in hypotheses if 9 <= int(str(row["hypothesis_id"])[1:]) <= 14
     ]
-    attention_hypotheses = [row for row in hypotheses if int(str(row["hypothesis_id"])[1:]) >= 9]
     attention_treatment_rows = "".join(
         f'<tr><th scope="row">{html.escape(str(row["cell_id"]))}</th><td>{html.escape(str(row["public_access"]))}</td><td>{html.escape(str(row["public_precision"]))}</td><td>{html.escape(str(row["attention_institution"]))}</td><td>{html.escape(str(row["policy_recommendation"]))}</td><td>{html.escape(str(row["reward"]))}</td></tr>'
         for row in attention_treatments
@@ -743,6 +752,31 @@ def _experiment_pages(root: Path, output: Path) -> dict[str, object]:
             "experiment-kit/attention.html",
         ),
     )
+
+    if experiment_version == "v3":
+        program_v4_treatments = [row for row in treatments if int(str(row["cell_id"])[1:3]) >= 29]
+        program_v4_hypotheses = [
+            row for row in hypotheses if int(str(row["hypothesis_id"])[1:]) >= 15
+        ]
+        program_v4_treatment_rows = "".join(
+            f'<tr><th scope="row">{html.escape(str(row["cell_id"]))}</th><td>{html.escape(str(row["team_threshold"]))}</td><td>{html.escape(str(row["portfolio_rule"]))}</td><td>{html.escape(str(row["history_visibility"]))}</td><td>{html.escape(str(row["action_horizon"]))}</td></tr>'
+            for row in program_v4_treatments
+        )
+        program_v4_hypothesis_rows = "".join(
+            f'<tr><th scope="row">{html.escape(str(row["hypothesis_id"]))}</th><td>{html.escape(str(row["question"]))}</td><td>{html.escape(str(row["outcome"]))}</td><td>{html.escape(str(row["multiplicity_family"]))}</td></tr>'
+            for row in program_v4_hypotheses
+        )
+        program_v4_body = f"""<header class="page-hero"><p class="eyebrow">DD-011 v3</p><h1>Threshold and dynamic experiment extension</h1><p class="lede">Eight synthetic treatments separate threshold portfolios, history visibility, and fixed-versus-stopping action horizons. Six appended hypotheses are model-derived design inputs, not behavioral findings.</p></header>{warning}<table class="matrix"><caption>Threshold and dynamic treatment cells</caption><thead><tr><th>Cell</th><th>Threshold</th><th>Portfolio rule</th><th>History</th><th>Horizon</th></tr></thead><tbody>{program_v4_treatment_rows}</tbody></table><table class="matrix"><caption>Program V4 synthetic hypotheses</caption><thead><tr><th>ID</th><th>Question</th><th>Outcome</th><th>Multiplicity family</th></tr></thead><tbody>{program_v4_hypothesis_rows}</tbody></table><p><a href="../data/experiment/design.json">Download v3 design</a> · <a href="../data/experiment/calibration.json">Download all retained calibration failures</a></p>"""
+        _write(
+            output,
+            "experiment-kit/threshold-dynamic.html",
+            _page(
+                "Threshold and dynamic experiment extension",
+                "Synthetic-only DD-011 v3 threshold and dynamic treatments.",
+                program_v4_body,
+                "experiment-kit/threshold-dynamic.html",
+            ),
+        )
 
     power_rows = "".join(
         f'<tr data-power-scenario="{html.escape(str(row["scenario_id"]))}" data-power-hypothesis="{html.escape(str(row["hypothesis_id"]))}"><th scope="row">{html.escape(str(row["scenario_id"]))}</th><td>{html.escape(str(row["hypothesis_id"]))}</td><td>{row["sample_size"]}</td><td>{html.escape(str(row["assumed_effect"]))}</td><td>{html.escape(str(row["power"]))} [{html.escape(str(row["power_ci_low"]))}, {html.escape(str(row["power_ci_high"]))}]</td><td>{html.escape(str(row["minimum_detectable_effect"]))}</td></tr>'
@@ -841,7 +875,7 @@ def _experiment_pages(root: Path, output: Path) -> dict[str, object]:
         "randomization.md": "dd011-randomization.md",
     }.items():
         shutil.copy2(materials / source_name, downloads_dir / public_name)
-    for version in ("v1", "v2"):
+    for version in ("v1", "v2", "v3"):
         shutil.copy2(
             root / f"studies/DD-011-experimental-design/schemas/design-{version}.schema.json",
             downloads_dir / f"dd011-design-{version}.schema.json",

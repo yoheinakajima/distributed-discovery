@@ -14,5 +14,7 @@ public_artifacts:
     description: Versioned design schema
   - path: studies/DD-011-experimental-design/schemas/design-v2.schema.json
     description: Versioned selective-attention design schema
+  - path: studies/DD-011-experimental-design/schemas/design-v3.schema.json
+    description: Versioned threshold and dynamic design schema
   - path: studies/DD-011-experimental-design/materials/randomization.md
-    description: Synthetic-only v2 randomization plan
+    description: Synthetic-only versioned randomization plan

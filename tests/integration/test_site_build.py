@@ -232,6 +232,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert (output / "downloads/discoverybench-task-v1.schema.json").is_file()
     assert (output / "downloads/discoverybench-task-v2.schema.json").is_file()
     assert (output / "downloads/discoverybench-task-v3.schema.json").is_file()
+    assert (output / "downloads/dd011-design-v3.schema.json").is_file()
     experiment = json.loads((output / "data/experiment/summary.json").read_text())
     assert experiment["run_id"] == "20260721T232119Z_DD-011_121162f8_e454b06d2c"
     assert experiment["schema_version"] == 2

@@ -1,5 +1,5 @@
 study_id: DD-011
-status: complete-versioned-attention-extension
-evidence_status: v1-preserved-v2-seeded-power-with-separate-recomputation-and-three-corruption-gates
-next_action: publish the v2 experiment surface, merge, deploy, and preserve both immutable runs; human deployment remains prohibited
-updated_utc: 2026-07-21T23:21:20Z
+status: active-versioned-program-v4-extension
+evidence_status: v3-registered-no-run-no-claim-v1-v2-preserved
+next_action: freeze and validate the 37-cell source package, commit it, open the draft PR, then execute the sole registered v3 configuration; human deployment remains prohibited
+updated_utc: 2026-07-22T06:12:00Z

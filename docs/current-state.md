@@ -17,8 +17,9 @@ identifying that selected rule with all equilibria. DD-015 is complete and
 deployed at its bounded dynamic-attention and separately labeled planner-only
 threshold-two scopes. DD-018 is complete and deployed at its bounded
 common-posterior mechanism scope. DiscoveryBench v3 is complete and deployed
-with all earlier versions preserved. The synthetic extension is next, followed
-by the focused paper, Labs, and final handoff.
+with all earlier versions preserved. Synthetic Experiment v3 is registered as
+issue #119 with a 37-cell synthetic-only design and no v3 run or claim yet. It
+is followed by the focused paper, Labs, and final handoff.
 
 Program V5, *The Information Sharing Frontier*, is a roadmap direction only
 until Program V4 completes. It will begin with a documentation baseline and one
@@ -33,13 +34,13 @@ canonical Shared Discovery Paradox repository remains pinned at
 | Ledger claims | 87 |
 | Passing immutable runs | 43 of 46 manifests |
 | Registered studies | 22 |
-| Python source files | 131 |
+| Python source files | 133 |
 | Public HTML routes | 62 |
 | Public data files | 66 |
 | Laboratory routes | 12 |
 | Validated project papers | 5 |
 | Checksum-registered downloads | 19 |
-| Test suite | 208 collected tests |
+| Test suite | 210 collected tests |
 
 ## Program V4 exact result
 

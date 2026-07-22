@@ -5,7 +5,10 @@ from __future__ import annotations
 import hashlib
 import json
 import platform
+import resource
 import subprocess
+import sys
+import time
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -42,6 +45,12 @@ def build_bundle(config: dict[str, Any], version: str = "v1") -> dict[str, Any]:
         from distributed_discovery.experimental_design.attention_model import design_registry
 
         registry = design_registry()
+    elif version == "v3":
+        from distributed_discovery.experimental_design.threshold_dynamic_model import (
+            design_registry,
+        )
+
+        registry = design_registry()
     else:
         raise ValueError(f"unknown experiment version: {version}")
     randomization = generate_assignments(
@@ -58,12 +67,19 @@ def build_bundle(config: dict[str, Any], version: str = "v1") -> dict[str, Any]:
         hypothesis_rows=registry["hypotheses"],
         scenario_rows=registry["response_scenarios"],
     )
+    model_checks = exact_model_checks()
+    if version == "v3":
+        from distributed_discovery.experimental_design.threshold_dynamic_model import (
+            program_v4_model_checks,
+        )
+
+        model_checks += program_v4_model_checks()
     return {
         "design": registry,
         "randomization": randomization,
         "power_table": table,
         "calibration": calibration_report(table),
-        "exact_model_checks": exact_model_checks(),
+        "exact_model_checks": model_checks,
         "synthetic_sample": synthetic_sample(
             randomization, int(config["sample_seed"]), int(config["sample_rows"])
         ),
@@ -92,9 +108,17 @@ def run_registered(
     outputs.mkdir(parents=True)
     (run / "config.yml").write_text(config_path.read_text(encoding="utf-8"), encoding="utf-8")
 
+    timer_started = time.perf_counter()
     bundle = build_bundle(config, version)
     verification = verify_bundle(bundle, root, version)
     corruptions = corruption_tests(bundle, root, version)
+    elapsed_seconds = time.perf_counter() - timer_started
+    peak_rss_raw = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+    peak_memory_mb = peak_rss_raw / (1024 * 1024 if sys.platform == "darwin" else 1024)
+    if elapsed_seconds > float(config["wall_time_seconds"]):
+        raise RuntimeError("DD-011 wall-time cap exceeded")
+    if peak_memory_mb > float(config["memory_mb"]):
+        raise RuntimeError("DD-011 memory cap exceeded")
     if not verification["passed"] or not all(corruptions.values()):
         raise RuntimeError("DD-011 independent verification failed")
     artifacts = {
@@ -137,6 +161,10 @@ def run_registered(
         "synthetic_assignments": len(bundle["randomization"]["assignments"]),
         "calibration_failures_retained": bundle["calibration"]["failure_count"],
         "no_human_data": True,
+        "elapsed_seconds": round(elapsed_seconds, 6),
+        "peak_memory_mb": round(peak_memory_mb, 3),
+        "wall_time_cap_seconds": int(config["wall_time_seconds"]),
+        "memory_cap_mb": int(config["memory_mb"]),
     }
     _write(outputs / "synthetic-summary.json", summary)
     _write(run / "validation.json", {"passed": True, **verification, **summary})
@@ -152,6 +180,10 @@ def run_registered(
         root / "src/distributed_discovery/experimental_design/verification.py",
         root / "src/distributed_discovery/experimental_design/study.py",
     ]
+    if version == "v3":
+        input_paths.append(
+            root / "src/distributed_discovery/experimental_design/threshold_dynamic_model.py"
+        )
     manifest = {
         "schema_version": 1,
         "run_id": run_id,

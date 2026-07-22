@@ -7,3 +7,7 @@ Selective-attention v2 run:
 29-cell design registry, 14 hypotheses, 11 scenarios, 928 balanced synthetic
 assignments, 924 power/MDE rows, retained failures, verification, and corruption
 artifacts. No participant or human data exist in either run.
+
+Program V4 v3 is registered under issue #119 with 37 cells and no run yet. Do
+not create its immutable result directory before the clean source commit and
+draft PR. Earlier runs must never be overwritten or rerun for freshness.
