@@ -6,7 +6,7 @@ DD-022 research PR #151 merged as
 `c8a11bd3c9c8c68e6e631bc61ef3a1d8c46e7fe9`; post-merge CI `29959514182`,
 Pages `29959514196`, and all named live routes pass. Issue #152 and branch
 `docs/information-sharing-frontier-paper-admission` own the sole active lane: a
-documentation-only admission decision.
+documentation-only admission decision under PR #154.
 
 The gate admits *When Does Information Sharing Improve Decentralized
 Discovery?* as an archival theorem-paper candidate with an explicit selected-

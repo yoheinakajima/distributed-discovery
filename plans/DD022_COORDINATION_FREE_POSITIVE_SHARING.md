@@ -131,8 +131,9 @@ only as an upper comparator.
   `29959514182`, Pages `29959514196`, and nine live route checks passed. Issue
   #150 closed and local `main` synchronized.
 - `2026-07-22T21:45:35Z`: issue #152 decided to admit the qualified paper
-  candidate and created paper issue #153. Admission remains planning-only and
-  requires the selected-equilibrium and every-equilibrium-failure boundaries.
+  candidate and created paper issue #153 and documentation PR #154. Admission
+  remains planning-only and requires the selected-equilibrium and every-
+  equilibrium-failure boundaries.
 
 ## Validation strategy
 

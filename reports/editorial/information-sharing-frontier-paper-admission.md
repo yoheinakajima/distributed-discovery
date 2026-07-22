@@ -1,8 +1,9 @@
 # Information Sharing Frontier paper admission
 
-Date: `2026-07-22`  
-Gate issue: `#152`  
-Paper issue: `#153`  
+Date: `2026-07-22`
+Gate issue: `#152`
+Gate pull request: `#154`
+Paper issue: `#153`
 Evidence class: documentation and editorial judgment; no research output
 
 ## Decision
@@ -89,6 +90,31 @@ order is in `papers/information-sharing-frontier/theorem-section-map.md`.
   peer-review status is asserted.
 - Human and real data remain outside the authorized program phase.
 - Canonical upstream and the isolated ActiveGraph repository remain untouched.
+
+## Local acceptance
+
+The documentation-only branch passes `make bootstrap`, six focused site/paper
+tests, `make verify`, `make papers`, and `make site`:
+
+- Ruff formatting and lint pass; strict MyPy passes over 158 source files; all
+  244 tests pass.
+- All 110 claim records and 51 immutable run manifests validate unchanged.
+- All six project papers rebuild at 12, 14, 3, 20, 20, and 20 pages with no
+  tracked paper artifact change.
+- The site builds 76 HTML routes, 85 public data files, 18 Labs, and 22
+  checksum-registered downloads for 26 studies.
+- Relationship, link, accessibility, checksum, and provenance checks pass
+  through the site and repository integration tests.
+- Focused secret and host-path scans pass; the project MIT license remains in
+  place; pinned canonical upstream is clean at
+  `5025cc8e8f2f8ca015dff2066f08f81ad5715a51`.
+- The diff contains no `claims/`, `results/`, `src/`, `tests/`, manuscript
+  source, bibliography, or PDF change.
+
+Branch CI and paper/site workflow identifiers are recorded on PR #154 after
+they pass. The already-completed DD-022 post-merge CI is `29959514182` and
+Pages deployment is `29959514196`; all nine named live-route checks returned
+HTTP 200 before this gate began.
 
 ## Next authorization boundary
 

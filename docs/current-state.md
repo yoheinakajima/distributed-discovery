@@ -84,7 +84,7 @@ canonical Shared Discovery Paradox repository remains pinned at
 | Registered studies | 26 |
 | Python source files | 158 |
 | Public HTML routes | 76 locally generated |
-| Public data files | 86 |
+| Public data files | 85 |
 | Laboratory routes | 18 |
 | Validated project papers | 6 |
 | Checksum-registered downloads | 22 |
