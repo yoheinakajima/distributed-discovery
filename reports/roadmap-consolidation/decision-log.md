@@ -7,6 +7,9 @@
 - Randomized disclosure, private messages, correlated recommendations, and alphabet questions form one concrete information-design lane.
 - Perfect elimination, DD-015, coalition dynamics, and adaptive coverage form a later dynamic/adaptive synthesis.
 - Shared multi-agent-AI context and action collapse belong jointly to DiscoveryBench and Rate–Discovery.
+- Signal geometry, incremental pooling, action-budget profiles, recovery budgets,
+  source dependence, equilibrium selection, and randomized information design
+  form Program V5, the Information Sharing Frontier.
 
 ## Ideas deferred
 
@@ -25,12 +28,33 @@
 ## Ordering decisions
 
 - Intellectual priority: Diversity–Redundancy, Dependence and Provenance, then Discovery Order.
-- Execution priority: Program V4; Reliable Discovery with Randomized Information Design in parallel; Provenance; Mechanism Impossibility; Rate–Discovery; Discovery Order; then dynamic/scale synthesis.
-- No more than two substantive research programs should run in parallel.
+- Execution priority: Program V4; Program V5; Reliable Discovery; Provenance;
+  Mechanism Impossibility; Rate–Discovery; Discovery Order; then dynamic/scale
+  synthesis.
+- Program V5 moves ahead because it directly generalizes the canonical paradox
+  and has a concrete channel family and theorem progression. Reliable Discovery
+  moves later and remains intact.
+- Randomized Information Design is an early Program V5 lane, not a simultaneous
+  branch. Exactly one substantive branch and pull request are active at a time.
+
+## Information Sharing Frontier boundary
+
+- The public thesis is that sharing helps when it improves the group's map
+  faster than it collapses the search portfolio.
+- “Aggregation gain minus lost independent rescue value” is conceptual until a
+  declared model supplies an exact identity.
+- Private one-person accuracy does not define a channel. Channel laws,
+  likelihood ratios, posterior geometry, action rules, tie-breaking, baselines,
+  authority, technology, and equilibrium selection remain explicit.
+- No Program V5 study ID is assigned by this documentation milestone.
 
 ## Conflicts avoided and files intentionally untouched
 
 - Active Program V4, open PR #104, and its uncommitted source-worktree artifacts were not changed.
 - No Labs V2 branch was found; no Labs/site file was edited.
-- Intentionally untouched files include the master plan, current state/execution roadmaps, project-status/handoff reports, root README, study index, copy map, site, source, tests, claims, results, papers, and workflows.
-- No study, claim, run, manifest, scientific source, paper source, or route was created or changed.
+- The original consolidation intentionally left the master plan and current
+  state/execution roadmaps untouched. This reconciliation updates those
+  authoritative documentation surfaces only; project-status/handoff reports,
+  root README, study index, copy map, site, source, tests, claims, results,
+  papers, and workflows remain untouched.
+- No study, claim, run, manifest, scientific source, paper source, or route was created or changed by either roadmap milestone.

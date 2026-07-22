@@ -1,19 +1,27 @@
 # Current program state
 
-_Reconciled 2026-07-22 at the DD-016 evidence-acceptance gate._
+_Reconciled 2026-07-22 after the DD-017 deployment closeout._
 
 Programs V1, V2, and the required Program V3 queue are complete at their
 registered bounded scopes. Program V3, *The Incentive to Ignore*, completed
 DD-012 through DD-014, the focused working paper, versioned attention
 extensions to DiscoveryBench and the synthetic experiment kit, and the public
-Attention/Audience/Conditional Labs. DD-015 remains an unexecuted optional
-registration; registration is not a result.
+Attention/Audience/Conditional Labs. DD-015 remains an unexecuted registration
+and is now the next authorized Program V4 milestone; registration is not a
+result.
 
 Program V4 is active. DD-016 proves the deterministic minimum-viable-team
 planner value, derives the threshold split-prize payoff identities, and records
-an independently reproduced exact threshold and occupancy census. DD-017 will
-address the wider equilibrium correspondence and coalition stability; no
-selected DD-016 rule is identified with that unresolved correspondence.
+an independently reproduced exact threshold and occupancy census. DD-017 is
+complete and characterizes the bounded pure-Nash occupancy correspondence,
+small-coalition stability, and one symmetric tied-mode mixture without
+identifying that selected rule with all equilibria. DD-015 is next at its
+original registered boundary, followed by DD-018, benchmark and synthetic
+extensions, the focused paper, Labs, and final handoff.
+
+Program V5, *The Information Sharing Frontier*, is a roadmap direction only
+until Program V4 completes. It will begin with a documentation baseline and one
+bounded Signal Geometry study; no Program V5 study or result exists yet.
 
 The repository is public and project-authored content is MIT-licensed. The
 canonical Shared Discovery Paradox repository remains pinned at

@@ -2,178 +2,375 @@
 
 ## 1. Purpose
 
-**Distributed Discovery** is the research program on *collective search under dispersed information*. Its formal object is a *discovery architecture*: the combination of information, action-allocation, timing, and implementation rules that converts evidence into a portfolio of searches.
+**Distributed Discovery** is the research program on *collective search under
+dispersed information*. Its formal object is a *discovery architecture*: the
+combination of information, action allocation, timing, and implementation rules
+that converts evidence into a portfolio of searches.
 
-The public thesis is that **collective intelligence is not sufficient for collective discovery**. Information aggregation is not action allocation. The design principle remains **Share the evidence. Diversify the actions.** Its academically precise form is: allocate actions according to marginal discovery value, subject to coverage technology, information structure, and implementation constraints.
+The public thesis is that **collective intelligence is not sufficient for
+collective discovery**. Information aggregation is not action allocation. The
+design principle remains **Share the evidence. Diversify the actions.** Its
+academically precise qualification is that the optimal amount of action
+concentration depends on signal geometry, source dependence, reward congestion,
+action technology, reliability, coverage, and the number of actions or agents
+required for success. Under Program V4's threshold technology: when actions
+require teams, form the smallest viable teams and diversify those teams.
 
-The next stage seeks general theorems, tight bounds, minimal failure examples, and independently checkable certificates that explain when finite results persist, fail, or compose. Diversity is not universally optimal: repetition can be valuable under execution failure, confirmation, multiple targets, robustness, overlapping coverage, thresholds, or heterogeneous capability.
+The next stage seeks general theorems, tight bounds, minimal failure examples,
+and independently checkable certificates that explain when finite results
+persist, fail, or compose. Diversity is not universally optimal: repetition can
+be valuable under execution failure, confirmation, multiple targets,
+robustness, overlapping coverage, thresholds, or heterogeneous capability.
 
-This is a portfolio document, not a study registration or result. It assigns no new study IDs. “The Architecture of Distributed Discovery” is reserved for a future synthesis-level survey, book, talk, or site section; it is not a rename of the program.
+This is a portfolio document, not a study registration or result. It assigns no
+new study IDs. “The Architecture of Distributed Discovery” is reserved for a
+future synthesis-level survey, book, talk, or site section; it is not a rename
+of the program.
 
 ## 2. Current program state
 
-Program V4, *Threshold Discovery: Coordination, Crowding, and Minimum Viable Teams*, is active. When success requires several agents, some overlap is necessary; the design problem is to form the smallest viable teams and diversify those teams. Its queue includes the threshold planner frontier and hard-box fixture, equilibrium multiplicity, coalition stability, the registered DD-015 dynamic-attention boundary, and minimum-viable-team mechanisms. This roadmap does not mark Program V4 complete or duplicate its work packages.
+Program V4, *Threshold Discovery: Coordination, Crowding, and Minimum Viable
+Teams*, is active. DD-016 Threshold Discovery and DD-017 Threshold Equilibrium
+Selection are complete and deployed. DD-015 Dynamic Attention and Visible
+Search is next at its original registered boundary, followed by DD-018
+minimum-viable-team mechanisms, DiscoveryBench v3, the synthetic experiment
+extension, the focused paper, public Labs, and final handoff. Program V4 is not
+complete.
 
-Existing bounded results remain inputs with their recorded scopes, rather than general theorems. Active execution truth is in [current-roadmap.md](current-roadmap.md); registered evidence is in [the study registry](../studies/index.md).
+Program V5, *The Information Sharing Frontier*, follows the merged Program V4
+handoff. It asks: **When does sharing useful private information improve or
+reduce decentralized group discovery?** Its provisional flagship paper is
+*When Does Information Sharing Improve Decentralized Discovery?*, with
+provisional subtitle *Signal Geometry, Independent Rescue, and the Cost of
+Common Action*.
 
-## 3. Research style
+The public thesis is: **Sharing helps when it improves the group's map faster
+than it collapses the search portfolio.** The technical thesis is that the sign
+and value of sharing depend jointly on signal geometry, sharing intensity,
+source dependence, action budget, action technology, reward structure, action
+authority, and equilibrium selection.
 
-Every flagship mathematical project should state which of these six objects it will deliver:
+The conceptual center is
+
+`value of sharing = aggregation gain - lost independent rescue value`.
+
+This is a conceptual decomposition until an exact identity is proved for a
+declared model. Existing bounded results remain inputs with their recorded
+scopes, rather than general theorems. Active execution truth is in
+[current-roadmap.md](current-roadmap.md); registered evidence is in
+[the study registry](../studies/index.md).
+
+## 3. Research style and promotion discipline
+
+Every flagship mathematical project should state which of these objects it
+will deliver:
 
 1. **Theorem** on a declared domain.
 2. **Tightness** through a matching or nearly matching bound.
 3. **Failure** through a minimal counterexample outside that domain.
-4. **Certificate** through an independently verifiable finite certificate, regression, or test suite.
-5. **Literature and novelty boundary** distinguishing an extension from a renamed classical result.
+4. **Certificate** through an independently verifiable finite certificate,
+   regression, or test suite.
+5. **Literature boundary** distinguishing an extension from a renamed classical
+   result.
 6. **Operational interpretation** identifying a consequential design decision.
+7. **Named comparison baseline**, including its action policy and authority.
+8. **Equilibrium-selection scope** when agents choose strategically.
+9. **Action-technology scope**, including thresholds, reliability, and overlap.
 
-Exploratory work need not prove a theorem. A flagship paper must identify which of the six objects it supplies and retain negative results. Exact grids serve theorem discovery, tightness, failure witnesses, and regressions—not themselves.
+Exploratory work need not prove a theorem. A flagship paper must identify which
+objects it supplies and retain negative results. Exact grids serve theorem
+discovery, tightness, failure witnesses, and regressions—not themselves.
 
-## 4. Active Program V4
+An idea may move from roadmap to a registered study only with a precise model;
+a falsifiable theorem, counterexample, or identification target; a literature
+boundary; a state-space or complexity audit; a proof, enumeration,
+LP-certificate, or simulation-verification plan; an independent verifier; a
+corruption-test plan; a non-overlap statement; a clear paper, benchmark,
+measurement, or infrastructure role; and an explicit stop condition. Study IDs
+are assigned only when a bounded issue and ExecPlan are created.
 
-**Status: active.** Program V4 owns threshold opening, its planner frontier, equilibrium selection and coalition stability, registered dynamic attention, and minimum-viable-team implementation. It distinguishes deterministic threshold opening from reliability, stochastic coverage, overlap, and multi-target value. Those later technologies use its interfaces only after a stable handoff.
+## 4. Active Program V4 — Threshold Discovery
 
-## 5. Priority matrix
+**Status: active.** Program V4 owns threshold opening, its planner frontier,
+equilibrium selection and coalition stability, registered dynamic attention,
+and minimum-viable-team implementation. It distinguishes deterministic
+threshold opening from reliability, stochastic coverage, overlap, and
+multi-target value. Those later technologies use its interfaces only after a
+stable handoff.
 
-The intellectual ranking asks which directions change conceptual reach. The execution ranking also weighs tractability, dependencies, and active-work overlap, so it is deliberately different.
+## 5. Program V5 dimension map
 
-| Direction | Theorem target and first bounded fixture | Dependencies | Reach / tractability / distinctiveness / legibility | Overlap risk | Start and stop condition |
-| --- | --- | --- | --- | --- | --- |
-| **Diversity–Redundancy Frontier** | Exact marginal-allocation theorem; finite posterior masses, per-attempt reliabilities, fixed budget. | Static overlap, V4, noisy-execution boundary, Atlas. | Broad / high / distinctive only with evidence, dependence, or implementation / high. | Medium. | **Next major.** Stop if it merely renames classical separable-concave allocation. |
-| **Dependence and Provenance** | Sharp union bounds under observables; finite marginals/intersections, then latent-source fixture. | Source networks, measurement schemas, source acquisition. | Broad / medium / high / high. | Low. | **After an initial next-lane merge.** Stop without declared observables and sharpness/identification certification. |
-| **Discovery Order** | Portfolio information order and separation domain; only after decentralized signaling counterexample. | Signaling, rate–discovery, decentralized counterexample. | Foundational / low near-term / high / conditional. | Medium. | **Foundational-later.** Stop before registration if it is centralized Blackwell theory in new words. |
-| **Randomized Information Design** | Stochastic messages/recommendations; rational LP primal/dual on deterministic-disclosure extension. | Disclosure catalogue, certificate path. | Strong / high in small fixture / high / high. | Low. | **Parallel-safe next theory.** Stop if correspondence, message space, or certificate path is undeclared. |
-| **Mechanism Impossibility** | Necessary/sufficient implementation and subsidy/observability frontier; private signals/hidden actions/team outcome. | DD-006 family, V4 mechanisms, information design. | High / medium-to-hard / high / high. | Medium. | **Queued.** Stop if it mistakes a finite catalogue for global impossibility. |
-| **Rate–Discovery** | Communication lower/upper bounds; zero versus one public/private bit fixture. | Private teams, signaling, communication complexity. | Broad / hard / high / high. | Low. | **After concrete signaling.** Stop if it reconstructs all evidence rather than a discovery-relevant list. |
-| **Dynamic/adaptive synthesis** | Adaptive marginal conditions and minimal failure; preserve perfect-elimination and DD-015 distinctions. | Sequential discovery, V4 DD-015, adaptive coverage. | Broad / dependency-heavy / medium / high. | High now. | **Foundational-later.** No second dynamic program during V4 DD-015. |
-| **Large-team limits** | Asymptotic recovery budgets and phase transitions from a named finite theorem. | Mature reliability, provenance, communication, threshold results. | Broad / low now / medium / high after anchors. | Low. | **After finite theorems.** Stop without a regime and finite correction. |
+Program V5 varies these dimensions sequentially, not in one giant model:
 
-The top three intellectual directions are Diversity–Redundancy, Dependence and Provenance, and Discovery Order. Execution begins instead with Reliable Discovery and concrete randomized information design because they establish reusable value and message interfaces.
+1. **Signal geometry:** point nomination; shortlist; exclusion; confidence;
+   likelihood-ratio distribution.
+2. **Sharing intensity:** no pooling; partial pooling; full pooling.
+3. **Source dependence:** independent; correlated; copied.
+4. **Action budget:** one recommendation; top-`L` portfolio; full action
+   capacity.
+5. **Action technology:** one hit sufficient; threshold teams; unreliable
+   execution; overlap and multi-target value.
+6. **Reward structure:** equal split; full duplicate credit; unique rescue;
+   marginal contribution; pooling.
+7. **Equilibrium selection:** all pure equilibria; best/worst pure; symmetric
+   mixed; dynamics; coalition stability; correlated recommendations.
+8. **Authority and observability:** binding assignment; autonomous action;
+   visible occupancy; hidden action; selective delivery.
 
-## 6. Research streams
+## 6. Program V5 provisional work packages
 
-### A. Active program — Threshold Discovery
+These packages assign no DD IDs. Registration remains sequential.
 
-**Status: active.** Program V4 is defined above and is not repeated below.
+### A. Signal Geometry and the Discovery Profile
 
-### B. Immediate next program — Reliable Discovery
+For channel `W` and `N` signals, define
 
-**Status: next.** The provisional program title is *Reliable Discovery: Replication, Reliability, and Robust Portfolios*; the provisional paper title is *When Should Searchers Repeat?*
+`V_L^(N)(W) = expected optimal posterior mass covered by L distinct pooled actions`
 
-For posterior mass μⱼ, per-attempt reliability rⱼ, and nⱼ attempts on candidate j:
+and the action-budget discovery profile
 
-`G(n) = Σⱼ μⱼ [1 − (1 − rⱼ)^nⱼ]`, subject to `Σⱼ nⱼ = N`.
+`V_N(W) = (V_1^(N), ..., V_N^(N))`.
 
-with marginal discovery value
+Targets are exact point, shortlist, exclusion, and confidence channels;
+same-private-accuracy counterexamples; scalar-insufficiency results; exact or
+interval-certified phase diagrams; and a reusable channel registry.
 
-`Δⱼ(nⱼ) = μⱼ rⱼ (1 − rⱼ)^nⱼ`.
+### B. Incremental Sharing and the Point-Channel Theorem
 
-This separable-concave baseline is classical resource allocation. The Distributed Discovery contribution must come from dispersed evidence, heterogeneous agents, dependence, coverage, strategic implementation, or their composition—not from renaming greedy allocation. The agenda is exact marginal allocation; necessary/sufficient repetition conditions; heterogeneous rᵢⱼ; correlated-failure counterexamples; confirmation and threshold reliability; overlap/submodularity; multiple targets; reliability investment; strategic replication; and reliability-adjusted recovery budgets. It absorbs stochastic coverage, noisy execution, replication, robustness, and multi-target work after a shared value-function interface exists.
+Let `G_s(W)` be discovery when a shared-answer block uses `s` agents' signals
+and the other `N-s` agents retain private actions. Define `s` so that `s=1` is
+the private baseline with one ordinary agent, and test monotonicity for `s>=1`.
 
-### C. Parallel theory lane — Randomized Information Design for Discovery
+Primary conjecture: for the symmetric noisy-point channel, each increase from
+`s` to `s+1` after the first shared user reduces discovery in the nondegenerate
+ordinary-box model. This is a conjecture, not a theorem.
 
-**Status: parallel-safe.** Extend deterministic disclosure and the selection catalogue to public/private stochastic messages, private action recommendations, correlated recommendations, alphabet bounds, and a complete declared correspondence. Start with an exact rational LP and independently checked primal/dual certificates.
+Progression: `M=N=2`; `N=2` arbitrary `M`; `M=2` arbitrary `N`; bounded
+arbitrary `M,N`; then a general proof or minimal counterexample.
 
-Targets: whether more informative stochastic disclosure lowers discovery under every registered selection; public signaling versus private recommendations; planner-portfolio implementation; minimum alphabet size; when hiding a top-ranked candidate preserves coverage; and robust obedience under small belief misspecification. It is a precursor to, not evidence for, Discovery Order.
+### C. General Sharing Frontier
 
-### D. Next distinctive program — Dependence and Provenance
+Define `q(W)` as one-person private Bayes-action accuracy, `P_N(W)` as the
+declared private-portfolio discovery, and `C_N(W)` as one pooled
+consensus-action accuracy. Classify no useful aggregation; the Shared Discovery
+Paradox (`q<C_N<P_N`); aggregation-dominated sharing (`C_N>=P_N`); and
+portfolio-dependent sharing, where consensus is insufficient but a top-`L`
+pooled action is valuable. Seek necessary and sufficient channel conditions.
 
-**Status: queued.** Provisional paper title: *The Price of Missing Provenance*. Given recorded statistics, how uncertain is true discovery capacity? For success events Eᵢ, let G = P(∪ᵢEᵢ); with marginals qᵢ, the initial sharp range is maxᵢ qᵢ through min(1, Σᵢqᵢ). Pairwise/higher intersections permit finite LP tightening. A scoped provenance uncertainty may be Gmax(observables) − Gmin(observables), but is not a theorem until sharpness is proved for a declared observable class.
+### D. Recovery Budget
 
-The companion identification agenda asks about third-order moment recovery up to relabeling, nonidentification below rank/incidence conditions, minimum moment order, source-to-action propagation, attainable correlation gaps, and what an allocation can versus cannot repair. The operational implication is to measure independent routes to truth, not merely disagreement among answers.
+For a named private baseline define
 
-### E. Economics and implementation — Truth, Obedience, and Budget Balance
+`L*(W) = min {L : V_L^(N)(W) reaches or exceeds that baseline}`.
 
-**Status: queued.** Seek necessary/sufficient conditions, not another finite catalogue. Compare efficient allocation, truthful reports, obedience, participation, ex-post budget balance, no subsidy, hidden action, aggregate-only observability, anonymity, and coalition stability. A prospective target is to characterize when private signals, hidden actions, and only team-level discovery make anonymous ex-post-budget-balanced strict implementation impossible. This is a target, not an established theorem. Methods include incentive inequalities, LPs, Farkas certificates, minimum subsidy/observability formulas, positive mechanisms, and robustness margins. Program V4 retains coalition-implementation ownership.
+Targets are exact point- and shortlist-channel recovery budgets; concentration
+bounds; conditions for `L*=1` or near-`N`; confidence metadata under tight
+budgets; and a threshold-team generalization after Program V4. Recovery-budget
+tables outside repository evidence are regression hypotheses only.
 
-### F. Communication and information — Rate–Discovery Theory
+### E. Coordination-Free Positive Sharing
 
-**Status: queued.** Provisional paper title: *How Much Must a Team Communicate to Discover?* Define Cε as minimum communication to attain V−ε, and R(g,L) as minimum bits to attain discovery g with L actions. Progress from zero/full pooling to one public/private bit, coordinators, simultaneous/interactive messages, shared randomness, graph constraints, and role versus evidence messages.
+Freeze “no coordination” as simultaneous, anonymous, no role labels, no visible
+occupancy, no correlated randomization, no assigned action, no post-disclosure
+communication, and a declared symmetric equilibrium selection. Study when
+sharing exposes hidden correlation and congestion-sensitive rewards induce
+greater dispersion. Seek a dependence threshold only after specifying the
+source model and equilibrium selection.
 
-Targets include list-Fano-style lower bounds at log(M/L), achievability by communicating a successful list rather than every clue, planner-emulation cost, communication recovery budgets, belief-compression/action-assignment separation, and cases where more communication synchronizes actions and lowers discovery. This is a bridge to multi-agent AI token, bandwidth, latency, and context limits.
+### F. Randomized Information Design
 
-### G. Dynamic and scale lane
+Move the existing Randomized Information Design direction inside, or directly
+after, the deterministic Program V5 core. It follows Signal Geometry and
+Incremental Sharing. Targets remain public stochastic messages, private
+messages, correlated recommendations, action recommendations, message-alphabet
+bounds, exact rational LPs, primal/dual certificates, and selection robustness.
 
-**Status: foundational-later.** Integrate perfect elimination, registered dynamic attention, dynamic coalition formation, and adaptive coverage. Targets are adaptive marginal conditions or approximations, minimal failures, sequential/simultaneous gaps, action visibility, terminal-discovery versus expected-cost feedback, common-information coordinators, and indexability failures. Large-team work follows a clear finite theorem in regimes N→∞, M→∞, N/M→α, and L/M→λ, with finite-sample corrections.
+### G. Equilibrium Selection Module
 
-### H. Measurement, benchmarks, and empirical gate
+Every Program V5 result states whether it applies to every pure equilibrium,
+worst pure, best pure, a unique equilibrium, anonymous symmetric mixed, a
+declared dynamic, coalition-stable outcomes, correlated equilibrium, or a
+planner only. “Decentralized” is never a synonym for “uncoordinated.”
 
-**Status: prohibited-until-review for real data.** DiscoveryBench should host exact task families for common retrieval, shared prompts/evaluators/summaries, role-specific context, and independent tools; Rate–Discovery supplies the theory interface. Synthetic experiments remain infrastructure, not human evidence. Real-data validation is prohibited until ethics, privacy, identification, retention, and governance review authorize a protocol.
+### H. Mechanism and Design Implications
 
-## 7. Execution sequence
+Only after the natural sharing frontier is understood, compare preserving
+independent sources, revealing source overlap, limiting shared-signal
+followers, sending different messages, showing occupancy,
+congestion-sensitive rewards, roles, and threshold teams. Each intervention
+changes a different primitive.
 
-1. **Current:** Program V4 — Threshold Discovery.
-2. **Next major:** Reliable Discovery.
-3. **Parallel theory:** Randomized Information Design for Discovery.
-4. **Next distinctive major:** The Price of Missing Provenance.
-5. **Next economics program:** Truth, Obedience, and Budget Balance.
-6. **Next information/AI program:** Rate–Discovery Theory.
-7. **Foundational synthesis:** A Discovery Order for Information Structures.
-8. **Cross-cutting later:** dynamic/adaptive synthesis and large-team limits.
+## 7. Later research programs, preserved and reordered
+
+The intellectual ranking still places Diversity–Redundancy, Provenance, and
+Discovery Order among the highest-reach directions. Execution places Program
+V5 first because it directly generalizes the canonical paradox and now has a
+concrete channel family and theorem progression. Reliable Discovery moves
+later; it is not removed.
+
+### Reliable Discovery — Diversity–Redundancy under reliability and overlap
+
+For posterior mass `mu_j`, per-attempt reliability `r_j`, and `n_j` attempts,
+
+`G(n) = sum_j mu_j [1-(1-r_j)^n_j]`, subject to `sum_j n_j=N`,
+
+with marginal value `Delta_j(n_j)=mu_j r_j(1-r_j)^n_j`. This
+separable-concave baseline is classical resource allocation. A Distributed
+Discovery contribution must arise from dispersed evidence, heterogeneous
+agents, dependence, coverage, strategic implementation, or their composition.
+Targets include exact marginal allocation, repetition conditions,
+heterogeneous reliability, correlated-failure counterexamples, confirmation,
+threshold reliability, overlap, multiple targets, reliability investment,
+strategic replication, and reliability-adjusted recovery budgets.
+
+### The Price of Missing Provenance
+
+Given recorded statistics, bound true discovery capacity. For success events
+`E_i`, start from sharp union ranges under declared marginals and add
+pairwise/higher intersections by finite LP. Pair this with source
+identification, moment requirements, attainable correlation gaps, and the
+limits of allocation repair. No result proceeds without declared observables
+and a sharpness or identification certificate.
+
+### Truth, Obedience, and Budget Balance
+
+Seek necessary and sufficient implementation conditions, not another finite
+catalogue. Compare efficient allocation, truthful reports, obedience,
+participation, ex-post budget balance, subsidy, hidden action, aggregate-only
+observability, anonymity, and coalition stability. Methods include incentive
+inequalities, LPs, Farkas certificates, minimum subsidy/observability formulas,
+positive mechanisms, and robustness margins.
+
+### Rate–Discovery Theory
+
+Define communication required to attain a discovery target or approximate a
+declared planner value. Progress from zero/full pooling to public/private bits,
+coordinators, simultaneous and interactive messages, shared randomness, graph
+constraints, and role versus evidence messages. Seek list-style lower bounds,
+achievability without reconstructing all evidence, planner-emulation costs,
+communication recovery budgets, and cases where more communication
+synchronizes actions and lowers discovery.
+
+### A Discovery Order for Information Structures
+
+Develop a portfolio information order only after signaling, communication, and
+a decentralized counterexample make it nontrivial. Stop before registration if
+the proposed order is centralized Blackwell theory in new terminology.
+
+### Dynamic/adaptive synthesis and large-team limits
+
+Integrate perfect elimination, DD-015, dynamic coalition formation, adaptive
+coverage, action visibility, stopping, and common-information coordination.
+Large-team work follows a named finite theorem and declares its asymptotic
+regime and finite correction.
+
+### The Architecture of Distributed Discovery
+
+Reserve the long-term synthesis for the mature theorem, mechanism, benchmark,
+and empirical-boundary interfaces. It is not a program rename.
+
+## 8. Execution sequence and single-lane dependencies
+
+1. **Active:** Program V4 — Threshold Discovery.
+2. **Next:** Program V5 — The Information Sharing Frontier.
+3. **Then:** Reliable Discovery — Diversity–Redundancy under reliability and
+   overlap.
+4. **Then:** The Price of Missing Provenance.
+5. **Then:** Truth, Obedience, and Budget Balance.
+6. **Then:** Rate–Discovery Theory.
+7. **Then:** A Discovery Order for Information Structures.
+8. **Later:** dynamic/adaptive synthesis and large-team limits.
 9. **Long-term synthesis:** The Architecture of Distributed Discovery.
 
-## 8. Parallelism and dependencies
+Randomized Information Design is an early Program V5 theory lane, not a
+separate simultaneous branch. One substantive branch and one pull request are
+active at a time. A later milestone starts only after its predecessor is
+merged, deployed where applicable, and closed, except for a single post-merge
+documentation closeout completed before the next substantive branch.
 
-| Window | Permitted lanes | Dependency rule |
+## 9. Priority matrix
+
+| Direction | First bounded target | Dependency / stop condition |
 | --- | --- | --- |
-| Now | Program V4 plus roadmap documentation | Roadmap changes no active research artifact. |
-| After DD-016 or Labs V2 integration | Reliable Discovery plus Randomized Information Design | Keep common value-function/message-interface notes; no more than two substantive programs. |
-| After one next lane merges | Provenance | Reuse declared observables and dependence boundaries. |
-| After concrete signaling | Rate–Discovery | Message structures must be executable, not aspirational. |
-| After signaling and communication | Discovery Order | Require a decentralized example and a counterexample to naive Blackwell transfer. |
-| After finite families mature | Dynamic synthesis and asymptotics | Name the finite theorem, regime, and correction. |
-
-## 9. Promotion gates
-
-An idea may move from roadmap to a registered study only with:
-
-1. a precise model;
-2. a falsifiable theorem, counterexample, or identification target;
-3. a literature and novelty boundary;
-4. a state-space or complexity audit;
-5. a proof, enumeration, LP-certificate, or simulation-verification plan;
-6. an independent verifier;
-7. a corruption-test plan;
-8. a non-overlap statement relative to active studies;
-9. a clear paper, benchmark, measurement, or infrastructure role; and
-10. an explicit stop condition.
-
-Study IDs are assigned only when a bounded issue and ExecPlan are created.
+| Information Sharing Frontier | Exact action-budget profiles and same-accuracy channel witnesses | After Program V4; stop any claim that substitutes private accuracy for a channel. |
+| Diversity–Redundancy | Exact marginal allocation with finite posterior masses and reliabilities | After Program V5 interfaces; stop if it merely renames separable-concave allocation. |
+| Provenance | Sharp union bounds under named observables, then a latent-source fixture | Stop without declared observables and sharpness/identification certification. |
+| Mechanism design | Necessary/sufficient implementation and subsidy/observability frontier | Stop if a finite catalogue is presented as global impossibility. |
+| Rate–Discovery | Zero versus one public/private bit with a declared list target | Stop if the task merely reconstructs all evidence. |
+| Discovery Order | Portfolio information order and separation domain | Require decentralized content beyond Blackwell theory. |
+| Dynamic/scale | Adaptive marginal conditions and minimal failures | Wait for DD-015 and a named finite theorem/regime. |
 
 ## 10. Paper sequence
 
-All titles are provisional; this is neither a submission nor publication plan.
+All titles are provisional; none implies submission or publication.
 
-1. *Threshold Discovery* — active Program V4 paper.
-2. *When Should Searchers Repeat?* — Diversity–Redundancy Frontier.
-3. *The Price of Missing Provenance* — sharp bounds and source identification.
-4. *Truth, Obedience, and Budget Balance* — implementation and subsidy frontier.
-5. *How Much Must a Team Communicate to Discover?* — Rate–Discovery.
-6. *A Discovery Order for Information Structures* — information comparison.
-7. *The Architecture of Distributed Discovery* — synthesis, survey, or book.
+1. *Threshold Discovery*.
+2. *When Does Information Sharing Improve Decentralized Discovery?*
+3. *The Recovery Budget*.
+4. *Information Experiments for Collective Search*.
+5. *When Should Searchers Repeat?*
+6. *The Price of Missing Provenance*.
+7. *Truth, Obedience, and Budget Balance*.
+8. *How Much Must a Team Communicate to Discover?*
+9. *A Discovery Order for Information Structures*.
+10. *The Architecture of Distributed Discovery*.
 
 ## 11. Benchmark and infrastructure implications
 
-Benchmark additions should express theorem interfaces: reliability-adjusted portfolios, provenance observables, message budgets, action authority, feedback visibility, and declared dependence. Preserve capability isolation, exact golden fixtures, exclusions, independent recomputation, and corruption gates. Synthetic power may test declared assumptions; it cannot become behavioral evidence.
+Benchmark additions should express theorem interfaces: channel geometry,
+recovery budgets, reliability-adjusted portfolios, provenance observables,
+message budgets, action authority, feedback visibility, and declared
+dependence. Preserve capability isolation, exact golden fixtures, explicit
+exclusions, independent recomputation, and corruption gates. Synthetic power
+may test declared assumptions; it cannot become behavioral evidence.
 
 ## 12. Empirical and ethics boundary
 
-The program may develop schemas, identification analysis, synthetic recovery audits, and public-safe benchmark data. It must not collect, ingest, infer about, or validate against real/human data without separately authorized ethics, privacy, identification, retention, and governance review.
+The program may develop schemas, identification analysis, synthetic recovery
+audits, and public-safe benchmark data. It must not collect, ingest, infer
+about, or validate against real or human data without separately authorized
+ethics, privacy, identification, retention, and governance review.
 
 ## 13. What not to do
 
-Do not add exact grids without a theorem, counterexample, identification, or benchmark purpose; rename classical theorems; use famous theorems cosmetically; claim novelty for broad subjects; maximize diversity universally; treat pairwise disagreement as source independence; call a selected equilibrium *the* equilibrium; call solver output proof without verification; promote synthetic power to human evidence; start real-data work without review; run more than two major substantive programs in parallel; or fragment a shared mathematical object into incompatible packages.
+Do not call private accuracy a channel; conflate sharing with common action;
+compare consensus with an undefined private baseline; claim maximal diversity
+is always optimal; report *the* equilibrium under multiplicity; promote
+preliminary shortlist simulations to exact results; assign many study IDs
+before execution; or run more than one substantive branch.
 
-Continue theorem–tightness–failure–certificate, exact scope labels, minimal counterexamples, negative results, independent verification, public-safe provenance, modular discovery architectures, and benchmark regressions.
+Also do not add exact grids without a theorem, counterexample, identification,
+or benchmark purpose; rename classical theorems; claim novelty for broad
+subjects; treat pairwise disagreement as source independence; call solver
+output proof without verification; promote synthetic power to human evidence;
+start real-data work without review; or fragment a shared mathematical object
+into incompatible packages.
+
+Continue Theorem—Tightness—Failure—Certificate, exact scope labels, literature
+boundaries, operational interpretations, named baselines, equilibrium and
+action-technology scopes, minimal counterexamples, negative results,
+independent verification, public-safe provenance, modular discovery
+architectures, and benchmark regressions.
 
 ## 14. Roadmap maintenance
 
-Update this document only when a promotion gate is met, a material dependency changes, a direction is retired/merged, or active work creates a non-overlap constraint. Keep active execution in `docs/current-roadmap.md`, evidence in registered studies, and consolidation decisions in `reports/roadmap-consolidation/`. Do not use this document to promote a claim or imply execution.
+Update this document only when a promotion gate is met, a material dependency
+changes, a direction is retired or merged, or active work creates a non-overlap
+constraint. Keep active execution in `docs/current-roadmap.md`, evidence in
+registered studies, and consolidation decisions in
+`reports/roadmap-consolidation/`. Do not use this document to promote a claim
+or imply execution.
 
 ## 15. Provisional next decision points
 
-1. At the next Program V4 handoff, confirm which threshold/reliability interface is stable enough for Reliable Discovery.
-2. Before signaling registration, choose the equilibrium class and exact LP certificate format.
-3. Before Provenance registration, specify observables, source model, and sharpness/identification target separately.
-4. Before Rate–Discovery, choose a list, planner-emulation, or portfolio target under a declared communication model.
-5. Before Discovery Order, show content beyond centralized Blackwell theory.
+1. Complete Program V4 sequentially and stabilize the threshold/dynamic/team
+   interfaces before Program V5 research.
+2. Register only the first bounded Program V5 study after its channel model and
+   complexity audit are complete.
+3. Test Signal Geometry before Incremental Sharing; move stochastic information
+   design only after those deterministic interfaces exist.
+4. Before Provenance, specify observables, source model, and
+   sharpness/identification target separately.
+5. Before Rate–Discovery, choose a list, planner-emulation, or portfolio target
+   under a declared communication model.
+6. Before Discovery Order, show content beyond centralized Blackwell theory.

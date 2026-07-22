@@ -9,12 +9,14 @@ verification plan, and corruption test where certificates are used.
 | --- | --- | --- |
 | DD-016 Threshold Discovery | complete and deployed through PR #102 | Preserve DD-C-0071 through DD-C-0074 and the immutable primary run; do not treat tied-mode selection as the equilibrium correspondence. |
 | DD-017 Equilibrium Selection and Coalition Stability | complete and deployed through PR #104 | Preserve DD-C-0075 through DD-C-0078 and distinct weak-Nash, pairwise, tau-player, and symmetric-mixed meanings. |
-| Program V4 later queue | authorized sequentially after DD-017 | Execute DD-015 at its original boundary, then DD-018 mechanisms, DiscoveryBench v3, synthetic extensions, focused paper, and public Labs under separate gates. |
+| Program V4 later queue | active sequentially after DD-017 | Execute DD-015 at its original boundary, then DD-018 mechanisms, DiscoveryBench v3, synthetic extensions, focused paper, public Labs, and final handoff under separate gates. Program V4 is not complete. |
 | Program V3 baseline | complete through PR #80 | DD-012 through DD-015 are registered and deployed without creating research evidence. |
 | DD-012 Incentive to Ignore | complete and deployed through PR #82 | Preserve DD-C-0059 through DD-C-0061 and the immutable primary run. |
 | DD-013 Audience Design | complete and deployed through PR #84 | Preserve DD-C-0062 through DD-C-0065, the primary run, and Audience Lab. |
 | DD-014 Conditional Attention | complete and deployed through PR #87 | Preserve DD-C-0066 through DD-C-0068, the passing run, bounded class, and raw larger-class counterexample. |
-| DD-015 Dynamic Attention | optional unexecuted registration | Begin only under new authorization; keep stopping and fixed-budget objectives distinct. |
+| DD-015 Dynamic Attention | next authorized milestone; registration unexecuted | Execute the original `M=3`, `N in {2,3}` visible-action boundary first; keep stopping and fixed-budget objectives distinct, then label any threshold-two extension separately. |
+| DD-018 Minimum Viable Team Mechanisms | planned after DD-015 | Register and test exact threshold-team mechanisms only after DD-015 merges and deploys; unilateral implementation is not coalition-proofness. |
+| Program V5 — Information Sharing Frontier | authorized after the merged Program V4 handoff | Begin with a documentation-only baseline, then register only Signal Geometry and the Action-Budget Discovery Profile after its channel-law and complexity audit. Do not start V5 research while V4 is active. |
 | Program V3 focused paper | complete and deployed through PR #90 | The deterministic 20-page *Incentive to Ignore* paper, nine generated evidence assets, citation audit, all-page visual review, Pages, and live PDF pass. |
 | Program V3 benchmark, experiment, and site integration | complete and deployed through PRs #93, #95, and #97 | Preserve version compatibility, static/no-tracking operation, no-JS tables, and exact provenance. |
 | Program V3 final acceptance | complete through issue #98 and the final handoff | Preserve the 70-claim/40-manifest audit and do not rerun immutable primary configurations for freshness. |
@@ -27,12 +29,18 @@ verification plan, and corruption test where certificates are used.
 | Empirical validation | prohibited in current phase | No real or human data until a new ethics, identification, privacy, retention, and governance gate is authorized. |
 | Repository settings (#32) | blocked on authority | Authenticate intentionally with settings-capable credentials, then follow `docs/github-setup.md`; do not retry blindly. |
 
-High-value theoretical questions are heterogeneous source quality, correlated
-independent sources, alternative prize sharing, dynamic acquisition, reusable
-evidence value, and equilibrium selection beyond anonymous pure source counts.
-High-value benchmark questions are new exact tasks, adapter conformance, and
-robust multi-metric aggregation without collapsing the registry into an
-unexplained score.
+After Program V4, the next program is the Information Sharing Frontier. Its
+flagship question is when useful private-information sharing improves or
+reduces decentralized group discovery. The initial sequence is Signal Geometry,
+Incremental Sharing, the General Sharing Frontier, Recovery Budget,
+coordination-free positive sharing, and Randomized Information Design. Every
+result must name the signal channel, sharing intensity, private baseline, action
+budget and technology, authority, reward, and equilibrium selection.
+
+No long-term direction is removed. Reliable Discovery, the Price of Missing
+Provenance, Truth/Obedience/Budget Balance, Rate–Discovery, Discovery Order,
+dynamic and large-team synthesis, and The Architecture of Distributed Discovery
+follow in the order and at the promotion gates in `docs/theorem-roadmap.md`.
 
 Operational resume commands:
 
@@ -42,6 +50,7 @@ git pull --ff-only origin main
 make verify
 ```
 
-The next file is `plans/MASTER_EXEC_PLAN.md`. A new substantive extension needs
-a bounded issue and ExecPlan entry. For settings-only work, use
-`docs/github-setup.md` and issue #32.
+The next substantive milestone is DD-015. Its first file is
+`studies/DD-015-dynamic-attention/plan.md`; it begins only after the roadmap
+reconciliation issue and pull request merge and deployment checks pass. For
+settings-only work, use `docs/github-setup.md` and issue #32.
