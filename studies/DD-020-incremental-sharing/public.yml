@@ -8,6 +8,12 @@ public_artifacts:
     description: Frozen incremental-sharing protocol and baseline semantics
   - path: studies/DD-020-incremental-sharing/plan.md
     description: Living bounded execution and validation plan
+  - path: studies/DD-020-incremental-sharing/literature.md
+    description: Primary-source adjacency review and explicit novelty boundary
+  - path: studies/DD-020-incremental-sharing/proof.md
+    description: Human-readable aggregation-rescue proofs and theorem boundary
+  - path: studies/DD-020-incremental-sharing/proof-audit.md
+    description: Separate internal proof-consistency audit
   - path: studies/DD-020-incremental-sharing/configs/census.yml
     description: Frozen exact point-channel census and resource bounds
 claim_ids: []

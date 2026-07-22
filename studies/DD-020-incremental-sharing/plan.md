@@ -58,18 +58,21 @@ one-hit actions; binding duplicate block action; named direct-private baseline.
 - [x] Live registry/open-PR audit and DD-020 issue/branch allocation.
 - [x] Frozen model, 73-cell grid, 2,555-row census, state counts, caps,
   exactness plan, and stop rule registered.
-- [ ] Complete primary-source literature review and novelty boundary.
-- [ ] Complete human-readable analytic proof and independent proof audit.
-- [ ] Implement two exact methods, DD-019 extension, and five corruptions.
-- [ ] Pass pre-run validation; commit source; open draft PR.
+- [x] Complete primary-source literature review and novelty boundary.
+- [x] Complete human-readable analytic proof and independent proof audit.
+- [x] Implement two exact methods, DD-019 extension, and five corruptions.
+- [x] Pass pre-run validation; commit source; open draft PR.
 - [ ] Execute the primary configuration once from the clean frozen commit.
 - [ ] Audit claims, integrate evidence/public data, and pass full acceptance.
 - [ ] Merge, deploy, close, synchronize, and verify live routes.
 
 ## Discoveries and surprises
 
-None yet. Preliminary calculations or dirty-tree previews are not evidence and
-must be recorded as such if used.
+The analytic step produced a general point-channel monotonicity proof rather
+than only the registered bounded progression. A dirty-tree preview then passed
+the implementation checks and displayed candidate exact values. Those values
+are preliminary diagnostics only: they are not a run, result, or claim and
+cannot be cited until the clean primary execution and claim audit pass.
 
 ## Decision log
 
@@ -78,6 +81,14 @@ must be recorded as such if used.
   DD-019 were confirmed.
 - `2026-07-22T14:13:02Z`: use `I_N(W)` for the incremental-sharing profile so
   it cannot be confused with DD-019's action-budget profile.
+- `2026-07-22`: keep all literature ownership broad and contextual; make no
+  first-discovery or field-novelty claim for the narrower registered object.
+- `2026-07-22`: separate the uninformative `p=1/M` proof boundary from the
+  positive-information count-ranking argument.
+- `2026-07-22T14:25:31Z`: pre-run `make bootstrap`, `make verify`, and
+  `make site` passed: 222 tests, 91 valid claims, 48 valid run manifests, and
+  71 generated pages for 24 studies. Draft PR #136 was already open before
+  substantive execution. The next commit freezes the primary-run source.
 
 ## Validation strategy
 
