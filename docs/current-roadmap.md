@@ -1,4 +1,4 @@
-# Current roadmap — Program V4 complete; Program V5 next
+# Current roadmap — Program V5 baseline
 
 Programs V1, V2, and the required Program V3 sequence are complete at their
 registered scopes. Each new research milestone requires its own
@@ -20,7 +20,7 @@ verification plan, and corruption test where certificates are used.
 | Synthetic Experiment v3 | complete and deployed through PR #120 | Preserve DD-C-0088, all three immutable versions, the 644 retained calibration failures, shared-seed v2 power rows, and the absolute no-human-data boundary. |
 | Threshold Discovery paper | complete and deployed through PR #123 | Preserve the 20-page deterministic working paper, eight source-generated assets, seven immutable run mappings, claim/citation audit, all-page visual QA, and no-DOI/no-submission boundary. |
 | Program V4 output-connected Labs | complete and deployed through PR #125 | Preserve exact row selection for all 8 DD-016 threshold rows, 160 DD-017 games, 64 DD-015 objective rows, and 50 DD-018 mechanism rows; every control must alter substantive output and all rows remain available without JavaScript. |
-| Program V5 — Information Sharing Frontier | authorized after the merged Program V4 handoff | Begin with a documentation-only baseline, then register only Signal Geometry and the Action-Budget Discovery Profile after its channel-law and complexity audit. Do not start V5 research before the handoff and baseline merge. |
+| Program V5 — Information Sharing Frontier | documentation baseline active on issue #128 | Merge `docs/program-v5.md` without a study ID, claim, or run; then inspect the live registry and register only Signal Geometry and the Action-Budget Discovery Profile after its channel-law and complexity audit. |
 | Program V3 focused paper | complete and deployed through PR #90 | The deterministic 20-page *Incentive to Ignore* paper, nine generated evidence assets, citation audit, all-page visual review, Pages, and live PDF pass. |
 | Program V3 benchmark, experiment, and site integration | complete and deployed through PRs #93, #95, and #97 | Preserve version compatibility, static/no-tracking operation, no-JS tables, and exact provenance. |
 | Program V3 final acceptance | complete through issue #98 and the final handoff | Preserve the 70-claim/40-manifest audit and do not rerun immutable primary configurations for freshness. |
@@ -41,6 +41,17 @@ coordination-free positive sharing, and Randomized Information Design. Every
 result must name the signal channel, sharing intensity, private baseline, action
 budget and technology, authority, reward, and equilibrium selection.
 
+## Program V5 execution order and gate
+
+The authoritative order is: (1) Signal Geometry and the Action-Budget
+Discovery Profile; (2) Incremental Sharing and the Point-Channel Theorem; (3)
+the General Sharing Frontier; (4) Recovery Budget; (5) Coordination-Free
+Positive Sharing; (6) Randomized Information Design; (7) the Equilibrium
+Selection Module; and (8) Mechanism and Design Implications. The versioned
+channel proposal and evidence/promotion rules are in
+[`program-v5.md`](program-v5.md). Only the first package may receive a study ID
+after this documentation baseline merges and its model/complexity audit passes.
+
 No long-term direction is removed. Reliable Discovery, the Price of Missing
 Provenance, Truth/Obedience/Budget Balance, Rate–Discovery, Discovery Order,
 dynamic and large-team synthesis, and The Architecture of Distributed Discovery
@@ -54,10 +65,8 @@ git pull --ff-only origin main
 make verify
 ```
 
-The active milestone is the documentation-only Program V4 final handoff on
-issue #126 and branch `docs/program-v4-final-handoff`. Local repository,
-paper, site, certificate, corruption, benchmark, schema, browser,
-accessibility, checksum, secret, host-path, license, provenance, upstream, and
-live-route gates pass. Merge this handoff and verify post-merge CI and Pages;
-then open the separate Program V5 documentation baseline. For settings-only
-work, use `docs/github-setup.md` and issue #32.
+The active milestone is the documentation-only Program V5 baseline on issue
+#128 and branch `docs/program-v5-information-sharing-frontier`. It creates no
+study, claim, run, or result. Merge it and verify post-merge CI/Pages before
+opening the first bounded Signal Geometry study. For settings-only work, use
+`docs/github-setup.md` and issue #32.

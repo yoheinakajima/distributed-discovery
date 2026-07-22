@@ -1,0 +1,96 @@
+# Program V5 — The Information Sharing Frontier
+
+Program V5 asks when sharing useful private information improves or reduces
+decentralized group discovery. Its public thesis is:
+
+> Sharing helps when it improves the group's map faster than it collapses the
+> search portfolio.
+
+The conceptual decomposition
+`value of sharing = aggregation gain - lost independent rescue value` is a
+research guide, not an established identity. This baseline registers no study,
+claim, run, or result and assigns no DD ID.
+
+## Sequential work packages
+
+Work proceeds in this order, one bounded issue and registration at a time:
+
+1. **Signal Geometry and the Action-Budget Discovery Profile.** Build the
+   channel registry, define `V_L`, test same-accuracy counterexamples and
+   scalar insufficiency, and define the recovery budget.
+2. **Incremental Sharing and the Point-Channel Theorem.** Compare private use
+   with progressively larger shared-answer blocks, beginning with the smallest
+   exact point-channel cases.
+3. **General Sharing Frontier.** Classify when consensus, private portfolios,
+   or pooled top-`L` portfolios dominate under a declared channel.
+4. **Recovery Budget.** Characterize the least pooled action budget needed to
+   recover a named private baseline.
+5. **Coordination-Free Positive Sharing.** Freeze anonymity, observability,
+   randomization, communication, and equilibrium selection before seeking
+   dependence thresholds.
+6. **Randomized Information Design.** Study stochastic public/private messages
+   and correlated recommendations with exact LP certificates.
+7. **Equilibrium Selection Module.** State and compare pure, worst/best,
+   symmetric mixed, dynamic, coalition-stable, correlated, and planner scopes.
+8. **Mechanism and Design Implications.** Compare interventions only after the
+   natural sharing frontier is understood.
+
+Later packages cannot silently expand an earlier package. Reliability,
+threshold teams, overlap, human behavior, and empirical validation require
+their own gates.
+
+## Finite signal-channel schema proposal
+
+The first study must turn this proposal into a versioned JSON Schema. A channel
+record must contain:
+
+- `schema_version` and a stable `channel_id`;
+- a finite `target_set` and normalized rational `prior`;
+- a finite `signal_alphabet`;
+- the normalized conditional law `W(s|theta)`;
+- a declared `symmetry_class` and its verified action on targets/signals;
+- likelihood ratios, including zero/infinite conventions;
+- the exact posterior-update rule;
+- the private Bayes-action correspondence before tie-breaking;
+- an explicit tie-breaking rule and randomness source;
+- signal cost, including an explicit zero when absent;
+- source dependence across agents, with independence never implicit; and
+- `evaluation_mode`, distinguishing exact rational evaluation from simulation.
+
+Exact channel records use canonical rational strings. Simulated records must
+also pin seeds, replication counts, estimands, uncertainty intervals, and stop
+rules. Validation checks finiteness, support, nonnegative probabilities,
+normalization, prior/posterior consistency, correspondence/tie-breaking
+compatibility, and the declared symmetry/dependence class.
+
+## Evidence and promotion rules
+
+1. A bounded study begins only after its model, channel law, state-space or
+   complexity audit, resource cap, independent verifier, corruption plan,
+   literature boundary, non-overlap statement, and stop condition are written.
+2. Source is committed and a draft PR is open before the sole registered
+   primary run. A passing immutable primary configuration is never rerun for
+   freshness.
+3. Definitions, proofs, exact computations, independently reproduced results,
+   Monte Carlo estimates, observations, conjectures, and failures remain
+   separately labeled under `docs/claim-status-policy.md`.
+4. “Exact,” “optimal,” necessity, sufficiency, tightness, and generality are
+   promoted only with the evidence permitted by the claim-status policy.
+5. Numerical claims name immutable run IDs and retain source data. Exact
+   evaluators require an independent method; certificates require corruption
+   tests. Simulation requires pinned seeds and uncertainty reporting.
+6. Same-accuracy comparisons must define the accuracy scalar and verify it
+   exactly; they do not imply equivalence of signal geometry. Private,
+   consensus, pooled top-`L`, random, and oracle baselines must name their
+   information and action authority.
+7. Null, negative, failed, and counterexample results are preserved. No human
+   or real-data claim is permitted without separate ethics, privacy,
+   identification, retention, and governance authorization.
+8. Every material milestone updates the study status, ExecPlan, claim ledger,
+   result index, and public documentation in sequence.
+
+## First registration gate
+
+After this baseline merges, inspect the live study registry and allocate only
+the next available DD ID to *Signal Geometry and the Action-Budget Discovery
+Profile*. No later Program V5 study ID may be reserved in advance.
