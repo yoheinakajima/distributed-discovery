@@ -7,9 +7,10 @@ decentralized group discovery. Its public thesis is:
 > search portfolio.
 
 The conceptual decomposition
-`value of sharing = aggregation gain - lost independent rescue value` is a
-research guide, not an established identity. This baseline registers no study,
-claim, run, or result and assigns no DD ID.
+`value of sharing = aggregation gain - lost independent rescue value` remains
+a research guide outside a declared model. The documentation baseline itself
+registered no evidence. DD-019 has since completed the first bounded work
+package; it does not establish an incremental-sharing identity.
 
 ## Sequential work packages
 
@@ -89,8 +90,12 @@ compatibility, and the declared symmetry/dependence class.
 8. Every material milestone updates the study status, ExecPlan, claim ledger,
    result index, and public documentation in sequence.
 
-## First registration gate
+## Next registration gate
 
-After this baseline merges, inspect the live study registry and allocate only
-the next available DD ID to *Signal Geometry and the Action-Budget Discovery
-Profile*. No later Program V5 study ID may be reserved in advance.
+DD-019 Signal Geometry and the Action-Budget Discovery Profile is complete and
+deployed with DD-C-0089 through DD-C-0091 and immutable primary run
+`20260722T084145Z_DD-019_a77bb786_04a5e9f0c5`. Inspect the live study registry
+and allocate only the next available DD ID to *Incremental Sharing and
+Independent Rescue* after its bounded model, proof progression, independent
+verifier, corruption plan, and resource audit are recorded. No later Program
+V5 study ID may be reserved in advance.

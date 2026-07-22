@@ -50,8 +50,9 @@ the General Sharing Frontier; (4) Recovery Budget; (5) Coordination-Free
 Positive Sharing; (6) Randomized Information Design; (7) the Equilibrium
 Selection Module; and (8) Mechanism and Design Implications. The versioned
 channel proposal and evidence/promotion rules are in
-[`program-v5.md`](program-v5.md). Only the first package may receive a study ID
-after this documentation baseline merges and its model/complexity audit passes.
+[`program-v5.md`](program-v5.md). DD-019 completed the first package. Only the
+next sequential package may receive a study ID after its live registry and
+model/complexity gates pass.
 
 No long-term direction is removed. Reliable Discovery, the Price of Missing
 Provenance, Truth/Obedience/Budget Balance, Rate–Discovery, Discovery Order,

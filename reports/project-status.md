@@ -1,24 +1,26 @@
-# Project status — Program V4 final acceptance
+# Project status — Program V4 final acceptance and Program V5 continuation
 
 Date: 2026-07-22 (America/Los_Angeles)
 
 Programs V1 through V4 are complete at their registered bounded scopes.
-Program V5 has not yet been registered; its first milestone is a
-documentation-only baseline after this handoff merges.
+Program V5 is active: its documentation baseline and DD-019 are complete,
+merged, and deployed. Incremental Sharing and Independent Rescue is the next
+authorized package; it has no study ID or evidence at this reconciliation
+point.
 
 ## Inventory
 
 | Measure | Value |
 | --- | ---: |
-| Studies | 22 |
-| Claims | 88 |
-| Immutable manifests | 47 |
-| Passing immutable runs | 44 |
-| Tests | 212 |
+| Studies | 23 |
+| Claims | 91 |
+| Immutable manifests | 48 |
+| Passing immutable runs | 45 |
+| Tests | 217 |
 | Validated project papers | 6 |
 | Paper pages | 89 |
-| Public HTML routes | 68 |
-| Public data files | 66 |
+| Public HTML routes | 69 |
+| Public data files | 67 |
 | Labs | 16 |
 | Checksum-covered downloads | 22 |
 
@@ -65,7 +67,7 @@ passed. Final handoff PR and post-merge workflow IDs are recorded after merge.
 
 ## Next authorized milestone
 
-Merge the documentation-only Program V4 handoff and verify post-merge CI,
-Pages, and live status. Then open exactly one Program V5 documentation baseline
-issue and branch. Do not create a Program V5 study ID, run, or claim in that
-baseline.
+DD-019 deployment closeout merged as `5e6c800`; CI `29906411957` and Pages
+`29906411981` passed. Formalize research governance and publication
+architecture without changing evidence, then register Incremental Sharing and
+Independent Rescue under the next live study ID.

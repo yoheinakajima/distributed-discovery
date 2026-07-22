@@ -29,6 +29,8 @@ navigation:
     - label: Papers
       route: publications.html
   resources:
+    - label: Program
+      route: program.html
     - label: Foundations
       route: foundations.html
     - label: Applications

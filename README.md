@@ -17,8 +17,9 @@ DD-014, the focused paper, versioned benchmark and synthetic experiment
 extensions, and the public Labs. Program V4, *Threshold Discovery*, is complete
 at its registered bounded scope: DD-015 through DD-018, DiscoveryBench v3, the
 synthetic experiment v3 extension, the 20-page focused paper, and four
-output-connected Labs are deployed. Program V5 is at its documentation-only
-baseline; no V5 study ID, claim, run, or result exists yet. The concise entry points
+output-connected Labs are deployed. Program V5's documentation baseline and
+DD-019 Signal Geometry are complete and deployed; Incremental Sharing and
+Independent Rescue is next but has no study ID or evidence yet. The concise entry points
 are [`docs/current-state.md`](docs/current-state.md) and
 [`docs/current-roadmap.md`](docs/current-roadmap.md). Claims remain in
 [`claims/claims.yml`](claims/claims.yml) under the
@@ -32,6 +33,10 @@ exact counterexample. The deterministic 20-page
 and the 20-page [*Incentive to Ignore* working paper](https://yoheinakajima.github.io/distributed-discovery/publications/incentive-to-ignore.html)
 are live. No real-data work is authorized; no
 participants were recruited and no human experiment was conducted.
+
+The output hierarchy, paper-admission rule, and living-synthesis relationship
+are defined in [`docs/research-governance.md`](docs/research-governance.md) and
+[`docs/publication-architecture.md`](docs/publication-architecture.md).
 
 ## Setup and common commands
 

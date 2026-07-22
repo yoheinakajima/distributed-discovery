@@ -27,3 +27,8 @@ All builds follow the
 artifact checks, and visual-QA records. The upstream extension remains a patch
 preview rather than a project-authored publication. All 89 project-paper pages
 have current visual-QA records. No paper is represented as peer reviewed.
+
+Editorial admission and theorem-family ownership are governed by
+[`docs/research-governance.md`](../docs/research-governance.md) and
+[`docs/publication-architecture.md`](../docs/publication-architecture.md). A
+validated PDF is not automatically an archival-paper candidate or submission.

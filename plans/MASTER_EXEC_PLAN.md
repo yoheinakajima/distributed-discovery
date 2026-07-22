@@ -81,6 +81,8 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   routes, and factual inventories; run `gh auth status` exactly once.
 - [x] Create issue #133 and the sole active Milestone A branch.
 - [ ] Complete, validate, merge, deploy, close, and synchronize Milestone A.
+  Local implementation and acceptance pass; PR readiness, merge, post-merge
+  CI/Pages, issue closure, and main synchronization remain.
 - [ ] Register and complete the next live Incremental Sharing study.
 - [ ] Apply and merge the editorial theorem gate and synthesis prospectus.
 - [ ] Build and deploy the DD-020 public integration and Lab.
@@ -96,6 +98,12 @@ conjecture until proof or an exact counterexample supplies the permitted status.
 - The GitHub Pages builds endpoint returns 404 without settings-capable
   authentication, but the public Actions API records the successful Pages
   workflow and live routes pass; this is not a research blocker.
+- The first targeted site test invoked `uv run --no-editable pytest` directly
+  after a package reinstall and loaded the previously installed non-editable
+  package rather than current `src`. It failed because `program.html` and the
+  footer link were absent from that stale package. Re-running with the
+  Makefile-equivalent `PYTHONPATH="$PWD/src"` passed all 13 targeted tests; no
+  research output or run was created.
 
 ### Decision log
 
@@ -107,6 +115,9 @@ conjecture until proof or an exact counterexample supplies the permitted status.
 - `2026-07-22T13:55:13Z`: Milestone A is documentation/presentation only, so
   its acceptance must demonstrate unchanged claims, manifests, passing runs,
   scientific outputs, and paper PDF checksums.
+- `2026-07-22T14:03:38Z`: retain the direct non-editable targeted-test failure
+  as an environment-cache observation and use the repository Make targets,
+  which export `src`, for authoritative validation.
 
 ### Validation strategy
 
@@ -132,8 +143,11 @@ PDF, secret, host-path, license, provenance, and upstream-cleanliness audits.
 
 ### Artifacts produced
 
-At this checkpoint: issue #133 and this living ExecPlan update. Later artifacts
-are recorded after they exist; no DD-020 ID, claim, run, or result exists yet.
+Issue #133; draft PR #134; `docs/research-governance.md`;
+`docs/publication-architecture.md`; `docs/paper-family-map.yml`; the seven-file
+living-synthesis scaffold; the contextual `program.html` builder and tests; and
+`reports/governance-publication-architecture-validation.md`. No DD-020 ID,
+claim, run, or result exists yet.
 
 ### Blockers
 

@@ -1,0 +1,50 @@
+schema_version: 1
+chapters:
+  - chapter: foundational-objects
+    theorem_family: foundational-information-comparison
+    source_studies: [DD-000, DD-001]
+    source_claims: [DD-C-0001, DD-C-0002, DD-C-0018, DD-C-0019]
+    source_papers: [foundations, private-information-teams]
+    maturity: mixed-proved-and-working-definitions
+    missing_theorem_gate: discovery order beyond centralized information comparison
+    duplication_risk: canonical-entry exposition
+  - chapter: canonical-paradox
+    theorem_family: canonical-entry
+    source_studies: [DD-000]
+    source_claims: [DD-C-0003, DD-C-0004, DD-C-0005, DD-C-0006, DD-C-0007, DD-C-0008]
+    source_papers: [shared-discovery-paradox]
+    maturity: canonical-entry-result
+    missing_theorem_gate: general finite-target separation boundary
+    duplication_risk: re-owning the canonical paper
+  - chapter: sources-and-attention
+    theorem_family: source-acquisition-provenance
+    source_studies: [DD-003, DD-008, DD-008A, DD-008B, DD-012, DD-013, DD-014]
+    source_claims: [DD-C-0057, DD-C-0059, DD-C-0060, DD-C-0062, DD-C-0066, DD-C-0068]
+    source_papers: [common-source-trap, incentive-to-ignore]
+    maturity: bounded-results-and-scoped-theorems
+    missing_theorem_gate: Incremental Sharing and Price of Missing Provenance
+    duplication_risk: two theorem families meet at information dependence
+  - chapter: institutions-action-technologies
+    theorem_family: discovery-implementation
+    source_studies: [DD-002, DD-004, DD-005, DD-006, DD-006B, DD-015, DD-016, DD-017, DD-018]
+    source_claims: [DD-C-0045, DD-C-0046, DD-C-0053, DD-C-0071, DD-C-0075, DD-C-0079, DD-C-0083]
+    source_papers: [discovery-institutions, threshold-discovery]
+    maturity: several-bounded-studies-and-working-papers
+    missing_theorem_gate: necessary-and-sufficient implementation and Reliable Discovery
+    duplication_risk: mechanism and action-technology ownership
+  - chapter: information-sharing-frontier
+    theorem_family: information-sharing-attention-recovery
+    source_studies: [DD-012, DD-013, DD-014, DD-019]
+    source_claims: [DD-C-0059, DD-C-0060, DD-C-0062, DD-C-0066, DD-C-0068, DD-C-0089, DD-C-0090, DD-C-0091]
+    source_papers: [incentive-to-ignore]
+    maturity: active-program-after-first-bounded-study
+    missing_theorem_gate: Incremental Sharing and Independent Rescue
+    duplication_risk: canonical paradox and foundational information comparison
+  - chapter: open-problems-measurement
+    theorem_family: communication-dynamic-architecture
+    source_studies: [DD-007, DD-009, DD-010, DD-011]
+    source_claims: [DD-C-0049, DD-C-0054, DD-C-0069, DD-C-0070, DD-C-0087, DD-C-0088]
+    source_papers: [three-results]
+    maturity: infrastructure-and-synthetic-only-boundaries
+    missing_theorem_gate: named Rate-Discovery theorem and separately authorized empirical gate
+    duplication_risk: infrastructure presented as theorem evidence

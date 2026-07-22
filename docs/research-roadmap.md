@@ -8,7 +8,9 @@ This is a navigation index, not a duplicate portfolio.
 
 The theorem roadmap creates no study, claim, run, or result. DD-007 remains synthetic-only; real-data work remains prohibited until separately authorized ethics, privacy, identification, retention, and governance review.
 
-Program V5, *The Information Sharing Frontier*, is a roadmap program only until
-Program V4's final handoff merges and its own documentation baseline passes.
-The roadmap assigns no provisional DD IDs and preserves every later theorem
+Program V5, *The Information Sharing Frontier*, is active. Its documentation
+baseline and first bounded study, DD-019 Signal Geometry and the Action-Budget
+Discovery Profile, are complete and deployed. Incremental Sharing and
+Independent Rescue is next but receives no study ID before its live registry
+and bounded registration gate. The roadmap preserves every later theorem
 direction.

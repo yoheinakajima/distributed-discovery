@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-07-22 — Research governance and publication architecture
+
+- Defined the hierarchy from research program through theorem families,
+  registered studies, archival theorem papers, working notes, the living
+  synthesis, and infrastructure.
+- Added the five-part paper-admission rule, four-layer publication
+  architecture, machine-readable paper-family ownership map, and scaffold for
+  *The Architecture of Distributed Discovery*.
+- Reconciled DD-019 as deployed, retained Incremental Sharing as the next
+  unregistered Program V5 package, and added a contextual public program page
+  without changing scientific evidence or the five-item primary navigation.
+
 ## 2026-07-21 — Program V3 complete
 
 - Completed the required Program V3 queue through DD-012, DD-013, DD-014, the

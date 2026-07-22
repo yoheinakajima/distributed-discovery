@@ -4,12 +4,18 @@
 
 `AGENTS.md` is the concise instruction index. `.agent/PLANS.md` defines planning. `plans/MASTER_EXEC_PLAN.md` records live state. This contract supplies detailed operating rules. Study files narrow, but may not weaken, these rules.
 
-## Research outputs
+## Research outputs and editorial units
 
-Every output names one registered study ID. Generated numerical claims cite
-immutable run IDs. Public-facing sources may hide internal IDs only if nearby
-source comments or metadata retain them. Source-of-truth data generates every
-displayed number.
+Every research-evidence output names one registered study ID. Generated
+numerical claims cite immutable run IDs. Public-facing sources may hide
+internal IDs only if nearby source comments or metadata retain them.
+Source-of-truth data generates every displayed number.
+
+A registered study is the evidence unit. A paper is a theorem-family editorial
+unit, and the living synthesis is a program-level editorial unit. Program
+governance and synthesis documents need not invent a study ID, but every
+scientific claim they surface maps to existing study and claim IDs. Paper
+admission follows `docs/research-governance.md`.
 
 Claims use `claims/claims.yml`, conform to `claims/schema.json`, and follow `docs/claim-status-policy.md`. Definitions, identities, sourced results, proofs, exact computations, reproductions, observations, Monte Carlo estimates, conjectures, questions, hypotheses, and negative results remain distinct.
 
@@ -24,6 +30,9 @@ Tests must include relevant hand-checkable cases, normalization and bounds, inva
 ## Safety and Git
 
 This repository is public and project-authored content uses the root MIT License by explicit project-owner decision recorded on 2026-07-20. GitHub Pages deployment from generated `site/dist` artifacts is authorized only through the workflow on `main`. Never expose local paths or secrets, commit credentials, force-push, rewrite shared history, or modify/push canonical upstream. Fetch upstream into ignored cache and prepare changes as patches or fragments. Inspect dirty state before edits; preserve unrelated work. Commit coherent, passing milestone states on task branches.
+
+Use one active substantive branch and pull request at a time. Merge a roadmap
+or documentation closeout branch before beginning the next substantive branch.
 
 ## Time and artifacts
 

@@ -1,5 +1,11 @@
 # Final handoff — Program V4
 
+> Historical Program V4 handoff with a current continuation note: Program V5's
+> documentation baseline and DD-019 are now complete and deployed. Current
+> main is `5e6c800213232be2fdcdc2aa19027fb5a8400e85`; Incremental Sharing and
+> Independent Rescue is next after the governance/publication-architecture
+> milestone. The Program V4 evidence below is unchanged.
+
 Program V4, *Threshold Discovery: Coordination, Crowding, and Minimum Viable
 Teams*, is complete at its registered bounded scope. This documentation-only
 handoff creates no claim, study, or research run. All immutable primary runs
@@ -82,8 +88,8 @@ paper with no DOI, submission, peer review, or verified novelty claim.
 
 ## Resume point
 
-After the handoff PR merges and post-merge CI/Pages pass, start Program V5 with
-the documentation-only *Information Sharing Frontier* baseline. Only after that
-baseline merges may one bounded Signal Geometry and Action-Budget Discovery
-Profile study be registered. Do not rerun a completed primary configuration
-for freshness. Settings-only issue #32 remains separate.
+Program V5's documentation baseline and DD-019 Signal Geometry are complete and
+deployed. Resume with the governance/publication-architecture milestone, then
+allocate the next live study ID to Incremental Sharing and Independent Rescue
+only after its bounded registration passes. Do not rerun a completed primary
+configuration for freshness. Settings-only issue #32 remains separate.
