@@ -10,3 +10,21 @@ public_artifacts:
     description: Versioned task schema
   - path: studies/DD-010-discoverybench/schemas/task-v2.schema.json
     description: Versioned selective-attention task schema
+  - path: studies/DD-010-discoverybench/schemas/task-v3.schema.json
+    description: Versioned Program V4 threshold, dynamic, and mechanism task schema
+  - path: results/verified/20260722T054447Z_DD-010_d265e480_6930915b02/outputs/benchmark-summary.json
+    description: DiscoveryBench v3 public-safe registry and compatibility summary
+  - path: results/verified/20260722T054447Z_DD-010_d265e480_6930915b02/outputs/task-registry.json
+    description: Complete v3 exact task registry
+  - path: results/verified/20260722T054447Z_DD-010_d265e480_6930915b02/outputs/protocol-registry.json
+    description: Complete v3 capability-declared protocol registry
+  - path: results/verified/20260722T054447Z_DD-010_d265e480_6930915b02/outputs/metric-registry.json
+    description: Complete v3 task-level metric registry
+  - path: results/verified/20260722T054447Z_DD-010_d265e480_6930915b02/outputs/exact-result-matrix.json
+    description: All 36 v3 compatible exact vectors
+  - path: results/verified/20260722T054447Z_DD-010_d265e480_6930915b02/outputs/compatibility-matrix.json
+    description: All 696 capability-isolated v3 candidate pairs
+  - path: results/verified/20260722T054447Z_DD-010_d265e480_6930915b02/outputs/verification.json
+    description: Independent value, schema, provenance, count, and capability verification
+  - path: results/verified/20260722T054447Z_DD-010_d265e480_6930915b02/outputs/corruption-tests.json
+    description: Value, compatibility, and leakage corruption rejections

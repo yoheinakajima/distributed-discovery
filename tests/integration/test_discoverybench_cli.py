@@ -25,4 +25,12 @@ def test_discoverybench_cli_attention_v2_is_explicit() -> None:
     assert len(run_cli(["--version", "v2", "list-metrics"])) == 27
     row = run_cli(["--version", "v2", "run", "DB-G17", "voluntary-attention-equilibrium"])
     assert row["metrics"]["attention-wedge"] == "3/32"
+
+
+def test_discoverybench_cli_threshold_v3_is_explicit() -> None:
+    assert len(run_cli(["--version", "v3", "list-tasks"])) == 24
+    assert len(run_cli(["--version", "v3", "list-protocols"])) == 29
+    assert len(run_cli(["--version", "v3", "list-metrics"])) == 39
+    row = run_cli(["--version", "v3", "run", "DB-G24", "marginal-team-contribution"])
+    assert row["metrics"]["planner-portfolio-rows"] == 5
     assert run_cli(["run-golden"])["task_count"] == 15

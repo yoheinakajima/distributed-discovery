@@ -18,7 +18,7 @@ from distributed_discovery.validation.bootstrap import repository_root
 
 
 def configure(parser: argparse.ArgumentParser) -> None:
-    parser.add_argument("--version", choices=("v1", "v2"), default="v1")
+    parser.add_argument("--version", choices=("v1", "v2", "v3"), default="v1")
     commands = parser.add_subparsers(dest="benchmark_command", required=True)
     commands.add_parser("list-tasks")
     describe_task = commands.add_parser("describe-task")

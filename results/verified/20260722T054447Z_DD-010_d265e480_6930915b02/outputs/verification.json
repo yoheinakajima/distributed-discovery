@@ -1,0 +1,9 @@
+{
+  "compatibility_counts_verified": true,
+  "golden_values_recomputed": true,
+  "information_boundaries_verified": true,
+  "passed": true,
+  "provenance_resolved": true,
+  "schemas_valid": true,
+  "verified_rows": 36
+}

@@ -84,7 +84,7 @@ def independent_expected(version: str = "v1") -> dict[tuple[str, str], dict[str,
     }
     if version == "v1":
         return expected
-    if version != "v2":
+    if version not in {"v2", "v3"}:
         raise ValueError(f"unknown benchmark version: {version}")
     private_only = Fraction(1) - Fraction(1, 2) ** 4
     designated = Fraction(1) - (1 - Fraction(3, 4)) * (1 - Fraction(1, 2)) ** 3
@@ -159,6 +159,51 @@ def independent_expected(version: str = "v1") -> dict[tuple[str, str], dict[str,
             },
         }
     )
+    if version == "v2":
+        return expected
+    expected.update(
+        {
+            ("DB-G21", "threshold-tied-mode-selection"): {
+                "discovery": "275661897594857/576650390625000",
+                "planner-discovery": "223779310319051/333709716796875",
+                "expected-viable-candidates": "4605284003019928/3243658447265625",
+            },
+            ("DB-G21", "threshold-minimum-team-planner"): {
+                "discovery": "223779310319051/333709716796875",
+                "planner-discovery": "223779310319051/333709716796875",
+                "expected-viable-candidates": 4,
+            },
+            ("DB-G22", "threshold-equilibrium-census"): {
+                "zero-worst-equilibrium-games": 52,
+                "pair-instability-games": 8,
+                "tau-instability-games": 35,
+                "tied-mode-failure-games": 21,
+            },
+            ("DB-G23", "dynamic-autonomous-bayes"): {
+                "visibility-joint-loss-cells": 18,
+                "stopping-action-savings-cells": 32,
+            },
+            ("DB-G23", "dynamic-common-information-planner"): {
+                "planner-strict-gain-rows": 38,
+                "stopping-action-savings-cells": 32,
+            },
+            ("DB-G24", "team-token-mechanism"): {
+                "planner-portfolio-rows": 5,
+                "pair-stable-rows": 5,
+                "equilibrium-multiplicity": 25,
+            },
+            ("DB-G24", "marginal-team-contribution"): {
+                "planner-portfolio-rows": 5,
+                "pair-stable-rows": 5,
+                "equilibrium-multiplicity": 21,
+            },
+            ("DB-G24", "universal-pooling-team"): {
+                "planner-portfolio-rows": 0,
+                "pair-stable-rows": 1,
+                "equilibrium-multiplicity": "21,9,9,3,9",
+            },
+        }
+    )
     return expected
 
 
@@ -192,7 +237,11 @@ def verify_certificate(
     observed = _result_map(certificate)
     values_ok = observed == expected
     matrix = compatibility_matrix(version)
-    expected_counts = (15, 13, 19, 195, 16, 179) if version == "v1" else (20, 21, 27, 420, 28, 392)
+    expected_counts = (
+        (15, 13, 19, 195, 16, 179)
+        if version == "v1"
+        else ((20, 21, 27, 420, 28, 392) if version == "v2" else (24, 29, 39, 696, 36, 660))
+    )
     counts_ok = (
         certificate.get("task_count") == expected_counts[0]
         and certificate.get("protocol_count") == expected_counts[1]

@@ -1,5 +1,5 @@
 study_id: DD-010
-status: complete-versioned-attention-extension
-evidence_status: v1-preserved-v2-exact-independent-recomputation-and-three-corruption-gates
-next_action: publish the v2 benchmark surface, merge, deploy, and preserve both immutable runs
-updated_utc: 2026-07-21T23:02:50Z
+status: complete-versioned-program-v4-extension
+evidence_status: v1-v2-preserved-v3-independently-reproduced-exact-matrix
+next_action: preserve all three immutable benchmark versions; commit and push audited v3 evidence, then complete PR and deployment acceptance
+updated_utc: 2026-07-22T05:51:07Z

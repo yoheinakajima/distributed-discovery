@@ -1806,3 +1806,24 @@ claims:
     first_added: "2026-07-22"
     last_checked: "2026-07-22"
     notes: High equilibrium multiplicity is preserved as a first-class limitation. Recommended-profile support does not imply unique or globally selected implementation.
+  - id: DD-C-0087
+    study_id: DD-010
+    short_name: discoverybench-program-v4-v3-reproduction
+    statement: DiscoveryBench v3 preserves every v1 and v2 exact metric vector while extending the opt-in registry to 24 tasks, 29 capability-declared protocols, and 39 metrics; all 36 compatible pairs exactly reproduce their registered values and all 660 incompatible pairs remain explicit exclusions among 696 candidate pairs.
+    scope: DiscoveryBench v2 plus four exact DD-016, DD-017, DD-015, and DD-018 Program V4 tasks, eight appended protocols, twelve appended metrics, exact task-level vectors, the declared capability gate, and immutable source claim/run mappings; this is not a universal score, hosted leaderboard, external-agent evaluation, synthetic-performance claim, behavioral result, or empirical claim.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: versioned-exact-golden-matrix-with-separate-value-provenance-capability-and-compatibility-verifier
+    source_reference: results/verified/20260722T054447Z_DD-010_d265e480_6930915b02/outputs/golden-certificate.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/benchmark/model.py, src/distributed_discovery/benchmark/evaluator.py, src/distributed_discovery/benchmark/verification.py, src/distributed_discovery/benchmark/study.py]
+    run_ids: [20260722T054447Z_DD-010_d265e480_6930915b02]
+    test_paths: [tests/unit/test_discoverybench.py, tests/integration/test_discoverybench_cli.py]
+    exactness_basis: All 24 task contracts validate and every one of 696 candidate pairs is classified. A separate verifier reconstructs all 36 exact vectors from rational identities and immutable Program V4 outputs, resolves every source claim and run, confirms all 28 v2 metric vectors are the v3 prefix, and rejects an altered value, hidden target-state capability, and corrupted compatibility count.
+    rounding_rule: exact fractions, integers, booleans, and registered categorical vectors are authoritative; the unchanged seeded sensitivity suite is calibration only and does not support this exact claim
+    dependencies: [DD-C-0069, DD-C-0073, DD-C-0077, DD-C-0078, DD-C-0080, DD-C-0081, DD-C-0083, DD-C-0084, DD-C-0085, DD-C-0086]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: The CLI remains v1 by default; v2 and v3 require explicit selection. No composite score is active, missing metrics are not imputed, and external adapters remain disabled.

@@ -1,0 +1,16 @@
+{
+  "benchmark_version": "v3",
+  "candidate_pairs": 696,
+  "compatible_pairs": 36,
+  "elapsed_seconds": 0.544999,
+  "excluded_pairs": 660,
+  "golden_rows_verified": 36,
+  "information_leakage_tests_passed": true,
+  "metric_count": 39,
+  "passed": true,
+  "protocol_count": 29,
+  "simulated_replications": 8000,
+  "simulated_seeds": 8,
+  "task_count": 24,
+  "time_cap_seconds": 60
+}

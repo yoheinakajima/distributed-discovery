@@ -225,12 +225,13 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert 'max="20"' in atlas_page
     assert "Architecture index" in atlas_page
     benchmark = json.loads((output / "data/benchmark/summary.json").read_text())
-    assert benchmark["run_id"] == "20260721T230249Z_DD-010_add85590_56c61a2195"
-    assert benchmark["schema_version"] == 2
-    assert benchmark["summary"]["task_count"] == 20
-    assert benchmark["summary"]["compatible_pairs"] == 28
+    assert benchmark["run_id"] == "20260722T054447Z_DD-010_d265e480_6930915b02"
+    assert benchmark["schema_version"] == 3
+    assert benchmark["summary"]["task_count"] == 24
+    assert benchmark["summary"]["compatible_pairs"] == 36
     assert (output / "downloads/discoverybench-task-v1.schema.json").is_file()
     assert (output / "downloads/discoverybench-task-v2.schema.json").is_file()
+    assert (output / "downloads/discoverybench-task-v3.schema.json").is_file()
     experiment = json.loads((output / "data/experiment/summary.json").read_text())
     assert experiment["run_id"] == "20260721T232119Z_DD-011_121162f8_e454b06d2c"
     assert experiment["schema_version"] == 2

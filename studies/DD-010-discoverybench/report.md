@@ -23,3 +23,14 @@ explicit exclusions. The separate verifier recomputes every row, resolves its
 DD-012--DD-014 provenance, and rejects altered values, hidden target-state
 access, and a corrupted compatibility count. Claim DD-C-0069 is limited to
 these registered fixtures; v2 remains opt-in and activates no composite score.
+
+Program V4 v3 run `20260722T054447Z_DD-010_d265e480_6930915b02` preserves all
+v1 and v2 metric vectors and extends the opt-in registry to 24 tasks, 29
+protocols, and 39 metrics. Its 696-cell compatibility matrix has 36 exact
+compatible rows and 660 explicit exclusions. Eight new rows reproduce DD-016
+threshold discovery, DD-017 equilibrium selection, DD-015 dynamic attention,
+and DD-018 team mechanisms. The independent verifier reconstructs every value,
+resolves every claim/run reference, enforces prohibited capability access, and
+rejects value, compatibility, and information-leakage corruptions. The run
+completed in 0.544999 seconds under its 60-second cap. V3 remains opt-in, has no
+composite score, and does not evaluate external agents.

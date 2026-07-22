@@ -1,0 +1,24 @@
+study_id: DD-010
+schema_version: discoverybench-suite-v3
+extension: program-v4-threshold-dynamic-mechanisms
+golden_tasks: 24
+built_in_protocols: 29
+metrics: 39
+candidate_pairs: 696
+compatible_pairs: 36
+excluded_pairs: 660
+time_cap_seconds: 60
+memory_cap_mb: 1024
+certificate_format: discoverybench-exact-fraction-certificate-v3
+preserve_versions: [v1, v2]
+composite_score: null
+simulated_suite:
+  enabled: true
+  seeds: [101, 211, 307, 401, 503, 601, 701, 809]
+  replications_per_seed: 1000
+  estimator: sample-mean-discovery
+  uncertainty: normal-95-percent-interval
+external_adapters:
+  enabled: false
+  credentials: forbidden
+  execute_in_ci: false
