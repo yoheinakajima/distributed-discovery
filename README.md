@@ -14,12 +14,11 @@ Programs V1, V2, and the required Program V3 queue are complete at their
 registered bounded scopes. Program V3,
 [*The Incentive to Ignore*](docs/program-v3.md), completed DD-012 through
 DD-014, the focused paper, versioned benchmark and synthetic experiment
-extensions, and the public Labs. DD-015 remains an unexecuted optional
-registration, not a result. Program V4 is active: DD-016 Threshold Discovery
-now has a proof-audited minimum-team theorem and an independently reproduced
-exact canonical threshold census; DD-017 owns the wider equilibrium and
-coalition-stability extension and now has a bounded exact registry with separate
-proof and computation audits. The concise entry points
+extensions, and the public Labs. Program V4, *Threshold Discovery*, is complete
+at its registered bounded scope: DD-015 through DD-018, DiscoveryBench v3, the
+synthetic experiment v3 extension, the 20-page focused paper, and four
+output-connected Labs are deployed. Program V5 begins only after the separate
+documentation baseline following the merged V4 handoff. The concise entry points
 are [`docs/current-state.md`](docs/current-state.md) and
 [`docs/current-roadmap.md`](docs/current-roadmap.md). Claims remain in
 [`claims/claims.yml`](claims/claims.yml) under the

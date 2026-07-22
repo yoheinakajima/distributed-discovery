@@ -8,7 +8,7 @@ Bootstrap and execute a durable, auditable research program for Distributed Disc
 
 ## Current state
 
-### Program V4 and Information Sharing Frontier queue (active, 2026-07-22)
+### Program V4 complete; Information Sharing Frontier queue next (2026-07-22)
 
 Owner authorization on 2026-07-22 starts Program V4, *Threshold Discovery:
 Coordination, Crowding, and Minimum Viable Teams*, sequentially after the
@@ -37,12 +37,12 @@ Information Sharing Frontier moves ahead of Reliable Discovery without deleting
 or weakening any later theorem-roadmap direction.
 
 The initial local safety audit is recorded in
-`reports/program-v4/parallel-safety.md`. The checkout is clean. GitHub CLI has
-no authenticated host, so open PR/issue state, remote issue creation, merges,
-CI, Pages, and live-route checks cannot be independently performed in this
-environment; this operational limitation is preserved rather than inferred
-away. No local Program V4 or Labs V2 branch was found. The active milestone is
-V4.1, editorial synchronization; it must not create a research run.
+`reports/program-v4/parallel-safety.md`. The GitHub CLI remains unauthenticated
+and is not retried, but the connected GitHub integration and SSH transport
+support issues, pull requests, merges, CI/Pages inspection, and live-route
+verification. Program V4 is complete at its registered bounded scope. The
+documentation-only final handoff on issue #126 creates no research run or
+claim; after it merges, V5.0 is the sole next milestone.
 
 Progress:
 
@@ -56,8 +56,8 @@ Progress:
   the bounded threshold extension.
 - [x] V4.5 — Execute and verify DD-018 mechanisms.
 - [x] V4.6 — Extend DiscoveryBench and the synthetic experiment kit.
-- [ ] V4.7 — Build the focused paper and Program V4 Labs.
-- [ ] V4.8 — Run final acceptance, reconcile documentation, and hand off.
+- [x] V4.7 — Build the focused paper and Program V4 Labs.
+- [x] V4.8 — Run final acceptance, reconcile documentation, and hand off.
 - [ ] V5.0 — Merge the Program V5 documentation baseline after V4 handoff.
 - [ ] V5.1 — Register and execute the first bounded Signal Geometry and
   Action-Budget Discovery Profile study.
@@ -69,12 +69,11 @@ license, host-path, provenance, and upstream-cleanliness checks before final
 acceptance. Do not rerun a passing primary configuration only to refresh time
 or provenance.
 
-Recovery: inspect `git status --short --branch`, read this Program V4 section
-and `reports/program-v4/parallel-safety.md`, then continue the first unchecked
-item. DD-015 is complete and its immutable runs must not be rerun for
-freshness. The next milestone is DD-018 and the first file is
-`studies/DD-018-minimum-viable-team-mechanisms/plan.md` after the bounded
-issue and branch are created.
+Recovery: inspect `git status --short --branch`, read this section,
+`docs/current-roadmap.md`, and `reports/final-handoff.md`, then continue the
+first unchecked item. No Program V4 immutable primary run may be rerun for
+freshness. After the merged handoff, open the documentation-only V5.0 baseline;
+do not register the first V5 study before that baseline merges.
 
 ### Program V4 progress log
 
@@ -323,6 +322,26 @@ before its independent verifier and immutable primary run pass.
   all four Labs. A 390-by-844 browser check found one labeled control per
   select, a polite live region, one h1/main landmark, a captioned table, no
   document overflow, and no console warnings or errors.
+- 2026-07-22: Program V4 Labs PR #125 passed its branch checks and
+  squash-merged as `e12d1d2`, closing issue #124. Post-merge CI
+  `29902201507` and Pages `29902201604` passed. All four HTML and four data
+  routes returned HTTP 200 with their exact immutable run IDs, and deployed
+  browser interaction checks passed. Issue #126 and branch
+  `docs/program-v4-final-handoff` then opened as a documentation-only gate.
+- 2026-07-22: Program V4 final local acceptance passed `make bootstrap`, Ruff,
+  MyPy on 134 source files, all 212 tests, the 88-claim ledger, all 47
+  manifests, six papers totaling 89 pages, and the 68-page/22-study site. The
+  final audit accepted 23 verification and 15 corruption records, accepted the
+  valid discovery-event fixture and rejected the invalid fixture, validated 15
+  schemas, independently checked the DiscoveryBench v3 24/29/39 registry with
+  36 compatible and 660 excluded pairs and no composite score, verified all 22
+  public download sizes/checksums, found zero secret candidates and zero public
+  host-path leaks across 1,615 tracked files, confirmed five paper provenance
+  records and all 47 manifests, and found the MIT-licensed pinned upstream at
+  clean `5025cc8`. Every one of 162 deployed public files returned HTTP 200;
+  browser checks found one h1/main landmark, no overflow, substantive V4 Lab
+  controls, complete no-JavaScript tables, and clean logs. No immutable run was
+  repeated.
 
 ### Program V3 attention queue (complete, 2026-07-21)
 

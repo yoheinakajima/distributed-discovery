@@ -30,12 +30,10 @@ of the program.
 ## 2. Current program state
 
 Program V4, *Threshold Discovery: Coordination, Crowding, and Minimum Viable
-Teams*, is active. DD-016 Threshold Discovery and DD-017 Threshold Equilibrium
-Selection are complete and deployed. DD-015 Dynamic Attention and Visible
-Search is next at its original registered boundary, followed by DD-018
-minimum-viable-team mechanisms, DiscoveryBench v3, the synthetic experiment
-extension, the focused paper, public Labs, and final handoff. Program V4 is not
-complete.
+Teams*, is complete at its registered bounded scope. DD-016 through DD-018,
+DiscoveryBench v3, the synthetic experiment v3 extension, the focused paper,
+and four output-connected public Labs are deployed. Its final handoff creates
+no new research evidence.
 
 Program V5, *The Information Sharing Frontier*, follows the merged Program V4
 handoff. It asks: **When does sharing useful private information improve or
@@ -89,14 +87,14 @@ corruption-test plan; a non-overlap statement; a clear paper, benchmark,
 measurement, or infrastructure role; and an explicit stop condition. Study IDs
 are assigned only when a bounded issue and ExecPlan are created.
 
-## 4. Active Program V4 — Threshold Discovery
+## 4. Completed Program V4 — Threshold Discovery
 
-**Status: active.** Program V4 owns threshold opening, its planner frontier,
-equilibrium selection and coalition stability, registered dynamic attention,
-and minimum-viable-team implementation. It distinguishes deterministic
-threshold opening from reliability, stochastic coverage, overlap, and
-multi-target value. Those later technologies use its interfaces only after a
-stable handoff.
+**Status: complete at the registered bounded scope.** Program V4 owns threshold
+opening, its planner frontier, equilibrium selection and coalition stability,
+registered dynamic attention, and minimum-viable-team implementation. It
+distinguishes deterministic threshold opening from reliability, stochastic
+coverage, overlap, and multi-target value. Later technologies may now use its
+stable interfaces while preserving the recorded boundaries.
 
 ## 5. Program V5 dimension map
 
