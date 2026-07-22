@@ -25,7 +25,7 @@ submission, release, DOI, journal contact, or claim of peer review.
 | --- | --- | --- |
 | *Shared Discovery Paradox* | Canonical entry paper; potential near-term submission candidate | No action authorized |
 | *Common-Source Trap* | Theorem-centered working paper; potential near-term submission candidate | No action authorized |
-| *The Incentive to Ignore* | Public working paper held behind the Incremental Sharing theorem gate | Gate is editorial, not submission authority |
+| *The Incentive to Ignore* | Incremental Sharing gate passed; validated working paper and archival-paper candidate, with DD-020 cited as a companion family result | No submission action authorized; DD-020 remains primarily owned by the future Information Sharing Frontier paper |
 | *Threshold Discovery* | Public working paper held behind the Reliable Discovery theorem gate | Gate is editorial, not submission authority |
 | *Foundations* | Living-synthesis component | Working note, not a novelty owner by default |
 | *Institutions* | Living-synthesis component | Working note, not a novelty owner by default |

@@ -67,9 +67,10 @@ conjecture until proof or an exact counterexample supplies the permitted status.
 
 - **A (complete):** governance and publication architecture, issue #133 and
   PR #134.
-- **B (active, evidence complete):** DD-020 Incremental Sharing and
-  Independent Rescue; acceptance and merge remain.
-- **C:** editorial theorem gate and synthesis prospectus.
+- **B (complete):** DD-020 Incremental Sharing and Independent Rescue, issue
+  #135 and PR #136, merged and deployed as `cf7bc67e`.
+- **C (active):** editorial theorem gate and synthesis prospectus, issue #137,
+  branch `docs/incremental-sharing-editorial-gate`, and draft PR #138.
 - **D:** public DD-020 integration and output-connected Lab.
 - **Acceptance:** complete repository/paper/site/live audit and final handoff.
 
@@ -82,7 +83,7 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   routes, and factual inventories; run `gh auth status` exactly once.
 - [x] Create issue #133 and the sole active Milestone A branch.
 - [x] Complete, validate, merge, deploy, close, and synchronize Milestone A.
-- [ ] Merge, deploy, close, and synchronize the completed DD-020 study.
+- [x] Merge, deploy, close, and synchronize the completed DD-020 study.
 - [ ] Apply and merge the editorial theorem gate and synthesis prospectus.
 - [ ] Build and deploy the DD-020 public integration and Lab.
 - [ ] Run final acceptance and reconcile every required handoff document.
@@ -111,7 +112,6 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   allocate DD-020.
 - DD-020's analytic progression reached a general finite point-channel
   monotonicity proof. The uninformative boundary required a separate uniform
-  MAP-draw argument; count ranking is used only for `p>1/M`.
 - Dirty-tree preview values were recorded as diagnostics only. After full
   pre-run acceptance, clean source commit `3854fff6` produced the sole primary
   run `20260722T142551Z_DD-020_3854fff6_37c11a850a`; it passed in 2.428850
@@ -141,6 +141,18 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   once only after PR #136 was open, all 222 tests passed, source was committed,
   and the tree was clean. Promote theorem statements only after the separate
   written proof audit; retain computation as regression evidence.
+- `2026-07-22`: mark Milestone B complete only after PR #136 squash-merged as
+  `cf7bc67e`, issue #135 closed, post-merge CI `29929864642` and Pages
+  `29929864954` passed, main synchronized cleanly, and the live DD-020 study,
+  data, claims, and evidence routes returned 200. Open issue #137 only after
+  that closeout and perform no research run in the editorial milestone.
+- `2026-07-22`: pass *The Incentive to Ignore*'s Incremental Sharing gate
+  without expanding its manuscript. DD-020 is complementary rather than a
+  replacement for its strategic-attention result and is primarily owned by a
+  future Information Sharing Frontier theorem-family paper. Hold *Threshold
+  Discovery* behind one bounded Reliable Discovery theorem attempt, whose
+  registered stopping outcomes must include a theorem, sharp counterexample,
+  or bounded null/classification. Neither decision authorizes submission.
 
 ### Validation strategy
 
@@ -172,7 +184,9 @@ living-synthesis scaffold; the contextual `program.html` builder and tests; and
 `reports/governance-publication-architecture-validation.md`; DD-020 issue #135
 and PR #136; the registered study package; exact implementation and verifier;
 run `20260722T142551Z_DD-020_3854fff6_37c11a850a`; and DD-C-0092 through
-DD-C-0096.
+DD-C-0096; issue #137 and draft PR #138; two editorial gate records; the
+living-synthesis prospectus and maturity map; and the reconciled public program
+page.
 
 ### Blockers
 

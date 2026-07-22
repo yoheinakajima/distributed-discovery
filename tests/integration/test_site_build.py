@@ -44,9 +44,15 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "The Distributed Discovery program" in program
     assert "The Architecture of Distributed Discovery" in program
     assert "Incremental Sharing and Independent Rescue" in program
-    assert "planned targets are questions, not established results" in program
+    assert "DD-C-0092 through DD-C-0096" in program
+    assert "primary ownership" in program
+    assert "future Information Sharing Frontier theorem-family paper" in program
+    assert "canonical entry paper" in program
+    assert "Working notes" in program
+    assert "Reproducible studies, Labs, and DiscoveryBench" in program
+    assert "No manuscript expansion or submission action is authorized" in program
     assert "journal submission status" in program
-    assert "DD-019" in program
+    assert "DD-019" in program and "DD-020" in program
 
     research = (output / "research.html").read_text(encoding="utf-8")
     assert "DD-000" in research and "DD-008" in research

@@ -9,8 +9,10 @@ decentralized group discovery. Its public thesis is:
 The conceptual decomposition
 `value of sharing = aggregation gain - lost independent rescue value` remains
 a research guide outside a declared model. The documentation baseline itself
-registered no evidence. DD-019 has since completed the first bounded work
-package; it does not establish an incremental-sharing identity.
+registered no evidence. DD-019 completed the first bounded work package.
+DD-020 then established the registered aggregation-rescue identity and finite
+point-channel monotonicity theorem while preserving an arbitrary-channel
+counterexample. Those results do not establish a General Sharing Frontier.
 
 ## Sequential work packages
 
@@ -90,12 +92,12 @@ compatibility, and the declared symmetry/dependence class.
 8. Every material milestone updates the study status, ExecPlan, claim ledger,
    result index, and public documentation in sequence.
 
-## Next registration gate
+## Completed initial gates and next boundary
 
-DD-019 Signal Geometry and the Action-Budget Discovery Profile is complete and
-deployed with DD-C-0089 through DD-C-0091 and immutable primary run
-`20260722T084145Z_DD-019_a77bb786_04a5e9f0c5`. Inspect the live study registry
-and allocate only the next available DD ID to *Incremental Sharing and
-Independent Rescue* after its bounded model, proof progression, independent
-verifier, corruption plan, and resource audit are recorded. No later Program
-V5 study ID may be reserved in advance.
+DD-019 is complete and deployed with DD-C-0089 through DD-C-0091 and immutable
+primary run `20260722T084145Z_DD-019_a77bb786_04a5e9f0c5`. DD-020 is complete
+and deployed with DD-C-0092 through DD-C-0096 and immutable primary run
+`20260722T142551Z_DD-020_3854fff6_37c11a850a`. Its editorial gate gives primary
+ownership to a future Information Sharing Frontier theorem-family paper and
+authorizes no submission. No later Program V5 study ID may be reserved before
+its own bounded registration gate.

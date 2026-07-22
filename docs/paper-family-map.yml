@@ -19,15 +19,15 @@ families:
   - family_id: information-sharing-attention-recovery
     provisional_title: Information Sharing, Attention, and Recovery
     central_question: When does aggregation improve the map faster than common action removes independent rescue?
-    source_studies: [DD-012, DD-013, DD-014, DD-019]
-    completed_claims: [DD-C-0059, DD-C-0060, DD-C-0061, DD-C-0062, DD-C-0063, DD-C-0064, DD-C-0065, DD-C-0066, DD-C-0067, DD-C-0068, DD-C-0089, DD-C-0090, DD-C-0091]
-    open_theorem_targets: [Incremental Sharing, General Sharing Frontier, Recovery Budget]
-    manuscript_status: incentive-to-ignore-working-paper-held-at-theorem-gate
-    admission_gate: decide ownership after the Incremental Sharing theorem gate
+    source_studies: [DD-012, DD-013, DD-014, DD-019, DD-020]
+    completed_claims: [DD-C-0059, DD-C-0060, DD-C-0061, DD-C-0062, DD-C-0063, DD-C-0064, DD-C-0065, DD-C-0066, DD-C-0067, DD-C-0068, DD-C-0089, DD-C-0090, DD-C-0091, DD-C-0092, DD-C-0093, DD-C-0094, DD-C-0095, DD-C-0096]
+    open_theorem_targets: [General Sharing Frontier, Recovery Budget, coordination-free positive sharing]
+    manuscript_status: incentive-to-ignore-gate-passed-companion; information-sharing-frontier-paper-in-development
+    admission_gate: Incremental Sharing gate passed; require a General Sharing Frontier result before admitting the broader family paper
     likely_literature: [information aggregation, jury accuracy, public information, social learning, herding, list decisions, collective search]
     synthesis_chapters: [canonical-phenomena, information-sharing-frontier]
     risks_of_overlap: [canonical entry paper, foundational information comparison]
-    editorial_disposition: hold The Incentive to Ignore pending Incremental Sharing
+    editorial_disposition: Incentive to Ignore cites DD-020 as companion and may be judged independently; DD-020 has primary ownership in the future Information Sharing Frontier paper; no submission action authorized
   - family_id: source-acquisition-provenance
     provisional_title: Source Acquisition and Provenance
     central_question: How do endogenous source choice and missing dependence information change discovery?
@@ -79,8 +79,8 @@ families:
   - family_id: foundational-information-comparison
     provisional_title: Foundational Information Comparison
     central_question: What order on information structures is appropriate when value depends on a portfolio of actions?
-    source_studies: [DD-000, DD-001, DD-002, DD-019]
-    completed_claims: [DD-C-0002, DD-C-0018, DD-C-0019, DD-C-0029, DD-C-0030, DD-C-0031, DD-C-0089, DD-C-0090, DD-C-0091]
+    source_studies: [DD-000, DD-001, DD-002, DD-019, DD-020]
+    completed_claims: [DD-C-0002, DD-C-0018, DD-C-0019, DD-C-0029, DD-C-0030, DD-C-0031, DD-C-0089, DD-C-0090, DD-C-0091, DD-C-0092, DD-C-0094, DD-C-0096]
     open_theorem_targets: [Discovery Order for Information Structures, scaling laws, general theory of discovery architectures]
     manuscript_status: foundations-and-north-star-program
     admission_gate: demonstrate decentralized portfolio content beyond classical centralized Blackwell comparison

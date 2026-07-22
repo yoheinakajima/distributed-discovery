@@ -25,7 +25,7 @@
 | DD-017 | Threshold Equilibrium Selection | complete bounded study | Preserve DD-C-0075 through DD-C-0078, the immutable registry, and the distinct coalition concepts |
 | DD-018 | Minimum Viable Team Mechanisms | complete bounded study | Preserve DD-C-0083 through DD-C-0086, the immutable run, and authority/incentive/coalition boundaries |
 | DD-019 | Signal Geometry and the Action-Budget Discovery Profile | complete bounded study; deployed through PR #131 and closeout PR #132 | Preserve DD-C-0089 through DD-C-0091, the immutable run, and private/planner/scalar boundaries |
-| DD-020 | Incremental Sharing and Independent Rescue | complete bounded study; merge pending on PR #136 | Preserve DD-C-0092 through DD-C-0096, the immutable run, theorem scope, and arbitrary-channel counterexample |
+| DD-020 | Incremental Sharing and Independent Rescue | complete bounded study; deployed through PR #136 | Preserve DD-C-0092 through DD-C-0096, the immutable run, theorem scope, and arbitrary-channel counterexample |
 
 Each executed directory contains its question, model, plan, claims view, status,
 results index, and report. Program V3's completed sequence is governed by

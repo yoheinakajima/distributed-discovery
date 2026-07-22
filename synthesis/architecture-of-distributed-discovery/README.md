@@ -16,3 +16,5 @@ claim IDs, and immutable evidence rather than silently re-owning their claims.
 Provisional parts are Foundations; Canonical phenomena; Institutions and
 action technologies; North-Star theory; and Open problems and measurement.
 See the machine-readable chapter, claim, and source maps before adding prose.
+The `maturity-map.yml` records theorem gates and evidence maturity; the
+`prospectus.md` is the current long-form editorial plan, not a validated paper.

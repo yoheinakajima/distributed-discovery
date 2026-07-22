@@ -8,9 +8,10 @@ channels have different incremental-sharing profiles.
 
 ## Current state
 
-Milestone A merged as `dc32ff17`; issue #135 and branch
-`research/dd020-incremental-sharing` are active. The live registry ends at
-DD-019, so DD-020 is allocated. No run, claim, or numerical result exists.
+Milestone A merged as `dc32ff17`. DD-020 merged through PR #136 as `cf7bc67e`;
+post-merge CI `29929864642`, Pages `29929864954`, and the live study, claim,
+evidence, and data routes pass. The sole immutable run and five audited claims
+remain authoritative and must not be rerun.
 
 ## Scope
 
@@ -65,7 +66,7 @@ one-hit actions; binding duplicate block action; named direct-private baseline.
 - [x] Execute the primary configuration once from the clean frozen commit.
 - [x] Audit claims and integrate evidence/public data.
 - [x] Pass full local acceptance.
-- [ ] Merge, deploy, close, synchronize, and verify live routes.
+- [x] Merge, deploy, close, synchronize, and verify live routes.
 
 ## Discoveries and surprises
 
@@ -107,6 +108,9 @@ failure; the complete gate was rerun from the beginning and passed.
   the Three Results full-ledger provenance checksum; its six owned claims and
   content remain unchanged, and all 14 regenerated pages passed Poppler visual
   review. The DD-020 SVG passed a separate render review after label cleanup.
+- `2026-07-22`: PR #136 squash-merged as `cf7bc67e`; issue #135 closed;
+  post-merge CI `29929864642` and Pages `29929864954` passed; main synchronized
+  cleanly; and the live study, data, claims, and evidence routes returned 200.
 
 ## Validation strategy
 
@@ -133,8 +137,7 @@ run, report, claim audits, public metadata, CSV, and SVG.
 ## Blockers
 
 No scientific blocker. Settings issue #32 is unrelated. The primary run is
-complete and must not be rerun. Only acceptance, merge, deployment, issue
-closure, and main synchronization remain for this milestone.
+complete and must not be rerun. Public integration is a separate milestone.
 
 ## Recovery and restart instructions
 
@@ -144,5 +147,6 @@ from a dirty tree or rerun a passing primary configuration for freshness.
 
 ## Outcome and retrospective
 
-Pending. Preserve a proof, counterexample, bounded null, or stopping boundary
-honestly; do not promote a finite-grid failure search to a theorem.
+Complete and deployed. The exact identity, finite point-channel theorem,
+bounded census, and arbitrary-channel counterexample retain separate evidence
+status and scope. No General Sharing Frontier result is claimed.

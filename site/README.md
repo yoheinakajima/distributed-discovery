@@ -22,11 +22,12 @@ exact byte-length/SHA-256 coverage for every generated download. The public
 surface contains no submission endpoint, account, cookie, analytics, or
 server-side user data.
 
-The pre-governance generated surface contains 69 HTML routes, 67 public data
-files, 16 Labs, and 22 checksum-covered downloads. The contextual
-`program.html` route adds one HTML page without changing the five-item primary
-navigation or any scientific inventory. Exact static-complete Labs never call
-a remote service or collect input.
+The current generated surface contains 71 HTML routes for 24 studies, 68
+public data files, 16 Labs, and 22 checksum-covered downloads. The contextual
+`program.html` route explains the output hierarchy and DD-020 editorial
+ownership without changing the five-item primary navigation or scientific
+inventory. Exact static-complete Labs never call a remote service or collect
+input.
 
 GitHub Actions builds the same ignored `site/dist` artifact from `main` and
 deploys it to <https://yoheinakajima.github.io/distributed-discovery/>. Never
