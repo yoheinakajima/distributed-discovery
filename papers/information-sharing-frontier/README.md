@@ -1,15 +1,17 @@
 # When Does Information Sharing Improve Decentralized Discovery?
 
-This directory contains planning artifacts for an admitted archival
-theorem-paper candidate. It is not yet a manuscript, working paper,
-submission, release, DOI-bearing object, or claim of peer review.
+Working paper: *When Does Information Sharing Improve Decentralized Discovery?
+Aggregation, Independent Rescue, and Equilibrium Selection*.
 
-- Paper issue: #153
-- ExecPlan: `plans/INFORMATION_SHARING_FRONTIER_PAPER.md`
-- Gate decision: `reports/editorial/information-sharing-frontier-paper-admission.md`
-- Proposed structure: `theorem-section-map.md`
-- Claim ownership: `ownership.yml`
+Build with `make information-sharing-frontier`. Validate the independently
+implemented evidence and corruption checks with
+`./papers/information-sharing-frontier/validate.sh`. The builder validates the
+immutable DD-019 through DD-022 source outputs, generates eight figures, eight
+tables, and exact figure data, resolves all 22 claim records and citations,
+compiles twice under a fixed source epoch, and requires a byte-reproducible
+26–40 page PDF.
 
-The title-level result is DD-022's exact selected-equilibrium sharing interval.
-The selection qualifier and DD-C-0109 every-equilibrium negative result are
-mandatory, as is DD-021's centralized-authority label.
+This is a working paper with no DOI. It is not submitted or peer reviewed,
+makes no verified novelty claim, reports no human or real data, and does not
+create a study, claim, or research run. The positive DD-022 result is
+selection-dependent and is not an every-equilibrium result.

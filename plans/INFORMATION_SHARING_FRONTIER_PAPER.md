@@ -121,6 +121,12 @@ attention theorem owned by *The Incentive to Ignore*.
   Use the existing `docs/research-governance.md`, repository contract, paper
   build conventions, publication metadata, and site relationship registry as
   the operative architecture, and preserve this discrepancy in the audit.
+- `2026-07-22T22:34:00Z`: the refreshed primary-source search confirms that
+  broad claims about aggregation, public information, congestion, signaling,
+  social learning, correlated sources, posterior lists, and equilibrium
+  selection are already owned by established literatures. The paper's eligible
+  contribution remains their exact composition under a discovery objective;
+  no priority or universal-novelty language is permitted.
 
 ## Decision log
 
@@ -132,6 +138,11 @@ attention theorem owned by *The Incentive to Ignore*.
   DOI, archival-release, novelty, peer-review, or new-research authority.
 - `2026-07-22T22:27:01Z`: do not replace the absent architecture document.
   Follow the extant governance and implementation sources and record the gap.
+- `2026-07-22T22:34:00Z`: freeze `abstract.tex` before manuscript expansion.
+  It states the analytic/exact-computational evidence class, centralized
+  benchmark, selected positive interval, every-equilibrium failure,
+  ownership-aware disagreement split, latent-branch limitation, and no-data
+  boundary.
 
 ## Evidence inputs that must not change
 

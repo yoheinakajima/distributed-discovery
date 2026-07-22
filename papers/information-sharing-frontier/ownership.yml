@@ -1,7 +1,7 @@
 schema_version: 1
 paper:
   title: When Does Information Sharing Improve Decentralized Discovery?
-  status: admitted-candidate-planning-only
+  status: working-paper
   issue: 153
   primary_family: information-sharing-attention-recovery
 studies:
@@ -31,4 +31,4 @@ companions:
 boundaries:
   - DD-022 title result is selected-equilibrium, not every-equilibrium.
   - DD-021 full-capacity recovery is centralized, not an implementation theorem.
-  - Admission authorizes no manuscript, submission, release, DOI, or novelty claim.
+  - The working paper is not submitted, peer reviewed, DOI-bearing, or a verified novelty claim.
