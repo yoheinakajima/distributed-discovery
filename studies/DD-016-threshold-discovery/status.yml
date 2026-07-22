@@ -1,0 +1,5 @@
+study_id: DD-016
+status: complete-bounded-study
+evidence_status: two-verified-proof-claims-and-two-independently-reproduced-exact-censuses
+next_action: complete PR 102 CI, merge, post-merge CI, Pages, and live-route validation; then begin DD-017
+updated_utc: 2026-07-22T02:20:00Z

@@ -70,3 +70,15 @@
   observability, subsidy, and enforcement assumptions. Coincident rules in the
   atomic model remain distinct institutional descriptions, not distinct
   numerical mechanisms.
+
+## DD-016 controls
+
+- Threshold public goods, volunteer dilemmas, congestion, club formation,
+  minimum winning coalitions, strong equilibrium, coalition-proof equilibrium,
+  and stochastic selection all have direct prior art.
+- Minimum viable teams is model-specific explanatory language, not a novelty
+  claim or a universal optimum outside deterministic atomic threshold opening.
+- Necessary overlap creates viability; only occupancy above the declared
+  threshold can be called excess overlap in this study.
+- Every equilibrium-dependent result names its selection rule. The tied-mode
+  symmetric rule is not the full equilibrium correspondence.

@@ -1,0 +1,322 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "agents": 2,
+      "agrees": true,
+      "probability": "0",
+      "tau_one_closed": "1",
+      "tau_one_sum": "1",
+      "tau_two_closed": "0",
+      "tau_two_sum": "0"
+    },
+    {
+      "agents": 2,
+      "agrees": true,
+      "probability": "1/8",
+      "tau_one_closed": "15/16",
+      "tau_one_sum": "15/16",
+      "tau_two_closed": "1/16",
+      "tau_two_sum": "1/16"
+    },
+    {
+      "agents": 2,
+      "agrees": true,
+      "probability": "1/3",
+      "tau_one_closed": "5/6",
+      "tau_one_sum": "5/6",
+      "tau_two_closed": "1/6",
+      "tau_two_sum": "1/6"
+    },
+    {
+      "agents": 2,
+      "agrees": true,
+      "probability": "1/2",
+      "tau_one_closed": "3/4",
+      "tau_one_sum": "3/4",
+      "tau_two_closed": "1/4",
+      "tau_two_sum": "1/4"
+    },
+    {
+      "agents": 2,
+      "agrees": true,
+      "probability": "1",
+      "tau_one_closed": "1/2",
+      "tau_one_sum": "1/2",
+      "tau_two_closed": "1/2",
+      "tau_two_sum": "1/2"
+    },
+    {
+      "agents": 3,
+      "agrees": true,
+      "probability": "0",
+      "tau_one_closed": "1",
+      "tau_one_sum": "1",
+      "tau_two_closed": "0",
+      "tau_two_sum": "0"
+    },
+    {
+      "agents": 3,
+      "agrees": true,
+      "probability": "1/8",
+      "tau_one_closed": "169/192",
+      "tau_one_sum": "169/192",
+      "tau_two_closed": "11/96",
+      "tau_two_sum": "11/96"
+    },
+    {
+      "agents": 3,
+      "agrees": true,
+      "probability": "1/3",
+      "tau_one_closed": "19/27",
+      "tau_one_sum": "19/27",
+      "tau_two_closed": "7/27",
+      "tau_two_sum": "7/27"
+    },
+    {
+      "agents": 3,
+      "agrees": true,
+      "probability": "1/2",
+      "tau_one_closed": "7/12",
+      "tau_one_sum": "7/12",
+      "tau_two_closed": "1/3",
+      "tau_two_sum": "1/3"
+    },
+    {
+      "agents": 3,
+      "agrees": true,
+      "probability": "1",
+      "tau_one_closed": "1/3",
+      "tau_one_sum": "1/3",
+      "tau_two_closed": "1/3",
+      "tau_two_sum": "1/3"
+    },
+    {
+      "agents": 4,
+      "agrees": true,
+      "probability": "0",
+      "tau_one_closed": "1",
+      "tau_one_sum": "1",
+      "tau_two_closed": "0",
+      "tau_two_sum": "0"
+    },
+    {
+      "agents": 4,
+      "agrees": true,
+      "probability": "1/8",
+      "tau_one_closed": "1695/2048",
+      "tau_one_sum": "1695/2048",
+      "tau_two_closed": "323/2048",
+      "tau_two_sum": "323/2048"
+    },
+    {
+      "agents": 4,
+      "agrees": true,
+      "probability": "1/3",
+      "tau_one_closed": "65/108",
+      "tau_one_sum": "65/108",
+      "tau_two_closed": "11/36",
+      "tau_two_sum": "11/36"
+    },
+    {
+      "agents": 4,
+      "agrees": true,
+      "probability": "1/2",
+      "tau_one_closed": "15/32",
+      "tau_one_sum": "15/32",
+      "tau_two_closed": "11/32",
+      "tau_two_sum": "11/32"
+    },
+    {
+      "agents": 4,
+      "agrees": true,
+      "probability": "1",
+      "tau_one_closed": "1/4",
+      "tau_one_sum": "1/4",
+      "tau_two_closed": "1/4",
+      "tau_two_sum": "1/4"
+    },
+    {
+      "agents": 5,
+      "agrees": true,
+      "probability": "0",
+      "tau_one_closed": "1",
+      "tau_one_sum": "1",
+      "tau_two_closed": "0",
+      "tau_two_sum": "0"
+    },
+    {
+      "agents": 5,
+      "agrees": true,
+      "probability": "1/8",
+      "tau_one_closed": "15961/20480",
+      "tau_one_sum": "15961/20480",
+      "tau_two_closed": "989/5120",
+      "tau_two_sum": "989/5120"
+    },
+    {
+      "agents": 5,
+      "agrees": true,
+      "probability": "1/3",
+      "tau_one_closed": "211/405",
+      "tau_one_sum": "211/405",
+      "tau_two_closed": "131/405",
+      "tau_two_sum": "131/405"
+    },
+    {
+      "agents": 5,
+      "agrees": true,
+      "probability": "1/2",
+      "tau_one_closed": "31/80",
+      "tau_one_sum": "31/80",
+      "tau_two_closed": "13/40",
+      "tau_two_sum": "13/40"
+    },
+    {
+      "agents": 5,
+      "agrees": true,
+      "probability": "1",
+      "tau_one_closed": "1/5",
+      "tau_one_sum": "1/5",
+      "tau_two_closed": "1/5",
+      "tau_two_sum": "1/5"
+    },
+    {
+      "agents": 6,
+      "agrees": true,
+      "probability": "0",
+      "tau_one_closed": "1",
+      "tau_one_sum": "1",
+      "tau_two_closed": "0",
+      "tau_two_sum": "0"
+    },
+    {
+      "agents": 6,
+      "agrees": true,
+      "probability": "1/8",
+      "tau_one_closed": "48165/65536",
+      "tau_one_sum": "48165/65536",
+      "tau_two_closed": "14551/65536",
+      "tau_two_sum": "14551/65536"
+    },
+    {
+      "agents": 6,
+      "agrees": true,
+      "probability": "1/3",
+      "tau_one_closed": "665/1458",
+      "tau_one_sum": "665/1458",
+      "tau_two_closed": "473/1458",
+      "tau_two_sum": "473/1458"
+    },
+    {
+      "agents": 6,
+      "agrees": true,
+      "probability": "1/2",
+      "tau_one_closed": "21/64",
+      "tau_one_sum": "21/64",
+      "tau_two_closed": "19/64",
+      "tau_two_sum": "19/64"
+    },
+    {
+      "agents": 6,
+      "agrees": true,
+      "probability": "1",
+      "tau_one_closed": "1/6",
+      "tau_one_sum": "1/6",
+      "tau_two_closed": "1/6",
+      "tau_two_sum": "1/6"
+    },
+    {
+      "agents": 7,
+      "agrees": true,
+      "probability": "0",
+      "tau_one_closed": "1",
+      "tau_one_sum": "1",
+      "tau_two_closed": "0",
+      "tau_two_sum": "0"
+    },
+    {
+      "agents": 7,
+      "agrees": true,
+      "probability": "1/8",
+      "tau_one_closed": "1273609/1835008",
+      "tau_one_sum": "1273609/1835008",
+      "tau_two_closed": "225033/917504",
+      "tau_two_sum": "225033/917504"
+    },
+    {
+      "agents": 7,
+      "agrees": true,
+      "probability": "1/3",
+      "tau_one_closed": "2059/5103",
+      "tau_one_sum": "2059/5103",
+      "tau_two_closed": "179/567",
+      "tau_two_sum": "179/567"
+    },
+    {
+      "agents": 7,
+      "agrees": true,
+      "probability": "1/2",
+      "tau_one_closed": "127/448",
+      "tau_one_sum": "127/448",
+      "tau_two_closed": "15/56",
+      "tau_two_sum": "15/56"
+    },
+    {
+      "agents": 7,
+      "agrees": true,
+      "probability": "1",
+      "tau_one_closed": "1/7",
+      "tau_one_sum": "1/7",
+      "tau_two_closed": "1/7",
+      "tau_two_sum": "1/7"
+    },
+    {
+      "agents": 8,
+      "agrees": true,
+      "probability": "0",
+      "tau_one_closed": "1",
+      "tau_one_sum": "1",
+      "tau_two_closed": "0",
+      "tau_two_sum": "0"
+    },
+    {
+      "agents": 8,
+      "agrees": true,
+      "probability": "1/8",
+      "tau_one_closed": "11012415/16777216",
+      "tau_one_sum": "11012415/16777216",
+      "tau_two_closed": "4424071/16777216",
+      "tau_two_sum": "4424071/16777216"
+    },
+    {
+      "agents": 8,
+      "agrees": true,
+      "probability": "1/3",
+      "tau_one_closed": "6305/17496",
+      "tau_one_sum": "6305/17496",
+      "tau_two_closed": "5281/17496",
+      "tau_two_sum": "5281/17496"
+    },
+    {
+      "agents": 8,
+      "agrees": true,
+      "probability": "1/2",
+      "tau_one_closed": "255/1024",
+      "tau_one_sum": "255/1024",
+      "tau_two_closed": "247/1024",
+      "tau_two_sum": "247/1024"
+    },
+    {
+      "agents": 8,
+      "agrees": true,
+      "probability": "1",
+      "tau_one_closed": "1/8",
+      "tau_one_sum": "1/8",
+      "tau_two_closed": "1/8",
+      "tau_two_sum": "1/8"
+    }
+  ],
+  "tau_one_zero_limit": "1",
+  "tau_two_zero_limit": "0"
+}

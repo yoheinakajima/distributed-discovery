@@ -33,6 +33,16 @@ Searches prioritize publisher, society, institutional repository, DOI, and autho
 
 No copyrighted PDF is stored in this repository.
 
+## DD-016 threshold-discovery pass (2026-07-22 UTC)
+
+This focused review retained primary or stable records for threshold public
+goods, volunteer dilemmas, congestion games, club formation, hedonic coalition
+stability, strong and coalition-proof equilibrium, and mutation-based
+selection. The reviewed objects all predate DD-016. The study-specific evidence
+map and stable records are in
+studies/DD-016-threshold-discovery/literature.md. This is not a systematic
+review or novelty certificate.
+
 ## DD-011 focused experimental-design pass (2026-07-21 UTC)
 
 This targeted orientation search used publisher, society, PubMed, institutional,

@@ -1,6 +1,6 @@
 # Current program state
 
-_Reconciled 2026-07-21 at the Program V3 final-acceptance gate._
+_Reconciled 2026-07-22 at the DD-016 evidence-acceptance gate._
 
 Programs V1, V2, and the required Program V3 queue are complete at their
 registered bounded scopes. Program V3, *The Incentive to Ignore*, completed
@@ -9,22 +9,43 @@ extensions to DiscoveryBench and the synthetic experiment kit, and the public
 Attention/Audience/Conditional Labs. DD-015 remains an unexecuted optional
 registration; registration is not a result.
 
+Program V4 is active. DD-016 proves the deterministic minimum-viable-team
+planner value, derives the threshold split-prize payoff identities, and records
+an independently reproduced exact threshold and occupancy census. DD-017 will
+address the wider equilibrium correspondence and coalition stability; no
+selected DD-016 rule is identified with that unresolved correspondence.
+
 The repository is public and project-authored content is MIT-licensed. The
 canonical Shared Discovery Paradox repository remains pinned at
 `5025cc8e8f2f8ca015dff2066f08f81ad5715a51`, separate, clean, and read-only.
 
 | Measure | Current value |
 | --- | ---: |
-| Ledger claims | 70 |
-| Passing immutable runs | 37 of 40 manifests |
-| Registered studies | 19 |
-| Python source files | 113 |
-| Public HTML routes | 59 |
-| Public data files | 59 |
+| Ledger claims | 74 |
+| Passing immutable runs | 38 of 41 manifests |
+| Registered studies | 20 |
+| Python source files | 117 |
+| Public HTML routes | 60 |
+| Public data files | 65 |
 | Laboratory routes | 12 |
 | Validated project papers | 5 |
 | Checksum-registered downloads | 19 |
-| Test suite | 183 collected tests |
+| Test suite | 189 collected tests |
+
+## Program V4 exact result
+
+DD-016's deterministic planner opens the top
+`min(floor(N/tau),M)` posterior candidates with minimum-size teams. In the
+canonical tau-two fixture, exact discovery is
+`37916217637/98876953125` for a common deterministic mode,
+`275661897594857/576650390625000` under the registered independent tied-mode
+selection, `194017/390625` under private clue-following, and
+`223779310319051/333709716796875` for the paired planner. Both exact state
+representations agree across all eight threshold rows.
+
+Primary run:
+
+- DD-016: `20260722T021526Z_DD-016_00271ff8_123b2809e3`, DD-C-0071–0074.
 
 ## Program V3 exact results
 

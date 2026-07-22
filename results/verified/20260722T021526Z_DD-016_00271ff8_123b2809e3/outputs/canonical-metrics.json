@@ -1,0 +1,18 @@
+{
+  "common_deterministic_mode": "37916217637/98876953125",
+  "expected_distinct_candidates": "222783285994256/129746337890625",
+  "expected_largest_crowd": "21276151146203888/3243658447265625",
+  "expected_viable_candidates": "4605284003019928/3243658447265625",
+  "histogram_orbits": 67,
+  "labeled_count_vectors": 490314,
+  "method_rows_equal": true,
+  "pair_collision": "3368373871489/4449462890625",
+  "paired_planner": "223779310319051/333709716796875",
+  "private_hard_discovery": "194017/390625",
+  "signal_classes": 30,
+  "target_opens": "275661897594857/576650390625000",
+  "target_selected_at_least_one": "59256154944509/115330078125000",
+  "target_selected_exactly_one": "2577359640961/72081298828125",
+  "threshold_rows": 8,
+  "tied_mode_mixed": "275661897594857/576650390625000"
+}

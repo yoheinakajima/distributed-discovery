@@ -87,6 +87,31 @@ Active milestone: V4.2 DD-016 registration, literature review, model/proof,
 and bounded exact implementation. No DD-016 numerical claim may be promoted
 before its independent verifier and immutable primary run pass.
 
+- 2026-07-22: editorial PR #100 passed CI and squash-merged as eb639f85.
+  Main and the DD-016 branch were synchronized to the merge. DD-016 issue #101
+  now records the bounded scope. The focused literature pass, qualified planner
+  proof, strategic payoff derivation, registered 490,314-vector configuration,
+  labeled evaluator, 67-orbit histogram evaluator, exact occupancy accounting,
+  threshold phase diagram, verifier, four corruption gates, and six targeted
+  tests are implemented. A preliminary dirty-tree check found exact agreement
+  across 30 signal classes and recovered all candidate canonical regressions;
+  it is explicitly not research evidence. Make verify passes 189 tests and
+  make site passes 60 routes and 20 studies. The only active milestone is the
+  clean source commit and single immutable DD-016 primary run.
+- 2026-07-22: the frozen DD-016 source was committed as 00271ff8 and draft PR
+  #102 opened. The one registered primary execution created immutable run
+  `20260722T021526Z_DD-016_00271ff8_123b2809e3` in 11.998247 seconds from a
+  clean tree. Its 490,314-vector and 67-orbit methods normalize and agree on all
+  eight threshold rows; 63 planner audits, 35 payoff audits, and four corruption
+  gates pass. Separate claim audits promote DD-C-0071 and DD-C-0072 to verified
+  and DD-C-0073 and DD-C-0074 to independently reproduced. The active V4.2
+  gate is repository/site acceptance, PR CI, merge, post-merge CI, Pages, and
+  the live study route; the primary run must not be repeated.
+- 2026-07-22: DD-016 local acceptance passed `make bootstrap`, Ruff, MyPy on
+  117 source files, all 189 tests, the 74-claim ledger, all 41 manifests, and
+  `make site` with 60 pages and 20 studies. Draft PR #102 can advance after the
+  evidence commit is pushed and its GitHub checks pass.
+
 ### Program V3 attention queue (complete, 2026-07-21)
 
 Owner authorization now requires sequential execution of DD-012 Incentive to

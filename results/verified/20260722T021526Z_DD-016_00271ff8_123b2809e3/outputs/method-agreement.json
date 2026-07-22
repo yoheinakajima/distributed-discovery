@@ -1,0 +1,15 @@
+{
+  "method_a": {
+    "method": "labeled-count-vectors",
+    "probability_mass": "1",
+    "signal_classes": 30,
+    "state_count": 490314
+  },
+  "method_b": {
+    "method": "false-label-occupancy-histograms",
+    "probability_mass": "1",
+    "signal_classes": 30,
+    "state_count": 67
+  },
+  "rows_equal": true
+}

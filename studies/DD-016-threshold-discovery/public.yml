@@ -1,0 +1,24 @@
+study_id: DD-016
+title: Threshold Discovery
+slug: dd-016
+phase: complete-bounded-study
+summary: Verified minimum-viable-team theorem and independently reproduced exact threshold and occupancy census.
+public_artifacts:
+  - path: studies/DD-016-threshold-discovery/model.md
+    description: Frozen threshold-discovery model and protocol boundaries
+  - path: studies/DD-016-threshold-discovery/plan.md
+    description: Living execution and validation plan
+  - path: studies/DD-016-threshold-discovery/proof.md
+    description: Deterministic planner and strategic-payoff derivations
+  - path: studies/DD-016-threshold-discovery/literature.md
+    description: Focused adjacent-literature and novelty-risk review
+  - path: studies/DD-016-threshold-discovery/report.md
+    description: Exact bounded results, phase diagram, and verification report
+  - path: results/verified/20260722T021526Z_DD-016_00271ff8_123b2809e3/outputs/canonical-metrics.json
+    description: Public-safe exact canonical threshold metrics
+  - path: results/verified/20260722T021526Z_DD-016_00271ff8_123b2809e3/outputs/threshold-phase-diagram.json
+    description: Public-safe exact tau-one-through-eight phase data
+  - path: results/verified/20260722T021526Z_DD-016_00271ff8_123b2809e3/outputs/method-agreement.json
+    description: Exact two-method state-count and agreement certificate
+  - path: results/verified/20260722T021526Z_DD-016_00271ff8_123b2809e3/outputs/corruption-tests.json
+    description: Four registered corruption rejections

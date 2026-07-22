@@ -1,0 +1,22 @@
+schema_version: dd016-threshold-discovery-v1
+study_id: DD-016
+candidates: 16
+agents: 8
+clue_accuracy: "1/5"
+wrong_clue_probability: "4/75"
+thresholds: [1, 2, 3, 4, 5, 6, 7, 8]
+selected_tied_mode_rule: independent-uniform-over-posterior-modes
+common_mode_tie_rule: fixed-label-equivalent-to-uniform-ex-ante
+planner_rule: minimum-teams-on-posterior-top-L
+blind_rule: distinct-minimum-teams
+labeled_count_vectors: 490314
+runtime_estimate_seconds: 90
+time_cap_seconds: 600
+memory_estimate_mb: 128
+memory_cap_mb: 2048
+certificate_format: exact-threshold-canonical-v1
+checkpoint_behavior: no-overwrite-preserve-failed-run-if-created
+valid_partial_outcomes: none-for-claim-promotion
+random_seeds:
+  algorithm: []
+  model: null

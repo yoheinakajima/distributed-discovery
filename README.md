@@ -15,7 +15,10 @@ registered bounded scopes. Program V3,
 [*The Incentive to Ignore*](docs/program-v3.md), completed DD-012 through
 DD-014, the focused paper, versioned benchmark and synthetic experiment
 extensions, and the public Labs. DD-015 remains an unexecuted optional
-registration, not a result. The concise entry points
+registration, not a result. Program V4 is active: DD-016 Threshold Discovery
+now has a proof-audited minimum-team theorem and an independently reproduced
+exact canonical threshold census; DD-017 owns the wider equilibrium and
+coalition-stability extension. The concise entry points
 are [`docs/current-state.md`](docs/current-state.md) and
 [`docs/current-roadmap.md`](docs/current-roadmap.md). Claims remain in
 [`claims/claims.yml`](claims/claims.yml) under the
@@ -69,6 +72,7 @@ make dd011-attention         # run the versioned synthetic attention design exte
 make dd012-attention         # run the exact access-gated attention census
 make dd013-audience          # run the binding/voluntary audience census
 make dd014-conditional       # run the conditional-policy census and raw audit
+make dd016-threshold         # run the registered exact threshold-discovery census
 make papers               # build all paper artifacts
 make site                 # build the public companion site locally
 make all                  # verify, reproduce canonical baseline, build papers and site

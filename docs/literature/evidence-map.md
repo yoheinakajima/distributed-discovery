@@ -97,3 +97,15 @@ interior source count.
 The term “incentive to ignore” is project shorthand for an ex-ante role-choice
 margin. It is not evidence of behavioral avoidance and is not a claim that
 ignorance is generally beneficial.
+
+## DD-016 threshold-discovery map
+
+| DD-016 object | Established adjacent literature | Evidence-specific boundary |
+|---|---|---|
+| Minimum team threshold | Discrete threshold public goods and volunteer dilemmas | Multiple posterior-ranked search candidates and atomic target discovery |
+| Crowding above threshold | Congestion and club-size theory | Equal prize dilution and zero extra social discovery above threshold |
+| Coalition stability | Strong, coalition-proof, and hedonic stability concepts | Deferred to DD-017; a planner allocation is not labeled stable |
+| Selected tied-mode mixing | Equilibrium selection and stochastic convention literature | One declared independent symmetric rule, not uniqueness or behavioral evidence |
+
+The minimum-team theorem is an exact specialization of the declared coverage
+technology, not a general theory of team production or coalition formation.

@@ -1,0 +1,6 @@
+{
+  "altered_mode_count_rejected": true,
+  "altered_occupancy_probability_rejected": true,
+  "altered_planner_mass_rejected": true,
+  "altered_posterior_weight_rejected": true
+}
