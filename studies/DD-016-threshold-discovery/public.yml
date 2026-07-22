@@ -1,0 +1,14 @@
+study_id: DD-016
+title: Threshold Discovery
+slug: dd-016
+phase: active-extension
+summary: Registered exact study of threshold opening, minimum viable teams, and selected tied-mode occupancy.
+public_artifacts:
+  - path: studies/DD-016-threshold-discovery/model.md
+    description: Frozen threshold-discovery model and protocol boundaries
+  - path: studies/DD-016-threshold-discovery/plan.md
+    description: Living execution and validation plan
+  - path: studies/DD-016-threshold-discovery/proof.md
+    description: Deterministic planner and strategic-payoff derivations
+  - path: studies/DD-016-threshold-discovery/literature.md
+    description: Focused adjacent-literature and novelty-risk review

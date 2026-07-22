@@ -87,6 +87,18 @@ Active milestone: V4.2 DD-016 registration, literature review, model/proof,
 and bounded exact implementation. No DD-016 numerical claim may be promoted
 before its independent verifier and immutable primary run pass.
 
+- 2026-07-22: editorial PR #100 passed CI and squash-merged as eb639f85.
+  Main and the DD-016 branch were synchronized to the merge. DD-016 issue #101
+  now records the bounded scope. The focused literature pass, qualified planner
+  proof, strategic payoff derivation, registered 490,314-vector configuration,
+  labeled evaluator, 67-orbit histogram evaluator, exact occupancy accounting,
+  threshold phase diagram, verifier, four corruption gates, and six targeted
+  tests are implemented. A preliminary dirty-tree check found exact agreement
+  across 30 signal classes and recovered all candidate canonical regressions;
+  it is explicitly not research evidence. Make verify passes 189 tests and
+  make site passes 60 routes and 20 studies. The only active milestone is the
+  clean source commit and single immutable DD-016 primary run.
+
 ### Program V3 attention queue (complete, 2026-07-21)
 
 Owner authorization now requires sequential execution of DD-012 Incentive to

@@ -1,0 +1,5 @@
+study_id: DD-016
+status: active-implementation-validated
+evidence_status: proof-and-two-exact-methods-pre-run
+next_action: commit the passing frozen source and execute one clean immutable primary run
+updated_utc: 2026-07-22T02:00:00Z
