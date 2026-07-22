@@ -1470,3 +1470,87 @@ claims:
     first_added: "2026-07-21"
     last_checked: "2026-07-21"
     notes: In the rational-attention scenario at N=960, twelve of fourteen assumed effects reach estimated power 0.80; H13 and H14 remain below threshold at 0.764 and 0.632. All failures are retained. No participants were recruited, no human data were collected, and no experiment was conducted.
+  - id: DD-C-0071
+    study_id: DD-016
+    short_name: minimum-viable-team-planner-theorem
+    statement: In the frozen atomic threshold-opening model, a deterministic planner's optimal discovery value is the sum of the largest min(floor(N/tau),M) posterior masses, and an optimum exists that assigns exactly tau agents to each selected candidate before placing leftovers.
+    scope: Any finite M, positive N, threshold tau in {1,...,N}, one hidden atomic target, one action per agent, deterministic execution, zero value above threshold, no replication value, and a normalized posterior; this is an existence and value theorem, not uniqueness, strategic implementation, or an equilibrium statement.
+    claim_type: theorem
+    status: verified
+    source_type: human-readable-capacity-proof-with-exhaustive-small-allocation-audit
+    source_reference: results/verified/20260722T021526Z_DD-016_00271ff8_123b2809e3/outputs/planner-audit.json
+    proof_path: studies/DD-016-threshold-discovery/proof.md
+    implementation_paths: [src/distributed_discovery/threshold_discovery/model.py, src/distributed_discovery/threshold_discovery/verification.py]
+    run_ids: [20260722T021526Z_DD-016_00271ff8_123b2809e3]
+    test_paths: [tests/unit/test_threshold_discovery.py]
+    exactness_basis: The proof bounds the number of opened candidates by floor(N/tau), applies posterior ranking, and constructs a minimum-team allocation attaining the bound; 63 exact exhaustive small-allocation checks cover three posterior fixtures, N=1 through 6, and every admissible threshold.
+    rounding_rule: exact fractions; no decimal approximation is authoritative
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: The min with M is necessary when team capacity exceeds the candidate count. Posterior ties and leftover placement can create multiple optima.
+  - id: DD-C-0072
+    study_id: DD-016
+    short_name: threshold-split-prize-payoff-identities
+    statement: If every other agent independently selects candidate j with probability x_j, equal splitting gives payoff V*pi_j*E[1{K_j>=tau-1}/(K_j+1)]; at tau=1 its share factor is [1-(1-x_j)^N]/(N*x_j) with zero limit one, and at tau=2 it subtracts (1-x_j)^(N-1) and has zero limit zero.
+    scope: The frozen one-candidate deviation calculation with N finite, K_j binomial(N-1,x_j), threshold opening, equal splitting among agents at the successful target, and fixed posterior pi_j; this does not characterize an equilibrium correspondence or select an equilibrium.
+    claim_type: identity
+    status: verified
+    source_type: finite-binomial-sum-derivation-with-exact-closed-form-audit
+    source_reference: results/verified/20260722T021526Z_DD-016_00271ff8_123b2809e3/outputs/strategic-payoff-audit.json
+    proof_path: studies/DD-016-threshold-discovery/proof.md
+    implementation_paths: [src/distributed_discovery/threshold_discovery/model.py, src/distributed_discovery/threshold_discovery/verification.py]
+    run_ids: [20260722T021526Z_DD-016_00271ff8_123b2809e3]
+    test_paths: [tests/unit/test_threshold_discovery.py]
+    exactness_basis: The binomial-coefficient identity converts the finite tau=1 sum to its closed form and tau=2 removes exactly the k=0 term; 35 exact rational audit rows compare direct sums and closed forms for N=2 through 8 and five probabilities, including zero and one.
+    rounding_rule: exact fractions; continuous endpoint limits are evaluated exactly
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: This is a payoff identity conditional on independent opponent choice probabilities, not evidence that agents actually use such a mixture.
+  - id: DD-C-0073
+    study_id: DD-016
+    short_name: canonical-threshold-two-census
+    statement: In DD-016's canonical M=16, N=8, p=1/5, tau=2 fixture, common deterministic mode, selected independent uniform mixing over tied posterior modes, private clue-following, and the paired planner have exact discovery 37916217637/98876953125, 275661897594857/576650390625000, 194017/390625, and 223779310319051/333709716796875 respectively; the selected mixture has exact expected distinct count 222783285994256/129746337890625, viable count 4605284003019928/3243658447265625, largest crowd 21276151146203888/3243658447265625, and pair-collision probability 3368373871489/4449462890625.
+    scope: Uniform target, eight conditionally independent clues with correct probability 1/5 and each wrong label probability 4/75, posterior modes from pooled clue counts, the named deterministic or independent selection rules, threshold two, and exact occupancy definitions in the frozen model; this is not the full strategic equilibrium correspondence or a behavioral claim.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exhaustive-exact-labeled-count-vector-census-with-histogram-orbit-reproduction
+    source_reference: results/verified/20260722T021526Z_DD-016_00271ff8_123b2809e3/outputs/canonical-metrics.json
+    proof_path: studies/DD-016-threshold-discovery/proof.md
+    implementation_paths: [src/distributed_discovery/threshold_discovery/model.py, src/distributed_discovery/threshold_discovery/verification.py, src/distributed_discovery/threshold_discovery/study.py]
+    run_ids: [20260722T021526Z_DD-016_00271ff8_123b2809e3]
+    test_paths: [tests/unit/test_threshold_discovery.py, tests/integration/test_threshold_discovery_cli.py]
+    exactness_basis: Fraction arithmetic exhausts all 490,314 labeled clue-count vectors. A materially different 67-orbit false-label occupancy enumeration independently reconstructs all 30 aggregate signal classes and every exact output row; normalization, small fixtures, bounds, and four targeted corruptions are checked.
+    rounding_rule: exact fractions are authoritative; displayed decimals, if any, are rounded summaries
+    dependencies: [DD-C-0071]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: The two exact methods share the frozen metric definitions but use materially different state representations and probability-mass calculations. Tied-mode mixing is a registered selection rule, not the entire equilibrium set.
+  - id: DD-C-0074
+    study_id: DD-016
+    short_name: canonical-threshold-phase-diagram
+    statement: Across tau=1 through 8 in the canonical DD-016 fixture, both common deterministic mode and registered tied-mode mixing lower discovery relative to private clue-following at tau=1 and 2 and raise it at tau=3 through 8; the deterministic planner strictly exceeds the selected tied-mode result at every threshold, only one viable coalition can form at tau=5 through 8, and planner diversification strictly beats common mode at tau=1 through 4 before tying it at tau=5 through 8.
+    scope: The DD-C-0073 canonical signal model and named selection rules over the complete registered integer threshold grid; all comparisons are exact within this fixture and do not assert equilibrium uniqueness, comparative statics outside the grid, human coordination, or empirical behavior.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exact-eight-row-phase-census-with-two-state-representations
+    source_reference: results/verified/20260722T021526Z_DD-016_00271ff8_123b2809e3/outputs/threshold-phase-diagram.json
+    proof_path: studies/DD-016-threshold-discovery/proof.md
+    implementation_paths: [src/distributed_discovery/threshold_discovery/model.py, src/distributed_discovery/threshold_discovery/verification.py, src/distributed_discovery/threshold_discovery/study.py]
+    run_ids: [20260722T021526Z_DD-016_00271ff8_123b2809e3]
+    test_paths: [tests/unit/test_threshold_discovery.py, tests/integration/test_threshold_discovery_cli.py]
+    exactness_basis: Both exact evaluators reproduce every rational metric and categorical comparison in all eight threshold rows. The verifier checks row equality, normalization, planner and occupancy bounds, 63 exhaustive planner cases, 35 payoff identities, and rejection of four single-field corruptions.
+    rounding_rule: exact fractions and exact categorical comparisons; no decimal approximation determines a phase label
+    dependencies: [DD-C-0071, DD-C-0073]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: Common deterministic mode retains excess overlap through tau=7 but not tau=8; this does not produce a tau=1 redundancy identity for the threshold setting.

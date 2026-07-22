@@ -1,0 +1,35 @@
+{
+  "command": "make dd016-threshold",
+  "config_hash_sha256": "123b2809e3a495c81d877164948d31cd936401eaa126ab40b1baee6d0ee41f55",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-22T02:15:38.060052Z",
+  "exit_status": 0,
+  "git_commit": "00271ff8fbcb10012c2ae11e256a772662ea5f2b",
+  "git_dirty": false,
+  "input_hashes": {
+    "src/distributed_discovery/threshold_discovery/model.py": "431620fb5b7a7341705c24638fa2921c7d193ef0d1b9434fb4f92a7337d21eec",
+    "src/distributed_discovery/threshold_discovery/study.py": "b3cd8a82c0f736c7478d3b028071076eee0a8498b04da2c04dd5c15e129c0968",
+    "src/distributed_discovery/threshold_discovery/verification.py": "46daf4480c964116a64ce8bd9ce744bd8ded13291743185167de5002c1d3c1b9",
+    "studies/DD-016-threshold-discovery/configs/canonical.yml": "0e8458258430b8bac71a97fa32aa8d408733674afbc8ca6436deeaac19ab80dc",
+    "studies/DD-016-threshold-discovery/proof.md": "c0330c178ee0b7e9bd0a9ba4acfe0b8209714aad7fcdea090782b8fb7ff5cb1e"
+  },
+  "outputs": {
+    "outputs/canonical-metrics.json": "d2dac2854a3fa3c3979c0573967f8db9ca39e758946e2496c5f2aa79d0bf9615",
+    "outputs/corruption-tests.json": "49e6121430209aee5590bba7704e42dee1ed710c740cf8d4554ac596247fdeb5",
+    "outputs/method-agreement.json": "2fd471579d6e1dd8dcfecfd8df79b794d56214478f4ae22649bad3b958ac29b1",
+    "outputs/planner-audit.json": "4f8e7bab97a75b2d8f7236c7791ec35c8d749e31f30ec16ae3eec42f44c83294",
+    "outputs/strategic-payoff-audit.json": "ae2d24a39aa041dd7be0eb219c4349239f0a40cb47467575c04d39d3e445f9d1",
+    "outputs/threshold-phase-diagram.json": "473fb4ffe40f8f3b65f3dc584027f7faa89822df727a59ba671a50b6bdc7b895",
+    "outputs/verification.json": "3806b0c240c9b70810a8f821b6af7edc082cac1a68af8345d6612f41ab9d474f"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "run_id": "20260722T021526Z_DD-016_00271ff8_123b2809e3",
+  "schema_version": 1,
+  "started_utc": "2026-07-22T02:15:26.082599Z",
+  "study_id": "DD-016",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

@@ -8,10 +8,10 @@ representations.
 
 ## Current state
 
-Issue #101 is open and branch research/dd016-threshold-discovery starts from
-merged Program V3 editorial commit eb639f8578ee2e1e16e8112228e5656b8d49a3f5.
-The model, proof, literature boundary, config, implementation, and tests must be
-committed before one primary run.
+Issue #101 and draft PR #102 are open. The bounded evidence package is complete
+on branch research/dd016-threshold-discovery: the source was frozen before the
+single passing primary run, and the run-backed claims passed separate audits.
+Remote acceptance, merge, deployment, and the DD-017 handoff remain.
 
 ## Scope
 
@@ -38,9 +38,9 @@ applies only to strategic candidate payoffs.
 
 1. Freeze literature, model, proof, config, and cost estimate. **Complete.**
 2. Implement both exact evaluators, theorem audit, and tests. **Complete.**
-3. Commit the frozen implementation and run one clean primary configuration. **Active.**
-4. Independently audit claims, report, public data, and corruption rejection.
-5. Pass repository/site acceptance, push, merge, and verify deployment.
+3. Commit the frozen implementation and run one clean primary configuration. **Complete.**
+4. Independently audit claims, report, public data, and corruption rejection. **Complete.**
+5. Pass repository/site acceptance, push, merge, and verify deployment. **Active.**
 
 ## Progress checklist
 
@@ -49,8 +49,8 @@ applies only to strategic candidate payoffs.
 - [x] Focused literature records and novelty-risk update.
 - [x] Labeled and histogram exact evaluators.
 - [x] Independent verification and four corruption gates.
-- [ ] Clean immutable run.
-- [ ] Claims, report, result index, and public metadata.
+- [x] Clean immutable run.
+- [x] Claims, report, result index, and public metadata.
 - [ ] CI, merge, post-merge CI, Pages, and live route.
 
 ## Discoveries and surprises
@@ -62,6 +62,11 @@ The preliminary non-evidence execution completed Method A's 490,314 vectors in
 aggregate signal classes and agree on every exact phase row. At tau=2 they
 independently recover all supplied regression targets; exact fractions, not
 the copied decimals, are retained by the implementation.
+
+The sole primary run `20260722T021526Z_DD-016_00271ff8_123b2809e3` completed
+from clean commit `00271ff8` in 11.998247 seconds. Both methods agree, all four
+corruptions are rejected, and claims DD-C-0071 through DD-C-0074 passed their
+separate evidence audits.
 
 ## Decision log
 
@@ -101,4 +106,8 @@ passing primary configuration merely for freshness. Preserve any failed run.
 
 ## Outcome and retrospective
 
-Pending.
+The bounded scientific package is complete. The planner theorem required the
+finite-candidate `min(...,M)` qualification, and selected tied-mode behavior had
+to remain distinct from the unresolved equilibrium correspondence. The two
+exact state representations matched without rerunning the primary configuration.
+Remote acceptance, merge, deployment, and the DD-017 handoff remain.

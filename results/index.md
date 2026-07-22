@@ -1,8 +1,8 @@
 # Result index
 
-Current inventory: 40 immutable manifests, of which 37 have passing validation
-and exit status zero. Program V3 added five passing primary or versioned runs
-without overwriting prior evidence.
+Current inventory: 41 immutable manifests, of which 38 have passing validation
+and exit status zero. Program V4 added one passing DD-016 primary run without
+overwriting prior evidence.
 
 - [`baseline/`](baseline/README.md): canonical upstream reproduction artifacts.
 - [`verified/`](verified/README.md): policy-verified results.
@@ -85,6 +85,14 @@ stores 29 treatments, 14 hypotheses, 19 outcomes, 11 response scenarios, 928
 balanced synthetic assignments, 924 power rows, 924,000 seeded draws, all
 retained calibration failures, separate recomputation, and three corruption
 gates supporting synthetic-only DD-C-0070. It contains no human data.
+
+The DD-016 Threshold Discovery run is
+`verified/20260722T021526Z_DD-016_00271ff8_123b2809e3`. It preserves all
+490,314 labeled clue-count vectors through exact aggregation, a materially
+different 67-orbit histogram reproduction, eight threshold rows, 63 exhaustive
+planner audits, 35 strategic-payoff identity checks, and four rejected
+corruptions. It supports DD-C-0071 through DD-C-0074. The registered tied-mode
+mixture is a selected rule, not the complete equilibrium correspondence.
 
 All completed primary runs are immutable and must not be rerun just to refresh
 timestamps. Public summaries are generated only after manifest and output

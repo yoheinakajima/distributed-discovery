@@ -11,5 +11,6 @@ Planner allocations, independent mixed actions, correlated recommendations,
 strategic choice, and selected equilibria remain distinct objects.
 
 Issue: <https://github.com/yoheinakajima/distributed-discovery/issues/101>.
-The primary run must be executed once from a clean committed implementation
-with make dd016-threshold.
+Primary run `20260722T021526Z_DD-016_00271ff8_123b2809e3` passed from clean
+commit `00271ff8`; it must not be rerun for freshness. Claims DD-C-0071 through
+DD-C-0074 and the exact report provide the bounded evidence record.

@@ -2,6 +2,15 @@
 
 Only claims meeting `docs/claim-status-policy.md` are indexed here.
 
+DD-016 primary run:
+
+- `20260722T021526Z_DD-016_00271ff8_123b2809e3`: exact minimum-team theorem
+  audits, 490,314-vector canonical threshold census, independent 67-orbit
+  reproduction, eight-row phase diagram, and four corruption rejections.
+
+The tied-mode figures use the declared independent-uniform selection rule and
+do not characterize the full strategic equilibrium correspondence.
+
 DD-001 passing runs:
 
 - `20260720T200124Z_DD-001_6eb12861_f9bcf73ec7`: initial 17-point exact grid and canonical search.

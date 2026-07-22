@@ -21,10 +21,11 @@
 | DD-013 | Audience Design and Information Firewalls | complete bounded study | Preserve binding/voluntary separation, garbling dominance, and implementation boundaries |
 | DD-014 | Conditional Attention and Contrarian Policies | complete bounded study | Preserve the restricted-class theorem and larger raw-policy counterexample |
 | DD-015 | Dynamic Attention and Visible Search | optional unexecuted registration | Start only under a new authorization; keep stopping and fixed-budget objectives distinct |
-| DD-016 | Threshold Discovery | active exact study | Preserve the atomic threshold boundary; commit the two-method implementation before one clean primary run |
+| DD-016 | Threshold Discovery | complete bounded study | Preserve DD-C-0071 through DD-C-0074, the immutable two-method run, and the selected-equilibrium boundary |
 
 Each executed directory contains its question, model, plan, claims view, status,
 results index, and report. Program V3's completed sequence is governed by
 [`docs/program-v3.md`](../docs/program-v3.md) and the ExecPlan. DD-011 remains
-synthetic-only; DD-015 has no result. DD-016 has passing pre-run implementation
-checks but no immutable result or promoted claim yet.
+synthetic-only; DD-015 has no result. DD-016 has one passing immutable exact run
+supporting two verified proof claims and two independently reproduced bounded
+computational claims.
