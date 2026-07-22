@@ -1,0 +1,10 @@
+{
+  "all_corruptions_rejected": true,
+  "game_count": 160,
+  "labeled_profiles": 87216,
+  "no_pairwise_stable_equilibrium_games": 8,
+  "no_tau_stable_equilibrium_games": 35,
+  "occupancy_state_count": 3728,
+  "tied_mode_mixed_failures": 21,
+  "zero_worst_equilibrium_games": 52
+}

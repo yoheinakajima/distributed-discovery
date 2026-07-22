@@ -21,8 +21,8 @@ canonical Shared Discovery Paradox repository remains pinned at
 
 | Measure | Current value |
 | --- | ---: |
-| Ledger claims | 74 |
-| Passing immutable runs | 38 of 41 manifests |
+| Ledger claims | 78 |
+| Passing immutable runs | 39 of 42 manifests |
 | Registered studies | 21 |
 | Python source files | 121 |
 | Public HTML routes | 61 |

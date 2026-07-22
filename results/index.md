@@ -1,8 +1,8 @@
 # Result index
 
-Current inventory: 41 immutable manifests, of which 38 have passing validation
-and exit status zero. Program V4 added one passing DD-016 primary run without
-overwriting prior evidence.
+Current inventory: 42 immutable manifests, of which 39 have passing validation
+and exit status zero. Program V4 added passing DD-016 and DD-017 primary runs
+without overwriting prior evidence.
 
 - [`baseline/`](baseline/README.md): canonical upstream reproduction artifacts.
 - [`verified/`](verified/README.md): policy-verified results.
@@ -93,6 +93,13 @@ different 67-orbit histogram reproduction, eight threshold rows, 63 exhaustive
 planner audits, 35 strategic-payoff identity checks, and four rejected
 corruptions. It supports DD-C-0071 through DD-C-0074. The registered tied-mode
 mixture is a selected rule, not the complete equilibrium correspondence.
+
+The DD-017 Threshold Equilibrium Selection run is
+`verified/20260722T024032Z_DD-017_033452f6_3d2c74fdfb`. It preserves 160 exact
+games, 3,728 occupancy states, 87,216 independently checked labeled profiles,
+aggregate coalition-matching verification, direct mixed-payoff checks, and four
+rejected corruptions. It supports DD-C-0075 through DD-C-0078 while keeping
+weak Nash, pairwise, exact-size-tau, and symmetric-mixed concepts distinct.
 
 All completed primary runs are immutable and must not be rerun just to refresh
 timestamps. Public summaries are generated only after manifest and output

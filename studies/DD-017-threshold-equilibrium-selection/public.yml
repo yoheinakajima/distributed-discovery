@@ -1,8 +1,8 @@
 study_id: DD-017
 title: Threshold Equilibrium Selection
 slug: dd-017
-phase: active-extension
-summary: Registered bounded exact audit of pure threshold equilibria, small coalition blocks, and tied-mode mixing.
+phase: complete-bounded-study
+summary: Verified pure and tied-mode equilibrium boundaries with independently reproduced welfare and small-coalition censuses.
 public_artifacts:
   - path: studies/DD-017-threshold-equilibrium-selection/model.md
     description: Frozen equilibrium and deviation concepts
@@ -10,4 +10,15 @@ public_artifacts:
     description: Living bounded execution plan
   - path: studies/DD-017-threshold-equilibrium-selection/literature.md
     description: Focused adjacent-literature and terminology boundary
-
+  - path: studies/DD-017-threshold-equilibrium-selection/proof.md
+    description: Pure-Nash and tied-mode symmetric-mixture proofs
+  - path: studies/DD-017-threshold-equilibrium-selection/report.md
+    description: Exact bounded equilibrium and coalition-stability report
+  - path: results/verified/20260722T024032Z_DD-017_033452f6_3d2c74fdfb/outputs/summary.json
+    description: Public-safe bounded equilibrium summary
+  - path: results/verified/20260722T024032Z_DD-017_033452f6_3d2c74fdfb/outputs/small-game-registry.json
+    description: Public-safe exact 160-game registry
+  - path: results/verified/20260722T024032Z_DD-017_033452f6_3d2c74fdfb/outputs/verification.json
+    description: Independent labeled and aggregate verification record
+  - path: results/verified/20260722T024032Z_DD-017_033452f6_3d2c74fdfb/outputs/corruption-tests.json
+    description: Four registered corruption rejections

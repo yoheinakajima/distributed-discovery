@@ -1554,3 +1554,87 @@ claims:
     first_added: "2026-07-22"
     last_checked: "2026-07-22"
     notes: Common deterministic mode retains excess overlap through tau=7 but not tau=8; this does not produce a tau=1 redundancy identity for the threshold setting.
+  - id: DD-C-0075
+    study_id: DD-017
+    short_name: pure-threshold-nash-characterization
+    statement: An occupancy n is a weak pure Nash equilibrium of the frozen equal-split threshold game if and only if every agent on every occupied candidate j weakly prefers pi_j/n_j when n_j>=tau, or zero otherwise, to pi_k/(n_k+1) when n_k+1>=tau, or zero otherwise, for every alternative candidate k.
+    scope: Any finite strictly positive posterior, N at least 2, threshold tau in {1,...,N}, one action per agent, deterministic threshold opening, unit prize split equally among agents at the true opened target, and pure unilateral action changes; this is not a mixed, correlated, strong, coalition-proof, or behavioral equilibrium characterization.
+    claim_type: theorem
+    status: verified
+    source_type: complete-unilateral-deviation-proof-with-bounded-independent-labeled-profile-audit
+    source_reference: results/verified/20260722T024032Z_DD-017_033452f6_3d2c74fdfb/outputs/verification.json
+    proof_path: studies/DD-017-threshold-equilibrium-selection/proof.md
+    implementation_paths: [src/distributed_discovery/threshold_equilibrium/model.py, src/distributed_discovery/threshold_equilibrium/verification.py]
+    run_ids: [20260722T024032Z_DD-017_033452f6_3d2c74fdfb]
+    test_paths: [tests/unit/test_threshold_equilibrium.py, tests/integration/test_threshold_equilibrium_cli.py]
+    exactness_basis: The proof exhausts the only available pure unilateral changes. Across the registered boundary, an independently structured labeled-profile enumerator visits 87,216 profiles and reproduces every equilibrium occupancy obtained from all 3,728 occupancy states.
+    rounding_rule: exact fractions; no decimal approximation is authoritative
+    dependencies: [DD-C-0071]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: Weak equality is retained. Agents on a subthreshold candidate can be indifferent among zero-payoff actions, which permits inefficient weak equilibria.
+  - id: DD-C-0076
+    study_id: DD-017
+    short_name: tied-mode-mixed-equilibrium-boundary
+    statement: Independent uniform mixing over the highest-posterior candidates is a symmetric mixed Nash equilibrium for every finite strictly positive posterior when tau>=2; at tau=1 it is an equilibrium exactly when the common support payoff pi_max*[1-(1-1/m)^N]/(N/m) weakly exceeds every unsupported posterior mass, and this condition can fail.
+    scope: The frozen equal-split threshold game, m posterior-maximizing candidates, symmetric independent mixing on exactly those modes, and pure one-agent deviations; this verifies one mixture and neither characterizes all mixed equilibria nor supplies a selection process.
+    claim_type: theorem
+    status: verified
+    source_type: support-and-outside-deviation-proof-with-direct-opponent-profile-audit
+    source_reference: results/verified/20260722T024032Z_DD-017_033452f6_3d2c74fdfb/outputs/small-game-registry.json
+    proof_path: studies/DD-017-threshold-equilibrium-selection/proof.md
+    implementation_paths: [src/distributed_discovery/threshold_equilibrium/model.py, src/distributed_discovery/threshold_equilibrium/verification.py]
+    run_ids: [20260722T024032Z_DD-017_033452f6_3d2c74fdfb]
+    test_paths: [tests/unit/test_threshold_equilibrium.py, tests/integration/test_threshold_equilibrium_cli.py]
+    exactness_basis: For tau>=2, every support action has equal positive payoff and every unsupported one-agent deviation has zero payoff; for tau=1 the displayed split-prize identity gives the necessary and sufficient outside-payoff condition. Direct labeled opponent-profile enumeration reproduces every action payoff in all 160 registered games.
+    rounding_rule: exact fractions; comparisons use no displayed decimal
+    dependencies: [DD-C-0072]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: All 21 registered tied-mode failures occur at tau=1; the N=2 posterior (7/20,7/20,3/10) gives support payoff 21/80 below outside payoff 3/10.
+  - id: DD-C-0077
+    study_id: DD-017
+    short_name: bounded-threshold-equilibrium-welfare-census
+    statement: In DD-017's 160 registered rational games, 52 have a weak pure Nash equilibrium with zero discovery and therefore infinite pure price of anarchy under the declared positive-planner-over-zero convention.
+    scope: Eight frozen positive posterior fixtures with M in {2,3,4}, N=2 through 6, every tau=1 through N, equal-split threshold payoffs, weak pure Nash occupancy, deterministic planner benchmark, and the registered ratio convention; this is not a universal existence, asymptotic, mixed-equilibrium, or empirical result.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exhaustive-exact-occupancy-census-with-labeled-profile-reproduction
+    source_reference: results/verified/20260722T024032Z_DD-017_033452f6_3d2c74fdfb/outputs/summary.json
+    proof_path: studies/DD-017-threshold-equilibrium-selection/proof.md
+    implementation_paths: [src/distributed_discovery/threshold_equilibrium/model.py, src/distributed_discovery/threshold_equilibrium/study.py, src/distributed_discovery/threshold_equilibrium/verification.py]
+    run_ids: [20260722T024032Z_DD-017_033452f6_3d2c74fdfb]
+    test_paths: [tests/unit/test_threshold_equilibrium.py, tests/integration/test_threshold_equilibrium_cli.py]
+    exactness_basis: Exact Fraction arithmetic exhausts 3,728 occupancy states. A separate enumerator checks 87,216 labeled profiles, deduplicates their Nash occupancies, and reproduces best and worst equilibrium discovery in every game; a removed equilibrium and altered best value are rejected.
+    rounding_rule: exact integer counts and fractions; positive divided by zero is the string infinity
+    dependencies: [DD-C-0071, DD-C-0075]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: Zero discovery can survive weak unilateral deviations because no individual can form a threshold team alone. The count is bounded evidence, not a theorem for every threshold game.
+  - id: DD-C-0078
+    study_id: DD-017
+    short_name: bounded-small-coalition-stability-census
+    statement: Among DD-017's 160 registered games, eight have no pairwise-strict-stable weak pure Nash equilibrium and 35 have no exact-size-tau-strict-stable weak pure Nash equilibrium.
+    scope: The DD-C-0077 registry; a coalition blocks only when a joint action change makes every named member strictly better, pairwise means exactly two agents, and tau-player means exactly tau agents; no transfers, weak-Pareto blocks, arbitrary coalition sizes, strong equilibrium, coalition-proofness, or empirical stability is included.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exact-labeled-coalition-census-with-aggregate-removal-addition-matching-reproduction
+    source_reference: results/verified/20260722T024032Z_DD-017_033452f6_3d2c74fdfb/outputs/summary.json
+    proof_path: studies/DD-017-threshold-equilibrium-selection/proof.md
+    implementation_paths: [src/distributed_discovery/threshold_equilibrium/model.py, src/distributed_discovery/threshold_equilibrium/study.py, src/distributed_discovery/threshold_equilibrium/verification.py]
+    run_ids: [20260722T024032Z_DD-017_033452f6_3d2c74fdfb]
+    test_paths: [tests/unit/test_threshold_equilibrium.py, tests/integration/test_threshold_equilibrium_cli.py]
+    exactness_basis: The primary evaluator enumerates named coalitions and joint destination actions for every pure Nash occupancy. The independent verifier instead enumerates coalition removal and addition occupancies and solves an exact payoff-compatible matching; every stability label agrees, hand fixtures pass, and altered pair stability is rejected.
+    rounding_rule: exact integer counts and fractions
+    dependencies: [DD-C-0075, DD-C-0077]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: Exact-size-tau stability is not monotone in coalition size and is not called strong equilibrium. The eight and 35 counts answer distinct registered questions.

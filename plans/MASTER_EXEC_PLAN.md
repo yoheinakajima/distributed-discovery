@@ -127,6 +127,19 @@ before its independent verifier and immutable primary run pass.
   all 194 tests, the unchanged 74-claim ledger and 41 manifests, and `make site`
   with 61 pages and 21 studies. The implementation remains non-evidence until
   committed and executed once from a clean tree.
+- 2026-07-22: DD-017 source was frozen as 033452f and draft PR #104 opened.
+  The one registered primary run
+  `20260722T024032Z_DD-017_033452f6_3d2c74fdfb` passed in 8.234274 seconds from
+  a clean tree. It confirms 52 zero-worst-discovery games, eight games without
+  a pairwise-strict-stable pure equilibrium, 35 without an exact-size-tau-
+  strict-stable pure equilibrium, and 21 tied-mode failures, all at tau one.
+  Separate audits promote DD-C-0075 and DD-C-0076 to verified and DD-C-0077
+  and DD-C-0078 to independently reproduced. The active V4.3 gate is local
+  acceptance, PR CI, merge, post-merge CI, Pages, and live-route validation.
+- 2026-07-22: DD-017 local acceptance passed Ruff, MyPy on 121 source files,
+  all 194 tests, the 78-claim ledger, all 42 manifests, and `make site` with 61
+  pages and 21 studies. Draft PR #104 can advance after the evidence commit and
+  its remote checks pass.
 
 ### Program V3 attention queue (complete, 2026-07-21)
 

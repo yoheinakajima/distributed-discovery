@@ -24,9 +24,9 @@ profiles for tied-mode payoff checks. Expected runtime is 60 seconds, capped at
 
 1. Freeze concepts, literature boundary, registry, and resource caps. **Complete.**
 2. Implement pure, pairwise, tau-player, welfare, and tied-mode checks. **Complete.**
-3. Pass targeted and repository tests; commit the frozen implementation. **Active.**
-4. Execute one clean immutable registry run and audit any claims separately.
-5. Decide the next bounded extension toward correlated or selection objects.
+3. Pass targeted and repository tests; commit the frozen implementation. **Complete.**
+4. Execute one clean immutable registry run and audit any claims separately. **Complete.**
+5. Pass remote acceptance and decide the next bounded extension. **Active.**
 
 ## Validation strategy
 
@@ -53,6 +53,11 @@ equilibrium, 35 with no exact-size-tau-strict-stable pure equilibrium, and 21
 tied-mode symmetric-mixture failures. These counts are regression targets only
 until a clean immutable run and separate claim audit pass.
 
+The sole primary run `20260722T024032Z_DD-017_033452f6_3d2c74fdfb` completed
+from clean commit `033452f` in 8.234274 seconds and confirmed all four counts.
+Claims DD-C-0075 through DD-C-0078 passed separate proof or computational
+audits. The preview is superseded by, but does not replace, this immutable run.
+
 ## Recovery
 
 Inspect this plan and Git state. Do not execute a primary configuration before
@@ -61,4 +66,7 @@ directory and never rerun a passing primary configuration for freshness.
 
 ## Outcome and retrospective
 
-Pending.
+The bounded evidence package is complete. Weak Nash permits zero-discovery
+outcomes, exact-size coalition concepts are not interchangeable, and tied-mode
+mixing is automatically stable only once a unilateral outsider cannot meet the
+threshold alone. Remote acceptance and the next Program V4 registration remain.

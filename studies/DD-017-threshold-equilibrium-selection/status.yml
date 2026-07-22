@@ -1,5 +1,5 @@
 study_id: DD-017
-status: active-implementation-validated
-evidence_status: two-exact-methods-pre-run-no-claim
-next_action: pass full repository and site gates, commit the frozen source, then execute one clean primary run
-updated_utc: 2026-07-22T02:40:00Z
+status: complete-bounded-study
+evidence_status: two-verified-theorems-and-two-independently-reproduced-bounded-censuses
+next_action: complete PR 104 CI, merge, post-merge CI, Pages, and live-route validation before the next Program V4 milestone
+updated_utc: 2026-07-22T02:45:00Z

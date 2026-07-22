@@ -1,0 +1,32 @@
+{
+  "command": "make dd017-equilibrium",
+  "config_hash_sha256": "3d2c74fdfb7ce0cd965373ae0da29545068d2adcf04c9e337be2dee456d77b14",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-22T02:40:41.226221Z",
+  "exit_status": 0,
+  "git_commit": "033452f6e2217f5e63bded87487bbc35bbd22eeb",
+  "git_dirty": false,
+  "input_hashes": {
+    "src/distributed_discovery/threshold_equilibrium/model.py": "1776c5c6fef3753fdb73600847da5fe93e1951dab9c9e9ddb45ac7528a43b3f0",
+    "src/distributed_discovery/threshold_equilibrium/study.py": "76b9e0b81bdbab5a69e8e9ed392c13810eb1653874f281c706f9c699b3076cb0",
+    "src/distributed_discovery/threshold_equilibrium/verification.py": "6397d71d41b9b99832deb0a61628246ce3c3bd8f057706a2692ac6808f4ab55d",
+    "studies/DD-017-threshold-equilibrium-selection/configs/small-games.yml": "89b8c194cc8e89349320d7b7dd7b7f77e9464bd4ff081cbb01b180e2f661a4fc",
+    "studies/DD-017-threshold-equilibrium-selection/model.md": "4fcc4d075d5ff528b0d1f004eb475078a1ab1e50070bade8c1368a0dd226c99a"
+  },
+  "outputs": {
+    "outputs/corruption-tests.json": "a40d6a99047db722a659a8242de60fc0d06962bb3fab6f3b9d584c58067a3963",
+    "outputs/small-game-registry.json": "b789796f81e4010c08ce1ad04cacb8f8923c62568a6e54ffe90957fc3c46fb84",
+    "outputs/summary.json": "d658f36d857ef70f5538312aa99c3cad36651f7fee6a98d769b7055eb9f01c46",
+    "outputs/verification.json": "8767d2aeab759854587cfd2684d6a8aa1f05298fd845d117b8f748729774b2d3"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "run_id": "20260722T024032Z_DD-017_033452f6_3d2c74fdfb",
+  "schema_version": 1,
+  "started_utc": "2026-07-22T02:40:32.977321Z",
+  "study_id": "DD-017",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}
