@@ -1,6 +1,6 @@
 # Current program state
 
-_Reconciled 2026-07-22 after the Synthetic Experiment v3 deployment closeout._
+_Reconciled 2026-07-22 during the Program V4 output-connected Labs milestone._
 
 Programs V1, V2, and the required Program V3 queue are complete at their
 registered bounded scopes. Program V3, *The Incentive to Ignore*, completed
@@ -19,9 +19,12 @@ threshold-two scopes. DD-018 is complete and deployed at its bounded
 common-posterior mechanism scope. DiscoveryBench v3 and Synthetic Experiment
 v3 are complete and deployed with all earlier versions preserved. Every
 synthetic calibration failure remains public, and no human experiment exists.
-The focused *Threshold Discovery* paper has a complete local 20-page,
-byte-reproducible artifact with eight generated assets and all-page visual QA
-on issue #122; deployment remains pending. Labs and the final handoff follow.
+The focused *Threshold Discovery* paper is deployed as a 20-page,
+byte-reproducible artifact with eight generated assets and all-page visual QA.
+Four output-connected Program V4 Labs are locally complete on issue #124:
+threshold, equilibrium selection, dynamic attention, and team mechanisms. They
+select exact immutable-run rows, preserve complete no-JavaScript tables, and
+await deployment. The final handoff follows.
 
 Program V5, *The Information Sharing Frontier*, is a roadmap direction only
 until Program V4 completes. It will begin with a documentation baseline and one
@@ -37,9 +40,9 @@ canonical Shared Discovery Paradox repository remains pinned at
 | Passing immutable runs | 44 of 47 manifests |
 | Registered studies | 22 |
 | Python source files | 134 |
-| Public HTML routes | 64 |
-| Public data files | 62 |
-| Laboratory routes | 12 |
+| Public HTML routes | 68 |
+| Public data files | 66 |
+| Laboratory routes | 16 |
 | Validated project papers | 6 |
 | Checksum-registered downloads | 22 |
 | Test suite | 212 collected tests |

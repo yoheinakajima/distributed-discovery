@@ -58,6 +58,52 @@ document.querySelectorAll("[data-lab]").forEach((lab) => {
   render();
 });
 
+document.querySelectorAll("[data-output-lab]").forEach((lab) => {
+  const kind = lab.dataset.outputLab;
+  const controls = Array.from(lab.querySelectorAll("select[data-filter-key]"));
+  const outputs = Array.from(lab.querySelectorAll("[data-output-key]"));
+  const status = lab.querySelector("[data-output-status]");
+  const rows = Array.from(document.querySelectorAll(`[data-output-row="${kind}"]`));
+  if (!kind || !controls.length || !outputs.length || !status || !rows.length) return;
+  const render = () => {
+    controls.forEach((control) => {
+      const limitingId = control.dataset.limitBy;
+      if (!limitingId) return;
+      const limitingControl = document.getElementById(limitingId);
+      if (!limitingControl) return;
+      const limit = Number(limitingControl.value);
+      const options = Array.from(control.options);
+      options.forEach((option) => {
+        const unavailable = Number(option.value) > limit;
+        option.hidden = unavailable;
+        option.disabled = unavailable;
+      });
+      if (Number(control.value) > limit) {
+        const firstAvailable = options.find((option) => !option.disabled);
+        if (firstAvailable) control.value = firstAvailable.value;
+      }
+    });
+    const selected = rows.find((row) => controls.every((control) =>
+      row.getAttribute(`data-${control.dataset.filterKey}`) === control.value));
+    rows.forEach((row) => { row.hidden = row !== selected; });
+    if (!selected) {
+      outputs.forEach((output) => { output.textContent = "not registered"; });
+      status.textContent = "No exact registered row matches this selection.";
+      return;
+    }
+    outputs.forEach((output) => {
+      output.textContent = selected.getAttribute(`data-${output.dataset.outputKey}`) || "not applicable";
+    });
+    const selection = controls.map((control) => {
+      const option = control.options[control.selectedIndex];
+      return `${control.previousElementSibling?.textContent || control.dataset.filterKey}: ${option.textContent}`;
+    }).join("; ");
+    status.textContent = `Showing one exact ${kind.replace(/-/g, " ")} row — ${selection}.`;
+  };
+  controls.forEach((control) => control.addEventListener("change", render));
+  render();
+});
+
 document.querySelectorAll("[data-benchmark-lab]").forEach((lab) => {
   const select = lab.querySelector("select");
   const status = lab.querySelector("#benchmark-status");

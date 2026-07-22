@@ -134,6 +134,58 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         assert 'type="range"' in page_source
         assert "bounded fixture only" in page_source
 
+    program_v4_labs = {
+        "threshold": {
+            "kind": "threshold",
+            "controls": ["threshold-tau"],
+            "rows": 8,
+            "run": "20260722T021526Z_DD-016_00271ff8_123b2809e3",
+            "claim": "DD-C-0074",
+        },
+        "equilibrium-selection": {
+            "kind": "equilibrium",
+            "controls": [
+                "equilibrium-fixture",
+                "equilibrium-agents",
+                "equilibrium-threshold",
+            ],
+            "rows": 160,
+            "run": "20260722T024032Z_DD-017_033452f6_3d2c74fdfb",
+            "claim": "DD-C-0077",
+        },
+        "dynamic-attention": {
+            "kind": "dynamic",
+            "controls": [
+                "dynamic-agents",
+                "dynamic-private",
+                "dynamic-shared",
+                "dynamic-objective",
+            ],
+            "rows": 64,
+            "run": "20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a",
+            "claim": "DD-C-0080",
+        },
+        "team-mechanisms": {
+            "kind": "mechanism",
+            "controls": ["mechanism-fixture", "mechanism-name"],
+            "rows": 50,
+            "run": "20260722T051847Z_DD-018_a193f602_3b3ddac173",
+            "claim": "DD-C-0084",
+        },
+    }
+    for slug, specification in program_v4_labs.items():
+        page_source = (output / f"labs/{slug}.html").read_text(encoding="utf-8")
+        assert f'data-output-lab="{specification["kind"]}"' in page_source
+        assert (
+            page_source.count(f'data-output-row="{specification["kind"]}"') == specification["rows"]
+        )
+        assert "JavaScript is off" in page_source
+        assert "data-output-status" in page_source
+        assert specification["run"] in page_source
+        assert specification["claim"] in page_source
+        for control in specification["controls"]:
+            assert f'id="{control}"' in page_source
+
     claims = (output / "claims.html").read_text(encoding="utf-8")
     assert 'id="DD-C-0001"' in claims
     assert 'id="DD-C-0044"' in claims
@@ -200,6 +252,10 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "labs/audience.html",
         "labs/audience-design.html",
         "labs/conditional-attention.html",
+        "labs/threshold.html",
+        "labs/equilibrium-selection.html",
+        "labs/dynamic-attention.html",
+        "labs/team-mechanisms.html",
         "publications/common-source-trap.html",
         "publications/incentive-to-ignore.html",
         "publications/threshold-discovery.html",
@@ -231,6 +287,88 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     atlas_page = (output / "labs/atlas.html").read_text()
     assert 'max="20"' in atlas_page
     assert "Architecture index" in atlas_page
+    threshold_lab = json.loads((output / "data/labs/threshold.json").read_text())
+    assert threshold_lab["run_id"] == "20260722T021526Z_DD-016_00271ff8_123b2809e3"
+    assert len(threshold_lab["rows"]) == 8
+    assert threshold_lab["rows"][1]["planner_discovery"] == "223779310319051/333709716796875"
+    equilibrium_lab = json.loads((output / "data/labs/equilibrium-selection.json").read_text())
+    assert equilibrium_lab["run_id"] == "20260722T024032Z_DD-017_033452f6_3d2c74fdfb"
+    assert len(equilibrium_lab["rows"]) == 160
+    assert sum(row["worst_equilibrium_discovery"] == "0" for row in equilibrium_lab["rows"]) == 52
+    dynamic_lab = json.loads((output / "data/labs/dynamic-attention.json").read_text())
+    assert dynamic_lab["run_id"] == "20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a"
+    assert len(dynamic_lab["rows"]) == 64
+    team_lab = json.loads((output / "data/labs/team-mechanisms.json").read_text())
+    assert team_lab["run_id"] == "20260722T051847Z_DD-018_a193f602_3b3ddac173"
+    assert len(team_lab["rows"]) == 50
+    assert sum(row["implements_planner"] for row in team_lab["rows"]) == 40
+
+    def distinct_outputs(
+        rows: list[dict[str, object]],
+        fixed: dict[str, object],
+        output_keys: tuple[str, ...],
+    ) -> set[tuple[object, ...]]:
+        return {
+            tuple(row[key] for key in output_keys)
+            for row in rows
+            if all(row[key] == value for key, value in fixed.items())
+        }
+
+    assert (
+        len(
+            distinct_outputs(
+                threshold_lab["rows"],
+                {},
+                ("planner_discovery", "private_clue_following", "expected_viable_candidates"),
+            )
+        )
+        > 1
+    )
+    assert (
+        len(
+            distinct_outputs(
+                equilibrium_lab["rows"],
+                {"fixture": "tied-top-three", "agents": 4},
+                ("best_equilibrium_discovery", "worst_equilibrium_discovery", "pure_nash_count"),
+            )
+        )
+        > 1
+    )
+    dynamic_output_keys = (
+        "planner_discovery",
+        "autonomous_discovery",
+        "expected_actions",
+        "distinct_actions",
+    )
+    for fixed in [
+        {"private_accuracy": "1/2", "shared_accuracy": "3/4", "objective": "fixed-budget"},
+        {"agents": 3, "shared_accuracy": "3/4", "objective": "fixed-budget"},
+        {"agents": 3, "private_accuracy": "1/2", "objective": "fixed-budget"},
+        {"agents": 3, "private_accuracy": "1/2", "shared_accuracy": "3/4"},
+    ]:
+        assert len(distinct_outputs(dynamic_lab["rows"], fixed, dynamic_output_keys)) > 1
+    mechanism_output_keys = (
+        "discovery",
+        "implements_planner",
+        "strict_unilateral",
+        "pairwise_stable",
+        "equilibrium_multiplicity",
+    )
+    assert (
+        len(distinct_outputs(team_lab["rows"], {"mechanism": "team-tokens"}, mechanism_output_keys))
+        > 1
+    )
+    assert (
+        len(distinct_outputs(team_lab["rows"], {"fixture": "moderate"}, mechanism_output_keys)) > 1
+    )
+    labs_manifest = json.loads((output / "data/labs.json").read_text())
+    for data_name in [
+        "threshold_data",
+        "equilibrium_selection_data",
+        "dynamic_attention_data",
+        "team_mechanisms_data",
+    ]:
+        assert (output / labs_manifest[data_name]).is_file()
     benchmark = json.loads((output / "data/benchmark/summary.json").read_text())
     assert benchmark["run_id"] == "20260722T054447Z_DD-010_d265e480_6930915b02"
     assert benchmark["schema_version"] == 3
@@ -291,6 +429,9 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert ".pipeline" not in stylesheet
     assert "font: 1.025rem/1.62 var(--sans)" in stylesheet
     assert "position: sticky" in stylesheet
+    javascript = (output / "site.js").read_text(encoding="utf-8")
+    assert 'querySelectorAll("[data-output-lab]")' in javascript
+    assert "data-${control.dataset.filterKey}" in javascript
 
     for page in output.glob("**/*.html"):
         source = page.read_text(encoding="utf-8")

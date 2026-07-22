@@ -486,6 +486,12 @@ input[type="search"],
   border-radius: var(--radius-lg);
   background: var(--surface);
 }
+.lab-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: 1rem;
+  align-items: end;
+}
 .lab input[type="range"] { width: 100%; min-height: 2.75rem; accent-color: var(--accent); }
 
 .site-footer { margin-top: 4rem; padding-block: 2.5rem 3.5rem; border-top: 1px solid var(--grid); background: var(--surface); }
