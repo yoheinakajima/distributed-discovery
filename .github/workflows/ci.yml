@@ -16,7 +16,7 @@ jobs:
       - name: Typecheck
         run: make typecheck
       - name: Integration and regression tests
-        run: uv run --no-editable pytest tests/integration tests/regression
+        run: uv run --no-editable python scripts/run_pytest_ci.py tests/integration tests/regression
       - name: Unit tests
         run: uv run --no-editable pytest tests/unit
       - name: Validate claims and run manifests
