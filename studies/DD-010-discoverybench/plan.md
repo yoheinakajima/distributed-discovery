@@ -27,8 +27,8 @@ all expected values directly from the immutable DD-016, DD-017, DD-015, and
 DD-018 evidence records and repeats schema, provenance, count, capability, and
 three corruption checks. No composite score or external adapter is enabled.
 
-Issue #116 and branch `research/discoverybench-v3-program-v4` are active. No
-v3 benchmark run or claim exists before the clean-source execution gate.
+Issue #116, branch `research/discoverybench-v3-program-v4`, and draft PR #117
+are active. The v3 evidence package is complete; remote acceptance remains.
 
 The first full v3 repository gate stopped at MyPy because a generic JSON-like
 certificate value was passed directly to `int` in the new registered-count
@@ -42,3 +42,17 @@ and the 62-page/22-study site. Exact dirty-tree previews reproduce 16 v1, 28
 v2, and 36 v3 compatible rows with all version-preservation and corruption
 checks passing. The next action is the frozen source commit and draft PR; only
 then may the one v3 benchmark configuration execute.
+
+Frozen source commit `d265e480` and draft PR #117 preceded the sole v3 run
+`20260722T054447Z_DD-010_d265e480_6930915b02`. It passed in 0.544999 seconds,
+verified all 36 exact rows, retained 660 exclusions, resolved all provenance,
+and rejected all three corruptions. Direct comparison confirms the first 28 v3
+metric vectors equal the complete v2 output matrix. DD-C-0087 passed its
+separate audit. The active gate is final repository/site acceptance, evidence
+commit, PR CI/merge, post-merge CI/Pages, issue closure, and live routes.
+
+Final local acceptance passed bootstrap, Ruff, MyPy on 131 source files, all
+208 tests, the 87-claim ledger, all 46 manifests, and the 62-page/22-study site.
+The generated benchmark surface selects v3, preserves the v2-only attention
+page boundary, publishes all three schemas, and links the immutable run and
+DD-C-0087. The next action is the evidence commit and push.

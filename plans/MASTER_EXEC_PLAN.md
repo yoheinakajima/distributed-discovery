@@ -234,6 +234,15 @@ before its independent verifier and immutable primary run pass.
   adds four DD-016/017/015/018 tasks while preserving v1 and v2, capability
   isolation, disabled external adapters, and no composite score. No v3 run or
   claim exists before the clean-source gate.
+- 2026-07-22: DiscoveryBench v3 source froze as `d265e480` and draft PR #117
+  opened before the sole run `20260722T054447Z_DD-010_d265e480_6930915b02`.
+  The run passed in 0.544999 seconds with 24 tasks, 29 protocols, 39 metrics, 36
+  independently reproduced exact rows, and 660 exclusions. V1/v2 metric
+  vectors are preserved, all provenance and capability checks pass, three
+  corruptions are rejected, and no composite score exists. DD-C-0087 passed
+  its separate audit. The active gate is full repository/site acceptance,
+  evidence commit, PR CI/merge, post-merge CI/Pages, issue closure, and live
+  benchmark/data routes; the run must not be repeated.
 
 ### Program V3 attention queue (complete, 2026-07-21)
 

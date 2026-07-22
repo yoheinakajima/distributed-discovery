@@ -1,0 +1,103 @@
+{
+  "boundary": "seeded synthetic estimate; not an exact benchmark theorem",
+  "estimator": "sample-mean-discovery",
+  "exact": false,
+  "mean_estimate": "0.65737500",
+  "replications_per_seed": 1000,
+  "results": [
+    {
+      "ci95": [
+        "0.60516065",
+        "0.66483935"
+      ],
+      "estimate": "0.63500000",
+      "estimator": "sample-mean-discovery",
+      "sample_count": 1000,
+      "seed": 101
+    },
+    {
+      "ci95": [
+        "0.62145668",
+        "0.68054332"
+      ],
+      "estimate": "0.65100000",
+      "estimator": "sample-mean-discovery",
+      "sample_count": 1000,
+      "seed": 211
+    },
+    {
+      "ci95": [
+        "0.63574573",
+        "0.69425427"
+      ],
+      "estimate": "0.66500000",
+      "estimator": "sample-mean-discovery",
+      "sample_count": 1000,
+      "seed": 307
+    },
+    {
+      "ci95": [
+        "0.60719569",
+        "0.66680431"
+      ],
+      "estimate": "0.63700000",
+      "estimator": "sample-mean-discovery",
+      "sample_count": 1000,
+      "seed": 401
+    },
+    {
+      "ci95": [
+        "0.63472413",
+        "0.69327587"
+      ],
+      "estimate": "0.66400000",
+      "estimator": "sample-mean-discovery",
+      "sample_count": 1000,
+      "seed": 503
+    },
+    {
+      "ci95": [
+        "0.65006367",
+        "0.70793633"
+      ],
+      "estimate": "0.67900000",
+      "estimator": "sample-mean-discovery",
+      "sample_count": 1000,
+      "seed": 601
+    },
+    {
+      "ci95": [
+        "0.64392381",
+        "0.70207619"
+      ],
+      "estimate": "0.67300000",
+      "estimator": "sample-mean-discovery",
+      "sample_count": 1000,
+      "seed": 701
+    },
+    {
+      "ci95": [
+        "0.62553637",
+        "0.68446363"
+      ],
+      "estimate": "0.65500000",
+      "estimator": "sample-mean-discovery",
+      "sample_count": 1000,
+      "seed": 809
+    }
+  ],
+  "schema_version": "discoverybench-simulated-suite-v1",
+  "seeds": [
+    101,
+    211,
+    307,
+    401,
+    503,
+    601,
+    701,
+    809
+  ],
+  "target_probability": "2/3",
+  "task_family": "larger-noisy-source-sensitivity",
+  "uncertainty": "per-seed normal 95 percent interval"
+}

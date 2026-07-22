@@ -1,0 +1,3965 @@
+{
+  "exclusions": [
+    {
+      "compatible": false,
+      "protocol_id": "private-clue-following",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "designated-reader",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G01"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-clue-following",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "designated-reader",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G02"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "designated-reader",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G03"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-clue-following",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "designated-reader",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G04"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-clue-following",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "designated-reader",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G05"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "designated-reader",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G06"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-clue-following",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "designated-reader",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G07"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-clue-following",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "designated-reader",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G08"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-clue-following",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "designated-reader",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G09"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-clue-following",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "designated-reader",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G10"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-clue-following",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "designated-reader",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G11"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-clue-following",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "designated-reader",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G12"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "designated-reader",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G13"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-clue-following",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "designated-reader",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G14"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-clue-following",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "designated-reader",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G15"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-clue-following",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G16"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-clue-following",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G17"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-clue-following",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G18"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-clue-following",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "designated-reader",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G19"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-clue-following",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "designated-reader",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G20"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-clue-following",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "designated-reader",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G21"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-clue-following",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "designated-reader",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G22"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-clue-following",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "designated-reader",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "team-token-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-team-contribution",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "universal-pooling-team",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G23"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "blind-distinct",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-clue-following",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "consensus",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "pooled-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "anonymous-market",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "posterior-sampling",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "ex-ante-role-policy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sequential-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "marginal-coverage-greedy",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "sole-rescue-response",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006a-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dd006b-mechanism",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "registered-atlas-architecture",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "private-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "public-only",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "designated-reader",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "voluntary-attention-equilibrium",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "audience-optimal-assignment",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-private-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "conditional-public-dominant",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "third-option-contrarian",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-tied-mode-selection",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-minimum-team-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "threshold-equilibrium-census",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-autonomous-bayes",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    },
+    {
+      "compatible": false,
+      "protocol_id": "dynamic-common-information-planner",
+      "reason": "protocol/task contract not registered",
+      "task_id": "DB-G24"
+    }
+  ],
+  "failures": []
+}

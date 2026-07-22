@@ -22,3 +22,7 @@ as the default and v2 as the unchanged attention extension. Inspect it with
 `distributed-discovery benchmark --version v3 run-golden`. The registered
 primary command is `make dd010-threshold` and may run only from clean committed
 source.
+
+V3 primary run `20260722T054447Z_DD-010_d265e480_6930915b02` passed from clean
+commit `d265e480` and must not be rerun for freshness. DD-C-0087 and the report
+are the bounded evidence record.

@@ -16,8 +16,9 @@ small-coalition stability, and one symmetric tied-mode mixture without
 identifying that selected rule with all equilibria. DD-015 is complete and
 deployed at its bounded dynamic-attention and separately labeled planner-only
 threshold-two scopes. DD-018 is complete and deployed at its bounded
-common-posterior mechanism scope. DiscoveryBench v3 is next, followed by the
-synthetic extension, focused paper, Labs, and final handoff.
+common-posterior mechanism scope. DiscoveryBench v3 has complete bounded
+evidence pending deployment. The synthetic extension is next only after v3
+merges and deploys, followed by the focused paper, Labs, and final handoff.
 
 Program V5, *The Information Sharing Frontier*, is a roadmap direction only
 until Program V4 completes. It will begin with a documentation baseline and one
@@ -29,16 +30,16 @@ canonical Shared Discovery Paradox repository remains pinned at
 
 | Measure | Current value |
 | --- | ---: |
-| Ledger claims | 86 |
-| Passing immutable runs | 42 of 45 manifests |
+| Ledger claims | 87 |
+| Passing immutable runs | 43 of 46 manifests |
 | Registered studies | 22 |
-| Python source files | 130 |
+| Python source files | 131 |
 | Public HTML routes | 62 |
 | Public data files | 66 |
 | Laboratory routes | 12 |
 | Validated project papers | 5 |
 | Checksum-registered downloads | 19 |
-| Test suite | 206 collected tests |
+| Test suite | 208 collected tests |
 
 ## Program V4 exact result
 
@@ -90,6 +91,16 @@ rights, and marginal contribution support the planner recommendation throughout
 but retain respectively 25, 25, and 21 pure equilibria per fixture.
 
 - DD-018: `20260722T051847Z_DD-018_a193f602_3b3ddac173`, DD-C-0083–0086.
+
+DiscoveryBench v3 preserves all v1/v2 exact vectors and adds four Program V4
+tasks. Its registry contains 24 tasks, 29 protocols, 39 task-level metrics, 36
+compatible exact rows, and 660 explicit exclusions among 696 candidate pairs.
+All exact vectors are independently reconstructed with capability isolation;
+the CLI remains v1 by default and no composite score or external execution is
+enabled.
+
+- DiscoveryBench v3: `20260722T054447Z_DD-010_d265e480_6930915b02`,
+  DD-C-0087.
 
 ## Program V3 exact results
 

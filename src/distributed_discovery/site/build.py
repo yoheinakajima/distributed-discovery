@@ -487,7 +487,7 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
     manifest = json.loads((run / "manifest.json").read_text())
     run_id = str(manifest["run_id"])
     benchmark_version = str(summary.get("benchmark_version", "v1"))
-    schema_number = 2 if benchmark_version == "v2" else 1
+    schema_number = 3 if benchmark_version == "v3" else (2 if benchmark_version == "v2" else 1)
     downloads = (
         '<a href="data/benchmark/tasks.json">tasks JSON</a> · '
         '<a href="data/benchmark/protocols.json">protocols JSON</a> · '
@@ -495,9 +495,18 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         '<a href="data/benchmark/results.json">results JSON</a> · '
         f'<a href="downloads/discoverybench-task-{benchmark_version}.schema.json">task schema</a>'
     )
-    version_flag = " --version v2" if benchmark_version == "v2" else ""
-    claim_id = "DD-C-0069" if benchmark_version == "v2" else "DD-C-0055"
-    overview = f"""<header class="page-hero"><p class="eyebrow">DiscoveryBench {html.escape(benchmark_version)}</p><h1>Compare search strategies</h1><p class="lede">A bounded, auditable suite for comparing how evidence becomes action. Version 2 adds selective-attention fixtures while preserving the v1 command default and exact vectors. It is not a hosted leaderboard or a universal measure of real-world agent quality.</p></header><div class="metric-grid"><article class="metric-card"><span>Benchmark tasks</span><strong>{summary["task_count"]}</strong></article><article class="metric-card"><span>Built-in strategies</span><strong>{summary["protocol_count"]}</strong></article><article class="metric-card"><span>Compatible pairs</span><strong>{summary["compatible_pairs"]}</strong></article></div><p>{downloads}</p><section class="content-section"><h2>Explore the benchmark</h2><div class="card-grid resource-grid"><article class="card"><h3><a href="benchmark/tasks.html">Benchmark tasks</a></h3><p>See the declared information and reference evidence for each task.</p></article><article class="card"><h3><a href="benchmark/protocols.html">What each strategy can see and do</a></h3><p>Compare capability boundaries before comparing results.</p></article><article class="card"><h3><a href="benchmark/metrics.html">How performance is measured</a></h3><p>Inspect every versioned measure and required observable.</p></article><article class="card"><h3><a href="benchmark/results.html">Benchmark results</a></h3><p>Read the exact compatible vectors and scoped Pareto report.</p></article><article class="card"><h3><a href="benchmark/attention.html">Selective-attention extension</a></h3><p>Compare the DD-012--DD-014 attention, audience, and conditional-policy fixtures.</p></article><article class="card"><h3><a href="labs/benchmark.html">Benchmark Lab</a></h3><p>Filter the complete result table by task.</p></article></div></section><section class="content-section prose"><h2>Reproduce</h2><details class="technical-details"><summary>Technical details</summary><p><code>distributed-discovery benchmark{version_flag} run-golden</code><br><code>distributed-discovery benchmark{version_flag} verify-run results/verified/{html.escape(run_id)}</code></p><p>Claim {claim_id} · reproducible run <a href="evidence.html">{html.escape(run_id)}</a>.</p></details></section>"""
+    version_flag = f" --version {benchmark_version}" if benchmark_version != "v1" else ""
+    claim_id = (
+        "DD-C-0087"
+        if benchmark_version == "v3"
+        else ("DD-C-0069" if benchmark_version == "v2" else "DD-C-0055")
+    )
+    version_description = (
+        "Version 3 adds threshold, equilibrium, dynamic-attention, and team-mechanism fixtures while preserving the v1 default and v2 exact vectors."
+        if benchmark_version == "v3"
+        else "Version 2 adds selective-attention fixtures while preserving the v1 command default and exact vectors."
+    )
+    overview = f"""<header class="page-hero"><p class="eyebrow">DiscoveryBench {html.escape(benchmark_version)}</p><h1>Compare search strategies</h1><p class="lede">A bounded, auditable suite for comparing how evidence becomes action. {html.escape(version_description)} It is not a hosted leaderboard or a universal measure of real-world agent quality.</p></header><div class="metric-grid"><article class="metric-card"><span>Benchmark tasks</span><strong>{summary["task_count"]}</strong></article><article class="metric-card"><span>Built-in strategies</span><strong>{summary["protocol_count"]}</strong></article><article class="metric-card"><span>Compatible pairs</span><strong>{summary["compatible_pairs"]}</strong></article></div><p>{downloads}</p><section class="content-section"><h2>Explore the benchmark</h2><div class="card-grid resource-grid"><article class="card"><h3><a href="benchmark/tasks.html">Benchmark tasks</a></h3><p>See the declared information and reference evidence for each task.</p></article><article class="card"><h3><a href="benchmark/protocols.html">What each strategy can see and do</a></h3><p>Compare capability boundaries before comparing results.</p></article><article class="card"><h3><a href="benchmark/metrics.html">How performance is measured</a></h3><p>Inspect every versioned measure and required observable.</p></article><article class="card"><h3><a href="benchmark/results.html">Benchmark results</a></h3><p>Read the exact compatible vectors and scoped Pareto report.</p></article><article class="card"><h3><a href="benchmark/attention.html">Selective-attention extension</a></h3><p>Compare the DD-012--DD-014 attention, audience, and conditional-policy fixtures.</p></article><article class="card"><h3><a href="labs/benchmark.html">Benchmark Lab</a></h3><p>Filter the complete result table by task.</p></article></div></section><section class="content-section prose"><h2>Reproduce</h2><details class="technical-details"><summary>Technical details</summary><p><code>distributed-discovery benchmark{version_flag} run-golden</code><br><code>distributed-discovery benchmark{version_flag} verify-run results/verified/{html.escape(run_id)}</code></p><p>Claim {claim_id} · reproducible run <a href="evidence.html">{html.escape(run_id)}</a>.</p></details></section>"""
     _write(
         output,
         "benchmark.html",
@@ -574,7 +583,7 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
     )
 
     attention_results = [
-        row for row in results if int(str(row["task_id"]).replace("DB-G", "")) >= 16
+        row for row in results if 16 <= int(str(row["task_id"]).replace("DB-G", "")) <= 20
     ]
     attention_rows = "".join(
         f'<tr><th scope="row">{html.escape(str(row["task_id"]))}</th><td>{html.escape(str(row["protocol_id"]))}</td><td><code>{html.escape(json.dumps(row["metrics"], sort_keys=True))}</code></td></tr>'
@@ -636,7 +645,7 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
     for name, value in data.items():
         _write(output, f"data/benchmark/{name}", json.dumps(value, indent=2, sort_keys=True) + "\n")
     (output / "downloads").mkdir(exist_ok=True)
-    for version in ("v1", "v2"):
+    for version in ("v1", "v2", "v3"):
         schema = root / f"studies/DD-010-discoverybench/schemas/task-{version}.schema.json"
         shutil.copy2(schema, output / f"downloads/discoverybench-task-{version}.schema.json")
     return {"run_id": run_id, "summary": summary}
