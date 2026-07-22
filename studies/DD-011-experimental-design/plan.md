@@ -39,20 +39,23 @@ check four Program V4 source fixtures, and reject all four corruptions. The next
 gate is the frozen source commit and draft PR; only then may the registered v3
 configuration execute once.
 
-Frozen source commit `5743ccb` and draft PR #120 preceded the sole v3 run
+Frozen source commit `5743ccb` and PR #120 preceded the sole v3 run
 `20260722T061958Z_DD-011_5743ccba_19b6517655`. It passed in 0.874741 seconds at
 33.094 MB, generated 1,184 assignments and 1,680 power rows from 1,680,000
 seeded draws, and independently reproduced every rejection count plus four
 Program V4 source fixtures. All four corruptions were rejected. The 644
 failures among 840 registered large-sample rows are retained; they are
 calibration failures, not behavioral results. DD-C-0088 passed its separate
-Monte Carlo evidence audit. The active gate is final repository/site
-acceptance, evidence commit, PR CI/merge, post-merge CI/Pages, issue closure,
-and live experiment/data/schema routes. The run must not be repeated.
+Monte Carlo evidence audit. The run must not be repeated.
 
 Final local acceptance passed bootstrap, Ruff, MyPy on 133 source files, all
 210 tests, the 88-claim ledger, all 47 manifests, and the 63-page/22-study site.
 The generated experiment kit selects v3, preserves the v2 attention page,
 publishes all three schemas and the complete power/calibration data, links the
 immutable run and DD-C-0088, and exposes the threshold/dynamic page with the
-no-human-data warning. The next action is the evidence commit and push.
+no-human-data warning. PR #120 passed CI and paper/site artifact checks and
+squash-merged as `0f7a234`, closing issue #119. Post-merge CI `29896864562`
+and Pages `29896864602` passed. The live experiment-kit, threshold/dynamic,
+DD-011, v3 schema, claim, summary, and calibration routes returned HTTP 200;
+the public data retain all 644 failures and state `no_human_data: true`.
+Milestone V4.6 is complete. The focused *Threshold Discovery* paper is next.

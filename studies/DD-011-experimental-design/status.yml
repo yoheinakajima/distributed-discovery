@@ -1,5 +1,5 @@
 study_id: DD-011
 status: complete-versioned-program-v4-extension
 evidence_status: v1-v2-preserved-v3-seeded-power-with-separate-recomputation-four-source-checks-and-four-corruption-gates
-next_action: preserve all three immutable versions and every calibration failure; complete PR and deployment acceptance without rerunning v3; human deployment remains prohibited
-updated_utc: 2026-07-22T06:22:00Z
+next_action: preserve PR #120, all three immutable versions, every calibration failure, and the no-human-data boundary; continue Program V4 with the focused paper
+updated_utc: 2026-07-22T06:33:00Z
