@@ -53,6 +53,7 @@ DD017_RUN = "20260722T024032Z_DD-017_033452f6_3d2c74fdfb"
 DD018_RUN = "20260722T051847Z_DD-018_a193f602_3b3ddac173"
 DD020_RUN = "20260722T142551Z_DD-020_3854fff6_37c11a850a"
 DD021_RUN = "20260722T185924Z_DD-021_3cdbbc40_2fea269a9a"
+DD022_RUN = "20260722T210334Z_DD-022_2376d5b7_ad67765ca8"
 
 
 class SiteParser(HTMLParser):
@@ -2022,7 +2023,7 @@ def _incremental_sharing_pages(root: Path, output: Path) -> None:
         "confidence-point": "Confidence point (accuracy 5/8)",
     }
 
-    def attributes(row: dict[str, Any]) -> str:
+    def incremental_attributes(row: dict[str, Any]) -> str:
         values = {
             "incremental-row": "",
             "mode": row["mode"],
@@ -2055,7 +2056,7 @@ def _incremental_sharing_pages(root: Path, output: Path) -> None:
             else f"M={row['targets']}, N={row['agents']}, p={row['accuracy']}"
         )
         return """<tr {attrs}><th scope="row">{source}</th><td>{step}→{next_step}</td><td>{pooled}</td><td>{discovery}</td><td>{gain}</td><td>{rescue}</td><td>{net}</td><td>{sign}</td><td>{private}</td><td>{consensus}</td></tr>""".format(
-            attrs=attributes(row),
+            attrs=incremental_attributes(row),
             source=html.escape(source),
             step=row["block_size"],
             next_step=row["next_block_size"],
@@ -2189,6 +2190,193 @@ def _general_sharing_pages(root: Path, output: Path) -> None:
         "data/labs/general-sharing-frontier.json",
         json.dumps(lab_data, indent=2, sort_keys=True) + "\n",
     )
+
+
+def _coordination_free_sharing_pages(root: Path, output: Path) -> None:
+    """Render DD-022 using only its immutable exact registry."""
+
+    run_outputs = root / "results/verified" / DD022_RUN / "outputs"
+    registry_source = run_outputs / "registry.json"
+    certificate_source = run_outputs / "threshold-certificate.json"
+    rows = json.loads(registry_source.read_text(encoding="utf-8"))
+    certificate = json.loads(certificate_source.read_text(encoding="utf-8"))
+    if not isinstance(rows, list) or len(rows) != 42:
+        raise RuntimeError("DD-022 Lab requires all 42 exact cells")
+    if certificate.get("passed") is not True:
+        raise RuntimeError("DD-022 Lab requires the passing root certificate")
+    claims = [f"DD-C-{identifier:04d}" for identifier in range(104, 111)]
+    lab_data = {
+        "schema_version": 1,
+        "study_id": "DD-022",
+        "claim_ids": claims,
+        "run_id": DD022_RUN,
+        "rows": rows,
+        "threshold_certificate": certificate,
+        "source_sha256": {
+            "registry": _sha256(registry_source),
+            "threshold_certificate": _sha256(certificate_source),
+        },
+        "boundary": "selectors expose immutable posterior-only selected-equilibrium outputs; signal-ownership-aware equilibria and centralized role allocation are separate",
+    }
+    _write(
+        output,
+        "data/labs/coordination-free-positive-sharing.json",
+        json.dumps(lab_data, indent=2, sort_keys=True) + "\n",
+    )
+    _write(
+        output,
+        "data/coordination-free-positive-sharing/registry.json",
+        registry_source.read_text(),
+    )
+    _write(
+        output,
+        "data/coordination-free-positive-sharing/threshold-certificate.json",
+        certificate_source.read_text(),
+    )
+
+    accuracies = sorted({str(row["accuracy"]) for row in rows}, key=lambda x: Fraction(x))
+    dependence = sorted({str(row["dependence"]) for row in rows}, key=lambda x: Fraction(x))
+    accuracy_options = "".join(
+        f'<option value="{value}"{" selected" if value == "3/5" else ""}>{float(Fraction(value)):.2f} · {value}</option>'
+        for value in accuracies
+    )
+    dependence_options = "".join(
+        f'<option value="{value}"{" selected" if value == "1/2" else ""}>{float(Fraction(value)):.3f} · {value}</option>'
+        for value in dependence
+    )
+
+    def coordination_attributes(row: dict[str, Any]) -> str:
+        private = row["private_metrics"]
+        shared = row["shared_metrics"]
+        direct = row["direct_private_metrics"]
+        values = {
+            "coordination-row": "",
+            "accuracy": row["accuracy"],
+            "dependence": row["dependence"],
+            "private-r": row["private_selection"]["follow_probability"],
+            "private-regime": row["private_selection"]["regime"],
+            "agreement-posterior": row["shared_selection"]["agreement_posterior"],
+            "shared-x": row["shared_selection"]["agreement_action_probability"],
+            "shared-regime": row["shared_selection"]["agreement_regime"],
+            "direct-discovery": direct["discovery"],
+            "private-discovery": private["discovery"],
+            "shared-discovery": shared["discovery"],
+            "private-payoff": private["payoff_per_agent"],
+            "shared-payoff": shared["payoff_per_agent"],
+            "private-collision": private["collision"],
+            "shared-collision": shared["collision"],
+            "private-diversity": private["diversity"],
+            "shared-diversity": shared["diversity"],
+            "private-quality": private["average_action_quality"],
+            "shared-quality": shared["average_action_quality"],
+            "private-gap": private["implementation_gap"],
+            "shared-gap": shared["implementation_gap"],
+            "selected-gain": row["selected_sharing_gain"],
+            "private-minus-direct": str(
+                Fraction(private["discovery"]) - Fraction(direct["discovery"])
+            ),
+            "shared-minus-direct": str(
+                Fraction(shared["discovery"]) - Fraction(direct["discovery"])
+            ),
+            "private-minus-shared": str(
+                Fraction(private["discovery"]) - Fraction(shared["discovery"])
+            ),
+            "shared-minus-private": row["selected_sharing_gain"],
+            "gain-class": row["gain_class"],
+        }
+        return " ".join(
+            f'data-{key}="{html.escape(str(value), quote=True)}"' for key, value in values.items()
+        )
+
+    table_rows = "".join(
+        '<tr {attrs}><th scope="row">{p}</th><td>{rho}</td><td>{r}</td><td>{x}</td><td>{private}</td><td>{shared}</td><td>{gain}</td><td>{kind}</td></tr>'.format(
+            attrs=coordination_attributes(row),
+            p=html.escape(str(row["accuracy"])),
+            rho=html.escape(str(row["dependence"])),
+            r=html.escape(str(row["private_selection"]["follow_probability"])),
+            x=html.escape(str(row["shared_selection"]["agreement_action_probability"])),
+            private=html.escape(str(row["private_metrics"]["discovery"])),
+            shared=html.escape(str(row["shared_metrics"]["discovery"])),
+            gain=html.escape(str(row["selected_sharing_gain"])),
+            kind=html.escape(str(row["gain_class"])),
+        )
+        for row in rows
+    )
+    default = next(row for row in rows if row["accuracy"] == "3/5" and row["dependence"] == "1/2")
+
+    def coordination_percent(value: str) -> str:
+        return f"{float(Fraction(value)) * 100:.1f}%"
+
+    def coordination_metric(label: str, key: str, value: str) -> str:
+        return f'<article class="metric-card" data-coordination-output="{key}"><span>{label}</span><strong>{coordination_percent(value)}</strong><code class="exact-value">{html.escape(value)}</code></article>'
+
+    metrics = "".join(
+        [
+            coordination_metric(
+                "Follow probability r",
+                "strategy",
+                str(default["private_selection"]["follow_probability"]),
+            ),
+            coordination_metric(
+                "Agreement posterior u",
+                "posterior",
+                str(default["shared_selection"]["agreement_posterior"]),
+            ),
+            coordination_metric(
+                "Agreement action probability x",
+                "shared-action",
+                str(default["shared_selection"]["agreement_action_probability"]),
+            ),
+            coordination_metric(
+                "Discovery", "discovery", str(default["private_metrics"]["discovery"])
+            ),
+            coordination_metric(
+                "Payoff per agent", "payoff", str(default["private_metrics"]["payoff_per_agent"])
+            ),
+            coordination_metric(
+                "Collision", "collision", str(default["private_metrics"]["collision"])
+            ),
+            coordination_metric(
+                "Action diversity", "diversity", str(default["private_metrics"]["diversity"])
+            ),
+            coordination_metric(
+                "Average action quality",
+                "quality",
+                str(default["private_metrics"]["average_action_quality"]),
+            ),
+            coordination_metric("Gain over baseline", "gain", "0"),
+            coordination_metric(
+                "Gap to centralized V2",
+                "gap",
+                str(default["private_metrics"]["implementation_gap"]),
+            ),
+        ]
+    )
+    profile_points = "".join(
+        f'<div class="profile-point" data-coordination-point data-rho="{html.escape(value, quote=True)}"><strong>ρ={html.escape(value)}</strong><div class="profile-bar" data-coordination-private-bar></div><div class="profile-bar" data-coordination-shared-bar></div><span class="profile-value" data-coordination-value>—</span></div>'
+        for value in dependence
+    )
+    claim_links = " · ".join(f'<a href="../claims.html#{claim}">{claim}</a>' for claim in claims)
+    root_expression = html.escape(str(certificate["exact_positive_root"]))
+    body = f"""<header class="page-hero"><p class="eyebrow">Interactive exact-output model · DD-022</p><h1>Coordination-Free Positive Sharing Lab</h1><p class="lede">Select an immutable exact cell and compare the declared private and posterior-only shared symmetric equilibria. The Lab never recomputes or interpolates evidence.</p></header><section class="content-section prose"><h2>Exact selected crossover</h2><p class="identity">at p=3/5, shared discovery &gt; private equilibrium discovery iff ρ ∈ ({root_expression}, 1)</p><p>Approximate marker: ρ*=53.583%. Sharing reveals the agreement pattern and updates dependence beliefs; it does not reveal the latent source branch or assign roles.</p></section><section class="lab" data-coordination-lab><fieldset class="lab-controls"><legend>Choose an exact registered comparison</legend><div><label for="coordination-accuracy">Signal accuracy p</label><select id="coordination-accuracy">{accuracy_options}</select></div><div><label for="coordination-dependence">Dependence ρ</label><select id="coordination-dependence">{dependence_options}</select></div><div><label for="coordination-regime">Information regime</label><select id="coordination-regime"><option value="private">Private</option><option value="shared">Shared</option></select></div><div><label for="coordination-baseline">Comparison baseline</label><select id="coordination-baseline"><option value="direct">Direct private</option><option value="private">Private symmetric equilibrium</option><option value="shared">Shared symmetric equilibrium</option></select></div></fieldset><div class="lab-actions"><button type="button" class="filter-button" data-coordination-reset>Reset</button><a href="../data/labs/coordination-free-positive-sharing.json">Download Lab data</a></div><p id="coordination-status" class="callout" aria-live="polite">Showing the p=3/5, rho=1/2 private selected equilibrium.</p><div class="metric-grid compact">{metrics}<article class="metric-card"><span>Private regime</span><strong data-coordination-text="private-regime">{html.escape(str(default["private_selection"]["regime"]))}</strong></article><article class="metric-card"><span>Shared regime</span><strong data-coordination-text="shared-regime">{html.escape(str(default["shared_selection"]["agreement_regime"]))}</strong></article></div><section class="profile-panel"><h2>Discovery versus ρ</h2><p class="visual-summary">Private is the first bar; shared is the second. The exact crossover applies to p=3/5.</p><div class="profile-plot" role="img" aria-label="Private and shared selected discovery by registered dependence" data-coordination-chart>{profile_points}</div></section><section class="profile-panel"><h2>Regimes and implementation gap</h2><p class="visual-summary" data-coordination-regime-summary>The selected cell reports both equilibrium regimes and the remaining gap to centralized V2=1.</p></section></section><noscript><p class="callout">JavaScript is off. All 42 exact cells remain visible below and downloadable.</p></noscript><details class="technical-details complete-data"><summary>Complete exact table — 42 cells</summary><table class="matrix"><caption>DD-022 selected-equilibrium registry</caption><thead><tr><th>p</th><th>ρ</th><th>Private r</th><th>Shared agreement x</th><th>Private discovery</th><th>Shared discovery</th><th>Gain</th><th>Class</th></tr></thead><tbody>{table_rows}</tbody></table></details><section class="content-section prose"><h2>Evidence and selection boundary</h2><p>The result is exact for a posterior-only, provenance-blind identical-mixing selection. Ownership-aware and role-dependent equilibria can split targets and attain different discovery; the strict result does not survive every equilibrium.</p><p>{claim_links} · <a href="{REPOSITORY_URL}/blob/main/results/verified/{DD022_RUN}/manifest.json">{DD022_RUN}</a></p><p><a href="../data/coordination-free-positive-sharing/registry.json">Download exact registry</a> · <a href="../data/coordination-free-positive-sharing/threshold-certificate.json">Download root certificate</a></p></section>"""
+    _write(
+        output,
+        "labs/coordination-free-positive-sharing.html",
+        _page(
+            "Coordination-Free Positive Sharing Lab",
+            "Explore DD-022's exact selected-equilibrium sharing threshold and selection boundary.",
+            body,
+            "labs/coordination-free-positive-sharing.html",
+        ),
+    )
+    # Finish rendering the adjacent DD-021 Lab whose data envelope is emitted
+    # by `_general_sharing_pages` immediately before this renderer is called.
+    run_outputs = root / "results/verified" / DD021_RUN / "outputs"
+    registry_source = run_outputs / "registry.json"
+    witnesses_source = run_outputs / "minimal-witnesses.json"
+    channels_source = run_outputs / "channels.json"
+    rows = json.loads(registry_source.read_text(encoding="utf-8"))
+    claims = [f"DD-C-{identifier:04d}" for identifier in range(97, 104)]
     _write(output, "data/general-sharing-frontier/registry.json", registry_source.read_text())
     _write(
         output, "data/general-sharing-frontier/minimal-witnesses.json", witnesses_source.read_text()
@@ -3056,6 +3244,12 @@ def _render(
             "Error contraction, discovery, sharing regime, consensus class, and recovery budget",
             "DD-021",
         ),
+        "coordination-free-positive-sharing": (
+            "Information and sources",
+            "Signal accuracy, dependence, information regime, and baseline",
+            "Selected strategy, posterior, discovery, payoff, diversity, gain, and implementation gap",
+            "DD-022",
+        ),
         "audience-design": (
             "Information and sources",
             "Team, accuracy, and audience",
@@ -3114,6 +3308,7 @@ def _render(
         "dynamic-attention": "Interactive models",
         "incremental-sharing": "Interactive models",
         "general-sharing-frontier": "Interactive models",
+        "coordination-free-positive-sharing": "Interactive models",
         "mechanisms": "Data explorers",
         "team-mechanisms": "Interactive models",
         "coverage": "Guided exhibits",
@@ -3162,6 +3357,11 @@ def _render(
             "General sharing frontier",
             "DD-C-0097",
             "Compare exact error contraction, sharing regimes, and centralized action-budget recovery across all 177 registered scenarios.",
+        ),
+        "coordination-free-positive-sharing": (
+            "Coordination-free positive sharing",
+            "DD-C-0106",
+            "Compare private and posterior-only shared symmetric equilibria across all 42 exact cells while preserving selection dependence.",
         ),
         "team-mechanisms": (
             "Team mechanisms",
@@ -3230,6 +3430,7 @@ def _render(
     _program_v4_lab_pages(root, output)
     _incremental_sharing_pages(root, output)
     _general_sharing_pages(root, output)
+    _coordination_free_sharing_pages(root, output)
     _benchmark_pages(root, output)
     _experiment_pages(root, output)
     _attention_pages(root, output)
@@ -3323,6 +3524,7 @@ def validate_site(output: Path, routes: list[dict[str, str]]) -> dict[str, Any]:
                     "data-conditional-lab",
                     "data-incremental-lab",
                     "data-frontier-lab",
+                    "data-coordination-lab",
                 )
             )
             if not supported:

@@ -1,0 +1,21 @@
+{
+  "accuracy_values": 6,
+  "canonical_accuracy": "3/5",
+  "cells": 42,
+  "dependence_values": 7,
+  "gain_class_counts": {
+    "negative": 18,
+    "neutral": 18,
+    "positive": 6
+  },
+  "positive_root": "(5*sqrt(73)-17)/48",
+  "private_regime_boundary": "7/12",
+  "root_isolating_interval": [
+    "2679/5000",
+    "67/125"
+  ],
+  "selection_dependence": true,
+  "selection_scope": "posterior-only-provenance-blind-identical-mixing",
+  "shared_regime_boundary": "1/6",
+  "source_checksum_sha256": "bea638d8cbe0ed27bfcbc8b150951891874f194643bc7fa99b2c4a1f5c9fda81"
+}

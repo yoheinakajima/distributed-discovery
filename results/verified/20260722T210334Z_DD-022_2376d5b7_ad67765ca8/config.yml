@@ -1,0 +1,34 @@
+schema_version: dd022-coordination-free-positive-sharing-v1
+study_id: DD-022
+targets: 2
+agents: 2
+accuracies: ["1/2", "11/20", "3/5", "13/20", "2/3", "1/1"]
+dependence: ["0/1", "1/6", "1/4", "1/2", "7/12", "3/4", "1/1"]
+primary_theorem_accuracy: "3/5"
+cells: 42
+private_pure_profiles_per_cell: 16
+private_type_deviation_checks_per_profile: 4
+public_signal_profiles_per_cell: 4
+public_action_profiles_per_on_path_state: 4
+direct_probability_states_per_selected_metric: 32
+source_law: world-level-common-versus-conditionally-independent-mixture
+private_selection: anonymous-label-equivariant-symmetric-bayes-nash
+shared_selection: posterior-only-provenance-blind-identical-mixing-nash
+randomization: independent-private-only
+reward: ex-post-budget-balanced-equal-split-unit-prize
+planner_benchmark: centralized-posterior-top-two
+method_a: exact-symbolic-closed-form
+method_b: exact-target-source-signal-action-and-deviation-enumeration
+runtime_estimate_seconds: 10
+time_cap_seconds: 120
+memory_estimate_mb: 64
+memory_cap_mb: 1024
+certificate_format: dd022-exact-equilibrium-threshold-certificate-v1
+root_polynomial: [24, 17, -16]
+root_isolating_interval: ["2679/5000", "67/125"]
+corruptions: [source-mixture-probability, posterior, private-best-response, shared-support, threshold-polynomial, root-interval, discovery, equilibrium-label, implementation-gap, source-checksum]
+valid_partial_outcomes: none-for-claim-promotion
+interruption_behavior: preserve-failed-run-if-created-never-overwrite-never-promote-partial
+random_seeds:
+  algorithm: []
+  model: null

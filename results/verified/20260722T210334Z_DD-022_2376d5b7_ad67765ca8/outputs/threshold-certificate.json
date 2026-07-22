@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "discriminant": true,
+    "interval_inside_unit": true,
+    "lower_sign_negative": true,
+    "polynomial_matches": true,
+    "unique_positive_root": true,
+    "upper_sign_positive": true
+  },
+  "endpoint_signs": [
+    "-2251/1562500",
+    "111/15625"
+  ],
+  "exact_positive_root": "(5*sqrt(73)-17)/48",
+  "isolating_interval": [
+    "2679/5000",
+    "67/125"
+  ],
+  "passed": true,
+  "polynomial_coefficients": [
+    24,
+    17,
+    -16
+  ]
+}

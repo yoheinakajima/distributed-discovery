@@ -1,0 +1,17 @@
+{
+  "canonical_checks": true,
+  "canonical_detail": {
+    "canonical_slice_complete": true,
+    "constant_split_private_equilibrium": true,
+    "negative_registered_witness": true,
+    "positive_registered_witness": true,
+    "private_boundary": true,
+    "rho_one_neutral": true,
+    "selection_dependence_exposed": true,
+    "shared_boundary": true
+  },
+  "passed": true,
+  "registered_cells": true,
+  "row_checks": true,
+  "threshold_certificate": true
+}
