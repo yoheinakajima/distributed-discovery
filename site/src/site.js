@@ -14,6 +14,9 @@ if (menu) {
 document.querySelectorAll("[data-research-catalog]").forEach((catalog) => {
   const search = catalog.querySelector("#study-search");
   const status = catalog.querySelector("#study-status");
+  const program = catalog.querySelector("#study-program");
+  const family = catalog.querySelector("#study-family");
+  const evidence = catalog.querySelector("#study-evidence");
   const cards = Array.from(catalog.querySelectorAll("[data-study-card]"));
   const buttons = Array.from(catalog.querySelectorAll("[data-study-filter]"));
   if (!search || !status || !cards.length || !buttons.length) return;
@@ -25,7 +28,10 @@ document.querySelectorAll("[data-research-catalog]").forEach((catalog) => {
       const categories = (card.dataset.category || "").split(" ");
       const matchesFilter = activeFilter === "all" || categories.includes(activeFilter);
       const matchesQuery = !query || (card.dataset.search || "").includes(query);
-      const show = matchesFilter && matchesQuery;
+      const matchesProgram = !program || program.value === "all" || card.dataset.program === program.value;
+      const matchesFamily = !family || family.value === "all" || card.dataset.family === family.value;
+      const matchesEvidence = !evidence || evidence.value === "all" || card.dataset.evidence === evidence.value;
+      const show = matchesFilter && matchesQuery && matchesProgram && matchesFamily && matchesEvidence;
       card.hidden = !show;
       if (show) visible += 1;
     });
@@ -41,20 +47,7 @@ document.querySelectorAll("[data-research-catalog]").forEach((catalog) => {
     });
   });
   search.addEventListener("input", render);
-  render();
-});
-
-document.querySelectorAll("[data-lab]").forEach((lab) => {
-  const slider = lab.querySelector("input[type=range]");
-  const output = lab.querySelector("output");
-  const note = lab.querySelector("#lab-note");
-  if (!slider || !output || !note) return;
-  const name = lab.dataset.lab.replace(/-/g, " ");
-  const render = () => {
-    output.textContent = slider.value;
-    note.textContent = `${name}: precomputed fixture scenario ${slider.value} of ${slider.max}. This control changes no evidence or claim status.`;
-  };
-  slider.addEventListener("input", render);
+  [program, family, evidence].filter(Boolean).forEach((control) => control.addEventListener("change", render));
   render();
 });
 
@@ -65,7 +58,79 @@ document.querySelectorAll("[data-output-lab]").forEach((lab) => {
   const status = lab.querySelector("[data-output-status]");
   const rows = Array.from(document.querySelectorAll(`[data-output-row="${kind}"]`));
   if (!kind || !controls.length || !outputs.length || !status || !rows.length) return;
+  const reset = lab.querySelector("[data-lab-reset]");
+  const initialValues = new Map(controls.map((control) => [control, control.value]));
+  const params = new URLSearchParams(window.location.search);
+  controls.forEach((control) => {
+    const requested = params.get(control.dataset.filterKey);
+    if (requested && Array.from(control.options).some((option) => option.value === requested)) {
+      control.value = requested;
+    }
+  });
   const render = () => {
+    if (kind === "coverage") {
+      const fixture = lab.querySelector("#coverage-fixture");
+      const rule = lab.querySelector("#coverage-rule");
+      const manual = lab.querySelector("#coverage-selection");
+      const manualContainer = lab.querySelector("[data-manual-control]");
+      if (fixture && rule && manual && manualContainer) {
+        const enabled = rule.value === "manual-selection";
+        manualContainer.hidden = !enabled;
+        manual.disabled = !enabled;
+        const available = Array.from(manual.options).filter((option) => rows.some((row) =>
+          row.dataset.fixture === fixture.value && row.dataset.rule === "manual-selection" &&
+          row.dataset.selection === option.value));
+        Array.from(manual.options).forEach((option) => {
+          option.hidden = !available.includes(option);
+          option.disabled = !available.includes(option);
+        });
+        if (enabled && !available.includes(manual.options[manual.selectedIndex]) && available.length) {
+          manual.value = available[0].value;
+        }
+      }
+    }
+    if (kind === "mechanisms") {
+      const family = lab.querySelector("#mechanisms-family");
+      const regime = lab.querySelector("#mechanisms-regime");
+      const mechanism = lab.querySelector("#mechanisms-row");
+      const tie = lab.querySelector("#mechanisms-tie");
+      const constrain = (control, predicate) => {
+        const available = Array.from(control.options).filter((option) => rows.some((row) =>
+          predicate(row, option.value)));
+        Array.from(control.options).forEach((option) => {
+          option.hidden = !available.includes(option);
+          option.disabled = !available.includes(option);
+        });
+        if (!available.includes(control.options[control.selectedIndex]) && available.length) {
+          control.value = available[0].value;
+        }
+      };
+      if (family && regime && mechanism && tie) {
+        constrain(regime, (row, value) => row.dataset.family === family.value && row.dataset.regime === value);
+        constrain(mechanism, (row, value) => row.dataset.family === family.value &&
+          row.dataset.regime === regime.value && row.dataset.mechanism === value);
+        constrain(tie, (row, value) => row.dataset.family === family.value &&
+          row.dataset.regime === regime.value && row.dataset.mechanism === mechanism.value &&
+          row.dataset.tieRole === value);
+      }
+    }
+    if (kind === "evidence-acquisition") {
+      const agents = lab.querySelector("#acquisition-agents");
+      const accuracy = lab.querySelector("#acquisition-accuracy");
+      const cost = lab.querySelector("#acquisition-cost");
+      if (agents && accuracy && cost) {
+        const available = Array.from(cost.options).filter((option) => rows.some((row) =>
+          row.dataset.agents === agents.value && row.dataset.accuracy === accuracy.value &&
+          row.dataset.cost === option.value));
+        Array.from(cost.options).forEach((option) => {
+          option.hidden = !available.includes(option);
+          option.disabled = !available.includes(option);
+        });
+        if (!available.includes(cost.options[cost.selectedIndex]) && available.length) {
+          cost.value = available[0].value;
+        }
+      }
+    }
     controls.forEach((control) => {
       const limitingId = control.dataset.limitBy;
       if (!limitingId) return;
@@ -83,7 +148,8 @@ document.querySelectorAll("[data-output-lab]").forEach((lab) => {
         if (firstAvailable) control.value = firstAvailable.value;
       }
     });
-    const selected = rows.find((row) => controls.every((control) =>
+    const activeControls = controls.filter((control) => !control.disabled);
+    const selected = rows.find((row) => activeControls.every((control) =>
       row.getAttribute(`data-${control.dataset.filterKey}`) === control.value));
     rows.forEach((row) => { row.hidden = row !== selected; });
     if (!selected) {
@@ -94,74 +160,221 @@ document.querySelectorAll("[data-output-lab]").forEach((lab) => {
     outputs.forEach((output) => {
       output.textContent = selected.getAttribute(`data-${output.dataset.outputKey}`) || "not applicable";
     });
-    const selection = controls.map((control) => {
+    Array.from(lab.querySelectorAll("[data-exact-metric]")).forEach((metric) => {
+      const display = metric.querySelector("strong")?.textContent || "not applicable";
+      const exact = metric.querySelector("code")?.textContent || "not applicable";
+      metric.setAttribute("aria-label", `${metric.dataset.metricLabel}: ${display}; exact ${exact}.`);
+    });
+    if (kind === "threshold") {
+      const threshold = activeControls.find((control) => control.dataset.filterKey === "threshold")?.value;
+      Array.from(lab.querySelectorAll("[data-threshold-point]")).forEach((point) => {
+        point.classList.toggle("selected", point.dataset.thresholdPoint === threshold);
+      });
+    }
+    Array.from(lab.querySelectorAll("[data-output-bar-key]")).forEach((bar) => {
+      const value = Number(selected.getAttribute(`data-${bar.dataset.outputBarKey}`) || 0);
+      bar.style.setProperty("--bar-value", `${Math.max(0, Math.min(100, value))}%`);
+    });
+    const selection = activeControls.map((control) => {
       const option = control.options[control.selectedIndex];
       return `${control.previousElementSibling?.textContent || control.dataset.filterKey}: ${option.textContent}`;
     }).join("; ");
     status.textContent = `Showing one exact ${kind.replace(/-/g, " ")} row — ${selection}.`;
+    const url = new URL(window.location.href);
+    controls.forEach((control) => {
+      if (control.disabled) url.searchParams.delete(control.dataset.filterKey);
+      else url.searchParams.set(control.dataset.filterKey, control.value);
+    });
+    window.history.replaceState({}, "", url);
   };
   controls.forEach((control) => control.addEventListener("change", render));
+  if (reset) reset.addEventListener("click", () => {
+    controls.forEach((control) => { control.value = initialValues.get(control); });
+    render();
+  });
   render();
+});
+
+document.querySelectorAll("[data-copy-exact]").forEach((button) => {
+  button.addEventListener("click", async () => {
+    const target = document.getElementById(button.dataset.copyTarget || "");
+    if (!target) return;
+    await navigator.clipboard.writeText(target.textContent || "");
+    button.textContent = "Copied";
+  });
+});
+
+document.querySelectorAll("[data-atlas-lab]").forEach((lab) => {
+  const filters = Array.from(lab.querySelectorAll("select[data-atlas-filter]"));
+  const architecture = lab.querySelector("#atlas-architecture");
+  const status = lab.querySelector("[data-atlas-status]");
+  const reset = lab.querySelector("[data-lab-reset]");
+  const takeaway = lab.querySelector("[data-atlas-takeaway]");
+  const rows = Array.from(document.querySelectorAll("[data-atlas-architecture]"));
+  const validity = Array.from(document.querySelectorAll("[data-atlas-validity]"));
+  const points = Array.from(lab.querySelectorAll("[data-atlas-point]"));
+  const outputs = Array.from(lab.querySelectorAll("[data-output-key]"));
+  if (!filters.length || !architecture || !status || !rows.length || !validity.length) return;
+  const initial = { architecture: architecture.value, filters: filters.map((control) => control.value) };
+  const params = new URLSearchParams(window.location.search);
+  const requestedArchitecture = params.get("architecture");
+  if (requestedArchitecture && Array.from(architecture.options).some((option) => option.value === requestedArchitecture)) {
+    architecture.value = requestedArchitecture;
+  }
+  const matchesFilters = (row) => filters.every((control) =>
+    row.getAttribute(`data-${control.dataset.atlasFilter}`) === control.value);
+  const syncFilters = (row) => filters.forEach((control) => {
+    control.value = row.getAttribute(`data-${control.dataset.atlasFilter}`) || control.value;
+  });
+  const render = (fromArchitecture = false) => {
+    if (fromArchitecture && architecture.value !== "custom") {
+      const named = rows.find((row) => row.dataset.atlasArchitecture === architecture.value);
+      if (named) syncFilters(named);
+    }
+    const validityRow = validity.find(matchesFilters);
+    const selected = rows.find(matchesFilters);
+    if (!validityRow || validityRow.dataset.valid !== "true" || !selected) {
+      architecture.value = "custom";
+      status.textContent = `Not a registered coherent architecture: ${validityRow?.dataset.reason || "combination is outside the registry"}.`;
+      outputs.forEach((output) => { output.textContent = "not applicable"; });
+      points.forEach((point) => point.classList.remove("selected"));
+      if (takeaway) takeaway.textContent = "Invalid combinations remain visible as registered rejections; choose a coherent row to compare outcomes.";
+    } else {
+      architecture.value = selected.dataset.atlasArchitecture;
+      outputs.forEach((output) => {
+        output.textContent = selected.getAttribute(`data-${output.dataset.outputKey}`) || "not applicable";
+      });
+      points.forEach((point) => point.classList.toggle("selected", point.dataset.atlasPoint === architecture.value));
+      status.textContent = `Showing coherent architecture ${architecture.value}: ${validityRow.dataset.reason}.`;
+      if (takeaway) takeaway.textContent = "Coherent architectures expose tradeoffs; the selected row is compared within the declared Pareto objectives.";
+    }
+    const url = new URL(window.location.href);
+    url.searchParams.set("architecture", architecture.value);
+    filters.forEach((control) => url.searchParams.set(control.dataset.atlasFilter, control.value));
+    window.history.replaceState({}, "", url);
+  };
+  architecture.addEventListener("change", () => render(true));
+  filters.forEach((control) => control.addEventListener("change", () => render(false)));
+  points.forEach((point) => point.addEventListener("click", () => {
+    architecture.value = point.dataset.atlasPoint;
+    render(true);
+  }));
+  if (reset) reset.addEventListener("click", () => {
+    architecture.value = initial.architecture;
+    filters.forEach((control, index) => { control.value = initial.filters[index]; });
+    render(true);
+  });
+  render(architecture.value !== "custom");
 });
 
 document.querySelectorAll("[data-benchmark-lab]").forEach((lab) => {
   const select = lab.querySelector("select");
   const status = lab.querySelector("#benchmark-status");
+  const reset = lab.querySelector("[data-table-lab-reset]");
   const rows = Array.from(document.querySelectorAll("tr[data-task]"));
   if (!select || !status) return;
+  const requested = new URLSearchParams(window.location.search).get("task");
+  if (requested && Array.from(select.options).some((option) => option.value === requested)) select.value = requested;
   const render = () => {
     let visible = 0;
+    let first = null;
     rows.forEach((row) => {
       const show = select.value === "all" || row.dataset.task === select.value;
       row.hidden = !show;
-      if (show) visible += 1;
+      if (show) { visible += 1; if (!first) first = row; }
     });
     status.textContent = `Showing ${visible} exact compatible row${visible === 1 ? "" : "s"}.`;
+    const cells = first ? Array.from(first.cells).map((cell) => cell.textContent.trim()) : [];
+    const values = { count: String(visible), task: select.value === "all" ? "All tasks" : select.value, strategy: cells[1] || "—", vector: cells[2] || "—" };
+    lab.querySelectorAll("[data-benchmark-output]").forEach((output) => { output.textContent = values[output.dataset.benchmarkOutput] || "—"; });
+    const url = new URL(window.location.href);
+    url.searchParams.set("task", select.value);
+    window.history.replaceState({}, "", url);
   };
   select.addEventListener("change", render);
+  if (reset) reset.addEventListener("click", () => { select.value = "all"; render(); });
   render();
 });
 
 document.querySelectorAll("[data-experiment-lab]").forEach((lab) => {
   const select = lab.querySelector("select");
   const status = lab.querySelector("#experiment-status");
+  const reset = lab.querySelector("[data-table-lab-reset]");
   const rows = Array.from(document.querySelectorAll("tr[data-power-scenario]"));
   if (!select || !status) return;
+  const requested = new URLSearchParams(window.location.search).get("scenario");
+  if (requested && Array.from(select.options).some((option) => option.value === requested)) select.value = requested;
   const render = () => {
     let visible = 0;
+    let first = null;
     rows.forEach((row) => {
       const show = select.value === "all" || row.dataset.powerScenario === select.value;
       row.hidden = !show;
-      if (show) visible += 1;
+      if (show) { visible += 1; if (!first) first = row; }
     });
     status.textContent = `Showing ${visible} synthetic power row${visible === 1 ? "" : "s"}.`;
+    const cells = first ? Array.from(first.cells).map((cell) => cell.textContent.trim()) : [];
+    const values = { count: String(visible), scenario: select.value === "all" ? "All scenarios" : select.value, power: cells[4] || "—", mde: cells[5] || "—" };
+    lab.querySelectorAll("[data-experiment-output]").forEach((output) => { output.textContent = values[output.dataset.experimentOutput] || "—"; });
+    const url = new URL(window.location.href);
+    url.searchParams.set("scenario", select.value);
+    window.history.replaceState({}, "", url);
   };
   select.addEventListener("change", render);
+  if (reset) reset.addEventListener("click", () => { select.value = "all"; render(); });
   render();
 });
 
-document.querySelectorAll("[data-attention-lab]").forEach((lab) => {
+document.querySelectorAll("[data-attention-lab]").forEach(async (lab) => {
   const n = lab.querySelector("#attention-n");
   const p = lab.querySelector("#attention-p");
   const q = lab.querySelector("#attention-q");
   const k = lab.querySelector("#attention-k");
   const reward = lab.querySelector("#attention-reward");
   const status = lab.querySelector("#attention-status");
-  const rows = Array.from(document.querySelectorAll("tr[data-attention-row]"));
+  const reset = lab.querySelector("[data-table-lab-reset]");
+  const takeaway = lab.querySelector("[data-attention-takeaway]");
   if (!n || !p || !q || !k || !reward || !status) return;
+  let registeredCells = [];
+  try {
+    const response = await fetch("../data/attention/census.json");
+    const payload = await response.json();
+    registeredCells = payload.cells || [];
+  } catch (_error) {
+    status.textContent = "The local attention census could not be loaded; the representative exact fallback remains below.";
+    return;
+  }
   const render = () => {
     const validCounts = Array.from(k.options).filter((option) => Number(option.value) <= Number(n.value));
     Array.from(k.options).forEach((option) => { option.hidden = Number(option.value) > Number(n.value); });
     if (!validCounts.some((option) => option.value === k.value)) k.value = validCounts[0].value;
-    let visible = 0;
-    rows.forEach((row) => {
-      const show = row.dataset.n === n.value && row.dataset.p === p.value &&
-        row.dataset.q === q.value && row.dataset.k === k.value &&
-        row.dataset.reward === reward.value;
-      row.hidden = !show;
-      if (show) visible += 1;
-    });
-    status.textContent = `Showing ${visible} exact attention profile and reward row. Ignoring roles do not receive the public clue.`;
+    const selectedCell = registeredCells.find((cell) => String(cell.agents) === n.value &&
+      String(cell.private_accuracy) === p.value && String(cell.shared_accuracy) === q.value);
+    const selected = selectedCell?.profiles?.find((profile) => String(profile.attenders) === k.value);
+    if (!selectedCell || !selected) {
+      status.textContent = "No registered exact attention profile matches this selection.";
+      return;
+    }
+    const rewardResult = selected.rewards?.[reward.value];
+    const equilibriumRegistry = selectedCell.reward_equilibria?.[reward.value];
+    const licensed = reward.value === "public-reader-license";
+    const equilibrium = licensed
+      ? (equilibriumRegistry?.binding_implemented_counts || []).includes(Number(k.value)) ? "binding implementation" : "no"
+      : (equilibriumRegistry?.weak || []).includes(Number(k.value)) ? "weak" : "no";
+    status.textContent = "Showing one exact attention profile selected from local JSON. Ignoring roles do not receive the public clue.";
+    const values = {
+      discovery: selected.discovery,
+      attending: licensed ? "not applicable" : rewardResult?.attending ?? "—",
+      ignoring: licensed ? "not applicable" : rewardResult?.ignoring ?? "—",
+      optimum: selectedCell.social_optima.includes(Number(k.value)) ? "yes" : "no",
+      equilibrium,
+      wedge: selected.attention_wedge ?? "—",
+    };
+    lab.querySelectorAll("[data-attention-output]").forEach((output) => { output.textContent = values[output.dataset.attentionOutput] || "—"; });
+    if (takeaway) takeaway.textContent = values.optimum === "yes" ? "This reader count is socially optimal in the selected registered cell; its reward equilibrium is reported separately." : "This reader count is not socially optimal in the selected registered cell; compare its incentive wedge and equilibrium status.";
+    const url = new URL(window.location.href);
+    [["n", n], ["p", p], ["q", q], ["k", k], ["reward", reward]].forEach(([key, control]) => url.searchParams.set(key, control.value));
+    window.history.replaceState({}, "", url);
   };
   [n, p, q, k, reward].forEach((control) => control.addEventListener("change", render));
   n.value = "4";
@@ -169,6 +382,14 @@ document.querySelectorAll("[data-attention-lab]").forEach((lab) => {
   q.value = "3/4";
   k.value = "1";
   reward.value = "equal-split";
+  const params = new URLSearchParams(window.location.search);
+  [["n", n], ["p", p], ["q", q], ["k", k], ["reward", reward]].forEach(([key, control]) => {
+    const value = params.get(key);
+    if (value && Array.from(control.options).some((option) => option.value === value)) control.value = value;
+  });
+  if (reset) reset.addEventListener("click", () => {
+    n.value = "4"; p.value = "1/2"; q.value = "3/4"; k.value = "1"; reward.value = "equal-split"; render();
+  });
   render();
 });
 
@@ -181,6 +402,8 @@ document.querySelectorAll("[data-audience-lab]").forEach((lab) => {
   const m = lab.querySelector("#audience-m");
   const mechanism = lab.querySelector("#audience-mechanism");
   const status = lab.querySelector("#audience-status");
+  const reset = lab.querySelector("[data-table-lab-reset]");
+  const takeaway = lab.querySelector("[data-audience-takeaway]");
   const bindingRows = Array.from(document.querySelectorAll("tr[data-audience-row]"));
   const voluntaryRows = Array.from(document.querySelectorAll("tr[data-voluntary-row]"));
   const garblingRows = Array.from(document.querySelectorAll("tr[data-garbling-row]"));
@@ -220,6 +443,20 @@ document.querySelectorAll("[data-audience-lab]").forEach((lab) => {
     if (bindingSection) bindingSection.hidden = use.value !== "binding";
     if (voluntarySection) voluntarySection.hidden = use.value !== "voluntary";
     status.textContent = `Showing ${bindingVisible} binding row, ${voluntaryVisible} voluntary profile${voluntaryVisible === 1 ? "" : "s"}, ${garblingVisible} feasible garbling row${garblingVisible === 1 ? "" : "s"}, and ${mechanismVisible} mechanism row. A zero garbling count means g>q or audience zero is outside the positive-audience garbling registry.`;
+    const primary = (use.value === "binding" ? bindingRows : voluntaryRows).find((row) => !row.hidden);
+    const primaryCells = primary ? Array.from(primary.cells).map((cell) => cell.textContent.trim()) : [];
+    const mechanismRow = mechanismRows.find((row) => !row.hidden);
+    const mechanismCells = mechanismRow ? Array.from(mechanismRow.cells).map((cell) => cell.textContent.trim()) : [];
+    const garblingRow = garblingRows.find((row) => !row.hidden);
+    const garblingCells = garblingRow ? Array.from(garblingRow.cells).map((cell) => cell.textContent.trim()) : [];
+    const values = use.value === "binding"
+      ? { discovery: primaryCells[4], equilibrium: `Optimal: ${primaryCells[8] || "—"}`, implementation: mechanismCells[8], budget: mechanismCells[7] || mechanismCells[6], institution: "Binding access", garbling: garblingCells[6] }
+      : { discovery: primaryCells[5], equilibrium: primaryCells[6], implementation: primaryCells[8], budget: mechanismCells[7] || mechanismCells[6], institution: "Voluntary use", garbling: garblingCells[6] };
+    lab.querySelectorAll("[data-audience-output]").forEach((output) => { output.textContent = values[output.dataset.audienceOutput] || "—"; });
+    if (takeaway) takeaway.textContent = use.value === "binding" ? "Binding access assigns the reader count directly; optimality and mechanism implementation are separate outputs." : "Voluntary access does not guarantee voluntary use; equilibrium readers and the binding optimum can differ.";
+    const url = new URL(window.location.href);
+    [["n", n], ["p", p], ["q", q], ["use", use], ["g", g], ["m", m], ["mechanism", mechanism]].forEach(([key, control]) => url.searchParams.set(key, control.value));
+    window.history.replaceState({}, "", url);
   };
   [n, p, q, use, g, m, mechanism].forEach((control) => control.addEventListener("change", render));
   n.value = "2";
@@ -229,6 +466,14 @@ document.querySelectorAll("[data-audience-lab]").forEach((lab) => {
   g.value = "1/3";
   m.value = "1";
   mechanism.value = "binding_exclusive_delivery";
+  const params = new URLSearchParams(window.location.search);
+  [["n", n], ["p", p], ["q", q], ["use", use], ["g", g], ["m", m], ["mechanism", mechanism]].forEach(([key, control]) => {
+    const value = params.get(key);
+    if (value && Array.from(control.options).some((option) => option.value === value)) control.value = value;
+  });
+  if (reset) reset.addEventListener("click", () => {
+    n.value = "2"; p.value = "1/3"; q.value = "1/2"; use.value = "binding"; g.value = "1/3"; m.value = "1"; mechanism.value = "binding_exclusive_delivery"; render();
+  });
   render();
 });
 
@@ -238,6 +483,7 @@ document.querySelectorAll("[data-conditional-lab]").forEach((lab) => {
   const q = lab.querySelector("#conditional-q");
   const policy = lab.querySelector("#conditional-policy");
   const status = lab.querySelector("#conditional-status");
+  const reset = lab.querySelector("[data-table-lab-reset]");
   const rows = Array.from(document.querySelectorAll("tr[data-conditional-row]"));
   if (!n || !p || !q || !policy || !status) return;
   const render = () => {
@@ -245,18 +491,31 @@ document.querySelectorAll("[data-conditional-lab]").forEach((lab) => {
     Array.from(policy.options).forEach((option) => { option.hidden = option.dataset.n !== n.value; });
     if (!compatible.some((option) => option.value === policy.value)) policy.value = compatible[0].value;
     let visible = 0;
+    let selected = null;
     rows.forEach((row) => {
       const show = row.dataset.n === n.value && row.dataset.p === p.value &&
         row.dataset.q === q.value && row.dataset.profile === policy.value;
       row.hidden = !show;
-      if (show) visible += 1;
+      if (show) { visible += 1; selected = row; }
     });
     status.textContent = `Showing ${visible} exact registered profile. Every role observes both clues.`;
+    const cells = selected ? Array.from(selected.cells).map((cell) => cell.textContent.trim()) : [];
+    const values = { private: cells[3], public: cells[4], "contrarian-count": cells[5], discovery: cells[6], equilibrium: cells[8], optimal: cells[9], contrarian: cells[10] };
+    lab.querySelectorAll("[data-conditional-output]").forEach((output) => { output.textContent = values[output.dataset.conditionalOutput] || "—"; });
+    const url = new URL(window.location.href);
+    [["n", n], ["p", p], ["q", q], ["profile", policy]].forEach(([key, control]) => url.searchParams.set(key, control.value));
+    window.history.replaceState({}, "", url);
   };
   [n, p, q, policy].forEach((control) => control.addEventListener("change", render));
   n.value = "2";
   p.value = "1/3";
   q.value = "1/2";
+  const params = new URLSearchParams(window.location.search);
+  [["n", n], ["p", p], ["q", q], ["profile", policy]].forEach(([key, control]) => {
+    const value = params.get(key);
+    if (value && Array.from(control.options).some((option) => option.value === value)) control.value = value;
+  });
+  if (reset) reset.addEventListener("click", () => { n.value = "2"; p.value = "1/3"; q.value = "1/2"; render(); });
   render();
 });
 

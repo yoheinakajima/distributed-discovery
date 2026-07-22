@@ -21,7 +21,7 @@ def test_copy_map_defines_the_approved_public_navigation() -> None:
     assert [item["label"] for item in copy_map["navigation"]["primary"]] == [
         "Home",
         "Research",
-        "Results",
+        "Findings",
         "Labs",
         "Papers",
     ]

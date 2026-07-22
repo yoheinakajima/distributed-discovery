@@ -22,7 +22,7 @@ navigation:
       route: index.html
     - label: Research
       route: research.html
-    - label: Results
+    - label: Findings
       route: results.html
     - label: Labs
       route: labs.html

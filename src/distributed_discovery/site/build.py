@@ -18,12 +18,14 @@ from urllib.parse import urlsplit
 import yaml
 
 from distributed_discovery.site.copy import load_copy_map
+from distributed_discovery.site.core_labs import build_core_labs
 from distributed_discovery.site.navigation import (
     render_breadcrumb,
     render_footer,
     render_header,
     render_section_navigation,
 )
+from distributed_discovery.site.numbers import expected_count, probability
 from distributed_discovery.site.status_labels import human_status
 from distributed_discovery.validation.bootstrap import repository_root
 
@@ -422,10 +424,97 @@ def _study_category(study: dict[str, Any]) -> str:
     return " ".join(categories)
 
 
-def _study_card(study: dict[str, Any]) -> str:
+def _study_card(study: dict[str, Any], relation: dict[str, Any]) -> str:
     searchable = " ".join(str(study[key]) for key in ("id", "title", "summary", "question")).lower()
     status = human_status(study["phase"])
-    return f"""<article class="card study-card {html.escape(study["phase"])}" data-study-card data-category="{html.escape(_study_category(study))}" data-search="{html.escape(searchable)}"><div class="card-meta"><span class="study-id">{html.escape(study["id"])}</span><span class="status-chip">{html.escape(status)}</span></div><h2><a href="research/{html.escape(study["slug"])}.html">{html.escape(str(study["title"]))}</a></h2><p class="card-question">{html.escape(_excerpt(study["question"]))}</p><p class="card-summary">{html.escape(str(study["summary"]))}</p><p class="quiet-meta">{len(study["claim_ids"])} claims · {len(study["run_ids"])} reproducible runs</p><p class="card-link"><a href="research/{html.escape(study["slug"])}.html">Open study <span aria-hidden="true">→</span></a></p></article>"""
+    return f"""<article class="card study-card {html.escape(study["phase"])}" data-study-card data-category="{html.escape(_study_category(study))}" data-program="{html.escape(str(relation["program"]))}" data-family="{html.escape(str(relation["theorem_family"]))}" data-evidence="{html.escape(str(study["evidence_status"]))}" data-search="{html.escape(searchable)}"><div class="card-meta"><span class="study-id">{html.escape(study["id"])}</span><span class="status-chip">{html.escape(status)}</span></div><h2><a href="research/{html.escape(study["slug"])}.html">{html.escape(str(study["title"]))}</a></h2><p class="card-question">{html.escape(_excerpt(study["question"]))}</p><p class="card-summary">{html.escape(str(study["summary"]))}</p><p class="quiet-meta">{len(study["claim_ids"])} claims · {len(study["run_ids"])} reproducible runs</p><p class="card-link"><a href="research/{html.escape(study["slug"])}.html">Open study <span aria-hidden="true">→</span></a></p></article>"""
+
+
+def _results_page(
+    root: Path,
+    studies: list[dict[str, Any]],
+    claims_by_id: dict[str, dict[str, Any]],
+) -> str:
+    registry = _read_yaml(root / "site/content/results.yml")
+    if registry.get("schema_version") != 1:
+        raise RuntimeError("invalid Results registry schema")
+    themes = registry.get("themes")
+    results = registry.get("results")
+    if not isinstance(themes, list) or not isinstance(results, list):
+        raise RuntimeError("Results registry requires theme and result lists")
+    study_slugs = {str(study["id"]): str(study["slug"]) for study in studies}
+    theme_ids = {str(theme.get("id")) for theme in themes if isinstance(theme, dict)}
+    result_ids: set[str] = set()
+    grouped: dict[str, list[dict[str, Any]]] = {theme_id: [] for theme_id in theme_ids}
+    for result in results:
+        if not isinstance(result, dict):
+            raise RuntimeError("Results registry contains a non-mapping result")
+        result_id = result.get("result_id")
+        theme = result.get("theme")
+        study_id = result.get("study_id")
+        claim_ids = result.get("claim_ids")
+        if not isinstance(result_id, str) or result_id in result_ids:
+            raise RuntimeError(f"invalid or duplicate result ID: {result_id}")
+        if theme not in theme_ids or study_id not in study_slugs:
+            raise RuntimeError(f"invalid result ownership: {result_id}")
+        if (
+            not isinstance(claim_ids, list)
+            or not claim_ids
+            or any(claim_id not in claims_by_id for claim_id in claim_ids)
+        ):
+            raise RuntimeError(f"invalid result claims: {result_id}")
+        result_ids.add(result_id)
+        grouped[str(theme)].append(result)
+
+    groups: list[str] = []
+    for theme in sorted(themes, key=lambda item: int(item["order"])):
+        theme_id = str(theme["id"])
+        findings: list[str] = []
+        for result in sorted(grouped[theme_id], key=lambda item: int(item["order"])):
+            links = [
+                f'<a href="research/{study_slugs[str(result["study_id"])]}.html">Read the study</a>'
+            ]
+            if result.get("lab_slug"):
+                links.append(
+                    f'<a href="labs/{html.escape(str(result["lab_slug"]))}.html">Explore the Lab</a>'
+                )
+            if result.get("paper_slug"):
+                links.append(
+                    f'<a href="publications/{html.escape(str(result["paper_slug"]))}.html">Read the paper</a>'
+                )
+            links.extend(
+                f'<a href="claims.html#{html.escape(str(claim_id))}">Verify {html.escape(str(claim_id))}</a>'
+                for claim_id in result["claim_ids"]
+            )
+            if result.get("data_route"):
+                links.append(
+                    f'<a href="{html.escape(str(result["data_route"]))}">Download exact data</a>'
+                )
+            findings.append(
+                '<article class="finding" id="{}" data-result-id="{}"><div><span class="status-chip">{}</span>'
+                '<h3>{}</h3><p>{}</p></div><div class="finding-links">{}</div></article>'.format(
+                    html.escape(str(result["result_id"])),
+                    html.escape(str(result["result_id"])),
+                    html.escape(str(result["scope_label"])),
+                    html.escape(str(result["title"])),
+                    html.escape(str(result["summary"])),
+                    "".join(links),
+                )
+            )
+        groups.append(
+            '<section class="result-group" data-result-theme="{}"><div class="result-group-heading">'
+            '<p class="eyebrow">{}</p><h2>{}</h2></div><div class="finding-stack">{}</div></section>'.format(
+                html.escape(theme_id),
+                html.escape(str(theme["label"])),
+                html.escape(str(theme["heading"])),
+                "".join(findings),
+            )
+        )
+    return (
+        '<header class="page-hero"><p class="eyebrow">Key findings</p><h1>Findings</h1>'
+        '<p class="lede">What the evidence says about gathering information and spreading action across a search portfolio.</p></header>'
+        f'<div class="result-groups">{"".join(groups)}</div>'
+    )
 
 
 def _study_page(study: dict[str, Any], claims_by_id: dict[str, dict[str, Any]]) -> str:
@@ -455,7 +544,7 @@ def _study_page(study: dict[str, Any], claims_by_id: dict[str, dict[str, Any]]) 
     )
     phase_label = human_status(study["phase"])
     evidence_label = human_status(study["evidence_status"], kind="evidence")
-    body = f"""<header class="page-hero"><p class="eyebrow">{html.escape(study["id"])}</p><h1>{html.escape(str(study["title"]))}</h1><p class="lede">{html.escape(str(study["summary"]))}</p><p class="status-row"><span class="status-chip">{html.escape(phase_label)}</span><span class="status-chip subtle">{html.escape(evidence_label)}</span></p></header><section class="content-section prose"><h2 id="question">The question</h2><p>{html.escape(str(study["question"]))}</p></section><section class="content-section"><h2 id="findings">What we found</h2><ul class="claim-list">{claims}</ul></section><section class="content-section prose"><h2 id="boundary">What this result covers</h2><p>{html.escape(evidence_label)}. The formal evidence wording and registry state remain available below.</p><details class="technical-details"><summary>Technical details</summary><dl><div><dt>Study phase</dt><dd><code>{html.escape(str(study["phase"]))}</code></dd></div><div><dt>Registry status</dt><dd><code>{html.escape(str(study["registry_status"]))}</code></dd></div><div><dt>Evidence status</dt><dd><code>{html.escape(str(study["evidence_status"]))}</code></dd></div></dl></details></section><section class="content-section"><h2 id="evidence">Reproducible evidence</h2><ul class="run-list">{runs}</ul></section><section class="content-section"><h2 id="sources">Files and data</h2><ul>{artifacts}</ul></section><section class="content-section prose"><h2 id="next">What comes next</h2><p>{html.escape(str(study["next_action"]))}</p></section>"""
+    body = f"""<header class="page-hero"><p class="eyebrow">{html.escape(study["id"])}</p><h1>{html.escape(str(study["title"]))}</h1><p class="lede">{html.escape(str(study["summary"]))}</p><p class="status-row"><span class="status-chip">{html.escape(phase_label)}</span><span class="status-chip subtle">{html.escape(evidence_label)}</span></p></header><nav class="anchor-nav" aria-label="On this study page"><a href="#question">Question</a><a href="#findings">Findings</a><a href="#explore">Explore</a><a href="#evidence">Evidence</a><a href="#next">Next</a></nav><section class="content-section prose"><h2 id="question">The question</h2><p>{html.escape(str(study["question"]))}</p></section><section class="content-section"><h2 id="findings">What we found</h2><ul class="claim-list">{claims}</ul></section><section class="content-section prose"><h2 id="boundary">What this result covers</h2><p>{html.escape(evidence_label)}. The formal evidence wording and registry state remain available below.</p><details class="technical-details"><summary>Technical details</summary><dl><div><dt>Study phase</dt><dd><code>{html.escape(str(study["phase"]))}</code></dd></div><div><dt>Registry status</dt><dd><code>{html.escape(str(study["registry_status"]))}</code></dd></div><div><dt>Evidence status</dt><dd><code>{html.escape(str(study["evidence_status"]))}</code></dd></div></dl></details></section><section class="content-section"><h2 id="evidence">Reproducible evidence</h2><ul class="run-list">{runs}</ul></section><section class="content-section"><h2 id="sources">Files and data</h2><ul>{artifacts}</ul></section><section class="content-section prose"><h2 id="next">What comes next</h2><p>{html.escape(str(study["next_action"]))}</p></section>"""
     return _page(str(study["title"]), str(study["summary"]), body, f"research/{study['slug']}.html")
 
 
@@ -524,11 +613,26 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         ),
     )
 
-    task_rows = "".join(
-        f'<tr data-task-family="{html.escape(str(task["task_family"]))}"><th scope="row">{html.escape(str(task["task_id"]))}</th><td>{html.escape(str(task["task_family"]))}</td><td>{html.escape(", ".join(task["compatible_protocols"]))}</td><td>{html.escape(", ".join(task["reference_claims"]))}</td></tr>'
-        for task in tasks
-    )
-    task_body = f"""<header class="page-hero"><p class="eyebrow">DiscoveryBench</p><h1>Benchmark tasks</h1><p class="lede">Every task declares what evidence is available, which actions are allowed, and how results are evaluated. The complete technical registry remains downloadable.</p></header><table class="matrix"><caption>DiscoveryBench exact benchmark tasks</caption><thead><tr><th>Task</th><th>Family</th><th>Compatible strategy</th><th>Claims</th></tr></thead><tbody>{task_rows}</tbody></table>"""
+    claim_owners = {
+        str(claim["id"]): str(claim["study_id"])
+        for claim in _read_yaml(root / "claims/claims.yml")["claims"]
+    }
+
+    def task_row(task: dict[str, Any]) -> str:
+        claim_ids = [str(claim_id) for claim_id in task["reference_claims"]]
+        study_ids = sorted({claim_owners[claim_id] for claim_id in claim_ids})
+        study_links = ", ".join(
+            f'<a href="../research/{study_id.lower()}.html">{html.escape(study_id)}</a>'
+            for study_id in study_ids
+        )
+        claim_links = ", ".join(
+            f'<a href="../claims.html#{html.escape(claim_id)}">{html.escape(claim_id)}</a>'
+            for claim_id in claim_ids
+        )
+        return f'<tr id="{html.escape(str(task["task_id"]))}" data-task-family="{html.escape(str(task["task_family"]))}"><th scope="row">{html.escape(str(task["task_id"]))}</th><td>{html.escape(str(task["task_family"]))}</td><td>{html.escape(", ".join(task["compatible_protocols"]))}</td><td>{study_links}</td><td>{claim_links}</td></tr>'
+
+    task_rows = "".join(task_row(task) for task in tasks)
+    task_body = f"""<header class="page-hero"><p class="eyebrow">DiscoveryBench</p><h1>Benchmark tasks</h1><p class="lede">Every task declares what evidence is available, which actions are allowed, and how results are evaluated. The complete technical registry remains downloadable.</p></header><table class="matrix"><caption>DiscoveryBench exact benchmark tasks and their supporting evidence</caption><thead><tr><th>Task</th><th>Family</th><th>Compatible strategy</th><th>Supporting studies</th><th>Claims</th></tr></thead><tbody>{task_rows}</tbody></table>"""
     _write(
         output,
         "benchmark/tasks.html",
@@ -612,6 +716,33 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         for task in tasks
     )
     lab_body = f"""<header class="page-hero"><p class="eyebrow">DiscoveryBench interactive explainer</p><h1>Benchmark Lab</h1><p class="lede">Filter exact benchmark rows and inspect provenance. There are no submissions, accounts, external calls, or leaderboard.</p></header><section class="lab" data-benchmark-lab><label for="benchmark-task">Task</label><select id="benchmark-task"><option value="all">All tasks</option>{options}</select><p id="benchmark-status" class="callout" aria-live="polite">Showing all {len(results)} exact compatible rows.</p></section><noscript><p class="callout">JavaScript is off. Every exact row remains visible in the table.</p></noscript><table class="matrix"><caption>Filterable exact benchmark result vectors</caption><thead><tr><th>Task</th><th>Strategy</th><th>Metric vector</th><th>Provenance</th></tr></thead><tbody>{result_rows}</tbody></table><p><a href="../data/benchmark/compatibility.json">Download compatibility JSON</a> · <a href="../data/benchmark/results.json">Download result JSON</a></p>"""
+    lab_body = (
+        lab_body.replace(
+            '<section class="lab" data-benchmark-lab>',
+            '<section class="lab" data-benchmark-lab><fieldset class="lab-controls"><legend>Choose a benchmark task</legend>',
+            1,
+        )
+        .replace(
+            '<p id="benchmark-status"',
+            '</fieldset><div class="lab-actions"><button type="button" class="filter-button" data-table-lab-reset>Reset</button><a href="../data/benchmark/results.json">Download data</a></div><p id="benchmark-status"',
+            1,
+        )
+        .replace(
+            "</section><noscript>",
+            '<div class="metric-grid compact"><article class="metric-card"><span>Visible result rows</span><strong data-benchmark-output="count">—</strong></article><article class="metric-card"><span>Selected task</span><strong data-benchmark-output="task">All</strong></article><article class="metric-card"><span>Example strategy</span><strong data-benchmark-output="strategy">—</strong></article><article class="metric-card"><span>Exact metric vector</span><strong data-benchmark-output="vector">—</strong></article></div><p class="takeaway">Compatibility comes before comparison: the Lab shows only registered task–strategy pairs and does not construct a universal score.</p></section><noscript>',
+            1,
+        )
+        .replace(
+            '<table class="matrix"><caption>Filterable exact benchmark result vectors',
+            '<details class="technical-details complete-data"><summary>Complete exact result table</summary><table class="matrix"><caption>Filterable exact benchmark result vectors',
+            1,
+        )
+        .replace(
+            '</tbody></table><p><a href="../data/benchmark/compatibility.json">',
+            '</tbody></table></details><p><a href="../data/benchmark/compatibility.json">',
+            1,
+        )
+    )
     _write(
         output,
         "labs/benchmark.html",
@@ -805,6 +936,33 @@ def _experiment_pages(root: Path, output: Path) -> dict[str, object]:
         for row in design["response_scenarios"]
     )
     lab_body = f"""<header class="page-hero"><p class="eyebrow">DD-011 interactive explainer</p><h1>Experiment-design Lab</h1><p class="lede">Filter the precomputed power grid. This read-only control performs no assignment, recruitment, submission, or external call.</p></header>{warning}<section class="lab" data-experiment-lab><label for="experiment-scenario">Response scenario</label><select id="experiment-scenario"><option value="all">All scenarios</option>{options}</select><p id="experiment-status" class="callout" aria-live="polite">Showing all {len(power)} synthetic power rows.</p></section><noscript><p class="callout">JavaScript is off. Every power row remains visible below.</p></noscript><table class="matrix"><caption>Filterable synthetic power and MDE grid</caption><thead><tr><th>Scenario</th><th>Hypothesis</th><th>Total N</th><th>Assumed effect</th><th>Power (95% Monte Carlo interval)</th><th>MDE</th></tr></thead><tbody>{power_rows}</tbody></table><p><a href="../data/experiment/power.json">Download power JSON</a> · <a href="../data/experiment/design.json">Download design JSON</a></p>"""
+    lab_body = (
+        lab_body.replace(
+            '<section class="lab" data-experiment-lab>',
+            '<section class="lab" data-experiment-lab><fieldset class="lab-controls"><legend>Choose a synthetic response scenario</legend>',
+            1,
+        )
+        .replace(
+            '<p id="experiment-status"',
+            '</fieldset><div class="lab-actions"><button type="button" class="filter-button" data-table-lab-reset>Reset</button><a href="../data/experiment/power.json">Download data</a></div><p id="experiment-status"',
+            1,
+        )
+        .replace(
+            "</section><noscript>",
+            '<div class="metric-grid compact"><article class="metric-card"><span>Visible power rows</span><strong data-experiment-output="count">—</strong></article><article class="metric-card"><span>Scenario</span><strong data-experiment-output="scenario">All</strong></article><article class="metric-card"><span>Example power interval</span><strong data-experiment-output="power">—</strong></article><article class="metric-card"><span>Example MDE</span><strong data-experiment-output="mde">—</strong></article></div><p class="takeaway">These are scenario-conditional synthetic estimates, not observed effects or deployment evidence.</p></section><noscript>',
+            1,
+        )
+        .replace(
+            '<table class="matrix"><caption>Filterable synthetic power and MDE grid',
+            '<details class="technical-details complete-data"><summary>Complete synthetic power table</summary><table class="matrix"><caption>Filterable synthetic power and MDE grid',
+            1,
+        )
+        .replace(
+            '</tbody></table><p><a href="../data/experiment/power.json">',
+            '</tbody></table></details><p><a href="../data/experiment/power.json">',
+            1,
+        )
+    )
     _write(
         output,
         "labs/experiment-design.html",
@@ -969,7 +1127,44 @@ def _attention_pages(root: Path, output: Path) -> dict[str, object]:
                     )
                 )
     table_rows = "".join(rows)
+    representative_match = re.search(
+        r'(<tr data-attention-row data-n="4" data-p="1/2" data-q="3/4" data-k="1" data-reward="equal-split">.*?</tr>)',
+        table_rows,
+    )
+    if representative_match is None:
+        raise RuntimeError("missing representative DD-012 attention fallback row")
+    table_rows = representative_match.group(1)
     body = f"""<header class="page-hero"><p class="eyebrow">DD-012 interactive explainer</p><h1>Attention Lab</h1><p class="lede">Explore the exact access-gated follow-public/follow-private model. An ignoring role is not given the public clue; the Lab does not assume an informed person can forget.</p></header><div class="metric-grid"><article class="metric-card"><span>Exact cells</span><strong>{summary["grid_cells"]}</strong></article><article class="metric-card"><span>Attention profiles</span><strong>{summary["profiles"]}</strong></article><article class="metric-card"><span>Reward rules</span><strong>{summary["reward_rules"]}</strong></article></div><section class="lab" data-attention-lab><label for="attention-n">Team size</label><select id="attention-n">{agent_options}</select><label for="attention-p">Private accuracy</label><select id="attention-p">{accuracy_options}</select><label for="attention-q">Public accuracy</label><select id="attention-q">{accuracy_options}</select><label for="attention-k">Number of attenders</label><select id="attention-k">{attender_options}</select><label for="attention-reward">Reward rule</label><select id="attention-reward">{reward_options}</select><p id="attention-status" class="callout" aria-live="polite">Select a registered exact attention profile.</p></section><noscript><p class="callout">JavaScript is off. All {len(rows)} exact profile-and-reward rows remain visible in the complete table.</p></noscript><section class="content-section"><h2>Exact attention profiles</h2><table class="matrix"><caption>Discovery, reward payoffs, social optimum, equilibrium, equal-split attention wedge, first-use gain, and duplicate-use loss</caption><thead><tr><th>N</th><th>p</th><th>q</th><th>Attenders</th><th>Reward</th><th>Discovery</th><th>Attending payoff</th><th>Ignoring payoff</th><th>Social optimum</th><th>Equilibrium</th><th>Equal-split attention wedge</th><th>First-use gain</th><th>Duplicate-use loss</th><th>Transfer budget</th></tr></thead><tbody>{table_rows}</tbody></table></section><details class="technical-details"><summary>Technical details</summary><p><a href="../claims.html#DD-C-0059">DD-C-0059</a> · <a href="../claims.html#DD-C-0060">DD-C-0060</a> · <a href="../claims.html#DD-C-0061">DD-C-0061</a> · reproducible run <a href="{REPOSITORY_URL}/blob/main/results/verified/{DD012_RUN}/manifest.json">{DD012_RUN}</a></p></details><p><a href="../research/dd-012.html">Study page</a> · <a href="../data/attention/census.json">Download attention census</a> · <a href="../data/attention/rewards.json">Download reward registry</a> · <a href="../data/attention/phase-map.json">Download phase map</a></p>"""
+    body = (
+        body.replace(
+            '<section class="lab" data-attention-lab>',
+            '<section class="lab" data-attention-lab><fieldset class="lab-controls"><legend>Choose a registered attention profile</legend>',
+            1,
+        )
+        .replace(
+            '<p id="attention-status"',
+            '</fieldset><div class="lab-actions"><button type="button" class="filter-button" data-table-lab-reset>Reset</button><a href="../data/attention/census.json">Download data</a></div><p id="attention-status"',
+            1,
+        )
+        .replace(
+            "</section><noscript>",
+            '<div class="metric-grid compact"><article class="metric-card planner"><span>Discovery</span><strong data-attention-output="discovery">—</strong></article><article class="metric-card"><span>Social optimum</span><strong data-attention-output="optimum">—</strong></article><article class="metric-card"><span>Equilibrium</span><strong data-attention-output="equilibrium">—</strong></article><article class="metric-card"><span>Attention wedge</span><strong data-attention-output="wedge">—</strong></article></div><section class="lab-visual"><h2>Selected attention profile</h2><p class="visual-summary">The comparison keeps discovery, private incentives, and social optimality distinct.</p><div class="comparison-readout"><div><span>Attending payoff</span><strong data-attention-output="attending">—</strong></div><div><span>Ignoring payoff</span><strong data-attention-output="ignoring">—</strong></div></div></section><p class="takeaway" data-attention-takeaway>Select a registered profile to compare attention incentives.</p></section><noscript>',
+            1,
+        )
+    )
+    body = body.replace(
+        f"All {len(rows)} exact profile-and-reward rows remain visible in the complete table.",
+        "One representative exact row remains visible below; the complete census is available as a data download.",
+    )
+    body = body.replace(
+        '<section class="content-section"><h2>Exact attention profiles</h2>',
+        '<details class="technical-details complete-data"><summary>Complete exact attention table</summary><section class="content-section"><h2>Exact attention profiles</h2>',
+        1,
+    ).replace(
+        '<details class="technical-details"><summary>Technical details</summary>',
+        '</details><details class="technical-details"><summary>Technical details</summary>',
+        1,
+    )
     _write(
         output,
         "labs/attention.html",
@@ -1105,6 +1300,32 @@ def _audience_pages(root: Path, output: Path) -> dict[str, object]:
                 )
             )
     body = f"""<header class="page-hero"><p class="eyebrow">DD-013 interactive explainer</p><h1>Audience Design Lab</h1><p class="lede">Compare precomputed exact binding audiences, voluntary use, feasible symmetric garblings, and registered mechanisms. Access, voluntary use, and enforced action roles are different institutions; this read-only Lab makes no external call.</p></header><div class="stats"><div class="stat"><span>Binding rows</span><b>{summary["binding_audience_rows"]}</b></div><div class="stat"><span>Voluntary profiles</span><b>{summary["voluntary_profile_rows"]}</b></div><div class="stat"><span>Garbling rows</span><b>{summary["garbling_rows"]}</b></div></div><section class="lab" data-audience-lab><label for="audience-n">Team size</label><select id="audience-n">{agent_options}</select><label for="audience-p">Private accuracy</label><select id="audience-p">{accuracy_options}</select><label for="audience-q">Original shared accuracy</label><select id="audience-q">{accuracy_options}</select><label for="audience-use">Audience institution</label><select id="audience-use"><option value="binding">binding</option><option value="voluntary">voluntary</option></select><label for="audience-g">Delivered accuracy after garbling</label><select id="audience-g">{accuracy_options}</select><label for="audience-m">Audience size</label><select id="audience-m">{audience_options}</select><label for="audience-mechanism">Mechanism</label><select id="audience-mechanism">{mechanism_options}</select><p id="audience-status" class="callout" aria-live="polite">Select a registered cell. Exact rows below are filtered in place.</p></section><noscript><p class="callout">JavaScript is off. All {summary["binding_audience_rows"]} binding rows, {summary["voluntary_profile_rows"]} voluntary profiles, and {summary["garbling_rows"]} feasible garbling rows remain visible in the complete tables.</p></noscript><section class="content-section" data-binding-section><h2>Binding audience frontier</h2><table class="matrix"><caption>Exact binding audience metrics</caption><thead><tr><th>N</th><th>p</th><th>q</th><th>Audience</th><th>Discovery</th><th>Action quality</th><th>Expected distinct actions</th><th>Effective channels</th><th>Optimal</th></tr></thead><tbody>{binding_rows}</tbody></table></section><section class="content-section" data-voluntary-section><h2>Voluntary audience use</h2><table class="matrix"><caption>Exact reader-count equilibria conditional on information access</caption><thead><tr><th>N</th><th>p</th><th>q</th><th>Audience</th><th>Readers</th><th>Discovery</th><th>Equilibrium</th><th>Optimal audiences</th><th>Implementation</th></tr></thead><tbody>{voluntary_rows}</tbody></table></section><section class="content-section"><h2>Precision versus publicity</h2><table class="matrix"><caption>Exact feasible symmetric-garbling comparisons</caption><thead><tr><th>N</th><th>p</th><th>q</th><th>g</th><th>Audience</th><th>Discovery</th><th>Versus binding optimum</th></tr></thead><tbody>{garbling_rows}</tbody></table></section><section class="content-section"><h2>Mechanism implementation</h2><table class="matrix"><caption>Registered mechanisms, equilibrium audience use, optimum, transfer budget, and implementation status</caption><thead><tr><th>N</th><th>p</th><th>q</th><th>Mechanism</th><th>Equilibrium use</th><th>Optimal audiences</th><th>External subsidy</th><th>Budget status</th><th>Implements optimum</th></tr></thead><tbody>{"".join(mechanism_rows)}</tbody></table></section><details class="technical-details"><summary>Technical details</summary><p><a href="../claims.html#DD-C-0062">DD-C-0062</a> · <a href="../claims.html#DD-C-0063">DD-C-0063</a> · <a href="../claims.html#DD-C-0064">DD-C-0064</a> · <a href="../claims.html#DD-C-0065">DD-C-0065</a> · reproducible run <a href="{REPOSITORY_URL}/blob/main/results/verified/{DD013_RUN}/manifest.json">{DD013_RUN}</a></p></details><p><a href="../research/dd-013.html">Study page</a> · <a href="../data/audience/frontier.json">Download audience frontier</a> · <a href="../data/audience/garbling.json">Download garbling frontier</a> · <a href="../data/audience/mechanisms.json">Download mechanism results</a> · <a href="../data/audience/institutions.json">Download firewall registry</a></p>"""
+    body = (
+        body.replace(
+            '<section class="lab" data-audience-lab>',
+            '<section class="lab" data-audience-lab><fieldset class="lab-controls"><legend>Choose a registered audience design</legend>',
+            1,
+        )
+        .replace(
+            '<p id="audience-status"',
+            '</fieldset><div class="lab-actions"><button type="button" class="filter-button" data-table-lab-reset>Reset</button><a href="../data/audience/frontier.json">Download data</a></div><p id="audience-status"',
+            1,
+        )
+        .replace(
+            "</section><noscript>",
+            '<div class="metric-grid compact"><article class="metric-card planner"><span>Discovery</span><strong data-audience-output="discovery">—</strong></article><article class="metric-card"><span>Equilibrium / optimum</span><strong data-audience-output="equilibrium">—</strong></article><article class="metric-card"><span>Implementation</span><strong data-audience-output="implementation">—</strong></article><article class="metric-card"><span>Mechanism budget</span><strong data-audience-output="budget">—</strong></article></div><section class="lab-visual"><h2>Selected audience comparison</h2><p class="visual-summary">Binding access, voluntary use, garbling, and mechanism implementation remain visibly separate.</p><div class="comparison-readout"><div><span>Audience institution</span><strong data-audience-output="institution">—</strong></div><div><span>Garbling comparison</span><strong data-audience-output="garbling">—</strong></div></div></section><p class="takeaway" data-audience-takeaway>Select a registered audience design to compare access and use.</p></section><noscript>',
+            1,
+        )
+    )
+    body = body.replace(
+        '<section class="content-section" data-binding-section>',
+        '<details class="technical-details complete-data"><summary>Complete audience, garbling, and mechanism tables</summary><section class="content-section" data-binding-section>',
+        1,
+    ).replace(
+        '<details class="technical-details"><summary>Technical details</summary>',
+        '</details><details class="technical-details"><summary>Technical details</summary>',
+        1,
+    )
     _write(
         output,
         "labs/audience.html",
@@ -1207,6 +1428,32 @@ def _conditional_pages(root: Path, output: Path) -> dict[str, object]:
         for row in cell["profiles"]
     )
     body = f"""<header class="page-hero"><p class="eyebrow">DD-014 interactive explainer</p><h1>Conditional Attention Lab</h1><p class="lede">Explore every precomputed exact profile in DD-014's complete agreement-respecting label-equivariant disagreement class. Everyone sees both clues; this is not an access gate and not an unrestricted policy class.</p></header><div class="stats"><div class="stat"><span>Cells</span><b>{summary["grid_cells"]}</b></div><div class="stat"><span>Profiles</span><b>{summary["anonymous_profiles"]}</b></div><div class="stat"><span>Positive wedges</span><b>{summary["cells_with_positive_equilibrium_wedge"]}</b></div></div><section class="lab" data-conditional-lab><label for="conditional-n">Team size</label><select id="conditional-n">{agent_options}</select><label for="conditional-p">Private accuracy</label><select id="conditional-p">{accuracy_options}</select><label for="conditional-q">Shared accuracy</label><select id="conditional-q">{accuracy_options}</select><label for="conditional-policy">Role policy profile</label><select id="conditional-policy">{profile_options}</select><p id="conditional-status" class="callout" aria-live="polite">Select a registered exact profile.</p></section><noscript><p class="callout">JavaScript is off. All {summary["anonymous_profiles"]} exact profiles remain visible in the complete table.</p></noscript><section class="content-section"><h2>Conditional-policy census</h2><table class="matrix"><caption>Exact policy profiles, payoffs, equilibrium, optimum, and contrarian use</caption><thead><tr><th>N</th><th>p</th><th>q</th><th>Private roles</th><th>Public roles</th><th>Contrarian roles</th><th>Discovery</th><th>Type payoffs</th><th>Equilibrium</th><th>Optimal profile</th><th>Contrarian use</th></tr></thead><tbody>{rows}</tbody></table></section><details class="technical-details"><summary>Technical details</summary><p><a href="../claims.html#DD-C-0066">DD-C-0066</a> · <a href="../claims.html#DD-C-0067">DD-C-0067</a> · <a href="../claims.html#DD-C-0068">DD-C-0068</a> · reproducible run <a href="{REPOSITORY_URL}/blob/main/results/verified/{DD014_RUN}/manifest.json">{DD014_RUN}</a></p></details><p><a href="../research/dd-014.html">Study page</a> · <a href="../data/conditional/census.json">Download policy census</a> · <a href="../data/conditional/phase-map.json">Download phase map</a> · <a href="../data/conditional/raw-audit.json">Download larger-class audit</a></p>"""
+    body = (
+        body.replace(
+            '<section class="lab" data-conditional-lab>',
+            '<section class="lab" data-conditional-lab><fieldset class="lab-controls"><legend>Choose a registered conditional policy</legend>',
+            1,
+        )
+        .replace(
+            '<p id="conditional-status"',
+            '</fieldset><div class="lab-actions"><button type="button" class="filter-button" data-table-lab-reset>Reset</button><a href="../data/conditional/census.json">Download data</a></div><p id="conditional-status"',
+            1,
+        )
+        .replace(
+            "</section><noscript>",
+            '<div class="metric-grid compact"><article class="metric-card planner"><span>Discovery</span><strong data-conditional-output="discovery">—</strong></article><article class="metric-card"><span>Equilibrium</span><strong data-conditional-output="equilibrium">—</strong></article><article class="metric-card"><span>Planner-optimal profile</span><strong data-conditional-output="optimal">—</strong></article><article class="metric-card"><span>Contrarian role</span><strong data-conditional-output="contrarian">—</strong></article></div><section class="lab-visual"><h2>Selected role portfolio</h2><p class="visual-summary">Counts show how the selected team is divided across private-dominant, public-dominant, and contrarian policies.</p><div class="comparison-readout"><div><span>Private roles</span><strong data-conditional-output="private">—</strong></div><div><span>Public roles</span><strong data-conditional-output="public">—</strong></div><div><span>Contrarian roles</span><strong data-conditional-output="contrarian-count">—</strong></div></div></section><p class="takeaway" data-conditional-takeaway>The registered class is bounded; the larger-class counterexample remains part of the evidence boundary.</p></section><noscript>',
+            1,
+        )
+    )
+    body = body.replace(
+        '<section class="content-section"><h2>Conditional-policy census</h2>',
+        '<details class="technical-details complete-data"><summary>Complete conditional-policy table</summary><section class="content-section"><h2>Conditional-policy census</h2>',
+        1,
+    ).replace(
+        '<details class="technical-details"><summary>Technical details</summary>',
+        '</details><details class="technical-details"><summary>Technical details</summary>',
+        1,
+    )
     _write(
         output,
         "labs/conditional-attention.html",
@@ -1265,18 +1512,53 @@ def _program_v4_lab_pages(root: Path, output: Path) -> None:
         json.dumps(threshold_data, indent=2, sort_keys=True) + "\n",
     )
     threshold_default = threshold_rows[1]
+
+    def probability_display(value: object) -> str:
+        return probability(value).display
+
+    def count_display(value: object) -> str:
+        return expected_count(value).display
+
+    def threshold_takeaway(row: dict[str, Any]) -> str:
+        region = (
+            "diversification-dominant"
+            if row["diversification_dominates_common_mode"]
+            else "coordination-dominant"
+        )
+        return (
+            f"Threshold {row['threshold']} is in the {region} region of this registered fixture: "
+            + (
+                "the planner benefits from forming the smallest viable teams and spreading them."
+                if region == "diversification-dominant"
+                else "only one viable coalition can form, so coordination capacity binds the portfolio."
+            )
+        )
+
     threshold_table = "".join(
         '<tr {}><th scope="row">{}</th><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td></tr>'.format(
             output_attributes(
                 {
                     "output-row": "threshold",
                     "threshold": row["threshold"],
-                    "planner-discovery": row["planner_discovery"],
-                    "private-discovery": row["private_clue_following"],
-                    "tied-discovery": row["tied_mode_mixed_discovery"],
-                    "viable-candidates": row["expected_viable_candidates"],
-                    "failed-attempts": row["failed_subthreshold_attempts"],
-                    "overlap": row["excess_overlap"],
+                    "planner-display": probability_display(row["planner_discovery"]),
+                    "planner-exact": row["planner_discovery"],
+                    "private-display": probability_display(row["private_clue_following"]),
+                    "private-exact": row["private_clue_following"],
+                    "tied-display": probability_display(row["tied_mode_mixed_discovery"]),
+                    "tied-exact": row["tied_mode_mixed_discovery"],
+                    "viable-display": count_display(row["expected_viable_candidates"]),
+                    "viable-exact": row["expected_viable_candidates"],
+                    "failed-display": count_display(row["failed_subthreshold_attempts"]),
+                    "failed-exact": row["failed_subthreshold_attempts"],
+                    "overlap-display": count_display(row["excess_overlap"]),
+                    "overlap-exact": row["excess_overlap"],
+                    "capacity": 8 // int(row["threshold"]),
+                    "region": (
+                        "diversification-dominant"
+                        if row["diversification_dominates_common_mode"]
+                        else "coordination-dominant"
+                    ),
+                    "takeaway": threshold_takeaway(row),
                 }
             ),
             row["threshold"],
@@ -1293,7 +1575,33 @@ def _program_v4_lab_pages(root: Path, output: Path) -> None:
         f'<option value="{tau}"{" selected" if tau == 2 else ""}>Minimum team {tau}</option>'
         for tau in range(1, 9)
     )
-    threshold_body = f"""<header class="page-hero"><p class="eyebrow">DD-016 exact output Lab</p><h1>Threshold Lab</h1><p class="lede">Move the minimum viable team size across the complete canonical phase diagram and inspect the exact discovery, viability, and crowding consequences.</p></header><section class="lab" data-output-lab="threshold"><div class="lab-controls"><div><label for="threshold-tau">Minimum viable team</label><select id="threshold-tau" data-filter-key="threshold">{threshold_options}</select></div></div><p class="callout" data-output-status aria-live="polite">Showing the exact threshold-two row.</p><div class="metric-grid compact"><article class="metric-card planner"><span>Planner discovery</span><strong data-output-key="planner-discovery">{html.escape(str(threshold_default["planner_discovery"]))}</strong></article><article class="metric-card private"><span>Private discovery</span><strong data-output-key="private-discovery">{html.escape(str(threshold_default["private_clue_following"]))}</strong></article><article class="metric-card consensus"><span>Tied-mode discovery</span><strong data-output-key="tied-discovery">{html.escape(str(threshold_default["tied_mode_mixed_discovery"]))}</strong></article><article class="metric-card"><span>Expected viable candidates</span><strong data-output-key="viable-candidates">{html.escape(str(threshold_default["expected_viable_candidates"]))}</strong></article><article class="metric-card"><span>Failed subthreshold attempts</span><strong data-output-key="failed-attempts">{html.escape(str(threshold_default["failed_subthreshold_attempts"]))}</strong></article><article class="metric-card"><span>Excess overlap</span><strong data-output-key="overlap">{html.escape(str(threshold_default["excess_overlap"]))}</strong></article></div></section><noscript><p class="callout">JavaScript is off. All eight exact threshold rows remain visible in the table.</p></noscript><table class="matrix"><caption>Complete exact DD-016 threshold phase diagram</caption><thead><tr><th>Threshold</th><th>Planner discovery</th><th>Private discovery</th><th>Tied-mode discovery</th><th>Viable candidates</th><th>Failed attempts</th><th>Excess overlap</th></tr></thead><tbody>{threshold_table}</tbody></table>{provenance("DD-016", ("DD-C-0073", "DD-C-0074"), DD016_RUN, "threshold.json")}"""
+
+    def metric_card(label: str, display_key: str, exact_key: str, exact_value: object) -> str:
+        identifier = f"threshold-{exact_key}"
+        presented = (
+            probability(exact_value)
+            if "discovery" in label.lower()
+            else expected_count(exact_value)
+        )
+        return f'''<article class="metric-card" data-exact-metric data-metric-label="{html.escape(label)}" aria-label="{html.escape(label)}: {html.escape(presented.accessible)}"><span>{html.escape(label)}</span><strong data-output-key="{display_key}">{html.escape(presented.display)}</strong><small class="exact-value">Exact: <code id="{identifier}" data-output-key="{exact_key}">{html.escape(presented.exact)}</code> <button type="button" class="copy-exact" data-copy-exact data-copy-target="{identifier}">Copy</button></small></article>'''
+
+    def polyline(field: str) -> str:
+        points = " ".join(
+            f"{40 + (int(row['threshold']) - 1) * 90},{220 - float(Fraction(str(row[field]))) * 190:.2f}"
+            for row in threshold_rows
+        )
+        return points
+
+    def chart_point(row: dict[str, Any]) -> str:
+        x = 40 + (int(row["threshold"]) - 1) * 90
+        selected = ' class="selected"' if row["threshold"] == 2 else ""
+        planner_y = 220 - float(Fraction(str(row["planner_discovery"]))) * 190
+        private_y = 220 - float(Fraction(str(row["private_clue_following"]))) * 190
+        tied_y = 220 - float(Fraction(str(row["tied_mode_mixed_discovery"]))) * 190
+        return f'<g data-threshold-point="{row["threshold"]}"{selected}><circle class="planner-point" cx="{x}" cy="{planner_y:.2f}" r="5"><title>τ={row["threshold"]}, planner {probability_display(row["planner_discovery"])}</title></circle><circle class="private-point" cx="{x}" cy="{private_y:.2f}" r="5"><title>τ={row["threshold"]}, private {probability_display(row["private_clue_following"])}</title></circle><circle class="tied-point" cx="{x}" cy="{tied_y:.2f}" r="5"><title>τ={row["threshold"]}, tied mode {probability_display(row["tied_mode_mixed_discovery"])}</title></circle><text x="{x}" y="238" text-anchor="middle">{row["threshold"]}</text></g>'
+
+    chart_points = "".join(chart_point(row) for row in threshold_rows)
+    threshold_body = f"""<header class="page-hero"><p class="eyebrow">Interactive model · DD-016</p><h1>Threshold Lab</h1><p class="lede">Move the minimum viable team size across the complete canonical phase diagram and inspect discovery, viable teams, and crowding in readable units.</p></header><section class="lab explainer-lab" data-output-lab="threshold"><section class="threshold-context" aria-label="Registered context"><div><span>Boxes</span><strong>16</strong></div><div><span>Searchers</span><strong>8</strong></div><div><span>Required team size τ</span><strong data-output-key="threshold">2</strong></div><div><span>Viable-team capacity ⌊N/τ⌋</span><strong data-output-key="capacity">4</strong></div></section><fieldset class="lab-controls"><legend>Choose a registered threshold</legend><div><label for="threshold-tau">Minimum viable team</label><select id="threshold-tau" data-filter-key="threshold">{threshold_options}</select></div></fieldset><div class="lab-actions"><button type="button" class="filter-button" data-lab-reset>Reset</button><a href="../data/labs/threshold.json">Download data</a></div><p class="callout" data-output-status aria-live="polite">Showing the exact threshold-two row.</p><h2>Primary discovery comparison</h2><div class="metric-grid compact">{metric_card("Planner discovery", "planner-display", "planner-exact", threshold_default["planner_discovery"])}{metric_card("Private discovery", "private-display", "private-exact", threshold_default["private_clue_following"])}{metric_card("Tied-mode discovery", "tied-display", "tied-exact", threshold_default["tied_mode_mixed_discovery"])}</div><h2>Occupancy consequences</h2><div class="metric-grid compact">{metric_card("Expected viable candidates", "viable-display", "viable-exact", threshold_default["expected_viable_candidates"])}{metric_card("Failed subthreshold attempts", "failed-display", "failed-exact", threshold_default["failed_subthreshold_attempts"])}{metric_card("Excess overlap", "overlap-display", "overlap-exact", threshold_default["excess_overlap"])}</div><section class="lab-visual" aria-labelledby="threshold-chart-title"><h2 id="threshold-chart-title">Discovery across τ=1 through 8</h2><p class="visual-summary">Planner, private clue-following, and tied-mode discovery share a probability axis. The selected threshold has outlined points; the exact table is the chart fallback.</p><div class="chart-legend"><span class="planner-key">Planner</span><span class="private-key">Private</span><span class="tied-key">Tied mode</span></div><svg class="threshold-chart" viewBox="0 0 720 250" role="img" aria-labelledby="threshold-svg-title threshold-svg-desc"><title id="threshold-svg-title">Discovery probability by minimum viable team size</title><desc id="threshold-svg-desc">Three protocol lines across thresholds one through eight. Exact values are listed in the complete table.</desc><polyline class="planner-line" points="{polyline("planner_discovery")}"/><polyline class="private-line" points="{polyline("private_clue_following")}"/><polyline class="tied-line" points="{polyline("tied_mode_mixed_discovery")}"/>{chart_points}</svg></section><p class="takeaway"><strong>Selected region:</strong> <span data-output-key="region">diversification-dominant</span>. <span data-output-key="takeaway">{html.escape(threshold_takeaway(threshold_default))}</span></p></section><noscript><p class="callout">JavaScript is off. All eight exact threshold rows remain visible in the table.</p></noscript><details class="technical-details complete-data"><summary>Complete exact table</summary><table class="matrix"><caption>Complete exact DD-016 threshold phase diagram</caption><thead><tr><th>Threshold</th><th>Planner discovery</th><th>Private discovery</th><th>Tied-mode discovery</th><th>Viable candidates</th><th>Failed attempts</th><th>Excess overlap</th></tr></thead><tbody>{threshold_table}</tbody></table></details>{provenance("DD-016", ("DD-C-0073", "DD-C-0074"), DD016_RUN, "threshold.json")}"""
     _write(
         output,
         "labs/threshold.html",
@@ -1386,7 +1694,7 @@ def _program_v4_lab_pages(root: Path, output: Path) -> None:
         f'<option value="{value}"{" selected" if value == 2 else ""}>{value}</option>'
         for value in range(1, 7)
     )
-    equilibrium_body = f"""<header class="page-hero"><p class="eyebrow">DD-017 exact output Lab</p><h1>Equilibrium-selection Lab</h1><p class="lede">Select a posterior fixture, team size, and opening threshold to expose the exact planner value, equilibrium range, multiplicity, and coalition-stability counts.</p></header><section class="lab" data-output-lab="equilibrium"><div class="lab-controls"><div><label for="equilibrium-fixture">Posterior fixture</label><select id="equilibrium-fixture" data-filter-key="fixture">{fixture_options}</select></div><div><label for="equilibrium-agents">Agents</label><select id="equilibrium-agents" data-filter-key="agents">{agent_options}</select></div><div><label for="equilibrium-threshold">Threshold</label><select id="equilibrium-threshold" data-filter-key="threshold" data-limit-by="equilibrium-agents">{equilibrium_threshold_options}</select></div></div><p class="callout" data-output-status aria-live="polite">Showing the tied-top-three, four-agent, threshold-two game.</p><div class="metric-grid compact"><article class="metric-card planner"><span>Planner discovery</span><strong data-output-key="planner-discovery">{html.escape(str(equilibrium_default["planner_discovery"]))}</strong></article><article class="metric-card"><span>Best equilibrium</span><strong data-output-key="best-equilibrium">{html.escape(str(equilibrium_default["best_equilibrium_discovery"]))}</strong></article><article class="metric-card"><span>Worst equilibrium</span><strong data-output-key="worst-equilibrium">{html.escape(str(equilibrium_default["worst_equilibrium_discovery"]))}</strong></article><article class="metric-card"><span>Pure Nash states</span><strong data-output-key="nash-count">{equilibrium_default["pure_nash_count"]}</strong></article><article class="metric-card"><span>Pair-stable states</span><strong data-output-key="pair-count">{equilibrium_default["pairwise_stable_count"]}</strong></article><article class="metric-card"><span>τ-stable states</span><strong data-output-key="tau-count">{equilibrium_default["tau_stable_count"]}</strong></article><article class="metric-card"><span>Price of anarchy</span><strong data-output-key="price-anarchy">{html.escape(str(equilibrium_default["price_of_anarchy"]))}</strong></article><article class="metric-card"><span>Tied-mode mixture is equilibrium</span><strong data-output-key="mixed-equilibrium">{str(equilibrium_default["tied_mode_is_equilibrium"]).lower()}</strong></article></div></section><noscript><p class="callout">JavaScript is off. All 160 exact game rows remain visible below.</p></noscript><table class="matrix"><caption>Complete bounded DD-017 equilibrium census</caption><thead><tr><th>Fixture</th><th>Agents</th><th>Threshold</th><th>Planner</th><th>Best equilibrium</th><th>Worst equilibrium</th><th>Pure Nash</th><th>Pair-stable</th><th>τ-stable</th></tr></thead><tbody>{equilibrium_table}</tbody></table>{provenance("DD-017", ("DD-C-0075", "DD-C-0076", "DD-C-0077", "DD-C-0078"), DD017_RUN, "equilibrium-selection.json")}"""
+    equilibrium_body = f"""<header class="page-hero"><p class="eyebrow">Interactive model · DD-017</p><h1>Equilibrium-selection Lab</h1><p class="lede">Select a posterior fixture, team size, and opening threshold to expose the exact planner value, equilibrium range, multiplicity, and coalition-stability counts.</p></header><section class="lab" data-output-lab="equilibrium"><fieldset class="lab-controls"><legend>Choose a registered game</legend><div><label for="equilibrium-fixture">Posterior fixture</label><select id="equilibrium-fixture" data-filter-key="fixture">{fixture_options}</select></div><div><label for="equilibrium-agents">Agents</label><select id="equilibrium-agents" data-filter-key="agents">{agent_options}</select></div><div><label for="equilibrium-threshold">Threshold</label><select id="equilibrium-threshold" data-filter-key="threshold" data-limit-by="equilibrium-agents">{equilibrium_threshold_options}</select></div></fieldset><div class="lab-actions"><button type="button" class="filter-button" data-lab-reset>Reset</button><a href="../data/labs/equilibrium-selection.json">Download data</a></div><p class="callout" data-output-status aria-live="polite">Showing the tied-top-three, four-agent, threshold-two game.</p><div class="metric-grid compact"><article class="metric-card planner"><span>Planner discovery</span><strong data-output-key="planner-discovery">{html.escape(str(equilibrium_default["planner_discovery"]))}</strong></article><article class="metric-card"><span>Best equilibrium</span><strong data-output-key="best-equilibrium">{html.escape(str(equilibrium_default["best_equilibrium_discovery"]))}</strong></article><article class="metric-card"><span>Worst equilibrium</span><strong data-output-key="worst-equilibrium">{html.escape(str(equilibrium_default["worst_equilibrium_discovery"]))}</strong></article><article class="metric-card"><span>Pure Nash states</span><strong data-output-key="nash-count">{equilibrium_default["pure_nash_count"]}</strong></article><article class="metric-card"><span>Pair-stable states</span><strong data-output-key="pair-count">{equilibrium_default["pairwise_stable_count"]}</strong></article><article class="metric-card"><span>τ-stable states</span><strong data-output-key="tau-count">{equilibrium_default["tau_stable_count"]}</strong></article><article class="metric-card"><span>Price of anarchy</span><strong data-output-key="price-anarchy">{html.escape(str(equilibrium_default["price_of_anarchy"]))}</strong></article><article class="metric-card"><span>Tied-mode mixture is equilibrium</span><strong data-output-key="mixed-equilibrium">{str(equilibrium_default["tied_mode_is_equilibrium"]).lower()}</strong></article></div><section class="lab-visual" aria-labelledby="equilibrium-compare"><h2 id="equilibrium-compare">Planner and equilibrium range</h2><p class="visual-summary">The three-column comparison keeps the planner benchmark distinct from the best and worst equilibrium outcomes.</p><div class="comparison-readout"><div><span>Planner</span><strong data-output-key="planner-discovery">{html.escape(str(equilibrium_default["planner_discovery"]))}</strong></div><div><span>Best equilibrium</span><strong data-output-key="best-equilibrium">{html.escape(str(equilibrium_default["best_equilibrium_discovery"]))}</strong></div><div><span>Worst equilibrium</span><strong data-output-key="worst-equilibrium">{html.escape(str(equilibrium_default["worst_equilibrium_discovery"]))}</strong></div></div></section><p class="takeaway">Equilibrium selection matters whenever the best and worst equilibrium values differ; coalition-stability counts are reported separately and do not collapse that range.</p></section><noscript><p class="callout">JavaScript is off. All 160 exact game rows remain visible below.</p></noscript><details class="technical-details complete-data"><summary>Complete exact table — 160 games</summary><table class="matrix"><caption>Complete bounded DD-017 equilibrium census</caption><thead><tr><th>Fixture</th><th>Agents</th><th>Threshold</th><th>Planner</th><th>Best equilibrium</th><th>Worst equilibrium</th><th>Pure Nash</th><th>Pair-stable</th><th>τ-stable</th></tr></thead><tbody>{equilibrium_table}</tbody></table></details>{provenance("DD-017", ("DD-C-0075", "DD-C-0076", "DD-C-0077", "DD-C-0078"), DD017_RUN, "equilibrium-selection.json")}"""
     _write(
         output,
         "labs/equilibrium-selection.html",
@@ -1480,7 +1788,7 @@ def _program_v4_lab_pages(root: Path, output: Path) -> None:
         f'<option value="{value}"{" selected" if value == "3/4" else ""}>{value}</option>'
         for value in ("1/3", "1/2", "2/3", "3/4")
     )
-    dynamic_body = f"""<header class="page-hero"><p class="eyebrow">DD-015 exact output Lab</p><h1>Dynamic-attention Lab</h1><p class="lede">Change team size, private accuracy, shared accuracy, and stopping objective across the complete registered grid. The outputs distinguish planner, autonomous, private-only, and history-hidden behavior.</p></header><section class="lab" data-output-lab="dynamic"><div class="lab-controls"><div><label for="dynamic-agents">Agents</label><select id="dynamic-agents" data-filter-key="agents"><option value="2">2</option><option value="3" selected>3</option></select></div><div><label for="dynamic-private">Private accuracy</label><select id="dynamic-private" data-filter-key="private-accuracy">{private_options}</select></div><div><label for="dynamic-shared">Shared accuracy</label><select id="dynamic-shared" data-filter-key="shared-accuracy">{shared_options}</select></div><div><label for="dynamic-objective">Objective</label><select id="dynamic-objective" data-filter-key="objective"><option value="fixed-budget" selected>Fixed budget</option><option value="stopping-on-success">Stop on success</option></select></div></div><p class="callout" data-output-status aria-live="polite">Showing the exact N=3, p=1/2, q=3/4 fixed-budget row.</p><div class="metric-grid compact"><article class="metric-card planner"><span>Planner discovery</span><strong data-output-key="planner-discovery">{html.escape(str(dynamic_default["planner_discovery"]))}</strong></article><article class="metric-card consensus"><span>Autonomous discovery</span><strong data-output-key="autonomous-discovery">{html.escape(str(dynamic_default["autonomous_discovery"]))}</strong></article><article class="metric-card private"><span>Private-only discovery</span><strong data-output-key="private-discovery">{html.escape(str(dynamic_default["private_discovery"]))}</strong></article><article class="metric-card"><span>History-hidden discovery</span><strong data-output-key="hidden-discovery">{html.escape(str(dynamic_default["hidden_discovery"]))}</strong></article><article class="metric-card"><span>Expected actions</span><strong data-output-key="expected-actions">{html.escape(str(dynamic_default["expected_actions"]))}</strong></article><article class="metric-card"><span>Expected distinct actions</span><strong data-output-key="distinct-actions">{html.escape(str(dynamic_default["distinct_actions"]))}</strong></article><article class="metric-card"><span>Follow previous rate</span><strong data-output-key="follow-rate">{html.escape(str(dynamic_default["follow_previous_rate"]))}</strong></article><article class="metric-card"><span>Lean against repeat rate</span><strong data-output-key="lean-rate">{html.escape(str(dynamic_default["lean_against_rate"]))}</strong></article></div></section><noscript><p class="callout">JavaScript is off. All 64 exact dynamic objective rows remain visible below.</p></noscript><table class="matrix"><caption>Complete exact DD-015 dynamic profile</caption><thead><tr><th>Agents</th><th>Private p</th><th>Shared q</th><th>Objective</th><th>Planner</th><th>Autonomous</th><th>Private only</th><th>Expected actions</th><th>Distinct actions</th><th>Follow rate</th></tr></thead><tbody>{dynamic_table}</tbody></table>{provenance("DD-015", ("DD-C-0079", "DD-C-0080", "DD-C-0081"), DD015_RUN, "dynamic-attention.json")}"""
+    dynamic_body = f"""<header class="page-hero"><p class="eyebrow">Interactive model · DD-015</p><h1>Dynamic-attention Lab</h1><p class="lede">Change team size, private accuracy, shared accuracy, and stopping objective across the complete registered grid. The outputs distinguish planner, autonomous, private-only, and history-hidden behavior.</p></header><section class="lab" data-output-lab="dynamic"><fieldset class="lab-controls"><legend>Choose an exact dynamic profile</legend><div><label for="dynamic-agents">Agents</label><select id="dynamic-agents" data-filter-key="agents"><option value="2">2</option><option value="3" selected>3</option></select></div><div><label for="dynamic-private">Private accuracy</label><select id="dynamic-private" data-filter-key="private-accuracy">{private_options}</select></div><div><label for="dynamic-shared">Shared accuracy</label><select id="dynamic-shared" data-filter-key="shared-accuracy">{shared_options}</select></div><div><label for="dynamic-objective">Objective</label><select id="dynamic-objective" data-filter-key="objective"><option value="fixed-budget" selected>Fixed budget</option><option value="stopping-on-success">Stop on success</option></select></div></fieldset><div class="lab-actions"><button type="button" class="filter-button" data-lab-reset>Reset</button><a href="../data/labs/dynamic-attention.json">Download data</a></div><p class="callout" data-output-status aria-live="polite">Showing the exact N=3, p=1/2, q=3/4 fixed-budget row.</p><div class="metric-grid compact"><article class="metric-card planner"><span>Planner discovery</span><strong data-output-key="planner-discovery">{html.escape(str(dynamic_default["planner_discovery"]))}</strong></article><article class="metric-card consensus"><span>Autonomous discovery</span><strong data-output-key="autonomous-discovery">{html.escape(str(dynamic_default["autonomous_discovery"]))}</strong></article><article class="metric-card private"><span>Private-only discovery</span><strong data-output-key="private-discovery">{html.escape(str(dynamic_default["private_discovery"]))}</strong></article><article class="metric-card"><span>History-hidden discovery</span><strong data-output-key="hidden-discovery">{html.escape(str(dynamic_default["hidden_discovery"]))}</strong></article><article class="metric-card"><span>Expected actions</span><strong data-output-key="expected-actions">{html.escape(str(dynamic_default["expected_actions"]))}</strong></article><article class="metric-card"><span>Expected distinct actions</span><strong data-output-key="distinct-actions">{html.escape(str(dynamic_default["distinct_actions"]))}</strong></article><article class="metric-card"><span>Follow previous rate</span><strong data-output-key="follow-rate">{html.escape(str(dynamic_default["follow_previous_rate"]))}</strong></article><article class="metric-card"><span>Lean against repeat rate</span><strong data-output-key="lean-rate">{html.escape(str(dynamic_default["lean_against_rate"]))}</strong></article></div><section class="lab-visual" aria-labelledby="dynamic-compare"><h2 id="dynamic-compare">Protocol comparison</h2><p class="visual-summary">The selected row compares four information and coordination rules under one objective.</p><div class="comparison-readout"><div><span>Planner</span><strong data-output-key="planner-discovery">{html.escape(str(dynamic_default["planner_discovery"]))}</strong></div><div><span>Autonomous</span><strong data-output-key="autonomous-discovery">{html.escape(str(dynamic_default["autonomous_discovery"]))}</strong></div><div><span>Private only</span><strong data-output-key="private-discovery">{html.escape(str(dynamic_default["private_discovery"]))}</strong></div><div><span>History hidden</span><strong data-output-key="hidden-discovery">{html.escape(str(dynamic_default["hidden_discovery"]))}</strong></div></div></section><p class="takeaway">Visibility, private evidence, and the stopping objective are separate mechanisms. The selected profile reports their outcomes without treating autonomous behavior as the planner solution.</p></section><noscript><p class="callout">JavaScript is off. All 64 exact dynamic objective rows remain visible below.</p></noscript><details class="technical-details complete-data"><summary>Complete exact table — 64 rows</summary><table class="matrix"><caption>Complete exact DD-015 dynamic profile</caption><thead><tr><th>Agents</th><th>Private p</th><th>Shared q</th><th>Objective</th><th>Planner</th><th>Autonomous</th><th>Private only</th><th>Expected actions</th><th>Distinct actions</th><th>Follow rate</th></tr></thead><tbody>{dynamic_table}</tbody></table></details>{provenance("DD-015", ("DD-C-0079", "DD-C-0080", "DD-C-0081"), DD015_RUN, "dynamic-attention.json")}"""
     _write(
         output,
         "labs/dynamic-attention.html",
@@ -1569,7 +1877,7 @@ def _program_v4_lab_pages(root: Path, output: Path) -> None:
         f'<option value="{html.escape(value, quote=True)}"{" selected" if value == "team-tokens" else ""}>{html.escape(value.replace("-", " ").title())}</option>'
         for value in sorted({str(row["mechanism"]) for row in mechanism_rows})
     )
-    mechanism_body = f"""<header class="page-hero"><p class="eyebrow">DD-018 exact output Lab</p><h1>Team-mechanism Lab</h1><p class="lede">Compare ten declared mechanisms across five posterior fixtures. Outputs keep authority, obedience, coalition stability, budget balance, and multiplicity separate.</p></header><section class="lab" data-output-lab="mechanism"><div class="lab-controls"><div><label for="mechanism-fixture">Posterior fixture</label><select id="mechanism-fixture" data-filter-key="fixture">{mechanism_fixture_options}</select></div><div><label for="mechanism-name">Mechanism</label><select id="mechanism-name" data-filter-key="mechanism">{mechanism_options}</select></div></div><p class="callout" data-output-status aria-live="polite">Showing the exact moderate-fixture team-token row.</p><div class="metric-grid compact"><article class="metric-card planner"><span>Expected discovery</span><strong data-output-key="discovery">{html.escape(str(mechanism_default["discovery"]))}</strong></article><article class="metric-card"><span>Planner discovery</span><strong data-output-key="planner-discovery">{html.escape(str(mechanism_default["planner_discovery"]))}</strong></article><article class="metric-card"><span>Implements planner portfolio</span><strong data-output-key="implements-planner">{str(mechanism_default["implements_planner"]).lower()}</strong></article><article class="metric-card"><span>Obedience</span><strong data-output-key="obedience">{html.escape(str(mechanism_default["obedience"]))}</strong></article><article class="metric-card"><span>Strict unilateral</span><strong data-output-key="strict-unilateral">{html.escape(str(mechanism_default["strict_unilateral"]))}</strong></article><article class="metric-card"><span>Pairwise stable</span><strong data-output-key="pairwise-stable">{html.escape(str(mechanism_default["pairwise_stable"]))}</strong></article><article class="metric-card"><span>τ-player stable</span><strong data-output-key="tau-stable">{html.escape(str(mechanism_default["tau_stable"]))}</strong></article><article class="metric-card"><span>Weak budget balance</span><strong data-output-key="budget-balance">{str(mechanism_default["weak_budget_balance"]).lower()}</strong></article><article class="metric-card"><span>External subsidy</span><strong data-output-key="external-subsidy">{html.escape(str(mechanism_default["external_subsidy"]))}</strong></article><article class="metric-card"><span>Equilibrium multiplicity</span><strong data-output-key="multiplicity">{html.escape(str(mechanism_default["equilibrium_multiplicity"]))}</strong></article></div></section><noscript><p class="callout">JavaScript is off. All 50 exact mechanism-fixture rows remain visible below.</p></noscript><table class="matrix"><caption>Complete exact DD-018 mechanism census</caption><thead><tr><th>Fixture</th><th>Mechanism</th><th>Discovery</th><th>Planner implemented</th><th>Obedience</th><th>Pair stable</th><th>τ stable</th><th>Multiplicity</th></tr></thead><tbody>{mechanism_table}</tbody></table>{provenance("DD-018", ("DD-C-0083", "DD-C-0084", "DD-C-0085", "DD-C-0086"), DD018_RUN, "team-mechanisms.json")}"""
+    mechanism_body = f"""<header class="page-hero"><p class="eyebrow">Interactive model · DD-018</p><h1>Team-mechanism Lab</h1><p class="lede">Compare ten declared mechanisms across five posterior fixtures. Outputs keep authority, obedience, coalition stability, budget balance, and multiplicity separate.</p></header><section class="lab" data-output-lab="mechanism"><fieldset class="lab-controls"><legend>Choose a registered fixture and mechanism</legend><div><label for="mechanism-fixture">Posterior fixture</label><select id="mechanism-fixture" data-filter-key="fixture">{mechanism_fixture_options}</select></div><div><label for="mechanism-name">Mechanism</label><select id="mechanism-name" data-filter-key="mechanism">{mechanism_options}</select></div></fieldset><div class="lab-actions"><button type="button" class="filter-button" data-lab-reset>Reset</button><a href="../data/labs/team-mechanisms.json">Download data</a></div><p class="callout" data-output-status aria-live="polite">Showing the exact moderate-fixture team-token row.</p><div class="metric-grid compact"><article class="metric-card planner"><span>Expected discovery</span><strong data-output-key="discovery">{html.escape(str(mechanism_default["discovery"]))}</strong></article><article class="metric-card"><span>Planner discovery</span><strong data-output-key="planner-discovery">{html.escape(str(mechanism_default["planner_discovery"]))}</strong></article><article class="metric-card"><span>Implements planner portfolio</span><strong data-output-key="implements-planner">{str(mechanism_default["implements_planner"]).lower()}</strong></article><article class="metric-card"><span>Obedience</span><strong data-output-key="obedience">{html.escape(str(mechanism_default["obedience"]))}</strong></article><article class="metric-card"><span>Strict unilateral</span><strong data-output-key="strict-unilateral">{html.escape(str(mechanism_default["strict_unilateral"]))}</strong></article><article class="metric-card"><span>Pairwise stable</span><strong data-output-key="pairwise-stable">{html.escape(str(mechanism_default["pairwise_stable"]))}</strong></article><article class="metric-card"><span>τ-player stable</span><strong data-output-key="tau-stable">{html.escape(str(mechanism_default["tau_stable"]))}</strong></article><article class="metric-card"><span>Weak budget balance</span><strong data-output-key="budget-balance">{str(mechanism_default["weak_budget_balance"]).lower()}</strong></article><article class="metric-card"><span>External subsidy</span><strong data-output-key="external-subsidy">{html.escape(str(mechanism_default["external_subsidy"]))}</strong></article><article class="metric-card"><span>Equilibrium multiplicity</span><strong data-output-key="multiplicity">{html.escape(str(mechanism_default["equilibrium_multiplicity"]))}</strong></article></div><section class="lab-visual" aria-labelledby="mechanism-compare"><h2 id="mechanism-compare">Implementation profile</h2><p class="visual-summary">The selected row keeps portfolio implementation, obedience, stability, and budget feasibility as separate checks.</p><div class="comparison-readout"><div><span>Planner portfolio</span><strong data-output-key="implements-planner">{str(mechanism_default["implements_planner"]).lower()}</strong></div><div><span>Obedience</span><strong data-output-key="obedience">{html.escape(str(mechanism_default["obedience"]))}</strong></div><div><span>Pair stable</span><strong data-output-key="pairwise-stable">{html.escape(str(mechanism_default["pairwise_stable"]))}</strong></div><div><span>Budget balance</span><strong data-output-key="budget-balance">{str(mechanism_default["weak_budget_balance"]).lower()}</strong></div></div></section><p class="takeaway">A mechanism can improve discovery without satisfying every implementation concept. Common-posterior allocation does not test report truthfulness.</p></section><noscript><p class="callout">JavaScript is off. All 50 exact mechanism-fixture rows remain visible below.</p></noscript><details class="technical-details complete-data"><summary>Complete exact table — 50 rows</summary><table class="matrix"><caption>Complete exact DD-018 mechanism census</caption><thead><tr><th>Fixture</th><th>Mechanism</th><th>Discovery</th><th>Planner implemented</th><th>Obedience</th><th>Pair stable</th><th>τ stable</th><th>Multiplicity</th></tr></thead><tbody>{mechanism_table}</tbody></table></details>{provenance("DD-018", ("DD-C-0083", "DD-C-0084", "DD-C-0085", "DD-C-0086"), DD018_RUN, "team-mechanisms.json")}"""
     _write(
         output,
         "labs/team-mechanisms.html",
@@ -1846,6 +2154,356 @@ def _incremental_sharing_pages(root: Path, output: Path) -> None:
     )
 
 
+def _build_relationship_registry(
+    root: Path,
+    output: Path,
+    studies: list[dict[str, Any]],
+    claims: list[dict[str, Any]],
+    runs: list[dict[str, Any]],
+    publications: list[dict[str, Any]],
+) -> dict[str, Any]:
+    """Validate presentation relations and add evidence-owned reverse edges."""
+
+    source = _read_yaml(root / "site/content/relations.yml")
+    if source.get("schema_version") != 1:
+        raise RuntimeError("invalid relationship registry schema")
+    configured = source.get("studies")
+    programs = source.get("programs")
+    families = source.get("theorem_families")
+    if (
+        not isinstance(configured, dict)
+        or not isinstance(programs, dict)
+        or not isinstance(families, dict)
+    ):
+        raise RuntimeError("relationship registry requires programs, theorem families, and studies")
+
+    studies_by_id = {str(study["id"]): study for study in studies}
+    if set(configured) != set(studies_by_id):
+        missing = sorted(set(studies_by_id) - set(configured))
+        extra = sorted(set(configured) - set(studies_by_id))
+        raise RuntimeError(
+            f"relationship registry study mismatch: missing={missing}, extra={extra}"
+        )
+    claims_by_id = {str(claim["id"]): claim for claim in claims}
+    runs_by_id = {str(run["run_id"]): run for run in runs}
+    papers_by_slug = {str(paper["slug"]): paper for paper in publications}
+    result_source = _read_yaml(root / "site/content/results.yml")
+    results_by_id = {
+        str(result["result_id"]): result for result in result_source.get("results", [])
+    }
+    benchmark_document = json.loads(
+        (output / "data/benchmark/tasks.json").read_text(encoding="utf-8")
+    )
+    benchmark_tasks = benchmark_document.get("tasks", [])
+    tasks_by_id = {str(task["task_id"]): task for task in benchmark_tasks}
+
+    claim_owner = {claim_id: str(claim["study_id"]) for claim_id, claim in claims_by_id.items()}
+    task_owners: dict[str, set[str]] = {study_id: set() for study_id in studies_by_id}
+    for task_id, task in tasks_by_id.items():
+        for claim_id in task.get("reference_claims", []):
+            if claim_id not in claim_owner:
+                raise RuntimeError(f"benchmark task {task_id} references missing claim {claim_id}")
+            task_owners[claim_owner[claim_id]].add(task_id)
+        task_owners["DD-010"].add(task_id)
+
+    relations: list[dict[str, Any]] = []
+    for study_id, configured_relation in configured.items():
+        if not isinstance(configured_relation, dict):
+            raise RuntimeError(f"invalid relation for {study_id}")
+        program = configured_relation.get("program")
+        family = configured_relation.get("theorem_family")
+        if program not in programs or family not in families:
+            raise RuntimeError(f"missing program or theorem family for {study_id}")
+        for field in (
+            "result_ids",
+            "lab_slugs",
+            "paper_slugs",
+            "experiment_routes",
+            "data_routes",
+        ):
+            value = configured_relation.get(field, [])
+            if not isinstance(value, list) or len(value) != len(set(value)):
+                raise RuntimeError(f"duplicate or invalid {field} for {study_id}")
+            if any(
+                not isinstance(item, str) or re.search(r"(?:^/|\.\.|file:|/Users/)", item)
+                for item in value
+            ):
+                raise RuntimeError(f"unsafe {field} for {study_id}")
+
+        result_ids = [str(value) for value in configured_relation.get("result_ids", [])]
+        for result_id in result_ids:
+            result = results_by_id.get(result_id)
+            if result is None or result.get("study_id") != study_id:
+                raise RuntimeError(f"inconsistent result ownership: {study_id}/{result_id}")
+        lab_slugs = [str(value) for value in configured_relation.get("lab_slugs", [])]
+        paper_slugs = [str(value) for value in configured_relation.get("paper_slugs", [])]
+        experiment_routes = [
+            str(value) for value in configured_relation.get("experiment_routes", [])
+        ]
+        data_routes = [str(value) for value in configured_relation.get("data_routes", [])]
+        for slug in lab_slugs:
+            if not (output / f"labs/{slug}.html").is_file():
+                raise RuntimeError(f"missing related Lab: {study_id}/{slug}")
+        for slug in paper_slugs:
+            if slug not in papers_by_slug:
+                raise RuntimeError(f"missing related paper: {study_id}/{slug}")
+        for route in experiment_routes + data_routes:
+            if not (output / route).is_file():
+                raise RuntimeError(f"missing related route: {study_id}/{route}")
+
+        study = studies_by_id[study_id]
+        claim_ids = [str(value) for value in study["claim_ids"]]
+        run_ids = [str(value) for value in study["run_ids"]]
+        for claim_id in claim_ids:
+            if claim_id not in claims_by_id or claim_owner[claim_id] != study_id:
+                raise RuntimeError(f"inconsistent claim ownership: {study_id}/{claim_id}")
+        for run_id in run_ids:
+            if run_id not in runs_by_id:
+                raise RuntimeError(f"missing related run: {study_id}/{run_id}")
+        related_studies = sorted(
+            other_id
+            for other_id, other in configured.items()
+            if other_id != study_id and other.get("theorem_family") == family
+        )
+        relations.append(
+            {
+                "study_id": study_id,
+                "program": str(program),
+                "theorem_family": str(family),
+                "related_studies": related_studies,
+                "result_ids": result_ids,
+                "lab_slugs": lab_slugs,
+                "paper_slugs": paper_slugs,
+                "benchmark_task_ids": sorted(task_owners[study_id]),
+                "experiment_routes": experiment_routes,
+                "claim_ids": claim_ids,
+                "run_ids": run_ids,
+                "data_routes": data_routes,
+            }
+        )
+
+    registry = {
+        "schema_version": 1,
+        "source": "site/content/relations.yml",
+        "programs": programs,
+        "theorem_families": families,
+        "relations": relations,
+        "entity_counts": {
+            "programs": len(programs),
+            "theorem_families": len(families),
+            "studies": len(studies),
+            "findings": len(results_by_id),
+            "labs": len({slug for relation in relations for slug in relation["lab_slugs"]}),
+            "papers": len({slug for relation in relations for slug in relation["paper_slugs"]}),
+            "benchmark_tasks": len(tasks_by_id),
+            "experiment_modules": len(
+                {route for relation in relations for route in relation["experiment_routes"]}
+            ),
+            "claims": len(
+                {claim_id for relation in relations for claim_id in relation["claim_ids"]}
+            ),
+            "runs": len({run_id for relation in relations for run_id in relation["run_ids"]}),
+            "public_data": len(
+                {route for relation in relations for route in relation["data_routes"]}
+            ),
+        },
+    }
+    _write(output, "data/relations.json", json.dumps(registry, indent=2, sort_keys=True) + "\n")
+    return registry
+
+
+def _inject_relationship_panels(
+    root: Path,
+    output: Path,
+    registry: dict[str, Any],
+    studies: list[dict[str, Any]],
+    publications: list[dict[str, Any]],
+) -> None:
+    """Render contextual reverse links from the validated relation graph."""
+
+    studies_by_id = {str(study["id"]): study for study in studies}
+    papers_by_slug = {str(paper["slug"]): paper for paper in publications}
+    results_source = _read_yaml(root / "site/content/results.yml")
+    results_by_id = {
+        str(result["result_id"]): result for result in results_source.get("results", [])
+    }
+    programs = registry["programs"]
+    families = registry["theorem_families"]
+    relations = registry["relations"]
+    route_relations: dict[str, list[dict[str, Any]]] = {}
+
+    def add(route: str, relation: dict[str, Any]) -> None:
+        route_relations.setdefault(route, []).append(relation)
+
+    for relation in relations:
+        study = studies_by_id[str(relation["study_id"])]
+        add(f"research/{study['slug']}.html", relation)
+        for slug in relation["lab_slugs"]:
+            add(f"labs/{slug}.html", relation)
+            if slug == "audience-design":
+                add("labs/audience.html", relation)  # preserved legacy route for the same Lab
+        for slug in relation["paper_slugs"]:
+            add(str(papers_by_slug[slug]["detail"]), relation)
+        for route in relation["experiment_routes"]:
+            add(route, relation)
+        if relation["benchmark_task_ids"]:
+            add("benchmark/tasks.html", relation)
+            add("benchmark/results.html", relation)
+
+    def unique(items: list[tuple[str, str]]) -> list[tuple[str, str]]:
+        seen: set[str] = set()
+        values: list[tuple[str, str]] = []
+        for item in items:
+            if item[0] not in seen:
+                seen.add(item[0])
+                values.append(item)
+        return values
+
+    for route, related in route_relations.items():
+        depth = len(Path(route).parts) - 1
+        prefix = "../" * depth
+        is_study = route.startswith("research/")
+        title = (
+            "Where this work appears"
+            if is_study
+            else "Related evidence"
+            if route.startswith("labs/")
+            else "Supporting research"
+            if route.startswith(("benchmark/", "experiment-kit/"))
+            else "Related research"
+        )
+        identifiers = sorted({str(relation["study_id"]) for relation in related})
+        program_family = unique(
+            [
+                (
+                    f"{prefix}program.html",
+                    f"{programs[relation['program']]['label']} · {families[relation['theorem_family']]['label']}",
+                )
+                for relation in related
+            ]
+        )
+        study_links = unique(
+            [
+                (
+                    f"{prefix}research/{studies_by_id[study_id]['slug']}.html",
+                    f"{study_id} — {studies_by_id[study_id]['title']}",
+                )
+                for study_id in identifiers
+                if not (is_study and route.endswith(f"{studies_by_id[study_id]['slug']}.html"))
+            ]
+        )
+        related_study_links = unique(
+            [
+                (
+                    f"{prefix}research/{studies_by_id[study_id]['slug']}.html",
+                    f"{study_id} — {studies_by_id[study_id]['title']}",
+                )
+                for relation in related
+                for study_id in relation["related_studies"]
+                if study_id not in identifiers
+            ]
+        )
+        result_links = unique(
+            [
+                (f"{prefix}results.html#{result_id}", str(results_by_id[result_id]["title"]))
+                for relation in related
+                for result_id in relation["result_ids"]
+            ]
+        )
+        lab_links = unique(
+            [
+                (f"{prefix}labs/{slug}.html", f"{slug.replace('-', ' ').title()} Lab")
+                for relation in related
+                for slug in relation["lab_slugs"]
+                if route != f"labs/{slug}.html"
+            ]
+        )
+        paper_links = unique(
+            [
+                (f"{prefix}{papers_by_slug[slug]['detail']}", str(papers_by_slug[slug]["title"]))
+                for relation in related
+                for slug in relation["paper_slugs"]
+                if route != papers_by_slug[slug]["detail"]
+            ]
+        )
+        task_links = unique(
+            [
+                (f"{prefix}benchmark/tasks.html#{task_id}", task_id)
+                for relation in related
+                for task_id in relation["benchmark_task_ids"]
+            ]
+        )
+        experiment_links = unique(
+            [
+                (
+                    f"{prefix}{experiment_route}",
+                    experiment_route.replace("experiment-kit/", "")
+                    .replace(".html", "")
+                    .replace("-", " ")
+                    .title(),
+                )
+                for relation in related
+                for experiment_route in relation["experiment_routes"]
+                if route != experiment_route
+            ]
+        )
+        claim_links = unique(
+            [
+                (f"{prefix}claims.html#{claim_id}", claim_id)
+                for relation in related
+                for claim_id in relation["claim_ids"]
+            ]
+        )
+        run_links = unique(
+            [
+                (f"{REPOSITORY_URL}/blob/main/results/verified/{run_id}/manifest.json", run_id)
+                for relation in related
+                for run_id in relation["run_ids"]
+            ]
+        )
+        data_links = unique(
+            [
+                (f"{prefix}{data_route}", data_route.rsplit("/", 1)[-1])
+                for relation in related
+                for data_route in relation["data_routes"]
+            ]
+        )
+
+        groups = [
+            ("Program / theorem family", program_family),
+            (
+                "Studies used" if not is_study else "Related studies",
+                study_links + related_study_links,
+            ),
+            ("Findings", result_links),
+            ("Explore interactively", lab_links),
+            ("Papers", paper_links),
+            ("Benchmark tasks", task_links),
+            ("Experiment Kit", experiment_links),
+            ("Claims", claim_links),
+            ("Evidence runs", run_links),
+            ("Public data", data_links),
+        ]
+        rendered_groups = "".join(
+            "<article><h3>{}</h3><ul>{}</ul></article>".format(
+                html.escape(label),
+                "".join(
+                    f'<li><a href="{html.escape(href, quote=True)}">{html.escape(text)}</a></li>'
+                    for href, text in links
+                ),
+            )
+            for label, links in groups
+            if links
+        )
+        panel_id = ' id="explore"' if is_study else ""
+        panel = f'<section class="content-section related-resources"{panel_id}><p class="eyebrow">Relationship map</p><h2>{html.escape(title)}</h2><div class="related-grid">{rendered_groups}</div><p class="quiet-meta"><a href="{prefix}data/relations.json">Download the validated relationship registry</a></p></section>'
+        page = output / route
+        source = page.read_text(encoding="utf-8")
+        if "</main>" not in source:
+            raise RuntimeError(f"cannot inject relationship panel: {route}")
+        page.write_text(source.replace("</main>", panel + "</main>", 1), encoding="utf-8")
+
+
 def _render(
     root: Path,
     output: Path,
@@ -1855,7 +2513,9 @@ def _render(
     runs: list[dict[str, Any]],
     publications: list[dict[str, Any]],
 ) -> list[dict[str, str]]:
-    cards = "".join(_study_card(study) for study in studies)
+    relation_source = _read_yaml(root / "site/content/relations.yml")
+    relation_config = relation_source["studies"]
+    cards = "".join(_study_card(study, relation_config[study["id"]]) for study in studies)
     canonical = _canonical_data(_passing_baseline(root))
     metrics = canonical["metrics"]
     joint_summary = json.loads(
@@ -1868,7 +2528,7 @@ def _render(
             encoding="utf-8"
         )
     )
-    home = f"""<header class="home-hero"><div class="hero-copy"><p class="eyebrow">Collective search under dispersed information</p><h1>Distributed Discovery</h1><p class="tagline">How groups turn evidence into portfolios of action.</p><p class="hero-hook">Better shared information can produce worse collective discovery.</p><p class="lede">A group can improve its best guess and still waste its attempts by sending everyone to the same place. This project studies how evidence, roles, incentives, and timing shape a portfolio of search actions.</p><div class="actions"><a class="button primary" href="https://yoheinakajima.github.io/shared-discovery-paradox/">See the paradox</a><a class="button" href="research.html">Explore the research</a><a class="text-link" href="labs.html">Browse the Labs <span aria-hidden="true">→</span></a></div></div><aside class="paradox-panel" aria-labelledby="paradox-heading"><p class="eyebrow">Evidence is only the first step</p><h2 id="paradox-heading">Same clues. Different ways to search.</h2><p>Pooling improves the group’s ranking, but a one-answer rule compresses the action portfolio.</p><div class="metric-grid compact"><article class="metric-card consensus"><span>One shared answer</span><strong>{html.escape(str(metrics["consensus"]))}</strong></article><article class="metric-card private"><span>Private clue-following</span><strong>{html.escape(str(metrics["private"]))}</strong></article><article class="metric-card planner"><span>Coordinated portfolio</span><strong>{html.escape(str(metrics["planner"]))}</strong></article></div><p class="quiet-meta">Discovery probabilities from run <code>{html.escape(str(canonical["source_run_id"]))}</code>. <a href="research/dd-000.html">Scope and evidence</a>.</p></aside></header><section class="content-section" aria-labelledby="process-heading"><p class="eyebrow">How the system works</p><h2 id="process-heading">From evidence to discovery</h2><p class="section-intro">A discovery architecture determines more than what a group knows. It shapes who sees evidence, which actions are taken, and what the group learns next.</p><ol class="process-grid"><li><span>01</span><strong>Acquire evidence</strong><small>Choose sources and measurements.</small></li><li><span>02</span><strong>Share evidence</strong><small>Decide who can see which signals.</small></li><li><span>03</span><strong>Choose actions</strong><small>Spread attempts across the search space.</small></li><li><span>04</span><strong>Learn and adapt</strong><small>Use outcomes to update the next move.</small></li><li><span>05</span><strong>Reward discovery</strong><small>Align reporting, attention, and effort.</small></li><li><span>06</span><strong>Measure outcomes</strong><small>Track coverage, quality, and discovery.</small></li></ol></section><section class="content-section" aria-labelledby="findings-heading"><p class="eyebrow">Key findings</p><h2 id="findings-heading">Where architecture changes the result</h2><div class="card-grid finding-grid"><article class="card result-card"><p class="card-kicker">Shared Discovery Paradox</p><h3>One better answer can produce fewer discoveries.</h3><p><strong>{html.escape(str(metrics["consensus"]))}</strong> discovery under one shared answer in the canonical fixture.</p><a href="https://yoheinakajima.github.io/shared-discovery-paradox/">See the interactive guide <span aria-hidden="true">→</span></a></article><article class="card result-card"><p class="card-kicker">Common-Source Trap</p><h3>Many reports can still come from one source.</h3><p><strong>p(1−p)/N</strong> is the exact all-common trap width in the frozen model.</p><a href="publications/common-source-trap.html">Read the paper <span aria-hidden="true">→</span></a></article><article class="card result-card"><p class="card-kicker">Truthful discovery mechanisms</p><h3>Rewards can support truthful, differentiated action.</h3><p><strong>{html.escape(str(joint_summary["strict_rows"]))}</strong> strict rows in the registered exact mechanism class.</p><a href="research/dd-006b.html">Open the study <span aria-hidden="true">→</span></a></article><article class="card result-card"><p class="card-kicker">Architecture Atlas</p><h3>Coherent designs reveal real tradeoffs.</h3><p><strong>{html.escape(str(atlas_summary["pareto_cells"]))}</strong> nondominated cells in the bounded synthetic Atlas.</p><a href="labs/atlas.html">Explore the Atlas <span aria-hidden="true">→</span></a></article></div></section><section class="content-section" aria-labelledby="explore-heading"><p class="eyebrow">Explore the work</p><h2 id="explore-heading">Choose your depth</h2><div class="card-grid entry-grid"><article class="card entry-card"><h3><a href="research.html">Research</a></h3><p>Browse every completed, active, and planned study.</p></article><article class="card entry-card"><h3><a href="labs.html">Labs</a></h3><p>Change inputs and inspect precomputed model behavior.</p></article><article class="card entry-card"><h3><a href="publications.html">Papers</a></h3><p>Read the long-form arguments and validated artifacts.</p></article><article class="card entry-card"><h3><a href="benchmark.html">Benchmark</a></h3><p>Compare search strategies on compatible exact tasks.</p></article></div></section><section class="principle"><p>Share the evidence. <strong>Diversify the actions.</strong></p></section>"""
+    home = f"""<header class="home-hero"><div class="hero-copy"><p class="eyebrow">Collective search under dispersed information</p><h1>Distributed Discovery</h1><p class="tagline">How groups turn evidence into portfolios of action.</p><p class="hero-hook">Better shared information can produce worse collective discovery.</p><p class="lede">A group can improve its best guess and still waste its attempts by sending everyone to the same place. This project studies how evidence, roles, incentives, and timing shape a portfolio of search actions.</p><div class="actions"><a class="button primary" href="https://yoheinakajima.github.io/shared-discovery-paradox/">See the paradox</a><a class="button" href="research.html">Explore the research</a><a class="text-link" href="program.html">See the program map <span aria-hidden="true">→</span></a><a class="text-link" href="labs.html">Browse Labs <span aria-hidden="true">→</span></a><a class="text-link" href="publications.html">Read papers <span aria-hidden="true">→</span></a></div></div><aside class="paradox-panel" aria-labelledby="paradox-heading"><p class="eyebrow">Evidence is only the first step</p><h2 id="paradox-heading">Same clues. Different ways to search.</h2><p>Pooling improves the group’s ranking, but a one-answer rule compresses the action portfolio.</p><div class="metric-grid compact"><article class="metric-card consensus"><span>One shared answer</span><strong>{html.escape(str(metrics["consensus"]))}</strong></article><article class="metric-card private"><span>Private clue-following</span><strong>{html.escape(str(metrics["private"]))}</strong></article><article class="metric-card planner"><span>Coordinated portfolio</span><strong>{html.escape(str(metrics["planner"]))}</strong></article></div><p class="quiet-meta">Discovery probabilities from run <code>{html.escape(str(canonical["source_run_id"]))}</code>. <a href="research/dd-000.html">Scope and evidence</a>.</p></aside></header><section class="content-section" aria-labelledby="process-heading"><p class="eyebrow">How the system works</p><h2 id="process-heading">From evidence to discovery</h2><p class="section-intro">A discovery architecture determines more than what a group knows. It shapes who sees evidence, which actions are taken, and what the group learns next.</p><ol class="process-grid"><li><span>01</span><strong>Acquire evidence</strong><small>Choose sources and measurements.</small></li><li><span>02</span><strong>Share evidence</strong><small>Decide who can see which signals.</small></li><li><span>03</span><strong>Choose actions</strong><small>Spread attempts across the search space.</small></li><li><span>04</span><strong>Learn and adapt</strong><small>Use outcomes to update the next move.</small></li><li><span>05</span><strong>Reward discovery</strong><small>Align reporting, attention, and effort.</small></li><li><span>06</span><strong>Measure outcomes</strong><small>Track coverage, quality, and discovery.</small></li></ol></section><section class="content-section" aria-labelledby="findings-heading"><p class="eyebrow">Key findings</p><h2 id="findings-heading">Where architecture changes the result</h2><div class="card-grid finding-grid"><article class="card result-card"><p class="card-kicker">Shared Discovery Paradox</p><h3>One better answer can produce fewer discoveries.</h3><p><strong>{html.escape(str(metrics["consensus"]))}</strong> discovery under one shared answer in the canonical fixture.</p><a href="https://yoheinakajima.github.io/shared-discovery-paradox/">See the interactive guide <span aria-hidden="true">→</span></a></article><article class="card result-card"><p class="card-kicker">Common-Source Trap</p><h3>Many reports can still come from one source.</h3><p><strong>p(1−p)/N</strong> is the exact all-common trap width in the frozen model.</p><a href="publications/common-source-trap.html">Read the paper <span aria-hidden="true">→</span></a></article><article class="card result-card"><p class="card-kicker">Truthful discovery mechanisms</p><h3>Rewards can support truthful, differentiated action.</h3><p><strong>{html.escape(str(joint_summary["strict_rows"]))}</strong> strict rows in the registered exact mechanism class.</p><a href="research/dd-006b.html">Open the study <span aria-hidden="true">→</span></a></article><article class="card result-card"><p class="card-kicker">Architecture Atlas</p><h3>Coherent designs reveal real tradeoffs.</h3><p><strong>{html.escape(str(atlas_summary["pareto_cells"]))}</strong> nondominated cells in the bounded synthetic Atlas.</p><a href="labs/atlas.html">Explore the Atlas <span aria-hidden="true">→</span></a></article></div></section><section class="content-section" aria-labelledby="explore-heading"><p class="eyebrow">Explore the work</p><h2 id="explore-heading">Choose your depth</h2><div class="card-grid entry-grid"><article class="card entry-card"><h3><a href="research.html">Research</a></h3><p>Browse every completed, active, and planned study.</p></article><article class="card entry-card"><h3><a href="labs.html">Labs</a></h3><p>Change inputs and inspect precomputed model behavior.</p></article><article class="card entry-card"><h3><a href="publications.html">Papers</a></h3><p>Read the long-form arguments and validated artifacts.</p></article><article class="card entry-card"><h3><a href="benchmark.html">Benchmark</a></h3><p>Compare search strategies on compatible exact tasks.</p></article></div></section><section class="principle"><p>Share the evidence. <strong>Diversify the actions.</strong></p></section>"""
     home = home.replace(
         '</div></section><section class="content-section" aria-labelledby="explore-heading">',
         """</div></section><section class="content-section" aria-labelledby="attention-finding">
@@ -1915,7 +2575,19 @@ def _render(
             "program.html",
         ),
     )
-    research = f"""<header class="page-hero"><p class="eyebrow">Collective search under dispersed information</p><h1>Research</h1><p class="lede">Browse studies of how evidence, roles, incentives, timing, and action allocation shape collective search.</p><p><a href="program.html">See how studies fit into theorem families, papers, and the living synthesis.</a></p></header><section class="catalog" data-research-catalog><div class="research-tools"><div><label for="study-search">Search studies</label><input id="study-search" type="search" placeholder="Search by question, title, or study ID" autocomplete="off"></div><div class="filter-group" aria-label="Filter studies"><button type="button" class="filter-button" data-study-filter="all" aria-pressed="true">All</button><button type="button" class="filter-button" data-study-filter="key-results" aria-pressed="false">Key results</button><button type="button" class="filter-button" data-study-filter="active" aria-pressed="false">Active</button><button type="button" class="filter-button" data-study-filter="planned" aria-pressed="false">Planned</button><button type="button" class="filter-button" data-study-filter="tools" aria-pressed="false">Tools and infrastructure</button></div><p id="study-status" class="result-count" aria-live="polite">{len(studies)} studies shown</p></div><noscript><p class="callout">JavaScript is off. All {len(studies)} studies remain visible; use browser find to search this page.</p></noscript><div class="card-grid study-grid">{cards}</div></section>"""
+    program_options = "".join(
+        f'<option value="{html.escape(program_id)}">{html.escape(str(details["label"]))}</option>'
+        for program_id, details in relation_source["programs"].items()
+    )
+    family_options = "".join(
+        f'<option value="{html.escape(family_id)}">{html.escape(str(details["label"]))}</option>'
+        for family_id, details in relation_source["theorem_families"].items()
+    )
+    evidence_options = "".join(
+        f'<option value="{html.escape(status)}">{html.escape(human_status(status, kind="evidence"))}</option>'
+        for status in sorted({str(study["evidence_status"]) for study in studies})
+    )
+    research = f"""<header class="page-hero"><p class="eyebrow">Collective search under dispersed information</p><h1>Research</h1><p class="lede">Browse studies of how evidence, roles, incentives, timing, and action allocation shape collective search.</p><p><a href="program.html">See how studies fit into theorem families, papers, and the living synthesis.</a></p></header><section class="catalog" data-research-catalog><div class="research-tools"><div><label for="study-search">Search studies</label><input id="study-search" type="search" placeholder="Search by question, title, or study ID" autocomplete="off"></div><fieldset class="catalog-selects"><legend>Relationship filters</legend><div><label for="study-program">Program</label><select id="study-program"><option value="all">All programs</option>{program_options}</select></div><div><label for="study-family">Theorem family</label><select id="study-family"><option value="all">All theorem families</option>{family_options}</select></div><div><label for="study-evidence">Evidence status</label><select id="study-evidence"><option value="all">All evidence statuses</option>{evidence_options}</select></div></fieldset><div class="filter-group" aria-label="Filter studies"><button type="button" class="filter-button" data-study-filter="all" aria-pressed="true">All</button><button type="button" class="filter-button" data-study-filter="key-results" aria-pressed="false">Key results</button><button type="button" class="filter-button" data-study-filter="active" aria-pressed="false">Active</button><button type="button" class="filter-button" data-study-filter="planned" aria-pressed="false">Planned</button><button type="button" class="filter-button" data-study-filter="tools" aria-pressed="false">Tools and infrastructure</button></div><p id="study-status" class="result-count" aria-live="polite">{len(studies)} studies shown</p></div><noscript><p class="callout">JavaScript is off. All {len(studies)} studies remain visible; use browser find to search this page.</p></noscript><div class="card-grid study-grid">{cards}</div></section>"""
     _write(
         output,
         "research.html",
@@ -2036,7 +2708,7 @@ def _render(
     ]
     open_body = (
         '<header class="page-hero"><p class="eyebrow">Research agenda</p><h1>Open questions</h1><p class="lede">These are registered next steps, not results.</p></header><section class="card-grid study-grid">'
-        + "".join(_study_card(study) for study in open_studies)
+        + "".join(_study_card(study, relation_config[study["id"]]) for study in open_studies)
         + "</section>"
     )
     _write(
@@ -2071,45 +2743,7 @@ def _render(
             "foundations.html",
         ),
     )
-    results_body = f"""<header class="page-hero"><p class="eyebrow">Key findings</p><h1>Results</h1><p class="lede">What the evidence says about gathering information and spreading action across a search portfolio.</p></header><div class="result-groups"><section class="result-group"><p class="eyebrow">How information is gathered</p><h2>The source of a clue changes what agreement means.</h2><article class="finding"><div><span class="status-chip">Exact in this model</span><h3>The all-common source trap has a closed-form width.</h3><p>In the frozen homogeneous equal-prize model, the exact trap width is <strong>p(1−p)/N</strong>; a separate finite audit and negative result define the boundary.</p></div><div class="finding-links"><a href="research/dd-008b.html">Open DD-008B</a><a href="claims.html#DD-C-0057">Technical evidence</a></div></article></section><section class="result-group"><p class="eyebrow">How information is shared</p><h2>More accurate evidence need not belong in every hand.</h2><article class="finding"><div><span class="status-chip">Checked independently</span><h3>One reader can be the discovery-maximizing audience.</h3><p>When shared accuracy q exceeds private accuracy p in the frozen follow/private class, the exact optimum reader count is <strong>1</strong>.</p></div><div class="finding-links"><a href="research/dd-013.html">Open DD-013</a><a href="claims.html#DD-C-0062">Technical evidence</a></div></article></section><section class="result-group"><p class="eyebrow">How actions are allocated</p><h2>A better shared ranking can still concentrate search.</h2><article class="finding"><div><span class="status-chip">Canonical fixture</span><h3>Same clues, different action portfolios.</h3><p>Discovery is <strong>{html.escape(str(metrics["consensus"]))}</strong> under one shared answer, <strong>{html.escape(str(metrics["private"]))}</strong> under private clue-following, and <strong>{html.escape(str(metrics["planner"]))}</strong> under a coordinated pooled portfolio.</p></div><div class="finding-links"><a href="research/dd-000.html">Open DD-000</a><a href="claims.html#DD-C-0005">Technical evidence</a></div></article></section><section class="result-group"><p class="eyebrow">How incentives change behavior</p><h2>Truthful reporting and differentiated action can coexist.</h2><article class="finding"><div><span class="status-chip">Completed finite study</span><h3>A bounded mechanism class contains strict rows.</h3><p>The exact census finds <strong>{html.escape(str(joint_summary["strict_rows"]))}</strong> strict rows, with a maximum all-tie margin of <strong>{html.escape(str(joint_summary["maximum_margin"]))}</strong>.</p></div><div class="finding-links"><a href="research/dd-006b.html">Open DD-006B</a><a href="claims.html#DD-C-0053">Technical evidence</a></div></article></section><section class="result-group"><p class="eyebrow">How discovery is measured</p><h2>No single score captures every architecture.</h2><article class="finding"><div><span class="status-chip">Bounded synthetic Atlas</span><h3>Tradeoffs leave multiple coherent designs standing.</h3><p>Among <strong>{html.escape(str(atlas_summary["valid_cells"]))}</strong> valid cells, <strong>{html.escape(str(atlas_summary["pareto_cells"]))}</strong> are nondominated under the declared objectives.</p></div><div class="finding-links"><a href="research/dd-009.html">Open DD-009</a><a href="labs/atlas.html">Explore the Lab</a></div></article></section></div>"""
-    results_body = (
-        results_body.removesuffix("</div>")
-        + """<section class="result-group">
-    <p class="eyebrow">Program V3 · selective attention</p>
-    <h2>Shared evidence can have a first-use benefit and a duplicate-use cost.</h2>
-    <article class="finding"><div><span class="status-chip">Verified theorem</span>
-    <h3>The first reader can help; duplicate use can reduce discovery.</h3>
-    <p>In DD-012's frozen access-gated follow/private model, the first shared-signal reader improves discovery exactly when q exceeds p, while every later reader has a strictly negative marginal discovery effect.</p>
-    </div><div class="finding-links"><a href="research/dd-012.html">Open DD-012</a><a href="claims.html#DD-C-0059">Technical evidence</a></div></article>
-    <article class="finding"><div><span class="status-chip">Checked independently</span>
-    <h3>Equilibrium can overuse a shared clue.</h3>
-    <p>The registered 175-cell equal-split census contains <strong>63</strong> excessive-attention cells and <strong>24</strong> all-attend equilibria despite a unique one-reader planner optimum.</p>
-    </div><div class="finding-links"><a href="research/dd-012.html">Open DD-012</a><a href="claims.html#DD-C-0060">Technical evidence</a></div></article>
-    <article class="finding"><div><span class="status-chip">Checked independently</span>
-    <h3>One reader can be the discovery-maximizing audience.</h3>
-    <p>In DD-013's binding follow/private class, the optimal audience is one recipient when q exceeds p; the claim does not prescribe general information restriction.</p>
-    </div><div class="finding-links"><a href="research/dd-013.html">Open DD-013</a><a href="claims.html#DD-C-0062">Technical evidence</a></div></article>
-    <article class="finding"><div><span class="status-chip">Preserved negative result</span>
-    <h3>The registered conditional-policy theorem is not unrestricted.</h3>
-    <p>DD-014's separate two-label raw-policy audit finds complementary constant policies with discovery one, strictly above the best embedded private/public profile in all four audited cells.</p>
-    </div><div class="finding-links"><a href="research/dd-014.html">Open DD-014</a><a href="claims.html#DD-C-0068">Technical evidence</a></div></article>
-    </section></div>"""
-    )
-    results_body = (
-        results_body.removesuffix("</div>")
-        + """<section class="result-group">
-    <p class="eyebrow">Program V5 · incremental sharing</p>
-    <h2>Aggregation gain can be smaller than the rescue action it replaces.</h2>
-    <article class="finding"><div><span class="status-chip">Verified finite theorem</span>
-    <h3>Pooling one more point signal weakly lowers discovery.</h3>
-    <p>Under DD-020's registered one-action point-channel protocol, G<sub>s+1</sub> ≤ G<sub>s</sub>, strictly unless signals are perfect. The exact 2,555-row census contains <strong>1,848 negative</strong>, <strong>196 zero</strong>, and <strong>0 positive</strong> adjacent increments.</p>
-    </div><div class="finding-links"><a href="research/dd-020.html">Open DD-020</a><a href="labs/incremental-sharing.html">Explore the Lab</a><a href="claims.html#DD-C-0094">Technical evidence</a></div></article>
-    <article class="finding"><div><span class="status-chip">Scope-defining counterexample</span>
-    <h3>One-person accuracy does not determine the sign.</h3>
-    <p>At the same one-person accuracy 1/2, the noisy-point profile falls from 7/8 to 7/12 while the guaranteed-shortlist profile rises from 7/8 to 17/18. This bounded comparison does not establish a general channel order.</p>
-    </div><div class="finding-links"><a href="claims.html#DD-C-0096">Technical evidence</a><a href="data/incremental-sharing/channel-profiles.json">Download exact profiles</a></div></article>
-    </section></div>"""
-    )
+    results_body = _results_page(root, studies, claims_by_id)
     _write(
         output,
         "results.html",
@@ -2238,7 +2872,7 @@ def _render(
         ),
         "mechanisms": (
             "Incentives and mechanisms",
-            "Mechanism scenario",
+            "Family, observability regime, named row, and tie role",
             "Incentive and discovery boundaries",
             "DD-006B",
         ),
@@ -2250,13 +2884,13 @@ def _render(
         ),
         "audit": (
             "Measurement and experiments",
-            "Synthetic audit scenario",
+            "Copying rate, missingness, matching error, and sample size",
             "Recovery and calibration behavior",
             "DD-007",
         ),
         "atlas": (
             "Measurement and experiments",
-            "Architecture index",
+            "Named architecture or six registered components",
             "Metric and Pareto tradeoffs",
             "DD-009",
         ),
@@ -2272,6 +2906,29 @@ def _render(
             "Power and minimum detectable effects",
             "DD-011",
         ),
+    }
+    lab_capability = {
+        "threshold": "Interactive models",
+        "equilibrium-selection": "Interactive models",
+        "sequential": "Data explorers",
+        "evidence-acquisition": "Interactive models",
+        "attention": "Interactive models",
+        "dynamic-attention": "Interactive models",
+        "incremental-sharing": "Interactive models",
+        "mechanisms": "Data explorers",
+        "team-mechanisms": "Interactive models",
+        "coverage": "Guided exhibits",
+        "audit": "Data explorers",
+        "atlas": "Data explorers",
+        "benchmark": "Data explorers",
+        "experiment-design": "Data explorers",
+        "audience-design": "Guided exhibits",
+        "conditional-attention": "Guided exhibits",
+    }
+    capability_label = {
+        "Interactive models": "Interactive model",
+        "Data explorers": "Data explorer",
+        "Guided exhibits": "Guided exhibit",
     }
     generic_by_slug = {
         slug: (title, claim, description) for slug, title, claim, _, description in lab_specs
@@ -2329,19 +2986,14 @@ def _render(
         ),
     }
     grouped_labs: list[str] = []
-    for group in (
-        "Search and allocation",
-        "Information and sources",
-        "Incentives and mechanisms",
-        "Measurement and experiments",
-    ):
+    for group in ("Interactive models", "Data explorers", "Guided exhibits"):
         group_cards = []
         for slug, details in lab_details.items():
-            if details[0] != group:
+            if lab_capability[slug] != group:
                 continue
             title, claim, description = (special_labs | generic_by_slug)[slug]
             group_cards.append(
-                f'<article class="card lab-card"><p class="eyebrow">Interactive explainer</p><h3><a href="labs/{slug}.html">{html.escape(title)}</a></h3><p>{html.escape(description)}</p><dl><div><dt>What can I change?</dt><dd>{html.escape(details[1])}</dd></div><div><dt>What will I see?</dt><dd>{html.escape(details[2])}</dd></div><div><dt>Supported by</dt><dd>{html.escape(details[3])}</dd></div></dl><p class="card-link"><a href="labs/{slug}.html">Open Lab <span aria-hidden="true">→</span></a></p><details class="technical-details"><summary>Technical details</summary><p><a href="claims.html#{claim}">{claim}</a> · <a href="evidence.html">Reproducible evidence</a></p></details></article>'
+                f'<article class="card lab-card"><p class="eyebrow">{capability_label[group]} · {html.escape(details[0])}</p><h3><a href="labs/{slug}.html">{html.escape(title)}</a></h3><p>{html.escape(description)}</p><dl><div><dt>What can I change?</dt><dd>{html.escape(details[1])}</dd></div><div><dt>What will I see?</dt><dd>{html.escape(details[2])}</dd></div><div><dt>Supported by</dt><dd>{html.escape(details[3])}</dd></div></dl><p class="card-link"><a href="labs/{slug}.html">Open Lab <span aria-hidden="true">→</span></a></p><details class="technical-details"><summary>Technical details</summary><p><a href="claims.html#{claim}">{claim}</a> · <a href="evidence.html">Reproducible evidence</a></p></details></article>'
             )
         grouped_labs.append(
             f'<section class="lab-group"><h2>{html.escape(group)}</h2><div class="card-grid lab-grid">{"".join(group_cards)}</div></section>'
@@ -2357,12 +3009,19 @@ def _render(
             "labs.html",
         ),
     )
-    for slug, title, claim, run_id, description in lab_specs:
-        scenario_count = 20 if slug == "atlas" else 5
-        value_label = "Architecture index" if slug == "atlas" else "Scenario index"
-        lab_body = f"""<header class="page-hero"><p class="eyebrow">Interactive explainer</p><h1>{html.escape(title)}</h1><p class="lede">{html.escape(description)}</p></header><section class="lab" data-lab="{slug}"><label for="scenario">{value_label}: <output id="scenario-output">1</output></label><input id="scenario" type="range" min="1" max="{scenario_count}" value="1" step="1" aria-describedby="lab-note"><p id="lab-note" class="callout" aria-live="polite">Scenario 1 is the readable default. Adjust the slider to compare {scenario_count} precomputed fixture views.</p></section><noscript><p class="callout">JavaScript is off. The default scenario remains available below.</p></noscript><table class="matrix"><caption>Study support and fallback behavior</caption><thead><tr><th>What this covers</th><th>Registered interpretation</th></tr></thead><tbody><tr><td>Claim</td><td><a href="../claims.html#{claim}">{claim}</a></td></tr><tr><td>Reproducible run</td><td><a href="{REPOSITORY_URL}/blob/main/results/verified/{run_id}/manifest.json">{run_id}</a></td></tr><tr><td>Fallback</td><td>Scenario 1; bounded fixture only, not a recommendation.</td></tr></tbody></table>"""
+    core_labs = build_core_labs(root)
+    for slug, lab in core_labs.items():
         _write(
-            output, f"labs/{slug}.html", _page(title, description, lab_body, f"labs/{slug}.html")
+            output,
+            f"labs/{slug}.html",
+            _page(
+                str(lab["title"]), str(lab["description"]), str(lab["body"]), f"labs/{slug}.html"
+            ),
+        )
+        _write(
+            output,
+            f"data/labs/{slug}.json",
+            json.dumps(lab["data"], indent=2, sort_keys=True) + "\n",
         )
     _program_v4_lab_pages(root, output)
     _incremental_sharing_pages(root, output)
@@ -2371,6 +3030,10 @@ def _render(
     _attention_pages(root, output)
     _audience_pages(root, output)
     _conditional_pages(root, output)
+    relationship_registry = _build_relationship_registry(
+        root, output, studies, claims, runs, publications
+    )
+    _inject_relationship_panels(root, output, relationship_registry, studies, publications)
     _write(
         output,
         "404.html",
@@ -2438,6 +3101,26 @@ def validate_site(output: Path, routes: list[dict[str, str]]) -> dict[str, Any]:
             and "<noscript>" not in source
         ):
             errors.append(f"{relative}: interactive Lab lacks a no-JavaScript fallback")
+        if relative.startswith("labs/") and "data-lab=" in source:
+            errors.append(f"{relative}: generic scenario-only Lab handler is prohibited")
+        if relative.startswith("labs/") and 'type="range"' in source:
+            errors.append(f"{relative}: scenario-index range controls are prohibited")
+        if relative.startswith("labs/") and "<select" in source:
+            supported = any(
+                marker in source
+                for marker in (
+                    "data-output-lab",
+                    "data-atlas-lab",
+                    "data-benchmark-lab",
+                    "data-experiment-lab",
+                    "data-attention-lab",
+                    "data-audience-lab",
+                    "data-conditional-lab",
+                    "data-incremental-lab",
+                )
+            )
+            if not supported:
+                errors.append(f"{relative}: Lab controls lack a substantive output mapping")
         if re.search(
             r"googletagmanager|google-analytics|plausible\.io|segment\.io|mixpanel|hotjar",
             source,
@@ -2527,14 +3210,6 @@ def build(root: Path, output: Path) -> dict[str, Any]:
         shutil.copy2(source / asset, output / asset)
     routes = _render(root, output, studies, claims, claims_by_id, runs, publications)
     benchmark_run_id = _latest_passing_study_run(root, "DD-010").name
-    joint_summary_path = (
-        root / "results/verified" / DD006B_RUN / "outputs/joint-mechanism-summary.json"
-    )
-    joint_summary = json.loads(joint_summary_path.read_text(encoding="utf-8"))
-    atlas_run = root / "results/verified" / DD009_RUN / "outputs"
-    atlas_summary = json.loads((atlas_run / "atlas-summary.json").read_text(encoding="utf-8"))
-    atlas_rows = json.loads((atlas_run / "architectures.json").read_text(encoding="utf-8"))
-    atlas_dominance = json.loads((atlas_run / "dominance.json").read_text(encoding="utf-8"))
     canonical_data = _canonical_data(_passing_baseline(root))
     data = {
         "canonical.json": canonical_data,
@@ -2546,41 +3221,20 @@ def build(root: Path, output: Path) -> dict[str, Any]:
         "labs.json": {
             "schema_version": 1,
             "source": "precomputed bounded fixture outputs",
-            "scenario_count": 5,
+            "lab_count": 16,
             "threshold_data": "data/labs/threshold.json",
             "equilibrium_selection_data": "data/labs/equilibrium-selection.json",
             "dynamic_attention_data": "data/labs/dynamic-attention.json",
             "team_mechanisms_data": "data/labs/team-mechanisms.json",
             "incremental_sharing_data": "data/labs/incremental-sharing.json",
+            "sequential_data": "data/labs/sequential.json",
+            "coverage_data": "data/labs/coverage.json",
             "mechanisms_data": "data/labs/mechanisms.json",
             "atlas_data": "data/labs/atlas.json",
             "benchmark_data": "data/benchmark/results.json",
             "experiment_data": "data/experiment/power.json",
             "audience_data": "data/audience/frontier.json",
             "conditional_data": "data/conditional/census.json",
-        },
-        "labs/mechanisms.json": {
-            "schema_version": 1,
-            "study_id": "DD-006B",
-            "claim_id": "DD-C-0053",
-            "run_id": DD006B_RUN,
-            "frontier_rows": joint_summary["frontier_rows"],
-            "weak_rows": joint_summary["weak_rows"],
-            "strict_rows": joint_summary["strict_rows"],
-            "maximum_margin": joint_summary["maximum_margin"],
-            "best_strict_discovery": joint_summary["best_strict_discovery"],
-            "regime_results": joint_summary["regime_results"],
-            "boundary": "registered exact subsidized class; not arbitrary mechanisms",
-        },
-        "labs/atlas.json": {
-            "schema_version": 1,
-            "study_id": "DD-009",
-            "claim_id": "DD-C-0054",
-            "run_id": DD009_RUN,
-            "summary": atlas_summary,
-            "architectures": atlas_rows,
-            "dominance": atlas_dominance,
-            "boundary": "registered finite synthetic atlas; not a universal ranking",
         },
     }
     for name, value in data.items():
