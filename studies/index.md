@@ -26,7 +26,7 @@
 | DD-018 | Minimum Viable Team Mechanisms | complete bounded study | Preserve DD-C-0083 through DD-C-0086, the immutable run, and authority/incentive/coalition boundaries |
 | DD-019 | Signal Geometry and the Action-Budget Discovery Profile | complete bounded study; deployed through PR #131 and closeout PR #132 | Preserve DD-C-0089 through DD-C-0091, the immutable run, and private/planner/scalar boundaries |
 | DD-020 | Incremental Sharing and Independent Rescue | complete bounded study; output-connected Lab deployed through PR #140 | Preserve DD-C-0092 through DD-C-0096, the immutable run, theorem scope, exact Lab inputs, and arbitrary-channel counterexample |
-| DD-021 | General Sharing Frontier | registered; proof and source development | Prove and audit the error-contraction and full-capacity results before the exact bounded registry run |
+| DD-021 | General Sharing Frontier | complete bounded study; research PR #147 pending merge | Preserve DD-C-0097 through DD-C-0103, the sole immutable run, two-method registry, minimal witnesses, and bounded mixed-curve null |
 
 Each executed directory contains its question, model, plan, claims view, status,
 results index, and report. Program V3's completed sequence is governed by
@@ -46,4 +46,7 @@ reproduced bounded computational results. Its point-channel theorem does not
 extend to arbitrary channels: the guaranteed shortlist has positive sharing
 increments while the same-accuracy noisy point has negative increments. The
 public Lab selects those immutable outputs and creates no new evidence.
-DD-021 is registered on issue #146 with no run or claim at registration.
+DD-021's clean primary run
+`20260722T185924Z_DD-021_3cdbbc40_2fea269a9a` supports DD-C-0097 through
+DD-C-0103. Its public Lab selects all 177 immutable exact rows; deployment and
+the separate post-merge editorial gate remain pending.

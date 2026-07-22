@@ -1,0 +1,10 @@
+{
+  "centralized_authority_boundary_checked": true,
+  "decentralized_implementation_not_claimed": true,
+  "duplicates_checked": true,
+  "frontier_identity_checked": true,
+  "n_greater_than_m_checked": true,
+  "source": "studies/DD-021-general-sharing-frontier/proof-audit.md",
+  "ties_checked": true,
+  "zero_error_boundary_checked": true
+}

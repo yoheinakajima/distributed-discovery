@@ -1,0 +1,7 @@
+{
+  "certificate_format": "dd021-general-sharing-frontier-certificate-v1",
+  "method_agreement": true,
+  "scenarios": 177,
+  "source_checksum_sha256": "2b1583d2644a3417646d8cadebf32b9c97cd22d8628013c97dcdef84bbb476b1",
+  "witness_minimality_agreement": true
+}

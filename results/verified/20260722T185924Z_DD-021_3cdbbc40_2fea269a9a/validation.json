@@ -1,0 +1,21 @@
+{
+  "all_corruptions_rejected": true,
+  "channel_normalization_symmetry_and_direct_rule": true,
+  "channel_schema": true,
+  "elapsed_seconds": 11.232478,
+  "histogram_target_profile_states": 117433,
+  "independent_internal_checks": true,
+  "labeled_target_profile_states": 936063,
+  "largest_histogram_target_profile_states": 5000,
+  "largest_labeled_target_profile_states": 55550,
+  "memory_cap_mb": 1024,
+  "method_agreement": true,
+  "passed": true,
+  "peak_memory_mb": 27.266,
+  "primary_internal_checks": true,
+  "registered_channel_count": true,
+  "registered_scenario_count": true,
+  "registered_state_counts": true,
+  "time_cap_seconds": 120,
+  "witness_minimality_agreement": true
+}

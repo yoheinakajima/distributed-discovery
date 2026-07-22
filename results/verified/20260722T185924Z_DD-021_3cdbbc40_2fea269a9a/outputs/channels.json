@@ -1,0 +1,6988 @@
+[
+  {
+    "channel_id": "point-m3-p1of3",
+    "conditional_distribution": {
+      "matrix_columns": "3",
+      "matrix_rows": "3",
+      "parameters": "accuracy=1/3"
+    },
+    "denominator_complexity": 3,
+    "description_complexity": 1,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "symmetric-noisy-point",
+    "law": [
+      [
+        "1/3",
+        "1/3",
+        "1/3"
+      ],
+      [
+        "1/3",
+        "1/3",
+        "1/3"
+      ],
+      [
+        "1/3",
+        "1/3",
+        "1/3"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/3"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S3 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "point-m3-p1of2",
+    "conditional_distribution": {
+      "matrix_columns": "3",
+      "matrix_rows": "3",
+      "parameters": "accuracy=1/2"
+    },
+    "denominator_complexity": 4,
+    "description_complexity": 1,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "symmetric-noisy-point",
+    "law": [
+      [
+        "1/2",
+        "1/4",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "1/2",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "1/4",
+        "1/2"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/2"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S3 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "point-m3-p2of3",
+    "conditional_distribution": {
+      "matrix_columns": "3",
+      "matrix_rows": "3",
+      "parameters": "accuracy=2/3"
+    },
+    "denominator_complexity": 6,
+    "description_complexity": 1,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "symmetric-noisy-point",
+    "law": [
+      [
+        "2/3",
+        "1/6",
+        "1/6"
+      ],
+      [
+        "1/6",
+        "2/3",
+        "1/6"
+      ],
+      [
+        "1/6",
+        "1/6",
+        "2/3"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "2/3"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S3 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "point-m3-p1of1",
+    "conditional_distribution": {
+      "matrix_columns": "3",
+      "matrix_rows": "3",
+      "parameters": "accuracy=1/1"
+    },
+    "denominator_complexity": 1,
+    "description_complexity": 1,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "symmetric-noisy-point",
+    "law": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S3 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "shortlist-m3-k1-a1of3",
+    "conditional_distribution": {
+      "matrix_columns": "3",
+      "matrix_rows": "3",
+      "parameters": "inclusion_accuracy=1/3"
+    },
+    "denominator_complexity": 3,
+    "description_complexity": 2,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "noisy-k-shortlist",
+    "law": [
+      [
+        "1/3",
+        "1/3",
+        "1/3"
+      ],
+      [
+        "1/3",
+        "1/3",
+        "1/3"
+      ],
+      [
+        "1/3",
+        "1/3",
+        "1/3"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/3"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S3 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "shortlist-m3-k1-a1of2",
+    "conditional_distribution": {
+      "matrix_columns": "3",
+      "matrix_rows": "3",
+      "parameters": "inclusion_accuracy=1/2"
+    },
+    "denominator_complexity": 4,
+    "description_complexity": 2,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "noisy-k-shortlist",
+    "law": [
+      [
+        "1/2",
+        "1/4",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "1/2",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "1/4",
+        "1/2"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/2"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S3 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "shortlist-m3-k1-a3of4",
+    "conditional_distribution": {
+      "matrix_columns": "3",
+      "matrix_rows": "3",
+      "parameters": "inclusion_accuracy=3/4"
+    },
+    "denominator_complexity": 8,
+    "description_complexity": 2,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "noisy-k-shortlist",
+    "law": [
+      [
+        "3/4",
+        "1/8",
+        "1/8"
+      ],
+      [
+        "1/8",
+        "3/4",
+        "1/8"
+      ],
+      [
+        "1/8",
+        "1/8",
+        "3/4"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S3 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "guaranteed-shortlist-m3-k1",
+    "conditional_distribution": {
+      "matrix_columns": "3",
+      "matrix_rows": "3",
+      "parameters": "inclusion_accuracy=1/1"
+    },
+    "denominator_complexity": 1,
+    "description_complexity": 3,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "guaranteed-k-shortlist",
+    "law": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S3 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "exclusion-m3-k1",
+    "conditional_distribution": {
+      "matrix_columns": "3",
+      "matrix_rows": "3",
+      "parameters": "excluded_targets=1/1"
+    },
+    "denominator_complexity": 2,
+    "description_complexity": 4,
+    "direct_actions": [
+      [
+        1,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "explicit-k-exclusion",
+    "law": [
+      [
+        "0",
+        "1/2",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "0",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "1/2",
+        "0"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 1,
+    "parameters": {
+      "excluded_targets": "1"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S3 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "shortlist-m3-k2-a2of3",
+    "conditional_distribution": {
+      "matrix_columns": "3",
+      "matrix_rows": "3",
+      "parameters": "inclusion_accuracy=2/3"
+    },
+    "denominator_complexity": 3,
+    "description_complexity": 2,
+    "direct_actions": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "noisy-k-shortlist",
+    "law": [
+      [
+        "1/3",
+        "1/3",
+        "1/3"
+      ],
+      [
+        "1/3",
+        "1/3",
+        "1/3"
+      ],
+      [
+        "1/3",
+        "1/3",
+        "1/3"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "2/3"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S3 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "shortlist-m3-k2-a3of4",
+    "conditional_distribution": {
+      "matrix_columns": "3",
+      "matrix_rows": "3",
+      "parameters": "inclusion_accuracy=3/4"
+    },
+    "denominator_complexity": 8,
+    "description_complexity": 2,
+    "direct_actions": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "noisy-k-shortlist",
+    "law": [
+      [
+        "3/8",
+        "3/8",
+        "1/4"
+      ],
+      [
+        "3/8",
+        "1/4",
+        "3/8"
+      ],
+      [
+        "1/4",
+        "3/8",
+        "3/8"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S3 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "guaranteed-shortlist-m3-k2",
+    "conditional_distribution": {
+      "matrix_columns": "3",
+      "matrix_rows": "3",
+      "parameters": "inclusion_accuracy=1/1"
+    },
+    "denominator_complexity": 2,
+    "description_complexity": 3,
+    "direct_actions": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "guaranteed-k-shortlist",
+    "law": [
+      [
+        "1/2",
+        "1/2",
+        "0"
+      ],
+      [
+        "1/2",
+        "0",
+        "1/2"
+      ],
+      [
+        "0",
+        "1/2",
+        "1/2"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S3 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "exclusion-m3-k2",
+    "conditional_distribution": {
+      "matrix_columns": "3",
+      "matrix_rows": "3",
+      "parameters": "excluded_targets=2/1"
+    },
+    "denominator_complexity": 1,
+    "description_complexity": 4,
+    "direct_actions": [
+      [
+        2
+      ],
+      [
+        1
+      ],
+      [
+        0
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "explicit-k-exclusion",
+    "law": [
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 2,
+    "parameters": {
+      "excluded_targets": "2"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S3 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "confidence-point-m3-low1of3-high1of2",
+    "conditional_distribution": {
+      "matrix_columns": "6",
+      "matrix_rows": "3",
+      "parameters": "low_accuracy=1/3,high_accuracy=1/2"
+    },
+    "denominator_complexity": 8,
+    "description_complexity": 5,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "confidence-augmented-point",
+    "law": [
+      [
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/4",
+        "1/8",
+        "1/8"
+      ],
+      [
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/8",
+        "1/4",
+        "1/8"
+      ],
+      [
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/8",
+        "1/8",
+        "1/4"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "1/2",
+      "low_accuracy": "1/3"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S3 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "confidence-point-m3-low1of2-high3of4",
+    "conditional_distribution": {
+      "matrix_columns": "6",
+      "matrix_rows": "3",
+      "parameters": "low_accuracy=1/2,high_accuracy=3/4"
+    },
+    "denominator_complexity": 16,
+    "description_complexity": 5,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "confidence-augmented-point",
+    "law": [
+      [
+        "1/4",
+        "1/8",
+        "1/8",
+        "3/8",
+        "1/16",
+        "1/16"
+      ],
+      [
+        "1/8",
+        "1/4",
+        "1/8",
+        "1/16",
+        "3/8",
+        "1/16"
+      ],
+      [
+        "1/8",
+        "1/8",
+        "1/4",
+        "1/16",
+        "1/16",
+        "3/8"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/2"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S3 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "confidence-point-m3-low1of3-high3of4",
+    "conditional_distribution": {
+      "matrix_columns": "6",
+      "matrix_rows": "3",
+      "parameters": "low_accuracy=1/3,high_accuracy=3/4"
+    },
+    "denominator_complexity": 16,
+    "description_complexity": 5,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "confidence-augmented-point",
+    "law": [
+      [
+        "1/6",
+        "1/6",
+        "1/6",
+        "3/8",
+        "1/16",
+        "1/16"
+      ],
+      [
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/16",
+        "3/8",
+        "1/16"
+      ],
+      [
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/16",
+        "1/16",
+        "3/8"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/3"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S3 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "point-m4-p1of4",
+    "conditional_distribution": {
+      "matrix_columns": "4",
+      "matrix_rows": "4",
+      "parameters": "accuracy=1/4"
+    },
+    "denominator_complexity": 4,
+    "description_complexity": 1,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "symmetric-noisy-point",
+    "law": [
+      [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/4"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S4 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "point-m4-p1of2",
+    "conditional_distribution": {
+      "matrix_columns": "4",
+      "matrix_rows": "4",
+      "parameters": "accuracy=1/2"
+    },
+    "denominator_complexity": 6,
+    "description_complexity": 1,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "symmetric-noisy-point",
+    "law": [
+      [
+        "1/2",
+        "1/6",
+        "1/6",
+        "1/6"
+      ],
+      [
+        "1/6",
+        "1/2",
+        "1/6",
+        "1/6"
+      ],
+      [
+        "1/6",
+        "1/6",
+        "1/2",
+        "1/6"
+      ],
+      [
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/2"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/2"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S4 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "point-m4-p2of3",
+    "conditional_distribution": {
+      "matrix_columns": "4",
+      "matrix_rows": "4",
+      "parameters": "accuracy=2/3"
+    },
+    "denominator_complexity": 9,
+    "description_complexity": 1,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "symmetric-noisy-point",
+    "law": [
+      [
+        "2/3",
+        "1/9",
+        "1/9",
+        "1/9"
+      ],
+      [
+        "1/9",
+        "2/3",
+        "1/9",
+        "1/9"
+      ],
+      [
+        "1/9",
+        "1/9",
+        "2/3",
+        "1/9"
+      ],
+      [
+        "1/9",
+        "1/9",
+        "1/9",
+        "2/3"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "2/3"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S4 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "point-m4-p1of1",
+    "conditional_distribution": {
+      "matrix_columns": "4",
+      "matrix_rows": "4",
+      "parameters": "accuracy=1/1"
+    },
+    "denominator_complexity": 1,
+    "description_complexity": 1,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "symmetric-noisy-point",
+    "law": [
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S4 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "shortlist-m4-k1-a1of4",
+    "conditional_distribution": {
+      "matrix_columns": "4",
+      "matrix_rows": "4",
+      "parameters": "inclusion_accuracy=1/4"
+    },
+    "denominator_complexity": 4,
+    "description_complexity": 2,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "noisy-k-shortlist",
+    "law": [
+      [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/4"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S4 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "shortlist-m4-k1-a1of2",
+    "conditional_distribution": {
+      "matrix_columns": "4",
+      "matrix_rows": "4",
+      "parameters": "inclusion_accuracy=1/2"
+    },
+    "denominator_complexity": 6,
+    "description_complexity": 2,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "noisy-k-shortlist",
+    "law": [
+      [
+        "1/2",
+        "1/6",
+        "1/6",
+        "1/6"
+      ],
+      [
+        "1/6",
+        "1/2",
+        "1/6",
+        "1/6"
+      ],
+      [
+        "1/6",
+        "1/6",
+        "1/2",
+        "1/6"
+      ],
+      [
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/2"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/2"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S4 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "shortlist-m4-k1-a3of4",
+    "conditional_distribution": {
+      "matrix_columns": "4",
+      "matrix_rows": "4",
+      "parameters": "inclusion_accuracy=3/4"
+    },
+    "denominator_complexity": 12,
+    "description_complexity": 2,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "noisy-k-shortlist",
+    "law": [
+      [
+        "3/4",
+        "1/12",
+        "1/12",
+        "1/12"
+      ],
+      [
+        "1/12",
+        "3/4",
+        "1/12",
+        "1/12"
+      ],
+      [
+        "1/12",
+        "1/12",
+        "3/4",
+        "1/12"
+      ],
+      [
+        "1/12",
+        "1/12",
+        "1/12",
+        "3/4"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S4 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "guaranteed-shortlist-m4-k1",
+    "conditional_distribution": {
+      "matrix_columns": "4",
+      "matrix_rows": "4",
+      "parameters": "inclusion_accuracy=1/1"
+    },
+    "denominator_complexity": 1,
+    "description_complexity": 3,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "guaranteed-k-shortlist",
+    "law": [
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S4 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "exclusion-m4-k1",
+    "conditional_distribution": {
+      "matrix_columns": "4",
+      "matrix_rows": "4",
+      "parameters": "excluded_targets=1/1"
+    },
+    "denominator_complexity": 3,
+    "description_complexity": 4,
+    "direct_actions": [
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        0,
+        1,
+        2
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "explicit-k-exclusion",
+    "law": [
+      [
+        "0",
+        "1/3",
+        "1/3",
+        "1/3"
+      ],
+      [
+        "1/3",
+        "0",
+        "1/3",
+        "1/3"
+      ],
+      [
+        "1/3",
+        "1/3",
+        "0",
+        "1/3"
+      ],
+      [
+        "1/3",
+        "1/3",
+        "1/3",
+        "0"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 1,
+    "parameters": {
+      "excluded_targets": "1"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S4 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "shortlist-m4-k2-a1of2",
+    "conditional_distribution": {
+      "matrix_columns": "6",
+      "matrix_rows": "4",
+      "parameters": "inclusion_accuracy=1/2"
+    },
+    "denominator_complexity": 6,
+    "description_complexity": 2,
+    "direct_actions": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "noisy-k-shortlist",
+    "law": [
+      [
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/6"
+      ],
+      [
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/6"
+      ],
+      [
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/6"
+      ],
+      [
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/6"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "1/2"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S4 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "shortlist-m4-k2-a3of4",
+    "conditional_distribution": {
+      "matrix_columns": "6",
+      "matrix_rows": "4",
+      "parameters": "inclusion_accuracy=3/4"
+    },
+    "denominator_complexity": 12,
+    "description_complexity": 2,
+    "direct_actions": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "noisy-k-shortlist",
+    "law": [
+      [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/12",
+        "1/12",
+        "1/12"
+      ],
+      [
+        "1/4",
+        "1/12",
+        "1/12",
+        "1/4",
+        "1/4",
+        "1/12"
+      ],
+      [
+        "1/12",
+        "1/4",
+        "1/12",
+        "1/4",
+        "1/12",
+        "1/4"
+      ],
+      [
+        "1/12",
+        "1/12",
+        "1/4",
+        "1/12",
+        "1/4",
+        "1/4"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S4 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "guaranteed-shortlist-m4-k2",
+    "conditional_distribution": {
+      "matrix_columns": "6",
+      "matrix_rows": "4",
+      "parameters": "inclusion_accuracy=1/1"
+    },
+    "denominator_complexity": 3,
+    "description_complexity": 3,
+    "direct_actions": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "guaranteed-k-shortlist",
+    "law": [
+      [
+        "1/3",
+        "1/3",
+        "1/3",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "1/3",
+        "0",
+        "0",
+        "1/3",
+        "1/3",
+        "0"
+      ],
+      [
+        "0",
+        "1/3",
+        "0",
+        "1/3",
+        "0",
+        "1/3"
+      ],
+      [
+        "0",
+        "0",
+        "1/3",
+        "0",
+        "1/3",
+        "1/3"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S4 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "exclusion-m4-k2",
+    "conditional_distribution": {
+      "matrix_columns": "6",
+      "matrix_rows": "4",
+      "parameters": "excluded_targets=2/1"
+    },
+    "denominator_complexity": 3,
+    "description_complexity": 4,
+    "direct_actions": [
+      [
+        2,
+        3
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "explicit-k-exclusion",
+    "law": [
+      [
+        "0",
+        "0",
+        "0",
+        "1/3",
+        "1/3",
+        "1/3"
+      ],
+      [
+        "0",
+        "1/3",
+        "1/3",
+        "0",
+        "0",
+        "1/3"
+      ],
+      [
+        "1/3",
+        "0",
+        "1/3",
+        "0",
+        "1/3",
+        "0"
+      ],
+      [
+        "1/3",
+        "1/3",
+        "0",
+        "1/3",
+        "0",
+        "0"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 2,
+    "parameters": {
+      "excluded_targets": "2"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S4 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "shortlist-m4-k3-a3of4",
+    "conditional_distribution": {
+      "matrix_columns": "4",
+      "matrix_rows": "4",
+      "parameters": "inclusion_accuracy=3/4"
+    },
+    "denominator_complexity": 4,
+    "description_complexity": 2,
+    "direct_actions": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "noisy-k-shortlist",
+    "law": [
+      [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 3,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S4 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "guaranteed-shortlist-m4-k3",
+    "conditional_distribution": {
+      "matrix_columns": "4",
+      "matrix_rows": "4",
+      "parameters": "inclusion_accuracy=1/1"
+    },
+    "denominator_complexity": 3,
+    "description_complexity": 3,
+    "direct_actions": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "guaranteed-k-shortlist",
+    "law": [
+      [
+        "1/3",
+        "1/3",
+        "1/3",
+        "0"
+      ],
+      [
+        "1/3",
+        "1/3",
+        "0",
+        "1/3"
+      ],
+      [
+        "1/3",
+        "0",
+        "1/3",
+        "1/3"
+      ],
+      [
+        "0",
+        "1/3",
+        "1/3",
+        "1/3"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 3,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S4 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "exclusion-m4-k3",
+    "conditional_distribution": {
+      "matrix_columns": "4",
+      "matrix_rows": "4",
+      "parameters": "excluded_targets=3/1"
+    },
+    "denominator_complexity": 1,
+    "description_complexity": 4,
+    "direct_actions": [
+      [
+        3
+      ],
+      [
+        2
+      ],
+      [
+        1
+      ],
+      [
+        0
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "explicit-k-exclusion",
+    "law": [
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 3,
+    "parameters": {
+      "excluded_targets": "3"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S4 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "confidence-point-m4-low1of4-high1of2",
+    "conditional_distribution": {
+      "matrix_columns": "8",
+      "matrix_rows": "4",
+      "parameters": "low_accuracy=1/4,high_accuracy=1/2"
+    },
+    "denominator_complexity": 12,
+    "description_complexity": 5,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "confidence-augmented-point",
+    "law": [
+      [
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/4",
+        "1/12",
+        "1/12",
+        "1/12"
+      ],
+      [
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/12",
+        "1/4",
+        "1/12",
+        "1/12"
+      ],
+      [
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/12",
+        "1/12",
+        "1/4",
+        "1/12"
+      ],
+      [
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/12",
+        "1/12",
+        "1/12",
+        "1/4"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "1/2",
+      "low_accuracy": "1/4"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S4 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "confidence-point-m4-low1of2-high3of4",
+    "conditional_distribution": {
+      "matrix_columns": "8",
+      "matrix_rows": "4",
+      "parameters": "low_accuracy=1/2,high_accuracy=3/4"
+    },
+    "denominator_complexity": 24,
+    "description_complexity": 5,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "confidence-augmented-point",
+    "law": [
+      [
+        "1/4",
+        "1/12",
+        "1/12",
+        "1/12",
+        "3/8",
+        "1/24",
+        "1/24",
+        "1/24"
+      ],
+      [
+        "1/12",
+        "1/4",
+        "1/12",
+        "1/12",
+        "1/24",
+        "3/8",
+        "1/24",
+        "1/24"
+      ],
+      [
+        "1/12",
+        "1/12",
+        "1/4",
+        "1/12",
+        "1/24",
+        "1/24",
+        "3/8",
+        "1/24"
+      ],
+      [
+        "1/12",
+        "1/12",
+        "1/12",
+        "1/4",
+        "1/24",
+        "1/24",
+        "1/24",
+        "3/8"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/2"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S4 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "confidence-point-m4-low1of4-high3of4",
+    "conditional_distribution": {
+      "matrix_columns": "8",
+      "matrix_rows": "4",
+      "parameters": "low_accuracy=1/4,high_accuracy=3/4"
+    },
+    "denominator_complexity": 24,
+    "description_complexity": 5,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "confidence-augmented-point",
+    "law": [
+      [
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/8",
+        "3/8",
+        "1/24",
+        "1/24",
+        "1/24"
+      ],
+      [
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/24",
+        "3/8",
+        "1/24",
+        "1/24"
+      ],
+      [
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/24",
+        "1/24",
+        "3/8",
+        "1/24"
+      ],
+      [
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/24",
+        "1/24",
+        "1/24",
+        "3/8"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/4"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S4 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "point-m5-p1of5",
+    "conditional_distribution": {
+      "matrix_columns": "5",
+      "matrix_rows": "5",
+      "parameters": "accuracy=1/5"
+    },
+    "denominator_complexity": 5,
+    "description_complexity": 1,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "symmetric-noisy-point",
+    "law": [
+      [
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5"
+      ],
+      [
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5"
+      ],
+      [
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5"
+      ],
+      [
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5"
+      ],
+      [
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/5"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "point-m5-p1of2",
+    "conditional_distribution": {
+      "matrix_columns": "5",
+      "matrix_rows": "5",
+      "parameters": "accuracy=1/2"
+    },
+    "denominator_complexity": 8,
+    "description_complexity": 1,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "symmetric-noisy-point",
+    "law": [
+      [
+        "1/2",
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/8"
+      ],
+      [
+        "1/8",
+        "1/2",
+        "1/8",
+        "1/8",
+        "1/8"
+      ],
+      [
+        "1/8",
+        "1/8",
+        "1/2",
+        "1/8",
+        "1/8"
+      ],
+      [
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/2",
+        "1/8"
+      ],
+      [
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/2"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/2"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "point-m5-p2of3",
+    "conditional_distribution": {
+      "matrix_columns": "5",
+      "matrix_rows": "5",
+      "parameters": "accuracy=2/3"
+    },
+    "denominator_complexity": 12,
+    "description_complexity": 1,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "symmetric-noisy-point",
+    "law": [
+      [
+        "2/3",
+        "1/12",
+        "1/12",
+        "1/12",
+        "1/12"
+      ],
+      [
+        "1/12",
+        "2/3",
+        "1/12",
+        "1/12",
+        "1/12"
+      ],
+      [
+        "1/12",
+        "1/12",
+        "2/3",
+        "1/12",
+        "1/12"
+      ],
+      [
+        "1/12",
+        "1/12",
+        "1/12",
+        "2/3",
+        "1/12"
+      ],
+      [
+        "1/12",
+        "1/12",
+        "1/12",
+        "1/12",
+        "2/3"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "2/3"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "point-m5-p1of1",
+    "conditional_distribution": {
+      "matrix_columns": "5",
+      "matrix_rows": "5",
+      "parameters": "accuracy=1/1"
+    },
+    "denominator_complexity": 1,
+    "description_complexity": 1,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "symmetric-noisy-point",
+    "law": [
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "shortlist-m5-k1-a1of5",
+    "conditional_distribution": {
+      "matrix_columns": "5",
+      "matrix_rows": "5",
+      "parameters": "inclusion_accuracy=1/5"
+    },
+    "denominator_complexity": 5,
+    "description_complexity": 2,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "noisy-k-shortlist",
+    "law": [
+      [
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5"
+      ],
+      [
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5"
+      ],
+      [
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5"
+      ],
+      [
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5"
+      ],
+      [
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/5"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "shortlist-m5-k1-a1of2",
+    "conditional_distribution": {
+      "matrix_columns": "5",
+      "matrix_rows": "5",
+      "parameters": "inclusion_accuracy=1/2"
+    },
+    "denominator_complexity": 8,
+    "description_complexity": 2,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "noisy-k-shortlist",
+    "law": [
+      [
+        "1/2",
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/8"
+      ],
+      [
+        "1/8",
+        "1/2",
+        "1/8",
+        "1/8",
+        "1/8"
+      ],
+      [
+        "1/8",
+        "1/8",
+        "1/2",
+        "1/8",
+        "1/8"
+      ],
+      [
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/2",
+        "1/8"
+      ],
+      [
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/2"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/2"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "shortlist-m5-k1-a3of4",
+    "conditional_distribution": {
+      "matrix_columns": "5",
+      "matrix_rows": "5",
+      "parameters": "inclusion_accuracy=3/4"
+    },
+    "denominator_complexity": 16,
+    "description_complexity": 2,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "noisy-k-shortlist",
+    "law": [
+      [
+        "3/4",
+        "1/16",
+        "1/16",
+        "1/16",
+        "1/16"
+      ],
+      [
+        "1/16",
+        "3/4",
+        "1/16",
+        "1/16",
+        "1/16"
+      ],
+      [
+        "1/16",
+        "1/16",
+        "3/4",
+        "1/16",
+        "1/16"
+      ],
+      [
+        "1/16",
+        "1/16",
+        "1/16",
+        "3/4",
+        "1/16"
+      ],
+      [
+        "1/16",
+        "1/16",
+        "1/16",
+        "1/16",
+        "3/4"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "guaranteed-shortlist-m5-k1",
+    "conditional_distribution": {
+      "matrix_columns": "5",
+      "matrix_rows": "5",
+      "parameters": "inclusion_accuracy=1/1"
+    },
+    "denominator_complexity": 1,
+    "description_complexity": 3,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "guaranteed-k-shortlist",
+    "law": [
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "exclusion-m5-k1",
+    "conditional_distribution": {
+      "matrix_columns": "5",
+      "matrix_rows": "5",
+      "parameters": "excluded_targets=1/1"
+    },
+    "denominator_complexity": 4,
+    "description_complexity": 4,
+    "direct_actions": [
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        0,
+        2,
+        3,
+        4
+      ],
+      [
+        0,
+        1,
+        3,
+        4
+      ],
+      [
+        0,
+        1,
+        2,
+        4
+      ],
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "explicit-k-exclusion",
+    "law": [
+      [
+        "0",
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "0",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "1/4",
+        "0",
+        "1/4",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "1/4",
+        "1/4",
+        "0",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4",
+        "0"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 1,
+    "parameters": {
+      "excluded_targets": "1"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "shortlist-m5-k2-a2of5",
+    "conditional_distribution": {
+      "matrix_columns": "10",
+      "matrix_rows": "5",
+      "parameters": "inclusion_accuracy=2/5"
+    },
+    "denominator_complexity": 10,
+    "description_complexity": 2,
+    "direct_actions": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "noisy-k-shortlist",
+    "law": [
+      [
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10"
+      ],
+      [
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10"
+      ],
+      [
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10"
+      ],
+      [
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10"
+      ],
+      [
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "2/5"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "shortlist-m5-k2-a1of2",
+    "conditional_distribution": {
+      "matrix_columns": "10",
+      "matrix_rows": "5",
+      "parameters": "inclusion_accuracy=1/2"
+    },
+    "denominator_complexity": 12,
+    "description_complexity": 2,
+    "direct_actions": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "noisy-k-shortlist",
+    "law": [
+      [
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/12",
+        "1/12",
+        "1/12",
+        "1/12",
+        "1/12",
+        "1/12"
+      ],
+      [
+        "1/8",
+        "1/12",
+        "1/12",
+        "1/12",
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/12",
+        "1/12",
+        "1/12"
+      ],
+      [
+        "1/12",
+        "1/8",
+        "1/12",
+        "1/12",
+        "1/8",
+        "1/12",
+        "1/12",
+        "1/8",
+        "1/8",
+        "1/12"
+      ],
+      [
+        "1/12",
+        "1/12",
+        "1/8",
+        "1/12",
+        "1/12",
+        "1/8",
+        "1/12",
+        "1/8",
+        "1/12",
+        "1/8"
+      ],
+      [
+        "1/12",
+        "1/12",
+        "1/12",
+        "1/8",
+        "1/12",
+        "1/12",
+        "1/8",
+        "1/12",
+        "1/8",
+        "1/8"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "1/2"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "shortlist-m5-k2-a3of4",
+    "conditional_distribution": {
+      "matrix_columns": "10",
+      "matrix_rows": "5",
+      "parameters": "inclusion_accuracy=3/4"
+    },
+    "denominator_complexity": 24,
+    "description_complexity": 2,
+    "direct_actions": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "noisy-k-shortlist",
+    "law": [
+      [
+        "3/16",
+        "3/16",
+        "3/16",
+        "3/16",
+        "1/24",
+        "1/24",
+        "1/24",
+        "1/24",
+        "1/24",
+        "1/24"
+      ],
+      [
+        "3/16",
+        "1/24",
+        "1/24",
+        "1/24",
+        "3/16",
+        "3/16",
+        "3/16",
+        "1/24",
+        "1/24",
+        "1/24"
+      ],
+      [
+        "1/24",
+        "3/16",
+        "1/24",
+        "1/24",
+        "3/16",
+        "1/24",
+        "1/24",
+        "3/16",
+        "3/16",
+        "1/24"
+      ],
+      [
+        "1/24",
+        "1/24",
+        "3/16",
+        "1/24",
+        "1/24",
+        "3/16",
+        "1/24",
+        "3/16",
+        "1/24",
+        "3/16"
+      ],
+      [
+        "1/24",
+        "1/24",
+        "1/24",
+        "3/16",
+        "1/24",
+        "1/24",
+        "3/16",
+        "1/24",
+        "3/16",
+        "3/16"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "guaranteed-shortlist-m5-k2",
+    "conditional_distribution": {
+      "matrix_columns": "10",
+      "matrix_rows": "5",
+      "parameters": "inclusion_accuracy=1/1"
+    },
+    "denominator_complexity": 4,
+    "description_complexity": 3,
+    "direct_actions": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "guaranteed-k-shortlist",
+    "law": [
+      [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "1/4",
+        "0",
+        "0",
+        "0",
+        "1/4",
+        "1/4",
+        "1/4",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1/4",
+        "0",
+        "0",
+        "1/4",
+        "0",
+        "0",
+        "1/4",
+        "1/4",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1/4",
+        "0",
+        "0",
+        "1/4",
+        "0",
+        "1/4",
+        "0",
+        "1/4"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1/4",
+        "0",
+        "0",
+        "1/4",
+        "0",
+        "1/4",
+        "1/4"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "exclusion-m5-k2",
+    "conditional_distribution": {
+      "matrix_columns": "10",
+      "matrix_rows": "5",
+      "parameters": "excluded_targets=2/1"
+    },
+    "denominator_complexity": 6,
+    "description_complexity": 4,
+    "direct_actions": [
+      [
+        2,
+        3,
+        4
+      ],
+      [
+        1,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        4
+      ],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        3,
+        4
+      ],
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        0,
+        1,
+        4
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        0,
+        1,
+        2
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "explicit-k-exclusion",
+    "law": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/6"
+      ],
+      [
+        "0",
+        "1/6",
+        "1/6",
+        "1/6",
+        "0",
+        "0",
+        "0",
+        "1/6",
+        "1/6",
+        "1/6"
+      ],
+      [
+        "1/6",
+        "0",
+        "1/6",
+        "1/6",
+        "0",
+        "1/6",
+        "1/6",
+        "0",
+        "0",
+        "1/6"
+      ],
+      [
+        "1/6",
+        "1/6",
+        "0",
+        "1/6",
+        "1/6",
+        "0",
+        "1/6",
+        "0",
+        "1/6",
+        "0"
+      ],
+      [
+        "1/6",
+        "1/6",
+        "1/6",
+        "0",
+        "1/6",
+        "1/6",
+        "0",
+        "1/6",
+        "0",
+        "0"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 2,
+    "parameters": {
+      "excluded_targets": "2"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "shortlist-m5-k3-a3of5",
+    "conditional_distribution": {
+      "matrix_columns": "10",
+      "matrix_rows": "5",
+      "parameters": "inclusion_accuracy=3/5"
+    },
+    "denominator_complexity": 10,
+    "description_complexity": 2,
+    "direct_actions": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        0,
+        1,
+        4
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        0,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        4
+      ],
+      [
+        1,
+        3,
+        4
+      ],
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "noisy-k-shortlist",
+    "law": [
+      [
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10"
+      ],
+      [
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10"
+      ],
+      [
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10"
+      ],
+      [
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10"
+      ],
+      [
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 3,
+    "parameters": {
+      "inclusion_accuracy": "3/5"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        0,
+        1,
+        4
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        0,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        4
+      ],
+      [
+        1,
+        3,
+        4
+      ],
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "shortlist-m5-k3-a3of4",
+    "conditional_distribution": {
+      "matrix_columns": "10",
+      "matrix_rows": "5",
+      "parameters": "inclusion_accuracy=3/4"
+    },
+    "denominator_complexity": 16,
+    "description_complexity": 2,
+    "direct_actions": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        0,
+        1,
+        4
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        0,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        4
+      ],
+      [
+        1,
+        3,
+        4
+      ],
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "noisy-k-shortlist",
+    "law": [
+      [
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/16",
+        "1/16",
+        "1/16",
+        "1/16"
+      ],
+      [
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/16",
+        "1/16",
+        "1/16",
+        "1/8",
+        "1/8",
+        "1/8",
+        "1/16"
+      ],
+      [
+        "1/8",
+        "1/16",
+        "1/16",
+        "1/8",
+        "1/8",
+        "1/16",
+        "1/8",
+        "1/8",
+        "1/16",
+        "1/8"
+      ],
+      [
+        "1/16",
+        "1/8",
+        "1/16",
+        "1/8",
+        "1/16",
+        "1/8",
+        "1/8",
+        "1/16",
+        "1/8",
+        "1/8"
+      ],
+      [
+        "1/16",
+        "1/16",
+        "1/8",
+        "1/16",
+        "1/8",
+        "1/8",
+        "1/16",
+        "1/8",
+        "1/8",
+        "1/8"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 3,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        0,
+        1,
+        4
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        0,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        4
+      ],
+      [
+        1,
+        3,
+        4
+      ],
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "guaranteed-shortlist-m5-k3",
+    "conditional_distribution": {
+      "matrix_columns": "10",
+      "matrix_rows": "5",
+      "parameters": "inclusion_accuracy=1/1"
+    },
+    "denominator_complexity": 6,
+    "description_complexity": 3,
+    "direct_actions": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        0,
+        1,
+        4
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        0,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        4
+      ],
+      [
+        1,
+        3,
+        4
+      ],
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "guaranteed-k-shortlist",
+    "law": [
+      [
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/6",
+        "1/6",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "1/6",
+        "1/6",
+        "1/6",
+        "0",
+        "0",
+        "0",
+        "1/6",
+        "1/6",
+        "1/6",
+        "0"
+      ],
+      [
+        "1/6",
+        "0",
+        "0",
+        "1/6",
+        "1/6",
+        "0",
+        "1/6",
+        "1/6",
+        "0",
+        "1/6"
+      ],
+      [
+        "0",
+        "1/6",
+        "0",
+        "1/6",
+        "0",
+        "1/6",
+        "1/6",
+        "0",
+        "1/6",
+        "1/6"
+      ],
+      [
+        "0",
+        "0",
+        "1/6",
+        "0",
+        "1/6",
+        "1/6",
+        "0",
+        "1/6",
+        "1/6",
+        "1/6"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 3,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        0,
+        1,
+        4
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        0,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        4
+      ],
+      [
+        1,
+        3,
+        4
+      ],
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "exclusion-m5-k3",
+    "conditional_distribution": {
+      "matrix_columns": "10",
+      "matrix_rows": "5",
+      "parameters": "excluded_targets=3/1"
+    },
+    "denominator_complexity": 4,
+    "description_complexity": 4,
+    "direct_actions": [
+      [
+        3,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "explicit-k-exclusion",
+    "law": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1/4",
+        "1/4",
+        "1/4",
+        "0",
+        "0",
+        "0",
+        "1/4"
+      ],
+      [
+        "0",
+        "1/4",
+        "1/4",
+        "0",
+        "0",
+        "1/4",
+        "0",
+        "0",
+        "1/4",
+        "0"
+      ],
+      [
+        "1/4",
+        "0",
+        "1/4",
+        "0",
+        "1/4",
+        "0",
+        "0",
+        "1/4",
+        "0",
+        "0"
+      ],
+      [
+        "1/4",
+        "1/4",
+        "0",
+        "1/4",
+        "0",
+        "0",
+        "1/4",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 3,
+    "parameters": {
+      "excluded_targets": "3"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        0,
+        1,
+        4
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        0,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        4
+      ],
+      [
+        1,
+        3,
+        4
+      ],
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "shortlist-m5-k4-a4of5",
+    "conditional_distribution": {
+      "matrix_columns": "5",
+      "matrix_rows": "5",
+      "parameters": "inclusion_accuracy=4/5"
+    },
+    "denominator_complexity": 5,
+    "description_complexity": 2,
+    "direct_actions": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        1,
+        2,
+        4
+      ],
+      [
+        0,
+        1,
+        3,
+        4
+      ],
+      [
+        0,
+        2,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        3,
+        4
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "noisy-k-shortlist",
+    "law": [
+      [
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5"
+      ],
+      [
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5"
+      ],
+      [
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5"
+      ],
+      [
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5"
+      ],
+      [
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5",
+        "1/5"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 4,
+    "parameters": {
+      "inclusion_accuracy": "4/5"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        1,
+        2,
+        4
+      ],
+      [
+        0,
+        1,
+        3,
+        4
+      ],
+      [
+        0,
+        2,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        3,
+        4
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "guaranteed-shortlist-m5-k4",
+    "conditional_distribution": {
+      "matrix_columns": "5",
+      "matrix_rows": "5",
+      "parameters": "inclusion_accuracy=1/1"
+    },
+    "denominator_complexity": 4,
+    "description_complexity": 3,
+    "direct_actions": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        1,
+        2,
+        4
+      ],
+      [
+        0,
+        1,
+        3,
+        4
+      ],
+      [
+        0,
+        2,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        3,
+        4
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "guaranteed-k-shortlist",
+    "law": [
+      [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4",
+        "0"
+      ],
+      [
+        "1/4",
+        "1/4",
+        "1/4",
+        "0",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "1/4",
+        "0",
+        "1/4",
+        "1/4"
+      ],
+      [
+        "1/4",
+        "0",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      [
+        "0",
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 4,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        1,
+        2,
+        4
+      ],
+      [
+        0,
+        1,
+        3,
+        4
+      ],
+      [
+        0,
+        2,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        3,
+        4
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "exclusion-m5-k4",
+    "conditional_distribution": {
+      "matrix_columns": "5",
+      "matrix_rows": "5",
+      "parameters": "excluded_targets=4/1"
+    },
+    "denominator_complexity": 1,
+    "description_complexity": 4,
+    "direct_actions": [
+      [
+        4
+      ],
+      [
+        3
+      ],
+      [
+        2
+      ],
+      [
+        1
+      ],
+      [
+        0
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "explicit-k-exclusion",
+    "law": [
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": 4,
+    "parameters": {
+      "excluded_targets": "4"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        1,
+        2,
+        4
+      ],
+      [
+        0,
+        1,
+        3,
+        4
+      ],
+      [
+        0,
+        2,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        3,
+        4
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "confidence-point-m5-low1of5-high1of2",
+    "conditional_distribution": {
+      "matrix_columns": "10",
+      "matrix_rows": "5",
+      "parameters": "low_accuracy=1/5,high_accuracy=1/2"
+    },
+    "denominator_complexity": 16,
+    "description_complexity": 5,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "confidence-augmented-point",
+    "law": [
+      [
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/4",
+        "1/16",
+        "1/16",
+        "1/16",
+        "1/16"
+      ],
+      [
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/16",
+        "1/4",
+        "1/16",
+        "1/16",
+        "1/16"
+      ],
+      [
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/16",
+        "1/16",
+        "1/4",
+        "1/16",
+        "1/16"
+      ],
+      [
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/16",
+        "1/16",
+        "1/16",
+        "1/4",
+        "1/16"
+      ],
+      [
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/16",
+        "1/16",
+        "1/16",
+        "1/16",
+        "1/4"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "1/2",
+      "low_accuracy": "1/5"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "confidence-point-m5-low1of2-high3of4",
+    "conditional_distribution": {
+      "matrix_columns": "10",
+      "matrix_rows": "5",
+      "parameters": "low_accuracy=1/2,high_accuracy=3/4"
+    },
+    "denominator_complexity": 32,
+    "description_complexity": 5,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "confidence-augmented-point",
+    "law": [
+      [
+        "1/4",
+        "1/16",
+        "1/16",
+        "1/16",
+        "1/16",
+        "3/8",
+        "1/32",
+        "1/32",
+        "1/32",
+        "1/32"
+      ],
+      [
+        "1/16",
+        "1/4",
+        "1/16",
+        "1/16",
+        "1/16",
+        "1/32",
+        "3/8",
+        "1/32",
+        "1/32",
+        "1/32"
+      ],
+      [
+        "1/16",
+        "1/16",
+        "1/4",
+        "1/16",
+        "1/16",
+        "1/32",
+        "1/32",
+        "3/8",
+        "1/32",
+        "1/32"
+      ],
+      [
+        "1/16",
+        "1/16",
+        "1/16",
+        "1/4",
+        "1/16",
+        "1/32",
+        "1/32",
+        "1/32",
+        "3/8",
+        "1/32"
+      ],
+      [
+        "1/16",
+        "1/16",
+        "1/16",
+        "1/16",
+        "1/4",
+        "1/32",
+        "1/32",
+        "1/32",
+        "1/32",
+        "3/8"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/2"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  },
+  {
+    "channel_id": "confidence-point-m5-low1of5-high3of4",
+    "conditional_distribution": {
+      "matrix_columns": "10",
+      "matrix_rows": "5",
+      "parameters": "low_accuracy=1/5,high_accuracy=3/4"
+    },
+    "denominator_complexity": 32,
+    "description_complexity": 5,
+    "direct_actions": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "evaluation_mode": "exact-rational",
+    "family": "confidence-augmented-point",
+    "law": [
+      [
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "3/8",
+        "1/32",
+        "1/32",
+        "1/32",
+        "1/32"
+      ],
+      [
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/32",
+        "3/8",
+        "1/32",
+        "1/32",
+        "1/32"
+      ],
+      [
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/32",
+        "1/32",
+        "3/8",
+        "1/32",
+        "1/32"
+      ],
+      [
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/32",
+        "1/32",
+        "1/32",
+        "3/8",
+        "1/32"
+      ],
+      [
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/10",
+        "1/32",
+        "1/32",
+        "1/32",
+        "1/32",
+        "3/8"
+      ]
+    ],
+    "likelihood_ratios": {},
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/5"
+    },
+    "posterior_update": "prior(theta)*product_i W(s_i|theta), normalized",
+    "prior": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "private_bayes_action_correspondence": "declared target-equivariant direct action set",
+    "schema_version": "signal-channel-v1",
+    "signal_alphabet": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    "signal_cost": "0/1",
+    "source_dependence": "conditionally-independent",
+    "symmetry_class": "simultaneous S5 target/signal relabeling",
+    "target_set": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tie_breaking": "uniform with independent private and pooled randomization sources"
+  }
+]

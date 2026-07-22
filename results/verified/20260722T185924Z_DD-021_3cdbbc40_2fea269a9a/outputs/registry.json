@@ -1,0 +1,8509 @@
+[
+  {
+    "action_budget_profile": [
+      "1/3",
+      "2/3"
+    ],
+    "agents": 2,
+    "channel_id": "point-m3-p1of3",
+    "denominator_complexity": 3,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/3"
+    },
+    "pooled_accuracy": [
+      "1/3",
+      "1/3"
+    ],
+    "pooled_error": [
+      "2/3",
+      "2/3"
+    ],
+    "private_discovery": "5/9",
+    "q": "1/3",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "2/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "5/9",
+      "1/3"
+    ],
+    "sharing_increments": [
+      "-2/9"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "1/3",
+      "2/3",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "point-m3-p1of3",
+    "denominator_complexity": 3,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1",
+      "1"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/3"
+    },
+    "pooled_accuracy": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "pooled_error": [
+      "2/3",
+      "2/3",
+      "2/3"
+    ],
+    "private_discovery": "19/27",
+    "q": "1/3",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "2/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "19/27",
+      "5/9",
+      "1/3"
+    ],
+    "sharing_increments": [
+      "-4/27",
+      "-2/9"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "1/3",
+      "2/3",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "point-m3-p1of3",
+    "denominator_complexity": 3,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1",
+      "1",
+      "1"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/3"
+    },
+    "pooled_accuracy": [
+      "1/3",
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "pooled_error": [
+      "2/3",
+      "2/3",
+      "2/3",
+      "2/3"
+    ],
+    "private_discovery": "65/81",
+    "q": "1/3",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "2/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "65/81",
+      "19/27",
+      "5/9",
+      "1/3"
+    ],
+    "sharing_increments": [
+      "-8/81",
+      "-4/27",
+      "-2/9"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "1/2",
+      "13/16"
+    ],
+    "agents": 2,
+    "channel_id": "point-m3-p1of2",
+    "denominator_complexity": 4,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "1/2"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/2"
+    ],
+    "private_discovery": "3/4",
+    "q": "1/2",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "3/4",
+      "1/2"
+    ],
+    "sharing_increments": [
+      "-1/4"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "9/16",
+      "53/64",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "point-m3-p1of2",
+    "denominator_complexity": 4,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1",
+      "7/8"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "1/2",
+      "9/16"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/2",
+      "7/16"
+    ],
+    "private_discovery": "7/8",
+    "q": "1/2",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "7/8",
+      "3/4",
+      "9/16"
+    ],
+    "sharing_increments": [
+      "-1/8",
+      "-3/16"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "19/32",
+      "217/256",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "point-m3-p1of2",
+    "denominator_complexity": 4,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1",
+      "7/8",
+      "13/14"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "1/2",
+      "9/16",
+      "19/32"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/2",
+      "7/16",
+      "13/32"
+    ],
+    "private_discovery": "15/16",
+    "q": "1/2",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "15/16",
+      "7/8",
+      "25/32",
+      "19/32"
+    ],
+    "sharing_increments": [
+      "-1/16",
+      "-3/32",
+      "-3/16"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "2/3",
+      "11/12"
+    ],
+    "agents": 2,
+    "channel_id": "point-m3-p2of3",
+    "denominator_complexity": 6,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "2/3"
+    },
+    "pooled_accuracy": [
+      "2/3",
+      "2/3"
+    ],
+    "pooled_error": [
+      "1/3",
+      "1/3"
+    ],
+    "private_discovery": "8/9",
+    "q": "2/3",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "8/9",
+      "2/3"
+    ],
+    "sharing_increments": [
+      "-2/9"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "7/9",
+      "67/72",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "point-m3-p2of3",
+    "denominator_complexity": 6,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1",
+      "2/3"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "2/3"
+    },
+    "pooled_accuracy": [
+      "2/3",
+      "2/3",
+      "7/9"
+    ],
+    "pooled_error": [
+      "1/3",
+      "1/3",
+      "2/9"
+    ],
+    "private_discovery": "26/27",
+    "q": "2/3",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "26/27",
+      "8/9",
+      "7/9"
+    ],
+    "sharing_increments": [
+      "-2/27",
+      "-1/9"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "22/27",
+      "137/144",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "point-m3-p2of3",
+    "denominator_complexity": 6,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1",
+      "2/3",
+      "5/6"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "2/3"
+    },
+    "pooled_accuracy": [
+      "2/3",
+      "2/3",
+      "7/9",
+      "22/27"
+    ],
+    "pooled_error": [
+      "1/3",
+      "1/3",
+      "2/9",
+      "5/27"
+    ],
+    "private_discovery": "80/81",
+    "q": "2/3",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "80/81",
+      "26/27",
+      "25/27",
+      "22/27"
+    ],
+    "sharing_increments": [
+      "-2/81",
+      "-1/27",
+      "-1/9"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1"
+    ],
+    "agents": 2,
+    "channel_id": "point-m3-p1of1",
+    "denominator_complexity": 1,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      null
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "point-m3-p1of1",
+    "denominator_complexity": 1,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      null,
+      null
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "point-m3-p1of1",
+    "denominator_complexity": 1,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      null,
+      null,
+      null
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0",
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "1/3",
+      "2/3"
+    ],
+    "agents": 2,
+    "channel_id": "shortlist-m3-k1-a1of3",
+    "denominator_complexity": 3,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/3"
+    },
+    "pooled_accuracy": [
+      "1/3",
+      "1/3"
+    ],
+    "pooled_error": [
+      "2/3",
+      "2/3"
+    ],
+    "private_discovery": "5/9",
+    "q": "1/3",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "2/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "5/9",
+      "1/3"
+    ],
+    "sharing_increments": [
+      "-2/9"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "1/3",
+      "2/3",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "shortlist-m3-k1-a1of3",
+    "denominator_complexity": 3,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/3"
+    },
+    "pooled_accuracy": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "pooled_error": [
+      "2/3",
+      "2/3",
+      "2/3"
+    ],
+    "private_discovery": "19/27",
+    "q": "1/3",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "2/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "19/27",
+      "5/9",
+      "1/3"
+    ],
+    "sharing_increments": [
+      "-4/27",
+      "-2/9"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "1/3",
+      "2/3",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "shortlist-m3-k1-a1of3",
+    "denominator_complexity": 3,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "1",
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/3"
+    },
+    "pooled_accuracy": [
+      "1/3",
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "pooled_error": [
+      "2/3",
+      "2/3",
+      "2/3",
+      "2/3"
+    ],
+    "private_discovery": "65/81",
+    "q": "1/3",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "2/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "65/81",
+      "19/27",
+      "5/9",
+      "1/3"
+    ],
+    "sharing_increments": [
+      "-8/81",
+      "-4/27",
+      "-2/9"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "1/2",
+      "13/16"
+    ],
+    "agents": 2,
+    "channel_id": "shortlist-m3-k1-a1of2",
+    "denominator_complexity": 4,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "1/2"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/2"
+    ],
+    "private_discovery": "3/4",
+    "q": "1/2",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "3/4",
+      "1/2"
+    ],
+    "sharing_increments": [
+      "-1/4"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "9/16",
+      "53/64",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "shortlist-m3-k1-a1of2",
+    "denominator_complexity": 4,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "7/8"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "1/2",
+      "9/16"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/2",
+      "7/16"
+    ],
+    "private_discovery": "7/8",
+    "q": "1/2",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "7/8",
+      "3/4",
+      "9/16"
+    ],
+    "sharing_increments": [
+      "-1/8",
+      "-3/16"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "19/32",
+      "217/256",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "shortlist-m3-k1-a1of2",
+    "denominator_complexity": 4,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "7/8",
+      "13/14"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "1/2",
+      "9/16",
+      "19/32"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/2",
+      "7/16",
+      "13/32"
+    ],
+    "private_discovery": "15/16",
+    "q": "1/2",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "15/16",
+      "7/8",
+      "25/32",
+      "19/32"
+    ],
+    "sharing_increments": [
+      "-1/16",
+      "-3/32",
+      "-3/16"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "3/4",
+      "61/64"
+    ],
+    "agents": 2,
+    "channel_id": "shortlist-m3-k1-a3of4",
+    "denominator_complexity": 8,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "3/4",
+      "3/4"
+    ],
+    "pooled_error": [
+      "1/4",
+      "1/4"
+    ],
+    "private_discovery": "15/16",
+    "q": "3/4",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "15/16",
+      "3/4"
+    ],
+    "sharing_increments": [
+      "-3/16"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "111/128",
+      "493/512",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "shortlist-m3-k1-a3of4",
+    "denominator_complexity": 8,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "17/32"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "3/4",
+      "3/4",
+      "111/128"
+    ],
+    "pooled_error": [
+      "1/4",
+      "1/4",
+      "17/128"
+    ],
+    "private_discovery": "63/64",
+    "q": "3/4",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "63/64",
+      "15/16",
+      "111/128"
+    ],
+    "sharing_increments": [
+      "-3/64",
+      "-9/128"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "459/512",
+      "4009/4096",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "shortlist-m3-k1-a3of4",
+    "denominator_complexity": 8,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "17/32",
+      "53/68"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "3/4",
+      "3/4",
+      "111/128",
+      "459/512"
+    ],
+    "pooled_error": [
+      "1/4",
+      "1/4",
+      "17/128",
+      "53/512"
+    ],
+    "private_discovery": "255/256",
+    "q": "3/4",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "255/256",
+      "63/64",
+      "495/512",
+      "459/512"
+    ],
+    "sharing_increments": [
+      "-3/256",
+      "-9/512",
+      "-9/128"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1"
+    ],
+    "agents": 2,
+    "channel_id": "guaranteed-shortlist-m3-k1",
+    "denominator_complexity": 1,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      null
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "guaranteed-shortlist-m3-k1",
+    "denominator_complexity": 1,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      null,
+      null
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "guaranteed-shortlist-m3-k1",
+    "denominator_complexity": 1,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      null,
+      null,
+      null
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0",
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "3/4",
+      "1"
+    ],
+    "agents": 2,
+    "channel_id": "exclusion-m3-k1",
+    "denominator_complexity": 2,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      "1/2"
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "excluded_targets": "1"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "3/4"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/4"
+    ],
+    "private_discovery": "3/4",
+    "q": "1/2",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "1/2",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "3/4",
+      "3/4"
+    ],
+    "sharing_increments": [
+      "0"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "7/8",
+      "1",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "exclusion-m3-k1",
+    "denominator_complexity": 2,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      "1/2",
+      "1/2"
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "excluded_targets": "1"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "3/4",
+      "7/8"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/4",
+      "1/8"
+    ],
+    "private_discovery": "7/8",
+    "q": "1/2",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "1/2",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "7/8",
+      "7/8",
+      "7/8"
+    ],
+    "sharing_increments": [
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "15/16",
+      "1",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "exclusion-m3-k1",
+    "denominator_complexity": 2,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      "1/2",
+      "1/2",
+      "1/2"
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "excluded_targets": "1"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "3/4",
+      "7/8",
+      "15/16"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/4",
+      "1/8",
+      "1/16"
+    ],
+    "private_discovery": "15/16",
+    "q": "1/2",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "1/2",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "15/16",
+      "15/16",
+      "15/16",
+      "15/16"
+    ],
+    "sharing_increments": [
+      "0",
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "1/3",
+      "2/3"
+    ],
+    "agents": 2,
+    "channel_id": "shortlist-m3-k2-a2of3",
+    "denominator_complexity": 3,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "2/3"
+    },
+    "pooled_accuracy": [
+      "1/3",
+      "1/3"
+    ],
+    "pooled_error": [
+      "2/3",
+      "2/3"
+    ],
+    "private_discovery": "5/9",
+    "q": "1/3",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "2/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "5/9",
+      "1/3"
+    ],
+    "sharing_increments": [
+      "-2/9"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "1/3",
+      "2/3",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "shortlist-m3-k2-a2of3",
+    "denominator_complexity": 3,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "2/3"
+    },
+    "pooled_accuracy": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "pooled_error": [
+      "2/3",
+      "2/3",
+      "2/3"
+    ],
+    "private_discovery": "19/27",
+    "q": "1/3",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "2/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "19/27",
+      "5/9",
+      "1/3"
+    ],
+    "sharing_increments": [
+      "-4/27",
+      "-2/9"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "1/3",
+      "2/3",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "shortlist-m3-k2-a2of3",
+    "denominator_complexity": 3,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "1",
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "2/3"
+    },
+    "pooled_accuracy": [
+      "1/3",
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "pooled_error": [
+      "2/3",
+      "2/3",
+      "2/3",
+      "2/3"
+    ],
+    "private_discovery": "65/81",
+    "q": "1/3",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "2/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "65/81",
+      "19/27",
+      "5/9",
+      "1/3"
+    ],
+    "sharing_increments": [
+      "-8/81",
+      "-4/27",
+      "-2/9"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "27/64",
+      "3/4"
+    ],
+    "agents": 2,
+    "channel_id": "shortlist-m3-k2-a3of4",
+    "denominator_complexity": 8,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "37/40"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "3/8",
+      "27/64"
+    ],
+    "pooled_error": [
+      "5/8",
+      "37/64"
+    ],
+    "private_discovery": "39/64",
+    "q": "3/8",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "5/8",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "39/64",
+      "27/64"
+    ],
+    "sharing_increments": [
+      "-3/16"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "225/512",
+      "99/128",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "shortlist-m3-k2-a3of4",
+    "denominator_complexity": 8,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "37/40",
+      "287/296"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "3/8",
+      "27/64",
+      "225/512"
+    ],
+    "pooled_error": [
+      "5/8",
+      "37/64",
+      "287/512"
+    ],
+    "private_discovery": "387/512",
+    "q": "3/8",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "5/8",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "387/512",
+      "327/512",
+      "225/512"
+    ],
+    "sharing_increments": [
+      "-15/128",
+      "-51/256"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "1863/4096",
+      "405/512",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "shortlist-m3-k2-a3of4",
+    "denominator_complexity": 8,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "37/40",
+      "287/296",
+      "319/328"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "3/8",
+      "27/64",
+      "225/512",
+      "1863/4096"
+    ],
+    "pooled_error": [
+      "5/8",
+      "37/64",
+      "287/512",
+      "2233/4096"
+    ],
+    "private_discovery": "3471/4096",
+    "q": "3/8",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "5/8",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "3471/4096",
+      "3171/4096",
+      "2661/4096",
+      "1863/4096"
+    ],
+    "sharing_increments": [
+      "-75/1024",
+      "-255/2048",
+      "-399/2048"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "3/4",
+      "1"
+    ],
+    "agents": 2,
+    "channel_id": "guaranteed-shortlist-m3-k2",
+    "denominator_complexity": 2,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      "1/2"
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "3/4"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/4"
+    ],
+    "private_discovery": "3/4",
+    "q": "1/2",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "1/2",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "3/4",
+      "3/4"
+    ],
+    "sharing_increments": [
+      "0"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "7/8",
+      "1",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "guaranteed-shortlist-m3-k2",
+    "denominator_complexity": 2,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      "1/2",
+      "1/2"
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "3/4",
+      "7/8"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/4",
+      "1/8"
+    ],
+    "private_discovery": "7/8",
+    "q": "1/2",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "1/2",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "7/8",
+      "7/8",
+      "7/8"
+    ],
+    "sharing_increments": [
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "15/16",
+      "1",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "guaranteed-shortlist-m3-k2",
+    "denominator_complexity": 2,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      "1/2",
+      "1/2",
+      "1/2"
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "3/4",
+      "7/8",
+      "15/16"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/4",
+      "1/8",
+      "1/16"
+    ],
+    "private_discovery": "15/16",
+    "q": "1/2",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "1/2",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "15/16",
+      "15/16",
+      "15/16",
+      "15/16"
+    ],
+    "sharing_increments": [
+      "0",
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1"
+    ],
+    "agents": 2,
+    "channel_id": "exclusion-m3-k2",
+    "denominator_complexity": 1,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      null
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 2,
+    "parameters": {
+      "excluded_targets": "2"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "exclusion-m3-k2",
+    "denominator_complexity": 1,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      null,
+      null
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 2,
+    "parameters": {
+      "excluded_targets": "2"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "exclusion-m3-k2",
+    "denominator_complexity": 1,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      null,
+      null,
+      null
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 2,
+    "parameters": {
+      "excluded_targets": "2"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0",
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 3,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "11/24",
+      "143/192"
+    ],
+    "agents": 2,
+    "channel_id": "confidence-point-m3-low1of3-high1of2",
+    "denominator_complexity": 8,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "13/14"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "1/2",
+      "low_accuracy": "1/3"
+    },
+    "pooled_accuracy": [
+      "5/12",
+      "11/24"
+    ],
+    "pooled_error": [
+      "7/12",
+      "13/24"
+    ],
+    "private_discovery": "95/144",
+    "q": "5/12",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "7/12",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "95/144",
+      "11/24"
+    ],
+    "sharing_increments": [
+      "-29/144"
+    ],
+    "signal_alphabet_size": 6,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "187/384",
+      "1187/1536",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "confidence-point-m3-low1of3-high1of2",
+    "denominator_complexity": 8,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "13/14",
+      "197/208"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "1/2",
+      "low_accuracy": "1/3"
+    },
+    "pooled_accuracy": [
+      "5/12",
+      "11/24",
+      "187/384"
+    ],
+    "pooled_error": [
+      "7/12",
+      "13/24",
+      "197/384"
+    ],
+    "private_discovery": "1385/1728",
+    "q": "5/12",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "7/12",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "1385/1728",
+      "197/288",
+      "187/384"
+    ],
+    "sharing_increments": [
+      "-203/1728",
+      "-227/1152"
+    ],
+    "signal_alphabet_size": 6,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "785/1536",
+      "9755/12288",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "confidence-point-m3-low1of3-high1of2",
+    "denominator_complexity": 8,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "13/14",
+      "197/208",
+      "751/788"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "1/2",
+      "low_accuracy": "1/3"
+    },
+    "pooled_accuracy": [
+      "5/12",
+      "11/24",
+      "187/384",
+      "785/1536"
+    ],
+    "pooled_error": [
+      "7/12",
+      "13/24",
+      "197/384",
+      "751/1536"
+    ],
+    "private_discovery": "18335/20736",
+    "q": "5/12",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "7/12",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "18335/20736",
+      "2819/3456",
+      "3229/4608",
+      "785/1536"
+    ],
+    "sharing_increments": [
+      "-1421/20736",
+      "-1589/13824",
+      "-437/2304"
+    ],
+    "signal_alphabet_size": 6,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "11/16",
+      "229/256"
+    ],
+    "agents": 2,
+    "channel_id": "confidence-point-m3-low1of2-high3of4",
+    "denominator_complexity": 16,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "5/6"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "5/8",
+      "11/16"
+    ],
+    "pooled_error": [
+      "3/8",
+      "5/16"
+    ],
+    "private_discovery": "55/64",
+    "q": "5/8",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/8",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "55/64",
+      "11/16"
+    ],
+    "sharing_increments": [
+      "-11/64"
+    ],
+    "signal_alphabet_size": 6,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "777/1024",
+      "3791/4096",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "confidence-point-m3-low1of2-high3of4",
+    "denominator_complexity": 16,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "5/6",
+      "247/320"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "5/8",
+      "11/16",
+      "777/1024"
+    ],
+    "pooled_error": [
+      "3/8",
+      "5/16",
+      "247/1024"
+    ],
+    "private_discovery": "485/512",
+    "q": "5/8",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/8",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "485/512",
+      "113/128",
+      "777/1024"
+    ],
+    "sharing_increments": [
+      "-33/512",
+      "-127/1024"
+    ],
+    "signal_alphabet_size": 6,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "6599/8192",
+      "62041/65536",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "confidence-point-m3-low1of2-high3of4",
+    "denominator_complexity": 16,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "5/6",
+      "247/320",
+      "1593/1976"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "5/8",
+      "11/16",
+      "777/1024",
+      "6599/8192"
+    ],
+    "pooled_error": [
+      "3/8",
+      "5/16",
+      "247/1024",
+      "1593/8192"
+    ],
+    "private_discovery": "4015/4096",
+    "q": "5/8",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/8",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "4015/4096",
+      "979/1024",
+      "7451/8192",
+      "6599/8192"
+    ],
+    "sharing_increments": [
+      "-99/4096",
+      "-381/8192",
+      "-213/2048"
+    ],
+    "signal_alphabet_size": 6,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "31/48",
+      "647/768"
+    ],
+    "agents": 2,
+    "channel_id": "confidence-point-m3-low1of3-high3of4",
+    "denominator_complexity": 16,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "17/22"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/3"
+    },
+    "pooled_accuracy": [
+      "13/24",
+      "31/48"
+    ],
+    "pooled_error": [
+      "11/24",
+      "17/48"
+    ],
+    "private_discovery": "455/576",
+    "q": "13/24",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "11/24",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "455/576",
+      "31/48"
+    ],
+    "sharing_increments": [
+      "-83/576"
+    ],
+    "signal_alphabet_size": 6,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "2189/3072",
+      "10927/12288",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "confidence-point-m3-low1of3-high3of4",
+    "denominator_complexity": 16,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "17/22",
+      "883/1088"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/3"
+    },
+    "pooled_accuracy": [
+      "13/24",
+      "31/48",
+      "2189/3072"
+    ],
+    "pooled_error": [
+      "11/24",
+      "17/48",
+      "883/3072"
+    ],
+    "private_discovery": "12493/13824",
+    "q": "13/24",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "11/24",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "12493/13824",
+      "965/1152",
+      "2189/3072"
+    ],
+    "sharing_increments": [
+      "-913/13824",
+      "-1153/9216"
+    ],
+    "signal_alphabet_size": 6,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "18737/24576",
+      "180827/196608",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "confidence-point-m3-low1of3-high3of4",
+    "denominator_complexity": 16,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "17/22",
+      "883/1088",
+      "5839/7064"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/3"
+    },
+    "pooled_accuracy": [
+      "13/24",
+      "31/48",
+      "2189/3072",
+      "18737/24576"
+    ],
+    "pooled_error": [
+      "11/24",
+      "17/48",
+      "883/3072",
+      "5839/24576"
+    ],
+    "private_discovery": "317135/331776",
+    "q": "13/24",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "11/24",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "317135/331776",
+      "25591/27648",
+      "64015/73728",
+      "18737/24576"
+    ],
+    "sharing_increments": [
+      "-10043/331776",
+      "-12683/221184",
+      "-1951/18432"
+    ],
+    "signal_alphabet_size": 6,
+    "targets": 3
+  },
+  {
+    "action_budget_profile": [
+      "1/4",
+      "1/2"
+    ],
+    "agents": 2,
+    "channel_id": "point-m4-p1of4",
+    "denominator_complexity": 4,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/4"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "1/4"
+    ],
+    "pooled_error": [
+      "3/4",
+      "3/4"
+    ],
+    "private_discovery": "7/16",
+    "q": "1/4",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "7/16",
+      "1/4"
+    ],
+    "sharing_increments": [
+      "-3/16"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1/4",
+      "1/2",
+      "3/4"
+    ],
+    "agents": 3,
+    "channel_id": "point-m4-p1of4",
+    "denominator_complexity": 4,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1",
+      "1"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/4"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "pooled_error": [
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "private_discovery": "37/64",
+    "q": "1/4",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "37/64",
+      "7/16",
+      "1/4"
+    ],
+    "sharing_increments": [
+      "-9/64",
+      "-3/16"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1/4",
+      "1/2",
+      "3/4",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "point-m4-p1of4",
+    "denominator_complexity": 4,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1",
+      "1",
+      "1"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/4"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "pooled_error": [
+      "3/4",
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "private_discovery": "175/256",
+    "q": "1/4",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "175/256",
+      "37/64",
+      "7/16",
+      "1/4"
+    ],
+    "sharing_increments": [
+      "-27/256",
+      "-9/64",
+      "-3/16"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1/2",
+      "7/9"
+    ],
+    "agents": 2,
+    "channel_id": "point-m4-p1of2",
+    "denominator_complexity": 6,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "1/2"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/2"
+    ],
+    "private_discovery": "3/4",
+    "q": "1/2",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "3/4",
+      "1/2"
+    ],
+    "sharing_increments": [
+      "-1/4"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "7/12",
+      "43/54",
+      "25/27"
+    ],
+    "agents": 3,
+    "channel_id": "point-m4-p1of2",
+    "denominator_complexity": 6,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1",
+      "5/6"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "1/2",
+      "7/12"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/2",
+      "5/12"
+    ],
+    "private_discovery": "7/8",
+    "q": "1/2",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "7/8",
+      "3/4",
+      "7/12"
+    ],
+    "sharing_increments": [
+      "-1/8",
+      "-1/6"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "23/36",
+      "67/81",
+      "305/324",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "point-m4-p1of2",
+    "denominator_complexity": 6,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1",
+      "5/6",
+      "13/15"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "1/2",
+      "7/12",
+      "23/36"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/2",
+      "5/12",
+      "13/36"
+    ],
+    "private_discovery": "15/16",
+    "q": "1/2",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "15/16",
+      "7/8",
+      "19/24",
+      "23/36"
+    ],
+    "sharing_increments": [
+      "-1/16",
+      "-1/12",
+      "-11/72"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "2/3",
+      "73/81"
+    ],
+    "agents": 2,
+    "channel_id": "point-m4-p2of3",
+    "denominator_complexity": 9,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "2/3"
+    },
+    "pooled_accuracy": [
+      "2/3",
+      "2/3"
+    ],
+    "pooled_error": [
+      "1/3",
+      "1/3"
+    ],
+    "private_discovery": "8/9",
+    "q": "2/3",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "8/9",
+      "2/3"
+    ],
+    "sharing_increments": [
+      "-2/9"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "64/81",
+      "667/729",
+      "713/729"
+    ],
+    "agents": 3,
+    "channel_id": "point-m4-p2of3",
+    "denominator_complexity": 9,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1",
+      "17/27"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "2/3"
+    },
+    "pooled_accuracy": [
+      "2/3",
+      "2/3",
+      "64/81"
+    ],
+    "pooled_error": [
+      "1/3",
+      "1/3",
+      "17/81"
+    ],
+    "private_discovery": "26/27",
+    "q": "2/3",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "26/27",
+      "8/9",
+      "64/81"
+    ],
+    "sharing_increments": [
+      "-2/27",
+      "-8/81"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "616/729",
+      "6193/6561",
+      "6467/6561",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "point-m4-p2of3",
+    "denominator_complexity": 9,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1",
+      "17/27",
+      "113/153"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "2/3"
+    },
+    "pooled_accuracy": [
+      "2/3",
+      "2/3",
+      "64/81",
+      "616/729"
+    ],
+    "pooled_error": [
+      "1/3",
+      "1/3",
+      "17/81",
+      "113/729"
+    ],
+    "private_discovery": "80/81",
+    "q": "2/3",
+    "recovery_budget": 4,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "80/81",
+      "26/27",
+      "226/243",
+      "616/729"
+    ],
+    "sharing_increments": [
+      "-2/81",
+      "-8/243",
+      "-62/729"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1"
+    ],
+    "agents": 2,
+    "channel_id": "point-m4-p1of1",
+    "denominator_complexity": 1,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      null
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "point-m4-p1of1",
+    "denominator_complexity": 1,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      null,
+      null
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "point-m4-p1of1",
+    "denominator_complexity": 1,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      null,
+      null,
+      null
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0",
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1/4",
+      "1/2"
+    ],
+    "agents": 2,
+    "channel_id": "shortlist-m4-k1-a1of4",
+    "denominator_complexity": 4,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/4"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "1/4"
+    ],
+    "pooled_error": [
+      "3/4",
+      "3/4"
+    ],
+    "private_discovery": "7/16",
+    "q": "1/4",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "7/16",
+      "1/4"
+    ],
+    "sharing_increments": [
+      "-3/16"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1/4",
+      "1/2",
+      "3/4"
+    ],
+    "agents": 3,
+    "channel_id": "shortlist-m4-k1-a1of4",
+    "denominator_complexity": 4,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/4"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "pooled_error": [
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "private_discovery": "37/64",
+    "q": "1/4",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "37/64",
+      "7/16",
+      "1/4"
+    ],
+    "sharing_increments": [
+      "-9/64",
+      "-3/16"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1/4",
+      "1/2",
+      "3/4",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "shortlist-m4-k1-a1of4",
+    "denominator_complexity": 4,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "1",
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/4"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "pooled_error": [
+      "3/4",
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "private_discovery": "175/256",
+    "q": "1/4",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "175/256",
+      "37/64",
+      "7/16",
+      "1/4"
+    ],
+    "sharing_increments": [
+      "-27/256",
+      "-9/64",
+      "-3/16"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1/2",
+      "7/9"
+    ],
+    "agents": 2,
+    "channel_id": "shortlist-m4-k1-a1of2",
+    "denominator_complexity": 6,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "1/2"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/2"
+    ],
+    "private_discovery": "3/4",
+    "q": "1/2",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "3/4",
+      "1/2"
+    ],
+    "sharing_increments": [
+      "-1/4"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "7/12",
+      "43/54",
+      "25/27"
+    ],
+    "agents": 3,
+    "channel_id": "shortlist-m4-k1-a1of2",
+    "denominator_complexity": 6,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "5/6"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "1/2",
+      "7/12"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/2",
+      "5/12"
+    ],
+    "private_discovery": "7/8",
+    "q": "1/2",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "7/8",
+      "3/4",
+      "7/12"
+    ],
+    "sharing_increments": [
+      "-1/8",
+      "-1/6"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "23/36",
+      "67/81",
+      "305/324",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "shortlist-m4-k1-a1of2",
+    "denominator_complexity": 6,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "5/6",
+      "13/15"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "1/2",
+      "7/12",
+      "23/36"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/2",
+      "5/12",
+      "13/36"
+    ],
+    "private_discovery": "15/16",
+    "q": "1/2",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "15/16",
+      "7/8",
+      "19/24",
+      "23/36"
+    ],
+    "sharing_increments": [
+      "-1/16",
+      "-1/12",
+      "-11/72"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "3/4",
+      "17/18"
+    ],
+    "agents": 2,
+    "channel_id": "shortlist-m4-k1-a3of4",
+    "denominator_complexity": 12,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "3/4",
+      "3/4"
+    ],
+    "pooled_error": [
+      "1/4",
+      "1/4"
+    ],
+    "private_discovery": "15/16",
+    "q": "3/4",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "15/16",
+      "3/4"
+    ],
+    "sharing_increments": [
+      "-3/16"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "7/8",
+      "103/108",
+      "107/108"
+    ],
+    "agents": 3,
+    "channel_id": "shortlist-m4-k1-a3of4",
+    "denominator_complexity": 12,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "1/2"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "3/4",
+      "3/4",
+      "7/8"
+    ],
+    "pooled_error": [
+      "1/4",
+      "1/4",
+      "1/8"
+    ],
+    "private_discovery": "63/64",
+    "q": "3/4",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "63/64",
+      "15/16",
+      "7/8"
+    ],
+    "sharing_increments": [
+      "-3/64",
+      "-1/16"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "11/12",
+      "79/81",
+      "1289/1296",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "shortlist-m4-k1-a3of4",
+    "denominator_complexity": 12,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "1/2",
+      "2/3"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "3/4",
+      "3/4",
+      "7/8",
+      "11/12"
+    ],
+    "pooled_error": [
+      "1/4",
+      "1/4",
+      "1/8",
+      "1/12"
+    ],
+    "private_discovery": "255/256",
+    "q": "3/4",
+    "recovery_budget": 4,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "255/256",
+      "63/64",
+      "31/32",
+      "11/12"
+    ],
+    "sharing_increments": [
+      "-3/256",
+      "-1/64",
+      "-5/96"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1"
+    ],
+    "agents": 2,
+    "channel_id": "guaranteed-shortlist-m4-k1",
+    "denominator_complexity": 1,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      null
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "guaranteed-shortlist-m4-k1",
+    "denominator_complexity": 1,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      null,
+      null
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "guaranteed-shortlist-m4-k1",
+    "denominator_complexity": 1,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      null,
+      null,
+      null
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0",
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "4/9",
+      "8/9"
+    ],
+    "agents": 2,
+    "channel_id": "exclusion-m4-k1",
+    "denominator_complexity": 3,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      "5/6"
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 1,
+    "parameters": {
+      "excluded_targets": "1"
+    },
+    "pooled_accuracy": [
+      "1/3",
+      "4/9"
+    ],
+    "pooled_error": [
+      "2/3",
+      "5/9"
+    ],
+    "private_discovery": "5/9",
+    "q": "1/3",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "2/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "5/9",
+      "4/9"
+    ],
+    "sharing_increments": [
+      "-1/9"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "16/27",
+      "26/27",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "exclusion-m4-k1",
+    "denominator_complexity": 3,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      "5/6",
+      "11/15"
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 1,
+    "parameters": {
+      "excluded_targets": "1"
+    },
+    "pooled_accuracy": [
+      "1/3",
+      "4/9",
+      "16/27"
+    ],
+    "pooled_error": [
+      "2/3",
+      "5/9",
+      "11/27"
+    ],
+    "private_discovery": "19/27",
+    "q": "1/3",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "2/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "19/27",
+      "17/27",
+      "16/27"
+    ],
+    "sharing_increments": [
+      "-2/27",
+      "-1/27"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "58/81",
+      "80/81",
+      "1",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "exclusion-m4-k1",
+    "denominator_complexity": 3,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      "5/6",
+      "11/15",
+      "23/33"
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 1,
+    "parameters": {
+      "excluded_targets": "1"
+    },
+    "pooled_accuracy": [
+      "1/3",
+      "4/9",
+      "16/27",
+      "58/81"
+    ],
+    "pooled_error": [
+      "2/3",
+      "5/9",
+      "11/27",
+      "23/81"
+    ],
+    "private_discovery": "65/81",
+    "q": "1/3",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "2/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "65/81",
+      "61/81",
+      "59/81",
+      "58/81"
+    ],
+    "sharing_increments": [
+      "-4/81",
+      "-2/81",
+      "-1/81"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1/4",
+      "1/2"
+    ],
+    "agents": 2,
+    "channel_id": "shortlist-m4-k2-a1of2",
+    "denominator_complexity": 6,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "1/4"
+    ],
+    "pooled_error": [
+      "3/4",
+      "3/4"
+    ],
+    "private_discovery": "7/16",
+    "q": "1/4",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "7/16",
+      "1/4"
+    ],
+    "sharing_increments": [
+      "-3/16"
+    ],
+    "signal_alphabet_size": 6,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1/4",
+      "1/2",
+      "3/4"
+    ],
+    "agents": 3,
+    "channel_id": "shortlist-m4-k2-a1of2",
+    "denominator_complexity": 6,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "pooled_error": [
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "private_discovery": "37/64",
+    "q": "1/4",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "37/64",
+      "7/16",
+      "1/4"
+    ],
+    "sharing_increments": [
+      "-9/64",
+      "-3/16"
+    ],
+    "signal_alphabet_size": 6,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1/4",
+      "1/2",
+      "3/4",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "shortlist-m4-k2-a1of2",
+    "denominator_complexity": 6,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "1",
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "pooled_error": [
+      "3/4",
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "private_discovery": "175/256",
+    "q": "1/4",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "175/256",
+      "37/64",
+      "7/16",
+      "1/4"
+    ],
+    "sharing_increments": [
+      "-27/256",
+      "-9/64",
+      "-3/16"
+    ],
+    "signal_alphabet_size": 6,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1/2",
+      "3/4"
+    ],
+    "agents": 2,
+    "channel_id": "shortlist-m4-k2-a3of4",
+    "denominator_complexity": 12,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "4/5"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "3/8",
+      "1/2"
+    ],
+    "pooled_error": [
+      "5/8",
+      "1/2"
+    ],
+    "private_discovery": "39/64",
+    "q": "3/8",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "5/8",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "39/64",
+      "1/2"
+    ],
+    "sharing_increments": [
+      "-7/64"
+    ],
+    "signal_alphabet_size": 6,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "35/64",
+      "79/96",
+      "539/576"
+    ],
+    "agents": 3,
+    "channel_id": "shortlist-m4-k2-a3of4",
+    "denominator_complexity": 12,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "4/5",
+      "29/32"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "3/8",
+      "1/2",
+      "35/64"
+    ],
+    "pooled_error": [
+      "5/8",
+      "1/2",
+      "29/64"
+    ],
+    "private_discovery": "387/512",
+    "q": "3/8",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "5/8",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "387/512",
+      "11/16",
+      "35/64"
+    ],
+    "sharing_increments": [
+      "-35/512",
+      "-9/64"
+    ],
+    "signal_alphabet_size": 6,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "39/64",
+      "27/32",
+      "1649/1728",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "shortlist-m4-k2-a3of4",
+    "denominator_complexity": 12,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "4/5",
+      "29/32",
+      "25/29"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "3/8",
+      "1/2",
+      "35/64",
+      "39/64"
+    ],
+    "pooled_error": [
+      "5/8",
+      "1/2",
+      "29/64",
+      "25/64"
+    ],
+    "private_discovery": "3471/4096",
+    "q": "3/8",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "5/8",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "3471/4096",
+      "103/128",
+      "367/512",
+      "39/64"
+    ],
+    "sharing_increments": [
+      "-175/4096",
+      "-45/512",
+      "-55/512"
+    ],
+    "signal_alphabet_size": 6,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "5/6",
+      "1"
+    ],
+    "agents": 2,
+    "channel_id": "guaranteed-shortlist-m4-k2",
+    "denominator_complexity": 3,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      "1/3"
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "C-strict-aggregation-dominated-consensus",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "5/6"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/6"
+    ],
+    "private_discovery": "3/4",
+    "q": "1/2",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-aggregation-dominated",
+    "sharing_discovery": [
+      "3/4",
+      "5/6"
+    ],
+    "sharing_increments": [
+      "1/12"
+    ],
+    "signal_alphabet_size": 6,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "17/18",
+      "1",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "guaranteed-shortlist-m4-k2",
+    "denominator_complexity": 3,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      "1/3",
+      "1/3"
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "C-strict-aggregation-dominated-consensus",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "5/6",
+      "17/18"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/6",
+      "1/18"
+    ],
+    "private_discovery": "7/8",
+    "q": "1/2",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-aggregation-dominated",
+    "sharing_discovery": [
+      "7/8",
+      "11/12",
+      "17/18"
+    ],
+    "sharing_increments": [
+      "1/24",
+      "1/36"
+    ],
+    "signal_alphabet_size": 6,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "53/54",
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "guaranteed-shortlist-m4-k2",
+    "denominator_complexity": 3,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "C-strict-aggregation-dominated-consensus",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "5/6",
+      "17/18",
+      "53/54"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/6",
+      "1/18",
+      "1/54"
+    ],
+    "private_discovery": "15/16",
+    "q": "1/2",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-aggregation-dominated",
+    "sharing_discovery": [
+      "15/16",
+      "23/24",
+      "35/36",
+      "53/54"
+    ],
+    "sharing_increments": [
+      "1/48",
+      "1/72",
+      "1/108"
+    ],
+    "signal_alphabet_size": 6,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "5/6",
+      "1"
+    ],
+    "agents": 2,
+    "channel_id": "exclusion-m4-k2",
+    "denominator_complexity": 3,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      "1/3"
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "C-strict-aggregation-dominated-consensus",
+    "parameter_k": 2,
+    "parameters": {
+      "excluded_targets": "2"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "5/6"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/6"
+    ],
+    "private_discovery": "3/4",
+    "q": "1/2",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-aggregation-dominated",
+    "sharing_discovery": [
+      "3/4",
+      "5/6"
+    ],
+    "sharing_increments": [
+      "1/12"
+    ],
+    "signal_alphabet_size": 6,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "17/18",
+      "1",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "exclusion-m4-k2",
+    "denominator_complexity": 3,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      "1/3",
+      "1/3"
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "C-strict-aggregation-dominated-consensus",
+    "parameter_k": 2,
+    "parameters": {
+      "excluded_targets": "2"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "5/6",
+      "17/18"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/6",
+      "1/18"
+    ],
+    "private_discovery": "7/8",
+    "q": "1/2",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-aggregation-dominated",
+    "sharing_discovery": [
+      "7/8",
+      "11/12",
+      "17/18"
+    ],
+    "sharing_increments": [
+      "1/24",
+      "1/36"
+    ],
+    "signal_alphabet_size": 6,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "53/54",
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "exclusion-m4-k2",
+    "denominator_complexity": 3,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "C-strict-aggregation-dominated-consensus",
+    "parameter_k": 2,
+    "parameters": {
+      "excluded_targets": "2"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "5/6",
+      "17/18",
+      "53/54"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/6",
+      "1/18",
+      "1/54"
+    ],
+    "private_discovery": "15/16",
+    "q": "1/2",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-aggregation-dominated",
+    "sharing_discovery": [
+      "15/16",
+      "23/24",
+      "35/36",
+      "53/54"
+    ],
+    "sharing_increments": [
+      "1/48",
+      "1/72",
+      "1/108"
+    ],
+    "signal_alphabet_size": 6,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1/4",
+      "1/2"
+    ],
+    "agents": 2,
+    "channel_id": "shortlist-m4-k3-a3of4",
+    "denominator_complexity": 4,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 3,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "1/4"
+    ],
+    "pooled_error": [
+      "3/4",
+      "3/4"
+    ],
+    "private_discovery": "7/16",
+    "q": "1/4",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "7/16",
+      "1/4"
+    ],
+    "sharing_increments": [
+      "-3/16"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1/4",
+      "1/2",
+      "3/4"
+    ],
+    "agents": 3,
+    "channel_id": "shortlist-m4-k3-a3of4",
+    "denominator_complexity": 4,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 3,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "pooled_error": [
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "private_discovery": "37/64",
+    "q": "1/4",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "37/64",
+      "7/16",
+      "1/4"
+    ],
+    "sharing_increments": [
+      "-9/64",
+      "-3/16"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1/4",
+      "1/2",
+      "3/4",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "shortlist-m4-k3-a3of4",
+    "denominator_complexity": 4,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "1",
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 3,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "pooled_error": [
+      "3/4",
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "private_discovery": "175/256",
+    "q": "1/4",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "175/256",
+      "37/64",
+      "7/16",
+      "1/4"
+    ],
+    "sharing_increments": [
+      "-27/256",
+      "-9/64",
+      "-3/16"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "4/9",
+      "8/9"
+    ],
+    "agents": 2,
+    "channel_id": "guaranteed-shortlist-m4-k3",
+    "denominator_complexity": 3,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      "5/6"
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 3,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1/3",
+      "4/9"
+    ],
+    "pooled_error": [
+      "2/3",
+      "5/9"
+    ],
+    "private_discovery": "5/9",
+    "q": "1/3",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "2/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "5/9",
+      "4/9"
+    ],
+    "sharing_increments": [
+      "-1/9"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "16/27",
+      "26/27",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "guaranteed-shortlist-m4-k3",
+    "denominator_complexity": 3,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      "5/6",
+      "11/15"
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 3,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1/3",
+      "4/9",
+      "16/27"
+    ],
+    "pooled_error": [
+      "2/3",
+      "5/9",
+      "11/27"
+    ],
+    "private_discovery": "19/27",
+    "q": "1/3",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "2/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "19/27",
+      "17/27",
+      "16/27"
+    ],
+    "sharing_increments": [
+      "-2/27",
+      "-1/27"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "58/81",
+      "80/81",
+      "1",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "guaranteed-shortlist-m4-k3",
+    "denominator_complexity": 3,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      "5/6",
+      "11/15",
+      "23/33"
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 3,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1/3",
+      "4/9",
+      "16/27",
+      "58/81"
+    ],
+    "pooled_error": [
+      "2/3",
+      "5/9",
+      "11/27",
+      "23/81"
+    ],
+    "private_discovery": "65/81",
+    "q": "1/3",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "2/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "65/81",
+      "61/81",
+      "59/81",
+      "58/81"
+    ],
+    "sharing_increments": [
+      "-4/81",
+      "-2/81",
+      "-1/81"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1"
+    ],
+    "agents": 2,
+    "channel_id": "exclusion-m4-k3",
+    "denominator_complexity": 1,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      null
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 3,
+    "parameters": {
+      "excluded_targets": "3"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "exclusion-m4-k3",
+    "denominator_complexity": 1,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      null,
+      null
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 3,
+    "parameters": {
+      "excluded_targets": "3"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "exclusion-m4-k3",
+    "denominator_complexity": 1,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      null,
+      null,
+      null
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 3,
+    "parameters": {
+      "excluded_targets": "3"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0",
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 4,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "7/16",
+      "47/72"
+    ],
+    "agents": 2,
+    "channel_id": "confidence-point-m4-low1of4-high1of2",
+    "denominator_complexity": 12,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "9/10"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "1/2",
+      "low_accuracy": "1/4"
+    },
+    "pooled_accuracy": [
+      "3/8",
+      "7/16"
+    ],
+    "pooled_error": [
+      "5/8",
+      "9/16"
+    ],
+    "private_discovery": "39/64",
+    "q": "3/8",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "5/8",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "39/64",
+      "7/16"
+    ],
+    "sharing_increments": [
+      "-11/64"
+    ],
+    "signal_alphabet_size": 8,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "23/48",
+      "19/27",
+      "739/864"
+    ],
+    "agents": 3,
+    "channel_id": "confidence-point-m4-low1of4-high1of2",
+    "denominator_complexity": 12,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "9/10",
+      "25/27"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "1/2",
+      "low_accuracy": "1/4"
+    },
+    "pooled_accuracy": [
+      "3/8",
+      "7/16",
+      "23/48"
+    ],
+    "pooled_error": [
+      "5/8",
+      "9/16",
+      "25/48"
+    ],
+    "private_discovery": "387/512",
+    "q": "3/8",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "5/8",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "387/512",
+      "83/128",
+      "23/48"
+    ],
+    "sharing_increments": [
+      "-55/512",
+      "-65/384"
+    ],
+    "signal_alphabet_size": 8,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "37/72",
+      "1919/2592",
+      "1139/1296",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "confidence-point-m4-low1of4-high1of2",
+    "denominator_complexity": 12,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "9/10",
+      "25/27",
+      "14/15"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "1/2",
+      "low_accuracy": "1/4"
+    },
+    "pooled_accuracy": [
+      "3/8",
+      "7/16",
+      "23/48",
+      "37/72"
+    ],
+    "pooled_error": [
+      "5/8",
+      "9/16",
+      "25/48",
+      "35/72"
+    ],
+    "private_discovery": "3471/4096",
+    "q": "3/8",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "5/8",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "3471/4096",
+      "799/1024",
+      "259/384",
+      "37/72"
+    ],
+    "sharing_increments": [
+      "-275/4096",
+      "-325/3072",
+      "-185/1152"
+    ],
+    "signal_alphabet_size": 8,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "11/16",
+      "7/8"
+    ],
+    "agents": 2,
+    "channel_id": "confidence-point-m4-low1of2-high3of4",
+    "denominator_complexity": 24,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "5/6"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "5/8",
+      "11/16"
+    ],
+    "pooled_error": [
+      "3/8",
+      "5/16"
+    ],
+    "private_discovery": "55/64",
+    "q": "5/8",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/8",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "55/64",
+      "11/16"
+    ],
+    "sharing_increments": [
+      "-11/64"
+    ],
+    "signal_alphabet_size": 8,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "295/384",
+      "175/192",
+      "31/32"
+    ],
+    "agents": 3,
+    "channel_id": "confidence-point-m4-low1of2-high3of4",
+    "denominator_complexity": 24,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "5/6",
+      "89/120"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "5/8",
+      "11/16",
+      "295/384"
+    ],
+    "pooled_error": [
+      "3/8",
+      "5/16",
+      "89/384"
+    ],
+    "private_discovery": "485/512",
+    "q": "5/8",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/8",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "485/512",
+      "113/128",
+      "295/384"
+    ],
+    "sharing_increments": [
+      "-33/512",
+      "-11/96"
+    ],
+    "signal_alphabet_size": 8,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "119/144",
+      "1081/1152",
+      "2261/2304",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "confidence-point-m4-low1of2-high3of4",
+    "denominator_complexity": 24,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "5/6",
+      "89/120",
+      "200/267"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "5/8",
+      "11/16",
+      "295/384",
+      "119/144"
+    ],
+    "pooled_error": [
+      "3/8",
+      "5/16",
+      "89/384",
+      "25/144"
+    ],
+    "private_discovery": "4015/4096",
+    "q": "5/8",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/8",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "4015/4096",
+      "979/1024",
+      "935/1024",
+      "119/144"
+    ],
+    "sharing_increments": [
+      "-99/4096",
+      "-11/256",
+      "-799/9216"
+    ],
+    "signal_alphabet_size": 8,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "5/8",
+      "7/9"
+    ],
+    "agents": 2,
+    "channel_id": "confidence-point-m4-low1of4-high3of4",
+    "denominator_complexity": 24,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "3/4"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/4"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "5/8"
+    ],
+    "pooled_error": [
+      "1/2",
+      "3/8"
+    ],
+    "private_discovery": "3/4",
+    "q": "1/2",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "3/4",
+      "5/8"
+    ],
+    "sharing_increments": [
+      "-1/8"
+    ],
+    "signal_alphabet_size": 8,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "45/64",
+      "733/864",
+      "25/27"
+    ],
+    "agents": 3,
+    "channel_id": "confidence-point-m4-low1of4-high3of4",
+    "denominator_complexity": 24,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "3/4",
+      "19/24"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/4"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "5/8",
+      "45/64"
+    ],
+    "pooled_error": [
+      "1/2",
+      "3/8",
+      "19/64"
+    ],
+    "private_discovery": "7/8",
+    "q": "1/2",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "7/8",
+      "13/16",
+      "45/64"
+    ],
+    "sharing_increments": [
+      "-1/16",
+      "-7/64"
+    ],
+    "signal_alphabet_size": 8,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "73/96",
+      "2315/2592",
+      "19709/20736",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "confidence-point-m4-low1of4-high3of4",
+    "denominator_complexity": 24,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "3/4",
+      "19/24",
+      "46/57"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/4"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "5/8",
+      "45/64",
+      "73/96"
+    ],
+    "pooled_error": [
+      "1/2",
+      "3/8",
+      "19/64",
+      "23/96"
+    ],
+    "private_discovery": "15/16",
+    "q": "1/2",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "15/16",
+      "29/32",
+      "109/128",
+      "73/96"
+    ],
+    "sharing_increments": [
+      "-1/32",
+      "-7/128",
+      "-35/384"
+    ],
+    "signal_alphabet_size": 8,
+    "targets": 4
+  },
+  {
+    "action_budget_profile": [
+      "1/5",
+      "2/5"
+    ],
+    "agents": 2,
+    "channel_id": "point-m5-p1of5",
+    "denominator_complexity": 5,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/5"
+    },
+    "pooled_accuracy": [
+      "1/5",
+      "1/5"
+    ],
+    "pooled_error": [
+      "4/5",
+      "4/5"
+    ],
+    "private_discovery": "9/25",
+    "q": "1/5",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "4/5",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "9/25",
+      "1/5"
+    ],
+    "sharing_increments": [
+      "-4/25"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1/5",
+      "2/5",
+      "3/5"
+    ],
+    "agents": 3,
+    "channel_id": "point-m5-p1of5",
+    "denominator_complexity": 5,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1",
+      "1"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/5"
+    },
+    "pooled_accuracy": [
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "pooled_error": [
+      "4/5",
+      "4/5",
+      "4/5"
+    ],
+    "private_discovery": "61/125",
+    "q": "1/5",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "4/5",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "61/125",
+      "9/25",
+      "1/5"
+    ],
+    "sharing_increments": [
+      "-16/125",
+      "-4/25"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1/5",
+      "2/5",
+      "3/5",
+      "4/5"
+    ],
+    "agents": 4,
+    "channel_id": "point-m5-p1of5",
+    "denominator_complexity": 5,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1",
+      "1",
+      "1"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/5"
+    },
+    "pooled_accuracy": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "pooled_error": [
+      "4/5",
+      "4/5",
+      "4/5",
+      "4/5"
+    ],
+    "private_discovery": "369/625",
+    "q": "1/5",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "4/5",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "369/625",
+      "61/125",
+      "9/25",
+      "1/5"
+    ],
+    "sharing_increments": [
+      "-64/625",
+      "-16/125",
+      "-4/25"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1/2",
+      "49/64"
+    ],
+    "agents": 2,
+    "channel_id": "point-m5-p1of2",
+    "denominator_complexity": 8,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "1/2"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/2"
+    ],
+    "private_discovery": "3/4",
+    "q": "1/2",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "3/4",
+      "1/2"
+    ],
+    "sharing_increments": [
+      "-1/4"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "19/32",
+      "401/512",
+      "231/256"
+    ],
+    "agents": 3,
+    "channel_id": "point-m5-p1of2",
+    "denominator_complexity": 8,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1",
+      "13/16"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "1/2",
+      "19/32"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/2",
+      "13/32"
+    ],
+    "private_discovery": "7/8",
+    "q": "1/2",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "7/8",
+      "3/4",
+      "19/32"
+    ],
+    "sharing_increments": [
+      "-1/8",
+      "-5/32"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "85/128",
+      "3361/4096",
+      "1887/2048",
+      "3971/4096"
+    ],
+    "agents": 4,
+    "channel_id": "point-m5-p1of2",
+    "denominator_complexity": 8,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1",
+      "13/16",
+      "43/52"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "1/2",
+      "19/32",
+      "85/128"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/2",
+      "13/32",
+      "43/128"
+    ],
+    "private_discovery": "15/16",
+    "q": "1/2",
+    "recovery_budget": 4,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "15/16",
+      "7/8",
+      "51/64",
+      "85/128"
+    ],
+    "sharing_increments": [
+      "-1/16",
+      "-5/64",
+      "-17/128"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "2/3",
+      "43/48"
+    ],
+    "agents": 2,
+    "channel_id": "point-m5-p2of3",
+    "denominator_complexity": 12,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "2/3"
+    },
+    "pooled_accuracy": [
+      "2/3",
+      "2/3"
+    ],
+    "pooled_error": [
+      "1/3",
+      "1/3"
+    ],
+    "private_discovery": "8/9",
+    "q": "2/3",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "8/9",
+      "2/3"
+    ],
+    "sharing_increments": [
+      "-2/9"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "43/54",
+      "523/576",
+      "839/864"
+    ],
+    "agents": 3,
+    "channel_id": "point-m5-p2of3",
+    "denominator_complexity": 12,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1",
+      "11/18"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "2/3"
+    },
+    "pooled_accuracy": [
+      "2/3",
+      "2/3",
+      "43/54"
+    ],
+    "pooled_error": [
+      "1/3",
+      "1/3",
+      "11/54"
+    ],
+    "private_discovery": "26/27",
+    "q": "2/3",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "26/27",
+      "8/9",
+      "43/54"
+    ],
+    "sharing_increments": [
+      "-2/27",
+      "-5/54"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "31/36",
+      "241/256",
+      "10159/10368",
+      "20611/20736"
+    ],
+    "agents": 4,
+    "channel_id": "point-m5-p2of3",
+    "denominator_complexity": 12,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      "1",
+      "11/18",
+      "15/22"
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "2/3"
+    },
+    "pooled_accuracy": [
+      "2/3",
+      "2/3",
+      "43/54",
+      "31/36"
+    ],
+    "pooled_error": [
+      "1/3",
+      "1/3",
+      "11/54",
+      "5/36"
+    ],
+    "private_discovery": "80/81",
+    "q": "2/3",
+    "recovery_budget": 4,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/3",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "80/81",
+      "26/27",
+      "151/162",
+      "31/36"
+    ],
+    "sharing_increments": [
+      "-2/81",
+      "-5/162",
+      "-23/324"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1"
+    ],
+    "agents": 2,
+    "channel_id": "point-m5-p1of1",
+    "denominator_complexity": 1,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      null
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "point-m5-p1of1",
+    "denominator_complexity": 1,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      null,
+      null
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "point-m5-p1of1",
+    "denominator_complexity": 1,
+    "description_complexity": 1,
+    "error_contraction_ratio": [
+      null,
+      null,
+      null
+    ],
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": null,
+    "parameters": {
+      "accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0",
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1/5",
+      "2/5"
+    ],
+    "agents": 2,
+    "channel_id": "shortlist-m5-k1-a1of5",
+    "denominator_complexity": 5,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/5"
+    },
+    "pooled_accuracy": [
+      "1/5",
+      "1/5"
+    ],
+    "pooled_error": [
+      "4/5",
+      "4/5"
+    ],
+    "private_discovery": "9/25",
+    "q": "1/5",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "4/5",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "9/25",
+      "1/5"
+    ],
+    "sharing_increments": [
+      "-4/25"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1/5",
+      "2/5",
+      "3/5"
+    ],
+    "agents": 3,
+    "channel_id": "shortlist-m5-k1-a1of5",
+    "denominator_complexity": 5,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/5"
+    },
+    "pooled_accuracy": [
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "pooled_error": [
+      "4/5",
+      "4/5",
+      "4/5"
+    ],
+    "private_discovery": "61/125",
+    "q": "1/5",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "4/5",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "61/125",
+      "9/25",
+      "1/5"
+    ],
+    "sharing_increments": [
+      "-16/125",
+      "-4/25"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1/5",
+      "2/5",
+      "3/5",
+      "4/5"
+    ],
+    "agents": 4,
+    "channel_id": "shortlist-m5-k1-a1of5",
+    "denominator_complexity": 5,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "1",
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/5"
+    },
+    "pooled_accuracy": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "pooled_error": [
+      "4/5",
+      "4/5",
+      "4/5",
+      "4/5"
+    ],
+    "private_discovery": "369/625",
+    "q": "1/5",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "4/5",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "369/625",
+      "61/125",
+      "9/25",
+      "1/5"
+    ],
+    "sharing_increments": [
+      "-64/625",
+      "-16/125",
+      "-4/25"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1/2",
+      "49/64"
+    ],
+    "agents": 2,
+    "channel_id": "shortlist-m5-k1-a1of2",
+    "denominator_complexity": 8,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "1/2"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/2"
+    ],
+    "private_discovery": "3/4",
+    "q": "1/2",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "3/4",
+      "1/2"
+    ],
+    "sharing_increments": [
+      "-1/4"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "19/32",
+      "401/512",
+      "231/256"
+    ],
+    "agents": 3,
+    "channel_id": "shortlist-m5-k1-a1of2",
+    "denominator_complexity": 8,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "13/16"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "1/2",
+      "19/32"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/2",
+      "13/32"
+    ],
+    "private_discovery": "7/8",
+    "q": "1/2",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "7/8",
+      "3/4",
+      "19/32"
+    ],
+    "sharing_increments": [
+      "-1/8",
+      "-5/32"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "85/128",
+      "3361/4096",
+      "1887/2048",
+      "3971/4096"
+    ],
+    "agents": 4,
+    "channel_id": "shortlist-m5-k1-a1of2",
+    "denominator_complexity": 8,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "13/16",
+      "43/52"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "1/2",
+      "19/32",
+      "85/128"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/2",
+      "13/32",
+      "43/128"
+    ],
+    "private_discovery": "15/16",
+    "q": "1/2",
+    "recovery_budget": 4,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "15/16",
+      "7/8",
+      "51/64",
+      "85/128"
+    ],
+    "sharing_increments": [
+      "-1/16",
+      "-5/64",
+      "-17/128"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "3/4",
+      "241/256"
+    ],
+    "agents": 2,
+    "channel_id": "shortlist-m5-k1-a3of4",
+    "denominator_complexity": 16,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "3/4",
+      "3/4"
+    ],
+    "pooled_error": [
+      "1/4",
+      "1/4"
+    ],
+    "private_discovery": "15/16",
+    "q": "3/4",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "15/16",
+      "3/4"
+    ],
+    "sharing_increments": [
+      "-3/16"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "225/256",
+      "3889/4096",
+      "2023/2048"
+    ],
+    "agents": 3,
+    "channel_id": "shortlist-m5-k1-a3of4",
+    "denominator_complexity": 16,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "31/64"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "3/4",
+      "3/4",
+      "225/256"
+    ],
+    "pooled_error": [
+      "1/4",
+      "1/4",
+      "31/256"
+    ],
+    "private_discovery": "63/64",
+    "q": "3/4",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "63/64",
+      "15/16",
+      "225/256"
+    ],
+    "sharing_increments": [
+      "-3/64",
+      "-15/256"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1899/2048",
+      "63841/65536",
+      "32511/32768",
+      "65411/65536"
+    ],
+    "agents": 4,
+    "channel_id": "shortlist-m5-k1-a3of4",
+    "denominator_complexity": 16,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "31/64",
+      "149/248"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "3/4",
+      "3/4",
+      "225/256",
+      "1899/2048"
+    ],
+    "pooled_error": [
+      "1/4",
+      "1/4",
+      "31/256",
+      "149/2048"
+    ],
+    "private_discovery": "255/256",
+    "q": "3/4",
+    "recovery_budget": 4,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "1/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "255/256",
+      "63/64",
+      "993/1024",
+      "1899/2048"
+    ],
+    "sharing_increments": [
+      "-3/256",
+      "-15/1024",
+      "-87/2048"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1"
+    ],
+    "agents": 2,
+    "channel_id": "guaranteed-shortlist-m5-k1",
+    "denominator_complexity": 1,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      null
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "guaranteed-shortlist-m5-k1",
+    "denominator_complexity": 1,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      null,
+      null
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "guaranteed-shortlist-m5-k1",
+    "denominator_complexity": 1,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      null,
+      null,
+      null
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 1,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0",
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "5/16",
+      "5/8"
+    ],
+    "agents": 2,
+    "channel_id": "exclusion-m5-k1",
+    "denominator_complexity": 4,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      "11/12"
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 1,
+    "parameters": {
+      "excluded_targets": "1"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "5/16"
+    ],
+    "pooled_error": [
+      "3/4",
+      "11/16"
+    ],
+    "private_discovery": "7/16",
+    "q": "1/4",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "7/16",
+      "5/16"
+    ],
+    "sharing_increments": [
+      "-1/8"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "25/64",
+      "25/32",
+      "63/64"
+    ],
+    "agents": 3,
+    "channel_id": "exclusion-m5-k1",
+    "denominator_complexity": 4,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      "11/12",
+      "39/44"
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 1,
+    "parameters": {
+      "excluded_targets": "1"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "5/16",
+      "25/64"
+    ],
+    "pooled_error": [
+      "3/4",
+      "11/16",
+      "39/64"
+    ],
+    "private_discovery": "37/64",
+    "q": "1/4",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "37/64",
+      "31/64",
+      "25/64"
+    ],
+    "sharing_increments": [
+      "-3/32",
+      "-3/32"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "125/256",
+      "113/128",
+      "255/256",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "exclusion-m5-k1",
+    "denominator_complexity": 4,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      "11/12",
+      "39/44",
+      "131/156"
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 1,
+    "parameters": {
+      "excluded_targets": "1"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "5/16",
+      "25/64",
+      "125/256"
+    ],
+    "pooled_error": [
+      "3/4",
+      "11/16",
+      "39/64",
+      "131/256"
+    ],
+    "private_discovery": "175/256",
+    "q": "1/4",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "175/256",
+      "157/256",
+      "139/256",
+      "125/256"
+    ],
+    "sharing_increments": [
+      "-9/128",
+      "-9/128",
+      "-7/128"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1/5",
+      "2/5"
+    ],
+    "agents": 2,
+    "channel_id": "shortlist-m5-k2-a2of5",
+    "denominator_complexity": 10,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "2/5"
+    },
+    "pooled_accuracy": [
+      "1/5",
+      "1/5"
+    ],
+    "pooled_error": [
+      "4/5",
+      "4/5"
+    ],
+    "private_discovery": "9/25",
+    "q": "1/5",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "4/5",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "9/25",
+      "1/5"
+    ],
+    "sharing_increments": [
+      "-4/25"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1/5",
+      "2/5",
+      "3/5"
+    ],
+    "agents": 3,
+    "channel_id": "shortlist-m5-k2-a2of5",
+    "denominator_complexity": 10,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "2/5"
+    },
+    "pooled_accuracy": [
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "pooled_error": [
+      "4/5",
+      "4/5",
+      "4/5"
+    ],
+    "private_discovery": "61/125",
+    "q": "1/5",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "4/5",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "61/125",
+      "9/25",
+      "1/5"
+    ],
+    "sharing_increments": [
+      "-16/125",
+      "-4/25"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1/5",
+      "2/5",
+      "3/5",
+      "4/5"
+    ],
+    "agents": 4,
+    "channel_id": "shortlist-m5-k2-a2of5",
+    "denominator_complexity": 10,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "1",
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "2/5"
+    },
+    "pooled_accuracy": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "pooled_error": [
+      "4/5",
+      "4/5",
+      "4/5",
+      "4/5"
+    ],
+    "private_discovery": "369/625",
+    "q": "1/5",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "4/5",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "369/625",
+      "61/125",
+      "9/25",
+      "1/5"
+    ],
+    "sharing_increments": [
+      "-64/625",
+      "-16/125",
+      "-4/25"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "9/32",
+      "1/2"
+    ],
+    "agents": 2,
+    "channel_id": "shortlist-m5-k2-a1of2",
+    "denominator_complexity": 12,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "23/24"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "9/32"
+    ],
+    "pooled_error": [
+      "3/4",
+      "23/32"
+    ],
+    "private_discovery": "7/16",
+    "q": "1/4",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "7/16",
+      "9/32"
+    ],
+    "sharing_increments": [
+      "-5/32"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "77/256",
+      "103/192",
+      "1235/1728"
+    ],
+    "agents": 3,
+    "channel_id": "shortlist-m5-k2-a1of2",
+    "denominator_complexity": 12,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "23/24",
+      "179/184"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "9/32",
+      "77/256"
+    ],
+    "pooled_error": [
+      "3/4",
+      "23/32",
+      "179/256"
+    ],
+    "private_discovery": "37/64",
+    "q": "1/4",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "37/64",
+      "59/128",
+      "77/256"
+    ],
+    "sharing_increments": [
+      "-15/128",
+      "-41/256"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1961/6144",
+      "635/1152",
+      "30631/41472",
+      "143/162"
+    ],
+    "agents": 4,
+    "channel_id": "shortlist-m5-k2-a1of2",
+    "denominator_complexity": 12,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "23/24",
+      "179/184",
+      "4183/4296"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "9/32",
+      "77/256",
+      "1961/6144"
+    ],
+    "pooled_error": [
+      "3/4",
+      "23/32",
+      "179/256",
+      "4183/6144"
+    ],
+    "private_discovery": "175/256",
+    "q": "1/4",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "175/256",
+      "305/512",
+      "487/1024",
+      "1961/6144"
+    ],
+    "sharing_increments": [
+      "-45/512",
+      "-123/1024",
+      "-961/6144"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "69/128",
+      "3/4"
+    ],
+    "agents": 2,
+    "channel_id": "shortlist-m5-k2-a3of4",
+    "denominator_complexity": 24,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "59/80"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "3/8",
+      "69/128"
+    ],
+    "pooled_error": [
+      "5/8",
+      "59/128"
+    ],
+    "private_discovery": "39/64",
+    "q": "3/8",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "5/8",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "39/64",
+      "69/128"
+    ],
+    "sharing_increments": [
+      "-9/128"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1251/2048",
+      "433/512",
+      "12773/13824"
+    ],
+    "agents": 3,
+    "channel_id": "shortlist-m5-k2-a3of4",
+    "denominator_complexity": 24,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "59/80",
+      "797/944"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "3/8",
+      "69/128",
+      "1251/2048"
+    ],
+    "pooled_error": [
+      "5/8",
+      "59/128",
+      "797/2048"
+    ],
+    "private_discovery": "387/512",
+    "q": "3/8",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "5/8",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "387/512",
+      "729/1024",
+      "1251/2048"
+    ],
+    "sharing_increments": [
+      "-45/1024",
+      "-207/2048"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "22515/32768",
+      "5357/6144",
+      "633775/663552",
+      "10211/10368"
+    ],
+    "agents": 4,
+    "channel_id": "shortlist-m5-k2-a3of4",
+    "denominator_complexity": 24,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "59/80",
+      "797/944",
+      "10253/12752"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "3/8",
+      "69/128",
+      "1251/2048",
+      "22515/32768"
+    ],
+    "pooled_error": [
+      "5/8",
+      "59/128",
+      "797/2048",
+      "10253/32768"
+    ],
+    "private_discovery": "3471/4096",
+    "q": "3/8",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "5/8",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "3471/4096",
+      "6717/8192",
+      "12399/16384",
+      "22515/32768"
+    ],
+    "sharing_increments": [
+      "-225/8192",
+      "-1035/16384",
+      "-2283/32768"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "7/8",
+      "1"
+    ],
+    "agents": 2,
+    "channel_id": "guaranteed-shortlist-m5-k2",
+    "denominator_complexity": 4,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      "1/4"
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "C-strict-aggregation-dominated-consensus",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "7/8"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/8"
+    ],
+    "private_discovery": "3/4",
+    "q": "1/2",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-aggregation-dominated",
+    "sharing_discovery": [
+      "3/4",
+      "7/8"
+    ],
+    "sharing_increments": [
+      "1/8"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "31/32",
+      "1",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "guaranteed-shortlist-m5-k2",
+    "denominator_complexity": 4,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      "1/4",
+      "1/4"
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "C-strict-aggregation-dominated-consensus",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "7/8",
+      "31/32"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/8",
+      "1/32"
+    ],
+    "private_discovery": "7/8",
+    "q": "1/2",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-aggregation-dominated",
+    "sharing_discovery": [
+      "7/8",
+      "15/16",
+      "31/32"
+    ],
+    "sharing_increments": [
+      "1/16",
+      "1/32"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "127/128",
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "guaranteed-shortlist-m5-k2",
+    "denominator_complexity": 4,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "C-strict-aggregation-dominated-consensus",
+    "parameter_k": 2,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "7/8",
+      "31/32",
+      "127/128"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/8",
+      "1/32",
+      "1/128"
+    ],
+    "private_discovery": "15/16",
+    "q": "1/2",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-aggregation-dominated",
+    "sharing_discovery": [
+      "15/16",
+      "31/32",
+      "63/64",
+      "127/128"
+    ],
+    "sharing_increments": [
+      "1/32",
+      "1/64",
+      "1/128"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "5/9",
+      "17/18"
+    ],
+    "agents": 2,
+    "channel_id": "exclusion-m5-k2",
+    "denominator_complexity": 6,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      "2/3"
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 2,
+    "parameters": {
+      "excluded_targets": "2"
+    },
+    "pooled_accuracy": [
+      "1/3",
+      "5/9"
+    ],
+    "pooled_error": [
+      "2/3",
+      "4/9"
+    ],
+    "private_discovery": "5/9",
+    "q": "1/3",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "2/3",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "5/9",
+      "5/9"
+    ],
+    "sharing_increments": [
+      "0"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "41/54",
+      "107/108",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "exclusion-m5-k2",
+    "denominator_complexity": 6,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      "2/3",
+      "13/24"
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "C-strict-aggregation-dominated-consensus",
+    "parameter_k": 2,
+    "parameters": {
+      "excluded_targets": "2"
+    },
+    "pooled_accuracy": [
+      "1/3",
+      "5/9",
+      "41/54"
+    ],
+    "pooled_error": [
+      "2/3",
+      "4/9",
+      "13/54"
+    ],
+    "private_discovery": "19/27",
+    "q": "1/3",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "2/3",
+    "sharing_class": "strict-aggregation-dominated",
+    "sharing_discovery": [
+      "19/27",
+      "19/27",
+      "41/54"
+    ],
+    "sharing_increments": [
+      "0",
+      "1/18"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "71/81",
+      "647/648",
+      "1",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "exclusion-m5-k2",
+    "denominator_complexity": 6,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      "2/3",
+      "13/24",
+      "20/39"
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "C-strict-aggregation-dominated-consensus",
+    "parameter_k": 2,
+    "parameters": {
+      "excluded_targets": "2"
+    },
+    "pooled_accuracy": [
+      "1/3",
+      "5/9",
+      "41/54",
+      "71/81"
+    ],
+    "pooled_error": [
+      "2/3",
+      "4/9",
+      "13/54",
+      "10/81"
+    ],
+    "private_discovery": "65/81",
+    "q": "1/3",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "2/3",
+    "sharing_class": "strict-aggregation-dominated",
+    "sharing_discovery": [
+      "65/81",
+      "65/81",
+      "68/81",
+      "71/81"
+    ],
+    "sharing_increments": [
+      "0",
+      "1/27",
+      "1/27"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1/5",
+      "2/5"
+    ],
+    "agents": 2,
+    "channel_id": "shortlist-m5-k3-a3of5",
+    "denominator_complexity": 10,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 3,
+    "parameters": {
+      "inclusion_accuracy": "3/5"
+    },
+    "pooled_accuracy": [
+      "1/5",
+      "1/5"
+    ],
+    "pooled_error": [
+      "4/5",
+      "4/5"
+    ],
+    "private_discovery": "9/25",
+    "q": "1/5",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "4/5",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "9/25",
+      "1/5"
+    ],
+    "sharing_increments": [
+      "-4/25"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1/5",
+      "2/5",
+      "3/5"
+    ],
+    "agents": 3,
+    "channel_id": "shortlist-m5-k3-a3of5",
+    "denominator_complexity": 10,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 3,
+    "parameters": {
+      "inclusion_accuracy": "3/5"
+    },
+    "pooled_accuracy": [
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "pooled_error": [
+      "4/5",
+      "4/5",
+      "4/5"
+    ],
+    "private_discovery": "61/125",
+    "q": "1/5",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "4/5",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "61/125",
+      "9/25",
+      "1/5"
+    ],
+    "sharing_increments": [
+      "-16/125",
+      "-4/25"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1/5",
+      "2/5",
+      "3/5",
+      "4/5"
+    ],
+    "agents": 4,
+    "channel_id": "shortlist-m5-k3-a3of5",
+    "denominator_complexity": 10,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "1",
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 3,
+    "parameters": {
+      "inclusion_accuracy": "3/5"
+    },
+    "pooled_accuracy": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "pooled_error": [
+      "4/5",
+      "4/5",
+      "4/5",
+      "4/5"
+    ],
+    "private_discovery": "369/625",
+    "q": "1/5",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "4/5",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "369/625",
+      "61/125",
+      "9/25",
+      "1/5"
+    ],
+    "sharing_increments": [
+      "-64/625",
+      "-16/125",
+      "-4/25"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "5/16",
+      "37/64"
+    ],
+    "agents": 2,
+    "channel_id": "shortlist-m5-k3-a3of4",
+    "denominator_complexity": 16,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "11/12"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 3,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "5/16"
+    ],
+    "pooled_error": [
+      "3/4",
+      "11/16"
+    ],
+    "private_discovery": "7/16",
+    "q": "1/4",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "7/16",
+      "5/16"
+    ],
+    "sharing_increments": [
+      "-1/8"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "91/256",
+      "307/512",
+      "405/512"
+    ],
+    "agents": 3,
+    "channel_id": "shortlist-m5-k3-a3of4",
+    "denominator_complexity": 16,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "11/12",
+      "15/16"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 3,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "5/16",
+      "91/256"
+    ],
+    "pooled_error": [
+      "3/4",
+      "11/16",
+      "165/256"
+    ],
+    "private_discovery": "37/64",
+    "q": "1/4",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "37/64",
+      "31/64",
+      "91/256"
+    ],
+    "sharing_increments": [
+      "-3/32",
+      "-33/256"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "49/128",
+      "5249/8192",
+      "1665/2048",
+      "30397/32768"
+    ],
+    "agents": 4,
+    "channel_id": "shortlist-m5-k3-a3of4",
+    "denominator_complexity": 16,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "11/12",
+      "15/16",
+      "158/165"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 3,
+    "parameters": {
+      "inclusion_accuracy": "3/4"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "5/16",
+      "91/256",
+      "49/128"
+    ],
+    "pooled_error": [
+      "3/4",
+      "11/16",
+      "165/256",
+      "79/128"
+    ],
+    "private_discovery": "175/256",
+    "q": "1/4",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "175/256",
+      "157/256",
+      "529/1024",
+      "49/128"
+    ],
+    "sharing_increments": [
+      "-9/128",
+      "-99/1024",
+      "-137/1024"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "5/9",
+      "17/18"
+    ],
+    "agents": 2,
+    "channel_id": "guaranteed-shortlist-m5-k3",
+    "denominator_complexity": 6,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      "2/3"
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 3,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1/3",
+      "5/9"
+    ],
+    "pooled_error": [
+      "2/3",
+      "4/9"
+    ],
+    "private_discovery": "5/9",
+    "q": "1/3",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "2/3",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "5/9",
+      "5/9"
+    ],
+    "sharing_increments": [
+      "0"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "41/54",
+      "107/108",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "guaranteed-shortlist-m5-k3",
+    "denominator_complexity": 6,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      "2/3",
+      "13/24"
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "C-strict-aggregation-dominated-consensus",
+    "parameter_k": 3,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1/3",
+      "5/9",
+      "41/54"
+    ],
+    "pooled_error": [
+      "2/3",
+      "4/9",
+      "13/54"
+    ],
+    "private_discovery": "19/27",
+    "q": "1/3",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "2/3",
+    "sharing_class": "strict-aggregation-dominated",
+    "sharing_discovery": [
+      "19/27",
+      "19/27",
+      "41/54"
+    ],
+    "sharing_increments": [
+      "0",
+      "1/18"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "71/81",
+      "647/648",
+      "1",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "guaranteed-shortlist-m5-k3",
+    "denominator_complexity": 6,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      "2/3",
+      "13/24",
+      "20/39"
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "C-strict-aggregation-dominated-consensus",
+    "parameter_k": 3,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1/3",
+      "5/9",
+      "41/54",
+      "71/81"
+    ],
+    "pooled_error": [
+      "2/3",
+      "4/9",
+      "13/54",
+      "10/81"
+    ],
+    "private_discovery": "65/81",
+    "q": "1/3",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "2/3",
+    "sharing_class": "strict-aggregation-dominated",
+    "sharing_discovery": [
+      "65/81",
+      "65/81",
+      "68/81",
+      "71/81"
+    ],
+    "sharing_increments": [
+      "0",
+      "1/27",
+      "1/27"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "7/8",
+      "1"
+    ],
+    "agents": 2,
+    "channel_id": "exclusion-m5-k3",
+    "denominator_complexity": 4,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      "1/4"
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "C-strict-aggregation-dominated-consensus",
+    "parameter_k": 3,
+    "parameters": {
+      "excluded_targets": "3"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "7/8"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/8"
+    ],
+    "private_discovery": "3/4",
+    "q": "1/2",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-aggregation-dominated",
+    "sharing_discovery": [
+      "3/4",
+      "7/8"
+    ],
+    "sharing_increments": [
+      "1/8"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "31/32",
+      "1",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "exclusion-m5-k3",
+    "denominator_complexity": 4,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      "1/4",
+      "1/4"
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "C-strict-aggregation-dominated-consensus",
+    "parameter_k": 3,
+    "parameters": {
+      "excluded_targets": "3"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "7/8",
+      "31/32"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/8",
+      "1/32"
+    ],
+    "private_discovery": "7/8",
+    "q": "1/2",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-aggregation-dominated",
+    "sharing_discovery": [
+      "7/8",
+      "15/16",
+      "31/32"
+    ],
+    "sharing_increments": [
+      "1/16",
+      "1/32"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "127/128",
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "exclusion-m5-k3",
+    "denominator_complexity": 4,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "C-strict-aggregation-dominated-consensus",
+    "parameter_k": 3,
+    "parameters": {
+      "excluded_targets": "3"
+    },
+    "pooled_accuracy": [
+      "1/2",
+      "7/8",
+      "31/32",
+      "127/128"
+    ],
+    "pooled_error": [
+      "1/2",
+      "1/8",
+      "1/32",
+      "1/128"
+    ],
+    "private_discovery": "15/16",
+    "q": "1/2",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "1/2",
+    "sharing_class": "strict-aggregation-dominated",
+    "sharing_discovery": [
+      "15/16",
+      "31/32",
+      "63/64",
+      "127/128"
+    ],
+    "sharing_increments": [
+      "1/32",
+      "1/64",
+      "1/128"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1/5",
+      "2/5"
+    ],
+    "agents": 2,
+    "channel_id": "shortlist-m5-k4-a4of5",
+    "denominator_complexity": 5,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 4,
+    "parameters": {
+      "inclusion_accuracy": "4/5"
+    },
+    "pooled_accuracy": [
+      "1/5",
+      "1/5"
+    ],
+    "pooled_error": [
+      "4/5",
+      "4/5"
+    ],
+    "private_discovery": "9/25",
+    "q": "1/5",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "4/5",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "9/25",
+      "1/5"
+    ],
+    "sharing_increments": [
+      "-4/25"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1/5",
+      "2/5",
+      "3/5"
+    ],
+    "agents": 3,
+    "channel_id": "shortlist-m5-k4-a4of5",
+    "denominator_complexity": 5,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 4,
+    "parameters": {
+      "inclusion_accuracy": "4/5"
+    },
+    "pooled_accuracy": [
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "pooled_error": [
+      "4/5",
+      "4/5",
+      "4/5"
+    ],
+    "private_discovery": "61/125",
+    "q": "1/5",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "4/5",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "61/125",
+      "9/25",
+      "1/5"
+    ],
+    "sharing_increments": [
+      "-16/125",
+      "-4/25"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1/5",
+      "2/5",
+      "3/5",
+      "4/5"
+    ],
+    "agents": 4,
+    "channel_id": "shortlist-m5-k4-a4of5",
+    "denominator_complexity": 5,
+    "description_complexity": 2,
+    "error_contraction_ratio": [
+      "1",
+      "1",
+      "1"
+    ],
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 4,
+    "parameters": {
+      "inclusion_accuracy": "4/5"
+    },
+    "pooled_accuracy": [
+      "1/5",
+      "1/5",
+      "1/5",
+      "1/5"
+    ],
+    "pooled_error": [
+      "4/5",
+      "4/5",
+      "4/5",
+      "4/5"
+    ],
+    "private_discovery": "369/625",
+    "q": "1/5",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "4/5",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "369/625",
+      "61/125",
+      "9/25",
+      "1/5"
+    ],
+    "sharing_increments": [
+      "-64/625",
+      "-16/125",
+      "-4/25"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "5/16",
+      "5/8"
+    ],
+    "agents": 2,
+    "channel_id": "guaranteed-shortlist-m5-k4",
+    "denominator_complexity": 4,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      "11/12"
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 4,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "5/16"
+    ],
+    "pooled_error": [
+      "3/4",
+      "11/16"
+    ],
+    "private_discovery": "7/16",
+    "q": "1/4",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "7/16",
+      "5/16"
+    ],
+    "sharing_increments": [
+      "-1/8"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "25/64",
+      "25/32",
+      "63/64"
+    ],
+    "agents": 3,
+    "channel_id": "guaranteed-shortlist-m5-k4",
+    "denominator_complexity": 4,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      "11/12",
+      "39/44"
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 4,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "5/16",
+      "25/64"
+    ],
+    "pooled_error": [
+      "3/4",
+      "11/16",
+      "39/64"
+    ],
+    "private_discovery": "37/64",
+    "q": "1/4",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "37/64",
+      "31/64",
+      "25/64"
+    ],
+    "sharing_increments": [
+      "-3/32",
+      "-3/32"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "125/256",
+      "113/128",
+      "255/256",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "guaranteed-shortlist-m5-k4",
+    "denominator_complexity": 4,
+    "description_complexity": 3,
+    "error_contraction_ratio": [
+      "11/12",
+      "39/44",
+      "131/156"
+    ],
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": 4,
+    "parameters": {
+      "inclusion_accuracy": "1"
+    },
+    "pooled_accuracy": [
+      "1/4",
+      "5/16",
+      "25/64",
+      "125/256"
+    ],
+    "pooled_error": [
+      "3/4",
+      "11/16",
+      "39/64",
+      "131/256"
+    ],
+    "private_discovery": "175/256",
+    "q": "1/4",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/4",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "175/256",
+      "157/256",
+      "139/256",
+      "125/256"
+    ],
+    "sharing_increments": [
+      "-9/128",
+      "-9/128",
+      "-7/128"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1"
+    ],
+    "agents": 2,
+    "channel_id": "exclusion-m5-k4",
+    "denominator_complexity": 1,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      null
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 4,
+    "parameters": {
+      "excluded_targets": "4"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 3,
+    "channel_id": "exclusion-m5-k4",
+    "denominator_complexity": 1,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      null,
+      null
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 4,
+    "parameters": {
+      "excluded_targets": "4"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "agents": 4,
+    "channel_id": "exclusion-m5-k4",
+    "denominator_complexity": 1,
+    "description_complexity": 4,
+    "error_contraction_ratio": [
+      null,
+      null,
+      null
+    ],
+    "family": "explicit-k-exclusion",
+    "full_sharing_class": "D-boundary",
+    "parameter_k": 4,
+    "parameters": {
+      "excluded_targets": "4"
+    },
+    "pooled_accuracy": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "pooled_error": [
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "private_discovery": "1",
+    "q": "1",
+    "recovery_budget": 1,
+    "recovery_class": "consensus-sufficient",
+    "rescue_threshold": "0",
+    "sharing_class": "all-neutral",
+    "sharing_discovery": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "sharing_increments": [
+      "0",
+      "0",
+      "0"
+    ],
+    "signal_alphabet_size": 5,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "17/40",
+      "773/1280"
+    ],
+    "agents": 2,
+    "channel_id": "confidence-point-m5-low1of5-high1of2",
+    "denominator_complexity": 16,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "23/26"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "1/2",
+      "low_accuracy": "1/5"
+    },
+    "pooled_accuracy": [
+      "7/20",
+      "17/40"
+    ],
+    "pooled_error": [
+      "13/20",
+      "23/40"
+    ],
+    "private_discovery": "231/400",
+    "q": "7/20",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "13/20",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "231/400",
+      "17/40"
+    ],
+    "sharing_increments": [
+      "-61/400"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "607/1280",
+      "13709/20480",
+      "8043/10240"
+    ],
+    "agents": 3,
+    "channel_id": "confidence-point-m5-low1of5-high1of2",
+    "denominator_complexity": 16,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "23/26",
+      "673/736"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "1/2",
+      "low_accuracy": "1/5"
+    },
+    "pooled_accuracy": [
+      "7/20",
+      "17/40",
+      "607/1280"
+    ],
+    "pooled_error": [
+      "13/20",
+      "23/40",
+      "673/1280"
+    ],
+    "private_discovery": "5803/8000",
+    "q": "7/20",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "13/20",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "5803/8000",
+      "501/800",
+      "607/1280"
+    ],
+    "sharing_increments": [
+      "-793/8000",
+      "-973/6400"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "5273/10240",
+      "234437/327680",
+      "135099/163840",
+      "299119/327680"
+    ],
+    "agents": 4,
+    "channel_id": "confidence-point-m5-low1of5-high1of2",
+    "denominator_complexity": 16,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "23/26",
+      "673/736",
+      "4967/5384"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "1/2",
+      "low_accuracy": "1/5"
+    },
+    "pooled_accuracy": [
+      "7/20",
+      "17/40",
+      "607/1280",
+      "5273/10240"
+    ],
+    "pooled_error": [
+      "13/20",
+      "23/40",
+      "673/1280",
+      "4967/10240"
+    ],
+    "private_discovery": "131439/160000",
+    "q": "7/20",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "13/20",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "131439/160000",
+      "12113/16000",
+      "16851/25600",
+      "5273/10240"
+    ],
+    "sharing_increments": [
+      "-10309/160000",
+      "-12649/128000",
+      "-7337/51200"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "11/16",
+      "889/1024"
+    ],
+    "agents": 2,
+    "channel_id": "confidence-point-m5-low1of2-high3of4",
+    "denominator_complexity": 32,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "5/6"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "5/8",
+      "11/16"
+    ],
+    "pooled_error": [
+      "3/8",
+      "5/16"
+    ],
+    "private_discovery": "55/64",
+    "q": "5/8",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/8",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "55/64",
+      "11/16"
+    ],
+    "sharing_increments": [
+      "-11/64"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "1595/2048",
+      "29675/32768",
+      "15709/16384"
+    ],
+    "agents": 3,
+    "channel_id": "confidence-point-m5-low1of2-high3of4",
+    "denominator_complexity": 32,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "5/6",
+      "453/640"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "5/8",
+      "11/16",
+      "1595/2048"
+    ],
+    "pooled_error": [
+      "3/8",
+      "5/16",
+      "453/2048"
+    ],
+    "private_discovery": "485/512",
+    "q": "5/8",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/8",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "485/512",
+      "113/128",
+      "1595/2048"
+    ],
+    "sharing_increments": [
+      "-33/512",
+      "-213/2048"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "27611/32768",
+      "981937/1048576",
+      "511151/524288",
+      "1038451/1048576"
+    ],
+    "agents": 4,
+    "channel_id": "confidence-point-m5-low1of2-high3of4",
+    "denominator_complexity": 32,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "5/6",
+      "453/640",
+      "1719/2416"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/2"
+    },
+    "pooled_accuracy": [
+      "5/8",
+      "11/16",
+      "1595/2048",
+      "27611/32768"
+    ],
+    "pooled_error": [
+      "3/8",
+      "5/16",
+      "453/2048",
+      "5157/32768"
+    ],
+    "private_discovery": "4015/4096",
+    "q": "5/8",
+    "recovery_budget": 4,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "3/8",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "4015/4096",
+      "979/1024",
+      "15025/16384",
+      "27611/32768"
+    ],
+    "sharing_increments": [
+      "-99/4096",
+      "-639/16384",
+      "-2439/32768"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "49/80",
+      "3797/5120"
+    ],
+    "agents": 2,
+    "channel_id": "confidence-point-m5-low1of5-high3of4",
+    "denominator_complexity": 32,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "31/42"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/5"
+    },
+    "pooled_accuracy": [
+      "19/40",
+      "49/80"
+    ],
+    "pooled_error": [
+      "21/40",
+      "31/80"
+    ],
+    "private_discovery": "1159/1600",
+    "q": "19/40",
+    "recovery_budget": 2,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "21/40",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "1159/1600",
+      "49/80"
+    ],
+    "sharing_increments": [
+      "-179/1600"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "7141/10240",
+      "135397/163840",
+      "72659/81920"
+    ],
+    "agents": 3,
+    "channel_id": "confidence-point-m5-low1of5-high3of4",
+    "denominator_complexity": 32,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "31/42",
+      "3099/3968"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/5"
+    },
+    "pooled_accuracy": [
+      "19/40",
+      "49/80",
+      "7141/10240"
+    ],
+    "pooled_error": [
+      "21/40",
+      "31/80",
+      "3099/10240"
+    ],
+    "private_discovery": "54739/64000",
+    "q": "19/40",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "21/40",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "54739/64000",
+      "2549/3200",
+      "7141/10240"
+    ],
+    "sharing_increments": [
+      "-3759/64000",
+      "-5079/51200"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  },
+  {
+    "action_budget_profile": [
+      "124343/163840",
+      "4610597/5242880",
+      "2426299/2621440",
+      "5048399/5242880"
+    ],
+    "agents": 4,
+    "channel_id": "confidence-point-m5-low1of5-high3of4",
+    "denominator_complexity": 32,
+    "description_complexity": 5,
+    "error_contraction_ratio": [
+      "31/42",
+      "3099/3968",
+      "39497/49584"
+    ],
+    "family": "confidence-augmented-point",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "parameter_k": null,
+    "parameters": {
+      "high_accuracy": "3/4",
+      "low_accuracy": "1/5"
+    },
+    "pooled_accuracy": [
+      "19/40",
+      "49/80",
+      "7141/10240",
+      "124343/163840"
+    ],
+    "pooled_error": [
+      "21/40",
+      "31/80",
+      "3099/10240",
+      "39497/163840"
+    ],
+    "private_discovery": "2365519/2560000",
+    "q": "19/40",
+    "recovery_budget": 3,
+    "recovery_class": "portfolio-dependent",
+    "rescue_threshold": "21/40",
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "2365519/2560000",
+      "114329/128000",
+      "344521/409600",
+      "124343/163840"
+    ],
+    "sharing_increments": [
+      "-78939/2560000",
+      "-106659/2048000",
+      "-67327/819200"
+    ],
+    "signal_alphabet_size": 10,
+    "targets": 5
+  }
+]

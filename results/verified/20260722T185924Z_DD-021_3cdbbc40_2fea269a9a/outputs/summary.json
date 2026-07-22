@@ -1,0 +1,28 @@
+{
+  "channel_laws": 59,
+  "full_sharing_class_counts": {
+    "B-shared-discovery-paradox": 78,
+    "C-strict-aggregation-dominated-consensus": 16,
+    "D-boundary": 83
+  },
+  "mixed_sharing_bounded_null": true,
+  "recovery_budget_counts": {
+    "1": 51,
+    "2": 55,
+    "3": 64,
+    "4": 7
+  },
+  "recovery_class_counts": {
+    "consensus-sufficient": 51,
+    "portfolio-dependent": 126
+  },
+  "scenarios": 177,
+  "sharing_class_counts": {
+    "all-neutral": 35,
+    "strict-aggregation-dominated": 16,
+    "strict-compression-dominated": 126
+  },
+  "source_checksum_sha256": "2b1583d2644a3417646d8cadebf32b9c97cd22d8628013c97dcdef84bbb476b1",
+  "weak_consensus_dominance_count": 51,
+  "weak_no_useful_one_action_count": 75
+}

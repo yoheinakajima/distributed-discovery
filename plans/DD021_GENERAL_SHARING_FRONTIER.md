@@ -56,13 +56,14 @@ the frozen declared rule, not an unrestricted team optimum.
 2. **Complete — exact source gate:** channel registry, labeled method,
    histogram/count-state method, independent verifier, corruption suite, CLI,
    and tests.
-3. **Active — pre-run gate:** full validation, clean source commit, push, and
+3. **Complete — pre-run gate:** full validation, clean source commit, push, and
    draft PR.
-4. Evidence gate: exactly one immutable primary run, method certificate,
-   witness search, claim allocation, and separate claim audits.
-5. Public gate: report, Findings, relationships, reverse links, real Lab,
-   no-JavaScript data, browser/accessibility validation, and full acceptance.
-6. Merge/deploy gate: ready PR, passing checks, squash merge, issue closure,
+4. **Complete — evidence gate:** exactly one immutable primary run, method
+   certificate, witness search, claim allocation, and separate claim audits.
+5. **Complete — public gate:** report, Findings, relationships, reverse links,
+   real Lab, no-JavaScript data, browser/accessibility validation, and local
+   acceptance.
+6. **Active — merge/deploy gate:** ready PR, passing checks, squash merge, issue closure,
    post-merge CI/Pages, live routes, and synchronized main.
 7. Editorial gate: one documentation-only branch and PR deciding whether the
    Information Sharing Frontier paper gate passes.
@@ -79,9 +80,9 @@ the frozen declared rule, not an unrestricted team optimum.
   minimization order, and corruption plan.
 - [x] Complete literature review and both proof records.
 - [x] Implement and validate both exact methods and independent verifier.
-- [ ] Freeze committed source, open draft PR, and run once.
-- [ ] Audit claims and integrate exact public evidence.
-- [ ] Build and verify the General Sharing Frontier Lab.
+- [x] Freeze committed source, open draft PR, and run once.
+- [x] Audit claims and integrate exact public evidence.
+- [x] Build and verify the General Sharing Frontier Lab.
 - [ ] Merge/deploy the research PR and close issue #146.
 - [ ] Complete the separate documentation-only editorial gate.
 
@@ -117,6 +118,21 @@ the frozen declared rule, not an unrestricted team optimum.
   after registering the 25th study. Updating the relationship-registry test
   from 24 to 25 restored the focused site suite (`2 passed`) and the site build
   (`73 pages, 25 studies`); no scientific computation was affected.
+- Clean commit `3cdbbc40` produced the sole primary run
+  `20260722T185924Z_DD-021_3cdbbc40_2fea269a9a`. It passed in 11.232478
+  seconds at 27.266 MB, with both methods and all eight corruptions passing.
+- The immutable counts match the preview: sharing curves are 126 strict
+  compression, 16 strict aggregation, 35 neutral, and zero mixed; full sharing
+  has 78 paradox, 16 strict consensus dominance, 83 boundary, and zero strict
+  no-gain cases; recovery budgets are 51/55/64/7 at L*=1/2/3/4.
+- The in-app browser verified output changes, URL state, reset, exact/percentage
+  agreement, one visible table row, and clean logs. Its viewport override did
+  not change the reported 1280×720 viewport, so the browser record preserves
+  that limitation and assigns narrow-width acceptance to responsive static and
+  automated checks rather than inventing screenshots.
+- Rebuilding all six accepted papers changed only Three Results provenance,
+  because that artifact hashes the full claim ledger. All 14 regenerated pages
+  were visually inspected; content and pagination are unchanged.
 
 ## Decision log
 
@@ -132,6 +148,9 @@ the frozen declared rule, not an unrestricted team optimum.
 - `2026-07-22T19:22:00Z`: preserve the absent mixed class as a bounded null and
   retain strict predicates for aggregation and no-useful-sharing witnesses so
   perfect or equality boundaries cannot masquerade as strict examples.
+- `2026-07-22T19:12:00Z`: allocate DD-C-0097 through DD-C-0103 only after the
+  immutable run passed; keep two analytic theorems, four exact bounded
+  computational claims, and one bounded negative result separate.
 
 ## Validation strategy
 
@@ -172,10 +191,12 @@ regime, recovery budget, and source checksum.
 
 ## Artifacts produced
 
-Issue #146, this ExecPlan, the registered study skeleton, literature and proof
-records, the exact registry, two independent enumeration methods, verifier,
-corruption suite, CLI, and tests. Later milestones append immutable evidence,
-claim audits, public data, and Lab artifacts without rewriting failed history.
+Issue #146, draft PR #147, this ExecPlan, complete study records, sole immutable
+run, seven separately audited claims, exact registry and witnesses, two
+independent enumeration methods, verifier, eight-corruption suite, report,
+Findings, relationships, public data, General Sharing Frontier Lab, browser QA,
+CLI, and tests. Merge/deploy and the later documentation-only editorial gate
+remain; no failed evidence was overwritten.
 
 ## Blockers
 

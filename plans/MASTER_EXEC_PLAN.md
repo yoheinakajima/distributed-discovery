@@ -18,13 +18,16 @@ the largest scenario has 55,550 and 5,000 respectively. Runtime is estimated
 below 30 seconds and capped at 120 seconds; memory is estimated below 256 MB
 and capped at 1 GB. No numerical result, run, or claim exists at registration.
 
-Active milestone: freeze the validated exact source in a clean commit, push it,
-and open the draft research PR before creating the sole immutable primary run.
-The source gate now includes the literature boundary, two analytic proof
-records, 59-law registry, labeled and histogram methods, independent verifier,
-eight corruptions, CLI, and tests. Preserve DD-019 and DD-020 runs unchanged,
-keep issue #32 separate, do not touch the ActiveGraph pilot, and do not begin
-the editorial gate before the DD-021 research PR is merged and deployed.
+Active milestone: complete research PR #147 acceptance, mark it ready, merge,
+verify CI/Pages and live routes, close issue #146, and synchronize main. Clean
+commit `3cdbbc40` produced the sole passing run
+`20260722T185924Z_DD-021_3cdbbc40_2fea269a9a`; DD-C-0097 through DD-C-0103
+separately preserve the two theorems, exact registry, witnesses, recovery
+budgets, and mixed-curve bounded null. The source, report, Findings,
+relationships, exact public data, and real General Sharing Frontier Lab are
+locally integrated. Preserve DD-019 and DD-020 runs unchanged, keep issue #32
+separate, do not touch the ActiveGraph pilot, and do not begin the editorial
+gate before the DD-021 research PR is merged and deployed.
 
 ## Active continuation — Findings, Labs, and relationship navigation repair (2026-07-22)
 

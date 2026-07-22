@@ -2016,3 +2016,150 @@ claims:
     first_added: "2026-07-22"
     last_checked: "2026-07-22"
     notes: Equal one-person accuracy does not determine the incremental-sharing profile or even its sign in this exact bounded comparison.
+  - id: DD-C-0097
+    study_id: DD-021
+    short_name: independent-rescue-error-contraction-criterion
+    statement: In the registered finite target-symmetric block-sharing protocol, with pooled error e_s=1-C_s and constant conditional direct-action accuracy q, G_(s+1)-G_s=(1-q)^(N-s-1)[(1-q)e_s-e_(s+1)]; therefore the next sharing step helps, is neutral, or hurts exactly when e_(s+1) is respectively below, equal to, or above (1-q)e_s.
+    scope: Finite targets, uniform prior, conditionally independent signals and private tie draws given the target, constant target-conditional direct accuracy, one uniformly tie-broken pooled MAP action, remaining declared direct actions, and one-hit discovery; no source dependence, strategy, private-team optimum, or novelty claim for the descriptive theorem name.
+    claim_type: theorem
+    status: verified
+    source_type: conditional-failure-proof-with-separate-boundary-and-consistency-audit
+    source_reference: studies/DD-021-general-sharing-frontier/proof.md
+    proof_path: studies/DD-021-general-sharing-frontier/proof.md
+    implementation_paths: [src/distributed_discovery/general_sharing/model.py, src/distributed_discovery/general_sharing/verification.py]
+    run_ids: [20260722T185924Z_DD-021_3cdbbc40_2fea269a9a]
+    test_paths: [tests/unit/test_general_sharing.py, tests/unit/test_general_sharing_post_run_audit.py, tests/integration/test_general_sharing_cli.py]
+    exactness_basis: Conditional failure probabilities factor exactly to G_s=1-e_s(1-q)^(N-s), algebraic subtraction gives the criterion, and proof-audit.md separately checks the independence, target symmetry, zero-error, and q=1 boundaries. Both exact methods verify every registered instance as regression evidence rather than proof.
+    rounding_rule: exact analytic identities and rational inequalities
+    dependencies: [DD-C-0092]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: The ratio rho_s=e_(s+1)/e_s is used only when e_s>0; the un-divided criterion handles zero pooled error.
+  - id: DD-C-0098
+    study_id: DD-021
+    short_name: full-capacity-pooled-planner-dominance
+    statement: Under the registered protocol, the centralized posterior top-L pooled value at L=min(N,M) weakly exceeds the declared N-action direct-private discovery value, so the recovery budget L* always exists and satisfies L*<=min(N,M); moreover L*=1 exactly when full consensus C_N weakly exceeds the private baseline P_N.
+    scope: Uniform finite target prior, conditionally independent registered signals, declared target-equivariant direct actions with independent ties, centralized authority to choose a posterior top-L target set after seeing all signals, binding distinct target actions up to min(N,M), and one-hit discovery; no decentralized, incentive-compatible, anonymous-private, or equilibrium implementation claim.
+    claim_type: theorem
+    status: verified
+    source_type: posterior-mass-domination-proof-with-separate-tie-duplicate-and-authority-audit
+    source_reference: studies/DD-021-general-sharing-frontier/proof.md
+    proof_path: studies/DD-021-general-sharing-frontier/proof.md
+    implementation_paths: [src/distributed_discovery/general_sharing/model.py, src/distributed_discovery/general_sharing/verification.py]
+    run_ids: [20260722T185924Z_DD-021_3cdbbc40_2fea269a9a]
+    test_paths: [tests/unit/test_general_sharing.py, tests/unit/test_general_sharing_post_run_audit.py]
+    exactness_basis: Conditional on each signal profile and realized private tie draws, the direct-action union has at most min(N,M) targets and its posterior mass is weakly bounded by the posterior top-min(N,M) mass. Averaging preserves the inequality. The separate proof audit covers duplicates, ties, N>M, and the centralized-authority boundary.
+    rounding_rule: exact analytic inequalities
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: V_L is a centralized planner frontier. The theorem guarantees recovery relative to the declared direct rule, not an unrestricted private-team optimum.
+  - id: DD-C-0099
+    study_id: DD-021
+    short_name: general-sharing-registry-classification
+    statement: Across DD-021's complete 177-scenario exact registry, 126 sharing curves are strict compression-dominated, 16 are strict aggregation-dominated, 35 are all-neutral, and none are mixed; full sharing yields 78 Shared Discovery Paradox cases, 16 strict aggregation-dominated consensus cases, 83 boundary cases, and no strict no-one-action aggregation-gain case.
+    scope: The frozen 59 target-symmetric channel laws over M in {3,4,5}, N in {2,3,4}, and the exact parameter grid in registry.yml; these are bounded registry counts, not frequencies over organizations or a universal channel classification theorem.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exact-labeled-profile-enumeration-with-independent-histogram-enumeration
+    source_reference: results/verified/20260722T185924Z_DD-021_3cdbbc40_2fea269a9a/outputs/summary.json
+    proof_path: studies/DD-021-general-sharing-frontier/proof.md
+    implementation_paths: [src/distributed_discovery/general_sharing/model.py, src/distributed_discovery/general_sharing/verification.py, src/distributed_discovery/general_sharing/study.py]
+    run_ids: [20260722T185924Z_DD-021_3cdbbc40_2fea269a9a]
+    test_paths: [tests/unit/test_general_sharing.py, tests/unit/test_general_sharing_post_run_audit.py, tests/integration/test_general_sharing_cli.py]
+    exactness_basis: Ordered signal-profile enumeration covers 936,063 target/profile states and independent histogram enumeration covers 117,433 weighted target/count states. Both methods agree on all 177 exact rows, classes, and witnesses; the post-run audit rechecks output hashes, identities, and counts, and eight corruptions are rejected.
+    rounding_rule: exact integer counts and rational comparisons; percentages are display-only
+    dependencies: [DD-C-0097]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: Strict classes require at least one strict increment; equality-only curves remain all-neutral.
+  - id: DD-C-0100
+    study_id: DD-021
+    short_name: minimal-opposite-sharing-sign-witness
+    statement: "Under DD-021's frozen minimization order, the first same-baseline strict opposite-sign witness occurs at M=4,N=2,q=1/2 and private discovery 3/4: the noisy-point sharing step is -1/4, while the guaranteed two-shortlist step is +1/12."
+    scope: Minimality within the registered channel families ordered by targets, agents, signal-alphabet size, denominator complexity, declared description rank, channel ID, and step; not minimal over all finite channels or a general characterization by one-person accuracy.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exact-two-method-witness-search-with-frozen-lexicographic-minimization
+    source_reference: results/verified/20260722T185924Z_DD-021_3cdbbc40_2fea269a9a/outputs/minimal-witnesses.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/general_sharing/model.py, src/distributed_discovery/general_sharing/verification.py]
+    run_ids: [20260722T185924Z_DD-021_3cdbbc40_2fea269a9a]
+    test_paths: [tests/unit/test_general_sharing.py, tests/unit/test_general_sharing_post_run_audit.py]
+    exactness_basis: Both exhaustive methods independently reconstruct the 177-row registry and agree on the minimized pair. The M=3,N=2 same-accuracy pair is explicitly checked and has negative versus neutral, establishing why the first strict opposite signs occur at M=4,N=2.
+    rounding_rule: exact fractions and lexicographic integer/string keys
+    dependencies: [DD-C-0097, DD-C-0099]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: This strengthens the DD-C-0096 bounded contrast by locating the first strict registered pair under a predeclared order.
+  - id: DD-C-0101
+    study_id: DD-021
+    short_name: minimal-full-sharing-regime-witnesses
+    statement: DD-021's minimized registered witnesses include an M=3,N=2 noisy two-shortlist Shared Discovery Paradox with q=3/8<C_N=27/64<P_N=39/64, an M=4,N=2 guaranteed two-shortlist strict consensus-dominance case with P_N=3/4<C_N=5/6, and an M=3,N=2 uninformative point case with C_N=q=1/3<P_N=5/9 and therefore no useful one-action aggregation gain.
+    scope: Minimality within the frozen registry and declared order; the no-useful witness permits equality C_N=q but excludes perfect q=1, and the three witnesses do not imply that every arbitrary channel falls into a strict class.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exact-two-method-full-sharing-witness-search
+    source_reference: results/verified/20260722T185924Z_DD-021_3cdbbc40_2fea269a9a/outputs/minimal-witnesses.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/general_sharing/model.py, src/distributed_discovery/general_sharing/verification.py]
+    run_ids: [20260722T185924Z_DD-021_3cdbbc40_2fea269a9a]
+    test_paths: [tests/unit/test_general_sharing.py, tests/unit/test_general_sharing_post_run_audit.py]
+    exactness_basis: Exact labeled and histogram methods agree on all pooled accuracies, private baselines, strict inequalities, witness keys, and the complete candidate order. Separate post-run checks validate the immutable output hashes and registered class totals.
+    rounding_rule: exact rational inequalities and lexicographic witness keys
+    dependencies: [DD-C-0099]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: The phrase no useful one-action aggregation means C_N<=q within the full-sharing one-action comparison, not that pooled multi-action portfolios are useless.
+  - id: DD-C-0102
+    study_id: DD-021
+    short_name: action-budget-recovery-registry
+    statement: DD-021's exact recovery budgets are L*=1 in 51 scenarios, L*=2 in 55, L*=3 in 64, and L*=4 in seven; the first same-accuracy recovery separation is at M=3,N=2,q=1/2, where the noisy point requires two pooled actions and the guaranteed two-shortlist requires one.
+    scope: The complete registered 177-scenario grid, each channel's declared direct-private baseline, centralized posterior top-L actions for L<=min(N,M), and the frozen witness order; budgets would change with a different baseline or implementation constraint.
+    claim_type: computational-result
+    status: independently-reproduced
+    source_type: exact-two-method-posterior-top-l-frontier-and-threshold-search
+    source_reference: results/verified/20260722T185924Z_DD-021_3cdbbc40_2fea269a9a/outputs/summary.json
+    proof_path: studies/DD-021-general-sharing-frontier/proof.md
+    implementation_paths: [src/distributed_discovery/general_sharing/model.py, src/distributed_discovery/general_sharing/verification.py]
+    run_ids: [20260722T185924Z_DD-021_3cdbbc40_2fea269a9a]
+    test_paths: [tests/unit/test_general_sharing.py, tests/unit/test_general_sharing_post_run_audit.py]
+    exactness_basis: Both exhaustive methods agree on every exact V_L profile and first threshold crossing. The independent verifier checks bounds, monotonicity, V_1=C_N, full-capacity dominance, all 177 budgets, the minimized separation, and rejection of altered V_L and L* fields.
+    rounding_rule: exact rational comparisons and integer budgets
+    dependencies: [DD-C-0098, DD-C-0099]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: Fifty-one consensus-sufficient and 126 portfolio-dependent scenarios partition the registry.
+  - id: DD-C-0103
+    study_id: DD-021
+    short_name: bounded-mixed-sharing-curve-null
+    statement: No mixed sharing curve—one having both a positive and a negative adjacent increment—appears in DD-021's complete 177-scenario registered grid.
+    scope: The exact frozen 59-law registry over M in {3,4,5} and N in {2,3,4}; this is a bounded negative result and failed witness search, not proof that mixed curves cannot occur in arbitrary target-symmetric finite channels.
+    claim_type: negative-result
+    status: verified
+    source_type: complete-bounded-exact-null-with-independent-enumeration-and-witness-search
+    source_reference: results/verified/20260722T185924Z_DD-021_3cdbbc40_2fea269a9a/outputs/minimal-witnesses.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/general_sharing/model.py, src/distributed_discovery/general_sharing/verification.py]
+    run_ids: [20260722T185924Z_DD-021_3cdbbc40_2fea269a9a]
+    test_paths: [tests/unit/test_general_sharing.py, tests/unit/test_general_sharing_post_run_audit.py, tests/integration/test_general_sharing_cli.py]
+    exactness_basis: Two exhaustive exact methods agree on every adjacent increment and classify all 177 scenarios as 126 compression-dominated, 16 aggregation-dominated, or 35 neutral. The immutable witness output records null, the post-run audit confirms it, and altered regime labels are rejected.
+    rounding_rule: exact sign comparisons and integer counts
+    dependencies: [DD-C-0099]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: The null is preserved as evidence rather than promoted into a channel-monotonicity theorem.

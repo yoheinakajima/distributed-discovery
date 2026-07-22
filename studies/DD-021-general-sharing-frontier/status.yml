@@ -1,5 +1,5 @@
 study_id: DD-021
-status: registered
-evidence_status: no-run-no-claim
-next_action: implement the exact channel registry, two methods, independent verifier, corruptions, CLI, and tests
-updated_utc: 2026-07-22T18:45:00Z
+status: complete-bounded-study
+evidence_status: two-verified-theorems-four-independently-reproduced-computational-results-and-one-verified-bounded-negative-result
+next_action: preserve the immutable run, exact scope, claim audits, and output-connected Lab; apply the separate theorem-family editorial gate only after the research merge
+updated_utc: 2026-07-22T19:12:00Z
