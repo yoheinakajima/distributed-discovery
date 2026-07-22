@@ -73,10 +73,10 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   #137 and PR #138, merged and deployed as `9401fbe7`.
 - **D (complete):** public DD-020 integration and output-connected Lab, issue
   #139 and PR #140, merged and deployed as `57270680`.
-- **Acceptance (active):** issue #141, draft PR #142, and branch
-  `codex/program-v5-final-acceptance`; the complete local/live audit and handoff
-  reconciliation pass without research execution, with merge and deployment
-  pending.
+- **Acceptance:** issue #141, PR #142, and branch
+  `codex/program-v5-final-acceptance` own the complete audit and handoff
+  reconciliation without research execution. Post-merge workflow evidence is
+  retained on the PR and issue.
 
 ### Progress checklist
 
@@ -92,7 +92,6 @@ conjecture until proof or an exact counterexample supplies the permitted status.
 - [x] Build and locally validate the DD-020 public integration and Lab.
 - [x] Merge and deploy the DD-020 public integration and Lab.
 - [x] Run final acceptance and reconcile every required handoff document.
-- [ ] Merge and deploy the documentation-only final acceptance.
 
 ### Discoveries and surprises
 
@@ -255,10 +254,10 @@ rerun any passing primary configuration. After PR #142 merges, synchronize
 ### Outcome and retrospective
 
 Milestones A through D are complete and deployed without weakening evidence or
-paper boundaries. The final acceptance audit and reconciliation pass in PR
-#142; its merge, post-merge workflows, and final live confirmation remain.
-Update after every material decision, failed check, immutable run, claim audit,
-merge, and deployment.
+paper boundaries. PR #142 owns the passing final acceptance audit and
+reconciliation; its post-merge workflow evidence is retained on GitHub. Update
+after every material decision, failed check, immutable run, claim audit, merge,
+and deployment.
 
 ## Current state
 
