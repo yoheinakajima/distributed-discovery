@@ -1,6 +1,5 @@
 study_id: DD-022
-status: registered
-evidence_status: no-run-no-claim
-next_action: freeze proof, exact implementation, operation counts, independent verifier, and corruption gates before the clean primary run
-updated_utc: 2026-07-22T20:40:56Z
-
+status: proof-and-verifier-ready
+evidence_status: pre-run-no-claim
+next_action: pass the full pre-run gate, commit clean source, and execute the registered primary run exactly once
+updated_utc: 2026-07-22T22:05:00Z

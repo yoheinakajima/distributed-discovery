@@ -51,10 +51,10 @@ only as an upper comparator.
 
 ## Milestones
 
-1. **Registration and analytic freeze (active):** live audit, issue, branch,
+1. **Registration and analytic freeze (complete):** live audit, issue, branch,
    draft PR, model, proof obligations, literature boundary, resource and
    corruption contracts.
-2. **Exact implementation:** closed forms, direct state/deviation enumeration,
+2. **Exact implementation (complete):** closed forms, direct state/deviation enumeration,
    complete selected-class and bounded pure correspondences, tests, and exact
    root certificate.
 3. **Immutable evidence:** full pre-run gate, clean source commit, one primary
@@ -74,11 +74,11 @@ only as an upper comparator.
 - [x] Audit Git/worktrees, registry, claims tail, open issues/PRs, and the one
   authorized CLI authentication probe.
 - [x] Create issue #150 and the research branch.
-- [ ] Freeze study documents, exact grid, complexity, certificate, and draft PR.
-- [ ] Prove the private and shared selected equilibria including boundaries.
-- [ ] Prove or reject the exact `p=3/5` positive-sharing threshold.
-- [ ] Implement two methods, pure-correspondence audit, and corruptions.
-- [ ] Pass pre-run acceptance and commit a clean source state.
+- [x] Freeze study documents, exact grid, complexity, certificate, and draft PR.
+- [x] Prove the private and shared selected equilibria including boundaries.
+- [x] Prove the exact selected `p=3/5` positive-sharing threshold.
+- [x] Implement two methods, pure-correspondence audit, and corruptions.
+- [x] Pass pre-run acceptance and commit a clean source state.
 - [ ] Execute the primary configuration exactly once.
 - [ ] Audit claims and integrate exact evidence and public presentation.
 - [ ] Pass full acceptance, merge/deploy, close #150, and synchronize main.
@@ -105,6 +105,17 @@ only as an upper comparator.
 - `2026-07-22T20:40:56Z`: treat the selected anonymous symmetric equilibrium,
   full pure correspondence, direct-private rule, and centralized benchmark as
   four separately labeled objects.
+- `2026-07-22T22:05:00Z`: independent equilibrium enumeration found that
+  signal-ownership-aware symmetric rules split the targets on disagreement.
+  Narrow the public theorem to the posterior-only, provenance-blind identical-
+  mixing selection; preserve the broader correspondence as a negative result.
+- `2026-07-22T22:05:00Z`: correct the mechanism language: the public agreement
+  pattern updates the latent dependence posterior but does not reveal the
+  realized source branch.
+- `2026-07-22T22:18:00Z`: the pre-run gate passed strict Ruff, strict MyPy,
+  all 241 tests, claim and 50-manifest validation, all six paper builds, and a
+  75-page site build covering 26 studies. The 42-cell preview classified six
+  positive, 18 negative, and 18 neutral selected comparisons.
 
 ## Validation strategy
 

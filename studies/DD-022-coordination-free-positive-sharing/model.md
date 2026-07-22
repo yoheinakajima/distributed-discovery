@@ -29,9 +29,12 @@ full correspondence.
 
 Both realized signals become public before action. For every positive-
 probability public profile, agents share the exact posterior and play the
-resulting two-action equal-split game. The selected outcome is its anonymous
-symmetric Nash equilibrium with independent private mixing. The complete pure
-action-profile correspondence is stored separately. Zero-probability public
+resulting two-action equal-split game. The selected outcome uses an identical
+mixed action distribution that depends only on the common posterior, with
+independent private mixing. This posterior-only, provenance-blind class is
+narrower than the ownership-aware strategy space. The complete posterior-game
+pure correspondence and private pure Bayesian correspondence are stored
+separately. Zero-probability public
 profiles at `rho=1` are labeled off path rather than assigned evidentiary
 weight.
 
@@ -45,7 +48,10 @@ centralized DD-021 top-two benchmark is `V_2=1` in this binary two-action model;
 it is an upper benchmark, not an implementation result. A role-dependent best
 asymmetric pure allocation, when shown, is labeled coordinated.
 
+The public agreement pattern updates beliefs about the latent source branch;
+it does not reveal that branch. On disagreement, ownership-aware symmetric
+rules can split the targets and are an explicit selection caveat.
+
 “Coordination-free” means exactly this frozen simultaneous anonymous protocol.
 It does not mean decentralized generally, and asymmetric pure role allocation
 is never described as coordination-free.
-
