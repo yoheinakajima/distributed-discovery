@@ -1,4 +1,24 @@
-# Final handoff — Program V5 Governance and Incremental Sharing continuation
+# Final handoff — Program V5 through DD-021
+
+DD-021 General Sharing Frontier is complete and deployed through issue #146
+and PR #147, merged as `8b44400333e156440a22b0d9fe3be37f63d35a08`.
+Post-merge CI `29951061680`, Pages `29951061715`, and all named live routes
+pass. Its sole immutable run is
+`20260722T185924Z_DD-021_3cdbbc40_2fea269a9a`; DD-C-0097 through DD-C-0103
+retain their exact theorem, bounded-registry, witness, recovery, and negative-
+result scopes.
+
+The documentation-only post-DD-021 gate on issue #148 holds the proposed
+paper *When Does Information Sharing Improve Decentralized Discovery?* for one
+separately authorized Coordination-Free Positive Sharing theorem package. The
+reason is exact: DD-021's full-capacity recovery theorem assumes a centralized
+posterior top-`L` selector. The gate creates no study, claim, run, manuscript,
+submission, release, or DOI.
+
+The current validated inventory is 235 tests, 103 claims, 50 manifests with 47
+passing runs, 25 studies, six papers totaling 89 pages, 74 HTML routes, 81
+public data files, 17 detail Labs, and 22 checksum-covered downloads. The
+historical continuation record follows.
 
 The four required continuation milestones are complete and deployed in order:
 

@@ -1,4 +1,4 @@
-# Project status — Program V5 continuation final acceptance
+# Project status — DD-021 deployment and editorial gate
 
 Date: 2026-07-22 (America/Los_Angeles)
 
@@ -10,21 +10,23 @@ immutable run and five audited claims. Its documentation-only editorial gate
 assigns primary ownership without creating research evidence or submission
 authority. PR #140 deployed the exact output-connected public Lab without
 executing or mutating any research run. Issue #141 and PR #142 record the
-documentation-only final acceptance; no later Program V5 package is allocated.
+documentation-only acceptance. DD-021 subsequently completed and deployed
+through issue #146 and PR #147. Issue #148 applies the separate post-DD-021
+paper gate without allocating a new study.
 
 ## Inventory
 
 | Measure | Value |
 | --- | ---: |
-| Studies | 24 |
-| Claims | 96 |
-| Immutable manifests | 49 |
-| Passing immutable runs | 46 |
-| Tests | 224 |
+| Studies | 25 |
+| Claims | 103 |
+| Immutable manifests | 50 |
+| Passing immutable runs | 47 |
+| Tests | 235 |
 | Validated project papers | 6 |
 | Paper pages | 89 |
-| Public HTML routes | 72 locally generated |
-| Public data files | 71 |
+| Public HTML routes | 74 locally generated |
+| Public data files | 81 |
 | Labs | 17 |
 | Checksum-covered downloads | 22 |
 
@@ -37,20 +39,22 @@ documentation-only final acceptance; no later Program V5 package is allocated.
 | Editorial theorem gate and synthesis prospectus | #137 | #138 | `9401fbe7` |
 | Public integration and Incremental Sharing Lab | #139 | #140 | `57270680` |
 | Final acceptance | #141 | #142 | recorded in GitHub after merge |
+| DD-021 General Sharing Frontier | #146 | #147 | `8b444003` |
+| Post-DD-021 paper gate | #148 | #149 | recorded by PR #149 |
 
 ## Current acceptance record
 
-- Bootstrap, Ruff, strict MyPy over 142 source files, all 224 tests, the
-  96-claim ledger, and all 49 immutable manifests pass.
-- Seventeen saved exact-verification records pass; 58 gates across 17 saved
-  corruption records are true; 18 focused verifier/corruption tests pass.
+- Bootstrap, Ruff, strict MyPy over 148 source files, all 235 tests, the
+  103-claim ledger, and all 50 immutable manifests pass.
+- Eighteen saved exact-verification records pass; 66 gates across 18 saved
+  corruption records are true.
 - Twelve JSON schemas validate; the synthetic discovery-event valid fixture is
   accepted and its invalid fixture is rejected.
 - Six project papers rebuild deterministically at 12, 14, 3, 20, 20, and 20
   pages, with valid provenance and unchanged tracked PDFs.
-- The site builds 72 HTML routes for 24 studies, 71 public data files, 17 Labs,
-  and 22 checksum-covered downloads. All 171 deployed files return HTTP 200,
-  and every deployed download matches its registered size and SHA-256.
+- The site builds 74 HTML routes for 25 studies, 81 public data files, 17 Labs,
+  and 22 checksum-covered downloads. The DD-021 study, Lab, results, claims,
+  evidence, and exact-data routes return HTTP 200.
 - Browser QA passes substantive point/channel output selection, opposite-sign
   same-accuracy comparison, semantic controls, live status, keyboard focus,
   desktop/mobile containment, internally scrolling tables, and clean logs.
@@ -61,6 +65,14 @@ documentation-only final acceptance; no later Program V5 package is allocated.
 No primary run was repeated. Claims, immutable runs, and scientific paper
 content are unchanged. No human data exist, and no submission, release, DOI,
 settings, or canonical-upstream action occurred.
+
+DD-021's research merge is `8b44400333e156440a22b0d9fe3be37f63d35a08`;
+post-merge CI `29951061680` and Pages `29951061715` pass. The paper gate holds
+*When Does Information Sharing Improve Decentralized Discovery?* for exactly
+one separately registered Coordination-Free Positive Sharing package because
+the current full-capacity recovery theorem assumes centralized top-`L`
+authority. No generic Recovery Budget package is required before that gate is
+revisited.
 
 ## Historical Program V4 milestones
 
