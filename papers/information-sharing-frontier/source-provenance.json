@@ -59,7 +59,7 @@
     "results/verified/20260722T210334Z_DD-022_2376d5b7_ad67765ca8/outputs/threshold-certificate.json": "146dcfba3f74b76285dd9ae83a03bf811ea0ad4a1029b7773d7c5d6079fbd6bf"
   },
   "schema_version": 1,
-  "source_commit": "d05b4072e91739680ab7918dde50909130d81b4b",
+  "source_commit": "9f12c08ecb9321f228f058b8956a7dbacd4d0fc2",
   "source_runs": {
     "frontier": "20260722T185924Z_DD-021_3cdbbc40_2fea269a9a",
     "incremental": "20260722T142551Z_DD-020_3854fff6_37c11a850a",

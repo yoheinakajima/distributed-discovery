@@ -314,7 +314,10 @@ def _publications(root: Path) -> list[dict[str, Any]]:
         ("common-source-trap", "The Common-Source Trap"),
         ("incentive-to-ignore", "The Incentive to Ignore"),
         ("threshold-discovery", "Threshold Discovery"),
-        ("information-sharing-frontier", "When Does Information Sharing Improve Decentralized Discovery?"),
+        (
+            "information-sharing-frontier",
+            "When Does Information Sharing Improve Decentralized Discovery?",
+        ),
     ):
         validation = json.loads((root / "papers" / directory / "validation.json").read_text())
         candidates = sorted((root / "papers" / directory).glob("*.pdf"))
@@ -3080,7 +3083,7 @@ def _render(
         if item["peer_reviewed"] is False:
             status_bits.append("not peer reviewed")
         bibtex = (
-            f'<h3>BibTeX</h3><pre><code>{html.escape(str(item["citation_bib"]))}</code></pre>'
+            f"<h3>BibTeX</h3><pre><code>{html.escape(str(item['citation_bib']))}</code></pre>"
             if item["citation_bib"]
             else ""
         )
