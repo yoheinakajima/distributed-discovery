@@ -69,9 +69,10 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   PR #134.
 - **B (complete):** DD-020 Incremental Sharing and Independent Rescue, issue
   #135 and PR #136, merged and deployed as `cf7bc67e`.
-- **C (active):** editorial theorem gate and synthesis prospectus, issue #137,
-  branch `docs/incremental-sharing-editorial-gate`, and draft PR #138.
-- **D:** public DD-020 integration and output-connected Lab.
+- **C (complete):** editorial theorem gate and synthesis prospectus, issue
+  #137 and PR #138, merged and deployed as `9401fbe7`.
+- **D (active):** public DD-020 integration and output-connected Lab, issue
+  #139 and branch `site/dd020-program-integration`.
 - **Acceptance:** complete repository/paper/site/live audit and final handoff.
 
 ### Progress checklist
@@ -84,7 +85,7 @@ conjecture until proof or an exact counterexample supplies the permitted status.
 - [x] Create issue #133 and the sole active Milestone A branch.
 - [x] Complete, validate, merge, deploy, close, and synchronize Milestone A.
 - [x] Merge, deploy, close, and synchronize the completed DD-020 study.
-- [ ] Apply and merge the editorial theorem gate and synthesis prospectus.
+- [x] Apply and merge the editorial theorem gate and synthesis prospectus.
 - [ ] Build and deploy the DD-020 public integration and Lab.
 - [ ] Run final acceptance and reconcile every required handoff document.
 
@@ -153,6 +154,12 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   Discovery* behind one bounded Reliable Discovery theorem attempt, whose
   registered stopping outcomes must include a theorem, sharp counterexample,
   or bounded null/classification. Neither decision authorizes submission.
+- `2026-07-22`: mark Milestone C complete only after PR #138 passed CI
+  `29931193193` and paper/site build `29931193350`, squash-merged as
+  `9401fbe7`, closed issue #137, passed post-merge CI `29931375550` and Pages
+  `29931375465`, synchronized clean main, and exposed the ownership and
+  no-submission language on the live Program route. Issue #139 begins the
+  separate no-research-run public-integration milestone.
 
 ### Validation strategy
 
