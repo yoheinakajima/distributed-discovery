@@ -22,6 +22,13 @@ exact byte-length/SHA-256 coverage for every generated download. The public
 surface contains no submission endpoint, account, cookie, analytics, or
 server-side user data.
 
+The current generated surface contains 59 HTML routes, 59 public data files,
+12 Labs, and 19 checksum-covered downloads. Program V3 adds exact static-
+complete routes for `labs/attention.html`, `labs/audience-design.html`, and
+`labs/conditional-attention.html`, plus `benchmark/attention.html` and
+`experiment-kit/attention.html`. The attention controls never call a remote
+service or collect input.
+
 GitHub Actions builds the same ignored `site/dist` artifact from `main` and
 deploys it to <https://yoheinakajima.github.io/distributed-discovery/>. Never
 commit generated output or add analytics, tracking, advertising, or external

@@ -519,6 +519,11 @@ def build(root: Path) -> dict[str, object]:
                 text=True,
             )
             log = result.stdout + result.stderr
+            log = re.sub(
+                r"`[^`]+/build/tmp[^/]+/main\.pdf`",
+                "`<build>/main.pdf`",
+                log,
+            )
             logs.append(log)
             if result.returncode or re.search(
                 r"undefined (?:reference|citation)|overfull \\hbox", log, re.I

@@ -1,59 +1,84 @@
-# Final handoff — Program V2
+# Final handoff — Program V3
 
-Program V2 is complete at its registered bounded scope. The authoritative
-detailed acceptance record is [`project-status.md`](project-status.md); concise
-navigation begins at [`docs/current-state.md`](../docs/current-state.md) and
-[`docs/current-roadmap.md`](../docs/current-roadmap.md).
+Program V3's required sequence is complete at its registered bounded scope.
+This handoff creates no new research run. DD-015 remains an unexecuted optional
+registration, and issue #32 remains a settings-only authority blocker.
 
-## Delivered
+## What was established
 
-- DD-010 DiscoveryBench: 15 exact golden tasks, 13 protocols, 19 metrics, 16
-  compatible exact vectors, capability-isolated execution, independent
-  verification, corruption tests, and a separated 8,000-draw sensitivity suite.
-- DD-011: a frozen 20-cell, eight-hypothesis design with eight declared response
-  scenarios, 384 power/MDE rows, 384,000 seeded draws, 140 retained
-  large-sample calibration failures, and preregistration-ready read-only
-  materials.
-- DD-008B: a general finite-team private-threshold/equilibrium-count theorem,
-  an exact all-common trap of width `p(1-p)/N`, and an exact interior
-  counterexample to universal under-acquisition.
-- *The Common-Source Trap*: a deterministic, visually audited 20-page working
-  paper, SHA-256
-  `c997bba31c021bd799f2b3a561e8e558a1334f844aa87a448ade10319dac2ad3`.
-- A static, no-tracking public surface with 48 HTML routes, eight Labs, complete
-  no-JavaScript fallbacks, and a 15-artifact download checksum manifest.
+1. **DD-012 — attention.** For `r=1-p`, discovery is
+   `G_N(0)=1-r^N` and `G_N(k)=1-(1-q)r^(N-k)` for `k>=1`. The first-use gain is
+   `r^(N-1)(q-p)` and every duplicate-use margin is negative. One reader is
+   uniquely optimal for `q>p`, zero for `q<p`, and `{0,1}` tie at equality.
+   Equal-split attention equilibria are threshold counts because `Delta_k`
+   strictly decreases. The exact grid retains excessive attention rather than
+   a strategic all-ignore failure when `q>p`.
+2. **DD-013 — audiences.** The binding audience optimum is the same `{0,1}`
+   correspondence. Full-precision optimal publicity weakly dominates every
+   registered feasible garbling, with 105 ties and 2,520 strict losses. Public
+   universal pooling implements the optimal count correspondence in all 175
+   cells with ex-post budget balance and zero external subsidy.
+3. **DD-014 — conditional policies.** Registered contrarian roles never improve
+   on the private/public planner optimum for `p>=1/3`; they tie only in 15
+   uninformative-private cells. Conditional policies leave a best-equilibrium
+   wedge in 23 of 75 cells. A raw two-label audit refutes unrestricted
+   extrapolation by finding complementary constant-policy improvements.
+4. **Tools and dissemination.** DiscoveryBench v2 has 20 tasks, 21 protocols,
+   27 metrics, 28 compatible exact rows, and 392 explicit exclusions. The
+   synthetic experiment v2 has 29 treatments, 14 hypotheses, 11 scenarios, 924
+   power rows, and 924,000 draws. The five attention/audience public routes and
+   their static data are live.
 
-Primary runs are:
+## Evidence identifiers
 
-- DD-010 `20260721T183014Z_DD-010_ce930050_8ec718c242`
-- DD-011 `20260721T185647Z_DD-011_fa0271d9_fcaa647c55`
-- DD-008B `20260721T192412Z_DD-008B_649deb08_29dbeaf3a9`
+- DD-012: `20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b`, DD-C-0059–0061.
+- DD-013: `20260721T215811Z_DD-013_09c07448_cdac4fb512`, DD-C-0062–0065.
+- DD-014: `20260721T222047Z_DD-014_f5f099a8_ea0276dd16`, DD-C-0066–0068.
+- DiscoveryBench v2: `20260721T230249Z_DD-010_add85590_56c61a2195`, DD-C-0069.
+- Synthetic experiment v2: `20260721T232119Z_DD-011_121162f8_e454b06d2c`, DD-C-0070.
 
-The repository contains 58 claims, 32 passing runs among 35 immutable manifests,
-15 registered studies, four validated papers, 94 Python source files, and 138
-passing tests. Final acceptance created no duplicate immutable run.
+No participant was recruited, no human data were collected, and no experiment
+was conducted. DD-011's power values are conditional synthetic Monte Carlo
+estimates, not behavioral results.
 
-> **No participants were recruited. No human data were collected. No experiment
-> was conducted. Separate ethics and institutional review are required before
-> deployment.**
+## Publication
 
-The DD-011 kit is not preregistered or deployed. The paper has no DOI,
-submission, peer review, or verified novelty claim. DiscoveryBench is not a
-hosted leaderboard or universal measure. DD-006B is subsidized and does not
-establish budget balance; DD-009 is a bounded Atlas, not a universal ranking.
+*The Incentive to Ignore: Selective Attention and Audience Design in
+Distributed Discovery* is a validated 20-page working paper. SHA-256:
+`ee9e27f741d25a9597994f18caf2bf406098db7aca4d2ed067a7a011f64be250`.
+Public page:
+<https://yoheinakajima.github.io/distributed-discovery/publications/incentive-to-ignore.html>.
+It has no DOI, submission, peer review, or verified novelty claim.
 
-All Program V2 research, paper, and site issues/PRs through #75/#76 are closed
-and merged. Issue #77 / PR #78 provide this documentation-only handoff. Stale
-paper issue #52 was closed after reconciliation. Settings issue #32 remains open
-because the single authorized authentication attempt failed before mutation;
-do not retry without intentionally supplied authority.
+## Final acceptance
 
-Resume with:
+`make bootstrap`, `make verify`, `make papers`, and `make site` passed. The
+current inventory is 183 tests, 70 claims, 40 manifests, 37 passing immutable
+runs, 19 studies, five papers, 59 HTML routes, 59 public data files, 12 Labs,
+and 19 checksum-covered downloads. Certificate/corruption, leakage/schema,
+synthetic-only, PDF/render, download, secret, host-path, license, provenance,
+upstream-cleanliness, browser/accessibility, Git, CI/Pages, and live-route gates
+are recorded in `reports/project-status.md`.
 
-```sh
-git switch main && git pull --ff-only origin main && make verify
-```
+## Preserved negative results and limits
 
-There is no automatic next research task. New theory, benchmark tasks, adapters,
-or human-study work require a fresh bounded registration and the applicable
-evidence/ethics gates.
+- Equal-split incentives create duplicate attention in 63 grid cells; 24 cells
+  sustain all-attend despite a unique one-reader optimum.
+- Off-shared-success implements all-ignore; the registered positive assigned-
+  reader subsidy has no socially optimal weak equilibrium on the DD-012 grid.
+- DD-013 voluntary use differs from binding use in 656 settings, including 273
+  excessive-use settings and eight welfare-multiplicity settings.
+- Full broadcast is suboptimal in every DD-013 cell; garbling never beats the
+  registered binding optimum.
+- DD-014's restricted theorem is not an unrestricted-policy result.
+- DiscoveryBench has no composite score, hosted leaderboard, or public
+  submissions. DD-011 retains 335 below-threshold large-sample calibrations.
+
+## Resume point
+
+Start from clean `main`; do not rerun completed primary configurations. The
+next substantive command is `git switch main && git pull --ff-only origin main
+&& make verify`. The next orientation file is `docs/current-roadmap.md`.
+Settings-only work must instead begin with issue #32 and intentionally supplied
+settings-capable authority. New science requires a fresh bounded issue and
+ExecPlan entry.
