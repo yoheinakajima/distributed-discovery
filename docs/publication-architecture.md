@@ -31,13 +31,15 @@ submission, release, DOI, journal contact, or claim of peer review.
 | *Institutions* | Living-synthesis component | Working note, not a novelty owner by default |
 | *Three Results* | Source material whose results may migrate to separate theorem families | Primary claim ownership must remain explicit |
 | *Private Information Teams* | Working draft and evidence source | Admission depends on its theorem-family gate |
-| *When Does Information Sharing Improve Decentralized Discovery?* | Theorem-family candidate held after DD-021 | Require one registered Coordination-Free Positive Sharing theorem package; DD-021's full-capacity recovery remains centralized; no manuscript or submission action authorized |
+| *When Does Information Sharing Improve Decentralized Discovery?* | Admitted archival theorem-paper candidate; planning artifacts only | DD-022's title result is selected-equilibrium, DD-021's full-capacity recovery remains centralized, and no manuscript or submission action is authorized |
 
 The machine-readable family, study, claim, paper, chapter, overlap, and gate
 relationships are in [`paper-family-map.yml`](paper-family-map.yml). A polished
 PDF is not evidence of admission, submission, acceptance, or peer review.
 DD-020's output-connected Lab is evidence infrastructure and does not alter
 the editorial dispositions or submission boundaries above.
-DD-021's exact frontier, recovery classification, and output-connected Lab
-likewise do not by themselves satisfy the decentralized implementation promise
-in the provisional Information Sharing Frontier title.
+DD-022 closes the prior decentralized-implementation gate only for its declared
+posterior-only identical-mixing equilibrium selection. The admitted candidate
+must present the every-equilibrium failure and centralized implementation gap
+with the positive theorem. Admission creates no manuscript or submission
+authority.

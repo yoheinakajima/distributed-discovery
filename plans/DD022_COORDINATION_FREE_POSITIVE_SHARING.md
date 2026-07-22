@@ -59,10 +59,10 @@ only as an upper comparator.
    root certificate.
 3. **Immutable evidence (complete):** full pre-run gate, clean source commit, one primary
    run, result integration, and separate claim audits.
-4. **Public integration and research merge (acceptance passed; merge pending):** Findings, relationships, Lab,
+4. **Public integration and research merge (complete):** Findings, relationships, Lab,
    full local/remote acceptance, merge, Pages, live routes, issue closure, and
    clean synchronized main.
-5. **Paper-admission gate:** separate documentation-only issue/branch/PR after
+5. **Paper-admission gate (decision complete; merge pending):** separate documentation-only issue/branch/PR after
    Milestone 4; decide admit/hold/reject and, if admitted, create only a paper
    issue, paper ExecPlan, theorem/section map, and ownership map.
 
@@ -82,8 +82,8 @@ only as an upper comparator.
 - [x] Execute the primary configuration exactly once.
 - [x] Audit claims and integrate exact evidence and public presentation.
 - [x] Pass full local acceptance.
-- [ ] Merge/deploy, close #150, and synchronize main.
-- [ ] Execute and merge the documentation-only paper-admission gate.
+- [x] Merge/deploy, close #150, and synchronize main.
+- [ ] Merge the completed documentation-only paper-admission decision.
 
 ## Discoveries and surprises
 
@@ -127,6 +127,13 @@ only as an upper comparator.
   all 244 tests, 110 claim records, 51 manifests, all six paper builds, the
   76-page/26-study site, checksum and relationship validation, focused secret
   and host-path scans, and clean pinned upstream state.
+- `2026-07-22T21:45:00Z`: PR #151 merged as `c8a11bd3`; post-merge CI
+  `29959514182`, Pages `29959514196`, and nine live route checks passed. Issue
+  #150 closed and local `main` synchronized.
+- `2026-07-22T21:45:35Z`: issue #152 decided to admit the qualified paper
+  candidate and created paper issue #153 and documentation PR #154. Admission
+  remains planning-only and requires the selected-equilibrium and every-
+  equilibrium-failure boundaries.
 
 ## Validation strategy
 
@@ -175,5 +182,8 @@ all failed runs, nulls, counterexamples, and selection caveats.
 
 ## Outcome and retrospective
 
-Pending. Completion requires both the merged/deployed research lane and the
-merged documentation-only paper-admission gate.
+The research package is complete, merged, deployed, and live. The exact
+selected-equilibrium theorem closes the prior centralized-implementation gap,
+while the pure correspondence prevents an every-equilibrium overclaim. Final
+closeout requires only merge of the documentation-only admission gate; no
+research artifact will change there.

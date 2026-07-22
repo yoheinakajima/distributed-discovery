@@ -1,5 +1,9 @@
 # Information Sharing Frontier paper gate
 
+> Historical gate: this hold was resolved after DD-022 by
+> `information-sharing-frontier-paper-admission.md`, which admits the qualified
+> candidate for planning only.
+
 Date: `2026-07-22`  
 Issue: `#148`  
 Pull request: `#149`

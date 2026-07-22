@@ -1,6 +1,6 @@
 # Current program state
 
-_Reconciled 2026-07-22 for DD-021 deployment and its paper gate._
+_Reconciled 2026-07-22 for DD-022 deployment and paper admission._
 
 Programs V1, V2, and the required Program V3 queue are complete at their
 registered bounded scopes. Program V3, *The Incentive to Ignore*, completed
@@ -62,9 +62,16 @@ merged as `8b44400333e156440a22b0d9fe3be37f63d35a08`. Its sole clean run
 DD-C-0103. Post-merge CI `29951061680`, Pages `29951061715`, and the live
 study, Lab, results, claims, evidence, and exact-data routes pass. The separate
 documentation-only issue #148 held the proposed decentralized paper for one
-Coordination-Free Positive Sharing theorem package. DD-022 now supplies that
-selected-equilibrium theorem and an every-equilibrium negative result; the
-required post-merge gate still creates no research evidence or submission authority.
+Coordination-Free Positive Sharing theorem package. DD-022 completed through
+issue #150 and PR #151, merged as
+`c8a11bd3c9c8c68e6e631bc61ef3a1d8c46e7fe9`. Its sole clean run
+`20260722T210334Z_DD-022_2376d5b7_ad67765ca8` supports DD-C-0104 through
+DD-C-0110. Post-merge CI `29959514182`, Pages `29959514196`, and the live study,
+Lab, exact data, claims, evidence, and results routes pass. Documentation-only
+issue #152 admits *When Does Information Sharing Improve Decentralized
+Discovery?* as a qualified archival-paper candidate and creates paper issue
+#153 plus planning and ownership maps. It creates no research evidence,
+manuscript, PDF, submission, release, or DOI authority.
 
 The repository is public and project-authored content is MIT-licensed. The
 canonical Shared Discovery Paradox repository remains pinned at
@@ -72,18 +79,30 @@ canonical Shared Discovery Paradox repository remains pinned at
 
 | Measure | Current value |
 | --- | ---: |
-| Ledger claims | 103 |
-| Passing immutable runs | 47 of 50 manifests |
-| Registered studies | 25 |
-| Python source files | 148 |
-| Public HTML routes | 74 locally generated |
-| Public data files | 81 |
-| Laboratory routes | 17 |
+| Ledger claims | 110 |
+| Passing immutable runs | 48 of 51 manifests |
+| Registered studies | 26 |
+| Python source files | 158 |
+| Public HTML routes | 76 locally generated |
+| Public data files | 85 |
+| Laboratory routes | 18 |
 | Validated project papers | 6 |
 | Checksum-registered downloads | 22 |
-| Test suite | 235 collected tests |
+| Test suite | 244 collected tests |
 
 ## Program V5 exact result
+
+DD-022 proves that at `p=3/5` its selected shared posterior-only symmetric
+equilibrium strictly exceeds its private anonymous symmetric Bayes–Nash
+selection in discovery and per-agent payoff exactly for
+`rho in ((5 sqrt(73)-17)/48,1)`. Equality holds at the root and `rho=1`.
+The result is not an every-equilibrium theorem: opposite constant-target
+private equilibria discover surely, and ownership-aware symmetric rules split
+targets on public disagreement. The 42-cell extension contains six positive,
+18 negative, and 18 neutral selected comparisons.
+
+- DD-022: `20260722T210334Z_DD-022_2376d5b7_ad67765ca8`,
+  DD-C-0104–0110.
 
 DD-021 proves for every declared channel in its protocol that
 `G_s=1-(1-C_s)(1-q)^(N-s)` and
