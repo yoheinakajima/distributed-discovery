@@ -1,4 +1,4 @@
-.PHONY: bootstrap lint typecheck test fetch-upstream reproduce-baseline upstream-patch validate-claims foundations three-results discovery-institutions common-source-trap incentive-to-ignore canonical-exact-frontier dd001 dd001-signatures dd001-thresholds dd001-alignment-bound dd002-disclosure dd002-selection-robustness dd003-source-graphs dd003-heterogeneous-sources dd004-sequential dd005-coverage dd006-mechanisms dd006-general-frontier dd006b-joint-mechanism dd007-synthetic-audit dd008-acquisition dd008a-acquisition dd008b-analysis dd009-atlas dd010-discoverybench dd010-attention dd011-experiment dd011-attention dd012-attention dd013-audience dd014-conditional dd016-threshold dd017-equilibrium papers site verify all clean
+.PHONY: bootstrap lint typecheck test fetch-upstream reproduce-baseline upstream-patch validate-claims foundations three-results discovery-institutions common-source-trap incentive-to-ignore canonical-exact-frontier dd001 dd001-signatures dd001-thresholds dd001-alignment-bound dd002-disclosure dd002-selection-robustness dd003-source-graphs dd003-heterogeneous-sources dd004-sequential dd005-coverage dd006-mechanisms dd006-general-frontier dd006b-joint-mechanism dd007-synthetic-audit dd008-acquisition dd008a-acquisition dd008b-analysis dd009-atlas dd010-discoverybench dd010-attention dd011-experiment dd011-attention dd012-attention dd013-audience dd014-conditional dd015-preview dd015-dynamic dd016-threshold dd017-equilibrium papers site verify all clean
 
 UV := uv
 export PYTHONPATH := $(CURDIR)/src
@@ -125,6 +125,12 @@ dd013-audience:
 
 dd014-conditional:
 	$(PY) -m distributed_discovery.conditional.study
+
+dd015-preview:
+	$(PY) -m distributed_discovery.dynamic_attention.study --preview
+
+dd015-dynamic:
+	$(PY) -m distributed_discovery.dynamic_attention.study
 
 dd016-threshold:
 	$(PY) -m distributed_discovery.threshold_discovery.study

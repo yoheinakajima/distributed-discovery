@@ -1,5 +1,5 @@
 study_id: DD-015
-status: registered-optional
-evidence_status: no-result-registration-only
-next_action: do not begin before DD-012 through DD-014 and the required Program V3 queue are complete
-updated_utc: 2026-07-21T21:05:32Z
+status: active-registered-baseline
+evidence_status: no-result-frozen-model-only
+next_action: implement and independently verify the exact baseline before a clean source commit
+updated_utc: 2026-07-22T04:23:33Z

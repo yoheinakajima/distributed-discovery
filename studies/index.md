@@ -20,7 +20,7 @@
 | DD-012 | Incentive to Ignore | complete bounded study | Preserve the one-reader theorem, threshold equilibrium, seven-rule census, and scope boundary |
 | DD-013 | Audience Design and Information Firewalls | complete bounded study | Preserve binding/voluntary separation, garbling dominance, and implementation boundaries |
 | DD-014 | Conditional Attention and Contrarian Policies | complete bounded study | Preserve the restricted-class theorem and larger raw-policy counterexample |
-| DD-015 | Dynamic Attention and Visible Search | optional unexecuted registration | Start only under a new authorization; keep stopping and fixed-budget objectives distinct |
+| DD-015 | Dynamic Attention and Visible Search | active frozen baseline; no result yet | Validate and commit the exact visible-action DP and labeled policy-tree verifier, then execute once from a clean tree |
 | DD-016 | Threshold Discovery | complete bounded study | Preserve DD-C-0071 through DD-C-0074, the immutable two-method run, and the selected-equilibrium boundary |
 | DD-017 | Threshold Equilibrium Selection | complete bounded study | Preserve DD-C-0075 through DD-C-0078, the immutable registry, and the distinct coalition concepts |
 

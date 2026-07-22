@@ -175,6 +175,19 @@ before its independent verifier and immutable primary run pass.
   29886907217. The live DD-017 study and JSON returned HTTP 200 with the run and
   DD-C-0075 through DD-C-0078. V4.3 is complete; the next sequential milestone
   is V4.4, DD-015 at its original registered boundary.
+- 2026-07-22: roadmap PR #109 squash-merged as `6cd7190`; post-merge CI
+  `29890818431`, Pages `29890818405`, and the public root passed, closing issue
+  #108. DD-015 issue #110 and branch `research/dd015-dynamic-attention` are now
+  the sole active lane. The original baseline freezes 32 parameter cells, 64
+  fixed/stopping objective rows, 5,184 unique labeled target/signal paths, a
+  full-duplicate-credit sequential Bayesian equilibrium, an exact common-
+  information planner DP, and a separate labeled verifier with four corruption
+  gates. Non-evidence preview regression targets include 38 strict planner
+  gains and a bounded null for visibility-improved dispersion. After retained
+  Ruff, MyPy, and public-phase integration failures were corrected, pre-run
+  `make verify` passed MyPy on 125 source files, all 198 tests, the unchanged
+  78-claim ledger, and all 42 existing manifests. The active gate is bootstrap,
+  site validation, the clean source commit, and exactly one primary run.
 
 ### Program V3 attention queue (complete, 2026-07-21)
 
