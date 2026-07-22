@@ -1,0 +1,177 @@
+schema_version: 1
+programs:
+  foundations:
+    label: Foundations and core architectures
+  program-v2:
+    label: Program V2 — Institutions and infrastructure
+  program-v3:
+    label: Program V3 — The Incentive to Ignore
+  program-v4:
+    label: Program V4 — Threshold Discovery
+  program-v5:
+    label: Program V5 — The Information Sharing Frontier
+theorem_families:
+  foundations:
+    label: Information aggregation and action allocation
+  roles-disclosure-sources:
+    label: Roles, disclosure, and source dependence
+  portfolios-feedback:
+    label: Portfolios, coverage, and feedback
+  mechanisms:
+    label: Incentives and discovery mechanisms
+  acquisition:
+    label: Endogenous evidence acquisition
+  measurement:
+    label: Measurement, benchmarks, and experiments
+  selective-attention:
+    label: Selective attention and audience design
+  threshold-discovery:
+    label: Threshold discovery and team formation
+  sharing-frontier:
+    label: Information sharing and independent rescue
+studies:
+  DD-000:
+    program: foundations
+    theorem_family: foundations
+    result_ids: [canonical-action-portfolios]
+    paper_slugs: [foundations]
+  DD-001:
+    program: foundations
+    theorem_family: roles-disclosure-sources
+    paper_slugs: [three-results]
+  DD-002:
+    program: foundations
+    theorem_family: roles-disclosure-sources
+    paper_slugs: [three-results]
+  DD-003:
+    program: foundations
+    theorem_family: roles-disclosure-sources
+    paper_slugs: [three-results, common-source-trap]
+  DD-004:
+    program: program-v2
+    theorem_family: portfolios-feedback
+    lab_slugs: [sequential]
+    data_routes: [data/labs/sequential.json]
+  DD-005:
+    program: program-v2
+    theorem_family: portfolios-feedback
+    lab_slugs: [coverage]
+    data_routes: [data/labs/coverage.json]
+  DD-006:
+    program: program-v2
+    theorem_family: mechanisms
+    lab_slugs: [mechanisms]
+    paper_slugs: [discovery-institutions]
+    data_routes: [data/labs/mechanisms.json]
+  DD-006B:
+    program: program-v2
+    theorem_family: mechanisms
+    result_ids: [strict-joint-mechanisms]
+    lab_slugs: [mechanisms]
+    paper_slugs: [discovery-institutions]
+    data_routes: [data/labs/mechanisms.json]
+  DD-007:
+    program: program-v2
+    theorem_family: measurement
+    lab_slugs: [audit]
+    paper_slugs: [discovery-institutions]
+    data_routes: [data/labs/audit.json]
+  DD-008:
+    program: program-v2
+    theorem_family: acquisition
+    lab_slugs: [evidence-acquisition]
+    paper_slugs: [discovery-institutions]
+    data_routes: [data/labs/evidence-acquisition.json]
+  DD-008A:
+    program: program-v2
+    theorem_family: acquisition
+    lab_slugs: [evidence-acquisition]
+    paper_slugs: [discovery-institutions]
+    data_routes: [data/labs/evidence-acquisition.json]
+  DD-008B:
+    program: program-v2
+    theorem_family: acquisition
+    result_ids: [common-source-trap-width]
+    lab_slugs: [evidence-acquisition]
+    paper_slugs: [common-source-trap]
+    data_routes: [data/labs/evidence-acquisition.json]
+  DD-009:
+    program: program-v2
+    theorem_family: measurement
+    result_ids: [architecture-pareto-frontier]
+    lab_slugs: [atlas]
+    data_routes: [data/labs/atlas.json]
+  DD-010:
+    program: program-v2
+    theorem_family: measurement
+    lab_slugs: [benchmark]
+    data_routes: [data/benchmark/tasks.json, data/benchmark/results.json]
+  DD-011:
+    program: program-v2
+    theorem_family: measurement
+    lab_slugs: [experiment-design]
+    experiment_routes: [experiment-kit.html, experiment-kit/hypotheses.html, experiment-kit/design.html, experiment-kit/attention.html, experiment-kit/threshold-dynamic.html, experiment-kit/power.html]
+    data_routes: [data/experiment/design.json, data/experiment/hypotheses.json, data/experiment/power.json]
+  DD-012:
+    program: program-v3
+    theorem_family: selective-attention
+    result_ids: [first-reader-effect, excessive-attention-equilibrium]
+    lab_slugs: [attention]
+    paper_slugs: [incentive-to-ignore]
+    experiment_routes: [experiment-kit/attention.html]
+    data_routes: [data/attention/census.json]
+  DD-013:
+    program: program-v3
+    theorem_family: selective-attention
+    result_ids: [one-reader-audience]
+    lab_slugs: [audience-design]
+    paper_slugs: [incentive-to-ignore]
+    experiment_routes: [experiment-kit/attention.html]
+    data_routes: [data/audience/frontier.json]
+  DD-014:
+    program: program-v3
+    theorem_family: selective-attention
+    result_ids: [conditional-policy-boundary]
+    lab_slugs: [conditional-attention]
+    paper_slugs: [incentive-to-ignore]
+    experiment_routes: [experiment-kit/attention.html]
+    data_routes: [data/conditional/census.json]
+  DD-015:
+    program: program-v4
+    theorem_family: threshold-discovery
+    lab_slugs: [dynamic-attention]
+    paper_slugs: [threshold-discovery]
+    experiment_routes: [experiment-kit/threshold-dynamic.html]
+    data_routes: [data/labs/dynamic-attention.json]
+  DD-016:
+    program: program-v4
+    theorem_family: threshold-discovery
+    lab_slugs: [threshold]
+    paper_slugs: [threshold-discovery]
+    experiment_routes: [experiment-kit/threshold-dynamic.html]
+    data_routes: [data/labs/threshold.json]
+  DD-017:
+    program: program-v4
+    theorem_family: threshold-discovery
+    lab_slugs: [equilibrium-selection]
+    paper_slugs: [threshold-discovery]
+    experiment_routes: [experiment-kit/threshold-dynamic.html]
+    data_routes: [data/labs/equilibrium-selection.json]
+  DD-018:
+    program: program-v4
+    theorem_family: threshold-discovery
+    lab_slugs: [team-mechanisms]
+    paper_slugs: [threshold-discovery]
+    experiment_routes: [experiment-kit/threshold-dynamic.html]
+    data_routes: [data/labs/team-mechanisms.json]
+  DD-019:
+    program: program-v5
+    theorem_family: sharing-frontier
+    lab_slugs: [incremental-sharing]
+    data_routes: [data/labs/incremental-sharing.json]
+  DD-020:
+    program: program-v5
+    theorem_family: sharing-frontier
+    result_ids: [incremental-point-pooling, same-accuracy-channel-counterexample]
+    lab_slugs: [incremental-sharing]
+    data_routes: [data/labs/incremental-sharing.json, data/incremental-sharing/channel-profiles.json]

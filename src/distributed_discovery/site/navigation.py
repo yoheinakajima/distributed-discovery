@@ -8,7 +8,7 @@ from pathlib import PurePosixPath
 PRIMARY_LINKS = (
     ("Home", "index.html"),
     ("Research", "research.html"),
-    ("Results", "results.html"),
+    ("Findings", "results.html"),
     ("Labs", "labs.html"),
     ("Papers", "publications.html"),
 )
@@ -22,9 +22,24 @@ RESOURCE_GROUPS = (
             ("Applications", "applications.html"),
         ),
     ),
+    (
+        "Explore",
+        (
+            ("Findings", "results.html"),
+            ("Research", "research.html"),
+            ("Labs", "labs.html"),
+            ("Papers", "publications.html"),
+        ),
+    ),
     ("Verify", (("Claims", "claims.html"), ("Evidence", "evidence.html"))),
-    ("Use", (("Benchmark", "benchmark.html"), ("Experiment Kit", "experiment-kit.html"))),
-    ("Continue", (("Ideas", "ideas.html"),)),
+    (
+        "Use",
+        (
+            ("Benchmark", "benchmark.html"),
+            ("Experiment Kit", "experiment-kit.html"),
+            ("Ideas", "ideas.html"),
+        ),
+    ),
 )
 
 

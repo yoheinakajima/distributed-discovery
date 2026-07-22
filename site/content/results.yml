@@ -1,0 +1,124 @@
+schema_version: 1
+themes:
+  - id: evidence-sources
+    label: Evidence and sources
+    heading: The source of a clue changes what agreement means.
+    order: 1
+  - id: sharing-attention
+    label: Sharing and attention
+    heading: Useful evidence need not belong in every hand.
+    order: 2
+  - id: action-portfolios
+    label: Action portfolios and thresholds
+    heading: Better rankings do not automatically create better search portfolios.
+    order: 3
+  - id: incentives-equilibrium
+    label: Incentives and equilibrium
+    heading: Rewards and equilibrium selection shape who searches where.
+    order: 4
+  - id: measurement-identification
+    label: Measurement and identification
+    heading: Architecture comparisons require more than one score.
+    order: 5
+  - id: limits-counterexamples
+    label: Limits and counterexamples
+    heading: The boundary of a result is part of the result.
+    order: 6
+results:
+  - result_id: common-source-trap-width
+    theme: evidence-sources
+    title: The all-common source trap has a closed-form width.
+    summary: In the frozen homogeneous equal-prize model, the exact trap width is p(1−p)/N; a separate finite audit and negative result define the boundary.
+    scope_label: Exact in this model
+    study_id: DD-008B
+    claim_ids: [DD-C-0057]
+    lab_slug: evidence-acquisition
+    paper_slug: common-source-trap
+    order: 1
+  - result_id: first-reader-effect
+    theme: sharing-attention
+    title: The first reader can help; duplicate use can reduce discovery.
+    summary: In DD-012's frozen access-gated follow/private model, the first shared-signal reader improves discovery exactly when q exceeds p, while every later reader has a strictly negative marginal discovery effect.
+    scope_label: Verified theorem
+    study_id: DD-012
+    claim_ids: [DD-C-0059]
+    lab_slug: attention
+    paper_slug: incentive-to-ignore
+    order: 1
+  - result_id: excessive-attention-equilibrium
+    theme: sharing-attention
+    title: Equilibrium can overuse a shared clue.
+    summary: The registered 175-cell equal-split census contains 63 excessive-attention cells and 24 all-attend equilibria despite a unique one-reader planner optimum.
+    scope_label: Checked independently
+    study_id: DD-012
+    claim_ids: [DD-C-0060]
+    lab_slug: attention
+    paper_slug: incentive-to-ignore
+    order: 2
+  - result_id: one-reader-audience
+    theme: sharing-attention
+    title: One reader can be the discovery-maximizing audience.
+    summary: In DD-013's binding follow/private class, the optimal audience is one recipient when q exceeds p; the claim does not prescribe general information restriction.
+    scope_label: Checked independently
+    study_id: DD-013
+    claim_ids: [DD-C-0062]
+    lab_slug: audience-design
+    paper_slug: incentive-to-ignore
+    order: 3
+  - result_id: canonical-action-portfolios
+    theme: action-portfolios
+    title: Same clues can produce different action portfolios.
+    summary: The canonical fixture separates one shared answer, private clue-following, and a coordinated pooled portfolio; their discovery values differ because information aggregation and action allocation are distinct.
+    scope_label: Canonical fixture
+    study_id: DD-000
+    claim_ids: [DD-C-0005, DD-C-0006]
+    paper_slug: foundations
+    order: 1
+  - result_id: incremental-point-pooling
+    theme: action-portfolios
+    title: Pooling one more point signal weakly lowers discovery.
+    summary: Under DD-020's registered one-action point-channel protocol, each adjacent move replaces independent rescue with a pooling block and weakly lowers discovery, strictly unless signals are perfect.
+    scope_label: Verified finite theorem
+    study_id: DD-020
+    claim_ids: [DD-C-0094]
+    lab_slug: incremental-sharing
+    order: 2
+  - result_id: strict-joint-mechanisms
+    theme: incentives-equilibrium
+    title: A bounded mechanism class contains strict rows.
+    summary: The exact joint-mechanism census contains strict truthful-and-obedient rows under declared observability and subsidy assumptions; it does not establish an unrestricted mechanism result.
+    scope_label: Completed finite study
+    study_id: DD-006B
+    claim_ids: [DD-C-0053]
+    lab_slug: mechanisms
+    paper_slug: discovery-institutions
+    order: 1
+  - result_id: architecture-pareto-frontier
+    theme: measurement-identification
+    title: Tradeoffs leave multiple coherent designs standing.
+    summary: The bounded synthetic Architecture Atlas preserves multiple nondominated cells under its declared discovery, quality, value, cost, budget, and round objectives.
+    scope_label: Bounded synthetic Atlas
+    study_id: DD-009
+    claim_ids: [DD-C-0054]
+    lab_slug: atlas
+    order: 1
+  - result_id: conditional-policy-boundary
+    theme: limits-counterexamples
+    title: The registered conditional-policy theorem is not unrestricted.
+    summary: DD-014's separate two-label raw-policy audit finds complementary constant policies above the best embedded private/public profile in every audited cell.
+    scope_label: Preserved negative result
+    study_id: DD-014
+    claim_ids: [DD-C-0068]
+    lab_slug: conditional-attention
+    paper_slug: incentive-to-ignore
+    order: 1
+  - result_id: same-accuracy-channel-counterexample
+    theme: limits-counterexamples
+    title: One-person accuracy does not determine the sign of incremental sharing.
+    summary: At the same one-person accuracy, the registered noisy-point profile falls while the guaranteed-shortlist profile rises. This bounded comparison does not establish a general channel order.
+    scope_label: Scope-defining counterexample
+    study_id: DD-020
+    claim_ids: [DD-C-0096]
+    lab_slug: incremental-sharing
+    data_route: data/incremental-sharing/channel-profiles.json
+    order: 2

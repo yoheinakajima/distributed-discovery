@@ -41,7 +41,7 @@ def load_copy_map(path: Path) -> dict[str, Any]:
         raise RuntimeError("site copy map must define exactly five primary links")
     if not isinstance(resources, list) or not resources:
         raise RuntimeError("site copy map must define footer resources")
-    expected = ["Home", "Research", "Results", "Labs", "Papers"]
+    expected = ["Home", "Research", "Findings", "Labs", "Papers"]
     if [item.get("label") for item in primary if isinstance(item, dict)] != expected:
         raise RuntimeError("site copy map primary navigation does not match the brand system")
     for collection in (primary, resources):
