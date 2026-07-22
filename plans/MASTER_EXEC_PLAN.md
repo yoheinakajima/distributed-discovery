@@ -1,5 +1,9 @@
 # Master execution plan
 
+## Active continuation — Findings, Labs, and relationship navigation repair (2026-07-22)
+
+Issue #143 and branch `site/results-labs-relations` own a presentation-only public-site repair from clean main `8ac0700`. The living ExecPlan is `plans/SITE_RESULTS_LABS_RELATIONS.md`; the required safety gate is `reports/site-repair/parallel-safety.md`. No scientific source, claims, immutable runs, manifests, paper source, exact values, theorem statements, evidence status, or canonical upstream may change. Local implementation and all four Make gates are complete; the active milestone is GitHub/Pages acceptance.
+
 > The M0–M9 and A–E material below is retained as historical execution evidence. Current operational state and the active continuation queue are recorded in the opening sections, blockers, and recovery instructions; stale no-remote/private statements inside completed-milestone history describe the state at that time.
 
 ## Purpose and intended outcome
