@@ -1,6 +1,6 @@
 # Current program state
 
-_Reconciled 2026-07-22 after the DD-020 evidence package completed on PR #136._
+_Reconciled 2026-07-22 after DD-020 merged and its editorial gate was applied._
 
 Programs V1, V2, and the required Program V3 queue are complete at their
 registered bounded scopes. Program V3, *The Incentive to Ignore*, completed
@@ -37,11 +37,14 @@ PR #131, post-merge CI `29905840583`, Pages `29905840831`, and the live study,
 data, claims, evidence, and registry routes pass.
 Deployment closeout PR #132 merged as `5e6c800`. Governance/publication PR
 #134 then merged as `dc32ff17`, with post-merge CI `29927131835` and Pages
-`29927132030` passing. DD-020 Incremental Sharing and Independent Rescue is
-complete on PR #136: clean run
+`29927132030` passing. DD-020 Incremental Sharing and Independent Rescue
+merged through PR #136 as `cf7bc67e`, with post-merge CI `29929864642` and
+Pages `29929864954` passing. Its clean run
 `20260722T142551Z_DD-020_3854fff6_37c11a850a` supports DD-C-0092 through
-DD-C-0096. Merge and deployment are the remaining DD-020 steps at this
-reconciliation point.
+DD-C-0096, and the live study, claim, evidence, and data routes pass. The
+documentation-only editorial gate assigns primary ownership to a future
+Information Sharing Frontier paper; it creates no claim, run, PDF, or
+submission action.
 
 The repository is public and project-authored content is MIT-licensed. The
 canonical Shared Discovery Paradox repository remains pinned at

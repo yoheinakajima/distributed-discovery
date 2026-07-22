@@ -3,9 +3,10 @@
 > Historical Program V4 handoff with a current continuation note: Program V5's
 > documentation baseline and DD-019 are now complete and deployed. Current
 > Governance/publication architecture is merged at `dc32ff17`. DD-020
-> Incremental Sharing is evidence-complete on PR #136 with immutable run
-> `20260722T142551Z_DD-020_3854fff6_37c11a850a` and DD-C-0092–0096; merge and
-> deployment precede its editorial theorem gate. The Program V4 evidence below
+> Incremental Sharing is merged and deployed through PR #136 with immutable
+> run `20260722T142551Z_DD-020_3854fff6_37c11a850a` and DD-C-0092–0096. Its
+> editorial gate assigns primary ownership to a future Information Sharing
+> Frontier paper and authorizes no submission. The Program V4 evidence below
 > is unchanged.
 
 Program V4, *Threshold Discovery: Coordination, Crowding, and Minimum Viable
@@ -91,7 +92,8 @@ paper with no DOI, submission, peer review, or verified novelty claim.
 ## Resume point
 
 Program V5's documentation baseline, DD-019, and governance architecture are
-deployed. DD-020 is evidence-complete on PR #136. Resume with its acceptance,
-merge, Pages verification, and issue closure; do not rerun its passing primary
-configuration. Then open only the documentation-only editorial theorem gate.
+deployed. DD-020 is complete and deployed through PR #136; do not rerun its
+passing primary configuration. Preserve the documentation-only editorial gate
+and synthesis prospectus, then publish the DD-020 result and output-connected
+Lab.
 Settings-only issue #32 remains separate.

@@ -18,9 +18,10 @@ extensions, and the public Labs. Program V4, *Threshold Discovery*, is complete
 at its registered bounded scope: DD-015 through DD-018, DiscoveryBench v3, the
 synthetic experiment v3 extension, the 20-page focused paper, and four
 output-connected Labs are deployed. Program V5's documentation baseline and
-DD-019 Signal Geometry is complete and deployed. DD-020 Incremental Sharing
-and Independent Rescue is complete on its research branch with a passing
-immutable run and five audited claims; deployment is pending PR #136. The concise entry points
+DD-019 Signal Geometry and DD-020 Incremental Sharing and Independent Rescue
+are complete and deployed. DD-020 has one passing immutable run and five
+audited claims; its editorial gate assigns primary ownership to a future
+Information Sharing Frontier theorem-family paper. The concise entry points
 are [`docs/current-state.md`](docs/current-state.md) and
 [`docs/current-roadmap.md`](docs/current-roadmap.md). Claims remain in
 [`claims/claims.yml`](claims/claims.yml) under the

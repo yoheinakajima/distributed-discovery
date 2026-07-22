@@ -6,12 +6,19 @@ source_classes:
   registered_studies:
     root: studies
     use: primary model, plan, proof, report, claim, and run routing
+    completed_incremental_sharing:
+      study_id: DD-020
+      path: studies/DD-020-incremental-sharing
+      claims: [DD-C-0092, DD-C-0093, DD-C-0094, DD-C-0095, DD-C-0096]
+      run_id: 20260722T142551Z_DD-020_3854fff6_37c11a850a
+      primary_theorem_family: information-sharing-attention-recovery
   immutable_runs:
     root: results
     use: generated numerical evidence and independent verification
   theorem_family_papers:
     root: papers
     use: long-form arguments with explicit primary family ownership
+    ownership_note: Incentive to Ignore owns strategic attention results; the future Information Sharing Frontier paper owns DD-020, with an explicit companion citation relationship
   claim_ledger:
     path: claims/claims.yml
     use: stable statement, scope, evidence type, status, and provenance

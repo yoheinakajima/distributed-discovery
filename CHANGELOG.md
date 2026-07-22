@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-07-22 — Incremental Sharing editorial theorem gate
+
+- Passed *The Incentive to Ignore*'s Incremental Sharing gate while retaining
+  DD-020 as a companion result owned primarily by a future Information Sharing
+  Frontier theorem-family paper; no manuscript or submission action follows.
+- Held *Threshold Discovery* behind one bounded Reliable Discovery theorem
+  attempt and recorded theorem, sharp-counterexample, and bounded-null stopping
+  outcomes without weakening the existing validated working paper.
+- Added the substantive *Architecture of Distributed Discovery* prospectus,
+  maturity/source/claim/chapter maps, and public program explanation. This
+  documentation-only milestone creates no claim, run, PDF, or submission.
+
 ## 2026-07-22 — DD-020 Incremental Sharing and Independent Rescue
 
 - Proved the exact aggregation–rescue identity, the arbitrary-`M` two-agent

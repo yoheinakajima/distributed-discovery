@@ -69,8 +69,8 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   PR #134.
 - **B (complete):** DD-020 Incremental Sharing and Independent Rescue, issue
   #135 and PR #136, merged and deployed as `cf7bc67e`.
-- **C (active):** editorial theorem gate and synthesis prospectus, issue #137
-  and branch `docs/incremental-sharing-editorial-gate`.
+- **C (active):** editorial theorem gate and synthesis prospectus, issue #137,
+  branch `docs/incremental-sharing-editorial-gate`, and draft PR #138.
 - **D:** public DD-020 integration and output-connected Lab.
 - **Acceptance:** complete repository/paper/site/live audit and final handoff.
 
@@ -112,7 +112,6 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   allocate DD-020.
 - DD-020's analytic progression reached a general finite point-channel
   monotonicity proof. The uninformative boundary required a separate uniform
-  MAP-draw argument; count ranking is used only for `p>1/M`.
 - Dirty-tree preview values were recorded as diagnostics only. After full
   pre-run acceptance, clean source commit `3854fff6` produced the sole primary
   run `20260722T142551Z_DD-020_3854fff6_37c11a850a`; it passed in 2.428850
@@ -147,6 +146,13 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   `29929864954` passed, main synchronized cleanly, and the live DD-020 study,
   data, claims, and evidence routes returned 200. Open issue #137 only after
   that closeout and perform no research run in the editorial milestone.
+- `2026-07-22`: pass *The Incentive to Ignore*'s Incremental Sharing gate
+  without expanding its manuscript. DD-020 is complementary rather than a
+  replacement for its strategic-attention result and is primarily owned by a
+  future Information Sharing Frontier theorem-family paper. Hold *Threshold
+  Discovery* behind one bounded Reliable Discovery theorem attempt, whose
+  registered stopping outcomes must include a theorem, sharp counterexample,
+  or bounded null/classification. Neither decision authorizes submission.
 
 ### Validation strategy
 
@@ -178,7 +184,9 @@ living-synthesis scaffold; the contextual `program.html` builder and tests; and
 `reports/governance-publication-architecture-validation.md`; DD-020 issue #135
 and PR #136; the registered study package; exact implementation and verifier;
 run `20260722T142551Z_DD-020_3854fff6_37c11a850a`; and DD-C-0092 through
-DD-C-0096.
+DD-C-0096; issue #137 and draft PR #138; two editorial gate records; the
+living-synthesis prospectus and maturity map; and the reconciled public program
+page.
 
 ### Blockers
 

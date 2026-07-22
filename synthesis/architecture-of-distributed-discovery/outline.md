@@ -11,7 +11,7 @@
 4. The Shared Discovery Paradox
 5. Private information teams and role policies
 6. Source dependence and the Common-Source Trap
-7. Attention, audiences, conditional use, and signal geometry
+7. Attention, audiences, signal geometry, and incremental sharing
 
 ## Part III — Institutions and action technologies
 
@@ -22,7 +22,7 @@
 
 ## Part IV — North-Star theory
 
-12. Information Sharing, Attention, and Recovery
+12. Information Sharing, Attention, Independent Rescue, and Recovery
 13. Reliable Discovery and Action Technology
 14. Source Acquisition and Provenance
 15. Discovery Implementation

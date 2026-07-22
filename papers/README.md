@@ -17,7 +17,7 @@
 
 Six project-authored PDFs have root validation records. The current 14-page
 Three Results artifact has provenance-refreshed SHA-256
-`efd76ae8c7524ebfff6c50ec8b42fb43527a6e47c2ad31cdd3192e0d6935ddfd`;
+`54e79e0e55cf38cce1b9436fe6a78b84dfec72684aeea0e05f94ce45e1cc3b6c`;
 the 20-page Incentive to Ignore artifact has SHA-256
 `ee9e27f741d25a9597994f18caf2bf406098db7aca4d2ed067a7a011f64be250`;
 and the 20-page Threshold Discovery artifact has SHA-256
@@ -32,3 +32,7 @@ Editorial admission and theorem-family ownership are governed by
 [`docs/research-governance.md`](../docs/research-governance.md) and
 [`docs/publication-architecture.md`](../docs/publication-architecture.md). A
 validated PDF is not automatically an archival-paper candidate or submission.
+The DD-020 editorial gate passed for *The Incentive to Ignore* as a companion
+result, while assigning DD-020 primary ownership to a future Information
+Sharing Frontier theorem-family paper. No manuscript expansion or submission
+action is authorized.

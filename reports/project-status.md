@@ -5,8 +5,10 @@ Date: 2026-07-22 (America/Los_Angeles)
 Programs V1 through V4 are complete at their registered bounded scopes.
 Program V5 is active: its documentation baseline, DD-019, and governance
 architecture are merged and deployed. DD-020 Incremental Sharing and
-Independent Rescue has a passing immutable run and five audited claims on PR
-#136; merge and deployment remain at this reconciliation point.
+Independent Rescue is merged and deployed through PR #136 with a passing
+immutable run and five audited claims. Its documentation-only editorial gate
+assigns primary ownership without creating research evidence or submission
+authority.
 
 ## Inventory
 
@@ -70,5 +72,6 @@ passed. Final handoff PR and post-merge workflow IDs are recorded after merge.
 DD-019 deployment closeout merged as `5e6c800`; governance/publication PR #134
 merged as `dc32ff17`. DD-020's sole primary run is
 `20260722T142551Z_DD-020_3854fff6_37c11a850a`; both exact methods and five
-corruptions pass. The next authorized step after PR #136 deploys is the
-documentation-only editorial theorem gate and synthesis prospectus.
+corruptions pass. After the documentation-only editorial theorem gate and
+synthesis prospectus merge, the next authorized step is the public DD-020
+result and output-connected Lab.
