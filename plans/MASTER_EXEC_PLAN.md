@@ -304,6 +304,25 @@ before its independent verifier and immutable primary run pass.
   14 pages passed a new Poppler review. The active gate is full acceptance,
   source commit, PR checks/merge, post-merge CI/Pages, issue closure, and live
   publication/PDF validation.
+- 2026-07-22: Threshold Discovery PR #123 passed CI `29900445956` and paper/site
+  build `29900445965`, then squash-merged as `ab9cf448`. Post-merge CI
+  `29900587931` and Pages `29900587930` passed; the publication, metadata, and
+  PDF routes returned HTTP 200, and the live PDF matched SHA-256
+  `b38bb30f3ce63889526a092d78dd3f202d3beb54178bcdc272aba85c321b1995`.
+  Issue #122 closed. Program V4 Labs issue #124 and branch
+  `site/program-v4-output-connected-labs` then opened from synchronized main.
+- 2026-07-22: The Program V4 Labs reconstruction replaces the required four
+  generic scenarios with exact output selectors over all eight DD-016 phase
+  rows, 160 DD-017 games, 64 DD-015 objective rows, and 50 DD-018 mechanism
+  rows. Every control selects a distinct registered row, complete static tables
+  remain available without JavaScript, and four reduced public JSON datasets
+  retain claim/run boundaries. The local site emits 68 routes and 16 Labs.
+  Full acceptance passed bootstrap, Ruff, MyPy on 134 source files, all 212
+  tests, the 88-claim ledger, all 47 manifests, six papers totaling 89 pages,
+  and the site build. Desktop interactions changed substantive exact outputs in
+  all four Labs. A 390-by-844 browser check found one labeled control per
+  select, a polite live region, one h1/main landmark, a captioned table, no
+  document overflow, and no console warnings or errors.
 
 ### Program V3 attention queue (complete, 2026-07-21)
 

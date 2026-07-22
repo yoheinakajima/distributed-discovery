@@ -45,6 +45,10 @@ DD009_RUN = "20260721T171249Z_DD-009_bc78d249_0c3851c41a"
 DD012_RUN = "20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b"
 DD013_RUN = "20260721T215811Z_DD-013_09c07448_cdac4fb512"
 DD014_RUN = "20260721T222047Z_DD-014_f5f099a8_ea0276dd16"
+DD015_RUN = "20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a"
+DD016_RUN = "20260722T021526Z_DD-016_00271ff8_123b2809e3"
+DD017_RUN = "20260722T024032Z_DD-017_033452f6_3d2c74fdfb"
+DD018_RUN = "20260722T051847Z_DD-018_a193f602_3b3ddac173"
 
 
 class SiteParser(HTMLParser):
@@ -1226,6 +1230,357 @@ def _conditional_pages(root: Path, output: Path) -> dict[str, object]:
     return {"run_id": DD014_RUN, "summary": summary}
 
 
+def _program_v4_lab_pages(root: Path, output: Path) -> None:
+    """Render the four Program V4 Labs from immutable exact run outputs."""
+
+    def output_attributes(values: dict[str, object]) -> str:
+        return " ".join(
+            f'data-{key}="{html.escape(str(value), quote=True)}"' for key, value in values.items()
+        )
+
+    def provenance(study_id: str, claim_ids: tuple[str, ...], run_id: str, data: str) -> str:
+        claims = " · ".join(
+            f'<a href="../claims.html#{claim_id}">{claim_id}</a>' for claim_id in claim_ids
+        )
+        return f"""<section class="content-section prose"><h2>Evidence boundary</h2><p>These controls select exact rows already present in the immutable {study_id} run. They do not recompute, interpolate, or change claim status.</p><p>{claims} · <a href="{REPOSITORY_URL}/blob/main/results/verified/{run_id}/manifest.json">{run_id}</a> · <a href="../data/labs/{data}">Download the Lab data</a></p></section>"""
+
+    threshold_source = (
+        root / "results/verified" / DD016_RUN / "outputs/threshold-phase-diagram.json"
+    )
+    threshold_rows = json.loads(threshold_source.read_text(encoding="utf-8"))
+    if not isinstance(threshold_rows, list) or len(threshold_rows) != 8:
+        raise RuntimeError("DD-016 threshold Lab requires eight exact phase rows")
+    threshold_data = {
+        "schema_version": 1,
+        "study_id": "DD-016",
+        "claim_ids": ["DD-C-0073", "DD-C-0074"],
+        "run_id": DD016_RUN,
+        "rows": threshold_rows,
+        "boundary": "canonical M=16, N=8, p=1/5 fixture; exact registered rows",
+    }
+    _write(
+        output,
+        "data/labs/threshold.json",
+        json.dumps(threshold_data, indent=2, sort_keys=True) + "\n",
+    )
+    threshold_default = threshold_rows[1]
+    threshold_table = "".join(
+        '<tr {}><th scope="row">{}</th><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td></tr>'.format(
+            output_attributes(
+                {
+                    "output-row": "threshold",
+                    "threshold": row["threshold"],
+                    "planner-discovery": row["planner_discovery"],
+                    "private-discovery": row["private_clue_following"],
+                    "tied-discovery": row["tied_mode_mixed_discovery"],
+                    "viable-candidates": row["expected_viable_candidates"],
+                    "failed-attempts": row["failed_subthreshold_attempts"],
+                    "overlap": row["excess_overlap"],
+                }
+            ),
+            row["threshold"],
+            html.escape(str(row["planner_discovery"])),
+            html.escape(str(row["private_clue_following"])),
+            html.escape(str(row["tied_mode_mixed_discovery"])),
+            html.escape(str(row["expected_viable_candidates"])),
+            html.escape(str(row["failed_subthreshold_attempts"])),
+            html.escape(str(row["excess_overlap"])),
+        )
+        for row in threshold_rows
+    )
+    threshold_options = "".join(
+        f'<option value="{tau}"{" selected" if tau == 2 else ""}>Minimum team {tau}</option>'
+        for tau in range(1, 9)
+    )
+    threshold_body = f"""<header class="page-hero"><p class="eyebrow">DD-016 exact output Lab</p><h1>Threshold Lab</h1><p class="lede">Move the minimum viable team size across the complete canonical phase diagram and inspect the exact discovery, viability, and crowding consequences.</p></header><section class="lab" data-output-lab="threshold"><div class="lab-controls"><div><label for="threshold-tau">Minimum viable team</label><select id="threshold-tau" data-filter-key="threshold">{threshold_options}</select></div></div><p class="callout" data-output-status aria-live="polite">Showing the exact threshold-two row.</p><div class="metric-grid compact"><article class="metric-card planner"><span>Planner discovery</span><strong data-output-key="planner-discovery">{html.escape(str(threshold_default["planner_discovery"]))}</strong></article><article class="metric-card private"><span>Private discovery</span><strong data-output-key="private-discovery">{html.escape(str(threshold_default["private_clue_following"]))}</strong></article><article class="metric-card consensus"><span>Tied-mode discovery</span><strong data-output-key="tied-discovery">{html.escape(str(threshold_default["tied_mode_mixed_discovery"]))}</strong></article><article class="metric-card"><span>Expected viable candidates</span><strong data-output-key="viable-candidates">{html.escape(str(threshold_default["expected_viable_candidates"]))}</strong></article><article class="metric-card"><span>Failed subthreshold attempts</span><strong data-output-key="failed-attempts">{html.escape(str(threshold_default["failed_subthreshold_attempts"]))}</strong></article><article class="metric-card"><span>Excess overlap</span><strong data-output-key="overlap">{html.escape(str(threshold_default["excess_overlap"]))}</strong></article></div></section><noscript><p class="callout">JavaScript is off. All eight exact threshold rows remain visible in the table.</p></noscript><table class="matrix"><caption>Complete exact DD-016 threshold phase diagram</caption><thead><tr><th>Threshold</th><th>Planner discovery</th><th>Private discovery</th><th>Tied-mode discovery</th><th>Viable candidates</th><th>Failed attempts</th><th>Excess overlap</th></tr></thead><tbody>{threshold_table}</tbody></table>{provenance("DD-016", ("DD-C-0073", "DD-C-0074"), DD016_RUN, "threshold.json")}"""
+    _write(
+        output,
+        "labs/threshold.html",
+        _page(
+            "Threshold Lab",
+            "Explore the exact DD-016 minimum-viable-team phase diagram.",
+            threshold_body,
+            "labs/threshold.html",
+        ),
+    )
+
+    equilibrium_source = root / "results/verified" / DD017_RUN / "outputs/small-game-registry.json"
+    equilibrium_registry = json.loads(equilibrium_source.read_text(encoding="utf-8"))
+    games = equilibrium_registry.get("games") if isinstance(equilibrium_registry, dict) else None
+    if not isinstance(games, list) or len(games) != 160:
+        raise RuntimeError("DD-017 equilibrium Lab requires 160 exact games")
+    equilibrium_rows = [
+        {
+            "fixture": row["name"],
+            "agents": row["agents"],
+            "threshold": row["threshold"],
+            "planner_discovery": row["planner_discovery"],
+            "best_equilibrium_discovery": row["best_equilibrium_discovery"],
+            "worst_equilibrium_discovery": row["worst_equilibrium_discovery"],
+            "pure_nash_count": row["pure_nash_count"],
+            "pairwise_stable_count": row["pairwise_strict_stable_count"],
+            "tau_stable_count": row["tau_strict_stable_count"],
+            "price_of_anarchy": row["price_of_anarchy"],
+            "tied_mode_is_equilibrium": row["tied_mode_mixed"]["is_equilibrium"],
+        }
+        for row in games
+    ]
+    equilibrium_data = {
+        "schema_version": 1,
+        "study_id": "DD-017",
+        "claim_ids": ["DD-C-0075", "DD-C-0076", "DD-C-0077", "DD-C-0078"],
+        "run_id": DD017_RUN,
+        "rows": equilibrium_rows,
+        "boundary": "160 registered rational posterior games; weak pure Nash and declared strict-member coalition tests",
+    }
+    _write(
+        output,
+        "data/labs/equilibrium-selection.json",
+        json.dumps(equilibrium_data, indent=2, sort_keys=True) + "\n",
+    )
+    equilibrium_default = next(
+        row
+        for row in equilibrium_rows
+        if row["fixture"] == "tied-top-three" and row["agents"] == 4 and row["threshold"] == 2
+    )
+    equilibrium_table = "".join(
+        '<tr {}><th scope="row">{}</th><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td></tr>'.format(
+            output_attributes(
+                {
+                    "output-row": "equilibrium",
+                    "fixture": row["fixture"],
+                    "agents": row["agents"],
+                    "threshold": row["threshold"],
+                    "planner-discovery": row["planner_discovery"],
+                    "best-equilibrium": row["best_equilibrium_discovery"],
+                    "worst-equilibrium": row["worst_equilibrium_discovery"],
+                    "nash-count": row["pure_nash_count"],
+                    "pair-count": row["pairwise_stable_count"],
+                    "tau-count": row["tau_stable_count"],
+                    "price-anarchy": row["price_of_anarchy"],
+                    "mixed-equilibrium": str(row["tied_mode_is_equilibrium"]).lower(),
+                }
+            ),
+            html.escape(str(row["fixture"])),
+            row["agents"],
+            row["threshold"],
+            html.escape(str(row["planner_discovery"])),
+            html.escape(str(row["best_equilibrium_discovery"])),
+            html.escape(str(row["worst_equilibrium_discovery"])),
+            row["pure_nash_count"],
+            row["pairwise_stable_count"],
+            row["tau_stable_count"],
+        )
+        for row in equilibrium_rows
+    )
+    fixture_options = "".join(
+        f'<option value="{html.escape(name, quote=True)}"{" selected" if name == "tied-top-three" else ""}>{html.escape(name.replace("-", " ").title())}</option>'
+        for name in sorted({str(row["fixture"]) for row in equilibrium_rows})
+    )
+    agent_options = "".join(
+        f'<option value="{value}"{" selected" if value == 4 else ""}>{value} agents</option>'
+        for value in range(2, 7)
+    )
+    equilibrium_threshold_options = "".join(
+        f'<option value="{value}"{" selected" if value == 2 else ""}>{value}</option>'
+        for value in range(1, 7)
+    )
+    equilibrium_body = f"""<header class="page-hero"><p class="eyebrow">DD-017 exact output Lab</p><h1>Equilibrium-selection Lab</h1><p class="lede">Select a posterior fixture, team size, and opening threshold to expose the exact planner value, equilibrium range, multiplicity, and coalition-stability counts.</p></header><section class="lab" data-output-lab="equilibrium"><div class="lab-controls"><div><label for="equilibrium-fixture">Posterior fixture</label><select id="equilibrium-fixture" data-filter-key="fixture">{fixture_options}</select></div><div><label for="equilibrium-agents">Agents</label><select id="equilibrium-agents" data-filter-key="agents">{agent_options}</select></div><div><label for="equilibrium-threshold">Threshold</label><select id="equilibrium-threshold" data-filter-key="threshold" data-limit-by="equilibrium-agents">{equilibrium_threshold_options}</select></div></div><p class="callout" data-output-status aria-live="polite">Showing the tied-top-three, four-agent, threshold-two game.</p><div class="metric-grid compact"><article class="metric-card planner"><span>Planner discovery</span><strong data-output-key="planner-discovery">{html.escape(str(equilibrium_default["planner_discovery"]))}</strong></article><article class="metric-card"><span>Best equilibrium</span><strong data-output-key="best-equilibrium">{html.escape(str(equilibrium_default["best_equilibrium_discovery"]))}</strong></article><article class="metric-card"><span>Worst equilibrium</span><strong data-output-key="worst-equilibrium">{html.escape(str(equilibrium_default["worst_equilibrium_discovery"]))}</strong></article><article class="metric-card"><span>Pure Nash states</span><strong data-output-key="nash-count">{equilibrium_default["pure_nash_count"]}</strong></article><article class="metric-card"><span>Pair-stable states</span><strong data-output-key="pair-count">{equilibrium_default["pairwise_stable_count"]}</strong></article><article class="metric-card"><span>τ-stable states</span><strong data-output-key="tau-count">{equilibrium_default["tau_stable_count"]}</strong></article><article class="metric-card"><span>Price of anarchy</span><strong data-output-key="price-anarchy">{html.escape(str(equilibrium_default["price_of_anarchy"]))}</strong></article><article class="metric-card"><span>Tied-mode mixture is equilibrium</span><strong data-output-key="mixed-equilibrium">{str(equilibrium_default["tied_mode_is_equilibrium"]).lower()}</strong></article></div></section><noscript><p class="callout">JavaScript is off. All 160 exact game rows remain visible below.</p></noscript><table class="matrix"><caption>Complete bounded DD-017 equilibrium census</caption><thead><tr><th>Fixture</th><th>Agents</th><th>Threshold</th><th>Planner</th><th>Best equilibrium</th><th>Worst equilibrium</th><th>Pure Nash</th><th>Pair-stable</th><th>τ-stable</th></tr></thead><tbody>{equilibrium_table}</tbody></table>{provenance("DD-017", ("DD-C-0075", "DD-C-0076", "DD-C-0077", "DD-C-0078"), DD017_RUN, "equilibrium-selection.json")}"""
+    _write(
+        output,
+        "labs/equilibrium-selection.html",
+        _page(
+            "Equilibrium-selection Lab",
+            "Inspect exact equilibrium and coalition-stability outcomes in DD-017.",
+            equilibrium_body,
+            "labs/equilibrium-selection.html",
+        ),
+    )
+
+    dynamic_source = root / "results/verified" / DD015_RUN / "outputs/dynamic-profile.json"
+    dynamic_source_rows = json.loads(dynamic_source.read_text(encoding="utf-8"))
+    if not isinstance(dynamic_source_rows, list) or len(dynamic_source_rows) != 64:
+        raise RuntimeError("DD-015 dynamic Lab requires 64 exact objective rows")
+    dynamic_rows = [
+        {
+            "agents": row["agents"],
+            "private_accuracy": row["private_accuracy"],
+            "shared_accuracy": row["shared_accuracy"],
+            "objective": row["objective"],
+            "planner_discovery": row["planner"]["discovery"],
+            "autonomous_discovery": row["autonomous"]["discovery"],
+            "private_discovery": row["private_only"]["discovery"],
+            "hidden_discovery": row["history_hidden_bayes"]["discovery"],
+            "expected_actions": row["planner"]["expected_actions"],
+            "distinct_actions": row["planner"]["expected_distinct_actions"],
+            "follow_previous_rate": row["autonomous"]["previous_action_follow_rate"],
+            "lean_against_rate": row["autonomous"]["lean_against_repeat_rate"],
+        }
+        for row in dynamic_source_rows
+    ]
+    dynamic_data = {
+        "schema_version": 1,
+        "study_id": "DD-015",
+        "claim_ids": ["DD-C-0079", "DD-C-0080", "DD-C-0081"],
+        "run_id": DD015_RUN,
+        "rows": dynamic_rows,
+        "boundary": "64 exact objective rows in the registered visible-action dynamic model",
+    }
+    _write(
+        output,
+        "data/labs/dynamic-attention.json",
+        json.dumps(dynamic_data, indent=2, sort_keys=True) + "\n",
+    )
+    dynamic_default = next(
+        row
+        for row in dynamic_rows
+        if row["agents"] == 3
+        and row["private_accuracy"] == "1/2"
+        and row["shared_accuracy"] == "3/4"
+        and row["objective"] == "fixed-budget"
+    )
+    dynamic_table = "".join(
+        '<tr {}><th scope="row">{}</th><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td></tr>'.format(
+            output_attributes(
+                {
+                    "output-row": "dynamic",
+                    "agents": row["agents"],
+                    "private-accuracy": row["private_accuracy"],
+                    "shared-accuracy": row["shared_accuracy"],
+                    "objective": row["objective"],
+                    "planner-discovery": row["planner_discovery"],
+                    "autonomous-discovery": row["autonomous_discovery"],
+                    "private-discovery": row["private_discovery"],
+                    "hidden-discovery": row["hidden_discovery"],
+                    "expected-actions": row["expected_actions"],
+                    "distinct-actions": row["distinct_actions"],
+                    "follow-rate": row["follow_previous_rate"],
+                    "lean-rate": row["lean_against_rate"],
+                }
+            ),
+            row["agents"],
+            html.escape(str(row["private_accuracy"])),
+            html.escape(str(row["shared_accuracy"])),
+            html.escape(str(row["objective"])),
+            html.escape(str(row["planner_discovery"])),
+            html.escape(str(row["autonomous_discovery"])),
+            html.escape(str(row["private_discovery"])),
+            html.escape(str(row["expected_actions"])),
+            html.escape(str(row["distinct_actions"])),
+            html.escape(str(row["follow_previous_rate"])),
+        )
+        for row in dynamic_rows
+    )
+    private_options = "".join(
+        f'<option value="{value}"{" selected" if value == "1/2" else ""}>{value}</option>'
+        for value in ("1/3", "1/2", "2/3", "3/4")
+    )
+    shared_options = "".join(
+        f'<option value="{value}"{" selected" if value == "3/4" else ""}>{value}</option>'
+        for value in ("1/3", "1/2", "2/3", "3/4")
+    )
+    dynamic_body = f"""<header class="page-hero"><p class="eyebrow">DD-015 exact output Lab</p><h1>Dynamic-attention Lab</h1><p class="lede">Change team size, private accuracy, shared accuracy, and stopping objective across the complete registered grid. The outputs distinguish planner, autonomous, private-only, and history-hidden behavior.</p></header><section class="lab" data-output-lab="dynamic"><div class="lab-controls"><div><label for="dynamic-agents">Agents</label><select id="dynamic-agents" data-filter-key="agents"><option value="2">2</option><option value="3" selected>3</option></select></div><div><label for="dynamic-private">Private accuracy</label><select id="dynamic-private" data-filter-key="private-accuracy">{private_options}</select></div><div><label for="dynamic-shared">Shared accuracy</label><select id="dynamic-shared" data-filter-key="shared-accuracy">{shared_options}</select></div><div><label for="dynamic-objective">Objective</label><select id="dynamic-objective" data-filter-key="objective"><option value="fixed-budget" selected>Fixed budget</option><option value="stopping-on-success">Stop on success</option></select></div></div><p class="callout" data-output-status aria-live="polite">Showing the exact N=3, p=1/2, q=3/4 fixed-budget row.</p><div class="metric-grid compact"><article class="metric-card planner"><span>Planner discovery</span><strong data-output-key="planner-discovery">{html.escape(str(dynamic_default["planner_discovery"]))}</strong></article><article class="metric-card consensus"><span>Autonomous discovery</span><strong data-output-key="autonomous-discovery">{html.escape(str(dynamic_default["autonomous_discovery"]))}</strong></article><article class="metric-card private"><span>Private-only discovery</span><strong data-output-key="private-discovery">{html.escape(str(dynamic_default["private_discovery"]))}</strong></article><article class="metric-card"><span>History-hidden discovery</span><strong data-output-key="hidden-discovery">{html.escape(str(dynamic_default["hidden_discovery"]))}</strong></article><article class="metric-card"><span>Expected actions</span><strong data-output-key="expected-actions">{html.escape(str(dynamic_default["expected_actions"]))}</strong></article><article class="metric-card"><span>Expected distinct actions</span><strong data-output-key="distinct-actions">{html.escape(str(dynamic_default["distinct_actions"]))}</strong></article><article class="metric-card"><span>Follow previous rate</span><strong data-output-key="follow-rate">{html.escape(str(dynamic_default["follow_previous_rate"]))}</strong></article><article class="metric-card"><span>Lean against repeat rate</span><strong data-output-key="lean-rate">{html.escape(str(dynamic_default["lean_against_rate"]))}</strong></article></div></section><noscript><p class="callout">JavaScript is off. All 64 exact dynamic objective rows remain visible below.</p></noscript><table class="matrix"><caption>Complete exact DD-015 dynamic profile</caption><thead><tr><th>Agents</th><th>Private p</th><th>Shared q</th><th>Objective</th><th>Planner</th><th>Autonomous</th><th>Private only</th><th>Expected actions</th><th>Distinct actions</th><th>Follow rate</th></tr></thead><tbody>{dynamic_table}</tbody></table>{provenance("DD-015", ("DD-C-0079", "DD-C-0080", "DD-C-0081"), DD015_RUN, "dynamic-attention.json")}"""
+    _write(
+        output,
+        "labs/dynamic-attention.html",
+        _page(
+            "Dynamic-attention Lab",
+            "Explore exact planner and autonomous outcomes in DD-015.",
+            dynamic_body,
+            "labs/dynamic-attention.html",
+        ),
+    )
+
+    mechanism_source = root / "results/verified" / DD018_RUN / "outputs/mechanism-census.json"
+    mechanism_source_rows = json.loads(mechanism_source.read_text(encoding="utf-8"))
+    if not isinstance(mechanism_source_rows, list) or len(mechanism_source_rows) != 50:
+        raise RuntimeError("DD-018 mechanism Lab requires 50 exact rows")
+    mechanism_rows = [
+        {
+            "fixture": row["fixture"],
+            "mechanism": row["name"],
+            "discovery": row["expected_discovery"],
+            "planner_discovery": row["planner_discovery"],
+            "implements_planner": row["implements_planner_portfolio"],
+            "obedience": row["obedience"],
+            "strict_unilateral": row["strict_unilateral_obedience"],
+            "pairwise_stable": row["pairwise_strict_stable"],
+            "tau_stable": row["tau_player_strict_stable"],
+            "weak_budget_balance": row["weak_budget_balance"],
+            "external_subsidy": row["external_subsidy"],
+            "equilibrium_multiplicity": row["equilibrium_multiplicity"],
+        }
+        for row in mechanism_source_rows
+    ]
+    mechanism_data = {
+        "schema_version": 1,
+        "study_id": "DD-018",
+        "claim_ids": ["DD-C-0083", "DD-C-0084", "DD-C-0085", "DD-C-0086"],
+        "run_id": DD018_RUN,
+        "rows": mechanism_rows,
+        "boundary": "50 exact rows; truthfulness is not applicable under the common-posterior input",
+    }
+    _write(
+        output,
+        "data/labs/team-mechanisms.json",
+        json.dumps(mechanism_data, indent=2, sort_keys=True) + "\n",
+    )
+    mechanism_default = next(
+        row
+        for row in mechanism_rows
+        if row["fixture"] == "moderate" and row["mechanism"] == "team-tokens"
+    )
+    mechanism_table = "".join(
+        '<tr {}><th scope="row">{}</th><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td></tr>'.format(
+            output_attributes(
+                {
+                    "output-row": "mechanism",
+                    "fixture": row["fixture"],
+                    "mechanism": row["mechanism"],
+                    "discovery": row["discovery"],
+                    "planner-discovery": row["planner_discovery"],
+                    "implements-planner": str(row["implements_planner"]).lower(),
+                    "obedience": row["obedience"],
+                    "strict-unilateral": row["strict_unilateral"],
+                    "pairwise-stable": row["pairwise_stable"],
+                    "tau-stable": row["tau_stable"],
+                    "budget-balance": str(row["weak_budget_balance"]).lower(),
+                    "external-subsidy": row["external_subsidy"],
+                    "multiplicity": row["equilibrium_multiplicity"],
+                }
+            ),
+            html.escape(str(row["fixture"])),
+            html.escape(str(row["mechanism"])),
+            html.escape(str(row["discovery"])),
+            html.escape(str(row["implements_planner"])),
+            html.escape(str(row["obedience"])),
+            html.escape(str(row["pairwise_stable"])),
+            html.escape(str(row["tau_stable"])),
+            html.escape(str(row["equilibrium_multiplicity"])),
+        )
+        for row in mechanism_rows
+    )
+    mechanism_fixture_options = "".join(
+        f'<option value="{html.escape(value, quote=True)}"{" selected" if value == "moderate" else ""}>{html.escape(value.replace("-", " ").title())}</option>'
+        for value in sorted({str(row["fixture"]) for row in mechanism_rows})
+    )
+    mechanism_options = "".join(
+        f'<option value="{html.escape(value, quote=True)}"{" selected" if value == "team-tokens" else ""}>{html.escape(value.replace("-", " ").title())}</option>'
+        for value in sorted({str(row["mechanism"]) for row in mechanism_rows})
+    )
+    mechanism_body = f"""<header class="page-hero"><p class="eyebrow">DD-018 exact output Lab</p><h1>Team-mechanism Lab</h1><p class="lede">Compare ten declared mechanisms across five posterior fixtures. Outputs keep authority, obedience, coalition stability, budget balance, and multiplicity separate.</p></header><section class="lab" data-output-lab="mechanism"><div class="lab-controls"><div><label for="mechanism-fixture">Posterior fixture</label><select id="mechanism-fixture" data-filter-key="fixture">{mechanism_fixture_options}</select></div><div><label for="mechanism-name">Mechanism</label><select id="mechanism-name" data-filter-key="mechanism">{mechanism_options}</select></div></div><p class="callout" data-output-status aria-live="polite">Showing the exact moderate-fixture team-token row.</p><div class="metric-grid compact"><article class="metric-card planner"><span>Expected discovery</span><strong data-output-key="discovery">{html.escape(str(mechanism_default["discovery"]))}</strong></article><article class="metric-card"><span>Planner discovery</span><strong data-output-key="planner-discovery">{html.escape(str(mechanism_default["planner_discovery"]))}</strong></article><article class="metric-card"><span>Implements planner portfolio</span><strong data-output-key="implements-planner">{str(mechanism_default["implements_planner"]).lower()}</strong></article><article class="metric-card"><span>Obedience</span><strong data-output-key="obedience">{html.escape(str(mechanism_default["obedience"]))}</strong></article><article class="metric-card"><span>Strict unilateral</span><strong data-output-key="strict-unilateral">{html.escape(str(mechanism_default["strict_unilateral"]))}</strong></article><article class="metric-card"><span>Pairwise stable</span><strong data-output-key="pairwise-stable">{html.escape(str(mechanism_default["pairwise_stable"]))}</strong></article><article class="metric-card"><span>τ-player stable</span><strong data-output-key="tau-stable">{html.escape(str(mechanism_default["tau_stable"]))}</strong></article><article class="metric-card"><span>Weak budget balance</span><strong data-output-key="budget-balance">{str(mechanism_default["weak_budget_balance"]).lower()}</strong></article><article class="metric-card"><span>External subsidy</span><strong data-output-key="external-subsidy">{html.escape(str(mechanism_default["external_subsidy"]))}</strong></article><article class="metric-card"><span>Equilibrium multiplicity</span><strong data-output-key="multiplicity">{html.escape(str(mechanism_default["equilibrium_multiplicity"]))}</strong></article></div></section><noscript><p class="callout">JavaScript is off. All 50 exact mechanism-fixture rows remain visible below.</p></noscript><table class="matrix"><caption>Complete exact DD-018 mechanism census</caption><thead><tr><th>Fixture</th><th>Mechanism</th><th>Discovery</th><th>Planner implemented</th><th>Obedience</th><th>Pair stable</th><th>τ stable</th><th>Multiplicity</th></tr></thead><tbody>{mechanism_table}</tbody></table>{provenance("DD-018", ("DD-C-0083", "DD-C-0084", "DD-C-0085", "DD-C-0086"), DD018_RUN, "team-mechanisms.json")}"""
+    _write(
+        output,
+        "labs/team-mechanisms.html",
+        _page(
+            "Team-mechanism Lab",
+            "Compare exact implementation and stability outcomes in DD-018.",
+            mechanism_body,
+            "labs/team-mechanisms.html",
+        ),
+    )
+
+
 def _render(
     root: Path,
     output: Path,
@@ -1530,6 +1885,18 @@ def _render(
         ),
     ]
     lab_details = {
+        "threshold": (
+            "Search and allocation",
+            "Minimum viable team",
+            "Exact discovery, viability, and crowding metrics",
+            "DD-016",
+        ),
+        "equilibrium-selection": (
+            "Search and allocation",
+            "Posterior fixture, team size, and threshold",
+            "Planner value, equilibrium range, multiplicity, and stability",
+            "DD-017",
+        ),
         "sequential": (
             "Search and allocation",
             "Batch schedule",
@@ -1554,6 +1921,12 @@ def _render(
             "Discovery, payoffs, equilibria, and attention wedges",
             "DD-012",
         ),
+        "dynamic-attention": (
+            "Information and sources",
+            "Team size, private/shared accuracy, and stopping objective",
+            "Planner, autonomous, private, and history-hidden outcomes",
+            "DD-015",
+        ),
         "audience-design": (
             "Information and sources",
             "Team, accuracy, and audience",
@@ -1571,6 +1944,12 @@ def _render(
             "Mechanism scenario",
             "Incentive and discovery boundaries",
             "DD-006B",
+        ),
+        "team-mechanisms": (
+            "Incentives and mechanisms",
+            "Posterior fixture and mechanism",
+            "Discovery, obedience, stability, budget, and multiplicity",
+            "DD-018",
         ),
         "audit": (
             "Measurement and experiments",
@@ -1601,10 +1980,30 @@ def _render(
         slug: (title, claim, description) for slug, title, claim, _, description in lab_specs
     }
     special_labs = {
+        "threshold": (
+            "Threshold",
+            "DD-C-0074",
+            "Move across all eight exact minimum-team rows in the canonical phase diagram.",
+        ),
+        "equilibrium-selection": (
+            "Equilibrium selection",
+            "DD-C-0077",
+            "Inspect all 160 exact games without collapsing best, worst, or stable equilibria.",
+        ),
         "attention": (
             "Attention",
             "DD-C-0060",
             "Explore exact access-gated attention profiles, payoffs, equilibria, and rewards.",
+        ),
+        "dynamic-attention": (
+            "Dynamic attention",
+            "DD-C-0080",
+            "Explore every exact dynamic objective row and separate planner from autonomous behavior.",
+        ),
+        "team-mechanisms": (
+            "Team mechanisms",
+            "DD-C-0084",
+            "Compare all 50 exact mechanism-fixture rows across distinct implementation concepts.",
         ),
         "benchmark": (
             "DiscoveryBench",
@@ -1663,6 +2062,7 @@ def _render(
         _write(
             output, f"labs/{slug}.html", _page(title, description, lab_body, f"labs/{slug}.html")
         )
+    _program_v4_lab_pages(root, output)
     _benchmark_pages(root, output)
     _experiment_pages(root, output)
     _attention_pages(root, output)
@@ -1731,7 +2131,7 @@ def validate_site(output: Path, routes: list[dict[str, str]]) -> dict[str, Any]:
         if any(urlsplit(asset).scheme in {"http", "https"} for asset in parser.runtime_assets):
             errors.append(f"{relative}: external runtime asset")
         if (
-            re.search(r"data-(?:(?:benchmark|experiment|audience)-)?lab", source)
+            re.search(r"data-(?:(?:benchmark|experiment|audience|output)-)?lab", source)
             and "<noscript>" not in source
         ):
             errors.append(f"{relative}: interactive Lab lacks a no-JavaScript fallback")
@@ -1842,8 +2242,12 @@ def build(root: Path, output: Path) -> dict[str, Any]:
         "routes.json": {"schema_version": 1, "routes": routes},
         "labs.json": {
             "schema_version": 1,
-            "source": "precomputed bounded fixture controls",
+            "source": "precomputed bounded fixture outputs",
             "scenario_count": 5,
+            "threshold_data": "data/labs/threshold.json",
+            "equilibrium_selection_data": "data/labs/equilibrium-selection.json",
+            "dynamic_attention_data": "data/labs/dynamic-attention.json",
+            "team_mechanisms_data": "data/labs/team-mechanisms.json",
             "mechanisms_data": "data/labs/mechanisms.json",
             "atlas_data": "data/labs/atlas.json",
             "benchmark_data": "data/benchmark/results.json",

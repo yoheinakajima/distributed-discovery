@@ -9,7 +9,7 @@ verification plan, and corruption test where certificates are used.
 | --- | --- | --- |
 | DD-016 Threshold Discovery | complete and deployed through PR #102 | Preserve DD-C-0071 through DD-C-0074 and the immutable primary run; do not treat tied-mode selection as the equilibrium correspondence. |
 | DD-017 Equilibrium Selection and Coalition Stability | complete and deployed through PR #104 | Preserve DD-C-0075 through DD-C-0078 and distinct weak-Nash, pairwise, tau-player, and symmetric-mixed meanings. |
-| Program V4 later queue | active sequentially after Synthetic Experiment v3 | Build the focused paper, public Labs, and final handoff under separate gates. Program V4 is not complete. |
+| Program V4 later queue | active at public Labs issue #124 | Deploy the four locally complete output-connected Labs, then execute the separate final handoff. Program V4 is not complete. |
 | Program V3 baseline | complete through PR #80 | DD-012 through DD-015 are registered and deployed without creating research evidence. |
 | DD-012 Incentive to Ignore | complete and deployed through PR #82 | Preserve DD-C-0059 through DD-C-0061 and the immutable primary run. |
 | DD-013 Audience Design | complete and deployed through PR #84 | Preserve DD-C-0062 through DD-C-0065, the primary run, and Audience Lab. |
@@ -18,7 +18,8 @@ verification plan, and corruption test where certificates are used.
 | DD-018 Minimum Viable Team Mechanisms | complete and deployed through PR #114 | Preserve DD-C-0083 through DD-C-0086 and the immutable 50-row census; common-posterior allocation does not test report truthfulness, authoritative implementation is not equilibrium, and pair/tau stability is not coalition-proofness. |
 | DiscoveryBench v3 | complete and deployed through PR #117 | Preserve DD-C-0087, the immutable v3 run, v1/v2 defaults and exact vectors, 36 compatible exact rows, 660 exclusions, capability isolation, and no composite score. |
 | Synthetic Experiment v3 | complete and deployed through PR #120 | Preserve DD-C-0088, all three immutable versions, the 644 retained calibration failures, shared-seed v2 power rows, and the absolute no-human-data boundary. |
-| Threshold Discovery paper | local artifact complete on issue #122; deployment pending | Preserve the 20-page deterministic working paper, eight source-generated assets, seven immutable run mappings, claim/citation audit, all-page visual QA, and no-DOI/no-submission boundary. |
+| Threshold Discovery paper | complete and deployed through PR #123 | Preserve the 20-page deterministic working paper, eight source-generated assets, seven immutable run mappings, claim/citation audit, all-page visual QA, and no-DOI/no-submission boundary. |
+| Program V4 output-connected Labs | locally complete on issue #124; deployment pending | Preserve exact row selection for all 8 DD-016 threshold rows, 160 DD-017 games, 64 DD-015 objective rows, and 50 DD-018 mechanism rows; every control must alter substantive output and all rows remain available without JavaScript. |
 | Program V5 — Information Sharing Frontier | authorized after the merged Program V4 handoff | Begin with a documentation-only baseline, then register only Signal Geometry and the Action-Budget Discovery Profile after its channel-law and complexity audit. Do not start V5 research while V4 is active. |
 | Program V3 focused paper | complete and deployed through PR #90 | The deterministic 20-page *Incentive to Ignore* paper, nine generated evidence assets, citation audit, all-page visual review, Pages, and live PDF pass. |
 | Program V3 benchmark, experiment, and site integration | complete and deployed through PRs #93, #95, and #97 | Preserve version compatibility, static/no-tracking operation, no-JS tables, and exact provenance. |
@@ -53,10 +54,9 @@ git pull --ff-only origin main
 make verify
 ```
 
-The active milestone is issue #122 and branch `paper/threshold-discovery`.
-Finish full repository, paper, and site acceptance for the locally complete
-20-page artifact; commit and push the frozen source; pass PR CI and paper/site
-checks; merge and verify post-merge CI, Pages, the publication page, and live
-PDF. Do not create a DOI, submission, peer-review, or verified-novelty claim.
-The Program V4 Labs issue begins only after this paper deploys. For settings-
-only work, use `docs/github-setup.md` and issue #32.
+The active milestone is issue #124 and branch
+`site/program-v4-output-connected-labs`. Finish full repository and site
+acceptance for the four exact-output Labs, run browser/accessibility checks,
+merge, and verify post-merge CI, Pages, data files, no-JavaScript fallbacks,
+and live controls. The separate Program V4 final handoff begins only after the
+Labs deploy. For settings-only work, use `docs/github-setup.md` and issue #32.
