@@ -1,0 +1,4 @@
+study_id: DD-017
+ledger: ../../claims/claims.yml
+filter: "study_id == 'DD-017'"
+

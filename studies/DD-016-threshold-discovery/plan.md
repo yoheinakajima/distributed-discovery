@@ -40,7 +40,7 @@ applies only to strategic candidate payoffs.
 2. Implement both exact evaluators, theorem audit, and tests. **Complete.**
 3. Commit the frozen implementation and run one clean primary configuration. **Complete.**
 4. Independently audit claims, report, public data, and corruption rejection. **Complete.**
-5. Pass repository/site acceptance, push, merge, and verify deployment. **Active.**
+5. Pass repository/site acceptance, push, merge, and verify deployment. **Complete.**
 
 ## Progress checklist
 
@@ -51,7 +51,7 @@ applies only to strategic candidate payoffs.
 - [x] Independent verification and four corruption gates.
 - [x] Clean immutable run.
 - [x] Claims, report, result index, and public metadata.
-- [ ] CI, merge, post-merge CI, Pages, and live route.
+- [x] CI, merge, post-merge CI, Pages, and live route.
 
 ## Discoveries and surprises
 
@@ -110,4 +110,6 @@ The bounded scientific package is complete. The planner theorem required the
 finite-candidate `min(...,M)` qualification, and selected tied-mode behavior had
 to remain distinct from the unresolved equilibrium correspondence. The two
 exact state representations matched without rerunning the primary configuration.
-Remote acceptance, merge, deployment, and the DD-017 handoff remain.
+PR #102 merged as `571a8ddf`. Post-merge CI run 29885814993 and Pages run
+29885814975 passed; the live study and public JSON returned HTTP 200 with the
+run and all four claim IDs. DD-017 began on issue #103.

@@ -1,0 +1,5 @@
+study_id: DD-017
+status: active-implementation-validated
+evidence_status: two-exact-methods-pre-run-no-claim
+next_action: pass full repository and site gates, commit the frozen source, then execute one clean primary run
+updated_utc: 2026-07-22T02:40:00Z

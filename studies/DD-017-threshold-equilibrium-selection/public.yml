@@ -1,0 +1,13 @@
+study_id: DD-017
+title: Threshold Equilibrium Selection
+slug: dd-017
+phase: active-extension
+summary: Registered bounded exact audit of pure threshold equilibria, small coalition blocks, and tied-mode mixing.
+public_artifacts:
+  - path: studies/DD-017-threshold-equilibrium-selection/model.md
+    description: Frozen equilibrium and deviation concepts
+  - path: studies/DD-017-threshold-equilibrium-selection/plan.md
+    description: Living bounded execution plan
+  - path: studies/DD-017-threshold-equilibrium-selection/literature.md
+    description: Focused adjacent-literature and terminology boundary
+
