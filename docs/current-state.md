@@ -1,6 +1,6 @@
 # Current program state
 
-_Reconciled 2026-07-22 during the Program V4 output-connected Labs milestone._
+_Reconciled 2026-07-22 during the Program V4 final handoff._
 
 Programs V1, V2, and the required Program V3 queue are complete at their
 registered bounded scopes. Program V3, *The Incentive to Ignore*, completed
@@ -8,9 +8,10 @@ DD-012 through DD-014, the focused working paper, versioned attention
 extensions to DiscoveryBench and the synthetic experiment kit, and the public
 Attention/Audience/Conditional Labs.
 
-Program V4 is active. DD-016 proves the deterministic minimum-viable-team
-planner value, derives the threshold split-prize payoff identities, and records
-an independently reproduced exact threshold and occupancy census. DD-017 is
+Program V4 is complete at its registered bounded scope. DD-016 proves the
+deterministic minimum-viable-team planner value, derives the threshold
+split-prize payoff identities, and records an independently reproduced exact
+threshold and occupancy census. DD-017 is
 complete and characterizes the bounded pure-Nash occupancy correspondence,
 small-coalition stability, and one symmetric tied-mode mixture without
 identifying that selected rule with all equilibria. DD-015 is complete and
@@ -21,14 +22,16 @@ v3 are complete and deployed with all earlier versions preserved. Every
 synthetic calibration failure remains public, and no human experiment exists.
 The focused *Threshold Discovery* paper is deployed as a 20-page,
 byte-reproducible artifact with eight generated assets and all-page visual QA.
-Four output-connected Program V4 Labs are locally complete on issue #124:
+Four output-connected Program V4 Labs are deployed through PR #125:
 threshold, equilibrium selection, dynamic attention, and team mechanisms. They
-select exact immutable-run rows, preserve complete no-JavaScript tables, and
-await deployment. The final handoff follows.
+select exact immutable-run rows and preserve complete no-JavaScript tables.
+The focused paper deployed through PR #123. Issue #126 records the separate
+documentation-only final acceptance and creates no research evidence.
 
-Program V5, *The Information Sharing Frontier*, is a roadmap direction only
-until Program V4 completes. It will begin with a documentation baseline and one
-bounded Signal Geometry study; no Program V5 study or result exists yet.
+Program V5, *The Information Sharing Frontier*, remains a roadmap direction
+until this handoff merges. It begins with a documentation-only baseline and
+then one bounded Signal Geometry study; no Program V5 study or result exists
+yet.
 
 The repository is public and project-authored content is MIT-licensed. The
 canonical Shared Discovery Paradox repository remains pinned at

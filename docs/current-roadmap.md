@@ -1,4 +1,4 @@
-# Current roadmap — Program V4
+# Current roadmap — Program V4 complete; Program V5 next
 
 Programs V1, V2, and the required Program V3 sequence are complete at their
 registered scopes. Each new research milestone requires its own
@@ -9,7 +9,7 @@ verification plan, and corruption test where certificates are used.
 | --- | --- | --- |
 | DD-016 Threshold Discovery | complete and deployed through PR #102 | Preserve DD-C-0071 through DD-C-0074 and the immutable primary run; do not treat tied-mode selection as the equilibrium correspondence. |
 | DD-017 Equilibrium Selection and Coalition Stability | complete and deployed through PR #104 | Preserve DD-C-0075 through DD-C-0078 and distinct weak-Nash, pairwise, tau-player, and symmetric-mixed meanings. |
-| Program V4 later queue | active at public Labs issue #124 | Deploy the four locally complete output-connected Labs, then execute the separate final handoff. Program V4 is not complete. |
+| Program V4 | complete at its registered bounded scope; final acceptance recorded on issue #126 | Preserve all 88 claims, 47 immutable manifests, negative results, exact/simulated labels, and the no-human-data boundary. The handoff creates no research evidence. |
 | Program V3 baseline | complete through PR #80 | DD-012 through DD-015 are registered and deployed without creating research evidence. |
 | DD-012 Incentive to Ignore | complete and deployed through PR #82 | Preserve DD-C-0059 through DD-C-0061 and the immutable primary run. |
 | DD-013 Audience Design | complete and deployed through PR #84 | Preserve DD-C-0062 through DD-C-0065, the primary run, and Audience Lab. |
@@ -19,8 +19,8 @@ verification plan, and corruption test where certificates are used.
 | DiscoveryBench v3 | complete and deployed through PR #117 | Preserve DD-C-0087, the immutable v3 run, v1/v2 defaults and exact vectors, 36 compatible exact rows, 660 exclusions, capability isolation, and no composite score. |
 | Synthetic Experiment v3 | complete and deployed through PR #120 | Preserve DD-C-0088, all three immutable versions, the 644 retained calibration failures, shared-seed v2 power rows, and the absolute no-human-data boundary. |
 | Threshold Discovery paper | complete and deployed through PR #123 | Preserve the 20-page deterministic working paper, eight source-generated assets, seven immutable run mappings, claim/citation audit, all-page visual QA, and no-DOI/no-submission boundary. |
-| Program V4 output-connected Labs | locally complete on issue #124; deployment pending | Preserve exact row selection for all 8 DD-016 threshold rows, 160 DD-017 games, 64 DD-015 objective rows, and 50 DD-018 mechanism rows; every control must alter substantive output and all rows remain available without JavaScript. |
-| Program V5 — Information Sharing Frontier | authorized after the merged Program V4 handoff | Begin with a documentation-only baseline, then register only Signal Geometry and the Action-Budget Discovery Profile after its channel-law and complexity audit. Do not start V5 research while V4 is active. |
+| Program V4 output-connected Labs | complete and deployed through PR #125 | Preserve exact row selection for all 8 DD-016 threshold rows, 160 DD-017 games, 64 DD-015 objective rows, and 50 DD-018 mechanism rows; every control must alter substantive output and all rows remain available without JavaScript. |
+| Program V5 — Information Sharing Frontier | authorized after the merged Program V4 handoff | Begin with a documentation-only baseline, then register only Signal Geometry and the Action-Budget Discovery Profile after its channel-law and complexity audit. Do not start V5 research before the handoff and baseline merge. |
 | Program V3 focused paper | complete and deployed through PR #90 | The deterministic 20-page *Incentive to Ignore* paper, nine generated evidence assets, citation audit, all-page visual review, Pages, and live PDF pass. |
 | Program V3 benchmark, experiment, and site integration | complete and deployed through PRs #93, #95, and #97 | Preserve version compatibility, static/no-tracking operation, no-JS tables, and exact provenance. |
 | Program V3 final acceptance | complete through issue #98 and the final handoff | Preserve the 70-claim/40-manifest audit and do not rerun immutable primary configurations for freshness. |
@@ -54,9 +54,10 @@ git pull --ff-only origin main
 make verify
 ```
 
-The active milestone is issue #124 and branch
-`site/program-v4-output-connected-labs`. Finish full repository and site
-acceptance for the four exact-output Labs, run browser/accessibility checks,
-merge, and verify post-merge CI, Pages, data files, no-JavaScript fallbacks,
-and live controls. The separate Program V4 final handoff begins only after the
-Labs deploy. For settings-only work, use `docs/github-setup.md` and issue #32.
+The active milestone is the documentation-only Program V4 final handoff on
+issue #126 and branch `docs/program-v4-final-handoff`. Local repository,
+paper, site, certificate, corruption, benchmark, schema, browser,
+accessibility, checksum, secret, host-path, license, provenance, upstream, and
+live-route gates pass. Merge this handoff and verify post-merge CI and Pages;
+then open the separate Program V5 documentation baseline. For settings-only
+work, use `docs/github-setup.md` and issue #32.
