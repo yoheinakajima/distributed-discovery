@@ -1,6 +1,6 @@
 # Current program state
 
-_Reconciled 2026-07-22 after the DD-015 deployment closeout._
+_Reconciled 2026-07-22 after the DD-018 deployment closeout._
 
 Programs V1, V2, and the required Program V3 queue are complete at their
 registered bounded scopes. Program V3, *The Incentive to Ignore*, completed
@@ -15,8 +15,8 @@ complete and characterizes the bounded pure-Nash occupancy correspondence,
 small-coalition stability, and one symmetric tied-mode mixture without
 identifying that selected rule with all equilibria. DD-015 is complete and
 deployed at its bounded dynamic-attention and separately labeled planner-only
-threshold-two scopes. DD-018 has complete bounded evidence pending deployment.
-DiscoveryBench v3 is next only after DD-018 merges and deploys, followed by the
+threshold-two scopes. DD-018 is complete and deployed at its bounded
+common-posterior mechanism scope. DiscoveryBench v3 is next, followed by the
 synthetic extension, focused paper, Labs, and final handoff.
 
 Program V5, *The Information Sharing Frontier*, is a roadmap direction only

@@ -54,7 +54,7 @@ Progress:
   papers, site routes, or public data.
 - [x] V4.4 — Execute DD-015 at its registered baseline, then separately assess
   the bounded threshold extension.
-- [ ] V4.5 — Execute and verify DD-018 mechanisms.
+- [x] V4.5 — Execute and verify DD-018 mechanisms.
 - [ ] V4.6 — Extend DiscoveryBench and the synthetic experiment kit.
 - [ ] V4.7 — Build the focused paper and Program V4 Labs.
 - [ ] V4.8 — Run final acceptance, reconcile documentation, and hand off.
@@ -221,6 +221,11 @@ before its independent verifier and immutable primary run pass.
   DD-C-0086 as verified bounded computational results. The active gate is full
   repository/site acceptance, evidence commit, PR CI/merge, post-merge
   CI/Pages, issue closure, and live routes; the run must not be repeated.
+- 2026-07-22: DD-018 PR #114 passed CI and paper/site artifact checks and
+  squash-merged as `6a533d1`, closing issue #113. Post-merge CI
+  `29893840755` and Pages `29893840796` passed. The live study and JSON returned
+  HTTP 200 with the immutable run and DD-C-0083 through DD-C-0086. V4.5 is
+  complete; DiscoveryBench v3 is the next sequential milestone.
 
 ### Program V3 attention queue (complete, 2026-07-21)
 
