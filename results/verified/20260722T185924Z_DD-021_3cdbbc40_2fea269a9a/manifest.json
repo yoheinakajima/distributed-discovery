@@ -1,0 +1,45 @@
+{
+  "command": "make dd021-general-sharing-frontier",
+  "config_hash_sha256": "2fea269a9a31f1cdbc13e28c5f54cad6cff46d9751aedfb0f93e45ff04182dc5",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-22T18:59:24.732637Z",
+  "exit_status": 0,
+  "git_commit": "3cdbbc406927a9b30e10457606c488d0c2ac395b",
+  "git_dirty": false,
+  "input_hashes": {
+    "src/distributed_discovery/general_sharing/model.py": "bc4cebc71719be7e62a69224ccf49a7cd5cb6ea8707c60f735950c7a4953c353",
+    "src/distributed_discovery/general_sharing/study.py": "734107426fbf3e886f6686273c27f1ca90decb3037921784d2ec1893b51d230a",
+    "src/distributed_discovery/general_sharing/verification.py": "e2e0e5ce0cc851988ae698e0ffadfa6dff439e9a40aa0c4b22667d154662e1f9",
+    "studies/DD-019-signal-geometry/schemas/channel-v1.schema.json": "059ac9ebc945e573ea605ba3b9d251ef1fd353a7066bb96057d4007411075351",
+    "studies/DD-021-general-sharing-frontier/configs/registry.yml": "70b5b1901bb336db475a7adcbb72b3ccd38b8ceb3c447c9c0a9431d1811c9768",
+    "studies/DD-021-general-sharing-frontier/literature.md": "acbb9c015cd022f78d3d3714f171ad82c75f190c9fc5fe147403be8e35ebe20b",
+    "studies/DD-021-general-sharing-frontier/model.md": "fd3213a440ecea53737a38e9fec6f818e1d74089d81e4c9c87e2bd0a00d0c1be",
+    "studies/DD-021-general-sharing-frontier/proof-audit.md": "52b1ce2e739de577ec79dd3fb1b49d91b93528f804a66c07f4f707bafcc6190b",
+    "studies/DD-021-general-sharing-frontier/proof.md": "1c9063a0e74478e6c31c0eef4d0f52f234861503f8e0f140fc95ba6b2b2661ac"
+  },
+  "outputs": {
+    "outputs/channels.json": "1c851012a5b16bce143588890c464fafafaa0f8aa9a2781ef6cff0dc31da4b54",
+    "outputs/corruption-tests.json": "7ddd3baa5d40b563ff17882b2f1914a6f480f5473ce5def1269e70b8f4563097",
+    "outputs/independent-registry.json": "3521286a341595d27b95248a0720f4df672bb1b811d17edf7f286b5520912697",
+    "outputs/method-agreement-certificate.json": "62db4c0411668fe7e2e534d77ab85014c9ee11859433dc01a56724706a65649f",
+    "outputs/minimal-witnesses.json": "e897c62593b4796580e0d2e66903e381684b693d5bbdaddc09e243cba30058a0",
+    "outputs/proof-audit-summary.json": "c2f3b9619ac4961fc8aaa83868eea6612e4561003562a1aa2f2c83555c9f4cd4",
+    "outputs/registry.json": "3521286a341595d27b95248a0720f4df672bb1b811d17edf7f286b5520912697",
+    "outputs/summary.json": "2bd510abf8cdf832691270c432baee3f22598acdfea099fde92a8d966dad271a",
+    "outputs/verification.json": "de4de1ee0341d628d4f6bfb14007f3b55b7d3fd91cd34f1e8d9db5db0ac00778"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "resource_usage": {
+    "elapsed_seconds": 11.232478,
+    "peak_memory_mb": 27.266
+  },
+  "run_id": "20260722T185924Z_DD-021_3cdbbc40_2fea269a9a",
+  "schema_version": 1,
+  "started_utc": "2026-07-22T18:59:24.717819Z",
+  "study_id": "DD-021",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

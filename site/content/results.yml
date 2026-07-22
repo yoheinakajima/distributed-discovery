@@ -83,6 +83,24 @@ results:
     claim_ids: [DD-C-0094]
     lab_slug: incremental-sharing
     order: 2
+  - result_id: error-contraction-frontier
+    theme: action-portfolios
+    title: Sharing helps exactly when pooled error contracts fast enough.
+    summary: In the registered finite protocol, the next sharing step improves discovery exactly when pooled error contracts by more than the independent-rescue factor it removes.
+    scope_label: Verified finite theorem
+    study_id: DD-021
+    claim_ids: [DD-C-0097]
+    lab_slug: general-sharing-frontier
+    order: 3
+  - result_id: full-capacity-recovery
+    theme: action-portfolios
+    title: A full-capacity centralized action list recovers the private baseline.
+    summary: Posterior top-L authority always recovers the declared direct-private baseline by L=min(N,M), but 126 of 177 registered scenarios require more than one pooled action.
+    scope_label: Theorem plus exact bounded census
+    study_id: DD-021
+    claim_ids: [DD-C-0098, DD-C-0102]
+    lab_slug: general-sharing-frontier
+    order: 4
   - result_id: strict-joint-mechanisms
     theme: incentives-equilibrium
     title: A bounded mechanism class contains strict rows.
@@ -122,3 +140,13 @@ results:
     lab_slug: incremental-sharing
     data_route: data/incremental-sharing/channel-profiles.json
     order: 2
+  - result_id: bounded-mixed-sharing-null
+    theme: limits-counterexamples
+    title: No mixed sharing curve appears in the frozen general registry.
+    summary: Both exact methods find zero curves with both positive and negative adjacent increments among 177 registered scenarios; this bounded null is not an arbitrary-channel theorem.
+    scope_label: Preserved bounded negative result
+    study_id: DD-021
+    claim_ids: [DD-C-0099, DD-C-0103]
+    lab_slug: general-sharing-frontier
+    data_route: data/general-sharing-frontier/registry.json
+    order: 3

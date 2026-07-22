@@ -1,0 +1,198 @@
+{
+  "aggregation_dominated_consensus": {
+    "action_budget_profile": [
+      "5/6",
+      "1"
+    ],
+    "agents": 2,
+    "channel_id": "guaranteed-shortlist-m4-k2",
+    "family": "guaranteed-k-shortlist",
+    "full_sharing_class": "C-strict-aggregation-dominated-consensus",
+    "pooled_accuracy": [
+      "1/2",
+      "5/6"
+    ],
+    "private_discovery": "3/4",
+    "q": "1/2",
+    "recovery_budget": 1,
+    "sharing_class": "strict-aggregation-dominated",
+    "sharing_discovery": [
+      "3/4",
+      "5/6"
+    ],
+    "sharing_increments": [
+      "1/12"
+    ],
+    "targets": 4
+  },
+  "minimization_order": [
+    "targets",
+    "agents",
+    "signal-alphabet-size",
+    "denominator-complexity",
+    "channel-description-complexity"
+  ],
+  "mixed_sharing_bounded_null": true,
+  "mixed_sharing_curve": null,
+  "no_useful_one_action_aggregation": {
+    "action_budget_profile": [
+      "1/3",
+      "2/3"
+    ],
+    "agents": 2,
+    "channel_id": "point-m3-p1of3",
+    "family": "symmetric-noisy-point",
+    "full_sharing_class": "D-boundary",
+    "pooled_accuracy": [
+      "1/3",
+      "1/3"
+    ],
+    "private_discovery": "5/9",
+    "q": "1/3",
+    "recovery_budget": 2,
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "5/9",
+      "1/3"
+    ],
+    "sharing_increments": [
+      "-2/9"
+    ],
+    "targets": 3
+  },
+  "same_accuracy_different_recovery": {
+    "left": {
+      "action_budget_profile": [
+        "1/2",
+        "13/16"
+      ],
+      "agents": 2,
+      "channel_id": "point-m3-p1of2",
+      "family": "symmetric-noisy-point",
+      "full_sharing_class": "D-boundary",
+      "pooled_accuracy": [
+        "1/2",
+        "1/2"
+      ],
+      "private_discovery": "3/4",
+      "q": "1/2",
+      "recovery_budget": 2,
+      "sharing_class": "strict-compression-dominated",
+      "sharing_discovery": [
+        "3/4",
+        "1/2"
+      ],
+      "sharing_increments": [
+        "-1/4"
+      ],
+      "targets": 3
+    },
+    "right": {
+      "action_budget_profile": [
+        "3/4",
+        "1"
+      ],
+      "agents": 2,
+      "channel_id": "guaranteed-shortlist-m3-k2",
+      "family": "guaranteed-k-shortlist",
+      "full_sharing_class": "D-boundary",
+      "pooled_accuracy": [
+        "1/2",
+        "3/4"
+      ],
+      "private_discovery": "3/4",
+      "q": "1/2",
+      "recovery_budget": 1,
+      "sharing_class": "all-neutral",
+      "sharing_discovery": [
+        "3/4",
+        "3/4"
+      ],
+      "sharing_increments": [
+        "0"
+      ],
+      "targets": 3
+    }
+  },
+  "same_baseline_opposite_sign": {
+    "left": {
+      "action_budget_profile": [
+        "1/2",
+        "7/9"
+      ],
+      "agents": 2,
+      "channel_id": "point-m4-p1of2",
+      "family": "symmetric-noisy-point",
+      "full_sharing_class": "D-boundary",
+      "pooled_accuracy": [
+        "1/2",
+        "1/2"
+      ],
+      "private_discovery": "3/4",
+      "q": "1/2",
+      "recovery_budget": 2,
+      "sharing_class": "strict-compression-dominated",
+      "sharing_discovery": [
+        "3/4",
+        "1/2"
+      ],
+      "sharing_increments": [
+        "-1/4"
+      ],
+      "targets": 4
+    },
+    "right": {
+      "action_budget_profile": [
+        "5/6",
+        "1"
+      ],
+      "agents": 2,
+      "channel_id": "guaranteed-shortlist-m4-k2",
+      "family": "guaranteed-k-shortlist",
+      "full_sharing_class": "C-strict-aggregation-dominated-consensus",
+      "pooled_accuracy": [
+        "1/2",
+        "5/6"
+      ],
+      "private_discovery": "3/4",
+      "q": "1/2",
+      "recovery_budget": 1,
+      "sharing_class": "strict-aggregation-dominated",
+      "sharing_discovery": [
+        "3/4",
+        "5/6"
+      ],
+      "sharing_increments": [
+        "1/12"
+      ],
+      "targets": 4
+    },
+    "step": 1
+  },
+  "shared_discovery_paradox": {
+    "action_budget_profile": [
+      "27/64",
+      "3/4"
+    ],
+    "agents": 2,
+    "channel_id": "shortlist-m3-k2-a3of4",
+    "family": "noisy-k-shortlist",
+    "full_sharing_class": "B-shared-discovery-paradox",
+    "pooled_accuracy": [
+      "3/8",
+      "27/64"
+    ],
+    "private_discovery": "39/64",
+    "q": "3/8",
+    "recovery_budget": 2,
+    "sharing_class": "strict-compression-dominated",
+    "sharing_discovery": [
+      "39/64",
+      "27/64"
+    ],
+    "sharing_increments": [
+      "-3/16"
+    ],
+    "targets": 3
+  }
+}

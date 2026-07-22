@@ -639,3 +639,145 @@ document.querySelectorAll("[data-incremental-lab]").forEach((lab) => {
     control.addEventListener("change", render));
   render();
 });
+
+document.querySelectorAll("[data-frontier-lab]").forEach((lab) => {
+  const family = lab.querySelector("#frontier-family");
+  const targets = lab.querySelector("#frontier-targets");
+  const agents = lab.querySelector("#frontier-agents");
+  const parameter = lab.querySelector("#frontier-parameter");
+  const step = lab.querySelector("#frontier-step");
+  const budget = lab.querySelector("#frontier-budget");
+  const status = lab.querySelector("#frontier-status");
+  const reset = lab.querySelector("[data-frontier-reset]");
+  const rows = Array.from(document.querySelectorAll("tr[data-frontier-row]"));
+  if (!family || !targets || !agents || !parameter || !step || !budget || !status || !rows.length) return;
+
+  const defaults = {
+    family: "symmetric-noisy-point", targets: "4", agents: "3",
+    channel: "point-m4-p1of2", step: "1", budget: "1",
+  };
+  const fraction = (value) => {
+    const parts = String(value).split("/").map(Number);
+    return parts.length === 2 ? parts[0] / parts[1] : parts[0];
+  };
+  const percentage = (value) => {
+    if (!value || value === "zero-error") return "not applicable";
+    const rendered = (fraction(value) * 100).toFixed(1).replace(/\.0$/, "");
+    return `${rendered}%`;
+  };
+  const profile = (row, key) => (row.getAttribute(`data-${key}`) || "").split("|").filter(Boolean);
+  const constrainParameters = () => {
+    const available = Array.from(parameter.options).filter((option) =>
+      option.dataset.family === family.value && option.dataset.targets === targets.value);
+    Array.from(parameter.options).forEach((option) => {
+      const enabled = available.includes(option);
+      option.hidden = !enabled;
+      option.disabled = !enabled;
+    });
+    if (!available.includes(parameter.options[parameter.selectedIndex]) && available.length) {
+      parameter.value = available[0].value;
+    }
+  };
+  const constrainIndexed = (control, maximum) => {
+    const available = Array.from(control.options).filter((option) => Number(option.value) <= maximum);
+    Array.from(control.options).forEach((option) => {
+      const enabled = available.includes(option);
+      option.hidden = !enabled;
+      option.disabled = !enabled;
+    });
+    if (!available.includes(control.options[control.selectedIndex]) && available.length) {
+      control.value = available[0].value;
+    }
+  };
+  const setMetric = (key, exact) => {
+    const metric = lab.querySelector(`[data-frontier-output="${key}"]`);
+    if (!metric) return;
+    const primary = metric.querySelector("strong");
+    const secondary = metric.querySelector("code");
+    if (primary) primary.textContent = percentage(exact);
+    if (secondary) secondary.textContent = exact || "not applicable";
+    metric.setAttribute("aria-label", `${metric.querySelector("span")?.textContent}: ${percentage(exact)}; exact ${exact || "not applicable"}.`);
+  };
+  const drawProfile = (kind, values, selectedIndex, recoveryIndex = null) => {
+    const chart = lab.querySelector(`[data-frontier-chart="${kind}"]`);
+    if (!chart) return;
+    const points = Array.from(chart.querySelectorAll("[data-frontier-point]"));
+    points.forEach((point, index) => {
+      const exact = values[index];
+      point.hidden = !exact;
+      point.classList.toggle("selected", index + 1 === selectedIndex);
+      point.classList.toggle("next", recoveryIndex !== null && index + 1 === recoveryIndex);
+      if (!exact) return;
+      const value = point.querySelector("[data-frontier-value]");
+      const bar = point.querySelector("[data-frontier-bar]");
+      if (value) value.textContent = `${percentage(exact)} · ${exact}`;
+      if (bar) bar.style.setProperty("--profile-value", `${Math.max(0, Math.min(100, fraction(exact) * 100))}%`);
+    });
+    chart.setAttribute("aria-label", `${kind} exact profile: ${values.join(", ")}; selected index ${selectedIndex}.`);
+  };
+  const render = () => {
+    constrainParameters();
+    constrainIndexed(step, Number(agents.value) - 1);
+    constrainIndexed(budget, Math.min(Number(targets.value), Number(agents.value)));
+    const selected = rows.find((row) => row.dataset.channel === parameter.value && row.dataset.agents === agents.value);
+    rows.forEach((row) => { row.hidden = row !== selected; });
+    if (!selected) {
+      status.textContent = "No exact registered scenario matches this selection.";
+      return;
+    }
+    const pooled = profile(selected, "pooled-profile");
+    const discovery = profile(selected, "discovery-profile");
+    const increments = profile(selected, "increment-profile");
+    const ratios = profile(selected, "ratio-profile");
+    const budgets = profile(selected, "budget-profile");
+    const stepIndex = Number(step.value) - 1;
+    const budgetIndex = Number(budget.value) - 1;
+    const threshold = selected.dataset.threshold;
+    setMetric("q", selected.dataset.q);
+    setMetric("private", selected.dataset.private);
+    setMetric("pooled", pooled[stepIndex]);
+    setMetric("discovery", discovery[stepIndex]);
+    setMetric("increment", increments[stepIndex]);
+    setMetric("ratio", ratios[stepIndex]);
+    setMetric("threshold", threshold);
+    setMetric("budget-value", budgets[budgetIndex]);
+    ["recovery-budget", "sharing-class", "full-class"].forEach((key) => {
+      const output = lab.querySelector(`[data-frontier-text="${key}"]`);
+      if (output) output.textContent = selected.getAttribute(`data-${key}`) || "not applicable";
+    });
+    drawProfile("discovery", discovery, Number(step.value));
+    drawProfile("pooled", pooled, Number(step.value));
+    drawProfile("budget", budgets, Number(budget.value), Number(selected.dataset.recoveryBudget));
+    const thresholdText = lab.querySelector("[data-frontier-threshold]");
+    if (thresholdText) thresholdText.textContent = `At s=${step.value}, ρ=${ratios[stepIndex]} versus 1−q=${threshold}; increment ${increments[stepIndex]}.`;
+    const recoveryText = lab.querySelector("[data-frontier-recovery]");
+    if (recoveryText) recoveryText.textContent = `Selected L=${budget.value}; the first budget recovering P_N is L*=${selected.dataset.recoveryBudget}.`;
+    const label = parameter.options[parameter.selectedIndex].textContent;
+    status.textContent = `Showing ${label}, M=${targets.value}, N=${agents.value}, s=${step.value}→${Number(step.value) + 1}, L=${budget.value}: ${selected.dataset.sharingClass}; ${selected.dataset.fullClass}.`;
+    const url = new URL(window.location.href);
+    [["family", family], ["m", targets], ["n", agents], ["channel", parameter], ["s", step], ["l", budget]].forEach(([key, control]) => url.searchParams.set(key, control.value));
+    window.history.replaceState({}, "", url);
+  };
+  const params = new URLSearchParams(window.location.search);
+  family.value = defaults.family;
+  targets.value = defaults.targets;
+  agents.value = defaults.agents;
+  parameter.value = defaults.channel;
+  step.value = defaults.step;
+  budget.value = defaults.budget;
+  [["family", family], ["m", targets], ["n", agents], ["channel", parameter], ["s", step], ["l", budget]].forEach(([key, control]) => {
+    const requested = params.get(key);
+    if (requested && Array.from(control.options).some((option) => option.value === requested)) control.value = requested;
+  });
+  [family, targets, agents, parameter, step, budget].forEach((control) => control.addEventListener("change", render));
+  if (reset) reset.addEventListener("click", () => {
+    family.value = defaults.family;
+    targets.value = defaults.targets;
+    agents.value = defaults.agents;
+    parameter.value = defaults.channel;
+    step.value = defaults.step;
+    budget.value = defaults.budget;
+    render();
+  });
+  render();
+});

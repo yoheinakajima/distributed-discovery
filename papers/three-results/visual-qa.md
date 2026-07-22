@@ -2,7 +2,7 @@
 
 - Review date: 2026-07-22 (America/Los_Angeles)
 - Artifact: `Three_Results_in_Distributed_Discovery.pdf`
-- PDF SHA-256: `54e79e0e55cf38cce1b9436fe6a78b84dfec72684aeea0e05f94ce45e1cc3b6c`
+- PDF SHA-256: `1dcd61a127c1739fbd7bfc2abd5a9dc368357ed22f3a3fb05aff6aa010636680`
 - Format: 14 letter-size pages
 - Renderer: Poppler `pdftoppm`, PNG at 120 dpi
 - Scope: every page reviewed at rendered-page scale
@@ -107,6 +107,14 @@ pagination remain unchanged. Poppler renders of all 14 pages were inspected at
 120 dpi; margins, tables, figures, equations, provenance notes, headings, page
 numbers, and references remain legible and free of clipping, overlap, broken
 glyphs, or unintended blank pages.
+
+The DD-021 provenance pass rebuilt the paper after DD-C-0097 through
+DD-C-0103 changed the full-ledger checksum embedded in the evidence-status
+table. The six owned claim rows, mathematical content, and 14-page pagination
+remain unchanged. Poppler renders of all 14 pages were inspected at 110 dpi;
+margins, tables, figures, equations, provenance notes, headings, page numbers,
+and references remain legible and free of clipping, overlap, broken glyphs, or
+unintended blank pages.
 
 The final visual review matches the checksum above. Any PDF checksum change
 invalidates this record and requires a new all-page review.

@@ -1,0 +1,16 @@
+{
+  "channel_normalization_symmetry_and_direct_rule": true,
+  "channel_schema": true,
+  "histogram_target_profile_states": 117433,
+  "independent_internal_checks": true,
+  "labeled_target_profile_states": 936063,
+  "largest_histogram_target_profile_states": 5000,
+  "largest_labeled_target_profile_states": 55550,
+  "method_agreement": true,
+  "passed": true,
+  "primary_internal_checks": true,
+  "registered_channel_count": true,
+  "registered_scenario_count": true,
+  "registered_state_counts": true,
+  "witness_minimality_agreement": true
+}

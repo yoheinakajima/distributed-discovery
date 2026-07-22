@@ -1,0 +1,10 @@
+{
+  "channel_probability_corruption_rejected": true,
+  "pooled_accuracy_corruption_rejected": true,
+  "private_discovery_corruption_rejected": true,
+  "recovery_budget_corruption_rejected": true,
+  "regime_label_corruption_rejected": true,
+  "source_checksum_corruption_rejected": true,
+  "tie_weight_corruption_rejected": true,
+  "top_l_profile_corruption_rejected": true
+}

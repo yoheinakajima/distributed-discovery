@@ -52,6 +52,7 @@ DD016_RUN = "20260722T021526Z_DD-016_00271ff8_123b2809e3"
 DD017_RUN = "20260722T024032Z_DD-017_033452f6_3d2c74fdfb"
 DD018_RUN = "20260722T051847Z_DD-018_a193f602_3b3ddac173"
 DD020_RUN = "20260722T142551Z_DD-020_3854fff6_37c11a850a"
+DD021_RUN = "20260722T185924Z_DD-021_3cdbbc40_2fea269a9a"
 
 
 class SiteParser(HTMLParser):
@@ -2154,6 +2155,197 @@ def _incremental_sharing_pages(root: Path, output: Path) -> None:
     )
 
 
+def _general_sharing_pages(root: Path, output: Path) -> None:
+    """Render the DD-021 Lab from the sole immutable exact registry."""
+
+    run_outputs = root / "results/verified" / DD021_RUN / "outputs"
+    registry_source = run_outputs / "registry.json"
+    witnesses_source = run_outputs / "minimal-witnesses.json"
+    channels_source = run_outputs / "channels.json"
+    rows = json.loads(registry_source.read_text(encoding="utf-8"))
+    witnesses = json.loads(witnesses_source.read_text(encoding="utf-8"))
+    if not isinstance(rows, list) or len(rows) != 177:
+        raise RuntimeError("DD-021 Lab requires all 177 exact scenarios")
+    if witnesses.get("mixed_sharing_bounded_null") is not True:
+        raise RuntimeError("DD-021 Lab requires the audited bounded-null record")
+
+    claims = [f"DD-C-{identifier:04d}" for identifier in range(97, 104)]
+    lab_data = {
+        "schema_version": 1,
+        "study_id": "DD-021",
+        "claim_ids": claims,
+        "run_id": DD021_RUN,
+        "rows": rows,
+        "witnesses": witnesses,
+        "source_sha256": {
+            "registry": _sha256(registry_source),
+            "minimal_witnesses": _sha256(witnesses_source),
+            "channels": _sha256(channels_source),
+        },
+        "boundary": "selectors expose immutable exact rows; top-L values require centralized pooled action authority and are not decentralized implementations",
+    }
+    _write(
+        output,
+        "data/labs/general-sharing-frontier.json",
+        json.dumps(lab_data, indent=2, sort_keys=True) + "\n",
+    )
+    _write(output, "data/general-sharing-frontier/registry.json", registry_source.read_text())
+    _write(
+        output, "data/general-sharing-frontier/minimal-witnesses.json", witnesses_source.read_text()
+    )
+    _write(output, "data/general-sharing-frontier/channels.json", channels_source.read_text())
+
+    families = sorted({str(row["family"]) for row in rows})
+    family_names = {
+        "symmetric-noisy-point": "Symmetric noisy point",
+        "noisy-k-shortlist": "Noisy K-shortlist",
+        "guaranteed-k-shortlist": "Guaranteed K-shortlist",
+        "explicit-k-exclusion": "Explicit K-exclusion",
+        "confidence-augmented-point": "Confidence-augmented point",
+    }
+    channels: dict[str, dict[str, Any]] = {}
+    for row in rows:
+        channels.setdefault(str(row["channel_id"]), row)
+
+    def parameter_label(row: dict[str, Any]) -> str:
+        parts = []
+        if row["parameter_k"] is not None:
+            parts.append(f"K={row['parameter_k']}")
+        parameters = ", ".join(
+            f"{str(key).replace('_', ' ')}={value}" for key, value in row["parameters"].items()
+        )
+        if parameters:
+            parts.append(parameters)
+        return "; ".join(parts) or str(row["channel_id"])
+
+    family_options = "".join(
+        f'<option value="{html.escape(family, quote=True)}"{" selected" if family == "symmetric-noisy-point" else ""}>{html.escape(family_names[family])}</option>'
+        for family in families
+    )
+    target_options = "".join(
+        f'<option value="{target}"{" selected" if target == 4 else ""}>M={target}</option>'
+        for target in (3, 4, 5)
+    )
+    agent_options = "".join(
+        f'<option value="{agents}"{" selected" if agents == 3 else ""}>N={agents}</option>'
+        for agents in (2, 3, 4)
+    )
+    parameter_options = "".join(
+        '<option value="{channel}" data-family="{family}" data-targets="{targets}"{selected}>{label}</option>'.format(
+            channel=html.escape(channel_id, quote=True),
+            family=html.escape(str(row["family"]), quote=True),
+            targets=row["targets"],
+            selected=" selected" if channel_id == "point-m4-p1of2" else "",
+            label=html.escape(parameter_label(row)),
+        )
+        for channel_id, row in sorted(
+            channels.items(),
+            key=lambda item: (
+                families.index(str(item[1]["family"])),
+                int(item[1]["targets"]),
+                item[0],
+            ),
+        )
+    )
+    step_options = "".join(
+        f'<option value="{step}">s={step}→{step + 1}</option>' for step in (1, 2, 3)
+    )
+    budget_options = "".join(
+        f'<option value="{budget}">L={budget}</option>' for budget in (1, 2, 3, 4)
+    )
+
+    def attributes(row: dict[str, Any]) -> str:
+        values = {
+            "frontier-row": "",
+            "family": row["family"],
+            "targets": row["targets"],
+            "agents": row["agents"],
+            "channel": row["channel_id"],
+            "q": row["q"],
+            "threshold": row["rescue_threshold"],
+            "private": row["private_discovery"],
+            "pooled-profile": "|".join(row["pooled_accuracy"]),
+            "error-profile": "|".join(row["pooled_error"]),
+            "discovery-profile": "|".join(row["sharing_discovery"]),
+            "increment-profile": "|".join(row["sharing_increments"]),
+            "ratio-profile": "|".join(
+                "zero-error" if value is None else value for value in row["error_contraction_ratio"]
+            ),
+            "budget-profile": "|".join(row["action_budget_profile"]),
+            "recovery-budget": row["recovery_budget"],
+            "sharing-class": row["sharing_class"],
+            "full-class": row["full_sharing_class"],
+        }
+        return " ".join(
+            f'data-{key}="{html.escape(str(value), quote=True)}"' for key, value in values.items()
+        )
+
+    table_rows = "".join(
+        '<tr {attrs}><th scope="row">{channel}</th><td>{family}</td><td>{targets}</td><td>{agents}</td><td>{q}</td><td>{private}</td><td>{consensus}</td><td>{sharing}</td><td>{full}</td><td>{budget}</td></tr>'.format(
+            attrs=attributes(row),
+            channel=html.escape(str(row["channel_id"])),
+            family=html.escape(family_names[str(row["family"])]),
+            targets=row["targets"],
+            agents=row["agents"],
+            q=html.escape(str(row["q"])),
+            private=html.escape(str(row["private_discovery"])),
+            consensus=html.escape(str(row["pooled_accuracy"][-1])),
+            sharing=html.escape(str(row["sharing_class"])),
+            full=html.escape(str(row["full_sharing_class"])),
+            budget=row["recovery_budget"],
+        )
+        for row in rows
+    )
+    default = next(
+        row for row in rows if row["channel_id"] == "point-m4-p1of2" and row["agents"] == 3
+    )
+
+    def percent(value: str) -> str:
+        rendered = f"{float(Fraction(value)) * 100:.1f}".rstrip("0").rstrip(".")
+        return f"{rendered}%"
+
+    def metric(label: str, key: str, value: str) -> str:
+        return f'<article class="metric-card" data-frontier-output="{key}"><span>{label}</span><strong>{percent(value)}</strong><code class="exact-value">{html.escape(value)}</code></article>'
+
+    discovery_points = "".join(
+        f'<div class="profile-point" data-frontier-point="discovery" data-index="{index}"><strong>s={index}</strong><div class="profile-bar" data-frontier-bar></div><span class="profile-value" data-frontier-value>—</span></div>'
+        for index in range(1, 5)
+    )
+    pooled_points = "".join(
+        f'<div class="profile-point" data-frontier-point="pooled" data-index="{index}"><strong>s={index}</strong><div class="profile-bar" data-frontier-bar></div><span class="profile-value" data-frontier-value>—</span></div>'
+        for index in range(1, 5)
+    )
+    budget_points = "".join(
+        f'<div class="profile-point" data-frontier-point="budget" data-index="{index}"><strong>L={index}</strong><div class="profile-bar" data-frontier-bar></div><span class="profile-value" data-frontier-value>—</span></div>'
+        for index in range(1, 5)
+    )
+    metrics = "".join(
+        [
+            metric("Direct accuracy q", "q", str(default["q"])),
+            metric("Private discovery P_N", "private", str(default["private_discovery"])),
+            metric("Pooled accuracy C_s", "pooled", str(default["pooled_accuracy"][0])),
+            metric("Discovery G_s", "discovery", str(default["sharing_discovery"][0])),
+            metric("Adjacent increment", "increment", str(default["sharing_increments"][0])),
+            metric("Error contraction ρ_s", "ratio", str(default["error_contraction_ratio"][0])),
+            metric("Rescue threshold 1−q", "threshold", str(1 - Fraction(default["q"]))),
+            metric("Pooled value V_L", "budget-value", str(default["action_budget_profile"][0])),
+        ]
+    )
+    class_metrics = f'<article class="metric-card"><span>Recovery budget L*</span><strong data-frontier-text="recovery-budget">{default["recovery_budget"]}</strong></article><article class="metric-card"><span>Sharing-curve class</span><strong data-frontier-text="sharing-class">{html.escape(str(default["sharing_class"]))}</strong></article><article class="metric-card"><span>Full-sharing class</span><strong data-frontier-text="full-class">{html.escape(str(default["full_sharing_class"]))}</strong></article>'
+    claim_links = " · ".join(f'<a href="../claims.html#{claim}">{claim}</a>' for claim in claims)
+    body = f"""<header class="page-hero"><p class="eyebrow">Interactive exact-output model · DD-021</p><h1>General Sharing Frontier Lab</h1><p class="lede">Select one immutable channel scenario, a sharing step, and a centralized pooled action budget. Percentages lead; exact fractions remain attached to every probability.</p></header><section class="content-section prose"><h2>The decision boundary</h2><p class="identity">share one more signal iff ρ<sub>s</sub> = e<sub>s+1</sub>/e<sub>s</sub> &lt; 1−q</p><p>Below the threshold, aggregation outruns the independent rescue action that sharing removes. Top-L recovery assumes centralized authority to choose distinct posterior-leading targets.</p></section><section class="lab" data-frontier-lab><fieldset class="lab-controls"><legend>Choose an exact registered scenario</legend><div><label for="frontier-family">Channel family</label><select id="frontier-family">{family_options}</select></div><div><label for="frontier-targets">Targets</label><select id="frontier-targets">{target_options}</select></div><div><label for="frontier-agents">Agents</label><select id="frontier-agents">{agent_options}</select></div><div><label for="frontier-parameter">Registered parameter</label><select id="frontier-parameter">{parameter_options}</select></div><div><label for="frontier-step">Sharing step</label><select id="frontier-step">{step_options}</select></div><div><label for="frontier-budget">Pooled action budget</label><select id="frontier-budget">{budget_options}</select></div></fieldset><div class="lab-actions"><button type="button" class="filter-button" data-frontier-reset>Reset</button><a href="../data/labs/general-sharing-frontier.json">Download Lab data</a></div><p id="frontier-status" class="callout" aria-live="polite">Showing the exact M=4, N=3 half-accurate point scenario.</p><div class="metric-grid compact">{metrics}{class_metrics}</div><section class="profile-panel"><h2>Discovery G<sub>s</sub></h2><p class="visual-summary">The selected step is marked; every bar is an immutable exact value.</p><div class="profile-plot" role="img" aria-label="Exact discovery profile" data-frontier-chart="discovery">{discovery_points}</div></section><section class="profile-panel"><h2>Pooled accuracy C<sub>s</sub> and rescue threshold</h2><p class="visual-summary" data-frontier-threshold>The threshold is 1−q.</p><div class="profile-plot" role="img" aria-label="Exact pooled accuracy profile with error-contraction threshold" data-frontier-chart="pooled">{pooled_points}</div></section><section class="profile-panel"><h2>Centralized action-budget recovery V<sub>L</sub></h2><p class="visual-summary" data-frontier-recovery>Selected budget and recovery threshold are marked.</p><div class="profile-plot" role="img" aria-label="Exact centralized pooled action-budget profile" data-frontier-chart="budget">{budget_points}</div></section></section><noscript><p class="callout">JavaScript is off. All 177 exact scenarios remain visible below, with direct links to the immutable data.</p></noscript><details class="technical-details complete-data"><summary>Complete exact table — 177 scenarios</summary><table class="matrix"><caption>Complete DD-021 General Sharing Frontier registry</caption><thead><tr><th>Channel</th><th>Family</th><th>M</th><th>N</th><th>q</th><th>P<sub>N</sub></th><th>C<sub>N</sub></th><th>Sharing class</th><th>Full-sharing class</th><th>L*</th></tr></thead><tbody>{table_rows}</tbody></table></details><section class="content-section prose"><h2>Evidence boundary and provenance</h2><p>The Lab selects rows from the sole exact run; it does not simulate, interpolate, or change claim status. The absent mixed curve is a bounded null over the declared registry.</p><p>{claim_links} · <a href="{REPOSITORY_URL}/blob/main/results/verified/{DD021_RUN}/manifest.json">{DD021_RUN}</a></p><p><a href="../data/general-sharing-frontier/registry.json">Download the exact registry</a> · <a href="../data/general-sharing-frontier/minimal-witnesses.json">Download minimal witnesses</a> · <a href="../data/general-sharing-frontier/channels.json">Download channel laws</a></p></section>"""
+    _write(
+        output,
+        "labs/general-sharing-frontier.html",
+        _page(
+            "General Sharing Frontier Lab",
+            "Explore exact error contraction, sharing regimes, and action-budget recovery in DD-021.",
+            body,
+            "labs/general-sharing-frontier.html",
+        ),
+    )
+
+
 def _build_relationship_registry(
     root: Path,
     output: Path,
@@ -2564,7 +2756,7 @@ def _render(
             "index.html",
         ),
     )
-    program_body = f"""<header class="page-hero"><p class="eyebrow">How the work is organized</p><h1>The Distributed Discovery program</h1><p class="lede">Distributed Discovery is the research program on collective search under dispersed information. A discovery architecture is the formal object: the rules that turn evidence into a portfolio of search actions.</p></header><section class="content-section prose"><h2>One program, several output types</h2><ol><li><strong>The research program</strong> holds the complete agenda.</li><li><strong>Theorem families</strong> organize durable mathematical questions across studies.</li><li><strong>Registered studies</strong> are the smallest evidence-producing units and own models, proofs or certificates, runs, and claims.</li><li><strong>Papers</strong> are theorem-family arguments admitted by a separate editorial gate; a study does not automatically become a paper.</li><li><strong>The living synthesis</strong>, <em>The Architecture of Distributed Discovery</em>, maps the whole program without silently re-owning theorem novelty.</li><li><strong>Infrastructure</strong> includes DiscoveryBench, Labs, schemas, verifiers, the claim ledger, and audit tooling.</li></ol></section><section class="content-section prose"><h2>Current program</h2><p>Program V5, <em>The Information Sharing Frontier</em>, asks when sharing improves the group’s map faster than it collapses the search portfolio. DD-019 Signal Geometry and DD-020 Incremental Sharing and Independent Rescue are complete at their registered scopes. DD-020 proves the finite point-channel monotonicity result and preserves an arbitrary-channel counterexample under claims DD-C-0092 through DD-C-0096.</p><p>The editorial gate assigns DD-020’s primary ownership to a future Information Sharing Frontier theorem-family paper. <em>The Incentive to Ignore</em> may cite it as a companion result and may now be judged independently under the paper-admission rule. No manuscript expansion or submission action is authorized.</p><p><a href="research/dd-019.html">Open DD-019</a> · <a href="research/dd-020.html">Open DD-020</a> · <a href="research.html">Browse all {len(studies)} studies</a></p></section><section class="content-section prose"><h2>How evidence status works</h2><p>Definitions, analytic theorems, exact bounded computations, independent reproductions, estimates, negative results, conjectures, and editorial recommendations remain distinct. Scientific statements link to stable claim IDs; generated numerical claims also link to immutable runs.</p><p><a href="claims.html">Inspect {len(claims)} scoped claims</a> · <a href="evidence.html">Inspect {len(runs)} passing runs</a></p></section><section class="content-section prose"><h2>How the work is published</h2><p>The canonical entry paper introduces the atomic paradox. Theorem-family papers own durable mathematical questions. Working notes support intermediate or synthetic arguments. The living synthesis preserves the complete intellectual account. Reproducible studies, Labs, and DiscoveryBench expose evidence and interfaces.</p><p>No journal submission status is represented here. A validated PDF, exact run, or polished site does not by itself satisfy the paper-admission rule.</p><p><a href="publications.html">Browse working papers</a> · <a href="{REPOSITORY_URL}/blob/main/docs/research-governance.md">Read the governance source</a></p></section>"""
+    program_body = f"""<header class="page-hero"><p class="eyebrow">How the work is organized</p><h1>The Distributed Discovery program</h1><p class="lede">Distributed Discovery is the research program on collective search under dispersed information. A discovery architecture is the formal object: the rules that turn evidence into a portfolio of search actions.</p></header><section class="content-section prose"><h2>One program, several output types</h2><ol><li><strong>The research program</strong> holds the complete agenda.</li><li><strong>Theorem families</strong> organize durable mathematical questions across studies.</li><li><strong>Registered studies</strong> are the smallest evidence-producing units and own models, proofs or certificates, runs, and claims.</li><li><strong>Papers</strong> are theorem-family arguments admitted by a separate editorial gate; a study does not automatically become a paper.</li><li><strong>The living synthesis</strong>, <em>The Architecture of Distributed Discovery</em>, maps the whole program without silently re-owning theorem novelty.</li><li><strong>Infrastructure</strong> includes DiscoveryBench, Labs, schemas, verifiers, the claim ledger, and audit tooling.</li></ol></section><section class="content-section prose"><h2>Current program</h2><p>Program V5, <em>The Information Sharing Frontier</em>, asks when sharing improves the group’s map faster than it collapses the search portfolio. DD-019 Signal Geometry, DD-020 Incremental Sharing and Independent Rescue, and DD-021 General Sharing Frontier are complete at their registered scopes. DD-020 preserves its point theorem and channel counterexample under claims DD-C-0092 through DD-C-0096. DD-021 proves the finite error-contraction criterion and centralized full-capacity recovery theorem, then independently reproduces the complete 177-scenario registry under claims DD-C-0097 through DD-C-0103.</p><p>The earlier gate assigns DD-020’s primary ownership to a future Information Sharing Frontier theorem-family paper. DD-021 does not automatically create that paper: a separate post-merge editorial gate will decide admission from the combined DD-019–DD-021 package. No manuscript expansion or submission action is authorized in this research branch.</p><p><a href="research/dd-019.html">Open DD-019</a> · <a href="research/dd-020.html">Open DD-020</a> · <a href="research/dd-021.html">Open DD-021</a> · <a href="research.html">Browse all {len(studies)} studies</a></p></section><section class="content-section prose"><h2>How evidence status works</h2><p>Definitions, analytic theorems, exact bounded computations, independent reproductions, estimates, negative results, conjectures, and editorial recommendations remain distinct. Scientific statements link to stable claim IDs; generated numerical claims also link to immutable runs.</p><p><a href="claims.html">Inspect {len(claims)} scoped claims</a> · <a href="evidence.html">Inspect {len(runs)} passing runs</a></p></section><section class="content-section prose"><h2>How the work is published</h2><p>The canonical entry paper introduces the atomic paradox. Theorem-family papers own durable mathematical questions. Working notes support intermediate or synthetic arguments. The living synthesis preserves the complete intellectual account. Reproducible studies, Labs, and DiscoveryBench expose evidence and interfaces.</p><p>No journal submission status is represented here. A validated PDF, exact run, or polished site does not by itself satisfy the paper-admission rule.</p><p><a href="publications.html">Browse working papers</a> · <a href="{REPOSITORY_URL}/blob/main/docs/research-governance.md">Read the governance source</a></p></section>"""
     _write(
         output,
         "program.html",
@@ -2858,6 +3050,12 @@ def _render(
             "Pooled accuracy, discovery, aggregation gain, lost rescue, net increment, and profile",
             "DD-020",
         ),
+        "general-sharing-frontier": (
+            "Information and sources",
+            "Channel family, targets, agents, parameter, sharing step, and action budget",
+            "Error contraction, discovery, sharing regime, consensus class, and recovery budget",
+            "DD-021",
+        ),
         "audience-design": (
             "Information and sources",
             "Team, accuracy, and audience",
@@ -2915,6 +3113,7 @@ def _render(
         "attention": "Interactive models",
         "dynamic-attention": "Interactive models",
         "incremental-sharing": "Interactive models",
+        "general-sharing-frontier": "Interactive models",
         "mechanisms": "Data explorers",
         "team-mechanisms": "Interactive models",
         "coverage": "Guided exhibits",
@@ -2958,6 +3157,11 @@ def _render(
             "Incremental sharing",
             "DD-C-0094",
             "Separate marginal aggregation gain from lost independent rescue across exact point and channel profiles.",
+        ),
+        "general-sharing-frontier": (
+            "General sharing frontier",
+            "DD-C-0097",
+            "Compare exact error contraction, sharing regimes, and centralized action-budget recovery across all 177 registered scenarios.",
         ),
         "team-mechanisms": (
             "Team mechanisms",
@@ -3025,6 +3229,7 @@ def _render(
         )
     _program_v4_lab_pages(root, output)
     _incremental_sharing_pages(root, output)
+    _general_sharing_pages(root, output)
     _benchmark_pages(root, output)
     _experiment_pages(root, output)
     _attention_pages(root, output)
@@ -3117,6 +3322,7 @@ def validate_site(output: Path, routes: list[dict[str, str]]) -> dict[str, Any]:
                     "data-audience-lab",
                     "data-conditional-lab",
                     "data-incremental-lab",
+                    "data-frontier-lab",
                 )
             )
             if not supported:
@@ -3221,12 +3427,13 @@ def build(root: Path, output: Path) -> dict[str, Any]:
         "labs.json": {
             "schema_version": 1,
             "source": "precomputed bounded fixture outputs",
-            "lab_count": 16,
+            "lab_count": 17,
             "threshold_data": "data/labs/threshold.json",
             "equilibrium_selection_data": "data/labs/equilibrium-selection.json",
             "dynamic_attention_data": "data/labs/dynamic-attention.json",
             "team_mechanisms_data": "data/labs/team-mechanisms.json",
             "incremental_sharing_data": "data/labs/incremental-sharing.json",
+            "general_sharing_frontier_data": "data/labs/general-sharing-frontier.json",
             "sequential_data": "data/labs/sequential.json",
             "coverage_data": "data/labs/coverage.json",
             "mechanisms_data": "data/labs/mechanisms.json",

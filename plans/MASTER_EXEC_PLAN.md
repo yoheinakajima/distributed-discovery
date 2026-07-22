@@ -1,5 +1,34 @@
 # Master execution plan
 
+## Active continuation — DD-021 General Sharing Frontier (2026-07-22)
+
+Issue #146 and branch `research/dd021-general-sharing-frontier` register the
+sole substantive Program V5 lane from clean main
+`a560bb771a8ccaf92958bde8e72280e2c968825f`. DD-021 freezes a finite,
+target-symmetric, conditionally independent, nonstrategic one-hit protocol and
+separates three classifications: adjacent sharing-curve signs, full-sharing
+consensus relative to one-person and direct-private values, and centralized
+top-`L` recovery. Its living ExecPlan is
+`plans/DD021_GENERAL_SHARING_FRONTIER.md`.
+
+The registered exact grid contains 59 channel laws and 177 `(channel,N)`
+scenarios over `M=3,4,5` and `N=2,3,4`. The pre-run audit counts 936,063
+labeled target/signal-profile states and 117,433 independent histogram states;
+the largest scenario has 55,550 and 5,000 respectively. Runtime is estimated
+below 30 seconds and capped at 120 seconds; memory is estimated below 256 MB
+and capped at 1 GB. No numerical result, run, or claim exists at registration.
+
+Active milestone: complete research PR #147 acceptance, mark it ready, merge,
+verify CI/Pages and live routes, close issue #146, and synchronize main. Clean
+commit `3cdbbc40` produced the sole passing run
+`20260722T185924Z_DD-021_3cdbbc40_2fea269a9a`; DD-C-0097 through DD-C-0103
+separately preserve the two theorems, exact registry, witnesses, recovery
+budgets, and mixed-curve bounded null. The source, report, Findings,
+relationships, exact public data, and real General Sharing Frontier Lab are
+locally integrated. Preserve DD-019 and DD-020 runs unchanged, keep issue #32
+separate, do not touch the ActiveGraph pilot, and do not begin the editorial
+gate before the DD-021 research PR is merged and deployed.
+
 ## Active continuation — Findings, Labs, and relationship navigation repair (2026-07-22)
 
 Issue #143 and branch `site/results-labs-relations` completed a presentation-only public-site repair from clean main `8ac0700`. PR #144 merged as `be4b380`; CI, paper/site builds, Pages deployment, and live-route verification passed. The living ExecPlan is `plans/SITE_RESULTS_LABS_RELATIONS.md`; the safety and QA evidence is in `reports/site-repair/`. No scientific source, claims, immutable runs, manifests, paper source, exact values, theorem statements, evidence status, or canonical upstream changed.

@@ -1,0 +1,32 @@
+study_id: DD-021
+title: General Sharing Frontier
+slug: dd-021
+phase: complete-bounded-study
+summary: Verified the error-contraction and full-capacity theorems and independently reproduced the complete 177-scenario exact registry, witnesses, recovery budgets, and bounded mixed-curve null.
+public_artifacts:
+  - path: studies/DD-021-general-sharing-frontier/model.md
+    description: Frozen finite protocol, baselines, and authority boundary
+  - path: studies/DD-021-general-sharing-frontier/plan.md
+    description: Bounded exact scope, resource audit, and execution gates
+  - path: studies/DD-021-general-sharing-frontier/brief.md
+    description: Theorem, registry, and recovery objectives
+  - path: studies/DD-021-general-sharing-frontier/literature.md
+    description: Primary-source adjacency review and theorem-name boundary
+  - path: studies/DD-021-general-sharing-frontier/proof.md
+    description: Error-contraction and full-capacity analytic proofs
+  - path: studies/DD-021-general-sharing-frontier/proof-audit.md
+    description: Separate internal proof-consistency audit
+  - path: studies/DD-021-general-sharing-frontier/configs/registry.yml
+    description: Frozen exact channel registry, resource bounds, and certificate contract
+  - path: studies/DD-021-general-sharing-frontier/report.md
+    description: Audited analytic results, bounded census, witnesses, and limitations
+  - path: results/verified/20260722T185924Z_DD-021_3cdbbc40_2fea269a9a/outputs/registry.json
+    description: Complete exact 177-scenario registry
+  - path: results/verified/20260722T185924Z_DD-021_3cdbbc40_2fea269a9a/outputs/minimal-witnesses.json
+    description: Exact minimal registered witnesses and mixed-curve bounded null
+  - path: results/verified/20260722T185924Z_DD-021_3cdbbc40_2fea269a9a/outputs/method-agreement-certificate.json
+    description: Exact two-method and witness-minimality agreement certificate
+  - path: results/verified/20260722T185924Z_DD-021_3cdbbc40_2fea269a9a/outputs/corruption-tests.json
+    description: Eight rejected registered corruptions
+claim_ids: [DD-C-0097, DD-C-0098, DD-C-0099, DD-C-0100, DD-C-0101, DD-C-0102, DD-C-0103]
+run_ids: [20260722T185924Z_DD-021_3cdbbc40_2fea269a9a]
