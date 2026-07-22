@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "schema_version": 1,
+  "tests": [
+    {
+      "name": "source-run",
+      "rejected": true
+    },
+    {
+      "name": "claim-set",
+      "rejected": true
+    },
+    {
+      "name": "input-hash",
+      "rejected": true
+    },
+    {
+      "name": "figure-hash",
+      "rejected": true
+    },
+    {
+      "name": "bibliography-hash",
+      "rejected": true
+    }
+  ]
+}

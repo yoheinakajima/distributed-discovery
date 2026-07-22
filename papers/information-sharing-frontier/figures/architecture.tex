@@ -1,0 +1,12 @@
+% Generated evidence/architecture asset; do not edit by hand.
+\begin{figure}[t]\centering
+\begin{tikzpicture}[node distance=7mm and 9mm, every node/.style={draw,rounded corners,align=center,minimum height=8mm,font=\small}]
+\node (e) {private evidence}; \node[right=of e] (p) {private actions}; \node[right=of p] (d) {portfolio discovery};
+\node[below=of e] (b) {pooled block}; \node[right=of b] (c) {one common action}; \node[right=of c] (r) {remaining rescue actions};
+\draw[->,private,very thick] (e)--(p)--(d);
+\draw[->,shared,very thick] (e)--(b)--(c)--(r); \draw[->,shared,very thick] (r)--(d);
+\end{tikzpicture}
+\caption{Information sharing changes two objects at once. The pooled block can improve one common action, while absorbing agents removes independent rescue actions. The comparison is therefore not a comparison of posterior accuracy alone.}
+\label{fig:architecture}
+\ArtifactNote{Runs: \path{20260722T142551Z_DD-020_3854fff6_37c11a850a, 20260722T185924Z_DD-021_3cdbbc40_2fea269a9a}; claims: DD-C-0092, DD-C-0097; generator: \path{distributed_discovery.papers.build_information_sharing_frontier}; input SHA-256 prefixes: \texttt{a4f63d52f402, 3521286a3415}.}
+\end{figure}

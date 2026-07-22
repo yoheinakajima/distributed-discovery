@@ -168,22 +168,26 @@ studies:
     program: program-v5
     theorem_family: sharing-frontier
     lab_slugs: [incremental-sharing]
+    paper_slugs: [information-sharing-frontier]
     data_routes: [data/labs/incremental-sharing.json]
   DD-020:
     program: program-v5
     theorem_family: sharing-frontier
     result_ids: [incremental-point-pooling, same-accuracy-channel-counterexample]
     lab_slugs: [incremental-sharing]
+    paper_slugs: [information-sharing-frontier]
     data_routes: [data/labs/incremental-sharing.json, data/incremental-sharing/channel-profiles.json]
   DD-021:
     program: program-v5
     theorem_family: sharing-frontier
     result_ids: [error-contraction-frontier, full-capacity-recovery, bounded-mixed-sharing-null]
     lab_slugs: [general-sharing-frontier]
+    paper_slugs: [information-sharing-frontier]
     data_routes: [data/labs/general-sharing-frontier.json, data/general-sharing-frontier/registry.json, data/general-sharing-frontier/minimal-witnesses.json, data/general-sharing-frontier/channels.json]
   DD-022:
     program: program-v5
     theorem_family: sharing-frontier
     result_ids: [coordination-free-positive-sharing, coordination-free-selection-boundary]
     lab_slugs: [coordination-free-positive-sharing]
+    paper_slugs: [information-sharing-frontier]
     data_routes: [data/labs/coordination-free-positive-sharing.json, data/coordination-free-positive-sharing/registry.json, data/coordination-free-positive-sharing/threshold-certificate.json]

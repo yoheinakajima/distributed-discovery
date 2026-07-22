@@ -1,0 +1,45 @@
+{
+  "checks": [
+    "four immutable run manifests and every declared output hash",
+    "22 unchanged claim owners, types, statuses, and run references",
+    "sharing identity, residual frontier, selection boundary, and root certificate",
+    "generated figure, data, table, input, and bibliography hashes",
+    "abstract, selection adjacency, authority labels, host-path, and asset-caption boundaries",
+    "five deliberate provenance corruptions rejected"
+  ],
+  "claim_ids": [
+    "DD-C-0089",
+    "DD-C-0090",
+    "DD-C-0091",
+    "DD-C-0092",
+    "DD-C-0093",
+    "DD-C-0094",
+    "DD-C-0095",
+    "DD-C-0096",
+    "DD-C-0097",
+    "DD-C-0098",
+    "DD-C-0099",
+    "DD-C-0100",
+    "DD-C-0101",
+    "DD-C-0102",
+    "DD-C-0103",
+    "DD-C-0104",
+    "DD-C-0105",
+    "DD-C-0106",
+    "DD-C-0107",
+    "DD-C-0108",
+    "DD-C-0109",
+    "DD-C-0110"
+  ],
+  "independent_of_generator_import": true,
+  "page_count": 26,
+  "passed": true,
+  "pdf_sha256": "2f8b68d5a690e6369e4c3236313eb93f060bfbe73ec531903c090f6ec6f8b6a1",
+  "schema_version": 1,
+  "source_runs": {
+    "DD-019": "20260722T084145Z_DD-019_a77bb786_04a5e9f0c5",
+    "DD-020": "20260722T142551Z_DD-020_3854fff6_37c11a850a",
+    "DD-021": "20260722T185924Z_DD-021_3cdbbc40_2fea269a9a",
+    "DD-022": "20260722T210334Z_DD-022_2376d5b7_ad67765ca8"
+  }
+}

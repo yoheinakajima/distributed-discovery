@@ -58,28 +58,28 @@ attention theorem owned by *The Incentive to Ignore*.
 
 ## Milestones
 
-1. **M1 — active: evidence, literature, and abstract freeze.** Refresh only primary/stable literature,
+1. **M1 — complete: evidence, literature, and abstract freeze.** Refresh only primary/stable literature,
    record search dates, map the exact contribution boundary, and stop any claim
    that merely renames Blackwell comparison, team decision theory, congestion,
    or information-design results.
-2. **M2 — pending: manuscript and generated evidence.** Create `main.tex`, bibliography, metadata, and
+2. **M2 — complete: manuscript and generated evidence.** Create `main.tex`, bibliography, metadata, and
    generated-evidence interfaces following the theorem/section map. Freeze the
    abstract claim before prose expansion.
-3. **M3 — pending: theorem and limitation integration.** Re-state DD-019 through DD-022 results with exact
+3. **M3 — complete: theorem and limitation integration.** Re-state DD-019 through DD-022 results with exact
    source claim IDs, declared authority, selected-equilibrium scope, and no
    evidence-status promotion.
    Present DD-C-0095, DD-C-0103, and
    DD-C-0109 as substantive counterboundaries, including private discovery-one
    equilibria and ownership-aware disagreement splitting.
-4. **M4 — pending: independent paper audit.** Generate every table and figure from
+4. **M4 — complete: independent paper audit.** Generate every table and figure from
    immutable result artifacts, validate source hashes, and avoid manual numeric
    transcription.
    Validate equations, citations, cross-references,
    claim ownership, terminology, theorem hypotheses, and all generated assets.
-5. **M5 — pending: deterministic build and visual QA.** Rebuild deterministically, render every page, inspect
+5. **M5 — complete: deterministic build and visual QA.** Rebuild deterministically, render every page, inspect
    at page and full resolution, record the PDF hash, and run repository-wide
    verification.
-6. **M6 — pending: site integration and repository acceptance.** Publish the
+6. **M6 — active: site integration and repository acceptance.** Publish the
    validated working paper through the existing site, add relationship links,
    and run every focused and repository-wide acceptance gate.
 7. **M7 — pending: GitHub merge and deployment.** Keep one draft PR current,
@@ -93,18 +93,18 @@ attention theorem owned by *The Incentive to Ignore*.
 - [x] Inspect issue #153, open pull requests, and repository permissions through
   the connected GitHub integration.
 - [x] Create the sole branch `paper/information-sharing-frontier`.
-- [ ] Complete the mandatory governance, evidence, source, output, paper-build,
+- [x] Complete the mandatory governance, evidence, source, output, paper-build,
   bibliography, publication, and relationship reads.
-- [ ] Refresh the literature search log, evidence map, novelty-risk note, and
+- [x] Refresh the literature search log, evidence map, novelty-risk note, and
   bibliography; freeze the abstract and pass its boundary test.
-- [ ] Generate all manuscript tables and figures from immutable outputs with
+- [x] Generate all manuscript tables and figures from immutable outputs with
   checksums, text summaries, and claim/run provenance.
-- [ ] Complete the manuscript and place the positive selected-equilibrium result
+- [x] Complete the manuscript and place the positive selected-equilibrium result
   beside its every-equilibrium failure in the abstract, introduction, and main
   theorem sequence.
-- [ ] Pass the independent paper audit and asset-corruption tests.
-- [ ] Produce two byte-identical clean builds and inspect every rendered page.
-- [ ] Integrate and validate the public paper page, download, and relationship
+- [x] Pass the independent paper audit and asset-corruption tests.
+- [x] Produce two byte-identical clean builds and inspect every rendered page.
+- [x] Integrate and validate the public paper page, download, and relationship
   links without adding navigation, analytics, DOI, or submission status.
 - [ ] Pass all focused and repository-wide checks; merge, deploy, verify live
   routes/checksums, and close issue #153.
@@ -127,6 +127,9 @@ attention theorem owned by *The Incentive to Ignore*.
   selection are already owned by established literatures. The paper's eligible
   contribution remains their exact composition under a discovery objective;
   no priority or universal-novelty language is permitted.
+- `2026-07-22T22:54:18Z`: the first all-page render exposed overlapping labels
+  in three generated figures. The generator was corrected, the affected pages
+  were rerendered at full resolution, and the final 26-page PDF is clean.
 
 ## Decision log
 
@@ -143,6 +146,9 @@ attention theorem owned by *The Incentive to Ignore*.
   benchmark, selected positive interval, every-equilibrium failure,
   ownership-aware disagreement split, latent-branch limitation, and no-data
   boundary.
+- `2026-07-22T22:54:18Z`: retain the preferred subtitle. Signal geometry,
+  independent rescue, and equilibrium selection all remain theorem-level
+  components in the completed manuscript.
 
 ## Evidence inputs that must not change
 
@@ -178,9 +184,16 @@ hash change invalidates the visual-QA record.
 
 ## Artifacts produced
 
-None yet beyond this execution update and the branch. This section will be
-updated with manuscript, generated assets, audits, PDF, site routes, checksums,
-and GitHub identifiers as each milestone completes.
+- 26-page deterministic PDF, SHA-256
+  `2f8b68d5a690e6369e4c3236313eb93f060bfbe73ec531903c090f6ec6f8b6a1`.
+- Eight generated figures, eight generated tables, and eight exact figure-data
+  CSV files with source-run, claim, and checksum provenance.
+- Independent `paper-audit.json`, five-case `asset-corruption-tests.json`, and
+  all-page `visual-qa.md`.
+- Working-paper metadata, citation/BibTeX, build and validation entry points,
+  and the publication route
+  `publications/information-sharing-frontier.html` with checksum-registered PDF.
+- Draft PR #155: `https://github.com/yoheinakajima/distributed-discovery/pull/155`.
 
 ## Blockers
 

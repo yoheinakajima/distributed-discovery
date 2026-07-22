@@ -314,6 +314,7 @@ def _publications(root: Path) -> list[dict[str, Any]]:
         ("common-source-trap", "The Common-Source Trap"),
         ("incentive-to-ignore", "The Incentive to Ignore"),
         ("threshold-discovery", "Threshold Discovery"),
+        ("information-sharing-frontier", "When Does Information Sharing Improve Decentralized Discovery?"),
     ):
         validation = json.loads((root / "papers" / directory / "validation.json").read_text())
         candidates = sorted((root / "papers" / directory).glob("*.pdf"))
@@ -330,6 +331,12 @@ def _publications(root: Path) -> list[dict[str, Any]]:
         author = str(metadata.get("author", "Distributed Discovery project"))
         date = str(metadata.get("date", ""))
         citation = f"{author} ({date}). {title}." if date else f"{author}. {title}."
+        citation_bib_path = root / "papers" / directory / "citation.bib"
+        citation_bib = (
+            citation_bib_path.read_text(encoding="utf-8").strip()
+            if citation_bib_path.is_file()
+            else ""
+        )
         publications.append(
             {
                 "title": title,
@@ -341,6 +348,7 @@ def _publications(root: Path) -> list[dict[str, Any]]:
                 "page_count": validation.get("page_count"),
                 "build_source": f"papers/{directory}/main.tex",
                 "citation": citation,
+                "citation_bib": citation_bib,
                 "status": metadata.get("status", "validated-repository-paper"),
                 "doi": metadata.get("doi"),
                 "submitted": metadata.get("submitted"),
@@ -3033,6 +3041,7 @@ def _render(
         "common-source-trap": "Explains why many reports can still behave like one source of evidence.",
         "incentive-to-ignore": "Synthesizes selective attention, audience design, and conditional evidence use.",
         "threshold-discovery": "Connects minimum viable teams, equilibrium selection, dynamic attention, and implementable team portfolios.",
+        "information-sharing-frontier": "Identifies when pooled error contraction beats lost independent rescue, then separates the selected positive result from its equilibrium-selection boundary.",
     }
     publication_items = "".join(
         '<article class="card paper-card"><div class="card-meta"><span class="status-chip">{status}</span><span>{page_count} pages</span></div><h2><a href="{detail}">{title}</a></h2><p>{purpose}</p><div class="card-actions"><a class="button small" href="{download}">Download PDF</a><a href="{detail}">Paper details</a></div><p class="citation">{citation}</p><details class="technical-details"><summary>Technical details</summary><p><a href="{repo}/blob/main/{build_source}">Build source</a></p><p>SHA-256 <code>{sha256}</code></p></details></article>'.format(
@@ -3070,7 +3079,12 @@ def _render(
             status_bits.append("not submitted")
         if item["peer_reviewed"] is False:
             status_bits.append("not peer reviewed")
-        detail_body = f"""<header class="page-hero"><p class="eyebrow">Working paper</p><h1>{html.escape(str(item["title"]))}</h1><p class="lede">{html.escape(publication_purposes[str(item["slug"])])}</p><p class="status-row"><span class="status-chip">{html.escape(human_status(item["status"], kind="publication"))}</span><span>{html.escape(str(item["page_count"]))} pages</span></p><p><a class="button primary" href="../{html.escape(str(item["download"]))}">Download PDF</a></p></header><section class="content-section prose"><h2>Citation</h2><p>{html.escape(str(item["citation"]))}</p></section><section class="content-section prose"><h2>Source and provenance</h2><p><a href="{REPOSITORY_URL}/blob/main/{html.escape(str(item["build_source"]))}">Read the build source</a> · <a href="{REPOSITORY_URL}/tree/main/papers/{html.escape(str(item["slug"]))}">Inspect validation and provenance</a></p><details class="technical-details"><summary>Technical details</summary><p>{html.escape(" · ".join(status_bits))}</p><p>The download is copied only after its SHA-256 matches the committed validation record.</p><p>SHA-256 <code>{html.escape(str(item["sha256"]))}</code></p></details></section>"""
+        bibtex = (
+            f'<h3>BibTeX</h3><pre><code>{html.escape(str(item["citation_bib"]))}</code></pre>'
+            if item["citation_bib"]
+            else ""
+        )
+        detail_body = f"""<header class="page-hero"><p class="eyebrow">Working paper</p><h1>{html.escape(str(item["title"]))}</h1><p class="lede">{html.escape(publication_purposes[str(item["slug"])])}</p><p class="status-row"><span class="status-chip">{html.escape(human_status(item["status"], kind="publication"))}</span><span>{html.escape(str(item["page_count"]))} pages</span></p><p><a class="button primary" href="../{html.escape(str(item["download"]))}">Download PDF</a></p></header><section class="content-section prose"><h2>Citation</h2><p>{html.escape(str(item["citation"]))}</p>{bibtex}</section><section class="content-section prose"><h2>Source and provenance</h2><p><a href="{REPOSITORY_URL}/blob/main/{html.escape(str(item["build_source"]))}">Read the build source</a> · <a href="{REPOSITORY_URL}/tree/main/papers/{html.escape(str(item["slug"]))}">Inspect validation and provenance</a></p><details class="technical-details"><summary>Technical details</summary><p>{html.escape(" · ".join(status_bits))}</p><p>The download is copied only after its SHA-256 matches the committed validation record.</p><p>SHA-256 <code>{html.escape(str(item["sha256"]))}</code></p></details></section>"""
         _write(
             output,
             str(item["detail"]),
