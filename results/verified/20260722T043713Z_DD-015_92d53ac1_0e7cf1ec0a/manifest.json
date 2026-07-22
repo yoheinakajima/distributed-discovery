@@ -1,0 +1,32 @@
+{
+  "command": "make dd015-dynamic",
+  "config_hash_sha256": "0e7cf1ec0ae9d9ef4ac0d4d1a54839862c6e5fe4902d1e2cd048ed4071023911",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-22T04:37:27.128632Z",
+  "exit_status": 0,
+  "git_commit": "92d53ac111812089c67bec049d5eb4e41d676cf0",
+  "git_dirty": false,
+  "input_hashes": {
+    "src/distributed_discovery/dynamic_attention/model.py": "3a3056776f511abce4f97003a826e09a3ac03a1d96113c1eb61691a5fe9863c8",
+    "src/distributed_discovery/dynamic_attention/study.py": "7c352fbdb04cd1b1d1e5e44f7740828705d4b275373c70192742173ebf961954",
+    "src/distributed_discovery/dynamic_attention/verification.py": "75a396d6732b586030c9d91454fb50bf44ea7508812590975db64c387d319f57",
+    "studies/DD-015-dynamic-attention/configs/baseline.yml": "8f2557e0d64847b7ae3eaff6f1c3fcb562432bb99941cec6214c4273f0e15e60",
+    "studies/DD-015-dynamic-attention/model.md": "d6c192a85f9348d9a3633a3910dbb02c63713a0599818a4320cbc737fd37d8f5"
+  },
+  "outputs": {
+    "outputs/corruption-tests.json": "ed981898f58208b881074f46cdcd11922f7b312b27ef00f9e75daf239991e530",
+    "outputs/dynamic-profile.json": "ea3b509138290762c1915ffa012a9f0b79f928057eb0d3b41b4e47a96e162f2c",
+    "outputs/summary.json": "02d4c2d76cbcc6f8ca8de9981e48e5852bfdeb7d0f1a6895f669f28a8d023a37",
+    "outputs/verification.json": "f32256e8c08a222d624589a87dedc9fd1e1f7f24b1eeb7c19750b4de4cd29ff4"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "run_id": "20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a",
+  "schema_version": 1,
+  "started_utc": "2026-07-22T04:37:13.122638Z",
+  "study_id": "DD-015",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

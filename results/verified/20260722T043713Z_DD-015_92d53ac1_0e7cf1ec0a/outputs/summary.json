@@ -1,0 +1,15 @@
+{
+  "autonomous_follow_previous_positive_rows": 32,
+  "autonomous_lean_against_positive_rows": 50,
+  "corruption_gates": 4,
+  "grid_cells": 32,
+  "labeled_target_signal_paths": 5184,
+  "objective_rows": 64,
+  "planner_strictly_better_rows": 38,
+  "stopping_reduces_expected_actions_rows": 32,
+  "verification_checks": 128,
+  "visibility_increases_discovery_fixed_rows": 0,
+  "visibility_increases_dispersion_fixed_rows": 0,
+  "visibility_increases_herding_fixed_rows": 18,
+  "visibility_reduces_discovery_fixed_rows": 18
+}

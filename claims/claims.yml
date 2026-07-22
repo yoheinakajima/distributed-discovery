@@ -1638,3 +1638,66 @@ claims:
     first_added: "2026-07-22"
     last_checked: "2026-07-22"
     notes: Exact-size-tau stability is not monotone in coalition size and is not called strong equilibrium. The eight and 35 counts answer distinct registered questions.
+  - id: DD-C-0079
+    study_id: DD-015
+    short_name: full-credit-sequential-bayes-equilibrium
+    statement: In the frozen DD-015 autonomous game, choosing a posterior-mode action at every reached information set is a pure sequential Bayesian equilibrium under full duplicate credit.
+    scope: Three targets, two or three sequential agents, the declared shared/private clue channel, visible public history, fixed-budget or stopping feedback, full unit credit whenever an agent's own action is correct, and lowest-label tie-breaking; this does not apply to equal-split, sole-rescue, marginal-credit, threshold-team, signaling, or mixed-strategy games.
+    claim_type: proposition
+    status: verified
+    source_type: pointwise-best-response-proof-with-exact-labeled-path-audit
+    source_reference: results/verified/20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a/outputs/verification.json
+    proof_path: studies/DD-015-dynamic-attention/proof.md
+    implementation_paths: [src/distributed_discovery/dynamic_attention/model.py, src/distributed_discovery/dynamic_attention/verification.py]
+    run_ids: [20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a]
+    test_paths: [tests/unit/test_dynamic_attention.py, tests/integration/test_dynamic_attention_cli.py]
+    exactness_basis: An agent's expected full-credit payoff from action a is exactly its posterior probability that the target is a and is unaffected by later actions. The exact evaluator applies this best response at every reached information set, while a separate labeled target/signal enumerator checks every resulting policy tree and probability normalization.
+    rounding_rule: exact fractions; no displayed decimal is authoritative
+    dependencies: []
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: Full duplicate credit is deliberately different from DD-012 equal splitting and DD-017 threshold splitting. The proposition is scoped to reached information sets and the declared finite channel.
+  - id: DD-C-0080
+    study_id: DD-015
+    short_name: bounded-dynamic-planner-and-action-response-census
+    statement: Across DD-015's 64 exact objective rows, the common-payoff planner strictly exceeds the full-credit autonomous equilibrium in 38 rows, autonomous play follows a previous action with positive probability in 32 rows and leans against a repeated prior action with positive probability in 50 rows, and stopping reduces expected actions relative to fixed budget in all 32 parameter cells.
+    scope: The frozen four-by-four rational accuracy grid, N in {2,3}, three targets, visible actions, the named fixed/stopping feedback rules, the full-credit autonomous equilibrium, and the deterministic common-information prescription planner; this is a bounded exact census, not a general comparative-static, equal-split equilibrium, or behavioral result.
+    claim_type: computational-result
+    status: verified
+    source_type: exact-common-information-dp-with-separate-labeled-policy-tree-verifier
+    source_reference: results/verified/20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a/outputs/summary.json
+    proof_path: studies/DD-015-dynamic-attention/proof.md
+    implementation_paths: [src/distributed_discovery/dynamic_attention/model.py, src/distributed_discovery/dynamic_attention/study.py, src/distributed_discovery/dynamic_attention/verification.py]
+    run_ids: [20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a]
+    test_paths: [tests/unit/test_dynamic_attention.py, tests/integration/test_dynamic_attention_cli.py]
+    exactness_basis: Exact Fraction arithmetic evaluates every one of 27 prescriptions at each common-information state over at most three stages. A separately structured enumerator sums all 5,184 unique labeled target/shared/private-signal paths for both protocols and both objectives, producing 128 value checks; four targeted corruptions are rejected.
+    rounding_rule: exact integer counts and fractions
+    dependencies: [DD-C-0079]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: Follow and lean-against events are positive-probability classifications, not claims that one response is uniquely optimal in every history.
+  - id: DD-C-0081
+    study_id: DD-015
+    short_name: bounded-visible-action-herding-null
+    statement: In DD-015's 32 fixed-budget parameter cells, visible-action inference improves neither discovery nor expected action dispersion relative to the history-hidden Bayes baseline; it strictly reduces both in 18 cells and ties in the remaining 14.
+    scope: Three targets, N in {2,3}, the frozen rational accuracy grid, full duplicate credit, fixed budget, outcome hidden until terminal, visible-action posterior inference versus agents using only the shared and own private clue, and expected distinct actions as dispersion; this is a bounded negative result, not a theorem that visibility is generally harmful.
+    claim_type: negative-result
+    status: verified
+    source_type: exact-bounded-null-with-labeled-policy-tree-verification
+    source_reference: results/verified/20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a/outputs/summary.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/dynamic_attention/model.py, src/distributed_discovery/dynamic_attention/study.py, src/distributed_discovery/dynamic_attention/verification.py]
+    run_ids: [20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a]
+    test_paths: [tests/unit/test_dynamic_attention.py, tests/integration/test_dynamic_attention_cli.py]
+    exactness_basis: The complete 32-cell fixed-budget grid is evaluated with exact fractions. Every visible policy is directly re-enumerated over labeled target and signal paths, simple history-hidden Bayes controls normalize exactly, and altered actions, values, and objective labels are rejected.
+    rounding_rule: exact integer counts and fractions
+    dependencies: [DD-C-0079, DD-C-0080]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: The null is first-class evidence. Stopping feedback is excluded because continuation reveals failure in addition to the action itself.

@@ -2,9 +2,17 @@ study_id: DD-015
 title: Dynamic Attention and Visible Search
 slug: dd-015
 phase: active-extension
-summary: Frozen exact visible-action baseline; no result exists until the primary run and claim audit pass.
+summary: Verified full-credit equilibrium and exact dynamic census with a bounded visibility-herding negative result.
 public_artifacts:
   - path: studies/DD-015-dynamic-attention/model.md
     description: Frozen bounded dynamic model
   - path: studies/DD-015-dynamic-attention/plan.md
     description: Living execution and verification plan
+  - path: studies/DD-015-dynamic-attention/proof.md
+    description: Posterior filtering, equilibrium, and planner recursion proof record
+  - path: studies/DD-015-dynamic-attention/report.md
+    description: Exact bounded baseline report
+  - path: results/verified/20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a/outputs/summary.json
+    description: Public-safe exact baseline summary
+  - path: results/verified/20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a/outputs/dynamic-profile.json
+    description: Exact action-policy and objective registry

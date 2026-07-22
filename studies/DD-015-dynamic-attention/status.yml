@@ -1,5 +1,5 @@
 study_id: DD-015
-status: active-registered-baseline
-evidence_status: no-result-frozen-model-only
-next_action: implement and independently verify the exact baseline before a clean source commit
-updated_utc: 2026-07-22T04:23:33Z
+status: baseline-complete-extension-pending
+evidence_status: verified-proposition-exact-census-and-bounded-negative-result
+next_action: preserve the immutable baseline; register the separately labeled threshold-two extension before completing DD-015
+updated_utc: 2026-07-22T04:37:27Z

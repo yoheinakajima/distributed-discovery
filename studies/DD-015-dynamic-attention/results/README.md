@@ -1,0 +1,13 @@
+# DD-015 results
+
+Primary immutable run:
+
+- `20260722T043713Z_DD-015_92d53ac1_0e7cf1ec0a`
+- clean source commit `92d53ac111812089c67bec049d5eb4e41d676cf0`
+- 32 parameter cells and 64 objective rows
+- 5,184 unique labeled target/signal paths
+- 128 independent policy-tree value checks
+- four corruption gates
+- elapsed time 13.971626 seconds under the 180-second cap
+
+Do not rerun this primary configuration for freshness.

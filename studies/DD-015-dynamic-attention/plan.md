@@ -52,7 +52,7 @@ histories in the bounded exact evaluator.
 4. Pass targeted and repository validation; commit the frozen source.
 5. Execute one clean immutable primary run and audit claims separately.
 6. Add the separately labeled threshold-two extension only after baseline
-   agreement is established.
+   agreement is established. **Active after the passing baseline run.**
 7. Integrate report, public-safe data, study page, CI, Pages, and live routes.
 
 ## Progress checklist
@@ -63,6 +63,8 @@ histories in the bounded exact evaluator.
 - [x] Exact implementation and independent verifier pass.
 - [ ] Clean source commit and immutable primary run pass.
 - [ ] Claims and documentation are audited.
+- [x] Baseline claims and documentation are audited.
+- [ ] Separately labeled threshold-two planner extension passes.
 - [ ] Repository/site acceptance, merge, CI, Pages, and live routes pass.
 
 ## Discoveries and surprises
@@ -141,3 +143,21 @@ Pre-run acceptance passed bootstrap, Ruff, MyPy on 125 source files, all 198
 tests, the unchanged 78-claim ledger and 42 manifests, and a 61-page/21-study
 site build. The next action is the clean source commit and draft PR; only then
 may the one primary configuration execute.
+
+The primary baseline run and DD-C-0079 through DD-C-0081 now pass. The separate
+threshold-two extension registers 16 parameter cells, 32 objective rows, 3,888
+unique labeled paths, and a planner-only policy audit over starting a singleton,
+joining a singleton, joining a viable team, and following/opposing the shared
+clue. It makes no decentralized implementation claim and will use a distinct
+secondary immutable run rather than repeating the baseline.
+
+The first extension-wide verification stopped at MyPy because a list-to-tuple
+conversion needed an explicit fixed-length occupancy cast. Unit behavior and
+the preview had passed; the static-only defect is retained and corrected without
+changing the registered extension.
+
+After the cast correction, extension pre-run acceptance passed Ruff, MyPy on
+126 source files, all 200 tests, 81 validated claims, and all 43 existing
+manifests. The exact next action is to commit the baseline evidence and frozen
+extension source, then execute the distinct extension configuration once from
+that clean commit.
