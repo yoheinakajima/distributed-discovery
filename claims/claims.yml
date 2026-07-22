@@ -1722,3 +1722,87 @@ claims:
     first_added: "2026-07-22"
     last_checked: "2026-07-22"
     notes: Joining a viable team can be optimal on histories where discovery is already secured under fixed budget; its presence is not evidence of decentralized over-crowding.
+  - id: DD-C-0083
+    study_id: DD-018
+    short_name: bounded-team-mechanism-planner-census
+    statement: In DD-018's 50 exact mechanism-fixture rows, 40 recommended outcomes attain the two-minimum-team planner discovery value; central assignment, authoritative random matching, team tokens, exclusive coalition rights, correlated mediation, marginal coalition contribution, threshold-adjusted equal split, and the pairwise matching market attain it in all five fixtures, while universal pooling and sole-team rescue attain it in none.
+    scope: Three candidates, four agents, threshold two, five frozen weakly descending common posteriors, the ten precisely registered recommendation and reward rules, and exact recommendation-support discovery; this is a bounded common-posterior allocation census, not a report-truthfulness, equilibrium-selection, general implementation, or behavioral result.
+    claim_type: computational-result
+    status: verified
+    source_type: exhaustive-exact-labeled-action-census-with-independent-action-table-verification
+    source_reference: results/verified/20260722T051847Z_DD-018_a193f602_3b3ddac173/outputs/summary.json
+    proof_path: studies/DD-018-minimum-viable-team-mechanisms/proof.md
+    implementation_paths: [src/distributed_discovery/team_mechanisms/model.py, src/distributed_discovery/team_mechanisms/study.py, src/distributed_discovery/team_mechanisms/verification.py]
+    run_ids: [20260722T051847Z_DD-018_a193f602_3b3ddac173]
+    test_paths: [tests/unit/test_team_mechanisms.py, tests/integration/test_team_mechanisms_cli.py]
+    exactness_basis: Exact Fraction arithmetic evaluates every recommendation support and all 81 labeled profiles per fixture. A separately organized 4,050-entry action table independently reconstructs all 50 rows, exhaustive occupancy enumeration recovers all five planner values, and altered discovery is rejected.
+    rounding_rule: exact fractions and integer counts; no displayed decimal determines a label
+    dependencies: [DD-C-0071]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: Central and random assignment attain the planner portfolio by authority. Their deviation and equilibrium fields are explicitly not applicable rather than inferred stable.
+  - id: DD-C-0084
+    study_id: DD-018
+    short_name: bounded-team-obedience-and-budget-census
+    statement: Among DD-018's 35 rows with feasible unilateral action changes, 31 recommendations are strictly obedient and 29 withstand every strict-member pair deviation and every exact-size-two tau-player deviation; all 50 rows satisfy nonnegative participation, weak prize-budget balance, and zero external subsidy.
+    scope: The DD-C-0083 registry, posterior-expected utilities under the frozen prize-eligibility rules, unilateral deviations only where individually feasible, strict improvement for every named coalition member, pairs and exact-size-two coalitions recorded separately, and zero outside option; report truthfulness, weak-Pareto blocks, arbitrary coalition sizes, strong equilibrium, and coalition-proofness are excluded.
+    claim_type: computational-result
+    status: verified
+    source_type: exact-deviation-and-accounting-census-with-independent-full-action-table-check
+    source_reference: results/verified/20260722T051847Z_DD-018_a193f602_3b3ddac173/outputs/summary.json
+    proof_path: studies/DD-018-minimum-viable-team-mechanisms/proof.md
+    implementation_paths: [src/distributed_discovery/team_mechanisms/model.py, src/distributed_discovery/team_mechanisms/study.py, src/distributed_discovery/team_mechanisms/verification.py]
+    run_ids: [20260722T051847Z_DD-018_a193f602_3b3ddac173]
+    test_paths: [tests/unit/test_team_mechanisms.py, tests/integration/test_team_mechanisms_cli.py]
+    exactness_basis: The primary evaluator exhausts every permitted unilateral, named-pair, and size-two joint destination change at each recommended profile and every labeled action profile for budget accounting. The independent table evaluator repeats coalition replacement and equilibrium checks; all fields agree and altered budget and equilibrium records are rejected.
+    rounding_rule: exact fractions, booleans, applicability labels, and integer counts
+    dependencies: [DD-C-0083]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: Because tau equals two, pair and tau-player coalition sizes coincide in v1, but the concepts remain separately named. Passing them is not coalition-proofness.
+  - id: DD-C-0085
+    study_id: DD-018
+    short_name: bounded-stable-collapse-negative-result
+    statement: In all five DD-018 fixtures, universal pooling and sole-team rescue recommend four agents on the top posterior candidate and attain strictly less discovery than the two-team planner; universal-pooling collapse is strictly unilaterally obedient in all five but pairwise strict-member stable in only one, while sole-team-rescue collapse is strictly unilaterally obedient and pairwise strict-member stable in all five.
+    scope: The DD-C-0083 frozen common-posterior fixtures, lexicographic top-candidate collapse, threshold-adjusted equal split for universal pooling, the registered exactly-one-viable-team rescue prize, and strict-member unilateral/pair deviations; this is a bounded negative result, not a theorem that pooling or rescue generally fails.
+    claim_type: negative-result
+    status: verified
+    source_type: exact-five-fixture-stable-collapse-census-with-independent-deviation-verification
+    source_reference: results/verified/20260722T051847Z_DD-018_a193f602_3b3ddac173/outputs/mechanism-census.json
+    proof_path: null
+    implementation_paths: [src/distributed_discovery/team_mechanisms/model.py, src/distributed_discovery/team_mechanisms/study.py, src/distributed_discovery/team_mechanisms/verification.py]
+    run_ids: [20260722T051847Z_DD-018_a193f602_3b3ddac173]
+    test_paths: [tests/unit/test_team_mechanisms.py, tests/integration/test_team_mechanisms_cli.py]
+    exactness_basis: Exact discovery, obedience, and pair-deviation fields are checked for every labeled profile in all ten collapse rows and reproduced by the independent action table. Support normalization, budget bounds, planner values, and corruption rejection also pass.
+    rounding_rule: exact fractions and categorical comparisons
+    dependencies: [DD-C-0083, DD-C-0084]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: The result shows within the registered class that individual or pair stability does not imply planner diversification. It does not compare unregistered rescue payments or endogenous information.
+  - id: DD-C-0086
+    study_id: DD-018
+    short_name: bounded-eligibility-contribution-implementation
+    statement: Team tokens, exclusive coalition rights, and marginal coalition contribution support the two-team planner recommendation with strict unilateral obedience and no strict-member pair or exact-size-two tau-player block in all five DD-018 fixtures, with weak prize-budget balance and zero external subsidy; nevertheless their labeled pure-Nash multiplicities are respectively 25, 25, and 21 in every fixture.
+    scope: The DD-C-0083 registry and fixed assignments, binding token/right eligibility, exactly-minimal-team contribution reward, unilateral pure Nash over all 81 labeled profiles, and the declared pair/tau strict-member checks; the claim neither selects an equilibrium nor establishes report truthfulness, anonymous identity selection, arbitrary coalition stability, or a general mechanism theorem.
+    claim_type: computational-result
+    status: verified
+    source_type: exact-implementation-and-multiplicity-census-with-independent-action-table-verification
+    source_reference: results/verified/20260722T051847Z_DD-018_a193f602_3b3ddac173/outputs/mechanism-census.json
+    proof_path: studies/DD-018-minimum-viable-team-mechanisms/proof.md
+    implementation_paths: [src/distributed_discovery/team_mechanisms/model.py, src/distributed_discovery/team_mechanisms/study.py, src/distributed_discovery/team_mechanisms/verification.py]
+    run_ids: [20260722T051847Z_DD-018_a193f602_3b3ddac173]
+    test_paths: [tests/unit/test_team_mechanisms.py, tests/integration/test_team_mechanisms_cli.py]
+    exactness_basis: The primary evaluator exhausts recommendation deviations and all 81 labeled profiles for each mechanism and fixture. The independent table reproduces the 15 implementation labels and all equilibrium counts; altered multiplicity and mechanism-count records are rejected.
+    rounding_rule: exact integer counts, fractions, and categorical comparisons
+    dependencies: [DD-C-0083, DD-C-0084]
+    contradicts: []
+    supersedes: []
+    first_added: "2026-07-22"
+    last_checked: "2026-07-22"
+    notes: High equilibrium multiplicity is preserved as a first-class limitation. Recommended-profile support does not imply unique or globally selected implementation.

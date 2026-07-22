@@ -205,6 +205,22 @@ before its independent verifier and immutable primary run pass.
   run `29892156556` passed. The live DD-015 study and JSON returned HTTP 200
   with both immutable run IDs and DD-C-0079 through DD-C-0082. V4.4 is
   complete; DD-018 is the next sequential milestone.
+- 2026-07-22: DD-015 deployment closeout PR #112 merged as `ece0db1` and
+  passed post-merge CI `29892572238` and Pages `29892572237`. DD-018 issue
+  #113 and branch `research/dd018-minimum-viable-team-mechanisms` are the sole
+  active lane. Its v1 start gate freezes `M=3`, `N=4`, `tau=2`, five posterior
+  fixtures, ten mechanisms, 50 mechanism-fixture rows, 81 labeled action
+  profiles per fixture, and a 4,050-entry independent action-table audit. No
+  DD-018 run or claim exists; the next gate is targeted and repository
+  verification before the clean source commit.
+- 2026-07-22: DD-018 source froze as `a193f602` and draft PR #114 opened before
+  the sole primary run `20260722T051847Z_DD-018_a193f602_3b3ddac173`. The run
+  passed in 0.432822 seconds. The primary 81-profile evaluator and independent
+  4,050-entry table agree on all 50 rows, all five planner audits pass, and four
+  corruptions are rejected. Separate audits promote DD-C-0083 through
+  DD-C-0086 as verified bounded computational results. The active gate is full
+  repository/site acceptance, evidence commit, PR CI/merge, post-merge
+  CI/Pages, issue closure, and live routes; the run must not be repeated.
 
 ### Program V3 attention queue (complete, 2026-07-21)
 

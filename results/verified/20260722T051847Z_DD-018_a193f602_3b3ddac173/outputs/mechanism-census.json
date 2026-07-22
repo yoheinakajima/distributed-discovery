@@ -1,0 +1,2752 @@
+[
+  {
+    "actions_observed": "assigned actions",
+    "agents": 4,
+    "anonymity": "no",
+    "commitment": "authoritative action assignment",
+    "deviation_class": "none after commitment",
+    "equilibrium_concept": "not-applicable-after-authoritative-commitment",
+    "equilibrium_multiplicity": "not-applicable-authoritative-commitment",
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "2/3",
+    "expected_total_payout": "2/3",
+    "external_subsidy": "0",
+    "fixture": "uniform",
+    "identity_selection": "fixed identity order",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and named agents",
+    "name": "central-assignment",
+    "obedience": "not-applicable-authoritative-commitment",
+    "pairwise_strict_stable": "not-applicable-authoritative-commitment",
+    "participation": true,
+    "planner_discovery": "2/3",
+    "posterior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": "not-applicable-authoritative-commitment",
+    "subsidy": "none",
+    "tau_player_strict_stable": "not-applicable-authoritative-commitment",
+    "threshold": 2,
+    "transfers": "none",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "matched-team assignments",
+    "agents": 4,
+    "anonymity": "yes ex ante",
+    "commitment": "authoritative random matching and assignment",
+    "deviation_class": "none after commitment",
+    "equilibrium_concept": "not-applicable-after-authoritative-commitment",
+    "equilibrium_multiplicity": "not-applicable-authoritative-commitment",
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "2/3",
+    "expected_total_payout": "2/3",
+    "external_subsidy": "0",
+    "fixture": "uniform",
+    "identity_selection": "uniform random perfect matching",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior",
+    "name": "random-matching",
+    "obedience": "not-applicable-authoritative-commitment",
+    "pairwise_strict_stable": "not-applicable-authoritative-commitment",
+    "participation": true,
+    "planner_discovery": "2/3",
+    "posterior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "recommendation_support": [
+      [
+        "1/6",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          1,
+          0,
+          0
+        ]
+      ]
+    ],
+    "recommendation_support_count": 6,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": "not-applicable-authoritative-commitment",
+    "subsidy": "none",
+    "tau_player_strict_stable": "not-applicable-authoritative-commitment",
+    "threshold": 2,
+    "transfers": "none",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions",
+    "agents": 4,
+    "anonymity": "no after token realization",
+    "commitment": "none; token eligibility is binding",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 25,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "2/3",
+    "expected_total_payout": "2/3",
+    "external_subsidy": "0",
+    "fixture": "uniform",
+    "identity_selection": "fixed balanced token endowment",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and own token",
+    "name": "team-tokens",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "2/3",
+    "posterior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "discovery prize restricted to matching tokens",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions",
+    "agents": 4,
+    "anonymity": "no",
+    "commitment": "none; coalition rights are binding",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 25,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "2/3",
+    "expected_total_payout": "2/3",
+    "external_subsidy": "0",
+    "fixture": "uniform",
+    "identity_selection": "fixed named coalitions",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and coalition charter",
+    "name": "exclusive-coalition-rights",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "2/3",
+    "posterior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "discovery prize restricted to chartered coalition",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions",
+    "agents": 4,
+    "anonymity": "yes ex ante",
+    "commitment": "nonbinding recommendation",
+    "deviation_class": "obedience, unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 21,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "2/3",
+    "expected_total_payout": "2/3",
+    "external_subsidy": "0",
+    "fixture": "uniform",
+    "identity_selection": "uniform correlated team recommendation",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and private recommendation",
+    "name": "correlated-mediator",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "2/3",
+    "posterior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "recommendation_support": [
+      [
+        "1/6",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          1,
+          0,
+          0
+        ]
+      ]
+    ],
+    "recommendation_support_count": 6,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "threshold-adjusted equal split only",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions",
+    "agents": 4,
+    "anonymity": "yes",
+    "commitment": "none",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 21,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "1/3",
+    "expected_total_payout": "1/3",
+    "external_subsidy": "0",
+    "fixture": "uniform",
+    "identity_selection": "none; common lexicographic mode",
+    "implements_planner_portfolio": false,
+    "information_observed": "common posterior",
+    "name": "universal-pooling",
+    "obedience": true,
+    "pairwise_strict_stable": false,
+    "participation": true,
+    "planner_discovery": "2/3",
+    "posterior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": false,
+    "threshold": 2,
+    "transfers": "threshold-adjusted equal split only",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions and viable-team count",
+    "agents": 4,
+    "anonymity": "yes",
+    "commitment": "none",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 3,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "1/3",
+    "expected_total_payout": "1/3",
+    "external_subsidy": "0",
+    "fixture": "uniform",
+    "identity_selection": "none; common lexicographic mode",
+    "implements_planner_portfolio": false,
+    "information_observed": "common posterior",
+    "name": "sole-team-rescue",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "2/3",
+    "posterior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "prize paid only when exactly one candidate is viable",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions and occupancies",
+    "agents": 4,
+    "anonymity": "yes",
+    "commitment": "none",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 21,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "2/3",
+    "expected_total_payout": "2/3",
+    "external_subsidy": "0",
+    "fixture": "uniform",
+    "identity_selection": "fixed recommendation selects identities",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior",
+    "name": "marginal-coalition-contribution",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "2/3",
+    "posterior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "prize shared only by an exactly minimal viable team",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions and occupancies",
+    "agents": 4,
+    "anonymity": "yes",
+    "commitment": "none",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 21,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "2/3",
+    "expected_total_payout": "2/3",
+    "external_subsidy": "0",
+    "fixture": "uniform",
+    "identity_selection": "fixed recommendation selects identities",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior",
+    "name": "threshold-adjusted-equal-split",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "2/3",
+    "posterior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "candidate prize split across every member of a viable team",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "team candidate choices",
+    "agents": 4,
+    "anonymity": "yes across pairs",
+    "commitment": "binding within-pair action; no cross-pair assignment",
+    "deviation_class": "pair deviations; tau-player deviations coincide with pairs",
+    "equilibrium_concept": "pure-pair-choice-equilibrium",
+    "equilibrium_multiplicity": 6,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "2/3",
+    "expected_total_payout": "2/3",
+    "external_subsidy": "0",
+    "fixture": "uniform",
+    "identity_selection": "fixed pair partition",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and matched teammate",
+    "name": "pairwise-matching-market",
+    "obedience": "not-applicable-binding-within-pair",
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "2/3",
+    "posterior": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": "not-applicable-binding-within-pair",
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "threshold-adjusted equal split only",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "assigned actions",
+    "agents": 4,
+    "anonymity": "no",
+    "commitment": "authoritative action assignment",
+    "deviation_class": "none after commitment",
+    "equilibrium_concept": "not-applicable-after-authoritative-commitment",
+    "equilibrium_multiplicity": "not-applicable-authoritative-commitment",
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "tied-top",
+    "identity_selection": "fixed identity order",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and named agents",
+    "name": "central-assignment",
+    "obedience": "not-applicable-authoritative-commitment",
+    "pairwise_strict_stable": "not-applicable-authoritative-commitment",
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "2/5",
+      "2/5",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": "not-applicable-authoritative-commitment",
+    "subsidy": "none",
+    "tau_player_strict_stable": "not-applicable-authoritative-commitment",
+    "threshold": 2,
+    "transfers": "none",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "matched-team assignments",
+    "agents": 4,
+    "anonymity": "yes ex ante",
+    "commitment": "authoritative random matching and assignment",
+    "deviation_class": "none after commitment",
+    "equilibrium_concept": "not-applicable-after-authoritative-commitment",
+    "equilibrium_multiplicity": "not-applicable-authoritative-commitment",
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "tied-top",
+    "identity_selection": "uniform random perfect matching",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior",
+    "name": "random-matching",
+    "obedience": "not-applicable-authoritative-commitment",
+    "pairwise_strict_stable": "not-applicable-authoritative-commitment",
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "2/5",
+      "2/5",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1/6",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          1,
+          0,
+          0
+        ]
+      ]
+    ],
+    "recommendation_support_count": 6,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": "not-applicable-authoritative-commitment",
+    "subsidy": "none",
+    "tau_player_strict_stable": "not-applicable-authoritative-commitment",
+    "threshold": 2,
+    "transfers": "none",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions",
+    "agents": 4,
+    "anonymity": "no after token realization",
+    "commitment": "none; token eligibility is binding",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 25,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "tied-top",
+    "identity_selection": "fixed balanced token endowment",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and own token",
+    "name": "team-tokens",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "2/5",
+      "2/5",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "discovery prize restricted to matching tokens",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions",
+    "agents": 4,
+    "anonymity": "no",
+    "commitment": "none; coalition rights are binding",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 25,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "tied-top",
+    "identity_selection": "fixed named coalitions",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and coalition charter",
+    "name": "exclusive-coalition-rights",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "2/5",
+      "2/5",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "discovery prize restricted to chartered coalition",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions",
+    "agents": 4,
+    "anonymity": "yes ex ante",
+    "commitment": "nonbinding recommendation",
+    "deviation_class": "obedience, unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 9,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "tied-top",
+    "identity_selection": "uniform correlated team recommendation",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and private recommendation",
+    "name": "correlated-mediator",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "2/5",
+      "2/5",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1/6",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          1,
+          0,
+          0
+        ]
+      ]
+    ],
+    "recommendation_support_count": 6,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "threshold-adjusted equal split only",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions",
+    "agents": 4,
+    "anonymity": "yes",
+    "commitment": "none",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 9,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "2/5",
+    "expected_total_payout": "2/5",
+    "external_subsidy": "0",
+    "fixture": "tied-top",
+    "identity_selection": "none; common lexicographic mode",
+    "implements_planner_portfolio": false,
+    "information_observed": "common posterior",
+    "name": "universal-pooling",
+    "obedience": true,
+    "pairwise_strict_stable": false,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "2/5",
+      "2/5",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": false,
+    "threshold": 2,
+    "transfers": "threshold-adjusted equal split only",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions and viable-team count",
+    "agents": 4,
+    "anonymity": "yes",
+    "commitment": "none",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 3,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "2/5",
+    "expected_total_payout": "2/5",
+    "external_subsidy": "0",
+    "fixture": "tied-top",
+    "identity_selection": "none; common lexicographic mode",
+    "implements_planner_portfolio": false,
+    "information_observed": "common posterior",
+    "name": "sole-team-rescue",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "2/5",
+      "2/5",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "prize paid only when exactly one candidate is viable",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions and occupancies",
+    "agents": 4,
+    "anonymity": "yes",
+    "commitment": "none",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 21,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "tied-top",
+    "identity_selection": "fixed recommendation selects identities",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior",
+    "name": "marginal-coalition-contribution",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "2/5",
+      "2/5",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "prize shared only by an exactly minimal viable team",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions and occupancies",
+    "agents": 4,
+    "anonymity": "yes",
+    "commitment": "none",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 9,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "tied-top",
+    "identity_selection": "fixed recommendation selects identities",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior",
+    "name": "threshold-adjusted-equal-split",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "2/5",
+      "2/5",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "candidate prize split across every member of a viable team",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "team candidate choices",
+    "agents": 4,
+    "anonymity": "yes across pairs",
+    "commitment": "binding within-pair action; no cross-pair assignment",
+    "deviation_class": "pair deviations; tau-player deviations coincide with pairs",
+    "equilibrium_concept": "pure-pair-choice-equilibrium",
+    "equilibrium_multiplicity": 2,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "tied-top",
+    "identity_selection": "fixed pair partition",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and matched teammate",
+    "name": "pairwise-matching-market",
+    "obedience": "not-applicable-binding-within-pair",
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "2/5",
+      "2/5",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": "not-applicable-binding-within-pair",
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "threshold-adjusted equal split only",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "assigned actions",
+    "agents": 4,
+    "anonymity": "no",
+    "commitment": "authoritative action assignment",
+    "deviation_class": "none after commitment",
+    "equilibrium_concept": "not-applicable-after-authoritative-commitment",
+    "equilibrium_multiplicity": "not-applicable-authoritative-commitment",
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "moderate",
+    "identity_selection": "fixed identity order",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and named agents",
+    "name": "central-assignment",
+    "obedience": "not-applicable-authoritative-commitment",
+    "pairwise_strict_stable": "not-applicable-authoritative-commitment",
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "1/2",
+      "3/10",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": "not-applicable-authoritative-commitment",
+    "subsidy": "none",
+    "tau_player_strict_stable": "not-applicable-authoritative-commitment",
+    "threshold": 2,
+    "transfers": "none",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "matched-team assignments",
+    "agents": 4,
+    "anonymity": "yes ex ante",
+    "commitment": "authoritative random matching and assignment",
+    "deviation_class": "none after commitment",
+    "equilibrium_concept": "not-applicable-after-authoritative-commitment",
+    "equilibrium_multiplicity": "not-applicable-authoritative-commitment",
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "moderate",
+    "identity_selection": "uniform random perfect matching",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior",
+    "name": "random-matching",
+    "obedience": "not-applicable-authoritative-commitment",
+    "pairwise_strict_stable": "not-applicable-authoritative-commitment",
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "1/2",
+      "3/10",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1/6",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          1,
+          0,
+          0
+        ]
+      ]
+    ],
+    "recommendation_support_count": 6,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": "not-applicable-authoritative-commitment",
+    "subsidy": "none",
+    "tau_player_strict_stable": "not-applicable-authoritative-commitment",
+    "threshold": 2,
+    "transfers": "none",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions",
+    "agents": 4,
+    "anonymity": "no after token realization",
+    "commitment": "none; token eligibility is binding",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 25,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "moderate",
+    "identity_selection": "fixed balanced token endowment",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and own token",
+    "name": "team-tokens",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "1/2",
+      "3/10",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "discovery prize restricted to matching tokens",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions",
+    "agents": 4,
+    "anonymity": "no",
+    "commitment": "none; coalition rights are binding",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 25,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "moderate",
+    "identity_selection": "fixed named coalitions",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and coalition charter",
+    "name": "exclusive-coalition-rights",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "1/2",
+      "3/10",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "discovery prize restricted to chartered coalition",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions",
+    "agents": 4,
+    "anonymity": "yes ex ante",
+    "commitment": "nonbinding recommendation",
+    "deviation_class": "obedience, unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 9,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "moderate",
+    "identity_selection": "uniform correlated team recommendation",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and private recommendation",
+    "name": "correlated-mediator",
+    "obedience": false,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "1/2",
+      "3/10",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1/6",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          1,
+          0,
+          0
+        ]
+      ]
+    ],
+    "recommendation_support_count": 6,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": false,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "threshold-adjusted equal split only",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions",
+    "agents": 4,
+    "anonymity": "yes",
+    "commitment": "none",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 9,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "1/2",
+    "expected_total_payout": "1/2",
+    "external_subsidy": "0",
+    "fixture": "moderate",
+    "identity_selection": "none; common lexicographic mode",
+    "implements_planner_portfolio": false,
+    "information_observed": "common posterior",
+    "name": "universal-pooling",
+    "obedience": true,
+    "pairwise_strict_stable": false,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "1/2",
+      "3/10",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": false,
+    "threshold": 2,
+    "transfers": "threshold-adjusted equal split only",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions and viable-team count",
+    "agents": 4,
+    "anonymity": "yes",
+    "commitment": "none",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 3,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "1/2",
+    "expected_total_payout": "1/2",
+    "external_subsidy": "0",
+    "fixture": "moderate",
+    "identity_selection": "none; common lexicographic mode",
+    "implements_planner_portfolio": false,
+    "information_observed": "common posterior",
+    "name": "sole-team-rescue",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "1/2",
+      "3/10",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "prize paid only when exactly one candidate is viable",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions and occupancies",
+    "agents": 4,
+    "anonymity": "yes",
+    "commitment": "none",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 21,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "moderate",
+    "identity_selection": "fixed recommendation selects identities",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior",
+    "name": "marginal-coalition-contribution",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "1/2",
+      "3/10",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "prize shared only by an exactly minimal viable team",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions and occupancies",
+    "agents": 4,
+    "anonymity": "yes",
+    "commitment": "none",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 9,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "moderate",
+    "identity_selection": "fixed recommendation selects identities",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior",
+    "name": "threshold-adjusted-equal-split",
+    "obedience": false,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "1/2",
+      "3/10",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": false,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "candidate prize split across every member of a viable team",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "team candidate choices",
+    "agents": 4,
+    "anonymity": "yes across pairs",
+    "commitment": "binding within-pair action; no cross-pair assignment",
+    "deviation_class": "pair deviations; tau-player deviations coincide with pairs",
+    "equilibrium_concept": "pure-pair-choice-equilibrium",
+    "equilibrium_multiplicity": 2,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "moderate",
+    "identity_selection": "fixed pair partition",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and matched teammate",
+    "name": "pairwise-matching-market",
+    "obedience": "not-applicable-binding-within-pair",
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "1/2",
+      "3/10",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": "not-applicable-binding-within-pair",
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "threshold-adjusted equal split only",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "assigned actions",
+    "agents": 4,
+    "anonymity": "no",
+    "commitment": "authoritative action assignment",
+    "deviation_class": "none after commitment",
+    "equilibrium_concept": "not-applicable-after-authoritative-commitment",
+    "equilibrium_multiplicity": "not-applicable-authoritative-commitment",
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "17/20",
+    "expected_total_payout": "17/20",
+    "external_subsidy": "0",
+    "fixture": "steep",
+    "identity_selection": "fixed identity order",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and named agents",
+    "name": "central-assignment",
+    "obedience": "not-applicable-authoritative-commitment",
+    "pairwise_strict_stable": "not-applicable-authoritative-commitment",
+    "participation": true,
+    "planner_discovery": "17/20",
+    "posterior": [
+      "3/5",
+      "1/4",
+      "3/20"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": "not-applicable-authoritative-commitment",
+    "subsidy": "none",
+    "tau_player_strict_stable": "not-applicable-authoritative-commitment",
+    "threshold": 2,
+    "transfers": "none",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "matched-team assignments",
+    "agents": 4,
+    "anonymity": "yes ex ante",
+    "commitment": "authoritative random matching and assignment",
+    "deviation_class": "none after commitment",
+    "equilibrium_concept": "not-applicable-after-authoritative-commitment",
+    "equilibrium_multiplicity": "not-applicable-authoritative-commitment",
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "17/20",
+    "expected_total_payout": "17/20",
+    "external_subsidy": "0",
+    "fixture": "steep",
+    "identity_selection": "uniform random perfect matching",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior",
+    "name": "random-matching",
+    "obedience": "not-applicable-authoritative-commitment",
+    "pairwise_strict_stable": "not-applicable-authoritative-commitment",
+    "participation": true,
+    "planner_discovery": "17/20",
+    "posterior": [
+      "3/5",
+      "1/4",
+      "3/20"
+    ],
+    "recommendation_support": [
+      [
+        "1/6",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          1,
+          0,
+          0
+        ]
+      ]
+    ],
+    "recommendation_support_count": 6,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": "not-applicable-authoritative-commitment",
+    "subsidy": "none",
+    "tau_player_strict_stable": "not-applicable-authoritative-commitment",
+    "threshold": 2,
+    "transfers": "none",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions",
+    "agents": 4,
+    "anonymity": "no after token realization",
+    "commitment": "none; token eligibility is binding",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 25,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "17/20",
+    "expected_total_payout": "17/20",
+    "external_subsidy": "0",
+    "fixture": "steep",
+    "identity_selection": "fixed balanced token endowment",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and own token",
+    "name": "team-tokens",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "17/20",
+    "posterior": [
+      "3/5",
+      "1/4",
+      "3/20"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "discovery prize restricted to matching tokens",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions",
+    "agents": 4,
+    "anonymity": "no",
+    "commitment": "none; coalition rights are binding",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 25,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "17/20",
+    "expected_total_payout": "17/20",
+    "external_subsidy": "0",
+    "fixture": "steep",
+    "identity_selection": "fixed named coalitions",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and coalition charter",
+    "name": "exclusive-coalition-rights",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "17/20",
+    "posterior": [
+      "3/5",
+      "1/4",
+      "3/20"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "discovery prize restricted to chartered coalition",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions",
+    "agents": 4,
+    "anonymity": "yes ex ante",
+    "commitment": "nonbinding recommendation",
+    "deviation_class": "obedience, unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 3,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "17/20",
+    "expected_total_payout": "17/20",
+    "external_subsidy": "0",
+    "fixture": "steep",
+    "identity_selection": "uniform correlated team recommendation",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and private recommendation",
+    "name": "correlated-mediator",
+    "obedience": false,
+    "pairwise_strict_stable": false,
+    "participation": true,
+    "planner_discovery": "17/20",
+    "posterior": [
+      "3/5",
+      "1/4",
+      "3/20"
+    ],
+    "recommendation_support": [
+      [
+        "1/6",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          1,
+          0,
+          0
+        ]
+      ]
+    ],
+    "recommendation_support_count": 6,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": false,
+    "subsidy": "none",
+    "tau_player_strict_stable": false,
+    "threshold": 2,
+    "transfers": "threshold-adjusted equal split only",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions",
+    "agents": 4,
+    "anonymity": "yes",
+    "commitment": "none",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 3,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "3/5",
+    "expected_total_payout": "3/5",
+    "external_subsidy": "0",
+    "fixture": "steep",
+    "identity_selection": "none; common lexicographic mode",
+    "implements_planner_portfolio": false,
+    "information_observed": "common posterior",
+    "name": "universal-pooling",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "17/20",
+    "posterior": [
+      "3/5",
+      "1/4",
+      "3/20"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "threshold-adjusted equal split only",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions and viable-team count",
+    "agents": 4,
+    "anonymity": "yes",
+    "commitment": "none",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 3,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "3/5",
+    "expected_total_payout": "3/5",
+    "external_subsidy": "0",
+    "fixture": "steep",
+    "identity_selection": "none; common lexicographic mode",
+    "implements_planner_portfolio": false,
+    "information_observed": "common posterior",
+    "name": "sole-team-rescue",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "17/20",
+    "posterior": [
+      "3/5",
+      "1/4",
+      "3/20"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "prize paid only when exactly one candidate is viable",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions and occupancies",
+    "agents": 4,
+    "anonymity": "yes",
+    "commitment": "none",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 21,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "17/20",
+    "expected_total_payout": "17/20",
+    "external_subsidy": "0",
+    "fixture": "steep",
+    "identity_selection": "fixed recommendation selects identities",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior",
+    "name": "marginal-coalition-contribution",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "17/20",
+    "posterior": [
+      "3/5",
+      "1/4",
+      "3/20"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "prize shared only by an exactly minimal viable team",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions and occupancies",
+    "agents": 4,
+    "anonymity": "yes",
+    "commitment": "none",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 3,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "17/20",
+    "expected_total_payout": "17/20",
+    "external_subsidy": "0",
+    "fixture": "steep",
+    "identity_selection": "fixed recommendation selects identities",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior",
+    "name": "threshold-adjusted-equal-split",
+    "obedience": false,
+    "pairwise_strict_stable": false,
+    "participation": true,
+    "planner_discovery": "17/20",
+    "posterior": [
+      "3/5",
+      "1/4",
+      "3/20"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": false,
+    "subsidy": "none",
+    "tau_player_strict_stable": false,
+    "threshold": 2,
+    "transfers": "candidate prize split across every member of a viable team",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "team candidate choices",
+    "agents": 4,
+    "anonymity": "yes across pairs",
+    "commitment": "binding within-pair action; no cross-pair assignment",
+    "deviation_class": "pair deviations; tau-player deviations coincide with pairs",
+    "equilibrium_concept": "pure-pair-choice-equilibrium",
+    "equilibrium_multiplicity": 1,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "17/20",
+    "expected_total_payout": "17/20",
+    "external_subsidy": "0",
+    "fixture": "steep",
+    "identity_selection": "fixed pair partition",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and matched teammate",
+    "name": "pairwise-matching-market",
+    "obedience": "not-applicable-binding-within-pair",
+    "pairwise_strict_stable": false,
+    "participation": true,
+    "planner_discovery": "17/20",
+    "posterior": [
+      "3/5",
+      "1/4",
+      "3/20"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": "not-applicable-binding-within-pair",
+    "subsidy": "none",
+    "tau_player_strict_stable": false,
+    "threshold": 2,
+    "transfers": "threshold-adjusted equal split only",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "assigned actions",
+    "agents": 4,
+    "anonymity": "no",
+    "commitment": "authoritative action assignment",
+    "deviation_class": "none after commitment",
+    "equilibrium_concept": "not-applicable-after-authoritative-commitment",
+    "equilibrium_multiplicity": "not-applicable-authoritative-commitment",
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "near-tied",
+    "identity_selection": "fixed identity order",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and named agents",
+    "name": "central-assignment",
+    "obedience": "not-applicable-authoritative-commitment",
+    "pairwise_strict_stable": "not-applicable-authoritative-commitment",
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "9/20",
+      "7/20",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": "not-applicable-authoritative-commitment",
+    "subsidy": "none",
+    "tau_player_strict_stable": "not-applicable-authoritative-commitment",
+    "threshold": 2,
+    "transfers": "none",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "matched-team assignments",
+    "agents": 4,
+    "anonymity": "yes ex ante",
+    "commitment": "authoritative random matching and assignment",
+    "deviation_class": "none after commitment",
+    "equilibrium_concept": "not-applicable-after-authoritative-commitment",
+    "equilibrium_multiplicity": "not-applicable-authoritative-commitment",
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "near-tied",
+    "identity_selection": "uniform random perfect matching",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior",
+    "name": "random-matching",
+    "obedience": "not-applicable-authoritative-commitment",
+    "pairwise_strict_stable": "not-applicable-authoritative-commitment",
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "9/20",
+      "7/20",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1/6",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          1,
+          0,
+          0
+        ]
+      ]
+    ],
+    "recommendation_support_count": 6,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": "not-applicable-authoritative-commitment",
+    "subsidy": "none",
+    "tau_player_strict_stable": "not-applicable-authoritative-commitment",
+    "threshold": 2,
+    "transfers": "none",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions",
+    "agents": 4,
+    "anonymity": "no after token realization",
+    "commitment": "none; token eligibility is binding",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 25,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "near-tied",
+    "identity_selection": "fixed balanced token endowment",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and own token",
+    "name": "team-tokens",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "9/20",
+      "7/20",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "discovery prize restricted to matching tokens",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions",
+    "agents": 4,
+    "anonymity": "no",
+    "commitment": "none; coalition rights are binding",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 25,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "near-tied",
+    "identity_selection": "fixed named coalitions",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and coalition charter",
+    "name": "exclusive-coalition-rights",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "9/20",
+      "7/20",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "discovery prize restricted to chartered coalition",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions",
+    "agents": 4,
+    "anonymity": "yes ex ante",
+    "commitment": "nonbinding recommendation",
+    "deviation_class": "obedience, unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 9,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "near-tied",
+    "identity_selection": "uniform correlated team recommendation",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and private recommendation",
+    "name": "correlated-mediator",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "9/20",
+      "7/20",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1/6",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      [
+        "1/6",
+        [
+          1,
+          1,
+          0,
+          0
+        ]
+      ]
+    ],
+    "recommendation_support_count": 6,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "threshold-adjusted equal split only",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions",
+    "agents": 4,
+    "anonymity": "yes",
+    "commitment": "none",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 9,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "9/20",
+    "expected_total_payout": "9/20",
+    "external_subsidy": "0",
+    "fixture": "near-tied",
+    "identity_selection": "none; common lexicographic mode",
+    "implements_planner_portfolio": false,
+    "information_observed": "common posterior",
+    "name": "universal-pooling",
+    "obedience": true,
+    "pairwise_strict_stable": false,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "9/20",
+      "7/20",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": false,
+    "threshold": 2,
+    "transfers": "threshold-adjusted equal split only",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions and viable-team count",
+    "agents": 4,
+    "anonymity": "yes",
+    "commitment": "none",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 3,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "9/20",
+    "expected_total_payout": "9/20",
+    "external_subsidy": "0",
+    "fixture": "near-tied",
+    "identity_selection": "none; common lexicographic mode",
+    "implements_planner_portfolio": false,
+    "information_observed": "common posterior",
+    "name": "sole-team-rescue",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "9/20",
+      "7/20",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "prize paid only when exactly one candidate is viable",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions and occupancies",
+    "agents": 4,
+    "anonymity": "yes",
+    "commitment": "none",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 21,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "near-tied",
+    "identity_selection": "fixed recommendation selects identities",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior",
+    "name": "marginal-coalition-contribution",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "9/20",
+      "7/20",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "prize shared only by an exactly minimal viable team",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "submitted actions and occupancies",
+    "agents": 4,
+    "anonymity": "yes",
+    "commitment": "none",
+    "deviation_class": "unilateral, pair, and tau-player strict-member deviations",
+    "equilibrium_concept": "labeled-pure-nash-under-unilateral-deviations",
+    "equilibrium_multiplicity": 9,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "near-tied",
+    "identity_selection": "fixed recommendation selects identities",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior",
+    "name": "threshold-adjusted-equal-split",
+    "obedience": true,
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "9/20",
+      "7/20",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": true,
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "candidate prize split across every member of a viable team",
+    "weak_budget_balance": true
+  },
+  {
+    "actions_observed": "team candidate choices",
+    "agents": 4,
+    "anonymity": "yes across pairs",
+    "commitment": "binding within-pair action; no cross-pair assignment",
+    "deviation_class": "pair deviations; tau-player deviations coincide with pairs",
+    "equilibrium_concept": "pure-pair-choice-equilibrium",
+    "equilibrium_multiplicity": 2,
+    "exact_budget_balance_at_recommendation": true,
+    "expected_discovery": "4/5",
+    "expected_total_payout": "4/5",
+    "external_subsidy": "0",
+    "fixture": "near-tied",
+    "identity_selection": "fixed pair partition",
+    "implements_planner_portfolio": true,
+    "information_observed": "common posterior and matched teammate",
+    "name": "pairwise-matching-market",
+    "obedience": "not-applicable-binding-within-pair",
+    "pairwise_strict_stable": true,
+    "participation": true,
+    "planner_discovery": "4/5",
+    "posterior": [
+      "9/20",
+      "7/20",
+      "1/5"
+    ],
+    "recommendation_support": [
+      [
+        "1",
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ]
+    ],
+    "recommendation_support_count": 1,
+    "report_truthfulness": "not-applicable-common-posterior-input",
+    "strict_unilateral_obedience": "not-applicable-binding-within-pair",
+    "subsidy": "none",
+    "tau_player_strict_stable": true,
+    "threshold": 2,
+    "transfers": "threshold-adjusted equal split only",
+    "weak_budget_balance": true
+  }
+]

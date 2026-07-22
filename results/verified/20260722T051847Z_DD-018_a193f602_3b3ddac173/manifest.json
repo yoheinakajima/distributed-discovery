@@ -1,0 +1,33 @@
+{
+  "command": "make dd018-team-mechanisms",
+  "config_hash_sha256": "3b3ddac173f00ff97e40425dca1e45853e64199fdd7e01044b0b3622ed06cba8",
+  "dependency_lock_hash_sha256": "733f6f17d4a939f0387d16e45b6836bf89f20eb22d1669234b8598fa13fbd04a",
+  "ended_utc": "2026-07-22T05:18:47.580120Z",
+  "exit_status": 0,
+  "git_commit": "a193f6025754610922a61d5bed3b4665306fe124",
+  "git_dirty": false,
+  "input_hashes": {
+    "src/distributed_discovery/team_mechanisms/model.py": "fbc2411c9e163b457f6a080ee8ac6b0e008c20d4fbf3b392741cec50a74e2e94",
+    "src/distributed_discovery/team_mechanisms/study.py": "1d97890e782278cc1e3dd1d852703c567077d257e05288802da399f78bc1ffdf",
+    "src/distributed_discovery/team_mechanisms/verification.py": "3759849bc0a8f9bae0dd06927465b6fc570146eafd75df5ceb48f79e92a09519",
+    "studies/DD-018-minimum-viable-team-mechanisms/configs/baseline.yml": "692aa5afabffd3ee6e8f6cf2040e179d690b45d97130d3d9a8cbd202e31f14b1",
+    "studies/DD-018-minimum-viable-team-mechanisms/model.md": "6b264be293755fa89aeb6f2a5c74dc3663d77019ef1b2d2b10811f6f257fc2bc"
+  },
+  "outputs": {
+    "outputs/corruption-tests.json": "72422c5c62a91b6e9add2b736ad20d9503f2efb06c22267c630ad2186aed2d0b",
+    "outputs/mechanism-census.json": "6d28c36cc72e27e25cf038503c70f6eaa6304d00a85d3c9cc70874daa5b75a23",
+    "outputs/mechanism-schema.json": "d7f53a8a3e56624861d915487ca1ad21fa6c27cbcbe3979a187f60d9e911dae8",
+    "outputs/summary.json": "0439b211955c25244c6da1d33eacfff4228cd05465de8d792576d963f7b0218b",
+    "outputs/verification.json": "fe97cc4ccafe6f37549e7c828748d3349349791cdc4e6057306555ba3d21196e"
+  },
+  "random_seeds": {
+    "algorithm": [],
+    "model": null
+  },
+  "run_id": "20260722T051847Z_DD-018_a193f602_3b3ddac173",
+  "schema_version": 1,
+  "started_utc": "2026-07-22T05:18:47.576561Z",
+  "study_id": "DD-018",
+  "upstream_commit": null,
+  "validation_status": "passed"
+}

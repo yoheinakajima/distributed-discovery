@@ -1,0 +1,5 @@
+study_id: DD-018
+status: complete-bounded-study
+evidence_status: four-verified-exact-bounded-computational-results
+next_action: preserve the immutable run and authority/incentive/coalition boundaries; commit and push audited evidence, then complete PR and deployment acceptance
+updated_utc: 2026-07-22T05:24:36Z

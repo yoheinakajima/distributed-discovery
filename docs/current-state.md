@@ -15,8 +15,9 @@ complete and characterizes the bounded pure-Nash occupancy correspondence,
 small-coalition stability, and one symmetric tied-mode mixture without
 identifying that selected rule with all equilibria. DD-015 is complete and
 deployed at its bounded dynamic-attention and separately labeled planner-only
-threshold-two scopes. DD-018 is next, followed by benchmark and synthetic
-extensions, the focused paper, Labs, and final handoff.
+threshold-two scopes. DD-018 has complete bounded evidence pending deployment.
+DiscoveryBench v3 is next only after DD-018 merges and deploys, followed by the
+synthetic extension, focused paper, Labs, and final handoff.
 
 Program V5, *The Information Sharing Frontier*, is a roadmap direction only
 until Program V4 completes. It will begin with a documentation baseline and one
@@ -28,16 +29,16 @@ canonical Shared Discovery Paradox repository remains pinned at
 
 | Measure | Current value |
 | --- | ---: |
-| Ledger claims | 82 |
-| Passing immutable runs | 41 of 44 manifests |
-| Registered studies | 21 |
-| Python source files | 126 |
-| Public HTML routes | 61 |
+| Ledger claims | 86 |
+| Passing immutable runs | 42 of 45 manifests |
+| Registered studies | 22 |
+| Python source files | 130 |
+| Public HTML routes | 62 |
 | Public data files | 66 |
 | Laboratory routes | 12 |
 | Validated project papers | 5 |
 | Checksum-registered downloads | 19 |
-| Test suite | 194 collected tests |
+| Test suite | 206 collected tests |
 
 ## Program V4 exact result
 
@@ -77,6 +78,18 @@ two planner extension preserves discovery and reduces expected actions in all
   DD-C-0079–0081.
 - DD-015 threshold-two extension:
   `20260722T044453Z_DD-015_34bc4379_33e1da478b`, DD-C-0082.
+
+DD-018 compares ten common-posterior team institutions across five exact
+`M=3`, `N=4`, `tau=2` fixtures. Forty of 50 recommendations attain planner
+discovery. Among 35 rows with feasible unilateral action changes, 31 are
+strictly obedient and 29 pass both strict-member pair and exact-size-two
+tau-player checks. Universal pooling and sole-team rescue collapse in every
+fixture and never attain the planner portfolio; sole-team rescue nevertheless
+makes collapse unilateral- and pair-stable in all five. Team tokens, exclusive
+rights, and marginal contribution support the planner recommendation throughout
+but retain respectively 25, 25, and 21 pure equilibria per fixture.
+
+- DD-018: `20260722T051847Z_DD-018_a193f602_3b3ddac173`, DD-C-0083–0086.
 
 ## Program V3 exact results
 
