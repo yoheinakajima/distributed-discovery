@@ -23,7 +23,9 @@ request was open. The single active substantive branch is
 deployed, and owned by the Information Sharing Frontier family. Claims
 DD-C-0089 through DD-C-0110 and their four immutable primary runs are the
 complete authorized evidence base. No research configuration will be rerun,
-and no study or claim will be added or changed.
+and no study or claim was added or changed. Paper PR #155 and its
+presentation-only mobile correction PR #156 are merged and deployed; issue
+#153 is closed.
 
 ## Scope
 
@@ -82,7 +84,7 @@ attention theorem owned by *The Incentive to Ignore*.
 6. **M6 — complete: site integration and repository acceptance.** Publish the
    validated working paper through the existing site, add relationship links,
    and run every focused and repository-wide acceptance gate.
-7. **M7 — active: GitHub merge and deployment.** Keep one draft PR current,
+7. **M7 — complete: GitHub merge and deployment.** Keep one draft PR current,
    mark it ready only after all-page QA and full local acceptance, squash-merge
    after CI, verify post-merge CI/Pages and live routes, and close issue #153.
 
@@ -106,8 +108,8 @@ attention theorem owned by *The Incentive to Ignore*.
 - [x] Produce two byte-identical clean builds and inspect every rendered page.
 - [x] Integrate and validate the public paper page, download, and relationship
   links without adding navigation, analytics, DOI, or submission status.
-- [ ] Merge, deploy, verify live routes/checksums, and close issue #153; all
-  focused and repository-wide local checks already pass.
+- [x] Merge, deploy, verify live routes/checksums, and close issue #153; all
+  focused and repository-wide local checks pass.
 
 ## Discoveries and surprises
 
@@ -130,6 +132,10 @@ attention theorem owned by *The Incentive to Ignore*.
 - `2026-07-22T22:54:18Z`: the first all-page render exposed overlapping labels
   in three generated figures. The generator was corrected, the affected pages
   were rerendered at full resolution, and the final 26-page PDF is clean.
+- `2026-07-22T23:13:00Z`: deployed mobile browser QA exposed page-level
+  horizontal overflow from the long BibTeX entry. An explicit scroll container
+  and regression assertions remove the overflow without changing the paper,
+  citation, PDF, claims, or evidence.
 
 ## Decision log
 
@@ -153,6 +159,10 @@ attention theorem owned by *The Incentive to Ignore*.
   159 source files, 247 tests, all 110 claims, all 51 manifests, seven papers
   totaling 115 pages, and a 77-route/26-study site with 23 checksum-covered
   downloads.
+- `2026-07-22T23:20:00Z`: accept the same-branch PR #156 as a
+  presentation-only completion correction after PR #155's deployed browser
+  audit; require its CI, Pages deployment, and repeated mobile/desktop QA before
+  marking the paper lane complete.
 
 ## Evidence inputs that must not change
 
@@ -197,7 +207,10 @@ hash change invalidates the visual-QA record.
 - Working-paper metadata, citation/BibTeX, build and validation entry points,
   and the publication route
   `publications/information-sharing-frontier.html` with checksum-registered PDF.
-- Draft PR #155: `https://github.com/yoheinakajima/distributed-discovery/pull/155`.
+- Merged paper PR #155:
+  `https://github.com/yoheinakajima/distributed-discovery/pull/155`.
+- Merged mobile-containment PR #156:
+  `https://github.com/yoheinakajima/distributed-discovery/pull/156`.
 
 ## Blockers
 
@@ -206,15 +219,23 @@ a blocker, because authoritative replacement interfaces already exist.
 
 ## Recovery and restart instructions
 
-Resume only on `paper/information-sharing-frontier`, confirm the four immutable
-run directories and claim range remain unchanged, then continue the sole active
-milestone above. Never invoke the DD-019 through DD-022 study targets. If a
-build asset needs regeneration, invoke only the paper asset generator.
+Resume from synchronized `main`; the paper lane is complete. Confirm the four
+immutable run directories and claim range remain unchanged before any later
+editorial work. Never invoke the DD-019 through DD-022 study targets for
+freshness. If a build asset needs regeneration, invoke only the paper asset
+generator.
 
 ## Outcome and retrospective
 
-Pending. Completion requires a merged working paper, passing CI and Pages,
-verified live paper and publication routes, and issue #153 closure.
+Complete. PR #155 merged the 26-page paper as
+`45bb498f4811be89b04626b71842d87ee854fcd1`; post-merge CI `29965009706` and
+Pages `29965009711` passed. PR #156 merged the deployed mobile-containment
+correction as `fae4a81b4628f614adbb6bf602fbce6d6065746e`; branch CI
+`29965500859`, paper/site build `29965500839`, post-merge CI `29965642887`, and
+Pages `29965642900` passed. Live desktop and 390-pixel browser audits pass with
+clean logs, no page-level horizontal overflow, correct citation/status text,
+22 claim links, four study links, and a checksum-matching PDF. Issue #153 is
+closed. No research evidence or publication-status boundary changed.
 
 ## Admission decision history
 

@@ -1,12 +1,18 @@
 # Master execution plan
 
-## Active continuation — Information Sharing Frontier working paper (2026-07-22)
+## Completed continuation — Information Sharing Frontier working paper (2026-07-22)
 
 DD-022 research PR #151 merged as
 `c8a11bd3c9c8c68e6e631bc61ef3a1d8c46e7fe9`; post-merge CI `29959514182`,
 Pages `29959514196`, and all named live routes pass. Issue #153 and branch
-`paper/information-sharing-frontier` own the sole active lane under draft PR
-#155.
+`paper/information-sharing-frontier` owned the sole substantive lane. Paper PR
+#155 merged as `45bb498f4811be89b04626b71842d87ee854fcd1`; post-merge CI
+`29965009706` and Pages `29965009711` pass. A deployed mobile audit exposed a
+BibTeX-only horizontal overflow. The presentation-only correction merged from
+the same branch through PR #156 as
+`fae4a81b4628f614adbb6bf602fbce6d6065746e`; branch CI `29965500859`,
+paper/site build `29965500839`, post-merge CI `29965642887`, and Pages
+`29965642900` pass. Issue #153 is closed.
 
 The branch implements *When Does Information Sharing Improve Decentralized
 Discovery?* as a 26-page deterministic working paper with an explicit
@@ -16,7 +22,7 @@ independent provenance/corruption checks, all-page visual QA, and site
 publication integration pass locally. No DD-019 through DD-022 run was rerun,
 and no study, claim, proof, empirical evidence, submission, release, DOI,
 journal contact, settings change, or upstream mutation is created. The next
-gate is branch CI, then squash merge and live Pages verification.
+gate is the future program roadmap; this paper lane is complete and deployed.
 
 ## Completed continuation — DD-022 Coordination-Free Positive Sharing (2026-07-22)
 
