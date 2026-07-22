@@ -9,7 +9,7 @@ verification plan, and corruption test where certificates are used.
 | --- | --- | --- |
 | DD-016 Threshold Discovery | complete and deployed through PR #102 | Preserve DD-C-0071 through DD-C-0074 and the immutable primary run; do not treat tied-mode selection as the equilibrium correspondence. |
 | DD-017 Equilibrium Selection and Coalition Stability | complete and deployed through PR #104 | Preserve DD-C-0075 through DD-C-0078 and distinct weak-Nash, pairwise, tau-player, and symmetric-mixed meanings. |
-| Program V4 later queue | Synthetic Experiment v3 evidence complete; deployment pending in PR #120 | Deploy the frozen 37-cell synthetic-only extension, then the focused paper, public Labs, and final handoff under separate gates. Program V4 is not complete. |
+| Program V4 later queue | active sequentially after Synthetic Experiment v3 | Build the focused paper, public Labs, and final handoff under separate gates. Program V4 is not complete. |
 | Program V3 baseline | complete through PR #80 | DD-012 through DD-015 are registered and deployed without creating research evidence. |
 | DD-012 Incentive to Ignore | complete and deployed through PR #82 | Preserve DD-C-0059 through DD-C-0061 and the immutable primary run. |
 | DD-013 Audience Design | complete and deployed through PR #84 | Preserve DD-C-0062 through DD-C-0065, the primary run, and Audience Lab. |
@@ -17,7 +17,7 @@ verification plan, and corruption test where certificates are used.
 | DD-015 Dynamic Attention | complete and deployed through PR #111 | Preserve DD-C-0079 through DD-C-0082, the immutable baseline and separately labeled threshold-two run, the full-credit reward scope, and the bounded visibility-herding null. |
 | DD-018 Minimum Viable Team Mechanisms | complete and deployed through PR #114 | Preserve DD-C-0083 through DD-C-0086 and the immutable 50-row census; common-posterior allocation does not test report truthfulness, authoritative implementation is not equilibrium, and pair/tau stability is not coalition-proofness. |
 | DiscoveryBench v3 | complete and deployed through PR #117 | Preserve DD-C-0087, the immutable v3 run, v1/v2 defaults and exact vectors, 36 compatible exact rows, 660 exclusions, capability isolation, and no composite score. |
-| Synthetic Experiment v3 | complete bounded evidence; deployment pending in PR #120 | Preserve DD-C-0088, all three immutable versions, the 644 retained calibration failures, shared-seed v2 power rows, and the absolute no-human-data boundary. |
+| Synthetic Experiment v3 | complete and deployed through PR #120 | Preserve DD-C-0088, all three immutable versions, the 644 retained calibration failures, shared-seed v2 power rows, and the absolute no-human-data boundary. |
 | Program V5 — Information Sharing Frontier | authorized after the merged Program V4 handoff | Begin with a documentation-only baseline, then register only Signal Geometry and the Action-Budget Discovery Profile after its channel-law and complexity audit. Do not start V5 research while V4 is active. |
 | Program V3 focused paper | complete and deployed through PR #90 | The deterministic 20-page *Incentive to Ignore* paper, nine generated evidence assets, citation audit, all-page visual review, Pages, and live PDF pass. |
 | Program V3 benchmark, experiment, and site integration | complete and deployed through PRs #93, #95, and #97 | Preserve version compatibility, static/no-tracking operation, no-JS tables, and exact provenance. |
@@ -52,8 +52,11 @@ git pull --ff-only origin main
 make verify
 ```
 
-The active milestone is Synthetic Experiment v3 PR #120. Its sole immutable run
-and DD-C-0088 audit are complete; finish repository/site acceptance, commit the
-evidence, pass PR and deployment gates, and verify the live experiment-kit,
-data, and v3 schema. Never rerun the v3 configuration for freshness. For
-settings-only work, use `docs/github-setup.md` and issue #32.
+The active milestone is the focused paper *Threshold Discovery*, subtitled
+*Coordination, Crowding, and Minimum Viable Teams*. Open one issue and branch
+from synchronized `main`; synthesize DD-016, DD-017, DD-015, DD-018,
+DiscoveryBench v3, and Synthetic Experiment v3 with explicit claim and
+immutable-run links. Require generated figures, a deterministic PDF, citation
+validation, and all-page visual QA. Describe it only as a working paper: do not
+claim a DOI, submission, peer review, or verified novelty. For settings-only
+work, use `docs/github-setup.md` and issue #32.

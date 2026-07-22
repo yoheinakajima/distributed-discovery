@@ -1,6 +1,6 @@
 # Current program state
 
-_Reconciled 2026-07-22 after the DiscoveryBench v3 deployment closeout._
+_Reconciled 2026-07-22 after the Synthetic Experiment v3 deployment closeout._
 
 Programs V1, V2, and the required Program V3 queue are complete at their
 registered bounded scopes. Program V3, *The Incentive to Ignore*, completed
@@ -16,11 +16,10 @@ small-coalition stability, and one symmetric tied-mode mixture without
 identifying that selected rule with all equilibria. DD-015 is complete and
 deployed at its bounded dynamic-attention and separately labeled planner-only
 threshold-two scopes. DD-018 is complete and deployed at its bounded
-common-posterior mechanism scope. DiscoveryBench v3 is complete and deployed
-with all earlier versions preserved. Synthetic Experiment v3 has complete
-bounded evidence pending deployment: all earlier versions are preserved, every
-calibration failure remains public, and no human experiment exists. It is
-followed by the focused paper, Labs, and final handoff.
+common-posterior mechanism scope. DiscoveryBench v3 and Synthetic Experiment
+v3 are complete and deployed with all earlier versions preserved. Every
+synthetic calibration failure remains public, and no human experiment exists.
+The focused paper is next, followed by Labs and the final handoff.
 
 Program V5, *The Information Sharing Frontier*, is a roadmap direction only
 until Program V4 completes. It will begin with a documentation baseline and one

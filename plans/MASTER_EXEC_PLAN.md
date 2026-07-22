@@ -55,7 +55,7 @@ Progress:
 - [x] V4.4 — Execute DD-015 at its registered baseline, then separately assess
   the bounded threshold extension.
 - [x] V4.5 — Execute and verify DD-018 mechanisms.
-- [ ] V4.6 — Extend DiscoveryBench and the synthetic experiment kit.
+- [x] V4.6 — Extend DiscoveryBench and the synthetic experiment kit.
 - [ ] V4.7 — Build the focused paper and Program V4 Labs.
 - [ ] V4.8 — Run final acceptance, reconcile documentation, and hand off.
 - [ ] V5.0 — Merge the Program V5 documentation baseline after V4 handoff.
@@ -282,6 +282,13 @@ before its independent verifier and immutable primary run pass.
   selects v3, retains all 644 failures, preserves v2 attention and power rows,
   publishes all three schemas, links DD-C-0088 and the immutable run, and keeps
   the no-human-data warning. The next action is the evidence commit and push.
+- 2026-07-22: Synthetic Experiment v3 PR #120 passed CI and paper/site artifact
+  checks and squash-merged as `0f7a234`, closing issue #119. Post-merge CI
+  `29896864562` and Pages `29896864602` passed. The live experiment-kit,
+  threshold/dynamic experiment, DD-011, v3 schema, claims, summary, and
+  calibration routes returned HTTP 200; the public data confirm the frozen
+  counts, all 644 retained failures, and `no_human_data: true`. Milestone V4.6
+  is complete. The focused *Threshold Discovery* paper is next.
 
 ### Program V3 attention queue (complete, 2026-07-21)
 
