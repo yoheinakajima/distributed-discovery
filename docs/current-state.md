@@ -49,6 +49,13 @@ the immutable DD-020 point census and five-channel profiles. It exposes 2,044
 point transitions and ten channel transitions, including the same-accuracy
 opposite-sign comparison, without recomputing the study.
 
+Public integration PR #140 merged as `57270680`; post-merge CI `29933212532`
+and Pages `29933212171` pass. The final acceptance under issue #141 and PR #142
+passes repository, paper, site, schema, exact-verifier, corruption, provenance,
+security, license, upstream, browser, accessibility, download, and all-file
+live-route audits. It creates no claim, run, paper change, submission action, or
+new study allocation.
+
 The repository is public and project-authored content is MIT-licensed. The
 canonical Shared Discovery Paradox repository remains pinned at
 `5025cc8e8f2f8ca015dff2066f08f81ad5715a51`, separate, clean, and read-only.

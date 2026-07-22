@@ -2,7 +2,7 @@
 
 Date: 2026-07-22 UTC
 
-Issue #139 and draft PR #140 own this presentation-only milestone. It adds no
+Issue #139 and PR #140 own this presentation-only milestone. It adds no
 claim, run, paper, submission, or research authorization. The Lab reads only
 immutable run `20260722T142551Z_DD-020_3854fff6_37c11a850a`.
 
@@ -43,3 +43,16 @@ branch evidence commit, `git diff --check`, bootstrap, Ruff, strict MyPy over
 142 source files, all 224 tests, all 96 claims, all 49 manifests, and the
 72-route/24-study site build passed. Claims, immutable runs, and paper PDFs are
 unchanged.
+
+## Deployment
+
+Push CI `29932990915`, PR CI `29932992256`, and paper/site build
+`29932992268` passed. PR #140 squash-merged as `57270680`, issue #139 closed,
+and post-merge CI `29933212532` plus Pages `29933212171` passed. The nine
+required routes returned HTTP 200; a subsequent final-acceptance sweep found
+all 171 generated public files live. The deployed point census SHA-256 is
+`742ece76da5d4746772c5b9065e754b5e24012cae8c899f36d54469c6e796a59` and
+the deployed channel-profile SHA-256 is
+`a4f63d52f402ce14f91e469d4b425ce65a92740b31530c7da9384cc726030e3a`,
+matching the immutable run exactly. Deployed desktop/mobile interaction and
+console checks pass.

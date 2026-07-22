@@ -73,9 +73,10 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   #137 and PR #138, merged and deployed as `9401fbe7`.
 - **D (complete):** public DD-020 integration and output-connected Lab, issue
   #139 and PR #140, merged and deployed as `57270680`.
-- **Acceptance (active):** issue #141 and branch
-  `codex/program-v5-final-acceptance`; complete the repository/paper/site/live
-  audit and final handoff without research execution.
+- **Acceptance (active):** issue #141, draft PR #142, and branch
+  `codex/program-v5-final-acceptance`; the complete local/live audit and handoff
+  reconciliation pass without research execution, with merge and deployment
+  pending.
 
 ### Progress checklist
 
@@ -90,7 +91,8 @@ conjecture until proof or an exact counterexample supplies the permitted status.
 - [x] Apply and merge the editorial theorem gate and synthesis prospectus.
 - [x] Build and locally validate the DD-020 public integration and Lab.
 - [x] Merge and deploy the DD-020 public integration and Lab.
-- [ ] Run final acceptance and reconcile every required handoff document.
+- [x] Run final acceptance and reconcile every required handoff document.
+- [ ] Merge and deploy the documentation-only final acceptance.
 
 ### Discoveries and surprises
 
@@ -128,6 +130,14 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   after that lint-only correction, strict MyPy exposed two JSON `object` to
   `int` conversions. Explicit string normalization resolved both. The repeated
   gate then passed all 224 tests, 96 claims, and 49 manifests.
+- The final acceptance's first focused verifier selector repeated the known
+  non-editable-package cache mistake and failed collection before running a
+  test. Repeating with the Makefile-equivalent `PYTHONPATH="$PWD/src"` passed
+  18 focused tests; the authoritative full Make gate had already passed all
+  224 tests.
+- DD-019's status still told the next agent to register Incremental Sharing.
+  Final reconciliation corrected it to preserve the deployed DD-019/DD-020
+  interfaces and require a new bounded gate for any later package.
 
 ### Decision log
 
@@ -184,6 +194,14 @@ conjecture until proof or an exact counterexample supplies the permitted status.
   required live routes returned 200, both public source-file SHA-256 values
   matched the immutable run, and deployed desktop/mobile browser QA passed.
   Issue #141 begins the separate documentation-only final acceptance.
+- `2026-07-22T15:35:59Z`: accept the final handoff for branch review after all
+  four Make gates, 17 saved verification records, 17 corruption records with
+  58 true gates, 12 schemas plus valid/invalid fixture behavior, all six paper
+  validations, all 22 local/live download checksums, all 171 live files,
+  secret/host-path/license/provenance/upstream scans, and local/deployed browser
+  checks passed. The DD-020 tree matches research merge `cf7bc67e`; claims,
+  immutable runs, and paper PDFs are unchanged; no human data or submission
+  action exists.
 
 ### Validation strategy
 
@@ -204,8 +222,8 @@ PDF, secret, host-path, license, provenance, and upstream-cleanliness audits.
 - `make site`: all routes, fragments, downloads, no-JavaScript fallbacks, and
   public-safety checks pass; Milestone A adds `program.html` without changing
   research inventories.
-- The eventual registered DD-020 primary target runs once from clean committed
-  source after its draft PR opens and writes a new immutable directory.
+- The registered DD-020 primary target ran once from clean committed source
+  after its draft PR opened; its immutable directory is preserved unchanged.
 
 ### Artifacts produced
 
@@ -218,7 +236,8 @@ run `20260722T142551Z_DD-020_3854fff6_37c11a850a`; and DD-C-0092 through
 DD-C-0096; issue #137 and draft PR #138; two editorial gate records; the
 living-synthesis prospectus and maturity map; and the reconciled public program
 page; issue #139 and draft PR #140; and the exact output-connected Incremental
-Sharing Lab plus immutable-source public data copies.
+Sharing Lab plus immutable-source public data copies; issue #141, draft PR
+#142, and `reports/program-v5-continuation-final-acceptance.md`.
 
 ### Blockers
 
@@ -230,16 +249,16 @@ checkpoint without presenting incomplete work as completion.
 
 Inspect `git status --short --branch`, read this section and the nearest active
 study files, query open PRs/issues, and resume the first unchecked item. Do not
-rerun any passing primary configuration. If Milestone A is merged, synchronize
-`main` before allocating the next live study ID.
+rerun any passing primary configuration. After PR #142 merges, synchronize
+`main`; any later study requires its own bounded gate and is not allocated here.
 
 ### Outcome and retrospective
 
-Milestones A through C are complete and deployed without weakening evidence or
-paper boundaries. Milestone D is built and locally validated; merge, Pages,
-live-route validation, and the final acceptance reconciliation remain. Update
-after every material decision, failed check, immutable run, claim audit, merge,
-and deployment.
+Milestones A through D are complete and deployed without weakening evidence or
+paper boundaries. The final acceptance audit and reconciliation pass in PR
+#142; its merge, post-merge workflows, and final live confirmation remain.
+Update after every material decision, failed check, immutable run, claim audit,
+merge, and deployment.
 
 ## Current state
 

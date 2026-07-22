@@ -35,4 +35,5 @@ validated PDF is not automatically an archival-paper candidate or submission.
 The DD-020 editorial gate passed for *The Incentive to Ignore* as a companion
 result, while assigning DD-020 primary ownership to a future Information
 Sharing Frontier theorem-family paper. No manuscript expansion or submission
-action is authorized.
+action is authorized. The Program V5 continuation acceptance rebuilt all six
+papers deterministically and changed no tracked PDF or scientific content.

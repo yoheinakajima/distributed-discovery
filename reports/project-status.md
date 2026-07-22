@@ -1,15 +1,16 @@
-# Project status — Program V4 final acceptance and Program V5 continuation
+# Project status — Program V5 continuation final acceptance
 
 Date: 2026-07-22 (America/Los_Angeles)
 
 Programs V1 through V4 are complete at their registered bounded scopes.
-Program V5 is active: its documentation baseline, DD-019, and governance
-architecture are merged and deployed. DD-020 Incremental Sharing and
+Program V5's documentation baseline, DD-019, and governance architecture are
+merged and deployed. DD-020 Incremental Sharing and
 Independent Rescue is merged and deployed through PR #136 with a passing
 immutable run and five audited claims. Its documentation-only editorial gate
 assigns primary ownership without creating research evidence or submission
-authority. Issue #139 and PR #140 add the exact output-connected public Lab
-without executing or mutating any research run.
+authority. PR #140 deployed the exact output-connected public Lab without
+executing or mutating any research run. Issue #141 and PR #142 record the
+documentation-only final acceptance; no later Program V5 package is allocated.
 
 ## Inventory
 
@@ -27,7 +28,41 @@ without executing or mutating any research run.
 | Labs | 17 |
 | Checksum-covered downloads | 22 |
 
-## Program V4 milestones
+## Program V5 continuation milestones
+
+| Milestone | Issue | PR | Merge SHA |
+| --- | ---: | ---: | --- |
+| Governance and publication architecture | #133 | #134 | `dc32ff17` |
+| DD-020 Incremental Sharing | #135 | #136 | `cf7bc67e` |
+| Editorial theorem gate and synthesis prospectus | #137 | #138 | `9401fbe7` |
+| Public integration and Incremental Sharing Lab | #139 | #140 | `57270680` |
+| Final acceptance | #141 | #142 | recorded in GitHub after merge |
+
+## Current acceptance record
+
+- Bootstrap, Ruff, strict MyPy over 142 source files, all 224 tests, the
+  96-claim ledger, and all 49 immutable manifests pass.
+- Seventeen saved exact-verification records pass; 58 gates across 17 saved
+  corruption records are true; 18 focused verifier/corruption tests pass.
+- Twelve JSON schemas validate; the synthetic discovery-event valid fixture is
+  accepted and its invalid fixture is rejected.
+- Six project papers rebuild deterministically at 12, 14, 3, 20, 20, and 20
+  pages, with valid provenance and unchanged tracked PDFs.
+- The site builds 72 HTML routes for 24 studies, 71 public data files, 17 Labs,
+  and 22 checksum-covered downloads. All 171 deployed files return HTTP 200,
+  and every deployed download matches its registered size and SHA-256.
+- Browser QA passes substantive point/channel output selection, opposite-sign
+  same-accuracy comparison, semantic controls, live status, keyboard focus,
+  desktop/mobile containment, internally scrolling tables, and clean logs.
+- Secret, host-path, license, provenance, Git-cleanliness, and upstream checks
+  pass. The upstream clone remains clean at
+  `5025cc8e8f2f8ca015dff2066f08f81ad5715a51`.
+
+No primary run was repeated. Claims, immutable runs, and scientific paper
+content are unchanged. No human data exist, and no submission, release, DOI,
+settings, or canonical-upstream action occurred.
+
+## Historical Program V4 milestones
 
 | Milestone | Issue | PR | Merge SHA |
 | --- | ---: | ---: | --- |
@@ -43,7 +78,7 @@ without executing or mutating any research run.
 | Output-connected Labs | #124 | #125 | `e12d1d2` |
 | Final acceptance | #126 | final handoff PR | recorded in GitHub after merge |
 
-## Acceptance record
+## Historical Program V4 acceptance record
 
 - Bootstrap, Ruff formatting/lint, strict MyPy on 134 source files, all 212
   tests, the 88-claim ledger, and all 47 manifests pass.
@@ -68,11 +103,13 @@ post-merge CI `29900587931` and Pages `29900587930` passed. Labs PR #125
 passed its branch checks; post-merge CI `29902201507` and Pages `29902201604`
 passed. Final handoff PR and post-merge workflow IDs are recorded after merge.
 
-## Current Program V5 milestone
+## Completed Program V5 continuation
 
 DD-019 deployment closeout merged as `5e6c800`; governance/publication PR #134
 merged as `dc32ff17`. DD-020's sole primary run is
 `20260722T142551Z_DD-020_3854fff6_37c11a850a`; both exact methods and five
 corruptions pass. The documentation-only editorial theorem gate and synthesis
 prospectus are merged. The exact DD-020 result and output-connected Lab are
-built under issue #139; final acceptance follows their merge and deployment.
+deployed through PR #140 as `57270680`; post-merge CI `29933212532` and Pages
+`29933212171` pass. Final acceptance is recorded through issue #141 and PR
+#142. Settings-only issue #32 remains the sole authority-blocked item.

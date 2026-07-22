@@ -1,5 +1,5 @@
 study_id: DD-019
 status: complete-bounded-study
 evidence_status: three-independently-reproduced-exact-bounded-computational-results
-next_action: preserve PR 131, the immutable run, and all private/planner/scalar boundaries; register Incremental Sharing separately if authorized
-updated_utc: 2026-07-22T08:56:00Z
+next_action: preserve the immutable run, deployed profile interface, and all private/planner/scalar boundaries; require a new bounded gate for later work
+updated_utc: 2026-07-22T15:35:59Z

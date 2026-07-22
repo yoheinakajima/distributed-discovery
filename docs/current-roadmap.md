@@ -20,7 +20,7 @@ verification plan, and corruption test where certificates are used.
 | Synthetic Experiment v3 | complete and deployed through PR #120 | Preserve DD-C-0088, all three immutable versions, the 644 retained calibration failures, shared-seed v2 power rows, and the absolute no-human-data boundary. |
 | Threshold Discovery paper | complete and deployed through PR #123 | Preserve the 20-page deterministic working paper, eight source-generated assets, seven immutable run mappings, claim/citation audit, all-page visual QA, and no-DOI/no-submission boundary. |
 | Program V4 output-connected Labs | complete and deployed through PR #125 | Preserve exact row selection for all 8 DD-016 threshold rows, 160 DD-017 games, 64 DD-015 objective rows, and 50 DD-018 mechanism rows; every control must alter substantive output and all rows remain available without JavaScript. |
-| Program V5 — Information Sharing Frontier | baseline and first two studies complete; DD-020 public integration built under issue #139 | Merge and deploy the exact output-connected Lab, then complete the repository-wide acceptance audit before any later research package. |
+| Program V5 — Information Sharing Frontier | baseline, DD-019, DD-020, editorial gate, synthesis prospectus, and public Lab complete and deployed; final acceptance recorded through issue #141 and PR #142 | Preserve the evidence and output hierarchy. Any later package requires a new bounded registration gate; none is allocated here. |
 | DD-019 Signal Geometry and the Action-Budget Discovery Profile | complete and deployed through PR #131 | Preserve the five channel laws, two-method exact profiles, same-accuracy counterexample scope, named private baseline, and recovery-budget semantics. |
 | DD-020 Incremental Sharing and Independent Rescue | complete and deployed through PR #136 | Preserve DD-C-0092 through DD-C-0096 and the sole immutable run; the point theorem does not imply arbitrary-channel monotonicity. |
 | Program V3 focused paper | complete and deployed through PR #90 | The deterministic 20-page *Incentive to Ignore* paper, nine generated evidence assets, citation audit, all-page visual review, Pages, and live PDF pass. |
@@ -55,10 +55,11 @@ channel proposal and evidence/promotion rules are in
 completed the second. The editorial ownership gate is passed: DD-020 belongs
 primarily to a future Information Sharing Frontier theorem-family paper, while
 *The Incentive to Ignore* may cite it as a companion and be judged
-independently. The exact DD-020 public integration is built under issue #139
-and PR #140. It reads the sole immutable run, adds no research evidence, and
-must merge and deploy before the final acceptance audit. No later research
-package is authorized by this presentation milestone.
+independently. The exact DD-020 public integration merged through PR #140 as
+`57270680`; post-merge CI `29933212532`, Pages `29933212171`, all 171 live
+files, immutable-source checksums, and deployed browser QA pass. Final
+acceptance is recorded through issue #141 and PR #142. No later research
+package is authorized or registered by this presentation and closeout work.
 
 No long-term direction is removed. Reliable Discovery, the Price of Missing
 Provenance, Truth/Obedience/Budget Balance, Rate–Discovery, Discovery Order,
@@ -75,5 +76,5 @@ make verify
 
 DD-019 and DD-020 are complete and deployed; DD-020 must not be rerun. Preserve
 the editorial gate, synthesis prospectus, and immutable output-connected Lab,
-then complete final acceptance before any further research package. For
-settings-only work, use `docs/github-setup.md` and issue #32.
+and require a new bounded registration gate before any further research
+package. For settings-only work, use `docs/github-setup.md` and issue #32.
