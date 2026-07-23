@@ -15,7 +15,11 @@
   working paper; SHA-256
   `c997bba31c021bd799f2b3a561e8e558a1334f844aa87a448ade10319dac2ad3`.
 
-Six project-authored PDFs have root validation records. The current 14-page
+- `information-sharing-frontier/`: validated 26-page theorem-family working
+  paper synthesizing DD-019 through DD-022; SHA-256
+  `2f8b68d5a690e6369e4c3236313eb93f060bfbe73ec531903c090f6ec6f8b6a1`.
+
+Seven project-authored PDFs have root validation records. The current 14-page
 Three Results artifact has provenance-refreshed SHA-256
 `54e79e0e55cf38cce1b9436fe6a78b84dfec72684aeea0e05f94ce45e1cc3b6c`;
 the 20-page Incentive to Ignore artifact has SHA-256
@@ -33,7 +37,7 @@ Editorial admission and theorem-family ownership are governed by
 [`docs/publication-architecture.md`](../docs/publication-architecture.md). A
 validated PDF is not automatically an archival-paper candidate or submission.
 The DD-020 editorial gate passed for *The Incentive to Ignore* as a companion
-result, while assigning DD-020 primary ownership to a future Information
-Sharing Frontier theorem-family paper. No manuscript expansion or submission
-action is authorized. The Program V5 continuation acceptance rebuilt all six
-papers deterministically and changed no tracked PDF or scientific content.
+result, while assigning DD-019 through DD-022 primary ownership to the
+completed Information Sharing Frontier working paper. Its selected-equilibrium
+qualifier, every-equilibrium negative result, and centralized-recovery boundary
+are mandatory. No submission, release, DOI, or journal contact is authorized.

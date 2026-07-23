@@ -1,0 +1,39 @@
+schema_version: 1
+purpose: Route shared concepts without transferring claim ownership or asserting novelty.
+interfaces:
+  - interface: information-sharing-frontier--canonical-entry
+    primary_owner: information-sharing-attention-recovery
+    adjacent_owner: canonical-entry
+    shared_object: information aggregation versus action compression
+    non_overlap: The canonical entry owns the atomic paradox; DD-019 through DD-022 own channel geometry, independent rescue, general error contraction, centralized recovery, and the qualified selected-equilibrium extension.
+    claims: [DD-C-0089, DD-C-0092, DD-C-0097, DD-C-0106, DD-C-0109]
+  - interface: information-sharing-frontier--attention
+    primary_owner: information-sharing-attention-recovery
+    adjacent_owner: incentive-to-ignore
+    shared_object: agents losing private attempts when evidence is shared
+    non_overlap: Incentive to Ignore owns strategic access and audience results; the Information Sharing Frontier owns the channel and sharing-profile results.
+    claims: [DD-C-0059, DD-C-0060, DD-C-0092, DD-C-0094, DD-C-0096]
+  - interface: information-sharing-frontier--implementation
+    primary_owner: information-sharing-attention-recovery
+    adjacent_owner: discovery-implementation
+    shared_object: conversion of a pooled posterior into a diverse portfolio
+    non_overlap: DD-C-0098 is a centralized comparator and DD-C-0106 is selection-specific; robust decentralized recovery remains open and cannot be inferred from either.
+    claims: [DD-C-0098, DD-C-0104, DD-C-0105, DD-C-0106, DD-C-0109, DD-C-0110]
+  - interface: decentralized-recovery--classical-games
+    primary_owner: unregistered-post-v5-gate
+    adjacent_owner: external-literature
+    shared_object: singleton resource selection, congestion, potential, equilibrium selection, and learning
+    non_overlap: A future study must add a posterior-weighted discovery comparator and a sharp recovery/implementation boundary; existence of potential or equilibrium alone is classical content and is not a Distributed Discovery contribution.
+    claims: []
+  - interface: decentralized-recovery--reliable-discovery
+    primary_owner: unregistered-post-v5-gate
+    adjacent_owner: reliable-discovery-action-technology
+    shared_object: diversification versus duplication
+    non_overlap: The bridge freezes reliable one-hit actions and varies implementation; Reliable Discovery varies failure, overlap, repetition, and action technology.
+    claims: []
+  - interface: information-sharing-frontier--provenance
+    primary_owner: source-acquisition-provenance
+    adjacent_owner: information-sharing-attention-recovery
+    shared_object: dependence among signals
+    non_overlap: DD-022 assumes a known dependence law; Price of Missing Provenance asks what is identified or guaranteed when that law is not observed.
+    claims: [DD-C-0104, DD-C-0105, DD-C-0106]

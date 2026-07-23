@@ -16,7 +16,7 @@ action technology, reliability, coverage, and the number of actions or agents
 required for success. Under Program V4's threshold technology: when actions
 require teams, form the smallest viable teams and diversify those teams.
 
-The next stage seeks general theorems, tight bounds, minimal failure examples,
+The post-V5 stage seeks general theorems, tight bounds, minimal failure examples,
 and independently checkable certificates that explain when finite results
 persist, fail, or compose. Diversity is not universally optimal: repetition can
 be valuable under execution failure, confirmation, multiple targets,
@@ -39,10 +39,10 @@ Program V5, *The Information Sharing Frontier*, has completed and deployed its
 documentation baseline and DD-019 through DD-022, with exact output-connected
 Labs. It asks:
 **When does sharing useful private
-information improve or reduce decentralized group discovery?** Its provisional flagship paper is
-*When Does Information Sharing Improve Decentralized Discovery?*, with
-provisional subtitle *Signal Geometry, Independent Rescue, and the Cost of
-Common Action*.
+information improve or reduce decentralized group discovery?** Its qualified
+26-page theorem-family working paper is *When Does Information Sharing Improve
+Decentralized Discovery?*, with subtitle *Signal Geometry, Independent Rescue,
+and the Cost of Common Action*.
 
 The public thesis is: **Sharing helps when it improves the group's map faster
 than it collapses the search portfolio.** The technical thesis is that the sign
@@ -59,10 +59,12 @@ channel-independent adjacent error-contraction criterion and centralized
 full-capacity recovery within its declared protocol, while its 177-scenario
 mixed-curve null remains bounded. DD-022 proves an exact strict sharing interval
 in a selected coordination-free equilibrium and preserves the every-equilibrium
-failure. The post-DD-022 gate admits the qualified archival-paper candidate for
-planning only; no manuscript or submission is authorized. Broader uses remain
+failure. The post-DD-022 gate admitted the qualified archival-paper candidate,
+and its working paper and public integration are complete; no submission,
+release, DOI, or journal contact is authorized. Broader uses remain
 conjectural until their own proof or bounded evidence. Active execution truth is in
-[current-roadmap.md](current-roadmap.md); registered evidence is in
+[theorem-spine.md](theorem-spine.md), active execution truth is in
+[current-roadmap.md](current-roadmap.md), and registered evidence is in
 [the study registry](../studies/index.md).
 
 ## 3. Research style and promotion discipline
@@ -235,13 +237,26 @@ followers, sending different messages, showing occupancy,
 congestion-sensitive rewards, roles, and threshold teams. Each intervention
 changes a different primitive.
 
-## 7. Later research programs, preserved and reordered
+## 7. Post-V5 research programs, preserved and reordered
 
 The intellectual ranking still places Diversity–Redundancy, Provenance, and
-Discovery Order among the highest-reach directions. Execution places Program
-V5 first because it directly generalizes the canonical paradox and now has a
-concrete channel family and theorem progression. Reliable Discovery moves
-later; it is not removed.
+Discovery Order among the highest-reach directions. Program V5 is complete.
+The post-V5 audit inserts one bounded implementation bridge before Reliable
+Discovery because DD-C-0098 is centralized and DD-C-0109 shows that the
+positive decentralized comparison is not robust across equilibria.
+
+### Decentralized Recovery and Equilibrium Robustness
+
+Ask when autonomous agents implement a posterior top-`L` discovery portfolio,
+and distinguish all, best, worst, refined, and dynamically selected equilibria.
+The smallest proposed model is a finite common-posterior singleton resource-
+selection game with equal sharing of target value and one action per agent.
+Classical congestion/potential-game content must be cited rather than renamed;
+a Distributed Discovery contribution must connect posterior-weighted discovery,
+the centralized recovery comparator, and an exact implementation or failure
+boundary. This is a **recommendation only**: no study ID or run is authorized.
+The full gate is in
+[`post-v5-next-program-gate.md`](../reports/roadmap-consolidation/post-v5-next-program-gate.md).
 
 ### Reliable Discovery — Diversity–Redundancy under reliability and overlap
 
@@ -307,17 +322,18 @@ and empirical-boundary interfaces. It is not a program rename.
 ## 8. Execution sequence and single-lane dependencies
 
 1. **Complete:** Program V4 — Threshold Discovery.
-2. **Complete research sequence; paper planning admitted:** Program V5 — The
-   Information Sharing Frontier; DD-019 through DD-022 are deployed and paper
-   issue #153 awaits separate manuscript authorization.
-3. **Next research direction:** Reliable Discovery — Diversity–Redundancy under reliability and
+2. **Complete:** Program V5 — The Information Sharing Frontier; DD-019 through
+   DD-022, the qualified working paper, and public integration are deployed.
+3. **Recommended next bounded bridge:** Decentralized Recovery and Equilibrium
+   Robustness; unregistered and subject to its stated gate.
+4. **Then:** Reliable Discovery — Diversity–Redundancy under reliability and
    overlap.
-4. **Then:** The Price of Missing Provenance.
-5. **Then:** Truth, Obedience, and Budget Balance.
-6. **Then:** Rate–Discovery Theory.
-7. **Then:** A Discovery Order for Information Structures.
-8. **Later:** dynamic/adaptive synthesis and large-team limits.
-9. **Long-term synthesis:** The Architecture of Distributed Discovery.
+5. **Then:** The Price of Missing Provenance.
+6. **Then:** Truth, Obedience, and Budget Balance.
+7. **Then:** Rate–Discovery Theory.
+8. **Then:** A Discovery Order for Information Structures.
+9. **Later:** dynamic/adaptive synthesis and large-team limits.
+10. **Long-term synthesis:** The Architecture of Distributed Discovery.
 
 Randomized Information Design is an early Program V5 theory lane, not a
 separate simultaneous branch. One substantive branch and one pull request are
@@ -329,8 +345,9 @@ documentation closeout completed before the next substantive branch.
 
 | Direction | First bounded target | Dependency / stop condition |
 | --- | --- | --- |
-| Information Sharing Frontier | Exact action-budget profiles and same-accuracy channel witnesses | After Program V4; stop any claim that substitutes private accuracy for a channel. |
-| Diversity–Redundancy | Exact marginal allocation with finite posterior masses and reliabilities | After Program V5 interfaces; stop if it merely renames separable-concave allocation. |
+| Information Sharing Frontier | Complete DD-019–DD-022 theorem family | Preserve the selected-equilibrium and centralized-authority boundaries. |
+| Decentralized Recovery | Exact implementation or failure boundary in the smallest posterior resource-selection game | Stop if the result is only a renamed congestion/potential-game theorem or lacks the centralized comparator. |
+| Diversity–Redundancy | Exact marginal allocation with finite posterior masses and reliabilities | After the bounded recovery bridge; stop if it merely renames separable-concave allocation. |
 | Provenance | Sharp union bounds under named observables, then a latent-source fixture | Stop without declared observables and sharpness/identification certification. |
 | Mechanism design | Necessary/sufficient implementation and subsidy/observability frontier | Stop if a finite catalogue is presented as global impossibility. |
 | Rate–Discovery | Zero versus one public/private bit with a declared list target | Stop if the task merely reconstructs all evidence. |
@@ -342,15 +359,14 @@ documentation closeout completed before the next substantive branch.
 All titles are provisional; none implies submission or publication.
 
 1. *Threshold Discovery*.
-2. *When Does Information Sharing Improve Decentralized Discovery?*
-3. *The Recovery Budget*.
-4. *Information Experiments for Collective Search*.
-5. *When Should Searchers Repeat?*
-6. *The Price of Missing Provenance*.
-7. *Truth, Obedience, and Budget Balance*.
-8. *How Much Must a Team Communicate to Discover?*
-9. *A Discovery Order for Information Structures*.
-10. *The Architecture of Distributed Discovery*.
+2. *When Does Information Sharing Improve Decentralized Discovery?* (working paper complete).
+3. A Decentralized Recovery paper only if the bridge passes admission.
+4. *When Should Searchers Repeat?*
+5. *The Price of Missing Provenance*.
+6. *Truth, Obedience, and Budget Balance*.
+7. *How Much Must a Team Communicate to Discover?*
+8. *A Discovery Order for Information Structures*.
+9. *The Architecture of Distributed Discovery*.
 
 ## 11. Benchmark and infrastructure implications
 
@@ -400,13 +416,13 @@ or imply execution.
 
 ## 15. Provisional next decision points
 
-1. Preserve the completed Program V4 interfaces and Program V5 DD-019/DD-020
-   evidence without rerunning immutable configurations.
-2. Register any later Program V5 package only through its own bounded question,
-   channel model, resource cap, evidence category, verifier, and corruption
-   plan; this roadmap does not allocate it.
-3. Signal Geometry and Incremental Sharing now supply the deterministic
-   interfaces required before any stochastic information-design package.
+1. Preserve the completed Program V4 and Program V5 evidence without rerunning
+   immutable configurations.
+2. Register no bridge until its issue and ExecPlan freeze the common-posterior
+   game, comparator, equilibrium scope, resource cap, evidence category,
+   verifier, corruption plan, literature boundary, and stop condition.
+3. Keep Randomized Information Design as a later possible extension, not an
+   unfinished Program V5 obligation.
 4. Before Provenance, specify observables, source model, and
    sharpness/identification target separately.
 5. Before Rate–Discovery, choose a list, planner-emulation, or portfolio target

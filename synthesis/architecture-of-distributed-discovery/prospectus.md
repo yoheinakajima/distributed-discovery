@@ -18,6 +18,19 @@ Every scientific statement below is routed to the public claim ledger. Exact
 computational numbers remain owned by immutable runs. Editorial judgments are
 identified as editorial judgments. Questions are not written as results.
 
+## Post-V5 reconciliation
+
+Program V5 is complete at its registered scope. DD-019 through DD-022 and the
+qualified 26-page working paper *When Does Information Sharing Improve
+Decentralized Discovery?* are deployed. The evidence-linked route is
+[`docs/theorem-spine.md`](../../docs/theorem-spine.md). DD-021 establishes
+centralized top-`L` recovery relative to its declared direct baseline
+(DD-C-0098); DD-022 establishes a selected coordination-free positive-sharing
+interval (DD-C-0106) while preserving the every-equilibrium failure
+(DD-C-0109) and centralized gap (DD-C-0110). This reconciliation creates no
+new scientific claim. The current open edge is robust decentralized recovery,
+not completion of the General Sharing Frontier.
+
 ---
 
 ## 1. Program definition
@@ -132,8 +145,9 @@ these into a list of equally general “findings.”
 
 Primary ownership should be visible in prose and tables. The canonical entry
 paper owns the atomic Shared Discovery Paradox. *The Incentive to Ignore* owns
-the strategic attention and audience-design theorem family. DD-020 is owned by
-the future Information Sharing Frontier paper and is cited by *Incentive* as a
+the strategic attention and audience-design theorem family. DD-019 through
+DD-022 are owned by the completed Information Sharing Frontier working paper,
+and DD-020 is cited by *Incentive* as a
 companion. *Threshold Discovery* owns the deterministic minimum-team family
 until a Reliable Discovery theorem materially strengthens or absorbs it. The
 prospectus itself owns none of these theorems.
@@ -253,9 +267,27 @@ advertised as a theorem that sharing generally harms discovery.
 
 The editorial consequence is a two-document architecture. *The Incentive to
 Ignore* remains the primary owner of strategic attention and the One-Reader
-Theorem. The future Information Sharing Frontier paper owns DD-020 and the
-eventual channel classification. The former cites the latter as a companion;
+Theorem. The completed Information Sharing Frontier working paper owns DD-019
+through DD-022 and their channel classification. The former cites the latter as a companion;
 the synthesis explains the connection without merging ownership.
+
+DD-021 generalizes the local sign test within its declared target-symmetric
+protocol. With pooled error `e_s`, the next sharing step helps exactly when
+`e_(s+1)<(1-q)e_s` (DD-C-0097). Its full-capacity recovery theorem
+(DD-C-0098) is deliberately centralized: a posterior top-`L` selector can
+cover at least the target set reached by the declared direct actions. The
+177-scenario classification, witnesses, recovery budgets, and bounded
+mixed-curve null remain separate computational claims (DD-C-0099–0103).
+
+DD-022 supplies the qualified decentralized result. In its binary two-agent
+equal-split game, the declared private and shared symmetric selections are
+characterized by DD-C-0104–0105, and sharing strictly improves selected
+discovery on the exact interval in DD-C-0106. That positive statement must
+stay beside DD-C-0109: other equilibria and ownership-aware rules defeat an
+every-equilibrium reading. DD-C-0110 also preserves the strict gap to the
+centralized top-two benchmark. The remaining question is therefore recovery
+robust to equilibrium selection, refinement, or dynamics—not whether one
+selected positive interval exists.
 
 ## 7. Action technologies: coverage, thresholds, and reliability
 
@@ -419,8 +451,10 @@ experiment design. They should not be grouped under a vague “limitations”
 heading and then forgotten.
 
 Every theorem family needs a stopping boundary. The Information Sharing
-family proceeds to the General Sharing Frontier because DD-020 proved the
-point case and found an opposite-sign channel. The Reliable Discovery family
+family completed the registered General Sharing Frontier, centralized recovery,
+and selected coordination-free positive-sharing sequence in DD-021 and DD-022.
+Its next edge is a separately gated robust decentralized-recovery question, not
+an implied continuation of Program V5. The Reliable Discovery family
 gets one registered theorem attempt before the Threshold paper is judged
 independently. Discovery Implementation requires a structural theorem rather
 than another finite catalogue. Dynamic work requires a named communication or
@@ -439,7 +473,7 @@ The publication system has four layers.
    upstream.
 2. Theorem-family papers own durable mathematical questions. Current
    candidates include Common-Source Trap, Incentive to Ignore, Threshold
-   Discovery, and a future Information Sharing Frontier paper, each with its
+   Discovery, and the completed Information Sharing Frontier working paper, each with its
    own gate and scope.
 3. *The Architecture of Distributed Discovery* is the living synthesis. It
    supplies common notation, relationships, negative evidence, and open
@@ -450,10 +484,10 @@ The Incremental Sharing gate clarifies why chronology is a poor paper
 architecture. DD-020 follows DD-019 in Program V5 and is intellectually
 adjacent to DD-012, but it should not simply be appended to the existing
 attention paper. Its nonstrategic pooled-signal theorem requires a different
-model and literature position. The future family paper can place DD-019's
-profile counterexample, DD-020's theorem, and the General Sharing Frontier
-under one central question. *Incentive* can remain self-contained and cite the
-companion.
+model and literature position. The completed family paper places DD-019's
+profile counterexample, DD-020's theorem, DD-021's General Sharing Frontier,
+and DD-022's qualified decentralized result under one central question.
+*Incentive* remains self-contained and cites the companion.
 
 The five-part admission rule remains controlling: central question,
 title-level result, natural literature/referee set, self-contained reason to
@@ -466,20 +500,15 @@ map represents submission, acceptance, peer review, release, or DOI status.
 The next open gates should be printed as questions with owners and stopping
 conditions.
 
-### General Sharing Frontier
+### Decentralized Recovery and Equilibrium Robustness
 
-Which declared channels are compression dominated, aggregation dominated,
-portfolio dependent, or nonmonotone under incremental sharing? DD-019 and
-DD-020 are the fixed evidence base. The next study must use exact channel
-semantics, named private baselines, action-budget and incremental profiles,
-independent verification, and minimal counterexamples. It must not infer a
-scalar channel order from one-person accuracy.
-
-### Recovery Budget
-
-How much action capacity repairs the discovery loss induced by a sharing rule?
-The answer depends on the baseline, authority, and action technology. DD-019's
-bounded recovery budgets are examples, not a general theorem.
+When do autonomous agents implement the posterior top-`L` recovery benchmark,
+and how do all, best, worst, refined, or dynamically selected equilibria
+compare? DD-021 closes the declared centralized recovery question; DD-022
+closes one selected decentralized comparison but not the correspondence. A
+future registration must distinguish its posterior-weighted discovery content
+from classical congestion, resource-selection, potential-game, refinement,
+and learning results.
 
 ### Price of Missing Provenance
 

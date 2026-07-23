@@ -37,33 +37,26 @@ verification plan, and corruption test where certificates are used.
 | Empirical validation | prohibited in current phase | No real or human data until a new ethics, identification, privacy, retention, and governance gate is authorized. |
 | Repository settings (#32) | blocked on authority | Authenticate intentionally with settings-capable credentials, then follow `docs/github-setup.md`; do not retry blindly. |
 
-After Program V4, the next program is the Information Sharing Frontier. Its
-flagship question is when useful private-information sharing improves or
-reduces decentralized group discovery. The initial sequence is Signal Geometry,
-Incremental Sharing, the General Sharing Frontier, Recovery Budget,
-coordination-free positive sharing, and Randomized Information Design. Every
-result must name the signal channel, sharing intensity, private baseline, action
-budget and technology, authority, reward, and equilibrium selection.
+Program V5, the Information Sharing Frontier, is complete at its registered
+scope. Its qualified working paper, evidence audit, public relationship graph,
+and deployed correction are complete. The durable architecture is summarized
+in [`theorem-spine.md`](theorem-spine.md). That spine creates no new evidence
+and keeps centralized recovery separate from decentralized implementation.
 
-## Program V5 execution order and gate
+## Post-V5 gate
 
-The authoritative order is: (1) Signal Geometry and the Action-Budget
-Discovery Profile; (2) Incremental Sharing and the Point-Channel Theorem; (3)
-the General Sharing Frontier; (4) Recovery Budget; (5) Coordination-Free
-Positive Sharing; (6) Randomized Information Design; (7) the Equilibrium
-Selection Module; and (8) Mechanism and Design Implications. The versioned
-channel proposal and evidence/promotion rules are in
-[`program-v5.md`](program-v5.md). DD-019 completed the first package and DD-020
-completed the second. The editorial ownership gate is passed: DD-020 belongs
-primarily to a future Information Sharing Frontier theorem-family paper, while
-*The Incentive to Ignore* may cite it as a companion and be judged
-independently. The exact DD-020 public integration merged through PR #140 as
-`57270680`; post-merge CI `29933212532`, Pages `29933212171`, all 171 live
-files, immutable-source checksums, and deployed browser QA pass. Final
-acceptance is recorded through issue #141 and PR #142. No later research
-package is authorized or registered by this presentation and closeout work.
+The bounded literature and non-overlap audit recommends one bridge before the
+previously ranked Reliable Discovery program: **Decentralized Recovery and
+Equilibrium Robustness**. The recommendation allocates no study ID and
+authorizes no run. Its smallest proposed question is whether autonomous agents
+implement a centralized posterior top-`L` discovery portfolio across all,
+best, worst, refined, or dynamically selected equilibria. Registration requires
+the model, theorem/failure target, classical-game non-overlap boundary,
+state-space cap, independent verifier, corruption plan, and stop condition in
+[`post-v5-next-program-gate.md`](../reports/roadmap-consolidation/post-v5-next-program-gate.md).
 
-No long-term direction is removed. Reliable Discovery, the Price of Missing
+No long-term direction is removed. After that bounded bridge, Reliable
+Discovery, the Price of Missing
 Provenance, Truth/Obedience/Budget Balance, Rate–Discovery, Discovery Order,
 dynamic and large-team synthesis, and The Architecture of Distributed Discovery
 follow in the order and at the promotion gates in `docs/theorem-roadmap.md`.

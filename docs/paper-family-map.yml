@@ -22,12 +22,12 @@ families:
     source_studies: [DD-012, DD-013, DD-014, DD-019, DD-020, DD-021, DD-022]
     completed_claims: [DD-C-0059, DD-C-0060, DD-C-0061, DD-C-0062, DD-C-0063, DD-C-0064, DD-C-0065, DD-C-0066, DD-C-0067, DD-C-0068, DD-C-0089, DD-C-0090, DD-C-0091, DD-C-0092, DD-C-0093, DD-C-0094, DD-C-0095, DD-C-0096, DD-C-0097, DD-C-0098, DD-C-0099, DD-C-0100, DD-C-0101, DD-C-0102, DD-C-0103, DD-C-0104, DD-C-0105, DD-C-0106, DD-C-0107, DD-C-0108, DD-C-0109, DD-C-0110]
     open_theorem_targets: [equilibrium selection and refinement, Randomized Information Design]
-    manuscript_status: incentive-to-ignore-gate-passed-companion; information-sharing-frontier-paper-admitted-planning-only
+    manuscript_status: incentive-to-ignore-gate-passed-companion; information-sharing-frontier-working-paper-complete
     admission_gate: passed after DD-022 supplied a selected coordination-free positive-sharing theorem and an explicit every-equilibrium negative result
     likely_literature: [information aggregation, jury accuracy, public information, social learning, herding, list decisions, collective search]
     synthesis_chapters: [canonical-phenomena, information-sharing-frontier]
     risks_of_overlap: [canonical entry paper, foundational information comparison]
-    editorial_disposition: Incentive to Ignore remains a distinct companion; DD-019 through DD-022 have primary ownership in the admitted Information Sharing Frontier candidate; the selected-equilibrium qualifier and negative correspondence are mandatory; no manuscript or submission action authorized
+    editorial_disposition: Incentive to Ignore remains a distinct companion; DD-019 through DD-022 have primary ownership in the completed Information Sharing Frontier working paper; the selected-equilibrium qualifier and negative correspondence are mandatory; no submission, release, DOI, or journal contact authorized
   - family_id: source-acquisition-provenance
     provisional_title: Source Acquisition and Provenance
     central_question: How do endogenous source choice and missing dependence information change discovery?
@@ -57,7 +57,7 @@ families:
     central_question: Which information, action, transfer, and observability rules implement discovery portfolios?
     source_studies: [DD-002, DD-006, DD-006B, DD-013, DD-018]
     completed_claims: [DD-C-0029, DD-C-0030, DD-C-0031, DD-C-0039, DD-C-0040, DD-C-0041, DD-C-0047, DD-C-0048, DD-C-0052, DD-C-0053, DD-C-0064, DD-C-0084, DD-C-0085, DD-C-0086]
-    open_theorem_targets: [truth-obedience-budget-balance, randomized information design, selection robustness]
+    open_theorem_targets: [decentralized recovery and equilibrium robustness, truth-obedience-budget-balance, randomized information design]
     manuscript_status: theorem-family-under-development
     admission_gate: require a necessary-and-sufficient implementation result rather than another finite catalogue
     likely_literature: [mechanism design, Bayesian persuasion, information design, implementation theory]

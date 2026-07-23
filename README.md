@@ -18,12 +18,15 @@ extensions, and the public Labs. Program V4, *Threshold Discovery*, is complete
 at its registered bounded scope: DD-015 through DD-018, DiscoveryBench v3, the
 synthetic experiment v3 extension, the 20-page focused paper, and four
 output-connected Labs are deployed. Program V5's DD-019 through DD-022 studies
-are complete and deployed. Their exact Labs preserve signal geometry,
+and its qualified 26-page theorem-family working paper are complete and
+deployed. Their exact Labs preserve signal geometry,
 incremental rescue, the general sharing frontier, and DD-022's selected
 coordination-free positive-sharing interval. The post-DD-022 gate admits
 *When Does Information Sharing Improve Decentralized Discovery?* as an archival
-theorem-paper candidate for planning only; no manuscript or submission is
-authorized. The concise entry points
+theorem-paper candidate; its manuscript, evidence audit, public integration,
+and mobile correction are complete. No submission, release, DOI, or journal
+contact is authorized. The cross-study architecture is indexed in
+[`docs/theorem-spine.md`](docs/theorem-spine.md). The concise entry points
 are [`docs/current-state.md`](docs/current-state.md) and
 [`docs/current-roadmap.md`](docs/current-roadmap.md). Claims remain in
 [`claims/claims.yml`](claims/claims.yml) under the

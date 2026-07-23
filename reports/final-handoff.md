@@ -1,65 +1,39 @@
-# Final handoff — Program V5 through DD-021
+# Final handoff — Program V5 complete and post-V5 gate
 
-DD-021 General Sharing Frontier is complete and deployed through issue #146
-and PR #147, merged as `8b44400333e156440a22b0d9fe3be37f63d35a08`.
-Post-merge CI `29951061680`, Pages `29951061715`, and all named live routes
-pass. Its sole immutable run is
-`20260722T185924Z_DD-021_3cdbbc40_2fea269a9a`; DD-C-0097 through DD-C-0103
-retain their exact theorem, bounded-registry, witness, recovery, and negative-
-result scopes.
+Program V5 is complete at its registered scope. DD-019 through DD-022 are
+deployed with claims DD-C-0089 through DD-C-0110 and four immutable primary
+runs. The qualified 26-page theorem-family working paper *When Does Information
+Sharing Improve Decentralized Discovery?* merged through PR #155 as
+`45bb498f4811be89b04626b71842d87ee854fcd1`; the mobile-containment correction
+merged through PR #156 as `fae4a81b4628f614adbb6bf602fbce6d6065746e`.
+Post-merge CI and Pages passed, and the live PDF SHA-256 is
+`2f8b68d5a690e6369e4c3236313eb93f060bfbe73ec531903c090f6ec6f8b6a1`.
 
-The documentation-only post-DD-021 gate on issue #148 holds the proposed
-paper *When Does Information Sharing Improve Decentralized Discovery?* for one
-separately authorized Coordination-Free Positive Sharing theorem package. The
-reason is exact: DD-021's full-capacity recovery theorem assumes a centralized
-posterior top-`L` selector. The gate creates no study, claim, run, manuscript,
-submission, release, or DOI.
+The current validated inventory is 247 tests, 110 claims, 51 immutable
+manifests with 48 passing runs, 26 studies, seven papers totaling 115 pages, 77
+HTML routes, 85 public data files, 18 Labs, and 23 checksum-covered downloads.
+The evidence-linked architecture is in [`docs/theorem-spine.md`](../docs/theorem-spine.md).
 
-The current validated inventory is 235 tests, 103 claims, 50 manifests with 47
-passing runs, 25 studies, six papers totaling 89 pages, 74 HTML routes, 81
-public data files, 17 detail Labs, and 22 checksum-covered downloads. The
-historical continuation record follows.
+The durable result boundary is exact. DD-019 supplies bounded action-budget
+profiles; DD-020 supplies independent rescue and the point-channel theorem;
+DD-021 supplies the general residual-error criterion and a centralized top-`L`
+recovery theorem; DD-022 supplies a selected coordination-free positive-sharing
+interval together with its every-equilibrium failure and strict centralized
+gap. The paper must keep the positive result adjacent to those authority and
+selection limitations.
 
-The four required continuation milestones are complete and deployed in order:
+The post-V5 documentation consolidation creates no study, claim, proof, run,
+paper change, or empirical evidence. Its bounded literature/non-overlap audit
+recommends **Decentralized Recovery and Equilibrium Robustness** as one
+unregistered bridge before Reliable Discovery. Registration still requires a
+new bounded issue and ExecPlan with the model, comparator, equilibrium scope,
+resource cap, evidence category, independent verifier, corruption plan,
+literature boundary, and stop condition. Do not rerun DD-019 through DD-022 for
+freshness.
 
-1. governance/publication architecture, PR #134, `dc32ff17`;
-2. DD-020 Incremental Sharing, PR #136, `cf7bc67e`;
-3. editorial theorem gate and synthesis prospectus, PR #138, `9401fbe7`; and
-4. public integration and output-connected Lab, PR #140, `57270680`.
-
-DD-020's sole immutable run is
-`20260722T142551Z_DD-020_3854fff6_37c11a850a`; DD-C-0092 through DD-C-0096
-retain their exact scopes. The editorial gate assigns primary ownership to a
-future Information Sharing Frontier theorem-family paper and authorizes no
-submission. The Lab selects immutable exact rows and creates no research
-evidence.
-
-## Program V5 continuation acceptance
-
-Issue #141 and PR #142 own this documentation-only closeout. The final audit
-passes 224 tests, 96 claims, 49 manifests with 46 passing runs, six validated
-papers totaling 89 pages, 72 HTML routes, 71 public data files, 17 Labs, 22
-checksum-covered downloads, 17 exact-verification records, 17 corruption
-records with 58 true gates, and 12 JSON schemas plus valid/invalid fixture
-behavior.
-
-All 171 deployed files return HTTP 200. Every deployed download matches its
-registered size and SHA-256, and the two deployed DD-020 source files match the
-immutable run byte-for-byte. Local and deployed browser QA verifies opposite
-increment signs at the same one-person accuracy, substantive selectors,
-semantic labels, polite live output, keyboard focus, width containment,
-complete static tables, and clean logs.
-
-Secret, host-path, license, provenance, Git-cleanliness, and upstream checks
-pass. The DD-020 run tree is unchanged from its research merge; no primary run
-was repeated; claims and paper PDFs are unchanged; no human data exist; and no
-submission, release, DOI, settings, or canonical-upstream action occurred.
-Settings-only issue #32 remains open and authority-blocked.
-
-No later Program V5 package is registered by this closeout. Any continuation
-must begin with a new bounded issue, model/resource cap, evidence category,
-independent-verification plan, and corruption plan. Do not rerun DD-019 or
-DD-020 for freshness.
+No submission, release, DOI, journal contact, settings action, or canonical-
+upstream mutation is authorized. Settings-only issue #32 remains open and
+authority-blocked. Historical continuation records follow.
 
 ## Historical Program V4 handoff
 

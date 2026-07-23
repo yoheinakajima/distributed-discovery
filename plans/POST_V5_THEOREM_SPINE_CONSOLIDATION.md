@@ -86,14 +86,14 @@ needed to prevent current-state confusion.
 
 ## Milestones
 
-- **A — active:** live-state, invariant, and stale-state audit; registration
+- **A — complete:** live-state, invariant, and stale-state audit; registration
   commit; push; draft PR.
-- **B — pending:** canonical status, publication, roadmap, and handoff
+- **B — complete:** canonical status, publication, roadmap, and handoff
   reconciliation.
-- **C — pending:** theorem-spine document with claim/study/paper/evidence
+- **C — complete:** theorem-spine document with claim/study/paper/evidence
   routing and established/open-arrow distinction.
-- **D — pending:** living-synthesis maps and ownership reconciliation.
-- **E — pending:** public site and bidirectional relationship repair plus
+- **D — complete:** living-synthesis maps and ownership reconciliation.
+- **E — active:** public site and bidirectional relationship repair plus
   focused tests and route audit.
 - **F — pending:** dated literature and non-overlap audit using primary or
   stable scholarly sources.
@@ -111,7 +111,8 @@ needed to prevent current-state confusion.
 - [x] Create issue #158 and the sole branch.
 - [x] Classify current-facing stale state, historical evidence, supersession
   needs, and valid future boundaries without bulk replacement.
-- [ ] Complete and commit Milestone A artifacts, push, and open the draft PR.
+- [x] Complete and commit Milestone A artifacts as `059b81a`, push, and open
+  draft PR #159.
 - [ ] Complete Milestones B through F sequentially with plan updates.
 - [ ] Complete Milestone G and normal-completion acceptance.
 
@@ -140,6 +141,14 @@ needed to prevent current-state confusion.
 - `2026-07-23T00:00:13Z`: treat all changes as editorial/presentation-only and
   compare forbidden artifacts to the frozen hashes above after every broad
   build and before merge.
+- `2026-07-23T00:02:50Z`: mark Milestone A complete only after checkpoint
+  commit `059b81a`, SSH push, and draft PR #159. Advance exactly one active
+  milestone to B; no scientific or paper artifact entered the diff.
+- `2026-07-23T00:31:00Z`: reconcile current-facing Program V5 and paper status,
+  add the evidence-linked theorem spine, and extend synthesis ownership through
+  DD-022. Select Outcome A only after the literature refresh identifies the
+  direct planner/selection objection and the severe classical congestion/search
+  overlap risk; the future registration must permit an overlap-failure stop.
 
 ## Validation strategy
 
@@ -170,7 +179,7 @@ provenance and rendered-artifact validation without changing the paper.
 
 ## Artifacts produced
 
-Issue #158; this ExecPlan; and
+Issue #158; draft PR #159; checkpoint commit `059b81a`; this ExecPlan; and
 `reports/roadmap-consolidation/post-v5-stale-state-audit.md`. Further artifacts
 are appended after creation.
 

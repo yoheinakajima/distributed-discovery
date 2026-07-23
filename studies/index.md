@@ -51,14 +51,15 @@ DD-021's clean primary run
 `20260722T185924Z_DD-021_3cdbbc40_2fea269a9a` supports DD-C-0097 through
 DD-C-0103. Its public Lab selects all 177 immutable exact rows. PR #147,
 post-merge CI `29951061680`, Pages `29951061715`, and the live study, Lab,
-claims, evidence, results, and exact-data routes pass. The separate editorial
-gate holds the proposed decentralized paper for one coordination-free
-positive-sharing theorem package.
+claims, evidence, results, and exact-data routes pass. The former editorial
+hold was satisfied by DD-022 and is retained only as historical provenance.
 DD-022's sole exact run
 `20260722T210334Z_DD-022_2376d5b7_ad67765ca8` supports DD-C-0104 through
 DD-C-0110. It proves the selected `p=3/5` positive-sharing interval, reproduces
 the 42-cell grid with two methods, and preserves the every-equilibrium negative
 result from role- and ownership-aware strategies. Post-merge CI `29959514182`,
 Pages `29959514196`, and all named live routes pass. The separate documentation
-gate admits the qualified paper candidate under issue #153 without creating
-research evidence or manuscript authority.
+gate admitted the qualified paper candidate under issue #153 without creating
+research evidence. The resulting 26-page working paper and public integration
+are complete through PRs #155–#156; submission, release, DOI, and journal
+contact remain unauthorized.

@@ -16,11 +16,11 @@ families:
     closed_gates: [atomic paradox, canonical exact planner frontier]
     open_gates: [general finite-target separation boundary]
   information-sharing-attention-recovery:
-    maturity: general-point-channel-theorem-plus-bounded-channel-counterexample
-    closed_gates: [one-reader theorem, signal geometry, incremental sharing]
-    open_gates: [General Sharing Frontier, Recovery Budget, coordination-free positive sharing]
-    primary_claims: [DD-C-0059, DD-C-0060, DD-C-0092, DD-C-0093, DD-C-0094, DD-C-0095, DD-C-0096]
-    editorial_state: Incentive to Ignore gate passed; DD-020 assigned to future Information Sharing Frontier paper
+    maturity: completed-qualified-theorem-family-with-centralized-and-selection-boundaries
+    closed_gates: [one-reader theorem, signal geometry, incremental sharing, General Sharing Frontier, centralized Recovery Budget, selected coordination-free positive sharing]
+    open_gates: [decentralized recovery across equilibrium selections, Randomized Information Design]
+    primary_claims: [DD-C-0059, DD-C-0060, DD-C-0092, DD-C-0093, DD-C-0094, DD-C-0095, DD-C-0096, DD-C-0097, DD-C-0098, DD-C-0099, DD-C-0100, DD-C-0101, DD-C-0102, DD-C-0103, DD-C-0104, DD-C-0105, DD-C-0106, DD-C-0107, DD-C-0108, DD-C-0109, DD-C-0110]
+    editorial_state: Incentive to Ignore remains a companion; DD-019 through DD-022 are owned by the completed Information Sharing Frontier working paper
   source-acquisition-provenance:
     maturity: general-threshold-theorem-and-bounded-provenance-counterexamples
     closed_gates: [Common-Source threshold]
@@ -33,7 +33,7 @@ families:
   discovery-implementation:
     maturity: bounded-exact-catalogues-and-potential-identities
     closed_gates: [deterministic selection catalogue]
-    open_gates: [truth-obedience-budget-balance]
+    open_gates: [decentralized recovery and equilibrium robustness, truth-obedience-budget-balance]
   communication-dynamic-architecture:
     maturity: bounded-sequential-and-dynamic-results
     closed_gates: []

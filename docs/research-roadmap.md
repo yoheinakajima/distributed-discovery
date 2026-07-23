@@ -9,10 +9,11 @@ This is a navigation index, not a duplicate portfolio.
 The theorem roadmap creates no study, claim, run, or result. DD-007 remains synthetic-only; real-data work remains prohibited until separately authorized ethics, privacy, identification, retention, and governance review.
 
 Program V5, *The Information Sharing Frontier*, has completed and deployed
-DD-019 through DD-022. The post-DD-022 documentation gate admits the qualified
-archival-paper candidate *When Does Information Sharing Improve Decentralized
-Discovery?* and creates paper issue #153 plus planning and ownership maps. The
-title-level result is explicitly selected-equilibrium; DD-021's strongest
-recovery comparator remains centralized. No manuscript, submission, release,
-DOI, new study, or new claim is authorized by admission. The roadmap preserves
-every later theorem direction.
+DD-019 through DD-022 and the qualified 26-page working paper *When Does
+Information Sharing Improve Decentralized Discovery?* The title-level result is
+explicitly selected-equilibrium; DD-021's strongest recovery comparator remains
+centralized. No submission, release, DOI, new study, or new claim is authorized
+by this consolidation. See [`theorem-spine.md`](theorem-spine.md) for the
+evidence-linked architecture and the current roadmap for the unregistered
+Decentralized Recovery and Equilibrium Robustness bridge recommendation. Every
+later theorem direction is preserved.

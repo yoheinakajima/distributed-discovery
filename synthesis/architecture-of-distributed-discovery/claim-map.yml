@@ -8,8 +8,8 @@ sections:
     primary_studies: [DD-002, DD-003, DD-008, DD-008A, DD-008B]
     claim_ranges: [DD-C-0029--DD-C-0043, DD-C-0050--DD-C-0051, DD-C-0055--DD-C-0058]
   attention-and-sharing:
-    primary_studies: [DD-012, DD-013, DD-014, DD-019, DD-020]
-    claim_ranges: [DD-C-0059--DD-C-0068, DD-C-0089--DD-C-0096]
+    primary_studies: [DD-012, DD-013, DD-014, DD-019, DD-020, DD-021, DD-022]
+    claim_ranges: [DD-C-0059--DD-C-0068, DD-C-0089--DD-C-0110]
   action-technologies-and-implementation:
     primary_studies: [DD-004, DD-005, DD-006, DD-006B, DD-015, DD-016, DD-017, DD-018]
     claim_ranges: [DD-C-0044--DD-C-0048, DD-C-0052--DD-C-0053, DD-C-0071--DD-C-0086]
