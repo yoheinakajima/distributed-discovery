@@ -73,4 +73,3 @@ Generated registry SHA-256 values:
 
 CI, merge, Pages, live-route, live-download, issue closure, and synchronized
 main acceptance remain the active M16 steps.
-
