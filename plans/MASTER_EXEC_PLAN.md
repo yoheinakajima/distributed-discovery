@@ -1,6 +1,6 @@
 # Master execution plan
 
-## Active continuation — DiscoveryBench Agents v1 provider preflight (2026-07-23)
+## Completed continuation — DiscoveryBench Agents v1 provider preflight (2026-07-23)
 
 Issue #175 and branch
 `benchmark/discoverybench-agents-v1-provider-preflight` own the sole
@@ -20,9 +20,12 @@ boundaries and do not replace the registered direct routes or local/open
 baseline.
 
 No sealed pilot, base campaign, private material, DD-023, scientific claim or
-run, provider ranking, composite score, or paper/lifecycle change is
-authorized. Milestone M15 now owns final validation, PR integration, Pages,
-issue closeout, and synchronized `main`.
+run, provider ranking, composite score, or paper/lifecycle change was created
+or authorized. PR #176 squash-merged as
+`28a71f48db979664b4254c7693ae6622d9c38343`; branch CI `30052598698`,
+post-merge CI `30052895632`, and Pages `30052895643` passed. The deployed
+desktop and 390-pixel public-status checks passed, issue #175 closed as
+completed, and local `main` synchronized with `origin/main`.
 
 ## Active continuation — DiscoveryBench Agents v1 evaluation registration (2026-07-23)
 
