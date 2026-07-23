@@ -21,6 +21,14 @@ pass. The live root, Program, Research, Findings, Labs, Papers, Information
 Sharing Frontier publication, and PDF routes return HTTP 200; the live PDF
 SHA-256 is `2f8b68d5a690e6369e4c3236313eb93f060bfbe73ec531903c090f6ec6f8b6a1`.
 
+PR #159 subsequently squash-merged as
+`8ea3495ccfeacb2c0b4d408d70df1f39718c1a02`. Branch CI `29969577304`,
+paper/site build `29969577290`, post-merge CI `29969705255`, and Pages
+`29969705284` pass. Required live routes and `data/relations.json` return HTTP
+200; desktop and 390-pixel browser QA pass all 16 routes without page-width
+overflow or console warnings/errors; and the deployed PDF retains the frozen
+SHA-256. Issue #158 is closed and local `main` is synchronized to the merge.
+
 The primary worktree contains two unrelated untracked duplicate audit files,
 `papers/information-sharing-frontier/paper-audit 2.json` and
 `papers/information-sharing-frontier/visual-qa 2.md`; they are preserved and
@@ -97,7 +105,7 @@ needed to prevent current-state confusion.
   focused tests and route audit.
 - **F — complete:** dated literature and non-overlap audit using primary or
   stable scholarly sources.
-- **G — active:** one A/B/C next-program gate decision, full validation,
+- **G — complete:** one A/B/C next-program gate decision, full validation,
   branch workflows, merge, Pages, live QA, issue closure, and main sync.
 
 ## Progress checklist
@@ -114,7 +122,7 @@ needed to prevent current-state confusion.
 - [x] Complete and commit Milestone A artifacts as `059b81a`, push, and open
   draft PR #159.
 - [x] Complete Milestones B through F sequentially with plan updates.
-- [ ] Complete Milestone G and normal-completion acceptance.
+- [x] Complete Milestone G and normal-completion acceptance.
 
 ## Discoveries and surprises
 
@@ -153,11 +161,30 @@ needed to prevent current-state confusion.
   `make site` preserves 77 routes, 26 studies, 110 claims, 48 passing runs, and
   seven publications. Advance the sole active milestone to G for broad
   validation, invariant comparison, workflows, merge, deployment, and live QA.
+- `2026-07-23T01:14:22Z`: a fresh-session audit found that GitHub and live
+  acceptance were complete but this plan, the master plan, and two validation
+  reports still retained their pre-merge pending state. Reopen issue #158 and
+  reuse the existing task branch solely to make the already-observed closeout
+  durable; preserve every scientific, run, paper, route, and download invariant.
 - `2026-07-23T01:15:00Z`: full local acceptance passes: 247 tests, 110 claims,
   all 51 manifests, seven papers totaling 115 pages, and the 77-route site.
   All frozen scientific, paper, route, download, study, upstream, safety, and
   provenance invariants compare exact. Branch CI, merge, Pages, and live QA
   remain the only open parts of Milestone G.
+- `2026-07-23`: branch CI `29969577304` and paper/site build
+  `29969577290` passed; PR #159 squash-merged as `8ea3495c`. Post-merge CI
+  `29969705255` and Pages `29969705284` passed. All required live routes and
+  `data/relations.json` return 200, the live PDF hash matches, and desktop plus
+  390-pixel browser QA pass all 16 required routes with valid headings,
+  visible focus, width containment, required markers/links, and clean console
+  logs. Issue #158 closed and `main` synchronized without touching the two
+  unrelated untracked files.
+- `2026-07-23T01:18:46Z`: the durable closeout patch touches only six
+  documentation/audit files. Repeated `make bootstrap`, `make verify`, `make
+  papers`, and `make site` pass with 247 tests, 110 claims, 51 manifests,
+  seven papers/115 pages, and 77 routes/26 studies. The paper builder's two
+  transient `source_commit` refreshes were restored to the frozen accepted
+  value; all PDF hashes and the final forbidden-path diff remain exact.
 
 ## Validation strategy
 
@@ -203,14 +230,21 @@ SSH and the GitHub app cover the authorized workflow.
 
 ## Recovery and restart instructions
 
-Run `git status --short --branch`, read this plan, inspect issue #158 and the
-draft PR once created, and resume the sole active milestone. Never touch the
+Run `git status --short --branch`, read this plan, and confirm synchronized
+`main`. This lane is complete; any future research requires a separately
+authorized bounded registration. Never touch the
 two untracked duplicate paper-audit files, auxiliary worktrees, ActiveGraph,
 paper artifacts, claims, or immutable runs. Never execute DD-019–DD-022 study
 targets.
 
 ## Outcome and retrospective
 
-Pending. Completion requires squash merge, passing post-merge CI and Pages,
-live route/relationship/mobile/desktop/PDF verification, issue closure, and a
-synchronized local `main`.
+Complete. The milestone reconciles the post-V5 theorem family and working
+paper, adds the evidence-linked theorem spine, repairs bidirectional public
+relationships, records the bounded literature/non-overlap audit, and selects
+Outcome A: one unregistered Decentralized Recovery and Equilibrium Robustness
+bridge before Reliable Discovery. PR #159 merged as `8ea3495c`; all local,
+branch, post-merge, Pages, live-route, desktop/mobile, relationship, and PDF
+checksum gates pass. No study, claim, theorem, proof, run, paper artifact,
+submission, release, DOI, human/real data, settings action, upstream mutation,
+or ActiveGraph integration was created.

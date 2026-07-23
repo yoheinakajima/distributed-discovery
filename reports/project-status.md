@@ -1,4 +1,4 @@
-# Project status — Information Sharing Frontier working paper
+# Project status — post-V5 theorem-spine consolidation
 
 Date: 2026-07-22 (America/Los_Angeles)
 
@@ -70,6 +70,13 @@ No primary run was repeated. Claims, immutable runs, and scientific paper
 content are unchanged. No human data exist, and no submission, release, DOI,
 settings, or canonical-upstream action occurred.
 
+The post-V5 documentation gate completed through issue #158 and PR #159,
+squash-merged as `8ea3495ccfeacb2c0b4d408d70df1f39718c1a02` after branch CI
+`29969577304` and paper/site build `29969577290` passed. Post-merge CI
+`29969705255`, Pages `29969705284`, required live routes, relationship markers,
+desktop/390-pixel browser QA, and the frozen paper PDF checksum all pass. The
+gate adds no study, claim, run, route, download, or paper artifact.
+
 DD-021's research merge is `8b44400333e156440a22b0d9fe3be37f63d35a08`;
 post-merge CI `29951061680` and Pages `29951061715` pass. Its historical paper
 hold was satisfied by DD-022. The resulting paper preserves that DD-021's
@@ -115,7 +122,8 @@ authority-specific operational blocker and does not block research or Pages.
 Paper PR #123 passed CI `29900445956` and paper/site build `29900445965`;
 post-merge CI `29900587931` and Pages `29900587930` passed. Labs PR #125
 passed its branch checks; post-merge CI `29902201507` and Pages `29902201604`
-passed. Final handoff PR and post-merge workflow IDs are recorded after merge.
+passed. The post-V5 closeout workflow identifiers are recorded above and in
+`reports/roadmap-consolidation/post-v5-validation.md`.
 
 ## Completed Program V5 continuation
 

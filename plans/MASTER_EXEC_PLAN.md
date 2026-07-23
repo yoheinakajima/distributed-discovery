@@ -1,10 +1,19 @@
 # Master execution plan
 
-## Active continuation — post-V5 theorem-spine consolidation (2026-07-22)
+## Completed continuation — post-V5 theorem-spine consolidation (2026-07-22)
 
-Issue #158, branch `docs/post-v5-theorem-spine-gate`, draft PR #159, and
+Issue #158, branch `docs/post-v5-theorem-spine-gate`, PR #159, and
 [`POST_V5_THEOREM_SPINE_CONSOLIDATION.md`](POST_V5_THEOREM_SPINE_CONSOLIDATION.md)
-own the sole active documentation lane. The work reconciles current-facing
+completed the documentation lane. PR #159 squash-merged as
+`8ea3495ccfeacb2c0b4d408d70df1f39718c1a02`; branch CI `29969577304`,
+paper/site build `29969577290`, post-merge CI `29969705255`, and Pages
+`29969705284` passed. All required live routes and both desktop and 390-pixel
+browser audits passed, and the deployed Information Sharing Frontier PDF
+retained SHA-256
+`2f8b68d5a690e6369e4c3236313eb93f060bfbe73ec531903c090f6ec6f8b6a1`.
+Issue #158 is closed.
+
+The work reconciles current-facing
 status, adds an evidence-linked theorem spine, repairs synthesis and public
 relationships, records a bounded primary-source literature/non-overlap audit,
 and selects a next-program gate without allocating a study or creating

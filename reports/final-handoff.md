@@ -31,6 +31,12 @@ resource cap, evidence category, independent verifier, corruption plan,
 literature boundary, and stop condition. Do not rerun DD-019 through DD-022 for
 freshness.
 
+Issue #158 is closed after PR #159 squash-merged as
+`8ea3495ccfeacb2c0b4d408d70df1f39718c1a02`. Branch CI `29969577304`,
+paper/site build `29969577290`, post-merge CI `29969705255`, Pages
+`29969705284`, required live routes, desktop/390-pixel browser QA, relationship
+markers, and the frozen PDF checksum all pass.
+
 No submission, release, DOI, journal contact, settings action, or canonical-
 upstream mutation is authorized. Settings-only issue #32 remains open and
 authority-blocked. Historical continuation records follow.
@@ -121,7 +127,8 @@ paper with no DOI, submission, peer review, or verified novelty claim.
 
 ## Resume point
 
-Program V5's baseline, DD-019, DD-020, editorial gate, synthesis prospectus,
-and exact output-connected Lab are complete and deployed. Preserve them and
-open a new bounded registration gate before later research. Settings-only issue
-#32 remains separate.
+Program V5, DD-019 through DD-022, the theorem-family working paper, and the
+post-V5 theorem-spine consolidation are complete and deployed. Preserve them.
+The exact next gate is a separately authorized bounded registration for the
+recommended Decentralized Recovery and Equilibrium Robustness bridge; no study
+ID is allocated yet. Settings-only issue #32 remains separate.

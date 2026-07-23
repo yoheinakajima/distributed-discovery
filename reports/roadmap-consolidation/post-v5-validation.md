@@ -86,5 +86,18 @@ Total: 115 pages.
 - The two unrelated untracked duplicate paper-audit files remain untouched and
   excluded.
 
-Branch CI, merge, deployment, HTTP verification, and live desktop/mobile
-browser QA are intentionally recorded only after they occur.
+## Remote and deployed validation
+
+- Branch CI `29969577304` and paper/site build `29969577290` passed.
+- PR #159 squash-merged as
+  `8ea3495ccfeacb2c0b4d408d70df1f39718c1a02`.
+- Post-merge CI `29969705255` and Pages `29969705284` passed.
+- All required live routes and `data/relations.json` returned HTTP 200.
+- Desktop and 390-pixel browser QA passed all 16 required routes: one H1,
+  valid heading progression, no page-width overflow, required relationship and
+  status markers/destinations, visible keyboard focus, and no console
+  warnings or errors.
+- The deployed Information Sharing Frontier PDF retained SHA-256
+  `2f8b68d5a690e6369e4c3236313eb93f060bfbe73ec531903c090f6ec6f8b6a1`.
+- Issue #158 closed and local `main` synchronized to the merge; the two
+  unrelated untracked duplicate paper-audit files remained untouched.
