@@ -71,12 +71,10 @@ content are unchanged. No human data exist, and no submission, release, DOI,
 settings, or canonical-upstream action occurred.
 
 DD-021's research merge is `8b44400333e156440a22b0d9fe3be37f63d35a08`;
-post-merge CI `29951061680` and Pages `29951061715` pass. The paper gate holds
-*When Does Information Sharing Improve Decentralized Discovery?* for exactly
-one separately registered Coordination-Free Positive Sharing package because
-the current full-capacity recovery theorem assumes centralized top-`L`
-authority. No generic Recovery Budget package is required before that gate is
-revisited.
+post-merge CI `29951061680` and Pages `29951061715` pass. Its historical paper
+hold was satisfied by DD-022. The resulting paper preserves that DD-021's
+full-capacity recovery theorem assumes centralized top-`L` authority and that
+DD-022's positive comparison is selection-dependent.
 
 ## Historical Program V4 milestones
 

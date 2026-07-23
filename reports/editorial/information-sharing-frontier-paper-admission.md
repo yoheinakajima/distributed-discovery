@@ -1,5 +1,10 @@
 # Information Sharing Frontier paper admission
 
+> Historical admission record. The admitted candidate was subsequently built,
+> validated, and deployed as a 26-page working paper through PRs #155–#156.
+> Submission, release, DOI, journal contact, acceptance, and peer review remain
+> unauthorized and unclaimed.
+
 Date: `2026-07-22`
 Gate issue: `#152`
 Gate pull request: `#154`

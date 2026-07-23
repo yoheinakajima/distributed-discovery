@@ -29,6 +29,7 @@ theorem_families:
     label: Threshold discovery and team formation
   sharing-frontier:
     label: Information sharing and independent rescue
+    synthesis_anchor: information-sharing-frontier
 studies:
   DD-000:
     program: foundations

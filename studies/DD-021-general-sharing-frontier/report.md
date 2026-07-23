@@ -1,5 +1,11 @@
 # DD-021 exact report
 
+> Current status: the later DD-022 selected-equilibrium theorem satisfied the
+> historical paper hold, and the qualified Information Sharing Frontier working
+> paper is complete and deployed. The dated “next theorem question” below is
+> preserved as DD-021 closeout history; DD-021's centralized-authority boundary
+> remains current.
+
 Primary run `20260722T185924Z_DD-021_3cdbbc40_2fea269a9a` passed from clean
 source commit `3cdbbc40` in 11.232478 seconds with 27.266 MB peak memory. It
 evaluates 59 channel laws and 177 `(channel,N)` scenarios. Exact ordered-profile

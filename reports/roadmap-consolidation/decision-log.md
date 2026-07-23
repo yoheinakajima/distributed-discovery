@@ -28,14 +28,35 @@
 ## Ordering decisions
 
 - Intellectual priority: Diversity–Redundancy, Dependence and Provenance, then Discovery Order.
-- Execution priority: Program V4; Program V5; Reliable Discovery; Provenance;
-  Mechanism Impossibility; Rate–Discovery; Discovery Order; then dynamic/scale
-  synthesis.
+- Historical execution priority was Program V4; Program V5; Reliable Discovery;
+  Provenance; Mechanism Impossibility; Rate–Discovery; Discovery Order; then
+  dynamic/scale synthesis.
 - Program V5 moves ahead because it directly generalizes the canonical paradox
   and has a concrete channel family and theorem progression. Reliable Discovery
   moves later and remains intact.
 - Randomized Information Design is an early Program V5 lane, not a simultaneous
   branch. Exactly one substantive branch and pull request are active at a time.
+
+## Post-V5 gate decision — 2026-07-22
+
+- Program V5 and its qualified working paper are complete and deployed.
+- Outcome A is selected: recommend one bounded **Decentralized Recovery and
+  Equilibrium Robustness** bridge before Reliable Discovery.
+- The label is descriptive, not a final program title. No study ID, research
+  branch, configuration, run, or paper is authorized.
+- The bridge is sequenced first because DD-C-0098 is centralized, DD-C-0106 is
+  selection-specific, DD-C-0109 rejects an every-equilibrium reading, and
+  DD-C-0110 preserves a centralized gap.
+- The bridge has unusually high classical-overlap risk. Registration must
+  reduce its model to singleton congestion/resource-selection and multiple-
+  searcher games, then identify an information-conditioned recovery statement
+  that survives. A documented overlap failure is an explicit stopping result.
+- Reliable Discovery remains next after the bridge and continues to own
+  stochastic execution, redundancy, overlap, repetition, and correlated
+  failure. Price of Missing Provenance remains separate and owns uncertainty
+  about the dependence structure and its observables.
+- The authoritative decision and unexecuted prospectus are in
+  `post-v5-next-program-gate.md` and `.yml`.
 
 ## Information Sharing Frontier boundary
 

@@ -1,0 +1,65 @@
+schema_version: 1
+date: 2026-07-22
+evidence_class: editorial-recommendation
+creates_research_evidence: false
+decision:
+  outcome: A
+  recommendation: one-bounded-decentralized-recovery-and-equilibrium-robustness-bridge-before-reliable-discovery
+  final_program_title: false
+  study_id_allocated: false
+  research_authorized: false
+reason:
+  plain: The nearest unresolved objection is whether autonomous agents robustly implement the centralized recovery portfolio, not whether one selected positive equilibrium exists.
+  technical_claim_inputs: [DD-C-0098, DD-C-0106, DD-C-0109, DD-C-0110]
+  strongest_risk: The naive model is a classical singleton congestion or multiple-searcher game.
+candidates:
+  - candidate: decentralized-recovery-and-equilibrium-robustness
+    weighted_score: 44
+    disposition: recommend-bounded-bridge
+  - candidate: reliable-discovery-diversity-redundancy
+    weighted_score: 41
+    disposition: preserve-next-after-bridge
+  - candidate: price-of-missing-provenance
+    weighted_score: 34
+    disposition: preserve-after-reliable-discovery
+rubric:
+  score_range: [0, 3]
+  weights:
+    directness_of_unresolved_theorem_gap: 3
+    importance_to_flagship_objection: 3
+    title_level_theorem_or_impossibility_potential: 1
+    natural_literature_and_referee_set: 1
+    tractable_first_bounded_model: 1
+    theorem_tightness_failure_certificate_path: 1
+    operational_importance: 1
+    non_overlap: 1
+    low_near_term_obsolescence: 1
+    low_unbuilt_infrastructure_dependence: 1
+    clean_stopping_result: 1
+    publication_and_synthesis_role: 1
+future_registration:
+  central_question: When does sharing lead autonomous agents to implement centralized posterior top-L target coverage across declared equilibrium selections?
+  baseline: named direct-private P_N and centralized pooled V_L under the same finite channel
+  smallest_model: {targets: 3, agents: 2, probabilities: exact-rational, action_technology: reliable-one-hit, prize: equal-split-unit}
+  authority: autonomous
+  baseline_observability: hidden-contemporaneous-actions
+  minimal_institution: sequential-arrival-with-visible-prior-occupancy
+  excluded_first_model_primitives: [central-assignment, roles, transfers, licenses, markets, public-random-seed, correlated-recommendations, unreliable-execution]
+  equilibrium_scopes: [complete-pure-simultaneous-correspondence, complete-pure-subgame-perfect-correspondence]
+  positive_target: necessary-and-sufficient conditions for every declared sequential equilibrium to recover the centralized top-two set
+  negative_target: sharp impossibility or worst-equilibrium recovery bound
+  tightness_target: equality and adjacent rational posterior witnesses
+  verification: [symbolic-best-response-audit, direct-state-action-deviation-enumeration, independent-normal-form-and-backward-induction-verifier, exact-rational-comparison]
+  corruptions: [posterior-normalization, deviation-payoff, equilibrium-label, tie-boundary, centralized-comparator, recovery-classification]
+  resource_audit: [target-states, signal-profiles, posterior-classes, strategies, histories, deviations, certificate-rows, runtime-cap, memory-cap]
+  non_overlap_required: true
+  stop_conditions: [verified-sharp-theorem, sharp-impossibility-or-lower-bound, complete-bounded-null, documented-classical-overlap-failure]
+relationships:
+  completed: [DD-002, DD-017, DD-018, DD-021, DD-022]
+  later: [Reliable-Discovery, Price-of-Missing-Provenance]
+boundaries:
+  no_new_study: true
+  no_new_claim: true
+  no_new_run: true
+  no_paper_change: true
+  no_submission_release_or_doi: true

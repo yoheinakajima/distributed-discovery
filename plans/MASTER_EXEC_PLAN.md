@@ -1,5 +1,16 @@
 # Master execution plan
 
+## Active continuation — post-V5 theorem-spine consolidation (2026-07-22)
+
+Issue #158, branch `docs/post-v5-theorem-spine-gate`, draft PR #159, and
+[`POST_V5_THEOREM_SPINE_CONSOLIDATION.md`](POST_V5_THEOREM_SPINE_CONSOLIDATION.md)
+own the sole active documentation lane. The work reconciles current-facing
+status, adds an evidence-linked theorem spine, repairs synthesis and public
+relationships, records a bounded primary-source literature/non-overlap audit,
+and selects a next-program gate without allocating a study or creating
+research evidence. DD-019 through DD-022, all immutable runs, claims, and paper
+artifacts remain frozen.
+
 ## Completed continuation — Information Sharing Frontier working paper (2026-07-22)
 
 DD-022 research PR #151 merged as
@@ -37,7 +48,7 @@ every-equilibrium limitation. The living ExecPlan is
 Pages `29959514196` passed, issue #150 closed, and the live DD-022 routes pass.
 The separate paper gate is the active documentation-only continuation above.
 
-## Active continuation — post-DD-021 editorial gate (2026-07-22)
+## Historical continuation — post-DD-021 editorial gate (2026-07-22)
 
 Issue #146 and branch `research/dd021-general-sharing-frontier` registered the
 sole substantive Program V5 lane from clean main
@@ -71,7 +82,7 @@ Positive Sharing package because DD-021's full-capacity recovery theorem is a
 centralized-planner result. Preserve DD-019 through DD-021 runs unchanged,
 keep issue #32 separate, and do not touch the ActiveGraph pilot.
 
-## Active continuation — Findings, Labs, and relationship navigation repair (2026-07-22)
+## Completed continuation — Findings, Labs, and relationship navigation repair (2026-07-22)
 
 Issue #143 and branch `site/results-labs-relations` completed a presentation-only public-site repair from clean main `8ac0700`. PR #144 merged as `be4b380`; CI, paper/site builds, Pages deployment, and live-route verification passed. The living ExecPlan is `plans/SITE_RESULTS_LABS_RELATIONS.md`; the safety and QA evidence is in `reports/site-repair/`. No scientific source, claims, immutable runs, manifests, paper source, exact values, theorem statements, evidence status, or canonical upstream changed.
 

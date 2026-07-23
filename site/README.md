@@ -22,17 +22,18 @@ exact byte-length/SHA-256 coverage for every generated download. The public
 surface contains no submission endpoint, account, cookie, analytics, or
 server-side user data.
 
-The current generated surface contains 72 HTML routes for 24 studies, 71
-public data files, 17 Labs, and 22 checksum-covered downloads. The contextual
-`program.html` route explains the output hierarchy and DD-020 editorial
-ownership without changing the five-item primary navigation or scientific
-inventory. The Incremental Sharing Lab selects 2,054 exact adjacent transitions
-from the immutable DD-020 outputs, including the same-accuracy opposite-sign
-comparison. Exact static-complete Labs never call a remote service or collect input.
+The current generated surface contains 77 HTML routes for 26 studies, 85
+public data files, 18 Labs, and 23 checksum-covered downloads. The contextual
+`program.html` route explains the theorem spine, paper ownership, and the
+centralized-versus-selected-equilibrium boundaries without changing the
+five-item primary navigation or scientific inventory. The Program V5 Labs
+select immutable exact DD-019 through DD-022 outputs. Exact static-complete Labs
+never call a remote service or collect input.
 
-PR #140 deployed this surface. Post-merge CI, Pages, live interaction checks,
-and an HTTP 200 sweep of all 171 generated public files pass; the deployed
-DD-020 source-file checksums match the immutable run exactly.
+PRs #155–#156 deployed the paper-integrated surface and its mobile correction.
+Post-merge CI, Pages, live interaction checks, and immutable download checks
+pass; the deployed paper PDF has SHA-256
+`2f8b68d5a690e6369e4c3236313eb93f060bfbe73ec531903c090f6ec6f8b6a1`.
 
 GitHub Actions builds the same ignored `site/dist` artifact from `main` and
 deploys it to <https://yoheinakajima.github.io/distributed-discovery/>. Never

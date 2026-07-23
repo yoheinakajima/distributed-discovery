@@ -25,21 +25,21 @@ submission, release, DOI, journal contact, or claim of peer review.
 | --- | --- | --- |
 | *Shared Discovery Paradox* | Canonical entry paper; potential near-term submission candidate | No action authorized |
 | *Common-Source Trap* | Theorem-centered working paper; potential near-term submission candidate | No action authorized |
-| *The Incentive to Ignore* | Incremental Sharing gate passed; validated working paper and archival-paper candidate, with DD-020 cited as a companion family result | No submission action authorized; DD-020 remains primarily owned by the future Information Sharing Frontier paper |
+| *The Incentive to Ignore* | Incremental Sharing gate passed; validated working paper and archival-paper candidate, with DD-020 cited as a companion family result | No submission action authorized; DD-020 remains primarily owned by the completed Information Sharing Frontier paper |
 | *Threshold Discovery* | Public working paper held behind the Reliable Discovery theorem gate | Gate is editorial, not submission authority |
 | *Foundations* | Living-synthesis component | Working note, not a novelty owner by default |
 | *Institutions* | Living-synthesis component | Working note, not a novelty owner by default |
 | *Three Results* | Source material whose results may migrate to separate theorem families | Primary claim ownership must remain explicit |
 | *Private Information Teams* | Working draft and evidence source | Admission depends on its theorem-family gate |
-| *When Does Information Sharing Improve Decentralized Discovery?* | Admitted archival theorem-paper candidate; planning artifacts only | DD-022's title result is selected-equilibrium, DD-021's full-capacity recovery remains centralized, and no manuscript or submission action is authorized |
+| *When Does Information Sharing Improve Decentralized Discovery?* | Validated 26-page theorem-family working paper and archival-paper candidate | DD-022's title result is selected-equilibrium, DD-021's full-capacity recovery remains centralized, and no submission, release, DOI, or journal-contact action is authorized |
 
 The machine-readable family, study, claim, paper, chapter, overlap, and gate
 relationships are in [`paper-family-map.yml`](paper-family-map.yml). A polished
 PDF is not evidence of admission, submission, acceptance, or peer review.
 DD-020's output-connected Lab is evidence infrastructure and does not alter
 the editorial dispositions or submission boundaries above.
-DD-022 closes the prior decentralized-implementation gate only for its declared
-posterior-only identical-mixing equilibrium selection. The admitted candidate
+DD-022 closed the prior decentralized-implementation gate only for its declared
+posterior-only identical-mixing equilibrium selection. The completed working paper
 must present the every-equilibrium failure and centralized implementation gap
-with the positive theorem. Admission creates no manuscript or submission
-authority.
+with the positive theorem. The completed manuscript creates no submission,
+release, DOI, or journal-contact authority.

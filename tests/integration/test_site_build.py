@@ -44,16 +44,19 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     program = (output / "program.html").read_text(encoding="utf-8")
     assert "The Distributed Discovery program" in program
     assert "The Architecture of Distributed Discovery" in program
-    assert "Incremental Sharing and Independent Rescue" in program
-    assert "DD-C-0092 through DD-C-0096" in program
-    assert "primary ownership" in program
-    assert "future Information Sharing Frontier theorem-family paper" in program
+    assert "From information to implemented discovery" in program
+    assert "DD-022 proves an exact interval" in program
+    assert "does not hold across every equilibrium" in program
+    assert "centralized posterior top-<code>L</code> selector" in program
+    assert "Decentralized Recovery and Equilibrium Robustness" in program
+    assert 'id="information-sharing-frontier"' in program
+    assert 'href="publications/information-sharing-frontier.html"' in program
+    assert "docs/theorem-spine.md" in program
     assert "canonical entry paper" in program
     assert "Working notes" in program
     assert "Reproducible studies, Labs, and DiscoveryBench" in program
-    assert "No manuscript expansion or submission action is authorized" in program
     assert "journal submission status" in program
-    assert "DD-019" in program and "DD-020" in program
+    assert all(study_id in program for study_id in ["DD-019", "DD-020", "DD-021", "DD-022"])
 
     research = (output / "research.html").read_text(encoding="utf-8")
     assert "DD-000" in research and "DD-008" in research
@@ -435,6 +438,57 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
                 run_id == run["run_id"]
                 for run in json.loads((output / "data/runs.json").read_text())["runs"]
             )
+
+    sharing_relations = {
+        relation["study_id"]: relation
+        for relation in relations["relations"]
+        if relation["study_id"] in {"DD-019", "DD-020", "DD-021", "DD-022"}
+    }
+    assert set(sharing_relations) == {"DD-019", "DD-020", "DD-021", "DD-022"}
+    for study_id, relation in sharing_relations.items():
+        assert relation["paper_slugs"] == ["information-sharing-frontier"]
+        assert relation["run_ids"]
+        study_page = (output / f"research/{study_id.lower()}.html").read_text()
+        assert "publications/information-sharing-frontier.html" in study_page
+        assert "program.html#information-sharing-frontier" in study_page
+        assert "Evidence runs" in study_page
+        assert "Public data" in study_page
+
+    sharing_paper = (output / "publications/information-sharing-frontier.html").read_text()
+    for study_id in ["DD-019", "DD-020", "DD-021", "DD-022"]:
+        assert study_id in sharing_paper
+    for claim_id in ["DD-C-0089", "DD-C-0097", "DD-C-0106", "DD-C-0109", "DD-C-0110"]:
+        assert claim_id in sharing_paper
+    for lab_slug in [
+        "incremental-sharing",
+        "general-sharing-frontier",
+        "coordination-free-positive-sharing",
+    ]:
+        assert f"labs/{lab_slug}.html" in sharing_paper
+    assert "program.html#information-sharing-frontier" in sharing_paper
+    assert "Evidence runs" in sharing_paper
+    assert "Public data" in sharing_paper
+
+    for result_id in [
+        "error-contraction-frontier",
+        "full-capacity-recovery",
+        "coordination-free-positive-sharing",
+        "coordination-free-selection-boundary",
+    ]:
+        assert f'id="{result_id}"' in results_page
+        result_fragment = results_page.split(f'id="{result_id}"', 1)[1].split("</article>", 1)[0]
+        assert "publications/information-sharing-frontier.html" in result_fragment
+    assert "program.html#information-sharing-frontier" in results_page
+
+    for lab_slug in [
+        "incremental-sharing",
+        "general-sharing-frontier",
+        "coordination-free-positive-sharing",
+    ]:
+        lab_page = (output / f"labs/{lab_slug}.html").read_text()
+        assert "Evidence runs" in lab_page
+        assert "Public data" in lab_page
+        assert "information-sharing-frontier.html" in lab_page
 
     for route in [
         "research/dd-012.html",

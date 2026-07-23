@@ -1,5 +1,9 @@
 # DD-021 execution plan
 
+> Historical study plan. DD-021, DD-022, and the Information Sharing Frontier
+> working paper are complete and deployed. References below to an active proof
+> gate describe the pre-run state and are preserved as execution provenance.
+
 The authoritative living plan is
 [`../../plans/DD021_GENERAL_SHARING_FRONTIER.md`](../../plans/DD021_GENERAL_SHARING_FRONTIER.md).
 

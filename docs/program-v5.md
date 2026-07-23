@@ -98,8 +98,8 @@ DD-019 is complete and deployed with DD-C-0089 through DD-C-0091 and immutable
 primary run `20260722T084145Z_DD-019_a77bb786_04a5e9f0c5`. DD-020 is complete
 and deployed with DD-C-0092 through DD-C-0096 and immutable primary run
 `20260722T142551Z_DD-020_3854fff6_37c11a850a`. Its editorial gate gives primary
-ownership to a future Information Sharing Frontier theorem-family paper and
-authorizes no submission. Its output-connected Lab selects the immutable exact
+ownership to the completed Information Sharing Frontier theorem-family working
+paper and authorizes no submission. Its output-connected Lab selects the immutable exact
 point and channel transitions without changing evidence status. No later
 Program V5 study ID may be reserved before its own bounded registration gate.
 The four-milestone continuation and its documentation-only final acceptance are
@@ -109,10 +109,11 @@ the selected coordination-free positive-sharing theorem. Research PR #151
 merged as `c8a11bd3`; post-merge CI `29959514182`, Pages `29959514196`, and the
 live study, Lab, exact data, claims, evidence, and results routes pass.
 
-The documentation-only post-DD-022 gate admits *When Does Information Sharing
-Improve Decentralized Discovery?* as a qualified archival-paper candidate. The
+The documentation-only post-DD-022 gate admitted *When Does Information Sharing
+Improve Decentralized Discovery?* as a qualified archival-paper candidate; the
+validated 26-page working paper and public integration are now complete. The
 title-level DD-022 result remains posterior-only and selection-dependent; the
 DD-021 full-capacity comparator remains centralized. Paper issue #153 and its
-ExecPlan/maps authorize planning only. Randomized Information Design and
+ExecPlan/maps authorized that bounded manuscript work only. Randomized Information Design and
 equilibrium refinement remain possible future studies, not prerequisites for
 honest admission and not registered by this gate.

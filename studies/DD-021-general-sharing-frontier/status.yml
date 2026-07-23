@@ -1,5 +1,5 @@
 study_id: DD-021
 status: complete-bounded-study
 evidence_status: two-verified-theorems-four-independently-reproduced-computational-results-and-one-verified-bounded-negative-result
-next_action: preserve the immutable run, exact scope, claim audits, output-connected Lab, centralized-authority boundary, and post-DD-021 paper-gate hold; any DD-022 work requires a new bounded issue
+next_action: preserve the immutable run, exact scope, claim audits, output-connected Lab, and centralized-authority boundary; the historical paper hold was satisfied by DD-022 and the deployed working paper
 updated_utc: 2026-07-22T19:31:29Z

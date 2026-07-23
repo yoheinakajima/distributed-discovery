@@ -68,8 +68,8 @@ issue #150 and PR #151, merged as
 `20260722T210334Z_DD-022_2376d5b7_ad67765ca8` supports DD-C-0104 through
 DD-C-0110. Post-merge CI `29959514182`, Pages `29959514196`, and the live study,
 Lab, exact data, claims, evidence, and results routes pass. Documentation-only
-issue #152 admits *When Does Information Sharing Improve Decentralized
-Discovery?* as a qualified archival-paper candidate and creates paper issue
+issue #152 admitted *When Does Information Sharing Improve Decentralized
+Discovery?* as a qualified archival-paper candidate and created paper issue
 #153 plus planning and ownership maps. Issue #153 subsequently authorized and
 now closes the working-paper build. PR #155 merged as
 `45bb498f4811be89b04626b71842d87ee854fcd1`; post-merge CI `29965009706` and
