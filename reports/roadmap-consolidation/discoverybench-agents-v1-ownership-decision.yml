@@ -1,0 +1,54 @@
+schema_version: 1
+captured_utc: "2026-07-23T14:27:00Z"
+decision: register-instrument-under-dd010
+instrument_owner: DD-010
+benchmark_content_versions: [v1, v2, v3]
+agent_protocol_version: agents-v1
+study_id_allocated: false
+study_id: null
+claim_created: false
+run_created: false
+evaluation_evidence_created: false
+public_route: benchmark/agents-v1.html
+paper_owner: null
+adapter:
+  boundary: existing-disabled-by-default
+  provider_implementations: false
+  deterministic_no_network_mock_permitted: true
+alternatives:
+  - id: discoverybench-v4
+    decision: reject
+    reason: conflates benchmark-content and agent-evaluation protocol versions
+  - id: agents-v1-protocol-axis
+    decision: accept
+    reason: preserves v1-v2-v3 while recording agent protocol independently
+  - id: separate-instrument-package
+    decision: reject
+    reason: fragments authoritative exact baselines, provenance, validation, and routes
+  - id: new-dd-evaluation-study-now
+    decision: defer
+    reason: evidence production, cost, snapshots, implementation, and holdouts are unauthorized
+  - id: dd010-instrument-plus-later-evaluation-gate
+    decision: accept
+    reason: separates registration from future stochastic evidence
+future_evaluation_requires:
+  - separate issue and registration
+  - accepted offline implementation
+  - explicit provider and model snapshot selection
+  - explicit owner cost authorization
+  - committed generator
+  - cryptographic holdout generation
+  - immutable traces
+  - statistical analysis
+  - independent verification
+  - corruption acceptance
+  - claim audit after evidence
+stop_conditions:
+  - versioning-or-ownership-boundary
+  - contamination-boundary
+  - provider-snapshot-boundary
+  - trace-safety-boundary
+  - cost-authorization-boundary
+  - model-diversity-boundary
+  - generic-benchmark-overlap
+  - independent-verification-boundary
