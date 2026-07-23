@@ -1,5 +1,29 @@
 # Master execution plan
 
+## Active continuation — DiscoveryBench Agents v1 provider preflight (2026-07-23)
+
+Issue #175 and branch
+`benchmark/discoverybench-agents-v1-provider-preflight` own the sole
+substantive lane from clean main
+`8fa51758f39d4d04290784969d7990dd998019cb`. The living ExecPlan is
+[`DISCOVERYBENCH_AGENTS_V1_PROVIDER_PREFLIGHT.md`](DISCOVERYBENCH_AGENTS_V1_PROVIDER_PREFLIGHT.md).
+
+The owner-authorized, public-only gate has completed its disabled-by-default
+live provider boundaries, exact OpenRouter endpoint audit, fail-soft
+credential/model-route preflight, tiny public tasks, bounded engineering
+calibration, redacted operational receipts, and editorial interpretation
+artifacts. Direct OpenAI and direct Anthropic passed the full 10-task,
+five-architecture public matrix. The cumulative ledger across every attempt is
+607 calls and USD 2.311758000 against the USD 20 cap. Optional OpenRouter
+Gemini and Mistral routes were rejected by the frozen policy/parameter
+boundaries and do not replace the registered direct routes or local/open
+baseline.
+
+No sealed pilot, base campaign, private material, DD-023, scientific claim or
+run, provider ranking, composite score, or paper/lifecycle change is
+authorized. Milestone M15 now owns final validation, PR integration, Pages,
+issue closeout, and synchronized `main`.
+
 ## Active continuation — DiscoveryBench Agents v1 evaluation registration (2026-07-23)
 
 Issue #173, PR #174, and branch

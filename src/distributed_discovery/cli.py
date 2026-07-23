@@ -31,7 +31,19 @@ def main() -> None:
     elif args.command == "benchmark":
         print(json.dumps(execute_benchmark(args), indent=2, sort_keys=True))
     elif args.command == "agents-v1":
-        print(json.dumps(execute_agents(args), indent=2, sort_keys=True))
+        result = execute_agents(args)
+        print(json.dumps(result, indent=2, sort_keys=True))
+        if args.agents_command in {
+            "provider-preflight",
+            "public-calibration",
+            "provider-preflight-all",
+        }:
+            status = result.get("status") if isinstance(result, dict) else None
+            if status not in {
+                "all-required-providers-ready-public-calibration-partial",
+                "all-required-providers-ready-public-calibration-complete",
+            }:
+                raise SystemExit(1)
     else:
         print(json.dumps(execute_experiment(args), indent=2, sort_keys=True))
 

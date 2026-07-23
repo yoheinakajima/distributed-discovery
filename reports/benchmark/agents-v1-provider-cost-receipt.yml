@@ -1,0 +1,36 @@
+schema_version: agents-v1-provider-cost-receipt-v1
+classification: redacted-public-operational-receipt
+authorization_id: agents-v1-openrouter-preflight-20260723T215657Z
+authorized_base_commit: 8fa51758f39d4d04290784969d7990dd998019cb
+execution_commit: e7304cdd9a1c7242facebaa466ff388c243dce52
+branch: benchmark/discoverybench-agents-v1-provider-preflight
+issue: 175
+authorization_expiration: '2026-07-30T21:56:57Z'
+total_cap_usd: '20.0'
+gateway_caps_usd:
+  anthropic_direct: '5.0'
+  google_direct: '5.0'
+  mistral_direct: '5.0'
+  openai_direct: '5.0'
+  openrouter: '20.0'
+route_caps_usd:
+  openrouter_gemini_2_5_pro: '10.0'
+  openrouter_mistral_small_3_1: '5.0'
+ledger:
+  calls_made: 607
+  route_calls:
+    anthropic_direct: 303
+    openai_direct: 301
+    openrouter_gemini_2_5_pro: 3
+  total_cost_usd: '2.311758000'
+  route_costs_usd:
+    anthropic_direct: '1.471083'
+    openai_direct: '0.8406750'
+    openrouter_gemini_2_5_pro: 0E-9
+  total_cap_usd: '20.0'
+  remaining_total_cap_usd: '17.688242000'
+stop_reason: all-required-providers-ready-public-calibration-complete
+credential_data_present: false
+private_data_present: false
+scientific_evidence_created: false
+updated_utc: '2026-07-23T22:58:29Z'

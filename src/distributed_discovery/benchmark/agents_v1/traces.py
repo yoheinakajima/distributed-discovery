@@ -15,8 +15,8 @@ PII_EMAIL = re.compile(r"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b", re.IGNORECA
 PROPRIETARY = re.compile(r"(?i)\bproprietary[_ -]field\b[^,}\n]*")
 CHAIN_FIELDS = frozenset({"chain_of_thought", "hidden_reasoning", "reasoning_tokens"})
 SENSITIVE_KEY = re.compile(
-    r"(?i)(?:api[_-]?key|authorization|credential|token|secret|password|"
-    r"environment|account[_-]?id|request[_-]?id|proprietary)"
+    r"(?i)(?:api[_-]?key|authorization|credential|secret|password|"
+    r"environment|account[_-]?id|proprietary)"
 )
 
 

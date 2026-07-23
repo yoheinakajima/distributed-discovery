@@ -1,0 +1,65 @@
+schema_version: discoverybench-to-paper-interpretation-map-v1
+classification: prospective-editorial-map-no-scientific-evidence
+evidence_state: no-sealed-or-claim-grade-results
+families:
+  - task_family: common-source-acquisition
+    study_owners: [DD-008, DD-008A, DD-008B]
+    claim_owners: [DD-C-0051, DD-C-0052, DD-C-0057, DD-C-0058]
+    paper_owners: [common-source-trap]
+    mechanism: Agents choose between shared and independent evidence sources before acting; acquisition incentives can concentrate evidence even when union discovery values independence.
+    neighbor_collision: Strategic information acquisition, experimentation public goods, parallel R&D, uncoordinated parallel search, and welfare-sharing games.
+    supportive_pattern: A claim-grade campaign would be supportive only if the registered acquisition wedge appears within the frozen task and protocol scope.
+    contradictory_pattern: A robust reversal inside the same registered primitives would complicate the proposed behavioral mapping, not refute the exact theorem.
+    null_pattern: No detectable architecture difference would be a scoped null about the tested software-agent protocols.
+    forbidden_generalization: Never infer that common information, coordination, or communication is generally harmful.
+    editorial_disposition: Interpret only after sealed evidence; retain theorem and empirical mapping as distinct objects.
+  - task_family: one-reader-versus-broadcast-attention
+    study_owners: [DD-012, DD-013, DD-014]
+    claim_owners: [DD-C-0059, DD-C-0060, DD-C-0061, DD-C-0062, DD-C-0063, DD-C-0064, DD-C-0065, DD-C-0066, DD-C-0067]
+    paper_owners: [incentive-to-ignore]
+    mechanism: Limiting use of one shared clue can preserve independent action channels while broadcast use can compress a discovery portfolio.
+    neighbor_collision: Public information, partial dissemination, rational attention, strategic ignorance, herding, targeted disclosure, and jury aggregation.
+    supportive_pattern: Support would require the registered one-reader advantage or broadcast compression under the exact public task family and protocol.
+    contradictory_pattern: Broadcast dominance in the same registered fixture would complicate the software-agent mapping while leaving the finite analytical claims unchanged.
+    null_pattern: No difference would be a headline scoped null about attention-channel implementation.
+    forbidden_generalization: Never recommend organizational ignorance or reduced access in general.
+    editorial_disposition: Preserve access, use, assignment, and action correlation as separate interpretation layers.
+  - task_family: point-versus-shortlist-sharing
+    study_owners: [DD-020, DD-021]
+    claim_owners: [DD-C-0092, DD-C-0093, DD-C-0094, DD-C-0095, DD-C-0096, DD-C-0097, DD-C-0098, DD-C-0099, DD-C-0100, DD-C-0101, DD-C-0102, DD-C-0103]
+    paper_owners: [information-sharing-frontier]
+    mechanism: Shared signal geometry and message capacity jointly determine whether pooling compresses, preserves, or expands recoverable action portfolios.
+    neighbor_collision: Blackwell comparison, decentralized team decisions, information design, individual sufficiency, social learning, and strategic disclosure.
+    supportive_pattern: Support would require architecture effects aligned with the registered point-versus-shortlist geometry under exact evaluators.
+    contradictory_pattern: A stable opposite ordering would complicate the proposed agent-protocol interpretation, not create a general information-order theorem.
+    null_pattern: No architecture difference would be preserved as a bounded negative result.
+    forbidden_generalization: Never treat a result for one discovery decision problem as Blackwell dominance.
+    editorial_disposition: Tie every statement to message capacity, action budget, and decision rule.
+  - task_family: consensus-collapse-versus-portfolio-recovery
+    study_owners: [DD-020, DD-021, DD-022]
+    claim_owners: [DD-C-0092, DD-C-0093, DD-C-0094, DD-C-0095, DD-C-0096, DD-C-0097, DD-C-0098, DD-C-0099, DD-C-0100, DD-C-0101, DD-C-0102, DD-C-0103, DD-C-0104, DD-C-0105, DD-C-0106, DD-C-0107, DD-C-0108, DD-C-0109, DD-C-0110]
+    paper_owners: [information-sharing-frontier, canonical-shared-discovery-boundary]
+    mechanism: Pooled evidence can improve ranking while consensus collapses nominal action capacity; coordinated portfolios can recover or exceed direct baselines.
+    neighbor_collision: Canonical Shared Discovery Paradox, equilibrium selection, correlated recommendations, authority benchmarks, and portfolio assignment.
+    supportive_pattern: Support would require the registered separation between consensus and portfolio recovery with exact comparator agreement.
+    contradictory_pattern: Failure of portfolio recovery in a registered cell would narrow the software-agent interpretation without overturning upstream exact results.
+    null_pattern: Neutral recovery curves or indistinguishable protocols remain scoped nulls.
+    forbidden_generalization: Never equate information sharing with consensus, authority, or a unique equilibrium.
+    editorial_disposition: Attribute the atomic paradox upstream and keep centralized authority separate from decentralized implementation.
+  - task_family: threshold-team-formation
+    study_owners: [DD-016, DD-017, DD-018]
+    claim_owners: [DD-C-0071, DD-C-0072, DD-C-0073, DD-C-0074, DD-C-0075, DD-C-0076, DD-C-0077, DD-C-0078, DD-C-0083, DD-C-0084, DD-C-0085, DD-C-0086]
+    paper_owners: [threshold-discovery]
+    mechanism: Search actions create value only when enough agents form viable candidate-specific teams, producing complementarity below threshold and crowding above it.
+    neighbor_collision: Threshold public goods, assurance, minimum-effort games, lower-quota matching, congestion/potential games, and utility design.
+    supportive_pattern: Support would require the registered capacity and team-viability effects under frozen synthetic tasks.
+    contradictory_pattern: Different software-agent coordination patterns would complicate the implementation story while leaving exact planner and census results intact.
+    null_pattern: No detectable threshold-architecture effect is a bounded implementation null.
+    forbidden_generalization: Never infer a universal team size, equilibrium selection, or mechanism guarantee.
+    editorial_disposition: Keep planner, equilibrium, stability, and implementation claims separately labeled.
+global_rules:
+  - Public calibration is adapter engineering, not evidence for any pattern above.
+  - Support, contradiction, and null language is unavailable until a separately authorized sealed or claim-grade campaign passes its gates.
+  - No family-level result may be generalized beyond its registered primitives, architecture, evaluator, and task distribution.
+  - A model-provider comparison must not become a provider ranking, leaderboard, or composite score.
+paper_action_authorized: false

@@ -1,0 +1,242 @@
+schema_version: agents-v1-openrouter-route-audit-v1
+classification: public-operational-route-audit-not-campaign-amendment
+audit_utc: '2026-07-23T22:37:03Z'
+gateway: openrouter
+credential_configured: true
+routes:
+- route_id: openrouter_mistral_small_3_1
+  model_slug: mistralai/mistral-small-3.1-24b-instruct
+  endpoint_discovery_status: pass
+  endpoints:
+  - provider_slug: Cloudflare
+    provider_name: Cloudflare
+    model_variant: Cloudflare | mistralai/mistral-small-3.1-24b-instruct-2503
+    context_length: 128000
+    max_completion_tokens: 128000
+    prompt_price_per_token: '3.51E-7'
+    completion_price_per_token: '5.55E-7'
+    supported_parameters:
+    - frequency_penalty
+    - logit_bias
+    - logprobs
+    - max_tokens
+    - min_p
+    - presence_penalty
+    - repetition_penalty
+    - seed
+    - stop
+    - temperature
+    - top_k
+    - top_logprobs
+    - top_p
+    quantization: unknown
+    data_policy: {}
+  selected_endpoint: null
+  fallbacks_disabled: true
+  require_parameters: true
+  data_collection: deny
+  zdr_required: true
+  max_price_frozen: false
+- route_id: openrouter_gemini_2_5_pro
+  model_slug: google/gemini-2.5-pro
+  endpoint_discovery_status: pass
+  endpoints:
+  - provider_slug: Google
+    provider_name: Google
+    model_variant: Google | google/gemini-2.5-pro
+    context_length: 1048576
+    max_completion_tokens: 65536
+    prompt_price_per_token: '0.00000125'
+    completion_price_per_token: '0.00001'
+    supported_parameters:
+    - include_reasoning
+    - max_tokens
+    - reasoning
+    - response_format
+    - seed
+    - stop
+    - structured_outputs
+    - temperature
+    - tool_choice
+    - tools
+    - top_p
+    quantization: unknown
+    data_policy: {}
+  - provider_slug: Google
+    provider_name: Google
+    model_variant: Google | google/gemini-2.5-pro
+    context_length: 1048576
+    max_completion_tokens: 65536
+    prompt_price_per_token: '6.25E-7'
+    completion_price_per_token: '0.000005'
+    supported_parameters:
+    - include_reasoning
+    - max_tokens
+    - reasoning
+    - response_format
+    - seed
+    - stop
+    - structured_outputs
+    - temperature
+    - tool_choice
+    - tools
+    - top_p
+    quantization: unknown
+    data_policy: {}
+  - provider_slug: Google
+    provider_name: Google
+    model_variant: Google | google/gemini-2.5-pro
+    context_length: 1048576
+    max_completion_tokens: 65536
+    prompt_price_per_token: '0.00000225'
+    completion_price_per_token: '0.000018'
+    supported_parameters:
+    - include_reasoning
+    - max_tokens
+    - reasoning
+    - response_format
+    - seed
+    - stop
+    - structured_outputs
+    - temperature
+    - tool_choice
+    - tools
+    - top_p
+    quantization: unknown
+    data_policy: {}
+  - provider_slug: Google
+    provider_name: Google
+    model_variant: Google | google/gemini-2.5-pro
+    context_length: 1048576
+    max_completion_tokens: 65536
+    prompt_price_per_token: '0.00000125'
+    completion_price_per_token: '0.00001'
+    supported_parameters:
+    - include_reasoning
+    - max_tokens
+    - reasoning
+    - response_format
+    - seed
+    - stop
+    - structured_outputs
+    - temperature
+    - tool_choice
+    - tools
+    - top_p
+    quantization: unknown
+    data_policy: {}
+  - provider_slug: Google
+    provider_name: Google
+    model_variant: Google | google/gemini-2.5-pro
+    context_length: 1048576
+    max_completion_tokens: 65536
+    prompt_price_per_token: '0.00000125'
+    completion_price_per_token: '0.00001'
+    supported_parameters:
+    - include_reasoning
+    - max_tokens
+    - reasoning
+    - response_format
+    - seed
+    - stop
+    - structured_outputs
+    - temperature
+    - tool_choice
+    - tools
+    - top_p
+    quantization: unknown
+    data_policy: {}
+  - provider_slug: Google AI Studio
+    provider_name: Google AI Studio
+    model_variant: Google AI Studio | google/gemini-2.5-pro
+    context_length: 1048576
+    max_completion_tokens: 65536
+    prompt_price_per_token: '0.00000125'
+    completion_price_per_token: '0.00001'
+    supported_parameters:
+    - include_reasoning
+    - max_tokens
+    - reasoning
+    - response_format
+    - seed
+    - structured_outputs
+    - temperature
+    - tool_choice
+    - tools
+    - top_p
+    quantization: unknown
+    data_policy: {}
+  - provider_slug: Google AI Studio
+    provider_name: Google AI Studio
+    model_variant: Google AI Studio | google/gemini-2.5-pro
+    context_length: 1048576
+    max_completion_tokens: 65536
+    prompt_price_per_token: '6.25E-7'
+    completion_price_per_token: '0.000005'
+    supported_parameters:
+    - include_reasoning
+    - max_tokens
+    - reasoning
+    - response_format
+    - seed
+    - structured_outputs
+    - temperature
+    - tool_choice
+    - tools
+    - top_p
+    quantization: unknown
+    data_policy: {}
+  - provider_slug: Google AI Studio
+    provider_name: Google AI Studio
+    model_variant: Google AI Studio | google/gemini-2.5-pro
+    context_length: 1048576
+    max_completion_tokens: 65536
+    prompt_price_per_token: '0.00000225'
+    completion_price_per_token: '0.000018'
+    supported_parameters:
+    - include_reasoning
+    - max_tokens
+    - reasoning
+    - response_format
+    - seed
+    - structured_outputs
+    - temperature
+    - tool_choice
+    - tools
+    - top_p
+    quantization: unknown
+    data_policy: {}
+  selected_endpoint:
+    provider_slug: Google
+    provider_name: Google
+    model_variant: Google | google/gemini-2.5-pro
+    context_length: 1048576
+    max_completion_tokens: 65536
+    prompt_price_per_token: '6.25E-7'
+    completion_price_per_token: '0.000005'
+    supported_parameters:
+    - include_reasoning
+    - max_tokens
+    - reasoning
+    - response_format
+    - seed
+    - stop
+    - structured_outputs
+    - temperature
+    - tool_choice
+    - tools
+    - top_p
+    quantization: unknown
+    data_policy: {}
+  fallbacks_disabled: true
+  require_parameters: true
+  data_collection: deny
+  zdr_required: true
+  max_price_frozen: true
+model_family_diversity: true
+gateway_diversity: false
+campaign_manifest_authorizes_openrouter: false
+route_amendment_decision: optional-public-calibration-only
+authorization_call_ceiling: 2000
+calls_recorded_before_generations: 10
+execution_commit: e7304cdd9a1c7242facebaa466ff388c243dce52
