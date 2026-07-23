@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 from collections.abc import Mapping, Sequence
 from dataclasses import asdict
+from pathlib import Path
 
 from distributed_discovery.benchmark.agents_v1.adapters import MockAdapter
 from distributed_discovery.benchmark.agents_v1.batch import plan_batch
@@ -15,6 +16,11 @@ from distributed_discovery.benchmark.agents_v1.generation import (
     canonical_cells,
     generate_prompt_space,
     generate_public_calibration,
+)
+from distributed_discovery.benchmark.agents_v1.live_campaign import (
+    run_provider_preflight,
+    run_provider_preflight_all,
+    run_public_calibration,
 )
 from distributed_discovery.benchmark.agents_v1.models import VERSIONS
 from distributed_discovery.benchmark.agents_v1.orchestration import (
@@ -42,12 +48,20 @@ COMMANDS = (
     "verify-batch",
     "dry-run",
     "readiness",
+    "provider-preflight",
+    "public-calibration",
+    "provider-preflight-all",
     "live-execute",
 )
 
 
 def configure(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("agents_command", choices=COMMANDS)
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="rerun an already passing live stage without credential fingerprinting",
+    )
 
 
 def execute(args: argparse.Namespace) -> Mapping[str, object] | list[object]:
@@ -112,6 +126,12 @@ def execute(args: argparse.Namespace) -> Mapping[str, object] | list[object]:
         return run_rehearsal()
     if command == "readiness":
         return readiness_report()
+    if command == "provider-preflight":
+        return run_provider_preflight(Path.cwd(), force=bool(args.force))
+    if command == "public-calibration":
+        return run_public_calibration(Path.cwd(), force=bool(args.force))
+    if command == "provider-preflight-all":
+        return run_provider_preflight_all(Path.cwd(), force=bool(args.force))
     if command == "live-execute":
         raise PermissionError(
             "live execution is disabled; a separate owner authorization and campaign are required"

@@ -16,7 +16,7 @@ PROPRIETARY = re.compile(r"(?i)\bproprietary[_ -]field\b[^,}\n]*")
 CHAIN_FIELDS = frozenset({"chain_of_thought", "hidden_reasoning", "reasoning_tokens"})
 SENSITIVE_KEY = re.compile(
     r"(?i)(?:api[_-]?key|authorization|credential|token|secret|password|"
-    r"environment|account[_-]?id|request[_-]?id|proprietary)"
+    r"environment|account[_-]?id|proprietary)"
 )
 
 
