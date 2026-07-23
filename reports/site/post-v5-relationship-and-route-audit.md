@@ -80,6 +80,14 @@ Findings, 18 Labs, seven papers, 24 benchmark tasks, 110 claims, and 38 routed
 runs. A separate marker audit passes all ten repaired Program/study/paper/
 Finding/Lab routes in the matrix.
 
-Desktop/mobile browser QA, deployment, and live verification remain pending
-until the branch workflows pass and the pull request is merged. Their exact
-results will be appended without changing the required matrix.
+## Deployed acceptance
+
+Pass. Branch CI `29969577304` and paper/site build `29969577290` passed; PR
+#159 squash-merged as `8ea3495ccfeacb2c0b4d408d70df1f39718c1a02`;
+post-merge CI `29969705255` and Pages `29969705284` passed. Every required live
+route plus `data/relations.json` returned HTTP 200. Desktop and 390-pixel
+browser QA passed all 16 routes with one H1, valid heading progression, no
+page-width overflow, required relationship/status markers and destinations,
+visible keyboard focus, and no console warnings or errors. The live paper PDF
+retained SHA-256
+`2f8b68d5a690e6369e4c3236313eb93f060bfbe73ec531903c090f6ec6f8b6a1`.
