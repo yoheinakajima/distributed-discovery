@@ -2,7 +2,8 @@
 
 > Phase 2 sequencing note (2026-07-23): all theorem-family execution is held.
 > Reliable Discovery is preserved as a major candidate, not queued or promised.
-> The next substantive session is DiscoveryBench Agents v1 registration. The
+> DiscoveryBench Agents v1 is registered-not-executed under DD-010. The next
+> substantive gate is its offline instrument implementation. The
 > three unregistered readiness gates are recorded in
 > [`reports/roadmap-consolidation/phase-2-theorem-gates.md`](../reports/roadmap-consolidation/phase-2-theorem-gates.md).
 > Their timing is governed by the nine-option staged portfolio in

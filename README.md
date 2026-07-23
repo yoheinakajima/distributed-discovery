@@ -18,7 +18,10 @@ methods documentation, and AI-native audit readiness. The repository operates
 as an AI-powered research lab under human PI gate authority; separated AI
 checks are not external review or peer review. Reliable Discovery is preserved
 as the next major theorem-family candidate but deferred. The next substantive
-session is a new DiscoveryBench Agents v1 registration session. See the
+session has registered DiscoveryBench Agents v1 under DD-010 as an offline,
+not-executed instrument. No model call, cost, private holdout, result, claim, or
+run exists. The exact next gate is a separately authorized DiscoveryBench
+Agents v1 offline instrument implementation. See the
 [Phase 2 directive](docs/phase-2-program-directive.md), [Start Here
 hierarchy](docs/publication-hierarchy.md), [optionality
 portfolio](docs/strategic-direction/optionality-portfolio.md), and [methods

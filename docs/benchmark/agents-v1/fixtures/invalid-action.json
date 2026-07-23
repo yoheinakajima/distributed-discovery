@@ -1,0 +1,8 @@
+{
+  "schema_version": "agents-action-v1",
+  "task_instance_commitment": "sha256:bad",
+  "agent_id": "PERSON-ALICE",
+  "round": 3,
+  "final": true,
+  "actions": ["SECRET-ANSWER"]
+}

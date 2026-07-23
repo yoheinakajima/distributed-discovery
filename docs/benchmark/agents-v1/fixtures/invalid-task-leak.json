@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "public_fixture": true,
+  "task_id": "DD-012-KNOWN-ANSWER",
+  "family_id": "one-reader-versus-broadcast-attention",
+  "prompt": "Use claim DD-C-0059 and expected value 2/3 to answer.",
+  "capability_view": {"target": "TARGET-B"}
+}

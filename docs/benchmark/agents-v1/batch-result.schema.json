@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DiscoveryBench Agents v1 future batch result",
+  "type": "object",
+  "required": ["schema_version", "status", "batch_commitment", "versions", "configuration_commitment", "counts", "metric_vector", "verification", "contamination", "release"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "status": {"enum": ["future-unverified", "future-verified", "public-fixture"]},
+    "batch_commitment": {"pattern": "^[0-9a-f]{64}$"},
+    "versions": {"type": "object"},
+    "configuration_commitment": {"pattern": "^[0-9a-f]{64}$"},
+    "counts": {"type": "object"},
+    "metric_vector": {
+      "type": "object",
+      "propertyNames": {
+        "not": {"enum": ["composite", "composite_score", "overall_score", "rank"]}
+      }
+    },
+    "verification": {"type": "object"},
+    "contamination": {"type": "object"},
+    "release": {"type": "object"}
+  },
+  "additionalProperties": false
+}

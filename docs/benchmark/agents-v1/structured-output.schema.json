@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yoheinakajima.github.io/distributed-discovery/schemas/discoverybench-agents-action-v1.json",
+  "title": "DiscoveryBench Agents visible action v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "task_instance_commitment", "agent_id", "round", "final", "actions"],
+  "properties": {
+    "schema_version": {"const": "agents-action-v1"},
+    "task_instance_commitment": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "agent_id": {"type": "string", "pattern": "^AGENT-0[1-6]$"},
+    "round": {"type": "integer", "minimum": 0, "maximum": 2},
+    "final": {"type": "boolean"},
+    "visible_message": {"type": "string", "maxLength": 2048},
+    "source_choice": {"enum": ["common", "independent", "none"]},
+    "actions": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": {"type": "string", "pattern": "^TARGET-[A-Z]$"}
+    },
+    "declared_confidence": {"type": "number", "minimum": 0, "maximum": 1}
+  }
+}

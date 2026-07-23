@@ -1,11 +1,14 @@
 # Current program state
 
-_Phase 2 supersession, 2026-07-23:_ Phase 1 is complete at the boundary formed
+_DiscoveryBench Agents v1 registration, 2026-07-23:_ Phase 1 is complete at the boundary formed
 by Programs V1--V5, the Information Sharing Frontier, post-V5 consolidation,
 and the stopped decentralized-recovery overlap gate. Theorem-family execution
-is on hold. Reliable Discovery is preserved and deferred; the next substantive
-session is DiscoveryBench Agents v1 registration. No claim, study, immutable
-run, theorem, or scientific result is added by this transition.
+is on hold. Reliable Discovery is preserved and deferred. DiscoveryBench
+Agents v1 is now registered under DD-010 as an offline instrument with five
+task families and five agent architecture contrasts. It is not executed: no
+model call, cost, private seed, holdout, trace, result, claim, study, immutable
+run, theorem, or scientific result was created. The exact next gate is a
+separate DiscoveryBench Agents v1 offline instrument implementation.
 
 Phase 2 now operates as an AI-powered research lab under human PI ownership
 and final gate authority. Ten separated AI roles cover production,
@@ -16,8 +19,10 @@ external review or peer review. Human-engagement preparation is inactive and
 its former repository packets are superseded by
 `docs/ai-lab-operating-boundary.md`.
 
-The active architecture preserves nine staged options while exercising only
-WS-1 next: DiscoveryBench Agents v1 registration. OR/MS is the primary
+The active architecture preserves nine staged options. WS-1 registration is
+complete; its irreversible execution boundary remains closed pending offline
+implementation, snapshot verification, and explicit owner cost authorization.
+OR/MS is the primary
 disciplinary and rhetorical home; economics/AGT is the mathematical adjacency;
 multi-agent AI is the future benchmark audience. The paper system separately
 records scientific, editorial, and publication status, with the read-only

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DiscoveryBench Agents v1 version registry",
+  "type": "object",
+  "required": ["schema_version", "instrument_id", "status", "owner_study", "new_study_allocated", "axes", "defaults", "preserved", "compatibility_key", "moving_alias_allowed_as_execution_identifier"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "instrument_id": {"const": "discoverybench-agents-v1"},
+    "status": {"const": "registered-not-executed"},
+    "owner_study": {"const": "DD-010"},
+    "new_study_allocated": {"const": false},
+    "axes": {"type": "object"},
+    "defaults": {"type": "object"},
+    "preserved": {"type": "object"},
+    "compatibility_key": {"type": "array", "minItems": 6, "uniqueItems": true},
+    "moving_alias_allowed_as_execution_identifier": {"const": false}
+  },
+  "additionalProperties": false
+}

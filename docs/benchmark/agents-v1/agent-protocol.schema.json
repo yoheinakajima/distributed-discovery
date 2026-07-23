@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DiscoveryBench Agents v1 protocol",
+  "type": "object",
+  "required": ["schema_version", "protocol_version", "status", "agent_identity", "system_prompt", "user_prompt", "communication", "memory", "context", "tools", "sampling", "action_output", "retry", "timeout", "stopping", "invalid_output", "refusal", "provider_error", "trace_boundary"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "protocol_version": {"const": "agents-v1"},
+    "status": {"const": "registered-not-executed"},
+    "agent_identity": {"type": "object"},
+    "communication": {"type": "object"},
+    "memory": {"type": "object"},
+    "context": {"type": "object"},
+    "tools": {"type": "object"},
+    "sampling": {"type": "object"},
+    "action_output": {"type": "object"},
+    "trace_boundary": {"type": "object"}
+  },
+  "additionalProperties": true
+}

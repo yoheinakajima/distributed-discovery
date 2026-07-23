@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "public_fixture": true,
+  "task_commitment": "c9c3fe60b03a83519306ddbeaa70dc9f504e63f87b19e80291aa61f5a4937f67",
+  "probes": [],
+  "classification": "ordinary-correct-reasoning",
+  "release_action": "continue"
+}

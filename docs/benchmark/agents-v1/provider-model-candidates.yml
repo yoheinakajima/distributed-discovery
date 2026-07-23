@@ -1,0 +1,139 @@
+schema_version: 1
+status: audited-not-selected
+access_date: "2026-07-23"
+execution_authorized: false
+selection_policy:
+  minimum_cloud_families: 2
+  local_open_candidate_required: true
+  moving_alias_allowed: false
+  exact_snapshot_required: true
+  provider_family_independence_claimed: false
+candidates:
+  - candidate_id: openai-gpt-5-4-2026-03-05
+    provider: OpenAI
+    deployment: cloud-api
+    exact_model_identifier: gpt-5.4-2026-03-05
+    snapshot_status: dated-immutable-snapshot
+    moving_alias: gpt-5.4
+    moving_alias_status: prohibited-for-execution
+    context_window_tokens: 1050000
+    max_output_tokens: 128000
+    structured_output: supported
+    tool_control: supported-but-tools-must-be-omitted
+    sampling_controls: "reasoning_effort none/low/medium/high/xhigh; temperature support is endpoint/config dependent"
+    seed_support: "no seed guarantee documented on the cited model page"
+    retry_error_semantics: "caller records HTTP/request IDs and retries only transient transport/rate-limit failures; schema retry follows protocol"
+    trace_fields: "model ID, response/request ID, usage tokens, finish/status, errors, latency; no hidden reasoning"
+    pricing:
+      date: "2026-07-23"
+      currency: USD
+      unit: per-million-tokens
+      input: 2.50
+      output: 15.00
+      cached_input: 0.25
+      batch_discount: "pricing page exposes Batch pricing; recheck immediately before authorization"
+    rate_limit_uncertainty: account tier and batch queue limits vary
+    terms_or_license: OpenAI Services Agreement and usage policies govern API access
+    data_retention: "API inputs/outputs may be retained up to 30 days unless eligible ZDR is approved; not used for training by default"
+    reproducibility_limitation: pinned weights do not freeze serving infrastructure, safety routing, or nondeterministic sampling
+    execution_eligibility: eligible-for-future-selection
+    citations:
+      - https://developers.openai.com/api/docs/models/gpt-5.4
+      - https://openai.com/enterprise-privacy/
+  - candidate_id: anthropic-claude-sonnet-4-6
+    provider: Anthropic
+    deployment: cloud-api
+    exact_model_identifier: claude-sonnet-4-6
+    snapshot_status: canonical-pinned-snapshot
+    moving_alias: null
+    moving_alias_status: not-applicable
+    context_window_tokens: 1000000
+    max_output_tokens: 64000
+    structured_output: supported
+    tool_control: supported-but-tools-must-be-omitted
+    sampling_controls: "temperature/top_p/top_k are model-feature dependent and must be frozen after a schema-only compatibility check"
+    seed_support: "no public seed guarantee documented in the cited Messages API"
+    retry_error_semantics: "caller records request ID, stop_reason, usage, and API error; only transient errors retry outside the one schema retry"
+    trace_fields: "model ID, request ID, usage/cache tokens, stop_reason, errors, latency; no hidden thinking"
+    pricing:
+      date: "2026-07-23"
+      currency: USD
+      unit: per-million-tokens
+      input: 3.00
+      output: 15.00
+      cached_input: 0.30
+      batch_discount: 50-percent
+    rate_limit_uncertainty: usage tier and service tier vary; verify before execution
+    terms_or_license: Anthropic Commercial Terms and Usage Policy govern API access
+    data_retention: "structured outputs qualify for ZDR with limited schema-cache retention; organization-level ZDR must be verified"
+    reproducibility_limitation: model ID pins weights but Anthropic states serving infrastructure and sampling logic may change
+    execution_eligibility: eligible-for-future-selection
+    citations:
+      - https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions
+      - https://platform.claude.com/docs/en/about-claude/models/overview
+      - https://platform.claude.com/docs/en/build-with-claude/structured-outputs
+      - https://platform.claude.com/docs/en/about-claude/pricing
+  - candidate_id: google-gemini-2-5-pro
+    provider: Google
+    deployment: cloud-api
+    exact_model_identifier: gemini-2.5-pro
+    snapshot_status: stable-model-name-usually-unchanged-not-cryptographically-pinned
+    moving_alias: gemini-pro-latest
+    moving_alias_status: prohibited-for-execution
+    context_window_tokens: 1048576
+    max_output_tokens: 65536
+    structured_output: supported
+    tool_control: supported-but-tools-must-be-omitted
+    sampling_controls: "temperature/top_p/top_k documented for this generation; must be frozen after compatibility check"
+    seed_support: "seed availability does not guarantee determinism and must be reverified"
+    retry_error_semantics: "record response metadata, usage, finish reason, safety blocks, and API error; transient failures only"
+    trace_fields: "exact requested model string, response metadata, usage, finish reason, safety blocks, errors, latency"
+    pricing:
+      date: "2026-07-23"
+      currency: USD
+      unit: per-million-tokens-at-or-below-200k-input
+      input: 1.25
+      output: 10.00
+      cached_input: 0.31
+      batch_discount: "recheck official pricing at authorization"
+    rate_limit_uncertainty: project tier and model lifecycle may change
+    terms_or_license: Gemini API Additional Terms and Google API Terms govern access
+    data_retention: "future owner must verify paid-service logging/retention settings before any sealed prompt is sent"
+    reproducibility_limitation: stable models usually do not change, but official wording is not an immutable snapshot guarantee
+    execution_eligibility: blocked-pending-snapshot-and-retention-verification
+    citations:
+      - https://ai.google.dev/gemini-api/docs/models
+      - https://ai.google.dev/gemini-api/docs/models/gemini-2.5-pro
+      - https://ai.google.dev/gemini-api/docs/structured-output
+      - https://ai.google.dev/gemini-api/docs/pricing
+  - candidate_id: mistral-small-3-1-24b-instruct-2503
+    provider: Mistral AI
+    deployment: local-open-weights
+    exact_model_identifier: mistralai/Mistral-Small-3.1-24B-Instruct-2503@68faf511d618ef198fef186659617cfd2eb8e33a
+    snapshot_status: repository-revision-pinned
+    moving_alias: mistralai/Mistral-Small-3.1-24B-Instruct-2503
+    moving_alias_status: repository-main-prohibited-for-execution
+    context_window_tokens: 131072
+    max_output_tokens: 512
+    structured_output: native-json-output-documented-validator-still-required
+    tool_control: native-function-calling-documented-but-tools-must-be-disabled
+    sampling_controls: "vLLM temperature and seed are implementation controls; image recommends temperature 0.15"
+    seed_support: "local engine seed can be recorded but hardware/kernel nondeterminism remains"
+    retry_error_semantics: "local engine exit/status and schema validation recorded; one schema retry maximum"
+    trace_fields: "repository revision, weight hashes, engine/container versions, hardware, seed, sampling config, token counts, latency, errors"
+    pricing:
+      date: "2026-07-23"
+      currency: USD
+      unit: local-resource-only
+      input: 0
+      output: 0
+      cached_input: 0
+      batch_discount: not-applicable
+    rate_limit_uncertainty: local throughput depends on hardware and inference engine
+    terms_or_license: Apache-2.0 model license; dependency licenses separately apply
+    data_retention: local-only by design; traces follow repository custody policy
+    reproducibility_limitation: exact weights do not freeze inference engine, kernels, quantization, or hardware
+    execution_eligibility: eligible-after-hardware-and-weight-hash-gate
+    citations:
+      - https://mistral.ai/news/mistral-small-3-1/
+      - https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/tree/68faf511d618ef198fef186659617cfd2eb8e33a

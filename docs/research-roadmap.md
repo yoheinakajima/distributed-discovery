@@ -1,8 +1,9 @@
 # Research roadmap
 
 Phase 2 holds theorem-family execution. Reliable Discovery is preserved and
-deferred. The next substantive session is DiscoveryBench Agents v1
-registration; see its no-execution
+deferred. DiscoveryBench Agents v1 is registered-not-executed under DD-010.
+The next substantive gate is its separately authorized offline instrument
+implementation; see its no-execution
 [prospectus](../reports/roadmap-consolidation/discoverybench-agents-v1-prospectus.md).
 The registration must use automated cryptographic custody with no human
 custodian: committed generators, frozen versions, CSPRNG seeds and commitments,

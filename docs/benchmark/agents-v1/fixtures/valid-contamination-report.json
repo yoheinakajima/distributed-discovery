@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "public_fixture": true,
+  "task_commitment": "c9c3fe60b03a83519306ddbeaa70dc9f504e63f87b19e80291aa61f5a4937f67",
+  "probes": [
+    {"probe_id": "exact-public-value", "status": "clear", "matches": []},
+    {"probe_id": "near-verbatim-answer", "status": "clear", "matches": []},
+    {"probe_id": "public-task-id", "status": "clear", "matches": []},
+    {"probe_id": "public-prompt-phrase", "status": "clear", "matches": []},
+    {"probe_id": "theorem-paper-result-name", "status": "clear", "matches": []},
+    {"probe_id": "known-solution-pattern", "status": "clear", "matches": []},
+    {"probe_id": "copied-explanation-structure", "status": "clear", "matches": []},
+    {"probe_id": "generator-parameter-leakage", "status": "clear", "matches": []},
+    {"probe_id": "answer-key-access", "status": "clear", "matches": []},
+    {"probe_id": "cross-batch-leakage", "status": "clear", "matches": []},
+    {"probe_id": "prompt-injection", "status": "clear", "matches": []},
+    {"probe_id": "benchmark-self-identification", "status": "clear", "matches": []}
+  ],
+  "classification": "ordinary-correct-reasoning",
+  "release_action": "continue"
+}

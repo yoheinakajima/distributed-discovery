@@ -1,0 +1,66 @@
+schema_version: 1
+analysis_version: agents-statistical-analysis-v1
+status: preregistered-not-executed
+unit_of_analysis: sealed task-instance by exact model snapshot by repeat
+design:
+  paired_task_instances: true
+  pairing_keys: [task_instance_commitment, model_id, repeat]
+  architectures:
+    - isolated-private-agents
+    - full-broadcast-shared-transcript
+    - designated-reader-selective-sharing
+    - pooled-consensus
+    - portfolio-preserving-structured
+  repeats_per_model_instance: 3
+  minimum_private_batches: 4
+  private_instances_total: 200
+sampling_assumptions:
+  task_sampling: stratified across the 138 frozen generator cells
+  model_outputs: stochastic even with nominal zero temperature
+  provider_families_independent: false
+  human_population_inference: forbidden
+primary_estimands:
+  - paired-difference-group-discovery
+  - paired-difference-distinct-action-coverage
+  - paired-difference-duplication
+  - paired-difference-planner-regret
+  - paired-difference-private-baseline-regret
+  - paired-difference-recovery-budget-attainment
+  - paired-difference-source-diversity
+  - paired-difference-communication-induced-action-compression
+secondary_estimands:
+  - distance-from-best-registered-equilibrium
+  - distance-from-worst-registered-equilibrium
+  - invalid-action-rate
+  - protocol-compliance
+  - calls
+  - tokens
+  - cost
+primary_architecture_contrasts:
+  - [full-broadcast-shared-transcript, isolated-private-agents]
+  - [designated-reader-selective-sharing, full-broadcast-shared-transcript]
+  - [pooled-consensus, isolated-private-agents]
+  - [portfolio-preserving-structured, pooled-consensus]
+model_family_contrasts: descriptive-paired-only
+missing_and_errors:
+  primary: provider errors and missing required outputs count as zero discovery, zero attainment, and protocol-invalid
+  sensitivity: available-case estimate plus error-rate table
+invalid_outputs: retained; zero task success and invalid-action indicator one
+uncertainty:
+  interval: 95-percent stratified paired cluster bootstrap
+  cluster: task-instance commitment
+  strata: task family and generator cell
+  bootstrap_replicates: 10000
+  exact_comparators: rational fractions without stochastic intervals
+multiplicity:
+  primary_policy: Holm familywise correction within each metric/model family over four architecture contrasts
+  secondary_policy: intervals descriptive; no uncorrected significance labels
+stopping_rule: fixed four batches and three repeats; no outcome-dependent stopping
+release_criteria:
+  - all scheduled eligible configurations complete or missingness accounted for
+  - custody commitments verified
+  - both verification methods agree
+  - corruption and contamination checks complete
+  - redacted trace release passes safety audit
+composite_score: null
+universal_ranking: false

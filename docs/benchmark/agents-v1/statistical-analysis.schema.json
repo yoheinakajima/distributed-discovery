@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DiscoveryBench Agents v1 statistical analysis",
+  "type": "object",
+  "required": [
+    "schema_version", "analysis_version", "status", "unit_of_analysis", "design",
+    "sampling_assumptions", "primary_estimands", "secondary_estimands",
+    "primary_architecture_contrasts", "missing_and_errors", "invalid_outputs",
+    "uncertainty", "multiplicity", "stopping_rule", "release_criteria",
+    "composite_score", "universal_ranking"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "analysis_version": {"const": "agents-statistical-analysis-v1"},
+    "status": {"const": "preregistered-not-executed"},
+    "primary_estimands": {"type": "array", "minItems": 8, "uniqueItems": true},
+    "primary_architecture_contrasts": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"type": "array", "minItems": 2, "maxItems": 2}
+    },
+    "composite_score": {"type": "null"},
+    "universal_ranking": {"const": false}
+  },
+  "additionalProperties": true
+}

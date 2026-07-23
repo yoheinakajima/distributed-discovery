@@ -1,0 +1,72 @@
+schema_version: 1
+status: registered-not-executed
+agent_architecture_count: 5
+exact_baseline_count: 1
+architectures:
+  - architecture_id: isolated-private-agents
+    kind: agent
+    information_rights: own private observation and public task contract only
+    action_rights: one private final action per agent
+    topology: no agent-to-agent messages
+    message_rounds: 0
+    message_budget_tokens: 0
+    scientific_contrast: direct-private baseline and independent rescue
+    expected_answers_visible: false
+    machine_gradable: true
+  - architecture_id: full-broadcast-shared-transcript
+    kind: agent
+    information_rights: own private observation plus all declared visible messages
+    action_rights: one final action per agent
+    topology: all-to-all shared transcript
+    message_rounds: 2
+    message_budget_tokens: 256
+    scientific_contrast: information aggregation versus action compression
+    expected_answers_visible: false
+    machine_gradable: true
+  - architecture_id: designated-reader-selective-sharing
+    kind: agent
+    information_rights: reader receives declared shared clue; nonreaders receive private observations and reader's budgeted message only
+    action_rights: one final action per agent
+    topology: reader-to-team broadcast
+    message_rounds: 1
+    message_budget_tokens: 256
+    scientific_contrast: one-reader versus broadcast attention
+    expected_answers_visible: false
+    machine_gradable: true
+  - architecture_id: pooled-consensus
+    kind: agent
+    information_rights: shared transcript permitted by task
+    action_rights: each agent returns one action; protocol requests a common nominated target without enforcing success
+    topology: all-to-all then shared nomination
+    message_rounds: 2
+    message_budget_tokens: 256
+    scientific_contrast: consensus collapse and duplication
+    expected_answers_visible: false
+    machine_gradable: true
+  - architecture_id: portfolio-preserving-structured
+    kind: agent
+    information_rights: budgeted messages plus predeclared opaque action slots; no evaluator or expected-value access
+    action_rights: each agent owns one declared portfolio slot and returns one action
+    topology: shared structured proposals followed by slot-local final actions
+    message_rounds: 2
+    message_budget_tokens: 256
+    scientific_contrast: non-cheating portfolio recovery under explicit roles
+    expected_answers_visible: false
+    machine_gradable: true
+  - architecture_id: exact-algorithmic-baselines
+    kind: comparator
+    information_rights: evaluator-only authoritative primitive state
+    action_rights: exact registered private, planner, and equilibrium comparators
+    topology: not an agent topology
+    message_rounds: 0
+    message_budget_tokens: 0
+    scientific_contrast: exact theoretical reference vector
+    expected_answers_visible: false
+    machine_gradable: true
+eligibility_rule:
+  information_rights_explicit: true
+  action_rights_explicit: true
+  message_budget_explicit: true
+  maps_to_scientific_contrast: true
+  expected_answers_prohibited: true
+  cost_envelope_required: true

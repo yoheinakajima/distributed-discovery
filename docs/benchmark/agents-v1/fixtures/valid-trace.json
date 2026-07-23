@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "public_fixture": true,
+  "benchmark_versions": {
+    "content": "v3",
+    "protocol": "agents-v1",
+    "generator": "agents-task-generator-v1"
+  },
+  "task_commitment": "c9c3fe60b03a83519306ddbeaa70dc9f504e63f87b19e80291aa61f5a4937f67",
+  "provider": "public-deterministic-mock",
+  "model_id": "public-deterministic-mock-v1",
+  "architecture_id": "isolated-private-agents",
+  "agent_id": "AGENT-01",
+  "visible_messages": ["Public deterministic mock used its private clue."],
+  "declared_actions": ["TARGET-B"],
+  "declared_tool_calls": [],
+  "timing": {
+    "started_at": "2000-01-01T00:00:00Z",
+    "ended_at": "2000-01-01T00:00:00Z",
+    "duration_ms": 0
+  },
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0
+  },
+  "retries": [],
+  "errors": [],
+  "output_validation": {
+    "schema_valid": true,
+    "action_valid": true
+  },
+  "redaction": {
+    "version": "agents-redaction-v1",
+    "categories": {},
+    "safe_for_public_release": true
+  },
+  "trace_sha256": "57dda1e888a03d74a2d4dd46d4f13dce2939720dde8fc2104d06066f6f7ec4b4"
+}

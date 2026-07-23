@@ -1,5 +1,5 @@
 study_id: DD-010
-status: complete-versioned-program-v4-extension
-evidence_status: v1-v2-preserved-v3-independently-reproduced-exact-matrix
-next_action: preserve PR 117, all three immutable benchmark versions, capability isolation, and the no-composite-score boundary; continue Program V4 with Synthetic Experiment v3
-updated_utc: 2026-07-22T05:58:00Z
+status: complete-v1-v3-with-agents-v1-instrument-registered
+evidence_status: v1-v2-preserved-v3-independently-reproduced-exact-matrix; agents-v1-registered-not-executed-no-evidence
+next_action: preserve all three immutable benchmark versions and implement the Agents v1 offline instrument only under a separate issue, branch, snapshot gate, and explicit owner cost authorization
+updated_utc: 2026-07-23T00:00:00Z

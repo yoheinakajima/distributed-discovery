@@ -124,8 +124,32 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "DD-C-0065" in audience_study
     assert "20260721T215811Z_DD-013_09c07448_cdac4fb512" in audience_study
     assert (output / "benchmark.html").is_file()
-    for route in ["tasks", "protocols", "metrics", "results", "attention"]:
+    for route in ["tasks", "protocols", "metrics", "results", "attention", "agents-v1"]:
         assert (output / f"benchmark/{route}.html").is_file()
+    agents_registration = (output / "benchmark/agents-v1.html").read_text(encoding="utf-8")
+    assert "Registered, not executed" in agents_registration
+    assert "No model was called" in agents_registration
+    assert "No private seed, holdout, answer key, trace, evaluation result" in (
+        agents_registration
+    )
+    assert "not a result route or leaderboard" in agents_registration
+    agents_data = json.loads(
+        (output / "data/benchmark/agents-v1-registration.json").read_text(encoding="utf-8")
+    )
+    assert agents_data["status"] == "registered-not-executed"
+    assert len(agents_data["task_families"]) == 5
+    assert agents_data["boundaries"] == {
+        "claims_created": False,
+        "composite_score": None,
+        "cost_incurred": False,
+        "holdouts_exist": False,
+        "model_calls": 0,
+        "private_seeds_exist": False,
+        "provider_ranking": False,
+        "results_exist": False,
+        "runs_created": False,
+        "traces_exist": False,
+    }
     benchmark_lab = (output / "labs/benchmark.html").read_text()
     assert "no submissions" in benchmark_lab
     assert "JavaScript is off" in benchmark_lab
@@ -341,6 +365,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "benchmark/metrics.html",
         "benchmark/results.html",
         "benchmark/attention.html",
+        "benchmark/agents-v1.html",
         "experiment-kit.html",
         "experiment-kit/hypotheses.html",
         "experiment-kit/design.html",

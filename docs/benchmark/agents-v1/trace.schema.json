@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DiscoveryBench Agents v1 visible trace",
+  "type": "object",
+  "required": [
+    "schema_version", "public_fixture", "benchmark_versions", "task_commitment",
+    "provider", "model_id", "architecture_id", "agent_id", "visible_messages",
+    "declared_actions", "declared_tool_calls", "timing", "usage", "retries",
+    "errors", "output_validation", "redaction", "trace_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "public_fixture": {"type": "boolean"},
+    "benchmark_versions": {
+      "type": "object",
+      "required": ["content", "protocol", "generator"]
+    },
+    "task_commitment": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "provider": {"type": "string"},
+    "model_id": {"type": "string"},
+    "architecture_id": {"type": "string"},
+    "agent_id": {"pattern": "^AGENT-[0-9]{2}$"},
+    "visible_messages": {"type": "array"},
+    "declared_actions": {"type": "array"},
+    "declared_tool_calls": {"type": "array", "maxItems": 0},
+    "timing": {
+      "type": "object",
+      "required": ["started_at", "ended_at", "duration_ms"]
+    },
+    "usage": {"type": "object"},
+    "retries": {"type": "array", "maxItems": 1},
+    "errors": {"type": "array"},
+    "output_validation": {"type": "object"},
+    "redaction": {"type": "object"},
+    "trace_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": false
+}

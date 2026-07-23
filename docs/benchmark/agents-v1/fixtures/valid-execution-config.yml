@@ -1,0 +1,19 @@
+schema_version: 1
+status: public-dry-run
+authorized: false
+versions:
+  content: v3
+  protocol: agents-v1
+  generator: agents-task-generator-v1
+model_snapshot:
+  candidate_id: deterministic-public-mock
+  exact_model_identifier: deterministic-public-mock-v1
+  moving_alias: false
+architecture_id: isolated-private-agents
+team_size: 2
+repeats: 1
+network: false
+tools: []
+sampling: {temperature: 0, seed: PUBLIC-TOY-SEED-0001}
+retry: {schema_retries: 0, semantic_retries: 0}
+limits: {input_tokens: 1000, output_tokens: 256, wall_seconds: 5}

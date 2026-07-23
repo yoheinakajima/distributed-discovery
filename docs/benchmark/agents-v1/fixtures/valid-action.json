@@ -1,0 +1,11 @@
+{
+  "schema_version": "agents-action-v1",
+  "task_instance_commitment": "sha256:c9c3fe60b03a83519306ddbeaa70dc9f504e63f87b19e80291aa61f5a4937f67",
+  "agent_id": "AGENT-01",
+  "round": 0,
+  "final": true,
+  "visible_message": "I will use my private clue.",
+  "source_choice": "none",
+  "actions": ["TARGET-B"],
+  "declared_confidence": 0.5
+}

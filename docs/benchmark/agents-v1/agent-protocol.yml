@@ -1,0 +1,72 @@
+schema_version: 1
+protocol_version: agents-v1
+status: registered-not-executed
+agent_identity:
+  format: AGENT-[01-06]
+  min_team_size: 2
+  max_team_size: 6
+  identity_semantics: opaque role identifier; no person or provider identity
+role_symmetry:
+  default: symmetric
+  asymmetry_allowed_only_when: architecture declares reader or portfolio slot before signals
+system_prompt:
+  version: agents-prompt-v1
+  contract: Solve only the supplied synthetic search task; obey information and message rights; return schema-valid visible messages and final structured actions; do not infer or request hidden evaluator state.
+user_prompt:
+  version: agents-prompt-v1
+  contract: family-specific finite state, declared observations, action vocabulary, reward rule, topology, remaining rounds, and structured-output schema
+communication:
+  default_topology: architecture-declared
+  max_rounds: 2
+  max_visible_message_tokens_per_agent_per_round: 256
+  hidden_messages: forbidden
+  undeclared_cross_agent_private_signals: forbidden
+memory:
+  policy: task-session-only
+  cross-instance_memory: forbidden
+  external_memory: forbidden
+context:
+  repository_access: forbidden
+  benchmark_registry_access: forbidden
+  generator_internals: forbidden
+  evaluator_state: forbidden
+  answer_keys: forbidden
+  prior_batch_outputs: forbidden
+tools:
+  network: forbidden
+  shell: forbidden
+  filesystem: forbidden
+  code_execution: forbidden
+  declared_calculator: optional-family-specific-future-gate
+sampling:
+  temperature: 0
+  top_p: 1
+  provider_seed_required: false
+  caveat: zero temperature does not imply deterministic provider execution
+action_output:
+  schema_version: agents-action-v1
+  schema: docs/benchmark/agents-v1/structured-output.schema.json
+  subjective_text_scoring: false
+retry:
+  max_schema_retries: 1
+  retry_receives: validation error class and schema only
+  semantic_retries: 0
+timeout:
+  wall_seconds_per_call: 120
+stopping:
+  rule: stop after registered rounds or first schema-valid final action, whichever occurs first
+invalid_output:
+  schema_invalid_after_retry: protocol-invalid
+  invalid_action: protocol-invalid
+  extra_action: protocol-invalid
+  missing_agent_action: protocol-invalid
+refusal:
+  handling: retained as visible refusal and scored protocol-invalid without forced completion
+provider_error:
+  handling: missing outcome, retained separately from task failure, included under conservative missingness estimand
+trace_boundary:
+  hidden_chain_of_thought_requested: false
+  hidden_chain_of_thought_stored: false
+  visible_messages_stored: true
+  declared_actions_stored: true
+  declared_tool_calls_stored: true

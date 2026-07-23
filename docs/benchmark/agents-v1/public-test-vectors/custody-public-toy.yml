@@ -1,0 +1,16 @@
+schema_version: 1
+public_test_only: true
+benchmark_version: agents-v1
+generator_version: agents-task-generator-v1
+artifact_status: public-toy-vector
+serialization: utf-8-exact-bytes-no-trailing-newline
+seed_text: PUBLIC-TOY-SEED-0001
+instance_text: '{"actions":["A","B","C"],"public_test_only":true,"target":"B","task_id":"PUBLIC-TOY-001"}'
+commitments:
+  domain_separator: "DiscoveryBench Agents v1 public toy seed commitment\u0000"
+  seed_sha256: "5f96f0cc12bd278cb03f84a392d83cc6d63fb3cd5374f4e37a606a146c71cf9f"
+  instance_sha256: "c9c3fe60b03a83519306ddbeaa70dc9f504e63f87b19e80291aa61f5a4937f67"
+encryption:
+  status: not-used-public-test
+  allowed_algorithms: [XChaCha20-Poly1305, AES-256-GCM]
+note: These fixed public values are not secret and must never seed a private holdout.

@@ -112,26 +112,26 @@ authority. ActiveGraph and external operational databases are out of scope.
 - **M0 (complete):** live Git/GitHub audit, required reading, immutable baseline,
   preservation set, issue, branch, living plan, and first durable checkpoint.
 - **M1 (complete):** ownership/versioning decision and ADR.
-- **M2 (active):** registration-decision skeleton and exact outcome vocabulary.
-- **M3:** benchmark-content and generator version freeze.
-- **M4:** five task-family contracts, ownership map, state/prompt-space counts.
-- **M5:** agent protocol, structured output, and information boundary.
-- **M6:** minimal architecture/protocol contrast registry.
-- **M7:** official provider/model candidate audit and snapshot policy.
-- **M8:** state-space, resource, storage, and low/base/high cost envelope.
-- **M9:** cryptographic custody design and public toy test vectors.
-- **M10:** contamination threat model and quarantine/stop policy.
-- **M11:** raw trace, safety, redaction, and no-chain-of-thought policy.
-- **M12:** statistical design and estimands.
-- **M13:** metric and comparator registry.
-- **M14:** independent Method A/Method B verification design.
-- **M15:** 24-case corruption registry.
-- **M16:** schemas, public valid/invalid fixtures, validators, mock dry run, and
+- **M2 (complete):** registration-decision skeleton and exact outcome vocabulary.
+- **M3 (complete):** benchmark-content and generator version freeze.
+- **M4 (complete):** five task-family contracts, ownership map, state/prompt-space counts.
+- **M5 (complete):** agent protocol, structured output, and information boundary.
+- **M6 (complete):** minimal architecture/protocol contrast registry.
+- **M7 (complete):** official provider/model candidate audit and snapshot policy.
+- **M8 (complete):** state-space, resource, storage, and low/base/high cost envelope.
+- **M9 (complete):** cryptographic custody design and public toy test vectors.
+- **M10 (complete):** contamination threat model and quarantine/stop policy.
+- **M11 (complete):** raw trace, safety, redaction, and no-chain-of-thought policy.
+- **M12 (complete):** statistical design and estimands.
+- **M13 (complete):** metric and comparator registry.
+- **M14 (complete):** independent Method A/Method B verification design.
+- **M15 (complete):** 24-case corruption registry.
+- **M16 (complete):** schemas, public valid/invalid fixtures, validators, mock dry run, and
   focused tests.
-- **M17:** exact registration decision.
-- **M18:** apply the selected proceed/stop path without claims, runs, or calls.
-- **M19:** registration-safe static-site integration.
-- **M20:** prove all paper and lifecycle invariants unchanged.
+- **M17 (complete):** exact registration decision.
+- **M18 (complete):** apply the selected proceed path without claims, runs, or calls.
+- **M19 (complete):** registration-safe static-site integration.
+- **M20 (active):** prove all paper and lifecycle invariants unchanged.
 - **M21:** full local acceptance, ready PR, CI, squash merge, Pages, live
   acceptance, issue closeout, and synchronized `main`.
 
@@ -149,7 +149,7 @@ Exactly one milestone is active at a time.
 - [x] Complete the mandatory repository, Phase 2, DD-010, prospectus,
   scientific-owner, statistical, safety, and provenance reading.
 - [x] Record the five-file preservation set without reading or touching it.
-- [ ] Create the single registration issue, branch, baseline commit, push, and
+- [x] Create the single registration issue, branch, baseline commit, push, and
   draft PR.
 - [ ] Complete M1 through M20 sequentially.
 - [ ] Complete M21 and synchronize `main`.
@@ -205,67 +205,74 @@ authorization and verification. This gate registers only the instrument.
 
 ## Task-family selection
 
-Pending M4: common-source acquisition; one-reader versus broadcast attention;
+Frozen: common-source acquisition; one-reader versus broadcast attention;
 point versus shortlist sharing; consensus collapse versus portfolio recovery;
-and threshold-team formation.
+and threshold-team formation. The registry has 138 canonical generator cells,
+552 isomorphic prompts, and 58,945 primitive labeled task states.
 
 ## Model/provider audit
 
-Pending M7. Official sources only; no calls or downloads. Every candidate
-requires an exact identifier or datable snapshot, access date, capabilities,
-pricing observation, licensing/terms boundary, reproducibility limitations,
-and execution-eligibility decision.
+Complete from official sources only, with no calls or downloads. OpenAI
+`gpt-5.4-2026-03-05` and Anthropic `claude-sonnet-4-6` satisfy the future
+fixed-ID candidate gate; revision-pinned Mistral Small 3.1 is the hardware-gated
+open candidate. Gemini 2.5 Pro remains blocked pending a stronger immutable
+snapshot and retention verification.
 
 ## Statistical design
 
-Pending M12. The unit is a paired isomorphic task instance; agent outputs are
+Frozen. The unit is a paired isomorphic task instance; agent outputs are
 stochastic estimates, exact baselines remain fractions, and the primary object
-is a metric vector with predeclared paired architecture contrasts.
+is an eight-metric vector with four predeclared paired architecture contrasts,
+fixed batches/repeats, conservative missingness, paired cluster-bootstrap
+intervals, and Holm correction.
 
 ## Cryptographic custody
 
-Pending M9. Use established cryptographic libraries; publish commitments,
+Registered. Use established cryptographic libraries; publish commitments,
 encrypt future holdouts/keys, log access, lock outputs before unsealing, and
 release parameters/seeds/answers only after the campaign lock when safe. No
-private material is created in this gate.
+private material is created in this gate; only domain-separated public SHA-256
+toy vectors exist.
 
 ## Contamination threat model
 
-Pending M10. Separate direct leakage, probable memorization, ordinary correct
+Registered. Separate direct leakage, probable memorization, ordinary correct
 reasoning, and inconclusive overlap. Lexical overlap alone is not proof.
 
 ## Trace and safety policy
 
-Pending M11. Preserve visible messages, declared actions/tools, metadata,
+Registered. Preserve visible messages, declared actions/tools, metadata,
 validation, errors, and hashes only. Never request, infer, store, or score
 hidden chain of thought.
 
 ## State-space/resource/cost audit
 
-Pending M4/M8. Count generator cells, prompts, future batches, architectures,
-model candidates, repeats, turns, token ceilings, calls, storage, local
-resources, verifier runtime, and dated low/base/high cost scenarios. Cost
-authorization and cost incurred remain false.
+Complete. The low/base/high cloud estimates are $3.16/$537.98/$3,418.56 on
+2026-07-23 pricing. The recommended future cap is $750 and is not authorized.
+Cost authorization and cost incurred remain false.
 
 ## Independent verification
 
-Pending M14. Method B reconstructs primitives, capability rights, exact
+Registered. Method B reconstructs primitives, capability rights, exact
 baselines, metrics, commitments, hashes, aggregation, and versions without
 importing Method A classifications where primitive recomputation is possible.
 
 ## Corruption plan
 
-Pending M15. Register at least the required 24 mutations and rejection classes;
+Complete with the required 24 mutations and rejection classes;
 execute only schema/registry and public-toy-fixture corruptions.
 
 ## Schemas and fixtures
 
-Pending M16. Public fixtures use explicit toy identifiers, public fixed seeds,
-and test keys. No fixture may look private, production, or evidentiary.
+Fifteen schemas, five valid and three invalid public fixture classes, the
+offline registry audit, deterministic mock, commitment checks, isolation,
+redaction, trace hashing, and focused tests are implemented. No live provider
+client or private generator exists.
 
 ## Public integration
 
-Pending M19. Publish purpose, versions, task-family names, exact evidence
+Complete locally. The static page and JSON publish purpose, versions,
+task-family names, exact evidence
 boundaries, and the truthful no-call/no-cost/no-holdout/no-result status. Add no
 result route, leaderboard, form, endpoint, remote runtime, or sixth nav item.
 

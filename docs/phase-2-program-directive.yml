@@ -186,7 +186,8 @@ ai_powered_lab:
   model_calls_authorized_in_this_milestone: false
   internal_audits_are_external_validation: false
 discoverybench_agents_v1:
-  deliverable: full registration prospectus
+  deliverable: registered offline instrument specification
+  status: registered-not-executed
   study_id_allocated: false
   provider_or_model_calls_authorized: false
   cost_authorized: false
@@ -197,5 +198,5 @@ reliable_discovery:
   role: next major theorem-family candidate
   next_active_registration: false
 next_session:
-  exact_text: Start a new DiscoveryBench Agents v1 registration session.
-  exact_next_file: plans/DISCOVERYBENCH_AGENTS_V1_REGISTRATION.md
+  exact_text: Start a new DiscoveryBench Agents v1 offline instrument implementation session.
+  exact_next_file: plans/DISCOVERYBENCH_AGENTS_V1_IMPLEMENTATION.md
