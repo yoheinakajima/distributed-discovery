@@ -1,0 +1,24 @@
+schema_version: agents-evaluation-trace-retention-v1
+status: registered-no-traces-exist
+raw_trace:
+  location: future-encrypted-custody-store
+  encrypted_at_rest: true
+  retention_days_after_closeout: 365
+redacted_trace:
+  location: future-public-evidence-package
+  release_requires: [redaction-verification, custody-verification, contamination-clearance, owner-release-gate]
+audit_summary:
+  retains: [commitments, hashes, counts, visible-errors, usage, cost, redaction-results]
+provider_metadata:
+  allowed: [exact-model-id, request-id, usage, finish-status, errors, latency, region-and-service-tier]
+  prohibited: [credential, account-secret, undeclared-provider-field]
+hidden_reasoning:
+  requested: false
+  collected: false
+  inferred: false
+  stored: false
+  scored: false
+deletion:
+  requires_logged_owner_authorization: true
+  failures_preserved: true
+traces_exist: false

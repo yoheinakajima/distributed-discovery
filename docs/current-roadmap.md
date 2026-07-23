@@ -1,13 +1,16 @@
-# Current roadmap — Phase 2 hold; Agents v1 implemented offline
+# Current roadmap — Phase 2 hold; Agents v1 campaign registered
 
 Phase 1 is complete. During Phase 2, theorem-family execution is held. Reliable
 Discovery remains the next major theorem-family candidate but is held.
 DiscoveryBench Agents v1 is registered as a DD-010 instrument, not a new study
-or DiscoveryBench v4. Its offline package, schemas, public fixtures, security
-guards, independent verifier, 24-corruption suite, CLI/Make interfaces, and
-50-case public rehearsal are complete. The exact next gate is DiscoveryBench
-Agents v1 evaluation campaign registration and cost authorization; this work
-creates no authority for calls, spend, private holdouts, traces, or results.
+or DiscoveryBench v4. Its offline package and 50-case public rehearsal are
+complete, and its evaluation campaign is now registered without execution.
+The selected next tier is a 50-task, two-cloud, one-repeat sealed engineering
+pilot. It is non-inferential and owner authorization remains pending. The
+200-task claim-grade base is frozen but blocked because the audited host cannot
+run the exact local/open candidate. The next gate is owner-authorized
+DiscoveryBench Agents v1 evaluation execution; this roadmap creates no call,
+spend, private holdout, trace, result, study, or claim authority.
 
 The Phase 2 execution architecture is `shared trunk, low-cost option creation,
 staged exercise`. It records readiness, residual value, decay, expiry horizon,

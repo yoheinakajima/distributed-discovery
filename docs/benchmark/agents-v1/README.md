@@ -1,6 +1,7 @@
 # DiscoveryBench Agents v1
 
-Status: offline instrument implementation complete; not model-evaluated.
+Status: offline implementation complete; evaluation campaign registered;
+owner authorization pending; not model-evaluated.
 
 DiscoveryBench Agents v1 measures how declared software-agent team
 architectures convert dispersed synthetic evidence into structured search
@@ -48,7 +49,9 @@ unsealing, independent verification, and corruption acceptance.
 - `make agents-v1-dry-run` for the 50-case public rehearsal and
   `make agents-v1-readiness` for the implementation decision.
 
-The authoritative outcome is
+The implementation outcome remains
 `reports/benchmark/discoverybench-agents-v1-implementation-decision.yml`:
-`ready-for-evaluation-registration`. This is implementation readiness, not
-evaluation authorization or performance evidence.
+`ready-for-evaluation-registration`. The current campaign outcome is
+`reports/roadmap-consolidation/discoverybench-agents-v1-evaluation-decision.yml`:
+`sealed-pilot-ready-owner-authorization-pending`. Neither is model
+performance, scientific evidence, or execution authority.

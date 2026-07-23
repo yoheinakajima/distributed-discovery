@@ -182,7 +182,7 @@ def readiness_report() -> dict[str, object]:
     rehearsal = run_rehearsal()
     ready = rehearsal["status"] == "pass"
     return {
-        "decision": "ready-for-evaluation-registration" if ready else "stopped",
+        "decision": ("sealed-pilot-ready-owner-authorization-pending" if ready else "stopped"),
         "offline_rehearsal_status": rehearsal["status"],
         "rehearsal_hash": rehearsal["rehearsal_hash"],
         "provider_calls": 0,
@@ -190,8 +190,6 @@ def readiness_report() -> dict[str, object]:
         "external_cost_usd": "0",
         "private_material": "absent",
         "future_authorization_required": True,
-        "next_gate": (
-            "DiscoveryBench Agents v1 evaluation campaign registration and cost authorization"
-        ),
-        "next_file": "plans/DISCOVERYBENCH_AGENTS_V1_EVALUATION.md",
+        "next_gate": "Owner-authorized DiscoveryBench Agents v1 evaluation execution",
+        "next_file": "plans/DISCOVERYBENCH_AGENTS_V1_EXECUTION.md",
     }

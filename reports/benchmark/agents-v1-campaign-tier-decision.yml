@@ -1,0 +1,13 @@
+schema_version: agents-v1-campaign-tier-decision-v1
+decision_date: "2026-07-23"
+selected_next_tier: sealed-engineering-pilot
+authorization_status: pending-owner-decision
+execution_allowed: false
+tiers:
+  - {tier: public-calibration, purpose: adapter-and-cost-calibration, evidence_status: engineering-only-public, instances: 10, batches: 1, cells: selected-public, isomorphs: public, cloud_models: 2, local_models: 0, repeats: 1, architectures: 5, calls: 480, estimated_cloud_cost_usd: 3.1632, claim_eligible: false}
+  - {tier: sealed-engineering-pilot, purpose: private-custody-and-parser-validation, evidence_status: non-inferential-engineering, instances: 50, batches: 1, cells: stratified-subset, isomorphs: balanced, cloud_models: 2, local_models: 0, repeats: 1, architectures: 5, calls: 4800, estimated_cloud_cost_usd: 44.832, claim_eligible: false}
+  - {tier: base-claim-grade, purpose: architecture-contrast-evidence, evidence_status: potentially-claim-grade-after-all-gates, instances: 200, batches: 4, cells: 138-plus-62-boundary-repeats, isomorphs: balanced, cloud_models: 2, local_models: 1, repeats: 3, architectures: 5, calls: 57600, estimated_cloud_cost_usd: 537.984, claim_eligible: true, blocked: local-host-ineligible}
+  - {tier: full-cell-confirmatory, purpose: all-cell-all-isomorph-confirmation, evidence_status: separate-confirmatory, instances: 552, batches: separately-frozen, cells: 138, isomorphs: 4-per-cell, cloud_models: 2, local_models: conditional, repeats: 3, architectures: 5, calls: 158976, estimated_cloud_cost_usd: 1484.83584, claim_eligible: separately-authorized}
+  - {tier: high-sensitivity-confirmatory, purpose: higher-repeat-model-sensitivity, evidence_status: separate-confirmatory, instances: 200, batches: separately-frozen, cells: separately-frozen, isomorphs: balanced, cloud_models: 3, local_models: 0, repeats: 5, architectures: 5, calls: 216000, estimated_cloud_cost_usd: 3418.56, claim_eligible: separately-authorized, blocked: third-cloud-snapshot-ineligible}
+selection_reason: local candidate is infeasible on audited host; pilot may be cloud-only but base may not silently drop local/open requirement
+stopping: fixed batch; stop on authorization, custody, retention, trace, contamination, model, or cost breach

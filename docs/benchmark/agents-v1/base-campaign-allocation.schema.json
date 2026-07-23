@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DiscoveryBench Agents v1 base campaign allocation",
+  "type": "object",
+  "required": ["schema_version", "status", "selected_for_next_execution", "counts", "slots"],
+  "properties": {
+    "schema_version": {"const": "agents-base-campaign-allocation-v1"},
+    "status": {"const": "registered-public-metadata-no-private-instances"},
+    "selected_for_next_execution": {"type": "boolean"},
+    "blocked_reason": {"type": ["string", "null"]},
+    "allocation_algorithm": {"type": "string"},
+    "counts": {
+      "type": "object",
+      "required": ["slots", "batches", "slots_per_batch", "families", "slots_per_family", "canonical_cells_covered", "boundary_priority_repeats", "private_instances_generated"],
+      "properties": {
+        "slots": {"const": 200},
+        "batches": {"const": 4},
+        "slots_per_batch": {"const": 50},
+        "families": {"const": 5},
+        "slots_per_family": {"const": 40},
+        "canonical_cells_covered": {"const": 138},
+        "boundary_priority_repeats": {"const": 62},
+        "private_instances_generated": {"const": 0}
+      },
+      "additionalProperties": false
+    },
+    "slots": {
+      "type": "array",
+      "minItems": 200,
+      "maxItems": 200,
+      "items": {
+        "type": "object",
+        "required": ["slot_id", "batch_id", "family_id", "cell_id", "cell_index", "boundary_category", "target_relabeling_class", "agent_relabeling_class", "reason"],
+        "properties": {
+          "slot_id": {"type": "string", "pattern": "^BASE-SLOT-[0-9]{3}$"},
+          "batch_id": {"enum": ["BASE-BATCH-1", "BASE-BATCH-2", "BASE-BATCH-3", "BASE-BATCH-4"]},
+          "family_id": {"type": "string"},
+          "cell_id": {"type": "string", "pattern": "^CELL-"},
+          "cell_index": {"type": "integer", "minimum": 1},
+          "boundary_category": {"type": "string"},
+          "target_relabeling_class": {"enum": ["target-A", "target-B"]},
+          "agent_relabeling_class": {"enum": ["agent-A", "agent-B"]},
+          "reason": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

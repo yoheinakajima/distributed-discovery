@@ -1,4 +1,18 @@
-# Final handoff — DiscoveryBench Agents v1 offline implementation
+# Final handoff — DiscoveryBench Agents v1 evaluation registration
+
+Current continuation (2026-07-23): issue #173 registers the evaluation ladder
+without executing it. The selected next tier is a sealed 50-task engineering
+pilot with exact OpenAI and Anthropic snapshots, one repeat, five
+architectures, and exact comparators. The owner authorization template remains
+inactive with zero caps. The future 200-task base allocation covers all 138
+cells plus 62 boundary repeats, but base execution is blocked because the
+audited 16-GB Apple M1 host cannot run the exact local/open candidate. Expected
+DD-023 ownership remains unallocated.
+
+No provider call, local model invocation, model download, cost, private seed,
+holdout, answer key, secret key, trace, performance result, scientific claim,
+immutable evaluation run, paper, or lifecycle change exists. The next gate is
+owner-authorized DiscoveryBench Agents v1 evaluation execution.
 
 Current supersession (2026-07-23): Phase 2 uses an AI-powered lab under human
 PI gate authority, an AI-native robustness scale, a nine-option staged

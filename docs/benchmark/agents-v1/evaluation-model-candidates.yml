@@ -1,0 +1,85 @@
+schema_version: agents-evaluation-model-candidates-v1
+access_date: "2026-07-23"
+execution_authorized: false
+candidates:
+  - candidate_id: openai-gpt-5-4-2026-03-05
+    provider: OpenAI
+    deployment: cloud-api
+    exact_identifier: gpt-5.4-2026-03-05
+    fixed_status: dated snapshot; moving alias gpt-5.4 prohibited
+    availability: official model page active; not listed for deprecation on access date
+    eligibility: pilot-eligible-after-account-retention-region-and-authorization-checks
+    pricing: {currency: USD, unit: per-million-tokens, input: 2.50, cached_input: 0.25, output: 15.00}
+    context_window_tokens: 1050000
+    max_output_tokens: 128000
+    structured_outputs: supported; tools omitted
+    sampling_controls: reasoning_effort fixed to none; no seed guarantee claimed
+    retention: API data not used for training by default; abuse monitoring normally 30 days; ZDR eligibility must be verified
+    deprecation: no gpt-5.4 snapshot retirement listed on official deprecation page on access date
+    regional_account_limits: availability, rate tier, ZDR, and region must be checked before authorization
+    official_sources:
+      - https://developers.openai.com/api/docs/models/gpt-5.4
+      - https://developers.openai.com/api/docs/guides/your-data
+      - https://developers.openai.com/api/docs/deprecations
+    execution_status: not-executed
+    reason: exact dated snapshot with required structured-output and context support
+  - candidate_id: anthropic-claude-sonnet-4-6
+    provider: Anthropic
+    deployment: cloud-api
+    exact_identifier: claude-sonnet-4-6
+    fixed_status: dateless 4.6-generation identifier documented as pinned
+    availability: active; retirement not sooner than 2027-02-17
+    eligibility: pilot-eligible-after-account-retention-region-and-authorization-checks
+    pricing: {currency: USD, unit: per-million-tokens, input: 3.00, cached_input: 0.30, output: 15.00, batch_input: 1.50, batch_output: 7.50}
+    context_window_tokens: 1000000
+    max_output_tokens: 64000
+    structured_outputs: supported; tools omitted
+    sampling_controls: temperature 0; top_p and top_k omitted; no seed guarantee claimed
+    retention: inputs and outputs normally deleted within 30 days; any ZDR agreement must be verified
+    deprecation: active on official lifecycle table
+    regional_account_limits: global first-party endpoint expected; account access, rate tier, and retention must be checked
+    official_sources:
+      - https://platform.claude.com/docs/en/about-claude/models/overview
+      - https://platform.claude.com/docs/en/about-claude/pricing
+      - https://platform.claude.com/docs/en/about-claude/model-deprecations
+      - https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data
+    execution_status: not-executed
+    reason: distinct pinned cloud family with active lifecycle and structured output
+  - candidate_id: google-gemini-2-5-pro
+    provider: Google
+    deployment: cloud-api
+    exact_identifier: gemini-2.5-pro
+    fixed_status: stable name, not a cryptographically or date-pinned snapshot guarantee
+    availability: official stable model page active
+    eligibility: blocked-snapshot-and-retention-boundary
+    pricing: {currency: USD, unit: per-million-tokens-at-or-below-200k, input: 1.25, cached_input: 0.31, output: 10.00}
+    context_window_tokens: 1048576
+    max_output_tokens: 65536
+    structured_outputs: supported; tools omitted
+    retention: paid content is not used to improve products; exact logging/retention setting still requires verification
+    deprecation: stable model page active; not accepted as immutable enough for this instrument
+    regional_account_limits: paid-project availability and data logging must be checked
+    official_sources:
+      - https://ai.google.dev/gemini-api/docs/models/gemini-2.5-pro
+      - https://ai.google.dev/gemini-api/docs/pricing
+    execution_status: not-executed
+    reason: retained reserve; prohibited from execution without a stronger snapshot guarantee
+  - candidate_id: mistral-small-3-1-24b-instruct-2503
+    provider: Mistral AI
+    deployment: local-open-weights
+    exact_identifier: mistralai/Mistral-Small-3.1-24B-Instruct-2503@68faf511d618ef198fef186659617cfd2eb8e33a
+    fixed_status: repository revision pinned; repository main prohibited
+    availability: pinned 96.1-GB repository tree visible; no files downloaded
+    eligibility: identity-eligible-but-current-host-ineligible
+    pricing: {currency: USD, unit: local-resource-only, input: 0, cached_input: 0, output: 0}
+    context_window_tokens: 131072
+    max_output_tokens: 512
+    structured_outputs: native JSON documented; validator still mandatory
+    retention: local-only under repository custody policy
+    deprecation: not applicable to pinned open revision
+    regional_account_limits: none after lawful download; license and dependency review required
+    official_sources:
+      - https://mistral.ai/news/mistral-small-3-1/
+      - https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/tree/68faf511d618ef198fef186659617cfd2eb8e33a
+    execution_status: not-executed
+    reason: exact Apache-2.0 revision, but official 32-GB Mac guidance exceeds audited 16-GB host

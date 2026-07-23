@@ -1,0 +1,22 @@
+schema_version: agents-v1-evaluation-cost-envelope-v1
+pricing_date: "2026-07-23"
+cost_authorized: false
+cost_incurred: false
+execution_allowed: false
+token_ceiling_method: no cache or batch discount; maximum registered input/output per call
+tiers:
+  public_calibration: {calls: 480, input_tokens: 480000, output_tokens: 122880, cloud_cost_usd: 3.1632, suggested_cap_usd: 10}
+  sealed_engineering_pilot: {calls: 4800, input_tokens: 9600000, output_tokens: 1228800, cloud_cost_usd: 44.832, contingency_cost_usd: 56.04, suggested_cap_usd: 100}
+  base_claim_grade: {calls: 57600, input_tokens: 115200000, output_tokens: 14745600, cloud_cost_usd: 537.984, suggested_cap_usd: 750}
+  full_cell_confirmatory: {calls: 158976, input_tokens: 317952000, output_tokens: 40697856, cloud_cost_usd: 1484.83584, suggested_cap_usd: 2000}
+  high_sensitivity_confirmatory: {calls: 216000, input_tokens: 864000000, output_tokens: 110592000, cloud_cost_usd: 3418.56, suggested_cap_usd: 4500}
+provider_cap_suggestions:
+  sealed_engineering_pilot: {OpenAI: 50, Anthropic: 50}
+  base_claim_grade: {OpenAI: 350, Anthropic: 400}
+local_operational_estimate:
+  status: not-estimated-on-ineligible-host
+  electricity_and_runtime_claimed: false
+storage_base_gb: {raw_traces: 3.0, redacted_traces: 1.0, encrypted_custody: 0.25}
+verification_base_cpu_hours: 12
+recommended_next_tier_cap_usd: 100
+recommended_base_cap_usd: 750

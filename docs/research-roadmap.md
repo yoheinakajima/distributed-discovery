@@ -1,16 +1,15 @@
 # Research roadmap
 
 Phase 2 holds theorem-family execution. Reliable Discovery is preserved and
-deferred. DiscoveryBench Agents v1 is registered-not-executed under DD-010.
-The next substantive gate is its separately authorized offline instrument
-implementation; see its no-execution
-[prospectus](../reports/roadmap-consolidation/discoverybench-agents-v1-prospectus.md).
-The registration must use automated cryptographic custody with no human
-custodian: committed generators, frozen versions, CSPRNG seeds and commitments,
-encrypted holdouts/answers, access logs, isolated execution, immutable outputs
-before unsealing, multiple batches, and later safe release. Exact or
-near-verbatim leakage of public values, wording, IDs, or solution patterns is
-a contamination red line.
+deferred. DiscoveryBench Agents v1 is implemented offline under DD-010 and its
+evaluation campaign is registered but not authorized. A sealed 50-task
+engineering pilot is the next possible gate. Claim-grade base execution remains
+blocked on local/open feasibility. Future execution must use automated
+cryptographic custody with no human custodian: committed generators, frozen
+versions, CSPRNG seeds and commitments, encrypted holdouts/answers, access
+logs, isolated execution, immutable outputs before unsealing, multiple batches,
+and later safe release. Exact or near-verbatim leakage of public values,
+wording, IDs, or solution patterns is a contamination red line.
 
 This is a navigation index, not a duplicate portfolio.
 

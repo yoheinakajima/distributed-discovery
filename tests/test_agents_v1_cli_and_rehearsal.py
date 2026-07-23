@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 import pytest
 
 from distributed_discovery.benchmark.agents_v1.cli import run_cli
@@ -7,6 +9,8 @@ from distributed_discovery.benchmark.agents_v1.rehearsal import (
     readiness_report,
     run_rehearsal,
 )
+
+ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_cli_conformance_surfaces() -> None:
@@ -41,8 +45,9 @@ def test_offline_rehearsal_is_deterministic_and_zero_execution() -> None:
     assert first["scientific_evidence_created"] is False
 
 
-def test_readiness_stops_before_campaign_registration() -> None:
+def test_readiness_stops_before_owner_authorized_execution() -> None:
     report = readiness_report()
-    assert report["decision"] == "ready-for-evaluation-registration"
+    assert report["decision"] == "sealed-pilot-ready-owner-authorization-pending"
     assert report["future_authorization_required"] is True
-    assert report["next_file"] == "plans/DISCOVERYBENCH_AGENTS_V1_EVALUATION.md"
+    assert report["next_file"] == "plans/DISCOVERYBENCH_AGENTS_V1_EXECUTION.md"
+    assert not (ROOT / report["next_file"]).exists()

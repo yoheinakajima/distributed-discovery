@@ -1,5 +1,23 @@
 # Current program state
 
+_DiscoveryBench Agents v1 evaluation registration, 2026-07-23:_ the offline
+DD-010 instrument remains complete and unchanged. Its evaluation ladder,
+exact cloud snapshots, future base allocation, inactive authorization,
+custody, traces, statistics, verification, corruptions, and expected future
+study ownership are registered. The selected next tier is a sealed 50-task
+engineering pilot with two cloud snapshots, one repeat, five architectures,
+and exact comparators. It is not claim-eligible and awaits explicit owner cost
+authorization.
+
+The future 200-task claim-grade base remains frozen but blocked: the audited
+Apple M1 host has 16 GB unified memory and no inference engine, below the
+registered Mistral candidate's official 32-GB Mac guidance. DD-010 owns the
+instrument; expected DD-023 ownership is unallocated. No model call,
+invocation, download, cost, private seed, holdout, answer key, secret key,
+provider trace, performance result, claim, run, paper, or lifecycle change
+exists. The exact next gate is owner-authorized DiscoveryBench Agents v1
+evaluation execution.
+
 _DiscoveryBench Agents v1 offline implementation, 2026-07-23:_ Phase 1 is complete at the boundary formed
 by Programs V1--V5, the Information Sharing Frontier, post-V5 consolidation,
 and the stopped decentralized-recovery overlap gate. Theorem-family execution

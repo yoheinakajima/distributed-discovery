@@ -9,8 +9,9 @@ gates, not promised results.
 
 The spine remains scientific navigation; Phase 2 timing is now controlled by
 the optionality portfolio rather than by the order of sections below.
-DiscoveryBench Agents v1 is registered-not-executed; its offline implementation
-gate is the sole next exercise. Reliable
+DiscoveryBench Agents v1 is implemented offline and its evaluation campaign is
+registered but not authorized; a sealed engineering pilot is the sole next
+possible exercise. Reliable
 Discovery and the provenance, utility, separation, and information-order
 candidates remain held behind explicit reduction and non-overlap gates.
 

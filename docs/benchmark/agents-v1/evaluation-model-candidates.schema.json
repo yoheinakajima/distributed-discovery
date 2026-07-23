@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DiscoveryBench Agents v1 evaluation model candidates",
+  "type": "object",
+  "required": ["schema_version", "access_date", "execution_authorized", "candidates"],
+  "properties": {
+    "schema_version": {"const": "agents-evaluation-model-candidates-v1"},
+    "access_date": {"const": "2026-07-23"},
+    "execution_authorized": {"const": false},
+    "candidates": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["candidate_id", "provider", "deployment", "exact_identifier", "fixed_status", "availability", "eligibility", "pricing", "context_window_tokens", "structured_outputs", "retention", "deprecation", "official_sources", "execution_status", "reason"],
+        "properties": {
+          "candidate_id": {"type": "string"},
+          "provider": {"type": "string"},
+          "deployment": {"enum": ["cloud-api", "local-open-weights"]},
+          "exact_identifier": {"type": "string"},
+          "fixed_status": {"type": "string"},
+          "availability": {"type": "string"},
+          "eligibility": {"type": "string"},
+          "pricing": {"type": "object"},
+          "context_window_tokens": {"type": "integer", "minimum": 1},
+          "structured_outputs": {"type": "string"},
+          "retention": {"type": "string"},
+          "deprecation": {"type": "string"},
+          "official_sources": {"type": "array", "minItems": 1, "items": {"type": "string", "format": "uri"}},
+          "execution_status": {"const": "not-executed"},
+          "reason": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

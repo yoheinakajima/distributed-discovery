@@ -47,3 +47,16 @@ Future evaluation requires its own campaign registration, exact snapshot gate,
 explicit owner cost authorization, custody material, and immutable evidence
 package. The current v1/v2/v3 commands, outputs, default, and disabled external
 adapter remain unchanged.
+
+## Registered evaluation campaign
+
+Issue #173 registers, but does not authorize or execute, the evaluation
+campaign. The selected next tier is a 50-task sealed engineering pilot using
+two exact cloud snapshots, one repeat, all five architectures, and exact
+comparators. It is non-inferential. The future 200-task base allocation covers
+all 138 generator cells plus 62 boundary-priority repeats, but base execution
+is blocked because the audited 16-GB host is ineligible for the exact
+local/open candidate.
+
+No model call, invocation, download, cost, private material, trace, result,
+claim, run, or DD-023 exists. Owner authorization remains pending.

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DiscoveryBench Agents v1 pilot quarantine",
+  "type": "object",
+  "required": ["schema_version", "pilot_batch_id", "status", "reason", "base_pooling_allowed", "replacement_batch_required"],
+  "properties": {
+    "schema_version": {"const": "agents-pilot-quarantine-v1"},
+    "pilot_batch_id": {"type": "string"},
+    "status": {"enum": ["clean-engineering-only", "quarantined"]},
+    "reason": {"type": "string"},
+    "base_pooling_allowed": {"const": false},
+    "replacement_batch_required": {"type": "boolean"}
+  },
+  "additionalProperties": false
+}

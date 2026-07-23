@@ -15,7 +15,7 @@
 | DD-008B | Common-Source Analysis | complete bounded study | Preserve the general-N threshold theorem and interior over-acquisition counterexample |
 | DD-006B | Joint Truthful Discovery Mechanisms | complete bounded study | Preserve strict subsidized rows and the hidden-action boundary |
 | DD-009 | Discovery Architecture Atlas | complete bounded study | Preserve the 288-cell validity registry and 20 coherent exact cells |
-| DD-010 | DiscoveryBench | complete bounded study | Preserve v1 exact golden and information-boundary regressions |
+| DD-010 | DiscoveryBench | complete bounded study and registered Agents v1 instrument | Preserve v1–v3 exact evidence; Agents v1 pilot remains owner-authorization pending and DD-023 unallocated |
 | DD-011 | Experimental Design and Power | complete bounded synthetic study | Preserve the frozen design; no human deployment without separate review |
 | DD-012 | Incentive to Ignore | complete bounded study | Preserve the one-reader theorem, threshold equilibrium, seven-rule census, and scope boundary |
 | DD-013 | Audience Design and Information Firewalls | complete bounded study | Preserve binding/voluntary separation, garbling dominance, and implementation boundaries |

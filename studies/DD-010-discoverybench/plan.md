@@ -79,3 +79,9 @@ provider traces, performance results, and spending remain prohibited. The
 exact next gate is DiscoveryBench Agents v1 evaluation campaign registration
 and cost authorization. It must be opened separately; this plan creates no
 authority for that campaign.
+
+The 2026-07-23 evaluation registration under issue #173 selects a sealed
+engineering pilot pending owner authorization and keeps the claim-grade base
+blocked on local/open feasibility. The inactive authorization has zero caps
+and permits no execution. DD-010 continues to own the instrument; no new study,
+claim, private material, trace, result, or run is created.

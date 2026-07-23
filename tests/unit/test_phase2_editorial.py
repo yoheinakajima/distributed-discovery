@@ -51,7 +51,7 @@ def test_publication_hierarchy_has_four_layers_and_no_submission_claim() -> None
     }
 
 
-def test_discoverybench_agents_gate_has_offline_implementation_but_no_evaluation() -> None:
+def test_discoverybench_agents_gate_has_registered_campaign_but_no_execution() -> None:
     prospectus = yaml.safe_load(
         (ROOT / "reports/roadmap-consolidation/discoverybench-agents-v1-prospectus.yml").read_text()
     )
@@ -74,7 +74,8 @@ def test_discoverybench_agents_gate_has_offline_implementation_but_no_evaluation
     assert (
         ROOT / "reports/benchmark/discoverybench-agents-v1-implementation-decision.yml"
     ).is_file()
-    assert not (ROOT / "plans/DISCOVERYBENCH_AGENTS_V1_EVALUATION.md").exists()
+    assert (ROOT / "plans/DISCOVERYBENCH_AGENTS_V1_EVALUATION.md").is_file()
+    assert not (ROOT / "plans/DISCOVERYBENCH_AGENTS_V1_EXECUTION.md").exists()
 
 
 def test_phase2_theorem_gates_are_unregistered_and_bounded() -> None:

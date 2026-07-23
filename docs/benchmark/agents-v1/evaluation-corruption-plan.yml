@@ -1,0 +1,26 @@
+schema_version: agents-evaluation-corruption-plan-v1
+status: registered-public-metadata-only
+instrument_corruptions_required: 24
+campaign_corruptions:
+  - {id: E01, mutation: activate pending authorization, rejecting_component: authorization-validator}
+  - {id: E02, mutation: add one dollar to inactive total cap, rejecting_component: authorization-validator}
+  - {id: E03, mutation: replace authorized commit, rejecting_component: authorization-validator}
+  - {id: E04, mutation: substitute moving model alias, rejecting_component: model-manifest-validator}
+  - {id: E05, mutation: omit one future weight hash, rejecting_component: model-manifest-validator}
+  - {id: E06, mutation: delete one base slot, rejecting_component: allocation-validator}
+  - {id: E07, mutation: remove one canonical cell, rejecting_component: allocation-validator}
+  - {id: E08, mutation: unbalance one isomorphism class, rejecting_component: allocation-validator}
+  - {id: E09, mutation: reuse a pilot commitment in base, rejecting_component: pilot-base-validator}
+  - {id: E10, mutation: alter ciphertext associated data, rejecting_component: custody-verifier}
+  - {id: E11, mutation: unseal before output lock, rejecting_component: custody-verifier}
+  - {id: E12, mutation: retain credential-like trace field, rejecting_component: redaction-verifier}
+  - {id: E13, mutation: add hidden-reasoning field, rejecting_component: trace-schema-validator}
+  - {id: E14, mutation: reduce bootstrap replicates, rejecting_component: statistical-plan-validator}
+  - {id: E15, mutation: omit Holm adjustment, rejecting_component: multiplicity-verifier}
+  - {id: E16, mutation: suppress provider error, rejecting_component: missingness-verifier}
+  - {id: E17, mutation: exceed provider cap while total cap remains, rejecting_component: cost-guard}
+  - {id: E18, mutation: omit contamination probe, rejecting_component: contamination-validator}
+  - {id: E19, mutation: pool pilot and base outputs, rejecting_component: analysis-validator}
+  - {id: E20, mutation: introduce composite score, rejecting_component: result-schema-validator}
+execution_count: 0
+private_outputs_corrupted: false

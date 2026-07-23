@@ -1,0 +1,28 @@
+schema_version: agents-evaluation-authorization-v1
+authorization_id: null
+authorization_status: pending-owner-decision
+owner_decision_timestamp: null
+authorized_commit: null
+issue: 173
+branch: benchmark/discoverybench-agents-v1-evaluation-registration
+campaign_tier: sealed-engineering-pilot
+cloud_models:
+  - gpt-5.4-2026-03-05
+  - claude-sonnet-4-6
+local_model: null
+external_spend_cap_usd: 0
+provider_spend_caps_usd:
+  OpenAI: 0
+  Anthropic: 0
+local_resource_caps:
+  model_invocations: 0
+  model_downloads: 0
+  accelerator_hours: 0
+authorization_expires_at: null
+custody_policy: docs/benchmark/agents-v1/private-campaign-custody-plan.yml
+trace_policy: docs/benchmark/agents-v1/evaluation-trace-and-retention.yml
+batch_ids: []
+revoked: false
+revocation_reason: null
+owner_attestation: null
+execution_allowed: false

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DiscoveryBench Agents v1 evaluation authorization",
+  "type": "object",
+  "required": ["schema_version", "authorization_id", "authorization_status", "owner_decision_timestamp", "authorized_commit", "issue", "branch", "campaign_tier", "cloud_models", "local_model", "external_spend_cap_usd", "provider_spend_caps_usd", "local_resource_caps", "authorization_expires_at", "custody_policy", "trace_policy", "batch_ids", "revoked", "revocation_reason", "owner_attestation", "execution_allowed"],
+  "properties": {
+    "schema_version": {"const": "agents-evaluation-authorization-v1"},
+    "authorization_id": {"type": ["string", "null"]},
+    "authorization_status": {"enum": ["pending-owner-decision", "authorized", "revoked", "expired"]},
+    "owner_decision_timestamp": {"type": ["string", "null"], "format": "date-time"},
+    "authorized_commit": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"},
+    "issue": {"const": 173},
+    "branch": {"const": "benchmark/discoverybench-agents-v1-evaluation-registration"},
+    "campaign_tier": {"enum": ["sealed-engineering-pilot", "base-claim-grade", null]},
+    "cloud_models": {"type": "array", "items": {"type": "string"}},
+    "local_model": {"type": ["string", "null"]},
+    "external_spend_cap_usd": {"type": "number", "minimum": 0},
+    "provider_spend_caps_usd": {"type": "object", "additionalProperties": {"type": "number", "minimum": 0}},
+    "local_resource_caps": {"type": "object"},
+    "authorization_expires_at": {"type": ["string", "null"], "format": "date-time"},
+    "custody_policy": {"const": "docs/benchmark/agents-v1/private-campaign-custody-plan.yml"},
+    "trace_policy": {"const": "docs/benchmark/agents-v1/evaluation-trace-and-retention.yml"},
+    "batch_ids": {"type": "array", "items": {"type": "string"}},
+    "revoked": {"type": "boolean"},
+    "revocation_reason": {"type": ["string", "null"]},
+    "owner_attestation": {"type": ["string", "null"]},
+    "execution_allowed": {"type": "boolean"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"authorization_status": {"const": "pending-owner-decision"}}},
+      "then": {
+        "properties": {
+          "external_spend_cap_usd": {"const": 0},
+          "execution_allowed": {"const": false},
+          "owner_attestation": {"const": null}
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}
