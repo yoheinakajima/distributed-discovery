@@ -1,5 +1,5 @@
 study_id: DD-010
-status: complete-v1-v3-with-agents-v1-offline-implementation
-evidence_status: v1-v2-preserved-v3-independently-reproduced-exact-matrix; agents-v1-implementation-complete-not-evaluated-no-performance-evidence
-next_action: preserve all three immutable benchmark versions; any Agents v1 evaluation requires a separate campaign registration, exact snapshot gate, custody context, and explicit owner cost authorization
+status: complete-v1-v3-with-agents-v1-offline-implementation-and-evaluation-registration
+evidence_status: v1-v2-preserved-v3-independently-reproduced-exact-matrix; agents-v1-campaign-registered-not-authorized-not-evaluated-no-performance-evidence
+next_action: preserve immutable benchmark versions and registered campaign; owner-authorized sealed-pilot execution requires a separate gate and the base remains blocked on local/open feasibility
 updated_utc: 2026-07-23T00:00:00Z

@@ -9,9 +9,10 @@ does not mean every theorem direction is complete.
 
 Phase 2 now defines AI-native robustness, strategic optionality, translation,
 paper lifecycle and recomposition, factual methods documentation, theorem-gate
-definitions, and DiscoveryBench Agents registration readiness. DiscoveryBench
-Agents v1 is now registered-not-executed under DD-010; the scientific evidence
-freeze and all no-execution boundaries remain in force.
+definitions, and DiscoveryBench Agents evaluation readiness. DiscoveryBench
+Agents v1 is implemented offline under DD-010 and its evaluation campaign is
+registered but not authorized; the scientific evidence freeze and all
+no-execution boundaries remain in force.
 
 The scientific evidence set is frozen during this work. No study, claim,
 immutable run, theorem, proof, theorem-family paper, parameter-grid extension,
@@ -20,10 +21,10 @@ contact is authorized. Issue #162's classical singleton-congestion stop is
 final for that formulation and is not a premise for a new study.
 
 Reliable Discovery remains the next major theorem-family candidate. It is on
-explicit Phase 2 hold. The next substantive gate is a new DiscoveryBench
-Agents v1 offline instrument implementation session under a separate issue and
-branch. Provider/model execution additionally requires exact snapshots and
-explicit owner cost authorization.
+explicit Phase 2 hold. A sealed DiscoveryBench Agents v1 engineering pilot is
+the next possible substantive gate, but it requires a separate active owner
+authorization. Claim-grade base execution remains blocked on local/open
+feasibility.
 
 The strategic implementation spine is an organizing device, not a claim that
 all 26 studies reduce to one model. It may connect equal-share coverage

@@ -8,9 +8,12 @@ validation needed before expansion.
 
 The portfolio is not a scientific score and does not measure expected value or
 impact. Readiness, residual value, decay, and expiry are qualitative planning
-judgments. DiscoveryBench Agents is the first option to exercise. Every other
-entry remains a design or theorem-gate option. Only one substantive lane may
-execute at a time, and a stopped option remains in the record.
+judgments. DiscoveryBench Agents is the first option to exercise. Its offline
+implementation and campaign registration are complete; owner-authorized sealed
+pilot execution is the next irreversible gate, while claim-grade base execution
+is blocked on local/open feasibility. Every other entry remains a design or
+theorem-gate option. Only one substantive lane may execute at a time, and a
+stopped option remains in the record.
 
 The machine-readable source and complete authorization boundaries are in
 `optionality-portfolio.yml`.

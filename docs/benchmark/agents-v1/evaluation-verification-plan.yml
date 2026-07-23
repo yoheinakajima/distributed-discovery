@@ -1,0 +1,16 @@
+schema_version: agents-evaluation-verification-plan-v1
+status: registered-not-executed
+release_on_disagreement: false
+checks:
+  - {id: V01, object: authorization, method_b: independently validate status, attestation, commit, tier, models, caps, expiry, and revocation}
+  - {id: V02, object: model-manifest, method_b: compare exact IDs, endpoint/config, tokenizer/engine, and weight hashes}
+  - {id: V03, object: allocation, method_b: reconstruct 200 slots and all count/coverage/isomorphism invariants}
+  - {id: V04, object: pilot-base-separation, method_b: compare commitments and quarantine history}
+  - {id: V05, object: custody, method_b: verify commitments, AEAD metadata, access events, and output locks}
+  - {id: V06, object: trace, method_b: recompute raw/redacted hashes and prohibited-field scan}
+  - {id: V07, object: exact-baselines, method_b: independently reconstruct registered rational comparators}
+  - {id: V08, object: metrics, method_b: independently recompute numerators, denominators, zero conventions, and aggregation}
+  - {id: V09, object: bootstrap, method_b: independent implementation with fixed resample indices}
+  - {id: V10, object: multiplicity, method_b: independently apply Holm families}
+  - {id: V11, object: cost, method_b: reconstruct calls, tokens, official dated prices, and caps}
+  - {id: V12, object: contamination, method_b: verify every probe, quarantine, and batch-level decision}

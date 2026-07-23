@@ -1,0 +1,30 @@
+schema_version: agents-v1-local-hardware-audit-v1
+audit_date: "2026-07-23"
+public_safe: true
+model_invoked: false
+model_downloaded: false
+host:
+  os_family: macOS
+  os_major_minor: "15.5"
+  architecture: arm64
+  cpu_family: Apple M1
+  physical_cores: 8
+  logical_cores: 8
+  system_memory_gb: 16
+  accelerator: integrated Apple GPU
+  accelerator_cores: 8
+  accelerator_memory: unified-not-separately-allocatable
+  metal: supported
+  available_disk_gb_approx: 1068
+installed_inference_engines: []
+installed_container_engines: []
+candidate:
+  exact_identifier: mistralai/Mistral-Small-3.1-24B-Instruct-2503@68faf511d618ef198fef186659617cfd2eb8e33a
+  repository_size_gb_approx: 96.1
+  official_mac_memory_guidance_gb: 32
+  current_host_feasible: false
+  reason: system memory is below official guidance and no compatible inference engine is installed
+quantization:
+  would_change_execution_identity: true
+  separate_gate_required: true
+decision: cloud-only-sealed-pilot-eligible-base-local-requirement-blocked

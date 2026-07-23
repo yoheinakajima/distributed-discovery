@@ -1,0 +1,34 @@
+schema_version: agents-evaluation-model-manifest-v1
+status: frozen-not-authorized-not-executed
+execution_allowed: false
+selected_tier: sealed-engineering-pilot
+cloud_models:
+  - provider: OpenAI
+    exact_identifier: gpt-5.4-2026-03-05
+    endpoint: responses
+    response_format: strict-json-schema
+    tools: omitted
+    sampling: {reasoning_effort: none, temperature: null, seed: null}
+    retry: one schema-only retry; transient transport retry logged separately
+    retention_gate: account must confirm accepted retention configuration before execution
+  - provider: Anthropic
+    exact_identifier: claude-sonnet-4-6
+    endpoint: messages
+    response_format: strict-structured-output
+    tools: omitted
+    sampling: {temperature: 0, top_p: null, top_k: null, seed: null}
+    retry: one schema-only retry; transient transport retry logged separately
+    retention_gate: account must confirm accepted retention configuration before execution
+local_model:
+  exact_identifier: mistralai/Mistral-Small-3.1-24B-Instruct-2503@68faf511d618ef198fef186659617cfd2eb8e33a
+  selected_for_pilot: false
+  selected_for_base: conditional-after-separate-hardware-gate
+  current_host_eligible: false
+  tokenizer_and_engine: must be separately frozen
+  weight_hashes: required-after-authorized-download; absent
+  quantization: prohibited without separate model-and-engine identity gate
+substitution_policy: no substitution; any change requires a new audit and manifest decision
+moving_aliases_allowed: false
+provider_calls: 0
+local_model_invocations: 0
+model_downloads: 0

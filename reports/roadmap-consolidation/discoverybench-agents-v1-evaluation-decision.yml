@@ -1,0 +1,30 @@
+schema_version: discoverybench-agents-v1-evaluation-decision-v1
+decision_date: "2026-07-23"
+decision: sealed-pilot-ready-owner-authorization-pending
+campaign_tier: sealed-engineering-pilot
+provider_models: [gpt-5.4-2026-03-05, claude-sonnet-4-6]
+local_model: mistralai/Mistral-Small-3.1-24B-Instruct-2503@68faf511d618ef198fef186659617cfd2eb8e33a
+model_eligibility: cloud-pilot-eligible-after-account-gates; local-identity-frozen-host-ineligible
+hardware_eligibility: cloud-only-pilot
+instances: 50
+batches: 1
+repeats: 1
+architectures: 5
+estimands: engineering diagnostics only; base preregisters eight primary metrics and four contrasts
+cost_estimate_usd: 44.832
+recommended_cap_usd: 100
+cost_authorized: false
+execution_allowed: false
+private_material_exists: false
+study_id_allocated: false
+expected_future_study_id: DD-023
+exact_owner_action_required: commit a separately attested active authorization with positive total/provider caps, expiry, authorized commit, batch IDs, custody and trace acceptance
+next_gate: Owner-authorized DiscoveryBench Agents v1 evaluation execution
+next_command: git status --short --branch
+next_file: plans/DISCOVERYBENCH_AGENTS_V1_EXECUTION.md
+provider_calls: 0
+local_model_invocations: 0
+model_downloads: 0
+cost_incurred_usd: 0
+claims_created: 0
+runs_created: 0

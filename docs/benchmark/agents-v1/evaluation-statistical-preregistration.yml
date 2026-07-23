@@ -1,0 +1,23 @@
+schema_version: agents-evaluation-statistical-preregistration-v1
+status: frozen-not-executed
+selected_next_tier: sealed-engineering-pilot
+pilot_inferential_status: engineering-only
+base:
+  paired_unit: sealed-task-instance-by-exact-model-snapshot-by-repeat
+  batches: 4
+  instances: 200
+  repeats: 3
+  primary_metrics: [group-discovery, distinct-action-coverage, duplication, planner-regret, private-baseline-regret, recovery-budget-attainment, source-diversity, communication-induced-action-compression]
+  primary_contrasts:
+    - [full-broadcast-shared-transcript, isolated-private-agents]
+    - [designated-reader-selective-sharing, full-broadcast-shared-transcript]
+    - [pooled-consensus, isolated-private-agents]
+    - [portfolio-preserving-structured, pooled-consensus]
+  bootstrap: {method: stratified-paired-cluster, replicates: 10000, cluster: task-instance-commitment, strata: [task-family, generator-cell], interval: 95-percent}
+  multiplicity: Holm within each metric and model family over four architecture contrasts
+  missingness: provider errors and required-output failures count as zero discovery/attainment and protocol-invalid
+  invalid_outputs: retained; zero task success and invalid-action indicator one
+  stopping: fixed four batches and three repeats; no outcome-dependent stopping
+  pilot_included: false
+  composite_score: null
+claim_promotion_requires: [complete-scheduled-accounting, custody-pass, method-a-b-agreement, corruption-pass, contamination-pass, trace-safety-pass, claim-policy-audit]

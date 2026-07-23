@@ -186,8 +186,8 @@ ai_powered_lab:
   model_calls_authorized_in_this_milestone: false
   internal_audits_are_external_validation: false
 discoverybench_agents_v1:
-  deliverable: registered offline instrument specification
-  status: registered-not-executed
+  deliverable: implemented offline instrument and registered evaluation campaign
+  status: sealed-pilot-ready-owner-authorization-pending
   study_id_allocated: false
   provider_or_model_calls_authorized: false
   cost_authorized: false
@@ -198,5 +198,5 @@ reliable_discovery:
   role: next major theorem-family candidate
   next_active_registration: false
 next_session:
-  exact_text: Start a new DiscoveryBench Agents v1 offline instrument implementation session.
-  exact_next_file: plans/DISCOVERYBENCH_AGENTS_V1_IMPLEMENTATION.md
+  exact_text: Start an owner-authorized DiscoveryBench Agents v1 evaluation execution session only after an active authorization validates.
+  exact_next_file: plans/DISCOVERYBENCH_AGENTS_V1_EXECUTION.md

@@ -1,4 +1,18 @@
-# Project status — DiscoveryBench Agents v1 implemented offline
+# Project status — DiscoveryBench Agents v1 campaign registered
+
+Date: 2026-07-23 (America/Los_Angeles).
+
+Issue #173 registers a cloud-only sealed engineering pilot as the next
+authorizable tier and preserves the separate 200-task claim-grade base. The
+pilot has 50 sealed tasks, two exact cloud snapshots, one repeat, five
+architectures, exact comparators, an estimated $44.832 cloud cost, and a
+recommended $100 hard cap. The cap is not authorized. The base remains blocked
+on local/open feasibility because the audited host has 16 GB unified memory
+and no inference engine.
+
+DD-010 remains the instrument owner; DD-023 is not allocated. No model call,
+invocation, download, cost, private material, trace, result, claim, or immutable
+evaluation run exists. Scientific and paper inventories remain frozen.
 
 Current Phase 2 architecture (2026-07-23): the repository now treats itself as
 an AI-powered research lab under human PI ownership and final gate authority.

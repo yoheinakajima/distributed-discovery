@@ -1,0 +1,11 @@
+schema_version: discoverybench-agents-v1-evaluation-prospectus-v1
+status: authorization-pending
+registration_status: unregistered
+execution_status: not-executed
+expected_future_study_id: DD-023
+study_id_allocated: false
+claims_allocated: false
+runs_created: 0
+private_material_exists: false
+cost_authorized: false
+execution_allowed: false

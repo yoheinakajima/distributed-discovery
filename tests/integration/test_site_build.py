@@ -51,7 +51,9 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "stopped decentralized-recovery overlap gate" in program
     assert "Phase 2 holds theorem-family execution" in program
     assert "Reliable Discovery remains a major candidate but is deferred" in program
-    assert "DiscoveryBench Agents v1 offline implementation" in program
+    assert "DiscoveryBench Agents v1</a> is implemented offline" in program
+    assert "evaluation campaign is registered" in program
+    assert "next gate is owner-authorized evaluation execution" in program
     assert 'id="information-sharing-frontier"' in program
     assert 'href="publications/information-sharing-frontier.html"' in program
     assert "docs/theorem-spine.md" in program

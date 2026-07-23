@@ -1,0 +1,1816 @@
+schema_version: agents-base-campaign-allocation-v1
+status: registered-public-metadata-no-private-instances
+selected_for_next_execution: false
+blocked_reason: local-open-model infeasible on audited host
+allocation_algorithm: cover each canonical cell once; append family-specific deterministic boundary priorities;
+  split each 40-slot family into four ordered 10-slot batch blocks; cycle four isomorphism classes globally
+counts:
+  slots: 200
+  batches: 4
+  slots_per_batch: 50
+  families: 5
+  slots_per_family: 40
+  canonical_cells_covered: 138
+  boundary_priority_repeats: 62
+  private_instances_generated: 0
+slots:
+- slot_id: BASE-SLOT-001
+  batch_id: BASE-BATCH-1
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-001
+  cell_index: 1
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-002
+  batch_id: BASE-BATCH-1
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-002
+  cell_index: 2
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-003
+  batch_id: BASE-BATCH-1
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-003
+  cell_index: 3
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-004
+  batch_id: BASE-BATCH-1
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-004
+  cell_index: 4
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-005
+  batch_id: BASE-BATCH-1
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-005
+  cell_index: 5
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-006
+  batch_id: BASE-BATCH-1
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-006
+  cell_index: 6
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-007
+  batch_id: BASE-BATCH-1
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-007
+  cell_index: 7
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-008
+  batch_id: BASE-BATCH-1
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-008
+  cell_index: 8
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-009
+  batch_id: BASE-BATCH-1
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-009
+  cell_index: 9
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-010
+  batch_id: BASE-BATCH-1
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-010
+  cell_index: 10
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-011
+  batch_id: BASE-BATCH-1
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-001
+  cell_index: 1
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-012
+  batch_id: BASE-BATCH-1
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-002
+  cell_index: 2
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-013
+  batch_id: BASE-BATCH-1
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-003
+  cell_index: 3
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-014
+  batch_id: BASE-BATCH-1
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-004
+  cell_index: 4
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-015
+  batch_id: BASE-BATCH-1
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-005
+  cell_index: 5
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-016
+  batch_id: BASE-BATCH-1
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-006
+  cell_index: 6
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-017
+  batch_id: BASE-BATCH-1
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-007
+  cell_index: 7
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-018
+  batch_id: BASE-BATCH-1
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-008
+  cell_index: 8
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-019
+  batch_id: BASE-BATCH-1
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-009
+  cell_index: 9
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-020
+  batch_id: BASE-BATCH-1
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-010
+  cell_index: 10
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-021
+  batch_id: BASE-BATCH-1
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-001
+  cell_index: 1
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-022
+  batch_id: BASE-BATCH-1
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-002
+  cell_index: 2
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-023
+  batch_id: BASE-BATCH-1
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-003
+  cell_index: 3
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-024
+  batch_id: BASE-BATCH-1
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-004
+  cell_index: 4
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-025
+  batch_id: BASE-BATCH-1
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-005
+  cell_index: 5
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-026
+  batch_id: BASE-BATCH-1
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-006
+  cell_index: 6
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-027
+  batch_id: BASE-BATCH-1
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-007
+  cell_index: 7
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-028
+  batch_id: BASE-BATCH-1
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-008
+  cell_index: 8
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-029
+  batch_id: BASE-BATCH-1
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-009
+  cell_index: 9
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-030
+  batch_id: BASE-BATCH-1
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-010
+  cell_index: 10
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-031
+  batch_id: BASE-BATCH-1
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-001
+  cell_index: 1
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-032
+  batch_id: BASE-BATCH-1
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-002
+  cell_index: 2
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-033
+  batch_id: BASE-BATCH-1
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-003
+  cell_index: 3
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-034
+  batch_id: BASE-BATCH-1
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-004
+  cell_index: 4
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-035
+  batch_id: BASE-BATCH-1
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-005
+  cell_index: 5
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-036
+  batch_id: BASE-BATCH-1
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-006
+  cell_index: 6
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-037
+  batch_id: BASE-BATCH-1
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-007
+  cell_index: 7
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-038
+  batch_id: BASE-BATCH-1
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-008
+  cell_index: 8
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-039
+  batch_id: BASE-BATCH-1
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-009
+  cell_index: 9
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-040
+  batch_id: BASE-BATCH-1
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-010
+  cell_index: 10
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-041
+  batch_id: BASE-BATCH-1
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-001
+  cell_index: 1
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-042
+  batch_id: BASE-BATCH-1
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-002
+  cell_index: 2
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-043
+  batch_id: BASE-BATCH-1
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-003
+  cell_index: 3
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-044
+  batch_id: BASE-BATCH-1
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-004
+  cell_index: 4
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-045
+  batch_id: BASE-BATCH-1
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-005
+  cell_index: 5
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-046
+  batch_id: BASE-BATCH-1
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-006
+  cell_index: 6
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-047
+  batch_id: BASE-BATCH-1
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-007
+  cell_index: 7
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-048
+  batch_id: BASE-BATCH-1
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-008
+  cell_index: 8
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-049
+  batch_id: BASE-BATCH-1
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-009
+  cell_index: 9
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-050
+  batch_id: BASE-BATCH-1
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-010
+  cell_index: 10
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-051
+  batch_id: BASE-BATCH-2
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-011
+  cell_index: 11
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-052
+  batch_id: BASE-BATCH-2
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-012
+  cell_index: 12
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-053
+  batch_id: BASE-BATCH-2
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-013
+  cell_index: 13
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-054
+  batch_id: BASE-BATCH-2
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-014
+  cell_index: 14
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-055
+  batch_id: BASE-BATCH-2
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-015
+  cell_index: 15
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-056
+  batch_id: BASE-BATCH-2
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-016
+  cell_index: 16
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-057
+  batch_id: BASE-BATCH-2
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-017
+  cell_index: 17
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-058
+  batch_id: BASE-BATCH-2
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-018
+  cell_index: 18
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-059
+  batch_id: BASE-BATCH-2
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-019
+  cell_index: 19
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-060
+  batch_id: BASE-BATCH-2
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-020
+  cell_index: 20
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-061
+  batch_id: BASE-BATCH-2
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-011
+  cell_index: 11
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-062
+  batch_id: BASE-BATCH-2
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-012
+  cell_index: 12
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-063
+  batch_id: BASE-BATCH-2
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-013
+  cell_index: 13
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-064
+  batch_id: BASE-BATCH-2
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-014
+  cell_index: 14
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-065
+  batch_id: BASE-BATCH-2
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-015
+  cell_index: 15
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-066
+  batch_id: BASE-BATCH-2
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-016
+  cell_index: 16
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-067
+  batch_id: BASE-BATCH-2
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-017
+  cell_index: 17
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-068
+  batch_id: BASE-BATCH-2
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-018
+  cell_index: 18
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-069
+  batch_id: BASE-BATCH-2
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-019
+  cell_index: 19
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-070
+  batch_id: BASE-BATCH-2
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-020
+  cell_index: 20
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-071
+  batch_id: BASE-BATCH-2
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-011
+  cell_index: 11
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-072
+  batch_id: BASE-BATCH-2
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-012
+  cell_index: 12
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-073
+  batch_id: BASE-BATCH-2
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-013
+  cell_index: 13
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-074
+  batch_id: BASE-BATCH-2
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-014
+  cell_index: 14
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-075
+  batch_id: BASE-BATCH-2
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-015
+  cell_index: 15
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-076
+  batch_id: BASE-BATCH-2
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-016
+  cell_index: 16
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-077
+  batch_id: BASE-BATCH-2
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-017
+  cell_index: 17
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-078
+  batch_id: BASE-BATCH-2
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-018
+  cell_index: 18
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-079
+  batch_id: BASE-BATCH-2
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-019
+  cell_index: 19
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-080
+  batch_id: BASE-BATCH-2
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-020
+  cell_index: 20
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-081
+  batch_id: BASE-BATCH-2
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-011
+  cell_index: 11
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-082
+  batch_id: BASE-BATCH-2
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-012
+  cell_index: 12
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-083
+  batch_id: BASE-BATCH-2
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-013
+  cell_index: 13
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-084
+  batch_id: BASE-BATCH-2
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-014
+  cell_index: 14
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-085
+  batch_id: BASE-BATCH-2
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-015
+  cell_index: 15
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-086
+  batch_id: BASE-BATCH-2
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-016
+  cell_index: 16
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-087
+  batch_id: BASE-BATCH-2
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-017
+  cell_index: 17
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-088
+  batch_id: BASE-BATCH-2
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-018
+  cell_index: 18
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-089
+  batch_id: BASE-BATCH-2
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-019
+  cell_index: 19
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-090
+  batch_id: BASE-BATCH-2
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-020
+  cell_index: 20
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-091
+  batch_id: BASE-BATCH-2
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-011
+  cell_index: 11
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-092
+  batch_id: BASE-BATCH-2
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-012
+  cell_index: 12
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-093
+  batch_id: BASE-BATCH-2
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-013
+  cell_index: 13
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-094
+  batch_id: BASE-BATCH-2
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-014
+  cell_index: 14
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-095
+  batch_id: BASE-BATCH-2
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-015
+  cell_index: 15
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-096
+  batch_id: BASE-BATCH-2
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-016
+  cell_index: 16
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-097
+  batch_id: BASE-BATCH-2
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-017
+  cell_index: 17
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-098
+  batch_id: BASE-BATCH-2
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-018
+  cell_index: 18
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-099
+  batch_id: BASE-BATCH-2
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-019
+  cell_index: 19
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-100
+  batch_id: BASE-BATCH-2
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-020
+  cell_index: 20
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-101
+  batch_id: BASE-BATCH-3
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-021
+  cell_index: 21
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-102
+  batch_id: BASE-BATCH-3
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-022
+  cell_index: 22
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-103
+  batch_id: BASE-BATCH-3
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-023
+  cell_index: 23
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-104
+  batch_id: BASE-BATCH-3
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-024
+  cell_index: 24
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-105
+  batch_id: BASE-BATCH-3
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-025
+  cell_index: 25
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-106
+  batch_id: BASE-BATCH-3
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-026
+  cell_index: 26
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-107
+  batch_id: BASE-BATCH-3
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-027
+  cell_index: 27
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-108
+  batch_id: BASE-BATCH-3
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-002
+  cell_index: 2
+  boundary_category: trap-interval
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-109
+  batch_id: BASE-BATCH-3
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-005
+  cell_index: 5
+  boundary_category: trap-interval
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-110
+  batch_id: BASE-BATCH-3
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-008
+  cell_index: 8
+  boundary_category: trap-interval
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-111
+  batch_id: BASE-BATCH-3
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-021
+  cell_index: 21
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-112
+  batch_id: BASE-BATCH-3
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-022
+  cell_index: 22
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-113
+  batch_id: BASE-BATCH-3
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-023
+  cell_index: 23
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-114
+  batch_id: BASE-BATCH-3
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-024
+  cell_index: 24
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-115
+  batch_id: BASE-BATCH-3
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-025
+  cell_index: 25
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-116
+  batch_id: BASE-BATCH-3
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-026
+  cell_index: 26
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-117
+  batch_id: BASE-BATCH-3
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-027
+  cell_index: 27
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-118
+  batch_id: BASE-BATCH-3
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-001
+  cell_index: 1
+  boundary_category: equality-tie-case
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-119
+  batch_id: BASE-BATCH-3
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-005
+  cell_index: 5
+  boundary_category: equality-tie-case
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-120
+  batch_id: BASE-BATCH-3
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-009
+  cell_index: 9
+  boundary_category: equality-tie-case
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-121
+  batch_id: BASE-BATCH-3
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-021
+  cell_index: 21
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-122
+  batch_id: BASE-BATCH-3
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-022
+  cell_index: 22
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-123
+  batch_id: BASE-BATCH-3
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-023
+  cell_index: 23
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-124
+  batch_id: BASE-BATCH-3
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-024
+  cell_index: 24
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-125
+  batch_id: BASE-BATCH-3
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-025
+  cell_index: 25
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-126
+  batch_id: BASE-BATCH-3
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-026
+  cell_index: 26
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-127
+  batch_id: BASE-BATCH-3
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-027
+  cell_index: 27
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-128
+  batch_id: BASE-BATCH-3
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-028
+  cell_index: 28
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-129
+  batch_id: BASE-BATCH-3
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-029
+  cell_index: 29
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-130
+  batch_id: BASE-BATCH-3
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-030
+  cell_index: 30
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-131
+  batch_id: BASE-BATCH-3
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-021
+  cell_index: 21
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-132
+  batch_id: BASE-BATCH-3
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-022
+  cell_index: 22
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-133
+  batch_id: BASE-BATCH-3
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-023
+  cell_index: 23
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-134
+  batch_id: BASE-BATCH-3
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-024
+  cell_index: 24
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-135
+  batch_id: BASE-BATCH-3
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-025
+  cell_index: 25
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-136
+  batch_id: BASE-BATCH-3
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-026
+  cell_index: 26
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-137
+  batch_id: BASE-BATCH-3
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-027
+  cell_index: 27
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-138
+  batch_id: BASE-BATCH-3
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-028
+  cell_index: 28
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-139
+  batch_id: BASE-BATCH-3
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-029
+  cell_index: 29
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-140
+  batch_id: BASE-BATCH-3
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-030
+  cell_index: 30
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-141
+  batch_id: BASE-BATCH-3
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-021
+  cell_index: 21
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-142
+  batch_id: BASE-BATCH-3
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-022
+  cell_index: 22
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-143
+  batch_id: BASE-BATCH-3
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-023
+  cell_index: 23
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-144
+  batch_id: BASE-BATCH-3
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-024
+  cell_index: 24
+  boundary_category: canonical-coverage
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: cover every canonical generator cell
+- slot_id: BASE-SLOT-145
+  batch_id: BASE-BATCH-3
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-002
+  cell_index: 2
+  boundary_category: strict-tied-diffuse-threshold-posterior
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-146
+  batch_id: BASE-BATCH-3
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-005
+  cell_index: 5
+  boundary_category: strict-tied-diffuse-threshold-posterior
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-147
+  batch_id: BASE-BATCH-3
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-008
+  cell_index: 8
+  boundary_category: strict-tied-diffuse-threshold-posterior
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-148
+  batch_id: BASE-BATCH-3
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-011
+  cell_index: 11
+  boundary_category: strict-tied-diffuse-threshold-posterior
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-149
+  batch_id: BASE-BATCH-3
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-014
+  cell_index: 14
+  boundary_category: strict-tied-diffuse-threshold-posterior
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-150
+  batch_id: BASE-BATCH-3
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-017
+  cell_index: 17
+  boundary_category: strict-tied-diffuse-threshold-posterior
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-151
+  batch_id: BASE-BATCH-4
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-011
+  cell_index: 11
+  boundary_category: trap-interval
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-152
+  batch_id: BASE-BATCH-4
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-014
+  cell_index: 14
+  boundary_category: trap-interval
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-153
+  batch_id: BASE-BATCH-4
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-017
+  cell_index: 17
+  boundary_category: trap-interval
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-154
+  batch_id: BASE-BATCH-4
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-020
+  cell_index: 20
+  boundary_category: trap-interval
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-155
+  batch_id: BASE-BATCH-4
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-023
+  cell_index: 23
+  boundary_category: trap-interval
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-156
+  batch_id: BASE-BATCH-4
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-026
+  cell_index: 26
+  boundary_category: trap-interval
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-157
+  batch_id: BASE-BATCH-4
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-001
+  cell_index: 1
+  boundary_category: private-planner-threshold-boundary
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-158
+  batch_id: BASE-BATCH-4
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-004
+  cell_index: 4
+  boundary_category: private-planner-threshold-boundary
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-159
+  batch_id: BASE-BATCH-4
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-007
+  cell_index: 7
+  boundary_category: private-planner-threshold-boundary
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-160
+  batch_id: BASE-BATCH-4
+  family_id: common-source-acquisition
+  cell_id: CELL-COMMON-SOURCE-ACQUISITION-010
+  cell_index: 10
+  boundary_category: private-planner-threshold-boundary
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-161
+  batch_id: BASE-BATCH-4
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-010
+  cell_index: 10
+  boundary_category: equality-tie-case
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-162
+  batch_id: BASE-BATCH-4
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-014
+  cell_index: 14
+  boundary_category: equality-tie-case
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-163
+  batch_id: BASE-BATCH-4
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-018
+  cell_index: 18
+  boundary_category: equality-tie-case
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-164
+  batch_id: BASE-BATCH-4
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-019
+  cell_index: 19
+  boundary_category: equality-tie-case
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-165
+  batch_id: BASE-BATCH-4
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-023
+  cell_index: 23
+  boundary_category: equality-tie-case
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-166
+  batch_id: BASE-BATCH-4
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-027
+  cell_index: 27
+  boundary_category: equality-tie-case
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-167
+  batch_id: BASE-BATCH-4
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-002
+  cell_index: 2
+  boundary_category: private-planner-threshold-boundary
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-168
+  batch_id: BASE-BATCH-4
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-003
+  cell_index: 3
+  boundary_category: private-planner-threshold-boundary
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-169
+  batch_id: BASE-BATCH-4
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-004
+  cell_index: 4
+  boundary_category: private-planner-threshold-boundary
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-170
+  batch_id: BASE-BATCH-4
+  family_id: one-reader-versus-broadcast-attention
+  cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-006
+  cell_index: 6
+  boundary_category: private-planner-threshold-boundary
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-171
+  batch_id: BASE-BATCH-4
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-001
+  cell_index: 1
+  boundary_category: same-accuracy-opposite-sign
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-172
+  batch_id: BASE-BATCH-4
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-002
+  cell_index: 2
+  boundary_category: same-accuracy-opposite-sign
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-173
+  batch_id: BASE-BATCH-4
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-003
+  cell_index: 3
+  boundary_category: same-accuracy-opposite-sign
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-174
+  batch_id: BASE-BATCH-4
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-004
+  cell_index: 4
+  boundary_category: same-accuracy-opposite-sign
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-175
+  batch_id: BASE-BATCH-4
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-005
+  cell_index: 5
+  boundary_category: shared-block-transition-boundary
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-176
+  batch_id: BASE-BATCH-4
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-006
+  cell_index: 6
+  boundary_category: shared-block-transition-boundary
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-177
+  batch_id: BASE-BATCH-4
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-007
+  cell_index: 7
+  boundary_category: same-accuracy-opposite-sign
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-178
+  batch_id: BASE-BATCH-4
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-009
+  cell_index: 9
+  boundary_category: same-accuracy-opposite-sign
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-179
+  batch_id: BASE-BATCH-4
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-010
+  cell_index: 10
+  boundary_category: same-accuracy-opposite-sign
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-180
+  batch_id: BASE-BATCH-4
+  family_id: point-versus-shortlist-sharing
+  cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-012
+  cell_index: 12
+  boundary_category: same-accuracy-opposite-sign
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-181
+  batch_id: BASE-BATCH-4
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-001
+  cell_index: 1
+  boundary_category: selected-every-equilibrium-limitation
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-182
+  batch_id: BASE-BATCH-4
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-002
+  cell_index: 2
+  boundary_category: selected-every-equilibrium-limitation
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-183
+  batch_id: BASE-BATCH-4
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-003
+  cell_index: 3
+  boundary_category: recovery-budget-equality-boundary
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-184
+  batch_id: BASE-BATCH-4
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-004
+  cell_index: 4
+  boundary_category: recovery-budget-equality-boundary
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-185
+  batch_id: BASE-BATCH-4
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-005
+  cell_index: 5
+  boundary_category: recovery-budget-equality-boundary
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-186
+  batch_id: BASE-BATCH-4
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-006
+  cell_index: 6
+  boundary_category: recovery-budget-equality-boundary
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-187
+  batch_id: BASE-BATCH-4
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-007
+  cell_index: 7
+  boundary_category: selected-every-equilibrium-limitation
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-188
+  batch_id: BASE-BATCH-4
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-009
+  cell_index: 9
+  boundary_category: selected-every-equilibrium-limitation
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-189
+  batch_id: BASE-BATCH-4
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-010
+  cell_index: 10
+  boundary_category: recovery-budget-equality-boundary
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-190
+  batch_id: BASE-BATCH-4
+  family_id: consensus-collapse-versus-portfolio-recovery
+  cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-012
+  cell_index: 12
+  boundary_category: recovery-budget-equality-boundary
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-191
+  batch_id: BASE-BATCH-4
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-020
+  cell_index: 20
+  boundary_category: strict-tied-diffuse-threshold-posterior
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-192
+  batch_id: BASE-BATCH-4
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-023
+  cell_index: 23
+  boundary_category: strict-tied-diffuse-threshold-posterior
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-193
+  batch_id: BASE-BATCH-4
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-003
+  cell_index: 3
+  boundary_category: strict-tied-diffuse-threshold-posterior
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-194
+  batch_id: BASE-BATCH-4
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-006
+  cell_index: 6
+  boundary_category: strict-tied-diffuse-threshold-posterior
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-195
+  batch_id: BASE-BATCH-4
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-009
+  cell_index: 9
+  boundary_category: strict-tied-diffuse-threshold-posterior
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-196
+  batch_id: BASE-BATCH-4
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-012
+  cell_index: 12
+  boundary_category: strict-tied-diffuse-threshold-posterior
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-197
+  batch_id: BASE-BATCH-4
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-015
+  cell_index: 15
+  boundary_category: strict-tied-diffuse-threshold-posterior
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-198
+  batch_id: BASE-BATCH-4
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-018
+  cell_index: 18
+  boundary_category: strict-tied-diffuse-threshold-posterior
+  target_relabeling_class: target-A
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-199
+  batch_id: BASE-BATCH-4
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-021
+  cell_index: 21
+  boundary_category: strict-tied-diffuse-threshold-posterior
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-A
+  reason: predeclared boundary-priority repeat
+- slot_id: BASE-SLOT-200
+  batch_id: BASE-BATCH-4
+  family_id: threshold-team-formation
+  cell_id: CELL-THRESHOLD-TEAM-FORMATION-024
+  cell_index: 24
+  boundary_category: strict-tied-diffuse-threshold-posterior
+  target_relabeling_class: target-B
+  agent_relabeling_class: agent-B
+  reason: predeclared boundary-priority repeat

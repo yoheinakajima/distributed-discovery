@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DiscoveryBench Agents v1 evaluation model manifest",
+  "type": "object",
+  "required": ["schema_version", "status", "execution_allowed", "selected_tier", "cloud_models", "local_model", "substitution_policy"],
+  "properties": {
+    "schema_version": {"const": "agents-evaluation-model-manifest-v1"},
+    "status": {"const": "frozen-not-authorized-not-executed"},
+    "execution_allowed": {"const": false},
+    "selected_tier": {"const": "sealed-engineering-pilot"},
+    "cloud_models": {"type": "array", "minItems": 2, "maxItems": 2},
+    "local_model": {"type": "object"},
+    "substitution_policy": {"const": "no substitution; any change requires a new audit and manifest decision"}
+  },
+  "additionalProperties": true
+}

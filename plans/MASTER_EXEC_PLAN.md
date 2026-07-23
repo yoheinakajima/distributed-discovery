@@ -1,5 +1,27 @@
 # Master execution plan
 
+## Active continuation — DiscoveryBench Agents v1 evaluation registration (2026-07-23)
+
+Issue #173 and branch
+`benchmark/discoverybench-agents-v1-evaluation-registration` own the sole
+substantive lane from clean main
+`f2c1dda60f3f89e56d80b5ff7d2c519556f3d81c`. The living ExecPlan is
+[`DISCOVERYBENCH_AGENTS_V1_EVALUATION.md`](DISCOVERYBENCH_AGENTS_V1_EVALUATION.md).
+
+The official-source model audit freezes OpenAI
+`gpt-5.4-2026-03-05`, Anthropic `claude-sonnet-4-6`, and the exact Mistral
+Small 3.1 revision. The audited Apple M1 host has 16 GB unified memory and no
+inference engine, below the local candidate's official 32-GB Mac guidance.
+Therefore the decision is
+`sealed-pilot-ready-owner-authorization-pending`: a cloud-only 50-task
+engineering pilot is the next possible tier, while the 200-task claim-grade
+base remains blocked on a separate local/open feasibility gate.
+
+No model was called, invoked, or downloaded; no cost is authorized or
+incurred; no private material, trace, performance result, scientific claim,
+immutable run, or DD-023 exists. The inactive authorization template has zero
+caps and `execution_allowed: false`.
+
 ## Active continuation — DiscoveryBench Agents v1 offline implementation (2026-07-23)
 
 Issue #171 and branch

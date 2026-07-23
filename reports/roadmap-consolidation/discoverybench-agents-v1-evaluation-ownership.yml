@@ -1,0 +1,21 @@
+schema_version: discoverybench-agents-v1-evaluation-ownership-v1
+decision_date: "2026-07-23"
+instrument_owner: DD-010
+instrument_status: implementation-complete-not-model-evaluated
+future_evidence_unit:
+  expected_study_id: DD-023
+  expected_title: DiscoveryBench Agents v1 — Communication Architecture and Action Diversity in Software-Agent Teams
+  qualifies_as_new_study: true
+  reason: would create new stochastic software-agent evidence, traces, estimates, and possible claims
+  allocated: false
+  current_status: unregistered-authorization-pending
+allocation_prerequisites:
+  - live ID audit
+  - exact model and campaign tier freeze
+  - explicit owner cost authorization
+  - accepted custody and trace policy
+  - local/open feasibility decision
+  - frozen estimands, allocation, verification, corruptions, and stopping
+claim_ownership: future DD-023 only after separately audited evidence and promotion
+paper_ownership: none
+paper_created: false
