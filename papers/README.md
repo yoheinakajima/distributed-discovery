@@ -21,7 +21,7 @@
 
 Seven project-authored PDFs have root validation records. The current 14-page
 Three Results artifact has provenance-refreshed SHA-256
-`54e79e0e55cf38cce1b9436fe6a78b84dfec72684aeea0e05f94ce45e1cc3b6c`;
+`40506068a03e6e7ff0dd8c20751b792a9e669e8fd788005dff1c58540131206f`;
 the 20-page Incentive to Ignore artifact has SHA-256
 `ee9e27f741d25a9597994f18caf2bf406098db7aca4d2ed067a7a011f64be250`;
 and the 20-page Threshold Discovery artifact has SHA-256
@@ -29,7 +29,7 @@ and the 20-page Threshold Discovery artifact has SHA-256
 All builds follow the
 `$build-paper` workflow and preserve claim IDs, input checksums, deterministic
 artifact checks, and visual-QA records. The upstream extension remains a patch
-preview rather than a project-authored publication. All 89 project-paper pages
+preview rather than a project-authored publication. All 115 project-paper pages
 have current visual-QA records. No paper is represented as peer reviewed.
 
 Editorial admission and theorem-family ownership are governed by

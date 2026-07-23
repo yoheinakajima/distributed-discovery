@@ -153,6 +153,11 @@ needed to prevent current-state confusion.
   `make site` preserves 77 routes, 26 studies, 110 claims, 48 passing runs, and
   seven publications. Advance the sole active milestone to G for broad
   validation, invariant comparison, workflows, merge, deployment, and live QA.
+- `2026-07-23T01:15:00Z`: full local acceptance passes: 247 tests, 110 claims,
+  all 51 manifests, seven papers totaling 115 pages, and the 77-route site.
+  All frozen scientific, paper, route, download, study, upstream, safety, and
+  provenance invariants compare exact. Branch CI, merge, Pages, and live QA
+  remain the only open parts of Milestone G.
 
 ## Validation strategy
 
@@ -183,9 +188,13 @@ provenance and rendered-artifact validation without changing the paper.
 
 ## Artifacts produced
 
-Issue #158; draft PR #159; checkpoint commit `059b81a`; this ExecPlan; and
-`reports/roadmap-consolidation/post-v5-stale-state-audit.md`. Further artifacts
-are appended after creation.
+Issue #158; draft PR #159; checkpoint commit `059b81a`; this ExecPlan;
+`reports/roadmap-consolidation/post-v5-stale-state-audit.md`;
+`docs/theorem-spine.md`; living-synthesis map updates;
+`reports/roadmap-consolidation/post-v5-literature-and-nonoverlap.md`;
+`reports/roadmap-consolidation/post-v5-next-program-gate.{md,yml}`;
+`reports/site/post-v5-relationship-and-route-audit.md`; and
+`reports/roadmap-consolidation/post-v5-validation.md`.
 
 ## Blockers
 

@@ -1,5 +1,10 @@
 # DD-022 Coordination-Free Positive Sharing execution plan
 
+> Current status: DD-022, its documentation-only admission gate, the 26-page
+> Information Sharing Frontier working paper, and public integration are
+> complete and deployed through PRs #151, #154, #155, #156, and #157. The
+> dated registration state below is preserved as execution provenance.
+
 ## Purpose and intended outcome
 
 Prove or reject a strict positive value of sharing under a protocol that is
@@ -62,7 +67,7 @@ only as an upper comparator.
 4. **Public integration and research merge (complete):** Findings, relationships, Lab,
    full local/remote acceptance, merge, Pages, live routes, issue closure, and
    clean synchronized main.
-5. **Paper-admission gate (decision complete; merge pending):** separate documentation-only issue/branch/PR after
+5. **Paper-admission gate (complete):** separate documentation-only issue/branch/PR after
    Milestone 4; decide admit/hold/reject and, if admitted, create only a paper
    issue, paper ExecPlan, theorem/section map, and ownership map.
 
@@ -83,7 +88,7 @@ only as an upper comparator.
 - [x] Audit claims and integrate exact evidence and public presentation.
 - [x] Pass full local acceptance.
 - [x] Merge/deploy, close #150, and synchronize main.
-- [ ] Merge the completed documentation-only paper-admission decision.
+- [x] Merge the completed documentation-only paper-admission decision.
 
 ## Discoveries and surprises
 
@@ -184,6 +189,7 @@ all failed runs, nulls, counterexamples, and selection caveats.
 
 The research package is complete, merged, deployed, and live. The exact
 selected-equilibrium theorem closes the prior centralized-implementation gap,
-while the pure correspondence prevents an every-equilibrium overclaim. Final
-closeout requires only merge of the documentation-only admission gate; no
-research artifact will change there.
+while the pure correspondence prevents an every-equilibrium overclaim. The
+documentation-only admission gate merged through PR #154; the qualified
+working paper, mobile correction, and acceptance record merged through PRs
+#155–#157 without changing a DD-022 research artifact.

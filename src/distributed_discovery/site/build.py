@@ -497,8 +497,7 @@ def _results_page(
                 )
             if result.get("paper_slug") == "information-sharing-frontier":
                 links.append(
-                    '<a href="program.html#information-sharing-frontier">'
-                    "See the theorem family</a>"
+                    '<a href="program.html#information-sharing-frontier">See the theorem family</a>'
                 )
             links.extend(
                 f'<a href="claims.html#{html.escape(str(claim_id))}">Verify {html.escape(str(claim_id))}</a>'

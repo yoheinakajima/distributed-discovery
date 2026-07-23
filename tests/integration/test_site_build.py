@@ -480,7 +480,11 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         assert "publications/information-sharing-frontier.html" in result_fragment
     assert "program.html#information-sharing-frontier" in results_page
 
-    for lab_slug in ["incremental-sharing", "general-sharing-frontier", "coordination-free-positive-sharing"]:
+    for lab_slug in [
+        "incremental-sharing",
+        "general-sharing-frontier",
+        "coordination-free-positive-sharing",
+    ]:
         lab_page = (output / f"labs/{lab_slug}.html").read_text()
         assert "Evidence runs" in lab_page
         assert "Public data" in lab_page
