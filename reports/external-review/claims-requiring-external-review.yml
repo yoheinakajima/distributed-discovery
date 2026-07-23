@@ -1,0 +1,5 @@
+schema_version: 1
+review_occurred: false
+groups:
+  - {packet: economic-theory, claims: [DD-C-0030, DD-C-0040, DD-C-0059, DD-C-0062, DD-C-0092, DD-C-0097, DD-C-0106, DD-C-0109, DD-C-0110]}
+  - {packet: algorithmic-game-theory, claims: [DD-C-0012, DD-C-0013, DD-C-0039, DD-C-0048, DD-C-0050, DD-C-0053, DD-C-0084, DD-C-0085, DD-C-0086]}

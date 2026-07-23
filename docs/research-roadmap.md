@@ -1,5 +1,10 @@
 # Research roadmap
 
+Phase 2 holds theorem-family execution. Reliable Discovery is preserved and
+deferred. The next substantive session is DiscoveryBench Agents v1
+registration; see its no-execution
+[prospectus](../reports/roadmap-consolidation/discoverybench-agents-v1-prospectus.md).
+
 This is a navigation index, not a duplicate portfolio.
 
 - See [the current roadmap](current-roadmap.md) for active execution and the authoritative next registered milestone.
@@ -16,5 +21,5 @@ centralized. No submission, release, DOI, new study, or new claim is authorized
 by this consolidation. See [`theorem-spine.md`](theorem-spine.md) for the
 evidence-linked architecture and the current roadmap for the completed
 classical-overlap stop of the Decentralized Recovery and Equilibrium Robustness
-bridge. Reliable Discovery is now the next unregistered executable gate. Every
-later theorem direction is preserved.
+bridge. The historical sequence put Reliable Discovery next; the Phase 2 owner
+directive supersedes that timing without removing the direction.

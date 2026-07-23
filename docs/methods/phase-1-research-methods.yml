@@ -1,0 +1,38 @@
+schema_version: 1
+period: phase-1
+record_type: factual-methods
+practices:
+  workflow:
+    - issue-scoped work
+    - one substantive branch and pull request
+    - living ExecPlans
+  evidence:
+    - authoritative claim ledger
+    - registered immutable runs
+    - input and output hashes
+    - pinned commands, versions, seeds, and UTC timestamps where applicable
+    - exact versus Monte Carlo labeling
+  verification:
+    - independent implementation where recorded
+    - corruption tests where recorded
+    - failed and null result preservation
+  publication:
+    - separate paper-admission gates
+    - deterministic paper builds and visual QA
+    - static site safety, provenance, route, relation, and download checks
+decision_authority: human owner
+agent_assistance: evidenced where repository history records it
+human_data_boundary:
+  collected: false
+  external_evidence_base: false
+known_limitations:
+  - internal independent verification is not external reproduction
+  - corruption testing does not establish scientific completeness
+  - deterministic builds do not establish theorem correctness
+  - repository process does not establish research quality
+claims_not_made:
+  - autonomous laboratory
+  - first or unprecedented method
+  - external validation
+  - peer review
+  - process-based research quality

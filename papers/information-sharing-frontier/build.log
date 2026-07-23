@@ -4,29 +4,29 @@ note: Rerunning TeX because bibtex was run ...
 note: Rerunning TeX because "main.aux" changed ...
 note: Rerunning TeX because "main.aux" changed ...
 note: Running xdvipdfmx ...
-note: Writing `<build>/main.pdf` (152.1806640625 KiB)
+note: Writing `<build>/main.pdf` (155.486328125 KiB)
 note: Skipped writing 3 intermediate files (use --keep-intermediates to keep them)
-warning: main.tex:363: Underfull \hbox (badness 1048) in paragraph at lines 360--363
-warning: main.tex:571: Underfull \hbox (badness 1221) in paragraph at lines 564--571
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:743: Underfull \hbox (badness 1983) in paragraph at lines 738--743
-warning: main.tex:363: Underfull \hbox (badness 1048) in paragraph at lines 360--363
-warning: main.tex:571: Underfull \hbox (badness 1221) in paragraph at lines 564--571
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:363: Underfull \hbox (badness 1048) in paragraph at lines 360--363
-warning: main.tex:571: Underfull \hbox (badness 1221) in paragraph at lines 564--571
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:363: Underfull \hbox (badness 1048) in paragraph at lines 360--363
-warning: main.tex:571: Underfull \hbox (badness 1221) in paragraph at lines 564--571
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
+warning: main.tex:369: Underfull \hbox (badness 1048) in paragraph at lines 366--369
+warning: main.tex:577: Underfull \hbox (badness 1221) in paragraph at lines 570--577
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:749: Underfull \hbox (badness 1983) in paragraph at lines 744--749
+warning: main.tex:369: Underfull \hbox (badness 1048) in paragraph at lines 366--369
+warning: main.tex:577: Underfull \hbox (badness 1221) in paragraph at lines 570--577
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:369: Underfull \hbox (badness 1048) in paragraph at lines 366--369
+warning: main.tex:577: Underfull \hbox (badness 1221) in paragraph at lines 570--577
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:369: Underfull \hbox (badness 1048) in paragraph at lines 366--369
+warning: main.tex:577: Underfull \hbox (badness 1221) in paragraph at lines 570--577
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
 warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.
 
 
@@ -38,27 +38,27 @@ note: Rerunning TeX because bibtex was run ...
 note: Rerunning TeX because "main.aux" changed ...
 note: Rerunning TeX because "main.aux" changed ...
 note: Running xdvipdfmx ...
-note: Writing `<build>/main.pdf` (152.1806640625 KiB)
+note: Writing `<build>/main.pdf` (155.486328125 KiB)
 note: Skipped writing 3 intermediate files (use --keep-intermediates to keep them)
-warning: main.tex:363: Underfull \hbox (badness 1048) in paragraph at lines 360--363
-warning: main.tex:571: Underfull \hbox (badness 1221) in paragraph at lines 564--571
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:743: Underfull \hbox (badness 1983) in paragraph at lines 738--743
-warning: main.tex:363: Underfull \hbox (badness 1048) in paragraph at lines 360--363
-warning: main.tex:571: Underfull \hbox (badness 1221) in paragraph at lines 564--571
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:363: Underfull \hbox (badness 1048) in paragraph at lines 360--363
-warning: main.tex:571: Underfull \hbox (badness 1221) in paragraph at lines 564--571
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:363: Underfull \hbox (badness 1048) in paragraph at lines 360--363
-warning: main.tex:571: Underfull \hbox (badness 1221) in paragraph at lines 564--571
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
-warning: main.tex:743: Underfull \hbox (badness 10000) in paragraph at lines 738--743
+warning: main.tex:369: Underfull \hbox (badness 1048) in paragraph at lines 366--369
+warning: main.tex:577: Underfull \hbox (badness 1221) in paragraph at lines 570--577
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:749: Underfull \hbox (badness 1983) in paragraph at lines 744--749
+warning: main.tex:369: Underfull \hbox (badness 1048) in paragraph at lines 366--369
+warning: main.tex:577: Underfull \hbox (badness 1221) in paragraph at lines 570--577
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:369: Underfull \hbox (badness 1048) in paragraph at lines 366--369
+warning: main.tex:577: Underfull \hbox (badness 1221) in paragraph at lines 570--577
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:369: Underfull \hbox (badness 1048) in paragraph at lines 366--369
+warning: main.tex:577: Underfull \hbox (badness 1221) in paragraph at lines 570--577
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
+warning: main.tex:749: Underfull \hbox (badness 10000) in paragraph at lines 744--749
 warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.

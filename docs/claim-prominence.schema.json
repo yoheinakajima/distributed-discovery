@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "authority", "categories", "claims"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "authority": {"const": "editorial-only; claims/claims.yml remains authoritative for evidence"},
+    "categories": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "uniqueItems": true
+    },
+    "claims": {
+      "type": "object",
+      "patternProperties": {
+        "^DD-C-[0-9]{4}$": {
+          "enum": [
+            "spine-title-theorem",
+            "scoped-theorem-or-impossibility",
+            "structural-identity-or-lemma",
+            "exact-bounded-classification",
+            "minimal-counterexample",
+            "bounded-null-or-failed-search",
+            "synthetic-estimate",
+            "definition-or-framework-object"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

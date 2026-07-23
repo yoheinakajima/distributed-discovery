@@ -11,8 +11,8 @@
     "results/verified/20260721T140745Z_DD-006_401ad624_c942f43e42/outputs/general-transfer-summary.json": "a40fb426cca8d8198c2f17b2ce9308bcf12ff34db4b2fc1a353741801e57cf8d",
     "results/verified/20260721T141527Z_DD-008_0d11dc77_7e0c8f1d66/outputs/source-choice-summary.json": "d126c934f990030c6551064cf38330b9cbd02f7a779b8d8b6f1ed31fc4c872c0"
   },
-  "page_count": 3,
-  "pdf_sha256": "9bad1e7aaebd07851613f7f38a5c1a3654ca78363cc95f092f5b97bf0f9cee7b",
+  "page_count": 4,
+  "pdf_sha256": "78606f732f105d79395409dcb9d7224d72aa1e44312ca30ff5719d049afd98a8",
   "schema_version": 1,
   "source_runs": {
     "acquisition": "20260721T141527Z_DD-008_0d11dc77_7e0c8f1d66",

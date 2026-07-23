@@ -1,6 +1,6 @@
 {
   "abstract": "a73c76e667e782eb5572a458614a8b4c9c3444a7c60f8aa91e9cc71716e40991",
-  "bibliography": "f51f4f00a7d0b998bda4bd864ed7741f32a395a251034b99a8d87e6ecf0628e6",
+  "bibliography": "e35a5d824421ac6517e984ce30b18a7d00a9e8f27f29dc05bad13da357ab0cec",
   "claim_ids": [
     "DD-C-0089",
     "DD-C-0090",
@@ -59,7 +59,7 @@
     "results/verified/20260722T210334Z_DD-022_2376d5b7_ad67765ca8/outputs/threshold-certificate.json": "146dcfba3f74b76285dd9ae83a03bf811ea0ad4a1029b7773d7c5d6079fbd6bf"
   },
   "schema_version": 1,
-  "source_commit": "9f12c08ecb9321f228f058b8956a7dbacd4d0fc2",
+  "source_commit": "232aaa3f39be8d33bc12c3034c5e435348f61aae",
   "source_runs": {
     "frontier": "20260722T185924Z_DD-021_3cdbbc40_2fea269a9a",
     "incremental": "20260722T142551Z_DD-020_3854fff6_37c11a850a",

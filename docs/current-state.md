@@ -1,5 +1,12 @@
 # Current program state
 
+_Phase 2 supersession, 2026-07-23:_ Phase 1 is complete at the boundary formed
+by Programs V1--V5, the Information Sharing Frontier, post-V5 consolidation,
+and the stopped decentralized-recovery overlap gate. Theorem-family execution
+is on hold. Reliable Discovery is preserved and deferred; the next substantive
+session is DiscoveryBench Agents v1 registration. No claim, study, immutable
+run, theorem, or scientific result is added by this transition.
+
 The bounded Decentralized Recovery and Equilibrium Robustness registration gate
 on issue #162 ends in `stop-classical-overlap`. The frozen two-agent
 equal-sharing action game is exactly a singleton congestion/resource-selection
@@ -7,8 +14,9 @@ game, and fixed sequential arrival with visible occupancy is solved by ordinary
 backward induction. Both every-pure-Nash and every-pure-SPE top-two recovery
 have the same strict posterior boundary; the inherited private and centralized
 comparators do not create a nonclassical equilibrium statement. No study ID,
-claim, run, source implementation, or paper was created. Reliable Discovery is
-the sole next executable program after PR #163.
+claim, run, source implementation, or paper was created. The historical
+post-PR-#163 sequence named Reliable Discovery next; the Phase 2 owner
+directive above supersedes that timing.
 
 _Reconciled 2026-07-22 for the Information Sharing Frontier working paper._
 
@@ -109,7 +117,7 @@ canonical Shared Discovery Paradox repository remains pinned at
 | Laboratory routes | 18 |
 | Validated project papers | 7 |
 | Checksum-registered downloads | 23 |
-| Test suite | 247 collected tests |
+| Test suite | 249 collected tests before Phase 2 |
 
 ## Program V5 exact result
 

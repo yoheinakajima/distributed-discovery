@@ -1,0 +1,21 @@
+schema_version: 1
+nodes:
+  shared-discovery-paradox: {role: canonical-anchor, owner: upstream}
+  common-source-trap: {role: flagship, owner_family: source-acquisition-provenance}
+  incentive-to-ignore: {role: flagship, owner_family: selective-attention}
+  threshold-discovery: {role: flagship, owner_family: threshold-discovery}
+  information-sharing-frontier: {role: flagship, owner_family: sharing-frontier}
+  foundations: {role: research-note, owner_family: none}
+  three-results: {role: synthesis-note, owner_family: none}
+  discovery-institutions: {role: synthesis-note, owner_family: none}
+edges:
+  - {from: foundations, to: shared-discovery-paradox, relation: foundational-anchor}
+  - {from: three-results, to: shared-discovery-paradox, relation: foundational-anchor}
+  - {from: threshold-discovery, to: shared-discovery-paradox, relation: action-portfolio-anchor}
+  - {from: incentive-to-ignore, to: information-sharing-frontier, relation: companion-scope}
+  - {from: information-sharing-frontier, to: incentive-to-ignore, relation: companion-scope}
+  - {from: common-source-trap, to: shared-discovery-paradox, relation: source-choice-extension}
+  - {from: discovery-institutions, to: common-source-trap, relation: synthesis-to-owner}
+  - {from: discovery-institutions, to: incentive-to-ignore, relation: synthesis-to-owner}
+  - {from: discovery-institutions, to: threshold-discovery, relation: synthesis-to-owner}
+  - {from: discovery-institutions, to: information-sharing-frontier, relation: synthesis-to-owner}

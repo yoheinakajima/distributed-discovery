@@ -8,14 +8,14 @@ submission, release, DOI, journal contact, or claim of peer review.
 1. **Canonical entry paper — *The Shared Discovery Paradox*.** The atomic
    introduction to the separation between information aggregation and action
    allocation. Its canonical upstream repository remains read-only here.
-2. **Theorem-family papers.** Manuscripts are organized by durable
+2. **Flagship theorem-family working papers.** Manuscripts are organized by durable
    mathematical question rather than chronological study batch. Admission is
    governed by [`research-governance.md`](research-governance.md).
-3. **Living synthesis — *The Architecture of Distributed Discovery:
-   Foundations, Results, and Open Problems*.** This maintained program account
-   supplies notation, relationships, negative results, and open gates while
-   preserving the primary ownership of theorem papers and studies.
-4. **Reproducible studies and infrastructure.** DD studies, the claim ledger,
+3. **Notes and syntheses.** Foundations, Three Results, Discovery Institutions,
+   and the living *Architecture of Distributed Discovery* account supply
+   notation, relationships, negative results, and open gates while preserving
+   the primary ownership of theorem papers and studies.
+4. **Evidence and infrastructure.** DD studies, the claim ledger,
    immutable runs, exact certificates, DiscoveryBench, and Labs provide the
    auditable evidence layer.
 
@@ -26,16 +26,19 @@ submission, release, DOI, journal contact, or claim of peer review.
 | *Shared Discovery Paradox* | Canonical entry paper; potential near-term submission candidate | No action authorized |
 | *Common-Source Trap* | Theorem-centered working paper; potential near-term submission candidate | No action authorized |
 | *The Incentive to Ignore* | Incremental Sharing gate passed; validated working paper and archival-paper candidate, with DD-020 cited as a companion family result | No submission action authorized; DD-020 remains primarily owned by the completed Information Sharing Frontier paper |
-| *Threshold Discovery* | Public working paper held behind the Reliable Discovery theorem gate | Gate is editorial, not submission authority |
-| *Foundations* | Living-synthesis component | Working note, not a novelty owner by default |
-| *Institutions* | Living-synthesis component | Working note, not a novelty owner by default |
-| *Three Results* | Source material whose results may migrate to separate theorem families | Primary claim ownership must remain explicit |
+| *Threshold Discovery* | Flagship theorem-family working paper; Reliable Discovery candidate deferred by Phase 2 hold | Gate is editorial, not submission authority |
+| *Foundations* | Research note and living-synthesis component | Not a novelty owner by default |
+| *Institutions* | Synthesis note | Not a novelty owner by default |
+| *Three Results* | Synthesis note whose results retain separate primary owners | Primary claim ownership must remain explicit |
 | *Private Information Teams* | Working draft and evidence source | Admission depends on its theorem-family gate |
 | *When Does Information Sharing Improve Decentralized Discovery?* | Validated 26-page theorem-family working paper and archival-paper candidate | DD-022's title result is selected-equilibrium, DD-021's full-capacity recovery remains centralized, and no submission, release, DOI, or journal-contact action is authorized |
 
 The machine-readable family, study, claim, paper, chapter, overlap, and gate
 relationships are in [`paper-family-map.yml`](paper-family-map.yml). A polished
 PDF is not evidence of admission, submission, acceptance, or peer review.
+The normalized hierarchy and public reading order are in
+[`publication-hierarchy.yml`](publication-hierarchy.yml). “Archival candidate”
+is an internal editorial disposition, not publication status.
 DD-020's output-connected Lab is evidence infrastructure and does not alter
 the editorial dispositions or submission boundaries above.
 DD-022 closed the prior decentralized-implementation gate only for its declared

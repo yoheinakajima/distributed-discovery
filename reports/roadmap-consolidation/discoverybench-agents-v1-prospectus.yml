@@ -1,0 +1,93 @@
+schema_version: 1
+status: registration-prospectus-only
+central_question: Do real software-agent teams exhibit the duplication, source concentration, shared-clue over-attention, consensus collapse, and portfolio-recovery failures predicted by the exact Distributed Discovery tasks?
+study_id: null
+provider_calls: false
+model_downloads: false
+cost_authorized: false
+cost_incurred: false
+agents_executed: false
+traces_exist: false
+private_seeds_exist: false
+run_exists: false
+empirical_results_exist: false
+task_families:
+  - common-source-acquisition
+  - one-reader-versus-broadcast-attention
+  - point-versus-shortlist-sharing
+  - consensus-collapse-versus-portfolio-recovery
+  - threshold-team-formation
+required_frozen_dimensions:
+  - benchmark-version
+  - task-generator-version
+  - provider
+  - model-identifier
+  - model-snapshot-date
+  - system-prompt
+  - user-prompt
+  - agent-count
+  - agent-identity
+  - communication-topology
+  - message-budget
+  - memory-policy
+  - tool-permissions
+  - temperature
+  - top-p-or-equivalent
+  - seed
+  - retry-policy
+  - stopping-rule
+  - context-limits
+  - cost-cap
+  - timeout
+  - raw-trace-format
+  - safety-and-redaction-policy
+contamination_controls:
+  - generator-committed-before-evaluation
+  - hidden-generator-parameters-or-private-seeds
+  - model-and-provider-versions-frozen-before-holdout-generation
+  - holdouts-generated-after-version-freeze
+  - sealed-answer-keys
+  - holdout-instances-unpublished-until-runs-immutable
+  - multiple-independently-generated-holdout-batches
+  - no-public-task-ids-or-exact-public-wording-in-holdout-prompts
+  - contamination-probes
+  - isomorphism-checks
+  - generator-seeds-and-answers-released-after-lock-unless-safety-prevents
+  - public-tasks-calibration-or-prompt-debugging-only
+minimum_comparators: [two-different-model-families, feasible-local-or-open-baseline]
+universal_ranking: false
+default_composite_score: false
+primary_metrics:
+  - group-discovery
+  - distinct-action-coverage
+  - duplication
+  - planner-regret
+  - private-baseline-regret
+  - recovery-budget-attainment
+  - source-diversity
+  - communication-induced-action-compression
+  - distance-from-best-registered-equilibrium
+  - distance-from-worst-registered-equilibrium
+  - invalid-action-rate
+  - protocol-compliance
+  - cost-and-token-usage-as-operational-metrics
+evidence_boundaries:
+  - software-agent-evidence-not-human-evidence
+  - provider-version-specific
+  - model-snapshot-specific
+  - prompt-architecture-specific
+  - stochastic-estimate-when-sampling-is-used
+  - no-behavioral-generalization-to-organizations
+  - no-leaderboard-claim
+  - no-provider-quality-endorsement
+registration_stops:
+  - contamination-cannot-be-bounded
+  - provider-versions-cannot-be-frozen-or-reported
+  - cost-cannot-be-authorized
+  - raw-traces-cannot-be-preserved-safely
+  - task-solvable-from-public-answer-leakage
+  - metrics-cannot-distinguish-reasoning-from-memorization
+  - no-materially-different-model-families-can-be-compared
+  - evaluation-reduces-to-generic-benchmark-accuracy
+exact_next_command: git status --short --branch
+exact_next_file: plans/DISCOVERYBENCH_AGENTS_V1_REGISTRATION.md

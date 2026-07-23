@@ -26,8 +26,8 @@
     "results/verified/20260721T222047Z_DD-014_f5f099a8_ea0276dd16/outputs/policy-phase-map.json": "7a0bffdd95bddad0b36bcf47f91ce70ab2d8887acf8ff2ef880c41c365ce5a5c",
     "results/verified/20260721T222047Z_DD-014_f5f099a8_ea0276dd16/outputs/summary.json": "c355420c6b9812498bca89486b0fe9e85a28cb92b063fc59348c13b51678151b"
   },
-  "page_count": 20,
-  "pdf_sha256": "ee9e27f741d25a9597994f18caf2bf406098db7aca4d2ed067a7a011f64be250",
+  "page_count": 21,
+  "pdf_sha256": "651c91fb68df6b2f1397ca86f3842b7c2fa9c067601957c32401a7f5e95cd24b",
   "provenance_validated": true,
   "schema_version": 1,
   "source_runs": {

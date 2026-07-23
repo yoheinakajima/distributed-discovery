@@ -1,12 +1,18 @@
 # Project status — Decentralized Recovery overlap stop
 
+Supersession note (2026-07-23): Phase 1 is complete and Phase 2 holds
+theorem-family execution. Reliable Discovery remains a deferred major
+candidate. DiscoveryBench Agents v1 registration is the exact next substantive
+session.
+
 Date: 2026-07-22 (America/Los_Angeles)
 
 Issue #162 and PR #163 complete the registration gate for Decentralized
 Recovery and Equilibrium Robustness with `stop-classical-overlap`. The frozen
 model adds no nonclassical equilibrium content beyond singleton congestion and
 backward induction. No study, claim, run, paper, source implementation, or
-public route is added. Reliable Discovery is the sole next executable program.
+public route is added. Reliable Discovery was the sole next executable program
+under this completed status record; the Phase 2 directive supersedes its timing.
 
 PR #163 passed branch CI `29974250347` and paper/site build `29974250393`,
 squash-merged as `cc0ddf3764ab49dc21943b6911ca7648ba82f56c`, and passed

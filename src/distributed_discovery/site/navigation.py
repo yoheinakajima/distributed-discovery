@@ -18,6 +18,8 @@ RESOURCE_GROUPS = (
         "Understand",
         (
             ("Program", "program.html"),
+            ("Start Here", "start-here.html"),
+            ("Methods", "methods.html"),
             ("Foundations", "foundations.html"),
             ("Applications", "applications.html"),
         ),

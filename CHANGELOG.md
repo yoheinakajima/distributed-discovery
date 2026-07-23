@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-07-23 — Phase 2 external legibility and methods consolidation
+
+- Marked Phase 1 complete without claiming every theorem direction complete;
+  placed theorem-family execution and Reliable Discovery on explicit owner
+  hold, with DiscoveryBench Agents v1 registration next.
+- Added publication hierarchy, literature-transmission and claim-prominence
+  audits, a contextual three-result reading path, factual methods and maturity
+  records, review packets, theorem gates, and an agent-benchmark prospectus.
+- Limited all paper work to status, ownership, cross-citation, literature,
+  scope, and evidence-label alignment. No study, claim, immutable run, theorem,
+  result, provider call, contact, submission, DOI, or external review was
+  created.
+
 ## 2026-07-22 — Post-V5 theorem-spine consolidation
 
 - Reconciled the completed DD-019–DD-022 Information Sharing Frontier across

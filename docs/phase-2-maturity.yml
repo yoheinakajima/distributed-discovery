@@ -1,0 +1,23 @@
+schema_version: 1
+level_scale:
+  0: absent
+  1: question
+  2: bounded evidence
+  3: analytic theorem or certified impossibility
+  4: independently reproduced
+  5: externally reviewed or used
+scientific_readiness:
+  - {component: defined-problem-class, level: 3, claims: [DD-C-0001, DD-C-0002], studies: [DD-000], papers: [foundations], gaps: "general domain remains open", next_gate: strategic-utility-spine, editorial_judgment: true, judgment_date: "2026-07-23"}
+  - {component: separation-or-representation, level: 3, claims: [DD-C-0016, DD-C-0023, DD-C-0092], studies: [DD-000, DD-001, DD-020], papers: [foundations, information-sharing-frontier], gaps: "no general decentralized separation theorem", next_gate: information-action-decomposition, editorial_judgment: true, judgment_date: "2026-07-23"}
+  - {component: sharing-sign, level: 3, claims: [DD-C-0093, DD-C-0097, DD-C-0106, DD-C-0109], studies: [DD-020, DD-021, DD-022], papers: [information-sharing-frontier], gaps: "selection and channel scope remain", next_gate: information-action-decomposition, editorial_judgment: true, judgment_date: "2026-07-23"}
+  - {component: recovery-budget, level: 2, claims: [DD-C-0008, DD-C-0091, DD-C-0102], studies: [DD-000, DD-019, DD-021], papers: [information-sharing-frontier], gaps: "general theory absent", next_gate: recovery-budget-characterization, editorial_judgment: true, judgment_date: "2026-07-23"}
+  - {component: decentralization-and-equilibrium-selection, level: 3, claims: [DD-C-0039, DD-C-0104, DD-C-0105, DD-C-0109], studies: [DD-002, DD-022], papers: [information-sharing-frontier], gaps: "every-equilibrium alignment absent", next_gate: strategic-utility-spine, editorial_judgment: true, judgment_date: "2026-07-23"}
+  - {component: implementation-or-impossibility, level: 2, claims: [DD-C-0013, DD-C-0053, DD-C-0086], studies: [DD-006B, DD-018], papers: [discovery-institutions, threshold-discovery], gaps: "observability and budget characterization absent", next_gate: strategic-utility-spine, editorial_judgment: true, judgment_date: "2026-07-23"}
+  - {component: external-evidence-base, level: 0, claims: [], studies: [], papers: [], gaps: "no authorized external or human evidence", next_gate: future-ethics-and-evidence-authorization, editorial_judgment: true, judgment_date: "2026-07-23"}
+  - {component: applications, level: 1, claims: [], studies: [DD-009, DD-010], papers: [discovery-institutions], gaps: "interfaces are synthetic and bounded", next_gate: application-specific-registration, editorial_judgment: true, judgment_date: "2026-07-23"}
+external_validation:
+  - {requirement: independent-proof-audit-or-reproduction, complete: false, evidence: []}
+  - {requirement: external-evidence-base, complete: false, evidence: []}
+  - {requirement: two-technical-reader-reports-or-equivalent, complete: false, evidence: []}
+  - {requirement: seminar-or-reading-group, complete: false, evidence: []}
+  - {requirement: externally-induced-revision, complete: false, evidence: []}

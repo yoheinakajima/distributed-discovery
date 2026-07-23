@@ -1,5 +1,15 @@
 # Master execution plan
 
+## Active editorial continuation — Phase 2 external legibility (2026-07-23)
+
+Issue #165, branch `docs/phase-2-external-legibility`, and
+[`PHASE_2_EXTERNAL_LEGIBILITY.md`](PHASE_2_EXTERNAL_LEGIBILITY.md) supersede the
+prior execution sequence without rewriting its history. Phase 1 is complete.
+Theorem-family execution, including Reliable Discovery, is on owner hold.
+This documentation and methods lane freezes claims, studies, runs, and theorem
+results. Its exact successor is a new DiscoveryBench Agents v1 registration
+session.
+
 ## Completed gate — Decentralized Recovery classical-overlap stop (2026-07-22)
 
 Issue #162 and PR #163 own the bounded registration gate. The exact decision
@@ -16,8 +26,9 @@ or Finding is created. The formal reduction, failed candidate, exact inherited
 state counts, resource caps, two-method design, and twelve schema-validated
 corruptions are preserved in
 `plans/DECENTRALIZED_RECOVERY_REGISTRATION.md` and the companion registration
-package. Reliable Discovery is the sole next executable program after this
-gate; it must begin in a separate session and branch.
+package. At the time of that decision Reliable Discovery was the sole next
+executable program; the Phase 2 owner directive above now preserves it as the
+next major theorem-family candidate while superseding that execution timing.
 
 ## Completed continuation — post-V5 theorem-spine consolidation (2026-07-22)
 

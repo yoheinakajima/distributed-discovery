@@ -48,8 +48,10 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "DD-022 proves an exact interval" in program
     assert "does not hold across every equilibrium" in program
     assert "centralized posterior top-<code>L</code> selector" in program
-    assert "Decentralized Recovery registration gate stopped at classical overlap" in program
-    assert "Reliable Discovery is now the next unregistered theorem program" in program
+    assert "stopped decentralized-recovery overlap gate" in program
+    assert "Phase 2 holds theorem-family execution" in program
+    assert "Reliable Discovery remains a major candidate but is deferred" in program
+    assert "DiscoveryBench Agents v1 registration" in program
     assert 'id="information-sharing-frontier"' in program
     assert 'href="publications/information-sharing-frontier.html"' in program
     assert "docs/theorem-spine.md" in program
@@ -73,6 +75,24 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert (output / "research/dd-008a.html").is_file()
     assert (output / "research/dd-006b.html").is_file()
     assert (output / "research/dd-009.html").is_file()
+    assert (output / "start-here.html").is_file()
+    assert (output / "methods.html").is_file()
+    start_here = (output / "start-here.html").read_text(encoding="utf-8")
+    assert "Start Here — Three Results" in start_here
+    assert all(
+        title in start_here
+        for title in (
+            "Shared Discovery Paradox",
+            "The Incentive to Ignore",
+            "When Does Information Sharing Improve Decentralized Discovery?",
+        )
+    )
+    assert "not an every-equilibrium theorem" in start_here
+    methods = (output / "methods.html").read_text(encoding="utf-8")
+    assert "not a claim that the process is novel, autonomous" in methods
+    relations = json.loads((output / "data/relations.json").read_text(encoding="utf-8"))
+    assert relations["contextual_routes"]["start-here.html"]
+    assert relations["contextual_routes"]["methods.html"]
     assert (output / "research/dd-010.html").is_file()
     assert (output / "research/dd-011.html").is_file()
     assert (output / "research/dd-012.html").is_file()
@@ -756,7 +776,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "When actions require teams, form the smallest viable teams and diversify those teams."
         in home
     )
-    assert "See the paradox" in home
+    assert "Start with three results" in home
     assert (output / "og.png").is_file()
 
     papers_page = (output / "publications.html").read_text(encoding="utf-8")
@@ -810,7 +830,9 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
 
     papers = (output / "publications.html").read_text(encoding="utf-8")
     assert "<h1>Papers</h1>" in papers
-    assert "Validated working paper" in papers
+    assert "Working paper" in papers
+    assert "Research note" in papers
+    assert "Synthesis note" in papers
     assert "SHA-256" in papers
     assert "Technical details" in papers
 

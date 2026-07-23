@@ -1,0 +1,66 @@
+schema_version: 1
+registered: false
+gates:
+  - id: strategic-utility-spine
+    order: 1
+    label: Strategic utility-spine characterization
+    central_question: Under what observability, budget, participation, action, and information conditions can utilities align discovery portfolios?
+    scope_boundary: Strategic acquisition, attention, disclosure, and action-selection implementation with coverage value, duplication, and planner-versus-equilibrium comparisons; excludes information geometry, threshold complementarity, reliability, correlated failure, communication limits, dynamics, and scaling.
+    closest_literature:
+      - valid-utility and welfare-sharing games
+      - distributed resource allocation
+      - potential and congestion games
+      - price of anarchy and price of stability
+    minimum_model_map: [DD-006, DD-006B, DD-012, DD-018, issue-162-classical-overlap-stop]
+    required_nonoverlap_witness: A registered discovery objective or constraint that is not already characterized by the closest classical utility-design result.
+    permitted_positive_result: Exact alignment characterization on a declared information, action, observability, budget, participation, and discrete-convexity domain.
+    permitted_impossibility: Alignment blocked by unobservable marginal value, budget balance, participation, or equilibrium multiplicity.
+    permitted_bounded_null: A finite registered search finding no improvement or no every-equilibrium closure on its declared domain.
+    permitted_classical_overlap_stop: Stop if the model reduces to a known valid-utility, welfare-sharing, potential, congestion, or resource-allocation game without a surviving discovery-specific statement.
+    dependencies: [complete-model-map, primary-literature-collision-audit, observability-and-budget-freeze]
+    reason_not_registered: Phase 2 execution hold is active and the model map and non-overlap witness are not yet fixed.
+    paper_gate: No paper until a registered study passes its evidence and non-overlap gates.
+    permitted_stops: [positive-characterization, impossibility, bound-only, bounded-null, classical-overlap]
+    prohibited_claims: [general-marginal-contribution-closure, every-equilibrium-alignment-without-proof]
+  - id: information-action-decomposition
+    order: 2
+    label: Information–Action Decomposition and Decentralized Separation Failure
+    central_question: When does centralized emulation preserve value, and when do decentralized incentives, differentiation, or coordination break separation?
+    scope_boundary: Separates centralized policy emulation from decentralized implementation under explicitly frozen information, action authority, observability, coordination, and payoffs.
+    closest_literature:
+      - Blackwell comparison
+      - team decision theory
+      - information design
+      - decentralized implementation
+    minimum_model_map: [information-structure, action-authority, policy-emulation-class, observability, payoff-game]
+    required_nonoverlap_witness: A pair of environments separating centralized emulation from decentralized incentive, differentiation, or coordination failure.
+    permitted_positive_result: A centralized decomposition or emulation theorem on a declared policy class.
+    permitted_impossibility: A decentralized separation-failure theorem under explicit incentive or coordination constraints.
+    permitted_bounded_null: A finite registered domain with no separation between centralized and decentralized values.
+    permitted_classical_overlap_stop: Stop if the candidate is only Blackwell monotonicity, a standard team problem, or an existing implementation result.
+    dependencies: [centralized-policy-class-freeze, decentralized-game-freeze, primary-literature-collision-audit]
+    reason_not_registered: Phase 2 execution hold is active and the centralized and decentralized objects are not yet jointly frozen.
+    paper_gate: No theorem-family paper before a registered gate establishes a surviving separation or impossibility.
+    permitted_stops: [positive-characterization, impossibility, bounded-counterexample, bounded-null, classical-overlap]
+    prohibited_claims: [better-information-lowers-fixed-centralized-frontier]
+  - id: discovery-order
+    order: 3
+    label: Discovery Order candidate
+    central_question: Can information structures be ordered for portfolio discovery after the complete domain and comparison relation are fixed?
+    scope_boundary: Comparison is undefined until priors, targets, team sizes, action budgets, technologies, authority, protocols, payoff games, approximation, and order properties are frozen.
+    closest_literature:
+      - Blackwell comparison
+      - Bergemann–Morris individual sufficiency
+      - Lehmann comparison
+      - Le Cam deficiency
+    minimum_model_map: [priors, target-spaces, team-sizes, action-budgets, technologies, authority, protocol-classes, payoff-games, exact-or-approximate-comparison, reflexivity, transitivity]
+    required_nonoverlap_witness: A comparison pair whose discovery ranking is not equivalent to an existing information order on the same declared domain.
+    permitted_positive_result: A preorder or partial order with proved domain, reflexivity, and transitivity properties.
+    permitted_impossibility: A proof that no nontrivial order with the proposed invariances exists, or a nontransitivity witness.
+    permitted_bounded_null: A finite registered comparison census with no separation from the named existing orders.
+    permitted_classical_overlap_stop: Stop if the candidate is Blackwell, individual sufficiency, Lehmann comparison, or deficiency under renamed primitives.
+    dependencies: [complete-domain-freeze, comparison-axioms, primary-literature-collision-audit]
+    reason_not_registered: Phase 2 execution hold is active and the domain, axioms, and non-overlap witness are not fixed.
+    paper_gate: No paper or public notation until a registered gate fixes the comparison and proves a surviving result.
+    permitted_stops: [preorder, partial-order, impossibility, nontransitivity-witness, bounded-null]
+    prohibited_claims: [publish-discovery-order-notation-before-domain-freeze, general-rho-star-theorem-for-M-ge-3]
