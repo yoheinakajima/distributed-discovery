@@ -1,4 +1,7 @@
 schema_version: 1
+contextual_routes:
+  start-here.html: [index.html, program.html, research.html, publications.html, methods.html]
+  methods.html: [index.html, start-here.html, program.html, claims.html, evidence.html]
 programs:
   foundations:
     label: Foundations and core architectures

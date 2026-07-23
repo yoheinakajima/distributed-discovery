@@ -22,22 +22,25 @@ exact byte-length/SHA-256 coverage for every generated download. The public
 surface contains no submission endpoint, account, cookie, analytics, or
 server-side user data.
 
-The current generated surface contains 77 HTML routes for 26 studies, 85
+The current generated surface contains 79 HTML routes for 26 studies, 85
 public data files, 18 Labs, and 23 checksum-covered downloads. The contextual
-`program.html` route explains the theorem spine, paper ownership, and the
-centralized-versus-selected-equilibrium boundaries without changing the
-five-item primary navigation or scientific inventory. The Program V5 Labs
+`start-here.html` route presents the three-result reading path, `methods.html`
+records the dry Phase 1 method, and `program.html` explains the theorem spine,
+paper ownership, and centralized-versus-selected-equilibrium boundaries without
+changing the five-item primary navigation or scientific inventory. The Program V5 Labs
 select immutable exact DD-019 through DD-022 outputs. Exact static-complete Labs
 never call a remote service or collect input.
 
-The Program route records the bounded Decentralized Recovery classical-overlap
-stop and identifies Reliable Discovery as the next unregistered gate. This
-wording adds no study, claim, run, route, Lab, data file, or download.
+The Program route records Phase 1 completion, the bounded Decentralized Recovery
+classical-overlap stop, the Phase 2 theorem-execution hold, DiscoveryBench Agents
+v1 as the next registration gate, and Reliable Discovery as a preserved later
+theorem-family candidate. This wording adds no study, claim, run, Lab, data
+file, or download.
 
-PRs #155–#156 deployed the paper-integrated surface and its mobile correction.
-Post-merge CI, Pages, live interaction checks, and immutable download checks
-pass; the deployed paper PDF has SHA-256
-`2f8b68d5a690e6369e4c3236313eb93f060bfbe73ec531903c090f6ec6f8b6a1`.
+PRs #155–#156 deployed the earlier paper-integrated surface and its mobile
+correction. The Phase 2 generated Frontier download has editorial-only SHA-256
+`a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13`;
+deployment acceptance is recorded separately after Pages succeeds.
 
 GitHub Actions builds the same ignored `site/dist` artifact from `main` and
 deploys it to <https://yoheinakajima.github.io/distributed-discovery/>. Never

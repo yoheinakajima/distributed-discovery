@@ -2565,12 +2565,29 @@ def _build_relationship_registry(
     configured = source.get("studies")
     programs = source.get("programs")
     families = source.get("theorem_families")
+    contextual_routes = source.get("contextual_routes", {})
     if (
         not isinstance(configured, dict)
         or not isinstance(programs, dict)
         or not isinstance(families, dict)
+        or not isinstance(contextual_routes, dict)
     ):
         raise RuntimeError("relationship registry requires programs, theorem families, and studies")
+    for route, targets in contextual_routes.items():
+        if (
+            not isinstance(route, str)
+            or not isinstance(targets, list)
+            or any(not isinstance(target, str) for target in targets)
+            or not (output / route).is_file()
+        ):
+            raise RuntimeError(f"invalid contextual relation: {route}")
+        route_source = (output / route).read_text(encoding="utf-8")
+        for target in targets:
+            if not (output / target).is_file():
+                raise RuntimeError(f"missing contextual relation target: {route}/{target}")
+            target_source = (output / target).read_text(encoding="utf-8")
+            if target not in route_source or route not in target_source:
+                raise RuntimeError(f"contextual relation is not bidirectional: {route}/{target}")
 
     studies_by_id = {str(study["id"]): study for study in studies}
     if set(configured) != set(studies_by_id):
@@ -2682,6 +2699,7 @@ def _build_relationship_registry(
         "source": "site/content/relations.yml",
         "programs": programs,
         "theorem_families": families,
+        "contextual_routes": contextual_routes,
         "relations": relations,
         "entity_counts": {
             "programs": len(programs),
@@ -2954,6 +2972,11 @@ def _render(
         '<section class="principle"><p>Share the evidence. <strong>Diversify the actions.</strong></p><p>When actions require teams, form the smallest viable teams and diversify those teams.</p></section>',
         1,
     )
+    home = home.replace(
+        '<a class="button primary" href="https://yoheinakajima.github.io/shared-discovery-paradox/">See the paradox</a>',
+        '<a class="button primary" href="start-here.html">Start with three results</a>',
+        1,
+    )
     _write(
         output,
         "index.html",
@@ -2964,12 +2987,46 @@ def _render(
             "index.html",
         ),
     )
+    start_here = """<header class="page-hero"><p class="eyebrow">Start Here — Three Results</p><h1>Three steps into Distributed Discovery</h1><p class="lede">A contextual reading path from the atomic paradox to strategic attention and the sharing frontier. The order is editorial; evidence status remains in the claim ledger.</p></header>
+<section class="card-grid paper-grid">
+<article class="card"><p class="eyebrow">1 · Canonical upstream entry</p><h2>Shared Discovery Paradox</h2><p><strong>Question:</strong> Can better pooled ranking produce worse group discovery?</p><p><strong>Title result:</strong> in the atomic fixture, one pooled answer can compress several searches into duplication.</p><p><strong>Strongest limitation:</strong> the separation depends on the declared signal, action, and protocol classes.</p><p><strong>Evidence:</strong> sourced upstream exact result. <strong>Status:</strong> canonical upstream entry; no submission or peer-review status represented here.</p><p><a href="https://yoheinakajima.github.io/shared-discovery-paradox/">Read the anchor</a> · <a href="research/dd-000.html">Study</a> · <a href="claims.html#DD-C-0005">Claim</a> · <a href="evidence.html">Evidence</a> · <a href="publications/incentive-to-ignore.html">Next paper</a></p></article>
+<article class="card"><p class="eyebrow">2 · Strategic-attention family</p><h2>The Incentive to Ignore</h2><p><strong>Question:</strong> Who should use a shared clue when independent private action routes remain?</p><p><strong>Title result:</strong> one shared-clue reader maximizes discovery in the frozen role class.</p><p><strong>Strongest limitation:</strong> unrestricted constant territorial policies can escape the evidence-responsive class.</p><p><strong>Evidence:</strong> analytic theorems plus independently reproduced bounded classifications. <strong>Status:</strong> working paper; not submitted, not peer reviewed, no DOI.</p><p><a href="publications/incentive-to-ignore.html">Read the paper</a> · <a href="research/dd-012.html">Study</a> · <a href="claims.html#DD-C-0059">Claim</a> · <a href="evidence.html">Evidence</a> · <a href="publications/information-sharing-frontier.html">Next paper</a></p></article>
+<article class="card"><p class="eyebrow">3 · Sharing-frontier family</p><h2>When Does Information Sharing Improve Decentralized Discovery?</h2><p><strong>Question:</strong> When does aggregation improve faster than sharing removes independent rescue?</p><p><strong>Title result:</strong> a residual-error criterion determines the sign of an adjacent sharing step under the registered rescue protocol.</p><p><strong>Strongest limitation:</strong> the decentralized positive interval is selection-dependent; it is not an every-equilibrium theorem.</p><p><strong>Evidence:</strong> analytic identities/theorems, independently reproduced bounded classifications, and a bounded null. <strong>Status:</strong> working paper; not submitted, not peer reviewed, no DOI.</p><p><a href="publications/information-sharing-frontier.html">Read the paper</a> · <a href="research/dd-021.html">Study</a> · <a href="claims.html#DD-C-0097">Claim</a> · <a href="evidence.html">Evidence</a> · <a href="publications/common-source-trap.html">Next theorem-family paper</a></p></article>
+</section>
+<section class="content-section prose"><h2>Continue through the canon</h2><p><a href="publications/common-source-trap.html">Common-Source Trap</a> · <a href="publications/threshold-discovery.html">Threshold Discovery</a> · <a href="publications.html">notes and syntheses</a> · <a href="research.html">studies</a> · <a href="labs.html">Labs</a> · <a href="benchmark.html">DiscoveryBench</a> · <a href="methods.html">methods</a></p></section>"""
+    _write(
+        output,
+        "start-here.html",
+        _page(
+            "Start Here — Three Results",
+            "A three-result reading path through Distributed Discovery.",
+            start_here,
+            "start-here.html",
+        ),
+    )
+    methods_body = """<header class="page-hero"><p class="eyebrow">Factual methods record</p><h1>How Phase 1 work was recorded</h1><p class="lede">Issues, branches, living plans, claim statuses, immutable runs, independent checks, corruptions, failed results, paper gates, and human owner decisions are recorded as repository practices.</p></header>
+<section class="content-section prose"><h2>Boundary</h2><p>This is not a claim that the process is novel, autonomous, externally validated, peer reviewed, or sufficient for research quality. Exact computations and Monte Carlo estimates remain distinct. Internal reproduction is not external review. Failed and null results remain visible. No human study was conducted.</p><p><a href="https://github.com/yoheinakajima/distributed-discovery/blob/main/docs/methods/phase-1-research-methods.md">Read the methods record</a> · <a href="claims.html">Claim ledger</a> · <a href="evidence.html">Immutable evidence</a> · <a href="program.html">Program governance</a></p></section>"""
+    _write(
+        output,
+        "methods.html",
+        _page(
+            "Methods",
+            "A factual repository methods record for Phase 1.",
+            methods_body,
+            "methods.html",
+        ),
+    )
     program_body = f"""<header class="page-hero"><p class="eyebrow">How the work is organized</p><h1>The Distributed Discovery program</h1><p class="lede">Distributed Discovery is the research program on collective search under dispersed information. A discovery architecture is the formal object: the rules that turn evidence into a portfolio of search actions.</p></header>
 <section class="content-section prose"><h2>One program, several output types</h2><ol><li><strong>The research program</strong> holds the complete agenda.</li><li><strong>Theorem families</strong> organize durable mathematical questions across studies.</li><li><strong>Registered studies</strong> are the smallest evidence-producing units and own models, proofs or certificates, runs, and claims.</li><li><strong>Papers</strong> are theorem-family arguments admitted by a separate editorial gate; a study does not automatically become a paper.</li><li><strong>The living synthesis</strong>, <em>The Architecture of Distributed Discovery</em>, maps the whole program without silently re-owning theorem novelty.</li><li><strong>Infrastructure</strong> includes DiscoveryBench, Labs, schemas, verifiers, the claim ledger, and audit tooling.</li></ol></section>
 <section class="content-section prose" id="information-sharing-frontier"><p class="eyebrow">Completed theorem family</p><h2>From information to implemented discovery</h2><p>Program V5, <em>The Information Sharing Frontier</em>, is complete at its registered scope. Signal geometry determines what a pooled posterior can cover with one, two, or more distinct actions. Independent rescue determines whether folding another private search into a common action helps or hurts. A recovery budget then asks how many pooled actions recover a named private baseline.</p><p><strong>Positive result:</strong> DD-022 proves an exact interval where sharing raises discovery and each symmetric agent’s payoff under the declared posterior-only identical-mixing equilibrium selection.</p><p><strong>Essential limitation:</strong> that comparison does not hold across every equilibrium. Roles and signal ownership can select different portfolios, and DD-021’s full-capacity recovery theorem assumes a centralized posterior top-<code>L</code> selector. A shared posterior alone does not implement the planner.</p><p><a href="research/dd-019.html">DD-019 Signal geometry</a> · <a href="research/dd-020.html">DD-020 Independent rescue</a> · <a href="research/dd-021.html">DD-021 Centralized recovery</a> · <a href="research/dd-022.html">DD-022 Selected decentralized sharing</a> · <a href="publications/information-sharing-frontier.html">Read the working paper</a> · <a href="{REPOSITORY_URL}/blob/main/docs/theorem-spine.md">Inspect the claim-linked theorem spine</a></p></section>
 <section class="content-section prose"><h2>Next open boundary</h2><p>The bounded Decentralized Recovery registration gate stopped at classical overlap: the frozen equal-sharing action game is singleton congestion, and visible sequential occupancy adds ordinary backward induction without enlarging the every-equilibrium top-two recovery region. No study, claim, run, or paper was created.</p><p>Reliable Discovery is now the next unregistered theorem program. It asks when reliable, unreliable, repeated, or overlapping actions should diversify or concentrate, and must establish content beyond classical reliability allocation before registration. The Price of Missing Provenance follows separately.</p></section>
 <section class="content-section prose"><h2>How evidence status works</h2><p>Definitions, analytic theorems, exact bounded computations, independent reproductions, estimates, negative results, conjectures, and editorial recommendations remain distinct. Scientific statements link to stable claim IDs; generated numerical claims also link to immutable runs.</p><p><a href="claims.html">Inspect {len(claims)} scoped claims</a> · <a href="evidence.html">Inspect {len(runs)} passing runs</a> · <a href="research.html">Browse all {len(studies)} studies</a></p></section>
 <section class="content-section prose"><h2>How the work is published</h2><p>The canonical entry paper introduces the atomic paradox. Theorem-family papers own durable mathematical questions. Working notes support intermediate or synthetic arguments. The living synthesis preserves the complete intellectual account. Reproducible studies, Labs, and DiscoveryBench expose evidence and interfaces.</p><p>No journal submission status is represented here. A validated PDF, exact run, or polished site does not by itself satisfy the paper-admission rule.</p><p><a href="publications.html">Browse working papers</a> · <a href="{REPOSITORY_URL}/blob/main/docs/research-governance.md">Read the governance source</a></p></section>"""
+    program_body = program_body.replace(
+        '<section class="content-section prose"><h2>Next open boundary</h2><p>The bounded Decentralized Recovery registration gate stopped at classical overlap: the frozen equal-sharing action game is singleton congestion, and visible sequential occupancy adds ordinary backward induction without enlarging the every-equilibrium top-two recovery region. No study, claim, run, or paper was created.</p><p>Reliable Discovery is now the next unregistered theorem program. It asks when reliable, unreliable, repeated, or overlapping actions should diversify or concentrate, and must establish content beyond classical reliability allocation before registration. The Price of Missing Provenance follows separately.</p></section>',
+        '<section class="content-section prose"><h2>Phase boundary and hold</h2><p>Phase 1 is complete: Programs V1–V5, this Frontier, post-V5 consolidation, and the stopped decentralized-recovery overlap gate form the completed boundary. This does not mean every theorem direction is complete.</p><p>Phase 2 holds theorem-family execution. Reliable Discovery remains a major candidate but is deferred. The next substantive session is DiscoveryBench Agents v1 registration; no provider call, model run, cost, trace, private seed, or result is underway. <a href="start-here.html">Start with three results</a> · <a href="methods.html">Read the factual methods record</a>.</p></section>',
+        1,
+    )
     _write(
         output,
         "program.html",
@@ -2993,6 +3050,11 @@ def _render(
         for status in sorted({str(study["evidence_status"]) for study in studies})
     )
     research = f"""<header class="page-hero"><p class="eyebrow">Collective search under dispersed information</p><h1>Research</h1><p class="lede">Browse studies of how evidence, roles, incentives, timing, and action allocation shape collective search.</p><p><a href="program.html">See how studies fit into theorem families, papers, and the living synthesis.</a></p></header><section class="catalog" data-research-catalog><div class="research-tools"><div><label for="study-search">Search studies</label><input id="study-search" type="search" placeholder="Search by question, title, or study ID" autocomplete="off"></div><fieldset class="catalog-selects"><legend>Relationship filters</legend><div><label for="study-program">Program</label><select id="study-program"><option value="all">All programs</option>{program_options}</select></div><div><label for="study-family">Theorem family</label><select id="study-family"><option value="all">All theorem families</option>{family_options}</select></div><div><label for="study-evidence">Evidence status</label><select id="study-evidence"><option value="all">All evidence statuses</option>{evidence_options}</select></div></fieldset><div class="filter-group" aria-label="Filter studies"><button type="button" class="filter-button" data-study-filter="all" aria-pressed="true">All</button><button type="button" class="filter-button" data-study-filter="key-results" aria-pressed="false">Key results</button><button type="button" class="filter-button" data-study-filter="active" aria-pressed="false">Active</button><button type="button" class="filter-button" data-study-filter="planned" aria-pressed="false">Planned</button><button type="button" class="filter-button" data-study-filter="tools" aria-pressed="false">Tools and infrastructure</button></div><p id="study-status" class="result-count" aria-live="polite">{len(studies)} studies shown</p></div><noscript><p class="callout">JavaScript is off. All {len(studies)} studies remain visible; use browser find to search this page.</p></noscript><div class="card-grid study-grid">{cards}</div></section>"""
+    research = research.replace(
+        '<p><a href="program.html">See how studies fit into theorem families, papers, and the living synthesis.</a></p>',
+        '<p><a href="start-here.html">Start with three results</a> · <a href="program.html">See how studies fit into theorem families, papers, and the living synthesis.</a></p>',
+        1,
+    )
     _write(
         output,
         "research.html",
@@ -3005,11 +3067,16 @@ def _render(
     )
     for study in studies:
         _write(output, f"research/{study['slug']}.html", _study_page(study, claims_by_id))
+    prominence_source = _read_yaml(root / "docs/claim-prominence.yml")
+    prominence = prominence_source["claims"]
+    if set(prominence) != {str(claim["id"]) for claim in claims}:
+        raise RuntimeError("claim prominence registry does not match live claims")
     claim_items = "".join(
-        '<article id="{id}" class="card"><p class="eyebrow">{id} · {status} · {claim_type}</p><h2>{short_name}</h2><p>{statement}</p><p><strong>Scope:</strong> {scope}</p><p><a href="research/dd-{suffix}.html">{study_id}</a></p></article>'.format(
+        '<article id="{id}" class="card"><p class="eyebrow">{id} · {status} · {claim_type}</p><p class="status-row"><span class="status-chip">{prominence}</span></p><h2>{short_name}</h2><p>{statement}</p><p><strong>Scope:</strong> {scope}</p><p><a href="research/dd-{suffix}.html">{study_id}</a></p></article>'.format(
             id=html.escape(str(claim["id"])),
             status=html.escape(str(claim["status"])),
             claim_type=html.escape(str(claim["claim_type"])),
+            prominence=html.escape(str(prominence[str(claim["id"])]).replace("-", " ")),
             short_name=html.escape(str(claim["short_name"])),
             statement=html.escape(str(claim["statement"])),
             scope=html.escape(str(claim["scope"])),
@@ -3018,7 +3085,7 @@ def _render(
         )
         for claim in claims
     )
-    claims_body = f"""<header class="page-hero"><p class="eyebrow">Technical evidence</p><h1>Claims</h1><p class="lede">Stable claim anchors connect every formal statement to its scope and evidence. This is the technical ledger; start with <a href="results.html">Results</a> for the plain-language findings.</p><p class="quiet-meta">No unvalidated values are rendered as claims.</p></header><section class="card-grid claim-grid">{claim_items}</section>"""
+    claims_body = f"""<header class="page-hero"><p class="eyebrow">Technical evidence</p><h1>Claims</h1><p class="lede">Stable claim anchors connect every formal statement to its scope and evidence. This is the technical ledger; start with <a href="results.html">Results</a> for the plain-language findings.</p><p class="quiet-meta">No unvalidated values are rendered as claims. Editorial prominence badges control reading role only and never change evidence status.</p></header><section class="card-grid claim-grid">{claim_items}</section>"""
     _write(
         output,
         "claims.html",
@@ -3076,6 +3143,15 @@ def _render(
         for item in publications
     )
     publications_body = f"""<header class="page-hero"><p class="eyebrow">Long-form research</p><h1>Papers</h1><p class="lede">Working papers on how groups acquire, share, and convert evidence into portfolios of action.</p><p><a href="program.html">See the paper-admission rule and publication architecture.</a></p></header><section class="card-grid paper-grid">{publication_items}</section><p class="quiet-meta"><a href="data/downloads.json">Complete download checksum manifest</a></p>"""
+    publications_body = publications_body.replace(
+        '<p><a href="program.html">See the paper-admission rule and publication architecture.</a></p>',
+        '<p><a href="start-here.html">Start with three results</a> · <a href="program.html">See the four-layer hierarchy and paper-admission rule.</a></p>',
+        1,
+    ).replace(
+        '<p class="quiet-meta"><a href="data/downloads.json">Complete download checksum manifest</a></p>',
+        '<p class="quiet-meta">All project PDFs are not submitted, not peer reviewed, and have no DOI. <a href="data/downloads.json">Complete download checksum manifest</a></p>',
+        1,
+    )
     _write(
         output,
         "publications.html",
@@ -3087,6 +3163,7 @@ def _render(
         ),
     )
     for item in publications:
+        publication_label = human_status(item["status"], kind="publication")
         status_bits = [str(item["status"]).replace("-", " ")]
         if item["doi"]:
             status_bits.append(f"DOI {item['doi']}")
@@ -3102,7 +3179,7 @@ def _render(
             if item["citation_bib"]
             else ""
         )
-        detail_body = f"""<header class="page-hero"><p class="eyebrow">Working paper</p><h1>{html.escape(str(item["title"]))}</h1><p class="lede">{html.escape(publication_purposes[str(item["slug"])])}</p><p class="status-row"><span class="status-chip">{html.escape(human_status(item["status"], kind="publication"))}</span><span>{html.escape(str(item["page_count"]))} pages</span></p><p><a class="button primary" href="../{html.escape(str(item["download"]))}">Download PDF</a></p></header><section class="content-section prose"><h2>Citation</h2><p>{html.escape(str(item["citation"]))}</p>{bibtex}</section><section class="content-section prose"><h2>Source and provenance</h2><p><a href="{REPOSITORY_URL}/blob/main/{html.escape(str(item["build_source"]))}">Read the build source</a> · <a href="{REPOSITORY_URL}/tree/main/papers/{html.escape(str(item["slug"]))}">Inspect validation and provenance</a></p><details class="technical-details"><summary>Technical details</summary><p>{html.escape(" · ".join(status_bits))}</p><p>The download is copied only after its SHA-256 matches the committed validation record.</p><p>SHA-256 <code>{html.escape(str(item["sha256"]))}</code></p></details></section>"""
+        detail_body = f"""<header class="page-hero"><p class="eyebrow">{html.escape(publication_label)}</p><h1>{html.escape(str(item["title"]))}</h1><p class="lede">{html.escape(publication_purposes[str(item["slug"])])}</p><p class="status-row"><span class="status-chip">{html.escape(publication_label)}</span><span>{html.escape(str(item["page_count"]))} pages</span></p><p><a class="button primary" href="../{html.escape(str(item["download"]))}">Download PDF</a></p></header><section class="content-section prose"><h2>Citation</h2><p>{html.escape(str(item["citation"]))}</p>{bibtex}</section><section class="content-section prose"><h2>Source and provenance</h2><p><a href="{REPOSITORY_URL}/blob/main/{html.escape(str(item["build_source"]))}">Read the build source</a> · <a href="{REPOSITORY_URL}/tree/main/papers/{html.escape(str(item["slug"]))}">Inspect validation and provenance</a></p><details class="technical-details"><summary>Technical details</summary><p>{html.escape(" · ".join(status_bits))}</p><p>The download is copied only after its SHA-256 matches the committed validation record.</p><p>SHA-256 <code>{html.escape(str(item["sha256"]))}</code></p></details></section>"""
         _write(
             output,
             str(item["detail"]),

@@ -1,12 +1,18 @@
 # Final handoff — Decentralized Recovery overlap stop
 
+Supersession note (2026-07-23): this handoff accurately records the completed
+stop and its then-current next step. The Phase 2 owner directive now holds
+theorem-family execution, preserves Reliable Discovery as a deferred major
+candidate, and makes a new DiscoveryBench Agents v1 registration session the
+exact next substantive session.
+
 Issue #162 and PR #163 complete the bounded Decentralized Recovery and
 Equilibrium Robustness registration decision as `stop-classical-overlap`.
 The frozen action game is classical singleton congestion with equal sharing;
 the sequential visible-occupancy form adds only ordinary backward induction.
 No information-conditioned equilibrium statement survives after reduction.
 No study ID, claim, run, implementation, or paper is created. Reliable
-Discovery is the exact next executable registration gate. See
+Discovery was the exact next executable registration gate at this handoff. See
 `reports/roadmap-consolidation/decentralized-recovery-classical-overlap-stop.md`.
 
 PR #163 passed branch CI `29974250347` and paper/site build `29974250393`, then

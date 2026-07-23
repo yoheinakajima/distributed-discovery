@@ -2,7 +2,7 @@
 
 - Review date: 2026-07-22 (America/Los_Angeles)
 - Artifact: `Three_Results_in_Distributed_Discovery.pdf`
-- PDF SHA-256: `40506068a03e6e7ff0dd8c20751b792a9e669e8fd788005dff1c58540131206f`
+- PDF SHA-256: `9eb896353b1210706d6108685dde963e02d6a5ebc64af9f9f69c08c01f5ebc96`
 - Format: 14 letter-size pages
 - Renderer: Poppler `pdftoppm`, PNG at 120 dpi
 - Scope: every page reviewed at rendered-page scale
@@ -26,6 +26,13 @@ The final pass found:
   scale;
 - stable heading hierarchy and continuous page numbering;
 - no unresolved-reference markers, broken characters, or unintended blank pages.
+
+## Phase 2 editorial rebuild
+
+Reviewed 2026-07-22 after status and ownership alignment. Two consecutive builds
+were byte-identical at SHA-256
+`9eb896353b1210706d6108685dde963e02d6a5ebc64af9f9f69c08c01f5ebc96`.
+All 14 pages pass the same all-page criteria above; no visual defect was found.
 
 The Cycle H pass specifically rechecked the expanded abstract, evidence table on
 page 3, exact canonical Bellman result and boxed equality on page 6, unified-

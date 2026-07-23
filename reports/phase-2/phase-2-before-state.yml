@@ -1,0 +1,51 @@
+schema_version: 1
+captured_utc: "2026-07-23T04:04:05Z"
+git:
+  main_sha: 60517b4a31be417d078ea0868d30622077af2c0d
+  issue: 165
+  branch: docs/phase-2-external-legibility
+  open_substantive_prs: 0
+  prior_stop_issue: 162
+  canonical_upstream_pin: 5025cc8e8f2f8ca015dff2066f08f81ad5715a51
+scientific:
+  claims:
+    count: 110
+    maximum_id: DD-C-0110
+    git_blob: 8f262daf3aa43f2505d415988d8eca6f0ecd3a42
+  studies:
+    count: 26
+    maximum_id: DD-022
+    sorted_set_sha256: 05c09c15029998698127b5ef68fc0e1df86b6951b6e4feb602db60601bee5585
+  manifests:
+    count: 51
+    passing: 48
+    set_sha256: dc7140a6bd36e931dc96c0e9eacff2fd734d1d0b69aa6848e20603a5ef2e3163
+    passing_run_list_sha256: 0af5fcc5f049b66a53763a6ccd49107c0ffa27033ac2b947a3f8043b32d18442
+  verified_results_tree_sha256: 50d83d4488a33218f949c520bfa0da9c765ed37677aa3900062b158afac64434
+  python_sources: 159
+papers:
+  count: 7
+  total_pages: 115
+  artifacts:
+    - {slug: foundations, pages: 12, sha256: e096183159f8c016f116b1a97fc0721948bbee2aca6dd1ae251d0a2af95a32e4}
+    - {slug: three-results, pages: 14, sha256: 40506068a03e6e7ff0dd8c20751b792a9e669e8fd788005dff1c58540131206f}
+    - {slug: discovery-institutions, pages: 3, sha256: 9bad1e7aaebd07851613f7f38a5c1a3654ca78363cc95f092f5b97bf0f9cee7b}
+    - {slug: common-source-trap, pages: 20, sha256: c997bba31c021bd799f2b3a561e8e558a1334f844aa87a448ade10319dac2ad3}
+    - {slug: incentive-to-ignore, pages: 20, sha256: ee9e27f741d25a9597994f18caf2bf406098db7aca4d2ed067a7a011f64be250}
+    - {slug: threshold-discovery, pages: 20, sha256: b38bb30f3ce63889526a092d78dd3f202d3beb54178bcdc272aba85c321b1995}
+    - {slug: information-sharing-frontier, pages: 26, sha256: 2f8b68d5a690e6369e4c3236313eb93f060bfbe73ec531903c090f6ec6f8b6a1}
+site:
+  html_routes: 77
+  route_registry_sha256: a551b68b644f2974d9870f954c93ea2990550892088491640f89ef485f1bc080
+  public_data_files: 85
+  labs: 18
+  downloads: 23
+  download_manifest_sha256: e26726fb092762c5d2e5acc495fce74ae6835fb88ad0bdd7884487487e949584
+tests:
+  collected: 249
+preserved_untracked:
+  - papers/information-sharing-frontier/paper-audit 2.json
+  - papers/information-sharing-frontier/visual-qa 2.md
+  - plans/POST_V5_THEOREM_SPINE_CONSOLIDATION 2.md
+  - reports/roadmap-consolidation/post-v5-literature-and-nonoverlap 2.md
+  - reports/roadmap-consolidation/post-v5-next-program-gate 2.yml

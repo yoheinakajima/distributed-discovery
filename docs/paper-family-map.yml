@@ -1,5 +1,10 @@
 schema_version: 1
 program: Distributed Discovery
+phase_2:
+  theorem_execution_hold: true
+  reliable_discovery: preserved-and-deferred
+  next_active_registration: discoverybench-agents-v1
+  hierarchy: publication-hierarchy.yml
 synthesis:
   title: The Architecture of Distributed Discovery
   subtitle: Foundations, Results, and Open Problems
@@ -51,7 +56,7 @@ families:
     likely_literature: [reliability allocation, coverage, congestion games, coalition formation, team production]
     synthesis_chapters: [institutions-action-technologies, north-star-theory]
     risks_of_overlap: [discovery implementation, dynamic architecture]
-    editorial_disposition: hold Threshold Discovery pending Reliable Discovery
+    editorial_disposition: Threshold Discovery remains a flagship working paper; Reliable Discovery is preserved as a deferred major candidate under the Phase 2 execution hold
   - family_id: discovery-implementation
     provisional_title: Discovery Implementation
     central_question: Which information, action, transfer, and observability rules implement discovery portfolios?

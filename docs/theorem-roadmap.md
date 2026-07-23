@@ -1,5 +1,11 @@
 # Theorem roadmap and research portfolio
 
+> Phase 2 sequencing note (2026-07-23): all theorem-family execution is held.
+> Reliable Discovery is preserved as a major candidate, not queued or promised.
+> The next substantive session is DiscoveryBench Agents v1 registration. The
+> three unregistered readiness gates are recorded in
+> [`reports/roadmap-consolidation/phase-2-theorem-gates.md`](../reports/roadmap-consolidation/phase-2-theorem-gates.md).
+
 ## 1. Purpose
 
 **Distributed Discovery** is the research program on *collective search under

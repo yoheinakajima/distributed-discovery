@@ -1,0 +1,86 @@
+schema_version: 1
+captured_utc: "2026-07-23T05:56:07Z"
+comparison_base: 60517b4a31be417d078ea0868d30622077af2c0d
+git:
+  branch: docs/phase-2-external-legibility
+  issue: 165
+  pull_request: 166
+  canonical_upstream_pin: 5025cc8e8f2f8ca015dff2066f08f81ad5715a51
+scientific:
+  claims:
+    count: 110
+    maximum_id: DD-C-0110
+    git_blob: 8f262daf3aa43f2505d415988d8eca6f0ecd3a42
+    changed_from_baseline: false
+  studies:
+    count: 26
+    maximum_id: DD-022
+    sorted_set_sha256: 05c09c15029998698127b5ef68fc0e1df86b6951b6e4feb602db60601bee5585
+    changed_from_baseline: false
+  manifests:
+    count: 51
+    passing: 48
+    set_sha256: dc7140a6bd36e931dc96c0e9eacff2fd734d1d0b69aa6848e20603a5ef2e3163
+    passing_run_list_sha256: 0af5fcc5f049b66a53763a6ccd49107c0ffa27033ac2b947a3f8043b32d18442
+    changed_from_baseline: false
+  verified_results_tree_sha256: 50d83d4488a33218f949c520bfa0da9c765ed37677aa3900062b158afac64434
+  verified_results_changed_from_baseline: false
+  python_sources: 159
+papers:
+  count: 7
+  total_pages: 119
+  metadata_files: 7
+  metadata_set_sha256: 97dcbb2734b757e7deb61a8debf63b1872c2e6e3c61a2ae3f93aaea961305622
+  builds_byte_identical: true
+  all_pages_visually_reviewed: true
+  artifacts:
+    - {slug: foundations, pages: 12, sha256: 8875926a52f0b8e722f7ce827c456c4b694f9e981c21c4b15bf2b3c60b83e76b}
+    - {slug: three-results, pages: 14, sha256: 9eb896353b1210706d6108685dde963e02d6a5ebc64af9f9f69c08c01f5ebc96}
+    - {slug: discovery-institutions, pages: 4, sha256: 78606f732f105d79395409dcb9d7224d72aa1e44312ca30ff5719d049afd98a8}
+    - {slug: common-source-trap, pages: 21, sha256: afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7}
+    - {slug: incentive-to-ignore, pages: 21, sha256: 651c91fb68df6b2f1397ca86f3842b7c2fa9c067601957c32401a7f5e95cd24b}
+    - {slug: threshold-discovery, pages: 21, sha256: 634e96662989a3fd6efb5fc3e6919883897e60511826e25c6d0176bac4af9249}
+    - {slug: information-sharing-frontier, pages: 26, sha256: a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13}
+literature:
+  bibliography_keys: 72
+  bibliography_key_set_sha256: 80a7fbda6f68fd822506a4a5e0bcca7f4797ec6a5e8728f81f7547f0b9fb92c7
+  family_coverage_entries: 15
+  paper_citation_checks: 31
+claim_prominence:
+  claims_mapped: 110
+  categories:
+    bounded-null-or-failed-search: 8
+    definition-or-framework-object: 1
+    exact-bounded-classification: 47
+    minimal-counterexample: 12
+    scoped-theorem-or-impossibility: 27
+    spine-title-theorem: 6
+    structural-identity-or-lemma: 5
+    synthetic-estimate: 4
+site:
+  html_routes: 79
+  route_registry_sha256: 8798f0f64703439864759b43f3c61a73be897b7cb93dbda13df7bc208d74e907
+  public_data_files: 85
+  labs: 18
+  downloads: 23
+  download_manifest_sha256: 3266fd7faf32ff1dc6c055dca1377c83c79818c7504f4e7398a7a5acc92d834a
+  relations_sha256: 5265e13d624b6ca8c3d5d428b0d27ceac5b018fd693d935b87ae736f10ae1866
+tests:
+  collected: 255
+prohibited_artifacts:
+  dd_023_exists: false
+  dd_c_0111_exists: false
+  new_study: false
+  new_claim: false
+  new_run: false
+  model_provider_call: false
+  paid_api_call: false
+  external_contact: false
+  activegraph_mutation: false
+  sqlite_added: false
+preserved_untracked:
+  - papers/information-sharing-frontier/paper-audit 2.json
+  - papers/information-sharing-frontier/visual-qa 2.md
+  - plans/POST_V5_THEOREM_SPINE_CONSOLIDATION 2.md
+  - reports/roadmap-consolidation/post-v5-literature-and-nonoverlap 2.md
+  - reports/roadmap-consolidation/post-v5-next-program-gate 2.yml

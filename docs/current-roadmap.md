@@ -1,4 +1,10 @@
-# Current roadmap — Reliable Discovery registration next
+# Current roadmap — Phase 2 hold; DiscoveryBench Agents registration next
+
+Phase 1 is complete. During Phase 2, theorem-family execution is held. Reliable
+Discovery remains the next major theorem-family candidate but is not the next
+active registration. The exact next substantive session is a new
+DiscoveryBench Agents v1 registration session; its current artifact is a
+prospectus only and contains no study ID, calls, costs, traces, or results.
 
 Programs V1, V2, and the required Program V3 sequence are complete at their
 registered scopes. Each new research milestone requires its own
@@ -58,8 +64,10 @@ implementation source, paper, route, Lab, or Finding is created. The durable
 decision is in
 [`decentralized-recovery-registration-decision.yml`](../reports/roadmap-consolidation/decentralized-recovery-registration-decision.yml).
 
-**Reliable Discovery — Diversity–Redundancy under reliability and overlap** is
-now the sole next executable program. Its separate registration must identify
+**Reliable Discovery — Diversity–Redundancy under reliability and overlap** was
+the next executable program under the completed post-V5 decision. The Phase 2
+owner directive supersedes that timing and defers it. Any eventual separate
+registration must identify
 content beyond classical separable-concave reliability allocation, freeze the
 information-conditioned model and comparison baseline, count resources, and
 design independent verification and corruptions before allocating a study ID.
@@ -69,12 +77,12 @@ Provenance, Truth/Obedience/Budget Balance, Rate–Discovery, Discovery Order,
 dynamic and large-team synthesis, and The Architecture of Distributed Discovery
 follow in the order and at the promotion gates in `docs/theorem-roadmap.md`.
 
-Operational resume commands:
+Operational next-session command:
 
 ```sh
 git switch main
 git pull --ff-only origin main
-make verify
+git status --short --branch
 ```
 
 DD-019 through DD-022 are complete and deployed; none of their primary runs

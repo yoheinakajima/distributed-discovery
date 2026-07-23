@@ -1,0 +1,219 @@
+schema_version: 1
+audit_limits:
+  certifies_novelty: false
+  certifies_completeness: false
+  certifies_priority: false
+  certifies_interpretation: false
+  certifies_journal_fit: false
+required_adjacencies: [LIT-001, LIT-002, LIT-003, LIT-004, LIT-005, LIT-006, LIT-007, LIT-008, LIT-009, LIT-010, LIT-011, LIT-012, LIT-013, LIT-014, LIT-015]
+entries:
+  - adjacency_id: LIT-001
+    theorem_family: organizational-architecture
+    topic: hierarchies and polyarchies
+    primary_keys: [SahStiglitz1986]
+    stable_urls: [https://www.jstor.org/stable/1806069]
+    paper_slugs: [foundations, common-source-trap, discovery-institutions]
+    anchors: {foundations: "Introduction", common-source-trap: "Related literature", discovery-institutions: "Acquisition"}
+    overlap: "Alternative screening architectures trade false positives and false negatives."
+    surviving_boundary: "DD studies finite discovery portfolios, source choice, and action allocation rather than a general organizational error architecture."
+    disposition: required
+    search_date: "2026-07-23"
+    automated_status: checked
+    human_status: assessed
+    notes: "Publisher/JSTOR record checked; interpretation remains human."
+  - adjacency_id: LIT-002
+    theorem_family: parallel-search
+    topic: parallel search without coordination and parallel R&D
+    primary_keys: [KormanRodeh2020, BranderAmitAntweiler2002]
+    stable_urls: [https://doi.org/10.1016/j.jcss.2020.05.003, https://doi.org/10.1287/mnsc.48.7.891.2818]
+    paper_slugs: [common-source-trap, discovery-institutions]
+    anchors: {common-source-trap: "Related literature", discovery-institutions: "Acquisition"}
+    overlap: "Multiple searchers can duplicate effort under limited coordination."
+    surviving_boundary: "The common-source theorem concerns endogenous evidence correlation under a homogeneous equal-prize one-shot game."
+    disposition: required
+    search_date: "2026-07-23"
+    automated_status: checked
+    human_status: assessed
+    notes: "Reliability and repeated-search extensions remain on hold."
+  - adjacency_id: LIT-003
+    theorem_family: organizational-exploration
+    topic: exploration, exploitation, and network convergence
+    primary_keys: [March1991, LazerFriedman2007]
+    stable_urls: [https://doi.org/10.1287/orsc.2.1.71, https://doi.org/10.2189/asqu.52.4.667]
+    paper_slugs: [foundations, common-source-trap, incentive-to-ignore]
+    anchors: {foundations: "Introduction", common-source-trap: "Related literature", incentive-to-ignore: "Related literature"}
+    overlap: "Communication and imitation can reduce sustained diversity."
+    surviving_boundary: "DD isolates exact finite signal-to-action portfolio mechanisms, not organizational learning dynamics."
+    disposition: required
+    search_date: "2026-07-23"
+    automated_status: checked
+    human_status: assessed
+    notes: "Not a claim that communication is generally harmful."
+  - adjacency_id: LIT-004
+    theorem_family: organizational-transparency
+    topic: transparency and localized experimentation
+    primary_keys: [Bernstein2012]
+    stable_urls: [https://doi.org/10.1177/0001839212453028]
+    paper_slugs: [foundations, common-source-trap, incentive-to-ignore]
+    anchors: {foundations: "Introduction", common-source-trap: "Related literature", incentive-to-ignore: "Related literature"}
+    overlap: "More observation can change experimentation and control."
+    surviving_boundary: "The DD attention result is a synthetic one-shot coverage mechanism, not field evidence about transparency."
+    disposition: required
+    search_date: "2026-07-23"
+    automated_status: checked
+    human_status: assessed
+    notes: "Empirical organizational evidence is external context only."
+  - adjacency_id: LIT-005
+    theorem_family: division-of-cognitive-labor
+    topic: scientific effort and epistemic diversity
+    primary_keys: [Kitcher1990, Zollman2007, WeisbergMuldoon2009]
+    stable_urls: [https://doi.org/10.2307/2026796, https://doi.org/10.1086/525605, https://doi.org/10.1086/644786]
+    paper_slugs: [foundations, common-source-trap]
+    anchors: {foundations: "Introduction", common-source-trap: "Related literature"}
+    overlap: "Research communities allocate effort across approaches and communication networks."
+    surviving_boundary: "DD's source and action diversity are distinct finite variables under an explicit discovery objective."
+    disposition: required
+    search_date: "2026-07-23"
+    automated_status: checked
+    human_status: assessed
+    notes: "Landscape-model conclusions are model-sensitive."
+  - adjacency_id: LIT-006
+    theorem_family: welfare-sharing
+    topic: valid utility and covering games
+    primary_keys: [Vetta2002, Gairing2009]
+    stable_urls: [https://doi.org/10.1109/SFCS.2002.1181966, https://doi.org/10.1007/978-3-642-10841-9_18]
+    paper_slugs: [foundations, threshold-discovery]
+    anchors: {foundations: "Introduction", threshold-discovery: "Related literature"}
+    overlap: "Coverage welfare and local utilities have established equilibrium guarantees and bounds."
+    surviving_boundary: "DD retains its declared information, observability, budget, and equilibrium-selection restrictions."
+    disposition: required
+    search_date: "2026-07-23"
+    automated_status: checked
+    human_status: assessed
+    notes: "No general utility closure is claimed."
+  - adjacency_id: LIT-007
+    theorem_family: potential-games
+    topic: congestion and potential structure
+    primary_keys: [Rosenthal1973, MondererShapley1996]
+    stable_urls: [https://doi.org/10.1007/BF01737559, https://doi.org/10.1006/game.1996.0044]
+    paper_slugs: [threshold-discovery, discovery-institutions]
+    anchors: {threshold-discovery: "Related literature", discovery-institutions: "Rewards"}
+    overlap: "Occupancy-dependent payoffs can admit potentials and pure equilibria."
+    surviving_boundary: "Threshold complementarity changes sign at viability; issue 162's equal-sharing bridge itself stopped as classical congestion."
+    disposition: required
+    search_date: "2026-07-23"
+    automated_status: checked
+    human_status: assessed
+    notes: "The stopped bridge is not reopened."
+  - adjacency_id: LIT-008
+    theorem_family: utility-design
+    topic: distributed welfare and exact price-of-anarchy design
+    primary_keys: [MardenWierman2013, PaccagnanChandanMarden2020]
+    stable_urls: [https://doi.org/10.1287/opre.1120.1137, https://doi.org/10.1109/TAC.2019.2961995]
+    paper_slugs: [threshold-discovery, discovery-institutions]
+    anchors: {threshold-discovery: "Related literature", discovery-institutions: "Rewards"}
+    overlap: "Local utility rules can be characterized and optimized for resource-allocation welfare."
+    surviving_boundary: "Future DD utility work must add information/action/observability content and may stop at collision or impossibility."
+    disposition: required
+    search_date: "2026-07-23"
+    automated_status: checked
+    human_status: assessed
+    notes: "Marginal contribution remains a gate, not a premise."
+  - adjacency_id: LIT-009
+    theorem_family: information-comparison
+    topic: Blackwell comparison and team decision
+    primary_keys: [Blackwell1953, Radner1962, MarschakRadner1972]
+    stable_urls: [https://doi.org/10.1214/aoms/1177729032, https://doi.org/10.1214/aoms/1177704458, https://cowles.yale.edu/sites/default/files/files/pub/mon/m22-all.pdf]
+    paper_slugs: [foundations, information-sharing-frontier]
+    anchors: {foundations: "Introduction", information-sharing-frontier: "Introduction"}
+    overlap: "Information experiments and decentralized common-payoff decisions are direct foundations."
+    surviving_boundary: "Centralized emulation monotonicity is separated from decentralized action incentives and equilibrium selection."
+    disposition: required
+    search_date: "2026-07-23"
+    automated_status: checked
+    human_status: assessed
+    notes: "Lehmann and Le Cam relations remain a Discovery Order gate, not a published order."
+  - adjacency_id: LIT-010
+    theorem_family: information-design
+    topic: persuasion, correlated recommendations, and individual sufficiency
+    primary_keys: [KamenicaGentzkow2011, BergemannMorris2016]
+    stable_urls: [https://doi.org/10.1257/aer.101.6.2590, https://doi.org/10.3982/ECTA12665]
+    paper_slugs: [foundations, information-sharing-frontier]
+    anchors: {foundations: "Introduction", information-sharing-frontier: "Introduction"}
+    overlap: "Signal and recommendation structures change feasible or equilibrium outcomes."
+    surviving_boundary: "DD's recovery identity composes a fixed portfolio protocol; it is not a general information-design theorem."
+    disposition: required
+    search_date: "2026-07-23"
+    automated_status: checked
+    human_status: assessed
+    notes: "Individual sufficiency must be fixed before any Discovery Order."
+  - adjacency_id: LIT-011
+    theorem_family: public-information
+    topic: public information and partial dissemination
+    primary_keys: [MorrisShin2002, CornandHeinemann2008]
+    stable_urls: [https://doi.org/10.1257/000282802762024610, https://doi.org/10.1111/j.1468-0297.2008.02139.x]
+    paper_slugs: [incentive-to-ignore, information-sharing-frontier]
+    anchors: {incentive-to-ignore: "Related literature", information-sharing-frontier: "Introduction"}
+    overlap: "Publicity and audience size can change welfare and coordination."
+    surviving_boundary: "DD's loss can be mechanical portfolio compression without strategic complementarity."
+    disposition: required
+    search_date: "2026-07-23"
+    automated_status: checked
+    human_status: assessed
+    notes: "No general anti-public-information conclusion."
+  - adjacency_id: LIT-012
+    theorem_family: social-learning
+    topic: cascades, herding, and correlated structures
+    primary_keys: [Banerjee1992, BikhchandaniEtAl1992, AcemogluEtAl2011]
+    stable_urls: [https://doi.org/10.2307/2118364, https://doi.org/10.1086/261849, https://doi.org/10.1093/restud/rdr004]
+    paper_slugs: [information-sharing-frontier]
+    anchors: {information-sharing-frontier: "Introduction"}
+    overlap: "Observed behavior and network structure can aggregate or suppress information."
+    surviving_boundary: "The Frontier is a finite one-shot portfolio comparison with declared signals and actions."
+    disposition: required
+    search_date: "2026-07-23"
+    automated_status: checked
+    human_status: assessed
+    notes: "No cascade or asymptotic-learning theorem."
+  - adjacency_id: LIT-013
+    theorem_family: strategic-experimentation
+    topic: multiple experimenters and information public goods
+    primary_keys: [BoltonHarris1999, KellerRadyCripps2005]
+    stable_urls: [https://doi.org/10.1111/1468-0262.00055, https://doi.org/10.1111/j.1468-0262.2005.00627.x]
+    paper_slugs: [common-source-trap]
+    anchors: {common-source-trap: "Related literature"}
+    overlap: "Experimentation can be a public good with free-rider and encouragement effects."
+    surviving_boundary: "The Common-Source Trap is static source acquisition with no continuation value."
+    disposition: required
+    search_date: "2026-07-23"
+    automated_status: checked
+    human_status: assessed
+    notes: "Dynamic roles and learning are outside the theorem."
+  - adjacency_id: LIT-014
+    theorem_family: threshold-team-production
+    topic: threshold public goods and minimum participation
+    primary_keys: [PalfreyRosenthal1984, Diekmann1985]
+    stable_urls: [https://doi.org/10.1016/0022-0531(84)90042-4, https://doi.org/10.1177/1043463185001002002]
+    paper_slugs: [threshold-discovery]
+    anchors: {threshold-discovery: "Related literature"}
+    overlap: "Minimum participation creates sharp coordination incentives."
+    surviving_boundary: "Threshold Discovery allocates several candidate-specific teams under posterior-weighted union discovery."
+    disposition: required
+    search_date: "2026-07-23"
+    automated_status: checked
+    human_status: assessed
+    notes: "Team production does not imply the registered planner or equilibrium results."
+  - adjacency_id: LIT-015
+    theorem_family: attention-and-sharing
+    topic: companion ownership across attention and sharing
+    primary_keys: [Nakajima2026IncentiveToIgnore, Nakajima2026InformationSharingFrontier]
+    stable_urls: [https://yoheinakajima.github.io/distributed-discovery/publications/incentive-to-ignore.html, https://yoheinakajima.github.io/distributed-discovery/publications/information-sharing-frontier.html]
+    paper_slugs: [incentive-to-ignore, information-sharing-frontier]
+    anchors: {incentive-to-ignore: "Related literature", information-sharing-frontier: "Introduction"}
+    overlap: "Both papers compare shared evidence with remaining independent action routes."
+    surviving_boundary: "Attention/audience and signal-geometry/recovery ownership remain separate."
+    disposition: required
+    search_date: "2026-07-23"
+    automated_status: checked
+    human_status: assessed
+    notes: "Cross-citation is not ownership merger."

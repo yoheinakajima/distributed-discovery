@@ -10,6 +10,17 @@ This public repository is MIT-licensed. The [companion site](https://yoheinakaji
 
 ## Status and navigation
 
+Phase 1 is complete: Programs V1--V5, the Information Sharing Frontier,
+post-V5 consolidation, and the stopped decentralized-recovery overlap gate form
+the completed boundary. Phase 2 holds theorem-family execution while improving
+external legibility, literature transmission, publication hierarchy, factual
+methods documentation, and review readiness. Reliable Discovery is preserved
+as the next major theorem-family candidate but deferred. The next substantive
+session is a new DiscoveryBench Agents v1 registration session. See the
+[Phase 2 directive](docs/phase-2-program-directive.md), [Start Here
+hierarchy](docs/publication-hierarchy.md), and [methods
+record](docs/methods/phase-1-research-methods.md).
+
 Programs V1, V2, and the required Program V3 queue are complete at their
 registered bounded scopes. Program V3,
 [*The Incentive to Ignore*](docs/program-v3.md), completed DD-012 through

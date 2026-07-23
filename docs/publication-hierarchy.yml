@@ -1,0 +1,29 @@
+schema_version: 1
+status_vocabulary:
+  - canonical-upstream-entry
+  - working-paper
+  - archival-candidate
+  - research-note
+  - synthesis-note
+  - working-draft
+layers:
+  - id: canonical-entry
+    artifacts: [shared-discovery-paradox]
+    status: canonical-upstream-entry
+    repository: https://github.com/yoheinakajima/shared-discovery-paradox
+  - id: flagship-theorem-family-working-papers
+    artifacts: [common-source-trap, incentive-to-ignore, threshold-discovery, information-sharing-frontier]
+    status: working-paper
+  - id: notes-and-syntheses
+    artifacts: [foundations, three-results, discovery-institutions]
+    statuses:
+      foundations: research-note
+      three-results: synthesis-note
+      discovery-institutions: synthesis-note
+  - id: evidence-and-infrastructure
+    artifacts: [studies, claims, immutable-runs, discoverybench, labs, schemas, validators]
+universal_status:
+  submitted: false
+  peer_reviewed: false
+  doi_present: false
+presentation_is_evidence: false

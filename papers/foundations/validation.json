@@ -1,5 +1,5 @@
 {
-  "citation_key_count": 15,
+  "citation_key_count": 18,
   "citation_keys_resolved": true,
   "claim_id_count": 17,
   "claim_ids_resolved": true,
@@ -11,7 +11,7 @@
     "generated/provenance.json"
   ],
   "page_count": 12,
-  "pdf_sha256": "e096183159f8c016f116b1a97fc0721948bbee2aca6dd1ae251d0a2af95a32e4",
+  "pdf_sha256": "8875926a52f0b8e722f7ce827c456c4b694f9e981c21c4b15bf2b3c60b83e76b",
   "required_sections_present": true,
   "schema_version": 1,
   "source_date_epoch": "1784578994",

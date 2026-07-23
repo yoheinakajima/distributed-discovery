@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "scientific_readiness", "external_validation"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "scientific_readiness": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["component", "level", "claims", "studies", "papers", "gaps", "next_gate", "editorial_judgment", "judgment_date"],
+        "properties": {
+          "level": {"type": "integer", "minimum": 0, "maximum": 5},
+          "editorial_judgment": {"type": "boolean"}
+        }
+      }
+    },
+    "external_validation": {"type": "array", "minItems": 5, "maxItems": 5}
+  }
+}

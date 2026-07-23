@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "audit_limits", "required_adjacencies", "entries"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "audit_limits": {
+      "type": "object",
+      "required": ["certifies_novelty", "certifies_completeness", "certifies_priority", "certifies_interpretation", "certifies_journal_fit"],
+      "additionalProperties": {"const": false}
+    },
+    "required_adjacencies": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["adjacency_id", "theorem_family", "topic", "primary_keys", "stable_urls", "paper_slugs", "anchors", "overlap", "surviving_boundary", "disposition", "search_date", "automated_status", "human_status", "notes"],
+        "properties": {
+          "adjacency_id": {"type": "string", "pattern": "^LIT-[0-9]{3}$"},
+          "primary_keys": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "stable_urls": {"type": "array", "minItems": 1, "items": {"type": "string", "format": "uri"}},
+          "paper_slugs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "anchors": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}},
+          "overlap": {"type": "string", "minLength": 1},
+          "surviving_boundary": {"type": "string", "minLength": 1},
+          "disposition": {"enum": ["required", "optional", "rejected"]},
+          "search_date": {"type": "string", "format": "date"},
+          "automated_status": {"enum": ["checked", "pending"]},
+          "human_status": {"enum": ["assessed", "needs-review"]},
+          "notes": {"type": "string"}
+        }
+      }
+    }
+  }
+}

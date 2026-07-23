@@ -1,5 +1,12 @@
 # Theorem spine — from information to implemented discovery
 
+Phase 2 uses this as a **strategic implementation spine**, not a reduction of
+all 26 studies. Information geometry, threshold complementarity, missing
+provenance, unreliable execution, correlated failure, communication limits,
+dynamic adaptation, and large-team scaling retain separate boundaries.
+Theorem-family execution is held; the three future questions are unregistered
+gates, not promised results.
+
 This is a navigation and synthesis document. It creates no study, claim, proof,
 run, or novelty assertion. Every established statement below points to its
 registered claim and evidence; every unproved connection is labeled **open**.

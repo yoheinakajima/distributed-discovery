@@ -1,0 +1,54 @@
+schema_version: 1
+audit_date: "2026-07-22"
+classification: editorial_only
+scientific_change: false
+papers:
+  - slug: foundations
+    status: research_note
+    before: {pages: 12, sha256: e096183159f8c016f116b1a97fc0721948bbee2aca6dd1ae251d0a2af95a32e4}
+    after: {pages: 12, sha256: 8875926a52f0b8e722f7ce827c456c4b694f9e981c21c4b15bf2b3c60b83e76b}
+    source_sha256: {before: 69402224ef95a06f71c613ce4f053f4e87d3eae6a83db403ab23e67b7cdaaaf7, after: f654f18fad2c594a59cefbc39af22a7ecd6d38e9b700d81d3ed595e5c811bec6}
+    changes: [publication_status, literature_positioning, canonical_anchor]
+  - slug: three-results
+    status: synthesis_note
+    before: {pages: 14, sha256: 40506068a03e6e7ff0dd8c20751b792a9e669e8fd788005dff1c58540131206f}
+    after: {pages: 14, sha256: 9eb896353b1210706d6108685dde963e02d6a5ebc64af9f9f69c08c01f5ebc96}
+    source_sha256: {before: 09c70995a4105ee416aa1e3b1b27cbed6ce365959a3893af6e2a9983c47905e1, after: 8112852d537c909298d9d18eebe5e1a11a837906414bf108b1e73fb3057f876d}
+    changes: [publication_status, ownership_alignment]
+  - slug: discovery-institutions
+    status: synthesis_note
+    before: {pages: 3, sha256: 9bad1e7aaebd07851613f7f38a5c1a3654ca78363cc95f092f5b97bf0f9cee7b}
+    after: {pages: 4, sha256: 78606f732f105d79395409dcb9d7224d72aa1e44312ca30ff5719d049afd98a8}
+    source_sha256: {before: 11e655eb5cd7113a62c5446464b54a865206dadbb2520380ce65936e9d50782d, after: 41c428dfed7dc03b339cd62e633e8571f3a294232eb4efc0a1f2a35d766cc996}
+    changes: [publication_status, literature_positioning]
+  - slug: common-source-trap
+    status: working_paper
+    before: {pages: 20, sha256: c997bba31c021bd799f2b3a561e8e558a1334f844aa87a448ade10319dac2ad3}
+    after: {pages: 21, sha256: afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7}
+    source_sha256: {before: 71fc29f3de4b198d16208b68f34192704fef91d1039e2de10edc34646084abcf, after: 2f7d9ead7e54a7c4b852935b9648361cc682772c5fe41853d0193b86ce3fbdad}
+    changes: [publication_status, literature_positioning, scope_boundary]
+  - slug: incentive-to-ignore
+    status: working_paper
+    before: {pages: 20, sha256: ee9e27f741d25a9597994f18caf2bf406098db7aca4d2ed067a7a011f64be250}
+    after: {pages: 21, sha256: 651c91fb68df6b2f1397ca86f3842b7c2fa9c067601957c32401a7f5e95cd24b}
+    source_sha256: {before: e0664b2f047bfd079da02583072fc08947eb567f8b68a552f1e41d43b54d22b9, after: 013bfec7c16e5eefce27bd6924f5d9b66ead6bfcd9dcdafa830d8bdd8722b53a}
+    changes: [publication_status, literature_positioning, companion_citation]
+  - slug: threshold-discovery
+    status: working_paper
+    before: {pages: 20, sha256: b38bb30f3ce63889526a092d78dd3f202d3beb54178bcdc272aba85c321b1995}
+    after: {pages: 21, sha256: 634e96662989a3fd6efb5fc3e6919883897e60511826e25c6d0176bac4af9249}
+    source_sha256: {before: 48d61ec5dfa315d7b41bbf1c0f24b18d3915a39b45e875e243634ed50e92616b, after: 3fe19e427ac61442ab580729f1877b0c68d5419aa3c10e9d7d3f1ff5bf550afd}
+    changes: [publication_status, literature_positioning, nonclosure_boundary]
+  - slug: information-sharing-frontier
+    status: working_paper
+    before: {pages: 26, sha256: 2f8b68d5a690e6369e4c3236313eb93f060bfbe73ec531903c090f6ec6f8b6a1}
+    after: {pages: 26, sha256: a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13}
+    source_sha256: {before: bd6ae18ba0d35de3f9ab8a2a590df5c457e48f1ed00714914c38eee93c51c6de, after: 41cb86cb4ea4fc1221c3fb4c88a31418b2f5bff0fbc35777d9c895e35084982f}
+    changes: [publication_status, canonical_anchor, companion_citation]
+total_pages: {before: 115, after: 119}
+builds_byte_identical: true
+all_pages_visually_reviewed: true
+new_claims: 0
+changed_claim_statuses: 0
+new_studies: 0
+new_runs: 0

@@ -25,8 +25,8 @@
     "results/verified/20260721T192412Z_DD-008B_649deb08_29dbeaf3a9/outputs/summary.json": "a877471e90750a38b48d37c9d37d6e9dfca05bb6f9bdb90217f36b908381465e",
     "results/verified/20260721T192412Z_DD-008B_649deb08_29dbeaf3a9/outputs/thresholds.json": "a9d7c5143d758e6dca919734ae934dab3f02b23a3fe07c609113834815760ae6"
   },
-  "page_count": 20,
-  "pdf_sha256": "c997bba31c021bd799f2b3a561e8e558a1334f844aa87a448ade10319dac2ad3",
+  "page_count": 21,
+  "pdf_sha256": "afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7",
   "provenance_validated": true,
   "schema_version": 1,
   "source_runs": {

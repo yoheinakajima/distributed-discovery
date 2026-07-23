@@ -1,0 +1,196 @@
+schema_version: 1
+effective_date: "2026-07-23"
+phase_1:
+  status: complete
+  boundary:
+    - Programs V1-V5
+    - Information Sharing Frontier
+    - post-V5 theorem-spine consolidation
+    - decentralized-recovery classical-overlap stop
+  qualification: not all theorem directions are complete
+phase_2:
+  name: external legibility, literature transmission, and methods consolidation
+  evidence_frozen: true
+  permitted:
+    - editorial consolidation
+    - literature maps and transmission audits
+    - paper positioning, cross-citation, status, hierarchy, and claim-label alignment
+    - publication hierarchy and reading paths
+    - factual methods documentation
+    - review-packet preparation
+    - registration prospectuses
+    - schemas, validators, tests, and bounded independent-review preparation
+  prohibited:
+    - new immutable primary research run
+    - new or executed DD study
+    - new scientific claim
+    - theorem-family execution or paper
+    - parameter-grid extension
+    - Reliable Discovery registration or execution
+    - provider or model call
+    - external reviewer or seminar contact
+    - ActiveGraph mutation or authority
+    - canonical upstream mutation
+    - submission, release, DOI, or review claim
+classical_overlap_stop:
+  issue: 162
+  decision: stop-classical-overlap
+  formulation: M=3, N=2 common-posterior equal-sharing simultaneous game
+  boundary: classical singleton congestion/resource-selection game
+  sequential_boundary: ordinary backward induction
+  information_conditioned_equilibrium_survives: false
+  reopen_or_allocate_study: false
+strategic_implementation_spine:
+  kind: organizing device
+  may_connect:
+    - equal-share coverage incentives
+    - duplication
+    - sole-rescue and marginal-contribution rewards
+    - planner and equilibrium outcomes
+    - acquisition, attention, disclosure, and action selection
+  does_not_subsume:
+    - information geometry in DD-019 through DD-021
+    - threshold complementarity
+    - missing provenance
+    - unreliable execution
+    - correlated failure
+    - communication limits
+    - dynamic adaptation
+    - large-team scaling
+marginal_contribution:
+  status: characterization gate
+  general_closure_claimed: false
+rho_star_m_ge_3:
+  existing_theorem: false
+  status: possible future gate
+theorem_gates:
+  gate_a:
+    label: Information–Action Decomposition and Decentralized Separation Failure
+    must_distinguish:
+      - centralized decomposition or policy emulation
+      - decentralized incentive, differentiation, or coordination failure
+    prohibited_claim: better information lowers a fixed centralized planner frontier when old policies remain emulable
+  gate_b:
+    label: Discovery Order candidate
+    required_before_notation:
+      - priors
+      - target spaces
+      - team sizes
+      - action budgets
+      - technologies
+      - authority
+      - protocol classes
+      - payoff games
+      - exact versus approximate comparison
+      - reflexivity
+      - transitivity
+      - separation from Blackwell comparison
+      - relationship to Bergemann–Morris individual sufficiency
+      - any Lehmann or Le Cam deficiency interpretation
+  discovery_order_notation_publication_allowed: false
+literature_transmission:
+  machine_audited: true
+  automation_certifies:
+    novelty: false
+    completeness: false
+    priority: false
+    interpretation: false
+    journal_fit: false
+claims:
+  evidence_authority: claims/claims.yml
+  editorial_prominence_separate: true
+  prominence_may_upgrade_or_hide_evidence: false
+  presentation_categories:
+    - spine-title-theorem
+    - scoped-theorem-or-impossibility
+    - structural-identity-or-lemma
+    - exact-bounded-classification
+    - minimal-counterexample
+    - bounded-null-or-failed-search
+    - synthetic-estimate
+    - definition-or-framework-object
+aspirational_blur:
+  unproved_targets_are_gates: true
+  public_queued_expected_promised_or_coming_next_results: false
+  every_gate_requires_explicit_permitted_stops: true
+coinage_discipline:
+  theorem_like_names_require:
+    - precise definition
+    - evidence owner
+    - theorem or clearly labeled exact computation
+    - scope statement
+    - failure boundary or minimal counterexample where meaningful
+    - literature collision audit
+  formal_quantities_require:
+    - definition
+    - baseline
+    - domain
+    - existence convention
+    - scope
+    - non-equivalence witness
+  rule: naming velocity must not exceed theorem velocity
+phase_2_success:
+  scientific_textbook_readiness:
+    completion_claimed: false
+    components:
+      - defined distributed-discovery problem class
+      - one or two central separation or representation theorems
+      - positive and negative sharing results with sign mechanism
+      - recovery-budget theory
+      - decentralization and equilibrium-selection results
+      - implementation or impossibility results
+      - at least one external evidence base
+      - standard applications
+  external_validation:
+    completion_claimed: false
+    requirements:
+      - independent proof audit or reproduction
+      - external evidence base
+      - two written technical-reader reports or equivalent substantive exchanges
+      - seminar or reading-group presentation
+      - documented revision caused by an external objection
+reading_path:
+  - Shared Discovery Paradox
+  - Incentive to Ignore
+  - When Does Information Sharing Improve Decentralized Discovery?
+reading_path_continues_with:
+  - Common-Source Trap
+  - Threshold Discovery
+  - synthesis and institutional notes
+  - studies and reproducibility infrastructure
+reading_path_is_editorial: true
+methods_record:
+  style: dry and factual
+  may_document:
+    - issues, branches, and living plans
+    - claim ledger and immutable runs
+    - independent verification and corruption testing
+    - failed-result preservation and paper gates
+    - human owner decisions
+    - agent-assisted execution where evidenced
+  must_not_claim:
+    - first or unprecedented autonomous laboratory
+    - scientific autonomy
+    - external validation
+    - peer review
+    - research quality from process alone
+external_review:
+  preparation_only: true
+  contacts_authorized: false
+  seminar_solicitation_authorized: false
+  names_without_consent_authorized: false
+  endorsements_or_completed_review_claimed: false
+discoverybench_agents_v1:
+  deliverable: full registration prospectus
+  study_id_allocated: false
+  provider_or_model_calls_authorized: false
+  cost_authorized: false
+  agents_or_traces_authorized: false
+  run_authorized: false
+reliable_discovery:
+  status: preserved and deferred
+  role: next major theorem-family candidate
+  next_active_registration: false
+next_session:
+  exact_text: Start a NEW DiscoveryBench Agents v1 registration session in /Users/yoheinakajima/Documents/distributed-discovery.
+  exact_next_file: plans/DISCOVERYBENCH_AGENTS_V1_REGISTRATION.md

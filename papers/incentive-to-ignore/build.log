@@ -4,20 +4,20 @@ note: Rerunning TeX because bibtex was run ...
 note: Rerunning TeX because "main.aux" changed ...
 note: Rerunning TeX because "main.aux" changed ...
 note: Running xdvipdfmx ...
-note: Writing `<build>/main.pdf` (122.728515625 KiB)
+note: Writing `<build>/main.pdf` (128.2578125 KiB)
 note: Skipped writing 3 intermediate files (use --keep-intermediates to keep them)
 warning: generated/attention-phase.tex:13: Underfull \hbox (badness 10000) in paragraph at lines 13--13
-warning: main.tex:946: Underfull \hbox (badness 10000) in paragraph at lines 938--946
-warning: main.tex:946: Underfull \hbox (badness 3148) in paragraph at lines 938--946
+warning: main.tex:956: Underfull \hbox (badness 10000) in paragraph at lines 948--956
+warning: main.tex:956: Underfull \hbox (badness 3148) in paragraph at lines 948--956
 warning: generated/attention-phase.tex:13: Underfull \hbox (badness 10000) in paragraph at lines 13--13
-warning: main.tex:946: Underfull \hbox (badness 10000) in paragraph at lines 938--946
-warning: main.tex:946: Underfull \hbox (badness 3148) in paragraph at lines 938--946
+warning: main.tex:956: Underfull \hbox (badness 10000) in paragraph at lines 948--956
+warning: main.tex:956: Underfull \hbox (badness 3148) in paragraph at lines 948--956
 warning: generated/attention-phase.tex:13: Underfull \hbox (badness 10000) in paragraph at lines 13--13
-warning: main.tex:946: Underfull \hbox (badness 10000) in paragraph at lines 938--946
-warning: main.tex:946: Underfull \hbox (badness 3148) in paragraph at lines 938--946
+warning: main.tex:956: Underfull \hbox (badness 10000) in paragraph at lines 948--956
+warning: main.tex:956: Underfull \hbox (badness 3148) in paragraph at lines 948--956
 warning: generated/attention-phase.tex:13: Underfull \hbox (badness 10000) in paragraph at lines 13--13
-warning: main.tex:946: Underfull \hbox (badness 10000) in paragraph at lines 938--946
-warning: main.tex:946: Underfull \hbox (badness 3148) in paragraph at lines 938--946
+warning: main.tex:956: Underfull \hbox (badness 10000) in paragraph at lines 948--956
+warning: main.tex:956: Underfull \hbox (badness 3148) in paragraph at lines 948--956
 warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.
 
 
@@ -29,18 +29,18 @@ note: Rerunning TeX because bibtex was run ...
 note: Rerunning TeX because "main.aux" changed ...
 note: Rerunning TeX because "main.aux" changed ...
 note: Running xdvipdfmx ...
-note: Writing `<build>/main.pdf` (122.728515625 KiB)
+note: Writing `<build>/main.pdf` (128.2578125 KiB)
 note: Skipped writing 3 intermediate files (use --keep-intermediates to keep them)
 warning: generated/attention-phase.tex:13: Underfull \hbox (badness 10000) in paragraph at lines 13--13
-warning: main.tex:946: Underfull \hbox (badness 10000) in paragraph at lines 938--946
-warning: main.tex:946: Underfull \hbox (badness 3148) in paragraph at lines 938--946
+warning: main.tex:956: Underfull \hbox (badness 10000) in paragraph at lines 948--956
+warning: main.tex:956: Underfull \hbox (badness 3148) in paragraph at lines 948--956
 warning: generated/attention-phase.tex:13: Underfull \hbox (badness 10000) in paragraph at lines 13--13
-warning: main.tex:946: Underfull \hbox (badness 10000) in paragraph at lines 938--946
-warning: main.tex:946: Underfull \hbox (badness 3148) in paragraph at lines 938--946
+warning: main.tex:956: Underfull \hbox (badness 10000) in paragraph at lines 948--956
+warning: main.tex:956: Underfull \hbox (badness 3148) in paragraph at lines 948--956
 warning: generated/attention-phase.tex:13: Underfull \hbox (badness 10000) in paragraph at lines 13--13
-warning: main.tex:946: Underfull \hbox (badness 10000) in paragraph at lines 938--946
-warning: main.tex:946: Underfull \hbox (badness 3148) in paragraph at lines 938--946
+warning: main.tex:956: Underfull \hbox (badness 10000) in paragraph at lines 948--956
+warning: main.tex:956: Underfull \hbox (badness 3148) in paragraph at lines 948--956
 warning: generated/attention-phase.tex:13: Underfull \hbox (badness 10000) in paragraph at lines 13--13
-warning: main.tex:946: Underfull \hbox (badness 10000) in paragraph at lines 938--946
-warning: main.tex:946: Underfull \hbox (badness 3148) in paragraph at lines 938--946
+warning: main.tex:956: Underfull \hbox (badness 10000) in paragraph at lines 948--956
+warning: main.tex:956: Underfull \hbox (badness 3148) in paragraph at lines 948--956
 warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.
