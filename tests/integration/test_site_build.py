@@ -129,9 +129,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     agents_registration = (output / "benchmark/agents-v1.html").read_text(encoding="utf-8")
     assert "Registered, not executed" in agents_registration
     assert "No model was called" in agents_registration
-    assert "No private seed, holdout, answer key, trace, evaluation result" in (
-        agents_registration
-    )
+    assert "No private seed, holdout, answer key, trace, evaluation result" in (agents_registration)
     assert "not a result route or leaderboard" in agents_registration
     agents_data = json.loads(
         (output / "data/benchmark/agents-v1-registration.json").read_text(encoding="utf-8")

@@ -131,8 +131,8 @@ authority. ActiveGraph and external operational databases are out of scope.
 - **M17 (complete):** exact registration decision.
 - **M18 (complete):** apply the selected proceed path without claims, runs, or calls.
 - **M19 (complete):** registration-safe static-site integration.
-- **M20 (active):** prove all paper and lifecycle invariants unchanged.
-- **M21:** full local acceptance, ready PR, CI, squash merge, Pages, live
+- **M20 (complete):** prove all paper and lifecycle invariants unchanged.
+- **M21 (active):** full local acceptance, ready PR, CI, squash merge, Pages, live
   acceptance, issue closeout, and synchronized `main`.
 
 Exactly one milestone is active at a time.
@@ -151,7 +151,7 @@ Exactly one milestone is active at a time.
 - [x] Record the five-file preservation set without reading or touching it.
 - [x] Create the single registration issue, branch, baseline commit, push, and
   draft PR.
-- [ ] Complete M1 through M20 sequentially.
+- [x] Complete M1 through M20 sequentially.
 - [ ] Complete M21 and synchronize `main`.
 
 ## Discoveries and surprises
@@ -167,6 +167,20 @@ Exactly one milestone is active at a time.
   exact result vectors, a deterministic mock, and a disabled external-adapter
   boundary. Agents v1 can therefore remain a separate protocol axis without
   mutating v1/v2/v3.
+- The official provider audit admits two fixed cloud model identifiers and one
+  revision-pinned open candidate for later consideration; it blocks the Google
+  reserve until its weaker stable-name and retention boundaries are resolved.
+- `make verify` passes strict MyPy over 160 source files and all 274 tests. The
+  offline audit validates 15 schemas, five valid and three invalid fixture
+  classes, 24 corruptions, and zero execution artifacts.
+- `make papers` reproduces the seven accepted hashes and 119 pages. Its normal
+  provenance refresh was restored byte-for-byte, leaving the paper tree
+  identical to starting main.
+- `make site` produces 81 routes, 88 public data files, 18 Labs, and 23
+  checksum-covered downloads. Desktop and 390-pixel browser QA find one H1,
+  five primary nav items, no horizontal overflow, no forms, no external
+  scripts, visible keyboard focus, reduced-motion CSS, and no console warnings
+  or errors.
 
 ## Decision log
 
@@ -185,6 +199,11 @@ Exactly one milestone is active at a time.
 - `2026-07-23T14:27:00Z`: accept DD-010 instrument ownership with independent
   `agents-v1` protocol versioning; reject the v4 label and defer any evaluation
   study ID until a separately authorized evidence campaign.
+- `2026-07-23`: complete M3--M20 with decision
+  `register-instrument-under-dd010`; allocate no study or claim and preserve
+  all v1/v2/v3 outputs.
+- `2026-07-23`: recommend but do not authorize a $750 future execution cap;
+  low/base/high dated estimates are $3.16/$537.98/$3,418.56.
 
 ## Ownership/versioning decision
 
@@ -330,6 +349,7 @@ item. Never use `git add .`. Never rerun a passing DD-010 configuration.
 
 ## Outcome and retrospective
 
-Pending. Normal completion requires one exact registration decision, all
-instrument artifacts and tests, unchanged scientific/paper evidence, passing
-CI/Pages and live acceptance, issue closure, and synchronized `main`.
+Local registration acceptance is complete with decision
+`register-instrument-under-dd010`. The scientific inventory and all immutable
+evidence remain unchanged. External CI, merge, Pages, live acceptance, issue
+closure, and synchronized `main` remain in M21.

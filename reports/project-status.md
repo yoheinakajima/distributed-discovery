@@ -46,11 +46,11 @@ claim changed, and no research configuration was rerun.
 | Claims | 110 |
 | Immutable manifests | 51 |
 | Passing immutable runs | 48 |
-| Tests | 249 |
+| Tests | 274 |
 | Validated project papers | 7 |
-| Paper pages | 115 |
-| Public HTML routes | 77 locally generated |
-| Public data files | 85 |
+| Paper pages | 119 |
+| Public HTML routes | 81 locally generated |
+| Public data files | 88 |
 | Labs | 18 |
 | Checksum-covered downloads | 23 |
 
@@ -71,7 +71,7 @@ claim changed, and no research configuration was rerun.
 
 ## Current acceptance record
 
-- Bootstrap, Ruff, strict MyPy over 159 source files, all 249 tests, the
+- Bootstrap, Ruff, strict MyPy over 160 source files, all 274 tests, the
   110-claim ledger, and all 51 immutable manifests pass.
 - Eighteen saved exact-verification records pass; 66 gates across 18 saved
   corruption records are true.

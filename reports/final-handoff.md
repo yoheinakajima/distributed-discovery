@@ -42,9 +42,9 @@ merged through PR #156 as `fae4a81b4628f614adbb6bf602fbce6d6065746e`.
 Post-merge CI and Pages passed, and the live PDF SHA-256 is
 `2f8b68d5a690e6369e4c3236313eb93f060bfbe73ec531903c090f6ec6f8b6a1`.
 
-The current validated inventory is 249 tests, 110 claims, 51 immutable
-manifests with 48 passing runs, 26 studies, seven papers totaling 115 pages, 77
-HTML routes, 85 public data files, 18 Labs, and 23 checksum-covered downloads.
+The current validated inventory is 274 tests, 110 claims, 51 immutable
+manifests with 48 passing runs, 26 studies, seven papers totaling 119 pages, 81
+HTML routes, 88 public data files, 18 Labs, and 23 checksum-covered downloads.
 The evidence-linked architecture is in [`docs/theorem-spine.md`](../docs/theorem-spine.md).
 
 The durable result boundary is exact. DD-019 supplies bounded action-budget

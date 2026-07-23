@@ -84,7 +84,7 @@ def validate_capability_isolation(task: dict[str, object]) -> None:
     for agent_id, view in views.items():
         if not isinstance(view, dict):
             raise ValueError(f"{agent_id} capability view is not a mapping")
-        for prohibited in ("target\":", "answer_key\":", "other_agent_private_observation\":"):
+        for prohibited in ('target":', 'answer_key":', 'other_agent_private_observation":'):
             # The explicit forbidden_fields declaration may name a field; an actual
             # key/value outside that declaration is what is prohibited.
             payload = {key: value for key, value in view.items() if key != "forbidden_fields"}
@@ -142,9 +142,7 @@ def verify_public_custody_vector(vector: dict[str, object]) -> None:
     if vector.get("public_test_only") is not True:
         raise ValueError("custody vector is not explicitly public")
     commitments = cast(dict[str, str], vector["commitments"])
-    seed_payload = (
-        commitments["domain_separator"].encode() + str(vector["seed_text"]).encode()
-    )
+    seed_payload = commitments["domain_separator"].encode() + str(vector["seed_text"]).encode()
     if sha256_hex(seed_payload) != commitments["seed_sha256"]:
         raise ValueError("seed commitment mismatch")
     if sha256_hex(str(vector["instance_text"]).encode()) != commitments["instance_sha256"]:
@@ -203,9 +201,7 @@ def audit_registration(root: Path) -> dict[str, object]:
     for fixture_name, schema_name in fixture_pairs:
         fixture_path = base / "fixtures" / fixture_name
         document = (
-            load_yaml(fixture_path)
-            if fixture_path.suffix == ".yml"
-            else load_json(fixture_path)
+            load_yaml(fixture_path) if fixture_path.suffix == ".yml" else load_json(fixture_path)
         )
         validate_document(document, load_json(base / schema_name))
 
@@ -274,15 +270,11 @@ def audit_registration(root: Path) -> dict[str, object]:
         "valid_fixtures": len(fixture_pairs),
         "invalid_fixtures": 3,
         "task_families": len(family_rows),
-        "generator_cells": sum(
-            cast(int, row["canonical_cells"]) for row in family_rows
-        ),
+        "generator_cells": sum(cast(int, row["canonical_cells"]) for row in family_rows),
         "primitive_states": sum(
             cast(int, row["primitive_labeled_task_states"]) for row in family_rows
         ),
-        "architectures": load_yaml(base / "team-architectures.yml")[
-            "agent_architecture_count"
-        ],
+        "architectures": load_yaml(base / "team-architectures.yml")["agent_architecture_count"],
         "model_candidates": len(
             cast(list[object], load_yaml(base / "provider-model-candidates.yml")["candidates"])
         ),

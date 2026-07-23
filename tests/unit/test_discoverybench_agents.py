@@ -128,9 +128,7 @@ def test_provider_registry_has_two_cloud_families_and_local_open_candidate() -> 
     registry = load_yaml(BASE / "provider-model-candidates.yml")
     candidates = registry["candidates"]
     assert isinstance(candidates, list)
-    cloud_providers = {
-        row["provider"] for row in candidates if row["deployment"] == "cloud-api"
-    }
+    cloud_providers = {row["provider"] for row in candidates if row["deployment"] == "cloud-api"}
     assert {"OpenAI", "Anthropic"}.issubset(cloud_providers)
     assert any(row["deployment"] == "local-open-weights" for row in candidates)
     assert registry["execution_authorized"] is False
