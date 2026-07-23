@@ -235,7 +235,7 @@ generalization language. The publication template authorizes no paper action.
 - **M12 (complete):** benchmark-to-paper interpretation map.
 - **M13 (complete):** post-campaign publication-implications template.
 - **M14 (complete):** public-safe operational site status.
-- **M15 (active):** full validation, CI, merge, Pages, live acceptance,
+- **M15 (complete):** full validation, CI, merge, Pages, live acceptance,
   issue closeout, and synchronized `main`.
 
 Exactly one milestone is active at a time.
@@ -255,7 +255,7 @@ Exactly one milestone is active at a time.
 - [x] Implement and test the strict local-input parser and complete M0.
 - [x] Complete M1 offline implementation and mock validation.
 - [x] Complete M2 through M14 sequentially.
-- [ ] Complete M15 and synchronize `main`.
+- [x] Complete M15 and synchronize `main`.
 
 ## Discoveries and surprises
 
@@ -389,9 +389,7 @@ public operational status page/JSON, tests, and closeout evidence.
 
 ## Blockers
 
-No implementation or live-execution blocker exists. The remaining work is M15:
-local validation, PR checks and merge, Pages acceptance, issue closeout, and
-synchronized `main`.
+None. The provider-preflight lane is closed.
 
 ## Preservation set
 
@@ -406,12 +404,25 @@ unstaged:
 
 ## Recovery and restart instructions
 
-Run `git status --short --branch`, confirm issue #175 and the exact branch,
-revalidate the local authorization without printing values, read the active
-milestone and latest decision here, and resume the first unchecked item.
-Never use `git add .`, never read local credentials outside the strict live
-loader, and never create private or scientific evidence.
+The lane is complete. Start any sealed engineering pilot from synchronized
+`main` under a new issue, living plan, branch, pull request, and owner
+authorization. Never treat the public calibration as private or scientific
+evidence.
 
 ## Outcome and retrospective
 
-Pending.
+PR #176 squash-merged as
+`28a71f48db979664b4254c7693ae6622d9c38343`. Branch CI run `30052598698`,
+post-merge CI run `30052895632`, and Pages run `30052895643` passed. The
+deployed Agents v1 page and public JSON report the exact public-engineering
+boundary, and desktop plus 390-pixel containment checks pass without
+horizontal overflow or broken images. Issue #175 is closed as completed.
+
+The final decision is
+`all-required-providers-ready-public-calibration-complete`. Across every
+preserved attempt, 607 calls cost USD 2.311758000, leaving USD 17.688242000
+under the USD 20 authorization. Direct OpenAI and direct Anthropic completed
+the full registered public matrix; optional OpenRouter routes remained
+policy-ineligible and are not campaign substitutes. No private material,
+sealed pilot, base campaign, scientific evidence, DD-023, DD-C-0111, paper
+change, provider ranking, leaderboard, or composite score was created.
