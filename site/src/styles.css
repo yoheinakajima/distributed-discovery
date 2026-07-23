@@ -378,7 +378,11 @@ h3 { margin: 0 0 .65rem; font-size: 1.15rem; line-height: 1.3; letter-spacing: -
 .stat span { display: block; color: var(--ink-2); font-size: .75rem; }
 .metric-card strong,
 .stat b { display: block; margin-top: .3rem; font: 750 clamp(1.25rem, 3vw, 1.8rem)/1.2 var(--mono); overflow-wrap: anywhere; }
-.metric-grid.compact .metric-card strong { font-size: clamp(.95rem, 1.7vw, 1.25rem); letter-spacing: -.035em; }
+.metric-grid.compact .metric-card strong {
+  font-size: clamp(.82rem, 1.2vw, 1rem);
+  letter-spacing: -.035em;
+  overflow-wrap: normal;
+}
 .metric-card.consensus { border-top: 3px solid var(--consensus); }
 .metric-card.private { border-top: 3px solid var(--private); }
 .metric-card.planner { border-top: 3px solid var(--planner); }

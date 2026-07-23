@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "authority", "supported_operations", "workflow", "records"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "authority": {"const": "editorial prospectus only; no lifecycle transition is authorized"},
+    "supported_operations": {
+      "const": ["merge", "split", "absorb", "demote", "retire-without-replacement", "supersede-after-replacement-acceptance"]
+    },
+    "workflow": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11,
+      "items": {"type": "string"}
+    },
+    "records": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["paper_id", "central_question", "independent_reason_to_exist", "primary_families", "claim_roles", "overlap_with_other_papers", "candidate_disposition", "prerequisite_for_change", "risk", "no_action_rationale"],
+        "properties": {
+          "paper_id": {"type": "string"},
+          "central_question": {"type": "string", "minLength": 1},
+          "independent_reason_to_exist": {"type": "string", "minLength": 1},
+          "primary_families": {"type": "array", "items": {"type": "string"}},
+          "claim_roles": {"type": "array", "items": {"enum": ["primary", "supporting", "background", "counterboundary", "historical-source", "absorbed-from-superseded-paper"]}, "uniqueItems": true},
+          "overlap_with_other_papers": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "candidate_disposition": {"enum": ["retain", "retain-with-future-absorption-option", "possible-merge", "possible-demotion", "locked-canonical-anchor"]},
+          "prerequisite_for_change": {"type": "string", "minLength": 1},
+          "risk": {"type": "string", "minLength": 1},
+          "no_action_rationale": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -5,6 +5,11 @@
 > The next substantive session is DiscoveryBench Agents v1 registration. The
 > three unregistered readiness gates are recorded in
 > [`reports/roadmap-consolidation/phase-2-theorem-gates.md`](../reports/roadmap-consolidation/phase-2-theorem-gates.md).
+> Their timing is governed by the nine-option staged portfolio in
+> [`strategic-direction/optionality-portfolio.yml`](strategic-direction/optionality-portfolio.yml);
+> none is authorized for theorem execution. The internal Gate C name and
+> search-theory succession ambition remain prohibited on public result
+> surfaces until their separate gates pass.
 
 ## 1. Purpose
 

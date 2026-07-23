@@ -1,0 +1,14 @@
+{
+  "profile_version": "0-draft",
+  "claim_id": "SYN-C-INVALID",
+  "statement": "",
+  "scope": "",
+  "evidence_category": "certified-truth",
+  "source_reference": "",
+  "evidence_reference": {"kind": "magic", "reference": null},
+  "status": "",
+  "provenance": {"algorithm": "sha256", "digest": null},
+  "validation": {"result": "success", "checks": []},
+  "negative_or_failure_preservation": {"applicable": false, "references": []},
+  "certifies_scientific_quality": true
+}

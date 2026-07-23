@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "status", "working_internal_label", "public_name", "study_id", "claim_ids", "run_exists", "registration_authorized", "default_loss", "default_loss_reason", "dimensions", "required_reductions", "ratio_rule", "permitted_stops", "prohibited"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "status": {"const": "gated-candidate"},
+    "working_internal_label": {"const": "Price of Missing Provenance"},
+    "public_name": {"const": false},
+    "study_id": {"type": "null"},
+    "claim_ids": {"const": []},
+    "run_exists": {"const": false},
+    "default_loss": {"const": "worst-case-additive-discovery-regret"},
+    "default_loss_reason": {"type": "string", "minLength": 1},
+    "dimensions": {"type": "array", "minItems": 11, "uniqueItems": true},
+    "required_reductions": {"type": "array", "minItems": 5, "uniqueItems": true},
+    "ratio_rule": {
+      "type": "object",
+      "required": ["allowed", "domain_bounded_away_from_zero", "denominator_floor_required"],
+      "properties": {
+        "allowed": {"const": true},
+        "domain_bounded_away_from_zero": {"const": true},
+        "denominator_floor_required": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "registration_authorized": {"const": false},
+    "permitted_stops": {"type": "array", "minItems": 5, "uniqueItems": true},
+    "prohibited": {"type": "array", "minItems": 3, "uniqueItems": true}
+  },
+  "additionalProperties": false
+}

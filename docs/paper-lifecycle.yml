@@ -1,0 +1,211 @@
+schema_version: 1
+authority: editorial lifecycle only; claims and studies remain scientific authority
+records:
+  - paper_id: shared-discovery-paradox
+    title: The Shared Discovery Paradox
+    repository: https://github.com/yoheinakajima/shared-discovery-paradox
+    source_path: paper/The_Shared_Discovery_Paradox.tex
+    route: https://yoheinakajima.github.io/shared-discovery-paradox/
+    download: https://github.com/yoheinakajima/shared-discovery-paradox/blob/5025cc8e8f2f8ca015dff2066f08f81ad5715a51/paper/The_Shared_Discovery_Paradox.pdf
+    scientific_status: valid-with-scope
+    editorial_status: active
+    publication_status: canonical-published
+    lifecycle_class: canonical-published
+    primary_theorem_family: canonical-entry
+    primary_paper_claims: [DD-C-0003, DD-C-0004, DD-C-0005, DD-C-0006, DD-C-0007, DD-C-0008]
+    mandatory_counterboundaries: [atomic model and declared protocols, upstream citation says working paper, no DOI submission acceptance journal or peer-review evidence]
+    supersedes: []
+    superseded_by: null
+    archive_reason: null
+    archive_date: null
+    scientific_correction_record: null
+    publication_evidence: [owner-declared canonical public anchor, upstream README working-paper citation]
+    recommended_citation: "Nakajima, Yohei (2026). The Shared Discovery Paradox: How a One-Answer Rule Turns Better Information into Worse Search. Working paper."
+    pdf_sha256: cb4816cb3a9cdd8db0210ab8981e3729028eb02ba174f2a7300b617807cc1e04
+    page_count: 29
+    build_policy: external-read-only
+    upstream_lock: integrations/shared-discovery-paradox/upstream.lock
+    editable_fields: []
+    public_listing_layer: canonical-anchor
+  - paper_id: common-source-trap
+    title: The Common-Source Trap
+    repository: https://github.com/yoheinakajima/distributed-discovery
+    source_path: papers/common-source-trap/main.tex
+    route: publications/common-source-trap.html
+    download: downloads/The_Common_Source_Trap.pdf
+    scientific_status: valid-with-scope
+    editorial_status: active
+    publication_status: public-working-paper
+    lifecycle_class: active-working-paper
+    primary_theorem_family: source-acquisition-provenance
+    primary_paper_claims: [DD-C-0057]
+    mandatory_counterboundaries: [static homogeneous equal-prize source-choice model, private acquisition need not always be below planner acquisition]
+    supersedes: []
+    superseded_by: null
+    archive_reason: null
+    archive_date: null
+    scientific_correction_record: null
+    publication_evidence: [public repository PDF and validation record]
+    recommended_citation: "Nakajima, Yohei (2026). The Common-Source Trap. Working paper."
+    pdf_sha256: afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7
+    page_count: 21
+    build_policy: active-deterministic-build
+    upstream_lock: null
+    editable_fields: [editorial-positioning, literature, citation, lifecycle-after-replacement]
+    public_listing_layer: flagship
+  - paper_id: incentive-to-ignore
+    title: The Incentive to Ignore
+    repository: https://github.com/yoheinakajima/distributed-discovery
+    source_path: papers/incentive-to-ignore/main.tex
+    route: publications/incentive-to-ignore.html
+    download: downloads/The_Incentive_to_Ignore.pdf
+    scientific_status: valid-with-scope
+    editorial_status: active
+    publication_status: public-working-paper
+    lifecycle_class: active-working-paper
+    primary_theorem_family: selective-attention-and-audience-design
+    primary_paper_claims: [DD-C-0059, DD-C-0060, DD-C-0062, DD-C-0064, DD-C-0066]
+    mandatory_counterboundaries: [registered evidence-responsive policy classes, unrestricted constant territorial policies remain outside the title theorem]
+    supersedes: []
+    superseded_by: null
+    archive_reason: null
+    archive_date: null
+    scientific_correction_record: null
+    publication_evidence: [public repository PDF and validation record]
+    recommended_citation: "Nakajima, Yohei (2026). The Incentive to Ignore: Selective Attention and Audience Design in Distributed Discovery. Working paper."
+    pdf_sha256: 651c91fb68df6b2f1397ca86f3842b7c2fa9c067601957c32401a7f5e95cd24b
+    page_count: 21
+    build_policy: active-deterministic-build
+    upstream_lock: null
+    editable_fields: [editorial-positioning, literature, citation, lifecycle-after-replacement]
+    public_listing_layer: flagship
+  - paper_id: threshold-discovery
+    title: Threshold Discovery
+    repository: https://github.com/yoheinakajima/distributed-discovery
+    source_path: papers/threshold-discovery/main.tex
+    route: publications/threshold-discovery.html
+    download: downloads/Threshold_Discovery.pdf
+    scientific_status: valid-with-scope
+    editorial_status: active
+    publication_status: public-working-paper
+    lifecycle_class: active-working-paper
+    primary_theorem_family: reliable-discovery-action-technology
+    primary_paper_claims: [DD-C-0071, DD-C-0075, DD-C-0076, DD-C-0084]
+    mandatory_counterboundaries: [deterministic threshold technology, selected tied-mode behavior is not the full equilibrium correspondence, Reliable Discovery remains held]
+    supersedes: []
+    superseded_by: null
+    archive_reason: null
+    archive_date: null
+    scientific_correction_record: null
+    publication_evidence: [public repository PDF and validation record]
+    recommended_citation: "Nakajima, Yohei (2026). Threshold Discovery: Coordination, Crowding, and Minimum Viable Teams. Working paper."
+    pdf_sha256: 634e96662989a3fd6efb5fc3e6919883897e60511826e25c6d0176bac4af9249
+    page_count: 21
+    build_policy: active-deterministic-build
+    upstream_lock: null
+    editable_fields: [editorial-positioning, literature, citation, lifecycle-after-replacement]
+    public_listing_layer: flagship
+  - paper_id: information-sharing-frontier
+    title: When Does Information Sharing Improve Decentralized Discovery?
+    repository: https://github.com/yoheinakajima/distributed-discovery
+    source_path: papers/information-sharing-frontier/main.tex
+    route: publications/information-sharing-frontier.html
+    download: downloads/When_Does_Information_Sharing_Improve_Decentralized_Discovery.pdf
+    scientific_status: valid-with-scope
+    editorial_status: active
+    publication_status: public-working-paper
+    lifecycle_class: active-working-paper
+    primary_theorem_family: information-sharing-attention-recovery
+    primary_paper_claims: [DD-C-0089, DD-C-0092, DD-C-0097, DD-C-0098, DD-C-0102, DD-C-0106]
+    mandatory_counterboundaries: [selected-equilibrium positive result, every-equilibrium negative result DD-C-0109, centralized implementation gap DD-C-0110]
+    supersedes: []
+    superseded_by: null
+    archive_reason: null
+    archive_date: null
+    scientific_correction_record: null
+    publication_evidence: [public repository PDF and validation record]
+    recommended_citation: "Nakajima, Yohei (2026). When Does Information Sharing Improve Decentralized Discovery? Aggregation, Independent Rescue, and Equilibrium Selection. Working paper."
+    pdf_sha256: a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13
+    page_count: 26
+    build_policy: active-deterministic-build
+    upstream_lock: null
+    editable_fields: [editorial-positioning, literature, citation, lifecycle-after-replacement]
+    public_listing_layer: flagship
+  - paper_id: foundations
+    title: Foundations of Distributed Discovery
+    repository: https://github.com/yoheinakajima/distributed-discovery
+    source_path: papers/foundations/main.tex
+    route: publications/foundations.html
+    download: downloads/Foundations_of_Distributed_Discovery.pdf
+    scientific_status: valid-with-scope
+    editorial_status: active
+    publication_status: public-working-paper
+    lifecycle_class: active-research-note
+    primary_theorem_family: foundational-information-comparison
+    primary_paper_claims: [DD-C-0001, DD-C-0002, DD-C-0016]
+    mandatory_counterboundaries: [framework definitions and scoped emulation result, not a novelty owner for theorem families]
+    supersedes: []
+    superseded_by: null
+    archive_reason: null
+    archive_date: null
+    scientific_correction_record: null
+    publication_evidence: [public repository PDF and validation record]
+    recommended_citation: "Nakajima, Yohei (2026). Foundations of Distributed Discovery. Research note."
+    pdf_sha256: 8875926a52f0b8e722f7ce827c456c4b694f9e981c21c4b15bf2b3c60b83e76b
+    page_count: 12
+    build_policy: active-deterministic-build
+    upstream_lock: null
+    editable_fields: [synthesis-role, editorial-positioning, lifecycle-after-replacement]
+    public_listing_layer: note
+  - paper_id: three-results
+    title: Three Results in Distributed Discovery
+    repository: https://github.com/yoheinakajima/distributed-discovery
+    source_path: papers/three-results/main.tex
+    route: publications/three-results.html
+    download: downloads/Three_Results_in_Distributed_Discovery.pdf
+    scientific_status: valid-with-scope
+    editorial_status: active
+    publication_status: public-working-paper
+    lifecycle_class: active-synthesis-note
+    primary_theorem_family: null
+    primary_paper_claims: []
+    mandatory_counterboundaries: [all scientific claims retain their study and theorem-family owners]
+    supersedes: []
+    superseded_by: null
+    archive_reason: null
+    archive_date: null
+    scientific_correction_record: null
+    publication_evidence: [public repository PDF and validation record]
+    recommended_citation: "Nakajima, Yohei (2026). Three Results in Distributed Discovery. Synthesis note."
+    pdf_sha256: 9eb896353b1210706d6108685dde963e02d6a5ebc64af9f9f69c08c01f5ebc96
+    page_count: 14
+    build_policy: active-deterministic-build
+    upstream_lock: null
+    editable_fields: [synthesis-selection, exposition, lifecycle-after-replacement]
+    public_listing_layer: synthesis
+  - paper_id: discovery-institutions
+    title: Institutions for Distributed Discovery
+    repository: https://github.com/yoheinakajima/distributed-discovery
+    source_path: papers/discovery-institutions/main.tex
+    route: publications/discovery-institutions.html
+    download: downloads/Institutions_for_Distributed_Discovery.pdf
+    scientific_status: valid-with-scope
+    editorial_status: active
+    publication_status: public-working-paper
+    lifecycle_class: active-synthesis-note
+    primary_theorem_family: null
+    primary_paper_claims: []
+    mandatory_counterboundaries: [institutional synthesis does not acquire primary theorem ownership]
+    supersedes: []
+    superseded_by: null
+    archive_reason: null
+    archive_date: null
+    scientific_correction_record: null
+    publication_evidence: [public repository PDF and validation record]
+    recommended_citation: "Nakajima, Yohei (2026). Institutions for Distributed Discovery. Synthesis note."
+    pdf_sha256: 78606f732f105d79395409dcb9d7224d72aa1e44312ca30ff5719d049afd98a8
+    page_count: 4
+    build_policy: active-deterministic-build
+    upstream_lock: null
+    editable_fields: [synthesis-selection, exposition, lifecycle-after-replacement]
+    public_listing_layer: synthesis

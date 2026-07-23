@@ -176,6 +176,16 @@ def _validate_source(root: Path, paper: Path, bibliography: Path) -> dict[str, A
     }
 
 
+def _pdf_text(path: Path) -> str:
+    extracted = subprocess.run(
+        ["pdftotext", "-layout", path, "-"],
+        capture_output=True,
+        text=True,
+        check=True,
+    ).stdout
+    return "\n".join(line.rstrip() for line in extracted.splitlines()).strip()
+
+
 def build(root: Path) -> dict[str, Any]:
     paper = root / "papers/foundations"
     generated = paper / "generated"
@@ -244,7 +254,19 @@ def build(root: Path) -> dict[str, Any]:
         raise RuntimeError("foundations paper build failed; inspect papers/foundations/build.log")
     built_pdf = build_dir / "main.pdf"
     output_pdf = paper / "Foundations_of_Distributed_Discovery.pdf"
-    shutil.copy2(built_pdf, output_pdf)
+    validation_path = paper / "validation.json"
+    update_artifact = os.environ.get("DISTRIBUTED_DISCOVERY_UPDATE_PAPER_ARTIFACT") == "1"
+    if not output_pdf.is_file() or update_artifact:
+        shutil.copy2(built_pdf, output_pdf)
+    elif validation_path.is_file():
+        accepted = json.loads(validation_path.read_text(encoding="utf-8"))
+        accepted_hash = str(accepted["pdf_sha256"])
+        if _sha256(output_pdf) != accepted_hash:
+            raise RuntimeError("accepted foundations PDF does not match its validation record")
+        if _sha256(built_pdf) != accepted_hash and _pdf_text(built_pdf) != _pdf_text(output_pdf):
+            raise RuntimeError(
+                "foundations rebuild changes accepted text; authorize an artifact update explicitly"
+            )
     pdfinfo = subprocess.run(["pdfinfo", output_pdf], capture_output=True, text=True, check=True)
     page_match = re.search(r"^Pages:\s+(\d+)$", pdfinfo.stdout, flags=re.MULTILINE)
     if page_match is None:
@@ -267,7 +289,7 @@ def build(root: Path) -> dict[str, Any]:
         ],
         **source_validation,
     }
-    (paper / "validation.json").write_text(
+    validation_path.write_text(
         json.dumps(validation, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
     return validation

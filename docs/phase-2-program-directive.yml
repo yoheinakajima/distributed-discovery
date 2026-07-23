@@ -9,7 +9,7 @@ phase_1:
     - decentralized-recovery classical-overlap stop
   qualification: not all theorem directions are complete
 phase_2:
-  name: external legibility, literature transmission, and methods consolidation
+  name: AI-native optionality, translation, and paper lifecycle architecture
   evidence_frozen: true
   permitted:
     - editorial consolidation
@@ -17,9 +17,10 @@ phase_2:
     - paper positioning, cross-citation, status, hierarchy, and claim-label alignment
     - publication hierarchy and reading paths
     - factual methods documentation
-    - review-packet preparation
+    - AI-native internal audit architecture
+    - optionality, translation, lifecycle, and recomposition registries
     - registration prospectuses
-    - schemas, validators, tests, and bounded independent-review preparation
+    - schemas, validators, tests, and context-isolated review architecture
   prohibited:
     - new immutable primary research run
     - new or executed DD study
@@ -28,7 +29,7 @@ phase_2:
     - parameter-grid extension
     - Reliable Discovery registration or execution
     - provider or model call
-    - external reviewer or seminar contact
+    - human-engagement workflow, reviewer, seminar, coauthor, or outreach activity
     - ActiveGraph mutation or authority
     - canonical upstream mutation
     - submission, release, DOI, or review claim
@@ -139,16 +140,19 @@ phase_2_success:
       - recovery-budget theory
       - decentralization and equilibrium-selection results
       - implementation or impossibility results
-      - at least one external evidence base
+      - agent-system evidence base evaluated on sealed isomorphic holdouts against exact theoretical baselines
       - standard applications
-  external_validation:
+  ai_native_robustness:
     completion_claimed: false
     requirements:
-      - independent proof audit or reproduction
-      - external evidence base
-      - two written technical-reader reports or equivalent substantive exchanges
-      - seminar or reading-group presentation
-      - documented revision caused by an external objection
+      - context-isolated implementation
+      - materially distinct method
+      - cross-model adversarial review where authorized
+      - classical-overlap audit
+      - corruption rejection
+      - sealed agent-system holdout evidence
+      - exact reproducibility
+      - unresolved disagreement preservation
 reading_path:
   - Shared Discovery Paradox
   - Incentive to Ignore
@@ -174,12 +178,13 @@ methods_record:
     - external validation
     - peer review
     - research quality from process alone
-external_review:
-  preparation_only: true
-  contacts_authorized: false
-  seminar_solicitation_authorized: false
-  names_without_consent_authorized: false
-  endorsements_or_completed_review_claimed: false
+ai_powered_lab:
+  boundary: docs/ai-lab-operating-boundary.yml
+  human_pi_ownership: true
+  final_gate_authority: human-pi
+  human_engagement_authorized: false
+  model_calls_authorized_in_this_milestone: false
+  internal_audits_are_external_validation: false
 discoverybench_agents_v1:
   deliverable: full registration prospectus
   study_id_allocated: false
@@ -192,5 +197,5 @@ reliable_discovery:
   role: next major theorem-family candidate
   next_active_registration: false
 next_session:
-  exact_text: Start a NEW DiscoveryBench Agents v1 registration session in /Users/yoheinakajima/Documents/distributed-discovery.
+  exact_text: Start a new DiscoveryBench Agents v1 registration session.
   exact_next_file: plans/DISCOVERYBENCH_AGENTS_V1_REGISTRATION.md

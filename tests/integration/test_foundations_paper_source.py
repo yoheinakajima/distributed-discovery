@@ -3,7 +3,10 @@ from pathlib import Path
 
 import pytest
 
-from distributed_discovery.papers.build_foundations import _normalized_build_log, _source_date_epoch
+from distributed_discovery.papers.build_foundations import (
+    _normalized_build_log,
+    _source_date_epoch,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = ROOT / "papers/foundations/main.tex"
@@ -47,3 +50,11 @@ def test_build_log_normalizes_parallel_write_order(tmp_path: Path) -> None:
         "note: Writing `z.pdf`\n"
         "warning: retained\n"
     )
+
+
+def test_foundations_builder_has_an_explicit_artifact_update_gate() -> None:
+    builder = (ROOT / "src/distributed_discovery/papers/build_foundations.py").read_text(
+        encoding="utf-8"
+    )
+    assert "DISTRIBUTED_DISCOVERY_UPDATE_PAPER_ARTIFACT" in builder
+    assert "accepted foundations PDF does not match its validation record" in builder

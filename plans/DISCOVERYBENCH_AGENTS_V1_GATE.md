@@ -16,12 +16,19 @@ count/identity, topology, message budget, memory, tools, temperature, top-p,
 seed, retries, stopping, context, cost cap, timeout, raw-trace policy, and
 safety boundary.
 
-Contamination control requires a committed generator before evaluation,
-hidden parameters and private seeds, frozen versions before holdouts, holdout
-generation after freeze, sealed keys, multiple independent batches, no public
-IDs or exact holdout wording, leakage and isomorphism probes, and delayed
-generator/seed/answer release after lock unless safety forbids it. Public tasks
-are calibration only.
+Contamination control requires automated cryptographic custody without a human
+custodian. The generator is committed before evaluation, provider/model
+versions freeze before holdout generation, and a cryptographically secure
+random-number generator creates each seed automatically. The runner publishes
+a seed-commitment hash, encrypts holdouts and answer keys, logs access, and
+isolates evaluated agents from generator internals, seeds, and answers.
+Outputs become immutable before unsealing; post-evaluation verification must
+match the commitments. Multiple independent batches are required. Generator
+parameters, seeds, and answers are released later when safe.
+
+The contamination red line detects exact or near-verbatim public benchmark
+values, wording, task IDs, or solution patterns in evaluated outputs. Public
+tasks are calibration only.
 
 At least two genuinely different model families and a feasible local/open
 baseline are required. Metrics are group discovery, distinct coverage,
@@ -41,3 +48,6 @@ unavailable, or the design reduces to generic accuracy.
 
 Exact next command: `git status --short --branch`.
 Exact next file: `plans/DISCOVERYBENCH_AGENTS_V1_REGISTRATION.md`.
+
+This gate generates no seed, encrypted holdout, key, agent output, or access
+log. It calls no model and incurs no cost.

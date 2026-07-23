@@ -32,11 +32,13 @@ def test_claim_prominence_maps_every_claim_without_evidence_fields() -> None:
     assert sum(result["categories"].values()) == 110
 
 
-def test_phase2_maturity_schema_and_external_validation_boundary() -> None:
+def test_phase2_maturity_schema_and_ai_native_boundary() -> None:
     source = yaml.safe_load((ROOT / "docs/phase-2-maturity.yml").read_text())
     schema = json.loads((ROOT / "docs/phase-2-maturity.schema.json").read_text())
     jsonschema.validate(source, schema)
-    assert all(item["complete"] is False for item in source["external_validation"])
+    assert source["level_5_is_external_validation"] is False
+    assert source["external_validation_claimed"] is False
+    assert all(item["complete"] is False for item in source["ai_native_robustness"])
 
 
 def test_publication_hierarchy_has_four_layers_and_no_submission_claim() -> None:
@@ -57,6 +59,14 @@ def test_discoverybench_agents_gate_has_no_execution_artifact() -> None:
     assert prospectus["provider_calls"] is False
     assert prospectus["agents_executed"] is False
     assert prospectus["traces_exist"] is False
+    assert prospectus["private_seeds_exist"] is False
+    assert prospectus["encrypted_holdouts_exist"] is False
+    assert prospectus["human_custodian"] is False
+    assert "csprng-automated-seed-generation" in prospectus["contamination_controls"]
+    assert (
+        "exact-and-near-verbatim-public-value-wording-id-and-solution-pattern-probes"
+        in prospectus["contamination_controls"]
+    )
     assert len(prospectus["required_frozen_dimensions"]) == 23
     assert len(prospectus["registration_stops"]) == 8
     assert not (ROOT / "plans/DISCOVERYBENCH_AGENTS_V1_REGISTRATION.md").exists()

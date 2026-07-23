@@ -7,6 +7,12 @@ dynamic adaptation, and large-team scaling retain separate boundaries.
 Theorem-family execution is held; the three future questions are unregistered
 gates, not promised results.
 
+The spine remains scientific navigation; Phase 2 timing is now controlled by
+the optionality portfolio rather than by the order of sections below.
+DiscoveryBench Agents v1 registration is the sole next exercise. Reliable
+Discovery and the provenance, utility, separation, and information-order
+candidates remain held behind explicit reduction and non-overlap gates.
+
 This is a navigation and synthesis document. It creates no study, claim, proof,
 run, or novelty assertion. Every established statement below points to its
 registered claim and evidence; every unproved connection is labeled **open**.

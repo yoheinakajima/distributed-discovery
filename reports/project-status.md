@@ -1,5 +1,13 @@
 # Project status — Decentralized Recovery overlap stop
 
+Current Phase 2 architecture (2026-07-23): the repository now treats itself as
+an AI-powered research lab under human PI ownership and final gate authority.
+Internal role separation is not external review. Nine options remain staged,
+with DiscoveryBench Agents v1 registration first; Reliable Discovery remains
+held. Paper lifecycle, claim roles, recomposition, and community translations
+are editorial layers over authoritative claims/studies. No current paper is
+archived or superseded, and no scientific inventory or PDF is changed.
+
 Supersession note (2026-07-23): Phase 1 is complete and Phase 2 holds
 theorem-family execution. Reliable Discovery remains a deferred major
 candidate. DiscoveryBench Agents v1 registration is the exact next substantive

@@ -4,6 +4,12 @@ Phase 2 holds theorem-family execution. Reliable Discovery is preserved and
 deferred. The next substantive session is DiscoveryBench Agents v1
 registration; see its no-execution
 [prospectus](../reports/roadmap-consolidation/discoverybench-agents-v1-prospectus.md).
+The registration must use automated cryptographic custody with no human
+custodian: committed generators, frozen versions, CSPRNG seeds and commitments,
+encrypted holdouts/answers, access logs, isolated execution, immutable outputs
+before unsealing, multiple batches, and later safe release. Exact or
+near-verbatim leakage of public values, wording, IDs, or solution patterns is
+a contamination red line.
 
 This is a navigation index, not a duplicate portfolio.
 

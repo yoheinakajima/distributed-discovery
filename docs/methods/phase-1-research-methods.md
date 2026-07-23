@@ -23,8 +23,10 @@ and required visual inspection. Site generation checked public-safe outputs,
 routes, relations, downloads, accessibility, and no-tracking behavior.
 
 Human owner decisions determined program scope, stops, publication posture,
-and external actions. Codex and other agent assistance is evidenced by plans,
-commits, and repository artifacts where present; this record does not infer
-autonomy. No human study was run. No independent external proof audit,
-technical-reader report, seminar feedback, peer review, or externally induced
-revision is claimed.
+and external actions. The current operating boundary describes an AI-powered
+lab under human PI ownership and final gate authority. Agent assistance is
+evidenced by plans, commits, and repository artifacts where present; this
+record does not infer autonomy. Internal AI roles may produce, reproduce,
+verify, attack, reduce, review literature, corrupt, audit editorial scope,
+integrate, and accept within declared authority. No human study, external
+review, peer review, or community validation is claimed.

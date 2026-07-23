@@ -1,0 +1,42 @@
+schema_version: 1
+status: gated-candidate
+working_internal_label: Price of Missing Provenance
+public_name: false
+study_id: null
+claim_ids: []
+run_exists: false
+registration_authorized: false
+default_loss: worst-case-additive-discovery-regret
+default_loss_reason: blind discovery may be zero
+dimensions:
+  - observables
+  - latent-dependence-class
+  - provenance-aware-architecture
+  - provenance-blind-architecture
+  - action-budget
+  - discovery-objective
+  - identification-region
+  - sharpness
+  - worst-case-additive-discovery-regret
+  - minimax-regret
+  - value-of-additional-provenance-observables
+required_reductions:
+  - Manski-and-partial-identification
+  - robust-decision-and-minimax-regret
+  - Blackwell-comparison
+  - source-and-dependence-identification
+  - existing-price-of-X-quantities
+ratio_rule:
+  allowed: true
+  domain_bounded_away_from_zero: true
+  denominator_floor_required: true
+permitted_stops:
+  - sharp-identification-or-regret-bound
+  - scoped-impossibility
+  - minimal-nonidentification-witness
+  - bounded-null
+  - classical-overlap
+prohibited:
+  - public-coinage-before-gate
+  - study-or-claim-allocation
+  - theorem-promise

@@ -5,6 +5,11 @@ phase_2:
   reliable_discovery: preserved-and-deferred
   next_active_registration: discoverybench-agents-v1
   hierarchy: publication-hierarchy.yml
+  lifecycle_registry: paper-lifecycle.yml
+  claim_role_registry: paper-claim-roles.yml
+  recomposition_registry: paper-recomposition-map.yml
+  optionality_portfolio: strategic-direction/optionality-portfolio.yml
+  current_archived_or_superseded: []
 synthesis:
   title: The Architecture of Distributed Discovery
   subtitle: Foundations, Results, and Open Problems

@@ -20,13 +20,14 @@ practices:
     - separate paper-admission gates
     - deterministic paper builds and visual QA
     - static site safety, provenance, route, relation, and download checks
-decision_authority: human owner
+decision_authority: human PI owner and final gate authority
 agent_assistance: evidenced where repository history records it
+current_operating_boundary: docs/ai-lab-operating-boundary.yml
 human_data_boundary:
   collected: false
   external_evidence_base: false
 known_limitations:
-  - internal independent verification is not external reproduction
+  - context-isolated internal AI reproduction is not outside reproduction
   - corruption testing does not establish scientific completeness
   - deterministic builds do not establish theorem correctness
   - repository process does not establish research quality

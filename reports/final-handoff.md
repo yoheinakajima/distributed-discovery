@@ -1,5 +1,14 @@
 # Final handoff — Decentralized Recovery overlap stop
 
+Current supersession (2026-07-23): Phase 2 uses an AI-powered lab under human
+PI gate authority, an AI-native robustness scale, a nine-option staged
+portfolio, a four-community concordance, and independent paper lifecycle and
+claim-role registries. Former human-review packets are inactive. The Shared
+Discovery Paradox is the unique owner-declared canonical public anchor; the
+seven local PDFs remain working papers/notes, and no current paper is archived
+or superseded. DiscoveryBench Agents v1 registration remains next and no
+provider/model call, private seed, holdout, run, or result exists.
+
 Supersession note (2026-07-23): this handoff accurately records the completed
 stop and its then-current next step. The Phase 2 owner directive now holds
 theorem-family execution, preserves Reliable Discovery as a deferred major

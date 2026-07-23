@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-23 — Phase 2 AI-native optionality and paper lifecycle
+
+- Established the AI-powered-lab operating boundary under human PI gate
+  authority and superseded active human-review preparation without conducting
+  any AI audit or external engagement.
+- Added an OR/MS-first disciplinary map, nine-option staged portfolio,
+  four-community translation concordance, independent paper lifecycle and
+  claim-role registries, and a recomposition workflow.
+- Added lifecycle-aware site rendering, contextual Related formulations, a
+  concordance route, and synthetic archive/replacement tests without archiving
+  a current paper or changing a PDF.
+- Strengthened the future DiscoveryBench Agents cryptographic-custody design
+  and added Gate C, AI lab v2, synthetic shadow-mode, and minimal-ledger
+  prospectuses. No model/provider call, seed, holdout, run, real data,
+  deployment, study, claim, or scientific result was created.
+
 ## 2026-07-23 — Phase 2 external legibility and methods consolidation
 
 - Marked Phase 1 complete without claiming every theorem direction complete;

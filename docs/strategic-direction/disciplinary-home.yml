@@ -1,0 +1,38 @@
+schema_version: 1
+primary_home:
+  field: operations-research-and-management-science
+  status: default-disciplinary-and-rhetorical-home
+  rationale:
+    - portfolio-action-allocation
+    - search-and-coverage-under-budgets
+    - information-to-action-system-design
+    - incentives-authority-reliability-and-coordination
+secondary_mathematical_adjacencies:
+  - economic-theory
+  - algorithmic-game-theory
+discoverybench_agents_audience: multi-agent-ai
+practitioner_language:
+  role: translation-only
+  evidence_or_deployment_claim: false
+methods_discipline_proves_scientific_quality: false
+search_theory_succession:
+  status: gated-internal-candidate
+  public_allowed: false
+  required_literature:
+    - search-theory
+    - team-decision
+    - parallel-search
+    - coverage-and-submodularity
+    - organization-design
+    - information-design
+    - multi-agent-allocation
+  required_gate_outputs:
+    - claimed-open-panel
+    - primary-source-map
+    - terminology-collision-audit
+    - surviving-nonoverlap-statement
+human_engagement:
+  venue_targeting: false
+  seminars: false
+  reviewer_planning: false
+  outreach: false

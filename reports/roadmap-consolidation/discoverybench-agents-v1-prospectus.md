@@ -17,13 +17,19 @@ identity, communication topology and message budget, memory and tool policies,
 temperature and top-p, seed and retry policy, stopping rule, context limits,
 cost cap, timeout, raw-trace format, and safety/redaction policy.
 
-Contamination controls require a committed generator before evaluation, hidden
-parameters or private seeds, provider/model version freeze before holdout
-generation, sealed answer keys, multiple independently generated holdout
-batches, no public task IDs or exact public wording in holdout prompts,
-contamination probes, isomorphism checks, and delayed release of generator,
-seeds, and answers after all runs lock unless provider safety prevents a trace
-component. Public tasks are calibration or prompt-debugging material only.
+Holdout custody is automated and cryptographic; there is no human custodian.
+The generator is committed before evaluation and provider/model versions are
+frozen before holdout generation. A CSPRNG generates seeds automatically; only
+a commitment hash is exposed before evaluation. Holdouts and answer keys are
+encrypted, every access is logged, and the evaluation runner is isolated from
+agent-visible tools and contexts. Evaluated agents cannot access generator
+internals, seeds, or answers. Agent outputs are immutable before unsealing,
+then commitments are verified. Multiple independent holdout batches are
+required, with later release of parameters, seeds, and answers when safe.
+
+The contamination red line checks evaluated outputs for exact or near-verbatim
+public benchmark values, wording, task IDs, and solution patterns. Public tasks
+are calibration or prompt-debugging material only.
 
 The future registration must include more than one model family and, where
 feasible, a reproducible local or open-weight baseline. It authorizes no

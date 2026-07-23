@@ -33,8 +33,19 @@ def human_status(value: object, *, kind: str = "phase") -> str:
     if kind == "registry":
         return REGISTRY_LABELS.get(normalized, PHASE_LABELS.get(normalized, _fallback(raw)))
     if kind == "publication":
-        if normalized == "validated-repository-paper":
-            return "Validated working paper"
+        labels = {
+            "validated-repository-paper": "Validated working paper",
+            "active-working-paper": "Active working paper",
+            "active-research-note": "Active research note",
+            "active-synthesis-note": "Active synthesis note",
+            "canonical-published": "Canonical published anchor",
+            "superseded-working-paper": "Superseded working paper",
+            "archived-source-note": "Archived source note",
+            "living-synthesis": "Living synthesis",
+            "withdrawn-with-reason": "Withdrawn with reason",
+        }
+        if normalized in labels:
+            return labels[normalized]
         return _fallback(raw)
     if "no-result" in normalized or "registration-only" in normalized:
         return "Open question"
