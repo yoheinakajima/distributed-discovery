@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DiscoveryBench Agents v1 execution authorization",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "authorization_id",
+    "authorized_commit",
+    "issue",
+    "branch",
+    "allowed_providers_models",
+    "exact_snapshots",
+    "total_spend_cap_usd",
+    "provider_spend_caps_usd",
+    "local_resource_caps",
+    "expires_at",
+    "custody_required",
+    "trace_required",
+    "campaign_id",
+    "owner_decision_timestamp",
+    "revoked",
+    "public_fixtures_only"
+  ],
+  "properties": {
+    "schema_version": {"const": "agents-execution-authorization-v1"},
+    "authorization_id": {"type": "string", "minLength": 1},
+    "authorized_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "issue": {"type": "integer", "minimum": 1},
+    "branch": {"type": "string", "minLength": 1},
+    "allowed_providers_models": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "exact_snapshots": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true
+    },
+    "total_spend_cap_usd": {"type": "number", "minimum": 0},
+    "provider_spend_caps_usd": {
+      "type": "object",
+      "additionalProperties": {"type": "number", "minimum": 0}
+    },
+    "local_resource_caps": {
+      "type": "object",
+      "required": ["model_invocations", "model_downloads", "accelerator_hours"],
+      "properties": {
+        "model_invocations": {"type": "integer", "minimum": 0},
+        "model_downloads": {"type": "integer", "minimum": 0},
+        "accelerator_hours": {"type": "number", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "expires_at": {"type": "string", "format": "date-time"},
+    "custody_required": {"const": true},
+    "trace_required": {"const": true},
+    "campaign_id": {"type": "string", "minLength": 1},
+    "owner_decision_timestamp": {"type": "string", "format": "date-time"},
+    "revoked": {"type": "boolean"},
+    "public_fixtures_only": {"type": "boolean"}
+  },
+  "additionalProperties": false
+}

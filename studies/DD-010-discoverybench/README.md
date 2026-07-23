@@ -27,20 +27,23 @@ V3 primary run `20260722T054447Z_DD-010_d265e480_6930915b02` passed from clean
 commit `d265e480` and must not be rerun for freshness. DD-C-0087 and the report
 are the bounded evidence record.
 
-## Registered Agents v1 instrument layer
+## Implemented Agents v1 offline instrument layer
 
 DiscoveryBench Agents v1 is registered under DD-010 as an offline instrument,
 not as benchmark content v4 and not as a new study. It may explicitly select
 unchanged v1, v2, or v3 content while independently freezing agent protocol
 `agents-v1` and generator `agents-task-generator-v1`.
 
-The registration defines five finite task families, five agent architecture
+The implementation realizes five finite task families, five agent architecture
 contrasts plus exact comparators, separate metrics with no composite, sealed
 custody, contamination probes, safe visible traces, and independent
-verification. Its status is `registered-not-executed`: no model call, model
-download, private seed, holdout, answer key, trace, evaluation result, cost,
-claim, or run exists.
+verification. Its status is `implementation-complete-not-evaluated`. A
+deterministic 50-case public rehearsal passes, Method A and Method B agree, and
+all 24 public corruptions are rejected. No provider call, model invocation,
+model download, private seed, holdout, private answer key, evaluated provider
+trace, performance result, external cost, claim, or run exists.
 
-Future implementation requires its own issue, branch, exact snapshot gate,
-explicit owner cost authorization, and evidence package. The current v1/v2/v3
-commands, outputs, default, and disabled external adapter remain unchanged.
+Future evaluation requires its own campaign registration, exact snapshot gate,
+explicit owner cost authorization, custody material, and immutable evidence
+package. The current v1/v2/v3 commands, outputs, default, and disabled external
+adapter remain unchanged.

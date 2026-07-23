@@ -1,0 +1,84 @@
+schema_version: 1
+captured_utc: "2026-07-23T15:38:56Z"
+gate: offline-instrument-implementation-readiness
+git:
+  starting_main: 53edc37e34809c33e334ade79973e315835aa61a
+  branch: benchmark/discoverybench-agents-v1-implementation
+  issue: 171
+  open_pull_requests: 0
+  pre_existing_open_issues: [32]
+  github_cli_authenticated: false
+  registration_issue: 169
+  registration_pull_request: 170
+  registration_branch_ci: 30018405916
+  registration_branch_paper_site: 30018405775
+  registration_post_merge_ci: 30018629791
+  registration_pages: 30018630109
+scientific:
+  claims: {count: 110, maximum_id: DD-C-0110}
+  studies: {count: 26, maximum_id: DD-022}
+  manifests: {count: 51, passing: 48}
+  verified_results_tree: c8fd20f66797c5014acf658a749e7f15fcaf6750
+  no_dd_023: true
+  no_dd_c_0111: true
+  new_claims_authorized: false
+  new_runs_authorized: false
+discoverybench:
+  owner: DD-010
+  default_version: v1
+  external_adapter_enabled: false
+  composite_score: null
+  versions:
+    - {version: v1, tasks: 15, protocols: 13, metrics: 19, compatible_rows: 16, exclusions: 179}
+    - {version: v2, tasks: 20, protocols: 21, metrics: 27, compatible_rows: 28, exclusions: 392}
+    - {version: v3, tasks: 24, protocols: 29, metrics: 39, compatible_rows: 36, exclusions: 660}
+agents_v1:
+  protocol_version: agents-v1
+  generator_version: agents-task-generator-v1
+  task_families: 5
+  canonical_cells: 138
+  isomorphic_prompts: 552
+  primitive_states: 58945
+  architectures: 5
+  schemas: 15
+  corruptions: 24
+  implementation_status: registration-auditor-only
+  provider_calls: 0
+  local_model_invocations: 0
+  model_downloads: 0
+  external_cost_usd: 0
+  private_seeds: 0
+  holdouts: 0
+  answer_keys: 0
+  secret_keys: 0
+  provider_traces: 0
+  performance_results: 0
+papers:
+  tracked_tree: b2915d025257db02d15a7a620c3fc66b978ffd1a
+  lifecycle_blob: ca12b4ccbaafe075b66b1fe9ce5c34d3c52ae8eb
+  accepted_count: 7
+  accepted_pages: 119
+  hashes:
+    foundations: 8875926a52f0b8e722f7ce827c456c4b694f9e981c21c4b15bf2b3c60b83e76b
+    three_results: 9eb896353b1210706d6108685dde963e02d6a5ebc64af9f9f69c08c01f5ebc96
+    discovery_institutions: 78606f732f105d79395409dcb9d7224d72aa1e44312ca30ff5719d049afd98a8
+    common_source_trap: afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7
+    incentive_to_ignore: 651c91fb68df6b2f1397ca86f3842b7c2fa9c067601957c32401a7f5e95cd24b
+    threshold_discovery: 634e96662989a3fd6efb5fc3e6919883897e60511826e25c6d0176bac4af9249
+    information_sharing_frontier: a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13
+site:
+  routes: 81
+  public_data_files: 88
+  labs: 18
+  downloads: 23
+  navigation_items: 5
+repository:
+  python_sources: 160
+  tests: 274
+  upstream_pin: 5025cc8e8f2f8ca015dff2066f08f81ad5715a51
+preserved_untracked:
+  - papers/information-sharing-frontier/paper-audit 2.json
+  - papers/information-sharing-frontier/visual-qa 2.md
+  - plans/POST_V5_THEOREM_SPINE_CONSOLIDATION 2.md
+  - reports/roadmap-consolidation/post-v5-literature-and-nonoverlap 2.md
+  - reports/roadmap-consolidation/post-v5-next-program-gate 2.yml

@@ -6,7 +6,12 @@
   "properties": {
     "schema_version": {"const": 1},
     "instrument_id": {"const": "discoverybench-agents-v1"},
-    "status": {"const": "registered-not-executed"},
+    "status": {
+      "enum": [
+        "registered-not-executed",
+        "implementation-complete-not-evaluated"
+      ]
+    },
     "owner_study": {"const": "DD-010"},
     "new_study_allocated": {"const": false},
     "axes": {"type": "object"},

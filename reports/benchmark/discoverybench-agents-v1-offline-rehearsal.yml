@@ -1,0 +1,31 @@
+schema_version: agents-v1-offline-rehearsal-report-v1
+status: pass
+classification: public-conformance-only-not-scientific-evidence
+command: make agents-v1-dry-run
+date_utc: "2026-07-23T00:00:00Z"
+public_tasks: 10
+task_families: 5
+architectures: 5
+cases: 50
+communication_rounds: 2
+method_b_errors: 0
+corruptions_rejected: 24
+corruptions_registered: 24
+contamination_probe_classes: 12
+contamination_fixtures: 12
+schema_retry_limit: 1
+provider_calls: 0
+model_invocations: 0
+model_downloads: 0
+network_calls: 0
+external_cost_usd: 0
+private_material_created: false
+scientific_evidence_created: false
+mock_adapter_calls: 294
+mock_tokens: 28224
+stable_rehearsal_hash: sha256:d3410ff04bb73dcae929c3abc4cf289d58d6830f2a5ab50ca53764bef4af2c59
+rendered_cli_sha256: 044304e965dc349222b622f947db9a3fff0693cd3de17ca38257f580592de3dd
+rendered_cli_bytes: 23528
+observed_runtime_seconds: 0.33
+observed_maximum_resident_bytes: 33193984
+runtime_observation_scope: one local acceptance invocation; non-scientific and environment-specific

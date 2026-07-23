@@ -1,6 +1,6 @@
 schema_version: 1
 instrument_id: discoverybench-agents-v1
-status: registered-not-executed
+status: implementation-complete-not-evaluated
 owner_study: DD-010
 new_study_allocated: false
 axes:

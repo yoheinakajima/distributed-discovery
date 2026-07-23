@@ -1,19 +1,21 @@
-# Project status — DiscoveryBench Agents v1 registered offline
+# Project status — DiscoveryBench Agents v1 implemented offline
 
 Current Phase 2 architecture (2026-07-23): the repository now treats itself as
 an AI-powered research lab under human PI ownership and final gate authority.
 Internal role separation is not external review. Nine options remain staged,
-with DiscoveryBench Agents v1 registered under DD-010 and its execution
-boundary closed; Reliable Discovery remains held. No model call, cost, private
-seed, holdout, trace, result, claim, or run was created. Paper lifecycle, claim
+with DiscoveryBench Agents v1 registered under DD-010, implemented offline,
+and its evaluation boundary closed; Reliable Discovery remains held. The
+50-case public rehearsal passes, Method A/B agree, and all 24 corruptions are
+rejected. No provider call, model invocation, cost, private seed, holdout,
+provider trace, performance result, claim, or run was created. Paper lifecycle, claim
 roles, recomposition, and community translations
 are editorial layers over authoritative claims/studies. No current paper is
 archived or superseded, and no scientific inventory or PDF is changed.
 
 Supersession note (2026-07-23): Phase 1 is complete and Phase 2 holds
 theorem-family execution. Reliable Discovery remains a deferred major
-candidate. The exact next gate is DiscoveryBench Agents v1 offline instrument
-implementation under a separate authorization.
+candidate. The exact next gate is DiscoveryBench Agents v1 evaluation campaign
+registration and cost authorization.
 
 Date: 2026-07-22 (America/Los_Angeles)
 

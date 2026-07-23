@@ -1,14 +1,17 @@
 # Current program state
 
-_DiscoveryBench Agents v1 registration, 2026-07-23:_ Phase 1 is complete at the boundary formed
+_DiscoveryBench Agents v1 offline implementation, 2026-07-23:_ Phase 1 is complete at the boundary formed
 by Programs V1--V5, the Information Sharing Frontier, post-V5 consolidation,
 and the stopped decentralized-recovery overlap gate. Theorem-family execution
 is on hold. Reliable Discovery is preserved and deferred. DiscoveryBench
-Agents v1 is now registered under DD-010 as an offline instrument with five
-task families and five agent architecture contrasts. It is not executed: no
-model call, cost, private seed, holdout, trace, result, claim, study, immutable
-run, theorem, or scientific result was created. The exact next gate is a
-separate DiscoveryBench Agents v1 offline instrument implementation.
+Agents v1 is registered under DD-010 and its offline implementation is
+complete across five task families and five agent architecture contrasts. A
+50-case public mock rehearsal passes, both verification methods agree, and all
+24 corruptions are rejected. It is not model-evaluated: no provider call,
+model invocation, cost, private seed, holdout, provider trace, performance
+result, claim, study, immutable run, theorem, or scientific result was
+created. The exact next gate is DiscoveryBench Agents v1 evaluation campaign
+registration and cost authorization.
 
 Phase 2 now operates as an AI-powered research lab under human PI ownership
 and final gate authority. Ten separated AI roles cover production,
@@ -19,9 +22,10 @@ external review or peer review. Human-engagement preparation is inactive and
 its former repository packets are superseded by
 `docs/ai-lab-operating-boundary.md`.
 
-The active architecture preserves nine staged options. WS-1 registration is
-complete; its irreversible execution boundary remains closed pending offline
-implementation, snapshot verification, and explicit owner cost authorization.
+The active architecture preserves nine staged options. WS-1 offline
+implementation is complete; its irreversible evaluation boundary remains
+closed pending a separate campaign registration, snapshot verification,
+custody creation, and explicit owner cost authorization.
 OR/MS is the primary
 disciplinary and rhetorical home; economics/AGT is the mathematical adjacency;
 multi-agent AI is the future benchmark audience. The paper system separately
