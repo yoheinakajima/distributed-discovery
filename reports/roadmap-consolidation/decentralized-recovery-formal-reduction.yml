@@ -1,0 +1,41 @@
+schema_version: 1
+date_searched: "2026-07-22"
+evidence_class: registration-analysis-not-scientific-claim
+candidate:
+  players: 2
+  resources: 3
+  posterior_values: "mu_j"
+  occupancy: "n_j in {0,1,2}"
+  payoff: "u_i(j,n)=mu_j/n_j"
+  discovery: "sum_j mu_j * 1{n_j>0}"
+singleton_congestion:
+  exact_mapping: true
+  player_specific_needed: false
+  potential: "Phi(n)=sum_j mu_j H_(n_j)"
+  classical_content: [pure-equilibrium-existence, finite-improvement, potential-maximizers-are-equilibria]
+sequential:
+  object: finite-perfect-information-extensive-form-game
+  solution: ordinary-backward-induction
+implementation:
+  desired_correspondence: posterior-top-two-target-sets
+  scopes: [existence, best-equilibrium, worst-equilibrium, every-equilibrium]
+multiple_searcher:
+  closest_source: "Korman and Rodeh 2020"
+  overlap: [known-box-prior, multiple-selfish-searchers, success-probability-objective, congestion-reward, equal-sharing-policy, equilibrium-robustness]
+  differences: [one-round, posterior-produced-from-private-evidence, visible-sequential-occupancy]
+  residual_assessment: "differences do not change the equilibrium proof object in the frozen model"
+candidate_boundary:
+  ordered_posterior: "a>=b>=c"
+  simultaneous_every_pure_recovery: "b>a/2"
+  sequential_every_pure_spe_recovery: "b>a/2"
+  equality: "b=a/2 retains both collision and top-two outcomes"
+preliminary_gate_result: stop-classical-overlap
+sources:
+  - {author: Rosenthal, year: 1973, doi: 10.1007/BF01737559}
+  - {author: "Monderer and Shapley", year: 1996, doi: 10.1006/game.1996.0044}
+  - {author: Milchtaich, year: 1996, doi: 10.1006/game.1996.0027}
+  - {author: Maskin, year: 1999, doi: 10.1111/1467-937X.00076}
+  - {author: Selten, year: 1975, doi: 10.1007/BF01766400}
+  - {author: "Korman and Rodeh", year: 2020, doi: 10.1016/j.jcss.2020.05.003}
+  - {author: "Alpern and Gal", year: 2003, doi: 10.1007/b100809}
+
