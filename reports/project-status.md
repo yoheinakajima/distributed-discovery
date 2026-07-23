@@ -8,6 +8,12 @@ model adds no nonclassical equilibrium content beyond singleton congestion and
 backward induction. No study, claim, run, paper, source implementation, or
 public route is added. Reliable Discovery is the sole next executable program.
 
+PR #163 passed branch CI `29974250347` and paper/site build `29974250393`,
+squash-merged as `cc0ddf3764ab49dc21943b6911ca7648ba82f56c`, and passed
+post-merge CI `29974392058` and Pages `29974392082`. Live desktop/390-pixel QA,
+route destinations, focus, console, and the frozen paper checksum pass. Issue
+#162 is closed and `main` is synchronized.
+
 Programs V1 through V4 are complete at their registered bounded scopes.
 Program V5's four studies DD-019 through DD-022 are merged and deployed with
 claims DD-C-0089 through DD-C-0110 and four immutable primary runs. Issue #153

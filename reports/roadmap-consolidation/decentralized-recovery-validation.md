@@ -1,4 +1,4 @@
-# Decentralized Recovery registration local validation
+# Decentralized Recovery registration validation
 
 Validation date: `2026-07-22` (America/Los_Angeles)
 
@@ -79,5 +79,16 @@ absent.
 
 ## Remote acceptance
 
-Pending branch CI, paper/site workflow, squash merge, post-merge CI and Pages,
-live desktop/390-pixel browser QA, issue closure, and synchronized `main`.
+Pass. Branch CI `29974250347` and paper/site build `29974250393` passed. PR
+#163 squash-merged as `cc0ddf3764ab49dc21943b6911ca7648ba82f56c`.
+Post-merge CI `29974392058` and Pages `29974392082` passed; issue #162 closed;
+and local `main` synchronized exactly to the merge.
+
+The live Program route contains the exact classical-overlap stop and Reliable
+Discovery next-gate markers. Desktop and 390-pixel browser QA found one H1,
+valid heading progression, no page-width overflow, five primary-navigation
+items, a visible three-pixel keyboard focus outline, correct destinations, and
+no console warnings/errors. All scoped Program, study, publication, claims,
+evidence, and source destinations returned HTTP 200. The deployed Information
+Sharing Frontier PDF retained SHA-256
+`2f8b68d5a690e6369e4c3236313eb93f060bfbe73ec531903c090f6ec6f8b6a1`.

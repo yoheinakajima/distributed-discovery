@@ -19,8 +19,11 @@ The gate began on local and remote `main` at
 `c2994bfeaab6a35263d70cdee5c8ca9bb097a51b`. PRs #159, #160, and #161 are
 merged; issue #158 is closed; issue #32 is the sole pre-existing open issue;
 and no PR was open. Main CI `29972035426` and Pages `29972035438` passed.
-Issue #162 is open. The exact branch is
-`research/decentralized-recovery-registration`.
+Issue #162 is closed after PR #163 squash-merged as
+`cc0ddf3764ab49dc21943b6911ca7648ba82f56c`. The exact task branch was
+`research/decentralized-recovery-registration`. Branch CI `29974250347` and
+paper/site build `29974250393` passed; post-merge CI `29974392058` and Pages
+`29974392082` passed.
 
 The baseline is 247 tests, 110 claims through DD-C-0110, 51 manifests with 48
 passing runs, 26 studies through DD-022, 159 Python source files, seven papers
@@ -81,9 +84,10 @@ boundaries retain all indifferent best responses.
 - **M5 — complete:** independent-verification and corruption design.
 - **M6 — complete:** `stop-classical-overlap` decision.
 - **M7B — complete:** durable stop and Reliable Discovery reconciliation.
-- **M8 — active:** full validation, merge, closeout, and main synchronization.
+- **M8 — complete:** full validation, merge, deployment, live QA, issue
+  closure, and main synchronization.
 
-Exactly one milestone is active.
+No registration milestone remains active.
 
 ## 8. Progress checklist
 
@@ -98,7 +102,7 @@ Exactly one milestone is active.
 - [x] Freeze the candidate package and final candidate statement.
 - [x] Complete symbolic, state-space, verification, and corruption designs.
 - [x] Record and reconcile one decision.
-- [ ] Pass local/remote acceptance, merge, close, and synchronize main.
+- [x] Pass local/remote acceptance, merge, close, and synchronize main.
 
 ## 9. Discoveries and surprises
 
@@ -143,6 +147,9 @@ Exactly one milestone is active.
 - `2026-07-22`: reconcile Reliable Discovery as the sole next executable
   program without starting it, allocating DD-023, or changing any scientific
   or paper artifact.
+- `2026-07-22`: after branch CI and paper/site builds passed, squash-merge PR
+  #163, verify post-merge CI/Pages and the live desktop/390-pixel surface,
+  confirm issue #162 closed, and synchronize local `main` exactly to the merge.
 
 ## 11. Classical-reduction strategy
 
@@ -241,10 +248,12 @@ GitHub app and SSH cover the task.
 
 ## 23. Recovery and restart instructions
 
-Run `git status --short --branch`, read this plan and the global decision YAML,
-inspect issue #162 and the task PR, then resume the sole active milestone. Do
-not execute any DD study target, allocate an ID before M6, touch the four
-untracked files, or modify claims/results/papers.
+Run `git status --short --branch` from synchronized `main`, read this plan and
+the global decision YAML, and preserve the completed stop. The next authorized
+work is a separate bounded Reliable Discovery registration beginning at
+`plans/RELIABLE_DISCOVERY_REGISTRATION.md`; do not execute any DD study target,
+allocate DD-023 from this stopped formulation, touch the four untracked files,
+or modify claims/results/papers for freshness.
 
 ## 24. Outcome and retrospective
 
@@ -254,8 +263,9 @@ corruptions are durable. The stop is conceptual rather than computational:
 visible sequential occupancy does not change the strict robust-recovery
 boundary, and the private/public provenance does not alter the underlying
 classical game. No study, claim, run, source implementation, or paper exists.
-M8 remains active until local validation, PR checks, merge, issue closure,
-post-merge CI/Pages, live wording, and synchronized main all pass.
+M8 is complete. PR #163 squash-merged as
+`cc0ddf3764ab49dc21943b6911ca7648ba82f56c`; issue #162 closed; and local
+`main` synchronized exactly to that merge.
 
 The first full `make verify` attempt and a direct Ruff recheck both stopped
 safely at import formatting in the new focused test. No research target ran.
@@ -266,5 +276,9 @@ tests plus claim/run validation under `make verify`, all seven deterministic
 paper builds totaling 115 pages, and the 77-page/26-study site build. The paper
 build refreshed only two generated `source_commit` fields; both were restored
 to the accepted values, after which `claims/`, `results/`, and `papers/` had no
-branch diff. Branch workflows, merge, issue closure, post-merge CI/Pages, live
-desktop/390-pixel checks, and synchronized `main` remain the sole active work.
+branch diff. Branch CI `29974250347` and paper/site build `29974250393` passed.
+Post-merge CI `29974392058` and Pages `29974392082` passed. Live desktop and
+390-pixel QA found one H1, valid heading progression, no page-width overflow,
+visible keyboard focus, five-item navigation, correct stop/next-gate markers,
+HTTP-200 destinations, and no console warnings/errors. The deployed paper hash
+remains `2f8b68d5a690e6369e4c3236313eb93f060bfbe73ec531903c090f6ec6f8b6a1`.

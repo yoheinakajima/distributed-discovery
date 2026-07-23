@@ -9,6 +9,13 @@ No study ID, claim, run, implementation, or paper is created. Reliable
 Discovery is the exact next executable registration gate. See
 `reports/roadmap-consolidation/decentralized-recovery-classical-overlap-stop.md`.
 
+PR #163 passed branch CI `29974250347` and paper/site build `29974250393`, then
+squash-merged as `cc0ddf3764ab49dc21943b6911ca7648ba82f56c`.
+Post-merge CI `29974392058` and Pages `29974392082` passed. Live desktop and
+390-pixel QA confirmed the stop and Reliable Discovery markers, valid headings,
+width containment, keyboard focus, destinations, and a clean console. Issue
+#162 is closed and local `main` is synchronized to the merge.
+
 Program V5 is complete at its registered scope. DD-019 through DD-022 are
 deployed with claims DD-C-0089 through DD-C-0110 and four immutable primary
 runs. The qualified 26-page theorem-family working paper *When Does Information
