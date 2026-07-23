@@ -221,6 +221,12 @@ Exactly one milestone is active at a time.
   no canonical-upstream record, lifecycle dimensions, archive branch, or
   concordance input. The implementation will add those externally without
   coupling lifecycle to paper metadata or PDFs.
+- The first branch paper/site workflow compiled a text- and page-equivalent
+  Foundations PDF to a different Linux byte hash, then correctly failed the
+  lifecycle checksum gate. The routine Foundations builder previously replaced
+  the accepted artifact unconditionally. Verification now preserves the
+  accepted checksummed PDF unless an explicit artifact-update mode is
+  authorized, while still compiling and comparing a byte-different rebuild.
 
 ## Decision log
 
@@ -239,9 +245,14 @@ Exactly one milestone is active at a time.
   after the AI-native replacement architecture is present.
 - `2026-07-23T06:26:21Z`: issue #167 and draft PR #168 own the single active
   lane. Baseline commit `4235353` is pushed; M0 is complete and M1 is active.
-- `2026-07-23T07:28:00Z`: M1 through M15 are complete. Focused governance,
+- `2026-07-23T06:48:00Z`: M1 through M15 are complete. Focused governance,
   schema, lifecycle, archive-fixture, relation, and site tests pass; M16 is
   active.
+- `2026-07-23T07:03:00Z`: branch paper/site run `29986874928` exposed a Linux
+  Foundations hash variance after all seven compiles passed. The lifecycle
+  gate rejected it before publication. Add an explicit accepted-artifact lock
+  to the Foundations builder, without changing paper source, PDF, validation,
+  metadata, or visual-QA records.
 
 ## Validation strategy
 
