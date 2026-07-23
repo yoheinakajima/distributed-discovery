@@ -8,6 +8,7 @@ from collections.abc import Iterator, Mapping
 from dataclasses import dataclass
 from types import MappingProxyType
 
+from distributed_discovery.benchmark.agents_v1.generation import FAMILY_PUBLIC_CODES
 from distributed_discovery.benchmark.agents_v1.models import CapabilityView, TaskInstance
 
 PROHIBITED_KEYS = frozenset(
@@ -97,7 +98,13 @@ def leakage_findings(value: object, *, evaluator_values: tuple[str, ...] = ()) -
     return tuple(sorted(set(findings)))
 
 
-def compile_prompt(task: TaskInstance, agent_id: str) -> CompiledPrompt:
+def compile_prompt(
+    task: TaskInstance,
+    agent_id: str,
+    *,
+    architecture_id: str = "unspecified-public-conformance",
+    rounds_remaining: int = 2,
+) -> CompiledPrompt:
     capability = task.capabilities[agent_id]
     system = (
         "Solve only the supplied finite synthetic search task. Use only the declared "
@@ -105,7 +112,8 @@ def compile_prompt(task: TaskInstance, agent_id: str) -> CompiledPrompt:
         "final structured action. Do not request hidden state or hidden reasoning."
     )
     payload = {
-        "family": task.family_id,
+        "family": FAMILY_PUBLIC_CODES[task.family_id],
+        "architecture_id": architecture_id,
         "agent": agent_id,
         "public_state": dict(capability.public_state),
         "private_observation": capability.private_observation,
@@ -113,7 +121,7 @@ def compile_prompt(task: TaskInstance, agent_id: str) -> CompiledPrompt:
         "portfolio_slot": capability.portfolio_slot,
         "actions": list(task.action_vocabulary),
         "sources": list(task.source_vocabulary),
-        "rounds_remaining": 2,
+        "rounds_remaining": rounds_remaining,
         "output_contract": {
             "agent_id": agent_id,
             "visible_message": "string",

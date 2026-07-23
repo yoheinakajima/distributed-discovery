@@ -37,15 +37,20 @@ def plan_batch(
     architectures: int,
     models: int,
     repeats: int,
+    agents_per_task: int = 1,
+    total_agent_slots: int | None = None,
     rounds: int = 2,
     tokens_per_turn: int = 512,
     bytes_per_turn: int = 4096,
     provider_model_costs: tuple[tuple[str, Decimal], ...] = (),
     authorized_max_spend_usd: Decimal = Decimal("0"),
 ) -> BatchPlan:
-    if min(tasks, architectures, models, repeats, rounds) < 1:
+    if min(tasks, architectures, models, repeats, rounds, agents_per_task) < 1:
         raise ValueError("batch dimensions must be positive")
-    turns = tasks * architectures * models * repeats * rounds
+    agent_slots = total_agent_slots if total_agent_slots is not None else tasks * agents_per_task
+    if agent_slots < 1:
+        raise ValueError("total agent slots must be positive")
+    turns = agent_slots * architectures * models * repeats * rounds
     calls = turns
     token_ceiling = turns * tokens_per_turn
     maximum = sum((cost for _, cost in provider_model_costs), Decimal("0"))

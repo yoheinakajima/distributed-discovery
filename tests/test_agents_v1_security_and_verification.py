@@ -40,7 +40,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def _public_run() -> tuple[object, object, object]:
     task = generate_public_calibration()[0]
-    run = run_architecture(task, "full-broadcast", MockAdapter())
+    run = run_architecture(task, "full-broadcast-shared-transcript", MockAdapter())
     evaluation = evaluate_run(task, run)
     return task, run, evaluation
 

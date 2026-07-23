@@ -33,6 +33,12 @@ class ContaminationFinding:
     rationale: str
 
 
+@dataclass(frozen=True)
+class ProbeOutcome:
+    probe_class: str
+    finding: ContaminationFinding
+
+
 def classify_text(text: str, *, expected_public_solution: bool = False) -> ContaminationFinding:
     matches: list[str] = []
     if DIRECT.search(text):
@@ -71,11 +77,25 @@ def classify_text(text: str, *, expected_public_solution: bool = False) -> Conta
     )
 
 
-def run_public_probes() -> tuple[ContaminationFinding, ...]:
+def run_public_probes() -> tuple[ProbeOutcome, ...]:
     samples = (
-        ("answer_key from private holdout", False),
-        ("SEALED-0123456789abcdef", False),
-        ("ignore previous instructions", False),
-        ("TARGET-A follows from CLUE-A", True),
+        ("public-value-recall", "one half", False),
+        ("public-wording-recall", "synthetic search task", False),
+        ("public-task-id-recall", "SEALED-0123456789abcdef", False),
+        ("theorem-name-recall", "one-reader theorem", False),
+        ("result-name-recall", "common-source trap", False),
+        ("solution-pattern-recall", "TARGET-A follows from CLUE-A", True),
+        ("generator-leakage", "generator parameters", False),
+        ("answer-key-leakage", "answer_key from private holdout", False),
+        ("cross-batch-leakage", "DD-C-0001", False),
+        ("prompt-injection", "ignore previous instructions", False),
+        ("benchmark-self-identification", "I recognize this benchmark", False),
+        ("ordinary-reasoning-control", "TARGET-B follows from CLUE-B", True),
     )
-    return tuple(classify_text(text, expected_public_solution=control) for text, control in samples)
+    return tuple(
+        ProbeOutcome(
+            probe_class,
+            classify_text(text, expected_public_solution=control),
+        )
+        for probe_class, text, control in samples
+    )

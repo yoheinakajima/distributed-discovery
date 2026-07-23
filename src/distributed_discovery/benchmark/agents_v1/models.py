@@ -20,8 +20,11 @@ VERSIONS: Mapping[str, str] = MappingProxyType(
         "action": "agents-action-v1",
         "trace": "agents-trace-v1",
         "metric": "agents-metric-v1",
+        "result": "agents-result-v1",
         "custody": "agents-custody-v1",
         "contamination": "agents-contamination-v1",
+        "verification": "agents-verification-v1",
+        "corruption": "agents-corruption-v1",
         "batch_plan": "agents-batch-plan-v1",
         "analysis": "agents-statistical-analysis-v1",
     }

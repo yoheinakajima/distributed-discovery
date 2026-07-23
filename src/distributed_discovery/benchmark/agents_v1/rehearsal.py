@@ -31,7 +31,10 @@ from distributed_discovery.benchmark.agents_v1.prompts import (
     compile_prompt,
 )
 from distributed_discovery.benchmark.agents_v1.traces import build_trace
-from distributed_discovery.benchmark.agents_v1.verification import verify_offline_bundle
+from distributed_discovery.benchmark.agents_v1.verification import (
+    verify_batch_aggregation,
+    verify_offline_bundle,
+)
 
 
 def run_rehearsal() -> dict[str, object]:
@@ -39,6 +42,9 @@ def run_rehearsal() -> dict[str, object]:
     case_records: list[dict[str, object]] = []
     method_disagreements: list[str] = []
     trace_hashes: list[str] = []
+    observed_calls = 0
+    observed_tokens = 0
+    observed_cost = Decimal("0")
     first_context: (
         tuple[TaskInstance, CompiledPrompt, str, dict[str, object], ToyCustodyBundle] | None
     ) = None
@@ -49,6 +55,9 @@ def run_rehearsal() -> dict[str, object]:
             evaluation = evaluate_run(task, run)
             trace = build_trace(run)
             output = evaluation.serializable()
+            observed_calls += evaluation.calls
+            observed_tokens += evaluation.input_tokens + evaluation.output_tokens
+            observed_cost += evaluation.cost_usd
             custody = seal_public_toy(
                 seed_material="PUBLIC-TOY-SEED",
                 task_batch=[task.visible_record()],
@@ -117,6 +126,16 @@ def run_rehearsal() -> dict[str, object]:
         architectures=len(ARCHITECTURES),
         models=1,
         repeats=1,
+        total_agent_slots=sum(len(task.capabilities) for task in tasks),
+    )
+    method_disagreements.extend(
+        f"batch:{error}"
+        for error in verify_batch_aggregation(
+            batch,
+            observed_calls=observed_calls,
+            observed_tokens=observed_tokens,
+            observed_cost_usd=observed_cost,
+        )
     )
     probes = run_public_probes()
     stable_payload = {
@@ -137,6 +156,8 @@ def run_rehearsal() -> dict[str, object]:
         "contamination_probe_class_count": 12,
         "contamination_fixture_count": len(probes),
         "batch": batch.serializable(),
+        "observed_mock_calls": observed_calls,
+        "observed_mock_tokens": observed_tokens,
         "provider_calls": 0,
         "model_invocations": 0,
         "model_downloads": 0,

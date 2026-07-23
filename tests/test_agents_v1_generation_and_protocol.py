@@ -20,6 +20,7 @@ from distributed_discovery.benchmark.agents_v1.generation import (
 )
 from distributed_discovery.benchmark.agents_v1.models import task_from_records
 from distributed_discovery.benchmark.agents_v1.orchestration import (
+    ARCHITECTURE_TURNS,
     ARCHITECTURES,
     information_rights,
     run_architecture,
@@ -35,9 +36,17 @@ def test_registered_generator_counts_and_determinism() -> None:
     cells = canonical_cells()
     assert len(cells) == 138
     assert sum(cell.primitive_labeled_states for cell in cells) == 58_945
+    assert cells[0].primitive_labeled_states == 36
     prompts = generate_prompt_space()
     assert len(prompts) == 552
     assert prompts == generate_prompt_space()
+    assert all(
+        leakage_findings(
+            json.loads(compile_prompt(task, sorted(task.capabilities)[0]).user)
+        )
+        == ()
+        for task in prompts
+    )
 
 
 def test_round_trip_and_hidden_labels() -> None:
@@ -52,14 +61,27 @@ def test_round_trip_and_hidden_labels() -> None:
     assert restored.visible_record() == task.visible_record()
     assert restored.commitment == instance_commitment(restored)
     assert all(
-        capability.private_observation.startswith("HIDDEN-LABEL-")
+        capability.private_observation == "SOURCE-SELECTION-PENDING"
         for capability in task.capabilities.values()
+    )
+    assert all(
+        value.startswith("HIDDEN-")
+        for signals in task.primitive_state["source_signals"].values()
+        for value in signals.values()
     )
 
 
 def test_private_generation_fails_closed() -> None:
-    with pytest.raises(PermissionError, match="future authorization"):
+    with pytest.raises(PermissionError, match="future authorized"):
         generate_instance(canonical_cells()[0], variant=0, public_fixture=False)
+    with pytest.raises(PermissionError, match="disabled"):
+        generate_instance(
+            canonical_cells()[0],
+            variant=0,
+            public_fixture=False,
+            authorization=object(),
+            custody_context=object(),
+        )
 
 
 def test_prompt_compiler_and_capability_sandbox() -> None:
@@ -83,18 +105,28 @@ def test_all_architecture_information_rights() -> None:
     for architecture in ARCHITECTURES:
         rights = information_rights(architecture, agents, messages)
         assert set(rights) == set(agents)
-    assert information_rights("isolated-private", agents, messages)["AGENT-01"] == ()
-    assert len(information_rights("full-broadcast", agents, messages)["AGENT-01"]) == 3
-    assert information_rights("designated-reader", agents, messages)["AGENT-03"] == ("one",)
+    assert information_rights("isolated-private-agents", agents, messages)["AGENT-01"] == ()
+    assert (
+        len(
+            information_rights("full-broadcast-shared-transcript", agents, messages)[
+                "AGENT-01"
+            ]
+        )
+        == 3
+    )
+    assert information_rights(
+        "designated-reader-selective-sharing", agents, messages
+    )["AGENT-03"] == ("one",)
 
 
 def test_orchestrators_use_two_rounds_and_one_schema_retry() -> None:
     task = generate_instance(canonical_cells()[0], variant=0, public_fixture=True)
     for architecture in ARCHITECTURES:
         run = run_architecture(task, architecture, MockAdapter())
-        assert {turn.round_number for turn in run.turns} == {0, 1}
+        expected_turns = max(ARCHITECTURE_TURNS[architecture], 2)
+        assert {turn.round_number for turn in run.turns} == set(range(expected_turns))
         assert len(run.final_actions) == len(task.capabilities)
-    malformed = run_architecture(task, "isolated-private", MockAdapter("malformed"))
+    malformed = run_architecture(task, "isolated-private-agents", MockAdapter("malformed"))
     assert all(turn.retry_count == 1 for turn in malformed.turns)
 
 

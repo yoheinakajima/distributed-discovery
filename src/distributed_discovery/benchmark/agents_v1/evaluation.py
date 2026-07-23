@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from collections import Counter
+from collections.abc import Mapping
 from dataclasses import dataclass
 from decimal import Decimal
 from fractions import Fraction
@@ -50,23 +52,46 @@ def evaluate_run(
     flat = tuple(item for action in finals for item in action.actions)
     distinct = frozenset(flat)
     target = str(task.primitive_state["target"])
-    discovery = Fraction(int(target in distinct), 1)
-    coverage = Fraction(len(distinct), len(task.action_vocabulary))
+    if task.family_id == "threshold-team-formation":
+        parameters = task.primitive_state["parameters"]
+        if not isinstance(parameters, Mapping):
+            raise ValueError("task parameters must be a mapping")
+        threshold = int(str(parameters["threshold"]))
+        discovery = Fraction(int(Counter(flat)[target] >= threshold), 1)
+    else:
+        discovery = Fraction(int(target in distinct), 1)
+    action_capacity = min(len(task.capabilities), len(task.action_vocabulary))
+    coverage = Fraction(len(distinct), action_capacity)
     duplication = Fraction(max(0, len(flat) - len(distinct)), max(1, len(flat)))
     planner = Fraction(task.baseline.planner_discovery)
     private = Fraction(task.baseline.private_discovery)
     recovery = (
-        Fraction(int(len(distinct) >= task.baseline.recovery_budget), 1)
+        Fraction(
+            int(len(distinct) >= task.baseline.recovery_budget and discovery == 1),
+            1,
+        )
         if task.baseline.recovery_budget is not None
         else None
     )
-    sources = {action.source_choice for action in finals if action.source_choice != "none"}
-    source_diversity = Fraction(len(sources), max(1, len(task.source_vocabulary) - 1))
-    compression = Fraction(
-        max(0, (isolated_distinct_actions or len(distinct)) - len(distinct)),
-        max(1, isolated_distinct_actions or len(distinct)),
+    source_counts = Counter(
+        action.source_choice for action in finals if action.source_choice != "none"
     )
-    invalid = sum(record.action is None for record in run.turns)
+    source_total = sum(source_counts.values())
+    source_diversity = (
+        1
+        - sum(
+            (Fraction(count, source_total) ** 2 for count in source_counts.values()),
+            Fraction(0),
+        )
+        if source_total
+        else Fraction(0)
+    )
+    isolated_coverage = Fraction(
+        isolated_distinct_actions if isolated_distinct_actions is not None else len(distinct),
+        action_capacity,
+    )
+    compression = isolated_coverage - coverage
+    invalid = len(task.capabilities) - len(finals)
     calls = len(run.turns) + sum(record.retry_count for record in run.turns)
     input_tokens = sum(record.response.usage.input_tokens for record in run.turns)
     output_tokens = sum(record.response.usage.output_tokens for record in run.turns)
@@ -90,7 +115,7 @@ def evaluate_run(
             if task.baseline.worst_equilibrium is not None
             else None
         ),
-        invalid_action_rate=Fraction(invalid, max(1, len(run.turns))),
+        invalid_action_rate=Fraction(invalid, max(1, len(task.capabilities))),
         protocol_compliance=Fraction(int(not run.protocol_errors), 1),
         calls=calls,
         input_tokens=input_tokens,

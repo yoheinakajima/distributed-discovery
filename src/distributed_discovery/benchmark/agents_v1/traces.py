@@ -16,6 +16,10 @@ HOST_PATH = re.compile(r"(?:/Users|/home|C:\\Users)[/\\][^\s\"']+")
 PII_EMAIL = re.compile(r"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b", re.IGNORECASE)
 PROPRIETARY = re.compile(r"(?i)\bproprietary[_ -]field\b[^,}\n]*")
 CHAIN_FIELDS = frozenset({"chain_of_thought", "hidden_reasoning", "reasoning_tokens"})
+SENSITIVE_KEY = re.compile(
+    r"(?i)(?:api[_-]?key|authorization|credential|token|secret|password|"
+    r"environment|account[_-]?id|request[_-]?id|proprietary)"
+)
 
 
 @dataclass(frozen=True)
@@ -31,6 +35,10 @@ def _redact(value: object, path: str, records: list[str]) -> object:
         for key, item in value.items():
             if key in CHAIN_FIELDS:
                 records.append(f"{path}.{key}:removed-hidden-reasoning")
+                continue
+            if SENSITIVE_KEY.search(str(key)):
+                records.append(f"{path}.{key}:sensitive-field")
+                output[str(key)] = "[REDACTED]"
                 continue
             output[str(key)] = _redact(item, f"{path}.{key}", records)
         return output

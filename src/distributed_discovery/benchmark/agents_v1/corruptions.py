@@ -19,7 +19,11 @@ from distributed_discovery.benchmark.agents_v1.custody import (
 from distributed_discovery.benchmark.agents_v1.orchestration import MAX_MESSAGE_CHARS
 from distributed_discovery.benchmark.agents_v1.prompts import ClosedCapabilityView, leakage_findings
 from distributed_discovery.benchmark.agents_v1.traces import verify_trace_hashes
-from distributed_discovery.benchmark.agents_v1.verification import verify_task
+from distributed_discovery.benchmark.agents_v1.verification import (
+    verify_exclusions,
+    verify_metric_vector,
+    verify_task,
+)
 
 
 @dataclass(frozen=True)
@@ -213,14 +217,21 @@ def execute_corruption_suite(
         _expect(
             "C20",
             "metric convention",
-            lambda: _reject_if("composite" == "composite", "unregistered metric convention"),
+            lambda: _require_no_errors(verify_metric_vector({"composite_score": 1})),
         )
     )
     cases.append(
         _expect(
             "C21",
             "equilibrium swap",
-            lambda: _reject_if(True, "equilibrium labels"),
+            lambda: _require_no_errors(
+                verify_task(
+                    replace(
+                        task,
+                        baseline=replace(task.baseline, best_equilibrium="2"),
+                    )
+                )
+            ),
         )
     )
     cases.append(
@@ -234,7 +245,9 @@ def execute_corruption_suite(
         _expect(
             "C23",
             "exclusion mutation",
-            lambda: _reject_if(True, "registered exclusion"),
+            lambda: _require_no_errors(
+                verify_exclusions(({"excluded": True, "reason": ""},))
+            ),
         )
     )
     cases.append(

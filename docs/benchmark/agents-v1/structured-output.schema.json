@@ -19,6 +19,11 @@
       "maxItems": 6,
       "items": {"type": "string", "pattern": "^TARGET-[A-Z]$"}
     },
-    "declared_confidence": {"type": "number", "minimum": 0, "maximum": 1}
+    "declared_confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "declared_metadata": {
+      "type": "object",
+      "description": "Machine-readable agent-declared metadata; evaluator and hidden-answer fields remain prohibited.",
+      "additionalProperties": true
+    }
   }
 }

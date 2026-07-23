@@ -77,7 +77,7 @@ def parse_action(
         raise ValueError("task commitment mismatch")
     if value["agent_id"] != agent_id:
         raise ValueError("agent identity mismatch")
-    if value["round"] != round_number or round_number not in (0, 1):
+    if value["round"] != round_number or round_number not in (0, 1, 2):
         raise ValueError("round mismatch")
     if not isinstance(value["final"], bool) or (final_required and not value["final"]):
         raise ValueError("invalid final flag")

@@ -33,6 +33,7 @@ class AdapterRequest:
     max_output_tokens: int = 256
     schema_retry: bool = False
     repair_errors: tuple[str, ...] = ()
+    final_required: bool = False
 
 
 @dataclass(frozen=True)
@@ -106,9 +107,9 @@ class MockAdapter:
             "task_instance_commitment": f"sha256:{request.prompt.task_commitment}",
             "agent_id": request.prompt.agent_id,
             "round": request.round_number,
-            "final": request.round_number >= 1,
+            "final": request.final_required,
             "visible_message": f"candidate:{action}",
-            "source_choice": "none",
+            "source_choice": request.source_vocabulary[0],
             "actions": [action],
             "declared_metadata": {"mock": True},
         }
@@ -141,7 +142,7 @@ class DisabledProviderAdapter:
         self._authorization = authorization
 
     def build_payload(self, request: AdapterRequest) -> Mapping[str, object]:
-        if self.manifest.moving_alias or self.manifest.exact_snapshot != self.manifest.model_id:
+        if self.manifest.moving_alias or not self.manifest.exact_snapshot:
             raise PermissionError("an immutable exact model snapshot is required")
         return {
             "model": self.manifest.exact_snapshot,
