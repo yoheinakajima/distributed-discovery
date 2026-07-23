@@ -1,0 +1,93 @@
+schema_version: 1
+effective_date: "2026-07-23"
+phase_1:
+  status: complete
+  boundary:
+    - Programs V1-V5
+    - Information Sharing Frontier
+    - post-V5 theorem-spine consolidation
+    - decentralized-recovery classical-overlap stop
+  qualification: not all theorem directions are complete
+phase_2:
+  name: external legibility, literature transmission, and methods consolidation
+  evidence_frozen: true
+  permitted:
+    - editorial consolidation
+    - literature maps and transmission audits
+    - paper positioning, cross-citation, status, hierarchy, and claim-label alignment
+    - publication hierarchy and reading paths
+    - factual methods documentation
+    - review-packet preparation
+    - registration prospectuses
+    - schemas, validators, tests, and bounded independent-review preparation
+  prohibited:
+    - new immutable primary research run
+    - new or executed DD study
+    - new scientific claim
+    - theorem-family execution or paper
+    - parameter-grid extension
+    - Reliable Discovery registration or execution
+    - provider or model call
+    - external reviewer or seminar contact
+    - ActiveGraph mutation or authority
+    - canonical upstream mutation
+    - submission, release, DOI, or review claim
+classical_overlap_stop:
+  issue: 162
+  decision: stop-classical-overlap
+  formulation: M=3, N=2 common-posterior equal-sharing simultaneous game
+  boundary: classical singleton congestion/resource-selection game
+  sequential_boundary: ordinary backward induction
+  information_conditioned_equilibrium_survives: false
+  reopen_or_allocate_study: false
+strategic_implementation_spine:
+  kind: organizing device
+  may_connect:
+    - equal-share coverage incentives
+    - duplication
+    - sole-rescue and marginal-contribution rewards
+    - planner and equilibrium outcomes
+    - acquisition, attention, disclosure, and action selection
+  does_not_subsume:
+    - information geometry in DD-019 through DD-021
+    - threshold complementarity
+    - missing provenance
+    - unreliable execution
+    - correlated failure
+    - communication limits
+    - dynamic adaptation
+    - large-team scaling
+marginal_contribution:
+  status: characterization gate
+  general_closure_claimed: false
+rho_star_m_ge_3:
+  existing_theorem: false
+  status: possible future gate
+theorem_gates:
+  gate_a: Information–Action Decomposition and Decentralized Separation Failure
+  gate_b: Discovery Order candidate
+  discovery_order_notation_publication_allowed: false
+literature_transmission:
+  machine_audited: true
+  automation_certifies:
+    novelty: false
+    completeness: false
+    priority: false
+    interpretation: false
+    journal_fit: false
+claims:
+  evidence_authority: claims/claims.yml
+  editorial_prominence_separate: true
+  prominence_may_upgrade_or_hide_evidence: false
+reading_path:
+  - Shared Discovery Paradox
+  - Incentive to Ignore
+  - When Does Information Sharing Improve Decentralized Discovery?
+reliable_discovery:
+  status: preserved and deferred
+  role: next major theorem-family candidate
+  next_active_registration: false
+next_session:
+  exact_text: Start a NEW DiscoveryBench Agents v1 registration session in /Users/yoheinakajima/Documents/distributed-discovery.
+  exact_next_file: plans/DISCOVERYBENCH_AGENTS_V1_REGISTRATION.md
+
