@@ -1,0 +1,88 @@
+schema_version: 1
+captured_utc: "2026-07-23T06:24:15Z"
+git:
+  main_sha: 792da66aa8e0253c087752e3670efc19055c15cb
+  default_branch: main
+  open_substantive_prs: 0
+  open_nonblocking_issues: [32]
+  completed_issue: 165
+  completed_pull_request: 166
+  canonical_upstream_pin: 5025cc8e8f2f8ca015dff2066f08f81ad5715a51
+  github_cli_authenticated: false
+scientific:
+  claims:
+    count: 110
+    maximum_id: DD-C-0110
+    git_blob: 8f262daf3aa43f2505d415988d8eca6f0ecd3a42
+  studies:
+    count: 26
+    maximum_id: DD-022
+    git_tree: 76741af60b22e530b931738e1a96be6c99185cd4
+  manifests:
+    count: 51
+    passing: 48
+    registry_tree: 73df1474e8dc229284b322b71a73086b5221d075
+  verified_results_tree: c8fd20f66797c5014acf658a749e7f15fcaf6750
+  python_sources: 159
+papers:
+  source_tree: b2915d025257db02d15a7a620c3fc66b978ffd1a
+  count: 7
+  total_pages: 119
+  artifacts:
+    - {slug: foundations, pages: 12, sha256: 8875926a52f0b8e722f7ce827c456c4b694f9e981c21c4b15bf2b3c60b83e76b}
+    - {slug: three-results, pages: 14, sha256: 9eb896353b1210706d6108685dde963e02d6a5ebc64af9f9f69c08c01f5ebc96}
+    - {slug: discovery-institutions, pages: 4, sha256: 78606f732f105d79395409dcb9d7224d72aa1e44312ca30ff5719d049afd98a8}
+    - {slug: common-source-trap, pages: 21, sha256: afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7}
+    - {slug: incentive-to-ignore, pages: 21, sha256: 651c91fb68df6b2f1397ca86f3842b7c2fa9c067601957c32401a7f5e95cd24b}
+    - {slug: threshold-discovery, pages: 21, sha256: 634e96662989a3fd6efb5fc3e6919883897e60511826e25c6d0176bac4af9249}
+    - {slug: information-sharing-frontier, pages: 26, sha256: a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13}
+publication:
+  hierarchy_layers: 4
+  local_metadata_files: 7
+  canonical_upstream_entries: 1
+  flagship_working_papers: 4
+  research_notes: 1
+  synthesis_notes: 2
+  current_archived_or_superseded: 0
+  upstream_metadata_label: working-paper
+  upstream_doi_evidence: false
+  upstream_submission_evidence: false
+  upstream_acceptance_evidence: false
+  upstream_peer_review_evidence: false
+site:
+  html_routes: 79
+  public_data_files: 85
+  labs: 18
+  downloads: 23
+  relations_source_blob: 446db36d48e139aa14ad8d1cf99b064679366a52
+editorial:
+  literature_families: 15
+  prominence_claims: 110
+  external_review_tree: 602115830776748242c5894df5e0d7632e090280
+  maturity_blob: ed935d35a4d1199fc0cd582b09dc704e21ab459c
+  methods_tree: 5b7608c09b299b489ab9a91d2b0df94eda1baed9
+  external_review_files:
+    - reports/external-review/agt-reader-packet.md
+    - reports/external-review/claims-requiring-external-review.yml
+    - reports/external-review/economic-theory-reader-packet.md
+    - reports/external-review/reviewer-selection-criteria.md
+tests:
+  collected: 255
+prohibited_artifacts:
+  dd_023_exists: false
+  dd_c_0111_exists: false
+  new_study: false
+  new_claim: false
+  new_run: false
+  model_provider_call: false
+  paid_api_call: false
+  real_or_human_data: false
+  external_contact: false
+  activegraph_mutation: false
+  sqlite_added: false
+preserved_untracked:
+  - papers/information-sharing-frontier/paper-audit 2.json
+  - papers/information-sharing-frontier/visual-qa 2.md
+  - plans/POST_V5_THEOREM_SPINE_CONSOLIDATION 2.md
+  - reports/roadmap-consolidation/post-v5-literature-and-nonoverlap 2.md
+  - reports/roadmap-consolidation/post-v5-next-program-gate 2.yml
