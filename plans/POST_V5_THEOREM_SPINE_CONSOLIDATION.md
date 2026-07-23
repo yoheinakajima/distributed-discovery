@@ -93,11 +93,11 @@ needed to prevent current-state confusion.
 - **C — complete:** theorem-spine document with claim/study/paper/evidence
   routing and established/open-arrow distinction.
 - **D — complete:** living-synthesis maps and ownership reconciliation.
-- **E — active:** public site and bidirectional relationship repair plus
+- **E — complete:** public site and bidirectional relationship repair plus
   focused tests and route audit.
-- **F — pending:** dated literature and non-overlap audit using primary or
+- **F — complete:** dated literature and non-overlap audit using primary or
   stable scholarly sources.
-- **G — pending:** one A/B/C next-program gate decision, full validation,
+- **G — active:** one A/B/C next-program gate decision, full validation,
   branch workflows, merge, Pages, live QA, issue closure, and main sync.
 
 ## Progress checklist
@@ -113,7 +113,7 @@ needed to prevent current-state confusion.
   needs, and valid future boundaries without bulk replacement.
 - [x] Complete and commit Milestone A artifacts as `059b81a`, push, and open
   draft PR #159.
-- [ ] Complete Milestones B through F sequentially with plan updates.
+- [x] Complete Milestones B through F sequentially with plan updates.
 - [ ] Complete Milestone G and normal-completion acceptance.
 
 ## Discoveries and surprises
@@ -149,6 +149,10 @@ needed to prevent current-state confusion.
   DD-022. Select Outcome A only after the literature refresh identifies the
   direct planner/selection objection and the severe classical congestion/search
   overlap risk; the future registration must permit an overlap-failure stop.
+- `2026-07-23T00:47:00Z`: focused relationship tests pass (`2 passed`) and
+  `make site` preserves 77 routes, 26 studies, 110 claims, 48 passing runs, and
+  seven publications. Advance the sole active milestone to G for broad
+  validation, invariant comparison, workflows, merge, deployment, and live QA.
 
 ## Validation strategy
 
