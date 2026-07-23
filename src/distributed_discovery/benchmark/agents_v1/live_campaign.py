@@ -112,6 +112,17 @@ def run_provider_preflight(root: Path, *, force: bool = False) -> dict[str, obje
             and existing.get("preflight_complete") is True
         ):
             return _public_summary(existing, resumed=True)
+        prior_commit = existing.get("execution_commit")
+        if (
+            isinstance(prior_commit, str)
+            and len(prior_commit) == 40
+            and prior_commit != execution_commit
+            and existing.get("preflight_complete") is True
+        ):
+            _write_yaml(
+                root / "reports/benchmark/agents-v1-preflight-attempts" / f"{prior_commit}.yml",
+                existing,
+            )
 
         routes, route_audit = _discover_routes(
             credentials=credentials,
@@ -178,6 +189,53 @@ def run_provider_preflight(root: Path, *, force: bool = False) -> dict[str, obje
             state["ledger"] = _ledger_record(ledger, authorization)
             state["updated_utc"] = _now()
             _write_yaml(root / STATE_RELATIVE, state)
+        audited_routes = route_audit.get("routes")
+        if isinstance(audited_routes, Sequence):
+            for audited in audited_routes:
+                if not isinstance(audited, Mapping):
+                    continue
+                route_id = str(audited.get("route_id"))
+                if not route_id or route_id in route_records:
+                    continue
+                discovery_pass = audited.get("endpoint_discovery_status") == "pass"
+                endpoints = audited.get("endpoints")
+                exact_model_access = (
+                    discovery_pass and isinstance(endpoints, Sequence) and bool(endpoints)
+                )
+                route_records[route_id] = {
+                    "route_id": route_id,
+                    "gateway_id": "openrouter",
+                    "credential_variable_name": "OPENROUTER_API_KEY",
+                    "credential_configured": True,
+                    "credential_valid": discovery_pass,
+                    "account_or_project_access": discovery_pass,
+                    "model_slug": audited.get("model_slug"),
+                    "exact_endpoint_provider_slug": None,
+                    "exact_model_access": exact_model_access,
+                    "returned_upstream_provider_matches": None,
+                    "fallbacks_disabled": True,
+                    "data_policy_eligible": False,
+                    "zdr_eligible": False,
+                    "structured_output_supported": False,
+                    "provider_adapter_supported": True,
+                    "public_task_end_to_end_passed": False,
+                    "usage_metadata_available": False,
+                    "cost_accounting_available": False,
+                    "retention_policy_eligible": False,
+                    "snapshot_policy_eligible": True,
+                    "campaign_selected": False,
+                    "campaign_eligible": False,
+                    "required_for_selected_campaign": False,
+                    "calibration_complete": False,
+                    "failure_class": (
+                        "policy-ineligible"
+                        if exact_model_access
+                        else audited.get("failure_class", "exact-model-access")
+                    ),
+                    "outcome": "policy-ineligible",
+                    "model_family_diversity": True,
+                    "gateway_diversity": False,
+                }
         for name in (
             "GEMINI_API_KEY",
             "GOOGLE_API_KEY",

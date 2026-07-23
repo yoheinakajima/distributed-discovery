@@ -260,18 +260,37 @@ def action_schema(request: AdapterRequest) -> dict[str, object]:
             "declared_metadata",
         ],
         "properties": {
-            "schema_version": {"const": VERSIONS["action"]},
-            "task_instance_commitment": {"const": f"sha256:{request.prompt.task_commitment}"},
-            "agent_id": {"const": request.prompt.agent_id},
-            "round": {"const": request.round_number},
-            "final": {"const": request.final_required},
-            "visible_message": {"type": "string", "maxLength": 1024},
-            "source_choice": {"enum": list(request.source_vocabulary)},
+            "schema_version": {
+                "type": "string",
+                "enum": [VERSIONS["action"]],
+            },
+            "task_instance_commitment": {
+                "type": "string",
+                "enum": [f"sha256:{request.prompt.task_commitment}"],
+            },
+            "agent_id": {
+                "type": "string",
+                "enum": [request.prompt.agent_id],
+            },
+            "round": {
+                "type": "integer",
+                "enum": [request.round_number],
+            },
+            "final": {
+                "type": "boolean",
+                "enum": [request.final_required],
+            },
+            "visible_message": {"type": "string"},
+            "source_choice": {
+                "type": "string",
+                "enum": list(request.source_vocabulary),
+            },
             "actions": {
                 "type": "array",
-                "minItems": 1,
-                "maxItems": len(request.action_vocabulary),
-                "items": {"enum": list(request.action_vocabulary)},
+                "items": {
+                    "type": "string",
+                    "enum": list(request.action_vocabulary),
+                },
             },
             "declared_metadata": {
                 "type": "object",
@@ -496,6 +515,8 @@ class OpenRouterAdapter(LiveAdapterBase):
         except ProviderTransportError as exc:
             return AdapterResponse("", error_class=str(exc))
         error = normalize_http_error("openrouter", response.status, response.body)
+        if response.status == 404:
+            error = "policy-ineligible"
         input_tokens, output_tokens = _openrouter_usage(response.body)
         output = _openrouter_output_text(response.body) if error is None else ""
         provider_cost = _optional_decimal(_mapping(response.body.get("usage")).get("cost"))
@@ -644,7 +665,7 @@ def normalize_http_error(provider: str, status: int, body: Mapping[str, object])
         return "timeout"
     if status == 409:
         return "conflict"
-    if status == 422:
+    if status in {400, 422}:
         return "schema-or-parameter"
     if status == 429:
         return "rate-limit"

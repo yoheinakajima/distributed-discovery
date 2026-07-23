@@ -285,10 +285,22 @@ Exactly one milestone is active at a time.
   calls per route, below the authorization ceiling of 600. The registered
   1,000-input/256-output token ceilings keep both required direct routes below
   their USD 5 caps.
-- `2026-07-23T22:36:00Z`: all pre-live validation passed: 43 focused live
+- `2026-07-23T22:25:00Z`: all pre-live validation passed: 43 focused live
   boundary tests, 329 repository tests, claim and run validation, all
   editorial audits, all seven paper builds at registered hashes and 119 total
   pages, and the 81-page/26-study site build.
+- `2026-07-23T22:27:05Z`: the first committed live sweep made three rejected,
+  zero-cost generation attempts. Both required direct routes authenticated but
+  returned HTTP 400 at the provider schema boundary. OpenRouter exposed no
+  structured-output endpoint for the Mistral route; the frozen Gemini/Google
+  request was rejected under the exact data/ZDR/parameter policy filters. No
+  public task completed, and no private or scientific material was created.
+- `2026-07-23T22:31:00Z`: official provider documentation confirms that the
+  strict schema subset must omit unsupported length/item constraints and that
+  OpenAI requires every property to be required. The corrected shared provider
+  schema uses typed singleton enums and leaves length/uniqueness validation to
+  the existing downstream parser. The failed attempt will remain archived by
+  execution commit before the corrected sweep replaces active state.
 
 ## Decision log
 

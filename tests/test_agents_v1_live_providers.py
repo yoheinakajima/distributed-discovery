@@ -106,8 +106,14 @@ def test_action_schema_freezes_task_fields_and_vocabularies() -> None:
     schema = action_schema(request)
     properties = schema["properties"]
     assert isinstance(properties, dict)
-    assert properties["agent_id"] == {"const": request.prompt.agent_id}
+    assert properties["agent_id"] == {
+        "type": "string",
+        "enum": [request.prompt.agent_id],
+    }
     assert properties["actions"]["items"]["enum"] == list(request.action_vocabulary)
+    assert "maxLength" not in properties["visible_message"]
+    assert "minItems" not in properties["actions"]
+    assert "maxItems" not in properties["actions"]
 
 
 def test_openai_payload_and_response_parser() -> None:
@@ -286,6 +292,23 @@ def test_openrouter_payload_pins_provider_and_disables_fallback() -> None:
     assert result.error_class is None
 
 
+def test_openrouter_404_after_endpoint_freeze_is_policy_ineligible() -> None:
+    endpoint = OpenRouterEndpoint(
+        provider_slug="Provider-A",
+        provider_name="Provider-A",
+        model_variant="variant-a",
+        context_length=100_000,
+        max_completion_tokens=4_096,
+        prompt_price_per_token=Decimal("0.000001"),
+        completion_price_per_token=Decimal("0.000003"),
+        supported_parameters=("response_format",),
+        quantization="fp16",
+        data_policy={},
+    )
+    adapter = _openrouter_adapter(endpoint, FakeTransport(HttpResponse(404, {"error": {}})))
+    assert adapter.respond(_request(adapter.manifest)).error_class == "policy-ineligible"
+
+
 def _openrouter_adapter(
     endpoint: OpenRouterEndpoint, transport: FakeTransport
 ) -> OpenRouterAdapter:
@@ -303,6 +326,7 @@ def _openrouter_adapter(
 @pytest.mark.parametrize(
     ("status", "expected"),
     [
+        (400, "schema-or-parameter"),
         (401, "authentication"),
         (402, "billing-or-account-access"),
         (403, "permission-or-policy"),
