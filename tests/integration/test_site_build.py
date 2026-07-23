@@ -51,9 +51,9 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "stopped decentralized-recovery overlap gate" in program
     assert "Phase 2 holds theorem-family execution" in program
     assert "Reliable Discovery remains a major candidate but is deferred" in program
-    assert "DiscoveryBench Agents v1</a> is implemented offline" in program
-    assert "evaluation campaign is registered" in program
-    assert "next gate is owner-authorized evaluation execution" in program
+    assert "required adapters passed an authorized public-only engineering calibration" in program
+    assert "No private task, sealed pilot, base campaign, scientific evidence" in program
+    assert "next gate is a separately registered and owner-authorized" in program
     assert 'id="information-sharing-frontier"' in program
     assert 'href="publications/information-sharing-frontier.html"' in program
     assert "docs/theorem-spine.md" in program
@@ -130,8 +130,10 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         assert (output / f"benchmark/{route}.html").is_file()
     agents_registration = (output / "benchmark/agents-v1.html").read_text(encoding="utf-8")
     assert "Offline implementation complete" in agents_registration
-    assert "No provider was called" in agents_registration
+    assert "Required adapters calibrated" in agents_registration
+    assert "607 calls and USD 2.311758000" in agents_registration
     assert "No private seed, holdout, private answer key" in agents_registration
+    assert "No provider comparison, ranking, leaderboard" in agents_registration
     assert "not a result route or leaderboard" in agents_registration
     agents_data = json.loads(
         (output / "data/benchmark/agents-v1-registration.json").read_text(encoding="utf-8")
@@ -158,6 +160,29 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert agents_implementation["public_rehearsal"]["corruptions_rejected"] == 24
     assert agents_implementation["boundaries"]["provider_calls"] == 0
     assert agents_implementation["boundaries"]["performance_results_exist"] is False
+    agents_evaluation = json.loads(
+        (output / "data/benchmark/agents-v1-evaluation.json").read_text(encoding="utf-8")
+    )
+    assert (
+        agents_evaluation["campaign_decision"]
+        == "provider-preflight-and-public-calibration-complete"
+    )
+    assert agents_evaluation["public_calibration"] == {
+        "architectures": 5,
+        "classification": "engineering-only-not-scientific-evidence",
+        "composite_score": None,
+        "contamination_clear": True,
+        "cumulative_calls_across_attempts": 607,
+        "cumulative_cost_usd": "2.311758000",
+        "method_a_b_agree": True,
+        "private_material_exists": False,
+        "protocol_compliance": True,
+        "provider_ranking": False,
+        "required_direct_routes": 2,
+        "route_cases": 100,
+        "scientific_evidence_exists": False,
+        "tasks": 10,
+    }
     benchmark_lab = (output / "labs/benchmark.html").read_text()
     assert "no submissions" in benchmark_lab
     assert "JavaScript is off" in benchmark_lab

@@ -4,6 +4,7 @@ from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 
+import pytest
 import yaml
 
 from distributed_discovery.benchmark.agents_v1.adapters import MockAdapter
@@ -11,6 +12,7 @@ from distributed_discovery.benchmark.agents_v1.generation import generate_public
 from distributed_discovery.benchmark.agents_v1.live_campaign import (
     RouteSpec,
     _calibration_plan,
+    _completed_state_resumable,
     _required_failure_decision,
     _restore_prior_attempt_ledger,
     _run_calibration_route,
@@ -183,3 +185,30 @@ def test_route_audit_records_optional_only_without_campaign_mutation(
     assert amendment["decision"] == "optional-public-calibration-only"
     assert amendment["campaign_manifest_changed"] is False
     assert amendment["sealed_pilot_authorized"] is False
+
+
+def test_completed_state_resumes_for_descendant_commit(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    calibration = tmp_path / "reports/benchmark/agents-v1-public-calibration.yml"
+    traces = tmp_path / "reports/benchmark/agents-v1-public-operational-traces.jsonl"
+    calibration.parent.mkdir(parents=True)
+    calibration.write_text("status: pass\n")
+    traces.write_text("{}\n")
+
+    class Result:
+        returncode = 0
+
+    monkeypatch.setattr(
+        "distributed_discovery.benchmark.agents_v1.live_campaign.subprocess.run",
+        lambda *args, **kwargs: Result(),
+    )
+    assert _completed_state_resumable(
+        tmp_path,
+        {
+            "execution_commit": "a" * 40,
+            "preflight_complete": True,
+            "calibration_complete": True,
+        },
+        "b" * 40,
+    )

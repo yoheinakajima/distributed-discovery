@@ -1,0 +1,227 @@
+schema_version: agents-v1-provider-readiness-v1
+classification: public-operational-not-scientific-evidence
+overall_decision: all-required-providers-ready-public-calibration-complete
+execution_commit: e7304cdd9a1c7242facebaa466ff388c243dce52
+authorization_id: agents-v1-openrouter-preflight-20260723T215657Z
+configured_credentials:
+- ANTHROPIC_API_KEY
+- OPENAI_API_KEY
+- OPENROUTER_API_KEY
+unused_credential_names_present:
+- FLYMYAI_API_KEY
+- MONID_API_KEY
+routes:
+  openai_direct:
+    route_id: openai_direct
+    gateway_id: openai_direct
+    credential_variable_name: OPENAI_API_KEY
+    model_slug: gpt-5.4-2026-03-05
+    exact_endpoint_provider_slug: null
+    required_for_selected_campaign: true
+    campaign_selected: true
+    campaign_eligible: true
+    model_family_diversity: false
+    gateway_diversity: null
+    credential_configured: true
+    credential_valid: true
+    account_or_project_access: true
+    exact_model_access: true
+    returned_upstream_provider_matches: true
+    fallbacks_disabled: true
+    data_policy_eligible: true
+    zdr_eligible: true
+    structured_output_supported: true
+    provider_adapter_supported: true
+    public_task_end_to_end_passed: true
+    usage_metadata_available: true
+    cost_accounting_available: true
+    retention_policy_eligible: true
+    snapshot_policy_eligible: true
+    calibration_complete: true
+    schema_retry_count: 0
+    method_a_b_agreement: true
+    tiny_public_task_metrics:
+      group_discovery: '1'
+      distinct_action_coverage: '1'
+      duplication: '0'
+      planner_regret: -1/4
+      private_baseline_regret: -1/4
+      recovery_budget_attainment: '1'
+      source_diversity: '0'
+      communication_action_compression: '0'
+      best_equilibrium_distance: null
+      worst_equilibrium_distance: null
+      invalid_action_rate: '0'
+      protocol_compliance: '1'
+      calls: 2
+      input_tokens: 825
+      output_tokens: 216
+      cost_usd: '0.0053025'
+    failure_class: null
+    outcome: ready
+    calibration_summary:
+      cases: 50
+      calls: 294
+      input_tokens: 132000
+      output_tokens: 32975
+      cost_usd: '0.8246250'
+      method_a_b_agreement: true
+      protocol_compliance: true
+  anthropic_direct:
+    route_id: anthropic_direct
+    gateway_id: anthropic_direct
+    credential_variable_name: ANTHROPIC_API_KEY
+    model_slug: claude-sonnet-4-6
+    exact_endpoint_provider_slug: null
+    required_for_selected_campaign: true
+    campaign_selected: true
+    campaign_eligible: true
+    model_family_diversity: false
+    gateway_diversity: null
+    credential_configured: true
+    credential_valid: true
+    account_or_project_access: true
+    exact_model_access: true
+    returned_upstream_provider_matches: true
+    fallbacks_disabled: true
+    data_policy_eligible: true
+    zdr_eligible: true
+    structured_output_supported: true
+    provider_adapter_supported: true
+    public_task_end_to_end_passed: true
+    usage_metadata_available: true
+    cost_accounting_available: true
+    retention_policy_eligible: true
+    snapshot_policy_eligible: true
+    calibration_complete: true
+    schema_retry_count: 0
+    method_a_b_agreement: true
+    tiny_public_task_metrics:
+      group_discovery: '1'
+      distinct_action_coverage: '1'
+      duplication: '0'
+      planner_regret: -1/4
+      private_baseline_regret: -1/4
+      recovery_budget_attainment: '1'
+      source_diversity: '0'
+      communication_action_compression: '0'
+      best_equilibrium_distance: null
+      worst_equilibrium_distance: null
+      invalid_action_rate: '0'
+      protocol_compliance: '1'
+      calls: 2
+      input_tokens: 1607
+      output_tokens: 296
+      cost_usd: '0.009261'
+    failure_class: null
+    outcome: ready
+    calibration_summary:
+      cases: 50
+      calls: 296
+      input_tokens: 257281
+      output_tokens: 43808
+      cost_usd: '1.428963'
+      method_a_b_agreement: true
+      protocol_compliance: true
+  openrouter_gemini_2_5_pro:
+    route_id: openrouter_gemini_2_5_pro
+    gateway_id: openrouter
+    credential_variable_name: OPENROUTER_API_KEY
+    model_slug: google/gemini-2.5-pro
+    exact_endpoint_provider_slug: Google
+    required_for_selected_campaign: false
+    campaign_selected: false
+    campaign_eligible: false
+    model_family_diversity: true
+    gateway_diversity: false
+    credential_configured: true
+    credential_valid: true
+    account_or_project_access: true
+    exact_model_access: true
+    returned_upstream_provider_matches: true
+    fallbacks_disabled: true
+    data_policy_eligible: false
+    zdr_eligible: false
+    structured_output_supported: false
+    provider_adapter_supported: true
+    public_task_end_to_end_passed: false
+    usage_metadata_available: false
+    cost_accounting_available: true
+    retention_policy_eligible: false
+    snapshot_policy_eligible: true
+    calibration_complete: false
+    schema_retry_count: 0
+    failure_class: policy-ineligible
+    outcome: structured-output-failed
+  openrouter_mistral_small_3_1:
+    route_id: openrouter_mistral_small_3_1
+    gateway_id: openrouter
+    credential_variable_name: OPENROUTER_API_KEY
+    credential_configured: true
+    credential_valid: true
+    account_or_project_access: true
+    model_slug: mistralai/mistral-small-3.1-24b-instruct
+    exact_endpoint_provider_slug: null
+    exact_model_access: true
+    returned_upstream_provider_matches: null
+    fallbacks_disabled: true
+    data_policy_eligible: false
+    zdr_eligible: false
+    structured_output_supported: false
+    provider_adapter_supported: true
+    public_task_end_to_end_passed: false
+    usage_metadata_available: false
+    cost_accounting_available: false
+    retention_policy_eligible: false
+    snapshot_policy_eligible: true
+    campaign_selected: false
+    campaign_eligible: false
+    required_for_selected_campaign: false
+    calibration_complete: false
+    failure_class: policy-ineligible
+    outcome: policy-ineligible
+    model_family_diversity: true
+    gateway_diversity: false
+  not_configured_gemini_api_key:
+    credential_variable_name: GEMINI_API_KEY
+    credential_configured: false
+    outcome: optional-not-configured
+    failure_class: null
+    campaign_selected: false
+    campaign_eligible: false
+    required_for_selected_campaign: false
+  not_configured_google_api_key:
+    credential_variable_name: GOOGLE_API_KEY
+    credential_configured: false
+    outcome: optional-not-configured
+    failure_class: null
+    campaign_selected: false
+    campaign_eligible: false
+    required_for_selected_campaign: false
+  not_configured_mistral_api_key:
+    credential_variable_name: MISTRAL_API_KEY
+    credential_configured: false
+    outcome: optional-not-configured
+    failure_class: null
+    campaign_selected: false
+    campaign_eligible: false
+    required_for_selected_campaign: false
+ledger:
+  calls_made: 607
+  route_calls:
+    anthropic_direct: 303
+    openai_direct: 301
+    openrouter_gemini_2_5_pro: 3
+  total_cost_usd: '2.311758000'
+  route_costs_usd:
+    anthropic_direct: '1.471083'
+    openai_direct: '0.8406750'
+    openrouter_gemini_2_5_pro: 0E-9
+  total_cap_usd: '20.0'
+  remaining_total_cap_usd: '17.688242000'
+public_tasks_only: true
+private_material_exists: false
+scientific_evidence_exists: false
+provider_ranking_created: false
+composite_score_created: false
+updated_utc: '2026-07-23T22:58:29Z'

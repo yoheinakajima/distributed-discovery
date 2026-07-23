@@ -70,6 +70,9 @@ def test_trace_hash_and_redaction_layers() -> None:
     assert trace.audit["hidden_reasoning_stored"] is False
     assert "SECRET" not in json.dumps(trace.redacted)
     assert "/Users/" not in json.dumps(trace.redacted)
+    first_event = trace.redacted["events"][0]
+    assert first_event["usage"]["input_tokens"] != "[REDACTED]"
+    assert first_event["usage"]["output_tokens"] != "[REDACTED]"
     tampered = dict(trace.raw)
     tampered["architecture_id"] = "tampered"
     assert not verify_trace_hashes(tampered)

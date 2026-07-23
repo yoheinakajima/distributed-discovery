@@ -1,0 +1,69 @@
+schema_version: post-discoverybench-publication-implications-template-v1
+classification: prospective-editorial-template-no-paper-authorization
+activation_gate:
+  public_calibration_satisfies_gate: false
+  requires_separately_registered_campaign: true
+  requires_owner_authorization: true
+  requires_evidence_validation: true
+campaign_record:
+  campaign_id: null
+  study_id: null
+  immutable_run_ids: []
+  execution_commit: null
+  authorization_id: null
+  evidence_status: not-run
+paper_implications:
+  supported_papers: []
+  complicated_papers: []
+  contradicted_papers: []
+  untouched_papers: []
+  explanation_required_for_each_entry: true
+publication_architecture:
+  standalone_benchmark_paper:
+    recommended: null
+    reasons: []
+    evidence_scope: null
+  grand_sequel:
+    recommended: null
+    reasons: []
+    theorem_family_added: null
+  decision_rule: Prefer the smallest editorial unit that owns the validated contribution without re-owning existing theorem families.
+technical_companions:
+  benchmark_specification: null
+  evaluator_and_provenance_note: null
+  contamination_and_custody_note: null
+  model_route_and_cost_appendix: null
+  replication_package: null
+absorption_notes:
+  canonical_shared_discovery: []
+  common_source_trap: []
+  information_sharing_frontier: []
+  incentive_to_ignore: []
+  threshold_discovery: []
+  foundations_or_synthesis: []
+lifecycle_prerequisites:
+  claims_validated: false
+  immutable_runs_verified: false
+  null_and_negative_results_preserved: false
+  primary_literature_reverified: false
+  paper_ownership_reconciled: false
+  independent_replication_status_recorded: false
+  privacy_and_custody_closeout_complete: false
+  costs_and_routes_reconciled: false
+  paper_build_and_visual_qa_passed: false
+  owner_approved_submission_or_release: false
+literature_collision:
+  closest_primary_neighbors: []
+  overlapping_claims: []
+  surviving_boundary: null
+  novelty_language_allowed: false
+  unresolved_primary_source_checks: []
+headline_nulls_and_limits:
+  headline_nulls: []
+  negative_results: []
+  scope_limits: []
+  failed_protocols_or_routes: []
+  forbidden_generalizations: []
+decision:
+  paper_action: hold
+  reason: Public credential preflight and calibration authorize no scientific or editorial conclusion.

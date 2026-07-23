@@ -219,23 +219,23 @@ generalization language. The publication template authorizes no paper action.
 - **M0 (complete):** baseline, preservation, credential hardening, strict local
   input parser, authorization validation, issue, branch, and living plan.
 - **M1 (complete):** live adapter implementation and mock transport tests.
-- **M2 (active):** unified preflight, resume, fail-soft matrix, authorization,
+- **M2 (complete):** unified preflight, resume, fail-soft matrix, authorization,
   cost, and redaction guards.
-- **M2A (pending):** OpenRouter endpoint discovery and route-amendment audit.
-- **M3 (pending):** provider-native structured-output smoke.
-- **M4 (pending):** tiny end-to-end public DiscoveryBench task.
-- **M5 (pending):** deterministic public calibration planning.
-- **M6 (pending):** bounded public calibration execution and Method A/B
+- **M2A (complete):** OpenRouter endpoint discovery and route-amendment audit.
+- **M3 (complete):** provider-native structured-output smoke.
+- **M4 (complete):** tiny end-to-end public DiscoveryBench task.
+- **M5 (complete):** deterministic public calibration planning.
+- **M6 (complete):** bounded public calibration execution and Method A/B
   verification.
-- **M7 (pending):** combined guarded command path.
-- **M8 (pending):** redacted authorization and cost receipt.
-- **M9 (pending):** trace and secret-redaction audit.
-- **M10 (pending):** provider readiness decision.
-- **M11 (pending):** four-paper review reconciliation.
-- **M12 (pending):** benchmark-to-paper interpretation map.
-- **M13 (pending):** post-campaign publication-implications template.
-- **M14 (pending):** public-safe operational site status.
-- **M15 (pending):** full validation, CI, merge, Pages, live acceptance,
+- **M7 (complete):** combined guarded command path.
+- **M8 (complete):** redacted authorization and cost receipt.
+- **M9 (complete):** trace and secret-redaction audit.
+- **M10 (complete):** provider readiness decision.
+- **M11 (complete):** four-paper review reconciliation.
+- **M12 (complete):** benchmark-to-paper interpretation map.
+- **M13 (complete):** post-campaign publication-implications template.
+- **M14 (complete):** public-safe operational site status.
+- **M15 (active):** full validation, CI, merge, Pages, live acceptance,
   issue closeout, and synchronized `main`.
 
 Exactly one milestone is active at a time.
@@ -254,7 +254,7 @@ Exactly one milestone is active at a time.
 - [x] Create issue #175 and the sole substantive branch.
 - [x] Implement and test the strict local-input parser and complete M0.
 - [x] Complete M1 offline implementation and mock validation.
-- [ ] Complete M2 through M14 sequentially.
+- [x] Complete M2 through M14 sequentially.
 - [ ] Complete M15 and synchronize `main`.
 
 ## Discoveries and surprises
@@ -307,6 +307,19 @@ Exactly one milestone is active at a time.
   OpenRouter Mistral remains ineligible because its only returned endpoint
   lacks structured output; the exact Gemini/Google request remains
   policy-ineligible under the frozen data/ZDR/parameter filters.
+- `2026-07-23T22:58:29Z`: the full registered public calibration completed on
+  the two required direct routes with two provider workers. OpenAI completed
+  50 cases in 294 calls with 132,000 input tokens, 32,975 output tokens, and
+  USD 0.8246250. Anthropic completed 50 cases in 296 calls, including two
+  schema retries, with 257,281 input tokens, 43,808 output tokens, and USD
+  1.428963. Method A/B agreement, protocol compliance, and contamination
+  checks pass.
+- `2026-07-23T23:11:45Z`: the cumulative ledger preserves all attempts at 607
+  calls and USD 2.311758000, leaving USD 17.688242000 under authorization. A
+  generic sensitive-key pattern had over-redacted token usage names in event
+  traces; the rule is corrected and each existing trace now carries reconciled
+  run-level usage totals sourced from the already-recorded public case or
+  preflight metrics, without another provider call.
 
 ## Decision log
 
@@ -376,12 +389,9 @@ public operational status page/JSON, tests, and closeout evidence.
 
 ## Blockers
 
-No implementation blocker exists. Direct OpenAI, direct Anthropic, and
-OpenRouter credentials are configured. Live execution remains intentionally
-paused until the offline implementation commit is pushed and its draft PR is
-open. The endpoint audit will determine whether each optional OpenRouter route
-has an exact structured-output/ZDR route, without changing campaign
-eligibility.
+No implementation or live-execution blocker exists. The remaining work is M15:
+local validation, PR checks and merge, Pages acceptance, issue closeout, and
+synchronized `main`.
 
 ## Preservation set
 

@@ -399,10 +399,157 @@ def run_public_calibration(root: Path, *, force: bool = False) -> dict[str, obje
 
 def run_provider_preflight_all(root: Path, *, force: bool = False) -> dict[str, object]:
     """Resume passing stages and finish the guarded public workflow."""
+    context = _load_live_context(root, require_clean_execution=False)
+    credentials, authorization, _ledger, _transport, execution_commit = context
+    try:
+        state = _read_yaml(root / STATE_RELATIVE)
+        if not force and _completed_state_resumable(root, state, execution_commit):
+            finalized = finalize_completed_live_artifacts(root)
+            _write_receipt(root, finalized, authorization)
+            return _public_summary(finalized, resumed=True)
+    finally:
+        credentials.clear()
     preflight = run_provider_preflight(root, force=force)
     if preflight.get("required_routes_ready") is not True:
         return preflight
     return run_public_calibration(root, force=force)
+
+
+def _completed_state_resumable(
+    root: Path,
+    state: Mapping[str, object],
+    execution_commit: str,
+) -> bool:
+    prior_commit = state.get("execution_commit")
+    if (
+        not isinstance(prior_commit, str)
+        or len(prior_commit) != 40
+        or state.get("preflight_complete") is not True
+        or state.get("calibration_complete") is not True
+        or not (root / CALIBRATION_RELATIVE).is_file()
+        or not (root / TRACE_RELATIVE).is_file()
+    ):
+        return False
+    completed = subprocess.run(
+        ["git", "merge-base", "--is-ancestor", prior_commit, execution_commit],
+        cwd=root,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    return completed.returncode == 0
+
+
+def finalize_completed_live_artifacts(root: Path) -> dict[str, object]:
+    """Reconcile already-recorded public usage without making provider calls."""
+    state = _read_yaml(root / STATE_RELATIVE)
+    calibration = _read_yaml(root / CALIBRATION_RELATIVE)
+    if state.get("calibration_complete") is not True or calibration.get("status") != "pass":
+        raise PermissionError("completed public calibration is required")
+
+    route_results = calibration.get("route_results")
+    routes = state.get("routes")
+    if not isinstance(route_results, Mapping) or not isinstance(routes, Mapping):
+        raise ValueError("completed calibration route records are missing")
+    finalized_routes = {str(key): dict(value) for key, value in routes.items()}
+    for route_id in ("openai_direct", "anthropic_direct"):
+        result = route_results.get(route_id)
+        route = finalized_routes.get(route_id)
+        if not isinstance(result, Mapping) or not isinstance(route, dict):
+            raise ValueError(f"required calibration route is missing: {route_id}")
+        route["calibration_complete"] = True
+        route["calibration_summary"] = {
+            key: result.get(key)
+            for key in (
+                "cases",
+                "calls",
+                "input_tokens",
+                "output_tokens",
+                "cost_usd",
+                "method_a_b_agreement",
+                "protocol_compliance",
+            )
+        }
+    state["routes"] = finalized_routes
+    state["trace_usage_reconciled"] = True
+    calibration["trace_usage_reconciled"] = True
+    calibration["trace_usage_granularity"] = "per-public-case-and-preflight-task"
+    _reconcile_trace_usage(root / TRACE_RELATIVE, state, calibration)
+    _write_yaml(root / CALIBRATION_RELATIVE, calibration)
+    _write_yaml(root / STATE_RELATIVE, state)
+    _write_readiness(root, state)
+    return state
+
+
+def _reconcile_trace_usage(
+    path: Path,
+    state: Mapping[str, object],
+    calibration: Mapping[str, object],
+) -> None:
+    route_results = calibration.get("route_results")
+    assert isinstance(route_results, Mapping)
+    case_usage: dict[tuple[str, int, str], dict[str, object]] = {}
+    for route_id, result in route_results.items():
+        if not isinstance(result, Mapping):
+            continue
+        records = result.get("case_records")
+        if not isinstance(records, list):
+            continue
+        for record in records:
+            if not isinstance(record, Mapping):
+                continue
+            method_a = record.get("method_a")
+            if not isinstance(method_a, Mapping):
+                continue
+            case_usage[
+                (
+                    str(route_id),
+                    int(record["task_index"]),
+                    str(record["architecture"]),
+                )
+            ] = {
+                key: method_a.get(key)
+                for key in ("calls", "input_tokens", "output_tokens", "cost_usd")
+            }
+
+    routes = state.get("routes")
+    assert isinstance(routes, Mapping)
+    tiny_usage: dict[str, dict[str, object]] = {}
+    for route_id, route in routes.items():
+        if not isinstance(route, Mapping):
+            continue
+        metrics = route.get("tiny_public_task_metrics")
+        if isinstance(metrics, Mapping):
+            tiny_usage[str(route_id)] = {
+                key: metrics.get(key)
+                for key in ("calls", "input_tokens", "output_tokens", "cost_usd")
+            }
+
+    reconciled: list[str] = []
+    for line in path.read_text(encoding="utf-8").splitlines():
+        record = json.loads(line)
+        route_id = str(record.get("route_id"))
+        if record.get("stage") == "public-calibration":
+            usage = case_usage.get(
+                (
+                    route_id,
+                    int(record["task_index"]),
+                    str(record["architecture"]),
+                )
+            )
+            source = "public-calibration-case-record-method-a"
+        else:
+            usage = tiny_usage.get(route_id)
+            source = "provider-preflight-route-metrics"
+        if usage is None:
+            raise ValueError("trace usage reconciliation record is missing")
+        record["registered_usage_totals"] = {
+            **usage,
+            "granularity": "trace-run-total",
+            "source": source,
+        }
+        reconciled.append(json.dumps(_serializable(record), sort_keys=True, separators=(",", ":")))
+    _write_text(path, "\n".join(reconciled) + "\n")
 
 
 def _load_live_context(

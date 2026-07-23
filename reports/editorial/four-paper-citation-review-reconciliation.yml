@@ -1,0 +1,199 @@
+schema_version: four-paper-citation-review-reconciliation-v1
+classification: editorial-backlog-audit-no-paper-authorization
+review_scope:
+  papers:
+    - common-source-trap
+    - information-sharing-frontier
+    - incentive-to-ignore
+    - threshold-discovery
+  paper_sources_edited: false
+  bibliographies_edited: false
+  primary_sources_reverified_in_this_lane: false
+allowed_dispositions:
+  - already-fixed
+  - partly-fixed
+  - still-open
+  - factually-disputed
+  - requires-primary-source-verification
+  - useful-but-out-of-scope
+  - DiscoveryBench-dependent
+  - superseded-by-current-paper-architecture
+items:
+  - id: CORPUS-01
+    scope: corpus
+    review_item: canonical-anchor-and-paper-to-paper-citations-arrive-late
+    disposition: partly-fixed
+    evidence: Information Sharing Frontier cites the canonical paper and Incentive companion in its introduction; Threshold cites the canonical paper; Incentive and Frontier cross-cite; Common-Source lacks a canonical-paper citation.
+    next_action: Add the missing anchor only in a future paper-edit lane after source verification.
+  - id: CORPUS-02
+    scope: corpus
+    review_item: operations-research-search-theory-missing-or-underused
+    disposition: partly-fixed
+    evidence: Common-Source now cites parallel R&D and uncoordinated parallel search; Threshold cites collective search, but search-theory coverage is uneven across the four papers.
+    next_action: Treat breadth as an editorial backlog, not a novelty defect established by this audit.
+  - id: CORPUS-03
+    scope: corpus
+    review_item: neighboring-literature-is-defensive-rather-than-mathematically-organizing
+    disposition: partly-fixed
+    evidence: Each related-literature section states overlap and surviving boundaries, while only some neighbors organize formal comparisons inside theorem sections.
+    next_action: Revisit only where a primary-source comparison changes a theorem statement or benchmark.
+  - id: CORPUS-04
+    scope: corpus
+    review_item: conditional-contribution-statements-remain-vague
+    disposition: partly-fixed
+    evidence: Current introductions narrow contributions to declared finite models and disclaim novelty certificates, but some statements remain programmatic rather than theorem-indexed.
+    next_action: Tighten in a later paper lane without using calibration outputs as evidence.
+  - id: CORPUS-05
+    scope: corpus
+    review_item: literature-transmission-is-the-central-problem
+    disposition: already-fixed
+    evidence: The family coverage registry, evidence map, search log, citation graph, and transmission audit now map every registered required adjacency to owners, sections, sources, overlaps, and boundaries.
+    next_action: Maintain the registries as papers evolve.
+  - id: CST-01
+    scope: common-source-trap
+    review_item: covering-and-distributed-welfare-games
+    disposition: partly-fixed
+    evidence: The corpus and Threshold paper cover Vetta, Gairing, Marden, and Paccagnan, but Common-Source does not directly position its equal-prize source-choice game against that family.
+    next_action: Evaluate a direct local-utility comparison in a future paper-edit lane.
+  - id: CST-02
+    scope: common-source-trap
+    review_item: marginal-contribution-benchmark
+    disposition: partly-fixed
+    evidence: Common-Source discusses attribution and marginal contribution in mechanisms, but does not install a sourced marginal-contribution benchmark in related literature.
+    next_action: Verify the exact benchmark and observability assumptions before citation.
+  - id: CST-03
+    scope: common-source-trap
+    review_item: parallel-r-and-d
+    disposition: already-fixed
+    evidence: The related-literature section directly cites Brander, Amit, and Antweiler and distinguishes its timing and payoff structure.
+    next_action: None in this lane.
+  - id: CST-04
+    scope: common-source-trap
+    review_item: business-stealing-and-excess-entry
+    disposition: still-open
+    evidence: The paper discusses rents and duplication but does not directly cite or compare a business-stealing or excess-entry benchmark.
+    next_action: Perform a primary-source search before deciding whether this is a true collision.
+  - id: CST-05
+    scope: common-source-trap
+    review_item: selfish-parallel-search
+    disposition: already-fixed
+    evidence: The related-literature section cites Korman and Rodeh on uncoordinated parallel search and states the surviving boundary.
+    next_action: None in this lane.
+  - id: CST-06
+    scope: common-source-trap
+    review_item: canonical-paper-anchor
+    disposition: still-open
+    evidence: The paper source contains no citation to the canonical Shared Discovery paper even though the corpus ownership graph identifies that upstream owner.
+    next_action: Add an early anchor only after verifying the intended bibliographic record.
+  - id: ISF-01
+    scope: information-sharing-frontier
+    review_item: sah-stiglitz
+    disposition: useful-but-out-of-scope
+    evidence: Sah-Stiglitz is registered for organizational screening architecture, while this paper freezes finite signal geometry and action budgets rather than general hierarchy/polyarchy errors.
+    next_action: Cite only if organizational screening becomes an explicit comparison.
+  - id: ISF-02
+    scope: information-sharing-frontier
+    review_item: organizational-learning-and-networks
+    disposition: partly-fixed
+    evidence: The introduction cites social-learning, herding, and cascade work and states that no communication network is modeled; network-convergence work is present elsewhere in the corpus.
+    next_action: Consider a network citation only if it sharpens the one-shot boundary.
+  - id: ISF-03
+    scope: information-sharing-frontier
+    review_item: restricted-decision-comparison
+    disposition: already-fixed
+    evidence: The paper explicitly distinguishes its fixed discovery decision problem from Blackwell dominance across all decision problems.
+    next_action: None in this lane.
+  - id: ISF-04
+    scope: information-sharing-frontier
+    review_item: individual-sufficiency
+    disposition: requires-primary-source-verification
+    evidence: Bergemann-Morris is cited for signal and recommendation structures, and the coverage registry flags individual sufficiency, but the paper does not make a source-verified individual-sufficiency comparison.
+    next_action: Verify the primary definition before using the term.
+  - id: ISF-05
+    scope: information-sharing-frontier
+    review_item: value-of-information-in-games
+    disposition: partly-fixed
+    evidence: Decision, team, information-design, cheap-talk, jury, and equilibrium-selection neighbors are cited, but the strategic value-of-information comparison is not organized as a distinct benchmark.
+    next_action: Add only if it changes the decentralized implementation boundary.
+  - id: ISF-06
+    scope: information-sharing-frontier
+    review_item: canonical-paper-anchor
+    disposition: already-fixed
+    evidence: The introduction names and cites the canonical Shared Discovery paper as the atomic information/action separation.
+    next_action: None in this lane.
+  - id: ITI-01
+    scope: incentive-to-ignore
+    review_item: holmstrom-partnership-and-budget-balance
+    disposition: requires-primary-source-verification
+    evidence: The paper proves ex-post budget balance for universal pooling but does not compare that mechanism to the Holmström partnership impossibility boundary.
+    next_action: Verify the primary theorem and whether its assumptions apply before citation.
+  - id: ITI-02
+    scope: incentive-to-ignore
+    review_item: correlated-jury
+    disposition: still-open
+    evidence: Jury aggregation appears in the companion Frontier paper, not in Incentive to Ignore's current related-literature section.
+    next_action: Search and verify the closest correlated-jury source before adding a comparison.
+  - id: ITI-03
+    scope: incentive-to-ignore
+    review_item: targeted-disclosure-to-multiple-receivers
+    disposition: partly-fixed
+    evidence: The paper cites public-information and partial-dissemination work and formalizes binding audiences, but does not position the result against a verified multi-receiver targeted-disclosure theorem.
+    next_action: Verify whether a direct disclosure-design collision exists.
+  - id: ITI-04
+    scope: incentive-to-ignore
+    review_item: sah-stiglitz
+    disposition: useful-but-out-of-scope
+    evidence: The paper concerns access, attention, and action channels, not general hierarchy/polyarchy screening architecture.
+    next_action: Retain at corpus level unless organizational screening enters the model.
+  - id: ITI-05
+    scope: incentive-to-ignore
+    review_item: common-source-trap-cross-citation
+    disposition: still-open
+    evidence: Incentive to Ignore cross-cites Information Sharing Frontier but not Common-Source Trap.
+    next_action: Add only if the acquisition-versus-attention ownership distinction is explained.
+  - id: TD-01
+    scope: threshold-discovery
+    review_item: provision-point-and-assurance
+    disposition: partly-fixed
+    evidence: The paper cites threshold public-good and minimum-participation games but does not directly position the mechanism against provision-point assurance contracts.
+    next_action: Verify the mechanism-specific primary literature.
+  - id: TD-02
+    scope: threshold-discovery
+    review_item: market-entry
+    disposition: still-open
+    evidence: Candidate-specific team formation resembles entry in some dimensions, but the paper contains no direct market-entry comparison.
+    next_action: Search for the closest congestion/entry model before deciding relevance.
+  - id: TD-03
+    scope: threshold-discovery
+    review_item: minimum-effort-and-weakest-link
+    disposition: still-open
+    evidence: Threshold complementarity is formalized, but minimum-effort and weakest-link team-production sources are not directly reviewed.
+    next_action: Verify whether their payoff technology survives the candidate-portfolio distinction.
+  - id: TD-04
+    scope: threshold-discovery
+    review_item: matching-with-lower-quotas
+    disposition: still-open
+    evidence: The paper studies candidate-specific teams and capacity but does not cite lower-quota matching.
+    next_action: Verify feasibility and stability analogies before adding a matching comparison.
+  - id: TD-05
+    scope: threshold-discovery
+    review_item: singleton-congestion-and-potential-games
+    disposition: already-fixed
+    evidence: The related-literature section directly cites Rosenthal and Monderer-Shapley and explains why the sign change at viability is not ordinary congestion.
+    next_action: Preserve the stopped classical-congestion boundary.
+  - id: TD-06
+    scope: threshold-discovery
+    review_item: submodular-and-supermodular-implementation-contrast
+    disposition: partly-fixed
+    evidence: The corpus records coverage, utility-design, and complementarity boundaries, but the paper does not present a direct sourced submodular-versus-supermodular implementation comparison.
+    next_action: Add only after defining the relevant set function and verifying primary results.
+summary:
+  already-fixed: 6
+  partly-fixed: 11
+  still-open: 7
+  factually-disputed: 0
+  requires-primary-source-verification: 2
+  useful-but-out-of-scope: 2
+  DiscoveryBench-dependent: 0
+  superseded-by-current-paper-architecture: 0
+calibration_authorizes_paper_action: false
