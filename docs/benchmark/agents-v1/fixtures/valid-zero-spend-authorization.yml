@@ -1,0 +1,22 @@
+schema_version: agents-execution-authorization-v1
+authorization_id: PUBLIC-TOY-ZERO-SPEND-ONLY
+authorized_commit: 53edc37e34809c33e334ade79973e315835aa61a
+issue: 171
+branch: benchmark/discoverybench-agents-v1-implementation
+allowed_providers_models:
+  - offline/deterministic-mock
+exact_snapshots:
+  - deterministic-mock-v1
+total_spend_cap_usd: 0
+provider_spend_caps_usd: {}
+local_resource_caps:
+  model_invocations: 0
+  model_downloads: 0
+  accelerator_hours: 0
+expires_at: "2099-12-31T23:59:59Z"
+custody_required: true
+trace_required: true
+campaign_id: PUBLIC-CONFORMANCE-ONLY
+owner_decision_timestamp: "2026-07-23T00:00:00Z"
+revoked: false
+public_fixtures_only: true

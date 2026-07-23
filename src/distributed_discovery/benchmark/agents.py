@@ -16,6 +16,8 @@ from typing import cast
 import jsonschema
 import yaml
 
+from distributed_discovery.benchmark.agents_v1.authorization import validate_authorization
+
 REGISTRY = Path("docs/benchmark/agents-v1")
 PROMPT_PROHIBITIONS = (
     re.compile(r"\bDD-\d{3}[A-Z]?\b"),
@@ -197,6 +199,7 @@ def audit_registration(root: Path) -> dict[str, object]:
         ("valid-execution-config.yml", "execution-config.schema.json"),
         ("valid-contamination-report.json", "contamination-report.schema.json"),
         ("valid-trace.json", "trace.schema.json"),
+        ("valid-zero-spend-authorization.yml", "execution-authorization.schema.json"),
     )
     for fixture_name, schema_name in fixture_pairs:
         fixture_path = base / "fixtures" / fixture_name
@@ -217,6 +220,16 @@ def audit_registration(root: Path) -> dict[str, object]:
         except jsonschema.ValidationError:
             continue
         raise ValueError(f"invalid fixture unexpectedly validated: {fixture_name}")
+
+    validate_authorization(load_yaml(base / "fixtures/valid-zero-spend-authorization.yml"))
+    try:
+        validate_authorization(
+            load_yaml(base / "fixtures/invalid-positive-spend-authorization.yml")
+        )
+    except PermissionError:
+        pass
+    else:
+        raise ValueError("positive-spend authorization fixture unexpectedly authorized")
 
     task = load_json(base / "fixtures/valid-task-instance.json")
     validate_capability_isolation(task)
@@ -268,7 +281,7 @@ def audit_registration(root: Path) -> dict[str, object]:
     return {
         "schemas": len(tuple(base.glob("*.schema.json"))),
         "valid_fixtures": len(fixture_pairs),
-        "invalid_fixtures": 3,
+        "invalid_fixtures": 4,
         "task_families": len(family_rows),
         "generator_cells": sum(cast(int, row["canonical_cells"]) for row in family_rows),
         "primitive_states": sum(
