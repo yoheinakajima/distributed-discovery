@@ -17,7 +17,7 @@ or scientific status change.
 | `/labs/incremental-sharing.html` | immutable DD-019/DD-020 outputs | study, paper, Program/synthesis, claims, runs, exact data | `Evidence runs` |
 | `/labs/general-sharing-frontier.html` | immutable DD-021 outputs | study, paper, Program/synthesis, claims, run, exact data | `Public data` |
 | `/labs/coordination-free-positive-sharing.html` | immutable DD-022 outputs | study, paper, Program/synthesis, claims, run, exact data | `Evidence runs` |
-| `/publications/information-sharing-frontier.html` | validated working-paper status and download | DD-019–DD-022, Program/synthesis, Findings, Labs, DD-C-0089–DD-C-0110, four runs, exact data | `Supporting research` |
+| `/publications/information-sharing-frontier.html` | validated working-paper status and download | DD-019–DD-022, Program/synthesis, Findings, Labs, DD-C-0089–DD-C-0110, four runs, exact data | `Related research` |
 | `/claims.html` and `/evidence.html` | stable claim/run records | reached from every scoped relationship panel | claim IDs and run IDs |
 
 The relationship registry remains one machine-readable source at
