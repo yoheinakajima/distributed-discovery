@@ -1,4 +1,4 @@
-# Current roadmap — Information Sharing Frontier paper publication
+# Current roadmap — Reliable Discovery registration next
 
 Programs V1, V2, and the required Program V3 sequence are complete at their
 registered scopes. Each new research milestone requires its own
@@ -43,20 +43,28 @@ and deployed correction are complete. The durable architecture is summarized
 in [`theorem-spine.md`](theorem-spine.md). That spine creates no new evidence
 and keeps centralized recovery separate from decentralized implementation.
 
-## Post-V5 gate
+## Completed post-V5 overlap gate
 
-The bounded literature and non-overlap audit recommends one bridge before the
-previously ranked Reliable Discovery program: **Decentralized Recovery and
-Equilibrium Robustness**. The recommendation allocates no study ID and
-authorizes no run. Its smallest proposed question is whether autonomous agents
-implement a centralized posterior top-`L` discovery portfolio across all,
-best, worst, refined, or dynamically selected equilibria. Registration requires
-the model, theorem/failure target, classical-game non-overlap boundary,
-state-space cap, independent verifier, corruption plan, and stop condition in
-[`post-v5-next-program-gate.md`](../reports/roadmap-consolidation/post-v5-next-program-gate.md).
+Issue #162 and PR #163 complete the bounded Decentralized Recovery and
+Equilibrium Robustness registration gate with decision
+`stop-classical-overlap`. The exact `M=3,N=2` public-posterior equal-sharing
+game reduces to singleton congestion with a Rosenthal potential. Fixed
+sequential arrival and visible prior occupancy is an ordinary finite
+perfect-information game, and its every-pure-SPE top-two recovery boundary is
+the same strict `b>a/2` boundary as every-pure-Nash recovery. The DD-021 private
+and centralized comparators remain meaningful but do not change that
+game-theoretic derivation. No DD-023 or DD-C-0111 is allocated, and no run,
+implementation source, paper, route, Lab, or Finding is created. The durable
+decision is in
+[`decentralized-recovery-registration-decision.yml`](../reports/roadmap-consolidation/decentralized-recovery-registration-decision.yml).
 
-No long-term direction is removed. After that bounded bridge, Reliable
-Discovery, the Price of Missing
+**Reliable Discovery — Diversity–Redundancy under reliability and overlap** is
+now the sole next executable program. Its separate registration must identify
+content beyond classical separable-concave reliability allocation, freeze the
+information-conditioned model and comparison baseline, count resources, and
+design independent verification and corruptions before allocating a study ID.
+
+No long-term direction is removed. After Reliable Discovery, the Price of Missing
 Provenance, Truth/Obedience/Budget Balance, Rate–Discovery, Discovery Order,
 dynamic and large-team synthesis, and The Architecture of Distributed Discovery
 follow in the order and at the promotion gates in `docs/theorem-roadmap.md`.

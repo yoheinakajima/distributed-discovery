@@ -135,17 +135,17 @@ with ownership in [paper-family-map.yml](paper-family-map.yml).
 | Shared posterior | Higher decentralized discovery | **established only for the declared selection and interval** | DD-C-0104–DD-C-0108 / DD-022 |
 | Selected positive sharing | Every-equilibrium positive sharing | **false in the registered model** | DD-C-0109 / DD-022 |
 | Selected shared equilibrium | Centralized top-two value | **strict gap established** | DD-C-0110 / DD-022 |
-| Centralized recovery | Robust decentralized recovery | **open** | Requires a separate theorem gate |
+| Centralized recovery | Robust decentralized recovery in the frozen two-agent equal-sharing game | **stopped at classical-overlap gate** | Issue #162 / no study ID |
 | Equilibrium existence | Selection by refinement or learning | **open** | No registered refinement/dynamics evidence |
 | One-hit action technology | Unreliable, overlapping, or threshold technology | **open** | Reliable Discovery gate |
 | Known source dependence | Missing provenance and identified dependence bounds | **open** | Price of Missing Provenance gate |
 
 ## 8. Next-program boundary
 
-No next study ID is allocated here. A continuation may be registered only after
-the post-V5 gate records one bounded model, theorem or counterexample target,
-literature boundary, state-space cap, independent verifier, corruption plan,
-and stop condition. The decision record is
-[post-v5-next-program-gate.md](../reports/roadmap-consolidation/post-v5-next-program-gate.md).
-Until such registration, DD-019 through DD-022 and their immutable runs remain
-closed evidence.
+The post-V5 Decentralized Recovery registration gate is complete and stopped
+for classical overlap. Its posterior provenance and DD-021 comparators did not
+change the singleton-congestion or backward-induction proof object. No study ID
+or claim was allocated. Reliable Discovery is the next executable program, but
+it remains unregistered until a separate bounded gate distinguishes its
+information-conditioned content from classical reliability allocation. DD-019
+through DD-022 and their immutable runs remain closed evidence.

@@ -57,13 +57,13 @@ families:
     central_question: Which information, action, transfer, and observability rules implement discovery portfolios?
     source_studies: [DD-002, DD-006, DD-006B, DD-013, DD-018]
     completed_claims: [DD-C-0029, DD-C-0030, DD-C-0031, DD-C-0039, DD-C-0040, DD-C-0041, DD-C-0047, DD-C-0048, DD-C-0052, DD-C-0053, DD-C-0064, DD-C-0084, DD-C-0085, DD-C-0086]
-    open_theorem_targets: [decentralized recovery and equilibrium robustness, truth-obedience-budget-balance, randomized information design]
+    open_theorem_targets: [truth-obedience-budget-balance, randomized information design]
     manuscript_status: theorem-family-under-development
     admission_gate: require a necessary-and-sufficient implementation result rather than another finite catalogue
     likely_literature: [mechanism design, Bayesian persuasion, information design, implementation theory]
     synthesis_chapters: [institutions-action-technologies]
     risks_of_overlap: [information sharing, reliable discovery]
-    editorial_disposition: retain as theorem family and synthesis material
+    editorial_disposition: retain as theorem family and synthesis material; the frozen decentralized-recovery formulation stopped for classical overlap
   - family_id: communication-dynamic-architecture
     provisional_title: Communication and Dynamic Architecture
     central_question: How much communication and feedback are required to attain a discovery target over time?

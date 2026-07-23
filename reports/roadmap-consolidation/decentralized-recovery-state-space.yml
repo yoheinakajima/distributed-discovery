@@ -1,0 +1,58 @@
+schema_version: 1
+evidence_class: read-only-registration-audit
+immutable_source_run: 20260722T185924Z_DD-021_3cdbbc40_2fea269a9a
+channels:
+  total: 16
+  signal_alphabet_distribution: {"3": 13, "6": 3}
+target_states: 3
+ordered_signal_profiles:
+  formula: "13*3^2 + 3*6^2"
+  total: 225
+  positive_probability: 207
+  zero_probability: 18
+public_posteriors:
+  distinct_labeled_across_slice: 46
+  permutation_classes: 15
+  positive_profile_region_counts:
+    strict_recovery: 108
+    tie_boundary: 18
+    collision_region: 81
+  permutation_class_region_counts:
+    strict_recovery: 7
+    tie_boundary: 1
+    collision_region: 7
+simultaneous_per_posterior:
+  action_profiles: 9
+  unilateral_deviations_per_profile: 4
+  deviation_checks: 36
+simultaneous_over_positive_profiles:
+  action_profiles: 1863
+  deviation_checks: 7452
+sequential_per_posterior:
+  histories_including_root_and_terminals: 13
+  second_mover_nodes: 3
+  continuation_actions: 9
+  first_mover_pure_strategies: 3
+  second_mover_contingent_strategies: 27
+  pure_strategy_profiles: 81
+  full_second_mover_deviation_checks: 486
+  full_first_mover_deviation_checks: 162
+  full_spe_checks: 648
+sequential_over_positive_profiles:
+  histories_including_root_and_terminals: 2691
+  pure_strategy_profiles: 16767
+  full_spe_checks: 134136
+channel_level_rows: 16
+theorem_regression_rows: 15
+corruption_cases: 12
+expected_future_output_files: 10
+arithmetic: exact-rational
+network: prohibited
+monte_carlo: prohibited
+expected_runtime_seconds: 2
+hard_runtime_cap_seconds: 30
+expected_peak_memory_mib: 64
+hard_memory_cap_mib: 256
+failure_threshold: "any cap breach, method disagreement, missing equilibrium, failed invariant, or unrejected corruption"
+registration_decision: stop-classical-overlap
+execution_authorized: false

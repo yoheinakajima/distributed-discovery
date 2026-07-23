@@ -241,22 +241,23 @@ changes a different primitive.
 
 The intellectual ranking still places Diversity–Redundancy, Provenance, and
 Discovery Order among the highest-reach directions. Program V5 is complete.
-The post-V5 audit inserts one bounded implementation bridge before Reliable
+The post-V5 audit inserted one bounded implementation bridge before Reliable
 Discovery because DD-C-0098 is centralized and DD-C-0109 shows that the
-positive decentralized comparison is not robust across equilibria.
+positive decentralized comparison is not robust across equilibria. Issue #162
+completed that bridge as the classical-overlap stop recorded below.
 
-### Decentralized Recovery and Equilibrium Robustness
+### Decentralized Recovery and Equilibrium Robustness — stopped formulation
 
-Ask when autonomous agents implement a posterior top-`L` discovery portfolio,
-and distinguish all, best, worst, refined, and dynamically selected equilibria.
-The smallest proposed model is a finite common-posterior singleton resource-
-selection game with equal sharing of target value and one action per agent.
-Classical congestion/potential-game content must be cited rather than renamed;
-a Distributed Discovery contribution must connect posterior-weighted discovery,
-the centralized recovery comparator, and an exact implementation or failure
-boundary. This is a **recommendation only**: no study ID or run is authorized.
-The full gate is in
-[`post-v5-next-program-gate.md`](../reports/roadmap-consolidation/post-v5-next-program-gate.md).
+Issue #162 completes the smallest proposed common-posterior equal-sharing gate
+with `stop-classical-overlap`. The simultaneous game is exactly a singleton
+congestion/resource-selection game with a Rosenthal potential, and the fixed
+sequential visible-occupancy version is solved by ordinary backward induction.
+For ordered posterior masses `a>=b>=c`, the same strict `b>a/2` condition
+governs every-pure-equilibrium top-two recovery in both forms; equality retains
+a collision outcome. The named private baseline and centralized comparator are
+ex-post comparisons and do not produce a nonclassical equilibrium statement.
+No study ID, claim, run, or paper was created. This formulation remains in the
+historical portfolio but is not executable.
 
 ### Reliable Discovery — Diversity–Redundancy under reliability and overlap
 
@@ -324,10 +325,10 @@ and empirical-boundary interfaces. It is not a program rename.
 1. **Complete:** Program V4 — Threshold Discovery.
 2. **Complete:** Program V5 — The Information Sharing Frontier; DD-019 through
    DD-022, the qualified working paper, and public integration are deployed.
-3. **Recommended next bounded bridge:** Decentralized Recovery and Equilibrium
-   Robustness; unregistered and subject to its stated gate.
-4. **Then:** Reliable Discovery — Diversity–Redundancy under reliability and
-   overlap.
+3. **Complete stop:** Decentralized Recovery and Equilibrium Robustness at the
+   frozen equal-sharing formulation; no study allocated.
+4. **Recommended next registration:** Reliable Discovery — Diversity–Redundancy
+   under reliability and overlap.
 5. **Then:** The Price of Missing Provenance.
 6. **Then:** Truth, Obedience, and Budget Balance.
 7. **Then:** Rate–Discovery Theory.
@@ -346,8 +347,8 @@ documentation closeout completed before the next substantive branch.
 | Direction | First bounded target | Dependency / stop condition |
 | --- | --- | --- |
 | Information Sharing Frontier | Complete DD-019–DD-022 theorem family | Preserve the selected-equilibrium and centralized-authority boundaries. |
-| Decentralized Recovery | Exact implementation or failure boundary in the smallest posterior resource-selection game | Stop if the result is only a renamed congestion/potential-game theorem or lacks the centralized comparator. |
-| Diversity–Redundancy | Exact marginal allocation with finite posterior masses and reliabilities | After the bounded recovery bridge; stop if it merely renames separable-concave allocation. |
+| Decentralized Recovery | Completed overlap gate at the smallest posterior resource-selection game | Stopped: the result is a classical congestion/backward-induction specialization. |
+| Diversity–Redundancy | Exact marginal allocation with finite posterior masses and reliabilities | Next registration; stop if it merely renames separable-concave allocation. |
 | Provenance | Sharp union bounds under named observables, then a latent-source fixture | Stop without declared observables and sharpness/identification certification. |
 | Mechanism design | Necessary/sufficient implementation and subsidy/observability frontier | Stop if a finite catalogue is presented as global impossibility. |
 | Rate–Discovery | Zero versus one public/private bit with a declared list target | Stop if the task merely reconstructs all evidence. |
@@ -360,13 +361,12 @@ All titles are provisional; none implies submission or publication.
 
 1. *Threshold Discovery*.
 2. *When Does Information Sharing Improve Decentralized Discovery?* (working paper complete).
-3. A Decentralized Recovery paper only if the bridge passes admission.
-4. *When Should Searchers Repeat?*
-5. *The Price of Missing Provenance*.
-6. *Truth, Obedience, and Budget Balance*.
-7. *How Much Must a Team Communicate to Discover?*
-8. *A Discovery Order for Information Structures*.
-9. *The Architecture of Distributed Discovery*.
+3. *When Should Searchers Repeat?*
+4. *The Price of Missing Provenance*.
+5. *Truth, Obedience, and Budget Balance*.
+6. *How Much Must a Team Communicate to Discover?*
+7. *A Discovery Order for Information Structures*.
+8. *The Architecture of Distributed Discovery*.
 
 ## 11. Benchmark and infrastructure implications
 
@@ -418,13 +418,15 @@ or imply execution.
 
 1. Preserve the completed Program V4 and Program V5 evidence without rerunning
    immutable configurations.
-2. Register no bridge until its issue and ExecPlan freeze the common-posterior
-   game, comparator, equilibrium scope, resource cap, evidence category,
-   verifier, corruption plan, literature boundary, and stop condition.
-3. Keep Randomized Information Design as a later possible extension, not an
+2. Preserve the completed Decentralized Recovery overlap stop; do not broaden
+   that model or allocate a study ID to rescue it.
+3. Register Reliable Discovery only after its issue and ExecPlan freeze the
+   model, comparator, resource cap, evidence category, verifier, corruption
+   plan, literature boundary, and stop condition.
+4. Keep Randomized Information Design as a later possible extension, not an
    unfinished Program V5 obligation.
-4. Before Provenance, specify observables, source model, and
+5. Before Provenance, specify observables, source model, and
    sharpness/identification target separately.
-5. Before Rate–Discovery, choose a list, planner-emulation, or portfolio target
+6. Before Rate–Discovery, choose a list, planner-emulation, or portfolio target
    under a declared communication model.
-6. Before Discovery Order, show content beyond centralized Blackwell theory.
+7. Before Discovery Order, show content beyond centralized Blackwell theory.

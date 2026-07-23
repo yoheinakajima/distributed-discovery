@@ -48,7 +48,8 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "DD-022 proves an exact interval" in program
     assert "does not hold across every equilibrium" in program
     assert "centralized posterior top-<code>L</code> selector" in program
-    assert "Decentralized Recovery and Equilibrium Robustness" in program
+    assert "Decentralized Recovery registration gate stopped at classical overlap" in program
+    assert "Reliable Discovery is now the next unregistered theorem program" in program
     assert 'id="information-sharing-frontier"' in program
     assert 'href="publications/information-sharing-frontier.html"' in program
     assert "docs/theorem-spine.md" in program

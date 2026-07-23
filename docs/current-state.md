@@ -1,5 +1,15 @@
 # Current program state
 
+The bounded Decentralized Recovery and Equilibrium Robustness registration gate
+on issue #162 ends in `stop-classical-overlap`. The frozen two-agent
+equal-sharing action game is exactly a singleton congestion/resource-selection
+game, and fixed sequential arrival with visible occupancy is solved by ordinary
+backward induction. Both every-pure-Nash and every-pure-SPE top-two recovery
+have the same strict posterior boundary; the inherited private and centralized
+comparators do not create a nonclassical equilibrium statement. No study ID,
+claim, run, source implementation, or paper was created. Reliable Discovery is
+the sole next executable program after PR #163.
+
 _Reconciled 2026-07-22 for the Information Sharing Frontier working paper._
 
 Programs V1, V2, and the required Program V3 queue are complete at their

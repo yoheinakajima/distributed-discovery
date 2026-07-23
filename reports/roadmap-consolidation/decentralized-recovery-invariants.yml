@@ -1,0 +1,52 @@
+schema_version: 1
+captured_local_date: "2026-07-22"
+starting_main: c2994bfeaab6a35263d70cdee5c8ca9bb097a51b
+origin_main: c2994bfeaab6a35263d70cdee5c8ca9bb097a51b
+default_branch: main
+open_pull_requests: []
+open_issues:
+  - number: 32
+    title: "ops: apply prepared repository settings with settings-capable authentication"
+recent_merged_pull_requests:
+  - {number: 159, merge: 8ea3495ccfeacb2c0b4d408d70df1f39718c1a02}
+  - {number: 160, merge: c2a7bdb3a4ebb3b30822afe504b2695da5159d8a}
+  - {number: 161, merge: c2994bfeaab6a35263d70cdee5c8ca9bb097a51b}
+main_workflows:
+  ci: {run_id: 29972035426, conclusion: success}
+  pages: {run_id: 29972035438, conclusion: success}
+highest_study_id: DD-022
+highest_claim_id: DD-C-0110
+inventory:
+  tests: 247
+  claims: 110
+  manifests: 51
+  passing_runs: 48
+  studies: 26
+  python_sources: 159
+  papers: 7
+  paper_pages: 115
+  html_routes: 77
+  public_data_files: 85
+  labs: 18
+  downloads: 23
+hashes:
+  claims_git_blob: 8f262daf3aa43f2505d415988d8eca6f0ecd3a42
+  results_verified_tree_listing_sha256: 50d83d4488a33218f949c520bfa0da9c765ed37677aa3900062b158afac64434
+  manifest_set_sha256: dc7140a6bd36e931dc96c0e9eacff2fd734d1d0b69aa6848e20603a5ef2e3163
+  passing_run_list_sha256: 0af5fcc5f049b66a53763a6ccd49107c0ffa27033ac2b947a3f8043b32d18442
+  study_directory_set_sha256: 05c09c15029998698127b5ef68fc0e1df86b6951b6e4feb602db60601bee5585
+  route_registry_sha256: a551b68b644f2974d9870f954c93ea2990550892088491640f89ef485f1bc080
+  download_manifest_sha256: e26726fb092762c5d2e5acc495fce74ae6835fb88ad0bdd7884487487e949584
+  information_sharing_frontier_pdf_sha256: 2f8b68d5a690e6369e4c3236313eb93f060bfbe73ec531903c090f6ec6f8b6a1
+upstream_commit: 5025cc8e8f2f8ca015dff2066f08f81ad5715a51
+preserved_untracked_files:
+  - papers/information-sharing-frontier/paper-audit 2.json
+  - papers/information-sharing-frontier/visual-qa 2.md
+  - reports/roadmap-consolidation/post-v5-literature-and-nonoverlap 2.md
+  - reports/roadmap-consolidation/post-v5-next-program-gate 2.yml
+active_issue: 162
+active_branch: research/decentralized-recovery-registration
+study_id_allocated: false
+claim_id_allocated: false
+primary_run_executed: false
+
