@@ -728,7 +728,7 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         if benchmark_version == "v3"
         else "Version 2 adds selective-attention fixtures while preserving the v1 command default and exact vectors."
     )
-    overview = f"""<header class="page-hero"><p class="eyebrow">DiscoveryBench {html.escape(benchmark_version)}</p><h1>Compare search strategies</h1><p class="lede">A bounded, auditable suite for comparing how evidence becomes action. {html.escape(version_description)} It is not a hosted leaderboard or a universal measure of real-world agent quality.</p></header><div class="metric-grid"><article class="metric-card"><span>Benchmark tasks</span><strong>{summary["task_count"]}</strong></article><article class="metric-card"><span>Built-in strategies</span><strong>{summary["protocol_count"]}</strong></article><article class="metric-card"><span>Compatible pairs</span><strong>{summary["compatible_pairs"]}</strong></article></div><p>{downloads}</p><section class="content-section"><h2>Explore the benchmark</h2><div class="card-grid resource-grid"><article class="card"><h3><a href="benchmark/tasks.html">Benchmark tasks</a></h3><p>See the declared information and reference evidence for each task.</p></article><article class="card"><h3><a href="benchmark/protocols.html">What each strategy can see and do</a></h3><p>Compare capability boundaries before comparing results.</p></article><article class="card"><h3><a href="benchmark/metrics.html">How performance is measured</a></h3><p>Inspect every versioned measure and required observable.</p></article><article class="card"><h3><a href="benchmark/results.html">Benchmark results</a></h3><p>Read the exact compatible vectors and scoped Pareto report.</p></article><article class="card"><h3><a href="benchmark/attention.html">Selective-attention extension</a></h3><p>Compare the DD-012--DD-014 attention, audience, and conditional-policy fixtures.</p></article><article class="card"><h3><a href="benchmark/agents-v1.html">Agents v1 registration</a></h3><p>Inspect the offline instrument boundary: registered, not executed, and not a leaderboard.</p></article><article class="card"><h3><a href="labs/benchmark.html">Benchmark Lab</a></h3><p>Filter the complete result table by task.</p></article></div></section><section class="content-section prose"><h2>Reproduce</h2><details class="technical-details"><summary>Technical details</summary><p><code>distributed-discovery benchmark{version_flag} run-golden</code><br><code>distributed-discovery benchmark{version_flag} verify-run results/verified/{html.escape(run_id)}</code></p><p>Claim {claim_id} · reproducible run <a href="evidence.html">{html.escape(run_id)}</a>.</p></details></section>"""
+    overview = f"""<header class="page-hero"><p class="eyebrow">DiscoveryBench {html.escape(benchmark_version)}</p><h1>Compare search strategies</h1><p class="lede">A bounded, auditable suite for comparing how evidence becomes action. {html.escape(version_description)} It is not a hosted leaderboard or a universal measure of real-world agent quality.</p></header><div class="metric-grid"><article class="metric-card"><span>Benchmark tasks</span><strong>{summary["task_count"]}</strong></article><article class="metric-card"><span>Built-in strategies</span><strong>{summary["protocol_count"]}</strong></article><article class="metric-card"><span>Compatible pairs</span><strong>{summary["compatible_pairs"]}</strong></article></div><p>{downloads}</p><section class="content-section"><h2>Explore the benchmark</h2><div class="card-grid resource-grid"><article class="card"><h3><a href="benchmark/tasks.html">Benchmark tasks</a></h3><p>See the declared information and reference evidence for each task.</p></article><article class="card"><h3><a href="benchmark/protocols.html">What each strategy can see and do</a></h3><p>Compare capability boundaries before comparing results.</p></article><article class="card"><h3><a href="benchmark/metrics.html">How performance is measured</a></h3><p>Inspect every versioned measure and required observable.</p></article><article class="card"><h3><a href="benchmark/results.html">Benchmark results</a></h3><p>Read the exact compatible vectors and scoped Pareto report.</p></article><article class="card"><h3><a href="benchmark/attention.html">Selective-attention extension</a></h3><p>Compare the DD-012--DD-014 attention, audience, and conditional-policy fixtures.</p></article><article class="card"><h3><a href="benchmark/agents-v1.html">Agents v1 implementation</a></h3><p>Inspect the complete offline instrument boundary: implemented, not model-evaluated, and not a leaderboard.</p></article><article class="card"><h3><a href="labs/benchmark.html">Benchmark Lab</a></h3><p>Filter the complete result table by task.</p></article></div></section><section class="content-section prose"><h2>Reproduce</h2><details class="technical-details"><summary>Technical details</summary><p><code>distributed-discovery benchmark{version_flag} run-golden</code><br><code>distributed-discovery benchmark{version_flag} verify-run results/verified/{html.escape(run_id)}</code></p><p>Claim {claim_id} · reproducible run <a href="evidence.html">{html.escape(run_id)}</a>.</p></details></section>"""
     _write(
         output,
         "benchmark.html",
@@ -850,13 +850,13 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
     agents_family_items = "".join(
         f"<li>{html.escape(str(item['name']))}</li>" for item in agents_families
     )
-    agents_body = f"""<header class="page-hero"><p class="eyebrow">DD-010 offline instrument</p><h1>DiscoveryBench Agents v1 registration</h1><p class="lede">A frozen design for studying how software-agent teams turn synthetic evidence into action portfolios. It is registered, not executed, and is separate from the unchanged DiscoveryBench v1–v3 content versions.</p><p class="status-row"><span class="status-chip">Registered, not executed</span><span class="status-chip subtle">No evidence</span></p></header><section class="content-section prose"><h2>What is registered</h2><p>Agents v1 freezes a task generator, information boundaries, five agent architecture contrasts, separate metrics, custody and contamination safeguards, and two-path verification. It asks whether agent teams exhibit duplication, source concentration, shared-clue over-attention, consensus collapse, or failures to preserve a search portfolio.</p><h3>Task families</h3><ul>{agents_family_items}</ul></section><section class="content-section prose"><h2>Evidence boundary</h2><p>No model was called. No cost was incurred. No private seed, holdout, answer key, trace, evaluation result, claim, run, provider ranking, or composite score exists. Candidate model records are implementation constraints, not endorsements or performance evidence.</p><p>Future execution requires a separate issue and branch, exact model snapshots, explicit owner cost authorization, sealed custody, and an immutable evidence package. This page is a status record, not a result route or leaderboard.</p></section><section class="content-section prose"><h2>Versions and next gate</h2><dl><div><dt>Owner</dt><dd>DD-010 instrument</dd></div><div><dt>Content</dt><dd>Explicit selection from preserved v1, v2, or v3</dd></div><div><dt>Agent protocol</dt><dd><code>{html.escape(str(agents_versions["axes"]["agent_protocol"]))}</code></dd></div><div><dt>Generator</dt><dd><code>{html.escape(str(agents_versions["axes"]["task_generator"]))}</code></dd></div></dl><p>The next gate is DiscoveryBench Agents v1 offline instrument implementation.</p><p><a href="../data/benchmark/agents-v1-registration.json">Download the public registration summary</a> · <a href="../research/dd-010.html">DD-010 study record</a> · <a href="../benchmark.html">DiscoveryBench overview</a></p></section>"""
+    agents_body = f"""<header class="page-hero"><p class="eyebrow">DD-010 offline instrument</p><h1>DiscoveryBench Agents v1 implementation</h1><p class="lede">A complete offline instrument for studying how software-agent teams turn synthetic evidence into action portfolios. It is implemented, not model-evaluated, and is separate from the unchanged DiscoveryBench v1–v3 content versions.</p><p class="status-row"><span class="status-chip">Offline implementation complete</span><span class="status-chip subtle">No performance evidence</span></p></header><section class="content-section prose"><h2>Public conformance</h2><p>The implementation provides deterministic generation across 138 canonical cells and 552 prompt variants, closed information boundaries, five registered architecture orchestrators, strict structured actions, separate exact-rational metrics, hashed and redacted traces, AES-256-GCM public toy custody, 12 contamination probe classes, zero-spend authorization guards, and independent verification.</p><p>The deterministic rehearsal covers 10 public calibration tasks across all five architectures: 50 cases pass, Method A and Method B agree, and all 24 registered corruptions are rejected. These are instrument-conformance checks, not model results.</p><h3>Task families</h3><ul>{agents_family_items}</ul></section><section class="content-section prose"><h2>Evidence boundary</h2><p>No provider was called. No model was invoked or downloaded. No network call or external cost occurred. No private seed, holdout, private answer key, secret key, provider trace, evaluation result, claim, run, provider ranking, leaderboard, or composite score exists.</p><p>Future evaluation requires a separate campaign registration, exact model snapshots, explicit owner cost authorization, sealed private custody, and an immutable evidence package. This page is an implementation status record, not a result route or leaderboard.</p></section><section class="content-section prose"><h2>Versions and next gate</h2><dl><div><dt>Owner</dt><dd>DD-010 instrument</dd></div><div><dt>Content</dt><dd>Explicit selection from preserved v1, v2, or v3</dd></div><div><dt>Agent protocol</dt><dd><code>{html.escape(str(agents_versions["axes"]["agent_protocol"]))}</code></dd></div><div><dt>Generator</dt><dd><code>{html.escape(str(agents_versions["axes"]["task_generator"]))}</code></dd></div><div><dt>Rehearsal hash</dt><dd><code>sha256:d3410ff04bb73dcae929c3abc4cf289d58d6830f2a5ab50ca53764bef4af2c59</code></dd></div></dl><p>The next gate is DiscoveryBench Agents v1 evaluation campaign registration and cost authorization.</p><p><a href="../data/benchmark/agents-v1-implementation.json">Download the public implementation summary</a> · <a href="../data/benchmark/agents-v1-registration.json">Download the preserved registration summary</a> · <a href="../research/dd-010.html">DD-010 study record</a> · <a href="../benchmark.html">DiscoveryBench overview</a></p></section>"""
     _write(
         output,
         "benchmark/agents-v1.html",
         _page(
-            "DiscoveryBench Agents v1 registration",
-            "Registered-not-executed DD-010 software-agent benchmark instrument.",
+            "DiscoveryBench Agents v1 implementation",
+            "Implemented-not-evaluated DD-010 software-agent benchmark instrument.",
             agents_body,
             "benchmark/agents-v1.html",
         ),
@@ -888,6 +888,48 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         output,
         "data/benchmark/agents-v1-registration.json",
         json.dumps(agents_public_data, indent=2, sort_keys=True) + "\n",
+    )
+    agents_implementation_data = {
+        "schema_version": 1,
+        "instrument_id": "discoverybench-agents-v1",
+        "owner": "DD-010",
+        "status": "implementation-complete-not-evaluated",
+        "versions": agents_versions["axes"],
+        "generator_counts": {
+            "canonical_cells": 138,
+            "isomorphic_prompt_variants": 552,
+            "primitive_labeled_states": 58945,
+        },
+        "public_rehearsal": {
+            "tasks": 10,
+            "architectures": 5,
+            "cases": 50,
+            "method_a_b_agree": True,
+            "corruptions_rejected": 24,
+            "rehearsal_hash": (
+                "sha256:d3410ff04bb73dcae929c3abc4cf289d58d6830f2a5ab50ca53764bef4af2c59"
+            ),
+        },
+        "boundaries": {
+            "provider_calls": 0,
+            "model_invocations": 0,
+            "model_downloads": 0,
+            "network_calls": 0,
+            "external_cost_usd": 0,
+            "private_material_exists": False,
+            "performance_results_exist": False,
+            "leaderboard": False,
+            "composite_score": None,
+        },
+        "future_authorization_required": True,
+        "next_gate": (
+            "DiscoveryBench Agents v1 evaluation campaign registration and cost authorization"
+        ),
+    }
+    _write(
+        output,
+        "data/benchmark/agents-v1-implementation.json",
+        json.dumps(agents_implementation_data, indent=2, sort_keys=True) + "\n",
     )
 
     options = "".join(
@@ -3191,7 +3233,7 @@ def _render(
 <section class="content-section prose"><h2>How the work is published</h2><p>The canonical entry paper introduces the atomic paradox. Theorem-family papers own durable mathematical questions. Working notes support intermediate or synthetic arguments. The living synthesis preserves the complete intellectual account. Reproducible studies, Labs, and DiscoveryBench expose evidence and interfaces.</p><p>No journal submission status is represented here. A validated PDF, exact run, or polished site does not by itself satisfy the paper-admission rule.</p><p><a href="publications.html">Browse working papers</a> · <a href="{REPOSITORY_URL}/blob/main/docs/research-governance.md">Read the governance source</a></p></section>"""
     program_body = program_body.replace(
         '<section class="content-section prose"><h2>Next open boundary</h2><p>The bounded Decentralized Recovery registration gate stopped at classical overlap: the frozen equal-sharing action game is singleton congestion, and visible sequential occupancy adds ordinary backward induction without enlarging the every-equilibrium top-two recovery region. No study, claim, run, or paper was created.</p><p>Reliable Discovery is now the next unregistered theorem program. It asks when reliable, unreliable, repeated, or overlapping actions should diversify or concentrate, and must establish content beyond classical reliability allocation before registration. The Price of Missing Provenance follows separately.</p></section>',
-        '<section class="content-section prose"><h2>Phase boundary and hold</h2><p>Phase 1 is complete: Programs V1–V5, this Frontier, post-V5 consolidation, and the stopped decentralized-recovery overlap gate form the completed boundary. This does not mean every theorem direction is complete.</p><p>Phase 2 holds theorem-family execution. Reliable Discovery remains a major candidate but is deferred. <a href="benchmark/agents-v1.html">DiscoveryBench Agents v1 registration</a> is complete as an offline, not-executed DD-010 instrument; no provider call, model run, cost, trace, private seed, holdout, or result exists. Its next gate is offline instrument implementation under separate authorization. <a href="start-here.html">Start with three results</a> · <a href="methods.html">Read the factual methods record</a>.</p></section>',
+        '<section class="content-section prose"><h2>Phase boundary and hold</h2><p>Phase 1 is complete: Programs V1–V5, this Frontier, post-V5 consolidation, and the stopped decentralized-recovery overlap gate form the completed boundary. This does not mean every theorem direction is complete.</p><p>Phase 2 holds theorem-family execution. Reliable Discovery remains a major candidate but is deferred. <a href="benchmark/agents-v1.html">DiscoveryBench Agents v1 offline implementation</a> is complete under DD-010; its 50-case public rehearsal passes without a provider call, model invocation, network call, cost, private seed, holdout, or performance result. Its next gate is evaluation campaign registration and cost authorization. <a href="start-here.html">Start with three results</a> · <a href="methods.html">Read the factual methods record</a>.</p></section>',
         1,
     )
     program_body += _render_related_formulations(

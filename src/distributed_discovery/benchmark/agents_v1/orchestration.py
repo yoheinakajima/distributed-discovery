@@ -149,9 +149,7 @@ def run_architecture(
     selected_sources: dict[str, str] = {}
     for round_number in range(turn_count):
         rights = information_rights(architecture_id, agent_ids, messages)
-        round_task = _task_with_messages(
-            task, rights, architecture_id, selected_sources
-        )
+        round_task = _task_with_messages(task, rights, architecture_id, selected_sources)
         new_messages: list[tuple[str, str]] = []
         for agent_id in agent_ids:
             final_required = round_number == turn_count - 1

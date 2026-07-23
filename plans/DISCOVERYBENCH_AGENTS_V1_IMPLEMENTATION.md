@@ -120,29 +120,29 @@ under `reports/benchmark/`, never `results/verified`.
 
 ## Milestones
 
-- **M0 (active):** live audit, mandatory reading, immutable baseline, issue,
+- **M0 (complete):** live audit, mandatory reading, immutable baseline, issue,
   branch, living plan, baseline record, first commit, push, and draft PR.
-- **M1:** package architecture and unified version manifest.
-- **M2:** deterministic five-family generator and public fixtures.
-- **M3:** prompt compiler and leakage audit.
-- **M4:** closed capability sandbox.
-- **M5:** five architecture orchestrators and exact comparator path.
-- **M6:** provider-neutral adapters and deterministic/adversarial mocks.
-- **M7:** structured actions and one schema-only retry.
-- **M8:** exact baseline reconstruction and metric evaluator.
-- **M9:** raw/redacted/audit traces and hashes.
-- **M10:** public-toy cryptographic custody implementation.
-- **M11:** contamination probes and quarantine.
-- **M12:** batch planner and zero-spend cost guard.
-- **M13:** execution-authorization schema, fixture, validator, and refusal.
-- **M14:** independent primitive verifier.
-- **M15:** all 24 corruption executions.
-- **M16:** CLI and Make interfaces.
-- **M17:** complete deterministic offline rehearsal.
-- **M18:** implementation-readiness decision.
-- **M19:** DD-010 and static-site integration.
-- **M20:** paper/lifecycle and full local acceptance.
-- **M21:** final PR, CI, merge, Pages, live acceptance, issue closeout, and
+- **M1 (complete):** package architecture and unified version manifest.
+- **M2 (complete):** deterministic five-family generator and public fixtures.
+- **M3 (complete):** prompt compiler and leakage audit.
+- **M4 (complete):** closed capability sandbox.
+- **M5 (complete):** five architecture orchestrators and exact comparator path.
+- **M6 (complete):** provider-neutral adapters and deterministic/adversarial mocks.
+- **M7 (complete):** structured actions and one schema-only retry.
+- **M8 (complete):** exact baseline reconstruction and metric evaluator.
+- **M9 (complete):** raw/redacted/audit traces and hashes.
+- **M10 (complete):** public-toy cryptographic custody implementation.
+- **M11 (complete):** contamination probes and quarantine.
+- **M12 (complete):** batch planner and zero-spend cost guard.
+- **M13 (complete):** execution-authorization schema, fixture, validator, and refusal.
+- **M14 (complete):** independent primitive verifier.
+- **M15 (complete):** all 24 corruption executions.
+- **M16 (complete):** CLI and Make interfaces.
+- **M17 (complete):** complete deterministic offline rehearsal.
+- **M18 (complete):** implementation-readiness decision.
+- **M19 (complete):** DD-010 and static-site integration.
+- **M20 (complete):** paper/lifecycle and full local acceptance.
+- **M21 (active):** final PR, CI, merge, Pages, live acceptance, issue closeout, and
   synchronized `main`.
 
 Exactly one milestone is active at a time.
@@ -156,8 +156,8 @@ Exactly one milestone is active at a time.
 - [x] Complete the mandatory governance, Phase 2, registration, DD-010,
   scientific-owner, implementation, test, and infrastructure reading.
 - [x] Open issue #171 and create the implementation branch.
-- [ ] Commit/push M0 and open the draft PR.
-- [ ] Complete M1 through M20 sequentially.
+- [x] Commit/push M0 and open draft PR #172.
+- [x] Complete M20 local acceptance.
 - [ ] Complete M21 and synchronize `main`.
 
 ## Discoveries and surprises
@@ -184,8 +184,31 @@ Exactly one milestone is active at a time.
   docs unless a contract cannot be derived from the registered official-source
   candidate record.
 - `2026-07-23T15:38:56Z`: use established `cryptography` AEAD through the
-  development dependency only for fixed public toy keys; private generation
+  runtime dependency only for fixed public toy keys; private generation
   remains impossible without later authorization and secret context.
+- `2026-07-23T15:41:04Z`: M0 is complete at commit `b115149`; draft PR #172
+  owns the implementation review. M1 is active.
+- `2026-07-23`: M1--M19 are implemented. Exact per-cell combinatorics
+  reconstruct 3,402 acquisition, 9,477 attention, 7,547 sharing, 7,547
+  recovery, and 30,972 threshold states. Cell-specific comparators reuse
+  scientific-owner formulas and Method B reconstructs them separately.
+- `2026-07-23`: the deterministic public rehearsal passes 50
+  task/architecture cases, records 294 mock-adapter calls and 28,224 mock
+  tokens, reports zero provider calls/model invocations/network/external cost,
+  rejects all 24 corruptions, and has stable semantic hash
+  `sha256:d3410ff04bb73dcae929c3abc4cf289d58d6830f2a5ab50ca53764bef4af2c59`.
+- `2026-07-23`: the implementation decision is
+  `ready-for-evaluation-registration`; this does not authorize the separate
+  provider/model campaign, private generation, custody secrets, or spend.
+- `2026-07-23`: M20 passes. `make verify` reports 177 strictly typed source
+  files and 292 passing tests; `make papers` preserves seven accepted PDFs and
+  119 pages; `make site` builds 81 HTML pages and 89 JSON data records. The
+  desktop and 390-pixel implementation-page audits find one H1, five primary
+  navigation links, no horizontal overflow, no external script, no form, a
+  visible implementation download, reduced-motion support, and no console
+  warning or error. The verified-results tree remains
+  `c8fd20f66797c5014acf658a749e7f15fcaf6750`, the paper/lifecycle diff is empty,
+  and all five preservation files remain untracked and unstaged. M21 is active.
 
 ## Generator
 
@@ -193,8 +216,9 @@ Generation is deterministic from an explicit public manifest. Every instance
 contains separate agent-visible and evaluator-only objects, exact rational
 strings, stable ordering, declared target/agent isomorphisms, hidden-label
 support, and commitments. The registered totals must remain exactly 138 cells,
-552 isomorphic prompts, and 58,945 primitive states. Private mode refuses
-without a future validated authorization and custody secret context.
+552 isomorphic prompts, and 58,945 primitive states. Private mode is
+unconditionally disabled; a future campaign must implement and validate its
+own authorization and custody secret context.
 
 ## Prompt compiler and capability isolation
 
@@ -252,8 +276,9 @@ result artifacts. Perform local desktop and 390-pixel browser acceptance.
 - `make audit-agents-v1`: schemas, registries, public fixtures, implementation,
   all corruptions, and no-execution invariants pass.
 - `make agents-v1-dry-run`: deterministic public rehearsal writes only a
-  disposable or `reports/benchmark/` acceptance artifact, reports zero calls,
-  zero cost, no network/model/private material, and stable hashes.
+  disposable or `reports/benchmark/` acceptance artifact, reports mock
+  conformance counters separately from zero provider calls, zero cost, no
+  network/model/private material, and stable hashes.
 - `make agents-v1-readiness`: independently verifies the rehearsal and emits a
   registered readiness decision.
 - `make verify`: Ruff, strict MyPy, all tests, 110 claims, and 51 manifests pass.
@@ -295,7 +320,8 @@ provider/model.
 
 ## Outcome and retrospective
 
-Pending. Normal completion requires a merged/deployed offline instrument,
-passing public rehearsal and all corruptions, Method A/B agreement, zero
-network/model/cost/private material, unchanged science and papers, closed issue,
-and synchronized `main`.
+Local acceptance is complete. The instrument, public rehearsal, all
+corruptions, and Method A/B agreement pass with zero provider/model/network/
+external-cost/private-material activity and unchanged science and papers.
+External acceptance remains: branch CI, squash merge, post-merge CI and Pages,
+live route validation, issue closeout, and synchronized `main`.

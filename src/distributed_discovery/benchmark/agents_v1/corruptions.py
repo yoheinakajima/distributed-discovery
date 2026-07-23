@@ -103,9 +103,7 @@ def execute_corruption_suite(
         _expect(
             "C05",
             "task version mismatch",
-            lambda: _require_no_errors(
-                verify_task(replace(task, family_id="wrong-family"))
-            ),
+            lambda: _require_no_errors(verify_task(replace(task, family_id="wrong-family"))),
         )
     )
     cases.append(
@@ -113,9 +111,7 @@ def execute_corruption_suite(
             "C06",
             "task commitment",
             lambda: parse(
-                json.dumps(
-                    {**action_object, "task_instance_commitment": "sha256:" + "0" * 64}
-                )
+                json.dumps({**action_object, "task_instance_commitment": "sha256:" + "0" * 64})
             ),
         )
     )
@@ -160,13 +156,9 @@ def execute_corruption_suite(
             ),
         )
     )
-    cases.append(
-        _expect("C13", "retry limit", lambda: _reject_if(2 > 1, "schema retry limit"))
-    )
+    cases.append(_expect("C13", "retry limit", lambda: _reject_if(2 > 1, "schema retry limit")))
     moving = ModelManifest("provider", "model-latest", "model-latest", "v1", True, True)
-    request = AdapterRequest(
-        prompt, moving, 1, task.action_vocabulary, task.source_vocabulary
-    )
+    request = AdapterRequest(prompt, moving, 1, task.action_vocabulary, task.source_vocabulary)
     cases.append(
         _expect(
             "C14",
@@ -245,9 +237,7 @@ def execute_corruption_suite(
         _expect(
             "C23",
             "exclusion mutation",
-            lambda: _require_no_errors(
-                verify_exclusions(({"excluded": True, "reason": ""},))
-            ),
+            lambda: _require_no_errors(verify_exclusions(({"excluded": True, "reason": ""},))),
         )
     )
     cases.append(

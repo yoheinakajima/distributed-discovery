@@ -167,9 +167,7 @@ def run_rehearsal() -> dict[str, object]:
         "scientific_evidence_created": False,
         "trace_hashes": trace_hashes,
     }
-    stable_payload["rehearsal_hash"] = (
-        f"sha256:{sha256_hex(canonical_json(stable_payload))}"
-    )
+    stable_payload["rehearsal_hash"] = f"sha256:{sha256_hex(canonical_json(stable_payload))}"
     stable_payload["status"] = (
         "pass"
         if not method_disagreements

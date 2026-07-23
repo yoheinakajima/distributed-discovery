@@ -97,9 +97,7 @@ def reconstruct_metrics(
         "calls": len(run.turns) + sum(record.retry_count for record in run.turns),
         "input_tokens": sum(record.response.usage.input_tokens for record in run.turns),
         "output_tokens": sum(record.response.usage.output_tokens for record in run.turns),
-        "cost_usd": sum(
-            (record.response.usage.cost_usd for record in run.turns), Decimal("0")
-        ),
+        "cost_usd": sum((record.response.usage.cost_usd for record in run.turns), Decimal("0")),
     }
 
 
@@ -175,8 +173,7 @@ def _expected_baseline(task: TaskInstance) -> BaselineObject:
         private = Fraction(str(parameters["private_accuracy"]))
         shared = Fraction(str(parameters["shared_accuracy"]))
         values = [
-            attention_discovery(agents, readers, private, shared)
-            for readers in range(agents + 1)
+            attention_discovery(agents, readers, private, shared) for readers in range(agents + 1)
         ]
         return BaselineObject(str(values[0]), str(max(values)), 1)
     if task.family_id in {
@@ -184,9 +181,7 @@ def _expected_baseline(task: TaskInstance) -> BaselineObject:
         "consensus-collapse-versus-portfolio-recovery",
     }:
         targets = int(str(parameters["target_count"]))
-        accuracy, profile = _method_b_channel_profile(
-            targets, agents, str(parameters["channel"])
-        )
+        accuracy, profile = _method_b_channel_profile(targets, agents, str(parameters["channel"]))
         private = 1 - (1 - accuracy) ** agents
         budget = (
             int(str(parameters["action_budget"]))
@@ -238,22 +233,14 @@ def _method_b_channel_profile(
         signals: tuple[object, ...] = tuple(range(targets))
         law = {
             target: {
-                signal: (
-                    Fraction(1, 2)
-                    if signal == target
-                    else Fraction(1, 2 * (targets - 1))
-                )
+                signal: (Fraction(1, 2) if signal == target else Fraction(1, 2 * (targets - 1)))
                 for signal in signals
             }
             for target in range(targets)
         }
     else:
         signals = tuple(combinations(range(targets), 2))
-        inclusion = (
-            Fraction(1)
-            if channel_id == "guaranteed-two-shortlist"
-            else Fraction(3, 4)
-        )
+        inclusion = Fraction(1) if channel_id == "guaranteed-two-shortlist" else Fraction(3, 4)
         law = {
             target: {
                 signal: (
@@ -302,9 +289,7 @@ def verify_method_agreement(
     run: ArchitectureRun,
 ) -> tuple[str, ...]:
     method_b = reconstruct_metrics(task, run)
-    return tuple(
-        key for key, expected in method_b.items() if method_a.get(key) != expected
-    )
+    return tuple(key for key, expected in method_b.items() if method_a.get(key) != expected)
 
 
 REGISTERED_METRICS = frozenset(

@@ -51,7 +51,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "stopped decentralized-recovery overlap gate" in program
     assert "Phase 2 holds theorem-family execution" in program
     assert "Reliable Discovery remains a major candidate but is deferred" in program
-    assert "DiscoveryBench Agents v1 registration" in program
+    assert "DiscoveryBench Agents v1 offline implementation" in program
     assert 'id="information-sharing-frontier"' in program
     assert 'href="publications/information-sharing-frontier.html"' in program
     assert "docs/theorem-spine.md" in program
@@ -127,9 +127,9 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     for route in ["tasks", "protocols", "metrics", "results", "attention", "agents-v1"]:
         assert (output / f"benchmark/{route}.html").is_file()
     agents_registration = (output / "benchmark/agents-v1.html").read_text(encoding="utf-8")
-    assert "Registered, not executed" in agents_registration
-    assert "No model was called" in agents_registration
-    assert "No private seed, holdout, answer key, trace, evaluation result" in (agents_registration)
+    assert "Offline implementation complete" in agents_registration
+    assert "No provider was called" in agents_registration
+    assert "No private seed, holdout, private answer key" in agents_registration
     assert "not a result route or leaderboard" in agents_registration
     agents_data = json.loads(
         (output / "data/benchmark/agents-v1-registration.json").read_text(encoding="utf-8")
@@ -148,6 +148,14 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "runs_created": False,
         "traces_exist": False,
     }
+    agents_implementation = json.loads(
+        (output / "data/benchmark/agents-v1-implementation.json").read_text(encoding="utf-8")
+    )
+    assert agents_implementation["status"] == "implementation-complete-not-evaluated"
+    assert agents_implementation["public_rehearsal"]["cases"] == 50
+    assert agents_implementation["public_rehearsal"]["corruptions_rejected"] == 24
+    assert agents_implementation["boundaries"]["provider_calls"] == 0
+    assert agents_implementation["boundaries"]["performance_results_exist"] is False
     benchmark_lab = (output / "labs/benchmark.html").read_text()
     assert "no submissions" in benchmark_lab
     assert "JavaScript is off" in benchmark_lab

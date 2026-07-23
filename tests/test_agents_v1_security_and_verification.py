@@ -118,13 +118,14 @@ def test_zero_cost_planner_refuses_projected_external_cost() -> None:
 def test_authorization_schema_and_positive_spend_refusal() -> None:
     fixture_dir = ROOT / "docs/benchmark/agents-v1/fixtures"
     valid = yaml.safe_load((fixture_dir / "valid-zero-spend-authorization.yml").read_text())
-    assert validate_authorization(
-        valid,
-        now=datetime(2026, 7, 23, tzinfo=UTC),
-    ) == valid
-    invalid = yaml.safe_load(
-        (fixture_dir / "invalid-positive-spend-authorization.yml").read_text()
+    assert (
+        validate_authorization(
+            valid,
+            now=datetime(2026, 7, 23, tzinfo=UTC),
+        )
+        == valid
     )
+    invalid = yaml.safe_load((fixture_dir / "invalid-positive-spend-authorization.yml").read_text())
     with pytest.raises(PermissionError, match="positive spend"):
         validate_authorization(invalid, now=datetime(2026, 7, 23, tzinfo=UTC))
     with pytest.raises(PermissionError, match="explicit"):

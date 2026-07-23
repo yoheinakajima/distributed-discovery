@@ -1,4 +1,4 @@
-# Final handoff — DiscoveryBench Agents v1 registration
+# Final handoff — DiscoveryBench Agents v1 offline implementation
 
 Current supersession (2026-07-23): Phase 2 uses an AI-powered lab under human
 PI gate authority, an AI-native robustness scale, a nine-option staged
@@ -6,16 +6,19 @@ portfolio, a four-community concordance, and independent paper lifecycle and
 claim-role registries. Former human-review packets are inactive. The Shared
 Discovery Paradox is the unique owner-declared canonical public anchor; the
 seven local PDFs remain working papers/notes, and no current paper is archived
-or superseded. DiscoveryBench Agents v1 is registered-not-executed under
-DD-010; no provider/model call, cost, private seed, holdout, trace, run, or
-result exists. The next gate is its separately authorized offline
-implementation.
+or superseded. DiscoveryBench Agents v1 is implemented offline under DD-010:
+the 50-case public rehearsal passes, Method A/B agree, and all 24 corruptions
+are rejected. It is not model-evaluated; no provider call, model invocation,
+cost, private seed, holdout, provider trace, performance result, run, or claim
+exists. The next gate is a separately authorized evaluation campaign
+registration and cost decision.
 
 Supersession note (2026-07-23): this handoff accurately records the completed
 stop and its then-current next step. The Phase 2 owner directive now holds
 theorem-family execution and preserves Reliable Discovery as a deferred major
 candidate. It made DiscoveryBench Agents v1 registration the next substantive
-session; that registration is now complete without scientific evidence.
+session; its registration and offline implementation are now complete without
+scientific or performance evidence.
 
 Issue #162 and PR #163 complete the bounded Decentralized Recovery and
 Equilibrium Robustness registration decision as `stop-classical-overlap`.

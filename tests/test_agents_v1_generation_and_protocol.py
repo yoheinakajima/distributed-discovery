@@ -41,10 +41,7 @@ def test_registered_generator_counts_and_determinism() -> None:
     assert len(prompts) == 552
     assert prompts == generate_prompt_space()
     assert all(
-        leakage_findings(
-            json.loads(compile_prompt(task, sorted(task.capabilities)[0]).user)
-        )
-        == ()
+        leakage_findings(json.loads(compile_prompt(task, sorted(task.capabilities)[0]).user)) == ()
         for task in prompts
     )
 
@@ -107,16 +104,12 @@ def test_all_architecture_information_rights() -> None:
         assert set(rights) == set(agents)
     assert information_rights("isolated-private-agents", agents, messages)["AGENT-01"] == ()
     assert (
-        len(
-            information_rights("full-broadcast-shared-transcript", agents, messages)[
-                "AGENT-01"
-            ]
-        )
+        len(information_rights("full-broadcast-shared-transcript", agents, messages)["AGENT-01"])
         == 3
     )
-    assert information_rights(
-        "designated-reader-selective-sharing", agents, messages
-    )["AGENT-03"] == ("one",)
+    assert information_rights("designated-reader-selective-sharing", agents, messages)[
+        "AGENT-03"
+    ] == ("one",)
 
 
 def test_orchestrators_use_two_rounds_and_one_schema_retry() -> None:

@@ -98,8 +98,7 @@ class MockAdapter:
                 if candidate.removeprefix("TARGET-") in observation
             ),
             request.action_vocabulary[
-                sum(ord(char) for char in request.prompt.agent_id)
-                % len(request.action_vocabulary)
+                sum(ord(char) for char in request.prompt.agent_id) % len(request.action_vocabulary)
             ],
         )
         body: dict[str, object] = {

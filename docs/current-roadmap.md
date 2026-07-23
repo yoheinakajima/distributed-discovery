@@ -1,12 +1,13 @@
-# Current roadmap — Phase 2 hold; Agents v1 registered offline
+# Current roadmap — Phase 2 hold; Agents v1 implemented offline
 
 Phase 1 is complete. During Phase 2, theorem-family execution is held. Reliable
 Discovery remains the next major theorem-family candidate but is held.
 DiscoveryBench Agents v1 is registered as a DD-010 instrument, not a new study
-or DiscoveryBench v4. It contains offline contracts, schemas, public fixtures,
-and validators only. The exact next gate is its offline instrument
-implementation; it requires a separate issue/branch and creates no authority
-for calls, spend, private holdouts, traces, or results.
+or DiscoveryBench v4. Its offline package, schemas, public fixtures, security
+guards, independent verifier, 24-corruption suite, CLI/Make interfaces, and
+50-case public rehearsal are complete. The exact next gate is DiscoveryBench
+Agents v1 evaluation campaign registration and cost authorization; this work
+creates no authority for calls, spend, private holdouts, traces, or results.
 
 The Phase 2 execution architecture is `shared trunk, low-cost option creation,
 staged exercise`. It records readiness, residual value, decay, expiry horizon,

@@ -63,7 +63,7 @@ the live benchmark, DD-010 study, v3 schema, and summary routes returned HTTP
 protocols, 39 metrics, 36 compatible pairs, and 660 exclusions. The next
 milestone is the separately registered Synthetic Experiment v3.
 
-## Registered-unexecuted Agents v1 layer
+## Implemented-not-evaluated Agents v1 layer
 
 The 2026-07-23 registration gate assigns the software-agent instrument to
 DD-010 without allocating a study or claim. Content versions v1/v2/v3 remain
@@ -73,7 +73,9 @@ envelope, custody, contamination, trace/redaction, statistical estimands,
 metrics, two-path verification, 24 corruptions, schemas, public fixtures, and
 offline validators.
 
-This is not an execution plan. Provider calls, model downloads, private
-generation, traces, results, and spending remain prohibited. The exact next
-gate is DiscoveryBench Agents v1 offline instrument implementation, to be
-opened separately with explicit cost and snapshot authorization.
+The offline implementation and public conformance rehearsal are complete.
+Provider calls, model invocations, model downloads, private generation,
+provider traces, performance results, and spending remain prohibited. The
+exact next gate is DiscoveryBench Agents v1 evaluation campaign registration
+and cost authorization. It must be opened separately; this plan creates no
+authority for that campaign.

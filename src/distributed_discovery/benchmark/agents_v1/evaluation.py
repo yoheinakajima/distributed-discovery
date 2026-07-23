@@ -33,11 +33,7 @@ class Evaluation:
 
     def serializable(self) -> dict[str, object]:
         return {
-            key: (
-                str(value)
-                if isinstance(value, (Fraction, Decimal))
-                else value
-            )
+            key: (str(value) if isinstance(value, (Fraction, Decimal)) else value)
             for key, value in self.__dict__.items()
         }
 

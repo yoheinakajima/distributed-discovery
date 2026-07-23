@@ -9,9 +9,7 @@ from dataclasses import dataclass
 from distributed_discovery.benchmark.agents_v1.models import VERSIONS, canonical_json, sha256_hex
 from distributed_discovery.benchmark.agents_v1.orchestration import ArchitectureRun
 
-SECRET = re.compile(
-    r"(?i)(?:api[_-]?key|authorization|bearer|token|secret|password)\s*[:=]\s*\S+"
-)
+SECRET = re.compile(r"(?i)(?:api[_-]?key|authorization|bearer|token|secret|password)\s*[:=]\s*\S+")
 HOST_PATH = re.compile(r"(?:/Users|/home|C:\\Users)[/\\][^\s\"']+")
 PII_EMAIL = re.compile(r"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b", re.IGNORECASE)
 PROPRIETARY = re.compile(r"(?i)\bproprietary[_ -]field\b[^,}\n]*")

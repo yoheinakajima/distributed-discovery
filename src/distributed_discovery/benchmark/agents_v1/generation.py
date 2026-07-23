@@ -30,6 +30,7 @@ FAMILY_PUBLIC_CODES = {
     for index, family_id in enumerate(FAMILY_STATE_COUNTS, start=1)
 }
 
+
 def _cells(
     family: str,
     rows: Iterable[dict[str, object]],
@@ -127,8 +128,7 @@ def canonical_cells() -> tuple[GeneratorCell, ...]:
         + _cells(
             "threshold-team-formation",
             threshold,
-            lambda row: int(str(row["target_count"]))
-            ** int(str(row["agent_count"])),
+            lambda row: int(str(row["target_count"])) ** int(str(row["agent_count"])),
         )
     )
     if len(rows) != 138 or sum(row.primitive_labeled_states for row in rows) != 58945:
@@ -162,12 +162,10 @@ def _acquisition_baseline(parameters: dict[str, object]) -> tuple[BaselineObject
     else:
         cost = upper + (1 - upper) / 2
     planner_values = [
-        discovery(agents, count, accuracy)
-        for count in planner_counts(agents, accuracy, cost)
+        discovery(agents, count, accuracy) for count in planner_counts(agents, accuracy, cost)
     ]
     equilibrium_values = [
-        discovery(agents, count, accuracy)
-        for count in equilibrium_counts(agents, accuracy, cost)
+        discovery(agents, count, accuracy) for count in equilibrium_counts(agents, accuracy, cost)
     ]
     return (
         BaselineObject(
@@ -200,11 +198,7 @@ def _channel(
         accuracy = Fraction(1, 2)
         law = {
             target: {
-                signal: (
-                    accuracy
-                    if signal == target
-                    else (1 - accuracy) / (targets - 1)
-                )
+                signal: (accuracy if signal == target else (1 - accuracy) / (targets - 1))
                 for signal in signals
             }
             for target in range(targets)
@@ -246,8 +240,7 @@ def _channel_profile(
     profile = [Fraction(0) for _ in range(min(targets, agents))]
     for observations in product(signals, repeat=agents):
         weights = [
-            prior
-            * _fraction_product(law[target][signal] for signal in observations)
+            prior * _fraction_product(law[target][signal] for signal in observations)
             for target in range(targets)
         ]
         probability = sum(weights, Fraction(0))
@@ -304,11 +297,7 @@ def _sharing_public_primitives(parameters: dict[str, object]) -> dict[str, objec
 def _posterior_profile(targets: int, profile: str) -> tuple[Fraction, ...]:
     if profile == "tied":
         return (Fraction(1, targets),) * targets
-    weights = (
-        tuple(range(targets, 0, -1))
-        if profile == "strict"
-        else (2, *((1,) * (targets - 1)))
-    )
+    weights = tuple(range(targets, 0, -1)) if profile == "strict" else (2, *((1,) * (targets - 1)))
     total = sum(weights)
     return tuple(Fraction(weight, total) for weight in weights)
 
@@ -325,10 +314,7 @@ def _threshold_baseline(parameters: dict[str, object]) -> tuple[BaselineObject, 
     threshold = int(str(parameters["threshold"]))
     posterior = _posterior_profile(targets, str(parameters["posterior_profile"]))
     private = sum(
-        (
-            mass * binomial_tail(agents, mass, threshold)
-            for mass in posterior
-        ),
+        (mass * binomial_tail(agents, mass, threshold) for mass in posterior),
         Fraction(0),
     )
     equilibrium_values = [
@@ -422,8 +408,7 @@ def generate_instance(
             visible_observation = "SOURCE-SELECTION-PENDING"
         elif cell.family_id == "one-reader-versus-broadcast-attention":
             visible_observation = (
-                f"PRIVATE:{clue};SHARED:"
-                f"{common_observed.replace('TARGET-', 'CLUE-')}"
+                f"PRIVATE:{clue};SHARED:{common_observed.replace('TARGET-', 'CLUE-')}"
                 if index == 0 and not hidden_labels
                 else f"PRIVATE:{clue}"
             )
@@ -444,8 +429,7 @@ def generate_instance(
                 )
         else:
             visible_observation = (
-                f"RECOMMENDATION:{clue};POSTERIOR-PROFILE:"
-                f"{parameters['posterior_profile']}"
+                f"RECOMMENDATION:{clue};POSTERIOR-PROFILE:{parameters['posterior_profile']}"
             )
         capabilities[agent_id] = CapabilityView(
             agent_id,

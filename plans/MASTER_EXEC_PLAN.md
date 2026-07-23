@@ -12,6 +12,11 @@ deterministic public fixtures, mock agents, exact theoretical baselines, public
 toy custody vectors, and zero-spend/no-network guards. It creates no provider
 or model call, private seed, sealed holdout, answer key, secret key, scientific
 claim, immutable run, paper change, or benchmark performance result.
+Local implementation acceptance is complete: the 50-case public rehearsal and
+24 corruptions pass, independent metric reconstruction agrees, the decision is
+`ready-for-evaluation-registration`, and all science, paper, and lifecycle
+boundaries remain unchanged. PR #172 owns the remaining CI, merge, Pages, live
+acceptance, and issue-closeout work.
 
 ## Active continuation — DiscoveryBench Agents v1 offline implementation gate (2026-07-23)
 

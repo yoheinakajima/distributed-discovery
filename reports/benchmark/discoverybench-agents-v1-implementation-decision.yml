@@ -1,0 +1,35 @@
+schema_version: agents-v1-implementation-decision-v1
+instrument_id: discoverybench-agents-v1
+owner_study: DD-010
+decision: ready-for-evaluation-registration
+decision_date_utc: "2026-07-23T00:00:00Z"
+implementation_complete: true
+model_evaluation_complete: false
+public_rehearsal:
+  status: pass
+  cases: 50
+  stable_hash: sha256:d3410ff04bb73dcae929c3abc4cf289d58d6830f2a5ab50ca53764bef4af2c59
+verification:
+  method_a_b_agree: true
+  corruptions_rejected: 24
+  corruptions_registered: 24
+boundaries:
+  provider_calls: 0
+  model_invocations: 0
+  model_downloads: 0
+  network_calls: 0
+  external_cost_usd: 0
+  private_seeds: 0
+  private_holdouts: 0
+  private_keys: 0
+  performance_results: 0
+  scientific_claims_created: 0
+  immutable_runs_created: 0
+provider_adapter_contracts: implemented-disabled-transport-injected-no-live-validation
+future_authorization_required: true
+stop_risks:
+  - provider contracts can drift and require exact-snapshot revalidation
+  - private custody has not been created or exercised
+  - no provider behavior, reliability, latency, or cost has been measured
+next_gate: DiscoveryBench Agents v1 evaluation campaign registration and cost authorization
+next_file: plans/DISCOVERYBENCH_AGENTS_V1_EVALUATION.md
