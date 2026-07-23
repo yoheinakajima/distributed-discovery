@@ -1,5 +1,18 @@
 # Master execution plan
 
+## Active continuation — DiscoveryBench Agents v1 offline implementation (2026-07-23)
+
+Issue #171 and branch
+`benchmark/discoverybench-agents-v1-implementation` own the sole substantive
+lane from clean main `53edc37e34809c33e334ade79973e315835aa61a`. The living
+ExecPlan is
+[`DISCOVERYBENCH_AGENTS_V1_IMPLEMENTATION.md`](DISCOVERYBENCH_AGENTS_V1_IMPLEMENTATION.md).
+This gate implements and rehearses the registered DD-010 instrument using only
+deterministic public fixtures, mock agents, exact theoretical baselines, public
+toy custody vectors, and zero-spend/no-network guards. It creates no provider
+or model call, private seed, sealed holdout, answer key, secret key, scientific
+claim, immutable run, paper change, or benchmark performance result.
+
 ## Active continuation — DiscoveryBench Agents v1 offline implementation gate (2026-07-23)
 
 Issue #169 and PR #170 register DiscoveryBench Agents v1 as a DD-010 offline
