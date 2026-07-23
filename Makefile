@@ -36,6 +36,12 @@ validate-claims:
 audit-editorial:
 	$(PY) scripts/audit_literature_transmission.py
 	$(PY) scripts/audit_claim_prominence.py
+	$(PY) scripts/audit_optionality_portfolio.py
+	$(PY) scripts/audit_translation_concordance.py
+	$(PY) scripts/audit_paper_lifecycle.py
+	$(PY) scripts/audit_paper_claim_roles.py
+	$(PY) scripts/audit_paper_recomposition.py
+	$(PY) scripts/audit_phase2_prospectus_schemas.py
 
 foundations:
 	./scripts/build_papers.sh foundations

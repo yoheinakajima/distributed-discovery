@@ -54,6 +54,9 @@ def test_copy_map_rejects_an_incomplete_primary_navigation(tmp_path: Path) -> No
         ("seeded-synthetic-power", "evidence", "Synthetic only"),
         ("no-result-registration-only", "evidence", "Open question"),
         ("validated-repository-paper", "publication", "Validated working paper"),
+        ("canonical-published", "publication", "Canonical published anchor"),
+        ("active-research-note", "publication", "Active research note"),
+        ("superseded-working-paper", "publication", "Superseded working paper"),
     ],
 )
 def test_human_status_maps_machine_values(raw: str, kind: str, expected: str) -> None:

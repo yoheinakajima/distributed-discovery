@@ -7,6 +7,24 @@ is on hold. Reliable Discovery is preserved and deferred; the next substantive
 session is DiscoveryBench Agents v1 registration. No claim, study, immutable
 run, theorem, or scientific result is added by this transition.
 
+Phase 2 now operates as an AI-powered research lab under human PI ownership
+and final gate authority. Ten separated AI roles cover production,
+context-isolated reproduction, distinct-method verification, adversarial
+proof, classical reduction, primary-source literature, corruption, editorial
+boundary, integration, and final acceptance. These are internal controls, not
+external review or peer review. Human-engagement preparation is inactive and
+its former repository packets are superseded by
+`docs/ai-lab-operating-boundary.md`.
+
+The active architecture preserves nine staged options while exercising only
+WS-1 next: DiscoveryBench Agents v1 registration. OR/MS is the primary
+disciplinary and rhetorical home; economics/AGT is the mathematical adjacency;
+multi-agent AI is the future benchmark audience. The paper system separately
+records scientific, editorial, and publication status, with the read-only
+Shared Discovery Paradox as the unique owner-declared canonical public anchor,
+four active theorem-family working papers, one research note, and two
+synthesis notes. No current paper is archived or superseded.
+
 The bounded Decentralized Recovery and Equilibrium Robustness registration gate
 on issue #162 ends in `stop-classical-overlap`. The frozen two-agent
 equal-sharing action game is exactly a singleton congestion/resource-selection

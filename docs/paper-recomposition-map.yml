@@ -1,0 +1,96 @@
+schema_version: 1
+authority: editorial prospectus only; no lifecycle transition is authorized
+supported_operations: [merge, split, absorb, demote, retire-without-replacement, supersede-after-replacement-acceptance]
+workflow:
+  - define a central question
+  - select claims from the ledger
+  - assign claim roles
+  - assign unique primary editorial ownership
+  - identify predecessor papers
+  - write from theorem architecture rather than chronological copying
+  - audit scientific equivalence and scope
+  - audit literature and mandatory counterboundaries
+  - build and accept the replacement
+  - only then change predecessor lifecycle
+  - preserve routes PDFs hashes replacement links and citation instructions
+records:
+  - paper_id: shared-discovery-paradox
+    central_question: How can better pooled ranking coexist with worse group discovery under a one-answer rule?
+    independent_reason_to_exist: It is the atomic canonical entry and owner-declared published anchor.
+    primary_families: [canonical-entry]
+    claim_roles: [primary]
+    overlap_with_other_papers: [foundations, incentive-to-ignore, information-sharing-frontier]
+    candidate_disposition: locked-canonical-anchor
+    prerequisite_for_change: No internal change is permitted; upstream remains read-only.
+    risk: Recomposition would erase the canonical entry boundary and violate the upstream lock.
+    no_action_rationale: The owner decision excludes internal archive or supersession.
+  - paper_id: common-source-trap
+    central_question: When do equal-share incentives induce excessive reliance on a common evidence source?
+    independent_reason_to_exist: It owns the general-N source-acquisition threshold and its private-versus-planner counterboundary.
+    primary_families: [source-acquisition-provenance]
+    claim_roles: [primary, supporting, counterboundary]
+    overlap_with_other_papers: [foundations, information-sharing-frontier]
+    candidate_disposition: retain-with-future-absorption-option
+    prerequisite_for_change: A provenance replacement must pass Gate C, absorb DD-008 through DD-008B roles, and retain the static-game scope.
+    risk: A broad provenance paper could hide the exact acquisition theorem or overstate missing-provenance results.
+    no_action_rationale: No replacement or Gate C theorem exists.
+  - paper_id: incentive-to-ignore
+    central_question: Who should receive and act on shared evidence while independent private attempts remain?
+    independent_reason_to_exist: It owns strategic attention, audience, and conditional-use results distinct from channel geometry.
+    primary_families: [selective-attention-and-audience-design]
+    claim_roles: [primary, supporting, background, counterboundary]
+    overlap_with_other_papers: [shared-discovery-paradox, information-sharing-frontier]
+    candidate_disposition: retain
+    prerequisite_for_change: Any merge must preserve audience institutions, strategic access, and the unrestricted-policy counterexample as distinct from sharing geometry.
+    risk: Merger could transfer DD-012 through DD-014 ownership or blur access choice with posterior pooling.
+    no_action_rationale: Its central question and evidence package remain independent.
+  - paper_id: threshold-discovery
+    central_question: How should a discovery architecture form minimum viable teams without crowding the portfolio?
+    independent_reason_to_exist: It owns threshold planner, equilibrium-selection, dynamic, and bounded mechanism results.
+    primary_families: [reliable-discovery-action-technology]
+    claim_roles: [primary, supporting, background, counterboundary]
+    overlap_with_other_papers: [discovery-institutions]
+    candidate_disposition: retain-with-future-absorption-option
+    prerequisite_for_change: Reliable Discovery must exist, pass admission and acceptance, and explicitly absorb all threshold and equilibrium roles.
+    risk: Premature absorption would turn a deployed theorem-family paper into an unfulfilled promise.
+    no_action_rationale: Reliable Discovery remains unregistered and held.
+  - paper_id: information-sharing-frontier
+    central_question: When does aggregation improve the map faster than shared action removes independent rescue?
+    independent_reason_to_exist: It owns DD-019 through DD-022 channel geometry, rescue, recovery, and selected-equilibrium boundaries.
+    primary_families: [information-sharing-attention-recovery]
+    claim_roles: [primary, supporting, counterboundary]
+    overlap_with_other_papers: [shared-discovery-paradox, incentive-to-ignore, common-source-trap]
+    candidate_disposition: retain
+    prerequisite_for_change: A replacement must preserve centralized authority, selection dependence, every-equilibrium failure, and all 22 claim links.
+    risk: Recomposition could overstate the selected positive theorem or collapse distinct attention and provenance families.
+    no_action_rationale: It is the accepted current owner of a coherent completed theorem family.
+  - paper_id: foundations
+    central_question: What objects and accounting distinctions define the program?
+    independent_reason_to_exist: It supplies stable definitions, notation, and scoped emulation logic without claiming theorem-family novelty.
+    primary_families: [foundational-information-comparison]
+    claim_roles: [primary, background]
+    overlap_with_other_papers: [shared-discovery-paradox, three-results]
+    candidate_disposition: possible-demotion
+    prerequisite_for_change: The living synthesis must fully absorb definitions, preserve stable citations, and pass its own editorial acceptance gate.
+    risk: Demotion could make foundational definitions harder to cite or silently move ownership to the synthesis.
+    no_action_rationale: The living synthesis is not yet an accepted replacement.
+  - paper_id: three-results
+    central_question: Which three scoped results offer a compact cross-study entry?
+    independent_reason_to_exist: It is a fixed synthesis note with complete provenance links and no primary theorem ownership.
+    primary_families: []
+    claim_roles: [supporting, background, counterboundary]
+    overlap_with_other_papers: [shared-discovery-paradox, foundations, common-source-trap]
+    candidate_disposition: possible-merge
+    prerequisite_for_change: A replacement Start Here or living-synthesis artifact must preserve the selected claims, routes, citation, and scope labels.
+    risk: Retirement could confuse a reading path with ownership or discard a stable cited artifact.
+    no_action_rationale: No accepted replacement PDF exists.
+  - paper_id: discovery-institutions
+    central_question: Which institutions connect evidence, authority, incentives, and discovery action?
+    independent_reason_to_exist: It provides a compact institutional synthesis across mechanisms, coverage, and measurement.
+    primary_families: []
+    claim_roles: [supporting, background, counterboundary]
+    overlap_with_other_papers: [threshold-discovery, foundations]
+    candidate_disposition: possible-merge
+    prerequisite_for_change: A living-synthesis chapter or strategic-spine replacement must pass acceptance and retain every supporting and counterboundary role.
+    risk: Merger could imply a general implementation characterization that does not exist.
+    no_action_rationale: The strategic implementation spine remains a gate and no replacement exists.

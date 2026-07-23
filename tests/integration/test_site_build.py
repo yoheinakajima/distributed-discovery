@@ -89,10 +89,22 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     )
     assert "not an every-equilibrium theorem" in start_here
     methods = (output / "methods.html").read_text(encoding="utf-8")
-    assert "not a claim that the process is novel, autonomous" in methods
+    assert "An AI-powered research lab under a human PI" in methods
+    assert "not external validation, independent peer review, or human replication" in methods
     relations = json.loads((output / "data/relations.json").read_text(encoding="utf-8"))
     assert relations["contextual_routes"]["start-here.html"]
     assert relations["contextual_routes"]["methods.html"]
+    assert relations["contextual_routes"]["translations.html"]
+    translations = (output / "translations.html").read_text(encoding="utf-8")
+    assert "Community concordance" in translations
+    assert all(
+        label in translations
+        for label in ("OR/MS", "Economics / AGT", "Multi-agent AI", "Practitioner")
+    )
+    translation_data = json.loads((output / "data/translations.json").read_text())
+    assert len(translation_data["entries"]) == 14
+    lifecycle_data = json.loads((output / "data/paper-lifecycle.json").read_text())
+    assert len(lifecycle_data["records"]) == 8
     assert (output / "research/dd-010.html").is_file()
     assert (output / "research/dd-011.html").is_file()
     assert (output / "research/dd-012.html").is_file()
@@ -279,23 +291,36 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     common_source_page = output / common_source["detail"]
     assert common_source_page.is_file()
     common_source_html = common_source_page.read_text(encoding="utf-8")
-    assert "working paper · no DOI · not submitted · not peer reviewed" in common_source_html
+    assert (
+        "scientific: valid-with-scope · editorial: active · publication: "
+        "public-working-paper · lifecycle: active-working-paper · no DOI · "
+        "not submitted · not peer reviewed"
+    ) in common_source_html
     assert common_source["sha256"] in common_source_html
     assert common_source["download"] == "downloads/The_Common_Source_Trap.pdf"
     incentive = next(item for item in publications if item["slug"] == "incentive-to-ignore")
     assert incentive["download"] == "downloads/The_Incentive_to_Ignore.pdf"
     incentive_html = (output / incentive["detail"]).read_text(encoding="utf-8")
-    assert "working paper · no DOI · not submitted · not peer reviewed" in incentive_html
+    assert (
+        "lifecycle: active-working-paper · no DOI · not submitted · not peer reviewed"
+        in incentive_html
+    )
     threshold = next(item for item in publications if item["slug"] == "threshold-discovery")
     assert threshold["download"] == "downloads/Threshold_Discovery.pdf"
     threshold_html = (output / threshold["detail"]).read_text(encoding="utf-8")
-    assert "working paper · no DOI · not submitted · not peer reviewed" in threshold_html
+    assert (
+        "lifecycle: active-working-paper · no DOI · not submitted · not peer reviewed"
+        in threshold_html
+    )
     sharing = next(item for item in publications if item["slug"] == "information-sharing-frontier")
     assert sharing["download"] == (
         "downloads/When_Does_Information_Sharing_Improve_Decentralized_Discovery.pdf"
     )
     sharing_html = (output / sharing["detail"]).read_text(encoding="utf-8")
-    assert "working paper · no DOI · not submitted · not peer reviewed" in sharing_html
+    assert (
+        "lifecycle: active-working-paper · no DOI · not submitted · not peer reviewed"
+        in sharing_html
+    )
     assert "Nakajima2026InformationSharingFrontier" in sharing_html
     assert "BibTeX" in sharing_html
     assert '<pre class="bibtex-block"><code>' in sharing_html
@@ -830,9 +855,10 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
 
     papers = (output / "publications.html").read_text(encoding="utf-8")
     assert "<h1>Papers</h1>" in papers
-    assert "Working paper" in papers
-    assert "Research note" in papers
-    assert "Synthesis note" in papers
+    assert "Canonical published anchor" in papers
+    assert "Flagship working papers" in papers
+    assert "Research notes and syntheses" in papers
+    assert "There are currently no historical lifecycle items" in papers
     assert "SHA-256" in papers
     assert "Technical details" in papers
 

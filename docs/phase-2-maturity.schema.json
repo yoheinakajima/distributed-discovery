@@ -1,9 +1,16 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
-  "required": ["schema_version", "scientific_readiness", "external_validation"],
+  "required": ["schema_version", "level_scale", "level_5_is_external_validation", "scientific_readiness", "ai_native_robustness", "external_validation_claimed"],
   "properties": {
-    "schema_version": {"const": 1},
+    "schema_version": {"const": 2},
+    "level_scale": {
+      "type": "object",
+      "required": ["0", "1", "2", "3", "4", "5"],
+      "minProperties": 6,
+      "maxProperties": 6
+    },
+    "level_5_is_external_validation": {"const": false},
     "scientific_readiness": {
       "type": "array",
       "minItems": 8,
@@ -12,11 +19,35 @@
         "type": "object",
         "required": ["component", "level", "claims", "studies", "papers", "gaps", "next_gate", "editorial_judgment", "judgment_date"],
         "properties": {
+          "component": {"type": "string"},
           "level": {"type": "integer", "minimum": 0, "maximum": 5},
-          "editorial_judgment": {"type": "boolean"}
-        }
+          "claims": {"type": "array", "items": {"type": "string"}},
+          "studies": {"type": "array", "items": {"type": "string"}},
+          "papers": {"type": "array", "items": {"type": "string"}},
+          "gaps": {"type": "string"},
+          "next_gate": {"type": "string"},
+          "editorial_judgment": {"const": true},
+          "judgment_date": {"type": "string", "format": "date"}
+        },
+        "additionalProperties": false
       }
     },
-    "external_validation": {"type": "array", "minItems": 5, "maxItems": 5}
-  }
+    "ai_native_robustness": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["requirement", "complete", "evidence"],
+        "properties": {
+          "requirement": {"type": "string"},
+          "complete": {"type": "boolean"},
+          "evidence": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "external_validation_claimed": {"const": false}
+  },
+  "additionalProperties": false
 }

@@ -7,10 +7,9 @@ Frontier, post-V5 theorem-spine consolidation, and the stopped
 decentralized-recovery overlap check form a completed program boundary. It
 does not mean every theorem direction is complete.
 
-Phase 2 improves external legibility, literature transmission, publication
-hierarchy, claim prominence, reading paths, factual methods documentation,
-maturity tracking, review preparation, theorem-gate definitions, and
-DiscoveryBench Agents registration readiness.
+Phase 2 now defines AI-native robustness, strategic optionality, translation,
+paper lifecycle and recomposition, factual methods documentation, theorem-gate
+definitions, and DiscoveryBench Agents registration readiness.
 
 The scientific evidence set is frozen during this work. No study, claim,
 immutable run, theorem, proof, theorem-family paper, parameter-grid extension,
@@ -45,9 +44,9 @@ or classical-stop outcomes; they are not queued results or promises.
 
 Scientific evidence status remains authoritative only in
 `claims/claims.yml`. Editorial prominence is separate and cannot alter or
-hide evidence status. Scientific textbook readiness and external validation
-are also tracked separately; neither is complete merely because internal QA
-passes.
+hide evidence status. Scientific readiness and AI-native robustness are also
+tracked separately. Internal QA does not imply external validation, and no
+external-validation axis is active.
 
 The public reading path starts with the canonical upstream Shared Discovery
 Paradox, then Incentive to Ignore, then the Information Sharing Frontier.
@@ -56,9 +55,10 @@ infrastructure follow. This ordering is editorial only.
 
 A factual methods record may describe evidenced repository practices and
 agent assistance. It must not claim novelty, autonomy, external validation,
-peer review, or process-based research quality. Reader packets are preparation
-artifacts only: no reviewer identities, contacts, endorsements, or invented
-feedback are permitted.
+peer review, or process-based research quality. The AI-powered lab operates
+under human PI ownership and final gate authority. Its internal roles,
+context-isolation rules, and language boundary are defined in
+`ai-lab-operating-boundary.md`. Human-engagement preparation is superseded and
+future human engagement requires a new explicit owner decision.
 
 The machine-readable companion is `docs/phase-2-program-directive.yml`.
-

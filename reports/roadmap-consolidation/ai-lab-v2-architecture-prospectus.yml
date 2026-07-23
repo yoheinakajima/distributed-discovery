@@ -1,0 +1,25 @@
+schema_version: 1
+status: architecture-only
+changes_current_operations: false
+model_calls: false
+improvement_claimed: false
+design_dimensions:
+  - source-independence-across-ai-research-agents
+  - audience-design-for-shared-context
+  - conjecture-portfolio-recovery-budgets
+  - coverage-sensitive-internal-rewards
+  - stopping-rules
+  - negative-result-preservation
+  - context-isolated-verification
+  - evaluator-separation
+  - matched-budgets-for-ablations
+future_governance:
+  - DiscoveryBench-style-sealed-holdouts
+  - committed-generators
+  - frozen-systems
+  - multiple-encrypted-batches
+  - immutable-outputs-before-unsealing
+  - predeclared-ablations
+  - fixed-and-matched-budgets
+  - separated-evaluator
+valid_future_outcomes: [positive, null, adverse, unstable, blocked]

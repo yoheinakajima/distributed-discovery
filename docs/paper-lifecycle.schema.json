@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "authority", "records"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "authority": {"const": "editorial lifecycle only; claims and studies remain scientific authority"},
+    "records": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["paper_id", "title", "repository", "source_path", "route", "download", "scientific_status", "editorial_status", "publication_status", "lifecycle_class", "primary_theorem_family", "primary_paper_claims", "mandatory_counterboundaries", "supersedes", "superseded_by", "archive_reason", "archive_date", "scientific_correction_record", "publication_evidence", "recommended_citation", "pdf_sha256", "page_count", "build_policy", "upstream_lock", "editable_fields", "public_listing_layer"],
+        "properties": {
+          "paper_id": {"type": "string"},
+          "title": {"type": "string", "minLength": 1},
+          "repository": {"type": "string", "format": "uri"},
+          "source_path": {"type": "string", "minLength": 1},
+          "route": {"type": "string", "minLength": 1},
+          "download": {"type": "string", "minLength": 1},
+          "scientific_status": {"enum": ["valid", "valid-with-scope", "corrected", "withdrawn-for-error"]},
+          "editorial_status": {"enum": ["active", "superseded", "archived-source", "living-synthesis"]},
+          "publication_status": {"enum": ["internal-draft", "public-working-paper", "submitted", "accepted", "canonical-published"]},
+          "lifecycle_class": {"enum": ["canonical-published", "active-working-paper", "active-research-note", "active-synthesis-note", "superseded-working-paper", "archived-source-note", "living-synthesis", "withdrawn-with-reason"]},
+          "primary_theorem_family": {"type": ["string", "null"]},
+          "primary_paper_claims": {"type": "array", "items": {"type": "string", "pattern": "^DD-C-[0-9]{4}$"}, "uniqueItems": true},
+          "mandatory_counterboundaries": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "supersedes": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "superseded_by": {"type": ["string", "null"]},
+          "archive_reason": {"type": ["string", "null"]},
+          "archive_date": {"type": ["string", "null"], "format": "date"},
+          "scientific_correction_record": {"type": ["string", "null"]},
+          "publication_evidence": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "recommended_citation": {"type": "string", "minLength": 1},
+          "pdf_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "page_count": {"type": "integer", "minimum": 1},
+          "build_policy": {"enum": ["external-read-only", "active-deterministic-build", "stable-historical-artifact", "no-build-withdrawn"]},
+          "upstream_lock": {"type": ["string", "null"]},
+          "editable_fields": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "public_listing_layer": {"enum": ["canonical-anchor", "flagship", "note", "synthesis", "historical", "withdrawn"]}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

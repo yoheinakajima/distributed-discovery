@@ -1,7 +1,8 @@
 # Phase 1 methods-record audit
 
 The methods record is descriptive and repository-linked. It distinguishes
-internal reproduction from external reproduction, synthetic data from human
-data, editorial admission from submission, and an owner decision from an
-automated check. It makes no novelty, autonomy, peer-review, or external
+context-isolated internal AI reproduction from outside reproduction, synthetic
+data from human data, editorial admission from submission, and a human PI gate
+from an automated check. It now resolves to the AI-powered lab boundary and
+makes no novelty, autonomy, peer-review, community-acceptance, or external
 validation claim.

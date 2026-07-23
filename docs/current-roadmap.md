@@ -6,6 +6,15 @@ active registration. The exact next substantive session is a new
 DiscoveryBench Agents v1 registration session; its current artifact is a
 prospectus only and contains no study ID, calls, costs, traces, or results.
 
+The Phase 2 execution architecture is `shared trunk, low-cost option creation,
+staged exercise`. It records readiness, residual value, decay, expiry horizon,
+exercise trigger, first irreversible spend, kill/defer conditions, evidence,
+AI-native validation, dependencies, authorized/prohibited actions, visibility,
+and review date for nine options. WS-1 is first because benchmark and model
+conditions decay fastest. Gate C, AI lab v2, synthetic production shadow mode,
+the minimal ledger profile, three theorem gates, and Reliable Discovery remain
+unexercised options. None is a theorem promise or measured-impact claim.
+
 Programs V1, V2, and the required Program V3 sequence are complete at their
 registered scopes. Each new research milestone requires its own
 bounded issue, state-space/resource estimate, evidence category, independent

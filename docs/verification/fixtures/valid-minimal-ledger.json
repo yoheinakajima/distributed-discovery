@@ -1,0 +1,25 @@
+{
+  "profile_version": "0-draft",
+  "claim_id": "SYN-C-0001",
+  "statement": "The synthetic checksum fixture validates against its declared bytes.",
+  "scope": "Only the generated fixture bytes in the unrelated synthetic example.",
+  "evidence_category": "exact-computation",
+  "source_reference": "synthetic-fixtures/source.json",
+  "evidence_reference": {
+    "kind": "certificate",
+    "reference": "synthetic-fixtures/certificate.json"
+  },
+  "status": "checked",
+  "provenance": {
+    "algorithm": "sha256",
+    "digest": "16f8e49c8ecf359589b5a4f9b5f36c3d778fd7336203a76fc94c450ad9c83253"
+  },
+  "validation": {
+    "result": "passed",
+    "checks": ["schema", "checksum"]
+  },
+  "negative_or_failure_preservation": {
+    "applicable": true,
+    "references": ["synthetic-fixtures/rejected-corruption.json"]
+  }
+}

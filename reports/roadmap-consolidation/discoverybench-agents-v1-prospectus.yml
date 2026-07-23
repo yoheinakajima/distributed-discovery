@@ -9,6 +9,8 @@ cost_incurred: false
 agents_executed: false
 traces_exist: false
 private_seeds_exist: false
+encrypted_holdouts_exist: false
+human_custodian: false
 run_exists: false
 empirical_results_exist: false
 task_families:
@@ -43,14 +45,20 @@ required_frozen_dimensions:
   - safety-and-redaction-policy
 contamination_controls:
   - generator-committed-before-evaluation
-  - hidden-generator-parameters-or-private-seeds
   - model-and-provider-versions-frozen-before-holdout-generation
+  - csprng-automated-seed-generation
+  - seed-commitment-hash-published-before-evaluation
   - holdouts-generated-after-version-freeze
-  - sealed-answer-keys
+  - encrypted-holdouts-and-answer-keys
+  - access-logging
+  - isolated-evaluation-runner
+  - evaluated-agents-cannot-access-generator-seeds-or-answers
+  - immutable-agent-outputs-before-unsealing
+  - commitment-verification-after-evaluation
   - holdout-instances-unpublished-until-runs-immutable
   - multiple-independently-generated-holdout-batches
   - no-public-task-ids-or-exact-public-wording-in-holdout-prompts
-  - contamination-probes
+  - exact-and-near-verbatim-public-value-wording-id-and-solution-pattern-probes
   - isomorphism-checks
   - generator-seeds-and-answers-released-after-lock-unless-safety-prevents
   - public-tasks-calibration-or-prompt-debugging-only

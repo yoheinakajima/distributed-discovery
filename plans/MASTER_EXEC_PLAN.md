@@ -1,5 +1,17 @@
 # Master execution plan
 
+## Active architectural continuation — Phase 2 optionality and paper lifecycle (2026-07-23)
+
+Issue #167, branch `docs/phase-2-optionality-paper-lifecycle`, draft PR #168,
+and [`PHASE_2_OPTIONALITY_AND_PAPER_LIFECYCLE.md`](PHASE_2_OPTIONALITY_AND_PAPER_LIFECYCLE.md)
+own the current documentation/governance continuation. It establishes the
+AI-powered-lab boundary under human PI authority, replaces the maturity axis
+with AI-native robustness, records OR/MS as the primary disciplinary home,
+keeps nine options staged, adds translation and paper lifecycle/claim-role
+registries, and strengthens future sealed evaluation custody. It creates no
+scientific evidence and leaves DiscoveryBench Agents v1 registration as the
+exact next substantive gate.
+
 ## Active editorial continuation — Phase 2 external legibility (2026-07-23)
 
 Issue #165, branch `docs/phase-2-external-legibility`, and

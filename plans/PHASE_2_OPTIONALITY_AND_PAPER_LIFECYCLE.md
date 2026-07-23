@@ -165,26 +165,26 @@ boundary rules. Integrate editorial validators into `make audit-editorial`.
 
 ## Milestones
 
-- **M0 (active):** live audit, mandatory reading, invariant freeze, issue,
+- **M0 (complete):** live audit, mandatory reading, invariant freeze, issue,
   branch, draft PR, and initial durable commit.
-- **M1:** AI-powered-lab operating boundary and supersession of active
+- **M1 (complete):** AI-powered-lab operating boundary and supersession of active
   human-review preparation.
-- **M2:** Phase 2 directive, maturity, methods, and current-state
+- **M2 (complete):** Phase 2 directive, maturity, methods, and current-state
   supersession.
-- **M3:** disciplinary-home architecture.
-- **M4:** AI-native optionality portfolio.
-- **M5:** community translation concordance, validator, tests, and rendering.
-- **M6:** paper lifecycle policy, registry, validator, and tests.
-- **M7:** complete paper-claim roles and ownership audit.
-- **M8:** paper recomposition policy, registry, and prospectus.
-- **M9:** static-site lifecycle, archive fixture, and historical behavior.
-- **M10:** DiscoveryBench Agents cryptographic custody and contamination line.
-- **M11:** provenance Gate C prospectus.
-- **M12:** AI lab v2 architecture prospectus.
-- **M13:** synthetic production shadow-mode protocol.
-- **M14:** minimal ledger profile, schema, fixtures, and conformance tests.
-- **M15:** roadmap, site, relation, and handoff reconciliation.
-- **M16:** full local acceptance, CI, merge, Pages, live acceptance, issue
+- **M3 (complete):** disciplinary-home architecture.
+- **M4 (complete):** AI-native optionality portfolio.
+- **M5 (complete):** community translation concordance, validator, tests, and rendering.
+- **M6 (complete):** paper lifecycle policy, registry, validator, and tests.
+- **M7 (complete):** complete paper-claim roles and ownership audit.
+- **M8 (complete):** paper recomposition policy, registry, and prospectus.
+- **M9 (complete):** static-site lifecycle, archive fixture, and historical behavior.
+- **M10 (complete):** DiscoveryBench Agents cryptographic custody and contamination line.
+- **M11 (complete):** provenance Gate C prospectus.
+- **M12 (complete):** AI lab v2 architecture prospectus.
+- **M13 (complete):** synthetic production shadow-mode protocol.
+- **M14 (complete):** minimal ledger profile, schema, fixtures, and conformance tests.
+- **M15 (complete):** roadmap, site, relation, and handoff reconciliation.
+- **M16 (active):** full local acceptance, CI, merge, Pages, live acceptance, issue
   closure, and synchronized `main`.
 
 Exactly one milestone is active at a time.
@@ -201,9 +201,9 @@ Exactly one milestone is active at a time.
 - [x] Inspect the upstream pin and publication metadata.
 - [x] Freeze exact scientific and paper invariants.
 - [x] Enumerate and protect the preservation set.
-- [ ] Open the issue, create the branch, commit the baseline, push, and open a
+- [x] Open issue #167, create the branch, commit the baseline, push, and open a
   draft PR.
-- [ ] Complete M1 through M15 sequentially.
+- [x] Complete M1 through M15 sequentially.
 - [ ] Complete M16 and synchronize main.
 
 ## Discoveries and surprises
@@ -237,6 +237,11 @@ Exactly one milestone is active at a time.
 - `2026-07-23T06:24:15Z`: remove the four tracked
   `reports/external-review/` preparation artifacts from the active tree only
   after the AI-native replacement architecture is present.
+- `2026-07-23T06:26:21Z`: issue #167 and draft PR #168 own the single active
+  lane. Baseline commit `4235353` is pushed; M0 is complete and M1 is active.
+- `2026-07-23T07:28:00Z`: M1 through M15 are complete. Focused governance,
+  schema, lifecycle, archive-fixture, relation, and site tests pass; M16 is
+  active.
 
 ## Validation strategy
 
@@ -264,10 +269,12 @@ Perform local desktop and 390-pixel browser QA before readying the PR.
 
 ## Artifacts produced
 
-At M0 this plan and
-`reports/phase-2-optionality/phase-2-optionality-before-state.yml` are the
-durable artifacts. Later milestone artifacts are enumerated in the owner
-directive and will be added to this section as completed.
+The durable artifacts are this plan, the M0 before-state record, the AI lab
+boundary and audit protocols, disciplinary and optionality records, translation
+concordance, paper lifecycle/claim-role/recomposition systems, future
+DiscoveryBench/Gate C/lab v2/shadow-mode/minimal-ledger prospectuses, validators,
+tests, and lifecycle-aware static-site surfaces. M16 will add the final
+acceptance and live closeout record.
 
 ## Blockers
 

@@ -305,8 +305,106 @@ def _study_data(
     return studies
 
 
+def _lifecycle_records(root: Path) -> dict[str, dict[str, Any]]:
+    source = _read_yaml(root / "docs/paper-lifecycle.yml")
+    records = source.get("records")
+    if not isinstance(records, list):
+        raise RuntimeError("paper lifecycle registry has no records")
+    by_id = {
+        str(record["paper_id"]): record
+        for record in records
+        if isinstance(record, dict) and isinstance(record.get("paper_id"), str)
+    }
+    if len(by_id) != len(records):
+        raise RuntimeError("paper lifecycle registry contains duplicate or invalid IDs")
+    return by_id
+
+
+def _concordance_entries(root: Path) -> list[dict[str, Any]]:
+    source = _read_yaml(root / "docs/translation/community-concordance.yml")
+    entries = source.get("entries")
+    if not isinstance(entries, list):
+        raise RuntimeError("translation concordance has no entries")
+    return [entry for entry in entries if isinstance(entry, dict)]
+
+
+def _related_formulations(
+    root: Path, *, paper_id: str | None = None, object_ids: set[str] | None = None
+) -> list[dict[str, str]]:
+    labels = {
+        "or-ms": "OR/MS",
+        "economics-agt": "Economics / AGT",
+        "multi-agent-ai": "Multi-agent AI",
+        "practitioner": "Practitioner",
+    }
+    results: list[dict[str, str]] = []
+    for entry in _concordance_entries(root):
+        object_id = str(entry["object_id"])
+        if object_ids is not None and object_id not in object_ids:
+            continue
+        for formulation in entry["formulations"]:
+            if paper_id is not None and paper_id not in formulation["paper_owners"]:
+                continue
+            results.append(
+                {
+                    "object_id": object_id,
+                    "canonical_label": str(entry["canonical_label"]),
+                    "community": labels[str(formulation["community"])],
+                    "formulation": str(formulation["community_formulation"]),
+                    "qualifier": str(formulation["mandatory_qualifier"]),
+                }
+            )
+    return results
+
+
+def _render_related_formulations(items: list[dict[str, str]], prefix: str = "") -> str:
+    if not items:
+        return ""
+    cards = "".join(
+        '<article class="card"><p class="eyebrow">{community}</p>'
+        "<h3>{label}</h3><p>{formulation}</p>"
+        '<p class="quiet-meta">{qualifier}</p></article>'.format(
+            community=html.escape(item["community"]),
+            label=html.escape(item["canonical_label"]),
+            formulation=html.escape(item["formulation"]),
+            qualifier=html.escape(item["qualifier"]),
+        )
+        for item in items
+    )
+    return (
+        '<section class="content-section"><p class="eyebrow">Translation layer</p>'
+        "<h2>Related formulations</h2><p>These formulations translate a canonical "
+        "object without changing its scientific scope.</p>"
+        f'<div class="card-grid">{cards}</div><p class="quiet-meta"><a href="{prefix}'
+        'translations.html">Open the complete contextual concordance</a></p></section>'
+    )
+
+
+def _lifecycle_banner(item: dict[str, Any], lifecycle_by_id: dict[str, dict[str, Any]]) -> str:
+    lifecycle_class = str(item["lifecycle_class"])
+    if lifecycle_class not in {"superseded", "archived"}:
+        return ""
+    replacement_id = item.get("superseded_by")
+    replacement = lifecycle_by_id.get(str(replacement_id)) if replacement_id else None
+    replacement_link = ""
+    if replacement is not None:
+        route = str(replacement["route"])
+        href = route if route.startswith(("http://", "https://")) else f"../{route}"
+        replacement_link = (
+            f' <a href="{html.escape(href, quote=True)}">Use the replacement: '
+            f"{html.escape(str(replacement['title']))}</a>."
+        )
+    reason = item.get("archive_reason") or "See the lifecycle registry for the recorded reason."
+    return (
+        '<aside class="callout" role="note"><strong>'
+        f"{html.escape(lifecycle_class.replace('-', ' ').title())}.</strong> "
+        f"{html.escape(str(reason))}.{replacement_link}</aside>"
+    )
+
+
 def _publications(root: Path) -> list[dict[str, Any]]:
     publications: list[dict[str, Any]] = []
+    lifecycle = _lifecycle_records(root)
     for directory, title in (
         ("foundations", "Foundations of Distributed Discovery"),
         ("three-results", "Three Results in Distributed Discovery"),
@@ -331,9 +429,13 @@ def _publications(root: Path) -> list[dict[str, Any]]:
         metadata = _read_yaml(metadata_path) if metadata_path.is_file() else {}
         if metadata and metadata.get("title") != title:
             raise RuntimeError(f"publication title mismatch: {metadata_path}")
-        author = str(metadata.get("author", "Distributed Discovery project"))
-        date = str(metadata.get("date", ""))
-        citation = f"{author} ({date}). {title}." if date else f"{author}. {title}."
+        lifecycle_record = lifecycle.get(directory)
+        if lifecycle_record is None:
+            raise RuntimeError(f"missing lifecycle record: {directory}")
+        if lifecycle_record["pdf_sha256"] != digest:
+            raise RuntimeError(f"lifecycle checksum mismatch: {pdf}")
+        if lifecycle_record["page_count"] != validation.get("page_count"):
+            raise RuntimeError(f"lifecycle page-count mismatch: {pdf}")
         citation_bib_path = root / "papers" / directory / "citation.bib"
         citation_bib = (
             citation_bib_path.read_text(encoding="utf-8").strip()
@@ -350,9 +452,17 @@ def _publications(root: Path) -> list[dict[str, Any]]:
                 "sha256": digest,
                 "page_count": validation.get("page_count"),
                 "build_source": f"papers/{directory}/main.tex",
-                "citation": citation,
+                "citation": lifecycle_record["recommended_citation"],
                 "citation_bib": citation_bib,
                 "status": metadata.get("status", "validated-repository-paper"),
+                "scientific_status": lifecycle_record["scientific_status"],
+                "editorial_status": lifecycle_record["editorial_status"],
+                "publication_status": lifecycle_record["publication_status"],
+                "lifecycle_class": lifecycle_record["lifecycle_class"],
+                "public_listing_layer": lifecycle_record["public_listing_layer"],
+                "superseded_by": lifecycle_record["superseded_by"],
+                "archive_reason": lifecycle_record["archive_reason"],
+                "related_formulations": _related_formulations(root, paper_id=directory),
                 "doi": metadata.get("doi"),
                 "submitted": metadata.get("submitted"),
                 "peer_reviewed": metadata.get("peer_reviewed"),
@@ -390,7 +500,7 @@ def _page(title: str, description: str, body: str, current: str) -> str:
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(document_title)}</title><meta name="description" content="{html.escape(description)}">
-<link rel="canonical" href="{canonical}"><meta property="og:title" content="{html.escape(document_title)}"><meta property="og:description" content="{html.escape(description)}"><meta property="og:image" content="{PUBLIC_BASE}og.png"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="{prefix}styles.css"><script src="{prefix}site.js" defer></script></head>
+<link rel="canonical" href="{canonical}"><meta property="og:title" content="{html.escape(document_title)}"><meta property="og:description" content="{html.escape(description)}"><meta property="og:image" content="{PUBLIC_BASE}og.png"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="{prefix}styles.css?v=20260723"><script src="{prefix}site.js" defer></script></head>
 <body class="page-{html.escape(page_class)}"><a class="skip-link" href="#content">Skip to content</a>{render_header(current)}
 <main id="content" class="site-main container-{layout}">{breadcrumb}{section_navigation}{wrapped_body}</main>{render_footer(current, REPOSITORY_URL)}</body></html>"""
 
@@ -2933,6 +3043,8 @@ def _render(
 ) -> list[dict[str, str]]:
     relation_source = _read_yaml(root / "site/content/relations.yml")
     relation_config = relation_source["studies"]
+    lifecycle_records = _lifecycle_records(root)
+    canonical_anchor = lifecycle_records["shared-discovery-paradox"]
     cards = "".join(_study_card(study, relation_config[study["id"]]) for study in studies)
     canonical = _canonical_data(_passing_baseline(root))
     metrics = canonical["metrics"]
@@ -2994,6 +3106,9 @@ def _render(
 <article class="card"><p class="eyebrow">3 · Sharing-frontier family</p><h2>When Does Information Sharing Improve Decentralized Discovery?</h2><p><strong>Question:</strong> When does aggregation improve faster than sharing removes independent rescue?</p><p><strong>Title result:</strong> a residual-error criterion determines the sign of an adjacent sharing step under the registered rescue protocol.</p><p><strong>Strongest limitation:</strong> the decentralized positive interval is selection-dependent; it is not an every-equilibrium theorem.</p><p><strong>Evidence:</strong> analytic identities/theorems, independently reproduced bounded classifications, and a bounded null. <strong>Status:</strong> working paper; not submitted, not peer reviewed, no DOI.</p><p><a href="publications/information-sharing-frontier.html">Read the paper</a> · <a href="research/dd-021.html">Study</a> · <a href="claims.html#DD-C-0097">Claim</a> · <a href="evidence.html">Evidence</a> · <a href="publications/common-source-trap.html">Next theorem-family paper</a></p></article>
 </section>
 <section class="content-section prose"><h2>Continue through the canon</h2><p><a href="publications/common-source-trap.html">Common-Source Trap</a> · <a href="publications/threshold-discovery.html">Threshold Discovery</a> · <a href="publications.html">notes and syntheses</a> · <a href="research.html">studies</a> · <a href="labs.html">Labs</a> · <a href="benchmark.html">DiscoveryBench</a> · <a href="methods.html">methods</a></p></section>"""
+    start_here += _render_related_formulations(
+        _related_formulations(root, object_ids={"TR-003", "TR-009", "TR-010"})
+    )
     _write(
         output,
         "start-here.html",
@@ -3004,8 +3119,8 @@ def _render(
             "start-here.html",
         ),
     )
-    methods_body = """<header class="page-hero"><p class="eyebrow">Factual methods record</p><h1>How Phase 1 work was recorded</h1><p class="lede">Issues, branches, living plans, claim statuses, immutable runs, independent checks, corruptions, failed results, paper gates, and human owner decisions are recorded as repository practices.</p></header>
-<section class="content-section prose"><h2>Boundary</h2><p>This is not a claim that the process is novel, autonomous, externally validated, peer reviewed, or sufficient for research quality. Exact computations and Monte Carlo estimates remain distinct. Internal reproduction is not external review. Failed and null results remain visible. No human study was conducted.</p><p><a href="https://github.com/yoheinakajima/distributed-discovery/blob/main/docs/methods/phase-1-research-methods.md">Read the methods record</a> · <a href="claims.html">Claim ledger</a> · <a href="evidence.html">Immutable evidence</a> · <a href="program.html">Program governance</a></p></section>"""
+    methods_body = """<header class="page-hero"><p class="eyebrow">Factual methods record</p><h1>An AI-powered research lab under a human PI</h1><p class="lede">The human principal investigator sets scope and makes governance decisions. Separated AI roles perform repository work through issues, branches, living plans, claim statuses, immutable runs, adversarial audits, corruptions, failed results, and deterministic gates.</p></header>
+<section class="content-section prose"><h2>Operating boundary</h2><p>Internal AI role separation is an adversarial control, not external validation, independent peer review, or human replication. No reviewer recruitment, outreach, seminar, coauthor, or other human-engagement workflow is active. Exact computations and Monte Carlo estimates remain distinct; failed and null results remain visible.</p><p><a href="https://github.com/yoheinakajima/distributed-discovery/blob/main/docs/ai-lab-operating-boundary.md">Read the current boundary</a> · <a href="https://github.com/yoheinakajima/distributed-discovery/blob/main/docs/methods/phase-1-research-methods.md">Read the Phase 1 methods record</a> · <a href="claims.html">Claim ledger</a> · <a href="evidence.html">Immutable evidence</a> · <a href="program.html">Program governance</a></p></section>"""
     _write(
         output,
         "methods.html",
@@ -3026,6 +3141,12 @@ def _render(
         '<section class="content-section prose"><h2>Next open boundary</h2><p>The bounded Decentralized Recovery registration gate stopped at classical overlap: the frozen equal-sharing action game is singleton congestion, and visible sequential occupancy adds ordinary backward induction without enlarging the every-equilibrium top-two recovery region. No study, claim, run, or paper was created.</p><p>Reliable Discovery is now the next unregistered theorem program. It asks when reliable, unreliable, repeated, or overlapping actions should diversify or concentrate, and must establish content beyond classical reliability allocation before registration. The Price of Missing Provenance follows separately.</p></section>',
         '<section class="content-section prose"><h2>Phase boundary and hold</h2><p>Phase 1 is complete: Programs V1–V5, this Frontier, post-V5 consolidation, and the stopped decentralized-recovery overlap gate form the completed boundary. This does not mean every theorem direction is complete.</p><p>Phase 2 holds theorem-family execution. Reliable Discovery remains a major candidate but is deferred. The next substantive session is DiscoveryBench Agents v1 registration; no provider call, model run, cost, trace, private seed, or result is underway. <a href="start-here.html">Start with three results</a> · <a href="methods.html">Read the factual methods record</a>.</p></section>',
         1,
+    )
+    program_body += _render_related_formulations(
+        _related_formulations(
+            root,
+            object_ids={"TR-001", "TR-002", "TR-004", "TR-005", "TR-006", "TR-007", "TR-014"},
+        )
     )
     _write(
         output,
@@ -3127,12 +3248,13 @@ def _render(
         "threshold-discovery": "Connects minimum viable teams, equilibrium selection, dynamic attention, and implementable team portfolios.",
         "information-sharing-frontier": "Identifies when pooled error contraction beats lost independent rescue, then separates the selected positive result from its equilibrium-selection boundary.",
     }
-    publication_items = "".join(
-        '<article class="card paper-card"><div class="card-meta"><span class="status-chip">{status}</span><span>{page_count} pages</span></div><h2><a href="{detail}">{title}</a></h2><p>{purpose}</p><div class="card-actions"><a class="button small" href="{download}">Download PDF</a><a href="{detail}">Paper details</a></div><p class="citation">{citation}</p><details class="technical-details"><summary>Technical details</summary><p><a href="{repo}/blob/main/{build_source}">Build source</a></p><p>SHA-256 <code>{sha256}</code></p></details></article>'.format(
+
+    def publication_card(item: dict[str, Any]) -> str:
+        return '<article class="card paper-card"><div class="card-meta"><span class="status-chip">{status}</span><span>{page_count} pages</span></div><h2><a href="{detail}">{title}</a></h2><p>{purpose}</p><div class="card-actions"><a class="button small" href="{download}">Download PDF</a><a href="{detail}">Paper details</a></div><p class="citation">{citation}</p><details class="technical-details"><summary>Technical details</summary><p><a href="{repo}/blob/main/{build_source}">Build source</a></p><p>SHA-256 <code>{sha256}</code></p></details></article>'.format(
             title=html.escape(str(item["title"])),
             detail=html.escape(str(item["detail"])),
             purpose=html.escape(publication_purposes[str(item["slug"])]),
-            status=html.escape(human_status(item["status"], kind="publication")),
+            status=html.escape(human_status(str(item["lifecycle_class"]), kind="publication")),
             page_count=html.escape(str(item["page_count"])),
             sha256=html.escape(str(item["sha256"])),
             download=html.escape(str(item["download"])),
@@ -3140,18 +3262,50 @@ def _render(
             build_source=html.escape(str(item["build_source"])),
             citation=html.escape(str(item["citation"])),
         )
+
+    flagship_items = "".join(
+        publication_card(item)
         for item in publications
+        if item["public_listing_layer"] == "flagship"
     )
-    publications_body = f"""<header class="page-hero"><p class="eyebrow">Long-form research</p><h1>Papers</h1><p class="lede">Working papers on how groups acquire, share, and convert evidence into portfolios of action.</p><p><a href="program.html">See the paper-admission rule and publication architecture.</a></p></header><section class="card-grid paper-grid">{publication_items}</section><p class="quiet-meta"><a href="data/downloads.json">Complete download checksum manifest</a></p>"""
-    publications_body = publications_body.replace(
-        '<p><a href="program.html">See the paper-admission rule and publication architecture.</a></p>',
-        '<p><a href="start-here.html">Start with three results</a> · <a href="program.html">See the four-layer hierarchy and paper-admission rule.</a></p>',
-        1,
-    ).replace(
-        '<p class="quiet-meta"><a href="data/downloads.json">Complete download checksum manifest</a></p>',
-        '<p class="quiet-meta">All project PDFs are not submitted, not peer reviewed, and have no DOI. <a href="data/downloads.json">Complete download checksum manifest</a></p>',
-        1,
+    note_items = "".join(
+        publication_card(item)
+        for item in publications
+        if item["public_listing_layer"] in {"note", "synthesis"}
     )
+    historical_items = [
+        item
+        for item in publications
+        if item["public_listing_layer"] == "historical"
+        or item["lifecycle_class"] in {"superseded", "archived"}
+    ]
+    historical_section = (
+        '<section class="content-section"><p class="eyebrow">Historical record</p>'
+        '<h2>Superseded and archived items</h2><div class="card-grid paper-grid">'
+        + "".join(publication_card(item) for item in historical_items)
+        + "</div></section>"
+        if historical_items
+        else ""
+    )
+    canonical_anchor_card = (
+        '<article class="card paper-card"><div class="card-meta"><span class="status-chip">'
+        f"{html.escape(human_status(str(canonical_anchor['lifecycle_class']), kind='publication'))}"
+        f"</span><span>{html.escape(str(canonical_anchor['page_count']))} pages</span></div>"
+        f'<h2><a href="{html.escape(str(canonical_anchor["route"]), quote=True)}">'
+        f"{html.escape(str(canonical_anchor['title']))}</a></h2>"
+        "<p>The unique owner-declared canonical public anchor for the atomic paradox. "
+        "Its upstream citation calls it a working paper; this lifecycle class does not "
+        "assert journal publication, submission, acceptance, a DOI, or peer review.</p>"
+        f'<div class="card-actions"><a class="button small" href="{html.escape(str(canonical_anchor["route"]), quote=True)}">Read the anchor</a>'
+        f'<a href="{html.escape(str(canonical_anchor["download"]), quote=True)}">Open PDF</a></div>'
+        f'<p class="citation">{html.escape(str(canonical_anchor["recommended_citation"]))}</p>'
+        f'<details class="technical-details"><summary>Technical details</summary><p>SHA-256 <code>{html.escape(str(canonical_anchor["pdf_sha256"]))}</code></p></details></article>'
+    )
+    publications_body = f"""<header class="page-hero"><p class="eyebrow">Long-form research</p><h1>Papers</h1><p class="lede">A lifecycle-aware map of the canonical public anchor, active theorem-family working papers, research notes, and synthesis notes.</p><p><a href="start-here.html">Start with three results</a> · <a href="program.html">See the four-layer hierarchy and paper-admission rule</a> · <a href="translations.html">Open the contextual concordance</a>.</p></header>
+<section class="content-section"><p class="eyebrow">Canonical published anchor</p><h2>The public entry point</h2><div class="card-grid paper-grid">{canonical_anchor_card}</div></section>
+<section class="content-section"><p class="eyebrow">Active theorem-family papers</p><h2>Flagship working papers</h2><div class="card-grid paper-grid">{flagship_items}</div></section>
+<section class="content-section"><p class="eyebrow">Supporting publications</p><h2>Research notes and syntheses</h2><div class="card-grid paper-grid">{note_items}</div></section>
+{historical_section}<p class="quiet-meta">All local project PDFs are not submitted, not peer reviewed, and have no DOI. There are currently no historical lifecycle items. <a href="data/downloads.json">Complete download checksum manifest</a> · <a href="data/paper-lifecycle.json">Lifecycle registry</a></p>"""
     _write(
         output,
         "publications.html",
@@ -3163,8 +3317,13 @@ def _render(
         ),
     )
     for item in publications:
-        publication_label = human_status(item["status"], kind="publication")
-        status_bits = [str(item["status"]).replace("-", " ")]
+        publication_label = human_status(str(item["lifecycle_class"]), kind="publication")
+        status_bits = [
+            f"scientific: {item['scientific_status']}",
+            f"editorial: {item['editorial_status']}",
+            f"publication: {item['publication_status']}",
+            f"lifecycle: {item['lifecycle_class']}",
+        ]
         if item["doi"]:
             status_bits.append(f"DOI {item['doi']}")
         else:
@@ -3179,7 +3338,12 @@ def _render(
             if item["citation_bib"]
             else ""
         )
-        detail_body = f"""<header class="page-hero"><p class="eyebrow">{html.escape(publication_label)}</p><h1>{html.escape(str(item["title"]))}</h1><p class="lede">{html.escape(publication_purposes[str(item["slug"])])}</p><p class="status-row"><span class="status-chip">{html.escape(publication_label)}</span><span>{html.escape(str(item["page_count"]))} pages</span></p><p><a class="button primary" href="../{html.escape(str(item["download"]))}">Download PDF</a></p></header><section class="content-section prose"><h2>Citation</h2><p>{html.escape(str(item["citation"]))}</p>{bibtex}</section><section class="content-section prose"><h2>Source and provenance</h2><p><a href="{REPOSITORY_URL}/blob/main/{html.escape(str(item["build_source"]))}">Read the build source</a> · <a href="{REPOSITORY_URL}/tree/main/papers/{html.escape(str(item["slug"]))}">Inspect validation and provenance</a></p><details class="technical-details"><summary>Technical details</summary><p>{html.escape(" · ".join(status_bits))}</p><p>The download is copied only after its SHA-256 matches the committed validation record.</p><p>SHA-256 <code>{html.escape(str(item["sha256"]))}</code></p></details></section>"""
+        detail_body = (
+            f"""<header class="page-hero"><p class="eyebrow">{html.escape(publication_label)}</p><h1>{html.escape(str(item["title"]))}</h1><p class="lede">{html.escape(publication_purposes[str(item["slug"])])}</p><p class="status-row"><span class="status-chip">{html.escape(publication_label)}</span><span>{html.escape(str(item["page_count"]))} pages</span></p><p><a class="button primary" href="../{html.escape(str(item["download"]))}">Download PDF</a></p></header>"""
+            + _lifecycle_banner(item, lifecycle_records)
+            + f"""<section class="content-section prose"><h2>Recommended citation</h2><p>{html.escape(str(item["citation"]))}</p>{bibtex}</section><section class="content-section prose"><h2>Source and provenance</h2><p><a href="{REPOSITORY_URL}/blob/main/{html.escape(str(item["build_source"]))}">Read the build source</a> · <a href="{REPOSITORY_URL}/tree/main/papers/{html.escape(str(item["slug"]))}">Inspect validation and provenance</a></p><details class="technical-details"><summary>Technical details</summary><p>{html.escape(" · ".join(status_bits))}</p><p>The download is copied only after its SHA-256 matches the committed validation record.</p><p>SHA-256 <code>{html.escape(str(item["sha256"]))}</code></p></details></section>"""
+            + _render_related_formulations(item["related_formulations"], prefix="../")
+        )
         _write(
             output,
             str(item["detail"]),
@@ -3190,6 +3354,56 @@ def _render(
                 str(item["detail"]),
             ),
         )
+    concordance_cards = ""
+    community_labels = {
+        "or-ms": "OR/MS",
+        "economics-agt": "Economics / AGT",
+        "multi-agent-ai": "Multi-agent AI",
+        "practitioner": "Practitioner",
+    }
+    for entry in _concordance_entries(root):
+        formulation_rows = "".join(
+            '<tr><th scope="row">{community}</th><td>{relation}</td>'
+            "<td>{formulation}</td><td>{qualifier}</td></tr>".format(
+                community=html.escape(community_labels[str(formulation["community"])]),
+                relation=html.escape(str(formulation["relation_type"]).replace("-", " ")),
+                formulation=html.escape(str(formulation["community_formulation"])),
+                qualifier=html.escape(str(formulation["mandatory_qualifier"])),
+            )
+            for formulation in entry["formulations"]
+        )
+        concordance_cards += (
+            f'<article class="card" id="{html.escape(str(entry["object_id"]))}">'
+            f'<p class="eyebrow">{html.escape(str(entry["object_id"]))}</p>'
+            f"<h2>{html.escape(str(entry['canonical_label']))}</h2>"
+            f"<p>{html.escape(str(entry['canonical_definition']))}</p>"
+            '<table class="matrix"><caption>Community formulations and mandatory '
+            "scope qualifiers</caption><thead><tr><th>Community</th><th>Relation</th>"
+            f"<th>Formulation</th><th>Qualifier</th></tr></thead><tbody>{formulation_rows}"
+            "</tbody></table></article>"
+        )
+    translations_body = (
+        '<header class="page-hero"><p class="eyebrow">Contextual translation</p>'
+        '<h1>Community concordance</h1><p class="lede">Four formulations for each '
+        "canonical object improve retrieval across OR/MS, economics and algorithmic game "
+        "theory, multi-agent AI, and practitioner language without changing claim scope.</p>"
+        '<p><a href="program.html">Program map</a> · <a href="start-here.html">Start Here</a> · '
+        '<a href="publications.html">Papers</a> · <a href="data/translations.json">Download '
+        "the validated concordance</a></p></header>"
+        '<section class="content-section"><p class="callout">Translations are editorial '
+        "mappings, not new claims, empirical transfer evidence, or statements that the "
+        f'terms are exact synonyms.</p><div class="card-grid">{concordance_cards}</div></section>'
+    )
+    _write(
+        output,
+        "translations.html",
+        _page(
+            "Community Concordance",
+            "Contextual formulations of Distributed Discovery objects across four communities.",
+            translations_body,
+            "translations.html",
+        ),
+    )
     open_studies = [
         study
         for study in studies
@@ -3734,6 +3948,14 @@ def build(root: Path, output: Path) -> dict[str, Any]:
         "claims.json": {"schema_version": 1, "claims": claims},
         "runs.json": {"schema_version": 1, "runs": runs},
         "publications.json": {"schema_version": 1, "publications": publications},
+        "paper-lifecycle.json": {
+            "schema_version": 1,
+            "records": list(_lifecycle_records(root).values()),
+        },
+        "translations.json": {
+            "schema_version": 1,
+            "entries": _concordance_entries(root),
+        },
         "routes.json": {"schema_version": 1, "routes": routes},
         "labs.json": {
             "schema_version": 1,

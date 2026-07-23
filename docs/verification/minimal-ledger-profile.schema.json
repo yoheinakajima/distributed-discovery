@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yoheinakajima.github.io/distributed-discovery/schemas/minimal-ledger-profile-v0.schema.json",
+  "title": "Minimal claim-ledger verification profile draft",
+  "type": "object",
+  "required": ["profile_version", "claim_id", "statement", "scope", "evidence_category", "source_reference", "evidence_reference", "status", "provenance", "validation", "negative_or_failure_preservation"],
+  "properties": {
+    "profile_version": {"const": "0-draft"},
+    "claim_id": {"type": "string", "minLength": 1},
+    "statement": {"type": "string", "minLength": 1},
+    "scope": {"type": "string", "minLength": 1},
+    "evidence_category": {"enum": ["definition", "identity", "source", "proof", "exact-computation", "independent-reproduction", "estimate", "conjecture", "question", "hypothesis", "negative-result"]},
+    "source_reference": {"type": "string", "minLength": 1},
+    "evidence_reference": {
+      "type": "object",
+      "required": ["kind", "reference"],
+      "properties": {
+        "kind": {"enum": ["none", "proof", "certificate", "run", "source"]},
+        "reference": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "status": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "required": ["algorithm", "digest"],
+      "properties": {
+        "algorithm": {"enum": ["sha256", "sha512", "none"]},
+        "digest": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "validation": {
+      "type": "object",
+      "required": ["result", "checks"],
+      "properties": {
+        "result": {"enum": ["passed", "failed", "not-run"]},
+        "checks": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    },
+    "negative_or_failure_preservation": {
+      "type": "object",
+      "required": ["applicable", "references"],
+      "properties": {
+        "applicable": {"type": "boolean"},
+        "references": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

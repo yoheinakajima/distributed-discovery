@@ -3,11 +3,19 @@
 This document records provisional editorial ownership. It authorizes no
 submission, release, DOI, journal contact, or claim of peer review.
 
+Lifecycle is governed by `paper-lifecycle.yml`; claim roles are governed by
+`paper-claim-roles.yml`. Scientific validity, editorial use, and publication
+state are independent dimensions. Claims and registered studies remain
+authoritative even when paper boundaries later change.
+
 ## Four layers
 
-1. **Canonical entry paper — *The Shared Discovery Paradox*.** The atomic
+1. **Canonical published anchor — *The Shared Discovery Paradox*.** The atomic
    introduction to the separation between information aggregation and action
-   allocation. Its canonical upstream repository remains read-only here.
+   allocation. Its canonical upstream repository remains read-only here. This
+   owner-declared lifecycle class means the canonical public anchor, while the
+   upstream citation remains “working paper”; no DOI, submission, acceptance,
+   journal, or peer-review evidence is inferred.
 2. **Flagship theorem-family working papers.** Manuscripts are organized by durable
    mathematical question rather than chronological study batch. Admission is
    governed by [`research-governance.md`](research-governance.md).
@@ -23,7 +31,7 @@ submission, release, DOI, journal contact, or claim of peer review.
 
 | Artifact | Provisional disposition | Authority boundary |
 | --- | --- | --- |
-| *Shared Discovery Paradox* | Canonical entry paper; potential near-term submission candidate | No action authorized |
+| *Shared Discovery Paradox* | Unique read-only canonical public anchor | No submission or lifecycle mutation authorized here |
 | *Common-Source Trap* | Theorem-centered working paper; potential near-term submission candidate | No action authorized |
 | *The Incentive to Ignore* | Incremental Sharing gate passed; validated working paper and archival-paper candidate, with DD-020 cited as a companion family result | No submission action authorized; DD-020 remains primarily owned by the completed Information Sharing Frontier paper |
 | *Threshold Discovery* | Flagship theorem-family working paper; Reliable Discovery candidate deferred by Phase 2 hold | Gate is editorial, not submission authority |

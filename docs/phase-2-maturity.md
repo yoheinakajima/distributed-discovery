@@ -1,12 +1,14 @@
 # Phase 2 maturity
 
-Scientific textbook readiness and external validation are separate. Internal
-tests, exact certificates, independent internal implementations, paper builds,
-and site QA can raise confidence in bounded evidence but cannot satisfy an
-external-validation requirement. The component judgments and their claim,
-study, paper, gap, and next-gate links are in `phase-2-maturity.yml`.
+Scientific readiness and AI-native robustness are separate. The maturity scale
+runs from an absent object through a defined question, bounded evidence,
+analytic theorem or certified impossibility, materially distinct internal AI
+reproduction, and finally cross-model adversarial survival plus a complete
+public reproducibility package. Level 5 is internal robustness, never external
+validation or peer review.
 
 The largest gaps are a general decentralized separation or representation
 result, recovery-budget theory, a scoped implementation/impossibility
-characterization, an external evidence base, and externally induced revision.
-No component is represented as externally reviewed or used.
+characterization, and an agent-system evidence base evaluated on sealed
+isomorphic holdouts against exact theoretical baselines. No model call or
+sealed evaluation is authorized by this record.

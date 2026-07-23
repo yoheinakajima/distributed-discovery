@@ -1,0 +1,54 @@
+schema_version: 1
+operating_model: ai-powered-research-lab
+human_pi:
+  ownership: true
+  final_gate_authority: true
+  reserved_decisions:
+    - program-scope
+    - scientific-claim-promotion
+    - publication-and-submission
+    - cost-and-provider-authorization
+    - data-access
+    - deployment
+    - external-engagement
+internal_roles:
+  - {id: producing-research, purpose: derivation-and-implementation}
+  - {id: context-isolated-reproduction, purpose: reproduce-from-declared-isolated-inputs}
+  - {id: distinct-method-verification, purpose: verify-with-a-materially-different-method}
+  - {id: adversarial-proof, purpose: attack-proof-scope-assumptions-and-counterexamples}
+  - {id: classical-reduction, purpose: test-reduction-to-established-results}
+  - {id: primary-source-literature, purpose: inspect-primary-sources-and-terminology-collisions}
+  - {id: corruption, purpose: reject-altered-inputs-certificates-manifests-and-outputs}
+  - {id: editorial-boundary, purpose: audit-ownership-qualifiers-and-evidence-boundaries}
+  - {id: integration, purpose: integrate-accepted-artifacts-without-status-promotion}
+  - {id: final-acceptance, purpose: test-predeclared-invariants-and-release-boundaries}
+independence_requirements:
+  context_manifest_required: true
+  materially_distinct_method_required_when_claimed: true
+  shared_source_disclosure_required: true
+  unresolved_disagreements_preserved: true
+human_engagement:
+  authorized: false
+  reauthorization_requires_explicit_owner_decision: true
+  prohibited_active_workflows:
+    - external-reader-pipeline
+    - reviewer-packets
+    - seminar-or-reading-group-plan
+    - coauthor-pipeline
+    - reviewer-selection
+    - outreach
+    - endorsement
+    - acknowledgement-or-consent-tracking
+    - human-holdout-custody
+    - human-feedback-tracking
+    - external-adoption-requirement
+prohibited_labels_for_internal_ai_audits:
+  - peer-review
+  - external-review
+  - independent-scholarly-validation
+  - community-acceptance
+  - outside-reproduction
+current_task:
+  model_or_provider_calls: false
+  cross_model_evaluation: false
+  ai_reviews_executed: false

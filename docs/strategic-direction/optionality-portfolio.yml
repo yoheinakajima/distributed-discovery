@@ -1,0 +1,164 @@
+schema_version: 1
+principle: shared trunk, low-cost option creation, staged exercise
+rejected_principle: ambition rises at no additional cost
+first_option_to_exercise: WS-1
+simultaneous_execution_branches: false
+stopped_options_preserved: true
+measurement_boundary:
+  scientific_score: false
+  measured_expected_value: false
+  measured_impact: false
+options:
+  - id: WS-1
+    label: DiscoveryBench instrument
+    status: registration-next
+    readiness: registration-ready
+    residual_value: high-if-exercised-soon
+    decay_rate: fast
+    estimated_expiry_horizon: months rather than years; model and benchmark conditions move quickly
+    option_trigger: owner authorizes DiscoveryBench Agents v1 registration after this milestone closes
+    first_irreversible_spend: paid provider calls or generation of sealed holdout batches
+    kill_or_defer_condition: contamination cannot be bounded, versions cannot be frozen, evaluator separation fails, or cost is unauthorized
+    evidence_required: [registered protocol, committed generator, exact baselines, cryptographic custody plan]
+    ai_native_validation_required: [context-isolated evaluator, multiple sealed batches, contamination probes, immutable outputs before unsealing]
+    dependencies: [plans/DISCOVERYBENCH_AGENTS_V1_GATE.md, DD-010]
+    currently_authorized_actions: [registration architecture and documentation]
+    prohibited_actions: [model call, provider spend, private seed generation, holdout generation, benchmark execution]
+    public_visibility: public-gate
+    next_review_date: "2026-08-15"
+  - id: WS-2
+    label: Production shadow-mode design
+    status: design-only
+    readiness: architecture-ready
+    residual_value: medium-and-durable
+    decay_rate: moderate
+    estimated_expiry_horizon: review within two quarters because operational constraints may change
+    option_trigger: synthetic protocol passes measurement, safety, reversibility, and no-action gates
+    first_irreversible_spend: access to operational data or a live production system
+    kill_or_defer_condition: materiality cannot be measured symmetrically, safety constraints are incomplete, or real-data authority is absent
+    evidence_required: [synthetic design, symmetric outcome rules, materiality and persistence thresholds]
+    ai_native_validation_required: [constraint adversary, no-action check, isolated measurement audit]
+    dependencies: [production-shadow-mode-protocol]
+    currently_authorized_actions: [architecture note, synthetic protocol, symmetric outcome definitions]
+    prohibited_actions: [real fund data, employee or founder data, operational deployment, intervention, production recommendation, publication claim]
+    public_visibility: internal-only
+    next_review_date: "2026-09-30"
+  - id: WS-3
+    label: Provenance Gate C
+    status: gated-candidate
+    readiness: prospectus-ready
+    residual_value: high-but-gated
+    decay_rate: slow
+    estimated_expiry_horizon: durable theorem candidate; reassess after the first exercised option
+    option_trigger: primary-source reduction audit leaves a nonclassical identification or regret object
+    first_irreversible_spend: study ID allocation and frozen theorem search
+    kill_or_defer_condition: the object reduces to established partial identification, robust decision, Blackwell comparison, dependence identification, or price-of-X theory without a surviving statement
+    evidence_required: [observables and latent class, sharp identification region, additive and minimax regret conventions, ratio denominator floor]
+    ai_native_validation_required: [classical-reduction audit, distinct-method bound verification, adversarial denominator checks]
+    dependencies: [source-acquisition-provenance, provenance-gate-c-prospectus]
+    currently_authorized_actions: [prospectus and literature requirements]
+    prohibited_actions: [study registration, claim creation, public coinage, run, theorem promise]
+    public_visibility: internal-gated-candidate
+    next_review_date: "2026-09-30"
+  - id: WS-4
+    label: AI lab v2 embodiment
+    status: architecture-only
+    readiness: architecture-ready
+    residual_value: uncertain-until-gate
+    decay_rate: moderate
+    estimated_expiry_horizon: review after DiscoveryBench Agents produces an evaluation design
+    option_trigger: sealed evaluation can compare architectures with matched budgets and evaluator separation
+    first_irreversible_spend: changing current lab operations or running paid ablations
+    kill_or_defer_condition: source independence, matched budgets, negative-result retention, or evaluator separation cannot be guaranteed
+    evidence_required: [sealed protocol, ablation plan, recovery-budget and coverage metrics, stop rules]
+    ai_native_validation_required: [context isolation, matched-budget audit, cross-model adversary if authorized]
+    dependencies: [WS-1, ai-lab-v2-architecture-prospectus]
+    currently_authorized_actions: [architecture prospectus]
+    prohibited_actions: [current-operation change, model call, performance claim]
+    public_visibility: internal-only
+    next_review_date: "2026-10-31"
+  - id: WS-5
+    label: Minimal verification profile
+    status: draft-standard-option
+    readiness: architecture-ready
+    residual_value: medium-and-durable
+    decay_rate: slow
+    estimated_expiry_horizon: durable draft; exercise only after unrelated synthetic conformance
+    option_trigger: an unrelated synthetic or AI-generated fixture repository is available for conformance testing
+    first_irreversible_spend: public interoperability or certification claim
+    kill_or_defer_condition: the minimum profile cannot remain tool-neutral or is mistaken for scientific-quality certification
+    evidence_required: [draft schema, valid and invalid fixtures, conformance design, limitation statement]
+    ai_native_validation_required: [schema corruption tests, independent parser, negative-fixture preservation]
+    dependencies: [minimal-ledger-profile]
+    currently_authorized_actions: [prospectus, draft schema, synthetic fixtures, conformance design]
+    prohibited_actions: [standard-adoption claim, certification claim, external human-project test, venue outreach]
+    public_visibility: public-design-boundary
+    next_review_date: "2026-10-31"
+  - id: TG-STRATEGIC
+    label: Strategic utility-spine characterization
+    status: unregistered-theorem-gate
+    readiness: question-only
+    residual_value: high-but-gated
+    decay_rate: slow
+    estimated_expiry_horizon: durable while implementation scope remains open
+    option_trigger: complete model map and non-overlap witness survive the classical utility-design audit
+    first_irreversible_spend: study registration and theorem execution
+    kill_or_defer_condition: full reduction to classical welfare sharing, congestion, potential, or resource-allocation results
+    evidence_required: [observability and budget freeze, participation conditions, equilibrium class, discrete-convexity or exchange assumptions]
+    ai_native_validation_required: [classical-reduction agent, adversarial equilibrium audit, distinct-method verifier]
+    dependencies: [DD-006, DD-006B, DD-012, DD-018, issue-162-stop]
+    currently_authorized_actions: [question and gate maintenance]
+    prohibited_actions: [study ID, issue, run, broad marginal-contribution closure claim]
+    public_visibility: public-gate
+    next_review_date: "2026-11-30"
+  - id: TG-A
+    label: Information–Action Decomposition and Decentralized Separation Failure
+    status: unregistered-theorem-gate
+    readiness: question-only
+    residual_value: high-but-gated
+    decay_rate: slow
+    estimated_expiry_horizon: durable foundational gate
+    option_trigger: centralized emulation and decentralized implementation objects are jointly frozen
+    first_irreversible_spend: study registration
+    kill_or_defer_condition: only standard Blackwell monotonicity, team decision, or implementation theory remains
+    evidence_required: [information structure, authority, emulation class, observability, payoff game, non-overlap witness]
+    ai_native_validation_required: [classical-reduction review, adversarial quantifier audit, independent counterexample search]
+    dependencies: [foundational-information-comparison, discovery-implementation]
+    currently_authorized_actions: [question and gate maintenance]
+    prohibited_actions: [study ID, issue, run, claim that better information lowers an emulable centralized frontier]
+    public_visibility: public-gate
+    next_review_date: "2026-11-30"
+  - id: TG-B
+    label: Discovery Order candidate
+    status: unregistered-theorem-gate
+    readiness: question-only
+    residual_value: uncertain-until-gate
+    decay_rate: unknown
+    estimated_expiry_horizon: undefined until domain and comparison axioms are frozen
+    option_trigger: a complete domain and non-equivalence witness survive Blackwell, individual-sufficiency, Lehmann, and deficiency comparisons
+    first_irreversible_spend: notation normalization or study registration
+    kill_or_defer_condition: equivalence to an existing information order or failure to define reflexive and transitive comparison
+    evidence_required: [priors, targets, team sizes, budgets, technology, authority, protocols, payoffs, exact or approximate comparison, axioms]
+    ai_native_validation_required: [primary-source literature agent, classical-reduction agent, adversarial axiom audit]
+    dependencies: [foundational-information-comparison]
+    currently_authorized_actions: [question and gate maintenance]
+    prohibited_actions: [public notation, study ID, issue, run, order theorem promise]
+    public_visibility: public-gate
+    next_review_date: "2026-11-30"
+  - id: RELIABLE
+    label: Reliable Discovery
+    status: preserved-deferred
+    readiness: deferred
+    residual_value: preserved
+    decay_rate: slow
+    estimated_expiry_horizon: durable theorem-family candidate under the Phase 2 hold
+    option_trigger: owner lifts the theorem-execution hold after the first option is exercised and prior lanes close
+    first_irreversible_spend: study registration and reliability model freeze
+    kill_or_defer_condition: candidate reproduces classical reliability or parallel-search theory without discovery-specific content
+    evidence_required: [failure law, repetition and overlap technology, correlated-failure class, reliability-adjusted recovery baseline]
+    ai_native_validation_required: [classical-overlap audit, independent exact verifier, adversarial failure-model review]
+    dependencies: [DD-005, DD-015, DD-016, DD-017, DD-018]
+    currently_authorized_actions: [preservation and roadmap maintenance]
+    prohibited_actions: [registration, issue, branch, run, theorem or paper promise]
+    public_visibility: public-gate
+    next_review_date: "2026-12-31"

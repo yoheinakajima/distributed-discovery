@@ -16,3 +16,12 @@ relevant_paths:
   - data/
   - figures/
 status: pinned
+publication_metadata:
+  upstream_citation_status: working-paper
+  owner_declared_program_lifecycle: canonical-published
+  doi_evidence: false
+  submitted_evidence: false
+  accepted_evidence: false
+  peer_review_evidence: false
+  paper_pdf_sha256: cb4816cb3a9cdd8db0210ab8981e3729028eb02ba174f2a7300b617807cc1e04
+  paper_page_count: 29

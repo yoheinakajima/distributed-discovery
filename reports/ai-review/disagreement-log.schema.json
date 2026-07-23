@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "artifact", "producer_position", "auditor_position", "status", "evidence", "resolution"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "artifact": {"type": "string", "minLength": 1},
+    "producer_position": {"type": "string", "minLength": 1},
+    "auditor_position": {"type": "string", "minLength": 1},
+    "status": {"enum": ["open", "resolved-producer", "resolved-auditor", "resolved-scoped-revision", "blocked"]},
+    "evidence": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "resolution": {"type": ["string", "null"]},
+    "created_utc": {"type": "string", "format": "date-time"},
+    "resolved_utc": {"type": ["string", "null"], "format": "date-time"}
+  },
+  "additionalProperties": false
+}

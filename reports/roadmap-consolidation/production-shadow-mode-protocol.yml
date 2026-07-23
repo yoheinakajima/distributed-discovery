@@ -1,0 +1,28 @@
+schema_version: 1
+status: design-only
+data: synthetic-only
+deployment: false
+real_data: false
+predeclared_fields:
+  - architecture-under-comparison
+  - decision-primitives
+  - materiality-threshold
+  - persistence-threshold
+  - safety-constraints
+  - reversibility
+  - no-action-condition
+  - measurement-gate
+  - publication-gate
+symmetric_outcomes:
+  - safe-material-persistent-divergence
+  - sustained-non-divergence
+  - unstable-harmful-or-constraint-violating-divergence
+null_is_valid_boundary: true
+prohibited:
+  - fund-data
+  - employee-or-founder-data
+  - portfolio-company-system-access
+  - operational-deployment
+  - intervention
+  - production-recommendation
+  - publication-claim

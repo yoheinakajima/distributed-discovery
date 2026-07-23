@@ -1,11 +1,13 @@
 # Publication hierarchy
 
 This hierarchy controls presentation, not evidence. Scientific status remains
-in `claims/claims.yml`; no position below implies submission, acceptance,
+ in `claims/claims.yml`; no position below implies submission, acceptance,
 publication, peer review, DOI, or verified novelty.
 
-1. **Canonical entry.** *The Shared Discovery Paradox* is the read-only
-   upstream entry to the program.
+1. **Canonical published anchor.** *The Shared Discovery Paradox* is the
+   unique owner-declared read-only public anchor. Its upstream citation calls
+   it a working paper; `canonical-published` is not journal or peer-review
+   evidence.
 2. **Flagship theorem-family working papers.** *The Common-Source Trap*,
    *The Incentive to Ignore*, *Threshold Discovery*, and *When Does
    Information Sharing Improve Decentralized Discovery?* own distinct scoped
@@ -21,3 +23,9 @@ publication, peer review, DOI, or verified novelty.
 The contextual public reading path is canonical anchor, *Incentive to Ignore*,
 Information Sharing Frontier, Common-Source Trap, Threshold Discovery,
 notes/syntheses, and evidence/infrastructure.
+
+The public Papers route reads `paper-lifecycle.yml`, separates flagships from
+notes and syntheses, preserves stable routes, and supports future replacement
+links and archive/supersession banners. No current paper is archived or
+superseded. Synthetic unit fixtures test that dormant behavior without
+inventing a paper.

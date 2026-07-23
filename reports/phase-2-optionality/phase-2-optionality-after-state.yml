@@ -1,0 +1,64 @@
+schema_version: 1
+captured_utc: "2026-07-23T06:56:00Z"
+status: pre-merge-local-acceptance-passed
+starting_main: 792da66aa8e0253c087752e3670efc19055c15cb
+branch_head_before_final_commit: 4235353361189ca8ca1b9cdf9de7319561653f95
+scientific:
+  claims: {count: 110, maximum_id: DD-C-0110, unchanged: true}
+  studies: {count: 26, maximum_id: DD-022, unchanged: true}
+  manifests: {count: 51, passing: 48, unchanged: true}
+  verified_results_tree: c8fd20f66797c5014acf658a749e7f15fcaf6750
+  new_study: false
+  new_claim: false
+  new_run: false
+papers:
+  count: 7
+  total_pages: 119
+  source_tree_unchanged: true
+  current_archived_or_superseded: 0
+  hashes:
+    foundations: 8875926a52f0b8e722f7ce827c456c4b694f9e981c21c4b15bf2b3c60b83e76b
+    three-results: 9eb896353b1210706d6108685dde963e02d6a5ebc64af9f9f69c08c01f5ebc96
+    discovery-institutions: 78606f732f105d79395409dcb9d7224d72aa1e44312ca30ff5719d049afd98a8
+    common-source-trap: afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7
+    incentive-to-ignore: 651c91fb68df6b2f1397ca86f3842b7c2fa9c067601957c32401a7f5e95cd24b
+    threshold-discovery: 634e96662989a3fd6efb5fc3e6919883897e60511826e25c6d0176bac4af9249
+    information-sharing-frontier: a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13
+editorial:
+  optionality_options: 9
+  first_option: WS-1
+  translation_objects: 14
+  translation_formulations: 56
+  lifecycle_records: 8
+  claim_role_records: 110
+  archived_or_superseded: 0
+site:
+  html_routes: 80
+  public_data_files: 87
+  desktop_browser_passed: true
+  viewport_390_passed: true
+  console_warnings_or_errors: 0
+  page_level_overflow: false
+  registry_sha256:
+    routes: bbf9a6ca0079feba09421fa51b1580a4a5e732dac18c479115281e1c8d892db5
+    relations: 0e347be1d7db596d758c7c77db08908f1c1651d7700a133c47c600dbe143a39d
+    downloads: 3266fd7faf32ff1dc6c055dca1377c83c79818c7504f4e7398a7a5acc92d834a
+    paper_lifecycle: 46605a735ef728f9bb2c3fad4b1b638fd66cfa10faa3acc72e54da1fa4812d8f
+    translations: a9ef31c71a5669e9e3e5875c1143b88dda34a68913de6424295537cf1f743e09
+validation:
+  diff_check: passed
+  bootstrap: passed
+  focused_tests: 26-passed
+  verify: 262-passed
+  papers: passed
+  site: passed
+prohibited_actions:
+  model_or_provider_call: false
+  paid_api: false
+  human_or_real_data: false
+  activegraph_mutation: false
+  production_deployment: false
+  human_engagement: false
+next_gate: DiscoveryBench Agents v1 registration
+exact_next_command: git status --short --branch
+exact_next_file: plans/DISCOVERYBENCH_AGENTS_V1_REGISTRATION.md
