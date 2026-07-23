@@ -1,0 +1,73 @@
+schema_version: 1
+status: estimated-not-authorized
+pricing_date: "2026-07-23"
+cost_authorized: false
+cost_incurred: false
+owner_approval_required: true
+scientific_design:
+  task_families: 5
+  generator_cells: 138
+  public_calibration_cases: 10
+  planned_private_batches: 4
+  private_instances: 200
+  agent_architectures: 5
+  exact_comparators: 1
+  audited_model_candidates: 4
+  base_selected_cloud_models: 2
+  base_selected_local_models: 1
+  base_repeats: 3
+  base_team_size: 4
+  calls_per_instance_per_model_repeat: 48
+  formula: "team_size * (isolated 1 + broadcast 3 + designated-reader 2 + consensus 3 + portfolio 3)"
+scenarios:
+  - name: low-public-calibration
+    instances: 10
+    cloud_models: 2
+    repeats: 1
+    team_size: 2
+    agent_turns_and_calls: 480
+    visible_messages_max: 320
+    maximum_input_tokens_per_call: 1000
+    maximum_output_tokens_per_call: 256
+    estimated_input_tokens: 480000
+    estimated_output_tokens: 122880
+    estimated_cloud_cost_usd: 3.16
+  - name: base-private-campaign
+    instances: 200
+    cloud_models: 2
+    repeats: 3
+    team_size: 4
+    agent_turns_and_calls: 57600
+    visible_messages_max: 38400
+    maximum_input_tokens_per_call: 2000
+    maximum_output_tokens_per_call: 256
+    estimated_input_tokens: 115200000
+    estimated_output_tokens: 14745600
+    estimated_cloud_cost_usd: 537.98
+  - name: high-sensitivity-campaign
+    instances: 200
+    cloud_models: 3
+    repeats: 5
+    team_size: 6
+    agent_turns_and_calls: 216000
+    visible_messages_max: 144000
+    maximum_input_tokens_per_call: 4000
+    maximum_output_tokens_per_call: 512
+    estimated_input_tokens: 864000000
+    estimated_output_tokens: 110592000
+    estimated_cloud_cost_usd: 3418.56
+local_resources:
+  candidate: mistralai/Mistral-Small-3.1-24B-Instruct-2503
+  gpu_memory_gb_preferred: 64
+  system_ram_gb_minimum: 64
+  cpu_cores_recommended: 16
+  storage_gb_reserved: 128
+  quantized_32gb_path: possible-but-separate-accuracy-and-engine-gate
+trace_and_verification:
+  raw_trace_storage_gb_base: 3.0
+  redacted_trace_storage_gb_base: 1.0
+  encryption_artifacts_gb_base: 0.25
+  verifier_runtime_cpu_hours_base: 12
+recommended_execution_cap_usd: 750
+cap_authorized: false
+tradeoff: "The cap covers the base two-cloud design with contingency; exceeding it pauses execution rather than shrinking families after prices are observed."

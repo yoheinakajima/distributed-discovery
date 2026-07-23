@@ -1,0 +1,29 @@
+schema_version: 1
+corruption_plan_version: agents-corruption-v1
+status: registered-public-fixtures-only
+scientific_results_exist: false
+corruptions:
+  - {id: C01, mutation: add target capability to an agent capability view, rejecting_component: capability-validator, error_class: leaked-target-capability, purpose: information isolation}
+  - {id: C02, mutation: add expected metric value to a prompt, rejecting_component: prompt-auditor, error_class: leaked-expected-metric, purpose: prevent answer cueing}
+  - {id: C03, mutation: add DD claim or run ID to a prompt, rejecting_component: prompt-auditor, error_class: leaked-scientific-reference, purpose: prevent repository contamination}
+  - {id: C04, mutation: replace declared v3 content with v2 after commitment, rejecting_component: version-validator, error_class: content-version-mismatch, purpose: content immutability}
+  - {id: C05, mutation: replace agents-v1 protocol identifier, rejecting_component: version-validator, error_class: protocol-version-mismatch, purpose: protocol immutability}
+  - {id: C06, mutation: alter task bytes after commitment, rejecting_component: custody-verifier, error_class: task-commitment-mismatch, purpose: task integrity}
+  - {id: C07, mutation: alter public toy seed after commitment, rejecting_component: custody-verifier, error_class: seed-commitment-mismatch, purpose: seed integrity}
+  - {id: C08, mutation: flip one ciphertext byte, rejecting_component: custody-verifier, error_class: ciphertext-hash-mismatch, purpose: sealed artifact integrity}
+  - {id: C09, mutation: pair an answer key with another task, rejecting_component: answer-verifier, error_class: answer-key-mismatch, purpose: grading integrity}
+  - {id: C10, mutation: admit target Z outside the action vocabulary, rejecting_component: action-validator, error_class: invalid-action-accepted, purpose: action safety}
+  - {id: C11, mutation: reveal AGENT-02 private signal to AGENT-01, rejecting_component: capability-validator, error_class: private-signal-leak, purpose: information rights}
+  - {id: C12, mutation: add a message beyond the declared token or round budget, rejecting_component: protocol-validator, error_class: communication-budget-violation, purpose: treatment fidelity}
+  - {id: C13, mutation: add a second schema retry, rejecting_component: protocol-validator, error_class: retry-count-violation, purpose: equal execution budget}
+  - {id: C14, mutation: change exact model ID after freeze, rejecting_component: execution-manifest-validator, error_class: model-identifier-altered, purpose: model identity}
+  - {id: C15, mutation: substitute a latest alias for a frozen snapshot, rejecting_component: provider-registry-validator, error_class: moving-alias-substitution, purpose: snapshot reproducibility}
+  - {id: C16, mutation: change one visible trace field without rehashing, rejecting_component: trace-verifier, error_class: trace-hash-mutation, purpose: trace integrity}
+  - {id: C17, mutation: leave a public toy absolute path unredacted, rejecting_component: redaction-verifier, error_class: redaction-omission, purpose: safe release}
+  - {id: C18, mutation: change the registered planner fraction, rejecting_component: independent-verifier, error_class: planner-baseline-mutation, purpose: exact comparator integrity}
+  - {id: C19, mutation: change the registered private-baseline fraction, rejecting_component: independent-verifier, error_class: private-baseline-mutation, purpose: exact comparator integrity}
+  - {id: C20, mutation: change duplication zero convention or denominator, rejecting_component: metric-registry-validator, error_class: metric-convention-mutation, purpose: metric identity}
+  - {id: C21, mutation: exchange best and worst equilibrium references, rejecting_component: independent-verifier, error_class: equilibrium-reference-swap, purpose: comparator direction}
+  - {id: C22, mutation: omit a required contamination probe, rejecting_component: contamination-validator, error_class: contamination-probe-suppression, purpose: leakage audit completeness}
+  - {id: C23, mutation: evaluate a registry-excluded task/model pair, rejecting_component: compatibility-validator, error_class: excluded-pair-evaluated, purpose: registered scope}
+  - {id: C24, mutation: add weighted aggregate score to batch result, rejecting_component: result-schema-validator, error_class: composite-score-introduced, purpose: prevent universal ranking}

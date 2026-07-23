@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DiscoveryBench Agents v1 registration decision",
+  "type": "object",
+  "required": [
+    "schema_version", "status", "allowed_decisions", "decision",
+    "starting_main", "issue", "branch", "pull_request", "ownership",
+    "study_id_allocated", "study_id", "benchmark_content_versions",
+    "agent_protocol_version", "generator_version", "task_families",
+    "architectures", "provider_model_candidates", "model_snapshot_policy",
+    "cost_authorized", "cost_envelope", "private_seeds_exist",
+    "holdouts_exist", "calls_made", "traces_exist", "evidence_exists",
+    "claims_exist", "verification_plan", "corruption_count", "stop_conditions",
+    "exact_next_gate", "exact_next_command", "exact_next_file"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "status": {"const": "complete-registered-not-executed"},
+    "decision": {"const": "register-instrument-under-dd010"},
+    "study_id_allocated": {"const": false},
+    "study_id": {"type": "null"},
+    "cost_authorized": {"const": false},
+    "private_seeds_exist": {"const": false},
+    "holdouts_exist": {"const": false},
+    "calls_made": {"const": 0},
+    "traces_exist": {"const": false},
+    "evidence_exists": {"const": false},
+    "claims_exist": {"const": false},
+    "corruption_count": {"minimum": 24},
+    "exact_next_file": {"const": "plans/DISCOVERYBENCH_AGENTS_V1_IMPLEMENTATION.md"}
+  },
+  "additionalProperties": true
+}

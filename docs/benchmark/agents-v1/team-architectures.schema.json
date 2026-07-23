@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DiscoveryBench Agents v1 architectures",
+  "type": "object",
+  "required": ["schema_version", "status", "agent_architecture_count", "exact_baseline_count", "architectures", "eligibility_rule"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "status": {"const": "registered-not-executed"},
+    "agent_architecture_count": {"const": 5},
+    "exact_baseline_count": {"const": 1},
+    "architectures": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["architecture_id", "kind", "information_rights", "action_rights", "topology", "message_rounds", "message_budget_tokens", "scientific_contrast", "expected_answers_visible", "machine_gradable"]
+      }
+    }
+  },
+  "additionalProperties": true
+}

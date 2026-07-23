@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DiscoveryBench Agents v1 task instance",
+  "type": "object",
+  "required": ["schema_version", "public_fixture", "task_id", "family_id", "versions", "primitive_state", "capability_views", "action_vocabulary", "task_commitment"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "public_fixture": {"type": "boolean"},
+    "task_id": {"type": "string"},
+    "family_id": {"type": "string"},
+    "versions": {
+      "type": "object",
+      "required": ["content", "protocol", "generator", "prompt"]
+    },
+    "primitive_state": {"type": "object"},
+    "capability_views": {
+      "type": "object",
+      "minProperties": 2,
+      "propertyNames": {"pattern": "^AGENT-0[1-6]$"},
+      "additionalProperties": {
+        "type": "object",
+        "required": ["public_state", "private_observation", "forbidden_fields"]
+      }
+    },
+    "action_vocabulary": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {"pattern": "^TARGET-[A-Z]$"}
+    },
+    "task_commitment": {"pattern": "^sha256:[0-9a-f]{64}$"}
+  },
+  "additionalProperties": false
+}

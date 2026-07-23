@@ -11,18 +11,18 @@ measurement_boundary:
 options:
   - id: WS-1
     label: DiscoveryBench instrument
-    status: registration-next
-    readiness: registration-ready
+    status: registered-offline-execution-gated
+    readiness: offline-implementation-next
     residual_value: high-if-exercised-soon
     decay_rate: fast
     estimated_expiry_horizon: months rather than years; model and benchmark conditions move quickly
-    option_trigger: owner authorizes DiscoveryBench Agents v1 registration after this milestone closes
+    option_trigger: owner opens a separate offline implementation gate; any later execution additionally requires frozen snapshots and explicit cost authorization
     first_irreversible_spend: paid provider calls or generation of sealed holdout batches
     kill_or_defer_condition: contamination cannot be bounded, versions cannot be frozen, evaluator separation fails, or cost is unauthorized
     evidence_required: [registered protocol, committed generator, exact baselines, cryptographic custody plan]
     ai_native_validation_required: [context-isolated evaluator, multiple sealed batches, contamination probes, immutable outputs before unsealing]
     dependencies: [plans/DISCOVERYBENCH_AGENTS_V1_GATE.md, DD-010]
-    currently_authorized_actions: [registration architecture and documentation]
+    currently_authorized_actions: [registered offline contracts, public fixtures, validators, documentation]
     prohibited_actions: [model call, provider spend, private seed generation, holdout generation, benchmark execution]
     public_visibility: public-gate
     next_review_date: "2026-08-15"

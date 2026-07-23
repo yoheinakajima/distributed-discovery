@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DiscoveryBench Agents v1 metric registry",
+  "type": "object",
+  "required": ["schema_version", "status", "composite_score", "universal_ranking", "metrics"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "status": {"const": "registered-not-executed"},
+    "composite_score": {"type": "null"},
+    "universal_ranking": {"const": false},
+    "metrics": {
+      "type": "array",
+      "minItems": 15,
+      "items": {
+        "type": "object",
+        "required": ["metric_id", "definition", "numerator", "denominator", "zero_convention", "units", "evidence_status", "task_compatibility", "architecture_compatibility", "theoretical_comparator", "aggregation", "display", "forbidden_interpretation"]
+      }
+    }
+  },
+  "additionalProperties": false
+}

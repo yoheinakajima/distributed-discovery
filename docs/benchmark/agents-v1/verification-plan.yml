@@ -1,0 +1,26 @@
+schema_version: 1
+verification_version: agents-verification-v1
+status: registered-not-executed
+method_a:
+  name: instrument-evaluator
+  components:
+    - task generator
+    - capability view
+    - protocol state machine
+    - structured-output validator
+    - metric evaluator
+method_b:
+  name: independent-primitive-verifier
+  imports_method_a_metric_classifications: false
+  components:
+    - reconstruct primitive task from commitment and sealed manifest
+    - recompute exact baselines from authoritative study outputs
+    - validate information and action rights from primitive events
+    - recompute metric numerators denominators and zero conventions
+    - recompute batch aggregation and statistical pairing
+    - verify seed ciphertext answer and task commitments
+    - verify trace and redaction hashes
+    - verify every version manifest
+agreement_rule: exact agreement on primitive classifications and exact comparators; tolerance only for separately recomputed floating summaries
+release_on_disagreement: false
+provider_execution_implemented: false

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DiscoveryBench Agents v1 contamination report",
+  "type": "object",
+  "required": ["schema_version", "public_fixture", "task_commitment", "probes", "classification", "release_action"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "public_fixture": {"type": "boolean"},
+    "task_commitment": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "probes": {
+      "type": "array",
+      "minItems": 12,
+      "items": {
+        "type": "object",
+        "required": ["probe_id", "status", "matches"],
+        "properties": {
+          "probe_id": {"type": "string"},
+          "status": {"enum": ["clear", "match", "not-applicable"]},
+          "matches": {"type": "array"}
+        }
+      }
+    },
+    "classification": {"enum": ["direct-leakage", "probable-memorization", "ordinary-correct-reasoning", "inconclusive-overlap"]},
+    "release_action": {"enum": ["continue", "quarantine-batch", "pause-independent-review"]}
+  },
+  "additionalProperties": false
+}

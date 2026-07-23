@@ -1,0 +1,185 @@
+schema_version: 1
+generator_version: agents-task-generator-v1
+status: registered-not-generated
+central_question: Do software-agent teams exhibit duplication, source concentration, shared-clue over-attention, consensus collapse, and portfolio-recovery failures on sealed isomorphic tasks derived from exact Distributed Discovery baselines?
+counts:
+  families: 5
+  canonical_generator_cells: 138
+  primitive_labeled_task_states: 58945
+  canonical_prompt_count: 138
+  isomorphic_prompt_count: 552
+  public_calibration_cases_planned: 10
+  private_batches_planned: 4
+  private_instances_planned: 200
+  private_instances_generated: 0
+isomorphisms:
+  target_relabelings_per_cell: 2
+  agent_relabelings_per_cell: 2
+  product_per_cell: 4
+prompt_prohibitions:
+  - DD IDs
+  - claim IDs
+  - immutable run IDs
+  - theorem names
+  - paper titles
+  - known answer values
+  - exact public task wording
+  - paradox, trap, one-reader theorem, or result cues
+families:
+  - family_id: common-source-acquisition
+    scientific_owner_studies: [DD-008, DD-008A, DD-008B]
+    claim_ids: [DD-C-0051, DD-C-0052, DD-C-0057, DD-C-0058]
+    source_runs:
+      - 20260721T141527Z_DD-008_0d11dc77_7e0c8f1d66
+      - 20260721T163030Z_DD-008A_8b70668b_06307caab4
+      - 20260721T192412Z_DD-008B_649deb08_29dbeaf3a9
+    target_state: one of three uniformly likely search targets
+    agent_information: each agent receives only its declared source cost, source-choice menu, and later its selected-source clue
+    private_information: independently acquired clues remain private
+    public_information: source law, accuracy, cost, team size, prize rule, and action vocabulary
+    source_identities: common source is shared; independent sources are distinct but anonymously labeled
+    action_space: choose common or independent source, then choose one target
+    timing: simultaneous source choice, private clue realization, simultaneous target action
+    communication_rights: none in the isolated condition; architecture-declared sharing otherwise
+    reward_shown: exact equal-split unit-prize rule, never expected payoff
+    group_objective: probability at least one action matches the target, net cost reported separately
+    private_baseline: direct clue-following under registered source choices
+    planner_baseline: registered source-count planner optimum
+    equilibrium_references: complete weak source-count equilibrium classification where declared
+    primary_contrast: independent-source acquisition, source concentration, and group discovery across architectures
+    invalid_output: invalid source or target action counts as protocol-invalid and zero task success
+    generator_parameter_domain:
+      target_count: [3]
+      agent_count: [2, 3, 4]
+      accuracy: [1/2, 2/3, 3/4]
+      cost_region: [below-private-threshold, trap-interval, above-planner-threshold]
+    canonical_cells: 27
+    primitive_labeled_task_states: 3402
+    excluded_parameters: [heterogeneous accuracy, dependent independent-sources, real source data]
+    machine_grading: exact enumeration of source choices, realized actions, discovery, and declared cost
+  - family_id: one-reader-versus-broadcast-attention
+    scientific_owner_studies: [DD-012, DD-013, DD-014]
+    claim_ids: [DD-C-0059, DD-C-0060, DD-C-0061, DD-C-0062, DD-C-0063, DD-C-0064, DD-C-0065, DD-C-0066, DD-C-0067, DD-C-0068]
+    source_runs:
+      - 20260721T212943Z_DD-012_9ed0928e_4a3f1ba62b
+      - 20260721T215811Z_DD-013_09c07448_cdac4fb512
+      - 20260721T222047Z_DD-014_f5f099a8_ea0276dd16
+    target_state: one of three uniformly likely search targets
+    agent_information: each agent receives a private clue and only access-gated agents receive the shared clue
+    private_information: private clue labels
+    public_information: accuracies, team size, access assignment, action and reward rules
+    source_identities: one shared source plus conditionally independent private sources
+    action_space: choose one target
+    timing: ex-ante access assignment, clue realization, simultaneous target action
+    communication_rights: fixed by architecture; nonreaders cannot receive the shared clue in designated-reader conditions
+    reward_shown: exact registered access/reward rule without expected metrics
+    group_objective: probability at least one action matches the target
+    private_baseline: all agents use private clues
+    planner_baseline: registered binding optimal audience
+    equilibrium_references: equal-split attention-count equilibria and conditional-policy references where declared
+    primary_contrast: isolated private, designated reader, and full broadcast discovery and compression
+    invalid_output: missing or out-of-vocabulary target action is protocol-invalid and unsuccessful
+    generator_parameter_domain:
+      target_count: [3]
+      agent_count: [2, 3, 4]
+      private_accuracy: [1/2, 2/3, 3/4]
+      shared_accuracy: [1/2, 2/3, 3/4]
+    canonical_cells: 27
+    primitive_labeled_task_states: 9477
+    excluded_parameters: [post-observation forced forgetting, arbitrary mechanism class, real attention data]
+    machine_grading: exact target/signal enumeration and action-union discovery
+  - family_id: point-versus-shortlist-sharing
+    scientific_owner_studies: [DD-019, DD-020, DD-021]
+    claim_ids: [DD-C-0089, DD-C-0090, DD-C-0091, DD-C-0092, DD-C-0093, DD-C-0094, DD-C-0095, DD-C-0096, DD-C-0097, DD-C-0099, DD-C-0100, DD-C-0101, DD-C-0103]
+    source_runs:
+      - 20260722T084145Z_DD-019_a77bb786_04a5e9f0c5
+      - 20260722T142551Z_DD-020_3854fff6_37c11a850a
+      - 20260722T185924Z_DD-021_3cdbbc40_2fea269a9a
+    target_state: one finite target under the registered channel
+    agent_information: private channel outputs plus architecture-declared shared block
+    private_information: unshared channel outputs
+    public_information: channel law, target/action counts, sharing topology, and action vocabulary
+    source_identities: conditionally independent registered channel draws
+    action_space: choose one target
+    timing: signals, architecture-declared messages, simultaneous target action
+    communication_rights: isolated, full broadcast, or declared selective sharing only
+    reward_shown: common group-discovery objective
+    group_objective: probability at least one action matches the target
+    private_baseline: registered direct-private portfolio
+    planner_baseline: posterior top-L action-budget value
+    equilibrium_references: none unless separately inherited from DD-022
+    primary_contrast: aggregation gain versus lost independent rescue
+    invalid_output: out-of-range target action is protocol-invalid and unsuccessful
+    generator_parameter_domain:
+      target_count: [3, 4]
+      agent_count: [2, 3]
+      channel: [noisy-point, guaranteed-two-shortlist, noisy-two-shortlist]
+      shared_block_size: [one-through-agent-count]
+    canonical_cells: 30
+    primitive_labeled_task_states: 7547
+    excluded_parameters: [continuous confidence, source dependence, unrestricted channel families]
+    machine_grading: exact channel-state enumeration and action-union discovery
+  - family_id: consensus-collapse-versus-portfolio-recovery
+    scientific_owner_studies: [DD-000, DD-019, DD-021, DD-022]
+    claim_ids: [DD-C-0003, DD-C-0006, DD-C-0008, DD-C-0089, DD-C-0091, DD-C-0098, DD-C-0102, DD-C-0109, DD-C-0110]
+    source_runs:
+      - 20260720T190336Z_DD-000_32dd1c32_217c602fa0
+      - 20260721T012208Z_DD-000_8e4b55e2_e8321d1048
+      - 20260722T084145Z_DD-019_a77bb786_04a5e9f0c5
+      - 20260722T185924Z_DD-021_3cdbbc40_2fea269a9a
+      - 20260722T210334Z_DD-022_2376d5b7_ad67765ca8
+    target_state: one finite target under the registered channel
+    agent_information: architecture-declared private signals or pooled posterior summaries
+    private_information: unshared signals and assigned portfolio slots where applicable
+    public_information: channel law, action budget, topology, and action vocabulary
+    source_identities: registered synthetic channel identities, hidden from prompt labels
+    action_space: choose one target per authorized action slot
+    timing: signals, declared communication, structured portfolio action
+    communication_rights: architecture-specific; portfolio assignments cannot reveal expected answers
+    reward_shown: common discovery objective or declared equal-split action game
+    group_objective: posterior mass or realized probability covered by the action union
+    private_baseline: registered direct-private portfolio
+    planner_baseline: exact posterior top-L value
+    equilibrium_references: best and worst registered equilibrium only where DD-022 supplies them
+    primary_contrast: consensus compression versus recovery-budget attainment
+    invalid_output: duplicate slots are valid actions but count toward duplication; invalid targets fail validation
+    generator_parameter_domain:
+      target_count: [3, 4]
+      agent_count: [2, 3]
+      channel: [noisy-point, guaranteed-two-shortlist, noisy-two-shortlist]
+      action_budget: [one-through-minimum-of-targets-and-agents]
+    canonical_cells: 30
+    primitive_labeled_task_states: 7547
+    excluded_parameters: [unregistered equilibrium refinements, binding authority disguised as autonomy, real tasks]
+    machine_grading: exact covered posterior mass and realized union discovery
+  - family_id: threshold-team-formation
+    scientific_owner_studies: [DD-016, DD-017, DD-018]
+    claim_ids: [DD-C-0071, DD-C-0072, DD-C-0073, DD-C-0074, DD-C-0075, DD-C-0076, DD-C-0077, DD-C-0078, DD-C-0083, DD-C-0084, DD-C-0085, DD-C-0086]
+    source_runs:
+      - 20260722T021526Z_DD-016_00271ff8_123b2809e3
+      - 20260722T024032Z_DD-017_033452f6_3d2c74fdfb
+      - 20260722T051847Z_DD-018_a193f602_3b3ddac173
+    target_state: one finite target with threshold opening technology
+    agent_information: declared posterior masses, private signals, or recommendations according to architecture
+    private_information: private signals and role assignment when declared
+    public_information: target count, team size, threshold, reward rule, and action vocabulary
+    source_identities: registered synthetic clues only
+    action_space: choose one target; a target opens only with at least tau agents
+    timing: signals/recommendations, declared messages, simultaneous action
+    communication_rights: architecture-specific and budgeted
+    reward_shown: exact registered threshold reward rule without expected payoff
+    group_objective: posterior mass of targets meeting the threshold
+    private_baseline: registered private clue-following threshold action
+    planner_baseline: minimum-viable-team posterior planner
+    equilibrium_references: weak pure, best/worst, pair, tau-player, and selected tied-mode references only where registered
+    primary_contrast: viable-team formation, crowding, and portfolio coverage
+    invalid_output: invalid target action is protocol-invalid; undersized teams are valid but do not open
+    generator_parameter_domain:
+      target_count: [3, 4]
+      agent_count: [4, 6]
+      threshold: [2, 3]
+      posterior_profile: [strict, tied, diffuse]
+    canonical_cells: 24
+    primitive_labeled_task_states: 30972
+    excluded_parameters: [heterogeneous thresholds, coalition-proofness, unrestricted transfers, real teams]
+    machine_grading: exact occupancy, opened-target union, posterior coverage, and protocol compliance

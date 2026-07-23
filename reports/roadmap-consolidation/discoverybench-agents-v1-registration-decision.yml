@@ -1,0 +1,70 @@
+schema_version: 1
+status: complete-registered-not-executed
+allowed_decisions:
+  - register-instrument-under-dd010
+  - register-future-evaluation-study-shell
+  - stop-versioning-or-ownership-boundary
+  - stop-contamination-boundary
+  - stop-provider-snapshot-boundary
+  - stop-trace-safety-boundary
+  - stop-cost-authorization-boundary
+  - stop-model-diversity-boundary
+  - stop-generic-benchmark-overlap
+  - stop-independent-verification-boundary
+decision: register-instrument-under-dd010
+starting_main: 62bd4804e6ea5e8621125335c3a4ffc9024a2871
+issue: 169
+branch: benchmark/discoverybench-agents-v1-registration
+pull_request: 170
+ownership: DD-010-instrument
+study_id_allocated: false
+study_id: null
+benchmark_content_versions: [v1, v2, v3]
+agent_protocol_version: agents-v1
+generator_version: agents-task-generator-v1
+task_families:
+  - common-source-acquisition
+  - one-reader-versus-broadcast-attention
+  - point-versus-shortlist-sharing
+  - consensus-collapse-versus-portfolio-recovery
+  - threshold-team-formation
+architectures:
+  - isolated-private-agents
+  - full-broadcast-shared-transcript
+  - designated-reader-selective-sharing
+  - pooled-consensus
+  - portfolio-preserving-structured
+  - exact-algorithmic-baselines
+provider_model_candidates:
+  - openai-gpt-5-4-2026-03-05
+  - anthropic-claude-sonnet-4-6
+  - google-gemini-2-5-pro
+  - mistral-small-3-1-24b-instruct-2503
+model_snapshot_policy: exact pinned identifier required; moving aliases prohibited
+cost_authorized: false
+cost_envelope:
+  low_usd: 3.16
+  base_usd: 537.98
+  high_usd: 3418.56
+  recommended_cap_usd: 750
+calls_made: 0
+cost_incurred: false
+private_seeds_exist: false
+holdouts_exist: false
+traces_exist: false
+evidence_exists: false
+claims_exist: false
+verification_plan: two independent paths; primitive verifier cannot import evaluator classifications
+corruption_count: 24
+stop_conditions:
+  - version or ownership mismatch
+  - contamination or custody breach
+  - unfrozen provider model
+  - unsafe trace or redaction
+  - missing cost authorization
+  - insufficient model-family diversity
+  - generic benchmark overlap
+  - independent verification disagreement
+exact_next_gate: DiscoveryBench Agents v1 offline instrument implementation
+exact_next_command: git status --short --branch
+exact_next_file: plans/DISCOVERYBENCH_AGENTS_V1_IMPLEMENTATION.md

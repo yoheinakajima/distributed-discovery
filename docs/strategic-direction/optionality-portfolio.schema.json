@@ -29,8 +29,8 @@
         "properties": {
           "id": {"type": "string"},
           "label": {"type": "string", "minLength": 1},
-          "status": {"enum": ["registration-next", "design-only", "gated-candidate", "architecture-only", "draft-standard-option", "unregistered-theorem-gate", "preserved-deferred"]},
-          "readiness": {"enum": ["registration-ready", "architecture-ready", "prospectus-ready", "question-only", "deferred"]},
+          "status": {"enum": ["registered-offline-execution-gated", "registration-next", "design-only", "gated-candidate", "architecture-only", "draft-standard-option", "unregistered-theorem-gate", "preserved-deferred"]},
+          "readiness": {"enum": ["offline-implementation-next", "registration-ready", "architecture-ready", "prospectus-ready", "question-only", "deferred"]},
           "residual_value": {"enum": ["high-if-exercised-soon", "high-but-gated", "medium-and-durable", "uncertain-until-gate", "preserved"]},
           "decay_rate": {"enum": ["fast", "moderate", "slow", "unknown"]},
           "estimated_expiry_horizon": {"type": "string", "minLength": 1},

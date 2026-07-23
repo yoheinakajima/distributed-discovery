@@ -1,0 +1,5 @@
+{
+  "visible_message": "Read /Users/example/private/key.txt",
+  "authorization": "Bearer PUBLIC-INVALID-TOY-TOKEN",
+  "hidden_chain_of_thought": "prohibited"
+}

@@ -1,5 +1,16 @@
 # Master execution plan
 
+## Active continuation — DiscoveryBench Agents v1 offline implementation gate (2026-07-23)
+
+Issue #169 and PR #170 register DiscoveryBench Agents v1 as a DD-010 offline
+instrument with content v1/v2/v3 preserved and `agents-v1` versioned on a
+separate axis. The registration allocates no study or claim and creates no
+call, cost, private seed, holdout, trace, result, or run. Its exact successor
+is a separately authorized **DiscoveryBench Agents v1 offline instrument
+implementation**. The future plan file is
+`plans/DISCOVERYBENCH_AGENTS_V1_IMPLEMENTATION.md`; it is intentionally absent
+until that gate begins.
+
 ## Active architectural continuation — Phase 2 optionality and paper lifecycle (2026-07-23)
 
 Issue #167, branch `docs/phase-2-optionality-paper-lifecycle`, draft PR #168,

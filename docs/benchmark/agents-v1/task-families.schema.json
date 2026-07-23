@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DiscoveryBench Agents v1 task-family registry",
+  "type": "object",
+  "required": ["schema_version", "generator_version", "status", "counts", "isomorphisms", "prompt_prohibitions", "families"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generator_version": {"const": "agents-task-generator-v1"},
+    "status": {"const": "registered-not-generated"},
+    "central_question": {"type": "string"},
+    "counts": {
+      "type": "object",
+      "required": ["families", "canonical_generator_cells", "primitive_labeled_task_states", "canonical_prompt_count", "isomorphic_prompt_count", "private_instances_generated"]
+    },
+    "isomorphisms": {"type": "object"},
+    "prompt_prohibitions": {"type": "array", "minItems": 8, "items": {"type": "string"}},
+    "families": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "family_id", "scientific_owner_studies", "claim_ids", "source_runs",
+          "target_state", "agent_information", "private_information", "public_information",
+          "source_identities", "action_space", "timing", "communication_rights",
+          "reward_shown", "group_objective", "private_baseline", "planner_baseline",
+          "equilibrium_references", "primary_contrast", "invalid_output",
+          "generator_parameter_domain", "canonical_cells", "primitive_labeled_task_states",
+          "excluded_parameters", "machine_grading"
+        ],
+        "properties": {
+          "family_id": {"type": "string"},
+          "scientific_owner_studies": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^DD-[0-9]{3}[A-Z]?$"}},
+          "claim_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^DD-C-[0-9]{4}$"}},
+          "source_runs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "canonical_cells": {"type": "integer", "minimum": 1},
+          "primitive_labeled_task_states": {"type": "integer", "minimum": 1}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

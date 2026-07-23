@@ -2,8 +2,12 @@ study_id: DD-010
 title: DiscoveryBench
 slug: dd-010
 phase: complete-bounded-study
-summary: Versioned exact golden benchmark with enforced protocol information boundaries.
+summary: Versioned exact golden benchmark with enforced protocol information boundaries; Agents v1 is registered but not executed.
 public_artifacts:
+  - path: docs/benchmark/agents-v1/README.md
+    description: Registered-not-executed DiscoveryBench Agents v1 instrument contract
+  - path: reports/roadmap-consolidation/discoverybench-agents-v1-registration-decision.md
+    description: Agents v1 ownership, evidence boundary, and exact next gate
   - path: studies/DD-010-discoverybench/report.md
     description: Benchmark evidence report
   - path: studies/DD-010-discoverybench/schemas/task-v1.schema.json

@@ -62,3 +62,18 @@ the live benchmark, DD-010 study, v3 schema, and summary routes returned HTTP
 200. The live summary names the immutable run and reports 24 tasks, 29
 protocols, 39 metrics, 36 compatible pairs, and 660 exclusions. The next
 milestone is the separately registered Synthetic Experiment v3.
+
+## Registered-unexecuted Agents v1 layer
+
+The 2026-07-23 registration gate assigns the software-agent instrument to
+DD-010 without allocating a study or claim. Content versions v1/v2/v3 remain
+immutable; `agents-v1` is a separate protocol axis. Registration freezes task
+families, information rights, architectures, provider candidates, cost
+envelope, custody, contamination, trace/redaction, statistical estimands,
+metrics, two-path verification, 24 corruptions, schemas, public fixtures, and
+offline validators.
+
+This is not an execution plan. Provider calls, model downloads, private
+generation, traces, results, and spending remain prohibited. The exact next
+gate is DiscoveryBench Agents v1 offline instrument implementation, to be
+opened separately with explicit cost and snapshot authorization.

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "public_fixture": true,
+  "task_id": "PUBLIC-TOY-001",
+  "family_id": "one-reader-versus-broadcast-attention",
+  "versions": {
+    "content": "v3",
+    "protocol": "agents-v1",
+    "generator": "agents-task-generator-v1",
+    "prompt": "agents-prompt-v1"
+  },
+  "primitive_state": {
+    "target": "TARGET-B",
+    "public_test_only": true
+  },
+  "capability_views": {
+    "AGENT-01": {
+      "public_state": {"actions": ["TARGET-A", "TARGET-B", "TARGET-C"]},
+      "private_observation": "CLUE-B",
+      "forbidden_fields": ["target", "answer_key", "other_agent_private_observation"]
+    },
+    "AGENT-02": {
+      "public_state": {"actions": ["TARGET-A", "TARGET-B", "TARGET-C"]},
+      "private_observation": "CLUE-A",
+      "forbidden_fields": ["target", "answer_key", "other_agent_private_observation"]
+    }
+  },
+  "action_vocabulary": ["TARGET-A", "TARGET-B", "TARGET-C"],
+  "task_commitment": "sha256:c9c3fe60b03a83519306ddbeaa70dc9f504e63f87b19e80291aa61f5a4937f67"
+}

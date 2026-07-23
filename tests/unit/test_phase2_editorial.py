@@ -69,7 +69,8 @@ def test_discoverybench_agents_gate_has_no_execution_artifact() -> None:
     )
     assert len(prospectus["required_frozen_dimensions"]) == 23
     assert len(prospectus["registration_stops"]) == 8
-    assert not (ROOT / "plans/DISCOVERYBENCH_AGENTS_V1_REGISTRATION.md").exists()
+    assert (ROOT / "plans/DISCOVERYBENCH_AGENTS_V1_REGISTRATION.md").is_file()
+    assert not (ROOT / "plans/DISCOVERYBENCH_AGENTS_V1_IMPLEMENTATION.md").exists()
 
 
 def test_phase2_theorem_gates_are_unregistered_and_bounded() -> None:

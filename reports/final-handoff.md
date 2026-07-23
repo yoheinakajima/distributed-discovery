@@ -1,4 +1,4 @@
-# Final handoff — Decentralized Recovery overlap stop
+# Final handoff — DiscoveryBench Agents v1 registration
 
 Current supersession (2026-07-23): Phase 2 uses an AI-powered lab under human
 PI gate authority, an AI-native robustness scale, a nine-option staged
@@ -6,14 +6,16 @@ portfolio, a four-community concordance, and independent paper lifecycle and
 claim-role registries. Former human-review packets are inactive. The Shared
 Discovery Paradox is the unique owner-declared canonical public anchor; the
 seven local PDFs remain working papers/notes, and no current paper is archived
-or superseded. DiscoveryBench Agents v1 registration remains next and no
-provider/model call, private seed, holdout, run, or result exists.
+or superseded. DiscoveryBench Agents v1 is registered-not-executed under
+DD-010; no provider/model call, cost, private seed, holdout, trace, run, or
+result exists. The next gate is its separately authorized offline
+implementation.
 
 Supersession note (2026-07-23): this handoff accurately records the completed
 stop and its then-current next step. The Phase 2 owner directive now holds
-theorem-family execution, preserves Reliable Discovery as a deferred major
-candidate, and makes a new DiscoveryBench Agents v1 registration session the
-exact next substantive session.
+theorem-family execution and preserves Reliable Discovery as a deferred major
+candidate. It made DiscoveryBench Agents v1 registration the next substantive
+session; that registration is now complete without scientific evidence.
 
 Issue #162 and PR #163 complete the bounded Decentralized Recovery and
 Equilibrium Robustness registration decision as `stop-classical-overlap`.
@@ -40,9 +42,9 @@ merged through PR #156 as `fae4a81b4628f614adbb6bf602fbce6d6065746e`.
 Post-merge CI and Pages passed, and the live PDF SHA-256 is
 `2f8b68d5a690e6369e4c3236313eb93f060bfbe73ec531903c090f6ec6f8b6a1`.
 
-The current validated inventory is 249 tests, 110 claims, 51 immutable
-manifests with 48 passing runs, 26 studies, seven papers totaling 115 pages, 77
-HTML routes, 85 public data files, 18 Labs, and 23 checksum-covered downloads.
+The current validated inventory is 274 tests, 110 claims, 51 immutable
+manifests with 48 passing runs, 26 studies, seven papers totaling 119 pages, 81
+HTML routes, 88 public data files, 18 Labs, and 23 checksum-covered downloads.
 The evidence-linked architecture is in [`docs/theorem-spine.md`](../docs/theorem-spine.md).
 
 The durable result boundary is exact. DD-019 supplies bounded action-budget

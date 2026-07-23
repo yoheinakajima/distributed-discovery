@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DiscoveryBench Agents v1 future execution configuration",
+  "type": "object",
+  "required": ["schema_version", "status", "authorized", "versions", "model_snapshot", "architecture_id", "team_size", "repeats", "network", "tools", "sampling", "retry", "limits"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "status": {"enum": ["public-dry-run", "future-frozen"]},
+    "authorized": {"type": "boolean"},
+    "versions": {"type": "object"},
+    "model_snapshot": {
+      "type": "object",
+      "required": ["candidate_id", "exact_model_identifier", "moving_alias"],
+      "properties": {"moving_alias": {"const": false}}
+    },
+    "architecture_id": {"type": "string"},
+    "team_size": {"type": "integer", "minimum": 2, "maximum": 6},
+    "repeats": {"type": "integer", "minimum": 1},
+    "network": {"const": false},
+    "tools": {"type": "array", "maxItems": 0},
+    "sampling": {"type": "object"},
+    "retry": {"type": "object"},
+    "limits": {"type": "object"}
+  },
+  "additionalProperties": false
+}

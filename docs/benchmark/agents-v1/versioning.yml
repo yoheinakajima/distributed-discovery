@@ -1,0 +1,44 @@
+schema_version: 1
+instrument_id: discoverybench-agents-v1
+status: registered-not-executed
+owner_study: DD-010
+new_study_allocated: false
+axes:
+  benchmark_content: [v1, v2, v3]
+  agent_protocol: agents-v1
+  task_generator: agents-task-generator-v1
+  prompt_template: agents-prompt-v1
+  structured_action: agents-action-v1
+  trace: agents-trace-v1
+  result: agents-result-v1
+  custody_manifest: agents-custody-v1
+  contamination_report: agents-contamination-v1
+  statistical_analysis: agents-statistical-analysis-v1
+defaults:
+  discoverybench_cli_content_version: v1
+  agents_instrument_content_selection: explicit
+  agent_protocol: agents-v1
+preserved:
+  v1_task_count: 15
+  v1_protocol_count: 13
+  v1_metric_count: 19
+  v1_compatible_rows: 16
+  v2_task_count: 20
+  v2_protocol_count: 21
+  v2_metric_count: 27
+  v2_compatible_rows: 28
+  v3_task_count: 24
+  v3_protocol_count: 29
+  v3_metric_count: 39
+  v3_compatible_rows: 36
+  v3_exclusions: 660
+  external_adapter_enabled: false
+  composite_score: null
+compatibility_key:
+  - benchmark_content_version
+  - agent_protocol_version
+  - task_generator_version
+  - prompt_template_version
+  - trace_schema_version
+  - result_schema_version
+moving_alias_allowed_as_execution_identifier: false
