@@ -28,8 +28,9 @@ centralized top-`L` recovery relative to its declared direct baseline
 (DD-C-0098); DD-022 establishes a selected coordination-free positive-sharing
 interval (DD-C-0106) while preserving the every-equilibrium failure
 (DD-C-0109) and centralized gap (DD-C-0110). This reconciliation creates no
-new scientific claim. The current open edge is robust decentralized recovery,
-not completion of the General Sharing Frontier.
+new scientific claim. Issue #162 later stopped the frozen robust decentralized
+recovery formulation for classical overlap. Reliable Discovery is now the next
+executable gate, not completion of the General Sharing Frontier.
 
 ---
 
@@ -500,27 +501,28 @@ map represents submission, acceptance, peer review, release, or DOI status.
 The next open gates should be printed as questions with owners and stopping
 conditions.
 
-### Decentralized Recovery and Equilibrium Robustness
+### Decentralized Recovery and Equilibrium Robustness — stopped formulation
 
-When do autonomous agents implement the posterior top-`L` recovery benchmark,
-and how do all, best, worst, refined, or dynamically selected equilibria
-compare? DD-021 closes the declared centralized recovery question; DD-022
-closes one selected decentralized comparison but not the correspondence. A
-future registration must distinguish its posterior-weighted discovery content
-from classical congestion, resource-selection, potential-game, refinement,
-and learning results.
+Issue #162 tested the smallest public-posterior equal-sharing game and stopped
+it for classical overlap. Its simultaneous correspondence is singleton
+congestion with a Rosenthal potential; fixed sequential visible occupancy adds
+ordinary backward induction and does not enlarge the strict every-equilibrium
+top-two recovery region. No study or claim was created. A broader model is not
+silently substituted for the failed formulation.
+
+### Reliable Discovery
+
+When should the planner repeat, overlap, diversify, or form minimum teams under
+stochastic execution? One registered attempt closes the editorial hold by a
+theorem, sharp counterexample, or preserved bounded failure. This is the next
+executable gate and must establish content beyond separable-concave reliability
+allocation.
 
 ### Price of Missing Provenance
 
 What sharp loss or identification region follows when source dependence is
 unobserved? The theorem must define observable equivalence and the feasible
 latent-source class.
-
-### Reliable Discovery
-
-When should the planner repeat, overlap, diversify, or form minimum teams under
-stochastic execution? One registered attempt closes the editorial hold by a
-theorem, sharp counterexample, or preserved bounded failure.
 
 ### Truth–obedience–budget balance
 

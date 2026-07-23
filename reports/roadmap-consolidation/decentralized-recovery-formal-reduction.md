@@ -1,6 +1,7 @@
 # Decentralized Recovery formal reduction
 
-Date searched: `2026-07-22` (America/Los_Angeles)  
+Date searched: `2026-07-22` (America/Los_Angeles)
+
 Evidence class: exploratory registration analysis, not a theorem, proof-status
 promotion, run, claim, novelty assertion, or systematic review.
 

@@ -19,5 +19,6 @@ See the machine-readable chapter, claim, and source maps before adding prose.
 The `maturity-map.yml` records theorem gates and evidence maturity; the
 `prospectus.md` is the current long-form editorial plan, not a validated paper.
 The completed DD-019–DD-022 family is connected through
-[`docs/theorem-spine.md`](../../docs/theorem-spine.md); decentralized recovery
-robust to equilibrium selection is the next unregistered bridge recommendation.
+[`docs/theorem-spine.md`](../../docs/theorem-spine.md). The frozen decentralized
+recovery formulation stopped for classical overlap; Reliable Discovery is the
+next unregistered executable gate.

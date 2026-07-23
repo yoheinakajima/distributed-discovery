@@ -1,5 +1,24 @@
 # Master execution plan
 
+## Completed gate — Decentralized Recovery classical-overlap stop (2026-07-22)
+
+Issue #162 and PR #163 own the bounded registration gate. The exact decision
+is `stop-classical-overlap`: after the public posterior is fixed, the
+two-agent equal-sharing action game is singleton congestion with a Rosenthal
+potential, and fixed sequential arrival with visible occupancy is solved by
+ordinary backward induction. The strongest candidate has the same strict
+`b>a/2` every-equilibrium top-two recovery boundary in simultaneous pure Nash
+and sequential pure SPE. The DD-021 private and centralized comparators do not
+change that proof object.
+
+No DD-023, DD-C-0111, immutable run, implementation source, paper, route, Lab,
+or Finding is created. The formal reduction, failed candidate, exact inherited
+state counts, resource caps, two-method design, and twelve schema-validated
+corruptions are preserved in
+`plans/DECENTRALIZED_RECOVERY_REGISTRATION.md` and the companion registration
+package. Reliable Discovery is the sole next executable program after this
+gate; it must begin in a separate session and branch.
+
 ## Completed continuation — post-V5 theorem-spine consolidation (2026-07-22)
 
 Issue #158, branch `docs/post-v5-theorem-spine-gate`, PR #159, and

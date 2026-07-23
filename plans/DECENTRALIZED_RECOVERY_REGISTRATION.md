@@ -75,13 +75,13 @@ boundaries retain all indifferent best responses.
 - **M0 — complete:** live-state audit and invariant freeze.
 - **M1 — complete:** formal classical reduction and targeted primary-source
   boundary.
-- **M2 — active:** surviving question and exact model freeze.
-- **M3 — pending:** symbolic pre-analysis and hand audit.
-- **M4 — pending:** inherited state-space and resource audit.
-- **M5 — pending:** independent-verification and corruption design.
-- **M6 — pending:** one exact registration decision.
-- **M7A/M7B — pending:** register the study or reconcile the stop.
-- **M8 — pending:** full validation, merge, closeout, and main synchronization.
+- **M2 — complete:** surviving question and exact model freeze.
+- **M3 — complete:** symbolic pre-analysis and hand audit.
+- **M4 — complete:** inherited state-space and resource audit.
+- **M5 — complete:** independent-verification and corruption design.
+- **M6 — complete:** `stop-classical-overlap` decision.
+- **M7B — complete:** durable stop and Reliable Discovery reconciliation.
+- **M8 — active:** full validation, merge, closeout, and main synchronization.
 
 Exactly one milestone is active.
 
@@ -95,9 +95,9 @@ Exactly one milestone is active.
 - [x] Create issue #162 and the exact task branch.
 - [x] Map the simultaneous game to singleton congestion and an exact potential.
 - [x] Map the sequential institution to a finite perfect-information game.
-- [ ] Freeze the candidate package and final candidate statement.
-- [ ] Complete symbolic, state-space, verification, and corruption designs.
-- [ ] Record and reconcile one decision.
+- [x] Freeze the candidate package and final candidate statement.
+- [x] Complete symbolic, state-space, verification, and corruption designs.
+- [x] Record and reconcile one decision.
 - [ ] Pass local/remote acceptance, merge, close, and synchronize main.
 
 ## 9. Discoveries and surprises
@@ -115,6 +115,16 @@ Exactly one milestone is active.
   masses are `a>=b>=c`, robust top-two coverage requires `b>a/2`. Equality
   retains a collision equilibrium/SPE. This is a candidate derivation, not a
   claim or theorem.
+- The immutable `M=3,N=2` slice contains 16 channels, 225 ordered signal
+  pairs, 207 on-support posterior rows, 46 distinct labeled posteriors, and 15
+  permutation classes. Seven classes lie on each strict side and one is the
+  equality boundary. Resources and independent verification are comfortably
+  feasible, so neither explains the stop.
+- Twelve semantic corruptions validate against their registration schema. The
+  focused decision/corruption tests pass without executing scientific code.
+- The first full `make verify` stopped safely at Ruff because the new focused
+  test's third-party imports were not sorted. No research target ran. Ruff's
+  mechanical import fix was applied before repeating the full gate.
 
 ## 10. Decision log
 
@@ -126,6 +136,13 @@ Exactly one milestone is active.
   overlap stop because the prospective recovery boundary is exactly the
   classical payoff comparison plus backward induction; keep the decision open
   until M2–M5 are durably complete.
+- `2026-07-22`: after completing M2–M5, select
+  `stop-classical-overlap`. The strongest candidate is falsifiable and easy to
+  verify, but its entire pointwise content is classical congestion plus
+  backward induction; channel averaging and named comparators are post-processing.
+- `2026-07-22`: reconcile Reliable Discovery as the sole next executable
+  program without starting it, allocating DD-023, or changing any scientific
+  or paper artifact.
 
 ## 11. Classical-reduction strategy
 
@@ -213,7 +230,9 @@ routes, downloads, upstream, safety scans, and the four untracked files.
 Issue #162; this ExecPlan; the invariant snapshot; formal reduction Markdown
 and YAML; temporary registration package; state-space Markdown and YAML;
 global decision YAML; stop report if selected; focused schemas/tests; and
-minimal roadmap/handoff/public wording reconciliation.
+minimal roadmap/handoff/public wording reconciliation. Local acceptance is
+recorded in
+`reports/roadmap-consolidation/decentralized-recovery-validation.md`.
 
 ## 22. Blockers
 
@@ -229,6 +248,23 @@ untracked files, or modify claims/results/papers.
 
 ## 24. Outcome and retrospective
 
-Pending M6. The leading evidence supports a classical-overlap stop; this
-section will be appended, not rewritten, when the decision and merge are final.
+The registration decision is `stop-classical-overlap`. The failed candidate,
+complete model, formulas, state counts, resources, verifier independence, and
+corruptions are durable. The stop is conceptual rather than computational:
+visible sequential occupancy does not change the strict robust-recovery
+boundary, and the private/public provenance does not alter the underlying
+classical game. No study, claim, run, source implementation, or paper exists.
+M8 remains active until local validation, PR checks, merge, issue closure,
+post-merge CI/Pages, live wording, and synchronized main all pass.
 
+The first full `make verify` attempt and a direct Ruff recheck both stopped
+safely at import formatting in the new focused test. No research target ran.
+Ruff's mechanical organizer then fixed the block before the full repeat.
+
+Local M8 acceptance then passed: `git diff --check`, `make bootstrap`, all 249
+tests plus claim/run validation under `make verify`, all seven deterministic
+paper builds totaling 115 pages, and the 77-page/26-study site build. The paper
+build refreshed only two generated `source_commit` fields; both were restored
+to the accepted values, after which `claims/`, `results/`, and `papers/` had no
+branch diff. Branch workflows, merge, issue closure, post-merge CI/Pages, live
+desktop/390-pixel checks, and synchronized `main` remain the sole active work.

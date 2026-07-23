@@ -14,6 +14,7 @@ Information Sharing Improve Decentralized Discovery?* The title-level result is
 explicitly selected-equilibrium; DD-021's strongest recovery comparator remains
 centralized. No submission, release, DOI, new study, or new claim is authorized
 by this consolidation. See [`theorem-spine.md`](theorem-spine.md) for the
-evidence-linked architecture and the current roadmap for the unregistered
-Decentralized Recovery and Equilibrium Robustness bridge recommendation. Every
+evidence-linked architecture and the current roadmap for the completed
+classical-overlap stop of the Decentralized Recovery and Equilibrium Robustness
+bridge. Reliable Discovery is now the next unregistered executable gate. Every
 later theorem direction is preserved.

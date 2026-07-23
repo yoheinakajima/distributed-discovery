@@ -17,19 +17,19 @@ interfaces:
     primary_owner: information-sharing-attention-recovery
     adjacent_owner: discovery-implementation
     shared_object: conversion of a pooled posterior into a diverse portfolio
-    non_overlap: DD-C-0098 is a centralized comparator and DD-C-0106 is selection-specific; robust decentralized recovery remains open and cannot be inferred from either.
+    non_overlap: DD-C-0098 is a centralized comparator and DD-C-0106 is selection-specific; issue #162 stopped the frozen equal-sharing decentralized-recovery formulation for classical overlap.
     claims: [DD-C-0098, DD-C-0104, DD-C-0105, DD-C-0106, DD-C-0109, DD-C-0110]
   - interface: decentralized-recovery--classical-games
-    primary_owner: unregistered-post-v5-gate
+    primary_owner: completed-overlap-gate
     adjacent_owner: external-literature
     shared_object: singleton resource selection, congestion, potential, equilibrium selection, and learning
-    non_overlap: A future study must add a posterior-weighted discovery comparator and a sharp recovery/implementation boundary; existence of potential or equilibrium alone is classical content and is not a Distributed Discovery contribution.
+    non_overlap: The frozen candidate reduced fully to classical singleton congestion and backward induction; no study was registered.
     claims: []
   - interface: decentralized-recovery--reliable-discovery
-    primary_owner: unregistered-post-v5-gate
+    primary_owner: completed-overlap-gate
     adjacent_owner: reliable-discovery-action-technology
     shared_object: diversification versus duplication
-    non_overlap: The bridge freezes reliable one-hit actions and varies implementation; Reliable Discovery varies failure, overlap, repetition, and action technology.
+    non_overlap: The stopped bridge froze reliable one-hit actions; Reliable Discovery remains distinct because it varies failure, overlap, repetition, and action technology.
     claims: []
   - interface: information-sharing-frontier--provenance
     primary_owner: source-acquisition-provenance

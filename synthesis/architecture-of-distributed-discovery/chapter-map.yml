@@ -38,7 +38,7 @@ chapters:
     source_claims: [DD-C-0059, DD-C-0060, DD-C-0062, DD-C-0066, DD-C-0068, DD-C-0089, DD-C-0090, DD-C-0091, DD-C-0092, DD-C-0093, DD-C-0094, DD-C-0095, DD-C-0096, DD-C-0097, DD-C-0098, DD-C-0099, DD-C-0100, DD-C-0101, DD-C-0102, DD-C-0103, DD-C-0104, DD-C-0105, DD-C-0106, DD-C-0107, DD-C-0108, DD-C-0109, DD-C-0110]
     source_papers: [incentive-to-ignore, information-sharing-frontier]
     maturity: completed-qualified-theorem-family-with-selected-equilibrium-result
-    missing_theorem_gate: decentralized recovery robust to equilibrium selection
+    missing_theorem_gate: Randomized Information Design; the frozen decentralized-recovery formulation stopped for classical overlap
     duplication_risk: DD-019 through DD-022 belong to the Information Sharing Frontier paper; Incentive to Ignore is a companion, and the synthesis does not re-own either
   - chapter: open-problems-measurement
     theorem_family: communication-dynamic-architecture

@@ -1,4 +1,13 @@
-# Final handoff — Program V5 complete and post-V5 gate
+# Final handoff — Decentralized Recovery overlap stop
+
+Issue #162 and PR #163 complete the bounded Decentralized Recovery and
+Equilibrium Robustness registration decision as `stop-classical-overlap`.
+The frozen action game is classical singleton congestion with equal sharing;
+the sequential visible-occupancy form adds only ordinary backward induction.
+No information-conditioned equilibrium statement survives after reduction.
+No study ID, claim, run, implementation, or paper is created. Reliable
+Discovery is the exact next executable registration gate. See
+`reports/roadmap-consolidation/decentralized-recovery-classical-overlap-stop.md`.
 
 Program V5 is complete at its registered scope. DD-019 through DD-022 are
 deployed with claims DD-C-0089 through DD-C-0110 and four immutable primary
@@ -9,7 +18,7 @@ merged through PR #156 as `fae4a81b4628f614adbb6bf602fbce6d6065746e`.
 Post-merge CI and Pages passed, and the live PDF SHA-256 is
 `2f8b68d5a690e6369e4c3236313eb93f060bfbe73ec531903c090f6ec6f8b6a1`.
 
-The current validated inventory is 247 tests, 110 claims, 51 immutable
+The current validated inventory is 249 tests, 110 claims, 51 immutable
 manifests with 48 passing runs, 26 studies, seven papers totaling 115 pages, 77
 HTML routes, 85 public data files, 18 Labs, and 23 checksum-covered downloads.
 The evidence-linked architecture is in [`docs/theorem-spine.md`](../docs/theorem-spine.md).
@@ -22,14 +31,12 @@ interval together with its every-equilibrium failure and strict centralized
 gap. The paper must keep the positive result adjacent to those authority and
 selection limitations.
 
-The post-V5 documentation consolidation creates no study, claim, proof, run,
-paper change, or empirical evidence. Its bounded literature/non-overlap audit
-recommends **Decentralized Recovery and Equilibrium Robustness** as one
-unregistered bridge before Reliable Discovery. Registration still requires a
-new bounded issue and ExecPlan with the model, comparator, equilibrium scope,
-resource cap, evidence category, independent verifier, corruption plan,
-literature boundary, and stop condition. Do not rerun DD-019 through DD-022 for
-freshness.
+The earlier post-V5 documentation consolidation created no study, claim,
+proof, run, paper change, or empirical evidence and recommended a bounded
+Decentralized Recovery gate. Issue #162 has now completed that gate honestly:
+the candidate collapses to classical congestion and backward induction. Do not
+rerun DD-019 through DD-022 for freshness and do not allocate DD-023 to the
+stopped formulation.
 
 Issue #158 is closed after PR #159 squash-merged as
 `8ea3495ccfeacb2c0b4d408d70df1f39718c1a02`. Branch CI `29969577304`,
@@ -129,6 +136,6 @@ paper with no DOI, submission, peer review, or verified novelty claim.
 
 Program V5, DD-019 through DD-022, the theorem-family working paper, and the
 post-V5 theorem-spine consolidation are complete and deployed. Preserve them.
-The exact next gate is a separately authorized bounded registration for the
-recommended Decentralized Recovery and Equilibrium Robustness bridge; no study
-ID is allocated yet. Settings-only issue #32 remains separate.
+The exact next gate is a separately authorized bounded registration for
+Reliable Discovery; no new study ID is allocated yet. Settings-only issue #32
+remains separate.

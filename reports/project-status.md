@@ -1,6 +1,12 @@
-# Project status — post-V5 theorem-spine consolidation
+# Project status — Decentralized Recovery overlap stop
 
 Date: 2026-07-22 (America/Los_Angeles)
+
+Issue #162 and PR #163 complete the registration gate for Decentralized
+Recovery and Equilibrium Robustness with `stop-classical-overlap`. The frozen
+model adds no nonclassical equilibrium content beyond singleton congestion and
+backward induction. No study, claim, run, paper, source implementation, or
+public route is added. Reliable Discovery is the sole next executable program.
 
 Programs V1 through V4 are complete at their registered bounded scopes.
 Program V5's four studies DD-019 through DD-022 are merged and deployed with
@@ -18,7 +24,7 @@ claim changed, and no research configuration was rerun.
 | Claims | 110 |
 | Immutable manifests | 51 |
 | Passing immutable runs | 48 |
-| Tests | 247 |
+| Tests | 249 |
 | Validated project papers | 7 |
 | Paper pages | 115 |
 | Public HTML routes | 77 locally generated |
@@ -43,7 +49,7 @@ claim changed, and no research configuration was rerun.
 
 ## Current acceptance record
 
-- Bootstrap, Ruff, strict MyPy over 159 source files, all 247 tests, the
+- Bootstrap, Ruff, strict MyPy over 159 source files, all 249 tests, the
   110-claim ledger, and all 51 immutable manifests pass.
 - Eighteen saved exact-verification records pass; 66 gates across 18 saved
   corruption records are true.
