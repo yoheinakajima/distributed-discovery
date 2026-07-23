@@ -9,6 +9,7 @@ from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from decimal import Decimal
 from pathlib import Path
+from threading import RLock
 from typing import Any
 
 import yaml
@@ -110,6 +111,7 @@ class CostLedger:
     calls_made: int = 0
     route_costs_usd: dict[str, Decimal] = field(default_factory=dict)
     route_calls: dict[str, int] = field(default_factory=dict)
+    _lock: Any = field(default_factory=RLock, repr=False, compare=False)
 
     def authorize_next_call(
         self,
@@ -118,42 +120,44 @@ class CostLedger:
         route_id: str,
         maximum_call_cost_usd: Decimal,
     ) -> None:
-        if maximum_call_cost_usd < 0:
-            raise ValueError("maximum call cost cannot be negative")
-        route_calls = self.route_calls.get(route_id, 0)
-        if route_calls + 1 > self.authorization.max_calls_per_route:
-            raise PermissionError("route call ceiling would be exceeded")
-        if self.calls_made + 1 > self.authorization.max_total_calls:
-            raise PermissionError("total call ceiling would be exceeded")
-        gateway_cap = self.authorization.gateway_caps_usd.get(gateway_id)
-        if gateway_cap is None:
-            raise PermissionError("gateway is not authorized")
-        route_cap = self.authorization.route_caps_usd.get(route_id, gateway_cap)
-        route_cost = self.route_costs_usd.get(route_id, Decimal("0"))
-        gateway_cost = sum(
-            (
-                cost
-                for key, cost in self.route_costs_usd.items()
-                if _gateway_for_route(key) == gateway_id
-            ),
-            Decimal("0"),
-        )
-        if route_cost + maximum_call_cost_usd > route_cap:
-            raise PermissionError("projected route cost exceeds authorization")
-        if gateway_cost + maximum_call_cost_usd > gateway_cap:
-            raise PermissionError("projected gateway cost exceeds authorization")
-        if self.total_cost_usd + maximum_call_cost_usd > self.authorization.total_cap_usd:
-            raise PermissionError("projected total cost exceeds authorization")
+        with self._lock:
+            if maximum_call_cost_usd < 0:
+                raise ValueError("maximum call cost cannot be negative")
+            route_calls = self.route_calls.get(route_id, 0)
+            if route_calls + 1 > self.authorization.max_calls_per_route:
+                raise PermissionError("route call ceiling would be exceeded")
+            if self.calls_made + 1 > self.authorization.max_total_calls:
+                raise PermissionError("total call ceiling would be exceeded")
+            gateway_cap = self.authorization.gateway_caps_usd.get(gateway_id)
+            if gateway_cap is None:
+                raise PermissionError("gateway is not authorized")
+            route_cap = self.authorization.route_caps_usd.get(route_id, gateway_cap)
+            route_cost = self.route_costs_usd.get(route_id, Decimal("0"))
+            gateway_cost = sum(
+                (
+                    cost
+                    for key, cost in self.route_costs_usd.items()
+                    if _gateway_for_route(key) == gateway_id
+                ),
+                Decimal("0"),
+            )
+            if route_cost + maximum_call_cost_usd > route_cap:
+                raise PermissionError("projected route cost exceeds authorization")
+            if gateway_cost + maximum_call_cost_usd > gateway_cap:
+                raise PermissionError("projected gateway cost exceeds authorization")
+            if self.total_cost_usd + maximum_call_cost_usd > self.authorization.total_cap_usd:
+                raise PermissionError("projected total cost exceeds authorization")
 
     def record_call(self, *, route_id: str, actual_cost_usd: Decimal) -> None:
-        if actual_cost_usd < 0:
-            raise ValueError("actual cost cannot be negative")
-        self.calls_made += 1
-        self.total_cost_usd += actual_cost_usd
-        self.route_calls[route_id] = self.route_calls.get(route_id, 0) + 1
-        self.route_costs_usd[route_id] = (
-            self.route_costs_usd.get(route_id, Decimal("0")) + actual_cost_usd
-        )
+        with self._lock:
+            if actual_cost_usd < 0:
+                raise ValueError("actual cost cannot be negative")
+            self.calls_made += 1
+            self.total_cost_usd += actual_cost_usd
+            self.route_calls[route_id] = self.route_calls.get(route_id, 0) + 1
+            self.route_costs_usd[route_id] = (
+                self.route_costs_usd.get(route_id, Decimal("0")) + actual_cost_usd
+            )
 
 
 def _gateway_for_route(route_id: str) -> str:

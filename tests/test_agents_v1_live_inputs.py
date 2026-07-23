@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+from concurrent.futures import ThreadPoolExecutor
 from datetime import UTC, datetime
 from decimal import Decimal
 from pathlib import Path
@@ -156,6 +157,39 @@ def test_preflight_authorization_and_cost_ledger(tmp_path: Path) -> None:
             route_id="openrouter_mistral_small_3_1",
             maximum_call_cost_usd=Decimal("5"),
         )
+
+
+def test_cost_ledger_records_two_provider_workers_safely(tmp_path: Path) -> None:
+    document = _authorization()
+    document["gateway_caps_usd"] = {
+        "openrouter": 20,
+        "openai_direct": 5,
+        "anthropic_direct": 5,
+    }
+    path = tmp_path / "authorization.yml"
+    _write_private(path, yaml.safe_dump(document))
+    authorization = load_preflight_authorization(
+        path,
+        expected_base_commit=BASE,
+        expected_branch=BRANCH,
+        now=datetime(2026, 7, 23, tzinfo=UTC),
+    )
+    ledger = CostLedger(authorization)
+
+    def record(route_id: str) -> None:
+        for _ in range(50):
+            ledger.authorize_next_call(
+                gateway_id=route_id,
+                route_id=route_id,
+                maximum_call_cost_usd=Decimal("0.01"),
+            )
+            ledger.record_call(route_id=route_id, actual_cost_usd=Decimal("0.001"))
+
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        list(pool.map(record, ("openai_direct", "anthropic_direct")))
+    assert ledger.calls_made == 100
+    assert ledger.total_cost_usd == Decimal("0.100")
+    assert ledger.route_calls == {"openai_direct": 50, "anthropic_direct": 50}
 
 
 def test_authorization_rejects_branch_base_expiry_and_scope(tmp_path: Path) -> None:

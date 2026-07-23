@@ -6,6 +6,7 @@ import json
 import os
 import subprocess
 from collections.abc import Mapping, Sequence
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict, dataclass, replace
 from datetime import UTC, datetime
 from decimal import Decimal
@@ -45,6 +46,7 @@ from distributed_discovery.benchmark.agents_v1.live_providers import (
     discover_openrouter_endpoints,
     select_openrouter_endpoint,
 )
+from distributed_discovery.benchmark.agents_v1.models import TaskInstance
 from distributed_discovery.benchmark.agents_v1.orchestration import (
     ARCHITECTURES,
     run_architecture,
@@ -112,6 +114,7 @@ def run_provider_preflight(root: Path, *, force: bool = False) -> dict[str, obje
             and existing.get("preflight_complete") is True
         ):
             return _public_summary(existing, resumed=True)
+        _restore_prior_attempt_ledger(root, ledger, existing)
         prior_commit = existing.get("execution_commit")
         if (
             isinstance(prior_commit, str)
@@ -149,6 +152,7 @@ def run_provider_preflight(root: Path, *, force: bool = False) -> dict[str, obje
             "routes": {},
             "preflight_complete": False,
             "calibration_complete": False,
+            "ledger_cumulative_across_attempts": True,
             "private_material_exists": False,
             "scientific_evidence_exists": False,
             "updated_utc": _now(),
@@ -326,74 +330,28 @@ def run_public_calibration(root: Path, *, force: bool = False) -> dict[str, obje
         visible_outputs: list[str] = []
         route_results: dict[str, object] = {}
         tasks = generate_public_calibration()
-        for spec in selected:
-            adapter = _adapter_for(
-                spec,
-                credentials=credentials,
-                ledger=ledger,
-                transport=transport,
-            )
-            cases: list[dict[str, object]] = []
-            route_agreement = True
-            route_protocol = True
-            route_calls = 0
-            route_input_tokens = 0
-            route_output_tokens = 0
-            route_cost = Decimal("0")
-            for task_index, task in enumerate(tasks):
-                for architecture in ARCHITECTURES:
-                    run = run_architecture(task, architecture, adapter)
-                    method_a = evaluate_run(task, run).serializable()
-                    method_b = _serializable(reconstruct_metrics(task, run))
-                    route_calls += int(str(method_a["calls"]))
-                    route_input_tokens += int(str(method_a["input_tokens"]))
-                    route_output_tokens += int(str(method_a["output_tokens"]))
-                    route_cost += Decimal(str(method_a["cost_usd"]))
-                    agreement = method_a == method_b
-                    route_agreement = route_agreement and agreement
-                    route_protocol = route_protocol and not run.protocol_errors
-                    trace = build_trace(run)
-                    events = trace.redacted.get("events")
-                    if isinstance(events, Sequence):
-                        for event in events:
-                            if isinstance(event, Mapping):
-                                visible = event.get("visible_output")
-                                if isinstance(visible, str):
-                                    visible_outputs.append(visible)
-                    all_traces.append(
-                        {
-                            "stage": "public-calibration",
-                            "route_id": spec.route_id,
-                            "task_index": task_index,
-                            "architecture": architecture,
-                            "trace": trace.redacted,
-                            "audit": trace.audit,
-                        }
-                    )
-                    cases.append(
-                        {
-                            "task_index": task_index,
-                            "task_commitment": f"sha256:{task.commitment}",
-                            "family_id": task.family_id,
-                            "architecture": architecture,
-                            "method_a": method_a,
-                            "method_b": method_b,
-                            "method_a_b_agree": agreement,
-                            "protocol_errors": list(run.protocol_errors),
-                            "trace_hash": trace.redacted["redacted_trace_hash"],
-                        }
-                    )
-            _clear_adapter(adapter)
-            route_results[spec.route_id] = {
-                "cases": len(cases),
-                "calls": route_calls,
-                "method_a_b_agreement": route_agreement,
-                "protocol_compliance": route_protocol,
-                "input_tokens": route_input_tokens,
-                "output_tokens": route_output_tokens,
-                "cost_usd": str(route_cost),
-                "case_records": cases,
-            }
+        with ThreadPoolExecutor(
+            max_workers=min(authorization.max_live_concurrency, len(selected))
+        ) as pool:
+            futures = [
+                pool.submit(
+                    _run_calibration_route,
+                    spec,
+                    _adapter_for(
+                        spec,
+                        credentials=credentials,
+                        ledger=ledger,
+                        transport=transport,
+                    ),
+                    tasks,
+                )
+                for spec in selected
+            ]
+            for future in futures:
+                route_id, route_record, route_traces, route_outputs = future.result()
+                route_results[route_id] = route_record
+                all_traces.extend(route_traces)
+                visible_outputs.extend(route_outputs)
         probe_results = [asdict(result) for result in run_public_probes()]
         probe_suite_pass = {
             str(record.get("probe_class"))
@@ -782,6 +740,83 @@ def _run_route_preflight(
     )
 
 
+def _run_calibration_route(
+    spec: RouteSpec,
+    adapter: AgentAdapter,
+    tasks: Sequence[TaskInstance],
+) -> tuple[str, dict[str, object], list[dict[str, object]], list[str]]:
+    cases: list[dict[str, object]] = []
+    traces: list[dict[str, object]] = []
+    visible_outputs: list[str] = []
+    route_agreement = True
+    route_protocol = True
+    route_calls = 0
+    route_input_tokens = 0
+    route_output_tokens = 0
+    route_cost = Decimal("0")
+    try:
+        for task_index, task in enumerate(tasks):
+            for architecture in ARCHITECTURES:
+                run = run_architecture(task, architecture, adapter)
+                method_a = evaluate_run(task, run).serializable()
+                method_b = _serializable(reconstruct_metrics(task, run))
+                route_calls += int(str(method_a["calls"]))
+                route_input_tokens += int(str(method_a["input_tokens"]))
+                route_output_tokens += int(str(method_a["output_tokens"]))
+                route_cost += Decimal(str(method_a["cost_usd"]))
+                agreement = method_a == method_b
+                route_agreement = route_agreement and agreement
+                route_protocol = route_protocol and not run.protocol_errors
+                trace = build_trace(run)
+                events = trace.redacted.get("events")
+                if isinstance(events, Sequence):
+                    for event in events:
+                        if isinstance(event, Mapping):
+                            visible = event.get("visible_output")
+                            if isinstance(visible, str):
+                                visible_outputs.append(visible)
+                traces.append(
+                    {
+                        "stage": "public-calibration",
+                        "route_id": spec.route_id,
+                        "task_index": task_index,
+                        "architecture": architecture,
+                        "trace": trace.redacted,
+                        "audit": trace.audit,
+                    }
+                )
+                cases.append(
+                    {
+                        "task_index": task_index,
+                        "task_commitment": f"sha256:{task.commitment}",
+                        "family_id": task.family_id,
+                        "architecture": architecture,
+                        "method_a": method_a,
+                        "method_b": method_b,
+                        "method_a_b_agree": agreement,
+                        "protocol_errors": list(run.protocol_errors),
+                        "trace_hash": trace.redacted["redacted_trace_hash"],
+                    }
+                )
+    finally:
+        _clear_adapter(adapter)
+    return (
+        spec.route_id,
+        {
+            "cases": len(cases),
+            "calls": route_calls,
+            "method_a_b_agreement": route_agreement,
+            "protocol_compliance": route_protocol,
+            "input_tokens": route_input_tokens,
+            "output_tokens": route_output_tokens,
+            "cost_usd": str(route_cost),
+            "case_records": cases,
+        },
+        traces,
+        visible_outputs,
+    )
+
+
 def _calibration_plan(
     routes: Sequence[RouteSpec],
     authorization: PreflightAuthorization,
@@ -830,7 +865,10 @@ def _calibration_plan(
         "authorization_margin_usd": str(
             authorization.total_cap_usd - ledger.total_cost_usd - total_maximum
         ),
-        "maximum_live_concurrency": 1,
+        "maximum_live_concurrency": min(
+            authorization.max_live_concurrency,
+            len(routes),
+        ),
     }
 
 
@@ -868,6 +906,40 @@ def _restore_ledger(ledger: CostLedger, value: object) -> None:
         ledger.route_costs_usd = {str(key): Decimal(str(item)) for key, item in route_costs.items()}
     if isinstance(route_calls, Mapping):
         ledger.route_calls = {str(key): int(item) for key, item in route_calls.items()}
+
+
+def _restore_prior_attempt_ledger(
+    root: Path,
+    ledger: CostLedger,
+    existing: Mapping[str, object],
+) -> None:
+    if existing.get("ledger_cumulative_across_attempts") is True:
+        _restore_ledger(ledger, existing.get("ledger"))
+        return
+    records: list[Mapping[str, object]] = []
+    attempts = root / "reports/benchmark/agents-v1-preflight-attempts"
+    if attempts.exists():
+        records.extend(_read_yaml(path) for path in sorted(attempts.glob("*.yml")))
+    if existing:
+        records.append(existing)
+    for record in records:
+        value = record.get("ledger")
+        if not isinstance(value, Mapping):
+            continue
+        ledger.calls_made += int(value.get("calls_made", 0))
+        ledger.total_cost_usd += Decimal(str(value.get("total_cost_usd", "0")))
+        route_costs = value.get("route_costs_usd")
+        route_calls = value.get("route_calls")
+        if isinstance(route_costs, Mapping):
+            for key, item in route_costs.items():
+                route_id = str(key)
+                ledger.route_costs_usd[route_id] = ledger.route_costs_usd.get(
+                    route_id, Decimal("0")
+                ) + Decimal(str(item))
+        if isinstance(route_calls, Mapping):
+            for key, item in route_calls.items():
+                route_id = str(key)
+                ledger.route_calls[route_id] = ledger.route_calls.get(route_id, 0) + int(item)
 
 
 def _ledger_record(ledger: CostLedger, authorization: PreflightAuthorization) -> dict[str, object]:

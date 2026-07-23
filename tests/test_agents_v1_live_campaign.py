@@ -6,10 +6,14 @@ from pathlib import Path
 
 import yaml
 
+from distributed_discovery.benchmark.agents_v1.adapters import MockAdapter
+from distributed_discovery.benchmark.agents_v1.generation import generate_public_calibration
 from distributed_discovery.benchmark.agents_v1.live_campaign import (
     RouteSpec,
     _calibration_plan,
     _required_failure_decision,
+    _restore_prior_attempt_ledger,
+    _run_calibration_route,
     _write_route_audit,
 )
 from distributed_discovery.benchmark.agents_v1.live_inputs import (
@@ -99,6 +103,53 @@ def test_required_failure_decision_preserves_failure_class() -> None:
         )
         == "structured-output-boundary-failure"
     )
+
+
+def test_route_worker_preserves_method_agreement_and_redacted_traces() -> None:
+    route_id, record, traces, outputs = _run_calibration_route(
+        _routes()[0],
+        MockAdapter(),
+        generate_public_calibration()[:1],
+    )
+    assert route_id == "openai_direct"
+    assert record["cases"] == 5
+    assert record["method_a_b_agreement"] is True
+    assert len(traces) == 5
+    assert outputs
+
+
+def test_prior_attempt_costs_and_calls_are_cumulative(tmp_path: Path) -> None:
+    attempts = tmp_path / "reports/benchmark/agents-v1-preflight-attempts"
+    attempts.mkdir(parents=True)
+    (attempts / f"{'a' * 40}.yml").write_text(
+        yaml.safe_dump(
+            {
+                "ledger": {
+                    "calls_made": 3,
+                    "total_cost_usd": "0",
+                    "route_calls": {"openai_direct": 1},
+                    "route_costs_usd": {"openai_direct": "0"},
+                }
+            }
+        )
+    )
+    authorization = _authorization()
+    ledger = CostLedger(authorization)
+    _restore_prior_attempt_ledger(
+        tmp_path,
+        ledger,
+        {
+            "ledger": {
+                "calls_made": 7,
+                "total_cost_usd": "0.02",
+                "route_calls": {"openai_direct": 3},
+                "route_costs_usd": {"openai_direct": "0.01"},
+            }
+        },
+    )
+    assert ledger.calls_made == 10
+    assert ledger.total_cost_usd == Decimal("0.02")
+    assert ledger.route_calls["openai_direct"] == 4
 
 
 def test_route_audit_records_optional_only_without_campaign_mutation(

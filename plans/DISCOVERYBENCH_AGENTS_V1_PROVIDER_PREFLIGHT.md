@@ -301,6 +301,12 @@ Exactly one milestone is active at a time.
   schema uses typed singleton enums and leaves length/uniqueness validation to
   the existing downstream parser. The failed attempt will remain archived by
   execution commit before the corrected sweep replaces active state.
+- `2026-07-23T22:31:47Z`: the corrected sweep passes structured output, one
+  tiny public task, trace redaction, and Method A/B agreement for direct
+  OpenAI and direct Anthropic. Seven generation attempts cost USD 0.0220905.
+  OpenRouter Mistral remains ineligible because its only returned endpoint
+  lacks structured output; the exact Gemini/Google request remains
+  policy-ineligible under the frozen data/ZDR/parameter filters.
 
 ## Decision log
 
@@ -318,6 +324,11 @@ Exactly one milestone is active at a time.
   Gemini receive endpoint audit, structured smoke, and one tiny public task
   only; their route-amendment decision remains
   `optional-public-calibration-only`.
+- `2026-07-23T22:35:00Z`: execute the two required calibration routes in two
+  provider-level workers, the authorization maximum, with a thread-safe shared
+  ledger. Calls within each route remain deterministic and sequential. All
+  attempt calls and costs accumulate across execution commits; no archived
+  zero-cost failure or paid passing stage disappears from the receipt.
 
 ## Validation strategy
 
