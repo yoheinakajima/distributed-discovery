@@ -2,11 +2,15 @@
 
 ## Active continuation — DiscoveryBench Agents v1 evaluation registration (2026-07-23)
 
-Issue #173 and branch
+Issue #173, PR #174, and branch
 `benchmark/discoverybench-agents-v1-evaluation-registration` own the sole
 substantive lane from clean main
 `f2c1dda60f3f89e56d80b5ff7d2c519556f3d81c`. The living ExecPlan is
 [`DISCOVERYBENCH_AGENTS_V1_EVALUATION.md`](DISCOVERYBENCH_AGENTS_V1_EVALUATION.md).
+
+Commit `c67d3f6` passed branch CI `30043938710` and paper/site build
+`30043938726`. PR #174 owns merge, post-merge CI, Pages, live acceptance,
+issue closure, and synchronized-main closeout.
 
 The official-source model audit freezes OpenAI
 `gpt-5.4-2026-03-05`, Anthropic `claude-sonnet-4-6`, and the exact Mistral

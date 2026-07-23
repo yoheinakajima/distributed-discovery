@@ -125,7 +125,9 @@ ActiveGraph is used.
   corruptions.
 - [x] Reconcile program and site status.
 - [x] Pass all local acceptance and exact paper invariants.
-- [ ] Open/update draft PR, pass CI, merge, deploy, close, and synchronize.
+- [x] Open draft PR #174 and pass branch CI and paper/site builds.
+- [ ] Merge, verify post-merge CI and Pages, live-validate, close, and
+  synchronize.
 
 ## Discoveries and surprises
 
@@ -159,6 +161,9 @@ ActiveGraph is used.
   and 119 pages, and an 81-page/26-study site. Provider calls, model
   invocations, downloads, cost, private material, claims, and evaluation runs
   remain absent.
+- `2026-07-23T20:55:52Z`: commit `c67d3f6` was pushed and draft PR #174
+  opened. Branch CI `30043938710` and paper/site build `30043938726` passed.
+  The five preserved unrelated files remain untracked and untouched.
 
 ## Decision log
 
