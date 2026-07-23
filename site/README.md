@@ -30,6 +30,10 @@ five-item primary navigation or scientific inventory. The Program V5 Labs
 select immutable exact DD-019 through DD-022 outputs. Exact static-complete Labs
 never call a remote service or collect input.
 
+The Program route records the bounded Decentralized Recovery classical-overlap
+stop and identifies Reliable Discovery as the next unregistered gate. This
+wording adds no study, claim, run, route, Lab, data file, or download.
+
 PRs #155–#156 deployed the paper-integrated surface and its mobile correction.
 Post-merge CI, Pages, live interaction checks, and immutable download checks
 pass; the deployed paper PDF has SHA-256
