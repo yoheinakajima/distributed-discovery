@@ -1,5 +1,27 @@
 # Master execution plan
 
+## Completed continuation — TreasureBench Agents v1 sealed engineering pilot (2026-07-24)
+
+Issue #187 and branch `benchmark/treasurebench-agents-v1-sealed-pilot` own the
+sole substantive lane from clean main
+`0d3757caf322402c0c47117b3aff0490926a133d`. The living ExecPlan is
+[`TREASUREBENCH_AGENTS_V1_PILOT.md`](TREASUREBENCH_AGENTS_V1_PILOT.md).
+
+The fixed 50-task, five-family, five-architecture, two-direct-cloud-route
+engineering pilot completed through encrypted custody, resumable provider
+execution, output lock, post-lock unsealing, independent verification,
+contamination and corruption checks, redaction, and exact cost reconciliation.
+Its decision is `sealed-pilot-quarantined-provider-failure`: 3,037 attempts
+include 3,035 successes and two preserved Anthropic errors. Method A/B
+disagreement and contamination counts are zero; reconstructed protocol errors
+are two.
+
+The public closeout is redacted engineering evidence only. It creates no
+DD-023, claim, scientific run, paper result, ranking, composite, package,
+submission, upstream change, or authority for the 200-task base campaign.
+Any repair or rerun is a separately registered and owner-authorized future
+gate.
+
 ## Active continuation — Compendium v0.1.0 durable closeout (2026-07-24)
 
 Issue #185 and branch `release/compendium-v0.1.0-closeout` own the sole

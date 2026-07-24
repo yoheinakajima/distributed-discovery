@@ -1,5 +1,22 @@
 # Current program state
 
+_TreasureBench Agents v1 sealed engineering pilot closeout, 2026-07-24:_
+issue #187 and PR #188 complete the fixed DD-010 non-inferential engineering
+pilot with decision `sealed-pilot-quarantined-provider-failure`. The encrypted
+50-task batch produced 500 architecture/model runs through 3,037 attempts:
+3,035 successes and two preserved Anthropic errors. Total cost was USD
+11.5702435. The provider phase closed before unsealing; 3,545 encrypted objects
+are bound by output-lock commitment
+`sha256:1d487723f7587e8e2fa865682e6f6cc473cf2da4967b837dedf3952cddfcbfab`.
+
+Post-lock Method A and independent Method B agree with zero disagreements,
+direct/probable contamination findings are zero, all 76 corruptions reject,
+redaction and private-leak scans pass, and costs reconcile exactly. No task
+text, answer, seed, key, prompt, output, raw trace, task-level metric, ranking,
+or composite is public. The quarantined outcome creates no DD-023, claim,
+scientific run, paper result, leaderboard, or base-campaign authority. Any
+instrument repair or rerun requires separate registration and authorization.
+
 _Compendium v0.1.0 external publication, 2026-07-24:_ issue #185 published
 annotated tag `dd-compendium-v0.1.0` at authorized source
 `3ca173f4e9e81a6d0e3e56205e428c596edc050e`. The public GitHub Release has

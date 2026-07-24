@@ -27,6 +27,12 @@ from distributed_discovery.benchmark.agents_v1.orchestration import (
     ARCHITECTURES,
     run_architecture,
 )
+from distributed_discovery.benchmark.agents_v1.pilot import (
+    audit_pilot_corruptions,
+    pilot_offline_readiness,
+    run_synthetic_rehearsal,
+)
+from distributed_discovery.benchmark.agents_v1.pilot_live import run_live_pilot
 from distributed_discovery.benchmark.agents_v1.prompts import compile_prompt
 from distributed_discovery.benchmark.agents_v1.rehearsal import (
     readiness_report,
@@ -52,6 +58,12 @@ COMMANDS = (
     "public-calibration",
     "provider-preflight-all",
     "live-execute",
+    "pilot-audit",
+    "pilot-offline-readiness",
+    "pilot-live",
+    "pilot-verify",
+    "pilot-redacted-summary",
+    "pilot-rehearsal",
 )
 
 
@@ -132,6 +144,38 @@ def execute(args: argparse.Namespace) -> Mapping[str, object] | list[object]:
         return run_public_calibration(Path.cwd(), force=bool(args.force))
     if command == "provider-preflight-all":
         return run_provider_preflight_all(Path.cwd(), force=bool(args.force))
+    if command == "pilot-audit":
+        corruptions = audit_pilot_corruptions(Path.cwd())
+        return {
+            **pilot_offline_readiness(Path.cwd()),
+            "corruptions": len(corruptions),
+            "corruptions_rejected": sum(item["status"] == "rejected" for item in corruptions),
+        }
+    if command == "pilot-offline-readiness":
+        return pilot_offline_readiness(Path.cwd())
+    if command == "pilot-live":
+        return run_live_pilot(Path.cwd())
+    if command == "pilot-verify":
+        corruptions = audit_pilot_corruptions(Path.cwd())
+        if any(item["status"] != "rejected" for item in corruptions):
+            raise RuntimeError("pilot corruption verification failed")
+        return {
+            "status": "pass",
+            "corruptions": len(corruptions),
+            "corruptions_rejected": len(corruptions),
+            "method": "synthetic-failure-injection",
+        }
+    if command == "pilot-redacted-summary":
+        return {
+            **pilot_offline_readiness(Path.cwd()),
+            "public_boundary": "redacted-engineering-only-no-task-level-performance",
+            "task_text_disclosed": False,
+            "answer_disclosed": False,
+            "performance_disclosed": False,
+            "redaction_status": "pass",
+        }
+    if command == "pilot-rehearsal":
+        return run_synthetic_rehearsal(Path.cwd())
     if command == "live-execute":
         raise PermissionError(
             "live execution is disabled; a separate owner authorization and campaign are required"

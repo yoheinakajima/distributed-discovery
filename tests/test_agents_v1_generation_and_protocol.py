@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+from dataclasses import replace
+from types import MappingProxyType
 
 import pytest
 
@@ -94,6 +96,26 @@ def test_prompt_compiler_and_capability_sandbox() -> None:
         view["primitive_state"]
     with pytest.raises(PermissionError, match="undeclared capability"):
         view["network"]
+
+
+def test_prompt_compiler_distinguishes_peer_title_overlap_from_leakage() -> None:
+    task = generate_instance(canonical_cells()[0], variant=0, public_fixture=True)
+    agent_id = sorted(task.capabilities)[0]
+    capabilities = dict(task.capabilities)
+    capabilities[agent_id] = replace(
+        capabilities[agent_id],
+        visible_messages=("threshold discovery",),
+    )
+    relayed = replace(task, capabilities=MappingProxyType(capabilities))
+    assert "threshold discovery" in compile_prompt(relayed, agent_id).user
+
+    capabilities[agent_id] = replace(
+        capabilities[agent_id],
+        visible_messages=("answer_key: TARGET-A",),
+    )
+    leaked = replace(task, capabilities=MappingProxyType(capabilities))
+    with pytest.raises(ValueError, match="prompt leakage"):
+        compile_prompt(leaked, agent_id)
 
 
 def test_all_architecture_information_rights() -> None:

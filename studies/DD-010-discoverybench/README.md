@@ -64,5 +64,14 @@ all 138 generator cells plus 62 boundary-priority repeats, but base execution
 is blocked because the audited 16-GB host is ineligible for the exact
 local/open candidate.
 
-No model call, invocation, download, cost, private material, trace, result,
-claim, run, or DD-023 exists. Owner authorization remains pending.
+Issue #187 now owns the separate sealed-pilot gate. Its Phase A contracts,
+secure runtime, output-lock and independent-verification path, 50-slot
+allocation, command surfaces, and 35 required corruption boundaries are
+implemented. A complete 50-task × five-architecture × two-synthetic-route
+rehearsal passes with encrypted traces, Method A/B agreement, no credential
+read, no provider call, no cost, and no real private material.
+
+No model call, invocation, download, cost, real private material, provider
+trace, performance result, claim, run, or DD-023 exists. Phase B requires a
+matching non-synthetic owner authorization for the exact pushed execution
+commit and tree hash. That authorization does not authorize the base campaign.

@@ -36,10 +36,12 @@ as an AI-powered research lab under human PI gate authority; separated AI
 checks are not external review or peer review. Reliable Discovery is preserved
 as the next major theorem-family candidate but deferred. TreasureBench Agents
 v1 remains under DD-010; its direct required adapters completed authorized
-public-only engineering calibration. No private holdout, sealed pilot,
-scientific result, claim, immutable scientific run, or DD-023 exists. The exact
-next evaluation gate remains a separately registered and owner-authorized
-sealed engineering pilot. See the
+public-only engineering calibration. Its separately registered 50-task sealed
+engineering pilot has completed public-synthetic Phase A implementation and
+rehearsal, with no credential read, provider call, cost, or real private
+material. No private holdout result, scientific result, claim, immutable
+scientific run, or DD-023 exists. The exact next gate is non-synthetic owner
+authorization for the frozen execution commit and tree. See the
 [Phase 2 directive](docs/phase-2-program-directive.md), [Start Here
 hierarchy](docs/publication-hierarchy.md), [optionality
 portfolio](docs/strategic-direction/optionality-portfolio.md), and [methods

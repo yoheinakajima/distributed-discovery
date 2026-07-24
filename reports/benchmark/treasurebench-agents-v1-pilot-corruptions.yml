@@ -1,0 +1,48 @@
+schema_version: treasurebench-agents-v1-pilot-corruption-report-v1
+status: pass
+classification: public-synthetic-failure-injection
+required_count: 35
+additional_count: 41
+total_count: 76
+rejected_count: 76
+accepted_count: 0
+required:
+  - PILOT-01-execution-tree-mutation-after-authorization
+  - PILOT-02-wrong-base-commit
+  - PILOT-03-wrong-execution-commit
+  - PILOT-04-wrong-issue
+  - PILOT-05-wrong-branch
+  - PILOT-06-wrong-batch-id
+  - PILOT-07-wrong-provider-model
+  - PILOT-08-moving-alias
+  - PILOT-09-fallback-route
+  - PILOT-10-spend-cap-breach
+  - PILOT-11-provider-cap-breach
+  - PILOT-12-call-cap-breach
+  - PILOT-13-token-cap-breach
+  - PILOT-14-seed-commitment-mutation
+  - PILOT-15-task-ciphertext-mutation
+  - PILOT-16-answer-ciphertext-mutation
+  - PILOT-17-task-key-substitution
+  - PILOT-18-answer-key-substitution
+  - PILOT-19-access-log-deletion
+  - PILOT-20-duplicate-paid-call-resume
+  - PILOT-21-undeclared-private-signal-access
+  - PILOT-22-answer-key-access-before-lock
+  - PILOT-23-trace-mutation
+  - PILOT-24-output-lock-mutation
+  - PILOT-25-unseal-before-lock
+  - PILOT-26-redaction-omission
+  - PILOT-27-baseline-mutation
+  - PILOT-28-metric-mutation
+  - PILOT-29-method-a-b-disagreement
+  - PILOT-30-contamination-probe-suppression
+  - PILOT-31-private-path-committed
+  - PILOT-32-raw-trace-committed
+  - PILOT-33-detailed-pilot-ranking-published
+  - PILOT-34-dd-023-allocation
+  - PILOT-35-claim-creation
+scientific_evidence: false
+real_private_material: false
+provider_calls: 0
+external_cost_usd: "0"

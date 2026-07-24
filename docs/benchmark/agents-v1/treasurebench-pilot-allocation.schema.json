@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TreasureBench Agents v1 pilot allocation",
+  "type": "object",
+  "required": ["schema_version", "status", "campaign_id", "batch_id", "counts", "slots"],
+  "properties": {
+    "schema_version": {"const": "treasurebench-agents-v1-pilot-allocation-v1"},
+    "status": {"const": "frozen-public-metadata-no-private-instance"},
+    "campaign_id": {"const": "treasurebench-agents-v1-pilot-v1"},
+    "batch_id": {"const": "tb-agents-v1-pilot-v1-b01"},
+    "counts": {"const": {"slots": 50, "families": 5, "slots_per_family": 10, "private_instances": 0}},
+    "slots": {
+      "type": "array", "minItems": 50, "maxItems": 50,
+      "items": {
+        "type": "object",
+        "required": [
+          "slot_id", "family_id", "cell_index", "boundary_category",
+          "target_relabeling_class", "agent_relabeling_class",
+          "architecture_compatibility", "exact_comparator", "reason",
+          "public_calibration_instance_reuse", "future_base_instance_reuse"
+        ],
+        "properties": {
+          "slot_id": {"type": "string", "pattern": "^PILOT-SLOT-[0-9]{3}$"},
+          "family_id": {"type": "string"},
+          "cell_index": {"type": "integer", "minimum": 1, "maximum": 30},
+          "boundary_category": {"enum": ["strict", "equality-tie", "boundary", "protocol-sensitive", "parser-sensitive"]},
+          "target_relabeling_class": {"enum": ["target-A", "target-B"]},
+          "agent_relabeling_class": {"enum": ["agent-A", "agent-B"]},
+          "architecture_compatibility": {"const": "all-five"},
+          "exact_comparator": {"const": true},
+          "reason": {"type": "string", "minLength": 6},
+          "public_calibration_instance_reuse": {"const": false},
+          "future_base_instance_reuse": {"const": false}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

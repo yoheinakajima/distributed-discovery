@@ -51,9 +51,10 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "stopped decentralized-recovery overlap gate" in program
     assert "Phase 2 holds theorem-family execution" in program
     assert "Reliable Discovery remains a major candidate but is deferred" in program
-    assert "required adapters passed an authorized public-only engineering calibration" in program
-    assert "No private task, sealed pilot, base campaign, scientific evidence" in program
-    assert "next gate is a separately registered and owner-authorized" in program
+    assert "completed its fixed DD-010 sealed engineering pilot" in program
+    assert "sealed-pilot-quarantined-provider-failure" in program
+    assert "two preserved provider failures block base-campaign readiness" in program
+    assert "Any repair is separately registered and owner-authorized" in program
     assert 'id="information-sharing-frontier"' in program
     assert 'href="publications/information-sharing-frontier.html"' in program
     assert "docs/theorem-spine.md" in program
@@ -132,12 +133,12 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         assert (output / f"benchmark/{route}.html").is_file()
         assert (output / f"treasurebench/{route}.html").is_file()
     agents_registration = (output / "benchmark/agents-v1.html").read_text(encoding="utf-8")
-    assert "Offline implementation complete" in agents_registration
-    assert "Required adapters calibrated" in agents_registration
-    assert "607 calls and USD 2.311758000" in agents_registration
-    assert "No private seed, holdout, private answer key" in agents_registration
-    assert "No provider comparison, ranking, leaderboard" in agents_registration
-    assert "not a result route or leaderboard" in agents_registration
+    assert "Sealed pilot complete" in agents_registration
+    assert "Quarantined provider failure" in agents_registration
+    assert "3,037 attempts, 3,035 successes" in agents_registration
+    assert "No private task, answer, seed, key, prompt, output" in agents_registration
+    assert "no study, claim, immutable scientific run, paper result" in agents_registration
+    assert "does not authorize the 200-task base campaign" in agents_registration
     agents_data = json.loads(
         (output / "data/benchmark/agents-v1-registration.json").read_text(encoding="utf-8")
     )
@@ -166,10 +167,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     agents_evaluation = json.loads(
         (output / "data/benchmark/agents-v1-evaluation.json").read_text(encoding="utf-8")
     )
-    assert (
-        agents_evaluation["campaign_decision"]
-        == "provider-preflight-and-public-calibration-complete"
-    )
+    assert agents_evaluation["campaign_decision"] == ("sealed-pilot-quarantined-provider-failure")
     assert agents_evaluation["public_calibration"] == {
         "architectures": 5,
         "classification": "engineering-only-not-scientific-evidence",
@@ -186,6 +184,14 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "scientific_evidence_exists": False,
         "tasks": 10,
     }
+    assert agents_evaluation["selected_next_tier"]["status"] == "complete-quarantined"
+    assert agents_evaluation["selected_next_tier"]["attempts"] == 3037
+    assert agents_evaluation["selected_next_tier"]["errors"] == 2
+    assert agents_evaluation["selected_next_tier"]["method_a_b_disagreements"] == 0
+    assert agents_evaluation["selected_next_tier"]["contamination_findings"] == 0
+    assert agents_evaluation["authorization"]["base_campaign_authorized"] is False
+    assert agents_evaluation["scientific_results_exist"] is False
+    assert agents_evaluation["provider_comparative_results_published"] is False
     benchmark_lab = (output / "labs/benchmark.html").read_text()
     assert "no submissions" in benchmark_lab
     assert "JavaScript is off" in benchmark_lab

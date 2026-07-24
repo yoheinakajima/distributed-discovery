@@ -369,10 +369,16 @@ def generate_instance(
     """Generate one deterministic instance; private generation fails closed."""
     if variant not in range(4):
         raise ValueError("variant must be in 0..3")
-    if not public_fixture:
+    private_allowed = (
+        authorization is not None
+        and custody_context is not None
+        and getattr(custody_context, "allows_private_generation", False) is True
+        and getattr(custody_context, "campaign_id", None) == "treasurebench-agents-v1-pilot-v1"
+    )
+    if not public_fixture and not private_allowed:
         raise PermissionError(
-            "private generation is disabled until a future authorized campaign "
-            "implements its custody context"
+            "private generation is disabled without a future authorized "
+            "sealed-pilot custody context"
         )
     parameters = dict(cell.parameters)
     target_count = int(str(parameters["target_count"]))

@@ -900,12 +900,15 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
     agents_versions = _read_yaml(root / "docs/benchmark/agents-v1/versioning.yml")
     agents_readiness = _read_yaml(root / "reports/benchmark/agents-v1-provider-readiness.yml")
     agents_calibration = _read_yaml(root / "reports/benchmark/agents-v1-public-calibration.yml")
+    agents_pilot = _read_yaml(root / "reports/benchmark/treasurebench-agents-v1-pilot-closeout.yml")
     if (
         agents_readiness.get("overall_decision")
         != "all-required-providers-ready-public-calibration-complete"
         or agents_calibration.get("status") != "pass"
+        or agents_pilot.get("decision") != "sealed-pilot-quarantined-provider-failure"
+        or agents_pilot.get("redaction_status") != "pass"
     ):
-        raise ValueError("Agents v1 public calibration status is incomplete")
+        raise ValueError("Agents v1 public calibration or sealed-pilot closeout is incomplete")
     agents_ledger = agents_readiness["ledger"]
     agents_cost = str(agents_ledger["total_cost_usd"])
     agents_families = [
@@ -918,7 +921,13 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
     agents_family_items = "".join(
         f"<li>{html.escape(str(item['name']))}</li>" for item in agents_families
     )
-    agents_body = f"""<header class="page-hero"><p class="eyebrow">DD-010 instrument · public engineering calibration</p><h1>DiscoveryBench Agents v1</h1><p class="lede">A complete instrument for studying how software-agent teams turn synthetic evidence into action portfolios. Its adapters have passed an authorized public-only calibration; no private campaign or scientific evaluation has run.</p><p class="status-row"><span class="status-chip">Offline implementation complete</span><span class="status-chip">Required adapters calibrated</span><span class="status-chip subtle">Public tasks only</span></p></header><section class="content-section prose"><h2>Public conformance</h2><p>The implementation provides deterministic generation across 138 canonical cells and 552 prompt variants, closed information boundaries, five registered architecture orchestrators, strict structured actions, separate exact-rational metrics, hashed and redacted traces, AES-256-GCM public toy custody, 12 contamination probe classes, authorization guards, and independent verification.</p><p>The deterministic offline rehearsal covers 10 public tasks across all five architectures: 50 cases pass, Method A and Method B agree, and all 24 registered corruptions are rejected. The live engineering calibration exercised both required direct-provider adapters over the same 10 public tasks and five architectures: 100 route-cases passed protocol and Method A/B checks. These are adapter and instrument-conformance records, not scientific model results.</p><h3>Task families</h3><ul>{agents_family_items}</ul></section><section class="content-section prose"><h2>Provider boundary</h2><p>Direct OpenAI and direct Anthropic passed exact-route structured-output and public-task calibration. Optional OpenRouter Gemini and Mistral routes remained policy-ineligible under the frozen exact-endpoint, no-fallback, data-denial, ZDR, and required-parameter rules; they are not campaign substitutes and add no direct-gateway or local/open diversity.</p><p>The cumulative redacted operational ledger includes every attempt: 607 calls and USD {html.escape(agents_cost)} against the USD 20 public-calibration cap. No provider comparison, ranking, leaderboard, composite score, or model-response table is published.</p></section><section class="content-section prose"><h2>Evidence boundary</h2><p>No private seed, holdout, private answer key, custody key, sealed pilot, base campaign, scientific claim, immutable scientific run, or paper action exists from this lane. No model was downloaded and no hidden reasoning was requested or stored. DD-010 still owns the instrument; DD-023 remains unallocated.</p><p>The calibration record establishes adapter readiness only. It cannot support, complicate, or contradict a paper and is not a result route or leaderboard.</p></section><section class="content-section prose"><h2>Versions and next gate</h2><dl><div><dt>Owner</dt><dd>DD-010 instrument</dd></div><div><dt>Content</dt><dd>Explicit selection from preserved v1, v2, or v3</dd></div><div><dt>Agent protocol</dt><dd><code>{html.escape(str(agents_versions["axes"]["agent_protocol"]))}</code></dd></div><div><dt>Generator</dt><dd><code>{html.escape(str(agents_versions["axes"]["task_generator"]))}</code></dd></div><div><dt>Rehearsal hash</dt><dd><code>sha256:d3410ff04bb73dcae929c3abc4cf289d58d6830f2a5ab50ca53764bef4af2c59</code></dd></div></dl><p>The next gate is a separately registered and owner-authorized sealed engineering pilot. The completed public-calibration authorization does not permit private material or campaign execution.</p><p><a href="../data/benchmark/agents-v1-evaluation.json">Download the public operational summary</a> · <a href="../data/benchmark/agents-v1-implementation.json">Download the implementation summary</a> · <a href="../data/benchmark/agents-v1-registration.json">Download the preserved instrument registration</a> · <a href="../research/dd-010.html">DD-010 study record</a> · <a href="../benchmark.html">DiscoveryBench overview</a></p></section>"""
+    agents_body = f"""
+<header class="page-hero"><p class="eyebrow">DD-010 instrument · sealed engineering closeout</p><h1>DiscoveryBench Agents v1</h1><p class="lede">A complete instrument for studying how software-agent teams turn synthetic evidence into action portfolios. Its fixed sealed engineering pilot completed with a quarantined provider-failure outcome; this is not a scientific evaluation or provider ranking.</p><p class="status-row"><span class="status-chip">Sealed pilot complete</span><span class="status-chip">Quarantined provider failure</span><span class="status-chip subtle">No base-campaign authority</span></p></header>
+<section class="content-section prose"><h2>Public conformance</h2><p>The implementation provides deterministic generation across 138 canonical cells and 552 prompt variants, closed information boundaries, five registered architecture orchestrators, strict structured actions, separate exact-rational metrics, hashed and redacted traces, AES-256-GCM custody, 12 contamination probe classes, authorization guards, and independent verification.</p><p>The deterministic offline rehearsal covers 10 public tasks across all five architectures: 50 cases pass, Method A and Method B agree, and all 24 original instrument corruptions reject. The live public calibration exercised both required direct-provider adapters over the same 10 public tasks and five architectures: 100 route-cases passed protocol and Method A/B checks. These remain adapter and instrument-conformance records, not scientific model results.</p><h3>Task families</h3><ul>{agents_family_items}</ul></section>
+<section class="content-section prose"><h2>Sealed-pilot closeout</h2><p>The fixed encrypted pilot covered 50 tasks, five architectures, two exact direct model snapshots, and 500 private runs. Its redacted ledger contains 3,037 attempts, 3,035 successes, and two preserved Anthropic errors. Usage was 2,004,503 input tokens and 392,889 output tokens; total cost was USD 11.5702435.</p><p>The provider phase closed before unsealing. The output lock covers 3,545 encrypted objects. Post-lock Method A and independent Method B have zero disagreements, contamination findings are zero, all 76 registered corruptions reject, and redaction, private-leak scanning, and cost reconciliation pass. Two reconstructed protocol errors and the provider failures require <code>sealed-pilot-quarantined-provider-failure</code>.</p></section>
+<section class="content-section prose"><h2>Evidence boundary</h2><p>No private task, answer, seed, key, prompt, output, raw trace, task-level metric, provider comparison, ranking, leaderboard, or composite is public. Encrypted custody and the final encrypted audit package are retained for 365 days. No hidden reasoning was requested or stored.</p><p>This is non-inferential DD-010 instrument engineering. DD-023 remains unallocated; no study, claim, immutable scientific run, paper result, or base-campaign authority exists.</p></section>
+<section class="content-section prose"><h2>Versions and next gate</h2><dl><div><dt>Owner</dt><dd>DD-010 instrument</dd></div><div><dt>Content</dt><dd>Explicit selection from preserved v1, v2, or v3</dd></div><div><dt>Agent protocol</dt><dd><code>{html.escape(str(agents_versions["axes"]["agent_protocol"]))}</code></dd></div><div><dt>Generator</dt><dd><code>{html.escape(str(agents_versions["axes"]["task_generator"]))}</code></dd></div><div><dt>Output lock</dt><dd><code>{html.escape(str(agents_pilot["output_lock_commitment"]))}</code></dd></div></dl><p>Any instrument repair or rerun requires separate registration and owner authorization. The quarantined pilot does not authorize the 200-task base campaign.</p><p><a href="../data/benchmark/agents-v1-evaluation.json">Download the redacted operational summary</a> · <a href="../data/benchmark/agents-v1-implementation.json">Download the implementation summary</a> · <a href="../data/benchmark/agents-v1-registration.json">Download the preserved instrument registration</a> · <a href="../research/dd-010.html">DD-010 study record</a> · <a href="../benchmark.html">DiscoveryBench overview</a></p></section>
+"""
     _write_benchmark_route_pair(
         output,
         legacy_route="benchmark/agents-v1.html",
@@ -1000,7 +1009,7 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         "schema_version": 1,
         "instrument_id": "discoverybench-agents-v1",
         "instrument_owner": "DD-010",
-        "campaign_decision": "provider-preflight-and-public-calibration-complete",
+        "campaign_decision": "sealed-pilot-quarantined-provider-failure",
         "public_calibration": {
             "classification": "engineering-only-not-scientific-evidence",
             "tasks": 10,
@@ -1024,6 +1033,17 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
             "repeats": 1,
             "architectures": 5,
             "claim_eligible": False,
+            "status": "complete-quarantined",
+            "decision": "sealed-pilot-quarantined-provider-failure",
+            "private_runs": 500,
+            "attempts": 3037,
+            "successes": 3035,
+            "errors": 2,
+            "protocol_errors": 2,
+            "method_a_b_disagreements": 0,
+            "contamination_findings": 0,
+            "cost_usd": "11.5702435",
+            "output_lock_commitment": agents_pilot["output_lock_commitment"],
         },
         "future_base": {
             "instances": 200,
@@ -1046,16 +1066,19 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
             "public_calibration_was_authorized": True,
             "public_calibration_cap_usd": 20,
             "public_calibration_cost_usd": agents_cost,
-            "sealed_pilot_authorized": False,
+            "sealed_pilot_completed": True,
             "base_campaign_authorized": False,
             "recommended_pilot_cap_usd": 100,
         },
-        "private_material_exists": False,
+        "encrypted_private_material_retained": True,
+        "private_material_published": False,
         "scientific_results_exist": False,
         "provider_comparative_results_published": False,
         "study_id_allocated": False,
         "expected_future_study_id": "DD-023",
-        "next_gate": ("Separately registered and owner-authorized sealed engineering pilot"),
+        "next_gate": (
+            "Separately registered and owner-authorized instrument repair; base campaign blocked"
+        ),
     }
     _write(
         output,
@@ -3644,7 +3667,7 @@ def _render(
 <section class="content-section prose"><h2>How the work is published</h2><p>The canonical entry paper introduces the atomic paradox. Theorem-family papers own durable mathematical questions. Working notes support intermediate or synthetic arguments. The living synthesis preserves the complete intellectual account. Reproducible studies, Labs, and DiscoveryBench expose evidence and interfaces.</p><p>No journal submission status is represented here. A validated PDF, exact run, or polished site does not by itself satisfy the paper-admission rule.</p><p><a href="publications.html">Browse working papers</a> · <a href="{REPOSITORY_URL}/blob/main/docs/research-governance.md">Read the governance source</a></p></section>"""
     program_body = program_body.replace(
         '<section class="content-section prose"><h2>Next open boundary</h2><p>The bounded Decentralized Recovery registration gate stopped at classical overlap: the frozen equal-sharing action game is singleton congestion, and visible sequential occupancy adds ordinary backward induction without enlarging the every-equilibrium top-two recovery region. No study, claim, run, or paper was created.</p><p>Reliable Discovery is now the next unregistered theorem program. It asks when reliable, unreliable, repeated, or overlapping actions should diversify or concentrate, and must establish content beyond classical reliability allocation before registration. The Price of Missing Provenance follows separately.</p></section>',
-        '<section class="content-section prose"><h2>Phase boundary and hold</h2><p>Phase 1 is complete: Programs V1–V5, this Frontier, post-V5 consolidation, and the stopped decentralized-recovery overlap gate form the completed boundary. This does not mean every theorem direction is complete.</p><p>Phase 2 holds theorem-family execution. Reliable Discovery remains a major candidate but is deferred. <a href="benchmark/agents-v1.html">DiscoveryBench Agents v1</a> is implemented under DD-010 and its required adapters passed an authorized public-only engineering calibration. No private task, sealed pilot, base campaign, scientific evidence, or paper action exists. Its next gate is a separately registered and owner-authorized sealed engineering pilot. <a href="start-here.html">Start with three results</a> · <a href="methods.html">Read the factual methods record</a>.</p></section>',
+        '<section class="content-section prose"><h2>Phase boundary and hold</h2><p>Phase 1 is complete: Programs V1–V5, this Frontier, post-V5 consolidation, and the stopped decentralized-recovery overlap gate form the completed boundary. This does not mean every theorem direction is complete.</p><p>Phase 2 holds theorem-family execution. Reliable Discovery remains a major candidate but is deferred. <a href="benchmark/agents-v1.html">DiscoveryBench Agents v1</a> completed its fixed DD-010 sealed engineering pilot with decision <code>sealed-pilot-quarantined-provider-failure</code>. Method A/B disagreement and contamination counts are zero, but two preserved provider failures block base-campaign readiness. No study, claim, scientific run, paper result, ranking, or detailed private performance is published. Any repair is separately registered and owner-authorized. <a href="start-here.html">Start with three results</a> · <a href="methods.html">Read the factual methods record</a>.</p></section>',
         1,
     )
     program_body += _render_related_formulations(
