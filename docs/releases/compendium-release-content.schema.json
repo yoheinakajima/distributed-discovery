@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Distributed Discovery compendium release-content registry",
+  "type": "object",
+  "required": ["schema_version", "compendium_version", "candidate_tag", "tracked_files_only", "groups", "papers", "global_exclusions"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "compendium_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "candidate_tag": {"type": "string", "pattern": "^dd-compendium-v[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "tracked_files_only": {"const": true},
+    "groups": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/group"}
+    },
+    "papers": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {"$ref": "#/$defs/paper"}
+    },
+    "global_exclusions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "$defs": {
+    "group": {
+      "type": "object",
+      "required": ["group_id", "include", "paths", "authority", "license", "checksum_rule", "required", "privacy", "reason", "external_owner_attestation_required", "archive_destination"],
+      "properties": {
+        "group_id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+        "include": {"type": "boolean"},
+        "paths": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "authority": {"type": "string", "minLength": 1},
+        "license": {"type": ["string", "null"]},
+        "checksum_rule": {"type": "string", "minLength": 1},
+        "required": {"type": "boolean"},
+        "privacy": {"enum": ["public", "excluded-private", "excluded-local"]},
+        "reason": {"type": "string", "minLength": 1},
+        "external_owner_attestation_required": {"type": "boolean"},
+        "archive_destination": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "paper": {
+      "type": "object",
+      "required": ["paper_id", "root", "pdf", "pdf_sha256", "page_count", "main_source", "main_source_sha256", "include_patterns", "exclude_patterns"],
+      "properties": {
+        "paper_id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+        "root": {"type": "string", "pattern": "^papers/[a-z0-9-]+$"},
+        "pdf": {"type": "string", "pattern": "^papers/.+\\.pdf$"},
+        "pdf_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "page_count": {"type": "integer", "minimum": 1},
+        "main_source": {"type": "string", "pattern": "^papers/.+/main\\.tex$"},
+        "main_source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "include_patterns": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "exclude_patterns": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

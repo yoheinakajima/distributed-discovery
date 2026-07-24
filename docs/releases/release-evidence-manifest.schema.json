@@ -4,20 +4,31 @@
   "type": "object",
   "required": [
     "schema_version", "manifest_kind", "release_status", "compendium_version",
-    "tag", "source_revision", "github_release_url", "version_doi",
-    "concept_doi", "generated_utc", "inventory", "artifacts"
+    "candidate_tag", "tag", "source_revision", "github_release_url",
+    "version_doi", "concept_doi", "generated_utc", "content_registry",
+    "inventory", "artifacts", "paper_bundle", "release_assets", "safety"
   ],
   "properties": {
-    "schema_version": {"const": 1},
+    "schema_version": {"const": 2},
     "manifest_kind": {"enum": ["example", "dry-run", "release"]},
-    "release_status": {"enum": ["template-only", "dry-run-only", "published"]},
+    "release_status": {"enum": ["template-only", "dry-run-only", "authorized-assets-only"]},
     "compendium_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "candidate_tag": {"type": "string", "pattern": "^dd-compendium-v[0-9]+\\.[0-9]+\\.[0-9]+$"},
     "tag": {"type": ["string", "null"], "pattern": "^dd-compendium-v[0-9]+\\.[0-9]+\\.[0-9]+$"},
     "source_revision": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"},
     "github_release_url": {"type": ["string", "null"], "format": "uri"},
     "version_doi": {"type": ["string", "null"]},
     "concept_doi": {"type": ["string", "null"]},
     "generated_utc": {"type": ["string", "null"], "format": "date-time"},
+    "content_registry": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"const": "docs/releases/compendium-v0.1.0-content.yml"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
     "inventory": {
       "type": "object",
       "required": ["claims", "maximum_claim_id", "studies", "maximum_study_id", "manifests", "passing_manifests"],
@@ -46,6 +57,45 @@
         },
         "additionalProperties": false
       }
+    },
+    "paper_bundle": {
+      "type": ["object", "null"],
+      "required": ["filename", "sha256", "inventory_member", "archive_members", "papers", "pages"],
+      "properties": {
+        "filename": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "inventory_member": {"type": "string"},
+        "archive_members": {"type": "integer", "minimum": 1},
+        "papers": {"const": 7},
+        "pages": {"const": 119}
+      },
+      "additionalProperties": false
+    },
+    "release_assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["filename", "sha256", "bytes"],
+        "properties": {
+          "filename": {"type": "string"},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "bytes": {"type": "integer", "minimum": 0}
+        },
+        "additionalProperties": false
+      }
+    },
+    "safety": {
+      "type": "object",
+      "required": ["tracked_files_only", "symlinks", "external_mutations", "private_material", "credentials", "host_paths"],
+      "properties": {
+        "tracked_files_only": {"const": true},
+        "symlinks": {"const": 0},
+        "external_mutations": {"const": 0},
+        "private_material": {"const": 0},
+        "credentials": {"const": 0},
+        "host_paths": {"const": 0}
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false

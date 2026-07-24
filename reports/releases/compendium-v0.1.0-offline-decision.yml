@@ -1,0 +1,50 @@
+schema_version: 1
+decision: offline-release-candidate-toolchain-ready
+decision_scope: offline-preparation-only
+candidate:
+  version: 0.1.0
+  tag: dd-compendium-v0.1.0
+  title: Distributed Discovery Research Compendium v0.1.0
+release_content_registry: docs/releases/compendium-v0.1.0-content.yml
+asset_names:
+  - distributed-discovery-compendium-v0.1.0-release-evidence-manifest.json
+  - distributed-discovery-compendium-v0.1.0-SHA256SUMS.txt
+  - distributed-discovery-compendium-v0.1.0-paper-citation-metadata.yml
+  - distributed-discovery-compendium-v0.1.0-papers.zip
+  - distributed-discovery-compendium-v0.1.0-release-notes.md
+archive:
+  format: zip
+  member_order: lexical
+  timestamp: "1980-01-01T00:00:00Z"
+  regular_file_mode: "0644"
+  compression: deflate-level-9
+  encoding: UTF-8
+source_revision:
+  injection: required-explicit-argument
+  committed_final_manifest: false
+external_identifiers:
+  dry_run: null
+  infer_identifiers: false
+external_actions_authorized: false
+paper_status:
+  local_papers: 7
+  total_pages: 119
+  peer_reviewed: false
+canonical_upstream:
+  treatment: lock-attribution-and-integration-metadata-only
+  duplicate_bundle: false
+later_owner_requirements:
+  - validate an explicit owner authorization
+  - attest release licensing for manuscripts, PDFs, and generated figures
+  - create and push the annotated tag
+  - create and verify the GitHub Release
+  - enable and verify Zenodo ingestion
+  - record only identifiers returned by published external records
+prohibited_now:
+  - git tag creation or push
+  - GitHub Release creation or asset upload
+  - Zenodo query, connection, deposit, or mutation
+  - DOI reservation, inference, or recording
+  - provider or model call
+  - private benchmark access
+  - paper or scientific evidence change

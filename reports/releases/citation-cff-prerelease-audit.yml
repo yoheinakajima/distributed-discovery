@@ -1,0 +1,18 @@
+schema_version: 1
+audited_utc: "2026-07-24T00:00:00Z"
+cff_version: 1.2.0
+decision: valid-prerelease-without-date-released-or-doi
+fields:
+  title: Distributed Discovery Research Compendium
+  message: accurate-compendium-citation
+  type: software
+  author: present
+  version: 0.1.0-candidate-supported-by-policy
+  date_released: absent-because-no-release-exists
+  repository_code: canonical
+  url: canonical-site
+  license: MIT
+  abstract: compendium-scope
+  doi: absent
+zenodo_json_present: false
+official_sources_accessed_utc_date: "2026-07-24"

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "First Distributed Discovery compendium external-release authorization",
+  "type": "object",
+  "required": ["schema_version", "authorization_status", "authorization_scope", "candidate_version", "candidate_tag", "source_revision", "release_allowed", "create_annotated_tag", "push_tag", "create_github_release", "upload_release_assets", "zenodo", "other_permissions", "owner_attestation"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "authorization_status": {"enum": ["pending-owner-decision", "active"]},
+    "authorization_scope": {"const": "first-compendium-external-publication"},
+    "candidate_version": {"const": "0.1.0"},
+    "candidate_tag": {"const": "dd-compendium-v0.1.0"},
+    "source_revision": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"},
+    "release_allowed": {"type": "boolean"},
+    "create_annotated_tag": {"type": "boolean"},
+    "push_tag": {"type": "boolean"},
+    "create_github_release": {"type": "boolean"},
+    "upload_release_assets": {"type": "boolean"},
+    "zenodo": {
+      "type": "object",
+      "required": ["repository_enabled_attested", "ingestion_authorized", "post_ingest_metadata_verification_required"],
+      "properties": {
+        "repository_enabled_attested": {"type": "boolean"},
+        "ingestion_authorized": {"type": "boolean"},
+        "post_ingest_metadata_verification_required": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "other_permissions": {
+      "type": "object",
+      "required": ["package_publication", "arxiv_submission", "journal_submission", "provider_calls", "private_benchmark_access"],
+      "properties": {
+        "package_publication": {"const": false},
+        "arxiv_submission": {"const": false},
+        "journal_submission": {"const": false},
+        "provider_calls": {"const": false},
+        "private_benchmark_access": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "owner_attestation": {
+      "type": "object",
+      "required": ["authorization_id", "synthetic_fixture", "licensing_attested", "approved_utc"],
+      "properties": {
+        "authorization_id": {"type": ["string", "null"]},
+        "synthetic_fixture": {"type": "boolean"},
+        "licensing_attested": {"type": "boolean"},
+        "approved_utc": {"type": ["string", "null"], "format": "date-time"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

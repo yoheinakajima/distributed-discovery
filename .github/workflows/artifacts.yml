@@ -1,7 +1,7 @@
 name: Paper and site builds
 on:
   pull_request:
-    paths: ["papers/**", "site/**", "claims/**", "scripts/build_*", ".github/workflows/artifacts.yml"]
+    paths: ["papers/**", "site/**", "claims/**", "docs/releases/**", "reports/releases/**", "CITATION.cff", "scripts/build_*", "scripts/verify_compendium_release.py", ".github/workflows/artifacts.yml"]
   workflow_dispatch:
 jobs:
   build:

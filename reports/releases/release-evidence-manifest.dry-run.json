@@ -1,14 +1,19 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "manifest_kind": "dry-run",
   "release_status": "dry-run-only",
   "compendium_version": "0.1.0",
+  "candidate_tag": "dd-compendium-v0.1.0",
   "tag": null,
   "source_revision": null,
   "github_release_url": null,
   "version_doi": null,
   "concept_doi": null,
   "generated_utc": null,
+  "content_registry": {
+    "path": "docs/releases/compendium-v0.1.0-content.yml",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
   "inventory": {
     "claims": 110,
     "maximum_claim_id": "DD-C-0110",
@@ -74,5 +79,15 @@
       "source_bundle": "papers/information-sharing-frontier/main.tex",
       "source_sha256": "41cb86cb4ea4fc1221c3fb4c88a31418b2f5bff0fbc35777d9c895e35084982f"
     }
-  ]
+  ],
+  "paper_bundle": null,
+  "release_assets": [],
+  "safety": {
+    "tracked_files_only": true,
+    "symlinks": 0,
+    "external_mutations": 0,
+    "private_material": 0,
+    "credentials": 0,
+    "host_paths": 0
+  }
 }

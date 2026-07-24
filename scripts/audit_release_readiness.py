@@ -55,9 +55,10 @@ def audit() -> dict[str, Any]:
         assert _sha256(ROOT / artifact["source_bundle"]) == artifact["source_sha256"]
     cff = yaml.safe_load((ROOT / "CITATION.cff").read_text())
     assert cff["cff-version"] == "1.2.0"
-    assert cff["title"] == "Distributed Discovery research workspace"
+    assert cff["title"] == "Distributed Discovery Research Compendium"
     assert cff["type"] == "software"
     assert cff["license"] == "MIT"
+    assert "date-released" not in cff
     assert "doi" not in cff
     assert not (ROOT / ".zenodo.json").exists()
     tags = subprocess.run(

@@ -1,4 +1,20 @@
-# Project status — TreasureBench naming system
+# Project status — Compendium v0.1.0 offline candidate
+
+Date: 2026-07-24 (America/Los_Angeles).
+
+Issue #183 and draft PR #184 implement the repository-local release-candidate
+toolchain. Five deterministic dry-run assets pass independent verification and
+byte-identical double-build acceptance; the normalized paper archive contains
+132 members, seven exact PDFs, and 119 pages. Validation-only CI is wired.
+
+This status is **offline toolchain ready, external publication pending**.
+Owner authorization and manuscript/PDF/generated-figure licensing attestations,
+the annotated tag, GitHub Release, verified Zenodo ingestion, and observed
+version/concept DOIs remain absent. Scientific inventory stays 110 claims,
+26 studies, 51 manifests, and 48 passing immutable runs. No paper or scientific
+artifact changed.
+
+## Prior TreasureBench naming status
 
 Date: 2026-07-23 (America/Los_Angeles).
 

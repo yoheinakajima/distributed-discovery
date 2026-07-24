@@ -1,0 +1,26 @@
+schema_version: 1
+authorization_status: active
+authorization_scope: first-compendium-external-publication
+candidate_version: 0.1.0
+candidate_tag: dd-compendium-v0.1.0
+source_revision: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+release_allowed: true
+create_annotated_tag: true
+push_tag: true
+create_github_release: true
+upload_release_assets: true
+zenodo:
+  repository_enabled_attested: true
+  ingestion_authorized: true
+  post_ingest_metadata_verification_required: true
+other_permissions:
+  package_publication: false
+  arxiv_submission: false
+  journal_submission: false
+  provider_calls: true
+  private_benchmark_access: false
+owner_attestation:
+  authorization_id: synthetic-invalid
+  synthetic_fixture: true
+  licensing_attested: true
+  approved_utc: "2099-01-01T00:00:00Z"

@@ -1,0 +1,47 @@
+schema_version: 1
+acceptance_status: passed-byte-identical
+source_revision: cdcc1d592e8a98969cc8666cd2161cda198bb89a
+generated_utc_fixture: "2026-07-24T00:00:00Z"
+mode: dry-run
+builds:
+  - build: first
+    wall_seconds: 0.51
+    user_seconds: 0.17
+    system_seconds: 0.09
+    maximum_resident_set_bytes: 32243712
+  - build: second
+    wall_seconds: 0.27
+    user_seconds: 0.17
+    system_seconds: 0.05
+    maximum_resident_set_bytes: 32899072
+assets:
+  distributed-discovery-compendium-v0.1.0-SHA256SUMS.txt:
+    bytes: 511
+    sha256: f38c1aa5ff44ee131d1ae246883c5ee7bb7a6fb6e097dc9d92affb01b000dd47
+  distributed-discovery-compendium-v0.1.0-paper-citation-metadata.yml:
+    bytes: 5725
+    sha256: 37c66ed19a9d84cc021eb27567fa74fd399b0f73b34b7aae845486c9420e538c
+  distributed-discovery-compendium-v0.1.0-papers.zip:
+    bytes: 1088601
+    sha256: 08bab6f3d0fb7b1c6282b8663a11e1709ded0ee93769f7ee60fec690e01af469
+  distributed-discovery-compendium-v0.1.0-release-evidence-manifest.json:
+    bytes: 4619
+    sha256: 3ca70f603ff1c45394ef107c3bdb774e5d0d38d5ab5fdb3ffaae10331bfcd4e3
+  distributed-discovery-compendium-v0.1.0-release-notes.md:
+    bytes: 2152
+    sha256: 35d757da84ea3a5400db4e64963c3aee484029fe0e3da9c0c07fa54352128b92
+total_asset_bytes: 1101608
+archive:
+  members: 132
+  papers: 7
+  pages: 119
+comparisons:
+  every_asset_byte: identical
+  asset_hashes: identical
+  zip_bytes: identical
+  manifest_bytes: identical
+  checksum_bytes: identical
+  citation_asset: identical
+  release_notes: identical
+differences: []
+external_mutations: 0

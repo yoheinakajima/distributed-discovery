@@ -1,5 +1,13 @@
 # Zenodo readiness audit
 
+Update 2026-07-24: the deterministic offline Compendium v0.1.0 candidate
+toolchain is implemented and its five dry-run assets pass byte-identical
+double-build and independent verification. The repository remains **not
+externally release-ready**: no tag or GitHub Release exists, Zenodo activation
+and ingestion are unverified, manuscript/PDF/generated-figure owner licensing
+attestations remain pending, and no DOI exists. The exact next gate is an
+owner-authorized external publication followed by observed Zenodo ingestion.
+
 Audited 2026-07-23. The repository is **prepared but not release-ready**.
 
 The root `CITATION.cff` correctly describes the compendium and contains no DOI.

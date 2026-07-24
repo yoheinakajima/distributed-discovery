@@ -1,5 +1,14 @@
 # Current program state
 
+_Offline Compendium v0.1.0 candidate preparation, 2026-07-24:_ issue #183 and
+draft PR #184 implement a deterministic, tracked-file-only offline release
+toolchain. Two fixed-input builds produce byte-identical manifest, checksums,
+paper citation metadata, seven-paper ZIP, and notes; the verifier confirms 132
+normalized members, seven exact PDFs, and 119 pages. This is not a release.
+There is no tag, GitHub Release, Zenodo deposit, DOI, provider call, private
+benchmark material, or scientific change. The next gate is owner-authorized
+external publication and verified Zenodo ingestion.
+
 _TreasureBench naming and playable-companion migration, 2026-07-23:_
 TreasureBench is the formal public suite name. Its canonical subtitle is
 “TreasureBench: a benchmark for collective search under shared and private

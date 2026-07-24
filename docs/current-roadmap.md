@@ -1,4 +1,10 @@
-# Current roadmap — TreasureBench adopted; release activation next
+# Current roadmap — offline compendium candidate; owner activation next
+
+The v0.1.0 offline release-candidate toolchain is implemented under issue #183
+and draft PR #184. The remaining gate is explicit owner authorization and
+licensing attestation, creation of the immutable annotated tag and GitHub
+Release, then verification of actual Zenodo ingestion and identifiers. No
+external action or identifier exists yet.
 
 The owner-selected layered naming system is implemented: TreasureBench is the
 formal suite, Treasure Hunt is its interactive companion, and DiscoveryBench
