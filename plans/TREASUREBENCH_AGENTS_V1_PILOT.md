@@ -29,7 +29,7 @@ Baseline audit completed at `2026-07-24T15:52:58Z`.
 - peer-message leakage-boundary repair commit:
   `8775baf89579a7eac8e7c911f5b1f794b89606d0`;
 - forward-only private reauthorization-binding repair commit:
-  `99dbfb8e776ee5a01fd9860893e91107c40c6bbb`;
+  `99dbfb8f54bde2ed239bb1ef9e75a81115024845`;
 - current frozen execution-tree hash:
   `sha256:5bb0d48fd9280b69df5df38362d0aa015fb8584aa34ab20b178c6cf0465cfe63`;
 - open substantive pull requests before branch creation: none;
