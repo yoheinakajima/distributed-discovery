@@ -1,0 +1,47 @@
+schema_version: treasurebench-agents-v1-pilot-authorization-v1
+authorization_id: SYNTHETIC-VALID-OFFLINE-FIXTURE
+authorization_status: authorized
+authorized_at_utc: "2026-07-24T00:00:00Z"
+expires_at_utc: "2099-07-24T00:00:00Z"
+revoked: false
+revocation_reason: null
+purpose: treasurebench-agents-v1-sealed-engineering-pilot
+synthetic: true
+owner_attestation: Synthetic offline fixture only; this is never authority for live execution.
+authorized_base_commit: 0d3757caf322402c0c47117b3aff0490926a133d
+authorized_execution_commit: "0000000000000000000000000000000000000000"
+execution_tree_hash: "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+issue: 187
+branch: benchmark/treasurebench-agents-v1-sealed-pilot
+campaign_id: treasurebench-agents-v1-pilot-v1
+batch_id: tb-agents-v1-pilot-v1-b01
+models: [gpt-5.4-2026-03-05, claude-sonnet-4-6]
+architectures:
+  - isolated-private-agents
+  - full-broadcast-shared-transcript
+  - designated-reader-selective-sharing
+  - pooled-consensus
+  - portfolio-preserving-structured
+counts: {tasks: 50, batches: 1, repeats: 1, architectures: 5, cloud_models: 2}
+caps:
+  total_usd: 100
+  provider_usd: {OpenAI: 50, Anthropic: 50}
+  calls: 5200
+  input_tokens: 10600000
+  output_tokens: 1400000
+  live_concurrency: 2
+permissions:
+  live_provider_calls: true
+  private_generation: true
+  encryption: true
+  unsealing_after_output_lock: true
+  trace_retention: true
+  public_redacted_summary: true
+  claim: false
+  study: false
+  scientific_run: false
+  package: false
+  arxiv: false
+  journal: false
+retention_days: 365
+public_summary_boundary: redacted-engineering-only-no-task-level-performance

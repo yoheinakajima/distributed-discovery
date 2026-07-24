@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TreasureBench Agents v1 pilot private-state manifest",
+  "type": "object",
+  "required": [
+    "schema_version", "classification", "campaign_id", "batch_id",
+    "symbolic_root", "directory_mode", "file_mode", "symlinks_allowed",
+    "atomic_writes", "objects", "retention_days", "deletion_authorization_required"
+  ],
+  "properties": {
+    "schema_version": {"const": "treasurebench-pilot-private-state-v1"},
+    "classification": {"enum": ["synthetic-phase-a", "real-authorized-private"]},
+    "campaign_id": {"const": "treasurebench-agents-v1-pilot-v1"},
+    "batch_id": {"const": "tb-agents-v1-pilot-v1-b01"},
+    "symbolic_root": {"const": "XDG_STATE_HOME/distributed-discovery/treasurebench-agents-v1/pilot-v1"},
+    "directory_mode": {"const": "0700"},
+    "file_mode": {"const": "0600"},
+    "symlinks_allowed": {"const": false},
+    "atomic_writes": {"const": true},
+    "objects": {
+      "type": "array",
+      "minItems": 11,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "seed", "seed-commitment-input", "task-key", "answer-key",
+          "encrypted-tasks", "encrypted-answer-key", "access-log",
+          "raw-traces", "usage-cost-ledger", "output-lock",
+          "unsealed-audit-working-set", "encrypted-final-audit-package"
+        ]
+      }
+    },
+    "retention_days": {"const": 365},
+    "deletion_authorization_required": {"const": true}
+  },
+  "additionalProperties": false
+}

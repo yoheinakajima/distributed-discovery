@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TreasureBench Agents v1 sealed pilot request",
+  "type": "object",
+  "required": [
+    "schema_version", "status", "owner_study", "new_study_allocated",
+    "claim_eligible", "campaign_id", "tier", "batch_id", "issue", "branch",
+    "starting_main", "counts", "providers", "architectures", "plan",
+    "private_state", "boundaries", "execution_sensitive_paths"
+  ],
+  "properties": {
+    "schema_version": {"const": "treasurebench-agents-v1-pilot-request-v1"},
+    "status": {"const": "phase-a-registered-not-authorized"},
+    "owner_study": {"const": "DD-010"},
+    "new_study_allocated": {"const": false},
+    "claim_eligible": {"const": false},
+    "campaign_id": {"const": "treasurebench-agents-v1-pilot-v1"},
+    "tier": {"const": "sealed-engineering-pilot"},
+    "batch_id": {"const": "tb-agents-v1-pilot-v1-b01"},
+    "issue": {"const": 187},
+    "branch": {"const": "benchmark/treasurebench-agents-v1-sealed-pilot"},
+    "starting_main": {"const": "0d3757caf322402c0c47117b3aff0490926a133d"},
+    "counts": {
+      "type": "object",
+      "required": ["tasks", "families", "tasks_per_family", "batches", "repeats", "architectures", "cloud_models"],
+      "properties": {
+        "tasks": {"const": 50}, "families": {"const": 5},
+        "tasks_per_family": {"const": 10}, "batches": {"const": 1},
+        "repeats": {"const": 1}, "architectures": {"const": 5},
+        "cloud_models": {"const": 2}
+      },
+      "additionalProperties": false
+    },
+    "providers": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "prefixItems": [
+        {
+          "type": "object",
+          "properties": {
+            "provider": {"const": "OpenAI"}, "route_id": {"const": "openai_direct"},
+            "model": {"const": "gpt-5.4-2026-03-05"},
+            "credential_name": {"const": "OPENAI_API_KEY"}
+          },
+          "required": ["provider", "route_id", "model", "credential_name"],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "provider": {"const": "Anthropic"}, "route_id": {"const": "anthropic_direct"},
+            "model": {"const": "claude-sonnet-4-6"},
+            "credential_name": {"const": "ANTHROPIC_API_KEY"}
+          },
+          "required": ["provider", "route_id", "model", "credential_name"],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "architectures": {
+      "const": [
+        "isolated-private-agents", "full-broadcast-shared-transcript",
+        "designated-reader-selective-sharing", "pooled-consensus",
+        "portfolio-preserving-structured"
+      ]
+    },
+    "plan": {
+      "type": "object",
+      "required": [
+        "registered_calls", "maximum_calls", "registered_input_tokens",
+        "maximum_input_tokens", "registered_output_tokens",
+        "maximum_output_tokens", "estimated_cost_usd",
+        "registered_contingency_usd", "requested_total_cap_usd",
+        "requested_provider_caps_usd", "maximum_live_concurrency"
+      ],
+      "properties": {
+        "registered_calls": {"const": 4800}, "maximum_calls": {"const": 5200},
+        "registered_input_tokens": {"const": 9600000},
+        "maximum_input_tokens": {"const": 10600000},
+        "registered_output_tokens": {"const": 1228800},
+        "maximum_output_tokens": {"const": 1400000},
+        "estimated_cost_usd": {"const": 44.832},
+        "registered_contingency_usd": {"const": 56.04},
+        "requested_total_cap_usd": {"const": 100},
+        "requested_provider_caps_usd": {"const": {"OpenAI": 50, "Anthropic": 50}},
+        "maximum_live_concurrency": {"const": 2}
+      },
+      "additionalProperties": false
+    },
+    "private_state": {"type": "object"},
+    "boundaries": {
+      "type": "object",
+      "properties": {
+        "private_material_before_authorization": {"const": false},
+        "live_calls_before_authorization": {"const": false},
+        "dd023_allowed": {"const": false}, "claim_allowed": {"const": false},
+        "scientific_run_allowed": {"const": false}, "package_allowed": {"const": false},
+        "arxiv_allowed": {"const": false}, "journal_allowed": {"const": false},
+        "leaderboard_allowed": {"const": false}, "composite_allowed": {"const": false},
+        "local_model_allowed": {"const": false}, "openrouter_allowed": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "execution_sensitive_paths": {
+      "type": "array", "minItems": 12, "uniqueItems": true,
+      "items": {"type": "string"}
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,33 @@
+schema_version: treasurebench-agents-v1-pilot-registration-decision-v1
+decision: register-engineering-pilot-under-dd010
+owner: DD-010
+scientific_status: non-inferential-engineering
+issue: 187
+branch: benchmark/treasurebench-agents-v1-sealed-pilot
+campaign_id: treasurebench-agents-v1-pilot-v1
+batch_id: tb-agents-v1-pilot-v1-b01
+instances: 50
+providers: [OpenAI, Anthropic]
+models: [gpt-5.4-2026-03-05, claude-sonnet-4-6]
+repeats: 1
+architectures: 5
+estimated_cost_usd: 44.832
+registered_contingency_usd: 56.04
+requested_cap_usd: 100
+private_material_status: absent
+claim_status: none
+study_status: no-new-study
+scientific_run_status: none
+permitted_outcomes:
+  - sealed-pilot-complete-base-campaign-registration-ready
+  - sealed-pilot-complete-instrument-repair-required
+  - sealed-pilot-quarantined-provider-failure
+  - sealed-pilot-quarantined-custody-failure
+  - sealed-pilot-quarantined-trace-safety-failure
+  - sealed-pilot-quarantined-contamination
+  - sealed-pilot-quarantined-method-disagreement
+  - sealed-pilot-quarantined-cost-boundary
+  - sealed-pilot-quarantined-protocol-failure
+  - sealed-pilot-authorization-expired-or-revoked
+  - stop-execution-freeze-boundary
+next_checkpoint: phase-a-execution-freeze-and-owner-authorization

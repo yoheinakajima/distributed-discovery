@@ -1,0 +1,82 @@
+schema_version: treasurebench-agents-v1-pilot-request-v1
+status: phase-a-registered-not-authorized
+owner_study: DD-010
+new_study_allocated: false
+claim_eligible: false
+campaign_id: treasurebench-agents-v1-pilot-v1
+tier: sealed-engineering-pilot
+batch_id: tb-agents-v1-pilot-v1-b01
+issue: 187
+branch: benchmark/treasurebench-agents-v1-sealed-pilot
+starting_main: 0d3757caf322402c0c47117b3aff0490926a133d
+counts:
+  tasks: 50
+  families: 5
+  tasks_per_family: 10
+  batches: 1
+  repeats: 1
+  architectures: 5
+  cloud_models: 2
+providers:
+  - provider: OpenAI
+    route_id: openai_direct
+    model: gpt-5.4-2026-03-05
+    credential_name: OPENAI_API_KEY
+  - provider: Anthropic
+    route_id: anthropic_direct
+    model: claude-sonnet-4-6
+    credential_name: ANTHROPIC_API_KEY
+architectures:
+  - isolated-private-agents
+  - full-broadcast-shared-transcript
+  - designated-reader-selective-sharing
+  - pooled-consensus
+  - portfolio-preserving-structured
+plan:
+  registered_calls: 4800
+  maximum_calls: 5200
+  registered_input_tokens: 9600000
+  maximum_input_tokens: 10600000
+  registered_output_tokens: 1228800
+  maximum_output_tokens: 1400000
+  estimated_cost_usd: 44.832
+  registered_contingency_usd: 56.04
+  requested_total_cap_usd: 100
+  requested_provider_caps_usd: {OpenAI: 50, Anthropic: 50}
+  maximum_live_concurrency: 2
+private_state:
+  symbolic_root: XDG_STATE_HOME/distributed-discovery/treasurebench-agents-v1/pilot-v1
+  authorization_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/treasurebench-agents-v1-pilot-authorization.yml
+  retention_days_after_closeout: 365
+  tasks_and_answers_encrypted_separately: true
+  output_lock_before_unseal: true
+  raw_trace_encrypted: true
+boundaries:
+  private_material_before_authorization: false
+  live_calls_before_authorization: false
+  dd023_allowed: false
+  claim_allowed: false
+  scientific_run_allowed: false
+  package_allowed: false
+  arxiv_allowed: false
+  journal_allowed: false
+  leaderboard_allowed: false
+  composite_allowed: false
+  local_model_allowed: false
+  openrouter_allowed: false
+execution_sensitive_paths:
+  - src/distributed_discovery/benchmark/agents_v1/**
+  - src/distributed_discovery/cli.py
+  - scripts/validate_treasurebench_agents_v1_pilot_authorization.py
+  - scripts/audit_treasurebench_agents_v1_pilot.py
+  - scripts/create_treasurebench_agents_v1_pilot_authorization.sh
+  - docs/benchmark/agents-v1/treasurebench-pilot-request.yml
+  - docs/benchmark/agents-v1/treasurebench-pilot-request.schema.json
+  - docs/benchmark/agents-v1/treasurebench-pilot-authorization.schema.json
+  - docs/benchmark/agents-v1/treasurebench-pilot-authorization-template.yml
+  - docs/benchmark/agents-v1/treasurebench-pilot-private-state.md
+  - docs/benchmark/agents-v1/treasurebench-pilot-private-state.schema.json
+  - docs/benchmark/agents-v1/treasurebench-pilot-allocation.yml
+  - docs/benchmark/agents-v1/treasurebench-pilot-allocation.schema.json
+  - Makefile
+  - tests/test_treasurebench_agents_v1_pilot.py
