@@ -10,7 +10,10 @@ import pytest
 import yaml
 from jsonschema import Draft202012Validator
 
-from distributed_discovery.benchmark.agents_v1.adapters import MockAdapter
+from distributed_discovery.benchmark.agents_v1.adapters import (
+    AdapterRequest,
+    MockAdapter,
+)
 from distributed_discovery.benchmark.agents_v1.generation import (
     canonical_cells,
     generate_instance,
@@ -36,6 +39,8 @@ from distributed_discovery.benchmark.agents_v1.pilot import (
     validate_pilot_authorization,
     verify_output_lock,
 )
+from distributed_discovery.benchmark.agents_v1.pilot_live import run_mock_pilot
+from distributed_discovery.benchmark.agents_v1.prompts import compile_prompt
 
 REPO = Path(__file__).resolve().parents[1]
 DOCS = REPO / "docs/benchmark/agents-v1"
@@ -201,6 +206,37 @@ def test_provider_neutral_runner_resumes_without_duplicate_calls(
     assert first["runs"] == 10
 
 
+def test_resumable_adapter_bounds_transport_retry_and_replays_terminal_error(
+    tmp_path: Path,
+) -> None:
+    ledger = AppendOnlyLedger(tmp_path / "usage-cost-ledger.jsonl")
+    underlying = MockAdapter(mode="timeout")
+    adapter = ResumablePilotAdapter(
+        underlying,
+        provider="OpenAI",
+        model=MODELS[0],
+        ledger=ledger,
+        response_root=tmp_path / "responses",
+        response_key=b"r" * 32,
+    )
+    task = generate_instance(canonical_cells()[0], variant=0, public_fixture=True)
+    agent_id = sorted(task.capabilities)[0]
+    request = AdapterRequest(
+        prompt=compile_prompt(task, agent_id),
+        manifest=adapter.manifest,
+        round_number=0,
+        action_vocabulary=task.action_vocabulary,
+        source_vocabulary=task.source_vocabulary,
+        final_required=True,
+    )
+    first = adapter.respond(request)
+    second = adapter.respond(request)
+    assert first.error_class == "timeout"
+    assert second == first
+    assert underlying.calls == 2
+    assert len(ledger.records) == 2
+
+
 def test_offline_readiness_reads_no_credentials_or_private_material(
     monkeypatch: pytest.MonkeyPatch, tmp_path: Path
 ) -> None:
@@ -226,6 +262,30 @@ def test_complete_synthetic_rehearsal_is_stable_and_sealed() -> None:
     assert first["provider_calls"] == 0
     assert first["external_cost_usd"] == "0"
     assert first["network_enabled"] is False
+
+
+def test_staged_live_driver_passes_with_mocks_and_resumes_without_calls(
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "mock-live-driver"
+    authorization = synthetic_authorization(REPO)
+    first, first_adapters = run_mock_pilot(REPO, authorization=authorization, root=root)
+    assert first["status"] == "pass"
+    assert first["tasks"] == 50
+    assert first["private_runs"] == 500
+    assert first["method_a_b_disagreements"] == 0
+    assert first["contamination_findings"] == 0
+    assert first["protocol_errors"] == 0
+    assert first["provider_phase_closed"] is True
+    assert first["output_lock_verified"] is True
+    assert first["unseal_after_lock_verified"] is True
+    assert sum(adapter.calls for adapter in first_adapters.values()) > 0
+
+    second, second_adapters = run_mock_pilot(
+        REPO, authorization=synthetic_authorization(REPO), root=root
+    )
+    assert second == first
+    assert sum(adapter.calls for adapter in second_adapters.values()) == 0
 
 
 def test_authorization_interval_rejects_expiration() -> None:

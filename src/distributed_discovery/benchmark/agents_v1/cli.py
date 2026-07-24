@@ -29,10 +29,10 @@ from distributed_discovery.benchmark.agents_v1.orchestration import (
 )
 from distributed_discovery.benchmark.agents_v1.pilot import (
     audit_pilot_corruptions,
-    pilot_live_guard,
     pilot_offline_readiness,
     run_synthetic_rehearsal,
 )
+from distributed_discovery.benchmark.agents_v1.pilot_live import run_live_pilot
 from distributed_discovery.benchmark.agents_v1.prompts import compile_prompt
 from distributed_discovery.benchmark.agents_v1.rehearsal import (
     readiness_report,
@@ -154,7 +154,7 @@ def execute(args: argparse.Namespace) -> Mapping[str, object] | list[object]:
     if command == "pilot-offline-readiness":
         return pilot_offline_readiness(Path.cwd())
     if command == "pilot-live":
-        return pilot_live_guard(Path.cwd())
+        return run_live_pilot(Path.cwd())
     if command == "pilot-verify":
         corruptions = audit_pilot_corruptions(Path.cwd())
         if any(item["status"] != "rejected" for item in corruptions):

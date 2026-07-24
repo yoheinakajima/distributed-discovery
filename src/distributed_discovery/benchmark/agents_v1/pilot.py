@@ -33,7 +33,7 @@ from distributed_discovery.benchmark.agents_v1.adapters import (
     ModelManifest,
     Usage,
 )
-from distributed_discovery.benchmark.agents_v1.contamination import run_public_probes
+from distributed_discovery.benchmark.agents_v1.contamination import classify_text, run_public_probes
 from distributed_discovery.benchmark.agents_v1.evaluation import evaluate_run
 from distributed_discovery.benchmark.agents_v1.generation import (
     canonical_cells,
@@ -249,10 +249,19 @@ def validate_pilot_authorization(
         raise PermissionError("authorization is not within its active interval")
     if value["authorized_base_commit"] != BASE_COMMIT:
         raise PermissionError("authorized base commit mismatch")
-    commit = expected_commit or _git(repo, "rev-parse", "HEAD")
+    authorized_commit = str(value["authorized_execution_commit"])
+    commit = expected_commit or authorized_commit
     tree_hash = expected_tree_hash or execution_tree_hash(repo)
     if value["authorized_execution_commit"] != commit:
         raise PermissionError("authorized execution commit mismatch")
+    ancestor = subprocess.run(
+        ("git", "merge-base", "--is-ancestor", authorized_commit, "HEAD"),
+        cwd=repo,
+        check=False,
+        capture_output=True,
+    )
+    if ancestor.returncode != 0:
+        raise PermissionError("authorized execution commit is not an ancestor of HEAD")
     if value["execution_tree_hash"] != tree_hash:
         raise PermissionError("authorized execution tree hash mismatch")
     if _git(repo, "branch", "--show-current") != BRANCH:
@@ -346,16 +355,22 @@ def atomic_private_write(path: Path, payload: bytes) -> None:
 PRIVATE_OBJECTS = (
     "seed",
     "seed-commitment-input",
+    "execution-identity",
+    "operational-key",
     "task-key",
     "answer-key",
     "encrypted-tasks",
     "encrypted-answer-key",
+    "custody-manifest",
+    "encrypted-provider-responses",
     "access-log",
     "raw-traces",
     "usage-cost-ledger",
+    "provider-stage-state",
     "output-lock",
     "unsealed-audit-working-set",
     "encrypted-final-audit-package",
+    "redacted-summary",
 )
 
 
@@ -384,7 +399,14 @@ def initialize_private_state(
     }
     schema = repo / "docs/benchmark/agents-v1/treasurebench-pilot-private-state.schema.json"
     _validate_schema(manifest, schema)
-    atomic_private_write(resolved_root / "manifest.json", canonical_json(manifest) + b"\n")
+    manifest_path = resolved_root / "manifest.json"
+    if manifest_path.exists():
+        _require_secure_regular_file(manifest_path)
+        existing = json.loads(manifest_path.read_text(encoding="utf-8"))
+        if existing != manifest:
+            raise PermissionError("private-state manifest mismatch requires quarantine")
+    else:
+        atomic_private_write(manifest_path, canonical_json(manifest) + b"\n")
     return manifest
 
 
@@ -565,6 +587,8 @@ class AppendOnlyLedger:
     ) -> None:
         if provider not in PROVIDERS:
             raise PermissionError("provider is outside the pilot")
+        if any(record.get("event_type") == "provider-phase-closed" for record in self.records):
+            raise PermissionError("provider phase is closed")
         totals = self.totals()
         provider_totals = totals["provider_usd"]
         assert isinstance(provider_totals, Mapping)
@@ -625,8 +649,8 @@ class ResumablePilotAdapter:
         }
         return f"call-{sha256_hex(canonical_json(identity))}"
 
-    def _response_path(self, call_key: str) -> Path:
-        return self.response_root / f"{call_key}.sealed.json"
+    def _response_path(self, call_key: str, attempt: int) -> Path:
+        return self.response_root / f"{call_key}-attempt-{attempt}.sealed.json"
 
     def _serialize_response(self, response: AdapterResponse) -> Mapping[str, object]:
         return {
@@ -665,20 +689,38 @@ class ResumablePilotAdapter:
             operational_metadata={str(name): item for name, item in metadata.items()},
         )
 
-    def _load_success(self, call_key: str) -> AdapterResponse | None:
-        record = next(
-            (
-                item
-                for item in self.ledger.records
-                if item.get("idempotency_key") == call_key and item.get("status") == "success"
-            ),
-            None,
+    def _load_recorded(
+        self, call_key: str
+    ) -> tuple[AdapterResponse | None, tuple[Mapping[str, object], ...]]:
+        records = tuple(
+            item
+            for item in self.ledger.records
+            if item.get("call_key") == call_key and "transport_attempt" in item
         )
-        if record is None:
-            if self._response_path(call_key).exists():
+        recorded_attempts = {int(str(item["transport_attempt"])) for item in records}
+        for path in self.response_root.glob(f"{call_key}-attempt-*.sealed.json"):
+            attempt = int(path.stem.rsplit("-", 1)[-1].split(".", 1)[0])
+            if attempt not in recorded_attempts:
                 raise PermissionError("orphaned encrypted response requires quarantine")
-            return None
-        path = self._response_path(call_key)
+        if not records:
+            return None, records
+        retryable = {
+            "timeout",
+            "transient-transport",
+            "invalid-provider-json",
+            "rate-limit",
+            "transient-provider",
+        }
+        record = records[-1]
+        terminal = (
+            record.get("status") == "success"
+            or record.get("error_class") not in retryable
+            or len(records) >= 2
+        )
+        if not terminal:
+            return None, records
+        attempt = int(str(record["transport_attempt"]))
+        path = self._response_path(call_key, attempt)
         _require_secure_regular_file(path)
         stored = json.loads(path.read_text(encoding="utf-8"))
         if not isinstance(stored, Mapping):
@@ -693,11 +735,14 @@ class ResumablePilotAdapter:
             ciphertext_sha256=str(manifest["ciphertext_sha256"]),
             associated_data_sha256=str(manifest["associated_data_sha256"]),
         )
-        return self._deserialize_response(unseal_object(sealed, key=self.response_key))
+        return (
+            self._deserialize_response(unseal_object(sealed, key=self.response_key)),
+            records,
+        )
 
     def respond(self, request: AdapterRequest) -> AdapterResponse:
         call_key = self._key(request)
-        resumed = self._load_success(call_key)
+        resumed, records = self._load_recorded(call_key)
         if resumed is not None:
             return resumed
         maximum_cost = (
@@ -709,43 +754,82 @@ class ResumablePilotAdapter:
             )
             / Decimal(1_000_000)
         )
-        self.ledger.guard_next(
-            provider=self.provider,
-            input_tokens=4_000,
-            output_tokens=request.max_output_tokens,
-            cost_usd=maximum_cost,
-        )
-        response = self.adapter.respond(request)
-        sealed = seal_object(
-            domain=f"provider-response/{call_key}",
-            value=self._serialize_response(response),
-            key=self.response_key,
-            nonce=secrets.token_bytes(12),
-        )
-        atomic_private_write(
-            self._response_path(call_key),
-            canonical_json(
+        prior_attempts = len(records)
+        if prior_attempts >= 2:
+            raise PermissionError("registered transport retry budget is exhausted")
+        retryable = {
+            "timeout",
+            "transient-transport",
+            "invalid-provider-json",
+            "rate-limit",
+            "transient-provider",
+        }
+        for attempt in range(prior_attempts, 2):
+            self.ledger.guard_next(
+                provider=self.provider,
+                input_tokens=4_000,
+                output_tokens=request.max_output_tokens,
+                cost_usd=maximum_cost,
+            )
+            response = self.adapter.respond(request)
+            if (
+                response.error_class is None
+                and self.adapter.manifest.live_capable
+                and response.operational_metadata.get("model") != self.model
+            ):
+                response = AdapterResponse(
+                    raw_output=response.raw_output,
+                    usage=response.usage,
+                    error_class="exact-model-mismatch",
+                    declared_tool_calls=response.declared_tool_calls,
+                    operational_metadata=response.operational_metadata,
+                )
+            if (
+                response.error_class is None
+                and self.adapter.manifest.live_capable
+                and response.operational_metadata.get("hidden_reasoning_stored") is not False
+            ):
+                response = AdapterResponse(
+                    raw_output=response.raw_output,
+                    usage=response.usage,
+                    error_class="hidden-reasoning-boundary",
+                    declared_tool_calls=response.declared_tool_calls,
+                    operational_metadata=response.operational_metadata,
+                )
+            sealed = seal_object(
+                domain=f"provider-response/{call_key}/attempt-{attempt}",
+                value=self._serialize_response(response),
+                key=self.response_key,
+                nonce=secrets.token_bytes(12),
+            )
+            atomic_private_write(
+                self._response_path(call_key, attempt),
+                canonical_json(
+                    {
+                        "manifest": sealed.manifest(),
+                        "ciphertext_hex": sealed.ciphertext.hex(),
+                    }
+                )
+                + b"\n",
+            )
+            self.ledger.append(
                 {
-                    "manifest": sealed.manifest(),
-                    "ciphertext_hex": sealed.ciphertext.hex(),
+                    "event_type": "provider-call",
+                    "idempotency_key": f"{call_key}/attempt-{attempt}",
+                    "call_key": call_key,
+                    "transport_attempt": attempt,
+                    "status": "success" if response.error_class is None else "error",
+                    "provider": self.provider,
+                    "model": self.model,
+                    "input_tokens": response.usage.input_tokens,
+                    "output_tokens": response.usage.output_tokens,
+                    "cost_usd": str(response.usage.cost_usd),
+                    "error_class": response.error_class,
+                    "schema_retry": request.schema_retry,
                 }
             )
-            + b"\n",
-        )
-        self.ledger.append(
-            {
-                "event_type": "provider-call",
-                "idempotency_key": call_key,
-                "status": "success" if response.error_class is None else "error",
-                "provider": self.provider,
-                "model": self.model,
-                "input_tokens": response.usage.input_tokens,
-                "output_tokens": response.usage.output_tokens,
-                "cost_usd": str(response.usage.cost_usd),
-                "error_class": response.error_class,
-                "schema_retry": request.schema_retry,
-            }
-        )
+            if response.error_class not in retryable:
+                return response
         return response
 
 
@@ -771,6 +855,8 @@ class PilotBatchRunner:
         stage: str,
         tasks: Sequence[TaskInstance],
         adapters: Mapping[str, AgentAdapter],
+        verify_metrics: bool = True,
+        persist_traces: bool = True,
     ) -> Mapping[str, object]:
         if stage not in {"public-canary", "private-prefix", "fixed-full-batch"}:
             raise ValueError("unknown pilot stage")
@@ -779,36 +865,48 @@ class PilotBatchRunner:
         runs = 0
         disagreements = 0
         protocol_errors = 0
+        contamination_findings = 0
         for model, adapter in adapters.items():
             validate_provider_route(PROVIDERS[MODELS.index(model)], model)
             for task in tasks:
                 for architecture in ARCHITECTURES:
                     run = run_architecture(task, architecture, adapter)
-                    metrics = asdict(evaluate_run(task, run))
-                    disagreements += len(verify_method_agreement(metrics, task, run))
+                    contamination_findings += sum(
+                        classify_text(turn.response.raw_output).classification
+                        in {"direct-leakage", "probable-memorization"}
+                        for turn in run.turns
+                    )
+                    if verify_metrics:
+                        metrics = asdict(evaluate_run(task, run))
+                        disagreements += len(verify_method_agreement(metrics, task, run))
                     protocol_errors += len(run.protocol_errors)
                     trace = build_trace(run)
-                    trace_id = f"{stage}/{model}/{task.task_id}/{architecture}"
-                    sealed = seal_object(
-                        domain=f"raw-trace/{trace_id}",
-                        value=trace.raw,
-                        key=self.trace_key,
-                        nonce=secrets.token_bytes(12),
-                    )
-                    trace_path = self.trace_root / f"{sha256_hex(trace_id.encode())}.sealed"
-                    atomic_private_write(
-                        trace_path,
-                        canonical_json(
-                            {
-                                "manifest": sealed.manifest(),
-                                "ciphertext_hex": sealed.ciphertext.hex(),
-                            }
+                    if trace.audit["hidden_reasoning_stored"] is not False:
+                        raise PermissionError("hidden reasoning storage is prohibited")
+                    if persist_traces:
+                        trace_id = f"{stage}/{model}/{task.task_id}/{architecture}"
+                        sealed = seal_object(
+                            domain=f"raw-trace/{trace_id}",
+                            value=trace.raw,
+                            key=self.trace_key,
+                            nonce=secrets.token_bytes(12),
                         )
-                        + b"\n",
-                    )
+                        trace_path = self.trace_root / f"{sha256_hex(trace_id.encode())}.sealed"
+                        atomic_private_write(
+                            trace_path,
+                            canonical_json(
+                                {
+                                    "manifest": sealed.manifest(),
+                                    "ciphertext_hex": sealed.ciphertext.hex(),
+                                }
+                            )
+                            + b"\n",
+                        )
                     runs += 1
         if disagreements:
             raise RuntimeError("Method A/B disagreement requires quarantine")
+        if contamination_findings:
+            raise RuntimeError("direct or probable contamination requires quarantine")
         if stage in {"public-canary", "private-prefix"} and protocol_errors:
             raise RuntimeError(f"{stage} protocol gate failed")
         return {
@@ -817,6 +915,7 @@ class PilotBatchRunner:
             "runs": runs,
             "method_disagreements": disagreements,
             "protocol_errors": protocol_errors,
+            "contamination_findings": contamination_findings,
         }
 
 

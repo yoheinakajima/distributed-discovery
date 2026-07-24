@@ -8,10 +8,13 @@ Directories are nonsymlink 0700 and files are nonsymlink 0600. Writes use
 exclusive creation or atomic same-directory replacement with fsync. Existing
 material is never silently overwritten.
 
-The private layout separates `seed`, `task-key`, `answer-key`,
-`tasks.ciphertext`, `answers.ciphertext`, `access-log.jsonl`,
-`raw-traces/`, `usage-cost-ledger.jsonl`, `output-lock.json`,
-`unsealed-audit/`, and `final-audit-package.ciphertext`. Keys are not stored
+The private layout separates `seed`, an operational response/trace key,
+`task-key`, `answer-key`, `tasks.ciphertext`, `answers.ciphertext`, the
+hash-only custody manifest,
+encrypted provider responses, `access-log.jsonl`, `raw-traces/`,
+`usage-cost-ledger.jsonl`, provider-stage state, `output-lock.json`,
+`unsealed-audit/`, `final-audit-package.ciphertext`, and the redacted summary.
+Keys are not stored
 beside ciphertext in the final retained package. Each AES-256-GCM object uses
 an independent OS-CSPRNG key and nonce and associated data binding campaign,
 batch, artifact type, allocation commitment, and schema.

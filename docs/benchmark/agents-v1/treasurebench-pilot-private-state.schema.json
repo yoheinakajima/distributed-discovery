@@ -23,10 +23,10 @@
       "uniqueItems": true,
       "items": {
         "enum": [
-          "seed", "seed-commitment-input", "task-key", "answer-key",
-          "encrypted-tasks", "encrypted-answer-key", "access-log",
-          "raw-traces", "usage-cost-ledger", "output-lock",
-          "unsealed-audit-working-set", "encrypted-final-audit-package"
+          "seed", "seed-commitment-input", "execution-identity", "operational-key", "task-key", "answer-key",
+          "encrypted-tasks", "encrypted-answer-key", "custody-manifest", "encrypted-provider-responses",
+          "access-log", "raw-traces", "usage-cost-ledger", "provider-stage-state", "output-lock",
+          "unsealed-audit-working-set", "encrypted-final-audit-package", "redacted-summary"
         ]
       }
     },
