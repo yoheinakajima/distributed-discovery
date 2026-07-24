@@ -1,13 +1,31 @@
 # Current program state
 
-_Offline Compendium v0.1.0 candidate preparation, 2026-07-24:_ issue #183 and
+_Compendium v0.1.0 external publication, 2026-07-24:_ issue #185 published
+annotated tag `dd-compendium-v0.1.0` at authorized source
+`3ca173f4e9e81a6d0e3e56205e428c596edc050e`. The public GitHub Release has
+exactly five verified custom assets. Fresh downloads are byte-identical, both
+GitHub source archives resolve, and Zenodo record
+[`21535005`](https://zenodo.org/records/21535005) is published as software.
+Version DOI `10.5281/zenodo.21535005` identifies exact v0.1.0; concept DOI
+`10.5281/zenodo.21535004` identifies the evolving compendium. Both resolve.
+Zenodo's sole source ZIP matches all 2,379 authorized Git files.
+
+Scientific inventory remains 110 claims through DD-C-0110, 26 studies through
+DD-022, 51 manifests, and 48 passing immutable runs. The seven exact local
+PDFs remain 119 pages with unchanged working-paper/note status. The release
+creates no scientific evidence or paper-status promotion. No provider call,
+private material, package/namespace publication, arXiv/journal action,
+ActiveGraph/SQLite mutation, or upstream change occurred. The exact next gate
+is TreasureBench Agents v1 sealed engineering pilot registration and
+authorization.
+
+_Prior offline Compendium v0.1.0 candidate preparation, 2026-07-24:_ issue #183 and
 draft PR #184 implement a deterministic, tracked-file-only offline release
 toolchain. Two fixed-input builds produce byte-identical manifest, checksums,
 paper citation metadata, seven-paper ZIP, and notes; the verifier confirms 132
-normalized members, seven exact PDFs, and 119 pages. This is not a release.
-There is no tag, GitHub Release, Zenodo deposit, DOI, provider call, private
-benchmark material, or scientific change. The next gate is owner-authorized
-external publication and verified Zenodo ingestion.
+normalized members, seven exact PDFs, and 119 pages. The then-current
+no-release boundary is retained as historical preparation state and is
+superseded by the verified publication above.
 
 _TreasureBench naming and playable-companion migration, 2026-07-23:_
 TreasureBench is the formal public suite name. Its canonical subtitle is

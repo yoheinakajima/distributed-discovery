@@ -1,5 +1,12 @@
 # CITATION.cff pre-release audit
 
+Completion update 2026-07-24: after the observed public release and Zenodo
+ingestion, the closeout adds actual `date-released: 2026-07-24` and version DOI
+`10.5281/zenodo.21535005` to the compendium-level CFF. The historical
+pre-release decision below remains accurate for the tagged source at the time
+of its audit. The concept DOI `10.5281/zenodo.21535004` is recorded separately
+in the release registry and stable citation policy.
+
 Decision: **`valid-prerelease-without-date-released-or-doi`**.
 
 The CFF record remains compendium-level and type `software`. Version `0.1.0`

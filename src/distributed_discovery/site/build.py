@@ -3540,6 +3540,9 @@ def _render(
 ) -> list[dict[str, str]]:
     relation_source = _read_yaml(root / "site/content/relations.yml")
     relation_config = relation_source["studies"]
+    release_registry = _read_yaml(root / "docs/releases/releases.yml")
+    release = release_registry["releases"][-1]
+    citation_convention = release_registry["citation_convention"]
     lifecycle_records = _lifecycle_records(root)
     canonical_anchor = lifecycle_records["shared-discovery-paradox"]
     cards = "".join(_study_card(study, relation_config[study["id"]]) for study in studies)
@@ -3806,12 +3809,17 @@ def _render(
         f'<p class="citation">{html.escape(str(canonical_anchor["recommended_citation"]))}</p>'
         f'<details class="technical-details"><summary>Technical details</summary><p>SHA-256 <code>{html.escape(str(canonical_anchor["pdf_sha256"]))}</code></p></details></article>'
     )
+    release_url = html.escape(str(release["github_release_url"]), quote=True)
+    zenodo_url = html.escape(str(release["zenodo"]["record_url"]), quote=True)
+    version_doi = html.escape(str(citation_convention["exact_version"]))
+    concept_doi = html.escape(str(citation_convention["evolving_compendium"]))
     publications_body = f"""<header class="page-hero"><p class="eyebrow">Long-form research</p><h1>Papers</h1><p class="lede">A lifecycle-aware map of the canonical public anchor, active theorem-family working papers, research notes, and synthesis notes.</p><p><a href="start-here.html">Start with three results</a> · <a href="program.html">See the four-layer hierarchy and paper-admission rule</a> · <a href="translations.html">Open the contextual concordance</a>.</p></header>
+<section class="content-section prose" id="compendium-release"><p class="eyebrow">Stable archive</p><h2>Distributed Discovery Research Compendium v{html.escape(str(release["version"]))}</h2><p>The compendium is preserved as an immutable annotated Git tag, a public GitHub Release with five verified custom assets, and a published Zenodo software record. This archival release does not imply that any included paper was submitted, accepted, peer reviewed, or journal published.</p><p><a href="{release_url}">GitHub Release</a> · <a href="{zenodo_url}">Zenodo record</a> · <a href="https://doi.org/{version_doi}">Version DOI {version_doi}</a> · <a href="https://doi.org/{concept_doi}">Concept DOI {concept_doi}</a></p><p><strong>Citation convention:</strong> use the version DOI for exact v{html.escape(str(release["version"]))} reproduction and the concept DOI for the evolving compendium. Load-bearing claims also retain their paper, claim ID, immutable run ID, and artifact checksum.</p></section>
 <section class="content-section"><p class="eyebrow">Canonical public anchor</p><h2>The public entry point</h2><div class="card-grid paper-grid">{canonical_anchor_card}</div></section>
 <section class="content-section"><p class="eyebrow">Active theorem-family papers</p><h2>Flagship working papers</h2><div class="card-grid paper-grid">{flagship_items}</div></section>
 <section class="content-section"><p class="eyebrow">Supporting publications</p><h2>Research notes and syntheses</h2><div class="card-grid paper-grid">{note_items}</div></section>
-<section class="content-section prose"><h2>Stable citation and dependencies</h2><p>The site is a living discovery and verification layer, not the sole load-bearing source. Cite a paper-specific immutable version when one exists; until then, use the working-paper citation with its repository revision, claim or run identifier, and checksum. No project release, DOI, or arXiv identifier exists yet.</p><p><a href="{REPOSITORY_URL}/blob/main/docs/publication/stable-citation-policy.md">Stable citation policy</a> · <a href="{REPOSITORY_URL}/blob/main/docs/releases/zenodo-release-policy.md">Release-readiness policy</a> · <a href="data/paper-dependencies.json">Paper dependency roles</a></p></section>
-{historical_section}<p class="quiet-meta">All local project PDFs are not submitted, not peer reviewed, and have no DOI. Cite a paper-specific checksum and repository revision for exact artifacts; no project release or DOI exists yet. There are currently no historical lifecycle items. <a href="data/downloads.json">Complete download checksum manifest</a> · <a href="data/paper-lifecycle.json">Lifecycle registry</a></p>"""
+<section class="content-section prose"><h2>Stable citation and dependencies</h2><p>The site is a living discovery and verification layer, not the sole load-bearing source. The compendium version DOI supplies an immutable repository archive; per-paper DOI and arXiv fields remain null. Cite the working-paper or note metadata together with the compendium version, claim or run identifier, and checksum where applicable.</p><p><a href="{REPOSITORY_URL}/blob/main/docs/publication/stable-citation-policy.md">Stable citation policy</a> · <a href="{REPOSITORY_URL}/blob/main/docs/releases/releases.yml">Release registry</a> · <a href="data/paper-dependencies.json">Paper dependency roles</a></p></section>
+{historical_section}<p class="quiet-meta">All local project PDFs remain not submitted and not peer reviewed, with no paper-specific DOI. The compendium DOI identifies the archival repository release, not a publication-status promotion. There are currently no historical lifecycle items. <a href="data/downloads.json">Complete download checksum manifest</a> · <a href="data/paper-lifecycle.json">Lifecycle registry</a></p>"""
     _write(
         output,
         "publications.html",

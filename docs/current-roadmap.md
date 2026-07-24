@@ -1,4 +1,18 @@
-# Current roadmap — offline compendium candidate; owner activation next
+# Current roadmap — Compendium v0.1.0 published; sealed pilot gate next
+
+Compendium v0.1.0 is published and externally verified from exact source
+`3ca173f4e9e81a6d0e3e56205e428c596edc050e`. The immutable GitHub Release,
+five custom assets, Zenodo software record, version DOI
+`10.5281/zenodo.21535005`, concept DOI `10.5281/zenodo.21535004`, and both DOI
+resolutions pass. The archival release changes no scientific or paper status.
+
+The exact next repository gate is **TreasureBench Agents v1 sealed engineering
+pilot registration and authorization**. It requires a separate bounded plan,
+private-task custody, exact model/provider snapshots, cost authorization, and
+the existing non-inferential engineering boundary. It creates no authority to
+run the pilot in this release closeout.
+
+## Prior offline release gate
 
 The v0.1.0 offline release-candidate toolchain is implemented under issue #183
 and draft PR #184. The remaining gate is explicit owner authorization and
@@ -13,10 +27,9 @@ superseded as decision input. The bounded collision gate passed without a
 disqualifying same-domain exact-name finding, but makes no legal-clearance,
 global-uniqueness, or namespace-ownership claim.
 
-The exact next repository gate is **First tagged compendium release and Zenodo
-activation**. It requires separate owner authorization and owner-controlled
-namespace and preliminary register checks; no tag, release, Zenodo integration,
-DOI, arXiv submission, or package publication exists.
+That gate completed through issue #185. Its historical no-tag/no-DOI boundary
+describes the preparation state and is superseded by the verified release
+record in `docs/releases/releases.yml`.
 
 The current non-scientific gate is issue #178: durable program memory,
 preprint-first/journal-deferred policy, paper self-containment and dependency

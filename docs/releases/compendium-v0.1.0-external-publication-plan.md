@@ -1,7 +1,11 @@
 # Compendium v0.1.0 external publication plan
 
-Status: **nonexecuting template**. None of these commands was run during offline
-preparation. This plan does not authorize publication.
+Status: **historical nonexecuting template; completed through the separately
+authorized release workflow on 2026-07-24**. None of these commands was run
+during offline preparation, and this document never supplied authorization.
+Observed outcomes are recorded in `docs/releases/releases.yml`,
+`reports/releases/compendium-v0.1.0-closeout.md`, and
+`plans/FIRST_COMPENDIUM_RELEASE.md`.
 
 Official GitHub, Zenodo, and Citation File Format documentation was reviewed on
 2026-07-24 UTC. GitHub represents an annotated tag as a tag object followed by

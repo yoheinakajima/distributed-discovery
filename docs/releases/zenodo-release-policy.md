@@ -1,16 +1,19 @@
 # Zenodo release policy
 
-This policy prepares stable archival releases without authorizing one. The
-repository currently has no Git tag, GitHub Release, Zenodo deposit, or DOI.
+This policy governs stable archival releases. Compendium v0.1.0 was published
+and verified on 2026-07-24 as annotated tag `dd-compendium-v0.1.0`, a public
+GitHub Release, and Zenodo record `21535005`. Its version DOI is
+`10.5281/zenodo.21535005`; its concept DOI is
+`10.5281/zenodo.21535004`. Future versions require separate authorization.
 
 ## Release identity
 
 A compendium release uses a Git tag governed by
 [`release-tagging-policy.md`](release-tagging-policy.md), a GitHub Release, and
-a validated release evidence manifest. If the owner later enables the GitHub
-repository in Zenodo, the ingested release receives a version DOI. The Zenodo
-concept DOI is cited only when the intended object is the evolving compendium;
-exact reproduction cites the version DOI.
+a validated release evidence manifest. The owner-enabled GitHub integration
+archives each authorized release. The Zenodo concept DOI is cited only when
+the intended object is the evolving compendium; exact reproduction cites the
+version DOI.
 
 Paper citations remain paper-specific. A load-bearing claim citation includes
 the paper identifier or immutable source, claim ID, immutable run ID where
@@ -38,10 +41,10 @@ or result. Missing external identifiers are JSON/YAML null values.
 added, Zenodo treats it as metadata precedence over `CITATION.cff`; the two
 must be deliberately reconciled before release.
 
-The owner must connect GitHub to Zenodo and enable this repository through the
-owner-side interface. Automation and API credentials are outside this task.
-The activation checklist is a human gate, not evidence that integration is
-enabled.
+The v0.1.0 integration and ingest are directly verified. Any future repository
+or integration change remains an owner-side action. Automation and API
+credentials are outside the default release workflow; an activation checklist
+is a gate, not evidence of a successful future ingest.
 
 ## Failure recovery
 

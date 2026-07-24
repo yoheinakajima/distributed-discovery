@@ -1,6 +1,25 @@
-# Final handoff — Compendium v0.1.0 offline candidate
+# Final handoff — Compendium v0.1.0 published and DOI-verified
 
-## Current release-preparation continuation (2026-07-24)
+## Current release closeout (2026-07-24)
+
+Issue #185 published annotated tag `dd-compendium-v0.1.0` from authorized source
+`3ca173f4e9e81a6d0e3e56205e428c596edc050e`. The public
+[GitHub Release](https://github.com/yoheinakajima/distributed-discovery/releases/tag/dd-compendium-v0.1.0)
+contains exactly five verified custom assets; fresh downloads and both source
+archives pass. Zenodo software record
+[`21535005`](https://zenodo.org/records/21535005) contains one source ZIP whose
+2,379 files are byte-identical to the authorized Git tree. Version DOI
+`10.5281/zenodo.21535005` and concept DOI
+`10.5281/zenodo.21535004` both resolve.
+
+The release leaves 110 claims, 26 studies, 51 manifests/48 passing, seven
+PDFs/119 pages, paper lifecycle, TreasureBench compatibility, and the pinned
+upstream unchanged. It creates no scientific evidence, provider/private
+material, package, namespace, submission, or paper DOI. The exact next gate is
+TreasureBench Agents v1 sealed engineering pilot registration and
+authorization.
+
+## Prior release-preparation continuation (2026-07-24)
 
 Issue #183 and draft PR #184 prepare Compendium v0.1.0 offline. The content
 registry, deterministic five-asset builder, independent verifier, 132-member
@@ -9,10 +28,8 @@ external plan, Make targets, and validation-only CI are implemented. A fixed
 double build is byte-identical. Claims, studies, runs, verified results, paper
 sources, and the seven PDFs/119-page invariant are unchanged.
 
-No tag, GitHub Release, Zenodo action, DOI, provider call, private benchmark
-material, submission, package publication, or upstream mutation occurred. The
-exact next gate is owner-authorized Compendium v0.1.0 external publication and
-Zenodo verification.
+The no-tag/no-DOI statement below records the historical offline-preparation
+boundary and is superseded by the verified release closeout above.
 
 ## Prior TreasureBench naming handoff
 

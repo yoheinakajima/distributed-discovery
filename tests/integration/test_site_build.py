@@ -920,7 +920,13 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "Flagship working papers" in papers
     assert "Research notes and syntheses" in papers
     assert "Stable citation and dependencies" in papers
-    assert "No project release, DOI, or arXiv identifier exists yet" in papers
+    assert "Distributed Discovery Research Compendium v0.1.0" in papers
+    assert "10.5281/zenodo.21535005" in papers
+    assert "10.5281/zenodo.21535004" in papers
+    assert "releases/tag/dd-compendium-v0.1.0" in papers
+    assert "zenodo.org/records/21535005" in papers
+    assert "does not imply that any included paper was submitted" in papers
+    assert "not submitted and not peer reviewed" in papers
     assert "There are currently no historical lifecycle items" in papers
     assert "SHA-256" in papers
     assert "Technical details" in papers

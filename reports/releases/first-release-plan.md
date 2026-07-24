@@ -1,5 +1,13 @@
 # First compendium release plan
 
+Completion update (2026-07-24): the owner authorized source
+`3ca173f4e9e81a6d0e3e56205e428c596edc050e`; annotated tag
+`dd-compendium-v0.1.0`, the public GitHub Release, Zenodo record 21535005,
+version DOI `10.5281/zenodo.21535005`, and concept DOI
+`10.5281/zenodo.21535004` are published and verified. The durable observed
+record is `docs/releases/releases.yml`; the execution and closeout record is
+`plans/FIRST_COMPENDIUM_RELEASE.md`.
+
 Offline preparation update (2026-07-24): issue #183 and PR #184 implement the
 content registry, deterministic builder, independent verifier, seven-paper
 bundle, checksums, citation asset, notes, inactive authorization schema,
@@ -30,8 +38,10 @@ USPTO/EUIPO register checks. Those checks are nonlegal signals, not clearance.
 7. Verify Zenodo ingest, then record the real version and concept DOIs in a
    reviewed follow-up.
 
-This plan does not authorize a `treasurebench` package, namespace reservation,
-tag, release, Zenodo integration, DOI, or arXiv submission.
+This historical plan did not itself authorize a `treasurebench` package,
+namespace reservation, tag, release, Zenodo integration, DOI, or arXiv
+submission. The later owner authorization covered only the recorded v0.1.0
+release actions; all other boundaries remain.
 
 Recovery follows the immutable-version rule: never move a published tag or
 silently overwrite a deposit; correct through a new version and durable

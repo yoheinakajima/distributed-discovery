@@ -49,14 +49,16 @@ def test_publication_infrastructure_is_null_safe_and_internal_queue_stays_privat
     assert result["benchmark_name_decision"] == "treasurebench-selected-and-implemented"
 
 
-def test_release_manifest_is_a_deterministic_nonrelease() -> None:
+def test_release_readiness_preserves_dry_run_fixture_and_records_public_release() -> None:
     result = _audit("audit_release_readiness.py")
     assert result == {
         "manifest": "dry-run-only",
         "artifacts": 7,
         "pages": 119,
-        "external_identifiers": None,
-        "git_tags": 0,
+        "release": "published-zenodo-verified",
+        "tag": "dd-compendium-v0.1.0",
+        "version_doi": "10.5281/zenodo.21535005",
+        "concept_doi": "10.5281/zenodo.21535004",
     }
 
 

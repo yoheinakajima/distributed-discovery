@@ -6,6 +6,8 @@ authors:
   - family-names: Nakajima
     given-names: Yohei
 version: 0.1.0
+doi: 10.5281/zenodo.21535005
+date-released: 2026-07-24
 repository-code: "https://github.com/yoheinakajima/distributed-discovery"
 url: "https://yoheinakajima.github.io/distributed-discovery/"
 license: MIT

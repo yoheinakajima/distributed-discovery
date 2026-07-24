@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-07-24 — Compendium v0.1.0 external publication
+
+- Published authorized source
+  `3ca173f4e9e81a6d0e3e56205e428c596edc050e` as immutable annotated tag
+  `dd-compendium-v0.1.0` and a public GitHub Release with five verified custom
+  assets.
+- Verified Zenodo software record `21535005`, its byte-exact tagged source
+  archive, version DOI `10.5281/zenodo.21535005`, concept DOI
+  `10.5281/zenodo.21535004`, and both DOI resolutions.
+- Added the release registry, compendium-level CFF DOI/date, stable citation
+  convention, contextual site links, and durable closeout records without
+  changing claims, studies, runs, paper sources/PDFs/lifecycle, provider or
+  private material, package/namespace state, submissions, or upstream.
+
 ## 2026-07-23 — Program memory and preprint infrastructure
 
 - Added a conversation-to-repository protocol, 25-record program-memory
