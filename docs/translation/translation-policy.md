@@ -19,5 +19,6 @@ rendering uses the registry rather than duplicating variants in page source.
 AI search-rank monitoring, AI-referrer tracking, retrieval-query monitoring,
 citation-rank monitoring, and semantic-visibility dashboards are out of
 program scope. The only adjacent monitoring permitted is future contamination
-detection for DiscoveryBench Agents, including exact or near-verbatim public
+detection for TreasureBench Agents v1 (whose frozen protocol identifiers retain
+DiscoveryBench), including exact or near-verbatim public
 benchmark values, wording, task IDs, or solution patterns in evaluated output.

@@ -1,0 +1,30 @@
+schema_version: 1
+working_title: "TreasureBench: A Benchmark for Collective Search under Shared and Private Evidence"
+paper_exists: false
+required_for:
+  - every-formal-benchmark-paper
+  - every-aamas-adjacent-submission
+classical_treasure_hunt:
+  must_state:
+    - agents-navigate-graph-grid-plane-or-terrain
+    - target-is-inert-and-hidden
+    - complexity-includes-travel-time-advice-memory-pebbles-failures-or-communication
+  primary_sources:
+    - {title: Advice Complexity of Treasure Hunt in Geometric Terrains, url: "https://arxiv.org/abs/1811.06823"}
+    - {title: Treasure Hunt in Graph using Pebbles, url: "https://arxiv.org/abs/2209.00857"}
+    - {title: Deterministic Treasure Hunt in the Plane with Angular Hints, doi: "10.4230/LIPIcs.ISAAC.2018.48"}
+    - {title: Treasure Hunt with Barely Communicating Agents, doi: "10.4230/LIPIcs.OPODIS.2017.14"}
+    - {title: Continuous Rapid Action Value Estimates, url: "https://inria.hal.science/hal-00642459"}
+treasurebench:
+  must_state:
+    - software-agent-teams-receive-shared-and-private-evidence
+    - action-choices-form-portfolios
+    - discovery-is-target-success-or-coverage
+    - communication-changes-evidence-access-and-action-correlation
+    - exact-private-planner-and-equilibrium-comparators-are-registered
+    - incentives-and-architecture-effects-are-central
+forbidden:
+  - claim-that-classical-treasure-hunt-and-treasurebench-are-the-same-object
+  - novelty-claim-without-dedicated-review
+  - formal-use-of-treasure-hunt-as-the-suite-name
+status: checklist-only-no-paper-created

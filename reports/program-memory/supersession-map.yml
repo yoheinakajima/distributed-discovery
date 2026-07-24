@@ -6,3 +6,9 @@ records:
   - superseded_item: canonical-published-label
     replacement: canonical-public-anchor
     reason: The old label was ambiguous beside a working-paper citation and no formal publication evidence.
+  - superseded_item: ranked-benchmark-name-shortlist
+    replacement: PM-0026
+    reason: The owner selected TreasureBench; the earlier ranking is historical input, not an active candidate exercise.
+  - superseded_item: BoxHunt-selected-name
+    replacement: TreasureBench
+    reason: BoxHunt is retained only as the first internal fallback if a later fatal TreasureBench collision appears.

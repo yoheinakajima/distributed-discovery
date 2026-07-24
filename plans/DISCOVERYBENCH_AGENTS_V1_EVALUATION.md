@@ -1,5 +1,9 @@
 # DiscoveryBench Agents v1 evaluation-campaign registration
 
+Forward-name note (2026-07-23): the current formal suite display is
+TreasureBench. This dated registration and its frozen Agents v1 identifiers
+remain unchanged; no new evaluation or content version was created by naming.
+
 This living ExecPlan follows `.agent/PLANS.md` and owns issue #173 from clean
 `main` commit `f2c1dda60f3f89e56d80b5ff7d2c519556f3d81c`. It registers a
 future evidence campaign without executing one.

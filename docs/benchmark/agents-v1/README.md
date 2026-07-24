@@ -1,5 +1,10 @@
 # DiscoveryBench Agents v1
 
+Current public display: **TreasureBench Agents v1**. This historical file and
+the frozen `discoverybench-agents-v1` instrument and schema identifiers remain
+unchanged for compatibility; the formal suite rename creates no protocol or
+content version.
+
 Status: offline implementation complete; evaluation campaign registered;
 owner authorization pending; not model-evaluated.
 

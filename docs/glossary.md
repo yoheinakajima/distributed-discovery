@@ -23,3 +23,5 @@ Evidence labels are noted in parentheses: **definition**, **identity**, **upstre
 - **Reward/credit rule (definition):** mapping from actions/outcomes to agent utility or credit, distinct from the social objective.
 - **Shared Discovery Paradox (upstream):** shared information raises average action quality while reducing union discovery under the compared protocol.
 - **Source concentration (provisional):** concentration of evidence provenance over declared latent/observed source units.
+- **TreasureBench (editorial name):** the formal public DD-010 suite; canonical subtitle: “TreasureBench: a benchmark for collective search under shared and private evidence.” DiscoveryBench remains its historical/internal compatibility alias.
+- **Treasure Hunt (presentation label):** the playable companion to TreasureBench, not a benchmark, Lab, schema prefix, metric, claim, run, or theorem name.

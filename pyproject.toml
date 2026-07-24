@@ -17,6 +17,7 @@ dependencies = [
 
 [project.scripts]
 distributed-discovery = "distributed_discovery.cli:main"
+treasurebench = "distributed_discovery.cli:treasurebench_main"
 
 [dependency-groups]
 dev = [

@@ -280,23 +280,57 @@ All reservation statuses remain `not-performed`.
   preservation set.
 - [x] M1: perform the bounded TreasureBench collision and namespace search;
   no exact-name Tier 1 collision found at the decision checkpoint.
-- [ ] M2: commit ADR skeleton and machine-readable naming system.
-- [ ] M3: route program memory and roadmaps.
-- [ ] M4: migrate formal public display metadata.
-- [ ] M5: record schema/version transition and preservation tests.
-- [ ] M6: implement and test CLI aliases.
-- [ ] M7: implement route, alias, and JSON compatibility.
-- [ ] M8: launch the Treasure Hunt companion.
-- [ ] M9: implement the one-bit accessible visual system.
-- [ ] M10: implement funnel and lexical-policy audit.
-- [ ] M11: add communication templates.
-- [ ] M12: add the literature boundary and paper checklist.
-- [ ] M13: add the owner namespace checklist.
-- [ ] M14: reconcile null-safe release/citation/publication metadata.
-- [ ] M15: complete the historical compatibility audit.
-- [ ] M16: complete site/public integration.
+- [x] M2: commit ADR skeleton and machine-readable naming system.
+- [x] M3: route program memory and roadmaps.
+- [x] M4: migrate formal public display metadata.
+- [x] M5: record schema/version transition and preservation tests.
+- [x] M6: implement and test CLI aliases.
+- [x] M7: implement route, alias, and JSON compatibility.
+- [x] M8: launch the Treasure Hunt companion.
+- [x] M9: implement the one-bit accessible visual system.
+- [x] M10: implement funnel and lexical-policy audit.
+- [x] M11: add communication templates.
+- [x] M12: add the literature boundary and paper checklist.
+- [x] M13: add the owner namespace checklist.
+- [x] M14: reconcile null-safe release/citation/publication metadata.
+- [x] M15: complete the historical compatibility audit.
+- [x] M16: complete site/public integration.
 - [ ] M17: validate, push, ready, merge, verify Pages/live routes, close the
   issue, and synchronize `main`.
+
+Focused acceptance currently passes the naming/schema, frozen-ID, old/new CLI,
+program-memory, publication-infrastructure, and complete site-integration
+tests. The generated site has 89 HTML pages, 110 public JSON files, 221 total
+files, 18 registered Labs, 23 downloads, and five primary-navigation items.
+
+## Discoveries and surprises
+
+- The formal suite can be introduced without a content-version bump because
+  the builder can publish canonical display copies while leaving frozen
+  lowercase identifiers and historical JSON intact.
+- Historical route compatibility is stronger as full HTTP 200 pages with
+  visible alias notes and canonical links than as client-side redirects; it
+  also preserves fragments and no-JavaScript behavior.
+- The existing relationship injector originally attached benchmark evidence
+  only to the new canonical task/results routes. Focused integration testing
+  caught that the corresponding historical pages had lost their relationship
+  panels; both route families now receive the validated relations.
+- Treasure Hunt fits a dedicated guide route rather than the Labs registry.
+  This keeps its five modules public and interactive without implying
+  scientific evidence ownership.
+
+## Decision log
+
+- 2026-07-23: select `treasurebench-selected-and-implemented` after the bounded
+  exact-name gate found no disqualifying same-domain collision.
+- 2026-07-23: keep `distributed-discovery` as the root distribution and add
+  delegating command aliases; authorize no standalone package publication.
+- 2026-07-23: preserve historical routes as full HTTP 200 compatibility pages
+  with canonical metadata.
+- 2026-07-23: classify Treasure Hunt as a presentation-only interactive guide,
+  not a registered Lab.
+- 2026-07-23: expand program memory from 25 to 29 routed records, including the
+  layered system, companion, vernacular trigger, and rejection history.
 
 ## Discoveries and surprises
 

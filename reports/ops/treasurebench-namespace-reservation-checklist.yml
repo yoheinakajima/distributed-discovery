@@ -1,0 +1,13 @@
+schema_version: 1
+observed_date: "2026-07-23"
+legal_clearance: false
+reservations_performed: false
+records:
+  - {channel: PyPI, namespace: treasurebench, observed_state: http-404, owner_action_required: reserve-if-standalone-package-is-desired, cost: unknown, urgency: before-package-publication, collision: none-observed, reservation_status: not-performed}
+  - {channel: npm, namespace: treasurebench, observed_state: http-404, owner_action_required: reserve-if-desired, cost: unknown, urgency: before-npm-artifact, collision: none-observed, reservation_status: not-performed}
+  - {channel: GitHub, namespace: TreasureBench, observed_state: no-exact-repository-result, owner_action_required: decide-repository-organization-or-name-reservation, cost: account-terms-apply, urgency: before-standalone-repository, collision: none-observed, reservation_status: not-performed}
+  - {channel: Hugging-Face, namespace: treasurebench, observed_state: no-model-dataset-or-space-result, owner_action_required: decide-namespace-or-collection, cost: account-terms-apply, urgency: before-hosted-artifact, collision: none-observed, reservation_status: not-performed}
+  - {channel: domain, namespace: "treasurebench.com/.org/.ai/.dev", observed_state: rdap-object-not-found, owner_action_required: optional-owner-purchase, cost: registrar-dependent, urgency: optional, collision: none-observed, reservation_status: not-performed}
+  - {channel: social-handles, namespace: treasurebench, observed_state: not-exhaustively-audited, owner_action_required: optional-owner-reservation, cost: platform-dependent, urgency: optional, collision: unknown, reservation_status: not-performed}
+  - {channel: USPTO, namespace: TreasureBench, observed_state: no-exact-indexed-result-in-bounded-search, owner_action_required: one-time-preliminary-register-scan, cost: owner-or-adviser-dependent, urgency: before-first-doi-or-package-release, collision: none-observed, reservation_status: not-performed}
+  - {channel: EUIPO, namespace: TreasureBench, observed_state: no-exact-indexed-result-in-bounded-search, owner_action_required: one-time-preliminary-register-scan, cost: owner-or-adviser-dependent, urgency: before-first-doi-or-package-release, collision: none-observed, reservation_status: not-performed}

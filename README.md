@@ -4,6 +4,13 @@ Distributed Discovery studies how organizations and multi-agent systems convert 
 
 The Shared Discovery Paradox is the canonical atomic result: pooled evidence may improve candidate ranking while a one-answer action rule compresses many searches into repeated action, so better information can coexist with worse group discovery. The design principle is: **Share the evidence. Diversify the actions.**
 
+**TreasureBench**, with **Treasure Hunt** as its playable companion, is the
+formal benchmark family. TreasureBench: a benchmark for collective search under
+shared and private evidence. [Open TreasureBench](https://yoheinakajima.github.io/distributed-discovery/treasurebench.html)
+or [play the Treasure Hunt companion](https://yoheinakajima.github.io/distributed-discovery/treasure-hunt.html).
+DiscoveryBench remains the historical/internal compatibility alias for frozen
+identifiers, routes, commands, and evidence.
+
 > The canonical public paper and interactive guide remain in the upstream shared-discovery-paradox repository. This repository contains the broader research program, reproducibility infrastructure, companion materials, and extension studies.
 
 This public repository is MIT-licensed. The [companion site](https://yoheinakajima.github.io/distributed-discovery/) is built from `site/src` on `main` and deployed through GitHub Actions; generated `site/dist` files are not committed. Canonical upstream remains separate and read-only.
@@ -17,11 +24,12 @@ external legibility, literature transmission, publication hierarchy, factual
 methods documentation, and AI-native audit readiness. The repository operates
 as an AI-powered research lab under human PI gate authority; separated AI
 checks are not external review or peer review. Reliable Discovery is preserved
-as the next major theorem-family candidate but deferred. The next substantive
-session has registered DiscoveryBench Agents v1 under DD-010 as an offline,
-not-executed instrument. No model call, cost, private holdout, result, claim, or
-run exists. The exact next gate is a separately authorized DiscoveryBench
-Agents v1 offline instrument implementation. See the
+as the next major theorem-family candidate but deferred. TreasureBench Agents
+v1 remains under DD-010; its direct required adapters completed authorized
+public-only engineering calibration. No private holdout, sealed pilot,
+scientific result, claim, immutable scientific run, or DD-023 exists. The exact
+next evaluation gate remains a separately registered and owner-authorized
+sealed engineering pilot. See the
 [Phase 2 directive](docs/phase-2-program-directive.md), [Start Here
 hierarchy](docs/publication-hierarchy.md), [optionality
 portfolio](docs/strategic-direction/optionality-portfolio.md), and [methods
@@ -31,10 +39,11 @@ The current publication architecture is preprint-first with the journal track
 deferred behind explicit triggers. Common-Source Trap is the first internal
 freeze candidate, but no paper edit, submission, release, DOI, or arXiv
 identifier is authorized. Stable-citation, dependency, release-readiness, and
-licensing records are repository infrastructure only. The benchmark's
-historical/internal name remains DiscoveryBench; its first external scholarly
-name is blocked on an owner decision after a fatal same-name collision and an
-ambiguous scored shortlist. See the
+licensing records are repository infrastructure only. TreasureBench is the
+formal public suite, Treasure Hunt is its interactive companion, and
+DiscoveryBench remains the historical/internal compatibility alias. The dated
+collision screen is bounded and nonlegal; no namespace is owned or reserved.
+See the
 [stable citation policy](docs/publication/stable-citation-policy.md),
 [release policy](docs/releases/zenodo-release-policy.md), and
 [benchmark name decision](reports/editorial/benchmark-name-decision.md).

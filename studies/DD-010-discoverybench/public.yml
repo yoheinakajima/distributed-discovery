@@ -1,11 +1,11 @@
 study_id: DD-010
-title: DiscoveryBench
+title: TreasureBench (DD-010; historical identifier DiscoveryBench)
 slug: dd-010
 phase: complete-bounded-study
-summary: Versioned exact golden benchmark with enforced protocol information boundaries; Agents v1 is implemented offline but not model-evaluated.
+summary: TreasureBench is the formal public suite for the versioned exact golden benchmark with enforced protocol information boundaries; frozen DiscoveryBench identifiers remain unchanged and Agents v1 has completed public engineering calibration without a private or scientific campaign.
 public_artifacts:
   - path: docs/benchmark/agents-v1/README.md
-    description: Implemented-not-evaluated DiscoveryBench Agents v1 instrument contract
+    description: TreasureBench Agents v1 instrument contract with frozen DiscoveryBench compatibility identifiers
   - path: reports/benchmark/discoverybench-agents-v1-implementation-decision.md
     description: Offline implementation readiness decision and evaluation authorization boundary
   - path: reports/roadmap-consolidation/discoverybench-agents-v1-registration-decision.md
@@ -19,7 +19,7 @@ public_artifacts:
   - path: studies/DD-010-discoverybench/schemas/task-v3.schema.json
     description: Versioned Program V4 threshold, dynamic, and mechanism task schema
   - path: results/verified/20260722T054447Z_DD-010_d265e480_6930915b02/outputs/benchmark-summary.json
-    description: DiscoveryBench v3 public-safe registry and compatibility summary
+    description: Frozen DiscoveryBench v3 public-safe registry underlying the TreasureBench display
   - path: results/verified/20260722T054447Z_DD-010_d265e480_6930915b02/outputs/task-registry.json
     description: Complete v3 exact task registry
   - path: results/verified/20260722T054447Z_DD-010_d265e480_6930915b02/outputs/protocol-registry.json

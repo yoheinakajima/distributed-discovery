@@ -231,21 +231,21 @@ records:
     last_reviewed: "2026-07-23"
   - idea_id: PM-0013
     title: Benchmark external rename requirement
-    status: owner-adopted
+    status: implemented
     capture_classification: capture-now
     visibility: public
     source_type: owner-decision
     captured_date: "2026-07-23"
-    proposition: The first external benchmark artifact must not use DiscoveryBench without a completed collision and naming gate.
-    why_it_matters: An established ICLR benchmark already owns the same public name.
+    proposition: TreasureBench is the formal public suite name after a bounded collision gate, while DiscoveryBench remains a historical and frozen compatibility alias.
+    why_it_matters: An established ICLR benchmark already uses DiscoveryBench, so the owner-selected public name and compatibility boundary must remain explicit.
     canonical_destination: {type: decision-record, path: reports/editorial/benchmark-name-decision.yml}
     dependencies: [DD-010, docs/adr/ADR-DISCOVERYBENCH-AGENTS-V1-VERSIONING.md]
-    promotion_trigger: Owner selects among the ranked candidates because the automatic margin gate did not pass.
+    promotion_trigger: null
     permitted_stops: [implemented, deferred, rejected, superseded]
-    not_a_result_boundaries: [DD-010 and historical aliases remain unchanged, no partial rename]
+    not_a_result_boundaries: [DD-010 and frozen identifiers remain unchanged, no legal clearance or global uniqueness claim]
     supersedes: []
     superseded_by: null
-    review_after: owner-public-name-decision
+    review_after: null
     owner_decision: adopted
     last_reviewed: "2026-07-23"
   - idea_id: PM-0014
@@ -474,5 +474,81 @@ records:
     supersedes: []
     superseded_by: null
     review_after: each-paper-freeze
+    owner_decision: adopted
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0026
+    title: TreasureBench layered naming system
+    status: implemented
+    capture_classification: capture-now
+    visibility: public
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: TreasureBench is the formal instrument and Treasure Hunt is its interactive companion under a mandatory two-way public funnel.
+    why_it_matters: The hierarchy preserves scholarly clarity while making the sixteen-box game approachable without creating a second benchmark.
+    canonical_destination: {type: ADR, path: docs/adr/ADR-TREASUREBENCH-NAMING-SYSTEM.md}
+    dependencies: [PM-0013, DD-010]
+    promotion_trigger: null
+    permitted_stops: [implemented, superseded]
+    not_a_result_boundaries: [presentation and compatibility authority only, no study claim run or theorem]
+    supersedes: [ranked-benchmark-name-shortlist]
+    superseded_by: null
+    review_after: null
+    owner_decision: adopted
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0027
+    title: Treasure Hunt playable companion
+    status: implemented
+    capture_classification: capture-now
+    visibility: public
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: Treasure Hunt presents existing public exact fixtures through removable metaphors and links every module back to TreasureBench and its scientific authorities.
+    why_it_matters: A playable guide can improve access only when formal terms evidence limitations and the suite relationship remain visible.
+    canonical_destination: {type: policy, path: docs/benchmark/treasurebench-naming-system.yml}
+    dependencies: [PM-0026, DD-010]
+    promotion_trigger: null
+    permitted_stops: [implemented, superseded]
+    not_a_result_boundaries: [not a Lab or benchmark, creates no evidence or result]
+    supersedes: []
+    superseded_by: null
+    review_after: null
+    owner_decision: adopted
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0028
+    title: Treasure Hunt vernacular rename option
+    status: evidence-dependent
+    capture_classification: evidence-dependent
+    visibility: internal
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: A future owner may separately reconsider the formal name only after sustained third-party usage independently applies Treasure Hunt or Yohei's Treasure Hunt to the suite.
+    why_it_matters: The option preserves responsiveness to real adoption without monitoring people or precommitting to another rename.
+    canonical_destination: {type: decision-record, path: docs/benchmark/treasurebench-naming-system.yml}
+    dependencies: [PM-0026]
+    promotion_trigger: Owner supplies independent citations forks documentation posts or package references that show sustained formal-suite usage.
+    permitted_stops: [implemented, deferred, rejected, closed-by-null]
+    not_a_result_boundaries: [no automated monitoring, no adoption inference, no rename commitment]
+    supersedes: []
+    superseded_by: null
+    review_after: owner-provided-sustained-third-party-usage-evidence
+    owner_decision: deferred
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0029
+    title: Benchmark naming rejection and supersession record
+    status: implemented
+    capture_classification: capture-now
+    visibility: public
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: DiscoveryBench and Treasure Hunt are rejected as formal external tokens, Search Party and Shared-family names remain rejected, and BoxHunt is superseded as first fallback.
+    why_it_matters: Durable rejection reasons prevent obsolete candidate rankings from reopening the locked owner decision.
+    canonical_destination: {type: ADR, path: docs/adr/ADR-TREASUREBENCH-NAMING-SYSTEM.md}
+    dependencies: [PM-0026]
+    promotion_trigger: null
+    permitted_stops: [implemented, superseded]
+    not_a_result_boundaries: [fallback order is internal, no candidate has global-clearance status]
+    supersedes: [ActionPortfolioBench-ranked-shortlist, BoxHunt-selected-name, SearchParty-candidate]
+    superseded_by: null
+    review_after: null
     owner_decision: adopted
     last_reviewed: "2026-07-23"

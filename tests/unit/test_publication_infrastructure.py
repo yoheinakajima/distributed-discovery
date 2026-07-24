@@ -46,7 +46,7 @@ def test_publication_infrastructure_is_null_safe_and_internal_queue_stays_privat
     assert result["citation_records"] == 8
     assert result["first_freeze_candidate"] == "common-source-trap"
     assert result["lifecycle_anchor"] == "canonical-public-anchor"
-    assert result["benchmark_name_decision"] == "owner-name-decision-required"
+    assert result["benchmark_name_decision"] == "treasurebench-selected-and-implemented"
 
 
 def test_release_manifest_is_a_deterministic_nonrelease() -> None:
@@ -60,15 +60,16 @@ def test_release_manifest_is_a_deterministic_nonrelease() -> None:
     }
 
 
-def test_benchmark_name_gate_preserves_compatibility_until_owner_decides() -> None:
+def test_benchmark_name_gate_records_owner_decision_and_preserves_compatibility() -> None:
     decision = yaml.safe_load(
         (ROOT / "reports/editorial/benchmark-name-decision.yml").read_text(encoding="utf-8")
     )
-    assert decision["decision"] == "owner-name-decision-required"
-    assert decision["external_scholarly_name"] is None
-    assert decision["rename_implemented"] is False
+    assert decision["decision"] == "treasurebench-selected-and-implemented"
+    assert decision["external_scholarly_name"] == "TreasureBench"
+    assert decision["playable_companion"] == "Treasure Hunt"
+    assert decision["rename_implemented"] is True
     assert decision["current_internal_name"] == "DiscoveryBench"
-    assert "DD-010" in decision["compatibility_if_later_renamed"]["preserve"]
+    assert "DD-010" in decision["compatibility"]["preserve"]
 
 
 def test_license_matrix_records_unresolved_owner_decisions_without_relicensing() -> None:

@@ -1,0 +1,71 @@
+schema_version: 1
+audit_date: "2026-07-23"
+status: local-full-and-browser-gates-pass-ci-and-live-pending
+starting_main: b242e31680237538e26bae543fdac5db459b0857
+formal_suite: TreasureBench
+historical_alias: DiscoveryBench
+scientific_inventory:
+  studies: 26
+  maximum_study_id: DD-022
+  claims: 110
+  maximum_claim_id: DD-C-0110
+  manifests: 51
+  passing_runs: 48
+preservation:
+  dd010_id: unchanged
+  claim_ids: unchanged
+  run_ids: unchanged
+  immutable_result_paths: unchanged
+  protocol_ids: unchanged
+  metric_ids: unchanged
+  paper_sources: unchanged
+  verified_results_tree: c8fd20f66797c5014acf658a749e7f15fcaf6750
+frozen_schema_sha256:
+  task-v1.schema.json: 5bfca5952c35823986137f4c13740d9c56d90ef1fdb0d11ac7f9bd2c0fa90d92
+  task-v2.schema.json: c52bb69bbfa76ffeee316b02aad3d5c0d72ab46643de596cc2025f64344bc6f2
+  task-v3.schema.json: 9da2709a5790afeecd7c8e6dac81c3215cbdb15731f6dd6a77ddda2e6ce7c5d1
+display_only_dd010_changes:
+  - studies/DD-010-discoverybench/README.md
+  - studies/DD-010-discoverybench/public.yml
+cli:
+  historical_distributed_discovery: pass
+  historical_agents_v1: pass
+  distributed_discovery_treasurebench: pass
+  treasurebench_console_alias: pass
+  root_distribution: distributed-discovery
+routes:
+  canonical_count: 7
+  historical_http_200_alias_count: 7
+  route_alias_registry: data/route-aliases.json
+json:
+  historical_namespace: data/benchmark/
+  canonical_display_namespace: data/treasurebench/
+  immutable_result_files_renamed: false
+site_local:
+  html_pages: 89
+  public_json_files: 110
+  generated_files: 221
+  registered_labs: 18
+  downloads: 23
+  primary_navigation_items: 5
+paper_hash_verification:
+  status: pass
+  pdfs: 7
+  pages: 119
+  sources_changed: false
+browser_verification:
+  status: pass
+  desktop_width: 1280
+  mobile_viewport: 390x844
+  console_errors: 0
+  document_overflow: false
+ci_verification: pending
+pages_verification: pending
+external_actions:
+  provider_calls: 0
+  private_material_created: false
+  package_published: false
+  namespace_reserved: false
+  release_created: false
+  doi_created: false
+  arxiv_submission: false

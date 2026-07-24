@@ -863,3 +863,15 @@ document.querySelectorAll("[data-coordination-lab]").forEach((lab) => {
   });
   render();
 });
+
+document.querySelectorAll("[data-treasure-module]").forEach((module) => {
+  const choice = module.querySelector("[data-treasure-choice]");
+  const output = module.querySelector("[data-treasure-output]");
+  if (!choice || !output) return;
+  const render = () => {
+    const option = choice.options[choice.selectedIndex];
+    output.textContent = option?.dataset.outcome || "No registered implication.";
+  };
+  choice.addEventListener("change", render);
+  render();
+});

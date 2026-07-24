@@ -110,7 +110,7 @@ studies:
     program: program-v2
     theorem_family: measurement
     lab_slugs: [benchmark]
-    data_routes: [data/benchmark/tasks.json, data/benchmark/results.json, data/benchmark/agents-v1-registration.json, data/benchmark/agents-v1-implementation.json, data/benchmark/agents-v1-evaluation.json]
+    data_routes: [data/treasurebench/tasks.json, data/treasurebench/results.json, data/treasurebench/agents-v1-registration.json, data/treasurebench/agents-v1-implementation.json, data/treasurebench/agents-v1-evaluation.json, data/treasure-hunt.json]
   DD-011:
     program: program-v2
     theorem_family: measurement

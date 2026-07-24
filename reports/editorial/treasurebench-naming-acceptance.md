@@ -26,12 +26,13 @@ Audit date: 2026-07-23 PDT
 - [x] complete rejection and supersession history is preserved;
 - [x] no generic shortlist re-ranking occurred;
 - [x] no namespace was reserved and no package was published;
-- [ ] formal current-facing display migration complete;
-- [ ] historical CLI, route, JSON, and schema compatibility complete;
-- [ ] Treasure Hunt companion and two-way funnel complete;
-- [ ] program-memory and publication/release routing complete;
-- [ ] scientific and paper invariants verified;
-- [ ] local validation, CI, Pages, and live acceptance complete.
+- [x] formal current-facing display migration complete;
+- [x] historical CLI, route, JSON, and schema compatibility complete;
+- [x] Treasure Hunt companion and two-way funnel complete;
+- [x] program-memory and publication/release routing complete;
+- [x] scientific and paper invariants verified;
+- [x] local validation and browser acceptance complete;
+- [ ] CI, Pages, and live acceptance complete.
 
 The decision does not become a claim of legal clearance or global uniqueness
 when all implementation boxes pass.
