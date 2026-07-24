@@ -28,8 +28,10 @@ Baseline audit completed at `2026-07-24T15:52:58Z`.
   `d5b3a23a4c61fc47971f389bc04a0283c87c85b4`;
 - peer-message leakage-boundary repair commit:
   `8775baf89579a7eac8e7c911f5b1f794b89606d0`;
+- forward-only private reauthorization-binding repair commit:
+  `99dbfb8e776ee5a01fd9860893e91107c40c6bbb`;
 - current frozen execution-tree hash:
-  `sha256:7c2c6bb81ebef75148bb4ae502a850951149ddd621dff669ed8dc5ee73cff1d6`;
+  `sha256:5bb0d48fd9280b69df5df38362d0aa015fb8584aa34ab20b178c6cf0465cfe63`;
 - open substantive pull requests before branch creation: none;
 - unrelated open issue #32: settings-only and not a blocker;
 - release: annotated `dd-compendium-v0.1.0`, GitHub Release and Zenodo record
@@ -286,9 +288,13 @@ dispatching the next call when the prompt compiler treated the generic phrase
 `threshold discovery` in a peer-authored visible message as a leaked
 scientific title. The partial private batch, append-only ledger, encrypted
 responses, and encrypted traces remain preserved outside Git. No output lock
-or unsealing occurred. The execution-sensitive boundary repair is committed
-and pushed; M14 must now be repeated against a fresh authorization for the
-clean checkpoint containing that repair before M18 may resume.
+or unsealing occurred. The first boundary repair was authorized at clean
+checkpoint `d7cd687`; M14 passed again, but a no-call private-identity preflight
+then correctly rejected the preserved custody because the runtime had no
+mechanism to bind a later authorized repair checkpoint without replacing the
+original identity. The forward-only reauthorization-binding repair is
+committed and pushed. M14 must now be repeated against a fresh authorization
+for the clean checkpoint containing both repairs before M18 may resume.
 
 ## Progress checklist
 
@@ -314,7 +320,7 @@ clean checkpoint containing that repair before M18 may resume.
 - [x] M16 real private custody and public commitments.
 - [x] M17 private 10% prefix gate.
 - [ ] M18 complete fixed batch (**partial batch preserved; fresh authorization
-  required for the clean checkpoint containing repair commit `8775baf`**).
+  required for the clean checkpoint containing repair commit `99dbfb8`**).
 - [ ] M19-M25 remaining Phase B milestones.
 
 ## Discoveries and surprises
@@ -370,6 +376,20 @@ clean checkpoint containing that repair before M18 may resume.
   compiler-controlled prompt content. Focused tests, all 385 repository tests,
   MyPy across 183 sources, 76/76 corruption checks, and the synthetic rehearsal
   pass.
+- The authorization recreated for clean checkpoint `d7cd687` passed the full
+  M14 gate: schema, active interval, revocation, exact local/remote commit and
+  tree, GitHub state, exact models, secure configured credentials, frozen caps,
+  required engineering permissions, prohibited permissions, existing custody,
+  and the preserved ledger all matched. No credential value was printed.
+- Before credentials were loaded, the preserved private identity rejected the
+  new authorization because it was immutably bound to the prior execution
+  checkpoint. No provider call, private generation, output lock, or unsealing
+  occurred. The repair preserves that original identity and records only an
+  owner-authorized, Git-descendant transition in the existing hash-chained
+  access log. Stable base, branch, issue, PR, campaign, batch, and model
+  identity must remain exact, and the access log is part of the output lock.
+  All 387 repository tests, MyPy across 183 sources, 76/76 corruption checks,
+  pilot verification, and the 500-run synthetic rehearsal pass.
 
 ## Decision log
 
@@ -405,6 +425,17 @@ clean checkpoint containing that repair before M18 may resume.
   replacement tree hash
   `sha256:7c2c6bb81ebef75148bb4ae502a850951149ddd621dff669ed8dc5ee73cff1d6`.
   The authorization for `fb10435a` is no longer valid.
+- `2026-07-24`: accept the recreated owner authorization for execution commit
+  `d7cd687284be46e42f8dcad29a1d255e37d96056` and tree hash
+  `sha256:7c2c6bb81ebef75148bb4ae502a850951149ddd621dff669ed8dc5ee73cff1d6`;
+  repeat and pass M14 without making a provider call.
+- `2026-07-24`: stop before credential loading when the no-call private
+  identity preflight rejects transition from the preserved original execution
+  checkpoint. Preserve all custody and ledger material unchanged.
+- `2026-07-24`: commit and push execution-sensitive repair `99dbfb8`; freeze
+  replacement tree hash
+  `sha256:5bb0d48fd9280b69df5df38362d0aa015fb8584aa34ab20b178c6cf0465cfe63`.
+  The authorization for `d7cd687` is no longer valid.
 
 ## Validation strategy
 
@@ -434,8 +465,8 @@ freeze, draft PR, and—if authorized—public commitments and redacted closeout
 
 Phase A has none. Phase B is paused during M18 until a fresh matching
 non-synthetic local owner authorization exists for the final pushed clean
-checkpoint containing repair commit `8775baf` and execution-tree hash
-`sha256:7c2c6bb81ebef75148bb4ae502a850951149ddd621dff669ed8dc5ee73cff1d6`.
+checkpoint containing repair commit `99dbfb8` and execution-tree hash
+`sha256:5bb0d48fd9280b69df5df38362d0aa015fb8584aa34ab20b178c6cf0465cfe63`.
 The partial batch is intentionally preserved outside Git and must resume from
 its append-only ledger without duplicating a successful paid call.
 
@@ -455,9 +486,10 @@ its append-only ledger without duplicating a successful paid call.
 Phase A and M14-M17 completed. The public canaries, real encrypted custody, and
 predeclared private prefix gate passed. M18 remains incomplete at a safe,
 resumable fail-closed boundary with 2,687 paid attempts and USD 9.7703065
-cumulative cost. The private outputs remain sealed; no output lock, unsealing,
-Method A/Method B final verification, detailed public performance report, or
-scientific result exists.
+cumulative cost. A subsequent authorized resume made no provider call because
+the private identity preflight stopped before credential loading. The private
+outputs remain sealed; no output lock, unsealing, Method A/Method B final
+verification, detailed public performance report, or scientific result exists.
 
 The exact next action is for the owner to run the supplied helper against this
 branch and its final pushed clean checkpoint commit, then resume the same
