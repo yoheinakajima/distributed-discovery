@@ -285,7 +285,7 @@ statements never enter Git.
 24. M24 roadmap/site reconciliation.
 25. M25 validation, merge, Pages, live acceptance, issue closeout, main sync.
 
-Execute sequentially. M0-M18 are complete. After the peer-message and
+Execute sequentially. M0-M23 are complete. After the peer-message and
 forward-only binding repairs were separately authorized, M14 passed, the
 immutable original custody identity transitioned exactly once through the
 hash-chained access log, and M18 resumed only missing work. The fixed batch
@@ -296,8 +296,12 @@ The post-M18 audit then found that the frozen verifier would hard-code
 base-campaign registration readiness despite provider failures and protocol
 errors. Before provider-phase closure or output lock, execution stopped. The
 decision repair now maps this batch to the predeclared
-`sealed-pilot-quarantined-provider-failure` outcome. It is committed and
-pushed; M14 must be repeated against a fresh authorization before M19.
+`sealed-pilot-quarantined-provider-failure` outcome. After fresh authorization,
+M14 passed again, the second forward-only transition was recorded, the provider
+phase closed without another call, and the 3,545-object output lock was
+committed and pushed before unsealing. Method A/B, contamination, corruptions,
+redaction, private-leak, and cost-reconciliation checks pass. M24 roadmap/site
+reconciliation is active.
 
 ## Progress checklist
 
@@ -323,9 +327,14 @@ pushed; M14 must be repeated against a fresh authorization before M19.
 - [x] M16 real private custody and public commitments.
 - [x] M17 private 10% prefix gate.
 - [x] M18 complete fixed batch.
-- [ ] M19 output lock (**fresh authorization required for the clean checkpoint
-  containing decision repair commit `0c82c36`**).
-- [ ] M20-M25 remaining Phase B milestones.
+- [x] M19 output lock.
+- [x] M20 unseal and Method A.
+- [x] M21 Method B.
+- [x] M22 safety, contamination, and corruptions.
+- [x] M23 redacted engineering summary.
+- [x] M24 roadmap/site reconciliation.
+- [ ] M25 validation, merge, Pages, live acceptance, issue closeout, main sync
+  (**local acceptance complete; PR/CI/Pages/main closeout pending**).
 
 ## Discoveries and surprises
 
@@ -413,6 +422,30 @@ pushed; M14 must be repeated against a fresh authorization before M19.
   this batch must close as `sealed-pilot-quarantined-provider-failure`. All
   392 repository tests, MyPy across 183 sources, 76/76 corruption checks,
   pilot verification, and the 500-run synthetic rehearsal pass.
+- The authorization for clean checkpoint `b166e6f` passed M14. A second
+  forward-only transition was recorded once in the hash-chained access log,
+  with the original execution identity still byte-exact. The provider ledger
+  did not change.
+- M19 closed the provider phase without loading live adapters or dispatching a
+  call. Output-lock commitment
+  `sha256:1d487723f7587e8e2fa865682e6f6cc473cf2da4967b837dedf3952cddfcbfab`
+  covers 3,545 encrypted objects. Public YAML and Markdown lock records were
+  committed and pushed as `b57affc` before unsealing.
+- Post-push lock revalidation passed. M20-M23 then unsealed only through the
+  lock gate, replayed all 500 runs, found zero Method A/B disagreements and
+  zero contamination findings, preserved two protocol errors and two
+  Anthropic provider errors, rejected 76/76 corruptions, passed redaction and
+  private-leak scans, and reconciled exact costs. The encrypted final audit
+  package is retained for 365 days. The redacted decision is
+  `sealed-pilot-quarantined-provider-failure`.
+- M24 reconciles the redacted closeout across current state, roadmap, master
+  plan, handoff, project status, the canonical TreasureBench Agents v1 page,
+  program page, and public JSON. The site exposes aggregate engineering status
+  only and blocks base-campaign readiness.
+- M25 local acceptance passes 392 tests, Ruff, MyPy across 183 sources, all
+  repository audits, 76/76 pilot corruptions, exact redaction/leak/cost checks,
+  seven rebuilt PDFs with unchanged hashes and 119 pages, and an 89-page
+  26-study site build.
 
 ## Decision log
 
@@ -472,6 +505,19 @@ pushed; M14 must be repeated against a fresh authorization before M19.
   `0c82c36`; freeze replacement tree hash
   `sha256:81c3b51688dc2b61b225b989b81fbd922cbfe4c5059c171aa19499e7024e8757`.
   The authorization for `ef30cb3` is no longer valid.
+- `2026-07-24`: accept the recreated owner authorization for execution commit
+  `b166e6fa19cbdec0bb8e786aee2de0d9edfc12d1` and tree hash
+  `sha256:81c3b51688dc2b61b225b989b81fbd922cbfe4c5059c171aa19499e7024e8757`;
+  pass M14 and record the second forward-only transition without adding a
+  provider call.
+- `2026-07-24`: close the provider phase, create the 3,545-object output lock,
+  and commit/push public lock records as `b57affc` before unsealing.
+- `2026-07-24`: reverify the pushed lock, complete post-lock Method A/B,
+  contamination, 76-case corruption, redaction, private-leak, and exact-cost
+  checks, and freeze the quarantined-provider-failure closeout.
+- `2026-07-24`: complete M24 public reconciliation and M25 local acceptance
+  without changing any paper PDF, claim, study, scientific run, or
+  execution-sensitive path.
 
 ## Validation strategy
 
@@ -499,12 +545,8 @@ freeze, draft PR, and—if authorized—public commitments and redacted closeout
 
 ## Blockers
 
-Phase A has none. Phase B is paused before M19 until a fresh matching
-non-synthetic local owner authorization exists for the final pushed clean
-checkpoint containing decision repair commit `0c82c36` and execution-tree hash
-`sha256:81c3b51688dc2b61b225b989b81fbd922cbfe4c5059c171aa19499e7024e8757`.
-The completed provider phase remains open only because output locking has not
-yet occurred; no further provider call is required or permitted.
+None. No further provider call is required or permitted. M24 and M25 are
+public reconciliation, validation, merge, deployment, and closeout only.
 
 ## Recovery and restart instructions
 
@@ -519,15 +561,15 @@ yet occurred; no further provider call is required or permitted.
 
 ## Outcome and retrospective
 
-Phase A and M14-M18 completed. The public canaries, real encrypted custody,
+Phase A and M14-M23 completed. The public canaries, real encrypted custody,
 predeclared prefix gate, forward-only custody transition, and fixed batch
 completed. The provider ledger is preserved at 3,037 attempts and USD
 11.5702435. The final decision is necessarily quarantined-provider-failure,
-not base-campaign registration ready. The private outputs remain sealed; no
-output lock, unsealing, final Method A/Method B verification, detailed public
-performance report, or scientific result exists.
+not base-campaign registration ready. The provider phase is closed, the output
+lock was public and pushed before unsealing, independent verification and all
+safety checks pass, and the encrypted final audit package is retained. No
+detailed public performance report or scientific result exists.
 
-The exact next action is for the owner to run the supplied helper against this
-branch and its final pushed clean checkpoint commit, then resume the same
-session. Any further execution-sensitive edit invalidates the replacement tree
-hash and authorization.
+The exact next action is to commit and push the public closeout, mark PR #188
+ready, verify branch CI, merge, verify post-merge CI and Pages plus live
+engineering-only status, close issue #187, and synchronize main.

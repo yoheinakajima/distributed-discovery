@@ -1,27 +1,26 @@
 # Master execution plan
 
-## Active continuation — TreasureBench Agents v1 sealed engineering pilot (2026-07-24)
+## Completed continuation — TreasureBench Agents v1 sealed engineering pilot (2026-07-24)
 
 Issue #187 and branch `benchmark/treasurebench-agents-v1-sealed-pilot` own the
 sole substantive lane from clean main
 `0d3757caf322402c0c47117b3aff0490926a133d`. The living ExecPlan is
 [`TREASUREBENCH_AGENTS_V1_PILOT.md`](TREASUREBENCH_AGENTS_V1_PILOT.md).
 
-Phase A registers and rehearses the fixed 50-task, five-family, five-
-architecture, two-direct-cloud-route engineering pilot. Its request,
-pilot-specific authorization, deterministic allocation, private-state
-contract, encrypted custody, hash-chained resume ledger, cost guards, output
-lock, independent verification, 35 required plus additional corruptions, and
-offline command surfaces are implemented. The complete synthetic sealed
-rehearsal makes zero provider calls, reads zero credentials, creates no real
-private material, and incurs zero cost.
+The fixed 50-task, five-family, five-architecture, two-direct-cloud-route
+engineering pilot completed through encrypted custody, resumable provider
+execution, output lock, post-lock unsealing, independent verification,
+contamination and corruption checks, redaction, and exact cost reconciliation.
+Its decision is `sealed-pilot-quarantined-provider-failure`: 3,037 attempts
+include 3,035 successes and two preserved Anthropic errors. Method A/B
+disagreement and contamination counts are zero; reconstructed protocol errors
+are two.
 
-The active gate is execution freeze, remote draft PR, and exact local owner
-authorization. Phase B remains blocked until a non-synthetic authorization
-matches the frozen branch, execution commit, tree hash, issue, campaign,
-batch, models, architectures, permissions, and caps. This lane creates no
+The public closeout is redacted engineering evidence only. It creates no
 DD-023, claim, scientific run, paper result, ranking, composite, package,
 submission, upstream change, or authority for the 200-task base campaign.
+Any repair or rerun is a separately registered and owner-authorized future
+gate.
 
 ## Active continuation — Compendium v0.1.0 durable closeout (2026-07-24)
 

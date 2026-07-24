@@ -1,6 +1,23 @@
-# Project status — Compendium v0.1.0 published and DOI-verified
+# Project status — TreasureBench sealed pilot quarantined and locked
 
 Date: 2026-07-24 (America/Los_Angeles).
+
+Issue #187 and PR #188 complete the non-inferential DD-010 TreasureBench
+Agents v1 sealed engineering pilot with decision
+`sealed-pilot-quarantined-provider-failure`. The provider ledger closes at
+3,037 attempts, 3,035 successes, two preserved Anthropic errors, and USD
+11.5702435. The output lock covers 3,545 encrypted objects and precedes all
+unsealing. Method A/B disagreements and contamination findings are zero; two
+protocol errors remain; 76/76 corruptions, redaction, private-leak scanning,
+and exact cost reconciliation pass.
+
+No task text, answer, seed, key, prompt, output, raw trace, detailed
+performance, ranking, or composite is public. The pilot creates no study,
+claim, scientific run, paper result, leaderboard, or base-campaign authority.
+Any instrument repair requires a separate registered and owner-authorized
+gate.
+
+## Prior compendium release status
 
 Issue #185 published the exact authorized source
 `3ca173f4e9e81a6d0e3e56205e428c596edc050e` as annotated tag

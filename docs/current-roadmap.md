@@ -1,4 +1,4 @@
-# Current roadmap — Compendium v0.1.0 published; sealed pilot gate next
+# Current roadmap — sealed pilot quarantined; instrument repair separately gated
 
 Compendium v0.1.0 is published and externally verified from exact source
 `3ca173f4e9e81a6d0e3e56205e428c596edc050e`. The immutable GitHub Release,
@@ -6,11 +6,14 @@ five custom assets, Zenodo software record, version DOI
 `10.5281/zenodo.21535005`, concept DOI `10.5281/zenodo.21535004`, and both DOI
 resolutions pass. The archival release changes no scientific or paper status.
 
-The exact next repository gate is **TreasureBench Agents v1 sealed engineering
-pilot registration and authorization**. It requires a separate bounded plan,
-private-task custody, exact model/provider snapshots, cost authorization, and
-the existing non-inferential engineering boundary. It creates no authority to
-run the pilot in this release closeout.
+The TreasureBench Agents v1 sealed engineering pilot completed with decision
+`sealed-pilot-quarantined-provider-failure`. Its fixed encrypted batch,
+provider phase, output lock, post-lock verification, contamination audit,
+76-case corruption suite, redaction, and exact cost reconciliation are
+complete. Two preserved Anthropic errors and two reconstructed protocol errors
+block base-campaign registration readiness. The next benchmark gate, if
+exercised, is a separately registered and owner-authorized instrument repair;
+no rerun or base campaign is currently authorized.
 
 ## Prior offline release gate
 

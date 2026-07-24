@@ -1,4 +1,20 @@
-# Final handoff — Compendium v0.1.0 published and DOI-verified
+# Final handoff — TreasureBench sealed pilot quarantined and locked
+
+## Current sealed-pilot closeout (2026-07-24)
+
+Issue #187 and PR #188 complete the TreasureBench Agents v1 sealed engineering
+pilot with decision `sealed-pilot-quarantined-provider-failure`. The fixed
+private provider phase closed at 3,037 attempts, 3,035 successes, two preserved
+Anthropic errors, and USD 11.5702435. The output lock covers 3,545 encrypted
+objects and was committed and pushed before unsealing.
+
+Method A and independent Method B agree across all 500 runs. Contamination
+findings are zero, 76/76 corruptions reject, redaction and private-leak scans
+pass, and costs reconcile exactly. No private task, answer, key, prompt,
+output, trace, detailed performance, ranking, or composite is public. The
+closeout creates no study, claim, scientific run, paper result, leaderboard,
+or base-campaign authority. Instrument repair requires separate registration
+and owner authorization.
 
 ## Current release closeout (2026-07-24)
 
