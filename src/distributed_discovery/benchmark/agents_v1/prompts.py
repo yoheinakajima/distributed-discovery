@@ -85,9 +85,18 @@ class ClosedCapabilityView(Mapping[str, object]):
         return len(self._allowed)
 
 
-def leakage_findings(value: object, *, evaluator_values: tuple[str, ...] = ()) -> tuple[str, ...]:
+def leakage_findings(
+    value: object,
+    *,
+    evaluator_values: tuple[str, ...] = (),
+    check_scientific_titles: bool = True,
+) -> tuple[str, ...]:
     text = json.dumps(value, sort_keys=True)
-    findings = [name for name, pattern in LEAK_PATTERNS.items() if pattern.search(text)]
+    findings = [
+        name
+        for name, pattern in LEAK_PATTERNS.items()
+        if (check_scientific_titles or name != "scientific-title") and pattern.search(text)
+    ]
     lowered = text.lower()
     for key in PROHIBITED_KEYS:
         if f'"{key.lower()}"' in lowered:
@@ -140,7 +149,13 @@ def compile_prompt(
         )
         if value not in public_state_text
     )
-    findings = leakage_findings(payload, evaluator_values=evaluator_values)
+    compiler_controlled = {**payload, "visible_messages": []}
+    findings = leakage_findings(compiler_controlled, evaluator_values=evaluator_values)
+    findings += leakage_findings(
+        list(capability.visible_messages),
+        evaluator_values=evaluator_values,
+        check_scientific_titles=False,
+    )
     if findings:
         raise ValueError(f"prompt leakage: {', '.join(findings)}")
     return CompiledPrompt(
