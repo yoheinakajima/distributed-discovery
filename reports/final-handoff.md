@@ -14,6 +14,16 @@ Treasure Hunt guide creates no Lab, study, claim, run, result, paper, provider
 call, private material, release, DOI, or namespace reservation. The exact next
 repository gate is **First tagged compendium release and Zenodo activation**.
 
+PR #181 squash-merged as
+`5c407a86019414f90ec46be748ecb515a5a16a6f`; issue #180 is closed. Branch CI
+`30064747703`, branch paper/site `30064747706`, post-merge CI `30065051273`,
+and Pages `30065051274` passed. Live acceptance covers seven canonical and
+seven historical suite routes, Treasure Hunt, canonical and legacy JSON, the
+route registry, the two-way funnel, and all seven exact PDF hashes. Local
+acceptance passed 355 tests, 181 typed source files, 89 HTML pages, 110 public
+JSON files, 221 generated files, 18 registered Labs, 23 downloads, and five
+primary-navigation items.
+
 Issue #178 and draft PR #179 own the documentation/governance continuation.
 M1–M16 are complete; full local acceptance passes 350 tests, 110 claims, all
 51 manifests, the three new audit targets, the seven exact PDFs/119-page

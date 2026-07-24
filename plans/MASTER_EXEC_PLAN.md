@@ -1,6 +1,6 @@
 # Master execution plan
 
-## Active continuation — TreasureBench naming and Treasure Hunt companion (2026-07-23)
+## Completed continuation — TreasureBench naming and Treasure Hunt companion (2026-07-23)
 
 Issue #180, draft PR #181, and branch
 `docs/treasurebench-treasure-hunt-naming` own the sole substantive lane from
@@ -8,8 +8,8 @@ clean main `b242e31680237538e26bae543fdac5db459b0857`. The living ExecPlan is
 [`TREASUREBENCH_TREASURE_HUNT_NAMING.md`](TREASUREBENCH_TREASURE_HUNT_NAMING.md).
 
 The owner selected TreasureBench as the formal public suite and Treasure Hunt
-as its interactive companion. The bounded dated collision gate passed, subject
-to compatibility, validation, CI, and live Pages acceptance. DiscoveryBench is
+as its interactive companion. The bounded dated collision, compatibility,
+validation, CI, and live Pages gates passed. DiscoveryBench is
 retained as a historical/internal compatibility alias. DD-010, frozen IDs,
 immutable evidence, old routes, old commands, and the
 `distributed-discovery` root distribution remain preserved.
@@ -19,6 +19,12 @@ material, study, claim, run, paper, package publication, external namespace,
 tag, release, Zenodo integration, DOI, arXiv submission, legal clearance, or
 upstream mutation. Its successor gate is the separately authorized first tagged
 compendium release and Zenodo activation.
+
+PR #181 squash-merged as
+`5c407a86019414f90ec46be748ecb515a5a16a6f`; issue #180 closed. Branch CI
+`30064747703`, branch paper/site `30064747706`, post-merge CI `30065051273`,
+and Pages `30065051274` passed. Live canonical/historical routes, Treasure
+Hunt, JSON compatibility, the funnel, and all seven exact PDF hashes passed.
 
 ## Completed continuation — program memory and preprint infrastructure (2026-07-23)
 

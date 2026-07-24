@@ -1,6 +1,6 @@
 # TreasureBench naming acceptance
 
-Status at ADR checkpoint: accepted for implementation
+Status: accepted and implemented
 
 Decision: `treasurebench-selected-and-implemented`
 
@@ -32,7 +32,7 @@ Audit date: 2026-07-23 PDT
 - [x] program-memory and publication/release routing complete;
 - [x] scientific and paper invariants verified;
 - [x] local validation and browser acceptance complete;
-- [ ] CI, Pages, and live acceptance complete.
+- [x] CI, Pages, and live acceptance complete.
 
 The decision does not become a claim of legal clearance or global uniqueness
 when all implementation boxes pass.

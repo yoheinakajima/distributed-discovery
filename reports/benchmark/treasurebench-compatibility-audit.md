@@ -3,8 +3,7 @@
 Audit date: 2026-07-23 PDT. Starting main:
 `b242e31680237538e26bae543fdac5db459b0857`.
 
-Status: **full local and browser gates pass; CI and live Pages acceptance
-pending**.
+Status: **pass**.
 
 ## Preserved scientific objects
 
@@ -57,5 +56,15 @@ no-JavaScript tables. The seven primary PDFs retain their accepted hashes and
 
 No provider call, private material, package publication, namespace reservation,
 tag, release, Zenodo activation, DOI, arXiv submission, or paper edit is part
-of this migration. CI and Pages are recorded only after those gates actually
-pass.
+of this migration.
+
+## CI, Pages, and live closeout
+
+PR #181 squash-merged as
+`5c407a86019414f90ec46be748ecb515a5a16a6f` and closed issue #180. Branch CI
+`30064747703`, branch paper/site build `30064747706`, post-merge CI
+`30065051273`, and Pages `30065051274` passed. All seven canonical routes and
+all seven historical routes returned live HTTP 200, as did Treasure Hunt,
+canonical and historical JSON, and the route-alias registry. The live funnel
+and historical canonical link passed, and every deployed primary PDF matched
+its accepted SHA-256.
