@@ -26,8 +26,10 @@ Baseline audit completed at `2026-07-24T15:52:58Z`.
   `05bc58e986e34019b59e84a181b8d17789987eac`;
 - replacement staged-driver commit:
   `d5b3a23a4c61fc47971f389bc04a0283c87c85b4`;
+- peer-message leakage-boundary repair commit:
+  `8775baf89579a7eac8e7c911f5b1f794b89606d0`;
 - current frozen execution-tree hash:
-  `sha256:2f4861759237e419e6901ecc3e6b09385712cc9e47912c0944cb3f9e0a8700a7`;
+  `sha256:7c2c6bb81ebef75148bb4ae502a850951149ddd621dff669ed8dc5ee73cff1d6`;
 - open substantive pull requests before branch creation: none;
 - unrelated open issue #32: settings-only and not a blocker;
 - release: annotated `dd-compendium-v0.1.0`, GitHub Release and Zenodo record
@@ -279,12 +281,14 @@ statements never enter Git.
 24. M24 roadmap/site reconciliation.
 25. M25 validation, merge, Pages, live acceptance, issue closeout, main sync.
 
-Execute sequentially. M0-M13 are complete. The first M14 revalidation passed,
-then exposed that the frozen `pilot-live` entry point stopped at the guard and
-did not drive the registered stages. No provider call or real private
-generation occurred. The execution-sensitive repair is committed and pushed;
-M14 must now be repeated against a fresh authorization for the replacement
-commit before M15-M25.
+Execute sequentially. M0-M17 are complete. M18 stopped fail-closed before
+dispatching the next call when the prompt compiler treated the generic phrase
+`threshold discovery` in a peer-authored visible message as a leaked
+scientific title. The partial private batch, append-only ledger, encrypted
+responses, and encrypted traces remain preserved outside Git. No output lock
+or unsealing occurred. The execution-sensitive boundary repair is committed
+and pushed; M14 must now be repeated against a fresh authorization for the
+clean checkpoint containing that repair before M18 may resume.
 
 ## Progress checklist
 
@@ -304,9 +308,14 @@ commit before M15-M25.
 - [x] M11 CLI/Make.
 - [x] M12 rehearsal.
 - [x] M13 freeze, push, draft PR #188, and authorization checkpoint.
-- [ ] M14 authorization and freeze revalidation (**fresh authorization required
-  from the clean checkpoint containing replacement commit `d5b3a23`**).
-- [ ] M15-M25 remaining Phase B milestones.
+- [x] M14 authorization and freeze revalidation for execution commit
+  `fb10435a5d32567e90b1306a1c4eea1ee584d41d`.
+- [x] M15 public exact-route canaries.
+- [x] M16 real private custody and public commitments.
+- [x] M17 private 10% prefix gate.
+- [ ] M18 complete fixed batch (**partial batch preserved; fresh authorization
+  required for the clean checkpoint containing repair commit `8775baf`**).
+- [ ] M19-M25 remaining Phase B milestones.
 
 ## Discoveries and surprises
 
@@ -334,6 +343,33 @@ commit before M15-M25.
   record before unsealing. Its exact synthetic mock completed 500 private runs,
   3,016 simulated provider attempts including canaries, Method A/B agreement,
   zero contamination/protocol findings, and zero new calls on full resume.
+- The repeated M14 validation passed for execution commit `fb10435a`: the
+  authorization was schema-valid, active, unexpired, and unrevoked; branch,
+  issue, draft PR, campaign, batch, base and execution commits, execution-tree
+  hash, exact models, secure credential-file metadata, caps, and permissions
+  matched. Credential values were never printed.
+- The exact-route M15 canaries passed without fallback or retry: two calls,
+  1,207 input tokens, 265 output tokens, and USD 0.007392 cumulative cost.
+- M16 generated and encrypted the authorized real 50-task custody material
+  outside Git, and public custody commitments were committed and pushed as
+  `f6f5fb1`. M17 passed its predeclared 10% prefix gate with 50 runs across all
+  five families, both providers, and all five architectures. At that gate the
+  cumulative totals were 224 calls, 144,556 input tokens, 28,727 output
+  tokens, and USD 0.839915.
+- During M18, one Anthropic transient-provider attempt was preserved and its
+  bounded retry succeeded; one separate Anthropic `schema-or-parameter` error
+  was preserved fail-soft. At the subsequent fail-closed compiler stop, the
+  partial ledger held 2,687 attempts, 2,685 successes, two errors, 1,686,049
+  input tokens, 336,584 output tokens, and USD 9.7703065 total cost
+  (OpenAI USD 4.1798125; Anthropic USD 5.590494). No call was dispatched after
+  the compiler exception.
+- The compiler had applied scientific-title lexical screening to peer-authored
+  visible messages even though the frozen contamination policy treats lexical
+  overlap alone as inconclusive. The repair keeps prohibited-key and evaluator
+  leakage checks on peer messages while limiting scientific-title screening to
+  compiler-controlled prompt content. Focused tests, all 385 repository tests,
+  MyPy across 183 sources, 76/76 corruption checks, and the synthetic rehearsal
+  pass.
 
 ## Decision log
 
@@ -357,6 +393,18 @@ commit before M15-M25.
   commit and push execution-sensitive repair `d5b3a23`; freeze tree hash
   `sha256:2f4861759237e419e6901ecc3e6b09385712cc9e47912c0944cb3f9e0a8700a7`.
   The previous authorization is no longer valid.
+- `2026-07-24`: accept the recreated owner authorization for execution commit
+  `fb10435a5d32567e90b1306a1c4eea1ee584d41d` and tree hash
+  `sha256:2f4861759237e419e6901ecc3e6b09385712cc9e47912c0944cb3f9e0a8700a7`;
+  complete M14-M17 and begin the fixed M18 batch.
+- `2026-07-24`: stop M18 fail-closed after the prompt compiler reports
+  `scientific-title` on a peer-visible generic phrase. Preserve all partial
+  private state; do not output-lock or unseal; make no further provider call
+  or private generation.
+- `2026-07-24`: commit and push execution-sensitive repair `8775baf`; freeze
+  replacement tree hash
+  `sha256:7c2c6bb81ebef75148bb4ae502a850951149ddd621dff669ed8dc5ee73cff1d6`.
+  The authorization for `fb10435a` is no longer valid.
 
 ## Validation strategy
 
@@ -384,10 +432,12 @@ freeze, draft PR, and—if authorized—public commitments and redacted closeout
 
 ## Blockers
 
-Phase A has none. Phase B is blocked until a fresh matching non-synthetic local
-owner authorization exists for the clean checkpoint containing replacement
-commit `d5b3a23` and tree hash
-`sha256:2f4861759237e419e6901ecc3e6b09385712cc9e47912c0944cb3f9e0a8700a7`.
+Phase A has none. Phase B is paused during M18 until a fresh matching
+non-synthetic local owner authorization exists for the final pushed clean
+checkpoint containing repair commit `8775baf` and execution-tree hash
+`sha256:7c2c6bb81ebef75148bb4ae502a850951149ddd621dff669ed8dc5ee73cff1d6`.
+The partial batch is intentionally preserved outside Git and must resume from
+its append-only ledger without duplicating a successful paid call.
 
 ## Recovery and restart instructions
 
@@ -402,13 +452,14 @@ commit `d5b3a23` and tree hash
 
 ## Outcome and retrospective
 
-Phase A completed at the owner-authorization checkpoint. The 50-slot
-public-synthetic sealed rehearsal and all 76 corruption cases pass; repository,
-paper, and site acceptance pass; the execution-sensitive tree is frozen and
-pushed; and draft PR #188 records the checkpoint. No credential was read, no
-provider was called, no real private material was created, and no cost was
-incurred.
+Phase A and M14-M17 completed. The public canaries, real encrypted custody, and
+predeclared private prefix gate passed. M18 remains incomplete at a safe,
+resumable fail-closed boundary with 2,687 paid attempts and USD 9.7703065
+cumulative cost. The private outputs remain sealed; no output lock, unsealing,
+Method A/Method B final verification, detailed public performance report, or
+scientific result exists.
 
 The exact next action is for the owner to run the supplied helper against this
-branch and its final pushed checkpoint commit, then resume the same session.
-Any execution-sensitive edit invalidates the tree hash and authorization.
+branch and its final pushed clean checkpoint commit, then resume the same
+session. Any further execution-sensitive edit invalidates the replacement tree
+hash and authorization.
