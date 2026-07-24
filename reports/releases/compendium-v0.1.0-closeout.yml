@@ -2,7 +2,7 @@ schema_version: 1
 decision: release-published-zenodo-verified
 issue: 185
 closeout_branch: release/compendium-v0.1.0-closeout
-closeout_pull_request: null
+closeout_pull_request: 186
 release:
   version: 0.1.0
   tag: dd-compendium-v0.1.0

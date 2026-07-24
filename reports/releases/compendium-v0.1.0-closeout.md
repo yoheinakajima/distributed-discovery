@@ -2,6 +2,9 @@
 
 Decision: **`release-published-zenodo-verified`**.
 
+Closeout pull request: #186,
+<https://github.com/yoheinakajima/distributed-discovery/pull/186>.
+
 ## Immutable release identity
 
 - Version: `0.1.0`

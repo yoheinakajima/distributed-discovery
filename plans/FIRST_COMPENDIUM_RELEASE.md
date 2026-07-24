@@ -120,7 +120,7 @@ authority here.
 7. M6 required checks, merge, final CI/Pages/live acceptance, issue closure,
    synchronized `main`, and retrospective.
 
-Execute these milestones sequentially. M0 through M4 are complete. M5 is the
+Execute these milestones sequentially. M0 through M5 are complete. M6 is the
 only active milestone.
 
 ## Progress checklist
@@ -137,7 +137,7 @@ only active milestone.
 - [x] M4 tracked closeout and public citation surface complete.
 - [x] M5 local CFF, formatting, typing, 369-test, claim/run, publication,
   release, Agents v1, paper, and site gates pass.
-- [ ] M5 all local closeout gates pass and draft PR is open.
+- [x] M5 all local closeout gates pass and draft PR #186 is open.
 - [ ] M6 PR checks, merge, post-merge CI/Pages, live routes, issue closure, and
   synchronized-main acceptance pass.
 
