@@ -1,6 +1,6 @@
 schema_version: 1
 status_vocabulary:
-  - canonical-published
+  - canonical-public-anchor
   - active-working-paper
   - active-research-note
   - active-synthesis-note
@@ -11,7 +11,7 @@ status_vocabulary:
 layers:
   - id: canonical-entry
     artifacts: [shared-discovery-paradox]
-    status: canonical-published
+    status: canonical-public-anchor
     repository: https://github.com/yoheinakajima/shared-discovery-paradox
   - id: flagship-theorem-family-working-papers
     artifacts: [common-source-trap, incentive-to-ignore, threshold-discovery, information-sharing-frontier]

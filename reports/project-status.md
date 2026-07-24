@@ -1,4 +1,29 @@
-# Project status — DiscoveryBench Agents v1 campaign registered
+# Project status — program memory and preprint infrastructure
+
+Date: 2026-07-23 (America/Los_Angeles).
+
+Issue #178 owns a documentation, governance, editorial-infrastructure, and
+static-site milestone from main
+`f1dd894ca5e50e1df0605fdcac4edab97bfbd258`. It adds a 25-record durable
+program-memory router; preprint-first, freeze, self-containment, journal,
+release, citation, and licensing policies; 12 typed paper dependency edges;
+per-paper null-safe citation metadata; and a deterministic seven-artifact
+release-manifest dry run.
+
+The lifecycle term is normalized to `canonical-public-anchor`. No submission,
+peer review, DOI, arXiv identifier, release, or formal publication is implied.
+Common-Source Trap is the first internal freeze candidate at readiness score
+82; no manuscript edit or freeze is authorized.
+
+The benchmark name decision is `owner-name-decision-required`. DiscoveryBench
+has a fatal established collision, while ActionPortfolioBench scores 91 but
+leads SearchPortfolioBench by only five points. No partial rename occurs.
+Scientific inventory remains 110 claims, 26 studies, and 51 manifests with 48
+passing. The seven papers remain exactly 119 pages. No provider call,
+credential read, private material, study, claim, run, scientific result, or
+paper artifact is created.
+
+## Prior evaluation-registration record
 
 Date: 2026-07-23 (America/Los_Angeles).
 

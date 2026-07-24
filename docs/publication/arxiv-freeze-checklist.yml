@@ -1,0 +1,25 @@
+schema_version: 1
+status: readiness-only
+submission_authorized: false
+policy_checked: "2026-07-23"
+official_sources:
+  - https://info.arxiv.org/help/submit/index.html
+  - https://info.arxiv.org/help/submit_tex.html
+  - https://info.arxiv.org/help/endorsement.html
+  - https://info.arxiv.org/help/moderation/index.html
+  - https://arxiv.org/category_taxonomy
+checks:
+  - central-question-and-admission
+  - self-contained-statements-and-proofs
+  - logical-dependencies-resolved
+  - primary-source-related-work
+  - conditional-contribution-language
+  - limitations-and-counterboundaries
+  - de-labified-main-prose
+  - deterministic-portable-source-and-pdf
+  - complete-figures-bibliography-and-styles
+  - licensing
+  - metadata-and-checksum
+  - current-category-cross-list-endorsement-moderation-source-and-license-rules
+category_hypotheses_are_provisional: true
+hard_coded_primary_category: null

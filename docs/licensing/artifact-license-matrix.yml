@@ -1,0 +1,110 @@
+schema_version: 1
+audited_utc: "2026-07-23T00:00:00Z"
+repository_license: MIT
+license_evidence: LICENSE
+records:
+  - category: code
+    examples: [src/, scripts/, tests/]
+    current_license: MIT
+    evidence: [LICENSE]
+    redistribution_status: permitted-with-license-and-copyright-notice
+    arxiv_suitability: not-primary-submission-artifact
+    zenodo_suitability: suitable
+    journal_copyright_transfer_risk: low-unless-bundled-with-transferred-manuscript
+    owner_decision_required: false
+  - category: machine-readable-data
+    examples: [claims/, studies/, reports/]
+    current_license: MIT
+    evidence: [LICENSE]
+    redistribution_status: permitted-with-license-and-copyright-notice
+    arxiv_suitability: supplementary-only-subject-to-current-rules
+    zenodo_suitability: suitable
+    journal_copyright_transfer_risk: low
+    owner_decision_required: false
+  - category: schemas
+    examples: [claims/schema.json, docs/publication/paper-dependency-edges.schema.json]
+    current_license: MIT
+    evidence: [LICENSE]
+    redistribution_status: permitted-with-license-and-copyright-notice
+    arxiv_suitability: supplementary-only-subject-to-current-rules
+    zenodo_suitability: suitable
+    journal_copyright_transfer_risk: low
+    owner_decision_required: false
+  - category: fixtures
+    examples: [tests/fixtures/, docs/verification/fixtures/]
+    current_license: MIT
+    evidence: [LICENSE]
+    redistribution_status: permitted-with-license-and-copyright-notice
+    arxiv_suitability: not-primary-submission-artifact
+    zenodo_suitability: suitable
+    journal_copyright_transfer_risk: low
+    owner_decision_required: false
+  - category: site-code
+    examples: [site/, src/distributed_discovery/site/]
+    current_license: MIT
+    evidence: [LICENSE]
+    redistribution_status: permitted-with-license-and-copyright-notice
+    arxiv_suitability: not-primary-submission-artifact
+    zenodo_suitability: suitable
+    journal_copyright_transfer_risk: low
+    owner_decision_required: false
+  - category: site-prose
+    examples: [README.md, docs/, generated-site-copy]
+    current_license: MIT
+    evidence: [LICENSE]
+    redistribution_status: permitted-with-license-and-copyright-notice
+    arxiv_suitability: not-a-substitute-for-manuscript-license-selection
+    zenodo_suitability: suitable
+    journal_copyright_transfer_risk: medium-if-reused-verbatim-in-transferred-work
+    owner_decision_required: false
+  - category: paper-source
+    examples: [papers/*/main.tex, papers/*/references.bib]
+    current_license: MIT
+    evidence: [LICENSE]
+    redistribution_status: permitted-with-license-and-copyright-notice
+    arxiv_suitability: owner-must-select-current-arxiv-distribution-license
+    zenodo_suitability: suitable-subject-to-author-confirmation
+    journal_copyright_transfer_risk: high-before-any-exclusive-transfer
+    owner_decision_required: true
+  - category: pdfs
+    examples: [papers/*/*.pdf]
+    current_license: MIT
+    evidence: [LICENSE]
+    redistribution_status: permitted-with-license-and-copyright-notice
+    arxiv_suitability: owner-must-select-current-arxiv-distribution-license
+    zenodo_suitability: suitable-subject-to-author-confirmation
+    journal_copyright_transfer_risk: high-before-any-exclusive-transfer
+    owner_decision_required: true
+  - category: generated-figures
+    examples: [papers/*/figures/, site/generated-assets]
+    current_license: MIT-for-original-repository-generated-output
+    evidence: [LICENSE, generating-source-and-provenance]
+    redistribution_status: permitted-for-original-output; inspect-embedded-assets
+    arxiv_suitability: suitable-after-provenance-review
+    zenodo_suitability: suitable-after-provenance-review
+    journal_copyright_transfer_risk: medium
+    owner_decision_required: true
+  - category: pinned-upstream-content
+    examples: [integrations/shared-discovery-paradox/]
+    current_license: MIT
+    evidence: [integrations/shared-discovery-paradox/upstream.lock]
+    redistribution_status: permitted-under-upstream-license; repository-remains-read-only
+    arxiv_suitability: do-not-submit-as-local-work
+    zenodo_suitability: cite-pin-or-exclude-duplicate-bundle
+    journal_copyright_transfer_risk: do-not-transfer-upstream-rights
+    owner_decision_required: true
+  - category: third-party-citations-and-assets
+    examples: [bibliographic-metadata, quoted-material, externally-authored-assets]
+    current_license: third-party-terms-control
+    evidence: [source-citation-and-asset-provenance]
+    redistribution_status: metadata-and-lawful-quotation-only-unless-separate-permission
+    arxiv_suitability: review-at-freeze
+    zenodo_suitability: exclude-unlicensed-assets
+    journal_copyright_transfer_risk: high
+    owner_decision_required: true
+owner_decisions:
+  - choose-current-arxiv-license-per-submission
+  - confirm-manuscript-and-pdf-release-terms-before-zenodo
+  - review-generated-figure-and-third-party-asset-provenance
+  - check-venue-copyright-transfer-before-journal-action
+license_changes_authorized: false

@@ -1,4 +1,22 @@
-# Current roadmap — Phase 2 hold; Agents v1 campaign registered
+# Current roadmap — preprint infrastructure; benchmark name owner gate
+
+The current non-scientific gate is issue #178: durable program memory,
+preprint-first/journal-deferred policy, paper self-containment and dependency
+edges, stable citation and release readiness, licensing audit, and benchmark
+public naming. Common-Source Trap is the first internal freeze candidate, but
+paper editing and submission remain outside this gate. The repository and site
+are a living compendium, not a substitute for an immutable load-bearing
+citation.
+
+`DiscoveryBench` cannot be used for the first external scholarly benchmark
+artifact because it collides with an established ICLR 2025 benchmark and
+software ecosystem. ActionPortfolioBench leads the scored shortlist by five
+points, below the registered eight-point automatic-selection margin.
+Therefore the exact next gate is **Owner benchmark public-name decision** in
+`reports/editorial/benchmark-name-decision.yml`. No rename, provider
+evaluation, release, DOI, study, claim, run, or paper change is authorized.
+
+## Preserved Phase 2 research boundary
 
 Phase 1 is complete. During Phase 2, theorem-family execution is held. Reliable
 Discovery remains the next major theorem-family candidate but is held.

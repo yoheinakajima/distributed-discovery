@@ -1,0 +1,39 @@
+schema_version: 1
+visibility: internal-only
+public_promise_authorized: false
+submission_authorized: false
+spacing_default: two-to-four-weeks-between-freezes
+spacing_is_promise: false
+first_freeze_candidate: common-source-trap
+queue:
+  - position: 1
+    candidates: [common-source-trap, information-sharing-frontier]
+    selection: common-source-trap
+    reason: highest-live-freeze-score
+    score: 82
+    status: candidate-no-edit-or-submission-authorized
+  - position: 2
+    candidates: [information-sharing-frontier]
+    selection: information-sharing-frontier
+    score: 78
+    status: after-first-freeze-and-own-blockers
+  - position: 3
+    candidates: [incentive-to-ignore]
+    selection: incentive-to-ignore
+    score: 66
+    status: held
+    prerequisites: [frontier-stable-identifier, one-reader-centered-restructure-decision]
+  - position: 4
+    candidates: [threshold-discovery]
+    selection: threshold-discovery
+    score: 61
+    status: held
+    prerequisites: [Reliable-Discovery]
+excluded:
+  - paper_id: foundations
+    reason: site-release-note-and-living-synthesis-component-without-distinct-theorem-family-contribution
+journal_trigger:
+  decision: deferred-not-abandoned
+  any_of:
+    - claim-grade-agents-v1-complete-and-verified
+    - first-three-preprint-freezes-plus-stable-boundaries-dependencies-overlap-and-licensing

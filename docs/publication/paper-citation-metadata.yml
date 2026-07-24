@@ -1,0 +1,106 @@
+schema_version: 1
+scope: per-paper citation metadata; root CITATION.cff remains compendium-level
+papers:
+  - paper_id: shared-discovery-paradox
+    title: "The Shared Discovery Paradox: How a One-Answer Rule Turns Better Information into Worse Search"
+    authors: [Yohei Nakajima]
+    status: working-paper
+    version: upstream-commit-5025cc8e8f2f8ca015dff2066f08f81ad5715a51
+    arxiv_id: null
+    doi: null
+    recommended_citation: "Nakajima, Yohei (2026). The Shared Discovery Paradox: How a One-Answer Rule Turns Better Information into Worse Search. Working paper."
+    source_bundle: https://github.com/yoheinakajima/shared-discovery-paradox/tree/5025cc8e8f2f8ca015dff2066f08f81ad5715a51/paper
+    pdf_sha256: cb4816cb3a9cdd8db0210ab8981e3729028eb02ba174f2a7300b617807cc1e04
+    claim_ownership: [DD-C-0003, DD-C-0004, DD-C-0005, DD-C-0006, DD-C-0007, DD-C-0008]
+  - paper_id: common-source-trap
+    title: The Common-Source Trap
+    authors: [Yohei Nakajima]
+    status: working-paper
+    version: repository-artifact-sha256-afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7
+    arxiv_id: null
+    doi: null
+    recommended_citation: "Nakajima, Yohei (2026). The Common-Source Trap. Working paper."
+    source_bundle: papers/common-source-trap
+    pdf_sha256: afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7
+    claim_ownership: [DD-C-0057]
+  - paper_id: incentive-to-ignore
+    title: "The Incentive to Ignore: Selective Attention and Audience Design in Distributed Discovery"
+    authors: [Yohei Nakajima]
+    status: working-paper
+    version: repository-artifact-sha256-651c91fb68df6b2f1397ca86f3842b7c2fa9c067601957c32401a7f5e95cd24b
+    arxiv_id: null
+    doi: null
+    recommended_citation: "Nakajima, Yohei (2026). The Incentive to Ignore: Selective Attention and Audience Design in Distributed Discovery. Working paper."
+    source_bundle: papers/incentive-to-ignore
+    pdf_sha256: 651c91fb68df6b2f1397ca86f3842b7c2fa9c067601957c32401a7f5e95cd24b
+    claim_ownership: [DD-C-0059, DD-C-0060, DD-C-0062, DD-C-0064, DD-C-0066]
+  - paper_id: threshold-discovery
+    title: "Threshold Discovery: Coordination, Crowding, and Minimum Viable Teams"
+    authors: [Yohei Nakajima]
+    status: working-paper
+    version: repository-artifact-sha256-634e96662989a3fd6efb5fc3e6919883897e60511826e25c6d0176bac4af9249
+    arxiv_id: null
+    doi: null
+    recommended_citation: "Nakajima, Yohei (2026). Threshold Discovery: Coordination, Crowding, and Minimum Viable Teams. Working paper."
+    source_bundle: papers/threshold-discovery
+    pdf_sha256: 634e96662989a3fd6efb5fc3e6919883897e60511826e25c6d0176bac4af9249
+    claim_ownership: [DD-C-0071, DD-C-0075, DD-C-0076, DD-C-0084]
+  - paper_id: information-sharing-frontier
+    title: "When Does Information Sharing Improve Decentralized Discovery? Aggregation, Independent Rescue, and Equilibrium Selection"
+    authors: [Yohei Nakajima]
+    status: working-paper
+    version: repository-artifact-sha256-a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13
+    arxiv_id: null
+    doi: null
+    recommended_citation: "Nakajima, Yohei (2026). When Does Information Sharing Improve Decentralized Discovery? Aggregation, Independent Rescue, and Equilibrium Selection. Working paper."
+    source_bundle: papers/information-sharing-frontier
+    pdf_sha256: a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13
+    claim_ownership: [DD-C-0089, DD-C-0092, DD-C-0097, DD-C-0098, DD-C-0102, DD-C-0106]
+  - paper_id: foundations
+    title: Foundations of Distributed Discovery
+    authors: [Yohei Nakajima]
+    status: research-note
+    version: repository-artifact-sha256-8875926a52f0b8e722f7ce827c456c4b694f9e981c21c4b15bf2b3c60b83e76b
+    arxiv_id: null
+    doi: null
+    recommended_citation: "Nakajima, Yohei (2026). Foundations of Distributed Discovery. Research note."
+    source_bundle: papers/foundations
+    pdf_sha256: 8875926a52f0b8e722f7ce827c456c4b694f9e981c21c4b15bf2b3c60b83e76b
+    claim_ownership: [DD-C-0001, DD-C-0002, DD-C-0016]
+  - paper_id: three-results
+    title: Three Results in Distributed Discovery
+    authors: [Yohei Nakajima]
+    status: synthesis-note
+    version: repository-artifact-sha256-9eb896353b1210706d6108685dde963e02d6a5ebc64af9f9f69c08c01f5ebc96
+    arxiv_id: null
+    doi: null
+    recommended_citation: "Nakajima, Yohei (2026). Three Results in Distributed Discovery. Synthesis note."
+    source_bundle: papers/three-results
+    pdf_sha256: 9eb896353b1210706d6108685dde963e02d6a5ebc64af9f9f69c08c01f5ebc96
+    claim_ownership: []
+  - paper_id: discovery-institutions
+    title: Institutions for Distributed Discovery
+    authors: [Yohei Nakajima]
+    status: synthesis-note
+    version: repository-artifact-sha256-78606f732f105d79395409dcb9d7224d72aa1e44312ca30ff5719d049afd98a8
+    arxiv_id: null
+    doi: null
+    recommended_citation: "Nakajima, Yohei (2026). Institutions for Distributed Discovery. Synthesis note."
+    source_bundle: papers/discovery-institutions
+    pdf_sha256: 78606f732f105d79395409dcb9d7224d72aa1e44312ca30ff5719d049afd98a8
+    claim_ownership: []
+examples:
+  - purpose: exact working-paper artifact before external identifiers exist
+    paper_id: common-source-trap
+    arxiv_id: null
+    doi: null
+    claim_id: DD-C-0057
+    run_id: null
+    artifact_sha256: afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7
+  - purpose: claim and immutable-run evidence before an external identifier exists
+    paper_id: information-sharing-frontier
+    arxiv_id: null
+    doi: null
+    claim_id: DD-C-0106
+    run_id: 20260722T210334Z_DD-022_2376d5b7_ad67765ca8
+    artifact_sha256: a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13

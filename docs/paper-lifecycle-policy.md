@@ -11,13 +11,15 @@ container, not the source of scientific truth.
 - **Editorial status:** active, superseded, archived-source, or
   living-synthesis.
 - **Publication status:** internal-draft, public-working-paper, submitted,
-  accepted, or canonical-published.
+  accepted, or canonical-public-anchor.
 
 These dimensions do not promote one another. A public PDF may remain a working
 paper. Archiving a paper cannot change a claim. Submission and acceptance need
-explicit evidence. `canonical-published` is reserved for the sole
-owner-declared canonical upstream anchor and does not by itself imply a DOI,
-journal publication, acceptance, or peer review.
+explicit evidence. `canonical-public-anchor` is reserved for the sole
+owner-declared canonical upstream anchor and does not imply a DOI, journal
+publication, acceptance, or peer review. The earlier `canonical-published`
+value is a deprecated historical alias and must not be emitted by current
+registries or presentation code.
 
 ## Transition rules
 

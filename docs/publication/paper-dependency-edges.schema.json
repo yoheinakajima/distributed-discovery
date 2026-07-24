@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Paper dependency-edge registry",
+  "type": "object",
+  "required": ["schema_version", "direction_semantics", "edges"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": 1},
+    "direction_semantics": {"const": "source-depends-on-target"},
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "edge_id", "source_paper", "target_paper", "claim_ids", "direction",
+          "role", "stable_identifier_required", "stable_identifier_current_status",
+          "self_containment_status", "proof_restatement_location",
+          "submission_blocker", "notes"
+        ],
+        "properties": {
+          "edge_id": {"type": "string", "pattern": "^PDE-[0-9]{3}$"},
+          "source_paper": {"type": "string"},
+          "target_paper": {"type": "string"},
+          "claim_ids": {"type": "array", "items": {"type": "string", "pattern": "^DD-C-[0-9]{4}$"}},
+          "direction": {"const": "source-depends-on-target"},
+          "role": {
+            "enum": [
+              "logical-required", "background", "companion-scope",
+              "shared-method", "shared-definition", "counterboundary",
+              "future-absorption", "synthesis-only"
+            ]
+          },
+          "stable_identifier_required": {"type": "boolean"},
+          "stable_identifier_current_status": {
+            "enum": ["not-required", "missing", "tagged-release", "version-doi", "arxiv-version", "published"]
+          },
+          "self_containment_status": {
+            "enum": ["not-applicable", "satisfied-by-restatement", "satisfied-by-stable-source", "missing"]
+          },
+          "proof_restatement_location": {"type": ["string", "null"]},
+          "submission_blocker": {"type": "boolean"},
+          "notes": {"type": "string"}
+        }
+      }
+    }
+  }
+}

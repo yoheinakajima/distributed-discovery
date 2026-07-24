@@ -1,0 +1,8 @@
+schema_version: 1
+records:
+  - superseded_item: PM-0016
+    replacement: docs/ai-lab-operating-boundary.md
+    reason: Human engagement is outside the AI-powered lab unless separately reauthorized.
+  - superseded_item: canonical-published-label
+    replacement: canonical-public-anchor
+    reason: The old label was ambiguous beside a working-paper citation and no formal publication evidence.

@@ -1,0 +1,15 @@
+schema_version: 1
+decision: deferred-not-abandoned
+submission_authorized: false
+venue_contact_authorized: false
+human_reviewer_workflow_authorized: false
+revisit_triggers:
+  any_of:
+    - claim-grade-agents-v1-complete-and-verified
+    - first-three-preprint-freezes-plus-stable-boundaries-dependencies-overlap-and-licensing
+  owner_may_reopen_separately: true
+aer_insights:
+  status: parked-journal-track-only
+  active_submission: false
+  venue_contact: false
+  restart_after: journal-track-trigger

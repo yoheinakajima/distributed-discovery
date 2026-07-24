@@ -4,9 +4,9 @@ This hierarchy controls presentation, not evidence. Scientific status remains
  in `claims/claims.yml`; no position below implies submission, acceptance,
 publication, peer review, DOI, or verified novelty.
 
-1. **Canonical published anchor.** *The Shared Discovery Paradox* is the
+1. **Canonical public anchor.** *The Shared Discovery Paradox* is the
    unique owner-declared read-only public anchor. Its upstream citation calls
-   it a working paper; `canonical-published` is not journal or peer-review
+   it a working paper; `canonical-public-anchor` is not journal or peer-review
    evidence.
 2. **Flagship theorem-family working papers.** *The Common-Source Trap*,
    *The Incentive to Ignore*, *Threshold Discovery*, and *When Does

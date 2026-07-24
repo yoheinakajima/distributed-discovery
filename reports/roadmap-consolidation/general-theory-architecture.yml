@@ -1,0 +1,49 @@
+schema_version: 1
+status: internal-long-horizon-synthesis
+active_program: false
+paper_authorized: false
+theorem_or_novelty_claimed: false
+nucleus:
+  proposition: Information quality and action-portfolio quality are distinct resources.
+  value_depends_on: [beliefs, portfolio-capacity, induced-action-correlation, implementation-constraints]
+pillars:
+  - id: information-action-frontier
+    current_inputs: [DD-000, DD-019, DD-020, DD-021, DD-022]
+    missing_bridges: [comparison-domain, centralized-emulation-separation, decentralized-implementation-separation]
+    literature_collisions: [Blackwell-comparison, team-theory, individual-sufficiency, statistical-deficiency]
+    computational_needs: [finite-channel-representation, profile-and-recovery-algorithms]
+    valid_stops: [classical-overlap, scoped-counterexample, bounded-null, defer]
+    reason_not_active: Phase-2 theorem hold and domain not frozen.
+    next_review_trigger: claim-grade-agents-v1-or-owner-reopen
+  - id: discovery-mechanism-design
+    current_inputs: [DD-002, DD-006, DD-006B, DD-013, DD-018]
+    missing_bridges: [truth-obedience-participation-budget-characterization, observability-minimum]
+    literature_collisions: [covering-games, potential-games, distributed-welfare-design, information-design, implementation-theory]
+    computational_needs: [mechanism-class-encoding, equilibrium-certificates]
+    valid_stops: [classical-overlap, impossibility, bounded-null, defer]
+    reason_not_active: No surviving nonclassical characterization gate.
+    next_review_trigger: strategic-utility-spine-reopened
+  - id: adaptive-dynamic-discovery
+    current_inputs: [DD-004, DD-005, DD-015]
+    missing_bridges: [feedback-filtration, adaptive-value-object, reliability-adjusted-recovery]
+    literature_collisions: [sequential-search, adaptive-submodularity, bandits, reliability-allocation, distributed-control]
+    computational_needs: [dynamic-programs, correlated-failure-representations]
+    valid_stops: [classical-overlap, finite-counterexample, bounded-null, defer]
+    reason_not_active: Reliable Discovery is held.
+    next_review_trigger: reliable-discovery-owner-reopen
+  - id: algorithms-complexity
+    current_inputs: [DD-001, DD-005, DD-009, DD-019, DD-021]
+    missing_bridges: [input-models, complexity-measures, reusable-approximation-or-hardness-results]
+    literature_collisions: [submodular-optimization, team-decision-computation, resource-allocation]
+    computational_needs: [symmetry-reduction, certificates, lower-bounds, approximation-regimes]
+    valid_stops: [ill-posed-input-model, classical-overlap, bounded-null, defer]
+    reason_not_active: Existing enumerators do not define a complexity theory.
+    next_review_trigger: first-stable-release-or-owner-reopen
+field_defining_criteria:
+  - reusable-objects
+  - bridge-theorems
+  - structural-classifications
+  - algorithms
+  - machinery-without-DD-identifiers
+  - precise-classical-overlap-boundaries
+public_prize_objective: false

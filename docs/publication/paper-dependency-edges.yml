@@ -1,0 +1,147 @@
+schema_version: 1
+direction_semantics: source-depends-on-target
+edges:
+  - edge_id: PDE-001
+    source_paper: incentive-to-ignore
+    target_paper: information-sharing-frontier
+    claim_ids: [DD-C-0092, DD-C-0106, DD-C-0109]
+    direction: source-depends-on-target
+    role: logical-required
+    stable_identifier_required: true
+    stable_identifier_current_status: missing
+    self_containment_status: missing
+    proof_restatement_location: null
+    submission_blocker: true
+    notes: The one-reader-centered restructure may rely on Frontier framing; freeze waits for a stable Frontier identifier or sufficient restatement.
+  - edge_id: PDE-002
+    source_paper: common-source-trap
+    target_paper: shared-discovery-paradox
+    claim_ids: [DD-C-0005, DD-C-0007]
+    direction: source-depends-on-target
+    role: background
+    stable_identifier_required: false
+    stable_identifier_current_status: not-required
+    self_containment_status: not-applicable
+    proof_restatement_location: null
+    submission_blocker: false
+    notes: Canonical motivation only; Common-Source Trap owns its source-choice theorem.
+  - edge_id: PDE-003
+    source_paper: information-sharing-frontier
+    target_paper: shared-discovery-paradox
+    claim_ids: [DD-C-0005, DD-C-0006, DD-C-0008]
+    direction: source-depends-on-target
+    role: shared-definition
+    stable_identifier_required: false
+    stable_identifier_current_status: not-required
+    self_containment_status: satisfied-by-restatement
+    proof_restatement_location: Introduction and model definitions
+    submission_blocker: false
+    notes: The action-portfolio distinction is restated; ownership stays with the canonical study records.
+  - edge_id: PDE-004
+    source_paper: information-sharing-frontier
+    target_paper: incentive-to-ignore
+    claim_ids: [DD-C-0059, DD-C-0062]
+    direction: source-depends-on-target
+    role: companion-scope
+    stable_identifier_required: false
+    stable_identifier_current_status: not-required
+    self_containment_status: not-applicable
+    proof_restatement_location: null
+    submission_blocker: false
+    notes: Attention and audience design remain a distinct companion family.
+  - edge_id: PDE-005
+    source_paper: incentive-to-ignore
+    target_paper: information-sharing-frontier
+    claim_ids: [DD-C-0096, DD-C-0109]
+    direction: source-depends-on-target
+    role: counterboundary
+    stable_identifier_required: true
+    stable_identifier_current_status: missing
+    self_containment_status: not-applicable
+    proof_restatement_location: null
+    submission_blocker: false
+    notes: Frontier counterexamples constrain broad one-reader wording without transferring theorem ownership.
+  - edge_id: PDE-006
+    source_paper: threshold-discovery
+    target_paper: discovery-institutions
+    claim_ids: [DD-C-0084, DD-C-0085]
+    direction: source-depends-on-target
+    role: shared-method
+    stable_identifier_required: false
+    stable_identifier_current_status: not-required
+    self_containment_status: satisfied-by-restatement
+    proof_restatement_location: Mechanism section and evidence appendix
+    submission_blocker: false
+    notes: Institutional synthesis is not a theorem owner.
+  - edge_id: PDE-007
+    source_paper: discovery-institutions
+    target_paper: common-source-trap
+    claim_ids: [DD-C-0057, DD-C-0058]
+    direction: source-depends-on-target
+    role: synthesis-only
+    stable_identifier_required: false
+    stable_identifier_current_status: not-required
+    self_containment_status: not-applicable
+    proof_restatement_location: null
+    submission_blocker: false
+    notes: Synthesis points to the theorem owner and cannot acquire its primary claims.
+  - edge_id: PDE-008
+    source_paper: three-results
+    target_paper: shared-discovery-paradox
+    claim_ids: [DD-C-0003, DD-C-0005]
+    direction: source-depends-on-target
+    role: synthesis-only
+    stable_identifier_required: false
+    stable_identifier_current_status: not-required
+    self_containment_status: not-applicable
+    proof_restatement_location: null
+    submission_blocker: false
+    notes: Reading-path synthesis only.
+  - edge_id: PDE-009
+    source_paper: foundations
+    target_paper: shared-discovery-paradox
+    claim_ids: [DD-C-0003, DD-C-0004, DD-C-0005, DD-C-0006]
+    direction: source-depends-on-target
+    role: shared-definition
+    stable_identifier_required: false
+    stable_identifier_current_status: not-required
+    self_containment_status: satisfied-by-restatement
+    proof_restatement_location: Foundations definitions and accounting section
+    submission_blocker: false
+    notes: Definitions are restated but canonical evidence ownership remains upstream/study-linked.
+  - edge_id: PDE-010
+    source_paper: common-source-trap
+    target_paper: foundations
+    claim_ids: [DD-C-0016]
+    direction: source-depends-on-target
+    role: background
+    stable_identifier_required: false
+    stable_identifier_current_status: not-required
+    self_containment_status: not-applicable
+    proof_restatement_location: null
+    submission_blocker: false
+    notes: General vocabulary is contextual rather than load-bearing.
+  - edge_id: PDE-011
+    source_paper: threshold-discovery
+    target_paper: information-sharing-frontier
+    claim_ids: [DD-C-0102, DD-C-0110]
+    direction: source-depends-on-target
+    role: future-absorption
+    stable_identifier_required: false
+    stable_identifier_current_status: not-required
+    self_containment_status: not-applicable
+    proof_restatement_location: null
+    submission_blocker: false
+    notes: A future Reliable Discovery paper may connect recovery and team technology; no absorption is authorized.
+  - edge_id: PDE-012
+    source_paper: discovery-institutions
+    target_paper: incentive-to-ignore
+    claim_ids: [DD-C-0062, DD-C-0064]
+    direction: source-depends-on-target
+    role: synthesis-only
+    stable_identifier_required: false
+    stable_identifier_current_status: not-required
+    self_containment_status: not-applicable
+    proof_restatement_location: null
+    submission_blocker: false
+    notes: Institutional synthesis links to the active theorem-family owner.

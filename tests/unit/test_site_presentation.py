@@ -54,7 +54,7 @@ def test_copy_map_rejects_an_incomplete_primary_navigation(tmp_path: Path) -> No
         ("seeded-synthetic-power", "evidence", "Synthetic only"),
         ("no-result-registration-only", "evidence", "Open question"),
         ("validated-repository-paper", "publication", "Validated working paper"),
-        ("canonical-published", "publication", "Canonical published anchor"),
+        ("canonical-public-anchor", "publication", "Canonical public anchor"),
         ("active-research-note", "publication", "Active research note"),
         ("superseded-working-paper", "publication", "Superseded working paper"),
     ],

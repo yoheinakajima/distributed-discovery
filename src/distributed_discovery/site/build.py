@@ -3471,10 +3471,11 @@ def _render(
         f'<details class="technical-details"><summary>Technical details</summary><p>SHA-256 <code>{html.escape(str(canonical_anchor["pdf_sha256"]))}</code></p></details></article>'
     )
     publications_body = f"""<header class="page-hero"><p class="eyebrow">Long-form research</p><h1>Papers</h1><p class="lede">A lifecycle-aware map of the canonical public anchor, active theorem-family working papers, research notes, and synthesis notes.</p><p><a href="start-here.html">Start with three results</a> · <a href="program.html">See the four-layer hierarchy and paper-admission rule</a> · <a href="translations.html">Open the contextual concordance</a>.</p></header>
-<section class="content-section"><p class="eyebrow">Canonical published anchor</p><h2>The public entry point</h2><div class="card-grid paper-grid">{canonical_anchor_card}</div></section>
+<section class="content-section"><p class="eyebrow">Canonical public anchor</p><h2>The public entry point</h2><div class="card-grid paper-grid">{canonical_anchor_card}</div></section>
 <section class="content-section"><p class="eyebrow">Active theorem-family papers</p><h2>Flagship working papers</h2><div class="card-grid paper-grid">{flagship_items}</div></section>
 <section class="content-section"><p class="eyebrow">Supporting publications</p><h2>Research notes and syntheses</h2><div class="card-grid paper-grid">{note_items}</div></section>
-{historical_section}<p class="quiet-meta">All local project PDFs are not submitted, not peer reviewed, and have no DOI. There are currently no historical lifecycle items. <a href="data/downloads.json">Complete download checksum manifest</a> · <a href="data/paper-lifecycle.json">Lifecycle registry</a></p>"""
+<section class="content-section prose"><h2>Stable citation and dependencies</h2><p>The site is a living discovery and verification layer, not the sole load-bearing source. Cite a paper-specific immutable version when one exists; until then, use the working-paper citation with its repository revision, claim or run identifier, and checksum. No project release, DOI, or arXiv identifier exists yet.</p><p><a href="{REPOSITORY_URL}/blob/main/docs/publication/stable-citation-policy.md">Stable citation policy</a> · <a href="{REPOSITORY_URL}/blob/main/docs/releases/zenodo-release-policy.md">Release-readiness policy</a> · <a href="data/paper-dependencies.json">Paper dependency roles</a></p></section>
+{historical_section}<p class="quiet-meta">All local project PDFs are not submitted, not peer reviewed, and have no DOI. Cite a paper-specific checksum and repository revision for exact artifacts; no project release or DOI exists yet. There are currently no historical lifecycle items. <a href="data/downloads.json">Complete download checksum manifest</a> · <a href="data/paper-lifecycle.json">Lifecycle registry</a></p>"""
     _write(
         output,
         "publications.html",
@@ -4121,6 +4122,7 @@ def build(root: Path, output: Path) -> dict[str, Any]:
             "schema_version": 1,
             "records": list(_lifecycle_records(root).values()),
         },
+        "paper-dependencies.json": _read_yaml(root / "docs/publication/paper-dependency-edges.yml"),
         "translations.json": {
             "schema_version": 1,
             "entries": _concordance_entries(root),

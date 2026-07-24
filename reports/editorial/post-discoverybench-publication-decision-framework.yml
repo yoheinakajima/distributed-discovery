@@ -1,0 +1,40 @@
+schema_version: 1
+status: prospective-evidence-dependent
+benchmark_paper_timing: second-wave-after-claim-grade-execution
+actions_authorized: []
+branches:
+  - evidence_pattern: common-cross-family-agent-pattern
+    interpretation: architecture-effect-generalizes-across-model-families
+    publication_option: grand-sequel-plus-technical-companions
+    lifecycle_implication: consider-cross-family-synthesis-without-moving-primary-claim-ownership
+  - evidence_pattern: heterogeneous-family-effects
+    interpretation: architecture-interacts-materially-with-theorem-family
+    publication_option: standalone-instrument-and-results-paper
+    lifecycle_implication: preserve-modular-theorem-family-papers-and-link-comparative-evidence
+  - evidence_pattern: theory-transfer-failure
+    interpretation: theoretical-predictions-do-not-transfer-to-agent-evaluation
+    publication_option: methods-instrument-paper-with-nulls
+    lifecycle_implication: retain-theory-papers-and-record-transfer-boundary
+  - evidence_pattern: strong-instrument-but-weak-or-unstable-effects
+    interpretation: measurement-is-credible-but-effect-evidence-is-not-stable
+    publication_option: methods-instrument-paper-with-nulls
+    lifecycle_implication: no-flagship-absorption-or-archive
+  - evidence_pattern: one-or-two-dominant-theorem-families
+    interpretation: benchmark-evidence-concentrates-in-specific-families
+    publication_option: standalone-instrument-and-results-paper-with-technical-companions
+    lifecycle_implication: strengthen-dominant-family-companions-without-transferring-claims
+  - evidence_pattern: major-contamination-or-validity-limit
+    interpretation: evaluation-cannot-support-publication-grade-inference
+    publication_option: no-paper-preserve-negative-result
+    lifecycle_implication: preserve-runs-audit-and-failure-record;-authorize-no-archive
+candidate_options:
+  - standalone-instrument-and-results-paper
+  - grand-sequel
+  - grand-sequel-plus-technical-companions
+  - methods-instrument-paper-with-nulls
+  - no-paper-preserve-negative-result
+forbidden_inferences:
+  - provider-ranking-before-evidence
+  - title-level-result-before-claim-grade-campaign
+  - paper-archive-without-separate-lifecycle-decision
+  - claim-ownership-transfer

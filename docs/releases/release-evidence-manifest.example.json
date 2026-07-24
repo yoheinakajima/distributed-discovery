@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "manifest_kind": "example",
+  "release_status": "template-only",
+  "compendium_version": "0.1.0",
+  "tag": null,
+  "source_revision": null,
+  "github_release_url": null,
+  "version_doi": null,
+  "concept_doi": null,
+  "generated_utc": null,
+  "inventory": {
+    "claims": 0,
+    "maximum_claim_id": null,
+    "studies": 0,
+    "maximum_study_id": null,
+    "manifests": 0,
+    "passing_manifests": 0
+  },
+  "artifacts": []
+}

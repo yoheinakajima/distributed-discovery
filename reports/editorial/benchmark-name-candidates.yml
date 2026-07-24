@@ -1,0 +1,105 @@
+schema_version: 1
+audit_date: "2026-07-23"
+weights:
+  semantic_fit: 25
+  distinctiveness: 25
+  scope_accuracy: 15
+  discoverability: 15
+  future_proofing: 10
+  route_cli_usability: 10
+automatic_selection:
+  minimum_total: 85
+  minimum_lead: 8
+  fatal_collision_allowed: false
+  unresolved_ambiguity_allowed: false
+candidates:
+  - rank: 1
+    name: ActionPortfolioBench
+    acronym: APB
+    owner_supplied: true
+    fatal_collision: false
+    unresolved_ambiguity: true
+    scores: {semantic_fit: 23, distinctiveness: 24, scope_accuracy: 14, discoverability: 13, future_proofing: 9, route_cli_usability: 8}
+    total: 91
+    collision_signal: no-established-exact-name-result-found
+  - rank: 2
+    name: SearchPortfolioBench
+    acronym: SPB
+    owner_supplied: false
+    fatal_collision: false
+    unresolved_ambiguity: true
+    scores: {semantic_fit: 22, distinctiveness: 22, scope_accuracy: 14, discoverability: 13, future_proofing: 8, route_cli_usability: 7}
+    total: 86
+    collision_signal: no-established-exact-name-result-found
+  - rank: 3
+    name: EvidenceToActionBench
+    acronym: EAB
+    owner_supplied: false
+    fatal_collision: false
+    unresolved_ambiguity: true
+    scores: {semantic_fit: 22, distinctiveness: 21, scope_accuracy: 14, discoverability: 12, future_proofing: 8, route_cli_usability: 7}
+    total: 84
+    collision_signal: no-established-exact-name-result-found
+  - rank: 4
+    name: DiscoveryArchitectureBench
+    acronym: DAB
+    owner_supplied: false
+    fatal_collision: false
+    unresolved_ambiguity: true
+    scores: {semantic_fit: 21, distinctiveness: 21, scope_accuracy: 13, discoverability: 12, future_proofing: 8, route_cli_usability: 7}
+    total: 82
+    collision_signal: no-established-exact-name-result-found
+  - rank: 5
+    name: PortfolioSearchBench
+    acronym: PSB
+    owner_supplied: false
+    fatal_collision: false
+    unresolved_ambiguity: true
+    scores: {semantic_fit: 21, distinctiveness: 20, scope_accuracy: 13, discoverability: 12, future_proofing: 7, route_cli_usability: 7}
+    total: 80
+    collision_signal: no-established-exact-name-result-found
+  - rank: 6
+    name: ActionDiversityBench
+    acronym: ADB
+    owner_supplied: false
+    fatal_collision: false
+    unresolved_ambiguity: true
+    scores: {semantic_fit: 21, distinctiveness: 19, scope_accuracy: 12, discoverability: 12, future_proofing: 8, route_cli_usability: 7}
+    total: 79
+    collision_signal: no-established-exact-name-result-found
+  - rank: 7
+    name: CollectiveSearchBench
+    acronym: CSB
+    owner_supplied: false
+    fatal_collision: false
+    unresolved_ambiguity: true
+    scores: {semantic_fit: 19, distinctiveness: 19, scope_accuracy: 13, discoverability: 11, future_proofing: 7, route_cli_usability: 7}
+    total: 76
+    collision_signal: no-established-exact-name-result-found
+  - rank: 8
+    name: DiscoveryPolicyBench
+    acronym: DPB
+    owner_supplied: false
+    fatal_collision: false
+    unresolved_ambiguity: true
+    scores: {semantic_fit: 18, distinctiveness: 19, scope_accuracy: 12, discoverability: 11, future_proofing: 8, route_cli_usability: 7}
+    total: 75
+    collision_signal: no-established-exact-name-result-found
+  - rank: 9
+    name: ArchitectureEffectsBench
+    acronym: AEB
+    owner_supplied: false
+    fatal_collision: false
+    unresolved_ambiguity: true
+    scores: {semantic_fit: 19, distinctiveness: 17, scope_accuracy: 12, discoverability: 10, future_proofing: 7, route_cli_usability: 7}
+    total: 72
+    collision_signal: no-established-exact-name-result-found
+  - rank: 10
+    name: DiscoveryBench
+    acronym: DB
+    owner_supplied: false
+    fatal_collision: true
+    unresolved_ambiguity: true
+    scores: {semantic_fit: 17, distinctiveness: 5, scope_accuracy: 7, discoverability: 6, future_proofing: 5, route_cli_usability: 4}
+    total: 44
+    collision_signal: established-iclr-2025-benchmark-and-software-ecosystem

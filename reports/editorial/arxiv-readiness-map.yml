@@ -1,0 +1,107 @@
+schema_version: 1
+audit_date: "2026-07-23"
+status: internal-readiness-not-submission
+rubric:
+  central_question: 20
+  self_containment: 20
+  literature_engagement: 15
+  source_package: 15
+  evidence_metadata: 15
+  inverse_edit_scope: 15
+first_freeze_candidate: common-source-trap
+records:
+  - paper_id: common-source-trap
+    score: 82
+    current_status: validated-working-paper
+    central_question: When do equal-share incentives induce excessive reliance on a common source?
+    self_containment: likely-contained-proof-audit-required
+    logical_dependencies: [shared-discovery-paradox-background]
+    stable_identifiers: {arxiv: null, doi: null, release: null}
+    literature_engagement: primary-base-present-gaps-remain
+    conditional_contribution: Exact source-choice thresholds in the frozen equal-prize model conditional on established acquisition and search literatures.
+    de_labification_need: moderate
+    evidence_appendix: present
+    source_package_readiness: deterministic-build-needs-portable-freeze-bundle
+    licensing: MIT-project-source-owner-confirm-venue-license-at-freeze
+    arxiv_category_hypothesis: [cs.GT, cs.AI]
+    moderation_risk: medium-because-contribution-positioning-needs-stronger-primary-context
+    freeze_blockers: [canonical-anchor-citation-timing, business-stealing-and-excess-entry-gap, de-labification, no-stable-identifier]
+    estimated_edit_scope: bounded-medium
+    exact_next_file: papers/common-source-trap/main.tex
+    readiness_decision: first-freeze-candidate-no-edit-authorized
+  - paper_id: information-sharing-frontier
+    score: 78
+    current_status: validated-working-paper
+    central_question: When does aggregation improve the map faster than common action removes independent rescue?
+    self_containment: proof-owned-but-selected-equilibrium-prominence-audit-required
+    logical_dependencies: [shared-discovery-paradox-background, incentive-to-ignore-companion-scope]
+    stable_identifiers: {arxiv: null, doi: null, release: null}
+    literature_engagement: strong-base-primary-source-gaps-remain
+    conditional_contribution: Exact channel and selected-equilibrium results within declared finite portfolio protocols.
+    de_labification_need: moderate
+    evidence_appendix: present
+    source_package_readiness: deterministic-build-needs-portable-freeze-bundle
+    licensing: MIT-project-source-owner-confirm-venue-license-at-freeze
+    arxiv_category_hypothesis: [cs.GT, cs.MA, cs.AI]
+    moderation_risk: medium-because-category-and-selected-equilibrium-scope
+    freeze_blockers: [selected-equilibrium-and-every-equilibrium-prominence, category-choice, de-labification, no-stable-identifier]
+    estimated_edit_scope: bounded-medium
+    exact_next_file: papers/information-sharing-frontier/main.tex
+    readiness_decision: second-freeze-candidate-no-edit-authorized
+  - paper_id: incentive-to-ignore
+    score: 66
+    current_status: validated-working-paper
+    central_question: Who should receive and act on shared evidence while independent attempts remain?
+    self_containment: restructure-decision-pending
+    logical_dependencies: [information-sharing-frontier-stable-identifier]
+    stable_identifiers: {arxiv: null, doi: null, release: null}
+    literature_engagement: gaps-require-primary-source-verification
+    conditional_contribution: Exact one-reader and incentive results in access-gated declared policy classes.
+    de_labification_need: high
+    evidence_appendix: present
+    source_package_readiness: deterministic-build-needs-portable-freeze-bundle
+    licensing: MIT-project-source-owner-confirm-venue-license-at-freeze
+    arxiv_category_hypothesis: [cs.GT, cs.AI]
+    moderation_risk: medium
+    freeze_blockers: [frontier-stable-identifier, one-reader-centered-restructure-decision, Holmstrom-and-correlated-jury-source-work, de-labification]
+    estimated_edit_scope: substantial
+    exact_next_file: papers/incentive-to-ignore/main.tex
+    readiness_decision: hold
+  - paper_id: threshold-discovery
+    score: 61
+    current_status: validated-working-paper
+    central_question: How should a discovery architecture form minimum viable teams without crowding the portfolio?
+    self_containment: current-bounded-paper-contained-future-boundary-unresolved
+    logical_dependencies: []
+    stable_identifiers: {arxiv: null, doi: null, release: null}
+    literature_engagement: multiple-primary-gaps
+    conditional_contribution: Exact threshold planner and selected-equilibrium results under deterministic team-production primitives.
+    de_labification_need: high
+    evidence_appendix: present
+    source_package_readiness: deterministic-build-needs-portable-freeze-bundle
+    licensing: MIT-project-source-owner-confirm-venue-license-at-freeze
+    arxiv_category_hypothesis: [cs.GT, cs.MA]
+    moderation_risk: medium
+    freeze_blockers: [Reliable-Discovery, provision-entry-weakest-link-and-lower-quota-literature, selection-boundary-prominence, de-labification]
+    estimated_edit_scope: substantial
+    exact_next_file: papers/threshold-discovery/main.tex
+    readiness_decision: hold-pending-reliable-discovery
+  - paper_id: foundations
+    score: 55
+    current_status: research-note
+    central_question: What objects and accounting distinctions define the program?
+    self_containment: expository-note-contained
+    logical_dependencies: [shared-discovery-paradox-background]
+    stable_identifiers: {arxiv: null, doi: null, release: null}
+    literature_engagement: orientation-level
+    conditional_contribution: Definitions and scoped emulation logic without theorem-family novelty ownership.
+    de_labification_need: moderate
+    evidence_appendix: present
+    source_package_readiness: deterministic-build
+    licensing: MIT-project-source-owner-confirm-venue-license-at-freeze
+    arxiv_category_hypothesis: []
+    moderation_risk: high-because-no-distinct-substantive-theorem-family
+    freeze_blockers: [no-distinct-theorem-family-contribution]
+    estimated_edit_scope: not-applicable
+    exact_next_file: reports/editorial/arxiv-readiness-map.yml
+    readiness_decision: not-an-arxiv-candidate-currently

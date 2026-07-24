@@ -1,0 +1,25 @@
+schema_version: 1
+decision_id: lifecycle-terminology-2026-07-24
+status: adopted
+decision: normalize-to-canonical-public-anchor
+canonical_value: canonical-public-anchor
+deprecated_aliases:
+  canonical-published: canonical-public-anchor
+scope:
+  - docs/paper-lifecycle.yml
+  - docs/paper-lifecycle.schema.json
+  - docs/publication-hierarchy.yml
+  - public-site-presentation
+preserved_invariants:
+  upstream_repository: https://github.com/yoheinakajima/shared-discovery-paradox
+  upstream_lock: integrations/shared-discovery-paradox/upstream.lock
+  route: https://yoheinakajima.github.io/shared-discovery-paradox/
+  pdf_sha256: cb4816cb3a9cdd8db0210ab8981e3729028eb02ba174f2a7300b617807cc1e04
+  recommended_citation_status: working-paper
+claims_not_implied:
+  - submitted
+  - accepted
+  - journal-published
+  - peer-reviewed
+  - doi-present
+historical_records_are_not_rewritten: true
