@@ -18,7 +18,9 @@ from distributed_discovery.benchmark.agents_v1.generation import (
     canonical_cells,
     generate_instance,
 )
+from distributed_discovery.benchmark.agents_v1.models import canonical_json
 from distributed_discovery.benchmark.agents_v1.pilot import (
+    BASE_COMMIT,
     MODELS,
     AppendOnlyLedger,
     PilotBatchRunner,
@@ -39,7 +41,10 @@ from distributed_discovery.benchmark.agents_v1.pilot import (
     validate_pilot_authorization,
     verify_output_lock,
 )
-from distributed_discovery.benchmark.agents_v1.pilot_live import run_mock_pilot
+from distributed_discovery.benchmark.agents_v1.pilot_live import (
+    _bind_private_state,
+    run_mock_pilot,
+)
 from distributed_discovery.benchmark.agents_v1.prompts import compile_prompt
 
 REPO = Path(__file__).resolve().parents[1]
@@ -97,6 +102,71 @@ def test_private_state_is_outside_repo_and_mode_restricted(tmp_path: Path) -> No
     assert stat.S_IMODE((root / "manifest.json").stat().st_mode) == 0o600
     with pytest.raises(PermissionError, match="outside"):
         initialize_private_state(REPO / "private-state", repo=REPO, synthetic=True)
+
+
+def test_private_state_records_forward_reauthorization_without_replacing_identity(
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "private-state"
+    initialize_private_state(root, repo=REPO, synthetic=True)
+    authorization = synthetic_authorization(REPO)
+    original = {
+        "schema_version": "treasurebench-agents-v1-execution-identity-v1",
+        "authorization_id": "SYNTHETIC-PRIOR-AUTHORIZATION",
+        "base_commit": BASE_COMMIT,
+        "execution_commit": BASE_COMMIT,
+        "execution_tree_hash": f"sha256:{'0' * 64}",
+        "branch": "benchmark/treasurebench-agents-v1-sealed-pilot",
+        "issue": 187,
+        "pull_request": 188,
+        "campaign_id": "treasurebench-agents-v1-pilot-v1",
+        "batch_id": "tb-agents-v1-pilot-v1-b01",
+        "models": list(MODELS),
+    }
+    identity_path = root / "execution-identity.json"
+    atomic_private_write(identity_path, canonical_json(original) + b"\n")
+
+    current = _bind_private_state(REPO, root, authorization)
+    assert json.loads(identity_path.read_text(encoding="utf-8")) == original
+    assert current["authorization_id"] == authorization["authorization_id"]
+    transitions = [
+        record
+        for record in AppendOnlyLedger(root / "access-log.jsonl").records
+        if record.get("event_type") == "execution-authorization-transition"
+    ]
+    assert len(transitions) == 1
+    assert transitions[0]["from_execution_commit"] == BASE_COMMIT
+    assert transitions[0]["to_execution_commit"] == authorization["authorized_execution_commit"]
+
+    assert _bind_private_state(REPO, root, authorization) == current
+    transitions = [
+        record
+        for record in AppendOnlyLedger(root / "access-log.jsonl").records
+        if record.get("event_type") == "execution-authorization-transition"
+    ]
+    assert len(transitions) == 1
+
+
+def test_private_state_rejects_non_forward_reauthorization(tmp_path: Path) -> None:
+    root = tmp_path / "private-state"
+    initialize_private_state(root, repo=REPO, synthetic=True)
+    authorization = synthetic_authorization(REPO)
+    original = {
+        "schema_version": "treasurebench-agents-v1-execution-identity-v1",
+        "authorization_id": "SYNTHETIC-UNRELATED-AUTHORIZATION",
+        "base_commit": BASE_COMMIT,
+        "execution_commit": "f" * 40,
+        "execution_tree_hash": f"sha256:{'0' * 64}",
+        "branch": "benchmark/treasurebench-agents-v1-sealed-pilot",
+        "issue": 187,
+        "pull_request": 188,
+        "campaign_id": "treasurebench-agents-v1-pilot-v1",
+        "batch_id": "tb-agents-v1-pilot-v1-b01",
+        "models": list(MODELS),
+    }
+    atomic_private_write(root / "execution-identity.json", canonical_json(original) + b"\n")
+    with pytest.raises(PermissionError, match="forward-only"):
+        _bind_private_state(REPO, root, authorization)
 
 
 def test_atomic_private_write_refuses_symlink(tmp_path: Path) -> None:

@@ -20,9 +20,15 @@ an independent OS-CSPRNG key and nonce and associated data binding campaign,
 batch, artifact type, allocation commitment, and schema.
 
 The access, call, cost, output-lock, and unseal logs are append-only and
-hash-chained. Agents receive only declared capability views. Seed, generator
-internals, answer objects, exact comparators, evaluator state, and undeclared
-private signals are inaccessible.
+hash-chained. The original execution identity is immutable. If an
+execution-sensitive repair stops the pilot and the owner authorizes a later
+descendant checkpoint, the access log records a forward-only transition from
+the prior authorization, commit, and tree hash to the replacement
+authorization, commit, and tree hash. Stable branch, issue, pull request,
+campaign, batch, model, and base-commit identity must remain exact; the
+transition is included in the output lock. Agents receive only declared
+capability views. Seed, generator internals, answer objects, exact comparators,
+evaluator state, and undeclared private signals are inaccessible.
 
 Unsealing refuses until the output-lock manifest is complete and verified.
 Cleanup or deletion refuses without a later logged owner deletion

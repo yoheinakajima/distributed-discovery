@@ -217,8 +217,88 @@ def _bind_private_state(
     identity = _execution_identity(repo, authorization)
     path = root / "execution-identity.json"
     if path.exists():
-        if _read_json(path) != identity:
-            raise PermissionError("private state belongs to a different execution checkpoint")
+        original = _read_json(path)
+        effective = dict(original)
+        access = AppendOnlyLedger(root / "access-log.jsonl")
+        for record in access.records:
+            if record.get("event_type") != "execution-authorization-transition":
+                continue
+            expected = {
+                "authorization_id": record.get("from_authorization_id"),
+                "execution_commit": record.get("from_execution_commit"),
+                "execution_tree_hash": record.get("from_execution_tree_hash"),
+            }
+            if any(effective.get(name) != value for name, value in expected.items()):
+                raise PermissionError("private authorization transition chain is discontinuous")
+            target_commit = str(record.get("to_execution_commit", ""))
+            if (
+                subprocess.run(
+                    (
+                        "git",
+                        "merge-base",
+                        "--is-ancestor",
+                        str(effective["execution_commit"]),
+                        target_commit,
+                    ),
+                    cwd=repo,
+                    check=False,
+                    capture_output=True,
+                ).returncode
+                != 0
+            ):
+                raise PermissionError("private authorization transition is not forward-only")
+            effective.update(
+                {
+                    "authorization_id": record.get("to_authorization_id"),
+                    "execution_commit": target_commit,
+                    "execution_tree_hash": record.get("to_execution_tree_hash"),
+                }
+            )
+        invariant_fields = (
+            "schema_version",
+            "base_commit",
+            "branch",
+            "issue",
+            "pull_request",
+            "campaign_id",
+            "batch_id",
+            "models",
+        )
+        if any(effective.get(name) != identity.get(name) for name in invariant_fields):
+            raise PermissionError("private state belongs to a different pilot identity")
+        if effective != identity:
+            if (
+                subprocess.run(
+                    (
+                        "git",
+                        "merge-base",
+                        "--is-ancestor",
+                        str(effective["execution_commit"]),
+                        str(identity["execution_commit"]),
+                    ),
+                    cwd=repo,
+                    check=False,
+                    capture_output=True,
+                ).returncode
+                != 0
+            ):
+                raise PermissionError("private authorization transition is not forward-only")
+            access.append(
+                {
+                    "event_type": "execution-authorization-transition",
+                    "status": "success",
+                    "idempotency_key": (
+                        "execution-authorization-transition:"
+                        f"{effective['authorization_id']}:{identity['authorization_id']}"
+                    ),
+                    "from_authorization_id": effective["authorization_id"],
+                    "from_execution_commit": effective["execution_commit"],
+                    "from_execution_tree_hash": effective["execution_tree_hash"],
+                    "to_authorization_id": identity["authorization_id"],
+                    "to_execution_commit": identity["execution_commit"],
+                    "to_execution_tree_hash": identity["execution_tree_hash"],
+                }
+            )
     else:
         _write_json(path, identity)
     return identity
