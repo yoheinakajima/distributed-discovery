@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Distributed Discovery compendium release registry",
+  "type": "object",
+  "required": ["schema_version", "citation_convention", "releases"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "citation_convention": {
+      "type": "object",
+      "required": ["exact_version", "evolving_compendium"],
+      "properties": {
+        "exact_version": {"type": "string", "pattern": "^10\\.\\d{4,9}/\\S+$"},
+        "evolving_compendium": {"type": "string", "pattern": "^10\\.\\d{4,9}/\\S+$"}
+      },
+      "additionalProperties": false
+    },
+    "releases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/release"}
+    }
+  },
+  "$defs": {
+    "asset": {
+      "type": "object",
+      "required": ["name", "bytes", "sha256"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "bytes": {"type": "integer", "minimum": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "source_archive": {
+      "type": "object",
+      "required": ["format", "url", "verified_http_status"],
+      "properties": {
+        "format": {"enum": ["zip", "tar.gz"]},
+        "url": {"type": "string", "format": "uri"},
+        "verified_http_status": {"const": 200}
+      },
+      "additionalProperties": false
+    },
+    "zenodo_file": {
+      "type": "object",
+      "required": ["name", "bytes", "checksum", "sha256", "authorized_tree_files", "byte_exact_authorized_tree"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "bytes": {"type": "integer", "minimum": 1},
+        "checksum": {"type": "string", "pattern": "^md5:[0-9a-f]{32}$"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "authorized_tree_files": {"type": "integer", "minimum": 1},
+        "byte_exact_authorized_tree": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "inventory": {
+      "type": "object",
+      "required": ["claims", "maximum_claim_id", "studies", "maximum_study_id", "run_manifests", "passing_immutable_runs"],
+      "properties": {
+        "claims": {"const": 110},
+        "maximum_claim_id": {"const": "DD-C-0110"},
+        "studies": {"const": 26},
+        "maximum_study_id": {"const": "DD-022"},
+        "run_manifests": {"const": 51},
+        "passing_immutable_runs": {"const": 48}
+      },
+      "additionalProperties": false
+    },
+    "papers": {
+      "type": "object",
+      "required": ["local_pdfs", "pages", "hashes_verified", "source_changed", "peer_review_implied"],
+      "properties": {
+        "local_pdfs": {"const": 7},
+        "pages": {"const": 119},
+        "hashes_verified": {"const": true},
+        "source_changed": {"const": false},
+        "peer_review_implied": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "release": {
+      "type": "object",
+      "required": [
+        "version", "tag", "tag_type", "tag_object", "source_revision",
+        "title", "status", "release_date", "published_utc",
+        "github_release_url", "custom_assets", "fresh_download_verification",
+        "github_source_archives", "zenodo", "scientific_inventory", "papers",
+        "license", "correction_policy"
+      ],
+      "properties": {
+        "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "tag": {"type": "string", "pattern": "^dd-compendium-v[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "tag_type": {"const": "annotated"},
+        "tag_object": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "source_revision": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "title": {"type": "string", "minLength": 1},
+        "status": {"const": "published-zenodo-verified"},
+        "release_date": {"type": "string", "format": "date"},
+        "published_utc": {"type": "string", "format": "date-time"},
+        "github_release_url": {"type": "string", "format": "uri"},
+        "custom_assets": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {"$ref": "#/$defs/asset"}
+        },
+        "fresh_download_verification": {"const": "byte-identical"},
+        "github_source_archives": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/source_archive"}
+        },
+        "zenodo": {
+          "type": "object",
+          "required": [
+            "record_id", "record_url", "status", "resource_type", "title",
+            "version_field", "creator", "license", "publication_date",
+            "github_tag_relation", "version_doi", "concept_doi", "files"
+          ],
+          "properties": {
+            "record_id": {"type": "integer", "minimum": 1},
+            "record_url": {"type": "string", "format": "uri"},
+            "status": {"const": "published"},
+            "resource_type": {"const": "software"},
+            "title": {"type": "string", "minLength": 1},
+            "version_field": {"type": "string", "minLength": 1},
+            "creator": {"const": "Nakajima, Yohei"},
+            "license": {"enum": ["MIT", "mit-license"]},
+            "publication_date": {"type": "string", "format": "date"},
+            "github_tag_relation": {"type": "string", "format": "uri"},
+            "version_doi": {"type": "string", "pattern": "^10\\.\\d{4,9}/\\S+$"},
+            "concept_doi": {"type": "string", "pattern": "^10\\.\\d{4,9}/\\S+$"},
+            "files": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"$ref": "#/$defs/zenodo_file"}
+            }
+          },
+          "additionalProperties": false
+        },
+        "scientific_inventory": {"$ref": "#/$defs/inventory"},
+        "papers": {"$ref": "#/$defs/papers"},
+        "license": {"const": "MIT"},
+        "correction_policy": {"const": "preserve-version-and-issue-new-version"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

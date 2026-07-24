@@ -1,5 +1,5 @@
 schema_version: 1
-plan_status: nonexecuting-template
+plan_status: historical-nonexecuting-template-completed-by-separate-authorization
 candidate_version: 0.1.0
 candidate_tag: dd-compendium-v0.1.0
 future_release_title: Distributed Discovery Research Compendium v0.1.0
@@ -18,8 +18,8 @@ phases:
   - record-observed-version-and-concept-dois
   - closeout-documentation-pr
 external_identifiers:
-  version_doi: null
-  concept_doi: null
+  version_doi: 10.5281/zenodo.21535005
+  concept_doi: 10.5281/zenodo.21535004
 automatic_release_workflow: false
 official_documentation:
   accessed_utc_date: "2026-07-24"
@@ -32,7 +32,11 @@ official_documentation:
   zenodo_github_upload: https://help.zenodo.org/docs/github/archive-software/github-upload/
   zenodo_versioning: https://zenodo.org/help/versioning
 current_external_state:
-  tag_exists: false
-  github_release_exists: false
-  zenodo_ingestion_verified: false
-  doi_exists: false
+  observed_utc_date: "2026-07-24"
+  source_revision: 3ca173f4e9e81a6d0e3e56205e428c596edc050e
+  tag_exists: true
+  github_release_exists: true
+  zenodo_record_id: 21535005
+  zenodo_ingestion_verified: true
+  doi_exists: true
+  canonical_record: docs/releases/releases.yml

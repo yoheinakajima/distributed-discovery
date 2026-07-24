@@ -1,0 +1,72 @@
+schema_version: 1
+decision: release-published-zenodo-verified
+issue: 185
+closeout_branch: release/compendium-v0.1.0-closeout
+closeout_pull_request: null
+release:
+  version: 0.1.0
+  tag: dd-compendium-v0.1.0
+  tag_type: annotated
+  tag_object: 0fa9bd22b9a49a0e028e6fccda60b9bc2dadc7f6
+  source_revision: 3ca173f4e9e81a6d0e3e56205e428c596edc050e
+  title: Distributed Discovery Research Compendium v0.1.0
+  github_url: https://github.com/yoheinakajima/distributed-discovery/releases/tag/dd-compendium-v0.1.0
+  published_utc: "2026-07-24T13:52:52Z"
+  custom_assets: 5
+  fresh_download_verification: byte-identical
+  github_source_archives_http_200: 2
+zenodo:
+  record_id: 21535005
+  record_url: https://zenodo.org/records/21535005
+  status: published
+  resource_type: software
+  version_field: dd-compendium-v0.1.0
+  file_count: 1
+  source_archive:
+    name: yoheinakajima/distributed-discovery-dd-compendium-v0.1.0.zip
+    bytes: 25825951
+    checksum: md5:b3484739a08bec27499a580b19755aff
+    sha256: 8f04d5dc25b971c879c59d4f14cccb05459f67269fa486dc9acbdf692a3aa33f
+    authorized_tree_files: 2379
+    byte_exact_authorized_tree: true
+  version_doi: 10.5281/zenodo.21535005
+  version_doi_resolution: exact-v0.1.0-record-http-200
+  concept_doi: 10.5281/zenodo.21535004
+  concept_doi_resolution: latest-version-v0.1.0-http-200
+citation:
+  cff_version: 0.1.0
+  cff_release_date: "2026-07-24"
+  cff_doi: 10.5281/zenodo.21535005
+  exact_version_doi: 10.5281/zenodo.21535005
+  evolving_compendium_doi: 10.5281/zenodo.21535004
+scientific_inventory:
+  claims: 110
+  maximum_claim_id: DD-C-0110
+  studies: 26
+  maximum_study_id: DD-022
+  run_manifests: 51
+  passing_immutable_runs: 48
+created:
+  claims: 0
+  studies: 0
+  runs: 0
+papers:
+  local_pdfs: 7
+  pages: 119
+  exact_hashes_verified: true
+  sources_changed: false
+  lifecycle_changed: false
+  peer_review_implied: false
+safety:
+  provider_calls: 0
+  private_material: absent
+  package_published: false
+  namespace_reserved: false
+  arxiv_submission: false
+  journal_action: false
+  activegraph_mutation: false
+  sqlite_mutation: false
+  canonical_upstream_mutation: false
+next_gate: TreasureBench Agents v1 sealed engineering pilot registration and authorization
+next_command: git status --short --branch
+next_file: plans/TREASUREBENCH_AGENTS_V1_PILOT.md

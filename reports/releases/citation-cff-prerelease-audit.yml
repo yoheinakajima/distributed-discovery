@@ -16,3 +16,8 @@ fields:
   doi: absent
 zenodo_json_present: false
 official_sources_accessed_utc_date: "2026-07-24"
+observed_release_closeout:
+  date_released: "2026-07-24"
+  version_doi: 10.5281/zenodo.21535005
+  concept_doi: 10.5281/zenodo.21535004
+  canonical_record: docs/releases/releases.yml

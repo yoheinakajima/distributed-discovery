@@ -13,6 +13,16 @@ identifiers, routes, commands, and evidence.
 
 > The canonical public paper and interactive guide remain in the upstream shared-discovery-paradox repository. This repository contains the broader research program, reproducibility infrastructure, companion materials, and extension studies.
 
+Distributed Discovery Research Compendium v0.1.0 is available as an immutable
+[GitHub Release](https://github.com/yoheinakajima/distributed-discovery/releases/tag/dd-compendium-v0.1.0)
+and verified [Zenodo software record](https://zenodo.org/records/21535005).
+Use [version DOI 10.5281/zenodo.21535005](https://doi.org/10.5281/zenodo.21535005)
+for exact v0.1.0 reproduction and
+[concept DOI 10.5281/zenodo.21535004](https://doi.org/10.5281/zenodo.21535004)
+for the evolving compendium. This archival release does not imply paper
+submission, acceptance, peer review, journal publication, or new scientific
+evidence.
+
 This public repository is MIT-licensed. The [companion site](https://yoheinakajima.github.io/distributed-discovery/) is built from `site/src` on `main` and deployed through GitHub Actions; generated `site/dist` files are not committed. Canonical upstream remains separate and read-only.
 
 ## Status and navigation
@@ -37,9 +47,11 @@ record](docs/methods/phase-1-research-methods.md).
 
 The current publication architecture is preprint-first with the journal track
 deferred behind explicit triggers. Common-Source Trap is the first internal
-freeze candidate, but no paper edit, submission, release, DOI, or arXiv
-identifier is authorized. Stable-citation, dependency, release-readiness, and
-licensing records are repository infrastructure only. TreasureBench is the
+freeze candidate, but no paper edit, submission, paper-specific DOI, or arXiv
+identifier is authorized. The compendium release and DOI are archival
+repository identifiers, not paper-status promotions. Stable-citation,
+dependency, release, and licensing records are repository infrastructure.
+TreasureBench is the
 formal public suite, Treasure Hunt is its interactive companion, and
 DiscoveryBench remains the historical/internal compatibility alias. The dated
 collision screen is bounded and nonlegal; no namespace is owned or reserved.

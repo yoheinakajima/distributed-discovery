@@ -1,6 +1,28 @@
 # Master execution plan
 
-## Active continuation — Compendium v0.1.0 offline preparation (2026-07-24)
+## Active continuation — Compendium v0.1.0 durable closeout (2026-07-24)
+
+Issue #185 and branch `release/compendium-v0.1.0-closeout` own the sole
+documentation continuation from authorized source
+`3ca173f4e9e81a6d0e3e56205e428c596edc050e`. The living ExecPlan is
+[`FIRST_COMPENDIUM_RELEASE.md`](FIRST_COMPENDIUM_RELEASE.md).
+
+Annotated tag `dd-compendium-v0.1.0`, its public
+[GitHub Release](https://github.com/yoheinakajima/distributed-discovery/releases/tag/dd-compendium-v0.1.0),
+the five exact custom assets, Zenodo software record
+[`21535005`](https://zenodo.org/records/21535005), version DOI
+`10.5281/zenodo.21535005`, and concept DOI
+`10.5281/zenodo.21535004` are directly verified. The sole Zenodo source
+archive matches all 2,379 files in the authorized Git tree.
+
+This lane records external identifiers, citation convention, validation, and
+public links only. It creates no study, claim, run, theorem, proof promotion,
+paper-status change, provider call, private material, package publication,
+submission, ActiveGraph/SQLite mutation, or upstream change. Its successor is
+the separately authorized TreasureBench Agents v1 sealed engineering pilot
+registration and authorization.
+
+## Completed continuation — Compendium v0.1.0 offline preparation (2026-07-24)
 
 Issue #183, draft PR #184, and branch
 `release/compendium-v0.1.0-preparation` own the sole substantive lane from main

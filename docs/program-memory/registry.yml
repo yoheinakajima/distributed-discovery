@@ -74,9 +74,9 @@ records:
     not_a_result_boundaries: [no complexity classification, no optimal algorithm claim]
     supersedes: []
     superseded_by: null
-    review_after: after-first-stable-release
+    review_after: post-claim-grade-agents-v1
     owner_decision: adopted
-    last_reviewed: "2026-07-23"
+    last_reviewed: "2026-07-24"
   - idea_id: PM-0005
     title: Preprint-first publication track
     status: implemented
@@ -109,12 +109,12 @@ records:
     dependencies: [CITATION.cff]
     promotion_trigger: null
     permitted_stops: [implemented, superseded]
-    not_a_result_boundaries: [no DOI arXiv ID or release exists yet]
+    not_a_result_boundaries: [a compendium DOI does not create a paper DOI or scientific evidence]
     supersedes: []
     superseded_by: null
-    review_after: first-release-freeze
+    review_after: release-or-venue-freeze
     owner_decision: adopted
-    last_reviewed: "2026-07-23"
+    last_reviewed: "2026-07-24"
   - idea_id: PM-0007
     title: Submission self-containment rule
     status: implemented
@@ -217,16 +217,16 @@ records:
     visibility: public
     source_type: owner-decision
     captured_date: "2026-07-23"
-    proposition: Prepare versioned release and Zenodo infrastructure without enabling integration or minting identifiers.
-    why_it_matters: Stable evidence citations need an immutable release architecture before activation.
-    canonical_destination: {type: release-record, path: docs/releases/zenodo-release-policy.md}
+    proposition: Prepare versioned release and Zenodo infrastructure, then activate only under exact owner authorization and record identifiers after direct verification.
+    why_it_matters: Stable evidence citations need an immutable release architecture and verified version/concept DOI roles.
+    canonical_destination: {type: release-record, path: docs/releases/releases.yml}
     dependencies: [CITATION.cff, LICENSE, docs/releases/compendium-v0.1.0-content.yml]
     promotion_trigger: Owner activates Zenodo and authorizes the first tagged compendium release.
     permitted_stops: [implemented, deferred, rejected, superseded]
-    not_a_result_boundaries: [offline tooling only; no release tag deposit DOI or integration exists]
+    not_a_result_boundaries: [release infrastructure and archival state only; no scientific evidence or paper-status promotion]
     supersedes: []
     superseded_by: null
-    review_after: first-compendium-release
+    review_after: release-or-venue-freeze
     owner_decision: adopted
     last_reviewed: "2026-07-24"
   - idea_id: PM-0013
@@ -456,7 +456,7 @@ records:
     superseded_by: null
     review_after: release-or-venue-freeze
     owner_decision: adopted
-    last_reviewed: "2026-07-23"
+    last_reviewed: "2026-07-24"
   - idea_id: PM-0025
     title: Paper dependency edges
     status: implemented
@@ -552,3 +552,22 @@ records:
     review_after: null
     owner_decision: adopted
     last_reviewed: "2026-07-23"
+  - idea_id: PM-0030
+    title: First stable compendium release
+    status: implemented
+    capture_classification: capture-now
+    visibility: public
+    source_type: owner-decision
+    captured_date: "2026-07-24"
+    proposition: Publish Compendium v0.1.0 from the exact authorized source as an immutable annotated tag, GitHub Release, and verified Zenodo software record with separate version and concept DOI roles.
+    why_it_matters: The release supplies the first stable compendium citation without changing scientific evidence or paper lifecycle.
+    canonical_destination: {type: release-record, path: docs/releases/releases.yml}
+    dependencies: [PM-0006, PM-0012, PM-0024, PM-0026]
+    promotion_trigger: null
+    permitted_stops: [implemented, superseded]
+    not_a_result_boundaries: [no study claim run theorem benchmark result paper DOI peer review submission or package publication]
+    supersedes: []
+    superseded_by: null
+    review_after: release-or-venue-freeze
+    owner_decision: adopted
+    last_reviewed: "2026-07-24"

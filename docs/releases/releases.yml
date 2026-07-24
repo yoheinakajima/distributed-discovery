@@ -1,0 +1,74 @@
+schema_version: 1
+citation_convention:
+  exact_version: 10.5281/zenodo.21535005
+  evolving_compendium: 10.5281/zenodo.21535004
+releases:
+  - version: 0.1.0
+    tag: dd-compendium-v0.1.0
+    tag_type: annotated
+    tag_object: 0fa9bd22b9a49a0e028e6fccda60b9bc2dadc7f6
+    source_revision: 3ca173f4e9e81a6d0e3e56205e428c596edc050e
+    title: Distributed Discovery Research Compendium v0.1.0
+    status: published-zenodo-verified
+    release_date: "2026-07-24"
+    published_utc: "2026-07-24T13:52:52Z"
+    github_release_url: https://github.com/yoheinakajima/distributed-discovery/releases/tag/dd-compendium-v0.1.0
+    custom_assets:
+      - name: distributed-discovery-compendium-v0.1.0-release-evidence-manifest.json
+        bytes: 4733
+        sha256: a6c742a3a0ed8e962fb24d05bad236c07fe058ce68ba6b5cf2cd057dc1044f9f
+      - name: distributed-discovery-compendium-v0.1.0-SHA256SUMS.txt
+        bytes: 511
+        sha256: c6c9417933e305508a3c1ed418fb588b4fa897c471e98076732f30747fcc3231
+      - name: distributed-discovery-compendium-v0.1.0-paper-citation-metadata.yml
+        bytes: 5725
+        sha256: 37c66ed19a9d84cc021eb27567fa74fd399b0f73b34b7aae845486c9420e538c
+      - name: distributed-discovery-compendium-v0.1.0-papers.zip
+        bytes: 1088601
+        sha256: 08bab6f3d0fb7b1c6282b8663a11e1709ded0ee93769f7ee60fec690e01af469
+      - name: distributed-discovery-compendium-v0.1.0-release-notes.md
+        bytes: 2152
+        sha256: 35d757da84ea3a5400db4e64963c3aee484029fe0e3da9c0c07fa54352128b92
+    fresh_download_verification: byte-identical
+    github_source_archives:
+      - format: zip
+        url: https://github.com/yoheinakajima/distributed-discovery/archive/refs/tags/dd-compendium-v0.1.0.zip
+        verified_http_status: 200
+      - format: tar.gz
+        url: https://github.com/yoheinakajima/distributed-discovery/archive/refs/tags/dd-compendium-v0.1.0.tar.gz
+        verified_http_status: 200
+    zenodo:
+      record_id: 21535005
+      record_url: https://zenodo.org/records/21535005
+      status: published
+      resource_type: software
+      title: Distributed Discovery Research Compendium
+      version_field: dd-compendium-v0.1.0
+      creator: Nakajima, Yohei
+      license: mit-license
+      publication_date: "2026-07-24"
+      github_tag_relation: https://github.com/yoheinakajima/distributed-discovery/tree/dd-compendium-v0.1.0
+      version_doi: 10.5281/zenodo.21535005
+      concept_doi: 10.5281/zenodo.21535004
+      files:
+        - name: yoheinakajima/distributed-discovery-dd-compendium-v0.1.0.zip
+          bytes: 25825951
+          checksum: md5:b3484739a08bec27499a580b19755aff
+          sha256: 8f04d5dc25b971c879c59d4f14cccb05459f67269fa486dc9acbdf692a3aa33f
+          authorized_tree_files: 2379
+          byte_exact_authorized_tree: true
+    scientific_inventory:
+      claims: 110
+      maximum_claim_id: DD-C-0110
+      studies: 26
+      maximum_study_id: DD-022
+      run_manifests: 51
+      passing_immutable_runs: 48
+    papers:
+      local_pdfs: 7
+      pages: 119
+      hashes_verified: true
+      source_changed: false
+      peer_review_implied: false
+    license: MIT
+    correction_policy: preserve-version-and-issue-new-version

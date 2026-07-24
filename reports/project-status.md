@@ -1,18 +1,32 @@
-# Project status — Compendium v0.1.0 offline candidate
+# Project status — Compendium v0.1.0 published and DOI-verified
 
 Date: 2026-07-24 (America/Los_Angeles).
+
+Issue #185 published the exact authorized source
+`3ca173f4e9e81a6d0e3e56205e428c596edc050e` as annotated tag
+`dd-compendium-v0.1.0` and a public GitHub Release with five exact custom
+assets. Fresh-download verification passes. Zenodo record `21535005` is a
+published software record; version DOI `10.5281/zenodo.21535005` and concept
+DOI `10.5281/zenodo.21535004` resolve. The single Zenodo source ZIP matches
+all 2,379 authorized Git files.
+
+This status is **release published, Zenodo and both DOI roles verified**.
+Scientific inventory remains 110 claims, 26 studies, 51 manifests, and 48
+passing immutable runs. Seven project PDFs remain 119 pages with exact hashes
+and unchanged lifecycle. No study, claim, run, theorem, paper promotion,
+provider/private evidence, package, namespace, arXiv, journal, upstream,
+ActiveGraph, or SQLite action occurred. The next gate is TreasureBench Agents
+v1 sealed engineering pilot registration and authorization.
+
+## Prior offline candidate status
 
 Issue #183 and draft PR #184 implement the repository-local release-candidate
 toolchain. Five deterministic dry-run assets pass independent verification and
 byte-identical double-build acceptance; the normalized paper archive contains
 132 members, seven exact PDFs, and 119 pages. Validation-only CI is wired.
 
-This status is **offline toolchain ready, external publication pending**.
-Owner authorization and manuscript/PDF/generated-figure licensing attestations,
-the annotated tag, GitHub Release, verified Zenodo ingestion, and observed
-version/concept DOIs remain absent. Scientific inventory stays 110 claims,
-26 studies, 51 manifests, and 48 passing immutable runs. No paper or scientific
-artifact changed.
+That historical status was **offline toolchain ready, external publication
+pending** and is superseded by the verified release above.
 
 ## Prior TreasureBench naming status
 
