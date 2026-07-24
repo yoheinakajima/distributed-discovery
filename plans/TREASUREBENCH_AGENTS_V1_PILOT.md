@@ -24,8 +24,10 @@ Baseline audit completed at `2026-07-24T15:52:58Z`.
 - branch: `benchmark/treasurebench-agents-v1-sealed-pilot`;
 - Phase A implementation commit:
   `05bc58e986e34019b59e84a181b8d17789987eac`;
-- frozen execution-tree hash:
-  `sha256:a6cd789f8f05c049ed5b86dfec551c6ea73ed99797a959f77bda755782ef773c`;
+- replacement staged-driver commit:
+  `d5b3a23a4c61fc47971f389bc04a0283c87c85b4`;
+- current frozen execution-tree hash:
+  `sha256:2f4861759237e419e6901ecc3e6b09385712cc9e47912c0944cb3f9e0a8700a7`;
 - open substantive pull requests before branch creation: none;
 - unrelated open issue #32: settings-only and not a blocker;
 - release: annotated `dd-compendium-v0.1.0`, GitHub Release and Zenodo record
@@ -277,8 +279,12 @@ statements never enter Git.
 24. M24 roadmap/site reconciliation.
 25. M25 validation, merge, Pages, live acceptance, issue closeout, main sync.
 
-Execute sequentially. M0-M13 are complete. M14 is blocked on the exact local
-non-synthetic owner authorization; M15-M25 remain pending behind it.
+Execute sequentially. M0-M13 are complete. The first M14 revalidation passed,
+then exposed that the frozen `pilot-live` entry point stopped at the guard and
+did not drive the registered stages. No provider call or real private
+generation occurred. The execution-sensitive repair is committed and pushed;
+M14 must now be repeated against a fresh authorization for the replacement
+commit before M15-M25.
 
 ## Progress checklist
 
@@ -298,7 +304,8 @@ non-synthetic owner authorization; M15-M25 remain pending behind it.
 - [x] M11 CLI/Make.
 - [x] M12 rehearsal.
 - [x] M13 freeze, push, draft PR #188, and authorization checkpoint.
-- [ ] M14 authorization and freeze revalidation (**blocked on owner authorization**).
+- [ ] M14 authorization and freeze revalidation (**fresh authorization required
+  from the clean checkpoint containing replacement commit `d5b3a23`**).
 - [ ] M15-M25 remaining Phase B milestones.
 
 ## Discoveries and surprises
@@ -318,6 +325,15 @@ non-synthetic owner authorization; M15-M25 remain pending behind it.
 - The complete Phase A rehearsal covers 500 synthetic route/task/architecture
   runs and 500 encrypted traces. All 35 owner-named corruptions plus 41
   additional checks reject, for 76/76 total.
+- The first exact M14 revalidation passed without printing credentials or
+  authorization contents. Inspection immediately afterward found that the
+  frozen live CLI was guard-only. Per the freeze rule, no provider call or real
+  private generation was attempted; the authorization was invalidated.
+- The replacement driver advances one stage at a time and enforces a committed,
+  pushed custody record before the prefix plus a committed, pushed output-lock
+  record before unsealing. Its exact synthetic mock completed 500 private runs,
+  3,016 simulated provider attempts including canaries, Method A/B agreement,
+  zero contamination/protocol findings, and zero new calls on full resume.
 
 ## Decision log
 
@@ -333,6 +349,14 @@ non-synthetic owner authorization; M15-M25 remain pending behind it.
 - `2026-07-24T16:26:34Z`: push Phase A implementation commit `05bc58e`,
   verify execution-tree hash `sha256:a6cd789f8f05c049ed5b86dfec551c6ea73ed99797a959f77bda755782ef773c`,
   and open draft PR #188. M13 is complete.
+- `2026-07-24T17:28:18Z`: validate the first non-synthetic owner
+  authorization, exact execution identity, secure credential-file metadata,
+  configured direct keys, caps, permissions, issue, branch, campaign, and
+  batch; make no call and create no real private state.
+- `2026-07-24T17:51:28Z`: after detecting the guard-only live entry point,
+  commit and push execution-sensitive repair `d5b3a23`; freeze tree hash
+  `sha256:2f4861759237e419e6901ecc3e6b09385712cc9e47912c0944cb3f9e0a8700a7`.
+  The previous authorization is no longer valid.
 
 ## Validation strategy
 
@@ -360,8 +384,10 @@ freeze, draft PR, and—if authorized—public commitments and redacted closeout
 
 ## Blockers
 
-Phase A has none. Phase B is blocked until a matching non-synthetic local owner
-authorization exists for the frozen execution commit.
+Phase A has none. Phase B is blocked until a fresh matching non-synthetic local
+owner authorization exists for the clean checkpoint containing replacement
+commit `d5b3a23` and tree hash
+`sha256:2f4861759237e419e6901ecc3e6b09385712cc9e47912c0944cb3f9e0a8700a7`.
 
 ## Recovery and restart instructions
 
