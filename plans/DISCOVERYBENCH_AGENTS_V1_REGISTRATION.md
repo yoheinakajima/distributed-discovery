@@ -1,5 +1,9 @@
 # DiscoveryBench Agents v1 registration
 
+Forward-name note (2026-07-23): the current formal suite display is
+TreasureBench. This dated registration title, DD-010 ownership, frozen
+DiscoveryBench content IDs, and Agents v1 protocol IDs remain unchanged.
+
 This living ExecPlan follows `.agent/PLANS.md`. It implements the owner
 authorization from clean `main` commit
 `62bd4804e6ea5e8621125335c3a4ffc9024a2871`. This gate registers an offline

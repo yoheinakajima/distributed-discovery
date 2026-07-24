@@ -59,7 +59,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "docs/theorem-spine.md" in program
     assert "canonical entry paper" in program
     assert "Working notes" in program
-    assert "Reproducible studies, Labs, and DiscoveryBench" in program
+    assert "Reproducible studies, Labs, and TreasureBench" in program
     assert "journal submission status" in program
     assert all(study_id in program for study_id in ["DD-019", "DD-020", "DD-021", "DD-022"])
 
@@ -126,8 +126,11 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "DD-C-0065" in audience_study
     assert "20260721T215811Z_DD-013_09c07448_cdac4fb512" in audience_study
     assert (output / "benchmark.html").is_file()
+    assert (output / "treasurebench.html").is_file()
+    assert (output / "treasure-hunt.html").is_file()
     for route in ["tasks", "protocols", "metrics", "results", "attention", "agents-v1"]:
         assert (output / f"benchmark/{route}.html").is_file()
+        assert (output / f"treasurebench/{route}.html").is_file()
     agents_registration = (output / "benchmark/agents-v1.html").read_text(encoding="utf-8")
     assert "Offline implementation complete" in agents_registration
     assert "Required adapters calibrated" in agents_registration

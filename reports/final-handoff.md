@@ -1,4 +1,18 @@
-# Final handoff — program memory and preprint infrastructure
+# Final handoff — TreasureBench naming and Treasure Hunt companion
+
+Issue #180 and PR #181 own the compatibility-preserving public naming
+migration. TreasureBench is the formal suite, Treasure Hunt is the interactive
+companion, and DiscoveryBench is the historical/internal alias for frozen and
+compatibility surfaces. The collision decision is
+`treasurebench-selected-and-implemented`, scoped to the dated public channels
+in the audit; it is not legal clearance or a global uniqueness claim.
+
+DD-010, every scientific identifier, immutable evidence, frozen schema ID,
+historical route, and existing CLI behavior remain preserved. New
+TreasureBench routes and commands delegate to the same implementation, and the
+Treasure Hunt guide creates no Lab, study, claim, run, result, paper, provider
+call, private material, release, DOI, or namespace reservation. The exact next
+repository gate is **First tagged compendium release and Zenodo activation**.
 
 Issue #178 and draft PR #179 own the documentation/governance continuation.
 M1–M16 are complete; full local acceptance passes 350 tests, 110 claims, all
@@ -12,14 +26,8 @@ immutable load-bearing citations, self-contained submissions, Common-Source
 Trap as the first internal freeze candidate, Foundations as a site/release
 note rather than current arXiv candidate, `canonical-public-anchor` lifecycle
 wording, and prepared-but-inactive release/Zenodo infrastructure.
-`DiscoveryBench` has a fatal external collision. The naming decision is
-`owner-name-decision-required`; no partial rename occurs and DD-010, claims,
-runs, routes, schemas, and CLI behavior are preserved.
-
-The exact next gate is **Owner benchmark public-name decision**. The owner must
-select and scholarly/legally clear an external name, then update
-`reports/editorial/benchmark-name-decision.yml` in a separately reviewed,
-compatibility-preserving change. No provider call, credential read, private
+The owner-name gate described in the prior paragraph is superseded by the
+TreasureBench decision above. No provider call, credential read, private
 material, cost, study, claim, run, paper edit, submission, tag, release,
 Zenodo activation, DOI, journal contact, or upstream mutation occurred.
 

@@ -108,3 +108,11 @@ owner_decisions:
   - review-generated-figure-and-third-party-asset-provenance
   - check-venue-copyright-transfer-before-journal-action
 license_changes_authorized: false
+future_treasurebench_package:
+  status: not-authorized-not-published
+  current_license_inference: none-beyond-existing-repository-code
+  required_before_publication:
+    - owner namespace reservation
+    - release authorization
+    - package contents and license review
+    - compatibility and packaging validation

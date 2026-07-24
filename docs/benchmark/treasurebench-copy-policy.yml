@@ -1,0 +1,38 @@
+schema_version: 1
+formal_suite: TreasureBench
+companion: Treasure Hunt
+first_mention_template: >-
+  TreasureBench, with Treasure Hunt as its playable companion, is a benchmark
+  for collective search under shared and private evidence.
+canonical_subtitle: "TreasureBench: a benchmark for collective search under shared and private evidence."
+paired_first_mention_required: true
+companion_description: The playable companion to the TreasureBench suite.
+formal_theme_boundary:
+  themed_copy_allowed:
+    - companion-route
+    - companion-cards
+    - restrained-companion-link
+  themed_copy_forbidden:
+    - scientific-claims
+    - theorem-statements
+    - metric-names
+    - schema-fields
+    - claim-run-protocol-identifiers
+    - evidence-status
+forbidden_overstatements:
+  - global-uniqueness
+  - legal-or-trademark-clearance
+  - namespace-ownership
+  - benchmark-result-exists
+  - provider-ranking
+  - claim-grade-model-evidence
+  - release-exists
+  - doi-exists
+  - arxiv-record-exists
+events:
+  benchmark_result_exists: false
+  provider_ranking_exists: false
+  claim_grade_agents_evidence_exists: false
+  release_exists: false
+  doi_exists: false
+  arxiv_record_exists: false

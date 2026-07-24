@@ -1,8 +1,21 @@
 # Current program state
 
+_TreasureBench naming and playable-companion migration, 2026-07-23:_
+TreasureBench is the formal public suite name. Its canonical subtitle is
+“TreasureBench: a benchmark for collective search under shared and private
+evidence.” Treasure Hunt is the interactive companion, not a separate
+benchmark, and the public site enforces a two-way funnel between them.
+DiscoveryBench remains a historical/internal compatibility alias; DD-010,
+frozen schemas and IDs, immutable evidence, existing commands, and historical
+routes remain load-bearing and unchanged. The bounded collision decision is
+`treasurebench-selected-and-implemented`; it is not global uniqueness, legal
+clearance, namespace ownership, or package publication. The next repository
+gate is the first tagged compendium release and Zenodo activation, subject to
+separate owner authorization.
+
 _Program memory and preprint infrastructure, 2026-07-23:_ issue #178 records
 a non-scientific governance and publication-infrastructure continuation.
-Owner discussion is routed through a 25-record program-memory registry rather
+Owner discussion is routed through a 29-record program-memory registry rather
 than retained as raw transcript. The active editorial track is preprint-first;
 the journal track is deferred, not abandoned, and reopens only at its explicit
 trigger or a separate owner decision. Foundations remains a site/release note,
@@ -14,11 +27,12 @@ The canonical upstream lifecycle value is now
 `canonical-public-anchor`, with `canonical-published` retained only as a
 historical alias. The repository has release/tag, null-safe evidence-manifest,
 paper citation, dependency-edge, and licensing readiness records but no tag,
-GitHub Release, Zenodo activation, DOI, or arXiv identifier. `DiscoveryBench`
-has a fatal external name collision; the public scholarly rename requires an
-owner decision, so no partial migration changes DD-010 or immutable evidence.
-This milestone makes zero provider calls and creates no private material,
-study, claim, run, scientific result, or paper artifact.
+GitHub Release, Zenodo activation, DOI, or arXiv identifier. The historical
+`DiscoveryBench` public token has a fatal external name collision; the
+TreasureBench migration above resolves the public display gate without changing
+DD-010 or immutable evidence. This milestone makes zero provider calls and
+creates no private material, study, claim, run, scientific result, or paper
+artifact.
 
 _DiscoveryBench Agents v1 evaluation registration, 2026-07-23:_ the offline
 DD-010 instrument remains complete and unchanged. Its evaluation ladder,

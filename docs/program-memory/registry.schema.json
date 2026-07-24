@@ -78,6 +78,7 @@
               "explicit-owner-decision", "explicit-owner-reauthorization",
               "first-compendium-release", "first-release-freeze",
               "journal-track-trigger", "new-bridge-theorem",
+              "owner-provided-sustained-third-party-usage-evidence",
               "owner-public-name-decision", "post-claim-grade-agents-v1",
               "publication-evidence-change", "release-or-venue-freeze"
             ]

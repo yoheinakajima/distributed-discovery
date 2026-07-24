@@ -37,7 +37,8 @@ RESOURCE_GROUPS = (
     (
         "Use",
         (
-            ("Benchmark", "benchmark.html"),
+            ("TreasureBench", "treasurebench.html"),
+            ("Treasure Hunt", "treasure-hunt.html"),
             ("Experiment Kit", "experiment-kit.html"),
             ("Ideas", "ideas.html"),
         ),
@@ -115,7 +116,8 @@ def render_breadcrumb(current: str, title: str) -> str:
         "research": ("Research", "research.html"),
         "labs": ("Labs", "labs.html"),
         "publications": ("Papers", "publications.html"),
-        "benchmark": ("Benchmark", "benchmark.html"),
+        "benchmark": ("TreasureBench", "treasurebench.html"),
+        "treasurebench": ("TreasureBench", "treasurebench.html"),
         "experiment-kit": ("Experiment Kit", "experiment-kit.html"),
     }
     parent = parents.get(section)
@@ -133,16 +135,20 @@ def render_breadcrumb(current: str, title: str) -> str:
 def render_section_navigation(current: str) -> str:
     prefix = prefix_for(current)
     links: tuple[tuple[str, str], ...]
-    if current == "benchmark.html" or current.startswith("benchmark/"):
+    if (
+        current in {"benchmark.html", "treasurebench.html"}
+        or current.startswith("benchmark/")
+        or current.startswith("treasurebench/")
+    ):
         links = (
-            ("Overview", "benchmark.html"),
-            ("Tasks", "benchmark/tasks.html"),
-            ("Strategies", "benchmark/protocols.html"),
-            ("Measures", "benchmark/metrics.html"),
-            ("Results", "benchmark/results.html"),
-            ("Attention", "benchmark/attention.html"),
+            ("Overview", "treasurebench.html"),
+            ("Tasks", "treasurebench/tasks.html"),
+            ("Strategies", "treasurebench/protocols.html"),
+            ("Measures", "treasurebench/metrics.html"),
+            ("Results", "treasurebench/results.html"),
+            ("Attention", "treasurebench/attention.html"),
         )
-        label = "Benchmark pages"
+        label = "TreasureBench pages"
     elif current == "experiment-kit.html" or current.startswith("experiment-kit/"):
         links = (
             ("Overview", "experiment-kit.html"),

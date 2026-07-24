@@ -1,6 +1,11 @@
 schema_version: 1
 status: prospective-evidence-dependent
 benchmark_paper_timing: second-wave-after-claim-grade-execution
+formal_suite: TreasureBench
+working_title: "TreasureBench: A Benchmark for Collective Search under Shared and Private Evidence"
+playable_companion: Treasure Hunt
+first_section_companion_reference_required: true
+mobile_agent_treasure_hunt_disambiguation_required: true
 actions_authorized: []
 branches:
   - evidence_pattern: common-cross-family-agent-pattern

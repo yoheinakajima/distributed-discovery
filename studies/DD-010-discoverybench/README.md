@@ -1,10 +1,16 @@
-# DD-010 — DiscoveryBench
+# DD-010 — TreasureBench
 
-DiscoveryBench is a static, auditable benchmark for how declared multi-agent
+TreasureBench is a static, auditable benchmark for how declared multi-agent
 protocols convert evidence into search actions. It contains exact golden
 fixtures tied to existing project claims and runs plus a small seeded synthetic
 sensitivity suite. It is not a hosted leaderboard or a universal measure of
 real-world agent quality.
+
+DiscoveryBench is the historical/internal compatibility alias and remains the
+correct token in this directory name, frozen schema IDs, task IDs, protocol
+IDs, metric IDs, commands, and immutable outputs. No content version was
+created for the display rename. Treasure Hunt is the playable companion to the
+TreasureBench suite; it is not a separate benchmark.
 
 Run `make dd010-discoverybench` only from a clean committed implementation to
 create the immutable primary run. Use `distributed-discovery benchmark --help`
@@ -29,7 +35,7 @@ are the bounded evidence record.
 
 ## Implemented Agents v1 offline instrument layer
 
-DiscoveryBench Agents v1 is registered under DD-010 as an offline instrument,
+TreasureBench Agents v1 is registered under DD-010 as an offline instrument,
 not as benchmark content v4 and not as a new study. It may explicitly select
 unchanged v1, v2, or v3 content while independently freezing agent protocol
 `agents-v1` and generator `agents-task-generator-v1`.

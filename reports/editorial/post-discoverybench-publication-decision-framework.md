@@ -4,6 +4,13 @@ This framework applies only after a claim-grade Agents v1 campaign. It creates
 no benchmark paper, title-level result, provider ranking, lifecycle change, or
 publication authority.
 
+The future formal instrument name is TreasureBench. The prospective working
+title is *TreasureBench: A Benchmark for Collective Search under Shared and
+Private Evidence*. Treasure Hunt must appear in the first section only as the
+playable companion. Any formal benchmark paper must distinguish this evidence-
+and-action-portfolio instrument from classical mobile-agent treasure-hunt
+navigation using primary sources.
+
 | Evidence pattern | Candidate response |
 | --- | --- |
 | Common cross-family agent pattern | Grand sequel plus technical companions |

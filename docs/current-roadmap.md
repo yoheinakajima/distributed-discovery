@@ -1,4 +1,16 @@
-# Current roadmap — preprint infrastructure; benchmark name owner gate
+# Current roadmap — TreasureBench adopted; release activation next
+
+The owner-selected layered naming system is implemented: TreasureBench is the
+formal suite, Treasure Hunt is its interactive companion, and DiscoveryBench
+is a historical/internal compatibility alias. The prior candidate ranking is
+superseded as decision input. The bounded collision gate passed without a
+disqualifying same-domain exact-name finding, but makes no legal-clearance,
+global-uniqueness, or namespace-ownership claim.
+
+The exact next repository gate is **First tagged compendium release and Zenodo
+activation**. It requires separate owner authorization and owner-controlled
+namespace and preliminary register checks; no tag, release, Zenodo integration,
+DOI, arXiv submission, or package publication exists.
 
 The current non-scientific gate is issue #178: durable program memory,
 preprint-first/journal-deferred policy, paper self-containment and dependency
@@ -12,9 +24,10 @@ citation.
 artifact because it collides with an established ICLR 2025 benchmark and
 software ecosystem. ActionPortfolioBench leads the scored shortlist by five
 points, below the registered eight-point automatic-selection margin.
-Therefore the exact next gate is **Owner benchmark public-name decision** in
-`reports/editorial/benchmark-name-decision.yml`. No rename, provider
-evaluation, release, DOI, study, claim, run, or paper change is authorized.
+The owner selected TreasureBench, and
+`reports/editorial/benchmark-name-decision.yml` records
+`treasurebench-selected-and-implemented`. No provider evaluation, release,
+DOI, study, claim, run, or paper change is authorized by the naming milestone.
 
 ## Preserved Phase 2 research boundary
 

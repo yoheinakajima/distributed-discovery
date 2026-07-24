@@ -1,4 +1,4 @@
-.PHONY: bootstrap lint typecheck test fetch-upstream reproduce-baseline upstream-patch validate-claims audit-editorial audit-program-memory audit-publication-infrastructure release-readiness audit-agents-v1 audit-agents-v1-evaluation agents-v1-dry-run agents-v1-readiness agents-v1-provider-preflight agents-v1-public-calibration agents-v1-provider-preflight-all foundations three-results discovery-institutions common-source-trap incentive-to-ignore threshold-discovery information-sharing-frontier canonical-exact-frontier dd001 dd001-signatures dd001-thresholds dd001-alignment-bound dd002-disclosure dd002-selection-robustness dd003-source-graphs dd003-heterogeneous-sources dd004-sequential dd005-coverage dd006-mechanisms dd006-general-frontier dd006b-joint-mechanism dd007-synthetic-audit dd008-acquisition dd008a-acquisition dd008b-analysis dd009-atlas dd010-discoverybench dd010-attention dd010-threshold dd011-experiment dd011-attention dd011-threshold-dynamic dd012-attention dd013-audience dd014-conditional dd015-preview dd015-dynamic dd015-threshold-preview dd015-threshold-extension dd016-threshold dd017-equilibrium dd018-preview dd018-team-mechanisms dd019-preview dd019-signal-geometry dd020-preview dd020-incremental-sharing dd021-preview dd021-general-sharing-frontier dd022-preview dd022-coordination-free-positive-sharing papers site verify all clean
+.PHONY: bootstrap lint typecheck test fetch-upstream reproduce-baseline upstream-patch validate-claims audit-editorial audit-program-memory audit-publication-infrastructure audit-treasurebench-naming release-readiness audit-agents-v1 audit-agents-v1-evaluation agents-v1-dry-run agents-v1-readiness agents-v1-provider-preflight agents-v1-public-calibration agents-v1-provider-preflight-all foundations three-results discovery-institutions common-source-trap incentive-to-ignore threshold-discovery information-sharing-frontier canonical-exact-frontier dd001 dd001-signatures dd001-thresholds dd001-alignment-bound dd002-disclosure dd002-selection-robustness dd003-source-graphs dd003-heterogeneous-sources dd004-sequential dd005-coverage dd006-mechanisms dd006-general-frontier dd006b-joint-mechanism dd007-synthetic-audit dd008-acquisition dd008a-acquisition dd008b-analysis dd009-atlas dd010-discoverybench dd010-attention dd010-threshold dd011-experiment dd011-attention dd011-threshold-dynamic dd012-attention dd013-audience dd014-conditional dd015-preview dd015-dynamic dd015-threshold-preview dd015-threshold-extension dd016-threshold dd017-equilibrium dd018-preview dd018-team-mechanisms dd019-preview dd019-signal-geometry dd020-preview dd020-incremental-sharing dd021-preview dd021-general-sharing-frontier dd022-preview dd022-coordination-free-positive-sharing papers site verify all clean
 
 UV := uv
 export PYTHONPATH := $(CURDIR)/src
@@ -50,6 +50,9 @@ audit-program-memory:
 audit-publication-infrastructure:
 	$(PY) scripts/audit_paper_dependencies.py
 	$(PY) scripts/audit_publication_infrastructure.py
+
+audit-treasurebench-naming:
+	$(PY) scripts/audit_treasurebench_naming.py
 
 release-readiness:
 	$(PY) scripts/audit_release_readiness.py
@@ -234,7 +237,7 @@ papers:
 site:
 	./scripts/build_site.sh
 
-verify: lint typecheck test validate-claims audit-editorial audit-program-memory audit-publication-infrastructure release-readiness
+verify: lint typecheck test validate-claims audit-editorial audit-program-memory audit-publication-infrastructure audit-treasurebench-naming release-readiness
 
 all: verify reproduce-baseline papers site
 

@@ -1,5 +1,7 @@
 schema_version: 1
 audit_date: "2026-07-23"
+status: historical-decision-input-superseded
+superseded_by: owner-selection-of-treasurebench
 weights:
   semantic_fit: 25
   distinctiveness: 25

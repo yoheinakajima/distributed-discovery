@@ -29,3 +29,10 @@ Example, before external identifiers exist:
 The symbolic values above are field descriptions, not reserved identifiers.
 Root `CITATION.cff` remains the compendium citation. Per-paper metadata is
 separate.
+
+For future formal benchmark references, use **TreasureBench: A Benchmark for
+Collective Search under Shared and Private Evidence**. The first section must
+pair the formal name with Treasure Hunt as the playable companion. Historical
+DiscoveryBench strings may be cited only when a frozen schema, path, protocol,
+or dated record requires them. No TreasureBench DOI, release, arXiv identifier,
+or standalone package currently exists.

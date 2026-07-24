@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TreasureBench layered naming system",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "decision",
+    "decision_date",
+    "authority",
+    "program",
+    "formal_suite",
+    "companion",
+    "historical_alias",
+    "fixture",
+    "funnel",
+    "theme",
+    "continuity",
+    "package",
+    "version_transition",
+    "vernacular_option",
+    "legal_clearance",
+    "global_uniqueness_claimed"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "decision": {"const": "treasurebench-selected-and-implemented"},
+    "decision_date": {"type": "string", "format": "date"},
+    "authority": {"const": "editorial-naming-and-compatibility-only"},
+    "program": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "canonical_result"],
+      "properties": {
+        "name": {"const": "Distributed Discovery"},
+        "canonical_result": {"const": "The Shared Discovery Paradox"}
+      }
+    },
+    "formal_suite": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "role", "subtitle", "keywords"],
+      "properties": {
+        "name": {"const": "TreasureBench"},
+        "role": {"const": "formal-instrument"},
+        "subtitle": {
+          "const": "TreasureBench: a benchmark for collective search under shared and private evidence."
+        },
+        "keywords": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "allOf": [
+            {"contains": {"const": "collective search"}},
+            {"contains": {"const": "multi-agent"}},
+            {"contains": {"const": "benchmark"}},
+            {"contains": {"const": "shared"}}
+          ],
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "companion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "role", "required_attribution", "separate_benchmark"],
+      "properties": {
+        "name": {"const": "Treasure Hunt"},
+        "role": {"const": "interactive-companion"},
+        "required_attribution": {
+          "const": "The playable companion to the TreasureBench suite."
+        },
+        "separate_benchmark": {"const": false}
+      }
+    },
+    "historical_alias": {
+      "type": "object",
+      "required": ["name", "uses"],
+      "properties": {
+        "name": {"const": "DiscoveryBench"},
+        "uses": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "fixture": {
+      "type": "object",
+      "required": ["preferred_terms", "proprietary_name"],
+      "properties": {
+        "preferred_terms": {
+          "const": ["the sixteen-box model", "the sixteen-box game"]
+        },
+        "proprietary_name": {"type": "null"}
+      },
+      "additionalProperties": false
+    },
+    "funnel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required",
+        "companion_links_formal_suite",
+        "formal_suite_links_companion_in_opening",
+        "readme_first_section_pairs_names",
+        "announcement_first_mention_pairs_names",
+        "structured_roles_required"
+      ],
+      "properties": {
+        "required": {"const": true},
+        "companion_links_formal_suite": {"const": true},
+        "formal_suite_links_companion_in_opening": {"const": true},
+        "readme_first_section_pairs_names": {"const": true},
+        "announcement_first_mention_pairs_names": {"const": true},
+        "structured_roles_required": {"const": true}
+      }
+    },
+    "theme": {
+      "type": "object",
+      "required": ["allowed", "prohibited"],
+      "properties": {
+        "allowed": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "prohibited": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "continuity": {
+      "type": "object",
+      "required": ["rename_direction"],
+      "properties": {
+        "rename_direction": {"const": "forward-only"}
+      },
+      "patternProperties": {
+        "^preserve_": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "package": {
+      "type": "object",
+      "required": [
+        "root_distribution",
+        "rename_root_distribution",
+        "standalone_package_published"
+      ],
+      "properties": {
+        "root_distribution": {"const": "distributed-discovery"},
+        "rename_root_distribution": {"const": false},
+        "standalone_package_published": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "version_transition": {
+      "type": "object",
+      "required": [
+        "create_version_for_rebrand_only",
+        "next_nonfrozen_version_may_adopt_treasurebench"
+      ],
+      "properties": {
+        "create_version_for_rebrand_only": {"const": false},
+        "next_nonfrozen_version_may_adopt_treasurebench": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "vernacular_option": {
+      "type": "object",
+      "required": ["status", "trigger", "accepted_evidence", "automated_monitoring"],
+      "properties": {
+        "status": {"const": "evidence-dependent"},
+        "trigger": {"const": "owner-provided sustained third-party usage evidence"},
+        "accepted_evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string"}
+        },
+        "automated_monitoring": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "legal_clearance": {"const": false},
+    "global_uniqueness_claimed": {"const": false}
+  }
+}

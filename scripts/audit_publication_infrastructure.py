@@ -112,10 +112,12 @@ def audit() -> dict[str, Any]:
         item for item in candidates["candidates"] if item["name"] == "DiscoveryBench"
     )
     assert discoverybench["fatal_collision"] is True
-    assert naming["decision"] == "owner-name-decision-required"
-    assert naming["external_scholarly_name"] is None
-    assert naming["rename_implemented"] is False
+    assert naming["decision"] == "treasurebench-selected-and-implemented"
+    assert naming["external_scholarly_name"] == "TreasureBench"
+    assert naming["playable_companion"] == "Treasure Hunt"
+    assert naming["rename_implemented"] is True
     assert naming["current_internal_name"] == "DiscoveryBench"
+    assert naming["partial_rename_permitted"] is False
 
     framework = _yaml("reports/editorial/post-discoverybench-publication-decision-framework.yml")
     assert len(framework["branches"]) == 6

@@ -1,5 +1,9 @@
 # DiscoveryBench Agents v1 offline implementation
 
+Forward-name note (2026-07-23): the current formal suite display is
+TreasureBench. This dated implementation record and every frozen instrument,
+content, and protocol identifier retain DiscoveryBench for compatibility.
+
 This living ExecPlan follows `.agent/PLANS.md`. It implements issue #171 from
 clean `main` commit `53edc37e34809c33e334ade79973e315835aa61a`. The work is
 offline instrument implementation and execution-readiness validation. It is not

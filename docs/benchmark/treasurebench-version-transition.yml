@@ -1,0 +1,39 @@
+schema_version: 1
+effective_date: "2026-07-23"
+formal_display_name: TreasureBench
+historical_alias: DiscoveryBench
+create_version_for_rebrand_only: false
+new_content_version_created: false
+frozen_identifiers_unchanged: true
+root_distribution: distributed-discovery
+frozen_identifiers:
+  task_schemas:
+    - discoverybench-task-v1
+    - discoverybench-task-v2
+    - discoverybench-task-v3
+  task_schema_sha256:
+    task-v1.schema.json: 5bfca5952c35823986137f4c13740d9c56d90ef1fdb0d11ac7f9bd2c0fa90d92
+    task-v2.schema.json: c52bb69bbfa76ffeee316b02aad3d5c0d72ab46643de596cc2025f64344bc6f2
+    task-v3.schema.json: 9da2709a5790afeecd7c8e6dac81c3215cbdb15731f6dd6a77ddda2e6ce7c5d1
+  suite_schemas:
+    - discoverybench-suite-v1
+    - discoverybench-suite-v2
+    - discoverybench-suite-v3
+  task_id_pattern: "^DB-G[0-9]{2}$"
+  agents_protocol_identifiers: unchanged
+  protocol_identifiers: unchanged
+  metric_identifiers: unchanged
+  historical_result_keys: unchanged
+  immutable_run_ids: unchanged
+  immutable_result_paths: unchanged
+compatibility_readers_accept:
+  - discoverybench-task-v1
+  - discoverybench-task-v2
+  - discoverybench-task-v3
+public_display_may_use_treasurebench_now: true
+next_nonfrozen_version:
+  may_adopt_treasurebench_identifier: true
+  requires_substantive_change: true
+  requires_compatibility_record: true
+  requires_old_identifier_reader_support: true
+standalone_package_authorized: false

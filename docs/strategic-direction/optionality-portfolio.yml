@@ -10,7 +10,7 @@ measurement_boundary:
   measured_impact: false
 options:
   - id: WS-1
-    label: DiscoveryBench instrument
+    label: TreasureBench instrument
     status: campaign-registered-owner-authorization-pending
     readiness: sealed-engineering-pilot-ready-base-local-model-blocked
     residual_value: high-if-exercised-soon
@@ -66,7 +66,7 @@ options:
     readiness: architecture-ready
     residual_value: uncertain-until-gate
     decay_rate: moderate
-    estimated_expiry_horizon: review after DiscoveryBench Agents produces an evaluation design
+    estimated_expiry_horizon: review after TreasureBench Agents v1 produces an evaluation design
     option_trigger: sealed evaluation can compare architectures with matched budgets and evaluator separation
     first_irreversible_spend: changing current lab operations or running paid ablations
     kill_or_defer_condition: source independence, matched budgets, negative-result retention, or evaluator separation cannot be guaranteed

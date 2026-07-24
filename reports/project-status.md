@@ -1,4 +1,19 @@
-# Project status — program memory and preprint infrastructure
+# Project status — TreasureBench naming system
+
+Date: 2026-07-23 (America/Los_Angeles).
+
+Issue #180 and PR #181 implement the owner-locked layered naming system.
+TreasureBench is the formal public suite; Treasure Hunt is the playable
+companion under a mandatory two-way funnel; DiscoveryBench remains the
+historical/internal compatibility alias. The dated collision gate found no
+disqualifying exact-name same-domain collision in the declared channels and
+makes no legal, global-uniqueness, or namespace-ownership claim.
+
+The migration is forward-only. DD-010 and all frozen scientific objects remain
+unchanged; old routes and commands remain usable; the root distribution remains
+`distributed-discovery`; no standalone package, tag, release, DOI, arXiv
+submission, private material, provider call, or paper edit exists. The exact
+next gate is the first tagged compendium release and Zenodo activation.
 
 Date: 2026-07-23 (America/Los_Angeles).
 
@@ -15,9 +30,10 @@ peer review, DOI, arXiv identifier, release, or formal publication is implied.
 Common-Source Trap is the first internal freeze candidate at readiness score
 82; no manuscript edit or freeze is authorized.
 
-The benchmark name decision is `owner-name-decision-required`. DiscoveryBench
-has a fatal established collision, while ActionPortfolioBench scores 91 but
-leads SearchPortfolioBench by only five points. No partial rename occurs.
+The historical benchmark-name gate is superseded by
+`treasurebench-selected-and-implemented`. DiscoveryBench retains its recorded
+fatal established collision, while the former ranked shortlist is historical
+input only.
 Scientific inventory remains 110 claims, 26 studies, and 51 manifests with 48
 passing. The seven papers remain exactly 119 pages. No provider call,
 credential read, private material, study, claim, run, scientific result, or

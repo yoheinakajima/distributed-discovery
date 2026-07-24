@@ -1,0 +1,34 @@
+schema_version: 1
+decision_date: "2026-07-23"
+decision: treasurebench-selected-and-implemented
+formal_suite: TreasureBench
+canonical_subtitle: "TreasureBench: a benchmark for collective search under shared and private evidence."
+playable_companion: Treasure Hunt
+historical_alias: DiscoveryBench
+claim_scope: bounded-public-factual-collision-screen
+same_domain_scholarly_collision: none-found
+ai_benchmark_collision: none-found
+multi_agent_system_collision: none-found
+active_high_confusion_product_collision: none-found
+required_package_collision: none-found
+nonfatal_residue:
+  - unrelated-spaced-phrase-memorial-and-furniture-products
+  - generic-consumer-treasure-hunt-uses
+material_adjacency:
+  - term: Treasure Hunt
+    finding: established-distributed-mobile-agent-navigation-and-active-perception-vocabulary
+    effect: companion-only-and-future-paper-disambiguation-required
+legal_clearance: false
+global_uniqueness_claimed: false
+namespace_ownership_claimed: false
+package_availability_guaranteed: false
+partial_rename_permitted: false
+implementation_conditions:
+  - compatibility-audit-passes
+  - funnel-audit-passes
+  - scientific-and-paper-invariants-pass
+  - ci-and-pages-pass
+next_owner_action: >-
+  Review the bounded nonlegal risk and reserve desired namespaces through
+  owner-controlled accounts; perform one-time USPTO and EUIPO preliminary
+  register checks before the first DOI or package publication.

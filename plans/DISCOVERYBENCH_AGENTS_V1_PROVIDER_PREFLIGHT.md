@@ -1,5 +1,9 @@
 # DiscoveryBench Agents v1 provider preflight and public calibration
 
+Forward-name note (2026-07-23): the current formal suite display is
+TreasureBench. This dated public-calibration record keeps historical
+DiscoveryBench protocol terminology and is not a new campaign or result.
+
 This living ExecPlan follows `.agent/PLANS.md` and owns issue #175 from clean
 `main` commit `8fa51758f39d4d04290784969d7990dd998019cb`. It implements
 disabled-by-default live provider boundaries and executes only the explicitly

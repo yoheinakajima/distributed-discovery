@@ -471,16 +471,25 @@ def _publications(root: Path) -> list[dict[str, Any]]:
     return publications
 
 
-def _page(title: str, description: str, body: str, current: str) -> str:
+def _page(
+    title: str,
+    description: str,
+    body: str,
+    current: str,
+    canonical_current: str | None = None,
+) -> str:
     prefix = "../" if "/" in current else ""
-    canonical = f"{PUBLIC_BASE}{current}" if current != "index.html" else PUBLIC_BASE
+    canonical_route = canonical_current or current
+    canonical = (
+        f"{PUBLIC_BASE}{canonical_route}" if canonical_route != "index.html" else PUBLIC_BASE
+    )
     document_title = (
         "Distributed Discovery" if current == "index.html" else f"{title} — Distributed Discovery"
     )
     layout = (
         "wide"
         if (
-            current.startswith(("labs/", "benchmark/", "experiment-kit/"))
+            current.startswith(("labs/", "benchmark/", "treasurebench/", "experiment-kit/"))
             or current
             in {
                 "research.html",
@@ -489,6 +498,8 @@ def _page(title: str, description: str, body: str, current: str) -> str:
                 "publications.html",
                 "claims.html",
                 "evidence.html",
+                "treasurebench.html",
+                "treasure-hunt.html",
             }
         )
         else "content"
@@ -681,6 +692,65 @@ def _write(output: Path, relative: str, content: str) -> None:
     path.write_text(content, encoding="utf-8")
 
 
+def _formalize_benchmark_copy(value: Any) -> Any:
+    """Replace mutable display strings while preserving lowercase frozen identifiers."""
+    if isinstance(value, str):
+        return (
+            value.replace("../labs/benchmark.html", "../labs/__formal_lab__.html")
+            .replace("labs/benchmark.html", "labs/__formal_lab__.html")
+            .replace("../benchmark.html", "../treasurebench.html")
+            .replace("benchmark.html", "treasurebench.html")
+            .replace("../benchmark/", "../treasurebench/")
+            .replace("benchmark/", "treasurebench/")
+            .replace("../data/benchmark/", "../data/treasurebench/")
+            .replace("data/benchmark/", "data/treasurebench/")
+            .replace("DiscoveryBench", "TreasureBench")
+            .replace("labs/__formal_lab__.html", "labs/benchmark.html")
+        )
+    if isinstance(value, list):
+        return [_formalize_benchmark_copy(item) for item in value]
+    if isinstance(value, dict):
+        return {key: _formalize_benchmark_copy(item) for key, item in value.items()}
+    return value
+
+
+def _write_benchmark_route_pair(
+    output: Path,
+    *,
+    legacy_route: str,
+    canonical_route: str,
+    title: str,
+    description: str,
+    body: str,
+) -> None:
+    formal_title = str(_formalize_benchmark_copy(title))
+    formal_description = str(_formalize_benchmark_copy(description))
+    formal_body = str(_formalize_benchmark_copy(body))
+    compatibility_notice = (
+        '<aside class="callout alias-notice"><strong>Historical route.</strong> '
+        "DiscoveryBench is the historical/internal compatibility alias. "
+        f'The current formal suite is <a href="{"../" if "/" in legacy_route else ""}'
+        f'{html.escape(canonical_route)}">TreasureBench</a>; frozen identifiers remain unchanged.'
+        "</aside>"
+    )
+    _write(
+        output,
+        canonical_route,
+        _page(formal_title, formal_description, formal_body, canonical_route),
+    )
+    _write(
+        output,
+        legacy_route,
+        _page(
+            formal_title,
+            formal_description,
+            compatibility_notice + formal_body,
+            legacy_route,
+            canonical_current=canonical_route,
+        ),
+    )
+
+
 def _latest_passing_study_run(root: Path, study_id: str) -> Path:
     candidates = []
     for manifest_path in root.glob("results/**/manifest.json"):
@@ -728,16 +798,14 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         if benchmark_version == "v3"
         else "Version 2 adds selective-attention fixtures while preserving the v1 command default and exact vectors."
     )
-    overview = f"""<header class="page-hero"><p class="eyebrow">DiscoveryBench {html.escape(benchmark_version)}</p><h1>Compare search strategies</h1><p class="lede">A bounded, auditable suite for comparing how evidence becomes action. {html.escape(version_description)} It is not a hosted leaderboard or a universal measure of real-world agent quality.</p></header><div class="metric-grid"><article class="metric-card"><span>Benchmark tasks</span><strong>{summary["task_count"]}</strong></article><article class="metric-card"><span>Built-in strategies</span><strong>{summary["protocol_count"]}</strong></article><article class="metric-card"><span>Compatible pairs</span><strong>{summary["compatible_pairs"]}</strong></article></div><p>{downloads}</p><section class="content-section"><h2>Explore the benchmark</h2><div class="card-grid resource-grid"><article class="card"><h3><a href="benchmark/tasks.html">Benchmark tasks</a></h3><p>See the declared information and reference evidence for each task.</p></article><article class="card"><h3><a href="benchmark/protocols.html">What each strategy can see and do</a></h3><p>Compare capability boundaries before comparing results.</p></article><article class="card"><h3><a href="benchmark/metrics.html">How performance is measured</a></h3><p>Inspect every versioned measure and required observable.</p></article><article class="card"><h3><a href="benchmark/results.html">Benchmark results</a></h3><p>Read the exact compatible vectors and scoped Pareto report.</p></article><article class="card"><h3><a href="benchmark/attention.html">Selective-attention extension</a></h3><p>Compare the DD-012--DD-014 attention, audience, and conditional-policy fixtures.</p></article><article class="card"><h3><a href="benchmark/agents-v1.html">Agents v1 implementation</a></h3><p>Inspect the public-calibrated adapter boundary: engineering-only, no private campaign, and not a leaderboard.</p></article><article class="card"><h3><a href="labs/benchmark.html">Benchmark Lab</a></h3><p>Filter the complete result table by task.</p></article></div></section><section class="content-section prose"><h2>Reproduce</h2><details class="technical-details"><summary>Technical details</summary><p><code>distributed-discovery benchmark{version_flag} run-golden</code><br><code>distributed-discovery benchmark{version_flag} verify-run results/verified/{html.escape(run_id)}</code></p><p>Claim {claim_id} · reproducible run <a href="evidence.html">{html.escape(run_id)}</a>.</p></details></section>"""
-    _write(
+    overview = f"""<header class="page-hero"><p class="eyebrow">DiscoveryBench {html.escape(benchmark_version)}</p><h1>Compare search strategies</h1><p class="lede"><strong>TreasureBench: a benchmark for collective search under shared and private evidence.</strong> A bounded, auditable suite for comparing how evidence becomes action. {html.escape(version_description)} It is not a hosted leaderboard or a universal measure of real-world agent quality.</p><p><a href="treasure-hunt.html"><strong>Treasure Hunt</strong> is the interactive playable companion.</a> It is not a separate benchmark.</p></header><div class="metric-grid"><article class="metric-card"><span>Benchmark tasks</span><strong>{summary["task_count"]}</strong></article><article class="metric-card"><span>Built-in strategies</span><strong>{summary["protocol_count"]}</strong></article><article class="metric-card"><span>Compatible pairs</span><strong>{summary["compatible_pairs"]}</strong></article></div><p>{downloads}</p><section class="content-section"><h2>Explore the benchmark</h2><div class="card-grid resource-grid"><article class="card"><h3><a href="benchmark/tasks.html">Benchmark tasks</a></h3><p>See the declared information and reference evidence for each task.</p></article><article class="card"><h3><a href="benchmark/protocols.html">What each strategy can see and do</a></h3><p>Compare capability boundaries before comparing results.</p></article><article class="card"><h3><a href="benchmark/metrics.html">How performance is measured</a></h3><p>Inspect every versioned measure and required observable.</p></article><article class="card"><h3><a href="benchmark/results.html">Benchmark results</a></h3><p>Read the exact compatible vectors and scoped Pareto report.</p></article><article class="card"><h3><a href="benchmark/attention.html">Selective-attention extension</a></h3><p>Compare the DD-012--DD-014 attention, audience, and conditional-policy fixtures.</p></article><article class="card"><h3><a href="benchmark/agents-v1.html">Agents v1 implementation</a></h3><p>Inspect the public-calibrated adapter boundary: engineering-only, no private campaign, and not a leaderboard.</p></article><article class="card"><h3><a href="labs/benchmark.html">Benchmark Lab</a></h3><p>Filter the complete result table by task.</p></article><article class="card companion-card"><h3><a href="treasure-hunt.html">Treasure Hunt</a></h3><p>The playable companion connects the sixteen-box game to the exact formal terms and evidence.</p></article></div></section><section class="content-section prose"><h2>Reproduce</h2><details class="technical-details"><summary>Technical details</summary><p><code>distributed-discovery benchmark{version_flag} run-golden</code><br><code>distributed-discovery benchmark{version_flag} verify-run results/verified/{html.escape(run_id)}</code><br><code>distributed-discovery treasurebench versions</code></p><p>Claim {claim_id} · reproducible run <a href="evidence.html">{html.escape(run_id)}</a>.</p></details></section>"""
+    _write_benchmark_route_pair(
         output,
-        "benchmark.html",
-        _page(
-            "DiscoveryBench",
-            "Exact bounded benchmark for discovery protocols.",
-            overview,
-            "benchmark.html",
-        ),
+        legacy_route="benchmark.html",
+        canonical_route="treasurebench.html",
+        title="DiscoveryBench",
+        description="Exact bounded DiscoveryBench for discovery protocols.",
+        body=overview,
     )
 
     claim_owners = {
@@ -760,15 +828,13 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
 
     task_rows = "".join(task_row(task) for task in tasks)
     task_body = f"""<header class="page-hero"><p class="eyebrow">DiscoveryBench</p><h1>Benchmark tasks</h1><p class="lede">Every task declares what evidence is available, which actions are allowed, and how results are evaluated. The complete technical registry remains downloadable.</p></header><table class="matrix"><caption>DiscoveryBench exact benchmark tasks and their supporting evidence</caption><thead><tr><th>Task</th><th>Family</th><th>Compatible strategy</th><th>Supporting studies</th><th>Claims</th></tr></thead><tbody>{task_rows}</tbody></table>"""
-    _write(
+    _write_benchmark_route_pair(
         output,
-        "benchmark/tasks.html",
-        _page(
-            "Benchmark tasks",
-            "DiscoveryBench golden task registry.",
-            task_body,
-            "benchmark/tasks.html",
-        ),
+        legacy_route="benchmark/tasks.html",
+        canonical_route="treasurebench/tasks.html",
+        title="Benchmark tasks",
+        description="DiscoveryBench golden task registry.",
+        body=task_body,
     )
 
     protocol_rows = "".join(
@@ -776,15 +842,13 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         for item in protocols
     )
     protocol_body = f"""<header class="page-hero"><p class="eyebrow">DiscoveryBench</p><h1>What each strategy can see and do</h1><p class="lede">Each strategy receives only its declared information and capabilities. External adapters are disabled, credential-free, and never executed in CI.</p></header><table class="matrix"><caption>Built-in strategy capability contracts</caption><thead><tr><th>Strategy</th><th>Definition</th><th>Capabilities</th><th>Status</th></tr></thead><tbody>{protocol_rows}</tbody></table>"""
-    _write(
+    _write_benchmark_route_pair(
         output,
-        "benchmark/protocols.html",
-        _page(
-            "Benchmark protocols",
-            "DiscoveryBench protocol registry and capabilities.",
-            protocol_body,
-            "benchmark/protocols.html",
-        ),
+        legacy_route="benchmark/protocols.html",
+        canonical_route="treasurebench/protocols.html",
+        title="Benchmark protocols",
+        description="DiscoveryBench protocol registry and capabilities.",
+        body=protocol_body,
     )
 
     metric_rows = "".join(
@@ -792,15 +856,13 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         for item in metrics
     )
     metric_body = f"""<header class="page-hero"><p class="eyebrow">DiscoveryBench</p><h1>How performance is measured</h1><p class="lede">A measure is omitted when its required observables are absent. The benchmark preserves task vectors and family profiles; no composite score is active.</p></header><table class="matrix"><caption>Versioned benchmark metrics and required observables</caption><thead><tr><th>Metric</th><th>Definition</th><th>Units</th><th>Required observables</th></tr></thead><tbody>{metric_rows}</tbody></table>"""
-    _write(
+    _write_benchmark_route_pair(
         output,
-        "benchmark/metrics.html",
-        _page(
-            "Benchmark metrics",
-            "Versioned DiscoveryBench metric registry.",
-            metric_body,
-            "benchmark/metrics.html",
-        ),
+        legacy_route="benchmark/metrics.html",
+        canonical_route="treasurebench/metrics.html",
+        title="Benchmark metrics",
+        description="Versioned DiscoveryBench metric registry.",
+        body=metric_body,
     )
 
     result_rows = "".join(
@@ -808,15 +870,13 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         for row in results
     )
     results_body = f"""<header class="page-hero"><p class="eyebrow">DiscoveryBench</p><h1>Benchmark results</h1><p class="lede">All {len(results)} compatible pairs reproduce exact registered fixtures. The other {sum(not row["compatible"] for row in compatibility)} task/strategy pairs are explicit exclusions, not failures.</p></header><div class="summary-callout"><strong>{len(pareto)} rows</strong><span>remain in scoped task-level Pareto comparisons. Missing metrics are never imputed.</span></div><table class="matrix"><caption>Exact compatible task and strategy result vectors</caption><thead><tr><th>Task</th><th>Strategy</th><th>Metric vector</th><th>Claims</th></tr></thead><tbody>{result_rows}</tbody></table>"""
-    _write(
+    _write_benchmark_route_pair(
         output,
-        "benchmark/results.html",
-        _page(
-            "Benchmark results",
-            "Exact DiscoveryBench result matrix and scoped Pareto report.",
-            results_body,
-            "benchmark/results.html",
-        ),
+        legacy_route="benchmark/results.html",
+        canonical_route="treasurebench/results.html",
+        title="Benchmark results",
+        description="Exact DiscoveryBench result matrix and scoped Pareto report.",
+        body=results_body,
     )
 
     attention_results = [
@@ -827,15 +887,13 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         for row in attention_results
     )
     attention_body = f"""<p class="eyebrow"><a href="../benchmark.html">DiscoveryBench</a> / Selective attention</p><h1>Attention extension</h1><p class="lede">Five exact DD-012--DD-014 tasks expose private-only, public-only, designated-reader, voluntary-equilibrium, audience-optimal, and conditional-policy comparisons. Version 1 remains the CLI default.</p><table class="matrix"><caption>DiscoveryBench v2 selective-attention rows</caption><thead><tr><th>Task</th><th>Protocol</th><th>Exact metric vector</th></tr></thead><tbody>{attention_rows}</tbody></table><p><a href="../labs/benchmark.html">Filter all benchmark rows</a> · <a href="../data/benchmark/results.json">Download v2 results</a></p>"""
-    _write(
+    _write_benchmark_route_pair(
         output,
-        "benchmark/attention.html",
-        _page(
-            "Benchmark attention extension",
-            "Exact DiscoveryBench v2 selective-attention tasks and results.",
-            attention_body,
-            "benchmark/attention.html",
-        ),
+        legacy_route="benchmark/attention.html",
+        canonical_route="treasurebench/attention.html",
+        title="Benchmark attention extension",
+        description="Exact DiscoveryBench v2 selective-attention tasks and results.",
+        body=attention_body,
     )
 
     agents_registry = _read_yaml(root / "docs/benchmark/agents-v1/task-families.yml")
@@ -861,15 +919,13 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         f"<li>{html.escape(str(item['name']))}</li>" for item in agents_families
     )
     agents_body = f"""<header class="page-hero"><p class="eyebrow">DD-010 instrument · public engineering calibration</p><h1>DiscoveryBench Agents v1</h1><p class="lede">A complete instrument for studying how software-agent teams turn synthetic evidence into action portfolios. Its adapters have passed an authorized public-only calibration; no private campaign or scientific evaluation has run.</p><p class="status-row"><span class="status-chip">Offline implementation complete</span><span class="status-chip">Required adapters calibrated</span><span class="status-chip subtle">Public tasks only</span></p></header><section class="content-section prose"><h2>Public conformance</h2><p>The implementation provides deterministic generation across 138 canonical cells and 552 prompt variants, closed information boundaries, five registered architecture orchestrators, strict structured actions, separate exact-rational metrics, hashed and redacted traces, AES-256-GCM public toy custody, 12 contamination probe classes, authorization guards, and independent verification.</p><p>The deterministic offline rehearsal covers 10 public tasks across all five architectures: 50 cases pass, Method A and Method B agree, and all 24 registered corruptions are rejected. The live engineering calibration exercised both required direct-provider adapters over the same 10 public tasks and five architectures: 100 route-cases passed protocol and Method A/B checks. These are adapter and instrument-conformance records, not scientific model results.</p><h3>Task families</h3><ul>{agents_family_items}</ul></section><section class="content-section prose"><h2>Provider boundary</h2><p>Direct OpenAI and direct Anthropic passed exact-route structured-output and public-task calibration. Optional OpenRouter Gemini and Mistral routes remained policy-ineligible under the frozen exact-endpoint, no-fallback, data-denial, ZDR, and required-parameter rules; they are not campaign substitutes and add no direct-gateway or local/open diversity.</p><p>The cumulative redacted operational ledger includes every attempt: 607 calls and USD {html.escape(agents_cost)} against the USD 20 public-calibration cap. No provider comparison, ranking, leaderboard, composite score, or model-response table is published.</p></section><section class="content-section prose"><h2>Evidence boundary</h2><p>No private seed, holdout, private answer key, custody key, sealed pilot, base campaign, scientific claim, immutable scientific run, or paper action exists from this lane. No model was downloaded and no hidden reasoning was requested or stored. DD-010 still owns the instrument; DD-023 remains unallocated.</p><p>The calibration record establishes adapter readiness only. It cannot support, complicate, or contradict a paper and is not a result route or leaderboard.</p></section><section class="content-section prose"><h2>Versions and next gate</h2><dl><div><dt>Owner</dt><dd>DD-010 instrument</dd></div><div><dt>Content</dt><dd>Explicit selection from preserved v1, v2, or v3</dd></div><div><dt>Agent protocol</dt><dd><code>{html.escape(str(agents_versions["axes"]["agent_protocol"]))}</code></dd></div><div><dt>Generator</dt><dd><code>{html.escape(str(agents_versions["axes"]["task_generator"]))}</code></dd></div><div><dt>Rehearsal hash</dt><dd><code>sha256:d3410ff04bb73dcae929c3abc4cf289d58d6830f2a5ab50ca53764bef4af2c59</code></dd></div></dl><p>The next gate is a separately registered and owner-authorized sealed engineering pilot. The completed public-calibration authorization does not permit private material or campaign execution.</p><p><a href="../data/benchmark/agents-v1-evaluation.json">Download the public operational summary</a> · <a href="../data/benchmark/agents-v1-implementation.json">Download the implementation summary</a> · <a href="../data/benchmark/agents-v1-registration.json">Download the preserved instrument registration</a> · <a href="../research/dd-010.html">DD-010 study record</a> · <a href="../benchmark.html">DiscoveryBench overview</a></p></section>"""
-    _write(
+    _write_benchmark_route_pair(
         output,
-        "benchmark/agents-v1.html",
-        _page(
-            "DiscoveryBench Agents v1",
-            "Publicly calibrated DD-010 software-agent evaluation instrument.",
-            agents_body,
-            "benchmark/agents-v1.html",
-        ),
+        legacy_route="benchmark/agents-v1.html",
+        canonical_route="treasurebench/agents-v1.html",
+        title="DiscoveryBench Agents v1",
+        description="Publicly calibrated DD-010 software-agent evaluation instrument.",
+        body=agents_body,
     )
     agents_public_data = {
         "schema_version": 1,
@@ -1039,12 +1095,13 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
             1,
         )
     )
+    lab_body = str(_formalize_benchmark_copy(lab_body))
     _write(
         output,
         "labs/benchmark.html",
         _page(
             "Benchmark Lab",
-            "Read-only exact DiscoveryBench explorer.",
+            "Read-only exact TreasureBench explorer.",
             lab_body,
             "labs/benchmark.html",
         ),
@@ -1077,11 +1134,280 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
     }
     for name, value in data.items():
         _write(output, f"data/benchmark/{name}", json.dumps(value, indent=2, sort_keys=True) + "\n")
+        formal_value = _formalize_benchmark_copy(value)
+        if isinstance(formal_value, dict):
+            formal_value["display"] = {
+                "formal_suite": "TreasureBench",
+                "role": "formal-instrument",
+                "historical_alias": "DiscoveryBench",
+                "subtitle": (
+                    "TreasureBench: a benchmark for collective search under shared "
+                    "and private evidence."
+                ),
+            }
+        _write(
+            output,
+            f"data/treasurebench/{name}",
+            json.dumps(formal_value, indent=2, sort_keys=True) + "\n",
+        )
+    for name in (
+        "agents-v1-registration.json",
+        "agents-v1-implementation.json",
+        "agents-v1-evaluation.json",
+    ):
+        legacy_value = json.loads((output / "data" / "benchmark" / name).read_text())
+        formal_value = _formalize_benchmark_copy(legacy_value)
+        formal_value["display"] = {
+            "formal_suite": "TreasureBench",
+            "role": "formal-instrument",
+            "historical_alias": "DiscoveryBench",
+        }
+        _write(
+            output,
+            f"data/treasurebench/{name}",
+            json.dumps(formal_value, indent=2, sort_keys=True) + "\n",
+        )
+    _write(
+        output,
+        "data/treasurebench/naming.json",
+        json.dumps(
+            {
+                "schema_version": 1,
+                "formal_suite": {
+                    "name": "TreasureBench",
+                    "role": "formal-instrument",
+                    "subtitle": (
+                        "TreasureBench: a benchmark for collective search under shared "
+                        "and private evidence."
+                    ),
+                    "keywords": ["collective search", "multi-agent", "benchmark", "shared"],
+                },
+                "companion": {
+                    "name": "Treasure Hunt",
+                    "role": "interactive-companion",
+                    "route": "treasure-hunt.html",
+                },
+                "historical_alias": "DiscoveryBench",
+                "frozen_identifiers_renamed": False,
+            },
+            indent=2,
+            sort_keys=True,
+        )
+        + "\n",
+    )
     (output / "downloads").mkdir(exist_ok=True)
     for version in ("v1", "v2", "v3"):
         schema = root / f"studies/DD-010-discoverybench/schemas/task-{version}.schema.json"
         shutil.copy2(schema, output / f"downloads/discoverybench-task-{version}.schema.json")
     return {"run_id": run_id, "summary": summary}
+
+
+def _treasure_hunt_page(root: Path, output: Path) -> None:
+    """Build the presentation-only companion from existing public exact evidence."""
+    canonical = _canonical_data(_passing_baseline(root))
+    metrics = canonical["metrics"]
+    run_id = html.escape(str(canonical["source_run_id"]))
+    modules = [
+        {
+            "id": "better-maps",
+            "number": "01",
+            "title": "Better maps, one shovel hole",
+            "metaphor": "Pooled map fragments can improve the shared ranking, while one X still sends every shovel to one place.",
+            "formal": "Information aggregation versus one-answer action compression.",
+            "study": "DD-000",
+            "claims": ["DD-C-0004", "DD-C-0005", "DD-C-0006"],
+            "choices": [
+                ("consensus", "One shared answer", str(metrics["consensus"])),
+                ("private", "Private clue-following", str(metrics["private"])),
+                ("planner", "Coordinated action portfolio", str(metrics["planner"])),
+            ],
+            "limitation": "Exact only for the declared sixteen-box model, signal process, and protocol definitions.",
+        },
+        {
+            "id": "split-crew",
+            "number": "02",
+            "title": "Split the crew",
+            "metaphor": "Repeated digging at the same site duplicates effort; separate sites expand the covered action portfolio.",
+            "formal": "Duplication, distinct action coverage, and group discovery.",
+            "study": "DD-002",
+            "claims": ["DD-C-0004", "DD-C-0006"],
+            "choices": [
+                ("repeat", "Repeat the top target", str(metrics["consensus"])),
+                ("independent", "Follow private signals", str(metrics["private"])),
+                ("portfolio", "Allocate the planner portfolio", str(metrics["planner"])),
+            ],
+            "limitation": "Coverage is valuable only through the declared target-success objective; no universal diversity rule is implied.",
+        },
+        {
+            "id": "copied-maps",
+            "number": "03",
+            "title": "Copied maps",
+            "metaphor": "Several maps can look plentiful while all copying one source.",
+            "formal": "Common-source correlation and source diversity.",
+            "study": "DD-008B",
+            "claims": ["DD-C-0057", "DD-C-0058"],
+            "choices": [
+                (
+                    "common",
+                    "All use the common source",
+                    "correlated evidence; source count stays one",
+                ),
+                (
+                    "mixed",
+                    "Mix common and independent sources",
+                    "source diversity can widen the action portfolio",
+                ),
+                (
+                    "independent",
+                    "Use independent sources",
+                    "higher acquisition cost in the frozen source-choice model",
+                ),
+            ],
+            "limitation": "The exact threshold theorem uses the frozen three-target, homogeneous-source, equal-split model.",
+        },
+        {
+            "id": "one-reader",
+            "number": "04",
+            "title": "One map reader",
+            "metaphor": "Give the pooled map to one reader while the rest keep independent routes.",
+            "formal": "Selective audience and the one-reader discovery theorem.",
+            "study": "DD-012",
+            "claims": ["DD-C-0059", "DD-C-0060"],
+            "choices": [
+                (
+                    "zero",
+                    "No shared-map readers",
+                    "optimal when shared accuracy q is below private accuracy p",
+                ),
+                ("one", "One shared-map reader", "uniquely optimal when q is above p"),
+                (
+                    "all",
+                    "Broadcast to every reader",
+                    "can compress action diversity in the frozen role class",
+                ),
+            ],
+            "limitation": "The theorem is not about unrestricted policies, correlated signals, dynamics, or human attention.",
+        },
+        {
+            "id": "minimum-crew",
+            "number": "05",
+            "title": "Minimum digging crew",
+            "metaphor": "A site opens only when enough crew members dig there; excess crew crowds out other viable sites.",
+            "formal": "Threshold-team technology and diversified viable action portfolios.",
+            "study": "DD-016",
+            "claims": ["DD-C-0071", "DD-C-0072"],
+            "choices": [
+                ("1", "Threshold team τ = 1", "at most 8 viable sites with 8 agents"),
+                ("2", "Threshold team τ = 2", "at most 4 viable sites with 8 agents"),
+                ("4", "Threshold team τ = 4", "at most 2 viable sites with 8 agents"),
+            ],
+            "limitation": "The capacity statement is exact for deterministic threshold opening with no replication value.",
+        },
+    ]
+
+    def module_card(item: dict[str, Any]) -> str:
+        options = "".join(
+            f'<option value="{html.escape(key)}" data-outcome="{html.escape(outcome)}">'
+            f"{html.escape(label)}</option>"
+            for key, label, outcome in item["choices"]
+        )
+        rows = "".join(
+            f'<tr><th scope="row">{html.escape(label)}</th><td>{html.escape(outcome)}</td></tr>'
+            for _, label, outcome in item["choices"]
+        )
+        claim_links = " · ".join(
+            f'<a href="claims.html#{html.escape(claim_id)}">{html.escape(claim_id)}</a>'
+            for claim_id in item["claims"]
+        )
+        study_slug = str(item["study"]).lower()
+        return f"""<article class="treasure-module" id="{html.escape(str(item["id"]))}" data-treasure-module>
+<div class="module-index" aria-hidden="true">{html.escape(str(item["number"]))}</div>
+<div class="module-copy"><h2>{html.escape(str(item["title"]))}</h2>
+<p class="metaphor">{html.escape(str(item["metaphor"]))}</p>
+<p><strong>Formal term:</strong> {html.escape(str(item["formal"]))}</p>
+<label for="{html.escape(str(item["id"]))}-choice">Try a declared arrangement</label>
+<select id="{html.escape(str(item["id"]))}-choice" data-treasure-choice>{options}</select>
+<p class="treasure-output" aria-live="polite"><strong>What the registered model says:</strong>
+<output data-treasure-output>{html.escape(str(item["choices"][0][2]))}</output></p>
+<details class="technical-details"><summary>Exact scope and evidence</summary>
+<p><a href="research/{html.escape(study_slug)}.html">{html.escape(str(item["study"]))}</a> · {claim_links} ·
+<a href="evidence.html">immutable evidence</a></p>
+<p><strong>Limitation:</strong> {html.escape(str(item["limitation"]))}</p>
+<table class="matrix"><caption>No-JavaScript outcome table for {html.escape(str(item["title"]))}</caption>
+<thead><tr><th>Arrangement</th><th>Registered implication</th></tr></thead><tbody>{rows}</tbody></table>
+</details></div></article>"""
+
+    body = f"""<header class="page-hero treasure-hero">
+<div><p class="eyebrow">Treasure Hunt</p><h1>The sixteen-box game</h1>
+<p class="lede"><strong>The playable companion to the TreasureBench suite.</strong> <a href="treasurebench.html">Open the formal TreasureBench page.</a></p>
+<p>Treasure Hunt is not a separate benchmark. It is a presentation-only guide to existing public exact fixtures, claims, and limitations. The theme can be removed without changing a result.</p>
+<p class="status-row"><span class="status-chip">Interactive companion</span><span class="status-chip subtle">No new evidence</span><span class="status-chip subtle">No external service</span></p></div>
+<svg class="treasure-map" viewBox="0 0 360 240" role="img" aria-labelledby="treasure-map-title treasure-map-desc">
+<title id="treasure-map-title">A monochrome sixteen-box search map</title>
+<desc id="treasure-map-desc">Sixteen outlined boxes with several dashed search routes ending at different boxes and one X mark.</desc>
+<g class="map-grid">{"".join(f'<rect x="{32 + (index % 4) * 58}" y="{20 + (index // 4) * 48}" width="40" height="32"/>' for index in range(16))}</g>
+<path class="map-route" d="M12 220 C70 170, 60 80, 110 52 S210 80, 246 132"/>
+<path class="map-route alternate" d="M12 220 C100 205, 160 210, 246 180"/>
+<path class="map-x" d="M238 122 l16 20 M254 122 l-16 20"/>
+<g class="compass" transform="translate(315 55)"><circle r="27"/><path d="M0 -22 L7 0 L0 22 L-7 0 Z"/><text y="-34" text-anchor="middle">N</text></g>
+</svg></header>
+<nav class="anchor-nav" aria-label="Treasure Hunt modules">{"".join(f'<a href="#{html.escape(str(item["id"]))}">{html.escape(str(item["number"]))}</a>' for item in modules)}</nav>
+<noscript><p class="callout"><strong>JavaScript is off.</strong> Every module remains complete: open “Exact scope and evidence” to compare all declared arrangements and follow the same claim, study, and data links.</p></noscript>
+<section class="treasure-intro content-section prose"><h2>Read the metaphor beside the model</h2>
+<p>Map fragments mean dispersed private signals. Pooled fragments mean information aggregation. One X means one-answer action compression. Separate digging sites mean diversified action portfolios. Copied maps mean common-source correlation. A minimum crew means threshold-team technology.</p>
+<p>The formal terms govern. The companion does not rename group discovery, distinct action coverage, duplication, planner regret, private-baseline regret, recovery-budget attainment, source diversity, communication-induced action compression, recovery budget, action portfolio, or threshold team.</p></section>
+<section class="treasure-modules" aria-label="Playable companion modules">{"".join(module_card(item) for item in modules)}</section>
+<section class="content-section prose"><h2>Return to the formal suite</h2>
+<p><a class="button primary" href="treasurebench.html">Open TreasureBench</a>
+<a class="text-link" href="research/dd-010.html">See DD-010</a>
+<a class="text-link" href="data/treasure-hunt.json">Download companion metadata</a></p>
+<p class="quiet-meta">Canonical fixture values come from reproducible run <code>{run_id}</code>. Interactive choices select already registered rows; they do not run a model, call a provider, or create a result.</p></section>"""
+    _write(
+        output,
+        "treasure-hunt.html",
+        _page(
+            "Treasure Hunt",
+            "The playable companion to TreasureBench, using the sixteen-box game.",
+            body,
+            "treasure-hunt.html",
+        ),
+    )
+    _write(
+        output,
+        "data/treasure-hunt.json",
+        json.dumps(
+            {
+                "schema_version": 1,
+                "name": "Treasure Hunt",
+                "role": "interactive-companion",
+                "formal_suite": {
+                    "name": "TreasureBench",
+                    "role": "formal-instrument",
+                    "route": "treasurebench.html",
+                },
+                "separate_benchmark": False,
+                "source_run_id": canonical["source_run_id"],
+                "fixture": "the sixteen-box game",
+                "modules": [
+                    {
+                        "id": item["id"],
+                        "title": item["title"],
+                        "formal_term": item["formal"],
+                        "study_id": item["study"],
+                        "claim_ids": item["claims"],
+                        "limitation": item["limitation"],
+                    }
+                    for item in modules
+                ],
+                "creates_scientific_evidence": False,
+                "external_runtime_service": False,
+                "analytics": False,
+            },
+            indent=2,
+            sort_keys=True,
+        )
+        + "\n",
+    )
 
 
 def _experiment_pages(root: Path, output: Path) -> dict[str, object]:
@@ -3039,6 +3365,8 @@ def _inject_relationship_panels(
         for route in relation["experiment_routes"]:
             add(route, relation)
         if relation["benchmark_task_ids"]:
+            add("treasurebench/tasks.html", relation)
+            add("treasurebench/results.html", relation)
             add("benchmark/tasks.html", relation)
             add("benchmark/results.html", relation)
 
@@ -3061,7 +3389,7 @@ def _inject_relationship_panels(
             else "Related evidence"
             if route.startswith("labs/")
             else "Supporting research"
-            if route.startswith(("benchmark/", "experiment-kit/"))
+            if route.startswith(("benchmark/", "treasurebench/", "experiment-kit/"))
             else "Related research"
         )
         identifiers = sorted({str(relation["study_id"]) for relation in related})
@@ -3125,7 +3453,7 @@ def _inject_relationship_panels(
         )
         task_links = unique(
             [
-                (f"{prefix}benchmark/tasks.html#{task_id}", task_id)
+                (f"{prefix}treasurebench/tasks.html#{task_id}", task_id)
                 for relation in related
                 for task_id in relation["benchmark_task_ids"]
             ]
@@ -3258,6 +3586,11 @@ def _render(
         '<a class="button primary" href="start-here.html">Start with three results</a>',
         1,
     )
+    home = home.replace(
+        '<article class="card entry-card"><h3><a href="benchmark.html">Benchmark</a></h3><p>Compare search strategies on compatible exact tasks.</p></article>',
+        '<article class="card entry-card"><h3><a href="treasurebench.html">TreasureBench</a></h3><p>Compare search strategies on compatible exact tasks, then try the <a href="treasure-hunt.html">Treasure Hunt</a> companion.</p></article>',
+        1,
+    )
     _write(
         output,
         "index.html",
@@ -3274,7 +3607,7 @@ def _render(
 <article class="card"><p class="eyebrow">2 · Strategic-attention family</p><h2>The Incentive to Ignore</h2><p><strong>Question:</strong> Who should use a shared clue when independent private action routes remain?</p><p><strong>Title result:</strong> one shared-clue reader maximizes discovery in the frozen role class.</p><p><strong>Strongest limitation:</strong> unrestricted constant territorial policies can escape the evidence-responsive class.</p><p><strong>Evidence:</strong> analytic theorems plus independently reproduced bounded classifications. <strong>Status:</strong> working paper; not submitted, not peer reviewed, no DOI.</p><p><a href="publications/incentive-to-ignore.html">Read the paper</a> · <a href="research/dd-012.html">Study</a> · <a href="claims.html#DD-C-0059">Claim</a> · <a href="evidence.html">Evidence</a> · <a href="publications/information-sharing-frontier.html">Next paper</a></p></article>
 <article class="card"><p class="eyebrow">3 · Sharing-frontier family</p><h2>When Does Information Sharing Improve Decentralized Discovery?</h2><p><strong>Question:</strong> When does aggregation improve faster than sharing removes independent rescue?</p><p><strong>Title result:</strong> a residual-error criterion determines the sign of an adjacent sharing step under the registered rescue protocol.</p><p><strong>Strongest limitation:</strong> the decentralized positive interval is selection-dependent; it is not an every-equilibrium theorem.</p><p><strong>Evidence:</strong> analytic identities/theorems, independently reproduced bounded classifications, and a bounded null. <strong>Status:</strong> working paper; not submitted, not peer reviewed, no DOI.</p><p><a href="publications/information-sharing-frontier.html">Read the paper</a> · <a href="research/dd-021.html">Study</a> · <a href="claims.html#DD-C-0097">Claim</a> · <a href="evidence.html">Evidence</a> · <a href="publications/common-source-trap.html">Next theorem-family paper</a></p></article>
 </section>
-<section class="content-section prose"><h2>Continue through the canon</h2><p><a href="publications/common-source-trap.html">Common-Source Trap</a> · <a href="publications/threshold-discovery.html">Threshold Discovery</a> · <a href="publications.html">notes and syntheses</a> · <a href="research.html">studies</a> · <a href="labs.html">Labs</a> · <a href="benchmark.html">DiscoveryBench</a> · <a href="methods.html">methods</a></p></section>"""
+<section class="content-section prose"><h2>Continue through the canon</h2><p><a href="publications/common-source-trap.html">Common-Source Trap</a> · <a href="publications/threshold-discovery.html">Threshold Discovery</a> · <a href="publications.html">notes and syntheses</a> · <a href="research.html">studies</a> · <a href="labs.html">Labs</a> · <a href="treasurebench.html">TreasureBench</a> · <a href="treasure-hunt.html">Treasure Hunt companion</a> · <a href="methods.html">methods</a></p></section>"""
     start_here += _render_related_formulations(
         _related_formulations(root, object_ids={"TR-003", "TR-009", "TR-010"})
     )
@@ -3316,6 +3649,9 @@ def _render(
             root,
             object_ids={"TR-001", "TR-002", "TR-004", "TR-005", "TR-006", "TR-007", "TR-014"},
         )
+    )
+    program_body = program_body.replace("DiscoveryBench", "TreasureBench").replace(
+        'href="benchmark/agents-v1.html"', 'href="treasurebench/agents-v1.html"'
     )
     _write(
         output,
@@ -3925,6 +4261,7 @@ def _render(
     _general_sharing_pages(root, output)
     _coordination_free_sharing_pages(root, output)
     _benchmark_pages(root, output)
+    _treasure_hunt_page(root, output)
     _experiment_pages(root, output)
     _attention_pages(root, output)
     _audience_pages(root, output)
@@ -4128,6 +4465,40 @@ def build(root: Path, output: Path) -> dict[str, Any]:
             "entries": _concordance_entries(root),
         },
         "routes.json": {"schema_version": 1, "routes": routes},
+        "route-aliases.json": {
+            "schema_version": 1,
+            "canonical_family": "TreasureBench",
+            "aliases": [
+                {"legacy": "benchmark.html", "canonical": "treasurebench.html"},
+                {
+                    "legacy": "benchmark/tasks.html",
+                    "canonical": "treasurebench/tasks.html",
+                },
+                {
+                    "legacy": "benchmark/protocols.html",
+                    "canonical": "treasurebench/protocols.html",
+                },
+                {
+                    "legacy": "benchmark/metrics.html",
+                    "canonical": "treasurebench/metrics.html",
+                },
+                {
+                    "legacy": "benchmark/results.html",
+                    "canonical": "treasurebench/results.html",
+                },
+                {
+                    "legacy": "benchmark/attention.html",
+                    "canonical": "treasurebench/attention.html",
+                },
+                {
+                    "legacy": "benchmark/agents-v1.html",
+                    "canonical": "treasurebench/agents-v1.html",
+                },
+            ],
+            "legacy_routes_return_http_200": True,
+            "redirects_used": False,
+            "fragments_preserved_by_full_compatibility_pages": True,
+        },
         "labs.json": {
             "schema_version": 1,
             "source": "precomputed bounded fixture outputs",
