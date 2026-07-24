@@ -1,0 +1,47 @@
+schema_version: treasurebench-agents-v1-pilot-authorization-v1
+authorization_id: null
+authorization_status: inactive
+authorized_at_utc: null
+expires_at_utc: null
+revoked: false
+revocation_reason: null
+purpose: treasurebench-agents-v1-sealed-engineering-pilot
+synthetic: true
+owner_attestation: null
+authorized_base_commit: null
+authorized_execution_commit: null
+execution_tree_hash: null
+issue: 187
+branch: benchmark/treasurebench-agents-v1-sealed-pilot
+campaign_id: treasurebench-agents-v1-pilot-v1
+batch_id: tb-agents-v1-pilot-v1-b01
+models: [gpt-5.4-2026-03-05, claude-sonnet-4-6]
+architectures:
+  - isolated-private-agents
+  - full-broadcast-shared-transcript
+  - designated-reader-selective-sharing
+  - pooled-consensus
+  - portfolio-preserving-structured
+counts: {tasks: 50, batches: 1, repeats: 1, architectures: 5, cloud_models: 2}
+caps:
+  total_usd: 0
+  provider_usd: {OpenAI: 0, Anthropic: 0}
+  calls: 0
+  input_tokens: 0
+  output_tokens: 0
+  live_concurrency: 0
+permissions:
+  live_provider_calls: false
+  private_generation: false
+  encryption: false
+  unsealing_after_output_lock: false
+  trace_retention: false
+  public_redacted_summary: false
+  claim: false
+  study: false
+  scientific_run: false
+  package: false
+  arxiv: false
+  journal: false
+retention_days: 365
+public_summary_boundary: redacted-engineering-only-no-task-level-performance

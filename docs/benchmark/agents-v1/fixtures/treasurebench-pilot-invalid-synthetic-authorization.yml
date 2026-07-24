@@ -1,0 +1,5 @@
+schema_version: treasurebench-agents-v1-pilot-authorization-v1
+authorization_id: SYNTHETIC-INVALID-LIVE-LIKE-FIXTURE
+authorization_status: authorized
+synthetic: false
+owner_attestation: null

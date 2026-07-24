@@ -40,7 +40,7 @@ def test_agents_registration_audit_is_offline_and_complete() -> None:
         "private_seeds": 0,
         "provider_calls": 0,
         "results": 0,
-        "schemas": 21,
+        "schemas": 25,
         "task_families": 5,
         "traces": 0,
         "valid_fixtures": 6,

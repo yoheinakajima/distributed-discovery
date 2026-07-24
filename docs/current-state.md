@@ -1,5 +1,22 @@
 # Current program state
 
+_TreasureBench Agents v1 sealed engineering pilot Phase A, 2026-07-24:_ issue
+#187 and branch `benchmark/treasurebench-agents-v1-sealed-pilot` register the
+fixed DD-010 non-inferential engineering pilot. The 50-slot allocation,
+pilot-specific authorization and private-state contracts, encrypted custody,
+hash-chained resumable ledger, cap guards, encrypted traces, output lock,
+independent Method B path, all 35 required corruption boundaries, and
+TreasureBench CLI/Make interfaces are implemented. A complete 50-task,
+five-architecture, two-synthetic-route sealed rehearsal passes with 500
+encrypted traces, zero Method A/B disagreements, zero credential reads, zero
+provider calls, zero cost, and no real private material.
+
+The active gate is exact execution freeze and non-synthetic local owner
+authorization. Until it matches the pushed commit and execution tree, Phase B
+cannot load credentials, generate private material, or call a provider. No
+DD-023, claim, scientific run, performance result, ranking, composite, paper
+change, or base-campaign authority exists.
+
 _Compendium v0.1.0 external publication, 2026-07-24:_ issue #185 published
 annotated tag `dd-compendium-v0.1.0` at authorized source
 `3ca173f4e9e81a6d0e3e56205e428c596edc050e`. The public GitHub Release has

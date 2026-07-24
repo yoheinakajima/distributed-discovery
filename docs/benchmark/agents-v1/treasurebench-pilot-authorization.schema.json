@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TreasureBench Agents v1 sealed pilot owner authorization",
+  "type": "object",
+  "required": [
+    "schema_version", "authorization_id", "authorization_status",
+    "authorized_at_utc", "expires_at_utc", "revoked", "revocation_reason",
+    "purpose", "synthetic", "owner_attestation", "authorized_base_commit",
+    "authorized_execution_commit", "execution_tree_hash", "issue", "branch",
+    "campaign_id", "batch_id", "models", "architectures", "counts", "caps",
+    "permissions", "retention_days", "public_summary_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "treasurebench-agents-v1-pilot-authorization-v1"},
+    "authorization_id": {"type": ["string", "null"], "minLength": 12, "maxLength": 160},
+    "authorization_status": {"enum": ["inactive", "authorized", "revoked", "expired"]},
+    "authorized_at_utc": {"type": ["string", "null"], "format": "date-time"},
+    "expires_at_utc": {"type": ["string", "null"], "format": "date-time"},
+    "revoked": {"type": "boolean"},
+    "revocation_reason": {"type": ["string", "null"]},
+    "purpose": {"const": "treasurebench-agents-v1-sealed-engineering-pilot"},
+    "synthetic": {"type": "boolean"},
+    "owner_attestation": {"type": ["string", "null"], "minLength": 40},
+    "authorized_base_commit": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"},
+    "authorized_execution_commit": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"},
+    "execution_tree_hash": {"type": ["string", "null"], "pattern": "^sha256:[0-9a-f]{64}$"},
+    "issue": {"const": 187},
+    "branch": {"const": "benchmark/treasurebench-agents-v1-sealed-pilot"},
+    "campaign_id": {"const": "treasurebench-agents-v1-pilot-v1"},
+    "batch_id": {"const": "tb-agents-v1-pilot-v1-b01"},
+    "models": {"const": ["gpt-5.4-2026-03-05", "claude-sonnet-4-6"]},
+    "architectures": {
+      "const": [
+        "isolated-private-agents", "full-broadcast-shared-transcript",
+        "designated-reader-selective-sharing", "pooled-consensus",
+        "portfolio-preserving-structured"
+      ]
+    },
+    "counts": {
+      "const": {"tasks": 50, "batches": 1, "repeats": 1, "architectures": 5, "cloud_models": 2}
+    },
+    "caps": {
+      "type": "object",
+      "required": ["total_usd", "provider_usd", "calls", "input_tokens", "output_tokens", "live_concurrency"],
+      "properties": {
+        "total_usd": {"type": "number", "minimum": 0, "maximum": 100},
+        "provider_usd": {
+          "type": "object", "required": ["OpenAI", "Anthropic"],
+          "properties": {
+            "OpenAI": {"type": "number", "minimum": 0, "maximum": 50},
+            "Anthropic": {"type": "number", "minimum": 0, "maximum": 50}
+          },
+          "additionalProperties": false
+        },
+        "calls": {"type": "integer", "minimum": 0, "maximum": 5200},
+        "input_tokens": {"type": "integer", "minimum": 0, "maximum": 10600000},
+        "output_tokens": {"type": "integer", "minimum": 0, "maximum": 1400000},
+        "live_concurrency": {"type": "integer", "minimum": 0, "maximum": 2}
+      },
+      "additionalProperties": false
+    },
+    "permissions": {
+      "type": "object",
+      "required": [
+        "live_provider_calls", "private_generation", "encryption",
+        "unsealing_after_output_lock", "trace_retention", "public_redacted_summary",
+        "claim", "study", "scientific_run", "package", "arxiv", "journal"
+      ],
+      "properties": {
+        "live_provider_calls": {"type": "boolean"},
+        "private_generation": {"type": "boolean"},
+        "encryption": {"type": "boolean"},
+        "unsealing_after_output_lock": {"type": "boolean"},
+        "trace_retention": {"type": "boolean"},
+        "public_redacted_summary": {"type": "boolean"},
+        "claim": {"const": false}, "study": {"const": false},
+        "scientific_run": {"const": false}, "package": {"const": false},
+        "arxiv": {"const": false}, "journal": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "retention_days": {"const": 365},
+    "public_summary_boundary": {"const": "redacted-engineering-only-no-task-level-performance"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"authorization_status": {"const": "inactive"}}},
+      "then": {
+        "properties": {
+          "authorization_id": {"const": null}, "authorized_at_utc": {"const": null},
+          "expires_at_utc": {"const": null}, "owner_attestation": {"const": null},
+          "authorized_base_commit": {"const": null},
+          "authorized_execution_commit": {"const": null},
+          "execution_tree_hash": {"const": null}, "synthetic": {"const": true},
+          "caps": {
+            "const": {
+              "total_usd": 0, "provider_usd": {"OpenAI": 0, "Anthropic": 0},
+              "calls": 0, "input_tokens": 0, "output_tokens": 0, "live_concurrency": 0
+            }
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}
