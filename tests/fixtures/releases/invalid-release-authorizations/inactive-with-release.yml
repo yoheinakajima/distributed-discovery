@@ -12,7 +12,7 @@ upload_release_assets: false
 zenodo:
   repository_enabled_attested: false
   ingestion_authorized: false
-  metadata_verified_attested: false
+  post_ingest_metadata_verification_required: false
 other_permissions:
   package_publication: false
   arxiv_submission: false

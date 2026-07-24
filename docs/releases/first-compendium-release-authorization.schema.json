@@ -17,11 +17,11 @@
     "upload_release_assets": {"type": "boolean"},
     "zenodo": {
       "type": "object",
-      "required": ["repository_enabled_attested", "ingestion_authorized", "metadata_verified_attested"],
+      "required": ["repository_enabled_attested", "ingestion_authorized", "post_ingest_metadata_verification_required"],
       "properties": {
         "repository_enabled_attested": {"type": "boolean"},
         "ingestion_authorized": {"type": "boolean"},
-        "metadata_verified_attested": {"type": "boolean"}
+        "post_ingest_metadata_verification_required": {"type": "boolean"}
       },
       "additionalProperties": false
     },
