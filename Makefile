@@ -1,9 +1,13 @@
-.PHONY: bootstrap lint typecheck test fetch-upstream reproduce-baseline upstream-patch validate-claims audit-editorial audit-program-memory audit-publication-infrastructure audit-treasurebench-naming release-readiness audit-agents-v1 audit-agents-v1-evaluation agents-v1-dry-run agents-v1-readiness agents-v1-provider-preflight agents-v1-public-calibration agents-v1-provider-preflight-all foundations three-results discovery-institutions common-source-trap incentive-to-ignore threshold-discovery information-sharing-frontier canonical-exact-frontier dd001 dd001-signatures dd001-thresholds dd001-alignment-bound dd002-disclosure dd002-selection-robustness dd003-source-graphs dd003-heterogeneous-sources dd004-sequential dd005-coverage dd006-mechanisms dd006-general-frontier dd006b-joint-mechanism dd007-synthetic-audit dd008-acquisition dd008a-acquisition dd008b-analysis dd009-atlas dd010-discoverybench dd010-attention dd010-threshold dd011-experiment dd011-attention dd011-threshold-dynamic dd012-attention dd013-audience dd014-conditional dd015-preview dd015-dynamic dd015-threshold-preview dd015-threshold-extension dd016-threshold dd017-equilibrium dd018-preview dd018-team-mechanisms dd019-preview dd019-signal-geometry dd020-preview dd020-incremental-sharing dd021-preview dd021-general-sharing-frontier dd022-preview dd022-coordination-free-positive-sharing papers site verify all clean
+.PHONY: bootstrap lint typecheck test fetch-upstream reproduce-baseline upstream-patch validate-claims audit-editorial audit-program-memory audit-publication-infrastructure audit-treasurebench-naming release-readiness compendium-release-dry-run verify-compendium-release compendium-release-readiness audit-agents-v1 audit-agents-v1-evaluation agents-v1-dry-run agents-v1-readiness agents-v1-provider-preflight agents-v1-public-calibration agents-v1-provider-preflight-all foundations three-results discovery-institutions common-source-trap incentive-to-ignore threshold-discovery information-sharing-frontier canonical-exact-frontier dd001 dd001-signatures dd001-thresholds dd001-alignment-bound dd002-disclosure dd002-selection-robustness dd003-source-graphs dd003-heterogeneous-sources dd004-sequential dd005-coverage dd006-mechanisms dd006-general-frontier dd006b-joint-mechanism dd007-synthetic-audit dd008-acquisition dd008a-acquisition dd008b-analysis dd009-atlas dd010-discoverybench dd010-attention dd010-threshold dd011-experiment dd011-attention dd011-threshold-dynamic dd012-attention dd013-audience dd014-conditional dd015-preview dd015-dynamic dd015-threshold-preview dd015-threshold-extension dd016-threshold dd017-equilibrium dd018-preview dd018-team-mechanisms dd019-preview dd019-signal-geometry dd020-preview dd020-incremental-sharing dd021-preview dd021-general-sharing-frontier dd022-preview dd022-coordination-free-positive-sharing papers site verify all clean
 
 UV := uv
 export PYTHONPATH := $(CURDIR)/src
 RUN := $(UV) run --no-editable
 PY := $(RUN) python
+VERSION ?= 0.1.0
+RELEASE_SOURCE_REVISION ?= $(shell git rev-parse HEAD)
+RELEASE_GENERATED_UTC ?= 2026-07-24T00:00:00Z
+COMPENDIUM_RELEASE_DIR ?= build/compendium-release/$(VERSION)
 
 bootstrap:
 	$(UV) sync --locked --no-editable
@@ -56,6 +60,15 @@ audit-treasurebench-naming:
 
 release-readiness:
 	$(PY) scripts/audit_release_readiness.py
+
+compendium-release-dry-run:
+	$(PY) scripts/build_compendium_release.py --version $(VERSION) --source-revision $(RELEASE_SOURCE_REVISION) --output-dir $(COMPENDIUM_RELEASE_DIR) --mode dry-run --generated-utc $(RELEASE_GENERATED_UTC)
+
+verify-compendium-release:
+	$(PY) scripts/verify_compendium_release.py --version $(VERSION) --output-dir $(COMPENDIUM_RELEASE_DIR)
+
+compendium-release-readiness: compendium-release-dry-run verify-compendium-release
+	$(RUN) pytest -q tests/unit/test_compendium_release.py
 
 audit-agents-v1:
 	$(PY) scripts/audit_discoverybench_agents_v1.py
@@ -237,7 +250,7 @@ papers:
 site:
 	./scripts/build_site.sh
 
-verify: lint typecheck test validate-claims audit-editorial audit-program-memory audit-publication-infrastructure audit-treasurebench-naming release-readiness
+verify: lint typecheck test validate-claims audit-editorial audit-program-memory audit-publication-infrastructure audit-treasurebench-naming release-readiness compendium-release-readiness
 
 all: verify reproduce-baseline papers site
 

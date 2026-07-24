@@ -1,0 +1,38 @@
+schema_version: 1
+plan_status: nonexecuting-template
+candidate_version: 0.1.0
+candidate_tag: dd-compendium-v0.1.0
+future_release_title: Distributed Discovery Research Compendium v0.1.0
+authorization:
+  schema: docs/releases/first-compendium-release-authorization.schema.json
+  real_authorization_required: true
+  synthetic_fixture_permitted_for_release: false
+phases:
+  - validate-owner-authorization
+  - obtain-exact-merged-candidate-sha
+  - generate-and-verify-final-assets
+  - create-and-push-annotated-tag
+  - create-github-release-and-upload-five-assets
+  - verify-github-release
+  - observe-and-verify-zenodo-ingestion
+  - record-observed-version-and-concept-dois
+  - closeout-documentation-pr
+external_identifiers:
+  version_doi: null
+  concept_doi: null
+automatic_release_workflow: false
+official_documentation:
+  accessed_utc_date: "2026-07-24"
+  github_annotated_tags: https://docs.github.com/en/rest/git/tags
+  github_releases: https://docs.github.com/en/rest/releases/releases
+  github_release_assets: https://docs.github.com/en/rest/releases/assets
+  zenodo_enable_repository: https://help.zenodo.org/docs/github/enable-repository/
+  zenodo_citation_file: https://help.zenodo.org/docs/github/describe-software/citation-file/
+  zenodo_json_precedence: https://help.zenodo.org/docs/github/describe-software/zenodo-json/
+  zenodo_github_upload: https://help.zenodo.org/docs/github/archive-software/github-upload/
+  zenodo_versioning: https://zenodo.org/help/versioning
+current_external_state:
+  tag_exists: false
+  github_release_exists: false
+  zenodo_ingestion_verified: false
+  doi_exists: false

@@ -1,14 +1,19 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "manifest_kind": "example",
   "release_status": "template-only",
   "compendium_version": "0.1.0",
+  "candidate_tag": "dd-compendium-v0.1.0",
   "tag": null,
   "source_revision": null,
   "github_release_url": null,
   "version_doi": null,
   "concept_doi": null,
   "generated_utc": null,
+  "content_registry": {
+    "path": "docs/releases/compendium-v0.1.0-content.yml",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
   "inventory": {
     "claims": 0,
     "maximum_claim_id": null,
@@ -17,5 +22,15 @@
     "manifests": 0,
     "passing_manifests": 0
   },
-  "artifacts": []
+  "artifacts": [],
+  "paper_bundle": null,
+  "release_assets": [],
+  "safety": {
+    "tracked_files_only": true,
+    "symlinks": 0,
+    "external_mutations": 0,
+    "private_material": 0,
+    "credentials": 0,
+    "host_paths": 0
+  }
 }

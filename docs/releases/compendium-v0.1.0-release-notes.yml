@@ -1,0 +1,34 @@
+schema_version: 1
+candidate_version: 0.1.0
+candidate_tag: dd-compendium-v0.1.0
+release_status: not-published
+title: Distributed Discovery Research Compendium v0.1.0
+scope: compendium-and-software-archive
+inventory:
+  claims: 110
+  maximum_claim_id: DD-C-0110
+  studies: 26
+  maximum_study_id: DD-022
+  run_manifests: 51
+  passing_immutable_runs: 48
+  local_papers: 7
+  local_paper_pages: 119
+papers:
+  status_source: docs/paper-lifecycle.yml
+  peer_reviewed: false
+  submitted: false
+  accepted: false
+benchmark:
+  formal_name: TreasureBench
+  playable_companion: Treasure Hunt
+  public_provider_calibration: infrastructure-only
+  sealed_or_private_evidence: absent
+canonical_upstream:
+  title: The Shared Discovery Paradox
+  repository: yoheinakajima/shared-discovery-paradox
+  commit: 5025cc8e8f2f8ca015dff2066f08f81ad5715a51
+  bundled_locally: false
+external_identifiers:
+  version_doi: null
+  concept_doi: null
+package_publication: false

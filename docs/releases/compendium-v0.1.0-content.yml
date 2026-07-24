@@ -1,0 +1,162 @@
+schema_version: 1
+compendium_version: 0.1.0
+candidate_tag: dd-compendium-v0.1.0
+tracked_files_only: true
+groups:
+  - group_id: repository-source
+    include: true
+    paths: ["Git tree at explicit source revision"]
+    authority: future annotated tag
+    license: MIT
+    checksum_rule: immutable Git object identity
+    required: true
+    privacy: public
+    reason: Exact software, methods, schemas, and reproducibility source.
+    external_owner_attestation_required: false
+    archive_destination: github-tag-source-archive
+  - group_id: seven-local-papers
+    include: true
+    paths: ["papers/foundations", "papers/three-results", "papers/discovery-institutions", "papers/common-source-trap", "papers/incentive-to-ignore", "papers/threshold-discovery", "papers/information-sharing-frontier"]
+    authority: paper lifecycle, metadata, and validation records
+    license: pending owner release attestation under current license matrix
+    checksum_rule: SHA-256 per member and exact PDF invariant
+    required: true
+    privacy: public
+    reason: Seven project-authored paper artifacts and declared reproduction source.
+    external_owner_attestation_required: true
+    archive_destination: papers/
+  - group_id: scientific-ledger
+    include: true
+    paths: ["claims/claims.yml", "studies/index.md", "results/**/manifest.json", "results/verified/**"]
+    authority: Git scientific ledger
+    license: MIT
+    checksum_rule: Git object identity and release manifest inventory
+    required: true
+    privacy: public
+    reason: Claim, study, run, and verified-result provenance.
+    external_owner_attestation_required: false
+    archive_destination: github-tag-source-archive
+  - group_id: schemas-methods-and-validators
+    include: true
+    paths: ["claims/schema.json", "docs/**", "scripts/**", "src/**", "tests/**"]
+    authority: repository contract and reproducibility policy
+    license: MIT
+    checksum_rule: Git object identity
+    required: true
+    privacy: public
+    reason: Validation, methods, governance, and reproducibility infrastructure.
+    external_owner_attestation_required: false
+    archive_destination: github-tag-source-archive
+  - group_id: treasurebench-public-infrastructure
+    include: true
+    paths: ["src/distributed_discovery/benchmark/**", "site/src/**", "docs/benchmarks/**"]
+    authority: TreasureBench naming registry and public site registries
+    license: MIT
+    checksum_rule: Git object identity
+    required: true
+    privacy: public
+    reason: Public TreasureBench and Treasure Hunt infrastructure without sealed material.
+    external_owner_attestation_required: false
+    archive_destination: github-tag-source-archive
+  - group_id: upstream-integration
+    include: true
+    paths: ["upstream/upstream.lock.yml", "papers/upstream-extension/**"]
+    authority: pinned upstream lock and additive integration metadata
+    license: attribution and repository records only
+    checksum_rule: pinned commit and PDF SHA-256
+    required: true
+    privacy: public
+    reason: Preserve attribution and integration provenance without duplicating the upstream paper.
+    external_owner_attestation_required: false
+    archive_destination: github-tag-source-archive
+  - group_id: local-and-private-material
+    include: false
+    paths: [".env.txt", "local release authorization", "private benchmark material", "untracked files", "site/dist", ".git", "local virtual environments", "caches", "unlicensed third-party assets", "duplicate upstream paper bundle"]
+    authority: release exclusion policy
+    license: null
+    checksum_rule: reject if encountered
+    required: true
+    privacy: excluded-private
+    reason: Credentials, authorization, private evidence, local output, and undeclared content cannot enter a public release.
+    external_owner_attestation_required: false
+    archive_destination: null
+papers:
+  - paper_id: foundations
+    root: papers/foundations
+    pdf: papers/foundations/Foundations_of_Distributed_Discovery.pdf
+    pdf_sha256: 8875926a52f0b8e722f7ce827c456c4b694f9e981c21c4b15bf2b3c60b83e76b
+    page_count: 12
+    main_source: papers/foundations/main.tex
+    main_source_sha256: f654f18fad2c594a59cefbc39af22a7ecd6d38e9b700d81d3ed595e5c811bec6
+    include_patterns: ["**/*"]
+    exclude_patterns: ["build.log", "**/*.log", "**/* 2.*"]
+  - paper_id: three-results
+    root: papers/three-results
+    pdf: papers/three-results/Three_Results_in_Distributed_Discovery.pdf
+    pdf_sha256: 9eb896353b1210706d6108685dde963e02d6a5ebc64af9f9f69c08c01f5ebc96
+    page_count: 14
+    main_source: papers/three-results/main.tex
+    main_source_sha256: 8112852d537c909298d9d18eebe5e1a11a837906414bf108b1e73fb3057f876d
+    include_patterns: ["**/*"]
+    exclude_patterns: ["build.log", "**/*.log", "**/* 2.*"]
+  - paper_id: discovery-institutions
+    root: papers/discovery-institutions
+    pdf: papers/discovery-institutions/Institutions_for_Distributed_Discovery.pdf
+    pdf_sha256: 78606f732f105d79395409dcb9d7224d72aa1e44312ca30ff5719d049afd98a8
+    page_count: 4
+    main_source: papers/discovery-institutions/main.tex
+    main_source_sha256: 41c428dfed7dc03b339cd62e633e8571f3a294232eb4efc0a1f2a35d766cc996
+    include_patterns: ["**/*"]
+    exclude_patterns: ["build.log", "**/*.log", "**/* 2.*"]
+  - paper_id: common-source-trap
+    root: papers/common-source-trap
+    pdf: papers/common-source-trap/The_Common_Source_Trap.pdf
+    pdf_sha256: afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7
+    page_count: 21
+    main_source: papers/common-source-trap/main.tex
+    main_source_sha256: 2f7d9ead7e54a7c4b852935b9648361cc682772c5fe41853d0193b86ce3fbdad
+    include_patterns: ["**/*"]
+    exclude_patterns: ["build.log", "**/*.log", "**/* 2.*"]
+  - paper_id: incentive-to-ignore
+    root: papers/incentive-to-ignore
+    pdf: papers/incentive-to-ignore/The_Incentive_to_Ignore.pdf
+    pdf_sha256: 651c91fb68df6b2f1397ca86f3842b7c2fa9c067601957c32401a7f5e95cd24b
+    page_count: 21
+    main_source: papers/incentive-to-ignore/main.tex
+    main_source_sha256: 013bfec7c16e5eefce27bd6924f5d9b66ead6bfcd9dcdafa830d8bdd8722b53a
+    include_patterns: ["**/*"]
+    exclude_patterns: ["build.log", "**/*.log", "**/* 2.*"]
+  - paper_id: threshold-discovery
+    root: papers/threshold-discovery
+    pdf: papers/threshold-discovery/Threshold_Discovery.pdf
+    pdf_sha256: 634e96662989a3fd6efb5fc3e6919883897e60511826e25c6d0176bac4af9249
+    page_count: 21
+    main_source: papers/threshold-discovery/main.tex
+    main_source_sha256: 3fe19e427ac61442ab580729f1877b0c68d5419aa3c10e9d7d3f1ff5bf550afd
+    include_patterns: ["**/*"]
+    exclude_patterns: ["build.log", "**/*.log", "**/* 2.*"]
+  - paper_id: information-sharing-frontier
+    root: papers/information-sharing-frontier
+    pdf: papers/information-sharing-frontier/When_Does_Information_Sharing_Improve_Decentralized_Discovery.pdf
+    pdf_sha256: a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13
+    page_count: 26
+    main_source: papers/information-sharing-frontier/main.tex
+    main_source_sha256: 41cb86cb4ea4fc1221c3fb4c88a31418b2f5bff0fbc35777d9c895e35084982f
+    include_patterns: ["**/*"]
+    exclude_patterns: ["build.log", "**/*.log", "**/* 2.*"]
+global_exclusions:
+  - .env.txt
+  - .env
+  - authorization
+  - private
+  - sealed
+  - site/dist
+  - .git
+  - .venv
+  - __pycache__
+  - path traversal
+  - absolute paths
+  - symlinks
+  - untracked files
+  - collision-copy files
+  - duplicate upstream paper bundle

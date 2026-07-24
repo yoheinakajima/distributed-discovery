@@ -1,0 +1,26 @@
+schema_version: 1
+authorization_status: pending-owner-decision
+authorization_scope: first-compendium-external-publication
+candidate_version: 0.1.0
+candidate_tag: dd-compendium-v0.1.0
+source_revision: null
+release_allowed: true
+create_annotated_tag: false
+push_tag: false
+create_github_release: false
+upload_release_assets: false
+zenodo:
+  repository_enabled_attested: false
+  ingestion_authorized: false
+  metadata_verified_attested: false
+other_permissions:
+  package_publication: false
+  arxiv_submission: false
+  journal_submission: false
+  provider_calls: false
+  private_benchmark_access: false
+owner_attestation:
+  authorization_id: null
+  synthetic_fixture: true
+  licensing_attested: false
+  approved_utc: null
