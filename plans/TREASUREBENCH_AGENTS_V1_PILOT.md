@@ -20,7 +20,12 @@ Baseline audit completed at `2026-07-24T15:52:58Z`.
 - starting and current `main`:
   `0d3757caf322402c0c47117b3aff0490926a133d`;
 - issue: #187;
+- draft pull request: #188;
 - branch: `benchmark/treasurebench-agents-v1-sealed-pilot`;
+- Phase A implementation commit:
+  `05bc58e986e34019b59e84a181b8d17789987eac`;
+- frozen execution-tree hash:
+  `sha256:a6cd789f8f05c049ed5b86dfec551c6ea73ed99797a959f77bda755782ef773c`;
 - open substantive pull requests before branch creation: none;
 - unrelated open issue #32: settings-only and not a blocker;
 - release: annotated `dd-compendium-v0.1.0`, GitHub Release and Zenodo record
@@ -272,8 +277,8 @@ statements never enter Git.
 24. M24 roadmap/site reconciliation.
 25. M25 validation, merge, Pages, live acceptance, issue closeout, main sync.
 
-Execute sequentially. M13 is active; all others are pending or complete as
-listed below.
+Execute sequentially. M0-M13 are complete. M14 is blocked on the exact local
+non-synthetic owner authorization; M15-M25 remain pending behind it.
 
 ## Progress checklist
 
@@ -292,8 +297,9 @@ listed below.
 - [x] M10 corruptions/contamination.
 - [x] M11 CLI/Make.
 - [x] M12 rehearsal.
-- [ ] M13 freeze and authorization checkpoint (**active**).
-- [ ] M14-M25 Phase B, authorization-gated.
+- [x] M13 freeze, push, draft PR #188, and authorization checkpoint.
+- [ ] M14 authorization and freeze revalidation (**blocked on owner authorization**).
+- [ ] M15-M25 remaining Phase B milestones.
 
 ## Discoveries and surprises
 
@@ -324,6 +330,9 @@ listed below.
   separately gated.
 - `2026-07-24`: complete M1-M12 with synthetic material only; no credential
   read, provider call, real private state, or cost.
+- `2026-07-24T16:26:34Z`: push Phase A implementation commit `05bc58e`,
+  verify execution-tree hash `sha256:a6cd789f8f05c049ed5b86dfec551c6ea73ed99797a959f77bda755782ef773c`,
+  and open draft PR #188. M13 is complete.
 
 ## Validation strategy
 
@@ -367,5 +376,13 @@ authorization exists for the frozen execution commit.
 
 ## Outcome and retrospective
 
-Pending. At an authorization checkpoint, report the exact frozen identifiers
-and owner action without creating private material or calling providers.
+Phase A completed at the owner-authorization checkpoint. The 50-slot
+public-synthetic sealed rehearsal and all 76 corruption cases pass; repository,
+paper, and site acceptance pass; the execution-sensitive tree is frozen and
+pushed; and draft PR #188 records the checkpoint. No credential was read, no
+provider was called, no real private material was created, and no cost was
+incurred.
+
+The exact next action is for the owner to run the supplied helper against this
+branch and its final pushed checkpoint commit, then resume the same session.
+Any execution-sensitive edit invalidates the tree hash and authorization.
