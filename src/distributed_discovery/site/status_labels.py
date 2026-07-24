@@ -38,7 +38,7 @@ def human_status(value: object, *, kind: str = "phase") -> str:
             "active-working-paper": "Active working paper",
             "active-research-note": "Active research note",
             "active-synthesis-note": "Active synthesis note",
-            "canonical-published": "Canonical published anchor",
+            "canonical-public-anchor": "Canonical public anchor",
             "superseded-working-paper": "Superseded working paper",
             "archived-source-note": "Archived source note",
             "living-synthesis": "Living synthesis",

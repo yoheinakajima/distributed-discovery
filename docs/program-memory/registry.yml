@@ -1,0 +1,478 @@
+schema_version: 1
+authority: routing-only-not-scientific-evidence
+records:
+  - idea_id: PM-0001
+    title: Information-action frontier nucleus
+    status: routed
+    capture_classification: capture-now
+    visibility: internal
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: Information quality and action-portfolio quality are distinct resources whose value depends on capacity, correlation, and implementation constraints.
+    why_it_matters: This is the organizing nucleus for a reusable long-horizon theory without claiming a theorem.
+    canonical_destination: {type: roadmap, path: reports/roadmap-consolidation/general-theory-architecture.md}
+    dependencies: [DD-000, DD-019, DD-020, DD-021, DD-022]
+    promotion_trigger: A separately registered bridge-theorem gate survives classical reduction.
+    permitted_stops: [implemented, deferred, closed-by-overlap, closed-by-null]
+    not_a_result_boundaries: [roadmap synthesis only, no theorem or novelty claim]
+    supersedes: []
+    superseded_by: null
+    review_after: post-claim-grade-agents-v1
+    owner_decision: adopted
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0002
+    title: Discovery mechanism design
+    status: routed
+    capture_classification: capture-now
+    visibility: internal
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: A general theory should characterize information, action, transfer, observability, and authority rules that implement discovery portfolios.
+    why_it_matters: It connects existing bounded mechanisms without inventing a general implementation theorem.
+    canonical_destination: {type: roadmap, path: reports/roadmap-consolidation/general-theory-architecture.md}
+    dependencies: [DD-002, DD-006, DD-006B, DD-013, DD-018]
+    promotion_trigger: A nonclassical characterization survives the registered utility-design overlap audit.
+    permitted_stops: [implemented, deferred, closed-by-overlap, closed-by-null]
+    not_a_result_boundaries: [no mechanism-optimality claim, no new theorem gate]
+    supersedes: []
+    superseded_by: null
+    review_after: post-claim-grade-agents-v1
+    owner_decision: adopted
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0003
+    title: Adaptive and dynamic discovery
+    status: routed
+    capture_classification: capture-now
+    visibility: internal
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: The long-horizon synthesis should study feedback, adaptation, communication, stopping, and dynamic allocation.
+    why_it_matters: Existing sequential and dynamic studies are bounded and do not yet form a general dynamic theory.
+    canonical_destination: {type: roadmap, path: reports/roadmap-consolidation/general-theory-architecture.md}
+    dependencies: [DD-004, DD-005, DD-015]
+    promotion_trigger: A finite adaptive theorem and declared feedback regime are registered.
+    permitted_stops: [implemented, deferred, closed-by-overlap, closed-by-null]
+    not_a_result_boundaries: [no asymptotic or adaptive-submodularity claim]
+    supersedes: []
+    superseded_by: null
+    review_after: after-reliable-discovery
+    owner_decision: adopted
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0004
+    title: Algorithms and computational complexity
+    status: routed
+    capture_classification: capture-now
+    visibility: internal
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: The theory roadmap should identify algorithms, tractable classes, hardness questions, and approximation boundaries.
+    why_it_matters: Reusable machinery requires more than bounded enumerations and project-specific identifiers.
+    canonical_destination: {type: roadmap, path: reports/roadmap-consolidation/general-theory-architecture.md}
+    dependencies: [DD-001, DD-005, DD-009, DD-019, DD-021]
+    promotion_trigger: A registered computational problem has a fixed input model and complexity measure.
+    permitted_stops: [implemented, deferred, closed-by-overlap, closed-by-null]
+    not_a_result_boundaries: [no complexity classification, no optimal algorithm claim]
+    supersedes: []
+    superseded_by: null
+    review_after: after-first-stable-release
+    owner_decision: adopted
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0005
+    title: Preprint-first publication track
+    status: implemented
+    capture_classification: capture-now
+    visibility: public
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: Preprints are the active publication track and journal work is deferred behind an explicit revisit gate.
+    why_it_matters: It separates durable dissemination from premature venue workflows.
+    canonical_destination: {type: policy, path: docs/publication/preprint-first-policy.md}
+    dependencies: [docs/publication-architecture.md]
+    promotion_trigger: null
+    permitted_stops: [implemented, superseded]
+    not_a_result_boundaries: [no submission authorized, journals are not abandoned]
+    supersedes: []
+    superseded_by: null
+    review_after: journal-track-trigger
+    owner_decision: adopted
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0006
+    title: Immutable citation freeze rule
+    status: implemented
+    capture_classification: capture-now
+    visibility: public
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: Load-bearing scientific citations must resolve to immutable versioned objects.
+    why_it_matters: Living pages alone cannot support stable scholarly dependencies.
+    canonical_destination: {type: policy, path: docs/publication/stable-citation-policy.md}
+    dependencies: [CITATION.cff]
+    promotion_trigger: null
+    permitted_stops: [implemented, superseded]
+    not_a_result_boundaries: [no DOI arXiv ID or release exists yet]
+    supersedes: []
+    superseded_by: null
+    review_after: first-release-freeze
+    owner_decision: adopted
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0007
+    title: Submission self-containment rule
+    status: implemented
+    capture_classification: capture-now
+    visibility: public
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: Every logical dependency is proved in the manuscript or resolves to a stable preprint or publication.
+    why_it_matters: Companion citations cannot hide missing load-bearing proofs.
+    canonical_destination: {type: policy, path: docs/publication/self-containment-policy.md}
+    dependencies: [docs/publication/paper-dependency-edges.yml]
+    promotion_trigger: null
+    permitted_stops: [implemented, superseded]
+    not_a_result_boundaries: [no target-venue compliance claim]
+    supersedes: []
+    superseded_by: null
+    review_after: each-paper-freeze
+    owner_decision: adopted
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0008
+    title: Foundations current no-arXiv disposition
+    status: routed
+    capture_classification: capture-now
+    visibility: internal
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: Foundations remains a site note, release artifact, and synthesis component, not a current arXiv candidate.
+    why_it_matters: It prevents a vocabulary note from being represented as a theorem-family preprint.
+    canonical_destination: {type: decision-record, path: reports/editorial/arxiv-readiness-map.yml}
+    dependencies: [papers/foundations/metadata.yml]
+    promotion_trigger: The note acquires a distinct theorem-family contribution and passes paper admission.
+    permitted_stops: [implemented, deferred, superseded]
+    not_a_result_boundaries: [not a permanent prohibition, no submission package created]
+    supersedes: []
+    superseded_by: null
+    review_after: distinct-theorem-family-admission
+    owner_decision: adopted
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0009
+    title: Internal flagship preprint queue
+    status: routed
+    capture_classification: capture-now
+    visibility: internal
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: Common-Source Trap and Information Sharing Frontier lead by live readiness, followed conditionally by Incentive to Ignore while Threshold Discovery remains held.
+    why_it_matters: It sequences freeze work without making a public promise.
+    canonical_destination: {type: decision-record, path: reports/editorial/preprint-queue.yml}
+    dependencies: [PM-0008, PM-0010]
+    promotion_trigger: A paper passes the live arXiv freeze audit.
+    permitted_stops: [implemented, deferred, superseded]
+    not_a_result_boundaries: [internal only, spacing is a default not a promise]
+    supersedes: []
+    superseded_by: null
+    review_after: each-paper-freeze
+    owner_decision: adopted
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0010
+    title: Journal track deferred
+    status: deferred
+    capture_classification: capture-now
+    visibility: internal
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: Journal submission is deferred until the claim-grade Agents v1 campaign or the first three preprint freezes and stable architecture.
+    why_it_matters: It preserves future journal optionality without creating venue work.
+    canonical_destination: {type: policy, path: docs/publication/journal-track-policy.md}
+    dependencies: [PM-0005, PM-0009]
+    promotion_trigger: Claim-grade Agents v1 completion or three accepted preprint freezes plus stable dependencies overlap and licensing.
+    permitted_stops: [implemented, deferred, rejected, superseded]
+    not_a_result_boundaries: [no journal contact, journals not abandoned]
+    supersedes: []
+    superseded_by: null
+    review_after: journal-track-trigger
+    owner_decision: deferred
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0011
+    title: AER Insights parked option
+    status: deferred
+    capture_classification: capture-now
+    visibility: internal
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: AER Insights remains a parked journal-track option with no active submission or contact.
+    why_it_matters: It preserves a prior venue carve-out without implying current fit.
+    canonical_destination: {type: decision-record, path: reports/editorial/aer-insights-parked-option.md}
+    dependencies: [PM-0010]
+    promotion_trigger: Journal track reopens and a paper-specific venue audit supports the option.
+    permitted_stops: [implemented, deferred, rejected, superseded]
+    not_a_result_boundaries: [no venue fit claim, no editor or reviewer workflow]
+    supersedes: []
+    superseded_by: null
+    review_after: journal-track-trigger
+    owner_decision: deferred
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0012
+    title: Zenodo and stable release readiness
+    status: routed
+    capture_classification: capture-now
+    visibility: public
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: Prepare versioned release and Zenodo infrastructure without enabling integration or minting identifiers.
+    why_it_matters: Stable evidence citations need an immutable release architecture before activation.
+    canonical_destination: {type: release-record, path: docs/releases/zenodo-release-policy.md}
+    dependencies: [CITATION.cff, LICENSE]
+    promotion_trigger: Owner activates Zenodo and authorizes the first tagged compendium release.
+    permitted_stops: [implemented, deferred, rejected, superseded]
+    not_a_result_boundaries: [no release tag deposit DOI or integration exists]
+    supersedes: []
+    superseded_by: null
+    review_after: first-compendium-release
+    owner_decision: adopted
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0013
+    title: Benchmark external rename requirement
+    status: owner-adopted
+    capture_classification: capture-now
+    visibility: public
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: The first external benchmark artifact must not use DiscoveryBench without a completed collision and naming gate.
+    why_it_matters: An established ICLR benchmark already owns the same public name.
+    canonical_destination: {type: decision-record, path: reports/editorial/benchmark-name-decision.yml}
+    dependencies: [DD-010, docs/adr/ADR-DISCOVERYBENCH-AGENTS-V1-VERSIONING.md]
+    promotion_trigger: Owner selects among the ranked candidates because the automatic margin gate did not pass.
+    permitted_stops: [implemented, deferred, rejected, superseded]
+    not_a_result_boundaries: [DD-010 and historical aliases remain unchanged, no partial rename]
+    supersedes: []
+    superseded_by: null
+    review_after: owner-public-name-decision
+    owner_decision: adopted
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0014
+    title: Benchmark paper second wave
+    status: evidence-dependent
+    capture_classification: evidence-dependent
+    visibility: internal
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: A benchmark instrument-and-first-evaluation paper is a second-wave target after claim-grade execution.
+    why_it_matters: Public calibration is engineering evidence and cannot support a benchmark paper result.
+    canonical_destination: {type: decision-record, path: reports/editorial/post-discoverybench-publication-decision-framework.yml}
+    dependencies: [PM-0013, claim-grade-agents-v1]
+    promotion_trigger: Claim-grade Agents v1 evidence passes custody verification and claim audit.
+    permitted_stops: [implemented, deferred, rejected, closed-by-null]
+    not_a_result_boundaries: [no title-level result, no provider ranking]
+    supersedes: []
+    superseded_by: null
+    review_after: post-claim-grade-agents-v1
+    owner_decision: deferred
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0015
+    title: Publication recomposition options
+    status: evidence-dependent
+    capture_classification: evidence-dependent
+    visibility: internal
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: Preserve modular papers, one grand sequel, and grand sequel plus technical companions until claim-grade evidence clarifies the architecture.
+    why_it_matters: Early recomposition would risk hidden ownership transfer or an omnibus without a central result.
+    canonical_destination: {type: decision-record, path: reports/editorial/post-discoverybench-publication-decision-framework.yml}
+    dependencies: [docs/paper-recomposition-policy.md, PM-0014]
+    promotion_trigger: Claim-grade Agents v1 findings are classified across theorem families.
+    permitted_stops: [implemented, deferred, rejected, closed-by-null]
+    not_a_result_boundaries: [leading option is not selected, no paper authorized]
+    supersedes: []
+    superseded_by: null
+    review_after: post-claim-grade-agents-v1
+    owner_decision: deferred
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0016
+    title: Human engagement suggestions
+    status: superseded
+    capture_classification: superseded
+    visibility: internal
+    source_type: repository-reconciliation
+    captured_date: "2026-07-23"
+    proposition: Prior suggestions for reviewers seminars coauthors outreach and human custody are inactive.
+    why_it_matters: The AI-powered lab boundary excludes active human-engagement workflows.
+    canonical_destination: {type: policy, path: docs/ai-lab-operating-boundary.md}
+    dependencies: []
+    promotion_trigger: A new explicit owner decision authorizes a scoped human workflow.
+    permitted_stops: [superseded]
+    not_a_result_boundaries: [no external review or human validation occurred]
+    supersedes: []
+    superseded_by: docs/ai-lab-operating-boundary.md
+    review_after: explicit-owner-reauthorization
+    owner_decision: superseded
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0017
+    title: Retrievability monitoring
+    status: rejected
+    capture_classification: do-not-canonicalize
+    visibility: internal
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: Citation-rank retrievability and semantic-visibility monitoring remain excluded from the lab.
+    why_it_matters: Such monitoring would create an adoption workflow outside the authorized research boundary.
+    canonical_destination: {type: policy, path: docs/translation/translation-policy.md}
+    dependencies: [docs/ai-lab-operating-boundary.md]
+    promotion_trigger: A future explicit owner decision changes the AI-only boundary.
+    permitted_stops: [rejected, superseded]
+    not_a_result_boundaries: [no monitoring or external adoption data collected]
+    supersedes: []
+    superseded_by: null
+    review_after: explicit-owner-reauthorization
+    owner_decision: rejected
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0018
+    title: Omnibus theory and mechanisms preprint
+    status: rejected
+    capture_classification: capture-now
+    visibility: internal
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: An omnibus Theory and Mechanisms preprint is rejected under current information.
+    why_it_matters: It lacks a single admitted theorem-family argument and risks ownership blur.
+    canonical_destination: {type: decision-record, path: reports/editorial/publication-options-rejection-log.yml}
+    dependencies: [docs/research-governance.md]
+    promotion_trigger: New bridge theorems create one coherent central question and owner reopens the option.
+    permitted_stops: [rejected, superseded]
+    not_a_result_boundaries: [no paper or title is authorized]
+    supersedes: []
+    superseded_by: null
+    review_after: new-bridge-theorem
+    owner_decision: rejected
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0019
+    title: Monolithic theory plus benchmark paper
+    status: rejected
+    capture_classification: capture-now
+    visibility: internal
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: A monolithic theory-plus-benchmark paper is rejected under current information.
+    why_it_matters: No claim-grade benchmark evidence exists and theory owners remain modular.
+    canonical_destination: {type: decision-record, path: reports/editorial/publication-options-rejection-log.yml}
+    dependencies: [PM-0014, PM-0015]
+    promotion_trigger: New evidence establishes one load-bearing cross-family result and owner reopens the option.
+    permitted_stops: [rejected, superseded]
+    not_a_result_boundaries: [no combined paper is authorized]
+    supersedes: []
+    superseded_by: null
+    review_after: post-claim-grade-agents-v1
+    owner_decision: rejected
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0020
+    title: Web-only publication channel
+    status: rejected
+    capture_classification: capture-now
+    visibility: internal
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: Web-first or technical-report-only is rejected as a new publication channel.
+    why_it_matters: The living site supports discovery and verification but is not the sole stable scholarly source.
+    canonical_destination: {type: decision-record, path: reports/editorial/publication-options-rejection-log.yml}
+    dependencies: [PM-0006]
+    promotion_trigger: Owner adopts a new publication channel after stable citation review.
+    permitted_stops: [rejected, superseded]
+    not_a_result_boundaries: [site remains a compendium]
+    supersedes: []
+    superseded_by: null
+    review_after: explicit-owner-decision
+    owner_decision: rejected
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0021
+    title: Foundations vocabulary preprint
+    status: rejected
+    capture_classification: capture-now
+    visibility: internal
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: Foundations is rejected as a vocabulary preprint under its current contribution.
+    why_it_matters: Definitions and synthesis alone do not satisfy the current arXiv candidate gate.
+    canonical_destination: {type: decision-record, path: reports/editorial/publication-options-rejection-log.yml}
+    dependencies: [PM-0008]
+    promotion_trigger: Foundations acquires a distinct admitted theorem-family contribution.
+    permitted_stops: [rejected, superseded]
+    not_a_result_boundaries: [Foundations remains a public note]
+    supersedes: []
+    superseded_by: null
+    review_after: distinct-theorem-family-admission
+    owner_decision: rejected
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0022
+    title: Journal-first sequencing
+    status: deferred
+    capture_classification: capture-now
+    visibility: internal
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: Journal-first sequencing is deferred behind the preprint-first track.
+    why_it_matters: It avoids reopening venue-specific work before stable public artifacts exist.
+    canonical_destination: {type: decision-record, path: reports/editorial/publication-options-rejection-log.yml}
+    dependencies: [PM-0005, PM-0010]
+    promotion_trigger: Journal track trigger occurs and the owner selects journal-first for a specific paper.
+    permitted_stops: [implemented, deferred, rejected, superseded]
+    not_a_result_boundaries: [journals are not abandoned]
+    supersedes: []
+    superseded_by: null
+    review_after: journal-track-trigger
+    owner_decision: deferred
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0023
+    title: Lifecycle terminology normalization
+    status: implemented
+    capture_classification: capture-now
+    visibility: public
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: Replace ambiguous canonical-published wording with canonical-public-anchor while preserving the upstream lock and historical alias.
+    why_it_matters: The canonical anchor recommends a working-paper citation and has no DOI submission acceptance or peer-review evidence.
+    canonical_destination: {type: lifecycle-registry, path: reports/editorial/lifecycle-terminology-decision.yml}
+    dependencies: [docs/paper-lifecycle.yml, integrations/shared-discovery-paradox/upstream.lock]
+    promotion_trigger: null
+    permitted_stops: [implemented, superseded]
+    not_a_result_boundaries: [no publication acceptance or peer-review claim]
+    supersedes: [canonical-published-label]
+    superseded_by: null
+    review_after: publication-evidence-change
+    owner_decision: adopted
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0024
+    title: Artifact licensing separation
+    status: routed
+    capture_classification: capture-now
+    visibility: public
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: Code data schemas fixtures site prose manuscripts PDFs figures upstream material and third-party assets require separate license evidence.
+    why_it_matters: Release and venue rights cannot be inferred from one undifferentiated repository label.
+    canonical_destination: {type: policy, path: docs/licensing/artifact-license-matrix.yml}
+    dependencies: [LICENSE, LICENSE-STATUS.md]
+    promotion_trigger: Owner resolves any venue-specific copyright-transfer question.
+    permitted_stops: [implemented, deferred, rejected, superseded]
+    not_a_result_boundaries: [no license is changed, not legal advice]
+    supersedes: []
+    superseded_by: null
+    review_after: release-or-venue-freeze
+    owner_decision: adopted
+    last_reviewed: "2026-07-23"
+  - idea_id: PM-0025
+    title: Paper dependency edges
+    status: implemented
+    capture_classification: capture-now
+    visibility: public
+    source_type: owner-decision
+    captured_date: "2026-07-23"
+    proposition: Paper-to-paper roles must distinguish logical requirements from background companion scope shared method definitions counterboundaries future absorption and synthesis.
+    why_it_matters: Freeze acceptance must detect hidden load-bearing dependencies.
+    canonical_destination: {type: policy, path: docs/publication/paper-dependency-edges.yml}
+    dependencies: [docs/paper-family-map.yml, docs/paper-claim-roles.yml]
+    promotion_trigger: null
+    permitted_stops: [implemented, superseded]
+    not_a_result_boundaries: [edges do not transfer scientific ownership]
+    supersedes: []
+    superseded_by: null
+    review_after: each-paper-freeze
+    owner_decision: adopted
+    last_reviewed: "2026-07-23"

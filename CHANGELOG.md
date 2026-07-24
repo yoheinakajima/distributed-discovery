@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-23 — Program memory and preprint infrastructure
+
+- Added a conversation-to-repository protocol, 25-record program-memory
+  registry, supersession map, general-theory architecture, and mandatory
+  discussion/decision delta audit without storing raw transcripts or promoting
+  scientific claims.
+- Adopted preprint-first, journal-deferred policy; added arXiv readiness,
+  self-containment, 12 typed dependency edges, per-paper citation metadata,
+  stable release/Zenodo readiness, a null-safe dry-run manifest, and an
+  artifact licensing matrix. No external action or identifier was created.
+- Normalized `canonical-published` to `canonical-public-anchor` with a
+  historical alias, and recorded `owner-name-decision-required` after a fatal
+  DiscoveryBench collision and a five-point rather than eight-point shortlist
+  margin. No benchmark rename or paper change was made.
+
 ## 2026-07-23 — Phase 2 AI-native optionality and paper lifecycle
 
 - Established the AI-powered-lab operating boundary under human PI gate

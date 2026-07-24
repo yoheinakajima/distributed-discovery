@@ -22,8 +22,16 @@ exact byte-length/SHA-256 coverage for every generated download. The public
 surface contains no submission endpoint, account, cookie, analytics, or
 server-side user data.
 
-The current generated surface contains 79 HTML routes for 26 studies, 85
-public data files, 18 Labs, and 23 checksum-covered downloads. The contextual
+The Papers route uses the neutral `canonical-public-anchor` lifecycle term and
+publishes stable-citation guidance plus the machine-readable paper-dependency
+registry. The site remains a living discovery and verification layer: no
+project release, DOI, arXiv identifier, submission, acceptance, or peer review
+is claimed. Internal preprint sequencing and benchmark-name candidates are not
+published on the site.
+
+The current generated surface contains 81 HTML routes for 26 studies, 98 JSON
+files (91 under `data/`), 201 total files, 18 Labs, and 23 checksum-covered
+downloads. The contextual
 `start-here.html` route presents the three-result reading path, `methods.html`
 records the dry Phase 1 method, and `program.html` explains the theorem spine,
 paper ownership, and centralized-versus-selected-equilibrium boundaries without

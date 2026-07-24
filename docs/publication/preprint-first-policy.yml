@@ -1,0 +1,21 @@
+schema_version: 1
+decision: preprint-first-journal-deferred
+effective_date: "2026-07-23"
+journals_abandoned: false
+submission_authorized: false
+public_queue_allowed: false
+freeze_requires:
+  - self-contained-central-argument
+  - primary-source-related-work
+  - honest-working-paper-status
+  - conditional-contribution-language
+  - limitations-and-counterboundaries
+  - deterministic-pdf-and-source-bundle
+  - licensing-review
+  - evidence-layer-provenance
+de_labification:
+  remove_from_main_narrative: [issue-and-PR-status, admission-gate-language, repository-acceptance, internal-run-governance]
+  preserve_in_evidence_layer: [claim-IDs, run-IDs, checksums, source-maps, proof-provenance]
+site_role: living-compendium
+site_is_sole_load_bearing_source: false
+freeze_time_policy_recheck: [categories, cross-lists, endorsement, moderation, licenses, source-package]

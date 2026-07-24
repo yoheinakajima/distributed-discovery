@@ -1,5 +1,30 @@
 # Master execution plan
 
+## Active continuation — program memory and preprint infrastructure (2026-07-23)
+
+Issue #178, draft PR #179, and branch
+`docs/program-memory-preprint-infrastructure` own the sole substantive lane from clean main
+`f1dd894ca5e50e1df0605fdcac4edab97bfbd258`. The living ExecPlan is
+[`PROGRAM_MEMORY_PREPRINT_INFRASTRUCTURE.md`](PROGRAM_MEMORY_PREPRINT_INFRASTRUCTURE.md).
+
+This documentation/governance milestone makes owner discussions durable
+without treating chat as scientific evidence; adopts preprint-first,
+journal-deferred policy; adds self-containment, paper dependency, stable
+citation, release/Zenodo-readiness, per-paper citation, and licensing
+infrastructure; normalizes the canonical lifecycle label; and completes a
+dated benchmark-name collision gate. The first freeze candidate is
+Common-Source Trap, but no paper edit or freeze is authorized.
+
+`DiscoveryBench` has a fatal collision with the established ICLR 2025
+benchmark. ActionPortfolioBench leads the registered alternatives 91 to 86,
+below the required eight-point margin and with unresolved ambiguity. The
+decision is therefore `owner-name-decision-required`; no partial rename occurs
+and DD-010, claims, runs, routes, schemas, and CLI compatibility stay fixed.
+
+No provider call, credential read, private material, study, claim, run, paper
+change, submission, tag, release, Zenodo activation, DOI, journal contact, or
+upstream mutation is authorized or created.
+
 ## Completed continuation — DiscoveryBench Agents v1 provider preflight (2026-07-23)
 
 Issue #175 and branch

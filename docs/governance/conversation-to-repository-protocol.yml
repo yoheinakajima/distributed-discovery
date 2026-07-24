@@ -1,0 +1,68 @@
+schema_version: 1
+authority: owner-governance
+chat_role: intake-not-program-memory
+raw_transcript_storage_default: false
+private_chat_links_allowed: false
+capture_classifications:
+  - capture-now
+  - queue-after-active-pr
+  - evidence-dependent
+  - already-canonical
+  - superseded
+  - do-not-canonicalize
+durable_statuses:
+  - captured-unreviewed
+  - candidate
+  - owner-adopted
+  - routed
+  - evidence-dependent
+  - deferred
+  - rejected
+  - superseded
+  - implemented
+  - closed-by-overlap
+  - closed-by-null
+requirements:
+  owner_adopted_requires_canonical_destination: true
+  superseded_requires_replacement: true
+  evidence_dependent_requires_trigger: true
+  scientific_proposition_requires_existing_authority_link: true
+  issue_closeout_delta_audit: true
+  substantive_execplan_delta_audit: true
+registry_role: router-not-scientific-source
+canonical_destinations:
+  - policy
+  - decision-record
+  - ADR
+  - ExecPlan
+  - roadmap
+  - lifecycle-registry
+  - release-record
+  - claim-or-study-link
+visibility:
+  - public
+  - internal
+  - restricted-reference-only
+review_triggers:
+  - after-first-stable-release
+  - after-reliable-discovery
+  - distinct-theorem-family-admission
+  - each-paper-freeze
+  - explicit-owner-decision
+  - explicit-owner-reauthorization
+  - first-compendium-release
+  - first-release-freeze
+  - journal-track-trigger
+  - new-bridge-theorem
+  - owner-public-name-decision
+  - post-claim-grade-agents-v1
+  - publication-evidence-change
+  - release-or-venue-freeze
+prohibited:
+  - raw-chat-transcript
+  - private-chat-url
+  - credential
+  - secret
+  - unclassified-owner-decision
+  - scientific-status-promotion
+  - fabricated-external-state

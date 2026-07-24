@@ -1,5 +1,25 @@
 # Current program state
 
+_Program memory and preprint infrastructure, 2026-07-23:_ issue #178 records
+a non-scientific governance and publication-infrastructure continuation.
+Owner discussion is routed through a 25-record program-memory registry rather
+than retained as raw transcript. The active editorial track is preprint-first;
+the journal track is deferred, not abandoned, and reopens only at its explicit
+trigger or a separate owner decision. Foundations remains a site/release note,
+not a current arXiv candidate. Common-Source Trap is the first freeze candidate
+by the internal readiness rubric, but no paper edit, freeze, submission, or
+identifier is authorized.
+
+The canonical upstream lifecycle value is now
+`canonical-public-anchor`, with `canonical-published` retained only as a
+historical alias. The repository has release/tag, null-safe evidence-manifest,
+paper citation, dependency-edge, and licensing readiness records but no tag,
+GitHub Release, Zenodo activation, DOI, or arXiv identifier. `DiscoveryBench`
+has a fatal external name collision; the public scholarly rename requires an
+owner decision, so no partial migration changes DD-010 or immutable evidence.
+This milestone makes zero provider calls and creates no private material,
+study, claim, run, scientific result, or paper artifact.
+
 _DiscoveryBench Agents v1 evaluation registration, 2026-07-23:_ the offline
 DD-010 instrument remains complete and unchanged. Its evaluation ladder,
 exact cloud snapshots, future base allocation, inactive authorization,

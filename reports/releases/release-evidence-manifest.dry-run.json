@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "manifest_kind": "dry-run",
+  "release_status": "dry-run-only",
+  "compendium_version": "0.1.0",
+  "tag": null,
+  "source_revision": null,
+  "github_release_url": null,
+  "version_doi": null,
+  "concept_doi": null,
+  "generated_utc": null,
+  "inventory": {
+    "claims": 110,
+    "maximum_claim_id": "DD-C-0110",
+    "studies": 26,
+    "maximum_study_id": "DD-022",
+    "manifests": 51,
+    "passing_manifests": 48
+  },
+  "artifacts": [
+    {
+      "paper_id": "foundations",
+      "pdf_path": "papers/foundations/Foundations_of_Distributed_Discovery.pdf",
+      "pdf_sha256": "8875926a52f0b8e722f7ce827c456c4b694f9e981c21c4b15bf2b3c60b83e76b",
+      "page_count": 12,
+      "source_bundle": "papers/foundations/main.tex",
+      "source_sha256": "f654f18fad2c594a59cefbc39af22a7ecd6d38e9b700d81d3ed595e5c811bec6"
+    },
+    {
+      "paper_id": "three-results",
+      "pdf_path": "papers/three-results/Three_Results_in_Distributed_Discovery.pdf",
+      "pdf_sha256": "9eb896353b1210706d6108685dde963e02d6a5ebc64af9f9f69c08c01f5ebc96",
+      "page_count": 14,
+      "source_bundle": "papers/three-results/main.tex",
+      "source_sha256": "8112852d537c909298d9d18eebe5e1a11a837906414bf108b1e73fb3057f876d"
+    },
+    {
+      "paper_id": "discovery-institutions",
+      "pdf_path": "papers/discovery-institutions/Institutions_for_Distributed_Discovery.pdf",
+      "pdf_sha256": "78606f732f105d79395409dcb9d7224d72aa1e44312ca30ff5719d049afd98a8",
+      "page_count": 4,
+      "source_bundle": "papers/discovery-institutions/main.tex",
+      "source_sha256": "41c428dfed7dc03b339cd62e633e8571f3a294232eb4efc0a1f2a35d766cc996"
+    },
+    {
+      "paper_id": "common-source-trap",
+      "pdf_path": "papers/common-source-trap/The_Common_Source_Trap.pdf",
+      "pdf_sha256": "afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7",
+      "page_count": 21,
+      "source_bundle": "papers/common-source-trap/main.tex",
+      "source_sha256": "2f7d9ead7e54a7c4b852935b9648361cc682772c5fe41853d0193b86ce3fbdad"
+    },
+    {
+      "paper_id": "incentive-to-ignore",
+      "pdf_path": "papers/incentive-to-ignore/The_Incentive_to_Ignore.pdf",
+      "pdf_sha256": "651c91fb68df6b2f1397ca86f3842b7c2fa9c067601957c32401a7f5e95cd24b",
+      "page_count": 21,
+      "source_bundle": "papers/incentive-to-ignore/main.tex",
+      "source_sha256": "013bfec7c16e5eefce27bd6924f5d9b66ead6bfcd9dcdafa830d8bdd8722b53a"
+    },
+    {
+      "paper_id": "threshold-discovery",
+      "pdf_path": "papers/threshold-discovery/Threshold_Discovery.pdf",
+      "pdf_sha256": "634e96662989a3fd6efb5fc3e6919883897e60511826e25c6d0176bac4af9249",
+      "page_count": 21,
+      "source_bundle": "papers/threshold-discovery/main.tex",
+      "source_sha256": "3fe19e427ac61442ab580729f1877b0c68d5419aa3c10e9d7d3f1ff5bf550afd"
+    },
+    {
+      "paper_id": "information-sharing-frontier",
+      "pdf_path": "papers/information-sharing-frontier/When_Does_Information_Sharing_Improve_Decentralized_Discovery.pdf",
+      "pdf_sha256": "a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13",
+      "page_count": 26,
+      "source_bundle": "papers/information-sharing-frontier/main.tex",
+      "source_sha256": "41cb86cb4ea4fc1221c3fb4c88a31418b2f5bff0fbc35777d9c895e35084982f"
+    }
+  ]
+}

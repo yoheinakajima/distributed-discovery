@@ -1,0 +1,25 @@
+schema_version: 1
+status: current-information-only
+options:
+  - option: omnibus-theory-and-mechanisms-preprint
+    disposition: rejected
+    reason: obscures durable theorem-family ownership and self-containment
+    reconsideration: stable-cross-family-theorem-spine-with-clear-single-reader-contribution
+  - option: monolithic-theory-plus-benchmark-paper
+    disposition: rejected
+    reason: benchmark evidence does not yet exist and would mix instrument validation with theorem families
+    reconsideration: claim-grade-benchmark-evidence-and-owner-recomposition-decision
+  - option: web-first-or-technical-report-only-new-channel
+    disposition: rejected
+    reason: living-site-discoverability-cannot-replace-immutable-load-bearing-sources
+    reconsideration: owner-adopts-a-distinct-archival-channel-with-stable-citation
+  - option: foundations-as-vocabulary-preprint
+    disposition: rejected
+    reason: current-note-does-not-own-a-distinct-theorem-family
+    reconsideration: foundations-acquires-a-distinct-substantive-contribution-and-passes-freeze-audit
+  - option: journal-first-sequencing
+    disposition: deferred
+    reason: preprint-first-track-adopted-and-journal-gate-not-met
+    reconsideration: journal-track-trigger-or-separate-owner-reopen
+leading_recomposition_option: grand-sequel-plus-technical-companions
+leading_option_is_selected: false

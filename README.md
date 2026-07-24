@@ -27,6 +27,18 @@ hierarchy](docs/publication-hierarchy.md), [optionality
 portfolio](docs/strategic-direction/optionality-portfolio.md), and [methods
 record](docs/methods/phase-1-research-methods.md).
 
+The current publication architecture is preprint-first with the journal track
+deferred behind explicit triggers. Common-Source Trap is the first internal
+freeze candidate, but no paper edit, submission, release, DOI, or arXiv
+identifier is authorized. Stable-citation, dependency, release-readiness, and
+licensing records are repository infrastructure only. The benchmark's
+historical/internal name remains DiscoveryBench; its first external scholarly
+name is blocked on an owner decision after a fatal same-name collision and an
+ambiguous scored shortlist. See the
+[stable citation policy](docs/publication/stable-citation-policy.md),
+[release policy](docs/releases/zenodo-release-policy.md), and
+[benchmark name decision](reports/editorial/benchmark-name-decision.md).
+
 Programs V1, V2, and the required Program V3 queue are complete at their
 registered bounded scopes. Program V3,
 [*The Incentive to Ignore*](docs/program-v3.md), completed DD-012 through
@@ -78,6 +90,9 @@ make test                 # unit, integration, and regression tests
 make fetch-upstream       # cache the read-only canonical repository
 make reproduce-baseline  # execute and record the pinned benchmark
 make validate-claims      # validate the claim ledger
+make audit-program-memory # validate durable discussion routing
+make audit-publication-infrastructure # validate publication and naming policy
+make release-readiness    # validate the null-safe nonrelease manifest
 make foundations          # build/validate the companion note
 make dd001                # run the registered DD-001 baseline configuration
 make dd001-signatures     # run the registered DD-001A signature audit

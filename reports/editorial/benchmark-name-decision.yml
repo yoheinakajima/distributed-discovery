@@ -1,0 +1,39 @@
+schema_version: 1
+decision_date: "2026-07-23"
+decision: owner-name-decision-required
+current_internal_name: DiscoveryBench
+current_public_repository_name: DiscoveryBench
+external_scholarly_name: null
+historical_alias: DiscoveryBench
+rename_implemented: false
+partial_rename_permitted: false
+fatal_collision:
+  candidate: DiscoveryBench
+  finding: established-iclr-2025-benchmark-and-software-ecosystem
+ranked_shortlist:
+  - {name: ActionPortfolioBench, score: 91}
+  - {name: SearchPortfolioBench, score: 86}
+  - {name: EvidenceToActionBench, score: 84}
+  - {name: DiscoveryArchitectureBench, score: 82}
+automatic_selection_check:
+  top_score_meets_85: true
+  top_has_no_fatal_collision: true
+  lead_over_second: 5
+  required_lead: 8
+  unresolved_ambiguity: true
+  passes: false
+blocked_action: first-external-benchmark-scholarly-release
+exact_owner_action_required: Select and legally/scholarly clear an external public benchmark name, then record it in external_scholarly_name and change decision only in a dedicated compatibility-preserving rename change.
+compatibility_if_later_renamed:
+  preserve:
+    - DD-010
+    - claim IDs
+    - run IDs
+    - immutable evidence paths
+    - schema version IDs
+    - existing routes through redirect or stable alias
+    - CLI compatibility
+  mark_discoverybench_as: historical/internal alias
+next_gate: Owner benchmark public-name decision
+next_command_after_owner_decision: make audit-publication-infrastructure
+next_file: reports/editorial/benchmark-name-decision.yml

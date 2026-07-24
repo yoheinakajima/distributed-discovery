@@ -9,8 +9,8 @@ records:
     download: https://github.com/yoheinakajima/shared-discovery-paradox/blob/5025cc8e8f2f8ca015dff2066f08f81ad5715a51/paper/The_Shared_Discovery_Paradox.pdf
     scientific_status: valid-with-scope
     editorial_status: active
-    publication_status: canonical-published
-    lifecycle_class: canonical-published
+    publication_status: canonical-public-anchor
+    lifecycle_class: canonical-public-anchor
     primary_theorem_family: canonical-entry
     primary_paper_claims: [DD-C-0003, DD-C-0004, DD-C-0005, DD-C-0006, DD-C-0007, DD-C-0008]
     mandatory_counterboundaries: [atomic model and declared protocols, upstream citation says working paper, no DOI submission acceptance journal or peer-review evidence]

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Distributed Discovery release evidence manifest",
+  "type": "object",
+  "required": [
+    "schema_version", "manifest_kind", "release_status", "compendium_version",
+    "tag", "source_revision", "github_release_url", "version_doi",
+    "concept_doi", "generated_utc", "inventory", "artifacts"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "manifest_kind": {"enum": ["example", "dry-run", "release"]},
+    "release_status": {"enum": ["template-only", "dry-run-only", "published"]},
+    "compendium_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "tag": {"type": ["string", "null"], "pattern": "^dd-compendium-v[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "source_revision": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"},
+    "github_release_url": {"type": ["string", "null"], "format": "uri"},
+    "version_doi": {"type": ["string", "null"]},
+    "concept_doi": {"type": ["string", "null"]},
+    "generated_utc": {"type": ["string", "null"], "format": "date-time"},
+    "inventory": {
+      "type": "object",
+      "required": ["claims", "maximum_claim_id", "studies", "maximum_study_id", "manifests", "passing_manifests"],
+      "properties": {
+        "claims": {"type": "integer", "minimum": 0},
+        "maximum_claim_id": {"type": ["string", "null"], "pattern": "^DD-C-[0-9]{4}$"},
+        "studies": {"type": "integer", "minimum": 0},
+        "maximum_study_id": {"type": ["string", "null"], "pattern": "^DD-[0-9]{3}$"},
+        "manifests": {"type": "integer", "minimum": 0},
+        "passing_manifests": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["paper_id", "pdf_path", "pdf_sha256", "page_count", "source_bundle", "source_sha256"],
+        "properties": {
+          "paper_id": {"type": "string"},
+          "pdf_path": {"type": "string"},
+          "pdf_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "page_count": {"type": "integer", "minimum": 1},
+          "source_bundle": {"type": "string"},
+          "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

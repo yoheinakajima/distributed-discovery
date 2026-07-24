@@ -913,12 +913,16 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
 
     papers = (output / "publications.html").read_text(encoding="utf-8")
     assert "<h1>Papers</h1>" in papers
-    assert "Canonical published anchor" in papers
+    assert "Canonical public anchor" in papers
     assert "Flagship working papers" in papers
     assert "Research notes and syntheses" in papers
+    assert "Stable citation and dependencies" in papers
+    assert "No project release, DOI, or arXiv identifier exists yet" in papers
     assert "There are currently no historical lifecycle items" in papers
     assert "SHA-256" in papers
     assert "Technical details" in papers
+    dependencies = json.loads((output / "data/paper-dependencies.json").read_text())
+    assert len(dependencies["edges"]) == 12
 
     benchmark_overview = (output / "benchmark.html").read_text(encoding="utf-8")
     assert "Compare search strategies" in benchmark_overview

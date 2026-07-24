@@ -1,0 +1,12 @@
+schema_version: 1
+status: internal-checklist
+criteria:
+  - {id: reusable-objects, complete: false, evidence: [docs/theorem-spine.md], gap: General domain and comparison objects are not fixed.}
+  - {id: bridge-theorems, complete: false, evidence: [DD-C-0092], gap: No general centralized/decentralized bridge theorem.}
+  - {id: structural-classifications, complete: false, evidence: [DD-C-0097, DD-C-0109], gap: Existing classifications remain bounded or selection-specific.}
+  - {id: algorithms, complete: false, evidence: [src/distributed_discovery], gap: Exact implementations are not yet reusable algorithm theorems.}
+  - {id: complexity, complete: false, evidence: [], gap: No frozen input model or complexity classification.}
+  - {id: classical-overlap, complete: false, evidence: [reports/roadmap-consolidation/decision-log.md], gap: Boundaries exist case-by-case rather than as a complete map.}
+  - {id: claim-grade-agent-evidence, complete: false, evidence: [], gap: No sealed claim-grade Agents v1 campaign exists.}
+activation_allowed: false
+next_review_triggers: [claim-grade-agents-v1-complete, first-stable-compendium-release, explicit-owner-theorem-reopen]

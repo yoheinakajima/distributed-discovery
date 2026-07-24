@@ -26,7 +26,7 @@ def audit() -> dict[str, Any]:
     records = source["records"]
     by_id = {record["paper_id"]: record for record in records}
     assert len(by_id) == len(records)
-    canonical = [r for r in records if r["lifecycle_class"] == "canonical-published"]
+    canonical = [r for r in records if r["lifecycle_class"] == "canonical-public-anchor"]
     assert len(canonical) == 1
     anchor = canonical[0]
     assert anchor["paper_id"] == "shared-discovery-paradox"

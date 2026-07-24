@@ -10,7 +10,7 @@ authoritative even when paper boundaries later change.
 
 ## Four layers
 
-1. **Canonical published anchor — *The Shared Discovery Paradox*.** The atomic
+1. **Canonical public anchor — *The Shared Discovery Paradox*.** The atomic
    introduction to the separation between information aggregation and action
    allocation. Its canonical upstream repository remains read-only here. This
    owner-declared lifecycle class means the canonical public anchor, while the
