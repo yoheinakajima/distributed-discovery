@@ -1,20 +1,30 @@
 # Benchmark public-name decision
 
-Decision: **`owner-name-decision-required`**.
+Decision date: 2026-07-23.
+Decision: **`treasurebench-selected-and-implemented`**.
 
-ActionPortfolioBench leads the deterministic score at 91, followed by
-SearchPortfolioBench at 86. Although the leader clears the 85-point floor and
-has no exact-name collision found, its five-point lead is below the required
-eight points and the audit cannot remove scholarly or legal ambiguity.
-Automatic selection therefore fails.
+The owner selected **TreasureBench** as the formal public suite and
+**Treasure Hunt** as its playable companion. The canonical subtitle is
+“TreasureBench: a benchmark for collective search under shared and private
+evidence.” The required formal keywords are collective search, multi-agent,
+benchmark, and shared.
 
-No rename is implemented. `DiscoveryBench` remains the historical/internal and
-current repository display name so the tree is coherent, but it is blocked for
-the first external benchmark scholarly artifact because of the fatal ICLR 2025
-collision. DD-010, claims, runs, paths, schemas, routes, and CLI behavior are
-unchanged.
+The previous ranked shortlist is historical decision input and is superseded by
+this owner decision; it is not an active ranking exercise. The dated bounded
+TreasureBench audit found no disqualifying exact same-domain scholarly,
+AI-benchmark, multi-agent-system, package, or active high-confusion product
+collision in the declared channels. This is not a claim of global uniqueness,
+legal or trademark clearance, namespace ownership, exhaustive search, or
+guaranteed future availability.
 
-The owner must select and clear an external public name, record it in
-`benchmark-name-decision.yml`, and authorize a dedicated compatibility-
-preserving rename. Until then, a partial rename or public release is
-prohibited.
+`DiscoveryBench` remains the historical/internal compatibility alias and the
+correct token in frozen identifiers and dated evidence. DD-010, claims, runs,
+paths, schemas, protocols, metrics, and benchmark content versions remain
+unchanged. The migration is forward-only, and every old route and command must
+remain usable.
+
+Treasure Hunt is the interactive companion, not a separate benchmark or peer
+brand. Its launch is accepted only with the machine-enforced two-way
+TreasureBench funnel. No package is published, no namespace is reserved, and no
+paper, scientific study, claim, run, release, DOI, arXiv record, or legal
+conclusion is created.

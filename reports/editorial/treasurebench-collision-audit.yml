@@ -1,0 +1,134 @@
+schema_version: 1
+audit_date: "2026-07-23"
+completed_at_utc: "2026-07-24T02:17:58Z"
+formal_name: TreasureBench
+spaced_variant: Treasure Bench
+companion_name: Treasure Hunt
+scope: bounded-public-exact-name-collision-screen
+decision: treasurebench-selected-and-implemented
+evidence_scoped_claim: >-
+  As of the recorded audit date, no disqualifying same-domain scholarly,
+  AI-benchmark, multi-agent-system, package, or active high-confusion product
+  collision for the exact name TreasureBench was found in the declared search
+  channels.
+queries:
+  - TreasureBench
+  - '"Treasure Bench"'
+  - treasurebench
+  - TreasureBench benchmark
+  - TreasureBench AI
+  - TreasureBench multi-agent
+  - TreasureBench software
+  - TreasureBench package
+  - TreasureBench game
+  - Treasure Hunt benchmark
+  - Treasure Hunt multi-agent
+channels:
+  - id: crossref
+    category: scholarly-exact-name
+    source: https://api.crossref.org/works?query.bibliographic=TreasureBench&rows=20
+    result: zero-results
+    severity: none
+    fatal: false
+    limitation: metadata-index-only
+  - id: dblp
+    category: scholarly-exact-name
+    source: https://dblp.org/search/publ/api?q=TreasureBench&format=json&h=20
+    result: zero-results
+    severity: none
+    fatal: false
+    limitation: indexed-computer-science-publications-only
+  - id: openalex
+    category: scholarly-exact-name
+    source: https://api.openalex.org/works?search=TreasureBench&per-page=20
+    result: zero-results
+    severity: none
+    fatal: false
+    limitation: metadata-and-indexed-full-text-only
+  - id: arxiv
+    category: scholarly-exact-name
+    source: https://arxiv.org/search/?query=TreasureBench&searchtype=all
+    result: no-exact-indexed-result
+    severity: none
+    fatal: false
+    limitation: export-api-did-not-return-machine-readable-response
+  - id: official-proceedings
+    category: scholarly-exact-name
+    source: public-web-exact-site-search
+    result: no-exact-result
+    severity: none
+    fatal: false
+    limitation: bounded-indexed-search
+  - id: github-repositories
+    category: repository
+    source: https://github.com/search?q=TreasureBench&type=repositories
+    result: zero-results
+    severity: none
+    fatal: false
+    limitation: repository-name-and-description-search
+  - id: github-users
+    category: exact-string-account-handle-residue
+    source: https://github.com/search?q=treasurebench&type=users
+    result: zero-results
+    severity: none
+    fatal: false
+    limitation: code-search-required-authentication-and-was-not-used
+  - id: pypi
+    category: package
+    source: https://pypi.org/pypi/treasurebench/json
+    result: http-404
+    severity: none
+    fatal: false
+    limitation: transient-registry-observation
+  - id: npm
+    category: package
+    source: https://registry.npmjs.org/treasurebench
+    result: http-404
+    severity: none
+    fatal: false
+    limitation: transient-registry-observation
+  - id: hugging-face
+    category: package-and-artifact
+    source: https://huggingface.co/api/models?search=treasurebench
+    result: no-model-dataset-or-space-result
+    severity: none
+    fatal: false
+    limitation: collections-filter-not-reliable
+  - id: general-product
+    category: adjacent-software-product
+    source: public-web-exact-string-search
+    result: no-exact-formal-token-product
+    severity: none
+    fatal: false
+    limitation: indexed-public-web-only
+  - id: spaced-phrase-residue
+    category: game-consumer-use
+    source: https://www.1800flowerscrfirstave.flowerama.com/memory/treasure-bench/
+    result: unrelated-memorial-furniture-product
+    severity: tier-3
+    fatal: false
+    limitation: spaced-phrase-not-formal-token
+  - id: domains
+    category: domain
+    source: RDAP
+    result: com-org-ai-dev-object-not-found
+    severity: none
+    fatal: false
+    limitation: nonauthoritative-transient-observation
+  - id: preliminary-trademark-register
+    category: trademark-posture-observed-nonlegal-signal
+    source: official-domain-indexed-search
+    result: no-exact-indexed-result
+    severity: uncertain
+    fatal: false
+    limitation: interactive-register-coverage-not-exhaustive
+adjacency:
+  term: Treasure Hunt
+  finding: established-consumer-and-technical-navigation-benchmark-vocabulary
+  formal_name_collision: false
+  required_control: companion-only-with-mandatory-funnel-and-literature-boundary
+legal_clearance: false
+global_uniqueness_claimed: false
+namespace_reserved: false
+package_published: false
+partial_rename_permitted: false

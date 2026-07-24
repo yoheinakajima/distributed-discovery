@@ -1,0 +1,93 @@
+schema_version: 1
+decision: treasurebench-selected-and-implemented
+decision_date: "2026-07-23"
+authority: editorial-naming-and-compatibility-only
+program:
+  name: Distributed Discovery
+  canonical_result: The Shared Discovery Paradox
+formal_suite:
+  name: TreasureBench
+  role: formal-instrument
+  subtitle: "TreasureBench: a benchmark for collective search under shared and private evidence."
+  keywords:
+    - collective search
+    - multi-agent
+    - benchmark
+    - shared
+companion:
+  name: Treasure Hunt
+  role: interactive-companion
+  required_attribution: The playable companion to the TreasureBench suite.
+  separate_benchmark: false
+historical_alias:
+  name: DiscoveryBench
+  uses:
+    - frozen-identifiers
+    - immutable-paths
+    - historical-records
+    - compatibility-commands
+    - compatibility-routes
+fixture:
+  preferred_terms:
+    - the sixteen-box model
+    - the sixteen-box game
+  proprietary_name: null
+funnel:
+  required: true
+  companion_links_formal_suite: true
+  formal_suite_links_companion_in_opening: true
+  readme_first_section_pairs_names: true
+  announcement_first_mention_pairs_names: true
+  structured_roles_required: true
+theme:
+  allowed:
+    - playable-guide
+    - companion-task-narratives
+    - explanatory-cards
+    - local-one-bit-illustrations
+    - restrained-nonauthoritative-cli-flavor
+    - public-educational-copy
+  prohibited:
+    - scientific-claim-statements
+    - theorem-statements
+    - formal-metric-names
+    - formal-schema-field-names
+    - claim-ids
+    - run-ids
+    - frozen-protocol-ids
+    - statistical-estimands
+    - exact-comparators
+    - evidence-status
+    - paper-mathematical-prose
+    - immutable-evidence
+continuity:
+  rename_direction: forward-only
+  preserve_dd_010: true
+  preserve_claim_ids: true
+  preserve_run_ids: true
+  preserve_result_paths: true
+  preserve_frozen_schema_ids: true
+  preserve_protocol_ids: true
+  preserve_metric_ids: true
+  preserve_content_versions: true
+  preserve_old_routes: true
+  preserve_old_commands: true
+package:
+  root_distribution: distributed-discovery
+  rename_root_distribution: false
+  standalone_package_published: false
+version_transition:
+  create_version_for_rebrand_only: false
+  next_nonfrozen_version_may_adopt_treasurebench: true
+vernacular_option:
+  status: evidence-dependent
+  trigger: owner-provided sustained third-party usage evidence
+  accepted_evidence:
+    - independent-citations
+    - forks
+    - third-party-documentation
+    - posts
+    - package-references
+  automated_monitoring: false
+legal_clearance: false
+global_uniqueness_claimed: false
