@@ -30,8 +30,10 @@ Baseline audit completed at `2026-07-24T15:52:58Z`.
   `8775baf89579a7eac8e7c911f5b1f794b89606d0`;
 - forward-only private reauthorization-binding repair commit:
   `99dbfb8f54bde2ed239bb1ef9e75a81115024845`;
+- quarantined closeout decision repair commit:
+  `0c82c367ffd63ebcaea5a1a2f0837af6c33601e9`;
 - current frozen execution-tree hash:
-  `sha256:5bb0d48fd9280b69df5df38362d0aa015fb8584aa34ab20b178c6cf0465cfe63`;
+  `sha256:81c3b51688dc2b61b225b989b81fbd922cbfe4c5059c171aa19499e7024e8757`;
 - open substantive pull requests before branch creation: none;
 - unrelated open issue #32: settings-only and not a blocker;
 - release: annotated `dd-compendium-v0.1.0`, GitHub Release and Zenodo record
@@ -283,18 +285,19 @@ statements never enter Git.
 24. M24 roadmap/site reconciliation.
 25. M25 validation, merge, Pages, live acceptance, issue closeout, main sync.
 
-Execute sequentially. M0-M17 are complete. M18 stopped fail-closed before
-dispatching the next call when the prompt compiler treated the generic phrase
-`threshold discovery` in a peer-authored visible message as a leaked
-scientific title. The partial private batch, append-only ledger, encrypted
-responses, and encrypted traces remain preserved outside Git. No output lock
-or unsealing occurred. The first boundary repair was authorized at clean
-checkpoint `d7cd687`; M14 passed again, but a no-call private-identity preflight
-then correctly rejected the preserved custody because the runtime had no
-mechanism to bind a later authorized repair checkpoint without replacing the
-original identity. The forward-only reauthorization-binding repair is
-committed and pushed. M14 must now be repeated against a fresh authorization
-for the clean checkpoint containing both repairs before M18 may resume.
+Execute sequentially. M0-M18 are complete. After the peer-message and
+forward-only binding repairs were separately authorized, M14 passed, the
+immutable original custody identity transitioned exactly once through the
+hash-chained access log, and M18 resumed only missing work. The fixed batch
+completed with 3,037 attempts, 3,035 successes, and the two previously
+preserved Anthropic errors. No output lock or unsealing occurred.
+
+The post-M18 audit then found that the frozen verifier would hard-code
+base-campaign registration readiness despite provider failures and protocol
+errors. Before provider-phase closure or output lock, execution stopped. The
+decision repair now maps this batch to the predeclared
+`sealed-pilot-quarantined-provider-failure` outcome. It is committed and
+pushed; M14 must be repeated against a fresh authorization before M19.
 
 ## Progress checklist
 
@@ -319,9 +322,10 @@ for the clean checkpoint containing both repairs before M18 may resume.
 - [x] M15 public exact-route canaries.
 - [x] M16 real private custody and public commitments.
 - [x] M17 private 10% prefix gate.
-- [ ] M18 complete fixed batch (**partial batch preserved; fresh authorization
-  required for the clean checkpoint containing repair commit `99dbfb8`**).
-- [ ] M19-M25 remaining Phase B milestones.
+- [x] M18 complete fixed batch.
+- [ ] M19 output lock (**fresh authorization required for the clean checkpoint
+  containing decision repair commit `0c82c36`**).
+- [ ] M20-M25 remaining Phase B milestones.
 
 ## Discoveries and surprises
 
@@ -390,6 +394,25 @@ for the clean checkpoint containing both repairs before M18 may resume.
   identity must remain exact, and the access log is part of the output lock.
   All 387 repository tests, MyPy across 183 sources, 76/76 corruption checks,
   pilot verification, and the 500-run synthetic rehearsal pass.
+- The authorization for clean checkpoint `ef30cb3` passed M14. The immutable
+  original execution identity remained byte-exact; one authorized
+  Git-descendant transition was recorded in the hash-chained access log,
+  replayed idempotently, and verified present in the future output-lock
+  inventory. No call was added during the transition.
+- M18 then resumed from 2,687 attempts without duplicating a successful call
+  and completed all 450 remaining fixed-batch runs. Final provider-phase
+  totals before lock are 3,037 attempts, 3,035 successes, two Anthropic errors
+  (`transient-provider` and `schema-or-parameter`), 2,004,503 input tokens,
+  392,889 output tokens, and USD 11.5702435 total cost (OpenAI USD 4.1798125;
+  Anthropic USD 7.390431). Method disagreement and contamination counts are
+  zero; reconstructed protocol errors are two.
+- The post-M18 decision audit found that the frozen summary builder hard-coded
+  the ready outcome. That would falsely promote a batch with preserved
+  provider failures. The repair derives status and decision from Method,
+  contamination, provider, and protocol findings in strict quarantine order;
+  this batch must close as `sealed-pilot-quarantined-provider-failure`. All
+  392 repository tests, MyPy across 183 sources, 76/76 corruption checks,
+  pilot verification, and the 500-run synthetic rehearsal pass.
 
 ## Decision log
 
@@ -436,6 +459,19 @@ for the clean checkpoint containing both repairs before M18 may resume.
   replacement tree hash
   `sha256:5bb0d48fd9280b69df5df38362d0aa015fb8584aa34ab20b178c6cf0465cfe63`.
   The authorization for `d7cd687` is no longer valid.
+- `2026-07-24`: accept the recreated owner authorization for execution commit
+  `ef30cb327fd562acd1529de130a7c3b4fb1dc064` and tree hash
+  `sha256:5bb0d48fd9280b69df5df38362d0aa015fb8584aa34ab20b178c6cf0465cfe63`;
+  pass M14, record and verify the forward-only custody transition, and resume
+  M18 only from missing ledger work.
+- `2026-07-24`: complete M18 at 3,037 attempts and USD 11.5702435, with two
+  preserved provider errors, zero contamination, and zero Method
+  disagreement. Stop before output lock after detecting the hard-coded ready
+  decision.
+- `2026-07-24`: commit and push execution-sensitive decision repair
+  `0c82c36`; freeze replacement tree hash
+  `sha256:81c3b51688dc2b61b225b989b81fbd922cbfe4c5059c171aa19499e7024e8757`.
+  The authorization for `ef30cb3` is no longer valid.
 
 ## Validation strategy
 
@@ -463,12 +499,12 @@ freeze, draft PR, and—if authorized—public commitments and redacted closeout
 
 ## Blockers
 
-Phase A has none. Phase B is paused during M18 until a fresh matching
+Phase A has none. Phase B is paused before M19 until a fresh matching
 non-synthetic local owner authorization exists for the final pushed clean
-checkpoint containing repair commit `99dbfb8` and execution-tree hash
-`sha256:5bb0d48fd9280b69df5df38362d0aa015fb8584aa34ab20b178c6cf0465cfe63`.
-The partial batch is intentionally preserved outside Git and must resume from
-its append-only ledger without duplicating a successful paid call.
+checkpoint containing decision repair commit `0c82c36` and execution-tree hash
+`sha256:81c3b51688dc2b61b225b989b81fbd922cbfe4c5059c171aa19499e7024e8757`.
+The completed provider phase remains open only because output locking has not
+yet occurred; no further provider call is required or permitted.
 
 ## Recovery and restart instructions
 
@@ -483,13 +519,13 @@ its append-only ledger without duplicating a successful paid call.
 
 ## Outcome and retrospective
 
-Phase A and M14-M17 completed. The public canaries, real encrypted custody, and
-predeclared private prefix gate passed. M18 remains incomplete at a safe,
-resumable fail-closed boundary with 2,687 paid attempts and USD 9.7703065
-cumulative cost. A subsequent authorized resume made no provider call because
-the private identity preflight stopped before credential loading. The private
-outputs remain sealed; no output lock, unsealing, Method A/Method B final
-verification, detailed public performance report, or scientific result exists.
+Phase A and M14-M18 completed. The public canaries, real encrypted custody,
+predeclared prefix gate, forward-only custody transition, and fixed batch
+completed. The provider ledger is preserved at 3,037 attempts and USD
+11.5702435. The final decision is necessarily quarantined-provider-failure,
+not base-campaign registration ready. The private outputs remain sealed; no
+output lock, unsealing, final Method A/Method B verification, detailed public
+performance report, or scientific result exists.
 
 The exact next action is for the owner to run the supplied helper against this
 branch and its final pushed clean checkpoint commit, then resume the same
