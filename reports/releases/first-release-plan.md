@@ -1,5 +1,13 @@
 # First compendium release plan
 
+Offline preparation update (2026-07-24): issue #183 and PR #184 implement the
+content registry, deterministic builder, independent verifier, seven-paper
+bundle, checksums, citation asset, notes, inactive authorization schema,
+validation-only CI, and nonexecuting external command plan. Two fixed-input
+builds are byte-identical. This is not the release: owner authorization and
+licensing attestations, annotated-tag creation, GitHub Release execution,
+verified Zenodo ingestion, and observed identifier recording remain pending.
+
 Candidate version: `0.1.0`. Candidate tag form:
 `dd-compendium-v0.1.0`. Neither is an existing release or authorization.
 

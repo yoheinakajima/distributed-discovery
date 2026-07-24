@@ -1,4 +1,20 @@
-# Final handoff — TreasureBench naming and Treasure Hunt companion
+# Final handoff — Compendium v0.1.0 offline candidate
+
+## Current release-preparation continuation (2026-07-24)
+
+Issue #183 and draft PR #184 prepare Compendium v0.1.0 offline. The content
+registry, deterministic five-asset builder, independent verifier, 132-member
+seven-paper bundle, authorization schema, CFF correction, release notes,
+external plan, Make targets, and validation-only CI are implemented. A fixed
+double build is byte-identical. Claims, studies, runs, verified results, paper
+sources, and the seven PDFs/119-page invariant are unchanged.
+
+No tag, GitHub Release, Zenodo action, DOI, provider call, private benchmark
+material, submission, package publication, or upstream mutation occurred. The
+exact next gate is owner-authorized Compendium v0.1.0 external publication and
+Zenodo verification.
+
+## Prior TreasureBench naming handoff
 
 Issue #180 and PR #181 own the compatibility-preserving public naming
 migration. TreasureBench is the formal suite, Treasure Hunt is the interactive

@@ -1,11 +1,16 @@
 # Zenodo owner activation checklist
 
+The offline v0.1.0 toolchain is ready for validation, but this checklist is
+inactive until the owner supplies a real schema-valid authorization and
+licensing attestations. Synthetic fixtures never authorize release mode.
+
 Status: **pending owner action; no integration is enabled by this record**.
 
 - [ ] Confirm repository licensing and every unresolved item in the artifact
   license matrix.
 - [ ] Confirm the intended compendium version and immutable tag.
-- [ ] Run `make release-readiness`, `make verify`, `make papers`, and
+- [ ] Run `make compendium-release-readiness VERSION=0.1.0`,
+  `make release-readiness`, `make verify`, `make papers`, and
   `make site` from a clean candidate commit.
 - [ ] Confirm the release manifest exactly matches the candidate commit,
   PDFs, source bundles, claims, studies, runs, and checksums.

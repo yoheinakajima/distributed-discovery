@@ -212,7 +212,7 @@ records:
     last_reviewed: "2026-07-23"
   - idea_id: PM-0012
     title: Zenodo and stable release readiness
-    status: routed
+    status: implemented
     capture_classification: capture-now
     visibility: public
     source_type: owner-decision
@@ -220,15 +220,15 @@ records:
     proposition: Prepare versioned release and Zenodo infrastructure without enabling integration or minting identifiers.
     why_it_matters: Stable evidence citations need an immutable release architecture before activation.
     canonical_destination: {type: release-record, path: docs/releases/zenodo-release-policy.md}
-    dependencies: [CITATION.cff, LICENSE]
+    dependencies: [CITATION.cff, LICENSE, docs/releases/compendium-v0.1.0-content.yml]
     promotion_trigger: Owner activates Zenodo and authorizes the first tagged compendium release.
     permitted_stops: [implemented, deferred, rejected, superseded]
-    not_a_result_boundaries: [no release tag deposit DOI or integration exists]
+    not_a_result_boundaries: [offline tooling only; no release tag deposit DOI or integration exists]
     supersedes: []
     superseded_by: null
     review_after: first-compendium-release
     owner_decision: adopted
-    last_reviewed: "2026-07-23"
+    last_reviewed: "2026-07-24"
   - idea_id: PM-0013
     title: Benchmark external rename requirement
     status: implemented

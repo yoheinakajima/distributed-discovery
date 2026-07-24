@@ -312,11 +312,17 @@ real owner-authorization validation.
 - **M9 — GitHub Release and Zenodo nonexecuting plan: complete.**
 - **M10 — Release-candidate Make and validation-only CI: complete.** Focused
   acceptance passes 10 tests.
-- **M11 — Double-build acceptance: active.**
-- **M12 — Release-readiness reconciliation: pending.**
-- **M13 — Public-safe static-site status: pending.**
+- **M11 — Double-build acceptance: complete.** Five asset hashes and all bytes
+  match across two timed builds; both independent verifier runs pass.
+- **M12 — Release-readiness reconciliation: complete.** Release audits,
+  roadmap, state, handoff, project status, master plan, result index, licensing,
+  and PM-0012 now record the offline/external boundary.
+- **M13 — Public-safe static-site status: complete.** The site remains at 89
+  pages and five primary navigation links. Desktop and 390-pixel checks pass
+  containment, focus, reduced motion, clean console, no forms, and no external
+  runtime scripts or false release/DOI/Zenodo statement.
 - **M14 — Full validation, PR merge, Pages, issue closeout, synchronized
-  main, and repeated discussion delta: pending.**
+  main, and repeated discussion delta: active.**
 
 Exactly one milestone is active at a time. Update this section after every
 material decision, failure, correction, or completed gate.
@@ -335,8 +341,8 @@ material decision, failure, correction, or completed gate.
 - [x] Complete the opening discussion and decision delta audit.
 - [x] Create the release issue and one task branch.
 - [x] Complete M1-M10 implementation and focused tests.
-- [ ] Complete and record the M11 byte-for-byte double build.
-- [ ] Reconcile M12-M13 documentation and public-safe status.
+- [x] Complete and record the M11 byte-for-byte double build.
+- [x] Reconcile M12-M13 documentation and public-safe status.
 - [ ] Run M14 full local and remote acceptance.
 
 ## Discoveries and surprises
@@ -354,7 +360,10 @@ material decision, failure, correction, or completed gate.
 - The paper lifecycle uses the currently accepted 21-page values for the three
   20-page-era papers, giving the exact live 119-page total.
 - `results/index.md` is stale at 49/46 even though all manifest validation and
-  current-facing status records establish 51/48.
+  current-facing status records establish 51/48; M12 corrects the index.
+- `make papers` passed all seven builds but refreshed two Information Sharing
+  Frontier provenance commit fields. Those two fields were restored to their
+  starting bytes because this task forbids paper/provenance changes.
 
 ## Decision log
 
@@ -362,6 +371,9 @@ material decision, failure, correction, or completed gate.
   branch after confirming no competing substantive pull request.
 - `2026-07-24T06:00:00Z`: freeze the paper archive at 132 members: 131 tracked
   declared files plus one generated machine-readable inventory.
+- `2026-07-24T06:01:09Z`: accept the public site at desktop and 390 pixels
+  after verifying zero overflow, zero console warnings/errors, zero forms,
+  zero external runtime scripts, visible focus, and no false release state.
 - `2026-07-24T05:36:08Z`: use the synchronized exact starting SHA rather than
   an inferred future release commit.
 - `2026-07-24T05:36:08Z`: treat the five named untracked duplicates as
@@ -452,8 +464,21 @@ rechecked before merge and after synchronized-main closeout.
 
 ## Artifacts produced
 
-At M0: this living ExecPlan and the ignored local site build used only for
-baseline inventory. No generated release asset is committed.
+No generated release asset is committed. The ignored dry-run output contains
+exactly the five named assets. Acceptance records:
+
+- `make verify`: 365 tests, Ruff, strict MyPy over 181 source files, 110 claims,
+  all 51 run manifests, every editorial/program-memory/publication/naming
+  audit, and the compendium builder/verifier pass.
+- `make papers`: seven PDFs pass at 12, 14, 4, 21, 21, 21, and 26 pages with
+  the exact baseline hashes; the paper tree has no diff.
+- `make site`: 89 pages and 26 studies; the generated report retains 110 JSON
+  files, 221 files, 18 Labs, 23 downloads, and five primary navigation items.
+- Browser acceptance: desktop 1280 and mobile 390 containment pass; focus,
+  reduced motion, landmarks, publications, TreasureBench/Treasure Hunt funnel,
+  absence of false release/DOI/Zenodo text, and clean console pass.
+- The claims, studies, verified-results tree, and upstream lock have no diff
+  from starting `main`.
 
 ## Blockers
 

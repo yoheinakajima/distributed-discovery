@@ -1,5 +1,21 @@
 # Master execution plan
 
+## Active continuation — Compendium v0.1.0 offline preparation (2026-07-24)
+
+Issue #183, draft PR #184, and branch
+`release/compendium-v0.1.0-preparation` own the sole substantive lane from main
+`ec29be1bd632e11dedf02ea18ab14b817fcc8074`. The living ExecPlan is
+[`FIRST_COMPENDIUM_RELEASE_PREPARATION.md`](FIRST_COMPENDIUM_RELEASE_PREPARATION.md).
+
+The offline content decision, deterministic five-asset builder and verifier,
+seven-paper archive, authorization schema, CFF prerelease correction, release
+notes, nonexecuting external plan, Make targets, validation-only CI, and
+byte-identical double-build acceptance are complete. This lane creates no tag,
+GitHub Release, Zenodo state, DOI, provider call, private material, scientific
+evidence, paper change, submission, package publication, or upstream mutation.
+The successor gate is owner-authorized Compendium v0.1.0 external publication
+and verified Zenodo ingestion.
+
 ## Completed continuation — TreasureBench naming and Treasure Hunt companion (2026-07-23)
 
 Issue #180, draft PR #181, and branch

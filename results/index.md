@@ -1,7 +1,7 @@
 # Result index
 
-Current inventory: 49 immutable manifests, of which 46 have passing validation
-and exit status zero. DD-020 adds one passing exact primary run without
+Current inventory: 51 immutable manifests, of which 48 have passing validation
+and exit status zero. Later validation and closeout runs are recorded without
 overwriting prior evidence.
 
 - [`baseline/`](baseline/README.md): canonical upstream reproduction artifacts.
