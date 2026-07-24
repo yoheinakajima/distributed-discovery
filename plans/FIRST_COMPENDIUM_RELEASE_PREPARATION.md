@@ -134,9 +134,14 @@ items, zero duplicate canonical records, and zero raw transcripts.
   preparation remains only in conversation; the fixed decisions below are
   routed here and will be committed with their canonical release records.
 
-Repeat this audit at issue closeout. If the offline tooling passes, update
-PM-0012's durable destinations and review date without claiming that its
-external activation trigger occurred.
+Closeout repeat (2026-07-24): the registry still has 29 records, zero
+owner-adopted unrouted items, zero duplicate canonical records, and zero raw
+transcripts. TreasureBench/Treasure Hunt remain implemented; PM-0012 now
+records the implemented offline toolchain while its external trigger remains
+unsatisfied; PM-0024 licensing attestations remain pending; Common-Source Trap
+remains the first freeze candidate; the sealed Agents v1 pilot remains queued;
+and the benchmark-paper trigger remains unsatisfied. No new conversation-only
+owner decision or external authority was found.
 
 ## Source-of-truth boundary
 
@@ -374,6 +379,9 @@ material decision, failure, correction, or completed gate.
 - `2026-07-24T06:01:09Z`: accept the public site at desktop and 390 pixels
   after verifying zero overflow, zero console warnings/errors, zero forms,
   zero external runtime scripts, visible focus, and no false release state.
+- `2026-07-24T06:10:00Z`: replace the impossible pre-ingest Zenodo metadata
+  attestation with a required post-ingest verification commitment. Synthetic
+  fixtures remain unable to authorize release mode.
 - `2026-07-24T05:36:08Z`: use the synchronized exact starting SHA rather than
   an inferred future release commit.
 - `2026-07-24T05:36:08Z`: treat the five named untracked duplicates as
