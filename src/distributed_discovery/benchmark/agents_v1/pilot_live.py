@@ -604,6 +604,24 @@ def _public_totals(ledger: AppendOnlyLedger) -> Mapping[str, object]:
     }
 
 
+def _final_engineering_decision(
+    *,
+    method_disagreements: int,
+    contamination_findings: int,
+    protocol_errors: int,
+    provider_error_counts: Mapping[str, int],
+) -> tuple[str, str]:
+    if method_disagreements:
+        return "quarantined", "sealed-pilot-quarantined-method-disagreement"
+    if contamination_findings:
+        return "quarantined", "sealed-pilot-quarantined-contamination"
+    if any(count > 0 for count in provider_error_counts.values()):
+        return "quarantined", "sealed-pilot-quarantined-provider-failure"
+    if protocol_errors:
+        return "quarantined", "sealed-pilot-quarantined-protocol-failure"
+    return "pass", "sealed-pilot-complete-base-campaign-registration-ready"
+
+
 def _require_public_record(repo: Path, relative: Path, expected: Mapping[str, object]) -> None:
     path = repo / relative
     if not path.is_file() or path.is_symlink():
@@ -833,10 +851,25 @@ def _execute_stage(
         )
         for provider in PROVIDERS
     }
+    method_disagreements = int(str(prefix_verification["method_disagreements"])) + int(
+        str(full_verification["method_disagreements"])
+    )
+    contamination_findings = int(str(prefix_verification["contamination_findings"])) + int(
+        str(full_verification["contamination_findings"])
+    )
+    protocol_errors = int(str(prefix_verification["protocol_errors"])) + int(
+        str(full_verification["protocol_errors"])
+    )
+    status, decision = _final_engineering_decision(
+        method_disagreements=method_disagreements,
+        contamination_findings=contamination_findings,
+        protocol_errors=protocol_errors,
+        provider_error_counts=provider_errors,
+    )
     summary: dict[str, object] = {
         "schema_version": "treasurebench-agents-v1-sealed-pilot-summary-v1",
-        "status": "pass",
-        "decision": "sealed-pilot-complete-base-campaign-registration-ready",
+        "status": status,
+        "decision": decision,
         "classification": "redacted-engineering-only-no-task-level-performance",
         "campaign_id": CAMPAIGN_ID,
         "batch_id": BATCH_ID,
@@ -853,12 +886,9 @@ def _execute_stage(
         "seed_commitment": custody["seed_commitment"],
         "task_ciphertext_commitment": task_sealed.ciphertext_sha256,
         "answer_ciphertext_commitment": answer_sealed.ciphertext_sha256,
-        "method_a_b_disagreements": 0,
-        "contamination_findings": 0,
-        "protocol_errors": (
-            int(str(prefix_verification["protocol_errors"]))
-            + int(str(full_verification["protocol_errors"]))
-        ),
+        "method_a_b_disagreements": method_disagreements,
+        "contamination_findings": contamination_findings,
+        "protocol_errors": protocol_errors,
         "provider_error_counts": provider_errors,
         "usage": dict(totals),
         "retention_days": 365,

@@ -43,6 +43,7 @@ from distributed_discovery.benchmark.agents_v1.pilot import (
 )
 from distributed_discovery.benchmark.agents_v1.pilot_live import (
     _bind_private_state,
+    _final_engineering_decision,
     run_mock_pilot,
 )
 from distributed_discovery.benchmark.agents_v1.prompts import compile_prompt
@@ -167,6 +168,70 @@ def test_private_state_rejects_non_forward_reauthorization(tmp_path: Path) -> No
     atomic_private_write(root / "execution-identity.json", canonical_json(original) + b"\n")
     with pytest.raises(PermissionError, match="forward-only"):
         _bind_private_state(REPO, root, authorization)
+
+
+@pytest.mark.parametrize(
+    (
+        "method_disagreements",
+        "contamination_findings",
+        "protocol_errors",
+        "provider_errors",
+        "expected",
+    ),
+    (
+        (
+            0,
+            0,
+            0,
+            {"OpenAI": 0, "Anthropic": 0},
+            ("pass", "sealed-pilot-complete-base-campaign-registration-ready"),
+        ),
+        (
+            0,
+            0,
+            2,
+            {"OpenAI": 0, "Anthropic": 2},
+            ("quarantined", "sealed-pilot-quarantined-provider-failure"),
+        ),
+        (
+            0,
+            0,
+            1,
+            {"OpenAI": 0, "Anthropic": 0},
+            ("quarantined", "sealed-pilot-quarantined-protocol-failure"),
+        ),
+        (
+            0,
+            1,
+            0,
+            {"OpenAI": 0, "Anthropic": 0},
+            ("quarantined", "sealed-pilot-quarantined-contamination"),
+        ),
+        (
+            1,
+            0,
+            0,
+            {"OpenAI": 0, "Anthropic": 0},
+            ("quarantined", "sealed-pilot-quarantined-method-disagreement"),
+        ),
+    ),
+)
+def test_final_engineering_decision_never_promotes_failed_batch(
+    method_disagreements: int,
+    contamination_findings: int,
+    protocol_errors: int,
+    provider_errors: dict[str, int],
+    expected: tuple[str, str],
+) -> None:
+    assert (
+        _final_engineering_decision(
+            method_disagreements=method_disagreements,
+            contamination_findings=contamination_findings,
+            protocol_errors=protocol_errors,
+            provider_error_counts=provider_errors,
+        )
+        == expected
+    )
 
 
 def test_atomic_private_write_refuses_symlink(tmp_path: Path) -> None:
