@@ -15,6 +15,12 @@ unchanged; old routes and commands remain usable; the root distribution remains
 submission, private material, provider call, or paper edit exists. The exact
 next gate is the first tagged compendium release and Zenodo activation.
 
+PR #181 squash-merged as
+`5c407a86019414f90ec46be748ecb515a5a16a6f`; issue #180 closed. Branch CI
+`30064747703`, branch paper/site `30064747706`, post-merge CI `30065051273`,
+and Pages `30065051274` passed. The live canonical, compatibility, companion,
+JSON, funnel, and seven-PDF hash checks pass.
+
 Date: 2026-07-23 (America/Los_Angeles).
 
 Issue #178 owns a documentation, governance, editorial-infrastructure, and

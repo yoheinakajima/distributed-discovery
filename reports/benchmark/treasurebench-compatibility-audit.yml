@@ -1,7 +1,10 @@
 schema_version: 1
 audit_date: "2026-07-23"
-status: local-full-and-browser-gates-pass-ci-and-live-pending
+status: pass
 starting_main: b242e31680237538e26bae543fdac5db459b0857
+primary_merge_sha: 5c407a86019414f90ec46be748ecb515a5a16a6f
+issue: 180
+pull_request: 181
 formal_suite: TreasureBench
 historical_alias: DiscoveryBench
 scientific_inventory:
@@ -59,8 +62,20 @@ browser_verification:
   mobile_viewport: 390x844
   console_errors: 0
   document_overflow: false
-ci_verification: pending
-pages_verification: pending
+ci_verification:
+  status: pass
+  branch_ci: 30064747703
+  branch_paper_site: 30064747706
+  post_merge_ci: 30065051273
+pages_verification:
+  status: pass
+  post_merge_pages: 30065051274
+  canonical_routes_http_200: 7
+  historical_routes_http_200: 7
+  treasure_hunt_http_200: true
+  canonical_json_http_200: true
+  historical_json_http_200: true
+  live_pdf_hashes: pass
 external_actions:
   provider_calls: 0
   private_material_created: false

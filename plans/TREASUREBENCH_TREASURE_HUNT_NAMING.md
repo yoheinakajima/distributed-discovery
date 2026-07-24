@@ -295,7 +295,7 @@ All reservation statuses remain `not-performed`.
 - [x] M14: reconcile null-safe release/citation/publication metadata.
 - [x] M15: complete the historical compatibility audit.
 - [x] M16: complete site/public integration.
-- [ ] M17: validate, push, ready, merge, verify Pages/live routes, close the
+- [x] M17: validate, push, ready, merge, verify Pages/live routes, close the
   issue, and synchronize `main`.
 
 Focused acceptance currently passes the naming/schema, frozen-ID, old/new CLI,
@@ -400,9 +400,12 @@ Baseline paper hashes:
 - Information Sharing Frontier:
   `a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13`
 
-The final validation must reproduce 119 pages and exact hashes, unchanged Git
-trees for claims, studies, verified results, papers, and DD-010, zero provider
-calls, zero private material, and the untouched preservation set.
+Final validation reproduced 119 pages and exact hashes. Claims, verified
+results, and papers have no naming-migration diff. DD-010 retains its ID,
+directory, frozen schema bytes, protocol/metric/task IDs, and immutable
+evidence; only current display prose changed. Provider calls and private
+material created by this milestone remain zero, and the preservation set is
+untouched.
 
 ## Recovery
 
@@ -415,7 +418,28 @@ immutable evidence or force-push.
 
 ## Outcome and retrospective
 
-Pending. Normal completion requires a passing collision decision, implemented
-formal/companion hierarchy, complete two-way funnel, preserved frozen
-identifiers and historical interfaces, unchanged scientific/paper artifacts,
-passing CI and Pages, a closed issue, and synchronized `main`.
+Completed with decision `treasurebench-selected-and-implemented`.
+
+- Issue #180 closed through squash-merged PR #181.
+- Primary merge SHA:
+  `5c407a86019414f90ec46be748ecb515a5a16a6f`.
+- Branch CI `30064747703` and paper/site build `30064747706` passed.
+- Post-merge CI `30065051273` and Pages `30065051274` passed.
+- All seven canonical TreasureBench pages, all seven historical benchmark
+  pages, the Treasure Hunt page, canonical and historical JSON, and the alias
+  registry returned live HTTP 200.
+- The live funnel, historical canonical metadata, all five companion modules,
+  no-JavaScript fallback, and all seven deployed PDF hashes passed.
+- Local acceptance passed 355 tests, 181 typed source files, 110 claims, 51
+  manifests, 89 HTML pages, 110 public JSON files, 221 generated site files,
+  18 registered Labs, 23 downloads, and five primary-navigation items.
+
+The migration achieved the formal/playable family without creating a new
+scientific object or rewriting history. The main implementation lesson is that
+display identity, frozen identifiers, and public route identity must be tested
+as separate layers. The exact owner action is to accept or reject the bounded
+nonlegal collision risk and reserve desired owner-controlled namespaces before
+publication. The exact next repository gate is the first tagged compendium
+release and Zenodo activation. The exact next command is
+`git status --short --branch`; the exact next file is
+`plans/FIRST_COMPENDIUM_RELEASE.md`, which does not yet exist.
