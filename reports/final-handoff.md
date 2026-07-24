@@ -1,4 +1,29 @@
-# Final handoff — DiscoveryBench Agents v1 evaluation registration
+# Final handoff — program memory and preprint infrastructure
+
+Issue #178 and draft PR #179 own the documentation/governance continuation.
+M1–M16 are complete; full local acceptance passes 350 tests, 110 claims, all
+51 manifests, the three new audit targets, the seven exact PDFs/119-page
+invariant, an 81-page/98-JSON site build, and desktop/390-pixel browser checks.
+No paper source, bibliography, figure, table, validation, visual-QA record, or
+PDF differs from the starting baseline.
+
+The durable decisions are preprint-first/journal-deferred publication,
+immutable load-bearing citations, self-contained submissions, Common-Source
+Trap as the first internal freeze candidate, Foundations as a site/release
+note rather than current arXiv candidate, `canonical-public-anchor` lifecycle
+wording, and prepared-but-inactive release/Zenodo infrastructure.
+`DiscoveryBench` has a fatal external collision. The naming decision is
+`owner-name-decision-required`; no partial rename occurs and DD-010, claims,
+runs, routes, schemas, and CLI behavior are preserved.
+
+The exact next gate is **Owner benchmark public-name decision**. The owner must
+select and scholarly/legally clear an external name, then update
+`reports/editorial/benchmark-name-decision.yml` in a separately reviewed,
+compatibility-preserving change. No provider call, credential read, private
+material, cost, study, claim, run, paper edit, submission, tag, release,
+Zenodo activation, DOI, journal contact, or upstream mutation occurred.
+
+## Prior evaluation-registration handoff
 
 Current continuation (2026-07-23): issue #173 registers the evaluation ladder
 without executing it. The selected next tier is a sealed 50-task engineering

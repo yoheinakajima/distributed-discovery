@@ -56,6 +56,7 @@ def test_release_manifest_is_a_deterministic_nonrelease() -> None:
         "artifacts": 7,
         "pages": 119,
         "external_identifiers": None,
+        "git_tags": 0,
     }
 
 

@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import subprocess
 from pathlib import Path
 from typing import Any
 
@@ -59,11 +60,20 @@ def audit() -> dict[str, Any]:
     assert cff["license"] == "MIT"
     assert "doi" not in cff
     assert not (ROOT / ".zenodo.json").exists()
+    tags = subprocess.run(
+        ["git", "tag", "--list"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.splitlines()
+    assert not tags
     return {
         "manifest": "dry-run-only",
         "artifacts": len(dry_run["artifacts"]),
         "pages": sum(item["page_count"] for item in dry_run["artifacts"]),
         "external_identifiers": None,
+        "git_tags": 0,
     }
 
 

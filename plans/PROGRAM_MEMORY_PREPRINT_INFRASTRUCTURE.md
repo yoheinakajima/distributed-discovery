@@ -335,8 +335,22 @@ Read `AGENTS.md`, `.agent/PLANS.md`, `plans/MASTER_EXEC_PLAN.md`,
 keeping exactly one active milestone. Do not run provider or registered study
 targets, read credentials, edit paper sources, or create external releases.
 
+## CLOSEOUT DISCUSSION AND DECISION DELTA AUDIT
+
+The pre-merge closeout repeat finds no newly due evidence-dependent item:
+claim-grade Agents v1, Reliable Discovery, a stable release, a paper freeze,
+and the journal-track triggers have not occurred. Every decision created by
+this milestone is routed to a policy or decision record. PM-0013 remains
+owner-adopted and routed to
+`reports/editorial/benchmark-name-decision.yml`; its
+`owner-public-name-decision` review trigger has not fired. No discussion item
+remains only in chat, no scientific status is promoted, and no raw transcript
+is stored. Issue closeout will repeat this result with final CI/Pages evidence.
+
 ## Outcome and retrospective
 
-Pending. Close only after all M1-M17 acceptance criteria pass, the issue is
-closed, Pages/live routes are verified, preservation is confirmed, and local
-`main` is synchronized.
+M1–M16 are complete. Local M17 acceptance passes 350 tests, 110 claims, 51
+manifests, all three new audits, seven exact PDFs totaling 119 pages, an
+81-page/98-JSON site build, and desktop/390-pixel browser QA. Draft PR #179
+owns the remaining branch CI, paper/site workflow, merge, Pages/live routes,
+issue closeout, preservation confirmation, and synchronized-main steps.

@@ -2,8 +2,8 @@
 
 ## Active continuation — program memory and preprint infrastructure (2026-07-23)
 
-Issue #178 and branch `docs/program-memory-preprint-infrastructure` own the
-sole substantive lane from clean main
+Issue #178, draft PR #179, and branch
+`docs/program-memory-preprint-infrastructure` own the sole substantive lane from clean main
 `f1dd894ca5e50e1df0605fdcac4edab97bfbd258`. The living ExecPlan is
 [`PROGRAM_MEMORY_PREPRINT_INFRASTRUCTURE.md`](PROGRAM_MEMORY_PREPRINT_INFRASTRUCTURE.md).
 

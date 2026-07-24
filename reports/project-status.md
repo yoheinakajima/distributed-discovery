@@ -87,11 +87,11 @@ claim changed, and no research configuration was rerun.
 | Claims | 110 |
 | Immutable manifests | 51 |
 | Passing immutable runs | 48 |
-| Tests | 274 |
+| Tests | 350 |
 | Validated project papers | 7 |
 | Paper pages | 119 |
 | Public HTML routes | 81 locally generated |
-| Public data files | 88 |
+| Public JSON files | 98 total; 91 under `data/` |
 | Labs | 18 |
 | Checksum-covered downloads | 23 |
 

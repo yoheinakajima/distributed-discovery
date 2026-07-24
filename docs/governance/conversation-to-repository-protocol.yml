@@ -43,6 +43,21 @@ visibility:
   - public
   - internal
   - restricted-reference-only
+review_triggers:
+  - after-first-stable-release
+  - after-reliable-discovery
+  - distinct-theorem-family-admission
+  - each-paper-freeze
+  - explicit-owner-decision
+  - explicit-owner-reauthorization
+  - first-compendium-release
+  - first-release-freeze
+  - journal-track-trigger
+  - new-bridge-theorem
+  - owner-public-name-decision
+  - post-claim-grade-agents-v1
+  - publication-evidence-change
+  - release-or-venue-freeze
 prohibited:
   - raw-chat-transcript
   - private-chat-url

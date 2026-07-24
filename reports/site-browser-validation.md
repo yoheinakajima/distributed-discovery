@@ -1,5 +1,22 @@
 # Research-library browser validation
 
+## Program-memory/preprint-infrastructure local QA
+
+Revalidated 2026-07-23 against the HTTP-served 81-page local build. At
+1440×900, `publications.html` has one H1, one five-link primary navigation,
+ordered headings, zero document overflow, no forms or external scripts, no
+console warnings/errors, the `Canonical public anchor` label, stable-citation
+guidance, and the paper-dependency link. The skip link enters the keyboard
+focus sequence with a visible 3-pixel solid outline.
+
+At 390×844, both `publications.html` and `benchmark.html` fit exactly within
+the 390-pixel document width, retain one H1 and five primary links, and produce
+no console warnings/errors. The benchmark continues to display DiscoveryBench
+as the unchanged historical/internal repository name and exposes none of the
+internal rename candidates. The stylesheet retains `:focus-visible` and
+`prefers-reduced-motion`; both routes have no forms or external runtime
+scripts. This is bounded browser QA, not a claim of WCAG conformance.
+
 Revalidated 2026-07-21 UTC after the public-site refresh against a local
 `site/dist` build served over HTTP. This is a bounded practical browser check,
 not a claim of WCAG conformance.

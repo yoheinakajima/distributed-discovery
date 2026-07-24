@@ -19,6 +19,7 @@ def test_program_memory_registry_routes_every_record() -> None:
     result = audit()
     assert result["records"] >= 25
     assert result["owner_adopted_unrouted"] == 0
+    assert result["duplicate_canonical_records"] == 0
     assert result["raw_transcripts"] == 0
 
 
