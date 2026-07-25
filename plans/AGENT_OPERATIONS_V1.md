@@ -129,11 +129,11 @@ audit before issue closeout.
   decision.
 - **M2 — complete:** task-contract/delta schemas, templates, and task types.
 - **M3 — complete:** acceptance profiles and bounded scoped instructions.
-- **M4 — active:** generated context and thin-prompt renderers.
-- **M5 — pending:** generic owner-gate schemas, engine, fixtures, and
+- **M4 — complete:** generated context and thin-prompt renderers.
+- **M5 — complete:** generic owner-gate schemas, engine, fixtures, and
   corruptions.
-- **M6 — pending:** typed structured handoff renderer.
-- **M7 — pending:** issue/PR templates and CI/Make integration.
+- **M6 — complete:** typed structured handoff renderer.
+- **M7 — active:** issue/PR templates and CI/Make integration.
 - **M8 — pending:** non-authoritative next-task preview and prompt compression
   acceptance.
 - **M9 — pending:** broad validation, PR review/merge, post-merge CI/Pages as
@@ -149,9 +149,9 @@ audit before issue closeout.
 - [x] Complete M1 authority documentation and ADR.
 - [x] Complete M2 schemas, templates, and task profiles.
 - [x] Complete M3 acceptance profiles and scoped instructions.
-- [ ] Complete M4 context and prompt generation.
-- [ ] Complete M5 owner-gate engine and corruptions.
-- [ ] Complete M6 handoff rendering.
+- [x] Complete M4 context and prompt generation.
+- [x] Complete M5 owner-gate engine and corruptions.
+- [x] Complete M6 handoff rendering.
 - [ ] Complete M7 templates and CI/Make integration.
 - [ ] Complete M8 next-task preview and compression checks.
 - [ ] Complete M9 validation, merge, closeout, and main synchronization.
@@ -244,6 +244,15 @@ task profiles and explicit contract-supersession rules. M3 adds seven
 acceptance profiles plus nine bounded scoped instruction files for papers,
 release records/reports, site, claims, results, studies, and TreasureBench
 Agents v1 code/records.
+
+M4 adds offline-first context plus normal/resume thin-prompt renderers under
+ignored `build/agent-ops/`, with optional GitHub observations explicitly
+labeled non-authoritative. M5 adds the manifest and authorization schemas,
+complete confirmation surface, exact challenge, branch/commit/remote/PR/tree/
+contract/cap/expiry checks, safe mode-0600 local output, prior-history
+preservation, and thirteen registered semantic corruption outcomes. M6 adds
+schema-valid YAML and sub-50-line human handoff rendering for all five
+checkpoint statuses.
 
 ## Blockers
 

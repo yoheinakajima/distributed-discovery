@@ -5,6 +5,8 @@ from __future__ import annotations
 import argparse
 import json
 
+from distributed_discovery.agent_ops.cli import configure as configure_agent_ops
+from distributed_discovery.agent_ops.cli import execute as execute_agent_ops
 from distributed_discovery.benchmark.agents_v1.cli import configure as configure_agents
 from distributed_discovery.benchmark.agents_v1.cli import execute as execute_agents
 from distributed_discovery.benchmark.cli import configure as configure_benchmark
@@ -36,6 +38,7 @@ def main() -> None:
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("bootstrap")
     commands.add_parser("validate-claims")
+    configure_agent_ops(commands.add_parser("agent-ops"))
     configure_benchmark(commands.add_parser("benchmark"))
     configure_agents(commands.add_parser("agents-v1"))
     configure_agents(commands.add_parser("treasurebench"))
@@ -45,6 +48,8 @@ def main() -> None:
         validate_repository()
     elif args.command == "validate-claims":
         validate_ledger()
+    elif args.command == "agent-ops":
+        print(json.dumps(execute_agent_ops(args), indent=2, sort_keys=True))
     elif args.command == "benchmark":
         print(json.dumps(execute_benchmark(args), indent=2, sort_keys=True))
     elif args.command in {"agents-v1", "treasurebench"}:
