@@ -207,11 +207,18 @@
     "budget": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["currency", "expected", "hard_cap", "category_caps", "cumulative_spend"],
+      "required": [
+        "currency",
+        "expected",
+        "hard_cap",
+        "category_caps",
+        "cumulative_spend"
+      ],
       "properties": {
         "currency": {"type": "string", "pattern": "^[A-Z]{3}$"},
         "expected": {"type": "string", "pattern": "^[0-9]+(\\.[0-9]+)?$"},
         "hard_cap": {"type": "string", "pattern": "^[0-9]+(\\.[0-9]+)?$"},
+        "call_cap": {"type": "integer", "minimum": 0},
         "category_caps": {
           "type": "object",
           "additionalProperties": {

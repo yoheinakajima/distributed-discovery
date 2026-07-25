@@ -125,11 +125,11 @@ audit before issue closeout.
 
 - **M0 — complete:** live audit, decision-delta audit, issue, branch, current-task
   contract, and living plan.
-- **M1 — active:** authority model, director contract, and architecture
+- **M1 — complete:** authority model, director contract, and architecture
   decision.
-- **M2 — pending:** task-contract/delta schemas, templates, and task types.
-- **M3 — pending:** acceptance profiles and bounded scoped instructions.
-- **M4 — pending:** generated context and thin-prompt renderers.
+- **M2 — complete:** task-contract/delta schemas, templates, and task types.
+- **M3 — complete:** acceptance profiles and bounded scoped instructions.
+- **M4 — active:** generated context and thin-prompt renderers.
 - **M5 — pending:** generic owner-gate schemas, engine, fixtures, and
   corruptions.
 - **M6 — pending:** typed structured handoff renderer.
@@ -146,9 +146,9 @@ audit before issue closeout.
 - [x] Inspect existing CLI, Make, CI, instructions, and preservation state.
 - [x] Complete the initial discussion and decision delta audit.
 - [x] Create issue, branch, current-task contract, and M0 commit.
-- [ ] Complete M1 authority documentation and ADR.
-- [ ] Complete M2 schemas, templates, and task profiles.
-- [ ] Complete M3 acceptance profiles and scoped instructions.
+- [x] Complete M1 authority documentation and ADR.
+- [x] Complete M2 schemas, templates, and task profiles.
+- [x] Complete M3 acceptance profiles and scoped instructions.
 - [ ] Complete M4 context and prompt generation.
 - [ ] Complete M5 owner-gate engine and corruptions.
 - [ ] Complete M6 handoff rendering.
@@ -168,6 +168,11 @@ audit before issue closeout.
 - Existing owner authorization helpers are task-specific. Agent Operations
   adds a generic engine prospectively without rewriting their historical
   evidence.
+- The bounded root plus nine scoped instruction files total 9,113 bytes, well
+  below the documented 32-KiB aggregate common-task ceiling.
+- The GitHub draft PR allocated number #195 after contract registration. The
+  fixed contract retains `pull_request: null`; PR #195 is a dynamic observation
+  rendered in context and handoffs rather than an in-place authority edit.
 
 ## Decision log
 
@@ -232,6 +237,13 @@ M0 adds issue #194, branch `infra/agent-operations-v1`, the typed current-task
 contract, task-contract and task-delta schema/template skeletons, and focused
 schema-validation tests. The focused test gate passed two tests and
 `git diff --check`.
+
+M1 adds the workflow authority model, director contract and replacement
+bootstrap, ADR, and routed PM-0032 program-memory record. M2 adds seven typed
+task profiles and explicit contract-supersession rules. M3 adds seven
+acceptance profiles plus nine bounded scoped instruction files for papers,
+release records/reports, site, claims, results, studies, and TreasureBench
+Agents v1 code/records.
 
 ## Blockers
 

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Distributed Discovery Agent Operations acceptance profiles",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "authority", "profiles"],
+  "properties": {
+    "schema_version": {"const": "agent-ops-acceptance-profiles-v1"},
+    "authority": {"const": "validation-defaults-only-never-permission"},
+    "profiles": {
+      "type": "object",
+      "required": [
+        "infrastructure",
+        "docs-editorial",
+        "site",
+        "scientific-registration",
+        "scientific-execution",
+        "private-evaluation",
+        "release"
+      ],
+      "additionalProperties": {"$ref": "#/$defs/profile"}
+    }
+  },
+  "$defs": {
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["description", "make_targets", "invariants", "task_specific_required"],
+      "properties": {
+        "description": {"type": "string", "minLength": 8},
+        "make_targets": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"}
+        },
+        "invariants": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 3}
+        },
+        "task_specific_required": {"type": "boolean"}
+      }
+    }
+  }
+}

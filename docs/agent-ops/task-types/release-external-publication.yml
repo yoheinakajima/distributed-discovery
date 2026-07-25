@@ -1,0 +1,26 @@
+schema_version: agent-ops-task-type-v1
+task_type: release-external-publication
+authority: defaults-only-task-contract-and-owner-gates-control
+profile_grants_authority: false
+default_authority_references:
+  - AGENTS.md
+  - docs/publication-architecture.md
+  - docs/releases/releases.yml
+  - docs/licensing/artifact-license-matrix.yml
+default_non_goals:
+  - scientific evidence or paper-status promotion by release metadata
+  - unverified external identifiers
+  - package namespace or submission action outside the contract
+required_gates:
+  - deterministic-offline-candidate
+  - licensing-and-owner-attestation
+  - exact-commit-owner-authorization
+  - post-publication-identifier-and-asset-verification
+allowed_scientific_mutations: []
+allowed_external_actions: [authorized-release-publication, authorized-archival-deposit]
+default_acceptance_profile: release
+checkpoint_types: [offline-candidate, owner-gate, publication, completion]
+closeout_requirements:
+  - verify exact source assets identifiers and DOI roles
+  - record external observations only after direct verification
+  - preserve scientific and paper lifecycle boundaries

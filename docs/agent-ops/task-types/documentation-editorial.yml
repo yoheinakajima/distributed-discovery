@@ -1,0 +1,25 @@
+schema_version: agent-ops-task-type-v1
+task_type: documentation-editorial
+authority: defaults-only-task-contract-and-owner-gates-control
+profile_grants_authority: false
+default_authority_references:
+  - AGENTS.md
+  - docs/repository-contract.md
+  - docs/research-governance.md
+  - docs/paper-lifecycle.yml
+default_non_goals:
+  - new scientific evidence or proof promotion
+  - submission release or DOI action
+  - private material
+required_gates:
+  - discussion-and-decision-delta-audit
+  - claim-and-paper-ownership-audit
+  - deterministic-document-validation
+allowed_scientific_mutations: [surface-existing-claim-with-canonical-citation]
+allowed_external_actions: [github-issue-pr-ci-merge]
+default_acceptance_profile: docs-editorial
+checkpoint_types: [editorial-decision, artifact-validation, completion]
+closeout_requirements:
+  - verify claim ownership and lifecycle labels
+  - preserve exact generated artifacts or explain intended changes
+  - record no-submission boundary

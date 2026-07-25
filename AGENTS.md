@@ -32,3 +32,11 @@ Use a living ExecPlan for substantial work. Execute registered milestones sequen
 - Make small milestone commits on task branches. Do not force-push, rewrite shared history, commit secrets, deploy outside the authorized Pages workflow, or modify/push to canonical upstream. Releases and DOI publication require explicit future approval.
 
 Detailed policies live in `docs/`; do not duplicate them here.
+
+## Agent Operations
+
+For a newly registered task, read `docs/agent-ops/README.md`, the committed
+task contract, its living ExecPlan, and every scoped `AGENTS.md` selected by
+the task paths. The task contract fixes authority; the ExecPlan records mutable
+state. Generated context, prompts, gates, and handoffs do not create scientific
+authority.

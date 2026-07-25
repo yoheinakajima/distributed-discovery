@@ -1,0 +1,26 @@
+schema_version: agent-ops-task-type-v1
+task_type: private-evaluation
+authority: defaults-only-task-contract-and-owner-gates-control
+profile_grants_authority: false
+default_authority_references:
+  - AGENTS.md
+  - docs/repository-contract.md
+  - docs/agent-ops/README.md
+  - task-specific-custody-policy
+default_non_goals:
+  - public disclosure of private task trace metric or ranking data
+  - scientific claim without a separate claim-grade gate
+  - reuse of quarantined or reserved identities
+required_gates:
+  - private-custody-registration
+  - exact-commit-owner-authorization
+  - spend-and-route-cap-verification
+  - output-lock-and-post-lock-verification
+allowed_scientific_mutations: [engineering-only-private-evaluation-record]
+allowed_external_actions: [authorized-provider-calls, authorized-bounded-spend]
+default_acceptance_profile: private-evaluation
+checkpoint_types: [pre-private-access, pre-spend, output-lock, redaction, completion]
+closeout_requirements:
+  - reconcile calls spend and custody exactly
+  - verify private-state immutability or declared append-only changes
+  - publish only separately authorized redacted aggregates

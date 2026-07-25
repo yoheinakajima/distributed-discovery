@@ -1,0 +1,25 @@
+schema_version: agent-ops-task-type-v1
+task_type: scientific-registration
+authority: defaults-only-task-contract-and-owner-gates-control
+profile_grants_authority: false
+default_authority_references:
+  - AGENTS.md
+  - docs/research-governance.md
+  - docs/reproducibility.md
+  - docs/claim-status-policy.md
+default_non_goals:
+  - execute a primary configuration
+  - create or promote a result claim
+  - incur spend or access private data without a later gate
+required_gates:
+  - study-id-and-overlap-audit
+  - bounded-resource-and-independent-verification-plan
+  - corruption-and-stop-plan
+allowed_scientific_mutations: [register-study-or-versioned-instrument]
+allowed_external_actions: [github-issue-pr-ci-merge]
+default_acceptance_profile: scientific-registration
+checkpoint_types: [registration-freeze, pre-run-readiness, completion]
+closeout_requirements:
+  - prove no primary execution occurred
+  - update study registry status and roadmap
+  - name the separately authorized execution gate

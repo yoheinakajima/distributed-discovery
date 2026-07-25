@@ -38,6 +38,7 @@ budget:
   currency: USD
   expected: "0"
   hard_cap: "0"
+  call_cap: 0
   category_caps: {}
   cumulative_spend: "0"
 expected_outcomes: [A validated bounded task artifact.]

@@ -1,0 +1,24 @@
+schema_version: agent-ops-task-type-v1
+task_type: site-integration
+authority: defaults-only-task-contract-and-owner-gates-control
+profile_grants_authority: false
+default_authority_references:
+  - AGENTS.md
+  - site/AGENTS.md
+  - docs/repository-contract.md
+default_non_goals:
+  - recompute or reinterpret scientific results
+  - tracking telemetry or private content
+  - change canonical upstream
+required_gates:
+  - source-data-provenance
+  - local-site-and-browser-acceptance
+  - pages-and-live-route-verification-if-deployed
+allowed_scientific_mutations: [present-existing-validated-evidence]
+allowed_external_actions: [github-issue-pr-ci-merge, authorized-pages-deployment]
+default_acceptance_profile: site
+checkpoint_types: [source-freeze, local-qa, deployment, completion]
+closeout_requirements:
+  - verify links accessibility and no-javascript fallback
+  - verify live routes and source checksums when deployed
+  - record no-scientific-change boundary

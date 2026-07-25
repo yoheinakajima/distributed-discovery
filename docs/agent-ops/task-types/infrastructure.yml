@@ -1,0 +1,25 @@
+schema_version: agent-ops-task-type-v1
+task_type: infrastructure
+authority: defaults-only-task-contract-and-owner-gates-control
+profile_grants_authority: false
+default_authority_references:
+  - AGENTS.md
+  - docs/repository-contract.md
+  - docs/agent-ops/README.md
+default_non_goals:
+  - scientific evidence or claim mutation
+  - private-state access or provider execution
+  - release publication
+required_gates:
+  - discussion-and-decision-delta-audit
+  - issue-contract-execplan-branch
+  - focused-tests-before-draft-pr
+  - full-profile-before-merge
+allowed_scientific_mutations: []
+allowed_external_actions: [github-issue-pr-ci-merge]
+default_acceptance_profile: infrastructure
+checkpoint_types: [contract-freeze, draft-pr, validation, completion]
+closeout_requirements:
+  - repeat delta audit
+  - verify unchanged scientific and private state
+  - record merge CI issue closure and synchronized main

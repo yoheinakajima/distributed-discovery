@@ -590,3 +590,22 @@ records:
     review_after: post-claim-grade-agents-v1
     owner_decision: adopted
     last_reviewed: "2026-07-25"
+  - idea_id: PM-0032
+    title: Repository-native Agent Operations
+    status: implemented
+    capture_classification: capture-now
+    visibility: public
+    source_type: owner-decision
+    captured_date: "2026-07-25"
+    proposition: Future substantive work uses short task-specific deltas with persistent scoped instructions a fixed typed task contract a living ExecPlan generated context reusable acceptance profiles generic owner gates and typed handoffs.
+    why_it_matters: Durable repository authority replaces repeated policy-heavy prompts and makes checkpoints resumable and mechanically auditable.
+    canonical_destination: {type: ADR, path: docs/adr/ADR-AGENT-OPERATIONS-V1.md}
+    dependencies: [docs/repository-contract.md, docs/governance/conversation-to-repository-protocol.md]
+    promotion_trigger: null
+    permitted_stops: [implemented, superseded]
+    not_a_result_boundaries: [workflow infrastructure only, no scientific private provider release or fresh-pilot authority]
+    supersedes: []
+    superseded_by: null
+    review_after: explicit-owner-decision
+    owner_decision: adopted
+    last_reviewed: "2026-07-25"
