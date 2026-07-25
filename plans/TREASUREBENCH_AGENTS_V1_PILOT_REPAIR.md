@@ -396,6 +396,21 @@ Exactly one milestone is active.
   exposes only aggregate protocol counts and error classes. Program memory
   validates at 31 records with no unrouted owner-adopted item, 34 focused
   site/diagnostic tests pass, and the 89-page/26-study site build passes.
+- 2026-07-25T02:57:00Z — the first full validation attempt reached 427 of 430
+  passing tests; three synthetic sealed-pilot tests correctly refused because
+  the new repair commits were not yet present on the remote branch. No
+  scientific, private, or provider operation occurred. The reviewed commits
+  were pushed to satisfy that remote-checkpoint invariant rather than
+  weakening it.
+- 2026-07-25T03:03:00Z — full acceptance passed after the remote checkpoint:
+  Ruff formatting and lint, strict MyPy over 185 source files, all 430 tests,
+  110 claims, 51 run manifests, all repository/governance/publication/
+  benchmark audits, 31 program-memory records, and the seven-paper/119-page
+  release dry run. `make papers` passed all seven PDFs and `make site` passed
+  89 pages across 26 studies. Paper provenance files mechanically refreshed by
+  the build were restored to their committed bytes. The five unrelated
+  preservation hashes remain exact; 26 studies, 110 claims, 51 manifests with
+  48 passing, no DD-023, and no DD-C-0111 remain unchanged.
 
 ## Discoveries and surprises
 
@@ -496,6 +511,10 @@ the original batch for a replacement.
 
 ## Outcome
 
-Pending. Phase A ends at an owner diagnostic-authorization checkpoint. Normal
-Phase B outcomes are bounded to the owner-approved decision vocabulary and
-must remain evidence-based.
+The engineering implementation, redacted adjudication, policy, repair,
+rehearsal, options, decision, and public surfaces are complete and fully
+validated. The original pilot remains
+`sealed-pilot-quarantined-provider-failure`; the repair decision is
+`instrument-repaired-fresh-sealed-pilot-required`. M16 remains active only for
+PR #192 review/merge, ordinary Pages verification, issue #191 closure, and
+synchronized main. No fresh pilot or base campaign is authorized.
