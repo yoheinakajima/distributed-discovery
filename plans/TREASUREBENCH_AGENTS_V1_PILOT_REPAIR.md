@@ -60,7 +60,7 @@ pilot. This plan creates no scientific result.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
-The 30-record program-memory registry validates with no owner-adopted unrouted
+The 31-record program-memory registry validates with no owner-adopted unrouted
 record. The first stable compendium release and TreasureBench naming are
 implemented. Public provider calibration is implemented as engineering-only.
 The first sealed pilot is implemented and quarantined. The owner amendment to
@@ -75,7 +75,8 @@ separate and not authorized. The AI-only lab boundary is unchanged. No
 repair-relevant owner decision remains only in conversation: the
 immutable-pilot rule, expanded read-only gate, zero-call boundary,
 action-budget contract, prospective-policy requirement, and mandatory fresh
-pilot separation are all routed to this plan and the registration record.
+pilot separation are all routed to this plan, the adjudication record,
+prospective policy, and PM-0031.
 
 Items superseded by pilot closeout remain superseded; this plan does not reopen
 provider execution, custody creation, or pilot completion. Repeat this audit at
@@ -294,8 +295,8 @@ paper claims.
 - M12 — synthetic repaired rehearsal and independent verification: complete.
 - M13 — fresh-pilot options and budget: complete.
 - M14 — final repair decision: complete.
-- M15 — public-safe roadmap/site update: **active**.
-- M16 — full validation and closeout: pending.
+- M15 — public-safe roadmap/site update: complete.
+- M16 — full validation and closeout: **active**.
 
 Exactly one milestone is active.
 
@@ -389,6 +390,12 @@ Exactly one milestone is active.
   route caps USD 10 and USD 15, and call ceiling 5,200. All values require a
   current price/route re-audit and separate owner authorization; spend here
   remains zero.
+- 2026-07-25T02:46:00Z — updated the DD-010 study record, benchmark contract
+  index, current/research/theorem/master roadmaps, program memory, generated
+  TreasureBench Agents v1 page, and redacted JSON surfaces. The public site
+  exposes only aggregate protocol counts and error classes. Program memory
+  validates at 31 records with no unrouted owner-adopted item, 34 focused
+  site/diagnostic tests pass, and the 89-page/26-study site build passes.
 
 ## Discoveries and surprises
 

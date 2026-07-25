@@ -1,9 +1,11 @@
 # Research roadmap
 
 Phase 2 holds theorem-family execution. Reliable Discovery is preserved and
-deferred. DiscoveryBench Agents v1 is implemented offline under DD-010 and its
-evaluation campaign is registered but not authorized. A sealed 50-task
-engineering pilot is the next possible gate. Claim-grade base execution remains
+deferred. TreasureBench Agents v1 is implemented under DD-010. Its first
+sealed 50-task engineering pilot remains permanently quarantined; its
+read-only instrument-failure adjudication and repair are complete. A wholly
+fresh sealed repair-confirmation pilot under separate registration and owner
+authorization is the next possible gate. Claim-grade base execution remains
 blocked on local/open feasibility. Future execution must use automated
 cryptographic custody with no human custodian: committed generators, frozen
 versions, CSPRNG seeds and commitments, encrypted holdouts/answers, access

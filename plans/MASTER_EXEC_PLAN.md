@@ -1,5 +1,40 @@
 # Master execution plan
 
+## Active continuation — TreasureBench Agents v1 pilot repair adjudication (2026-07-25)
+
+Issue #191 and draft PR #192 own a bounded DD-010 engineering adjudication of
+the first sealed pilot. The exact owner-authorized read-only diagnostic ran
+from commit `6f38609d69c41efba890e6a1ab5fe6ece398c536` and diagnostic-tree hash
+`sha256:92eef223eb141a192de30e111a2eece10279127d3ce68eb41d124b5776ae1697`.
+It verified the original 3,545-object output lock, custody commitments,
+append-only logs, final encrypted audit package, and retained-state
+immutability; selected exactly two provider errors and minimum contexts; and
+inspected exactly 500 traces. No provider call, credential read, spend, new
+private generation, or retained-state write occurred.
+
+The redacted aggregate protocol finding is 137 runs with invalid final
+cardinality, 266 invalid final agent outputs including 265 over-budget
+outputs, 138 metric records affected by credited extra actions, and 57 legacy
+coverage range violations. The recovered provider-service event caused no
+terminal run. The terminal event remains exact-cause unresolved and accounts
+for one protocol-invalid run; the other original protocol error is a separate
+downstream failure. Dimension tables, record mappings, metric values,
+sensitivity calculations, and performance remain private.
+
+The instrument now enforces exactly one final action per required agent across
+the schema, prompt, parser, orchestration, both metric methods, independent
+Method C, and metric-range checks. The prospective policy permits two
+same-request transport attempts, one schema-only repair, and zero terminal
+failures, protocol-invalid runs, or incomplete pairings. The repaired 50-case
+public rehearsal rejects 28 of 28 corruptions. The final engineering decision
+is `instrument-repaired-fresh-sealed-pilot-required`.
+
+Any confirmation must use a new campaign, batch, OS-CSPRNG seed, tasks,
+answers, keys, and custody under separate registration and owner
+authorization. A full fresh 500-run option is selected with provisional USD
+15 expected cost and USD 25 hard cap, subject to a new price/route audit. No
+fresh pilot, spend, or base campaign is authorized by this continuation.
+
 ## Completed continuation — TreasureBench Agents v1 sealed engineering pilot (2026-07-24)
 
 Issue #187 and branch `benchmark/treasurebench-agents-v1-sealed-pilot` own the

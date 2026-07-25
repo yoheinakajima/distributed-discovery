@@ -571,3 +571,22 @@ records:
     review_after: release-or-venue-freeze
     owner_decision: adopted
     last_reviewed: "2026-07-24"
+  - idea_id: PM-0031
+    title: TreasureBench quarantined-pilot and fresh-identity rule
+    status: implemented
+    capture_classification: capture-now
+    visibility: public
+    source_type: owner-decision
+    captured_date: "2026-07-25"
+    proposition: The first TreasureBench Agents v1 pilot remains permanently quarantined after its repair adjudication, and any repaired evaluation must use a wholly fresh campaign batch seed tasks answers keys custody registration and authorization.
+    why_it_matters: It prevents a repaired instrument from retroactively validating or reusing a defective sealed batch and keeps engineering repair separate from scientific evidence.
+    canonical_destination: {type: decision-record, path: reports/benchmark/treasurebench-agents-v1-pilot-repair-adjudication.yml}
+    dependencies: [DD-010, PM-0014]
+    promotion_trigger: null
+    permitted_stops: [implemented, superseded]
+    not_a_result_boundaries: [engineering disposition only, no model comparison performance result claim run paper or base-campaign authority]
+    supersedes: []
+    superseded_by: null
+    review_after: post-claim-grade-agents-v1
+    owner_decision: adopted
+    last_reviewed: "2026-07-25"

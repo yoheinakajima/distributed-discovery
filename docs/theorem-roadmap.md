@@ -2,10 +2,12 @@
 
 > Phase 2 sequencing note (2026-07-23): all theorem-family execution is held.
 > Reliable Discovery is preserved as a major candidate, not queued or promised.
-> DiscoveryBench Agents v1 is implemented offline under DD-010 and its
-> evaluation campaign is registered but not authorized. A sealed engineering
-> pilot is the next possible gate; claim-grade base execution is blocked on
-> local/open feasibility. The
+> TreasureBench Agents v1 is implemented under DD-010. Its first sealed
+> engineering pilot is permanently quarantined and its redacted instrument
+> repair adjudication is complete. A wholly fresh sealed repair-confirmation
+> pilot under separate registration and owner authorization is the next
+> possible gate; claim-grade base execution is blocked on local/open
+> feasibility. The
 > three unregistered readiness gates are recorded in
 > [`reports/roadmap-consolidation/phase-2-theorem-gates.md`](../reports/roadmap-consolidation/phase-2-theorem-gates.md).
 > Their timing is governed by the nine-option staged portfolio in
