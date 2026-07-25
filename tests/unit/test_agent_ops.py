@@ -5,7 +5,11 @@ from pathlib import Path
 
 import pytest
 
-from distributed_discovery.agent_ops.core import AgentOpsError, render_prompt
+from distributed_discovery.agent_ops.core import (
+    AgentOpsError,
+    _discover_repository_root,
+    render_prompt,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -43,3 +47,18 @@ def test_fresh_pilot_preview_prompt_is_compact_and_nonexecuting(tmp_path: Path) 
 def test_task_artifacts_outside_repository_are_rejected(tmp_path: Path) -> None:
     with pytest.raises(AgentOpsError):
         render_prompt(tmp_path / "outside.yml")
+
+
+def test_repository_root_discovery_supports_installed_package(
+    tmp_path: Path,
+) -> None:
+    installed_module = (
+        tmp_path / ".venv/lib/python3.12/site-packages" / "distributed_discovery/agent_ops/core.py"
+    )
+    assert _discover_repository_root(cwd=ROOT, module_path=installed_module) == ROOT
+
+    with pytest.raises(
+        RuntimeError,
+        match="requires a Distributed Discovery repository checkout",
+    ):
+        _discover_repository_root(cwd=tmp_path, module_path=installed_module)

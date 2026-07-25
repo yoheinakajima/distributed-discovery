@@ -17,7 +17,32 @@ from typing import Any
 import jsonschema
 import yaml
 
-ROOT = Path(__file__).resolve().parents[3]
+
+def _discover_repository_root(
+    *,
+    cwd: Path | None = None,
+    module_path: Path | None = None,
+) -> Path:
+    """Find the checkout without trusting the package installation location."""
+
+    starts = (
+        (cwd or Path.cwd()).resolve(),
+        (module_path or Path(__file__)).resolve(),
+    )
+    visited: set[Path] = set()
+    for start in starts:
+        for candidate in (start, *start.parents):
+            if candidate in visited:
+                continue
+            visited.add(candidate)
+            if (candidate / "pyproject.toml").is_file() and (
+                candidate / "docs/repository-contract.md"
+            ).is_file():
+                return candidate
+    raise RuntimeError("Agent Operations requires a Distributed Discovery repository checkout")
+
+
+ROOT = _discover_repository_root()
 AGENT_OPS_DOCS = ROOT / "docs/agent-ops"
 REQUIRED_PROHIBITIONS = {
     "provider-calls-outside-manifest",
