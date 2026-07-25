@@ -82,7 +82,7 @@
       "minItems": 1,
       "items": {"type": "string", "minLength": 3}
     },
-    "permissions": {"$ref": "#/$defs/booleanMap"},
+    "permissions": {"$ref": "#/$defs/repositoryPermissions"},
     "external_action_permissions": {"$ref": "#/$defs/externalPermissions"},
     "scientific_mutation_permissions": {"$ref": "#/$defs/scientificPermissions"},
     "private_data_permissions": {"$ref": "#/$defs/privatePermissions"},
@@ -148,10 +148,23 @@
         "path": {"type": "string", "minLength": 1}
       }
     },
-    "booleanMap": {
+    "repositoryPermissions": {
       "type": "object",
-      "minProperties": 1,
-      "additionalProperties": {"type": "boolean"}
+      "additionalProperties": false,
+      "required": [
+        "repository_write",
+        "git_branch_commit",
+        "github_issue_pr",
+        "merge_after_checks",
+        "ci_pages"
+      ],
+      "properties": {
+        "repository_write": {"type": "boolean", "default": false},
+        "git_branch_commit": {"type": "boolean", "default": false},
+        "github_issue_pr": {"type": "boolean", "default": false},
+        "merge_after_checks": {"type": "boolean", "default": false},
+        "ci_pages": {"type": "boolean", "default": false}
+      }
     },
     "externalPermissions": {
       "type": "object",

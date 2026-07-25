@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+import copy
 import json
 from pathlib import Path
 
 import jsonschema
+import pytest
 import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -40,3 +42,12 @@ def test_task_delta_template_validates_and_defaults_closed() -> None:
         AGENT_OPS / "task-delta.schema.json",
     )
     assert not any(delta["permissions"].values())
+
+
+def test_task_contract_rejects_hidden_repository_permission() -> None:
+    active = yaml.safe_load((ROOT / "tasks/agent-operations-v1.yml").read_text())
+    schema = json.loads((AGENT_OPS / "task-contract.schema.json").read_text())
+    corrupted = copy.deepcopy(active)
+    corrupted["permissions"]["undeclared_external_action"] = True
+    with pytest.raises(jsonschema.ValidationError):
+        jsonschema.Draft202012Validator(schema).validate(corrupted)

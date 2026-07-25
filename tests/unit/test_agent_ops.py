@@ -3,7 +3,9 @@ from __future__ import annotations
 import importlib.util
 from pathlib import Path
 
-from distributed_discovery.agent_ops.core import render_prompt
+import pytest
+
+from distributed_discovery.agent_ops.core import AgentOpsError, render_prompt
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -36,3 +38,8 @@ def test_fresh_pilot_preview_prompt_is_compact_and_nonexecuting(tmp_path: Path) 
     assert output.stat().st_size <= 12 * 1024
     assert "do not execute" in text.lower()
     assert "no committed task contract" in text.lower()
+
+
+def test_task_artifacts_outside_repository_are_rejected(tmp_path: Path) -> None:
+    with pytest.raises(AgentOpsError):
+        render_prompt(tmp_path / "outside.yml")

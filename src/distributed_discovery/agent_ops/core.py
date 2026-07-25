@@ -128,7 +128,14 @@ def _safe_repo_path(relative: str) -> Path:
 
 def _contract_path(task_path: str | Path) -> Path:
     path = Path(task_path)
-    return path if path.is_absolute() else _safe_repo_path(path.as_posix())
+    if not path.is_absolute():
+        return _safe_repo_path(path.as_posix())
+    candidate = path.resolve()
+    try:
+        candidate.relative_to(ROOT.resolve())
+    except ValueError as error:
+        raise AgentOpsError(f"task artifact is outside repository: {path}") from error
+    return candidate
 
 
 def _git_state() -> dict[str, Any]:
@@ -686,7 +693,9 @@ def authorization_surface(gate: dict[str, Any]) -> str:
             "owner_confirmation_statements": gate["owner_confirmation_statements"],
             "explicit_prohibitions": gate["explicit_prohibitions"],
             "expires_at_utc": gate["expires_at_utc"],
+            "authorization_output_symbolic_path": gate["authorization_output_symbolic_path"],
             "next_milestone": gate["next_milestone"],
+            "generated_resume_message": gate["generated_resume_message"],
         },
         sort_keys=False,
     )

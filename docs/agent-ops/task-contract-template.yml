@@ -19,6 +19,7 @@ permissions:
   git_branch_commit: false
   github_issue_pr: false
   merge_after_checks: false
+  ci_pages: false
 external_action_permissions:
   network_observation: false
   github_mutation: false
