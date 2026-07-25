@@ -1,0 +1,45 @@
+schema_version: agent-ops-task-delta-v1
+kind: task-delta
+status: candidate-next-task-not-registered
+task_type: private-evaluation
+title: TreasureBench Agents v1 fresh sealed repair-confirmation pilot
+objective: Run a wholly fresh repaired 50-task and 500-run sealed engineering pilot only after separate registration current price and route audit and exact owner authorization.
+owner_decisions:
+  - The selected candidate is the full fresh 50-task 500-run repair-confirmation option.
+  - Every campaign batch seed task answer key key and custody object must be new.
+  - Original pilot future-base and base-campaign instances may not be reused.
+authority_references:
+  - reports/benchmark/treasurebench-agents-v1-fresh-pilot-options.yml
+  - reports/benchmark/treasurebench-agents-v1-pilot-repair-adjudication.yml
+  - plans/TREASUREBENCH_AGENTS_V1_PILOT_REPAIR.md
+permissions:
+  repository_write: false
+  github_mutation: false
+  scientific_mutation: false
+  private_data: false
+  provider_calls: false
+  spend: false
+  issue_branch_execution_registration: false
+budget:
+  currency: USD
+  expected_cost_provisional: "15"
+  proposed_hard_cap: "25"
+  proposed_provider_caps: {OpenAI: "10", Anthropic: "15"}
+  current_price_route_audit_required: true
+expected_outcomes:
+  - A separately registered owner-authorized engineering repair-confirmation pilot.
+  - Exact call cost custody output-lock verification and public-safe redacted closeout.
+non_goals:
+  - No DD-023 claim scientific run paper or base-campaign authority.
+  - No issue branch execution authorization provider call spend private generation or custody is created here.
+  - No reuse of original pilot future-base or base-campaign identities.
+frozen_identifiers:
+  owner_study: DD-010
+  original_decision: sealed-pilot-quarantined-provider-failure
+  repair_decision: instrument-repaired-fresh-sealed-pilot-required
+next_gate: TreasureBench Agents v1 fresh sealed repair-confirmation pilot registration
+expected_input: reports/agent-ops/next-task-treasurebench-fresh-pilot.yml
+notes:
+  - New campaign batch OS-CSPRNG seed tasks answers keys and custody are required.
+  - Current provider route capability and price observations must be re-audited.
+  - Owner authorization must bind the exact commit contract hashes caps and resume milestone.

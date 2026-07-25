@@ -133,10 +133,10 @@ audit before issue closeout.
 - **M5 — complete:** generic owner-gate schemas, engine, fixtures, and
   corruptions.
 - **M6 — complete:** typed structured handoff renderer.
-- **M7 — active:** issue/PR templates and CI/Make integration.
-- **M8 — pending:** non-authoritative next-task preview and prompt compression
+- **M7 — complete:** issue/PR templates and CI/Make integration.
+- **M8 — complete:** non-authoritative next-task preview and prompt compression
   acceptance.
-- **M9 — pending:** broad validation, PR review/merge, post-merge CI/Pages as
+- **M9 — active:** broad validation, PR review/merge, post-merge CI/Pages as
   applicable, issue closure, closeout audit, and synchronized `main`.
 
 ## Progress checklist
@@ -152,8 +152,8 @@ audit before issue closeout.
 - [x] Complete M4 context and prompt generation.
 - [x] Complete M5 owner-gate engine and corruptions.
 - [x] Complete M6 handoff rendering.
-- [ ] Complete M7 templates and CI/Make integration.
-- [ ] Complete M8 next-task preview and compression checks.
+- [x] Complete M7 templates and CI/Make integration.
+- [x] Complete M8 next-task preview and compression checks.
 - [ ] Complete M9 validation, merge, closeout, and main synchronization.
 
 ## Discoveries and surprises
@@ -173,6 +173,10 @@ audit before issue closeout.
 - The GitHub draft PR allocated number #195 after contract registration. The
   fixed contract retains `pull_request: null`; PR #195 is a dynamic observation
   rendered in context and handoffs rather than an in-place authority edit.
+- A direct `uv run --no-editable pytest` omitted the repository `src` path and
+  loaded the previously installed package, so initial Agent Operations test
+  collection failed. The Make-equivalent `PYTHONPATH="$PWD/src"` run passed all
+  four focused tests; repository Make targets already export `src`.
 
 ## Decision log
 
@@ -253,6 +257,13 @@ contract/cap/expiry checks, safe mode-0600 local output, prior-history
 preservation, and thirteen registered semantic corruption outcomes. M6 adds
 schema-valid YAML and sub-50-line human handoff rendering for all five
 checkpoint statuses.
+
+M7 adds Agent Operations issue/PR templates, five Make interfaces, explicit CI
+audit execution, and integration with `make verify`. M8 adds the prospective
+migration guide and a non-authoritative TreasureBench fresh-pilot task delta.
+Its rendered registration-only prompt is 13 lines and 1,047 bytes, contains no
+issue/branch/execution authority, and ends at the separately registered pilot
+gate.
 
 ## Blockers
 
