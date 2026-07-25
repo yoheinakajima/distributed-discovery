@@ -1,6 +1,6 @@
 schema_version: agents-evaluation-corruption-plan-v1
 status: registered-public-metadata-only
-instrument_corruptions_required: 24
+instrument_corruptions_required: 28
 campaign_corruptions:
   - {id: E01, mutation: activate pending authorization, rejecting_component: authorization-validator}
   - {id: E02, mutation: add one dollar to inactive total cap, rejecting_component: authorization-validator}

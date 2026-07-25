@@ -35,7 +35,7 @@ def test_offline_rehearsal_is_deterministic_and_zero_execution() -> None:
     assert first == second
     assert first["status"] == "pass"
     assert first["case_count"] == 50
-    assert first["corruptions_rejected"] == 24
+    assert first["corruptions_rejected"] == 28
     assert first["method_b_errors"] == []
     assert first["provider_calls"] == 0
     assert first["model_invocations"] == 0

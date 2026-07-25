@@ -10,6 +10,10 @@ from fractions import Fraction
 
 from distributed_discovery.benchmark.agents_v1.models import TaskInstance
 from distributed_discovery.benchmark.agents_v1.orchestration import ArchitectureRun
+from distributed_discovery.benchmark.agents_v1.protocol_contract import (
+    verify_metric_ranges,
+    verify_protocol_contract,
+)
 
 
 @dataclass(frozen=True)
@@ -44,7 +48,26 @@ def evaluate_run(
     *,
     isolated_distinct_actions: int | None = None,
 ) -> Evaluation:
-    finals = run.final_actions
+    contract = verify_protocol_contract(task, run)
+    required_agents = frozenset(task.capabilities)
+    finals_list = []
+    for agent_id in sorted(required_agents):
+        listed = [action for action in run.final_actions if action.agent_id == agent_id]
+        observed = [
+            turn.action
+            for turn in run.turns
+            if turn.action is not None and turn.action.final and turn.action.agent_id == agent_id
+        ]
+        if (
+            len(listed) == 1
+            and len(observed) == 1
+            and listed[0] == observed[0]
+            and listed[0].final
+            and len(listed[0].actions) == 1
+            and listed[0].actions[0] in task.action_vocabulary
+        ):
+            finals_list.append(listed[0])
+    finals = tuple(finals_list)
     flat = tuple(item for action in finals for item in action.actions)
     distinct = frozenset(flat)
     target = str(task.primitive_state["target"])
@@ -57,6 +80,8 @@ def evaluate_run(
     else:
         discovery = Fraction(int(target in distinct), 1)
     action_capacity = min(len(task.capabilities), len(task.action_vocabulary))
+    if action_capacity <= 0:
+        raise ValueError("declared action capacity must be positive")
     coverage = Fraction(len(distinct), action_capacity)
     duplication = Fraction(max(0, len(flat) - len(distinct)), max(1, len(flat)))
     planner = Fraction(task.baseline.planner_discovery)
@@ -82,17 +107,19 @@ def evaluate_run(
         if source_total
         else Fraction(0)
     )
-    isolated_coverage = Fraction(
-        isolated_distinct_actions if isolated_distinct_actions is not None else len(distinct),
-        action_capacity,
+    isolated_distinct = (
+        isolated_distinct_actions if isolated_distinct_actions is not None else len(distinct)
     )
+    if isolated_distinct < 0 or isolated_distinct > action_capacity:
+        raise ValueError("isolated action count exceeds declared action capacity")
+    isolated_coverage = Fraction(isolated_distinct, action_capacity)
     compression = isolated_coverage - coverage
-    invalid = len(task.capabilities) - len(finals)
+    invalid = len(task.capabilities) - len({action.agent_id for action in finals})
     calls = len(run.turns) + sum(record.retry_count for record in run.turns)
     input_tokens = sum(record.response.usage.input_tokens for record in run.turns)
     output_tokens = sum(record.response.usage.output_tokens for record in run.turns)
     cost = sum((record.response.usage.cost_usd for record in run.turns), Decimal("0"))
-    return Evaluation(
+    evaluation = Evaluation(
         group_discovery=discovery,
         distinct_action_coverage=coverage,
         duplication=duplication,
@@ -112,9 +139,13 @@ def evaluate_run(
             else None
         ),
         invalid_action_rate=Fraction(invalid, max(1, len(task.capabilities))),
-        protocol_compliance=Fraction(int(not run.protocol_errors), 1),
+        protocol_compliance=Fraction(int(contract.compliant), 1),
         calls=calls,
         input_tokens=input_tokens,
         output_tokens=output_tokens,
         cost_usd=cost,
     )
+    range_errors = verify_metric_ranges(evaluation.__dict__)
+    if range_errors:
+        raise ValueError(f"metric range invariant failed: {', '.join(range_errors)}")
+    return evaluation

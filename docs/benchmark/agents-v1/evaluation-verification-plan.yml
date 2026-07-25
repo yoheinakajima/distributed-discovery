@@ -14,3 +14,4 @@ checks:
   - {id: V10, object: multiplicity, method_b: independently apply Holm families}
   - {id: V11, object: cost, method_b: reconstruct calls, tokens, official dated prices, and caps}
   - {id: V12, object: contamination, method_b: verify every probe, quarantine, and batch-level decision}
+  - {id: V13, object: protocol-contract, method_c: independently verify final records/actions, architecture rights, message and round limits, source rights, action capacity, and metric ranges before performance interpretation}

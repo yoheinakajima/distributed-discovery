@@ -152,10 +152,10 @@ def verify_public_custody_vector(vector: dict[str, object]) -> None:
 
 
 def validate_corruptions(plan: dict[str, object]) -> None:
-    """Check the 24-entry corruption registry is complete and unique."""
+    """Check the 28-entry corruption registry is complete and unique."""
     rows = cast(list[dict[str, object]], plan["corruptions"])
-    if len(rows) < 24:
-        raise ValueError("fewer than 24 corruptions")
+    if len(rows) < 28:
+        raise ValueError("fewer than 28 corruptions")
     ids = {str(row["id"]) for row in rows}
     if len(ids) != len(rows):
         raise ValueError("duplicate corruption IDs")

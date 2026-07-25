@@ -171,7 +171,7 @@ def run_rehearsal() -> dict[str, object]:
     stable_payload["status"] = (
         "pass"
         if not method_disagreements
-        and stable_payload["corruptions_rejected"] == 24
+        and stable_payload["corruptions_rejected"] == 28
         and sandbox_rejected
         else "fail"
     )

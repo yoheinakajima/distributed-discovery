@@ -113,12 +113,27 @@ def compile_prompt(
     *,
     architecture_id: str = "unspecified-public-conformance",
     rounds_remaining: int = 2,
+    final_required: bool | None = None,
 ) -> CompiledPrompt:
     capability = task.capabilities[agent_id]
+    action_instruction = (
+        "Return exactly one action in the actions array because this is the final round."
+        if final_required is True
+        else (
+            "Return one to six proposal candidates in the actions array; these are "
+            "non-final and will not be scored."
+            if final_required is False
+            else (
+                "For a non-final round, actions are one to six proposal candidates. "
+                "For a final round, return exactly one action."
+            )
+        )
+    )
     system = (
         "Solve only the supplied finite synthetic search task. Use only the declared "
         "capabilities and visible messages. Return one schema-valid visible message and "
-        "final structured action. Do not request hidden state or hidden reasoning."
+        f"structured action. {action_instruction} Do not request hidden state or hidden "
+        "reasoning."
     )
     payload = {
         "family": FAMILY_PUBLIC_CODES[task.family_id],
@@ -135,7 +150,14 @@ def compile_prompt(
             "agent_id": agent_id,
             "visible_message": "string",
             "source_choice": list(task.source_vocabulary),
-            "actions": list(task.action_vocabulary),
+            "final": final_required,
+            "actions": {
+                "vocabulary": list(task.action_vocabulary),
+                "non_final_role": "proposal-candidates-only",
+                "non_final_count": "1-6",
+                "final_role": "scored-action",
+                "final_count": 1,
+            },
         },
     }
     public_state_text = json.dumps(dict(capability.public_state), sort_keys=True)

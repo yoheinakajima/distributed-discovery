@@ -280,13 +280,21 @@ def action_schema(request: AdapterRequest) -> dict[str, object]:
                 "type": "boolean",
                 "enum": [request.final_required],
             },
-            "visible_message": {"type": "string"},
+            "visible_message": {"type": "string", "maxLength": 1024},
             "source_choice": {
                 "type": "string",
                 "enum": list(request.source_vocabulary),
             },
             "actions": {
                 "type": "array",
+                "minItems": 1,
+                "maxItems": 1 if request.final_required else 6,
+                "uniqueItems": True,
+                "description": (
+                    "Exactly one final action."
+                    if request.final_required
+                    else "One to six explicitly non-final proposal candidates."
+                ),
                 "items": {
                     "type": "string",
                     "enum": list(request.action_vocabulary),

@@ -27,3 +27,7 @@ corruptions:
   - {id: C22, mutation: omit a required contamination probe, rejecting_component: contamination-validator, error_class: contamination-probe-suppression, purpose: leakage audit completeness}
   - {id: C23, mutation: evaluate a registry-excluded task/model pair, rejecting_component: compatibility-validator, error_class: excluded-pair-evaluated, purpose: registered scope}
   - {id: C24, mutation: add weighted aggregate score to batch result, rejecting_component: result-schema-validator, error_class: composite-score-introduced, purpose: prevent universal ranking}
+  - {id: C25, mutation: submit multiple actions in one final agent output, rejecting_component: parser-or-method-c, error_class: final-action-cardinality, purpose: enforce one final action per agent}
+  - {id: C26, mutation: submit a distinct-action coverage value above one, rejecting_component: method-c-range-verifier, error_class: metric-range, purpose: preserve proportion bounds}
+  - {id: C27, mutation: omit parser final-cardinality enforcement while retaining a multi-action final record, rejecting_component: orchestration-and-method-c, error_class: parser-defense-omission, purpose: defense in depth}
+  - {id: C28, mutation: make Method A and Method B flatten the same over-budget final list, rejecting_component: method-c, error_class: shared-semantic-defect, purpose: ensure evaluator agreement is not protocol evidence}

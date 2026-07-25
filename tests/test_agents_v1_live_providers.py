@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from dataclasses import replace
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from typing import Any
@@ -111,9 +112,16 @@ def test_action_schema_freezes_task_fields_and_vocabularies() -> None:
         "enum": [request.prompt.agent_id],
     }
     assert properties["actions"]["items"]["enum"] == list(request.action_vocabulary)
-    assert "maxLength" not in properties["visible_message"]
-    assert "minItems" not in properties["actions"]
-    assert "maxItems" not in properties["actions"]
+    assert properties["visible_message"]["maxLength"] == 1024
+    assert properties["actions"]["minItems"] == 1
+    assert properties["actions"]["maxItems"] == 1
+    assert properties["actions"]["uniqueItems"] is True
+
+    proposal_schema = action_schema(replace(request, final_required=False))
+    proposal_properties = proposal_schema["properties"]
+    assert isinstance(proposal_properties, dict)
+    assert proposal_properties["actions"]["minItems"] == 1
+    assert proposal_properties["actions"]["maxItems"] == 6
 
 
 def test_openai_payload_and_response_parser() -> None:

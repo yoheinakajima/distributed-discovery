@@ -66,6 +66,22 @@ class ArchitectureRun:
     protocol_errors: tuple[str, ...]
 
 
+def validate_orchestrated_action(
+    action: StructuredAction,
+    *,
+    final_required: bool,
+) -> tuple[str, ...]:
+    """Apply protocol-state defenses independently of parser enforcement."""
+    errors: list[str] = []
+    if action.final is not final_required:
+        errors.append("invalid-final-flag")
+    if action.final and len(action.actions) != 1:
+        errors.append("extra-action")
+    if not action.actions:
+        errors.append("missing-action")
+    return tuple(errors)
+
+
 def information_rights(
     architecture_id: str,
     agent_ids: tuple[str, ...],
@@ -160,6 +176,7 @@ def run_architecture(
                 rounds_remaining=max(
                     0, ARCHITECTURE_MESSAGE_ROUNDS[architecture_id] - round_number
                 ),
+                final_required=final_required,
             )
             request = AdapterRequest(
                 prompt=prompt,
@@ -208,6 +225,14 @@ def run_architecture(
                             validation_errors.append(str(second_error))
             if response.error_class:
                 validation_errors.append(response.error_class)
+            if action is not None:
+                orchestration_errors = validate_orchestrated_action(
+                    action,
+                    final_required=final_required,
+                )
+                if orchestration_errors:
+                    validation_errors.extend(orchestration_errors)
+                    action = None
             if action is not None:
                 if (
                     task.family_id == "common-source-acquisition"
