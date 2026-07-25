@@ -1,0 +1,100 @@
+schema_version: treasurebench-agents-v1-prospective-failure-policy-v1
+status: draft-pending-private-adjudication
+owner_study: DD-010
+effective_scope: future-fresh-pilots-and-base-campaigns-only
+original_pilot:
+  decision: sealed-pilot-quarantined-provider-failure
+  retroactive_reclassification_allowed: false
+  retroactive_rescoring_allowed: false
+principles:
+  preserve_all_attempts: true
+  no_semantic_answer_retry: true
+  no_outcome_dependent_rerun: true
+  terminal_missingness_explicit: true
+  custody_and_lock_fail_closed: true
+  thresholds_selected_to_fit_prior_outcome: false
+retry:
+  transport:
+    enabled_for_idempotent_same_request_only: true
+    maximum_attempts: null
+    eligible_classes:
+      - transport-transient-recovered
+      - transport-transient-terminal
+      - provider-service-recovered
+      - provider-service-terminal
+    backoff_contract: bounded-provider-aware
+  schema:
+    schema_only_repair_allowed: true
+    maximum_repairs: null
+    semantic_answer_change_allowed: false
+    prompt_or_task_change_allowed: false
+  terminal:
+    automatic_retry_allowed: false
+    replacement_requires_fresh_registration: true
+missingness:
+  terminal_call_creates_terminally_missing_run: true
+  missing_run_scored_as_success: false
+  conservative_score_rule: pending-private-adjudication
+  architecture_model_pairing_must_be_complete: true
+  partial_engineering_diagnostics_may_be_retained: true
+  partial_claim_grade_comparison_allowed: false
+  imputation_allowed: false
+action_budget:
+  final_action_cardinality: exactly-one-per-required-agent
+  non_final_proposal_cardinality: 1-6
+  invalid_final_output_treatment: no-action-credited-and-conservative-missingness
+  method_c_required_before_performance: true
+  metric_range_invariants_required: true
+tolerances:
+  recovered_transient_counts_as_terminal_failure: false
+  recovered_transient_readiness_disposition: null
+  terminal_failures_per_provider: null
+  terminal_failures_overall: null
+  protocol_errors_per_provider: null
+  protocol_errors_overall: null
+  incomplete_pairings_allowed: null
+  any_batch_integrity_failure_quarantines_batch: true
+  any_terminal_run_failure_quarantines_batch: null
+batch_disposition:
+  retain_successful_records_for_engineering_diagnosis: true
+  publish_partial_performance: false
+  batch_replacement_rule: pending-private-adjudication
+  provider_route_replacement_rule: pending-private-adjudication
+  fresh_identity_required_for_replacement: true
+  reuse_original_tasks_or_seed: false
+fresh_pilot_requirement:
+  required_after_instrument_repair: true
+  execution_authorized_here: false
+  repaired_instrument_frozen_before_generation: true
+  new_campaign_batch_seed_tasks_answer_keys_and_custody: true
+  reuse_first_pilot_or_future_base_instances: false
+  separate_owner_authorization_required: true
+reporting:
+  report_attempt_errors: true
+  distinguish_recovered_and_terminal: true
+  report_terminal_missingness: true
+  report_pairing_completeness: true
+  disclose_private_record_content: false
+  ranking_or_composite_from_incomplete_batch: false
+evidence_required_to_finalize:
+  - exact-two-error-private-adjudication
+  - current-official-provider-contracts
+  - exact-workload-and-pairing-purpose
+  - claim-grade-completeness-requirements
+  - custody-contamination-and-method-agreement-boundaries
+  - synthetic-regression-and-corruption-results
+  - exact-500-run-action-cardinality-adjudication
+  - method-c-contract-verification
+decision_fields_pending:
+  - retry.transport.maximum_attempts
+  - retry.schema.maximum_repairs
+  - missingness.conservative_score_rule
+  - tolerances.recovered_transient_readiness_disposition
+  - tolerances.terminal_failures_per_provider
+  - tolerances.terminal_failures_overall
+  - tolerances.protocol_errors_per_provider
+  - tolerances.protocol_errors_overall
+  - tolerances.incomplete_pairings_allowed
+  - tolerances.any_terminal_run_failure_quarantines_batch
+  - batch_disposition.batch_replacement_rule
+  - batch_disposition.provider_route_replacement_rule

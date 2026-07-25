@@ -1,0 +1,310 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TreasureBench Agents v1 prospective failure policy",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "owner_study",
+    "effective_scope",
+    "original_pilot",
+    "principles",
+    "retry",
+    "missingness",
+    "action_budget",
+    "tolerances",
+    "batch_disposition",
+    "fresh_pilot_requirement",
+    "reporting",
+    "evidence_required_to_finalize",
+    "decision_fields_pending"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "treasurebench-agents-v1-prospective-failure-policy-v1"
+    },
+    "status": {
+      "enum": ["draft-pending-private-adjudication", "prospective-final"]
+    },
+    "owner_study": {"const": "DD-010"},
+    "effective_scope": {
+      "const": "future-fresh-pilots-and-base-campaigns-only"
+    },
+    "original_pilot": {
+      "type": "object",
+      "required": [
+        "decision",
+        "retroactive_reclassification_allowed",
+        "retroactive_rescoring_allowed"
+      ],
+      "properties": {
+        "decision": {"const": "sealed-pilot-quarantined-provider-failure"},
+        "retroactive_reclassification_allowed": {"const": false},
+        "retroactive_rescoring_allowed": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "principles": {
+      "type": "object",
+      "required": [
+        "preserve_all_attempts",
+        "no_semantic_answer_retry",
+        "no_outcome_dependent_rerun",
+        "terminal_missingness_explicit",
+        "custody_and_lock_fail_closed",
+        "thresholds_selected_to_fit_prior_outcome"
+      ],
+      "properties": {
+        "preserve_all_attempts": {"const": true},
+        "no_semantic_answer_retry": {"const": true},
+        "no_outcome_dependent_rerun": {"const": true},
+        "terminal_missingness_explicit": {"const": true},
+        "custody_and_lock_fail_closed": {"const": true},
+        "thresholds_selected_to_fit_prior_outcome": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "retry": {
+      "type": "object",
+      "required": ["transport", "schema", "terminal"],
+      "properties": {
+        "transport": {
+          "type": "object",
+          "required": [
+            "enabled_for_idempotent_same_request_only",
+            "maximum_attempts",
+            "eligible_classes",
+            "backoff_contract"
+          ],
+          "properties": {
+            "enabled_for_idempotent_same_request_only": {"const": true},
+            "maximum_attempts": {"type": ["integer", "null"], "minimum": 1},
+            "eligible_classes": {
+              "type": "array",
+              "minItems": 4,
+              "uniqueItems": true,
+              "items": {"type": "string"}
+            },
+            "backoff_contract": {"type": "string", "minLength": 1}
+          },
+          "additionalProperties": false
+        },
+        "schema": {
+          "type": "object",
+          "required": [
+            "schema_only_repair_allowed",
+            "maximum_repairs",
+            "semantic_answer_change_allowed",
+            "prompt_or_task_change_allowed"
+          ],
+          "properties": {
+            "schema_only_repair_allowed": {"const": true},
+            "maximum_repairs": {"type": ["integer", "null"], "minimum": 0},
+            "semantic_answer_change_allowed": {"const": false},
+            "prompt_or_task_change_allowed": {"const": false}
+          },
+          "additionalProperties": false
+        },
+        "terminal": {
+          "type": "object",
+          "required": [
+            "automatic_retry_allowed",
+            "replacement_requires_fresh_registration"
+          ],
+          "properties": {
+            "automatic_retry_allowed": {"const": false},
+            "replacement_requires_fresh_registration": {"const": true}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "missingness": {
+      "type": "object",
+      "required": [
+        "terminal_call_creates_terminally_missing_run",
+        "missing_run_scored_as_success",
+        "conservative_score_rule",
+        "architecture_model_pairing_must_be_complete",
+        "partial_engineering_diagnostics_may_be_retained",
+        "partial_claim_grade_comparison_allowed",
+        "imputation_allowed"
+      ],
+      "properties": {
+        "terminal_call_creates_terminally_missing_run": {"const": true},
+        "missing_run_scored_as_success": {"const": false},
+        "conservative_score_rule": {"type": "string", "minLength": 1},
+        "architecture_model_pairing_must_be_complete": {"const": true},
+        "partial_engineering_diagnostics_may_be_retained": {"const": true},
+        "partial_claim_grade_comparison_allowed": {"const": false},
+        "imputation_allowed": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "action_budget": {
+      "type": "object",
+      "required": [
+        "final_action_cardinality",
+        "non_final_proposal_cardinality",
+        "invalid_final_output_treatment",
+        "method_c_required_before_performance",
+        "metric_range_invariants_required"
+      ],
+      "properties": {
+        "final_action_cardinality": {
+          "const": "exactly-one-per-required-agent"
+        },
+        "non_final_proposal_cardinality": {"const": "1-6"},
+        "invalid_final_output_treatment": {
+          "const": "no-action-credited-and-conservative-missingness"
+        },
+        "method_c_required_before_performance": {"const": true},
+        "metric_range_invariants_required": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "tolerances": {
+      "type": "object",
+      "required": [
+        "recovered_transient_counts_as_terminal_failure",
+        "recovered_transient_readiness_disposition",
+        "terminal_failures_per_provider",
+        "terminal_failures_overall",
+        "protocol_errors_per_provider",
+        "protocol_errors_overall",
+        "incomplete_pairings_allowed",
+        "any_batch_integrity_failure_quarantines_batch",
+        "any_terminal_run_failure_quarantines_batch"
+      ],
+      "properties": {
+        "recovered_transient_counts_as_terminal_failure": {"const": false},
+        "recovered_transient_readiness_disposition": {
+          "type": ["string", "null"]
+        },
+        "terminal_failures_per_provider": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "terminal_failures_overall": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "protocol_errors_per_provider": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "protocol_errors_overall": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "incomplete_pairings_allowed": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "any_batch_integrity_failure_quarantines_batch": {"const": true},
+        "any_terminal_run_failure_quarantines_batch": {
+          "type": ["boolean", "null"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "batch_disposition": {
+      "type": "object",
+      "required": [
+        "retain_successful_records_for_engineering_diagnosis",
+        "publish_partial_performance",
+        "batch_replacement_rule",
+        "provider_route_replacement_rule",
+        "fresh_identity_required_for_replacement",
+        "reuse_original_tasks_or_seed"
+      ],
+      "properties": {
+        "retain_successful_records_for_engineering_diagnosis": {"const": true},
+        "publish_partial_performance": {"const": false},
+        "batch_replacement_rule": {"type": "string", "minLength": 1},
+        "provider_route_replacement_rule": {"type": "string", "minLength": 1},
+        "fresh_identity_required_for_replacement": {"const": true},
+        "reuse_original_tasks_or_seed": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "fresh_pilot_requirement": {
+      "type": "object",
+      "required": [
+        "required_after_instrument_repair",
+        "execution_authorized_here",
+        "repaired_instrument_frozen_before_generation",
+        "new_campaign_batch_seed_tasks_answer_keys_and_custody",
+        "reuse_first_pilot_or_future_base_instances",
+        "separate_owner_authorization_required"
+      ],
+      "properties": {
+        "required_after_instrument_repair": {"const": true},
+        "execution_authorized_here": {"const": false},
+        "repaired_instrument_frozen_before_generation": {"const": true},
+        "new_campaign_batch_seed_tasks_answer_keys_and_custody": {"const": true},
+        "reuse_first_pilot_or_future_base_instances": {"const": false},
+        "separate_owner_authorization_required": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "reporting": {
+      "type": "object",
+      "required": [
+        "report_attempt_errors",
+        "distinguish_recovered_and_terminal",
+        "report_terminal_missingness",
+        "report_pairing_completeness",
+        "disclose_private_record_content",
+        "ranking_or_composite_from_incomplete_batch"
+      ],
+      "properties": {
+        "report_attempt_errors": {"const": true},
+        "distinguish_recovered_and_terminal": {"const": true},
+        "report_terminal_missingness": {"const": true},
+        "report_pairing_completeness": {"const": true},
+        "disclose_private_record_content": {"const": false},
+        "ranking_or_composite_from_incomplete_batch": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "evidence_required_to_finalize": {
+      "type": "array",
+      "minItems": 6,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "decision_fields_pending": {
+      "type": "array",
+      "minItems": 0,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {"const": "draft-pending-private-adjudication"}
+        }
+      },
+      "then": {
+        "properties": {
+          "decision_fields_pending": {"minItems": 1}
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {"status": {"const": "prospective-final"}}
+      },
+      "then": {
+        "properties": {
+          "decision_fields_pending": {"maxItems": 0}
+        }
+      }
+    }
+  ]
+}

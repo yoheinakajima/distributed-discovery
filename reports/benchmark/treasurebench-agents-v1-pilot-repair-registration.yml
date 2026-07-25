@@ -1,0 +1,81 @@
+schema_version: treasurebench-agents-v1-pilot-repair-registration-v1
+recorded_at_utc: "2026-07-25T00:36:18Z"
+status: registered-awaiting-read-only-owner-authorization
+decision: register-read-only-provider-and-protocol-adjudication-under-dd010
+repository: yoheinakajima/distributed-discovery
+issue: 191
+branch: benchmark/treasurebench-agents-v1-pilot-repair
+starting_main: 9c91fff7f6ca9f9f0e62103154e7d2e36b04c0c3
+owner_study: DD-010
+original_pilot:
+  campaign_id: treasurebench-agents-v1-pilot-v1
+  batch_id: tb-agents-v1-pilot-v1-b01
+  execution_commit: b166e6fa19cbdec0bb8e786aee2de0d9edfc12d1
+  decision: sealed-pilot-quarantined-provider-failure
+  output_lock_commitment: sha256:1d487723f7587e8e2fa865682e6f6cc473cf2da4967b837dedf3952cddfcbfab
+  seed_commitment: sha256:903c81a0dadc2f0ebcf8b3ae8f9e593434b17fd665985ea931eba770f68cdaa0
+  task_ciphertext_commitment: sha256:ef5197edaa23f27487451fd36dda20dafe2f85bbbb0bddb1e836fd4337b3d5c3
+  answer_ciphertext_commitment: sha256:07ac8eade872dc5034159ef999ca845b3b5040b5690907f031b6c50c9c87e9fb
+  immutable: true
+public_evidence:
+  provider: Anthropic
+  errors: 2
+  coarse_error_classes:
+    transient-provider: 1
+    schema-or-parameter: 1
+  protocol_errors: 2
+  method_a_b_disagreements: 0
+  contamination_findings: 0
+  private_runs: 500
+  attempts: 3037
+  successes: 3035
+  cost_usd: "11.5702435"
+phase_a:
+  provider_calls: 0
+  cost_usd: "0"
+  credentials_read: false
+  private_state_read: false
+  private_state_mutated: false
+  policy_status: draft-pending-private-adjudication
+private_access:
+  status: separately-owner-authorized-after-diagnostic-freeze
+  mode: read-only
+  symbolic_root: XDG_STATE_HOME/distributed-discovery/treasurebench-agents-v1/pilot-v1
+  maximum_error_records: 2
+  exact_private_run_trace_records: 500
+  exact_locked_task_records_for_private_sensitivity: 50
+  exact_locked_answer_records_for_private_sensitivity: 50
+  permitted_tracks:
+    - provider-error-and-missingness
+    - action-budget-contract-conformance
+  aggregate_dimensions:
+    - family
+    - architecture
+    - model
+    - provider
+    - round
+  task_level_performance_publication: false
+scientific_boundary:
+  dd023_allocated: false
+  claim_created: false
+  scientific_run_created: false
+  paper_created: false
+  ranking_created: false
+  composite_created: false
+  base_campaign_authorized: false
+fresh_pilot:
+  execution_authorized: false
+  required_after_repair: true
+  separate_owner_authorization_required: true
+  reuse_first_pilot_or_future_base_instances: false
+preservation_set:
+  - path: papers/information-sharing-frontier/paper-audit 2.json
+    sha256: 1a76c2fdd0b1aa0b925125e18a47d95b60ac8ac0023a51fa80a429cfdd39c507
+  - path: papers/information-sharing-frontier/visual-qa 2.md
+    sha256: 0db65b0bdba76a1fa81f6e01a6dbe87d9556511acf9dbe736b8868d2b8a1a6be
+  - path: plans/POST_V5_THEOREM_SPINE_CONSOLIDATION 2.md
+    sha256: e86ec4cbfc6462a035de21db26c958f79e995350131e0e89ad18553f7a2b9dd9
+  - path: reports/roadmap-consolidation/post-v5-literature-and-nonoverlap 2.md
+    sha256: 9716bc644660460b1d9779db2d1d2c6b1c14f38ccbdd648b18e06836dcae729f
+  - path: reports/roadmap-consolidation/post-v5-next-program-gate 2.yml
+    sha256: 2886c3d10f2bd1cd643e8306a5182272c6f59784cb16c2b47b29f6ae140d7000
