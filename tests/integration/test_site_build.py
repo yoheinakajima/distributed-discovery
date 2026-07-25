@@ -166,9 +166,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     agents_implementation = json.loads(
         (output / "data/benchmark/agents-v1-implementation.json").read_text(encoding="utf-8")
     )
-    assert agents_implementation["status"] == (
-        "implementation-repaired-fresh-pilot-not-authorized"
-    )
+    assert agents_implementation["status"] == ("implementation-repaired-fresh-pilot-not-authorized")
     assert agents_implementation["public_rehearsal"]["cases"] == 50
     assert agents_implementation["public_rehearsal"]["corruptions_rejected"] == 24
     assert agents_implementation["repair_rehearsal"] == {
@@ -208,22 +206,17 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert agents_evaluation["selected_next_tier"]["errors"] == 2
     assert agents_evaluation["selected_next_tier"]["method_a_b_disagreements"] == 0
     assert agents_evaluation["selected_next_tier"]["contamination_findings"] == 0
-    assert agents_evaluation["repair_adjudication"][
-        "runs_with_invalid_final_cardinality"
-    ] == 137
+    assert agents_evaluation["repair_adjudication"]["runs_with_invalid_final_cardinality"] == 137
     assert agents_evaluation["repair_adjudication"]["invalid_final_agent_outputs"] == 266
-    assert agents_evaluation["repair_adjudication"][
-        "over_budget_final_agent_outputs"
-    ] == 265
-    assert agents_evaluation["repair_adjudication"][
-        "metric_records_changed_by_extra_action_credit"
-    ] == 138
-    assert agents_evaluation["repair_adjudication"][
-        "legacy_coverage_range_violations"
-    ] == 57
-    assert agents_evaluation["repair_adjudication"][
-        "separate_downstream_protocol_invalid_runs"
-    ] == 1
+    assert agents_evaluation["repair_adjudication"]["over_budget_final_agent_outputs"] == 265
+    assert (
+        agents_evaluation["repair_adjudication"]["metric_records_changed_by_extra_action_credit"]
+        == 138
+    )
+    assert agents_evaluation["repair_adjudication"]["legacy_coverage_range_violations"] == 57
+    assert (
+        agents_evaluation["repair_adjudication"]["separate_downstream_protocol_invalid_runs"] == 1
+    )
     assert agents_evaluation["repair_adjudication"]["dimension_breakdowns_published"] is False
     assert agents_evaluation["authorization"]["base_campaign_authorized"] is False
     assert agents_evaluation["authorization"]["fresh_pilot_authorized"] is False

@@ -1103,9 +1103,9 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
                     "protocol_invalid_runs_attributable_to_terminal_provider_missingness"
                 ]
             ),
-            "separate_downstream_protocol_invalid_runs": agents_repair[
-                "protocol_relationship"
-            ]["separate_downstream_protocol_invalid_runs"],
+            "separate_downstream_protocol_invalid_runs": agents_repair["protocol_relationship"][
+                "separate_downstream_protocol_invalid_runs"
+            ],
             "dimension_breakdowns_published": False,
             "performance_results_published": False,
         },

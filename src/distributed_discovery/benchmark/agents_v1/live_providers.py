@@ -269,9 +269,7 @@ class LiveAdapterBase:
             },
         )
 
-    def _http_error_envelope(
-        self, *, status: int, error_class: str | None
-    ) -> Mapping[str, object]:
+    def _http_error_envelope(self, *, status: int, error_class: str | None) -> Mapping[str, object]:
         return {
             "error_contract_version": ERROR_ENVELOPE_VERSION,
             "error_locus": "provider-http-response" if error_class is not None else "none",

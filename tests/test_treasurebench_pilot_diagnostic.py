@@ -752,8 +752,7 @@ def test_public_registration_preserves_original_pilot_and_scientific_boundary() 
 def test_redacted_adjudication_records_only_aggregate_repair_evidence() -> None:
     adjudication = yaml.safe_load(
         (
-            REPO
-            / "reports/benchmark/treasurebench-agents-v1-pilot-repair-adjudication.yml"
+            REPO / "reports/benchmark/treasurebench-agents-v1-pilot-repair-adjudication.yml"
         ).read_text(encoding="utf-8")
     )
     assert adjudication["status"] == "complete-redacted-engineering-adjudication"
@@ -783,9 +782,9 @@ def test_redacted_adjudication_records_only_aggregate_repair_evidence() -> None:
 
 def test_repaired_rehearsal_and_fresh_pilot_budget_are_separately_gated() -> None:
     rehearsal = yaml.safe_load(
-        (
-            REPO / "reports/benchmark/treasurebench-agents-v1-pilot-repair-rehearsal.yml"
-        ).read_text(encoding="utf-8")
+        (REPO / "reports/benchmark/treasurebench-agents-v1-pilot-repair-rehearsal.yml").read_text(
+            encoding="utf-8"
+        )
     )
     assert rehearsal["status"] == "pass"
     assert rehearsal["cases"] == 50
@@ -796,9 +795,9 @@ def test_repaired_rehearsal_and_fresh_pilot_budget_are_separately_gated() -> Non
     assert rehearsal["provider_calls"] == 0
 
     options = yaml.safe_load(
-        (
-            REPO / "reports/benchmark/treasurebench-agents-v1-fresh-pilot-options.yml"
-        ).read_text(encoding="utf-8")
+        (REPO / "reports/benchmark/treasurebench-agents-v1-fresh-pilot-options.yml").read_text(
+            encoding="utf-8"
+        )
     )
     selected = next(item for item in options["options"] if item["selected"])
     assert selected["id"] == "full-fresh-repair-confirmation"
