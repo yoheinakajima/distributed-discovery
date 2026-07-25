@@ -48,11 +48,15 @@ pilot. This plan creates no scientific result.
   and no-base-authority boundary.
 - GitHub: PRs #188, #189, and #190 are merged; no PR is open at registration;
   issue #32 is unrelated and nonblocking; main CI and Pages are passing.
+- Diagnostic checkpoint: draft PR #192, commit
+  `6f38609d69c41efba890e6a1ab5fe6ece398c536`, and diagnostic-tree hash
+  `sha256:92eef223eb141a192de30e111a2eece10279127d3ce68eb41d124b5776ae1697`.
 - Provider calls in this task: zero. Cost: zero. Credentials and `.env.txt`
   have not been read.
-- Private retained state has not been resolved or read. Its only public
-  identity is the symbolic root
-  `XDG_STATE_HOME/distributed-discovery/treasurebench-agents-v1/pilot-v1`.
+- The exact owner-authorized read-only diagnostic completed at
+  2026-07-25T02:34Z. The retained root was opened only by the frozen
+  diagnostic, its byte-and-metadata snapshot was unchanged afterward, and
+  only the redacted aggregate candidate entered this public plan.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -281,16 +285,16 @@ paper claims.
 - M4 — Method C verifier and prospective instrument repair: complete.
 - M5 — expanded read-only diagnostic authorization and tool: complete.
 - M6 — amended synthetic diagnostic rehearsal and corruptions: complete.
-- M6A — diagnostic freeze, commit, push, draft PR, owner checkpoint: **active**.
-- M7 — exact authorization and pre-access proof: pending owner action.
-- M8 — exact private error diagnosis: pending.
-- M9 — redacted adjudication: pending.
-- M10 — prospective policy: pending.
-- M11 — evidence-required provider repair: pending diagnosis.
-- M12 — synthetic repaired rehearsal and independent verification: pending.
-- M13 — fresh-pilot options and budget: pending.
-- M14 — final repair decision: pending.
-- M15 — public-safe roadmap/site update: pending.
+- M6A — diagnostic freeze, commit, push, draft PR, owner checkpoint: complete.
+- M7 — exact authorization and pre-access proof: complete.
+- M8 — exact private error diagnosis: complete.
+- M9 — redacted adjudication: complete.
+- M10 — prospective policy: complete.
+- M11 — evidence-required provider repair: complete.
+- M12 — synthetic repaired rehearsal and independent verification: complete.
+- M13 — fresh-pilot options and budget: complete.
+- M14 — final repair decision: complete.
+- M15 — public-safe roadmap/site update: **active**.
 - M16 — full validation and closeout: pending.
 
 Exactly one milestone is active.
@@ -335,6 +339,56 @@ Exactly one milestone is active.
   claims, 51 run manifests, all repository audits, and the verified
   seven-paper/119-page release bundle. Papers and site sources remain
   unchanged. The five preservation hashes remain exact.
+- 2026-07-25T02:34:00Z — owner authorization validated as active,
+  unrevoked, nonsynthetic, owner-attested, and exact for issue #191, branch,
+  draft PR #192, commit `6f38609`, diagnostic-tree hash
+  `sha256:92eef223eb141a192de30e111a2eece10279127d3ce68eb41d124b5776ae1697`,
+  the original campaign, batch, execution commit, output lock, and all three
+  custody commitments. The public GitHub head and local/remote heads matched;
+  the tracked tree was clean.
+- 2026-07-25T02:34:00Z — the sole authorized command verified the 3,545-object
+  output lock, custody commitments, append-only access and usage logs, and
+  final encrypted audit package; selected exactly two error records and two
+  minimum contexts; inspected exactly 500 retained traces; and proved the
+  retained-state byte-and-metadata snapshot unchanged. Provider calls,
+  credential reads, spend, new private generation, and retained writes were
+  zero.
+- 2026-07-25T02:34:00Z — the redacted aggregate reproduction found 137 runs
+  with invalid final cardinality, 266 invalid final agent outputs, 265
+  over-budget final outputs, 547 multiple-action outputs across all rounds,
+  282 non-final multiple proposals, 138 metric records affected by credited
+  extra actions, and 57 legacy coverage range violations. Dimension tables,
+  record mappings, metric values, and sensitivity calculations remain in the
+  private diagnostic artifact and are not copied into Git.
+- 2026-07-25T02:34:00Z — the transient provider-service event recovered within
+  the frozen bound and caused no terminal run. The schema-or-parameter event
+  remained terminal, with request/response locus and exact cause unresolved
+  by the minimum retained evidence. It accounts for the sole non-over-budget
+  invalid final output. Because the frozen verifier counted protocol-invalid
+  runs once and the final audit counted two, the other reconstructed protocol
+  error is a separate downstream failure. This is an engineering
+  adjudication, not a performance or inferential result.
+- 2026-07-25T02:43:00Z — finalized the prospective policy at two same-request
+  transport attempts, one schema-only repair, zero terminal failures, zero
+  protocol-invalid runs, zero incomplete pairings, whole-batch quarantine, no
+  record splicing, and wholly fresh replacement identity. The taxonomy is
+  final prospectively while the original pilot classification remains
+  immutable.
+- 2026-07-25T02:43:00Z — added a normalized future provider-error envelope
+  that preserves transport versus provider-HTTP-response locus, HTTP status,
+  and retry eligibility without a raw error body. Evidence does not justify a
+  cause-specific provider patch.
+- 2026-07-25T02:43:00Z — the repaired public rehearsal passes 50 cases and all
+  28 corruptions under stable hash
+  `sha256:d13d925886b96015812ffd79e59faa89e2672a0efe7774652e3436b0c8c70d75`.
+  Focused provider, Method C, diagnostic, and rehearsal regression acceptance
+  passed 57 tests.
+- 2026-07-25T02:43:00Z — selected a future full fresh 500-run repair
+  confirmation, not a small gate, route substitution, or reuse. The
+  provisional expected budget is USD 15, proposed hard cap USD 25, proposed
+  route caps USD 10 and USD 15, and call ceiling 5,200. All values require a
+  current price/route re-audit and separate owner authorization; spend here
+  remains zero.
 
 ## Discoveries and surprises
 
@@ -366,6 +420,17 @@ Exactly one milestone is active.
   unique, in-vocabulary arrays but not final cardinality. Both metric methods
   flattened those arrays, so exact A/B agreement could preserve the same
   semantic defect and coverage could escape its registered proportion range.
+- The aggregate defect is not rare enough to treat as an isolated provider
+  event: 137 of 500 runs violate final cardinality under the authoritative
+  contract. The family, architecture, model, provider, and round
+  reconstructions were completed privately but are withheld because
+  publishing them could expose comparative or task-level structure.
+- The minimum retained record for the terminal schema-or-parameter event
+  proves terminality but does not preserve enough normalized locus detail to
+  distinguish an invalid request, exact-route capability rejection,
+  provider-side schema rejection, or returned-output nonconformance.
+  Evidence insufficiency is the final diagnosis, not a placeholder for a
+  guessed cause.
 
 ## Decision log
 
@@ -384,7 +449,15 @@ Exactly one milestone is active.
 - Require a wholly new sealed pilot after repair under separate owner
   authorization.
 - Treat diagnosis insufficiency as a valid negative result.
+- Classify the two retained provider events prospectively as
+  `provider-service-recovered` and `unknown-terminal`; do not retroactively
+  reclassify the frozen pilot.
+- Attribute one frozen protocol-invalid run to terminal provider missingness
+  and the other to a separate downstream failure; keep the event-level
+  identity and every private metric effect private.
 - Do not allocate DD-023 or create a claim or scientific run.
+- Final repair decision:
+  `instrument-repaired-fresh-sealed-pilot-required`.
 - Permit metadata-only before/after snapshots across the retained root; read
   bytes only for output-lock objects and the explicitly authorized audit,
   error, trace, and decryption-key records. This prevents the mutation guard

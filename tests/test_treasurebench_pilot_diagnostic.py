@@ -144,11 +144,11 @@ def _sealed_record(value: object, *, key: bytes, domain: str) -> dict[str, objec
     }
 
 
-def test_phase_a_taxonomy_policy_and_template_validate() -> None:
+def test_taxonomy_policy_and_template_validate_after_adjudication() -> None:
     result = diagnostic.validate_phase_a_documents(REPO)
     assert result["status"] == "pass"
     assert result["taxonomy_classes"] == 13
-    assert result["policy_status"] == "draft-pending-private-adjudication"
+    assert result["policy_status"] == "prospective-final"
     assert result["provider_calls"] == 0
     assert result["private_state_read"] is False
 
@@ -185,9 +185,9 @@ def test_taxonomy_has_exact_required_classes_and_event_fields() -> None:
     }
 
 
-def test_prospective_policy_is_nonretroactive_and_thresholds_are_pending() -> None:
+def test_prospective_policy_is_nonretroactive_and_zero_tolerance() -> None:
     policy = _yaml("prospective-failure-policy.yml")
-    assert policy["status"] == "draft-pending-private-adjudication"
+    assert policy["status"] == "prospective-final"
     assert policy["original_pilot"] == {  # type: ignore[comparison-overlap]
         "decision": "sealed-pilot-quarantined-provider-failure",
         "retroactive_reclassification_allowed": False,
@@ -196,10 +196,14 @@ def test_prospective_policy_is_nonretroactive_and_thresholds_are_pending() -> No
     retry = policy["retry"]
     tolerances = policy["tolerances"]
     assert isinstance(retry, dict) and isinstance(tolerances, dict)
-    assert retry["transport"]["maximum_attempts"] is None  # type: ignore[index]
-    assert retry["schema"]["maximum_repairs"] is None  # type: ignore[index]
-    assert tolerances["terminal_failures_per_provider"] is None
-    assert tolerances["any_terminal_run_failure_quarantines_batch"] is None
+    assert retry["transport"]["maximum_attempts"] == 2  # type: ignore[index]
+    assert retry["schema"]["maximum_repairs"] == 1  # type: ignore[index]
+    assert tolerances["terminal_failures_per_provider"] == 0
+    assert tolerances["terminal_failures_overall"] == 0
+    assert tolerances["protocol_errors_overall"] == 0
+    assert tolerances["incomplete_pairings_allowed"] == 0
+    assert tolerances["any_terminal_run_failure_quarantines_batch"] is True
+    assert policy["decision_fields_pending"] == []
     assert policy["action_budget"] == {
         "final_action_cardinality": "exactly-one-per-required-agent",
         "non_final_proposal_cardinality": "1-6",
@@ -743,6 +747,66 @@ def test_public_registration_preserves_original_pilot_and_scientific_boundary() 
     assert all(value is False for value in boundary.values())
     assert registration["phase_a"]["provider_calls"] == 0
     assert registration["phase_a"]["private_state_read"] is False
+
+
+def test_redacted_adjudication_records_only_aggregate_repair_evidence() -> None:
+    adjudication = yaml.safe_load(
+        (
+            REPO
+            / "reports/benchmark/treasurebench-agents-v1-pilot-repair-adjudication.yml"
+        ).read_text(encoding="utf-8")
+    )
+    assert adjudication["status"] == "complete-redacted-engineering-adjudication"
+    assert adjudication["original_pilot"]["decision"] == (
+        "sealed-pilot-quarantined-provider-failure"
+    )
+    assert adjudication["verification"]["private_run_traces_inspected"] == 500
+    assert adjudication["verification"]["retained_private_writes"] == 0
+    assert adjudication["protocol_relationship"] == {
+        "action_budget_and_provider_records_are_distinct": True,
+        "frozen_protocol_invalid_runs": 2,
+        "protocol_invalid_runs_attributable_to_terminal_provider_missingness": 1,
+        "recovered_provider_event_created_terminal_run": False,
+        "separate_downstream_protocol_invalid_runs": 1,
+        "terminal_provider_event_created_protocol_invalid_run": True,
+    }
+    budget = adjudication["action_budget"]
+    assert budget["runs_with_invalid_final_cardinality"] == 137
+    assert budget["invalid_final_agent_outputs"] == 266
+    assert budget["over_budget_final_agent_outputs"] == 265
+    assert budget["metric_records_changed_by_extra_action_credit"] == 138
+    assert budget["legacy_coverage_range_violations"] == 57
+    assert budget["dimension_breakdowns_published"] is False
+    assert adjudication["private_boundary"]["performance_results_published"] is False
+    assert adjudication["decision"]["fresh_pilot_authorized_here"] is False
+
+
+def test_repaired_rehearsal_and_fresh_pilot_budget_are_separately_gated() -> None:
+    rehearsal = yaml.safe_load(
+        (
+            REPO / "reports/benchmark/treasurebench-agents-v1-pilot-repair-rehearsal.yml"
+        ).read_text(encoding="utf-8")
+    )
+    assert rehearsal["status"] == "pass"
+    assert rehearsal["cases"] == 50
+    assert rehearsal["corruptions_rejected"] == 28
+    assert rehearsal["stable_rehearsal_hash"] == (
+        "sha256:d13d925886b96015812ffd79e59faa89e2672a0efe7774652e3436b0c8c70d75"
+    )
+    assert rehearsal["provider_calls"] == 0
+
+    options = yaml.safe_load(
+        (
+            REPO / "reports/benchmark/treasurebench-agents-v1-fresh-pilot-options.yml"
+        ).read_text(encoding="utf-8")
+    )
+    selected = next(item for item in options["options"] if item["selected"])
+    assert selected["id"] == "full-fresh-repair-confirmation"
+    assert selected["private_runs"] == 500
+    assert selected["expected_cost_usd"] == "15.00"
+    assert selected["proposed_total_hard_cap_usd"] == "25.00"
+    assert options["fresh_identity"]["original_or_future_base_instance_reuse"] == "prohibited"
+    assert options["authorization"]["provider_calls_authorized_here"] is False
 
 
 def test_symbolic_output_resolution_cannot_escape_state_root(

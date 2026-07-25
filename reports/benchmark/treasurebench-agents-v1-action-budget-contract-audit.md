@@ -1,6 +1,6 @@
 # TreasureBench Agents v1 action-budget contract audit
 
-Status: `public-contract-defect-established-private-prevalence-pending`.
+Status: `public-contract-defect-established-private-prevalence-reproduced`.
 
 This DD-010 engineering audit is part of issue #191. It creates no study,
 claim, scientific run, or pilot authority. The original
@@ -33,9 +33,12 @@ The frozen pilot instrument did not enforce that contract end to end:
 - metric verification did not reject coverage or other registered proportions
   outside their declared ranges.
 
-No private prevalence or performance figure is recorded here. Reported
-private counts remain diagnostic leads until reproduced under the exact
-read-only gate.
+The exact read-only gate later reproduced the redacted aggregate prevalence:
+137 of 500 runs have invalid final cardinality, with 266 invalid final agent
+outputs and 265 over-budget final outputs. It also found 138 metric records
+affected by credited extra actions and 57 legacy coverage range violations.
+Detailed dimensions, mappings, values, sensitivity calculations, and
+performance remain private.
 
 ## Prospective repair
 
@@ -64,11 +67,10 @@ proposal/final distinction above.
 
 ## Private gate and next run
 
-After the diagnostic tree is committed and pushed, the owner-created gate may
-verify the original lock and custody, inspect exactly 500 retained private run
-traces, reproduce aggregate cardinalities and downstream sensitivity, and
-diagnose the two provider errors. Detailed task, model, architecture, and
-performance results remain private.
+The owner-created gate verified the original lock and custody, inspected
+exactly 500 retained private run traces, reproduced aggregate cardinalities
+and downstream sensitivity, and diagnosed the two provider errors. Detailed
+task, model, architecture, and performance results remain private.
 
 Regardless of the provider-error policy decision, the original pilot cannot
 establish instrument readiness. A wholly new sealed pilot is mandatory after

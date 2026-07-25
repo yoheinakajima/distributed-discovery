@@ -1,0 +1,32 @@
+schema_version: treasurebench-agents-v1-pilot-repair-rehearsal-v1
+recorded_at_utc: "2026-07-25T02:35:00Z"
+status: pass
+classification: public-synthetic-instrument-conformance-only
+owner_study: DD-010
+command: make agents-v1-dry-run
+public_tasks: 10
+task_families: 5
+architectures: 5
+cases: 50
+method_a_b_errors: 0
+method_c_errors: 0
+corruptions_registered: 28
+corruptions_rejected: 28
+action_budget_corruptions:
+  - C25-multiple-final-actions
+  - C26-coverage-above-one
+  - C27-parser-cardinality-defense-omission
+  - C28-shared-method-a-b-semantic-defect
+provider_error_fixture_classes:
+  - provider-service-recovered
+  - unknown-terminal
+  - request-parameter-invalid
+  - structured-output-model-nonconformance
+  - parser-rejection-valid-response
+provider_calls: 0
+credential_reads: 0
+network_calls: 0
+external_cost_usd: "0"
+private_material_created: false
+scientific_evidence_created: false
+stable_rehearsal_hash: sha256:d13d925886b96015812ffd79e59faa89e2672a0efe7774652e3436b0c8c70d75

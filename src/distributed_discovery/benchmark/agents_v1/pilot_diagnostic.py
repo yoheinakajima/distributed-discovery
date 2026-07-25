@@ -1681,8 +1681,10 @@ def validate_phase_a_documents(repo: Path) -> Mapping[str, object]:
     classes = _sequence(taxonomy.get("classes"), label="taxonomy classes")
     if len({str(_mapping(item, label="taxonomy class")["id"]) for item in classes}) != 13:
         raise ValueError("taxonomy must contain 13 unique classes")
-    if policy.get("status") != "draft-pending-private-adjudication":
-        raise ValueError("Phase A policy must remain draft")
+    if taxonomy.get("status") != "prospective-final":
+        raise ValueError("provider-error taxonomy is not final")
+    if policy.get("status") != "prospective-final":
+        raise ValueError("prospective failure policy is not final")
     corruptions = audit_diagnostic_corruptions()
     if any(record["status"] != "rejected" for record in corruptions):
         raise AssertionError("diagnostic corruption audit failed")

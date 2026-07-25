@@ -302,6 +302,50 @@
       },
       "then": {
         "properties": {
+          "retry": {
+            "properties": {
+              "transport": {
+                "properties": {
+                  "maximum_attempts": {"const": 2}
+                }
+              },
+              "schema": {
+                "properties": {
+                  "maximum_repairs": {"const": 1}
+                }
+              }
+            }
+          },
+          "missingness": {
+            "properties": {
+              "conservative_score_rule": {
+                "const": "invalid-or-missing-required-final-output-gets-zero-credited-actions-and-invalidates-the-paired-performance-record"
+              }
+            }
+          },
+          "tolerances": {
+            "properties": {
+              "recovered_transient_readiness_disposition": {
+                "const": "preserve-and-count-readiness-warning"
+              },
+              "terminal_failures_per_provider": {"const": 0},
+              "terminal_failures_overall": {"const": 0},
+              "protocol_errors_per_provider": {"const": 0},
+              "protocol_errors_overall": {"const": 0},
+              "incomplete_pairings_allowed": {"const": 0},
+              "any_terminal_run_failure_quarantines_batch": {"const": true}
+            }
+          },
+          "batch_disposition": {
+            "properties": {
+              "batch_replacement_rule": {
+                "const": "quarantine-the-entire-sealed-batch-and-use-only-a-wholly-new-registered-batch-with-no-record-splicing"
+              },
+              "provider_route_replacement_rule": {
+                "const": "prohibit-in-batch-route-substitution-and-require-new-route-audit-registration-and-batch-identity"
+              }
+            }
+          },
           "decision_fields_pending": {"maxItems": 0}
         }
       }

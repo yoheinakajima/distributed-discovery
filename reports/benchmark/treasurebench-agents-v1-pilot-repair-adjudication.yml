@@ -1,0 +1,129 @@
+schema_version: treasurebench-agents-v1-pilot-repair-adjudication-v1
+recorded_at_utc: "2026-07-25T02:34:00Z"
+status: complete-redacted-engineering-adjudication
+classification: redacted-aggregate-protocol-and-error-findings-only
+owner_study: DD-010
+issue: 191
+pull_request: 192
+diagnostic_checkpoint:
+  commit: 6f38609d69c41efba890e6a1ab5fe6ece398c536
+  tree_hash: sha256:92eef223eb141a192de30e111a2eece10279127d3ce68eb41d124b5776ae1697
+  exact_command_completed: true
+authorization:
+  active_at_execution: true
+  revoked: false
+  synthetic: false
+  nonsynthetic_owner_attestation_validated: true
+  expires_at_utc: "2026-07-26T02:29:15.282961+00:00"
+  provider_calls_permitted: 0
+  credential_reads_permitted: 0
+  retained_private_writes_permitted: 0
+  new_private_objects_permitted: 0
+original_pilot:
+  campaign_id: treasurebench-agents-v1-pilot-v1
+  batch_id: tb-agents-v1-pilot-v1-b01
+  execution_commit: b166e6fa19cbdec0bb8e786aee2de0d9edfc12d1
+  output_lock_commitment: sha256:1d487723f7587e8e2fa865682e6f6cc473cf2da4967b837dedf3952cddfcbfab
+  seed_commitment: sha256:903c81a0dadc2f0ebcf8b3ae8f9e593434b17fd665985ea931eba770f68cdaa0
+  task_ciphertext_commitment: sha256:ef5197edaa23f27487451fd36dda20dafe2f85bbbb0bddb1e836fd4337b3d5c3
+  answer_ciphertext_commitment: sha256:07ac8eade872dc5034159ef999ca845b3b5040b5690907f031b6c50c9c87e9fb
+  decision: sealed-pilot-quarantined-provider-failure
+  immutable: true
+verification:
+  output_lock_verified: true
+  locked_objects_verified: 3545
+  custody_commitments_verified: true
+  append_only_access_log_verified: true
+  append_only_usage_log_verified: true
+  final_encrypted_audit_package_verified: true
+  provider_phase_closed: true
+  error_records_selected: 2
+  minimum_error_contexts_selected: 2
+  private_run_traces_inspected: 500
+  retained_state_metadata_snapshot_unchanged: true
+  retained_locked_bytes_rehashed_unchanged: true
+  retained_private_writes: 0
+provider_error_adjudication:
+  events:
+    - coarse_error_class: transient-provider
+      provider: Anthropic
+      taxonomy_class: provider-service-recovered
+      status: recovered
+      terminal_run_missing: false
+      ownership: provider
+      public_safe_conclusion: provider service error recovered within the frozen attempt bound
+    - coarse_error_class: schema-or-parameter
+      provider: Anthropic
+      taxonomy_class: unknown-terminal
+      status: terminal
+      terminal_run_missing: true
+      ownership: unresolved
+      public_safe_conclusion: minimum retained evidence proves terminality but not the exact request response provider model parser or adapter cause
+  exact_event_count: 2
+  raw_error_content_published: false
+protocol_relationship:
+  frozen_protocol_invalid_runs: 2
+  recovered_provider_event_created_terminal_run: false
+  terminal_provider_event_created_protocol_invalid_run: true
+  protocol_invalid_runs_attributable_to_terminal_provider_missingness: 1
+  separate_downstream_protocol_invalid_runs: 1
+  action_budget_and_provider_records_are_distinct: true
+action_budget:
+  runs_with_invalid_final_cardinality: 137
+  invalid_final_agent_outputs: 266
+  over_budget_final_agent_outputs: 265
+  multiple_action_outputs_all_rounds: 547
+  nonfinal_multiple_proposals: 282
+  metric_records_changed_by_extra_action_credit: 138
+  legacy_coverage_range_violations: 57
+  affected_components:
+    - best_equilibrium_distance
+    - communication_action_compression
+    - distinct_action_coverage
+    - duplication
+    - group_discovery
+    - invalid_action_rate
+    - planner_regret
+    - private_baseline_regret
+    - protocol_compliance
+    - recovery_budget_attainment
+    - source_diversity
+    - worst_equilibrium_distance
+  dimension_breakdowns_reproduced_privately: true
+  dimension_breakdowns_published: false
+  task_level_metric_values_published: false
+repair:
+  final_action_cardinality: exactly-one-per-required-agent
+  nonfinal_proposals: explicitly-one-to-six-and-never-final-scored-actions
+  schema_prompt_parser_orchestration_repaired: true
+  method_a_conservative_invalid_treatment: true
+  method_b_conservative_invalid_treatment: true
+  independent_method_c_required: true
+  metric_range_checks_required: true
+  normalized_provider_error_envelope_added: true
+  cause_specific_provider_patch: not-justified-by-retained-evidence
+  prospective_policy_status: prospective-final
+  repaired_public_rehearsal_status: pass
+  repaired_public_rehearsal_cases: 50
+  repaired_public_rehearsal_corruptions_rejected: 28
+  repaired_public_rehearsal_hash: sha256:d13d925886b96015812ffd79e59faa89e2672a0efe7774652e3436b0c8c70d75
+decision:
+  original_pilot: sealed-pilot-quarantined-provider-failure
+  repair_decision: instrument-repaired-fresh-sealed-pilot-required
+  original_pilot_reusable: false
+  fresh_pilot_authorized_here: false
+  base_campaign_authorized: false
+  next_gate: separately-registered-owner-authorized-fresh-sealed-repair-confirmation-pilot
+private_boundary:
+  sensitivity_calculations_published: false
+  performance_results_published: false
+  task_or_answer_content_published: false
+  prompt_or_output_content_published: false
+  raw_trace_published: false
+  architecture_or_model_ranking_published: false
+  composite_published: false
+scientific_boundary:
+  study_created: false
+  claim_created: false
+  scientific_run_created: false
+  paper_result_created: false

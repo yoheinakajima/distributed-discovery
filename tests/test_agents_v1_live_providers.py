@@ -23,6 +23,7 @@ from distributed_discovery.benchmark.agents_v1.live_providers import (
     OpenAIResponsesAdapter,
     OpenRouterAdapter,
     OpenRouterEndpoint,
+    ProviderTransportError,
     RoutePricing,
     action_schema,
     discover_openrouter_endpoints,
@@ -40,6 +41,12 @@ class FakeTransport:
     def send(self, request: HttpRequest) -> HttpResponse:
         self.requests.append(request)
         return self.response
+
+
+class FailingTransport:
+    def send(self, request: HttpRequest) -> HttpResponse:
+        del request
+        raise ProviderTransportError("transient-transport")
 
 
 def _authorization() -> PreflightAuthorization:
@@ -208,6 +215,58 @@ def test_anthropic_payload_and_response_parser() -> None:
     assert "output_config" in payload
     assert result.raw_output == output
     assert result.usage.cost_usd == Decimal("0.00069")
+    assert result.operational_metadata["error_locus"] == "none"
+    assert result.operational_metadata["http_status"] == 200
+    assert result.operational_metadata["retry_eligible"] is False
+
+
+def test_provider_error_envelope_preserves_safe_locus_without_raw_body() -> None:
+    response = HttpResponse(
+        400,
+        {
+            "type": "error",
+            "error": {
+                "type": "invalid_request_error",
+                "message": "synthetic raw provider detail must not be retained",
+            },
+        },
+    )
+    adapter = AnthropicMessagesAdapter(
+        api_key="synthetic-secret",
+        transport=FakeTransport(response),
+        network_enabled=True,
+        ledger=CostLedger(_authorization()),
+    )
+    result = adapter.respond(_request(ANTHROPIC_MANIFEST))
+    assert result.error_class == "schema-or-parameter"
+    assert result.operational_metadata["error_contract_version"] == (
+        "agents-provider-error-envelope-v1"
+    )
+    assert result.operational_metadata["error_locus"] == "provider-http-response"
+    assert result.operational_metadata["http_status"] == 400
+    assert result.operational_metadata["retry_eligible"] is False
+    assert "synthetic raw provider detail" not in json.dumps(result.operational_metadata)
+
+
+def test_transport_error_envelope_is_retryable_and_redacted() -> None:
+    adapter = OpenAIResponsesAdapter(
+        api_key="synthetic-secret",
+        transport=FailingTransport(),
+        network_enabled=True,
+        ledger=CostLedger(_authorization()),
+    )
+    result = adapter.respond(_request(OPENAI_MANIFEST))
+    assert result.error_class == "transient-transport"
+    assert result.operational_metadata == {
+        "error_contract_version": "agents-provider-error-envelope-v1",
+        "error_locus": "transport",
+        "gateway": "openai_direct",
+        "hidden_reasoning_stored": False,
+        "http_status": None,
+        "model": "gpt-5.4-2026-03-05",
+        "retry_eligible": True,
+        "route_id": "openai_direct",
+    }
 
 
 def test_openrouter_endpoint_discovery_and_selection() -> None:

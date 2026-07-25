@@ -1,5 +1,5 @@
 schema_version: treasurebench-agents-v1-prospective-failure-policy-v1
-status: draft-pending-private-adjudication
+status: prospective-final
 owner_study: DD-010
 effective_scope: future-fresh-pilots-and-base-campaigns-only
 original_pilot:
@@ -16,7 +16,7 @@ principles:
 retry:
   transport:
     enabled_for_idempotent_same_request_only: true
-    maximum_attempts: null
+    maximum_attempts: 2
     eligible_classes:
       - transport-transient-recovered
       - transport-transient-terminal
@@ -25,7 +25,7 @@ retry:
     backoff_contract: bounded-provider-aware
   schema:
     schema_only_repair_allowed: true
-    maximum_repairs: null
+    maximum_repairs: 1
     semantic_answer_change_allowed: false
     prompt_or_task_change_allowed: false
   terminal:
@@ -34,7 +34,7 @@ retry:
 missingness:
   terminal_call_creates_terminally_missing_run: true
   missing_run_scored_as_success: false
-  conservative_score_rule: pending-private-adjudication
+  conservative_score_rule: invalid-or-missing-required-final-output-gets-zero-credited-actions-and-invalidates-the-paired-performance-record
   architecture_model_pairing_must_be_complete: true
   partial_engineering_diagnostics_may_be_retained: true
   partial_claim_grade_comparison_allowed: false
@@ -47,19 +47,19 @@ action_budget:
   metric_range_invariants_required: true
 tolerances:
   recovered_transient_counts_as_terminal_failure: false
-  recovered_transient_readiness_disposition: null
-  terminal_failures_per_provider: null
-  terminal_failures_overall: null
-  protocol_errors_per_provider: null
-  protocol_errors_overall: null
-  incomplete_pairings_allowed: null
+  recovered_transient_readiness_disposition: preserve-and-count-readiness-warning
+  terminal_failures_per_provider: 0
+  terminal_failures_overall: 0
+  protocol_errors_per_provider: 0
+  protocol_errors_overall: 0
+  incomplete_pairings_allowed: 0
   any_batch_integrity_failure_quarantines_batch: true
-  any_terminal_run_failure_quarantines_batch: null
+  any_terminal_run_failure_quarantines_batch: true
 batch_disposition:
   retain_successful_records_for_engineering_diagnosis: true
   publish_partial_performance: false
-  batch_replacement_rule: pending-private-adjudication
-  provider_route_replacement_rule: pending-private-adjudication
+  batch_replacement_rule: quarantine-the-entire-sealed-batch-and-use-only-a-wholly-new-registered-batch-with-no-record-splicing
+  provider_route_replacement_rule: prohibit-in-batch-route-substitution-and-require-new-route-audit-registration-and-batch-identity
   fresh_identity_required_for_replacement: true
   reuse_original_tasks_or_seed: false
 fresh_pilot_requirement:
@@ -85,16 +85,4 @@ evidence_required_to_finalize:
   - synthetic-regression-and-corruption-results
   - exact-500-run-action-cardinality-adjudication
   - method-c-contract-verification
-decision_fields_pending:
-  - retry.transport.maximum_attempts
-  - retry.schema.maximum_repairs
-  - missingness.conservative_score_rule
-  - tolerances.recovered_transient_readiness_disposition
-  - tolerances.terminal_failures_per_provider
-  - tolerances.terminal_failures_overall
-  - tolerances.protocol_errors_per_provider
-  - tolerances.protocol_errors_overall
-  - tolerances.incomplete_pairings_allowed
-  - tolerances.any_terminal_run_failure_quarantines_batch
-  - batch_disposition.batch_replacement_rule
-  - batch_disposition.provider_route_replacement_rule
+decision_fields_pending: []
