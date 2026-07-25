@@ -177,6 +177,11 @@ audit before issue closeout.
   loaded the previously installed package, so initial Agent Operations test
   collection failed. The Make-equivalent `PYTHONPATH="$PWD/src"` run passed all
   four focused tests; repository Make targets already export `src`.
+- The first full `make verify` passed Ruff, strict MyPy over 188 source files,
+  and 433 of 434 tests. The sole failure was the exact historical six-template
+  GitHub inventory assertion, which correctly detected the new required
+  `agent-task.yml`; the expected set was extended rather than weakening the
+  assertion.
 
 ## Decision log
 
@@ -264,6 +269,16 @@ migration guide and a non-authoritative TreasureBench fresh-pilot task delta.
 Its rendered registration-only prompt is 13 lines and 1,047 bytes, contains no
 issue/branch/execution authority, and ends at the separately registered pilot
 gate.
+
+M9 local acceptance passes `git diff --check`, bootstrap, all named focused
+audits and readiness commands, Ruff, strict MyPy over 188 source files, all 434
+tests, 110 claims, 51 manifests, the verified seven-paper/119-page release dry
+run, all seven deterministic paper builds totaling 119 pages, and the
+89-page/26-study site. Paper builds mechanically refreshed two Information
+Sharing Frontier source-commit fields; both were restored to their committed
+bytes because papers are out of scope. The five unrelated preservation hashes
+remain exact. PR checks, review, merge, post-merge verification, issue closure,
+closeout audit, and main synchronization remain active.
 
 ## Blockers
 

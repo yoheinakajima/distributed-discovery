@@ -28,6 +28,7 @@ REQUIRED_LABELS = {
 }
 
 REQUIRED_TEMPLATES = {
+    "agent-task.yml",
     "research-question.yml",
     "computational-experiment.yml",
     "proof-task.yml",
