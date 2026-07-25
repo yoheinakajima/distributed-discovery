@@ -1,0 +1,56 @@
+name: Agent Operations task
+description: Register one bounded repository-native Agent Operations task.
+title: ""
+labels: []
+body:
+  - type: dropdown
+    id: task_type
+    attributes:
+      label: Task type
+      options:
+        - infrastructure
+        - documentation-editorial
+        - site-integration
+        - scientific-registration
+        - scientific-execution
+        - private-evaluation
+        - release-external-publication
+    validations: {required: true}
+  - type: input
+    id: task_contract
+    attributes:
+      label: Task contract
+      placeholder: tasks/example.yml
+    validations: {required: true}
+  - type: textarea
+    id: objective
+    attributes: {label: Objective}
+    validations: {required: true}
+  - type: textarea
+    id: owner_decisions
+    attributes: {label: Owner decisions}
+    validations: {required: true}
+  - type: textarea
+    id: permissions
+    attributes: {label: Permissions}
+    validations: {required: true}
+  - type: textarea
+    id: expected_outcomes
+    attributes: {label: Expected outcomes}
+    validations: {required: true}
+  - type: textarea
+    id: owner_gates
+    attributes: {label: Owner gates}
+    validations: {required: true}
+  - type: textarea
+    id: scientific_mutation
+    attributes: {label: Scientific mutation}
+    validations: {required: true}
+  - type: textarea
+    id: external_private_actions
+    attributes: {label: External and private actions}
+    validations: {required: true}
+  - type: textarea
+    id: next_gate
+    attributes: {label: Next gate}
+    validations: {required: true}

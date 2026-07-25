@@ -1,5 +1,35 @@
 # Master execution plan
 
+## Active continuation — Agent Operations v1 (2026-07-25)
+
+Issue #194, draft PR #195, branch `infra/agent-operations-v1`, fixed task
+contract `tasks/agent-operations-v1.yml`, and living ExecPlan
+[`AGENT_OPERATIONS_V1.md`](AGENT_OPERATIONS_V1.md) own the sole infrastructure
+lane from main `15b56b5c671ff593fd84c91142c096eba381f4cb`.
+
+Agent Operations v1 implements prospective repository-native task contracts,
+scoped instructions, generated context and thin prompts, reusable acceptance
+profiles, a generic manifest-driven owner-gate engine, and typed handoffs.
+Historical tasks remain unchanged. The workflow layer cannot create
+scientific truth, private authority, provider authority, or external-service
+state.
+
+M0 through M8 are complete. Full local M9 acceptance passes Ruff, strict MyPy
+over 188 source files, 434 tests, 110 claims, 51 run manifests, all Agent
+Operations/governance/publication/benchmark/release audits, seven exact PDFs
+totaling 119 pages, and the 89-page/26-study site. The non-authoritative
+TreasureBench fresh-pilot preview renders to 13 lines and 1,047 bytes. It
+creates no pilot issue, branch, registration, authorization, call, spend,
+private material, study, claim, scientific run, paper, or base-campaign
+authority.
+
+The active M9 gate is final validation evidence commit, PR checks, review,
+squash merge, post-merge CI/Pages verification as applicable, issue closure,
+closeout delta audit, and synchronized `main`. The next substantive gate
+remains a separately registered TreasureBench Agents v1 fresh sealed
+repair-confirmation pilot, using
+`reports/agent-ops/next-task-treasurebench-fresh-pilot.yml`.
+
 ## Completed continuation — TreasureBench Agents v1 pilot repair adjudication (2026-07-25)
 
 Issue #191 and draft PR #192 own a bounded DD-010 engineering adjudication of

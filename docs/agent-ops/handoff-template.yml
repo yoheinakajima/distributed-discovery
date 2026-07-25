@@ -1,0 +1,22 @@
+schema_version: agent-ops-handoff-v1
+status: legitimate-checkpoint
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0000
+issue: null
+pull_request: null
+branch: replace-me
+base_main: main
+head_merge_sha: null
+task_contract: tasks/replace-me.yml
+exec_plan: plans/REPLACE_ME.md
+last_completed_gate: Task registered.
+next_gate: Replace with the exact next gate.
+decision: Continue from the first incomplete milestone.
+external_calls_cost: {calls: 0, cost: "0", currency: USD}
+private_state_change: none
+scientific_state_change: none
+validation: {profile: infrastructure, result: pending}
+owner_action: ""
+exact_next_command: make audit-agent-ops
+exact_next_file: plans/REPLACE_ME.md
+blocker: null

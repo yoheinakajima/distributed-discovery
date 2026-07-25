@@ -1,0 +1,29 @@
+schema_version: agent-ops-task-type-v1
+task_type: scientific-execution
+authority: defaults-only-task-contract-and-owner-gates-control
+profile_grants_authority: false
+default_authority_references:
+  - AGENTS.md
+  - docs/research-governance.md
+  - docs/reproducibility.md
+  - docs/claim-status-policy.md
+default_non_goals:
+  - unregistered scope expansion
+  - rerun a passing primary configuration for freshness
+  - promote beyond recorded evidence
+required_gates:
+  - clean-committed-source-and-draft-pr
+  - bounded-primary-execution
+  - independent-verification-and-corruptions
+  - separate-claim-audit
+allowed_scientific_mutations:
+  - create-immutable-run
+  - create-calibrated-claim-record
+  - update-study-status
+allowed_external_actions: [github-issue-pr-ci-merge]
+default_acceptance_profile: scientific-execution
+checkpoint_types: [pre-run, post-run, claim-audit, completion]
+closeout_requirements:
+  - preserve run inputs outputs logs hashes and failures
+  - validate claims and immutable manifests
+  - verify public-safe integration and no unauthorized extrapolation

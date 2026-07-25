@@ -19,6 +19,8 @@ jobs:
         run: uv run --no-editable python scripts/run_pytest_ci.py tests/integration tests/regression
       - name: Unit tests
         run: uv run --no-editable pytest tests/unit
+      - name: Audit Agent Operations
+        run: make audit-agent-ops
       - name: Validate claims and run manifests
         run: make validate-claims
       - name: Validate deterministic offline compendium candidate

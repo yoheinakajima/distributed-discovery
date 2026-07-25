@@ -1,0 +1,246 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yoheinakajima.github.io/distributed-discovery/schemas/agent-ops-task-contract-v1.json",
+  "title": "Distributed Discovery Agent Operations task contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "kind",
+    "task_id",
+    "title",
+    "task_type",
+    "status",
+    "objective",
+    "authority_references",
+    "owner_decisions",
+    "scope",
+    "non_goals",
+    "permissions",
+    "external_action_permissions",
+    "scientific_mutation_permissions",
+    "private_data_permissions",
+    "budget",
+    "expected_outcomes",
+    "stop_conditions",
+    "acceptance_profile",
+    "canonical_destinations",
+    "github",
+    "exec_plan",
+    "supersession",
+    "next_gate"
+  ],
+  "properties": {
+    "schema_version": {"const": "agent-ops-task-contract-v1"},
+    "kind": {"const": "task-contract"},
+    "task_id": {"type": "string", "pattern": "^AO-[0-9]{4}$"},
+    "title": {"type": "string", "minLength": 3},
+    "task_type": {
+      "enum": [
+        "infrastructure",
+        "documentation-editorial",
+        "site-integration",
+        "scientific-registration",
+        "scientific-execution",
+        "private-evaluation",
+        "release-external-publication"
+      ]
+    },
+    "status": {
+      "enum": ["draft", "active", "owner-gate-required", "stopped", "complete", "superseded"]
+    },
+    "objective": {"type": "string", "minLength": 8},
+    "authority_references": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/reference"}
+    },
+    "owner_decisions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 8}
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["paths", "actions"],
+      "properties": {
+        "paths": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^(?!/|.*\\.\\.).+"}
+        },
+        "actions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 3}
+        }
+      }
+    },
+    "non_goals": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 3}
+    },
+    "permissions": {"$ref": "#/$defs/repositoryPermissions"},
+    "external_action_permissions": {"$ref": "#/$defs/externalPermissions"},
+    "scientific_mutation_permissions": {"$ref": "#/$defs/scientificPermissions"},
+    "private_data_permissions": {"$ref": "#/$defs/privatePermissions"},
+    "budget": {"$ref": "#/$defs/budget"},
+    "expected_outcomes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 3}
+    },
+    "stop_conditions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 3}
+    },
+    "acceptance_profile": {"type": "string", "minLength": 3},
+    "canonical_destinations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "pattern": "^(?!/|.*\\.\\.).+"}
+    },
+    "github": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "issue", "branch", "pull_request", "base"],
+      "properties": {
+        "repository": {"type": "string", "pattern": "^[^/]+/[^/]+$"},
+        "issue": {"type": ["integer", "null"], "minimum": 1},
+        "branch": {"type": "string", "minLength": 1},
+        "pull_request": {"type": ["integer", "null"], "minimum": 1},
+        "base": {"type": "string", "minLength": 1}
+      }
+    },
+    "exec_plan": {"type": "string", "pattern": "^plans/.+\\.md$"},
+    "task_delta": {
+      "type": ["string", "null"],
+      "pattern": "^(reports|tasks)/.+\\.(yml|yaml)$"
+    },
+    "frozen_identifiers": {
+      "type": "object",
+      "additionalProperties": {"type": "string"}
+    },
+    "supersession": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["supersedes", "superseded_by", "reason"],
+      "properties": {
+        "supersedes": {"type": "array", "items": {"type": "string"}},
+        "superseded_by": {"type": ["string", "null"]},
+        "reason": {"type": ["string", "null"]}
+      }
+    },
+    "next_gate": {"type": "string", "minLength": 3}
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "path"],
+      "properties": {
+        "type": {
+          "enum": ["instruction", "policy", "plan", "decision", "issue", "pull-request", "record"]
+        },
+        "path": {"type": "string", "minLength": 1}
+      }
+    },
+    "repositoryPermissions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository_write",
+        "git_branch_commit",
+        "github_issue_pr",
+        "merge_after_checks",
+        "ci_pages"
+      ],
+      "properties": {
+        "repository_write": {"type": "boolean", "default": false},
+        "git_branch_commit": {"type": "boolean", "default": false},
+        "github_issue_pr": {"type": "boolean", "default": false},
+        "merge_after_checks": {"type": "boolean", "default": false},
+        "ci_pages": {"type": "boolean", "default": false}
+      }
+    },
+    "externalPermissions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "network_observation",
+        "github_mutation",
+        "provider_calls",
+        "spend",
+        "release_publication",
+        "submission"
+      ],
+      "properties": {
+        "network_observation": {"type": "boolean", "default": false},
+        "github_mutation": {"type": "boolean", "default": false},
+        "provider_calls": {"type": "boolean", "default": false},
+        "spend": {"type": "boolean", "default": false},
+        "release_publication": {"type": "boolean", "default": false},
+        "submission": {"type": "boolean", "default": false}
+      }
+    },
+    "scientificPermissions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "create_study",
+        "create_claim",
+        "create_run",
+        "change_evidence_status",
+        "change_proof_status",
+        "change_paper_lifecycle"
+      ],
+      "properties": {
+        "create_study": {"type": "boolean", "default": false},
+        "create_claim": {"type": "boolean", "default": false},
+        "create_run": {"type": "boolean", "default": false},
+        "change_evidence_status": {"type": "boolean", "default": false},
+        "change_proof_status": {"type": "boolean", "default": false},
+        "change_paper_lifecycle": {"type": "boolean", "default": false}
+      }
+    },
+    "privatePermissions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["read", "write", "generate", "publish"],
+      "properties": {
+        "read": {"type": "boolean", "default": false},
+        "write": {"type": "boolean", "default": false},
+        "generate": {"type": "boolean", "default": false},
+        "publish": {"type": "boolean", "default": false}
+      }
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "currency",
+        "expected",
+        "hard_cap",
+        "category_caps",
+        "cumulative_spend"
+      ],
+      "properties": {
+        "currency": {"type": "string", "pattern": "^[A-Z]{3}$"},
+        "expected": {"type": "string", "pattern": "^[0-9]+(\\.[0-9]+)?$"},
+        "hard_cap": {"type": "string", "pattern": "^[0-9]+(\\.[0-9]+)?$"},
+        "call_cap": {"type": "integer", "minimum": 0},
+        "category_caps": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9]+(\\.[0-9]+)?$"
+          }
+        },
+        "cumulative_spend": {"type": "string", "pattern": "^[0-9]+(\\.[0-9]+)?$"}
+      }
+    }
+  }
+}

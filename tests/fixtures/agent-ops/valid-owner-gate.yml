@@ -1,0 +1,38 @@
+schema_version: agent-ops-owner-gate-v1
+kind: owner-gate
+synthetic: false
+gate_id: AOG-SYNTHETIC-VALID
+task_contract:
+  path: tasks/agent-operations-v1.yml
+  sha256: sha256:0000000000000000000000000000000000000000000000000000000000000000
+issue: 194
+pull_request:
+  number: 195
+  expected_state: OPEN
+  head_sha: "0000000000000000000000000000000000000000"
+branch: infra/agent-operations-v1
+commit: "0000000000000000000000000000000000000000"
+tree_hashes:
+  docs/agent-ops: sha256:0000000000000000000000000000000000000000000000000000000000000000
+purpose: Exercise the generic owner-gate validator with synthetic observations only.
+irreversible_actions:
+  - {permission: permissions.merge_after_checks, description: squash merge the passing infrastructure pull request}
+private_actions: []
+external_actions:
+  - {permission: external_action_permissions.github_mutation, description: merge the exact pull request after checks}
+cumulative_state: {currency: USD, spend: "0", calls: 0, category_spend: {}}
+hard_caps: {currency: USD, spend: "0", calls: 0, category_spend: {}}
+remaining_caps: {currency: USD, spend: "0", calls: 0, category_spend: {}}
+owner_confirmation_statements:
+  - I reviewed the exact synthetic validation surface and understand that no action occurs.
+explicit_prohibitions:
+  - provider-calls-outside-manifest
+  - credential-read
+  - unauthorized-private-access
+  - scientific-mutation-outside-contract
+  - cap-increase
+  - consequential-action-by-gate-engine
+expires_at_utc: "2099-01-01T00:00:00Z"
+authorization_output_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-SYNTHETIC-VALID.yml
+next_milestone: Record the synthetic validator result without performing a merge.
+generated_resume_message: Resume issue 194 from the synthetic owner-gate validation checkpoint.

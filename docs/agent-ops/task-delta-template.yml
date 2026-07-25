@@ -1,0 +1,22 @@
+schema_version: agent-ops-task-delta-v1
+kind: task-delta
+status: candidate-not-registered
+task_type: infrastructure
+title: Replace with the proposed task title
+objective: Replace with the task-specific objective only.
+owner_decisions: [Replace with the new owner decision.]
+authority_references: [AGENTS.md, docs/agent-ops/README.md]
+permissions:
+  repository_write: false
+  github_mutation: false
+  scientific_mutation: false
+  private_data: false
+  provider_calls: false
+  spend: false
+budget: {}
+expected_outcomes: [A registered task contract and ExecPlan.]
+non_goals: [Do not execute before registration.]
+frozen_identifiers: {}
+next_gate: Convert this delta into a registered task contract.
+expected_input: null
+notes: []

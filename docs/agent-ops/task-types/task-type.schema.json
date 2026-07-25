@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Distributed Discovery Agent Operations task type profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "task_type",
+    "authority",
+    "profile_grants_authority",
+    "default_authority_references",
+    "default_non_goals",
+    "required_gates",
+    "allowed_scientific_mutations",
+    "allowed_external_actions",
+    "default_acceptance_profile",
+    "checkpoint_types",
+    "closeout_requirements"
+  ],
+  "properties": {
+    "schema_version": {"const": "agent-ops-task-type-v1"},
+    "task_type": {
+      "enum": [
+        "infrastructure",
+        "documentation-editorial",
+        "site-integration",
+        "scientific-registration",
+        "scientific-execution",
+        "private-evaluation",
+        "release-external-publication"
+      ]
+    },
+    "authority": {"const": "defaults-only-task-contract-and-owner-gates-control"},
+    "profile_grants_authority": {"const": false},
+    "default_authority_references": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string"}
+    },
+    "default_non_goals": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string"}
+    },
+    "required_gates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string"}
+    },
+    "allowed_scientific_mutations": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "allowed_external_actions": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "default_acceptance_profile": {"type": "string", "minLength": 3},
+    "checkpoint_types": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string"}
+    },
+    "closeout_requirements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string"}
+    }
+  }
+}

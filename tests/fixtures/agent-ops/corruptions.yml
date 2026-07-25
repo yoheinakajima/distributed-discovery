@@ -1,0 +1,15 @@
+schema_version: agent-ops-owner-gate-corruptions-v1
+corruptions:
+  - {id: wrong-branch, expected: reject}
+  - {id: wrong-commit, expected: reject}
+  - {id: changed-tree, expected: reject}
+  - {id: changed-task-contract, expected: reject}
+  - {id: stale-pr, expected: reject}
+  - {id: expired-gate, expected: reject}
+  - {id: cap-increase, expected: reject}
+  - {id: hidden-permission, expected: reject}
+  - {id: missing-prohibition, expected: reject}
+  - {id: synthetic-authorization, expected: reject}
+  - {id: unsafe-output-path, expected: reject}
+  - {id: prior-authorization-replacement, expected: preserve-history}
+  - {id: challenge-mismatch, expected: reject}

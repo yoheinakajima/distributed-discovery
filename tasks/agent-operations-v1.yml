@@ -1,0 +1,102 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0001
+title: Agent Operations v1 task contracts and owner gates
+task_type: infrastructure
+status: active
+objective: Implement the repository-native workflow layer described by issue 194 without changing scientific, private, release, or provider state.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/governance/conversation-to-repository-protocol.md}
+  - {type: plan, path: plans/AGENT_OPERATIONS_V1.md}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/194"}
+owner_decisions:
+  - Future substantive prompts are task-specific deltas against durable repository authority.
+  - A committed task contract is fixed authority while its ExecPlan is mutable execution state.
+  - Generic owner gates authorize but never perform the consequential action.
+  - Historical tasks remain unchanged and migration is prospective.
+  - This task does not register or execute the fresh TreasureBench pilot.
+scope:
+  paths:
+    - AGENTS.md
+    - docs/agent-ops
+    - docs/adr
+    - docs/program-memory
+    - tasks
+    - plans/AGENT_OPERATIONS_V1.md
+    - reports/agent-ops
+    - src/distributed_discovery/agent_ops
+    - src/distributed_discovery/cli.py
+    - tests
+    - .github/ISSUE_TEMPLATE
+    - .github/PULL_REQUEST_TEMPLATE
+    - .github/workflows
+    - Makefile
+  actions:
+    - Add schemas, templates, task types, acceptance profiles, and scoped instructions.
+    - Implement and test context, prompt, owner-gate, handoff, and audit commands.
+    - Complete one issue, branch, pull request, merge, and closeout lifecycle.
+non_goals:
+  - No study, claim, scientific run, proof, paper, lifecycle, or evidence-status change.
+  - No provider call, credential read, private-state access, private generation, or spend.
+  - No release, DOI, submission, canonical-upstream change, or fresh-pilot registration.
+  - No rewrite of historical tasks, plans, prompts, issues, or authorizations.
+permissions:
+  repository_write: true
+  git_branch_commit: true
+  github_issue_pr: true
+  merge_after_checks: true
+  ci_pages: true
+external_action_permissions:
+  network_observation: true
+  github_mutation: true
+  provider_calls: false
+  spend: false
+  release_publication: false
+  submission: false
+scientific_mutation_permissions:
+  create_study: false
+  create_claim: false
+  create_run: false
+  change_evidence_status: false
+  change_proof_status: false
+  change_paper_lifecycle: false
+private_data_permissions: {read: false, write: false, generate: false, publish: false}
+budget:
+  currency: USD
+  expected: "0"
+  hard_cap: "0"
+  category_caps: {}
+  cumulative_spend: "0"
+expected_outcomes:
+  - Agent Operations documentation, schemas, templates, profiles, and bounded instructions.
+  - Working repository-native context, prompt, owner-gate, handoff, and audit commands.
+  - A non-authoritative fresh-pilot next-task preview whose prompt meets compression limits.
+  - Passing focused and broad validation followed by merge and synchronized main.
+stop_conditions:
+  - Stop before any private path, credential, retained pilot state, or provider action.
+  - Stop if scientific inventories, release artifacts, or immutable evidence change.
+  - Stop if owner-gate validation cannot fail closed on any required mismatch.
+  - Stop if the sole substantive lane or exact branch/issue boundary is inconsistent.
+acceptance_profile: infrastructure
+canonical_destinations:
+  - docs/agent-ops/README.md
+  - docs/adr/ADR-AGENT-OPERATIONS-V1.md
+  - plans/AGENT_OPERATIONS_V1.md
+  - reports/agent-ops
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 194
+  branch: infra/agent-operations-v1
+  pull_request: null
+  base: main
+exec_plan: plans/AGENT_OPERATIONS_V1.md
+task_delta: null
+frozen_identifiers:
+  starting_main: 15b56b5c671ff593fd84c91142c096eba381f4cb
+  claim_ceiling: DD-C-0110
+  study_ceiling: DD-022
+  release_tag: dd-compendium-v0.1.0
+supersession: {supersedes: [], superseded_by: null, reason: null}
+next_gate: Commit the contract and schema skeleton, run focused tests, and open the draft PR.

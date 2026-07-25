@@ -1,0 +1,86 @@
+schema_version: agent-ops-acceptance-profiles-v1
+authority: validation-defaults-only-never-permission
+profiles:
+  infrastructure:
+    description: Repository workflow and developer-infrastructure acceptance.
+    make_targets:
+      - bootstrap
+      - audit-agent-ops
+      - audit-program-memory
+      - audit-publication-infrastructure
+      - audit-treasurebench-naming
+      - release-readiness
+      - audit-agents-v1
+      - audit-agents-v1-evaluation
+      - agents-v1-dry-run
+      - agents-v1-readiness
+      - verify
+      - papers
+      - site
+    invariants:
+      - scientific inventories and immutable evidence unchanged unless explicitly authorized
+      - no secret private-path credential or provider access
+      - current release DOI and canonical-upstream state preserved
+      - unrelated untracked files preserved
+    task_specific_required: true
+  docs-editorial:
+    description: Editorial and governance changes using existing evidence only.
+    make_targets: [bootstrap, verify, papers]
+    invariants:
+      - every surfaced scientific statement maps to existing claim and study authority
+      - paper lifecycle and ownership labels remain calibrated
+      - generated papers are deterministic and visually verified when changed
+    task_specific_required: true
+  site:
+    description: Public site integration from validated source data.
+    make_targets: [bootstrap, verify, site]
+    invariants:
+      - generated numbers and claims trace to canonical source data
+      - links semantics accessibility mobile containment and no-javascript fallback pass
+      - no tracking private material host paths or secret-like content
+    task_specific_required: true
+  scientific-registration:
+    description: Bounded study or instrument registration before execution.
+    make_targets: [bootstrap, verify, site]
+    invariants:
+      - no primary execution or result claim
+      - resources methods independent verification corruptions and stopping outcomes frozen
+      - study and claim identifiers allocated only under existing governance
+    task_specific_required: true
+  scientific-execution:
+    description: Registered scientific execution and evidence integration.
+    make_targets: [bootstrap, verify, papers, site]
+    invariants:
+      - clean committed source before one bounded primary execution
+      - immutable provenance independent verification corruptions and claim audit pass
+      - null failed and negative results remain preserved
+    task_specific_required: true
+  private-evaluation:
+    description: Owner-gated private evaluation with exact custody and caps.
+    make_targets:
+      - bootstrap
+      - audit-agents-v1
+      - audit-agents-v1-evaluation
+      - agents-v1-dry-run
+      - agents-v1-readiness
+      - verify
+    invariants:
+      - exact active owner authorization precedes private access calls or spend
+      - custody output locks append-only logs and redaction pass
+      - calls spend remaining caps and private-state changes reconcile exactly
+    task_specific_required: true
+  release:
+    description: Owner-gated release or external-publication acceptance.
+    make_targets:
+      - bootstrap
+      - audit-publication-infrastructure
+      - release-readiness
+      - compendium-release-readiness
+      - verify
+      - papers
+      - site
+    invariants:
+      - offline candidate is deterministic and checksum complete
+      - licensing exact source owner authorization and external identifiers are verified
+      - release metadata creates no scientific or paper-status promotion
+    task_specific_required: true

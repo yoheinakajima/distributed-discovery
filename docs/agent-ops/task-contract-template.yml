@@ -1,0 +1,59 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0000
+title: Replace with the bounded task title
+task_type: infrastructure
+status: draft
+objective: Replace with one concrete bounded objective.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: plan, path: plans/REPLACE_ME.md}
+owner_decisions:
+  - Replace with an explicit adopted owner decision.
+scope:
+  paths: [docs/agent-ops]
+  actions: [document the bounded change]
+non_goals: [No scientific evidence or external action.]
+permissions:
+  repository_write: false
+  git_branch_commit: false
+  github_issue_pr: false
+  merge_after_checks: false
+  ci_pages: false
+external_action_permissions:
+  network_observation: false
+  github_mutation: false
+  provider_calls: false
+  spend: false
+  release_publication: false
+  submission: false
+scientific_mutation_permissions:
+  create_study: false
+  create_claim: false
+  create_run: false
+  change_evidence_status: false
+  change_proof_status: false
+  change_paper_lifecycle: false
+private_data_permissions: {read: false, write: false, generate: false, publish: false}
+budget:
+  currency: USD
+  expected: "0"
+  hard_cap: "0"
+  call_cap: 0
+  category_caps: {}
+  cumulative_spend: "0"
+expected_outcomes: [A validated bounded task artifact.]
+stop_conditions: [Stop on authority mismatch or failed invariant.]
+acceptance_profile: infrastructure
+canonical_destinations: [docs/agent-ops/README.md]
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: null
+  branch: replace-me
+  pull_request: null
+  base: main
+exec_plan: plans/REPLACE_ME.md
+task_delta: null
+frozen_identifiers: {}
+supersession: {supersedes: [], superseded_by: null, reason: null}
+next_gate: Register the bounded task.

@@ -1,0 +1,33 @@
+schema_version: agent-ops-director-contract-v1
+role: master-chat-program-director
+authority: coordination-only-not-scientific-or-operational-truth
+repository: /Users/yoheinakajima/Documents/distributed-discovery
+required_authority:
+  - AGENTS.md
+  - docs/repository-contract.md
+  - docs/governance/conversation-to-repository-protocol.md
+  - docs/program-memory/registry.yml
+  - docs/agent-ops/README.md
+required_checks:
+  - verify-pasted-results-against-live-git-and-github
+  - classify-completion-checkpoint-stop-or-inconsistency
+  - explain-operational-and-scientific-meaning
+  - identify-exact-next-gate-command-and-file
+  - enforce-one-active-substantive-lane
+  - state-correct-repository-folder
+  - preserve-uncertainty-null-negative-and-failed-results
+task_delta_when: exact-next-gate-is-clear
+prohibitions:
+  - rely-on-pasted-output-alone
+  - treat-chat-as-canonical
+  - tell-an-agent-to-launch-another-codex-session
+  - use-downloaded-owner-helper-when-repository-native-generation-is-possible
+  - infer-external-success-without-direct-verification
+  - treat-workflow-metadata-as-scientific-evidence
+replacement_bootstrap: |
+  Work in /Users/yoheinakajima/Documents/distributed-discovery.
+  Read AGENTS.md and docs/agent-ops/director-contract.yml, then verify live
+  Git and GitHub state. Read the active task contract, ExecPlan, pull request,
+  gate manifest, and latest handoff. Classify the current state, explain its
+  operational and scientific meaning, enforce one substantive lane, and state
+  the exact next gate. When clear, produce only the task-specific delta.

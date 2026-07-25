@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Distributed Discovery Agent Operations handoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "status",
+    "repository",
+    "task_id",
+    "issue",
+    "pull_request",
+    "branch",
+    "base_main",
+    "head_merge_sha",
+    "task_contract",
+    "exec_plan",
+    "last_completed_gate",
+    "next_gate",
+    "decision",
+    "external_calls_cost",
+    "private_state_change",
+    "scientific_state_change",
+    "validation",
+    "owner_action",
+    "exact_next_command",
+    "exact_next_file",
+    "blocker"
+  ],
+  "properties": {
+    "schema_version": {"const": "agent-ops-handoff-v1"},
+    "status": {
+      "enum": [
+        "complete",
+        "owner-gate-required",
+        "legitimate-checkpoint",
+        "stop-by-policy",
+        "inconsistent-state"
+      ]
+    },
+    "repository": {"type": "string", "minLength": 3},
+    "task_id": {"type": "string", "pattern": "^AO-[0-9]{4}$"},
+    "issue": {"type": ["integer", "null"], "minimum": 1},
+    "pull_request": {"type": ["integer", "null"], "minimum": 1},
+    "branch": {"type": "string", "minLength": 1},
+    "base_main": {"type": "string", "minLength": 1},
+    "head_merge_sha": {"type": ["string", "null"], "pattern": "^[0-9a-f]{7,40}$"},
+    "task_contract": {"type": "string", "minLength": 3},
+    "exec_plan": {"type": "string", "minLength": 3},
+    "last_completed_gate": {"type": "string", "minLength": 3},
+    "next_gate": {"type": "string", "minLength": 3},
+    "decision": {"type": "string", "minLength": 3},
+    "external_calls_cost": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["calls", "cost", "currency"],
+      "properties": {
+        "calls": {"type": "integer", "minimum": 0},
+        "cost": {"type": "string", "pattern": "^[0-9]+(\\.[0-9]+)?$"},
+        "currency": {"type": "string", "pattern": "^[A-Z]{3}$"}
+      }
+    },
+    "private_state_change": {"type": "string", "minLength": 2},
+    "scientific_state_change": {"type": "string", "minLength": 2},
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["profile", "result"],
+      "properties": {
+        "profile": {"type": "string", "minLength": 3},
+        "result": {"type": "string", "minLength": 2}
+      }
+    },
+    "owner_action": {"type": "string"},
+    "exact_next_command": {"type": "string"},
+    "exact_next_file": {"type": "string"},
+    "blocker": {"type": ["string", "null"]}
+  }
+}

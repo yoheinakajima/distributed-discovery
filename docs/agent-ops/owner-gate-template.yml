@@ -1,0 +1,36 @@
+schema_version: agent-ops-owner-gate-v1
+kind: owner-gate
+synthetic: false
+gate_id: AOG-REPLACE-ME
+task_contract:
+  path: tasks/replace-me.yml
+  sha256: sha256:0000000000000000000000000000000000000000000000000000000000000000
+issue: 1
+pull_request:
+  number: 1
+  expected_state: OPEN
+  head_sha: "0000000000000000000000000000000000000000"
+branch: replace-me
+commit: "0000000000000000000000000000000000000000"
+tree_hashes:
+  docs/agent-ops: sha256:0000000000000000000000000000000000000000000000000000000000000000
+purpose: Replace with the exact bounded consequential purpose.
+irreversible_actions: []
+private_actions: []
+external_actions: []
+cumulative_state: {currency: USD, spend: "0", calls: 0, category_spend: {}}
+hard_caps: {currency: USD, spend: "0", calls: 0, category_spend: {}}
+remaining_caps: {currency: USD, spend: "0", calls: 0, category_spend: {}}
+owner_confirmation_statements:
+  - I reviewed the exact commit permissions actions caps prohibitions and expiry.
+explicit_prohibitions:
+  - provider-calls-outside-manifest
+  - credential-read
+  - unauthorized-private-access
+  - scientific-mutation-outside-contract
+  - cap-increase
+  - consequential-action-by-gate-engine
+expires_at_utc: "2099-01-01T00:00:00Z"
+authorization_output_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-REPLACE-ME.yml
+next_milestone: Replace with the exact resume milestone.
+generated_resume_message: Resume the same task from the exact authorized milestone.
