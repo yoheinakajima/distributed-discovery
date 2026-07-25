@@ -1,6 +1,6 @@
 # Master execution plan
 
-## Active continuation — TreasureBench Agents v1 pilot repair adjudication (2026-07-25)
+## Completed continuation — TreasureBench Agents v1 pilot repair adjudication (2026-07-25)
 
 Issue #191 and draft PR #192 own a bounded DD-010 engineering adjudication of
 the first sealed pilot. The exact owner-authorized read-only diagnostic ran
@@ -34,6 +34,12 @@ answers, keys, and custody under separate registration and owner
 authorization. A full fresh 500-run option is selected with provisional USD
 15 expected cost and USD 25 hard cap, subject to a new price/route audit. No
 fresh pilot, spend, or base campaign is authorized by this continuation.
+
+PR #192 passed head CI and squash-merged as
+`4fb4ef83ac39c11dcbe43bf21a8904d89b12246b`. Post-merge CI run 30141694976
+and Pages run 30141694979 passed on that exact commit. The live TreasureBench
+Agents v1 page, redacted evaluation JSON, and program route returned HTTP 200.
+Issue #191 closed as completed and main synchronized.
 
 ## Completed continuation — TreasureBench Agents v1 sealed engineering pilot (2026-07-24)
 

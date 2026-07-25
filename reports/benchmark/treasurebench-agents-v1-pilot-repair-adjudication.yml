@@ -127,3 +127,18 @@ scientific_boundary:
   claim_created: false
   scientific_run_created: false
   paper_result_created: false
+repository_closeout:
+  pull_request: 192
+  pull_request_head_ci_run: 30141571166
+  merge_commit: 4fb4ef83ac39c11dcbe43bf21a8904d89b12246b
+  post_merge_ci_run: 30141694976
+  post_merge_pages_run: 30141694979
+  post_merge_ci_passed: true
+  pages_passed: true
+  live_routes_verified_http_200:
+    - treasurebench/agents-v1.html
+    - data/treasurebench/agents-v1-evaluation.json
+    - program.html
+  issue_191_closed_completed: true
+  main_synchronized: true
+  closed_at_utc: "2026-07-25T03:13:00Z"

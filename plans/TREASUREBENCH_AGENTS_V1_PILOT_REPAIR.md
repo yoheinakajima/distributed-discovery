@@ -296,9 +296,9 @@ paper claims.
 - M13 — fresh-pilot options and budget: complete.
 - M14 — final repair decision: complete.
 - M15 — public-safe roadmap/site update: complete.
-- M16 — full validation and closeout: **active**.
+- M16 — full validation and closeout: complete.
 
-Exactly one milestone is active.
+No milestone remains active after closeout.
 
 ## Progress
 
@@ -411,6 +411,14 @@ Exactly one milestone is active.
   the build were restored to their committed bytes. The five unrelated
   preservation hashes remain exact; 26 studies, 110 claims, 51 manifests with
   48 passing, no DD-023, and no DD-C-0111 remain unchanged.
+- 2026-07-25T03:13:00Z — PR #192 passed head CI run 30141571166 and
+  squash-merged as `4fb4ef83ac39c11dcbe43bf21a8904d89b12246b`.
+  Post-merge main CI run 30141694976 and Pages run 30141694979 passed on that
+  exact commit. The live TreasureBench Agents v1 page, redacted evaluation
+  JSON, and program route returned HTTP 200 and exposed the adjudicated repair
+  state while keeping fresh-pilot and base-campaign authorization false. Issue
+  #191 closed as completed, and local main synchronized exactly to
+  `origin/main`.
 
 ## Discoveries and surprises
 
@@ -515,6 +523,6 @@ The engineering implementation, redacted adjudication, policy, repair,
 rehearsal, options, decision, and public surfaces are complete and fully
 validated. The original pilot remains
 `sealed-pilot-quarantined-provider-failure`; the repair decision is
-`instrument-repaired-fresh-sealed-pilot-required`. M16 remains active only for
-PR #192 review/merge, ordinary Pages verification, issue #191 closure, and
-synchronized main. No fresh pilot or base campaign is authorized.
+`instrument-repaired-fresh-sealed-pilot-required`. PR #192, post-merge CI,
+Pages, live-route verification, issue #191 closure, and synchronized main are
+complete. No fresh pilot or base campaign is authorized.

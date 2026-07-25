@@ -88,3 +88,12 @@ The final decision is
 wholly new campaign, batch, seed, tasks, answers, keys, and custody under a
 separate authorization. This issue authorizes no provider call, fresh private
 material, fresh pilot, or base campaign.
+
+## Repository closeout
+
+PR #192 passed its head check and squash-merged as
+`4fb4ef83ac39c11dcbe43bf21a8904d89b12246b`. Post-merge main CI run
+30141694976 and Pages run 30141694979 passed on that exact commit. The live
+TreasureBench Agents v1 page, redacted evaluation JSON, and program route each
+returned HTTP 200 with fresh-pilot and base-campaign authorization still
+false. Issue #191 closed as completed and main synchronized.
