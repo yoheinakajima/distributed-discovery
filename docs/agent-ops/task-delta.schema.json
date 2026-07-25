@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yoheinakajima.github.io/distributed-discovery/schemas/agent-ops-task-delta-v1.json",
+  "title": "Distributed Discovery Agent Operations task delta",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "kind",
+    "status",
+    "task_type",
+    "title",
+    "objective",
+    "owner_decisions",
+    "authority_references",
+    "permissions",
+    "expected_outcomes",
+    "non_goals",
+    "next_gate"
+  ],
+  "properties": {
+    "schema_version": {"const": "agent-ops-task-delta-v1"},
+    "kind": {"const": "task-delta"},
+    "status": {"type": "string", "minLength": 3},
+    "task_type": {
+      "enum": [
+        "infrastructure",
+        "documentation-editorial",
+        "site-integration",
+        "scientific-registration",
+        "scientific-execution",
+        "private-evaluation",
+        "release-external-publication"
+      ]
+    },
+    "title": {"type": "string", "minLength": 3},
+    "objective": {"type": "string", "minLength": 8},
+    "owner_decisions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 8}
+    },
+    "authority_references": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "permissions": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"type": "boolean"}
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": {
+        "type": ["string", "number", "integer", "boolean", "object", "array", "null"]
+      }
+    },
+    "expected_outcomes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string"}
+    },
+    "non_goals": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string"}
+    },
+    "frozen_identifiers": {
+      "type": "object",
+      "additionalProperties": {"type": "string"}
+    },
+    "next_gate": {"type": "string", "minLength": 3},
+    "expected_input": {"type": ["string", "null"]},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  }
+}
