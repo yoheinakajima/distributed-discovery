@@ -5,9 +5,12 @@ from pathlib import Path
 
 import pytest
 
+import distributed_discovery.agent_ops.core as agent_ops_core
 from distributed_discovery.agent_ops.core import (
     AgentOpsError,
     _discover_repository_root,
+    _observed_branch,
+    _optional_git_revision,
     render_prompt,
 )
 
@@ -62,3 +65,14 @@ def test_repository_root_discovery_supports_installed_package(
         match="requires a Distributed Discovery repository checkout",
     ):
         _discover_repository_root(cwd=tmp_path, module_path=installed_module)
+
+
+def test_optional_git_observations_degrade_explicitly(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(agent_ops_core, "_run", lambda command, **kwargs: "")
+    assert _observed_branch() == "detached-head"
+    assert (
+        _optional_git_revision("refs/remotes/origin/main")
+        == "unavailable-in-checkout:refs/remotes/origin/main"
+    )

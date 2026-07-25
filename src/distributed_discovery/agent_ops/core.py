@@ -163,13 +163,29 @@ def _contract_path(task_path: str | Path) -> Path:
     return candidate
 
 
+def _observed_branch() -> str:
+    """Return an explicit value when CI checks out a detached commit."""
+
+    return _run(["git", "branch", "--show-current"]) or "detached-head"
+
+
+def _optional_git_revision(revision: str) -> str:
+    """Resolve an optional Git observation without making it authority."""
+
+    resolved = _run(
+        ["git", "rev-parse", "--verify", f"{revision}^{{commit}}"],
+        check=False,
+    )
+    return resolved or f"unavailable-in-checkout:{revision}"
+
+
 def _git_state() -> dict[str, Any]:
     tracked_status = _run(["git", "status", "--porcelain", "--untracked-files=no"])
     return {
-        "branch": _run(["git", "branch", "--show-current"]),
+        "branch": _observed_branch(),
         "commit": _run(["git", "rev-parse", "HEAD"]),
         "tree": _run(["git", "rev-parse", "HEAD^{tree}"]),
-        "base_main": _run(["git", "rev-parse", "origin/main"]),
+        "base_main": _optional_git_revision("refs/remotes/origin/main"),
         "tracked_clean": not tracked_status,
         "untracked_count": len(
             [

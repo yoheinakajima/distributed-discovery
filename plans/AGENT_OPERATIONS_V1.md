@@ -271,7 +271,7 @@ issue/branch/execution authority, and ends at the separately registered pilot
 gate.
 
 M9 local acceptance passes `git diff --check`, bootstrap, all named focused
-audits and readiness commands, Ruff, strict MyPy over 188 source files, all 437
+audits and readiness commands, Ruff, strict MyPy over 188 source files, all 438
 tests, 110 claims, 51 manifests, the verified seven-paper/119-page release dry
 run, all seven deterministic paper builds totaling 119 pages, and the
 89-page/26-study site. Paper builds mechanically refreshed two Information
@@ -286,6 +286,10 @@ unit tests searched for repository contracts inside the virtual environment.
 Root discovery now searches upward from the working directory and module
 location for two repository markers, fails closed when neither identifies this
 checkout, and has a regression that simulates a non-editable installation.
+The replacement CI attempt then reached the semantic audit and exposed the
+single-commit checkout's missing `origin/main` ref. Optional Git observations
+now degrade to explicit `detached-head` and `unavailable-in-checkout` labels;
+they remain non-authoritative and no missing ref is fabricated.
 
 ## Blockers
 
