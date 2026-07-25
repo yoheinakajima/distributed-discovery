@@ -49,6 +49,9 @@ from distributed_discovery.benchmark.agents_v1.orchestration import (
     ArchitectureRun,
     run_architecture,
 )
+from distributed_discovery.benchmark.agents_v1.protocol_contract import (
+    verify_protocol_contract,
+)
 from distributed_discovery.benchmark.agents_v1.traces import build_trace, verify_trace_hashes
 from distributed_discovery.benchmark.agents_v1.verification import verify_method_agreement
 
@@ -264,7 +267,7 @@ def validate_pilot_authorization(
         raise PermissionError("authorized execution commit is not an ancestor of HEAD")
     if value["execution_tree_hash"] != tree_hash:
         raise PermissionError("authorized execution tree hash mismatch")
-    if _git(repo, "branch", "--show-current") != BRANCH:
+    if not bool(value["synthetic"]) and _git(repo, "branch", "--show-current") != BRANCH:
         raise PermissionError("authorized branch mismatch")
     caps = value["caps"]
     permissions = value["permissions"]
@@ -871,6 +874,7 @@ class PilotBatchRunner:
             for task in tasks:
                 for architecture in ARCHITECTURES:
                     run = run_architecture(task, architecture, adapter)
+                    contract = verify_protocol_contract(task, run)
                     contamination_findings += sum(
                         classify_text(turn.response.raw_output).classification
                         in {"direct-leakage", "probable-memorization"}
@@ -879,7 +883,7 @@ class PilotBatchRunner:
                     if verify_metrics:
                         metrics = asdict(evaluate_run(task, run))
                         disagreements += len(verify_method_agreement(metrics, task, run))
-                    protocol_errors += len(run.protocol_errors)
+                    protocol_errors += int(not contract.compliant)
                     trace = build_trace(run)
                     if trace.audit["hidden_reasoning_stored"] is not False:
                         raise PermissionError("hidden reasoning storage is prohibited")

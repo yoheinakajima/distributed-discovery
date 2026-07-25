@@ -1,0 +1,99 @@
+schema_version: treasurebench-agents-v1-pilot-diagnostic-authorization-v1
+authorization_id: null
+authorization_status: inactive
+authorized_at_utc: null
+expires_at_utc: null
+revoked: false
+revocation_reason: null
+purpose: read-only-provider-and-action-budget-instrument-adjudication
+synthetic: true
+owner_attestation: null
+owner_confirmations:
+  retained_audit_read_only: false
+  verify_original_lock_and_custody: false
+  inspect_exactly_500_run_traces_for_action_cardinality: false
+  diagnose_exactly_two_provider_errors_with_minimum_context: false
+  private_metric_sensitivity_only: false
+  no_provider_call_spend_or_new_private_material: false
+  no_private_state_mutation: false
+  no_raw_private_publication_and_redacted_output_only: false
+repository: yoheinakajima/distributed-discovery
+issue: 191
+branch: benchmark/treasurebench-agents-v1-pilot-repair
+diagnostic_commit: null
+diagnostic_tree_hash: null
+original_campaign: treasurebench-agents-v1-pilot-v1
+original_batch: tb-agents-v1-pilot-v1-b01
+original_execution_commit: b166e6fa19cbdec0bb8e786aee2de0d9edfc12d1
+original_output_lock: sha256:1d487723f7587e8e2fa865682e6f6cc473cf2da4967b837dedf3952cddfcbfab
+original_commitments:
+  seed: sha256:903c81a0dadc2f0ebcf8b3ae8f9e593434b17fd665985ea931eba770f68cdaa0
+  task_ciphertext: sha256:ef5197edaa23f27487451fd36dda20dafe2f85bbbb0bddb1e836fd4337b3d5c3
+  answer_ciphertext: sha256:07ac8eade872dc5034159ef999ca845b3b5040b5690907f031b6c50c9c87e9fb
+private_state_symbolic_root: XDG_STATE_HOME/distributed-discovery/treasurebench-agents-v1/pilot-v1
+private_detail_output_symbolic_path: null
+permitted_command: uv run --no-editable python scripts/diagnose_treasurebench_pilot_errors.py --repo .
+permitted_private_paths:
+  - manifest.json
+  - execution-identity.json
+  - custody-manifest.json
+  - task-custody.json
+  - answer-custody.json
+  - access-log.jsonl
+  - usage-cost-ledger.jsonl
+  - provider-stage-state.json
+  - output-lock.json
+  - operational-key.bin
+  - task-key.bin
+  - answer-key.bin
+  - final-audit-package.sealed.json
+  - task-custody.json
+  - answer-custody.json
+  - encrypted-provider-responses/<exact-two-errors-and-at-most-two-adjacent-records>
+  - encrypted-traces/<exactly-500-private-run-traces>
+permitted_functions:
+  - verify-private-manifest-and-modes
+  - verify-original-output-lock
+  - verify-original-custody-commitments
+  - verify-append-only-logs
+  - decrypt-final-audit-package
+  - select-exactly-two-error-records
+  - decrypt-exactly-two-error-responses
+  - decrypt-exactly-500-private-run-traces
+  - verify-trace-hashes-and-contract-cardinalities
+  - decrypt-locked-task-and-answer-records-for-private-sensitivity
+  - aggregate-by-family-architecture-model-provider-and-round
+  - identify-final-action-count-not-equal-to-one
+  - map-protocol-validity-and-downstream-metric-effects
+  - compute-private-sensitivity-only
+  - write-private-detail-outside-retained-root
+  - emit-redacted-public-candidate
+limits:
+  provider_calls: 0
+  cost_usd: 0
+  credential_reads: 0
+  new_private_objects: 0
+  error_records: 2
+  surrounding_response_records: 2
+  private_run_trace_records: 500
+  task_records: 50
+  answer_records: 50
+  retained_private_writes: 0
+permissions:
+  read_retained_state: false
+  verify_output_lock: false
+  verify_custody_and_logs: false
+  decrypt_final_audit_package: false
+  decrypt_two_error_records: false
+  decrypt_exactly_500_private_run_traces: false
+  decrypt_locked_task_answer_for_sensitivity: false
+  aggregate_action_cardinalities: false
+  compute_private_metric_sensitivity: false
+  write_private_detail_outside_retained_root: false
+  emit_redacted_public_candidate: false
+  provider_calls: false
+  credential_access: false
+  generate_seed_task_answer_key_or_batch: false
+  mutate_retained_private_state: false
+  publish_raw_private_content: false
+public_boundary: redacted-aggregate-protocol-counts-and-error-classification-no-raw-or-performance

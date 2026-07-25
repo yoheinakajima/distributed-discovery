@@ -54,6 +54,29 @@ explicit owner cost authorization, custody material, and immutable evidence
 package. The current v1/v2/v3 commands, outputs, default, and disabled external
 adapter remain unchanged.
 
+## Agents v1 sealed-pilot repair adjudication
+
+The first sealed engineering pilot remains permanently
+`sealed-pilot-quarantined-provider-failure`. Issue #191 completed an exact
+owner-authorized read-only engineering adjudication without a provider call,
+credential read, retained-state mutation, or new private generation.
+
+The redacted aggregate reconstruction found 137 of 500 runs with invalid final
+cardinality, including 265 over-budget final outputs; 138 metric records were
+affected by credited extra actions, and 57 legacy coverage values exceeded the
+registered proportion range. One provider-service event recovered. One
+terminal event remains exact-cause unresolved and accounts for one
+protocol-invalid run; the other original protocol error is a separate
+downstream failure. Detailed dimensions, metric values, sensitivity, and
+performance remain private.
+
+The prospective instrument enforces exactly one final action per required
+agent through schemas, prompts, parsing, orchestration, both evaluators,
+independent Method C, and metric-range checks. The repaired 50-case public
+rehearsal rejects 28 of 28 corruptions. Its decision is
+`instrument-repaired-fresh-sealed-pilot-required`; a wholly fresh pilot under
+separate registration and owner authorization is the next possible gate.
+
 ## Registered evaluation campaign
 
 Issue #173 registers, but does not authorize or execute, the evaluation
@@ -64,14 +87,13 @@ all 138 generator cells plus 62 boundary-priority repeats, but base execution
 is blocked because the audited 16-GB host is ineligible for the exact
 local/open candidate.
 
-Issue #187 now owns the separate sealed-pilot gate. Its Phase A contracts,
+Issue #187 completed the separate sealed-pilot gate. Its Phase A contracts,
 secure runtime, output-lock and independent-verification path, 50-slot
-allocation, command surfaces, and 35 required corruption boundaries are
-implemented. A complete 50-task × five-architecture × two-synthetic-route
-rehearsal passes with encrypted traces, Method A/B agreement, no credential
-read, no provider call, no cost, and no real private material.
+allocation, command surfaces, and corruption boundaries preceded an exact
+owner-authorized provider phase. The resulting 500-run engineering pilot is
+retained encrypted and permanently quarantined; its public closeout contains
+operational totals only and no task-level or comparative performance.
 
-No model call, invocation, download, cost, real private material, provider
-trace, performance result, claim, run, or DD-023 exists. Phase B requires a
-matching non-synthetic owner authorization for the exact pushed execution
-commit and tree hash. That authorization does not authorize the base campaign.
+No DD-023, claim, scientific run, paper result, ranking, leaderboard, or
+composite exists. Neither the completed pilot authorization nor issue #191's
+read-only diagnostic authorization permits the base campaign or a fresh pilot.

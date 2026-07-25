@@ -52,6 +52,9 @@ from distributed_discovery.benchmark.agents_v1.orchestration import (
     run_architecture,
 )
 from distributed_discovery.benchmark.agents_v1.prompts import compile_prompt
+from distributed_discovery.benchmark.agents_v1.protocol_contract import (
+    verify_protocol_contract,
+)
 from distributed_discovery.benchmark.agents_v1.traces import build_trace
 from distributed_discovery.benchmark.agents_v1.verification import reconstruct_metrics
 
@@ -754,7 +757,12 @@ def _run_route_preflight(
 ) -> tuple[dict[str, object], list[dict[str, object]]]:
     task = generate_public_calibration()[2]
     agent_id = sorted(task.capabilities)[0]
-    prompt = compile_prompt(task, agent_id, architecture_id="provider-native-smoke")
+    prompt = compile_prompt(
+        task,
+        agent_id,
+        architecture_id="provider-native-smoke",
+        final_required=True,
+    )
     request = AdapterRequest(
         prompt=prompt,
         manifest=adapter.manifest,
@@ -844,7 +852,7 @@ def _run_route_preflight(
     method_b = _serializable(reconstruct_metrics(task, run))
     agreement = method_a == method_b
     trace = build_trace(run)
-    e2e_pass = not run.protocol_errors and agreement
+    e2e_pass = verify_protocol_contract(task, run).compliant and agreement
     metadata = response.operational_metadata
     return (
         {
@@ -913,7 +921,7 @@ def _run_calibration_route(
                 route_cost += Decimal(str(method_a["cost_usd"]))
                 agreement = method_a == method_b
                 route_agreement = route_agreement and agreement
-                route_protocol = route_protocol and not run.protocol_errors
+                route_protocol = route_protocol and verify_protocol_contract(task, run).compliant
                 trace = build_trace(run)
                 events = trace.redacted.get("events")
                 if isinstance(events, Sequence):

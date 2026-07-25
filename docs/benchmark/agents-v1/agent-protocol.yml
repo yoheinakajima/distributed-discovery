@@ -46,6 +46,14 @@ sampling:
 action_output:
   schema_version: agents-action-v1
   schema: docs/benchmark/agents-v1/structured-output.schema.json
+  non_final_actions:
+    role: proposal-candidates-only
+    cardinality: 1-6
+    scored: false
+  final_actions:
+    role: scored-action
+    cardinality: exactly-one-per-required-agent
+    scored: true
   subjective_text_scoring: false
 retry:
   max_schema_retries: 1

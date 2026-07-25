@@ -53,8 +53,8 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "Reliable Discovery remains a major candidate but is deferred" in program
     assert "completed its fixed DD-010 sealed engineering pilot" in program
     assert "sealed-pilot-quarantined-provider-failure" in program
-    assert "two preserved provider failures block base-campaign readiness" in program
-    assert "Any repair is separately registered and owner-authorized" in program
+    assert "read-only adjudication found a pervasive final-action-budget defect" in program
+    assert "wholly fresh sealed repair-confirmation pilot" in program
     assert 'id="information-sharing-frontier"' in program
     assert 'href="publications/information-sharing-frontier.html"' in program
     assert "docs/theorem-spine.md" in program
@@ -133,12 +133,19 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         assert (output / f"benchmark/{route}.html").is_file()
         assert (output / f"treasurebench/{route}.html").is_file()
     agents_registration = (output / "benchmark/agents-v1.html").read_text(encoding="utf-8")
-    assert "Sealed pilot complete" in agents_registration
-    assert "Quarantined provider failure" in agents_registration
+    assert "Adjudication complete" in agents_registration
+    assert "Instrument repaired" in agents_registration
+    assert "Fresh pilot separately gated" in agents_registration
     assert "3,037 attempts, 3,035 successes" in agents_registration
+    assert "137 runs with invalid final cardinality" in agents_registration
+    assert "265 over-budget outputs" in agents_registration
+    assert "57 legacy coverage range violations" in agents_registration
+    assert "other reconstructed protocol error is a separate downstream failure" in (
+        agents_registration
+    )
     assert "No private task, answer, seed, key, prompt, output" in agents_registration
     assert "no study, claim, immutable scientific run, paper result" in agents_registration
-    assert "does not authorize the 200-task base campaign" in agents_registration
+    assert "200-task base campaign remains blocked" in agents_registration
     agents_data = json.loads(
         (output / "data/benchmark/agents-v1-registration.json").read_text(encoding="utf-8")
     )
@@ -159,9 +166,19 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     agents_implementation = json.loads(
         (output / "data/benchmark/agents-v1-implementation.json").read_text(encoding="utf-8")
     )
-    assert agents_implementation["status"] == "implementation-complete-not-evaluated"
+    assert agents_implementation["status"] == ("implementation-repaired-fresh-pilot-not-authorized")
     assert agents_implementation["public_rehearsal"]["cases"] == 50
     assert agents_implementation["public_rehearsal"]["corruptions_rejected"] == 24
+    assert agents_implementation["repair_rehearsal"] == {
+        "cases": 50,
+        "corruptions_rejected": 28,
+        "method_a_b_agree": True,
+        "method_c_errors": 0,
+        "rehearsal_hash": (
+            "sha256:d13d925886b96015812ffd79e59faa89e2672a0efe7774652e3436b0c8c70d75"
+        ),
+        "status": "pass",
+    }
     assert agents_implementation["boundaries"]["provider_calls"] == 0
     assert agents_implementation["boundaries"]["performance_results_exist"] is False
     agents_evaluation = json.loads(
@@ -189,7 +206,22 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert agents_evaluation["selected_next_tier"]["errors"] == 2
     assert agents_evaluation["selected_next_tier"]["method_a_b_disagreements"] == 0
     assert agents_evaluation["selected_next_tier"]["contamination_findings"] == 0
+    assert agents_evaluation["repair_adjudication"]["runs_with_invalid_final_cardinality"] == 137
+    assert agents_evaluation["repair_adjudication"]["invalid_final_agent_outputs"] == 266
+    assert agents_evaluation["repair_adjudication"]["over_budget_final_agent_outputs"] == 265
+    assert (
+        agents_evaluation["repair_adjudication"]["metric_records_changed_by_extra_action_credit"]
+        == 138
+    )
+    assert agents_evaluation["repair_adjudication"]["legacy_coverage_range_violations"] == 57
+    assert (
+        agents_evaluation["repair_adjudication"]["separate_downstream_protocol_invalid_runs"] == 1
+    )
+    assert agents_evaluation["repair_adjudication"]["dimension_breakdowns_published"] is False
     assert agents_evaluation["authorization"]["base_campaign_authorized"] is False
+    assert agents_evaluation["authorization"]["fresh_pilot_authorized"] is False
+    assert agents_evaluation["authorization"]["fresh_pilot_expected_cost_usd"] == "15.00"
+    assert agents_evaluation["authorization"]["fresh_pilot_proposed_cap_usd"] == "25.00"
     assert agents_evaluation["scientific_results_exist"] is False
     assert agents_evaluation["provider_comparative_results_published"] is False
     benchmark_lab = (output / "labs/benchmark.html").read_text()

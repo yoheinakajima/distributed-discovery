@@ -1,0 +1,65 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-options-v1
+recorded_at_utc: "2026-07-25T02:35:00Z"
+status: options-complete-execution-not-authorized
+owner_study: DD-010
+evidence_basis:
+  original_redacted_actual_cost_usd: "11.5702435"
+  original_openai_cost_usd: "4.1798125"
+  original_anthropic_cost_usd: "7.390431"
+  original_attempts: 3037
+  repaired_rehearsal_passed: true
+  current_pricing_reaudit_required_before_authorization: true
+options:
+  - id: full-fresh-repair-confirmation
+    selected: true
+    scope: fresh-50-task-five-architecture-two-direct-route-one-repeat-engineering-pilot
+    private_runs: 500
+    expected_cost_usd: "15.00"
+    proposed_total_hard_cap_usd: "25.00"
+    proposed_provider_caps_usd: {OpenAI: "10.00", Anthropic: "15.00"}
+    proposed_call_cap: 5200
+    purpose: confirm the complete repaired instrument matrix under wholly new sealed custody
+    limitation: engineering-readiness-only-not-claim-grade
+  - id: small-fresh-readiness-gate
+    selected: false
+    scope: fresh-10-task-five-architecture-two-direct-route-one-repeat-gate
+    private_runs: 100
+    expected_cost_usd: "3.00"
+    proposed_total_hard_cap_usd: "6.00"
+    purpose: lower-cost parser and route smoke confirmation
+    limitation: does-not-replace-the-complete-50-task-repair-confirmation
+  - id: provider-route-replacement
+    selected: false
+    scope: new-provider-or-route
+    expected_cost_usd: pending-separate-route-audit
+    proposed_total_hard_cap_usd: pending-separate-route-audit
+    purpose: replace a route only if a separately registered provider audit justifies it
+    limitation: breaks-route-continuity-and-requires-new-preflight-registration-and-batch
+  - id: defer
+    selected: false
+    scope: no-execution
+    expected_cost_usd: "0"
+    proposed_total_hard_cap_usd: "0"
+    purpose: preserve the repaired instrument without spending
+    limitation: instrument-readiness-remains-unconfirmed
+selected_decision:
+  id: full-fresh-repair-confirmation
+  reason: the defect affected 137 of 500 original runs and the complete registered matrix must be rechecked without reusing any quarantined instance
+  budget_basis: expected cost is the redacted original actual plus about thirty percent and the hard cap is about twice the original actual with provider-specific headroom
+  automatic_execution: false
+fresh_identity:
+  new_campaign: required
+  new_batch: required
+  new_os_csprng_seed: required
+  new_tasks: required
+  new_answer_key: required
+  new_keys: required
+  new_custody: required
+  original_or_future_base_instance_reuse: prohibited
+authorization:
+  provider_calls_authorized_here: false
+  spend_authorized_here: false
+  private_generation_authorized_here: false
+  separate_registration_required: true
+  separate_owner_authorization_required: true
+  base_campaign_authorized: false

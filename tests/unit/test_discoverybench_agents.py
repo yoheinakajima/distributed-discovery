@@ -29,7 +29,7 @@ def test_agents_registration_audit_is_offline_and_complete() -> None:
     result = audit_registration(ROOT)
     assert result == {
         "architectures": 5,
-        "corruptions": 24,
+        "corruptions": 28,
         "generator_cells": 138,
         "holdouts": 0,
         "invalid_fixtures": 4,
@@ -40,7 +40,7 @@ def test_agents_registration_audit_is_offline_and_complete() -> None:
         "private_seeds": 0,
         "provider_calls": 0,
         "results": 0,
-        "schemas": 25,
+        "schemas": 28,
         "task_families": 5,
         "traces": 0,
         "valid_fixtures": 6,
@@ -116,12 +116,12 @@ def test_invalid_fixtures_are_rejected() -> None:
         )
 
 
-def test_corruption_registry_has_24_unique_complete_entries() -> None:
+def test_corruption_registry_has_28_unique_complete_entries() -> None:
     plan = load_yaml(BASE / "corruption-plan.yml")
     validate_corruptions(plan)
     rows = plan["corruptions"]
     assert isinstance(rows, list)
-    assert len(rows) == 24
+    assert len(rows) == 28
 
 
 def test_provider_registry_has_two_cloud_families_and_local_open_candidate() -> None:

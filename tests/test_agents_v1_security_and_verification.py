@@ -174,6 +174,6 @@ def test_independent_offline_verifier_and_all_corruptions() -> None:
         custody=custody,
     )
     assert [result.corruption_id for result in results] == [
-        f"C{index:02d}" for index in range(1, 25)
+        f"C{index:02d}" for index in range(1, 29)
     ]
     assert all(result.rejected for result in results)

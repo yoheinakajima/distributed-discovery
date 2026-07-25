@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TreasureBench Agents v1 provider error taxonomy",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "scope",
+    "owner_study",
+    "original_pilot_reclassification_allowed",
+    "required_event_fields",
+    "vocabularies",
+    "classes",
+    "batch_integrity_failures",
+    "public_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "treasurebench-agents-v1-provider-error-taxonomy-v1"
+    },
+    "status": {
+      "enum": ["draft-pending-private-adjudication", "prospective-final"]
+    },
+    "scope": {
+      "const": "prospective-provider-attempt-run-and-batch-classification"
+    },
+    "owner_study": {"const": "DD-010"},
+    "original_pilot_reclassification_allowed": {"const": false},
+    "required_event_fields": {
+      "type": "array",
+      "minItems": 10,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "taxonomy_class",
+          "attempt_status",
+          "retry_status",
+          "run_status",
+          "task_status",
+          "recoverability",
+          "ownership",
+          "public_safe_summary",
+          "private_evidence_reference",
+          "prospective_disposition"
+        ]
+      }
+    },
+    "vocabularies": {
+      "type": "object",
+      "required": [
+        "attempt_status",
+        "retry_status",
+        "run_status",
+        "task_status",
+        "recoverability",
+        "ownership",
+        "prospective_disposition"
+      ],
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 1,
+        "uniqueItems": true,
+        "items": {"type": "string", "minLength": 1}
+      }
+    },
+    "classes": {
+      "type": "array",
+      "minItems": 13,
+      "maxItems": 13,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "layer",
+          "terminal",
+          "default_ownership",
+          "definition",
+          "public_safe_summary"
+        ],
+        "properties": {
+          "id": {
+            "enum": [
+              "transport-transient-recovered",
+              "transport-transient-terminal",
+              "provider-service-recovered",
+              "provider-service-terminal",
+              "request-parameter-invalid",
+              "request-parameter-unsupported",
+              "structured-output-provider-rejection",
+              "structured-output-model-nonconformance",
+              "parser-rejection-valid-response",
+              "parser-rejection-invalid-response",
+              "orchestration-protocol-error",
+              "evaluator-missingness",
+              "unknown-terminal"
+            ]
+          },
+          "layer": {"type": "string", "minLength": 1},
+          "terminal": {"type": "boolean"},
+          "default_ownership": {
+            "enum": [
+              "provider",
+              "adapter",
+              "model",
+              "orchestration",
+              "evaluator",
+              "unresolved"
+            ]
+          },
+          "definition": {"type": "string", "minLength": 20},
+          "public_safe_summary": {"type": "string", "minLength": 10}
+        },
+        "additionalProperties": false
+      }
+    },
+    "batch_integrity_failures": {
+      "type": "array",
+      "minItems": 8,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "public_boundary": {
+      "type": "object",
+      "required": ["allowed", "prohibited"],
+      "properties": {
+        "allowed": {
+          "type": "array",
+          "minItems": 10,
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "prohibited": {
+          "type": "array",
+          "minItems": 12,
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

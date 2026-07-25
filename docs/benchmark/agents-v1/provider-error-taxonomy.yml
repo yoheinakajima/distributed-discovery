@@ -1,0 +1,145 @@
+schema_version: treasurebench-agents-v1-provider-error-taxonomy-v1
+status: prospective-final
+scope: prospective-provider-attempt-run-and-batch-classification
+owner_study: DD-010
+original_pilot_reclassification_allowed: false
+required_event_fields:
+  - taxonomy_class
+  - attempt_status
+  - retry_status
+  - run_status
+  - task_status
+  - recoverability
+  - ownership
+  - public_safe_summary
+  - private_evidence_reference
+  - prospective_disposition
+vocabularies:
+  attempt_status: [recovered-error, terminal-error, invalid-output, downstream-error]
+  retry_status: [not-eligible, not-attempted, recovered-within-bound, exhausted, prohibited]
+  run_status: [complete, terminally-missing, protocol-invalid, batch-invalidating]
+  task_status: [complete, pairing-incomplete, conservatively-scored, batch-excluded]
+  recoverability: [recovered, retryable-within-bound, terminal, unresolved]
+  ownership: [provider, adapter, model, orchestration, evaluator, unresolved]
+  prospective_disposition:
+    - preserve-operational-event
+    - preserve-and-count-readiness-warning
+    - terminal-missing-run
+    - quarantine-pairing
+    - quarantine-batch
+    - repair-instrument-before-rerun
+    - replace-provider-route
+    - investigate-without-rerun
+classes:
+  - id: transport-transient-recovered
+    layer: transport
+    terminal: false
+    default_ownership: provider
+    definition: A timeout, connection, rate, or transport failure recovered within the registered attempt bound for the same idempotent request.
+    public_safe_summary: bounded transport error recovered without a terminal run failure
+  - id: transport-transient-terminal
+    layer: transport
+    terminal: true
+    default_ownership: provider
+    definition: A timeout, connection, rate, or transport failure that exhausted the registered attempt bound and left the call terminal.
+    public_safe_summary: bounded transport attempts exhausted and the run remained incomplete
+  - id: provider-service-recovered
+    layer: provider
+    terminal: false
+    default_ownership: provider
+    definition: A provider 5xx or overload condition recovered within the registered attempt bound for the same idempotent request.
+    public_safe_summary: provider service error recovered without a terminal run failure
+  - id: provider-service-terminal
+    layer: provider
+    terminal: true
+    default_ownership: provider
+    definition: A provider 5xx or overload condition that exhausted the registered attempt bound and left the call terminal.
+    public_safe_summary: provider service attempts exhausted and the run remained incomplete
+  - id: request-parameter-invalid
+    layer: request
+    terminal: true
+    default_ownership: adapter
+    definition: The instrument emitted a request that violates the provider's documented request contract.
+    public_safe_summary: instrument request failed the documented provider parameter contract
+  - id: request-parameter-unsupported
+    layer: request
+    terminal: true
+    default_ownership: unresolved
+    definition: The emitted parameter is documented generally but unsupported for the exact pinned route, snapshot, account, or schema shape.
+    public_safe_summary: exact provider route rejected a request parameter or schema capability
+  - id: structured-output-provider-rejection
+    layer: structured-output
+    terminal: true
+    default_ownership: provider
+    definition: The request matches the documented contract but the provider rejects its structured-output schema or service-side compilation.
+    public_safe_summary: provider rejected a documented structured-output request
+  - id: structured-output-model-nonconformance
+    layer: structured-output
+    terminal: true
+    default_ownership: model
+    definition: The provider accepted the structured-output request but the returned model content did not conform after the bounded schema-only repair.
+    public_safe_summary: model output remained schema-invalid after the registered repair bound
+  - id: parser-rejection-valid-response
+    layer: parser
+    terminal: true
+    default_ownership: adapter
+    definition: A response satisfies the registered action contract but the local parser rejects it.
+    public_safe_summary: valid structured output was rejected by the instrument parser
+  - id: parser-rejection-invalid-response
+    layer: parser
+    terminal: true
+    default_ownership: model
+    definition: The local parser correctly rejects a response that violates the registered action contract after the allowed repair.
+    public_safe_summary: invalid structured output was correctly rejected
+  - id: orchestration-protocol-error
+    layer: orchestration
+    terminal: true
+    default_ownership: orchestration
+    definition: A call or action state violates the registered rounds, information rights, final-action, message, or architecture protocol independently of provider transport.
+    public_safe_summary: registered orchestration protocol ended invalid
+  - id: evaluator-missingness
+    layer: evaluator
+    terminal: true
+    default_ownership: evaluator
+    definition: A terminally missing or invalid run is represented incorrectly, omitted from pairing, or scored inconsistently with the registered missingness rule.
+    public_safe_summary: terminal run missingness requires conservative evaluator handling
+  - id: unknown-terminal
+    layer: unresolved
+    terminal: true
+    default_ownership: unresolved
+    definition: Available retained evidence proves a terminal failure but cannot safely distinguish the exact request, provider, model, parser, orchestration, or evaluator cause.
+    public_safe_summary: terminal failure preserved with exact cause unresolved
+batch_integrity_failures:
+  - custody-commitment-mismatch
+  - output-lock-mismatch
+  - append-only-ledger-invalid
+  - contamination-finding
+  - method-a-b-disagreement
+  - unauthorized-private-access
+  - private-state-mutation
+  - outcome-dependent-rerun
+public_boundary:
+  allowed:
+    - provider
+    - taxonomy_class
+    - recovered_or_terminal
+    - stage
+    - request_or_response_side
+    - code_repair_required
+    - terminal_run_missing
+    - metrics_or_verification_affected
+    - prospective_policy
+    - next_gate
+  prohibited:
+    - private_task
+    - target
+    - signal
+    - prompt
+    - peer_message
+    - raw_output
+    - raw_provider_response
+    - raw_provider_error_body
+    - unsafe_request_identifier
+    - answer
+    - task_level_performance
+    - architecture_or_model_ranking

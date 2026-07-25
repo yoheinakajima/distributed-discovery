@@ -23,6 +23,16 @@ OPENAI_MODEL = "gpt-5.4-2026-03-05"
 ANTHROPIC_MODEL = "claude-sonnet-4-6"
 OPENROUTER_MISTRAL_MODEL = "mistralai/mistral-small-3.1-24b-instruct"
 OPENROUTER_GEMINI_MODEL = "google/gemini-2.5-pro"
+ERROR_ENVELOPE_VERSION = "agents-provider-error-envelope-v1"
+RETRYABLE_ERROR_CLASSES = frozenset(
+    {
+        "timeout",
+        "transient-transport",
+        "invalid-provider-json",
+        "rate-limit",
+        "transient-provider",
+    }
+)
 
 OPENAI_MANIFEST = ModelManifest(
     provider="openai_direct",
@@ -243,6 +253,30 @@ class LiveAdapterBase:
             },
         )
 
+    def _transport_failure(self, error_class: str) -> AdapterResponse:
+        return AdapterResponse(
+            "",
+            error_class=error_class,
+            operational_metadata={
+                "error_contract_version": ERROR_ENVELOPE_VERSION,
+                "error_locus": "transport",
+                "http_status": None,
+                "retry_eligible": error_class in RETRYABLE_ERROR_CLASSES,
+                "gateway": self.gateway_id,
+                "route_id": self.route_id,
+                "model": self.manifest.exact_snapshot,
+                "hidden_reasoning_stored": False,
+            },
+        )
+
+    def _http_error_envelope(self, *, status: int, error_class: str | None) -> Mapping[str, object]:
+        return {
+            "error_contract_version": ERROR_ENVELOPE_VERSION,
+            "error_locus": "provider-http-response" if error_class is not None else "none",
+            "http_status": status,
+            "retry_eligible": error_class in RETRYABLE_ERROR_CLASSES,
+        }
+
 
 def action_schema(request: AdapterRequest) -> dict[str, object]:
     return {
@@ -280,13 +314,21 @@ def action_schema(request: AdapterRequest) -> dict[str, object]:
                 "type": "boolean",
                 "enum": [request.final_required],
             },
-            "visible_message": {"type": "string"},
+            "visible_message": {"type": "string", "maxLength": 1024},
             "source_choice": {
                 "type": "string",
                 "enum": list(request.source_vocabulary),
             },
             "actions": {
                 "type": "array",
+                "minItems": 1,
+                "maxItems": 1 if request.final_required else 6,
+                "uniqueItems": True,
+                "description": (
+                    "Exactly one final action."
+                    if request.final_required
+                    else "One to six explicitly non-final proposal candidates."
+                ),
                 "items": {
                     "type": "string",
                     "enum": list(request.action_vocabulary),
@@ -356,7 +398,7 @@ class OpenAIResponsesAdapter(LiveAdapterBase):
                 )
             )
         except ProviderTransportError as exc:
-            return AdapterResponse("", error_class=str(exc))
+            return self._transport_failure(str(exc))
         error = normalize_http_error("openai", response.status, response.body)
         input_tokens, output_tokens = _openai_usage(response.body)
         output = _openai_output_text(response.body) if error is None else ""
@@ -366,6 +408,7 @@ class OpenAIResponsesAdapter(LiveAdapterBase):
             output_tokens=output_tokens,
             error_class=error,
             operational_metadata={
+                **self._http_error_envelope(status=response.status, error_class=error),
                 "gateway": self.gateway_id,
                 "route_id": self.route_id,
                 "model": _safe_exact(response.body.get("model"), self.manifest.exact_snapshot),
@@ -420,7 +463,7 @@ class AnthropicMessagesAdapter(LiveAdapterBase):
                 )
             )
         except ProviderTransportError as exc:
-            return AdapterResponse("", error_class=str(exc))
+            return self._transport_failure(str(exc))
         error = normalize_http_error("anthropic", response.status, response.body)
         input_tokens, output_tokens = _anthropic_usage(response.body)
         output = _anthropic_output_text(response.body) if error is None else ""
@@ -430,6 +473,7 @@ class AnthropicMessagesAdapter(LiveAdapterBase):
             output_tokens=output_tokens,
             error_class=error,
             operational_metadata={
+                **self._http_error_envelope(status=response.status, error_class=error),
                 "gateway": self.gateway_id,
                 "route_id": self.route_id,
                 "model": _safe_exact(response.body.get("model"), self.manifest.exact_snapshot),
@@ -513,7 +557,7 @@ class OpenRouterAdapter(LiveAdapterBase):
                 )
             )
         except ProviderTransportError as exc:
-            return AdapterResponse("", error_class=str(exc))
+            return self._transport_failure(str(exc))
         error = normalize_http_error("openrouter", response.status, response.body)
         if response.status == 404:
             error = "policy-ineligible"
@@ -536,6 +580,7 @@ class OpenRouterAdapter(LiveAdapterBase):
             error_class=error,
             provider_cost_usd=provider_cost,
             operational_metadata={
+                **self._http_error_envelope(status=response.status, error_class=error),
                 "gateway": self.gateway_id,
                 "route_id": self.route_id,
                 "model": _safe_exact(response.body.get("model"), self.manifest.exact_snapshot),

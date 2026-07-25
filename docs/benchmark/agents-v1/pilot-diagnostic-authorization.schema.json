@@ -1,0 +1,303 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TreasureBench Agents v1 read-only pilot diagnostic authorization",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "authorization_id",
+    "authorization_status",
+    "authorized_at_utc",
+    "expires_at_utc",
+    "revoked",
+    "revocation_reason",
+    "purpose",
+    "synthetic",
+    "owner_attestation",
+    "owner_confirmations",
+    "repository",
+    "issue",
+    "branch",
+    "diagnostic_commit",
+    "diagnostic_tree_hash",
+    "original_campaign",
+    "original_batch",
+    "original_execution_commit",
+    "original_output_lock",
+    "original_commitments",
+    "private_state_symbolic_root",
+    "private_detail_output_symbolic_path",
+    "permitted_command",
+    "permitted_private_paths",
+    "permitted_functions",
+    "limits",
+    "permissions",
+    "public_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "treasurebench-agents-v1-pilot-diagnostic-authorization-v1"
+    },
+    "authorization_id": {
+      "type": ["string", "null"],
+      "minLength": 16,
+      "maxLength": 160
+    },
+    "authorization_status": {
+      "enum": ["inactive", "authorized", "revoked", "expired"]
+    },
+    "authorized_at_utc": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "expires_at_utc": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "revoked": {"type": "boolean"},
+    "revocation_reason": {"type": ["string", "null"]},
+    "purpose": {
+      "const": "read-only-provider-and-action-budget-instrument-adjudication"
+    },
+    "synthetic": {"type": "boolean"},
+    "owner_attestation": {
+      "type": ["string", "null"],
+      "minLength": 80,
+      "maxLength": 1000
+    },
+    "owner_confirmations": {
+      "type": "object",
+      "required": [
+        "retained_audit_read_only",
+        "verify_original_lock_and_custody",
+        "inspect_exactly_500_run_traces_for_action_cardinality",
+        "diagnose_exactly_two_provider_errors_with_minimum_context",
+        "private_metric_sensitivity_only",
+        "no_provider_call_spend_or_new_private_material",
+        "no_private_state_mutation",
+        "no_raw_private_publication_and_redacted_output_only"
+      ],
+      "properties": {
+        "retained_audit_read_only": {"type": "boolean"},
+        "verify_original_lock_and_custody": {"type": "boolean"},
+        "inspect_exactly_500_run_traces_for_action_cardinality": {"type": "boolean"},
+        "diagnose_exactly_two_provider_errors_with_minimum_context": {"type": "boolean"},
+        "private_metric_sensitivity_only": {"type": "boolean"},
+        "no_provider_call_spend_or_new_private_material": {"type": "boolean"},
+        "no_private_state_mutation": {"type": "boolean"},
+        "no_raw_private_publication_and_redacted_output_only": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "repository": {"const": "yoheinakajima/distributed-discovery"},
+    "issue": {"const": 191},
+    "branch": {
+      "const": "benchmark/treasurebench-agents-v1-pilot-repair"
+    },
+    "diagnostic_commit": {
+      "type": ["string", "null"],
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "diagnostic_tree_hash": {
+      "type": ["string", "null"],
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "original_campaign": {
+      "const": "treasurebench-agents-v1-pilot-v1"
+    },
+    "original_batch": {"const": "tb-agents-v1-pilot-v1-b01"},
+    "original_execution_commit": {
+      "const": "b166e6fa19cbdec0bb8e786aee2de0d9edfc12d1"
+    },
+    "original_output_lock": {
+      "const": "sha256:1d487723f7587e8e2fa865682e6f6cc473cf2da4967b837dedf3952cddfcbfab"
+    },
+    "original_commitments": {
+      "const": {
+        "seed": "sha256:903c81a0dadc2f0ebcf8b3ae8f9e593434b17fd665985ea931eba770f68cdaa0",
+        "task_ciphertext": "sha256:ef5197edaa23f27487451fd36dda20dafe2f85bbbb0bddb1e836fd4337b3d5c3",
+        "answer_ciphertext": "sha256:07ac8eade872dc5034159ef999ca845b3b5040b5690907f031b6c50c9c87e9fb"
+      }
+    },
+    "private_state_symbolic_root": {
+      "const": "XDG_STATE_HOME/distributed-discovery/treasurebench-agents-v1/pilot-v1"
+    },
+    "private_detail_output_symbolic_path": {
+      "type": ["string", "null"],
+      "pattern": "^XDG_STATE_HOME/distributed-discovery/treasurebench-agents-v1/diagnostics/pilot-repair/[a-zA-Z0-9._-]+\\.json$"
+    },
+    "permitted_command": {
+      "const": "uv run --no-editable python scripts/diagnose_treasurebench_pilot_errors.py --repo ."
+    },
+    "permitted_private_paths": {
+      "const": [
+        "manifest.json",
+        "execution-identity.json",
+        "custody-manifest.json",
+        "task-custody.json",
+        "answer-custody.json",
+        "access-log.jsonl",
+        "usage-cost-ledger.jsonl",
+        "provider-stage-state.json",
+        "output-lock.json",
+        "operational-key.bin",
+        "task-key.bin",
+        "answer-key.bin",
+        "final-audit-package.sealed.json",
+        "task-custody.json",
+        "answer-custody.json",
+        "encrypted-provider-responses/<exact-two-errors-and-at-most-two-adjacent-records>",
+        "encrypted-traces/<exactly-500-private-run-traces>"
+      ]
+    },
+    "permitted_functions": {
+      "const": [
+        "verify-private-manifest-and-modes",
+        "verify-original-output-lock",
+        "verify-original-custody-commitments",
+        "verify-append-only-logs",
+        "decrypt-final-audit-package",
+        "select-exactly-two-error-records",
+        "decrypt-exactly-two-error-responses",
+        "decrypt-exactly-500-private-run-traces",
+        "verify-trace-hashes-and-contract-cardinalities",
+        "decrypt-locked-task-and-answer-records-for-private-sensitivity",
+        "aggregate-by-family-architecture-model-provider-and-round",
+        "identify-final-action-count-not-equal-to-one",
+        "map-protocol-validity-and-downstream-metric-effects",
+        "compute-private-sensitivity-only",
+        "write-private-detail-outside-retained-root",
+        "emit-redacted-public-candidate"
+      ]
+    },
+    "limits": {
+      "const": {
+        "provider_calls": 0,
+        "cost_usd": 0,
+        "credential_reads": 0,
+        "new_private_objects": 0,
+        "error_records": 2,
+        "surrounding_response_records": 2,
+        "private_run_trace_records": 500,
+        "task_records": 50,
+        "answer_records": 50,
+        "retained_private_writes": 0
+      }
+    },
+    "permissions": {
+      "type": "object",
+      "required": [
+        "read_retained_state",
+        "verify_output_lock",
+        "verify_custody_and_logs",
+        "decrypt_final_audit_package",
+        "decrypt_two_error_records",
+        "decrypt_exactly_500_private_run_traces",
+        "decrypt_locked_task_answer_for_sensitivity",
+        "aggregate_action_cardinalities",
+        "compute_private_metric_sensitivity",
+        "write_private_detail_outside_retained_root",
+        "emit_redacted_public_candidate",
+        "provider_calls",
+        "credential_access",
+        "generate_seed_task_answer_key_or_batch",
+        "mutate_retained_private_state",
+        "publish_raw_private_content"
+      ],
+      "properties": {
+        "read_retained_state": {"type": "boolean"},
+        "verify_output_lock": {"type": "boolean"},
+        "verify_custody_and_logs": {"type": "boolean"},
+        "decrypt_final_audit_package": {"type": "boolean"},
+        "decrypt_two_error_records": {"type": "boolean"},
+        "decrypt_exactly_500_private_run_traces": {"type": "boolean"},
+        "decrypt_locked_task_answer_for_sensitivity": {"type": "boolean"},
+        "aggregate_action_cardinalities": {"type": "boolean"},
+        "compute_private_metric_sensitivity": {"type": "boolean"},
+        "write_private_detail_outside_retained_root": {"type": "boolean"},
+        "emit_redacted_public_candidate": {"type": "boolean"},
+        "provider_calls": {"const": false},
+        "credential_access": {"const": false},
+        "generate_seed_task_answer_key_or_batch": {"const": false},
+        "mutate_retained_private_state": {"const": false},
+        "publish_raw_private_content": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "public_boundary": {
+      "const": "redacted-aggregate-protocol-counts-and-error-classification-no-raw-or-performance"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "authorization_status": {"const": "inactive"}
+        }
+      },
+      "then": {
+        "properties": {
+          "authorization_id": {"const": null},
+          "authorized_at_utc": {"const": null},
+          "expires_at_utc": {"const": null},
+          "synthetic": {"const": true},
+          "owner_attestation": {"const": null},
+          "diagnostic_commit": {"const": null},
+          "diagnostic_tree_hash": {"const": null},
+          "private_detail_output_symbolic_path": {"const": null}
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "authorization_status": {"const": "authorized"}
+        }
+      },
+      "then": {
+        "properties": {
+          "authorization_id": {"type": "string"},
+          "authorized_at_utc": {"type": "string"},
+          "expires_at_utc": {"type": "string"},
+          "synthetic": {"const": false},
+          "owner_attestation": {"type": "string"},
+          "diagnostic_commit": {"type": "string"},
+          "diagnostic_tree_hash": {"type": "string"},
+          "private_detail_output_symbolic_path": {"type": "string"},
+          "owner_confirmations": {
+            "const": {
+              "retained_audit_read_only": true,
+              "verify_original_lock_and_custody": true,
+              "inspect_exactly_500_run_traces_for_action_cardinality": true,
+              "diagnose_exactly_two_provider_errors_with_minimum_context": true,
+              "private_metric_sensitivity_only": true,
+              "no_provider_call_spend_or_new_private_material": true,
+              "no_private_state_mutation": true,
+              "no_raw_private_publication_and_redacted_output_only": true
+            }
+          },
+          "permissions": {
+            "const": {
+              "read_retained_state": true,
+              "verify_output_lock": true,
+              "verify_custody_and_logs": true,
+              "decrypt_final_audit_package": true,
+              "decrypt_two_error_records": true,
+              "decrypt_exactly_500_private_run_traces": true,
+              "decrypt_locked_task_answer_for_sensitivity": true,
+              "aggregate_action_cardinalities": true,
+              "compute_private_metric_sensitivity": true,
+              "write_private_detail_outside_retained_root": true,
+              "emit_redacted_public_candidate": true,
+              "provider_calls": false,
+              "credential_access": false,
+              "generate_seed_task_answer_key_or_batch": false,
+              "mutate_retained_private_state": false,
+              "publish_raw_private_content": false
+            }
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": false
+}

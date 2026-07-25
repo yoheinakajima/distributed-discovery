@@ -11,12 +11,14 @@
     "agent_id": {"type": "string", "pattern": "^AGENT-0[1-6]$"},
     "round": {"type": "integer", "minimum": 0, "maximum": 2},
     "final": {"type": "boolean"},
-    "visible_message": {"type": "string", "maxLength": 2048},
+    "visible_message": {"type": "string", "maxLength": 1024},
     "source_choice": {"enum": ["common", "independent", "none"]},
     "actions": {
       "type": "array",
       "minItems": 1,
       "maxItems": 6,
+      "uniqueItems": true,
+      "description": "One to six proposal candidates when final is false; exactly one action when final is true.",
       "items": {"type": "string", "pattern": "^TARGET-[A-Z]$"}
     },
     "declared_confidence": {"type": "number", "minimum": 0, "maximum": 1},
@@ -25,5 +27,18 @@
       "description": "Machine-readable agent-declared metadata; evaluator and hidden-answer fields remain prohibited.",
       "additionalProperties": true
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"final": {"const": true}},
+        "required": ["final"]
+      },
+      "then": {
+        "properties": {
+          "actions": {"minItems": 1, "maxItems": 1}
+        }
+      }
+    }
+  ]
 }

@@ -1,5 +1,5 @@
 study_id: DD-010
-status: complete-v1-v3-with-agents-v1-sealed-pilot-phase-a
-evidence_status: v1-v2-preserved-v3-independently-reproduced-exact-matrix; agents-v1-pilot-phase-a-synthetic-only-not-authorized-not-evaluated-no-performance-evidence
-next_action: freeze and authorize exact sealed-pilot execution; make no provider call or real private material before matching non-synthetic owner authorization; base remains separately blocked
-updated_utc: 2026-07-24T00:00:00Z
+status: complete-v1-v3-with-agents-v1-pilot-repair-adjudicated
+evidence_status: v1-v2-preserved-v3-independently-reproduced-exact-matrix; original-agents-v1-pilot-permanently-quarantined; repair-adjudication-is-redacted-engineering-only-not-performance-or-scientific-evidence
+next_action: separately register and owner-authorize a wholly fresh sealed repair-confirmation pilot if exercised; do not reuse any original or future-base instance; base remains separately blocked
+updated_utc: 2026-07-25T02:45:00Z

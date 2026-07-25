@@ -79,7 +79,7 @@ def parse_action(
         raise ValueError("agent identity mismatch")
     if value["round"] != round_number or round_number not in (0, 1, 2):
         raise ValueError("round mismatch")
-    if not isinstance(value["final"], bool) or (final_required and not value["final"]):
+    if not isinstance(value["final"], bool) or value["final"] is not final_required:
         raise ValueError("invalid final flag")
     message = value["visible_message"]
     if not isinstance(message, str) or len(message) > 1024:
@@ -90,6 +90,10 @@ def parse_action(
     actions = value["actions"]
     if not isinstance(actions, list) or not actions:
         raise ValueError("missing actions")
+    if len(actions) > 6:
+        raise ValueError("proposal action cardinality exceeds six")
+    if final_required and len(actions) != 1:
+        raise ValueError("final action cardinality must equal one")
     if len(actions) != len(set(str(item) for item in actions)):
         raise ValueError("duplicate actions")
     if any(not isinstance(item, str) or item not in action_vocabulary for item in actions):

@@ -75,6 +75,9 @@ from distributed_discovery.benchmark.agents_v1.pilot import (
     verify_output_lock,
 )
 from distributed_discovery.benchmark.agents_v1.prompts import compile_prompt
+from distributed_discovery.benchmark.agents_v1.protocol_contract import (
+    verify_protocol_contract,
+)
 from distributed_discovery.benchmark.agents_v1.traces import build_trace
 from distributed_discovery.benchmark.agents_v1.verification import verify_method_agreement
 
@@ -439,7 +442,12 @@ def _run_public_canary(
     task = generate_public_calibration()[2]
     agent_id = sorted(task.capabilities)[0]
     for model, adapter in adapters.items():
-        prompt = compile_prompt(task, agent_id, architecture_id="provider-native-smoke")
+        prompt = compile_prompt(
+            task,
+            agent_id,
+            architecture_id="provider-native-smoke",
+            final_required=True,
+        )
         request = AdapterRequest(
             prompt=prompt,
             manifest=adapter.manifest,
@@ -512,6 +520,7 @@ def _run_public_canary(
         trace = build_trace(run)
         if trace.audit["hidden_reasoning_stored"] is not False:
             errors.append("hidden-reasoning-boundary")
+        errors.extend(verify_protocol_contract(task, run).errors)
         metrics = asdict(evaluate_run(task, run))
         errors.extend(verify_method_agreement(metrics, task, run))
         if errors:

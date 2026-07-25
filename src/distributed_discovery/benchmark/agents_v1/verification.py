@@ -23,6 +23,10 @@ from distributed_discovery.benchmark.agents_v1.models import (
     TaskInstance,
 )
 from distributed_discovery.benchmark.agents_v1.orchestration import ArchitectureRun
+from distributed_discovery.benchmark.agents_v1.protocol_contract import (
+    verify_metric_ranges,
+    verify_protocol_contract,
+)
 from distributed_discovery.benchmark.agents_v1.traces import verify_trace_hashes
 
 
@@ -33,8 +37,26 @@ def reconstruct_metrics(
     isolated_distinct_actions: int | None = None,
 ) -> dict[str, object]:
     """Recompute metrics from primitive task/action records without importing Method A."""
-    final_records = run.final_actions
-    selected = [item for record in final_records for item in record.actions]
+    required_agents = frozenset(task.capabilities)
+    final_records_list = []
+    for agent_id in sorted(required_agents):
+        listed = [record for record in run.final_actions if record.agent_id == agent_id]
+        observed = [
+            turn.action
+            for turn in run.turns
+            if turn.action is not None and turn.action.final and turn.action.agent_id == agent_id
+        ]
+        if (
+            len(listed) == 1
+            and len(observed) == 1
+            and listed[0] == observed[0]
+            and listed[0].final
+            and len(listed[0].actions) == 1
+            and listed[0].actions[0] in task.action_vocabulary
+        ):
+            final_records_list.append(listed[0])
+    final_records = tuple(final_records_list)
+    selected = [record.actions[0] for record in final_records]
     distinct = set(selected)
     target = str(task.primitive_state["target"])
     parameters = _mapping(task.primitive_state["parameters"])
@@ -47,14 +69,21 @@ def reconstruct_metrics(
         discovery = Fraction(int(target in distinct), 1)
     planner = Fraction(task.baseline.planner_discovery)
     private = Fraction(task.baseline.private_discovery)
-    invalid_count = len(task.capabilities) - len(final_records)
+    invalid_count = len(task.capabilities) - len({record.agent_id for record in final_records})
     source_counts = Counter(
         record.source_choice for record in final_records if record.source_choice != "none"
     )
     source_total = sum(source_counts.values())
     capacity = min(len(task.capabilities), len(task.action_vocabulary))
+    if capacity <= 0:
+        raise ValueError("declared action capacity must be positive")
+    isolated_distinct = (
+        isolated_distinct_actions if isolated_distinct_actions is not None else len(distinct)
+    )
+    if isolated_distinct < 0 or isolated_distinct > capacity:
+        raise ValueError("isolated action count exceeds declared action capacity")
     isolated_coverage = Fraction(
-        isolated_distinct_actions if isolated_distinct_actions is not None else len(distinct),
+        isolated_distinct,
         capacity,
     )
     coverage = Fraction(len(distinct), capacity)
@@ -93,12 +122,48 @@ def reconstruct_metrics(
             else None
         ),
         "invalid_action_rate": Fraction(invalid_count, max(1, len(task.capabilities))),
-        "protocol_compliance": Fraction(int(not run.protocol_errors), 1),
+        "protocol_compliance": Fraction(
+            int(not run.protocol_errors and _method_b_final_contract_errors(task, run) == ()),
+            1,
+        ),
         "calls": len(run.turns) + sum(record.retry_count for record in run.turns),
         "input_tokens": sum(record.response.usage.input_tokens for record in run.turns),
         "output_tokens": sum(record.response.usage.output_tokens for record in run.turns),
         "cost_usd": sum((record.response.usage.cost_usd for record in run.turns), Decimal("0")),
     }
+
+
+def _method_b_final_contract_errors(
+    task: TaskInstance,
+    run: ArchitectureRun,
+) -> tuple[str, ...]:
+    """Independently reconstruct the registered final-output invalid rule."""
+    required = (
+        frozenset(turn.agent_id for turn in run.turns)
+        if run.architecture_id == "provider-native-smoke"
+        else frozenset(task.capabilities)
+    )
+    listed = Counter(action.agent_id for action in run.final_actions)
+    observed = Counter(
+        turn.action.agent_id for turn in run.turns if turn.action is not None and turn.action.final
+    )
+    errors: list[str] = []
+    for agent_id in required:
+        if listed[agent_id] != 1 or observed[agent_id] != 1:
+            errors.append("missing-or-extra-final-record")
+    if set(listed) - required or set(observed) - required:
+        errors.append("undeclared-final-agent")
+    if listed != observed:
+        errors.append("final-action-extraction")
+    for action in run.final_actions:
+        if (
+            not action.final
+            or len(action.actions) != 1
+            or len(set(action.actions)) != 1
+            or action.actions[0] not in task.action_vocabulary
+        ):
+            errors.append("invalid-final-action")
+    return tuple(sorted(set(errors)))
 
 
 def verify_task(task: TaskInstance) -> tuple[str, ...]:
@@ -321,6 +386,8 @@ def verify_metric_vector(metrics: Mapping[str, object]) -> tuple[str, ...]:
     unknown = set(metrics) - REGISTERED_METRICS
     if unknown:
         errors.append("unregistered-metric")
+    if not unknown:
+        errors.extend(verify_metric_ranges(metrics))
     return tuple(errors)
 
 
@@ -390,6 +457,8 @@ def verify_offline_bundle(
     network_enabled: bool,
 ) -> tuple[str, ...]:
     errors = list(verify_task(task))
+    contract = verify_protocol_contract(task, run)
+    errors.extend(f"protocol-contract:{error}" for error in contract.errors)
     errors.extend(f"metric:{key}" for key in verify_method_agreement(method_a, task, run))
     errors.extend(f"metric-vector:{error}" for error in verify_metric_vector(method_a))
     if not verify_trace_hashes(raw_trace):

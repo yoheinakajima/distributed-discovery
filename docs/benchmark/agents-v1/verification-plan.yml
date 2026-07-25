@@ -21,6 +21,24 @@ method_b:
     - verify seed ciphertext answer and task commitments
     - verify trace and redaction hashes
     - verify every version manifest
+method_c:
+  name: independent-protocol-contract-verifier
+  imports_method_a_or_b_semantics: false
+  runs_before_performance_interpretation: true
+  authoritative_sources:
+    - docs/benchmark/agents-v1/team-architectures.yml
+    - docs/benchmark/agents-v1/agent-protocol.yml
+    - docs/benchmark/agents-v1/structured-output.schema.json
+    - docs/benchmark/agents-v1/metrics.yml
+  checks:
+    - exactly one final record per required agent
+    - exactly one final action per required agent
+    - action vocabulary and cardinality
+    - architecture-specific information and action rights
+    - round and visible-message limits
+    - source-choice and tool rights
+    - comparator and agent action-capacity agreement
+    - registered metric ranges
 agreement_rule: exact agreement on primitive classifications and exact comparators; tolerance only for separately recomputed floating summaries
 release_on_disagreement: false
 provider_execution_implemented: false

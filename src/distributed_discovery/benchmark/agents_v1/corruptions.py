@@ -1,13 +1,15 @@
-"""Executable public-fixture corruption suite C01-C24."""
+"""Executable public-fixture corruption suite C01-C28."""
 
 from __future__ import annotations
 
 from dataclasses import dataclass, replace
 from decimal import Decimal
+from fractions import Fraction
 
 from distributed_discovery.benchmark.agents_v1.actions import parse_action
 from distributed_discovery.benchmark.agents_v1.adapters import (
     AdapterRequest,
+    AdapterResponse,
     DisabledProviderAdapter,
     ModelManifest,
 )
@@ -16,8 +18,18 @@ from distributed_discovery.benchmark.agents_v1.custody import (
     ToyCustodyBundle,
     unseal_public_toy,
 )
-from distributed_discovery.benchmark.agents_v1.orchestration import MAX_MESSAGE_CHARS
+from distributed_discovery.benchmark.agents_v1.models import StructuredAction
+from distributed_discovery.benchmark.agents_v1.orchestration import (
+    MAX_MESSAGE_CHARS,
+    ArchitectureRun,
+    TurnRecord,
+    validate_orchestrated_action,
+)
 from distributed_discovery.benchmark.agents_v1.prompts import ClosedCapabilityView, leakage_findings
+from distributed_discovery.benchmark.agents_v1.protocol_contract import (
+    verify_metric_ranges,
+    verify_protocol_contract,
+)
 from distributed_discovery.benchmark.agents_v1.traces import verify_trace_hashes
 from distributed_discovery.benchmark.agents_v1.verification import (
     verify_exclusions,
@@ -60,7 +72,7 @@ def execute_corruption_suite(
         raise TypeError("public task and compiled prompt required")
     agent_id = prompt.agent_id
 
-    def parse(raw: str = raw_action) -> object:
+    def parse(raw: str = raw_action) -> StructuredAction:
         return parse_action(
             raw,
             task_commitment=task.commitment,
@@ -247,8 +259,80 @@ def execute_corruption_suite(
             lambda: _reject_if("composite_score" in {"composite_score": 1}, "composite score"),
         )
     )
-    if len(cases) != 24:
-        raise AssertionError("corruption registry must contain C01-C24")
+    two_actions = list(task.action_vocabulary[:2])
+    if len(two_actions) != 2:
+        raise AssertionError("action-budget corruptions require two public actions")
+    cases.append(
+        _expect(
+            "C25",
+            "final action cardinality",
+            lambda: parse(json.dumps({**action_object, "actions": two_actions})),
+        )
+    )
+    cases.append(
+        _expect(
+            "C26",
+            "metric range",
+            lambda: _require_no_errors(
+                verify_metric_ranges(
+                    {
+                        "group_discovery": Fraction(0),
+                        "distinct_action_coverage": Fraction(2),
+                        "duplication": Fraction(0),
+                        "planner_regret": Fraction(0),
+                        "private_baseline_regret": Fraction(0),
+                        "recovery_budget_attainment": None,
+                        "source_diversity": Fraction(0),
+                        "communication_action_compression": Fraction(0),
+                        "best_equilibrium_distance": None,
+                        "worst_equilibrium_distance": None,
+                        "invalid_action_rate": Fraction(0),
+                        "protocol_compliance": Fraction(0),
+                        "calls": 0,
+                        "input_tokens": 0,
+                        "output_tokens": 0,
+                        "cost_usd": Decimal("0"),
+                    }
+                )
+            ),
+        )
+    )
+    parsed = parse()
+    over_budget = replace(parsed, round_number=0, actions=tuple(two_actions))
+    bad_run = ArchitectureRun(
+        architecture_id="provider-native-smoke",
+        task_commitment=task.commitment,
+        turns=(
+            TurnRecord(
+                "provider-native-smoke",
+                agent_id,
+                0,
+                (),
+                AdapterResponse(raw_action),
+                over_budget,
+            ),
+        ),
+        final_actions=(over_budget,),
+        protocol_errors=(),
+    )
+    cases.append(
+        _expect(
+            "C27",
+            "parser defense omission",
+            lambda: _require_no_errors(
+                validate_orchestrated_action(over_budget, final_required=True)
+            ),
+        )
+    )
+    cases.append(
+        _expect(
+            "C28",
+            "shared semantic defect",
+            lambda: _reject_shared_method_defect(task, bad_run),
+        )
+    )
+    if len(cases) != 28:
+        raise AssertionError("corruption registry must contain C01-C28")
     return tuple(cases)
 
 
@@ -266,3 +350,16 @@ def _require_clean(value: object) -> None:
 def _require_no_errors(errors: tuple[str, ...]) -> None:
     if errors:
         raise ValueError(",".join(errors))
+
+
+def _reject_shared_method_defect(task: object, run: ArchitectureRun) -> None:
+    """Model legacy A/B agreement, then require independent Method C rejection."""
+    from distributed_discovery.benchmark.agents_v1.models import TaskInstance
+
+    if not isinstance(task, TaskInstance):
+        raise TypeError("public task required")
+    legacy_method_a = tuple(item for action in run.final_actions for item in action.actions)
+    legacy_method_b = tuple(item for action in run.final_actions for item in action.actions)
+    if legacy_method_a != legacy_method_b:
+        raise AssertionError("synthetic legacy methods must share the defect")
+    _require_no_errors(verify_protocol_contract(task, run).errors)

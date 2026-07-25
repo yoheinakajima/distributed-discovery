@@ -1,0 +1,84 @@
+schema_version: treasurebench-agents-v1-pilot-diagnostic-synthetic-cases-v1
+classification: public-synthetic-no-private-access
+status: phase-a-offline-only
+cases:
+  - case_id: recovered-transient-provider-error
+    synthetic: true
+    shape: {coarse_error_class: transient-provider, later_same_request_success: true}
+    expected_outcome: classify
+    expected_taxonomy_class: provider-service-recovered
+  - case_id: terminal-schema-parameter-error
+    synthetic: true
+    shape: {coarse_error_class: schema-or-parameter, later_same_request_success: false}
+    expected_outcome: classify
+    expected_taxonomy_class: unknown-terminal
+  - case_id: request-side-invalid-parameter
+    synthetic: true
+    shape: {side: request, documented_contract_valid: false}
+    expected_outcome: classify
+    expected_taxonomy_class: request-parameter-invalid
+  - case_id: response-side-structured-output-nonconformance
+    synthetic: true
+    shape: {side: response, schema_conformant: false}
+    expected_outcome: classify
+    expected_taxonomy_class: structured-output-model-nonconformance
+  - case_id: parser-rejects-valid-response
+    synthetic: true
+    shape: {side: parser, registered_schema_valid: true, parser_accepts: false}
+    expected_outcome: classify
+    expected_taxonomy_class: parser-rejection-valid-response
+  - case_id: malformed-error-record
+    synthetic: true
+    shape: {missing_fields: [call_key, transport_attempt]}
+    expected_outcome: reject
+    rejection: malformed-error-record
+  - case_id: output-lock-mismatch
+    synthetic: true
+    shape: {output_lock_matches: false}
+    expected_outcome: reject
+    rejection: output-lock-mismatch
+  - case_id: unauthorized-extra-record-access
+    synthetic: true
+    shape: {error_records_selected: 3}
+    expected_outcome: reject
+    rejection: excessive-record-selection
+  - case_id: private-disclosure-attempt
+    synthetic: true
+    shape: {public_candidate_contains: raw_output}
+    expected_outcome: reject
+    rejection: raw-private-disclosure
+  - case_id: private-mutation-attempt
+    synthetic: true
+    shape: {retained_private_write_attempted: true}
+    expected_outcome: reject
+    rejection: retained-private-write
+  - case_id: provider-call-attempt
+    synthetic: true
+    shape: {provider_call_attempted: true}
+    expected_outcome: reject
+    rejection: provider-call-prohibited
+  - case_id: multiple-final-actions
+    synthetic: true
+    shape: {final: true, action_count: 2}
+    expected_outcome: reject
+    rejection: final-action-cardinality
+  - case_id: coverage-above-one
+    synthetic: true
+    shape: {distinct_action_coverage: "2"}
+    expected_outcome: reject
+    rejection: metric-range
+  - case_id: parser-cardinality-omission
+    synthetic: true
+    shape: {parser_accepts_multiple_final_actions: true, method_c_accepts: false}
+    expected_outcome: reject
+    rejection: parser-defense-omission
+  - case_id: shared-method-a-b-semantic-defect
+    synthetic: true
+    shape: {method_a_flattens: true, method_b_flattens: true, method_c_accepts: false}
+    expected_outcome: reject
+    rejection: shared-semantic-defect
+  - case_id: wrong-private-trace-count
+    synthetic: true
+    shape: {private_run_trace_records: 499}
+    expected_outcome: reject
+    rejection: exact-trace-inventory
