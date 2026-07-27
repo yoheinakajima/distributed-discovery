@@ -37,6 +37,9 @@ from distributed_discovery.benchmark.agents_v1.pilot import (
 )
 from distributed_discovery.benchmark.agents_v1.pilot_live import run_live_pilot
 from distributed_discovery.benchmark.agents_v1.prompts import compile_prompt
+from distributed_discovery.benchmark.agents_v1.provider_canary_live import (
+    run_provider_schema_canaries,
+)
 from distributed_discovery.benchmark.agents_v1.rehearsal import (
     readiness_report,
     run_rehearsal,
@@ -68,6 +71,7 @@ COMMANDS = (
     "pilot-redacted-summary",
     "pilot-rehearsal",
     "fresh-pilot-live",
+    "provider-schema-canaries",
 )
 
 
@@ -161,6 +165,8 @@ def execute(args: argparse.Namespace) -> Mapping[str, object] | list[object]:
         return run_live_pilot(Path.cwd())
     if command == "fresh-pilot-live":
         return run_live_fresh_pilot(Path.cwd())
+    if command == "provider-schema-canaries":
+        return run_provider_schema_canaries(Path.cwd())
     if command == "pilot-verify":
         corruptions = audit_pilot_corruptions(Path.cwd())
         if any(item["status"] != "rejected" for item in corruptions):

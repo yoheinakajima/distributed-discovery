@@ -2,11 +2,12 @@ from __future__ import annotations
 
 import hashlib
 import json
+from collections.abc import Mapping
 from copy import deepcopy
 from dataclasses import replace
 from decimal import Decimal
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 import jsonschema
 import pytest
@@ -73,7 +74,7 @@ def _valid_action(request: AdapterRequest) -> dict[str, object]:
     }
 
 
-def test_reconstructed_openai_request_contains_documented_unsupported_constraints() -> None:
+def test_reconstructed_openai_request_contains_corrected_bounded_violations() -> None:
     request = _request()
     payload = build_openai_responses_payload(
         request,
@@ -84,8 +85,10 @@ def test_reconstructed_openai_request_contains_documented_unsupported_constraint
     schema = text["format"]["schema"]
     assert isinstance(schema, dict)
     issues = provider_schema_issues(OPENAI_PROVIDER, schema)
-    for keyword in ("maxLength", "minItems", "maxItems", "uniqueItems"):
+    for keyword in ("maxLength", "uniqueItems"):
         assert any(keyword in issue for issue in issues)
+    for keyword in ("minItems", "maxItems"):
+        assert not any(keyword in issue for issue in issues)
     assert payload["model"] == "gpt-5.4-2026-03-05"
     assert payload["reasoning"] == {"effort": "none"}
     assert payload["store"] is False
@@ -96,13 +99,18 @@ def test_provider_compilers_preserve_canonical_semantics_outside_transport() -> 
     canonical = canonical_action_schema(request)
     openai = compile_openai_action_schema(request)
     anthropic = compile_anthropic_action_schema(request)
-    canonical_actions = canonical["properties"]["actions"]
-    openai_actions = openai["properties"]["actions"]
-    anthropic_actions = anthropic["properties"]["actions"]
+    canonical_properties = cast(dict[str, object], canonical["properties"])
+    openai_properties = cast(dict[str, object], openai["properties"])
+    anthropic_properties = cast(dict[str, object], anthropic["properties"])
+    canonical_actions = cast(dict[str, object], canonical_properties["actions"])
+    openai_actions = cast(dict[str, object], openai_properties["actions"])
+    anthropic_actions = cast(dict[str, object], anthropic_properties["actions"])
     assert canonical_actions["minItems"] == 1
     assert canonical_actions["maxItems"] == 1
     assert canonical_actions["uniqueItems"] is True
-    assert all(keyword not in openai_actions for keyword in ("minItems", "maxItems", "uniqueItems"))
+    assert openai_actions["minItems"] == 1
+    assert openai_actions["maxItems"] == 1
+    assert "uniqueItems" not in openai_actions
     assert anthropic_actions["minItems"] == 1
     assert all(keyword not in anthropic_actions for keyword in ("maxItems", "uniqueItems"))
     assert_provider_schema(OPENAI_PROVIDER, openai)
@@ -124,9 +132,12 @@ def test_provider_schema_corruptions_fail_offline(corruption: str, expected: str
     properties = schema["properties"]
     assert isinstance(properties, dict)
     if corruption == "unsupported-provider-keyword":
-        properties["actions"]["uniqueItems"] = True
+        actions = cast(dict[str, object], properties["actions"])
+        actions["uniqueItems"] = True
     elif corruption == "omitted-required-field-declaration":
-        schema["required"] = list(schema["required"])[1:]
+        required = schema["required"]
+        assert isinstance(required, list)
+        schema["required"] = required[1:]
     elif corruption == "missing-additional-properties-false":
         del schema["additionalProperties"]
     elif corruption == "empty-nested-object":
@@ -144,23 +155,28 @@ def test_provider_schema_drift_fails_exact_fingerprint() -> None:
         assert_schema_fingerprint(drifted, expected)
 
 
-@pytest.mark.parametrize(
-    ("actions", "message"),
-    [
+def test_openai_transport_and_post_parse_both_enforce_one_final_action() -> None:
+    request = _request()
+    schema = compile_openai_action_schema(request)
+    for actions, message in (
         (["TARGET-A", "TARGET-B"], "final action cardinality"),
         ([], "missing actions"),
-    ],
-)
-def test_transport_schema_can_pass_while_semantic_validation_fails(
-    actions: list[str],
-    message: str,
-) -> None:
+    ):
+        value = _valid_action(request)
+        value["actions"] = actions
+        with pytest.raises(jsonschema.ValidationError):
+            jsonschema.validate(value, schema)
+        with pytest.raises(ValueError, match=message):
+            validate_action_semantics(json.dumps(value), request)
+
+
+def test_omitted_openai_max_length_remains_post_parse_enforced() -> None:
     request = _request()
     value = _valid_action(request)
-    value["actions"] = actions
+    value["visible_message"] = "x" * 1025
     schema = compile_openai_action_schema(request)
     jsonschema.validate(value, schema)
-    with pytest.raises(ValueError, match=message):
+    with pytest.raises(ValueError, match="visible message"):
         validate_action_semantics(json.dumps(value), request)
 
 
@@ -169,8 +185,12 @@ def test_complete_payloads_use_distinct_provider_compilers() -> None:
     anthropic_request = _request(ANTHROPIC_MANIFEST)
     openai = build_openai_responses_payload(openai_request)
     anthropic = build_anthropic_messages_payload(anthropic_request)
-    openai_schema = openai["text"]["format"]["schema"]
-    anthropic_schema = anthropic["output_config"]["format"]["schema"]
+    openai_text = cast(Mapping[str, object], openai["text"])
+    openai_format = cast(Mapping[str, object], openai_text["format"])
+    openai_schema = cast(Mapping[str, object], openai_format["schema"])
+    anthropic_output = cast(Mapping[str, object], anthropic["output_config"])
+    anthropic_format = cast(Mapping[str, object], anthropic_output["format"])
+    anthropic_schema = cast(Mapping[str, object], anthropic_format["schema"])
     assert provider_schema_issues(OPENAI_PROVIDER, openai_schema) == ()
     assert provider_schema_issues(ANTHROPIC_PROVIDER, anthropic_schema) == ()
     assert openai_schema != anthropic_schema
@@ -201,7 +221,10 @@ def test_route_model_alias_fallback_call_and_spend_drift_fails(
     field_name: str,
     value: object,
 ) -> None:
-    policy = replace(EXPECTED_PUBLIC_CANARY_POLICY, **{field_name: value})
+    policy = replace(
+        EXPECTED_PUBLIC_CANARY_POLICY,
+        **{field_name: value},  # type: ignore[arg-type]
+    )
     with pytest.raises(PermissionError, match="public canary"):
         validate_public_canary_policy(policy)
 
@@ -216,7 +239,9 @@ def test_deterministic_canary_matrix_requires_both_complete_schemas() -> None:
     ]
     assert [item["complete"] for item in matrix] == [False, True, False, True]
     for item in matrix:
-        assert_provider_schema(str(item["provider"]), item["schema"])
+        schema = item["schema"]
+        assert isinstance(schema, Mapping)
+        assert_provider_schema(str(item["provider"]), schema)
 
 
 def test_committed_serialized_request_fixtures_match_compilers_and_hashes() -> None:

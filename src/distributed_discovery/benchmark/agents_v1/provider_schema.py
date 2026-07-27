@@ -28,11 +28,6 @@ OPENAI_UNSUPPORTED_KEYWORDS = frozenset(
         "else",
         "minLength",
         "maxLength",
-        "pattern",
-        "format",
-        "minimum",
-        "maximum",
-        "multipleOf",
         "patternProperties",
         "unevaluatedProperties",
         "propertyNames",
@@ -42,8 +37,6 @@ OPENAI_UNSUPPORTED_KEYWORDS = frozenset(
         "contains",
         "minContains",
         "maxContains",
-        "minItems",
-        "maxItems",
         "uniqueItems",
     }
 )
@@ -51,6 +44,8 @@ ANTHROPIC_UNSUPPORTED_KEYWORDS = frozenset(
     {
         "minimum",
         "maximum",
+        "exclusiveMinimum",
+        "exclusiveMaximum",
         "multipleOf",
         "minLength",
         "maxLength",
@@ -234,7 +229,7 @@ def compile_openai_action_schema(request: AdapterRequest) -> dict[str, object]:
     """Compile the canonical contract to OpenAI's documented strict subset."""
     schema = _without_keywords(
         canonical_action_schema(request),
-        {"maxLength", "minItems", "maxItems", "uniqueItems"},
+        {"maxLength", "uniqueItems"},
     )
     assert_provider_schema(OPENAI_PROVIDER, schema)
     return schema
@@ -296,6 +291,63 @@ def public_canary_matrix(request: AdapterRequest) -> tuple[Mapping[str, object],
             "model": "claude-sonnet-4-6",
             "schema": compile_anthropic_action_schema(request),
             "complete": True,
+        },
+    )
+
+
+def provider_bisection_matrix(
+    provider: str,
+    request: AdapterRequest,
+) -> tuple[Mapping[str, object], ...]:
+    """Return the frozen diagnostic schemas used only after a complete failure."""
+    if provider not in PROVIDERS:
+        raise ProviderSchemaError(f"unsupported provider: {provider}")
+    action_array: dict[str, object] = {
+        "type": "array",
+        "minItems": 1,
+        "description": "One diagnostic action from the public vocabulary.",
+        "items": {
+            "type": "string",
+            "enum": list(request.action_vocabulary),
+        },
+    }
+    if provider == OPENAI_PROVIDER:
+        action_array["maxItems"] = 1
+    action_core: dict[str, object] = {
+        "type": "object",
+        "additionalProperties": False,
+        "required": ["actions"],
+        "properties": {"actions": action_array},
+    }
+    identity_envelope: dict[str, object] = {
+        "type": "object",
+        "additionalProperties": False,
+        "required": ["agent_id", "final"],
+        "properties": {
+            "agent_id": {
+                "type": "string",
+                "enum": [request.prompt.agent_id],
+            },
+            "final": {
+                "type": "boolean",
+                "enum": [True],
+            },
+        },
+    }
+    for schema in (action_core, identity_envelope):
+        assert_provider_schema(provider, schema)
+    return (
+        {
+            "canary_id": f"{provider}-bisection-action-cardinality",
+            "provider": provider,
+            "schema": action_core,
+            "diagnostic_order": 1,
+        },
+        {
+            "canary_id": f"{provider}-bisection-identity-envelope",
+            "provider": provider,
+            "schema": identity_envelope,
+            "diagnostic_order": 2,
         },
     )
 

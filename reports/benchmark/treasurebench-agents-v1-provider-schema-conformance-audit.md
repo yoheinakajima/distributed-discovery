@@ -1,8 +1,8 @@
 # TreasureBench Agents v1 provider-schema conformance audit
 
-AO-0004 completed the public-only offline diagnosis and repair boundary. No
-credential was read, no provider was called, no private state was accessed,
-and spend remains USD 0.
+AO-0004 completed the corrected public-only offline diagnosis and repair
+boundary. No credential was read, no provider was called, no private state was
+accessed, and spend remains USD 0.
 
 ## Bounded diagnosis
 
@@ -12,11 +12,18 @@ round, model, request parameters, and canonical action schema as the terminal
 public canary. Its byte hash is
 `sha256:514f96178acb48f54d4f4ad5f66d4131b4109298f5b88b4e01f130b038978fe8`.
 
-The reconstructed OpenAI schema contains four documented unsupported strict
-constraints: `maxLength`, `minItems`, `maxItems`, and `uniqueItems`. That is a
-bounded diagnosis, not a claim about which keyword the provider named first:
-the original raw error body was intentionally not retained, and this task has
-not made a replacement call.
+For the pinned standard snapshot `gpt-5.4-2026-03-05`, the current OpenAI
+documentation lists array `minItems` and `maxItems` as supported. Their
+additional exclusion applies to fine-tuned models and does not apply here.
+The reconstructed schema's `maxLength` and `uniqueItems` are outside the
+documented standard-model subset.
+
+The historical HTTP 400 cause remains unresolved. It is consistent with one
+or both of those omitted constraints or another parameter or schema-complexity
+interaction, but the original raw error body was intentionally not retained
+and this task has made no replacement call. This audit does not attribute the
+failure to `minItems` or `maxItems`, does not claim that all four historical
+keywords were unsupported, and does not identify a first rejected keyword.
 
 The request route and outer shape remain supported: GPT-5.4 lists
 `gpt-5.4-2026-03-05` as its current snapshot with Responses and Structured
@@ -33,13 +40,16 @@ does not support the canonical contract's `maxLength`, `maxItems`, or
 
 ## Repair boundary
 
-The canonical action contract is unchanged. Separate OpenAI and Anthropic
-compilers remove only unsupported transport keywords. Provider-independent
-post-parse validation still enforces message length, proposal cardinality,
-uniqueness, exact final cardinality, action and source vocabulary, and all
-identity fields. Existing orchestration still enforces exactly one final
-record per required agent, keeps non-final proposals out of final scoring,
-runs Method C before metrics, and checks metric ranges.
+The canonical action contract is unchanged. The OpenAI compiler retains
+`minItems: 1` and `maxItems: 1` in the complete final-action transport schema,
+and omits only `maxLength` and `uniqueItems`. The Anthropic compiler continues
+to omit only constraints outside that transport's subset.
+Provider-independent post-parse validation independently enforces message
+length, proposal cardinality, uniqueness, exact final cardinality, action and
+source vocabulary, and all identity fields. Existing orchestration still
+enforces exactly one final record per required agent, keeps non-final
+proposals out of final scoring, runs Method C before metrics, and checks
+metric ranges.
 
 Offline linting rejects unsupported keywords, incomplete `required` arrays,
 missing `additionalProperties: false`, malformed empty nested objects, and
@@ -72,9 +82,11 @@ Official sources: [OpenAI GPT-5.4](https://developers.openai.com/api/docs/models
 
 ## Stop
 
-The mock matrix is fixed as minimal OpenAI, complete OpenAI, minimal
-Anthropic, complete Anthropic. A complete-schema failure may trigger only
-bounded same-provider schema bisection within the later exact owner gate.
-Conformance cannot be declared until both complete schemas pass. AO-0004 now
-proceeds only to the exact execution freeze and generic owner-gate handoff; it
-must stop before credentials or provider calls.
+The committed runner sequence is fixed as minimal OpenAI, complete OpenAI,
+minimal Anthropic, complete Anthropic. A minimal failure stops immediately. A
+complete-schema failure permits exactly two precommitted same-provider
+bisection schemas, in deterministic order, within the ten-call and spend caps;
+the other provider remains blocked. No ad-hoc schema edits are allowed after a
+failure. Conformance cannot be declared until both complete schemas pass.
+AO-0004 now proceeds only to the corrected execution freeze and R2 owner-gate
+handoff; it must stop before credentials or provider calls.

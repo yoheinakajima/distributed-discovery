@@ -22,6 +22,7 @@ from distributed_discovery.benchmark.agents_v1.provider_schema import (
     compile_anthropic_action_schema,
     compile_openai_action_schema,
     minimal_provider_schema,
+    provider_bisection_matrix,
     public_canary_matrix,
 )
 
@@ -137,6 +138,23 @@ def build() -> dict[str, object]:
         complete=True,
         expected_offline_status="pass",
     )
+    bisection_order: dict[str, list[str]] = {}
+    for provider, request, payload_builder in (
+        (OPENAI_PROVIDER, openai_request, build_openai_responses_payload),
+        (ANTHROPIC_PROVIDER, anthropic_request, build_anthropic_messages_payload),
+    ):
+        bisection_order[provider] = []
+        for item in provider_bisection_matrix(provider, request):
+            fixture_id = str(item["canary_id"])
+            bisection_order[provider].append(fixture_id)
+            add(
+                fixture_id=fixture_id,
+                provider=provider,
+                filename=f"{fixture_id}.json",
+                payload=payload_builder(request, schema=item["schema"]),
+                complete=False,
+                expected_offline_status="pass-diagnostic-only",
+            )
     matrix = {
         "schema_version": "treasurebench-provider-canary-matrix-v1",
         "task_id": "AO-0004",
@@ -146,6 +164,12 @@ def build() -> dict[str, object]:
         "final_required": True,
         "fixtures": fixtures,
         "sequence": [item["canary_id"] for item in public_canary_matrix(openai_request)],
+        "bisection_order": bisection_order,
+        "bisection_policy": (
+            "Only the two committed same-provider candidates may run, in their listed "
+            "order, after that provider's complete schema fails. Diagnostic success "
+            "does not establish conformance, and the other provider remains blocked."
+        ),
         "stopping_rule": (
             "Stop immediately on any authorization, route, model, alias, fallback, "
             "privacy, schema, call-cap, or spend-cap mismatch. Stop on a minimal-schema "

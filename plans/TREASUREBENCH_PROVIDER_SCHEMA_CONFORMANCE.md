@@ -38,14 +38,23 @@ Registration audit at `2026-07-27`:
 - credentials, provider calls, spend, private material, scientific mutation,
   paper work, releases, and a new private pilot remain prohibited before the
   separately committed owner gate.
-- the exact public reconstruction contains four OpenAI-ineligible strict
-  constraints (`maxLength`, `minItems`, `maxItems`, and `uniqueItems`);
-- separate provider compilers, offline linting, safe structured errors, five
-  serialized request fixtures, and the four-stage mock canary matrix are
+- the original audit incorrectly classified the standard-model `minItems` and
+  `maxItems` properties as OpenAI-ineligible; the owner amendment and current
+  official documentation require both constraints to remain in the complete
+  pinned GPT-5.4 transport schema;
+- `maxLength` and `uniqueItems` are not listed in the current standard-model
+  supported properties and remain omitted from the OpenAI transport schema
+  with deterministic post-parse enforcement;
+- separate provider compilers, offline linting, safe structured errors, nine
+  serialized request fixtures, and the four-stage mock canary matrix plus four
+  frozen diagnostic bisection fixtures are
   implemented and pass focused validation with zero calls and zero spend.
-- exact execution commit
+- superseded R1 execution commit
   `5f1d4b6bdb0d5fce5b4cbfc11f6aceadd910c2c3` is frozen; the committed generic
-  owner-gate manifest passed live authorization-free validation.
+  owner-gate manifest passed live authorization-free validation but was never
+  authorized and may not be consumed;
+- `reports/agent-ops/AO-0004-preauthorization-correction.yml` records the
+  owner amendment; the repaired runner and R2 execution surface are pending.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -64,6 +73,15 @@ implemented at its canonical AO-0004 destinations; the evidence-dependent,
 scientific, publication, release, private-pilot, and base-campaign triggers
 remain unmet.
 
+The owner amendment reopens AO-0004 before authorization. It corrects the
+OpenAI standard-model subset audit and requires a committed exact live runner,
+append-only public-engineering ledger, deterministic frozen bisection order,
+R2 execution freeze, R2 gate, and replacement handoff. This is captured in
+the owner-amendment record, this plan, the corrected audit, code, fixtures,
+tests, supersession record, and future R2 handoff. It creates no new task,
+scientific authority, private authority, or publication authority, so no new
+program-memory item is due.
+
 ## Scope
 
 1. Register AO-0004 with one GitHub issue, one task branch, one fixed contract,
@@ -79,6 +97,11 @@ remain unmet.
 6. Freeze the exact execution surface and commit a generic owner-gate manifest
    with the selected public-only models, routes, calls, and caps.
 7. Stop before credential access or any provider call.
+8. Correct the OpenAI standard-model subset audit by retaining `minItems: 1`
+   and `maxItems: 1` in the complete transport schema.
+9. Commit one exact authorization-bound runner with resumability, frozen
+   bisection candidates, safe errors, fail-closed caps, and an append-only
+   public-engineering ledger before refreezing the R2 surface.
 
 ## Non-goals
 
@@ -116,12 +139,19 @@ remain unmet.
   compilers, offline linters, semantic validator, and safe errors.
 - **M3 — complete:** implement the mock canary matrix and every registered
   corruption; pass focused and infrastructure validation.
-- **M4 — complete:** freeze the execution surface, commit the generic owner-gate
-  manifest, validate it without authorization, and emit the schema-valid
-  owner-gate-required handoff.
-- **M5 — pending owner authorization:** run only the staged public canaries
-  under the exact generic authorization and stopping rule. This milestone was
-  not started in this turn.
+- **M4 — superseded unused:** the R1 execution surface, gate, and handoff were
+  committed and validated without authorization. They receive no authority
+  after the owner amendment.
+- **M4R — complete, freeze commit pending:** correct the provider audit and
+  compiler, implement the
+  exact committed live runner and public ledger, freeze deterministic
+  bisection candidates, pass focused and full validation, and refreeze the R2
+  execution surface.
+- **M5R — pending:** supersede R1, commit and validate the R2 owner gate
+  without authorization, emit the R2 typed handoff, and stop.
+- **M6R — pending owner authorization:** run only the staged public canaries
+  under the exact R2 authorization and stopping rule. This milestone must not
+  start in the pre-authorization correction turn.
 
 ## Progress checklist
 
@@ -139,6 +169,11 @@ remain unmet.
 - [x] Open draft PR #199 and pass the complete pre-gate validation wall.
 - [x] Create and validate the exact generic owner-gate manifest.
 - [x] Return the typed owner-gate-required handoff and stop before calls.
+- [x] Record the owner pre-authorization correction without consuming R1.
+- [x] Correct the OpenAI standard-model schema subset, audit, fixtures,
+  fingerprints, and tests.
+- [x] Implement and test the exact authorization-bound public-canary runner.
+- [ ] Refreeze, supersede R1, and return the validated R2 gate and handoff.
 
 ## Discoveries and surprises
 
@@ -150,10 +185,12 @@ remain unmet.
   newly invented `task-contract` destination class; the destination path stays
   exact and the registered class is `decision-record`.
 - The original runtime built one shared canonical schema for every provider.
-  The exact OpenAI request therefore serialized four constraints outside
-  OpenAI's documented strict subset. The retained HTTP 400 is consistent with
-  those violations, but the intentionally unretained raw body prevents a
-  claim about which individual keyword the provider reported first.
+  The first AO-0004 audit incorrectly extended the fine-tuned-model
+  `minItems` and `maxItems` exclusion to the pinned standard GPT-5.4 snapshot.
+  The corrected bounded diagnosis leaves only `maxLength`, `uniqueItems`, or
+  another request/schema interaction as documented possibilities; the
+  intentionally unretained raw body leaves the historical HTTP 400 cause
+  unresolved.
 - Anthropic's current subset differs materially: `minItems` is supported only
   at 0 or 1, while the relevant `maxLength`, `maxItems`, and `uniqueItems`
   constraints require provider-independent validation.
@@ -187,6 +224,16 @@ remain unmet.
   and validate its live contract, ancestry, protected trees, caps,
   prohibitions, issue, branch, and draft-PR state without creating an
   authorization or performing a consequential action.
+- `2026-07-27T17:46:12Z`: accept the owner's pre-authorization correction,
+  prohibit use of the never-authorized R1 gate, retain OpenAI `minItems` and
+  `maxItems`, require an exact committed runner and public ledger, and reopen
+  the execution freeze as M4R without creating a new task, issue, branch, PR,
+  or session.
+- `2026-07-27`: retain OpenAI `minItems: 1` and `maxItems: 1`, omit
+  `maxLength` and `uniqueItems` from that transport, and leave the historical
+  HTTP 400 cause unresolved. Freeze two deterministic diagnostic schemas per
+  provider and an exact authorization-bound runner whose maximum projected
+  six-call failure path is USD 0.0374255.
 
 ## Validation strategy
 
@@ -236,20 +283,32 @@ compendium release dry-run verified offline. No credentials were read, no
 provider execution call was made, no private state was accessed, and spend
 remained USD 0.
 
+Observed for the corrected M4R candidate: the fixture builder produced nine
+serialized requests byte-deterministically; 58 focused provider-schema and
+runner tests passed; Ruff passed over 321 files; strict MyPy passed over 192
+source files; all 488 repository tests passed; claim and 51 run manifests
+validated; and the compendium release dry-run verified offline. The runner
+itself was not invoked because no R2 authorization exists. Credential reads,
+provider calls, private-state accesses, and spend remained zero.
+
 ## Artifacts produced
 
 - `tasks/treasurebench-provider-schema-conformance.yml`
 - `plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE.md`
 - provider documentation audit and public serialized request fixtures
 - provider-specific conformance code and regression tests
+- exact repository-native command `make treasurebench-provider-schema-canaries`
+  and its append-only public-engineering ledger implementation
+- nine serialized request fixtures, including four frozen bisection candidates
 - one exact committed generic AO-0004 owner-gate manifest
 - one schema-valid owner-gate-required handoff
 
 ## Blockers
 
-Exact owner authorization
-`AOG-AO-0004-PUBLIC-PROVIDER-CANARIES` is absent. This is the intended
-owner-gate-required checkpoint; M5 must not start without it.
+The unused R1 gate is superseded by owner amendment and may not be consumed.
+The active work is the offline M4R correction. Credentials, provider calls,
+private-state access, and spend remain blocked until a future exact R2 owner
+authorization exists.
 
 ## Recovery and restart instructions
 
@@ -263,9 +322,8 @@ spend caps, and prohibitions; stop on any mismatch.
 
 ## Outcome and retrospective
 
-The complete offline conformance repair is committed, the exact execution
-surface is frozen, draft PR #199 is open, the generic gate is committed and
-validated without authorization, and the typed handoff records the next
-action. This turn stopped before credential access, provider calls, spend,
-private state, or scientific state. The remaining work is M5 and requires a
-separate exact owner authorization.
+The R1 offline conformance repair, execution surface, gate, and handoff were
+committed but never authorized. The owner amendment supersedes that checkpoint
+before use and reopens AO-0004 for a corrected OpenAI schema audit and exact
+committed runner. R2 outcome is pending. Credential access, provider calls,
+spend, private state, and scientific state remain zero.

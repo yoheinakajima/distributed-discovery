@@ -363,17 +363,30 @@ class OpenAIResponsesAdapter(LiveAdapterBase):
             **kwargs,  # type: ignore[arg-type]
         )
 
-    def build_payload(self, request: AdapterRequest) -> dict[str, object]:
-        return build_openai_responses_payload(request)
+    def build_payload(
+        self,
+        request: AdapterRequest,
+        *,
+        schema: Mapping[str, object] | None = None,
+    ) -> dict[str, object]:
+        return build_openai_responses_payload(request, schema=schema)
 
     def respond(self, request: AdapterRequest) -> AdapterResponse:
+        return self.respond_with_schema(request, schema=None)
+
+    def respond_with_schema(
+        self,
+        request: AdapterRequest,
+        *,
+        schema: Mapping[str, object] | None,
+    ) -> AdapterResponse:
         self._guard(request)
         try:
             response = self._send(
                 HttpRequest(
                     method="POST",
                     url="https://api.openai.com/v1/responses",
-                    body=self.build_payload(request),
+                    body=self.build_payload(request, schema=schema),
                     headers={
                         "Authorization": f"Bearer {self._api_key}",
                         "Content-Type": "application/json",
@@ -419,17 +432,30 @@ class AnthropicMessagesAdapter(LiveAdapterBase):
             **kwargs,  # type: ignore[arg-type]
         )
 
-    def build_payload(self, request: AdapterRequest) -> dict[str, object]:
-        return build_anthropic_messages_payload(request)
+    def build_payload(
+        self,
+        request: AdapterRequest,
+        *,
+        schema: Mapping[str, object] | None = None,
+    ) -> dict[str, object]:
+        return build_anthropic_messages_payload(request, schema=schema)
 
     def respond(self, request: AdapterRequest) -> AdapterResponse:
+        return self.respond_with_schema(request, schema=None)
+
+    def respond_with_schema(
+        self,
+        request: AdapterRequest,
+        *,
+        schema: Mapping[str, object] | None,
+    ) -> AdapterResponse:
         self._guard(request)
         try:
             response = self._send(
                 HttpRequest(
                     method="POST",
                     url="https://api.anthropic.com/v1/messages",
-                    body=self.build_payload(request),
+                    body=self.build_payload(request, schema=schema),
                     headers={
                         "x-api-key": self._api_key,
                         "anthropic-version": "2023-06-01",

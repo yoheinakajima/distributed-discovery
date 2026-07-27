@@ -1,8 +1,8 @@
 schema_version: treasurebench-agents-v1-provider-schema-conformance-audit-v1
 task_id: AO-0004
 owner_study: DD-010
-audited_at_utc: "2026-07-27T15:57:26Z"
-status: offline-repair-pass-public-canaries-owner-gated-not-run
+audited_at_utc: "2026-07-27T19:12:00Z"
+status: corrected-offline-repair-pass-r2-freeze-pending-public-canaries-not-run
 classification: public-engineering-only-not-scientific-evidence
 activity:
   credentials_read: 0
@@ -36,7 +36,10 @@ documentation_audit:
     strict_schema:
       all_object_properties_required: true
       additional_properties_false_at_each_object: true
-      unsupported_relevant_keywords: [maxLength, minItems, maxItems, uniqueItems]
+      supported_relevant_keywords: [minItems, maxItems]
+      unsupported_relevant_keywords: [maxLength, uniqueItems]
+      standard_model_scope: gpt-5.4-2026-03-05-not-fine-tuned
+      fine_tuned_only_additional_exclusions_not_applied: [minItems, maxItems]
       unsupported_composition_keywords: [allOf, not, dependentRequired, dependentSchemas, if, then, else]
     retention:
       api_training_default: false
@@ -96,18 +99,20 @@ diagnosis:
   exact_public_fixture: docs/benchmark/agents-v1/fixtures/provider-schema/openai-terminal-http400-reconstructed.json
   fixture_sha256: sha256:514f96178acb48f54d4f4ad5f66d4131b4109298f5b88b4e01f130b038978fe8
   canonical_schema_sha256: sha256:2f6556d17144eba1f4ff9c352cf9e24e86fbcc8c228c334a7da9ce33ac4db0a7
-  observed_boundary: The exact serialized public reconstruction contains four keywords outside OpenAI's documented strict subset.
-  conclusion_status: bounded-offline-diagnosis-not-provider-confirmed
-  conclusion: The retained HTTP 400 is consistent with the request schema's unsupported maxLength, minItems, maxItems, and uniqueItems keywords; because the raw provider body was intentionally not retained and no new call is authorized, this audit does not claim which individual keyword the provider reported first.
+  observed_boundary: The exact serialized public reconstruction contains maxLength and uniqueItems outside the documented standard-model subset; its minItems and maxItems constraints are documented as supported for standard Structured Outputs.
+  conclusion_status: corrected-bounded-offline-diagnosis-historical-http400-cause-unresolved
+  conclusion: The retained HTTP 400 cause remains unresolved. The reconstructed request contains maxLength and uniqueItems outside the documented standard-model subset, or another parameter or schema-complexity interaction may have caused the rejection. The raw provider body was intentionally not retained and no replacement call is authorized. This audit does not attribute the historical failure to minItems or maxItems and does not identify a first rejected keyword.
   hypotheses:
     unsupported_uniqueItems: supported-by-offline-reconstruction
+    unsupported_maxLength: supported-by-offline-reconstruction
+    unsupported_minItems_or_maxItems: rejected-current-standard-model-documentation-lists-both-as-supported
     incomplete_required_arrays: rejected-as-cause-root-and-nested-required-arrays-are-complete-and-explicit
     provider_specific_constraints: supported-by-offline-reconstruction
     empty_nested_object: represented-explicitly-and-covered-by-corruption-test-not-identified-as-cause
     other_parameter_or-complexity_interaction: not-excluded-until-owner-authorized-complete-canary
 compilers:
   canonical_schema_sha256: sha256:2f6556d17144eba1f4ff9c352cf9e24e86fbcc8c228c334a7da9ce33ac4db0a7
-  openai_schema_sha256: sha256:52a333cc8a5976096bcb484fefe52ff4eb90d0b1f0f91c147f4818e874755ec7
+  openai_schema_sha256: sha256:7c0f24d097b0330586f5b333274056d7a287f7b48e7c3be327c786246fb3bde4
   anthropic_schema_sha256: sha256:ff20c81b22a46616be19a39847c103feefea8d04a0ef1978cfe32ba5b8e8ac59
   semantic_contract_weakened: false
   post_parse_checks:
@@ -121,6 +126,8 @@ compilers:
     - action-cardinality-and-uniqueness
 safe_error_envelope:
   fields:
+    - error_contract_version
+    - error_locus
     - http_status
     - provider_error_type
     - provider_error_code
@@ -135,14 +142,22 @@ safe_error_envelope:
     - unrestricted_messages
 canary_matrix:
   path: docs/benchmark/agents-v1/fixtures/provider-schema/canary-matrix.json
-  sha256: sha256:4db4e8968a3e36e22c59fa2b0c92a52fa7452b94c1520b6bab37284df29bb2df
+  sha256: sha256:0fd3ab4c3542aca1fd9927d5264a4d7968941b9d54e70fa398fb34d314f97862
   sequence:
     - openai-minimal-known-valid
     - openai-treasurebench-complete
     - anthropic-minimal-known-valid
     - anthropic-treasurebench-complete
   complete_schema_required_for_both: true
-  bisection: only-after-a-complete-schema-fails-and-only-within-remaining-exact-owner-gate-caps
+  bisection:
+    policy: only-after-a-complete-schema-fails-and-only-within-remaining-exact-owner-gate-caps
+    openai:
+      - openai-bisection-action-cardinality
+      - openai-bisection-identity-envelope
+    anthropic:
+      - anthropic-bisection-action-cardinality
+      - anthropic-bisection-identity-envelope
+    ad_hoc_edits_allowed: false
   conformance_declared: false
   provider_canaries_run: false
 authority:
@@ -158,4 +173,4 @@ authority:
   release: false
   submission: false
   base_campaign: false
-next_gate: Freeze the exact execution commit and commit the generic AO-0004 owner-gate manifest; stop before credentials or provider calls.
+next_gate: Freeze the corrected exact execution commit, supersede the unused R1 gate, and commit the generic AO-0004 R2 owner-gate manifest; stop before credentials or provider calls.

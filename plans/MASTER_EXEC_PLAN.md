@@ -15,6 +15,16 @@ post-parse semantic validation, and adds offline linting, safe errors, mock
 canaries, and corruptions. It must stop at a separately committed generic
 owner gate before credentials, provider calls, or spend.
 
+The owner issued a pre-authorization correction after the unused R1 gate was
+committed. AO-0004 remains on issue #198, branch
+`benchmark/treasurebench-provider-schema-conformance`, and draft PR #199.
+Standard OpenAI Structured Outputs supports `minItems` and `maxItems`, so the
+complete pinned GPT-5.4 transport schema must retain both. AO-0004 must also
+commit an authorization-bound, resumable, exact public-canary runner and
+append-only public-engineering ledger before refreezing an R2 execution
+surface. The R1 gate receives no authority and must be superseded; zero
+credential reads, provider calls, private-state accesses, and spend continue.
+
 AO-0002, campaign `treasurebench-agents-v1-repair-confirmation-v1`, batch
 `tb-agents-v1-repair-confirmation-v1-b01`, execution commit
 `fe313602df7f4e8ffac1a1a02c2b3a83f3c72943`, its one terminal OpenAI HTTP 400,

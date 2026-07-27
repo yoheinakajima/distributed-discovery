@@ -22,7 +22,7 @@ tree_hashes:
   tasks/treasurebench-provider-schema-conformance.yml: sha256:eb893370385d12aa1bfb541a464c592ca13852bff06d3366e465e78ac098e09a
   tests/test_agents_v1_live_providers.py: sha256:ea951f597b4baa6de2ce7cada61d22106f50033ae0290468ffea6ae946004c9b
   tests/unit/test_treasurebench_provider_schema_conformance.py: sha256:c6c715d936ab9745991c403d45b435ce2031479412742d141bb26de3f59a369d
-purpose: Authorize only the exact public-only AO-0004 provider-schema canary sequence at its frozen zero-call, zero-spend execution surface.
+purpose: Superseded unused pre-authorization artifact retained only as an AO-0004 audit record; it authorizes no execution and must not be consumed.
 irreversible_actions:
   - permission: external_action_permissions.spend
     description: Spend only on the exact direct public canaries within the total and per-provider caps below, with expected aggregate cost below USD 0.10.
@@ -74,12 +74,13 @@ explicit_prohibitions:
   - expected-aggregate-cost-at-or-above-usd-0.10
   - unrestricted-raw-provider-error-retention
   - conformance-declaration-before-both-complete-action-schemas-pass
+  - superseded-gate-use-or-authorization
   - new-private-pilot-registration-or-execution
   - dd-023-claim-scientific-run-evidence-or-proof-promotion
   - paper-pdf-ranking-composite-or-performance-publication
   - package-release-doi-arxiv-journal-or-submission-action
   - base-campaign-action
-expires_at_utc: "2026-08-03T16:06:51Z"
+expires_at_utc: "2026-07-27T17:46:12Z"
 authorization_output_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0004-PUBLIC-PROVIDER-CANARIES.yml
-next_milestone: M5 owner-authorized staged public provider-schema canaries.
-generated_resume_message: "Resume AO-0004 at M5 using reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate.yml after the owner creates its exact generic authorization. Re-read current official provider terms; validate the authorization, fixed contract, frozen execution commit, PR ancestry, every protected tree, exact direct routes and models, safe credential handling, zero cumulative calls and spend, and remaining caps. Then run OpenAI minimal, OpenAI complete, Anthropic minimal, and Anthropic complete in order. Stop immediately on any mismatch or minimal failure. If a complete schema fails, permit only bounded same-provider schema bisection within ten total calls, USD 1.00 total, USD 0.50 per provider, and expected aggregate cost below USD 0.10; do not call the other provider until resolved. Declare conformance only if both complete schemas pass. Create no private, scientific, paper, ranking, release, submission, or base-campaign state."
+next_milestone: Superseded by the corrected R2 freeze and owner gate; no action is authorized by this artifact.
+generated_resume_message: "Do not use or authorize this superseded gate. Continue AO-0004 only through reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate-r2.yml after the corrected execution surface is frozen and the owner supplies that R2 gate's exact authorization."
