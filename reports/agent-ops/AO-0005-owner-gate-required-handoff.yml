@@ -1,0 +1,24 @@
+schema_version: agent-ops-handoff-v1
+status: owner-gate-required
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0005
+issue: 198
+pull_request: 199
+branch: benchmark/treasurebench-provider-schema-conformance
+base_main: 091735a83e3327635d8a3671c65a99a8b8d89cb5
+head_merge_sha: 9c8efdda25929314754e32858433e0ae0f48999d
+task_contract: tasks/treasurebench-provider-schema-conformance-closeout.yml
+exec_plan: plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE_CLOSEOUT.md
+last_completed_gate: Exact AO-0005 execution commit 9923cbbb45b5ec50f7a6aff52f3b5b2734da53eb and committed generic owner-gate manifest head 9c8efdda25929314754e32858433e0ae0f48999d passed live authorization-free contract, ancestry, protected-tree, zero-call, zero-spend, prohibition, issue, branch, and draft-PR validation without creating an authorization.
+next_gate: "Resume AO-0005 in this same Codex session, issue #198, branch benchmark/treasurebench-provider-schema-conformance, draft PR #199, and plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE_CLOSEOUT.md. Use only reports/agent-ops/AO-0005-successful-conformance-closeout-owner-gate.yml and its exact authorization. Validate the authorization, task contract, execution commit, current PR ancestry, every protected tree, zero caps, and prohibitions. Then reconcile only public-safe AO-0004 success state; correct PR #199 title and body; run the complete wall; mark ready and squash-merge only after required checks; verify normal post-merge CI/Pages and named live public-safe routes; close issue #198; synchronize main; repeat the decision-delta audit; and return the final schema-valid handoff. Stop on any mismatch. Do not access credentials, providers, AO-0004 authorizations or ledgers, private state, or create scientific, paper, performance, release, submission, base-campaign, or later-pilot state."
+decision: Stop before public closeout reconciliation, PR metadata or readiness mutation, merge, issue closure, CI/Pages action, live-route verification, or main synchronization until the exact AO-0005 closeout authorization exists.
+external_calls_cost: {calls: 0, cost: "0", currency: USD}
+private_state_change: none; no private state was read, written, generated, deleted, or published.
+scientific_state_change: none; no study, claim, run, evidence, proof, paper, ranking, release, submission, or base-campaign state changed.
+validation:
+  profile: infrastructure-plus-public-conformance-closeout
+  result: pass-100-focused-tests-514-total-tests-ruff-321-files-mypy-192-files-110-claims-51-runs-7-papers-119-pages-89-site-pages-26-studies-1057-protected-files-exact-live-gate-validation-no-authorization
+owner_action: Review the AO-0005 closeout-only contract and committed generic gate, then run the exact noninteractive generic owner-gate command. Do not run any AO-0004 canary command or perform any closeout mutation before that authorization.
+exact_next_command: "make owner-gate GATE=reports/agent-ops/AO-0005-successful-conformance-closeout-owner-gate.yml OWNER_GATE_CHALLENGE='AUTHORIZE AOG-AO-0005-SUCCESSFUL-CONFORMANCE-CLOSEOUT 9923cbb'"
+exact_next_file: reports/agent-ops/AO-0005-successful-conformance-closeout-owner-gate.yml
+blocker: The exact AO-0005 generic owner authorization is required and absent by design. AO-0004 R1 through R4 artifacts remain immutable and no closeout action is authorized yet.
