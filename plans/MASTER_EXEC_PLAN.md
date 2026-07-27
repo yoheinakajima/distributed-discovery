@@ -11,17 +11,21 @@ evaluation with 50 new tasks, five architectures, two exact direct routes, one
 repeat, and 500 runs. It creates no scientific, paper, ranking, package,
 release, submission, or base-campaign authority.
 
-The first exact owner authorization was created and validated. Before any
-credential read, private generation, custody, provider call, or spend, the
-mandatory execution audit found that the fresh module lacked a live runner and
-the available runner remained bound to the quarantined pilot. The
-authorization was invalidated and preserved locally. Cumulative provider
-calls, private objects, and spend remain zero.
+The repaired R2 authorization passed its exact gate, contract, tree, route,
+price, retention, cap, ancestry, and working-tree preflight. The staged live
+driver then stopped at the first public-canary request: OpenAI returned HTTP
+400 class `schema-or-parameter`, with zero reported tokens and USD 0.00.
+Anthropic was not called. The failure is terminal under the prospective
+policy, so the campaign and batch are quarantined with no retry.
 
-The active milestone is M5R: finish the identity-separated offline runtime,
-expanded corruptions, full acceptance, repaired execution freeze, superseding
-`AOG-AO-0002-FRESH-PILOT-R2` manifest, and typed owner-gate-required handoff.
-No consequential action may resume under the superseded gate.
+The provider phase is closed and six retained objects are locked under
+`sha256:8102a6c1b6bda003336d5503136dfe29301b04cb8f35e7740edd8d56f0eb3c1d`.
+No task seed, task, answer, task/answer key, task/answer ciphertext, custody
+manifest, private run, Method result, ranking, scientific artifact, merge, or
+Pages deployment occurred. The R2 authorization is inactive and preserved in
+local history. The active milestone is the redacted engineering closeout and
+typed stop-by-policy handoff; any replacement requires a separately
+registered new batch and exact owner gate.
 
 ## Active continuation — Agent Operations v1 (2026-07-25)
 

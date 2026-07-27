@@ -1,0 +1,116 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-closeout-v1
+status: quarantined
+decision: sealed-pilot-quarantined-provider-failure
+classification: redacted-engineering-only-no-task-level-performance
+recorded_at_utc: "2026-07-27T13:46:47Z"
+task_id: AO-0002
+owner_study: DD-010
+issue: 196
+pull_request: 197
+branch: benchmark/treasurebench-agents-v1-fresh-pilot
+campaign_id: treasurebench-agents-v1-repair-confirmation-v1
+batch_id: tb-agents-v1-repair-confirmation-v1-b01
+execution_commit: fe313602df7f4e8ffac1a1a02c2b3a83f3c72943
+gate_id: AOG-AO-0002-FRESH-PILOT-R2
+authorization_digest: sha256:ab90ffb9d1964d08d6d790b6fec376f73b5f11745848054c41f15881fdabfb14
+authorization_archived_sha256: sha256:253cd6c058162ea173e70beed686a02fb419a900667f58cda3ee937dd38b23a6
+provider_reaudit:
+  status: pass-current-official-docs-before-provider-access
+  exact_models_available: true
+  structured_output_routes_listed: true
+  retention_assumptions_remained_conservative: true
+  retry_error_contracts_reconfirmed: true
+  registered_standard_prices_reconfirmed: true
+registered:
+  models: [gpt-5.4-2026-03-05, claude-sonnet-4-6]
+  tasks: 50
+  families: 5
+  architectures: 5
+  repeats: 1
+  private_runs: 500
+executed:
+  stage: public-canary
+  public_canary_complete: false
+  custody_complete: false
+  private_prefix_complete: false
+  fixed_full_batch_complete: false
+  private_runs: 0
+  architecture_model_pairings_complete: 0
+  architecture_model_pairings_registered: 500
+  attempts: 1
+  successes: 0
+  errors: 1
+  provider_error_counts: {OpenAI: 1, Anthropic: 0}
+  error_classes: {schema-or-parameter: 1}
+  terminal_http_status: 400
+  provider_error_body_retained: false
+  semantic_retries: 0
+  transport_retries: 0
+  schema_repairs: 0
+  OpenAI_calls: 1
+  Anthropic_calls: 0
+  input_tokens: 0
+  output_tokens: 0
+  cost_usd: "0.00"
+  provider_cost_usd: {OpenAI: "0.00", Anthropic: "0"}
+credentials:
+  OPENAI_API_KEY: read-then-cleared
+  ANTHROPIC_API_KEY: read-then-cleared
+custody:
+  private_state_root_created: true
+  execution_identity_created: true
+  operational_key_created: true
+  os_csprng_task_seed_created: false
+  tasks_created: 0
+  answers_created: 0
+  task_key_created: false
+  answer_key_created: false
+  task_ciphertext_created: false
+  answer_ciphertext_created: false
+  custody_manifest_created: false
+  encrypted_provider_response_records: 1
+  retention_days: 365
+lock:
+  output_lock_commitment: sha256:8102a6c1b6bda003336d5503136dfe29301b04cb8f35e7740edd8d56f0eb3c1d
+  objects_locked: 6
+  provider_phase_closed: true
+  provider_calls_after_lock: 0
+  output_lock_verified: true
+  unsealed_before_lock: false
+  post_lock_unseal_scope: terminal-provider-error-envelope-only
+verification:
+  method_a: not-run-no-private-run
+  method_b: not-run-no-private-run
+  method_c: not-run-no-private-run
+  method_a_b_disagreements: not-applicable
+  metric_range_checks: not-run-no-private-run
+  contamination_findings: 0
+  contamination_status: not-evaluable-no-provider-output
+  protocol_result: terminal-public-canary-provider-failure
+  registered_corruptions: 54
+  registered_corruptions_rejected: 54
+  synthetic_rehearsal_runs: 500
+  synthetic_rehearsal_status: pass
+redaction:
+  status: pass
+  task_text_disclosed: false
+  answer_disclosed: false
+  seed_or_key_disclosed: false
+  prompt_or_provider_output_disclosed: false
+  raw_trace_disclosed: false
+  task_level_performance_disclosed: false
+  ranking_created: false
+  composite_created: false
+authority:
+  dd023_authorized: false
+  claim_created: false
+  scientific_run_created: false
+  paper_result_created: false
+  package_created: false
+  release_created: false
+  arxiv_action: false
+  journal_action: false
+  base_campaign_authorized: false
+  merge_authorized: false
+  pages_deployment_authorized: false
+next_gate: separately-registered-new-batch-and-repair-owner-gate-required

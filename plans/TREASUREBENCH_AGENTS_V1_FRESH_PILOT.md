@@ -12,12 +12,12 @@ pilot over five architectures, direct OpenAI and direct Anthropic, and one
 repeat. Freeze a new campaign and batch, prove that the repaired instrument,
 synthetic rehearsal, independent verification, custody design, corruptions,
 budget accounting, and redaction boundaries pass, open one draft pull request,
-and stop before credentials, private generation, custody creation, provider
-calls, or spend with an exact owner-gate-required handoff.
+and execute only after an exact owner gate. The live attempt stopped at its
+first public canary and is now a redacted quarantined engineering closeout.
 
 ## Current state
 
-Live audit at `2026-07-27T05:39:42Z`:
+Closeout audit at `2026-07-27T13:46:47Z`:
 
 - repository `yoheinakajima/distributed-discovery`;
 - issue #196;
@@ -40,8 +40,20 @@ Live audit at `2026-07-27T05:39:42Z`:
 - 50 tasks, five architectures, two direct routes, one repeat, and 500 runs;
 - provisional expected cost USD 15, hard cap USD 25, OpenAI cap USD 10,
   Anthropic cap USD 15, call cap 5,200, and cumulative spend USD 0;
-- provider calls, credential reads, private generation, custody objects, and
-  spend in this task are all zero;
+- the R2 authorization passed its exact local, contract, ancestry, protected
+  tree, route, model, retention, price, cap, identity, and working-tree checks;
+- both declared credential values were read for the live stage and cleared;
+- the first direct OpenAI public-canary request returned HTTP 400 class
+  `schema-or-parameter`, zero reported tokens, and USD 0.00;
+- the error was terminal and non-retryable, so Anthropic was not called;
+- the provider phase is closed and six retained objects are locked and
+  verified under
+  `sha256:8102a6c1b6bda003336d5503136dfe29301b04cb8f35e7740edd8d56f0eb3c1d`;
+- one operational key and one encrypted provider-response record were created,
+  but no task seed, task, answer, task/answer key, task/answer ciphertext, or
+  custody manifest was created;
+- zero private runs occurred; Methods A/B/C and private metric-range checks
+  were therefore not run;
 - the first exact owner authorization was created and validated, but the
   mandatory execution audit found that no fresh live runner existed and the
   available live driver remained bound to quarantined identities;
@@ -56,9 +68,10 @@ Live audit at `2026-07-27T05:39:42Z`:
 - the five unrelated untracked preservation files retain their previously
   recorded SHA-256 values.
 
-M6 stopped before execution. M5R is complete: the repair, exact execution
-freeze, committed `AOG-AO-0002-FRESH-PILOT-R2` manifest, live gate validation,
-and typed handoff pass. M6R is pending a new exact owner authorization.
+M6 stopped before execution. M5R completed the repair and R2 freeze. M6R
+validated the owner authorization and attempted the first public canary, then
+stopped by policy on the terminal provider response. The batch is quarantined,
+the R2 authorization is inactive, and no retry or in-place repair is allowed.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -149,9 +162,11 @@ this audit at closeout.
 - **M5R — complete:** invalidate the old authorization, implement and validate
   the identity-separated live runner offline, freeze a repaired execution
   commit, and return a new owner-gate-required handoff.
-- **M6R — pending new owner gate:** owner-authorized credentials, private
-  generation, custody, staged provider execution, output lock, verification,
-  redaction, and closeout.
+- **M6R — stopped by policy:** the exact R2 authorization passed preflight, but
+  the first OpenAI public-canary request returned terminal HTTP 400
+  `schema-or-parameter`. Close the provider phase, lock retained outputs,
+  quarantine the batch, archive the authorization, and publish only the
+  redacted engineering closeout.
 
 ## Progress checklist
 
@@ -177,6 +192,13 @@ this audit at closeout.
 - [x] Pass full acceptance.
 - [x] Freeze the repaired execution commit.
 - [x] Commit and validate the superseding R2 gate and typed handoff.
+- [x] Validate the R2 owner authorization and repeat the official-provider
+  preflight without changing the protected execution surface.
+- [x] Stop on the first public-canary terminal provider failure without retry.
+- [x] Close the provider phase, lock and verify all retained outputs before
+  inspecting the terminal error envelope, and quarantine the batch.
+- [x] Inactivate and preserve the R2 authorization in local mode-`0600`
+  history.
 
 ## Discoveries and surprises
 
@@ -213,6 +235,13 @@ this audit at closeout.
   explicit campaign/batch and cap parameters. Historical defaults remain
   unchanged; the repaired fresh runtime supplies the new identities and the
   USD 25/10/15 caps explicitly.
+- The first R2 public-canary request reached the exact OpenAI route and returned
+  HTTP 400 class `schema-or-parameter` before any reported token use. The
+  frozen adapter retained the normalized envelope but not the provider error
+  body, so a narrower exact cause cannot be assigned from retained evidence.
+- The fail-closed ordering worked at the campaign boundary: no Anthropic call,
+  task seed, task, answer, task/answer key, task/answer ciphertext, custody
+  manifest, private run, or Method result followed the terminal canary.
 
 ## Decision log
 
@@ -276,6 +305,21 @@ this audit at closeout.
   pass the generic live gate validation against local, remote, and draft-PR
   state without creating an authorization. The required challenge is
   `AUTHORIZE AOG-AO-0002-FRESH-PILOT-R2 fe31360`. Complete M5R and stop.
+- `2026-07-27T13:38:44Z`: create and validate the exact R2 local authorization,
+  revalidate the contract, protected hashes, branch, issue, PR ancestry,
+  identities, caps, prohibitions, and absent fresh state, and re-audit current
+  official OpenAI and Anthropic model, structured-output, retention,
+  error/retry, and pricing terms.
+- `2026-07-27T13:42:27Z`: retain the first public-canary response. The exact
+  OpenAI request returns HTTP 400 class `schema-or-parameter`, with zero
+  reported tokens and USD 0.00. Apply the zero-terminal-failure stop before
+  Anthropic or any private generation.
+- `2026-07-27T13:46:47Z`: close the provider phase; mark the campaign and batch
+  quarantined; lock and verify six retained objects under
+  `sha256:8102a6c1b6bda003336d5503136dfe29301b04cb8f35e7740edd8d56f0eb3c1d`;
+  inspect only the locked normalized error envelope; archive the inactive R2
+  authorization in mode-`0600` local history; and prepare the redacted
+  engineering closeout.
 
 ## Validation strategy
 
@@ -303,6 +347,11 @@ gate manifest against exact local/remote/PR observations without creating an
 authorization, renders the typed handoff, and rechecks the scientific,
 release, private, provider, spend, and preservation boundaries.
 
+M6R closeout revalidates the retained ledger chain, provider-phase closure,
+quarantine state, output lock, active-authorization absence, redaction,
+scientific ceilings, all 54 registered corruptions, and the unchanged
+execution-sensitive tree. It must not invoke the live target again.
+
 ## Commands and expected observations
 
 - `make audit-agent-ops`: both task contracts, the owner-gate manifest, and all
@@ -313,9 +362,10 @@ release, private, provider, spend, and preservation boundaries.
 - `make treasurebench-fresh-pilot-rehearsal`: 50 public synthetic cases and
   500 synthetic architecture/model runs pass Method A/B/C, range, lock,
   contamination, redaction, and corruption checks with zero network calls.
-- `make owner-gate GATE=... OWNER_GATE_CHALLENGE='AUTHORIZE ...'`: after the
-  owner supplies the exact challenge, the generic engine writes one mode-0600
-  authorization outside Git and performs no consequential action.
+- The live target must not be invoked again for this campaign or batch. The
+  active R2 authorization path is absent and any replacement command remains
+  undefined until a new task, batch identity, execution freeze, and owner gate
+  are registered.
 
 ## Artifacts produced
 
@@ -334,26 +384,33 @@ typed owner-gate-required handoff. M5R adds the identity-separated staged live
 runner, fresh private-state schema/root, exact cap enforcement, replay-only
 post-lock verification, and expanded runtime corruptions. The repaired exact
 execution commit is `fe313602df7f4e8ffac1a1a02c2b3a83f3c72943`; the R2
-manifest and R2 handoff are pending.
+manifest and R2 handoff were committed before execution. M6R adds the locked
+quarantined local state, public output-lock commitment, redacted engineering
+closeout, and typed stop-by-policy handoff.
 
 ## Blockers
 
-The new exact R2 owner authorization is the only blocker. Credentials, private
-generation, custody creation, provider calls, and spend remain blocked. The
-first authorization is inactive and cannot transfer to the repaired tree.
+The terminal public-canary failure blocks this campaign and batch
+permanently. The R2 authorization is inactive and cannot authorize a retry.
+Any repair or replacement requires a separately registered new batch identity,
+new execution freeze, and new exact owner gate.
 
 ## Recovery and restart instructions
 
 Inspect `git status --short --branch`; preserve the five named unrelated
 untracked files; read the root and scoped instructions, fixed contract, this
-plan, issue #196, draft PR #197, and the R2 manifest. Resume M6R only after
-validating its new generic local authorization. Never generate private
-material or call a provider under the superseded gate.
+plan, issue #196, draft PR #197, the R2 manifest, output-lock commitment,
+redacted closeout, and typed stopped handoff. Do not invoke the live target or
+recreate the R2 authorization. A future repair starts from a separately
+registered new identity and authority surface.
 
 ## Outcome and retrospective
 
-Registration through M5 remains historical. M6 stopped safely before any
-consequential action, and M5R is complete. The handoff is
-`owner-gate-required`. Zero credentials, real private objects, provider calls,
-or spend occurred. The repaired live path is offline-only until a new exact R2
-authorization exists.
+Registration through M5R remains historical. M6R used the exact owner
+authorization, read and cleared the two declared credentials, and stopped on
+the first OpenAI public-canary request with one terminal HTTP 400
+`schema-or-parameter` record, zero reported tokens, and USD 0.00. No Anthropic
+call or private task custody followed. The provider phase is closed, the
+retained outputs are locked, the batch is quarantined, and the handoff is
+`stop-by-policy`. No scientific, publication, merge, deployment, or base
+campaign authority was created.
