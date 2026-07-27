@@ -611,16 +611,16 @@ records:
     last_reviewed: "2026-07-25"
   - idea_id: PM-0033
     title: TreasureBench repair-confirmation quarantine and public schema successor
-    status: routed
+    status: implemented
     capture_classification: capture-now
     visibility: public
     source_type: owner-decision
     captured_date: "2026-07-27"
-    proposition: The fresh TreasureBench repair-confirmation campaign remains permanently quarantined after one terminal OpenAI public-canary HTTP 400, and the sole next substantive candidate is a separately registered public-only provider-schema conformance repair and tiny-canary gate.
+    proposition: The fresh TreasureBench repair-confirmation campaign remains permanently quarantined after one terminal OpenAI public-canary HTTP 400, and AO-0004 separately registers the public-only provider-schema conformance repair and tiny-canary gate.
     why_it_matters: It preserves the failed campaign without retry or reuse and requires public request-schema conformance before any new private pilot can be considered.
-    canonical_destination: {type: decision-record, path: reports/agent-ops/next-task-treasurebench-provider-schema-conformance.yml}
+    canonical_destination: {type: decision-record, path: tasks/treasurebench-provider-schema-conformance.yml}
     dependencies: [DD-010, PM-0031, PM-0032]
-    promotion_trigger: Separate owner registration of the public-only provider-schema conformance task.
+    promotion_trigger: null
     permitted_stops: [implemented, deferred, rejected, superseded]
     not_a_result_boundaries: [engineering disposition and future workflow only, no performance result claim scientific run paper or private-pilot authority]
     supersedes: [fresh-sealed-repair-confirmation-pilot-next-gate]

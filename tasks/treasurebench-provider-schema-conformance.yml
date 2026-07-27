@@ -1,0 +1,134 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0004
+title: TreasureBench exact provider-schema conformance repair and public-canary gate
+task_type: infrastructure
+status: active
+objective: Diagnose and repair the exact public provider-request and strict-JSON-Schema conformance boundary for TreasureBench Agents v1, then stop at a separately owner-authorized tiny-public-canary gate.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: policy, path: docs/benchmark/agents-v1/AGENTS.md}
+  - {type: instruction, path: src/distributed_discovery/benchmark/agents_v1/AGENTS.md}
+  - {type: record, path: reports/benchmark/treasurebench-agents-v1-fresh-pilot-closeout.yml}
+  - {type: record, path: reports/benchmark/treasurebench-agents-v1-fresh-pilot-output-lock-commitment.yml}
+  - {type: record, path: reports/agent-ops/AO-0002-stop-by-policy-handoff.yml}
+  - {type: record, path: reports/agent-ops/next-task-treasurebench-provider-schema-conformance.yml}
+  - {type: plan, path: plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE.md}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/198"}
+owner_decisions:
+  - The AO-0002 campaign, batch, execution commit, output lock, terminal OpenAI HTTP 400 canary, inactive archived R2 authorization, and sealed-pilot-quarantined-provider-failure decision remain permanent and may not be reopened, retried, repaired in place, reused, rescored, reauthorized, or executed.
+  - The canonical semantic action contract must remain provider-independent; provider-specific transport compilers may omit unsupported keywords only when deterministic post-parse semantic checks preserve equivalent invariants.
+  - Offline provider-schema conformance checks must fail before any paid call when a schema is outside the documented provider subset.
+  - Both providers must pass their complete exact TreasureBench action schema before conformance can be declared or a new private pilot can be considered.
+  - Any public provider call, credential access, or spend requires the separately committed exact generic Agent Operations owner gate.
+scope:
+  paths:
+    - tasks/treasurebench-provider-schema-conformance.yml
+    - plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE.md
+    - plans/MASTER_EXEC_PLAN.md
+    - docs/program-memory/registry.yml
+    - docs/benchmark/agents-v1
+    - studies/DD-010-discoverybench
+    - reports/agent-ops
+    - reports/benchmark
+    - src/distributed_discovery/benchmark/agents_v1
+    - scripts
+    - tests/unit
+    - Makefile
+  actions:
+    - Re-audit current official OpenAI and Anthropic model, request, strict-schema, retention, error, retry, and pricing documentation.
+    - Reconstruct the terminal OpenAI HTTP 400 serialized request using public fixtures only.
+    - Separate the canonical semantic contract, provider-specific strict-output schema compilers, offline subset linters, and provider-independent post-parse validation.
+    - Implement bounded redacted provider-error retention and a deterministic mock public-canary matrix.
+    - Add every required corruption for provider schema, semantics, safe errors, routes, models, aliases, fallbacks, calls, and spend.
+    - Commit and validate one generic owner-gate manifest for the later tiny public-canary sequence.
+    - Create and maintain issue #198, the task branch, and one draft pull request.
+non_goals:
+  - No retry repair reopen reuse rescore execution or reauthorization of AO-0002 or either quarantined campaign or batch.
+  - No private-data read write generation deletion or publication and no private campaign custody task answer seed key ciphertext or run.
+  - No provider call credential access or spend before the exact generic owner gate.
+  - No aliases fallbacks OpenRouter batch routes regional routes or local models.
+  - No DD-023 claim scientific run evidence or proof promotion paper ranking composite package release DOI arXiv journal submission or base campaign.
+  - No declaration of conformance from only a minimal or trivial schema.
+permissions:
+  repository_write: true
+  git_branch_commit: true
+  github_issue_pr: true
+  merge_after_checks: false
+  ci_pages: false
+external_action_permissions:
+  network_observation: true
+  github_mutation: true
+  provider_calls: true
+  spend: true
+  release_publication: false
+  submission: false
+scientific_mutation_permissions:
+  create_study: false
+  create_claim: false
+  create_run: false
+  change_evidence_status: false
+  change_proof_status: false
+  change_paper_lifecycle: false
+private_data_permissions: {read: false, write: false, generate: false, publish: false}
+budget:
+  currency: USD
+  expected: "0.10"
+  hard_cap: "1.00"
+  call_cap: 10
+  category_caps: {OpenAI: "0.50", Anthropic: "0.50"}
+  cumulative_spend: "0"
+expected_outcomes:
+  - A current official-source audit of both exact direct provider request and strict-schema boundaries.
+  - Provider-independent semantics, separate OpenAI and Anthropic strict-output compilers, deterministic offline linting, and provider-independent post-parse validation.
+  - Safe bounded structured provider errors and exact public serialized fixtures sufficient to diagnose the prior HTTP 400 without private-state access.
+  - A mock canary matrix in which both complete provider-specific TreasureBench action schemas pass and every registered corruption fails closed.
+  - One exact generic owner-gate manifest and schema-valid owner-gate-required handoff for a later public-only canary sequence expected to cost less than USD 0.10.
+stop_conditions:
+  - Stop before reading credentials making any provider call or incurring spend until the exact committed generic owner authorization exists.
+  - Stop on any attempt to access or mutate private state or either quarantined campaign batch execution record output lock or archived authorization.
+  - Stop immediately on any route model alias fallback privacy schema call-cap spend-cap or authorization mismatch.
+  - Stop if an unsupported transport keyword is removed without deterministic equivalent semantic validation and regression coverage.
+  - Stop if either complete provider-specific TreasureBench action schema fails; bounded bisection may follow only within the registered call and spend caps after owner authorization.
+  - Stop on scientific paper release submission package or base-campaign mutation.
+acceptance_profile: infrastructure
+canonical_destinations:
+  - tasks/treasurebench-provider-schema-conformance.yml
+  - plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE.md
+  - reports/benchmark/treasurebench-agents-v1-provider-schema-conformance-audit.yml
+  - reports/agent-ops
+  - docs/benchmark/agents-v1
+  - src/distributed_discovery/benchmark/agents_v1
+  - tests/unit
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 198
+  branch: benchmark/treasurebench-provider-schema-conformance
+  pull_request: null
+  base: main
+exec_plan: plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE.md
+task_delta: reports/agent-ops/next-task-treasurebench-provider-schema-conformance.yml
+frozen_identifiers:
+  predecessor_task: AO-0002
+  owner_study: DD-010
+  predecessor_decision: sealed-pilot-quarantined-provider-failure
+  quarantined_campaign: treasurebench-agents-v1-repair-confirmation-v1
+  quarantined_batch: tb-agents-v1-repair-confirmation-v1-b01
+  quarantined_execution_commit: fe313602df7f4e8ffac1a1a02c2b3a83f3c72943
+  quarantined_output_lock: sha256:8102a6c1b6bda003336d5503136dfe29301b04cb8f35e7740edd8d56f0eb3c1d
+  openai_route: openai_direct
+  openai_model: gpt-5.4-2026-03-05
+  anthropic_route: anthropic_direct
+  anthropic_model: claude-sonnet-4-6
+  aliases_allowed: "false"
+  fallbacks_allowed: "false"
+  openrouter_allowed: "false"
+  batch_routes_allowed: "false"
+  local_models_allowed: "false"
+supersession:
+  supersedes: []
+  superseded_by: null
+  reason: null
+next_gate: Complete the offline conformance repair, freeze the exact execution commit, commit the generic owner-gate manifest, and stop before credentials or provider calls.

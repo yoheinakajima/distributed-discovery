@@ -1,5 +1,28 @@
 # Master execution plan
 
+## Active continuation — TreasureBench provider-schema conformance (2026-07-27)
+
+Issue #198, branch `benchmark/treasurebench-provider-schema-conformance`,
+fixed contract `tasks/treasurebench-provider-schema-conformance.yml`, and
+living ExecPlan
+[`TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE.md`](TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE.md)
+own the sole substantive lane as AO-0004.
+
+This public-only infrastructure task diagnoses the exact OpenAI Responses and
+Anthropic Messages strict-output request/schema boundary from public fixtures,
+separates the canonical action contract from provider transport compilers and
+post-parse semantic validation, and adds offline linting, safe errors, mock
+canaries, and corruptions. It must stop at a separately committed generic
+owner gate before credentials, provider calls, or spend.
+
+AO-0002, campaign `treasurebench-agents-v1-repair-confirmation-v1`, batch
+`tb-agents-v1-repair-confirmation-v1-b01`, execution commit
+`fe313602df7f4e8ffac1a1a02c2b3a83f3c72943`, its one terminal OpenAI HTTP 400,
+inactive archived R2 authorization, quarantine decision, and output lock
+`sha256:8102a6c1b6bda003336d5503136dfe29301b04cb8f35e7740edd8d56f0eb3c1d`
+remain immutable. No private pilot, scientific result, paper, ranking,
+release, submission, or base-campaign authority is created.
+
 ## Active continuation — AO-0002 quarantined closeout (2026-07-27)
 
 Issue #196, draft PR #197, branch
