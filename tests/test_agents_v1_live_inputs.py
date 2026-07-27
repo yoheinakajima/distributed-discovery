@@ -107,6 +107,65 @@ def test_credential_loader_is_explicit_private_allowlisted_and_redacted(tmp_path
     assert credentials.get_secret("OPENROUTER_API_KEY") is None
 
 
+def test_credential_loader_returns_only_the_exact_requested_subset(tmp_path: Path) -> None:
+    path = tmp_path / ".env.txt"
+    _write_private(
+        path,
+        "OPENAI_API_KEY=synthetic-openai\n"
+        "ANTHROPIC_API_KEY=synthetic-anthropic\n"
+        "OPENROUTER_API_KEY=unrelated-openrouter\n"
+        "FLYMYAI_API_KEY=unrelated-fly\n"
+        "UNREGISTERED_KEY=unrelated-other\n",
+    )
+    credentials = load_credentials(
+        path,
+        explicit_live_mode=True,
+        requested_names=("OPENAI_API_KEY", "ANTHROPIC_API_KEY"),
+    )
+    rendered = repr(credentials)
+    assert credentials.configured == {
+        "ANTHROPIC_API_KEY": True,
+        "OPENAI_API_KEY": True,
+    }
+    assert credentials.unused_present == ()
+    assert "unrelated" not in rendered
+    assert "OPENROUTER_API_KEY" not in rendered
+    assert credentials.get_secret("OPENAI_API_KEY") == "synthetic-openai"
+    assert credentials.get_secret("ANTHROPIC_API_KEY") == "synthetic-anthropic"
+    with pytest.raises(PermissionError, match="outside"):
+        credentials.get_secret("OPENROUTER_API_KEY")
+    credentials.clear()
+    assert credentials.get_secret("OPENAI_API_KEY") is None
+    assert credentials.get_secret("ANTHROPIC_API_KEY") is None
+
+
+def test_exact_subset_parser_validates_but_does_not_return_unrelated_values() -> None:
+    parsed = parse_dotenv(
+        b"OPENAI_API_KEY=synthetic-openai\n"
+        b"ANTHROPIC_API_KEY=synthetic-anthropic\n"
+        b"OPENROUTER_API_KEY=unrelated-secret\n",
+        requested_names=("OPENAI_API_KEY", "ANTHROPIC_API_KEY"),
+    )
+    assert parsed == {
+        "OPENAI_API_KEY": "synthetic-openai",
+        "ANTHROPIC_API_KEY": "synthetic-anthropic",
+    }
+    assert "unrelated-secret" not in repr(parsed)
+
+
+def test_credential_loader_rejects_symlink_before_read(tmp_path: Path) -> None:
+    target = tmp_path / "synthetic-target"
+    _write_private(target, "OPENAI_API_KEY=synthetic\n")
+    path = tmp_path / ".env.txt"
+    path.symlink_to(target)
+    with pytest.raises(PermissionError, match="symlink"):
+        load_credentials(
+            path,
+            explicit_live_mode=True,
+            requested_names=("OPENAI_API_KEY", "ANTHROPIC_API_KEY"),
+        )
+
+
 def test_credential_and_authorization_permissions_are_fail_closed(tmp_path: Path) -> None:
     credential_path = tmp_path / ".env.txt"
     credential_path.write_text("OPENROUTER_API_KEY=synthetic\n", encoding="utf-8")

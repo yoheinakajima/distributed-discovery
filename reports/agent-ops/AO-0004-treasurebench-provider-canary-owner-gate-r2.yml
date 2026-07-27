@@ -27,7 +27,7 @@ tree_hashes:
   tests/test_agents_v1_live_providers.py: sha256:ea951f597b4baa6de2ce7cada61d22106f50033ae0290468ffea6ae946004c9b
   tests/unit/test_treasurebench_provider_canary_live.py: sha256:87bf2a31ba05f257af7d1508122a15b2f7283a4cfcdc8d9558189a5d39850a1d
   tests/unit/test_treasurebench_provider_schema_conformance.py: sha256:5aacc26592db8ae6c62a7d62ab76e8e48a6113bae93f041c2f46c98bab8aa368
-purpose: Authorize only the corrected exact repository-native AO-0004 R2 public provider-schema canary runner at its frozen zero-call, zero-spend execution commit.
+purpose: Superseded unused pre-authorization artifact retained only as an AO-0004 audit record; it authorizes no execution and must not be consumed.
 irreversible_actions:
   - permission: external_action_permissions.spend
     description: Spend only on the exact direct public canaries within USD 1.00 total, USD 0.50 per provider, ten calls, and expected aggregate cost below USD 0.10.
@@ -71,6 +71,7 @@ explicit_prohibitions:
   - cap-increase
   - consequential-action-by-gate-engine
   - use-or-authorization-of-superseded-aog-ao-0004-public-provider-canaries
+  - use-or-authorization-of-superseded-aog-ao-0004-public-provider-canaries-r2
   - credential-inspection-display-copy-log-retention-or-mutation
   - credential-input-other-than-openai-api-key-or-anthropic-api-key
   - any-private-data-read-write-generation-deletion-or-publication
@@ -90,7 +91,7 @@ explicit_prohibitions:
   - paper-pdf-ranking-composite-or-performance-publication
   - package-release-doi-arxiv-journal-or-submission-action
   - base-campaign-action
-expires_at_utc: "2026-08-03T19:30:00Z"
+expires_at_utc: "2026-07-27T19:25:03Z"
 authorization_output_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R2.yml
-next_milestone: M6R owner-authorized exact repository-native public provider-schema canaries.
-generated_resume_message: "Resume AO-0004 in this same Codex session, issue #198, branch benchmark/treasurebench-provider-schema-conformance, ExecPlan, and draft PR #199. Use only reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate-r2.yml and its exact R2 authorization. Do not use the superseded R1 gate. Re-read current official provider terms; validate the R2 authorization, issue, PR, branch, execution commit, contract hash, every protected tree hash, exact routes and models, zero cumulative calls and spend, and remaining caps. Then run exactly make treasurebench-provider-schema-canaries. Stop immediately on any mismatch, open call intent, cap boundary, or minimal-schema failure. If a complete schema fails, permit only the two frozen same-provider bisection calls in order; do not call the other provider. Declare conformance only if both complete schemas pass. Create no private, scientific, paper, ranking, release, submission, or base-campaign state."
+next_milestone: Superseded by the credential-ingress repair and future R3 owner gate; no action is authorized by this artifact.
+generated_resume_message: "Do not use or authorize this superseded R2 gate. Continue AO-0004 only through reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate-r3.yml after the credential-ingress execution surface is frozen and the owner supplies that R3 gate's exact authorization."

@@ -90,15 +90,19 @@ claim, private material, trace, result, or run is created.
 
 Issue #198 separately registers the public-only provider-schema conformance
 repair after the fresh repair-confirmation pilot stopped at its first OpenAI
-HTTP 400. The offline reconstruction identifies `maxLength`, `minItems`,
-`maxItems`, and `uniqueItems` outside OpenAI's documented strict subset but
-does not claim which keyword the unretained provider error named first.
+HTTP 400. The corrected offline reconstruction retains `minItems` and
+`maxItems` for the pinned standard OpenAI snapshot and omits only `maxLength`
+and `uniqueItems` from that transport. It does not claim which constraint or
+other request interaction caused the historical failure because the provider
+error body was intentionally not retained.
 
 The canonical semantic contract remains unchanged. Separate OpenAI and
 Anthropic transport compilers omit only unsupported transport constraints,
 while post-parse validation preserves message length, cardinality, uniqueness,
 identity and vocabulary checks; Method C and metric ranges remain mandatory.
 The exact mock matrix and all corruptions must pass before an execution freeze.
-The task then stops at a generic owner gate. No credential, provider call,
-private object, spend, scientific run, claim, or new private pilot is created
-by this offline milestone.
+The task then stops at the R3 generic owner gate. Its exact command may read
+only repository-local `.env.txt`, through the strict nonexecuting parser and
+exact OpenAI/Anthropic name subset, after authorization and projected-cap
+validation. No credential, provider call, private object, spend, scientific
+run, claim, or new private pilot is created by the offline milestone.

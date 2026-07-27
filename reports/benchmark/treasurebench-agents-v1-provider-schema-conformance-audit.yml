@@ -1,8 +1,8 @@
 schema_version: treasurebench-agents-v1-provider-schema-conformance-audit-v1
 task_id: AO-0004
 owner_study: DD-010
-audited_at_utc: "2026-07-27T19:12:00Z"
-status: corrected-offline-repair-pass-r2-freeze-pending-public-canaries-not-run
+audited_at_utc: "2026-07-27T19:25:03Z"
+status: corrected-offline-repair-pass-r3-credential-ingress-freeze-pending-public-canaries-not-run
 classification: public-engineering-only-not-scientific-evidence
 activity:
   credentials_read: 0
@@ -140,6 +140,25 @@ safe_error_envelope:
     - host_paths
     - raw_error_bodies
     - unrestricted_messages
+credential_ingress:
+  source: .env.txt
+  source_scope: repository-root-only
+  parser: strict-nonexecuting-dotenv-without-interpolation
+  requested_names: [OPENAI_API_KEY, ANTHROPIC_API_KEY]
+  unrelated_names_returned: false
+  shell_sourcing_allowed: false
+  read_order:
+    - exact R3 authorization and live repository/GitHub surface
+    - append-only ledger sequence and open-intent state
+    - exact next schema call and projected cost caps
+    - repository-local credential-file metadata and parsing
+  file_requirements:
+    regular: true
+    symlink: false
+    group_or_world_bits: false
+  clear_after_each_call: true
+  final_cleanup: true
+  implementation_tests_use_real_file: false
 canary_matrix:
   path: docs/benchmark/agents-v1/fixtures/provider-schema/canary-matrix.json
   sha256: sha256:0fd3ab4c3542aca1fd9927d5264a4d7968941b9d54e70fa398fb34d314f97862
@@ -173,4 +192,4 @@ authority:
   release: false
   submission: false
   base_campaign: false
-next_gate: Freeze the corrected exact execution commit, supersede the unused R1 gate, and commit the generic AO-0004 R2 owner-gate manifest; stop before credentials or provider calls.
+next_gate: Freeze the credential-ingress execution commit, supersede the unused R2 gate, and commit the generic AO-0004 R3 owner-gate manifest; stop before credential-file access or provider calls.

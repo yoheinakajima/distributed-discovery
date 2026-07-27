@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import re
 import stat
-from collections.abc import Mapping
+from collections.abc import Collection, Mapping
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from decimal import Decimal
@@ -55,15 +55,17 @@ _AUTHORIZATION_FIELDS = frozenset(
 class CredentialSet:
     """Allowlisted credentials whose representation never exposes values."""
 
-    __slots__ = ("_values", "configured", "unused_present")
+    __slots__ = ("_allowed_names", "_values", "configured", "unused_present")
 
     def __init__(
         self,
         values: Mapping[str, str],
         *,
+        allowed_names: Collection[str],
         configured: Mapping[str, bool],
         unused_present: tuple[str, ...],
     ) -> None:
+        self._allowed_names = frozenset(allowed_names)
         self._values = dict(values)
         self.configured = dict(configured)
         self.unused_present = unused_present
@@ -75,7 +77,7 @@ class CredentialSet:
         )
 
     def get_secret(self, name: str) -> str | None:
-        if name not in ALLOWED_CREDENTIAL_NAMES:
+        if name not in self._allowed_names:
             raise PermissionError("credential name is outside the live LLM allowlist")
         return self._values.get(name)
 
@@ -168,10 +170,23 @@ def _gateway_for_route(route_id: str) -> str:
     return route_id.split("_", 1)[0]
 
 
-def load_credentials(path: Path, *, explicit_live_mode: bool) -> CredentialSet:
+def load_credentials(
+    path: Path,
+    *,
+    explicit_live_mode: bool,
+    requested_names: Collection[str] | None = None,
+) -> CredentialSet:
     """Read the exact local credential file after strict metadata checks."""
     if not explicit_live_mode:
         raise PermissionError("explicit live mode is required before credential loading")
+    selected_names = (
+        ALLOWED_CREDENTIAL_NAMES if requested_names is None else frozenset(requested_names)
+    )
+    if not selected_names:
+        raise PermissionError("at least one credential name must be requested")
+    invalid_names = selected_names - ALLOWED_CREDENTIAL_NAMES
+    if invalid_names:
+        raise PermissionError("credential name is outside the live LLM allowlist")
     metadata = path.lstat()
     if stat.S_ISLNK(metadata.st_mode):
         raise PermissionError("credential file must not be a symlink")
@@ -179,14 +194,30 @@ def load_credentials(path: Path, *, explicit_live_mode: bool) -> CredentialSet:
         raise PermissionError("credential source must be a regular file")
     if stat.S_IMODE(metadata.st_mode) & 0o077:
         raise PermissionError("credential file permissions must be 0600 or stricter")
-    parsed = parse_dotenv(path.read_bytes())
-    values = {name: parsed[name] for name in ALLOWED_CREDENTIAL_NAMES if name in parsed}
-    configured = {name: name in parsed for name in sorted(ALLOWED_CREDENTIAL_NAMES)}
-    unused = tuple(sorted(name for name in OUT_OF_SCOPE_CREDENTIAL_NAMES if name in parsed))
-    return CredentialSet(values, configured=configured, unused_present=unused)
+    parsed = parse_dotenv(
+        path.read_bytes(),
+        requested_names=selected_names if requested_names is not None else None,
+    )
+    values = {name: parsed[name] for name in selected_names if name in parsed}
+    configured = {name: name in parsed for name in sorted(selected_names)}
+    unused = (
+        tuple(sorted(name for name in OUT_OF_SCOPE_CREDENTIAL_NAMES if name in parsed))
+        if requested_names is None
+        else ()
+    )
+    return CredentialSet(
+        values,
+        allowed_names=selected_names,
+        configured=configured,
+        unused_present=unused,
+    )
 
 
-def parse_dotenv(raw: bytes) -> dict[str, str]:
+def parse_dotenv(
+    raw: bytes,
+    *,
+    requested_names: Collection[str] | None = None,
+) -> dict[str, str]:
     """Parse one non-executable dotenv document without interpolation."""
     if b"\x00" in raw:
         raise ValueError("dotenv contains a prohibited NUL byte")
@@ -195,24 +226,34 @@ def parse_dotenv(raw: bytes) -> dict[str, str]:
     except UnicodeDecodeError as exc:
         raise ValueError("dotenv must be valid UTF-8") from exc
     result: dict[str, str] = {}
-    for line_number, original in enumerate(text.splitlines(), start=1):
-        line = original.strip()
-        if not line or line.startswith("#"):
-            continue
-        if line.endswith("\\"):
-            raise ValueError(f"dotenv line {line_number} uses a prohibited multiline construct")
-        if line.startswith("export "):
-            line = line.removeprefix("export ").lstrip()
-        if "=" not in line:
-            raise ValueError(f"dotenv line {line_number} is malformed")
-        name, raw_value = line.split("=", 1)
-        name = name.strip()
-        if not _NAME.fullmatch(name):
-            raise ValueError(f"dotenv line {line_number} has a malformed name")
-        if name in result:
-            raise ValueError(f"dotenv line {line_number} duplicates a definition")
-        value = _parse_value(raw_value.strip(), line_number)
-        result[name] = value
+    selected = frozenset(requested_names) if requested_names is not None else None
+    seen: set[str] = set()
+    try:
+        for line_number, original in enumerate(text.splitlines(), start=1):
+            line = original.strip()
+            if not line or line.startswith("#"):
+                continue
+            if line.endswith("\\"):
+                raise ValueError(f"dotenv line {line_number} uses a prohibited multiline construct")
+            if line.startswith("export "):
+                line = line.removeprefix("export ").lstrip()
+            if "=" not in line:
+                raise ValueError(f"dotenv line {line_number} is malformed")
+            name, raw_value = line.split("=", 1)
+            name = name.strip()
+            if not _NAME.fullmatch(name):
+                raise ValueError(f"dotenv line {line_number} has a malformed name")
+            if name in seen:
+                raise ValueError(f"dotenv line {line_number} duplicates a definition")
+            seen.add(name)
+            value = _parse_value(raw_value.strip(), line_number)
+            if selected is None or name in selected:
+                result[name] = value
+    except Exception:
+        for name in tuple(result):
+            result[name] = ""
+            del result[name]
+        raise
     return result
 
 

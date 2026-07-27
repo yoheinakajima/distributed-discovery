@@ -56,6 +56,24 @@ missing `additionalProperties: false`, malformed empty nested objects, and
 schema drift before a paid call. Safe provider errors retain only status,
 normalized type/code/parameter, retry eligibility, and a bounded message hash.
 
+## Credential-ingress boundary
+
+The exact Make command now uses the repository's strict, nonexecuting dotenv
+parser directly against repository-root `.env.txt`; it never sources or
+executes that file. Live mode first validates the exact R3 authorization,
+issue, PR, branch, execution commit, contract and protected trees, then the
+append-only ledger sequence and open-intent state, then the exact next call and
+both projected-cost guards. Only after those checks may it inspect credential
+file metadata and parse the file.
+
+The loader requires a regular non-symlink with no group or world permission
+bits and returns only `OPENAI_API_KEY` and `ANTHROPIC_API_KEY`. Every other
+name and value is discarded from the returned object and cannot enter a
+request, representation, ledger, safe error, or trace. The two selected values
+are cleared immediately after each call and again in cleanup. All repair tests
+use synthetic credential files or injected mappings; the protected real file
+was not read.
+
 ## Current official terms
 
 - OpenAI standard GPT-5.4 pricing remains USD 2.50/M input and USD 15/M
@@ -88,5 +106,6 @@ complete-schema failure permits exactly two precommitted same-provider
 bisection schemas, in deterministic order, within the ten-call and spend caps;
 the other provider remains blocked. No ad-hoc schema edits are allowed after a
 failure. Conformance cannot be declared until both complete schemas pass.
-AO-0004 now proceeds only to the corrected execution freeze and R2 owner-gate
-handoff; it must stop before credentials or provider calls.
+AO-0004 now proceeds only to the credential-ingress execution freeze and R3
+owner-gate handoff; it must stop before credential-file access or provider
+calls.

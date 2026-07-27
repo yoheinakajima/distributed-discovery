@@ -54,7 +54,14 @@ Registration audit at `2026-07-27`:
   owner-gate manifest passed live authorization-free validation but was never
   authorized and may not be consumed;
 - `reports/agent-ops/AO-0004-preauthorization-correction.yml` records the
-  owner amendment; the repaired runner and R2 execution surface are pending.
+  first owner amendment and R2 schema/runner repair;
+- the R2 runner used only process-environment credentials and therefore could
+  not directly consume the owner's protected repository-local `.env.txt`;
+- R2 was never authorized and is superseded before credential or provider
+  access; `reports/agent-ops/AO-0004-r2-credential-ingress-correction.yml`
+  records the second amendment;
+- the active offline work is an exact-subset, nonexecuting credential loader
+  and R3 execution refreeze. The real `.env.txt` remains unread.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -81,6 +88,16 @@ the owner-amendment record, this plan, the corrected audit, code, fixtures,
 tests, supersession record, and future R2 handoff. It creates no new task,
 scientific authority, private authority, or publication authority, so no new
 program-memory item is due.
+
+The second owner amendment also arrives before authorization. It accepts the
+R2 schema and runner logic in principle but supersedes the unused R2 gate
+because the exact command did not load the protected repository-local
+credential source. The repair reuses the existing strict nonexecuting dotenv
+parser, requests exactly the OpenAI and Anthropic names, moves credential
+ingress after authorization plus sequence/ledger/projected-cap validation,
+and refreezes an R3 surface. This changes no scientific, private, publication,
+task, issue, branch, PR, or session authority, so no new program-memory item is
+due.
 
 ## Scope
 
@@ -142,16 +159,22 @@ program-memory item is due.
 - **M4 — superseded unused:** the R1 execution surface, gate, and handoff were
   committed and validated without authorization. They receive no authority
   after the owner amendment.
-- **M4R — complete, freeze commit pending:** correct the provider audit and
-  compiler, implement the
+- **M4R — complete:** correct the provider audit and compiler, implement the
   exact committed live runner and public ledger, freeze deterministic
   bisection candidates, pass focused and full validation, and refreeze the R2
   execution surface.
-- **M5R — pending:** supersede R1, commit and validate the R2 owner gate
+- **M5R — complete:** supersede R1, commit and validate the R2 owner gate
   without authorization, emit the R2 typed handoff, and stop.
-- **M6R — pending owner authorization:** run only the staged public canaries
-  under the exact R2 authorization and stopping rule. This milestone must not
-  start in the pre-authorization correction turn.
+- **M6R — superseded before authorization:** the R2 gate was never consumed;
+  the credential-ingress amendment replaces it with M4RR through M6RR.
+- **M4RR — complete, freeze commit pending:** supersede the never-authorized
+  R2 gate, repair exact repository-local credential ingress with synthetic
+  tests only, rerun the full wall, and refreeze the R3 execution surface.
+- **M5RR — pending:** commit and validate the R3 owner gate without
+  authorization, emit the R3 typed handoff, and stop.
+- **M6RR — pending owner authorization:** run only the staged public canaries
+  under the exact R3 authorization and stopping rule. This milestone must not
+  start in the credential-ingress repair turn.
 
 ## Progress checklist
 
@@ -173,7 +196,12 @@ program-memory item is due.
 - [x] Correct the OpenAI standard-model schema subset, audit, fixtures,
   fingerprints, and tests.
 - [x] Implement and test the exact authorization-bound public-canary runner.
-- [ ] Refreeze, supersede R1, and return the validated R2 gate and handoff.
+- [x] Supersede the unused R1 gate and return the validated but never
+  authorized R2 gate and handoff.
+- [x] Record the R2 credential-ingress owner amendment without reading
+  `.env.txt` or consuming either prior gate.
+- [x] Implement and test exact-subset repository-local credential ingress.
+- [ ] Refreeze, supersede R2, and return the validated R3 gate and handoff.
 
 ## Discoveries and surprises
 
@@ -234,6 +262,11 @@ program-memory item is due.
   HTTP 400 cause unresolved. Freeze two deterministic diagnostic schemas per
   provider and an exact authorization-bound runner whose maximum projected
   six-call failure path is USD 0.0374255.
+- `2026-07-27T19:25:03Z`: accept the owner's R2 credential-ingress amendment,
+  prohibit both earlier gates, preserve the accepted schema/sequence/ledger
+  logic, require the exact Make command to use repository-local `.env.txt`
+  through the strict nonexecuting parser after every authorization, state, and
+  projected-cap check, and reopen the freeze as M4RR for an R3 gate.
 
 ## Validation strategy
 
@@ -291,6 +324,16 @@ validated; and the compendium release dry-run verified offline. The runner
 itself was not invoked because no R2 authorization exists. Credential reads,
 provider calls, private-state accesses, and spend remained zero.
 
+Observed for the M4RR credential-ingress repair candidate: the same nine
+serialized requests rebuilt byte-deterministically; 91 focused
+provider-schema, live-input, and runner tests passed; Ruff passed over 321
+files; strict MyPy passed over 192 source files; all 505 repository tests
+passed; claim and 51 run manifests validated; and the compendium release
+dry-run verified offline. All credential-ingress tests used only synthetic
+temporary inputs. Neither superseded gate was consumed, the real `.env.txt`
+and authorization paths were not read, no provider or private-state access
+occurred, and spend remained USD 0.
+
 ## Artifacts produced
 
 - `tasks/treasurebench-provider-schema-conformance.yml`
@@ -305,10 +348,10 @@ provider calls, private-state accesses, and spend remained zero.
 
 ## Blockers
 
-The unused R1 gate is superseded by owner amendment and may not be consumed.
-The active work is the offline M4R correction. Credentials, provider calls,
-private-state access, and spend remain blocked until a future exact R2 owner
-authorization exists.
+The unused R1 and R2 gates are superseded by owner amendment and may not be
+consumed. The active work is the offline M4RR correction. Credentials,
+provider calls, private-state access, and spend remain blocked until a future
+exact R3 owner authorization exists.
 
 ## Recovery and restart instructions
 
@@ -322,8 +365,9 @@ spend caps, and prohibitions; stop on any mismatch.
 
 ## Outcome and retrospective
 
-The R1 offline conformance repair, execution surface, gate, and handoff were
-committed but never authorized. The owner amendment supersedes that checkpoint
-before use and reopens AO-0004 for a corrected OpenAI schema audit and exact
-committed runner. R2 outcome is pending. Credential access, provider calls,
-spend, private state, and scientific state remain zero.
+The R1 and R2 offline execution surfaces, gates, and handoffs were committed
+but never authorized. The first owner amendment corrected the OpenAI schema
+audit and committed runner. The second supersedes R2 before use and reopens
+AO-0004 only for repository-local credential ingress and an R3 refreeze.
+Credential access, provider calls, spend, private state, and scientific state
+remain zero.

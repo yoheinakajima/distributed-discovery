@@ -31,7 +31,9 @@ from distributed_discovery.benchmark.agents_v1.adapters import (
 from distributed_discovery.benchmark.agents_v1.generation import generate_public_calibration
 from distributed_discovery.benchmark.agents_v1.live_inputs import (
     CostLedger,
+    CredentialSet,
     PreflightAuthorization,
+    load_credentials,
 )
 from distributed_discovery.benchmark.agents_v1.live_providers import (
     ANTHROPIC_MANIFEST,
@@ -63,8 +65,10 @@ TASK_ID = "AO-0004"
 ISSUE_NUMBER = 198
 PULL_REQUEST_NUMBER = 199
 BRANCH = "benchmark/treasurebench-provider-schema-conformance"
-R2_GATE_ID = "AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R2"
-R2_GATE_RELATIVE = Path("reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate-r2.yml")
+R3_GATE_ID = "AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R3"
+R3_GATE_RELATIVE = Path("reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate-r3.yml")
+CREDENTIAL_RELATIVE = Path(".env.txt")
+CREDENTIAL_NAMES = ("OPENAI_API_KEY", "ANTHROPIC_API_KEY")
 PUBLIC_LEDGER_RELATIVE = Path(
     "reports/benchmark/treasurebench-provider-schema-canaries/"
     "AO-0004-public-engineering-ledger.jsonl"
@@ -73,6 +77,13 @@ EXPECTED_COST_LIMIT_USD = Decimal("0.10")
 MAX_OUTPUT_TOKENS = 128
 LEDGER_VERSION = "treasurebench-provider-canary-ledger-v1"
 _PROVIDERS = (OPENAI_PROVIDER, ANTHROPIC_PROVIDER)
+_R3_REQUIRED_PROHIBITIONS = frozenset(
+    {
+        "credential-source-other-than-repository-local-dot-env-txt",
+        "credential-input-other-than-openai-api-key-or-anthropic-api-key",
+        "shell-sourcing-execution-or-dotenv-interpolation",
+    }
+)
 _SAFE_ERROR_FIELDS = (
     "error_contract_version",
     "error_locus",
@@ -118,7 +129,7 @@ _LEDGER_KEYS = frozenset(
 
 @dataclass(frozen=True)
 class RuntimeAuthorization:
-    """Validated generic Agent Operations authorization and exact R2 gate."""
+    """Validated generic Agent Operations authorization and exact R3 gate."""
 
     gate: Mapping[str, object]
     contract: Mapping[str, object]
@@ -136,46 +147,6 @@ class CanarySpec:
     complete: bool = False
     minimal: bool = False
     bisection: bool = False
-
-
-class OpaqueCredentialInputs:
-    """Exactly two credential values with permanently redacted representation."""
-
-    __slots__ = ("_values",)
-
-    NAMES = ("OPENAI_API_KEY", "ANTHROPIC_API_KEY")
-
-    def __init__(self, values: Mapping[str, str]) -> None:
-        self._values = dict(values)
-
-    def __repr__(self) -> str:
-        return (
-            "OpaqueCredentialInputs("
-            "names=('OPENAI_API_KEY', 'ANTHROPIC_API_KEY'), values=<redacted>)"
-        )
-
-    @classmethod
-    def load(cls, environment: Mapping[str, str]) -> OpaqueCredentialInputs:
-        values: dict[str, str] = {}
-        for name in cls.NAMES:
-            value = environment.get(name)
-            if not isinstance(value, str) or not value:
-                raise PermissionError(f"required opaque credential is not configured: {name}")
-            values[name] = value
-        return cls(values)
-
-    def get(self, name: str) -> str:
-        if name not in self.NAMES:
-            raise PermissionError("credential name is outside the exact AO-0004 allowlist")
-        value = self._values.get(name)
-        if not value:
-            raise PermissionError(f"opaque credential is unavailable: {name}")
-        return value
-
-    def clear(self) -> None:
-        for name in tuple(self._values):
-            self._values[name] = ""
-            del self._values[name]
 
 
 class PublicEngineeringLedger:
@@ -362,12 +333,12 @@ def validate_runtime_authorization(
     issue_state: str,
     now: datetime,
 ) -> RuntimeAuthorization:
-    """Validate the exact generic gate, live GitHub surface, and R2 authorization."""
+    """Validate the exact generic gate, live GitHub surface, and R3 authorization."""
     gate_value = dict(gate)
     contract_value = dict(contract)
     authorization_value = dict(authorization)
-    if gate_value.get("gate_id") != R2_GATE_ID:
-        raise PermissionError("only the AO-0004 R2 owner gate is executable")
+    if gate_value.get("gate_id") != R3_GATE_ID:
+        raise PermissionError("only the AO-0004 R3 owner gate is executable")
     if gate_value.get("issue") != ISSUE_NUMBER or issue_number != ISSUE_NUMBER:
         raise PermissionError("AO-0004 live issue identity mismatch")
     if issue_state != "OPEN":
@@ -379,6 +350,11 @@ def validate_runtime_authorization(
         raise PermissionError("AO-0004 branch identity mismatch")
     if gate_value.get("private_actions") != []:
         raise PermissionError("AO-0004 public canary gate must authorize no private action")
+    prohibitions = gate_value.get("explicit_prohibitions")
+    if not isinstance(prohibitions, list) or not _R3_REQUIRED_PROHIBITIONS.issubset(
+        set(prohibitions)
+    ):
+        raise PermissionError("AO-0004 R3 credential-ingress prohibitions are incomplete")
     _validate_exact_gate_caps(gate_value)
     validate_gate_surface(gate_value, contract_value, observation, root=repo)
     validate(authorization_value, "owner-authorization.schema.json")
@@ -444,15 +420,15 @@ def load_live_runtime_authorization(
     *,
     now: datetime | None = None,
 ) -> RuntimeAuthorization:
-    """Load R2 only after validating the exact live branch, PR, and protected trees."""
-    gate = load_yaml(repo / R2_GATE_RELATIVE)
+    """Load R3 only after validating the exact live branch, PR, and protected trees."""
+    gate = load_yaml(repo / R3_GATE_RELATIVE)
     contract_path = gate.get("task_contract")
     if not isinstance(contract_path, Mapping):
         raise PermissionError("AO-0004 gate task contract is malformed")
     contract = load_yaml(repo / str(contract_path["path"]))
     observation = collect_gate_observation(dict(gate))
     issue_number, issue_state = _live_issue(repo)
-    path = _authorization_path(R2_GATE_ID)
+    path = _authorization_path(R3_GATE_ID)
     metadata = path.lstat()
     if stat.S_ISLNK(metadata.st_mode) or not stat.S_ISREG(metadata.st_mode):
         raise PermissionError("AO-0004 authorization must be a regular non-symlink file")
@@ -672,7 +648,7 @@ def _preflight_cost_ledger(runtime: RuntimeAuthorization) -> CostLedger:
     category = hard["category_spend"]
     assert isinstance(category, Mapping)
     authorization = PreflightAuthorization(
-        authorization_id=R2_GATE_ID,
+        authorization_id=R3_GATE_ID,
         authorized_base_commit=str(gate["commit"]),
         allowed_branch=BRANCH,
         expires_utc=_parse_time(gate["expires_at_utc"]),
@@ -707,6 +683,59 @@ def _restore_cost_ledger(
         target.total_cost_usd += cost
         target.route_calls[route] = target.route_calls.get(route, 0) + 1
         target.route_costs_usd[route] = target.route_costs_usd.get(route, Decimal()) + cost
+
+
+def _credentials_from_environment(environment: Mapping[str, str]) -> CredentialSet:
+    values: dict[str, str] = {}
+    for name in CREDENTIAL_NAMES:
+        value = environment.get(name)
+        if not isinstance(value, str) or not value:
+            for configured_name in tuple(values):
+                values[configured_name] = ""
+                del values[configured_name]
+            raise PermissionError(f"required opaque credential is not configured: {name}")
+        values[name] = value
+    return CredentialSet(
+        values,
+        allowed_names=CREDENTIAL_NAMES,
+        configured={name: True for name in CREDENTIAL_NAMES},
+        unused_present=(),
+    )
+
+
+def _load_call_credentials(
+    repo: Path,
+    *,
+    live_mode: bool,
+    environment: Mapping[str, str] | None,
+    credential_path: Path | None,
+) -> CredentialSet:
+    if live_mode and environment is not None:
+        raise PermissionError("live AO-0004 execution cannot inject environment credentials")
+    if live_mode and credential_path is not None:
+        raise PermissionError("live AO-0004 credential path is frozen")
+    if environment is not None:
+        return _credentials_from_environment(environment)
+    path = repo / CREDENTIAL_RELATIVE if live_mode else credential_path
+    if path is None:
+        raise PermissionError("synthetic credential input was not provided")
+    try:
+        credentials = load_credentials(
+            path,
+            explicit_live_mode=True,
+            requested_names=CREDENTIAL_NAMES,
+        )
+    except FileNotFoundError as error:
+        raise PermissionError("repository-local credential file is missing") from error
+    missing = [
+        name
+        for name in CREDENTIAL_NAMES
+        if not credentials.configured.get(name) or not credentials.get_secret(name)
+    ]
+    if missing:
+        credentials.clear()
+        raise PermissionError(f"required opaque credential is not configured: {missing[0]}")
+    return credentials
 
 
 def _safe_error(response: AdapterResponse) -> Mapping[str, object]:
@@ -809,16 +838,18 @@ def run_provider_schema_canaries(
     runtime: RuntimeAuthorization | None = None,
     transport: HttpTransport | None = None,
     environment: Mapping[str, str] | None = None,
+    credential_path: Path | None = None,
     ledger_path: Path | None = None,
     now: datetime | None = None,
 ) -> Mapping[str, object]:
-    """Run or resume only the exact R2-authorized public schema canaries."""
+    """Run or resume only the exact R3-authorized public schema canaries."""
     timestamp = now or datetime.now(UTC)
+    live_mode = runtime is None
     active = runtime or load_live_runtime_authorization(repo, now=timestamp)
     gate_id = str(active.gate["gate_id"])
     execution_commit = str(active.gate["commit"])
     path = ledger_path or repo / PUBLIC_LEDGER_RELATIVE
-    if runtime is None and path.resolve() != (repo / PUBLIC_LEDGER_RELATIVE).resolve():
+    if live_mode and path.resolve() != (repo / PUBLIC_LEDGER_RELATIVE).resolve():
         raise PermissionError("live AO-0004 runner ledger path is frozen")
     ledger = PublicEngineeringLedger(
         path,
@@ -843,18 +874,29 @@ def run_provider_schema_canaries(
             "scientific_state_created": False,
         }
 
-    credentials = OpaqueCredentialInputs.load(
-        environment if environment is not None else os.environ
-    )
     cost_ledger = _preflight_cost_ledger(active)
     _restore_cost_ledger(cost_ledger, ledger)
     live_transport = transport or UrllibTransport()
-    adapters: list[OpenAIResponsesAdapter | AnthropicMessagesAdapter] = []
-    try:
-        while spec is not None:
-            request = _request_for_spec(spec)
-            input_ceiling, projected = _projected_max_cost(spec, request)
-            ledger.guard_next(spec, projected_max_cost_usd=projected)
+    credentials_loaded = False
+    while spec is not None:
+        request = _request_for_spec(spec)
+        input_ceiling, projected = _projected_max_cost(spec, request)
+        ledger.guard_next(spec, projected_max_cost_usd=projected)
+        cost_ledger.authorize_next_call(
+            gateway_id=spec.route,
+            route_id=spec.route,
+            maximum_call_cost_usd=projected,
+        )
+        credentials: CredentialSet | None = None
+        adapter: OpenAIResponsesAdapter | AnthropicMessagesAdapter | None = None
+        try:
+            credentials = _load_call_credentials(
+                repo,
+                live_mode=live_mode,
+                environment=environment,
+                credential_path=credential_path,
+            )
+            credentials_loaded = True
             intent = ledger.append(
                 {
                     "event_type": "call-intent",
@@ -870,67 +912,74 @@ def run_provider_schema_canaries(
                 now=timestamp,
             )
             if spec.provider == OPENAI_PROVIDER:
-                adapter: OpenAIResponsesAdapter | AnthropicMessagesAdapter = OpenAIResponsesAdapter(
-                    api_key=credentials.get("OPENAI_API_KEY"),
+                secret = credentials.get_secret("OPENAI_API_KEY")
+                if not secret:
+                    raise PermissionError("required opaque credential is unavailable")
+                adapter = OpenAIResponsesAdapter(
+                    api_key=secret,
                     transport=live_transport,
                     network_enabled=True,
                     ledger=cost_ledger,
                     input_token_ceiling=input_ceiling,
                 )
             else:
+                secret = credentials.get_secret("ANTHROPIC_API_KEY")
+                if not secret:
+                    raise PermissionError("required opaque credential is unavailable")
                 adapter = AnthropicMessagesAdapter(
-                    api_key=credentials.get("ANTHROPIC_API_KEY"),
+                    api_key=secret,
                     transport=live_transport,
                     network_enabled=True,
                     ledger=cost_ledger,
                     input_token_ceiling=input_ceiling,
                 )
-            adapters.append(adapter)
             try:
                 response = adapter.respond_with_schema(request, schema=spec.schema)
             finally:
                 adapter.clear_secret()
-            status, safe_error = _result_status(spec, request, response)
-            prior_total = ledger.totals()[1]
-            actual_cost = response.usage.cost_usd
-            if actual_cost > projected or prior_total + actual_cost >= EXPECTED_COST_LIMIT_USD:
-                status = "invalid"
-                safe_error = {
-                    **safe_error,
-                    "diagnostic_message_sha256": _diagnostic_hash(
-                        ValueError("provider usage exceeded the frozen projected cost boundary")
-                    ),
-                }
-            ledger.append(
-                {
-                    "event_type": "call-result",
-                    "canary_id": spec.canary_id,
-                    "provider": spec.provider,
-                    "route": spec.route,
-                    "model": spec.model,
-                    "schema_fingerprint": schema_fingerprint(spec.schema),
-                    "schema_role": spec.schema_role,
-                    "intent_record_hash": str(intent["record_hash"]),
-                    "status": status,
-                    "input_tokens": response.usage.input_tokens,
-                    "output_tokens": response.usage.output_tokens,
-                    "cost_usd": str(actual_cost),
-                    "safe_error": dict(safe_error),
-                    "output_sha256": (
-                        f"sha256:{hashlib.sha256(response.raw_output.encode()).hexdigest()}"
-                        if status == "success"
-                        else None
-                    ),
-                    "stopping_decision": _stopping_decision(spec, status),
-                },
-                now=timestamp,
-            )
-            state, spec = next_canary_step(ledger)
-        _append_terminal_decision(ledger, status=state, now=timestamp)
-    finally:
-        for adapter in adapters:
-            adapter.clear_secret()
-        credentials.clear()
+                credentials.clear()
+        finally:
+            if adapter is not None:
+                adapter.clear_secret()
+            if credentials is not None:
+                credentials.clear()
+        status, safe_error = _result_status(spec, request, response)
+        prior_total = ledger.totals()[1]
+        actual_cost = response.usage.cost_usd
+        if actual_cost > projected or prior_total + actual_cost >= EXPECTED_COST_LIMIT_USD:
+            status = "invalid"
+            safe_error = {
+                **safe_error,
+                "diagnostic_message_sha256": _diagnostic_hash(
+                    ValueError("provider usage exceeded the frozen projected cost boundary")
+                ),
+            }
+        ledger.append(
+            {
+                "event_type": "call-result",
+                "canary_id": spec.canary_id,
+                "provider": spec.provider,
+                "route": spec.route,
+                "model": spec.model,
+                "schema_fingerprint": schema_fingerprint(spec.schema),
+                "schema_role": spec.schema_role,
+                "intent_record_hash": str(intent["record_hash"]),
+                "status": status,
+                "input_tokens": response.usage.input_tokens,
+                "output_tokens": response.usage.output_tokens,
+                "cost_usd": str(actual_cost),
+                "safe_error": dict(safe_error),
+                "output_sha256": (
+                    f"sha256:{hashlib.sha256(response.raw_output.encode()).hexdigest()}"
+                    if status == "success"
+                    else None
+                ),
+                "stopping_decision": _stopping_decision(spec, status),
+            },
+            now=timestamp,
+        )
+        state, spec = next_canary_step(ledger)
+    _append_terminal_decision(ledger, status=state, now=timestamp)
     calls, total, provider_cost = ledger.totals()
     return {
         "status": state,
@@ -938,8 +987,8 @@ def run_provider_schema_canaries(
         "calls": calls,
         "cost_usd": str(total),
         "provider_cost_usd": {provider: str(provider_cost[provider]) for provider in _PROVIDERS},
-        "credentials_loaded": True,
-        "credentials_cleared": True,
+        "credentials_loaded": credentials_loaded,
+        "credentials_cleared": credentials_loaded,
         "private_state_created": False,
         "scientific_state_created": False,
     }

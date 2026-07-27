@@ -25,6 +25,19 @@ append-only public-engineering ledger before refreezing an R2 execution
 surface. The R1 gate receives no authority and must be superseded; zero
 credential reads, provider calls, private-state accesses, and spend continue.
 
+The owner then identified a second pre-authorization defect: the exact Make
+command entered the module directly, while the R2 runner expected credentials
+to be exported in the process environment instead of using the repository's
+protected local `.env.txt` source. R2 was never authorized and is superseded.
+AO-0004 now extends the existing strict nonexecuting dotenv loader with an
+exact requested-name subset, validates authorization, trees, sequence, ledger,
+and projected caps before file access, requests only `OPENAI_API_KEY` and
+`ANTHROPIC_API_KEY`, and clears selected values after every call. The repaired
+surface must be refrozen behind
+`AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R3`. The credential file itself remains
+unread during implementation and testing; synthetic fixtures only are
+permitted.
+
 AO-0002, campaign `treasurebench-agents-v1-repair-confirmation-v1`, batch
 `tb-agents-v1-repair-confirmation-v1-b01`, execution commit
 `fe313602df7f4e8ffac1a1a02c2b3a83f3c72943`, its one terminal OpenAI HTTP 400,

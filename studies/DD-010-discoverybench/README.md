@@ -98,9 +98,12 @@ own the separately registered **TreasureBench exact provider-schema
 conformance repair and public-canary gate**. Its offline repair separates the
 canonical action contract from provider-specific transport compilers, rejects
 unsupported schemas before paid calls, and preserves provider-independent
-semantic validation. It must stop at a generic owner gate before credentials
-or public canaries and creates no DD-023, claim, scientific run, paper result,
-performance publication, private pilot, or base-campaign authority.
+semantic validation. Its R3 repair also binds the exact command to the
+repository-local protected credential source through a strict nonexecuting
+exact-two-name loader after authorization and cap checks. It must stop at the
+R3 generic owner gate before credentials or public canaries and creates no
+DD-023, claim, scientific run, paper result, performance publication, private
+pilot, or base-campaign authority.
 
 ## Registered evaluation campaign
 

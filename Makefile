@@ -81,7 +81,7 @@ treasurebench-fresh-pilot-closeout-audit:
 
 treasurebench-provider-schema-conformance-audit:
 	$(PY) scripts/build_treasurebench_provider_schema_fixtures.py
-	$(RUN) pytest -q tests/unit/test_treasurebench_provider_schema_conformance.py tests/unit/test_treasurebench_provider_canary_live.py tests/test_agents_v1_live_providers.py
+	$(RUN) pytest -q tests/unit/test_treasurebench_provider_schema_conformance.py tests/unit/test_treasurebench_provider_canary_live.py tests/test_agents_v1_live_inputs.py tests/test_agents_v1_live_providers.py
 
 treasurebench-provider-schema-canaries:
 	$(PY) -m distributed_discovery.benchmark.agents_v1.provider_canary_live
