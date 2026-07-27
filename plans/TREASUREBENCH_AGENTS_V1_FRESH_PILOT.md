@@ -22,6 +22,10 @@ Live audit at `2026-07-27T02:04:22Z`:
 - repository `yoheinakajima/distributed-discovery`;
 - issue #196;
 - branch `benchmark/treasurebench-agents-v1-fresh-pilot`;
+- draft PR #197;
+- exact execution commit `1974e74c0222329d01e36d8d804d5262ea08376d`;
+- committed gate-manifest commit
+  `cce090ea64ae88db1bb617aa5c0846838e6e4783`;
 - starting `main` and `origin/main`
   `b6934e6495282b210f0d90b96f63b24bebab454b`;
 - no substantive pull request was open at registration;
@@ -42,7 +46,7 @@ Live audit at `2026-07-27T02:04:22Z`:
 - the five unrelated untracked preservation files retain their previously
   recorded SHA-256 values.
 
-Exactly one milestone is active: M5.
+No execution milestone is active. M6 is pending the exact owner authorization.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -56,7 +60,7 @@ quarantined-pilot and wholly fresh identity rule, and PM-0032 already routes
 the generic Agent Operations workflow. Neither requires a new registry record.
 
 The selected task delta is now routed to this fixed contract, this living plan,
-issue #196, the fresh-pilot request and provider audit, and the future committed
+issue #196, the fresh-pilot request and provider audit, and the committed
 owner-gate manifest. The full fresh option is no longer an unregistered
 candidate, but registration does not create private, provider, spend,
 scientific, paper, release, or base-campaign authority. No task-relevant owner
@@ -126,9 +130,9 @@ this audit at closeout.
 - **M3 — complete:** repaired synthetic 50-case/500-run rehearsal and all
   corruptions.
 - **M4 — complete:** focused and private-evaluation acceptance.
-- **M5 — active:** draft pull request, exact execution freeze, committed
+- **M5 — complete:** draft pull request, exact execution freeze, committed
   owner-gate manifest, gate validation, and typed handoff.
-- **M6 — pending:** owner-authorized credentials, private generation, custody,
+- **M6 — pending owner gate:** owner-authorized credentials, private generation, custody,
   provider execution, output lock, verification, redaction, and closeout.
 
 ## Progress checklist
@@ -144,8 +148,8 @@ this audit at closeout.
 - [x] Commit the fixed task contract and living ExecPlan.
 - [x] Complete M1 through M3 sequentially.
 - [x] Complete M4.
-- [ ] Complete M5.
-- [ ] Stop with the exact owner-gate-required handoff.
+- [x] Complete M5.
+- [x] Stop with the exact owner-gate-required handoff.
 
 ## Discoveries and surprises
 
@@ -206,6 +210,12 @@ this audit at closeout.
   claim and 51 run-manifest validation, editorial/program-memory/Agent
   Operations/publication/naming/release audits, and the offline compendium
   dry-run verification. Advance from M4 to M5.
+- `2026-07-27T02:33:12Z`: freeze exact execution commit
+  `1974e74c0222329d01e36d8d804d5262ea08376d`, push it to draft PR #197,
+  commit the generic gate manifest at `cce090e`, and pass authorization-free
+  live gate validation against the local, remote, and PR surface. The required
+  challenge is `AUTHORIZE AOG-AO-0002-FRESH-PILOT 1974e74`. No authorization
+  or consequential action occurred. Complete M5 and stop before M6.
 
 ## Validation strategy
 
@@ -257,25 +267,29 @@ sections and the discussion/delta audit immediately follows current state. M1
 through M3 add the fresh request and allocation recipe, official-provider
 audit, registration record, offline module and audit target, generic gate
 hardening, the passing 500-run rehearsal, and the 46-corruption record.
+M4 and M5 add draft PR #197, complete acceptance, exact execution commit
+`1974e74c0222329d01e36d8d804d5262ea08376d`, committed gate manifest
+`reports/agent-ops/AO-0002-treasurebench-fresh-pilot-owner-gate.yml`, and the
+typed owner-gate-required handoff.
 
 ## Blockers
 
-No registration blocker. Credentials, private generation, custody creation,
-provider calls, and spend are intentionally blocked until M5 commits and
-validates the exact owner-gate manifest and the owner creates its local
-authorization.
+The expected owner gate is the only blocker. Credentials, private generation,
+custody creation, provider calls, and spend remain blocked until the owner
+creates the exact local authorization. The manifest is committed and
+validated; the authorization does not exist and was not read.
 
 ## Recovery and restart instructions
 
 Inspect `git status --short --branch`; preserve the five named unrelated
 untracked files; read the root and scoped instructions, fixed contract, this
-plan, issue #196, and the single draft PR observed for this branch. Resume the
-only active milestone. Never read credentials, retained pilot state, or local
-owner authorizations during offline work. Never generate private material or
-call a provider before the exact gate.
+plan, issue #196, draft PR #197, and the committed gate manifest. Resume M6
+only after validating the exact generic local authorization. Never generate
+private material or call a provider before the exact gate.
 
 ## Outcome and retrospective
 
-Pending. Complete registration-through-gate only after M0 through M5 pass and
-the handoff is `owner-gate-required`. M6 remains unstarted until the owner
-authorizes the exact manifest.
+Registration through M5 is complete and the handoff is
+`owner-gate-required`. All public/offline work passed with zero credentials,
+private objects, provider calls, network activity, or spend. M6 remains
+unstarted until the owner authorizes the exact manifest.
