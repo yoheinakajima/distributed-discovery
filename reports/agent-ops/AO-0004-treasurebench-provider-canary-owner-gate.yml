@@ -1,0 +1,85 @@
+schema_version: agent-ops-owner-gate-v1
+kind: owner-gate
+synthetic: false
+gate_id: AOG-AO-0004-PUBLIC-PROVIDER-CANARIES
+task_contract:
+  path: tasks/treasurebench-provider-schema-conformance.yml
+  sha256: sha256:eb893370385d12aa1bfb541a464c592ca13852bff06d3366e465e78ac098e09a
+issue: 198
+pull_request:
+  number: 199
+  expected_state: OPEN
+  head_sha: 5f1d4b6bdb0d5fce5b4cbfc11f6aceadd910c2c3
+branch: benchmark/treasurebench-provider-schema-conformance
+commit: 5f1d4b6bdb0d5fce5b4cbfc11f6aceadd910c2c3
+tree_hashes:
+  Makefile: sha256:bf322cc975237043bde9390ce24353e9722610bd87fa2959f58367458169d119
+  docs/benchmark/agents-v1/fixtures/provider-schema: sha256:2a36d9605451f6c6e2c24df5d9f2e3fade1c5767f25fe23a67fe2fc9c6b05b44
+  reports/benchmark/treasurebench-agents-v1-provider-schema-conformance-audit.yml: sha256:bd713ba567fdf6ca71e011bb29ea548ff6383ee71da818486c57fccc754eb357
+  reports/benchmark/treasurebench-agents-v1-provider-schema-conformance-audit.md: sha256:c1dad621b40c3190e6fa0832477c584138bfb3f405ce99a2fe2a99354706e28b
+  scripts/build_treasurebench_provider_schema_fixtures.py: sha256:762d6a0fb733cac2da99b417c21605540d3f3cd9b32f278c5ced3865fe72deb8
+  src/distributed_discovery/benchmark/agents_v1: sha256:d2770ff00c1ae0209a92a1f49b6616fd09366b317ec2fab35a59ea46adfac4aa
+  tasks/treasurebench-provider-schema-conformance.yml: sha256:eb893370385d12aa1bfb541a464c592ca13852bff06d3366e465e78ac098e09a
+  tests/test_agents_v1_live_providers.py: sha256:ea951f597b4baa6de2ce7cada61d22106f50033ae0290468ffea6ae946004c9b
+  tests/unit/test_treasurebench_provider_schema_conformance.py: sha256:c6c715d936ab9745991c403d45b435ce2031479412742d141bb26de3f59a369d
+purpose: Authorize only the exact public-only AO-0004 provider-schema canary sequence at its frozen zero-call, zero-spend execution surface.
+irreversible_actions:
+  - permission: external_action_permissions.spend
+    description: Spend only on the exact direct public canaries within the total and per-provider caps below, with expected aggregate cost below USD 0.10.
+private_actions: []
+external_actions:
+  - permission: external_action_permissions.provider_calls
+    description: Make only the staged direct OpenAI Responses and Anthropic Messages public canaries with the exact models, fixtures, schemas, and stopping rule in this manifest.
+  - permission: external_action_permissions.network_observation
+    description: Observe only the bounded structured responses and safe error envelopes returned by those exact direct public canaries.
+cumulative_state:
+  currency: USD
+  spend: "0"
+  calls: 0
+  category_spend: {OpenAI: "0", Anthropic: "0"}
+hard_caps:
+  currency: USD
+  spend: "1.00"
+  calls: 10
+  category_spend: {OpenAI: "0.50", Anthropic: "0.50"}
+remaining_caps:
+  currency: USD
+  spend: "1.00"
+  calls: 10
+  category_spend: {OpenAI: "0.50", Anthropic: "0.50"}
+owner_confirmation_statements:
+  - I authorize only AO-0004 at this exact execution commit, task-contract hash, protected trees, issue, draft pull request, branch, routes, models, sequence, actions, caps, prohibitions, and expiry.
+  - I authorize only direct OpenAI gpt-5.4-2026-03-05 and direct Anthropic claude-sonnet-4-6 public canaries, with no aliases, fallbacks, OpenRouter, batch or regional routes, or local models.
+  - I authorize the ordered sequence OpenAI minimal, OpenAI complete, Anthropic minimal, Anthropic complete; a minimal failure stops immediately, and a complete failure permits only bounded same-provider schema bisection within the ten-call and spend caps before any other provider is called.
+  - I require immediate stop on any authorization, credential handling, privacy, route, model, alias, fallback, schema, call-cap, spend-cap, or safe-error mismatch, and I permit no conformance declaration until both complete exact TreasureBench action schemas pass.
+  - I understand expected aggregate cost must remain below USD 0.10 even though the fail-closed hard cap is USD 1.00 total, USD 0.50 per provider, and ten calls.
+  - I authorize no private benchmark or campaign state; provider credentials may be consumed only as opaque inputs for these exact direct calls and may not be inspected, displayed, copied, logged, retained, or mutated.
+  - I preserve permanently the AO-0002 campaign, batch, execution commit, output lock, terminal OpenAI HTTP 400 canary, inactive archived R2 authorization, and sealed-pilot-quarantined-provider-failure decision.
+  - I understand the generic owner-gate engine only validates and creates the exact local authorization; it performs no credential access, provider call, spend, private action, or scientific or publication mutation.
+explicit_prohibitions:
+  - provider-calls-outside-manifest
+  - credential-read-outside-manifest
+  - unauthorized-private-access
+  - scientific-mutation-outside-contract
+  - cap-increase
+  - consequential-action-by-gate-engine
+  - credential-inspection-display-copy-log-retention-or-mutation
+  - any-private-data-read-write-generation-deletion-or-publication
+  - private-campaign-custody-task-answer-seed-key-ciphertext-or-run-creation
+  - quarantined-campaign-or-batch-retry-repair-reopen-reuse-rescore-reauthorization-or-execution
+  - ao-0002-authorization-recreation-or-reuse
+  - alias-fallback-openrouter-batch-regional-or-local-model-route
+  - any-model-other-than-gpt-5.4-2026-03-05-or-claude-sonnet-4-6
+  - provider-call-outside-the-staged-sequence-or-bounded-same-provider-bisection
+  - expected-aggregate-cost-at-or-above-usd-0.10
+  - unrestricted-raw-provider-error-retention
+  - conformance-declaration-before-both-complete-action-schemas-pass
+  - new-private-pilot-registration-or-execution
+  - dd-023-claim-scientific-run-evidence-or-proof-promotion
+  - paper-pdf-ranking-composite-or-performance-publication
+  - package-release-doi-arxiv-journal-or-submission-action
+  - base-campaign-action
+expires_at_utc: "2026-08-03T16:06:51Z"
+authorization_output_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0004-PUBLIC-PROVIDER-CANARIES.yml
+next_milestone: M5 owner-authorized staged public provider-schema canaries.
+generated_resume_message: "Resume AO-0004 at M5 using reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate.yml after the owner creates its exact generic authorization. Re-read current official provider terms; validate the authorization, fixed contract, frozen execution commit, PR ancestry, every protected tree, exact direct routes and models, safe credential handling, zero cumulative calls and spend, and remaining caps. Then run OpenAI minimal, OpenAI complete, Anthropic minimal, and Anthropic complete in order. Stop immediately on any mismatch or minimal failure. If a complete schema fails, permit only bounded same-provider schema bisection within ten total calls, USD 1.00 total, USD 0.50 per provider, and expected aggregate cost below USD 0.10; do not call the other provider until resolved. Declare conformance only if both complete schemas pass. Create no private, scientific, paper, ranking, release, submission, or base-campaign state."
