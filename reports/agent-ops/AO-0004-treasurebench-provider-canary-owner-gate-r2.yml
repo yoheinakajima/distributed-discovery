@@ -53,7 +53,7 @@ remaining_caps:
   calls: 10
   category_spend: {OpenAI: "0.50", Anthropic: "0.50"}
 owner_confirmation_statements:
-  - I authorize only AO-0004 R2 at execution commit 319bdea525e2bc09feaf481216d3633528158092, task-contract hash, every protected tree hash, issue #198, draft PR #199, branch, routes, models, sequence, actions, caps, prohibitions, and expiry in this manifest.
+  - "I authorize only AO-0004 R2 at execution commit 319bdea525e2bc09feaf481216d3633528158092, task-contract hash, every protected tree hash, issue #198, draft PR #199, branch, routes, models, sequence, actions, caps, prohibitions, and expiry in this manifest."
   - I authorize only the exact committed command make treasurebench-provider-schema-canaries and only direct OpenAI gpt-5.4-2026-03-05 and direct Anthropic claude-sonnet-4-6 public canaries, with no aliases, fallbacks, OpenRouter, batch or regional routes, or local models.
   - I authorize the exact ordered sequence OpenAI minimal, OpenAI complete, Anthropic minimal, Anthropic complete; a minimal failure stops immediately, and a complete failure permits only the two precommitted same-provider bisection schemas in deterministic order before any other provider is called.
   - I require OpenAI complete transport enforcement of minItems 1 and maxItems 1 plus independent provider-neutral post-parse exactly-one-final-action validation, and I permit no conformance declaration until both complete schemas pass.
