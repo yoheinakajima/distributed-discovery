@@ -6,19 +6,19 @@ issue: 198
 pull_request: 199
 branch: benchmark/treasurebench-provider-schema-conformance
 base_main: 091735a83e3327635d8a3671c65a99a8b8d89cb5
-head_merge_sha: 7edba2d40cfc50fe0737e413d903685f677e8d95
+head_merge_sha: 055fbebef7e2dd1a335930c353c93d00259fdcda
 task_contract: tasks/treasurebench-provider-schema-conformance.yml
 exec_plan: plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE.md
-last_completed_gate: Exact execution commit 5f1d4b6bdb0d5fce5b4cbfc11f6aceadd910c2c3 and committed generic owner-gate manifest head 7edba2d40cfc50fe0737e413d903685f677e8d95 passed live authorization-free contract, ancestry, protected-tree, cap, prohibition, issue, branch, and draft-PR validation.
-next_gate: "Resume AO-0004 at M5 using reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate.yml after the owner creates its exact generic authorization. Re-read current official provider terms; validate the authorization, fixed contract, frozen execution commit, PR ancestry, every protected tree, exact direct routes and models, safe credential handling, zero cumulative calls and spend, and remaining caps. Then run OpenAI minimal, OpenAI complete, Anthropic minimal, and Anthropic complete in order. Stop immediately on any mismatch or minimal failure. If a complete schema fails, permit only bounded same-provider schema bisection within ten total calls, USD 1.00 total, USD 0.50 per provider, and expected aggregate cost below USD 0.10; do not call the other provider until resolved. Declare conformance only if both complete schemas pass. Create no private, scientific, paper, ranking, release, submission, or base-campaign state."
-decision: Stop before credentials, provider calls, or spend until the exact AO-0004 public-canary authorization exists.
+last_completed_gate: Corrected execution commit 319bdea525e2bc09feaf481216d3633528158092 and R2 manifest head 055fbebef7e2dd1a335930c353c93d00259fdcda passed live authorization-free contract, issue, PR, branch, ancestry, protected-tree, exact-cap, prohibition, and challenge validation.
+next_gate: "Resume AO-0004 in this same Codex session, issue #198, branch benchmark/treasurebench-provider-schema-conformance, ExecPlan, and draft PR #199. Use only reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate-r2.yml and its exact R2 authorization. Do not use the superseded R1 gate. Re-read current official provider terms; validate the R2 authorization, issue, PR, branch, execution commit, contract hash, every protected tree hash, exact routes and models, zero cumulative calls and spend, and remaining caps. Then run exactly make treasurebench-provider-schema-canaries. Stop immediately on any mismatch, open call intent, cap boundary, or minimal-schema failure. If a complete schema fails, permit only the two frozen same-provider bisection calls in order; do not call the other provider. Declare conformance only if both complete schemas pass. Create no private, scientific, paper, ranking, release, submission, or base-campaign state."
+decision: Stop before credentials, provider calls, or spend until the exact AO-0004 R2 authorization exists; after authorization, use only make treasurebench-provider-schema-canaries.
 external_calls_cost: {calls: 0, cost: "0", currency: USD}
 private_state_change: none
 scientific_state_change: none
 validation:
   profile: infrastructure
-  result: pass-476-tests-complete-offline-acceptance-live-gate-validation-zero-calls-zero-spend
-owner_action: "Review the exact gate and, only if accepted, provide challenge: AUTHORIZE AOG-AO-0004-PUBLIC-PROVIDER-CANARIES 5f1d4b6"
-exact_next_command: "make owner-gate GATE=reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate.yml OWNER_GATE_CHALLENGE='AUTHORIZE AOG-AO-0004-PUBLIC-PROVIDER-CANARIES 5f1d4b6'"
-exact_next_file: reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate.yml
-blocker: Exact owner authorization AOG-AO-0004-PUBLIC-PROVIDER-CANARIES is absent.
+  result: pass-58-focused-488-full-tests-complete-offline-acceptance-live-r2-gate-validation-zero-credential-reads-zero-provider-calls-zero-private-access-zero-spend
+owner_action: "Review the exact R2 gate and, only if accepted, provide challenge AUTHORIZE AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R2 319bdea with the exact noninteractive owner-gate command; after it succeeds, resume with exactly make treasurebench-provider-schema-canaries."
+exact_next_command: "make owner-gate GATE=reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate-r2.yml OWNER_GATE_CHALLENGE='AUTHORIZE AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R2 319bdea'"
+exact_next_file: reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate-r2.yml
+blocker: Exact owner authorization AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R2 is absent.
