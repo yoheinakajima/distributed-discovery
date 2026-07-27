@@ -31,12 +31,14 @@ scope:
     - plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE_CLOSEOUT.md
     - plans/MASTER_EXEC_PLAN.md
     - docs/current-state.md
-    - docs/roadmap.md
+    - docs/current-roadmap.md
     - docs/program-memory
     - docs/benchmark/agents-v1
     - studies/DD-010-discoverybench
     - reports/agent-ops
     - reports/benchmark
+    - reports/final-handoff.md
+    - reports/project-status.md
     - site
     - tests/unit
     - Makefile
@@ -108,11 +110,13 @@ canonical_destinations:
   - plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE_CLOSEOUT.md
   - reports/agent-ops
   - docs/current-state.md
-  - docs/roadmap.md
+  - docs/current-roadmap.md
   - docs/program-memory/registry.yml
   - docs/benchmark/agents-v1
   - studies/DD-010-discoverybench/status.yml
   - reports/benchmark
+  - reports/final-handoff.md
+  - reports/project-status.md
   - site
 github:
   repository: yoheinakajima/distributed-discovery

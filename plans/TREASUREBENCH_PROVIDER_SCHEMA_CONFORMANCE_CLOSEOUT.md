@@ -152,6 +152,9 @@ private identity.
   provenance `source_commit` fields as a known build side effect. They were
   restored to their exact registered bytes; all 1,057 protected claim, run,
   paper/PDF, release, and AO-0004 files match the pre-validation baseline.
+- The AO-0003 template named a nonexistent `docs/roadmap.md`; AO-0005 uses
+  the canonical `docs/current-roadmap.md` and explicitly includes the existing
+  project-status and final-handoff destinations.
 
 ## Decision log
 
@@ -171,6 +174,10 @@ private identity.
   an 89-page/26-study site, and all governance, benchmark, release-readiness,
   Agent Operations, and program-memory audits. Restore the two generated
   provenance fields and confirm all 1,057 protected baseline files exact.
+- `2026-07-27T23:50:00Z`: correct the inherited nonexistent roadmap scope to
+  `docs/current-roadmap.md` and explicitly bind `reports/project-status.md`
+  and `reports/final-handoff.md`; permissions, caps, and intended actions are
+  unchanged.
 
 ## Validation strategy
 
