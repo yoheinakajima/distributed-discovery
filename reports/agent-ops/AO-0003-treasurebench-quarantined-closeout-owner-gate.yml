@@ -1,0 +1,101 @@
+schema_version: agent-ops-owner-gate-v1
+kind: owner-gate
+synthetic: false
+gate_id: AOG-AO-0003-QUARANTINED-CLOSEOUT
+task_contract:
+  path: tasks/treasurebench-agents-v1-quarantined-closeout.yml
+  sha256: sha256:31511967bc81509b9029332baa99704a757210f2db831466de9b43298ebaf7a0
+issue: 196
+pull_request:
+  number: 197
+  expected_state: OPEN
+  head_sha: 5cfac91cf2a47b6a00f6fe82c07d3ceeee21b188
+branch: benchmark/treasurebench-agents-v1-fresh-pilot
+commit: 5cfac91cf2a47b6a00f6fe82c07d3ceeee21b188
+tree_hashes:
+  .github/workflows: sha256:1ad8843883c8e4ff4cb1010b5aefce3b6e1d78471a239f4b399601ac36cc8b6d
+  Makefile: sha256:b5ebb86c7445a9be4a27f0ac56c4e8d5da1df8b90be2e54f95758e4413ec1091
+  claims/claims.yml: sha256:db8fae3619f22625f367c3a25718d541e8baebee059333351222857c363460cb
+  docs/agent-ops: sha256:fe94862b1b7cad4d472a9e7b3e25749c7311986ec062a4040e8031621ab190f1
+  docs/benchmark/agents-v1: sha256:0194d35e2d5233035246f962d4b8cc9e682bdd5c629df861635d98631fea6d2f
+  docs/paper-lifecycle.yml: sha256:a768dcb9721bc0d1c8b4f40a403501edcc41ca7a08d85ef49390eacbaf38f703
+  papers/common-source-trap/The_Common_Source_Trap.pdf: sha256:afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7
+  papers/discovery-institutions/Institutions_for_Distributed_Discovery.pdf: sha256:78606f732f105d79395409dcb9d7224d72aa1e44312ca30ff5719d049afd98a8
+  papers/foundations/Foundations_of_Distributed_Discovery.pdf: sha256:8875926a52f0b8e722f7ce827c456c4b694f9e981c21c4b15bf2b3c60b83e76b
+  papers/incentive-to-ignore/The_Incentive_to_Ignore.pdf: sha256:651c91fb68df6b2f1397ca86f3842b7c2fa9c067601957c32401a7f5e95cd24b
+  papers/information-sharing-frontier/When_Does_Information_Sharing_Improve_Decentralized_Discovery.pdf: sha256:a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13
+  papers/three-results/Three_Results_in_Distributed_Discovery.pdf: sha256:9eb896353b1210706d6108685dde963e02d6a5ebc64af9f9f69c08c01f5ebc96
+  papers/threshold-discovery/Threshold_Discovery.pdf: sha256:634e96662989a3fd6efb5fc3e6919883897e60511826e25c6d0176bac4af9249
+  papers/upstream-extension/preview/The_Shared_Discovery_Paradox-patched.pdf: sha256:0a43360e59fdbbc4002e2190479871896688b3b4ef640d219313cd9d2ed5acb9
+  reports/agent-ops/AO-0002-stop-by-policy-handoff.yml: sha256:0c47103f50d28f23f76b99b3d0e94a6eae6a280153d7dc13143d5ba1bace9f16
+  reports/agent-ops/next-task-treasurebench-provider-schema-conformance.yml: sha256:139b55a454faa3266926cf747b8b10a202fbdee7d12cb90d76bc05769589c924
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-closeout.yml: sha256:4a3b5bbfbfce645e13ba357d3dad4afe7e2c8162a5bab4684de1aafbbf0c3a6b
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-closeout.md: sha256:c6865c03909a420c2492b2180b0b822a55dda3b2fb213565dee2208b0f611422
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-output-lock-commitment.yml: sha256:9b43ee22dc375ffdf8f44fe2c8dbeb9899e4ce2dd95a4ef83527e29a6be0ac23
+  scripts/audit_agent_ops.py: sha256:336d9e0735f8fe2acc93268053d09f3af4089f189c582882eac084dd607bca29
+  scripts/audit_treasurebench_agents_v1_fresh_pilot.py: sha256:af4ea2b542b2d534d7ad1d525cb1cdb1c34b5dcb57e5562ddb197e04a38c4803
+  scripts/audit_treasurebench_agents_v1_fresh_pilot_closeout.py: sha256:508eae80f97b07d7f4c2fbd292ff415df2e9f0a8d0bdd81557da92522d6bd244
+  src/distributed_discovery/agent_ops: sha256:84a44c60d7c7a6a159c8beb5cfb8bc25b19bcae8992c1781fa396225d9f11376
+  src/distributed_discovery/benchmark/agents_v1: sha256:baf72a89bd583c401d0de5c2055e634855022d9ba2c5d63a9bb67b830aa1b9a4
+  tasks/treasurebench-agents-v1-fresh-pilot.yml: sha256:18e213259a4eeb2db7829d5f18b098e5f54d4bf04fc872b980096e7b28d3f8fa
+  tasks/treasurebench-agents-v1-quarantined-closeout.yml: sha256:31511967bc81509b9029332baa99704a757210f2db831466de9b43298ebaf7a0
+  tests/test_treasurebench_agents_v1_fresh_pilot.py: sha256:ac1db54c8f1484724536d47c114edb7fd14ba01a6cff9fd4bcd39541df07cb17
+  tests/unit/test_agent_ops_contracts.py: sha256:959f3266f1893c5f074331abda401349e9f55161f61c6b7c5a3ff578fc39a869
+  tests/unit/test_treasurebench_agents_v1_fresh_pilot_closeout.py: sha256:f0bd88f4dc127ab58ca4a75032a9e3ea56b372aaa1a58af9ce43bd9d2feae555
+purpose: Authorize only the public-safe AO-0002 quarantined closeout at the exact zero-provider, zero-private, zero-scientific AO-0003 execution surface.
+irreversible_actions:
+  - permission: permissions.merge_after_checks
+    description: "Squash-merge draft PR #197 only after the complete registered validation wall and required GitHub checks pass."
+  - permission: permissions.ci_pages
+    description: Permit only normal post-merge CI and Pages for the validated public-safe closeout, followed by live route verification.
+private_actions: []
+external_actions:
+  - permission: external_action_permissions.github_mutation
+    description: "Update PR #197 title and body to the quarantined outcome, mark it ready after validation, merge it after checks, and close issue #196 after verified deployment."
+  - permission: external_action_permissions.network_observation
+    description: Observe GitHub checks, post-merge CI and Pages, and public-safe live routes only.
+cumulative_state:
+  currency: USD
+  spend: "0"
+  calls: 0
+  category_spend: {}
+hard_caps:
+  currency: USD
+  spend: "0"
+  calls: 0
+  category_spend: {}
+remaining_caps:
+  currency: USD
+  spend: "0"
+  calls: 0
+  category_spend: {}
+owner_confirmation_statements:
+  - I authorize only AO-0003 at this exact execution commit, task-contract hash, protected tree, issue, draft pull request, branch, zero caps, actions, prohibitions, and expiry.
+  - I accept the permanent AO-0002 decision sealed-pilot-quarantined-provider-failure and require its campaign, batch, execution commit, one OpenAI HTTP 400 canary, zero Anthropic calls, zero reported tokens, USD 0.00, output lock, inactive archived R2 authorization, and no-private-generation facts to remain preserved.
+  - I authorize only public-safe repository status reconciliation, PR metadata and readiness, squash merge after checks, normal post-merge CI and Pages, public-safe live route verification, issue closure, and main synchronization.
+  - I understand this manifest authorizes zero provider calls, credential access, spend, private-state access or mutation, scientific mutation, paper or PDF change, performance publication, package, release, submission, or base-campaign action.
+  - I understand the generic owner-gate engine only validates and creates the exact local authorization; it performs no repository edit, GitHub mutation, merge, deployment, credential read, private-state access, provider call, or spend.
+  - I understand the future TreasureBench exact provider-schema conformance repair and public-canary gate remains unregistered and receives no authority from AO-0003.
+explicit_prohibitions:
+  - provider-calls-outside-manifest
+  - credential-read-outside-manifest
+  - unauthorized-private-access
+  - scientific-mutation-outside-contract
+  - cap-increase
+  - consequential-action-by-gate-engine
+  - any-provider-call
+  - any-credential-access
+  - any-spend
+  - any-private-state-read-write-generation-deletion-or-publication
+  - quarantined-campaign-or-batch-retry-repair-reopen-reuse-rescore-or-execution
+  - ao-0002-authorization-recreation-or-reuse
+  - provider-request-schema-adapter-retry-error-or-execution-code-repair
+  - dd-023-claim-scientific-run-evidence-or-proof-promotion
+  - paper-pdf-lifecycle-or-publication-change
+  - ranking-composite-leaderboard-or-performance-publication
+  - package-release-doi-arxiv-journal-or-submission-action
+  - base-campaign-action
+expires_at_utc: "2026-08-03T14:32:10Z"
+authorization_output_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0003-QUARANTINED-CLOSEOUT.yml
+next_milestone: M2 owner-authorized public-safe AO-0002 closeout reconciliation.
+generated_resume_message: "Resume AO-0003 at M2 using reports/agent-ops/AO-0003-treasurebench-quarantined-closeout-owner-gate.yml after the owner creates its exact generic authorization. Validate the authorization, fixed contract, execution commit, current PR ancestry, every protected tree hash, zero caps, and prohibitions; then reconcile only public-safe closeout status, update PR #197, validate and mark it ready, squash-merge after checks, verify normal post-merge CI and Pages and live public-safe routes, close issue #196, and synchronize main. Stop on any mismatch and do not access credentials or private state, call a provider, spend, repair execution code, or create scientific, paper, performance, release, submission, or base-campaign state."
