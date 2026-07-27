@@ -42,7 +42,7 @@ Live audit at `2026-07-27T02:04:22Z`:
 - the five unrelated untracked preservation files retain their previously
   recorded SHA-256 values.
 
-Exactly one milestone is active: M4.
+Exactly one milestone is active: M5.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -125,8 +125,8 @@ this audit at closeout.
   owner-authorization consumption boundary.
 - **M3 — complete:** repaired synthetic 50-case/500-run rehearsal and all
   corruptions.
-- **M4 — active:** focused and private-evaluation acceptance.
-- **M5 — pending:** draft pull request, exact execution freeze, committed
+- **M4 — complete:** focused and private-evaluation acceptance.
+- **M5 — active:** draft pull request, exact execution freeze, committed
   owner-gate manifest, gate validation, and typed handoff.
 - **M6 — pending:** owner-authorized credentials, private generation, custody,
   provider execution, output lock, verification, redaction, and closeout.
@@ -143,7 +143,8 @@ this audit at closeout.
   provider API calls.
 - [x] Commit the fixed task contract and living ExecPlan.
 - [x] Complete M1 through M3 sequentially.
-- [ ] Complete M4 and M5 sequentially.
+- [x] Complete M4.
+- [ ] Complete M5.
 - [ ] Stop with the exact owner-gate-required handoff.
 
 ## Discoveries and surprises
@@ -196,6 +197,15 @@ this audit at closeout.
   corruptions, and all 18 fresh identity/gate/custody corruptions with zero
   credentials, private objects, network, provider calls, or spend. Advance
   through M1, M2, and M3 to M4.
+- `2026-07-27T02:30:43Z`: open draft PR #197 from the pushed implementation
+  checkpoint. `make bootstrap` passed. The first `make verify` run found one
+  stale hand-checkable schema inventory expectation (28 rather than the
+  observed 30 after adding two schemas); no implementation assertion failed.
+  After correcting the expectation, focused tests passed and the complete
+  profile passed: Ruff format/check, MyPy over 189 source files, all 443 tests,
+  claim and 51 run-manifest validation, editorial/program-memory/Agent
+  Operations/publication/naming/release audits, and the offline compendium
+  dry-run verification. Advance from M4 to M5.
 
 ## Validation strategy
 

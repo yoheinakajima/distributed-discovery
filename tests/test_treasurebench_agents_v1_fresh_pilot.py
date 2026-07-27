@@ -50,10 +50,9 @@ def test_all_fresh_pilot_corruptions_reject() -> None:
 
 
 def test_fresh_offline_module_has_no_provider_or_credential_runtime() -> None:
-    source = (
-        ROOT
-        / "src/distributed_discovery/benchmark/agents_v1/fresh_pilot.py"
-    ).read_text(encoding="utf-8")
+    source = (ROOT / "src/distributed_discovery/benchmark/agents_v1/fresh_pilot.py").read_text(
+        encoding="utf-8"
+    )
     assert "load_credentials" not in source
     assert "UrllibTransport" not in source
     assert "OpenAIResponsesAdapter" not in source

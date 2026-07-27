@@ -16,16 +16,9 @@ from distributed_discovery.benchmark.agents_v1.fresh_pilot import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-REHEARSAL = (
-    ROOT
-    / "reports/benchmark/treasurebench-agents-v1-fresh-pilot-offline-rehearsal.yml"
-)
-CORRUPTIONS = (
-    ROOT / "reports/benchmark/treasurebench-agents-v1-fresh-pilot-corruptions.yml"
-)
-REPAIRED = (
-    ROOT / "reports/benchmark/treasurebench-agents-v1-pilot-repair-rehearsal.yml"
-)
+REHEARSAL = ROOT / "reports/benchmark/treasurebench-agents-v1-fresh-pilot-offline-rehearsal.yml"
+CORRUPTIONS = ROOT / "reports/benchmark/treasurebench-agents-v1-fresh-pilot-corruptions.yml"
+REPAIRED = ROOT / "reports/benchmark/treasurebench-agents-v1-pilot-repair-rehearsal.yml"
 
 
 def _load(path: Path) -> dict[str, object]:

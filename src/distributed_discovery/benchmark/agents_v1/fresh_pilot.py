@@ -204,13 +204,7 @@ def _git(repo: Path, *args: str, check: bool = True) -> str:
 
 def authorization_path() -> Path:
     root = Path(os.environ.get("XDG_CONFIG_HOME", str(Path.home() / ".config")))
-    return (
-        root
-        / "distributed-discovery"
-        / "agent-ops"
-        / "authorizations"
-        / f"{GATE_ID}.yml"
-    )
+    return root / "distributed-discovery" / "agent-ops" / "authorizations" / f"{GATE_ID}.yml"
 
 
 def _authorization_digest(value: Mapping[str, object]) -> str:
@@ -283,11 +277,7 @@ def generate_tasks(
     authorization: Mapping[str, object] | None = None,
 ) -> tuple[TaskInstance, ...]:
     cells = {(cell.family_id, cell.cell_index): cell for cell in canonical_cells()}
-    permit = (
-        None
-        if public_fixture
-        else GenerationPermit(CAMPAIGN_ID, True, synthetic=False)
-    )
+    permit = None if public_fixture else GenerationPermit(CAMPAIGN_ID, True, synthetic=False)
     if not public_fixture and authorization is None:
         raise PermissionError("owner authorization is required for private generation")
     tasks = []
@@ -333,8 +323,7 @@ def validate_registration(repo: Path) -> dict[str, object]:
     slots = allocation_slots(repo)
     policy = load_yaml(repo / request["failure_policy"]["path"])
     audit = load_yaml(
-        repo
-        / "reports/benchmark/treasurebench-agents-v1-fresh-pilot-provider-audit.yml"
+        repo / "reports/benchmark/treasurebench-agents-v1-fresh-pilot-provider-audit.yml"
     )
     serialized = canonical_json({"request": request, "allocation": allocation}).decode()
     if any(fragment in serialized for fragment in RESERVED_IDENTITY_FRAGMENTS):
@@ -343,17 +332,14 @@ def validate_registration(repo: Path) -> dict[str, object]:
         raise ValueError("prospective transport attempt bound changed")
     if policy["retry"]["schema"]["maximum_repairs"] != 1:
         raise ValueError("prospective schema repair bound changed")
-    if policy["action_budget"]["final_action_cardinality"] != (
-        "exactly-one-per-required-agent"
-    ):
+    if policy["action_budget"]["final_action_cardinality"] != ("exactly-one-per-required-agent"):
         raise ValueError("repaired final-action contract changed")
     if audit["status"] != "pass-current-official-docs-no-provider-api-call":
         raise ValueError("provider audit is not current and passing")
     if Decimal(request["budget"]["hard_cap"]) != TOTAL_CAP:
         raise ValueError("fresh total cap changed")
     if {
-        provider: Decimal(value)
-        for provider, value in request["budget"]["provider_caps"].items()
+        provider: Decimal(value) for provider, value in request["budget"]["provider_caps"].items()
     } != PROVIDER_CAPS:
         raise ValueError("fresh provider caps changed")
     if request["budget"]["call_cap"] != MAX_CALLS:
@@ -425,9 +411,7 @@ def run_synthetic_rehearsal(repo: Path) -> dict[str, object]:
                         domain=f"fresh-synthetic-trace/{trace_id}",
                         value=trace.raw,
                         key=hashlib.sha256(f"fresh-rc/{trace_id}".encode()).digest(),
-                        nonce=hashlib.sha256(
-                            f"fresh-rc/nonce/{trace_id}".encode()
-                        ).digest()[:12],
+                        nonce=hashlib.sha256(f"fresh-rc/nonce/{trace_id}".encode()).digest()[:12],
                         campaign_id=CAMPAIGN_ID,
                         batch_id=BATCH_ID,
                     )
@@ -545,28 +529,33 @@ def audit_corruptions(repo: Path) -> tuple[dict[str, str], ...]:
         "IDENTITY-03-pilot-slot",
         lambda: _reject_reserved({**allocation, "slot_prefix": "PILOT-SLOT"}),
     )
-    reject("GENERATION-01-no-authorization", lambda: generate_tasks(
-        repo, material="private", public_fixture=False
-    ))
-    reject("GENERATION-02-short-seed", lambda: generate_authorized_private_tasks(
-        repo, seed=b"short"
-    ))
-    reject("AUTH-01-missing-file", lambda: load_owner_authorization(
-        repo, Path("/nonexistent/AOG-AO-0002-FRESH-PILOT.yml")
-    ))
-    reject("AUTH-02-synthetic", lambda: validate_owner_authorization(
-        {"schema_version": "agent-ops-owner-authorization-v1", "synthetic": True},
-        repo=repo,
-    ))
-    reject("BUDGET-01-total-cap", lambda: _require_equal(
-        Decimal("26"), TOTAL_CAP, "total cap"
-    ))
-    reject("BUDGET-02-openai-cap", lambda: _require_equal(
-        Decimal("11"), PROVIDER_CAPS["OpenAI"], "OpenAI cap"
-    ))
-    reject("BUDGET-03-anthropic-cap", lambda: _require_equal(
-        Decimal("16"), PROVIDER_CAPS["Anthropic"], "Anthropic cap"
-    ))
+    reject(
+        "GENERATION-01-no-authorization",
+        lambda: generate_tasks(repo, material="private", public_fixture=False),
+    )
+    reject(
+        "GENERATION-02-short-seed", lambda: generate_authorized_private_tasks(repo, seed=b"short")
+    )
+    reject(
+        "AUTH-01-missing-file",
+        lambda: load_owner_authorization(repo, Path("/nonexistent/AOG-AO-0002-FRESH-PILOT.yml")),
+    )
+    reject(
+        "AUTH-02-synthetic",
+        lambda: validate_owner_authorization(
+            {"schema_version": "agent-ops-owner-authorization-v1", "synthetic": True},
+            repo=repo,
+        ),
+    )
+    reject("BUDGET-01-total-cap", lambda: _require_equal(Decimal("26"), TOTAL_CAP, "total cap"))
+    reject(
+        "BUDGET-02-openai-cap",
+        lambda: _require_equal(Decimal("11"), PROVIDER_CAPS["OpenAI"], "OpenAI cap"),
+    )
+    reject(
+        "BUDGET-03-anthropic-cap",
+        lambda: _require_equal(Decimal("16"), PROVIDER_CAPS["Anthropic"], "Anthropic cap"),
+    )
     reject("BUDGET-04-call-cap", lambda: _require_equal(5201, MAX_CALLS, "call cap"))
     key = hashlib.sha256(b"fresh-corruption-key").digest()
     sealed = seal_object(
@@ -612,15 +601,11 @@ def audit_corruptions(repo: Path) -> tuple[dict[str, str], ...]:
     )
     reject(
         "REDACTION-02-ranking",
-        lambda: validate_public_pilot_summary(
-            {"redaction_status": "pass", "ranking": []}
-        ),
+        lambda: validate_public_pilot_summary({"redaction_status": "pass", "ranking": []}),
     )
     reject(
         "SCIENCE-01-dd023",
-        lambda: validate_public_pilot_summary(
-            {"redaction_status": "pass", "study_id": "DD-023"}
-        ),
+        lambda: validate_public_pilot_summary({"redaction_status": "pass", "study_id": "DD-023"}),
     )
     reject(
         "SCIENCE-02-claim",

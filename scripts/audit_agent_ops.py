@@ -173,9 +173,7 @@ def _audit_corruptions() -> dict[str, str]:
     outcomes["hidden-permission"] = "rejected"
 
     missing_prohibition = copy.deepcopy(gate)
-    missing_prohibition["explicit_prohibitions"].remove(
-        "credential-read-outside-manifest"
-    )
+    missing_prohibition["explicit_prohibitions"].remove("credential-read-outside-manifest")
     _expect_reject(
         lambda: validate_gate_surface(missing_prohibition, contract, observation),
         "missing-prohibition",
