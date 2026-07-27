@@ -6,7 +6,7 @@ issue: 198
 pull_request: 199
 branch: benchmark/treasurebench-provider-schema-conformance
 base_main: 091735a83e3327635d8a3671c65a99a8b8d89cb5
-head_merge_sha: fe0377c988b9154cfe9ad906c4025a1e9ec92f22
+head_merge_sha: fe0377c10efb7f9ee434dd3991386910d18d3554
 task_contract: tasks/treasurebench-provider-schema-conformance.yml
 exec_plan: plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE.md
 last_completed_gate: R3 authorization and every frozen preflight passed. The exact canary command then made six bounded calls recorded in reports/agent-ops/AO-0004-public-provider-canary-outcome.yml. OpenAI minimal and complete passed; Anthropic minimal passed; Anthropic complete was invalid at HTTP 200; both frozen Anthropic bisections passed; the ledger closed with no open intent.

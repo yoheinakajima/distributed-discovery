@@ -10,7 +10,7 @@ frozen execution commit: `1048c502b205346fef70b06c76975b6ff06b0241`
 
 authorized PR head: `3f4cd54ea724d40cdaae129e8c383700f1f10cdf`
 
-public outcome commit: `fe0377c988b9154cfe9ad906c4025a1e9ec92f22`
+public outcome commit: `fe0377c10efb7f9ee434dd3991386910d18d3554`
 
 outcome record:
 `reports/agent-ops/AO-0004-public-provider-canary-outcome.yml`
