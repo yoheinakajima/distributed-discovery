@@ -464,11 +464,19 @@ class SealedObject:
         }
 
 
-def seal_object(*, domain: str, value: object, key: bytes, nonce: bytes) -> SealedObject:
+def seal_object(
+    *,
+    domain: str,
+    value: object,
+    key: bytes,
+    nonce: bytes,
+    campaign_id: str = CAMPAIGN_ID,
+    batch_id: str = BATCH_ID,
+) -> SealedObject:
     if len(key) != 32 or len(nonce) != 12:
         raise ValueError("AES-256-GCM requires a 32-byte key and 12-byte nonce")
     associated = canonical_json(
-        {"campaign_id": CAMPAIGN_ID, "batch_id": BATCH_ID, "domain": domain}
+        {"campaign_id": campaign_id, "batch_id": batch_id, "domain": domain}
     )
     ciphertext = AESGCM(key).encrypt(nonce, canonical_json(value), associated)
     return SealedObject(
@@ -480,11 +488,17 @@ def seal_object(*, domain: str, value: object, key: bytes, nonce: bytes) -> Seal
     )
 
 
-def unseal_object(sealed: SealedObject, *, key: bytes) -> object:
+def unseal_object(
+    sealed: SealedObject,
+    *,
+    key: bytes,
+    campaign_id: str = CAMPAIGN_ID,
+    batch_id: str = BATCH_ID,
+) -> object:
     if sealed.ciphertext_sha256 != f"sha256:{sha256_hex(sealed.ciphertext)}":
         raise ValueError("ciphertext hash mismatch")
     associated = canonical_json(
-        {"campaign_id": CAMPAIGN_ID, "batch_id": BATCH_ID, "domain": sealed.domain}
+        {"campaign_id": campaign_id, "batch_id": batch_id, "domain": sealed.domain}
     )
     if sealed.associated_data_sha256 != f"sha256:{sha256_hex(associated)}":
         raise ValueError("associated-data hash mismatch")
@@ -495,8 +509,30 @@ def unseal_object(sealed: SealedObject, *, key: bytes) -> object:
 class AppendOnlyLedger:
     """Hash-chained, idempotent, append-only private JSONL ledger."""
 
-    def __init__(self, path: Path) -> None:
+    def __init__(
+        self,
+        path: Path,
+        *,
+        providers: Sequence[str] = PROVIDERS,
+        total_cap: Decimal = TOTAL_CAP,
+        provider_caps: Mapping[str, Decimal] | None = None,
+        max_calls: int = MAX_CALLS,
+        max_input_tokens: int = MAX_INPUT_TOKENS,
+        max_output_tokens: int = MAX_OUTPUT_TOKENS,
+    ) -> None:
         self.path = path
+        self.providers = tuple(providers)
+        self.total_cap = total_cap
+        self.provider_caps = dict(
+            provider_caps
+            if provider_caps is not None
+            else {provider: PROVIDER_CAP for provider in self.providers}
+        )
+        self.max_calls = max_calls
+        self.max_input_tokens = max_input_tokens
+        self.max_output_tokens = max_output_tokens
+        if set(self.provider_caps) != set(self.providers):
+            raise ValueError("ledger provider caps must cover the exact provider set")
         self.records = self._read_and_validate()
 
     def _read_and_validate(self) -> list[dict[str, object]]:
@@ -576,7 +612,7 @@ class AppendOnlyLedger:
                     ),
                     Decimal("0"),
                 )
-                for provider in PROVIDERS
+                for provider in self.providers
             },
         }
 
@@ -588,22 +624,22 @@ class AppendOnlyLedger:
         output_tokens: int,
         cost_usd: Decimal,
     ) -> None:
-        if provider not in PROVIDERS:
+        if provider not in self.providers:
             raise PermissionError("provider is outside the pilot")
         if any(record.get("event_type") == "provider-phase-closed" for record in self.records):
             raise PermissionError("provider phase is closed")
         totals = self.totals()
         provider_totals = totals["provider_usd"]
         assert isinstance(provider_totals, Mapping)
-        if int(str(totals["calls"])) + 1 > MAX_CALLS:
+        if int(str(totals["calls"])) + 1 > self.max_calls:
             raise PermissionError("projected call cap exceeded")
-        if int(str(totals["input_tokens"])) + input_tokens > MAX_INPUT_TOKENS:
+        if int(str(totals["input_tokens"])) + input_tokens > self.max_input_tokens:
             raise PermissionError("projected input-token cap exceeded")
-        if int(str(totals["output_tokens"])) + output_tokens > MAX_OUTPUT_TOKENS:
+        if int(str(totals["output_tokens"])) + output_tokens > self.max_output_tokens:
             raise PermissionError("projected output-token cap exceeded")
-        if Decimal(str(totals["cost_usd"])) + cost_usd > TOTAL_CAP:
+        if Decimal(str(totals["cost_usd"])) + cost_usd > self.total_cap:
             raise PermissionError("projected total-cost cap exceeded")
-        if Decimal(str(provider_totals[provider])) + cost_usd > PROVIDER_CAP:
+        if Decimal(str(provider_totals[provider])) + cost_usd > self.provider_caps[provider]:
             raise PermissionError("projected provider-cost cap exceeded")
 
 
@@ -619,6 +655,8 @@ class ResumablePilotAdapter:
         ledger: AppendOnlyLedger,
         response_root: Path,
         response_key: bytes,
+        campaign_id: str = CAMPAIGN_ID,
+        batch_id: str = BATCH_ID,
     ) -> None:
         validate_provider_route(provider, model)
         if adapter.manifest.exact_snapshot not in {model, "deterministic-mock-v1"}:
@@ -629,6 +667,8 @@ class ResumablePilotAdapter:
         self.ledger = ledger
         self.response_root = response_root
         self.response_key = response_key
+        self.campaign_id = campaign_id
+        self.batch_id = batch_id
         self.manifest = ModelManifest(
             provider=adapter.manifest.provider,
             model_id=adapter.manifest.model_id,
@@ -739,7 +779,14 @@ class ResumablePilotAdapter:
             associated_data_sha256=str(manifest["associated_data_sha256"]),
         )
         return (
-            self._deserialize_response(unseal_object(sealed, key=self.response_key)),
+            self._deserialize_response(
+                unseal_object(
+                    sealed,
+                    key=self.response_key,
+                    campaign_id=self.campaign_id,
+                    batch_id=self.batch_id,
+                )
+            ),
             records,
         )
 
@@ -804,6 +851,8 @@ class ResumablePilotAdapter:
                 value=self._serialize_response(response),
                 key=self.response_key,
                 nonce=secrets.token_bytes(12),
+                campaign_id=self.campaign_id,
+                batch_id=self.batch_id,
             )
             atomic_private_write(
                 self._response_path(call_key, attempt),
@@ -845,10 +894,16 @@ class PilotBatchRunner:
         state_root: Path,
         ledger: AppendOnlyLedger,
         trace_key: bytes,
+        campaign_id: str = CAMPAIGN_ID,
+        batch_id: str = BATCH_ID,
+        reject_protocol_errors: bool = False,
     ) -> None:
         self.state_root = state_root
         self.ledger = ledger
         self.trace_key = trace_key
+        self.campaign_id = campaign_id
+        self.batch_id = batch_id
+        self.reject_protocol_errors = reject_protocol_errors
         self.trace_root = state_root / "encrypted-traces"
         _secure_mkdir(self.trace_root)
 
@@ -894,6 +949,8 @@ class PilotBatchRunner:
                             value=trace.raw,
                             key=self.trace_key,
                             nonce=secrets.token_bytes(12),
+                            campaign_id=self.campaign_id,
+                            batch_id=self.batch_id,
                         )
                         trace_path = self.trace_root / f"{sha256_hex(trace_id.encode())}.sealed"
                         atomic_private_write(
@@ -911,7 +968,9 @@ class PilotBatchRunner:
             raise RuntimeError("Method A/B disagreement requires quarantine")
         if contamination_findings:
             raise RuntimeError("direct or probable contamination requires quarantine")
-        if stage in {"public-canary", "private-prefix"} and protocol_errors:
+        if protocol_errors and (
+            self.reject_protocol_errors or stage in {"public-canary", "private-prefix"}
+        ):
             raise RuntimeError(f"{stage} protocol gate failed")
         return {
             "stage": stage,
@@ -924,7 +983,11 @@ class PilotBatchRunner:
 
 
 def create_output_lock(
-    objects: Mapping[str, bytes], *, ledger: AppendOnlyLedger
+    objects: Mapping[str, bytes],
+    *,
+    ledger: AppendOnlyLedger,
+    campaign_id: str = CAMPAIGN_ID,
+    batch_id: str = BATCH_ID,
 ) -> Mapping[str, object]:
     if not objects:
         raise ValueError("output lock requires at least one object")
@@ -932,8 +995,8 @@ def create_output_lock(
         raise PermissionError("provider phase must be closed before output lock")
     manifest: dict[str, object] = {
         "schema_version": "treasurebench-agents-v1-output-lock-v1",
-        "campaign_id": CAMPAIGN_ID,
-        "batch_id": BATCH_ID,
+        "campaign_id": campaign_id,
+        "batch_id": batch_id,
         "objects": {
             name: f"sha256:{sha256_hex(payload)}" for name, payload in sorted(objects.items())
         },
@@ -966,11 +1029,18 @@ def unseal_answer_after_lock(
     lock: Mapping[str, object] | None,
     objects: Mapping[str, bytes],
     ledger: AppendOnlyLedger,
+    campaign_id: str = CAMPAIGN_ID,
+    batch_id: str = BATCH_ID,
 ) -> object:
     if lock is None:
         raise PermissionError("answer unseal requires an output lock")
     verify_output_lock(lock, objects, ledger=ledger)
-    return unseal_object(sealed, key=key)
+    return unseal_object(
+        sealed,
+        key=key,
+        campaign_id=campaign_id,
+        batch_id=batch_id,
+    )
 
 
 def require_commitment(expected: str, actual: str, *, domain: str) -> None:

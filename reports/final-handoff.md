@@ -1,6 +1,31 @@
-# Final handoff — TreasureBench sealed pilot quarantined and locked
+# Final handoff — TreasureBench repair-confirmation pilot quarantined
 
-## Current sealed-pilot closeout (2026-07-24)
+## Current repair-confirmation closeout (2026-07-27)
+
+Issue #196 and PR #197 preserve the wholly fresh TreasureBench Agents v1
+repair-confirmation campaign as `sealed-pilot-quarantined-provider-failure`.
+Campaign `treasurebench-agents-v1-repair-confirmation-v1`, batch
+`tb-agents-v1-repair-confirmation-v1-b01`, and execution commit
+`fe313602df7f4e8ffac1a1a02c2b3a83f3c72943` are immutable. The campaign made
+one direct OpenAI public-canary attempt, received terminal HTTP 400 class
+`schema-or-parameter`, made zero Anthropic calls, reported zero input and
+output tokens, and cost USD 0.00.
+
+The provider phase is closed and six retained objects are locked under
+`sha256:8102a6c1b6bda003336d5503136dfe29301b04cb8f35e7740edd8d56f0eb3c1d`.
+The R2 authorization is inactive and archived. No task seed, private task,
+answer, task key, answer key, task ciphertext, answer ciphertext, custody
+manifest, or private architecture/model run was created. The campaign and
+batch cannot be retried, repaired, reopened, reused, rescored, executed, or
+reauthorized.
+
+The closeout changes no scientific inventory or paper/PDF byte. It publishes
+no performance, ranking, composite, or model comparison. The exact next
+substantive candidate is **TreasureBench exact provider-schema conformance
+repair and public-canary gate**; that future public-only task requires separate
+registration and authorization.
+
+## Prior sealed-pilot closeout (2026-07-24)
 
 Issue #187 and PR #188 complete the TreasureBench Agents v1 sealed engineering
 pilot with decision `sealed-pilot-quarantined-provider-failure`. The fixed

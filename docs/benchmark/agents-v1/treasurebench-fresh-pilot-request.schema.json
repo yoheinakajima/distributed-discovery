@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TreasureBench Agents v1 fresh repair-confirmation request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "status", "task_id", "owner_study", "new_study_allocated", "claim_eligible", "campaign_id", "batch_id", "issue", "branch", "starting_main", "owner_gate_id", "counts", "providers", "architectures", "budget", "failure_policy", "private_state", "boundaries", "execution_sensitive_paths"],
+  "properties": {
+    "schema_version": {"const": "treasurebench-agents-v1-fresh-pilot-request-v1"},
+    "status": {"const": "phase-a-exact-execution-not-authorized"},
+    "task_id": {"const": "AO-0002"},
+    "owner_study": {"const": "DD-010"},
+    "new_study_allocated": {"const": false},
+    "claim_eligible": {"const": false},
+    "campaign_id": {"const": "treasurebench-agents-v1-repair-confirmation-v1"},
+    "batch_id": {"const": "tb-agents-v1-repair-confirmation-v1-b01"},
+    "issue": {"const": 196},
+    "branch": {"const": "benchmark/treasurebench-agents-v1-fresh-pilot"},
+    "starting_main": {"const": "b6934e6495282b210f0d90b96f63b24bebab454b"},
+    "owner_gate_id": {"const": "AOG-AO-0002-FRESH-PILOT-R2"},
+    "counts": {"const": {"tasks": 50, "families": 5, "tasks_per_family": 10, "batches": 1, "repeats": 1, "architectures": 5, "cloud_models": 2, "private_runs": 500}},
+    "providers": {
+      "type": "array",
+      "prefixItems": [
+        {"const": {"provider": "OpenAI", "route_id": "openai_direct", "model": "gpt-5.4-2026-03-05", "credential_name": "OPENAI_API_KEY"}},
+        {"const": {"provider": "Anthropic", "route_id": "anthropic_direct", "model": "claude-sonnet-4-6", "credential_name": "ANTHROPIC_API_KEY"}}
+      ],
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "architectures": {"const": ["isolated-private-agents", "full-broadcast-shared-transcript", "designated-reader-selective-sharing", "pooled-consensus", "portfolio-preserving-structured"]},
+    "budget": {"const": {"currency": "USD", "expected_cost": "15", "hard_cap": "25", "provider_caps": {"OpenAI": "10", "Anthropic": "15"}, "call_cap": 5200, "cumulative_spend": "0", "cumulative_calls": 0, "maximum_live_concurrency": 2}},
+    "failure_policy": {"type": "object"},
+    "private_state": {"type": "object"},
+    "boundaries": {"type": "object", "additionalProperties": {"const": false}},
+    "execution_sensitive_paths": {"type": "array", "minItems": 12, "uniqueItems": true, "items": {"type": "string"}}
+  }
+}

@@ -1,4 +1,4 @@
-.PHONY: bootstrap lint typecheck test fetch-upstream reproduce-baseline upstream-patch validate-claims audit-editorial audit-program-memory audit-agent-ops agent-context agent-prompt owner-gate agent-handoff audit-publication-infrastructure audit-treasurebench-naming release-readiness compendium-release-dry-run verify-compendium-release compendium-release-readiness audit-agents-v1 audit-agents-v1-evaluation agents-v1-dry-run agents-v1-readiness agents-v1-provider-preflight agents-v1-public-calibration agents-v1-provider-preflight-all treasurebench-pilot-audit treasurebench-pilot-diagnostic-audit treasurebench-pilot-offline-readiness treasurebench-pilot-live treasurebench-pilot-verify treasurebench-pilot-redacted-summary treasurebench-pilot-rehearsal foundations three-results discovery-institutions common-source-trap incentive-to-ignore threshold-discovery information-sharing-frontier canonical-exact-frontier dd001 dd001-signatures dd001-thresholds dd001-alignment-bound dd002-disclosure dd002-selection-robustness dd003-source-graphs dd003-heterogeneous-sources dd004-sequential dd005-coverage dd006-mechanisms dd006-general-frontier dd006b-joint-mechanism dd007-synthetic-audit dd008-acquisition dd008a-acquisition dd008b-analysis dd009-atlas dd010-discoverybench dd010-attention dd010-threshold dd011-experiment dd011-attention dd011-threshold-dynamic dd012-attention dd013-audience dd014-conditional dd015-preview dd015-dynamic dd015-threshold-preview dd015-threshold-extension dd016-threshold dd017-equilibrium dd018-preview dd018-team-mechanisms dd019-preview dd019-signal-geometry dd020-preview dd020-incremental-sharing dd021-preview dd021-general-sharing-frontier dd022-preview dd022-coordination-free-positive-sharing papers site verify all clean
+.PHONY: bootstrap lint typecheck test fetch-upstream reproduce-baseline upstream-patch validate-claims audit-editorial audit-program-memory audit-agent-ops agent-context agent-prompt owner-gate agent-handoff audit-publication-infrastructure audit-treasurebench-naming release-readiness compendium-release-dry-run verify-compendium-release compendium-release-readiness audit-agents-v1 audit-agents-v1-evaluation agents-v1-dry-run agents-v1-readiness agents-v1-provider-preflight agents-v1-public-calibration agents-v1-provider-preflight-all treasurebench-pilot-audit treasurebench-pilot-diagnostic-audit treasurebench-pilot-offline-readiness treasurebench-pilot-live treasurebench-pilot-verify treasurebench-pilot-redacted-summary treasurebench-pilot-rehearsal treasurebench-fresh-pilot-audit treasurebench-fresh-pilot-rehearsal treasurebench-fresh-pilot-live treasurebench-fresh-pilot-closeout-audit foundations three-results discovery-institutions common-source-trap incentive-to-ignore threshold-discovery information-sharing-frontier canonical-exact-frontier dd001 dd001-signatures dd001-thresholds dd001-alignment-bound dd002-disclosure dd002-selection-robustness dd003-source-graphs dd003-heterogeneous-sources dd004-sequential dd005-coverage dd006-mechanisms dd006-general-frontier dd006b-joint-mechanism dd007-synthetic-audit dd008-acquisition dd008a-acquisition dd008b-analysis dd009-atlas dd010-discoverybench dd010-attention dd010-threshold dd011-experiment dd011-attention dd011-threshold-dynamic dd012-attention dd013-audience dd014-conditional dd015-preview dd015-dynamic dd015-threshold-preview dd015-threshold-extension dd016-threshold dd017-equilibrium dd018-preview dd018-team-mechanisms dd019-preview dd019-signal-geometry dd020-preview dd020-incremental-sharing dd021-preview dd021-general-sharing-frontier dd022-preview dd022-coordination-free-positive-sharing papers site verify all clean
 
 UV := uv
 export PYTHONPATH := $(CURDIR)/src
@@ -10,6 +10,8 @@ RELEASE_GENERATED_UTC ?= 2026-07-24T00:00:00Z
 COMPENDIUM_RELEASE_DIR ?= build/compendium-release/$(VERSION)
 TASK ?= tasks/agent-operations-v1.yml
 GATE ?= docs/agent-ops/owner-gate-template.yml
+OWNER_GATE_CHALLENGE ?=
+OWNER_GATE_VALIDATE_ONLY ?=
 
 bootstrap:
 	$(UV) sync --locked --no-editable
@@ -63,7 +65,19 @@ agent-prompt:
 	$(PY) -m distributed_discovery.cli agent-ops render-prompt --task $(TASK)
 
 owner-gate:
-	$(PY) -m distributed_discovery.cli agent-ops owner-gate --gate $(GATE)
+	$(PY) -m distributed_discovery.cli agent-ops owner-gate --gate $(GATE) $(if $(OWNER_GATE_CHALLENGE),--challenge "$(OWNER_GATE_CHALLENGE)") $(if $(OWNER_GATE_VALIDATE_ONLY),--validate-only)
+
+treasurebench-fresh-pilot-audit:
+	$(PY) scripts/audit_treasurebench_agents_v1_fresh_pilot.py
+
+treasurebench-fresh-pilot-rehearsal:
+	$(PY) scripts/audit_treasurebench_agents_v1_fresh_pilot.py --rehearsal
+
+treasurebench-fresh-pilot-live:
+	$(PY) -m distributed_discovery.cli treasurebench fresh-pilot-live
+
+treasurebench-fresh-pilot-closeout-audit:
+	$(PY) scripts/audit_treasurebench_agents_v1_fresh_pilot_closeout.py
 
 agent-handoff:
 	$(PY) -m distributed_discovery.cli agent-ops render-handoff --task $(TASK)

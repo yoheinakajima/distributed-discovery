@@ -1,0 +1,130 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0003
+title: AO-0002 quarantined closeout and public-safe reconciliation
+task_type: site-integration
+status: owner-gate-required
+objective: Close AO-0002 as a permanently quarantined provider failure using only public-safe repository, GitHub, CI, and Pages reconciliation after one exact owner gate.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: policy, path: docs/benchmark/agents-v1/AGENTS.md}
+  - {type: record, path: reports/benchmark/treasurebench-agents-v1-fresh-pilot-closeout.yml}
+  - {type: record, path: reports/benchmark/treasurebench-agents-v1-fresh-pilot-output-lock-commitment.yml}
+  - {type: record, path: reports/agent-ops/AO-0002-stop-by-policy-handoff.yml}
+  - {type: plan, path: plans/TREASUREBENCH_AGENTS_V1_QUARANTINED_CLOSEOUT.md}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/196"}
+  - {type: pull-request, path: "https://github.com/yoheinakajima/distributed-discovery/pull/197"}
+owner_decisions:
+  - AO-0002 permanently ended as sealed-pilot-quarantined-provider-failure and its campaign, batch, execution commit, output lock, provider attempt, zero-token zero-cost ledger, and inactive R2 authorization must remain preserved.
+  - The failed campaign and batch may never be retried, repaired, reopened, reused, rescored, executed, or reauthorized.
+  - The closeout may reconcile only public-safe repository status, GitHub state, normal post-merge CI and Pages, and live public-safe routes.
+  - The next substantive candidate is TreasureBench exact provider-schema conformance repair and public-canary gate, which must be public-only and separately registered.
+scope:
+  paths:
+    - tasks/treasurebench-agents-v1-quarantined-closeout.yml
+    - plans/TREASUREBENCH_AGENTS_V1_QUARANTINED_CLOSEOUT.md
+    - plans/MASTER_EXEC_PLAN.md
+    - docs/current-state.md
+    - docs/roadmap.md
+    - docs/program-memory
+    - docs/benchmark/agents-v1
+    - studies/DD010-discovery-benchmark
+    - reports/agent-ops
+    - reports/benchmark
+    - site
+    - scripts/audit_treasurebench_agents_v1_fresh_pilot_closeout.py
+    - tests/unit/test_agent_ops_contracts.py
+    - tests/unit/test_treasurebench_agents_v1_fresh_pilot_closeout.py
+    - Makefile
+  actions:
+    - Preserve and validate the existing redacted AO-0002 stop-by-policy artifacts without private-state access.
+    - Reconcile current state, roadmap, handoff, program memory, DD-010, TreasureBench Agents status, and public-safe site and JSON surfaces.
+    - "Update PR #197 title and body to the quarantined outcome, validate it, and mark it ready."
+    - "Squash-merge PR #197 after all required checks pass, observe normal post-merge CI and Pages, verify public-safe routes, close issue #196, and synchronize main."
+non_goals:
+  - No provider call, credential access, spend, private-state read write generation deletion or publication.
+  - No retry repair reopen reuse rescore execution or reauthorization of the failed campaign or batch.
+  - No provider request, schema, adapter, retry, error, execution, or live-runner code repair.
+  - No DD-023, claim, scientific run, evidence promotion, proof promotion, or paper lifecycle change.
+  - No paper or PDF change, ranking, composite, leaderboard, or performance publication.
+  - No package, release, DOI, arXiv, journal, submission, or base-campaign action.
+permissions:
+  repository_write: true
+  git_branch_commit: true
+  github_issue_pr: true
+  merge_after_checks: true
+  ci_pages: true
+external_action_permissions:
+  network_observation: true
+  github_mutation: true
+  provider_calls: false
+  spend: false
+  release_publication: false
+  submission: false
+scientific_mutation_permissions:
+  create_study: false
+  create_claim: false
+  create_run: false
+  change_evidence_status: false
+  change_proof_status: false
+  change_paper_lifecycle: false
+private_data_permissions: {read: false, write: false, generate: false, publish: false}
+budget:
+  currency: USD
+  expected: "0"
+  hard_cap: "0"
+  call_cap: 0
+  category_caps: {}
+  cumulative_spend: "0"
+expected_outcomes:
+  - A validated public-safe AO-0002 quarantined closeout with exact immutable failure, call, token, cost, custody, and output-lock facts preserved.
+  - "PR #197 accurately describes the quarantined outcome and passes every required closeout, invariant, paper, site, and Agent Operations check."
+  - "After exact owner authorization only, PR #197 is ready, squash-merged, deployed by normal CI and Pages, live-verified, issue #196 is closed, and main is synchronized."
+  - The separately registered public-only provider-schema conformance and tiny-public-canary gate remains the sole next substantive candidate.
+stop_conditions:
+  - Stop before any closeout GitHub mutation, PR readiness change, merge, issue closure, or Pages authority without the exact active AO-0003 owner authorization.
+  - Stop on any private-state path access, credential access, provider call, spend, failed-campaign mutation, execution-code repair, or authorization recreation.
+  - Stop if any campaign, batch, execution commit, call count, token count, cost, output lock, authorization status, or no-private-generation fact changes.
+  - Stop if scientific inventories, paper or PDF bytes, performance surfaces, release state, upstream state, or unrelated preservation files change.
+  - Stop on contract, gate, ancestry, protected-tree, CI, site, route, or public-redaction mismatch.
+acceptance_profile: infrastructure
+canonical_destinations:
+  - tasks/treasurebench-agents-v1-quarantined-closeout.yml
+  - plans/TREASUREBENCH_AGENTS_V1_QUARANTINED_CLOSEOUT.md
+  - reports/benchmark/treasurebench-agents-v1-fresh-pilot-closeout.yml
+  - reports/agent-ops
+  - docs/current-state.md
+  - docs/roadmap.md
+  - docs/program-memory/registry.yml
+  - studies/DD010-discovery-benchmark/status.yml
+  - site
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 196
+  branch: benchmark/treasurebench-agents-v1-fresh-pilot
+  pull_request: 197
+  base: main
+exec_plan: plans/TREASUREBENCH_AGENTS_V1_QUARANTINED_CLOSEOUT.md
+task_delta: reports/agent-ops/next-task-treasurebench-provider-schema-conformance.yml
+frozen_identifiers:
+  superseded_task_id: AO-0002
+  owner_study: DD-010
+  decision: sealed-pilot-quarantined-provider-failure
+  campaign_id: treasurebench-agents-v1-repair-confirmation-v1
+  batch_id: tb-agents-v1-repair-confirmation-v1-b01
+  execution_commit: fe313602df7f4e8ffac1a1a02c2b3a83f3c72943
+  output_lock: sha256:8102a6c1b6bda003336d5503136dfe29301b04cb8f35e7740edd8d56f0eb3c1d
+  issue: "196"
+  pull_request: "197"
+  branch: benchmark/treasurebench-agents-v1-fresh-pilot
+  openai_attempts: "1"
+  anthropic_calls: "0"
+  reported_tokens: "0"
+  cost_usd: "0.00"
+supersession:
+  supersedes: [AO-0002]
+  superseded_by: null
+  reason: AO-0002 lacked merge and Pages authority; AO-0003 preserves its immutable stop while supplying only the minimum separately gated public closeout authority.
+next_gate: Authorize the exact committed AO-0003 closeout gate before any PR mutation, readiness change, merge, issue closure, or Pages closeout.

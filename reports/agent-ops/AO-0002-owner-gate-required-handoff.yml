@@ -1,0 +1,24 @@
+schema_version: agent-ops-handoff-v1
+status: owner-gate-required
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0002
+issue: 196
+pull_request: 197
+branch: benchmark/treasurebench-agents-v1-fresh-pilot
+base_main: b6934e6495282b210f0d90b96f63b24bebab454b
+head_merge_sha: cce090ea64ae88db1bb617aa5c0846838e6e4783
+task_contract: tasks/treasurebench-agents-v1-fresh-pilot.yml
+exec_plan: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT.md
+last_completed_gate: Exact execution commit 1974e74c0222329d01e36d8d804d5262ea08376d and its committed generic owner-gate manifest passed live authorization-free validation.
+next_gate: Owner creates the exact generic local authorization for AOG-AO-0002-FRESH-PILOT, then resumes M6.
+decision: Stop before credentials, fresh private generation, custody creation, provider calls, or spend.
+external_calls_cost: {calls: 0, cost: "0", currency: USD}
+private_state_change: none
+scientific_state_change: none
+validation:
+  profile: private-evaluation
+  result: pass-443-tests-complete-acceptance-500-run-rehearsal-46-corruptions-live-gate-validation
+owner_action: "Run the exact noninteractive generic owner-gate command after reviewing the committed manifest."
+exact_next_command: "make owner-gate GATE=reports/agent-ops/AO-0002-treasurebench-fresh-pilot-owner-gate.yml OWNER_GATE_CHALLENGE='AUTHORIZE AOG-AO-0002-FRESH-PILOT 1974e74'"
+exact_next_file: reports/agent-ops/AO-0002-treasurebench-fresh-pilot-owner-gate.yml
+blocker: Exact generic owner authorization is required and absent by design.

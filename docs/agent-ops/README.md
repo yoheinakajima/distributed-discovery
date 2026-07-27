@@ -85,13 +85,17 @@ generated context or handoffs unless they were already frozen in the contract.
 ## Owner gates
 
 A task profile can require a gate but cannot authorize it. A committed gate
-manifest declares the complete surface: issue/PR, branch, commit, tree and
+manifest declares the complete surface: issue/PR, branch, frozen execution commit, tree and
 contract hashes, purpose, irreversible/private/external actions, cumulative
 spend, remaining caps, prohibitions, expiry, authorization path, next
 milestone, and resume message.
 
-The engine verifies branch, commit, remote head, clean tracked tree, pull
-request state, hashes, permissions, caps, prohibitions, expiry, and challenge.
+Because a tracked manifest cannot contain the SHA of its own commit, `commit`
+and `pull_request.head_sha` name the exact execution commit immediately before
+the manifest commit. The engine verifies that execution commit is an ancestor
+of the clean local, remote, and live pull-request head and that every declared
+execution-sensitive tree still has the frozen hash. It also verifies branch,
+pull-request state, permissions, caps, prohibitions, expiry, and challenge.
 It then writes a mode-`0600` authorization outside Git and preserves a
 superseded local authorization in local history. It never performs the gated
 action. Authorization is exact, expiring, nontransferable, and fails closed.

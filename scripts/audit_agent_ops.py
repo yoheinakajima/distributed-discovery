@@ -64,6 +64,8 @@ def _hydrate_gate() -> tuple[dict[str, Any], dict[str, Any], GateObservation]:
         pull_request_number=gate["pull_request"]["number"],
         pull_request_state="OPEN",
         pull_request_head_sha=commit,
+        observed_execution_commit=commit,
+        execution_commit_is_ancestor=True,
         observed_at_utc=datetime(2026, 7, 25, tzinfo=UTC),
     )
     return gate, contract, observation
@@ -73,6 +75,18 @@ def _audit_corruptions() -> dict[str, str]:
     gate, contract, observation = _hydrate_gate()
     validate_gate_surface(gate, contract, observation)
     outcomes: dict[str, str] = {"valid": "accepted"}
+
+    manifest_commit = "2" * 40
+    descendant_manifest = GateObservation(
+        **{
+            **observation.__dict__,
+            "commit": manifest_commit,
+            "remote_commit": manifest_commit,
+            "pull_request_head_sha": manifest_commit,
+        }
+    )
+    validate_gate_surface(gate, contract, descendant_manifest)
+    outcomes["committed-manifest-descendant"] = "accepted"
 
     changed_observation = copy.copy(observation)
     wrong_branch = GateObservation(**{**changed_observation.__dict__, "branch": "wrong-branch"})
@@ -89,6 +103,24 @@ def _audit_corruptions() -> dict[str, str]:
         "wrong-commit",
     )
     outcomes["wrong-commit"] = "rejected"
+
+    nonancestor = GateObservation(
+        **{**descendant_manifest.__dict__, "execution_commit_is_ancestor": False}
+    )
+    _expect_reject(
+        lambda: validate_gate_surface(gate, contract, nonancestor),
+        "nonancestor-execution-commit",
+    )
+    outcomes["nonancestor-execution-commit"] = "rejected"
+
+    stale_live_head = GateObservation(
+        **{**descendant_manifest.__dict__, "pull_request_head_sha": "3" * 40}
+    )
+    _expect_reject(
+        lambda: validate_gate_surface(gate, contract, stale_live_head),
+        "stale-live-head",
+    )
+    outcomes["stale-live-head"] = "rejected"
 
     changed_tree = copy.deepcopy(gate)
     changed_tree["tree_hashes"]["docs/agent-ops"] = f"sha256:{'0' * 64}"
@@ -141,7 +173,7 @@ def _audit_corruptions() -> dict[str, str]:
     outcomes["hidden-permission"] = "rejected"
 
     missing_prohibition = copy.deepcopy(gate)
-    missing_prohibition["explicit_prohibitions"].remove("credential-read")
+    missing_prohibition["explicit_prohibitions"].remove("credential-read-outside-manifest")
     _expect_reject(
         lambda: validate_gate_surface(missing_prohibition, contract, observation),
         "missing-prohibition",
@@ -192,7 +224,7 @@ def _audit_corruptions() -> dict[str, str]:
 
     registry = load_yaml(FIXTURES / "corruptions.yml")["corruptions"]
     registered = {item["id"] for item in registry}
-    assert registered == set(outcomes) - {"valid"}
+    assert registered == set(outcomes) - {"valid", "committed-manifest-descendant"}
     return outcomes
 
 
@@ -205,7 +237,9 @@ def audit() -> dict[str, Any]:
 
     validate(load_yaml(DOCS / "task-contract-template.yml"), "task-contract.schema.json")
     active_contract = load_yaml(ROOT / "tasks/agent-operations-v1.yml")
-    validate(active_contract, "task-contract.schema.json")
+    task_contracts = sorted((ROOT / "tasks").glob("*.yml"))
+    for task_contract_path in task_contracts:
+        validate(load_yaml(task_contract_path), "task-contract.schema.json")
     validate(load_yaml(DOCS / "task-delta-template.yml"), "task-delta.schema.json")
     preview = load_yaml(ROOT / "reports/agent-ops/next-task-treasurebench-fresh-pilot.yml")
     validate(preview, "task-delta.schema.json")
@@ -333,6 +367,7 @@ def audit() -> dict[str, Any]:
     corruptions = _audit_corruptions()
     return {
         "schemas": len(schema_paths),
+        "task_contracts": len(task_contracts),
         "task_types": len(task_types),
         "acceptance_profiles": len(profile_names),
         "scoped_instructions": len(instruction_paths) - 1,

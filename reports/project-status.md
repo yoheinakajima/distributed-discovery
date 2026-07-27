@@ -1,4 +1,29 @@
-# Project status — TreasureBench sealed pilot quarantined and locked
+# Project status — TreasureBench repair-confirmation pilot quarantined
+
+Date: 2026-07-27 (America/Los_Angeles).
+
+Issue #196 and PR #197 close the wholly fresh TreasureBench Agents v1
+repair-confirmation campaign as `sealed-pilot-quarantined-provider-failure`.
+Campaign `treasurebench-agents-v1-repair-confirmation-v1`, batch
+`tb-agents-v1-repair-confirmation-v1-b01`, and execution commit
+`fe313602df7f4e8ffac1a1a02c2b3a83f3c72943` are permanently preserved. The
+only provider attempt was one direct OpenAI public canary returning HTTP 400
+class `schema-or-parameter`; Anthropic received zero calls, reported input and
+output tokens are zero, and cost is USD 0.00.
+
+The provider phase is closed. Six retained objects are locked under
+`sha256:8102a6c1b6bda003336d5503136dfe29301b04cb8f35e7740edd8d56f0eb3c1d`,
+and the R2 authorization is inactive and archived. No task seed, private task,
+answer, task or answer key, task or answer ciphertext, custody manifest, or
+private run was created. No retry, repair, reuse, rescoring, reauthorization,
+scientific mutation, paper change, performance publication, release, or base
+campaign follows from this closeout.
+
+The exact next substantive candidate is **TreasureBench exact provider-schema
+conformance repair and public-canary gate**. It is public-only, separately
+registered, and not authorized by this status record.
+
+## Prior sealed-pilot status
 
 Date: 2026-07-24 (America/Los_Angeles).
 

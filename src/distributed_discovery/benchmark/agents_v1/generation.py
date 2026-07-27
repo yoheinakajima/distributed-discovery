@@ -373,7 +373,11 @@ def generate_instance(
         authorization is not None
         and custody_context is not None
         and getattr(custody_context, "allows_private_generation", False) is True
-        and getattr(custody_context, "campaign_id", None) == "treasurebench-agents-v1-pilot-v1"
+        and getattr(custody_context, "campaign_id", None)
+        in {
+            "treasurebench-agents-v1-pilot-v1",
+            "treasurebench-agents-v1-repair-confirmation-v1",
+        }
     )
     if not public_fixture and not private_allowed:
         raise PermissionError(

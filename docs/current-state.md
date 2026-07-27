@@ -1,5 +1,31 @@
 # Current program state
 
+_TreasureBench Agents v1 repair-confirmation pilot closeout, 2026-07-27:_
+issue #196 and PR #197 preserve the wholly fresh DD-010 engineering campaign
+`treasurebench-agents-v1-repair-confirmation-v1`, batch
+`tb-agents-v1-repair-confirmation-v1-b01`, at execution commit
+`fe313602df7f4e8ffac1a1a02c2b3a83f3c72943`. The campaign stopped at its
+first public canary with decision
+`sealed-pilot-quarantined-provider-failure`: one direct OpenAI HTTP 400
+`schema-or-parameter` attempt, zero Anthropic calls, zero reported input or
+output tokens, and USD 0.00.
+
+The provider phase is closed and six retained objects are locked under
+`sha256:8102a6c1b6bda003336d5503136dfe29301b04cb8f35e7740edd8d56f0eb3c1d`.
+The R2 authorization is inactive and archived. No task seed, private task,
+answer, task key, answer key, task ciphertext, answer ciphertext, custody
+manifest, or private architecture/model run was created. The campaign and
+batch are permanently quarantined and cannot be retried, repaired, reopened,
+reused, rescored, executed, or reauthorized.
+
+This is public-safe engineering closeout only. It creates no DD-023, claim,
+scientific run, evidence or proof promotion, paper result, ranking, composite,
+performance publication, release, submission, or base-campaign authority. The
+next substantive candidate is **TreasureBench exact provider-schema
+conformance repair and public-canary gate**. It must be public-only and
+separately registered before diagnosing the request/schema boundary or making
+tiny public canary calls.
+
 _TreasureBench Agents v1 sealed engineering pilot closeout, 2026-07-24:_
 issue #187 and PR #188 complete the fixed DD-010 non-inferential engineering
 pilot with decision `sealed-pilot-quarantined-provider-failure`. The encrypted

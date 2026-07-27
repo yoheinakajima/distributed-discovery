@@ -1,0 +1,75 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-provider-audit-v1
+audited_at_utc: "2026-07-27T05:39:42Z"
+status: pass-current-official-docs-no-provider-api-call
+task_id: AO-0002
+scope: direct-standard-api-only
+audit_context: post-owner-gate-preexecution-reaudit-before-any-credential-or-provider-access
+models:
+  - provider: OpenAI
+    route: openai_direct
+    exact_model: gpt-5.4-2026-03-05
+    availability: listed-snapshot
+    structured_output:
+      supported: true
+      api: Responses
+      contract: text-format-json-schema-strict
+    retention:
+      request_store_false: required
+      application_state_storage: disabled-by-store-false
+      abuse_monitoring_default: up-to-30-days
+      zero_data_retention_assumed: false
+    errors:
+      relevant_http_classes: [429, 500, 503]
+      implementation_total_transport_attempts: 2
+      schema_repairs: 1
+    standard_price_usd_per_million_tokens: {input: "2.50", output: "15.00"}
+    official_sources:
+      model: https://developers.openai.com/api/docs/models/gpt-5.4
+      structured_output: https://developers.openai.com/api/docs/guides/structured-outputs
+      retention: https://developers.openai.com/api/docs/guides/your-data
+      errors: https://developers.openai.com/api/docs/guides/error-codes
+      pricing: https://developers.openai.com/api/docs/pricing#text-tokens
+  - provider: Anthropic
+    route: anthropic_direct
+    exact_model: claude-sonnet-4-6
+    availability: listed-canonical-snapshot
+    structured_output:
+      supported: true
+      api: Messages
+      contract: output-config-format-json-schema
+    retention:
+      prompt_and_output_default: not-retained
+      structured_output_schema_cache: up-to-24-hours
+      zero_data_retention_assumed: false
+      legal_or-flagged-exceptions_possible: true
+    errors:
+      relevant_http_classes: [429, 500, 504, 529]
+      sdk_default_retries_relied_on: false
+      implementation_total_transport_attempts: 2
+      schema_repairs: 1
+    standard_price_usd_per_million_tokens: {input: "3.00", output: "15.00"}
+    official_sources:
+      model: https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions
+      structured_output: https://platform.claude.com/docs/en/build-with-claude/structured-outputs
+      retention: https://platform.claude.com/docs/en/manage-claude/api-and-data-retention
+      errors: https://platform.claude.com/docs/en/api/errors
+      pricing: https://platform.claude.com/docs/en/about-claude/pricing
+decisions:
+  newer_openai_model_selected: false
+  reason: exact-route-and-model-continuity-is-required-to-confirm-the-instrument-repair
+  aliases_allowed: false
+  batch_routes_allowed: false
+  fallback_allowed: false
+  provider_managed_tools_allowed: false
+  regional_price_premiums_allowed: false
+  current_terms_reaudit_required_at-resume: true
+  exact_routes_remain_available: true
+  structured_output_contracts_match_implementation: true
+  retention_assumptions_remain_conservative: true
+  retry_contract_uses-sdk-defaults: false
+  registered_standard_prices-remain-valid: true
+activity:
+  credentials_read: 0
+  provider_api_calls: 0
+  private_objects_created: 0
+  spend_usd: "0"

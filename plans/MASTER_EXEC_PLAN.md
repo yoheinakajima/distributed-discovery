@@ -1,5 +1,63 @@
 # Master execution plan
 
+## Active continuation — AO-0002 quarantined closeout (2026-07-27)
+
+Issue #196, draft PR #197, branch
+`benchmark/treasurebench-agents-v1-fresh-pilot`, superseding fixed contract
+`tasks/treasurebench-agents-v1-quarantined-closeout.yml`, and living ExecPlan
+[`TREASUREBENCH_AGENTS_V1_QUARANTINED_CLOSEOUT.md`](TREASUREBENCH_AGENTS_V1_QUARANTINED_CLOSEOUT.md)
+own the sole substantive lane. AO-0003 supplies only the separately gated
+public-safe repository, GitHub, CI, and Pages authority that AO-0002 lacked.
+
+The AO-0002 decision `sealed-pilot-quarantined-provider-failure`, campaign
+`treasurebench-agents-v1-repair-confirmation-v1`, batch
+`tb-agents-v1-repair-confirmation-v1-b01`, execution commit
+`fe313602df7f4e8ffac1a1a02c2b3a83f3c72943`, one terminal OpenAI HTTP 400
+canary, zero Anthropic calls, zero reported tokens, USD 0.00, inactive
+archived R2 authorization, and output lock
+`sha256:8102a6c1b6bda003336d5503136dfe29301b04cb8f35e7740edd8d56f0eb3c1d`
+remain immutable. No task seed, task, answer, task or answer key, task or
+answer ciphertext, custody manifest, or private run was created.
+
+AO-0003 has a zero-dollar and zero-call cap. Its exact generic authorization
+passed at execution commit
+`5cfac91cf2a47b6a00f6fe82c07d3ceeee21b188`; provider, credential, private,
+scientific, paper/PDF, performance, package, release, submission, and
+base-campaign authority remain false. The active milestone is public-safe
+status reconciliation, PR validation, authorized squash merge, normal
+post-merge CI/Pages, live public-route verification, issue closure, and
+synchronized `main`. The next substantive candidate is `TreasureBench exact
+provider-schema conformance repair and public-canary gate`; it is public-only,
+unregistered, and creates no authority here.
+
+## Active continuation — TreasureBench fresh repair-confirmation pilot (2026-07-27)
+
+Issue #196, draft PR #197, branch
+`benchmark/treasurebench-agents-v1-fresh-pilot`, fixed contract
+`tasks/treasurebench-agents-v1-fresh-pilot.yml`, and living ExecPlan
+[`TREASUREBENCH_AGENTS_V1_FRESH_PILOT.md`](TREASUREBENCH_AGENTS_V1_FRESH_PILOT.md)
+own the sole substantive lane. This is a DD-010 engineering-only private
+evaluation with 50 new tasks, five architectures, two exact direct routes, one
+repeat, and 500 runs. It creates no scientific, paper, ranking, package,
+release, submission, or base-campaign authority.
+
+The repaired R2 authorization passed its exact gate, contract, tree, route,
+price, retention, cap, ancestry, and working-tree preflight. The staged live
+driver then stopped at the first public-canary request: OpenAI returned HTTP
+400 class `schema-or-parameter`, with zero reported tokens and USD 0.00.
+Anthropic was not called. The failure is terminal under the prospective
+policy, so the campaign and batch are quarantined with no retry.
+
+The provider phase is closed and six retained objects are locked under
+`sha256:8102a6c1b6bda003336d5503136dfe29301b04cb8f35e7740edd8d56f0eb3c1d`.
+No task seed, task, answer, task/answer key, task/answer ciphertext, custody
+manifest, private run, Method result, ranking, scientific artifact, merge, or
+Pages deployment occurred. The R2 authorization is inactive and preserved in
+local history. The redacted engineering closeout and typed stop-by-policy
+handoff are complete. Any replacement requires a separately registered new
+batch and exact owner gate. AO-0003 separately owns only the public-safe
+closeout and does not reopen this task.
+
 ## Active continuation — Agent Operations v1 (2026-07-25)
 
 Issue #194, draft PR #195, branch `infra/agent-operations-v1`, fixed task

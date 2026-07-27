@@ -1,4 +1,23 @@
-# Current roadmap — pilot quarantined; instrument repaired; fresh pilot separately gated
+# Current roadmap — repair-confirmation pilot quarantined; public schema gate next
+
+The wholly fresh TreasureBench Agents v1 repair-confirmation campaign
+`treasurebench-agents-v1-repair-confirmation-v1`, batch
+`tb-agents-v1-repair-confirmation-v1-b01`, stopped at its first public canary.
+The exact decision is `sealed-pilot-quarantined-provider-failure`: one direct
+OpenAI HTTP 400 `schema-or-parameter` attempt, zero Anthropic calls, zero
+reported tokens, USD 0.00, and zero private runs. Its closed provider phase is
+bound by output lock
+`sha256:8102a6c1b6bda003336d5503136dfe29301b04cb8f35e7740edd8d56f0eb3c1d`.
+No task seed, private task, answer, task/answer key, task/answer ciphertext, or
+custody manifest was created. The campaign, batch, and inactive archived R2
+authorization are permanently preserved and cannot be reused.
+
+The next substantive candidate is **TreasureBench exact provider-schema
+conformance repair and public-canary gate**. It must be separately registered,
+remain public-only, diagnose the HTTP 400 request/schema boundary, validate
+each provider's supported strict-schema subset, retain only safe structured
+error fields, and pass tiny public canaries before any new private pilot is
+registered. No such future task, provider call, or spend is authorized here.
 
 Compendium v0.1.0 is published and externally verified from exact source
 `3ca173f4e9e81a6d0e3e56205e428c596edc050e`. The immutable GitHub Release,
@@ -22,11 +41,12 @@ failure.
 The action-budget stack, independent Method C verification, metric-range
 checks, prospective retry/missingness policy, and normalized future
 provider-error envelope are repaired. The 50-case public rehearsal rejects all
-28 instrument corruptions. The final repair decision is
-`instrument-repaired-fresh-sealed-pilot-required`. Any confirmation must use a
-wholly new campaign, batch, seed, tasks, answers, keys, and custody under
-separate owner authorization. No provider call, private generation, spend,
-fresh pilot, or base campaign is currently authorized.
+28 instrument corruptions. The repair decision was
+`instrument-repaired-fresh-sealed-pilot-required`. The resulting wholly fresh
+campaign was separately registered and authorized, but stopped on its first
+public canary as recorded above. It produced no private task material or run.
+No retry, replacement-in-place, further provider call, spend, or base campaign
+is authorized.
 
 ## Prior offline release gate
 
@@ -69,15 +89,14 @@ DOI, study, claim, run, or paper change is authorized by the naming milestone.
 Phase 1 is complete. During Phase 2, theorem-family execution is held. Reliable
 Discovery remains the next major theorem-family candidate but is held.
 DiscoveryBench Agents v1 is registered as a DD-010 instrument, not a new study
-or DiscoveryBench v4. Its original sealed pilot is complete and permanently
-quarantined; its instrument failure has been adjudicated and repaired. The
-selected next option is a fresh 50-task, two-cloud, one-repeat sealed
-repair-confirmation pilot with a provisional USD 15 expectation and USD 25
-hard cap, subject to a fresh route/price audit and separate registration and
-owner authorization. The 200-task claim-grade base remains blocked because
-the audited host cannot run the exact local/open candidate. This roadmap
-creates no call, spend, private holdout, trace, result, study, or claim
-authority.
+or DiscoveryBench v4. Its original sealed pilot and the later wholly fresh
+repair-confirmation campaign are both permanently quarantined. The latter
+stopped before task generation or private runs on one terminal public-canary
+HTTP 400. The next option is now the separately registered public-only
+provider-schema conformance gate described above. The 200-task claim-grade
+base remains blocked because the audited host cannot run the exact local/open
+candidate. This roadmap creates no call, spend, private holdout, trace, result,
+study, or claim authority.
 
 The Phase 2 execution architecture is `shared trunk, low-cost option creation,
 staged exercise`. It records readiness, residual value, decay, expiry horizon,

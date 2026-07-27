@@ -51,10 +51,13 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "stopped decentralized-recovery overlap gate" in program
     assert "Phase 2 holds theorem-family execution" in program
     assert "Reliable Discovery remains a major candidate but is deferred" in program
-    assert "completed its fixed DD-010 sealed engineering pilot" in program
+    assert "has two permanently quarantined DD-010 engineering pilots" in program
+    assert "public-only provider-schema conformance" in program
     assert "sealed-pilot-quarantined-provider-failure" in program
-    assert "read-only adjudication found a pervasive final-action-budget defect" in program
-    assert "wholly fresh sealed repair-confirmation pilot" in program
+    assert (
+        "original pilot repair adjudication found a pervasive final-action-budget defect" in program
+    )
+    assert "wholly fresh repair-confirmation campaign then stopped by policy" in program
     assert 'id="information-sharing-frontier"' in program
     assert 'href="publications/information-sharing-frontier.html"' in program
     assert "docs/theorem-spine.md" in program
@@ -133,9 +136,12 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         assert (output / f"benchmark/{route}.html").is_file()
         assert (output / f"treasurebench/{route}.html").is_file()
     agents_registration = (output / "benchmark/agents-v1.html").read_text(encoding="utf-8")
-    assert "Adjudication complete" in agents_registration
-    assert "Instrument repaired" in agents_registration
-    assert "Fresh pilot separately gated" in agents_registration
+    assert "DD-010 instrument · quarantined engineering closeout" in agents_registration
+    assert "Original pilot quarantined" in agents_registration
+    assert "Repair-confirmation quarantined" in agents_registration
+    assert "TreasureBench exact provider-schema conformance repair and public-canary gate" in (
+        agents_registration
+    )
     assert "3,037 attempts, 3,035 successes" in agents_registration
     assert "137 runs with invalid final cardinality" in agents_registration
     assert "265 over-budget outputs" in agents_registration
@@ -166,7 +172,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     agents_implementation = json.loads(
         (output / "data/benchmark/agents-v1-implementation.json").read_text(encoding="utf-8")
     )
-    assert agents_implementation["status"] == ("implementation-repaired-fresh-pilot-not-authorized")
+    assert agents_implementation["status"] == ("implementation-repaired-fresh-pilot-quarantined")
     assert agents_implementation["public_rehearsal"]["cases"] == 50
     assert agents_implementation["public_rehearsal"]["corruptions_rejected"] == 24
     assert agents_implementation["repair_rehearsal"] == {
@@ -220,10 +226,48 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert agents_evaluation["repair_adjudication"]["dimension_breakdowns_published"] is False
     assert agents_evaluation["authorization"]["base_campaign_authorized"] is False
     assert agents_evaluation["authorization"]["fresh_pilot_authorized"] is False
+    assert agents_evaluation["authorization"]["fresh_pilot_completed"] is True
+    assert agents_evaluation["authorization"]["fresh_pilot_decision"] == (
+        "sealed-pilot-quarantined-provider-failure"
+    )
     assert agents_evaluation["authorization"]["fresh_pilot_expected_cost_usd"] == "15.00"
     assert agents_evaluation["authorization"]["fresh_pilot_proposed_cap_usd"] == "25.00"
     assert agents_evaluation["scientific_results_exist"] is False
     assert agents_evaluation["provider_comparative_results_published"] is False
+    assert agents_evaluation["repair_confirmation_pilot"] == {
+        "name": "fresh-repair-confirmation-pilot",
+        "campaign_id": "treasurebench-agents-v1-repair-confirmation-v1",
+        "batch_id": "tb-agents-v1-repair-confirmation-v1-b01",
+        "execution_commit": "fe313602df7f4e8ffac1a1a02c2b3a83f3c72943",
+        "status": "quarantined",
+        "decision": "sealed-pilot-quarantined-provider-failure",
+        "stage": "public-canary",
+        "attempts": 1,
+        "successes": 0,
+        "errors": 1,
+        "error_class": "schema-or-parameter",
+        "terminal_http_status": 400,
+        "openai_calls": 1,
+        "anthropic_calls": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cost_usd": "0.00",
+        "private_runs": 0,
+        "task_seed_created": False,
+        "tasks_created": 0,
+        "answers_created": 0,
+        "task_key_created": False,
+        "answer_key_created": False,
+        "task_ciphertext_created": False,
+        "answer_ciphertext_created": False,
+        "custody_manifest_created": False,
+        "output_lock_commitment": (
+            "sha256:8102a6c1b6bda003336d5503136dfe29301b04cb8f35e7740edd8d56f0eb3c1d"
+        ),
+        "provider_phase_closed": True,
+        "authorization_inactive_archived": True,
+        "performance_results_published": False,
+    }
     benchmark_lab = (output / "labs/benchmark.html").read_text()
     assert "no submissions" in benchmark_lab
     assert "JavaScript is off" in benchmark_lab

@@ -2,6 +2,8 @@ schema_version: agent-ops-owner-gate-corruptions-v1
 corruptions:
   - {id: wrong-branch, expected: reject}
   - {id: wrong-commit, expected: reject}
+  - {id: nonancestor-execution-commit, expected: reject}
+  - {id: stale-live-head, expected: reject}
   - {id: changed-tree, expected: reject}
   - {id: changed-task-contract, expected: reject}
   - {id: stale-pr, expected: reject}

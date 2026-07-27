@@ -1,0 +1,24 @@
+schema_version: agent-ops-handoff-v1
+status: stop-by-policy
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0002
+issue: 196
+pull_request: 197
+branch: benchmark/treasurebench-agents-v1-fresh-pilot
+base_main: b6934e6495282b210f0d90b96f63b24bebab454b
+head_merge_sha: 514fc8d662e56a844015200e36825954dedf3a33
+task_contract: tasks/treasurebench-agents-v1-fresh-pilot.yml
+exec_plan: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT.md
+last_completed_gate: R2 authorization and execution preflight passed; the provider phase was then closed and six retained objects were locked and verified after the first public-canary request returned terminal OpenAI HTTP 400 schema-or-parameter.
+next_gate: Do not retry or reuse this campaign or batch. Any repair or replacement requires a separately registered wholly new batch identity, repaired execution freeze, committed exact owner-gate manifest, and new owner authorization.
+decision: sealed-pilot-quarantined-provider-failure
+external_calls_cost: {calls: 1, cost: "0.00", currency: USD}
+private_state_change: Both declared credential values were read and cleared; one fresh private-state root, execution identity, operational key, and encrypted provider-error record were created. No task seed, task, answer, task or answer key, task or answer ciphertext, custody manifest, or private run was created. The provider phase is closed, the six retained objects are locked under sha256:8102a6c1b6bda003336d5503136dfe29301b04cb8f35e7740edd8d56f0eb3c1d, and the inactive R2 authorization is preserved in mode-0600 local history.
+scientific_state_change: none
+validation:
+  profile: private-evaluation-stop-by-policy-closeout
+  result: pass-protected-tree-unchanged-ledger-closed-lock-verified-active-authorization-absent-redaction-pass-500-run-synthetic-rehearsal-54-corruptions
+owner_action: No action is required to preserve the stop. A future repair needs a separately selected and authorized Agent Operations task. PR merge and Pages deployment remain separately owner-authorized actions and were not performed.
+exact_next_command: ""
+exact_next_file: reports/benchmark/treasurebench-agents-v1-fresh-pilot-closeout.yml
+blocker: The first public-canary request produced a terminal non-retryable provider failure; the registered campaign and batch are quarantined and cannot be completed or retried in place.

@@ -1,0 +1,37 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-registration-v1
+registered_at_utc: "2026-07-27T02:04:22Z"
+status: registered-offline-only-owner-gate-pending
+task_id: AO-0002
+owner_study: DD-010
+issue: 196
+branch: benchmark/treasurebench-agents-v1-fresh-pilot
+contract: tasks/treasurebench-agents-v1-fresh-pilot.yml
+exec_plan: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT.md
+campaign_id: treasurebench-agents-v1-repair-confirmation-v1
+batch_id: tb-agents-v1-repair-confirmation-v1-b01
+counts: {tasks: 50, architectures: 5, providers: 2, repeats: 1, private_runs: 500}
+budget:
+  currency: USD
+  expected: "15"
+  hard_cap: "25"
+  provider_caps: {OpenAI: "10", Anthropic: "15"}
+  call_cap: 5200
+  cumulative_spend: "0"
+freshness:
+  new_os_csprng_seed_required: true
+  private_seed_created: false
+  private_tasks_created: 0
+  private_answers_created: 0
+  encryption_keys_created: 0
+  custody_created: false
+  quarantined_pilot_reuse: false
+  future_base_reuse: false
+  base_campaign_reuse: false
+authority:
+  private_generation_authorized: false
+  credential_access_authorized: false
+  provider_calls_authorized: false
+  spend_authorized: false
+  dd023_authorized: false
+  claim_or_scientific_run_authorized: false
+  paper_release_or_submission_authorized: false

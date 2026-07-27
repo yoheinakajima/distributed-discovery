@@ -31,6 +31,7 @@ def configure(parser: argparse.ArgumentParser) -> None:
     gate = commands.add_parser("owner-gate")
     gate.add_argument("--gate", required=True)
     gate.add_argument("--challenge")
+    gate.add_argument("--validate-only", action="store_true")
 
     handoff = commands.add_parser("render-handoff")
     handoff.add_argument("--task", required=True)
@@ -75,7 +76,11 @@ def execute(args: argparse.Namespace) -> dict[str, Any]:
             "bytes": path.stat().st_size,
         }
     if args.agent_ops_command == "owner-gate":
-        return execute_owner_gate(args.gate, challenge=args.challenge)
+        return execute_owner_gate(
+            args.gate,
+            challenge=args.challenge,
+            validate_only=args.validate_only,
+        )
     yaml_path, markdown_path = render_handoff(
         args.task,
         status=args.status,

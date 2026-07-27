@@ -1,0 +1,54 @@
+schema_version: agent-ops-task-delta-v1
+kind: task-delta
+status: candidate-next-task-not-registered
+task_type: infrastructure
+title: TreasureBench exact provider-schema conformance repair and public-canary gate
+objective: Diagnose and repair the exact public request and strict-schema boundaries, then run only tiny public canaries after separate registration and exact owner authorization.
+owner_decisions:
+  - The HTTP 400 request and schema boundary must be diagnosed without reopening or reusing the quarantined campaign or batch.
+  - Each provider's supported strict structured-output schema subset must be validated independently.
+  - Only public fixtures and safe normalized structured error fields may be retained.
+  - Tiny public provider canaries must pass before any new private pilot may be registered.
+authority_references:
+  - reports/benchmark/treasurebench-agents-v1-fresh-pilot-closeout.yml
+  - reports/benchmark/treasurebench-agents-v1-fresh-pilot-output-lock-commitment.yml
+  - reports/agent-ops/AO-0002-stop-by-policy-handoff.yml
+  - tasks/treasurebench-agents-v1-quarantined-closeout.yml
+permissions:
+  repository_write: false
+  github_mutation: false
+  network_observation: false
+  credential_access: false
+  provider_calls: false
+  spend: false
+  private_data: false
+  scientific_mutation: false
+  release_publication: false
+  issue_branch_execution_registration: false
+budget:
+  currency: USD
+  expected_cost: "0"
+  hard_cap: "0"
+  call_cap: 0
+  separate_current_pricing_audit_required: true
+expected_outcomes:
+  - A separately registered public-only conformance repair with exact per-provider strict-schema fixtures.
+  - Safe structured error retention and tiny public canaries that pass before any new private pilot registration.
+non_goals:
+  - No authority is created by this candidate delta.
+  - No private task answer seed key ciphertext custody or run access generation mutation deletion or publication.
+  - No retry repair reopen reuse rescore execution or reauthorization of the quarantined campaign or batch.
+  - No DD-023 claim scientific run evidence promotion paper result performance publication release submission or base campaign.
+frozen_identifiers:
+  predecessor_task: AO-0002
+  predecessor_decision: sealed-pilot-quarantined-provider-failure
+  quarantined_campaign: treasurebench-agents-v1-repair-confirmation-v1
+  quarantined_batch: tb-agents-v1-repair-confirmation-v1-b01
+  quarantined_execution_commit: fe313602df7f4e8ffac1a1a02c2b3a83f3c72943
+  quarantined_output_lock: sha256:8102a6c1b6bda003336d5503136dfe29301b04cb8f35e7740edd8d56f0eb3c1d
+next_gate: TreasureBench exact provider-schema conformance repair and public-canary gate
+expected_input: reports/agent-ops/next-task-treasurebench-provider-schema-conformance.yml
+notes:
+  - A future fixed contract must allocate new issue branch and PR identities and must remain public-only.
+  - Any credential read provider call or spend for tiny public canaries requires a new exact generic owner gate with current route model retention retry error and pricing audits.
+  - A new private pilot may be considered only after the public canaries pass and must use wholly new identities under another separate registration.

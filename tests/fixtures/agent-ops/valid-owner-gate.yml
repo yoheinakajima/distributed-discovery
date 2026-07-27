@@ -27,7 +27,7 @@ owner_confirmation_statements:
   - I reviewed the exact synthetic validation surface and understand that no action occurs.
 explicit_prohibitions:
   - provider-calls-outside-manifest
-  - credential-read
+  - credential-read-outside-manifest
   - unauthorized-private-access
   - scientific-mutation-outside-contract
   - cap-increase
