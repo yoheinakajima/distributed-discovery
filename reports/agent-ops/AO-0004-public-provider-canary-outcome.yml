@@ -1,0 +1,155 @@
+schema_version: treasurebench-provider-canary-outcome-v1
+task_id: AO-0004
+classification: public-engineering-only-not-scientific-evidence
+recorded_at_utc: "2026-07-27T20:58:15Z"
+authority:
+  gate_id: AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R3
+  execution_commit: 1048c502b205346fef70b06c76975b6ff06b0241
+  authorized_pr_head: 3f4cd54ea724d40cdaae129e8c383700f1f10cdf
+  issue: 198
+  pull_request: 199
+  branch: benchmark/treasurebench-provider-schema-conformance
+  authorization_validated: true
+  superseded_gates_used: false
+official_terms_recheck:
+  reviewed_at_utc: "2026-07-27T20:38:00Z"
+  result: compatible-with-frozen-execution
+  openai:
+    - https://developers.openai.com/api/docs/models/gpt-5.4
+    - https://developers.openai.com/api/docs/guides/structured-outputs
+    - https://developers.openai.com/api/docs/guides/your-data
+    - https://developers.openai.com/api/docs/guides/error-codes
+    - https://developers.openai.com/api/docs/pricing
+  anthropic:
+    - https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions
+    - https://platform.claude.com/docs/en/build-with-claude/structured-outputs
+    - https://platform.claude.com/docs/en/manage-claude/api-and-data-retention
+    - https://platform.claude.com/docs/en/api/errors
+    - https://platform.claude.com/docs/en/about-claude/pricing
+credential_boundary:
+  source: .env.txt
+  requested_names: [OPENAI_API_KEY, ANTHROPIC_API_KEY]
+  source_regular: true
+  source_symlink: false
+  source_mode: "0600"
+  shell_sourcing_or_interpolation: false
+  unrelated_credentials_returned_or_transmitted: false
+  selected_credentials_cleared: true
+  adapter_secrets_cleared: true
+ledger:
+  path: reports/benchmark/treasurebench-provider-schema-canaries/AO-0004-public-engineering-ledger.jsonl
+  sha256: sha256:687ea038fd2de2afeb4b4beee905d139ab42aa50d7384fbfc9b1f65e72c2d4be
+  validation: pass-hash-chain-and-safe-schema
+  open_intents: 0
+  raw_provider_output_retained: false
+  raw_error_body_retained: false
+  credential_or_authorization_content_retained: false
+canaries:
+  - order: 1
+    canary_id: openai-minimal-known-valid
+    provider: openai
+    route: openai_direct
+    model: gpt-5.4-2026-03-05
+    schema_role: minimal
+    schema_fingerprint: sha256:4528a3c79c4aaee242a31e586366657f8e9a3f11cc8d2cb040d9bf61ab1bbb63
+    status: success
+    input_tokens: 66
+    output_tokens: 16
+    cost_usd: "0.000405"
+    output_sha256: sha256:4062edaf750fb8074e7e83e0c9028c94e32468a8b6f1614774328ef045150f93
+    safe_error: {http_status: 200, error_locus: none, provider_error_type: null, provider_error_code: null, rejected_parameter: null, retry_eligible: false, diagnostic_message_sha256: null}
+    stopping_decision: continue-frozen-sequence
+  - order: 2
+    canary_id: openai-treasurebench-complete
+    provider: openai
+    route: openai_direct
+    model: gpt-5.4-2026-03-05
+    schema_role: complete
+    schema_fingerprint: sha256:7c0f24d097b0330586f5b333274056d7a287f7b48e7c3be327c786246fb3bde4
+    status: success
+    input_tokens: 465
+    output_tokens: 109
+    cost_usd: "0.0027975"
+    output_sha256: sha256:5e93f67d9a9357ae1834cd50e8930edcf056d2d3ac947e7a5f4869f700ee982c
+    safe_error: {http_status: 200, error_locus: none, provider_error_type: null, provider_error_code: null, rejected_parameter: null, retry_eligible: false, diagnostic_message_sha256: null}
+    stopping_decision: continue-frozen-sequence
+  - order: 3
+    canary_id: anthropic-minimal-known-valid
+    provider: anthropic
+    route: anthropic_direct
+    model: claude-sonnet-4-6
+    schema_role: minimal
+    schema_fingerprint: sha256:4528a3c79c4aaee242a31e586366657f8e9a3f11cc8d2cb040d9bf61ab1bbb63
+    status: success
+    input_tokens: 188
+    output_tokens: 8
+    cost_usd: "0.000684"
+    output_sha256: sha256:4062edaf750fb8074e7e83e0c9028c94e32468a8b6f1614774328ef045150f93
+    safe_error: {http_status: 200, error_locus: none, provider_error_type: null, provider_error_code: null, rejected_parameter: null, retry_eligible: false, diagnostic_message_sha256: null}
+    stopping_decision: continue-frozen-sequence
+  - order: 4
+    canary_id: anthropic-treasurebench-complete
+    provider: anthropic
+    route: anthropic_direct
+    model: claude-sonnet-4-6
+    schema_role: complete
+    schema_fingerprint: sha256:ff20c81b22a46616be19a39847c103feefea8d04a0ef1978cfe32ba5b8e8ac59
+    status: invalid
+    input_tokens: 884
+    output_tokens: 128
+    cost_usd: "0.004572"
+    output_sha256: null
+    safe_error:
+      http_status: 200
+      error_locus: none
+      provider_error_type: null
+      provider_error_code: null
+      rejected_parameter: null
+      retry_eligible: false
+      diagnostic_message_sha256: sha256:00fb2714029c9ea950ea278d8b6549216f549c106d6f80fd03f096be142f9e35
+    stopping_decision: begin-fixed-same-provider-bisection
+  - order: 5
+    canary_id: anthropic-bisection-action-cardinality
+    provider: anthropic
+    route: anthropic_direct
+    model: claude-sonnet-4-6
+    schema_role: bisection
+    schema_fingerprint: sha256:024b4a0091a7d899f750535fe8827f4ddc26d4b0eb799977a103b2e609f8e228
+    status: success
+    input_tokens: 261
+    output_tokens: 12
+    cost_usd: "0.000963"
+    output_sha256: sha256:cea7b17d2a8832a0434f9812660dca07446fa58118a789ed67be3227831fae96
+    safe_error: {http_status: 200, error_locus: none, provider_error_type: null, provider_error_code: null, rejected_parameter: null, retry_eligible: false, diagnostic_message_sha256: null}
+    stopping_decision: continue-fixed-same-provider-bisection
+  - order: 6
+    canary_id: anthropic-bisection-identity-envelope
+    provider: anthropic
+    route: anthropic_direct
+    model: claude-sonnet-4-6
+    schema_role: bisection
+    schema_fingerprint: sha256:0e6130309c920e0e7c5515a7eb4be78c2a24887ebb234d51506959466139affe
+    status: success
+    input_tokens: 244
+    output_tokens: 17
+    cost_usd: "0.000987"
+    output_sha256: sha256:544c2cece9e074acaf86e7642f3564f15d8335c7a627fcdab0c13ee4a539916a
+    safe_error: {http_status: 200, error_locus: none, provider_error_type: null, provider_error_code: null, rejected_parameter: null, retry_eligible: false, diagnostic_message_sha256: null}
+    stopping_decision: stop-complete-schema-failure-after-fixed-bisection
+totals:
+  calls: 6
+  input_tokens: 2108
+  output_tokens: 290
+  total_tokens: 2398
+  total_cost_usd: "0.0104085"
+  provider_cost_usd: {openai: "0.0032025", anthropic: "0.007206"}
+  bisection_ran: true
+  bisection_calls: 2
+final_decision: stopped-complete-schema-failure-after-fixed-bisection
+conformance_declared: false
+bounded_diagnosis: OpenAI minimal and complete transport plus semantic validation passed. Anthropic minimal passed; the complete output returned HTTP 200 but failed local complete-output validation. Both frozen Anthropic bisection schemas passed. The safe ledger intentionally retains no raw output, so the exact complete-output defect remains unresolved beyond this bounded diagnosis.
+state_boundary:
+  private_state_created_or_changed: false
+  scientific_state_created_or_changed: false
+  paper_ranking_release_submission_or_base_campaign_state_changed: false
+next_owner_action: Do not rerun these canaries or repair execution-sensitive code under R3. Decide whether to accept the stopped non-conformance and separately register and authorize a public closeout/PR-merge gate, or direct a new repaired execution freeze and new owner gate before any further provider call. The current task contract authorizes neither PR merge nor Pages deployment.
