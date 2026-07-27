@@ -1,5 +1,32 @@
 # Master execution plan
 
+## Active continuation — AO-0002 quarantined closeout (2026-07-27)
+
+Issue #196, draft PR #197, branch
+`benchmark/treasurebench-agents-v1-fresh-pilot`, superseding fixed contract
+`tasks/treasurebench-agents-v1-quarantined-closeout.yml`, and living ExecPlan
+[`TREASUREBENCH_AGENTS_V1_QUARANTINED_CLOSEOUT.md`](TREASUREBENCH_AGENTS_V1_QUARANTINED_CLOSEOUT.md)
+own the sole substantive lane. AO-0003 supplies only the separately gated
+public-safe repository, GitHub, CI, and Pages authority that AO-0002 lacked.
+
+The AO-0002 decision `sealed-pilot-quarantined-provider-failure`, campaign
+`treasurebench-agents-v1-repair-confirmation-v1`, batch
+`tb-agents-v1-repair-confirmation-v1-b01`, execution commit
+`fe313602df7f4e8ffac1a1a02c2b3a83f3c72943`, one terminal OpenAI HTTP 400
+canary, zero Anthropic calls, zero reported tokens, USD 0.00, inactive
+archived R2 authorization, and output lock
+`sha256:8102a6c1b6bda003336d5503136dfe29301b04cb8f35e7740edd8d56f0eb3c1d`
+remain immutable. No task seed, task, answer, task or answer key, task or
+answer ciphertext, custody manifest, or private run was created.
+
+AO-0003 has a zero-dollar and zero-call cap. Provider, credential, private,
+scientific, paper/PDF, performance, package, release, submission, and
+base-campaign authority are false. It stops at a committed exact generic owner
+gate before PR mutation, readiness, merge, issue closure, or Pages closeout.
+The next substantive candidate is `TreasureBench exact provider-schema
+conformance repair and public-canary gate`; it is public-only, unregistered,
+and creates no authority here.
+
 ## Active continuation — TreasureBench fresh repair-confirmation pilot (2026-07-27)
 
 Issue #196, draft PR #197, branch

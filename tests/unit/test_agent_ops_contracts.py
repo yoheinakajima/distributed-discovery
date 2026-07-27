@@ -28,10 +28,24 @@ def test_task_contract_template_and_active_contract_validate() -> None:
         ROOT / "tasks/treasurebench-agents-v1-fresh-pilot.yml",
         schema,
     )
+    closeout = _validate_yaml(
+        ROOT / "tasks/treasurebench-agents-v1-quarantined-closeout.yml",
+        schema,
+    )
     assert template["task_id"] == "AO-0000"
     assert active["task_id"] == "AO-0001"
     assert fresh["task_id"] == "AO-0002"
     assert fresh["task_type"] == "private-evaluation"
+    assert closeout["task_id"] == "AO-0003"
+    assert closeout["supersession"]["supersedes"] == ["AO-0002"]
+    assert closeout["permissions"]["merge_after_checks"] is True
+    assert closeout["permissions"]["ci_pages"] is True
+    assert closeout["external_action_permissions"]["provider_calls"] is False
+    assert closeout["external_action_permissions"]["spend"] is False
+    assert not any(closeout["scientific_mutation_permissions"].values())
+    assert not any(closeout["private_data_permissions"].values())
+    assert closeout["budget"]["hard_cap"] == "0"
+    assert closeout["budget"]["call_cap"] == 0
     assert active["scientific_mutation_permissions"] == {
         "create_study": False,
         "create_claim": False,
@@ -43,11 +57,21 @@ def test_task_contract_template_and_active_contract_validate() -> None:
 
 
 def test_task_delta_template_validates_and_defaults_closed() -> None:
+    schema = AGENT_OPS / "task-delta.schema.json"
     delta = _validate_yaml(
         AGENT_OPS / "task-delta-template.yml",
-        AGENT_OPS / "task-delta.schema.json",
+        schema,
+    )
+    provider_schema = _validate_yaml(
+        ROOT / "reports/agent-ops/next-task-treasurebench-provider-schema-conformance.yml",
+        schema,
     )
     assert not any(delta["permissions"].values())
+    assert not any(provider_schema["permissions"].values())
+    assert (
+        provider_schema["next_gate"]
+        == "TreasureBench exact provider-schema conformance repair and public-canary gate"
+    )
 
 
 def test_task_contract_rejects_hidden_repository_permission() -> None:
