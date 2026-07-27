@@ -37,18 +37,28 @@ Registration audit at `2026-07-27`:
   ciphertext, custody manifest, or private run was created;
 - no credential or private-state access, provider call, spend, GitHub closeout
   mutation, merge, or deployment is permitted before the AO-0003 gate.
+- the exact generic AO-0003 authorization passed at `2026-07-27T14:49:00Z`
+  against execution commit
+  `5cfac91cf2a47b6a00f6fe82c07d3ceeee21b188`, current PR ancestry, every
+  protected tree, and the zero-dollar and zero-call caps;
+- the authorization digest is
+  `sha256:c5ec1bbdf1e2651bfa77c7902fe0a413de840b65251de407b5670af6c16716fd`
+  and its local file mode is `0600`;
+- no prior AO-0003 authorization was replaced and the gate engine performed
+  no consequential action.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
-The 32-record program-memory registry was re-read. PM-0031 already preserves
+The program-memory registry was re-read. PM-0031 already preserves
 the original quarantined-pilot and fresh-identity rule, and PM-0032 already
 routes repository-native Agent Operations. The owner's newly adopted AO-0002
 closeout disposition is routed to this fixed contract, this plan, the
-public-safe stop artifacts, and the separately unregistered next-task delta.
+public-safe stop artifacts, and PM-0033, whose canonical destination is the
+separately unregistered next-task delta.
 No evidence-dependent trigger occurred and no scientific or publication
-decision is created. Repeat the audit after authorized closeout, update the
-registry and canonical public status surfaces then, and confirm that no owner
-decision remains only in conversation.
+decision is created. No owner decision remains only in conversation. Repeat
+the audit after authorized external closeout and confirm the next candidate
+remains unregistered.
 
 ## Scope
 
@@ -89,14 +99,13 @@ decision remains only in conversation.
 ## Milestones
 
 - **M0 — complete:** select AO-0003 and freeze the closeout-only contract.
-- **M1 — active:** implement public-safe validation, pass pre-gate acceptance,
+- **M1 — complete:** implement public-safe validation, pass pre-gate acceptance,
   commit and push the execution surface, commit and push the exact generic
   owner-gate manifest, validate it without authorizing, and stop.
-- **M2 — pending exact authorization:** validate the local authorization and
+- **M2 — complete:** validate the local authorization and
   reconcile all public-safe closeout destinations.
-- **M3 — pending exact authorization:** update PR #197, pass validation and CI,
-  and mark it ready.
-- **M4 — pending exact authorization:** squash-merge, verify normal post-merge
+- **M3 — active:** update PR #197, pass validation and CI, and mark it ready.
+- **M4 — pending:** squash-merge, verify normal post-merge
   CI/Pages and live routes, close issue #196, synchronize main, and complete
   the final delta audit.
 
@@ -112,10 +121,15 @@ decision remains only in conversation.
 - [x] Pass the closeout-specific public artifact audit.
 - [x] Pass documentation, scientific-invariant, paper, site, and Agent
   Operations validation.
-- [ ] Commit and push the exact pre-gate execution surface.
-- [ ] Commit, push, and validate the generic owner-gate manifest.
-- [ ] Stop with a schema-valid owner-gate-required handoff.
-- [ ] After authorization only, complete M2 through M4 sequentially.
+- [x] Commit and push the exact pre-gate execution surface.
+- [x] Commit, push, and validate the generic owner-gate manifest.
+- [x] Stop with a schema-valid owner-gate-required handoff.
+- [x] Create and validate the exact generic AO-0003 authorization.
+- [x] Reconcile only the authorized public-safe documentation, DD-010,
+  program-memory, TreasureBench site, and JSON surfaces.
+- [x] Re-run the complete registered validation wall with all protected trees,
+  scientific inventories, paper/PDF bytes, and release state unchanged.
+- [ ] Complete M3 and M4 sequentially.
 
 ## Discoveries and surprises
 
@@ -148,6 +162,13 @@ decision remains only in conversation.
 - `2026-07-27`: pass the complete pre-gate validation wall with zero provider
   calls, credential reads, private objects, spend, scientific mutation, or
   paper/PDF change.
+- `2026-07-27T14:49:00Z`: validate and create the exact AO-0003 generic
+  authorization; no provider, credential, private-state, scientific, paper,
+  merge, or deployment action occurs in the gate engine.
+- `2026-07-27T15:08:24Z`: complete M2 public-safe reconciliation and the full
+  registered validation wall; preserve every protected tree, scientific
+  inventory, paper/PDF byte, release state, zero-cap boundary, and AO-0002
+  quarantine fact.
 
 ## Validation strategy
 
@@ -203,9 +224,8 @@ runs, the closed provider phase, and the exact output-lock commitment.
 
 ## Blockers
 
-No implementation blocker is known. All closeout action beyond registration,
-validation, commit, push, and manifest preparation is blocked on the exact
-AO-0003 owner authorization.
+No implementation blocker is known. The exact AO-0003 authorization is active;
+M2 is complete and M3 GitHub metadata, checks, and readiness are next.
 
 ## Recovery and restart instructions
 

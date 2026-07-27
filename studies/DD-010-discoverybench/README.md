@@ -77,6 +77,28 @@ rehearsal rejects 28 of 28 corruptions. Its decision is
 `instrument-repaired-fresh-sealed-pilot-required`; a wholly fresh pilot under
 separate registration and owner authorization is the next possible gate.
 
+## Agents v1 fresh repair-confirmation closeout
+
+Issue #196 separately registered and authorized a wholly fresh engineering
+campaign, `treasurebench-agents-v1-repair-confirmation-v1`, batch
+`tb-agents-v1-repair-confirmation-v1-b01`. It stopped at its first public
+canary with decision `sealed-pilot-quarantined-provider-failure`: one direct
+OpenAI HTTP 400 `schema-or-parameter` attempt, zero Anthropic calls, zero
+reported input or output tokens, USD 0.00, and zero private runs.
+
+The provider phase is closed and its six retained objects are locked under
+`sha256:8102a6c1b6bda003336d5503136dfe29301b04cb8f35e7740edd8d56f0eb3c1d`.
+The R2 authorization is inactive and archived. No task seed, private task,
+answer, task key, answer key, task ciphertext, answer ciphertext, or custody
+manifest was created. The campaign and batch cannot be retried, repaired,
+reopened, reused, rescored, executed, or reauthorized.
+
+This is redacted DD-010 engineering status only. The next substantive
+candidate is **TreasureBench exact provider-schema conformance repair and
+public-canary gate**, a separately registered public-only diagnostic and tiny
+canary gate. It creates no DD-023, claim, scientific run, paper result,
+performance publication, or base-campaign authority.
+
 ## Registered evaluation campaign
 
 Issue #173 registers, but does not authorize or execute, the evaluation
@@ -95,5 +117,5 @@ retained encrypted and permanently quarantined; its public closeout contains
 operational totals only and no task-level or comparative performance.
 
 No DD-023, claim, scientific run, paper result, ranking, leaderboard, or
-composite exists. Neither the completed pilot authorization nor issue #191's
-read-only diagnostic authorization permits the base campaign or a fresh pilot.
+composite exists. No completed or archived authorization permits the base
+campaign, reuse of either quarantined pilot, or a new private pilot.

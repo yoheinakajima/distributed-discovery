@@ -19,13 +19,16 @@ archived R2 authorization, and output lock
 remain immutable. No task seed, task, answer, task or answer key, task or
 answer ciphertext, custody manifest, or private run was created.
 
-AO-0003 has a zero-dollar and zero-call cap. Provider, credential, private,
+AO-0003 has a zero-dollar and zero-call cap. Its exact generic authorization
+passed at execution commit
+`5cfac91cf2a47b6a00f6fe82c07d3ceeee21b188`; provider, credential, private,
 scientific, paper/PDF, performance, package, release, submission, and
-base-campaign authority are false. It stops at a committed exact generic owner
-gate before PR mutation, readiness, merge, issue closure, or Pages closeout.
-The next substantive candidate is `TreasureBench exact provider-schema
-conformance repair and public-canary gate`; it is public-only, unregistered,
-and creates no authority here.
+base-campaign authority remain false. The active milestone is public-safe
+status reconciliation, PR validation, authorized squash merge, normal
+post-merge CI/Pages, live public-route verification, issue closure, and
+synchronized `main`. The next substantive candidate is `TreasureBench exact
+provider-schema conformance repair and public-canary gate`; it is public-only,
+unregistered, and creates no authority here.
 
 ## Active continuation — TreasureBench fresh repair-confirmation pilot (2026-07-27)
 
@@ -50,9 +53,10 @@ The provider phase is closed and six retained objects are locked under
 No task seed, task, answer, task/answer key, task/answer ciphertext, custody
 manifest, private run, Method result, ranking, scientific artifact, merge, or
 Pages deployment occurred. The R2 authorization is inactive and preserved in
-local history. The active milestone is the redacted engineering closeout and
-typed stop-by-policy handoff; any replacement requires a separately
-registered new batch and exact owner gate.
+local history. The redacted engineering closeout and typed stop-by-policy
+handoff are complete. Any replacement requires a separately registered new
+batch and exact owner gate. AO-0003 separately owns only the public-safe
+closeout and does not reopen this task.
 
 ## Active continuation — Agent Operations v1 (2026-07-25)
 
