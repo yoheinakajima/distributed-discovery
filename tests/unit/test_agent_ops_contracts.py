@@ -24,8 +24,14 @@ def test_task_contract_template_and_active_contract_validate() -> None:
     schema = AGENT_OPS / "task-contract.schema.json"
     template = _validate_yaml(AGENT_OPS / "task-contract-template.yml", schema)
     active = _validate_yaml(ROOT / "tasks/agent-operations-v1.yml", schema)
+    fresh = _validate_yaml(
+        ROOT / "tasks/treasurebench-agents-v1-fresh-pilot.yml",
+        schema,
+    )
     assert template["task_id"] == "AO-0000"
     assert active["task_id"] == "AO-0001"
+    assert fresh["task_id"] == "AO-0002"
+    assert fresh["task_type"] == "private-evaluation"
     assert active["scientific_mutation_permissions"] == {
         "create_study": False,
         "create_claim": False,

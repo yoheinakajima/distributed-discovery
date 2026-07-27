@@ -464,11 +464,19 @@ class SealedObject:
         }
 
 
-def seal_object(*, domain: str, value: object, key: bytes, nonce: bytes) -> SealedObject:
+def seal_object(
+    *,
+    domain: str,
+    value: object,
+    key: bytes,
+    nonce: bytes,
+    campaign_id: str = CAMPAIGN_ID,
+    batch_id: str = BATCH_ID,
+) -> SealedObject:
     if len(key) != 32 or len(nonce) != 12:
         raise ValueError("AES-256-GCM requires a 32-byte key and 12-byte nonce")
     associated = canonical_json(
-        {"campaign_id": CAMPAIGN_ID, "batch_id": BATCH_ID, "domain": domain}
+        {"campaign_id": campaign_id, "batch_id": batch_id, "domain": domain}
     )
     ciphertext = AESGCM(key).encrypt(nonce, canonical_json(value), associated)
     return SealedObject(
@@ -480,11 +488,17 @@ def seal_object(*, domain: str, value: object, key: bytes, nonce: bytes) -> Seal
     )
 
 
-def unseal_object(sealed: SealedObject, *, key: bytes) -> object:
+def unseal_object(
+    sealed: SealedObject,
+    *,
+    key: bytes,
+    campaign_id: str = CAMPAIGN_ID,
+    batch_id: str = BATCH_ID,
+) -> object:
     if sealed.ciphertext_sha256 != f"sha256:{sha256_hex(sealed.ciphertext)}":
         raise ValueError("ciphertext hash mismatch")
     associated = canonical_json(
-        {"campaign_id": CAMPAIGN_ID, "batch_id": BATCH_ID, "domain": sealed.domain}
+        {"campaign_id": campaign_id, "batch_id": batch_id, "domain": sealed.domain}
     )
     if sealed.associated_data_sha256 != f"sha256:{sha256_hex(associated)}":
         raise ValueError("associated-data hash mismatch")
@@ -924,7 +938,11 @@ class PilotBatchRunner:
 
 
 def create_output_lock(
-    objects: Mapping[str, bytes], *, ledger: AppendOnlyLedger
+    objects: Mapping[str, bytes],
+    *,
+    ledger: AppendOnlyLedger,
+    campaign_id: str = CAMPAIGN_ID,
+    batch_id: str = BATCH_ID,
 ) -> Mapping[str, object]:
     if not objects:
         raise ValueError("output lock requires at least one object")
@@ -932,8 +950,8 @@ def create_output_lock(
         raise PermissionError("provider phase must be closed before output lock")
     manifest: dict[str, object] = {
         "schema_version": "treasurebench-agents-v1-output-lock-v1",
-        "campaign_id": CAMPAIGN_ID,
-        "batch_id": BATCH_ID,
+        "campaign_id": campaign_id,
+        "batch_id": batch_id,
         "objects": {
             name: f"sha256:{sha256_hex(payload)}" for name, payload in sorted(objects.items())
         },

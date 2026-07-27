@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TreasureBench Agents v1 fresh repair-confirmation allocation recipe",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "status", "campaign_id", "batch_id", "counts", "slot_prefix", "boundary_cycle", "families", "relabeling", "generation"],
+  "properties": {
+    "schema_version": {"const": "treasurebench-agents-v1-fresh-pilot-allocation-v1"},
+    "status": {"const": "frozen-public-recipe-no-private-instance"},
+    "campaign_id": {"const": "treasurebench-agents-v1-repair-confirmation-v1"},
+    "batch_id": {"const": "tb-agents-v1-repair-confirmation-v1-b01"},
+    "counts": {"const": {"slots": 50, "families": 5, "slots_per_family": 10, "private_instances": 0}},
+    "slot_prefix": {"const": "RC-SLOT"},
+    "boundary_cycle": {"const": ["strict", "equality-tie", "boundary", "protocol-sensitive", "parser-sensitive"]},
+    "families": {
+      "type": "object",
+      "minProperties": 5,
+      "maxProperties": 5,
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 10,
+        "maxItems": 10,
+        "uniqueItems": true,
+        "items": {"type": "integer", "minimum": 1, "maximum": 30}
+      }
+    },
+    "relabeling": {
+      "const": {
+        "target_rule": "alternate-within-family-offset-by-family",
+        "agent_rule": "alternate-globally",
+        "target_class_counts": {"target-A": 25, "target-B": 25},
+        "agent_class_counts": {"agent-A": 25, "agent-B": 25}
+      }
+    },
+    "generation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["private_variant_source", "private_seed_created", "public_rehearsal_material", "public_calibration_instance_reuse", "quarantined_pilot_instance_reuse", "future_base_instance_reuse", "base_campaign_instance_reuse"],
+      "properties": {
+        "private_variant_source": {"const": "os-csprng-seed-and-slot-domain"},
+        "private_seed_created": {"const": false},
+        "public_rehearsal_material": {"const": "FRESH-RC-SYNTHETIC-PUBLIC-NONSECRET-V1"},
+        "public_calibration_instance_reuse": {"const": false},
+        "quarantined_pilot_instance_reuse": {"const": false},
+        "future_base_instance_reuse": {"const": false},
+        "base_campaign_instance_reuse": {"const": false}
+      }
+    }
+  }
+}

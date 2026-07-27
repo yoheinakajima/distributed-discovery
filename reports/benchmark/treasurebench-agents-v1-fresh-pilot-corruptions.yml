@@ -1,0 +1,30 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-corruptions-v1
+status: pass
+task_id: AO-0002
+classification: public-synthetic-only
+fresh_boundary_corruptions_rejected: 18
+repaired_instrument_suite:
+  path: reports/benchmark/treasurebench-agents-v1-pilot-repair-rehearsal.yml
+  corruptions_rejected: 28
+  includes_method_c_and-final-action-cardinality: true
+total_registered_corruptions_rejected: 46
+corruptions:
+  - {corruption_id: IDENTITY-01-quarantined-campaign, status: rejected}
+  - {corruption_id: IDENTITY-02-quarantined-batch, status: rejected}
+  - {corruption_id: IDENTITY-03-pilot-slot, status: rejected}
+  - {corruption_id: GENERATION-01-no-authorization, status: rejected}
+  - {corruption_id: GENERATION-02-short-seed, status: rejected}
+  - {corruption_id: AUTH-01-missing-file, status: rejected}
+  - {corruption_id: AUTH-02-synthetic, status: rejected}
+  - {corruption_id: BUDGET-01-total-cap, status: rejected}
+  - {corruption_id: BUDGET-02-openai-cap, status: rejected}
+  - {corruption_id: BUDGET-03-anthropic-cap, status: rejected}
+  - {corruption_id: BUDGET-04-call-cap, status: rejected}
+  - {corruption_id: CUSTODY-01-wrong-campaign, status: rejected}
+  - {corruption_id: CUSTODY-02-wrong-batch, status: rejected}
+  - {corruption_id: CUSTODY-03-wrong-key, status: rejected}
+  - {corruption_id: REDACTION-01-task-text, status: rejected}
+  - {corruption_id: REDACTION-02-ranking, status: rejected}
+  - {corruption_id: SCIENCE-01-dd023, status: rejected}
+  - {corruption_id: SCIENCE-02-claim, status: rejected}
+activity: {provider_calls: 0, credential_reads: 0, private_objects_created: 0, spend_usd: "0"}

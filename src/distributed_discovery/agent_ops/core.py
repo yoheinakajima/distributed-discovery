@@ -46,7 +46,7 @@ ROOT = _discover_repository_root()
 AGENT_OPS_DOCS = ROOT / "docs/agent-ops"
 REQUIRED_PROHIBITIONS = {
     "provider-calls-outside-manifest",
-    "credential-read",
+    "credential-read-outside-manifest",
     "unauthorized-private-access",
     "scientific-mutation-outside-contract",
     "cap-increase",
@@ -69,6 +69,8 @@ class GateObservation:
     pull_request_number: int
     pull_request_state: str
     pull_request_head_sha: str
+    observed_execution_commit: str
+    execution_commit_is_ancestor: bool
     observed_at_utc: datetime
 
 
@@ -596,8 +598,6 @@ def validate_gate_surface(
     validate(contract, "task-contract.schema.json")
     if gate["branch"] != observation.branch or gate["branch"] != contract["github"]["branch"]:
         raise AgentOpsError("owner gate branch mismatch")
-    if gate["commit"] != observation.commit:
-        raise AgentOpsError("owner gate commit mismatch")
     if observation.remote_commit != observation.commit:
         raise AgentOpsError("remote branch head does not match local commit")
     if not observation.tracked_clean:
@@ -607,10 +607,14 @@ def validate_gate_surface(
         raise AgentOpsError("pull request number mismatch")
     if observation.pull_request_state != pull["expected_state"]:
         raise AgentOpsError("pull request is stale or not open")
-    if pull["head_sha"] != observation.pull_request_head_sha:
-        raise AgentOpsError("pull request head mismatch")
     if pull["head_sha"] != gate["commit"]:
-        raise AgentOpsError("pull request does not point to gate commit")
+        raise AgentOpsError("manifest pull request head does not point to execution commit")
+    if observation.pull_request_head_sha != observation.commit:
+        raise AgentOpsError("live pull request head does not match local manifest commit")
+    if observation.observed_execution_commit != gate["commit"]:
+        raise AgentOpsError("owner gate execution commit observation mismatch")
+    if not observation.execution_commit_is_ancestor:
+        raise AgentOpsError("owner gate execution commit is not an ancestor of manifest commit")
     if gate["issue"] != contract["github"]["issue"]:
         raise AgentOpsError("owner gate issue mismatch")
     contract_path = (root / gate["task_contract"]["path"]).resolve()
@@ -694,6 +698,16 @@ def collect_gate_observation(gate: dict[str, Any]) -> GateObservation:
         ]
     )
     pull = json.loads(raw)
+    execution_commit = str(gate["commit"])
+    execution_commit_is_ancestor = (
+        subprocess.run(
+            ("git", "merge-base", "--is-ancestor", execution_commit, commit),
+            cwd=ROOT,
+            check=False,
+            capture_output=True,
+        ).returncode
+        == 0
+    )
     return GateObservation(
         branch=branch,
         commit=commit,
@@ -702,6 +716,8 @@ def collect_gate_observation(gate: dict[str, Any]) -> GateObservation:
         pull_request_number=int(pull["number"]),
         pull_request_state=str(pull["state"]),
         pull_request_head_sha=str(pull["headRefOid"]),
+        observed_execution_commit=execution_commit,
+        execution_commit_is_ancestor=execution_commit_is_ancestor,
         observed_at_utc=datetime.now(UTC),
     )
 
@@ -831,7 +847,12 @@ def write_authorization(
     return output, prior
 
 
-def execute_owner_gate(gate_path: str | Path, challenge: str | None = None) -> dict[str, Any]:
+def execute_owner_gate(
+    gate_path: str | Path,
+    challenge: str | None = None,
+    *,
+    validate_only: bool = False,
+) -> dict[str, Any]:
     """Validate, display, challenge, and authorize without performing the action."""
 
     path = _contract_path(gate_path)
@@ -843,6 +864,12 @@ def execute_owner_gate(gate_path: str | Path, challenge: str | None = None) -> d
     print(surface)
     expected = authorization_challenge(gate)
     print(f"Required challenge: {expected}")
+    if validate_only:
+        return {
+            "status": "validated-no-authorization-or-consequential-action-performed",
+            "required_challenge": expected,
+            "resume_message": gate["generated_resume_message"],
+        }
     supplied = challenge if challenge is not None else input("Challenge: ").strip()
     output, prior = write_authorization(gate, supplied)
     print(gate["generated_resume_message"])

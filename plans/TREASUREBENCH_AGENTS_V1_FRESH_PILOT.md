@@ -42,7 +42,7 @@ Live audit at `2026-07-27T02:04:22Z`:
 - the five unrelated untracked preservation files retain their previously
   recorded SHA-256 values.
 
-Exactly one milestone is active: M1.
+Exactly one milestone is active: M4.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -119,13 +119,13 @@ this audit at closeout.
 
 - **M0 — complete:** registration, live baseline, provider audit, fixed contract,
   living plan, and first commit.
-- **M1 — active:** fresh request, allocation, provider record, identity
+- **M1 — complete:** fresh request, allocation, provider record, identity
   separation, and budget/custody contracts.
-- **M2 — pending:** offline fresh-campaign implementation and generic
+- **M2 — complete:** offline fresh-campaign implementation and generic
   owner-authorization consumption boundary.
-- **M3 — pending:** repaired synthetic 50-case/500-run rehearsal and all
+- **M3 — complete:** repaired synthetic 50-case/500-run rehearsal and all
   corruptions.
-- **M4 — pending:** focused and private-evaluation acceptance.
+- **M4 — active:** focused and private-evaluation acceptance.
 - **M5 — pending:** draft pull request, exact execution freeze, committed
   owner-gate manifest, gate validation, and typed handoff.
 - **M6 — pending:** owner-authorized credentials, private generation, custody,
@@ -142,7 +142,8 @@ this audit at closeout.
 - [x] Re-audit current official provider documentation without credentials or
   provider API calls.
 - [x] Commit the fixed task contract and living ExecPlan.
-- [ ] Complete M1 through M5 sequentially.
+- [x] Complete M1 through M3 sequentially.
+- [ ] Complete M4 and M5 sequentially.
 - [ ] Stop with the exact owner-gate-required handoff.
 
 ## Discoveries and surprises
@@ -158,8 +159,19 @@ this audit at closeout.
   but does not itself create Zero Data Retention; default abuse-monitoring
   retention may be up to 30 days.
 - The generic Agent Operations owner-gate CLI already accepts a noninteractive
-  challenge, but the Make target does not yet expose that argument. M2 will add
-  a generic Make variable rather than a task-specific authorization helper.
+  challenge, but the Make target did not expose that argument. M2 added a
+  generic Make variable rather than a task-specific authorization helper.
+- A tracked gate manifest cannot contain the SHA-1 of the commit that contains
+  itself. The generic engine now binds the prior exact execution commit,
+  verifies it is an ancestor of the clean local/remote/live-PR manifest head,
+  and rehashes every declared execution-sensitive tree. The zero-distance case
+  remains valid, and descendant, nonancestor, stale-head, and changed-tree
+  regressions are explicit.
+- The old generic prohibition `credential-read` conflicted with a gate whose
+  declared private action is an exact credential read. It is now
+  `credential-read-outside-manifest`; undeclared private access remains
+  prohibited and every declared action must still map to a true fixed-contract
+  permission.
 
 ## Decision log
 
@@ -176,6 +188,14 @@ this audit at closeout.
 - `2026-07-27T02:08:16Z`: the fixed contract passed its JSON Schema, all
   required ExecPlan sections are present in the mandated order, and
   `git diff --check` passed. Advance from M0 to M1.
+- `2026-07-27T02:23:29Z`: freeze the public 50-slot allocation recipe and
+  exact request; record the current official provider audit; implement generic
+  authorization validation plus gated fresh generation; parameterize custody
+  associated data without changing historical defaults; pass the 50-case,
+  500-run, 3,014-turn repaired rehearsal, all 28 repaired-instrument
+  corruptions, and all 18 fresh identity/gate/custody corruptions with zero
+  credentials, private objects, network, provider calls, or spend. Advance
+  through M1, M2, and M3 to M4.
 
 ## Validation strategy
 
@@ -223,8 +243,10 @@ At M0: issue #196, branch
 `benchmark/treasurebench-agents-v1-fresh-pilot`, fixed contract
 `tasks/treasurebench-agents-v1-fresh-pilot.yml`, and this living ExecPlan.
 The contract passed `task-contract.schema.json`; the plan has all 15 required
-sections and the discussion/delta audit immediately follows current state.
-Later artifacts are appended after each passing milestone.
+sections and the discussion/delta audit immediately follows current state. M1
+through M3 add the fresh request and allocation recipe, official-provider
+audit, registration record, offline module and audit target, generic gate
+hardening, the passing 500-run rehearsal, and the 46-corruption record.
 
 ## Blockers
 

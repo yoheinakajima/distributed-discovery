@@ -29,6 +29,7 @@ def _audit() -> dict[str, object]:
 def test_agent_operations_full_semantic_audit() -> None:
     result = _audit()
     assert result["schemas"] >= 7
+    assert result["task_contracts"] >= 2
     assert result["task_types"] == 7
     assert result["acceptance_profiles"] == 7
     assert result["scientific_authority"] == "unchanged"
