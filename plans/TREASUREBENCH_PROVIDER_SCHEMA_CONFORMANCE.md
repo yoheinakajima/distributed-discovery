@@ -24,6 +24,7 @@ Registration audit at `2026-07-27`:
   request is open;
 - issue #198 is the AO-0004 coordination issue and branch
   `benchmark/treasurebench-provider-schema-conformance` is the task branch;
+- draft PR #199 is the AO-0004 review surface;
 - `AO-0001`, `AO-0002`, and `AO-0003` are allocated, making `AO-0004` the next
   available task identifier;
 - the owner selected
@@ -100,7 +101,7 @@ Repeat this audit at closeout.
 
 ## Milestones
 
-- **M0 — active:** register AO-0004, create the issue and branch, freeze the
+- **M0 — complete:** register AO-0004, create the issue and branch, freeze the
   task contract, validate registration, and open a draft PR after focused
   skeleton tests exist.
 - **M1 — complete:** complete and record the official provider-documentation
@@ -109,7 +110,7 @@ Repeat this audit at closeout.
   compilers, offline linters, semantic validator, and safe errors.
 - **M3 — complete:** implement the mock canary matrix and every registered
   corruption; pass focused and infrastructure validation.
-- **M4 — pending:** freeze the execution surface, commit the generic owner-gate
+- **M4 — active:** freeze the execution surface, commit the generic owner-gate
   manifest, validate it without authorization, and emit the schema-valid
   owner-gate-required handoff.
 
@@ -126,6 +127,7 @@ Repeat this audit at closeout.
 - [x] Implement provider schema compilers and offline linting.
 - [x] Implement provider-independent semantic validation and safe errors.
 - [x] Pass the mock canary matrix and all corruptions.
+- [x] Open draft PR #199 and pass the complete pre-gate validation wall.
 - [ ] Create and validate the exact generic owner-gate manifest.
 - [ ] Return the typed owner-gate-required handoff and stop before calls.
 
@@ -168,6 +170,9 @@ Repeat this audit at closeout.
 - `2026-07-27`: compile provider transport schemas separately while retaining
   all omitted constraint semantics in the existing provider-independent
   parser, protocol verifier, and metric-range checks.
+- `2026-07-27`: open draft PR #199, pass the complete pre-gate validation
+  wall, and designate the next commit as the immutable public-canary execution
+  surface to which the generic owner gate must bind.
 
 ## Validation strategy
 
@@ -208,6 +213,14 @@ matrix byte-identically; 46 focused tests passed; Ruff format and lint passed
 over 319 files; strict MyPy passed over 191 source files; Agent Operations and
 program-memory audits passed. Provider calls, credential reads, private-state
 access, and spend remained zero.
+
+Observed at the M4 execution freeze: bootstrap, Agent Operations,
+program-memory, provider-schema, benchmark, evaluation, offline dry-run, and
+offline readiness audits passed; Ruff and strict MyPy passed; all 476
+repository tests passed; claim and 51 run manifests validated; and the
+compendium release dry-run verified offline. No credentials were read, no
+provider execution call was made, no private state was accessed, and spend
+remained USD 0.
 
 ## Artifacts produced
 
