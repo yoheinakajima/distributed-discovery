@@ -130,7 +130,7 @@ private identity.
   CI/Pages, and public network observation.
 - [x] Freeze zero calls, zero spend, no credential access, no provider action,
   no private access, no scientific mutation, and no release or submission.
-- [ ] Pass the complete authorization-free validation wall.
+- [x] Pass the complete authorization-free validation wall.
 - [ ] Commit and push the exact execution surface.
 - [ ] Commit, push, and live-validate the generic owner-gate manifest without
   creating an authorization.
@@ -148,6 +148,10 @@ private identity.
 - The tracked safe ledgers and outcomes are sufficient for closeout
   preservation; authorization contents, raw outputs, prompts, credentials,
   and private state are unnecessary and prohibited.
+- The paper build refreshed two tracked Information Sharing Frontier
+  provenance `source_commit` fields as a known build side effect. They were
+  restored to their exact registered bytes; all 1,057 protected claim, run,
+  paper/PDF, release, and AO-0004 files match the pre-validation baseline.
 
 ## Decision log
 
@@ -161,6 +165,12 @@ private identity.
 - `2026-07-27T23:00:00Z`: record the later wholly fresh sealed
   repair-confirmation pilot registration as the next candidate without
   registering, authorizing, or executing it.
+- `2026-07-27T23:45:11Z`: pass the complete authorization-free wall with 100
+  focused provider-schema tests, 514 repository tests, strict MyPy over 192
+  source files, 110 claims, 51 run manifests, seven papers totaling 119 pages,
+  an 89-page/26-study site, and all governance, benchmark, release-readiness,
+  Agent Operations, and program-memory audits. Restore the two generated
+  provenance fields and confirm all 1,057 protected baseline files exact.
 
 ## Validation strategy
 
@@ -198,6 +208,16 @@ Expected: every command exits zero; provider calls, credential reads,
 authorization reads, private-state changes, spend, scientific mutations,
 paper/PDF changes, releases, submissions, PR mutations, merge, issue closure,
 and deployment remain zero. The protected R1 through R4 hashes remain exact.
+
+Observed before the execution freeze: every command exited zero. The focused
+provider-schema wall passed 100 tests; Ruff passed over 321 files; strict MyPy
+passed over 192 source files; all 514 repository tests passed; 110 claims and
+51 run manifests validated; seven papers totaling 119 pages and the
+89-page/26-study site passed; and the dry-run compendium verified five assets
+and seven papers. No credential or authorization was read, no provider or
+private-state access occurred, calls and spend remained zero, and all 1,057
+protected baseline files were byte-exact after restoring two known generated
+provenance-only build side effects.
 
 ## Artifacts produced
 
