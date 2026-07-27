@@ -1,55 +1,78 @@
-# AO-0004 owner-gate-required handoff
+# AO-0004 stop-by-policy handoff
 
-status: owner-gate-required
+status: `stop-by-policy`
 
 issue / draft PR: #198 / #199
 
 branch: `benchmark/treasurebench-provider-schema-conformance`
 
-corrected frozen execution commit: `1048c502b205346fef70b06c76975b6ff06b0241`
+frozen execution commit: `1048c502b205346fef70b06c76975b6ff06b0241`
 
-validated R3 manifest / PR head: `218db832f834748c1db5d001a310b314454ac719`
+authorized PR head: `3f4cd54ea724d40cdaae129e8c383700f1f10cdf`
 
-task contract: `tasks/treasurebench-provider-schema-conformance.yml`
+public outcome commit: `fe0377c988b9154cfe9ad906c4025a1e9ec92f22`
 
-ExecPlan: `plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE.md`
+outcome record:
+`reports/agent-ops/AO-0004-public-provider-canary-outcome.yml`
 
-committed gate manifest: `reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate-r3.yml`
+ledger:
+`reports/benchmark/treasurebench-provider-schema-canaries/AO-0004-public-engineering-ledger.jsonl`
 
-exact challenge: `AUTHORIZE AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R3 1048c50`
+final decision:
+`stopped-complete-schema-failure-after-fixed-bisection`
 
-exact noninteractive owner-gate command:
+Conformance was not declared.
 
-    make owner-gate GATE=reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate-r3.yml OWNER_GATE_CHALLENGE='AUTHORIZE AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R3 1048c50'
+## Calls
 
-exact committed canary execution command, only after that authorization:
+| # | Canary | Provider | Role | Status | Input | Output | Cost USD |
+|---:|---|---|---|---|---:|---:|---:|
+| 1 | `openai-minimal-known-valid` | OpenAI | minimal | success | 66 | 16 | 0.000405 |
+| 2 | `openai-treasurebench-complete` | OpenAI | complete | success | 465 | 109 | 0.0027975 |
+| 3 | `anthropic-minimal-known-valid` | Anthropic | minimal | success | 188 | 8 | 0.000684 |
+| 4 | `anthropic-treasurebench-complete` | Anthropic | complete | invalid | 884 | 128 | 0.004572 |
+| 5 | `anthropic-bisection-action-cardinality` | Anthropic | bisection | success | 261 | 12 | 0.000963 |
+| 6 | `anthropic-bisection-identity-envelope` | Anthropic | bisection | success | 244 | 17 | 0.000987 |
 
-    make treasurebench-provider-schema-canaries
+Totals: six calls; 2,108 input tokens; 290 output tokens; 2,398 total
+tokens; USD 0.0104085. OpenAI cost USD 0.0032025; Anthropic cost USD
+0.007206.
 
-sequence: OpenAI minimal; OpenAI complete; Anthropic minimal; Anthropic complete.
+Frozen bisection ran: yes, exactly two Anthropic calls in the committed order.
 
-credential ingress: only after R3 authorization plus issue, PR, branch,
-execution commit, contract, protected-tree, ledger-next-state, and
-projected-cap checks, read only repository-root `.env.txt` with the strict
-nonexecuting parser, requesting only `OPENAI_API_KEY` and
-`ANTHROPIC_API_KEY`. Do not source, execute, interpolate, use process
-environment ingress, or retain values. Clear the exact set and adapter secret
-after every provider attempt and again during cleanup.
+The complete Anthropic response returned HTTP 200 but failed local
+complete-output validation. Its only retained diagnostic is
+`sha256:00fb2714029c9ea950ea278d8b6549216f549c106d6f80fd03f096be142f9e35`.
+All other calls retained the safe `none` error classification. No raw output
+or raw error body was retained for the invalid response, so the exact defect
+remains unresolved beyond this bounded diagnosis.
 
-stopping rule: stop immediately on any authorization, credential handling,
-privacy, route, model, alias, fallback, schema, safe-error, call-cap, or
-spend-cap mismatch, open call intent, or minimal-schema failure. A
-complete-schema failure permits exactly the two committed same-provider
-bisection schemas in deterministic order within ten calls, USD 1.00 total,
-USD 0.50 per provider, and expected aggregate cost below USD 0.10; no ad-hoc
-schema edit is allowed and the other provider remains blocked. Declare
-conformance only after both complete schemas pass.
+All six schema fingerprints, output hashes, token counts, costs, safe errors,
+and stopping decisions are in the outcome record and hash-chained ledger.
+The ledger validates with zero open call intents.
 
-exact resume message:
+Credentials were loaded only from repository-root `.env.txt`, with only
+`OPENAI_API_KEY` and `ANTHROPIC_API_KEY` requested. Selected credential sets
+and adapter secrets were cleared after every provider attempt and in final
+cleanup. No unrelated credential was returned, transmitted, or retained.
 
-> Resume AO-0004 in this same Codex session, issue #198, branch benchmark/treasurebench-provider-schema-conformance, ExecPlan, and draft PR #199. Use only reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate-r3.yml and its exact R3 authorization. Do not use either superseded gate. Re-read current official provider terms; validate the R3 authorization, issue, PR, branch, execution commit, contract hash, every protected tree hash, exact repository-root .env.txt credential source and two-name allowlist, exact routes and models, zero cumulative calls and spend, ledger state, and remaining caps. Then run exactly make treasurebench-provider-schema-canaries. Stop immediately on any mismatch, open call intent, cap boundary, credential-source violation, or minimal-schema failure. If a complete schema fails, permit only the two frozen same-provider bisection calls in order; do not call the other provider. Declare conformance only if both complete schemas pass. Create no private, scientific, paper, ranking, release, submission, or base-campaign state.
+Private and scientific state remained unchanged. No campaign, task, seed,
+answer, key, ciphertext, custody object, private run, claim, scientific run,
+evidence, proof, paper, ranking, release, submission, or base-campaign state
+was created or changed.
 
-observed activity: zero reads of the real `.env.txt`, credentials, or either
-authorization path; zero provider calls; USD 0 spend; no private-state access
-or change; and no scientific-state change. The superseded R1 and R2 gates were
-never authorized and cannot be consumed.
+## Exact next owner action
+
+Do not rerun R3 and do not repair execution-sensitive code under its
+authorization.
+
+The owner must choose one of two separately authorized paths:
+
+1. Accept the stopped public-provider non-conformance and separately register
+   and authorize a public closeout/PR-merge gate; or
+2. Direct a repaired execution freeze and new exact owner gate before any
+   further provider call.
+
+The current task contract authorizes neither PR merge nor Pages deployment.
+There is no currently authorized closeout, merge, issue-closure, Pages, or
+further-provider command.
