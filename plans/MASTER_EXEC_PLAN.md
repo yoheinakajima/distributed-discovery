@@ -1,5 +1,36 @@
 # Master execution plan
 
+## Active continuation — AO-0004 successful conformance closeout (2026-07-27)
+
+Issue #198, branch `benchmark/treasurebench-provider-schema-conformance`,
+draft PR #199, fixed closeout contract
+`tasks/treasurebench-provider-schema-conformance-closeout.yml`, and living
+ExecPlan
+[`TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE_CLOSEOUT.md`](TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE_CLOSEOUT.md)
+own the sole substantive lane as AO-0005.
+
+AO-0004 R4 completed as
+`conformance-pass-both-complete-schemas`: four successful public canaries,
+1,603 input tokens, 275 output tokens, USD 0.0086685 total, OpenAI USD
+0.0031875, Anthropic USD 0.005481, no bisection, and no private or scientific
+state change. R1 and R2 remain superseded and unused; R3 and R4 are consumed
+and immutable. No canary gate, authorization, or ledger may be rerun,
+appended, reactivated, reused, rescored, or reauthorized.
+
+AO-0005 supplies only separately gated public-safe reconciliation, PR
+metadata/readiness, squash merge after checks, normal post-merge CI and Pages,
+live public-route verification, issue closure, and main synchronization. Its
+call and spend caps are zero; credentials, providers, private state,
+scientific mutation, paper/PDF changes, performance publication, releases,
+submissions, and base-campaign actions remain false. It must stop at its
+committed generic owner gate before any closeout mutation.
+
+After successful closeout, the next substantive candidate is `TreasureBench
+Agents v1 wholly fresh sealed repair-confirmation pilot registration`. That
+candidate remains unregistered and unauthorized and must later use wholly new
+campaign, batch, CSPRNG seed, private tasks, answers, keys, ciphertexts, and
+custody.
+
 ## Active continuation — TreasureBench provider-schema conformance (2026-07-27)
 
 Issue #198, branch `benchmark/treasurebench-provider-schema-conformance`,

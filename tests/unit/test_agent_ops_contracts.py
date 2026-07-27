@@ -32,6 +32,10 @@ def test_task_contract_template_and_active_contract_validate() -> None:
         ROOT / "tasks/treasurebench-agents-v1-quarantined-closeout.yml",
         schema,
     )
+    conformance_closeout = _validate_yaml(
+        ROOT / "tasks/treasurebench-provider-schema-conformance-closeout.yml",
+        schema,
+    )
     assert template["task_id"] == "AO-0000"
     assert active["task_id"] == "AO-0001"
     assert fresh["task_id"] == "AO-0002"
@@ -46,6 +50,18 @@ def test_task_contract_template_and_active_contract_validate() -> None:
     assert not any(closeout["private_data_permissions"].values())
     assert closeout["budget"]["hard_cap"] == "0"
     assert closeout["budget"]["call_cap"] == 0
+    assert conformance_closeout["task_id"] == "AO-0005"
+    assert conformance_closeout["supersession"]["supersedes"] == ["AO-0004"]
+    assert conformance_closeout["permissions"]["merge_after_checks"] is True
+    assert conformance_closeout["permissions"]["ci_pages"] is True
+    assert conformance_closeout["external_action_permissions"]["provider_calls"] is False
+    assert conformance_closeout["external_action_permissions"]["spend"] is False
+    assert not any(conformance_closeout["scientific_mutation_permissions"].values())
+    assert not any(conformance_closeout["private_data_permissions"].values())
+    assert conformance_closeout["budget"]["hard_cap"] == "0"
+    assert conformance_closeout["budget"]["call_cap"] == 0
+    assert conformance_closeout["frozen_identifiers"]["r4_calls"] == "4"
+    assert conformance_closeout["frozen_identifiers"]["r4_bisection_calls"] == "0"
     assert active["scientific_mutation_permissions"] == {
         "create_study": False,
         "create_claim": False,
