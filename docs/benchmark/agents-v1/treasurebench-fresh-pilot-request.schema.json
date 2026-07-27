@@ -16,7 +16,7 @@
     "issue": {"const": 196},
     "branch": {"const": "benchmark/treasurebench-agents-v1-fresh-pilot"},
     "starting_main": {"const": "b6934e6495282b210f0d90b96f63b24bebab454b"},
-    "owner_gate_id": {"const": "AOG-AO-0002-FRESH-PILOT"},
+    "owner_gate_id": {"const": "AOG-AO-0002-FRESH-PILOT-R2"},
     "counts": {"const": {"tasks": 50, "families": 5, "tasks_per_family": 10, "batches": 1, "repeats": 1, "architectures": 5, "cloud_models": 2, "private_runs": 500}},
     "providers": {
       "type": "array",

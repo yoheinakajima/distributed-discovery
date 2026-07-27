@@ -72,7 +72,7 @@ BATCH_ID = "tb-agents-v1-repair-confirmation-v1-b01"
 TASK_ID = "AO-0002"
 ISSUE = 196
 BRANCH = "benchmark/treasurebench-agents-v1-fresh-pilot"
-GATE_ID = "AOG-AO-0002-FRESH-PILOT"
+GATE_ID = "AOG-AO-0002-FRESH-PILOT-R2"
 MODELS = ("gpt-5.4-2026-03-05", "claude-sonnet-4-6")
 PROVIDERS = ("OpenAI", "Anthropic")
 TOTAL_CAP = Decimal("25")
@@ -80,7 +80,7 @@ PROVIDER_CAPS = {"OpenAI": Decimal("10"), "Anthropic": Decimal("15")}
 MAX_CALLS = 5200
 REQUEST_PATH = Path("docs/benchmark/agents-v1/treasurebench-fresh-pilot-request.yml")
 ALLOCATION_PATH = Path("docs/benchmark/agents-v1/treasurebench-fresh-pilot-allocation.yml")
-GATE_PATH = Path("reports/agent-ops/AO-0002-treasurebench-fresh-pilot-owner-gate.yml")
+GATE_PATH = Path("reports/agent-ops/AO-0002-treasurebench-fresh-pilot-owner-gate-r2.yml")
 CONTRACT_PATH = Path("tasks/treasurebench-agents-v1-fresh-pilot.yml")
 RESERVED_IDENTITY_FRAGMENTS = (
     "treasurebench-agents-v1-pilot-v1",
@@ -538,7 +538,7 @@ def audit_corruptions(repo: Path) -> tuple[dict[str, str], ...]:
     )
     reject(
         "AUTH-01-missing-file",
-        lambda: load_owner_authorization(repo, Path("/nonexistent/AOG-AO-0002-FRESH-PILOT.yml")),
+        lambda: load_owner_authorization(repo, Path("/nonexistent/AOG-AO-0002-FRESH-PILOT-R2.yml")),
     )
     reject(
         "AUTH-02-synthetic",

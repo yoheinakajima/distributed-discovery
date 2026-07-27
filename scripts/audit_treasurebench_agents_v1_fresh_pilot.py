@@ -14,6 +14,9 @@ from distributed_discovery.benchmark.agents_v1.fresh_pilot import (
     run_synthetic_rehearsal,
     validate_registration,
 )
+from distributed_discovery.benchmark.agents_v1.fresh_pilot_live import (
+    audit_live_corruptions,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 REHEARSAL = ROOT / "reports/benchmark/treasurebench-agents-v1-fresh-pilot-offline-rehearsal.yml"
@@ -31,17 +34,19 @@ def _load(path: Path) -> dict[str, object]:
 def audit(*, rehearsal: bool = False) -> dict[str, object]:
     registration = validate_registration(ROOT)
     corruptions = audit_corruptions(ROOT)
+    live_corruptions = audit_live_corruptions(ROOT)
     committed_corruptions = _load(CORRUPTIONS)
-    if committed_corruptions["corruptions"] != list(corruptions):
+    combined_corruptions = (*corruptions, *live_corruptions)
+    if committed_corruptions["corruptions"] != list(combined_corruptions):
         raise ValueError("committed fresh corruption report is stale")
     repaired = _load(REPAIRED)
     if repaired["status"] != "pass" or repaired["corruptions_rejected"] != 28:
         raise ValueError("repaired instrument corruption suite is not passing")
     result: dict[str, object] = {
         **registration,
-        "fresh_boundary_corruptions_rejected": len(corruptions),
+        "fresh_boundary_corruptions_rejected": len(combined_corruptions),
         "repaired_instrument_corruptions_rejected": 28,
-        "total_registered_corruptions_rejected": len(corruptions) + 28,
+        "total_registered_corruptions_rejected": len(combined_corruptions) + 28,
     }
     if rehearsal:
         observed = run_synthetic_rehearsal(ROOT)

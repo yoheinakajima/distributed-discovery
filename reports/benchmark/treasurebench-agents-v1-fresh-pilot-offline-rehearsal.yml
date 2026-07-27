@@ -23,5 +23,5 @@ external_cost_usd: "0"
 network_enabled: false
 private_material: false
 redaction_status: pass
-registration_sha256: sha256:1db715c470637622ba8d2317952b5f5be80e02031fd20c63c49a3b6a005c27fb
-rehearsal_hash: sha256:25568d2dd530935962dcd8c8c596513c35369e4bbf628a2e96d8a939eadbd858
+registration_sha256: sha256:011967b59d0f25327029607d3e1619ed2e3e274d56330a002db203e3116f2292
+rehearsal_hash: sha256:0d64bde3287d68a4b864c7551cef487fdd1d0c6131ed4c2fc3d8301be0f9f72d

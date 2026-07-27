@@ -17,14 +17,14 @@ calls, or spend with an exact owner-gate-required handoff.
 
 ## Current state
 
-Live audit at `2026-07-27T02:04:22Z`:
+Live audit at `2026-07-27T05:39:42Z`:
 
 - repository `yoheinakajima/distributed-discovery`;
 - issue #196;
 - branch `benchmark/treasurebench-agents-v1-fresh-pilot`;
 - draft PR #197;
-- exact execution commit `1974e74c0222329d01e36d8d804d5262ea08376d`;
-- committed gate-manifest commit
+- superseded execution commit `1974e74c0222329d01e36d8d804d5262ea08376d`;
+- superseded gate-manifest commit
   `cce090ea64ae88db1bb617aa5c0846838e6e4783`;
 - starting `main` and `origin/main`
   `b6934e6495282b210f0d90b96f63b24bebab454b`;
@@ -38,15 +38,25 @@ Live audit at `2026-07-27T02:04:22Z`:
 - 50 tasks, five architectures, two direct routes, one repeat, and 500 runs;
 - provisional expected cost USD 15, hard cap USD 25, OpenAI cap USD 10,
   Anthropic cap USD 15, call cap 5,200, and cumulative spend USD 0;
-- provider calls, credential reads, private generation, custody objects, owner
-  authorization, and spend in this task are all zero;
+- provider calls, credential reads, private generation, custody objects, and
+  spend in this task are all zero;
+- the first exact owner authorization was created and validated, but the
+  mandatory execution audit found that no fresh live runner existed and the
+  available live driver remained bound to quarantined identities;
+- that authorization was invalidated before any consequential action and
+  preserved locally at mode `0600` with SHA-256
+  `c3f548e32cc8e312f661ecd0f8d1e8583721c12aa92debbbacfc4907fa21f2fc`;
+- the current official-provider re-audit remains passing without a credential
+  read or provider API call;
 - no DD-023, DD-C-0111, scientific run, paper result, ranking, composite,
   package, release, submission, or base campaign exists;
 - the original pilot remains permanently quarantined and immutable;
 - the five unrelated untracked preservation files retain their previously
   recorded SHA-256 values.
 
-No execution milestone is active. M6 is pending the exact owner authorization.
+M6 stopped before execution. M5R is active: repair the fresh live path
+offline, repeat acceptance, freeze a new exact execution commit, and commit
+the superseding `AOG-AO-0002-FRESH-PILOT-R2` gate.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -132,8 +142,14 @@ this audit at closeout.
 - **M4 — complete:** focused and private-evaluation acceptance.
 - **M5 — complete:** draft pull request, exact execution freeze, committed
   owner-gate manifest, gate validation, and typed handoff.
-- **M6 — pending owner gate:** owner-authorized credentials, private generation, custody,
-  provider execution, output lock, verification, redaction, and closeout.
+- **M6 — stopped before consequential action:** the owner authorization was
+  valid, but the mandatory execution audit found the fresh live-runner gap.
+- **M5R — active:** invalidate the old authorization, implement and validate
+  the identity-separated live runner offline, freeze a repaired execution
+  commit, and return a new owner-gate-required handoff.
+- **M6R — pending new owner gate:** owner-authorized credentials, private
+  generation, custody, staged provider execution, output lock, verification,
+  redaction, and closeout.
 
 ## Progress checklist
 
@@ -150,6 +166,15 @@ this audit at closeout.
 - [x] Complete M4.
 - [x] Complete M5.
 - [x] Stop with the exact owner-gate-required handoff.
+- [x] Validate the first owner authorization without reading credentials or
+  creating private state.
+- [x] Stop on the discovered identity-contamination risk and invalidate the
+  authorization before any consequential action.
+- [x] Re-audit current official provider terms.
+- [x] Complete the offline live-runner repair and expanded corruptions.
+- [x] Pass full acceptance.
+- [ ] Freeze the repaired execution commit.
+- [ ] Commit and validate the superseding R2 gate and typed handoff.
 
 ## Discoveries and surprises
 
@@ -177,6 +202,15 @@ this audit at closeout.
   `credential-read-outside-manifest`; undeclared private access remains
   prohibited and every declared action must still map to a true fixed-contract
   permission.
+- The original M2 implementation was incomplete: it validated the generic gate
+  and gated fresh task generation but did not provide a live fresh-campaign
+  runner. The available live runner imported the quarantined campaign, batch,
+  authorization, state root, custody reports, and output domains. The
+  post-authorization audit caught this before credentials or private state.
+- The reusable sealed-pilot ledger, resumable adapter, and batch runner needed
+  explicit campaign/batch and cap parameters. Historical defaults remain
+  unchanged; the repaired fresh runtime supplies the new identities and the
+  USD 25/10/15 caps explicitly.
 
 ## Decision log
 
@@ -216,6 +250,23 @@ this audit at closeout.
   live gate validation against the local, remote, and PR surface. The required
   challenge is `AUTHORIZE AOG-AO-0002-FRESH-PILOT 1974e74`. No authorization
   or consequential action occurred. Complete M5 and stop before M6.
+- `2026-07-27T05:28:34Z`: validate the owner-created authorization, then stop
+  before credentials or private generation because the fresh live runner was
+  absent and the quarantined runner was identity-bound. Preserve the
+  authorization in local history, remove the active authorization path, and
+  record zero calls, zero private objects, and zero spend.
+- `2026-07-27T05:39:42Z`: the official OpenAI and Anthropic route, exact-model,
+  structured-output, retention, retry/error, and standard pricing re-audit
+  remains passing. Select an offline repair with a separate private-state
+  schema/root, fresh associated-data domains, explicit caps, strict terminal
+  protocol stops, output-lock-first verification, and a superseding R2 gate.
+- `2026-07-27T05:48:21Z`: the repaired synthetic staged driver completed 500
+  public-fixture mock runs, resumed without duplicate calls, locked fresh
+  campaign-associated outputs before answer unseal, and rejected all 26 fresh
+  boundary corruptions. Full acceptance passed Ruff, strict MyPy over 190
+  source files, all 447 tests, 110 claims, 51 run manifests, every required
+  audit, seven PDFs totaling 119 pages, and the offline release dry run.
+  Provider calls, credentials, real private objects, and spend remain zero.
 
 ## Validation strategy
 
@@ -238,7 +289,7 @@ make treasurebench-fresh-pilot-rehearsal
 make verify
 ```
 
-M5 repeats focused acceptance from a clean pushed draft-PR head, verifies the
+M5R repeats focused acceptance from a clean pushed draft-PR head, verifies the
 gate manifest against exact local/remote/PR observations without creating an
 authorization, renders the typed handoff, and rechecks the scientific,
 release, private, provider, spend, and preservation boundaries.
@@ -266,30 +317,33 @@ The contract passed `task-contract.schema.json`; the plan has all 15 required
 sections and the discussion/delta audit immediately follows current state. M1
 through M3 add the fresh request and allocation recipe, official-provider
 audit, registration record, offline module and audit target, generic gate
-hardening, the passing 500-run rehearsal, and the 46-corruption record.
-M4 and M5 add draft PR #197, complete acceptance, exact execution commit
+hardening, the passing 500-run rehearsal, and the original 46-corruption
+record. M4 and M5 add draft PR #197, complete acceptance, superseded execution commit
 `1974e74c0222329d01e36d8d804d5262ea08376d`, committed gate manifest
 `reports/agent-ops/AO-0002-treasurebench-fresh-pilot-owner-gate.yml`, and the
-typed owner-gate-required handoff.
+typed owner-gate-required handoff. M5R adds the identity-separated staged live
+runner, fresh private-state schema/root, exact cap enforcement, replay-only
+post-lock verification, and expanded runtime corruptions; its repaired commit,
+R2 manifest, and R2 handoff are pending.
 
 ## Blockers
 
-The expected owner gate is the only blocker. Credentials, private generation,
-custody creation, provider calls, and spend remain blocked until the owner
-creates the exact local authorization. The manifest is committed and
-validated; the authorization does not exist and was not read.
+The repaired execution freeze and R2 owner gate are pending. Credentials,
+private generation, custody creation, provider calls, and spend remain
+blocked. The first authorization is inactive and cannot transfer to the
+repaired tree.
 
 ## Recovery and restart instructions
 
 Inspect `git status --short --branch`; preserve the five named unrelated
 untracked files; read the root and scoped instructions, fixed contract, this
-plan, issue #196, draft PR #197, and the committed gate manifest. Resume M6
-only after validating the exact generic local authorization. Never generate
-private material or call a provider before the exact gate.
+plan, issue #196, and draft PR #197. Finish M5R and use only the R2 manifest.
+Resume M6R only after validating its new generic local authorization. Never
+generate private material or call a provider under the superseded gate.
 
 ## Outcome and retrospective
 
-Registration through M5 is complete and the handoff is
-`owner-gate-required`. All public/offline work passed with zero credentials,
-private objects, provider calls, network activity, or spend. M6 remains
-unstarted until the owner authorizes the exact manifest.
+Registration through M5 remains historical. M6 stopped safely before any
+consequential action, and M5R is active. Zero credentials, private objects,
+provider calls, or spend occurred. The repaired live path is offline-only
+until a new exact R2 authorization exists.

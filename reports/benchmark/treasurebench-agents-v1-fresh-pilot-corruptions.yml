@@ -2,12 +2,12 @@ schema_version: treasurebench-agents-v1-fresh-pilot-corruptions-v1
 status: pass
 task_id: AO-0002
 classification: public-synthetic-only
-fresh_boundary_corruptions_rejected: 18
+fresh_boundary_corruptions_rejected: 26
 repaired_instrument_suite:
   path: reports/benchmark/treasurebench-agents-v1-pilot-repair-rehearsal.yml
   corruptions_rejected: 28
   includes_method_c_and-final-action-cardinality: true
-total_registered_corruptions_rejected: 46
+total_registered_corruptions_rejected: 54
 corruptions:
   - {corruption_id: IDENTITY-01-quarantined-campaign, status: rejected}
   - {corruption_id: IDENTITY-02-quarantined-batch, status: rejected}
@@ -27,4 +27,12 @@ corruptions:
   - {corruption_id: REDACTION-02-ranking, status: rejected}
   - {corruption_id: SCIENCE-01-dd023, status: rejected}
   - {corruption_id: SCIENCE-02-claim, status: rejected}
+  - {corruption_id: LIVE-IDENTITY-01-private-state-inside-repository, status: rejected}
+  - {corruption_id: LIVE-BUDGET-01-openai-provider-cap, status: rejected}
+  - {corruption_id: LIVE-BUDGET-02-anthropic-provider-cap, status: rejected}
+  - {corruption_id: LIVE-BUDGET-03-total-cap, status: rejected}
+  - {corruption_id: LIVE-BUDGET-04-call-cap, status: rejected}
+  - {corruption_id: LIVE-LOCK-01-before-provider-close, status: rejected}
+  - {corruption_id: LIVE-CUSTODY-01-wrong-associated-campaign, status: rejected}
+  - {corruption_id: LIVE-PROTOCOL-01-terminal-provider-error, status: rejected}
 activity: {provider_calls: 0, credential_reads: 0, private_objects_created: 0, spend_usd: "0"}

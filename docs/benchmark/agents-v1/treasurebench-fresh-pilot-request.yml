@@ -9,7 +9,7 @@ batch_id: tb-agents-v1-repair-confirmation-v1-b01
 issue: 196
 branch: benchmark/treasurebench-agents-v1-fresh-pilot
 starting_main: b6934e6495282b210f0d90b96f63b24bebab454b
-owner_gate_id: AOG-AO-0002-FRESH-PILOT
+owner_gate_id: AOG-AO-0002-FRESH-PILOT-R2
 counts: {tasks: 50, families: 5, tasks_per_family: 10, batches: 1, repeats: 1, architectures: 5, cloud_models: 2, private_runs: 500}
 providers:
   - {provider: OpenAI, route_id: openai_direct, model: gpt-5.4-2026-03-05, credential_name: OPENAI_API_KEY}
@@ -39,7 +39,7 @@ failure_policy:
   final_action_cardinality: exactly-one-per-required-agent
 private_state:
   symbolic_root: XDG_STATE_HOME/distributed-discovery/treasurebench-agents-v1/repair-confirmation-v1
-  authorization_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0002-FRESH-PILOT.yml
+  authorization_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0002-FRESH-PILOT-R2.yml
   retention_days_after_closeout: 365
   fresh_os_csprng_seed: true
   tasks_and_answers_encrypted_separately: true
@@ -71,7 +71,9 @@ execution_sensitive_paths:
   - docs/benchmark/agents-v1/treasurebench-fresh-pilot-allocation.schema.json
   - docs/benchmark/agents-v1/treasurebench-fresh-pilot-request.yml
   - docs/benchmark/agents-v1/treasurebench-fresh-pilot-request.schema.json
+  - docs/benchmark/agents-v1/treasurebench-fresh-pilot-private-state.schema.json
   - docs/benchmark/agents-v1/prospective-failure-policy.yml
   - reports/benchmark/treasurebench-agents-v1-fresh-pilot-provider-audit.yml
   - tests/test_treasurebench_agents_v1_fresh_pilot.py
+  - tests/unit/test_discoverybench_agents.py
   - Makefile

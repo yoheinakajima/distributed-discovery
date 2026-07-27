@@ -1,5 +1,28 @@
 # Master execution plan
 
+## Active continuation — TreasureBench fresh repair-confirmation pilot (2026-07-27)
+
+Issue #196, draft PR #197, branch
+`benchmark/treasurebench-agents-v1-fresh-pilot`, fixed contract
+`tasks/treasurebench-agents-v1-fresh-pilot.yml`, and living ExecPlan
+[`TREASUREBENCH_AGENTS_V1_FRESH_PILOT.md`](TREASUREBENCH_AGENTS_V1_FRESH_PILOT.md)
+own the sole substantive lane. This is a DD-010 engineering-only private
+evaluation with 50 new tasks, five architectures, two exact direct routes, one
+repeat, and 500 runs. It creates no scientific, paper, ranking, package,
+release, submission, or base-campaign authority.
+
+The first exact owner authorization was created and validated. Before any
+credential read, private generation, custody, provider call, or spend, the
+mandatory execution audit found that the fresh module lacked a live runner and
+the available runner remained bound to the quarantined pilot. The
+authorization was invalidated and preserved locally. Cumulative provider
+calls, private objects, and spend remain zero.
+
+The active milestone is M5R: finish the identity-separated offline runtime,
+expanded corruptions, full acceptance, repaired execution freeze, superseding
+`AOG-AO-0002-FRESH-PILOT-R2` manifest, and typed owner-gate-required handoff.
+No consequential action may resume under the superseded gate.
+
 ## Active continuation — Agent Operations v1 (2026-07-25)
 
 Issue #194, draft PR #195, branch `infra/agent-operations-v1`, fixed task

@@ -12,6 +12,9 @@ from distributed_discovery.benchmark.agents_v1.batch import plan_batch
 from distributed_discovery.benchmark.agents_v1.contamination import run_public_probes
 from distributed_discovery.benchmark.agents_v1.custody import seal_public_toy, unseal_public_toy
 from distributed_discovery.benchmark.agents_v1.evaluation import evaluate_run
+from distributed_discovery.benchmark.agents_v1.fresh_pilot_live import (
+    run_live_fresh_pilot,
+)
 from distributed_discovery.benchmark.agents_v1.generation import (
     canonical_cells,
     generate_prompt_space,
@@ -64,6 +67,7 @@ COMMANDS = (
     "pilot-verify",
     "pilot-redacted-summary",
     "pilot-rehearsal",
+    "fresh-pilot-live",
 )
 
 
@@ -155,6 +159,8 @@ def execute(args: argparse.Namespace) -> Mapping[str, object] | list[object]:
         return pilot_offline_readiness(Path.cwd())
     if command == "pilot-live":
         return run_live_pilot(Path.cwd())
+    if command == "fresh-pilot-live":
+        return run_live_fresh_pilot(Path.cwd())
     if command == "pilot-verify":
         corruptions = audit_pilot_corruptions(Path.cwd())
         if any(item["status"] != "rejected" for item in corruptions):

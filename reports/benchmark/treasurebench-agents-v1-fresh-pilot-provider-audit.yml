@@ -1,8 +1,9 @@
 schema_version: treasurebench-agents-v1-fresh-pilot-provider-audit-v1
-audited_at_utc: "2026-07-27T02:04:22Z"
+audited_at_utc: "2026-07-27T05:39:42Z"
 status: pass-current-official-docs-no-provider-api-call
 task_id: AO-0002
 scope: direct-standard-api-only
+audit_context: post-owner-gate-preexecution-reaudit-before-any-credential-or-provider-access
 models:
   - provider: OpenAI
     route: openai_direct
@@ -62,6 +63,11 @@ decisions:
   provider_managed_tools_allowed: false
   regional_price_premiums_allowed: false
   current_terms_reaudit_required_at-resume: true
+  exact_routes_remain_available: true
+  structured_output_contracts_match_implementation: true
+  retention_assumptions_remain_conservative: true
+  retry_contract_uses-sdk-defaults: false
+  registered_standard_prices-remain-valid: true
 activity:
   credentials_read: 0
   provider_api_calls: 0
