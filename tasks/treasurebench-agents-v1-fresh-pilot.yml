@@ -1,0 +1,121 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0002
+title: TreasureBench Agents v1 fresh sealed repair-confirmation pilot
+task_type: private-evaluation
+status: active
+objective: Prepare and, only after an exact owner gate, execute a wholly fresh repaired 50-task and 500-run sealed DD-010 engineering pilot.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: policy, path: docs/benchmark/agents-v1/AGENTS.md}
+  - {type: policy, path: src/distributed_discovery/benchmark/agents_v1/AGENTS.md}
+  - {type: decision, path: reports/agent-ops/next-task-treasurebench-fresh-pilot.yml}
+  - {type: decision, path: reports/benchmark/treasurebench-agents-v1-pilot-repair-adjudication.yml}
+  - {type: plan, path: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT.md}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/196"}
+owner_decisions:
+  - The selected gate is the full fresh 50-task and 500-run repair-confirmation pilot.
+  - The pilot uses five architectures, direct OpenAI and direct Anthropic routes, and one repeat.
+  - Campaign, batch, OS-CSPRNG seed, tasks, answers, encryption keys, and custody must all be new.
+  - The quarantined pilot, future-base identities, and base-campaign identities may not be reused.
+  - Provider calls, credentials, private generation, custody creation, and spend require the exact committed owner gate.
+  - The provisional budget is USD 15 expected, USD 25 hard cap, USD 10 OpenAI, USD 15 Anthropic, and 5,200 calls.
+scope:
+  paths:
+    - tasks/treasurebench-agents-v1-fresh-pilot.yml
+    - plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT.md
+    - plans/MASTER_EXEC_PLAN.md
+    - docs/agent-ops
+    - docs/benchmark/agents-v1
+    - reports/agent-ops
+    - reports/benchmark
+    - src/distributed_discovery/agent_ops
+    - src/distributed_discovery/benchmark/agents_v1
+    - src/distributed_discovery/cli.py
+    - scripts
+    - tests
+    - Makefile
+  actions:
+    - Register one private-evaluation issue, branch, fixed contract, living ExecPlan, and draft pull request.
+    - Audit current official provider routes, models, structured outputs, retention, retries, errors, and prices.
+    - Implement the fresh identity, custody, execution, verification, redaction, and fail-closed budget boundaries offline.
+    - Run the repaired 50-case synthetic rehearsal and every registered corruption with zero credentials, calls, private generation, or spend.
+    - Freeze the exact execution commit and commit one generic Agent Operations owner-gate manifest.
+non_goals:
+  - No DD-023, claim, scientific run, proof, evidence-status change, or paper result.
+  - No ranking, composite, leaderboard, package, release, DOI, arXiv, journal, or submission action.
+  - No base campaign, local or open-model campaign, OpenRouter route, fallback route, or model substitution.
+  - No reuse, mutation, rescoring, deletion, or unsealing of the quarantined pilot or reserved future-base state.
+  - No credential read, private generation, custody creation, provider call, or spend before the exact owner authorization.
+permissions:
+  repository_write: true
+  git_branch_commit: true
+  github_issue_pr: true
+  merge_after_checks: false
+  ci_pages: false
+external_action_permissions:
+  network_observation: true
+  github_mutation: true
+  provider_calls: true
+  spend: true
+  release_publication: false
+  submission: false
+scientific_mutation_permissions:
+  create_study: false
+  create_claim: false
+  create_run: false
+  change_evidence_status: false
+  change_proof_status: false
+  change_paper_lifecycle: false
+private_data_permissions: {read: true, write: true, generate: true, publish: false}
+budget:
+  currency: USD
+  expected: "15"
+  hard_cap: "25"
+  call_cap: 5200
+  category_caps: {OpenAI: "10", Anthropic: "15"}
+  cumulative_spend: "0"
+expected_outcomes:
+  - A provider-current, wholly fresh, repaired 50-task and 500-run sealed engineering pilot implementation.
+  - Passing offline rehearsal, independent contract verification, corruption rejection, and draft-PR acceptance.
+  - A committed exact owner-gate manifest and schema-valid owner-gate-required handoff before consequential action.
+stop_conditions:
+  - Stop before any credential read, private generation, custody creation, provider call, or spend without the exact active owner authorization.
+  - Stop if campaign, batch, seed, task, answer, key, custody, quarantined-pilot, future-base, or base-campaign identity separation fails.
+  - Stop if any provider route, exact model, structured-output contract, retention term, retry policy, price, cap, or authorization surface is unresolved.
+  - Stop if any repaired rehearsal, Method C, metric-range, corruption, schema, budget, custody, redaction, or Agent Operations check fails.
+  - Stop if scientific inventories, paper artifacts, release state, public private-data boundary, or unrelated preservation files change.
+acceptance_profile: private-evaluation
+canonical_destinations:
+  - tasks/treasurebench-agents-v1-fresh-pilot.yml
+  - plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT.md
+  - docs/benchmark/agents-v1
+  - reports/benchmark
+  - reports/agent-ops
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 196
+  branch: benchmark/treasurebench-agents-v1-fresh-pilot
+  pull_request: null
+  base: main
+exec_plan: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT.md
+task_delta: reports/agent-ops/next-task-treasurebench-fresh-pilot.yml
+frozen_identifiers:
+  starting_main: b6934e6495282b210f0d90b96f63b24bebab454b
+  owner_study: DD-010
+  campaign_id: treasurebench-agents-v1-repair-confirmation-v1
+  batch_id: tb-agents-v1-repair-confirmation-v1-b01
+  openai_route: openai_direct
+  openai_model: gpt-5.4-2026-03-05
+  anthropic_route: anthropic_direct
+  anthropic_model: claude-sonnet-4-6
+  tasks: "50"
+  architectures: "5"
+  repeats: "1"
+  private_runs: "500"
+  claim_ceiling: DD-C-0110
+  study_ceiling: DD-022
+supersession: {supersedes: [], superseded_by: null, reason: null}
+next_gate: Complete offline implementation and acceptance, freeze the exact draft-PR head, and authorize the committed owner-gate manifest.
