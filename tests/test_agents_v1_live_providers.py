@@ -227,6 +227,8 @@ def test_provider_error_envelope_preserves_safe_locus_without_raw_body() -> None
             "type": "error",
             "error": {
                 "type": "invalid_request_error",
+                "code": "invalid_json_schema",
+                "param": "output_config.format.schema",
                 "message": "synthetic raw provider detail must not be retained",
             },
         },
@@ -245,6 +247,10 @@ def test_provider_error_envelope_preserves_safe_locus_without_raw_body() -> None
     assert result.operational_metadata["error_locus"] == "provider-http-response"
     assert result.operational_metadata["http_status"] == 400
     assert result.operational_metadata["retry_eligible"] is False
+    assert result.operational_metadata["provider_error_type"] == "invalid_request_error"
+    assert result.operational_metadata["provider_error_code"] == "invalid_json_schema"
+    assert result.operational_metadata["rejected_parameter"] == "output_config.format.schema"
+    assert str(result.operational_metadata["diagnostic_message_sha256"]).startswith("sha256:")
     assert "synthetic raw provider detail" not in json.dumps(result.operational_metadata)
 
 

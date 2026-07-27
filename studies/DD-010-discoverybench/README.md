@@ -93,11 +93,14 @@ answer, task key, answer key, task ciphertext, answer ciphertext, or custody
 manifest was created. The campaign and batch cannot be retried, repaired,
 reopened, reused, rescored, executed, or reauthorized.
 
-This is redacted DD-010 engineering status only. The next substantive
-candidate is **TreasureBench exact provider-schema conformance repair and
-public-canary gate**, a separately registered public-only diagnostic and tiny
-canary gate. It creates no DD-023, claim, scientific run, paper result,
-performance publication, or base-campaign authority.
+This is redacted DD-010 engineering status only. AO-0004 and issue #198 now
+own the separately registered **TreasureBench exact provider-schema
+conformance repair and public-canary gate**. Its offline repair separates the
+canonical action contract from provider-specific transport compilers, rejects
+unsupported schemas before paid calls, and preserves provider-independent
+semantic validation. It must stop at a generic owner gate before credentials
+or public canaries and creates no DD-023, claim, scientific run, paper result,
+performance publication, private pilot, or base-campaign authority.
 
 ## Registered evaluation campaign
 

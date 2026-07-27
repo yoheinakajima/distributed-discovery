@@ -1,0 +1,161 @@
+schema_version: treasurebench-agents-v1-provider-schema-conformance-audit-v1
+task_id: AO-0004
+owner_study: DD-010
+audited_at_utc: "2026-07-27T15:57:26Z"
+status: offline-repair-pass-public-canaries-owner-gated-not-run
+classification: public-engineering-only-not-scientific-evidence
+activity:
+  credentials_read: 0
+  provider_calls: 0
+  private_objects_read: 0
+  private_objects_created: 0
+  spend_usd: "0"
+preserved:
+  predecessor_task: AO-0002
+  campaign: treasurebench-agents-v1-repair-confirmation-v1
+  batch: tb-agents-v1-repair-confirmation-v1-b01
+  execution_commit: fe313602df7f4e8ffac1a1a02c2b3a83f3c72943
+  output_lock: sha256:8102a6c1b6bda003336d5503136dfe29301b04cb8f35e7740edd8d56f0eb3c1d
+  terminal_http_status: 400
+  terminal_error_class: schema-or-parameter
+  authorization: inactive-archived-not-read
+  decision: sealed-pilot-quarantined-provider-failure
+documentation_audit:
+  openai:
+    route: openai_direct
+    api: Responses
+    endpoint: https://api.openai.com/v1/responses
+    exact_model: gpt-5.4-2026-03-05
+    model_status: listed-current-snapshot-with-responses-and-structured-outputs
+    request_contract:
+      format_path: text.format
+      format_type: json_schema
+      strict: true
+      store: false
+      reasoning_effort: none
+    strict_schema:
+      all_object_properties_required: true
+      additional_properties_false_at_each_object: true
+      unsupported_relevant_keywords: [maxLength, minItems, maxItems, uniqueItems]
+      unsupported_composition_keywords: [allOf, not, dependentRequired, dependentSchemas, if, then, else]
+    retention:
+      api_training_default: false
+      store_false_disables_application-state-storage-for-this-request: true
+      default_abuse_monitoring_retention: up-to-30-days
+      zero_data_retention_assumed: false
+    errors_and_retries:
+      terminal_schema_statuses: [400, 422]
+      retryable_registered_statuses: [408, 429, 500, 502, 503, 504]
+      automatic_sdk_retry_relied_on: false
+      schema_or_parameter_retry_eligible: false
+    standard_price_usd_per_million_tokens: {input: "2.50", output: "15.00"}
+    official_sources:
+      model: https://developers.openai.com/api/docs/models/gpt-5.4
+      structured_output: https://developers.openai.com/api/docs/guides/structured-outputs
+      responses_openapi: https://api.openai.com/v1/responses
+      retention: https://developers.openai.com/api/docs/guides/your-data
+      errors: https://developers.openai.com/api/docs/guides/error-codes
+      pricing: https://developers.openai.com/api/docs/pricing
+  anthropic:
+    route: anthropic_direct
+    api: Messages
+    endpoint: https://api.anthropic.com/v1/messages
+    exact_model: claude-sonnet-4-6
+    model_status: canonical-pinned-dateless-snapshot-not-alias
+    request_contract:
+      format_path: output_config.format
+      format_type: json_schema
+      beta_header_required: false
+      temperature: 0
+    strict_schema:
+      additional_properties_false_at_each_object: true
+      optional_parameter_limit: 24
+      union_parameter_limit: 16
+      minItems_supported_values: [0, 1]
+      unsupported_relevant_keywords: [maxLength, maxItems, uniqueItems]
+      empty_nested_object_representation: explicit-properties-required-and-additionalProperties-false
+      compilation_timeout_seconds: 180
+    retention:
+      prompts_and_outputs_stored: false-for-structured-outputs
+      schema_cache: up-to-24-hours-since-last-use
+      zero_data_retention: qualified
+      legal_or-flagged-exceptions_possible: true
+    errors_and_retries:
+      retryable_registered_statuses: [408, 429, 500, 502, 503, 504, 529]
+      official_sdk_default_retries: 2
+      automatic_sdk_retry_relied_on: false
+      schema_or_parameter_retry_eligible: false
+    standard_price_usd_per_million_tokens: {input: "3.00", output: "15.00"}
+    official_sources:
+      model: https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions
+      structured_output: https://platform.claude.com/docs/en/build-with-claude/structured-outputs
+      retention: https://platform.claude.com/docs/en/manage-claude/api-and-data-retention
+      errors: https://platform.claude.com/docs/en/api/errors
+      pricing: https://platform.claude.com/docs/en/about-claude/pricing
+diagnosis:
+  exact_public_fixture: docs/benchmark/agents-v1/fixtures/provider-schema/openai-terminal-http400-reconstructed.json
+  fixture_sha256: sha256:514f96178acb48f54d4f4ad5f66d4131b4109298f5b88b4e01f130b038978fe8
+  canonical_schema_sha256: sha256:2f6556d17144eba1f4ff9c352cf9e24e86fbcc8c228c334a7da9ce33ac4db0a7
+  observed_boundary: The exact serialized public reconstruction contains four keywords outside OpenAI's documented strict subset.
+  conclusion_status: bounded-offline-diagnosis-not-provider-confirmed
+  conclusion: The retained HTTP 400 is consistent with the request schema's unsupported maxLength, minItems, maxItems, and uniqueItems keywords; because the raw provider body was intentionally not retained and no new call is authorized, this audit does not claim which individual keyword the provider reported first.
+  hypotheses:
+    unsupported_uniqueItems: supported-by-offline-reconstruction
+    incomplete_required_arrays: rejected-as-cause-root-and-nested-required-arrays-are-complete-and-explicit
+    provider_specific_constraints: supported-by-offline-reconstruction
+    empty_nested_object: represented-explicitly-and-covered-by-corruption-test-not-identified-as-cause
+    other_parameter_or-complexity_interaction: not-excluded-until-owner-authorized-complete-canary
+compilers:
+  canonical_schema_sha256: sha256:2f6556d17144eba1f4ff9c352cf9e24e86fbcc8c228c334a7da9ce33ac4db0a7
+  openai_schema_sha256: sha256:52a333cc8a5976096bcb484fefe52ff4eb90d0b1f0f91c147f4818e874755ec7
+  anthropic_schema_sha256: sha256:ff20c81b22a46616be19a39847c103feefea8d04a0ef1978cfe32ba5b8e8ac59
+  semantic_contract_weakened: false
+  post_parse_checks:
+    - exactly-one-final-action-per-required-agent
+    - non-final-proposals-excluded-from-final-scoring
+    - action-and-source-vocabulary
+    - no-extra-final-record
+    - Method-C-before-metrics
+    - metric-range-invariants
+    - message-length
+    - action-cardinality-and-uniqueness
+safe_error_envelope:
+  fields:
+    - http_status
+    - provider_error_type
+    - provider_error_code
+    - rejected_parameter
+    - retry_eligible
+    - diagnostic_message_sha256
+  prohibited:
+    - credentials
+    - authorization_headers
+    - host_paths
+    - raw_error_bodies
+    - unrestricted_messages
+canary_matrix:
+  path: docs/benchmark/agents-v1/fixtures/provider-schema/canary-matrix.json
+  sha256: sha256:4db4e8968a3e36e22c59fa2b0c92a52fa7452b94c1520b6bab37284df29bb2df
+  sequence:
+    - openai-minimal-known-valid
+    - openai-treasurebench-complete
+    - anthropic-minimal-known-valid
+    - anthropic-treasurebench-complete
+  complete_schema_required_for_both: true
+  bisection: only-after-a-complete-schema-fails-and-only-within-remaining-exact-owner-gate-caps
+  conformance_declared: false
+  provider_canaries_run: false
+authority:
+  credential_access_before_gate: false
+  provider_calls_before_gate: false
+  private_pilot: false
+  dd023: false
+  claim: false
+  scientific_run: false
+  paper: false
+  ranking: false
+  composite: false
+  release: false
+  submission: false
+  base_campaign: false
+next_gate: Freeze the exact execution commit and commit the generic AO-0004 owner-gate manifest; stop before credentials or provider calls.

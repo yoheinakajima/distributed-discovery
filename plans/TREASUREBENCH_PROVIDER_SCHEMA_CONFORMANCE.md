@@ -37,6 +37,11 @@ Registration audit at `2026-07-27`:
 - credentials, provider calls, spend, private material, scientific mutation,
   paper work, releases, and a new private pilot remain prohibited before the
   separately committed owner gate.
+- the exact public reconstruction contains four OpenAI-ineligible strict
+  constraints (`maxLength`, `minItems`, `maxItems`, and `uniqueItems`);
+- separate provider compilers, offline linting, safe structured errors, five
+  serialized request fixtures, and the four-stage mock canary matrix are
+  implemented and pass focused validation with zero calls and zero spend.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -98,11 +103,11 @@ Repeat this audit at closeout.
 - **M0 — active:** register AO-0004, create the issue and branch, freeze the
   task contract, validate registration, and open a draft PR after focused
   skeleton tests exist.
-- **M1 — pending:** complete and record the official provider-documentation
+- **M1 — complete:** complete and record the official provider-documentation
   audit and exact public serialized-request reconstruction.
-- **M2 — pending:** implement the canonical contract, provider-specific
+- **M2 — complete:** implement the canonical contract, provider-specific
   compilers, offline linters, semantic validator, and safe errors.
-- **M3 — pending:** implement the mock canary matrix and every registered
+- **M3 — complete:** implement the mock canary matrix and every registered
   corruption; pass focused and infrastructure validation.
 - **M4 — pending:** freeze the execution surface, commit the generic owner-gate
   manifest, validate it without authorization, and emit the schema-valid
@@ -116,11 +121,11 @@ Repeat this audit at closeout.
 - [x] Record the pre-registration discussion and decision delta audit.
 - [x] Create issue #198 and the task branch.
 - [x] Freeze the fixed task contract.
-- [ ] Audit current official provider documentation.
-- [ ] Reconstruct the failed request with public fixtures only.
-- [ ] Implement provider schema compilers and offline linting.
-- [ ] Implement provider-independent semantic validation and safe errors.
-- [ ] Pass the mock canary matrix and all corruptions.
+- [x] Audit current official provider documentation.
+- [x] Reconstruct the failed request with public fixtures only.
+- [x] Implement provider schema compilers and offline linting.
+- [x] Implement provider-independent semantic validation and safe errors.
+- [x] Pass the mock canary matrix and all corruptions.
 - [ ] Create and validate the exact generic owner-gate manifest.
 - [ ] Return the typed owner-gate-required handoff and stop before calls.
 
@@ -133,6 +138,18 @@ Repeat this audit at closeout.
 - The same audit permits task-contract paths as decision records but not a
   newly invented `task-contract` destination class; the destination path stays
   exact and the registered class is `decision-record`.
+- The original runtime built one shared canonical schema for every provider.
+  The exact OpenAI request therefore serialized four constraints outside
+  OpenAI's documented strict subset. The retained HTTP 400 is consistent with
+  those violations, but the intentionally unretained raw body prevents a
+  claim about which individual keyword the provider reported first.
+- Anthropic's current subset differs materially: `minItems` is supported only
+  at 0 or 1, while the relevant `maxLength`, `maxItems`, and `uniqueItems`
+  constraints require provider-independent validation.
+- A source-resolution attempt using an unqualified non-editable environment
+  imported the prior installed package and failed. The repository Makefile
+  already exports `PYTHONPATH=src`; the registered target uses that source
+  boundary and now rebuilds byte-identical fixtures.
 
 ## Decision log
 
@@ -146,6 +163,11 @@ Repeat this audit at closeout.
 - `2026-07-27`: repair two registration-only schema errors without changing
   authority: use the supported `record` reference class and the existing
   `explicit-owner-decision` memory review trigger.
+- `2026-07-27T15:57:26Z`: record the official-source audit, bounded diagnosis,
+  exact schema and fixture hashes, and zero-call zero-spend activity.
+- `2026-07-27`: compile provider transport schemas separately while retaining
+  all omitted constraint semantics in the existing provider-independent
+  parser, protocol verifier, and metric-range checks.
 
 ## Validation strategy
 
@@ -180,6 +202,12 @@ Pre-gate acceptance:
 
 Expected: all commands exit zero; paid calls, credential reads, private-state
 changes, scientific mutations, releases, and paper changes remain zero.
+
+Observed through M3: the fixture audit rebuilt five request fixtures and the
+matrix byte-identically; 46 focused tests passed; Ruff format and lint passed
+over 319 files; strict MyPy passed over 191 source files; Agent Operations and
+program-memory audits passed. Provider calls, credential reads, private-state
+access, and spend remained zero.
 
 ## Artifacts produced
 
