@@ -43,6 +43,9 @@ Registration audit at `2026-07-27`:
 - separate provider compilers, offline linting, safe structured errors, five
   serialized request fixtures, and the four-stage mock canary matrix are
   implemented and pass focused validation with zero calls and zero spend.
+- exact execution commit
+  `5f1d4b6bdb0d5fce5b4cbfc11f6aceadd910c2c3` is frozen; the committed generic
+  owner-gate manifest passed live authorization-free validation.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -56,7 +59,10 @@ all evidence-dependent items retain unmet triggers. No scientific,
 publication, release, private-pilot, or base-campaign item became due. The
 registry will be updated from `routed` to `implemented` only after the task
 registration artifacts exist. No owner decision remains only in conversation.
-Repeat this audit at closeout.
+The closeout repeat found no new due discussion item: PM-0033 remains
+implemented at its canonical AO-0004 destinations; the evidence-dependent,
+scientific, publication, release, private-pilot, and base-campaign triggers
+remain unmet.
 
 ## Scope
 
@@ -110,9 +116,12 @@ Repeat this audit at closeout.
   compilers, offline linters, semantic validator, and safe errors.
 - **M3 — complete:** implement the mock canary matrix and every registered
   corruption; pass focused and infrastructure validation.
-- **M4 — active:** freeze the execution surface, commit the generic owner-gate
+- **M4 — complete:** freeze the execution surface, commit the generic owner-gate
   manifest, validate it without authorization, and emit the schema-valid
   owner-gate-required handoff.
+- **M5 — pending owner authorization:** run only the staged public canaries
+  under the exact generic authorization and stopping rule. This milestone was
+  not started in this turn.
 
 ## Progress checklist
 
@@ -128,8 +137,8 @@ Repeat this audit at closeout.
 - [x] Implement provider-independent semantic validation and safe errors.
 - [x] Pass the mock canary matrix and all corruptions.
 - [x] Open draft PR #199 and pass the complete pre-gate validation wall.
-- [ ] Create and validate the exact generic owner-gate manifest.
-- [ ] Return the typed owner-gate-required handoff and stop before calls.
+- [x] Create and validate the exact generic owner-gate manifest.
+- [x] Return the typed owner-gate-required handoff and stop before calls.
 
 ## Discoveries and surprises
 
@@ -173,6 +182,11 @@ Repeat this audit at closeout.
 - `2026-07-27`: open draft PR #199, pass the complete pre-gate validation
   wall, and designate the next commit as the immutable public-canary execution
   surface to which the generic owner gate must bind.
+- `2026-07-27`: freeze execution commit
+  `5f1d4b6bdb0d5fce5b4cbfc11f6aceadd910c2c3`, commit the generic owner gate,
+  and validate its live contract, ancestry, protected trees, caps,
+  prohibitions, issue, branch, and draft-PR state without creating an
+  authorization or performing a consequential action.
 
 ## Validation strategy
 
@@ -233,7 +247,9 @@ remained USD 0.
 
 ## Blockers
 
-None at registration.
+Exact owner authorization
+`AOG-AO-0004-PUBLIC-PROVIDER-CANARIES` is absent. This is the intended
+owner-gate-required checkpoint; M5 must not start without it.
 
 ## Recovery and restart instructions
 
@@ -247,5 +263,9 @@ spend caps, and prohibitions; stop on any mismatch.
 
 ## Outcome and retrospective
 
-Pending. The intended checkpoint is a complete offline conformance repair and
-an exact generic owner gate awaiting separate owner authorization.
+The complete offline conformance repair is committed, the exact execution
+surface is frozen, draft PR #199 is open, the generic gate is committed and
+validated without authorization, and the typed handoff records the next
+action. This turn stopped before credential access, provider calls, spend,
+private state, or scientific state. The remaining work is M5 and requires a
+separate exact owner authorization.
