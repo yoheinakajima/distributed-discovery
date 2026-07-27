@@ -1,0 +1,149 @@
+schema_version: treasurebench-provider-canary-outcome-v2
+task_id: AO-0004
+classification: public-engineering-only-not-scientific-evidence
+recorded_at_utc: "2026-07-27T22:47:18Z"
+authority:
+  gate_id: AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R4
+  execution_commit: dcd89bca5daa54386df163439a010583c30134ec
+  authorized_pr_head: 065bf9b87951e312acc7f8507b3089dc3e7c0a0d
+  issue: 198
+  pull_request: 199
+  branch: benchmark/treasurebench-provider-schema-conformance
+  authorization_validated: true
+  superseded_or_consumed_gates_used: false
+official_terms_recheck:
+  reviewed_at_utc: "2026-07-27T22:30:00Z"
+  result: compatible-with-frozen-execution
+  openai:
+    - https://developers.openai.com/api/docs/models/gpt-5.4
+    - https://developers.openai.com/api/docs/guides/structured-outputs
+    - https://developers.openai.com/api/docs/guides/your-data
+    - https://developers.openai.com/api/docs/guides/error-codes
+    - https://developers.openai.com/api/docs/pricing
+  anthropic:
+    - https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions
+    - https://platform.claude.com/docs/en/build-with-claude/structured-outputs
+    - https://platform.claude.com/docs/en/manage-claude/api-and-data-retention
+    - https://platform.claude.com/docs/en/api/errors
+    - https://platform.claude.com/docs/en/about-claude/pricing
+credential_boundary:
+  source: .env.txt
+  requested_names: [OPENAI_API_KEY, ANTHROPIC_API_KEY]
+  strict_nonexecuting_loader: true
+  shell_sourcing_or_interpolation: false
+  unrelated_credentials_inspected_or_returned: false
+  selected_credentials_cleared: true
+  adapter_secrets_cleared: true
+ledger:
+  path: reports/benchmark/treasurebench-provider-schema-canaries/AO-0004-public-engineering-ledger-r4.jsonl
+  sha256: sha256:057e23edb9f3f6e92ee2881ed6cef125f5252fdf5777483f504be6e371efa91d
+  validation: pass-hash-chain-safe-schema-sequence-and-terminal-decision
+  records: 9
+  open_intents: 0
+  raw_provider_output_retained: false
+  raw_error_body_retained: false
+  credential_or_authorization_content_retained: false
+canaries:
+  - order: 1
+    canary_id: openai-minimal-known-valid
+    provider: openai
+    route: openai_direct
+    model: gpt-5.4-2026-03-05
+    schema_role: minimal
+    schema_fingerprint: sha256:4528a3c79c4aaee242a31e586366657f8e9a3f11cc8d2cb040d9bf61ab1bbb63
+    max_output_tokens: 256
+    status: success
+    diagnostic_classification: pass
+    validation_stage: complete
+    bounded_error_code: none
+    finish_status: completed
+    finish_reason: null
+    input_tokens: 66
+    output_tokens: 16
+    cost_usd: "0.000405"
+    output_sha256: sha256:4062edaf750fb8074e7e83e0c9028c94e32468a8b6f1614774328ef045150f93
+    safe_error: {http_status: 200, error_locus: none, provider_error_type: null, provider_error_code: null, rejected_parameter: null, retry_eligible: false, diagnostic_message_sha256: null}
+    stopping_decision: continue-frozen-sequence
+  - order: 2
+    canary_id: openai-treasurebench-complete
+    provider: openai
+    route: openai_direct
+    model: gpt-5.4-2026-03-05
+    schema_role: complete
+    schema_fingerprint: sha256:7c0f24d097b0330586f5b333274056d7a287f7b48e7c3be327c786246fb3bde4
+    max_output_tokens: 256
+    status: success
+    diagnostic_classification: pass
+    validation_stage: complete
+    bounded_error_code: none
+    finish_status: completed
+    finish_reason: null
+    input_tokens: 465
+    output_tokens: 108
+    cost_usd: "0.0027825"
+    output_sha256: sha256:c440efdc90cd882d5dc7fce186074fecfc4dba98eca405957b5aebb58ab530e8
+    safe_error: {http_status: 200, error_locus: none, provider_error_type: null, provider_error_code: null, rejected_parameter: null, retry_eligible: false, diagnostic_message_sha256: null}
+    stopping_decision: continue-frozen-sequence
+  - order: 3
+    canary_id: anthropic-minimal-known-valid
+    provider: anthropic
+    route: anthropic_direct
+    model: claude-sonnet-4-6
+    schema_role: minimal
+    schema_fingerprint: sha256:4528a3c79c4aaee242a31e586366657f8e9a3f11cc8d2cb040d9bf61ab1bbb63
+    max_output_tokens: 256
+    status: success
+    diagnostic_classification: pass
+    validation_stage: complete
+    bounded_error_code: none
+    finish_status: end_turn
+    finish_reason: null
+    input_tokens: 188
+    output_tokens: 8
+    cost_usd: "0.000684"
+    output_sha256: sha256:4062edaf750fb8074e7e83e0c9028c94e32468a8b6f1614774328ef045150f93
+    safe_error: {http_status: 200, error_locus: none, provider_error_type: null, provider_error_code: null, rejected_parameter: null, retry_eligible: false, diagnostic_message_sha256: null}
+    stopping_decision: continue-frozen-sequence
+  - order: 4
+    canary_id: anthropic-treasurebench-complete
+    provider: anthropic
+    route: anthropic_direct
+    model: claude-sonnet-4-6
+    schema_role: complete
+    schema_fingerprint: sha256:ff20c81b22a46616be19a39847c103feefea8d04a0ef1978cfe32ba5b8e8ac59
+    max_output_tokens: 256
+    status: success
+    diagnostic_classification: pass
+    validation_stage: complete
+    bounded_error_code: none
+    finish_status: end_turn
+    finish_reason: null
+    input_tokens: 884
+    output_tokens: 143
+    cost_usd: "0.004797"
+    output_sha256: sha256:7865fc1676df965c6210819e0f6b4d377b56f7e66d508f12db6c0e019230278a
+    safe_error: {http_status: 200, error_locus: none, provider_error_type: null, provider_error_code: null, rejected_parameter: null, retry_eligible: false, diagnostic_message_sha256: null}
+    stopping_decision: declare-conformance-both-complete-schemas-pass
+diagnostics:
+  frozen_bisection_ran: false
+  frozen_bisection_calls: 0
+  safe_error_classifications: [pass, pass, pass, pass]
+totals:
+  calls: 4
+  input_tokens: 1603
+  output_tokens: 275
+  total_tokens: 1878
+  total_cost_usd: "0.0086685"
+  provider_cost_usd: {openai: "0.0031875", anthropic: "0.005481"}
+final_decision: conformance-pass-both-complete-schemas
+conformance_declared: true
+r3_integrity:
+  gate_sha256: sha256:650b179ae6c19c3b7b38291c5b08878628b07fdee1516d4959cb55c8adc8dcb0
+  ledger_sha256: sha256:687ea038fd2de2afeb4b4beee905d139ab42aa50d7384fbfc9b1f65e72c2d4be
+  outcome_sha256: sha256:f55bc57986a565413de4bd920475875624e32b716effdac753c8908c12230b0d
+  unchanged: true
+state_boundary:
+  private_state_created_or_changed: false
+  scientific_state_created_or_changed: false
+  paper_ranking_release_submission_or_base_campaign_state_changed: false
+next_owner_action: R4 is consumed and must not be rerun or used to merge. If the owner wants AO-0004 closed and draft PR #199 merged, separately direct registration and authorization of a public-only closeout and PR-merge gate. Until then, leave the PR draft and issue open; Pages deployment remains unauthorized.

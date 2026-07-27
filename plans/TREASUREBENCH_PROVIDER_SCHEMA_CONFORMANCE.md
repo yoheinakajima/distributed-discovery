@@ -312,6 +312,12 @@ authority, so no new program-memory item is due.
   authorization, and ledger reuse, preserve its artifacts byte-for-byte,
   classify truncation only as a hypothesis, raise both complete canary output
   ceilings to 256, and require a fresh diagnostic ledger and owner gate.
+- `2026-07-27T22:47:18Z`: execute the exact authorized R4 command. OpenAI
+  minimal and complete and Anthropic minimal and complete all passed; both
+  complete outputs passed provider-independent semantic validation, no
+  bisection ran, four calls used 1,603 input and 275 output tokens and cost USD
+  0.0086685, credentials were cleared, and private and scientific state
+  remained unchanged.
 
 ## Validation strategy
 
@@ -389,6 +395,16 @@ ledger, and outcome SHA-256 hashes remained exact. The real `.env.txt`, all
 owner authorization paths, providers, and private state were not read; R4
 calls and spend remained zero.
 
+Observed for authorized R4 execution: the exact committed Make target
+validated the live authorization and frozen surface before using the strict
+two-name credential loader. The four primary canaries passed in order with
+complete-schema fingerprints `sha256:7c0f24d…3bde4` for OpenAI and
+`sha256:ff20c81b…8ac59` for Anthropic. No bisection ran. The nine-record R4
+ledger validates with zero open intents and totals four calls, 1,603 input
+tokens, 275 output tokens, and USD 0.0086685. R3 hashes remained exact;
+credentials were cleared; private, scientific, paper, ranking, release,
+submission, and base-campaign state remained unchanged.
+
 ## Artifacts produced
 
 - `tasks/treasurebench-provider-schema-conformance.yml`
@@ -400,13 +416,15 @@ calls and spend remained zero.
 - nine serialized request fixtures, including four frozen bisection candidates
 - one exact committed generic AO-0004 owner-gate manifest
 - one schema-valid owner-gate-required handoff
+- one immutable public-safe R4 ledger, outcome record, and schema-valid
+  legitimate-checkpoint handoff
 
 ## Blockers
 
-R1 and R2 remain superseded and R3 is consumed and terminal. None may be
-consumed, reused, reactivated, or appended. The active work is the offline
-M4RRR correction. Credentials, provider calls, private-state access, and R4
-spend remain blocked until a future exact R4 owner authorization exists.
+R1 and R2 remain superseded; R3 and R4 are consumed and terminal. None may be
+reused, reactivated, or appended. Provider-schema conformance passed under R4.
+PR finalization, merge, issue closure, CI, and Pages remain blocked pending
+separately registered owner authority.
 
 ## Recovery and restart instructions
 
@@ -422,6 +440,8 @@ spend caps, and prohibitions; stop on any mismatch.
 
 R1 and R2 were never authorized. R3 was authorized and stopped after its
 bounded six-call sequence without conformance; its records and negative
-outcome remain immutable. The R4 amendment reopens only the public execution
-surface for output-budget and diagnostic repair. R4 credential access,
-provider calls, spend, private state, and scientific state remain zero.
+outcome remain immutable. R4 was separately authorized and reached
+`conformance-pass-both-complete-schemas` after four calls and USD 0.0086685
+with no bisection. Its credentials were cleared and its public-safe ledger is
+terminal; private and scientific state remain unchanged. Closeout and merge
+require separate authority.

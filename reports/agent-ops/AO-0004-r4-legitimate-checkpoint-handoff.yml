@@ -1,0 +1,24 @@
+schema_version: agent-ops-handoff-v1
+status: legitimate-checkpoint
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0004
+issue: 198
+pull_request: 199
+branch: benchmark/treasurebench-provider-schema-conformance
+base_main: 091735a83e3327635d8a3671c65a99a8b8d89cb5
+head_merge_sha: 065bf9b87951e312acc7f8507b3089dc3e7c0a0d
+task_contract: tasks/treasurebench-provider-schema-conformance.yml
+exec_plan: plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE.md
+last_completed_gate: AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R4 executed at frozen commit dcd89bca5daa54386df163439a010583c30134ec. All four ordered canaries passed at 256 tokens, both complete schemas passed provider and semantic validation, no bisection ran, and the terminal decision is conformance-pass-both-complete-schemas.
+next_gate: A separately registered and owner-authorized public-only AO-0004 closeout and PR-merge gate is required before changing PR draft state, merging PR #199, closing issue #198, or deploying Pages.
+decision: r4-public-provider-schema-conformance-pass-closeout-and-merge-remain-separately-unauthorized
+external_calls_cost: {calls: 4, cost: "0.0086685", currency: USD}
+private_state_change: none; the R4 runner created or changed no private campaign, custody, task, answer, seed, key, ciphertext, run, or quarantined state.
+scientific_state_change: none; R4 is public engineering only and created no claim, scientific run, evidence, proof, paper, ranking, release, submission, or base-campaign state.
+validation:
+  profile: infrastructure
+  result: pass-r4-hash-chain-safe-ledger-four-successes-zero-open-intents-zero-bisections-both-complete-semantic-contracts-r3-hashes-exact
+owner_action: Direct a separate public-only AO-0004 closeout and PR-merge gate if PR #199 should be finalized. R4 itself authorizes no rerun, repair, PR state change, merge, issue closure, CI or Pages action.
+exact_next_command: none-authorized-under-r4
+exact_next_file: reports/agent-ops/AO-0004-r4-public-provider-canary-outcome.yml
+blocker: PR merge, issue closure, and Pages deployment are outside the R4 gate and require separately registered owner authority.

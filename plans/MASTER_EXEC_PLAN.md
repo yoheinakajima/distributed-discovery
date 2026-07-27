@@ -47,13 +47,16 @@ invalid-output hash, or validation stage, truncation remains a hypothesis and
 conformance remains false. Every R3 artifact and terminal outcome is
 byte-preserved and its authorization and ledger cannot be reused.
 
-The active owner amendment is now an R4 output-budget and public-safe
-diagnostic repair on the same issue, branch, draft PR, task contract, and
-session. R4 uses a fresh ledger, raises complete-output ceilings to 256 for
-both exact providers, distinguishes fixed failure stages without retaining raw
-output or errors, preserves the canonical semantic contract, and must stop at
-`AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R4`. R4 credential reads, calls,
-private-state access, and spend remain zero before that future authorization.
+The R4 output-budget and public-safe diagnostic repair was authorized and
+executed on the same issue, branch, draft PR, task contract, and session. All
+four ordered canaries passed at the frozen 256-token ceiling, including both
+complete provider transports and independent semantic validation; no
+bisection ran. The terminal decision is
+`conformance-pass-both-complete-schemas` after four calls and USD 0.0086685.
+The safe R4 ledger is complete with no open intent, credentials were cleared,
+and private and scientific state remained unchanged. R4 is now consumed.
+Draft-PR finalization, merge, issue closure, CI, and Pages remain outside R4
+and require separately registered owner authority.
 
 AO-0002, campaign `treasurebench-agents-v1-repair-confirmation-v1`, batch
 `tb-agents-v1-repair-confirmation-v1-b01`, execution commit
