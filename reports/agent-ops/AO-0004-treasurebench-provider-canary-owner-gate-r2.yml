@@ -1,0 +1,96 @@
+schema_version: agent-ops-owner-gate-v1
+kind: owner-gate
+synthetic: false
+gate_id: AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R2
+task_contract:
+  path: tasks/treasurebench-provider-schema-conformance.yml
+  sha256: sha256:eb893370385d12aa1bfb541a464c592ca13852bff06d3366e465e78ac098e09a
+issue: 198
+pull_request:
+  number: 199
+  expected_state: OPEN
+  head_sha: 319bdea525e2bc09feaf481216d3633528158092
+branch: benchmark/treasurebench-provider-schema-conformance
+commit: 319bdea525e2bc09feaf481216d3633528158092
+tree_hashes:
+  Makefile: sha256:2e7587b22d4720ebd983d7f2fa0176ad919ea6cf37a3f8554dbcd3f9b76c1351
+  docs/benchmark/agents-v1/fixtures/provider-schema: sha256:f2a126fa36414c5bbc05dcbb31cf5e5b4fd6d75ba45b91fd7bf3cd9ff15621d3
+  plans/MASTER_EXEC_PLAN.md: sha256:e6bc6c7fb4ef78362ef465965e93c2e1e4b366db6d578c81a4f75de48c3f9b77
+  plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE.md: sha256:cd0572bbb0f078a5ac33db12038a7f29e811921a383d63571414f8b75f769134
+  reports/agent-ops/AO-0004-preauthorization-correction.yml: sha256:d4ddd2c432ed4f27996236a6f267659ee8f378a9db57eb9e96ae4c86ec7a8a40
+  reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate.yml: sha256:ed9f901169c92a7b337ad5beedd271651c0b25560b8e6301c57619528581841b
+  reports/benchmark/treasurebench-agents-v1-provider-schema-conformance-audit.yml: sha256:bac4be7a227d91e0329c0d74fe6f23df9661dbb65b57929acd3f371422393a4e
+  reports/benchmark/treasurebench-agents-v1-provider-schema-conformance-audit.md: sha256:59a0828097878ab1413c9d17f2256c84a1640d1289179f638a6527dcf6077e6a
+  scripts/build_treasurebench_provider_schema_fixtures.py: sha256:2b673fb01b7de13030b5d8c509367c722c1ab7b617bab95d98b9308b4e19aefd
+  src/distributed_discovery/benchmark/agents_v1: sha256:d1900fa7a953f343bc717b616a0bbf0035bab623745a10411eb463d6f0a72e49
+  tasks/treasurebench-provider-schema-conformance.yml: sha256:eb893370385d12aa1bfb541a464c592ca13852bff06d3366e465e78ac098e09a
+  tests/test_agents_v1_live_providers.py: sha256:ea951f597b4baa6de2ce7cada61d22106f50033ae0290468ffea6ae946004c9b
+  tests/unit/test_treasurebench_provider_canary_live.py: sha256:87bf2a31ba05f257af7d1508122a15b2f7283a4cfcdc8d9558189a5d39850a1d
+  tests/unit/test_treasurebench_provider_schema_conformance.py: sha256:5aacc26592db8ae6c62a7d62ab76e8e48a6113bae93f041c2f46c98bab8aa368
+purpose: Authorize only the corrected exact repository-native AO-0004 R2 public provider-schema canary runner at its frozen zero-call, zero-spend execution commit.
+irreversible_actions:
+  - permission: external_action_permissions.spend
+    description: Spend only on the exact direct public canaries within USD 1.00 total, USD 0.50 per provider, ten calls, and expected aggregate cost below USD 0.10.
+private_actions: []
+external_actions:
+  - permission: external_action_permissions.provider_calls
+    description: Run only make treasurebench-provider-schema-canaries with the exact direct routes, pinned models, schemas, sequence, frozen bisections, and stopping rule protected above.
+  - permission: external_action_permissions.network_observation
+    description: Observe and retain only the registered safe structured response metadata written to the append-only public-engineering ledger.
+cumulative_state:
+  currency: USD
+  spend: "0"
+  calls: 0
+  category_spend: {OpenAI: "0", Anthropic: "0"}
+hard_caps:
+  currency: USD
+  spend: "1.00"
+  calls: 10
+  category_spend: {OpenAI: "0.50", Anthropic: "0.50"}
+remaining_caps:
+  currency: USD
+  spend: "1.00"
+  calls: 10
+  category_spend: {OpenAI: "0.50", Anthropic: "0.50"}
+owner_confirmation_statements:
+  - I authorize only AO-0004 R2 at execution commit 319bdea525e2bc09feaf481216d3633528158092, task-contract hash, every protected tree hash, issue #198, draft PR #199, branch, routes, models, sequence, actions, caps, prohibitions, and expiry in this manifest.
+  - I authorize only the exact committed command make treasurebench-provider-schema-canaries and only direct OpenAI gpt-5.4-2026-03-05 and direct Anthropic claude-sonnet-4-6 public canaries, with no aliases, fallbacks, OpenRouter, batch or regional routes, or local models.
+  - I authorize the exact ordered sequence OpenAI minimal, OpenAI complete, Anthropic minimal, Anthropic complete; a minimal failure stops immediately, and a complete failure permits only the two precommitted same-provider bisection schemas in deterministic order before any other provider is called.
+  - I require OpenAI complete transport enforcement of minItems 1 and maxItems 1 plus independent provider-neutral post-parse exactly-one-final-action validation, and I permit no conformance declaration until both complete schemas pass.
+  - I understand expected aggregate cost is bounded below USD 0.10 and the fail-closed hard caps are exactly USD 1.00 total, USD 0.50 per provider, and ten total calls, inclusive of every bisection call.
+  - I authorize only OPENAI_API_KEY and ANTHROPIC_API_KEY as opaque credential inputs to the exact runner; values must not be inspected, displayed, copied, logged, or retained and must be cleared after use.
+  - I authorize only the append-only public-engineering ledger at reports/benchmark/treasurebench-provider-schema-canaries/AO-0004-public-engineering-ledger.jsonl, containing the registered safe fields and no raw output, raw error, credential, authorization, private, or scientific material.
+  - I authorize no private benchmark or campaign state and no private campaign, custody object, task, answer, seed, key, ciphertext, or run.
+  - I preserve permanently every AO-0002 and AO-0003 quarantine record, including the AO-0002 campaign, batch, execution commit, output lock, terminal OpenAI HTTP 400 canary, inactive archived R2 authorization, and sealed-pilot-quarantined-provider-failure decision.
+  - I understand the generic owner-gate command only validates and creates the exact local R2 authorization; it performs no credential access, provider call, spend, private action, or scientific or publication mutation.
+explicit_prohibitions:
+  - provider-calls-outside-manifest
+  - credential-read-outside-manifest
+  - unauthorized-private-access
+  - scientific-mutation-outside-contract
+  - cap-increase
+  - consequential-action-by-gate-engine
+  - use-or-authorization-of-superseded-aog-ao-0004-public-provider-canaries
+  - credential-inspection-display-copy-log-retention-or-mutation
+  - credential-input-other-than-openai-api-key-or-anthropic-api-key
+  - any-private-data-read-write-generation-deletion-or-publication
+  - private-campaign-custody-task-answer-seed-key-ciphertext-or-run-creation
+  - quarantined-campaign-or-batch-retry-repair-reopen-reuse-rescore-reauthorization-or-execution
+  - ao-0002-or-ao-0003-quarantine-record-mutation
+  - ao-0002-authorization-recreation-or-reuse
+  - alias-fallback-openrouter-batch-regional-or-local-model-route
+  - any-model-other-than-gpt-5.4-2026-03-05-or-claude-sonnet-4-6
+  - provider-call-outside-the-staged-sequence-or-two-frozen-same-provider-bisections
+  - ad-hoc-live-schema-editing-or-post-failure-candidate-construction
+  - expected-aggregate-cost-at-or-above-usd-0.10
+  - unrestricted-raw-provider-output-or-error-retention
+  - conformance-declaration-before-both-complete-action-schemas-pass
+  - new-private-pilot-registration-or-execution
+  - dd-023-claim-scientific-run-evidence-or-proof-promotion
+  - paper-pdf-ranking-composite-or-performance-publication
+  - package-release-doi-arxiv-journal-or-submission-action
+  - base-campaign-action
+expires_at_utc: "2026-08-03T19:30:00Z"
+authorization_output_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R2.yml
+next_milestone: M6R owner-authorized exact repository-native public provider-schema canaries.
+generated_resume_message: "Resume AO-0004 in this same Codex session, issue #198, branch benchmark/treasurebench-provider-schema-conformance, ExecPlan, and draft PR #199. Use only reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate-r2.yml and its exact R2 authorization. Do not use the superseded R1 gate. Re-read current official provider terms; validate the R2 authorization, issue, PR, branch, execution commit, contract hash, every protected tree hash, exact routes and models, zero cumulative calls and spend, and remaining caps. Then run exactly make treasurebench-provider-schema-canaries. Stop immediately on any mismatch, open call intent, cap boundary, or minimal-schema failure. If a complete schema fails, permit only the two frozen same-provider bisection calls in order; do not call the other provider. Declare conformance only if both complete schemas pass. Create no private, scientific, paper, ranking, release, submission, or base-campaign state."
