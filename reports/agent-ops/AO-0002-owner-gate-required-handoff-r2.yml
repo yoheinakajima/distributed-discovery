@@ -1,0 +1,24 @@
+schema_version: agent-ops-handoff-v1
+status: owner-gate-required
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0002
+issue: 196
+pull_request: 197
+branch: benchmark/treasurebench-agents-v1-fresh-pilot
+base_main: b6934e6495282b210f0d90b96f63b24bebab454b
+head_merge_sha: a456bd5d13683ec26f68789a9c53e502e0850186
+task_contract: tasks/treasurebench-agents-v1-fresh-pilot.yml
+exec_plan: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT.md
+last_completed_gate: The repaired exact execution commit fe313602df7f4e8ffac1a1a02c2b3a83f3c72943 and committed R2 owner-gate manifest passed live authorization-free validation.
+next_gate: Resume AO-0002 at M6R using reports/agent-ops/AO-0002-treasurebench-fresh-pilot-owner-gate-r2.yml after the owner creates its generic R2 authorization. Re-audit official provider terms, validate authorization and execution trees, then run only the staged fresh DD-010 engineering pilot. Stop on any mismatch, failure, or cap; create no scientific or publication artifact.
+decision: Stop after the execution-sensitive repair and before credentials, fresh private generation, custody, provider calls, or spend; the superseded authorization cannot transfer.
+external_calls_cost: {calls: 0, cost: "0", currency: USD}
+private_state_change: The first authorization was archived locally at mode 0600; no fresh campaign private state or custody was created.
+scientific_state_change: none
+validation:
+  profile: private-evaluation
+  result: pass-447-tests-complete-acceptance-500-run-rehearsal-54-corruptions-r2-live-gate-validation
+owner_action: Review the committed repaired R2 manifest, then run the exact noninteractive generic owner-gate command.
+exact_next_command: "make owner-gate GATE=reports/agent-ops/AO-0002-treasurebench-fresh-pilot-owner-gate-r2.yml OWNER_GATE_CHALLENGE='AUTHORIZE AOG-AO-0002-FRESH-PILOT-R2 fe31360'"
+exact_next_file: reports/agent-ops/AO-0002-treasurebench-fresh-pilot-owner-gate-r2.yml
+blocker: A new exact generic R2 owner authorization is required and absent by design.

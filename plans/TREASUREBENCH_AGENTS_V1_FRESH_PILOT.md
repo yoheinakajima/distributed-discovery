@@ -56,9 +56,9 @@ Live audit at `2026-07-27T05:39:42Z`:
 - the five unrelated untracked preservation files retain their previously
   recorded SHA-256 values.
 
-M6 stopped before execution. The M5R repair and exact execution freeze are
-complete. The superseding `AOG-AO-0002-FRESH-PILOT-R2` manifest and handoff
-remain to be committed and validated before M6R.
+M6 stopped before execution. M5R is complete: the repair, exact execution
+freeze, committed `AOG-AO-0002-FRESH-PILOT-R2` manifest, live gate validation,
+and typed handoff pass. M6R is pending a new exact owner authorization.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -146,7 +146,7 @@ this audit at closeout.
   owner-gate manifest, gate validation, and typed handoff.
 - **M6 — stopped before consequential action:** the owner authorization was
   valid, but the mandatory execution audit found the fresh live-runner gap.
-- **M5R — active:** invalidate the old authorization, implement and validate
+- **M5R — complete:** invalidate the old authorization, implement and validate
   the identity-separated live runner offline, freeze a repaired execution
   commit, and return a new owner-gate-required handoff.
 - **M6R — pending new owner gate:** owner-authorized credentials, private
@@ -176,7 +176,7 @@ this audit at closeout.
 - [x] Complete the offline live-runner repair and expanded corruptions.
 - [x] Pass full acceptance.
 - [x] Freeze the repaired execution commit.
-- [ ] Commit and validate the superseding R2 gate and typed handoff.
+- [x] Commit and validate the superseding R2 gate and typed handoff.
 
 ## Discoveries and surprises
 
@@ -272,6 +272,10 @@ this audit at closeout.
 - `2026-07-27T05:49:00Z`: commit and push the repaired exact execution surface
   as `fe313602df7f4e8ffac1a1a02c2b3a83f3c72943`; the draft PR head matches.
   Freeze the R2 tree hashes and challenge prefix `fe31360`.
+- `2026-07-27T05:50:56Z`: commit the R2 manifest at `a456bd5`, push it, and
+  pass the generic live gate validation against local, remote, and draft-PR
+  state without creating an authorization. The required challenge is
+  `AUTHORIZE AOG-AO-0002-FRESH-PILOT-R2 fe31360`. Complete M5R and stop.
 
 ## Validation strategy
 
@@ -334,21 +338,22 @@ manifest and R2 handoff are pending.
 
 ## Blockers
 
-The R2 owner gate and handoff are pending. Credentials, private generation,
-custody creation, provider calls, and spend remain blocked. The first
-authorization is inactive and cannot transfer to the repaired tree.
+The new exact R2 owner authorization is the only blocker. Credentials, private
+generation, custody creation, provider calls, and spend remain blocked. The
+first authorization is inactive and cannot transfer to the repaired tree.
 
 ## Recovery and restart instructions
 
 Inspect `git status --short --branch`; preserve the five named unrelated
 untracked files; read the root and scoped instructions, fixed contract, this
-plan, issue #196, and draft PR #197. Finish M5R and use only the R2 manifest.
-Resume M6R only after validating its new generic local authorization. Never
-generate private material or call a provider under the superseded gate.
+plan, issue #196, draft PR #197, and the R2 manifest. Resume M6R only after
+validating its new generic local authorization. Never generate private
+material or call a provider under the superseded gate.
 
 ## Outcome and retrospective
 
 Registration through M5 remains historical. M6 stopped safely before any
-consequential action, and M5R is active. Zero credentials, private objects,
-provider calls, or spend occurred. The repaired live path is offline-only
-until a new exact R2 authorization exists.
+consequential action, and M5R is complete. The handoff is
+`owner-gate-required`. Zero credentials, real private objects, provider calls,
+or spend occurred. The repaired live path is offline-only until a new exact R2
+authorization exists.
