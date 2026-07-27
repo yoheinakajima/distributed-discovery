@@ -1,15 +1,31 @@
 schema_version: treasurebench-agents-v1-provider-schema-conformance-audit-v1
 task_id: AO-0004
 owner_study: DD-010
-audited_at_utc: "2026-07-27T19:25:03Z"
-status: corrected-offline-repair-pass-r3-credential-ingress-freeze-pending-public-canaries-not-run
+audited_at_utc: "2026-07-27T21:56:55Z"
+status: r3-terminal-outcome-preserved-r4-output-budget-and-diagnostic-repair-pending-owner-gate
 classification: public-engineering-only-not-scientific-evidence
 activity:
+  scope: r4-repair-only
   credentials_read: 0
   provider_calls: 0
   private_objects_read: 0
   private_objects_created: 0
   spend_usd: "0"
+preserved_r3_execution:
+  gate_id: AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R3
+  execution_commit: 1048c502b205346fef70b06c76975b6ff06b0241
+  decision: stopped-complete-schema-failure-after-fixed-bisection
+  calls: 6
+  input_tokens: 2108
+  output_tokens: 290
+  spend_usd: "0.0104085"
+  openai_complete: pass
+  anthropic_complete: http-200-local-invalid-at-exact-128-token-ceiling
+  anthropic_bisections: [pass, pass]
+  stop_reason_retained: false
+  validation_stage_retained: false
+  exact_anthropic_complete_failure: unresolved
+  artifacts_mutated_by_r4: false
 preserved:
   predecessor_task: AO-0002
   campaign: treasurebench-agents-v1-repair-confirmation-v1
@@ -51,6 +67,9 @@ documentation_audit:
       retryable_registered_statuses: [408, 429, 500, 502, 503, 504]
       automatic_sdk_retry_relied_on: false
       schema_or_parameter_retry_eligible: false
+      incomplete_status: incomplete
+      max_output_token_reason: max_output_tokens
+      refusal_content_detected_separately: true
     standard_price_usd_per_million_tokens: {input: "2.50", output: "15.00"}
     official_sources:
       model: https://developers.openai.com/api/docs/models/gpt-5.4
@@ -88,6 +107,8 @@ documentation_audit:
       official_sdk_default_retries: 2
       automatic_sdk_retry_relied_on: false
       schema_or_parameter_retry_eligible: false
+      normal_stop_reason: end_turn
+      invalid_structured_output_stop_reasons: [max_tokens, refusal]
     standard_price_usd_per_million_tokens: {input: "3.00", output: "15.00"}
     official_sources:
       model: https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions
@@ -110,6 +131,11 @@ diagnosis:
     provider_specific_constraints: supported-by-offline-reconstruction
     empty_nested_object: represented-explicitly-and-covered-by-corruption-test-not-identified-as-cause
     other_parameter_or-complexity_interaction: not-excluded-until-owner-authorized-complete-canary
+  r3_anthropic_complete:
+    observation: The R3 Anthropic complete response returned HTTP 200, consumed exactly the 128-token output ceiling, and failed local validation while both simpler frozen bisections passed.
+    output_truncation_hypothesis: plausible-not-established
+    reason_unresolved: R3 did not retain stop_reason, output hash, or the specific local validation stage for the invalid complete response.
+    prohibited_overclaim: The R3 evidence does not establish max_tokens, JSON truncation, a transport-schema violation, or a semantic-contract violation as the cause.
 compilers:
   canonical_schema_sha256: sha256:2f6556d17144eba1f4ff9c352cf9e24e86fbcc8c228c334a7da9ce33ac4db0a7
   openai_schema_sha256: sha256:7c0f24d097b0330586f5b333274056d7a287f7b48e7c3be327c786246fb3bde4
@@ -134,6 +160,12 @@ safe_error_envelope:
     - rejected_parameter
     - retry_eligible
     - diagnostic_message_sha256
+    - finish_status
+    - finish_reason
+    - diagnostic_classification
+    - validation_stage
+    - bounded_error_code
+    - output_sha256
   prohibited:
     - credentials
     - authorization_headers
@@ -148,7 +180,7 @@ credential_ingress:
   unrelated_names_returned: false
   shell_sourcing_allowed: false
   read_order:
-    - exact R3 authorization and live repository/GitHub surface
+    - exact R4 authorization and live repository/GitHub surface
     - append-only ledger sequence and open-intent state
     - exact next schema call and projected cost caps
     - repository-local credential-file metadata and parsing
@@ -161,13 +193,25 @@ credential_ingress:
   implementation_tests_use_real_file: false
 canary_matrix:
   path: docs/benchmark/agents-v1/fixtures/provider-schema/canary-matrix.json
-  sha256: sha256:0fd3ab4c3542aca1fd9927d5264a4d7968941b9d54e70fa398fb34d314f97862
+  sha256: sha256:e86a42588c8c71bd028e5d0935f133caffa3f84404b96a3bb8d836379f4eee49
   sequence:
     - openai-minimal-known-valid
     - openai-treasurebench-complete
     - anthropic-minimal-known-valid
     - anthropic-treasurebench-complete
   complete_schema_required_for_both: true
+  complete_output_token_ceiling: {openai: 256, anthropic: 256}
+  r4_ledger: reports/benchmark/treasurebench-provider-schema-canaries/AO-0004-public-engineering-ledger-r4.jsonl
+  r3_ledger_reused_or_appended: false
+  diagnostic_classifications: [provider-http-error, refusal, max-tokens, json-decode, transport-schema, semantic-contract, route-model-identity, cost-boundary, pass]
+  projected_cost_usd:
+    both_complete_pass_four_calls: "0.030703"
+    openai_complete_failure_plus_bisection_four_calls: "0.0257075"
+    anthropic_complete_failure_plus_bisection_six_calls: "0.041893"
+    expected_aggregate_strictly_below: "0.10"
+    hard_cap_total: "1.00"
+    hard_cap_per_provider: "0.50"
+    hard_call_cap: 10
   bisection:
     policy: only-after-a-complete-schema-fails-and-only-within-remaining-exact-owner-gate-caps
     openai:
@@ -192,4 +236,4 @@ authority:
   release: false
   submission: false
   base_campaign: false
-next_gate: Freeze the credential-ingress execution commit, supersede the unused R2 gate, and commit the generic AO-0004 R3 owner-gate manifest; stop before credential-file access or provider calls.
+next_gate: Freeze the R4 output-budget and diagnostic execution commit, supersede the consumed R3 authorization without modifying its records, and commit the generic AO-0004 R4 owner-gate manifest; stop before credential-file access or provider calls.

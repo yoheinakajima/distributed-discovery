@@ -38,6 +38,23 @@ surface must be refrozen behind
 unread during implementation and testing; synthetic fixtures only are
 permitted.
 
+R3 was subsequently authorized and reached its terminal registered decision
+after six public calls and USD 0.0104085. OpenAI minimal and complete passed;
+Anthropic minimal passed; Anthropic complete returned HTTP 200, consumed
+exactly the frozen 128-token ceiling, and failed local validation; both frozen
+Anthropic bisections passed. Because R3 retained no stop reason,
+invalid-output hash, or validation stage, truncation remains a hypothesis and
+conformance remains false. Every R3 artifact and terminal outcome is
+byte-preserved and its authorization and ledger cannot be reused.
+
+The active owner amendment is now an R4 output-budget and public-safe
+diagnostic repair on the same issue, branch, draft PR, task contract, and
+session. R4 uses a fresh ledger, raises complete-output ceilings to 256 for
+both exact providers, distinguishes fixed failure stages without retaining raw
+output or errors, preserves the canonical semantic contract, and must stop at
+`AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R4`. R4 credential reads, calls,
+private-state access, and spend remain zero before that future authorization.
+
 AO-0002, campaign `treasurebench-agents-v1-repair-confirmation-v1`, batch
 `tb-agents-v1-repair-confirmation-v1-b01`, execution commit
 `fe313602df7f4e8ffac1a1a02c2b3a83f3c72943`, its one terminal OpenAI HTTP 400,

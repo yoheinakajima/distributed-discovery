@@ -28,6 +28,7 @@ from distributed_discovery.benchmark.agents_v1.provider_schema import (
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE_ROOT = ROOT / "docs/benchmark/agents-v1/fixtures/provider-schema"
+R4_OUTPUT_TOKEN_CEILING = 256
 
 
 def _request(manifest: ModelManifest) -> AdapterRequest:
@@ -45,6 +46,7 @@ def _request(manifest: ModelManifest) -> AdapterRequest:
         round_number=0,
         action_vocabulary=task.action_vocabulary,
         source_vocabulary=task.source_vocabulary,
+        max_output_tokens=R4_OUTPUT_TOKEN_CEILING,
         final_required=True,
     )
 
@@ -156,12 +158,41 @@ def build() -> dict[str, object]:
                 expected_offline_status="pass-diagnostic-only",
             )
     matrix = {
-        "schema_version": "treasurebench-provider-canary-matrix-v1",
+        "schema_version": "treasurebench-provider-canary-matrix-v2",
         "task_id": "AO-0004",
         "public_fixture_index": 2,
         "agent_selection": "lexicographically-first",
         "round": 0,
         "final_required": True,
+        "output_token_ceilings": {
+            "openai": {"minimal": 256, "complete": 256, "bisection": 256},
+            "anthropic": {"minimal": 256, "complete": 256, "bisection": 256},
+        },
+        "diagnostic_classifications": [
+            "provider-http-error",
+            "refusal",
+            "max-tokens",
+            "json-decode",
+            "transport-schema",
+            "semantic-contract",
+            "route-model-identity",
+            "cost-boundary",
+            "pass",
+        ],
+        "ledger_path": (
+            "reports/benchmark/treasurebench-provider-schema-canaries/"
+            "AO-0004-public-engineering-ledger-r4.jsonl"
+        ),
+        "r3_ledger_reuse_allowed": False,
+        "projected_cost_usd": {
+            "both_complete_pass_four_calls": "0.030703",
+            "openai_complete_failure_plus_bisection_four_calls": "0.0257075",
+            "anthropic_complete_failure_plus_bisection_six_calls": "0.041893",
+            "expected_aggregate_strictly_below": "0.10",
+            "hard_cap_total": "1.00",
+            "hard_cap_per_provider": "0.50",
+            "hard_call_cap": 10,
+        },
         "fixtures": fixtures,
         "sequence": [item["canary_id"] for item in public_canary_matrix(openai_request)],
         "bisection_order": bisection_order,

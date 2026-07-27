@@ -60,8 +60,20 @@ Registration audit at `2026-07-27`:
 - R2 was never authorized and is superseded before credential or provider
   access; `reports/agent-ops/AO-0004-r2-credential-ingress-correction.yml`
   records the second amendment;
-- the active offline work is an exact-subset, nonexecuting credential loader
-  and R3 execution refreeze. The real `.env.txt` remains unread.
+- R3 was later authorized and terminated under its frozen stopping rule after
+  six calls and USD 0.0104085: OpenAI minimal/complete and Anthropic minimal
+  passed, Anthropic complete returned HTTP 200 but failed local validation at
+  exactly the 128-token ceiling, and both frozen Anthropic bisections passed;
+- R3 retained neither the Anthropic `stop_reason`, invalid-output hash, nor
+  exact failing validation stage, so output truncation is a bounded hypothesis
+  rather than an established cause;
+- the owner amendment preserves every R3 artifact and terminal outcome
+  byte-for-byte, forbids reuse of its authorization or ledger, and reopens only
+  a fresh R4 output-budget and diagnostic execution freeze;
+- the R4 runner uses a new ledger, 256-token complete-output ceilings, and
+  fixed public-safe result classifications without weakening or normalizing
+  the canonical semantic contract. No R4 credential or authorization has been
+  read and no R4 provider call or spend has occurred.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -98,6 +110,14 @@ ingress after authorization plus sequence/ledger/projected-cap validation,
 and refreezes an R3 surface. This changes no scientific, private, publication,
 task, issue, branch, PR, or session authority, so no new program-memory item is
 due.
+
+The third amendment follows the consumed R3 terminal outcome and does not
+rewrite it. It records the exact 128-token observation as a truncation
+hypothesis only, requires 256-token complete-output ceilings, a fresh R4
+ledger, fixed diagnostic stages and error codes, invalid-output hashing without
+raw retention, and a new R4 owner gate. It creates no new task, issue, branch,
+PR, session, scientific authority, private authority, or publication
+authority, so no new program-memory item is due.
 
 ## Scope
 
@@ -167,14 +187,20 @@ due.
   without authorization, emit the R2 typed handoff, and stop.
 - **M6R — superseded before authorization:** the R2 gate was never consumed;
   the credential-ingress amendment replaces it with M4RR through M6RR.
-- **M4RR — complete, freeze commit pending:** supersede the never-authorized
+- **M4RR — complete:** supersede the never-authorized
   R2 gate, repair exact repository-local credential ingress with synthetic
   tests only, rerun the full wall, and refreeze the R3 execution surface.
-- **M5RR — pending:** commit and validate the R3 owner gate without
-  authorization, emit the R3 typed handoff, and stop.
-- **M6RR — pending owner authorization:** run only the staged public canaries
-  under the exact R3 authorization and stopping rule. This milestone must not
-  start in the credential-ingress repair turn.
+- **M5RR — complete:** the R3 gate and handoff were committed and authorized.
+- **M6RR — complete, stopped:** six R3 calls terminated at
+  `stopped-complete-schema-failure-after-fixed-bisection`; conformance was not
+  declared.
+- **M4RRR — in progress:** preserve R3 byte-for-byte, implement the R4
+  256-token output budget, safe diagnostic classification, fresh ledger, audit,
+  fixtures, and regressions, then refreeze the execution surface.
+- **M5RRR — pending:** commit and validate the R4 owner gate without
+  authorization, emit a new schema-valid R4 handoff, and stop.
+- **M6RRR — pending owner authorization:** run a clean R4 sequence only under
+  the future exact R4 authorization and fresh R4 ledger.
 
 ## Progress checklist
 
@@ -201,7 +227,14 @@ due.
 - [x] Record the R2 credential-ingress owner amendment without reading
   `.env.txt` or consuming either prior gate.
 - [x] Implement and test exact-subset repository-local credential ingress.
-- [ ] Refreeze, supersede R2, and return the validated R3 gate and handoff.
+- [x] Refreeze, supersede R2, and return the validated R3 gate and handoff.
+- [x] Commit, authorize, and execute R3 under the exact frozen stopping rule.
+- [x] Preserve the terminal R3 gate, ledger, and outcome byte-for-byte.
+- [x] Record the R4 output-budget and diagnostic amendment without credential,
+  authorization, provider, private-state, or spend access.
+- [x] Implement the fresh R4 ledger, 256-token complete-output ceiling, safe
+  classifications, validation stages, error codes, and invalid-output hashes.
+- [ ] Refreeze and return the validated but unauthorized R4 gate and handoff.
 
 ## Discoveries and surprises
 
@@ -226,6 +259,10 @@ due.
   imported the prior installed package and failed. The repository Makefile
   already exports `PYTHONPATH=src`; the registered target uses that source
   boundary and now rebuilds byte-identical fixtures.
+- R3's only complete-schema failure consumed exactly its 128-token ceiling,
+  but the v1 ledger did not retain the Anthropic stop reason, invalid-output
+  hash, or validation stage. The evidence supports an output-truncation
+  hypothesis only; R4 makes those observables safe and explicit.
 
 ## Decision log
 
@@ -267,6 +304,14 @@ due.
   logic, require the exact Make command to use repository-local `.env.txt`
   through the strict nonexecuting parser after every authorization, state, and
   projected-cap check, and reopen the freeze as M4RR for an R3 gate.
+- `2026-07-27T20:58:15Z`: preserve the R3 terminal execution: six calls, 2,108
+  input tokens, 290 output tokens, USD 0.0104085, OpenAI complete pass,
+  Anthropic complete HTTP 200 local invalid at exactly 128 output tokens, two
+  successful frozen Anthropic bisections, and no conformance.
+- `2026-07-27T21:56:55Z`: accept the R4 amendment, prohibit R3 gate,
+  authorization, and ledger reuse, preserve its artifacts byte-for-byte,
+  classify truncation only as a hypothesis, raise both complete canary output
+  ceilings to 256, and require a fresh diagnostic ledger and owner gate.
 
 ## Validation strategy
 
@@ -334,6 +379,16 @@ temporary inputs. Neither superseded gate was consumed, the real `.env.txt`
 and authorization paths were not read, no provider or private-state access
 occurred, and spend remained USD 0.
 
+Observed for the M4RRR R4 candidate: nine fixtures rebuilt deterministically;
+100 focused provider-schema, runner, credential-input, and adapter tests
+passed; Ruff passed over 321 files; strict MyPy passed over 192 source files;
+all 514 repository tests passed; 110 claims and 51 run manifests validated;
+all governance, benchmark, publication, and release audits passed; and the
+compendium dry-run verified five assets and seven papers offline. R3 gate,
+ledger, and outcome SHA-256 hashes remained exact. The real `.env.txt`, all
+owner authorization paths, providers, and private state were not read; R4
+calls and spend remained zero.
+
 ## Artifacts produced
 
 - `tasks/treasurebench-provider-schema-conformance.yml`
@@ -348,10 +403,10 @@ occurred, and spend remained USD 0.
 
 ## Blockers
 
-The unused R1 and R2 gates are superseded by owner amendment and may not be
-consumed. The active work is the offline M4RR correction. Credentials,
-provider calls, private-state access, and spend remain blocked until a future
-exact R3 owner authorization exists.
+R1 and R2 remain superseded and R3 is consumed and terminal. None may be
+consumed, reused, reactivated, or appended. The active work is the offline
+M4RRR correction. Credentials, provider calls, private-state access, and R4
+spend remain blocked until a future exact R4 owner authorization exists.
 
 ## Recovery and restart instructions
 
@@ -365,9 +420,8 @@ spend caps, and prohibitions; stop on any mismatch.
 
 ## Outcome and retrospective
 
-The R1 and R2 offline execution surfaces, gates, and handoffs were committed
-but never authorized. The first owner amendment corrected the OpenAI schema
-audit and committed runner. The second supersedes R2 before use and reopens
-AO-0004 only for repository-local credential ingress and an R3 refreeze.
-Credential access, provider calls, spend, private state, and scientific state
-remain zero.
+R1 and R2 were never authorized. R3 was authorized and stopped after its
+bounded six-call sequence without conformance; its records and negative
+outcome remain immutable. The R4 amendment reopens only the public execution
+surface for output-budget and diagnostic repair. R4 credential access,
+provider calls, spend, private state, and scientific state remain zero.

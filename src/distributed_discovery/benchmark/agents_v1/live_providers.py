@@ -415,6 +415,8 @@ class OpenAIResponsesAdapter(LiveAdapterBase):
                 "model": _safe_exact(response.body.get("model"), self.manifest.exact_snapshot),
                 "request_id": _safe_identifier(response.body.get("id")),
                 "finish_status": _safe_status(response.body.get("status")),
+                "finish_reason": _openai_incomplete_reason(response.body),
+                "refusal_present": _openai_refusal_present(response.body),
                 "reasoning_tokens_reported": _openai_reasoning_tokens(response.body),
                 "cached_tokens_reported": _openai_cached_tokens(response.body),
             },
@@ -485,6 +487,8 @@ class AnthropicMessagesAdapter(LiveAdapterBase):
                 "model": _safe_exact(response.body.get("model"), self.manifest.exact_snapshot),
                 "request_id": _safe_identifier(response.body.get("id")),
                 "finish_status": _safe_status(response.body.get("stop_reason")),
+                "finish_reason": None,
+                "refusal_present": response.body.get("stop_reason") == "refusal",
                 "cache_read_input_tokens": _nested_int(
                     response.body, "usage", "cache_read_input_tokens"
                 ),
@@ -836,6 +840,28 @@ def _openai_output_text(body: Mapping[str, object]) -> str:
                 if isinstance(text, str):
                     return text
     return ""
+
+
+def _openai_incomplete_reason(body: Mapping[str, object]) -> str | None:
+    details = body.get("incomplete_details")
+    if not isinstance(details, Mapping):
+        return None
+    return _safe_status(details.get("reason"))
+
+
+def _openai_refusal_present(body: Mapping[str, object]) -> bool:
+    output = body.get("output")
+    if not isinstance(output, Sequence) or isinstance(output, (str, bytes)):
+        return False
+    for item in output:
+        if not isinstance(item, Mapping) or item.get("type") != "message":
+            continue
+        content = item.get("content")
+        if not isinstance(content, Sequence) or isinstance(content, (str, bytes)):
+            continue
+        if any(isinstance(part, Mapping) and part.get("type") == "refusal" for part in content):
+            return True
+    return False
 
 
 def _anthropic_usage(body: Mapping[str, object]) -> tuple[int, int]:

@@ -93,17 +93,23 @@ answer, task key, answer key, task ciphertext, answer ciphertext, or custody
 manifest was created. The campaign and batch cannot be retried, repaired,
 reopened, reused, rescored, executed, or reauthorized.
 
-This is redacted DD-010 engineering status only. AO-0004 and issue #198 now
-own the separately registered **TreasureBench exact provider-schema
-conformance repair and public-canary gate**. Its offline repair separates the
-canonical action contract from provider-specific transport compilers, rejects
-unsupported schemas before paid calls, and preserves provider-independent
-semantic validation. Its R3 repair also binds the exact command to the
+This is redacted DD-010 engineering status only. AO-0004 and issue #198 own
+the separately registered **TreasureBench exact provider-schema conformance
+repair and public-canary gate**. Its R3 public canaries terminated after six
+calls without conformance: OpenAI minimal/complete and Anthropic minimal
+passed, Anthropic complete was HTTP 200 local-invalid at the exact 128-token
+ceiling, and both frozen Anthropic bisections passed. Output truncation remains
+a hypothesis because R3 retained neither stop reason nor validation stage.
+Every R3 artifact remains immutable.
+
+The active R4 amendment keeps the canonical contract unchanged, uses a fresh
+public ledger, raises both complete-output ceilings to 256, and records only
+fixed safe diagnostic stages and output hashes. It remains bound to the
 repository-local protected credential source through a strict nonexecuting
 exact-two-name loader after authorization and cap checks. It must stop at the
-R3 generic owner gate before credentials or public canaries and creates no
-DD-023, claim, scientific run, paper result, performance publication, private
-pilot, or base-campaign authority.
+R4 generic owner gate before credentials or further public canaries and
+creates no DD-023, claim, scientific run, paper result, performance
+publication, private pilot, or base-campaign authority.
 
 ## Registered evaluation campaign
 

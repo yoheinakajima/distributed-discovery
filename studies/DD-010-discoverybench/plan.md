@@ -101,8 +101,17 @@ Anthropic transport compilers omit only unsupported transport constraints,
 while post-parse validation preserves message length, cardinality, uniqueness,
 identity and vocabulary checks; Method C and metric ranges remain mandatory.
 The exact mock matrix and all corruptions must pass before an execution freeze.
-The task then stops at the R3 generic owner gate. Its exact command may read
-only repository-local `.env.txt`, through the strict nonexecuting parser and
-exact OpenAI/Anthropic name subset, after authorization and projected-cap
-validation. No credential, provider call, private object, spend, scientific
-run, claim, or new private pilot is created by the offline milestone.
+R3 later stopped after its bounded six-call public sequence without
+conformance. Its complete Anthropic response used exactly the 128-token
+ceiling but retained no stop reason or validation stage, so truncation is a
+hypothesis only and every R3 artifact remains immutable.
+
+The active R4 repair uses a fresh ledger, fixed safe failure stages,
+invalid-output hashes without raw retention, and a 256-token complete-output
+ceiling for both providers without weakening the semantic contract. The task
+then stops at the R4 generic owner gate. Its exact command may read only
+repository-local `.env.txt`, through the strict nonexecuting parser and exact
+OpenAI/Anthropic name subset, after authorization and projected-cap
+validation. No R4 credential, provider call, private object, spend,
+scientific run, claim, or new private pilot is created by the offline
+milestone.

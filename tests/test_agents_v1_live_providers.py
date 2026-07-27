@@ -171,6 +171,9 @@ def test_openai_payload_and_response_parser() -> None:
     assert result.raw_output == output
     assert result.usage.input_tokens == 100
     assert result.usage.cost_usd == Decimal("0.00085")
+    assert result.operational_metadata["finish_status"] == "completed"
+    assert result.operational_metadata["finish_reason"] is None
+    assert result.operational_metadata["refusal_present"] is False
     assert "synthetic-secret" not in repr(adapter)
     assert "Authorization" not in result.operational_metadata
 
@@ -218,6 +221,87 @@ def test_anthropic_payload_and_response_parser() -> None:
     assert result.operational_metadata["error_locus"] == "none"
     assert result.operational_metadata["http_status"] == 200
     assert result.operational_metadata["retry_eligible"] is False
+    assert result.operational_metadata["finish_status"] == "end_turn"
+    assert result.operational_metadata["finish_reason"] is None
+    assert result.operational_metadata["refusal_present"] is False
+
+
+def test_openai_incomplete_and_refusal_metadata_are_public_safe() -> None:
+    incomplete = OpenAIResponsesAdapter(
+        api_key="synthetic-secret",
+        transport=FakeTransport(
+            HttpResponse(
+                200,
+                {
+                    "id": "resp_safe",
+                    "model": OPENAI_MANIFEST.exact_snapshot,
+                    "status": "incomplete",
+                    "incomplete_details": {"reason": "max_output_tokens"},
+                    "output": [],
+                    "usage": {"input_tokens": 10, "output_tokens": 256},
+                },
+            )
+        ),
+        network_enabled=True,
+        ledger=CostLedger(_authorization()),
+    ).respond(_request(OPENAI_MANIFEST))
+    assert incomplete.operational_metadata["finish_status"] == "incomplete"
+    assert incomplete.operational_metadata["finish_reason"] == "max_output_tokens"
+    assert incomplete.operational_metadata["refusal_present"] is False
+
+    refusal = OpenAIResponsesAdapter(
+        api_key="synthetic-secret",
+        transport=FakeTransport(
+            HttpResponse(
+                200,
+                {
+                    "id": "resp_safe",
+                    "model": OPENAI_MANIFEST.exact_snapshot,
+                    "status": "completed",
+                    "output": [
+                        {
+                            "type": "message",
+                            "content": [{"type": "refusal", "refusal": "not retained"}],
+                        }
+                    ],
+                    "usage": {"input_tokens": 10, "output_tokens": 4},
+                },
+            )
+        ),
+        network_enabled=True,
+        ledger=CostLedger(_authorization()),
+    ).respond(_request(OPENAI_MANIFEST))
+    assert refusal.operational_metadata["refusal_present"] is True
+    assert "not retained" not in json.dumps(refusal.operational_metadata)
+
+
+@pytest.mark.parametrize(
+    ("stop_reason", "expected_refusal"),
+    [("end_turn", False), ("max_tokens", False), ("refusal", True)],
+)
+def test_anthropic_stop_reason_metadata_is_public_safe(
+    stop_reason: str,
+    expected_refusal: bool,
+) -> None:
+    response = AnthropicMessagesAdapter(
+        api_key="synthetic-secret",
+        transport=FakeTransport(
+            HttpResponse(
+                200,
+                {
+                    "id": "msg_safe",
+                    "model": ANTHROPIC_MANIFEST.exact_snapshot,
+                    "stop_reason": stop_reason,
+                    "content": [{"type": "text", "text": "{}"}],
+                    "usage": {"input_tokens": 10, "output_tokens": 4},
+                },
+            )
+        ),
+        network_enabled=True,
+        ledger=CostLedger(_authorization()),
+    ).respond(_request(ANTHROPIC_MANIFEST))
+    assert response.operational_metadata["finish_status"] == stop_reason
+    assert response.operational_metadata["refusal_present"] is expected_refusal
 
 
 def test_provider_error_envelope_preserves_safe_locus_without_raw_body() -> None:

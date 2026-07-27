@@ -1,10 +1,12 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 from collections.abc import Iterator, Mapping
 from copy import deepcopy
 from datetime import UTC, datetime
+from decimal import Decimal
 from pathlib import Path
 from typing import cast
 
@@ -18,9 +20,8 @@ from distributed_discovery.agent_ops.core import (
     sha256_file,
     write_authorization,
 )
-from distributed_discovery.benchmark.agents_v1.live_inputs import (
-    CredentialSet,
-)
+from distributed_discovery.benchmark.agents_v1.adapters import AdapterResponse, Usage
+from distributed_discovery.benchmark.agents_v1.live_inputs import CredentialSet
 from distributed_discovery.benchmark.agents_v1.live_inputs import (
     load_credentials as strict_load_credentials,
 )
@@ -28,13 +29,16 @@ from distributed_discovery.benchmark.agents_v1.live_providers import HttpRequest
 from distributed_discovery.benchmark.agents_v1.provider_canary_live import (
     BRANCH,
     ISSUE_NUMBER,
+    MAX_OUTPUT_TOKENS,
+    PUBLIC_LEDGER_RELATIVE,
     PULL_REQUEST_NUMBER,
-    R3_GATE_ID,
+    R4_GATE_ID,
     CanarySpec,
     PublicEngineeringLedger,
     RuntimeAuthorization,
     _projected_max_cost,
     _request_for_spec,
+    _result_assessment,
     frozen_canary_specs,
     run_provider_schema_canaries,
     validate_runtime_authorization,
@@ -55,7 +59,7 @@ def _gate_and_contract() -> tuple[dict[str, object], dict[str, object]]:
         "schema_version": "agent-ops-owner-gate-v1",
         "kind": "owner-gate",
         "synthetic": False,
-        "gate_id": R3_GATE_ID,
+        "gate_id": R4_GATE_ID,
         "task_contract": {
             "path": "tasks/treasurebench-provider-schema-conformance.yml",
             "sha256": contract_hash,
@@ -71,7 +75,7 @@ def _gate_and_contract() -> tuple[dict[str, object], dict[str, object]]:
         "tree_hashes": {
             "tasks/treasurebench-provider-schema-conformance.yml": hash_path(contract_path)
         },
-        "purpose": "Authorize only the exact synthetic AO-0004 R3 unit-test surface.",
+        "purpose": "Authorize only the exact synthetic AO-0004 R4 unit-test surface.",
         "irreversible_actions": [
             {
                 "permission": "external_action_permissions.spend",
@@ -108,7 +112,7 @@ def _gate_and_contract() -> tuple[dict[str, object], dict[str, object]]:
             "category_spend": {"OpenAI": "0.50", "Anthropic": "0.50"},
         },
         "owner_confirmation_statements": [
-            "I authorize only the exact synthetic AO-0004 R3 unit-test surface."
+            "I authorize only the exact synthetic AO-0004 R4 unit-test surface."
         ],
         "explicit_prohibitions": [
             "provider-calls-outside-manifest",
@@ -120,13 +124,14 @@ def _gate_and_contract() -> tuple[dict[str, object], dict[str, object]]:
             "credential-source-other-than-repository-local-dot-env-txt",
             "credential-input-other-than-openai-api-key-or-anthropic-api-key",
             "shell-sourcing-execution-or-dotenv-interpolation",
+            "use-append-or-reactivation-of-r3-gate-authorization-or-ledger",
         ],
         "expires_at_utc": "2026-08-03T18:00:00Z",
         "authorization_output_symbolic_path": (
-            f"XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/{R3_GATE_ID}.yml"
+            f"XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/{R4_GATE_ID}.yml"
         ),
-        "next_milestone": "Synthetic AO-0004 R3 canary unit test.",
-        "generated_resume_message": "Resume only the synthetic AO-0004 R3 unit test.",
+        "next_milestone": "Synthetic AO-0004 R4 canary unit test.",
+        "generated_resume_message": "Resume only the synthetic AO-0004 R4 unit test.",
     }
     return gate, contract
 
@@ -150,7 +155,7 @@ def _runtime(tmp_path: Path) -> RuntimeAuthorization:
     gate, contract = _gate_and_contract()
     authorization_path, _ = write_authorization(
         gate,
-        f"AUTHORIZE {R3_GATE_ID} {EXECUTION_COMMIT[:7]}",
+        f"AUTHORIZE {R4_GATE_ID} {EXECUTION_COMMIT[:7]}",
         config_root=tmp_path / "config",
         now=NOW,
     )
@@ -314,7 +319,7 @@ class CanaryTransport:
 
 def test_exact_runtime_authorization_validates_generic_surface(tmp_path: Path) -> None:
     runtime = _runtime(tmp_path)
-    assert runtime.gate["gate_id"] == R3_GATE_ID
+    assert runtime.gate["gate_id"] == R4_GATE_ID
     assert runtime.gate["commit"] == EXECUTION_COMMIT
     assert runtime.gate["private_actions"] == []
 
@@ -324,7 +329,7 @@ def test_exact_runtime_authorization_validates_generic_surface(tmp_path: Path) -
     [
         ("issue", 999, "issue"),
         ("branch", "wrong", "branch"),
-        ("gate_id", "AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R2", "R3"),
+        ("gate_id", "AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R3", "R4"),
         (
             "hard_caps",
             {
@@ -388,12 +393,17 @@ def test_complete_runner_sequence_and_public_ledger(tmp_path: Path) -> None:
     )
     ledger = PublicEngineeringLedger(
         ledger_path,
-        gate_id=R3_GATE_ID,
+        gate_id=R4_GATE_ID,
         execution_commit=EXECUTION_COMMIT,
     )
     assert ledger.totals()[0] == 4
     assert all("raw_error_body" not in record for record in ledger.records)
     assert all("synthetic-openai-secret" not in json.dumps(record) for record in ledger.records)
+    results = list(ledger.results().values())
+    assert all(record["diagnostic_classification"] == "pass" for record in results)
+    assert all(record["validation_stage"] == "complete" for record in results)
+    assert all(record["bounded_error_code"] == "none" for record in results)
+    assert all(record["output_sha256"] for record in results)
     assert list(tmp_path.glob("**/public-ledger.jsonl")) == [ledger_path]
 
 
@@ -710,6 +720,212 @@ def test_complete_failure_runs_only_frozen_same_provider_bisection(tmp_path: Pat
     assert "diagnostic_message_sha256" in serialized
 
 
+def test_invalid_output_is_hashed_but_never_retained(tmp_path: Path) -> None:
+    class InvalidJsonTransport(CanaryTransport):
+        def send(self, request: HttpRequest) -> HttpResponse:
+            super().send(request)
+            assert request.url.endswith("/responses")
+            return HttpResponse(
+                200,
+                {
+                    "id": "resp_public",
+                    "model": "gpt-5.4-2026-03-05",
+                    "status": "completed",
+                    "output": [
+                        {
+                            "type": "message",
+                            "content": [{"type": "output_text", "text": "not-json-secret"}],
+                        }
+                    ],
+                    "usage": {"input_tokens": 10, "output_tokens": 4},
+                },
+            )
+
+    ledger_path = tmp_path / "invalid-output.jsonl"
+    result = run_provider_schema_canaries(
+        ROOT,
+        runtime=_runtime(tmp_path),
+        transport=InvalidJsonTransport(),
+        environment=ExactEnvironment(),
+        ledger_path=ledger_path,
+        now=NOW,
+    )
+    assert result["status"] == "stopped-minimal-schema-failure"
+    ledger = PublicEngineeringLedger(
+        ledger_path,
+        gate_id=R4_GATE_ID,
+        execution_commit=EXECUTION_COMMIT,
+    )
+    record = ledger.results()["openai-minimal-known-valid"]
+    assert record["diagnostic_classification"] == "json-decode"
+    assert record["validation_stage"] == "json-decode"
+    assert record["bounded_error_code"] == "invalid-json"
+    assert record["output_sha256"] == ("sha256:" + hashlib.sha256(b"not-json-secret").hexdigest())
+    assert "not-json-secret" not in ledger_path.read_text(encoding="utf-8")
+
+
+def test_fixed_diagnostic_classification_distinguishes_every_stage() -> None:
+    openai_minimal = frozen_canary_specs()[0]
+    anthropic_complete = next(
+        spec
+        for spec in frozen_canary_specs()
+        if spec.canary_id == "anthropic-treasurebench-complete"
+    )
+    minimal_request = _request_for_spec(openai_minimal)
+    complete_request = _request_for_spec(anthropic_complete)
+
+    def response(
+        raw_output: str,
+        *,
+        error_class: str | None = None,
+        finish_status: str = "completed",
+        finish_reason: str | None = None,
+        refusal_present: bool = False,
+        route: str = "openai_direct",
+        model: str = "gpt-5.4-2026-03-05",
+    ) -> AdapterResponse:
+        return AdapterResponse(
+            raw_output,
+            usage=Usage(input_tokens=1, output_tokens=1),
+            error_class=error_class,
+            operational_metadata={
+                "error_contract_version": "agents-provider-error-envelope-v1",
+                "error_locus": "none",
+                "http_status": 200,
+                "retry_eligible": False,
+                "provider_error_type": None,
+                "provider_error_code": None,
+                "rejected_parameter": None,
+                "diagnostic_message_sha256": None,
+                "gateway": route,
+                "route_id": route,
+                "model": model,
+                "finish_status": finish_status,
+                "finish_reason": finish_reason,
+                "refusal_present": refusal_present,
+            },
+        )
+
+    valid_minimal = json.dumps(_value_for_schema(openai_minimal.schema), sort_keys=True)
+    cases = [
+        (
+            response("", error_class="schema-or-parameter"),
+            "provider-http-error",
+            "provider-error",
+        ),
+        (response("", refusal_present=True), "refusal", "provider-refusal"),
+        (
+            response("", finish_status="incomplete", finish_reason="max_output_tokens"),
+            "max-tokens",
+            "output-token-limit",
+        ),
+        (response("{"), "json-decode", "invalid-json"),
+        (response("{}"), "transport-schema", "transport-schema-invalid"),
+        (
+            response(valid_minimal, route="wrong"),
+            "route-model-identity",
+            "route-model-mismatch",
+        ),
+        (response(valid_minimal), "pass", "none"),
+    ]
+    for value, classification, code in cases:
+        assessed = _result_assessment(openai_minimal, minimal_request, value)
+        assert assessed.diagnostic_classification == classification
+        assert assessed.bounded_error_code == code
+
+    semantic_value = _value_for_schema(anthropic_complete.schema)
+    assert isinstance(semantic_value, dict)
+    actions = semantic_value["actions"]
+    assert isinstance(actions, list)
+    actions.append(complete_request.action_vocabulary[1])
+    semantic_response = response(
+        json.dumps(semantic_value, sort_keys=True),
+        finish_status="end_turn",
+        route="anthropic_direct",
+        model="claude-sonnet-4-6",
+    )
+    assessed = _result_assessment(anthropic_complete, complete_request, semantic_response)
+    assert assessed.diagnostic_classification == "semantic-contract"
+    assert assessed.validation_stage == "semantic-contract"
+    assert assessed.bounded_error_code == "semantic-contract-invalid"
+
+
+def test_end_turn_is_distinct_from_max_tokens_and_refusal() -> None:
+    spec = next(
+        item for item in frozen_canary_specs() if item.canary_id == "anthropic-minimal-known-valid"
+    )
+    request = _request_for_spec(spec)
+    raw_output = json.dumps(_value_for_schema(spec.schema), sort_keys=True)
+
+    def anthropic(status: str) -> AdapterResponse:
+        return AdapterResponse(
+            raw_output,
+            operational_metadata={
+                "gateway": "anthropic_direct",
+                "route_id": "anthropic_direct",
+                "model": "claude-sonnet-4-6",
+                "finish_status": status,
+                "finish_reason": None,
+                "refusal_present": status == "refusal",
+            },
+        )
+
+    assert (
+        _result_assessment(spec, request, anthropic("end_turn")).diagnostic_classification == "pass"
+    )
+    assert (
+        _result_assessment(spec, request, anthropic("max_tokens")).diagnostic_classification
+        == "max-tokens"
+    )
+    assert (
+        _result_assessment(spec, request, anthropic("refusal")).diagnostic_classification
+        == "refusal"
+    )
+
+
+def test_r4_output_ceiling_cost_projection_and_fresh_ledger_are_frozen() -> None:
+    specs = frozen_canary_specs()
+    assert MAX_OUTPUT_TOKENS == 256
+    for spec in specs:
+        request = _request_for_spec(spec)
+        assert request.max_output_tokens == 256
+        payload = canary_module._payload(spec, request)
+        ceiling = (
+            payload["max_output_tokens"] if spec.provider == "openai" else payload["max_tokens"]
+        )
+        assert ceiling == 256
+    worst_case = [spec for spec in specs if not spec.bisection or spec.provider == "anthropic"]
+    projected = sum(
+        (_projected_max_cost(spec, _request_for_spec(spec))[1] for spec in worst_case),
+        start=Decimal(),
+    )
+    assert len(worst_case) == 6
+    assert projected == Decimal("0.041893")
+    assert projected < canary_module.EXPECTED_COST_LIMIT_USD
+    assert str(PUBLIC_LEDGER_RELATIVE).endswith("AO-0004-public-engineering-ledger-r4.jsonl")
+    assert str(PUBLIC_LEDGER_RELATIVE) != (
+        "reports/benchmark/treasurebench-provider-schema-canaries/"
+        "AO-0004-public-engineering-ledger.jsonl"
+    )
+
+
+def test_consumed_r3_artifacts_remain_byte_identical() -> None:
+    expected = {
+        "reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate-r3.yml": (
+            "650b179ae6c19c3b7b38291c5b08878628b07fdee1516d4959cb55c8adc8dcb0"
+        ),
+        (
+            "reports/benchmark/treasurebench-provider-schema-canaries/"
+            "AO-0004-public-engineering-ledger.jsonl"
+        ): "687ea038fd2de2afeb4b4beee905d139ab42aa50d7384fbfc9b1f65e72c2d4be",
+        "reports/agent-ops/AO-0004-public-provider-canary-outcome.yml": (
+            "f55bc57986a565413de4bd920475875624e32b716effdac753c8908c12230b0d"
+        ),
+    }
+    for relative, digest in expected.items():
+        assert hashlib.sha256((ROOT / relative).read_bytes()).hexdigest() == digest
+
+
 def test_minimal_failure_stops_before_complete_and_other_provider(tmp_path: Path) -> None:
     transport = CanaryTransport(failure_ids=frozenset({"openai-minimal-known-valid"}))
     result = run_provider_schema_canaries(
@@ -782,7 +998,7 @@ def test_invalid_sequence_precedes_credential_access(tmp_path: Path) -> None:
     ledger_path = tmp_path / "invalid-sequence.jsonl"
     ledger = PublicEngineeringLedger(
         ledger_path,
-        gate_id=R3_GATE_ID,
+        gate_id=R4_GATE_ID,
         execution_commit=EXECUTION_COMMIT,
     )
     ledger.append(
@@ -814,7 +1030,7 @@ def test_projected_cap_failure_precedes_credential_access(tmp_path: Path) -> Non
     ledger_path = tmp_path / "projected-cap.jsonl"
     ledger = PublicEngineeringLedger(
         ledger_path,
-        gate_id=R3_GATE_ID,
+        gate_id=R4_GATE_ID,
         execution_commit=EXECUTION_COMMIT,
     )
     intent = ledger.append(
@@ -866,7 +1082,7 @@ def test_public_ledger_rejects_unsafe_raw_error_field(tmp_path: Path) -> None:
     path = tmp_path / "unsafe.jsonl"
     ledger = PublicEngineeringLedger(
         path,
-        gate_id=R3_GATE_ID,
+        gate_id=R4_GATE_ID,
         execution_commit=EXECUTION_COMMIT,
     )
     with pytest.raises(ValueError, match="unsafe"):
@@ -884,7 +1100,7 @@ def test_public_ledger_rejects_hash_chain_tampering(tmp_path: Path) -> None:
     path = tmp_path / "tampered.jsonl"
     ledger = PublicEngineeringLedger(
         path,
-        gate_id=R3_GATE_ID,
+        gate_id=R4_GATE_ID,
         execution_commit=EXECUTION_COMMIT,
     )
     ledger.append(
@@ -905,7 +1121,7 @@ def test_public_ledger_rejects_hash_chain_tampering(tmp_path: Path) -> None:
     with pytest.raises(ValueError, match="hash"):
         PublicEngineeringLedger(
             path,
-            gate_id=R3_GATE_ID,
+            gate_id=R4_GATE_ID,
             execution_commit=EXECUTION_COMMIT,
         )
 
@@ -913,7 +1129,7 @@ def test_public_ledger_rejects_hash_chain_tampering(tmp_path: Path) -> None:
 def test_expected_cost_cap_rejects_next_call(tmp_path: Path) -> None:
     ledger = PublicEngineeringLedger(
         tmp_path / "caps.jsonl",
-        gate_id=R3_GATE_ID,
+        gate_id=R4_GATE_ID,
         execution_commit=EXECUTION_COMMIT,
     )
     spec: CanarySpec = frozen_canary_specs()[0]

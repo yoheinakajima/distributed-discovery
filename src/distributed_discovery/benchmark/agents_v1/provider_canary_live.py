@@ -65,20 +65,21 @@ TASK_ID = "AO-0004"
 ISSUE_NUMBER = 198
 PULL_REQUEST_NUMBER = 199
 BRANCH = "benchmark/treasurebench-provider-schema-conformance"
-R3_GATE_ID = "AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R3"
-R3_GATE_RELATIVE = Path("reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate-r3.yml")
+R4_GATE_ID = "AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R4"
+R4_GATE_RELATIVE = Path("reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate-r4.yml")
 CREDENTIAL_RELATIVE = Path(".env.txt")
 CREDENTIAL_NAMES = ("OPENAI_API_KEY", "ANTHROPIC_API_KEY")
 PUBLIC_LEDGER_RELATIVE = Path(
     "reports/benchmark/treasurebench-provider-schema-canaries/"
-    "AO-0004-public-engineering-ledger.jsonl"
+    "AO-0004-public-engineering-ledger-r4.jsonl"
 )
 EXPECTED_COST_LIMIT_USD = Decimal("0.10")
-MAX_OUTPUT_TOKENS = 128
-LEDGER_VERSION = "treasurebench-provider-canary-ledger-v1"
+MAX_OUTPUT_TOKENS = 256
+LEDGER_VERSION = "treasurebench-provider-canary-ledger-v2"
 _PROVIDERS = (OPENAI_PROVIDER, ANTHROPIC_PROVIDER)
-_R3_REQUIRED_PROHIBITIONS = frozenset(
+_R4_REQUIRED_PROHIBITIONS = frozenset(
     {
+        "use-append-or-reactivation-of-r3-gate-authorization-or-ledger",
         "credential-source-other-than-repository-local-dot-env-txt",
         "credential-input-other-than-openai-api-key-or-anthropic-api-key",
         "shell-sourcing-execution-or-dotenv-interpolation",
@@ -93,6 +94,45 @@ _SAFE_ERROR_FIELDS = (
     "provider_error_code",
     "rejected_parameter",
     "diagnostic_message_sha256",
+)
+_DIAGNOSTIC_CLASSIFICATIONS = frozenset(
+    {
+        "cost-boundary",
+        "provider-http-error",
+        "refusal",
+        "max-tokens",
+        "json-decode",
+        "transport-schema",
+        "semantic-contract",
+        "route-model-identity",
+        "pass",
+    }
+)
+_VALIDATION_STAGES = frozenset(
+    {
+        "cost-boundary",
+        "provider-http",
+        "route-model-identity",
+        "provider-refusal",
+        "output-completeness",
+        "json-decode",
+        "transport-schema",
+        "semantic-contract",
+        "complete",
+    }
+)
+_BOUNDED_ERROR_CODES = frozenset(
+    {
+        "cost-boundary-exceeded",
+        "provider-error",
+        "provider-refusal",
+        "output-token-limit",
+        "invalid-json",
+        "transport-schema-invalid",
+        "semantic-contract-invalid",
+        "route-model-mismatch",
+        "none",
+    }
 )
 _LEDGER_KEYS = frozenset(
     {
@@ -111,9 +151,16 @@ _LEDGER_KEYS = frozenset(
         "model",
         "schema_fingerprint",
         "schema_role",
+        "max_output_tokens",
         "intent_record_hash",
         "projected_max_cost_usd",
         "status",
+        "diagnostic_classification",
+        "validation_stage",
+        "bounded_error_code",
+        "finish_status",
+        "finish_reason",
+        "retry_eligible",
         "input_tokens",
         "output_tokens",
         "cost_usd",
@@ -129,7 +176,7 @@ _LEDGER_KEYS = frozenset(
 
 @dataclass(frozen=True)
 class RuntimeAuthorization:
-    """Validated generic Agent Operations authorization and exact R3 gate."""
+    """Validated generic Agent Operations authorization and exact R4 gate."""
 
     gate: Mapping[str, object]
     contract: Mapping[str, object]
@@ -149,8 +196,19 @@ class CanarySpec:
     bisection: bool = False
 
 
+@dataclass(frozen=True)
+class ResultAssessment:
+    status: str
+    diagnostic_classification: str
+    validation_stage: str
+    bounded_error_code: str
+    safe_error: Mapping[str, object]
+    finish_status: str | None
+    finish_reason: str | None
+
+
 class PublicEngineeringLedger:
-    """Hash-chained append-only public metadata; raw outputs and errors are prohibited."""
+    """R4 hash-chained public metadata; raw outputs and errors are prohibited."""
 
     def __init__(self, path: Path, *, gate_id: str, execution_commit: str) -> None:
         self.path = path
@@ -195,6 +253,15 @@ class PublicEngineeringLedger:
                     raise ValueError("public canary ledger safe error must be an object")
                 if set(safe_error) - set(_SAFE_ERROR_FIELDS):
                     raise ValueError("public canary ledger contains unsafe error fields")
+            classification = loaded.get("diagnostic_classification")
+            if classification is not None and classification not in _DIAGNOSTIC_CLASSIFICATIONS:
+                raise ValueError("public canary ledger diagnostic classification is not registered")
+            stage = loaded.get("validation_stage")
+            if stage is not None and stage not in _VALIDATION_STAGES:
+                raise ValueError("public canary ledger validation stage is not registered")
+            error_code = loaded.get("bounded_error_code")
+            if error_code is not None and error_code not in _BOUNDED_ERROR_CODES:
+                raise ValueError("public canary ledger error code is not registered")
             records.append(loaded)
             previous = str(actual_hash)
         return records
@@ -333,12 +400,12 @@ def validate_runtime_authorization(
     issue_state: str,
     now: datetime,
 ) -> RuntimeAuthorization:
-    """Validate the exact generic gate, live GitHub surface, and R3 authorization."""
+    """Validate the exact generic gate, live GitHub surface, and R4 authorization."""
     gate_value = dict(gate)
     contract_value = dict(contract)
     authorization_value = dict(authorization)
-    if gate_value.get("gate_id") != R3_GATE_ID:
-        raise PermissionError("only the AO-0004 R3 owner gate is executable")
+    if gate_value.get("gate_id") != R4_GATE_ID:
+        raise PermissionError("only the AO-0004 R4 owner gate is executable")
     if gate_value.get("issue") != ISSUE_NUMBER or issue_number != ISSUE_NUMBER:
         raise PermissionError("AO-0004 live issue identity mismatch")
     if issue_state != "OPEN":
@@ -351,10 +418,10 @@ def validate_runtime_authorization(
     if gate_value.get("private_actions") != []:
         raise PermissionError("AO-0004 public canary gate must authorize no private action")
     prohibitions = gate_value.get("explicit_prohibitions")
-    if not isinstance(prohibitions, list) or not _R3_REQUIRED_PROHIBITIONS.issubset(
+    if not isinstance(prohibitions, list) or not _R4_REQUIRED_PROHIBITIONS.issubset(
         set(prohibitions)
     ):
-        raise PermissionError("AO-0004 R3 credential-ingress prohibitions are incomplete")
+        raise PermissionError("AO-0004 R4 execution prohibitions are incomplete")
     _validate_exact_gate_caps(gate_value)
     validate_gate_surface(gate_value, contract_value, observation, root=repo)
     validate(authorization_value, "owner-authorization.schema.json")
@@ -420,15 +487,15 @@ def load_live_runtime_authorization(
     *,
     now: datetime | None = None,
 ) -> RuntimeAuthorization:
-    """Load R3 only after validating the exact live branch, PR, and protected trees."""
-    gate = load_yaml(repo / R3_GATE_RELATIVE)
+    """Load R4 only after validating the exact live branch, PR, and protected trees."""
+    gate = load_yaml(repo / R4_GATE_RELATIVE)
     contract_path = gate.get("task_contract")
     if not isinstance(contract_path, Mapping):
         raise PermissionError("AO-0004 gate task contract is malformed")
     contract = load_yaml(repo / str(contract_path["path"]))
     observation = collect_gate_observation(dict(gate))
     issue_number, issue_state = _live_issue(repo)
-    path = _authorization_path(R3_GATE_ID)
+    path = _authorization_path(R4_GATE_ID)
     metadata = path.lstat()
     if stat.S_ISLNK(metadata.st_mode) or not stat.S_ISREG(metadata.st_mode):
         raise PermissionError("AO-0004 authorization must be a regular non-symlink file")
@@ -648,7 +715,7 @@ def _preflight_cost_ledger(runtime: RuntimeAuthorization) -> CostLedger:
     category = hard["category_spend"]
     assert isinstance(category, Mapping)
     authorization = PreflightAuthorization(
-        authorization_id=R3_GATE_ID,
+        authorization_id=R4_GATE_ID,
         authorized_base_commit=str(gate["commit"]),
         allowed_branch=BRANCH,
         expires_utc=_parse_time(gate["expires_at_utc"]),
@@ -747,42 +814,121 @@ def _diagnostic_hash(error: Exception) -> str:
     return f"sha256:{hashlib.sha256(bounded).hexdigest()}"
 
 
-def _result_status(
+def _safe_finish_value(value: object) -> str | None:
+    return value if isinstance(value, str) and value else None
+
+
+def _assessment(
+    *,
+    status: str,
+    classification: str,
+    stage: str,
+    code: str,
+    response: AdapterResponse,
+    error: Exception | None = None,
+) -> ResultAssessment:
+    safe_error = dict(_safe_error(response))
+    if error is not None:
+        safe_error["diagnostic_message_sha256"] = _diagnostic_hash(error)
+    return ResultAssessment(
+        status=status,
+        diagnostic_classification=classification,
+        validation_stage=stage,
+        bounded_error_code=code,
+        safe_error=safe_error,
+        finish_status=_safe_finish_value(response.operational_metadata.get("finish_status")),
+        finish_reason=_safe_finish_value(response.operational_metadata.get("finish_reason")),
+    )
+
+
+def _result_assessment(
     spec: CanarySpec,
     request: AdapterRequest,
     response: AdapterResponse,
-) -> tuple[str, Mapping[str, object]]:
+) -> ResultAssessment:
     if response.error_class is not None:
-        return "error", _safe_error(response)
+        return _assessment(
+            status="error",
+            classification="provider-http-error",
+            stage="provider-http",
+            code="provider-error",
+            response=response,
+        )
     metadata = response.operational_metadata
     if (
         metadata.get("gateway") != spec.route
         or metadata.get("route_id") != spec.route
         or metadata.get("model") != spec.model
     ):
-        return (
-            "invalid",
-            {
-                **_safe_error(response),
-                "diagnostic_message_sha256": _diagnostic_hash(
-                    ValueError("provider route or model identity mismatch")
-                ),
-            },
+        return _assessment(
+            status="invalid",
+            classification="route-model-identity",
+            stage="route-model-identity",
+            code="route-model-mismatch",
+            response=response,
+            error=ValueError("provider route or model identity mismatch"),
+        )
+    finish_status = metadata.get("finish_status")
+    finish_reason = metadata.get("finish_reason")
+    if metadata.get("refusal_present") is True or finish_status == "refusal":
+        return _assessment(
+            status="invalid",
+            classification="refusal",
+            stage="provider-refusal",
+            code="provider-refusal",
+            response=response,
+        )
+    if finish_status == "max_tokens" or (
+        finish_status == "incomplete" and finish_reason == "max_output_tokens"
+    ):
+        return _assessment(
+            status="invalid",
+            classification="max-tokens",
+            stage="output-completeness",
+            code="output-token-limit",
+            response=response,
         )
     try:
         parsed = json.loads(response.raw_output)
-        jsonschema.validate(parsed, spec.schema)
-        if spec.complete:
-            validate_action_semantics(response.raw_output, request)
-    except (ValueError, jsonschema.ValidationError) as error:
-        return (
-            "invalid",
-            {
-                **_safe_error(response),
-                "diagnostic_message_sha256": _diagnostic_hash(error),
-            },
+    except json.JSONDecodeError as error:
+        return _assessment(
+            status="invalid",
+            classification="json-decode",
+            stage="json-decode",
+            code="invalid-json",
+            response=response,
+            error=error,
         )
-    return "success", _safe_error(response)
+    try:
+        jsonschema.validate(parsed, spec.schema)
+    except jsonschema.ValidationError as error:
+        return _assessment(
+            status="invalid",
+            classification="transport-schema",
+            stage="transport-schema",
+            code="transport-schema-invalid",
+            response=response,
+            error=error,
+        )
+    if spec.complete:
+        try:
+            validate_action_semantics(response.raw_output, request)
+        except ValueError as error:
+            return _assessment(
+                status="invalid",
+                classification="semantic-contract",
+                stage="semantic-contract",
+                code="semantic-contract-invalid",
+                response=response,
+                error=error,
+            )
+    return _assessment(
+        status="success",
+        classification="pass",
+        stage="complete",
+        code="none",
+        response=response,
+    )
 
 
 def _stopping_decision(spec: CanarySpec, status: str) -> str:
@@ -842,7 +988,7 @@ def run_provider_schema_canaries(
     ledger_path: Path | None = None,
     now: datetime | None = None,
 ) -> Mapping[str, object]:
-    """Run or resume only the exact R3-authorized public schema canaries."""
+    """Run or resume only the exact R4-authorized public schema canaries."""
     timestamp = now or datetime.now(UTC)
     live_mode = runtime is None
     active = runtime or load_live_runtime_authorization(repo, now=timestamp)
@@ -906,6 +1052,7 @@ def run_provider_schema_canaries(
                     "model": spec.model,
                     "schema_fingerprint": schema_fingerprint(spec.schema),
                     "schema_role": spec.schema_role,
+                    "max_output_tokens": request.max_output_tokens,
                     "projected_max_cost_usd": str(projected),
                     "stopping_decision": "pending-provider-response",
                 },
@@ -943,17 +1090,23 @@ def run_provider_schema_canaries(
                 adapter.clear_secret()
             if credentials is not None:
                 credentials.clear()
-        status, safe_error = _result_status(spec, request, response)
+        assessment = _result_assessment(spec, request, response)
         prior_total = ledger.totals()[1]
         actual_cost = response.usage.cost_usd
         if actual_cost > projected or prior_total + actual_cost >= EXPECTED_COST_LIMIT_USD:
-            status = "invalid"
-            safe_error = {
-                **safe_error,
-                "diagnostic_message_sha256": _diagnostic_hash(
-                    ValueError("provider usage exceeded the frozen projected cost boundary")
-                ),
-            }
+            assessment = _assessment(
+                status="invalid",
+                classification="cost-boundary",
+                stage="cost-boundary",
+                code="cost-boundary-exceeded",
+                response=response,
+                error=ValueError("provider usage exceeded the frozen projected cost boundary"),
+            )
+        raw_output_hash = (
+            None
+            if assessment.diagnostic_classification == "provider-http-error"
+            else f"sha256:{hashlib.sha256(response.raw_output.encode()).hexdigest()}"
+        )
         ledger.append(
             {
                 "event_type": "call-result",
@@ -963,18 +1116,21 @@ def run_provider_schema_canaries(
                 "model": spec.model,
                 "schema_fingerprint": schema_fingerprint(spec.schema),
                 "schema_role": spec.schema_role,
+                "max_output_tokens": request.max_output_tokens,
                 "intent_record_hash": str(intent["record_hash"]),
-                "status": status,
+                "status": assessment.status,
+                "diagnostic_classification": assessment.diagnostic_classification,
+                "validation_stage": assessment.validation_stage,
+                "bounded_error_code": assessment.bounded_error_code,
+                "finish_status": assessment.finish_status,
+                "finish_reason": assessment.finish_reason,
+                "retry_eligible": bool(assessment.safe_error.get("retry_eligible")),
                 "input_tokens": response.usage.input_tokens,
                 "output_tokens": response.usage.output_tokens,
                 "cost_usd": str(actual_cost),
-                "safe_error": dict(safe_error),
-                "output_sha256": (
-                    f"sha256:{hashlib.sha256(response.raw_output.encode()).hexdigest()}"
-                    if status == "success"
-                    else None
-                ),
-                "stopping_decision": _stopping_decision(spec, status),
+                "safe_error": dict(assessment.safe_error),
+                "output_sha256": raw_output_hash,
+                "stopping_decision": _stopping_decision(spec, assessment.status),
             },
             now=timestamp,
         )
