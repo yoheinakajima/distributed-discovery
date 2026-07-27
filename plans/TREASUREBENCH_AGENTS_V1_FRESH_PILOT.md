@@ -26,6 +26,8 @@ Live audit at `2026-07-27T05:39:42Z`:
 - superseded execution commit `1974e74c0222329d01e36d8d804d5262ea08376d`;
 - superseded gate-manifest commit
   `cce090ea64ae88db1bb617aa5c0846838e6e4783`;
+- repaired exact execution commit
+  `fe313602df7f4e8ffac1a1a02c2b3a83f3c72943`;
 - starting `main` and `origin/main`
   `b6934e6495282b210f0d90b96f63b24bebab454b`;
 - no substantive pull request was open at registration;
@@ -54,9 +56,9 @@ Live audit at `2026-07-27T05:39:42Z`:
 - the five unrelated untracked preservation files retain their previously
   recorded SHA-256 values.
 
-M6 stopped before execution. M5R is active: repair the fresh live path
-offline, repeat acceptance, freeze a new exact execution commit, and commit
-the superseding `AOG-AO-0002-FRESH-PILOT-R2` gate.
+M6 stopped before execution. The M5R repair and exact execution freeze are
+complete. The superseding `AOG-AO-0002-FRESH-PILOT-R2` manifest and handoff
+remain to be committed and validated before M6R.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -173,7 +175,7 @@ this audit at closeout.
 - [x] Re-audit current official provider terms.
 - [x] Complete the offline live-runner repair and expanded corruptions.
 - [x] Pass full acceptance.
-- [ ] Freeze the repaired execution commit.
+- [x] Freeze the repaired execution commit.
 - [ ] Commit and validate the superseding R2 gate and typed handoff.
 
 ## Discoveries and surprises
@@ -267,6 +269,9 @@ this audit at closeout.
   source files, all 447 tests, 110 claims, 51 run manifests, every required
   audit, seven PDFs totaling 119 pages, and the offline release dry run.
   Provider calls, credentials, real private objects, and spend remain zero.
+- `2026-07-27T05:49:00Z`: commit and push the repaired exact execution surface
+  as `fe313602df7f4e8ffac1a1a02c2b3a83f3c72943`; the draft PR head matches.
+  Freeze the R2 tree hashes and challenge prefix `fe31360`.
 
 ## Validation strategy
 
@@ -323,15 +328,15 @@ record. M4 and M5 add draft PR #197, complete acceptance, superseded execution c
 `reports/agent-ops/AO-0002-treasurebench-fresh-pilot-owner-gate.yml`, and the
 typed owner-gate-required handoff. M5R adds the identity-separated staged live
 runner, fresh private-state schema/root, exact cap enforcement, replay-only
-post-lock verification, and expanded runtime corruptions; its repaired commit,
-R2 manifest, and R2 handoff are pending.
+post-lock verification, and expanded runtime corruptions. The repaired exact
+execution commit is `fe313602df7f4e8ffac1a1a02c2b3a83f3c72943`; the R2
+manifest and R2 handoff are pending.
 
 ## Blockers
 
-The repaired execution freeze and R2 owner gate are pending. Credentials,
-private generation, custody creation, provider calls, and spend remain
-blocked. The first authorization is inactive and cannot transfer to the
-repaired tree.
+The R2 owner gate and handoff are pending. Credentials, private generation,
+custody creation, provider calls, and spend remain blocked. The first
+authorization is inactive and cannot transfer to the repaired tree.
 
 ## Recovery and restart instructions
 

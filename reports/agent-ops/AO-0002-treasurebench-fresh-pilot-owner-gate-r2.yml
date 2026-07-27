@@ -1,0 +1,85 @@
+schema_version: agent-ops-owner-gate-v1
+kind: owner-gate
+synthetic: false
+gate_id: AOG-AO-0002-FRESH-PILOT-R2
+task_contract:
+  path: tasks/treasurebench-agents-v1-fresh-pilot.yml
+  sha256: sha256:18e213259a4eeb2db7829d5f18b098e5f54d4bf04fc872b980096e7b28d3f8fa
+issue: 196
+pull_request:
+  number: 197
+  expected_state: OPEN
+  head_sha: fe313602df7f4e8ffac1a1a02c2b3a83f3c72943
+branch: benchmark/treasurebench-agents-v1-fresh-pilot
+commit: fe313602df7f4e8ffac1a1a02c2b3a83f3c72943
+tree_hashes:
+  src/distributed_discovery/agent_ops: sha256:84a44c60d7c7a6a159c8beb5cfb8bc25b19bcae8992c1781fa396225d9f11376
+  src/distributed_discovery/benchmark/agents_v1: sha256:baf72a89bd583c401d0de5c2055e634855022d9ba2c5d63a9bb67b830aa1b9a4
+  src/distributed_discovery/cli.py: sha256:0227911d8eb6eadc04cf525614900eb809e5553282664c47d55e57ae2c9dea22
+  scripts/audit_agent_ops.py: sha256:336d9e0735f8fe2acc93268053d09f3af4089f189c582882eac084dd607bca29
+  scripts/audit_treasurebench_agents_v1_fresh_pilot.py: sha256:af4ea2b542b2d534d7ad1d525cb1cdb1c34b5dcb57e5562ddb197e04a38c4803
+  docs/agent-ops: sha256:fe94862b1b7cad4d472a9e7b3e25749c7311986ec062a4040e8031621ab190f1
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-allocation.yml: sha256:fe7b71ede55c08227fe3ad2c6606f763aa245a2affbd8d4fe4ebc8f020f771f6
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-allocation.schema.json: sha256:be336c99c0ed43a841357cb20a9886bb6892556004ae2fefc842e903297d8580
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-request.yml: sha256:367b4e790bd649903524e09d449bdd68db2852a4e2bf389d285179fb46636b7a
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-request.schema.json: sha256:780149d0dd1a22e6ea19df7b631f831b9ea822aa21abad6732fc79682207e26c
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-private-state.schema.json: sha256:dd7ed9f18c6b84ecff4bf64602c6316fef66248a19064359ccee9e69df542132
+  docs/benchmark/agents-v1/prospective-failure-policy.yml: sha256:ccf8df148759a18319e2bd3c13640dbe7d17efefb45e6f4f925b2d83c7d44780
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-provider-audit.yml: sha256:5bc88c4d2e069159f8b18149e310d5c619005aacdc35dc4f6d0fd5c3f6fbdda1
+  tests/test_treasurebench_agents_v1_fresh_pilot.py: sha256:ac1db54c8f1484724536d47c114edb7fd14ba01a6cff9fd4bcd39541df07cb17
+  tests/unit/test_discoverybench_agents.py: sha256:c0c73fc87de0818a5beef0f587ef7cb7237ca98a1a9e474c238471bba69dd57b
+  Makefile: sha256:f17309514c40e77db4c82b75a064295358944aae4a8f76783f5fff8878de36e4
+purpose: Authorize only the repaired, identity-separated fresh DD-010 TreasureBench repair-confirmation pilot at the exact R2 execution surface.
+irreversible_actions:
+  - permission: private_data_permissions.generate
+    description: Create one new OS-CSPRNG seed, 50 new tasks and answers, independent encryption keys, and new campaign custody.
+private_actions:
+  - permission: private_data_permissions.read
+    description: Read only OPENAI_API_KEY and ANTHROPIC_API_KEY from the declared credential source after authorization.
+  - permission: private_data_permissions.write
+    description: Write only the new encrypted repair-confirmation state, ledgers, traces, locks, and private audit package outside Git.
+  - permission: private_data_permissions.generate
+    description: Generate only the new repair-confirmation campaign material and never reuse quarantined, future-base, or base identities.
+external_actions:
+  - permission: external_action_permissions.provider_calls
+    description: Make only direct OpenAI Responses and direct Anthropic Messages calls with the two exact frozen models and repaired contracts.
+  - permission: external_action_permissions.spend
+    description: Spend only within the exact total, provider, and call caps below.
+cumulative_state:
+  currency: USD
+  spend: "0"
+  calls: 0
+  category_spend: {OpenAI: "0", Anthropic: "0"}
+hard_caps:
+  currency: USD
+  spend: "25"
+  calls: 5200
+  category_spend: {OpenAI: "10", Anthropic: "15"}
+remaining_caps:
+  currency: USD
+  spend: "25"
+  calls: 5200
+  category_spend: {OpenAI: "10", Anthropic: "15"}
+owner_confirmation_statements:
+  - I authorize only AO-0002 at the repaired exact R2 execution commit, tree hashes, issue, draft pull request, branch, routes, models, actions, caps, and expiry in this manifest.
+  - I understand the first authorization was invalidated before consequential action and does not transfer to this repaired execution surface.
+  - I understand this creates fresh private benchmark material and may spend up to USD 25, with OpenAI capped at USD 10, Anthropic at USD 15, and 5,200 total calls.
+  - I understand the authorization engine performs no credential read, private generation, custody creation, provider call, or spend.
+  - I understand this remains DD-010 engineering only and creates no DD-023, claim, scientific run, paper result, ranking, composite, package, release, submission, or base campaign.
+explicit_prohibitions:
+  - provider-calls-outside-manifest
+  - credential-read-outside-manifest
+  - unauthorized-private-access
+  - scientific-mutation-outside-contract
+  - cap-increase
+  - consequential-action-by-gate-engine
+  - superseded-authorization-reuse
+  - quarantined-pilot-reuse
+  - future-base-or-base-campaign-reuse
+  - route-model-alias-fallback-or-substitution
+  - public-private-material-disclosure
+  - ranking-composite-package-release-or-submission
+expires_at_utc: "2026-08-03T05:50:00Z"
+authorization_output_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0002-FRESH-PILOT-R2.yml
+next_milestone: M6R owner-authorized staged fresh private generation and provider execution.
+generated_resume_message: Resume AO-0002 at M6R using reports/agent-ops/AO-0002-treasurebench-fresh-pilot-owner-gate-r2.yml after the owner creates its generic R2 authorization. Re-audit official provider terms, validate authorization and execution trees, then run only the staged fresh DD-010 engineering pilot. Stop on any mismatch, failure, or cap; create no scientific or publication artifact.
