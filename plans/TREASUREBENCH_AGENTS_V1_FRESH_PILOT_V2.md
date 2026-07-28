@@ -61,7 +61,7 @@ Registration audit at `2026-07-28T01:00:04Z`:
   accessed or created;
 - the five unrelated untracked preservation files remain excluded.
 
-Exactly one milestone is active: **M4 draft-PR and repository acceptance**.
+Exactly one milestone is active: **M5 exact execution freeze**.
 M0 passed at `2026-07-28T01:11:20Z`: the task contract is schema-valid, the
 provider and budget records parse and carry the exact reserved identities,
 the ExecPlan sections are ordered with one active milestone, all recorded
@@ -82,6 +82,11 @@ redacted encrypted traces, zero Method A/B, Method C, metric-range,
 final-cardinality, pairing, or contamination errors, and a verified output
 lock. All 41 v2 corruptions and the reexecuted repaired-instrument C01-C28
 suite were rejected, for 69 registered rejections.
+M4 passed at `2026-07-28T02:00:59Z`: draft PR #201 is open; every
+private-evaluation profile target and the v2-specific audit pass; formatting,
+lint, mypy, 526 tests, claims, runs, Agent Operations, program memory, naming,
+and release-readiness dry-run verification pass with no consequential
+activity.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -165,9 +170,9 @@ conversation. Repeat this audit at closeout.
   integration, custody, trace, output-lock, and independent verification.
 - **M3 — complete:** complete 50-task/500-run synthetic rehearsal and every
   corruption.
-- **M4 — active:** focused and full private-evaluation acceptance plus draft
+- **M4 — complete:** focused and full private-evaluation acceptance plus draft
   PR creation.
-- **M5 — pending:** exact execution freeze commit and matching remote draft-PR
+- **M5 — active:** exact execution freeze commit and matching remote draft-PR
   head.
 - **M6 — pending:** committed generic owner-gate manifest, live gate
   validation without authorization creation, typed handoff, and stop.
@@ -192,6 +197,8 @@ conversation. Repeat this audit at closeout.
 - [x] Complete M1 public execution contracts.
 - [x] Complete M2 isolated implementation and focused acceptance.
 - [x] Complete M3 full synthetic rehearsal and 69 corruptions.
+- [x] Complete M4 draft PR and full private-evaluation acceptance.
+- [ ] Commit, push, and revalidate the clean M5 execution-freeze candidate.
 - [ ] Complete M4 and open the draft PR.
 - [ ] Complete M5 and M6 and stop at the exact owner gate.
 
@@ -261,6 +268,11 @@ conversation. Repeat this audit at closeout.
 - `2026-07-28T01:38:48Z`: push the M0-M3 branch head
   `04c0f6027de5ff546d1e6d76c33128ed6fbeb35f` and open draft pull request
   #201; bind the fixed contract to that draft PR before full acceptance.
+- `2026-07-28T02:00:59Z`: M4 acceptance passes after one narrow inventory
+  regression fix: the five new v2 JSON Schemas correctly increase the Agents
+  v1 schema count from 31 to 36. The focused inventory/v2 suites pass 23/23;
+  full `make verify` passes formatting, lint, mypy, 526/526 tests, claims,
+  runs, governance audits, and the offline compendium verification.
 
 ## Validation strategy
 
