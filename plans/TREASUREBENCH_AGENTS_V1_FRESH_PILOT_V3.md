@@ -24,7 +24,7 @@ AO-0008 staging command. No credential, prior private state, owner
 authorization, seed, task, answer, key, nonce, ciphertext, provider, or spend
 was accessed or created.
 
-Exactly one milestone is active: **M2 v3 runtime and production permit**.
+Exactly one milestone is active: **M3 complete rehearsals and corruptions**.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -107,9 +107,9 @@ audit at closeout.
   authority-bearing commit.
 - **M1 — complete:** versioned request, allocation, provider audit,
   private-state, execution-budget, failure, and corruption contracts.
-- **M2 — active:** v3 runtime, exact production permit, credential-free
+- **M2 — complete:** v3 runtime, exact production permit, credential-free
   preflight, custody, trace, output-lock, and independent verification.
-- **M3 — pending:** complete 50-task/500-run synthetic rehearsal,
+- **M3 — active:** complete 50-task/500-run synthetic rehearsal,
   production-path custody rehearsal, Methods A/B/C, and all corruptions.
 - **M4 — pending:** focused and full private-evaluation acceptance plus draft
   PR creation.
@@ -131,7 +131,7 @@ audit at closeout.
   generation domain, and gate ID after collision checks.
 - [x] Complete M0 fixed records, validation, and first commit.
 - [x] Complete M1 execution contracts.
-- [ ] Complete M2 isolated implementation and focused acceptance.
+- [x] Complete M2 isolated implementation and focused acceptance.
 - [ ] Complete M3 full rehearsal and corruptions.
 - [ ] Complete M4 draft PR and full acceptance.
 - [ ] Complete M5 execution freeze.
@@ -174,6 +174,16 @@ audit at closeout.
   tokens, 43 v3 corruptions, USD 11.51/15/25 cost envelopes, and zero
   credential reads, private objects, calls, or spend. Begin M2 runtime and
   exact production-permit integration.
+- `2026-07-28T13:57:00Z`: M2's 57 focused tests pass. The v3 production
+  generator accepts the registered campaign with `synthetic=False`; the
+  authorization-free rehearsal uses only deterministic disposable nonsecret
+  material, exercises independent AES-256-GCM, atomic exclusive task/answer
+  persistence, manifest creation, reload, exact verification, six negative
+  checks, and deterministic cleanup. The staged 3,016-call mock live driver,
+  exact credential subset, all-exit cleanup, route caps, provider closure,
+  output lock, post-lock unseal, verification, quarantine, and long-session
+  lifecycle tests pass with zero real private state, credential reads,
+  provider calls, or spend. Begin M3 committed rehearsal evidence.
 
 ## Validation strategy
 

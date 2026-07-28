@@ -24,6 +24,9 @@ from distributed_discovery.benchmark.agents_v1.fresh_pilot_live import (
 from distributed_discovery.benchmark.agents_v1.fresh_pilot_v2_live import (
     run_live_fresh_pilot as run_live_fresh_pilot_v2,
 )
+from distributed_discovery.benchmark.agents_v1.fresh_pilot_v3_live import (
+    run_live_fresh_pilot as run_live_fresh_pilot_v3,
+)
 from distributed_discovery.benchmark.agents_v1.generation import (
     canonical_cells,
     generate_prompt_space,
@@ -81,6 +84,7 @@ COMMANDS = (
     "pilot-rehearsal",
     "fresh-pilot-live",
     "fresh-pilot-v2-live",
+    "fresh-pilot-v3-live",
     "custody-live-conformance",
     "custody-read-only-diagnostic",
     "provider-schema-canaries",
@@ -179,6 +183,8 @@ def execute(args: argparse.Namespace) -> Mapping[str, object] | list[object]:
         return run_live_fresh_pilot(Path.cwd())
     if command == "fresh-pilot-v2-live":
         return run_live_fresh_pilot_v2(Path.cwd())
+    if command == "fresh-pilot-v3-live":
+        return run_live_fresh_pilot_v3(Path.cwd())
     if command == "custody-live-conformance":
         return run_live_mode_custody_conformance(Path.cwd())
     if command == "custody-read-only-diagnostic":
