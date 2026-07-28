@@ -1,0 +1,132 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0006
+title: TreasureBench Agents v1 wholly fresh sealed repair-confirmation pilot v2
+task_type: private-evaluation
+status: active
+objective: Register, prepare, freeze, and only after a later exact owner authorization execute one wholly fresh 50-task and 500-run DD-010 engineering repair-confirmation pilot.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: policy, path: docs/benchmark/agents-v1/AGENTS.md}
+  - {type: policy, path: src/distributed_discovery/benchmark/agents_v1/AGENTS.md}
+  - {type: decision, path: reports/agent-ops/next-task-treasurebench-fresh-pilot.yml}
+  - {type: decision, path: tasks/treasurebench-provider-schema-conformance-closeout.yml}
+  - {type: record, path: reports/agent-ops/AO-0004-r4-public-provider-canary-outcome.yml}
+  - {type: plan, path: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V2.md}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/200"}
+owner_decisions:
+  - The selected gate is one wholly fresh 50-task and 500-run sealed repair-confirmation engineering pilot.
+  - The pilot uses ten new tasks from each of five registered task families, five registered architectures, direct OpenAI and direct Anthropic routes, and one repeat.
+  - The campaign, batch, OS-CSPRNG seed, tasks, answers, task and answer keys, nonces, ciphertexts, commitments, access log, ledgers, traces, output lock, and custody must all be new.
+  - Both quarantined campaigns and every AO-0002 through AO-0005 gate, authorization, ledger, output lock, custody object, and terminal decision remain immutable and receive no authority from this task.
+  - AO-0004 R4 provider-specific OpenAI and Anthropic schema conformance and provider-independent exactly-one-final-action conformance are engineering-only prerequisites, not scientific evidence.
+  - Provider calls, credentials, private generation, custody creation, unsealing, and spend require the exact committed generic Agent Operations owner gate.
+  - The fresh expected cost is USD 11.51, the conservative planning cost is USD 15, and the unchanged owner ceilings are USD 25 total, USD 10 OpenAI, USD 15 Anthropic, and 5,200 calls.
+scope:
+  paths:
+    - tasks/treasurebench-agents-v1-fresh-pilot-v2.yml
+    - plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V2.md
+    - plans/MASTER_EXEC_PLAN.md
+    - docs/agent-ops
+    - docs/benchmark/agents-v1
+    - reports/agent-ops
+    - reports/benchmark
+    - src/distributed_discovery/agent_ops
+    - src/distributed_discovery/benchmark/agents_v1
+    - src/distributed_discovery/cli.py
+    - scripts
+    - tests
+    - Makefile
+  actions:
+    - Register one private-evaluation issue, branch, fixed contract, living ExecPlan, and draft pull request as AO-0006.
+    - Audit current official provider routes, exact models, structured outputs, request parameters, retention, retries, errors, and prices.
+    - Freeze new v2 campaign and batch identities, a public 50-slot allocation recipe, exact execution graph, expected and conservative costs, caps, and versioned schemas without generating private material.
+    - Implement versioned v2 custody, execution, provider-schema, semantic-validation, verification, redaction, output-lock, and fail-closed budget boundaries offline.
+    - Run the complete 50-task and 500-run synthetic rehearsal and every registered corruption with zero credentials, private generation, provider calls, or spend.
+    - Freeze the exact execution commit and commit one generic Agent Operations owner-gate manifest.
+non_goals:
+  - No DD-023, claim, scientific run, proof, evidence-status change, or paper result.
+  - No ranking, composite, leaderboard, package, release, DOI, arXiv, journal, or submission action.
+  - No base campaign, local or open-model campaign, OpenRouter route, fallback route, alias, regional route, batch route, or model substitution.
+  - No reuse, retry, reopening, mutation, rescoring, deletion, unsealing, reactivation, or reauthorization of either quarantined campaign or any AO-0002 through AO-0005 artifact.
+  - No credential read, prior private-state read, real seed or private-material generation, custody creation, provider call, or spend before the exact owner authorization.
+permissions:
+  repository_write: true
+  git_branch_commit: true
+  github_issue_pr: true
+  merge_after_checks: false
+  ci_pages: false
+external_action_permissions:
+  network_observation: true
+  github_mutation: true
+  provider_calls: true
+  spend: true
+  release_publication: false
+  submission: false
+scientific_mutation_permissions:
+  create_study: false
+  create_claim: false
+  create_run: false
+  change_evidence_status: false
+  change_proof_status: false
+  change_paper_lifecycle: false
+private_data_permissions: {read: true, write: true, generate: true, publish: false}
+budget:
+  currency: USD
+  expected: "11.51"
+  hard_cap: "25"
+  call_cap: 5200
+  category_caps: {OpenAI: "10", Anthropic: "15"}
+  cumulative_spend: "0"
+expected_outcomes:
+  - A current-provider, wholly fresh, repaired 50-task and 500-run sealed engineering pilot execution surface.
+  - Passing provider-schema, action-budget, custody, trace, output-lock, independent-verification, contamination, redaction, budget, and complete synthetic-rehearsal acceptance.
+  - A committed exact generic owner-gate manifest and schema-valid owner-gate-required handoff before consequential action.
+stop_conditions:
+  - Stop before reading .env.txt or any prior private campaign state, creating the real seed or custody, making a provider call, or spending money without the exact active owner authorization.
+  - Stop if campaign, batch, seed, task, answer, key, nonce, ciphertext, commitment, ledger, trace, custody, output-lock, quarantined-pilot, future-base, or base-campaign identity separation fails.
+  - Stop if any provider route, exact model, structured-output contract, request parameter, retention term, retry policy, price, token ceiling, call ceiling, cost cap, or authorization surface is unresolved.
+  - Stop if any terminal provider failure, protocol-invalid run, invalid final-action cardinality, incomplete pairing, Method A/B disagreement, Method C failure, contamination finding, metric-range error, corruption acceptance, identity mismatch, or output-lock failure occurs.
+  - Stop if scientific inventories, paper artifacts, release state, public private-data boundaries, immutable AO history, or unrelated preservation files change.
+acceptance_profile: private-evaluation
+canonical_destinations:
+  - tasks/treasurebench-agents-v1-fresh-pilot-v2.yml
+  - plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V2.md
+  - docs/benchmark/agents-v1
+  - reports/benchmark
+  - reports/agent-ops
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 200
+  branch: benchmark/treasurebench-agents-v1-fresh-pilot-v2
+  pull_request: null
+  base: main
+exec_plan: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V2.md
+task_delta: reports/agent-ops/next-task-treasurebench-fresh-pilot.yml
+frozen_identifiers:
+  starting_main: 36866e849b468df10b94b0039cf54f3d891ca120
+  owner_study: DD-010
+  campaign_id: treasurebench-agents-v1-repair-confirmation-v2
+  batch_id: tb-agents-v1-repair-confirmation-v2-b01
+  owner_gate_id: AOG-AO-0006-FRESH-PILOT-V2
+  openai_route: openai_direct
+  openai_model: gpt-5.4-2026-03-05
+  anthropic_route: anthropic_direct
+  anthropic_model: claude-sonnet-4-6
+  tasks: "50"
+  architectures: "5"
+  repeats: "1"
+  private_runs: "500"
+  normal_calls: "3016"
+  hard_call_cap: "5200"
+  per_request_output_tokens: "256"
+  openai_input_token_cap: "1680000"
+  openai_output_token_cap: "386048"
+  anthropic_input_token_cap: "3000000"
+  anthropic_output_token_cap: "386048"
+  claim_ceiling: DD-C-0110
+  study_ceiling: DD-022
+supersession: {supersedes: [], superseded_by: null, reason: null}
+next_gate: Complete offline implementation and acceptance, freeze the exact draft-PR execution head, and commit the generic AO-0006 owner-gate manifest.
