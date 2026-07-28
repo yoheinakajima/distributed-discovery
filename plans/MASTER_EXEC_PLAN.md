@@ -1,5 +1,46 @@
 # Master execution plan
 
+## Active continuation — AO-0007 AO-0006 custody adjudication and prospective repair (2026-07-28)
+
+Issue #202, branch `codex/treasurebench-ao0006-custody-repair`, fixed contract
+`tasks/treasurebench-ao0006-custody-repair.yml`, and living ExecPlan
+[`TREASUREBENCH_AO0006_CUSTODY_REPAIR.md`](TREASUREBENCH_AO0006_CUSTODY_REPAIR.md)
+own the sole substantive lane as AO-0007.
+
+AO-0007 preserves campaign
+`treasurebench-agents-v1-repair-confirmation-v2`, batch
+`tb-agents-v1-repair-confirmation-v2-b01`, execution commit
+`d210b0653677859c79a1fb87d871aaf45f4a81d4`, terminal decision
+`fresh-pilot-v2-quarantined-engineering-only`, two successful public canaries,
+1,349 input tokens, 253 output tokens, USD 0.0076095 total cost, zero private
+architecture/model runs, no task or answer ciphertext, no custody manifest,
+no unsealing, and output lock
+`sha256:127a9c796459c7627f6fd90b92ef1587ad0f6b1910b4ff255c2ceb976f3ab25f`.
+Nothing in AO-0006 may be reopened, retried, executed, reused, rescored,
+spliced, mutated, deleted, unsealed, or reauthorized.
+
+The task first implements one narrowly bounded, exact-owner-gated read-only
+diagnostic that verifies the output lock, inventory, append-only logs,
+allowlisted record selection, no-mutation state equality, and redaction. It
+may read only the encrypted or redacted custody-failure record and minimum
+surrounding operational events, never seed or key values, task text, answers,
+raw provider output, credentials, private paths, or unrelated objects. After
+that single diagnostic closes private access, all reproduction, repair, and
+validation use synthetic nonsecret content in an isolated temporary XDG root.
+
+The prospective conformance command must exercise production custody
+functions and ordering through seed and separate-key generation, synthetic
+material generation, independent AES-256-GCM, unique nonces, domain-separated
+associated data, exclusive atomic persistence, `0700`/`0600` modes,
+commitments, ciphertexts, manifest creation, reload and exact verification,
+wrong-key and corruption rejection, interrupted writes, symlinks,
+duplicates, leakage checks, and deterministic cleanup. Provider calls,
+credential reads, spend, new real private material, scientific mutation, and
+new-pilot registration remain zero. The active milestone is authorization-free
+registration, public audit, diagnostic and conformance implementation,
+corruptions, validation, execution freeze, generic owner-gate manifest, and
+the schema-valid owner-gate-required handoff.
+
 ## Active closeout — AO-0006 fresh repair-confirmation pilot v2 quarantined (2026-07-28)
 
 Issue #200, branch `benchmark/treasurebench-agents-v1-fresh-pilot-v2`,

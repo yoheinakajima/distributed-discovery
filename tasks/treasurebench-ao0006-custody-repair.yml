@@ -1,0 +1,154 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0007
+title: TreasureBench AO-0006 custody-creation failure adjudication and live-mode custody repair
+task_type: private-evaluation
+status: active
+objective: Determine the exact cause of AO-0006's custody-creation failure, repair the production custody path prospectively, and prove the repaired path with an offline live-mode-equivalent synthetic conformance test before any later private pilot registration.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: policy, path: docs/benchmark/agents-v1/AGENTS.md}
+  - {type: policy, path: src/distributed_discovery/benchmark/agents_v1/AGENTS.md}
+  - {type: record, path: tasks/treasurebench-agents-v1-fresh-pilot-v2-r2.yml}
+  - {type: record, path: reports/agent-ops/AO-0006-quarantine-closeout-handoff.yml}
+  - {type: record, path: reports/benchmark/treasurebench-agents-v1-fresh-pilot-v2-closeout.yml}
+  - {type: plan, path: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V2.md}
+  - {type: plan, path: plans/TREASUREBENCH_AO0006_CUSTODY_REPAIR.md}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/202"}
+owner_decisions:
+  - "AO-0007 has two inseparable tracks: one exactly authorized read-only adjudication of the retained AO-0006 custody failure, followed by a prospective synthetic reproduction, minimum repair, and live-mode-equivalent custody conformance proof."
+  - Campaign treasurebench-agents-v1-repair-confirmation-v2, batch tb-agents-v1-repair-confirmation-v2-b01, execution commit d210b0653677859c79a1fb87d871aaf45f4a81d4, decision fresh-pilot-v2-quarantined-engineering-only, output lock sha256:127a9c796459c7627f6fd90b92ef1587ad0f6b1910b4ff255c2ceb976f3ab25f, and all retained AO-0006 state remain permanently immutable and non-reusable.
+  - The AO-0006 boundary remains two successful public canaries, 1,349 input tokens, 253 output tokens, USD 0.0076095 total cost, zero private architecture/model runs, no task ciphertext, no answer ciphertext, no custody manifest, and no unsealing.
+  - The diagnostic may run only after exact owner authorization and may verify the output lock, inventory, and append-only logs and read only the encrypted or redacted custody-failure record plus the minimum surrounding operational events needed to identify the failing operation.
+  - The diagnostic must not read or disclose any seed value, key value, task text, answer, raw provider output, credential, private path, or unrelated retained object; it makes no provider call and mutates no retained state.
+  - One detailed private diagnostic remains outside Git and one redacted public diagnosis may be committed after the authorized diagnostic.
+  - After the diagnostic completes, private access closes permanently for this task; repair and validation use synthetic nonsecret content in an isolated temporary XDG state root and the same production custody functions and ordering required by a future real pilot.
+  - No private pilot may be registered or executed here. Only after a repaired live-mode custody conformance pass may the next candidate be named TreasureBench Agents v1 wholly fresh sealed repair-confirmation pilot v3 registration, without allocating any v3 identity.
+  - One generic owner gate covers the exact bounded diagnostic once and then the authorized offline repair, public-safe closeout, PR readiness, merge after checks, normal CI and Pages, live verification, issue closure, and main synchronization without another routine checkpoint.
+scope:
+  paths:
+    - tasks/treasurebench-ao0006-custody-repair.yml
+    - plans/TREASUREBENCH_AO0006_CUSTODY_REPAIR.md
+    - plans/MASTER_EXEC_PLAN.md
+    - docs/agent-ops
+    - docs/benchmark/agents-v1
+    - docs/current-state.md
+    - docs/current-roadmap.md
+    - docs/program-memory
+    - reports/agent-ops
+    - reports/benchmark
+    - reports/final-handoff.md
+    - reports/project-status.md
+    - studies/DD-010-discoverybench
+    - src/distributed_discovery/agent_ops
+    - src/distributed_discovery/benchmark/agents_v1
+    - src/distributed_discovery/cli.py
+    - scripts
+    - tests
+    - site
+    - .github/workflows
+    - Makefile
+  actions:
+    - Register AO-0007 with one issue, one branch, this fixed contract, one living ExecPlan, and one draft pull request.
+    - Audit the public custody stack and implement an authorization-bound read-only diagnostic with exact object selection, no-provider, no-credential, no-mutation, private-read, and redaction guards.
+    - Add synthetic diagnostic fixtures that distinguish generation, serialization, encryption, associated-data, nonce, atomic-create, permission, commitment, manifest, persistence, and reload or verification failures.
+    - Add an offline live-mode custody conformance command using production custody functions and ordering under an isolated temporary XDG state root.
+    - After the one owner-authorized diagnostic, reproduce the exact failing shape synthetically, implement the minimum prospective repair, preserve the failure as a regression fixture, and add an independent verifier and corruptions.
+    - Reconcile only public-safe Agent Operations, DD-010 engineering status, program memory, current-state, roadmap, handoff, benchmark, site, and public records.
+    - Run the full validation wall and, only under the exact gate, complete PR readiness, merge, normal CI and Pages, named live-route verification, issue closure, and synchronized main.
+non_goals:
+  - No reopening, retrying, executing, reusing, rescoring, splicing, mutating, deleting, or reauthorizing AO-0006 or any campaign, batch, authorization, ledger, output lock, retained object, or decision.
+  - No provider or local-model call, credential read, spend, new real private material, task ciphertext, answer ciphertext, custody manifest, or unsealing.
+  - No seed value, task key, answer key, operational key, task text, answer, raw provider output, credential, private path, or unrelated retained object may enter Git or public output.
+  - No DD-023, claim, scientific run, proof or evidence promotion, paper result, ranking, composite, package, release, DOI, submission, or base-campaign authority.
+  - No private pilot registration or execution and no v3 campaign, batch, seed, task, answer, key, ciphertext, custody, or authorization identity allocation.
+permissions:
+  repository_write: true
+  git_branch_commit: true
+  github_issue_pr: true
+  merge_after_checks: true
+  ci_pages: true
+external_action_permissions:
+  network_observation: true
+  github_mutation: true
+  provider_calls: false
+  spend: false
+  release_publication: false
+  submission: false
+scientific_mutation_permissions:
+  create_study: false
+  create_claim: false
+  create_run: false
+  change_evidence_status: false
+  change_proof_status: false
+  change_paper_lifecycle: false
+private_data_permissions: {read: true, write: false, generate: false, publish: false}
+budget:
+  currency: USD
+  expected: "0"
+  hard_cap: "0"
+  call_cap: 0
+  category_caps: {}
+  cumulative_spend: "0"
+expected_outcomes:
+  - custody-root-cause-repaired-live-conformance-pass
+  - custody-root-cause-known-no-safe-repair-defer
+  - custody-diagnostic-inconclusive-defer
+  - retained-state-integrity-mismatch-stop
+stop_conditions:
+  - Stop before any AO-0006 private-state read unless the exact committed AO-0007 owner gate has valid local authorization and every protected hash, ancestry, branch, issue, pull request, zero cap, and challenge check passes.
+  - Stop if the retained output lock or inventory does not verify, retained-state mutation is detected, or the requested record selection would exceed the declared custody-failure record and minimum surrounding-event scope.
+  - Stop if the exact cause cannot be resolved within permitted evidence or if repair would require another AO-0006 private read after the diagnostic command completes.
+  - Stop if a provider call, credential read, spend, new private campaign, budget, identity, scientific authority, release, or submission would be required.
+  - Stop if AO-0006 state, any immutable Agent Operations history, scientific inventories, claim or run state, paper or release state, or unrelated preservation files change.
+acceptance_profile: private-evaluation
+canonical_destinations:
+  - tasks/treasurebench-ao0006-custody-repair.yml
+  - plans/TREASUREBENCH_AO0006_CUSTODY_REPAIR.md
+  - docs/benchmark/agents-v1
+  - reports/benchmark
+  - reports/agent-ops
+  - docs/current-state.md
+  - docs/current-roadmap.md
+  - docs/program-memory
+  - reports/final-handoff.md
+  - reports/project-status.md
+  - studies/DD-010-discoverybench/status.yml
+  - site
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 202
+  branch: codex/treasurebench-ao0006-custody-repair
+  pull_request: null
+  base: main
+exec_plan: plans/TREASUREBENCH_AO0006_CUSTODY_REPAIR.md
+task_delta: null
+frozen_identifiers:
+  starting_main: 2df92d57c5591a65214a187e35ba7982b329dffa
+  owner_study: DD-010
+  source_task: AO-0006
+  campaign_id: treasurebench-agents-v1-repair-confirmation-v2
+  batch_id: tb-agents-v1-repair-confirmation-v2-b01
+  execution_commit: d210b0653677859c79a1fb87d871aaf45f4a81d4
+  terminal_decision: fresh-pilot-v2-quarantined-engineering-only
+  output_lock: sha256:127a9c796459c7627f6fd90b92ef1587ad0f6b1910b4ff255c2ceb976f3ab25f
+  public_canaries: "2"
+  input_tokens: "1349"
+  output_tokens: "253"
+  total_cost_usd: "0.0076095"
+  private_runs: "0"
+  task_ciphertexts: "0"
+  answer_ciphertexts: "0"
+  custody_manifests: "0"
+  unseal_events: "0"
+  owner_gate_id: AOG-AO-0007-AO0006-CUSTODY-DIAGNOSTIC
+  future_candidate: TreasureBench Agents v1 wholly fresh sealed repair-confirmation pilot v3 registration
+  claim_ceiling: DD-C-0110
+  study_ceiling: DD-022
+supersession:
+  supersedes: []
+  superseded_by: null
+  reason: null
+next_gate: Complete the authorization-free public custody audit, diagnostic and conformance implementation, synthetic fixtures and corruptions, full validation, execution freeze, and generic owner-gate manifest.
