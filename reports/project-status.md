@@ -1,6 +1,26 @@
-# Project status — TreasureBench fresh pilot v2 quarantined
+# Project status — AO-0007 custody path prospectively repaired
 
 Date: 2026-07-28 (America/Los_Angeles).
+
+AO-0007 ran its exact retained-state diagnostic once. The AO-0006 output lock,
+inventory, eight locked objects, identity, append-only logs, stage state,
+redacted summary, and before/after state equality all verified. The diagnostic
+read no secret value, credential, task, answer, raw provider output, private
+host path, or unrelated object, mutated no retained state, and permanently
+closed private-read authority.
+
+The exact cause was the v2 campaign's absence from the fail-closed
+private-generation permit allowlist. The prospective repair admits that
+already frozen campaign, adds atomic exclusive creation for custody objects,
+and requires resumed ciphertext to decrypt to the requested plaintext. All
+twenty live-mode-equivalent synthetic classes, an independent AES-256-GCM
+verifier, and six negative classes pass with deterministic cleanup.
+
+Decision `custody-root-cause-repaired-live-conformance-pass` is engineering
+only. Provider calls, credentials, spend, new real private material, and
+scientific state changes are zero. No new private pilot or v3 identity exists.
+
+## Preserved fresh pilot v2 quarantine
 
 AO-0006 completed two successful direct-provider public canaries, then stopped
 at custody creation with decision

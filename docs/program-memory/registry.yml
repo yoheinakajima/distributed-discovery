@@ -649,16 +649,16 @@ records:
     last_reviewed: "2026-07-28"
   - idea_id: PM-0035
     title: TreasureBench AO-0006 custody adjudication and prospective repair
-    status: routed
+    status: implemented
     capture_classification: capture-now
     visibility: public
     source_type: owner-decision
     captured_date: "2026-07-28"
-    proposition: AO-0006 remains permanently quarantined while AO-0007 performs one exactly owner-gated read-only custody-failure adjudication followed by synthetic reproduction, minimum prospective repair, and production-path live-mode custody conformance before any later private pilot registration.
+    proposition: AO-0006 remains permanently quarantined; AO-0007's one-use diagnostic verified its retained boundary, identified the exact private-generation campaign-permit failure, and prospectively repaired the production custody path with complete synthetic live-mode conformance.
     why_it_matters: It separates immutable failed-campaign custody from prospective code repair, closes the exact custody failure if permitted evidence supports a cause, and prevents another private pilot from relying on an unproved custody path.
     canonical_destination: {type: decision-record, path: tasks/treasurebench-ao0006-custody-repair.yml}
     dependencies: [DD-010, PM-0031, PM-0032, PM-0033, PM-0034]
-    promotion_trigger: A repaired production custody path passes the registered live-mode-equivalent synthetic conformance and independent verification after the one bounded diagnostic.
+    promotion_trigger: null
     permitted_stops: [implemented, deferred, rejected, superseded]
     not_a_result_boundaries: [engineering diagnosis and prospective repair only, no performance result scientific run claim paper private-pilot registration execution or base-campaign authority]
     supersedes: []

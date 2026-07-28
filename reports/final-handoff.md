@@ -1,4 +1,27 @@
-# Final handoff — TreasureBench fresh pilot v2 quarantined
+# Final handoff — AO-0007 custody diagnosis and prospective repair
+
+## AO-0007 closeout (2026-07-28)
+
+Issue #202 and PR #203 complete the exact one-use AO-0006 custody adjudication.
+The retained output lock, exact inventory, eight locked objects, execution
+identity, append-only logs, stage state, redacted summary, and before/after
+snapshots verified. No secret value, credential, task, answer, raw provider
+output, private host path, or unrelated object was read, and no retained state
+was mutated. Private-read authority is permanently closed.
+
+The exact engineering cause was the v2 campaign's absence from the
+fail-closed private-generation permit allowlist. The prospective repair admits
+that already frozen campaign, creates new custody objects atomically and
+exclusively, and requires a resumed sealed object to decrypt to the requested
+plaintext. All twenty production-path synthetic custody classes, independent
+AES-256-GCM verification, six negative classes, and deterministic cleanup
+pass.
+
+The selected outcome is
+`custody-root-cause-repaired-live-conformance-pass`. It changes no AO-0006
+retained state or terminal decision and creates no new private pilot, v3
+identity, DD-023, claim, run, scientific or performance evidence, paper
+result, ranking, release, submission, or base-campaign authority.
 
 ## AO-0006 fresh repair-confirmation v2 closeout (2026-07-28)
 

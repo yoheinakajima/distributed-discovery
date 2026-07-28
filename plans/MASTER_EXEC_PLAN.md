@@ -1,6 +1,6 @@
 # Master execution plan
 
-## Active continuation — AO-0007 AO-0006 custody adjudication and prospective repair (2026-07-28)
+## Completed continuation — AO-0007 AO-0006 custody adjudication and prospective repair (2026-07-28)
 
 Issue #202, branch `codex/treasurebench-ao0006-custody-repair`, fixed contract
 `tasks/treasurebench-ao0006-custody-repair.yml`, and living ExecPlan
@@ -19,27 +19,30 @@ no unsealing, and output lock
 Nothing in AO-0006 may be reopened, retried, executed, reused, rescored,
 spliced, mutated, deleted, unsealed, or reauthorized.
 
-The task first implements one narrowly bounded, exact-owner-gated read-only
-diagnostic that verifies the output lock, inventory, append-only logs,
-allowlisted record selection, no-mutation state equality, and redaction. It
-may read only the encrypted or redacted custody-failure record and minimum
-surrounding operational events, never seed or key values, task text, answers,
-raw provider output, credentials, private paths, or unrelated objects. After
-that single diagnostic closes private access, all reproduction, repair, and
-validation use synthetic nonsecret content in an isolated temporary XDG root.
+The exact-owner-gated read-only diagnostic ran once and verified the output
+lock, inventory, eight locked objects, append-only logs, allowlisted record
+selection, no-mutation state equality, and redaction. It read no seed or key
+value, task text, answer, raw provider output, credential, private host path,
+or unrelated object. The exact failure was the v2 campaign's absence from the
+fail-closed private-generation permit allowlist. Private-read authority is
+permanently closed.
 
-The prospective conformance command must exercise production custody
+The prospective repair admits only the already frozen v2 campaign, adds atomic
+exclusive creation, and requires resumed sealed objects to decrypt to the
+requested plaintext. The conformance command exercises production custody
 functions and ordering through seed and separate-key generation, synthetic
 material generation, independent AES-256-GCM, unique nonces, domain-separated
 associated data, exclusive atomic persistence, `0700`/`0600` modes,
 commitments, ciphertexts, manifest creation, reload and exact verification,
 wrong-key and corruption rejection, interrupted writes, symlinks,
-duplicates, leakage checks, and deterministic cleanup. Provider calls,
+duplicates, leakage checks, and deterministic cleanup; all twenty classes and
+the independent verifier pass. Provider calls,
 credential reads, spend, new real private material, scientific mutation, and
-new-pilot registration remain zero. The active milestone is authorization-free
-registration, public audit, diagnostic and conformance implementation,
-corruptions, validation, execution freeze, generic owner-gate manifest, and
-the schema-valid owner-gate-required handoff.
+new-pilot registration remain zero. Decision
+`custody-root-cause-repaired-live-conformance-pass` is engineering-only and
+creates no scientific or model-performance evidence. Any future private pilot
+registration requires a separate explicit owner decision and wholly new
+identity.
 
 ## Active closeout — AO-0006 fresh repair-confirmation pilot v2 quarantined (2026-07-28)
 
