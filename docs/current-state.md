@@ -1,5 +1,31 @@
 # Current program state
 
+_TreasureBench provider-schema conformance closeout, 2026-07-27:_
+AO-0004 completed the public-engineering decision
+`conformance-pass-both-complete-schemas`. Under the frozen R4 execution at
+`dcd89bca5daa54386df163439a010583c30134ec`, OpenAI and Anthropic each passed
+their minimal and complete provider-specific TreasureBench action schemas.
+The provider-independent canonical exactly-one-final-action semantic contract
+also passed.
+
+R4 made four successful calls, used 1,603 input tokens and 275 output tokens,
+and cost USD 0.0086685: OpenAI USD 0.0031875 and Anthropic USD 0.005481. No
+bisection ran. R3's bounded complete-output failure at its exact 128-token
+ceiling remains preserved and unresolved beyond an output-truncation
+hypothesis; the prospectively frozen R4 256-token execution passed. R1 and R2
+remain superseded and unused, while R3 and R4 are consumed and immutable.
+
+This is provider-schema and semantic-contract engineering conformance only.
+It is not scientific evidence, model-performance evidence, peer review, or
+external validation. Private and scientific state did not change, and no raw
+provider output, prompt, credential material, authorization content, or
+performance comparison is published. After AO-0005 closeout, the next
+substantive candidate is **TreasureBench Agents v1 wholly fresh sealed
+repair-confirmation pilot registration**. It remains unregistered,
+unexecuted, and separately owner-gated; any later registration must use wholly
+new campaign, batch, CSPRNG seed, tasks, answers, keys, ciphertexts, and
+custody.
+
 _TreasureBench Agents v1 repair-confirmation pilot closeout, 2026-07-27:_
 issue #196 and PR #197 preserve the wholly fresh DD-010 engineering campaign
 `treasurebench-agents-v1-repair-confirmation-v1`, batch
@@ -20,11 +46,9 @@ reused, rescored, executed, or reauthorized.
 
 This is public-safe engineering closeout only. It creates no DD-023, claim,
 scientific run, evidence or proof promotion, paper result, ranking, composite,
-performance publication, release, submission, or base-campaign authority. The
-next substantive candidate is **TreasureBench exact provider-schema
-conformance repair and public-canary gate**. It must be public-only and
-separately registered before diagnosing the request/schema boundary or making
-tiny public canary calls.
+performance publication, release, submission, or base-campaign authority. Its
+public-only provider-schema successor is completed by the closeout above.
+Neither quarantined campaign was reopened or reused.
 
 _TreasureBench Agents v1 sealed engineering pilot closeout, 2026-07-24:_
 issue #187 and PR #188 complete the fixed DD-010 non-inferential engineering

@@ -38,6 +38,19 @@ Registration audit at `2026-07-27T23:00:00Z`:
   live-route verification, or main synchronization is permitted before the
   exact AO-0005 gate.
 
+Authorization audit at `2026-07-28T00:06:38Z`:
+
+- the exact generic AO-0005 owner gate succeeded without performing a closeout
+  action;
+- its authorization schema, digest, challenge, task-contract hash, execution
+  commit, protected tree hashes, issue, branch, draft PR, current PR ancestry,
+  expiry, zero-call cap, and zero-spend cap revalidated;
+- the frozen execution commit
+  `9923cbbb45b5ec50f7a6aff52f3b5b2734da53eb` is an ancestor of PR head
+  `d31c3d09fd677b6ac4195a0b12e00ae709cfa6e0`;
+- no credential, provider, AO-0004 authorization or ledger, private state, or
+  scientific state was accessed.
+
 ## DISCUSSION AND DECISION DELTA AUDIT
 
 The full program-memory registry was re-read. PM-0033 is newly due because its
@@ -106,12 +119,12 @@ private identity.
 
 - **M0 — complete:** select AO-0005, reconcile the owner decision, and freeze
   the closeout-only contract.
-- **M1 — active:** pass authorization-free validation, commit and push the
+- **M1 — complete:** pass authorization-free validation, commit and push the
   execution surface, commit and push the generic gate, validate it without
   authorizing, and stop with the owner-gate-required handoff.
-- **M2 — pending:** validate the exact authorization and reconcile only the
+- **M2 — complete:** validate the exact authorization and reconcile only the
   public-safe AO-0004 closeout destinations.
-- **M3 — pending:** update PR #199, re-run the full validation wall and required
+- **M3 — active:** update PR #199, re-run the full validation wall and required
   checks, and mark it ready.
 - **M4 — pending:** squash-merge, verify post-merge CI/Pages and public-safe
   routes, close issue #198, and synchronize `main`.
@@ -131,11 +144,16 @@ private identity.
 - [x] Freeze zero calls, zero spend, no credential access, no provider action,
   no private access, no scientific mutation, and no release or submission.
 - [x] Pass the complete authorization-free validation wall.
-- [ ] Commit and push the exact execution surface.
-- [ ] Commit, push, and live-validate the generic owner-gate manifest without
+- [x] Commit and push the exact execution surface.
+- [x] Commit, push, and live-validate the generic owner-gate manifest without
   creating an authorization.
-- [ ] Stop with a schema-valid owner-gate-required handoff.
-- [ ] Complete M2 through M5 only after exact owner authorization.
+- [x] Stop with a schema-valid owner-gate-required handoff.
+- [x] Validate the exact owner authorization and frozen zero-call surface.
+- [x] Reconcile the authorized public-safe status, roadmap, handoff, project,
+  plan, program-memory, DD-010, Agents v1, site, and JSON destinations.
+- [x] Pass the complete post-reconciliation local validation wall.
+- [x] Correct PR #199's title and body while keeping it draft.
+- [ ] Complete authorized GitHub checks and M3 through M5.
 
 ## Discoveries and surprises
 
@@ -178,6 +196,20 @@ private identity.
   `docs/current-roadmap.md` and explicitly bind `reports/project-status.md`
   and `reports/final-handoff.md`; permissions, caps, and intended actions are
   unchanged.
+- `2026-07-28T00:06:38Z`: consume the exact AO-0005 generic owner gate, then
+  revalidate its authorization digest and schema, task contract, execution
+  ancestry, protected trees, draft PR identity, expiry, and exact zero-call
+  and zero-spend caps before beginning M2.
+- `2026-07-28T00:18:31Z`: complete M2 public-safe reconciliation and pass the
+  full local wall: 100 focused provider-schema tests, 514 repository tests,
+  Ruff over 321 files, strict MyPy over 192 source files, 110 claims, 51 run
+  manifests, seven papers totaling 119 pages, and the 89-page/26-study site.
+  Restore the two known generated provenance-only build side effects and
+  confirm the complete scientific, paper/PDF, and release baseline exact.
+- `2026-07-28T00:19:30Z`: retitle draft PR #199 to
+  `infra: complete TreasureBench provider-schema conformance` and replace its
+  body with the bounded R3 history, exact R4 result and totals, complete local
+  validation, immutable-gate boundary, and engineering-only interpretation.
 
 ## Validation strategy
 
@@ -235,8 +267,8 @@ provenance-only build side effects.
 
 ## Blockers
 
-No implementation blocker is known. M1 must finish and then the exact AO-0005
-generic owner authorization remains required before any closeout mutation.
+No implementation blocker is known. The exact AO-0005 generic owner
+authorization passed and M2 is active.
 
 ## Recovery and restart instructions
 

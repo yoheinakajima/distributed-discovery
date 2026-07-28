@@ -102,14 +102,22 @@ ceiling, and both frozen Anthropic bisections passed. Output truncation remains
 a hypothesis because R3 retained neither stop reason nor validation stage.
 Every R3 artifact remains immutable.
 
-The active R4 amendment keeps the canonical contract unchanged, uses a fresh
-public ledger, raises both complete-output ceilings to 256, and records only
-fixed safe diagnostic stages and output hashes. It remains bound to the
-repository-local protected credential source through a strict nonexecuting
-exact-two-name loader after authorization and cap checks. It must stop at the
-R4 generic owner gate before credentials or further public canaries and
-creates no DD-023, claim, scientific run, paper result, performance
-publication, private pilot, or base-campaign authority.
+The separately authorized R4 execution kept the canonical contract unchanged,
+used a fresh public ledger, and raised both complete-output ceilings to 256.
+OpenAI and Anthropic each passed their minimal and complete provider-specific
+TreasureBench action schemas, and independent post-parse validation passed
+the exactly-one-final-action semantic contract. The four ordered calls used
+1,603 input tokens and 275 output tokens and cost USD 0.0086685: OpenAI USD
+0.0031875 and Anthropic USD 0.005481. No bisection ran.
+
+This result is provider-schema and semantic-contract engineering conformance,
+not scientific evidence, model-performance evidence, peer review, external
+validation, or comparative performance. Private and scientific state
+remained unchanged. R1 and R2 remain superseded and unused; R3 and R4 are
+consumed and immutable. The next substantive candidate is TreasureBench
+Agents v1 wholly fresh sealed repair-confirmation pilot registration. It
+remains unregistered, unexecuted, and separately owner-gated and must later
+use wholly new private identities.
 
 ## Registered evaluation campaign
 

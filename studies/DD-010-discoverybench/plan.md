@@ -106,12 +106,19 @@ conformance. Its complete Anthropic response used exactly the 128-token
 ceiling but retained no stop reason or validation stage, so truncation is a
 hypothesis only and every R3 artifact remains immutable.
 
-The active R4 repair uses a fresh ledger, fixed safe failure stages,
-invalid-output hashes without raw retention, and a 256-token complete-output
-ceiling for both providers without weakening the semantic contract. The task
-then stops at the R4 generic owner gate. Its exact command may read only
-repository-local `.env.txt`, through the strict nonexecuting parser and exact
-OpenAI/Anthropic name subset, after authorization and projected-cap
-validation. No R4 credential, provider call, private object, spend,
-scientific run, claim, or new private pilot is created by the offline
-milestone.
+The separately authorized R4 repair used a fresh ledger, fixed safe failure
+stages, invalid-output hashes without raw retention, and a 256-token
+complete-output ceiling for both providers without weakening the semantic
+contract. OpenAI and Anthropic each passed their minimal and complete
+provider-specific action schemas, and the canonical exactly-one-final-action
+semantic contract passed independently. The four ordered calls used 1,603
+input tokens and 275 output tokens and cost USD 0.0086685: OpenAI USD
+0.0031875 and Anthropic USD 0.005481. No bisection ran. Private and scientific
+state remained unchanged.
+
+This is public provider-schema and semantic-contract engineering conformance,
+not scientific evidence or model-performance evidence. R1 and R2 remain
+superseded and unused; R3 and R4 remain consumed and immutable. A later wholly
+fresh sealed repair-confirmation pilot registration is only an unregistered
+candidate and requires wholly new private identities and separate owner
+authority.

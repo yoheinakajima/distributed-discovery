@@ -1,6 +1,6 @@
 # Master execution plan
 
-## Active continuation — AO-0004 successful conformance closeout (2026-07-27)
+## Authorized continuation — AO-0004 successful conformance closeout (2026-07-27)
 
 Issue #198, branch `benchmark/treasurebench-provider-schema-conformance`,
 draft PR #199, fixed closeout contract
@@ -23,7 +23,10 @@ live public-route verification, issue closure, and main synchronization. Its
 call and spend caps are zero; credentials, providers, private state,
 scientific mutation, paper/PDF changes, performance publication, releases,
 submissions, and base-campaign actions remain false. It must stop at its
-committed generic owner gate before any closeout mutation.
+committed generic owner gate before any closeout mutation. The exact generic
+gate was authorized at frozen execution commit
+`9923cbbb45b5ec50f7a6aff52f3b5b2734da53eb`; authorization, ancestry,
+protected trees, and zero caps revalidated before public-safe reconciliation.
 
 After successful closeout, the next substantive candidate is `TreasureBench
 Agents v1 wholly fresh sealed repair-confirmation pilot registration`. That
@@ -31,7 +34,7 @@ candidate remains unregistered and unauthorized and must later use wholly new
 campaign, batch, CSPRNG seed, private tasks, answers, keys, ciphertexts, and
 custody.
 
-## Active continuation — TreasureBench provider-schema conformance (2026-07-27)
+## Completed continuation — TreasureBench provider-schema conformance (2026-07-27)
 
 Issue #198, branch `benchmark/treasurebench-provider-schema-conformance`,
 fixed contract `tasks/treasurebench-provider-schema-conformance.yml`, and

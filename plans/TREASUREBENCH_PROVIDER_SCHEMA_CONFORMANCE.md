@@ -194,13 +194,17 @@ authority, so no new program-memory item is due.
 - **M6RR — complete, stopped:** six R3 calls terminated at
   `stopped-complete-schema-failure-after-fixed-bisection`; conformance was not
   declared.
-- **M4RRR — in progress:** preserve R3 byte-for-byte, implement the R4
+- **M4RRR — complete:** preserve R3 byte-for-byte, implement the R4
   256-token output budget, safe diagnostic classification, fresh ledger, audit,
   fixtures, and regressions, then refreeze the execution surface.
-- **M5RRR — pending:** commit and validate the R4 owner gate without
+- **M5RRR — complete:** commit and validate the R4 owner gate without
   authorization, emit a new schema-valid R4 handoff, and stop.
-- **M6RRR — pending owner authorization:** run a clean R4 sequence only under
-  the future exact R4 authorization and fresh R4 ledger.
+- **M6RRR — complete:** the exact R4 authorization and fresh R4 ledger
+  produced four ordered successes, zero bisections, and
+  `conformance-pass-both-complete-schemas`.
+- **M7 — superseded by AO-0005:** final public reconciliation, PR readiness,
+  merge, CI/Pages, issue closure, and main synchronization require the fixed
+  AO-0005 closeout contract.
 
 ## Progress checklist
 
@@ -234,7 +238,11 @@ authority, so no new program-memory item is due.
   authorization, provider, private-state, or spend access.
 - [x] Implement the fresh R4 ledger, 256-token complete-output ceiling, safe
   classifications, validation stages, error codes, and invalid-output hashes.
-- [ ] Refreeze and return the validated but unauthorized R4 gate and handoff.
+- [x] Refreeze and return the validated but unauthorized R4 gate and handoff.
+- [x] Authorize and execute R4 exactly; preserve its terminal success,
+  cleared-credential confirmation, and unchanged private/scientific boundary.
+- [x] Route final public reconciliation and merge authority to the fixed
+  AO-0005 closeout contract without changing this fixed AO-0004 contract.
 
 ## Discoveries and surprises
 
@@ -423,8 +431,8 @@ submission, and base-campaign state remained unchanged.
 
 R1 and R2 remain superseded; R3 and R4 are consumed and terminal. None may be
 reused, reactivated, or appended. Provider-schema conformance passed under R4.
-PR finalization, merge, issue closure, CI, and Pages remain blocked pending
-separately registered owner authority.
+The separately registered AO-0005 closeout owns PR finalization, merge, issue
+closure, CI, Pages, and final public reconciliation.
 
 ## Recovery and restart instructions
 
@@ -443,5 +451,6 @@ bounded six-call sequence without conformance; its records and negative
 outcome remain immutable. R4 was separately authorized and reached
 `conformance-pass-both-complete-schemas` after four calls and USD 0.0086685
 with no bisection. Its credentials were cleared and its public-safe ledger is
-terminal; private and scientific state remain unchanged. Closeout and merge
-require separate authority.
+terminal; private and scientific state remain unchanged. AO-0005 supplies the
+separate zero-call, zero-spend closeout and merge authority while leaving this
+fixed AO-0004 task contract unchanged.
