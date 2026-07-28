@@ -1,0 +1,48 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-v3-execution-freeze-v1
+frozen_at_utc: "2026-07-28T14:22:06Z"
+status: pass-pushed-clean-execution-commit
+classification: DD-010-engineering-only-owner-gate-required
+task_id: AO-0008
+issue: 204
+draft_pull_request: 205
+branch: codex/treasurebench-agents-v1-fresh-pilot-v3
+execution_commit: 0f9d82bb50cbb334bea47e24448831faf0cdbed8
+remote_branch_head_at_freeze: 0f9d82bb50cbb334bea47e24448831faf0cdbed8
+task_contract_sha256: sha256:0a09a28a781f70087af0e2e59a066672e2b219810f8c61a8efb92380c1016716
+campaign_id: treasurebench-agents-v1-repair-confirmation-v3
+batch_id: tb-agents-v1-repair-confirmation-v3-b01
+execution_tree_hashes:
+  tasks/treasurebench-agents-v1-fresh-pilot-v3.yml: sha256:0a09a28a781f70087af0e2e59a066672e2b219810f8c61a8efb92380c1016716
+  src/distributed_discovery/agent_ops: sha256:84a44c60d7c7a6a159c8beb5cfb8bc25b19bcae8992c1781fa396225d9f11376
+  src/distributed_discovery/benchmark/agents_v1: sha256:998560a77c5f42e1b2d821fda1b4b4e195de901ae05b08621c2999ff3301e31d
+  src/distributed_discovery/cli.py: sha256:0227911d8eb6eadc04cf525614900eb809e5553282664c47d55e57ae2c9dea22
+  scripts/audit_agent_ops.py: sha256:336d9e0735f8fe2acc93268053d09f3af4089f189c582882eac084dd607bca29
+  scripts/audit_treasurebench_agents_v1_fresh_pilot_v3.py: sha256:8103d7b985f76750e3b0cb04c2fa5abe2a13d905296ec63ef5c9da0edc3a7b95
+  docs/agent-ops: sha256:fe94862b1b7cad4d472a9e7b3e25749c7311986ec062a4040e8031621ab190f1
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v3-request.yml: sha256:c16ec91700d5c8c66e6f37defe4c141f45012583c484dadc7f8106121aca3733
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v3-request.schema.json: sha256:85caf0b6f2eed022474d3e9c8088302543edb723696dd728ed0e7ea3d6fd8b75
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v3-allocation.yml: sha256:b045f9ccb85218a12663ab9945e3231067d74ac8bc6904705e14aa38e290f88f
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v3-allocation.schema.json: sha256:9e535b02fc63170ec2b4389a289766af7485cb8d36cbba5dbcc12ee5561a6ee5
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v3-private-state.schema.json: sha256:a2131bbb2e35180cb900ba04aacb2005e02da622d78b662fc8087dd6c73541f6
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v3-execution-budget.yml: sha256:924ead8a3ce2325e7d4161adaa4f033b615dd75ef19d004d7ed74fbb39bb32ab
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v3-execution-budget.schema.json: sha256:da07321d33e6ebbfd4a84b0e9d8fc17c54e36c78be739113bc208b9247cf729b
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v3-corruptions.yml: sha256:67f31f1a4f02d5e0d8d5290a9b68765fef71c6d61426a74184b711ecf7f66527
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v3-corruptions.schema.json: sha256:afd53776235f8bec3eb91d4ce4af5e906061bcd0d65d17dafa2528dee4f3d392
+  docs/benchmark/agents-v1/prospective-failure-policy.yml: sha256:ccf8df148759a18319e2bd3c13640dbe7d17efefb45e6f4f925b2d83c7d44780
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-v3-provider-audit.yml: sha256:09f3bcbc8e70db05a1606a76822b31c0e3acd80c84fd2ba5f071c62ca27bfdde
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-v3-budget.yml: sha256:cd9c37b61e39c79619623528ba6f128854f678bba33d6f0641cf2d52cc511d27
+  tests/test_treasurebench_agents_v1_fresh_pilot_v3.py: sha256:275f11b35c9caf86d279edf69e49adc6541516c82b505073ffc167f1b6a4246b
+  tests/test_treasurebench_agents_v1_fresh_pilot_v3_session.py: sha256:ae860823e54e8835c44578ca47112dabb6744156cbab8516c93e836c47285d3b
+  Makefile: sha256:8242892080cd11943dc3a4b2b6c171e5745646dfecade89d0a5ab4771599f8da
+validation:
+  clean_tracked_worktree: true
+  remote_head_matches: true
+  draft_pr_open: true
+  full_verify: pass
+  tests: {passed: 637, failed: 0}
+  full_v3_rehearsal: pass
+  rehearsal_hash: sha256:87f84c31bbcea3043cf43621db8c56a53599a8c71a34e207338ca1cfec8e7e2f
+  corruptions_rejected: 71
+  production_custody_negative_checks: 6
+activity: {provider_calls: 0, credential_reads: 0, prior_private_state_reads: 0, private_objects_created: 0, spend_usd: "0"}
+next_gate: commit-generic-AOG-AO-0008-FRESH-PILOT-V3

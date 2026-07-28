@@ -221,6 +221,14 @@ audit at closeout.
   committed rehearsal registration hash stale. Preserve the fail-closed
   rehearsal rejection, regenerate only the deterministic public summary hash,
   and require the complete rehearsal to pass before the execution commit.
+- `2026-07-28T14:22:00Z`: freeze exact execution commit
+  `0f9d82bb50cbb334bea47e24448831faf0cdbed8`. The first clean-commit wall
+  passes 633 tests and fails four legacy live-mock tests only because the new
+  execution commit is not yet present remotely. Push that exact commit; the
+  identical complete wall then passes 637 tests, every audit, 110 claims, 51
+  run manifests, and offline release verification. Remote branch and live
+  draft PR #205 both point to the exact execution commit. Complete M5 and
+  begin M6 with no execution-sensitive changes permitted.
 
 ## Validation strategy
 
