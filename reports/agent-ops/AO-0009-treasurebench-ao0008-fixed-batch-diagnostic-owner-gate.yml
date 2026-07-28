@@ -1,0 +1,85 @@
+schema_version: agent-ops-owner-gate-v1
+kind: owner-gate
+synthetic: false
+gate_id: AOG-AO-0009-AO0008-FIXED-BATCH-DIAGNOSTIC
+task_contract:
+  path: tasks/treasurebench-ao0008-fixed-batch-adjudication.yml
+  sha256: sha256:b9051b81af2f427586f51525c9d7cae7a598c5f42d35cb6534f36c2461835ab9
+issue: 206
+pull_request:
+  number: 207
+  expected_state: OPEN
+  head_sha: b7a3345af7d1af861bbddab58ba3af2a1d442297
+branch: codex/treasurebench-ao0008-fixed-batch-adjudication
+commit: b7a3345af7d1af861bbddab58ba3af2a1d442297
+tree_hashes:
+  Makefile: sha256:85d83eb76ccada161fff31583059fbb2391ffc3a20ac122da941f2b4fe2aeaad
+  docs/benchmark/agents-v1/treasurebench-fixed-batch-causal-taxonomy.yml: sha256:56990b504377646b531f17e00951d37530f03d02e6e636cc530feda275eb5cfb
+  docs/benchmark/agents-v1/treasurebench-fixed-batch-public-diagnostic.schema.json: sha256:ecc5c7640c4a3e9b4e10125b3ff8bcbe92131ee0a11268ee2ed9a6f0ed310228
+  plans/TREASUREBENCH_AO0008_FIXED_BATCH_ADJUDICATION.md: sha256:67154aaefa9f0eda9b17738550b69829d3802d13c69a6443917e67f430823928
+  reports/benchmark/treasurebench-ao0008-fixed-batch-diagnostic-allowlist.yml: sha256:544fb44a78775f8c5deeadd20f35c6187391547b23da8ad2032470e216dbcd53
+  reports/benchmark/treasurebench-ao0008-public-fixed-batch-runtime-audit.md: sha256:f2266f8758e8977099ead6368084647c03bf10ed9dcecac60fd227477551201f
+  scripts/audit_treasurebench_fixed_batch_diagnostic.py: sha256:a91dc764460f544bbb6bc575fa7912192d42c2c84938e0ae6eaf3849b5148c49
+  src/distributed_discovery/agent_ops: sha256:84a44c60d7c7a6a159c8beb5cfb8bc25b19bcae8992c1781fa396225d9f11376
+  src/distributed_discovery/benchmark/agents_v1/cli.py: sha256:958b5e52c589395d94eb03273131ae6d82da715de436acdddba79abfed6103ae
+  src/distributed_discovery/benchmark/agents_v1/fixed_batch_diagnostic.py: sha256:7e6d1a34e5fddad6ac36ffc4ec4c6fe5070e3374feb78d5929c28878cbb6ccb7
+  src/distributed_discovery/benchmark/agents_v1/fixed_batch_diagnostic_fixture.py: sha256:c060c04c252d14dda2195de291abb850dbc69e9e867278ba0999ed4dcb116c82
+  src/distributed_discovery/benchmark/agents_v1/models.py: sha256:f08fab5251baa66de003368c8722e42a64286f913130d0f3af181a7b2e54bc5d
+  src/distributed_discovery/benchmark/agents_v1/pilot.py: sha256:c748ff9e98c910b6a85f557a48e28c770c56edd8ca9ce401b31050dfe3f74dd6
+  src/distributed_discovery/benchmark/agents_v1/traces.py: sha256:34550f067a3f06cadd98ef2dd897abe173d147a6a1f1f4ff538ce8f2152213fa
+  tasks/treasurebench-ao0008-fixed-batch-adjudication.yml: sha256:b9051b81af2f427586f51525c9d7cae7a598c5f42d35cb6534f36c2461835ab9
+  tests/test_treasurebench_fixed_batch_diagnostic.py: sha256:f52ea625712564593b19e14f6def295c381c7b5d776637d6bec09a5a7e98d859
+  tests/unit/test_discoverybench_agents.py: sha256:4fe12a0c7a3ac75c7a48ba566fd228a2c3135b8e3edb42465c800b93dd0adbe3
+purpose: Authorize one exact bounded one-use read-only adjudication of AO-0008's immutable fixed-full-batch failure, followed only by the evidence-determined prospective implementation repair or provider or agent-protocol policy decision, public-safe closeout, and normal repository completion.
+irreversible_actions: []
+private_actions:
+  - permission: private_data_permissions.read
+    description: Read once only the exact frozen AO-0008 output-lock, execution identity, provider-stage state, append-only access and usage/cost ledgers, structural metadata for 3,067 encrypted response and 502 encrypted trace envelopes, one selected logical call with at most two preceding and two following records, at most two directly corresponding encrypted responses, one directly corresponding encrypted trace, and one transient 32-byte operational key.
+external_actions:
+  - permission: permissions.repository_write
+    description: After the one-use diagnostic permanently closes private access, implement and document only the evidence-determined minimum prospective repair or public-safe provider or agent-protocol policy-decision gate and validation records.
+  - permission: permissions.git_branch_commit
+    description: Commit and push only scoped AO-0009 public-safe diagnostic, repair or policy, validation, and closeout changes on the exact task branch.
+  - permission: permissions.github_issue_pr
+    description: Update issue 206 and pull request 207 only with public-safe progress, validation, policy, and closeout information.
+  - permission: permissions.merge_after_checks
+    description: Mark pull request 207 ready and merge it only after the evidence-determined permitted outcome is reconciled and all required checks pass.
+  - permission: permissions.ci_pages
+    description: Observe normal CI and Pages, verify named public routes after merge, and make no release or submission.
+  - permission: external_action_permissions.github_mutation
+    description: Perform only the scoped GitHub pull-request, merge, issue-close, and branch-completion mutations authorized above.
+cumulative_state: {currency: USD, spend: "0", calls: 0, category_spend: {}}
+hard_caps: {currency: USD, spend: "0", calls: 0, category_spend: {}}
+remaining_caps: {currency: USD, spend: "0", calls: 0, category_spend: {}}
+owner_confirmation_statements:
+  - I authorize only AO-0009 at execution commit b7a3345af7d1af861bbddab58ba3af2a1d442297, issue 206, draft pull request 207, the exact branch, 17-path protected tree, frozen one-use read scope, zero caps, prohibitions, and expiry in this manifest.
+  - I authorize one bounded read-only diagnostic of immutable AO-0008 and transient use of its operational key only for at most two selected provider responses and one directly corresponding trace; the command writes one detailed nonpublic result outside Git and emits only a schema-valid redacted public result.
+  - I understand the command creates its one-use marker before retained access, permanently closes AO-0009 private-read authority after the invocation, compares before-and-after byte and metadata snapshots, mutates no retained AO-0008 object, and permits no second private read or bulk unseal.
+  - I authorize only the subsequent evidence-determined minimum prospective implementation repair and complete synthetic rehearsal, or the provider-reliability or agent-protocol policy-decision gate, or the honest inconclusive or integrity stop; no outcome is preselected.
+  - I authorize public-safe reconciliation, pull-request readiness and merge after checks, normal CI and Pages observation, named live-route verification, issue closure, synchronized main, and one final schema-valid handoff without another routine checkpoint.
+  - I understand this authorization permits no provider call, credential read, spend, new real private material, AO-0008 reuse or unsealing beyond the three selected encrypted objects, second read, v4 campaign or batch identity, scientific mutation, paper result, performance evidence, release, or submission.
+explicit_prohibitions:
+  - provider-calls-outside-manifest
+  - credential-read-outside-manifest
+  - unauthorized-private-access
+  - scientific-mutation-outside-contract
+  - cap-increase
+  - consequential-action-by-gate-engine
+  - ao-0008-retained-state-mutation
+  - second-ao-0008-private-read
+  - bulk-unseal
+  - seed-task-key-answer-key-task-answer-or-credential-access
+  - unrelated-provider-response-or-trace-access
+  - task-level-performance-or-model-architecture-comparison
+  - call-count-difference-as-causal-proof
+  - provider-failure-normalized-as-code-defect
+  - agent-output-normalization-silent-repair-semantic-retry-or-invalid-credit
+  - ao-0008-reopen-retry-continue-execute-reuse-rescore-splice-delete-or-reauthorize
+  - new-private-pilot-registration-or-execution
+  - v4-campaign-or-batch-identity-allocation
+  - provider-call-credential-read-spend-or-new-real-private-material
+  - dd-023-claim-run-proof-evidence-paper-ranking-release-or-submission
+expires_at_utc: "2026-08-04T20:56:20Z"
+authorization_output_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0009-AO0008-FIXED-BATCH-DIAGNOSTIC.yml
+next_milestone: M6 one-use retained-state adjudication and permanent private-read closure; then only the evidence-determined M7 prospective repair or policy branch.
+generated_resume_message: "Resume AO-0009 in this same Codex task from plans/TREASUREBENCH_AO0008_FIXED_BATCH_ADJUDICATION.md using only reports/agent-ops/AO-0009-treasurebench-ao0008-fixed-batch-diagnostic-owner-gate.yml and its exact generic authorization. Revalidate authorization, execution-commit ancestry, draft PR #207 head, the fixed contract, all 17 protected hashes, exact zero caps, prohibitions, the AO-0008 output-lock commitment, and the frozen five-record, 3,067-response, 502-trace, one-call, four-neighbor, at-most-three-decryption allowlist. Then run only make treasurebench-fixed-batch-read-only-diagnostic once. Permanently close private access after the invocation and select only the evidence-determined permitted outcome: minimum prospective implementation repair with exact-scale and full 50-task/500-pairing rehearsal, provider-reliability policy decision required, agent-protocol policy decision required, bounded-evidence inconclusive defer, or integrity-mismatch stop. Complete public-safe reconciliation, required checks, PR readiness and merge, normal CI/Pages, named live routes, issue closure, synchronized main, and a final schema-valid handoff. Stop on any mismatch, second-read or bulk-unseal requirement, provider or credential need, new campaign identity, scientific or publication expansion, release, or submission."
