@@ -1,5 +1,5 @@
 study_id: DD-010
 status: complete-v1-v3-with-agents-v1-pilots-permanently-quarantined
-evidence_status: v1-v2-preserved-v3-independently-reproduced-exact-matrix; original-agents-v1-pilot-permanently-quarantined; fresh-repair-confirmation-pilot-quarantined-at-terminal-public-canary; both-closeouts-are-redacted-engineering-only-not-performance-or-scientific-evidence
-next_action: separately register the public-only TreasureBench exact provider-schema conformance repair and public-canary gate; do not reuse either quarantined campaign or any future-base instance; base remains separately blocked
-updated_utc: 2026-07-27T14:52:49Z
+evidence_status: v1-v2-preserved-v3-independently-reproduced-exact-matrix; original-agents-v1-pilot-permanently-quarantined; fresh-repair-confirmation-pilot-quarantined-at-terminal-public-canary; AO-0004-R4-provider-schema-and-semantic-contract-engineering-conformance-passed; no-closeout-is-performance-or-scientific-evidence
+next_action: preserve every quarantined campaign and consumed AO-0004 artifact; record TreasureBench Agents v1 wholly fresh sealed repair-confirmation pilot registration only as an unregistered separately owner-gated candidate requiring wholly new private identities; base remains separately blocked
+updated_utc: 2026-07-28T00:06:38Z

@@ -1,0 +1,29 @@
+schema_version: agent-ops-owner-amendment-v1
+kind: owner-amendment-record
+task_id: AO-0004
+recorded_at_utc: "2026-07-27T17:46:12Z"
+issue: 198
+pull_request: 199
+branch: benchmark/treasurebench-provider-schema-conformance
+authorization_state:
+  original_gate_id: AOG-AO-0004-PUBLIC-PROVIDER-CANARIES
+  original_authorization_created: false
+  original_gate_may_be_consumed: false
+  required_replacement_gate_id: AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R2
+corrections:
+  openai_standard_schema_subset:
+    minItems: supported-and-must-be-retained
+    maxItems: supported-and-must-be-retained
+    maxLength: not-listed-in-current-standard-supported-properties
+    uniqueItems: not-listed-in-current-standard-supported-properties
+    historical_http_400_cause: unresolved-beyond-corrected-bounded-diagnosis
+  committed_runner:
+    required: true
+    command: make treasurebench-provider-schema-canaries
+    authorization_bound: true
+    append_only_public_engineering_ledger: true
+    private_state_allowed: false
+preserved:
+  - AO-0002 and AO-0003 quarantine records remain unchanged.
+  - No credential read, provider call, private-state access, or spend occurs before the R2 authorization.
+  - No private pilot, scientific state, paper, ranking, release, submission, or base-campaign state is created.

@@ -1,5 +1,105 @@
 # Master execution plan
 
+## Authorized continuation — AO-0004 successful conformance closeout (2026-07-27)
+
+Issue #198, branch `benchmark/treasurebench-provider-schema-conformance`,
+draft PR #199, fixed closeout contract
+`tasks/treasurebench-provider-schema-conformance-closeout.yml`, and living
+ExecPlan
+[`TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE_CLOSEOUT.md`](TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE_CLOSEOUT.md)
+own the sole substantive lane as AO-0005.
+
+AO-0004 R4 completed as
+`conformance-pass-both-complete-schemas`: four successful public canaries,
+1,603 input tokens, 275 output tokens, USD 0.0086685 total, OpenAI USD
+0.0031875, Anthropic USD 0.005481, no bisection, and no private or scientific
+state change. R1 and R2 remain superseded and unused; R3 and R4 are consumed
+and immutable. No canary gate, authorization, or ledger may be rerun,
+appended, reactivated, reused, rescored, or reauthorized.
+
+AO-0005 supplies only separately gated public-safe reconciliation, PR
+metadata/readiness, squash merge after checks, normal post-merge CI and Pages,
+live public-route verification, issue closure, and main synchronization. Its
+call and spend caps are zero; credentials, providers, private state,
+scientific mutation, paper/PDF changes, performance publication, releases,
+submissions, and base-campaign actions remain false. It must stop at its
+committed generic owner gate before any closeout mutation. The exact generic
+gate was authorized at frozen execution commit
+`9923cbbb45b5ec50f7a6aff52f3b5b2734da53eb`; authorization, ancestry,
+protected trees, and zero caps revalidated before public-safe reconciliation.
+
+After successful closeout, the next substantive candidate is `TreasureBench
+Agents v1 wholly fresh sealed repair-confirmation pilot registration`. That
+candidate remains unregistered and unauthorized and must later use wholly new
+campaign, batch, CSPRNG seed, private tasks, answers, keys, ciphertexts, and
+custody.
+
+## Completed continuation — TreasureBench provider-schema conformance (2026-07-27)
+
+Issue #198, branch `benchmark/treasurebench-provider-schema-conformance`,
+fixed contract `tasks/treasurebench-provider-schema-conformance.yml`, and
+living ExecPlan
+[`TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE.md`](TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE.md)
+own the sole substantive lane as AO-0004.
+
+This public-only infrastructure task diagnoses the exact OpenAI Responses and
+Anthropic Messages strict-output request/schema boundary from public fixtures,
+separates the canonical action contract from provider transport compilers and
+post-parse semantic validation, and adds offline linting, safe errors, mock
+canaries, and corruptions. It must stop at a separately committed generic
+owner gate before credentials, provider calls, or spend.
+
+The owner issued a pre-authorization correction after the unused R1 gate was
+committed. AO-0004 remains on issue #198, branch
+`benchmark/treasurebench-provider-schema-conformance`, and draft PR #199.
+Standard OpenAI Structured Outputs supports `minItems` and `maxItems`, so the
+complete pinned GPT-5.4 transport schema must retain both. AO-0004 must also
+commit an authorization-bound, resumable, exact public-canary runner and
+append-only public-engineering ledger before refreezing an R2 execution
+surface. The R1 gate receives no authority and must be superseded; zero
+credential reads, provider calls, private-state accesses, and spend continue.
+
+The owner then identified a second pre-authorization defect: the exact Make
+command entered the module directly, while the R2 runner expected credentials
+to be exported in the process environment instead of using the repository's
+protected local `.env.txt` source. R2 was never authorized and is superseded.
+AO-0004 now extends the existing strict nonexecuting dotenv loader with an
+exact requested-name subset, validates authorization, trees, sequence, ledger,
+and projected caps before file access, requests only `OPENAI_API_KEY` and
+`ANTHROPIC_API_KEY`, and clears selected values after every call. The repaired
+surface must be refrozen behind
+`AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R3`. The credential file itself remains
+unread during implementation and testing; synthetic fixtures only are
+permitted.
+
+R3 was subsequently authorized and reached its terminal registered decision
+after six public calls and USD 0.0104085. OpenAI minimal and complete passed;
+Anthropic minimal passed; Anthropic complete returned HTTP 200, consumed
+exactly the frozen 128-token ceiling, and failed local validation; both frozen
+Anthropic bisections passed. Because R3 retained no stop reason,
+invalid-output hash, or validation stage, truncation remains a hypothesis and
+conformance remains false. Every R3 artifact and terminal outcome is
+byte-preserved and its authorization and ledger cannot be reused.
+
+The R4 output-budget and public-safe diagnostic repair was authorized and
+executed on the same issue, branch, draft PR, task contract, and session. All
+four ordered canaries passed at the frozen 256-token ceiling, including both
+complete provider transports and independent semantic validation; no
+bisection ran. The terminal decision is
+`conformance-pass-both-complete-schemas` after four calls and USD 0.0086685.
+The safe R4 ledger is complete with no open intent, credentials were cleared,
+and private and scientific state remained unchanged. R4 is now consumed.
+Draft-PR finalization, merge, issue closure, CI, and Pages remain outside R4
+and require separately registered owner authority.
+
+AO-0002, campaign `treasurebench-agents-v1-repair-confirmation-v1`, batch
+`tb-agents-v1-repair-confirmation-v1-b01`, execution commit
+`fe313602df7f4e8ffac1a1a02c2b3a83f3c72943`, its one terminal OpenAI HTTP 400,
+inactive archived R2 authorization, quarantine decision, and output lock
+`sha256:8102a6c1b6bda003336d5503136dfe29301b04cb8f35e7740edd8d56f0eb3c1d`
+remain immutable. No private pilot, scientific result, paper, ranking,
+release, submission, or base-campaign authority is created.
+
 ## Active continuation — AO-0002 quarantined closeout (2026-07-27)
 
 Issue #196, draft PR #197, branch

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import urllib.error
 import urllib.request
@@ -17,7 +18,11 @@ from distributed_discovery.benchmark.agents_v1.adapters import (
     Usage,
 )
 from distributed_discovery.benchmark.agents_v1.live_inputs import CostLedger
-from distributed_discovery.benchmark.agents_v1.models import VERSIONS
+from distributed_discovery.benchmark.agents_v1.provider_schema import (
+    canonical_action_schema,
+    compile_anthropic_action_schema,
+    compile_openai_action_schema,
+)
 
 OPENAI_MODEL = "gpt-5.4-2026-03-05"
 ANTHROPIC_MODEL = "claude-sonnet-4-6"
@@ -269,78 +274,23 @@ class LiveAdapterBase:
             },
         )
 
-    def _http_error_envelope(self, *, status: int, error_class: str | None) -> Mapping[str, object]:
+    def _http_error_envelope(
+        self,
+        *,
+        status: int,
+        error_class: str | None,
+        body: Mapping[str, object],
+    ) -> Mapping[str, object]:
         return {
             "error_contract_version": ERROR_ENVELOPE_VERSION,
             "error_locus": "provider-http-response" if error_class is not None else "none",
             "http_status": status,
             "retry_eligible": error_class in RETRYABLE_ERROR_CLASSES,
+            **_safe_provider_error_fields(body),
         }
 
 
-def action_schema(request: AdapterRequest) -> dict[str, object]:
-    return {
-        "type": "object",
-        "additionalProperties": False,
-        "required": [
-            "schema_version",
-            "task_instance_commitment",
-            "agent_id",
-            "round",
-            "final",
-            "visible_message",
-            "source_choice",
-            "actions",
-            "declared_metadata",
-        ],
-        "properties": {
-            "schema_version": {
-                "type": "string",
-                "enum": [VERSIONS["action"]],
-            },
-            "task_instance_commitment": {
-                "type": "string",
-                "enum": [f"sha256:{request.prompt.task_commitment}"],
-            },
-            "agent_id": {
-                "type": "string",
-                "enum": [request.prompt.agent_id],
-            },
-            "round": {
-                "type": "integer",
-                "enum": [request.round_number],
-            },
-            "final": {
-                "type": "boolean",
-                "enum": [request.final_required],
-            },
-            "visible_message": {"type": "string", "maxLength": 1024},
-            "source_choice": {
-                "type": "string",
-                "enum": list(request.source_vocabulary),
-            },
-            "actions": {
-                "type": "array",
-                "minItems": 1,
-                "maxItems": 1 if request.final_required else 6,
-                "uniqueItems": True,
-                "description": (
-                    "Exactly one final action."
-                    if request.final_required
-                    else "One to six explicitly non-final proposal candidates."
-                ),
-                "items": {
-                    "type": "string",
-                    "enum": list(request.action_vocabulary),
-                },
-            },
-            "declared_metadata": {
-                "type": "object",
-                "additionalProperties": False,
-                "properties": {},
-            },
-        },
-    }
+action_schema = canonical_action_schema
 
 
 def _instructions(request: AdapterRequest) -> str:
@@ -351,6 +301,55 @@ def _instructions(request: AdapterRequest) -> str:
             "do not change the task semantics."
         )
     return request.prompt.system + repair
+
+
+def build_openai_responses_payload(
+    request: AdapterRequest,
+    *,
+    schema: Mapping[str, object] | None = None,
+) -> dict[str, object]:
+    """Build the exact Responses body without headers or credential access."""
+    return {
+        "model": OPENAI_MANIFEST.exact_snapshot,
+        "instructions": _instructions(request),
+        "input": request.prompt.user,
+        "max_output_tokens": request.max_output_tokens,
+        "reasoning": {"effort": "none"},
+        "store": False,
+        "text": {
+            "format": {
+                "type": "json_schema",
+                "name": "discoverybench_agents_action",
+                "strict": True,
+                "schema": (
+                    dict(schema) if schema is not None else compile_openai_action_schema(request)
+                ),
+            }
+        },
+    }
+
+
+def build_anthropic_messages_payload(
+    request: AdapterRequest,
+    *,
+    schema: Mapping[str, object] | None = None,
+) -> dict[str, object]:
+    """Build the exact Messages body without headers or credential access."""
+    return {
+        "model": ANTHROPIC_MANIFEST.exact_snapshot,
+        "system": _instructions(request),
+        "messages": [{"role": "user", "content": request.prompt.user}],
+        "max_tokens": request.max_output_tokens,
+        "temperature": 0,
+        "output_config": {
+            "format": {
+                "type": "json_schema",
+                "schema": (
+                    dict(schema) if schema is not None else compile_anthropic_action_schema(request)
+                ),
+            }
+        },
+    }
 
 
 class OpenAIResponsesAdapter(LiveAdapterBase):
@@ -364,32 +363,30 @@ class OpenAIResponsesAdapter(LiveAdapterBase):
             **kwargs,  # type: ignore[arg-type]
         )
 
-    def build_payload(self, request: AdapterRequest) -> dict[str, object]:
-        return {
-            "model": self.manifest.exact_snapshot,
-            "instructions": _instructions(request),
-            "input": request.prompt.user,
-            "max_output_tokens": request.max_output_tokens,
-            "reasoning": {"effort": "none"},
-            "store": False,
-            "text": {
-                "format": {
-                    "type": "json_schema",
-                    "name": "discoverybench_agents_action",
-                    "strict": True,
-                    "schema": action_schema(request),
-                }
-            },
-        }
+    def build_payload(
+        self,
+        request: AdapterRequest,
+        *,
+        schema: Mapping[str, object] | None = None,
+    ) -> dict[str, object]:
+        return build_openai_responses_payload(request, schema=schema)
 
     def respond(self, request: AdapterRequest) -> AdapterResponse:
+        return self.respond_with_schema(request, schema=None)
+
+    def respond_with_schema(
+        self,
+        request: AdapterRequest,
+        *,
+        schema: Mapping[str, object] | None,
+    ) -> AdapterResponse:
         self._guard(request)
         try:
             response = self._send(
                 HttpRequest(
                     method="POST",
                     url="https://api.openai.com/v1/responses",
-                    body=self.build_payload(request),
+                    body=self.build_payload(request, schema=schema),
                     headers={
                         "Authorization": f"Bearer {self._api_key}",
                         "Content-Type": "application/json",
@@ -408,12 +405,18 @@ class OpenAIResponsesAdapter(LiveAdapterBase):
             output_tokens=output_tokens,
             error_class=error,
             operational_metadata={
-                **self._http_error_envelope(status=response.status, error_class=error),
+                **self._http_error_envelope(
+                    status=response.status,
+                    error_class=error,
+                    body=response.body,
+                ),
                 "gateway": self.gateway_id,
                 "route_id": self.route_id,
                 "model": _safe_exact(response.body.get("model"), self.manifest.exact_snapshot),
                 "request_id": _safe_identifier(response.body.get("id")),
                 "finish_status": _safe_status(response.body.get("status")),
+                "finish_reason": _openai_incomplete_reason(response.body),
+                "refusal_present": _openai_refusal_present(response.body),
                 "reasoning_tokens_reported": _openai_reasoning_tokens(response.body),
                 "cached_tokens_reported": _openai_cached_tokens(response.body),
             },
@@ -431,29 +434,30 @@ class AnthropicMessagesAdapter(LiveAdapterBase):
             **kwargs,  # type: ignore[arg-type]
         )
 
-    def build_payload(self, request: AdapterRequest) -> dict[str, object]:
-        return {
-            "model": self.manifest.exact_snapshot,
-            "system": _instructions(request),
-            "messages": [{"role": "user", "content": request.prompt.user}],
-            "max_tokens": request.max_output_tokens,
-            "temperature": 0,
-            "output_config": {
-                "format": {
-                    "type": "json_schema",
-                    "schema": action_schema(request),
-                }
-            },
-        }
+    def build_payload(
+        self,
+        request: AdapterRequest,
+        *,
+        schema: Mapping[str, object] | None = None,
+    ) -> dict[str, object]:
+        return build_anthropic_messages_payload(request, schema=schema)
 
     def respond(self, request: AdapterRequest) -> AdapterResponse:
+        return self.respond_with_schema(request, schema=None)
+
+    def respond_with_schema(
+        self,
+        request: AdapterRequest,
+        *,
+        schema: Mapping[str, object] | None,
+    ) -> AdapterResponse:
         self._guard(request)
         try:
             response = self._send(
                 HttpRequest(
                     method="POST",
                     url="https://api.anthropic.com/v1/messages",
-                    body=self.build_payload(request),
+                    body=self.build_payload(request, schema=schema),
                     headers={
                         "x-api-key": self._api_key,
                         "anthropic-version": "2023-06-01",
@@ -473,12 +477,18 @@ class AnthropicMessagesAdapter(LiveAdapterBase):
             output_tokens=output_tokens,
             error_class=error,
             operational_metadata={
-                **self._http_error_envelope(status=response.status, error_class=error),
+                **self._http_error_envelope(
+                    status=response.status,
+                    error_class=error,
+                    body=response.body,
+                ),
                 "gateway": self.gateway_id,
                 "route_id": self.route_id,
                 "model": _safe_exact(response.body.get("model"), self.manifest.exact_snapshot),
                 "request_id": _safe_identifier(response.body.get("id")),
                 "finish_status": _safe_status(response.body.get("stop_reason")),
+                "finish_reason": None,
+                "refusal_present": response.body.get("stop_reason") == "refusal",
                 "cache_read_input_tokens": _nested_int(
                     response.body, "usage", "cache_read_input_tokens"
                 ),
@@ -580,7 +590,11 @@ class OpenRouterAdapter(LiveAdapterBase):
             error_class=error,
             provider_cost_usd=provider_cost,
             operational_metadata={
-                **self._http_error_envelope(status=response.status, error_class=error),
+                **self._http_error_envelope(
+                    status=response.status,
+                    error_class=error,
+                    body=response.body,
+                ),
                 "gateway": self.gateway_id,
                 "route_id": self.route_id,
                 "model": _safe_exact(response.body.get("model"), self.manifest.exact_snapshot),
@@ -776,6 +790,28 @@ def _safe_exact(value: object, expected: str) -> str | None:
     return expected if value == expected else _safe_identifier(value)
 
 
+def _safe_provider_error_fields(body: Mapping[str, object]) -> dict[str, object]:
+    error = body.get("error")
+    if not isinstance(error, Mapping):
+        return {
+            "provider_error_type": None,
+            "provider_error_code": None,
+            "rejected_parameter": None,
+            "diagnostic_message_sha256": None,
+        }
+    message = error.get("message")
+    digest = None
+    if isinstance(message, str) and message:
+        bounded = message[:4096].encode("utf-8", errors="replace")
+        digest = f"sha256:{hashlib.sha256(bounded).hexdigest()}"
+    return {
+        "provider_error_type": _safe_identifier(error.get("type")),
+        "provider_error_code": _safe_identifier(error.get("code")),
+        "rejected_parameter": _safe_identifier(error.get("param")),
+        "diagnostic_message_sha256": digest,
+    }
+
+
 def _openai_usage(body: Mapping[str, object]) -> tuple[int, int]:
     return _nested_int(body, "usage", "input_tokens"), _nested_int(body, "usage", "output_tokens")
 
@@ -804,6 +840,28 @@ def _openai_output_text(body: Mapping[str, object]) -> str:
                 if isinstance(text, str):
                     return text
     return ""
+
+
+def _openai_incomplete_reason(body: Mapping[str, object]) -> str | None:
+    details = body.get("incomplete_details")
+    if not isinstance(details, Mapping):
+        return None
+    return _safe_status(details.get("reason"))
+
+
+def _openai_refusal_present(body: Mapping[str, object]) -> bool:
+    output = body.get("output")
+    if not isinstance(output, Sequence) or isinstance(output, (str, bytes)):
+        return False
+    for item in output:
+        if not isinstance(item, Mapping) or item.get("type") != "message":
+            continue
+        content = item.get("content")
+        if not isinstance(content, Sequence) or isinstance(content, (str, bytes)):
+            continue
+        if any(isinstance(part, Mapping) and part.get("type") == "refusal" for part in content):
+            return True
+    return False
 
 
 def _anthropic_usage(body: Mapping[str, object]) -> tuple[int, int]:

@@ -1,0 +1,154 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0005
+title: AO-0004 successful provider-schema conformance closeout
+task_type: site-integration
+status: owner-gate-required
+objective: Close AO-0004 as a successful public provider-schema conformance result using only public-safe repository, GitHub, CI, Pages, and live-route reconciliation after one exact zero-call zero-spend owner gate.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: policy, path: docs/benchmark/agents-v1/AGENTS.md}
+  - {type: record, path: reports/agent-ops/AO-0004-r4-public-provider-canary-outcome.yml}
+  - {type: record, path: reports/agent-ops/AO-0004-r4-legitimate-checkpoint-handoff.yml}
+  - {type: plan, path: plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE.md}
+  - {type: plan, path: plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE_CLOSEOUT.md}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/198"}
+  - {type: pull-request, path: "https://github.com/yoheinakajima/distributed-discovery/pull/199"}
+owner_decisions:
+  - AO-0004 R4 completed as conformance-pass-both-complete-schemas after exactly four successful public calls, 1,603 input tokens, 275 output tokens, USD 0.0086685 total, OpenAI USD 0.0031875, Anthropic USD 0.005481, no bisection, and no private or scientific state change.
+  - R1 and R2 remain superseded and unused; R3 and R4 gates, authorizations, ledgers, outcomes, calls, costs, and terminal decisions are consumed and immutable and may never be rerun, appended, reactivated, reused, rescored, or reauthorized.
+  - Public-safe wording may state that both exact providers passed minimal and complete provider-specific action schemas, the canonical exactly-one-final-action semantic contract passed, and R3's bounded 128-token failure was prospectively resolved by R4's 256-token execution.
+  - The closeout remains public engineering conformance only and cannot create scientific evidence, model-performance evidence, comparative performance, a ranking, a leaderboard, or authority for another private pilot.
+  - The next substantive candidate after successful closeout is TreasureBench Agents v1 wholly fresh sealed repair-confirmation pilot registration; it requires wholly new private identities and separate registration and owner authorization and is not registered or executed here.
+scope:
+  paths:
+    - .github/workflows
+    - tasks/treasurebench-provider-schema-conformance.yml
+    - tasks/treasurebench-provider-schema-conformance-closeout.yml
+    - plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE.md
+    - plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE_CLOSEOUT.md
+    - plans/MASTER_EXEC_PLAN.md
+    - docs/current-state.md
+    - docs/current-roadmap.md
+    - docs/program-memory
+    - docs/benchmark/agents-v1
+    - studies/DD-010-discoverybench
+    - reports/agent-ops
+    - reports/benchmark
+    - reports/final-handoff.md
+    - reports/project-status.md
+    - site
+    - tests/unit
+    - Makefile
+  actions:
+    - Reconcile AO-0004 as a successful public provider-schema conformance result while preserving every historical artifact byte-exact.
+    - Update the AO-0004 task contract and ExecPlan to completed status where fixed-contract repository convention permits.
+    - "Correct PR #199 title and body to describe the offline repair, bounded R3 failure, successful R4 four-canary result, exact calls, tokens, cost, state boundaries, and final validation."
+    - Update current state, roadmap, final handoff, project status, master plan, program memory, DD-010 status, TreasureBench Agents status, public-safe site, and JSON only where required.
+    - Run the complete registered validation wall and preserve all scientific inventories and paper and PDF bytes.
+    - "Mark PR #199 ready only after every required local and GitHub check passes."
+    - "Squash-merge PR #199 only after every required check passes."
+    - Verify normal post-merge CI and Pages.
+    - Verify live public-safe TreasureBench, DD-010, Agents v1, program, and related data routes.
+    - "Close issue #198 only after post-merge CI, Pages, and live-route verification pass."
+    - Synchronize local main with origin/main.
+    - Return a final schema-valid Agent Operations handoff.
+non_goals:
+  - No credential access, provider call, spend, or additional AO-0004 canary or bisection.
+  - No read, append, mutation, reactivation, replacement, or reuse of any R3 or R4 authorization or ledger.
+  - No private-state read, write, generation, deletion, publication, pilot, campaign, batch, seed, task, answer, key, ciphertext, custody, or run.
+  - No DD-023, claim, scientific run, evidence promotion, proof promotion, or scientific interpretation.
+  - No paper or PDF change, ranking, composite, leaderboard, model comparison, or performance publication.
+  - No package, release, DOI, arXiv, journal, submission, or upstream action.
+  - No base-campaign registration or execution.
+  - No registration or execution of the later wholly fresh sealed repair-confirmation pilot.
+permissions:
+  repository_write: true
+  git_branch_commit: true
+  github_issue_pr: true
+  merge_after_checks: true
+  ci_pages: true
+external_action_permissions:
+  network_observation: true
+  github_mutation: true
+  provider_calls: false
+  spend: false
+  release_publication: false
+  submission: false
+scientific_mutation_permissions:
+  create_study: false
+  create_claim: false
+  create_run: false
+  change_evidence_status: false
+  change_proof_status: false
+  change_paper_lifecycle: false
+private_data_permissions: {read: false, write: false, generate: false, publish: false}
+budget:
+  currency: USD
+  expected: "0"
+  hard_cap: "0"
+  call_cap: 0
+  category_caps: {}
+  cumulative_spend: "0"
+expected_outcomes:
+  - A complete public-safe AO-0004 success closeout that preserves exact R1 through R4 history and accurately distinguishes engineering conformance from scientific or performance evidence.
+  - "PR #199 accurately describes the offline repair, R3 bounded failure, R4 success, exact operational totals, no-private/no-scientific boundary, and final validation."
+  - "After exact owner authorization only, PR #199 is ready, squash-merged, normal CI and Pages pass, public-safe routes are live-verified, issue #198 is closed, and main is synchronized."
+  - The later wholly fresh sealed repair-confirmation pilot remains an unregistered, unexecuted candidate requiring wholly new private identities and separate owner authorization.
+stop_conditions:
+  - Stop before any closeout reconciliation, PR metadata or readiness mutation, merge, issue closure, CI or Pages action, live-route verification, or main synchronization until the exact active AO-0005 authorization exists.
+  - Stop on any credential access, provider call, spend, canary or bisection attempt, or R3/R4 authorization or ledger access or mutation.
+  - Stop if any R1 through R4 gate, ledger, outcome, execution commit, call count, token count, cost, no-bisection fact, or state-boundary fact changes.
+  - Stop on any private-state access or mutation, new private identity, new pilot registration, or quarantined-campaign reuse.
+  - Stop if scientific inventories, paper or PDF bytes, performance surfaces, release state, upstream state, or unrelated preservation files change.
+  - Stop on contract, gate, branch, issue, PR ancestry, protected-tree, validation, CI, Pages, route, or public-redaction mismatch.
+acceptance_profile: infrastructure
+canonical_destinations:
+  - tasks/treasurebench-provider-schema-conformance-closeout.yml
+  - plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE_CLOSEOUT.md
+  - reports/agent-ops
+  - docs/current-state.md
+  - docs/current-roadmap.md
+  - docs/program-memory/registry.yml
+  - docs/benchmark/agents-v1
+  - studies/DD-010-discoverybench/status.yml
+  - reports/benchmark
+  - reports/final-handoff.md
+  - reports/project-status.md
+  - site
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 198
+  branch: benchmark/treasurebench-provider-schema-conformance
+  pull_request: 199
+  base: main
+exec_plan: plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE_CLOSEOUT.md
+frozen_identifiers:
+  superseded_task_id: AO-0004
+  owner_study: DD-010
+  decision: conformance-pass-both-complete-schemas
+  ao_0004_execution_commit: dcd89bca5daa54386df163439a010583c30134ec
+  ao_0004_r1_gate_sha256: sha256:ed9f901169c92a7b337ad5beedd271651c0b25560b8e6301c57619528581841b
+  ao_0004_r2_gate_sha256: sha256:a7645e04f6c9c92f5c988fb5422d59181b8314dff5e8e9094e87f17efe0576de
+  ao_0004_r3_gate_sha256: sha256:650b179ae6c19c3b7b38291c5b08878628b07fdee1516d4959cb55c8adc8dcb0
+  ao_0004_r3_ledger_sha256: sha256:687ea038fd2de2afeb4b4beee905d139ab42aa50d7384fbfc9b1f65e72c2d4be
+  ao_0004_r3_outcome_sha256: sha256:f55bc57986a565413de4bd920475875624e32b716effdac753c8908c12230b0d
+  ao_0004_r4_gate_sha256: sha256:fefab9544243e3412c2e18cbff99dd5efcb05602f0875d2e8375e6f7ab1dfcee
+  ao_0004_r4_ledger_sha256: sha256:057e23edb9f3f6e92ee2881ed6cef125f5252fdf5777483f504be6e371efa91d
+  ao_0004_r4_outcome_sha256: sha256:ed819f442ff221a3b0907f1a5e0fea030e9580beb5d56bf9dd75c17838304171
+  r4_calls: "4"
+  r4_input_tokens: "1603"
+  r4_output_tokens: "275"
+  r4_cost_usd: "0.0086685"
+  r4_openai_cost_usd: "0.0031875"
+  r4_anthropic_cost_usd: "0.005481"
+  r4_bisection_calls: "0"
+  private_state_change: "false"
+  scientific_state_change: "false"
+supersession:
+  supersedes: [AO-0004]
+  superseded_by: null
+  reason: AO-0004 intentionally lacked PR readiness, merge, issue closure, CI/Pages, and final reconciliation authority; AO-0005 preserves its terminal success while supplying only separately gated public closeout authority.
+next_gate: Authorize the exact committed AO-0005 successful-conformance closeout gate before any reconciliation, PR mutation, readiness, merge, issue closure, CI/Pages, live-route verification, or main synchronization.

@@ -93,11 +93,31 @@ answer, task key, answer key, task ciphertext, answer ciphertext, or custody
 manifest was created. The campaign and batch cannot be retried, repaired,
 reopened, reused, rescored, executed, or reauthorized.
 
-This is redacted DD-010 engineering status only. The next substantive
-candidate is **TreasureBench exact provider-schema conformance repair and
-public-canary gate**, a separately registered public-only diagnostic and tiny
-canary gate. It creates no DD-023, claim, scientific run, paper result,
-performance publication, or base-campaign authority.
+This is redacted DD-010 engineering status only. AO-0004 and issue #198 own
+the separately registered **TreasureBench exact provider-schema conformance
+repair and public-canary gate**. Its R3 public canaries terminated after six
+calls without conformance: OpenAI minimal/complete and Anthropic minimal
+passed, Anthropic complete was HTTP 200 local-invalid at the exact 128-token
+ceiling, and both frozen Anthropic bisections passed. Output truncation remains
+a hypothesis because R3 retained neither stop reason nor validation stage.
+Every R3 artifact remains immutable.
+
+The separately authorized R4 execution kept the canonical contract unchanged,
+used a fresh public ledger, and raised both complete-output ceilings to 256.
+OpenAI and Anthropic each passed their minimal and complete provider-specific
+TreasureBench action schemas, and independent post-parse validation passed
+the exactly-one-final-action semantic contract. The four ordered calls used
+1,603 input tokens and 275 output tokens and cost USD 0.0086685: OpenAI USD
+0.0031875 and Anthropic USD 0.005481. No bisection ran.
+
+This result is provider-schema and semantic-contract engineering conformance,
+not scientific evidence, model-performance evidence, peer review, external
+validation, or comparative performance. Private and scientific state
+remained unchanged. R1 and R2 remain superseded and unused; R3 and R4 are
+consumed and immutable. The next substantive candidate is TreasureBench
+Agents v1 wholly fresh sealed repair-confirmation pilot registration. It
+remains unregistered, unexecuted, and separately owner-gated and must later
+use wholly new private identities.
 
 ## Registered evaluation campaign
 

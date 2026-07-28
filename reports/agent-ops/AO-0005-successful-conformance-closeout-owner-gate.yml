@@ -1,0 +1,128 @@
+schema_version: agent-ops-owner-gate-v1
+kind: owner-gate
+synthetic: false
+gate_id: AOG-AO-0005-SUCCESSFUL-CONFORMANCE-CLOSEOUT
+task_contract:
+  path: tasks/treasurebench-provider-schema-conformance-closeout.yml
+  sha256: sha256:008e9ea745ebe12e9339556bf323d055a72175f399d59e1a15cd79918db1ddd4
+issue: 198
+pull_request:
+  number: 199
+  expected_state: OPEN
+  head_sha: 9923cbbb45b5ec50f7a6aff52f3b5b2734da53eb
+branch: benchmark/treasurebench-provider-schema-conformance
+commit: 9923cbbb45b5ec50f7a6aff52f3b5b2734da53eb
+tree_hashes:
+  .github/workflows: sha256:1ad8843883c8e4ff4cb1010b5aefce3b6e1d78471a239f4b399601ac36cc8b6d
+  Makefile: sha256:e5638f0457606525f395eb39a396057fd8f4dd0b291b2b844cbe63a3874655a1
+  claims/claims.yml: sha256:db8fae3619f22625f367c3a25718d541e8baebee059333351222857c363460cb
+  docs/agent-ops: sha256:fe94862b1b7cad4d472a9e7b3e25749c7311986ec062a4040e8031621ab190f1
+  docs/benchmark/agents-v1: sha256:65db19c7959528186125bfa5ee39d258bca274a674bb35c471323c7449c747fb
+  docs/current-roadmap.md: sha256:61b41527a2a741c5a4f34917817ff6f1bb8405cac9dd95efe6ad8bd1db72814d
+  docs/current-state.md: sha256:a9ac6fd71a90b561e5abbe314057ba38c2ed8e020088a9894a72661a5b3265cf
+  docs/paper-lifecycle.yml: sha256:a768dcb9721bc0d1c8b4f40a403501edcc41ca7a08d85ef49390eacbaf38f703
+  docs/program-memory: sha256:7a50218bfcea25cb519a39f98cb5c7284976be05aef3825a1ca3ef35087fc603
+  docs/releases/releases.yml: sha256:093eba618cb142ef9f4139635f34c2ea68fce3563948ea6f9db3f4398f00ba37
+  plans/MASTER_EXEC_PLAN.md: sha256:8c72fd504b033a901a249e1ba00830aa624b01887497d1d8a805c5bfe637e281
+  plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE.md: sha256:b2f754d09ad17457a33803c81d7fbc17dfdc3a38be278ff4e2e7f75d2e82570b
+  plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE_CLOSEOUT.md: sha256:a111ade3a70f1e7b5ff0e610565f04e758bed80ba9171cbde28d3884d8e69b1b
+  reports/final-handoff.md: sha256:6e9857ae4ff93b0651039e8312201b313933fcc79da34bbbf260e92215067c39
+  reports/project-status.md: sha256:da62a8c9be6443bd948f9454b37861ecc07de35e2e3e8090216d02d07539de21
+  reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate.yml: sha256:ed9f901169c92a7b337ad5beedd271651c0b25560b8e6301c57619528581841b
+  reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate-r2.yml: sha256:a7645e04f6c9c92f5c988fb5422d59181b8314dff5e8e9094e87f17efe0576de
+  reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate-r3.yml: sha256:650b179ae6c19c3b7b38291c5b08878628b07fdee1516d4959cb55c8adc8dcb0
+  reports/agent-ops/AO-0004-treasurebench-provider-canary-owner-gate-r4.yml: sha256:fefab9544243e3412c2e18cbff99dd5efcb05602f0875d2e8375e6f7ab1dfcee
+  reports/agent-ops/AO-0004-public-provider-canary-outcome.yml: sha256:f55bc57986a565413de4bd920475875624e32b716effdac753c8908c12230b0d
+  reports/agent-ops/AO-0004-r4-public-provider-canary-outcome.yml: sha256:ed819f442ff221a3b0907f1a5e0fea030e9580beb5d56bf9dd75c17838304171
+  reports/agent-ops/AO-0004-r4-legitimate-checkpoint-handoff.yml: sha256:44aab381fb90347b1b973b86fb0a81b46a5c85a3776e757acd25495dfcf1e5cb
+  reports/benchmark/treasurebench-provider-schema-canaries/AO-0004-public-engineering-ledger.jsonl: sha256:687ea038fd2de2afeb4b4beee905d139ab42aa50d7384fbfc9b1f65e72c2d4be
+  reports/benchmark/treasurebench-provider-schema-canaries/AO-0004-public-engineering-ledger-r4.jsonl: sha256:057e23edb9f3f6e92ee2881ed6cef125f5252fdf5777483f504be6e371efa91d
+  reports/benchmark/treasurebench-agents-v1-provider-schema-conformance-audit.yml: sha256:1c9130d6da6dd4ecfe4964b1666e220fe2f1b30b50462047a57121820641bc2a
+  reports/benchmark/treasurebench-agents-v1-provider-schema-conformance-audit.md: sha256:3947014898fc0fdda03ccab466fba58155bd2e6ba2f4c9451771c82fd7875e56
+  results: sha256:699d51e4dce5d79b338c0ad0acceb77a2f4380ab1025494d40acef3167fae8ca
+  site/AGENTS.md: sha256:c0ea35c4553ac70e2170b378b7b7c1b6d1fd3149d528755ac0edddc1772028ae
+  site/README.md: sha256:e0403ffe9d921aa69ab019a760db0286f772a1495359fce4bd1b44d7e6f46726
+  site/content: sha256:d1309e6c3af7fea8059e6f13ec9e769b331a33b39b437e5c682daa3fc051bf77
+  site/src: sha256:4df852b967984d7aaba9b7fc0dbb538107d40dda9c395c37c2beaa4e4cef5977
+  site/tests: sha256:dc49d9be9a84d7a0a8ad6068809b2a07c05f8c1e715fd88bdf48f6637ab20cd2
+  src/distributed_discovery/agent_ops: sha256:84a44c60d7c7a6a159c8beb5cfb8bc25b19bcae8992c1781fa396225d9f11376
+  src/distributed_discovery/benchmark/agents_v1: sha256:24981c5762f1ceaf6209530ee7ab2406cdb04a0b026b8c5f2a38cc257b407b65
+  studies/DD-010-discoverybench: sha256:c80f2e0b2089076e627e1660e09b39172bdcc259657f9f0e9da303298aee5111
+  tasks/treasurebench-provider-schema-conformance.yml: sha256:eb893370385d12aa1bfb541a464c592ca13852bff06d3366e465e78ac098e09a
+  tasks/treasurebench-provider-schema-conformance-closeout.yml: sha256:008e9ea745ebe12e9339556bf323d055a72175f399d59e1a15cd79918db1ddd4
+  tests/unit/test_agent_ops_contracts.py: sha256:04ff038d9813d7bc428fde3700171cf71946218118f3bc4e308eb6765788c643
+  papers/common-source-trap/The_Common_Source_Trap.pdf: sha256:afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7
+  papers/discovery-institutions/Institutions_for_Distributed_Discovery.pdf: sha256:78606f732f105d79395409dcb9d7224d72aa1e44312ca30ff5719d049afd98a8
+  papers/foundations/Foundations_of_Distributed_Discovery.pdf: sha256:8875926a52f0b8e722f7ce827c456c4b694f9e981c21c4b15bf2b3c60b83e76b
+  papers/incentive-to-ignore/The_Incentive_to_Ignore.pdf: sha256:651c91fb68df6b2f1397ca86f3842b7c2fa9c067601957c32401a7f5e95cd24b
+  papers/information-sharing-frontier/When_Does_Information_Sharing_Improve_Decentralized_Discovery.pdf: sha256:a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13
+  papers/three-results/Three_Results_in_Distributed_Discovery.pdf: sha256:9eb896353b1210706d6108685dde963e02d6a5ebc64af9f9f69c08c01f5ebc96
+  papers/threshold-discovery/Threshold_Discovery.pdf: sha256:634e96662989a3fd6efb5fc3e6919883897e60511826e25c6d0176bac4af9249
+  papers/upstream-extension/preview/The_Shared_Discovery_Paradox-patched.pdf: sha256:0a43360e59fdbbc4002e2190479871896688b3b4ef640d219313cd9d2ed5acb9
+purpose: Authorize only the public-safe successful AO-0004 conformance closeout at the exact zero-provider, zero-credential, zero-private, zero-scientific AO-0005 execution surface.
+irreversible_actions:
+  - permission: permissions.merge_after_checks
+    description: "Squash-merge draft PR #199 only after the complete registered validation wall and every required GitHub check pass."
+  - permission: permissions.ci_pages
+    description: Permit only normal post-merge CI and Pages for the validated public-safe closeout, followed by exact live-route verification.
+private_actions: []
+external_actions:
+  - permission: external_action_permissions.github_mutation
+    description: "Correct PR #199 title and body, mark it ready after validation and required checks, squash-merge it after checks, and close issue #198 only after post-merge and live verification."
+  - permission: external_action_permissions.network_observation
+    description: Observe required PR checks, post-merge CI and Pages, and the named public-safe TreasureBench, DD-010, Agents v1, program, and related data routes only.
+cumulative_state:
+  currency: USD
+  spend: "0"
+  calls: 0
+  category_spend: {}
+hard_caps:
+  currency: USD
+  spend: "0"
+  calls: 0
+  category_spend: {}
+remaining_caps:
+  currency: USD
+  spend: "0"
+  calls: 0
+  category_spend: {}
+owner_confirmation_statements:
+  - "I authorize only AO-0005 at execution commit 9923cbbb45b5ec50f7a6aff52f3b5b2734da53eb, the exact task-contract hash, protected trees, issue #198, draft PR #199, branch, zero caps, actions, prohibitions, and expiry in this manifest."
+  - I accept AO-0004 R4 as conformance-pass-both-complete-schemas with exactly four successful calls, 1,603 input tokens, 275 output tokens, USD 0.0086685 total, OpenAI USD 0.0031875, Anthropic USD 0.005481, no bisection, and no private or scientific state change.
+  - I require R1 and R2 to remain superseded and unused and every consumed R3 and R4 gate, authorization, ledger, outcome, call, cost, and terminal decision to remain immutable and never rerun, appended, reactivated, reused, rescored, or reauthorized.
+  - "I authorize only public-safe AO-0004 reconciliation; PR #199 title, body, and readiness correction after validation; squash merge after required checks; normal post-merge CI and Pages; named live public-safe route verification; issue #198 closure after verification; and main synchronization."
+  - I understand this manifest authorizes zero credential access, provider calls, spend, private-state action, scientific mutation, paper or PDF change, performance publication, package, release, submission, base-campaign action, or later-pilot registration or execution.
+  - I require all public wording to identify R4 as engineering conformance rather than scientific or model-performance evidence and to retain no raw output, prompt, credential, authorization content, or performance comparison.
+  - I understand the later TreasureBench Agents v1 wholly fresh sealed repair-confirmation pilot registration remains only an unregistered candidate requiring wholly new private identities and separate owner authority.
+  - I understand the generic owner-gate engine only validates and creates the exact local AO-0005 authorization; it performs no repository edit, GitHub mutation, merge, deployment, credential or authorization read, private-state access, provider call, or spend.
+explicit_prohibitions:
+  - provider-calls-outside-manifest
+  - credential-read-outside-manifest
+  - unauthorized-private-access
+  - scientific-mutation-outside-contract
+  - cap-increase
+  - consequential-action-by-gate-engine
+  - any-provider-call
+  - any-credential-access
+  - any-spend
+  - any-ao-0004-canary-or-bisection
+  - ao-0004-gate-authorization-or-ledger-rerun-append-reactivation-reuse-rescore-or-reauthorization
+  - ao-0004-r3-or-r4-authorization-content-read-copy-hash-log-or-retention
+  - r1-r2-r3-r4-gate-ledger-outcome-call-cost-or-terminal-decision-mutation
+  - raw-provider-output-prompt-credential-or-performance-comparison-publication
+  - any-private-state-read-write-generation-deletion-or-publication
+  - private-pilot-campaign-batch-seed-task-answer-key-ciphertext-custody-or-run-creation
+  - quarantined-campaign-or-batch-retry-repair-reopen-reuse-rescore-or-execution
+  - dd-023-claim-scientific-run-evidence-or-proof-promotion
+  - paper-pdf-lifecycle-ranking-composite-leaderboard-or-performance-publication
+  - package-release-doi-arxiv-journal-or-submission-action
+  - base-campaign-registration-or-execution
+  - later-wholly-fresh-pilot-registration-or-execution
+  - pr-ready-before-complete-validation-and-required-checks
+  - pr-merge-before-complete-validation-and-required-checks
+  - issue-closure-before-post-merge-ci-pages-and-live-route-verification
+  - pages-deployment-outside-the-normal-main-workflow
+expires_at_utc: "2026-08-03T23:48:03Z"
+authorization_output_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0005-SUCCESSFUL-CONFORMANCE-CLOSEOUT.yml
+next_milestone: M2 owner-authorized public-safe AO-0004 successful-conformance reconciliation.
+generated_resume_message: "Resume AO-0005 in this same Codex session, issue #198, branch benchmark/treasurebench-provider-schema-conformance, draft PR #199, and plans/TREASUREBENCH_PROVIDER_SCHEMA_CONFORMANCE_CLOSEOUT.md. Use only reports/agent-ops/AO-0005-successful-conformance-closeout-owner-gate.yml and its exact authorization. Validate the authorization, task contract, execution commit, current PR ancestry, every protected tree, zero caps, and prohibitions. Then reconcile only public-safe AO-0004 success state; correct PR #199 title and body; run the complete wall; mark ready and squash-merge only after required checks; verify normal post-merge CI/Pages and named live public-safe routes; close issue #198; synchronize main; repeat the decision-delta audit; and return the final schema-valid handoff. Stop on any mismatch. Do not access credentials, providers, AO-0004 authorizations or ledgers, private state, or create scientific, paper, performance, release, submission, base-campaign, or later-pilot state."

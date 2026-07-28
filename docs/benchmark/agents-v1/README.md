@@ -5,9 +5,10 @@ the frozen `discoverybench-agents-v1` instrument and schema identifiers remain
 unchanged for compatibility; the formal suite rename creates no protocol or
 content version.
 
-Status: first sealed engineering pilot permanently quarantined; redacted
-instrument-failure adjudication complete; instrument repaired; any fresh pilot
-separately gated.
+Status: both sealed engineering pilots permanently quarantined; redacted
+instrument-failure adjudication complete; instrument repaired; public
+provider-schema and semantic-contract engineering conformance passed under
+AO-0004 R4; any fresh pilot remains separately registered and gated.
 
 DiscoveryBench Agents v1 measures how declared software-agent team
 architectures convert dispersed synthetic evidence into structured search
@@ -48,6 +49,29 @@ provider/model snapshots and pricing; explicit owner cost authorization;
 immutable outputs before unsealing; independent verification; and corruption
 acceptance. Neither the quarantined pilot nor its diagnostic authorizes a
 fresh pilot or the base campaign.
+
+## Public provider-schema conformance
+
+AO-0004 R4 completed as `conformance-pass-both-complete-schemas` at execution
+commit `dcd89bca5daa54386df163439a010583c30134ec`. OpenAI and Anthropic each
+passed their minimal and complete provider-specific TreasureBench action
+schemas, and independent validation passed the canonical
+exactly-one-final-action semantic contract. The four ordered calls used 1,603
+input tokens and 275 output tokens and cost USD 0.0086685: OpenAI USD
+0.0031875 and Anthropic USD 0.005481. No bisection ran.
+
+R3's 128-token bounded complete-output failure remains preserved and
+unresolved beyond an output-truncation hypothesis; the prospectively frozen
+R4 256-token execution passed. R1 and R2 remain superseded and unused; R3 and
+R4 are consumed and immutable. This is provider-schema and semantic-contract
+engineering conformance, not scientific evidence, model-performance evidence,
+peer review, external validation, or comparative performance. Private and
+scientific state did not change.
+
+The next substantive candidate is TreasureBench Agents v1 wholly fresh sealed
+repair-confirmation pilot registration. It is not registered or executed here
+and requires wholly new campaign, batch, CSPRNG seed, private tasks, answers,
+keys, ciphertexts, custody, and separate owner authorization.
 
 ## Registered package
 

@@ -1,4 +1,27 @@
-# Current roadmap — repair-confirmation pilot quarantined; public schema gate next
+# Current roadmap — provider-schema conformance passed; fresh registration next
+
+AO-0004 completed as `conformance-pass-both-complete-schemas`. Under its
+frozen R4 public canaries, OpenAI and Anthropic both passed their minimal and
+complete provider-specific TreasureBench action schemas, and the canonical
+exactly-one-final-action semantic contract passed independently. The ordered
+execution made four successful calls, used 1,603 input tokens and 275 output
+tokens, and cost USD 0.0086685: OpenAI USD 0.0031875 and Anthropic USD
+0.005481. No bisection ran, and private and scientific state remained
+unchanged.
+
+R3's bounded 128-token complete-output failure is permanently preserved and
+remains unresolved beyond the prospective output-truncation hypothesis. The
+frozen R4 256-token execution passed. R1 and R2 remain superseded and unused;
+R3 and R4 are consumed and immutable and cannot be rerun, appended,
+reactivated, reused, rescored, or reauthorized.
+
+This is provider-schema and semantic-contract engineering conformance, not
+scientific evidence, model-performance evidence, peer review, external
+validation, or a performance comparison. The next substantive candidate is
+**TreasureBench Agents v1 wholly fresh sealed repair-confirmation pilot
+registration**. It remains unregistered and unexecuted and requires a later
+task, wholly new campaign and private identities, and separate owner
+authorization. The 200-task base remains blocked.
 
 The wholly fresh TreasureBench Agents v1 repair-confirmation campaign
 `treasurebench-agents-v1-repair-confirmation-v1`, batch
@@ -12,12 +35,9 @@ No task seed, private task, answer, task/answer key, task/answer ciphertext, or
 custody manifest was created. The campaign, batch, and inactive archived R2
 authorization are permanently preserved and cannot be reused.
 
-The next substantive candidate is **TreasureBench exact provider-schema
-conformance repair and public-canary gate**. It must be separately registered,
-remain public-only, diagnose the HTTP 400 request/schema boundary, validate
-each provider's supported strict-schema subset, retain only safe structured
-error fields, and pass tiny public canaries before any new private pilot is
-registered. No such future task, provider call, or spend is authorized here.
+The separately registered public provider-schema task that followed this
+quarantine is completed as described above. The campaign and batch remain
+permanently preserved and cannot be reused.
 
 Compendium v0.1.0 is published and externally verified from exact source
 `3ca173f4e9e81a6d0e3e56205e428c596edc050e`. The immutable GitHub Release,
@@ -92,11 +112,13 @@ DiscoveryBench Agents v1 is registered as a DD-010 instrument, not a new study
 or DiscoveryBench v4. Its original sealed pilot and the later wholly fresh
 repair-confirmation campaign are both permanently quarantined. The latter
 stopped before task generation or private runs on one terminal public-canary
-HTTP 400. The next option is now the separately registered public-only
-provider-schema conformance gate described above. The 200-task claim-grade
-base remains blocked because the audited host cannot run the exact local/open
-candidate. This roadmap creates no call, spend, private holdout, trace, result,
-study, or claim authority.
+HTTP 400. The separate AO-0004 public provider-schema and semantic-contract
+engineering conformance gate passed under R4 without changing either
+quarantine. The next option is the unregistered wholly fresh sealed
+repair-confirmation pilot registration described above. The 200-task
+claim-grade base remains blocked because the audited host cannot run the exact
+local/open candidate. This roadmap creates no new call, spend, private
+holdout, trace, result, study, or claim authority.
 
 The Phase 2 execution architecture is `shared trunk, low-cost option creation,
 staged exercise`. It records readiness, residual value, decay, expiry horizon,

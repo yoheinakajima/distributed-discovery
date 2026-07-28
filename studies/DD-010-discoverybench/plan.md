@@ -85,3 +85,40 @@ engineering pilot pending owner authorization and keeps the claim-grade base
 blocked on local/open feasibility. The inactive authorization has zero caps
 and permits no execution. DD-010 continues to own the instrument; no new study,
 claim, private material, trace, result, or run is created.
+
+## AO-0004 public provider-schema conformance boundary
+
+Issue #198 separately registers the public-only provider-schema conformance
+repair after the fresh repair-confirmation pilot stopped at its first OpenAI
+HTTP 400. The corrected offline reconstruction retains `minItems` and
+`maxItems` for the pinned standard OpenAI snapshot and omits only `maxLength`
+and `uniqueItems` from that transport. It does not claim which constraint or
+other request interaction caused the historical failure because the provider
+error body was intentionally not retained.
+
+The canonical semantic contract remains unchanged. Separate OpenAI and
+Anthropic transport compilers omit only unsupported transport constraints,
+while post-parse validation preserves message length, cardinality, uniqueness,
+identity and vocabulary checks; Method C and metric ranges remain mandatory.
+The exact mock matrix and all corruptions must pass before an execution freeze.
+R3 later stopped after its bounded six-call public sequence without
+conformance. Its complete Anthropic response used exactly the 128-token
+ceiling but retained no stop reason or validation stage, so truncation is a
+hypothesis only and every R3 artifact remains immutable.
+
+The separately authorized R4 repair used a fresh ledger, fixed safe failure
+stages, invalid-output hashes without raw retention, and a 256-token
+complete-output ceiling for both providers without weakening the semantic
+contract. OpenAI and Anthropic each passed their minimal and complete
+provider-specific action schemas, and the canonical exactly-one-final-action
+semantic contract passed independently. The four ordered calls used 1,603
+input tokens and 275 output tokens and cost USD 0.0086685: OpenAI USD
+0.0031875 and Anthropic USD 0.005481. No bisection ran. Private and scientific
+state remained unchanged.
+
+This is public provider-schema and semantic-contract engineering conformance,
+not scientific evidence or model-performance evidence. R1 and R2 remain
+superseded and unused; R3 and R4 remain consumed and immutable. A later wholly
+fresh sealed repair-confirmation pilot registration is only an unregistered
+candidate and requires wholly new private identities and separate owner
+authority.

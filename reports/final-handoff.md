@@ -1,4 +1,29 @@
-# Final handoff — TreasureBench repair-confirmation pilot quarantined
+# Final handoff — TreasureBench provider-schema conformance passed
+
+## AO-0004/AO-0005 successful conformance closeout (2026-07-27)
+
+AO-0004 completed as `conformance-pass-both-complete-schemas` at frozen R4
+execution commit `dcd89bca5daa54386df163439a010583c30134ec`. OpenAI and
+Anthropic both passed their minimal and complete provider-specific
+TreasureBench action schemas, and the canonical exactly-one-final-action
+semantic contract passed independent post-parse validation.
+
+The four successful R4 calls used 1,603 input tokens and 275 output tokens and
+cost USD 0.0086685: OpenAI USD 0.0031875 and Anthropic USD 0.005481. No
+bisection ran. R3's bounded failure at its exact 128-token ceiling is
+preserved and remains unresolved beyond an output-truncation hypothesis; the
+prospectively frozen R4 256-token execution passed. R1 and R2 remain
+superseded and unused, while R3 and R4 remain consumed and immutable.
+
+This is public provider-schema and semantic-contract engineering conformance.
+It is not scientific evidence, model-performance evidence, peer review,
+external validation, or comparative performance. Private and scientific state
+did not change, and no raw output, prompt, credential material, authorization
+content, or performance comparison is published. The next substantive
+candidate is **TreasureBench Agents v1 wholly fresh sealed
+repair-confirmation pilot registration**. It is not registered or executed by
+this closeout and requires wholly new campaign, batch, CSPRNG seed, private
+tasks, answers, keys, ciphertexts, custody, and separate owner authorization.
 
 ## Current repair-confirmation closeout (2026-07-27)
 
@@ -20,10 +45,9 @@ batch cannot be retried, repaired, reopened, reused, rescored, executed, or
 reauthorized.
 
 The closeout changes no scientific inventory or paper/PDF byte. It publishes
-no performance, ranking, composite, or model comparison. The exact next
-substantive candidate is **TreasureBench exact provider-schema conformance
-repair and public-canary gate**; that future public-only task requires separate
-registration and authorization.
+no performance, ranking, composite, or model comparison. Its separately
+registered public-only successor is completed by the AO-0004/AO-0005 closeout
+above.
 
 ## Prior sealed-pilot closeout (2026-07-24)
 

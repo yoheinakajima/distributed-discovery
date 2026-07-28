@@ -1,0 +1,70 @@
+schema_version: agent-ops-owner-amendment-v1
+kind: owner-amendment-record
+task_id: AO-0004
+recorded_at_utc: "2026-07-27T21:56:55Z"
+issue: 198
+pull_request: 199
+branch: benchmark/treasurebench-provider-schema-conformance
+authorization_state:
+  consumed_gate_id: AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R3
+  consumed_execution_commit: 1048c502b205346fef70b06c76975b6ff06b0241
+  consumed_terminal_decision: stopped-complete-schema-failure-after-fixed-bisection
+  consumed_authorization_may_be_reused: false
+  consumed_gate_or_ledger_may_be_reactivated_or_appended: false
+  required_replacement_gate_id: AOG-AO-0004-PUBLIC-PROVIDER-CANARIES-R4
+r3_observation:
+  complete_anthropic_http_status: 200
+  complete_anthropic_output_tokens: 128
+  complete_anthropic_output_ceiling: 128
+  complete_anthropic_local_status: invalid
+  stop_reason_retained: false
+  validation_stage_retained: false
+  exact_failure_cause: unresolved
+  bounded_hypothesis: The complete Anthropic output may have been truncated at the 128-token ceiling, but R3 did not retain the stop reason or validation stage and therefore cannot establish that cause.
+corrections:
+  complete_output_token_ceiling:
+    openai: 256
+    anthropic: 256
+  projected_cost_usd:
+    both_complete_pass_four_calls: "0.030703"
+    openai_complete_failure_plus_bisection_four_calls: "0.0257075"
+    anthropic_complete_failure_plus_bisection_six_calls: "0.041893"
+    expected_aggregate_strictly_below: "0.10"
+    hard_cap_total: "1.00"
+    hard_cap_per_provider: "0.50"
+    hard_call_cap: 10
+  canonical_semantic_contract_weakened: false
+  normalization_added: false
+  fresh_ledger: reports/benchmark/treasurebench-provider-schema-canaries/AO-0004-public-engineering-ledger-r4.jsonl
+  diagnostic_classifications:
+    - provider-http-error
+    - refusal
+    - max-tokens
+    - json-decode
+    - transport-schema
+    - semantic-contract
+    - route-model-identity
+    - cost-boundary
+    - pass
+  safe_metadata:
+    - http_status
+    - finish_status
+    - finish_reason
+    - retry_eligible
+    - validation_stage
+    - bounded_error_code
+    - schema_fingerprint
+    - output_sha256
+    - input_tokens
+    - output_tokens
+    - cost_usd
+  raw_output_or_error_retention: false
+preserved_r3_sha256:
+  gate: sha256:650b179ae6c19c3b7b38291c5b08878628b07fdee1516d4959cb55c8adc8dcb0
+  ledger: sha256:687ea038fd2de2afeb4b4beee905d139ab42aa50d7384fbfc9b1f65e72c2d4be
+  outcome: sha256:f55bc57986a565413de4bd920475875624e32b716effdac753c8908c12230b0d
+preserved:
+  - Every R3 artifact and terminal outcome remains unchanged and is not reinterpreted as conformance.
+  - AO-0002 and AO-0003 quarantine records remain unchanged.
+  - No credential file, credential value, owner authorization, provider, or private state was read during this correction.
+  - No provider call, spend, scientific state, paper state, ranking, release, submission, or base-campaign state was created.

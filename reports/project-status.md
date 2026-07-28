@@ -1,6 +1,30 @@
-# Project status — TreasureBench repair-confirmation pilot quarantined
+# Project status — TreasureBench provider-schema conformance passed
 
 Date: 2026-07-27 (America/Los_Angeles).
+
+AO-0004 completed with decision
+`conformance-pass-both-complete-schemas`. The frozen R4 execution commit is
+`dcd89bca5daa54386df163439a010583c30134ec`. OpenAI and Anthropic each passed
+their minimal and complete provider-specific TreasureBench action schemas;
+the canonical exactly-one-final-action semantic contract passed independent
+post-parse validation.
+
+R4 made four successful calls, used 1,603 input tokens and 275 output tokens,
+and cost USD 0.0086685: OpenAI USD 0.0031875 and Anthropic USD 0.005481. No
+bisection ran. R3's bounded failure at the exact 128-token ceiling remains
+preserved and unresolved beyond an output-truncation hypothesis; R4's
+prospectively frozen 256-token execution passed. R1 and R2 remain superseded
+and unused, and R3 and R4 remain consumed and immutable.
+
+This is provider-schema and semantic-contract engineering conformance only,
+not scientific evidence, model-performance evidence, peer review, external
+validation, ranking, or comparative performance. Private and scientific state
+did not change. The next substantive candidate is **TreasureBench Agents v1
+wholly fresh sealed repair-confirmation pilot registration**. It remains
+unregistered, unexecuted, and separately owner-gated and must later use wholly
+new private identities.
+
+## Prior repair-confirmation quarantine
 
 Issue #196 and PR #197 close the wholly fresh TreasureBench Agents v1
 repair-confirmation campaign as `sealed-pilot-quarantined-provider-failure`.
@@ -19,9 +43,9 @@ private run was created. No retry, repair, reuse, rescoring, reauthorization,
 scientific mutation, paper change, performance publication, release, or base
 campaign follows from this closeout.
 
-The exact next substantive candidate is **TreasureBench exact provider-schema
-conformance repair and public-canary gate**. It is public-only, separately
-registered, and not authorized by this status record.
+The public-only provider-schema conformance task that followed this quarantine
+is completed as described above. Neither quarantined campaign was reopened or
+reused.
 
 ## Prior sealed-pilot status
 
