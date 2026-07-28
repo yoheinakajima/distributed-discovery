@@ -3,7 +3,7 @@
   "title": "TreasureBench Agents v1 fresh repair-confirmation v2 request",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "status", "task_id", "owner_study", "new_study_allocated", "claim_eligible", "campaign_id", "batch_id", "issue", "branch", "starting_main", "superseded_owner_gate_id", "owner_gate_id", "counts", "providers", "architectures", "provider_conformance", "credential_ingress", "budget", "failure_policy", "private_state", "verification", "boundaries", "execution_sensitive_paths"],
+  "required": ["schema_version", "status", "task_id", "owner_study", "new_study_allocated", "claim_eligible", "campaign_id", "batch_id", "issue", "branch", "starting_main", "superseded_owner_gate_id", "owner_gate_id", "counts", "providers", "architectures", "provider_conformance", "credential_ingress", "budget", "failure_policy", "private_state", "verification", "long_session", "quarantine", "boundaries", "execution_sensitive_paths"],
   "properties": {
     "schema_version": {"const": "treasurebench-agents-v1-fresh-pilot-v2-request-v1"},
     "status": {"enum": ["r2-execution-refreeze-in-progress-owner-gate-not-authorized", "exact-r2-execution-frozen-owner-gate-not-authorized"]},
@@ -45,6 +45,34 @@
     "failure_policy": {"type": "object"},
     "private_state": {"type": "object"},
     "verification": {"type": "object"},
+    "long_session": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authorization_scope", "routine_owner_checkpoints", "staged_provider_execution", "administrative_closeout", "stop_only_for"],
+      "properties": {
+        "authorization_scope": {"const": "conditional-success-or-quarantine-through-normal-final-closeout"},
+        "routine_owner_checkpoints": {"const": false},
+        "staged_provider_execution": {"type": "array", "minItems": 10, "uniqueItems": true, "items": {"type": "string"}},
+        "administrative_closeout": {"type": "array", "minItems": 11, "uniqueItems": true, "items": {"type": "string"}},
+        "stop_only_for": {"type": "array", "minItems": 6, "uniqueItems": true, "items": {"type": "string"}}
+      }
+    },
+    "quarantine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["failure_points", "stop_provider_calls_immediately", "preserve_append_only_encrypted_state", "replacement_splice_rescore_or_semantic_retry", "close_provider_phase_when_present", "lock_every_safely_lockable_existing_object", "unseal_only_after_lock_and_only_when_safe", "deterministic_public_safe_closeout", "same_authority_through_merge_and_deploy"],
+      "properties": {
+        "failure_points": {"type": "array", "minItems": 15, "uniqueItems": true, "items": {"type": "string"}},
+        "stop_provider_calls_immediately": {"const": true},
+        "preserve_append_only_encrypted_state": {"const": true},
+        "replacement_splice_rescore_or_semantic_retry": {"const": false},
+        "close_provider_phase_when_present": {"const": true},
+        "lock_every_safely_lockable_existing_object": {"const": true},
+        "unseal_only_after_lock_and_only_when_safe": {"const": true},
+        "deterministic_public_safe_closeout": {"const": true},
+        "same_authority_through_merge_and_deploy": {"const": true}
+      }
+    },
     "boundaries": {"type": "object", "additionalProperties": {"const": false}},
     "execution_sensitive_paths": {"type": "array", "minItems": 20, "uniqueItems": true, "items": {"type": "string"}}
   }

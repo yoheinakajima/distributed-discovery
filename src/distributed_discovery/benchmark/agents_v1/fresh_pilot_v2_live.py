@@ -53,6 +53,9 @@ from distributed_discovery.benchmark.agents_v1.fresh_pilot_v2 import (
     generate_tasks,
     load_owner_authorization,
 )
+from distributed_discovery.benchmark.agents_v1.fresh_pilot_v2_session import (
+    LongSessionStopRequired,
+)
 from distributed_discovery.benchmark.agents_v1.generation import generate_public_calibration
 from distributed_discovery.benchmark.agents_v1.live_inputs import (
     CostLedger,
@@ -127,6 +130,15 @@ PRIVATE_OBJECTS = (
     "encrypted-final-audit-package",
     "redacted-summary",
 )
+PRESERVED_UNRELATED_UNTRACKED = frozenset(
+    {
+        "papers/information-sharing-frontier/paper-audit 2.json",
+        "papers/information-sharing-frontier/visual-qa 2.md",
+        "plans/POST_V5_THEOREM_SPINE_CONSOLIDATION 2.md",
+        "reports/roadmap-consolidation/post-v5-literature-and-nonoverlap 2.md",
+        "reports/roadmap-consolidation/post-v5-next-program-gate 2.yml",
+    }
+)
 
 
 @dataclass(frozen=True)
@@ -139,6 +151,15 @@ class PreparedLiveStage:
     response_root: Path
     ledger: AppendOnlyLedger
     stage: str
+
+
+class PreparedStageFailure(PermissionError):
+    """A registered pre-ingress failure with enough state for quarantine."""
+
+    def __init__(self, *, prepared: PreparedLiveStage, failure_class: str) -> None:
+        self.prepared = prepared
+        self.failure_class = failure_class
+        super().__init__(failure_class)
 
 
 def private_state_root() -> Path:
@@ -586,6 +607,21 @@ def _prepare_live_stage(repo: Path) -> PreparedLiveStage:
     """Validate authorization, identity, stage, ledger, and caps without credentials."""
 
     authorization = load_owner_authorization(repo)
+    if not authorization.get("synthetic", False):
+        status = subprocess.run(
+            ("git", "status", "--porcelain"),
+            cwd=repo,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.splitlines()
+        unexpected = [
+            line
+            for line in status
+            if not (line.startswith("?? ") and line[3:].strip('"') in PRESERVED_UNRELATED_UNTRACKED)
+        ]
+        if unexpected:
+            raise PermissionError("fresh live worktree is not clean")
     root = private_state_root()
     _secure_directory(root)
     _initialize_private_state(root, repo=repo, synthetic=False)
@@ -596,9 +632,7 @@ def _prepare_live_stage(repo: Path) -> PreparedLiveStage:
     ledger = _fresh_ledger(root / "usage-cost-ledger.jsonl")
     state = _load_state(root / "provider-stage-state.json")
     stage = _next_stage(repo, root, state)
-    if stage in CALL_STAGES:
-        _validate_call_stage_before_credential_ingress(stage, ledger)
-    return PreparedLiveStage(
+    prepared = PreparedLiveStage(
         authorization=authorization,
         root=root,
         operational_key=operational_key,
@@ -606,6 +640,15 @@ def _prepare_live_stage(repo: Path) -> PreparedLiveStage:
         ledger=ledger,
         stage=stage,
     )
+    if stage in CALL_STAGES:
+        try:
+            _validate_call_stage_before_credential_ingress(stage, ledger)
+        except PermissionError as error:
+            raise PreparedStageFailure(
+                prepared=prepared,
+                failure_class="cap-guard-failure",
+            ) from error
+    return prepared
 
 
 class _ReplayOnlyAdapter:
@@ -1285,9 +1328,12 @@ def _execute_stage(
     return summary
 
 
-def run_live_fresh_pilot(repo: Path) -> Mapping[str, object]:
-    """Advance one exact authorized stage and enforce public commitment gates."""
-    prepared = _prepare_live_stage(repo)
+def _run_prepared_live_stage(
+    repo: Path,
+    prepared: PreparedLiveStage,
+) -> Mapping[str, object]:
+    """Run one prepared stage and clear its exact credential subset on every exit."""
+
     credentials: CredentialSet | None = None
     live_underlying: tuple[object, ...] = ()
     if prepared.stage in CALL_STAGES:
@@ -1318,6 +1364,310 @@ def run_live_fresh_pilot(repo: Path) -> Mapping[str, object]:
         )
     finally:
         _clear_stage_secrets(credentials, live_underlying)
+
+
+def _public_commitment_record(
+    prepared: PreparedLiveStage,
+    result: Mapping[str, object],
+) -> tuple[Path, dict[str, object], str]:
+    """Build the deterministic public-safe record for a custody or lock boundary."""
+
+    common: dict[str, object] = {
+        "task_id": "AO-0006",
+        "campaign_id": CAMPAIGN_ID,
+        "batch_id": BATCH_ID,
+        "execution_commit": prepared.authorization["commit"],
+        "authorization_digest": prepared.authorization["authorization_digest"],
+        "classification": "public-safe-engineering-only-no-task-content",
+        "task_text_disclosed": False,
+        "answer_disclosed": False,
+        "raw_output_disclosed": False,
+        "ranking_created": False,
+        "scientific_evidence_created": False,
+    }
+    if result.get("status") == "quarantined":
+        return (
+            LOCK_REPORT,
+            {
+                "schema_version": "treasurebench-fresh-pilot-v2-output-lock-commitment-v1",
+                "status": "quarantined-output-lock-committed",
+                **common,
+                "output_lock_commitment": result["output_lock_commitment"],
+                "objects_locked": result["objects_locked"],
+                "provider_phase_closed": True,
+                "unsealed_before_lock": False,
+                "quarantined": True,
+            },
+            "Record AO-0006 v2 quarantine output lock",
+        )
+    if prepared.stage == "custody":
+        return (
+            CUSTODY_REPORT,
+            {
+                "schema_version": "treasurebench-fresh-pilot-v2-custody-commitment-v1",
+                "status": "committed-before-private-provider-execution",
+                **common,
+                "seed_commitment": result["seed_commitment"],
+                "task_ciphertext_commitment": result["task_ciphertext_commitment"],
+                "answer_ciphertext_commitment": result["answer_ciphertext_commitment"],
+                "access_log_commitment": result["access_log_commitment"],
+                "tasks": result["tasks"],
+            },
+            "Record AO-0006 v2 custody commitment",
+        )
+    if prepared.stage == "output-lock":
+        return (
+            LOCK_REPORT,
+            {
+                "schema_version": "treasurebench-fresh-pilot-v2-output-lock-commitment-v1",
+                "status": ("output-lock-committed-before-unseal"),
+                **common,
+                "output_lock_commitment": result["output_lock_commitment"],
+                "objects_locked": result["objects_locked"],
+                "provider_phase_closed": True,
+                "unsealed_before_lock": False,
+                "quarantined": False,
+            },
+            "Record AO-0006 v2 output lock",
+        )
+    raise ValueError("public commitment is not defined for this live stage")
+
+
+def _publish_public_commitment(
+    repo: Path,
+    prepared: PreparedLiveStage,
+    result: Mapping[str, object],
+) -> Mapping[str, object]:
+    """Write, commit, push, and revalidate one public-safe boundary record."""
+
+    relative, record, message = _public_commitment_record(prepared, result)
+    path = repo / relative
+    if path.exists():
+        existing = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if existing != record:
+            raise PermissionError(f"{relative.name} conflicts with the frozen commitment")
+    else:
+        path.write_text(yaml.safe_dump(record, sort_keys=False), encoding="utf-8")
+    subprocess.run(("git", "add", "--", str(relative)), cwd=repo, check=True)
+    staged = subprocess.run(
+        ("git", "diff", "--cached", "--quiet", "--", str(relative)),
+        cwd=repo,
+        check=False,
+    )
+    if staged.returncode == 1:
+        subprocess.run(("git", "commit", "-m", message, "--", str(relative)), cwd=repo, check=True)
+    elif staged.returncode != 0:
+        raise PermissionError("public commitment staging could not be verified")
+    subprocess.run(("git", "push", "origin", BRANCH), cwd=repo, check=True)
+    expected = (
+        {
+            "campaign_id": CAMPAIGN_ID,
+            "batch_id": BATCH_ID,
+            "seed_commitment": result["seed_commitment"],
+            "task_ciphertext_commitment": result["task_ciphertext_commitment"],
+            "answer_ciphertext_commitment": result["answer_ciphertext_commitment"],
+        }
+        if prepared.stage == "custody" and result.get("status") != "quarantined"
+        else {
+            "campaign_id": CAMPAIGN_ID,
+            "batch_id": BATCH_ID,
+            "output_lock_commitment": result["output_lock_commitment"],
+        }
+    )
+    _require_public_record(repo, relative, expected)
+    return record
+
+
+def _safe_existing_objects(root: Path, ledger: AppendOnlyLedger) -> dict[str, bytes]:
+    """Collect every existing safely lockable object without requiring a full batch."""
+
+    objects: dict[str, bytes] = {}
+    fixed = {
+        "task-ciphertext": root / "task-custody.json",
+        "answer-ciphertext": root / "answer-custody.json",
+        "custody-manifest": root / "custody-manifest.json",
+        "execution-identity": root / "execution-identity.json",
+        "access-log": root / "access-log.jsonl",
+        "usage-cost-ledger": ledger.path,
+        "provider-stage-state": root / "provider-stage-state.json",
+    }
+    for name, path in fixed.items():
+        if not path.exists():
+            continue
+        info = path.lstat()
+        if stat.S_ISLNK(info.st_mode) or not stat.S_ISREG(info.st_mode):
+            raise LongSessionStopRequired(f"unsafe retained object cannot be locked: {name}")
+        objects[name] = path.read_bytes()
+    for prefix, path_root, pattern in (
+        ("trace", root / "encrypted-traces", "*.sealed"),
+        ("provider-response", root / "encrypted-provider-responses", "*.sealed.json"),
+    ):
+        if not path_root.exists():
+            continue
+        for path in sorted(path_root.rglob(pattern)):
+            info = path.lstat()
+            if stat.S_ISLNK(info.st_mode) or not stat.S_ISREG(info.st_mode):
+                raise LongSessionStopRequired("unsafe retained encrypted object")
+            objects[f"{prefix}/{path.relative_to(path_root)}"] = path.read_bytes()
+    if not objects:
+        raise LongSessionStopRequired("no retained object is safely lockable")
+    return objects
+
+
+def _quarantine_live_failure(
+    prepared: PreparedLiveStage,
+    *,
+    failure_class: str,
+) -> Mapping[str, object]:
+    """Close and lock an honest batch failure without another provider call."""
+
+    root = prepared.root
+    ledger = prepared.ledger
+    lock_path = root / "output-lock.json"
+    if lock_path.exists():
+        objects = _safe_existing_objects(root, ledger)
+        lock = _read_json(lock_path)
+        try:
+            verify_output_lock(lock, objects, ledger=ledger)
+        except (PermissionError, ValueError) as error:
+            raise LongSessionStopRequired(
+                "retained private state cannot be safely verified or locked"
+            ) from error
+    else:
+        state_path = root / "provider-stage-state.json"
+        state = _load_state(state_path)
+        state["quarantined"] = True
+        state["quarantine_stage"] = prepared.stage
+        state["quarantine_failure_class"] = failure_class
+        _write_json(state_path, state)
+        if not any(
+            record.get("event_type") == "provider-phase-closed" for record in ledger.records
+        ):
+            ledger.append(
+                {
+                    "event_type": "batch-quarantine",
+                    "status": "quarantined",
+                    "stage": prepared.stage,
+                    "failure_class": failure_class,
+                }
+            )
+            ledger.close_provider_phase()
+        objects = _safe_existing_objects(root, ledger)
+        lock = dict(
+            create_output_lock(
+                objects,
+                ledger=ledger,
+                campaign_id=CAMPAIGN_ID,
+                batch_id=BATCH_ID,
+            )
+        )
+        _write_json(lock_path, lock)
+        verify_output_lock(lock, objects, ledger=ledger)
+    totals = _public_totals(ledger)
+    custody_status = (
+        "preserved"
+        if all((root / name).exists() for name in ("task-custody.json", "answer-custody.json"))
+        else "not-created"
+    )
+    summary: dict[str, object] = {
+        "schema_version": "treasurebench-fresh-pilot-v2-quarantine-closeout-v1",
+        "status": "quarantined",
+        "decision": "fresh-pilot-v2-quarantined-engineering-only",
+        "classification": "redacted-engineering-only-no-task-level-performance",
+        "campaign_id": CAMPAIGN_ID,
+        "batch_id": BATCH_ID,
+        "stage": prepared.stage,
+        "failure_class": failure_class,
+        "calls": totals["calls"],
+        "input_tokens": totals["input_tokens"],
+        "output_tokens": totals["output_tokens"],
+        "cost_usd": totals["cost_usd"],
+        "provider_cost_usd": totals["provider_cost_usd"],
+        "custody_status": custody_status,
+        "provider_phase_closed": True,
+        "output_lock_status": "pass",
+        "output_lock_commitment": lock["lock_hash"],
+        "objects_locked": len(objects),
+        "minimum_unseal_performed": prepared.stage == "verify",
+        "task_text_disclosed": False,
+        "answer_disclosed": False,
+        "raw_output_disclosed": False,
+        "ranking_created": False,
+        "performance_comparison_created": False,
+        "scientific_evidence_created": False,
+        "replacement_or_splice_performed": False,
+        "further_provider_calls_permitted": False,
+    }
+    _write_json(root / "redacted-summary.json", summary)
+    return summary
+
+
+def _registered_failure_class(stage: str) -> str:
+    return {
+        "public-canary": "public-canary-failure",
+        "custody": "custody-creation-failure",
+        "private-prefix": "private-prefix-failure",
+        "fixed-full-batch": "fixed-full-batch-failure",
+        "output-lock": "output-lock-failure",
+        "verify": "verification-or-acceptance-failure",
+    }.get(stage, "registered-batch-failure")
+
+
+def run_live_fresh_pilot(repo: Path) -> Mapping[str, object]:
+    """Run the authorized staged campaign through success or honest quarantine."""
+
+    while True:
+        try:
+            prepared = _prepare_live_stage(repo)
+        except PreparedStageFailure as error:
+            result = _quarantine_live_failure(
+                error.prepared,
+                failure_class=error.failure_class,
+            )
+            try:
+                _publish_public_commitment(repo, error.prepared, result)
+            except Exception as publish_error:
+                raise LongSessionStopRequired(
+                    "quarantine output-lock commitment could not be published"
+                ) from publish_error
+            return result
+        try:
+            result = _run_prepared_live_stage(repo, prepared)
+        except LongSessionStopRequired:
+            raise
+        except Exception as error:
+            if prepared.stage == "output-lock":
+                raise LongSessionStopRequired(
+                    "retained private state could not be safely output-locked"
+                ) from error
+            result = _quarantine_live_failure(
+                prepared,
+                failure_class=_registered_failure_class(prepared.stage),
+            )
+            try:
+                _publish_public_commitment(repo, prepared, result)
+            except Exception as publish_error:
+                raise LongSessionStopRequired(
+                    "quarantine output-lock commitment could not be published"
+                ) from publish_error
+            return result
+        if prepared.stage in {"custody", "output-lock"}:
+            try:
+                _publish_public_commitment(repo, prepared, result)
+            except Exception:
+                quarantine = _quarantine_live_failure(
+                    prepared,
+                    failure_class="commitment-verification-failure",
+                )
+                try:
+                    _publish_public_commitment(repo, prepared, quarantine)
+                except Exception as quarantine_publish_error:
+                    raise LongSessionStopRequired(
+                        "quarantine output-lock commitment could not be published"
+                    ) from quarantine_publish_error
+                return quarantine
+        if prepared.stage == "verify":
+            return result
 
 
 def run_mock_fresh_pilot(

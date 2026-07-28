@@ -105,6 +105,64 @@ verification:
   exact_cost_reconciliation: required
   private_state_and_output_lock: required
   deterministic_redacted_closeout: required
+long_session:
+  authorization_scope: conditional-success-or-quarantine-through-normal-final-closeout
+  routine_owner_checkpoints: false
+  staged_provider_execution:
+    - public-canary
+    - custody
+    - custody-commitment-commit-and-push
+    - private-prefix
+    - fixed-full-batch
+    - provider-phase-close
+    - output-lock
+    - output-lock-commitment-commit-and-push
+    - unseal-after-pushed-lock-revalidation
+    - independent-verification
+  administrative_closeout:
+    - public-safe-reconciliation
+    - full-validation-wall
+    - update-pr-201
+    - required-checks
+    - mark-ready
+    - squash-merge
+    - post-merge-ci-and-pages
+    - named-live-public-routes
+    - close-issue-200
+    - synchronize-main
+    - final-schema-valid-handoff
+  stop_only_for:
+    - execution-sensitive-change
+    - identity-model-route-or-cap-change
+    - replacement-private-batch
+    - uncertain-authorization
+    - unsafe-retained-private-state
+    - authority-expansion
+quarantine:
+  failure_points:
+    - public-canary
+    - custody-creation
+    - private-prefix
+    - fixed-full-batch
+    - cap-guard
+    - terminal-provider-response
+    - protocol-contract
+    - final-action-cardinality
+    - incomplete-pairing
+    - method-a-b
+    - method-c
+    - metric-range
+    - contamination
+    - output-lock
+    - commitment-or-identity-verification
+  stop_provider_calls_immediately: true
+  preserve_append_only_encrypted_state: true
+  replacement_splice_rescore_or_semantic_retry: false
+  close_provider_phase_when_present: true
+  lock_every_safely_lockable_existing_object: true
+  unseal_only_after_lock_and_only_when_safe: true
+  deterministic_public_safe_closeout: true
+  same_authority_through_merge_and_deploy: true
 boundaries:
   private_material_before_authorization: false
   credential_read_before_authorization: false
@@ -143,4 +201,5 @@ execution_sensitive_paths:
   - reports/benchmark/treasurebench-agents-v1-fresh-pilot-v2-provider-audit.yml
   - reports/benchmark/treasurebench-agents-v1-fresh-pilot-v2-budget.yml
   - tests/test_treasurebench_agents_v1_fresh_pilot_v2.py
+  - tests/test_treasurebench_agents_v1_fresh_pilot_v2_session.py
   - Makefile

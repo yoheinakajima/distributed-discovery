@@ -83,8 +83,8 @@ Owner amendment at `2026-07-28T02:30:00Z`:
 - no credential, authorization, prior private state, real seed, custody,
   provider, or spend was accessed while accepting this amendment.
 
-Exactly one milestone is active: **M9R2 deterministic long-session success
-and quarantine control flow**.
+Exactly one milestone is active: **M10R2 complete offline acceptance and
+refreeze validation**.
 M0 passed at `2026-07-28T01:11:20Z`: the task contract is schema-valid, the
 provider and budget records parse and carry the exact reserved identities,
 the ExecPlan sections are ordered with one active milestone, all recorded
@@ -229,9 +229,9 @@ audit at closeout.
   subset, and long-session success/quarantine design.
 - **M8R2 — complete:** exact credential ingress and cleanup implementation plus
   pre-ingress regressions.
-- **M9R2 — active:** deterministic successful and quarantined long-session
+- **M9R2 — complete:** deterministic successful and quarantined long-session
   control flow, including synthetic merge/CI/Pages/live/issue/main fixtures.
-- **M10R2 — pending:** complete 500-run rehearsal, all corruptions, focused
+- **M10R2 — active:** complete 500-run rehearsal, all corruptions, focused
   tests, and full repository validation.
 - **M11R2 — pending:** clean pushed execution refreeze and explicit
   supersession of the unused original gate.
@@ -262,7 +262,7 @@ audit at closeout.
 - [x] Complete M5 and M6 and stop at the exact owner gate.
 - [x] Complete M7R2 additive authority amendment and offline refreeze design.
 - [x] Complete M8R2 exact credential ingress and cleanup regressions.
-- [ ] Complete M9R2 success/quarantine long-session orchestration.
+- [x] Complete M9R2 success/quarantine long-session orchestration.
 - [ ] Complete M10R2 full offline acceptance.
 - [ ] Complete M11R2 execution refreeze and original-gate supersession.
 - [ ] Complete M12R2 R2 gate and owner-gate-required handoff.
@@ -368,6 +368,17 @@ audit at closeout.
   representations, and cleanup across all provider stages and exit classes.
   The v2 audit still reports zero credential reads, private objects, calls,
   and spend.
+- `2026-07-28T03:20:45Z`: complete M9R2 with an idempotent production
+  long-session runner that revalidates before every stage, clears the exact
+  two credentials after every provider stage, commits and pushes custody and
+  output-lock commitments, and returns either a successful verification or an
+  honest locked quarantine outcome. A separate deterministic lifecycle
+  coordinator and 26 new tests exercise full success, every registered
+  material failure point, cap failure before ingress, no provider call after
+  the first terminal condition, unsafe-lock stop behavior, and synthetic
+  success/quarantine administration through checks, merge, CI/Pages, live
+  routes, issue closure, main synchronization, and final handoff. The focused
+  R2 suites pass 56/56 without reading real credentials or private state.
 
 ## Validation strategy
 

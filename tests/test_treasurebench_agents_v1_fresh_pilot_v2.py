@@ -14,6 +14,9 @@ from distributed_discovery.benchmark.agents_v1.fresh_pilot_v2_live import (
     run_live_fresh_pilot,
     run_mock_fresh_pilot,
 )
+from distributed_discovery.benchmark.agents_v1.fresh_pilot_v2_session import (
+    LongSessionStopRequired,
+)
 from distributed_discovery.benchmark.agents_v1.live_inputs import CredentialSet
 from distributed_discovery.benchmark.agents_v1.live_providers import (
     ANTHROPIC_MANIFEST,
@@ -379,8 +382,9 @@ def test_r2_preflight_failures_precede_credential_ingress(
             "_validate_call_stage_before_credential_ingress",
             lambda stage, ledger: (_ for _ in ()).throw(PermissionError("projected cap")),
         )
-    with pytest.raises(PermissionError, match=failure_point.replace("-", ".*")):
-        run_live_fresh_pilot(ROOT)
+    expected = "cap-guard" if failure_point == "projected-cap" else failure_point.replace("-", ".*")
+    with pytest.raises(PermissionError, match=expected):
+        fresh_pilot_v2_live._prepare_live_stage(ROOT)
     assert credential_ingress is False
 
 
@@ -444,12 +448,156 @@ def test_r2_every_provider_stage_and_exit_path_clears_selected_secrets(
 
     monkeypatch.setattr(fresh_pilot_v2_live, "_execute_stage", execute)
     if outcome == "success":
-        assert run_live_fresh_pilot(ROOT)["status"] == "pass"
+        assert fresh_pilot_v2_live._run_prepared_live_stage(ROOT, prepared)["status"] == "pass"
     else:
         with pytest.raises(RuntimeError, match=outcome):
-            run_live_fresh_pilot(ROOT)
+            fresh_pilot_v2_live._run_prepared_live_stage(ROOT, prepared)
     assert credentials.get_secret("OPENAI_API_KEY") is None
     assert credentials.get_secret("ANTHROPIC_API_KEY") is None
     assert all(adapter._api_key == "" for adapter in adapters)
     assert "synthetic" not in repr(credentials)
     assert all("synthetic" not in repr(adapter) for adapter in adapters)
+
+
+def _prepared_stage(tmp_path: Path, stage: str) -> fresh_pilot_v2_live.PreparedLiveStage:
+    return fresh_pilot_v2_live.PreparedLiveStage(
+        authorization=_synthetic_generic_authorization(),
+        root=tmp_path / "state",
+        operational_key=b"k" * 32,
+        response_root=tmp_path / "responses",
+        ledger=RouteCappedLedger(tmp_path / "ledger.jsonl"),
+        stage=stage,
+    )
+
+
+def test_r2_live_command_runs_all_stages_and_public_commitments_without_pause(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    stages = iter(
+        [
+            "public-canary",
+            "custody",
+            "private-prefix",
+            "fixed-full-batch",
+            "output-lock",
+            "verify",
+        ]
+    )
+    events: list[str] = []
+    monkeypatch.setattr(
+        fresh_pilot_v2_live,
+        "_prepare_live_stage",
+        lambda repo: _prepared_stage(tmp_path, next(stages)),
+    )
+
+    def run_stage(
+        repo: Path,
+        prepared: fresh_pilot_v2_live.PreparedLiveStage,
+    ) -> dict[str, str]:
+        events.append(prepared.stage)
+        return {"status": "pass", "stage": prepared.stage}
+
+    monkeypatch.setattr(fresh_pilot_v2_live, "_run_prepared_live_stage", run_stage)
+    monkeypatch.setattr(
+        fresh_pilot_v2_live,
+        "_publish_public_commitment",
+        lambda repo, prepared, result: events.append(f"publish-{prepared.stage}"),
+    )
+    result = run_live_fresh_pilot(ROOT)
+    assert result == {"status": "pass", "stage": "verify"}
+    assert events == [
+        "public-canary",
+        "custody",
+        "publish-custody",
+        "private-prefix",
+        "fixed-full-batch",
+        "output-lock",
+        "publish-output-lock",
+        "verify",
+    ]
+
+
+def test_r2_live_terminal_failure_quarantines_and_never_advances(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    prepared = _prepared_stage(tmp_path, "private-prefix")
+    events: list[str] = []
+    monkeypatch.setattr(fresh_pilot_v2_live, "_prepare_live_stage", lambda repo: prepared)
+    monkeypatch.setattr(
+        fresh_pilot_v2_live,
+        "_run_prepared_live_stage",
+        lambda repo, value: (_ for _ in ()).throw(RuntimeError("terminal provider")),
+    )
+
+    def quarantine(
+        value: fresh_pilot_v2_live.PreparedLiveStage,
+        *,
+        failure_class: str,
+    ) -> dict[str, object]:
+        events.append(f"quarantine-{failure_class}")
+        return {
+            "status": "quarantined",
+            "output_lock_commitment": "sha256:" + "3" * 64,
+            "objects_locked": 4,
+        }
+
+    monkeypatch.setattr(fresh_pilot_v2_live, "_quarantine_live_failure", quarantine)
+    monkeypatch.setattr(
+        fresh_pilot_v2_live,
+        "_publish_public_commitment",
+        lambda repo, value, result: events.append("publish-output-lock"),
+    )
+    result = run_live_fresh_pilot(ROOT)
+    assert result["status"] == "quarantined"
+    assert events == ["quarantine-private-prefix-failure", "publish-output-lock"]
+
+
+def test_r2_live_cap_guard_quarantines_before_credential_ingress(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    prepared = _prepared_stage(tmp_path, "public-canary")
+    monkeypatch.setattr(
+        fresh_pilot_v2_live,
+        "_prepare_live_stage",
+        lambda repo: (_ for _ in ()).throw(
+            fresh_pilot_v2_live.PreparedStageFailure(
+                prepared=prepared,
+                failure_class="cap-guard-failure",
+            )
+        ),
+    )
+    monkeypatch.setattr(
+        fresh_pilot_v2_live,
+        "_quarantine_live_failure",
+        lambda value, failure_class: {
+            "status": "quarantined",
+            "failure_class": failure_class,
+            "output_lock_commitment": "sha256:" + "4" * 64,
+            "objects_locked": 2,
+        },
+    )
+    monkeypatch.setattr(
+        fresh_pilot_v2_live,
+        "_publish_public_commitment",
+        lambda repo, value, result: {"status": "pass"},
+    )
+    result = run_live_fresh_pilot(ROOT)
+    assert result["failure_class"] == "cap-guard-failure"
+
+
+def test_r2_live_output_lock_failure_stops_for_owner(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    prepared = _prepared_stage(tmp_path, "output-lock")
+    monkeypatch.setattr(fresh_pilot_v2_live, "_prepare_live_stage", lambda repo: prepared)
+    monkeypatch.setattr(
+        fresh_pilot_v2_live,
+        "_run_prepared_live_stage",
+        lambda repo, value: (_ for _ in ()).throw(RuntimeError("cannot lock")),
+    )
+    with pytest.raises(LongSessionStopRequired, match="safely output-locked"):
+        run_live_fresh_pilot(ROOT)
