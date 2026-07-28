@@ -200,7 +200,9 @@ scientific evidence.
 - [x] Render the schema-valid owner-gate-required handoff and stop.
 - [x] After exact authorization, execute the diagnostic once and close private
   access.
-- [ ] Complete prospective repair, validation, closeout, merge, deployment,
+- [x] Complete prospective repair, independent verification, corruptions, and
+  the full public-safe validation wall.
+- [ ] Complete closeout merge, deployment,
   issue closure, and main synchronization.
 
 ## Discoveries and surprises
@@ -277,6 +279,11 @@ scientific evidence.
   its semantically identical JSON-decoded list representation. Compare
   canonical JSON bytes instead; do not relax any cryptographic or identity
   check. The other 579 tests pass.
+- `2026-07-28T12:55:15Z`: the corrected full wall passes 580 tests, Ruff over
+  332 files, MyPy over 197 source files, claims, 51 run manifests, all
+  Agent Operations, program-memory, editorial, publication, and AO-0007
+  custody audits, offline release verification, and the 89-page/26-study site
+  build. Both live PR checks at the validated head pass.
 
 ## Decision log
 
