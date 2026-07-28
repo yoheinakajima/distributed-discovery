@@ -2,19 +2,24 @@
 
 This living ExecPlan governs `AO-0006`, one DD-010 engineering-only private
 evaluation. It registers and prepares a wholly fresh repaired TreasureBench
-Agents v1 pilot and stops at a committed exact generic Agent Operations owner
-gate. It creates no scientific evidence.
+Agents v1 pilot, prospectively refreezes its unused authority surface as R2,
+and stops at a committed exact generic Agent Operations R2 owner gate. After a
+later exact authorization, one long session carries either success or honest
+quarantine through public-safe administrative closeout. It creates no
+scientific evidence.
 
 ## Purpose and intended outcome
 
 Prepare a provider-current, fail-closed 50-task and 500-run repair-confirmation
 pilot over five registered task families, five registered architectures,
 direct OpenAI and direct Anthropic, and one repeat. Freeze wholly new v2
-identities; validate provider-specific transport schemas and the
+identities and exact two-name credential ingress; validate provider-specific
+transport schemas and the
 provider-independent exactly-one-final-action contract; prove that rehearsal,
 independent Methods A, B, and C, metric ranges, complete pairings, custody,
 contamination, corruptions, budget accounting, output locking, and redaction
-pass; open one draft pull request; and stop before consequential action.
+pass; prove deterministic success and quarantine long-session closeout; retain
+one draft pull request; and stop before consequential action.
 
 ## Current state
 
@@ -61,8 +66,25 @@ Registration audit at `2026-07-28T01:00:04Z`:
   accessed or created;
 - the five unrelated untracked preservation files remain excluded.
 
-Exactly one milestone is active: **M7 future owner-authorized staged live
-execution**. It is blocked until the exact generic owner authorization exists.
+Owner amendment at `2026-07-28T02:30:00Z`:
+
+- the original `AOG-AO-0006-FRESH-PILOT-V2` gate is unused, must not be
+  authorized, and is prospectively superseded;
+- additive fixed R2 contract
+  `tasks/treasurebench-agents-v1-fresh-pilot-v2-r2.yml` supersedes the
+  original contract without changing AO-0006, issue #200, branch, draft PR
+  #201, campaign, batch, routes, models, graph, or caps;
+- R2 freezes repository-root `.env.txt` with exact requested names
+  `OPENAI_API_KEY` and `ANTHROPIC_API_KEY`, per-stage and all-exit secret
+  cleanup, and pre-ingress fail-closed ordering;
+- R2 extends the single later authorization through either successful or
+  quarantined public-safe closeout, passing checks, squash merge, normal
+  CI/Pages, named live routes, issue closure, and synchronized `main`;
+- no credential, authorization, prior private state, real seed, custody,
+  provider, or spend was accessed while accepting this amendment.
+
+Exactly one milestone is active: **M7R2 authority amendment and offline
+refreeze design**.
 M0 passed at `2026-07-28T01:11:20Z`: the task contract is schema-valid, the
 provider and budget records parse and carry the exact reserved identities,
 the ExecPlan sections are ordered with one active milestone, all recorded
@@ -115,8 +137,10 @@ not claim-grade; benchmark-paper, publication recomposition, journal,
 retrievability, rename, bridge-theorem, and local/open-model triggers remain
 unfulfilled. PM-0031 continues to govern permanent quarantine and fresh
 identity; PM-0032 continues to govern Agent Operations; neither needs a new
-registry record. No owner decision material to registration remains only in
-conversation. Repeat this audit at closeout.
+registry record. The R2 owner amendment is routed into the additive fixed
+contract, this ExecPlan, the versioned request, execution code/tests, gate
+supersession, and future R2 handoff; none of it remains chat-only. Repeat this
+audit at closeout.
 
 ## Scope
 
@@ -139,6 +163,16 @@ conversation. Repeat this audit at closeout.
    hashes, actions, cumulative state, caps, prohibitions, expiry, challenge,
    next milestone, and exact resume message.
 8. Render the schema-valid owner-gate-required handoff and stop.
+9. Prospectively supersede the unused original authority surface with an
+   additive R2 contract and gate while preserving task and campaign identity.
+10. Freeze and test repository-root exact two-name credential ingress,
+    all-exit cleanup, and fail-closed validation before ingress.
+11. Freeze and test one long-session success path and deterministic
+    quarantine paths for every material stage, including public commitment
+    pushes and mocked administrative lifecycle completion.
+12. Rebuild the complete rehearsal/corruptions, refreeze the execution
+    surface, commit `AOG-AO-0006-FRESH-PILOT-V2-R2`, and stop before its
+    authorization.
 
 ## Non-goals
 
@@ -189,9 +223,21 @@ conversation. Repeat this audit at closeout.
   head.
 - **M6 — complete:** committed generic owner-gate manifest, live gate
   validation without authorization creation, typed handoff, and stop.
-- **M7 — active, blocked by future owner gate:** only a later exact owner
-  authorization may permit credentials, real private generation, custody,
-  calls, spend, output lock, unsealing, and deterministic redacted closeout.
+- **M7 — superseded before authorization:** the original owner gate was never
+  consumed and receives no authority.
+- **M7R2 — active:** additive R2 fixed contract, ExecPlan, exact credential
+  subset, and long-session success/quarantine design.
+- **M8R2 — pending:** exact credential ingress and cleanup implementation plus
+  pre-ingress regressions.
+- **M9R2 — pending:** deterministic successful and quarantined long-session
+  control flow, including synthetic merge/CI/Pages/live/issue/main fixtures.
+- **M10R2 — pending:** complete 500-run rehearsal, all corruptions, focused
+  tests, and full repository validation.
+- **M11R2 — pending:** clean pushed execution refreeze and explicit
+  supersession of the unused original gate.
+- **M12R2 — pending:** committed generic
+  `AOG-AO-0006-FRESH-PILOT-V2-R2`, live authorization-free validation, typed
+  handoff, and stop.
 
 ## Progress checklist
 
@@ -214,8 +260,12 @@ conversation. Repeat this audit at closeout.
 - [x] Commit, push, and revalidate the clean M5 execution-freeze candidate.
 - [x] Commit and validate the generic owner gate and typed handoff.
 - [x] Complete M5 and M6 and stop at the exact owner gate.
-- [ ] After a later exact owner authorization, execute M7 one staged
-  transition at a time.
+- [ ] Complete M7R2 additive authority amendment and offline refreeze design.
+- [ ] Complete M8R2 exact credential ingress and cleanup regressions.
+- [ ] Complete M9R2 success/quarantine long-session orchestration.
+- [ ] Complete M10R2 full offline acceptance.
+- [ ] Complete M11R2 execution refreeze and original-gate supersession.
+- [ ] Complete M12R2 R2 gate and owner-gate-required handoff.
 
 ## Discoveries and surprises
 
@@ -297,6 +347,13 @@ conversation. Repeat this audit at closeout.
   pointing to the same head; validate the fixed execution commit as an
   ancestor and all 21 protected path hashes through the generic engine; create
   no authorization.
+- `2026-07-28T02:30:00Z`: accept the owner-directed preauthorization R2
+  amendment in the same task/session/issue/branch/PR. Preserve the original
+  fixed contract and create an additive R2 contract because Agent Operations
+  forbids rewriting authority-bearing history. Supersede the unused original
+  gate, keep all identities and caps fixed, add exact two-name credential
+  ingress, and extend one future authorization through deterministic success
+  or quarantine administrative closeout.
 
 ## Validation strategy
 
@@ -308,10 +365,13 @@ execution-tree, custody, idempotency, resume, token/cost, and no-provider-in-CI
 tests. M3 executes every synthetic stage, independently reconstructs Methods B
 and C, checks metric ranges and exact pairings, locks outputs before replay or
 unseal, and injects every required corruption. M4 runs focused and full
-private-evaluation acceptance. M5/M6 verify a clean pushed draft-PR execution
-head, generic gate manifest, typed handoff, scientific and release ceilings,
-immutable prior AO artifacts, zero private/provider activity, and preserved
-unrelated files.
+private-evaluation acceptance. M5/M6 verify the superseded first freeze.
+M7R2 through M12R2 add exact credential-subset and cleanup tests,
+stage-failure quarantine injection, no call after terminal failure, mocked
+success/quarantine lifecycle completion, the complete rehearsal/corruption
+wall, a new clean pushed execution commit, and the generic R2 gate while
+preserving scientific and release ceilings, immutable prior AO artifacts,
+zero preauthorization private/provider activity, and unrelated files.
 
 ## Commands and expected observations
 
@@ -340,23 +400,25 @@ one generic owner-gate manifest, and this typed owner-gate-required handoff.
 
 ## Blockers
 
-No implementation blocker is known. Consequential execution is intentionally
-blocked until the owner later creates the exact local authorization for
-`reports/agent-ops/AO-0006-treasurebench-fresh-pilot-v2-owner-gate.yml`.
+No implementation blocker is known. The local GitHub CLI token is invalid, but
+SSH Git transport and the connected GitHub app remain available and are the
+established repository path. Consequential execution is intentionally blocked
+until the R2 surface is frozen and the owner later creates the exact local
+authorization for the committed R2 gate.
 
 ## Recovery and restart instructions
 
 Inspect `git status --short --branch`; preserve the five unrelated untracked
-files; read root and scoped instructions, the fixed contract, this plan, issue
-#200, draft PR #201, the committed generic gate, and its exact authorization.
-Revalidate the execution commit, draft-PR ancestry, contract, 21-path tree,
-identities, zero cumulative state, and caps before resuming M7. Do not read
-`.env.txt` or any prior private state and do not create real custody or call a
-provider before the exact future gate.
+files; read root and scoped instructions, the additive R2 fixed contract, this
+plan, issue #200, and draft PR #201. Continue the first incomplete R2
+milestone. Do not use the original contract or gate, read `.env.txt` or prior
+private state, create real custody, or call a provider before the exact future
+R2 gate.
 
 ## Outcome and retrospective
 
-AO-0006 is registered, prepared, rehearsed, frozen, and stopped at its exact
-generic owner-gate checkpoint. The task is not complete: M7 is active but
-blocked by the deliberately absent owner authorization. Calls, spend, private
-state, and scientific state remain zero or unchanged.
+AO-0006 remains registered with its v2 identities and accepted offline
+foundation, but its unused first gate is superseded in principle by the owner
+amendment. R2 implementation and refreeze are active. Calls, spend, credential
+access, prior private-state access, real private generation, and scientific
+state remain zero or unchanged.

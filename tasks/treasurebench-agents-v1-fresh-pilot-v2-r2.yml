@@ -1,0 +1,167 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0006
+title: TreasureBench Agents v1 wholly fresh sealed repair-confirmation pilot v2 R2 long-session refreeze
+task_type: private-evaluation
+status: active
+objective: Prospectively refreeze and, only after one later exact R2 owner authorization, execute and honestly close out one wholly fresh 50-task and 500-run DD-010 engineering repair-confirmation pilot in one long session.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: policy, path: docs/benchmark/agents-v1/AGENTS.md}
+  - {type: policy, path: src/distributed_discovery/benchmark/agents_v1/AGENTS.md}
+  - {type: decision, path: reports/agent-ops/next-task-treasurebench-fresh-pilot.yml}
+  - {type: decision, path: tasks/treasurebench-provider-schema-conformance-closeout.yml}
+  - {type: record, path: reports/agent-ops/AO-0004-r4-public-provider-canary-outcome.yml}
+  - {type: record, path: tasks/treasurebench-agents-v1-fresh-pilot-v2.yml}
+  - {type: record, path: reports/agent-ops/AO-0006-treasurebench-fresh-pilot-v2-owner-gate.yml}
+  - {type: plan, path: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V2.md}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/200"}
+  - {type: pull-request, path: "https://github.com/yoheinakajima/distributed-discovery/pull/201"}
+owner_decisions:
+  - AO-0006 continues in the same session, issue, branch, ExecPlan, draft pull request, campaign, and batch; no replacement task or private identity is created.
+  - The unused AOG-AO-0006-FRESH-PILOT-V2 gate and original AO-0006 contract are superseded prospectively and receive no authorization.
+  - Live credential ingress uses only repository-root .env.txt through the strict nonexecuting dotenv loader and requests exactly OPENAI_API_KEY and ANTHROPIC_API_KEY.
+  - The returned credential set contains only those two names; unrelated credentials are never returned, retained, transmitted, displayed, printed, hashed, fingerprinted, or logged.
+  - Selected credentials and adapter secrets are cleared after every provider stage and on success, provider failure, parser or protocol failure, unexpected exception, and final cleanup.
+  - The selected pilot design remains 50 wholly new tasks, ten per registered family, five registered architectures, direct OpenAI and direct Anthropic, one repeat, and 500 runs.
+  - The campaign, batch, OS-CSPRNG seed, tasks, answers, task and answer keys, nonces, ciphertexts, commitments, access log, ledgers, traces, output lock, and custody are all new.
+  - Both quarantined campaigns and every AO-0002 through AO-0005 gate, authorization, ledger, output lock, custody object, and terminal decision remain immutable and receive no authority from this task.
+  - AO-0004 R4 provider-specific OpenAI and Anthropic schema conformance and provider-independent exactly-one-final-action conformance remain engineering-only prerequisites.
+  - One R2 owner authorization conditionally covers the staged provider campaign and either successful or honest quarantined public-safe administrative closeout through passing checks, squash merge, normal CI and Pages, named live-route verification, issue closure, and synchronized main.
+  - A registered prospective acceptance failure is a batch outcome; it stops provider calls and enters deterministic quarantine closeout without replacement, splicing, rescoring, or routine owner interruption.
+  - The expected cost remains USD 11.51, conservative planning cost USD 15, and unchanged owner ceilings USD 25 total, USD 10 OpenAI, USD 15 Anthropic, and 5,200 calls.
+scope:
+  paths:
+    - tasks/treasurebench-agents-v1-fresh-pilot-v2-r2.yml
+    - plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V2.md
+    - plans/MASTER_EXEC_PLAN.md
+    - docs/agent-ops
+    - docs/benchmark/agents-v1
+    - docs/current-state.md
+    - docs/current-roadmap.md
+    - docs/program-memory
+    - reports/agent-ops
+    - reports/benchmark
+    - reports/final-handoff.md
+    - reports/project-status.md
+    - studies/DD-010-discoverybench
+    - src/distributed_discovery/agent_ops
+    - src/distributed_discovery/benchmark/agents_v1
+    - src/distributed_discovery/cli.py
+    - scripts
+    - site
+    - tests
+    - .github/workflows
+    - Makefile
+  actions:
+    - Preserve the existing AO-0006 registration and identities while prospectively superseding only its unused original gate and authority surface.
+    - Freeze exact two-name credential ingress, pre-ingress validation order, per-stage secret cleanup, and synthetic no-real-env regressions.
+    - Execute the fresh v2 staged campaign only after the exact R2 gate, with public custody and output-lock commitments committed and pushed before dependent private stages.
+    - On success, independently verify Methods A, B, and C, metric ranges, pairings, contamination, corruptions, cost, private state, output lock, and redaction before public-safe closeout.
+    - On a registered failure, stop calls immediately, preserve append-only encrypted state, close the provider phase, lock safely lockable objects, minimally unseal only when safe, and emit a redacted quarantine closeout.
+    - Reconcile only public-safe DD-010, TreasureBench Agents, current-state, roadmap, program-memory, handoff, status, site, and public JSON records.
+    - Run the full validation wall, update PR #201 accurately, mark ready and squash-merge only after required checks, verify normal post-merge CI/Pages and named public routes, close issue #200, and synchronize local main.
+non_goals:
+  - No DD-023, claim, scientific run, proof, evidence-status change, or paper result.
+  - No ranking, composite, leaderboard, package, release, DOI, arXiv, journal, or submission action.
+  - No base campaign, local or open-model campaign, OpenRouter route, fallback route, alias, regional route, batch route, or model substitution.
+  - No private task text, answer, raw provider output, dimension row, metric row, performance comparison, ranking, or composite may enter public state.
+  - No reuse, retry, reopening, mutation, rescoring, deletion, unsealing, reactivation, or reauthorization of either quarantined campaign or any AO-0002 through AO-0005 artifact.
+  - No credential read, prior private-state read, real seed or private-material generation, custody creation, provider call, or spend before the exact R2 owner authorization.
+permissions:
+  repository_write: true
+  git_branch_commit: true
+  github_issue_pr: true
+  merge_after_checks: true
+  ci_pages: true
+external_action_permissions:
+  network_observation: true
+  github_mutation: true
+  provider_calls: true
+  spend: true
+  release_publication: false
+  submission: false
+scientific_mutation_permissions:
+  create_study: false
+  create_claim: false
+  create_run: false
+  change_evidence_status: false
+  change_proof_status: false
+  change_paper_lifecycle: false
+private_data_permissions: {read: true, write: true, generate: true, publish: false}
+budget:
+  currency: USD
+  expected: "11.51"
+  hard_cap: "25"
+  call_cap: 5200
+  category_caps: {OpenAI: "10", Anthropic: "15"}
+  cumulative_spend: "0"
+expected_outcomes:
+  - A current-provider, wholly fresh, repaired 50-task and 500-run sealed engineering pilot execution surface with exact two-credential ingress.
+  - Passing provider-schema, action-budget, custody, trace, output-lock, independent-verification, contamination, redaction, budget, complete synthetic-rehearsal, and long-session control-flow acceptance.
+  - One deterministic success closeout or one deterministic quarantined closeout, both public-safe and carried through normal repository lifecycle under the same later R2 authorization.
+  - A committed exact R2 generic owner-gate manifest and schema-valid owner-gate-required handoff before consequential action.
+stop_conditions:
+  - Stop before reading .env.txt or any prior private campaign state, creating the real seed or custody, making a provider call, or spending money without the exact active R2 owner authorization.
+  - Stop if authorization validity is uncertain or any execution-sensitive code, campaign, batch, model, route, cap, or private identity must change after R2 authorization.
+  - Stop if retained private state cannot be safely preserved and locked, or if a replacement task, replacement batch, semantic retry, record splice, or new private identity is proposed.
+  - Quarantine rather than stop for any registered canary, custody, prefix, fixed-batch, cap, provider, protocol, final-cardinality, pairing, Method A/B, Method C, metric-range, contamination, output-lock, commitment, or identity failure when safe administrative closeout remains possible.
+  - Stop if scientific, paper, private-publication, ranking, release, submission, or base-campaign authority would need to expand.
+  - Stop if scientific inventories, claim/run/paper/release state, immutable AO history, either quarantined campaign, or unrelated preservation files change outside the exact public-safe closeout scope.
+acceptance_profile: private-evaluation
+canonical_destinations:
+  - tasks/treasurebench-agents-v1-fresh-pilot-v2-r2.yml
+  - plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V2.md
+  - docs/benchmark/agents-v1
+  - reports/benchmark
+  - reports/agent-ops
+  - docs/current-state.md
+  - docs/current-roadmap.md
+  - docs/program-memory
+  - reports/final-handoff.md
+  - reports/project-status.md
+  - studies/DD-010-discoverybench/status.yml
+  - site
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 200
+  branch: benchmark/treasurebench-agents-v1-fresh-pilot-v2
+  pull_request: 201
+  base: main
+exec_plan: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V2.md
+task_delta: reports/agent-ops/next-task-treasurebench-fresh-pilot.yml
+frozen_identifiers:
+  starting_main: 36866e849b468df10b94b0039cf54f3d891ca120
+  owner_study: DD-010
+  campaign_id: treasurebench-agents-v1-repair-confirmation-v2
+  batch_id: tb-agents-v1-repair-confirmation-v2-b01
+  superseded_owner_gate_id: AOG-AO-0006-FRESH-PILOT-V2
+  owner_gate_id: AOG-AO-0006-FRESH-PILOT-V2-R2
+  credential_source: repository-root-.env.txt
+  credential_names: OPENAI_API_KEY,ANTHROPIC_API_KEY
+  openai_route: openai_direct
+  openai_model: gpt-5.4-2026-03-05
+  anthropic_route: anthropic_direct
+  anthropic_model: claude-sonnet-4-6
+  tasks: "50"
+  architectures: "5"
+  repeats: "1"
+  private_runs: "500"
+  normal_calls: "3016"
+  hard_call_cap: "5200"
+  per_request_output_tokens: "256"
+  openai_input_token_cap: "1680000"
+  openai_output_token_cap: "386048"
+  anthropic_input_token_cap: "3000000"
+  anthropic_output_token_cap: "386048"
+  claim_ceiling: DD-C-0110
+  study_ceiling: DD-022
+supersession:
+  supersedes:
+    - tasks/treasurebench-agents-v1-fresh-pilot-v2.yml
+    - AOG-AO-0006-FRESH-PILOT-V2
+  superseded_by: null
+  reason: Owner-directed preauthorization R2 correction adds exact two-credential ingress and one-gate long-session success-or-quarantine administrative closeout authority without changing the task or private campaign identity.
+next_gate: Complete the R2 offline corrections, full rehearsal, corruption and long-session tests, exact execution refreeze, and commit AOG-AO-0006-FRESH-PILOT-V2-R2.

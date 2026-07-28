@@ -2,8 +2,9 @@
 
 ## Active continuation — AO-0006 wholly fresh repair-confirmation pilot v2 (2026-07-28)
 
-Issue #200, branch `benchmark/treasurebench-agents-v1-fresh-pilot-v2`, fixed
-contract `tasks/treasurebench-agents-v1-fresh-pilot-v2.yml`, and living
+Issue #200, branch `benchmark/treasurebench-agents-v1-fresh-pilot-v2`,
+additive R2 fixed contract
+`tasks/treasurebench-agents-v1-fresh-pilot-v2-r2.yml`, and living
 ExecPlan
 [`TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V2.md`](TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V2.md)
 own the sole substantive lane as AO-0006.
@@ -17,15 +18,28 @@ route and price observations support USD 11.51 expected, USD 15 conservative,
 and unchanged owner ceilings of USD 25 total, USD 10 OpenAI, USD 15 Anthropic,
 and 5,200 calls. The output ceiling is 256 tokens per request.
 
+The owner issued a preauthorization R2 amendment after the first AO-0006 gate
+was committed but never authorized. The original contract and gate remain
+preserved and unused. R2 keeps every identity, route, model, graph, and cap
+fixed, requires repository-root `.env.txt` ingress for exactly
+`OPENAI_API_KEY` and `ANTHROPIC_API_KEY`, clears selected values and adapter
+secrets on every stage and exit path, and adds a deterministic long-session
+success-or-quarantine administrative closeout. One later R2 authorization may
+carry the honest outcome through public-safe reconciliation, passing checks,
+squash merge, normal CI/Pages, named live-route verification, issue closure,
+and synchronized `main`; scientific, paper, ranking, release, submission, and
+base-campaign authority remain false.
+
 AO-0004 R4's provider-specific OpenAI/Anthropic schemas and
 provider-independent exactly-one-final-action conformance are preserved as
 engineering-only prerequisites. Both quarantined campaigns and every AO-0002
 through AO-0005 gate, authorization, ledger, output lock, custody object, and
 terminal decision remain immutable. AO-0006 must complete all offline
-contracts, implementation, the full 500-run synthetic rehearsal, corruptions,
-acceptance, exact execution freeze, draft PR, generic owner-gate manifest, and
-typed handoff, then stop before reading `.env.txt` or prior private state,
-creating real custody, making a provider call, or spending money.
+R2 contract, exact credential and cleanup regressions, success/quarantine
+long-session mocks, the full 500-run synthetic rehearsal, corruptions,
+acceptance, exact execution refreeze, generic R2 owner-gate manifest, and typed
+handoff, then stop before reading `.env.txt` or prior private state, creating
+real custody, making a provider call, or spending money.
 
 ## Authorized continuation — AO-0004 successful conformance closeout (2026-07-27)
 
