@@ -1,0 +1,24 @@
+schema_version: agent-ops-handoff-v1
+status: owner-gate-required
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0008
+issue: 204
+pull_request: 205
+branch: codex/treasurebench-agents-v1-fresh-pilot-v3
+base_main: 3c24577b6810115858541f4f75c30d005828e0d7
+head_merge_sha: 8e90d805abda6617edf2fe4d5379879ed2a00ace
+task_contract: tasks/treasurebench-agents-v1-fresh-pilot-v3.yml
+exec_plan: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V3.md
+last_completed_gate: Exact execution commit 0f9d82bb50cbb334bea47e24448831faf0cdbed8 and corrected committed generic gate manifest head 8e90d805abda6617edf2fe4d5379879ed2a00ace passed contract, ancestry, 22-path execution-tree, exact two-credential-subset, success-or-quarantine long-session path, zero-call, zero-spend, cap, prohibition, issue, branch, remote-head, and open draft-PR validation without creating an authorization.
+next_gate: "Resume AO-0008 in this same Codex task from plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V3.md, issue #204, branch codex/treasurebench-agents-v1-fresh-pilot-v3, and draft PR #205. Use only reports/agent-ops/AO-0008-treasurebench-fresh-pilot-v3-owner-gate.yml and its exact generic authorization. Revalidate current official provider terms, authorization, execution-commit ancestry, current draft-PR head, fixed contract, all 22 tree hashes, v3 campaign and batch, exact OPENAI_API_KEY and ANTHROPIC_API_KEY subset, routes, models, zero cumulative calls and spend, graph, ledgers, and caps. Then run exactly make treasurebench-fresh-pilot-v3-live and continue the authorized success or honest quarantine path through public-safe closeout, full validation, required checks, PR readiness and squash merge, normal CI and Pages, named live routes, issue closure, synchronized main, and one final schema-valid handoff without routine checkpoints. Stop only for an execution-sensitive, identity, model, route, cap, replacement-batch, authorization-validity, unsafe-retained-state, or authority-expansion condition."
+decision: Stop before reading .env.txt or any prior private campaign state, generating real private material or custody, making a provider call, spending, or unsealing until the exact committed AO-0008 generic owner authorization exists.
+external_calls_cost: {calls: 0, cost: "0", currency: USD}
+private_state_change: none; no authorization, credential, prior private state, real seed, task, answer, key, nonce, ciphertext, commitment, custody, trace, ledger, provider response, or output lock was read, written, generated, disclosed, or unsealed.
+scientific_state_change: none; no DD-023, claim, scientific run, evidence or proof promotion, paper result, ranking, composite, leaderboard, package, release, submission, or base-campaign state was created or changed.
+validation:
+  profile: private-evaluation-fresh-pilot-v3-owner-gate
+  result: pass-50-synthetic-tasks-500-runs-3014-turns-500-pairings-71-corruptions-6-production-custody-negatives-57-focused-tests-637-full-tests-ruff-mypy-110-claims-51-run-manifests-governance-offline-release-22-path-execution-freeze-live-generic-gate-validation-no-authorization
+owner_action: "Review the fixed contract, USD 11.51 expected, USD 15 conservative, USD 25 hard envelope, exact execution freeze, two-name credential subset, and conditional success-or-quarantine long-session authority; then run: make owner-gate GATE=reports/agent-ops/AO-0008-treasurebench-fresh-pilot-v3-owner-gate.yml OWNER_GATE_CHALLENGE='AUTHORIZE AOG-AO-0008-FRESH-PILOT-V3 0f9d82b'. Only after it succeeds may this same task run the exact live command: make treasurebench-fresh-pilot-v3-live."
+exact_next_command: "make owner-gate GATE=reports/agent-ops/AO-0008-treasurebench-fresh-pilot-v3-owner-gate.yml OWNER_GATE_CHALLENGE='AUTHORIZE AOG-AO-0008-FRESH-PILOT-V3 0f9d82b'"
+exact_next_file: reports/agent-ops/AO-0008-treasurebench-fresh-pilot-v3-owner-gate.yml
+blocker: The exact AO-0008 generic owner authorization is required and absent by design; no credential, real private generation, custody, provider, spend, unseal, or live campaign action is authorized yet.

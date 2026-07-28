@@ -24,7 +24,7 @@ AO-0008 staging command. No credential, prior private state, owner
 authorization, seed, task, answer, key, nonce, ciphertext, provider, or spend
 was accessed or created.
 
-Exactly one milestone is active: **M6 generic owner gate and stop**.
+Exactly one milestone is active: **M7 pending exact owner authorization**.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -115,9 +115,9 @@ audit at closeout.
   PR creation.
 - **M5 — complete:** exact execution-freeze commit and matching remote draft-PR
   head.
-- **M6 — active:** committed generic owner-gate manifest, live
+- **M6 — complete:** committed generic owner-gate manifest, live
   authorization-free validation, typed handoff, and stop.
-- **M7 — pending owner authorization:** execute the exact fixed live success
+- **M7 — active, blocked by pending owner authorization:** execute the exact fixed live success
   or quarantine path and complete its permitted administrative lifecycle.
 
 ## Progress checklist
@@ -135,7 +135,7 @@ audit at closeout.
 - [x] Complete M3 full rehearsal and corruptions.
 - [x] Complete M4 draft PR and full acceptance.
 - [x] Complete M5 execution freeze.
-- [ ] Complete M6 owner gate and stop.
+- [x] Complete M6 owner gate and stop.
 
 ## Discoveries and surprises
 
@@ -237,6 +237,15 @@ audit at closeout.
   preserve the manifest commit, and correct only those metadata descriptions
   before final gate validation; the execution commit and every protected hash
   remain unchanged.
+- `2026-07-28T14:26:00Z`: corrected gate manifest head
+  `8e90d805abda6617edf2fe4d5379879ed2a00ace` passes live
+  authorization-free validation against the pushed descendant and open draft
+  PR #205. The full authority surface renders without truncation; challenge
+  `AUTHORIZE AOG-AO-0008-FRESH-PILOT-V3 0f9d82b` is required. The validator
+  creates no authorization and performs no credential read, private
+  generation, provider call, spend, unseal, repository mutation, merge, or
+  deployment. Complete M6, activate M7 as blocked by the intentionally absent
+  exact owner authorization, render the schema-valid handoff, and stop once.
 
 ## Validation strategy
 
@@ -285,8 +294,9 @@ audit at closeout.
 
 ## Blockers
 
-No implementation blocker is active. The future exact owner authorization is
-intentionally absent and becomes the sole blocker only after M6 passes.
+The exact generic authorization for
+`AOG-AO-0008-FRESH-PILOT-V3` is intentionally absent and is the sole active
+M7 blocker. No live action is authorized.
 
 ## Recovery and restart instructions
 
@@ -300,6 +310,14 @@ authorization.
 
 ## Outcome and retrospective
 
-Pending. Record both successful and failed approaches, exact UTC evidence,
-generated artifacts, validation, and the terminal owner-gate or batch outcome
-without rewriting earlier state.
+AO-0008 is registered, rehearsed, accepted, frozen, and stopped at its
+committed generic owner gate. Exact execution commit
+`0f9d82bb50cbb334bea47e24448831faf0cdbed8` and all 22 protected hashes
+remain unchanged beneath the gate metadata. The record preserves the initial
+MyPy failure, two stale-package focused-test collection failures, deterministic
+rehearsal-hash invalidation at request freeze, remote-presence acceptance
+failure, and YAML semantic-rendering repair. Final authorization-free activity
+is zero credentials, real private objects, provider calls, spend, unsealing,
+and scientific mutation. The next outcome is conditional on the later exact
+owner authorization and must be either a passing fixed live pilot or an honest
+whole-batch quarantine with the already authorized public-safe closeout.
