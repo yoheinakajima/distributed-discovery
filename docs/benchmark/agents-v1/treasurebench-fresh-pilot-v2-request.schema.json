@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TreasureBench Agents v1 fresh repair-confirmation v2 request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "status", "task_id", "owner_study", "new_study_allocated", "claim_eligible", "campaign_id", "batch_id", "issue", "branch", "starting_main", "owner_gate_id", "counts", "providers", "architectures", "provider_conformance", "budget", "failure_policy", "private_state", "verification", "boundaries", "execution_sensitive_paths"],
+  "properties": {
+    "schema_version": {"const": "treasurebench-agents-v1-fresh-pilot-v2-request-v1"},
+    "status": {"const": "exact-execution-frozen-owner-gate-not-authorized"},
+    "task_id": {"const": "AO-0006"},
+    "owner_study": {"const": "DD-010"},
+    "new_study_allocated": {"const": false},
+    "claim_eligible": {"const": false},
+    "campaign_id": {"const": "treasurebench-agents-v1-repair-confirmation-v2"},
+    "batch_id": {"const": "tb-agents-v1-repair-confirmation-v2-b01"},
+    "issue": {"const": 200},
+    "branch": {"const": "benchmark/treasurebench-agents-v1-fresh-pilot-v2"},
+    "starting_main": {"const": "36866e849b468df10b94b0039cf54f3d891ca120"},
+    "owner_gate_id": {"const": "AOG-AO-0006-FRESH-PILOT-V2"},
+    "counts": {"const": {"tasks": 50, "families": 5, "tasks_per_family": 10, "batches": 1, "repeats": 1, "architectures": 5, "cloud_models": 2, "private_runs": 500, "normal_calls": 3016}},
+    "providers": {
+      "type": "array",
+      "prefixItems": [
+        {"const": {"provider": "OpenAI", "route_id": "openai_direct", "endpoint": "https://api.openai.com/v1/responses", "model": "gpt-5.4-2026-03-05", "credential_name": "OPENAI_API_KEY", "transport_schema": "openai-specific"}},
+        {"const": {"provider": "Anthropic", "route_id": "anthropic_direct", "endpoint": "https://api.anthropic.com/v1/messages", "model": "claude-sonnet-4-6", "credential_name": "ANTHROPIC_API_KEY", "transport_schema": "anthropic-specific"}}
+      ],
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "architectures": {"const": ["isolated-private-agents", "full-broadcast-shared-transcript", "designated-reader-selective-sharing", "pooled-consensus", "portfolio-preserving-structured"]},
+    "provider_conformance": {"type": "object", "additionalProperties": false, "required": ["prerequisite_task", "prerequisite_record", "provider_specific_compilation", "provider_independent_semantic_validation", "final_action_cardinality", "nonfinal_proposals_scored", "output_tokens_per_request"], "properties": {"prerequisite_task": {"const": "AO-0004"}, "prerequisite_record": {"const": "reports/agent-ops/AO-0004-r4-public-provider-canary-outcome.yml"}, "provider_specific_compilation": {"const": true}, "provider_independent_semantic_validation": {"const": true}, "final_action_cardinality": {"const": "exactly-one-per-required-agent"}, "nonfinal_proposals_scored": {"const": false}, "output_tokens_per_request": {"const": 256}}},
+    "budget": {"type": "object"},
+    "failure_policy": {"type": "object"},
+    "private_state": {"type": "object"},
+    "verification": {"type": "object"},
+    "boundaries": {"type": "object", "additionalProperties": {"const": false}},
+    "execution_sensitive_paths": {"type": "array", "minItems": 20, "uniqueItems": true, "items": {"type": "string"}}
+  }
+}

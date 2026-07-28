@@ -1,0 +1,21 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-v2-registration-v1
+recorded_at_utc: "2026-07-28T01:29:38Z"
+status: pass-offline-frozen-owner-gate-required
+classification: DD-010-public-synthetic-engineering-only
+task_id: AO-0006
+campaign_id: treasurebench-agents-v1-repair-confirmation-v2
+batch_id: tb-agents-v1-repair-confirmation-v2-b01
+counts: {slots: 50, families: 5, architectures: 5, providers: 2, repeats: 1, runs: 500, normal_calls: 3016}
+hashes:
+  request: sha256:be16b978a7a82c9f8246d8bd904fc31dcd7265ea5f78890837a3093f1cb4e26c
+  allocation: sha256:d0fc5b5532890623abd0d5943ea717571c721cc04d6b583d3414df188e347932
+  execution_budget: sha256:cdf84f196b54ca7c3afbf67e0f3645770d49c5e50a8b65d45144f2f79dec46f8
+  corruption_registry: sha256:93cdbc38af566ea42423d62259fcc520b80be0639d41cfd9f080533e62649db1
+provider_boundary:
+  AO-0004_complete_schemas_preserved: true
+  OpenAI_transport_compiler: pass
+  Anthropic_transport_compiler: pass
+  provider_independent_semantic_validator: pass
+  output_tokens_per_request: 256
+activity: {provider_calls: 0, credential_reads: 0, prior_private_state_reads: 0, private_objects_created: 0, spend_usd: "0"}
+next_gate: exact-execution-freeze-then-generic-owner-gate

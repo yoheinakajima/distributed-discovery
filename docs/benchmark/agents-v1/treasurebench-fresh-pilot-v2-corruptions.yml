@@ -1,0 +1,47 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-v2-corruptions-v1
+status: frozen-before-execution
+campaign_id: treasurebench-agents-v1-repair-confirmation-v2
+batch_id: tb-agents-v1-repair-confirmation-v2-b01
+required_outcome: rejected
+corruptions:
+  - IDENTITY-01-original-campaign
+  - IDENTITY-02-original-batch
+  - IDENTITY-03-repair-confirmation-v1-campaign
+  - IDENTITY-04-repair-confirmation-v1-batch
+  - IDENTITY-05-prior-slot-prefix
+  - IDENTITY-06-execution-tree-mismatch
+  - GENERATION-01-no-authorization
+  - GENERATION-02-short-seed
+  - AUTH-01-missing-file
+  - AUTH-02-synthetic
+  - BUDGET-01-total-cap
+  - BUDGET-02-openai-cap
+  - BUDGET-03-anthropic-cap
+  - BUDGET-04-call-cap
+  - BUDGET-05-openai-input-token-cap
+  - BUDGET-06-openai-output-token-cap
+  - BUDGET-07-anthropic-input-token-cap
+  - BUDGET-08-anthropic-output-token-cap
+  - SCHEMA-01-openai-unsupported-keyword
+  - SCHEMA-02-anthropic-unsupported-keyword
+  - SEMANTIC-01-multiple-final-actions
+  - SEMANTIC-02-missing-final-action
+  - PAIRING-01-incomplete-architecture-model-cell
+  - METHOD-01-a-b-disagreement
+  - METHOD-02-c-protocol-failure
+  - METRIC-01-out-of-range
+  - CONTAMINATION-01-direct
+  - CONTAMINATION-02-probable
+  - CUSTODY-01-wrong-campaign
+  - CUSTODY-02-wrong-batch
+  - CUSTODY-03-wrong-key
+  - LOCK-01-before-provider-close
+  - LOCK-02-call-after-lock
+  - PRIVATE-STATE-01-inside-repository
+  - PROVIDER-01-terminal-failure
+  - REDACTION-01-task-text
+  - REDACTION-02-answer
+  - REDACTION-03-ranking
+  - SCIENCE-01-dd023
+  - SCIENCE-02-claim
+  - SCIENCE-03-scientific-run

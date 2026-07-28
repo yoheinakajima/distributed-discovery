@@ -60,11 +60,16 @@ Registration audit at `2026-07-28T01:00:04Z`:
   accessed or created;
 - the five unrelated untracked preservation files remain excluded.
 
-Exactly one milestone is active: **M1 versioned public execution contracts**.
+Exactly one milestone is active: **M2 offline and staged runtime implementation**.
 M0 passed at `2026-07-28T01:11:20Z`: the task contract is schema-valid, the
 provider and budget records parse and carry the exact reserved identities,
 the ExecPlan sections are ordered with one active milestone, all recorded
 budget arithmetic reconciles, and `git diff --check` is clean.
+M1 passed at `2026-07-28T01:31:06Z`: the versioned request, allocation,
+private-state, execution-budget, and 41-case v2 corruption contracts validate;
+the exact registered cell mix yields 3,014 matrix calls under a new v2 slot
+and generation namespace; and registration remains at zero consequential
+activity.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -142,9 +147,9 @@ conversation. Repeat this audit at closeout.
 - **M0 — complete:** registration, exact identities, official provider and
   budget audit, fixed contract, living plan, schema validation, and first
   authority-bearing commit.
-- **M1 — active:** versioned request, allocation, provider audit,
+- **M1 — complete:** versioned request, allocation, provider audit,
   private-state schema, execution-budget schema, and corruption registry.
-- **M2 — pending:** offline v2 runtime, provider-schema/action-budget
+- **M2 — active:** offline v2 runtime, provider-schema/action-budget
   integration, custody, trace, output-lock, and independent verification.
 - **M3 — pending:** complete 50-task/500-run synthetic rehearsal and every
   corruption.
@@ -172,7 +177,8 @@ conversation. Repeat this audit at closeout.
 - [x] Calculate expected, conservative, hard, provider, token, and call
   ceilings from the exact frozen graph.
 - [x] Validate and commit the fixed task contract and living ExecPlan.
-- [ ] Complete M1 through M3 sequentially.
+- [x] Complete M1 public execution contracts.
+- [ ] Complete M2 and M3 sequentially.
 - [ ] Complete M4 and open the draft PR.
 - [ ] Complete M5 and M6 and stop at the exact owner gate.
 
@@ -195,6 +201,12 @@ conversation. Repeat this audit at closeout.
   per provider yields an exact per-route maximum of 386,048 output tokens.
   Combining that value with route-specific input caps keeps the current-price
   hard projection below every owner-selected provider and total cap.
+- An initial alternate registered-cell selection produced 2,902 matrix calls,
+  disproving the assumed 3,014-call graph for that recipe. The failed
+  rehearsal was not hidden: the allocation was corrected to the registered
+  call-shape mix while retaining the new `RCV2-SLOT` namespace and v2
+  generation domain. Because the later private seed and slot domains generate
+  the instances, this reuses no prior task instance.
 
 ## Decision log
 
@@ -215,6 +227,13 @@ conversation. Repeat this audit at closeout.
 - `2026-07-28T01:11:20Z`: M0 validation passed: task-contract schema,
   provider/budget YAML identity checks, ExecPlan structure and sole-active
   milestone, independent budget arithmetic, and `git diff --check`.
+- `2026-07-28T01:31:06Z`: reject the first alternate cell recipe after its
+  observed 2,902-call graph contradicted the frozen 3,014-call matrix; freeze
+  the registered call-shape cell mix with new v2 slots/material instead.
+- `2026-07-28T01:31:06Z`: M1 validation passed for every versioned JSON
+  Schema/YAML contract, 50 unique v2 slots, exact identities, 3,014 matrix
+  calls, 3,016 normal calls, 41 v2 corruptions, and zero provider/private
+  activity.
 
 ## Validation strategy
 
