@@ -1,0 +1,48 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-v3-corruption-outcomes-v1
+campaign_id: treasurebench-agents-v1-repair-confirmation-v3
+batch_id: tb-agents-v1-repair-confirmation-v3-b01
+required_outcome: rejected
+corruptions:
+  - {corruption_id: IDENTITY-01-original-campaign, status: rejected}
+  - {corruption_id: IDENTITY-02-original-batch, status: rejected}
+  - {corruption_id: IDENTITY-03-repair-confirmation-v1-campaign, status: rejected}
+  - {corruption_id: IDENTITY-04-repair-confirmation-v1-batch, status: rejected}
+  - {corruption_id: IDENTITY-05-repair-confirmation-v2-campaign, status: rejected}
+  - {corruption_id: IDENTITY-06-repair-confirmation-v2-batch, status: rejected}
+  - {corruption_id: IDENTITY-07-prior-slot-prefix, status: rejected}
+  - {corruption_id: IDENTITY-08-execution-tree-mismatch, status: rejected}
+  - {corruption_id: GENERATION-01-no-authorization, status: rejected}
+  - {corruption_id: GENERATION-02-short-seed, status: rejected}
+  - {corruption_id: AUTH-01-missing-file, status: rejected}
+  - {corruption_id: AUTH-02-synthetic, status: rejected}
+  - {corruption_id: BUDGET-01-total-cap, status: rejected}
+  - {corruption_id: BUDGET-02-openai-cap, status: rejected}
+  - {corruption_id: BUDGET-03-anthropic-cap, status: rejected}
+  - {corruption_id: BUDGET-04-call-cap, status: rejected}
+  - {corruption_id: BUDGET-05-openai-input-token-cap, status: rejected}
+  - {corruption_id: BUDGET-06-openai-output-token-cap, status: rejected}
+  - {corruption_id: BUDGET-07-anthropic-input-token-cap, status: rejected}
+  - {corruption_id: BUDGET-08-anthropic-output-token-cap, status: rejected}
+  - {corruption_id: SCHEMA-01-openai-unsupported-keyword, status: rejected}
+  - {corruption_id: SCHEMA-02-anthropic-unsupported-keyword, status: rejected}
+  - {corruption_id: SEMANTIC-01-multiple-final-actions, status: rejected}
+  - {corruption_id: SEMANTIC-02-missing-final-action, status: rejected}
+  - {corruption_id: PAIRING-01-incomplete-architecture-model-cell, status: rejected}
+  - {corruption_id: METHOD-01-a-b-disagreement, status: rejected}
+  - {corruption_id: METHOD-02-c-protocol-failure, status: rejected}
+  - {corruption_id: METRIC-01-out-of-range, status: rejected}
+  - {corruption_id: CONTAMINATION-01-direct, status: rejected}
+  - {corruption_id: CONTAMINATION-02-probable, status: rejected}
+  - {corruption_id: CUSTODY-01-wrong-campaign, status: rejected}
+  - {corruption_id: CUSTODY-02-wrong-batch, status: rejected}
+  - {corruption_id: CUSTODY-03-wrong-key, status: rejected}
+  - {corruption_id: LOCK-01-before-provider-close, status: rejected}
+  - {corruption_id: LOCK-02-call-after-lock, status: rejected}
+  - {corruption_id: PRIVATE-STATE-01-inside-repository, status: rejected}
+  - {corruption_id: PROVIDER-01-terminal-failure, status: rejected}
+  - {corruption_id: REDACTION-01-task-text, status: rejected}
+  - {corruption_id: REDACTION-02-answer, status: rejected}
+  - {corruption_id: REDACTION-03-ranking, status: rejected}
+  - {corruption_id: SCIENCE-01-dd023, status: rejected}
+  - {corruption_id: SCIENCE-02-claim, status: rejected}
+  - {corruption_id: SCIENCE-03-scientific-run, status: rejected}

@@ -24,7 +24,7 @@ AO-0008 staging command. No credential, prior private state, owner
 authorization, seed, task, answer, key, nonce, ciphertext, provider, or spend
 was accessed or created.
 
-Exactly one milestone is active: **M3 complete rehearsals and corruptions**.
+Exactly one milestone is active: **M4 full acceptance and draft PR**.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -109,9 +109,9 @@ audit at closeout.
   private-state, execution-budget, failure, and corruption contracts.
 - **M2 — complete:** v3 runtime, exact production permit, credential-free
   preflight, custody, trace, output-lock, and independent verification.
-- **M3 — active:** complete 50-task/500-run synthetic rehearsal,
+- **M3 — complete:** complete 50-task/500-run synthetic rehearsal,
   production-path custody rehearsal, Methods A/B/C, and all corruptions.
-- **M4 — pending:** focused and full private-evaluation acceptance plus draft
+- **M4 — active:** focused and full private-evaluation acceptance plus draft
   PR creation.
 - **M5 — pending:** exact execution-freeze commit and matching remote draft-PR
   head.
@@ -132,7 +132,7 @@ audit at closeout.
 - [x] Complete M0 fixed records, validation, and first commit.
 - [x] Complete M1 execution contracts.
 - [x] Complete M2 isolated implementation and focused acceptance.
-- [ ] Complete M3 full rehearsal and corruptions.
+- [x] Complete M3 full rehearsal and corruptions.
 - [ ] Complete M4 draft PR and full acceptance.
 - [ ] Complete M5 execution freeze.
 - [ ] Complete M6 owner gate and stop.
@@ -184,6 +184,16 @@ audit at closeout.
   output lock, post-lock unseal, verification, quarantine, and long-session
   lifecycle tests pass with zero real private state, credential reads,
   provider calls, or spend. Begin M3 committed rehearsal evidence.
+- `2026-07-28T13:59:00Z`: M3 passes twice through the exact Make target: 50
+  public synthetic tasks, 500 pairings, 3,014 turns, zero Method A/B,
+  Method C, metric-range, final-cardinality, incomplete-pairing, or
+  contamination errors, 500 redacted encrypted traces, verified provider
+  closure/output lock, 43 v3 corruption rejections, and all 28 repaired
+  instrument corruptions reexecuted for 71 registered rejections. The separate
+  non-bypass production-permit rehearsal passes six custody negatives and
+  cleanup. AO-0007's twenty production-path custody classes, independent
+  verifier, and six prerequisite negatives still pass; the AO-0004 provider
+  schema suite passes 100 tests. Begin M4 full acceptance and draft PR.
 
 ## Validation strategy
 
