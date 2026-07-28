@@ -60,7 +60,7 @@ Registration audit at `2026-07-28T01:00:04Z`:
   accessed or created;
 - the five unrelated untracked preservation files remain excluded.
 
-Exactly one milestone is active: **M3 full synthetic rehearsal and corruptions**.
+Exactly one milestone is active: **M4 draft-PR and repository acceptance**.
 M0 passed at `2026-07-28T01:11:20Z`: the task contract is schema-valid, the
 provider and budget records parse and carry the exact reserved identities,
 the ExecPlan sections are ordered with one active milestone, all recorded
@@ -75,6 +75,12 @@ CLI/Make surfaces, provider and action-budget guards, route caps, custody,
 resumption, output-lock, verification, redaction, and focused tests pass. The
 staged mock driver completed 3,016 calls once, produced 500 complete pairings,
 locked before unseal, and resumed with zero new adapter calls.
+M3 passed at `2026-07-28T01:37:53Z`: the committed full rehearsal has 50
+public synthetic tasks, 500 runs, 3,014 matrix turns, 500 exact pairings, 500
+redacted encrypted traces, zero Method A/B, Method C, metric-range,
+final-cardinality, pairing, or contamination errors, and a verified output
+lock. All 41 v2 corruptions and the reexecuted repaired-instrument C01-C28
+suite were rejected, for 69 registered rejections.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -156,9 +162,9 @@ conversation. Repeat this audit at closeout.
   private-state schema, execution-budget schema, and corruption registry.
 - **M2 — complete:** offline v2 runtime, provider-schema/action-budget
   integration, custody, trace, output-lock, and independent verification.
-- **M3 — active:** complete 50-task/500-run synthetic rehearsal and every
+- **M3 — complete:** complete 50-task/500-run synthetic rehearsal and every
   corruption.
-- **M4 — pending:** focused and full private-evaluation acceptance plus draft
+- **M4 — active:** focused and full private-evaluation acceptance plus draft
   PR creation.
 - **M5 — pending:** exact execution freeze commit and matching remote draft-PR
   head.
@@ -184,7 +190,7 @@ conversation. Repeat this audit at closeout.
 - [x] Validate and commit the fixed task contract and living ExecPlan.
 - [x] Complete M1 public execution contracts.
 - [x] Complete M2 isolated implementation and focused acceptance.
-- [ ] Complete M3.
+- [x] Complete M3 full synthetic rehearsal and 69 corruptions.
 - [ ] Complete M4 and open the draft PR.
 - [ ] Complete M5 and M6 and stop at the exact owner gate.
 
@@ -245,6 +251,12 @@ conversation. Repeat this audit at closeout.
   stops, route token caps, all 41 v2 corruptions, the complete synthetic
   matrix, the isolated private-state root, full staged custody/lock/verify,
   exact cost reconciliation, and idempotent zero-call resume.
+- `2026-07-28T01:37:53Z`: the first Make invocation was blocked only because
+  the sandbox could not access uv's existing user cache; the same exact target
+  was rerun with the required filesystem approval and passed. The target
+  reexecuted C01-C28, rejected all 41 v2 corruptions, and reproduced the
+  committed 50-task/500-run rehearsal hash
+  `sha256:57e3cc54312be1e0bcbcada8901c0c360bc45458c0a987a96f4386c11b5c7882`.
 
 ## Validation strategy
 
@@ -281,10 +293,11 @@ unrelated files.
 At M0: issue #200, branch
 `benchmark/treasurebench-agents-v1-fresh-pilot-v2`, fixed contract
 `tasks/treasurebench-agents-v1-fresh-pilot-v2.yml`, and this living ExecPlan.
-Later milestones will append versioned v2 public contracts, audit records,
-implementation, tests, rehearsal artifacts, one draft PR, the exact execution
-freeze, one generic owner-gate manifest, and a typed owner-gate-required
-handoff.
+M1 through M3 produced versioned v2 public contracts, audit records,
+implementation, tests, and the full rehearsal/corruption artifacts. Later
+milestones will append one draft PR, full acceptance evidence, the exact
+execution freeze, one generic owner-gate manifest, and a typed
+owner-gate-required handoff.
 
 ## Blockers
 
