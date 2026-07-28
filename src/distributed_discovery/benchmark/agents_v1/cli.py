@@ -15,6 +15,9 @@ from distributed_discovery.benchmark.agents_v1.evaluation import evaluate_run
 from distributed_discovery.benchmark.agents_v1.fresh_pilot_live import (
     run_live_fresh_pilot,
 )
+from distributed_discovery.benchmark.agents_v1.fresh_pilot_v2_live import (
+    run_live_fresh_pilot as run_live_fresh_pilot_v2,
+)
 from distributed_discovery.benchmark.agents_v1.generation import (
     canonical_cells,
     generate_prompt_space,
@@ -71,6 +74,7 @@ COMMANDS = (
     "pilot-redacted-summary",
     "pilot-rehearsal",
     "fresh-pilot-live",
+    "fresh-pilot-v2-live",
     "provider-schema-canaries",
 )
 
@@ -165,6 +169,8 @@ def execute(args: argparse.Namespace) -> Mapping[str, object] | list[object]:
         return run_live_pilot(Path.cwd())
     if command == "fresh-pilot-live":
         return run_live_fresh_pilot(Path.cwd())
+    if command == "fresh-pilot-v2-live":
+        return run_live_fresh_pilot_v2(Path.cwd())
     if command == "provider-schema-canaries":
         return run_provider_schema_canaries(Path.cwd())
     if command == "pilot-verify":

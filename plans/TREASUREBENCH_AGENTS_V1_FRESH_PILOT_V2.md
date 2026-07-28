@@ -60,7 +60,7 @@ Registration audit at `2026-07-28T01:00:04Z`:
   accessed or created;
 - the five unrelated untracked preservation files remain excluded.
 
-Exactly one milestone is active: **M2 offline and staged runtime implementation**.
+Exactly one milestone is active: **M3 full synthetic rehearsal and corruptions**.
 M0 passed at `2026-07-28T01:11:20Z`: the task contract is schema-valid, the
 provider and budget records parse and carry the exact reserved identities,
 the ExecPlan sections are ordered with one active milestone, all recorded
@@ -70,6 +70,11 @@ private-state, execution-budget, and 41-case v2 corruption contracts validate;
 the exact registered cell mix yields 3,014 matrix calls under a new v2 slot
 and generation namespace; and registration remains at zero consequential
 activity.
+M2 passed at `2026-07-28T01:31:52Z`: the isolated v2 offline/live modules,
+CLI/Make surfaces, provider and action-budget guards, route caps, custody,
+resumption, output-lock, verification, redaction, and focused tests pass. The
+staged mock driver completed 3,016 calls once, produced 500 complete pairings,
+locked before unseal, and resumed with zero new adapter calls.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -149,9 +154,9 @@ conversation. Repeat this audit at closeout.
   authority-bearing commit.
 - **M1 — complete:** versioned request, allocation, provider audit,
   private-state schema, execution-budget schema, and corruption registry.
-- **M2 — active:** offline v2 runtime, provider-schema/action-budget
+- **M2 — complete:** offline v2 runtime, provider-schema/action-budget
   integration, custody, trace, output-lock, and independent verification.
-- **M3 — pending:** complete 50-task/500-run synthetic rehearsal and every
+- **M3 — active:** complete 50-task/500-run synthetic rehearsal and every
   corruption.
 - **M4 — pending:** focused and full private-evaluation acceptance plus draft
   PR creation.
@@ -178,7 +183,8 @@ conversation. Repeat this audit at closeout.
   ceilings from the exact frozen graph.
 - [x] Validate and commit the fixed task contract and living ExecPlan.
 - [x] Complete M1 public execution contracts.
-- [ ] Complete M2 and M3 sequentially.
+- [x] Complete M2 isolated implementation and focused acceptance.
+- [ ] Complete M3.
 - [ ] Complete M4 and open the draft PR.
 - [ ] Complete M5 and M6 and stop at the exact owner gate.
 
@@ -234,6 +240,11 @@ conversation. Repeat this audit at closeout.
   Schema/YAML contract, 50 unique v2 slots, exact identities, 3,014 matrix
   calls, 3,016 normal calls, 41 v2 corruptions, and zero provider/private
   activity.
+- `2026-07-28T01:31:52Z`: M2 focused acceptance passed: 12 v2 tests cover
+  registration, both transport compilers, shared semantics, authorization
+  stops, route token caps, all 41 v2 corruptions, the complete synthetic
+  matrix, the isolated private-state root, full staged custody/lock/verify,
+  exact cost reconciliation, and idempotent zero-call resume.
 
 ## Validation strategy
 
