@@ -59,6 +59,8 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     )
     assert "Repair-confirmation v1 then stopped with decision" in program
     assert "wholly fresh v2 campaign subsequently passed both public canaries" in program
+    assert "AO-0007’s one-use diagnostic subsequently verified" in program
+    assert "all twenty synthetic live-mode custody classes" in program
     assert 'id="information-sharing-frontier"' in program
     assert 'href="publications/information-sharing-frontier.html"' in program
     assert "docs/theorem-spine.md" in program
@@ -137,11 +139,14 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         assert (output / f"benchmark/{route}.html").is_file()
         assert (output / f"treasurebench/{route}.html").is_file()
     agents_registration = (output / "benchmark/agents-v1.html").read_text(encoding="utf-8")
-    assert "DD-010 instrument · quarantined engineering closeout" in agents_registration
+    assert "DD-010 instrument · quarantined pilots · custody path repaired" in (agents_registration)
     assert "Original pilot quarantined" in agents_registration
     assert "Repair-confirmation v1 quarantined" in agents_registration
     assert "Repair-confirmation v2 quarantined" in agents_registration
+    assert "Custody path repaired" in agents_registration
     assert "custody-creation-failure" in agents_registration
+    assert "v2-campaign-absent-from-private-generation-permit-allowlist" in (agents_registration)
+    assert "all 20 required synthetic live-mode classes" in agents_registration
     assert "USD 0.0076095" in agents_registration
     assert "3,037 attempts, 3,035 successes" in agents_registration
     assert "137 runs with invalid final cardinality" in agents_registration
@@ -174,7 +179,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         (output / "data/benchmark/agents-v1-implementation.json").read_text(encoding="utf-8")
     )
     assert agents_implementation["status"] == (
-        "implementation-repaired-all-three-pilots-quarantined"
+        "implementation-and-custody-path-repaired-all-three-pilots-quarantined"
     )
     assert agents_implementation["public_rehearsal"]["cases"] == 50
     assert agents_implementation["public_rehearsal"]["corruptions_rejected"] == 24
@@ -190,6 +195,19 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     }
     assert agents_implementation["boundaries"]["provider_calls"] == 0
     assert agents_implementation["boundaries"]["performance_results_exist"] is False
+    assert agents_implementation["custody_path_conformance"] == {
+        "algorithm": "AES-256-GCM",
+        "classification": "redacted-engineering-only-no-performance-evidence",
+        "cost_usd": "0",
+        "decision": "custody-root-cause-repaired-live-conformance-pass",
+        "exact_cause": "v2-campaign-absent-from-private-generation-permit-allowlist",
+        "independent_verifier": "pass",
+        "negative_classes": 6,
+        "private_read_authority_closed": True,
+        "provider_calls": 0,
+        "required_classes": 20,
+        "required_classes_passed": 20,
+    }
     agents_evaluation = json.loads(
         (output / "data/benchmark/agents-v1-evaluation.json").read_text(encoding="utf-8")
     )

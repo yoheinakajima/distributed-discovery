@@ -202,8 +202,12 @@ scientific evidence.
   access.
 - [x] Complete prospective repair, independent verification, corruptions, and
   the full public-safe validation wall.
-- [ ] Complete closeout merge, deployment,
-  issue closure, and main synchronization.
+- [x] Ready and squash-merge PR #203 after both exact-head checks pass.
+- [x] Verify the first post-merge CI and Pages workflows.
+- [ ] Correct and validate the stale program and TreasureBench agent route
+  reconciliation found during named live-route verification.
+- [ ] Verify the corrective CI/Pages cycle and all named live routes, close
+  issue #202, record terminal closeout, and synchronize `main`.
 
 ## Discoveries and surprises
 
@@ -284,6 +288,28 @@ scientific evidence.
   Agent Operations, program-memory, editorial, publication, and AO-0007
   custody audits, offline release verification, and the 89-page/26-study site
   build. Both live PR checks at the validated head pass.
+- `2026-07-28T13:00:35Z`: PR #203 squash-merges as
+  `9a0fe6576898f7fb59d3499a4b3e1780179b0da6`. Post-merge CI run
+  `30361493529` and Pages run `30361493853` pass on that exact merge commit.
+- `2026-07-28T13:11:54Z`: named-route verification finds a public
+  reconciliation defect after the otherwise successful deployment.
+  `research/dd-010.html` and `data/studies/dd-010.json` expose AO-0007
+  accurately, but `program.html`, `treasurebench/agents-v1.html`, and the
+  implementation JSON still render the pre-AO-0007 quarantine-only state.
+  This is a stale site-builder projection, not a scientific, private-state,
+  custody, or repair failure. Correct the existing task's public projection on
+  `main`, add fail-closed source validation and route regressions, and require
+  another normal CI/Pages cycle before issue closure.
+- `2026-07-28T13:16:13Z`: the first corrective `make verify` stops at its
+  initial format check because the two edited Python files require the
+  repository formatter. After the mechanical rewrite, the restarted wall
+  passes Ruff over 332 files, MyPy over 197 source files, all 580 tests,
+  claims, 51 run manifests, Agent Operations, program memory, editorial,
+  publication, and offline release checks. The focused custody audit, all
+  twenty production-path synthetic classes, independent AES-256-GCM
+  verification, six negative classes, and the 89-page/26-study site build
+  also pass with zero retained-state reads or writes, credential reads,
+  provider calls, or spend.
 
 ## Decision log
 
@@ -317,6 +343,11 @@ scientific evidence.
   `custody-root-cause-repaired-live-conformance-pass`. Preserve AO-0006
   unchanged; apply repair only prospectively and do not allocate a future
   private-pilot identity.
+- `2026-07-28T13:11:54Z`: treat the stale named routes as an AO-0007
+  administrative closeout correction under the existing owner authorization.
+  Do not create a new issue, branch, task, PR, scientific state, private read,
+  provider call, or spend. Keep all three pilot quarantines immutable and
+  expose only the already tracked redacted AO-0007 closeout.
 
 ## Validation strategy
 
@@ -418,6 +449,15 @@ decision.
 
 ## Outcome and retrospective
 
-Pending. Record the selected permitted outcome only after the diagnostic and
-the required validation evidence exist. Do not infer success from
-implementation or synthetic rehearsal alone.
+The permitted engineering outcome is
+`custody-root-cause-repaired-live-conformance-pass`: the exact one-use
+diagnostic confirmed the private-generation permit failure, private-read
+authority is closed, AO-0006 remains immutable and quarantined, and the
+prospective production custody path passes all twenty required synthetic
+live-mode classes, independent AES-256-GCM verification, and six negative
+classes. This outcome creates no scientific or model-performance evidence and
+does not authorize a replacement pilot or base campaign.
+
+Administrative closeout remains active until the corrected public projection
+passes CI and Pages, all named live routes agree with the tracked closeout,
+issue #202 is closed, and local `main` exactly matches `origin/main`.
