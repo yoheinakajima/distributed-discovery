@@ -9,9 +9,9 @@ issue: 202
 pull_request:
   number: 203
   expected_state: OPEN
-  head_sha: 55a7815c76823910d443776222764ceee5e36c22
+  head_sha: 55a7815c77319e7845238126c6045f2e80026165
 branch: codex/treasurebench-ao0006-custody-repair
-commit: 55a7815c76823910d443776222764ceee5e36c22
+commit: 55a7815c77319e7845238126c6045f2e80026165
 tree_hashes:
   Makefile: sha256:322a4bc1cb28458bfcf17bd9e0dcdb2f838db47b5ffcccee47f51d23becd236f
   plans/TREASUREBENCH_AO0006_CUSTODY_REPAIR.md: sha256:745072c28babbdaffa5c4cc35bec0e1d3ce06b3c86ddc8e708fe73e6700588e6
@@ -49,7 +49,7 @@ cumulative_state: {currency: USD, spend: "0", calls: 0, category_spend: {}}
 hard_caps: {currency: USD, spend: "0", calls: 0, category_spend: {}}
 remaining_caps: {currency: USD, spend: "0", calls: 0, category_spend: {}}
 owner_confirmation_statements:
-  - I authorize only AO-0007 at execution commit 55a7815c76823910d443776222764ceee5e36c22, issue 202, draft pull request 203, the exact branch, protected tree, one-use read scope, zero caps, prohibitions, and expiry in this manifest.
+  - I authorize only AO-0007 at execution commit 55a7815c77319e7845238126c6045f2e80026165, issue 202, draft pull request 203, the exact branch, protected tree, one-use read scope, zero caps, prohibitions, and expiry in this manifest.
   - I authorize one bounded read-only adjudication of the immutable AO-0006 custody failure and understand that the command writes its detailed diagnosis only outside Git while emitting only a redacted public-safe result.
   - I understand the diagnostic creates its one-use marker before retained-state access, permanently closes AO-0007 private-read authority after that invocation, mutates no retained AO-0006 state, and permits no second private read.
   - I authorize the subsequent minimum prospective repair and synthetic offline validation, public-safe closeout, pull-request readiness and merge after checks, normal CI and Pages observation, named live-route verification, issue closure, and synchronized main without another routine checkpoint.
