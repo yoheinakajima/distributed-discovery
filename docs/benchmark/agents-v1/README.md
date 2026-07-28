@@ -5,7 +5,7 @@ the frozen `discoverybench-agents-v1` instrument and schema identifiers remain
 unchanged for compatibility; the formal suite rename creates no protocol or
 content version.
 
-Status: all three sealed engineering pilots permanently quarantined; redacted
+Status: all four sealed engineering pilots permanently quarantined; redacted
 instrument and custody adjudications complete; production custody path
 prospectively repaired; public provider-schema, semantic-contract, and
 live-mode-equivalent custody engineering conformance passed; any future fresh
@@ -86,6 +86,29 @@ to decrypt to the requested plaintext. All twenty production-path synthetic
 custody classes, independent AES-256-GCM verification, six negative classes,
 and deterministic cleanup pass. AO-0006 remains quarantined. Any future pilot
 requires wholly new identity and separate explicit owner authority.
+
+## AO-0008 wholly fresh repair-confirmation v3 closeout
+
+AO-0008 registered campaign
+`treasurebench-agents-v1-repair-confirmation-v3` and batch
+`tb-agents-v1-repair-confirmation-v3-b01`. Both direct-provider public
+canaries, wholly fresh custody, and the private prefix passed. The fixed full
+batch then stopped under registered class `fixed-full-batch-failure`, producing
+decision `fresh-pilot-v3-quarantined-engineering-only`.
+
+The provider phase closed at 3,067 calls and USD 13.1861145 with every hard
+cap intact. A verified output lock binds 3,576 retained objects under
+`sha256:e52055b08ca3a8acb1cfb6ac608c6e601f3c618352900f92bf91c5ffc4718dbb`.
+No call followed the lock and no material was unsealed. The partial private
+batch is not evaluated or published.
+
+The full public rehearsal passes 50 synthetic tasks, 500 pairings, 3,014
+matrix turns, Methods A/B/C, cardinality, pairing, metric, contamination,
+redaction, output-lock, exact cost, and 71 registered corruption checks. No
+private content, task-level metric, comparison, ranking, or scientific state
+is published. The campaign and batch are permanently quarantined and cannot
+be retried, repaired, reopened, reused, rescored, spliced, executed, or
+reauthorized.
 
 ## Registered package
 

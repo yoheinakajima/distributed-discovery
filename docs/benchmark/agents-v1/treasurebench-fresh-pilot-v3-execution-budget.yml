@@ -1,0 +1,12 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-v3-execution-budget-v1
+status: frozen-zero-activity
+campaign_id: treasurebench-agents-v1-repair-confirmation-v3
+batch_id: tb-agents-v1-repair-confirmation-v3-b01
+currency: USD
+graph: {matrix_runs: 500, matrix_calls: 3014, public_canary_calls: 2, normal_calls: 3016, maximum_calls: 5200}
+costs: {expected: "11.51", conservative: "15", hard_cap: "25", OpenAI_cap: "10", Anthropic_cap: "15"}
+request_caps: {output_tokens: 256, transport_attempts: 2, schema_repairs: 1}
+route_caps:
+  OpenAI: {calls: 2600, input_tokens: 1680000, output_tokens: 386048}
+  Anthropic: {calls: 2600, input_tokens: 3000000, output_tokens: 386048}
+activity: {calls: 0, spend: "0", credentials_read: 0, private_objects_created: 0}

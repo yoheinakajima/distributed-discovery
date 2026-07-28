@@ -1,6 +1,31 @@
-# Project status — AO-0007 custody path prospectively repaired
+# Project status — TreasureBench fresh pilot v3 quarantined
 
 Date: 2026-07-28 (America/Los_Angeles).
+
+AO-0008 passed both direct-provider public canaries, wholly fresh custody, and
+the private prefix, then stopped during the fixed full batch with decision
+`fresh-pilot-v3-quarantined-engineering-only` and public-safe class
+`fixed-full-batch-failure`.
+
+The provider phase made 3,067 calls, used 2,304,303 input tokens and 444,085
+output tokens, and cost USD 13.1861145: OpenAI USD 4.5952575 and Anthropic USD
+8.590857. Every hard cap held. Provider access is closed, and 3,576 retained
+objects are bound by output lock
+`sha256:e52055b08ca3a8acb1cfb6ac608c6e601f3c618352900f92bf91c5ffc4718dbb`.
+No call followed the lock and no material was unsealed.
+
+The partial private batch is neither evaluated nor published. No task text,
+answer, seed, key, prompt, output, raw trace, task-level metric, performance
+comparison, ranking, or composite is public. The campaign and batch cannot be
+retried, repaired, reopened, reused, rescored, spliced, executed, or
+reauthorized.
+
+This creates no DD-023, claim, scientific run, paper result, release,
+submission, or base-campaign authority. Scientific inventory remains 110
+claims, 26 studies, 51 manifests, and 48 passing immutable runs; the seven
+project PDFs remain 119 pages.
+
+## Prior custody diagnosis and prospective repair
 
 AO-0007 ran its exact retained-state diagnostic once. The AO-0006 output lock,
 inventory, eight locked objects, identity, append-only logs, stage state,

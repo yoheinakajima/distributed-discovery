@@ -1,0 +1,24 @@
+schema_version: agent-ops-handoff-v1
+status: stop-by-policy
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0008
+issue: 204
+pull_request: 205
+branch: codex/treasurebench-agents-v1-fresh-pilot-v3
+base_main: 3c24577b6810115858541f4f75c30d005828e0d7
+head_merge_sha: d1d7aff38f5be558e4994dfa329fd238b50f1ac2
+task_contract: tasks/treasurebench-agents-v1-fresh-pilot-v3.yml
+exec_plan: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V3.md
+last_completed_gate: The exact AO-0008 authorization and frozen-surface revalidation passed; public canaries, wholly fresh custody, and the private prefix completed; the fixed full batch entered registered quarantine; provider calls stopped; the provider phase closed; and 3,576 objects were verified under the pushed public output-lock commitment without unsealing.
+next_gate: The consumed AO-0008 authority continues only through public-safe quarantine reconciliation, complete validation, PR readiness and squash merge after required checks, normal post-merge CI and Pages, named live-route verification, issue closure, main synchronization, and one final schema-valid handoff; no further provider call or private execution is permitted.
+decision: fresh-pilot-v3-quarantined-engineering-only
+external_calls_cost: {calls: 3067, cost: "13.1861145", currency: USD}
+private_state_change: A wholly fresh v3 private-state root, custody, encrypted provider responses and traces, append-only ledgers, and output lock are retained. The provider phase is closed and 3,576 objects are locked under sha256:e52055b08ca3a8acb1cfb6ac608c6e601f3c618352900f92bf91c5ffc4718dbb; no material was unsealed.
+scientific_state_change: none
+validation:
+  profile: private-evaluation-quarantine-closeout
+  result: public-canaries-pass-custody-pass-prefix-pass-fixed-full-batch-failure-provider-closed-lock-verified-redaction-pass-500-pairing-synthetic-rehearsal-71-corruptions
+owner_action: No additional owner action is required for normal administrative closeout under the consumed AO-0008 authority.
+exact_next_command: make verify
+exact_next_file: reports/benchmark/treasurebench-agents-v1-fresh-pilot-v3-closeout.yml
+blocker: The registered v3 campaign and batch failed during the fixed full batch and are permanently quarantined; they cannot be retried, repaired, reopened, reused, rescored, spliced, executed, or reauthorized.

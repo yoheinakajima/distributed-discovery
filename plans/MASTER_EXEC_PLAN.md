@@ -1,5 +1,41 @@
 # Master execution plan
 
+## Active closeout — AO-0008 fresh repair-confirmation pilot v3 quarantined (2026-07-28)
+
+Issue #204, branch `codex/treasurebench-agents-v1-fresh-pilot-v3`, draft PR
+#205, fixed contract
+`tasks/treasurebench-agents-v1-fresh-pilot-v3.yml`, and living ExecPlan
+[`TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V3.md`](TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V3.md)
+own the sole substantive lane as AO-0008.
+
+The exact owner gate authorized execution commit
+`0f9d82bb50cbb334bea47e24448831faf0cdbed8`, its 22 protected hashes, wholly
+fresh v3 campaign and batch, direct OpenAI and Anthropic routes, USD 25 total,
+USD 10 OpenAI, USD 15 Anthropic, and 5,200-call hard caps. Current official
+provider surfaces and every frozen execution boundary revalidated before
+credential ingress.
+
+Both public canaries passed; wholly fresh custody and the private prefix
+completed. The fixed full batch then stopped under registered public-safe
+class `fixed-full-batch-failure`, producing decision
+`fresh-pilot-v3-quarantined-engineering-only`. The provider phase ended at
+3,067 calls, 2,304,303 input tokens, 444,085 output tokens, and USD
+13.1861145: OpenAI USD 4.5952575 and Anthropic USD 8.590857. Every hard cap
+held.
+
+Provider calls are closed permanently. The output lock binds 3,576 retained
+objects under
+`sha256:e52055b08ca3a8acb1cfb6ac608c6e601f3c618352900f92bf91c5ffc4718dbb`;
+no call followed the lock and no material was unsealed. The partial private
+batch is not evaluated or published. No replacement, splice, rescore, retry,
+ranking, scientific state, paper result, release, submission, or base
+campaign is authorized.
+
+The consumed AO-0008 authority now carries only public-safe reconciliation,
+complete validation, PR readiness and squash merge, normal CI and Pages,
+named public-route verification, issue closure, synchronized `main`, and the
+final schema-valid handoff. No provider or private action remains.
+
 ## Completed continuation — AO-0007 AO-0006 custody adjudication and prospective repair (2026-07-28)
 
 Issue #202, branch `codex/treasurebench-ao0006-custody-repair`, fixed contract

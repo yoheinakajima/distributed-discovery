@@ -51,7 +51,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "stopped decentralized-recovery overlap gate" in program
     assert "Phase 2 holds theorem-family execution" in program
     assert "Reliable Discovery remains a major candidate but is deferred" in program
-    assert "has three permanently quarantined DD-010 engineering pilots" in program
+    assert "has four permanently quarantined DD-010 engineering pilots" in program
     assert "public-only provider-schema conformance" in program
     assert "sealed-pilot-quarantined-provider-failure" in program
     assert (
@@ -61,6 +61,8 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "wholly fresh v2 campaign subsequently passed both public canaries" in program
     assert "AO-0007’s one-use diagnostic subsequently verified" in program
     assert "all twenty synthetic live-mode custody classes" in program
+    assert "AO-0008 then passed both public canaries" in program
+    assert "verified 3,576-object output lock" in program
     assert 'id="information-sharing-frontier"' in program
     assert 'href="publications/information-sharing-frontier.html"' in program
     assert "docs/theorem-spine.md" in program
@@ -139,15 +141,21 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         assert (output / f"benchmark/{route}.html").is_file()
         assert (output / f"treasurebench/{route}.html").is_file()
     agents_registration = (output / "benchmark/agents-v1.html").read_text(encoding="utf-8")
-    assert "DD-010 instrument · quarantined pilots · custody path repaired" in (agents_registration)
+    assert "DD-010 instrument · four quarantined pilots · custody path repaired" in (
+        agents_registration
+    )
     assert "Original pilot quarantined" in agents_registration
     assert "Repair-confirmation v1 quarantined" in agents_registration
     assert "Repair-confirmation v2 quarantined" in agents_registration
+    assert "Repair-confirmation v3 quarantined" in agents_registration
     assert "Custody path repaired" in agents_registration
     assert "custody-creation-failure" in agents_registration
     assert "v2-campaign-absent-from-private-generation-permit-allowlist" in (agents_registration)
     assert "all 20 required synthetic live-mode classes" in agents_registration
     assert "USD 0.0076095" in agents_registration
+    assert "fixed-full-batch-failure" in agents_registration
+    assert "USD 13.1861145" in agents_registration
+    assert "3,576 retained objects" in agents_registration
     assert "3,037 attempts, 3,035 successes" in agents_registration
     assert "137 runs with invalid final cardinality" in agents_registration
     assert "265 over-budget outputs" in agents_registration
@@ -179,7 +187,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         (output / "data/benchmark/agents-v1-implementation.json").read_text(encoding="utf-8")
     )
     assert agents_implementation["status"] == (
-        "implementation-and-custody-path-repaired-all-three-pilots-quarantined"
+        "implementation-and-custody-path-repaired-all-four-pilots-quarantined"
     )
     assert agents_implementation["public_rehearsal"]["cases"] == 50
     assert agents_implementation["public_rehearsal"]["corruptions_rejected"] == 24
@@ -324,6 +332,35 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     }
     assert agents_evaluation["authorization"]["fresh_pilot_v2_authorized"] is True
     assert agents_evaluation["authorization"]["fresh_pilot_v2_completed"] is True
+    assert agents_evaluation["repair_confirmation_pilot_v3"] == {
+        "name": "fresh-repair-confirmation-pilot-v3",
+        "campaign_id": "treasurebench-agents-v1-repair-confirmation-v3",
+        "batch_id": "tb-agents-v1-repair-confirmation-v3-b01",
+        "execution_commit": "0f9d82bb50cbb334bea47e24448831faf0cdbed8",
+        "status": "quarantined",
+        "decision": "fresh-pilot-v3-quarantined-engineering-only",
+        "stage": "fixed-full-batch",
+        "failure_class": "fixed-full-batch-failure",
+        "calls": 3067,
+        "input_tokens": 2304303,
+        "output_tokens": 444085,
+        "cost_usd": "13.1861145",
+        "provider_cost_usd": {"Anthropic": "8.590857", "OpenAI": "4.5952575"},
+        "public_canary_complete": True,
+        "custody_complete": True,
+        "private_prefix_complete": True,
+        "fixed_full_batch_complete": False,
+        "partial_private_pairing_count": "not-published-quarantined-batch",
+        "output_lock_commitment": (
+            "sha256:e52055b08ca3a8acb1cfb6ac608c6e601f3c618352900f92bf91c5ffc4718dbb"
+        ),
+        "objects_locked": 3576,
+        "provider_phase_closed": True,
+        "unsealed": False,
+        "performance_results_published": False,
+    }
+    assert agents_evaluation["authorization"]["fresh_pilot_v3_authorized"] is True
+    assert agents_evaluation["authorization"]["fresh_pilot_v3_completed"] is True
     assert agents_evaluation["authorization"]["further_provider_calls_authorized"] is False
     benchmark_lab = (output / "labs/benchmark.html").read_text()
     assert "no submissions" in benchmark_lab

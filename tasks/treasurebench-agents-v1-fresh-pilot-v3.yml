@@ -1,0 +1,129 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0008
+title: TreasureBench Agents v1 wholly fresh sealed repair-confirmation pilot v3
+task_type: private-evaluation
+status: active
+objective: Prepare, freeze, and, only after one later exact generic owner authorization, execute and honestly close out one wholly fresh 50-task and 500-run DD-010 engineering repair-confirmation pilot through the repaired provider-schema, action-budget, private-generation-permit, and production custody paths.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: policy, path: docs/benchmark/agents-v1/AGENTS.md}
+  - {type: policy, path: src/distributed_discovery/benchmark/agents_v1/AGENTS.md}
+  - {type: decision, path: docs/program-memory/registry.yml}
+  - {type: record, path: tasks/treasurebench-provider-schema-conformance-closeout.yml}
+  - {type: record, path: reports/agent-ops/AO-0004-r4-public-provider-canary-outcome.yml}
+  - {type: record, path: tasks/treasurebench-ao0006-custody-repair.yml}
+  - {type: plan, path: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V3.md}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/204"}
+owner_decisions:
+  - Register AO-0008 as the sole substantive lane for TreasureBench Agents v1 wholly fresh sealed repair-confirmation pilot v3.
+  - Freeze campaign treasurebench-agents-v1-repair-confirmation-v3 and batch tb-agents-v1-repair-confirmation-v3-b01 after collision checks; allocate every seed, task, answer, key, nonce, ciphertext, commitment, log, ledger, trace, custody, lock, and audit identity wholly fresh only after authorization.
+  - Preserve every prior campaign, batch, authorization, ledger, lock, retained state, terminal decision, and private-read closure as immutable; no prior instance receives authority.
+  - Preserve AO-0004 R4 direct OpenAI and Anthropic provider-schema conformance, provider-independent exactly-one-final-action validation, and AO-0007 production custody conformance as completed engineering prerequisites only.
+  - Freeze 50 private tasks, ten from each registered family, five registered architectures, direct OpenAI gpt-5.4-2026-03-05, direct Anthropic claude-sonnet-4-6, one repeat, 500 registered pairings, and 256 output tokens per request.
+  - Prohibit aliases, fallbacks, OpenRouter, regional, batch, provider-managed-tool, and substitute routes.
+  - Prospectively bind the v3 campaign to the fail-closed production private-generation permit and prove that exact path without a synthetic-mode bypass before owner authorization.
+  - Rehearse production generation, independent encryption, atomic exclusive persistence, custody-manifest creation, reload, exact verification, and cleanup only under an isolated temporary XDG state root with nonsecret disposable material.
+  - Freeze USD 11.51 expected, USD 15 conservative, USD 25 total hard cap, USD 10 OpenAI cap, USD 15 Anthropic cap, and 5,200 maximum calls from the actual 3,016-call normal graph; no owner ceiling may increase here.
+  - Treat every registered terminal failure as a whole-batch quarantine outcome with no replacement, splice, rescore, semantic retry, or new private identity.
+  - One later exact generic owner authorization conditionally covers the normal success or honest quarantine path through provider recheck, canaries, custody, prefix, fixed batch, provider closure, output lock, post-lock unseal, verification, deterministic public-safe closeout, checks, squash merge, CI and Pages, live routes, issue closure, synchronized main, and one final schema-valid handoff.
+scope:
+  paths:
+    - tasks/treasurebench-agents-v1-fresh-pilot-v3.yml
+    - plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V3.md
+    - plans/MASTER_EXEC_PLAN.md
+    - docs/agent-ops
+    - docs/benchmark/agents-v1
+    - docs/current-state.md
+    - docs/current-roadmap.md
+    - docs/program-memory
+    - reports/agent-ops
+    - reports/benchmark
+    - reports/final-handoff.md
+    - reports/project-status.md
+    - studies/DD-010-discoverybench
+    - src/distributed_discovery/agent_ops
+    - src/distributed_discovery/benchmark/agents_v1
+    - src/distributed_discovery/cli.py
+    - scripts
+    - site
+    - tests
+    - .github/workflows
+    - Makefile
+  actions:
+    - Register and freeze the wholly fresh v3 engineering campaign and exact execution surface.
+    - Re-audit official direct-provider availability, schema, retention, retry, and price terms without credentials or provider calls.
+    - Integrate the v3 campaign prospectively with the production private-generation permit and production custody path.
+    - Run complete authorization-free synthetic and production-path temporary-state rehearsals, independent Methods A, B, and C, corruptions, lock, contamination, redaction, and cost checks.
+    - Commit and push one exact execution freeze, draft pull request, generic owner-gate manifest, and schema-valid owner-gate-required handoff.
+    - After a later exact owner authorization only, run the fixed live success-or-quarantine path and its public-safe administrative closeout.
+non_goals:
+  - No DD-023, claim, immutable scientific run, evidence or proof promotion, paper result, ranking, composite, leaderboard, package, release, DOI, submission, or base campaign.
+  - No reuse, retry, reopening, mutation, rescoring, splicing, deletion, unsealing, reactivation, or reauthorization of any prior campaign or private artifact.
+  - No credential read, provider call, spend, real seed, private task, answer, key, nonce, ciphertext, commitment, custody object, or retained real campaign state before the exact owner authorization.
+  - No execution-sensitive change, identity change, model or route substitution, cap increase, replacement batch, or authority expansion after authorization without a separate owner decision.
+permissions:
+  repository_write: true
+  git_branch_commit: true
+  github_issue_pr: true
+  merge_after_checks: true
+  ci_pages: true
+external_action_permissions:
+  network_observation: true
+  github_mutation: true
+  provider_calls: true
+  spend: true
+  release_publication: false
+  submission: false
+scientific_mutation_permissions:
+  create_study: false
+  create_claim: false
+  create_run: false
+  change_evidence_status: false
+  change_proof_status: false
+  change_paper_lifecycle: false
+private_data_permissions: {read: true, write: true, generate: true, publish: false}
+budget:
+  currency: USD
+  expected: "11.51"
+  hard_cap: "25"
+  call_cap: 5200
+  category_caps: {OpenAI: "10", Anthropic: "15"}
+  cumulative_spend: "0"
+expected_outcomes:
+  - One authorization-free execution package proving the exact v3 permit, production custody, 50-task and 500-run synthetic graph, verification, corruption, lock, redaction, contamination, and cost invariants.
+  - One committed generic owner gate that stops before credentials, real private generation, provider calls, or spend.
+  - After later authorization only, one complete engineering success or honest whole-batch quarantine with exact public-safe closeout.
+stop_conditions:
+  - Before authorization, stop exactly once after the committed generic owner gate and schema-valid owner-gate-required handoff.
+  - After authorization, stop if execution-sensitive code, campaign, batch, model, route, cap, execution tree, or private identity must change.
+  - Stop if authorization validity is uncertain or retained private state cannot be safely preserved or locked.
+  - Stop if a replacement batch, record splice, semantic retry, new private identity, or authority beyond the fixed DD-010 engineering contract is proposed.
+  - Quarantine the entire fixed batch on any registered terminal provider, protocol, cardinality, pairing, Method, metric, contamination, corruption, lock, custody, cost, or redaction failure.
+acceptance_profile: private-evaluation
+canonical_destinations:
+  - tasks/treasurebench-agents-v1-fresh-pilot-v3.yml
+  - plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V3.md
+  - docs/benchmark/agents-v1
+  - reports/agent-ops
+  - reports/benchmark
+  - studies/DD-010-discoverybench
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 204
+  branch: codex/treasurebench-agents-v1-fresh-pilot-v3
+  pull_request: null
+  base: main
+exec_plan: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V3.md
+task_delta: null
+frozen_identifiers:
+  study_id: DD-010
+  campaign_id: treasurebench-agents-v1-repair-confirmation-v3
+  batch_id: tb-agents-v1-repair-confirmation-v3-b01
+  slot_namespace: RCV3-SLOT
+  generation_domain: fresh-private-v3
+  gate_id: AOG-AO-0008-FRESH-PILOT-V3
+supersession: {supersedes: [], superseded_by: null, reason: null}
+next_gate: Complete every authorization-free rehearsal and check, freeze the exact execution commit, commit the generic owner-gate manifest, and stop before credentials, real private generation, provider calls, or spend.

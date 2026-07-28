@@ -169,6 +169,35 @@ AO-0006 remains permanently quarantined and unchanged. This is engineering
 diagnosis and offline conformance, not scientific or model-performance
 evidence. No new pilot or v3 identity is registered.
 
+## AO-0008 wholly fresh repair-confirmation v3 closeout
+
+Issue #204 and PR #205 own campaign
+`treasurebench-agents-v1-repair-confirmation-v3`, batch
+`tb-agents-v1-repair-confirmation-v3-b01`, and frozen execution commit
+`0f9d82bb50cbb334bea47e24448831faf0cdbed8`. Both public canaries, wholly
+fresh custody, and the private prefix passed.
+
+The fixed full batch then stopped under public-safe class
+`fixed-full-batch-failure`, producing decision
+`fresh-pilot-v3-quarantined-engineering-only`. The provider phase made 3,067
+calls, used 2,304,303 input tokens and 444,085 output tokens, and cost USD
+13.1861145: OpenAI USD 4.5952575 and Anthropic USD 8.590857. Every hard cap
+held.
+
+Provider access is closed. The output lock covers 3,576 retained objects under
+`sha256:e52055b08ca3a8acb1cfb6ac608c6e601f3c618352900f92bf91c5ffc4718dbb`.
+No call followed the lock and no material was unsealed. The partial private
+batch is not evaluated or published. Methods A/B/C, task-level metrics,
+pairings, comparisons, and rankings were not produced after quarantine.
+
+The complete public rehearsal still has 50 synthetic tasks, 500 pairings,
+3,014 matrix turns, and 71 registered corruption rejections. It remains
+engineering instrumentation only. No private content, claim, scientific run,
+paper result, comparison, release, submission, or base-campaign authority is
+created. The v3 campaign and batch are permanently quarantined and cannot be
+retried, repaired, reopened, reused, rescored, spliced, executed, or
+reauthorized.
+
 ## Registered evaluation campaign
 
 Issue #173 registers, but does not authorize or execute, the evaluation
