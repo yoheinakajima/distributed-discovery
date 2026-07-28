@@ -24,7 +24,12 @@ AO-0008 staging command. No credential, prior private state, owner
 authorization, seed, task, answer, key, nonce, ciphertext, provider, or spend
 was accessed or created.
 
-Exactly one milestone is active: **M7 pending exact owner authorization**.
+The exact AO-0008 owner authorization was consumed. Public canaries, wholly
+fresh custody, and the private prefix passed. The fixed full batch then entered
+registered quarantine after 3,067 calls and USD 13.1861145. The provider phase
+is closed, 3,576 retained objects are output-locked, and no material was
+unsealed. Exactly one milestone remains active: **M7 public-safe quarantine
+administrative closeout**.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -117,8 +122,10 @@ audit at closeout.
   head.
 - **M6 — complete:** committed generic owner-gate manifest, live
   authorization-free validation, typed handoff, and stop.
-- **M7 — active, blocked by pending owner authorization:** execute the exact fixed live success
-  or quarantine path and complete its permitted administrative lifecycle.
+- **M7 — active, quarantined batch:** the exact live path ended in registered
+  fixed-full-batch quarantine; complete its permitted public-safe
+  administrative lifecycle without another provider call or private
+  execution.
 
 ## Progress checklist
 
@@ -136,6 +143,15 @@ audit at closeout.
 - [x] Complete M4 draft PR and full acceptance.
 - [x] Complete M5 execution freeze.
 - [x] Complete M6 owner gate and stop.
+- [x] Consume the exact owner authorization and revalidate every frozen
+  execution and provider surface.
+- [x] Execute the exact live target through public canaries, custody, prefix,
+  registered fixed-full-batch quarantine, provider closure, output lock, and
+  pushed public commitments.
+- [x] Complete public-safe quarantine reconciliation and the full validation
+  wall without changing any protected execution-tree file.
+- [ ] Complete PR readiness and squash merge, CI/Pages and named-route checks,
+  issue closure, synchronized main, and the final schema-valid handoff.
 
 ## Discoveries and surprises
 
@@ -156,6 +172,11 @@ audit at closeout.
   material branch inferred a concrete dictionary while the production loader
   returns a mapping. An explicit `Mapping[str, bytes]` annotation preserves
   runtime behavior and makes the shared custody contract exact.
+- The live provider phase reached the fixed full batch, then stopped under the
+  registered coarse class `fixed-full-batch-failure`. The terminal redacted
+  totals are 3,067 calls, 2,304,303 input tokens, 444,085 output tokens, and
+  USD 13.1861145: OpenAI USD 4.5952575 and Anthropic USD 8.590857. All hard
+  caps held.
 
 ## Decision log
 
@@ -246,6 +267,32 @@ audit at closeout.
   generation, provider call, spend, unseal, repository mutation, merge, or
   deployment. Complete M6, activate M7 as blocked by the intentionally absent
   exact owner authorization, render the schema-valid handoff, and stop once.
+- `2026-07-28T14:27:00Z`: consume exact owner challenge
+  `AUTHORIZE AOG-AO-0008-FRESH-PILOT-V3 0f9d82b`; revalidate the authorization,
+  22 protected hashes, execution identity, zero prior state, exact
+  credentials, models, routes, retention, retry/error terms, prices, and all
+  hard caps.
+- `2026-07-28T18:26:00Z`: the exact live target passes both public canaries,
+  creates wholly fresh custody, publishes custody commit `b642d2d`, and
+  passes the private prefix. The fixed full batch then enters registered
+  quarantine under public-safe class `fixed-full-batch-failure`. Stop at
+  3,067 calls and USD 13.1861145, close the provider phase, lock 3,576 objects
+  under
+  `sha256:e52055b08ca3a8acb1cfb6ac608c6e601f3c618352900f92bf91c5ffc4718dbb`,
+  perform no unseal, and publish output-lock commit `d1d7aff`.
+- `2026-07-28T18:28:00Z`: begin deterministic public-safe quarantine
+  reconciliation. Preserve only the coarse failure class, redacted usage and
+  cost totals, custody and lock status, redaction boundaries, and scientific
+  prohibitions. Do not inspect or publish partial private pairings, task
+  content, answers, outputs, traces, or performance.
+- `2026-07-28T18:44:00Z`: complete the public-safe reconciliation and pass the
+  full wall: Ruff formatting and lint, strict MyPy over 200 source files,
+  638/638 tests, 110 claims, 51 immutable run manifests, every governance and
+  benchmark audit, the 89-page/26-study static site, seven papers totaling 119
+  pages, and offline release verification. The 22 protected execution-tree
+  files remain byte-identical to execution commit `0f9d82b`; no provider call,
+  private-state access, unseal, scientific mutation, paper/PDF change, or
+  release action occurred.
 
 ## Validation strategy
 
@@ -289,35 +336,33 @@ audit at closeout.
 - Fixed contract
   `tasks/treasurebench-agents-v1-fresh-pilot-v3.yml`.
 - This living ExecPlan.
-- Remaining execution contracts, reports, runtime, tests, gate, and handoff
-  will be enumerated as their milestones complete.
+- Versioned execution contracts, reports, runtime, tests, gate, public custody
+  and output-lock commitments, redacted quarantine closeout, and Agent
+  Operations handoff.
 
 ## Blockers
 
-The exact generic authorization for
-`AOG-AO-0008-FRESH-PILOT-V3` is intentionally absent and is the sole active
-M7 blocker. No live action is authorized.
+The registered v3 campaign and batch are permanently quarantined during the
+fixed full batch and cannot be completed or retried. This is their terminal
+batch outcome, not a blocker to the already authorized administrative
+closeout. No further provider call, unseal, or private execution is permitted.
 
 ## Recovery and restart instructions
 
 Resume on branch `codex/treasurebench-agents-v1-fresh-pilot-v3` from this
-plan. Verify issue #204 remains open, no other substantive lane exists, the
-fixed contract is unchanged, unrelated untracked files remain untouched, and
-exactly one milestone is active. Continue from the first unchecked progress
-item. Never inspect credentials, authorizations, prior retained state, or
-create real private material before M6 and the later exact generic owner
-authorization.
+plan. Verify issue #204 and PR #205 remain open, the output-lock commitment is
+pushed, unrelated untracked files remain untouched, and exactly one milestone
+is active. Continue the first unchecked public-safe closeout item. Do not run
+the live command again, inspect retained private contents, unseal material,
+make a provider call, or create a replacement campaign or batch.
 
 ## Outcome and retrospective
 
-AO-0008 is registered, rehearsed, accepted, frozen, and stopped at its
-committed generic owner gate. Exact execution commit
-`0f9d82bb50cbb334bea47e24448831faf0cdbed8` and all 22 protected hashes
-remain unchanged beneath the gate metadata. The record preserves the initial
-MyPy failure, two stale-package focused-test collection failures, deterministic
-rehearsal-hash invalidation at request freeze, remote-presence acceptance
-failure, and YAML semantic-rendering repair. Final authorization-free activity
-is zero credentials, real private objects, provider calls, spend, unsealing,
-and scientific mutation. The next outcome is conditional on the later exact
-owner authorization and must be either a passing fixed live pilot or an honest
-whole-batch quarantine with the already authorized public-safe closeout.
+AO-0008 is terminally quarantined during its fixed full batch after passing
+public canaries, wholly fresh custody, and the private prefix. It made 3,067
+calls for USD 13.1861145. The provider phase is closed, 3,576 objects are
+output-locked, and no material was unsealed. The campaign and batch cannot be
+retried or repaired in place. This is DD-010 engineering disposition only;
+scientific, paper, ranking, release, submission, and base-campaign state
+remain unchanged. The remaining outcome is the authorized public-safe
+repository and deployment closeout.

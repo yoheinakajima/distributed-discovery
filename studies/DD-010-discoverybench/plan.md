@@ -171,7 +171,14 @@ routes, one repeat, 500 pairings, 3,016 normal calls, 256 output tokens, USD
 11.51 expected, USD 15 conservative, USD 25 hard, and 5,200 calls maximum.
 
 Authorization-free permit, production-custody, 50-task/500-run, Methods A/B/C,
-corruption, lock, redaction, contamination, and cost rehearsals pass. No real
-private material or consequential activity occurred. The next and only active
-boundary is the exact execution freeze and committed generic owner gate; live
-execution requires the later exact AO-0008 authorization.
+corruption, lock, redaction, contamination, and cost rehearsals passed. Under
+the exact owner authorization, public canaries, wholly fresh custody, and the
+private prefix then passed. The fixed full batch stopped under registered
+class `fixed-full-batch-failure`.
+
+The provider phase closed at 3,067 calls and USD 13.1861145, with all hard
+caps intact. A verified output lock binds 3,576 retained objects; no material
+was unsealed and no call followed the lock. The campaign and batch are
+permanently quarantined. This is engineering disposition only and creates no
+scientific, comparative, ranking, paper, release, submission, or base-campaign
+state.

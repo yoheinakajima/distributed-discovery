@@ -1,4 +1,26 @@
-# Current roadmap — custody path prospectively repaired
+# Current roadmap — four engineering pilots permanently quarantined
+
+## Fresh repair-confirmation v3 quarantine
+
+AO-0008 passed both public canaries, wholly fresh custody, and its private
+prefix, then stopped during the fixed full batch under registered class
+`fixed-full-batch-failure`. The exact decision is
+`fresh-pilot-v3-quarantined-engineering-only`.
+
+The provider phase closed at 3,067 calls, 2,304,303 input tokens, 444,085
+output tokens, and USD 13.1861145: OpenAI USD 4.5952575 and Anthropic USD
+8.590857. All hard caps held. The output lock binds 3,576 retained objects
+under
+`sha256:e52055b08ca3a8acb1cfb6ac608c6e601f3c618352900f92bf91c5ffc4718dbb`;
+no call followed the lock and no material was unsealed.
+
+The partial private batch is not evaluated or published. The campaign and
+batch are permanently quarantined and cannot be retried, repaired, reopened,
+reused, rescored, spliced, executed, or reauthorized. No replacement private
+pilot or base campaign is selected. Any future private evaluation requires a
+separate owner decision, wholly new identities, new task registration, a new
+execution freeze, and a new owner gate. This is DD-010 engineering
+disposition, not scientific evidence or a model-performance comparison.
 
 AO-0007 completed one owner-authorized, read-only adjudication of AO-0006's
 custody failure. The retained boundary verified without mutation, and the

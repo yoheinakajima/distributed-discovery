@@ -1,5 +1,32 @@
 # Current program state
 
+_TreasureBench Agents v1 fresh repair-confirmation v3 quarantine, 2026-07-28:_
+AO-0008 campaign `treasurebench-agents-v1-repair-confirmation-v3`, batch
+`tb-agents-v1-repair-confirmation-v3-b01`, ran from frozen execution commit
+`0f9d82bb50cbb334bea47e24448831faf0cdbed8` under the exact owner gate.
+Both public canaries passed; wholly fresh custody and the private prefix
+completed.
+
+The fixed full batch then stopped with decision
+`fresh-pilot-v3-quarantined-engineering-only` and registered public-safe class
+`fixed-full-batch-failure`. The provider phase made 3,067 calls, used
+2,304,303 input tokens and 444,085 output tokens, and cost USD 13.1861145:
+OpenAI USD 4.5952575 and Anthropic USD 8.590857. Every provider and total hard
+cap held.
+
+Provider access is closed. The output lock binds 3,576 retained objects under
+`sha256:e52055b08ca3a8acb1cfb6ac608c6e601f3c618352900f92bf91c5ffc4718dbb`.
+No call followed the lock and no material was unsealed. The partial private
+batch is not evaluated or published; Methods A/B/C, task-level metrics,
+pairings, and performance comparisons were not produced after quarantine.
+
+This is redacted DD-010 engineering closeout, not scientific or
+model-performance evidence. No private content, ranking, composite, DD-023,
+claim, scientific run, paper result, release, submission, or base-campaign
+authority is created. The campaign and batch are permanently quarantined and
+cannot be retried, repaired, reopened, reused, rescored, spliced, executed, or
+reauthorized.
+
 _TreasureBench AO-0006 custody diagnosis and prospective repair, 2026-07-28:_
 AO-0007 executed its exact owner-authorized retained-state diagnostic once.
 The output lock, exact inventory, eight locked objects, execution identity,
