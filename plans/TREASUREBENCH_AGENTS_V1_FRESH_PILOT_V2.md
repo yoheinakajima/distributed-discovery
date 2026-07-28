@@ -61,7 +61,7 @@ Registration audit at `2026-07-28T01:00:04Z`:
   accessed or created;
 - the five unrelated untracked preservation files remain excluded.
 
-Exactly one milestone is active: **M5 exact execution freeze**.
+Exactly one milestone is active: **M6 generic owner gate and typed handoff**.
 M0 passed at `2026-07-28T01:11:20Z`: the task contract is schema-valid, the
 provider and budget records parse and carry the exact reserved identities,
 the ExecPlan sections are ordered with one active milestone, all recorded
@@ -87,6 +87,11 @@ private-evaluation profile target and the v2-specific audit pass; formatting,
 lint, mypy, 526 tests, claims, runs, Agent Operations, program memory, naming,
 and release-readiness dry-run verification pass with no consequential
 activity.
+M5 passed at `2026-07-28T02:06:21Z`: clean pushed commit
+`10aa645d6687816b943625dbcdf1801968287b41` reproduced all 526 tests, full
+verification, and the full v2 rehearsal; the remote task branch matched
+exactly, and the 21-path execution tree plus fixed-contract digest were
+recorded without changing an execution-sensitive path.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -172,9 +177,9 @@ conversation. Repeat this audit at closeout.
   corruption.
 - **M4 — complete:** focused and full private-evaluation acceptance plus draft
   PR creation.
-- **M5 — active:** exact execution freeze commit and matching remote draft-PR
+- **M5 — complete:** exact execution freeze commit and matching remote draft-PR
   head.
-- **M6 — pending:** committed generic owner-gate manifest, live gate
+- **M6 — active:** committed generic owner-gate manifest, live gate
   validation without authorization creation, typed handoff, and stop.
 - **M7 — pending future owner gate:** only a later exact owner authorization
   may permit credentials, real private generation, custody, calls, spend,
@@ -198,7 +203,8 @@ conversation. Repeat this audit at closeout.
 - [x] Complete M2 isolated implementation and focused acceptance.
 - [x] Complete M3 full synthetic rehearsal and 69 corruptions.
 - [x] Complete M4 draft PR and full private-evaluation acceptance.
-- [ ] Commit, push, and revalidate the clean M5 execution-freeze candidate.
+- [x] Commit, push, and revalidate the clean M5 execution-freeze candidate.
+- [ ] Commit and validate the generic owner gate and typed handoff.
 - [ ] Complete M4 and open the draft PR.
 - [ ] Complete M5 and M6 and stop at the exact owner gate.
 
@@ -273,6 +279,10 @@ conversation. Repeat this audit at closeout.
   v1 schema count from 31 to 36. The focused inventory/v2 suites pass 23/23;
   full `make verify` passes formatting, lint, mypy, 526/526 tests, claims,
   runs, governance audits, and the offline compendium verification.
+- `2026-07-28T02:06:21Z`: freeze exact execution commit
+  `10aa645d6687816b943625dbcdf1801968287b41` after a clean committed rerun of
+  `make verify treasurebench-fresh-pilot-v2-rehearsal`; remote branch equality,
+  the contract digest, and all 21 execution-tree hashes pass.
 
 ## Validation strategy
 
