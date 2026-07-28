@@ -24,7 +24,7 @@ AO-0008 staging command. No credential, prior private state, owner
 authorization, seed, task, answer, key, nonce, ciphertext, provider, or spend
 was accessed or created.
 
-Exactly one milestone is active: **M5 exact execution freeze**.
+Exactly one milestone is active: **M6 generic owner gate and stop**.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -113,9 +113,9 @@ audit at closeout.
   production-path custody rehearsal, Methods A/B/C, and all corruptions.
 - **M4 — complete:** focused and full private-evaluation acceptance plus draft
   PR creation.
-- **M5 — active:** exact execution-freeze commit and matching remote draft-PR
+- **M5 — complete:** exact execution-freeze commit and matching remote draft-PR
   head.
-- **M6 — pending:** committed generic owner-gate manifest, live
+- **M6 — active:** committed generic owner-gate manifest, live
   authorization-free validation, typed handoff, and stop.
 - **M7 — pending owner authorization:** execute the exact fixed live success
   or quarantine path and complete its permitted administrative lifecycle.
@@ -134,7 +134,7 @@ audit at closeout.
 - [x] Complete M2 isolated implementation and focused acceptance.
 - [x] Complete M3 full rehearsal and corruptions.
 - [x] Complete M4 draft PR and full acceptance.
-- [ ] Complete M5 execution freeze.
+- [x] Complete M5 execution freeze.
 - [ ] Complete M6 owner gate and stop.
 
 ## Discoveries and surprises
@@ -216,6 +216,11 @@ audit at closeout.
   `PYTHONPATH=.`. Preserve both collection failures. The repository uses a
   `src` layout; the same 57 focused tests pass with `PYTHONPATH=src`, matching
   the already passing Make-driven full wall.
+- `2026-07-28T14:09:00Z`: changing the versioned request into its final
+  `exact-execution-frozen-owner-gate-not-authorized` state correctly made the
+  committed rehearsal registration hash stale. Preserve the fail-closed
+  rehearsal rejection, regenerate only the deterministic public summary hash,
+  and require the complete rehearsal to pass before the execution commit.
 
 ## Validation strategy
 

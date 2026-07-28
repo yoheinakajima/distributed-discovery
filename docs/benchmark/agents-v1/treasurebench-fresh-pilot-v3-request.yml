@@ -1,5 +1,5 @@
 schema_version: treasurebench-agents-v1-fresh-pilot-v3-request-v1
-status: execution-preparation-owner-gate-not-authorized
+status: exact-execution-frozen-owner-gate-not-authorized
 task_id: AO-0008
 owner_study: DD-010
 new_study_allocated: false
