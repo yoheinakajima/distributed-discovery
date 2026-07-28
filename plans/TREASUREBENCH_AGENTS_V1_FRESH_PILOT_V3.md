@@ -24,7 +24,7 @@ AO-0008 staging command. No credential, prior private state, owner
 authorization, seed, task, answer, key, nonce, ciphertext, provider, or spend
 was accessed or created.
 
-Exactly one milestone is active: **M1 versioned execution contracts**.
+Exactly one milestone is active: **M2 v3 runtime and production permit**.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -105,9 +105,9 @@ audit at closeout.
 - **M0 — complete:** registration, decision-delta routing, exact identities,
   official provider/budget audit, fixed contract, living plan, and first
   authority-bearing commit.
-- **M1 — active:** versioned request, allocation, provider audit,
+- **M1 — complete:** versioned request, allocation, provider audit,
   private-state, execution-budget, failure, and corruption contracts.
-- **M2 — pending:** v3 runtime, exact production permit, credential-free
+- **M2 — active:** v3 runtime, exact production permit, credential-free
   preflight, custody, trace, output-lock, and independent verification.
 - **M3 — pending:** complete 50-task/500-run synthetic rehearsal,
   production-path custody rehearsal, Methods A/B/C, and all corruptions.
@@ -130,7 +130,7 @@ audit at closeout.
 - [x] Allocate AO-0008, issue #204, branch, campaign, batch, slot namespace,
   generation domain, and gate ID after collision checks.
 - [x] Complete M0 fixed records, validation, and first commit.
-- [ ] Complete M1 execution contracts.
+- [x] Complete M1 execution contracts.
 - [ ] Complete M2 isolated implementation and focused acceptance.
 - [ ] Complete M3 full rehearsal and corruptions.
 - [ ] Complete M4 draft PR and full acceptance.
@@ -147,6 +147,10 @@ audit at closeout.
   and retains standard USD 3 input/USD 15 output per million token pricing.
 - The current provider catalogs include newer models, but the owner selected
   exact repair-confirmation continuity rather than a model upgrade.
+- The exact v3 allocation reproduces 3,014 matrix turns and 3,016 normal calls,
+  so the prior candidate envelope remains the actual recalculated envelope:
+  USD 11.509696 unrounded, USD 11.51 registered expected, USD 15
+  conservative, and USD 25 hard.
 
 ## Decision log
 
@@ -164,6 +168,12 @@ audit at closeout.
   36 program-memory records, zero adopted unrouted items, zero private-path
   findings, and no consequential activity. Begin M1 versioned execution
   contracts.
+- `2026-07-28T13:54:21Z`: M1 schema and cross-record validation passes for 50
+  unique `RCV3-SLOT` identities, five registered families, 500 pairings,
+  3,014 matrix turns, 3,016 normal calls, exact models/routes, 256 output
+  tokens, 43 v3 corruptions, USD 11.51/15/25 cost envelopes, and zero
+  credential reads, private objects, calls, or spend. Begin M2 runtime and
+  exact production-permit integration.
 
 ## Validation strategy
 

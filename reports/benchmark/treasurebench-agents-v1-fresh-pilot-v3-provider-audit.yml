@@ -1,0 +1,137 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-v3-provider-audit-v1
+audited_at_utc: "2026-07-28T13:43:04Z"
+status: pass-current-official-docs-no-credential-or-provider-api-call
+task_id: AO-0008
+campaign_id: treasurebench-agents-v1-repair-confirmation-v3
+batch_id: tb-agents-v1-repair-confirmation-v3-b01
+scope: direct-standard-global-api-only
+prerequisite:
+  task_id: AO-0004
+  decision: conformance-pass-both-complete-schemas
+  record: reports/agent-ops/AO-0004-r4-public-provider-canary-outcome.yml
+  boundary: provider-schema-and-semantic-contract-engineering-only
+models:
+  - provider: OpenAI
+    route: openai_direct
+    endpoint: https://api.openai.com/v1/responses
+    exact_model: gpt-5.4-2026-03-05
+    availability: official-model-page-listed-snapshot
+    structured_output:
+      supported: true
+      request_shape: text.format.type-json_schema-with-name-strict-and-schema
+      provider_transport_schema: openai-specific-AO-0004-R4-complete-schema
+      provider_independent_semantic_validation: required
+      exactly_one_final_action: required
+    supported_request_parameters_used:
+      - model
+      - input
+      - instructions
+      - store
+      - max_output_tokens
+      - text.format
+    frozen_parameter_values:
+      store: false
+      max_output_tokens: 256
+      background: false
+      tools: none
+      regional_processing: false
+      batch: false
+    retention:
+      store_false_required: true
+      zero_data_retention_assumed: false
+      abuse_monitoring_default: up-to-30-days
+      legal_or-safety-extensions_possible: true
+      background_storage_allowed: false
+    errors_and_retries:
+      transient_classes: [transport, 429-rate-limit, 500-provider, 503-provider]
+      same_request_total_transport_attempts: 2
+      exponential_or-header-aware-bounded-backoff: true
+      schema_only_repairs: 1
+      semantic_answer_retry: false
+      SDK_automatic_retries_relied_on: false
+    standard_short-context_price_usd_per_million_tokens:
+      input: "2.50"
+      cached_input_credit_assumed: false
+      output: "15.00"
+    official_sources:
+      model: https://developers.openai.com/api/docs/models/gpt-5.4
+      responses_and_structured_output: https://developers.openai.com/api/docs/guides/structured-outputs
+      retention: https://developers.openai.com/api/docs/guides/your-data
+      errors: https://developers.openai.com/api/docs/guides/error-codes
+      pricing: https://developers.openai.com/api/docs/pricing
+  - provider: Anthropic
+    route: anthropic_direct
+    endpoint: https://api.anthropic.com/v1/messages
+    exact_model: claude-sonnet-4-6
+    availability: official-canonical-pinned-dateless-snapshot
+    structured_output:
+      supported: true
+      request_shape: output_config.format.type-json_schema-with-schema
+      provider_transport_schema: anthropic-specific-AO-0004-R4-complete-schema
+      provider_independent_semantic_validation: required
+      exactly_one_final_action: required
+    supported_request_parameters_used:
+      - model
+      - system
+      - messages
+      - max_tokens
+      - temperature
+      - output_config.format
+    frozen_parameter_values:
+      max_tokens: 256
+      temperature: 0
+      citations: false
+      message_prefill: false
+      extended_thinking: false
+      tools: none
+      inference_geo: default-global
+      batch: false
+    retention:
+      structured_output_prompts_and_responses: qualified-ZDR-not-stored
+      structured_output_schema_cache: up-to-24-hours-since-last-use
+      PHI_in-schema: prohibited
+      legal_or-flagged-exceptions_possible: true
+    errors_and_retries:
+      transient_classes: [transport, 429-rate-limit, 500-provider, 504-timeout, 529-overloaded]
+      same_request_total_transport_attempts: 2
+      exponential_or-header-aware-bounded-backoff: true
+      schema_only_repairs: 1
+      semantic_answer_retry: false
+      SDK_default-two-retries-relied_on: false
+    standard_global_price_usd_per_million_tokens:
+      input: "3.00"
+      cache_credit_assumed: false
+      output: "15.00"
+    official_sources:
+      model: https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions
+      messages: https://platform.claude.com/docs/en/api/messages/create
+      structured_output: https://platform.claude.com/docs/en/build-with-claude/structured-outputs
+      retention: https://platform.claude.com/docs/en/manage-claude/api-and-data-retention
+      errors: https://platform.claude.com/docs/en/api/errors
+      pricing: https://platform.claude.com/docs/en/about-claude/pricing
+decisions:
+  exact_route_and_model_continuity_required: true
+  newer_model_selected: false
+  aliases_allowed: false
+  batch_routes_allowed: false
+  fallback_allowed: false
+  provider_managed_tools_allowed: false
+  regional_price_premiums_allowed: false
+  cached_token_discounts_budgeted: false
+  current_terms_reaudit_required_at-owner-resume: true
+  exact_routes_remain_officially_documented: true
+  structured_output_contracts_match_AO-0004-boundary: true
+  output_ceiling_not-below-passing-R4: true
+  retention_assumptions_conservative: true
+  retry_contract_uses-sdk-defaults: false
+  registered_standard_prices-current: true
+  newer_openai_models_observed_but-not-selected: true
+  newer_anthropic_models_observed_but-not-selected: true
+  exact_owner-selected-repair-continuity-preserved: true
+activity:
+  env_file_reads: 0
+  credentials_read: 0
+  prior_private_state_reads: 0
+  provider_api_calls: 0
+  private_objects_created: 0
+  spend_usd: "0"
