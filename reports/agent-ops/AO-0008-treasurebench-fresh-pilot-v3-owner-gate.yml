@@ -40,7 +40,7 @@ irreversible_actions:
   - permission: private_data_permissions.generate
     description: Create exactly one new OS-CSPRNG seed, 50 new tasks and answers, separate task, answer, and operational keys, nonces, ciphertexts, commitments, access logs, ledgers, traces, custody manifest, output lock, and private audit package for the v3 campaign only.
   - permission: permissions.merge_after_checks
-    description: Mark draft PR #205 ready and squash-merge only after the appropriate complete validation wall and required GitHub checks pass for the successful or honest quarantined outcome.
+    description: Mark draft PR 205 ready and squash-merge only after the appropriate complete validation wall and required GitHub checks pass for the successful or honest quarantined outcome.
   - permission: permissions.ci_pages
     description: Permit only normal post-merge CI and Pages, followed by named public-safe live-route verification.
 private_actions:
@@ -56,15 +56,15 @@ external_actions:
   - permission: permissions.git_branch_commit
     description: Commit and push the custody commitment, output-lock commitment, and final public-safe closeout without routine owner checkpoints.
   - permission: permissions.github_issue_pr
-    description: Update draft PR #205 accurately and close issue #204 only after the authorized validation and live-verification sequence succeeds.
+    description: Update draft PR 205 accurately and close issue 204 only after the authorized validation and live-verification sequence succeeds.
   - permission: permissions.merge_after_checks
-    description: Mark PR #205 ready and squash-merge only after the appropriate complete validation wall and every required check passes.
+    description: Mark PR 205 ready and squash-merge only after the appropriate complete validation wall and every required check passes.
   - permission: permissions.ci_pages
     description: Observe normal CI and Pages and verify the named public-safe live routes after merge.
   - permission: external_action_permissions.network_observation
     description: Revalidate official provider terms and observe GitHub checks, normal CI and Pages, and the named public-safe live routes.
   - permission: external_action_permissions.github_mutation
-    description: Push public-safe commits, update PR #205, mark it ready after checks, squash-merge after checks, and close issue #204 after post-merge live verification.
+    description: Push public-safe commits, update PR 205, mark it ready after checks, squash-merge after checks, and close issue 204 after post-merge live verification.
   - permission: external_action_permissions.provider_calls
     description: Make only direct OpenAI Responses and direct Anthropic Messages calls using the exact frozen models, transport schemas, semantic validator, staged graph, and bounded retry policy.
   - permission: external_action_permissions.spend
@@ -85,11 +85,11 @@ remaining_caps:
   calls: 5200
   category_spend: {OpenAI: "10", Anthropic: "15"}
 owner_confirmation_statements:
-  - I authorize only AO-0008 at execution commit 0f9d82bb50cbb334bea47e24448831faf0cdbed8, issue #204, draft PR #205, the exact fixed contract, branch, 22-path execution tree, v3 campaign and batch, routes, models, two-name credential subset, actions, caps, prohibitions, and expiry in this manifest.
+  - I authorize only AO-0008 at execution commit 0f9d82bb50cbb334bea47e24448831faf0cdbed8, issue 204, draft PR 205, the exact fixed contract, branch, 22-path execution tree, v3 campaign and batch, routes, models, two-name credential subset, actions, caps, prohibitions, and expiry in this manifest.
   - I authorize credential ingress for exactly OPENAI_API_KEY and ANTHROPIC_API_KEY from repository-root .env.txt through the strict nonexecuting no-interpolation loader; no unrelated configured credential may be returned, retained, transmitted, displayed, printed, hashed, fingerprinted, or logged.
   - I authorize the exact staged success path through provider-terms recheck, both public canaries, fresh custody, committed and pushed custody commitment, 10% private prefix, fixed full batch, provider close, output lock, committed and pushed lock commitment, post-lock unseal, Methods A/B/C and all acceptance checks, and deterministic public-safe closeout.
   - I authorize the exact staged quarantine path for any registered prospective failure, with immediate call stop, append-only encrypted-state preservation, provider close, safe output lock, minimum safe post-lock adjudication, redacted quarantine closeout, and no replacement, splice, rescore, semantic retry, or new private identity.
-  - I authorize either honest outcome to continue without routine checkpoints through the appropriate validation wall, accurate PR #205 update, required checks, readiness, squash merge, normal post-merge CI and Pages, named live public-safe route verification, issue #204 closure, synchronized main, and one final schema-valid handoff.
+  - I authorize either honest outcome to continue without routine checkpoints through the appropriate validation wall, accurate PR 205 update, required checks, readiness, squash merge, normal post-merge CI and Pages, named live public-safe route verification, issue 204 closure, synchronized main, and one final schema-valid handoff.
   - I understand the expected cost is USD 11.51 and authorize no more than USD 15 conservative planning cost, USD 25 total hard cap, USD 10 OpenAI, USD 15 Anthropic, 5,200 calls, 256 output tokens per request, and the exact provider token ceilings frozen in the execution tree.
   - I understand recovered bounded transport retries may remain warnings only when they terminate in a valid completed run; every terminal provider, protocol, pairing, Method, contamination, identity, cap, commitment, custody, cardinality, metric, redaction, or lock failure is a whole-batch quarantine outcome.
   - I understand every prior campaign, batch, authorization, ledger, lock, retained state, and terminal decision remains immutable and receives no authority from this gate.

@@ -229,6 +229,14 @@ audit at closeout.
   run manifests, and offline release verification. Remote branch and live
   draft PR #205 both point to the exact execution commit. Complete M5 and
   begin M6 with no execution-sensitive changes permitted.
+- `2026-07-28T14:24:00Z`: the first live authorization-free generic-gate
+  validation passes contract, ancestry, 22-path tree, caps, permissions,
+  prohibitions, remote head, and open draft-PR checks and creates no
+  authorization. Its rendered human surface exposes six unquoted YAML scalars
+  truncated at `#` issue/PR notation. Treat the semantic rendering as failed,
+  preserve the manifest commit, and correct only those metadata descriptions
+  before final gate validation; the execution commit and every protected hash
+  remain unchanged.
 
 ## Validation strategy
 
