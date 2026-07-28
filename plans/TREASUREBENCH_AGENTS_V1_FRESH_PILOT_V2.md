@@ -83,8 +83,9 @@ Owner amendment at `2026-07-28T02:30:00Z`:
 - no credential, authorization, prior private state, real seed, custody,
   provider, or spend was accessed while accepting this amendment.
 
-Exactly one milestone is active: **M12R2 committed generic owner gate and
-owner-gate-required handoff**.
+Exactly one milestone is active: **M13 owner-authorized long-session execution
+and conditional final closeout**, blocked until the exact R2 owner
+authorization exists.
 M0 passed at `2026-07-28T01:11:20Z`: the task contract is schema-valid, the
 provider and budget records parse and carry the exact reserved identities,
 the ExecPlan sections are ordered with one active milestone, all recorded
@@ -235,9 +236,12 @@ audit at closeout.
   tests, and full repository validation.
 - **M11R2 — complete:** clean pushed execution refreeze and explicit
   supersession of the unused original gate.
-- **M12R2 — active:** committed generic
+- **M12R2 — complete:** committed generic
   `AOG-AO-0006-FRESH-PILOT-V2-R2`, live authorization-free validation, typed
   handoff, and stop.
+- **M13 — active, owner gate required:** after the exact R2 authorization,
+  complete the maximum authorized successful or quarantined long-session
+  closeout without routine checkpoints.
 
 ## Progress checklist
 
@@ -265,7 +269,8 @@ audit at closeout.
 - [x] Complete M9R2 success/quarantine long-session orchestration.
 - [x] Complete M10R2 full offline acceptance.
 - [x] Complete M11R2 execution refreeze and original-gate supersession.
-- [ ] Complete M12R2 R2 gate and owner-gate-required handoff.
+- [x] Complete M12R2 R2 gate and owner-gate-required handoff.
+- [ ] Complete M13 only after the exact R2 owner authorization.
 
 ## Discoveries and surprises
 
@@ -397,6 +402,13 @@ audit at closeout.
   and all 69 corruptions with zero consequential activity. The owner-selected
   USD 11.51 expected, USD 15 conservative, USD 25 total, USD 10 OpenAI, USD
   15 Anthropic, 5,200-call, and frozen token ceilings remain unchanged.
+- `2026-07-28T03:39:06Z`: commit and push generic gate
+  `AOG-AO-0006-FRESH-PILOT-V2-R2` at manifest head
+  `1bb1f644eba8ad316c06776e7b00d74f5da1fe91`; observe PR #201 open, draft,
+  mergeable, and at the same head; validate the exact execution commit as an
+  ancestor and every protected hash, permission, cap, prohibition, issue,
+  branch, and PR binding through the generic engine without creating an
+  authorization. Update the draft PR title/body to the accurate R2 scope.
 
 ## Validation strategy
 

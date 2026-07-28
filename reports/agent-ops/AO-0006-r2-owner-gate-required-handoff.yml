@@ -1,0 +1,24 @@
+schema_version: agent-ops-handoff-v1
+status: owner-gate-required
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0006
+issue: 200
+pull_request: 201
+branch: benchmark/treasurebench-agents-v1-fresh-pilot-v2
+base_main: 36866e849b468df10b94b0039cf54f3d891ca120
+head_merge_sha: 1bb1f644eba8ad316c06776e7b00d74f5da1fe91
+task_contract: tasks/treasurebench-agents-v1-fresh-pilot-v2-r2.yml
+exec_plan: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V2.md
+last_completed_gate: Exact R2 execution commit d210b0653677859c79a1fb87d871aaf45f4a81d4 and committed generic gate manifest head 1bb1f644eba8ad316c06776e7b00d74f5da1fe91 passed contract, ancestry, 22-path execution-tree, exact two-credential-subset, success/quarantine path, zero-call, zero-spend, cap, prohibition, issue, branch, and live draft-PR validation without creating an authorization.
+next_gate: "Resume AO-0006 in this same Codex session, issue #200, branch benchmark/treasurebench-agents-v1-fresh-pilot-v2, living ExecPlan, and draft PR #201. Use only reports/agent-ops/AO-0006-treasurebench-fresh-pilot-v2-r2-owner-gate.yml and its exact R2 authorization; never use the superseded original gate. Revalidate current official provider terms, authorization, exact execution commit and tree hashes, issue/PR/branch ancestry, v2 campaign and batch, exact OPENAI_API_KEY and ANTHROPIC_API_KEY subset, routes, models, zero cumulative calls and spend, execution graph, ledgers, and caps. Then run exactly make treasurebench-fresh-pilot-v2-live and continue the authorized success or quarantine path through public-safe closeout, validation, required checks, PR readiness and squash merge, normal CI/Pages, named live routes, issue closure, synchronized main, and one final schema-valid handoff without routine checkpoints. Stop only for an execution-sensitive, identity, model, route, cap, replacement-batch, authorization-validity, unsafe-retained-state, or authority-expansion condition."
+decision: Stop before reading .env.txt or prior private campaign state, generating real private material or custody, making a provider call, spending, or unsealing until the exact committed R2 generic owner authorization exists.
+external_calls_cost: {calls: 0, cost: "0", currency: USD}
+private_state_change: none; no credential or prior private campaign state was read and no real seed, task, answer, key, nonce, ciphertext, commitment, custody, trace, ledger, provider response, or output lock was created.
+scientific_state_change: none; no DD-023, claim, scientific run, evidence or proof promotion, paper result, ranking, composite, leaderboard, package, release, submission, or base-campaign state was created or changed.
+validation:
+  profile: private-evaluation-fresh-pilot-v2-r2-owner-gate
+  result: pass-50-synthetic-tasks-500-runs-3014-turns-500-pairings-69-corruptions-56-focused-r2-tests-570-full-tests-ruff-mypy-claims-51-run-manifests-governance-offline-release-22-path-execution-freeze-live-generic-gate-validation-no-authorization
+owner_action: "Review the R2 contract, unchanged USD 11.51 expected and USD 25 hard envelope, exact execution freeze, two-name credential subset, and conditional success/quarantine long-session authority; then run: make owner-gate GATE=reports/agent-ops/AO-0006-treasurebench-fresh-pilot-v2-r2-owner-gate.yml OWNER_GATE_CHALLENGE='AUTHORIZE AOG-AO-0006-FRESH-PILOT-V2-R2 d210b06'. One valid R2 authorization carries AO-0006 through the maximum normal successful or honest quarantined final closeout; do not run the live command before authorization."
+exact_next_command: "make owner-gate GATE=reports/agent-ops/AO-0006-treasurebench-fresh-pilot-v2-r2-owner-gate.yml OWNER_GATE_CHALLENGE='AUTHORIZE AOG-AO-0006-FRESH-PILOT-V2-R2 d210b06'"
+exact_next_file: reports/agent-ops/AO-0006-treasurebench-fresh-pilot-v2-r2-owner-gate.yml
+blocker: The exact AO-0006 R2 generic owner authorization is required and absent by design; no credential, private generation, custody, provider, spend, unseal, or live campaign action is authorized yet.
