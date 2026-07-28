@@ -1,5 +1,36 @@
 # Master execution plan
 
+## Active continuation — AO-0009 AO-0008 fixed-full-batch adjudication (2026-07-28)
+
+Issue #206, branch
+`codex/treasurebench-ao0008-fixed-batch-adjudication`, fixed contract
+`tasks/treasurebench-ao0008-fixed-batch-adjudication.yml`, and living ExecPlan
+[`TREASUREBENCH_AO0008_FIXED_BATCH_ADJUDICATION.md`](TREASUREBENCH_AO0008_FIXED_BATCH_ADJUDICATION.md)
+own the sole substantive lane as AO-0009.
+
+AO-0009 preserves permanently task AO-0008, campaign
+`treasurebench-agents-v1-repair-confirmation-v3`, batch
+`tb-agents-v1-repair-confirmation-v3-b01`, execution commit
+`0f9d82bb50cbb334bea47e24448831faf0cdbed8`, decision
+`fresh-pilot-v3-quarantined-engineering-only`, fixed-full-batch failure, the
+passed public canaries/custody/private prefix, all exact usage and cost totals,
+the closed provider phase, zero post-lock calls, no unsealing, and the
+3,576-object output lock
+`sha256:e52055b08ca3a8acb1cfb6ac608c6e601f3c618352900f92bf91c5ffc4718dbb`.
+Nothing in AO-0008 may be reopened, retried, continued, executed, reused,
+rescored, spliced, mutated, deleted, broadly unsealed, or reauthorized.
+
+The authorization-free phase audits public control flow and implements one
+authorization-bound, one-use, read-only diagnostic with an exact logical-call
+context and encrypted-object ceiling, transient bounded operational-key use,
+before-and-after immutability proof, redaction, synthetic fixtures, and
+corruptions. The difference between 3,067 actual attempts and 3,016 normal
+calls is not causal proof. The task must stop once at a committed generic
+owner gate before any retained AO-0008 read. Provider calls, credentials,
+spend, new real private material, scientific mutation, paper/publication
+action, release, submission, new private-pilot registration, and v4 identity
+allocation remain zero.
+
 ## Active closeout — AO-0008 fresh repair-confirmation pilot v3 quarantined (2026-07-28)
 
 Issue #204, branch `codex/treasurebench-agents-v1-fresh-pilot-v3`, draft PR

@@ -1,0 +1,264 @@
+# AO-0009 TreasureBench AO-0008 fixed-full-batch adjudication
+
+## Purpose and intended outcome
+
+This living ExecPlan governs `AO-0009`, a DD-010 engineering-only task with
+two phases. Phase A audits the public AO-0008 runtime and implements one
+owner-gated, one-use, read-only diagnostic for the retained fixed-full-batch
+failure. Phase B uses only the evidence admitted by that bounded diagnostic
+to select the appropriate prospective implementation repair, provider
+reliability policy gate, agent-protocol policy gate, or honest stop. The task
+does not register or execute another private pilot.
+
+The permitted final outcomes are:
+
+- `fixed-batch-root-cause-repaired-full-rehearsal-pass`;
+- `provider-reliability-policy-decision-required`;
+- `agent-protocol-policy-decision-required`;
+- `fixed-batch-diagnostic-inconclusive-defer`;
+- `retained-state-integrity-mismatch-stop`.
+
+No outcome is selected before the one-use diagnostic.
+
+## Current state
+
+Registration preparation began on `2026-07-28` from local `main` matching
+`origin/main` at `693adaa`. AO-0008 issue #204 and PR #205 are closed and
+merged. No substantive pull request is open. The next available Agent
+Operations ID is `AO-0009`; issue #206 and branch
+`codex/treasurebench-ao0008-fixed-batch-adjudication` now own the substantive
+lane.
+
+Five unrelated untracked preservation files pre-exist and are outside scope:
+
+- `papers/information-sharing-frontier/paper-audit 2.json`;
+- `papers/information-sharing-frontier/visual-qa 2.md`;
+- `plans/POST_V5_THEOREM_SPINE_CONSOLIDATION 2.md`;
+- `reports/roadmap-consolidation/post-v5-literature-and-nonoverlap 2.md`;
+- `reports/roadmap-consolidation/post-v5-next-program-gate 2.yml`.
+
+They must remain untouched. Provider calls, credential reads, spend, retained
+private reads, new real private material, scientific mutation, paper action,
+release, and submission are all zero. Exactly one milestone is active:
+**M1 — public runtime and failure-path audit**.
+
+The AO-0008 boundary is permanent: task `AO-0008`, campaign
+`treasurebench-agents-v1-repair-confirmation-v3`, batch
+`tb-agents-v1-repair-confirmation-v3-b01`, execution commit
+`0f9d82bb50cbb334bea47e24448831faf0cdbed8`, decision
+`fresh-pilot-v3-quarantined-engineering-only`, stage `fixed-full-batch`,
+failure class `fixed-full-batch-failure`, two passed public canaries, passed
+custody and private prefix, 3,067 calls, 2,304,303 input tokens, 444,085 output
+tokens, USD 13.1861145 total cost, OpenAI USD 4.5952575, Anthropic USD
+8.590857, 3,576 locked objects, output lock
+`sha256:e52055b08ca3a8acb1cfb6ac608c6e601f3c618352900f92bf91c5ffc4718dbb`,
+closed provider phase, zero calls after lock, no unsealing, and no scientific
+or performance evidence.
+
+## DISCUSSION AND DECISION DELTA AUDIT
+
+The complete 36-record `docs/program-memory/registry.yml` was read before
+issue or branch creation.
+
+- `PM-0032` is due because the owner explicitly selected another
+  repository-native Agent Operations task. It remains implemented and is
+  applied through the AO-0009 contract, ExecPlan, generic owner gate, and
+  typed handoff.
+- `PM-0036` is due because the owner selected adjudication of AO-0008's
+  permanent fixed-full-batch quarantine. It remains immutable. The follow-up
+  is routed to new record `PM-0037`, this ExecPlan, the fixed AO-0009
+  contract, and the future public-safe diagnostic record.
+- `PM-0031`, `PM-0033`, `PM-0034`, and `PM-0035` remain implemented
+  prerequisites and permanent quarantine or repair boundaries. None is
+  reopened or superseded.
+- `PM-0014` and `PM-0015` remain evidence-dependent because no claim-grade
+  Agents v1 evidence exists. Journal, paper, release, rename, local/open-model,
+  theorem, retrievability, and publication triggers remain unfulfilled.
+- The difference between 3,067 actual attempts and 3,016 normal calls is
+  recorded only as an operational observation and is not routed as a cause.
+
+No owner decision from this intake remains conversation-only once `PM-0037`,
+the fixed contract, this plan, issue, owner gate, and handoff are committed.
+Repeat this audit at closeout.
+
+## Scope
+
+1. Register AO-0009 with one issue, task branch, fixed task contract, living
+   ExecPlan, and draft pull request.
+2. Audit public AO-0008 runtime, control flow, ledgers, encrypted-object
+   indexing, pairing bookkeeping, state transitions, failure policy,
+   quarantine, and output-lock inventory.
+3. Freeze a causal taxonomy spanning provider transport and HTTP terminals,
+   schema repair, returned-output parsing, protocol/cardinality, encryption,
+   persistence, ledgers, duplicate keys, caps, pairing, completion markers,
+   post-batch verification, and bounded-evidence unknowns.
+4. Implement one authorization-bound, one-use, read-only diagnostic with an
+   exact allowlist, structural object ceilings, pre/post byte and metadata
+   snapshots, and permanent read-authority closure.
+5. Read only output-lock and identity records, provider stage, append-only
+   access and usage/cost ledgers, structural encrypted-object metadata, one
+   exact failed logical-call record, at most two preceding and two following
+   attempt or orchestration records, the directly corresponding encrypted
+   response and trace objects, and the operational key transiently for those
+   selected objects.
+6. Write one detailed nonpublic diagnostic outside Git and emit only a
+   redacted public-safe result.
+7. Add synthetic fixtures, corruptions, deterministic fault injection,
+   redaction checks, and retained-state immutability tests.
+8. After exact authorization, select and execute only the evidence-determined
+   prospective branch, then complete permitted public-safe reconciliation,
+   validation, merge, CI/Pages, named-route verification, issue closure, and
+   synchronized `main`.
+
+## Non-goals
+
+- No reopening, retrying, continuing, executing, reusing, rescoring, splicing,
+  mutating, deleting, broadly unsealing, or reauthorizing AO-0008.
+- No second private read and no bulk response, trace, task, answer, or custody
+  unsealing.
+- No OS-CSPRNG seed value, task key, answer key, task or answer ciphertext,
+  custody task corpus, answer key, hidden target, unrelated provider response
+  or trace, task-level performance, comparison, credential, or private host
+  path may be read or disclosed.
+- No provider call, credential read, spend, new real private material, new
+  campaign or batch identity, or v4 registration.
+- No DD-023, claim, scientific run, proof or evidence promotion, paper result,
+  ranking, composite, package, release, DOI, submission, or base-campaign
+  authority.
+
+## Assumptions
+
+- The public AO-0008 closeout is authoritative only for its declared redacted
+  boundary and does not establish the detailed cause.
+- Public source may identify causal candidates but cannot select a final
+  outcome before the bounded retained-state diagnostic.
+- Structural response and trace filenames can be checked against ledger and
+  expected pairing identities without reading their encrypted contents.
+- If the exact cause cannot be established by one bounded read, the correct
+  result is `fixed-batch-diagnostic-inconclusive-defer`; no broader read is
+  implied.
+- Synthetic fixtures are nonsecret, disposable, and isolated under temporary
+  roots; they create no real private campaign material.
+
+## Milestones
+
+- **M0 — complete:** reconcile program memory and live GitHub/repository state;
+  register the issue, branch, fixed contract, ExecPlan, and PM-0037 route.
+- **M1 — active:** complete the public runtime, control-flow, ledger,
+  encrypted-index, pairing, state, failure, quarantine, and lock audit.
+- **M2 — pending:** freeze the causal taxonomy and exact one-use private-read
+  allowlist and object/record ceilings.
+- **M3 — pending:** implement the authorization-bound read-only diagnostic,
+  one-use and no-mutation guards, redaction, synthetic fixtures, and
+  corruptions.
+- **M4 — pending:** run focused and complete authorization-free validation and
+  open the draft pull request.
+- **M5 — pending:** freeze the diagnostic execution commit and protected tree,
+  commit and validate one generic owner-gate manifest, render a schema-valid
+  `owner-gate-required` handoff, and stop exactly once.
+- **M6 — pending:** after exact authorization, execute the diagnostic once,
+  close private-read authority permanently, and select one permitted outcome.
+- **M7 — pending:** execute only the evidence-determined prospective repair or
+  policy branch and complete its required synthetic verification.
+- **M8 — pending:** reconcile public-safe records, repeat the delta audit,
+  validate, merge after checks, verify CI/Pages and named routes, close the
+  issue, and synchronize `main`.
+
+## Progress checklist
+
+- [x] Read the task intake, root and scoped instructions, planning policy,
+  master plan, repository contract, Agent Operations policy, DD-010 README,
+  plan, and status.
+- [x] Inspect Git, remote, untracked preservation files, recent AO state,
+  closed AO-0008 issue/PR, open pull requests, and next AO ID.
+- [x] Read and reconcile all 36 program-memory records before issue or branch
+  creation.
+- [x] Create issue #206 and branch
+  `codex/treasurebench-ao0008-fixed-batch-adjudication`.
+- [x] Validate the fixed task contract, this living ExecPlan, PM-0037, and
+  master-plan registration with Agent Operations and program-memory audits.
+- [ ] Commit the fixed task contract, this living ExecPlan, PM-0037, and
+  master-plan registration.
+- [ ] Complete M1 through M5 and stop at the owner gate.
+
+## Discoveries and surprises
+
+- `2026-07-28`: public source shows that `PilotBatchRunner.run_stage` persists
+  each run trace, accumulates protocol errors, and may raise an aggregate
+  protocol-gate exception only after the stage loops finish. This is a causal
+  candidate for a false completion-marker boundary, not a diagnosis of
+  AO-0008.
+- `2026-07-28`: the public runtime records provider attempts and encrypted
+  responses by logical call key, but does not append a distinct orchestration
+  ledger record for every completed pairing. Structural trace-name
+  commitments must therefore supply independent pairing completeness without
+  bulk decryption.
+
+## Decision log
+
+- `2026-07-28`: preserve AO-0008 exactly and allocate no v4 identity.
+- `2026-07-28`: classify the task as `private-evaluation` because one exact
+  owner-gated retained-state read is required; provider calls, spend, private
+  writes, real private generation, and publication remain prohibited.
+- `2026-07-28`: require the diagnostic to fail closed or return inconclusive
+  if one bounded logical-call context cannot establish causality.
+- `2026-07-28T20:21:32Z`: create issue #206 after verifying AO-0008 issue
+  #204 and PR #205 are closed, no substantive pull request is open, and
+  `main` matches `origin/main`.
+- `2026-07-28T20:23:22Z`: the AO-0009 fixed contract, ExecPlan, PM-0037
+  route, and master-plan registration pass Agent Operations and program-memory
+  audits with ten task contracts, 37 program-memory records, zero adopted
+  unrouted items, zero private-path findings, and no consequential activity.
+  Complete M0 and begin M1.
+
+## Validation strategy
+
+- Validate task, gate, handoff, taxonomy, allowlist, and public result records
+  against schemas and cross-record invariants.
+- Exercise every causal class with synthetic, nonsecret fixtures and require
+  deterministic selection or honest unknown classification.
+- Prove one-use behavior, authorization binding, exact record and object
+  ceilings, encrypted-object selection, operational-key transience,
+  redaction, symlink/mode rejection, output-lock verification, append-only
+  chain validation, and complete pre/post snapshot equality.
+- Reconstruct the full 50-task/500-pairing synthetic graph and verify
+  Methods A/B/C, cardinality, pairing completeness, contamination, metric
+  ranges, output locking, redaction, and exact cost accounting.
+- Run the private-evaluation acceptance profile and task-specific checks from
+  clean committed source before freezing the execution commit.
+
+## Commands and expected observations
+
+- `make treasurebench-fixed-batch-diagnostic-audit` — public audit, taxonomy,
+  allowlist, redaction, fixtures, corruptions, and zero-authority checks pass.
+- `make treasurebench-fixed-batch-diagnostic-rehearsal` — synthetic one-use
+  diagnostic fixtures and the complete 50-task/500-pairing graph pass with
+  deterministic cleanup and zero consequential activity.
+- `make owner-gate GATE=reports/agent-ops/AO-0009-treasurebench-ao0008-fixed-batch-diagnostic-owner-gate.yml OWNER_GATE_VALIDATE_ONLY=1`
+  — validate the committed generic gate without creating an authorization.
+- `make treasurebench-fixed-batch-read-only-diagnostic` — after and only after
+  exact authorization, perform the sole bounded retained-state read.
+
+## Artifacts produced
+
+- This living ExecPlan.
+- The future AO-0009 issue, branch, fixed task contract, public audit,
+  diagnostic implementation, schemas, fixtures, tests, gate, and typed
+  handoff.
+
+## Blockers
+
+None during authorization-free implementation. The exact owner authorization
+will be the single intentional blocker after M5.
+
+## Recovery and restart instructions
+
+Resume from this plan. Confirm `main`/`origin/main` or the registered AO-0009
+branch, the issue and draft PR state, all five unrelated untracked files, and
+exactly one active milestone. Continue the first unchecked item. Do not
+resolve or read the retained AO-0008 private root before exact authorization.
+
+## Outcome and retrospective
+
+No final outcome is selected. Complete this section only after the bounded
+diagnostic and the evidence-determined prospective branch.

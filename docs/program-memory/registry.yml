@@ -685,3 +685,22 @@ records:
     review_after: explicit-owner-decision
     owner_decision: adopted
     last_reviewed: "2026-07-28"
+  - idea_id: PM-0037
+    title: TreasureBench AO-0008 fixed-full-batch adjudication
+    status: routed
+    capture_classification: capture-now
+    visibility: public
+    source_type: owner-decision
+    captured_date: "2026-07-28"
+    proposition: AO-0008 remains permanently quarantined; AO-0009 may perform one exactly owner-gated bounded read-only diagnostic, then make only the evidence-determined prospective implementation repair or provider or agent-protocol policy decision before any later private pilot registration.
+    why_it_matters: It separates immutable failed-batch evidence from prospective runtime and policy changes, prevents call-count differences from being treated as causal proof, and closes private-read authority after one bounded invocation.
+    canonical_destination: {type: decision-record, path: tasks/treasurebench-ao0008-fixed-batch-adjudication.yml}
+    dependencies: [DD-010, PM-0031, PM-0032, PM-0033, PM-0034, PM-0035, PM-0036]
+    promotion_trigger: null
+    permitted_stops: [implemented, deferred, rejected, superseded]
+    not_a_result_boundaries: [engineering diagnosis and prospective repair or policy only, no performance result scientific run claim paper private-pilot registration execution release submission or base-campaign authority]
+    supersedes: []
+    superseded_by: null
+    review_after: explicit-owner-decision
+    owner_decision: adopted
+    last_reviewed: "2026-07-28"
