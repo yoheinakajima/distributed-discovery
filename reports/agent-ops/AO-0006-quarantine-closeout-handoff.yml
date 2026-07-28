@@ -1,0 +1,24 @@
+schema_version: agent-ops-handoff-v1
+status: stop-by-policy
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0006
+issue: 200
+pull_request: 201
+branch: benchmark/treasurebench-agents-v1-fresh-pilot-v2
+base_main: 36866e849b468df10b94b0039cf54f3d891ca120
+head_merge_sha: 3ab10df565344ba9db2d4329745aa89a94852e2a
+task_contract: tasks/treasurebench-agents-v1-fresh-pilot-v2-r2.yml
+exec_plan: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V2.md
+last_completed_gate: The exact R2 authorization and live preflight passed; both public canaries completed, custody creation failed under a registered prospective condition, provider calls stopped, the provider phase closed, eight safely lockable objects were verified under the pushed public output-lock commitment, and no unseal or private run occurred.
+next_gate: The consumed R2 authority continues only through the public-safe quarantine reconciliation, complete validation wall, PR readiness and squash merge after required checks, normal post-merge CI and Pages, named live-route verification, issue closure, main synchronization, and one final schema-valid handoff; no further provider call or private execution is permitted.
+decision: fresh-pilot-v2-quarantined-engineering-only
+external_calls_cost: {calls: 2, cost: "0.0076095", currency: USD}
+private_state_change: A new v2 private-state root, execution identity, operational key, OS-CSPRNG seed, task key, answer key, two encrypted provider-response records, and two encrypted traces are retained. No task or answer ciphertext or custody manifest exists. The provider phase is closed and eight safely lockable objects are locked under sha256:127a9c796459c7627f6fd90b92ef1587ad0f6b1910b4ff255c2ceb976f3ab25f; no material was unsealed.
+scientific_state_change: none
+validation:
+  profile: private-evaluation-quarantine-closeout
+  result: public-canaries-pass-custody-failure-zero-private-runs-provider-closed-lock-verified-redaction-pass-500-run-synthetic-rehearsal-69-corruptions
+owner_action: No additional owner action is required for normal administrative closeout under the consumed R2 authority.
+exact_next_command: make verify
+exact_next_file: reports/benchmark/treasurebench-agents-v1-fresh-pilot-v2-closeout.yml
+blocker: The registered v2 campaign and batch failed at custody creation and are permanently quarantined; they cannot be retried, repaired, reopened, reused, rescored, spliced, executed, or reauthorized.

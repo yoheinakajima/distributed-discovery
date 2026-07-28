@@ -1,0 +1,127 @@
+schema_version: treasurebench-fresh-pilot-v2-quarantine-closeout-v1
+status: quarantined
+decision: fresh-pilot-v2-quarantined-engineering-only
+classification: redacted-engineering-only-no-task-level-performance
+recorded_at_utc: "2026-07-28T04:18:33Z"
+task_id: AO-0006
+owner_study: DD-010
+issue: 200
+pull_request: 201
+branch: benchmark/treasurebench-agents-v1-fresh-pilot-v2
+campaign_id: treasurebench-agents-v1-repair-confirmation-v2
+batch_id: tb-agents-v1-repair-confirmation-v2-b01
+execution_commit: d210b0653677859c79a1fb87d871aaf45f4a81d4
+output_lock_commit: 3ab10df565344ba9db2d4329745aa89a94852e2a
+gate_id: AOG-AO-0006-FRESH-PILOT-V2-R2
+provider_reaudit:
+  status: pass-current-official-docs-before-provider-access
+  exact_models_available: true
+  structured_output_routes_listed: true
+  retention_assumptions_remained_conservative: true
+  retry_error_contracts_reconfirmed: true
+  registered_standard_prices_reconfirmed: true
+registered:
+  models: [gpt-5.4-2026-03-05, claude-sonnet-4-6]
+  tasks: 50
+  families: 5
+  architectures: 5
+  repeats: 1
+  private_runs: 500
+  normal_calls: 3016
+  maximum_calls: 5200
+  expected_cost_usd: "11.51"
+  conservative_cost_usd: "15"
+  hard_cap_usd: "25"
+  provider_caps_usd: {OpenAI: "10", Anthropic: "15"}
+  maximum_output_tokens_per_request: 256
+executed:
+  stage: custody
+  failure_class: custody-creation-failure
+  public_canary_complete: true
+  public_canary_routes: 2
+  custody_complete: false
+  private_prefix_complete: false
+  fixed_full_batch_complete: false
+  private_runs: 0
+  architecture_model_pairings_complete: 0
+  architecture_model_pairings_registered: 500
+  attempts: 2
+  successes: 2
+  errors: 0
+  terminal_provider_failures: 0
+  protocol_invalid_runs: 0
+  semantic_retries: 0
+  OpenAI_calls: 1
+  Anthropic_calls: 1
+  input_tokens: 1349
+  output_tokens: 253
+  cost_usd: "0.0076095"
+  provider_cost_usd: {OpenAI: "0.0027975", Anthropic: "0.004812"}
+credentials:
+  requested_names: [OPENAI_API_KEY, ANTHROPIC_API_KEY]
+  unrelated_names_returned_or_transmitted: false
+  selected_values_cleared: true
+custody:
+  private_state_root_created: true
+  execution_identity_created: true
+  operational_key_created: true
+  os_csprng_seed_created: true
+  task_key_created: true
+  answer_key_created: true
+  task_ciphertext_created: false
+  answer_ciphertext_created: false
+  custody_manifest_created: false
+  encrypted_provider_response_records: 2
+  encrypted_trace_records: 2
+  retention_days: 365
+  retained_state_preserved: true
+lock:
+  output_lock_commitment: sha256:127a9c796459c7627f6fd90b92ef1587ad0f6b1910b4ff255c2ceb976f3ab25f
+  objects_locked: 8
+  provider_phase_closed: true
+  provider_calls_after_lock: 0
+  output_lock_verified: true
+  unsealed_before_lock: false
+  minimum_unseal_performed: false
+verification:
+  public_canary_protocol_contract: pass
+  public_canary_contamination_findings: 0
+  method_a: not-run-no-private-run
+  method_b: not-run-no-private-run
+  method_c: not-run-no-private-run
+  method_a_b_disagreements: not-applicable
+  metric_range_checks: not-run-no-private-run
+  exact_pairing_check: not-run-no-private-run
+  exact_cost_reconciliation: true
+  registered_corruptions: 69
+  registered_corruptions_rejected: 69
+  synthetic_rehearsal_tasks: 50
+  synthetic_rehearsal_runs: 500
+  synthetic_rehearsal_status: pass
+redaction:
+  status: pass
+  task_text_disclosed: false
+  answer_disclosed: false
+  seed_or_key_disclosed: false
+  prompt_or_provider_output_disclosed: false
+  raw_trace_disclosed: false
+  task_level_performance_disclosed: false
+  performance_comparison_created: false
+  ranking_created: false
+  composite_created: false
+authority:
+  dd023_authorized: false
+  claim_created: false
+  scientific_run_created: false
+  paper_result_created: false
+  package_created: false
+  release_created: false
+  arxiv_action: false
+  journal_action: false
+  base_campaign_authorized: false
+disposition:
+  further_provider_calls_permitted: false
+  replacement_or_splice_performed: false
+  semantic_retry_performed: false
+  campaign_and_batch_permanently_quarantined: true
+  next_gate: explicit-owner-decision-required-for-any-separate-future-task

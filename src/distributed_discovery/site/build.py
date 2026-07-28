@@ -913,6 +913,9 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
     agents_fresh_closeout = _read_yaml(
         root / "reports/benchmark/treasurebench-agents-v1-fresh-pilot-closeout.yml"
     )
+    agents_fresh_v2_closeout = _read_yaml(
+        root / "reports/benchmark/treasurebench-agents-v1-fresh-pilot-v2-closeout.yml"
+    )
     agents_provider_conformance = _read_yaml(
         root / "reports/agent-ops/AO-0004-r4-public-provider-canary-outcome.yml"
     )
@@ -931,6 +934,13 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         or agents_fresh_closeout.get("executed", {}).get("Anthropic_calls") != 0
         or agents_fresh_closeout.get("executed", {}).get("cost_usd") != "0.00"
         or agents_fresh_closeout.get("lock", {}).get("provider_phase_closed") is not True
+        or agents_fresh_v2_closeout.get("decision") != "fresh-pilot-v2-quarantined-engineering-only"
+        or agents_fresh_v2_closeout.get("executed", {}).get("stage") != "custody"
+        or agents_fresh_v2_closeout.get("executed", {}).get("attempts") != 2
+        or agents_fresh_v2_closeout.get("executed", {}).get("private_runs") != 0
+        or agents_fresh_v2_closeout.get("executed", {}).get("cost_usd") != "0.0076095"
+        or agents_fresh_v2_closeout.get("lock", {}).get("provider_phase_closed") is not True
+        or agents_fresh_v2_closeout.get("lock", {}).get("output_lock_verified") is not True
         or agents_provider_conformance.get("final_decision")
         != "conformance-pass-both-complete-schemas"
         or agents_provider_conformance.get("conformance_declared") is not True
@@ -966,14 +976,15 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         f"<li>{html.escape(str(item['name']))}</li>" for item in agents_families
     )
     agents_body = f"""
-<header class="page-hero"><p class="eyebrow">DD-010 instrument · quarantined engineering closeout</p><h1>DiscoveryBench Agents v1</h1><p class="lede">A complete instrument for studying how software-agent teams turn synthetic evidence into action portfolios. Its original sealed pilot and fresh repair-confirmation campaign are both permanently quarantined, while the separate public provider-schema and semantic-contract conformance gate passed. This is not a scientific evaluation or provider ranking.</p><p class="status-row"><span class="status-chip">Original pilot quarantined</span><span class="status-chip">Repair-confirmation quarantined</span><span class="status-chip">Provider schemas passed</span></p></header>
+<header class="page-hero"><p class="eyebrow">DD-010 instrument · quarantined engineering closeout</p><h1>DiscoveryBench Agents v1</h1><p class="lede">A complete instrument for studying how software-agent teams turn synthetic evidence into action portfolios. Its original sealed pilot and both fresh repair-confirmation campaigns are permanently quarantined, while the separate public provider-schema and semantic-contract conformance gate passed. This is not a scientific evaluation or provider ranking.</p><p class="status-row"><span class="status-chip">Original pilot quarantined</span><span class="status-chip">Repair-confirmation v1 quarantined</span><span class="status-chip">Repair-confirmation v2 quarantined</span><span class="status-chip">Provider schemas passed</span></p></header>
 <section class="content-section prose"><h2>Public conformance</h2><p>The implementation provides deterministic generation across 138 canonical cells and 552 prompt variants, closed information boundaries, five registered architecture orchestrators, strict structured actions, separate exact-rational metrics, hashed and redacted traces, AES-256-GCM custody, 12 contamination probe classes, authorization guards, and independent verification.</p><p>The original deterministic offline rehearsal covers 10 public tasks across all five architectures: 50 cases pass, Method A and Method B agree, and all 24 original instrument corruptions reject. The repaired rehearsal preserves those 50 cases, adds independent Method C and action-budget range checks, and rejects all 28 instrument corruptions. The live public calibration exercised both required direct-provider adapters over the same 10 public tasks and five architectures: 100 route-cases passed protocol and Method A/B checks. These remain adapter and instrument-conformance records, not scientific model results.</p><h3>Task families</h3><ul>{agents_family_items}</ul></section>
 <section class="content-section prose"><h2>Sealed-pilot closeout</h2><p>The fixed encrypted pilot covered 50 tasks, five architectures, two exact direct model snapshots, and 500 private runs. Its redacted ledger contains 3,037 attempts, 3,035 successes, and two preserved Anthropic errors. Usage was 2,004,503 input tokens and 392,889 output tokens; total cost was USD 11.5702435.</p><p>The provider phase closed before unsealing. The output lock covers 3,545 encrypted objects. Post-lock Method A and independent Method B have zero disagreements, contamination findings are zero, all 76 registered corruptions reject, and redaction, private-leak scanning, and cost reconciliation pass. Two reconstructed protocol errors and the provider failures require <code>sealed-pilot-quarantined-provider-failure</code>.</p></section>
 <section class="content-section prose"><h2>Redacted repair adjudication</h2><p>The exact owner-authorized read-only diagnostic verified the original output lock, custody commitments, append-only logs, final encrypted audit package, and retained-state immutability. It inspected exactly 500 locked traces. The aggregate reconstruction found 137 runs with invalid final cardinality, 266 invalid final agent outputs including 265 over-budget outputs, 138 metric records affected by credited extra actions, and 57 legacy coverage range violations.</p><p>The transient provider-service event recovered and created no terminal run. The other provider event is terminal but remains <code>unknown-terminal</code> because the minimum retained evidence cannot safely distinguish its exact cause. It accounts for one protocol-invalid run; the other reconstructed protocol error is a separate downstream failure. The prospective instrument now requires exactly one final action per agent, independent Method C conformance, range checks, and zero terminal or protocol-failure tolerance.</p></section>
 <section class="content-section prose"><h2>Fresh repair-confirmation closeout</h2><p>The separately registered campaign <code>{html.escape(str(agents_fresh_closeout["campaign_id"]))}</code>, batch <code>{html.escape(str(agents_fresh_closeout["batch_id"]))}</code>, stopped at its first public canary. One direct OpenAI request returned terminal HTTP 400 class <code>schema-or-parameter</code>; Anthropic received zero calls, reported input and output tokens are zero, cost is USD 0.00, and no private run occurred.</p><p>The provider phase is closed and six retained objects are bound by output lock <code>{html.escape(str(agents_fresh_closeout["lock"]["output_lock_commitment"]))}</code>. No task seed, private task, answer, task or answer key, task or answer ciphertext, or custody manifest was created. The campaign and batch cannot be retried, repaired, reopened, reused, rescored, executed, or reauthorized.</p><p>Its then-next public-only task was <strong>TreasureBench exact provider-schema conformance repair and public-canary gate</strong>; AO-0004 completed that separate engineering gate without reopening either campaign.</p></section>
 <section class="content-section prose"><h2>Provider-schema conformance</h2><p>AO-0004 R4 completed as <code>conformance-pass-both-complete-schemas</code>. OpenAI and Anthropic each passed their minimal and complete provider-specific TreasureBench action schemas, and independent post-parse validation passed the canonical exactly-one-final-action semantic contract.</p><p>The four ordered calls used 1,603 input tokens and 275 output tokens and cost USD 0.0086685: OpenAI USD 0.0031875 and Anthropic USD 0.005481. No bisection ran. R3's bounded failure at the exact 128-token ceiling remains preserved and unresolved beyond an output-truncation hypothesis; the prospectively frozen R4 256-token execution passed. R1 and R2 remain superseded and unused; R3 and R4 are consumed and immutable.</p><p>This is provider-schema and semantic-contract engineering conformance, not scientific evidence, model-performance evidence, peer review, external validation, or a performance comparison. Private and scientific state did not change.</p></section>
+<section class="content-section prose"><h2>Fresh repair-confirmation v2 closeout</h2><p>AO-0006 campaign <code>{html.escape(str(agents_fresh_v2_closeout["campaign_id"]))}</code>, batch <code>{html.escape(str(agents_fresh_v2_closeout["batch_id"]))}</code>, passed both direct-provider public canaries and then stopped at custody creation with decision <code>fresh-pilot-v2-quarantined-engineering-only</code> and public-safe class <code>custody-creation-failure</code>.</p><p>The two calls used 1,349 input tokens and 253 output tokens and cost USD 0.0076095: OpenAI USD 0.0027975 and Anthropic USD 0.004812. No private architecture/model run occurred. The provider phase is closed, and eight safely lockable objects are preserved under output lock <code>{html.escape(str(agents_fresh_v2_closeout["lock"]["output_lock_commitment"]))}</code>. No call followed the lock and no material was unsealed.</p><p>A new seed and task and answer keys exist only in retained private state; no task ciphertext, answer ciphertext, or custody manifest was created. The campaign and batch cannot be retried, repaired, reopened, reused, rescored, spliced, executed, or reauthorized.</p></section>
 <section class="content-section prose"><h2>Evidence boundary</h2><p>No private task, answer, seed, key, prompt, output, raw trace, task-level metric, dimension breakdown, sensitivity calculation, provider comparison, ranking, leaderboard, or composite is public. Encrypted custody and the final encrypted audit package are retained for 365 days. No hidden reasoning was requested or stored.</p><p>This is non-inferential DD-010 instrument engineering. DD-023 remains unallocated; no study, claim, immutable scientific run, paper result, or base-campaign authority exists.</p></section>
-<section class="content-section prose"><h2>Versions and next gate</h2><dl><div><dt>Owner</dt><dd>DD-010 instrument</dd></div><div><dt>Content</dt><dd>Explicit selection from preserved v1, v2, or v3</dd></div><div><dt>Agent protocol</dt><dd><code>{html.escape(str(agents_versions["axes"]["agent_protocol"]))}</code></dd></div><div><dt>Generator</dt><dd><code>{html.escape(str(agents_versions["axes"]["task_generator"]))}</code></dd></div><div><dt>Original pilot lock</dt><dd><code>{html.escape(str(agents_pilot["output_lock_commitment"]))}</code></dd></div><div><dt>Repair-confirmation lock</dt><dd><code>{html.escape(str(agents_fresh_closeout["lock"]["output_lock_commitment"]))}</code></dd></div></dl><p>The next substantive candidate is <strong>TreasureBench Agents v1 wholly fresh sealed repair-confirmation pilot registration</strong>. It remains unregistered and unexecuted. Any later task must create wholly new campaign, batch, CSPRNG seed, private tasks, answers, keys, ciphertexts, and custody under separate owner authorization. The 200-task base campaign remains blocked.</p><p><a href="../data/benchmark/agents-v1-provider-schema-conformance.json">Download the provider-schema conformance summary</a> · <a href="../data/benchmark/agents-v1-evaluation.json">Download the redacted operational summary</a> · <a href="../data/benchmark/agents-v1-implementation.json">Download the implementation summary</a> · <a href="../data/benchmark/agents-v1-registration.json">Download the preserved instrument registration</a> · <a href="../research/dd-010.html">DD-010 study record</a> · <a href="../benchmark.html">DiscoveryBench overview</a></p></section>
+<section class="content-section prose"><h2>Versions and next gate</h2><dl><div><dt>Owner</dt><dd>DD-010 instrument</dd></div><div><dt>Content</dt><dd>Explicit selection from preserved v1, v2, or v3</dd></div><div><dt>Agent protocol</dt><dd><code>{html.escape(str(agents_versions["axes"]["agent_protocol"]))}</code></dd></div><div><dt>Generator</dt><dd><code>{html.escape(str(agents_versions["axes"]["task_generator"]))}</code></dd></div><div><dt>Original pilot lock</dt><dd><code>{html.escape(str(agents_pilot["output_lock_commitment"]))}</code></dd></div><div><dt>Repair-confirmation v1 lock</dt><dd><code>{html.escape(str(agents_fresh_closeout["lock"]["output_lock_commitment"]))}</code></dd></div><div><dt>Repair-confirmation v2 lock</dt><dd><code>{html.escape(str(agents_fresh_v2_closeout["lock"]["output_lock_commitment"]))}</code></dd></div></dl><p>No replacement private pilot or base campaign is selected. Any future private evaluation requires a separate explicit owner decision, a new task, wholly new identities, and a new exact owner gate. The 200-task base campaign remains blocked.</p><p><a href="../data/benchmark/agents-v1-provider-schema-conformance.json">Download the provider-schema conformance summary</a> · <a href="../data/benchmark/agents-v1-evaluation.json">Download the redacted operational summary</a> · <a href="../data/benchmark/agents-v1-implementation.json">Download the implementation summary</a> · <a href="../data/benchmark/agents-v1-registration.json">Download the preserved instrument registration</a> · <a href="../research/dd-010.html">DD-010 study record</a> · <a href="../benchmark.html">DiscoveryBench overview</a></p></section>
 """
     _write_benchmark_route_pair(
         output,
@@ -1015,7 +1026,7 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         "schema_version": 1,
         "instrument_id": "discoverybench-agents-v1",
         "owner": "DD-010",
-        "status": "implementation-repaired-fresh-pilot-quarantined",
+        "status": "implementation-repaired-all-three-pilots-quarantined",
         "versions": agents_versions["axes"],
         "generator_counts": {
             "canonical_cells": 138,
@@ -1062,10 +1073,7 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
             "cost_usd": agents_provider_conformance["totals"]["total_cost_usd"],
             "bisection_calls": agents_provider_conformance["diagnostics"]["frozen_bisection_calls"],
         },
-        "next_gate": (
-            "TreasureBench Agents v1 wholly fresh sealed repair-confirmation pilot "
-            "registration; unregistered and separately owner-gated"
-        ),
+        "next_gate": "no replacement private pilot selected; explicit owner decision required",
     }
     _write(
         output,
@@ -1190,6 +1198,43 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
             "authorization_inactive_archived": True,
             "performance_results_published": False,
         },
+        "repair_confirmation_pilot_v2": {
+            "name": "fresh-repair-confirmation-pilot-v2",
+            "campaign_id": agents_fresh_v2_closeout["campaign_id"],
+            "batch_id": agents_fresh_v2_closeout["batch_id"],
+            "execution_commit": agents_fresh_v2_closeout["execution_commit"],
+            "status": "quarantined",
+            "decision": agents_fresh_v2_closeout["decision"],
+            "stage": agents_fresh_v2_closeout["executed"]["stage"],
+            "failure_class": agents_fresh_v2_closeout["executed"]["failure_class"],
+            "attempts": agents_fresh_v2_closeout["executed"]["attempts"],
+            "successes": agents_fresh_v2_closeout["executed"]["successes"],
+            "errors": agents_fresh_v2_closeout["executed"]["errors"],
+            "openai_calls": agents_fresh_v2_closeout["executed"]["OpenAI_calls"],
+            "anthropic_calls": agents_fresh_v2_closeout["executed"]["Anthropic_calls"],
+            "input_tokens": agents_fresh_v2_closeout["executed"]["input_tokens"],
+            "output_tokens": agents_fresh_v2_closeout["executed"]["output_tokens"],
+            "cost_usd": agents_fresh_v2_closeout["executed"]["cost_usd"],
+            "provider_cost_usd": agents_fresh_v2_closeout["executed"]["provider_cost_usd"],
+            "private_runs": agents_fresh_v2_closeout["executed"]["private_runs"],
+            "task_seed_created": agents_fresh_v2_closeout["custody"]["os_csprng_seed_created"],
+            "task_key_created": agents_fresh_v2_closeout["custody"]["task_key_created"],
+            "answer_key_created": agents_fresh_v2_closeout["custody"]["answer_key_created"],
+            "task_ciphertext_created": agents_fresh_v2_closeout["custody"][
+                "task_ciphertext_created"
+            ],
+            "answer_ciphertext_created": agents_fresh_v2_closeout["custody"][
+                "answer_ciphertext_created"
+            ],
+            "custody_manifest_created": agents_fresh_v2_closeout["custody"][
+                "custody_manifest_created"
+            ],
+            "output_lock_commitment": agents_fresh_v2_closeout["lock"]["output_lock_commitment"],
+            "objects_locked": agents_fresh_v2_closeout["lock"]["objects_locked"],
+            "provider_phase_closed": agents_fresh_v2_closeout["lock"]["provider_phase_closed"],
+            "unsealed": agents_fresh_v2_closeout["lock"]["minimum_unseal_performed"],
+            "performance_results_published": False,
+        },
         "provider_schema_conformance": {
             "classification": agents_provider_conformance["classification"],
             "decision": agents_provider_conformance["final_decision"],
@@ -1238,6 +1283,12 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
                 "OpenAI": "10.00",
                 "Anthropic": "15.00",
             },
+            "fresh_pilot_v2_authorized": True,
+            "fresh_pilot_v2_completed": True,
+            "fresh_pilot_v2_decision": agents_fresh_v2_closeout["decision"],
+            "fresh_pilot_v2_expected_cost_usd": "11.51",
+            "fresh_pilot_v2_hard_cap_usd": "25",
+            "further_provider_calls_authorized": False,
         },
         "encrypted_private_material_retained": True,
         "private_material_published": False,
@@ -1246,8 +1297,8 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         "study_id_allocated": False,
         "expected_future_study_id": "DD-023",
         "next_gate": (
-            "TreasureBench Agents v1 wholly fresh sealed repair-confirmation pilot "
-            "registration; unregistered and separately owner-gated; base campaign blocked"
+            "no replacement private pilot selected; explicit owner decision required; "
+            "base campaign blocked"
         ),
     }
     _write(
@@ -1285,8 +1336,10 @@ def _benchmark_pages(root: Path, output: Path) -> dict[str, object]:
         "next_candidate": (
             "TreasureBench Agents v1 wholly fresh sealed repair-confirmation pilot registration"
         ),
-        "next_candidate_registered": False,
-        "next_candidate_authorized": False,
+        "next_candidate_registered": True,
+        "next_candidate_authorized": True,
+        "next_candidate_decision": agents_fresh_v2_closeout["decision"],
+        "further_candidate_selected": False,
     }
     _write(
         output,
@@ -3876,7 +3929,7 @@ def _render(
 <section class="content-section prose"><h2>How the work is published</h2><p>The canonical entry paper introduces the atomic paradox. Theorem-family papers own durable mathematical questions. Working notes support intermediate or synthetic arguments. The living synthesis preserves the complete intellectual account. Reproducible studies, Labs, and DiscoveryBench expose evidence and interfaces.</p><p>No journal submission status is represented here. A validated PDF, exact run, or polished site does not by itself satisfy the paper-admission rule.</p><p><a href="publications.html">Browse working papers</a> · <a href="{REPOSITORY_URL}/blob/main/docs/research-governance.md">Read the governance source</a></p></section>"""
     program_body = program_body.replace(
         '<section class="content-section prose"><h2>Next open boundary</h2><p>The bounded Decentralized Recovery registration gate stopped at classical overlap: the frozen equal-sharing action game is singleton congestion, and visible sequential occupancy adds ordinary backward induction without enlarging the every-equilibrium top-two recovery region. No study, claim, run, or paper was created.</p><p>Reliable Discovery is now the next unregistered theorem program. It asks when reliable, unreliable, repeated, or overlapping actions should diversify or concentrate, and must establish content beyond classical reliability allocation before registration. The Price of Missing Provenance follows separately.</p></section>',
-        '<section class="content-section prose"><h2>Phase boundary and hold</h2><p>Phase 1 is complete: Programs V1–V5, this Frontier, post-V5 consolidation, and the stopped decentralized-recovery overlap gate form the completed boundary. This does not mean every theorem direction is complete.</p><p>Phase 2 holds theorem-family execution. Reliable Discovery remains a major candidate but is deferred. <a href="benchmark/agents-v1.html">DiscoveryBench Agents v1</a> has two permanently quarantined DD-010 engineering pilots. The original pilot repair adjudication found a pervasive final-action-budget defect and repaired the instrument. The wholly fresh repair-confirmation campaign then stopped by policy with decision <code>sealed-pilot-quarantined-provider-failure</code> on its first public canary: one OpenAI HTTP 400, zero Anthropic calls, zero reported tokens, USD 0.00, and no private run. The separate AO-0004 R4 public-only provider-schema conformance gate then passed both providers’ minimal and complete action schemas plus the canonical exactly-one-final-action semantic contract in four calls costing USD 0.0086685, with no bisection and no private or scientific state change. This is provider-schema engineering conformance, not scientific or model-performance evidence. No study, claim, scientific run, paper result, ranking, dimension breakdown, or detailed private performance is published. The next candidate is TreasureBench Agents v1 wholly fresh sealed repair-confirmation pilot registration; it remains unregistered and separately owner-gated, and the base campaign remains blocked. <a href="start-here.html">Start with three results</a> · <a href="methods.html">Read the factual methods record</a>.</p></section>',
+        '<section class="content-section prose"><h2>Phase boundary and hold</h2><p>Phase 1 is complete: Programs V1–V5, this Frontier, post-V5 consolidation, and the stopped decentralized-recovery overlap gate form the completed boundary. This does not mean every theorem direction is complete.</p><p>Phase 2 holds theorem-family execution. Reliable Discovery remains a major candidate but is deferred. <a href="benchmark/agents-v1.html">DiscoveryBench Agents v1</a> has three permanently quarantined DD-010 engineering pilots. The original pilot repair adjudication found a pervasive final-action-budget defect and repaired the instrument. Repair-confirmation v1 then stopped with decision <code>sealed-pilot-quarantined-provider-failure</code> on its first public canary: one OpenAI HTTP 400, zero Anthropic calls, zero reported tokens, USD 0.00, and no private run. The separate AO-0004 R4 public-only provider-schema conformance gate passed both providers’ minimal and complete action schemas plus the canonical exactly-one-final-action semantic contract in four calls costing USD 0.0086685, with no bisection and no private or scientific state change. The wholly fresh v2 campaign subsequently passed both public canaries in two calls costing USD 0.0076095, then quarantined at custody creation with zero private runs, a closed provider phase, and a verified eight-object output lock. These are engineering dispositions, not scientific or model-performance evidence. No study, claim, scientific run, paper result, ranking, dimension breakdown, or detailed private performance is published. No replacement private pilot is selected, and the base campaign remains blocked. <a href="start-here.html">Start with three results</a> · <a href="methods.html">Read the factual methods record</a>.</p></section>',
         1,
     )
     program_body += _render_related_formulations(

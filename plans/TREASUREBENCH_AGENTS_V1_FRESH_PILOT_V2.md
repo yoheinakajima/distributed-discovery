@@ -83,9 +83,29 @@ Owner amendment at `2026-07-28T02:30:00Z`:
 - no credential, authorization, prior private state, real seed, custody,
   provider, or spend was accessed while accepting this amendment.
 
-Exactly one milestone is active: **M13 owner-authorized long-session execution
-and conditional final closeout**, blocked until the exact R2 owner
-authorization exists.
+Authorized live outcome at `2026-07-28T04:14:30Z`:
+
+- the exact generic R2 authorization passed its challenge, schema, digest,
+  execution-commit ancestry, tree, identity, route, model, cap, issue, branch,
+  and draft-PR preflight;
+- both direct-provider public canaries passed in two calls using 1,349 input
+  tokens and 253 output tokens for USD 0.0076095: OpenAI USD 0.0027975 and
+  Anthropic USD 0.004812;
+- custody creation failed under registered coarse class
+  `custody-creation-failure`, so the whole fixed batch is quarantined with
+  zero private architecture/model runs;
+- provider calls stopped immediately, the provider phase closed, and eight
+  safely lockable objects were preserved under output lock
+  `sha256:127a9c796459c7627f6fd90b92ef1587ad0f6b1910b4ff255c2ceb976f3ab25f`;
+- the public output-lock commitment was committed and pushed as
+  `3ab10df565344ba9db2d4329745aa89a94852e2a`;
+- no provider call followed the lock, no material was unsealed, and no
+  replacement, splice, rescore, or semantic retry occurred;
+- the v2 campaign and batch are permanently quarantined and receive no further
+  provider or private-execution authority.
+
+Exactly one milestone is active: **M13 public-safe quarantine administrative
+closeout** under the already-consumed R2 authority.
 M0 passed at `2026-07-28T01:11:20Z`: the task contract is schema-valid, the
 provider and budget records parse and carry the exact reserved identities,
 the ExecPlan sections are ordered with one active milestone, all recorded
@@ -142,6 +162,13 @@ registry record. The R2 owner amendment is routed into the additive fixed
 contract, this ExecPlan, the versioned request, execution code/tests, gate
 supersession, and future R2 handoff; none of it remains chat-only. Repeat this
 audit at closeout.
+
+Closeout audit at `2026-07-28T04:18:33Z`: PM-0034 records the terminal v2
+custody-stage quarantine, closed provider phase, output lock, and
+zero-private-run boundary. It supersedes only the executed v2 candidate and
+does not alter PM-0033's provider conformance or either earlier quarantine. No
+scientific, paper, release, ranking, base-campaign, or evidence-dependent
+trigger became due, and no new future task was selected.
 
 ## Scope
 
@@ -239,9 +266,10 @@ audit at closeout.
 - **M12R2 — complete:** committed generic
   `AOG-AO-0006-FRESH-PILOT-V2-R2`, live authorization-free validation, typed
   handoff, and stop.
-- **M13 — active, owner gate required:** after the exact R2 authorization,
-  complete the maximum authorized successful or quarantined long-session
-  closeout without routine checkpoints.
+- **M13 — active, batch quarantined:** complete the authorized public-safe
+  quarantine reconciliation, validation, required checks, squash merge,
+  normal CI/Pages, named live routes, issue closure, main synchronization, and
+  final handoff without another provider call or routine owner checkpoint.
 
 ## Progress checklist
 
@@ -270,7 +298,13 @@ audit at closeout.
 - [x] Complete M10R2 full offline acceptance.
 - [x] Complete M11R2 execution refreeze and original-gate supersession.
 - [x] Complete M12R2 R2 gate and owner-gate-required handoff.
-- [ ] Complete M13 only after the exact R2 owner authorization.
+- [x] Validate and consume the exact R2 owner authorization.
+- [x] Execute the fixed live command once and preserve its terminal quarantine.
+- [x] Close the provider phase, verify the output lock, and push its public
+  commitment.
+- [x] Reconcile public-safe quarantine records and pass focused and complete
+  local validation.
+- [ ] Complete the remaining PR/CI/Pages/live/issue/main M13 lifecycle.
 
 ## Discoveries and surprises
 
@@ -297,6 +331,11 @@ audit at closeout.
   call-shape mix while retaining the new `RCV2-SLOT` namespace and v2
   generation domain. Because the later private seed and slot domains generate
   the instances, this reuses no prior task instance.
+- The live v2 instrument passed both public provider canaries but could not
+  create task custody. The registered fail-closed path correctly treated this
+  as a whole-batch outcome, stopped further calls, preserved retained state,
+  closed the provider phase, and locked every safely lockable object before
+  any unseal.
 
 ## Decision log
 
@@ -409,6 +448,27 @@ audit at closeout.
   ancestor and every protected hash, permission, cap, prohibition, issue,
   branch, and PR binding through the generic engine without creating an
   authorization. Update the draft PR title/body to the accurate R2 scope.
+- `2026-07-28T04:09:00Z`: consume the exact owner-supplied
+  `AOG-AO-0006-FRESH-PILOT-V2-R2` challenge and revalidate current official
+  provider availability, routes, structured output, retention, retry/error
+  terms, pricing, execution identity, tree, caps, and draft-PR ancestry.
+- `2026-07-28T04:14:30Z`: run the fixed live command once. Both public
+  canaries pass, then custody creation fails. Stop at two calls and USD
+  0.0076095, close the provider phase, lock eight safely lockable objects
+  under
+  `sha256:127a9c796459c7627f6fd90b92ef1587ad0f6b1910b4ff255c2ceb976f3ab25f`,
+  perform no unseal, and push public lock commit `3ab10df`.
+- `2026-07-28T04:18:33Z`: begin deterministic public-safe quarantine
+  reconciliation. Preserve the coarse failure class, zero-private-run
+  boundary, exact public usage and cost, custody and lock status, redaction,
+  and all scientific and publication prohibitions.
+- `2026-07-28T04:34:23Z`: complete local public-safe reconciliation and pass
+  the full wall: Ruff format and lint, strict MyPy over 195 source files,
+  573/573 tests, 110 claims, 51 run manifests, every governance and benchmark
+  audit, the 89-page/26-study static site, seven papers totaling 119 pages,
+  and offline release verification. The complete 50-task/500-run rehearsal
+  and all 69 corruption rejections also reproduce without a credential read,
+  private-state read, network call, or spend.
 
 ## Validation strategy
 
@@ -427,6 +487,10 @@ success/quarantine lifecycle completion, the complete rehearsal/corruption
 wall, a new clean pushed execution commit, and the generic R2 gate while
 preserving scientific and release ceilings, immutable prior AO artifacts,
 zero preauthorization private/provider activity, and unrelated files.
+M13 additionally validates the deterministic public closeout, exact cost
+reconciliation, closed provider phase, no-call-after-lock invariant,
+zero-private-run boundary, public JSON/site rendering, and preservation of the
+scientific, paper, release, and prior-campaign baselines.
 
 ## Commands and expected observations
 
@@ -452,28 +516,34 @@ M1 through M3 produced versioned v2 public contracts, audit records,
 implementation, tests, and the full rehearsal/corruption artifacts. M4 through
 M6 added draft PR #201, full acceptance evidence, the exact execution freeze,
 one generic owner-gate manifest, and this typed owner-gate-required handoff.
+M7R2 through M12R2 added the corrected R2 surface and gate. M13 produced the
+permanently quarantined live v2 state, pushed output-lock commitment, redacted
+quarantine closeout, and public-safe repository reconciliation.
 
 ## Blockers
 
-No implementation blocker is known. The local GitHub CLI token is invalid, but
-SSH Git transport and the connected GitHub app remain available and are the
-established repository path. Consequential execution is intentionally blocked
-until the R2 surface is frozen and the owner later creates the exact local
-authorization for the committed R2 gate.
+The registered v2 campaign and batch are blocked permanently at custody
+creation and cannot be completed or retried. This is their terminal batch
+outcome, not a blocker to the authorized administrative closeout. No further
+provider call or private execution is permitted. The remaining work is
+public-safe validation and repository lifecycle only.
 
 ## Recovery and restart instructions
 
 Inspect `git status --short --branch`; preserve the five unrelated untracked
 files; read root and scoped instructions, the additive R2 fixed contract, this
 plan, issue #200, and draft PR #201. Continue the first incomplete R2
-milestone. Do not use the original contract or gate, read `.env.txt` or prior
-private state, create real custody, or call a provider before the exact future
-R2 gate.
+milestone. Do not use the original contract or gate, rerun the live command,
+read prior private state, generate replacement custody, or make another
+provider call. Preserve the v2 retained state, closed provider phase, output
+lock, commitment, append-only ledger, and terminal decision exactly.
 
 ## Outcome and retrospective
 
-AO-0006 remains registered with its v2 identities and accepted offline
-foundation, but its unused first gate is superseded in principle by the owner
-amendment. R2 implementation and refreeze are active. Calls, spend, credential
-access, prior private-state access, real private generation, and scientific
-state remain zero or unchanged.
+AO-0006 is terminally quarantined at custody creation after both public
+canaries passed. It made two calls for USD 0.0076095 and zero private
+architecture/model runs. The provider phase is closed, eight safely lockable
+objects are output-locked, no material was unsealed, and no further provider
+call is permitted. The campaign and batch cannot be reused or repaired in
+place. This is DD-010 engineering disposition only; scientific, paper,
+ranking, release, submission, and base-campaign state remain unchanged.

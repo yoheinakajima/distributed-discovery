@@ -119,6 +119,30 @@ state remained unchanged.
 This is public provider-schema and semantic-contract engineering conformance,
 not scientific evidence or model-performance evidence. R1 and R2 remain
 superseded and unused; R3 and R4 remain consumed and immutable. A later wholly
-fresh sealed repair-confirmation pilot registration is only an unregistered
-candidate and requires wholly new private identities and separate owner
-authority.
+fresh sealed repair-confirmation pilot registration required wholly new
+private identities and separate owner authority; AO-0006 subsequently
+registered and executed that v2 candidate.
+
+## AO-0006 fresh repair-confirmation v2 boundary
+
+AO-0006 froze campaign `treasurebench-agents-v1-repair-confirmation-v2`, batch
+`tb-agents-v1-repair-confirmation-v2-b01`, 50 new private tasks, five
+architectures, two direct routes, one repeat, a 500-run matrix, and a maximum
+256-token output ceiling. Its public synthetic rehearsal completed all 500
+runs and rejected all 69 registered corruptions before authorization.
+
+Under the exact R2 owner gate, both direct-provider public canaries passed in
+two calls using 1,349 input tokens and 253 output tokens for USD 0.0076095.
+Custody creation then failed under the registered coarse class
+`custody-creation-failure`. The batch is permanently quarantined with zero
+private architecture/model runs. Its provider phase is closed; eight safely
+lockable objects are preserved under output lock
+`sha256:127a9c796459c7627f6fd90b92ef1587ad0f6b1910b4ff255c2ceb976f3ab25f`;
+no provider call followed the lock and no material was unsealed.
+
+The retained private state contains a new seed and task and answer keys but no
+task ciphertext, answer ciphertext, or custody manifest. Methods A/B/C,
+private pairing, and metric-range checks are not applicable to the unstarted
+private matrix. This is a failed DD-010 engineering batch, not scientific or
+model-performance evidence. No retry, repair-in-place, replacement, splice,
+rescore, ranking, claim, paper result, release, or base campaign is authorized.

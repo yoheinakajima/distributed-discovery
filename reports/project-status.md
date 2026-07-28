@@ -1,6 +1,33 @@
-# Project status — TreasureBench provider-schema conformance passed
+# Project status — TreasureBench fresh pilot v2 quarantined
 
-Date: 2026-07-27 (America/Los_Angeles).
+Date: 2026-07-28 (America/Los_Angeles).
+
+AO-0006 completed two successful direct-provider public canaries, then stopped
+at custody creation with decision
+`fresh-pilot-v2-quarantined-engineering-only`. Campaign
+`treasurebench-agents-v1-repair-confirmation-v2`, batch
+`tb-agents-v1-repair-confirmation-v2-b01`, and execution commit
+`d210b0653677859c79a1fb87d871aaf45f4a81d4` are permanently preserved. The
+two calls used 1,349 input tokens and 253 output tokens and cost USD 0.0076095:
+OpenAI USD 0.0027975 and Anthropic USD 0.004812.
+
+The registered public-safe failure class is `custody-creation-failure`. No
+private architecture/model run occurred. The provider phase is closed, and
+eight safely lockable objects are bound by output lock
+`sha256:127a9c796459c7627f6fd90b92ef1587ad0f6b1910b4ff255c2ceb976f3ab25f`.
+No call followed the lock and no material was unsealed. A new seed and task
+and answer keys exist only in retained private state; no task ciphertext,
+answer ciphertext, or custody manifest was created.
+
+The campaign and batch cannot be retried, repaired, reopened, reused,
+rescored, spliced, executed, or reauthorized. No task text, answer, seed, key,
+prompt, output, raw trace, metric row, performance comparison, ranking, or
+composite is public. This creates no DD-023, claim, scientific run, paper
+result, release, submission, or base-campaign authority. Scientific inventory
+remains 110 claims, 26 studies, 51 manifests, and 48 passing immutable runs;
+the seven project PDFs remain 119 pages.
+
+## Prior provider-schema conformance
 
 AO-0004 completed with decision
 `conformance-pass-both-complete-schemas`. The frozen R4 execution commit is
@@ -19,10 +46,8 @@ and unused, and R3 and R4 remain consumed and immutable.
 This is provider-schema and semantic-contract engineering conformance only,
 not scientific evidence, model-performance evidence, peer review, external
 validation, ranking, or comparative performance. Private and scientific state
-did not change. The next substantive candidate is **TreasureBench Agents v1
-wholly fresh sealed repair-confirmation pilot registration**. It remains
-unregistered, unexecuted, and separately owner-gated and must later use wholly
-new private identities.
+did not change. Its next substantive candidate was the wholly fresh v2 pilot
+now permanently quarantined above.
 
 ## Prior repair-confirmation quarantine
 
