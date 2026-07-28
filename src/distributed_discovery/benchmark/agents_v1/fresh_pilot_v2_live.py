@@ -83,6 +83,7 @@ from distributed_discovery.benchmark.agents_v1.pilot import (
     PilotBatchRunner,
     ResumablePilotAdapter,
     SealedObject,
+    atomic_private_create,
     atomic_private_write,
     create_output_lock,
     load_or_create_real_custody_material,
@@ -178,6 +179,10 @@ def _write_json(path: Path, value: Mapping[str, object]) -> None:
     atomic_private_write(path, canonical_json(value) + b"\n")
 
 
+def _create_json(path: Path, value: Mapping[str, object]) -> None:
+    atomic_private_create(path, canonical_json(value) + b"\n")
+
+
 def _read_json(path: Path) -> dict[str, object]:
     info = path.lstat()
     if stat.S_ISLNK(info.st_mode) or not stat.S_ISREG(info.st_mode):
@@ -202,7 +207,7 @@ def _load_or_create_key(path: Path) -> bytes:
             raise ValueError("fresh private operational key has invalid length")
         return value
     value = secrets.token_bytes(32)
-    atomic_private_write(path, value)
+    atomic_private_create(path, value)
     return value
 
 
@@ -235,6 +240,16 @@ def _load_or_create_sealed(path: Path, *, domain: str, value: object, key: bytes
         )
         if sealed.associated_data_sha256 != f"sha256:{sha256_hex(associated)}":
             raise PermissionError("fresh associated-data mismatch requires quarantine")
+        if (
+            unseal_object(
+                sealed,
+                key=key,
+                campaign_id=CAMPAIGN_ID,
+                batch_id=BATCH_ID,
+            )
+            != value
+        ):
+            raise PermissionError("fresh sealed-object plaintext mismatch requires quarantine")
         return sealed
     sealed = seal_object(
         domain=domain,
@@ -244,7 +259,7 @@ def _load_or_create_sealed(path: Path, *, domain: str, value: object, key: bytes
         campaign_id=CAMPAIGN_ID,
         batch_id=BATCH_ID,
     )
-    _write_json(path, _sealed_record(sealed))
+    _create_json(path, _sealed_record(sealed))
     return sealed
 
 
@@ -357,7 +372,7 @@ def _initialize_private_state(root: Path, *, repo: Path, synthetic: bool) -> Map
     if path.exists() and _read_json(path) != manifest:
         raise PermissionError("fresh private-state manifest mismatch requires quarantine")
     if not path.exists():
-        _write_json(path, manifest)
+        _create_json(path, manifest)
     return manifest
 
 
@@ -872,7 +887,7 @@ def _custody(
     if path.exists() and _read_json(path) != manifest:
         raise PermissionError("fresh custody manifest mismatch requires quarantine")
     if not path.exists():
-        _write_json(path, manifest)
+        _create_json(path, manifest)
     return tuple(tasks), material, task_sealed, answer_sealed, manifest
 
 

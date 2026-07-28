@@ -1,0 +1,84 @@
+schema_version: treasurebench-ao0006-custody-diagnostic-closeout-v1
+status: complete
+decision: custody-root-cause-repaired-live-conformance-pass
+classification: redacted-engineering-only-no-performance-evidence
+recorded_at_utc: "2026-07-28T12:43:01Z"
+task_id: AO-0007
+source_task_id: AO-0006
+owner_study: DD-010
+issue: 202
+pull_request: 203
+gate_id: AOG-AO-0007-AO0006-CUSTODY-DIAGNOSTIC
+diagnostic_execution_commit: 55a7815c77319e7845238126c6045f2e80026165
+source_campaign:
+  campaign_id: treasurebench-agents-v1-repair-confirmation-v2
+  batch_id: tb-agents-v1-repair-confirmation-v2-b01
+  execution_commit: d210b0653677859c79a1fb87d871aaf45f4a81d4
+  terminal_decision: fresh-pilot-v2-quarantined-engineering-only
+  output_lock: sha256:127a9c796459c7627f6fd90b92ef1587ad0f6b1910b4ff255c2ceb976f3ab25f
+  public_canaries: 2
+  input_tokens: 1349
+  output_tokens: 253
+  cost_usd: "0.0076095"
+  private_runs: 0
+  task_ciphertexts: 0
+  answer_ciphertexts: 0
+  custody_manifests: 0
+  unseal_events: 0
+diagnostic:
+  invocation_count: 1
+  private_read_authority_closed: true
+  output_lock_verified: true
+  inventory_verified: true
+  locked_objects_verified: 8
+  append_only_logs_verified: true
+  execution_identity_verified: true
+  provider_stage_state_verified: true
+  redacted_summary_verified: true
+  retained_state_mutated: false
+  private_values_read: false
+  private_paths_disclosed: false
+  credential_reads: 0
+  provider_calls: 0
+  spend_usd: "0"
+  detailed_record: nonpublic-outside-git
+diagnosis:
+  exact_failure_stage: private-task-generation
+  exact_cause: v2-campaign-absent-from-private-generation-permit-allowlist
+  source_candidate_confirmed: true
+repair:
+  source_campaign_mutated: false
+  campaign_permit_added_prospectively: true
+  atomic_exclusive_private_create_added: true
+  resumed_ciphertext_plaintext_match_required: true
+  synthetic_only: true
+conformance:
+  status: pass
+  synthetic_tasks: 50
+  required_classes: 20
+  required_classes_passed: 20
+  independent_verifier: pass
+  algorithm: AES-256-GCM
+  unique_nonces: true
+  domain_separated_associated_data: true
+  corruptions:
+    wrong_key: rejected
+    corrupted_ciphertext: rejected
+    interrupted_write: refused-or-isolated
+    symlink: rejected
+    duplicate_mismatch: rejected
+    atomic_exclusive_create: rejected
+  deterministic_cleanup: pass
+  real_private_campaign_material: 0
+authority:
+  new_private_pilot_registered: false
+  v3_identity_allocated: false
+  dd023_authorized: false
+  claim_created: false
+  scientific_run_created: false
+  evidence_or_proof_promoted: false
+  paper_result_created: false
+  ranking_or_composite_created: false
+  release_or_submission_created: false
+  base_campaign_authorized: false
+next_gate: explicit-owner-decision-required-for-any-separate-future-private-pilot-registration

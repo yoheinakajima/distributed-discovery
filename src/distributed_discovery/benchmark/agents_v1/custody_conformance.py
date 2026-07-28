@@ -270,22 +270,23 @@ def audit_conformance_framework(repo: Path) -> Mapping[str, object]:
         if len(tasks) != 50 or len({bytes(value) for value in material.values()}) != 3:
             raise AssertionError("framework custody material or task count mismatch")
         for name, value in material.items():
-            pilot.atomic_private_write(root / f"{name.replace('_', '-')}.bin", value)
+            pilot.atomic_private_create(root / f"{name.replace('_', '-')}.bin", value)
         independent = independent_verify_custody(root)
         negatives = _negative_checks(root)
+        registered_gaps = sorted(
+            name
+            for name, status_value in negatives.items()
+            if status_value == "known-pre-repair-gap"
+        )
         result = {
-            "status": "pass-with-registered-pre-repair-gaps",
+            "status": "pass" if not registered_gaps else "pass-with-registered-pre-repair-gaps",
             "tasks": 50,
             "provider_calls": 0,
             "credential_reads": 0,
             "spend_usd": "0",
             "independent_verifier": independent["status"],
             "negative_checks": negatives,
-            "registered_pre_repair_gaps": sorted(
-                name
-                for name, status_value in negatives.items()
-                if status_value == "known-pre-repair-gap"
-            ),
+            "registered_pre_repair_gaps": registered_gaps,
             "host_path_disclosed": False,
             "secret_value_disclosed": False,
         }

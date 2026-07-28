@@ -17,7 +17,8 @@ The permitted final outcomes are:
 - `custody-diagnostic-inconclusive-defer`;
 - `retained-state-integrity-mismatch-stop`.
 
-No outcome is preselected.
+The selected outcome after the bounded diagnostic and prospective conformance
+is `custody-root-cause-repaired-live-conformance-pass`.
 
 ## Current state
 
@@ -36,11 +37,12 @@ Five unrelated untracked preservation files pre-exist:
 - `reports/roadmap-consolidation/post-v5-literature-and-nonoverlap 2.md`;
 - `reports/roadmap-consolidation/post-v5-next-program-gate 2.yml`.
 
-They are outside scope and remain untouched. No credential, owner
-authorization, AO-0006 private state, or private path has been read. No
-provider call, spend, new real private material, task or answer ciphertext,
-custody manifest, unsealing, scientific mutation, release, or submission has
-occurred.
+They are outside scope and remain untouched. The exact owner authorization was
+created, and the diagnostic ran exactly once. It read only the registered
+encrypted/redacted allowlist and metadata-only secret-file attributes; it read
+no secret value, credential, private host path, task, answer, or raw provider
+output. No provider call, spend, retained-state mutation, new real private
+material, unsealing, scientific mutation, release, or submission occurred.
 
 The authoritative AO-0006 boundary is permanent:
 campaign `treasurebench-agents-v1-repair-confirmation-v2`, batch
@@ -55,9 +57,14 @@ manifest, no unsealing, and output lock
 Registration commit `6c7f7b4` passed both Agent Operations and program-memory
 audits. The public audit, bounded diagnostic implementation, synthetic fixture,
 and live-mode conformance framework are complete without private access.
-Draft PR #203 is open, and the complete authorization-free acceptance wall
-passes at `28b70b8`. Exactly one milestone is active: **M5 — diagnostic
-execution freeze and owner gate**.
+Draft PR #203 is open. The generic gate was authorized against execution
+commit `55a7815c77319e7845238126c6045f2e80026165`; the one-use diagnostic
+verified the complete declared boundary and permanently closed private access.
+The exact cause is the v2 campaign's absence from the private-generation
+permit allowlist. The prospective repair and all twenty live-mode custody
+conformance classes now pass with independent verification and six negative
+classes. Exactly one milestone is active: **M8 — public-safe closeout,
+validation, merge, and synchronization**.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -128,9 +135,8 @@ scientific evidence.
 
 ## Assumptions
 
-- The public AO-0006 closeout is accurate but supplies only a coarse
-  `custody-creation-failure` class; exact root cause remains unknown until the
-  bounded diagnostic runs.
+- The public AO-0006 closeout is accurate and the bounded diagnostic confirmed
+  its retained boundary and the exact private-generation permit failure.
 - The retained output lock and inventory must verify before any selected
   record is read.
 - A single diagnostic invocation can gather sufficient permitted evidence. A
@@ -155,16 +161,16 @@ scientific evidence.
   cases, and corruptions using production functions and ordering.
 - **M4 — complete:** run all authorization-free validation, open the draft PR,
   and fix every failure without reading AO-0006 private state.
-- **M5 — active:** freeze the exact diagnostic execution commit, commit one
+- **M5 — complete:** freeze the exact diagnostic execution commit, commit one
   generic owner-gate manifest, validate it without authorizing, render the
   schema-valid `owner-gate-required` handoff, and stop exactly once.
-- **M6 — pending after authorization:** verify authorization and retained-state
+- **M6 — complete:** verify authorization and retained-state
   integrity, execute the diagnostic once, write the detailed private record
   outside Git, close private access, and publish only a redacted diagnosis.
-- **M7 — pending after M6:** reproduce the exact failing shape synthetically,
+- **M7 — complete:** reproduce the exact failing shape synthetically,
   implement the minimum repair, preserve the regression, and complete the
   live-mode conformance and independent verification.
-- **M8 — pending after M7:** select one permitted outcome; reconcile public-safe
+- **M8 — active:** select one permitted outcome; reconcile public-safe
   records, repeat the decision-delta audit, validate, ready and merge the PR,
   verify CI/Pages and named live routes, close the issue, and synchronize
   `main`.
@@ -188,10 +194,11 @@ scientific evidence.
 - [x] Open draft PR #203 after the registration skeleton and focused tests
   pass.
 - [x] Complete the full authorization-free validation wall.
-- [ ] Commit the exact diagnostic execution freeze.
-- [ ] Commit and validate the generic owner-gate manifest.
-- [ ] Render the schema-valid owner-gate-required handoff and stop.
-- [ ] After exact authorization, execute the diagnostic once and close private
+- [x] Commit exact diagnostic execution freeze
+  `55a7815c77319e7845238126c6045f2e80026165`.
+- [x] Commit and validate the generic owner-gate manifest.
+- [x] Render the schema-valid owner-gate-required handoff and stop.
+- [x] After exact authorization, execute the diagnostic once and close private
   access.
 - [ ] Complete prospective repair, validation, closeout, merge, deployment,
   issue closure, and main synchronization.
@@ -245,6 +252,25 @@ scientific evidence.
   repository formatting, lint, full type checking, 580 tests, claims, 51 run
   manifests, editorial and publication audits, and offline compendium
   verification. The expected pre-repair live-mode failure remains intact.
+- `2026-07-28T05:51:00Z`: the first live gate validation failed closed because
+  the manifest contained an incorrectly expanded full execution SHA. No
+  authorization or private access occurred. Correct the binding in a new
+  commit, preserve the failed validation in the handoff, and rerun.
+- `2026-07-28T05:53:00Z`: the corrected manifest passes live validation from
+  the final handoff head with the exact challenge
+  `AUTHORIZE AOG-AO-0007-AO0006-CUSTODY-DIAGNOSTIC 55a7815`.
+- `2026-07-28T12:40:00Z`: the exact generic gate succeeds, then the diagnostic
+  runs once and closes private-read authority. Output lock, inventory, eight
+  locked objects, execution identity, append-only logs, stage state, redacted
+  summary, and before/after equality pass. The exact cause is
+  `v2-campaign-absent-from-private-generation-permit-allowlist`; no secret
+  value, credential, private path, provider call, spend, or retained mutation
+  occurs.
+- `2026-07-28T12:43:01Z`: the prospective repair admits only the already frozen
+  v2 campaign, adds atomic exclusive creation for new custody objects, and
+  requires existing sealed objects to decrypt to the requested plaintext.
+  The 50-task production-path synthetic conformance passes all twenty classes,
+  the independent AES-256-GCM verifier, and all six negative classes.
 
 ## Decision log
 
@@ -271,6 +297,13 @@ scientific evidence.
 - `2026-07-28T05:44:52Z`: open draft PR #203 from the sole substantive branch.
   Do not add its observed number to the already fixed task contract; bind the
   live PR identity in the generic owner-gate manifest and handoff instead.
+- `2026-07-28T12:40:00Z`: accept the diagnostic classification as the exact
+  engineering cause within authorized evidence, permanently close AO-0007
+  private access, and perform no second retained-state read.
+- `2026-07-28T12:43:01Z`: select
+  `custody-root-cause-repaired-live-conformance-pass`. Preserve AO-0006
+  unchanged; apply repair only prospectively and do not allocate a future
+  private-pilot identity.
 
 ## Validation strategy
 

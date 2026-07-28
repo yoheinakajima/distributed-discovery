@@ -361,19 +361,17 @@ def test_public_redaction_rejects_paths_and_secret_fields() -> None:
         validate_public_diagnostic({"detail": "/Users/example/private"})
 
 
-def test_pre_repair_live_mode_conformance_preserves_failure() -> None:
+def test_repaired_live_mode_conformance_preserves_failure_regression() -> None:
     framework = audit_conformance_framework(REPO)
-    assert framework["status"] == "pass-with-registered-pre-repair-gaps"
+    assert framework["status"] == "pass"
     gaps = framework["registered_pre_repair_gaps"]
     assert isinstance(gaps, Sequence)
-    assert sorted(str(item) for item in gaps) == [
-        "atomic_exclusive_create",
-        "duplicate_mismatch",
-    ]
+    assert list(gaps) == []
     result = run_live_mode_custody_conformance(REPO)
-    assert result["status"] == "expected-pre-repair-failure"
-    assert result["failed_stage"] == "private-task-generation"
+    assert result["status"] == "pass"
+    assert result["failed_stage"] is None
     coverage = result["coverage"]
     assert isinstance(coverage, Mapping)
     assert set(coverage) == set(REQUIRED_COVERAGE)
+    assert set(coverage.values()) == {"pass"}
     assert result["cleanup"] == "pass"
