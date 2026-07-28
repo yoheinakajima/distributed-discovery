@@ -1,0 +1,76 @@
+schema_version: agent-ops-owner-gate-v1
+kind: owner-gate
+synthetic: false
+gate_id: AOG-AO-0007-AO0006-CUSTODY-DIAGNOSTIC
+task_contract:
+  path: tasks/treasurebench-ao0006-custody-repair.yml
+  sha256: sha256:0de5e383da51e747e8847796ff19da560ba9189f963707952a0244e6fa8c5ccc
+issue: 202
+pull_request:
+  number: 203
+  expected_state: OPEN
+  head_sha: 55a7815c76823910d443776222764ceee5e36c22
+branch: codex/treasurebench-ao0006-custody-repair
+commit: 55a7815c76823910d443776222764ceee5e36c22
+tree_hashes:
+  Makefile: sha256:322a4bc1cb28458bfcf17bd9e0dcdb2f838db47b5ffcccee47f51d23becd236f
+  plans/TREASUREBENCH_AO0006_CUSTODY_REPAIR.md: sha256:745072c28babbdaffa5c4cc35bec0e1d3ce06b3c86ddc8e708fe73e6700588e6
+  reports/benchmark/treasurebench-ao0006-public-custody-stack-audit.md: sha256:cae7466f3114575a086a875a46aae4d67bbac9768f6f44001ad04105aade4a2e
+  scripts/audit_treasurebench_custody_repair.py: sha256:8d2778933e8f2e6098dce287e7b79d88662d06b9699114d3d9deb6a54eaa954b
+  src/distributed_discovery/agent_ops: sha256:84a44c60d7c7a6a159c8beb5cfb8bc25b19bcae8992c1781fa396225d9f11376
+  src/distributed_discovery/benchmark/agents_v1/cli.py: sha256:5c40dd3e52acfd0fe3768fedd55c92cafbaf6edaa8d47f55f9f58c7d26ea97bc
+  src/distributed_discovery/benchmark/agents_v1/custody_conformance.py: sha256:9d53c2d77780fa80deb2ec1c644dea47a3d6b571b5e2b0d53cc6ce1019e3826f
+  src/distributed_discovery/benchmark/agents_v1/custody_repair.py: sha256:8220557f7f9b77fbe3bb1391eb39d0f49001f8d368389ca48e8fe84a4b18dc61
+  src/distributed_discovery/benchmark/agents_v1/fresh_pilot_v2.py: sha256:fa91c35cac2d062630ebed9f1871cb95c0c61bfc11d6be929e98fdd480207a6e
+  src/distributed_discovery/benchmark/agents_v1/fresh_pilot_v2_live.py: sha256:a0f30604896c475a6b2da3d5946b6bd01be9bc8e8e009e650eb4f10897942fe7
+  src/distributed_discovery/benchmark/agents_v1/generation.py: sha256:bbf41ffff2afb25b6cd21f62d83bd4e350795a83eb7e0ce58681ce08aa715085
+  src/distributed_discovery/benchmark/agents_v1/pilot.py: sha256:4956805968b4a759a3d50e4315dbabf460a8ddfe033f3a8cdb92a5569fd7ce1b
+  tasks/treasurebench-ao0006-custody-repair.yml: sha256:0de5e383da51e747e8847796ff19da560ba9189f963707952a0244e6fa8c5ccc
+  tests/test_treasurebench_custody_repair.py: sha256:c76870fc7a76f91ac04ad2bb7464cb74c2e4801a4124fe3b987cfaa64e51d17c
+purpose: Authorize one exact one-use read-only adjudication of the retained AO-0006 custody-creation failure, followed only by synthetic prospective repair, public-safe closeout, and normal repository completion.
+irreversible_actions: []
+private_actions:
+  - permission: private_data_permissions.read
+    description: Read once only the exact AO-0006 metadata, encrypted or redacted custody-failure allowlist, and minimum surrounding operational events after output-lock and inventory verification; never read secret values, task or answer content, raw provider output, credentials, private paths, or unrelated retained objects.
+external_actions:
+  - permission: permissions.repository_write
+    description: After the one-use diagnostic closes private access, implement and document only the minimum prospective repair, synthetic regressions, redacted diagnosis, public-safe closeout, and validation records.
+  - permission: permissions.git_branch_commit
+    description: Commit and push only scoped AO-0007 public-safe repair and closeout changes on the exact task branch.
+  - permission: permissions.github_issue_pr
+    description: Update issue 202 and pull request 203 only with public-safe progress, validation, and closeout information.
+  - permission: permissions.merge_after_checks
+    description: Mark pull request 203 ready and merge it only after the full required checks pass and the permitted AO-0007 outcome is reconciled.
+  - permission: permissions.ci_pages
+    description: Observe normal CI and Pages, verify named public routes after merge, and make no release or submission.
+  - permission: external_action_permissions.github_mutation
+    description: Perform only the scoped GitHub pull-request, merge, issue-close, and branch-completion mutations authorized above.
+cumulative_state: {currency: USD, spend: "0", calls: 0, category_spend: {}}
+hard_caps: {currency: USD, spend: "0", calls: 0, category_spend: {}}
+remaining_caps: {currency: USD, spend: "0", calls: 0, category_spend: {}}
+owner_confirmation_statements:
+  - I authorize only AO-0007 at execution commit 55a7815c76823910d443776222764ceee5e36c22, issue 202, draft pull request 203, the exact branch, protected tree, one-use read scope, zero caps, prohibitions, and expiry in this manifest.
+  - I authorize one bounded read-only adjudication of the immutable AO-0006 custody failure and understand that the command writes its detailed diagnosis only outside Git while emitting only a redacted public-safe result.
+  - I understand the diagnostic creates its one-use marker before retained-state access, permanently closes AO-0007 private-read authority after that invocation, mutates no retained AO-0006 state, and permits no second private read.
+  - I authorize the subsequent minimum prospective repair and synthetic offline validation, public-safe closeout, pull-request readiness and merge after checks, normal CI and Pages observation, named live-route verification, issue closure, and synchronized main without another routine checkpoint.
+  - I understand this authorization permits no provider call, credential read, spend, new real private campaign material, AO-0006 reuse or unsealing, v3 identity allocation, scientific mutation, release, or submission.
+explicit_prohibitions:
+  - provider-calls-outside-manifest
+  - credential-read-outside-manifest
+  - unauthorized-private-access
+  - scientific-mutation-outside-contract
+  - cap-increase
+  - consequential-action-by-gate-engine
+  - ao-0006-retained-state-mutation
+  - second-ao-0006-private-read
+  - seed-key-task-answer-provider-output-or-credential-disclosure
+  - unrelated-retained-object-access
+  - ao-0006-reopen-retry-reuse-rescore-splice-delete-reauthorize-or-unseal
+  - new-private-pilot-registration-or-execution
+  - v3-identity-allocation
+  - provider-call-credential-read-spend-or-new-real-private-material
+  - dd-023-claim-run-proof-evidence-paper-ranking-release-or-submission
+expires_at_utc: "2026-08-04T05:49:03Z"
+authorization_output_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0007-AO0006-CUSTODY-DIAGNOSTIC.yml
+next_milestone: M6 one-use retained-state adjudication, permanent private-access closure, and redacted public diagnosis; then M7 synthetic prospective repair and conformance.
+generated_resume_message: "Resume AO-0007 in this same Codex task from plans/TREASUREBENCH_AO0006_CUSTODY_REPAIR.md using only reports/agent-ops/AO-0007-treasurebench-ao0006-custody-diagnostic-owner-gate.yml and its exact generic authorization. Revalidate the authorization, execution-commit ancestry, current draft-PR head, fixed contract, all protected tree hashes, exact zero caps, prohibitions, and retained output-lock and inventory boundary; then run only make treasurebench-custody-read-only-diagnostic once. On a public-safe pass, permanently close private access, reproduce the exact cause synthetically, implement only the minimum prospective repair, require all twenty live-mode custody conformance classes and corruptions to pass, complete the public-safe AO-0007 closeout, ready and merge PR 203 after checks, verify normal CI/Pages and named public routes, close issue 202, and synchronize main. Stop on any mismatch, inconclusive diagnosis, retained-state change, extra read requirement, provider or credential need, scientific change, release, or submission."
