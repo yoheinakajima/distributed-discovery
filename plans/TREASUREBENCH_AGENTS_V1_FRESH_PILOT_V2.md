@@ -61,7 +61,8 @@ Registration audit at `2026-07-28T01:00:04Z`:
   accessed or created;
 - the five unrelated untracked preservation files remain excluded.
 
-Exactly one milestone is active: **M6 generic owner gate and typed handoff**.
+Exactly one milestone is active: **M7 future owner-authorized staged live
+execution**. It is blocked until the exact generic owner authorization exists.
 M0 passed at `2026-07-28T01:11:20Z`: the task contract is schema-valid, the
 provider and budget records parse and carry the exact reserved identities,
 the ExecPlan sections are ordered with one active milestone, all recorded
@@ -92,6 +93,13 @@ M5 passed at `2026-07-28T02:06:21Z`: clean pushed commit
 verification, and the full v2 rehearsal; the remote task branch matched
 exactly, and the 21-path execution tree plus fixed-contract digest were
 recorded without changing an execution-sensitive path.
+M6 passed at `2026-07-28T02:15:51Z`: committed manifest head
+`5b27fd060338f8d62ec715d2e21e48850915087f` binds the exact M5 execution
+commit, contract, 21-path tree, issue, open draft PR, branch, zero cumulative
+state, actions, caps, prohibitions, expiry, and resume message. The generic
+Agent Operations validator accepted the live local, remote, and connected
+GitHub observations without creating an authorization or performing a
+consequential action.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -179,11 +187,11 @@ conversation. Repeat this audit at closeout.
   PR creation.
 - **M5 — complete:** exact execution freeze commit and matching remote draft-PR
   head.
-- **M6 — active:** committed generic owner-gate manifest, live gate
+- **M6 — complete:** committed generic owner-gate manifest, live gate
   validation without authorization creation, typed handoff, and stop.
-- **M7 — pending future owner gate:** only a later exact owner authorization
-  may permit credentials, real private generation, custody, calls, spend,
-  output lock, unsealing, and deterministic redacted closeout.
+- **M7 — active, blocked by future owner gate:** only a later exact owner
+  authorization may permit credentials, real private generation, custody,
+  calls, spend, output lock, unsealing, and deterministic redacted closeout.
 
 ## Progress checklist
 
@@ -204,9 +212,10 @@ conversation. Repeat this audit at closeout.
 - [x] Complete M3 full synthetic rehearsal and 69 corruptions.
 - [x] Complete M4 draft PR and full private-evaluation acceptance.
 - [x] Commit, push, and revalidate the clean M5 execution-freeze candidate.
-- [ ] Commit and validate the generic owner gate and typed handoff.
-- [ ] Complete M4 and open the draft PR.
-- [ ] Complete M5 and M6 and stop at the exact owner gate.
+- [x] Commit and validate the generic owner gate and typed handoff.
+- [x] Complete M5 and M6 and stop at the exact owner gate.
+- [ ] After a later exact owner authorization, execute M7 one staged
+  transition at a time.
 
 ## Discoveries and surprises
 
@@ -283,6 +292,11 @@ conversation. Repeat this audit at closeout.
   `10aa645d6687816b943625dbcdf1801968287b41` after a clean committed rerun of
   `make verify treasurebench-fresh-pilot-v2-rehearsal`; remote branch equality,
   the contract digest, and all 21 execution-tree hashes pass.
+- `2026-07-28T02:15:51Z`: commit and push the exact generic gate at
+  `5b27fd060338f8d62ec715d2e21e48850915087f`; observe draft PR #201 open and
+  pointing to the same head; validate the fixed execution commit as an
+  ancestor and all 21 protected path hashes through the generic engine; create
+  no authorization.
 
 ## Validation strategy
 
@@ -320,29 +334,29 @@ At M0: issue #200, branch
 `benchmark/treasurebench-agents-v1-fresh-pilot-v2`, fixed contract
 `tasks/treasurebench-agents-v1-fresh-pilot-v2.yml`, and this living ExecPlan.
 M1 through M3 produced versioned v2 public contracts, audit records,
-implementation, tests, and the full rehearsal/corruption artifacts. Later
-milestones will append one draft PR, full acceptance evidence, the exact
-execution freeze, one generic owner-gate manifest, and a typed
-owner-gate-required handoff.
+implementation, tests, and the full rehearsal/corruption artifacts. M4 through
+M6 added draft PR #201, full acceptance evidence, the exact execution freeze,
+one generic owner-gate manifest, and this typed owner-gate-required handoff.
 
 ## Blockers
 
 No implementation blocker is known. Consequential execution is intentionally
-blocked until M6 passes and the owner later creates the exact local
-authorization for the committed generic gate.
+blocked until the owner later creates the exact local authorization for
+`reports/agent-ops/AO-0006-treasurebench-fresh-pilot-v2-owner-gate.yml`.
 
 ## Recovery and restart instructions
 
 Inspect `git status --short --branch`; preserve the five unrelated untracked
-files; read root and scoped instructions, this fixed contract, this plan, issue
-#200, and the current draft PR once created. Resume the first unchecked item
-under the sole active milestone. Do not read `.env.txt`, any prior private
-state, or any authorization and do not create real custody or call a provider
-before the exact future gate.
+files; read root and scoped instructions, the fixed contract, this plan, issue
+#200, draft PR #201, the committed generic gate, and its exact authorization.
+Revalidate the execution commit, draft-PR ancestry, contract, 21-path tree,
+identities, zero cumulative state, and caps before resuming M7. Do not read
+`.env.txt` or any prior private state and do not create real custody or call a
+provider before the exact future gate.
 
 ## Outcome and retrospective
 
-Registration is committed at M0 and M1 is active. Update after every material
-discovery, decision, failed check, completed milestone, execution freeze, gate
-validation, or handoff. Do not mark the task complete at the owner-gate
-checkpoint.
+AO-0006 is registered, prepared, rehearsed, frozen, and stopped at its exact
+generic owner-gate checkpoint. The task is not complete: M7 is active but
+blocked by the deliberately absent owner authorization. Calls, spend, private
+state, and scientific state remain zero or unchanged.
