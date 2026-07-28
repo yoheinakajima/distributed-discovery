@@ -1,0 +1,24 @@
+schema_version: agent-ops-handoff-v1
+status: owner-gate-required
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0007
+issue: 202
+pull_request: 203
+branch: codex/treasurebench-ao0006-custody-repair
+base_main: 2df92d57c5591a65214a187e35ba7982b329dffa
+head_merge_sha: d85baf015e139fca221fedeea65ec3d70baa67b9
+task_contract: tasks/treasurebench-ao0006-custody-repair.yml
+exec_plan: plans/TREASUREBENCH_AO0006_CUSTODY_REPAIR.md
+last_completed_gate: Exact AO-0007 diagnostic execution commit 55a7815c77319e7845238126c6045f2e80026165 and corrected committed generic owner-gate manifest head d85baf015e139fca221fedeea65ec3d70baa67b9 passed live authorization-free contract, ancestry, 14-path protected-tree, zero-call, zero-spend, permission, prohibition, issue, branch, remote-head, and draft-PR validation without creating an authorization.
+next_gate: "Resume AO-0007 in this same Codex task from plans/TREASUREBENCH_AO0006_CUSTODY_REPAIR.md using only reports/agent-ops/AO-0007-treasurebench-ao0006-custody-diagnostic-owner-gate.yml and its exact generic authorization. Revalidate the authorization, execution-commit ancestry, current draft-PR head, fixed contract, all protected tree hashes, exact zero caps, prohibitions, and retained output-lock and inventory boundary; then run only make treasurebench-custody-read-only-diagnostic once. On a public-safe pass, permanently close private access, reproduce the exact cause synthetically, implement only the minimum prospective repair, require all twenty live-mode custody conformance classes and corruptions to pass, complete the public-safe AO-0007 closeout, ready and merge PR 203 after checks, verify normal CI/Pages and named public routes, close issue 202, and synchronize main. Stop on any mismatch, inconclusive diagnosis, retained-state change, extra read requirement, provider or credential need, scientific change, release, or submission."
+decision: Stop before any retained AO-0006 read or detailed private diagnostic until the exact AO-0007 generic owner authorization exists; make no provider call, credential read, spend, retained-state mutation, new real private material, or scientific change.
+external_calls_cost: {calls: 0, cost: "0", currency: USD}
+private_state_change: none; no authorization, credential, private path, retained AO-0006 object, seed value, key value, task, answer, raw provider output, or unrelated private object was read, written, generated, disclosed, unsealed, or mutated.
+scientific_state_change: none; no study, claim, run, evidence, proof, paper result, ranking, release, submission, or base-campaign state was created or changed.
+validation:
+  profile: private-evaluation-ao0006-custody-diagnostic-owner-gate
+  result: pass-7-focused-tests-580-full-tests-ruff-332-files-mypy-197-source-files-51-run-manifests-20-class-live-mode-framework-6-corruption-classes-14-path-execution-freeze-live-generic-gate-validation-no-authorization; one initial wrong-expanded-execution-sha gate validation failed closed and was corrected in a new commit.
+owner_action: Review the fixed AO-0007 contract, exact one-use read scope, zero caps, prohibitions, execution freeze, and committed generic gate; then run the exact noninteractive owner-gate command. Only after it succeeds may this same task run the exact diagnostic command once.
+exact_next_command: "make owner-gate GATE=reports/agent-ops/AO-0007-treasurebench-ao0006-custody-diagnostic-owner-gate.yml OWNER_GATE_CHALLENGE='AUTHORIZE AOG-AO-0007-AO0006-CUSTODY-DIAGNOSTIC 55a7815'"
+exact_next_file: reports/agent-ops/AO-0007-treasurebench-ao0006-custody-diagnostic-owner-gate.yml
+blocker: The exact AO-0007 generic owner authorization is required and absent by design; the one-use read-only diagnostic and all subsequent repair and closeout work remain stopped.

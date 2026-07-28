@@ -148,6 +148,27 @@ base-campaign authority is created. The v2 campaign and batch are permanently
 quarantined and cannot be retried, repaired, reopened, reused, rescored,
 spliced, executed, or reauthorized.
 
+## AO-0007 custody diagnosis and prospective repair
+
+Issue #202 and PR #203 implement the separately authorized AO-0007 engineering
+follow-up. Its one-use diagnostic verified the AO-0006 output lock, exact
+inventory, eight locked objects, identity, append-only logs, stage state,
+redacted summary, and before/after state equality. It read no secret value,
+task, answer, raw provider output, credential, private host path, or unrelated
+object, and permanently closed private access after the invocation.
+
+The exact cause was the v2 campaign's absence from the fail-closed private-task
+generation permit allowlist. The repair is prospective only: it admits the
+already frozen v2 campaign, adds atomic exclusive creation for new custody
+objects, and requires resumed ciphertext to decrypt to the requested
+plaintext. The production-path synthetic conformance passes all twenty
+registered custody classes, an independent AES-256-GCM verifier, and six
+negative classes with deterministic cleanup.
+
+AO-0006 remains permanently quarantined and unchanged. This is engineering
+diagnosis and offline conformance, not scientific or model-performance
+evidence. No new pilot or v3 identity is registered.
+
 ## Registered evaluation campaign
 
 Issue #173 registers, but does not authorize or execute, the evaluation

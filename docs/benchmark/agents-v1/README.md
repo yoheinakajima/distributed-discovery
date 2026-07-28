@@ -5,10 +5,11 @@ the frozen `discoverybench-agents-v1` instrument and schema identifiers remain
 unchanged for compatibility; the formal suite rename creates no protocol or
 content version.
 
-Status: both sealed engineering pilots permanently quarantined; redacted
-instrument-failure adjudication complete; instrument repaired; public
-provider-schema and semantic-contract engineering conformance passed under
-AO-0004 R4; any fresh pilot remains separately registered and gated.
+Status: all three sealed engineering pilots permanently quarantined; redacted
+instrument and custody adjudications complete; production custody path
+prospectively repaired; public provider-schema, semantic-contract, and
+live-mode-equivalent custody engineering conformance passed; any future fresh
+pilot remains separately registered and gated.
 
 DiscoveryBench Agents v1 measures how declared software-agent team
 architectures convert dispersed synthetic evidence into structured search
@@ -68,10 +69,23 @@ engineering conformance, not scientific evidence, model-performance evidence,
 peer review, external validation, or comparative performance. Private and
 scientific state did not change.
 
-The next substantive candidate is TreasureBench Agents v1 wholly fresh sealed
-repair-confirmation pilot registration. It is not registered or executed here
-and requires wholly new campaign, batch, CSPRNG seed, private tasks, answers,
-keys, ciphertexts, custody, and separate owner authorization.
+That successor was separately registered as AO-0006 and permanently
+quarantined after its two public canaries passed but custody creation failed.
+
+## AO-0007 custody-path conformance
+
+AO-0007's one-use diagnostic verified the immutable AO-0006 retained boundary
+and identified the exact failure: the v2 campaign was missing from the
+fail-closed private-generation permit allowlist. It read no secret value,
+credential, task, answer, raw provider output, private host path, or unrelated
+object and permanently closed private access.
+
+The prospective repair admits only the already frozen v2 campaign, creates new
+custody objects atomically and exclusively, and requires resumed sealed objects
+to decrypt to the requested plaintext. All twenty production-path synthetic
+custody classes, independent AES-256-GCM verification, six negative classes,
+and deterministic cleanup pass. AO-0006 remains quarantined. Any future pilot
+requires wholly new identity and separate explicit owner authority.
 
 ## Registered package
 

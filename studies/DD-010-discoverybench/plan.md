@@ -146,3 +146,18 @@ private pairing, and metric-range checks are not applicable to the unstarted
 private matrix. This is a failed DD-010 engineering batch, not scientific or
 model-performance evidence. No retry, repair-in-place, replacement, splice,
 rescore, ranking, claim, paper result, release, or base campaign is authorized.
+
+## AO-0007 custody-path closeout
+
+AO-0007 separately authorized one bounded retained-state diagnostic. It ran
+once, verified the complete declared AO-0006 boundary without mutation, and
+identified the exact failure at private task generation: the v2 campaign was
+absent from the campaign-permit allowlist. Private-read authority then closed
+permanently.
+
+Prospective code now admits that already frozen campaign and enforces atomic
+exclusive custody creation plus plaintext equality on sealed-object resume.
+The production-path live-mode-equivalent command passes all twenty registered
+classes with synthetic nonsecret content, independent AES-256-GCM
+verification, six negative classes, and deterministic cleanup. AO-0006 itself
+remains immutable and no separate private pilot is registered or authorized.

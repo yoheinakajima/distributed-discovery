@@ -1,5 +1,25 @@
 # Current program state
 
+_TreasureBench AO-0006 custody diagnosis and prospective repair, 2026-07-28:_
+AO-0007 executed its exact owner-authorized retained-state diagnostic once.
+The output lock, exact inventory, eight locked objects, execution identity,
+append-only logs, provider-stage state, redacted summary, and complete
+before/after snapshots verified. No secret value, task, answer, raw provider
+output, credential, private host path, or unrelated object was read; no
+retained state was mutated. Private-read authority is permanently closed.
+
+The exact engineering cause was the v2 campaign's absence from the
+fail-closed private-generation permit allowlist. Prospective code now admits
+only that already frozen campaign, creates new custody objects atomically and
+exclusively, and verifies resumed ciphertext decrypts to the requested
+plaintext. All twenty live-mode-equivalent synthetic custody classes, the
+independent AES-256-GCM verifier, and six negative classes pass.
+
+Decision `custody-root-cause-repaired-live-conformance-pass` does not change
+AO-0006's quarantine or any scientific inventory. It registers no new private
+pilot or v3 identity and creates no performance result, ranking, claim, run,
+paper result, release, submission, or base-campaign authority.
+
 _TreasureBench Agents v1 fresh repair-confirmation v2 quarantine, 2026-07-28:_
 AO-0006 campaign `treasurebench-agents-v1-repair-confirmation-v2`, batch
 `tb-agents-v1-repair-confirmation-v2-b01`, ran from frozen execution commit

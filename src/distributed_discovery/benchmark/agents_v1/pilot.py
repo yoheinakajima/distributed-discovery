@@ -356,6 +356,25 @@ def atomic_private_write(path: Path, payload: bytes) -> None:
             temp_path.unlink()
 
 
+def atomic_private_create(path: Path, payload: bytes) -> None:
+    """Atomically create one mode-0600 object without replacing any target."""
+
+    _secure_mkdir(path.parent)
+    descriptor, temporary = tempfile.mkstemp(prefix=f".{path.name}.", dir=path.parent)
+    temp_path = Path(temporary)
+    try:
+        os.fchmod(descriptor, 0o600)
+        with os.fdopen(descriptor, "wb") as stream:
+            stream.write(payload)
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.link(temp_path, path, follow_symlinks=False)
+        path.chmod(0o600)
+    finally:
+        if temp_path.exists():
+            temp_path.unlink()
+
+
 PRIVATE_OBJECTS = (
     "seed",
     "seed-commitment-input",
@@ -422,7 +441,7 @@ def create_real_custody_material(root: Path) -> Mapping[str, bytes]:
         "answer_key": secrets.token_bytes(32),
     }
     for name, value in material.items():
-        atomic_private_write(root / f"{name.replace('_', '-')}.bin", value)
+        atomic_private_create(root / f"{name.replace('_', '-')}.bin", value)
     return material
 
 

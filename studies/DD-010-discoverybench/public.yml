@@ -16,6 +16,8 @@ public_artifacts:
     description: Redacted fresh repair-confirmation public-canary failure and permanent quarantine
   - path: reports/benchmark/treasurebench-agents-v1-fresh-pilot-v2-closeout.md
     description: Redacted fresh v2 custody-stage failure and permanent quarantine after two successful public canaries
+  - path: reports/benchmark/treasurebench-ao0006-custody-diagnostic-closeout.md
+    description: Redacted one-use custody diagnosis, prospective repair, independent verification, and complete synthetic live-mode conformance; not scientific or performance evidence
   - path: reports/agent-ops/AO-0004-r4-public-provider-canary-outcome.yml
     description: Public provider-schema and semantic-contract engineering conformance outcome; not scientific or model-performance evidence
   - path: studies/DD-010-discoverybench/report.md

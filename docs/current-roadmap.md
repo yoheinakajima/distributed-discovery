@@ -1,4 +1,22 @@
-# Current roadmap — fresh repair-confirmation v2 quarantined
+# Current roadmap — custody path prospectively repaired
+
+AO-0007 completed one owner-authorized, read-only adjudication of AO-0006's
+custody failure. The retained boundary verified without mutation, and the
+exact cause was the v2 campaign's absence from the fail-closed private-task
+generation permit allowlist. Private access is permanently closed.
+
+The prospective repair admits the already frozen v2 campaign, adds atomic
+exclusive creation for new custody objects, and requires plaintext equality
+when resuming sealed objects. The production-path synthetic command passes all
+twenty registered custody classes, independent AES-256-GCM verification, six
+negative classes, and deterministic cleanup.
+
+AO-0006 remains permanently quarantined and cannot be retried, reopened,
+reused, repaired in place, rescored, spliced, executed, unsealed, or
+reauthorized. No future private pilot or v3 identity is selected here; either
+requires a separate explicit owner decision and wholly new authority.
+
+## Fresh repair-confirmation v2 quarantine
 
 AO-0006 registered and executed the wholly fresh v2 candidate at campaign
 `treasurebench-agents-v1-repair-confirmation-v2`, batch

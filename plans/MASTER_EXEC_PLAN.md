@@ -1,5 +1,49 @@
 # Master execution plan
 
+## Completed continuation — AO-0007 AO-0006 custody adjudication and prospective repair (2026-07-28)
+
+Issue #202, branch `codex/treasurebench-ao0006-custody-repair`, fixed contract
+`tasks/treasurebench-ao0006-custody-repair.yml`, and living ExecPlan
+[`TREASUREBENCH_AO0006_CUSTODY_REPAIR.md`](TREASUREBENCH_AO0006_CUSTODY_REPAIR.md)
+own the sole substantive lane as AO-0007.
+
+AO-0007 preserves campaign
+`treasurebench-agents-v1-repair-confirmation-v2`, batch
+`tb-agents-v1-repair-confirmation-v2-b01`, execution commit
+`d210b0653677859c79a1fb87d871aaf45f4a81d4`, terminal decision
+`fresh-pilot-v2-quarantined-engineering-only`, two successful public canaries,
+1,349 input tokens, 253 output tokens, USD 0.0076095 total cost, zero private
+architecture/model runs, no task or answer ciphertext, no custody manifest,
+no unsealing, and output lock
+`sha256:127a9c796459c7627f6fd90b92ef1587ad0f6b1910b4ff255c2ceb976f3ab25f`.
+Nothing in AO-0006 may be reopened, retried, executed, reused, rescored,
+spliced, mutated, deleted, unsealed, or reauthorized.
+
+The exact-owner-gated read-only diagnostic ran once and verified the output
+lock, inventory, eight locked objects, append-only logs, allowlisted record
+selection, no-mutation state equality, and redaction. It read no seed or key
+value, task text, answer, raw provider output, credential, private host path,
+or unrelated object. The exact failure was the v2 campaign's absence from the
+fail-closed private-generation permit allowlist. Private-read authority is
+permanently closed.
+
+The prospective repair admits only the already frozen v2 campaign, adds atomic
+exclusive creation, and requires resumed sealed objects to decrypt to the
+requested plaintext. The conformance command exercises production custody
+functions and ordering through seed and separate-key generation, synthetic
+material generation, independent AES-256-GCM, unique nonces, domain-separated
+associated data, exclusive atomic persistence, `0700`/`0600` modes,
+commitments, ciphertexts, manifest creation, reload and exact verification,
+wrong-key and corruption rejection, interrupted writes, symlinks,
+duplicates, leakage checks, and deterministic cleanup; all twenty classes and
+the independent verifier pass. Provider calls,
+credential reads, spend, new real private material, scientific mutation, and
+new-pilot registration remain zero. Decision
+`custody-root-cause-repaired-live-conformance-pass` is engineering-only and
+creates no scientific or model-performance evidence. Any future private pilot
+registration requires a separate explicit owner decision and wholly new
+identity.
+
 ## Active closeout — AO-0006 fresh repair-confirmation pilot v2 quarantined (2026-07-28)
 
 Issue #200, branch `benchmark/treasurebench-agents-v1-fresh-pilot-v2`,
