@@ -1,0 +1,67 @@
+schema_version: treasurebench-fixed-batch-causal-taxonomy-v1
+task_id: AO-0009
+source_task_id: AO-0008
+classification: public-engineering-taxonomy-not-a-diagnosis
+precedence:
+  - retained-integrity
+  - local-persistence
+  - provider-terminal
+  - returned-output
+  - evaluated-agent-protocol
+  - orchestration-completion
+  - post-batch-verification
+  - bounded-evidence-unknown
+classes:
+  - id: provider-transport-terminal
+    actor: provider
+    safe_evidence: retryable transport error remained terminal after the registered two-attempt transport policy
+  - id: provider-http-terminal
+    actor: provider
+    safe_evidence: nonretryable provider HTTP or service error terminated the selected logical call
+  - id: schema-repair-exhausted
+    actor: evaluated-agent-output
+    safe_evidence: the registered one-time schema repair returned another structurally invalid output
+  - id: returned-output-parse-failure
+    actor: evaluated-agent-output
+    safe_evidence: a successful provider response could not be parsed as the registered action envelope
+  - id: protocol-contract-nonconformance
+    actor: evaluated-agent
+    safe_evidence: a valid parsed response violated a registered identity information action source tool round or final-record rule
+  - id: final-action-cardinality-failure
+    actor: evaluated-agent
+    safe_evidence: a final-required response had zero or more than one final action
+  - id: trace-encryption-or-persistence-failure
+    actor: local-runtime
+    safe_evidence: a completed pairing lacked its uniquely indexed encrypted trace or the selected trace envelope failed authenticated verification
+  - id: response-ledger-append-failure
+    actor: local-runtime
+    safe_evidence: an encrypted provider response and its append-only provider-call record were not in one-to-one correspondence
+  - id: duplicate-or-conflicting-call-key
+    actor: local-runtime
+    safe_evidence: one logical call and attempt key mapped to duplicate conflicting ledger records or encrypted objects
+  - id: cost-or-token-cap-guard
+    actor: registered-policy
+    safe_evidence: the next attempt was rejected by a registered total provider call input output or spend cap
+  - id: pairing-completeness-failure
+    actor: local-orchestration
+    safe_evidence: fewer or more than the exact 500 private pairing traces existed or a pairing identity was duplicated or absent
+  - id: state-transition-or-completion-marker-failure
+    actor: local-bookkeeping
+    safe_evidence: all 500 unique pairing traces and required outputs existed but the fixed-full-batch completion marker was absent after a noncausal bookkeeping exception
+  - id: post-batch-verification-failure
+    actor: local-verification
+    safe_evidence: the fixed batch and completion marker existed but a separately registered structural or acceptance verification failed
+  - id: unknown-within-retained-evidence
+    actor: undetermined
+    safe_evidence: the exact cause cannot be established from the frozen one-call and bounded-neighbor allowlist
+integrity_stop:
+  id: retained-state-integrity-mismatch-stop
+  safe_evidence: output-lock self-commitment inventory ledger chain selected-object authentication or before-and-after immutability check failed
+prohibitions:
+  - call-count-difference-as-causal-proof
+  - provider-failure-normalized-as-code-defect
+  - agent-output-silently-repaired-or-credited
+  - bulk-unseal
+  - second-private-read
+  - performance-inference
+  - automatic-v4-registration

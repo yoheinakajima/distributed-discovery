@@ -40,7 +40,7 @@ Five unrelated untracked preservation files pre-exist and are outside scope:
 They must remain untouched. Provider calls, credential reads, spend, retained
 private reads, new real private material, scientific mutation, paper action,
 release, and submission are all zero. Exactly one milestone is active:
-**M1 — public runtime and failure-path audit**.
+**M4 — focused and complete authorization-free validation plus draft PR**.
 
 The AO-0008 boundary is permanent: task `AO-0008`, campaign
 `treasurebench-agents-v1-repair-confirmation-v3`, batch
@@ -144,14 +144,14 @@ Repeat this audit at closeout.
 
 - **M0 — complete:** reconcile program memory and live GitHub/repository state;
   register the issue, branch, fixed contract, ExecPlan, and PM-0037 route.
-- **M1 — active:** complete the public runtime, control-flow, ledger,
+- **M1 — complete:** complete the public runtime, control-flow, ledger,
   encrypted-index, pairing, state, failure, quarantine, and lock audit.
-- **M2 — pending:** freeze the causal taxonomy and exact one-use private-read
+- **M2 — complete:** freeze the causal taxonomy and exact one-use private-read
   allowlist and object/record ceilings.
-- **M3 — pending:** implement the authorization-bound read-only diagnostic,
+- **M3 — complete:** implement the authorization-bound read-only diagnostic,
   one-use and no-mutation guards, redaction, synthetic fixtures, and
   corruptions.
-- **M4 — pending:** run focused and complete authorization-free validation and
+- **M4 — active:** run focused and complete authorization-free validation and
   open the draft pull request.
 - **M5 — pending:** freeze the diagnostic execution commit and protected tree,
   commit and validate one generic owner-gate manifest, render a schema-valid
@@ -177,9 +177,20 @@ Repeat this audit at closeout.
   `codex/treasurebench-ao0008-fixed-batch-adjudication`.
 - [x] Validate the fixed task contract, this living ExecPlan, PM-0037, and
   master-plan registration with Agent Operations and program-memory audits.
-- [ ] Commit the fixed task contract, this living ExecPlan, PM-0037, and
-  master-plan registration.
-- [ ] Complete M1 through M5 and stop at the owner gate.
+- [x] Commit the fixed task contract, this living ExecPlan, PM-0037, and
+  master-plan registration as `469c45b`.
+- [x] Complete the public runtime, ledger, pairing, quarantine, and output-lock
+  audit without resolving retained private state.
+- [x] Freeze all fourteen causal classes and the exact five-record,
+  3,067-response-envelope, 502-trace-envelope allowlist.
+- [x] Implement generic-authorization binding, one-use and no-mutation guards,
+  bounded selection, at-most-three-object decryption, transient
+  operational-key handling, redaction, schema validation, and integrity stop.
+- [x] Pass 18 focused tests, focused Ruff and MyPy, all fifteen classifier
+  fixtures, the exact-scale 3,576-object synthetic diagnostic, and the
+  complete 50-task/500-pairing rehearsal.
+- [ ] Commit and push M1-M3, open the draft PR, and run the complete
+  authorization-free validation wall.
 
 ## Discoveries and surprises
 
@@ -193,6 +204,13 @@ Repeat this audit at closeout.
   ledger record for every completed pairing. Structural trace-name
   commitments must therefore supply independent pairing completeness without
   bulk decryption.
+- `2026-07-28T20:42:34Z`: the exact-scale disposable fixture passes with 3,067
+  response envelopes, 502 trace envelopes, all 3,576 locked objects, 3,016
+  base logical calls, 500 private pairings, a false completion marker, one
+  selected logical call, four neighbors, one selected response, one selected
+  trace, no retained mutation, and deterministic cleanup. Its injected
+  nonsecret schema-repair failure classifies correctly. This fixture is not
+  evidence about AO-0008.
 
 ## Decision log
 
@@ -210,6 +228,15 @@ Repeat this audit at closeout.
   audits with ten task contracts, 37 program-memory records, zero adopted
   unrouted items, zero private-path findings, and no consequential activity.
   Complete M0 and begin M1.
+- `2026-07-28T20:42:34Z`: complete M1 through M3. The public audit preserves
+  the aggregate-protocol-gate source candidate without selecting it. The
+  diagnostic freezes five fixed reads, structural metadata for exactly 3,067
+  responses and 502 traces, one selected logical call, four neighbors, at
+  most two response decryptions, one trace decryption, and one transient
+  operational key. Eighteen focused tests, all fourteen causal classes plus
+  integrity stop, the exact-scale synthetic fixture, and the full
+  50-task/500-pairing rehearsal pass with zero private reads, provider calls,
+  credentials, spend, or scientific change. Begin M4.
 
 ## Validation strategy
 

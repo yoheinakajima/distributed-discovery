@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yoheinakajima.github.io/distributed-discovery/schemas/treasurebench-fixed-batch-public-diagnostic-v1.json",
+  "title": "TreasureBench AO-0008 redacted fixed-batch diagnostic",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status",
+    "task_id",
+    "source_task_id",
+    "output_lock_verified_within_allowlist",
+    "inventory_verified",
+    "append_only_ledgers_verified",
+    "retained_state_mutated",
+    "planned_logical_calls",
+    "actual_attempts",
+    "unique_logical_calls",
+    "completed_logical_calls",
+    "recovered_attempts_by_provider",
+    "terminal_attempts_by_provider",
+    "completed_private_pairings",
+    "all_500_pairing_records_exist",
+    "fixed_full_batch_completion_marker",
+    "last_durable_stage",
+    "selected_run_outputs_exist",
+    "exception_stage",
+    "safe_error_code",
+    "causal_class",
+    "causal_actor",
+    "private_content_published",
+    "operational_key_retained",
+    "private_read_authority_closed",
+    "provider_calls",
+    "credential_reads",
+    "spend_usd",
+    "private_paths_disclosed",
+    "performance_evidence_created"
+  ],
+  "properties": {
+    "status": {"enum": ["pass", "stop"]},
+    "task_id": {"const": "AO-0009"},
+    "source_task_id": {"const": "AO-0008"},
+    "output_lock_verified_within_allowlist": {"type": "boolean"},
+    "inventory_verified": {"type": "boolean"},
+    "append_only_ledgers_verified": {"type": "boolean"},
+    "retained_state_mutated": {"const": false},
+    "planned_logical_calls": {"const": 3016},
+    "actual_attempts": {"type": "integer", "minimum": 0, "maximum": 5200},
+    "unique_logical_calls": {"type": "integer", "minimum": 0, "maximum": 3016},
+    "completed_logical_calls": {"type": "integer", "minimum": 0, "maximum": 3016},
+    "recovered_attempts_by_provider": {"$ref": "#/$defs/providerCounts"},
+    "terminal_attempts_by_provider": {"$ref": "#/$defs/providerCounts"},
+    "completed_private_pairings": {"type": "integer", "minimum": 0, "maximum": 500},
+    "all_500_pairing_records_exist": {"type": "boolean"},
+    "fixed_full_batch_completion_marker": {"type": "boolean"},
+    "last_durable_stage": {"type": "string", "minLength": 3},
+    "selected_run_outputs_exist": {"type": "boolean"},
+    "exception_stage": {"const": "fixed-full-batch"},
+    "safe_error_code": {"type": "string", "minLength": 3},
+    "causal_class": {
+      "enum": [
+        "provider-transport-terminal",
+        "provider-http-terminal",
+        "schema-repair-exhausted",
+        "returned-output-parse-failure",
+        "protocol-contract-nonconformance",
+        "final-action-cardinality-failure",
+        "trace-encryption-or-persistence-failure",
+        "response-ledger-append-failure",
+        "duplicate-or-conflicting-call-key",
+        "cost-or-token-cap-guard",
+        "pairing-completeness-failure",
+        "state-transition-or-completion-marker-failure",
+        "post-batch-verification-failure",
+        "unknown-within-retained-evidence",
+        "retained-state-integrity-mismatch-stop"
+      ]
+    },
+    "causal_actor": {
+      "enum": [
+        "provider",
+        "evaluated-agent-output",
+        "evaluated-agent",
+        "local-runtime",
+        "registered-policy",
+        "local-orchestration",
+        "local-bookkeeping",
+        "local-verification",
+        "undetermined",
+        "retained-integrity"
+      ]
+    },
+    "private_content_published": {"const": false},
+    "operational_key_retained": {"const": false},
+    "private_read_authority_closed": {"const": true},
+    "provider_calls": {"const": 0},
+    "credential_reads": {"const": 0},
+    "spend_usd": {"const": "0"},
+    "private_paths_disclosed": {"const": false},
+    "performance_evidence_created": {"const": false}
+  },
+  "$defs": {
+    "providerCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["OpenAI", "Anthropic"],
+      "properties": {
+        "OpenAI": {"type": "integer", "minimum": 0, "maximum": 5200},
+        "Anthropic": {"type": "integer", "minimum": 0, "maximum": 5200}
+      }
+    }
+  }
+}
