@@ -666,3 +666,22 @@ records:
     review_after: explicit-owner-decision
     owner_decision: adopted
     last_reviewed: "2026-07-28"
+  - idea_id: PM-0036
+    title: TreasureBench wholly fresh repair-confirmation v3 owner selection
+    status: routed
+    capture_classification: capture-now
+    visibility: public
+    source_type: owner-decision
+    captured_date: "2026-07-28"
+    proposition: Register AO-0008 to prepare and freeze a wholly fresh 50-task and 500-run DD-010 engineering repair-confirmation pilot v3 through the repaired provider-schema, action-budget, production private-generation-permit, and custody paths, stopping at one exact generic owner gate before consequential execution.
+    why_it_matters: It preserves all prior quarantines and consumed authority while testing the repaired production path prospectively under wholly new identity before any new private material or provider spend.
+    canonical_destination: {type: decision-record, path: tasks/treasurebench-agents-v1-fresh-pilot-v3.yml}
+    dependencies: [DD-010, PM-0031, PM-0032, PM-0033, PM-0034, PM-0035]
+    promotion_trigger: null
+    permitted_stops: [implemented, deferred, rejected, superseded]
+    not_a_result_boundaries: [engineering registration and future gated pilot only, no model-performance result scientific run claim paper ranking release submission or base-campaign authority]
+    supersedes: []
+    superseded_by: null
+    review_after: explicit-owner-decision
+    owner_decision: adopted
+    last_reviewed: "2026-07-28"

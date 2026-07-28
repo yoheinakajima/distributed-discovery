@@ -1,5 +1,33 @@
 # Master execution plan
 
+## Active continuation — AO-0008 wholly fresh repair-confirmation pilot v3 preparation (2026-07-28)
+
+Issue #204, branch `codex/treasurebench-agents-v1-fresh-pilot-v3`, fixed
+contract `tasks/treasurebench-agents-v1-fresh-pilot-v3.yml`, and living
+ExecPlan
+[`TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V3.md`](TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V3.md)
+own the sole substantive lane as AO-0008.
+
+The task prepares campaign
+`treasurebench-agents-v1-repair-confirmation-v3` and batch
+`tb-agents-v1-repair-confirmation-v3-b01` as a wholly new DD-010
+engineering-only 50-task/500-run pilot. It preserves every prior campaign,
+authorization, ledger, lock, retained state, and terminal decision as
+immutable. No credential, real seed, private material, provider call, spend,
+scientific state, paper result, comparison, ranking, release, submission, or
+base-campaign authority exists before its future exact generic owner gate.
+
+AO-0004 R4 schema conformance, the shared exactly-one-final-action contract,
+and AO-0007's twenty-class production custody conformance remain completed
+engineering prerequisites. The active milestone is registration, current
+official provider and budget audit, and fixed execution-contract preparation.
+AO-0008 must complete the exact production private-generation permit and
+temporary production-custody rehearsals, full 50-task/500-run synthetic
+rehearsal, Methods A/B/C, corruptions, lock, redaction, contamination, and
+cost checks; freeze the execution commit; commit one generic owner-gate
+manifest; and stop exactly once before credentials, real private generation,
+provider calls, or spend.
+
 ## Completed continuation — AO-0007 AO-0006 custody adjudication and prospective repair (2026-07-28)
 
 Issue #202, branch `codex/treasurebench-ao0006-custody-repair`, fixed contract
