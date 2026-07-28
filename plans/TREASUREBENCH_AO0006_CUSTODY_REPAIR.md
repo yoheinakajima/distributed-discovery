@@ -170,7 +170,7 @@ scientific evidence.
 - **M7 — complete:** reproduce the exact failing shape synthetically,
   implement the minimum repair, preserve the regression, and complete the
   live-mode conformance and independent verification.
-- **M8 — active:** select one permitted outcome; reconcile public-safe
+- **M8 — complete:** select one permitted outcome; reconcile public-safe
   records, repeat the decision-delta audit, validate, ready and merge the PR,
   verify CI/Pages and named live routes, close the issue, and synchronize
   `main`.
@@ -204,9 +204,9 @@ scientific evidence.
   the full public-safe validation wall.
 - [x] Ready and squash-merge PR #203 after both exact-head checks pass.
 - [x] Verify the first post-merge CI and Pages workflows.
-- [ ] Correct and validate the stale program and TreasureBench agent route
+- [x] Correct and validate the stale program and TreasureBench agent route
   reconciliation found during named live-route verification.
-- [ ] Verify the corrective CI/Pages cycle and all named live routes, close
+- [x] Verify the corrective CI/Pages cycle and all named live routes, close
   issue #202, record terminal closeout, and synchronize `main`.
 
 ## Discoveries and surprises
@@ -310,6 +310,17 @@ scientific evidence.
   verification, six negative classes, and the 89-page/26-study site build
   also pass with zero retained-state reads or writes, credential reads,
   provider calls, or spend.
+- `2026-07-28T13:23:58Z`: corrective main commit
+  `4d6f57f26ba365c8273ebad6e6d02a1061cf9527` passes exact-SHA CI run
+  `30362732121` and Pages run `30362732087`. Each named production route
+  returns HTTP 200: `program.html`, `treasurebench/agents-v1.html`,
+  `research/dd-010.html`, `data/studies/dd-010.json`, and
+  `data/treasurebench/agents-v1-implementation.json`. Their bodies agree on
+  AO-0007, the exact permit failure, prospective repair, twenty-class pass,
+  independent verification, three immutable pilot quarantines, and the
+  non-scientific boundary. Issue #202 is closed and carries the terminal
+  verification comment. Local `main` and `origin/main` both resolve to the
+  corrective commit before this terminal metadata update.
 
 ## Decision log
 
@@ -458,6 +469,8 @@ live-mode classes, independent AES-256-GCM verification, and six negative
 classes. This outcome creates no scientific or model-performance evidence and
 does not authorize a replacement pilot or base campaign.
 
-Administrative closeout remains active until the corrected public projection
-passes CI and Pages, all named live routes agree with the tracked closeout,
-issue #202 is closed, and local `main` exactly matches `origin/main`.
+Administrative closeout is complete. PR #203 is squash-merged, both the merge
+and corrective exact-SHA CI/Pages cycles passed, all named live routes agree
+with the tracked closeout, issue #202 is closed with terminal verification,
+and local `main` was synchronized exactly with `origin/main` before this
+terminal metadata commit.
