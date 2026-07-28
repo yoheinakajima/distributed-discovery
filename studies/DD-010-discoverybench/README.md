@@ -169,6 +169,24 @@ AO-0006 remains permanently quarantined and unchanged. This is engineering
 diagnosis and offline conformance, not scientific or model-performance
 evidence. No new pilot or v3 identity is registered.
 
+## AO-0008 wholly fresh repair-confirmation v3 preparation
+
+Issue #204 and draft PR #205 register a wholly new engineering-only campaign
+`treasurebench-agents-v1-repair-confirmation-v3` and batch
+`tb-agents-v1-repair-confirmation-v3-b01`. Its authorization-free production
+permit and custody rehearsal uses deterministic disposable nonsecret material
+under an isolated temporary XDG root and passes independent encryption,
+exclusive persistence, manifest, reload, verification, cleanup, and six
+negative checks without a synthetic-mode permit bypass.
+
+The complete public rehearsal has 50 synthetic tasks, 500 pairings, 3,014
+matrix turns, zero Method A/B, Method C, cardinality, pairing, metric,
+contamination, redaction, lock, or cost failures, and 71 registered corruption
+rejections. This is engineering instrumentation only. No credential, real
+seed, private task or answer, provider call, spend, claim, scientific run,
+paper result, comparison, or base-campaign authority exists. Execution remains
+blocked at the exact generic AO-0008 owner gate.
+
 ## Registered evaluation campaign
 
 Issue #173 registers, but does not authorize or execute, the evaluation

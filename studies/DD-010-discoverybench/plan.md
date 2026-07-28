@@ -161,3 +161,17 @@ The production-path live-mode-equivalent command passes all twenty registered
 classes with synthetic nonsecret content, independent AES-256-GCM
 verification, six negative classes, and deterministic cleanup. AO-0006 itself
 remains immutable and no separate private pilot is registered or authorized.
+
+## AO-0008 wholly fresh repair-confirmation v3 boundary
+
+AO-0008 registers campaign `treasurebench-agents-v1-repair-confirmation-v3`
+and batch `tb-agents-v1-repair-confirmation-v3-b01` as wholly fresh identities.
+The fixed design remains 50 tasks, five architectures, two exact direct model
+routes, one repeat, 500 pairings, 3,016 normal calls, 256 output tokens, USD
+11.51 expected, USD 15 conservative, USD 25 hard, and 5,200 calls maximum.
+
+Authorization-free permit, production-custody, 50-task/500-run, Methods A/B/C,
+corruption, lock, redaction, contamination, and cost rehearsals pass. No real
+private material or consequential activity occurred. The next and only active
+boundary is the exact execution freeze and committed generic owner gate; live
+execution requires the later exact AO-0008 authorization.

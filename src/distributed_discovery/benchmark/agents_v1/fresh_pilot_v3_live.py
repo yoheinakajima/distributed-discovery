@@ -835,6 +835,7 @@ def _custody(
     Mapping[str, object],
 ]:
     production_rehearsal = bool(authorization.get("ao0008_production_rehearsal", False))
+    material: Mapping[str, bytes]
     if synthetic or production_rehearsal:
         namespace = (
             b"fresh-live-v3-synthetic"

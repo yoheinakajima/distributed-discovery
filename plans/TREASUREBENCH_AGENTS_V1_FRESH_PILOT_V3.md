@@ -24,7 +24,7 @@ AO-0008 staging command. No credential, prior private state, owner
 authorization, seed, task, answer, key, nonce, ciphertext, provider, or spend
 was accessed or created.
 
-Exactly one milestone is active: **M4 full acceptance and draft PR**.
+Exactly one milestone is active: **M5 exact execution freeze**.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -111,9 +111,9 @@ audit at closeout.
   preflight, custody, trace, output-lock, and independent verification.
 - **M3 — complete:** complete 50-task/500-run synthetic rehearsal,
   production-path custody rehearsal, Methods A/B/C, and all corruptions.
-- **M4 — active:** focused and full private-evaluation acceptance plus draft
+- **M4 — complete:** focused and full private-evaluation acceptance plus draft
   PR creation.
-- **M5 — pending:** exact execution-freeze commit and matching remote draft-PR
+- **M5 — active:** exact execution-freeze commit and matching remote draft-PR
   head.
 - **M6 — pending:** committed generic owner-gate manifest, live
   authorization-free validation, typed handoff, and stop.
@@ -133,7 +133,7 @@ audit at closeout.
 - [x] Complete M1 execution contracts.
 - [x] Complete M2 isolated implementation and focused acceptance.
 - [x] Complete M3 full rehearsal and corruptions.
-- [ ] Complete M4 draft PR and full acceptance.
+- [x] Complete M4 draft PR and full acceptance.
 - [ ] Complete M5 execution freeze.
 - [ ] Complete M6 owner gate and stop.
 
@@ -151,6 +151,11 @@ audit at closeout.
   so the prior candidate envelope remains the actual recalculated envelope:
   USD 11.509696 unrounded, USD 11.51 registered expected, USD 15
   conservative, and USD 25 hard.
+- The first M4 full wall reached MyPy after all earlier targets passed and
+  found one narrow inferred-type mismatch: the disposable deterministic
+  material branch inferred a concrete dictionary while the production loader
+  returns a mapping. An explicit `Mapping[str, bytes]` annotation preserves
+  runtime behavior and makes the shared custody contract exact.
 
 ## Decision log
 
@@ -194,6 +199,23 @@ audit at closeout.
   cleanup. AO-0007's twenty production-path custody classes, independent
   verifier, and six prerequisite negatives still pass; the AO-0004 provider
   schema suite passes 100 tests. Begin M4 full acceptance and draft PR.
+- `2026-07-28T14:01:00Z`: draft PR #205 is open at the pushed M3 head. The
+  first M4 wall passes bootstrap, governance, Agent Operations, program
+  memory, Agents v1 audits, dry run, readiness, and v3 rehearsal, then stops
+  at MyPy on one material-mapping inference mismatch. Record the failed check,
+  add the narrow annotation, and rerun the complete wall.
+- `2026-07-28T14:07:00Z`: the complete M4 wall passes unchanged after the
+  narrow annotation: bootstrap, Agent Operations, program memory, Agents v1
+  audit/evaluation/dry-run/readiness, the complete v3 audit and rehearsal,
+  formatting, Ruff, MyPy, 637 tests, 110 claims, 51 immutable run manifests,
+  governance audits, and offline release verification. No credential, private
+  object, provider call, spend, or scientific state was created. Complete M4
+  and begin the exact M5 execution freeze.
+- `2026-07-28T14:08:00Z`: a direct no-editable focused Pytest invocation
+  imported the stale installed package both with no `PYTHONPATH` and with
+  `PYTHONPATH=.`. Preserve both collection failures. The repository uses a
+  `src` layout; the same 57 focused tests pass with `PYTHONPATH=src`, matching
+  the already passing Make-driven full wall.
 
 ## Validation strategy
 

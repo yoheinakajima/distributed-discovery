@@ -19,14 +19,15 @@ base-campaign authority exists before its future exact generic owner gate.
 
 AO-0004 R4 schema conformance, the shared exactly-one-final-action contract,
 and AO-0007's twenty-class production custody conformance remain completed
-engineering prerequisites. The active milestone is registration, current
-official provider and budget audit, and fixed execution-contract preparation.
-AO-0008 must complete the exact production private-generation permit and
-temporary production-custody rehearsals, full 50-task/500-run synthetic
-rehearsal, Methods A/B/C, corruptions, lock, redaction, contamination, and
-cost checks; freeze the execution commit; commit one generic owner-gate
-manifest; and stop exactly once before credentials, real private generation,
-provider calls, or spend.
+engineering prerequisites. AO-0008's exact production private-generation
+permit and temporary production-custody rehearsals, full 50-task/500-run
+synthetic rehearsal, Methods A/B/C, 71 registered corruption rejections, lock,
+redaction, contamination, exact cost checks, and complete private-evaluation
+acceptance wall now pass with zero credentials, real private objects, provider
+calls, spend, or scientific mutation. The active milestone is the exact
+execution freeze, followed by one committed generic owner-gate manifest and
+one stop before credentials, real private generation, provider calls, or
+spend.
 
 ## Completed continuation — AO-0007 AO-0006 custody adjudication and prospective repair (2026-07-28)
 

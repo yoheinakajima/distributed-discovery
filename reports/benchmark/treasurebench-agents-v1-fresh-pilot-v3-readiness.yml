@@ -1,0 +1,47 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-v3-readiness-v1
+recorded_at_utc: "2026-07-28T14:07:38Z"
+status: pass-execution-freeze-candidate-owner-gate-required
+classification: DD-010-engineering-only-no-scientific-evidence
+task_id: AO-0008
+issue: 204
+draft_pull_request: 205
+campaign_id: treasurebench-agents-v1-repair-confirmation-v3
+batch_id: tb-agents-v1-repair-confirmation-v3-b01
+acceptance:
+  bootstrap: pass
+  agent_ops: pass
+  program_memory: pass
+  treasurebench_naming: pass
+  agents_v1_registration: pass
+  agents_v1_evaluation: pass
+  agents_v1_dry_run: pass
+  agents_v1_readiness: pass
+  v3_audit: pass
+  v3_full_rehearsal: pass
+  formatting: pass
+  lint: pass
+  typecheck: pass
+  tests: {status: pass, passed: 637, failed: 0}
+  claims: pass
+  runs: pass
+  full_verify: pass
+task_specific:
+  synthetic_tasks: 50
+  synthetic_runs: 500
+  matrix_calls: 3014
+  normal_calls: 3016
+  exact_pairings: 500
+  method_a_b_disagreements: 0
+  method_c_failures: 0
+  invalid_final_action_cardinalities: 0
+  metric_range_errors: 0
+  contamination_findings: 0
+  corruptions_rejected: 71
+  production_custody_negative_checks: 6
+  output_lock_verified: true
+  staged_mock_zero_call_resume: true
+failures_preserved:
+  - The first complete wall reached MyPy after all earlier targets passed and rejected one inferred dictionary-versus-mapping type; an explicit Mapping annotation preserved runtime behavior and the complete wall then passed.
+  - Two direct focused no-editable Pytest invocations selected the stale installed package without the repository src path; the same 57 tests passed with PYTHONPATH=src and in the complete Make wall.
+activity: {provider_calls: 0, credential_reads: 0, prior_private_state_reads: 0, private_objects_created: 0, spend_usd: "0"}
+next_gate: clean-commit-full-verification-and-exact-execution-freeze

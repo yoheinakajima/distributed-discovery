@@ -87,6 +87,24 @@ custody classes, independent AES-256-GCM verification, six negative classes,
 and deterministic cleanup pass. AO-0006 remains quarantined. Any future pilot
 requires wholly new identity and separate explicit owner authority.
 
+## AO-0008 wholly fresh repair-confirmation v3 preparation
+
+AO-0008 registers the new campaign
+`treasurebench-agents-v1-repair-confirmation-v3` and batch
+`tb-agents-v1-repair-confirmation-v3-b01`. The real fail-closed production
+permit accepts that campaign in an authorization-free custody rehearsal
+without a synthetic-mode permit bypass. Independent encryption, atomic
+exclusive persistence, manifest creation, reload, exact verification, six
+negative custody checks, and deterministic cleanup pass under disposable
+nonsecret material in an isolated temporary XDG root.
+
+The full public rehearsal passes 50 synthetic tasks, 500 pairings, 3,014
+matrix turns, Methods A/B/C, cardinality, pairing, metric, contamination,
+redaction, output-lock, exact cost, and 71 registered corruption checks. No
+credential, real private material, provider call, spend, or scientific state
+exists. The frozen live path remains unavailable until the committed generic
+AO-0008 owner gate receives its exact authorization.
+
 ## Registered package
 
 - `versioning.yml`, content/generator contracts, and compatibility policy;

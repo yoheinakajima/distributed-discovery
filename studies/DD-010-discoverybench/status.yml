@@ -1,5 +1,5 @@
 study_id: DD-010
-status: complete-v1-v3-with-agents-v1-pilots-permanently-quarantined-and-custody-path-prospectively-repaired
-evidence_status: v1-v2-preserved-v3-independently-reproduced-exact-matrix; original-agents-v1-pilot-permanently-quarantined; repair-confirmation-v1-quarantined-at-terminal-public-canary; AO-0004-R4-provider-schema-and-semantic-contract-engineering-conformance-passed; repair-confirmation-v2-quarantined-at-custody-after-two-passing-public-canaries-with-zero-private-runs; AO-0007-one-use-custody-diagnostic-and-prospective-live-mode-conformance-passed; no-closeout-is-performance-or-scientific-evidence
-next_action: preserve all three quarantined campaigns, every consumed AO-0002-through-AO-0007 artifact, the closed provider phases, and the output locks; any separate future private pilot registration requires a new explicit owner decision and wholly new identity
-updated_utc: 2026-07-28T12:43:01Z
+status: complete-v1-v3-with-prior-agents-v1-pilots-permanently-quarantined-custody-repaired-and-ao0008-fresh-pilot-prepared
+evidence_status: v1-v2-preserved-v3-independently-reproduced-exact-matrix; original-agents-v1-pilot-permanently-quarantined; repair-confirmation-v1-quarantined-at-terminal-public-canary; AO-0004-R4-provider-schema-and-semantic-contract-engineering-conformance-passed; repair-confirmation-v2-quarantined-at-custody-after-two-passing-public-canaries-with-zero-private-runs; AO-0007-one-use-custody-diagnostic-and-prospective-live-mode-conformance-passed; AO-0008-wholly-fresh-v3-permit-custody-and-500-run-public-rehearsals-passed-owner-gate-not-authorized; no-closeout-is-performance-or-scientific-evidence
+next_action: freeze and commit the exact AO-0008 execution tree and generic owner gate, then stop before credentials, real private generation, provider calls, or spend until the exact owner authorization exists
+updated_utc: 2026-07-28T14:07:38Z
