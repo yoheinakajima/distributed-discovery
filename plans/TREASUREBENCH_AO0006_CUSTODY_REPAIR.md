@@ -55,8 +55,9 @@ manifest, no unsealing, and output lock
 Registration commit `6c7f7b4` passed both Agent Operations and program-memory
 audits. The public audit, bounded diagnostic implementation, synthetic fixture,
 and live-mode conformance framework are complete without private access.
-Exactly one milestone is active: **M4 — authorization-free validation and
-draft PR**.
+Draft PR #203 is open, and the complete authorization-free acceptance wall
+passes at `28b70b8`. Exactly one milestone is active: **M5 — diagnostic
+execution freeze and owner gate**.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -152,9 +153,9 @@ scientific evidence.
 - **M3 — complete:** implement the live-mode custody conformance framework,
   independent verifier, twenty required coverage classes, interrupted-write
   cases, and corruptions using production functions and ordering.
-- **M4 — active:** run all authorization-free validation, open the draft PR,
+- **M4 — complete:** run all authorization-free validation, open the draft PR,
   and fix every failure without reading AO-0006 private state.
-- **M5 — pending:** freeze the exact diagnostic execution commit, commit one
+- **M5 — active:** freeze the exact diagnostic execution commit, commit one
   generic owner-gate manifest, validate it without authorizing, render the
   schema-valid `owner-gate-required` handoff, and stop exactly once.
 - **M6 — pending after authorization:** verify authorization and retained-state
@@ -184,8 +185,9 @@ scientific evidence.
 - [x] Complete M1 public custody audit.
 - [x] Complete M2 diagnostic implementation and synthetic fixtures.
 - [x] Complete M3 live-mode custody conformance implementation and corruptions.
-- [ ] Open the draft PR after the registration skeleton and focused tests pass.
-- [ ] Complete the full authorization-free validation wall.
+- [x] Open draft PR #203 after the registration skeleton and focused tests
+  pass.
+- [x] Complete the full authorization-free validation wall.
 - [ ] Commit the exact diagnostic execution freeze.
 - [ ] Commit and validate the generic owner-gate manifest.
 - [ ] Render the schema-valid owner-gate-required handoff and stop.
@@ -223,20 +225,26 @@ scientific evidence.
   enforcing exclusive creation, and resume of an existing sealed object does
   not prove it represents the requested plaintext. These are not asserted as
   the AO-0006 cause.
-- `2026-07-28T06:02:00Z`: the first focused static check stopped on seven
+- `2026-07-28T05:39:00Z`: the first focused static check stopped on seven
   mechanical Ruff findings: import ordering, three unused imports, two long
   lines, and one nested conditional. Correct formatting only; custody behavior
   was not changed.
-- `2026-07-28T06:04:00Z`: the first focused test run stopped with two fixture
+- `2026-07-28T05:40:00Z`: the first focused test run stopped with two fixture
   failures because a synthetically created intermediate directory retained the
   process umask mode instead of the required `0700`. Tighten only the fixture
   to normalize every synthetic directory and preserve the production guard.
-- `2026-07-28T06:06:00Z`: the corrected focused suite passes seven tests. The
+- `2026-07-28T05:42:00Z`: the corrected focused suite passes seven tests. The
   public-only custody audit also passes with zero retained-state reads or
   writes, provider calls, credential reads, or spend. It independently
   verifies the downstream synthetic AES-GCM path and corruptions while
   preserving the expected pre-repair live-mode permit failure and the two
   registered prospective gaps.
+- `2026-07-28T05:49:03Z`: the complete authorization-free
+  `private-evaluation` wall passes: bootstrap, both Agents v1 audits, dry run,
+  readiness, Agent Operations, program memory, both AO-0007 custody targets,
+  repository formatting, lint, full type checking, 580 tests, claims, 51 run
+  manifests, editorial and publication audits, and offline compendium
+  verification. The expected pre-repair live-mode failure remains intact.
 
 ## Decision log
 
@@ -255,11 +263,14 @@ scientific evidence.
 - `2026-07-28T05:28:55Z`: create issue #202 through the connected GitHub
   integration, then create the sole task branch
   `codex/treasurebench-ao0006-custody-repair` from exact synchronized main.
-- `2026-07-28T06:06:00Z`: keep the production path unchanged before the
+- `2026-07-28T05:42:00Z`: keep the production path unchanged before the
   owner-gated diagnostic. Treat the campaign-permit rejection as a
   public-source causal candidate, and treat exclusive creation and duplicate
   mismatch as separate prospective conformance gaps until the retained-state
   adjudication is complete.
+- `2026-07-28T05:44:52Z`: open draft PR #203 from the sole substantive branch.
+  Do not add its observed number to the already fixed task contract; bind the
+  live PR identity in the generic owner-gate manifest and handoff instead.
 
 ## Validation strategy
 
