@@ -40,7 +40,7 @@ Five unrelated untracked preservation files pre-exist and are outside scope:
 They must remain untouched. Provider calls, credential reads, spend, retained
 private reads, new real private material, scientific mutation, paper action,
 release, and submission are all zero. Exactly one milestone is active:
-**M4 — focused and complete authorization-free validation plus draft PR**.
+**M5 — diagnostic execution freeze, generic owner gate, and typed handoff**.
 
 The AO-0008 boundary is permanent: task `AO-0008`, campaign
 `treasurebench-agents-v1-repair-confirmation-v3`, batch
@@ -151,7 +151,7 @@ Repeat this audit at closeout.
 - **M3 — complete:** implement the authorization-bound read-only diagnostic,
   one-use and no-mutation guards, redaction, synthetic fixtures, and
   corruptions.
-- **M4 — active:** run focused and complete authorization-free validation and
+- **M4 — complete:** run focused and complete authorization-free validation and
   open the draft pull request.
 - **M5 — pending:** freeze the diagnostic execution commit and protected tree,
   commit and validate one generic owner-gate manifest, render a schema-valid
@@ -189,8 +189,16 @@ Repeat this audit at closeout.
 - [x] Pass 18 focused tests, focused Ruff and MyPy, all fifteen classifier
   fixtures, the exact-scale 3,576-object synthetic diagnostic, and the
   complete 50-task/500-pairing rehearsal.
-- [ ] Commit and push M1-M3, open the draft PR, and run the complete
-  authorization-free validation wall.
+- [x] Commit M1-M3 as `7614365`, push the branch, and open draft PR #207.
+- [x] Fix the single full-wall schema inventory expectation from 41 to 42
+  without changing runtime or authority.
+- [x] Pass the complete authorization-free validation wall: bootstrap, Agent
+  Operations, program memory, Agents v1 audit/evaluation/dry run/readiness,
+  AO-0009 audit and rehearsal, formatting, Ruff, strict MyPy over 202 source
+  files, 656 tests, 110 claims, 51 immutable run manifests, governance and
+  publication audits, and offline release verification.
+- [ ] Commit and push the exact diagnostic execution freeze, commit and
+  validate the generic gate, render the handoff, and stop.
 
 ## Discoveries and surprises
 
@@ -211,6 +219,19 @@ Repeat this audit at closeout.
   trace, no retained mutation, and deterministic cleanup. Its injected
   nonsecret schema-repair failure classifies correctly. This fixture is not
   evidence about AO-0008.
+- `2026-07-28T20:49:34Z`: the first full authorization-free wall passed
+  bootstrap, all governance and Agents v1 audits, the AO-0009 exact-scale
+  rehearsal, formatting, Ruff, strict MyPy over 202 source files, and 655 of
+  656 tests. The sole failure was the exact Agents v1 schema-inventory
+  regression still expecting 41 schemas after adding the public diagnostic
+  schema. Update the hand-checkable expected count to 42 and rerun the
+  complete wall; no runtime, authority, or private boundary changes.
+- `2026-07-28T20:56:20Z`: the complete wall passes after the exact schema
+  inventory correction: 656 tests, 202 MyPy source files, 110 claims, 51
+  immutable run manifests, all governance and benchmark audits, and offline
+  release verification. No retained AO-0008 state, authorization, credential,
+  provider, spend, new private material, scientific record, paper, release,
+  or submission surface was accessed or changed.
 
 ## Decision log
 
@@ -237,6 +258,10 @@ Repeat this audit at closeout.
   integrity stop, the exact-scale synthetic fixture, and the full
   50-task/500-pairing rehearsal pass with zero private reads, provider calls,
   credentials, spend, or scientific change. Begin M4.
+- `2026-07-28T20:56:20Z`: draft PR #207 is open at pushed head `7614365`.
+  Preserve the first wall's one schema-count regression and its correction.
+  The identical complete wall then passes. Complete M4 and begin M5; the next
+  commit is the exact diagnostic execution freeze.
 
 ## Validation strategy
 
