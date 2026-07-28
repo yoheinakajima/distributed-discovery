@@ -22,6 +22,7 @@ Registration audit at `2026-07-28T01:00:04Z`:
 
 - repository `yoheinakajima/distributed-discovery`;
 - issue #200;
+- draft pull request #201;
 - branch `benchmark/treasurebench-agents-v1-fresh-pilot-v2`;
 - starting `main` and `origin/main`
   `36866e849b468df10b94b0039cf54f3d891ca120`;
@@ -257,6 +258,9 @@ conversation. Repeat this audit at closeout.
   reexecuted C01-C28, rejected all 41 v2 corruptions, and reproduced the
   committed 50-task/500-run rehearsal hash
   `sha256:57e3cc54312be1e0bcbcada8901c0c360bc45458c0a987a96f4386c11b5c7882`.
+- `2026-07-28T01:38:48Z`: push the M0-M3 branch head
+  `04c0f6027de5ff546d1e6d76c33128ed6fbeb35f` and open draft pull request
+  #201; bind the fixed contract to that draft PR before full acceptance.
 
 ## Validation strategy
 
