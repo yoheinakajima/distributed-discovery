@@ -83,8 +83,8 @@ Owner amendment at `2026-07-28T02:30:00Z`:
 - no credential, authorization, prior private state, real seed, custody,
   provider, or spend was accessed while accepting this amendment.
 
-Exactly one milestone is active: **M7R2 authority amendment and offline
-refreeze design**.
+Exactly one milestone is active: **M9R2 deterministic long-session success
+and quarantine control flow**.
 M0 passed at `2026-07-28T01:11:20Z`: the task contract is schema-valid, the
 provider and budget records parse and carry the exact reserved identities,
 the ExecPlan sections are ordered with one active milestone, all recorded
@@ -225,11 +225,11 @@ audit at closeout.
   validation without authorization creation, typed handoff, and stop.
 - **M7 — superseded before authorization:** the original owner gate was never
   consumed and receives no authority.
-- **M7R2 — active:** additive R2 fixed contract, ExecPlan, exact credential
+- **M7R2 — complete:** additive R2 fixed contract, ExecPlan, exact credential
   subset, and long-session success/quarantine design.
-- **M8R2 — pending:** exact credential ingress and cleanup implementation plus
+- **M8R2 — complete:** exact credential ingress and cleanup implementation plus
   pre-ingress regressions.
-- **M9R2 — pending:** deterministic successful and quarantined long-session
+- **M9R2 — active:** deterministic successful and quarantined long-session
   control flow, including synthetic merge/CI/Pages/live/issue/main fixtures.
 - **M10R2 — pending:** complete 500-run rehearsal, all corruptions, focused
   tests, and full repository validation.
@@ -260,8 +260,8 @@ audit at closeout.
 - [x] Commit, push, and revalidate the clean M5 execution-freeze candidate.
 - [x] Commit and validate the generic owner gate and typed handoff.
 - [x] Complete M5 and M6 and stop at the exact owner gate.
-- [ ] Complete M7R2 additive authority amendment and offline refreeze design.
-- [ ] Complete M8R2 exact credential ingress and cleanup regressions.
+- [x] Complete M7R2 additive authority amendment and offline refreeze design.
+- [x] Complete M8R2 exact credential ingress and cleanup regressions.
 - [ ] Complete M9R2 success/quarantine long-session orchestration.
 - [ ] Complete M10R2 full offline acceptance.
 - [ ] Complete M11R2 execution refreeze and original-gate supersession.
@@ -354,6 +354,20 @@ audit at closeout.
   gate, keep all identities and caps fixed, add exact two-name credential
   ingress, and extend one future authorization through deterministic success
   or quarantine administrative closeout.
+- `2026-07-28T03:00:21Z`: commit additive R2 contract and ExecPlan milestone
+  as `1dd22de`; task-contract schema, exact permissions, unchanged caps,
+  scientific/private-publication prohibitions, and sole-active-milestone audit
+  pass. Begin M8R2 credential ingress and cleanup implementation.
+- `2026-07-28T03:06:51Z`: exact credential-subset implementation and 30
+  focused tests pass. The first focused run retained eight failures caused
+  only by referencing provider manifests through the wrong test module; the
+  implementation paths had already passed. Importing the canonical manifests
+  directly corrected the fixture. The repeated suite proves exact-name
+  return/retention, unrelated-key exclusion, missing/mode/symlink refusal,
+  pre-ingress authorization/tree/identity/stage/ledger/cap failures, redacted
+  representations, and cleanup across all provider stages and exit classes.
+  The v2 audit still reports zero credential reads, private objects, calls,
+  and spend.
 
 ## Validation strategy
 

@@ -1,17 +1,23 @@
 from __future__ import annotations
 
+import os
 from decimal import Decimal
 from pathlib import Path
 
 import pytest
 
-from distributed_discovery.benchmark.agents_v1 import fresh_pilot_v2
+from distributed_discovery.benchmark.agents_v1 import fresh_pilot_v2, fresh_pilot_v2_live
 from distributed_discovery.benchmark.agents_v1.fresh_pilot_v2_live import (
     RouteCappedLedger,
     audit_live_corruptions,
     private_state_root,
     run_live_fresh_pilot,
     run_mock_fresh_pilot,
+)
+from distributed_discovery.benchmark.agents_v1.live_inputs import CredentialSet
+from distributed_discovery.benchmark.agents_v1.live_providers import (
+    ANTHROPIC_MANIFEST,
+    OPENAI_MANIFEST,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -183,3 +189,267 @@ def test_v2_staged_mock_driver_completes_and_resumes_without_calls(tmp_path: Pat
     )
     assert second == first
     assert sum(adapter.calls for adapter in second_adapters.values()) == 0
+
+
+def _write_private_env(path: Path, text: str, *, mode: int = 0o600) -> None:
+    path.write_text(text, encoding="utf-8")
+    os.chmod(path, mode)
+
+
+class _CapturedProviderAdapter:
+    def __init__(self, *, api_key: str, manifest: object) -> None:
+        self._api_key = api_key
+        self.manifest = manifest
+
+    def clear_secret(self) -> None:
+        self._api_key = ""
+
+    def __repr__(self) -> str:
+        return "_CapturedProviderAdapter(api_key=<redacted>)"
+
+
+def test_r2_live_adapters_request_return_and_retain_only_exact_two_credentials(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    repo = tmp_path / "checkout"
+    repo.mkdir()
+    unrelated = {
+        "OPENROUTER_API_KEY": "unrelated-openrouter",
+        "GEMINI_API_KEY": "unrelated-gemini",
+        "GOOGLE_API_KEY": "unrelated-google",
+        "MISTRAL_API_KEY": "unrelated-mistral",
+        "FLYMYAI_API_KEY": "unrelated-flymyai",
+        "MONID_API_KEY": "unrelated-monid",
+    }
+    _write_private_env(
+        repo / ".env.txt",
+        "OPENAI_API_KEY=synthetic-openai\n"
+        "ANTHROPIC_API_KEY=synthetic-anthropic\n"
+        + "".join(f"{name}={value}\n" for name, value in unrelated.items()),
+    )
+    received: list[_CapturedProviderAdapter] = []
+
+    def capture_openai(**kwargs: object) -> _CapturedProviderAdapter:
+        adapter = _CapturedProviderAdapter(
+            api_key=str(kwargs["api_key"]),
+            manifest=OPENAI_MANIFEST,
+        )
+        received.append(adapter)
+        return adapter
+
+    def capture_anthropic(**kwargs: object) -> _CapturedProviderAdapter:
+        adapter = _CapturedProviderAdapter(
+            api_key=str(kwargs["api_key"]),
+            manifest=ANTHROPIC_MANIFEST,
+        )
+        received.append(adapter)
+        return adapter
+
+    monkeypatch.setattr(fresh_pilot_v2_live, "OpenAIResponsesAdapter", capture_openai)
+    monkeypatch.setattr(fresh_pilot_v2_live, "AnthropicMessagesAdapter", capture_anthropic)
+    ledger = RouteCappedLedger(tmp_path / "ledger.jsonl")
+    _, credentials, underlying = fresh_pilot_v2_live._live_adapters(
+        repo,
+        _synthetic_generic_authorization(),
+        ledger,
+        b"k" * 32,
+        tmp_path / "responses",
+    )
+    assert credentials.configured == {
+        "ANTHROPIC_API_KEY": True,
+        "OPENAI_API_KEY": True,
+    }
+    assert credentials.unused_present == ()
+    assert [adapter._api_key for adapter in received] == [
+        "synthetic-openai",
+        "synthetic-anthropic",
+    ]
+    rendered = repr(credentials) + repr(received) + repr(underlying)
+    for value in unrelated.values():
+        assert value not in rendered
+        assert all(adapter._api_key != value for adapter in received)
+    for name in unrelated:
+        with pytest.raises(PermissionError, match="outside"):
+            credentials.get_secret(name)
+    fresh_pilot_v2_live._clear_stage_secrets(credentials, underlying)
+    assert credentials.get_secret("OPENAI_API_KEY") is None
+    assert credentials.get_secret("ANTHROPIC_API_KEY") is None
+    assert all(adapter._api_key == "" for adapter in received)
+
+
+@pytest.mark.parametrize(
+    "case",
+    ["missing-openai", "missing-anthropic", "unsafe-mode", "symlink"],
+)
+def test_r2_credential_source_refuses_before_adapter_or_call(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    case: str,
+) -> None:
+    repo = tmp_path / "checkout"
+    repo.mkdir()
+    path = repo / ".env.txt"
+    complete = "OPENAI_API_KEY=synthetic-openai\nANTHROPIC_API_KEY=synthetic-anthropic\n"
+    if case == "missing-openai":
+        _write_private_env(path, "ANTHROPIC_API_KEY=synthetic-anthropic\n")
+    elif case == "missing-anthropic":
+        _write_private_env(path, "OPENAI_API_KEY=synthetic-openai\n")
+    elif case == "unsafe-mode":
+        _write_private_env(path, complete, mode=0o644)
+    else:
+        target = tmp_path / "target-env"
+        _write_private_env(target, complete)
+        path.symlink_to(target)
+    adapter_created = False
+
+    def prohibit_adapter(**kwargs: object) -> object:
+        nonlocal adapter_created
+        adapter_created = True
+        raise AssertionError("provider adapter must not be created")
+
+    monkeypatch.setattr(fresh_pilot_v2_live, "OpenAIResponsesAdapter", prohibit_adapter)
+    monkeypatch.setattr(fresh_pilot_v2_live, "AnthropicMessagesAdapter", prohibit_adapter)
+    with pytest.raises(PermissionError):
+        fresh_pilot_v2_live._live_adapters(
+            repo,
+            _synthetic_generic_authorization(),
+            RouteCappedLedger(tmp_path / "ledger.jsonl"),
+            b"k" * 32,
+            tmp_path / "responses",
+        )
+    assert adapter_created is False
+
+
+@pytest.mark.parametrize(
+    "failure_point",
+    ["authorization", "execution-tree", "identity", "stage", "ledger", "projected-cap"],
+)
+def test_r2_preflight_failures_precede_credential_ingress(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    failure_point: str,
+) -> None:
+    monkeypatch.setenv("XDG_STATE_HOME", str(tmp_path / "state"))
+    credential_ingress = False
+
+    def prohibit_credentials(*args: object, **kwargs: object) -> CredentialSet:
+        nonlocal credential_ingress
+        credential_ingress = True
+        raise AssertionError("credential ingress occurred before preflight completed")
+
+    monkeypatch.setattr(fresh_pilot_v2_live, "load_credentials", prohibit_credentials)
+    monkeypatch.setattr(
+        fresh_pilot_v2_live,
+        "load_owner_authorization",
+        lambda repo: _synthetic_generic_authorization(),
+    )
+    monkeypatch.setattr(
+        fresh_pilot_v2_live,
+        "_bind_private_state",
+        lambda repo, root, authorization: {"status": "bound"},
+    )
+    if failure_point == "authorization":
+        monkeypatch.setattr(
+            fresh_pilot_v2_live,
+            "load_owner_authorization",
+            lambda repo: (_ for _ in ()).throw(PermissionError("authorization")),
+        )
+    elif failure_point in {"execution-tree", "identity"}:
+        monkeypatch.setattr(
+            fresh_pilot_v2_live,
+            "_bind_private_state",
+            lambda repo, root, authorization: (_ for _ in ()).throw(PermissionError(failure_point)),
+        )
+    elif failure_point == "stage":
+        monkeypatch.setattr(
+            fresh_pilot_v2_live,
+            "_next_stage",
+            lambda repo, root, state: (_ for _ in ()).throw(PermissionError("stage")),
+        )
+    elif failure_point == "ledger":
+        monkeypatch.setattr(
+            fresh_pilot_v2_live,
+            "_fresh_ledger",
+            lambda path: (_ for _ in ()).throw(PermissionError("ledger")),
+        )
+    elif failure_point == "projected-cap":
+        monkeypatch.setattr(
+            fresh_pilot_v2_live,
+            "_validate_call_stage_before_credential_ingress",
+            lambda stage, ledger: (_ for _ in ()).throw(PermissionError("projected cap")),
+        )
+    with pytest.raises(PermissionError, match=failure_point.replace("-", ".*")):
+        run_live_fresh_pilot(ROOT)
+    assert credential_ingress is False
+
+
+@pytest.mark.parametrize(
+    ("stage", "outcome"),
+    [
+        ("public-canary", "success"),
+        ("private-prefix", "success"),
+        ("fixed-full-batch", "success"),
+        ("public-canary", "provider-failure"),
+        ("public-canary", "parser-failure"),
+        ("public-canary", "protocol-failure"),
+        ("public-canary", "unexpected-exception"),
+    ],
+)
+def test_r2_every_provider_stage_and_exit_path_clears_selected_secrets(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    stage: str,
+    outcome: str,
+) -> None:
+    credentials = CredentialSet(
+        {
+            "OPENAI_API_KEY": "synthetic-openai",
+            "ANTHROPIC_API_KEY": "synthetic-anthropic",
+        },
+        allowed_names=fresh_pilot_v2_live.CREDENTIAL_NAMES,
+        configured={name: True for name in fresh_pilot_v2_live.CREDENTIAL_NAMES},
+        unused_present=(),
+    )
+    adapters = (
+        _CapturedProviderAdapter(
+            api_key="synthetic-openai",
+            manifest=OPENAI_MANIFEST,
+        ),
+        _CapturedProviderAdapter(
+            api_key="synthetic-anthropic",
+            manifest=ANTHROPIC_MANIFEST,
+        ),
+    )
+    ledger = RouteCappedLedger(tmp_path / "ledger.jsonl")
+    prepared = fresh_pilot_v2_live.PreparedLiveStage(
+        authorization=_synthetic_generic_authorization(),
+        root=tmp_path / "state",
+        operational_key=b"k" * 32,
+        response_root=tmp_path / "responses",
+        ledger=ledger,
+        stage=stage,
+    )
+    monkeypatch.setattr(fresh_pilot_v2_live, "_prepare_live_stage", lambda repo: prepared)
+    monkeypatch.setattr(
+        fresh_pilot_v2_live,
+        "_live_adapters",
+        lambda *args, **kwargs: ({}, credentials, adapters),
+    )
+
+    def execute(*args: object, **kwargs: object) -> dict[str, str]:
+        if outcome != "success":
+            raise RuntimeError(outcome)
+        return {"status": "pass"}
+
+    monkeypatch.setattr(fresh_pilot_v2_live, "_execute_stage", execute)
+    if outcome == "success":
+        assert run_live_fresh_pilot(ROOT)["status"] == "pass"
+    else:
+        with pytest.raises(RuntimeError, match=outcome):
+            run_live_fresh_pilot(ROOT)
+    assert credentials.get_secret("OPENAI_API_KEY") is None
+    assert credentials.get_secret("ANTHROPIC_API_KEY") is None
+    assert all(adapter._api_key == "" for adapter in adapters)
+    assert "synthetic" not in repr(credentials)
+    assert all("synthetic" not in repr(adapter) for adapter in adapters)

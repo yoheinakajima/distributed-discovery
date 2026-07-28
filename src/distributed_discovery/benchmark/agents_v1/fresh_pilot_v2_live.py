@@ -16,7 +16,7 @@ import stat
 import subprocess
 import tempfile
 from collections.abc import Mapping
-from dataclasses import asdict, replace
+from dataclasses import asdict, dataclass, replace
 from datetime import datetime
 from decimal import Decimal
 from pathlib import Path
@@ -100,6 +100,7 @@ from distributed_discovery.benchmark.agents_v1.verification import verify_method
 
 PREFIX_INDICES = (0, 10, 20, 30, 40)
 CALL_STAGES = frozenset({"public-canary", "private-prefix", "fixed-full-batch"})
+CREDENTIAL_NAMES = ("OPENAI_API_KEY", "ANTHROPIC_API_KEY")
 CUSTODY_REPORT = Path(
     "reports/benchmark/treasurebench-agents-v1-fresh-pilot-v2-custody-commitment.yml"
 )
@@ -126,6 +127,18 @@ PRIVATE_OBJECTS = (
     "encrypted-final-audit-package",
     "redacted-summary",
 )
+
+
+@dataclass(frozen=True)
+class PreparedLiveStage:
+    """Credential-free live-stage state validated before exact ingress."""
+
+    authorization: Mapping[str, object]
+    root: Path
+    operational_key: bytes
+    response_root: Path
+    ledger: AppendOnlyLedger
+    stage: str
 
 
 def private_state_root() -> Path:
@@ -464,26 +477,51 @@ def _live_adapters(
     response_key: bytes,
     response_root: Path,
 ) -> tuple[dict[str, AgentAdapter], CredentialSet, tuple[object, ...]]:
-    credentials = load_credentials(repo / ".env.txt", explicit_live_mode=True)
-    openai_key = credentials.get_secret("OPENAI_API_KEY")
-    anthropic_key = credentials.get_secret("ANTHROPIC_API_KEY")
-    if not openai_key or not anthropic_key:
+    try:
+        credentials = load_credentials(
+            repo / ".env.txt",
+            explicit_live_mode=True,
+            requested_names=CREDENTIAL_NAMES,
+        )
+    except FileNotFoundError as error:
+        raise PermissionError("repository-local credential file is missing") from error
+    missing = [
+        name
+        for name in CREDENTIAL_NAMES
+        if not credentials.configured.get(name) or not credentials.get_secret(name)
+    ]
+    if missing:
         credentials.clear()
-        raise PermissionError("both exact direct provider credentials are required")
-    cost_ledger = CostLedger(_preflight_authorization(authorization))
-    transport = UrllibTransport()
-    openai = OpenAIResponsesAdapter(
-        api_key=openai_key,
-        transport=transport,
-        network_enabled=True,
-        ledger=cost_ledger,
-    )
-    anthropic = AnthropicMessagesAdapter(
-        api_key=anthropic_key,
-        transport=transport,
-        network_enabled=True,
-        ledger=cost_ledger,
-    )
+        raise PermissionError(f"required opaque credential is not configured: {missing[0]}")
+    openai: OpenAIResponsesAdapter | None = None
+    anthropic: AnthropicMessagesAdapter | None = None
+    try:
+        openai_key = credentials.get_secret("OPENAI_API_KEY")
+        anthropic_key = credentials.get_secret("ANTHROPIC_API_KEY")
+        if not openai_key or not anthropic_key:
+            raise PermissionError("both exact direct provider credentials are required")
+        cost_ledger = CostLedger(_preflight_authorization(authorization))
+        transport = UrllibTransport()
+        openai = OpenAIResponsesAdapter(
+            api_key=openai_key,
+            transport=transport,
+            network_enabled=True,
+            ledger=cost_ledger,
+        )
+        anthropic = AnthropicMessagesAdapter(
+            api_key=anthropic_key,
+            transport=transport,
+            network_enabled=True,
+            ledger=cost_ledger,
+        )
+    except Exception:
+        if openai is not None:
+            openai.clear_secret()
+        if anthropic is not None:
+            anthropic.clear_secret()
+        credentials.clear()
+        raise
+    assert openai is not None and anthropic is not None
     underlying = (openai, anthropic)
     adapters = {
         model: _resumable(
@@ -497,6 +535,77 @@ def _live_adapters(
         for index, model in enumerate(MODELS)
     }
     return adapters, credentials, underlying
+
+
+def _clear_stage_secrets(
+    credentials: CredentialSet | None,
+    adapters: tuple[object, ...],
+) -> None:
+    """Clear every exact selected value and provider-adapter secret."""
+
+    for adapter in adapters:
+        clear = getattr(adapter, "clear_secret", None)
+        if callable(clear):
+            clear()
+    if credentials is not None:
+        credentials.clear()
+
+
+def _validate_call_stage_before_credential_ingress(
+    stage: str,
+    ledger: AppendOnlyLedger,
+) -> None:
+    """Reject invalid stage/ledger/cap state before opening repository credentials."""
+
+    if stage not in CALL_STAGES:
+        raise ValueError("credential ingress is allowed only for a provider-call stage")
+    if any(record.get("event_type") == "provider-phase-closed" for record in ledger.records):
+        raise PermissionError("provider phase is closed before credential ingress")
+    totals = ledger.totals()
+    if int(str(totals["calls"])) >= MAX_CALLS:
+        raise PermissionError("projected total call cap exceeded before credential ingress")
+    if Decimal(str(totals["cost_usd"])) >= TOTAL_CAP:
+        raise PermissionError("projected total cost cap exceeded before credential ingress")
+    provider_raw = cast(Mapping[str, object], totals["provider_usd"])
+    for provider in PROVIDERS:
+        provider_calls = sum(
+            record.get("event_type") == "provider-call" and record.get("provider") == provider
+            for record in ledger.records
+        )
+        if provider_calls >= MAX_CALLS_PER_PROVIDER:
+            raise PermissionError(
+                f"projected {provider} call cap exceeded before credential ingress"
+            )
+        if Decimal(str(provider_raw[provider])) >= PROVIDER_CAPS[provider]:
+            raise PermissionError(
+                f"projected {provider} cost cap exceeded before credential ingress"
+            )
+
+
+def _prepare_live_stage(repo: Path) -> PreparedLiveStage:
+    """Validate authorization, identity, stage, ledger, and caps without credentials."""
+
+    authorization = load_owner_authorization(repo)
+    root = private_state_root()
+    _secure_directory(root)
+    _initialize_private_state(root, repo=repo, synthetic=False)
+    _bind_private_state(repo, root, authorization)
+    operational_key = _load_or_create_key(root / "operational-key.bin")
+    response_root = root / "encrypted-provider-responses"
+    _secure_directory(response_root)
+    ledger = _fresh_ledger(root / "usage-cost-ledger.jsonl")
+    state = _load_state(root / "provider-stage-state.json")
+    stage = _next_stage(repo, root, state)
+    if stage in CALL_STAGES:
+        _validate_call_stage_before_credential_ingress(stage, ledger)
+    return PreparedLiveStage(
+        authorization=authorization,
+        root=root,
+        operational_key=operational_key,
+        response_root=response_root,
+        ledger=ledger,
+        stage=stage,
+    )
 
 
 class _ReplayOnlyAdapter:
@@ -1178,44 +1287,37 @@ def _execute_stage(
 
 def run_live_fresh_pilot(repo: Path) -> Mapping[str, object]:
     """Advance one exact authorized stage and enforce public commitment gates."""
-    authorization = load_owner_authorization(repo)
-    root = private_state_root()
-    _secure_directory(root)
-    _initialize_private_state(root, repo=repo, synthetic=False)
-    _bind_private_state(repo, root, authorization)
-    operational_key = _load_or_create_key(root / "operational-key.bin")
-    response_root = root / "encrypted-provider-responses"
-    _secure_directory(response_root)
-    ledger = _fresh_ledger(root / "usage-cost-ledger.jsonl")
-    state = _load_state(root / "provider-stage-state.json")
-    stage = _next_stage(repo, root, state)
+    prepared = _prepare_live_stage(repo)
     credentials: CredentialSet | None = None
     live_underlying: tuple[object, ...] = ()
-    if stage in CALL_STAGES:
+    if prepared.stage in CALL_STAGES:
         adapters, credentials, live_underlying = _live_adapters(
-            repo, authorization, ledger, operational_key, response_root
+            repo,
+            prepared.authorization,
+            prepared.ledger,
+            prepared.operational_key,
+            prepared.response_root,
         )
-    elif stage == "verify":
-        adapters = _replay_adapters(ledger, operational_key, response_root)
+    elif prepared.stage == "verify":
+        adapters = _replay_adapters(
+            prepared.ledger,
+            prepared.operational_key,
+            prepared.response_root,
+        )
     else:
         adapters = None
     try:
         return _execute_stage(
             repo,
-            authorization=authorization,
-            root=root,
-            stage=stage,
+            authorization=prepared.authorization,
+            root=prepared.root,
+            stage=prepared.stage,
             adapters=adapters,
-            operational_key=operational_key,
-            ledger=ledger,
+            operational_key=prepared.operational_key,
+            ledger=prepared.ledger,
         )
     finally:
-        for adapter in live_underlying:
-            clear = getattr(adapter, "clear_secret", None)
-            if callable(clear):
-                clear()
-        if credentials is not None:
-            credentials.clear()
+        _clear_stage_secrets(credentials, live_underlying)
 
 
 def run_mock_fresh_pilot(

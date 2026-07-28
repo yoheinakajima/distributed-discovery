@@ -86,7 +86,7 @@ BATCH_ID = "tb-agents-v1-repair-confirmation-v2-b01"
 TASK_ID = "AO-0006"
 ISSUE = 200
 BRANCH = "benchmark/treasurebench-agents-v1-fresh-pilot-v2"
-GATE_ID = "AOG-AO-0006-FRESH-PILOT-V2"
+GATE_ID = "AOG-AO-0006-FRESH-PILOT-V2-R2"
 MODELS = ("gpt-5.4-2026-03-05", "claude-sonnet-4-6")
 PROVIDERS = ("OpenAI", "Anthropic")
 TOTAL_CAP = Decimal("25")
@@ -106,8 +106,8 @@ EXECUTION_BUDGET_PATH = Path(
     "docs/benchmark/agents-v1/treasurebench-fresh-pilot-v2-execution-budget.yml"
 )
 CORRUPTIONS_PATH = Path("docs/benchmark/agents-v1/treasurebench-fresh-pilot-v2-corruptions.yml")
-GATE_PATH = Path("reports/agent-ops/AO-0006-treasurebench-fresh-pilot-v2-owner-gate.yml")
-CONTRACT_PATH = Path("tasks/treasurebench-agents-v1-fresh-pilot-v2.yml")
+GATE_PATH = Path("reports/agent-ops/AO-0006-treasurebench-fresh-pilot-v2-r2-owner-gate.yml")
+CONTRACT_PATH = Path("tasks/treasurebench-agents-v1-fresh-pilot-v2-r2.yml")
 RESERVED_IDENTITY_FRAGMENTS = (
     "treasurebench-agents-v1-pilot-v1",
     "tb-agents-v1-pilot-v1-b01",
@@ -441,6 +441,7 @@ def validate_registration(repo: Path) -> dict[str, object]:
         (request["campaign_id"], CAMPAIGN_ID, "campaign"),
         (request["batch_id"], BATCH_ID, "batch"),
         (request["branch"], BRANCH, "branch"),
+        (request["owner_gate_id"], GATE_ID, "owner gate"),
         (allocation["campaign_id"], CAMPAIGN_ID, "allocation campaign"),
         (allocation["batch_id"], BATCH_ID, "allocation batch"),
         (budget["campaign_id"], CAMPAIGN_ID, "budget campaign"),
@@ -483,6 +484,16 @@ def validate_registration(repo: Path) -> dict[str, object]:
         MAX_OUTPUT_TOKENS_PER_REQUEST
     ):
         raise ValueError("fresh per-request output ceiling changed")
+    if request["credential_ingress"] != {
+        "source": "repository-root-.env.txt",
+        "loader": "strict-nonexecuting-dotenv-no-interpolation",
+        "requested_names": ["OPENAI_API_KEY", "ANTHROPIC_API_KEY"],
+        "unrelated_names_returned": False,
+        "unrelated_values_retained_or_transmitted": False,
+        "clear_after_each_provider_stage": True,
+        "clear_on_all_exit_paths": True,
+    }:
+        raise PermissionError("fresh R2 credential ingress contract changed")
     if budget["graph"]["matrix_calls"] + budget["graph"]["public_canary_calls"] != (NORMAL_CALLS):
         raise ValueError("fresh execution graph does not reconcile")
     if len(corruptions["corruptions"]) != 41:

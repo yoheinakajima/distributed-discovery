@@ -1,5 +1,5 @@
 schema_version: treasurebench-agents-v1-fresh-pilot-v2-request-v1
-status: exact-execution-frozen-owner-gate-not-authorized
+status: r2-execution-refreeze-in-progress-owner-gate-not-authorized
 task_id: AO-0006
 owner_study: DD-010
 new_study_allocated: false
@@ -9,7 +9,8 @@ batch_id: tb-agents-v1-repair-confirmation-v2-b01
 issue: 200
 branch: benchmark/treasurebench-agents-v1-fresh-pilot-v2
 starting_main: 36866e849b468df10b94b0039cf54f3d891ca120
-owner_gate_id: AOG-AO-0006-FRESH-PILOT-V2
+superseded_owner_gate_id: AOG-AO-0006-FRESH-PILOT-V2
+owner_gate_id: AOG-AO-0006-FRESH-PILOT-V2-R2
 counts:
   tasks: 50
   families: 5
@@ -47,6 +48,14 @@ provider_conformance:
   final_action_cardinality: exactly-one-per-required-agent
   nonfinal_proposals_scored: false
   output_tokens_per_request: 256
+credential_ingress:
+  source: repository-root-.env.txt
+  loader: strict-nonexecuting-dotenv-no-interpolation
+  requested_names: [OPENAI_API_KEY, ANTHROPIC_API_KEY]
+  unrelated_names_returned: false
+  unrelated_values_retained_or_transmitted: false
+  clear_after_each_provider_stage: true
+  clear_on_all_exit_paths: true
 budget:
   currency: USD
   expected_cost: "11.51"
@@ -78,7 +87,7 @@ failure_policy:
   batch_failure_disposition: quarantine-entire-batch-no-splice-or-replacement
 private_state:
   symbolic_root: XDG_STATE_HOME/distributed-discovery/treasurebench-agents-v1/repair-confirmation-v2
-  authorization_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0006-FRESH-PILOT-V2.yml
+  authorization_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0006-FRESH-PILOT-V2-R2.yml
   retention_days_after_closeout: 365
   fresh_os_csprng_seed: true
   tasks_and_answers_encrypted_separately: true
@@ -114,7 +123,7 @@ boundaries:
   submission_allowed: false
   base_campaign_allowed: false
 execution_sensitive_paths:
-  - tasks/treasurebench-agents-v1-fresh-pilot-v2.yml
+  - tasks/treasurebench-agents-v1-fresh-pilot-v2-r2.yml
   - src/distributed_discovery/agent_ops
   - src/distributed_discovery/benchmark/agents_v1
   - src/distributed_discovery/cli.py
