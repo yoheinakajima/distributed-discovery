@@ -83,8 +83,8 @@ Owner amendment at `2026-07-28T02:30:00Z`:
 - no credential, authorization, prior private state, real seed, custody,
   provider, or spend was accessed while accepting this amendment.
 
-Exactly one milestone is active: **M10R2 complete offline acceptance and
-refreeze validation**.
+Exactly one milestone is active: **M11R2 clean pushed execution refreeze and
+original-gate supersession**.
 M0 passed at `2026-07-28T01:11:20Z`: the task contract is schema-valid, the
 provider and budget records parse and carry the exact reserved identities,
 the ExecPlan sections are ordered with one active milestone, all recorded
@@ -231,9 +231,9 @@ audit at closeout.
   pre-ingress regressions.
 - **M9R2 — complete:** deterministic successful and quarantined long-session
   control flow, including synthetic merge/CI/Pages/live/issue/main fixtures.
-- **M10R2 — active:** complete 500-run rehearsal, all corruptions, focused
+- **M10R2 — complete:** complete 500-run rehearsal, all corruptions, focused
   tests, and full repository validation.
-- **M11R2 — pending:** clean pushed execution refreeze and explicit
+- **M11R2 — active:** clean pushed execution refreeze and explicit
   supersession of the unused original gate.
 - **M12R2 — pending:** committed generic
   `AOG-AO-0006-FRESH-PILOT-V2-R2`, live authorization-free validation, typed
@@ -263,7 +263,7 @@ audit at closeout.
 - [x] Complete M7R2 additive authority amendment and offline refreeze design.
 - [x] Complete M8R2 exact credential ingress and cleanup regressions.
 - [x] Complete M9R2 success/quarantine long-session orchestration.
-- [ ] Complete M10R2 full offline acceptance.
+- [x] Complete M10R2 full offline acceptance.
 - [ ] Complete M11R2 execution refreeze and original-gate supersession.
 - [ ] Complete M12R2 R2 gate and owner-gate-required handoff.
 
@@ -379,6 +379,16 @@ audit at closeout.
   success/quarantine administration through checks, merge, CI/Pages, live
   routes, issue closure, main synchronization, and final handoff. The focused
   R2 suites pass 56/56 without reading real credentials or private state.
+- `2026-07-28T03:30:09Z`: complete M10R2. The refreshed full rehearsal passes
+  with 50 tasks, 500 runs, 3,014 turns, 500 exact pairings, 69 registered
+  corruption rejections, verified lock/redaction, and zero credential reads,
+  private objects, provider calls, or spend. The first full-wall attempt
+  passed 560/570 tests; its ten failures were isolated to nested `uv`
+  dependency resolution blocked by the restricted sandbox and legacy
+  remote-ancestry fixtures observing the not-yet-pushed candidate. After
+  pushing the same candidate, the normal approved wall passed formatting,
+  Ruff, mypy, all 570 tests, claims, 51 run manifests, every governance audit,
+  and offline release verification. No implementation correction was needed.
 
 ## Validation strategy
 

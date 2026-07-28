@@ -1,0 +1,22 @@
+schema_version: agent-ops-gate-supersession-v1
+kind: owner-gate-supersession
+task_id: AO-0006
+issue: 200
+pull_request: 201
+branch: benchmark/treasurebench-agents-v1-fresh-pilot-v2
+superseded_gate_id: AOG-AO-0006-FRESH-PILOT-V2
+superseded_gate_path: reports/agent-ops/AO-0006-treasurebench-fresh-pilot-v2-owner-gate.yml
+superseding_gate_id: AOG-AO-0006-FRESH-PILOT-V2-R2
+superseding_gate_path: reports/agent-ops/AO-0006-treasurebench-fresh-pilot-v2-r2-owner-gate.yml
+status: superseded-unused-never-authorized
+authorization_created: false
+authorization_consumed: false
+credential_reads: 0
+prior_private_state_reads: 0
+private_objects_created: 0
+provider_calls: 0
+spend_usd: "0"
+campaign_id: treasurebench-agents-v1-repair-confirmation-v2
+batch_id: tb-agents-v1-repair-confirmation-v2-b01
+identity_replaced: false
+reason: Owner-directed AO-0006 R2 preauthorization amendment froze exact two-credential ingress and one-gate long-session success-or-quarantine closeout authority.
