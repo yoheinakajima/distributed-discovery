@@ -83,8 +83,8 @@ Owner amendment at `2026-07-28T02:30:00Z`:
 - no credential, authorization, prior private state, real seed, custody,
   provider, or spend was accessed while accepting this amendment.
 
-Exactly one milestone is active: **M11R2 clean pushed execution refreeze and
-original-gate supersession**.
+Exactly one milestone is active: **M12R2 committed generic owner gate and
+owner-gate-required handoff**.
 M0 passed at `2026-07-28T01:11:20Z`: the task contract is schema-valid, the
 provider and budget records parse and carry the exact reserved identities,
 the ExecPlan sections are ordered with one active milestone, all recorded
@@ -233,9 +233,9 @@ audit at closeout.
   control flow, including synthetic merge/CI/Pages/live/issue/main fixtures.
 - **M10R2 — complete:** complete 500-run rehearsal, all corruptions, focused
   tests, and full repository validation.
-- **M11R2 — active:** clean pushed execution refreeze and explicit
+- **M11R2 — complete:** clean pushed execution refreeze and explicit
   supersession of the unused original gate.
-- **M12R2 — pending:** committed generic
+- **M12R2 — active:** committed generic
   `AOG-AO-0006-FRESH-PILOT-V2-R2`, live authorization-free validation, typed
   handoff, and stop.
 
@@ -264,7 +264,7 @@ audit at closeout.
 - [x] Complete M8R2 exact credential ingress and cleanup regressions.
 - [x] Complete M9R2 success/quarantine long-session orchestration.
 - [x] Complete M10R2 full offline acceptance.
-- [ ] Complete M11R2 execution refreeze and original-gate supersession.
+- [x] Complete M11R2 execution refreeze and original-gate supersession.
 - [ ] Complete M12R2 R2 gate and owner-gate-required handoff.
 
 ## Discoveries and surprises
@@ -389,6 +389,14 @@ audit at closeout.
   pushing the same candidate, the normal approved wall passed formatting,
   Ruff, mypy, all 570 tests, claims, 51 run manifests, every governance audit,
   and offline release verification. No implementation correction was needed.
+- `2026-07-28T03:35:37Z`: freeze and push exact R2 execution commit
+  `d210b0653677859c79a1fb87d871aaf45f4a81d4`. The remote branch matches,
+  the original gate is explicitly recorded as superseded, unused, and never
+  authorized, and the exact commit again passes the complete 570-test wall,
+  all governance and offline release checks, the 50-task/500-run rehearsal,
+  and all 69 corruptions with zero consequential activity. The owner-selected
+  USD 11.51 expected, USD 15 conservative, USD 25 total, USD 10 OpenAI, USD
+  15 Anthropic, 5,200-call, and frozen token ceilings remain unchanged.
 
 ## Validation strategy
 
