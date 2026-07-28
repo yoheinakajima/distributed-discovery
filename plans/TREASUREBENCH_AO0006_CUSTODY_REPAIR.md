@@ -52,7 +52,11 @@ architecture/model runs, no task ciphertext, no answer ciphertext, no custody
 manifest, no unsealing, and output lock
 `sha256:127a9c796459c7627f6fd90b92ef1587ad0f6b1910b4ff255c2ceb976f3ab25f`.
 
-Exactly one milestone is active: **M0 — registration**.
+Registration commit `6c7f7b4` passed both Agent Operations and program-memory
+audits. The public audit, bounded diagnostic implementation, synthetic fixture,
+and live-mode conformance framework are complete without private access.
+Exactly one milestone is active: **M4 — authorization-free validation and
+draft PR**.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -138,17 +142,17 @@ scientific evidence.
 
 ## Milestones
 
-- **M0 — active:** register AO-0007, issue, branch, contract, ExecPlan, and
+- **M0 — complete:** register AO-0007, issue, branch, contract, ExecPlan, and
   program-memory route.
-- **M1 — pending:** complete the public custody-stack and AO-0006 public-boundary
+- **M1 — complete:** complete the public custody-stack and AO-0006 public-boundary
   audit.
-- **M2 — pending:** implement the authorization-bound read-only diagnostic,
+- **M2 — complete:** implement the authorization-bound read-only diagnostic,
   private-read and mutation guards, redaction, synthetic fixtures, and exact
   record-selection proof.
-- **M3 — pending:** implement the live-mode custody conformance framework,
+- **M3 — complete:** implement the live-mode custody conformance framework,
   independent verifier, twenty required coverage classes, interrupted-write
   cases, and corruptions using production functions and ordering.
-- **M4 — pending:** run all authorization-free validation, open the draft PR,
+- **M4 — active:** run all authorization-free validation, open the draft PR,
   and fix every failure without reading AO-0006 private state.
 - **M5 — pending:** freeze the exact diagnostic execution commit, commit one
   generic owner-gate manifest, validate it without authorizing, render the
@@ -175,11 +179,11 @@ scientific evidence.
   branch creation.
 - [x] Create issue #202 and branch
   `codex/treasurebench-ao0006-custody-repair`.
-- [ ] Complete the fixed contract, living ExecPlan, and `PM-0035`.
-- [ ] Validate and commit registration.
-- [ ] Complete M1 public custody audit.
-- [ ] Complete M2 diagnostic implementation and synthetic fixtures.
-- [ ] Complete M3 live-mode custody conformance implementation and corruptions.
+- [x] Complete the fixed contract, living ExecPlan, and `PM-0035`.
+- [x] Validate and commit registration as `6c7f7b4`.
+- [x] Complete M1 public custody audit.
+- [x] Complete M2 diagnostic implementation and synthetic fixtures.
+- [x] Complete M3 live-mode custody conformance implementation and corruptions.
 - [ ] Open the draft PR after the registration skeleton and focused tests pass.
 - [ ] Complete the full authorization-free validation wall.
 - [ ] Commit the exact diagnostic execution freeze.
@@ -203,6 +207,36 @@ scientific evidence.
   `decision-record` destinations rather than accepting a `task-contract`
   destination type. Preserve the contract path, correct only the registry
   type label, and rerun.
+- `2026-07-28T05:32:00Z`: registration commit `6c7f7b4` freezes AO-0007,
+  issue #202, the task branch, fixed contract, ExecPlan, master-plan lane, and
+  PM-0035 after both registration audits pass.
+- `2026-07-28T05:36:00Z`: tracked source at exact AO-0006 execution commit
+  `d210b0653677859c79a1fb87d871aaf45f4a81d4` supplies a deterministic causal
+  candidate. The v2 custody function creates the seed and two keys before
+  private task generation; the generator passes the v2 campaign into a
+  fail-closed allowlist containing only the original and v1 campaign IDs. The
+  offline rehearsal used `public_fixture=True` and bypassed that decision.
+  Record this only as a public-source candidate until the owner-gated
+  retained-state inventory and ordering check passes.
+- `2026-07-28T05:36:00Z`: the public audit also finds prospective conformance
+  gaps: shared atomic writes replace existing regular files rather than
+  enforcing exclusive creation, and resume of an existing sealed object does
+  not prove it represents the requested plaintext. These are not asserted as
+  the AO-0006 cause.
+- `2026-07-28T06:02:00Z`: the first focused static check stopped on seven
+  mechanical Ruff findings: import ordering, three unused imports, two long
+  lines, and one nested conditional. Correct formatting only; custody behavior
+  was not changed.
+- `2026-07-28T06:04:00Z`: the first focused test run stopped with two fixture
+  failures because a synthetically created intermediate directory retained the
+  process umask mode instead of the required `0700`. Tighten only the fixture
+  to normalize every synthetic directory and preserve the production guard.
+- `2026-07-28T06:06:00Z`: the corrected focused suite passes seven tests. The
+  public-only custody audit also passes with zero retained-state reads or
+  writes, provider calls, credential reads, or spend. It independently
+  verifies the downstream synthetic AES-GCM path and corruptions while
+  preserving the expected pre-repair live-mode permit failure and the two
+  registered prospective gaps.
 
 ## Decision log
 
@@ -221,6 +255,11 @@ scientific evidence.
 - `2026-07-28T05:28:55Z`: create issue #202 through the connected GitHub
   integration, then create the sole task branch
   `codex/treasurebench-ao0006-custody-repair` from exact synchronized main.
+- `2026-07-28T06:06:00Z`: keep the production path unchanged before the
+  owner-gated diagnostic. Treat the campaign-permit rejection as a
+  public-source causal candidate, and treat exclusive creation and duplicate
+  mismatch as separate prospective conformance gaps until the retained-state
+  adjudication is complete.
 
 ## Validation strategy
 
