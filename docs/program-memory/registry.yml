@@ -628,3 +628,22 @@ records:
     review_after: explicit-owner-decision
     owner_decision: adopted
     last_reviewed: "2026-07-28"
+  - idea_id: PM-0034
+    title: TreasureBench repair-confirmation v2 custody-stage quarantine
+    status: implemented
+    capture_classification: capture-now
+    visibility: public
+    source_type: repository-reconciliation
+    captured_date: "2026-07-28"
+    proposition: AO-0006 completed both public provider canaries but stopped at custody creation; the wholly fresh v2 campaign and batch are permanently quarantined with zero private runs, a closed provider phase, and a verified public output-lock commitment.
+    why_it_matters: It preserves the third failed engineering pilot honestly, prevents retry or identity reuse, and distinguishes successful public provider conformance from an uncompleted private repair-confirmation matrix.
+    canonical_destination: {type: decision-record, path: reports/benchmark/treasurebench-agents-v1-fresh-pilot-v2-closeout.yml}
+    dependencies: [DD-010, PM-0031, PM-0032, PM-0033]
+    promotion_trigger: null
+    permitted_stops: [implemented, deferred, rejected, superseded]
+    not_a_result_boundaries: [engineering quarantine only, no task-level performance comparison scientific run claim paper result ranking release or base-campaign authority]
+    supersedes: [fresh-sealed-repair-confirmation-v2-execution-candidate]
+    superseded_by: null
+    review_after: explicit-owner-decision
+    owner_decision: adopted
+    last_reviewed: "2026-07-28"

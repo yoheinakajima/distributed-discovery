@@ -1,4 +1,32 @@
-# Final handoff — TreasureBench provider-schema conformance passed
+# Final handoff — TreasureBench fresh pilot v2 quarantined
+
+## AO-0006 fresh repair-confirmation v2 closeout (2026-07-28)
+
+AO-0006 campaign `treasurebench-agents-v1-repair-confirmation-v2`, batch
+`tb-agents-v1-repair-confirmation-v2-b01`, ran from frozen execution commit
+`d210b0653677859c79a1fb87d871aaf45f4a81d4`. Both direct-provider public
+canaries passed. They used 1,349 input tokens and 253 output tokens and cost
+USD 0.0076095: OpenAI USD 0.0027975 and Anthropic USD 0.004812.
+
+Custody creation then failed under the registered public-safe class
+`custody-creation-failure`, producing decision
+`fresh-pilot-v2-quarantined-engineering-only`. No private
+architecture/model run occurred. The provider phase is closed, and eight
+safely lockable objects are preserved under output lock
+`sha256:127a9c796459c7627f6fd90b92ef1587ad0f6b1910b4ff255c2ceb976f3ab25f`.
+No call followed the lock and no material was unsealed.
+
+A new seed and task and answer keys exist only in retained private state; no
+task ciphertext, answer ciphertext, or custody manifest was created. Methods
+A/B/C, metric ranges, and private pairings were not evaluated. The campaign
+and batch cannot be retried, repaired, reopened, reused, rescored, spliced,
+executed, or reauthorized.
+
+This is a redacted DD-010 engineering closeout. It publishes no private
+content or performance comparison and creates no DD-023, claim, scientific
+run, paper result, ranking, composite, release, submission, or base-campaign
+authority. All prior campaigns and AO-0002 through AO-0005 artifacts remain
+immutable.
 
 ## AO-0004/AO-0005 successful conformance closeout (2026-07-27)
 
@@ -20,10 +48,10 @@ It is not scientific evidence, model-performance evidence, peer review,
 external validation, or comparative performance. Private and scientific state
 did not change, and no raw output, prompt, credential material, authorization
 content, or performance comparison is published. The next substantive
-candidate is **TreasureBench Agents v1 wholly fresh sealed
-repair-confirmation pilot registration**. It is not registered or executed by
-this closeout and requires wholly new campaign, batch, CSPRNG seed, private
-tasks, answers, keys, ciphertexts, custody, and separate owner authorization.
+candidate was **TreasureBench Agents v1 wholly fresh sealed
+repair-confirmation pilot registration**. AO-0006 subsequently registered and
+executed that v2 candidate; its permanent quarantine is the current closeout
+above.
 
 ## Current repair-confirmation closeout (2026-07-27)
 

@@ -2,7 +2,7 @@ study_id: DD-010
 title: TreasureBench (DD-010; historical identifier DiscoveryBench)
 slug: dd-010
 phase: complete-bounded-study
-summary: TreasureBench is the formal public suite for the versioned exact golden benchmark with enforced protocol information boundaries; frozen DiscoveryBench identifiers remain unchanged, and both Agents v1 engineering pilots are permanently quarantined without creating performance or scientific evidence.
+summary: TreasureBench is the formal public suite for the versioned exact golden benchmark with enforced protocol information boundaries; frozen DiscoveryBench identifiers remain unchanged, and all three Agents v1 engineering pilots are permanently quarantined without creating performance or scientific evidence.
 public_artifacts:
   - path: docs/benchmark/agents-v1/README.md
     description: TreasureBench Agents v1 instrument contract with frozen DiscoveryBench compatibility identifiers
@@ -14,6 +14,8 @@ public_artifacts:
     description: Redacted aggregate pilot protocol and provider-error adjudication
   - path: reports/benchmark/treasurebench-agents-v1-fresh-pilot-closeout.md
     description: Redacted fresh repair-confirmation public-canary failure and permanent quarantine
+  - path: reports/benchmark/treasurebench-agents-v1-fresh-pilot-v2-closeout.md
+    description: Redacted fresh v2 custody-stage failure and permanent quarantine after two successful public canaries
   - path: reports/agent-ops/AO-0004-r4-public-provider-canary-outcome.yml
     description: Public provider-schema and semantic-contract engineering conformance outcome; not scientific or model-performance evidence
   - path: studies/DD-010-discoverybench/report.md

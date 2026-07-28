@@ -50,6 +50,7 @@ from distributed_discovery.benchmark.agents_v1.orchestration import (
     run_architecture,
 )
 from distributed_discovery.benchmark.agents_v1.protocol_contract import (
+    verify_metric_ranges,
     verify_protocol_contract,
 )
 from distributed_discovery.benchmark.agents_v1.traces import build_trace, verify_trace_hashes
@@ -923,6 +924,8 @@ class PilotBatchRunner:
         runs = 0
         disagreements = 0
         protocol_errors = 0
+        invalid_final_cardinalities = 0
+        range_errors = 0
         contamination_findings = 0
         for model, adapter in adapters.items():
             validate_provider_route(PROVIDERS[MODELS.index(model)], model)
@@ -930,6 +933,7 @@ class PilotBatchRunner:
                 for architecture in ARCHITECTURES:
                     run = run_architecture(task, architecture, adapter)
                     contract = verify_protocol_contract(task, run)
+                    invalid_final_cardinalities += contract.invalid_final_records
                     contamination_findings += sum(
                         classify_text(turn.response.raw_output).classification
                         in {"direct-leakage", "probable-memorization"}
@@ -938,6 +942,7 @@ class PilotBatchRunner:
                     if verify_metrics:
                         metrics = asdict(evaluate_run(task, run))
                         disagreements += len(verify_method_agreement(metrics, task, run))
+                        range_errors += len(verify_metric_ranges(metrics))
                     protocol_errors += int(not contract.compliant)
                     trace = build_trace(run)
                     if trace.audit["hidden_reasoning_stored"] is not False:
@@ -966,18 +971,26 @@ class PilotBatchRunner:
                     runs += 1
         if disagreements:
             raise RuntimeError("Method A/B disagreement requires quarantine")
+        if range_errors:
+            raise RuntimeError("metric-range failure requires quarantine")
         if contamination_findings:
             raise RuntimeError("direct or probable contamination requires quarantine")
         if protocol_errors and (
             self.reject_protocol_errors or stage in {"public-canary", "private-prefix"}
         ):
             raise RuntimeError(f"{stage} protocol gate failed")
+        expected_runs = len(tasks) * len(ARCHITECTURES) * len(adapters)
+        if runs != expected_runs:
+            raise RuntimeError("architecture/model pairing is incomplete")
         return {
             "stage": stage,
             "tasks": len(tasks),
             "runs": runs,
             "method_disagreements": disagreements,
             "protocol_errors": protocol_errors,
+            "invalid_final_cardinalities": invalid_final_cardinalities,
+            "metric_range_errors": range_errors,
+            "incomplete_pairings": 0,
             "contamination_findings": contamination_findings,
         }
 

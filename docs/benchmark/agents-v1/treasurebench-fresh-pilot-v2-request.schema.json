@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TreasureBench Agents v1 fresh repair-confirmation v2 request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "status", "task_id", "owner_study", "new_study_allocated", "claim_eligible", "campaign_id", "batch_id", "issue", "branch", "starting_main", "superseded_owner_gate_id", "owner_gate_id", "counts", "providers", "architectures", "provider_conformance", "credential_ingress", "budget", "failure_policy", "private_state", "verification", "long_session", "quarantine", "boundaries", "execution_sensitive_paths"],
+  "properties": {
+    "schema_version": {"const": "treasurebench-agents-v1-fresh-pilot-v2-request-v1"},
+    "status": {"enum": ["r2-execution-refreeze-in-progress-owner-gate-not-authorized", "exact-r2-execution-frozen-owner-gate-not-authorized"]},
+    "task_id": {"const": "AO-0006"},
+    "owner_study": {"const": "DD-010"},
+    "new_study_allocated": {"const": false},
+    "claim_eligible": {"const": false},
+    "campaign_id": {"const": "treasurebench-agents-v1-repair-confirmation-v2"},
+    "batch_id": {"const": "tb-agents-v1-repair-confirmation-v2-b01"},
+    "issue": {"const": 200},
+    "branch": {"const": "benchmark/treasurebench-agents-v1-fresh-pilot-v2"},
+    "starting_main": {"const": "36866e849b468df10b94b0039cf54f3d891ca120"},
+    "superseded_owner_gate_id": {"const": "AOG-AO-0006-FRESH-PILOT-V2"},
+    "owner_gate_id": {"const": "AOG-AO-0006-FRESH-PILOT-V2-R2"},
+    "counts": {"const": {"tasks": 50, "families": 5, "tasks_per_family": 10, "batches": 1, "repeats": 1, "architectures": 5, "cloud_models": 2, "private_runs": 500, "normal_calls": 3016}},
+    "providers": {
+      "type": "array",
+      "prefixItems": [
+        {"const": {"provider": "OpenAI", "route_id": "openai_direct", "endpoint": "https://api.openai.com/v1/responses", "model": "gpt-5.4-2026-03-05", "credential_name": "OPENAI_API_KEY", "transport_schema": "openai-specific"}},
+        {"const": {"provider": "Anthropic", "route_id": "anthropic_direct", "endpoint": "https://api.anthropic.com/v1/messages", "model": "claude-sonnet-4-6", "credential_name": "ANTHROPIC_API_KEY", "transport_schema": "anthropic-specific"}}
+      ],
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "architectures": {"const": ["isolated-private-agents", "full-broadcast-shared-transcript", "designated-reader-selective-sharing", "pooled-consensus", "portfolio-preserving-structured"]},
+    "provider_conformance": {"type": "object", "additionalProperties": false, "required": ["prerequisite_task", "prerequisite_record", "provider_specific_compilation", "provider_independent_semantic_validation", "final_action_cardinality", "nonfinal_proposals_scored", "output_tokens_per_request"], "properties": {"prerequisite_task": {"const": "AO-0004"}, "prerequisite_record": {"const": "reports/agent-ops/AO-0004-r4-public-provider-canary-outcome.yml"}, "provider_specific_compilation": {"const": true}, "provider_independent_semantic_validation": {"const": true}, "final_action_cardinality": {"const": "exactly-one-per-required-agent"}, "nonfinal_proposals_scored": {"const": false}, "output_tokens_per_request": {"const": 256}}},
+    "credential_ingress": {
+      "const": {
+        "source": "repository-root-.env.txt",
+        "loader": "strict-nonexecuting-dotenv-no-interpolation",
+        "requested_names": ["OPENAI_API_KEY", "ANTHROPIC_API_KEY"],
+        "unrelated_names_returned": false,
+        "unrelated_values_retained_or_transmitted": false,
+        "clear_after_each_provider_stage": true,
+        "clear_on_all_exit_paths": true
+      }
+    },
+    "budget": {"type": "object"},
+    "failure_policy": {"type": "object"},
+    "private_state": {"type": "object"},
+    "verification": {"type": "object"},
+    "long_session": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authorization_scope", "routine_owner_checkpoints", "staged_provider_execution", "administrative_closeout", "stop_only_for"],
+      "properties": {
+        "authorization_scope": {"const": "conditional-success-or-quarantine-through-normal-final-closeout"},
+        "routine_owner_checkpoints": {"const": false},
+        "staged_provider_execution": {"type": "array", "minItems": 10, "uniqueItems": true, "items": {"type": "string"}},
+        "administrative_closeout": {"type": "array", "minItems": 11, "uniqueItems": true, "items": {"type": "string"}},
+        "stop_only_for": {"type": "array", "minItems": 6, "uniqueItems": true, "items": {"type": "string"}}
+      }
+    },
+    "quarantine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["failure_points", "stop_provider_calls_immediately", "preserve_append_only_encrypted_state", "replacement_splice_rescore_or_semantic_retry", "close_provider_phase_when_present", "lock_every_safely_lockable_existing_object", "unseal_only_after_lock_and_only_when_safe", "deterministic_public_safe_closeout", "same_authority_through_merge_and_deploy"],
+      "properties": {
+        "failure_points": {"type": "array", "minItems": 15, "uniqueItems": true, "items": {"type": "string"}},
+        "stop_provider_calls_immediately": {"const": true},
+        "preserve_append_only_encrypted_state": {"const": true},
+        "replacement_splice_rescore_or_semantic_retry": {"const": false},
+        "close_provider_phase_when_present": {"const": true},
+        "lock_every_safely_lockable_existing_object": {"const": true},
+        "unseal_only_after_lock_and_only_when_safe": {"const": true},
+        "deterministic_public_safe_closeout": {"const": true},
+        "same_authority_through_merge_and_deploy": {"const": true}
+      }
+    },
+    "boundaries": {"type": "object", "additionalProperties": {"const": false}},
+    "execution_sensitive_paths": {"type": "array", "minItems": 20, "uniqueItems": true, "items": {"type": "string"}}
+  }
+}

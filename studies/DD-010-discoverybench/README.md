@@ -116,8 +116,37 @@ validation, or comparative performance. Private and scientific state
 remained unchanged. R1 and R2 remain superseded and unused; R3 and R4 are
 consumed and immutable. The next substantive candidate is TreasureBench
 Agents v1 wholly fresh sealed repair-confirmation pilot registration. It
-remains unregistered, unexecuted, and separately owner-gated and must later
-use wholly new private identities.
+was subsequently registered and executed as AO-0006 using wholly new v2
+private identities; its terminal quarantine is recorded below.
+
+## Agents v1 fresh repair-confirmation v2 closeout
+
+Issue #200 and PR #201 own AO-0006 campaign
+`treasurebench-agents-v1-repair-confirmation-v2`, batch
+`tb-agents-v1-repair-confirmation-v2-b01`, and frozen execution commit
+`d210b0653677859c79a1fb87d871aaf45f4a81d4`. Both direct-provider public
+canaries passed. They used 1,349 input tokens and 253 output tokens and cost
+USD 0.0076095: OpenAI USD 0.0027975 and Anthropic USD 0.004812.
+
+The batch then stopped at custody creation with decision
+`fresh-pilot-v2-quarantined-engineering-only` and public-safe failure class
+`custody-creation-failure`. No private architecture/model run occurred. The
+provider phase is closed and eight safely lockable objects are preserved under
+output lock
+`sha256:127a9c796459c7627f6fd90b92ef1587ad0f6b1910b4ff255c2ceb976f3ab25f`;
+no call followed the lock and no material was unsealed.
+
+A new OS-CSPRNG seed and task and answer keys exist only in retained private
+state. No task ciphertext, answer ciphertext, or custody manifest was
+created. Methods A, B, and C, metric-range checks, and private pairing
+verification were not run because the private batch never began. The
+50-task/500-run rehearsal and 69 corruption rejections remain offline
+instrument validation only.
+
+No private content, performance comparison, ranking, scientific evidence, or
+base-campaign authority is created. The v2 campaign and batch are permanently
+quarantined and cannot be retried, repaired, reopened, reused, rescored,
+spliced, executed, or reauthorized.
 
 ## Registered evaluation campaign
 
@@ -138,4 +167,4 @@ operational totals only and no task-level or comparative performance.
 
 No DD-023, claim, scientific run, paper result, ranking, leaderboard, or
 composite exists. No completed or archived authorization permits the base
-campaign, reuse of either quarantined pilot, or a new private pilot.
+campaign, reuse of any quarantined pilot, or a new private pilot.

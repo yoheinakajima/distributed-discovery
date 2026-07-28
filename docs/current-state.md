@@ -1,5 +1,34 @@
 # Current program state
 
+_TreasureBench Agents v1 fresh repair-confirmation v2 quarantine, 2026-07-28:_
+AO-0006 campaign `treasurebench-agents-v1-repair-confirmation-v2`, batch
+`tb-agents-v1-repair-confirmation-v2-b01`, ran from frozen execution commit
+`d210b0653677859c79a1fb87d871aaf45f4a81d4` under the exact R2 owner gate.
+Both direct-provider public canaries passed. The two calls used 1,349 input
+tokens and 253 output tokens and cost USD 0.0076095: OpenAI USD 0.0027975 and
+Anthropic USD 0.004812.
+
+The batch then stopped at custody creation with decision
+`fresh-pilot-v2-quarantined-engineering-only` and registered public-safe class
+`custody-creation-failure`. No private architecture/model run occurred. The
+provider phase is closed, and eight safely lockable objects are preserved
+under output lock
+`sha256:127a9c796459c7627f6fd90b92ef1587ad0f6b1910b4ff255c2ceb976f3ab25f`.
+No provider call followed the lock and no material was unsealed.
+
+A new OS-CSPRNG seed and task and answer keys exist only in retained private
+state; no task ciphertext, answer ciphertext, or custody manifest was created.
+Methods A/B/C, metric ranges, and private pairings were not evaluated because
+the private batch never began. The v2 campaign and batch are permanently
+quarantined and cannot be retried, repaired, reopened, reused, rescored,
+spliced, executed, or reauthorized.
+
+This is redacted DD-010 engineering closeout, not scientific or
+model-performance evidence. No private content, ranking, composite, DD-023,
+claim, scientific run, paper result, release, submission, or base-campaign
+authority is created. All prior campaigns and AO-0002 through AO-0005
+artifacts remain immutable.
+
 _TreasureBench provider-schema conformance closeout, 2026-07-27:_
 AO-0004 completed the public-engineering decision
 `conformance-pass-both-complete-schemas`. Under the frozen R4 execution at
@@ -20,11 +49,10 @@ It is not scientific evidence, model-performance evidence, peer review, or
 external validation. Private and scientific state did not change, and no raw
 provider output, prompt, credential material, authorization content, or
 performance comparison is published. After AO-0005 closeout, the next
-substantive candidate is **TreasureBench Agents v1 wholly fresh sealed
-repair-confirmation pilot registration**. It remains unregistered,
-unexecuted, and separately owner-gated; any later registration must use wholly
-new campaign, batch, CSPRNG seed, tasks, answers, keys, ciphertexts, and
-custody.
+substantive candidate was **TreasureBench Agents v1 wholly fresh sealed
+repair-confirmation pilot registration**. AO-0006 subsequently registered and
+executed that v2 candidate under wholly new identities; its permanent
+quarantine is the current record above.
 
 _TreasureBench Agents v1 repair-confirmation pilot closeout, 2026-07-27:_
 issue #196 and PR #197 preserve the wholly fresh DD-010 engineering campaign
@@ -109,7 +137,7 @@ separate owner authorization.
 
 _Program memory and preprint infrastructure, 2026-07-23:_ issue #178 records
 a non-scientific governance and publication-infrastructure continuation.
-Owner discussion is routed through a 29-record program-memory registry rather
+Owner discussion is routed through a 34-record program-memory registry rather
 than retained as raw transcript. The active editorial track is preprint-first;
 the journal track is deferred, not abandoned, and reopens only at its explicit
 trigger or a separate owner decision. Foundations remains a site/release note,

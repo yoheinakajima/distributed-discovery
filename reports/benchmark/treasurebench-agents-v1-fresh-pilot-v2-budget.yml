@@ -1,0 +1,78 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-v2-budget-v1
+calculated_at_utc: "2026-07-28T01:00:04Z"
+status: frozen-registration-budget-no-spend
+task_id: AO-0006
+campaign_id: treasurebench-agents-v1-repair-confirmation-v2
+batch_id: tb-agents-v1-repair-confirmation-v2-b01
+currency: USD
+execution_graph:
+  tasks: 50
+  families: 5
+  tasks_per_family: 10
+  architectures: 5
+  providers: 2
+  repeats: 1
+  matrix_runs: 500
+  synthetic_rehearsal_turns: 3014
+  public_canaries: 2
+  normal_calls: 3016
+  normal_calls_per_provider: 1508
+  maximum_calls: 5200
+  recovery_call_envelope_above-normal: 2184
+  maximum_live_concurrency: 2
+pricing_usd_per_million_tokens:
+  OpenAI: {input: "2.50", output: "15.00"}
+  Anthropic: {input: "3.00", output: "15.00"}
+expected_calculation:
+  calibration_source: reports/benchmark/agents-v1-public-calibration.yml
+  method: scale-each-direct-route-calibration-token-total-to-1508-calls
+  OpenAI:
+    calibration_calls: 294
+    calibration_input_tokens: 132000
+    calibration_output_tokens: 32975
+    expected_calls: 1508
+    expected_input_tokens_rounded: 677061
+    expected_output_tokens_rounded: 169137
+    expected_cost_usd: "4.229709"
+  Anthropic:
+    calibration_calls: 296
+    calibration_input_tokens: 257281
+    calibration_output_tokens: 43808
+    expected_calls: 1508
+    expected_input_tokens_rounded: 1310742
+    expected_output_tokens_rounded: 223184
+    expected_cost_usd: "7.279987"
+  exact_unrounded_total_cost_usd: "11.509696"
+  registered_expected_cost_usd: "11.51"
+conservative_plan:
+  total_cost_usd: "15"
+  rationale: owner-selected-provisional-expected-envelope-retained-as-a-conservative-buffer-over-calibration-scaled-cost
+hard_caps:
+  total_cost_usd: "25"
+  provider_cost_usd: {OpenAI: "10", Anthropic: "15"}
+  calls_total: 5200
+  calls_per_provider: 2600
+  output_tokens_per_request: 256
+  route_tokens:
+    OpenAI: {input: 1680000, output: 386048}
+    Anthropic: {input: 3000000, output: 386048}
+  aggregate_tokens: {input: 4680000, output: 772096}
+current_price_projection_of-route-token-caps:
+  OpenAI: "9.99072"
+  Anthropic: "14.79072"
+  total: "24.78144"
+  remaining_total_margin: "0.21856"
+  OpenAI_remaining_margin: "0.00928"
+  Anthropic_remaining_margin: "0.20928"
+policies:
+  output_ceiling_matches_AO-0004-R4: true
+  prompt_or-task-change-on-retry: false
+  same-request-transport-attempts: 2
+  schema-only-repairs-per-request: 1
+  recovered-retries-may-be-warnings: true
+  terminal-provider-failures-allowed: 0
+  protocol-invalid-runs-allowed: 0
+  incomplete-pairings-allowed: 0
+  cap-exhaustion-disposition: quarantine-entire-batch
+  owner-selected-maximum-envelope-increased: false
+activity: {calls: 0, spend_usd: "0", credentials_read: 0, private_objects_created: 0}

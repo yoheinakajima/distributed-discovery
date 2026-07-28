@@ -1,4 +1,26 @@
-# Current roadmap — provider-schema conformance passed; fresh registration next
+# Current roadmap — fresh repair-confirmation v2 quarantined
+
+AO-0006 registered and executed the wholly fresh v2 candidate at campaign
+`treasurebench-agents-v1-repair-confirmation-v2`, batch
+`tb-agents-v1-repair-confirmation-v2-b01`, and frozen execution commit
+`d210b0653677859c79a1fb87d871aaf45f4a81d4`. Both direct-provider public
+canaries passed. The two calls used 1,349 input tokens and 253 output tokens
+and cost USD 0.0076095: OpenAI USD 0.0027975 and Anthropic USD 0.004812.
+
+Custody creation then failed under the registered coarse class
+`custody-creation-failure`. The exact decision is
+`fresh-pilot-v2-quarantined-engineering-only`. No private
+architecture/model run occurred. The provider phase is closed; eight safely
+lockable objects are preserved under output lock
+`sha256:127a9c796459c7627f6fd90b92ef1587ad0f6b1910b4ff255c2ceb976f3ab25f`;
+no provider call followed the lock and no material was unsealed.
+
+The v2 campaign and batch are permanently quarantined. They cannot be
+retried, repaired, reopened, reused, rescored, spliced, executed, or
+reauthorized. No replacement batch, new private pilot, or base campaign is
+selected by this closeout. Any such action requires a separate explicit owner
+decision and wholly new authority. This is DD-010 engineering disposition,
+not scientific evidence or a model-performance comparison.
 
 AO-0004 completed as `conformance-pass-both-complete-schemas`. Under its
 frozen R4 public canaries, OpenAI and Anthropic both passed their minimal and
@@ -17,11 +39,9 @@ reactivated, reused, rescored, or reauthorized.
 
 This is provider-schema and semantic-contract engineering conformance, not
 scientific evidence, model-performance evidence, peer review, external
-validation, or a performance comparison. The next substantive candidate is
-**TreasureBench Agents v1 wholly fresh sealed repair-confirmation pilot
-registration**. It remains unregistered and unexecuted and requires a later
-task, wholly new campaign and private identities, and separate owner
-authorization. The 200-task base remains blocked.
+validation, or a performance comparison. The next substantive candidate was
+the wholly fresh v2 pilot now permanently quarantined above. The 200-task base
+remains blocked.
 
 The wholly fresh TreasureBench Agents v1 repair-confirmation campaign
 `treasurebench-agents-v1-repair-confirmation-v1`, batch
@@ -109,16 +129,15 @@ DOI, study, claim, run, or paper change is authorized by the naming milestone.
 Phase 1 is complete. During Phase 2, theorem-family execution is held. Reliable
 Discovery remains the next major theorem-family candidate but is held.
 DiscoveryBench Agents v1 is registered as a DD-010 instrument, not a new study
-or DiscoveryBench v4. Its original sealed pilot and the later wholly fresh
-repair-confirmation campaign are both permanently quarantined. The latter
+or DiscoveryBench v4. Its original sealed pilot and two wholly fresh
+repair-confirmation campaigns are all permanently quarantined. The v1 campaign
 stopped before task generation or private runs on one terminal public-canary
 HTTP 400. The separate AO-0004 public provider-schema and semantic-contract
 engineering conformance gate passed under R4 without changing either
-quarantine. The next option is the unregistered wholly fresh sealed
-repair-confirmation pilot registration described above. The 200-task
-claim-grade base remains blocked because the audited host cannot run the exact
-local/open candidate. This roadmap creates no new call, spend, private
-holdout, trace, result, study, or claim authority.
+quarantine. The v2 campaign then passed both public canaries but quarantined at
+custody creation with zero private runs. The 200-task claim-grade base remains
+blocked because the audited host cannot run the exact local/open candidate.
+This roadmap creates no new provider, private, study, claim, or base authority.
 
 The Phase 2 execution architecture is `shared trunk, low-cost option creation,
 staged exercise`. It records readiness, residual value, decay, expiry horizon,

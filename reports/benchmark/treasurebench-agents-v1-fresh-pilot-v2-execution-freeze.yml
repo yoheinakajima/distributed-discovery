@@ -1,0 +1,46 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-v2-execution-freeze-v1
+frozen_at_utc: "2026-07-28T02:06:21Z"
+status: pass-pushed-clean-execution-commit
+classification: DD-010-engineering-only-owner-gate-required
+task_id: AO-0006
+issue: 200
+draft_pull_request: 201
+branch: benchmark/treasurebench-agents-v1-fresh-pilot-v2
+execution_commit: 10aa645d6687816b943625dbcdf1801968287b41
+remote_branch_head_at_freeze: 10aa645d6687816b943625dbcdf1801968287b41
+task_contract_sha256: sha256:a66dd627b44ec923eecd195b2b293fb28fb6329391e8753266ade478c0c6eb66
+campaign_id: treasurebench-agents-v1-repair-confirmation-v2
+batch_id: tb-agents-v1-repair-confirmation-v2-b01
+execution_tree_hashes:
+  Makefile: sha256:b8261fb6c68ed1062c4122b2b3c64b3a0e6923659cb67ebb23ae4b891667565b
+  docs/agent-ops: sha256:fe94862b1b7cad4d472a9e7b3e25749c7311986ec062a4040e8031621ab190f1
+  docs/benchmark/agents-v1/prospective-failure-policy.yml: sha256:ccf8df148759a18319e2bd3c13640dbe7d17efefb45e6f4f925b2d83c7d44780
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v2-allocation.schema.json: sha256:535b1d729840ccdf0c8cec4c7be7741150389c6fe2f35f1025c90febd8159ce6
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v2-allocation.yml: sha256:63b42a4d5c815392942779ca876c8d4e254399564d3a9c63ed6ae89ce353e911
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v2-corruptions.schema.json: sha256:e45371bdac707894d6e6bdb3a05c8b06f578ada892e3c7fc4a808119f042eb12
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v2-corruptions.yml: sha256:7c7f008f1dd4427452f2bac6680e61f79a99dae208b41b81cf2ea8e85b10f4cf
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v2-execution-budget.schema.json: sha256:d67c9b5b3c4626b45294b5a36be4b34cc9046c103a05d0f1186e0e72375247e9
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v2-execution-budget.yml: sha256:592815c0ac72dff9cea6bd26e15daf891475e50641227dcf623885322098c94f
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v2-private-state.schema.json: sha256:7a9e374839fb7198cc40bb3d1a0c16873cd99f23e04492a456e625e31c0df71e
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v2-request.schema.json: sha256:a0928065f668e72614ba562afddf4156af4086e595e7dd7829e038cd0e487b11
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v2-request.yml: sha256:95be6fa9ccd2fa32f749c9b302e2c989d4e3be3a68353260968073808ccde39f
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-v2-budget.yml: sha256:bbecd7449b5c5d4edba9cf5e442e8902769b5c2df5538bfe473e9484648aa7c3
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-v2-provider-audit.yml: sha256:801f177ada95ce647a21b60b9ad892e180cdcec145a7fc0f568f4752d3f96a06
+  scripts/audit_agent_ops.py: sha256:336d9e0735f8fe2acc93268053d09f3af4089f189c582882eac084dd607bca29
+  scripts/audit_treasurebench_agents_v1_fresh_pilot_v2.py: sha256:72a71baf8cf675b5a61a549685fd6fa232d9a49450514d6963a807e9e63638e0
+  src/distributed_discovery/agent_ops: sha256:84a44c60d7c7a6a159c8beb5cfb8bc25b19bcae8992c1781fa396225d9f11376
+  src/distributed_discovery/benchmark/agents_v1: sha256:b9727df494d4201705bbe64d29d3742f567629fb8e3860d0832709b69ea69b13
+  src/distributed_discovery/cli.py: sha256:0227911d8eb6eadc04cf525614900eb809e5553282664c47d55e57ae2c9dea22
+  tasks/treasurebench-agents-v1-fresh-pilot-v2.yml: sha256:a66dd627b44ec923eecd195b2b293fb28fb6329391e8753266ade478c0c6eb66
+  tests/test_treasurebench_agents_v1_fresh_pilot_v2.py: sha256:8da0b34dc1ec7b18acf31c256397f45636afa27e35a1005e39fadae77a3f7be9
+validation:
+  clean_tracked_worktree: true
+  remote_head_matches: true
+  draft_pr_open: true
+  full_verify: pass
+  tests: {passed: 526, failed: 0}
+  full_v2_rehearsal: pass
+  rehearsal_hash: sha256:57e3cc54312be1e0bcbcada8901c0c360bc45458c0a987a96f4386c11b5c7882
+  corruptions_rejected: 69
+activity: {provider_calls: 0, credential_reads: 0, prior_private_state_reads: 0, private_objects_created: 0, spend_usd: "0"}
+next_gate: commit-generic-AOG-AO-0006-FRESH-PILOT-V2

@@ -1,0 +1,48 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-v2-readiness-v1
+recorded_at_utc: "2026-07-28T02:00:59Z"
+status: pass-execution-freeze-candidate-owner-gate-required
+classification: DD-010-engineering-only-no-scientific-evidence
+task_id: AO-0006
+issue: 200
+draft_pull_request: 201
+campaign_id: treasurebench-agents-v1-repair-confirmation-v2
+batch_id: tb-agents-v1-repair-confirmation-v2-b01
+acceptance:
+  bootstrap: pass
+  agent_ops: pass
+  program_memory: pass
+  treasurebench_naming: pass
+  agents_v1_registration: pass
+  agents_v1_evaluation: pass
+  agents_v1_dry_run: pass
+  agents_v1_readiness: pass
+  v2_audit: pass
+  v2_full_rehearsal: pass
+  formatting: pass
+  lint: pass
+  typecheck: pass
+  tests: {status: pass, passed: 526, failed: 0}
+  claims: pass
+  runs: pass
+  full_verify: pass
+task_specific:
+  synthetic_tasks: 50
+  synthetic_runs: 500
+  matrix_calls: 3014
+  normal_calls: 3016
+  exact_pairings: 500
+  method_a_b_disagreements: 0
+  method_c_failures: 0
+  invalid_final_action_cardinalities: 0
+  metric_range_errors: 0
+  contamination_findings: 0
+  corruptions_rejected: 69
+  output_lock_verified: true
+  staged_mock_zero_call_resume: true
+failures_preserved:
+  - Initial alternate public allocation produced 2,902 rather than 3,014 matrix calls and was rejected before freeze.
+  - First Make rehearsal invocation was sandbox-blocked by the external uv cache and passed unchanged with approved cache access.
+  - First full verify found only the expected schema-inventory assertion at 31 instead of 36; the five-schema delta was corrected and 526 tests passed.
+  - One direct focused uv invocation omitted Make's PYTHONPATH and imported a stale installed package; the exact suites passed with repository source selected.
+activity: {provider_calls: 0, credential_reads: 0, prior_private_state_reads: 0, private_objects_created: 0, spend_usd: "0"}
+next_gate: clean-commit-full-verification-and-exact-execution-freeze

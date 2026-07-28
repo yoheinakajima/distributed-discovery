@@ -51,13 +51,14 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "stopped decentralized-recovery overlap gate" in program
     assert "Phase 2 holds theorem-family execution" in program
     assert "Reliable Discovery remains a major candidate but is deferred" in program
-    assert "has two permanently quarantined DD-010 engineering pilots" in program
+    assert "has three permanently quarantined DD-010 engineering pilots" in program
     assert "public-only provider-schema conformance" in program
     assert "sealed-pilot-quarantined-provider-failure" in program
     assert (
         "original pilot repair adjudication found a pervasive final-action-budget defect" in program
     )
-    assert "wholly fresh repair-confirmation campaign then stopped by policy" in program
+    assert "Repair-confirmation v1 then stopped with decision" in program
+    assert "wholly fresh v2 campaign subsequently passed both public canaries" in program
     assert 'id="information-sharing-frontier"' in program
     assert 'href="publications/information-sharing-frontier.html"' in program
     assert "docs/theorem-spine.md" in program
@@ -138,10 +139,10 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     agents_registration = (output / "benchmark/agents-v1.html").read_text(encoding="utf-8")
     assert "DD-010 instrument · quarantined engineering closeout" in agents_registration
     assert "Original pilot quarantined" in agents_registration
-    assert "Repair-confirmation quarantined" in agents_registration
-    assert "TreasureBench exact provider-schema conformance repair and public-canary gate" in (
-        agents_registration
-    )
+    assert "Repair-confirmation v1 quarantined" in agents_registration
+    assert "Repair-confirmation v2 quarantined" in agents_registration
+    assert "custody-creation-failure" in agents_registration
+    assert "USD 0.0076095" in agents_registration
     assert "3,037 attempts, 3,035 successes" in agents_registration
     assert "137 runs with invalid final cardinality" in agents_registration
     assert "265 over-budget outputs" in agents_registration
@@ -172,7 +173,9 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     agents_implementation = json.loads(
         (output / "data/benchmark/agents-v1-implementation.json").read_text(encoding="utf-8")
     )
-    assert agents_implementation["status"] == ("implementation-repaired-fresh-pilot-quarantined")
+    assert agents_implementation["status"] == (
+        "implementation-repaired-all-three-pilots-quarantined"
+    )
     assert agents_implementation["public_rehearsal"]["cases"] == 50
     assert agents_implementation["public_rehearsal"]["corruptions_rejected"] == 24
     assert agents_implementation["repair_rehearsal"] == {
@@ -268,6 +271,42 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "authorization_inactive_archived": True,
         "performance_results_published": False,
     }
+    assert agents_evaluation["repair_confirmation_pilot_v2"] == {
+        "name": "fresh-repair-confirmation-pilot-v2",
+        "campaign_id": "treasurebench-agents-v1-repair-confirmation-v2",
+        "batch_id": "tb-agents-v1-repair-confirmation-v2-b01",
+        "execution_commit": "d210b0653677859c79a1fb87d871aaf45f4a81d4",
+        "status": "quarantined",
+        "decision": "fresh-pilot-v2-quarantined-engineering-only",
+        "stage": "custody",
+        "failure_class": "custody-creation-failure",
+        "attempts": 2,
+        "successes": 2,
+        "errors": 0,
+        "openai_calls": 1,
+        "anthropic_calls": 1,
+        "input_tokens": 1349,
+        "output_tokens": 253,
+        "cost_usd": "0.0076095",
+        "provider_cost_usd": {"Anthropic": "0.004812", "OpenAI": "0.0027975"},
+        "private_runs": 0,
+        "task_seed_created": True,
+        "task_key_created": True,
+        "answer_key_created": True,
+        "task_ciphertext_created": False,
+        "answer_ciphertext_created": False,
+        "custody_manifest_created": False,
+        "output_lock_commitment": (
+            "sha256:127a9c796459c7627f6fd90b92ef1587ad0f6b1910b4ff255c2ceb976f3ab25f"
+        ),
+        "objects_locked": 8,
+        "provider_phase_closed": True,
+        "unsealed": False,
+        "performance_results_published": False,
+    }
+    assert agents_evaluation["authorization"]["fresh_pilot_v2_authorized"] is True
+    assert agents_evaluation["authorization"]["fresh_pilot_v2_completed"] is True
+    assert agents_evaluation["authorization"]["further_provider_calls_authorized"] is False
     benchmark_lab = (output / "labs/benchmark.html").read_text()
     assert "no submissions" in benchmark_lab
     assert "JavaScript is off" in benchmark_lab

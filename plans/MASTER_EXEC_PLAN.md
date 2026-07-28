@@ -1,5 +1,57 @@
 # Master execution plan
 
+## Active closeout — AO-0006 fresh repair-confirmation pilot v2 quarantined (2026-07-28)
+
+Issue #200, branch `benchmark/treasurebench-agents-v1-fresh-pilot-v2`,
+additive R2 fixed contract
+`tasks/treasurebench-agents-v1-fresh-pilot-v2-r2.yml`, and living
+ExecPlan
+[`TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V2.md`](TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V2.md)
+own the sole substantive lane as AO-0006.
+
+This DD-010 engineering-only private-evaluation task registered and prepared
+campaign `treasurebench-agents-v1-repair-confirmation-v2` and batch
+`tb-agents-v1-repair-confirmation-v2-b01`: 50 wholly new tasks, ten from each
+registered family, five architectures, direct OpenAI and Anthropic, one
+repeat, and 500 runs. The exact normal graph has 3,016 calls. Current official
+route and price observations support USD 11.51 expected, USD 15 conservative,
+and unchanged owner ceilings of USD 25 total, USD 10 OpenAI, USD 15 Anthropic,
+and 5,200 calls. The output ceiling is 256 tokens per request.
+
+The owner issued a preauthorization R2 amendment after the first AO-0006 gate
+was committed but never authorized. The original contract and gate remain
+preserved and unused. R2 keeps every identity, route, model, graph, and cap
+fixed, requires repository-root `.env.txt` ingress for exactly
+`OPENAI_API_KEY` and `ANTHROPIC_API_KEY`, clears selected values and adapter
+secrets on every stage and exit path, and adds a deterministic long-session
+success-or-quarantine administrative closeout. The exact R2 gate was
+authorized. Both direct-provider public canaries passed in two calls using
+1,349 input tokens and 253 output tokens for USD 0.0076095. Custody creation
+then failed under registered public-safe class `custody-creation-failure`, and
+the fixed batch decision is
+`fresh-pilot-v2-quarantined-engineering-only`. No private
+architecture/model run occurred.
+
+Provider calls stopped immediately. The provider phase is closed, and eight
+safely lockable objects are preserved under output lock
+`sha256:127a9c796459c7627f6fd90b92ef1587ad0f6b1910b4ff255c2ceb976f3ab25f`;
+no provider call followed the lock and no material was unsealed. The same
+consumed R2 authority carries only the public-safe administrative closeout
+through passing checks, squash merge, normal CI/Pages, named live-route
+verification, issue closure, and synchronized `main`; scientific, paper,
+ranking, release, submission, and base-campaign authority remain false.
+
+AO-0004 R4's provider-specific OpenAI/Anthropic schemas and
+provider-independent exactly-one-final-action conformance are preserved as
+engineering-only prerequisites. All three quarantined campaigns and every AO-0002
+through AO-0005 gate, authorization, ledger, output lock, custody object, and
+terminal decision remain immutable. AO-0006 completed the R2 contract, exact
+credential and cleanup regressions, success/quarantine long-session mocks,
+full 500-run synthetic rehearsal, 69 corruption rejections, acceptance, exact
+execution refreeze, generic R2 owner-gate manifest, authorization, fail-closed
+live attempt, and public output-lock publication. Administrative quarantine
+closeout is the only remaining active lane.
+
 ## Authorized continuation — AO-0004 successful conformance closeout (2026-07-27)
 
 Issue #198, branch `benchmark/treasurebench-provider-schema-conformance`,
@@ -28,11 +80,10 @@ gate was authorized at frozen execution commit
 `9923cbbb45b5ec50f7a6aff52f3b5b2734da53eb`; authorization, ancestry,
 protected trees, and zero caps revalidated before public-safe reconciliation.
 
-After successful closeout, the next substantive candidate is `TreasureBench
-Agents v1 wholly fresh sealed repair-confirmation pilot registration`. That
-candidate remains unregistered and unauthorized and must later use wholly new
-campaign, batch, CSPRNG seed, private tasks, answers, keys, ciphertexts, and
-custody.
+After successful closeout, the next substantive candidate was `TreasureBench
+Agents v1 wholly fresh sealed repair-confirmation pilot registration`.
+AO-0006 subsequently registered and executed that v2 candidate under wholly
+new identities; its permanent quarantine is the current active closeout above.
 
 ## Completed continuation — TreasureBench provider-schema conformance (2026-07-27)
 
