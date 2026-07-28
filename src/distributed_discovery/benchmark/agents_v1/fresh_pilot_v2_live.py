@@ -240,15 +240,14 @@ def _load_or_create_sealed(path: Path, *, domain: str, value: object, key: bytes
         )
         if sealed.associated_data_sha256 != f"sha256:{sha256_hex(associated)}":
             raise PermissionError("fresh associated-data mismatch requires quarantine")
-        if (
+        if canonical_json(
             unseal_object(
                 sealed,
                 key=key,
                 campaign_id=CAMPAIGN_ID,
                 batch_id=BATCH_ID,
             )
-            != value
-        ):
+        ) != canonical_json(value):
             raise PermissionError("fresh sealed-object plaintext mismatch requires quarantine")
         return sealed
     sealed = seal_object(

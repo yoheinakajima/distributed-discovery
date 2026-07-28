@@ -271,6 +271,12 @@ scientific evidence.
   requires existing sealed objects to decrypt to the requested plaintext.
   The 50-task production-path synthetic conformance passes all twenty classes,
   the independent AES-256-GCM verifier, and all six negative classes.
+- `2026-07-28T12:48:00Z`: the first post-repair full wall stops at one of 580
+  tests. The staged v2 mock resume correctly reaches the new plaintext check,
+  but direct Python equality distinguishes the original tuple-rich value from
+  its semantically identical JSON-decoded list representation. Compare
+  canonical JSON bytes instead; do not relax any cryptographic or identity
+  check. The other 579 tests pass.
 
 ## Decision log
 
