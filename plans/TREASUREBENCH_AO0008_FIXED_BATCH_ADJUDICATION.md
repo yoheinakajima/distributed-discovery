@@ -275,6 +275,15 @@ one-trace authority surface.
   yet been pushed. This is a preserved sequencing failure, not an R2
   diagnostic or historical pilot regression. Push the scoped milestone and
   rerun the complete wall from the identical tree.
+- `2026-07-29T00:22:40Z`: after pushing the scoped milestone, the complete
+  wall passes: formatting over 343 files, Ruff, strict MyPy over 202 source
+  files, all 663 tests, 110 claims, 51 immutable run manifests, Agent
+  Operations and program-memory audits, benchmark and governance checks, and
+  offline verification of seven papers and 119 pages. The exact-scale R2
+  rehearsal and 500-pairing rehearsal remain passing. No authorization,
+  retained-state read, provider call, credential read, spend, private
+  material, scientific mutation, publication action, release, or submission
+  occurred. The next commit is the R2 diagnostic execution freeze.
 
 ## Decision log
 
@@ -315,6 +324,9 @@ one-trace authority surface.
   unknown. Parse/schema-repair remains an aggregate signal under other
   protocol because the live stage's post-loop gate was aggregate protocol;
   Method and metric-range classes cannot be immediate live causes.
+- `2026-07-29T00:22:40Z`: the remote-presence rerun passes without code
+  changes. Supersede the unused R1 gate's resume instruction, freeze R2, and
+  bind only the future R2 gate to the aggregate diagnostic surface.
 
 ## Validation strategy
 
