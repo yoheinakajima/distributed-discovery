@@ -235,8 +235,12 @@ one-trace authority surface.
   aggregate and preserve protocol changes for a separate explicit owner task.
 - [x] Complete public-safe reconciliation and pass the complete validation
   wall.
-- [ ] Complete PR readiness and merge, post-merge CI/Pages and named routes,
-  issue closure, synchronized `main`, and terminal handoff.
+- [x] Ready and squash-merge PR #207 after both exact-head CI runs pass.
+- [x] Verify the first post-merge CI and Pages workflows.
+- [ ] Correct the stale program and TreasureBench Agents v1 route sources
+  found during named live-route verification, verify the corrective CI/Pages
+  cycle and all five routes, close issue #206, synchronize `main`, and record
+  the terminal handoff.
 
 ## Discoveries and surprises
 
@@ -326,6 +330,13 @@ one-trace authority surface.
   checks, 89 site pages, and offline verification of seven papers and 119
   pages. The task-specific 25-test suite, exact-scale diagnostic fixture, and
   50-task/500-pairing rehearsal also pass without retained access.
+- `2026-07-29T01:27:14Z`: PR #207's two exact-head CI runs pass and the PR
+  squash-merges as `0835efe39450a2a51862d6f2c2bfb43ab78a7099`. Exact-merge
+  CI run `30413530785` and Pages run `30413530788` pass. The first named-route
+  precheck finds that the generated program and Agents v1 sources still end
+  at AO-0008 even though the DD-010 study status is reconciled. Correct those
+  public site sources, bind them to the tracked AO-0009 outcome, and require a
+  fresh exact-SHA CI/Pages cycle before issue closure.
 
 ## Decision log
 

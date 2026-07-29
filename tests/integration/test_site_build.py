@@ -63,6 +63,8 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "all twenty synthetic live-mode custody classes" in program
     assert "AO-0008 then passed both public canaries" in program
     assert "verified 3,576-object output lock" in program
+    assert "AO-0009’s exactly once aggregate diagnostic" in program
+    assert "agent-protocol-policy-decision-required" in program
     assert 'id="information-sharing-frontier"' in program
     assert 'href="publications/information-sharing-frontier.html"' in program
     assert "docs/theorem-spine.md" in program
@@ -141,7 +143,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         assert (output / f"benchmark/{route}.html").is_file()
         assert (output / f"treasurebench/{route}.html").is_file()
     agents_registration = (output / "benchmark/agents-v1.html").read_text(encoding="utf-8")
-    assert "DD-010 instrument · four quarantined pilots · custody path repaired" in (
+    assert "DD-010 instrument · four quarantined pilots · agent protocol policy gated" in (
         agents_registration
     )
     assert "Original pilot quarantined" in agents_registration
@@ -156,6 +158,19 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "fixed-full-batch-failure" in agents_registration
     assert "USD 13.1861145" in agents_registration
     assert "3,576 retained objects" in agents_registration
+    assert "AO-0009 aggregate fixed-batch diagnosis" in agents_registration
+    assert "authenticated all 450 fixed-full-batch traces" in agents_registration
+    assert "32 protocol-nonconforming traces" in agents_registration
+    assert "agent-protocol-policy-decision-required" in agents_registration
+    assert "v4 is not registered" in agents_registration
+    dd010_data = json.loads((output / "data/studies/dd-010.json").read_text(encoding="utf-8"))
+    assert "AO-0009-one-use-aggregate-r2-diagnostic" in dd010_data["evidence_status"]
+    assert dd010_data["registry_status"].endswith("agent-protocol-policy-gated")
+    assert any(
+        item["path"]
+        == "reports/benchmark/treasurebench-ao0008-fixed-batch-diagnostic-r2-closeout.md"
+        for item in dd010_data["public_artifacts"]
+    )
     assert "3,037 attempts, 3,035 successes" in agents_registration
     assert "137 runs with invalid final cardinality" in agents_registration
     assert "265 over-budget outputs" in agents_registration
@@ -187,7 +202,8 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         (output / "data/benchmark/agents-v1-implementation.json").read_text(encoding="utf-8")
     )
     assert agents_implementation["status"] == (
-        "implementation-and-custody-path-repaired-all-four-pilots-quarantined"
+        "implementation-and-custody-path-repaired-all-four-pilots-quarantined-"
+        "agent-protocol-policy-gated"
     )
     assert agents_implementation["public_rehearsal"]["cases"] == 50
     assert agents_implementation["public_rehearsal"]["corruptions_rejected"] == 24
@@ -215,6 +231,18 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "provider_calls": 0,
         "required_classes": 20,
         "required_classes_passed": 20,
+    }
+    assert agents_implementation["fixed_batch_diagnostic"] == {
+        "authenticated_fixed_batch_traces": 450,
+        "causal_class": "protocol-contract-nonconformance",
+        "classification": "redacted-engineering-only-no-performance-evidence",
+        "cost_usd": "0",
+        "decision": "agent-protocol-policy-decision-required",
+        "parse_or_schema_repair_exhaustion_traces": 32,
+        "private_read_authority_closed": True,
+        "protocol_nonconformance_traces": 32,
+        "provider_calls": 0,
+        "retained_state_mutated": False,
     }
     agents_evaluation = json.loads(
         (output / "data/benchmark/agents-v1-evaluation.json").read_text(encoding="utf-8")
