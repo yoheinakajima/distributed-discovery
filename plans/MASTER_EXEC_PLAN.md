@@ -1,5 +1,55 @@
 # Master execution plan
 
+## Active closeout — AO-0009 AO-0008 fixed-full-batch adjudication (2026-07-29)
+
+Issue #206, branch
+`codex/treasurebench-ao0008-fixed-batch-adjudication`, fixed contract
+`tasks/treasurebench-ao0008-fixed-batch-adjudication.yml`, and living ExecPlan
+[`TREASUREBENCH_AO0008_FIXED_BATCH_ADJUDICATION.md`](TREASUREBENCH_AO0008_FIXED_BATCH_ADJUDICATION.md)
+own the sole substantive lane as AO-0009.
+
+An explicit preauthorization owner amendment supersedes the unused original
+AO-0009 contract and gate with additive R2 contract
+`tasks/treasurebench-ao0008-fixed-batch-adjudication-r2.yml`. AO-0009 remains
+in the same session, issue, branch, living ExecPlan, and draft PR #207. R2
+corrects the one-use diagnostic to authenticate and inspect aggregate-only
+fields across exactly all 450 fixed-full-batch traces, preserves the bounded
+one-call/two-response/four-neighbor context, adds the contamination-policy
+class, proves complete response-ledger and 2/50/450 trace-domain
+correspondence, and follows the frozen runtime's actual post-loop causal
+order. The original gate must not be authorized or consumed.
+
+AO-0009 preserves permanently task AO-0008, campaign
+`treasurebench-agents-v1-repair-confirmation-v3`, batch
+`tb-agents-v1-repair-confirmation-v3-b01`, execution commit
+`0f9d82bb50cbb334bea47e24448831faf0cdbed8`, decision
+`fresh-pilot-v3-quarantined-engineering-only`, fixed-full-batch failure, the
+passed public canaries/custody/private prefix, all exact usage and cost totals,
+the closed provider phase, zero post-lock calls, no unsealing, and the
+3,576-object output lock
+`sha256:e52055b08ca3a8acb1cfb6ac608c6e601f3c618352900f92bf91c5ffc4718dbb`.
+Nothing in AO-0008 may be reopened, retried, continued, executed, reused,
+rescored, spliced, mutated, deleted, broadly unsealed, or reauthorized.
+
+The exact R2 gate passed against frozen diagnostic commit
+`fbecbfb89e634967d48931c00e1d8a4fbed81c79` and all twenty protected hashes.
+The diagnostic ran exactly once, authenticated all 450 fixed-full-batch
+traces, verified the 3,576-object lock, ledgers, complete 3,067-response
+correspondence, unique 2/50/450 trace partition, and all 500 pairing records,
+and closed private-read authority permanently without retained mutation.
+
+The allowed aggregate reports 32 protocol-nonconforming traces, 32
+parse/schema-repair exhaustion traces, and zero terminal-provider,
+contamination, final-cardinality, cap, or integrity findings. Frozen causal
+precedence therefore selects `agent-protocol-policy-decision-required`.
+AO-0009 changes no protocol acceptance, normalization, retry, credit, or
+scoring rule. Any prospective policy change or separate private evaluation
+requires a new explicit owner decision and task; private evaluation also
+requires wholly new identities, execution freeze, and owner gate. Provider
+calls, credentials, spend, new real private material, scientific mutation,
+paper/publication action, release, submission, new private-pilot
+registration, and v4 identity allocation remain zero.
+
 ## Active closeout — AO-0008 fresh repair-confirmation pilot v3 quarantined (2026-07-28)
 
 Issue #204, branch `codex/treasurebench-agents-v1-fresh-pilot-v3`, draft PR

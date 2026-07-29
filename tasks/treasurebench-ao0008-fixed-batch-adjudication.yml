@@ -1,0 +1,169 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0009
+title: TreasureBench AO-0008 fixed-full-batch failure adjudication and prospective repair decision
+task_type: private-evaluation
+status: active
+objective: Determine the exact operational cause of AO-0008's fixed-full-batch failure through one bounded owner-gated read-only diagnostic, then make only the evidence-determined prospective implementation repair or provider or agent-protocol policy decision before any later private pilot registration.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: policy, path: docs/benchmark/agents-v1/AGENTS.md}
+  - {type: policy, path: src/distributed_discovery/benchmark/agents_v1/AGENTS.md}
+  - {type: record, path: tasks/treasurebench-agents-v1-fresh-pilot-v3.yml}
+  - {type: record, path: reports/agent-ops/AO-0008-quarantine-closeout-handoff.yml}
+  - {type: record, path: reports/benchmark/treasurebench-agents-v1-fresh-pilot-v3-closeout.yml}
+  - {type: record, path: reports/benchmark/treasurebench-agents-v1-fresh-pilot-v3-output-lock-commitment.yml}
+  - {type: plan, path: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V3.md}
+  - {type: plan, path: plans/TREASUREBENCH_AO0008_FIXED_BATCH_ADJUDICATION.md}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/206"}
+owner_decisions:
+  - "AO-0009 has two inseparable phases: authorization-free implementation of one exact bounded read-only diagnostic, followed after one generic owner gate by the single diagnostic invocation and only the evidence-determined prospective repair or policy branch."
+  - Task AO-0008, campaign treasurebench-agents-v1-repair-confirmation-v3, batch tb-agents-v1-repair-confirmation-v3-b01, execution commit 0f9d82bb50cbb334bea47e24448831faf0cdbed8, decision fresh-pilot-v3-quarantined-engineering-only, stage fixed-full-batch, failure class fixed-full-batch-failure, and all retained state remain permanently immutable and non-reusable.
+  - The permanent boundary includes two passed public canaries, passed custody and private prefix, 3,067 calls, 2,304,303 input tokens, 444,085 output tokens, USD 13.1861145 total cost, OpenAI USD 4.5952575, Anthropic USD 8.590857, 3,576 locked objects, output lock sha256:e52055b08ca3a8acb1cfb6ac608c6e601f3c618352900f92bf91c5ffc4718dbb, a closed provider phase, zero calls after lock, no unsealing, and no scientific or performance evidence.
+  - The difference between 3,067 actual attempts and 3,016 normal calls is not evidence of a particular cause; the diagnostic must reconstruct attempts, logical calls, completions, recovery, terminals, pairings, durable stage, output presence, exception stage, and safe error code from permitted evidence.
+  - Before owner authorization, audit only public source and records; freeze the exact read allowlist; implement the one-use diagnostic, mutation guards, synthetic fixtures, taxonomy, redaction, corruptions, validation, execution freeze, generic gate, and owner-gate-required handoff.
+  - The diagnostic may read only the output-lock record and commitments, execution identity, provider-stage state, append-only access and usage/cost ledgers, structural metadata for encrypted responses and traces, the exact failed logical-call record selected from the ledgers, at most two preceding and two following attempt or orchestration records, and only the directly corresponding encrypted response and trace objects.
+  - The operational key may be used transiently only to decrypt those exact selected response and trace objects. The OS-CSPRNG seed, task key, answer key, task or answer ciphertext or content, custody corpus, hidden targets, unrelated responses or traces, task-level performance, comparisons, credentials, and private host paths are prohibited.
+  - The diagnostic writes one detailed nonpublic result outside Git and emits one redacted public-safe result; it creates a one-use marker before retained access, permanently closes private-read authority after the invocation, and must fail closed on any attempted second read.
+  - If evidence establishes a local runtime, parser, trace, ledger, pairing, state, completion-marker, or verifier defect, reproduce it synthetically, make the minimum prospective repair, preserve the regression, add independent verification, deterministic fault injection, and pass the full 50-task/500-run rehearsal.
+  - If evidence establishes genuine provider terminal failure or valid provider output that violates the agent protocol, preserve that classification and stop at a separate provider-reliability or agent-protocol policy-decision requirement without normalizing, semantic retry, silent repair, or automatic v4 registration.
+  - If evidence is inconclusive within the allowlist or the output lock, inventory, or no-mutation checks fail, stop honestly without guessing, repair, broader access, or new campaign registration.
+  - One generic owner gate covers exactly one diagnostic invocation, transient bounded operational-key use, permanent private-read closure, subsequent synthetic repair or policy adjudication, public-safe reconciliation, validation, PR readiness and merge after checks, normal CI/Pages, named live routes, issue closure, synchronized main, and one final schema-valid handoff.
+scope:
+  paths:
+    - tasks/treasurebench-ao0008-fixed-batch-adjudication.yml
+    - plans/TREASUREBENCH_AO0008_FIXED_BATCH_ADJUDICATION.md
+    - plans/MASTER_EXEC_PLAN.md
+    - docs/agent-ops
+    - docs/benchmark/agents-v1
+    - docs/current-state.md
+    - docs/current-roadmap.md
+    - docs/program-memory
+    - reports/agent-ops
+    - reports/benchmark
+    - reports/final-handoff.md
+    - reports/project-status.md
+    - studies/DD-010-discoverybench
+    - src/distributed_discovery/agent_ops
+    - src/distributed_discovery/benchmark/agents_v1
+    - src/distributed_discovery/cli.py
+    - scripts
+    - tests
+    - site
+    - .github/workflows
+    - Makefile
+  actions:
+    - Register AO-0009 with one issue, task branch, this fixed contract, one living ExecPlan, and one draft pull request.
+    - Audit the public AO-0008 runtime, call and orchestration control flow, append-only ledgers, encrypted response and trace indexing, pairing bookkeeping, state transitions, failure and quarantine policy, and output-lock inventory.
+    - Freeze the causal taxonomy and an exact private-read allowlist with record and encrypted-object ceilings before owner authorization.
+    - Implement one authorization-bound one-use read-only diagnostic with exact owner-gate binding, output-lock and inventory verification, transient bounded decryption, before-and-after byte and metadata snapshots, redaction, and permanent access closure.
+    - Add synthetic fixtures and corruptions for every causal class and preserve bounded-evidence unknowns without guessing.
+    - After the one owner-authorized diagnostic, execute only the evidence-determined prospective implementation repair or provider or agent-protocol policy branch.
+    - For an implementation repair, preserve a regression, add independent structural verification and deterministic fault injection, and rerun the full 50-task and 500-pairing synthetic graph with Methods A/B/C, cardinality, contamination, ranges, output locking, redaction, and cost accounting.
+    - Reconcile only public-safe Agent Operations, DD-010 engineering status, program memory, current-state, roadmap, handoff, benchmark, site, and public records.
+    - Under the same exact gate, complete validation, PR readiness, merge after checks, normal CI and Pages, named live-route verification, issue closure, and synchronized main.
+non_goals:
+  - No reopening, retrying, continuing, executing, reusing, rescoring, splicing, mutating, deleting, broadly unsealing, or reauthorizing AO-0008 or its campaign, batch, authorization, ledgers, output lock, retained objects, or decision.
+  - No second private read, bulk unseal, unrelated response or trace access, or access beyond the frozen record and object ceilings.
+  - No OS-CSPRNG seed value, task key, answer key, task or answer ciphertext or content, custody task corpus, hidden target, task-level performance metric, model or architecture comparison, credential, or private host path may enter Git or public output.
+  - No provider or local-model call, credential read, spend, new real private material, new private campaign, or v4 campaign or batch identity.
+  - No change to the registered failure policy solely because AO-0008 failed and no normalization, silent repair, semantic retry, or credit for agent-protocol-invalid output.
+  - No DD-023, claim, scientific run, proof or evidence promotion, paper result, ranking, composite, package, release, DOI, submission, or base-campaign authority.
+permissions:
+  repository_write: true
+  git_branch_commit: true
+  github_issue_pr: true
+  merge_after_checks: true
+  ci_pages: true
+external_action_permissions:
+  network_observation: true
+  github_mutation: true
+  provider_calls: false
+  spend: false
+  release_publication: false
+  submission: false
+scientific_mutation_permissions:
+  create_study: false
+  create_claim: false
+  create_run: false
+  change_evidence_status: false
+  change_proof_status: false
+  change_paper_lifecycle: false
+private_data_permissions: {read: true, write: false, generate: false, publish: false}
+budget:
+  currency: USD
+  expected: "0"
+  hard_cap: "0"
+  call_cap: 0
+  category_caps: {}
+  cumulative_spend: "0"
+expected_outcomes:
+  - fixed-batch-root-cause-repaired-full-rehearsal-pass
+  - provider-reliability-policy-decision-required
+  - agent-protocol-policy-decision-required
+  - fixed-batch-diagnostic-inconclusive-defer
+  - retained-state-integrity-mismatch-stop
+stop_conditions:
+  - Stop before any AO-0008 retained-state read unless the exact committed AO-0009 generic owner gate has valid local authorization and every contract, protected hash, ancestry, branch, issue, pull request, zero cap, prohibition, and challenge check passes.
+  - Stop if the retained output lock or inventory fails, retained-state mutation is detected, selected records exceed one failed logical-call plus at most two preceding and two following attempt or orchestration records, or selected encrypted objects exceed the directly corresponding response and trace objects.
+  - Stop if the exact cause cannot be established within the frozen allowlist or if a second private read, bulk unseal, unrelated record or object, prohibited secret, credential, or private path would be required.
+  - Stop if a provider call, credential read, spend, new campaign or batch, v4 identity, scientific or publication authority, release, submission, or broader policy change would be required.
+  - Stop if AO-0008 state, immutable Agent Operations history, scientific inventories, claim or run state, paper or release state, or unrelated preservation files change.
+acceptance_profile: private-evaluation
+canonical_destinations:
+  - tasks/treasurebench-ao0008-fixed-batch-adjudication.yml
+  - plans/TREASUREBENCH_AO0008_FIXED_BATCH_ADJUDICATION.md
+  - docs/benchmark/agents-v1
+  - reports/benchmark
+  - reports/agent-ops
+  - docs/current-state.md
+  - docs/current-roadmap.md
+  - docs/program-memory
+  - reports/final-handoff.md
+  - reports/project-status.md
+  - studies/DD-010-discoverybench/status.yml
+  - site
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 206
+  branch: codex/treasurebench-ao0008-fixed-batch-adjudication
+  pull_request: null
+  base: main
+exec_plan: plans/TREASUREBENCH_AO0008_FIXED_BATCH_ADJUDICATION.md
+task_delta: null
+frozen_identifiers:
+  starting_main: 693adaaa49b9dfafd510c4f622aa3c754253d485
+  owner_study: DD-010
+  source_task: AO-0008
+  campaign_id: treasurebench-agents-v1-repair-confirmation-v3
+  batch_id: tb-agents-v1-repair-confirmation-v3-b01
+  execution_commit: 0f9d82bb50cbb334bea47e24448831faf0cdbed8
+  terminal_decision: fresh-pilot-v3-quarantined-engineering-only
+  failure_stage: fixed-full-batch
+  failure_class: fixed-full-batch-failure
+  output_lock: sha256:e52055b08ca3a8acb1cfb6ac608c6e601f3c618352900f92bf91c5ffc4718dbb
+  locked_objects: "3576"
+  public_canaries: "2"
+  custody_status: passed
+  private_prefix_status: passed
+  calls: "3067"
+  normal_call_graph: "3016"
+  input_tokens: "2304303"
+  output_tokens: "444085"
+  total_cost_usd: "13.1861145"
+  openai_cost_usd: "4.5952575"
+  anthropic_cost_usd: "8.590857"
+  provider_phase_closed: "true"
+  post_lock_calls: "0"
+  unseal_events: "0"
+  owner_gate_id: AOG-AO-0009-AO0008-FIXED-BATCH-DIAGNOSTIC
+  future_candidate: TreasureBench Agents v1 wholly fresh sealed repair-confirmation pilot v4 registration
+  claim_ceiling: DD-C-0110
+  study_ceiling: DD-022
+supersession:
+  supersedes: []
+  superseded_by: null
+  reason: null
+next_gate: Complete the authorization-free public runtime audit, causal taxonomy, exact one-use diagnostic and allowlist, synthetic fixtures and corruptions, full validation, execution freeze, and generic owner-gate manifest.

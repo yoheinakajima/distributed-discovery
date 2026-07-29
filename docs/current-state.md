@@ -1,5 +1,26 @@
 # Current program state
 
+_TreasureBench AO-0008 aggregate fixed-batch diagnosis, 2026-07-29:_
+AO-0009 executed its exact R2 owner-gated diagnostic once. It authenticated
+all 450 fixed-full-batch traces and verified the 3,576-object output lock,
+immutable inventory, append-only ledgers, complete 3,067-response identity
+correspondence, unique 2/50/450 trace partition, and all 500 pairing records.
+No retained state changed, no operational key was retained, and private-read
+authority is permanently closed.
+
+The public aggregate reports 32 protocol-nonconforming traces and 32
+parse/schema-repair exhaustion traces. Terminal-provider attempts,
+contamination traces, invalid final-cardinality traces, cap triggers, and
+integrity failures are zero. Frozen causal precedence therefore selects
+`agent-protocol-policy-decision-required`.
+
+AO-0009 changes no protocol acceptance, normalization, retry, invalid-output
+credit, or scoring rule. Any such prospective change requires a separate
+explicit owner decision and task. AO-0008 remains permanently quarantined,
+and no v4 identity, performance result, comparison, ranking, scientific run,
+claim, paper result, release, submission, or base-campaign authority is
+created.
+
 _TreasureBench Agents v1 fresh repair-confirmation v3 quarantine, 2026-07-28:_
 AO-0008 campaign `treasurebench-agents-v1-repair-confirmation-v3`, batch
 `tb-agents-v1-repair-confirmation-v3-b01`, ran from frozen execution commit

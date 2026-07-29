@@ -1,0 +1,84 @@
+schema_version: treasurebench-ao0008-fixed-batch-diagnostic-allowlist-v1
+task_id: AO-0009
+source_task_id: AO-0008
+status: frozen-before-owner-authorization
+campaign_id: treasurebench-agents-v1-repair-confirmation-v3
+batch_id: tb-agents-v1-repair-confirmation-v3-b01
+execution_commit: 0f9d82bb50cbb334bea47e24448831faf0cdbed8
+output_lock: sha256:e52055b08ca3a8acb1cfb6ac608c6e601f3c618352900f92bf91c5ffc4718dbb
+locked_objects: 3576
+readable_fixed_records:
+  output-lock.json: {maximum_files: 1, purpose: verify self-commitment and object commitments}
+  execution-identity.json: {maximum_files: 1, purpose: verify exact execution identity}
+  provider-stage-state.json: {maximum_files: 1, purpose: reconstruct last durable stage and completion marker}
+  access-log.jsonl: {maximum_files: 1, purpose: verify append-only access and stage operations}
+  usage-cost-ledger.jsonl: {maximum_files: 1, purpose: reconstruct attempts logical calls recovery terminals caps and bounded context}
+structural_encrypted_metadata:
+  encrypted-provider-responses:
+    exact_files: 3067
+    allowed_fields: [relative_name, mode, size, mtime_ns, envelope_domain, nonce_length, ciphertext_sha256, associated_data_sha256]
+    correspondence_rule: complete-ledger-attempt-identity-set-equals-complete-envelope-domain-set
+    ciphertext_decryption_allowed: false
+  encrypted-traces:
+    exact_files: 502
+    allowed_fields: [relative_name, mode, size, mtime_ns, envelope_domain, nonce_length, ciphertext_sha256, associated_data_sha256]
+    expected_domains: {public_canary: 2, private_prefix: 50, fixed_full_batch: 450}
+    ciphertext_decryption_allowed: exactly-450-fixed-full-batch-traces-aggregate-extraction-only
+bounded_failure_context:
+  selection_rule: unique-terminal-logical-call-else-last-durable-logical-call-before-batch-quarantine
+  exact_failed_logical_calls: 1
+  preceding_attempt_or_orchestration_records_maximum: 2
+  following_attempt_or_orchestration_records_maximum: 2
+  selected_provider_response_objects_maximum: 2
+  aggregate_fixed_full_batch_trace_objects_exact: 450
+  selected_encrypted_objects_total_maximum: 452
+  operational_keys_maximum: 1
+  operational_key_bytes: 32
+  operational_key_use: transient-two-selected-responses-plus-exactly-450-fixed-full-batch-traces
+aggregate_trace_extraction:
+  allowed_fields:
+    - trace-authentication-status
+    - fixed-full-batch-stage-identity
+    - protocol-errors-present
+    - invalid-final-action-cardinality-present
+    - direct-or-probable-contamination-present
+    - parse-or-schema-repair-failure-present
+    - retry-count
+    - hash-only-trace-identity
+  retained_nonpublic: aggregate-counters-and-hash-only-identities
+  public: aggregate-counters-only
+  raw_trace_lifetime: transient-process-memory-only
+outside_git_outputs:
+  one_use_marker_maximum: 1
+  detailed_private_diagnostic_maximum: 1
+  public_redacted_result_maximum: 1
+prohibited_reads:
+  - seed.bin
+  - task-key.bin
+  - answer-key.bin
+  - task-custody.json
+  - answer-custody.json
+  - custody-manifest.json
+  - task-or-answer-plaintext
+  - hidden-targets
+  - unrelated-provider-response-ciphertext
+  - canary-or-prefix-trace-ciphertext
+  - raw-trace-content-retention
+  - raw-provider-output
+  - prompt-text
+  - task-text
+  - answer-or-hidden-target
+  - agent-action
+  - task-model-provider-or-architecture-dimension
+  - task-level-performance
+  - architecture-or-model-comparisons
+  - credentials
+  - private-host-paths
+  - owner-authorizations-other-than-the-exact-AO-0009-gate
+second_read: fail-closed
+bulk_unseal: prohibited-except-exact-aggregate-only-450-fixed-full-batch-trace-authentication
+provider_calls: 0
+credential_reads: 0
+spend_usd: "0"
+new_real_private_material: 0
+scientific_mutation: 0

@@ -198,6 +198,29 @@ created. The v3 campaign and batch are permanently quarantined and cannot be
 retried, repaired, reopened, reused, rescored, spliced, executed, or
 reauthorized.
 
+## AO-0009 aggregate fixed-batch diagnosis
+
+Issue #206 and PR #207 implement one exactly owner-gated, one-use R2
+engineering diagnostic of the immutable AO-0008 retained state. It verified
+the 3,576-object output lock, inventory, append-only ledgers, complete
+3,067-response identity correspondence, unique 2/50/450 trace partition, and
+all 500 private pairing records. All 450 fixed-full-batch traces
+authenticated. Retained state was not mutated, the operational key was not
+retained, and private-read authority is permanently closed.
+
+The allowed aggregate reports 32 protocol-nonconforming traces and 32
+parse/schema-repair exhaustion traces. Terminal-provider attempts,
+contamination traces, invalid final-cardinality traces, cap-guard triggers,
+and integrity failures are zero. Under the frozen runner's post-loop
+precedence this selects `agent-protocol-policy-decision-required`.
+
+AO-0009 makes no silent normalization, semantic retry, invalid-output credit,
+protocol acceptance, or scoring change. Any such prospective change requires
+a separate explicit owner decision and task. This redacted engineering
+diagnosis creates no performance result, comparison, ranking, scientific run,
+claim, paper result, release, submission, or base-campaign authority. AO-0008
+remains permanently quarantined, and v4 is not registered.
+
 ## Registered evaluation campaign
 
 Issue #173 registers, but does not authorize or execute, the evaluation

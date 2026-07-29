@@ -1,4 +1,23 @@
-# Current roadmap — four engineering pilots permanently quarantined
+# Current roadmap — agent protocol policy decision required
+
+## AO-0009 aggregate diagnosis
+
+The one-use R2 diagnostic authenticated the immutable AO-0008 boundary and all
+450 fixed-full-batch traces. It verified complete response and trace identity
+sets, all 500 pairing records, append-only ledgers, output lock, and retained
+immutability, then permanently closed private-read authority.
+
+The allowed aggregate contains 32 protocol-nonconforming traces and 32
+parse/schema-repair exhaustion traces, with zero terminal-provider,
+contamination, final-cardinality, cap, or integrity findings. The frozen
+post-loop precedence selects `agent-protocol-policy-decision-required`.
+
+The current fail-closed protocol remains unchanged. Any prospective
+normalization, retry, invalid-output credit, acceptance, or scoring change
+requires a separate explicit owner decision and task. Any future private
+evaluation additionally requires wholly new identities, execution freeze,
+and owner gate. AO-0008 and all prior Agents v1 campaigns remain permanently
+quarantined; v4 is not registered.
 
 ## Fresh repair-confirmation v3 quarantine
 

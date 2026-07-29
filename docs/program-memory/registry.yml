@@ -685,3 +685,22 @@ records:
     review_after: explicit-owner-decision
     owner_decision: adopted
     last_reviewed: "2026-07-28"
+  - idea_id: PM-0037
+    title: TreasureBench AO-0008 fixed-full-batch adjudication
+    status: implemented
+    capture_classification: capture-now
+    visibility: public
+    source_type: owner-decision
+    captured_date: "2026-07-28"
+    proposition: AO-0008 remains permanently quarantined; AO-0009's exactly once aggregate-only R2 diagnostic authenticated all 450 fixed-full-batch traces and the retained boundary, identified protocol-contract nonconformance under the frozen runner's aggregate gate, permanently closed private-read authority, and selected an agent-protocol policy decision rather than a silent implementation repair.
+    why_it_matters: It separates immutable failed-batch evidence from prospective runtime and policy changes, prevents latest-trace selection and call-count differences from being treated as causal proof, preserves the fail-closed protocol until a separate explicit owner decision, and closes private-read authority after one invocation.
+    canonical_destination: {type: decision-record, path: reports/benchmark/treasurebench-ao0008-fixed-batch-diagnostic-r2-outcome.yml}
+    dependencies: [DD-010, PM-0031, PM-0032, PM-0033, PM-0034, PM-0035, PM-0036]
+    promotion_trigger: null
+    permitted_stops: [implemented, deferred, rejected, superseded]
+    not_a_result_boundaries: [engineering diagnosis and prospective repair or policy only, no performance result scientific run claim paper private-pilot registration execution release submission or base-campaign authority]
+    supersedes: [ao-0009-one-trace-diagnostic]
+    superseded_by: null
+    review_after: explicit-owner-decision
+    owner_decision: adopted
+    last_reviewed: "2026-07-29"

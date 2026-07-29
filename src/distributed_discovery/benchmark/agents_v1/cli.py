@@ -18,6 +18,9 @@ from distributed_discovery.benchmark.agents_v1.custody_repair import (
     run_read_only_custody_diagnostic,
 )
 from distributed_discovery.benchmark.agents_v1.evaluation import evaluate_run
+from distributed_discovery.benchmark.agents_v1.fixed_batch_diagnostic import (
+    run_read_only_fixed_batch_diagnostic,
+)
 from distributed_discovery.benchmark.agents_v1.fresh_pilot_live import (
     run_live_fresh_pilot,
 )
@@ -87,6 +90,7 @@ COMMANDS = (
     "fresh-pilot-v3-live",
     "custody-live-conformance",
     "custody-read-only-diagnostic",
+    "fixed-batch-read-only-diagnostic",
     "provider-schema-canaries",
 )
 
@@ -189,6 +193,8 @@ def execute(args: argparse.Namespace) -> Mapping[str, object] | list[object]:
         return run_live_mode_custody_conformance(Path.cwd())
     if command == "custody-read-only-diagnostic":
         return run_read_only_custody_diagnostic(Path.cwd())
+    if command == "fixed-batch-read-only-diagnostic":
+        return run_read_only_fixed_batch_diagnostic(Path.cwd())
     if command == "provider-schema-canaries":
         return run_provider_schema_canaries(Path.cwd())
     if command == "pilot-verify":
