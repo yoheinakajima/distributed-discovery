@@ -48,6 +48,13 @@ and one generic owner gate must pass before the task stops once. Before later
 exact authorization there is no `.env.txt` or credential read, real seed or
 private material, provider call, spend, or real v5 unseal.
 
+The authorization-free phase is complete. Execution is frozen at
+`f51728746b83e0d22cb2d6f5be0513a9cb2b5a00`; draft PR #211 and exact-head
+CI pass; and the 32-path generic gate at manifest head
+`35fea430ba5f6ff0b5ac18752aaba1d504c292c0` passes live validate-only without
+creating an authorization. AO-0011 is stopped at exact owner challenge
+`AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5 f517287`.
+
 ## Completed continuation — AO-0010 protocol-validity policy v2 and fresh pilot v4 (2026-07-29)
 
 Issue #208, branch `codex/treasurebench-agents-v1-fresh-pilot-v4`, fixed task

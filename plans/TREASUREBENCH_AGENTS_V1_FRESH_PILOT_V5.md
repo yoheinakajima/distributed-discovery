@@ -183,7 +183,7 @@ closeout.
 - **M5 — complete:** exact execution commit
   `f51728746b83e0d22cb2d6f5be0513a9cb2b5a00`, matching remote draft PR
   #211 head, 32-path tree freeze, and passing CI run `30481365591`.
-- **M6 — in progress:** committed generic owner gate, live validate-only gate,
+- **M6 — complete:** committed generic owner gate, live validate-only gate,
   schema-valid owner-gate-required handoff, and exact stop.
 - **M7 — pending:** not authorized in this phase; after later exact
   authorization only, the fixed engineering-complete or honest-quarantine
@@ -206,8 +206,8 @@ closeout.
 - [x] Validate and commit M0.
 - [x] Complete M1 through M4 sequentially.
 - [x] Complete M5.
-- [ ] Complete M6.
-- [ ] Stop before `.env.txt`, credentials, real private material, provider
+- [x] Complete M6.
+- [x] Stop before `.env.txt`, credentials, real private material, provider
   calls, spend, or real v5 unseal.
 
 ## Discoveries and surprises
@@ -290,6 +290,14 @@ closeout.
   contract, exact policies, identities, routes, models, circuit breaker,
   caps, and two-name credential subset validate. Prepare the generic gate
   commit without authorization.
+- `2026-07-29T18:51:23Z`: the first live validate-only gate attempt failed
+  closed because the v3-specific combined cap/circuit token did not include
+  the generic engine's exact canonical `cap-increase` token. Add the exact
+  generic token without changing the protected execution tree, commit and
+  push manifest head `35fea430ba5f6ff0b5ac18752aaba1d504c292c0`, and rerun live
+  validate-only successfully. The exact required challenge is
+  `AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5 f517287`; no authorization or
+  consequential action is created. Complete M6 and stop at the owner gate.
 
 ## Validation strategy
 
@@ -333,13 +341,14 @@ the later exact owner authorization.
 Issue #210, the task branch, this living plan, PM-0039, the fixed task
 contract, master-plan continuation, policy v3, v5 contracts, implementation,
 tests, provider audit, execution budget, registration, scenario, corruption,
-synthetic rehearsal, and production-custody rehearsal records are created.
-The draft PR, execution freeze, generic owner gate, and
-owner-gate-required handoff are pending.
+synthetic rehearsal, production-custody rehearsal, draft PR #211, exact
+execution freeze, generic owner gate, and owner-gate-required handoff are
+created. M7 remains unauthorized.
 
 ## Blockers
 
-No implementation blocker is known. Five unrelated untracked files prevent a
+The exact AO-0011 generic owner authorization is absent by design and is now
+the sole blocker. Five unrelated untracked files prevent a
 globally clean working tree but are outside AO-0011 and will remain untouched;
 all staging is path-explicit and tracked-tree identity checks exclude them as
 AO-0010 did.
@@ -355,4 +364,8 @@ later authorized.
 
 ## Outcome and retrospective
 
-Pending.
+The authorization-free phase completed with the exact v3 policy, v5
+execution tree, rehearsal evidence, draft PR, execution freeze, and generic
+gate validated. No credential, real private object, provider call, spend, or
+real unseal occurred. AO-0011 is paused exactly at the owner-gate-required
+boundary; no scientific or performance evidence was created.

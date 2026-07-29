@@ -30,6 +30,13 @@ authorization only, the same task may continue through the registered
 engineering-complete or honest-quarantine path and administrative closeout.
 This is not performance or scientific evidence.
 
+That authorization-free boundary is now complete. Execution commit
+`f51728746b83e0d22cb2d6f5be0513a9cb2b5a00`, draft PR #211, its exact-head
+CI, all 32 protected hashes, and committed gate-manifest head
+`35fea430ba5f6ff0b5ac18752aaba1d504c292c0` validate. No authorization was
+created. The roadmap is stopped at exact owner challenge
+`AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5 f517287`.
+
 ## AO-0010 prospective protocol-validity policy v2
 
 Issue #208 and draft PR #209 combine the owner-selected forward-only policy

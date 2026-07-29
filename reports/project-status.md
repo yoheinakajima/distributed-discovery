@@ -29,8 +29,12 @@ zero/mixed/all-invalid and missingness matrices, all exact circuit cases, 96
 v5 boundary corruptions, 28 inherited repaired-instrument corruptions, and
 temporary production-path custody/lock/replay/redaction/cleanup. There have
 been zero credential reads, real private objects, provider calls, spend, or
-real unseals. The task is pending its exact execution freeze, draft PR, and
-one committed generic owner gate.
+real unseals. Execution is frozen at
+`f51728746b83e0d22cb2d6f5be0513a9cb2b5a00`; draft PR #211 and exact-head
+CI pass. The committed generic gate at
+`35fea430ba5f6ff0b5ac18752aaba1d504c292c0` passes live validate-only without
+creating an authorization. The task is stopped at exact owner challenge
+`AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5 f517287`.
 
 ## Preserved AO-0010 closeout
 

@@ -27,8 +27,12 @@ protocol-invalid matrices, isolated and mixed missingness, exact circuit
 thresholds, 96 v5 boundary corruptions, 28 inherited repaired-instrument
 corruptions, and disposable production custody, lock, replay, redaction, and
 cleanup. Activity remains zero credentials, zero real private objects, zero
-provider calls, zero spend, and zero real unseal. The next and only gate is
-the exact committed generic AO-0011 owner gate.
+provider calls, zero spend, and zero real unseal. Execution is frozen at
+`f51728746b83e0d22cb2d6f5be0513a9cb2b5a00`; draft PR #211 and exact-head
+CI pass, and the generic gate at
+`35fea430ba5f6ff0b5ac18752aaba1d504c292c0` passes live validate-only
+without authorization. The next and only gate is exact owner challenge
+`AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5 f517287`.
 
 _TreasureBench protocol-validity policy v2 and fresh v4 quarantine,
 2026-07-29:_ AO-0010, issue #208 and draft PR #209, adopt one forward-only
