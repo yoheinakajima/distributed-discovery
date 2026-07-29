@@ -1,0 +1,147 @@
+schema_version: agent-ops-owner-gate-v1
+kind: owner-gate
+synthetic: false
+gate_id: AOG-AO-0011-FRESH-PILOT-V5
+task_contract:
+  path: tasks/treasurebench-agents-v1-fresh-pilot-v5.yml
+  sha256: sha256:819ce7a1c3a81c8e10da980e30dcd189051fd01fd58cc668f5c72f18b849f02e
+issue: 210
+pull_request:
+  number: 211
+  expected_state: OPEN
+  head_sha: f51728746b83e0d22cb2d6f5be0513a9cb2b5a00
+branch: codex/treasurebench-agents-v1-fresh-pilot-v5
+commit: f51728746b83e0d22cb2d6f5be0513a9cb2b5a00
+tree_hashes:
+  tasks/treasurebench-agents-v1-fresh-pilot-v5.yml: sha256:819ce7a1c3a81c8e10da980e30dcd189051fd01fd58cc668f5c72f18b849f02e
+  src/distributed_discovery/agent_ops: sha256:84a44c60d7c7a6a159c8beb5cfb8bc25b19bcae8992c1781fa396225d9f11376
+  src/distributed_discovery/benchmark/agents_v1: sha256:850a0d1cd1960e4cdf4b85cd125b1985f8493c4df6b57870d8817e7d7aa50292
+  src/distributed_discovery/cli.py: sha256:0227911d8eb6eadc04cf525614900eb809e5553282664c47d55e57ae2c9dea22
+  scripts/audit_agent_ops.py: sha256:336d9e0735f8fe2acc93268053d09f3af4089f189c582882eac084dd607bca29
+  scripts/audit_treasurebench_agents_v1_fresh_pilot_v5.py: sha256:3ac1816f457229c923e39769335d2aea1f9d66fe15a4865626d82efdfb7b32f0
+  docs/agent-ops: sha256:fe94862b1b7cad4d472a9e7b3e25749c7311986ec062a4040e8031621ab190f1
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-request.yml: sha256:784ae7ba62bc641ea91c881f26dd54ab1e65e880e0c393f243d277d6659a2a0a
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-request.schema.json: sha256:fe4389d4ffa6402aa7ddc5234a33b70ccf4dd7a45bb18617cc1cb445e288aba7
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-allocation.yml: sha256:cfa7fa4d32e164be503c4cff8b9d7778fc8d122b78b6624f6b8fa2a54eea5b79
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-allocation.schema.json: sha256:fef56e65e738fd227e53dac360506bf919affd309a1af4ad86c50f5336b2a14d
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-private-state.schema.json: sha256:5de91b4f67a9af7342de616ea436f24b4bfc530e761ffe350c17488b1516660f
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-execution-budget.yml: sha256:9ab0a76a8488ca4eb3277b9b1901e49a1b8ffd3432ebd99bdf50b7fec2ba41c2
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-execution-budget.schema.json: sha256:2876afb716f0888e76b7efe5e850f6185ed56f6b398c8aa90ed7a0745dc3df9f
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-corruptions.yml: sha256:fb7d5c5be756b7ba7ba10481be216713bdadfb8f054864b51a4120984094a4d4
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-corruptions.schema.json: sha256:43be423160fede14395841f4159050b57afbc19f0f363ea29f177bf50ce26b42
+  docs/benchmark/agents-v1/protocol-validity-policy-v2.yml: sha256:884708e8da7b3a7f763094dc274f7f792e45b71f560dc5bb60f6d7c0e9cdbb3e
+  docs/benchmark/agents-v1/protocol-validity-policy-v2.schema.json: sha256:775225c594a2660b80740440815fcded2972825c0d76511ce8d13f72e11d78b8
+  docs/benchmark/agents-v1/protocol-validity-policy-v2.md: sha256:65f973186377c65142000ed609ae9d085fda10b9b4c5b4a4fe9a0c7b9ad1e3f1
+  docs/benchmark/agents-v1/provider-outcome-policy-v3.yml: sha256:4af00c1857883b89b6403dc25a67bf0e828a253bd1bd5ed5e046eb0034292658
+  docs/benchmark/agents-v1/provider-outcome-policy-v3.schema.json: sha256:ff442cd2e6ec0a105fe2a05a9a0971a425581be8ce549d229d57afef31418589
+  docs/benchmark/agents-v1/provider-outcome-policy-v3.md: sha256:e4ca4e105c5dad3c388f895e4c65ba1b8675fa6a3a77b203c580228d0530c83d
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-v5-provider-audit.yml: sha256:c189a71344a5f3cdedb011efbecdb9ea0ca9fe43e037d8b5f21fbbd7612bd64c
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-v5-budget.yml: sha256:f408c1cbec8da40ef5f7aefc3c9ed1cf77e75124991bb91228503faee5be2c30
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-v5-registration.yml: sha256:6d6210df8c29110827caaf5134641e2977e0b8f4555fdafbd3b9aba055510f59
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-v5-offline-rehearsal.yml: sha256:5b3e75dca6d02568374f8f4cab4e51358d0b3f6a233c5015d7bd3ff3b164bc77
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-v5-provider-outcome-scenarios.yml: sha256:5246428d816a5c344488378782136f302375559ee68c3caa7d6f18d1a264119a
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-v5-corruptions.yml: sha256:4eeeab8bc7e1b09c6afe0f43647c6fb0003555b72070faddbd3a31c21d1e5742
+  tests/test_treasurebench_agents_v1_fresh_pilot_v5.py: sha256:1ac852d28d91bb0a829e4398b65985cefe79a8d7d9bf852de00f9c1eb426eedf
+  tests/test_treasurebench_agents_v1_fresh_pilot_v5_session.py: sha256:341b19a1918a6ad714011d1fd921d362e69f08404ffcdaa7a82e3208614d7039
+  tests/test_treasurebench_agents_v1_provider_outcome_v3.py: sha256:212e1dc0e3eed9c12498010aaa8ab0b935860e9deacba953a7c39f3609e25f3d
+  Makefile: sha256:7179ffedc97851678ee2dfffedb8c7e1ee91fa289ce4f57173250682573df7e7
+purpose: Authorize the exact wholly fresh AO-0011 v5 DD-010 engineering pilot under unchanged protocol-validity policy v2 and prospective provider-outcome policy v3 and, conditionally on engineering completion or honest quarantine, its complete public-safe repository closeout through checks, merge, CI and Pages, live verification, issue closure, main synchronization, and final handoff.
+irreversible_actions:
+  - permission: private_data_permissions.generate
+    description: Create exactly one new OS-CSPRNG seed, 50 new tasks and answers, separate operational, task, and answer keys, nonces, ciphertexts, commitments, access logs, ledgers, responses, traces, terminal classifications, metric bounds, custody manifest, provider-output lock, derived-state commitment, and private audit package for the v5 campaign only.
+  - permission: permissions.merge_after_checks
+    description: Mark draft PR 211 ready and squash-merge only after the appropriate complete validation wall and required GitHub checks pass for the engineering-complete or honest-quarantined outcome.
+  - permission: permissions.ci_pages
+    description: Permit only normal post-merge CI and Pages, followed by named public-safe live-route verification.
+private_actions:
+  - permission: private_data_permissions.read
+    description: Read only OPENAI_API_KEY and ANTHROPIC_API_KEY from repository-root .env.txt through the strict nonexecuting exact-subset loader, and read only newly created v5 private state after authorization.
+  - permission: private_data_permissions.write
+    description: Write only new v5 encrypted tasks, answers, provider responses, append-only ledgers, traces, terminal provider-outcome classifications, metric-bound records, custody, provider-output lock, derived-state commitment, private audit state, and deterministic redacted engineering-complete or quarantine closeout outside Git.
+  - permission: private_data_permissions.generate
+    description: Generate only the new v5 campaign material and never reuse any original-pilot, repair-confirmation-v1 through v4, future-base, or base-campaign identity or instance.
+external_actions:
+  - permission: permissions.repository_write
+    description: Write and reconcile only the frozen public-safe AO-0011 engineering-complete or honest-quarantine closeout paths.
+  - permission: permissions.git_branch_commit
+    description: Commit and push the public custody commitment, public provider-output-lock commitment, and final public-safe closeout without routine owner checkpoints.
+  - permission: permissions.github_issue_pr
+    description: Update draft PR 211 accurately and close issue 210 only after the authorized validation, merge, CI, Pages, and live-verification sequence succeeds.
+  - permission: permissions.merge_after_checks
+    description: Mark PR 211 ready and squash-merge only after the appropriate complete validation wall and every required check passes.
+  - permission: permissions.ci_pages
+    description: Observe normal CI and Pages and verify the named public-safe live routes after merge.
+  - permission: external_action_permissions.network_observation
+    description: Revalidate official provider terms and observe GitHub checks, normal CI and Pages, and the named public-safe live routes.
+  - permission: external_action_permissions.github_mutation
+    description: Push public-safe commits, update PR 211, mark it ready after checks, squash-merge after checks, and close issue 210 after post-merge live verification.
+  - permission: external_action_permissions.provider_calls
+    description: Make only direct OpenAI Responses and direct Anthropic Messages calls using the exact frozen models, passing provider-specific transport schemas, semantic validator, staged graph, bounded identical-request transport attempts, one schema-only repair, provider-outcome terminalization, and frozen circuit breaker.
+  - permission: external_action_permissions.spend
+    description: Spend only within the exact total, provider, route-token, per-request-output-token, and call ceilings in this manifest and frozen execution tree.
+cumulative_state:
+  currency: USD
+  spend: "0"
+  calls: 0
+  category_spend: {OpenAI: "0", Anthropic: "0"}
+hard_caps:
+  currency: USD
+  spend: "25"
+  calls: 5200
+  category_spend: {OpenAI: "10", Anthropic: "15"}
+remaining_caps:
+  currency: USD
+  spend: "25"
+  calls: 5200
+  category_spend: {OpenAI: "10", Anthropic: "15"}
+owner_confirmation_statements:
+  - I authorize only AO-0011 at execution commit f51728746b83e0d22cb2d6f5be0513a9cb2b5a00, issue 210, draft PR 211, the exact fixed contract, branch, 32-path execution tree, unchanged policy v2, prospective provider-outcome policy v3, v5 campaign and batch, routes, models, credential subset, actions, caps, circuit breaker, prohibitions, and expiry in this manifest.
+  - I authorize credential ingress for exactly OPENAI_API_KEY and ANTHROPIC_API_KEY from repository-root .env.txt through the strict nonexecuting no-interpolation loader; no unrelated configured credential may be returned, retained, transmitted, displayed, printed, hashed, fingerprinted, or logged.
+  - I authorize the exact staged path through provider-terms revalidation, both public canaries, wholly fresh custody, committed and pushed public custody commitment, 10-percent private prefix, fixed full matrix unless a registered hard stop fires, provider-outcome terminalization, circuit-breaker evaluation, provider closure, provider-output lock, committed and pushed public lock commitment, post-lock revalidation and unseal, four-status terminal classification, Methods A/B/C, metric intervals, independent provider classification and all-pairing bounds, safety and corruption checks, and deterministic redacted closeout.
+  - I authorize every safely retainable completed response, including a refusal, token-limited response, or response remaining nonconforming after exactly one schema-only repair, to enter protocol-validity policy v2 and never operational missingness; protocol-invalid pairings remain in every denominator, receive no replacement or action credit, and do not alone quarantine.
+  - I authorize only the exact registered typed provider-availability classes to become provider-operational-missing after bounded identical-request transport attempts; each such pairing stops, writes one unique terminal trace and classification, preserves safe prior calls, creates and credits no action, remains in every intended denominator, and receives no retry, replacement, splice, or regeneration.
+  - I authorize every request-contract, exact-model, route/provider/region substitution, hidden-reasoning, credential/authorization/billing, retained-state/ledger/trace/response identity, execution-identity, unregistered-error, unsafe-retention, and ambiguous operational-versus-contract class to quarantine immediately as provider-contract-or-safety-failure.
+  - I authorize the frozen engineering circuit breaker to quarantine on three consecutive operational-missing pairings for one provider, ten cumulative operational-missing pairings, any contract/safety failure, or any non-valid public canary; it uses only terminal status and sequence and may not be reset, loosened, or reinterpreted after live results.
+  - I authorize exact metrics only where defined, registered metric-specific feasible intervals for protocol-invalid and operational-missing pairings, and architecture-contrast bounds over all 500 intended pairings with exact independent endpoint and denominator reconstruction; completed-only or valid-only estimates are secondary selection-conditioned diagnostics and no complete-case unconditional effect, ranking, composite, or leaderboard is authorized.
+  - I authorize engineering completion only when both canaries and fresh custody pass; every intended pairing has exactly one permitted terminal status; contract/safety failures are zero; the circuit breaker has not fired; identities, correspondence, caps, contamination, lock, unseal order, Methods A/B/C, independent provider classification and bounds, corruption, redaction, and retained-state checks pass; and no call occurs after lock.
+  - I authorize honest whole-batch quarantine for any public-canary, provider-contract/safety, circuit-breaker, missing/duplicate terminal classification, correspondence/integrity, contamination, cap, execution-identity, lock/unseal-order, Method, classifier/bounds, corruption, redaction, or unsafe-retained-state failure, with immediate call stop, append-only preservation, provider closure, safe lock, minimum safe post-lock adjudication, and no replacement, splice, rescore, semantic retry, or new private identity.
+  - I authorize either normal engineering-complete or honest-quarantined outcome to continue without routine checkpoints through the appropriate public-safe closeout, complete validation wall, accurate PR 211 update, required checks, readiness, squash merge, normal post-merge CI and Pages, named live public-safe route verification, issue 210 closure, synchronized main, and one final schema-valid handoff.
+  - I understand the frozen expected cost is USD 11.51, the conservative planning envelope is USD 15, and I authorize no more than USD 25 total hard cap, USD 10 OpenAI, USD 15 Anthropic, 5,200 calls, 256 output tokens per request, and the exact provider route-token ceilings frozen in the execution tree.
+  - I understand the policy permits at most two bounded transport attempts for the identical logical request, exactly one schema-only repair, zero semantic-answer retries, zero outcome-dependent retries, zero silent normalization, zero replacement pairings or batch, zero invalid or missing action credit, and no provider-missingness scientific acceptance threshold.
+  - I understand AO-0010/v4 and every prior campaign, batch, authorization, ledger, lock, retained state, private-read closure, terminal decision, and public coarse failure record remain immutable and receive no authority from this gate; no retrospective v4 diagnosis, inference, read, unseal, reclassification, retry, or reuse is authorized.
+  - I understand this remains DD-010 engineering only and authorizes no DD-023, claim, immutable scientific run, evidence or proof promotion, paper result, ranking, composite, leaderboard, package, release, DOI, arXiv, journal submission, other submission, or base campaign.
+  - I understand the generic owner-gate engine validates and creates only this exact mode-0600 local authorization; it does not itself read credentials or private state, generate custody, call providers, spend, unseal, edit the repository, mutate GitHub, merge, deploy, or close the issue.
+explicit_prohibitions:
+  - provider-calls-outside-manifest
+  - credential-read-outside-manifest
+  - unauthorized-private-access
+  - scientific-mutation-outside-contract
+  - cap-or-circuit-breaker-increase-reset-loosening-or-reinterpretation
+  - consequential-action-by-gate-engine
+  - credential-name-outside-openai-api-key-and-anthropic-api-key
+  - unrelated-credential-return-retention-transmission-display-print-hash-fingerprint-or-log
+  - prior-private-campaign-state-read-unseal-mutation-deletion-reclassification-diagnosis-or-reuse
+  - original-pilot-repair-confirmation-v1-v2-v3-v4-future-base-or-base-campaign-reuse
+  - ao-0002-through-ao-0010-authorization-ledger-output-lock-custody-private-read-closure-or-decision-mutation
+  - campaign-batch-model-route-cap-circuit-breaker-execution-tree-or-private-identity-change
+  - alias-fallback-openrouter-regional-batch-provider-tool-local-model-or-substitute-route
+  - record-splice-rescore-semantic-retry-in-place-repair-failed-instance-replacement-regeneration-or-outcome-dependent-retry
+  - second-schema-repair-third-transport-attempt-silent-normalization-or-invalid-or-missing-action-credit
+  - invalid-or-missing-action-parsing-constructed-action-constructed-portfolio-or-pairing-replacement
+  - protocol-invalid-or-operational-missing-pairing-drop-or-complete-case-unconditional-effect
+  - provider-missingness-scientific-acceptance-threshold-or-rerun-until-preferred-availability
+  - performance-action-target-architecture-family-or-scientific-input-to-circuit-breaker
+  - unseal-before-committed-verified-provider-output-lock-or-call-after-output-lock
+  - unsafe-retained-private-state-unseal-merge-or-deletion
+  - public-task-answer-raw-output-or-task-model-provider-architecture-family-performance
+  - dd-023-claim-scientific-run-evidence-proof-or-paper-result
+  - ranking-composite-leaderboard-package-release-doi-arxiv-journal-or-submission
+  - base-campaign-registration-or-execution
+  - private-data-publication
+  - pr-ready-or-merge-before-complete-validation-and-required-checks
+  - issue-closure-before-post-merge-ci-pages-and-live-route-verification
+  - pages-deployment-outside-the-normal-main-workflow
+expires_at_utc: "2026-08-05T18:46:08Z"
+authorization_output_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0011-FRESH-PILOT-V5.yml
+next_milestone: M7 owner-authorized one-session fresh v5 execution under policies v2 and v3 and conditional engineering-complete or honest-quarantined final closeout.
+generated_resume_message: "Resume AO-0011 in this same Codex task from plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V5.md, issue #210, branch codex/treasurebench-agents-v1-fresh-pilot-v5, and draft PR #211. Use only reports/agent-ops/AO-0011-treasurebench-fresh-pilot-v5-owner-gate.yml and its exact generic authorization. Revalidate current official provider terms, authorization, execution-commit ancestry, current draft-PR head, fixed contract, all 32 tree hashes, policies v2 and v3, v5 campaign and batch, exact OPENAI_API_KEY and ANTHROPIC_API_KEY subset, routes, models, zero cumulative calls and spend, graph, ledgers, circuit breaker, and caps. Then run exactly make treasurebench-fresh-pilot-v5-live and continue the authorized normal engineering-complete or honest-quarantine path through provider-outcome terminalization, circuit-breaker evaluation, provider closure, lock, post-lock classification, Methods A/B/C, independent provider classification and all-pairing bounds, public-safe closeout, full validation, required checks, PR readiness and squash merge, normal CI and Pages, named live routes, issue closure, synchronized main, and one final schema-valid handoff without routine checkpoints. Stop only for an execution-sensitive change; identity, model, route, cap, circuit-breaker, or execution-tree change; authorization invalidity; proposed replacement, splice, semantic retry, regeneration, or new private identity; unsafe retained state; or authority expansion beyond DD-010 engineering."

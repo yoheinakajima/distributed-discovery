@@ -1,0 +1,80 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-v5-execution-freeze-v1
+frozen_at_utc: "2026-07-29T18:46:08Z"
+status: pass-pushed-clean-execution-commit
+classification: DD-010-engineering-only-owner-gate-required
+task_id: AO-0011
+issue: 210
+draft_pull_request: 211
+branch: codex/treasurebench-agents-v1-fresh-pilot-v5
+protocol_validity_policy: treasurebench-agents-v1-protocol-validity-policy-v2
+provider_outcome_policy: treasurebench-agents-v1-provider-outcome-policy-v3
+execution_commit: f51728746b83e0d22cb2d6f5be0513a9cb2b5a00
+remote_branch_head_at_freeze: f51728746b83e0d22cb2d6f5be0513a9cb2b5a00
+task_contract_sha256: sha256:819ce7a1c3a81c8e10da980e30dcd189051fd01fd58cc668f5c72f18b849f02e
+campaign_id: treasurebench-agents-v1-repair-confirmation-v5
+batch_id: tb-agents-v1-repair-confirmation-v5-b01
+execution_tree_hashes:
+  tasks/treasurebench-agents-v1-fresh-pilot-v5.yml: sha256:819ce7a1c3a81c8e10da980e30dcd189051fd01fd58cc668f5c72f18b849f02e
+  src/distributed_discovery/agent_ops: sha256:84a44c60d7c7a6a159c8beb5cfb8bc25b19bcae8992c1781fa396225d9f11376
+  src/distributed_discovery/benchmark/agents_v1: sha256:850a0d1cd1960e4cdf4b85cd125b1985f8493c4df6b57870d8817e7d7aa50292
+  src/distributed_discovery/cli.py: sha256:0227911d8eb6eadc04cf525614900eb809e5553282664c47d55e57ae2c9dea22
+  scripts/audit_agent_ops.py: sha256:336d9e0735f8fe2acc93268053d09f3af4089f189c582882eac084dd607bca29
+  scripts/audit_treasurebench_agents_v1_fresh_pilot_v5.py: sha256:3ac1816f457229c923e39769335d2aea1f9d66fe15a4865626d82efdfb7b32f0
+  docs/agent-ops: sha256:fe94862b1b7cad4d472a9e7b3e25749c7311986ec062a4040e8031621ab190f1
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-request.yml: sha256:784ae7ba62bc641ea91c881f26dd54ab1e65e880e0c393f243d277d6659a2a0a
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-request.schema.json: sha256:fe4389d4ffa6402aa7ddc5234a33b70ccf4dd7a45bb18617cc1cb445e288aba7
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-allocation.yml: sha256:cfa7fa4d32e164be503c4cff8b9d7778fc8d122b78b6624f6b8fa2a54eea5b79
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-allocation.schema.json: sha256:fef56e65e738fd227e53dac360506bf919affd309a1af4ad86c50f5336b2a14d
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-private-state.schema.json: sha256:5de91b4f67a9af7342de616ea436f24b4bfc530e761ffe350c17488b1516660f
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-execution-budget.yml: sha256:9ab0a76a8488ca4eb3277b9b1901e49a1b8ffd3432ebd99bdf50b7fec2ba41c2
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-execution-budget.schema.json: sha256:2876afb716f0888e76b7efe5e850f6185ed56f6b398c8aa90ed7a0745dc3df9f
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-corruptions.yml: sha256:fb7d5c5be756b7ba7ba10481be216713bdadfb8f054864b51a4120984094a4d4
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-corruptions.schema.json: sha256:43be423160fede14395841f4159050b57afbc19f0f363ea29f177bf50ce26b42
+  docs/benchmark/agents-v1/protocol-validity-policy-v2.yml: sha256:884708e8da7b3a7f763094dc274f7f792e45b71f560dc5bb60f6d7c0e9cdbb3e
+  docs/benchmark/agents-v1/protocol-validity-policy-v2.schema.json: sha256:775225c594a2660b80740440815fcded2972825c0d76511ce8d13f72e11d78b8
+  docs/benchmark/agents-v1/protocol-validity-policy-v2.md: sha256:65f973186377c65142000ed609ae9d085fda10b9b4c5b4a4fe9a0c7b9ad1e3f1
+  docs/benchmark/agents-v1/provider-outcome-policy-v3.yml: sha256:4af00c1857883b89b6403dc25a67bf0e828a253bd1bd5ed5e046eb0034292658
+  docs/benchmark/agents-v1/provider-outcome-policy-v3.schema.json: sha256:ff442cd2e6ec0a105fe2a05a9a0971a425581be8ce549d229d57afef31418589
+  docs/benchmark/agents-v1/provider-outcome-policy-v3.md: sha256:e4ca4e105c5dad3c388f895e4c65ba1b8675fa6a3a77b203c580228d0530c83d
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-v5-provider-audit.yml: sha256:c189a71344a5f3cdedb011efbecdb9ea0ca9fe43e037d8b5f21fbbd7612bd64c
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-v5-budget.yml: sha256:f408c1cbec8da40ef5f7aefc3c9ed1cf77e75124991bb91228503faee5be2c30
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-v5-registration.yml: sha256:6d6210df8c29110827caaf5134641e2977e0b8f4555fdafbd3b9aba055510f59
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-v5-offline-rehearsal.yml: sha256:5b3e75dca6d02568374f8f4cab4e51358d0b3f6a233c5015d7bd3ff3b164bc77
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-v5-provider-outcome-scenarios.yml: sha256:5246428d816a5c344488378782136f302375559ee68c3caa7d6f18d1a264119a
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-v5-corruptions.yml: sha256:4eeeab8bc7e1b09c6afe0f43647c6fb0003555b72070faddbd3a31c21d1e5742
+  tests/test_treasurebench_agents_v1_fresh_pilot_v5.py: sha256:1ac852d28d91bb0a829e4398b65985cefe79a8d7d9bf852de00f9c1eb426eedf
+  tests/test_treasurebench_agents_v1_fresh_pilot_v5_session.py: sha256:341b19a1918a6ad714011d1fd921d362e69f08404ffcdaa7a82e3208614d7039
+  tests/test_treasurebench_agents_v1_provider_outcome_v3.py: sha256:212e1dc0e3eed9c12498010aaa8ab0b935860e9deacba953a7c39f3609e25f3d
+  Makefile: sha256:7179ffedc97851678ee2dfffedb8c7e1ee91fa289ce4f57173250682573df7e7
+validation:
+  clean_tracked_worktree: true
+  unrelated_untracked_files_preserved: 5
+  remote_head_matches: true
+  draft_pr_open: true
+  draft_pr_exact_head_ci:
+    status: pass
+    workflow: CI
+    run_id: 30481365591
+    head: f51728746b83e0d22cb2d6f5be0513a9cb2b5a00
+  full_verify: pass
+  tests: {passed: 832, failed: 0}
+  focused_v3_v5_tests: {passed: 107, failed: 0}
+  full_v5_rehearsal: pass
+  rehearsal_hash: sha256:b09b7f7a6b2e989ed7c9171f9722729de0b17fe058afde9e5d1c7b4923b30971
+  terminal_pairings_classified: 500
+  metric_intervals: 7900
+  architecture_contrast_bounds: 144
+  independent_metric_bound_agreement: true
+  independent_provider_outcome_classification_agreement: true
+  v5_boundary_corruptions_rejected: 96
+  inherited_corruptions_rejected: 28
+  total_registered_corruptions_rejected: 124
+  production_custody_negative_checks: 6
+activity:
+  provider_calls: 0
+  credential_reads: 0
+  prior_private_state_reads: 0
+  private_objects_created: 0
+  real_unseals: 0
+  spend_usd: "0"
+next_gate: commit-generic-AOG-AO-0011-FRESH-PILOT-V5

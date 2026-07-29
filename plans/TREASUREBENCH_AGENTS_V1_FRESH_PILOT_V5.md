@@ -178,12 +178,12 @@ closeout.
 - **M3 — complete:** complete 50-task/500-pairing rehearsal, required position
   and matrix scenarios, Methods A/B/C, bounds, corruptions,
   production-permit/custody, post-lock replay/unseal, and cleanup.
-- **M4 — complete locally:** focused and full authorization-free acceptance
-  pass. Draft-PR creation and exact-head remote checks follow the execution
-  commit in M5.
-- **M5 — in progress:** exact execution-freeze commit, matching remote
-  draft-PR head, and passing exact-head checks.
-- **M6 — pending:** committed generic owner gate, live validate-only gate,
+- **M4 — complete:** focused and full authorization-free acceptance and the
+  exact-head draft-PR CI pass.
+- **M5 — complete:** exact execution commit
+  `f51728746b83e0d22cb2d6f5be0513a9cb2b5a00`, matching remote draft PR
+  #211 head, 32-path tree freeze, and passing CI run `30481365591`.
+- **M6 — in progress:** committed generic owner gate, live validate-only gate,
   schema-valid owner-gate-required handoff, and exact stop.
 - **M7 — pending:** not authorized in this phase; after later exact
   authorization only, the fixed engineering-complete or honest-quarantine
@@ -205,7 +205,8 @@ closeout.
 - [x] Add PM-0039, the fixed task contract, and master-plan continuation.
 - [x] Validate and commit M0.
 - [x] Complete M1 through M4 sequentially.
-- [ ] Complete M5 and M6 sequentially.
+- [x] Complete M5.
+- [ ] Complete M6.
 - [ ] Stop before `.env.txt`, credentials, real private material, provider
   calls, spend, or real v5 unseal.
 
@@ -283,6 +284,12 @@ closeout.
   separately passes all 500 pairings and 124 registered corruption
   rejections. Begin exact execution-freeze commits with all unrelated
   untracked files excluded.
+- `2026-07-29T18:50:10Z`: freeze and push exact execution commit
+  `f51728746b83e0d22cb2d6f5be0513a9cb2b5a00`, open draft PR #211, and pass
+  exact-head CI run `30481365591`. The 32 protected hashes, fixed task
+  contract, exact policies, identities, routes, models, circuit breaker,
+  caps, and two-name credential subset validate. Prepare the generic gate
+  commit without authorization.
 
 ## Validation strategy
 
