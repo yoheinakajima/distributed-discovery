@@ -147,10 +147,9 @@ implementation disagreement; or unsafe retained state.
 
 ## Cost and authority ceilings
 
-- Expected: to be frozen from the reproduced v4 graph and current official
-  prices before the execution commit.
-- Conservative: USD 15 unless the reproduced graph requires a lower
-  defensible fixed amount; never above the hard caps.
+- Expected: USD 11.51 from the frozen 3,016-call graph and current official
+  prices (USD 11.50969635935 before registered rounding).
+- Conservative: USD 15.
 - Hard total: USD 25.
 - Hard OpenAI: USD 10.
 - Hard Anthropic: USD 15.
@@ -166,13 +165,13 @@ implementation disagreement; or unsafe retained state.
 - **M1 — complete:** prospective policy v2, versioned v4 request, allocation,
   provider audit, private-state, execution-budget, acceptance, and corruption
   contracts.
-- **M2 — active:** v4 runtime, protocol classification, metric bounds,
+- **M2 — complete:** v4 runtime, protocol classification, metric bounds,
   independent reconstruction, custody, trace correspondence, output lock,
   redaction, and deterministic closeout.
-- **M3 — pending:** full 50-task/500-pairing rehearsal, zero/mixed/all-invalid
+- **M3 — complete:** full 50-task/500-pairing rehearsal, zero/mixed/all-invalid
   batches, first/middle/final invalid events, Methods A/B/C, bounds, all
   corruptions, production-permit custody, and cleanup.
-- **M4 — pending:** focused and full authorization-free acceptance plus draft
+- **M4 — active:** focused and full authorization-free acceptance plus draft
   PR creation and passing draft-PR checks.
 - **M5 — pending:** exact execution-freeze commit and matching remote draft-PR
   head.
@@ -194,8 +193,8 @@ implementation disagreement; or unsafe retained state.
 - [x] Create the issue and branch, add PM-0038 and the fixed task contract,
   validate M0, commit, and push.
 - [x] Complete M1 policy and versioned execution contracts.
-- [ ] Complete M2 implementation and focused acceptance.
-- [ ] Complete M3 rehearsals and corruption suite.
+- [x] Complete M2 implementation and focused acceptance.
+- [x] Complete M3 rehearsals and corruption suite.
 - [ ] Complete M4 full validation and draft PR.
 - [ ] Freeze and push M5 execution commit.
 - [ ] Commit and validate the M6 generic owner gate, render the exact handoff,
@@ -219,6 +218,13 @@ implementation disagreement; or unsafe retained state.
 - The existing direct adapters already disable SDK auto-retries and enforce
   at most two task-controlled transport attempts plus one separately keyed
   schema-only repair. V4 must verify, not broaden, that behavior.
+- Initial implementation review found that the first live-stage pass derived
+  Method C classifications and metric bounds before the provider-output lock.
+  The corrected path records only completed provider responses and raw traces
+  before lock, pushes the lock commitment, unseals, then replays the locked
+  responses without a provider call to perform Method C, Methods A/B, and
+  independent bounds. Post-lock derived objects have a separate stable
+  commitment and do not mutate the provider-output lock inventory.
 
 ## Decision log
 
@@ -251,6 +257,19 @@ implementation disagreement; or unsafe retained state.
   Agent Operations, program memory, TreasureBench naming, and diff checks pass
   with zero credentials, private objects, provider calls, or spend. Begin M2
   implementation and focused verification.
+- `2026-07-29T14:13:34Z`: complete M2 and M3. The 50-task/500-pairing public
+  rehearsal classifies all 500 pairings, constructs 6,400 eligible metric
+  intervals and 120 registered contrast bounds, and passes independent bound
+  reconstruction, Methods A/B/C, range, contamination, lock, and redaction
+  checks. Zero-, mixed-, and all-invalid 500-pairing scenarios retain all
+  denominators, assign no invalid action credit, perform no replacement or
+  semantic retry, and do not quarantine on protocol-invalid outcomes alone;
+  provider-terminal and pairing-integrity cases do quarantine. All 76 v4
+  boundary corruptions and 28 inherited repaired-instrument corruptions reject.
+  The production permit/custody rehearsal passes six negative checks and
+  deterministic cleanup. Focused runtime/session tests pass, including
+  post-lock zero-call replay and stable resume. No credentials, real private
+  objects, provider calls, or spend occur. Begin M4 full validation.
 
 ## Validation strategy
 
@@ -291,9 +310,10 @@ authorization.
 Issue #208, the task branch, this living plan, PM-0038, the fixed task
 contract, master-plan continuation, prospective policy v2 and public
 explanation, versioned v4 request/allocation/private-state/budget/corruption
-contracts, current official provider audit, and recalculated budget are
-created. Implementation, tests, rehearsal records, draft PR, execution
-freeze, owner gate, and handoff remain pending.
+contracts, current official provider audit, recalculated budget, runtime,
+independent classifier/bound reconstruction, 76-case corruption audit, tests,
+and public rehearsal records are created. Full validation, draft PR,
+execution freeze, owner gate, and handoff remain pending.
 
 ## Blockers
 

@@ -1,0 +1,56 @@
+schema_version: treasurebench-agents-v1-protocol-validity-v2-scenarios-v1
+status: pass
+classification: public-synthetic-only
+task_id: AO-0010
+campaign_id: treasurebench-agents-v1-repair-confirmation-v4
+batch_id: tb-agents-v1-repair-confirmation-v4-b01
+scenarios:
+  zero-invalid:
+    intended_pairings: 500
+    protocol_valid: 500
+    protocol_invalid: 0
+    provider_terminal_missing: 0
+    quarantined: false
+    schema_repairs: 0
+    replacement_pairings: 0
+    semantic_answer_retries: 0
+    constructed_or_credited_invalid_actions: 0
+    metric_intervals: 6400
+    architecture_contrast_bounds: 120
+    independent_bound_agreement: true
+  mixed-invalid-first-middle-final:
+    intended_pairings: 500
+    protocol_valid: 497
+    protocol_invalid: 3
+    provider_terminal_missing: 0
+    quarantined: false
+    schema_repairs: 20
+    replacement_pairings: 0
+    semantic_answer_retries: 0
+    constructed_or_credited_invalid_actions: 0
+    metric_intervals: 6400
+    architecture_contrast_bounds: 120
+    independent_bound_agreement: true
+  all-invalid:
+    intended_pairings: 500
+    protocol_valid: 0
+    protocol_invalid: 500
+    provider_terminal_missing: 0
+    quarantined: false
+    schema_repairs: 3014
+    replacement_pairings: 0
+    semantic_answer_retries: 0
+    constructed_or_credited_invalid_actions: 0
+    metric_intervals: 6400
+    architecture_contrast_bounds: 120
+    independent_bound_agreement: true
+first_middle_final_invalid_tested: true
+protocol_invalid_alone_quarantines: false
+provider_terminal_missing_quarantines: true
+pairing_integrity_failure_quarantines: true
+complete_case_overclaim_rejected: true
+conditional_diagnostic_role: secondary-selection-conditioned-diagnostic-only
+provider_calls: 0
+credential_reads: 0
+private_objects_created: 0
+external_cost_usd: "0"

@@ -1,0 +1,35 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-v4-production-custody-rehearsal-v1
+status: pass
+classification: authorization-free-disposable-nonsecret-production-path
+task_id: AO-0010
+campaign_id: treasurebench-agents-v1-repair-confirmation-v4
+batch_id: tb-agents-v1-repair-confirmation-v4-b01
+production_generator_permit_path: pass
+synthetic_mode_bypass_used: false
+tasks: 50
+answers: 50
+algorithm: AES-256-GCM
+independent_verification: pass
+negative_checks:
+  - wrong-task-key
+  - corrupted-task-ciphertext
+  - wrong-campaign-associated-data
+  - wrong-batch-associated-data
+  - duplicate-exclusive-persistence
+  - symlink-state-root
+ordering:
+  - production-private-generation-permit
+  - task-and-answer-generation
+  - independent-aes-256-gcm-encryption
+  - atomic-exclusive-persistence
+  - custody-manifest-creation
+  - reload-and-exact-independent-verification
+  - deterministic-cleanup
+atomic_exclusive_persistence: pass
+file_modes: "0600"
+directory_modes: "0700"
+cleanup: pass
+real_seed_or_private_campaign_material_created: false
+credentials_read: 0
+provider_calls: 0
+spend_usd: "0"
