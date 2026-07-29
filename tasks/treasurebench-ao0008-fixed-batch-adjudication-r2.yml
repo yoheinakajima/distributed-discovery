@@ -1,0 +1,166 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0009
+title: TreasureBench AO-0008 aggregate fixed-full-batch failure adjudication R2
+task_type: private-evaluation
+status: active
+objective: Determine AO-0008's exact operational fixed-full-batch failure cause through one owner-gated, one-use, aggregate-only read of all 450 fixed-full-batch traces plus the bounded terminal-call context, then execute only the evidence-determined prospective repair or policy branch.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: policy, path: docs/benchmark/agents-v1/AGENTS.md}
+  - {type: policy, path: src/distributed_discovery/benchmark/agents_v1/AGENTS.md}
+  - {type: record, path: tasks/treasurebench-ao0008-fixed-batch-adjudication.yml}
+  - {type: record, path: reports/agent-ops/AO-0009-treasurebench-ao0008-fixed-batch-diagnostic-owner-gate.yml}
+  - {type: record, path: reports/agent-ops/AO-0008-quarantine-closeout-handoff.yml}
+  - {type: record, path: reports/benchmark/treasurebench-agents-v1-fresh-pilot-v3-closeout.yml}
+  - {type: record, path: reports/benchmark/treasurebench-agents-v1-fresh-pilot-v3-output-lock-commitment.yml}
+  - {type: plan, path: plans/TREASUREBENCH_AO0008_FIXED_BATCH_ADJUDICATION.md}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/206"}
+  - {type: pull-request, path: "https://github.com/yoheinakajima/distributed-discovery/pull/207"}
+owner_decisions:
+  - AO-0009 continues in the same session, issue, branch, living ExecPlan, and draft pull request; no replacement task, issue, branch, PR, session, campaign, or batch is created.
+  - The unused AOG-AO-0009-AO0008-FIXED-BATCH-DIAGNOSTIC gate and original AO-0009 contract are prospectively superseded and receive no authorization.
+  - AO-0008, its campaign and batch, output lock, 3,576 retained objects, closed provider phase, quarantine, decision, cost and call totals, and all retained bytes and metadata remain permanently immutable and non-reusable.
+  - Public object arithmetic is consistent with 2 canary, 50 prefix, and 450 fixed-full-batch traces; because the frozen runner persists each trace before applying aggregate gates, the failure-causing trace may be anywhere in the 450-trace full batch.
+  - The live fixed batch used verify_metrics=false. Immediate cause ordering is terminal or persistence failure during a run; after-loop direct or probable contamination; after-loop protocol-contract failure including final cardinality; pairing completeness; then completion-marker or state transition.
+  - Method A/B and metric-range checks were not computed during the live fixed-full-batch stage and cannot be classified as its immediate cause.
+  - The one-use diagnostic may transiently authenticate and decrypt exactly all 450 fixed-full-batch trace objects and extract only authentication, stage, protocol-error presence, invalid final cardinality, direct or probable contamination, parse or schema-repair failure, retry count, and hash-only trace identity.
+  - Raw trace content remains transient in process memory and is discarded immediately. Raw output, prompts, task text, answers, hidden targets, actions, task/model/provider/architecture dimensions, task metrics, performance, rankings, comparisons, and private paths are neither retained nor published.
+  - Public output is aggregate only and may report authenticated trace count, protocol, cardinality, contamination, parse or schema-repair counters, exact 450-trace pairing completeness, structural response-ledger correspondence, durable stage, and the resulting causal class.
+  - The bounded provider-response rule remains one unique terminal logical call when one exists, otherwise the final durable logical call, at most two corresponding response decryptions, and at most two preceding and two following operational records.
+  - Structural verification compares the complete 3,067 ledger attempt-identity set to the complete encrypted response-domain set, rejects missing, orphaned, duplicate, or conflicting identities, proves the unique 2/50/450 trace partition, checks caps from the frozen ledger and ceilings, and identifies the exact last durable access and state stage.
+  - Causal precedence is retained-integrity mismatch; response-ledger or trace persistence; terminal provider failure; contamination policy; final-action cardinality; other protocol nonconformance; pairing completeness; state-transition or completion marker; then bounded-evidence unknown.
+  - When all 450 fixed-batch traces authenticate, aggregate contamination and protocol counters are zero, response-ledger correspondence is exact, and only the completion marker is absent, classify the minimum exact local state-transition or completion-marker defect supported by the access log and frozen source.
+  - The read-intent marker precedes retained access, the complete retained byte and metadata state is compared before and after, the transient operational key is zeroed, one detailed nonpublic record stays outside Git, and private-read authority closes permanently after the invocation.
+  - One R2 owner gate covers the exact one-use diagnostic, only the evidence-determined prospective repair or policy adjudication, public-safe reconciliation, validation, PR readiness and merge after checks, normal CI/Pages and named routes, issue closure, synchronized main, and a final schema-valid handoff.
+scope:
+  paths:
+    - tasks/treasurebench-ao0008-fixed-batch-adjudication-r2.yml
+    - plans/TREASUREBENCH_AO0008_FIXED_BATCH_ADJUDICATION.md
+    - plans/MASTER_EXEC_PLAN.md
+    - docs/agent-ops
+    - docs/benchmark/agents-v1
+    - docs/current-state.md
+    - docs/current-roadmap.md
+    - docs/program-memory
+    - reports/agent-ops
+    - reports/benchmark
+    - reports/final-handoff.md
+    - reports/project-status.md
+    - studies/DD-010-discoverybench
+    - src/distributed_discovery/agent_ops
+    - src/distributed_discovery/benchmark/agents_v1
+    - src/distributed_discovery/cli.py
+    - scripts
+    - tests
+    - site
+    - .github/workflows
+    - Makefile
+  actions:
+    - Preserve the existing AO-0009 registration while prospectively superseding only its unused R1 contract and gate authority surface.
+    - Correct the public runtime audit, taxonomy, aggregate-only trace allowlist, structural correspondence rules, causal precedence, schema, diagnostic, fixtures, corruptions, and redaction.
+    - Authenticate and aggregate exactly 450 fixed-full-batch traces only after exact R2 owner authorization, retaining no raw or dimensional content.
+    - Preserve the existing one-call, two-response, and four-neighbor diagnostic context.
+    - Execute only the evidence-determined prospective implementation repair or provider or agent-protocol policy branch.
+    - For a local repair, preserve regressions and pass exact-scale 3,067-response and 502-trace plus full 50-task and 500-pairing rehearsals.
+    - Complete public-safe records, validation, draft-PR lifecycle, merge after checks, normal CI/Pages and named-route verification, issue closure, and synchronized main under the same R2 authority.
+non_goals:
+  - No AO-0008 reopening, retry, continuation, execution, reuse, rescore, splice, mutation, deletion, reauthorization, or scientific unsealing.
+  - No retained-state read or operational-key access before exact R2 authorization; no second read after it.
+  - No provider call, credential read, spend, new real private material, v4 campaign or batch identity, or new private pilot.
+  - No raw output, prompt, task, answer, hidden target, action, dimensional identity, performance value, ranking, comparison, credential, or private path in Git or public output.
+  - No Method A/B or metric-range immediate-cause classification for the live fixed-full-batch stage.
+  - No DD-023, claim, scientific run, proof or evidence promotion, paper result, ranking, package, release, DOI, submission, or base-campaign authority.
+permissions:
+  repository_write: true
+  git_branch_commit: true
+  github_issue_pr: true
+  merge_after_checks: true
+  ci_pages: true
+external_action_permissions:
+  network_observation: true
+  github_mutation: true
+  provider_calls: false
+  spend: false
+  release_publication: false
+  submission: false
+scientific_mutation_permissions:
+  create_study: false
+  create_claim: false
+  create_run: false
+  change_evidence_status: false
+  change_proof_status: false
+  change_paper_lifecycle: false
+private_data_permissions: {read: true, write: false, generate: false, publish: false}
+budget:
+  currency: USD
+  expected: "0"
+  hard_cap: "0"
+  call_cap: 0
+  category_caps: {}
+  cumulative_spend: "0"
+expected_outcomes:
+  - fixed-batch-root-cause-repaired-full-rehearsal-pass
+  - provider-reliability-policy-decision-required
+  - agent-protocol-policy-decision-required
+  - fixed-batch-diagnostic-inconclusive-defer
+  - retained-state-integrity-mismatch-stop
+stop_conditions:
+  - Stop before any retained-state read unless the exact committed R2 gate has valid local authorization and every contract, hash, ancestry, branch, issue, PR, zero cap, prohibition, and challenge check passes.
+  - Stop if the output lock, inventory, ledger chains, exact response-attempt set, exact 2/50/450 trace partition, authentication, cap reconstruction, durable-stage reconstruction, or complete before/after equality fails.
+  - Stop if trace extraction exceeds the exact aggregate fields, 450 fixed-full-batch traces, one selected logical call, two responses, four neighbors, or one transient 32-byte operational key.
+  - Stop if raw or dimensional content would be retained or published, or if a second read, unrelated object, seed, task key, answer key, task or answer content, credential, or private path would be required.
+  - Stop if a provider call, credential read, spend, new campaign or batch, v4 identity, scientific or publication authority, release, submission, or broader policy change would be required.
+  - Stop if AO-0008 retained state, immutable Agent Operations history, scientific inventories, claim/run/paper/release state, or unrelated preservation files change.
+acceptance_profile: private-evaluation
+canonical_destinations:
+  - tasks/treasurebench-ao0008-fixed-batch-adjudication-r2.yml
+  - plans/TREASUREBENCH_AO0008_FIXED_BATCH_ADJUDICATION.md
+  - docs/benchmark/agents-v1
+  - reports/benchmark
+  - reports/agent-ops
+  - docs/current-state.md
+  - docs/current-roadmap.md
+  - docs/program-memory
+  - reports/final-handoff.md
+  - reports/project-status.md
+  - studies/DD-010-discoverybench/status.yml
+  - site
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 206
+  branch: codex/treasurebench-ao0008-fixed-batch-adjudication
+  pull_request: 207
+  base: main
+exec_plan: plans/TREASUREBENCH_AO0008_FIXED_BATCH_ADJUDICATION.md
+task_delta: null
+frozen_identifiers:
+  starting_main: 693adaaa49b9dfafd510c4f622aa3c754253d485
+  owner_study: DD-010
+  source_task: AO-0008
+  campaign_id: treasurebench-agents-v1-repair-confirmation-v3
+  batch_id: tb-agents-v1-repair-confirmation-v3-b01
+  execution_commit: 0f9d82bb50cbb334bea47e24448831faf0cdbed8
+  output_lock: sha256:e52055b08ca3a8acb1cfb6ac608c6e601f3c618352900f92bf91c5ffc4718dbb
+  locked_objects: "3576"
+  provider_responses: "3067"
+  traces_total: "502"
+  public_canary_traces: "2"
+  private_prefix_traces: "50"
+  fixed_full_batch_traces: "450"
+  selected_logical_calls: "1"
+  selected_response_objects_maximum: "2"
+  neighbor_records_maximum: "4"
+  superseded_owner_gate_id: AOG-AO-0009-AO0008-FIXED-BATCH-DIAGNOSTIC
+  owner_gate_id: AOG-AO-0009-AO0008-FIXED-BATCH-DIAGNOSTIC-R2
+  claim_ceiling: DD-C-0110
+  study_ceiling: DD-022
+supersession:
+  supersedes:
+    - tasks/treasurebench-ao0008-fixed-batch-adjudication.yml
+    - AOG-AO-0009-AO0008-FIXED-BATCH-DIAGNOSTIC
+  superseded_by: null
+  reason: Owner-directed preauthorization R2 correction expands the one-use diagnostic from one trace to aggregate-only authentication and extraction across exactly 450 fixed-full-batch traces and aligns classification with the frozen runtime's actual post-loop decision order.
+next_gate: Complete the R2 public-only implementation correction, exact-scale and full rehearsals, complete validation, execution refreeze, and commit AOG-AO-0009-AO0008-FIXED-BATCH-DIAGNOSTIC-R2.

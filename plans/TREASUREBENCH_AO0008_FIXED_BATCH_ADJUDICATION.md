@@ -39,8 +39,12 @@ Five unrelated untracked preservation files pre-exist and are outside scope:
 
 They must remain untouched. Provider calls, credential reads, spend, retained
 private reads, new real private material, scientific mutation, paper action,
-release, and submission are all zero. Exactly one milestone is active:
-**M5 — diagnostic execution freeze, generic owner gate, and typed handoff**.
+release, and submission are all zero. The R1 execution freeze and owner-gate
+handoff were reached without authorization or retained access. At
+`2026-07-29T00:03:24Z`, the owner issued a preauthorization correction because
+the frozen runtime persists all 450 traces before its aggregate gates. The
+unused R1 gate is prospectively superseded. Exactly one milestone is active:
+**M5R2 — aggregate-only diagnostic repair and R2 refreeze**.
 
 The AO-0008 boundary is permanent: task `AO-0008`, campaign
 `treasurebench-agents-v1-repair-confirmation-v3`, batch
@@ -80,6 +84,12 @@ issue or branch creation.
 No owner decision from this intake remains conversation-only once `PM-0037`,
 the fixed contract, this plan, issue, owner gate, and handoff are committed.
 Repeat this audit at closeout.
+
+The `2026-07-29` amendment is routed to additive R2 contract
+`tasks/treasurebench-ao0008-fixed-batch-adjudication-r2.yml`, updated PM-0037,
+this plan, and the future R2 gate and handoff. It preserves every prior
+boundary, makes no scientific decision, and supersedes only the unused
+one-trace authority surface.
 
 ## Scope
 
@@ -153,9 +163,12 @@ Repeat this audit at closeout.
   corruptions.
 - **M4 — complete:** run focused and complete authorization-free validation and
   open the draft pull request.
-- **M5 — pending:** freeze the diagnostic execution commit and protected tree,
-  commit and validate one generic owner-gate manifest, render a schema-valid
-  `owner-gate-required` handoff, and stop exactly once.
+- **M5 — superseded unused:** R1 froze diagnostic commit `b7a3345`, committed
+  and validate-only checked the original gate, and produced the typed handoff;
+  no authorization or retained read occurred.
+- **M5R2 — active:** implement the aggregate-only 450-trace correction,
+  exact-set structural verification, causal precedence, fixtures, corruptions,
+  full validation, R2 execution freeze, R2 gate, and replacement handoff.
 - **M6 — pending:** after exact authorization, execute the diagnostic once,
   close private-read authority permanently, and select one permitted outcome.
 - **M7 — pending:** execute only the evidence-determined prospective repair or
@@ -197,8 +210,12 @@ Repeat this audit at closeout.
   AO-0009 audit and rehearsal, formatting, Ruff, strict MyPy over 202 source
   files, 656 tests, 110 claims, 51 immutable run manifests, governance and
   publication audits, and offline release verification.
-- [ ] Commit and push the exact diagnostic execution freeze, commit and
-  validate the generic gate, render the handoff, and stop.
+- [x] Commit and push R1 diagnostic freeze `b7a3345`, validate the unused R1
+  gate, and render its handoff without authorization or retained access.
+- [ ] Commit the additive R2 correction and route the amendment durably.
+- [ ] Implement and validate the aggregate-only 450-trace R2 diagnostic.
+- [ ] Freeze R2, supersede R1, commit and validate the R2 gate, render the
+  replacement handoff, and stop.
 
 ## Discoveries and surprises
 
@@ -232,6 +249,12 @@ Repeat this audit at closeout.
   release verification. No retained AO-0008 state, authorization, credential,
   provider, spend, new private material, scientific record, paper, release,
   or submission surface was accessed or changed.
+- `2026-07-29T00:03:24Z`: public source establishes a defect in the unused R1
+  authority surface: `PilotBatchRunner.run_stage` persists every trace inside
+  the loop and raises aggregate contamination and protocol failures after the
+  loops. The sole triggering event may therefore occur in any one of 450
+  traces. The live stage used `verify_metrics=false`, so Method A/B and
+  metric-range failures were not computed and cannot be immediate causes.
 
 ## Decision log
 
@@ -262,6 +285,10 @@ Repeat this audit at closeout.
   Preserve the first wall's one schema-count regression and its correction.
   The identical complete wall then passes. Complete M4 and begin M5; the next
   commit is the exact diagnostic execution freeze.
+- `2026-07-29T00:03:24Z`: accept the explicit preauthorization correction
+  without creating a new task, issue, branch, PR, session, campaign, or batch.
+  Preserve R1 as unused history and refreeze an aggregate-only 450-trace R2
+  surface. Begin M5R2.
 
 ## Validation strategy
 
@@ -276,6 +303,11 @@ Repeat this audit at closeout.
 - Reconstruct the full 50-task/500-pairing synthetic graph and verify
   Methods A/B/C, cardinality, pairing completeness, contamination, metric
   ranges, output locking, redaction, and exact cost accounting.
+- Place sole contamination and protocol failures in the first, middle, and
+  final full-batch traces and prove identical classification without mtime
+  selection. Reject missing, orphaned, substituted, duplicate, or conflicting
+  response identities; missing trace domains; dimensional or raw public
+  leakage; and a second read.
 - Run the private-evaluation acceptance profile and task-specific checks from
   clean committed source before freezing the execution commit.
 
@@ -286,8 +318,8 @@ Repeat this audit at closeout.
 - `make treasurebench-fixed-batch-diagnostic-rehearsal` — synthetic one-use
   diagnostic fixtures and the complete 50-task/500-pairing graph pass with
   deterministic cleanup and zero consequential activity.
-- `make owner-gate GATE=reports/agent-ops/AO-0009-treasurebench-ao0008-fixed-batch-diagnostic-owner-gate.yml OWNER_GATE_VALIDATE_ONLY=1`
-  — validate the committed generic gate without creating an authorization.
+- `make owner-gate GATE=reports/agent-ops/AO-0009-treasurebench-ao0008-fixed-batch-diagnostic-r2-owner-gate.yml OWNER_GATE_VALIDATE_ONLY=1`
+  — validate the committed R2 gate without creating an authorization.
 - `make treasurebench-fixed-batch-read-only-diagnostic` — after and only after
   exact authorization, perform the sole bounded retained-state read.
 

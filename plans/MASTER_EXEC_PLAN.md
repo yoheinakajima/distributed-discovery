@@ -8,6 +8,17 @@ Issue #206, branch
 [`TREASUREBENCH_AO0008_FIXED_BATCH_ADJUDICATION.md`](TREASUREBENCH_AO0008_FIXED_BATCH_ADJUDICATION.md)
 own the sole substantive lane as AO-0009.
 
+An explicit preauthorization owner amendment supersedes the unused original
+AO-0009 contract and gate with additive R2 contract
+`tasks/treasurebench-ao0008-fixed-batch-adjudication-r2.yml`. AO-0009 remains
+in the same session, issue, branch, living ExecPlan, and draft PR #207. R2
+corrects the one-use diagnostic to authenticate and inspect aggregate-only
+fields across exactly all 450 fixed-full-batch traces, preserves the bounded
+one-call/two-response/four-neighbor context, adds the contamination-policy
+class, proves complete response-ledger and 2/50/450 trace-domain
+correspondence, and follows the frozen runtime's actual post-loop causal
+order. The original gate must not be authorized or consumed.
+
 AO-0009 preserves permanently task AO-0008, campaign
 `treasurebench-agents-v1-repair-confirmation-v3`, batch
 `tb-agents-v1-repair-confirmation-v3-b01`, execution commit
@@ -20,9 +31,10 @@ the closed provider phase, zero post-lock calls, no unsealing, and the
 Nothing in AO-0008 may be reopened, retried, continued, executed, reused,
 rescored, spliced, mutated, deleted, broadly unsealed, or reauthorized.
 
-The authorization-free phase audits public control flow and implements one
+The authorization-free R2 phase audits public control flow and implements one
 authorization-bound, one-use, read-only diagnostic with an exact logical-call
-context and encrypted-object ceiling, transient bounded operational-key use,
+context and aggregate-only 450-trace ceiling, transient bounded
+operational-key use,
 before-and-after immutability proof, redaction, synthetic fixtures, and
 corruptions. The difference between 3,067 actual attempts and 3,016 normal
 calls is not causal proof. The task must stop once at a committed generic
