@@ -200,7 +200,7 @@ separate explicit owner task; any private evaluation also requires wholly new
 identities, execution freeze, and owner gate. No v4 identity was registered by
 AO-0009.
 
-## AO-0010 prospective policy v2 and wholly fresh v4 boundary
+## AO-0010 policy v2 and wholly fresh v4 closeout
 
 AO-0010 combines the owner-selected forward-only protocol-validity policy v2
 and one wholly fresh v4 engineering pilot in a single Agent Operations task.
@@ -219,14 +219,21 @@ bounds and architecture-contrast bounds cover all intended pairings;
 complete-case estimates cannot be presented as unconditional architecture
 effects.
 
-The complete authorization-free wall passes, including zero/mixed/all-invalid
+The complete authorization-free wall passed, including zero/mixed/all-invalid
 500-pairing batches, first/middle/final invalid events, Methods A/B/C,
 independent metric-bound reconstruction, every existing and new relevant
 corruption, production permit/custody/output-lock/unseal/redaction/cleanup
-rehearsals, and the full repository validation. Execution is frozen at
-`5289882dca6b8912a0518bba72aba1f4d595c2a8`, and the one generic owner
-gate is committed and live-validated without authorization. Until that gate is
-authorized, credentials, real private generation, provider calls, spend, and
-unsealing remain prohibited. This is DD-010 engineering only and creates no
-DD-023, claim, scientific run, evidence promotion, performance result,
-ranking, release, submission, or base campaign.
+rehearsals, and the full repository validation. Execution was frozen at
+`5289882dca6b8912a0518bba72aba1f4d595c2a8`, and the exact generic owner
+gate and provider re-audit passed. Both public canaries and wholly fresh
+custody completed before the private prefix stopped on
+`provider-terminal-missing`. Provider access closed after 116 calls, 58,636
+input tokens, 13,275 output tokens, and USD 0.3470610. The output lock
+verified 150 retained objects without unsealing.
+
+The incomplete batch is permanently quarantined and has no real-data protocol
+classification, Methods A/B/C, metric bounds, or performance interpretation.
+It cannot be retried, replaced, repaired, reopened, reused, rescored, spliced,
+executed, unsealed, or reauthorized. This is DD-010 engineering only and
+creates no DD-023, claim, scientific run, evidence promotion, performance
+result, ranking, release, submission, or base campaign.

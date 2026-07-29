@@ -51,7 +51,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "stopped decentralized-recovery overlap gate" in program
     assert "Phase 2 holds theorem-family execution" in program
     assert "Reliable Discovery remains a major candidate but is deferred" in program
-    assert "has four permanently quarantined DD-010 engineering pilots" in program
+    assert "has five permanently quarantined DD-010 engineering pilots" in program
     assert "public-only provider-schema conformance" in program
     assert "sealed-pilot-quarantined-provider-failure" in program
     assert (
@@ -65,8 +65,9 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "verified 3,576-object output lock" in program
     assert "AO-0009’s exactly once aggregate diagnostic" in program
     assert "agent-protocol-policy-decision-required" in program
-    assert "AO-0010 now prospectively freezes protocol-validity policy v2" in program
-    assert "one wholly fresh v4 engineering pilot at an unconsumed owner gate" in program
+    assert "AO-0010 froze protocol-validity policy v2" in program
+    assert "quarantining during the private prefix" in program
+    assert "verified 150-object output lock" in program
     assert 'id="information-sharing-frontier"' in program
     assert 'href="publications/information-sharing-frontier.html"' in program
     assert "docs/theorem-spine.md" in program
@@ -145,13 +146,14 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         assert (output / f"benchmark/{route}.html").is_file()
         assert (output / f"treasurebench/{route}.html").is_file()
     agents_registration = (output / "benchmark/agents-v1.html").read_text(encoding="utf-8")
-    assert "DD-010 instrument · four quarantined pilots · prospective policy v2" in (
+    assert "DD-010 instrument · five quarantined pilots · protocol-validity policy v2" in (
         agents_registration
     )
     assert "Original pilot quarantined" in agents_registration
     assert "Repair-confirmation v1 quarantined" in agents_registration
     assert "Repair-confirmation v2 quarantined" in agents_registration
     assert "Repair-confirmation v3 quarantined" in agents_registration
+    assert "Repair-confirmation v4 quarantined" in agents_registration
     assert "Custody path repaired" in agents_registration
     assert "custody-creation-failure" in agents_registration
     assert "v2-campaign-absent-from-private-generation-permit-allowlist" in (agents_registration)
@@ -165,14 +167,17 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "32 protocol-nonconforming traces" in agents_registration
     assert "agent-protocol-policy-decision-required" in agents_registration
     assert "at AO-0009 closeout v4 was not registered" in agents_registration
-    assert "AO-0010 prospective policy v2 and fresh v4 preparation" in agents_registration
+    assert "AO-0010 policy v2 and fresh v4 closeout" in agents_registration
     assert "Protocol-invalid traces alone do not quarantine" in agents_registration
     assert "6,400 pairing metric intervals" in agents_registration
     assert "All 104 relevant corruptions reject" in agents_registration
+    assert "provider-terminal-missing" in agents_registration
+    assert "USD 0.3470610" in agents_registration
+    assert "150 retained objects" in agents_registration
     dd010_data = json.loads((output / "data/studies/dd-010.json").read_text(encoding="utf-8"))
     assert "AO-0009-one-use-aggregate-r2-diagnostic" in dd010_data["evidence_status"]
     assert "AO-0010-forward-only-protocol-validity-policy-v2" in dd010_data["evidence_status"]
-    assert dd010_data["registry_status"].endswith("owner-gate-required")
+    assert dd010_data["registry_status"].endswith("policy-v2-frozen")
     assert any(
         item["path"]
         == "reports/benchmark/treasurebench-ao0008-fixed-batch-diagnostic-r2-closeout.md"
@@ -209,8 +214,8 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         (output / "data/benchmark/agents-v1-implementation.json").read_text(encoding="utf-8")
     )
     assert agents_implementation["status"] == (
-        "implementation-and-custody-path-repaired-all-four-pilots-quarantined-"
-        "prospective-policy-v2-fresh-v4-owner-gate-required"
+        "implementation-and-custody-path-repaired-all-five-pilots-quarantined-"
+        "protocol-validity-policy-v2-frozen"
     )
     assert agents_implementation["public_rehearsal"]["cases"] == 50
     assert agents_implementation["public_rehearsal"]["corruptions_rejected"] == 24
@@ -224,7 +229,9 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         ),
         "status": "pass",
     }
-    assert agents_implementation["boundaries"]["provider_calls"] == 0
+    assert agents_implementation["boundaries"]["provider_calls"] == 116
+    assert agents_implementation["boundaries"]["external_cost_usd"] == "0.3470610"
+    assert agents_implementation["boundaries"]["private_material_exists"] is True
     assert agents_implementation["boundaries"]["performance_results_exist"] is False
     assert agents_implementation["custody_path_conformance"] == {
         "algorithm": "AES-256-GCM",
@@ -272,7 +279,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "external_cost_usd": "0",
         "intended_pairings": 500,
         "metric_intervals": 6400,
-        "owner_gate_required": True,
+        "owner_gate_required": False,
         "provider_calls": 0,
         "status": "pass-offline-exact-execution-frozen-owner-gate-required",
         "task_id": "AO-0010",
@@ -280,6 +287,25 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "terminal_pairings_classified": 500,
         "total_relevant_corruptions_rejected": 104,
         "zero_mixed_all_invalid_scenarios": "pass",
+    }
+    assert agents_implementation["fresh_v4_closeout"] == {
+        "batch_id": "tb-agents-v1-repair-confirmation-v4-b01",
+        "calls": 116,
+        "campaign_id": "treasurebench-agents-v1-repair-confirmation-v4",
+        "cost_usd": "0.3470610",
+        "decision": "fresh-pilot-v4-quarantined-engineering-only",
+        "failure_class": "provider-terminal-missing",
+        "input_tokens": 58636,
+        "minimum_unseal_performed": False,
+        "objects_locked": 150,
+        "output_lock_commitment": (
+            "sha256:88c442bf6cb5e1b99a893808d423b488d2b1062543a49fcfb32b77f276abaa1c"
+        ),
+        "output_tokens": 13275,
+        "performance_results_exist": False,
+        "provider_phase_closed": True,
+        "real_batch_protocol_classification": "not-run-incomplete-pairings",
+        "stage": "private-prefix",
     }
     agents_evaluation = json.loads(
         (output / "data/benchmark/agents-v1-evaluation.json").read_text(encoding="utf-8")

@@ -9,7 +9,9 @@ must be frozen before any v4 authorization or generation. All
 authorization-free implementation, independent verification, rehearsal,
 corruption, governance, and draft-PR checks must pass before one generic owner
 gate is committed and the task stops before credentials, real private
-generation, provider calls, or spend.
+generation, provider calls, or spend. After exact owner authorization, the
+same task must complete either the normal engineering path or an honest
+quarantine and then finish the authorized administrative closeout.
 
 ## Current state
 
@@ -26,9 +28,21 @@ checks found the prospective campaign
 generation domain `fresh-private-v4`, branch
 `codex/treasurebench-agents-v1-fresh-pilot-v4`, policy path
 `docs/benchmark/agents-v1/protocol-validity-policy-v2.yml`, and gate
-`AOG-AO-0010-FRESH-PILOT-V4` unused before allocation. No owner
-authorization, seed, task, answer, key, nonce, ciphertext, credential,
-provider call, or spend has been created.
+`AOG-AO-0010-FRESH-PILOT-V4` unused before allocation.
+
+At `2026-07-29T15:34:52Z`, the owner authorization has been consumed and the
+exact live command has completed honestly. Current official provider
+availability, structured-output behavior, retention, retry/error behavior,
+and standard prices revalidated; the authorization, execution ancestry, draft
+PR head, fixed contract, and all 24 protected hashes matched. Both public
+canaries and wholly fresh custody passed. The private prefix then stopped on
+registered class `provider-terminal-missing`. The provider phase closed after
+116 calls, 58,636 input tokens, 13,275 output tokens, and USD 0.3470610. The
+150-object output lock
+`sha256:88c442bf6cb5e1b99a893808d423b488d2b1062543a49fcfb32b77f276abaa1c`
+verified without unsealing. No replacement, splice, semantic retry, or
+post-lock call occurred. The campaign and batch are permanently quarantined;
+only the public-safe administrative closeout remains.
 
 AO-0008 and AO-0009 remain terminal and immutable. The permanently preserved
 AO-0008 identity is campaign
@@ -178,9 +192,11 @@ implementation disagreement; or unsafe retained state.
   head.
 - **M6 — complete:** committed generic owner gate, live authorization-free gate
   validation, schema-valid handoff, and exact stop.
-- **M7 — pending and unauthorized:** later one-gate live success-or-honest-
-  quarantine lifecycle, merge, CI/Pages, live-route verification, issue
-  closure, synchronized main, and final schema-valid handoff.
+- **M7 — active authorized quarantine closeout:** the exact authorization,
+  provider re-audit, canaries, fresh custody, private-prefix failure, provider
+  closure, and 150-object output lock are complete. Public-safe
+  reconciliation, validation, merge, CI/Pages, live-route verification, issue
+  closure, synchronized main, and the final schema-valid handoff remain.
 
 ## Progress checklist
 
@@ -200,6 +216,15 @@ implementation disagreement; or unsafe retained state.
 - [x] Freeze and push M5 execution commit.
 - [x] Commit and validate the M6 generic owner gate, render the exact handoff,
   and stop before credentials, real private generation, calls, or spend.
+- [x] Consume the exact owner authorization and revalidate every frozen
+  provider, Git, GitHub, contract, identity, and protected-tree surface.
+- [x] Run the exact live command through both public canaries, wholly fresh
+  custody, honest private-prefix quarantine, provider closure, and the pushed
+  output-lock commitment.
+- [x] Complete public-safe reconciliation and the full validation wall.
+- [ ] Complete PR readiness and squash merge, post-merge CI/Pages and live
+  routes, issue closure, main synchronization, and the final schema-valid
+  handoff.
 
 ## Discoveries and surprises
 
@@ -236,6 +261,17 @@ implementation disagreement; or unsafe retained state.
   The public Agents v1 projection now validates and renders policy v2, the
   aggregate v4 rehearsal, and the owner-gate boundary; its focused two-test
   integration file passes before the full candidate rerun.
+- The authorized v4 execution passed both public canaries and wholly fresh
+  custody, then encountered `provider-terminal-missing` during the private
+  prefix. Policy v2 correctly preserved the distinction between a missing
+  provider terminal and protocol-invalid completed output: the incomplete
+  pairing quarantined the batch, while no invalid-output rerun, replacement,
+  normalization, semantic repair, or credit path was invoked.
+- The quarantine path closed provider access at 116 calls and USD 0.3470610,
+  locked all 150 safely retained objects, published the lock commitment, and
+  performed no unseal or post-lock classification. Consequently the real
+  incomplete batch has no Methods A/B/C, metric-bound, or performance record;
+  only the complete authorization-free synthetic validation remains.
 
 ## Decision log
 
@@ -328,6 +364,31 @@ implementation disagreement; or unsafe retained state.
   `AUTHORIZE AOG-AO-0010-FRESH-PILOT-V4 5289882`. The owner-gate-required
   handoff validates against `agent-ops-handoff-v1`. No authorization,
   credential, real private material, provider call, spend, or unseal occurs.
+- `2026-07-29T15:17:00Z`: consume the exact owner authorization with challenge
+  `AUTHORIZE AOG-AO-0010-FRESH-PILOT-V4 5289882`. Re-audit current official
+  OpenAI and Anthropic model availability, structured outputs, retention,
+  retry/error behavior, and pricing; the frozen exact routes and registered
+  USD 2.50/15 and USD 3/15 standard prices remain valid. Revalidate branch,
+  issue #208, draft PR #209, execution ancestry, fixed contract, and all 24
+  protected hashes.
+- `2026-07-29T15:34:52Z`: the exact live command passes both public canaries
+  and wholly fresh custody, then honestly quarantines at `private-prefix` on
+  `provider-terminal-missing`. Provider access closes after 116 calls, 58,636
+  input tokens, 13,275 output tokens, and USD 0.3470610. The public custody
+  commitment and 150-object quarantine lock are committed and pushed; the
+  lock verifies under
+  `sha256:88c442bf6cb5e1b99a893808d423b488d2b1062543a49fcfb32b77f276abaa1c`.
+  No material is unsealed and no replacement, splice, semantic retry, or
+  post-lock provider call occurs. Begin the authorized public-safe quarantine
+  closeout with provider execution permanently closed.
+- `2026-07-29T15:50:50Z`: complete public-safe reconciliation and the full
+  validation wall. The handoff schema, v4 audit and complete rehearsal,
+  Methods A/B/C, all-pairing bounds, 104 corruption rejections, Ruff, MyPy
+  over 208 source files, all 725 tests, 110 claims, 51 run manifests, Agent
+  Operations, program memory, editorial and publication governance,
+  TreasureBench naming, site safety, release readiness, and offline
+  compendium verification pass. No retained v4 private object is read or
+  unsealed.
 
 ## Validation strategy
 
@@ -374,17 +435,19 @@ public rehearsal records, complete authorization-free validation, and draft PR
 #209 are created. Exact execution commit
 `5289882dca6b8912a0518bba72aba1f4d595c2a8`, generic owner gate
 `reports/agent-ops/AO-0010-treasurebench-fresh-pilot-v4-owner-gate.yml`, and
-schema-valid owner-gate-required handoff are created and pushed.
+schema-valid owner-gate-required handoff are created and pushed. The consumed
+authorization subsequently created wholly fresh v4 custody, public custody
+and output-lock commitments, the permanently retained 150-object quarantine
+boundary, and the public-safe closeout and quarantine handoff.
 
 ## Blockers
 
-The exact AO-0010 generic owner authorization is absent by design, so M7 is
-blocked until the owner runs the registered gate command. The task must stop
-if it would otherwise require credentials, real private generation, provider
-calls, spend, an execution-sensitive change after freeze, an
-identity/model/route/cap/execution-tree change, invalid authorization,
-replacement/splice/semantic retry/new private identity, unsafe retained state,
-or authority beyond DD-010 engineering.
+The campaign and batch are permanently quarantined on
+`provider-terminal-missing`; no further provider call, private read, unseal,
+replacement, splice, semantic retry, or new private identity is permitted.
+The consumed owner authority covers only the remaining public-safe
+administrative closeout. A separate future task requires a new explicit owner
+decision and wholly new identities.
 
 ## Recovery and restart instructions
 
@@ -397,10 +460,10 @@ the owner gate.
 
 ## Outcome and retrospective
 
-The preauthorization outcome is complete: one fully validated,
-collision-free v4 engineering campaign under frozen protocol-validity policy
-v2, one pushed exact execution commit, one committed and live-validated
-generic owner gate, and one exact schema-valid authorization-required handoff.
-The task stops at M6. No authorization, credential, real private generation,
-provider call, spend, unseal, or scientific evidence is created before the
-stop.
+The prospective policy, execution freeze, and gate were completed without
+consequential action. The later exact authorization produced one wholly fresh
+v4 engineering attempt that passed canaries and custody, then honestly
+quarantined at the private prefix on a missing provider terminal. Provider
+access is closed, 150 retained objects are locked, and no unseal or scientific
+or performance evidence exists. Final outcome remains pending only the
+authorized administrative closeout.

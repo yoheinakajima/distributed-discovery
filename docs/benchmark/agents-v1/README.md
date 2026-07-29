@@ -135,6 +135,18 @@ the USD 25/10/15 and 5,200-call hard caps. Policy v2 must remain frozen before
 authorization or generation. AO-0008 and every earlier campaign remain
 immutable and confer no authority.
 
+The exact authorized v4 attempt passed both public canaries and wholly fresh
+custody, then stopped during the private prefix under registered class
+`provider-terminal-missing`. The provider phase closed after 116 calls, 58,636
+input tokens, 13,275 output tokens, and USD 0.3470610. Its verified output
+lock covers 150 retained objects under
+`sha256:88c442bf6cb5e1b99a893808d423b488d2b1062543a49fcfb32b77f276abaa1c`.
+No call followed the lock and no material was unsealed. The incomplete batch
+has no real-data protocol classification, Methods A/B/C, metric bounds, or
+performance interpretation. V4 is permanently quarantined and cannot be
+retried, replaced, repaired, reopened, reused, rescored, spliced, executed,
+unsealed, or reauthorized.
+
 ## Registered package
 
 - `versioning.yml`, content/generator contracts, and compatibility policy;

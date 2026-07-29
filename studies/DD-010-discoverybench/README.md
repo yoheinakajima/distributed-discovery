@@ -221,7 +221,7 @@ diagnosis creates no performance result, comparison, ranking, scientific run,
 claim, paper result, release, submission, or base-campaign authority. AO-0008
 remains permanently quarantined; at AO-0009 closeout, v4 was not registered.
 
-## AO-0010 prospective protocol-validity policy v2 and fresh v4 preparation
+## AO-0010 protocol-validity policy v2 and fresh v4 closeout
 
 Issue #208 and draft PR #209 adopt a forward-only, versioned
 protocol-validity policy v2 and prepare one wholly fresh v4 engineering
@@ -248,13 +248,21 @@ production custody/lock/unseal/redaction/cleanup rehearsals, 62 focused tests,
 and the full 725-test repository wall. Protocol-invalid traces alone do not
 quarantine; terminal-provider and integrity failures still do.
 
-The policy is frozen before any v4 authorization or generation. Execution is
-frozen at `5289882dca6b8912a0518bba72aba1f4d595c2a8`; the generic owner gate
-is committed and live-validated without authorization. AO-0010 is stopped at
-that boundary: no credential, real private seed, task, answer, key,
-ciphertext, provider call, spend, unseal, or scientific evidence has been
-created or accessed. AO-0008 and every prior campaign remain permanently
-closed and immutable.
+The policy was frozen before v4 authorization and generation. Execution was
+frozen at `5289882dca6b8912a0518bba72aba1f4d595c2a8`; the exact generic owner
+gate and current official provider re-audit passed. Both public canaries and
+wholly fresh custody then passed. The private prefix stopped on
+`provider-terminal-missing`, closing provider access after 116 calls, 58,636
+input tokens, 13,275 output tokens, and USD 0.3470610. The verified output
+lock covers 150 retained objects under
+`sha256:88c442bf6cb5e1b99a893808d423b488d2b1062543a49fcfb32b77f276abaa1c`.
+No call followed the lock and no material was unsealed.
+
+The incomplete real batch has no protocol classification, Methods A/B/C,
+metric bounds, or performance interpretation. No replacement, splice,
+semantic retry, invalid credit, ranking, scientific evidence, or base-campaign
+authority exists. V4 and every prior campaign are permanently closed and
+immutable.
 
 ## Registered evaluation campaign
 

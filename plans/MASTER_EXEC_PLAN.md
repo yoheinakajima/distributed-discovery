@@ -1,6 +1,6 @@
 # Master execution plan
 
-## Active continuation — AO-0010 protocol-validity policy v2 and fresh pilot v4 (2026-07-29)
+## Active closeout — AO-0010 protocol-validity policy v2 and fresh pilot v4 (2026-07-29)
 
 Issue #208, branch `codex/treasurebench-agents-v1-fresh-pilot-v4`, fixed task
 contract `tasks/treasurebench-agents-v1-fresh-pilot-v4.yml`, and living
@@ -8,7 +8,7 @@ ExecPlan `plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V4.md` own the sole
 substantive lane as AO-0010.
 
 AO-0010 adopts one forward-only TreasureBench Agents v1 protocol-validity
-policy v2 and prepares one wholly fresh DD-010 engineering-only sealed v4
+policy v2 and executed one wholly fresh DD-010 engineering-only sealed v4
 campaign. Completed provider responses that remain nonconforming after exactly
 one schema-only repair are retained as protocol-invalid evaluated-system
 behavior, not by themselves batch-integrity failures. They remain in the
@@ -28,13 +28,21 @@ Anthropic, and 5,200 calls. Policy v2 must freeze before authorization or
 generation.
 
 AO-0008 and all prior campaigns remain permanently closed and immutable. The
-v4 task must complete all authorization-free policy, independent classifier
-and bounds, rehearsal, corruption, custody, lock, unseal, redaction, cleanup,
-governance, and draft-PR checks; freeze and push the exact execution commit;
-commit one generic owner gate; and stop exactly once before credentials, real
-private generation, provider calls, or spend. No DD-023, claim, scientific
-run, paper result, ranking, composite, release, submission, or base campaign
-is authorized.
+authorization-free wall, exact execution commit, and generic owner gate
+passed. After exact authorization and provider revalidation, v4 passed both
+public canaries and wholly fresh custody, then stopped at the private prefix on
+`provider-terminal-missing`. Provider access closed at 116 calls, 58,636 input
+tokens, 13,275 output tokens, and USD 0.3470610. The output lock binds 150
+retained objects under
+`sha256:88c442bf6cb5e1b99a893808d423b488d2b1062543a49fcfb32b77f276abaa1c`;
+no call followed the lock and no material was unsealed.
+
+The campaign and batch are permanently quarantined. No real-batch protocol
+classification, Methods A/B/C, metric bounds, performance interpretation,
+DD-023, claim, scientific run, paper result, ranking, composite, release,
+submission, or base campaign exists. Only public-safe validation, merge,
+CI/Pages, live-route verification, issue closure, main synchronization, and
+the final schema-valid handoff remain authorized.
 
 ## Completed continuation — AO-0009 AO-0008 fixed-full-batch adjudication (2026-07-29)
 

@@ -1,4 +1,4 @@
-# Current roadmap — fresh v4 exact freeze and owner gate
+# Current roadmap — fresh v4 permanent quarantine
 
 ## AO-0010 prospective protocol-validity policy v2
 
@@ -18,20 +18,29 @@ intended matrix; valid-output-conditional estimates are explicitly secondary
 and cannot be presented as unconditional architecture effects.
 
 The 50-task/500-pairing public rehearsal and zero/mixed/all-invalid scenarios
-pass Methods A/B/C, independent bound reconstruction, custody, output-lock,
+passed Methods A/B/C, independent bound reconstruction, custody, output-lock,
 post-lock unseal, redaction, deterministic cleanup, 104 relevant corruption
 rejections, 62 focused tests, and the complete 725-test repository wall.
 Protocol-invalid traces alone do not quarantine; provider-terminal and
 integrity failures do.
 
-Execution is frozen at
-`5289882dca6b8912a0518bba72aba1f4d595c2a8`; the one generic owner gate is
-committed, pushed, and live-validated without creating an authorization. The
-task stops there. Credentials, real private generation, provider calls, spend,
-and unsealing remain unauthorized until the exact owner gate is consumed.
-AO-0008 and all earlier campaigns remain permanently quarantined and receive
-no authority from AO-0010. This is DD-010 engineering only, not performance or
-scientific evidence.
+Execution was frozen at
+`5289882dca6b8912a0518bba72aba1f4d595c2a8`. After the exact generic owner
+gate and current official provider revalidation, both public canaries and
+wholly fresh custody passed. The private prefix then stopped on
+`provider-terminal-missing`. Provider access closed after 116 calls, 58,636
+input tokens, 13,275 output tokens, and USD 0.3470610. A verified 150-object
+output lock preserves the retained boundary under
+`sha256:88c442bf6cb5e1b99a893808d423b488d2b1062543a49fcfb32b77f276abaa1c`;
+no call followed the lock and no material was unsealed.
+
+V4 is permanently quarantined. Its incomplete batch has no real-data protocol
+classification, Methods A/B/C, metric bounds, or performance interpretation,
+and cannot be retried, replaced, repaired, reopened, reused, rescored,
+spliced, executed, unsealed, or reauthorized. AO-0008 and all earlier
+campaigns remain permanently quarantined and receive no authority from
+AO-0010. This is DD-010 engineering only, not performance or scientific
+evidence.
 
 ## AO-0009 aggregate diagnosis
 
