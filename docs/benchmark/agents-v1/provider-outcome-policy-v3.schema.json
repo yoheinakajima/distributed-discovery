@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TreasureBench Agents v1 provider-outcome policy v3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "policy_version",
+    "status",
+    "owner_study",
+    "authority_task",
+    "composes_with",
+    "effective_scope",
+    "registered_campaigns",
+    "historical_policy_or_schema_rewrite",
+    "historical_campaign_reclassification",
+    "retrospective_v4_diagnostic",
+    "status_model",
+    "classification",
+    "completed_response_precedence",
+    "operational_missing_taxonomy",
+    "contract_or_safety_taxonomy",
+    "never_ordinary_missingness",
+    "retry_and_replacement",
+    "operational_missing_handling",
+    "operational_circuit_breaker",
+    "metric_bounds",
+    "batch_acceptance",
+    "stopping",
+    "reporting",
+    "scientific_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "treasurebench-agents-v1-provider-outcome-policy-v3"},
+    "policy_version": {"const": "treasurebench-agents-v1-provider-outcome-policy-v3"},
+    "status": {"const": "prospective-frozen-not-executed"},
+    "owner_study": {"const": "DD-010"},
+    "authority_task": {"const": "AO-0011"},
+    "composes_with": {"const": "treasurebench-agents-v1-protocol-validity-policy-v2"},
+    "effective_scope": {"const": "future-campaigns-that-explicitly-register-provider-outcome-policy-v3"},
+    "registered_campaigns": {"const": ["treasurebench-agents-v1-repair-confirmation-v5"]},
+    "historical_policy_or_schema_rewrite": {"const": false},
+    "historical_campaign_reclassification": {"const": false},
+    "retrospective_v4_diagnostic": {"const": false},
+    "status_model": {
+      "const": {
+        "terminal_pairing_statuses": ["protocol-valid", "protocol-invalid", "provider-operational-missing", "provider-contract-or-safety-failure"],
+        "engineering_complete_terminal_statuses": ["protocol-valid", "protocol-invalid", "provider-operational-missing"],
+        "exactly_one_terminal_status_per_intended_pairing": true,
+        "completed_response_uses_protocol_validity": true,
+        "missing_protocol_compliance_status": "not-applicable",
+        "provider_missingness_is_invalid_submitted_action": false
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["protocol-valid", "protocol-invalid", "provider-operational-missing", "provider-contract-or-safety-failure"],
+      "properties": {
+        "protocol-valid": {"type": "string", "minLength": 20},
+        "protocol-invalid": {"type": "string", "minLength": 20},
+        "provider-operational-missing": {"type": "string", "minLength": 20},
+        "provider-contract-or-safety-failure": {"type": "string", "minLength": 20}
+      }
+    },
+    "completed_response_precedence": {"type": "object", "minProperties": 4},
+    "operational_missing_taxonomy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["OpenAI", "Anthropic"],
+      "properties": {
+        "OpenAI": {"type": "array", "minItems": 6, "maxItems": 6, "uniqueItems": true, "items": {"type": "object", "required": ["id", "source"], "additionalProperties": false, "properties": {"id": {"type": "string"}, "source": {"type": "string"}}}},
+        "Anthropic": {"type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true, "items": {"type": "object", "required": ["id", "source"], "additionalProperties": false, "properties": {"id": {"type": "string"}, "source": {"type": "string"}}}}
+      }
+    },
+    "contract_or_safety_taxonomy": {"type": "array", "minItems": 10, "maxItems": 10, "uniqueItems": true, "items": {"type": "string"}},
+    "never_ordinary_missingness": {"type": "array", "minItems": 10, "uniqueItems": true, "items": {"type": "string"}},
+    "retry_and_replacement": {"type": "object", "minProperties": 8},
+    "operational_missing_handling": {"type": "object", "minProperties": 9},
+    "operational_circuit_breaker": {
+      "type": "object",
+      "required": ["purpose", "consecutive_same_provider_operational_missing", "cumulative_operational_missing_across_campaign", "any_provider_contract_or_safety_failure", "public_canary_not_protocol_valid", "inputs", "prohibited_inputs", "reset_loosen_or_reinterpret_after-live-results"],
+      "properties": {
+        "purpose": {"const": "engineering-availability-safety-guard-not-scientific-threshold"},
+        "consecutive_same_provider_operational_missing": {"const": 3},
+        "cumulative_operational_missing_across_campaign": {"const": 10},
+        "any_provider_contract_or_safety_failure": {"const": "immediate-quarantine"},
+        "public_canary_not_protocol_valid": {"const": "immediate-quarantine"},
+        "inputs": {"const": ["terminal-operational-status", "sequence"]},
+        "prohibited_inputs": {"type": "array", "minItems": 6, "uniqueItems": true, "items": {"type": "string"}},
+        "reset_loosen_or_reinterpret_after-live-results": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "metric_bounds": {
+      "type": "object",
+      "required": ["interpretation", "metrics", "protocol_valid_interval", "protocol_invalid_interval", "provider_operational_missing_interval", "architecture_contrast", "independent_reconstruction", "secondary_diagnostics"],
+      "properties": {
+        "interpretation": {"type": "string", "minLength": 40},
+        "metrics": {"type": "array", "minItems": 18, "maxItems": 18, "uniqueItems": true, "items": {"type": "object", "required": ["metric_id", "missing_lower_rule", "missing_upper_rule", "missing_operational_credit"], "additionalProperties": false, "properties": {"metric_id": {"type": "string"}, "missing_lower_rule": {"type": "string"}, "missing_upper_rule": {"type": "string"}, "missing_operational_credit": {"type": "string"}}}},
+        "protocol_valid_interval": {"const": "degenerate-at-exact-registered-metric"},
+        "protocol_invalid_interval": {"const": "policy-v2-metric-specific-feasible-interval"},
+        "provider_operational_missing_interval": {"const": "policy-v3-metric-specific-feasible-interval"},
+        "architecture_contrast": {"type": "object"},
+        "independent_reconstruction": {"const": "required"},
+        "secondary_diagnostics": {"type": "object"}
+      },
+      "additionalProperties": false
+    },
+    "batch_acceptance": {"type": "object", "required": ["engineering_completion_requires", "isolated_protocol_invalid_alone_quarantines", "isolated_provider_operational_missing_alone_quarantines", "quarantine_triggers"], "additionalProperties": false, "properties": {"engineering_completion_requires": {"type": "array", "minItems": 19, "uniqueItems": true, "items": {"type": "string"}}, "isolated_protocol_invalid_alone_quarantines": {"const": false}, "isolated_provider_operational_missing_alone_quarantines": {"const": false}, "quarantine_triggers": {"type": "array", "minItems": 14, "uniqueItems": true, "items": {"type": "string"}}}},
+    "stopping": {"const": {"fixed_intended_pairings": 500, "provider_missingness_scientific_acceptance_threshold": null, "rerun_until_preferred_availability_rate": false, "later_informativeness_criterion": "width-of-registered-all-pairing-bounds"}},
+    "reporting": {"type": "object", "required": ["public_closeout_allowed", "public_closeout_prohibited"], "additionalProperties": false, "properties": {"public_closeout_allowed": {"type": "array", "minItems": 9, "uniqueItems": true, "items": {"type": "string"}}, "public_closeout_prohibited": {"type": "array", "minItems": 10, "uniqueItems": true, "items": {"type": "string"}}}},
+    "scientific_boundary": {"type": "object", "additionalProperties": {"const": false}, "properties": {"engineering_only": {"const": true}}}
+  }
+}

@@ -1,0 +1,50 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-v5-rehearsal-v1
+status: pass
+classification: public-synthetic-only
+task_id: AO-0011
+campaign_id: treasurebench-agents-v1-repair-confirmation-v5
+batch_id: tb-agents-v1-repair-confirmation-v5-b01
+tasks: 50
+families: 5
+architectures: 5
+synthetic_route_labels: 2
+runs: 500
+turns: 3014
+method_a_b_errors: 0
+method_c_errors: 0
+metric_range_errors: 0
+invalid_final_action_cardinalities: 0
+incomplete_pairings: 0
+exact_pairings_verified: 500
+protocol_valid_pairings: 500
+protocol_invalid_pairings: 0
+provider_operational_missing_pairings: 0
+provider_contract_or_safety_failure_pairings: 0
+terminal_pairings_classified: 500
+metric_intervals: 7900
+architecture_contrast_bounds: 144
+independent_metric_bound_agreement: true
+independent_provider_outcome_classification_agreement: true
+all_intended_metric_eligible_pairings_retained: true
+nonfinal_proposals_excluded_from_scoring: true
+contamination_findings: 0
+contamination_probes: 12
+provider_boundary:
+  status: pass
+  output_tokens_per_request: 256
+  provider_schema_fingerprints:
+    openai: sha256:6b78c441e73a57aa98bf39234037a182685ace370f60dc02f24f94610d1f82f4
+    anthropic: sha256:1b28b3a1a61afe3ce821e66d61bf2d9ec93e6aa8d0cfd3d6f33a71b66bd1c372
+  provider_independent_semantic_validation: pass
+  exactly_one_final_action: pass
+redacted_traces_verified: 500
+output_lock_verified: true
+provider_calls: 0
+credential_reads: 0
+private_objects_created: 0
+external_cost_usd: '0'
+network_enabled: false
+private_material: false
+redaction_status: pass
+registration_sha256: sha256:a8769e098ef0f11edbcbbbed7be78eaaba0d1b3711399476b524a0dda8f1874a
+rehearsal_hash: sha256:b09b7f7a6b2e989ed7c9171f9722729de0b17fe058afde9e5d1c7b4923b30971

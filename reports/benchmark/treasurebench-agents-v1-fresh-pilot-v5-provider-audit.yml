@@ -1,0 +1,183 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-v5-provider-audit-v1
+audited_at_utc: "2026-07-29T17:27:13Z"
+status: pass-current-official-docs-no-credential-or-provider-api-call
+task_id: AO-0011
+campaign_id: treasurebench-agents-v1-repair-confirmation-v5
+batch_id: tb-agents-v1-repair-confirmation-v5-b01
+scope: direct-standard-global-api-only
+protocol_validity_policy: treasurebench-agents-v1-protocol-validity-policy-v2
+provider_outcome_policy: treasurebench-agents-v1-provider-outcome-policy-v3
+prerequisite:
+  task_id: AO-0004
+  decision: conformance-pass-both-complete-schemas
+  record: reports/agent-ops/AO-0004-r4-public-provider-canary-outcome.yml
+  boundary: provider-schema-and-semantic-contract-engineering-only
+models:
+  - provider: OpenAI
+    route: openai_direct
+    endpoint: https://api.openai.com/v1/responses
+    exact_model: gpt-5.4-2026-03-05
+    availability: official-model-page-listed-snapshot
+    structured_output:
+      supported: true
+      request_shape: text.format.type-json_schema-with-name-strict-and-schema
+      provider_transport_schema: openai-specific-AO-0004-R4-complete-schema
+      provider_independent_semantic_validation: required
+      exactly_one_final_action: required
+      completed_nonconforming_cases:
+        - refusal
+        - incomplete-max-output-tokens
+        - incomplete-content-filter
+      disposition: protocol-validity-after-exactly-one-schema-only-repair
+    frozen_parameter_values:
+      store: false
+      max_output_tokens: 256
+      background: false
+      tools: none
+      regional_processing: false
+      batch: false
+    retention:
+      store_false_required: true
+      zero_data_retention_assumed: false
+      responses_application_state_default: up-to-30-days
+      api_training_default: not-used-unless-organization-opt-in
+      background_storage_allowed: false
+    operational_missing_classes:
+      - {id: openai-client-timeout, source_condition: client-timeout-before-completed-response}
+      - {id: openai-transient-transport, source_condition: connection-or-secure-transport-failure}
+      - {id: openai-rate-limit-reached, source_condition: HTTP-429-with-rate-limit-error-or-rate-limit-exceeded}
+      - {id: openai-server-error, source_condition: HTTP-500-server-error}
+      - {id: openai-overloaded, source_condition: HTTP-503-overloaded-or-server-error}
+      - {id: openai-invalid-provider-envelope-exhausted, source_condition: invalid-provider-JSON-after-bounded-attempts}
+    nonoperational_examples:
+      - HTTP-429-insufficient-quota
+      - request-schema-or-parameter-rejection
+      - authentication-permission-or-billing-failure
+      - exact-model-or-route-mismatch
+      - unregistered-or-ambiguous-error
+    bounded_transport:
+      identical_request_maximum_attempts: 2
+      SDK_automatic_retries_relied_on: false
+      retry_after_or_bounded_backoff: required
+    standard_short-context_price_usd_per_million_tokens:
+      input: "2.50"
+      cached_input_credit_assumed: false
+      output: "15.00"
+    official_sources:
+      model: https://developers.openai.com/api/docs/models/gpt-5.4
+      structured_output: https://developers.openai.com/api/docs/guides/structured-outputs
+      retention: https://platform.openai.com/docs/models/default-usage-policies-by-endpoint
+      errors: https://developers.openai.com/api/docs/guides/error-codes
+      pricing: https://developers.openai.com/api/docs/models/gpt-5.4
+  - provider: Anthropic
+    route: anthropic_direct
+    endpoint: https://api.anthropic.com/v1/messages
+    exact_model: claude-sonnet-4-6
+    availability: official-direct-Claude-API-model
+    structured_output:
+      supported: true
+      request_shape: output_config.format.type-json_schema-with-schema
+      provider_transport_schema: anthropic-specific-AO-0004-R4-complete-schema
+      provider_independent_semantic_validation: required
+      exactly_one_final_action: required
+      completed_nonconforming_cases:
+        - refusal-stop_reason
+        - max_tokens-stop_reason
+        - case-insensitive-enum-behavior
+      silent_case_normalization_allowed: false
+      disposition: protocol-validity-after-exactly-one-schema-only-repair
+    frozen_parameter_values:
+      max_tokens: 256
+      temperature: 0
+      citations: false
+      message_prefill: false
+      extended_thinking: false
+      tools: none
+      inference_geo: default-global
+      batch: false
+    retention:
+      structured_output_prompts_and_responses: qualified-ZDR-not-stored
+      structured_output_schema_cache: up-to-24-hours-since-last-use
+      PHI_in_schema: prohibited
+      legal_or_flagged_exceptions_possible: true
+    operational_missing_classes:
+      - {id: anthropic-client-timeout, source_condition: client-timeout-before-completed-response}
+      - {id: anthropic-transient-transport, source_condition: connection-or-secure-transport-failure}
+      - {id: anthropic-rate-limit-error, source_condition: HTTP-429-rate_limit_error}
+      - {id: anthropic-api-error, source_condition: HTTP-500-api_error}
+      - {id: anthropic-timeout-error, source_condition: HTTP-504-timeout_error}
+      - {id: anthropic-overloaded-error, source_condition: HTTP-529-overloaded_error}
+      - {id: anthropic-invalid-provider-envelope-exhausted, source_condition: invalid-provider-JSON-after-bounded-attempts}
+    nonoperational_examples:
+      - HTTP-400-invalid_request_error
+      - HTTP-401-authentication_error
+      - HTTP-402-billing_error
+      - HTTP-403-permission_error
+      - HTTP-404-not_found_error
+      - HTTP-409-conflict_error
+      - HTTP-413-request_too_large
+      - exact-model-or-route-mismatch
+      - unregistered-or-ambiguous-error
+    bounded_transport:
+      identical_request_maximum_attempts: 2
+      SDK_default_two-retries_relied_on: false
+      retry_after_or_bounded_backoff: required
+    standard_global_price_usd_per_million_tokens:
+      input: "3.00"
+      cache_credit_assumed: false
+      output: "15.00"
+    official_sources:
+      model: https://www.anthropic.com/claude/sonnet
+      messages: https://platform.claude.com/docs/en/api/messages/create
+      structured_output: https://platform.claude.com/docs/en/build-with-claude/structured-outputs
+      retention: https://platform.claude.com/docs/en/build-with-claude/structured-outputs
+      errors: https://platform.claude.com/docs/en/api/errors
+      pricing: https://www.anthropic.com/claude/sonnet
+decisions:
+  exact_route_and_model_continuity_required: true
+  aliases_allowed: false
+  batch_routes_allowed: false
+  fallback_allowed: false
+  provider_managed_tools_allowed: false
+  regional_price_premiums_allowed: false
+  cached_token_discounts_budgeted: false
+  current_terms_reaudit_required_at_owner_resume: true
+  exact_routes_remain_officially_documented: true
+  structured_output_contracts_match_AO-0004-boundary: true
+  output_ceiling_remains_256: true
+  retry_contract_uses_SDK_defaults: false
+  standard_prices_current: true
+  completed_refusal_or_nonconformance_is_transport_missing: false
+  operational_missingness_requires_no-completed-usable-response: true
+  unregistered_or_ambiguous_error_quarantines: true
+  protocol_invalid_alone_quarantines: false
+  isolated_operational_missing_alone_quarantines: false
+  circuit_breaker_is_scientific_threshold: false
+cost_reproduction:
+  normal_calls: 3016
+  OpenAI_calls: 1508
+  Anthropic_calls: 1508
+  expected_unrounded_usd: "11.50969635935"
+  expected_registered_usd: "11.51"
+  conservative_usd: "15"
+  hard_total_usd: "25"
+  hard_OpenAI_usd: "10"
+  hard_Anthropic_usd: "15"
+  hard_calls: 5200
+preserved_v4_boundary:
+  task: AO-0010
+  campaign: treasurebench-agents-v1-repair-confirmation-v4
+  batch: tb-agents-v1-repair-confirmation-v4-b01
+  execution_commit: 5289882dca6b8912a0518bba72aba1f4d595c2a8
+  public_failure_class: provider-terminal-missing
+  exact_private_provider_route_or_error_known: false
+  retrospective_diagnostic: false
+  tuning_input: false
+  scientific_or_performance_evidence: false
+activity:
+  env_file_reads: 0
+  credentials_read: 0
+  prior_private_state_reads: 0
+  provider_api_calls: 0
+  private_objects_created: 0
+  spend_usd: "0"

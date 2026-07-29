@@ -5,10 +5,11 @@ the frozen `discoverybench-agents-v1` instrument and schema identifiers remain
 unchanged for compatibility; the formal suite rename creates no protocol or
 content version.
 
-Status: all four completed sealed engineering pilots remain permanently
-quarantined. AO-0010 now freezes prospective protocol-validity policy v2 and
-prepares one wholly fresh v4 pilot under a separate owner gate. No v4 private
-material, credential read, provider call, spend, or scientific evidence exists.
+Status: all five completed sealed engineering pilots remain permanently
+quarantined. AO-0011 freezes forward-only provider-outcome policy v3 and
+prepares one wholly fresh v5 pilot under protocol-validity policy v2 plus the
+new policy. No v5 private material, credential read, provider call, spend,
+unseal, or scientific evidence exists.
 
 DiscoveryBench Agents v1 measures how declared software-agent team
 architectures convert dispersed synthetic evidence into structured search
@@ -146,6 +147,42 @@ has no real-data protocol classification, Methods A/B/C, metric bounds, or
 performance interpretation. V4 is permanently quarantined and cannot be
 retried, replaced, repaired, reopened, reused, rescored, spliced, executed,
 unsealed, or reauthorized.
+
+## AO-0011 provider-outcome policy v3 and wholly fresh v5
+
+AO-0011 separates `protocol-valid`, `protocol-invalid`,
+`provider-operational-missing`, and
+`provider-contract-or-safety-failure`. Only prospectively registered direct
+route availability classes can become operational missingness after the two
+identical-request transport attempts. Request, schema, model, route,
+credential, retention, identity, unregistered, unsafe, and ambiguous failures
+quarantine immediately. A safely retainable completed refusal or
+nonconforming response remains a protocol-validity outcome, never a transport
+outage.
+
+An operationally missing pairing stops locally, preserves every safely
+completed prior call in one encrypted terminal trace, creates and credits no
+action, receives no replacement or regeneration, and remains in every
+intended denominator. Metric-specific feasible intervals cover its unknown
+action-dependent outcomes; calls, tokens, cost, retry count, completion, and
+missingness remain exact. Independent classification and bound
+reconstruction must reproduce identities, endpoints, and denominators.
+
+The frozen engineering circuit breaker quarantines on three consecutive
+operationally missing pairings for one provider, ten cumulative operationally
+missing pairings, any contract/safety failure, or a non-valid public canary.
+It consumes only terminal operational status and sequence and cannot be
+reset, loosened, or performance-tuned after live results.
+
+The wholly fresh v5 identity is campaign
+`treasurebench-agents-v1-repair-confirmation-v5`, batch
+`tb-agents-v1-repair-confirmation-v5-b01`. The authorization-free 50-task,
+500-pairing rehearsal passes 7,900 metric intervals, 144 all-pairing contrast
+bounds, independent provider classification and bound reconstruction, and all
+96 v5 boundary corruptions plus 28 inherited repaired-instrument corruptions.
+Production permit/custody, output-lock, post-lock replay, redaction, and
+deterministic cleanup are rehearsed without credentials, provider calls,
+spend, or retained real private state.
 
 ## Registered package
 

@@ -380,6 +380,7 @@ def generate_instance(
             "treasurebench-agents-v1-repair-confirmation-v2",
             "treasurebench-agents-v1-repair-confirmation-v3",
             "treasurebench-agents-v1-repair-confirmation-v4",
+            "treasurebench-agents-v1-repair-confirmation-v5",
         }
     )
     if not public_fixture and not private_allowed:

@@ -1,0 +1,238 @@
+schema_version: treasurebench-agents-v1-provider-outcome-policy-v3
+policy_version: treasurebench-agents-v1-provider-outcome-policy-v3
+status: prospective-frozen-not-executed
+owner_study: DD-010
+authority_task: AO-0011
+composes_with: treasurebench-agents-v1-protocol-validity-policy-v2
+effective_scope: future-campaigns-that-explicitly-register-provider-outcome-policy-v3
+registered_campaigns: [treasurebench-agents-v1-repair-confirmation-v5]
+historical_policy_or_schema_rewrite: false
+historical_campaign_reclassification: false
+retrospective_v4_diagnostic: false
+status_model:
+  terminal_pairing_statuses:
+    - protocol-valid
+    - protocol-invalid
+    - provider-operational-missing
+    - provider-contract-or-safety-failure
+  engineering_complete_terminal_statuses:
+    - protocol-valid
+    - protocol-invalid
+    - provider-operational-missing
+  exactly_one_terminal_status_per_intended_pairing: true
+  completed_response_uses_protocol_validity: true
+  missing_protocol_compliance_status: not-applicable
+  provider_missingness_is_invalid_submitted_action: false
+classification:
+  protocol-valid: A completed safely retainable provider response passes independent Method C.
+  protocol-invalid: A completed safely retainable provider response remains nonconforming after exactly one schema-only repair or violates the registered semantic protocol.
+  provider-operational-missing: The exact registered direct route produced no completed usable response after the bounded identical-request transport attempts because of a prospectively registered operational availability class.
+  provider-contract-or-safety-failure: The route, model, request or schema contract, hidden-reasoning boundary, credential or retention boundary, execution identity, registered taxonomy, or another authority or safety invariant failed.
+completed_response_precedence:
+  safely_retainable_refusal: protocol-validity
+  safely_retainable_nonconforming_structured_response: protocol-validity
+  safely_retainable_token_limited_response: protocol-validity
+  transport_missingness_requires_no_completed_usable_response: true
+operational_missing_taxonomy:
+  OpenAI:
+    - id: openai-client-timeout
+      source: client-timeout-before-completed-response
+    - id: openai-transient-transport
+      source: connection-or-secure-transport-failure
+    - id: openai-rate-limit-reached
+      source: HTTP-429-with-rate-limit-error-or-rate-limit-exceeded
+    - id: openai-server-error
+      source: HTTP-500-server-error
+    - id: openai-overloaded
+      source: HTTP-503-overloaded-or-server-error
+    - id: openai-invalid-provider-envelope-exhausted
+      source: invalid-provider-JSON-after-bounded-identical-request-attempts
+  Anthropic:
+    - id: anthropic-client-timeout
+      source: client-timeout-before-completed-response
+    - id: anthropic-transient-transport
+      source: connection-or-secure-transport-failure
+    - id: anthropic-rate-limit-error
+      source: HTTP-429-rate_limit_error
+    - id: anthropic-api-error
+      source: HTTP-500-api_error
+    - id: anthropic-timeout-error
+      source: HTTP-504-timeout_error
+    - id: anthropic-overloaded-error
+      source: HTTP-529-overloaded_error
+    - id: anthropic-invalid-provider-envelope-exhausted
+      source: invalid-provider-JSON-after-bounded-identical-request-attempts
+contract_or_safety_taxonomy:
+  - request-contract-rejection
+  - exact-model-mismatch
+  - route-provider-or-region-substitution
+  - hidden-reasoning-boundary-failure
+  - credential-authorization-or-billing-boundary-failure
+  - retained-state-ledger-trace-or-response-identity-failure
+  - execution-identity-mismatch
+  - unregistered-error-class
+  - unsafe-provider-response-retention
+  - ambiguous-operational-versus-contract-status
+never_ordinary_missingness:
+  - schema-parameter-or-other-request-contract-rejection
+  - exact-model-mismatch
+  - route-alias-fallback-regional-batch-or-provider-substitution
+  - hidden-reasoning-boundary-failure
+  - credential-or-authorization-boundary-failure
+  - malformed-retained-state-ledger-trace-or-response-identity
+  - execution-identity-mismatch
+  - unregistered-error-class
+  - unsafe-provider-response-retention
+  - ambiguous-operational-versus-contract-status
+retry_and_replacement:
+  transport:
+    maximum_attempts: 2
+    identical_logical_request_only: true
+    provider_sdk_automatic_retries: disabled
+  schema:
+    maximum_repairs: 1
+    repair_receives: [validation-error-class, schema]
+    semantic_answer_change: false
+  semantic_answer_retries: 0
+  outcome_dependent_retries: 0
+  replacement_pairings: 0
+  replacement_batches: 0
+  silent_normalization: false
+  invalid_output_credit: false
+  exactly_one_final_action_per_required_agent: true
+operational_missing_handling:
+  stop_calls_within_pairing: true
+  unique_terminal_missing_trace: true
+  safe_error_classification: true
+  retain_every_safely_completed_prior_turn: true
+  create_action_for_missing_agent: false
+  action_credit: false
+  retain_in_every_intended_denominator: true
+  continue_unless_circuit_breaker_fires: true
+  retry_replace_splice_or_regenerate: false
+operational_circuit_breaker:
+  purpose: engineering-availability-safety-guard-not-scientific-threshold
+  consecutive_same_provider_operational_missing: 3
+  cumulative_operational_missing_across_campaign: 10
+  any_provider_contract_or_safety_failure: immediate-quarantine
+  public_canary_not_protocol_valid: immediate-quarantine
+  inputs: [terminal-operational-status, sequence]
+  prohibited_inputs:
+    - performance
+    - actions
+    - targets
+    - architecture-effects
+    - family-effects
+    - scientific-outcomes
+  reset_loosen_or_reinterpret_after-live-results: false
+metric_bounds:
+  interpretation: Operational no-valid-action credit is not a known latent performance point estimate; metric-specific feasible intervals retain every protocol-invalid and provider-operational-missing pairing in all-pairing bounds.
+  metrics:
+    - {metric_id: group-discovery, missing_lower_rule: "0", missing_upper_rule: "1", missing_operational_credit: "0-no-valid-action"}
+    - {metric_id: distinct-action-coverage, missing_lower_rule: "0", missing_upper_rule: "1", missing_operational_credit: "0-no-valid-action"}
+    - {metric_id: duplication, missing_lower_rule: "0", missing_upper_rule: "1", missing_operational_credit: none-no-valid-portfolio}
+    - {metric_id: planner-regret, missing_lower_rule: exact-planner-comparator-minus-1, missing_upper_rule: exact-planner-comparator, missing_operational_credit: none-no-valid-portfolio}
+    - {metric_id: private-baseline-regret, missing_lower_rule: exact-private-baseline-minus-1, missing_upper_rule: exact-private-baseline, missing_operational_credit: none-no-valid-portfolio}
+    - {metric_id: recovery-budget-attainment, missing_lower_rule: "0", missing_upper_rule: "1", missing_operational_credit: "0-no-valid-action"}
+    - {metric_id: source-diversity, missing_lower_rule: "0", missing_upper_rule: "1", missing_operational_credit: "0-no-valid-action"}
+    - {metric_id: communication-induced-action-compression, missing_lower_rule: "-1", missing_upper_rule: "1", missing_operational_credit: none-no-valid-paired-portfolio}
+    - {metric_id: distance-from-best-registered-equilibrium, missing_lower_rule: "0", missing_upper_rule: "1", missing_operational_credit: none-no-valid-portfolio}
+    - {metric_id: distance-from-worst-registered-equilibrium, missing_lower_rule: "0", missing_upper_rule: "1", missing_operational_credit: none-no-valid-portfolio}
+    - {metric_id: invalid-action-rate, missing_lower_rule: "0", missing_upper_rule: "1", missing_operational_credit: not-an-invalid-submitted-action}
+    - {metric_id: protocol-compliance, missing_lower_rule: "0", missing_upper_rule: "1", missing_operational_credit: not-applicable-no-completed-response}
+    - {metric_id: calls, missing_lower_rule: exact-ledger-value, missing_upper_rule: exact-ledger-value, missing_operational_credit: exact-ledger-value}
+    - {metric_id: tokens, missing_lower_rule: exact-ledger-value, missing_upper_rule: exact-ledger-value, missing_operational_credit: exact-ledger-value}
+    - {metric_id: cost, missing_lower_rule: exact-ledger-value, missing_upper_rule: exact-ledger-value, missing_operational_credit: exact-ledger-value}
+    - {metric_id: retry-count, missing_lower_rule: exact-ledger-value, missing_upper_rule: exact-ledger-value, missing_operational_credit: exact-ledger-value}
+    - {metric_id: provider-response-completion, missing_lower_rule: "0", missing_upper_rule: "0", missing_operational_credit: "0"}
+    - {metric_id: provider-missingness, missing_lower_rule: "1", missing_upper_rule: "1", missing_operational_credit: "1"}
+  protocol_valid_interval: degenerate-at-exact-registered-metric
+  protocol_invalid_interval: policy-v2-metric-specific-feasible-interval
+  provider_operational_missing_interval: policy-v3-metric-specific-feasible-interval
+  architecture_contrast:
+    all_intended_eligible_pairings: true
+    paired_lower_rule: left-lower-minus-right-upper
+    paired_upper_rule: left-upper-minus-right-lower
+    aggregate_lower_rule: mean-of-all-intended-paired-lowers
+    aggregate_upper_rule: mean-of-all-intended-paired-uppers
+    provider_missing_pairing_dropped: false
+  independent_reconstruction: required
+  secondary_diagnostics:
+    valid_output_only: secondary-selection-conditioned-diagnostic-only
+    completed_response_only: secondary-selection-conditioned-diagnostic-only
+    complete_case_unconditional_effect: prohibited
+    ranking_composite_or_leaderboard: prohibited
+batch_acceptance:
+  engineering_completion_requires:
+    - both-public-canaries-protocol-valid
+    - fresh-custody-pass
+    - all-500-intended-pairings-have-one-unique-protocol-valid-protocol-invalid-or-provider-operational-missing-terminal-status
+    - zero-provider-contract-or-safety-failures
+    - operational-circuit-breaker-not-fired
+    - exact-response-ledger-trace-classification-bound-identities
+    - all-500-intended-pairings-accounted
+    - zero-contamination
+    - execution-and-cost-caps-hold
+    - provider-phase-closes-before-lock
+    - no-call-after-lock
+    - output-lock-and-commitments-pass
+    - post-lock-unseal-only-after-verified-lock
+    - method-a-and-method-b-agree-where-exact-metrics-defined
+    - method-c-classifies-every-completed-response
+    - provider-missing-classifications-independently-verified
+    - primary-and-independent-all-pairing-bounds-agree
+    - corruptions-and-redaction-pass
+    - retained-private-state-safe
+  isolated_protocol_invalid_alone_quarantines: false
+  isolated_provider_operational_missing_alone_quarantines: false
+  quarantine_triggers:
+    - public-canary-failure
+    - provider-contract-or-safety-failure
+    - operational-circuit-breaker-trigger
+    - missing-or-duplicate-terminal-classification
+    - response-ledger-trace-classification-bound-inventory-or-retained-state-integrity-failure
+    - contamination
+    - cap-breach
+    - execution-identity-mismatch
+    - output-lock-or-unseal-order-failure
+    - method-implementation-disagreement
+    - independent-classification-or-bound-disagreement
+    - corruption-acceptance
+    - redaction-failure
+    - unsafe-retained-state
+stopping:
+  fixed_intended_pairings: 500
+  provider_missingness_scientific_acceptance_threshold: null
+  rerun_until_preferred_availability_rate: false
+  later_informativeness_criterion: width-of-registered-all-pairing-bounds
+reporting:
+  public_closeout_allowed:
+    - engineering-identities
+    - aggregate-terminal-status-counts
+    - aggregate-operational-error-classes
+    - circuit-breaker-disposition
+    - calls-tokens-and-cost
+    - commitments-and-object-counts
+    - verification-corruption-and-redaction-status
+    - engineering-complete-or-quarantined
+    - no-scientific-evidence-boundary
+  public_closeout_prohibited:
+    - task-level-performance
+    - model-level-performance
+    - provider-level-performance
+    - architecture-level-performance
+    - family-level-performance
+    - private-task-content
+    - raw-provider-output
+    - ranking
+    - composite
+    - leaderboard
+scientific_boundary:
+  engineering_only: true
+  dd023: false
+  claim: false
+  immutable_scientific_run: false
+  evidence_or_proof_promotion: false
+  paper_result: false
+  release_or_submission: false
+  base_campaign: false
