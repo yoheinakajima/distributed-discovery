@@ -1,5 +1,53 @@
 # Master execution plan
 
+## Active continuation — AO-0011 provider-outcome policy v3 and fresh pilot v5 (2026-07-29)
+
+Issue #210, branch `codex/treasurebench-agents-v1-fresh-pilot-v5`, fixed task
+contract `tasks/treasurebench-agents-v1-fresh-pilot-v5.yml`, and living
+ExecPlan `plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V5.md` own the sole
+substantive lane as AO-0011.
+
+AO-0011 preserves AO-0010, provider-terminal quarantine of campaign
+`treasurebench-agents-v1-repair-confirmation-v4`, batch
+`tb-agents-v1-repair-confirmation-v4-b01`, exact public operational totals,
+the 150-object output lock
+`sha256:88c442bf6cb5e1b99a893808d423b488d2b1062543a49fcfb32b77f276abaa1c`,
+closed provider phase, zero post-lock calls, no unseal, and no scientific
+evidence. V4 and every earlier campaign remain permanently immutable. No
+retrospective v4 diagnostic is registered, and the hidden provider, route, and
+exact private error remain unknown.
+
+The prospective forward-only policy v3 separates `protocol-valid`,
+`protocol-invalid`, `provider-operational-missing`, and
+`provider-contract-or-safety-failure`. Only prospectively registered typed
+availability classes may become operational missingness after bounded
+identical-request transport attempts; completed safely retainable responses
+remain under protocol validity. Missing pairings receive no invented action or
+credit, remain in all intended denominators with registered feasible intervals
+and independent all-pairing contrast bounds, and cannot be retried, replaced,
+spliced, or regenerated.
+
+The engineering circuit breaker is frozen at three consecutive operational
+missing pairings for one provider, ten cumulative operational missing
+pairings across the campaign, immediate contract/safety quarantine, and
+immediate quarantine for a non-valid public canary. It uses terminal status and
+sequence only and is not a scientific threshold.
+
+The wholly fresh prospective identities are campaign
+`treasurebench-agents-v1-repair-confirmation-v5` and batch
+`tb-agents-v1-repair-confirmation-v5-b01`: 50 new private tasks, ten from each
+family, five architectures, direct OpenAI `gpt-5.4-2026-03-05`, direct
+Anthropic `claude-sonnet-4-6`, one repeat, 500 intended pairings, and 256
+output tokens per request. Hard caps remain USD 25 total, USD 10 OpenAI, USD
+15 Anthropic, and 5,200 calls.
+
+All authorization-free implementation, independent verification, corruption,
+complete synthetic rehearsal, production-path custody/lock/post-lock
+replay/redaction/cleanup rehearsal, exact execution freeze, draft-PR checks,
+and one generic owner gate must pass before the task stops once. Before later
+exact authorization there is no `.env.txt` or credential read, real seed or
+private material, provider call, spend, or real v5 unseal.
+
 ## Completed continuation — AO-0010 protocol-validity policy v2 and fresh pilot v4 (2026-07-29)
 
 Issue #208, branch `codex/treasurebench-agents-v1-fresh-pilot-v4`, fixed task
