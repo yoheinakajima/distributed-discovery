@@ -704,3 +704,22 @@ records:
     review_after: explicit-owner-decision
     owner_decision: adopted
     last_reviewed: "2026-07-29"
+  - idea_id: PM-0038
+    title: TreasureBench protocol-validity policy v2 and wholly fresh pilot v4
+    status: implemented
+    capture_classification: capture-now
+    visibility: public
+    source_type: owner-decision
+    captured_date: "2026-07-29"
+    proposition: AO-0010 adopts one forward-only protocol-validity policy v2 that treats completed but nonconforming outputs as denominator-retained protocol-invalid evaluated-system behavior rather than automatic batch-integrity failure, and executes one wholly fresh sealed v4 engineering pilot under one generic owner gate; v4 passes canaries and custody, then permanently quarantines at the private prefix on provider-terminal-missing with no unseal or scientific evidence.
+    why_it_matters: It preserves AO-0008 and every prior campaign while distinguishing evaluated-system protocol conformance from provider terminal missingness and batch integrity, forbidding replacement or invalid credit, and preserving an honest provider-terminal quarantine instead of rerunning toward a preferred conformance rate.
+    canonical_destination: {type: decision-record, path: tasks/treasurebench-agents-v1-fresh-pilot-v4.yml}
+    dependencies: [DD-010, PM-0031, PM-0032, PM-0033, PM-0034, PM-0035, PM-0036, PM-0037]
+    promotion_trigger: null
+    permitted_stops: [implemented, deferred, rejected, superseded]
+    not_a_result_boundaries: [prospective policy and engineering pilot only, no task-level performance result scientific run claim paper ranking composite release submission or base-campaign authority]
+    supersedes: []
+    superseded_by: null
+    review_after: explicit-owner-decision
+    owner_decision: adopted
+    last_reviewed: "2026-07-29"

@@ -1,0 +1,24 @@
+schema_version: agent-ops-handoff-v1
+status: owner-gate-required
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0010
+issue: 208
+pull_request: 209
+branch: codex/treasurebench-agents-v1-fresh-pilot-v4
+base_main: 8054542064651d61e6b286536fc477093e0f3530
+head_merge_sha: 17acd93030e815daf22a7a00e4cf6633b38b2829
+task_contract: tasks/treasurebench-agents-v1-fresh-pilot-v4.yml
+exec_plan: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V4.md
+last_completed_gate: Exact execution commit 5289882dca6b8912a0518bba72aba1f4d595c2a8 and committed generic gate-manifest head 17acd93030e815daf22a7a00e4cf6633b38b2829 for policy treasurebench-agents-v1-protocol-validity-policy-v2, campaign treasurebench-agents-v1-repair-confirmation-v4, and batch tb-agents-v1-repair-confirmation-v4-b01 passed live authorization-free contract, ancestry, 24-path protected-tree, exact two-credential-subset, engineering-complete-or-honest-quarantine long-session, zero-call, zero-spend, cap, prohibition, issue, branch, remote-head, and open draft-PR validation without creating an authorization.
+next_gate: "Resume AO-0010 in this same Codex task from plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V4.md, issue #208, branch codex/treasurebench-agents-v1-fresh-pilot-v4, and draft PR #209. Use only reports/agent-ops/AO-0010-treasurebench-fresh-pilot-v4-owner-gate.yml and its exact generic authorization. Revalidate current official provider terms, authorization, execution-commit ancestry, current draft-PR head, fixed contract, all 24 tree hashes, policy v2, v4 campaign and batch, exact OPENAI_API_KEY and ANTHROPIC_API_KEY subset, routes, models, zero cumulative calls and spend, graph, ledgers, and caps. Then run exactly make treasurebench-fresh-pilot-v4-live and continue the authorized normal engineering-complete or honest quarantine path through provider closure, lock, post-lock classification, Methods A/B/C, all-pairing bounds, public-safe closeout, full validation, required checks, PR readiness and squash merge, normal CI and Pages, named live routes, issue closure, synchronized main, and one final schema-valid handoff without routine checkpoints. Stop only for an execution-sensitive change; identity, model, route, cap, or execution-tree change; authorization invalidity; proposed replacement, splice, semantic retry, or new private identity; unsafe retained state; or authority expansion beyond DD-010 engineering."
+decision: Stop before reading .env.txt, generating any real private seed, task, answer, key, nonce, ciphertext, commitment, ledger, trace, custody, or lock, making a provider call, spending, or unsealing until the exact committed AO-0010 generic owner authorization exists.
+external_calls_cost: {calls: 0, cost: "0", currency: USD}
+private_state_change: none; no authorization, credential, prior private state, real seed, task, answer, key, nonce, ciphertext, commitment, custody, trace, ledger, provider response, output lock, or derived-state commitment was read, written, generated, disclosed, or unsealed.
+scientific_state_change: none; no DD-023, claim, scientific run, evidence or proof promotion, paper result, performance result, ranking, composite, leaderboard, package, release, DOI, submission, or base-campaign state was created or changed.
+validation:
+  profile: private-evaluation
+  result: pass-policy-v2-50-synthetic-tasks-500-pairings-3014-turns-zero-mixed-all-invalid-6400-metric-intervals-120-contrast-bounds-independent-reconstruction-104-corruptions-6-production-custody-negatives-62-focused-tests-725-full-tests-ruff-mypy-110-claims-51-run-manifests-governance-site-offline-release-24-path-execution-freeze-live-generic-gate-validation-no-authorization
+owner_action: "Review the fixed contract and ExecPlan, policy v2, fresh v4 identities, USD 11.51 expected cost, USD 15 conservative envelope, USD 25 total hard cap, USD 10 OpenAI cap, USD 15 Anthropic cap, 5,200-call cap, exact execution freeze, two-name credential subset, all-pairing bounds, and conditional engineering-complete-or-honest-quarantine authority; then run: make owner-gate GATE=reports/agent-ops/AO-0010-treasurebench-fresh-pilot-v4-owner-gate.yml OWNER_GATE_CHALLENGE='AUTHORIZE AOG-AO-0010-FRESH-PILOT-V4 5289882'. Only after it succeeds may this same task run the exact live command: make treasurebench-fresh-pilot-v4-live."
+exact_next_command: "make owner-gate GATE=reports/agent-ops/AO-0010-treasurebench-fresh-pilot-v4-owner-gate.yml OWNER_GATE_CHALLENGE='AUTHORIZE AOG-AO-0010-FRESH-PILOT-V4 5289882'"
+exact_next_file: reports/agent-ops/AO-0010-treasurebench-fresh-pilot-v4-owner-gate.yml
+blocker: The exact AO-0010 generic owner authorization is required and absent by design; no credential, real private generation, custody, provider call, spend, unseal, or live v4 campaign action is authorized yet.

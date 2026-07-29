@@ -1,4 +1,46 @@
-# Current roadmap — agent protocol policy decision required
+# Current roadmap — fresh v4 permanent quarantine
+
+## AO-0010 prospective protocol-validity policy v2
+
+Issue #208 and draft PR #209 combine the owner-selected forward-only policy
+change and one wholly fresh v4 engineering pilot in a single Agent Operations
+task. The registered campaign is
+`treasurebench-agents-v1-repair-confirmation-v4`; the registered batch is
+`tb-agents-v1-repair-confirmation-v4-b01`.
+
+Policy v2 preserves the bounded transport and one schema-only repair contract
+while treating a completed response that remains nonconforming as
+protocol-invalid evaluated-system behavior, not by itself a batch-integrity
+failure. Such pairings remain in all intended denominators without
+replacement, semantic retry, invented action, or invalid credit. Registered
+metric-specific feasible bounds and architecture-contrast bounds use the full
+intended matrix; valid-output-conditional estimates are explicitly secondary
+and cannot be presented as unconditional architecture effects.
+
+The 50-task/500-pairing public rehearsal and zero/mixed/all-invalid scenarios
+passed Methods A/B/C, independent bound reconstruction, custody, output-lock,
+post-lock unseal, redaction, deterministic cleanup, 104 relevant corruption
+rejections, 62 focused tests, and the complete 725-test repository wall.
+Protocol-invalid traces alone do not quarantine; provider-terminal and
+integrity failures do.
+
+Execution was frozen at
+`5289882dca6b8912a0518bba72aba1f4d595c2a8`. After the exact generic owner
+gate and current official provider revalidation, both public canaries and
+wholly fresh custody passed. The private prefix then stopped on
+`provider-terminal-missing`. Provider access closed after 116 calls, 58,636
+input tokens, 13,275 output tokens, and USD 0.3470610. A verified 150-object
+output lock preserves the retained boundary under
+`sha256:88c442bf6cb5e1b99a893808d423b488d2b1062543a49fcfb32b77f276abaa1c`;
+no call followed the lock and no material was unsealed.
+
+V4 is permanently quarantined. Its incomplete batch has no real-data protocol
+classification, Methods A/B/C, metric bounds, or performance interpretation,
+and cannot be retried, replaced, repaired, reopened, reused, rescored,
+spliced, executed, unsealed, or reauthorized. AO-0008 and all earlier
+campaigns remain permanently quarantined and receive no authority from
+AO-0010. This is DD-010 engineering only, not performance or scientific
+evidence.
 
 ## AO-0009 aggregate diagnosis
 
@@ -12,12 +54,12 @@ parse/schema-repair exhaustion traces, with zero terminal-provider,
 contamination, final-cardinality, cap, or integrity findings. The frozen
 post-loop precedence selects `agent-protocol-policy-decision-required`.
 
-The current fail-closed protocol remains unchanged. Any prospective
-normalization, retry, invalid-output credit, acceptance, or scoring change
-requires a separate explicit owner decision and task. Any future private
-evaluation additionally requires wholly new identities, execution freeze,
-and owner gate. AO-0008 and all prior Agents v1 campaigns remain permanently
-quarantined; v4 is not registered.
+AO-0009 itself left the then-current fail-closed protocol unchanged. Any
+prospective normalization, retry, invalid-output credit, acceptance, or
+scoring change required a separate explicit owner decision and task. Any
+future private evaluation additionally required wholly new identities,
+execution freeze, and owner gate. AO-0008 and all prior Agents v1 campaigns
+remain permanently quarantined; at AO-0009 closeout, v4 was not registered.
 
 ## Fresh repair-confirmation v3 quarantine
 

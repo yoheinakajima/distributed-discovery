@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TreasureBench Agents v1 prospective protocol-validity policy v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "policy_version",
+    "status",
+    "owner_study",
+    "authority_task",
+    "effective_scope",
+    "registered_campaigns",
+    "historical_policy_or_schema_rewrite",
+    "historical_campaign_reclassification",
+    "status_model",
+    "classification",
+    "precedence",
+    "retry",
+    "action_contract",
+    "protocol_invalid_handling",
+    "metric_bounds",
+    "batch_acceptance",
+    "stopping",
+    "reporting",
+    "scientific_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "treasurebench-agents-v1-protocol-validity-policy-v2"},
+    "policy_version": {"const": "treasurebench-agents-v1-protocol-validity-policy-v2"},
+    "status": {"const": "prospective-frozen-not-executed"},
+    "owner_study": {"const": "DD-010"},
+    "authority_task": {"const": "AO-0010"},
+    "effective_scope": {"const": "future-campaigns-that-explicitly-register-policy-v2"},
+    "registered_campaigns": {"const": ["treasurebench-agents-v1-repair-confirmation-v4"]},
+    "historical_policy_or_schema_rewrite": {"const": false},
+    "historical_campaign_reclassification": {"const": false},
+    "status_model": {
+      "const": {
+        "statuses": ["batch-integrity-valid", "provider-terminal-missing", "protocol-valid", "protocol-invalid"],
+        "batch_integrity_status": "batch-integrity-valid",
+        "terminal_pairing_statuses": ["provider-terminal-missing", "protocol-valid", "protocol-invalid"],
+        "exactly_one_terminal_pairing_status": true,
+        "provider_terminal_missing_is_protocol_invalid": false,
+        "protocol_invalid_is_batch_integrity_failure": false
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["batch-integrity-valid", "provider-terminal-missing", "protocol-valid", "protocol-invalid"],
+      "properties": {
+        "batch-integrity-valid": {"type": "string", "minLength": 20},
+        "provider-terminal-missing": {"type": "string", "minLength": 20},
+        "protocol-valid": {"type": "string", "minLength": 20},
+        "protocol-invalid": {"type": "string", "minLength": 20}
+      }
+    },
+    "precedence": {"type": "array", "minItems": 4, "maxItems": 4, "uniqueItems": true, "items": {"type": "string"}},
+    "retry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["transport", "schema", "semantic_answer_retries", "outcome_dependent_retries", "silent_normalization", "replacement_pairings"],
+      "properties": {
+        "transport": {
+          "const": {
+            "maximum_attempts": 2,
+            "same_logical_request_only": true,
+            "bounded_classes": ["timeout", "transient-transport", "invalid-provider-json", "rate-limit", "transient-provider"],
+            "provider_sdk_automatic_retries": "disabled"
+          }
+        },
+        "schema": {
+          "const": {
+            "maximum_repairs": 1,
+            "repair_receives": ["validation-error-class", "schema"],
+            "prompt_or_task_change": false
+          }
+        },
+        "semantic_answer_retries": {"const": 0},
+        "outcome_dependent_retries": {"const": 0},
+        "silent_normalization": {"const": false},
+        "replacement_pairings": {"const": 0}
+      }
+    },
+    "action_contract": {
+      "const": {
+        "final_action_cardinality": "exactly-one-per-required-agent",
+        "nonfinal_proposals_scored": false,
+        "invalid_action_parsed_or_credited": false,
+        "constructed_replacement_action_or_portfolio": false
+      }
+    },
+    "protocol_invalid_handling": {
+      "const": {
+        "preserve_terminal_trace": true,
+        "preserve_safe_protocol_classification": true,
+        "retain_in_all_intended_pairing_denominators": true,
+        "replace_or_rerun": false,
+        "parse_invalid_action": false,
+        "invalid_action_credit": false,
+        "silently_construct_valid_portfolio": false,
+        "report_protocol_conformance_separately": true,
+        "operational_no-valid-action-credit": true
+      }
+    },
+    "metric_bounds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["interpretation", "exact_metric_requires_valid_protocol_output", "metrics", "pairing_interval", "architecture_contrast", "independent_reconstruction", "valid_output_conditional", "complete_case_unconditional_effect"],
+      "properties": {
+        "interpretation": {"type": "string", "minLength": 40},
+        "exact_metric_requires_valid_protocol_output": {"const": true},
+        "metrics": {
+          "type": "array",
+          "minItems": 15,
+          "maxItems": 15,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["metric_id", "invalid_operational_credit", "lower_rule", "upper_rule"],
+            "properties": {
+              "metric_id": {"type": "string", "minLength": 2},
+              "invalid_operational_credit": {"type": "string", "minLength": 1},
+              "lower_rule": {"type": "string", "minLength": 1},
+              "upper_rule": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "pairing_interval": {"const": {"protocol-valid": "degenerate-at-exact-registered-metric", "protocol-invalid": "metric-specific-lower-and-upper-rules"}},
+        "architecture_contrast": {
+          "const": {
+            "intended_pairing_denominator_required": true,
+            "paired_lower_rule": "left-lower-minus-right-upper",
+            "paired_upper_rule": "left-upper-minus-right-lower",
+            "aggregate_lower_rule": "mean-of-all-intended-paired-lowers",
+            "aggregate_upper_rule": "mean-of-all-intended-paired-uppers",
+            "invalid_pairing_dropped": false
+          }
+        },
+        "independent_reconstruction": {"const": "required"},
+        "valid_output_conditional": {"const": {"allowed": true, "role": "secondary-selection-conditioned-diagnostic-only", "unconditional_architecture_effect_label": "prohibited"}},
+        "complete_case_unconditional_effect": {"const": "prohibited"}
+      }
+    },
+    "batch_acceptance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["protocol_invalid_alone_quarantines_batch", "global_protocol_conformance_threshold", "engineering_completion_requires", "batch_quarantine_triggers"],
+      "properties": {
+        "protocol_invalid_alone_quarantines_batch": {"const": false},
+        "global_protocol_conformance_threshold": {"const": null},
+        "engineering_completion_requires": {"type": "array", "minItems": 15, "uniqueItems": true, "items": {"type": "string"}},
+        "batch_quarantine_triggers": {"type": "array", "minItems": 12, "uniqueItems": true, "items": {"type": "string"}}
+      }
+    },
+    "stopping": {
+      "const": {
+        "fixed_intended_pairings": 500,
+        "outcome_dependent_stopping": false,
+        "rerun_until-preferred-conformance-rate": false,
+        "later_informativeness_criterion": "width-of-registered-all-pairing-bounds"
+      }
+    },
+    "reporting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["composite_score", "provider_or_model_ranking", "leaderboard", "public_closeout_allowed", "public_closeout_prohibited"],
+      "properties": {
+        "composite_score": {"const": null},
+        "provider_or_model_ranking": {"const": false},
+        "leaderboard": {"const": false},
+        "public_closeout_allowed": {"type": "array", "minItems": 7, "uniqueItems": true, "items": {"type": "string"}},
+        "public_closeout_prohibited": {"type": "array", "minItems": 10, "uniqueItems": true, "items": {"type": "string"}}
+      }
+    },
+    "scientific_boundary": {"type": "object", "additionalProperties": {"const": false}, "properties": {"engineering_only": {"const": true}}}
+  }
+}

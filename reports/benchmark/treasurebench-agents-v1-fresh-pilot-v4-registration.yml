@@ -1,0 +1,48 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-v4-registration-v1
+recorded_at_utc: "2026-07-29T04:35:31Z"
+status: pass-offline-exact-execution-frozen-owner-gate-required
+classification: DD-010-public-synthetic-engineering-only
+task_id: AO-0010
+campaign_id: treasurebench-agents-v1-repair-confirmation-v4
+batch_id: tb-agents-v1-repair-confirmation-v4-b01
+policy_version: treasurebench-agents-v1-protocol-validity-policy-v2
+counts:
+  slots: 50
+  families: 5
+  architectures: 5
+  providers: 2
+  repeats: 1
+  runs: 500
+  normal_calls: 3016
+hashes:
+  request: sha256:200658e6ee8f823436d6a479d79ef3783d90f6b1b6a7b5516c2cabae6f8687da
+  policy: sha256:0b3a1705333c8471453ea3e151ae7d2e80047e1d5e312ab192f316c2f6f04b5f
+  allocation: sha256:b861814c1ad1a4a8a80aa90bdc1e309840f64064d101eddd3a902729c232d500
+  execution_budget: sha256:73ee9351460bb3e00846ddf8702b670fea3ad40b72e551611d037c742dfc52bf
+  corruption_registry: sha256:b2dfbffeaa0a2b4c31ef9c72a70bf4149b236c51bbfe6121024f85800982023b
+provider_boundary:
+  AO-0004_complete_schemas_preserved: true
+  AO-0007_production_custody_conformance_preserved: true
+  OpenAI_transport_compiler: pass
+  Anthropic_transport_compiler: pass
+  provider_independent_semantic_validator: pass
+  output_tokens_per_request: 256
+policy_boundary:
+  four_statuses_separated: true
+  method_c_before_metric_interpretation: true
+  protocol_invalid_alone_quarantines: false
+  provider_terminal_missing_quarantines: true
+  invalid_pairings_retained_in_bounds: true
+  independent_bound_reconstruction_required: true
+  ranking_or_composite_allowed: false
+production_permit_rehearsal:
+  synthetic_mode_bypass: false
+  real_registered_campaign_permit: pass
+  isolated_disposable_nonsecret_custody: pass
+activity:
+  provider_calls: 0
+  credential_reads: 0
+  prior_private_state_reads: 0
+  private_objects_created: 0
+  spend_usd: "0"
+next_gate: exact-execution-freeze-then-generic-owner-gate

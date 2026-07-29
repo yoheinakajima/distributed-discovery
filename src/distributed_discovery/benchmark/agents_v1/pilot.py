@@ -812,6 +812,10 @@ class ResumablePilotAdapter:
 
     def respond(self, request: AdapterRequest) -> AdapterResponse:
         call_key = self._key(request)
+        prompt_payload = json.loads(request.prompt.user)
+        if not isinstance(prompt_payload, Mapping):
+            raise ValueError("compiled prompt payload must be a mapping")
+        architecture_id = str(prompt_payload.get("architecture_id", "unknown"))
         resumed, records = self._load_recorded(call_key)
         if resumed is not None:
             return resumed
@@ -893,6 +897,11 @@ class ResumablePilotAdapter:
                     "status": "success" if response.error_class is None else "error",
                     "provider": self.provider,
                     "model": self.model,
+                    "task_commitment": request.prompt.task_commitment,
+                    "architecture_id": architecture_id,
+                    "agent_id": request.prompt.agent_id,
+                    "round_number": request.round_number,
+                    "final_required": request.final_required,
                     "input_tokens": response.usage.input_tokens,
                     "output_tokens": response.usage.output_tokens,
                     "cost_usd": str(response.usage.cost_usd),

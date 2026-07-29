@@ -1,5 +1,48 @@
 # Current program state
 
+_TreasureBench protocol-validity policy v2 and fresh v4 quarantine,
+2026-07-29:_ AO-0010, issue #208 and draft PR #209, adopt one forward-only
+policy and execute one wholly fresh v4 campaign
+`treasurebench-agents-v1-repair-confirmation-v4`, batch
+`tb-agents-v1-repair-confirmation-v4-b01`. Frozen historical policies,
+schemas, identities, retained state, and decisions are not rewritten or
+reopened.
+
+Policy v2 distinguishes batch-integrity validity, missing provider terminals,
+protocol-valid outputs, and protocol-invalid outputs. A completed response
+that remains nonconforming after its single schema-only repair is preserved as
+protocol-invalid evaluated-system behavior: it stays in the denominator, is
+not rerun or replaced, yields no parsed or invented action and no invalid
+credit, and does not by itself quarantine the batch. Exact metrics are
+computed only where registered and well-defined; metric-specific feasible
+bounds and architecture-contrast bounds use all intended pairings.
+Valid-output-conditional estimates are secondary, selection-conditioned
+diagnostics only.
+
+The authorization-free candidate passed a complete 50-task/500-pairing
+rehearsal, zero/mixed/all-invalid batches, first/middle/final invalid events,
+Methods A/B/C, 6,400 pairing metric intervals, 120 architecture-contrast
+bounds, independent reconstruction, 104 relevant corruption rejections,
+production custody/lock/unseal/redaction/cleanup rehearsals, 62 focused tests,
+and all 725 repository tests. Protocol-invalid traces alone do not quarantine;
+terminal-provider and integrity failures do.
+
+Execution was frozen at
+`5289882dca6b8912a0518bba72aba1f4d595c2a8`. After exact owner authorization
+and current official provider revalidation, both public canaries and wholly
+fresh custody passed. The private prefix then stopped under registered class
+`provider-terminal-missing`. Provider access closed after 116 calls, 58,636
+input tokens, 13,275 output tokens, and USD 0.3470610.
+
+The output lock binds 150 retained objects under
+`sha256:88c442bf6cb5e1b99a893808d423b488d2b1062543a49fcfb32b77f276abaa1c`.
+No call followed the lock and no material was unsealed. The incomplete batch
+has no real-data protocol classification, Methods A/B/C, metric bounds, or
+performance interpretation. No replacement, splice, semantic retry, invalid
+credit, comparison, ranking, scientific run, claim, paper result, release,
+submission, or base-campaign authority exists. V4 is permanently quarantined;
+AO-0008 and every prior campaign remain permanently immutable and closed.
+
 _TreasureBench AO-0008 aggregate fixed-batch diagnosis, 2026-07-29:_
 AO-0009 executed its exact R2 owner-gated diagnostic once. It authenticated
 all 450 fixed-full-batch traces and verified the 3,576-object output lock,

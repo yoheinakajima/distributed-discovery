@@ -5,11 +5,10 @@ the frozen `discoverybench-agents-v1` instrument and schema identifiers remain
 unchanged for compatibility; the formal suite rename creates no protocol or
 content version.
 
-Status: all four sealed engineering pilots permanently quarantined; redacted
-instrument and custody adjudications complete; production custody path
-prospectively repaired; public provider-schema, semantic-contract, and
-live-mode-equivalent custody engineering conformance passed; any future fresh
-pilot remains separately registered and gated.
+Status: all four completed sealed engineering pilots remain permanently
+quarantined. AO-0010 now freezes prospective protocol-validity policy v2 and
+prepares one wholly fresh v4 pilot under a separate owner gate. No v4 private
+material, credential read, provider call, spend, or scientific evidence exists.
 
 DiscoveryBench Agents v1 measures how declared software-agent team
 architectures convert dispersed synthetic evidence into structured search
@@ -109,6 +108,44 @@ private content, task-level metric, comparison, ranking, or scientific state
 is published. The campaign and batch are permanently quarantined and cannot
 be retried, repaired, reopened, reused, rescored, spliced, executed, or
 reauthorized.
+
+## AO-0010 prospective protocol-validity policy v2 and fresh v4
+
+AO-0010 separates `batch-integrity-valid`, `provider-terminal-missing`,
+`protocol-valid`, and `protocol-invalid`. A completed provider response that
+remains nonconforming after exactly one schema-only repair is
+protocol-invalid evaluated-system behavior, not by itself a batch-integrity
+failure. It is preserved, retained in every intended-pairing denominator,
+never replaced or rerun, and receives no parsed, constructed, or credited
+action.
+
+The policy registers metric-specific feasible bounds for invalid pairings and
+all-intended-pairing architecture-contrast bounds with an independent
+reconstruction requirement. Valid-output-conditional estimates are secondary,
+selection-conditioned diagnostics only; complete-case unconditional effects,
+global conformance thresholds, composites, rankings, and leaderboards are
+prohibited.
+
+The wholly fresh v4 identity is campaign
+`treasurebench-agents-v1-repair-confirmation-v4`, batch
+`tb-agents-v1-repair-confirmation-v4-b01`. It retains the five architectures,
+ten tasks per family, exact direct OpenAI and Anthropic snapshots, one repeat,
+500 intended pairings, the passing provider schemas, 256 output tokens, and
+the USD 25/10/15 and 5,200-call hard caps. Policy v2 must remain frozen before
+authorization or generation. AO-0008 and every earlier campaign remain
+immutable and confer no authority.
+
+The exact authorized v4 attempt passed both public canaries and wholly fresh
+custody, then stopped during the private prefix under registered class
+`provider-terminal-missing`. The provider phase closed after 116 calls, 58,636
+input tokens, 13,275 output tokens, and USD 0.3470610. Its verified output
+lock covers 150 retained objects under
+`sha256:88c442bf6cb5e1b99a893808d423b488d2b1062543a49fcfb32b77f276abaa1c`.
+No call followed the lock and no material was unsealed. The incomplete batch
+has no real-data protocol classification, Methods A/B/C, metric bounds, or
+performance interpretation. V4 is permanently quarantined and cannot be
+retried, replaced, repaired, reopened, reused, rescored, spliced, executed,
+unsealed, or reauthorized.
 
 ## Registered package
 

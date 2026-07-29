@@ -1,0 +1,24 @@
+schema_version: agent-ops-handoff-v1
+status: stop-by-policy
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0010
+issue: 208
+pull_request: 209
+branch: codex/treasurebench-agents-v1-fresh-pilot-v4
+base_main: 8054542064651d61e6b286536fc477093e0f3530
+head_merge_sha: 5466b60c7ddb923ce4c6fd692e356f4ac88e732d
+task_contract: tasks/treasurebench-agents-v1-fresh-pilot-v4.yml
+exec_plan: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V4.md
+last_completed_gate: The exact AO-0010 authorization and all 24 frozen surfaces revalidated; both public canaries and wholly fresh custody passed; the private prefix entered registered quarantine on provider-terminal-missing; provider calls stopped; the provider phase closed; and 150 objects were verified under the pushed public output-lock commitment without unsealing.
+next_gate: The consumed AO-0010 authority continues only through public-safe quarantine reconciliation, complete validation, PR readiness and squash merge after required checks, normal post-merge CI and Pages, named live-route verification, issue closure, main synchronization, and one final schema-valid handoff; no further provider call, private read, or unseal is permitted.
+decision: fresh-pilot-v4-quarantined-engineering-only
+external_calls_cost: {calls: 116, cost: "0.3470610", currency: USD}
+private_state_change: A wholly fresh v4 private-state root, 50-task custody, encrypted provider responses and traces, append-only ledgers, and output lock are retained. The provider phase is closed and 150 objects are locked under sha256:88c442bf6cb5e1b99a893808d423b488d2b1062543a49fcfb32b77f276abaa1c; no material was unsealed.
+scientific_state_change: none
+validation:
+  profile: private-evaluation-quarantine-closeout
+  result: public-canaries-pass-custody-pass-private-prefix-provider-terminal-missing-provider-closed-150-object-lock-verified-no-unseal-synthetic-500-pairing-methods-a-b-c-bounds-104-corruptions
+owner_action: No additional owner action is required for normal administrative closeout under the consumed AO-0010 authority.
+exact_next_command: make verify
+exact_next_file: reports/benchmark/treasurebench-agents-v1-fresh-pilot-v4-closeout.yml
+blocker: The registered v4 campaign and batch failed during the private prefix and are permanently quarantined; they cannot be retried, repaired, reopened, reused, rescored, spliced, executed, unsealed, or reauthorized.

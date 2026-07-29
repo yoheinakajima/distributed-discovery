@@ -219,7 +219,50 @@ protocol acceptance, or scoring change. Any such prospective change requires
 a separate explicit owner decision and task. This redacted engineering
 diagnosis creates no performance result, comparison, ranking, scientific run,
 claim, paper result, release, submission, or base-campaign authority. AO-0008
-remains permanently quarantined, and v4 is not registered.
+remains permanently quarantined; at AO-0009 closeout, v4 was not registered.
+
+## AO-0010 protocol-validity policy v2 and fresh v4 closeout
+
+Issue #208 and draft PR #209 adopt a forward-only, versioned
+protocol-validity policy v2 and prepare one wholly fresh v4 engineering
+campaign, `treasurebench-agents-v1-repair-confirmation-v4`, with batch
+`tb-agents-v1-repair-confirmation-v4-b01`. Historical policies, schemas,
+campaigns, locks, and decisions are unchanged.
+
+Policy v2 separates batch integrity, missing provider terminals,
+protocol-valid outputs, and protocol-invalid outputs. A completed provider
+response that remains nonconforming after the one registered schema-only
+repair is preserved as protocol-invalid evaluated-system behavior. It remains
+in every intended-pairing denominator, receives no replacement, semantic
+retry, invented action, or invalid-output credit, and does not alone
+quarantine the batch. Exact metrics are computed only where defined; registered
+metric-specific feasible bounds and architecture-contrast bounds cover all
+intended pairings. Valid-output-conditional diagnostics remain explicitly
+secondary and selection-conditioned.
+
+Authorization-free validation passes the complete 50-task/500-pairing
+rehearsal, zero/mixed/all-invalid scenarios, first/middle/final invalid
+positions, Methods A/B/C, 6,400 pairing-level metric intervals, 120 contrast
+bounds, independent reconstruction, 104 relevant corruption rejections,
+production custody/lock/unseal/redaction/cleanup rehearsals, 62 focused tests,
+and the full 725-test repository wall. Protocol-invalid traces alone do not
+quarantine; terminal-provider and integrity failures still do.
+
+The policy was frozen before v4 authorization and generation. Execution was
+frozen at `5289882dca6b8912a0518bba72aba1f4d595c2a8`; the exact generic owner
+gate and current official provider re-audit passed. Both public canaries and
+wholly fresh custody then passed. The private prefix stopped on
+`provider-terminal-missing`, closing provider access after 116 calls, 58,636
+input tokens, 13,275 output tokens, and USD 0.3470610. The verified output
+lock covers 150 retained objects under
+`sha256:88c442bf6cb5e1b99a893808d423b488d2b1062543a49fcfb32b77f276abaa1c`.
+No call followed the lock and no material was unsealed.
+
+The incomplete real batch has no protocol classification, Methods A/B/C,
+metric bounds, or performance interpretation. No replacement, splice,
+semantic retry, invalid credit, ranking, scientific evidence, or base-campaign
+authority exists. V4 and every prior campaign are permanently closed and
+immutable.
 
 ## Registered evaluation campaign
 
