@@ -1,0 +1,24 @@
+schema_version: agent-ops-handoff-v1
+status: owner-gate-required
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0009
+issue: 206
+pull_request: 207
+branch: codex/treasurebench-ao0008-fixed-batch-adjudication
+base_main: 693adaaa49b9dfafd510c4f622aa3c754253d485
+head_merge_sha: 32f9b21
+task_contract: tasks/treasurebench-ao0008-fixed-batch-adjudication-r2.yml
+exec_plan: plans/TREASUREBENCH_AO0008_FIXED_BATCH_ADJUDICATION.md
+last_completed_gate: Exact AO-0009 R2 diagnostic execution commit fbecbfb89e634967d48931c00e1d8a4fbed81c79 and committed R2 gate-manifest head 32f9b21 passed live authorization-free contract, ancestry, 20-path protected-tree, zero-call and zero-spend caps, prohibitions, issue, branch, and draft-PR validation without creating authorization or reading retained state; R1 is superseded and unused.
+next_gate: "Resume AO-0009 in this same Codex task, issue #206, branch codex/treasurebench-ao0008-fixed-batch-adjudication, living ExecPlan, and draft PR #207. Use only reports/agent-ops/AO-0009-treasurebench-ao0008-fixed-batch-diagnostic-r2-owner-gate.yml and its exact R2 authorization; never use the superseded R1 gate. Revalidate authorization, execution-commit ancestry, live PR head, additive R2 contract, all 20 protected hashes, exact zero caps, prohibitions, AO-0008 output lock, complete 3,067 response-attempt set equality, unique 2/50/450 trace partition, and the aggregate-only 450-trace plus one-call/two-response/four-neighbor ceiling. Then run only make treasurebench-fixed-batch-read-only-diagnostic once. Permanently close private access and select only the evidence-determined permitted outcome using the frozen precedence: integrity, response or trace persistence, terminal provider, contamination, final cardinality, other protocol, pairing, completion marker, or bounded unknown. Complete only the resulting prospective repair or policy gate, public-safe reconciliation, required checks, PR readiness and merge, normal CI/Pages, named live routes, issue closure, synchronized main, and a final schema-valid handoff. Stop on any mismatch, second read, nonaggregate access, raw or dimensional retention, provider or credential need, new campaign identity, scientific or publication expansion, release, or submission."
+decision: Stop before the one-use aggregate retained-state diagnostic until the exact AO-0009 R2 generic owner authorization exists; never authorize or use R1.
+external_calls_cost: {calls: 0, cost: "0", currency: USD}
+private_state_change: none; no AO-0008 retained object, ciphertext, trace, response, ledger, key, authorization, or private path was read, unsealed, decrypted, created, or changed, and no one-use marker exists.
+scientific_state_change: none; no claim, scientific run, proof, evidence, performance result, paper, ranking, release, submission, or DD-023 state was created or changed.
+validation:
+  profile: infrastructure-plus-aggregate-private-diagnostic-rehearsal
+  result: pass-3067-response-set-502-trace-partition-450-aggregate-trace-authentication-first-middle-final-events-3576-locked-objects-one-call-two-responses-four-neighbors-500-pairings-663-tests-ruff-mypy-110-claims-51-runs-7-papers-119-pages-20-path-freeze-live-r2-gate-validation-no-authorization
+owner_action: "Review the additive R2 contract, immutable AO-0008 boundary, aggregate-only 450-trace and one-call/two-response/four-neighbor ceiling, exact zero-call/credential/spend caps, one-use permanent closure, and prohibitions; then run the exact R2 owner-gate command. After it succeeds, resume this same task and run only make treasurebench-fixed-batch-read-only-diagnostic once."
+exact_next_command: "make owner-gate GATE=reports/agent-ops/AO-0009-treasurebench-ao0008-fixed-batch-diagnostic-r2-owner-gate.yml OWNER_GATE_CHALLENGE='AUTHORIZE AOG-AO-0009-AO0008-FIXED-BATCH-DIAGNOSTIC-R2 fbecbfb'"
+exact_next_file: reports/agent-ops/AO-0009-treasurebench-ao0008-fixed-batch-diagnostic-r2-owner-gate.yml
+blocker: The exact AO-0009 R2 generic owner authorization is required and absent by design; no retained-state read, decryption, provider call, credential read, spend, new campaign identity, scientific mutation, release, or submission is authorized yet.
