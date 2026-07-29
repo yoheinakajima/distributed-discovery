@@ -116,6 +116,7 @@ explicit_prohibitions:
   - credential-read-outside-manifest
   - unauthorized-private-access
   - scientific-mutation-outside-contract
+  - cap-increase
   - cap-or-circuit-breaker-increase-reset-loosening-or-reinterpretation
   - consequential-action-by-gate-engine
   - credential-name-outside-openai-api-key-and-anthropic-api-key
