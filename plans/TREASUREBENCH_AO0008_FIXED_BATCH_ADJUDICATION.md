@@ -267,6 +267,14 @@ one-trace authority surface.
   duplicate/conflict, missing trace, leakage, and second-read corruptions.
   Exact-scale 3,067-response/502-trace/3,576-object and full
   50-task/500-pairing rehearsals pass.
+- `2026-07-29T00:16:48Z`: the first complete R2 wall passed formatting, Ruff,
+  strict MyPy over 202 source files, and 659 of 663 tests. Four unchanged
+  historical pilot mock tests failed because their safety boundary requires
+  the synthetic authorization's current execution commit to be present on a
+  remote branch, while R2 milestone commit `9228349` had intentionally not
+  yet been pushed. This is a preserved sequencing failure, not an R2
+  diagnostic or historical pilot regression. Push the scoped milestone and
+  rerun the complete wall from the identical tree.
 
 ## Decision log
 
