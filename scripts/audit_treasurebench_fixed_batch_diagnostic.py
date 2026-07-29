@@ -8,7 +8,6 @@ import json
 from pathlib import Path
 
 from distributed_discovery.benchmark.agents_v1.fixed_batch_diagnostic import (
-    TAXONOMY_IDS,
     CausalEvidence,
     classify_cause,
     validate_public_contracts,
@@ -33,27 +32,24 @@ def classifier_fixtures() -> tuple[dict[str, str], ...]:
         "provider-http-terminal": CausalEvidence(
             selected_provider_error="provider-http-500", selected_call_terminal=True
         ),
-        "schema-repair-exhausted": CausalEvidence(
-            selected_trace_errors=("malformed JSON",), selected_trace_retry_count=1
-        ),
-        "returned-output-parse-failure": CausalEvidence(selected_trace_errors=("malformed JSON",)),
-        "protocol-contract-nonconformance": CausalEvidence(
-            selected_trace_errors=("agent identity mismatch",)
-        ),
+        "protocol-contract-nonconformance": CausalEvidence(protocol_nonconformance_traces=1),
         "final-action-cardinality-failure": CausalEvidence(
-            selected_trace_errors=("final action cardinality must equal one",)
+            protocol_nonconformance_traces=1,
+            invalid_final_cardinality_traces=1,
+        ),
+        "contamination-policy-trigger": CausalEvidence(
+            protocol_nonconformance_traces=1,
+            direct_or_probable_contamination_traces=1,
         ),
         "trace-encryption-or-persistence-failure": CausalEvidence(
             selected_trace_authenticated=False
         ),
         "response-ledger-append-failure": CausalEvidence(response_ledger_one_to_one=False),
-        "duplicate-or-conflicting-call-key": CausalEvidence(duplicate_or_conflicting_call_key=True),
         "cost-or-token-cap-guard": CausalEvidence(cap_guard=True),
         "pairing-completeness-failure": CausalEvidence(pairing_complete=False),
         "state-transition-or-completion-marker-failure": CausalEvidence(
             all_outputs_exist=True,
             fixed_full_batch_marker=False,
-            direct_trace_correspondence=True,
             safe_exception_code_persisted=True,
         ),
         "post-batch-verification-failure": CausalEvidence(
@@ -63,8 +59,8 @@ def classifier_fixtures() -> tuple[dict[str, str], ...]:
         "unknown-within-retained-evidence": CausalEvidence(),
     }
     outcomes: list[dict[str, str]] = []
-    for expected in TAXONOMY_IDS:
-        observed, actor, safe_code = classify_cause(fixtures[expected])
+    for expected, evidence in fixtures.items():
+        observed, actor, safe_code = classify_cause(evidence)
         if observed != expected:
             raise AssertionError(f"classifier fixture {expected} produced {observed}")
         outcomes.append(

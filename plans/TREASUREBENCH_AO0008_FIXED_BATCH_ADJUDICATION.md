@@ -212,8 +212,9 @@ one-trace authority surface.
   publication audits, and offline release verification.
 - [x] Commit and push R1 diagnostic freeze `b7a3345`, validate the unused R1
   gate, and render its handoff without authorization or retained access.
-- [ ] Commit the additive R2 correction and route the amendment durably.
-- [ ] Implement and validate the aggregate-only 450-trace R2 diagnostic.
+- [x] Commit additive R2 correction `89d0100` and route the amendment durably.
+- [x] Implement the aggregate-only 450-trace R2 diagnostic and pass focused
+  validation.
 - [ ] Freeze R2, supersede R1, commit and validate the R2 gate, render the
   replacement handoff, and stop.
 
@@ -255,6 +256,17 @@ one-trace authority surface.
   loops. The sole triggering event may therefore occur in any one of 450
   traces. The live stage used `verify_metrics=false`, so Method A/B and
   metric-range failures were not computed and cannot be immediate causes.
+- `2026-07-29T00:14:15Z`: the R2 implementation no longer selects a trace by
+  mtime. It requires complete 3,067-attempt/response domain-set equality,
+  unique 2/50/450 trace partitioning, authenticates and extracts only
+  aggregate signals from all 450 full-batch traces, retains one bounded call
+  with two responses and four neighbors, and publishes no provider, model,
+  architecture, task, trace-identity, output, action, metric, or performance
+  dimension. Twenty-five focused tests pass, including first/middle/final
+  contamination and protocol events plus response substitution, orphan,
+  duplicate/conflict, missing trace, leakage, and second-read corruptions.
+  Exact-scale 3,067-response/502-trace/3,576-object and full
+  50-task/500-pairing rehearsals pass.
 
 ## Decision log
 
@@ -289,6 +301,12 @@ one-trace authority surface.
   without creating a new task, issue, branch, PR, session, campaign, or batch.
   Preserve R1 as unused history and refreeze an aggregate-only 450-trace R2
   surface. Begin M5R2.
+- `2026-07-29T00:14:15Z`: freeze public causal precedence as integrity,
+  response/trace persistence, terminal provider, contamination, final
+  cardinality, other protocol, pairing, completion marker, and bounded
+  unknown. Parse/schema-repair remains an aggregate signal under other
+  protocol because the live stage's post-loop gate was aggregate protocol;
+  Method and metric-range classes cannot be immediate live causes.
 
 ## Validation strategy
 

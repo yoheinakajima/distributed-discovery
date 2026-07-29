@@ -4,12 +4,13 @@ source_task_id: AO-0008
 classification: public-engineering-taxonomy-not-a-diagnosis
 precedence:
   - retained-integrity
-  - local-persistence
+  - response-ledger-or-trace-persistence
   - provider-terminal
-  - returned-output
-  - evaluated-agent-protocol
-  - orchestration-completion
-  - post-batch-verification
+  - contamination-policy
+  - final-action-cardinality
+  - other-protocol-contract
+  - pairing-completeness
+  - state-transition-or-completion-marker
   - bounded-evidence-unknown
 classes:
   - id: provider-transport-terminal
@@ -23,10 +24,13 @@ classes:
     safe_evidence: the registered one-time schema repair returned another structurally invalid output
   - id: returned-output-parse-failure
     actor: evaluated-agent-output
-    safe_evidence: a successful provider response could not be parsed as the registered action envelope
+    safe_evidence: aggregate-only trace extraction records a parse failure; under the frozen post-loop order it contributes to other protocol-contract nonconformance rather than outranking final cardinality
+  - id: contamination-policy-trigger
+    actor: registered-policy
+    safe_evidence: at least one of the 450 authenticated fixed-full-batch traces contains visible provider output classified as direct leakage or probable memorization by the frozen contamination policy
   - id: protocol-contract-nonconformance
     actor: evaluated-agent
-    safe_evidence: a valid parsed response violated a registered identity information action source tool round or final-record rule
+    safe_evidence: after contamination and final-cardinality checks at least one authenticated fixed-full-batch trace records another protocol error
   - id: final-action-cardinality-failure
     actor: evaluated-agent
     safe_evidence: a final-required response had zero or more than one final action
@@ -47,13 +51,13 @@ classes:
     safe_evidence: fewer or more than the exact 500 private pairing traces existed or a pairing identity was duplicated or absent
   - id: state-transition-or-completion-marker-failure
     actor: local-bookkeeping
-    safe_evidence: all 500 unique pairing traces and required outputs existed but the fixed-full-batch completion marker was absent after a noncausal bookkeeping exception
+    safe_evidence: response-ledger correspondence and the unique 2/50/450 trace partition are exact all 450 traces authenticate aggregate contamination and protocol counters are zero caps did not trigger the access and state records identify the durable fixed-batch boundary and only the completion marker is absent
   - id: post-batch-verification-failure
     actor: local-verification
-    safe_evidence: the fixed batch and completion marker existed but a separately registered structural or acceptance verification failed
+    safe_evidence: retained for taxonomy continuity but cannot be the immediate live fixed-batch cause because verify_metrics was false and the completion marker was never written
   - id: unknown-within-retained-evidence
     actor: undetermined
-    safe_evidence: the exact cause cannot be established from the frozen one-call and bounded-neighbor allowlist
+    safe_evidence: the exact cause cannot be established from the frozen aggregate-only 450-trace and one-call bounded-neighbor allowlist
 integrity_stop:
   id: retained-state-integrity-mismatch-stop
   safe_evidence: output-lock self-commitment inventory ledger chain selected-object authentication or before-and-after immutability check failed
@@ -61,7 +65,7 @@ prohibitions:
   - call-count-difference-as-causal-proof
   - provider-failure-normalized-as-code-defect
   - agent-output-silently-repaired-or-credited
-  - bulk-unseal
+  - nonaggregate-scientific-unseal
   - second-private-read
   - performance-inference
   - automatic-v4-registration

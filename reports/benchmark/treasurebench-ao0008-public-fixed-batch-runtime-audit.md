@@ -50,9 +50,14 @@ persists one encrypted trace. It raises on Method disagreement, metric range,
 contamination, or the conservative protocol gate after the loops.
 
 AO-0008 ran the fixed batch with metrics disabled and
-`reject_protocol_errors=True`. Consequently public source admits, but does not
-establish, this candidate: all 450 full-batch traces may exist while an
-aggregate protocol exception prevents the caller from appending
+`reject_protocol_errors=True`. The runner persists each trace inside the
+loops, then tests aggregate Method disagreement, metric range, contamination,
+and protocol counters. Because `verify_metrics=false`, Method A/B and
+metric-range counters were not computed. The relevant post-loop order is
+therefore direct or probable contamination followed by protocol
+nonconformance, including final-action cardinality. Consequently public source
+admits, but does not establish, this candidate: all 450 full-batch traces may
+exist while an aggregate exception prevents the caller from appending
 `fresh-fixed-full-batch-complete` and setting
 `fixed_full_batch_complete=true`. The bounded diagnostic must independently
 test exact trace domains, errors, exception context, and state.
@@ -76,11 +81,24 @@ exception record.
 The allowlist is frozen in
 `reports/benchmark/treasurebench-ao0008-fixed-batch-diagnostic-allowlist.yml`.
 It permits five fixed operational records, structural envelope metadata for
-exactly 3,067 encrypted responses and 502 encrypted traces, one selected
-logical call, at most two preceding and two following attempt/orchestration
-records, at most two directly corresponding response objects, one directly
-corresponding trace object, and one transient 32-byte operational key.
+exactly 3,067 encrypted responses and 502 encrypted traces, complete-set
+response-ledger correspondence, the unique 2/50/450 trace partition, one
+selected logical call, at most two preceding and two following
+attempt/orchestration records, at most two directly corresponding response
+objects, aggregate-only authenticated extraction from exactly all 450
+fixed-full-batch traces, and one transient 32-byte operational key.
 
-The diagnostic must return `unknown-within-retained-evidence` when the one
-bounded context cannot establish causality. It must not broaden the read,
-infer cause from the call-count difference, or register v4.
+The trace scan retains only authentication, stage, protocol, cardinality,
+contamination, parse/schema-repair, retry, and hash-only identity signals.
+Public output contains counters only, with no trace identity or task, model,
+provider, architecture, raw output, action, metric, performance, or
+private-path dimension. This is not scientific bulk unsealing.
+
+Classification follows retained integrity; response or trace persistence;
+terminal provider; contamination policy; final cardinality; other protocol;
+pairing completeness; completion marker; then bounded unknown. Exact
+structural correspondence, 450 authenticated traces, zero contamination and
+protocol counters, no cap guard, an exact durable state, and only a missing
+completion marker support the minimum local state-transition or
+completion-marker class. The diagnostic must not infer cause from the
+call-count difference or register v4.

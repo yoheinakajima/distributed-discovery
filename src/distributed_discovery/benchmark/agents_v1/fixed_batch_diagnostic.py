@@ -1,11 +1,11 @@
 """AO-0009 bounded read-only adjudication of AO-0008's fixed-batch failure.
 
 Ordinary imports, audits, and tests never resolve retained AO-0008 state. The
-live entry point validates the exact generic Agent Operations authorization,
+live entry point validates the exact R2 Agent Operations authorization,
 creates a one-use marker outside the retained root, and then reads only the
-frozen allowlist. Encrypted envelopes may be inspected structurally, but only
-the selected logical call's responses and one directly corresponding trace
-may be decrypted.
+frozen allowlist. It authenticates and extracts aggregate-only signals from
+exactly 450 fixed-full-batch traces while retaining the original bounded
+logical-call response context.
 """
 
 from __future__ import annotations
@@ -19,6 +19,7 @@ from collections import Counter, defaultdict
 from collections.abc import Mapping, Sequence
 from dataclasses import asdict, dataclass
 from datetime import UTC, datetime
+from decimal import Decimal
 from pathlib import Path
 from typing import Any
 
@@ -31,6 +32,7 @@ from distributed_discovery.agent_ops.core import (
     sha256_file,
     validate,
 )
+from distributed_discovery.benchmark.agents_v1.contamination import classify_text
 from distributed_discovery.benchmark.agents_v1.models import canonical_json, sha256_hex
 from distributed_discovery.benchmark.agents_v1.pilot import SealedObject, unseal_object
 from distributed_discovery.benchmark.agents_v1.traces import verify_trace_hashes
@@ -39,7 +41,7 @@ TASK_ID = "AO-0009"
 SOURCE_TASK_ID = "AO-0008"
 ISSUE = 206
 BRANCH = "codex/treasurebench-ao0008-fixed-batch-adjudication"
-GATE_ID = "AOG-AO-0009-AO0008-FIXED-BATCH-DIAGNOSTIC"
+GATE_ID = "AOG-AO-0009-AO0008-FIXED-BATCH-DIAGNOSTIC-R2"
 CAMPAIGN_ID = "treasurebench-agents-v1-repair-confirmation-v3"
 BATCH_ID = "tb-agents-v1-repair-confirmation-v3-b01"
 EXECUTION_COMMIT = "0f9d82bb50cbb334bea47e24448831faf0cdbed8"
@@ -47,10 +49,11 @@ EXPECTED_OUTPUT_LOCK = "sha256:e52055b08ca3a8acb1cfb6ac608c6e601f3c618352900f92b
 EXPECTED_LOCKED_OBJECTS = 3576
 EXPECTED_RESPONSES = 3067
 EXPECTED_TRACES = 502
+EXPECTED_FIXED_BATCH_TRACES = 450
 EXPECTED_PRIVATE_PAIRINGS = 500
-CONTRACT_PATH = Path("tasks/treasurebench-ao0008-fixed-batch-adjudication.yml")
+CONTRACT_PATH = Path("tasks/treasurebench-ao0008-fixed-batch-adjudication-r2.yml")
 GATE_PATH = Path(
-    "reports/agent-ops/AO-0009-treasurebench-ao0008-fixed-batch-diagnostic-owner-gate.yml"
+    "reports/agent-ops/AO-0009-treasurebench-ao0008-fixed-batch-diagnostic-r2-owner-gate.yml"
 )
 ALLOWLIST_PATH = Path("reports/benchmark/treasurebench-ao0008-fixed-batch-diagnostic-allowlist.yml")
 TAXONOMY_PATH = Path("docs/benchmark/agents-v1/treasurebench-fixed-batch-causal-taxonomy.yml")
@@ -107,6 +110,7 @@ TAXONOMY_IDS = (
     "provider-http-terminal",
     "schema-repair-exhausted",
     "returned-output-parse-failure",
+    "contamination-policy-trigger",
     "protocol-contract-nonconformance",
     "final-action-cardinality-failure",
     "trace-encryption-or-persistence-failure",
@@ -182,6 +186,7 @@ class StructuralReconstruction:
 class CausalEvidence:
     integrity_ok: bool = True
     response_ledger_one_to_one: bool = True
+    trace_persistence_ok: bool = True
     duplicate_or_conflicting_call_key: bool = False
     cap_guard: bool = False
     pairing_complete: bool = True
@@ -192,6 +197,11 @@ class CausalEvidence:
     selected_trace_retry_count: int = 0
     selected_provider_error: str | None = None
     selected_call_terminal: bool = False
+    authenticated_fixed_batch_traces: int = EXPECTED_FIXED_BATCH_TRACES
+    protocol_nonconformance_traces: int = 0
+    invalid_final_cardinality_traces: int = 0
+    direct_or_probable_contamination_traces: int = 0
+    parse_or_schema_repair_exhaustion_traces: int = 0
     all_outputs_exist: bool = True
     direct_trace_correspondence: bool = False
     safe_exception_code_persisted: bool = False
@@ -217,6 +227,15 @@ class RetainedFixedBatchDiagnostic:
     selected_response_objects: int
     selected_trace_objects: int
     selected_trace_domain_hash: str | None
+    response_ledger_correspondence_exact: bool
+    cap_guards_triggered: bool
+    authenticated_fixed_batch_traces: int
+    protocol_nonconformance_traces: int
+    invalid_final_cardinality_traces: int
+    direct_or_probable_contamination_traces: int
+    parse_or_schema_repair_exhaustion_traces: int
+    aggregate_retry_count: int
+    private_trace_identity_hashes: tuple[str, ...]
     exception_stage: str
     safe_error_code: str
     causal_class: str
@@ -406,7 +425,8 @@ def validate_public_contracts(repo: Path) -> Mapping[str, object]:
         or allowlist.get("output_lock") != EXPECTED_OUTPUT_LOCK
         or allowlist.get("locked_objects") != EXPECTED_LOCKED_OBJECTS
         or allowlist.get("second_read") != "fail-closed"
-        or allowlist.get("bulk_unseal") != "prohibited"
+        or allowlist.get("bulk_unseal")
+        != "prohibited-except-exact-aggregate-only-450-fixed-full-batch-trace-authentication"
     ):
         raise ValueError("fixed-batch diagnostic allowlist changed")
     structural = allowlist.get("structural_encrypted_metadata")
@@ -424,8 +444,8 @@ def validate_public_contracts(repo: Path) -> Mapping[str, object]:
         or bounded.get("preceding_attempt_or_orchestration_records_maximum") != 2
         or bounded.get("following_attempt_or_orchestration_records_maximum") != 2
         or bounded.get("selected_provider_response_objects_maximum") != 2
-        or bounded.get("selected_trace_objects_maximum") != 1
-        or bounded.get("selected_encrypted_objects_total_maximum") != 3
+        or bounded.get("aggregate_fixed_full_batch_trace_objects_exact") != 450
+        or bounded.get("selected_encrypted_objects_total_maximum") != 452
     ):
         raise ValueError("diagnostic object or record ceilings changed")
     schema = json.loads((repo / PUBLIC_RESULT_SCHEMA_PATH).read_text(encoding="utf-8"))
@@ -438,7 +458,8 @@ def validate_public_contracts(repo: Path) -> Mapping[str, object]:
         "trace_envelopes": EXPECTED_TRACES,
         "selected_logical_calls": 1,
         "neighbor_records_maximum": 4,
-        "selected_encrypted_objects_maximum": 3,
+        "aggregate_fixed_batch_trace_decryptions": 450,
+        "selected_encrypted_objects_maximum": 452,
         "provider_calls": 0,
         "credential_reads": 0,
         "private_state_reads": 0,
@@ -596,10 +617,175 @@ def _trace_stage(domain: str) -> str:
     return "unknown"
 
 
+def _ledger_attempt_domain(record: Mapping[str, object]) -> str:
+    call_key = str(record.get("call_key", ""))
+    attempt = int(str(record.get("transport_attempt", "-1")))
+    if not call_key.startswith("call-") or attempt not in {0, 1}:
+        raise ValueError("provider-call identity is malformed")
+    expected_idempotency = f"{call_key}/attempt-{attempt}"
+    if record.get("idempotency_key") != expected_idempotency:
+        raise ValueError("provider-call idempotency identity conflicts")
+    return f"provider-response/{call_key}/attempt-{attempt}"
+
+
+def verify_response_ledger_correspondence(
+    usage: Sequence[Mapping[str, object]],
+    response_envelopes: Sequence[EnvelopeMetadata],
+) -> bool:
+    """Compare complete attempt identities, never counts alone."""
+
+    attempts = tuple(
+        _ledger_attempt_domain(record)
+        for record in usage
+        if record.get("event_type") == "provider-call"
+    )
+    domains = tuple(item.domain for item in response_envelopes)
+    return (
+        len(attempts) == EXPECTED_RESPONSES
+        and len(domains) == EXPECTED_RESPONSES
+        and len(set(attempts)) == len(attempts)
+        and len(set(domains)) == len(domains)
+        and set(attempts) == set(domains)
+    )
+
+
+def verify_trace_partition(trace_envelopes: Sequence[EnvelopeMetadata]) -> bool:
+    """Require unique domains partitioned exactly 2/50/450."""
+
+    domains = tuple(item.domain for item in trace_envelopes)
+    counts = Counter(_trace_stage(domain) for domain in domains)
+    return (
+        len(domains) == EXPECTED_TRACES
+        and len(set(domains)) == EXPECTED_TRACES
+        and counts
+        == Counter(
+            {
+                "public-canary": 2,
+                "private-prefix": 50,
+                "fixed-full-batch": EXPECTED_FIXED_BATCH_TRACES,
+            }
+        )
+    )
+
+
+def _cap_guard_triggered(usage: Sequence[Mapping[str, object]]) -> bool:
+    calls = tuple(record for record in usage if record.get("event_type") == "provider-call")
+    costs: dict[str, Decimal] = {
+        "OpenAI": Decimal("0"),
+        "Anthropic": Decimal("0"),
+    }
+    total = Decimal("0")
+    for record in calls:
+        cost = Decimal(str(record.get("cost_usd", "0")))
+        provider = str(record.get("provider"))
+        total += cost
+        if provider in costs:
+            costs[provider] += cost
+        error = str(record.get("error_class", "")).lower()
+        if "cap" in error or "budget" in error:
+            return True
+    return (
+        len(calls) >= 5200
+        or total >= Decimal("25")
+        or costs["OpenAI"] >= Decimal("10")
+        or costs["Anthropic"] >= Decimal("15")
+    )
+
+
+@dataclass(frozen=True)
+class AggregateTraceSignals:
+    authenticated: int = 0
+    protocol_nonconformance: int = 0
+    invalid_final_cardinality: int = 0
+    direct_or_probable_contamination: int = 0
+    parse_or_schema_repair_exhaustion: int = 0
+    retry_count: int = 0
+    identity_hashes: tuple[str, ...] = ()
+
+
+def aggregate_fixed_batch_traces(
+    root: Path,
+    traces: Sequence[EnvelopeMetadata],
+    key: bytearray,
+) -> AggregateTraceSignals:
+    """Authenticate 450 traces and retain only aggregate causal signals."""
+
+    if len(traces) != EXPECTED_FIXED_BATCH_TRACES:
+        raise ValueError("fixed-full-batch trace ceiling or completeness mismatch")
+    authenticated = protocol = cardinality = contamination = parse_schema = retries = 0
+    identity_hashes: list[str] = []
+    for envelope in traces:
+        if _trace_stage(envelope.domain) != "fixed-full-batch":
+            raise PermissionError("aggregate trace read crossed the fixed-batch stage boundary")
+        trace_value = _decrypt_selected(root / envelope.relative_path, key)
+        if not isinstance(trace_value, Mapping) or not verify_trace_hashes(trace_value):
+            raise ValueError("fixed-full-batch trace authentication failed")
+        events = trace_value.get("events")
+        if not isinstance(events, list) or not events:
+            raise ValueError("fixed-full-batch trace events are malformed")
+        trace_protocol = trace_cardinality = trace_contamination = trace_parse_schema = False
+        trace_retries = 0
+        for event in events:
+            if not isinstance(event, Mapping):
+                raise ValueError("fixed-full-batch trace event is malformed")
+            errors = event.get("errors")
+            if not isinstance(errors, list):
+                raise ValueError("fixed-full-batch trace errors are malformed")
+            lowered = tuple(str(item).lower() for item in errors)
+            trace_protocol = trace_protocol or bool(lowered)
+            trace_cardinality = trace_cardinality or any(
+                "final action cardinality" in error or "final-action-count" in error
+                for error in lowered
+            )
+            retry_count = int(str(event.get("retry_count", 0)))
+            trace_retries += retry_count
+            trace_parse_schema = (
+                trace_parse_schema
+                or retry_count > 0
+                or any(
+                    token in error
+                    for error in lowered
+                    for token in (
+                        "malformed json",
+                        "missing fields",
+                        "undeclared fields",
+                        "action output",
+                        "schema repair",
+                    )
+                )
+            )
+            visible_output = event.get("visible_output")
+            if not isinstance(visible_output, str):
+                raise ValueError("fixed-full-batch visible output is malformed")
+            trace_contamination = trace_contamination or (
+                classify_text(visible_output).classification
+                in {"direct-leakage", "probable-memorization"}
+            )
+        authenticated += 1
+        protocol += int(trace_protocol)
+        cardinality += int(trace_cardinality)
+        contamination += int(trace_contamination)
+        parse_schema += int(trace_parse_schema)
+        retries += trace_retries
+        identity_hashes.append(f"sha256:{sha256_hex(envelope.domain.encode())}")
+        trace_value = None
+        events = None
+    return AggregateTraceSignals(
+        authenticated=authenticated,
+        protocol_nonconformance=protocol,
+        invalid_final_cardinality=cardinality,
+        direct_or_probable_contamination=contamination,
+        parse_or_schema_repair_exhaustion=parse_schema,
+        retry_count=retries,
+        identity_hashes=tuple(identity_hashes),
+    )
+
+
 def reconstruct_structure(
     usage: Sequence[Mapping[str, object]],
     state: Mapping[str, object],
     envelopes: Sequence[EnvelopeMetadata],
+    access: Sequence[Mapping[str, object]] = (),
 ) -> StructuralReconstruction:
     """Reconstruct operational counts without private task or performance data."""
 
@@ -632,6 +818,12 @@ def reconstruct_structure(
         _trace_stage(item.domain) for item in envelopes if item.object_class == "trace"
     )
     private_pairings = trace_stages["private-prefix"] + trace_stages["fixed-full-batch"]
+    last_access_operation = str(access[-1].get("operation")) if access else ""
+    durable_stage_exact = (
+        state.get("quarantine_stage") == "fixed-full-batch"
+        and state.get("fixed_full_batch_complete") is False
+        and last_access_operation == "fresh-private-ten-percent-prefix-pass"
+    )
     return StructuralReconstruction(
         planned_logical_calls=3016,
         actual_attempts=len(calls),
@@ -650,9 +842,8 @@ def reconstruct_structure(
         ),
         fixed_full_batch_completion_marker=state.get("fixed_full_batch_complete") is True,
         exact_last_durable_stage=(
-            "fixed-full-batch-quarantined-before-completion-marker"
-            if state.get("quarantine_stage") == "fixed-full-batch"
-            and state.get("fixed_full_batch_complete") is False
+            "fixed-full-batch-quarantined-after-prefix-before-completion-marker"
+            if durable_stage_exact
             else "state-boundary-mismatch"
         ),
         all_selected_run_outputs_exist=False,
@@ -749,6 +940,12 @@ def classify_cause(evidence: CausalEvidence) -> tuple[str, str, str]:
             "local-runtime",
             "response-ledger-one-to-one-failure",
         )
+    if not evidence.trace_persistence_ok:
+        return (
+            "trace-encryption-or-persistence-failure",
+            "local-runtime",
+            "fixed-batch-trace-persistence",
+        )
     if evidence.duplicate_or_conflicting_call_key:
         return (
             "duplicate-or-conflicting-call-key",
@@ -757,17 +954,14 @@ def classify_cause(evidence: CausalEvidence) -> tuple[str, str, str]:
         )
     if evidence.cap_guard:
         return ("cost-or-token-cap-guard", "registered-policy", "cap-guard")
-    if not evidence.pairing_complete:
-        return (
-            "pairing-completeness-failure",
-            "local-orchestration",
-            "pairing-completeness",
-        )
-    if not evidence.selected_trace_authenticated:
+    if (
+        not evidence.selected_trace_authenticated
+        or evidence.authenticated_fixed_batch_traces != EXPECTED_FIXED_BATCH_TRACES
+    ):
         return (
             "trace-encryption-or-persistence-failure",
             "local-runtime",
-            "selected-trace-authentication",
+            "fixed-batch-trace-authentication",
         )
     if evidence.selected_call_terminal and evidence.selected_provider_error:
         causal = (
@@ -776,41 +970,33 @@ def classify_cause(evidence: CausalEvidence) -> tuple[str, str, str]:
             else "provider-http-terminal"
         )
         return causal, "provider", evidence.selected_provider_error
-    lowered = tuple(error.lower() for error in evidence.selected_trace_errors)
-    if any(
-        "final action cardinality" in error or "final-action-count" in error for error in lowered
-    ):
+    if evidence.direct_or_probable_contamination_traces:
+        return (
+            "contamination-policy-trigger",
+            "registered-policy",
+            "direct-or-probable-contamination",
+        )
+    if evidence.invalid_final_cardinality_traces:
         return (
             "final-action-cardinality-failure",
             "evaluated-agent",
             "final-action-cardinality",
         )
-    if lowered and evidence.selected_trace_retry_count > 0:
-        return (
-            "schema-repair-exhausted",
-            "evaluated-agent-output",
-            "schema-repair-exhausted",
-        )
-    if any(
-        token in error
-        for error in lowered
-        for token in ("malformed json", "missing fields", "undeclared fields", "action output")
-    ):
-        return (
-            "returned-output-parse-failure",
-            "evaluated-agent-output",
-            "returned-output-parse",
-        )
-    if lowered:
+    if evidence.protocol_nonconformance_traces:
         return (
             "protocol-contract-nonconformance",
             "evaluated-agent",
             "protocol-contract-nonconformance",
         )
+    if not evidence.pairing_complete:
+        return (
+            "pairing-completeness-failure",
+            "local-orchestration",
+            "pairing-completeness",
+        )
     if (
         evidence.all_outputs_exist
         and not evidence.fixed_full_batch_marker
-        and evidence.direct_trace_correspondence
         and evidence.safe_exception_code_persisted
     ):
         return (
@@ -951,93 +1137,90 @@ def inspect_retained_fixed_batch(
     trace_envelopes = tuple(item for item in envelopes if item.object_class == "trace")
     if len(response_envelopes) != EXPECTED_RESPONSES or len(trace_envelopes) != EXPECTED_TRACES:
         raise ValueError("encrypted response or trace structural count differs")
-    response_domains = Counter(item.domain for item in response_envelopes)
-    trace_domains = Counter(item.domain for item in trace_envelopes)
-    if any(count != 1 for count in (*response_domains.values(), *trace_domains.values())):
-        raise ValueError("duplicate encrypted response or trace domain")
-
-    reconstruction = reconstruct_structure(usage, state, envelopes)
+    response_ledger_exact = verify_response_ledger_correspondence(usage, response_envelopes)
+    trace_partition_exact = verify_trace_partition(trace_envelopes)
+    reconstruction = reconstruct_structure(usage, state, envelopes, access)
     selected_key, selected_records, neighbors = select_bounded_context(usage)
     expected_response_domains = {
         f"provider-response/{selected_key}/attempt-{int(str(record['transport_attempt']))}"
         for record in selected_records
     }
-    selected_responses = tuple(
-        item for item in response_envelopes if item.domain in expected_response_domains
+    selected_responses = (
+        tuple(item for item in response_envelopes if item.domain in expected_response_domains)
+        if response_ledger_exact
+        else ()
     )
-    if len(selected_responses) != len(selected_records) or len(selected_responses) > 2:
+    if response_ledger_exact and (
+        len(selected_responses) != len(selected_records) or len(selected_responses) > 2
+    ):
         raise ValueError("selected response objects do not match the bounded ledger context")
 
     full_traces = tuple(
         item for item in trace_envelopes if _trace_stage(item.domain) == "fixed-full-batch"
     )
-    latest_mtime = max(item.mtime_ns for item in full_traces)
-    latest_traces = tuple(item for item in full_traces if item.mtime_ns == latest_mtime)
-    selected_trace = latest_traces[0] if len(latest_traces) == 1 else None
     key_path = root / "operational-key.bin"
     _require_secure_regular(key_path)
     key = bytearray(key_path.read_bytes())
     if len(key) != 32:
         raise ValueError("operational key length changed")
-    selected_trace_errors: tuple[str, ...] = ()
-    selected_trace_retry_count = 0
-    trace_usage: Mapping[str, object] | None = None
-    trace_authenticated = True
     response_details: list[tuple[str | None, Mapping[str, object]]] = []
+    aggregate = AggregateTraceSignals()
     try:
         for item in selected_responses:
             value = _decrypt_selected(root / item.relative_path, key)
             response_details.append(_response_safe_details(value))
             value = None
-        if selected_trace is not None:
-            trace_value = _decrypt_selected(root / selected_trace.relative_path, key)
-            selected_trace_errors, selected_trace_retry_count, trace_usage = _safe_trace_details(
-                trace_value
-            )
-            trace_value = None
+        if trace_partition_exact:
+            aggregate = aggregate_fixed_batch_traces(root, full_traces, key)
     finally:
         for index in range(len(key)):
             key[index] = 0
 
     final_record = selected_records[-1]
-    direct_trace = (
-        trace_usage is not None
-        and _usage_equal(trace_usage, final_record)
-        and bool(response_details)
-        and _usage_equal(trace_usage, response_details[-1][1])
-        and selected_trace is not None
-        and f"/{final_record.get('model')}/" in selected_trace.domain
-    )
     selected_provider_error = (
         str(final_record["error_class"]) if final_record.get("error_class") is not None else None
     )
     terminal_keys = _terminal_call_keys(usage)
+    cap_guard = _cap_guard_triggered(usage)
     reconstruction = StructuralReconstruction(
         **{
             **asdict(reconstruction),
             "all_selected_run_outputs_exist": (
-                len(selected_responses) == len(selected_records) and selected_trace is not None
+                len(selected_responses) == len(selected_records)
+                and aggregate.authenticated == EXPECTED_FIXED_BATCH_TRACES
             ),
         }
     )
     evidence = CausalEvidence(
         integrity_ok=True,
-        response_ledger_one_to_one=(
-            len(response_envelopes)
-            == sum(record.get("event_type") == "provider-call" for record in usage)
+        response_ledger_one_to_one=response_ledger_exact,
+        trace_persistence_ok=trace_partition_exact,
+        duplicate_or_conflicting_call_key=(
+            len({item.domain for item in response_envelopes}) != len(response_envelopes)
         ),
-        duplicate_or_conflicting_call_key=False,
-        cap_guard=False,
+        cap_guard=cap_guard,
         pairing_complete=reconstruction.all_500_pairing_records_exist,
         fixed_full_batch_marker=reconstruction.fixed_full_batch_completion_marker,
-        selected_trace_authenticated=trace_authenticated,
-        selected_trace_errors=selected_trace_errors,
-        selected_trace_retry_count=selected_trace_retry_count,
+        selected_trace_authenticated=aggregate.authenticated == EXPECTED_FIXED_BATCH_TRACES,
         selected_provider_error=selected_provider_error,
         selected_call_terminal=selected_key in terminal_keys,
+        authenticated_fixed_batch_traces=aggregate.authenticated,
+        protocol_nonconformance_traces=aggregate.protocol_nonconformance,
+        invalid_final_cardinality_traces=aggregate.invalid_final_cardinality,
+        direct_or_probable_contamination_traces=aggregate.direct_or_probable_contamination,
+        parse_or_schema_repair_exhaustion_traces=aggregate.parse_or_schema_repair_exhaustion,
         all_outputs_exist=reconstruction.all_selected_run_outputs_exist,
-        direct_trace_correspondence=direct_trace,
-        safe_exception_code_persisted=False,
+        direct_trace_correspondence=False,
+        safe_exception_code_persisted=(
+            reconstruction.exact_last_durable_stage
+            == "fixed-full-batch-quarantined-after-prefix-before-completion-marker"
+            and aggregate.authenticated == EXPECTED_FIXED_BATCH_TRACES
+            and not aggregate.protocol_nonconformance
+            and not aggregate.direct_or_probable_contamination
+            and response_ledger_exact
+            and trace_partition_exact
+            and not cap_guard
+        ),
     )
     causal_class, actor, safe_code = classify_cause(evidence)
 
@@ -1067,12 +1250,17 @@ def inspect_retained_fixed_batch(
         selected_attempt_records=len(selected_records),
         bounded_neighbor_records=len(neighbors),
         selected_response_objects=len(selected_responses),
-        selected_trace_objects=int(selected_trace is not None),
-        selected_trace_domain_hash=(
-            f"sha256:{sha256_hex(selected_trace.domain.encode())}"
-            if selected_trace is not None
-            else None
-        ),
+        selected_trace_objects=aggregate.authenticated,
+        selected_trace_domain_hash=None,
+        response_ledger_correspondence_exact=response_ledger_exact,
+        cap_guards_triggered=cap_guard,
+        authenticated_fixed_batch_traces=aggregate.authenticated,
+        protocol_nonconformance_traces=aggregate.protocol_nonconformance,
+        invalid_final_cardinality_traces=aggregate.invalid_final_cardinality,
+        direct_or_probable_contamination_traces=aggregate.direct_or_probable_contamination,
+        parse_or_schema_repair_exhaustion_traces=aggregate.parse_or_schema_repair_exhaustion,
+        aggregate_retry_count=aggregate.retry_count,
+        private_trace_identity_hashes=aggregate.identity_hashes,
         exception_stage="fixed-full-batch",
         safe_error_code=safe_code,
         causal_class=causal_class,
@@ -1123,6 +1311,17 @@ def validate_public_diagnostic(value: Mapping[str, object]) -> None:
         "task_level_metrics",
         "architecture_comparison",
         "model_comparison",
+        "model",
+        "provider",
+        "architecture",
+        "architecture_id",
+        "task_dimension",
+        "trace_identity_hashes",
+        "private_trace_identity_hashes",
+        "visible_output",
+        "structured_action",
+        "agent_action",
+        "prompt",
         "selected_call_key",
         "selected_trace_domain",
     }
@@ -1164,13 +1363,23 @@ def public_result(
         "actual_attempts": reconstruction.actual_attempts,
         "unique_logical_calls": reconstruction.unique_logical_calls,
         "completed_logical_calls": reconstruction.completed_logical_calls,
-        "recovered_attempts_by_provider": dict(reconstruction.recovered_attempts_by_provider),
-        "terminal_attempts_by_provider": dict(reconstruction.terminal_attempts_by_provider),
+        "recovered_attempts": sum(reconstruction.recovered_attempts_by_provider.values()),
+        "terminal_attempts": sum(reconstruction.terminal_attempts_by_provider.values()),
+        "response_ledger_correspondence_exact": (diagnosis.response_ledger_correspondence_exact),
+        "cap_guards_triggered": diagnosis.cap_guards_triggered,
         "completed_private_pairings": reconstruction.completed_private_pairings,
         "all_500_pairing_records_exist": reconstruction.all_500_pairing_records_exist,
+        "authenticated_fixed_batch_traces": diagnosis.authenticated_fixed_batch_traces,
+        "protocol_nonconformance_traces": diagnosis.protocol_nonconformance_traces,
+        "invalid_final_cardinality_traces": diagnosis.invalid_final_cardinality_traces,
+        "direct_or_probable_contamination_traces": (
+            diagnosis.direct_or_probable_contamination_traces
+        ),
+        "parse_or_schema_repair_exhaustion_traces": (
+            diagnosis.parse_or_schema_repair_exhaustion_traces
+        ),
         "fixed_full_batch_completion_marker": reconstruction.fixed_full_batch_completion_marker,
         "last_durable_stage": reconstruction.exact_last_durable_stage,
-        "selected_run_outputs_exist": reconstruction.all_selected_run_outputs_exist,
         "exception_stage": diagnosis.exception_stage,
         "safe_error_code": diagnosis.safe_error_code,
         "causal_class": diagnosis.causal_class,
@@ -1233,6 +1442,15 @@ def _integrity_stop_diagnosis() -> RetainedFixedBatchDiagnostic:
         selected_response_objects=0,
         selected_trace_objects=0,
         selected_trace_domain_hash=None,
+        response_ledger_correspondence_exact=False,
+        cap_guards_triggered=False,
+        authenticated_fixed_batch_traces=0,
+        protocol_nonconformance_traces=0,
+        invalid_final_cardinality_traces=0,
+        direct_or_probable_contamination_traces=0,
+        parse_or_schema_repair_exhaustion_traces=0,
+        aggregate_retry_count=0,
+        private_trace_identity_hashes=(),
         exception_stage="fixed-full-batch",
         safe_error_code="retained-integrity-mismatch",
         causal_class="retained-state-integrity-mismatch-stop",

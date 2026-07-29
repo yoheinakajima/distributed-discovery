@@ -73,14 +73,20 @@ def _envelope(
     )
 
 
-def _trace(*, model: str, retry_count: int, errors: Sequence[str]) -> Mapping[str, object]:
+def _trace(
+    *,
+    model: str,
+    retry_count: int,
+    errors: Sequence[str],
+    visible_output: str = "",
+) -> Mapping[str, object]:
     event: dict[str, object] = {
         "sequence": 0,
         "architecture_id": "isolated-private-agents",
         "agent_id": "AGENT-1",
         "round": 0,
         "visible_inputs": [],
-        "visible_output": "",
+        "visible_output": visible_output,
         "structured_action": None,
         "declared_tool_calls": [],
         "usage": {"input_tokens": 1, "output_tokens": 1, "cost_usd": "0.001"},
@@ -109,8 +115,18 @@ def _response(*, model: str) -> Mapping[str, object]:
     }
 
 
-def run_exact_scale_synthetic_fixture(repo: Path) -> Mapping[str, object]:
+def run_exact_scale_synthetic_fixture(
+    repo: Path,
+    *,
+    event_kind: str = "contamination",
+    event_index: int = 0,
+) -> Mapping[str, object]:
     """Exercise the live inspector at exact retained counts with disposable data."""
+
+    if event_kind not in {"contamination", "protocol", "none"}:
+        raise ValueError("unknown synthetic aggregate event")
+    if not 0 <= event_index < 450:
+        raise ValueError("synthetic aggregate event index is outside the full batch")
 
     with tempfile.TemporaryDirectory(prefix="ao0009-fixed-batch-diagnostic-") as temporary:
         root = Path(temporary) / "repair-confirmation-v3"
@@ -170,9 +186,9 @@ def run_exact_scale_synthetic_fixture(repo: Path) -> Mapping[str, object]:
         )
         usage_payload, usage_records = _ledger(events)
 
-        trace_specs: list[tuple[str, str, int, tuple[str, ...]]] = []
+        trace_specs: list[tuple[str, str, int, tuple[str, ...], str]] = []
         for model in ("gpt-5.4-2026-03-05", "claude-sonnet-4-6"):
-            trace_specs.append((f"fresh-raw-trace/public-canary/{model}", model, 0, ()))
+            trace_specs.append((f"fresh-raw-trace/public-canary/{model}", model, 0, (), ""))
         for index in range(50):
             model = "gpt-5.4-2026-03-05" if index % 2 == 0 else "claude-sonnet-4-6"
             trace_specs.append(
@@ -181,29 +197,37 @@ def run_exact_scale_synthetic_fixture(repo: Path) -> Mapping[str, object]:
                     model,
                     0,
                     (),
+                    "",
                 )
             )
         for index in range(450):
             model = "gpt-5.4-2026-03-05" if index % 2 == 0 else "claude-sonnet-4-6"
             errors: tuple[str, ...] = ()
             retry_count = 0
-            if index == 449:
-                model = "gpt-5.4-2026-03-05" if 3066 % 2 == 0 else "claude-sonnet-4-6"
-                errors = ("malformed JSON",)
-                retry_count = 1
+            visible_output = ""
+            if index == event_index and event_kind == "contamination":
+                visible_output = "answer_key from private holdout"
+            elif index == event_index and event_kind == "protocol":
+                errors = ("agent identity mismatch",)
             trace_specs.append(
                 (
                     f"raw-trace/fixed-full-batch/{model}/task-{index:03d}/architecture-{index % 5}",
                     model,
                     retry_count,
                     errors,
+                    visible_output,
                 )
             )
-        for index, (domain, model, retry_count, errors) in enumerate(trace_specs):
+        for index, (domain, model, retry_count, errors, visible_output) in enumerate(trace_specs):
             filename = f"{sha256_hex(domain.encode())}.sealed"
             payload = _envelope(
                 domain=domain,
-                value=_trace(model=model, retry_count=retry_count, errors=errors),
+                value=_trace(
+                    model=model,
+                    retry_count=retry_count,
+                    errors=errors,
+                    visible_output=visible_output,
+                ),
                 key=key,
                 nonce_number=10_000 + index,
             )
@@ -299,8 +323,13 @@ def run_exact_scale_synthetic_fixture(repo: Path) -> Mapping[str, object]:
             expected_lock=str(lock["lock_hash"]),
         )
         observed = public_result(diagnosis, repo=repo)
-        if observed["causal_class"] != "schema-repair-exhausted":
-            raise AssertionError("exact-scale fixture did not classify the selected failure")
+        expected_cause = {
+            "contamination": "contamination-policy-trigger",
+            "protocol": "protocol-contract-nonconformance",
+            "none": "state-transition-or-completion-marker-failure",
+        }[event_kind]
+        if observed["causal_class"] != expected_cause:
+            raise AssertionError("exact-scale fixture did not classify the aggregate failure")
         return {
             "status": "pass",
             "locked_objects": diagnosis.locked_objects,
@@ -321,6 +350,11 @@ def run_exact_scale_synthetic_fixture(repo: Path) -> Mapping[str, object]:
             "bounded_neighbor_records": diagnosis.bounded_neighbor_records,
             "selected_response_objects": diagnosis.selected_response_objects,
             "selected_trace_objects": diagnosis.selected_trace_objects,
+            "authenticated_fixed_batch_traces": diagnosis.authenticated_fixed_batch_traces,
+            "protocol_nonconformance_traces": diagnosis.protocol_nonconformance_traces,
+            "direct_or_probable_contamination_traces": (
+                diagnosis.direct_or_probable_contamination_traces
+            ),
             "retained_state_mutated": diagnosis.retained_state_mutated,
             "private_content_published": diagnosis.private_content_published,
             "operational_key_retained": diagnosis.operational_key_retained,

@@ -19,6 +19,11 @@ from distributed_discovery.benchmark.agents_v1.fixed_batch_diagnostic import (
     select_bounded_context,
     validate_public_contracts,
     validate_public_diagnostic,
+    verify_response_ledger_correspondence,
+    verify_trace_partition,
+)
+from distributed_discovery.benchmark.agents_v1.fixed_batch_diagnostic_fixture import (
+    run_exact_scale_synthetic_fixture,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -52,6 +57,7 @@ def _record(
     return {
         "sequence": sequence,
         "event_type": "provider-call",
+        "idempotency_key": f"{key}/attempt-{attempt}",
         "call_key": key,
         "transport_attempt": attempt,
         "status": status,
@@ -77,7 +83,9 @@ def _reconstruction() -> StructuralReconstruction:
         public_canary_traces=2,
         all_500_pairing_records_exist=True,
         fixed_full_batch_completion_marker=False,
-        exact_last_durable_stage="fixed-full-batch-quarantined-before-completion-marker",
+        exact_last_durable_stage=(
+            "fixed-full-batch-quarantined-after-prefix-before-completion-marker"
+        ),
         all_selected_run_outputs_exist=True,
     )
 
@@ -102,6 +110,15 @@ def _diagnosis() -> RetainedFixedBatchDiagnostic:
         selected_response_objects=1,
         selected_trace_objects=1,
         selected_trace_domain_hash=f"sha256:{'b' * 64}",
+        response_ledger_correspondence_exact=True,
+        cap_guards_triggered=False,
+        authenticated_fixed_batch_traces=450,
+        protocol_nonconformance_traces=0,
+        invalid_final_cardinality_traces=0,
+        direct_or_probable_contamination_traces=0,
+        parse_or_schema_repair_exhaustion_traces=0,
+        aggregate_retry_count=0,
+        private_trace_identity_hashes=tuple(f"sha256:{index:064x}" for index in range(450)),
         exception_stage="fixed-full-batch",
         safe_error_code="bounded-evidence-unknown",
         causal_class="unknown-within-retained-evidence",
@@ -117,10 +134,11 @@ def _diagnosis() -> RetainedFixedBatchDiagnostic:
 
 def test_public_contracts_freeze_exact_taxonomy_and_ceilings() -> None:
     observed = validate_public_contracts(ROOT)
-    assert observed["taxonomy_classes"] == 14
+    assert observed["taxonomy_classes"] == 15
     assert observed["response_envelopes"] == 3067
     assert observed["trace_envelopes"] == 502
-    assert observed["selected_encrypted_objects_maximum"] == 3
+    assert observed["aggregate_fixed_batch_trace_decryptions"] == 450
+    assert observed["selected_encrypted_objects_maximum"] == 452
     assert observed["private_state_reads"] == 0
 
 
@@ -142,28 +160,27 @@ def test_public_contracts_freeze_exact_taxonomy_and_ceilings() -> None:
             "provider-http-terminal",
         ),
         (
-            CausalEvidence(
-                selected_trace_errors=("malformed JSON",),
-                selected_trace_retry_count=1,
-            ),
-            "schema-repair-exhausted",
-        ),
-        (
-            CausalEvidence(selected_trace_errors=("malformed JSON",)),
-            "returned-output-parse-failure",
-        ),
-        (
-            CausalEvidence(selected_trace_errors=("agent identity mismatch",)),
+            CausalEvidence(protocol_nonconformance_traces=1),
             "protocol-contract-nonconformance",
         ),
         (
-            CausalEvidence(selected_trace_errors=("final action cardinality must equal one",)),
+            CausalEvidence(
+                protocol_nonconformance_traces=1,
+                invalid_final_cardinality_traces=1,
+            ),
             "final-action-cardinality-failure",
         ),
         (
             CausalEvidence(
+                protocol_nonconformance_traces=1,
+                invalid_final_cardinality_traces=1,
+                direct_or_probable_contamination_traces=1,
+            ),
+            "contamination-policy-trigger",
+        ),
+        (
+            CausalEvidence(
                 all_outputs_exist=True,
-                direct_trace_correspondence=True,
                 safe_exception_code_persisted=True,
             ),
             "state-transition-or-completion-marker-failure",
@@ -205,6 +222,11 @@ def test_reconstruction_proves_all_500_pairing_records_without_content() -> None
             "quarantine_stage": "fixed-full-batch",
         },
         traces,
+        (
+            {
+                "operation": "fresh-private-ten-percent-prefix-pass",
+            },
+        ),
     )
     assert observed.actual_attempts == 3
     assert observed.unique_logical_calls == 2
@@ -256,6 +278,8 @@ def test_public_result_excludes_selected_private_identifiers() -> None:
     assert observed["all_500_pairing_records_exist"] is True
     assert "selected_call_key_hash" not in observed
     assert "selected_trace_domain_hash" not in observed
+    assert "private_trace_identity_hashes" not in observed
+    assert "recovered_attempts_by_provider" not in observed
     validate_public_diagnostic(observed)
 
 
@@ -264,6 +288,14 @@ def test_public_redaction_rejects_private_paths_and_performance() -> None:
         validate_public_diagnostic({"task_level_metrics": {"score": 1}})
     with pytest.raises(ValueError, match="host path"):
         validate_public_diagnostic({"detail": "/Users/example/private"})
+    for leaked in (
+        {"raw_output": "private"},
+        {"model": "snapshot"},
+        {"architecture_id": "isolated"},
+        {"trace_identity_hashes": ["sha256:" + "a" * 64]},
+    ):
+        with pytest.raises(ValueError, match="forbidden"):
+            validate_public_diagnostic(leaked)
 
 
 def test_prohibited_custody_and_key_reads_fail_closed(tmp_path: Path) -> None:
@@ -354,3 +386,84 @@ def test_hash_chained_ledger_rejects_mutation() -> None:
     lines[1] = diagnostic.canonical_json(corrupted)
     with pytest.raises(ValueError, match="hash mismatch"):
         diagnostic._validate_ledger(b"\n".join(lines) + b"\n")
+
+
+def _exact_attempt_fixture() -> tuple[list[dict[str, object]], list[EnvelopeMetadata]]:
+    records: list[dict[str, object]] = []
+    envelopes: list[EnvelopeMetadata] = []
+    for index in range(3067):
+        key = f"call-{index:064x}"
+        records.append(_record(index + 1, key=key))
+        envelopes.append(
+            _envelope(
+                f"provider-response/{key}/attempt-0",
+                index,
+                object_class="response",
+            )
+        )
+    return records, envelopes
+
+
+def test_response_correspondence_rejects_substitution_orphan_and_duplicate() -> None:
+    records, envelopes = _exact_attempt_fixture()
+    assert verify_response_ledger_correspondence(records, envelopes) is True
+
+    substituted = list(envelopes)
+    substituted[-1] = _envelope(
+        "provider-response/call-orphan/attempt-0",
+        len(substituted),
+        object_class="response",
+    )
+    assert verify_response_ledger_correspondence(records, substituted) is False
+
+    orphaned = [*envelopes, _envelope("provider-response/call-orphan/attempt-0", 4000, "response")]
+    assert verify_response_ledger_correspondence(records, orphaned) is False
+
+    duplicated = list(envelopes)
+    duplicated[-1] = duplicated[0]
+    assert verify_response_ledger_correspondence(records, duplicated) is False
+
+    conflicting = list(records)
+    conflicting[-1] = {**conflicting[-1], "idempotency_key": "conflict/attempt-0"}
+    with pytest.raises(ValueError, match="conflicts"):
+        verify_response_ledger_correspondence(conflicting, envelopes)
+
+
+def test_trace_partition_rejects_one_missing_domain() -> None:
+    traces = [
+        *(_envelope(f"fresh-raw-trace/public-canary/model-{index}", index) for index in range(2)),
+        *(
+            _envelope(f"raw-trace/private-prefix/model/task-{index}/architecture", index + 2)
+            for index in range(50)
+        ),
+        *(
+            _envelope(
+                f"raw-trace/fixed-full-batch/model/task-{index}/architecture",
+                index + 52,
+            )
+            for index in range(450)
+        ),
+    ]
+    assert verify_trace_partition(traces) is True
+    assert verify_trace_partition(traces[:-1]) is False
+
+
+@pytest.mark.parametrize("event_kind", ["contamination", "protocol"])
+@pytest.mark.parametrize("event_index", [0, 225, 449])
+def test_exact_scale_aggregate_event_is_found_at_any_trace_position(
+    event_kind: str,
+    event_index: int,
+) -> None:
+    observed = run_exact_scale_synthetic_fixture(
+        ROOT,
+        event_kind=event_kind,
+        event_index=event_index,
+    )
+    expected = (
+        "contamination-policy-trigger"
+        if event_kind == "contamination"
+        else "protocol-contract-nonconformance"
+    )
+    assert observed["causal_class"] == expected
+    assert observed["selected_trace_objects"] == 450
+    assert observed["authenticated_fixed_batch_traces"] == 450

@@ -17,23 +17,37 @@ structural_encrypted_metadata:
   encrypted-provider-responses:
     exact_files: 3067
     allowed_fields: [relative_name, mode, size, mtime_ns, envelope_domain, nonce_length, ciphertext_sha256, associated_data_sha256]
+    correspondence_rule: complete-ledger-attempt-identity-set-equals-complete-envelope-domain-set
     ciphertext_decryption_allowed: false
   encrypted-traces:
     exact_files: 502
     allowed_fields: [relative_name, mode, size, mtime_ns, envelope_domain, nonce_length, ciphertext_sha256, associated_data_sha256]
     expected_domains: {public_canary: 2, private_prefix: 50, fixed_full_batch: 450}
-    ciphertext_decryption_allowed: false
+    ciphertext_decryption_allowed: exactly-450-fixed-full-batch-traces-aggregate-extraction-only
 bounded_failure_context:
   selection_rule: unique-terminal-logical-call-else-last-durable-logical-call-before-batch-quarantine
   exact_failed_logical_calls: 1
   preceding_attempt_or_orchestration_records_maximum: 2
   following_attempt_or_orchestration_records_maximum: 2
   selected_provider_response_objects_maximum: 2
-  selected_trace_objects_maximum: 1
-  selected_encrypted_objects_total_maximum: 3
+  aggregate_fixed_full_batch_trace_objects_exact: 450
+  selected_encrypted_objects_total_maximum: 452
   operational_keys_maximum: 1
   operational_key_bytes: 32
-  operational_key_use: transient-selected-object-authenticated-decryption-only
+  operational_key_use: transient-two-selected-responses-plus-exactly-450-fixed-full-batch-traces
+aggregate_trace_extraction:
+  allowed_fields:
+    - trace-authentication-status
+    - fixed-full-batch-stage-identity
+    - protocol-errors-present
+    - invalid-final-action-cardinality-present
+    - direct-or-probable-contamination-present
+    - parse-or-schema-repair-failure-present
+    - retry-count
+    - hash-only-trace-identity
+  retained_nonpublic: aggregate-counters-and-hash-only-identities
+  public: aggregate-counters-only
+  raw_trace_lifetime: transient-process-memory-only
 outside_git_outputs:
   one_use_marker_maximum: 1
   detailed_private_diagnostic_maximum: 1
@@ -48,14 +62,21 @@ prohibited_reads:
   - task-or-answer-plaintext
   - hidden-targets
   - unrelated-provider-response-ciphertext
-  - unrelated-trace-ciphertext
+  - canary-or-prefix-trace-ciphertext
+  - raw-trace-content-retention
+  - raw-provider-output
+  - prompt-text
+  - task-text
+  - answer-or-hidden-target
+  - agent-action
+  - task-model-provider-or-architecture-dimension
   - task-level-performance
   - architecture-or-model-comparisons
   - credentials
   - private-host-paths
   - owner-authorizations-other-than-the-exact-AO-0009-gate
 second_read: fail-closed
-bulk_unseal: prohibited
+bulk_unseal: prohibited-except-exact-aggregate-only-450-fixed-full-batch-trace-authentication
 provider_calls: 0
 credential_reads: 0
 spend_usd: "0"
