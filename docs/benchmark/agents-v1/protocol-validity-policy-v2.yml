@@ -1,0 +1,209 @@
+schema_version: treasurebench-agents-v1-protocol-validity-policy-v2
+policy_version: treasurebench-agents-v1-protocol-validity-policy-v2
+status: prospective-frozen-not-executed
+owner_study: DD-010
+authority_task: AO-0010
+effective_scope: future-campaigns-that-explicitly-register-policy-v2
+registered_campaigns: [treasurebench-agents-v1-repair-confirmation-v4]
+historical_policy_or_schema_rewrite: false
+historical_campaign_reclassification: false
+status_model:
+  statuses:
+    - batch-integrity-valid
+    - provider-terminal-missing
+    - protocol-valid
+    - protocol-invalid
+  batch_integrity_status: batch-integrity-valid
+  terminal_pairing_statuses: [provider-terminal-missing, protocol-valid, protocol-invalid]
+  exactly_one_terminal_pairing_status: true
+  provider_terminal_missing_is_protocol_invalid: false
+  protocol_invalid_is_batch_integrity_failure: false
+classification:
+  batch-integrity-valid: All custody, identity, cap, ledger, response, trace, pairing, inventory, lock, unseal-order, contamination, verification, redaction, and retained-state invariants pass.
+  provider-terminal-missing: The registered bounded transport attempts end without a completed provider response for a required logical call, leaving the intended pairing without a completed terminal trace.
+  protocol-valid: A completed provider response yields a terminal trace that independently satisfies the registered prompt, information, message, tool, action, exactly-one-final-action, capacity, and range contract.
+  protocol-invalid: A completed provider response yields a terminal trace that remains nonconforming after the one registered schema-only repair or otherwise violates the registered protocol contract.
+precedence:
+  - Evaluate batch integrity independently from evaluated-system protocol validity.
+  - Classify provider-terminal-missing before protocol validity because no completed provider response exists.
+  - Run independent Method C before any performance metric interpretation.
+  - Classify every completed intended pairing as protocol-valid or protocol-invalid.
+retry:
+  transport:
+    maximum_attempts: 2
+    same_logical_request_only: true
+    bounded_classes: [timeout, transient-transport, invalid-provider-json, rate-limit, transient-provider]
+    provider_sdk_automatic_retries: disabled
+  schema:
+    maximum_repairs: 1
+    repair_receives: [validation-error-class, schema]
+    prompt_or_task_change: false
+  semantic_answer_retries: 0
+  outcome_dependent_retries: 0
+  silent_normalization: false
+  replacement_pairings: 0
+action_contract:
+  final_action_cardinality: exactly-one-per-required-agent
+  nonfinal_proposals_scored: false
+  invalid_action_parsed_or_credited: false
+  constructed_replacement_action_or_portfolio: false
+protocol_invalid_handling:
+  preserve_terminal_trace: true
+  preserve_safe_protocol_classification: true
+  retain_in_all_intended_pairing_denominators: true
+  replace_or_rerun: false
+  parse_invalid_action: false
+  invalid_action_credit: false
+  silently_construct_valid_portfolio: false
+  report_protocol_conformance_separately: true
+  operational_no-valid-action-credit: true
+metric_bounds:
+  interpretation: Operational no-action credit is not an unconditional point estimate of latent architecture performance; the registered feasible interval carries protocol-invalid pairings into all-pairing contrasts.
+  exact_metric_requires_valid_protocol_output: true
+  metrics:
+    - metric_id: group-discovery
+      invalid_operational_credit: "0"
+      lower_rule: "0"
+      upper_rule: "1"
+    - metric_id: distinct-action-coverage
+      invalid_operational_credit: "0"
+      lower_rule: "0"
+      upper_rule: "1"
+    - metric_id: duplication
+      invalid_operational_credit: none-no-valid-portfolio
+      lower_rule: "0"
+      upper_rule: "1"
+    - metric_id: planner-regret
+      invalid_operational_credit: none-no-valid-portfolio
+      lower_rule: exact-planner-comparator-minus-1
+      upper_rule: exact-planner-comparator
+    - metric_id: private-baseline-regret
+      invalid_operational_credit: none-no-valid-portfolio
+      lower_rule: exact-private-baseline-minus-1
+      upper_rule: exact-private-baseline
+    - metric_id: recovery-budget-attainment
+      invalid_operational_credit: "0"
+      lower_rule: "0"
+      upper_rule: "1"
+    - metric_id: source-diversity
+      invalid_operational_credit: "0"
+      lower_rule: "0"
+      upper_rule: "1"
+    - metric_id: communication-induced-action-compression
+      invalid_operational_credit: none-no-valid-paired-portfolio
+      lower_rule: "-1"
+      upper_rule: "1"
+    - metric_id: distance-from-best-registered-equilibrium
+      invalid_operational_credit: none-no-valid-portfolio
+      lower_rule: "0"
+      upper_rule: "1"
+    - metric_id: distance-from-worst-registered-equilibrium
+      invalid_operational_credit: none-no-valid-portfolio
+      lower_rule: "0"
+      upper_rule: "1"
+    - metric_id: invalid-action-rate
+      invalid_operational_credit: "1"
+      lower_rule: "1"
+      upper_rule: "1"
+    - metric_id: protocol-compliance
+      invalid_operational_credit: "0"
+      lower_rule: "0"
+      upper_rule: "0"
+    - metric_id: calls
+      invalid_operational_credit: exact-ledger-value
+      lower_rule: exact-ledger-value
+      upper_rule: exact-ledger-value
+    - metric_id: tokens
+      invalid_operational_credit: exact-ledger-value-when-reported
+      lower_rule: exact-ledger-value-when-reported
+      upper_rule: exact-ledger-value-when-reported
+    - metric_id: cost
+      invalid_operational_credit: exact-ledger-value
+      lower_rule: exact-ledger-value
+      upper_rule: exact-ledger-value
+  pairing_interval:
+    protocol-valid: degenerate-at-exact-registered-metric
+    protocol-invalid: metric-specific-lower-and-upper-rules
+  architecture_contrast:
+    intended_pairing_denominator_required: true
+    paired_lower_rule: left-lower-minus-right-upper
+    paired_upper_rule: left-upper-minus-right-lower
+    aggregate_lower_rule: mean-of-all-intended-paired-lowers
+    aggregate_upper_rule: mean-of-all-intended-paired-uppers
+    invalid_pairing_dropped: false
+  independent_reconstruction: required
+  valid_output_conditional:
+    allowed: true
+    role: secondary-selection-conditioned-diagnostic-only
+    unconditional_architecture_effect_label: prohibited
+  complete_case_unconditional_effect: prohibited
+batch_acceptance:
+  protocol_invalid_alone_quarantines_batch: false
+  global_protocol_conformance_threshold: null
+  engineering_completion_requires:
+    - both-public-canaries-pass
+    - fresh-custody-pass
+    - all-500-intended-pairings-have-one-unique-terminal-protocol-valid-or-protocol-invalid-trace
+    - zero-provider-terminal-missing
+    - exact-response-ledger-trace-identity-correspondence
+    - complete-pairings
+    - zero-contamination-findings
+    - execution-and-cost-caps-hold
+    - output-lock-pass
+    - no-call-after-lock
+    - post-lock-unseal-and-commitment-verification-pass
+    - method-a-and-method-b-agree-where-metrics-defined
+    - method-c-classifies-every-pairing
+    - independent-metric-bound-calculations-agree
+    - corruptions-pass
+    - redaction-pass
+  batch_quarantine_triggers:
+    - provider-terminal-missing
+    - missing-or-duplicate-pairing
+    - response-ledger-integrity-failure
+    - trace-inventory-integrity-failure
+    - contamination
+    - cap-breach
+    - execution-identity-mismatch
+    - output-lock-failure
+    - unseal-before-lock
+    - method-implementation-disagreement
+    - independent-bound-reconstruction-disagreement
+    - unsafe-retained-state
+stopping:
+  fixed_intended_pairings: 500
+  outcome_dependent_stopping: false
+  rerun_until-preferred-conformance-rate: false
+  later_informativeness_criterion: width-of-registered-all-pairing-bounds
+reporting:
+  composite_score: null
+  provider_or_model_ranking: false
+  leaderboard: false
+  public_closeout_allowed:
+    - engineering-identities
+    - aggregate-protocol-validity-counts
+    - operational-errors
+    - usage-and-cost
+    - commitments
+    - verification-and-redaction
+    - engineering-completion-or-quarantine
+  public_closeout_prohibited:
+    - task-level-performance
+    - model-level-performance
+    - provider-level-performance
+    - architecture-level-performance
+    - family-level-performance
+    - private-task-content
+    - raw-provider-output
+    - ranking
+    - composite
+    - leaderboard
+scientific_boundary:
+  engineering_only: true
+  dd023: false
+  claim: false
+  immutable_scientific_run: false
+  evidence_or_proof_promotion: false
+  paper_result: false
+  release_or_submission: false
+  base_campaign: false

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TreasureBench Agents v1 repair-confirmation v4 execution budget",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "status", "campaign_id", "batch_id", "currency", "graph", "costs", "request_caps", "policy_caps", "route_caps", "activity"],
+  "properties": {
+    "schema_version": {"const": "treasurebench-agents-v1-fresh-pilot-v4-execution-budget-v1"},
+    "status": {"const": "frozen-zero-activity"},
+    "campaign_id": {"const": "treasurebench-agents-v1-repair-confirmation-v4"},
+    "batch_id": {"const": "tb-agents-v1-repair-confirmation-v4-b01"},
+    "currency": {"const": "USD"},
+    "graph": {"const": {"matrix_runs": 500, "matrix_calls": 3014, "public_canary_calls": 2, "normal_calls": 3016, "maximum_calls": 5200}},
+    "costs": {"const": {"expected": "11.51", "conservative": "15", "hard_cap": "25", "OpenAI_cap": "10", "Anthropic_cap": "15"}},
+    "request_caps": {"const": {"output_tokens": 256, "transport_attempts": 2, "schema_repairs": 1}},
+    "policy_caps": {"const": {"semantic_answer_retries": 0, "replacement_pairings": 0, "protocol_invalid_pairings": 500, "provider_terminal_missing": 0}},
+    "route_caps": {"const": {"OpenAI": {"calls": 2600, "input_tokens": 1680000, "output_tokens": 386048}, "Anthropic": {"calls": 2600, "input_tokens": 3000000, "output_tokens": 386048}}},
+    "activity": {"const": {"calls": 0, "spend": "0", "credentials_read": 0, "private_objects_created": 0}}
+  }
+}

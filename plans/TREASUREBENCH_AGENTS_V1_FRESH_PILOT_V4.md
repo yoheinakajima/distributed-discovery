@@ -163,10 +163,10 @@ implementation disagreement; or unsafe retained state.
 - **M0 — complete:** registration, decision-delta routing, exact identity
   allocation, issue, branch, fixed contract, living plan, and first
   authority-bearing commit.
-- **M1 — active:** prospective policy v2, versioned v4 request, allocation,
+- **M1 — complete:** prospective policy v2, versioned v4 request, allocation,
   provider audit, private-state, execution-budget, acceptance, and corruption
   contracts.
-- **M2 — pending:** v4 runtime, protocol classification, metric bounds,
+- **M2 — active:** v4 runtime, protocol classification, metric bounds,
   independent reconstruction, custody, trace correspondence, output lock,
   redaction, and deterministic closeout.
 - **M3 — pending:** full 50-task/500-pairing rehearsal, zero/mixed/all-invalid
@@ -193,7 +193,7 @@ implementation disagreement; or unsafe retained state.
 - [x] Collision-check AO-0010 and all prospective v4 identities.
 - [x] Create the issue and branch, add PM-0038 and the fixed task contract,
   validate M0, commit, and push.
-- [ ] Complete M1 policy and versioned execution contracts.
+- [x] Complete M1 policy and versioned execution contracts.
 - [ ] Complete M2 implementation and focused acceptance.
 - [ ] Complete M3 rehearsals and corruption suite.
 - [ ] Complete M4 full validation and draft PR.
@@ -241,6 +241,16 @@ implementation disagreement; or unsafe retained state.
   scientific authority; program memory accepts 38 records with zero adopted
   unrouted items, duplicate canonical records, or raw transcripts; diff
   checks pass. Begin M1 policy and versioned execution contracts.
+- `2026-07-29T03:08:46Z`: complete M1. Five new machine-readable surfaces
+  validate against forward-only schemas: policy v2, request, allocation,
+  execution budget, and 76-case corruption registry. Policy v2 contains the
+  exact four statuses and 15 registered metric-bound rules. The unchanged
+  3,016-call graph at current official standard prices reproduces USD
+  11.509696 unrounded, USD 11.51 registered expected, USD 15 conservative,
+  USD 25 hard, USD 10/15 provider caps, and 5,200 calls. Provider audit,
+  Agent Operations, program memory, TreasureBench naming, and diff checks pass
+  with zero credentials, private objects, provider calls, or spend. Begin M2
+  implementation and focused verification.
 
 ## Validation strategy
 
@@ -279,9 +289,11 @@ authorization.
 ## Artifacts produced
 
 Issue #208, the task branch, this living plan, PM-0038, the fixed task
-contract, and the master-plan continuation are created. Policy, schemas,
-request, allocation, provider audit, budget, implementation, tests, rehearsal
-records, draft PR, execution freeze, owner gate, and handoff remain pending.
+contract, master-plan continuation, prospective policy v2 and public
+explanation, versioned v4 request/allocation/private-state/budget/corruption
+contracts, current official provider audit, and recalculated budget are
+created. Implementation, tests, rehearsal records, draft PR, execution
+freeze, owner gate, and handoff remain pending.
 
 ## Blockers
 
