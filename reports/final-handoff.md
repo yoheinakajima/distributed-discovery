@@ -1,4 +1,37 @@
-# Final handoff — TreasureBench agent protocol policy decision required
+# Final handoff — TreasureBench policy v2 frozen and fresh v4 quarantined
+
+## AO-0010 fresh repair-confirmation v4 closeout (2026-07-29)
+
+AO-0010 adopted forward-only protocol-validity policy v2 and ran one wholly
+fresh DD-010 engineering campaign
+`treasurebench-agents-v1-repair-confirmation-v4`, batch
+`tb-agents-v1-repair-confirmation-v4-b01`, from frozen execution commit
+`5289882dca6b8912a0518bba72aba1f4d595c2a8`.
+
+Current official provider surfaces, the exact authorization, execution
+ancestry, fixed contract, and all 24 protected hashes revalidated. Both public
+canaries and wholly fresh 50-task custody passed. The private prefix then
+stopped on `provider-terminal-missing`. Provider access closed after 116
+calls, 58,636 input tokens, 13,275 output tokens, and USD 0.3470610.
+
+The verified output lock covers 150 retained objects under
+`sha256:88c442bf6cb5e1b99a893808d423b488d2b1062543a49fcfb32b77f276abaa1c`.
+No call followed the lock and no material was unsealed. No replacement,
+splice, semantic retry, invalid credit, real-batch protocol classification,
+Methods A/B/C, metric bounds, or performance interpretation occurred.
+
+The complete synthetic 500-pairing Methods A/B/C and bounds rehearsal, all 104
+relevant corruptions, 64 focused tests, all 725 repository tests, and every
+governance and site check passed. PR #209 passed both exact-head CI runs and
+squash-merged as `f3bba09c6b21ae4267403ac167c4d12e71c969f4`.
+Exact-merge CI and Pages passed, all five live routes returned HTTP 200 with
+reconciled content, issue #208 is closed completed after correcting its
+premature merge-keyword closure, and `main` is synchronized.
+
+V4 and every prior campaign are permanently closed. This is DD-010
+engineering quarantine only and creates no DD-023, claim, scientific run,
+performance result, ranking, composite, release, submission, or base-campaign
+authority.
 
 ## AO-0009 aggregate fixed-batch diagnosis (2026-07-29)
 

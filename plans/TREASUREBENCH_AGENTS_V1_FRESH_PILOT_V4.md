@@ -192,11 +192,11 @@ implementation disagreement; or unsafe retained state.
   head.
 - **M6 — complete:** committed generic owner gate, live authorization-free gate
   validation, schema-valid handoff, and exact stop.
-- **M7 — active authorized quarantine closeout:** the exact authorization,
-  provider re-audit, canaries, fresh custody, private-prefix failure, provider
-  closure, and 150-object output lock are complete. Public-safe
-  reconciliation, validation, merge, CI/Pages, live-route verification, issue
-  closure, synchronized main, and the final schema-valid handoff remain.
+- **M7 — complete:** exact authorization, provider re-audit, canaries, fresh
+  custody, honest private-prefix quarantine, provider closure, 150-object
+  output lock, public-safe reconciliation, validation, merge, CI/Pages, live
+  routes, corrected issue closure, synchronized main, and the final
+  schema-valid handoff.
 
 ## Progress checklist
 
@@ -222,9 +222,9 @@ implementation disagreement; or unsafe retained state.
   custody, honest private-prefix quarantine, provider closure, and the pushed
   output-lock commitment.
 - [x] Complete public-safe reconciliation and the full validation wall.
-- [ ] Complete PR readiness and squash merge, post-merge CI/Pages and live
-  routes, issue closure, main synchronization, and the final schema-valid
-  handoff.
+- [x] Complete PR readiness and squash merge, post-merge CI/Pages and live
+  routes, corrected issue closure, main synchronization, and the final
+  schema-valid handoff.
 
 ## Discoveries and surprises
 
@@ -389,6 +389,16 @@ implementation disagreement; or unsafe retained state.
   TreasureBench naming, site safety, release readiness, and offline
   compendium verification pass. No retained v4 private object is read or
   unsealed.
+- `2026-07-29T16:04:42Z`: complete administrative closeout. PR #209 passes
+  exact-head CI runs `30467912406` and `30467913978`, then squash-merges as
+  `f3bba09c6b21ae4267403ac167c4d12e71c969f4`. Exact-merge CI
+  `30468226939` and Pages `30468228065` pass. The root, program, historical
+  Agents v1, canonical TreasureBench Agents v1, and DD-010 study routes all
+  return HTTP 200 with the v4 provider-terminal quarantine. The merge keyword
+  auto-closes issue #208 too early; remove the keyword, reopen the issue, and
+  close it completed only after the required post-merge checks and route
+  verification. Local `main` matches `origin/main`. Render the final
+  schema-valid handoff.
 
 ## Validation strategy
 
@@ -465,5 +475,6 @@ consequential action. The later exact authorization produced one wholly fresh
 v4 engineering attempt that passed canaries and custody, then honestly
 quarantined at the private prefix on a missing provider terminal. Provider
 access is closed, 150 retained objects are locked, and no unseal or scientific
-or performance evidence exists. Final outcome remains pending only the
-authorized administrative closeout.
+or performance evidence exists. PR #209 is merged, exact-merge CI and Pages
+pass, all five live routes agree, issue #208 is closed completed after the
+ordering correction, `main` is synchronized, and AO-0010 is complete.

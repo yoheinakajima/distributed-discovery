@@ -1,6 +1,6 @@
 # Master execution plan
 
-## Active closeout — AO-0010 protocol-validity policy v2 and fresh pilot v4 (2026-07-29)
+## Completed continuation — AO-0010 protocol-validity policy v2 and fresh pilot v4 (2026-07-29)
 
 Issue #208, branch `codex/treasurebench-agents-v1-fresh-pilot-v4`, fixed task
 contract `tasks/treasurebench-agents-v1-fresh-pilot-v4.yml`, and living
@@ -42,7 +42,12 @@ classification, Methods A/B/C, metric bounds, performance interpretation,
 DD-023, claim, scientific run, paper result, ranking, composite, release,
 submission, or base campaign exists. Only public-safe validation, merge,
 CI/Pages, live-route verification, issue closure, main synchronization, and
-the final schema-valid handoff remain authorized.
+the final schema-valid handoff were the only remaining authorized actions.
+PR #209 passed both exact-head checks and squash-merged as
+`f3bba09c6b21ae4267403ac167c4d12e71c969f4`; exact-merge CI and Pages
+passed, all five named live routes returned HTTP 200 with reconciled content,
+issue #208 closed completed after correcting its premature merge-keyword
+closure, and `main` synchronized exactly. AO-0010 is complete.
 
 ## Completed continuation — AO-0009 AO-0008 fixed-full-batch adjudication (2026-07-29)
 

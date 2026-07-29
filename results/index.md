@@ -13,6 +13,13 @@ The M9 acceptance reproduction is `baseline/20260720T202314Z_DD-000_88613408_217
 
 Milestone A changed public licensing, deployment, and GitHub organization only. Later milestones add new immutable run IDs without altering earlier provenance.
 
+AO-0010's protocol-validity policy v2 and fresh v4 quarantine are
+engineering-only and create no scientific run or result-index entry. V4
+stopped at the private prefix on `provider-terminal-missing`, closed provider
+access after 116 calls and USD 0.3470610, and preserved 150 locked objects
+without unsealing. The immutable inventory remains 51 manifests and 48 passing
+runs.
+
 AO-0009's one-use aggregate fixed-batch diagnostic is engineering-only and
 creates no scientific run or result-index entry. Its public-safe protocol
 policy disposition is recorded in

@@ -1,9 +1,9 @@
-# Project status — TreasureBench policy v2 and fresh v4 owner gate
+# Project status — TreasureBench policy v2 and fresh v4 quarantine
 
 Date: 2026-07-29 (America/Los_Angeles).
 
-AO-0010, issue #208 and draft PR #209, adopt the owner-selected prospective
-protocol-validity policy v2 and prepare one wholly fresh v4 DD-010 engineering
+AO-0010, issue #208 and PR #209, adopt the owner-selected forward-only
+protocol-validity policy v2 and execute one wholly fresh v4 DD-010 engineering
 campaign, `treasurebench-agents-v1-repair-confirmation-v4`, batch
 `tb-agents-v1-repair-confirmation-v4-b01`. Historical policies, schemas,
 campaigns, locks, authorizations, and decisions remain immutable.
@@ -18,7 +18,7 @@ Registered metric-specific feasible bounds and architecture-contrast bounds
 cover all intended pairings. Complete-case estimates cannot be presented as
 unconditional architecture effects, and no composite or ranking is created.
 
-Authorization-free validation passes the complete 50-task/500-pairing
+Authorization-free validation passed the complete 50-task/500-pairing
 rehearsal; zero, mixed, and all-invalid batches; invalid events in first,
 middle, and final positions; Methods A/B/C; 6,400 pairing metric intervals;
 120 contrast bounds; independent bound reconstruction; 104 relevant
@@ -27,14 +27,26 @@ cleanup; 62 focused tests; and all 725 repository tests. Provider-terminal and
 integrity failures still quarantine, while protocol-invalid traces alone do
 not.
 
-AO-0010 execution is frozen at
-`5289882dca6b8912a0518bba72aba1f4d595c2a8`. Its generic owner gate is
-committed, pushed, and live-validated without creating an authorization, and
-the task is stopped there. No credential, real private seed, task, answer, key,
-nonce, ciphertext, commitment, provider call, spend, or unseal has occurred,
-and no performance or scientific evidence exists. The later gate, if
-explicitly authorized, covers only the normal engineering-complete or honest-
-quarantine DD-010 path.
+AO-0010 execution was frozen at
+`5289882dca6b8912a0518bba72aba1f4d595c2a8`. After the exact generic owner
+authorization and provider re-audit, both public canaries and wholly fresh
+50-task custody passed. The private prefix stopped on
+`provider-terminal-missing`. Provider access closed after 116 calls, 58,636
+input tokens, 13,275 output tokens, and USD 0.3470610.
+
+The verified output lock covers 150 retained objects under
+`sha256:88c442bf6cb5e1b99a893808d423b488d2b1062543a49fcfb32b77f276abaa1c`.
+No call followed the lock and no material was unsealed. No replacement,
+splice, semantic retry, invalid credit, real-batch protocol classification,
+Methods A/B/C, metric bounds, or performance interpretation occurred. The
+campaign and batch are permanently quarantined.
+
+PR #209 passed both exact-head CI runs and squash-merged as
+`f3bba09c6b21ae4267403ac167c4d12e71c969f4`. Exact-merge CI and Pages
+passed; all five named live routes returned HTTP 200 with reconciled v4
+content; issue #208 is closed completed after correcting its premature
+merge-keyword closure; and `main` synchronized exactly. This creates no
+performance or scientific evidence.
 
 AO-0009's exact R2 owner gate and one-use aggregate diagnostic completed. The
 diagnostic authenticated all 450 fixed-full-batch traces and verified the
