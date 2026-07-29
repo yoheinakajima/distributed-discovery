@@ -182,3 +182,19 @@ was unsealed and no call followed the lock. The campaign and batch are
 permanently quarantined. This is engineering disposition only and creates no
 scientific, comparative, ranking, paper, release, submission, or base-campaign
 state.
+
+## AO-0009 aggregate fixed-batch diagnostic boundary
+
+AO-0009 used the additive R2 authority exactly once. Its aggregate-only read
+authenticated all 450 fixed-full-batch traces and verified the output lock,
+inventory, append-only ledgers, complete response identities, unique trace
+partition, all private pairing records, and retained immutability. The read
+authority is permanently closed.
+
+The public aggregate selects `agent-protocol-policy-decision-required`: 32
+traces record protocol nonconformance and 32 record parse/schema-repair
+exhaustion, while terminal-provider, contamination, final-cardinality, cap,
+and integrity counters are zero. AO-0009 does not change the fail-closed
+protocol or authorize another private evaluation. Either action requires a
+separate explicit owner task; any private evaluation also requires wholly new
+identities, execution freeze, and owner gate. No v4 identity is registered.

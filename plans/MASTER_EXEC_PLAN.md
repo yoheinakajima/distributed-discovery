@@ -1,6 +1,6 @@
 # Master execution plan
 
-## Active continuation — AO-0009 AO-0008 fixed-full-batch adjudication (2026-07-28)
+## Active closeout — AO-0009 AO-0008 fixed-full-batch adjudication (2026-07-29)
 
 Issue #206, branch
 `codex/treasurebench-ao0008-fixed-batch-adjudication`, fixed contract
@@ -31,17 +31,24 @@ the closed provider phase, zero post-lock calls, no unsealing, and the
 Nothing in AO-0008 may be reopened, retried, continued, executed, reused,
 rescored, spliced, mutated, deleted, broadly unsealed, or reauthorized.
 
-The authorization-free R2 phase audits public control flow and implements one
-authorization-bound, one-use, read-only diagnostic with an exact logical-call
-context and aggregate-only 450-trace ceiling, transient bounded
-operational-key use,
-before-and-after immutability proof, redaction, synthetic fixtures, and
-corruptions. The difference between 3,067 actual attempts and 3,016 normal
-calls is not causal proof. The task must stop once at a committed generic
-owner gate before any retained AO-0008 read. Provider calls, credentials,
-spend, new real private material, scientific mutation, paper/publication
-action, release, submission, new private-pilot registration, and v4 identity
-allocation remain zero.
+The exact R2 gate passed against frozen diagnostic commit
+`fbecbfb89e634967d48931c00e1d8a4fbed81c79` and all twenty protected hashes.
+The diagnostic ran exactly once, authenticated all 450 fixed-full-batch
+traces, verified the 3,576-object lock, ledgers, complete 3,067-response
+correspondence, unique 2/50/450 trace partition, and all 500 pairing records,
+and closed private-read authority permanently without retained mutation.
+
+The allowed aggregate reports 32 protocol-nonconforming traces, 32
+parse/schema-repair exhaustion traces, and zero terminal-provider,
+contamination, final-cardinality, cap, or integrity findings. Frozen causal
+precedence therefore selects `agent-protocol-policy-decision-required`.
+AO-0009 changes no protocol acceptance, normalization, retry, credit, or
+scoring rule. Any prospective policy change or separate private evaluation
+requires a new explicit owner decision and task; private evaluation also
+requires wholly new identities, execution freeze, and owner gate. Provider
+calls, credentials, spend, new real private material, scientific mutation,
+paper/publication action, release, submission, new private-pilot
+registration, and v4 identity allocation remain zero.
 
 ## Active closeout — AO-0008 fresh repair-confirmation pilot v3 quarantined (2026-07-28)
 

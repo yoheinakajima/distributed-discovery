@@ -1,4 +1,30 @@
-# Final handoff — TreasureBench fresh pilot v3 quarantined
+# Final handoff — TreasureBench agent protocol policy decision required
+
+## AO-0009 aggregate fixed-batch diagnosis (2026-07-29)
+
+AO-0009 passed its exact R2 owner gate against frozen diagnostic commit
+`fbecbfb89e634967d48931c00e1d8a4fbed81c79` and all twenty protected hashes.
+The aggregate-only diagnostic ran exactly once and private-read authority is
+permanently closed.
+
+The diagnostic authenticated all 450 fixed-full-batch traces and verified the
+3,576-object output lock, immutable inventory, append-only ledgers, complete
+3,067-response identity correspondence, unique 2/50/450 trace partition, all
+500 private pairing records, and retained-state immutability. It retained no
+operational key, made no provider call or credential read, and spent USD 0.
+
+The public aggregate reports 32 protocol-nonconforming traces and 32
+parse/schema-repair exhaustion traces. Terminal-provider attempts,
+contamination traces, invalid final cardinalities, cap triggers, and integrity
+failures are zero. Frozen causal precedence selects
+`agent-protocol-policy-decision-required`.
+
+AO-0009 does not change protocol acceptance, normalization, retry,
+invalid-output credit, or scoring. Any such prospective change requires a
+separate explicit owner decision and task. Any future private evaluation also
+requires wholly new identities, execution freeze, and owner gate. AO-0008
+remains permanently quarantined, v4 is not registered, and no scientific or
+performance evidence is created.
 
 ## AO-0008 fresh repair-confirmation v3 closeout (2026-07-28)
 

@@ -1,6 +1,26 @@
-# Project status — TreasureBench fresh pilot v3 quarantined
+# Project status — TreasureBench agent protocol policy decision required
 
 Date: 2026-07-28 (America/Los_Angeles).
+
+AO-0009's exact R2 owner gate and one-use aggregate diagnostic completed. The
+diagnostic authenticated all 450 fixed-full-batch traces and verified the
+3,576-object output lock, immutable inventory, append-only ledgers, complete
+3,067-response identity correspondence, unique 2/50/450 trace partition, all
+500 private pairing records, and retained-state immutability. It retained no
+operational key, made no provider call or credential read, spent USD 0, and
+permanently closed private-read authority.
+
+The allowed aggregate reports 32 protocol-nonconforming traces and 32
+parse/schema-repair exhaustion traces. It reports zero terminal provider
+attempts, contamination traces, invalid final cardinalities, cap triggers, or
+integrity failures. The frozen runner's post-loop precedence therefore
+selects `agent-protocol-policy-decision-required`.
+
+No agent-protocol rule changes here. Any prospective normalization, retry,
+invalid-output credit, acceptance, or scoring change requires a separate
+explicit owner decision and task. AO-0008 remains permanently quarantined,
+and no v4, performance result, comparison, ranking, DD-023, claim, scientific
+run, paper result, release, submission, or base-campaign authority is created.
 
 AO-0008 passed both direct-provider public canaries, wholly fresh custody, and
 the private prefix, then stopped during the fixed full batch with decision

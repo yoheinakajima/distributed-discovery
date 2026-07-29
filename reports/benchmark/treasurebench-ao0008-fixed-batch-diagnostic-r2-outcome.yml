@@ -1,0 +1,84 @@
+schema_version: treasurebench-ao0008-fixed-batch-diagnostic-r2-outcome-v1
+status: complete
+decision: agent-protocol-policy-decision-required
+classification: redacted-engineering-only-no-performance-evidence
+recorded_at_utc: "2026-07-29T01:00:57Z"
+task_id: AO-0009
+source_task_id: AO-0008
+owner_study: DD-010
+issue: 206
+pull_request: 207
+gate_id: AOG-AO-0009-AO0008-FIXED-BATCH-DIAGNOSTIC-R2
+diagnostic_execution_commit: fbecbfb89e634967d48931c00e1d8a4fbed81c79
+source_campaign:
+  campaign_id: treasurebench-agents-v1-repair-confirmation-v3
+  batch_id: tb-agents-v1-repair-confirmation-v3-b01
+  execution_commit: 0f9d82bb50cbb334bea47e24448831faf0cdbed8
+  terminal_decision: fresh-pilot-v3-quarantined-engineering-only
+  output_lock: sha256:e52055b08ca3a8acb1cfb6ac608c6e601f3c618352900f92bf91c5ffc4718dbb
+  retained_objects: 3576
+  actual_attempts: 3067
+  planned_logical_calls: 3016
+  provider_phase_closed: true
+  campaign_and_batch_permanently_quarantined: true
+diagnostic:
+  invocation_count: 1
+  private_read_authority_closed: true
+  output_lock_verified_within_allowlist: true
+  inventory_verified: true
+  append_only_ledgers_verified: true
+  response_ledger_correspondence_exact: true
+  unique_trace_partition_verified: true
+  public_canary_traces: 2
+  private_prefix_traces: 50
+  authenticated_fixed_batch_traces: 450
+  all_private_pairing_records_exist: true
+  completed_private_pairings: 500
+  fixed_full_batch_completion_marker: false
+  last_durable_stage: fixed-full-batch-quarantined-after-prefix-before-completion-marker
+  retained_state_mutated: false
+  operational_key_retained: false
+  private_content_published: false
+  private_paths_disclosed: false
+  credential_reads: 0
+  provider_calls: 0
+  spend_usd: "0"
+  detailed_record: nonpublic-outside-git
+aggregate_counters:
+  completed_logical_calls: 3016
+  recovered_attempts: 51
+  terminal_attempts: 0
+  direct_or_probable_contamination_traces: 0
+  invalid_final_cardinality_traces: 0
+  protocol_nonconformance_traces: 32
+  parse_or_schema_repair_exhaustion_traces: 32
+  cap_guards_triggered: false
+diagnosis:
+  exception_stage: fixed-full-batch
+  causal_class: protocol-contract-nonconformance
+  causal_actor: evaluated-agent
+  safe_error_code: protocol-contract-nonconformance
+  public_source_correspondence: frozen-runner-post-loop-aggregate-protocol-gate
+policy_disposition:
+  local_implementation_repair_selected: false
+  provider_reliability_policy_decision_required: false
+  agent_protocol_policy_decision_required: true
+  bounded_evidence_inconclusive: false
+  retained_integrity_stop: false
+  silent_normalization_authorized: false
+  semantic_retry_authorized: false
+  invalid_protocol_credit_authorized: false
+  future_protocol_change_requires_separate_owner_decision: true
+authority:
+  second_private_read_authorized: false
+  new_private_pilot_registered: false
+  v4_identity_allocated: false
+  dd023_authorized: false
+  claim_created: false
+  scientific_run_created: false
+  evidence_or_proof_promoted: false
+  paper_result_created: false
+  ranking_or_composite_created: false
+  release_or_submission_created: false
+  base_campaign_authorized: false
+next_gate: explicit-owner-decision-required-for-any-agent-protocol-change-or-separate-future-private-evaluation

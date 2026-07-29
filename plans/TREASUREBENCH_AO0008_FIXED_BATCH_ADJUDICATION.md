@@ -37,14 +37,22 @@ Five unrelated untracked preservation files pre-exist and are outside scope:
 - `reports/roadmap-consolidation/post-v5-literature-and-nonoverlap 2.md`;
 - `reports/roadmap-consolidation/post-v5-next-program-gate 2.yml`.
 
-They must remain untouched. Provider calls, credential reads, spend, retained
-private reads, new real private material, scientific mutation, paper action,
-release, and submission are all zero. The R1 execution freeze and owner-gate
-handoff were reached without authorization or retained access. At
+They must remain untouched. Provider calls, credential reads, spend, new real
+private material, scientific mutation, paper action, release, and submission
+are all zero. The R1 execution freeze and owner-gate handoff were reached
+without authorization or retained access. At
 `2026-07-29T00:03:24Z`, the owner issued a preauthorization correction because
 the frozen runtime persists all 450 traces before its aggregate gates. The
-unused R1 gate is prospectively superseded. Exactly one milestone is active:
-**M5R2 — aggregate-only diagnostic repair and R2 refreeze**.
+unused R1 gate is prospectively superseded.
+
+The exact R2 owner gate succeeded against frozen diagnostic commit
+`fbecbfb89e634967d48931c00e1d8a4fbed81c79` and all twenty protected hashes.
+The diagnostic then ran exactly once. It verified the immutable retained
+boundary, authenticated all 450 fixed-full-batch traces, emitted only the
+allowed public aggregate, and permanently closed private-read authority. The
+evidence selected `agent-protocol-policy-decision-required`; AO-0009 makes no
+silent protocol normalization, retry, credit, or prospective implementation
+repair. Exactly one milestone is active: **M8 — public-safe closeout**.
 
 The AO-0008 boundary is permanent: task `AO-0008`, campaign
 `treasurebench-agents-v1-repair-confirmation-v3`, batch
@@ -81,9 +89,11 @@ issue or branch creation.
 - The difference between 3,067 actual attempts and 3,016 normal calls is
   recorded only as an operational observation and is not routed as a cause.
 
-No owner decision from this intake remains conversation-only once `PM-0037`,
-the fixed contract, this plan, issue, owner gate, and handoff are committed.
-Repeat this audit at closeout.
+No owner decision from this intake remains conversation-only. `PM-0037`, the
+additive R2 contract, this plan, issue, R2 gate, public outcome, and typed
+handoff now carry the complete route. The closeout delta audit preserves all
+37 memory records, marks PM-0037 implemented, and creates no new scientific,
+paper, release, submission, or private-evaluation authority.
 
 The `2026-07-29` amendment is routed to additive R2 contract
 `tasks/treasurebench-ao0008-fixed-batch-adjudication-r2.yml`, updated PM-0037,
@@ -105,12 +115,10 @@ one-trace authority surface.
 4. Implement one authorization-bound, one-use, read-only diagnostic with an
    exact allowlist, structural object ceilings, pre/post byte and metadata
    snapshots, and permanent read-authority closure.
-5. Read only output-lock and identity records, provider stage, append-only
-   access and usage/cost ledgers, structural encrypted-object metadata, one
-   exact failed logical-call record, at most two preceding and two following
-   attempt or orchestration records, the directly corresponding encrypted
-   response and trace objects, and the operational key transiently for those
-   selected objects.
+5. Authenticate aggregate-only fields from exactly all 450 fixed-full-batch
+   traces, and read only one selected logical-call context, at most two
+   corresponding encrypted provider responses, at most two preceding and two
+   following operational records, and one transient operational key.
 6. Write one detailed nonpublic diagnostic outside Git and emit only a
    redacted public-safe result.
 7. Add synthetic fixtures, corruptions, deterministic fault injection,
@@ -166,14 +174,14 @@ one-trace authority surface.
 - **M5 — superseded unused:** R1 froze diagnostic commit `b7a3345`, committed
   and validate-only checked the original gate, and produced the typed handoff;
   no authorization or retained read occurred.
-- **M5R2 — active:** implement the aggregate-only 450-trace correction,
+- **M5R2 — complete:** implement the aggregate-only 450-trace correction,
   exact-set structural verification, causal precedence, fixtures, corruptions,
   full validation, R2 execution freeze, R2 gate, and replacement handoff.
-- **M6 — pending:** after exact authorization, execute the diagnostic once,
+- **M6 — complete:** after exact authorization, execute the diagnostic once,
   close private-read authority permanently, and select one permitted outcome.
-- **M7 — pending:** execute only the evidence-determined prospective repair or
-  policy branch and complete its required synthetic verification.
-- **M8 — pending:** reconcile public-safe records, repeat the delta audit,
+- **M7 — complete:** record the evidence-determined agent-protocol policy gate
+  without changing protocol acceptance, retry, normalization, or scoring.
+- **M8 — active:** reconcile public-safe records, repeat the delta audit,
   validate, merge after checks, verify CI/Pages and named routes, close the
   issue, and synchronize `main`.
 
@@ -215,8 +223,20 @@ one-trace authority surface.
 - [x] Commit additive R2 correction `89d0100` and route the amendment durably.
 - [x] Implement the aggregate-only 450-trace R2 diagnostic and pass focused
   validation.
-- [ ] Freeze R2, supersede R1, commit and validate the R2 gate, render the
-  replacement handoff, and stop.
+- [x] Freeze R2 at `fbecbfb`, supersede R1 without use, commit and validate the
+  R2 gate and replacement handoff, and stop before retained access.
+- [x] Pass the exact R2 owner gate, revalidate all frozen boundaries, and run
+  `make treasurebench-fixed-batch-read-only-diagnostic` exactly once.
+- [x] Verify the lock, inventory, append-only ledgers, complete response
+  correspondence, 2/50/450 trace partition, all 500 pairing records, retained
+  immutability, zero provider/credential/spend caps, and permanent closure of
+  private-read authority.
+- [x] Select `agent-protocol-policy-decision-required` from the public
+  aggregate and preserve protocol changes for a separate explicit owner task.
+- [x] Complete public-safe reconciliation and pass the complete validation
+  wall.
+- [ ] Complete PR readiness and merge, post-merge CI/Pages and named routes,
+  issue closure, synchronized `main`, and terminal handoff.
 
 ## Discoveries and surprises
 
@@ -284,6 +304,28 @@ one-trace authority surface.
   retained-state read, provider call, credential read, spend, private
   material, scientific mutation, publication action, release, or submission
   occurred. The next commit is the R2 diagnostic execution freeze.
+- `2026-07-29`: the exact R2 gate succeeded against execution commit
+  `fbecbfb89e634967d48931c00e1d8a4fbed81c79` and twenty protected hashes.
+  The one-use diagnostic authenticated the output lock, 3,576-object
+  inventory, append-only ledgers, complete 3,067 response-attempt identity
+  correspondence, the unique 2/50/450 trace partition, all 450 fixed-batch
+  traces, and all 500 pairing records. The completion marker is absent after
+  3,016 completed logical calls. No retained state changed, no operational
+  key was retained, and provider calls, credential reads, and spend were zero.
+- `2026-07-29`: the allowed aggregate reports 32 protocol-nonconforming
+  traces, 32 parse/schema-repair exhaustion traces, zero terminal provider
+  attempts, zero contamination traces, zero invalid final-cardinality traces,
+  and no cap-guard trigger. Under frozen precedence, this selects
+  `protocol-contract-nonconformance` with evaluated-agent actor and requires
+  an agent-protocol policy decision. It does not justify a silent local
+  repair.
+- `2026-07-29T01:10:29Z`: public-safe reconciliation passes the complete
+  validation wall: formatting over 343 files, Ruff, strict MyPy over 202
+  source files, all 663 tests, 110 claims, 51 immutable run manifests,
+  Agent Operations and program-memory audits, benchmark and governance
+  checks, 89 site pages, and offline verification of seven papers and 119
+  pages. The task-specific 25-test suite, exact-scale diagnostic fixture, and
+  50-task/500-pairing rehearsal also pass without retained access.
 
 ## Decision log
 
@@ -327,6 +369,14 @@ one-trace authority surface.
 - `2026-07-29T00:22:40Z`: the remote-presence rerun passes without code
   changes. Supersede the unused R1 gate's resume instruction, freeze R2, and
   bind only the future R2 gate to the aggregate diagnostic surface.
+- `2026-07-29`: consume only the exact R2 gate and diagnostic authority. Close
+  private-read authority permanently after the first invocation; never use
+  the superseded R1 gate.
+- `2026-07-29`: select
+  `agent-protocol-policy-decision-required`. AO-0009 records the gate but does
+  not alter invalid-output credit, normalization, semantic retry, protocol
+  acceptance, or scoring. Any such prospective change requires a separate
+  explicit owner decision and task.
 
 ## Validation strategy
 
@@ -364,23 +414,37 @@ one-trace authority surface.
 ## Artifacts produced
 
 - This living ExecPlan.
-- The future AO-0009 issue, branch, fixed task contract, public audit,
-  diagnostic implementation, schemas, fixtures, tests, gate, and typed
-  handoff.
+- AO-0009 issue #206, branch, fixed and additive R2 task contracts, public
+  audit, diagnostic implementation, schemas, fixtures, tests, R2 gate,
+  public aggregate outcome, closeout record, and typed handoff.
 
 ## Blockers
 
-None during authorization-free implementation. The exact owner authorization
-will be the single intentional blocker after M5.
+None. Private-read authority is permanently closed; any request for another
+read, provider or credential access, protocol-policy mutation, or new campaign
+would be a new boundary requiring separate owner action.
 
 ## Recovery and restart instructions
 
-Resume from this plan. Confirm `main`/`origin/main` or the registered AO-0009
-branch, the issue and draft PR state, all five unrelated untracked files, and
-exactly one active milestone. Continue the first unchecked item. Do not
-resolve or read the retained AO-0008 private root before exact authorization.
+Resume from this plan on the registered AO-0009 branch. Confirm issue #206,
+draft PR #207, all five unrelated untracked files, permanent private-read
+closure, and M8 as the sole active milestone. Continue the first unchecked
+administrative closeout item. Never run the diagnostic again or access the
+retained AO-0008 private root.
 
 ## Outcome and retrospective
 
-No final outcome is selected. Complete this section only after the bounded
-diagnostic and the evidence-determined prospective branch.
+The final evidence outcome is `agent-protocol-policy-decision-required`.
+AO-0009's one-use R2 diagnostic established a public-safe operational cause
+without mutating or reopening AO-0008: the retained boundary and pairing
+graph are intact, while the frozen runner's post-loop protocol gate saw
+nonzero protocol nonconformance. The aggregate also reports parse/schema
+repair exhaustion; it contains no terminal-provider, contamination,
+final-cardinality, cap, or integrity finding.
+
+This is a useful negative boundary. The existing fail-closed protocol cannot
+be weakened through an implementation patch disguised as diagnosis. AO-0009
+therefore closes with a policy gate, preserves all four Agents v1 campaign
+quarantines, creates no scientific or performance result, does not register
+v4, and requires a separate explicit owner decision for any future protocol
+change or private evaluation.
