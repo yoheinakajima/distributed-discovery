@@ -1,0 +1,61 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-v4-execution-freeze-v1
+frozen_at_utc: "2026-07-29T14:57:12Z"
+status: pass-pushed-clean-execution-commit
+classification: DD-010-engineering-only-owner-gate-required
+task_id: AO-0010
+issue: 208
+draft_pull_request: 209
+branch: codex/treasurebench-agents-v1-fresh-pilot-v4
+policy_version: treasurebench-agents-v1-protocol-validity-policy-v2
+execution_commit: 5289882dca6b8912a0518bba72aba1f4d595c2a8
+remote_branch_head_at_freeze: 5289882dca6b8912a0518bba72aba1f4d595c2a8
+task_contract_sha256: sha256:6e0406bcbeb51ab958e16360ea9e6e207053e0f661cf2c9991d4947b59143715
+campaign_id: treasurebench-agents-v1-repair-confirmation-v4
+batch_id: tb-agents-v1-repair-confirmation-v4-b01
+execution_tree_hashes:
+  tasks/treasurebench-agents-v1-fresh-pilot-v4.yml: sha256:6e0406bcbeb51ab958e16360ea9e6e207053e0f661cf2c9991d4947b59143715
+  src/distributed_discovery/agent_ops: sha256:84a44c60d7c7a6a159c8beb5cfb8bc25b19bcae8992c1781fa396225d9f11376
+  src/distributed_discovery/benchmark/agents_v1: sha256:01aeb46a17a755f852215eebfd3e92ab130cad2c3c06b7ca1d70cf6d2fce54be
+  src/distributed_discovery/cli.py: sha256:0227911d8eb6eadc04cf525614900eb809e5553282664c47d55e57ae2c9dea22
+  scripts/audit_agent_ops.py: sha256:336d9e0735f8fe2acc93268053d09f3af4089f189c582882eac084dd607bca29
+  scripts/audit_treasurebench_agents_v1_fresh_pilot_v4.py: sha256:cda65c8f04925fd47c79d19ff638ae58f89248468b5aba760d3dcd0fbb461a91
+  docs/agent-ops: sha256:fe94862b1b7cad4d472a9e7b3e25749c7311986ec062a4040e8031621ab190f1
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v4-request.yml: sha256:49801575dfee75b81432a74cf15dcccf59e01c34f7d17728ca0ced058a846b46
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v4-request.schema.json: sha256:859119233a6a2033a53063991a50ed50e03e320c771dd6660aa764aa3098587b
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v4-allocation.yml: sha256:09c0ab35e01816c6662a0ad1eeacc5bbf81c5d5a11fefcc7e843bdb9e3c6e044
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v4-allocation.schema.json: sha256:63388988f37254836faca8ea32125fb9b16541395a5792c6b03ac2b5721d9988
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v4-private-state.schema.json: sha256:f7f3873a4f61f88370920cd971cc5b89bcb2397967b0006cb8049f741f571885
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v4-execution-budget.yml: sha256:ebb34c76fc06d668330f985370cdc8573cd15dbb24180a95fc030a4475d90b4a
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v4-execution-budget.schema.json: sha256:66bf30ecbfea90ceb52d68b876dcffaea46d744b07bc9d62321463b9a0721865
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v4-corruptions.yml: sha256:4571498a49afa5af0599186f2c4000e26393ff61c4d8929bd4e7469de632be3d
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v4-corruptions.schema.json: sha256:281bf98100d8fa295e49a4ec1cbed0266a2cba57cee3a275f0acd20f9f2937a4
+  docs/benchmark/agents-v1/protocol-validity-policy-v2.yml: sha256:884708e8da7b3a7f763094dc274f7f792e45b71f560dc5bb60f6d7c0e9cdbb3e
+  docs/benchmark/agents-v1/protocol-validity-policy-v2.schema.json: sha256:775225c594a2660b80740440815fcded2972825c0d76511ce8d13f72e11d78b8
+  docs/benchmark/agents-v1/protocol-validity-policy-v2.md: sha256:65f973186377c65142000ed609ae9d085fda10b9b4c5b4a4fe9a0c7b9ad1e3f1
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-v4-provider-audit.yml: sha256:548d0486e3cfc5647e976519dcc690069dd908f0e31fb7d46e02b98b2b818ae0
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-v4-budget.yml: sha256:3828d35f8d0eb626b1aa3b5c8d1ff7c81769b4daa15ae62ad14fbc8424e16d80
+  tests/test_treasurebench_agents_v1_fresh_pilot_v4.py: sha256:7369e0c7529a41e3a963ec863ce4963a2a9e0d817e71b34cf31738c2814e73c9
+  tests/test_treasurebench_agents_v1_fresh_pilot_v4_session.py: sha256:3ea9428d4ab5958e600a051b17f6555671fe36132d7884cfd27e8083326208cc
+  Makefile: sha256:eef4c1d36a82bd3008c467d5d94874d2c97c282733a18b90ee05c38d363ab916
+validation:
+  clean_tracked_worktree: true
+  unrelated_untracked_files_preserved: 5
+  remote_head_matches: true
+  draft_pr_open: true
+  full_verify: pass
+  tests: {passed: 725, failed: 0}
+  full_v4_rehearsal: pass
+  rehearsal_hash: sha256:85f3b2e9820bc70c9b9020f866f44da646edcc1066531a95b6b9ef2845622110
+  terminal_pairings_classified: 500
+  metric_intervals: 6400
+  architecture_contrast_bounds: 120
+  independent_metric_bound_agreement: true
+  total_relevant_corruptions_rejected: 104
+  production_custody_negative_checks: 6
+activity:
+  provider_calls: 0
+  credential_reads: 0
+  prior_private_state_reads: 0
+  private_objects_created: 0
+  spend_usd: "0"
+next_gate: commit-generic-AOG-AO-0010-FRESH-PILOT-V4

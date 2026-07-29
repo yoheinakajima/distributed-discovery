@@ -1,10 +1,11 @@
 schema_version: treasurebench-agents-v1-fresh-pilot-v4-readiness-v1
 recorded_at_utc: "2026-07-29T14:57:12Z"
-status: pass-execution-freeze-candidate-owner-gate-required
+status: pass-execution-frozen-owner-gate-required
 classification: DD-010-engineering-only-no-scientific-evidence
 task_id: AO-0010
 issue: 208
 draft_pull_request: 209
+execution_commit: 5289882dca6b8912a0518bba72aba1f4d595c2a8
 policy_version: treasurebench-agents-v1-protocol-validity-policy-v2
 campaign_id: treasurebench-agents-v1-repair-confirmation-v4
 batch_id: tb-agents-v1-repair-confirmation-v4-b01
@@ -73,4 +74,4 @@ activity:
   prior_private_state_reads: 0
   private_objects_created: 0
   spend_usd: "0"
-next_gate: exact-execution-freeze-then-committed-generic-AOG-AO-0010-FRESH-PILOT-V4
+next_gate: committed-generic-AOG-AO-0010-FRESH-PILOT-V4

@@ -174,9 +174,9 @@ implementation disagreement; or unsafe retained state.
   corruptions, production-permit custody, and cleanup.
 - **M4 — complete:** focused and full authorization-free acceptance, draft PR
   creation, and passing draft-PR checks.
-- **M5 — active:** exact execution-freeze commit and matching remote draft-PR
+- **M5 — complete:** exact execution-freeze commit and matching remote draft-PR
   head.
-- **M6 — pending:** committed generic owner gate, live authorization-free gate
+- **M6 — active:** committed generic owner gate, live authorization-free gate
   validation, schema-valid handoff, and exact stop.
 - **M7 — pending and unauthorized:** later one-gate live success-or-honest-
   quarantine lifecycle, merge, CI/Pages, live-route verification, issue
@@ -197,7 +197,7 @@ implementation disagreement; or unsafe retained state.
 - [x] Complete M2 implementation and focused acceptance.
 - [x] Complete M3 rehearsals and corruption suite.
 - [x] Complete M4 full validation and draft PR.
-- [ ] Freeze and push M5 execution commit.
+- [x] Freeze and push M5 execution commit.
 - [ ] Commit and validate the M6 generic owner gate, render the exact handoff,
   and stop before credentials, real private generation, calls, or spend.
 
@@ -313,6 +313,12 @@ implementation disagreement; or unsafe retained state.
   publication infrastructure, TreasureBench naming, release readiness, site
   safety, and offline compendium verification. Proceed to the M5 execution
   commit without further execution-sensitive changes.
+- `2026-07-29T15:01:03Z`: complete M5 at exact pushed execution commit
+  `5289882dca6b8912a0518bba72aba1f4d595c2a8`. The remote task branch and
+  draft PR head match at freeze, the tracked tree is clean, all 24 protected
+  hashes and the fixed-contract hash are recorded, and the five unrelated
+  untracked files remain untouched. Begin M6 and make no further
+  execution-sensitive change.
 
 ## Validation strategy
 
@@ -356,7 +362,9 @@ explanation, versioned v4 request/allocation/private-state/budget/corruption
 contracts, current official provider audit, recalculated budget, runtime,
 independent classifier/bound reconstruction, 76-case corruption audit, tests,
 public rehearsal records, complete authorization-free validation, and draft PR
-#209 are created. Execution freeze, owner gate, and handoff remain pending.
+#209 are created. Exact execution commit
+`5289882dca6b8912a0518bba72aba1f4d595c2a8` is pushed. The owner gate and
+handoff remain pending.
 
 ## Blockers
 

@@ -1,0 +1,135 @@
+schema_version: agent-ops-owner-gate-v1
+kind: owner-gate
+synthetic: false
+gate_id: AOG-AO-0010-FRESH-PILOT-V4
+task_contract:
+  path: tasks/treasurebench-agents-v1-fresh-pilot-v4.yml
+  sha256: sha256:6e0406bcbeb51ab958e16360ea9e6e207053e0f661cf2c9991d4947b59143715
+issue: 208
+pull_request:
+  number: 209
+  expected_state: OPEN
+  head_sha: 5289882dca6b8912a0518bba72aba1f4d595c2a8
+branch: codex/treasurebench-agents-v1-fresh-pilot-v4
+commit: 5289882dca6b8912a0518bba72aba1f4d595c2a8
+tree_hashes:
+  tasks/treasurebench-agents-v1-fresh-pilot-v4.yml: sha256:6e0406bcbeb51ab958e16360ea9e6e207053e0f661cf2c9991d4947b59143715
+  src/distributed_discovery/agent_ops: sha256:84a44c60d7c7a6a159c8beb5cfb8bc25b19bcae8992c1781fa396225d9f11376
+  src/distributed_discovery/benchmark/agents_v1: sha256:01aeb46a17a755f852215eebfd3e92ab130cad2c3c06b7ca1d70cf6d2fce54be
+  src/distributed_discovery/cli.py: sha256:0227911d8eb6eadc04cf525614900eb809e5553282664c47d55e57ae2c9dea22
+  scripts/audit_agent_ops.py: sha256:336d9e0735f8fe2acc93268053d09f3af4089f189c582882eac084dd607bca29
+  scripts/audit_treasurebench_agents_v1_fresh_pilot_v4.py: sha256:cda65c8f04925fd47c79d19ff638ae58f89248468b5aba760d3dcd0fbb461a91
+  docs/agent-ops: sha256:fe94862b1b7cad4d472a9e7b3e25749c7311986ec062a4040e8031621ab190f1
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v4-request.yml: sha256:49801575dfee75b81432a74cf15dcccf59e01c34f7d17728ca0ced058a846b46
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v4-request.schema.json: sha256:859119233a6a2033a53063991a50ed50e03e320c771dd6660aa764aa3098587b
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v4-allocation.yml: sha256:09c0ab35e01816c6662a0ad1eeacc5bbf81c5d5a11fefcc7e843bdb9e3c6e044
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v4-allocation.schema.json: sha256:63388988f37254836faca8ea32125fb9b16541395a5792c6b03ac2b5721d9988
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v4-private-state.schema.json: sha256:f7f3873a4f61f88370920cd971cc5b89bcb2397967b0006cb8049f741f571885
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v4-execution-budget.yml: sha256:ebb34c76fc06d668330f985370cdc8573cd15dbb24180a95fc030a4475d90b4a
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v4-execution-budget.schema.json: sha256:66bf30ecbfea90ceb52d68b876dcffaea46d744b07bc9d62321463b9a0721865
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v4-corruptions.yml: sha256:4571498a49afa5af0599186f2c4000e26393ff61c4d8929bd4e7469de632be3d
+  docs/benchmark/agents-v1/treasurebench-fresh-pilot-v4-corruptions.schema.json: sha256:281bf98100d8fa295e49a4ec1cbed0266a2cba57cee3a275f0acd20f9f2937a4
+  docs/benchmark/agents-v1/protocol-validity-policy-v2.yml: sha256:884708e8da7b3a7f763094dc274f7f792e45b71f560dc5bb60f6d7c0e9cdbb3e
+  docs/benchmark/agents-v1/protocol-validity-policy-v2.schema.json: sha256:775225c594a2660b80740440815fcded2972825c0d76511ce8d13f72e11d78b8
+  docs/benchmark/agents-v1/protocol-validity-policy-v2.md: sha256:65f973186377c65142000ed609ae9d085fda10b9b4c5b4a4fe9a0c7b9ad1e3f1
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-v4-provider-audit.yml: sha256:548d0486e3cfc5647e976519dcc690069dd908f0e31fb7d46e02b98b2b818ae0
+  reports/benchmark/treasurebench-agents-v1-fresh-pilot-v4-budget.yml: sha256:3828d35f8d0eb626b1aa3b5c8d1ff7c81769b4daa15ae62ad14fbc8424e16d80
+  tests/test_treasurebench_agents_v1_fresh_pilot_v4.py: sha256:7369e0c7529a41e3a963ec863ce4963a2a9e0d817e71b34cf31738c2814e73c9
+  tests/test_treasurebench_agents_v1_fresh_pilot_v4_session.py: sha256:3ea9428d4ab5958e600a051b17f6555671fe36132d7884cfd27e8083326208cc
+  Makefile: sha256:eef4c1d36a82bd3008c467d5d94874d2c97c282733a18b90ee05c38d363ab916
+purpose: Authorize the exact wholly fresh AO-0010 v4 DD-010 engineering pilot under prospective protocol-validity policy v2 and, conditionally on engineering completion or honest quarantine, its complete public-safe repository closeout through checks, merge, CI and Pages, live verification, issue closure, main synchronization, and final handoff.
+irreversible_actions:
+  - permission: private_data_permissions.generate
+    description: Create exactly one new OS-CSPRNG seed, 50 new tasks and answers, separate operational, task, and answer keys, nonces, ciphertexts, commitments, access logs, ledgers, responses, traces, custody manifest, provider-output lock, derived-state commitment, and private audit package for the v4 campaign only.
+  - permission: permissions.merge_after_checks
+    description: Mark draft PR 209 ready and squash-merge only after the appropriate complete validation wall and required GitHub checks pass for the engineering-complete or honest-quarantined outcome.
+  - permission: permissions.ci_pages
+    description: Permit only normal post-merge CI and Pages, followed by named public-safe live-route verification.
+private_actions:
+  - permission: private_data_permissions.read
+    description: Read only OPENAI_API_KEY and ANTHROPIC_API_KEY from repository-root .env.txt through the strict nonexecuting exact-subset loader, and read only newly created v4 private state after authorization.
+  - permission: private_data_permissions.write
+    description: Write only new v4 encrypted tasks, answers, provider responses, append-only ledgers, traces, protocol classifications, metric-bound records, custody, provider-output lock, derived-state commitment, private audit state, and deterministic redacted engineering-complete or quarantine closeout outside Git.
+  - permission: private_data_permissions.generate
+    description: Generate only the new v4 campaign material and never reuse any original-pilot, repair-confirmation-v1, repair-confirmation-v2, repair-confirmation-v3, future-base, or base-campaign identity or instance.
+external_actions:
+  - permission: permissions.repository_write
+    description: Write and reconcile only the frozen public-safe AO-0010 engineering-complete or honest-quarantine closeout paths.
+  - permission: permissions.git_branch_commit
+    description: Commit and push the public custody commitment, public provider-output-lock commitment, and final public-safe closeout without routine owner checkpoints.
+  - permission: permissions.github_issue_pr
+    description: Update draft PR 209 accurately and close issue 208 only after the authorized validation, merge, CI, Pages, and live-verification sequence succeeds.
+  - permission: permissions.merge_after_checks
+    description: Mark PR 209 ready and squash-merge only after the appropriate complete validation wall and every required check passes.
+  - permission: permissions.ci_pages
+    description: Observe normal CI and Pages and verify the named public-safe live routes after merge.
+  - permission: external_action_permissions.network_observation
+    description: Revalidate official provider terms and observe GitHub checks, normal CI and Pages, and the named public-safe live routes.
+  - permission: external_action_permissions.github_mutation
+    description: Push public-safe commits, update PR 209, mark it ready after checks, squash-merge after checks, and close issue 208 after post-merge live verification.
+  - permission: external_action_permissions.provider_calls
+    description: Make only direct OpenAI Responses and direct Anthropic Messages calls using the exact frozen models, passing provider-specific transport schemas, semantic validator, staged graph, bounded transport attempts, and one schema-only repair.
+  - permission: external_action_permissions.spend
+    description: Spend only within the exact total, provider, route-token, per-request-output-token, and call ceilings in this manifest and frozen execution tree.
+cumulative_state:
+  currency: USD
+  spend: "0"
+  calls: 0
+  category_spend: {OpenAI: "0", Anthropic: "0"}
+hard_caps:
+  currency: USD
+  spend: "25"
+  calls: 5200
+  category_spend: {OpenAI: "10", Anthropic: "15"}
+remaining_caps:
+  currency: USD
+  spend: "25"
+  calls: 5200
+  category_spend: {OpenAI: "10", Anthropic: "15"}
+owner_confirmation_statements:
+  - I authorize only AO-0010 at execution commit 5289882dca6b8912a0518bba72aba1f4d595c2a8, issue 208, draft PR 209, the exact fixed contract, branch, 24-path execution tree, prospective policy v2, v4 campaign and batch, routes, models, credential subset, actions, caps, prohibitions, and expiry in this manifest.
+  - I authorize credential ingress for exactly OPENAI_API_KEY and ANTHROPIC_API_KEY from repository-root .env.txt through the strict nonexecuting no-interpolation loader; no unrelated configured credential may be returned, retained, transmitted, displayed, printed, hashed, fingerprinted, or logged.
+  - I authorize the exact staged path through provider-terms revalidation, both public canaries, wholly fresh custody, committed and pushed public custody commitment, 10% private prefix, fixed full matrix, provider closure, provider-output lock, committed and pushed public lock commitment, post-lock revalidation and unseal, protocol classification, Methods A/B/C, metric bounds and independent reconstruction, safety and corruption checks, and deterministic redacted closeout.
+  - I authorize a completed response that remains nonconforming after exactly one schema-only repair to be preserved and classified as protocol-invalid evaluated-system behavior, retained in all intended-pairing denominators, not replaced or rerun, assigned no parsed, constructed, or credited action, and reported separately without by itself quarantining the batch.
+  - I authorize exact metrics only where defined from protocol-valid output, registered metric-specific feasible bounds for protocol-invalid pairings, architecture-contrast bounds over all 500 intended pairings, and valid-output-conditional estimates only as secondary selection-conditioned diagnostics; no complete-case unconditional effect, composite, provider/model ranking, or leaderboard is authorized.
+  - I authorize engineering completion only when all 500 intended pairings have one unique protocol-valid or protocol-invalid terminal trace, provider-terminal failures are zero, identity and correspondence are exact, custody, caps, contamination, lock, unseal order, Methods A/B/C, independent bounds, corruption, redaction, and retained-state checks pass, and no call occurs after lock.
+  - I authorize the honest whole-batch quarantine path for any provider-terminal, missing/duplicate pairing, response/ledger/trace/inventory integrity, contamination, cap, execution-identity, lock, unseal-order, Method, independent-bound, corruption, redaction, or unsafe-retained-state failure, with immediate call stop, append-only preservation, provider closure, safe lock, minimum safe post-lock adjudication, and no replacement, splice, rescore, semantic retry, or new private identity.
+  - I authorize either normal engineering-complete or honest-quarantined outcome to continue without routine checkpoints through the appropriate public-safe closeout, complete validation wall, accurate PR 209 update, required checks, readiness, squash merge, normal post-merge CI and Pages, named live public-safe route verification, issue 208 closure, synchronized main, and one final schema-valid handoff.
+  - I understand the frozen expected cost is USD 11.51, the conservative planning envelope is USD 15, and I authorize no more than USD 25 total hard cap, USD 10 OpenAI, USD 15 Anthropic, 5,200 calls, 256 output tokens per request, and the exact provider route-token ceilings frozen in the execution tree.
+  - I understand the policy permits at most two bounded transport attempts for the same logical request, exactly one schema-only repair, zero semantic-answer retries, zero silent normalization, zero replacement pairings, zero invalid-output credit, and no outcome-dependent retry or global protocol-conformance threshold.
+  - I understand AO-0008 and every prior campaign, batch, authorization, ledger, lock, retained state, private-read closure, and terminal decision remain immutable and receive no authority from this gate.
+  - I understand this remains DD-010 engineering only and authorizes no DD-023, claim, immutable scientific run, evidence or proof promotion, paper result, ranking, composite, leaderboard, package, release, DOI, arXiv, journal submission, other submission, or base campaign.
+  - I understand the generic owner-gate engine validates and creates only this exact mode-0600 local authorization; it does not itself read credentials or private state, generate custody, call providers, spend, unseal, edit the repository, mutate GitHub, merge, deploy, or close the issue.
+explicit_prohibitions:
+  - provider-calls-outside-manifest
+  - credential-read-outside-manifest
+  - unauthorized-private-access
+  - scientific-mutation-outside-contract
+  - cap-increase
+  - consequential-action-by-gate-engine
+  - credential-name-outside-openai-api-key-and-anthropic-api-key
+  - unrelated-credential-return-retention-transmission-display-print-hash-fingerprint-or-log
+  - prior-private-campaign-state-read-unseal-mutation-deletion-or-reuse
+  - original-pilot-repair-confirmation-v1-repair-confirmation-v2-repair-confirmation-v3-future-base-or-base-campaign-reuse
+  - ao-0002-through-ao-0009-authorization-ledger-output-lock-custody-private-read-closure-or-decision-mutation
+  - campaign-batch-model-route-cap-execution-tree-or-private-identity-change
+  - alias-fallback-openrouter-regional-batch-provider-tool-local-model-or-substitute-route
+  - record-splice-rescore-semantic-retry-in-place-repair-failed-instance-replacement-or-outcome-dependent-retry
+  - second-schema-repair-third-transport-attempt-silent-normalization-or-invalid-output-credit
+  - invalid-action-parsing-constructed-action-constructed-portfolio-or-pairing-replacement
+  - protocol-invalid-pairing-drop-or-complete-case-unconditional-effect
+  - ao-0008-derived-global-protocol-conformance-threshold-or-rerun-until-preferred-conformance
+  - unseal-before-committed-verified-provider-output-lock-or-call-after-output-lock
+  - unsafe-retained-private-state-unseal-merge-or-deletion
+  - public-task-answer-raw-output-or-task-model-provider-architecture-family-performance
+  - dd-023-claim-scientific-run-evidence-proof-or-paper-result
+  - ranking-composite-leaderboard-package-release-doi-arxiv-journal-or-submission
+  - base-campaign-registration-or-execution
+  - private-data-publication
+  - pr-ready-or-merge-before-complete-validation-and-required-checks
+  - issue-closure-before-post-merge-ci-pages-and-live-route-verification
+  - pages-deployment-outside-the-normal-main-workflow
+expires_at_utc: "2026-08-05T14:57:12Z"
+authorization_output_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0010-FRESH-PILOT-V4.yml
+next_milestone: M7 owner-authorized one-session fresh v4 execution under policy v2 and conditional engineering-complete or honest-quarantined final closeout.
+generated_resume_message: "Resume AO-0010 in this same Codex task from plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V4.md, issue #208, branch codex/treasurebench-agents-v1-fresh-pilot-v4, and draft PR #209. Use only reports/agent-ops/AO-0010-treasurebench-fresh-pilot-v4-owner-gate.yml and its exact generic authorization. Revalidate current official provider terms, authorization, execution-commit ancestry, current draft-PR head, fixed contract, all 24 tree hashes, policy v2, v4 campaign and batch, exact OPENAI_API_KEY and ANTHROPIC_API_KEY subset, routes, models, zero cumulative calls and spend, graph, ledgers, and caps. Then run exactly make treasurebench-fresh-pilot-v4-live and continue the authorized normal engineering-complete or honest quarantine path through provider closure, lock, post-lock classification, Methods A/B/C, all-pairing bounds, public-safe closeout, full validation, required checks, PR readiness and squash merge, normal CI and Pages, named live routes, issue closure, synchronized main, and one final schema-valid handoff without routine checkpoints. Stop only for an execution-sensitive change; identity, model, route, cap, or execution-tree change; authorization invalidity; proposed replacement, splice, semantic retry, or new private identity; unsafe retained state; or authority expansion beyond DD-010 engineering."
