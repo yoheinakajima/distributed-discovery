@@ -1,4 +1,34 @@
-# Current roadmap — fresh v4 permanent quarantine
+# Current roadmap — provider-outcome policy v3 and wholly fresh v5
+
+## AO-0011 generic owner gate
+
+Issue #210 combines one prospective provider-outcome policy v3 with one wholly
+fresh v5 DD-010 engineering campaign. Policy v3 composes with unchanged
+protocol-validity policy v2 and is forward-only; no v4 retained state,
+diagnostic, inference, or historical reclassification is authorized.
+
+The exact OpenAI and Anthropic operational taxonomies, contract/safety
+classes, two-attempt transport bound, one schema-only repair, zero semantic
+retry, zero replacement, denominator-retained missingness intervals,
+independent classification, independent all-pairing bound reconstruction, and
+the sequence-only 3-consecutive/10-cumulative circuit breaker are frozen
+before live authorization.
+
+Authorization-free implementation passes the complete 500-pairing rehearsal,
+zero/mixed/all-invalid matrices, all registered missingness and circuit
+scenarios, provider protected classes, 96 v5 boundary corruptions, 28
+repaired-instrument corruptions, and production-path temporary custody,
+commitment, lock, post-lock replay, redaction, and cleanup. The cost plan is
+USD 11.51 expected, USD 15 conservative, with unchanged owner ceilings of USD
+25 total, USD 10 OpenAI, USD 15 Anthropic, 5,200 calls, and 256 output tokens
+per request.
+
+The task must freeze and push the exact execution commit, open one draft PR,
+commit the generic owner gate, and stop before `.env.txt`, real v5 seed or
+private material, provider calls, spend, or real unseal. After exact owner
+authorization only, the same task may continue through the registered
+engineering-complete or honest-quarantine path and administrative closeout.
+This is not performance or scientific evidence.
 
 ## AO-0010 prospective protocol-validity policy v2
 

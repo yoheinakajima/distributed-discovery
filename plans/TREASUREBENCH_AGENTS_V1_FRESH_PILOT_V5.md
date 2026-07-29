@@ -28,6 +28,21 @@ The repository and live GitHub expose no collision for AO-0011, campaign
 `AOG-AO-0011-FRESH-PILOT-V5`. Issue #210 and branch
 `codex/treasurebench-agents-v1-fresh-pilot-v5` now own the task.
 
+The authorization-free implementation is complete. The registered 50-task
+synthetic rehearsal accounts for all 500 pairings, 3,014 turns, 7,900
+metric intervals, and 144 all-pairing architecture-contrast bounds with
+independent provider-outcome classification and independent bound
+reconstruction. The provider-outcome scenario wall covers zero, mixed, and
+all protocol-invalid responses; isolated and mixed operational missingness;
+first, middle, and final logical-request and intended-pairing positions; the
+exact three-consecutive and ten-cumulative circuit thresholds; and rejection
+of an eleventh observation. All 96 v5 boundary corruptions and all 28
+inherited repaired-instrument corruptions reject. Disposable production-path
+custody, commitment, lock, post-lock replay, redaction, and cleanup pass.
+Focused validation passes 107 tests and the complete repository wall passes
+832 tests. Activity remains zero credentials, real private objects, provider
+calls, spend, and real unseal.
+
 AO-0010 is complete. Its v4 campaign and batch remain permanently
 quarantined at the private prefix under public class
 `provider-terminal-missing`. Both public canaries and wholly fresh custody
@@ -153,20 +168,21 @@ closeout.
 - **M0 — complete:** registration, decision-delta routing, exact identity
   allocation, issue, branch, fixed contract, living plan, and first
   authority-bearing commit.
-- **M1 — in progress:** prospective policy v3, exact provider taxonomies,
+- **M1 — complete:** prospective policy v3, exact provider taxonomies,
   versioned v5 request, allocation, audit, private-state, execution-budget,
   acceptance, and corruption contracts.
-- **M2 — pending:** v5 runtime, provider-outcome classification, terminal
+- **M2 — complete:** v5 runtime, provider-outcome classification, terminal
   missing traces, circuit breaker, metric intervals, independent
   classification/reconstruction, custody, correspondence, output lock,
   redaction, and deterministic closeout.
-- **M3 — pending:** complete 50-task/500-pairing rehearsal, required position
+- **M3 — complete:** complete 50-task/500-pairing rehearsal, required position
   and matrix scenarios, Methods A/B/C, bounds, corruptions,
   production-permit/custody, post-lock replay/unseal, and cleanup.
-- **M4 — pending:** focused and full authorization-free acceptance, draft PR,
-  and passing exact-head draft-PR checks.
-- **M5 — pending:** exact execution-freeze commit and matching remote draft-PR
-  head.
+- **M4 — complete locally:** focused and full authorization-free acceptance
+  pass. Draft-PR creation and exact-head remote checks follow the execution
+  commit in M5.
+- **M5 — in progress:** exact execution-freeze commit, matching remote
+  draft-PR head, and passing exact-head checks.
 - **M6 — pending:** committed generic owner gate, live validate-only gate,
   schema-valid owner-gate-required handoff, and exact stop.
 - **M7 — pending:** not authorized in this phase; after later exact
@@ -188,7 +204,8 @@ closeout.
   `codex/treasurebench-agents-v1-fresh-pilot-v5`.
 - [x] Add PM-0039, the fixed task contract, and master-plan continuation.
 - [x] Validate and commit M0.
-- [ ] Complete M1 through M6 sequentially.
+- [x] Complete M1 through M4 sequentially.
+- [ ] Complete M5 and M6 sequentially.
 - [ ] Stop before `.env.txt`, credentials, real private material, provider
   calls, spend, or real v5 unseal.
 
@@ -207,6 +224,21 @@ closeout.
   responses distinctly from transport errors. Safely retainable completed
   responses therefore enter protocol validity and never operational
   missingness.
+- The first complete repository wall correctly exposed that six new v5
+  schemas raised the offline Agents v1 schema inventory from 48 to 54. The
+  hand-checkable registry expectation was updated, then the entire wall was
+  rerun.
+- A focused contract/safety regression exposed one exception-ordering defect:
+  the runner had classified and sealed the failure correctly but attempted
+  metric bounds before raising the immediate quarantine. Moving the
+  contract/safety raise ahead of bound construction restored the registered
+  fail-closed behavior.
+- Updating the DD-010 registry status required updating the site projection
+  assertion from the prior policy-v2 terminal suffix to the prospective
+  policy-v3 owner-gate suffix. A direct diagnostic command initially omitted
+  the Makefile's required `PYTHONPATH=src` and loaded an older installed
+  package; the governed Make targets and the corrected targeted command both
+  used workspace source.
 
 ## Decision log
 
@@ -232,6 +264,25 @@ closeout.
   scientific authority. Program memory accepts 39 records with zero adopted
   unrouted items, duplicate canonical records, or raw transcripts.
   `git diff --check` passes. Begin M1.
+- `2026-07-29T18:28:38Z`: complete M1 through M3. Registration, the exact
+  provider audit and USD 11.51 expected/USD 15 conservative budget, primary
+  and independent provider classifiers, terminal missingness, the frozen
+  circuit breaker, metric intervals, all-pairing bounds, 96 v5 boundary
+  corruptions, 28 repaired-instrument corruptions, the 500-pairing synthetic
+  rehearsal, and disposable production custody all pass with zero
+  consequential activity.
+- `2026-07-29T18:28:38Z`: complete local M4 acceptance. Ruff formatting and
+  lint pass, MyPy passes 214 source files, 107 focused v3/v5 tests pass, and
+  the full repository wall passes all 832 tests after updating the expected
+  schema inventory from 48 to 54. Freeze the exact execution candidate next.
+- `2026-07-29T18:44:02Z`: complete the full `make verify` wall after
+  reconciling the DD-010 site projection. All 832 tests, 110 claims, 51 run
+  manifests, 39 program-memory records, 13 Agent Operations contracts,
+  publication and TreasureBench audits, offline release construction and
+  verification, and all lint/type checks pass. The final v5 rehearsal
+  separately passes all 500 pairings and 124 registered corruption
+  rejections. Begin exact execution-freeze commits with all unrelated
+  untracked files excluded.
 
 ## Validation strategy
 
@@ -273,13 +324,15 @@ the later exact owner authorization.
 ## Artifacts produced
 
 Issue #210, the task branch, this living plan, PM-0039, the fixed task
-contract, and master-plan continuation are created. The policy, v5 contracts,
-implementation, tests, rehearsal records, draft PR, execution freeze, generic
-owner gate, and owner-gate-required handoff are pending.
+contract, master-plan continuation, policy v3, v5 contracts, implementation,
+tests, provider audit, execution budget, registration, scenario, corruption,
+synthetic rehearsal, and production-custody rehearsal records are created.
+The draft PR, execution freeze, generic owner gate, and
+owner-gate-required handoff are pending.
 
 ## Blockers
 
-No registration blocker is known. Five unrelated untracked files prevent a
+No implementation blocker is known. Five unrelated untracked files prevent a
 globally clean working tree but are outside AO-0011 and will remain untouched;
 all staging is path-explicit and tracked-tree identity checks exclude them as
 AO-0010 did.

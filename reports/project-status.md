@@ -1,6 +1,38 @@
-# Project status — TreasureBench policy v2 and fresh v4 quarantine
+# Project status — TreasureBench provider-outcome policy v3 and fresh v5 gate
 
 Date: 2026-07-29 (America/Los_Angeles).
+
+AO-0011 and issue #210 freeze one forward-only provider-outcome policy v3 and
+prepare campaign `treasurebench-agents-v1-repair-confirmation-v5`, batch
+`tb-agents-v1-repair-confirmation-v5-b01`, under unchanged protocol-validity
+policy v2. AO-0010 and v4 remain permanently quarantined; no retrospective
+diagnosis, inference, private read, or historical mutation occurs.
+
+The policy admits only exact prospectively registered direct-provider
+availability classes as operational missingness after bounded identical
+transport attempts. Completed refusals and nonconforming responses remain
+protocol-validity outcomes. Request/schema, model, route, credential,
+retention, identity, unsafe, unregistered, and ambiguous classes quarantine.
+Missing pairings retain safe prior calls, receive no invented action or
+replacement, and remain in every intended denominator with registered
+feasible intervals and exact operational quantities.
+
+The frozen circuit breaker uses only terminal operational status and sequence:
+three consecutive missing pairings for one provider or ten cumulative missing
+pairings quarantine, as do any contract/safety failure or non-valid public
+canary. No performance outcome or missingness-rate target is an input.
+
+The authorization-free candidate passes the full 50-task/500-pairing
+rehearsal, Methods A/B/C, independent provider classification, 7,900 metric
+intervals, 144 independently reproduced all-pairing contrast bounds,
+zero/mixed/all-invalid and missingness matrices, all exact circuit cases, 96
+v5 boundary corruptions, 28 inherited repaired-instrument corruptions, and
+temporary production-path custody/lock/replay/redaction/cleanup. There have
+been zero credential reads, real private objects, provider calls, spend, or
+real unseals. The task is pending its exact execution freeze, draft PR, and
+one committed generic owner gate.
+
+## Preserved AO-0010 closeout
 
 AO-0010, issue #208 and PR #209, adopt the owner-selected forward-only
 protocol-validity policy v2 and execute one wholly fresh v4 DD-010 engineering

@@ -1,5 +1,35 @@
 # Current program state
 
+_TreasureBench provider-outcome policy v3 and wholly fresh v5 preparation,
+2026-07-29:_ AO-0011 and issue #210 register the forward-only
+`treasurebench-agents-v1-provider-outcome-policy-v3`, campaign
+`treasurebench-agents-v1-repair-confirmation-v5`, and batch
+`tb-agents-v1-repair-confirmation-v5-b01`. AO-0010 and the coarse v4
+quarantine remain permanent and are neither reopened nor diagnosed.
+
+Policy v3 separates completed protocol-valid and protocol-invalid responses,
+typed provider-operational missingness, and provider-contract/safety failure.
+Missing pairings preserve safe prior calls, create or credit no action, receive
+no retry, replacement, splice, or regeneration, and remain in every intended
+denominator with metric-specific feasible intervals and exact operational
+metrics. Contract/safety and ambiguous classes quarantine immediately.
+
+The frozen sequence-only circuit breaker fires on three consecutive
+same-provider operationally missing pairings or ten cumulative missing
+pairings, plus any contract/safety failure or non-valid public canary. It uses
+no performance or scientific outcome and cannot be changed after live
+results. There is no missingness-rate acceptance threshold.
+
+The complete authorization-free 50-task/500-pairing rehearsal passes Methods
+A/B/C, independent provider classification, 7,900 metric intervals, 144
+all-pairing contrast bounds with independent reconstruction, zero/mixed/all
+protocol-invalid matrices, isolated and mixed missingness, exact circuit
+thresholds, 96 v5 boundary corruptions, 28 inherited repaired-instrument
+corruptions, and disposable production custody, lock, replay, redaction, and
+cleanup. Activity remains zero credentials, zero real private objects, zero
+provider calls, zero spend, and zero real unseal. The next and only gate is
+the exact committed generic AO-0011 owner gate.
+
 _TreasureBench protocol-validity policy v2 and fresh v4 quarantine,
 2026-07-29:_ AO-0010, issue #208 and draft PR #209, adopt one forward-only
 policy and execute one wholly fresh v4 campaign

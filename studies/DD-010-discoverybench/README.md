@@ -264,6 +264,37 @@ semantic retry, invalid credit, ranking, scientific evidence, or base-campaign
 authority exists. V4 and every prior campaign are permanently closed and
 immutable.
 
+## AO-0011 provider-outcome policy v3 and wholly fresh v5 preparation
+
+Issue #210 registers one forward-only provider-outcome policy v3 and one
+wholly fresh engineering campaign,
+`treasurebench-agents-v1-repair-confirmation-v5`, batch
+`tb-agents-v1-repair-confirmation-v5-b01`. AO-0010 and the intentionally
+coarse v4 quarantine remain permanent; no retrospective v4 diagnosis,
+reclassification, private read, unseal, or inference is performed.
+
+Policy v3 separates completed protocol-valid and protocol-invalid responses
+from prospectively typed provider-operational missingness and immediate
+provider-contract/safety quarantine. Operationally missing pairings preserve
+safe prior turns, receive no action or replacement, remain in every intended
+denominator, and use metric-specific feasible intervals plus exact operational
+metrics. Independent provider classification and independent all-pairing
+contrast reconstruction are required.
+
+The sequence-only engineering circuit breaker is frozen at three consecutive
+same-provider operationally missing pairings or ten cumulative missing
+pairings, with immediate quarantine for any contract/safety failure or
+non-valid public canary. There is no scientific missingness threshold and no
+rerun-until-availability rule.
+
+Authorization-free validation passes a complete 50-task/500-pairing
+rehearsal, 7,900 metric intervals, 144 all-pairing contrast bounds,
+zero/mixed/all-invalid and missingness scenarios, 96 v5 boundary corruptions,
+28 inherited repaired-instrument corruptions, and disposable
+production-path custody, lock, replay, redaction, and cleanup rehearsals. No
+credential, real seed, private campaign object, provider call, spend, or
+unseal has occurred. This remains DD-010 engineering only.
+
 ## Registered evaluation campaign
 
 Issue #173 registers, but does not authorize or execute, the evaluation

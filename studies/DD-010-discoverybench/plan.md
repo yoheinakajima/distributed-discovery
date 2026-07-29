@@ -237,3 +237,31 @@ It cannot be retried, replaced, repaired, reopened, reused, rescored, spliced,
 executed, unsealed, or reauthorized. This is DD-010 engineering only and
 creates no DD-023, claim, scientific run, evidence promotion, performance
 result, ranking, release, submission, or base campaign.
+
+## AO-0011 provider-outcome policy v3 and wholly fresh v5 gate
+
+AO-0011 is the next registered engineering lane. It adopts the forward-only
+provider-outcome policy v3, composes it with unchanged protocol-validity policy
+v2, and allocates campaign
+`treasurebench-agents-v1-repair-confirmation-v5`, batch
+`tb-agents-v1-repair-confirmation-v5-b01`. It creates no retrospective v4
+diagnostic and preserves every prior campaign and retained boundary.
+
+Before owner authorization, the implementation must classify the complete
+registered provider taxonomy independently, persist one safe terminal trace
+per operationally missing pairing, enforce the sequence-only 3-consecutive
+and 10-cumulative circuit breaker, quarantine contract/safety failures,
+retain missing pairings in all metric denominators, and independently
+reconstruct every all-pairing contrast endpoint. The frozen retry contract
+remains two identical transport attempts, one schema-only repair, no semantic
+or outcome-dependent retry, and no replacement.
+
+The authorization-free acceptance wall comprises the complete 500-pairing
+synthetic rehearsal, zero/mixed/all-invalid matrices, first/middle/final
+logical-request and pairing missingness, isolated and mixed missingness,
+exact circuit thresholds, provider protected classes, post-lock no-call
+replay, production custody/commitment/lock/unseal/redaction/cleanup
+rehearsals, all inherited and new corruptions, and full repository validation.
+Only after the exact execution commit and generic owner gate are committed
+may the task read the two-name credential subset, create real v5 custody, call
+providers, spend, or unseal.

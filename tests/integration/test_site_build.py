@@ -177,7 +177,8 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     dd010_data = json.loads((output / "data/studies/dd-010.json").read_text(encoding="utf-8"))
     assert "AO-0009-one-use-aggregate-r2-diagnostic" in dd010_data["evidence_status"]
     assert "AO-0010-forward-only-protocol-validity-policy-v2" in dd010_data["evidence_status"]
-    assert dd010_data["registry_status"].endswith("policy-v2-frozen")
+    assert "AO-0011-forward-only-provider-outcome-policy-v3" in (dd010_data["evidence_status"])
+    assert dd010_data["registry_status"].endswith("provider-outcome-policy-v3-awaiting-owner-gate")
     assert any(
         item["path"]
         == "reports/benchmark/treasurebench-ao0008-fixed-batch-diagnostic-r2-closeout.md"
