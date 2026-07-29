@@ -1,6 +1,6 @@
 schema_version: treasurebench-agents-v1-fresh-pilot-v4-readiness-v1
 recorded_at_utc: "2026-07-29T14:57:12Z"
-status: pass-execution-frozen-owner-gate-required
+status: pass-execution-frozen-owner-gate-validated-authorization-required
 classification: DD-010-engineering-only-no-scientific-evidence
 task_id: AO-0010
 issue: 208
@@ -31,6 +31,12 @@ acceptance:
     status: pass-prerefreeze-head
     head: d6204966e795b6f4da8256bc8ddc14d3a60c7ce3
     runs: [30461373459, 30461364571]
+  generic_owner_gate:
+    status: pass-live-validate-only-no-authorization
+    path: reports/agent-ops/AO-0010-treasurebench-fresh-pilot-v4-owner-gate.yml
+    manifest_head: 17acd93030e815daf22a7a00e4cf6633b38b2829
+    protected_paths: 24
+    exact_challenge: AUTHORIZE AOG-AO-0010-FRESH-PILOT-V4 5289882
 task_specific:
   synthetic_tasks: 50
   synthetic_runs: 500
@@ -74,4 +80,4 @@ activity:
   prior_private_state_reads: 0
   private_objects_created: 0
   spend_usd: "0"
-next_gate: committed-generic-AOG-AO-0010-FRESH-PILOT-V4
+next_gate: exact-owner-authorization-AOG-AO-0010-FRESH-PILOT-V4

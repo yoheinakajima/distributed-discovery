@@ -223,9 +223,10 @@ The complete authorization-free wall passes, including zero/mixed/all-invalid
 500-pairing batches, first/middle/final invalid events, Methods A/B/C,
 independent metric-bound reconstruction, every existing and new relevant
 corruption, production permit/custody/output-lock/unseal/redaction/cleanup
-rehearsals, and the full repository validation. The next boundary is the exact
-execution freeze and one generic owner gate. Until that gate is authorized,
-credentials, real private generation, provider calls, spend, and unsealing
-remain prohibited. This is DD-010 engineering only and creates no DD-023,
-claim, scientific run, evidence promotion, performance result, ranking,
-release, submission, or base campaign.
+rehearsals, and the full repository validation. Execution is frozen at
+`5289882dca6b8912a0518bba72aba1f4d595c2a8`, and the one generic owner
+gate is committed and live-validated without authorization. Until that gate is
+authorized, credentials, real private generation, provider calls, spend, and
+unsealing remain prohibited. This is DD-010 engineering only and creates no
+DD-023, claim, scientific run, evidence promotion, performance result,
+ranking, release, submission, or base campaign.

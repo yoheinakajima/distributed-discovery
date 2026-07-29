@@ -248,11 +248,13 @@ production custody/lock/unseal/redaction/cleanup rehearsals, 62 focused tests,
 and the full 725-test repository wall. Protocol-invalid traces alone do not
 quarantine; terminal-provider and integrity failures still do.
 
-The policy is frozen before any v4 authorization or generation. AO-0010 is
-stopped at its owner-gate boundary: no credential, real private seed, task,
-answer, key, ciphertext, provider call, spend, unseal, or scientific evidence
-has been created or accessed. AO-0008 and every prior campaign remain
-permanently closed and immutable.
+The policy is frozen before any v4 authorization or generation. Execution is
+frozen at `5289882dca6b8912a0518bba72aba1f4d595c2a8`; the generic owner gate
+is committed and live-validated without authorization. AO-0010 is stopped at
+that boundary: no credential, real private seed, task, answer, key,
+ciphertext, provider call, spend, unseal, or scientific evidence has been
+created or accessed. AO-0008 and every prior campaign remain permanently
+closed and immutable.
 
 ## Registered evaluation campaign
 

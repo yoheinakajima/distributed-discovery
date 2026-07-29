@@ -176,7 +176,7 @@ implementation disagreement; or unsafe retained state.
   creation, and passing draft-PR checks.
 - **M5 — complete:** exact execution-freeze commit and matching remote draft-PR
   head.
-- **M6 — active:** committed generic owner gate, live authorization-free gate
+- **M6 — complete:** committed generic owner gate, live authorization-free gate
   validation, schema-valid handoff, and exact stop.
 - **M7 — pending and unauthorized:** later one-gate live success-or-honest-
   quarantine lifecycle, merge, CI/Pages, live-route verification, issue
@@ -198,7 +198,7 @@ implementation disagreement; or unsafe retained state.
 - [x] Complete M3 rehearsals and corruption suite.
 - [x] Complete M4 full validation and draft PR.
 - [x] Freeze and push M5 execution commit.
-- [ ] Commit and validate the M6 generic owner gate, render the exact handoff,
+- [x] Commit and validate the M6 generic owner gate, render the exact handoff,
   and stop before credentials, real private generation, calls, or spend.
 
 ## Discoveries and surprises
@@ -319,6 +319,15 @@ implementation disagreement; or unsafe retained state.
   hashes and the fixed-contract hash are recorded, and the five unrelated
   untracked files remain untouched. Begin M6 and make no further
   execution-sensitive change.
+- `2026-07-29T15:03:38Z`: complete M6. Committed and pushed generic gate
+  manifest head `17acd93030e815daf22a7a00e4cf6633b38b2829` passes the live
+  gate engine in validate-only mode against issue #208, draft PR #209, the
+  exact execution commit, fixed-contract hash, all 24 protected hashes, policy
+  v2, zero cumulative calls and spend, caps, permissions, prohibitions, and
+  expiry. The exact challenge is
+  `AUTHORIZE AOG-AO-0010-FRESH-PILOT-V4 5289882`. The owner-gate-required
+  handoff validates against `agent-ops-handoff-v1`. No authorization,
+  credential, real private material, provider call, spend, or unseal occurs.
 
 ## Validation strategy
 
@@ -363,14 +372,17 @@ contracts, current official provider audit, recalculated budget, runtime,
 independent classifier/bound reconstruction, 76-case corruption audit, tests,
 public rehearsal records, complete authorization-free validation, and draft PR
 #209 are created. Exact execution commit
-`5289882dca6b8912a0518bba72aba1f4d595c2a8` is pushed. The owner gate and
-handoff remain pending.
+`5289882dca6b8912a0518bba72aba1f4d595c2a8`, generic owner gate
+`reports/agent-ops/AO-0010-treasurebench-fresh-pilot-v4-owner-gate.yml`, and
+schema-valid owner-gate-required handoff are created and pushed.
 
 ## Blockers
 
-None. The task must stop if it would require credentials, real private
-generation, provider calls, spend, an execution-sensitive change after freeze,
-an identity/model/route/cap/execution-tree change, invalid authorization,
+The exact AO-0010 generic owner authorization is absent by design, so M7 is
+blocked until the owner runs the registered gate command. The task must stop
+if it would otherwise require credentials, real private generation, provider
+calls, spend, an execution-sensitive change after freeze, an
+identity/model/route/cap/execution-tree change, invalid authorization,
 replacement/splice/semantic retry/new private identity, unsafe retained state,
 or authority beyond DD-010 engineering.
 
@@ -385,9 +397,10 @@ the owner gate.
 
 ## Outcome and retrospective
 
-Pending. The intended preauthorization outcome is a fully validated,
+The preauthorization outcome is complete: one fully validated,
 collision-free v4 engineering campaign under frozen protocol-validity policy
-v2, one pushed exact execution commit, one committed generic owner gate, and
-one exact authorization-required handoff. No credential, real private
-generation, provider call, spend, or scientific evidence is created before
-the stop.
+v2, one pushed exact execution commit, one committed and live-validated
+generic owner gate, and one exact schema-valid authorization-required handoff.
+The task stops at M6. No authorization, credential, real private generation,
+provider call, spend, unseal, or scientific evidence is created before the
+stop.

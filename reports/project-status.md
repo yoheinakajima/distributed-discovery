@@ -27,11 +27,14 @@ cleanup; 62 focused tests; and all 725 repository tests. Provider-terminal and
 integrity failures still quarantine, while protocol-invalid traces alone do
 not.
 
-AO-0010 is at the exact execution-freeze and generic-owner-gate boundary. No
-credential, real private seed, task, answer, key, nonce, ciphertext,
-commitment, provider call, spend, or unseal has occurred, and no performance
-or scientific evidence exists. The later gate, if explicitly authorized,
-covers only the normal engineering-complete or honest-quarantine DD-010 path.
+AO-0010 execution is frozen at
+`5289882dca6b8912a0518bba72aba1f4d595c2a8`. Its generic owner gate is
+committed, pushed, and live-validated without creating an authorization, and
+the task is stopped there. No credential, real private seed, task, answer, key,
+nonce, ciphertext, commitment, provider call, spend, or unseal has occurred,
+and no performance or scientific evidence exists. The later gate, if
+explicitly authorized, covers only the normal engineering-complete or honest-
+quarantine DD-010 path.
 
 AO-0009's exact R2 owner gate and one-use aggregate diagnostic completed. The
 diagnostic authenticated all 450 fixed-full-batch traces and verified the

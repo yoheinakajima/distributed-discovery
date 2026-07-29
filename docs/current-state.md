@@ -27,12 +27,14 @@ production custody/lock/unseal/redaction/cleanup rehearsals, 62 focused tests,
 and all 725 repository tests. Protocol-invalid traces alone do not quarantine;
 terminal-provider and integrity failures do.
 
-The exact next boundary is the single generic AO-0010 owner gate. No
-credential, real private seed, task, answer, key, ciphertext, provider call,
-spend, unseal, performance result, comparison, ranking, scientific run, claim,
-paper result, release, submission, or base-campaign authority has been created
-or accessed. AO-0008 and every prior campaign remain permanently immutable and
-closed.
+Execution is frozen at
+`5289882dca6b8912a0518bba72aba1f4d595c2a8`. The single generic AO-0010
+owner gate is committed, pushed, and live-validated without creating an
+authorization; exact owner authorization is the next boundary. No credential,
+real private seed, task, answer, key, ciphertext, provider call, spend, unseal,
+performance result, comparison, ranking, scientific run, claim, paper result,
+release, submission, or base-campaign authority has been created or accessed.
+AO-0008 and every prior campaign remain permanently immutable and closed.
 
 _TreasureBench AO-0008 aggregate fixed-batch diagnosis, 2026-07-29:_
 AO-0009 executed its exact R2 owner-gated diagnostic once. It authenticated

@@ -24,11 +24,14 @@ rejections, 62 focused tests, and the complete 725-test repository wall.
 Protocol-invalid traces alone do not quarantine; provider-terminal and
 integrity failures do.
 
-The next action is the exact execution freeze, one committed generic owner
-gate, and an exact stop. Credentials, real private generation, provider calls,
-spend, and unsealing remain unauthorized. AO-0008 and all earlier campaigns
-remain permanently quarantined and receive no authority from AO-0010. This is
-DD-010 engineering only, not performance or scientific evidence.
+Execution is frozen at
+`5289882dca6b8912a0518bba72aba1f4d595c2a8`; the one generic owner gate is
+committed, pushed, and live-validated without creating an authorization. The
+task stops there. Credentials, real private generation, provider calls, spend,
+and unsealing remain unauthorized until the exact owner gate is consumed.
+AO-0008 and all earlier campaigns remain permanently quarantined and receive
+no authority from AO-0010. This is DD-010 engineering only, not performance or
+scientific evidence.
 
 ## AO-0009 aggregate diagnosis
 
