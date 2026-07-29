@@ -35,8 +35,11 @@ identical-request retry lacked the required deterministic delay. The same
 task, issue, branch, draft PR #211, campaign, and batch continue through R2
 revalidation and refreeze. All 176 focused tests, all 857 repository tests,
 Ruff, MyPy over 215 source files, and the complete verification wall pass.
-The future gate ID is
-`AOG-AO-0011-FRESH-PILOT-V5-R2`.
+The sole current gate ID is
+`AOG-AO-0011-FRESH-PILOT-V5-R2`. Execution is frozen and pushed at
+`19e36df62a6ba5ad9392588a1c59acf8b01adc10`; both exact-head CI workflows
+pass, and the committed 35-path gate passes live validate-only without
+creating authorization. AO-0011 is stopped at owner-gate-required.
 
 ## Preserved AO-0010 closeout
 

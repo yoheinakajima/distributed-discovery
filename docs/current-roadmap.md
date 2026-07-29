@@ -36,8 +36,11 @@ This is not performance or scientific evidence.
 The unused original execution freeze and gate are prospectively superseded
 before authorization because the second transport attempt previously lacked
 the required delay. R2 implementation, full rehearsal, execution refreeze,
-draft-PR CI, and `AOG-AO-0011-FRESH-PILOT-V5-R2` are now the sole active
-continuation. No authorization was created or consumed.
+and draft-PR CI pass at execution commit
+`19e36df62a6ba5ad9392588a1c59acf8b01adc10`. The committed 35-path
+`AOG-AO-0011-FRESH-PILOT-V5-R2` gate passes live validate-only without
+creating authorization. AO-0011 is stopped at that exact owner gate; no
+authorization was created or consumed.
 
 ## AO-0010 prospective protocol-validity policy v2
 

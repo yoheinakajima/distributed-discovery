@@ -31,17 +31,18 @@ The repository and live GitHub expose no collision for AO-0011, campaign
 `tb-agents-v1-repair-confirmation-v5-b01`, branch
 `codex/treasurebench-agents-v1-fresh-pilot-v5`, policy
 `treasurebench-agents-v1-provider-outcome-policy-v3`, slot namespace
-`RCV5-SLOT`, generation domain `fresh-private-v5`, or gate
-`AOG-AO-0011-FRESH-PILOT-V5`. Issue #210 and branch
+`RCV5-SLOT`, generation domain `fresh-private-v5`, or original gate
+`AOG-AO-0011-FRESH-PILOT-V5`. The additive R2 gate is
+`AOG-AO-0011-FRESH-PILOT-V5-R2`. Issue #210 and branch
 `codex/treasurebench-agents-v1-fresh-pilot-v5` now own the task.
 
 The original authorization-free implementation completed, but its unused
 execution freeze and gate are superseded because the frozen resumable adapter
 dispatched a second identical transport attempt immediately while the provider
 audit required Retry-After handling or bounded backoff. No original-gate
-authorization was created or consumed. R2 implementation and revalidation are
-in progress with zero credential reads, real private objects, provider calls,
-spend, or real unseal. The previously registered 50-task
+authorization was created or consumed. R2 implementation and revalidation
+completed with zero credential reads, real private objects, provider calls,
+spend, or real unseal. The corrected 50-task
 synthetic rehearsal accounts for all 500 pairings, 3,014 turns, 7,900
 metric intervals, and 144 all-pairing architecture-contrast bounds with
 independent provider-outcome classification and independent bound
@@ -49,12 +50,14 @@ reconstruction. The provider-outcome scenario wall covers zero, mixed, and
 all protocol-invalid responses; isolated and mixed operational missingness;
 first, middle, and final logical-request and intended-pairing positions; the
 exact three-consecutive and ten-cumulative circuit thresholds; and rejection
-of an eleventh observation. All 96 v5 boundary corruptions and all 28
+of an eleventh observation. All 115 v5 boundary corruptions and all 28
 inherited repaired-instrument corruptions reject. Disposable production-path
 custody, commitment, lock, post-lock replay, redaction, and cleanup pass.
-Focused validation passes 107 tests and the complete repository wall passes
-832 tests. Activity remains zero credentials, real private objects, provider
-calls, spend, and real unseal.
+Focused validation passes 176 tests and the complete repository wall passes
+857 tests. Execution is frozen at `19e36df62a6ba5ad9392588a1c59acf8b01adc10`;
+both exact-head CI workflows and the live validate-only R2 gate pass. Activity
+remains zero credentials, real private objects, provider calls, spend, and
+real unseal.
 
 AO-0010 is complete. Its v4 campaign and batch remain permanently
 quarantined at the private prefix under public class
@@ -205,7 +208,7 @@ closeout.
   retry-delay runtime, append-only restart audit, safe metadata boundary,
   focused tests, 50-task/500-pairing rehearsal, corruption wall, full tests,
   and repository verification.
-- **M6R2b — in progress:** exact R2 execution commit, push, protected-tree
+- **M6R2b — complete:** exact R2 execution commit, push, protected-tree
   freeze, exact-head draft-PR CI, committed R2 owner gate, validate-only gate,
   schema-valid handoff, and exact stop.
 - **M7 — pending:** not authorized in this phase; after later exact
@@ -232,7 +235,7 @@ closeout.
 - [x] Complete M6.
 - [x] Complete R2 authority, implementation, and authorization-free
   revalidation without consuming the original gate.
-- [ ] Complete the R2 execution freeze, exact-head CI, gate, handoff, and
+- [x] Complete the R2 execution freeze, exact-head CI, gate, handoff, and
   stop.
 - [x] Stop before `.env.txt`, credentials, real private material, provider
   calls, spend, or real v5 unseal.
@@ -345,6 +348,14 @@ closeout.
   focused tests, all 857 repository tests, Ruff, MyPy over 215 source files,
   and the complete `make verify` wall then pass. Begin the exact execution
   commit and draft-PR CI freeze.
+- `2026-07-29T21:06:47Z`: freeze and push corrected execution commit
+  `19e36df62a6ba5ad9392588a1c59acf8b01adc10`. Exact-head CI runs
+  `30490541676` and `30490543736` pass. Commit the additive 35-path R2 freeze,
+  explicit original-gate supersession, and gate at manifest head
+  `12b7895009e37332a96eb538770e6b8adaeeceb0`. Live validate-only passes with
+  exact challenge `AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5-R2 19e36df` and
+  creates no authorization or consequential activity. Complete M6R2b and stop
+  at owner-gate-required.
 
 ## Validation strategy
 
@@ -393,16 +404,15 @@ execution freeze, generic owner gate, and owner-gate-required handoff are
 created. The original execution freeze, gate, and handoff are preserved but
 superseded for authorization. The additive R2 contract, implementation,
 policy and audit corrections, tests, corruption and rehearsal records are
-complete; the R2 execution freeze, gate, and handoff remain to be committed.
-M7 remains unauthorized.
+complete. The R2 execution freeze, gate, readiness record, and handoff are
+committed and validated. M7 remains unauthorized.
 
 ## Blockers
 
-The exact R2 execution commit, exact-head CI result, and committed R2 generic
-gate must be completed before absent owner authorization becomes the sole
+The exact R2 owner authorization is absent by design and is now the sole
 blocker. Five unrelated untracked files prevent a globally clean working tree
-but are outside AO-0011 and will remain untouched; all staging is
-path-explicit and tracked-tree identity checks exclude them as AO-0010 did.
+but are outside AO-0011 and remain untouched; all staging is path-explicit and
+tracked-tree identity checks exclude them as AO-0010 did.
 
 ## Recovery and restart instructions
 
@@ -415,8 +425,9 @@ later authorized.
 
 ## Outcome and retrospective
 
-The authorization-free phase completed with the exact v3 policy, v5
-execution tree, rehearsal evidence, draft PR, execution freeze, and generic
-gate validated. No credential, real private object, provider call, spend, or
-real unseal occurred. AO-0011 is paused exactly at the owner-gate-required
+The R2 authorization-free phase completed with the exact v3 policy,
+deterministic retry-delay correction, v5 execution tree, rehearsal evidence,
+draft PR, execution freeze, exact-head CI, and generic R2 gate validated. No
+authorization, credential, real private object, provider call, spend, or real
+unseal occurred. AO-0011 is paused exactly at the owner-gate-required
 boundary; no scientific or performance evidence was created.

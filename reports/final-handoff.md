@@ -18,10 +18,12 @@ governance/site/release wall pass. There were zero credential reads, real
 private objects, provider calls, spend, and real unseals.
 
 The original gate created no authorization and may not be used. The future
-gate is `AOG-AO-0011-FRESH-PILOT-V5-R2`; its exact execution commit and
-challenge will be frozen after the candidate is committed, pushed, and passes
-draft-PR CI. This is DD-010 engineering only and creates no scientific or
-performance evidence.
+gate is `AOG-AO-0011-FRESH-PILOT-V5-R2`. Execution is frozen at
+`19e36df62a6ba5ad9392588a1c59acf8b01adc10`; both exact-head CI workflows
+pass, and the committed 35-path gate passes live validate-only. AO-0011 stops
+at exact challenge `AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5-R2 19e36df`.
+This is DD-010 engineering only and creates no scientific or performance
+evidence.
 
 ## AO-0010 fresh repair-confirmation v4 closeout (2026-07-29)
 

@@ -37,9 +37,11 @@ cleanup. All 176 focused tests, all 857 repository tests, Ruff, MyPy over 215
 source files, and the complete verification wall pass. Activity remains zero
 credentials, zero real private objects, zero provider calls, zero spend, and
 zero real unseal. The unused original execution freeze and gate are
-prospectively superseded. R2 execution refreeze and exact-head draft-PR CI on
-the same PR #211 are in progress. The next and only future gate is
-`AOG-AO-0011-FRESH-PILOT-V5-R2`.
+prospectively superseded. R2 execution is frozen at
+`19e36df62a6ba5ad9392588a1c59acf8b01adc10`; exact-head draft-PR CI runs
+`30490541676` and `30490543736` pass. The 35-path R2 gate passes live
+validate-only without creating authorization. AO-0011 is stopped at exact
+challenge `AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5-R2 19e36df`.
 
 _TreasureBench protocol-validity policy v2 and fresh v4 quarantine,
 2026-07-29:_ AO-0010, issue #208 and draft PR #209, adopt one forward-only

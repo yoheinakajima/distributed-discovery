@@ -62,11 +62,13 @@ private material, provider call, spend, or real v5 unseal.
 The original authorization-free phase froze execution at
 `f51728746b83e0d22cb2d6f5be0513a9cb2b5a00`, but that execution surface and
 unused gate are now superseded for future authorization. No authorization was
-created or consumed. R2 implementation, full rehearsal, execution refreeze,
-draft-PR CI, and a new committed gate
-`AOG-AO-0011-FRESH-PILOT-V5-R2` are in progress. No credential, provider,
-spend, real private-generation, or unseal activity is authorized during this
-correction.
+created or consumed. R2 implementation, full rehearsal, and the repository
+verification wall pass. Execution is frozen at
+`19e36df62a6ba5ad9392588a1c59acf8b01adc10`; exact-head draft-PR CI runs
+`30490541676` and `30490543736` pass. The committed 35-path gate
+`AOG-AO-0011-FRESH-PILOT-V5-R2` passes live validate-only without creating
+authorization. AO-0011 is stopped at exact challenge
+`AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5-R2 19e36df`.
 
 ## Completed continuation — AO-0010 protocol-validity policy v2 and fresh pilot v4 (2026-07-29)
 
