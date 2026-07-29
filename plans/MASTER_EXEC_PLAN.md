@@ -1,5 +1,41 @@
 # Master execution plan
 
+## Active continuation — AO-0010 protocol-validity policy v2 and fresh pilot v4 (2026-07-29)
+
+Issue #208, branch `codex/treasurebench-agents-v1-fresh-pilot-v4`, fixed task
+contract `tasks/treasurebench-agents-v1-fresh-pilot-v4.yml`, and living
+ExecPlan `plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V4.md` own the sole
+substantive lane as AO-0010.
+
+AO-0010 adopts one forward-only TreasureBench Agents v1 protocol-validity
+policy v2 and prepares one wholly fresh DD-010 engineering-only sealed v4
+campaign. Completed provider responses that remain nonconforming after exactly
+one schema-only repair are retained as protocol-invalid evaluated-system
+behavior, not by themselves batch-integrity failures. They remain in the
+denominator, receive no parsed or constructed action and no action credit, are
+never replaced or rerun, and enter registered metric-specific feasible bounds
+and all-intended-pairing architecture-contrast bounds. Protocol conformance is
+reported separately; any valid-output-conditional diagnostic is secondary and
+selection-conditioned.
+
+The prospective campaign is
+`treasurebench-agents-v1-repair-confirmation-v4`, batch
+`tb-agents-v1-repair-confirmation-v4-b01`, with 50 new private tasks, ten from
+each family, five architectures, direct OpenAI
+`gpt-5.4-2026-03-05`, direct Anthropic `claude-sonnet-4-6`, one repeat, and
+500 intended pairings. Hard caps remain USD 25 total, USD 10 OpenAI, USD 15
+Anthropic, and 5,200 calls. Policy v2 must freeze before authorization or
+generation.
+
+AO-0008 and all prior campaigns remain permanently closed and immutable. The
+v4 task must complete all authorization-free policy, independent classifier
+and bounds, rehearsal, corruption, custody, lock, unseal, redaction, cleanup,
+governance, and draft-PR checks; freeze and push the exact execution commit;
+commit one generic owner gate; and stop exactly once before credentials, real
+private generation, provider calls, or spend. No DD-023, claim, scientific
+run, paper result, ranking, composite, release, submission, or base campaign
+is authorized.
+
 ## Completed continuation — AO-0009 AO-0008 fixed-full-batch adjudication (2026-07-29)
 
 Issue #206, branch
