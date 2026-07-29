@@ -16,9 +16,10 @@ generation, provider calls, or spend.
 At `2026-07-29T02:55:27Z`, local `main`, `origin/main`, and live GitHub main
 match at `8054542064651d61e6b286536fc477093e0f3530`. No substantive pull
 request is open; issue #32 is the only unrelated pre-existing open issue.
-Issue #208 now registers AO-0010. Five unrelated
-untracked files are preserved and excluded from every AO-0010 staging command.
-Branch `codex/treasurebench-agents-v1-fresh-pilot-v4` is active. Collision
+Issue #208 now registers AO-0010 and draft PR #209 is open from the task
+branch. Five unrelated untracked files are preserved and excluded from every
+AO-0010 staging command. Branch
+`codex/treasurebench-agents-v1-fresh-pilot-v4` is active. Collision
 checks found the prospective campaign
 `treasurebench-agents-v1-repair-confirmation-v4`, batch
 `tb-agents-v1-repair-confirmation-v4-b01`, slot namespace `RCV4-SLOT`,
@@ -225,6 +226,11 @@ implementation disagreement; or unsafe retained state.
   responses without a provider call to perform Method C, Methods A/B, and
   independent bounds. Post-lock derived objects have a separate stable
   commitment and do not mutate the provider-output lock inventory.
+- The first complete repository wall reached 68% after every earlier check
+  passed and found one stale registration snapshot: six new v4 policy and
+  execution schemas raise the exact Agents v1 schema count from 42 to 48.
+  Updating only that expected count made the focused 11-test file pass; the
+  complete wall then passed all 725 tests and every downstream audit.
 
 ## Decision log
 
@@ -270,6 +276,18 @@ implementation disagreement; or unsafe retained state.
   deterministic cleanup. Focused runtime/session tests pass, including
   post-lock zero-call replay and stable resume. No credentials, real private
   objects, provider calls, or spend occur. Begin M4 full validation.
+- `2026-07-29T14:16:08Z`: create draft PR #209 from the pushed M2/M3 head
+  `cd073d64ab734f3d7b2a52ccc62840969843a00f` to verified main. Bind the fixed
+  task contract to the single draft PR and retain M4 as active pending the
+  complete repository and GitHub check wall.
+- `2026-07-29T14:31:45Z`: complete the local M4 wall. Bootstrap; Agents v1
+  registration, evaluation, dry-run, and readiness; v4 audit/rehearsal;
+  formatting; lint; MyPy over 208 source files; 725 tests; claims; 51 run
+  manifests; editorial; program memory; Agent Operations; publication
+  infrastructure; TreasureBench naming; release readiness; and offline
+  compendium verification all pass. The first wall's sole stale 42-schema
+  snapshot was corrected to the exact 48 registered schemas and the entire
+  wall rerun cleanly. GitHub draft-PR checks remain the last M4 condition.
 
 ## Validation strategy
 
