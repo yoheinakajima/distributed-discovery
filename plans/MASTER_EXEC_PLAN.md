@@ -1,11 +1,22 @@
 # Master execution plan
 
-## Active continuation — AO-0011 provider-outcome policy v3 and fresh pilot v5 (2026-07-29)
+## Active continuation — AO-0011 provider-outcome policy v3 and fresh pilot v5 R2 (2026-07-29)
 
-Issue #210, branch `codex/treasurebench-agents-v1-fresh-pilot-v5`, fixed task
-contract `tasks/treasurebench-agents-v1-fresh-pilot-v5.yml`, and living
+Issue #210, draft PR #211, branch
+`codex/treasurebench-agents-v1-fresh-pilot-v5`, additive R2 task contract
+`tasks/treasurebench-agents-v1-fresh-pilot-v5-r2.yml`, and living
 ExecPlan `plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V5.md` own the sole
 substantive lane as AO-0011.
+
+The owner-directed preauthorization amendment supersedes the unused original
+gate because the frozen resumable adapter dispatched its second identical
+transport attempt immediately while the provider audit required Retry-After
+handling or bounded backoff. R2 preserves the same task and every campaign,
+batch, route, model, credential, cap, policy, circuit-breaker, retry-ceiling,
+denominator, and prohibition identity. It adds only one deterministic,
+one-to-30-second, class-bounded, append-only and restart-safe delay before the
+sole permitted second attempt, using no random jitter and retaining no raw
+headers or error messages.
 
 AO-0011 preserves AO-0010, provider-terminal quarantine of campaign
 `treasurebench-agents-v1-repair-confirmation-v4`, batch
@@ -48,12 +59,14 @@ and one generic owner gate must pass before the task stops once. Before later
 exact authorization there is no `.env.txt` or credential read, real seed or
 private material, provider call, spend, or real v5 unseal.
 
-The authorization-free phase is complete. Execution is frozen at
-`f51728746b83e0d22cb2d6f5be0513a9cb2b5a00`; draft PR #211 and exact-head
-CI pass; and the 32-path generic gate at manifest head
-`35fea430ba5f6ff0b5ac18752aaba1d504c292c0` passes live validate-only without
-creating an authorization. AO-0011 is stopped at exact owner challenge
-`AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5 f517287`.
+The original authorization-free phase froze execution at
+`f51728746b83e0d22cb2d6f5be0513a9cb2b5a00`, but that execution surface and
+unused gate are now superseded for future authorization. No authorization was
+created or consumed. R2 implementation, full rehearsal, execution refreeze,
+draft-PR CI, and a new committed gate
+`AOG-AO-0011-FRESH-PILOT-V5-R2` are in progress. No credential, provider,
+spend, real private-generation, or unseal activity is authorized during this
+correction.
 
 ## Completed continuation — AO-0010 protocol-validity policy v2 and fresh pilot v4 (2026-07-29)
 

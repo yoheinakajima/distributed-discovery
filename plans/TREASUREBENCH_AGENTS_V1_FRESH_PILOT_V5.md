@@ -12,6 +12,13 @@ and draft-PR checks must pass before one generic owner gate is committed and
 the task stops before credentials, real private generation, provider calls, or
 spend.
 
+The owner-directed R2 amendment prospectively supersedes the unused original
+gate and original fixed contract for authorization purposes. It preserves the
+same AO-0011 task, issue, draft PR, branch, campaign, batch, policies, routes,
+models, credential subset, caps, circuit breakers, retry ceilings,
+denominators, and prohibitions while adding the missing deterministic bounded
+delay before the sole permitted second identical-request transport attempt.
+
 ## Current state
 
 At `2026-07-29T17:27:13Z`, local `main`, `origin/main`, and live GitHub main
@@ -28,7 +35,13 @@ The repository and live GitHub expose no collision for AO-0011, campaign
 `AOG-AO-0011-FRESH-PILOT-V5`. Issue #210 and branch
 `codex/treasurebench-agents-v1-fresh-pilot-v5` now own the task.
 
-The authorization-free implementation is complete. The registered 50-task
+The original authorization-free implementation completed, but its unused
+execution freeze and gate are superseded because the frozen resumable adapter
+dispatched a second identical transport attempt immediately while the provider
+audit required Retry-After handling or bounded backoff. No original-gate
+authorization was created or consumed. R2 implementation and revalidation are
+in progress with zero credential reads, real private objects, provider calls,
+spend, or real unseal. The previously registered 50-task
 synthetic rehearsal accounts for all 500 pairings, 3,014 turns, 7,900
 metric intervals, and 144 all-pairing architecture-contrast bounds with
 independent provider-outcome classification and independent bound
@@ -95,10 +108,13 @@ closeout.
    hidden-reasoning, credential/authority, retained-state, identity,
    unregistered, unsafe-retention, and ambiguous failure.
 5. Preserve at most two bounded transport attempts for the identical logical
-   request, exactly one schema-only repair, zero semantic-answer or
+   request, and require the sole permitted retry to follow one deterministic
+   restart-safe delay selected from a safely parsed and one-to-30-second
+   clamped Retry-After value or the frozen class fallback; preserve exactly
+   one schema-only repair, zero semantic-answer or
    outcome-dependent retries, zero replacement pairing or batch, zero silent
-   normalization, zero invalid-output credit, and exactly-one-final-action
-   semantics.
+   normalization, zero invalid-output credit, zero random jitter, and
+   exactly-one-final-action semantics.
 6. After operational missingness, write one terminal missing trace, retain
    safely completed prior turns, create and credit no action, retain the
    pairing in all denominators, and continue unless the frozen circuit breaker

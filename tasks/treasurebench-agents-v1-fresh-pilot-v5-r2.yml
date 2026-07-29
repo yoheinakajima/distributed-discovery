@@ -1,0 +1,142 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0011
+title: TreasureBench Agents v1 fresh pilot v5 deterministic retry-delay correction R2
+task_type: private-evaluation
+status: active
+objective: Prospectively correct the unused AO-0011 v5 execution surface so the one permitted identical-request transport retry uses one deterministic, bounded, restart-safe delay before any owner authorization, then refreeze the same campaign and batch behind R2 gate AOG-AO-0011-FRESH-PILOT-V5-R2.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: policy, path: docs/benchmark/agents-v1/AGENTS.md}
+  - {type: policy, path: src/distributed_discovery/benchmark/agents_v1/AGENTS.md}
+  - {type: record, path: tasks/treasurebench-agents-v1-fresh-pilot-v5.yml}
+  - {type: record, path: reports/agent-ops/AO-0011-treasurebench-fresh-pilot-v5-owner-gate.yml}
+  - {type: decision, path: docs/program-memory/registry.yml}
+  - {type: policy, path: docs/benchmark/agents-v1/protocol-validity-policy-v2.yml}
+  - {type: policy, path: docs/benchmark/agents-v1/provider-outcome-policy-v3.yml}
+  - {type: plan, path: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V5.md}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/210"}
+  - {type: pull-request, path: "https://github.com/yoheinakajima/distributed-discovery/pull/211"}
+owner_decisions:
+  - AO-0011 continues in the same Codex task, repository, issue 210, draft pull request 211, branch, living ExecPlan, campaign, and batch; no replacement task, issue, branch, pull request, campaign, batch, session, or private identity is created.
+  - The unused AOG-AO-0011-FRESH-PILOT-V5 gate and original AO-0011 contract are prospectively superseded and receive no authorization; no v4 or earlier campaign is modified or diagnosed.
+  - Preserve at most two transport attempts for one identical logical request, exactly one schema-only repair, zero semantic-answer retries, zero outcome-dependent retries, zero replacement pairing or batch, zero random jitter, protocol-validity policy v2, provider-outcome policy v3, and the three-consecutive and ten-cumulative circuit breakers.
+  - Freeze retry-delay bounds at one second minimum and 30 seconds maximum, with class fallbacks of two seconds for timeout, transient transport, and invalid provider JSON and five seconds for rate limit and transient provider, overload, or service error.
+  - Use only a safely parsed direct-provider Retry-After value when available, clamped to the one-to-30-second range; otherwise use the registered class fallback.
+  - Never wait or retry for provider-contract-or-safety failure, after provider-phase closure, after authorization, identity, cap, route, model, or retained-state failure, or beyond the existing two-attempt ceiling.
+  - Persist no raw header or raw error body. Public or private operational retry metadata is restricted to retry_delay_seconds, retry_delay_source, retry_class, and transport_attempt.
+  - The append-only private ledger must bind the first failed attempt identity, registered provider-outcome disposition, immutable delay decision and source, delay completion, second attempt identity, and absence of any third attempt.
+  - A restart after the first attempt must replay the recorded delay decision, neither bypass the delay nor create a duplicate or unregistered retry, and reject any changed delay after restart.
+  - Real authorized live mode uses an injected real sleeper; tests and authorization-free rehearsals use a deterministic no-wait recorder and make no credential read or network call.
+  - Preserve every current identity, route, exact model, credential subset, cap, circuit breaker, denominator, pricing and token accounting rule, retention boundary, prohibition, and prior-campaign immutability.
+  - Revalidate the complete 50-task and 500-pairing rehearsal, provider-outcome and circuit-breaker scenarios, independent classification, interval and contrast-bound reconstruction, custody, commitments, lock, post-lock replay, redaction, deterministic cleanup, focused tests, repository tests, and draft-PR CI.
+  - R2 binds the new execution commit and protected tree hashes, the exact delay table and parser, unchanged policies, campaign, batch, routes, models, credential subset, circuit breakers and caps, the exact live command, and the normal engineering-complete or honest-quarantine closeout.
+scope:
+  paths:
+    - tasks/treasurebench-agents-v1-fresh-pilot-v5-r2.yml
+    - tasks/treasurebench-agents-v1-fresh-pilot-v5.yml
+    - plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V5.md
+    - plans/MASTER_EXEC_PLAN.md
+    - docs/agent-ops
+    - docs/benchmark/agents-v1
+    - docs/current-state.md
+    - docs/current-roadmap.md
+    - docs/program-memory
+    - reports/agent-ops
+    - reports/benchmark
+    - reports/final-handoff.md
+    - reports/project-status.md
+    - studies/DD-010-discoverybench
+    - src/distributed_discovery/agent_ops
+    - src/distributed_discovery/benchmark/agents_v1
+    - src/distributed_discovery/cli.py
+    - scripts
+    - tests
+    - site
+    - .github/workflows
+    - Makefile
+  actions:
+    - Register this additive R2 authority correction and supersede only the unused original gate.
+    - Implement the exact deterministic delay parser, safe metadata extraction, append-only delay selection and completion records, restart semantics, and injected sleeper or clock.
+    - Add the required unit, integration, corruption, leakage, cap, authority, closure, accounting, circuit-breaker, and denominator tests.
+    - Rerun every authorization-free rehearsal and validation wall required by the owner amendment.
+    - Freeze, commit, push, and obtain draft-PR CI for the corrected execution surface.
+    - Commit and validate AOG-AO-0011-FRESH-PILOT-V5-R2, then stop at owner-gate-required without creating or consuming authorization.
+non_goals:
+  - No authorization creation or consumption, .env.txt read, credential read, real private generation, provider call, spend, or real unseal before exact later R2 authorization.
+  - No v4 or earlier campaign diagnosis, modification, unseal, retry, reuse, inference, reclassification, or retrospective policy rewrite.
+  - No change to attempt ceilings, schema-repair count, semantic or outcome retry rules, pairing or batch replacement, random jitter, circuit breakers, protocol-validity policy v2, provider-outcome policy v3, identities, caps, routes, models, credential subset, or denominators.
+  - No DD-023, claim, scientific run or evidence, proof or evidence promotion, paper modification, ranking, composite, leaderboard, package, release, DOI, publication, submission, or base campaign.
+permissions:
+  repository_write: true
+  git_branch_commit: true
+  github_issue_pr: true
+  merge_after_checks: true
+  ci_pages: true
+external_action_permissions:
+  network_observation: true
+  github_mutation: true
+  provider_calls: true
+  spend: true
+  release_publication: false
+  submission: false
+scientific_mutation_permissions:
+  create_study: false
+  create_claim: false
+  create_run: false
+  change_evidence_status: false
+  change_proof_status: false
+  change_paper_lifecycle: false
+private_data_permissions: {read: true, write: true, generate: true, publish: false}
+budget:
+  currency: USD
+  expected: "11.51"
+  hard_cap: "25"
+  call_cap: 5200
+  category_caps: {OpenAI: "10", Anthropic: "15"}
+  cumulative_spend: "0"
+expected_outcomes:
+  - One authorization-free R2 execution package proving the deterministic bounded delay, safe metadata, append-only restart semantics, no third attempt, and unchanged calls, tokens, cost, circuit breakers, and denominators.
+  - One committed R2 owner gate that stops before credentials, real private generation, provider calls, spend, or real unseal.
+  - After later exact R2 authorization only, one normal engineering-complete or honest-quarantine closeout under the unchanged v5 scientific and operational ceilings.
+stop_conditions:
+  - Before authorization, stop exactly once after the committed R2 owner gate and schema-valid R2 owner-gate-required handoff.
+  - Stop if authorization validity, identity, route, model, cap, provider phase, retained state, recorded delay decision, execution tree, or ledger integrity fails before waiting or dispatch.
+  - Stop if a third attempt, changed or duplicate retry, raw header or error-message retention, semantic or outcome retry, replacement, jitter, policy change, identity change, cap increase, or circuit-breaker change is proposed or observed.
+  - Stop if work would read credentials or retained private state, generate real private material, call a provider, spend, or unseal before exact R2 owner authorization.
+  - Stop if scientific, publication, release, submission, base-campaign, or prior-campaign authority would be required.
+acceptance_profile: private-evaluation
+canonical_destinations:
+  - tasks/treasurebench-agents-v1-fresh-pilot-v5-r2.yml
+  - plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V5.md
+  - docs/benchmark/agents-v1
+  - reports/agent-ops
+  - reports/benchmark
+  - studies/DD-010-discoverybench
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 210
+  branch: codex/treasurebench-agents-v1-fresh-pilot-v5
+  pull_request: 211
+  base: main
+exec_plan: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V5.md
+task_delta: null
+frozen_identifiers:
+  study_id: DD-010
+  protocol_validity_policy: treasurebench-agents-v1-protocol-validity-policy-v2
+  provider_outcome_policy: treasurebench-agents-v1-provider-outcome-policy-v3
+  campaign_id: treasurebench-agents-v1-repair-confirmation-v5
+  batch_id: tb-agents-v1-repair-confirmation-v5-b01
+  slot_namespace: RCV5-SLOT
+  generation_domain: fresh-private-v5
+  superseded_gate_id: AOG-AO-0011-FRESH-PILOT-V5
+  owner_gate_id: AOG-AO-0011-FRESH-PILOT-V5-R2
+supersession:
+  supersedes:
+    - tasks/treasurebench-agents-v1-fresh-pilot-v5.yml
+    - AOG-AO-0011-FRESH-PILOT-V5
+  superseded_by: null
+  reason: Owner-directed preauthorization R2 correction adds the missing deterministic bounded delay before the sole permitted identical-request transport retry while preserving every existing identity, cap, policy, circuit breaker, and prohibition.
+next_gate: Complete the authorization-free R2 correction, all exact-scale rehearsals and validation, execution refreeze, draft-PR CI, and commit AOG-AO-0011-FRESH-PILOT-V5-R2 without creating or consuming authorization.
