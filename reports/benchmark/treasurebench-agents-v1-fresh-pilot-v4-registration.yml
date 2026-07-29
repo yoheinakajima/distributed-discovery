@@ -1,6 +1,6 @@
 schema_version: treasurebench-agents-v1-fresh-pilot-v4-registration-v1
 recorded_at_utc: "2026-07-29T04:35:31Z"
-status: pass-offline-policy-v2-frozen-owner-gate-required
+status: pass-offline-exact-execution-frozen-owner-gate-required
 classification: DD-010-public-synthetic-engineering-only
 task_id: AO-0010
 campaign_id: treasurebench-agents-v1-repair-confirmation-v4
@@ -15,7 +15,7 @@ counts:
   runs: 500
   normal_calls: 3016
 hashes:
-  request: sha256:b46b99ceea44cfcb1f312faf2b4915e1948c7a7ebcf65e4866c847cb58900cd1
+  request: sha256:200658e6ee8f823436d6a479d79ef3783d90f6b1b6a7b5516c2cabae6f8687da
   policy: sha256:0b3a1705333c8471453ea3e151ae7d2e80047e1d5e312ab192f316c2f6f04b5f
   allocation: sha256:b861814c1ad1a4a8a80aa90bdc1e309840f64064d101eddd3a902729c232d500
   execution_budget: sha256:73ee9351460bb3e00846ddf8702b670fea3ad40b72e551611d037c742dfc52bf

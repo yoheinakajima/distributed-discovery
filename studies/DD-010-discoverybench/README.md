@@ -219,7 +219,40 @@ protocol acceptance, or scoring change. Any such prospective change requires
 a separate explicit owner decision and task. This redacted engineering
 diagnosis creates no performance result, comparison, ranking, scientific run,
 claim, paper result, release, submission, or base-campaign authority. AO-0008
-remains permanently quarantined, and v4 is not registered.
+remains permanently quarantined; at AO-0009 closeout, v4 was not registered.
+
+## AO-0010 prospective protocol-validity policy v2 and fresh v4 preparation
+
+Issue #208 and draft PR #209 adopt a forward-only, versioned
+protocol-validity policy v2 and prepare one wholly fresh v4 engineering
+campaign, `treasurebench-agents-v1-repair-confirmation-v4`, with batch
+`tb-agents-v1-repair-confirmation-v4-b01`. Historical policies, schemas,
+campaigns, locks, and decisions are unchanged.
+
+Policy v2 separates batch integrity, missing provider terminals,
+protocol-valid outputs, and protocol-invalid outputs. A completed provider
+response that remains nonconforming after the one registered schema-only
+repair is preserved as protocol-invalid evaluated-system behavior. It remains
+in every intended-pairing denominator, receives no replacement, semantic
+retry, invented action, or invalid-output credit, and does not alone
+quarantine the batch. Exact metrics are computed only where defined; registered
+metric-specific feasible bounds and architecture-contrast bounds cover all
+intended pairings. Valid-output-conditional diagnostics remain explicitly
+secondary and selection-conditioned.
+
+Authorization-free validation passes the complete 50-task/500-pairing
+rehearsal, zero/mixed/all-invalid scenarios, first/middle/final invalid
+positions, Methods A/B/C, 6,400 pairing-level metric intervals, 120 contrast
+bounds, independent reconstruction, 104 relevant corruption rejections,
+production custody/lock/unseal/redaction/cleanup rehearsals, 62 focused tests,
+and the full 725-test repository wall. Protocol-invalid traces alone do not
+quarantine; terminal-provider and integrity failures still do.
+
+The policy is frozen before any v4 authorization or generation. AO-0010 is
+stopped at its owner-gate boundary: no credential, real private seed, task,
+answer, key, ciphertext, provider call, spend, unseal, or scientific evidence
+has been created or accessed. AO-0008 and every prior campaign remain
+permanently closed and immutable.
 
 ## Registered evaluation campaign
 

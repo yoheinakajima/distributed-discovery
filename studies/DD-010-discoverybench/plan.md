@@ -197,4 +197,35 @@ exhaustion, while terminal-provider, contamination, final-cardinality, cap,
 and integrity counters are zero. AO-0009 does not change the fail-closed
 protocol or authorize another private evaluation. Either action requires a
 separate explicit owner task; any private evaluation also requires wholly new
-identities, execution freeze, and owner gate. No v4 identity is registered.
+identities, execution freeze, and owner gate. No v4 identity was registered by
+AO-0009.
+
+## AO-0010 prospective policy v2 and wholly fresh v4 boundary
+
+AO-0010 combines the owner-selected forward-only protocol-validity policy v2
+and one wholly fresh v4 engineering pilot in a single Agent Operations task.
+It registers campaign `treasurebench-agents-v1-repair-confirmation-v4` and
+batch `tb-agents-v1-repair-confirmation-v4-b01`, with 50 new private tasks
+allocated as ten tasks from each registered family, five architectures, two
+exact direct provider/model routes, one repeat, and 500 intended pairings.
+
+Policy v2 keeps the bounded two-attempt transport policy, exactly one
+schema-only repair, zero semantic retries, zero silent normalization, zero
+invalid-output credit, exactly-one-final-action semantics, and Method C before
+performance interpretation. Protocol-invalid completed responses remain in
+the full intended denominator without replacement or invented action and are
+reported separately from batch integrity. Registered metric-specific feasible
+bounds and architecture-contrast bounds cover all intended pairings;
+complete-case estimates cannot be presented as unconditional architecture
+effects.
+
+The complete authorization-free wall passes, including zero/mixed/all-invalid
+500-pairing batches, first/middle/final invalid events, Methods A/B/C,
+independent metric-bound reconstruction, every existing and new relevant
+corruption, production permit/custody/output-lock/unseal/redaction/cleanup
+rehearsals, and the full repository validation. The next boundary is the exact
+execution freeze and one generic owner gate. Until that gate is authorized,
+credentials, real private generation, provider calls, spend, and unsealing
+remain prohibited. This is DD-010 engineering only and creates no DD-023,
+claim, scientific run, evidence promotion, performance result, ranking,
+release, submission, or base campaign.

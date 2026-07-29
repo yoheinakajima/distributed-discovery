@@ -172,9 +172,9 @@ implementation disagreement; or unsafe retained state.
 - **M3 — complete:** full 50-task/500-pairing rehearsal, zero/mixed/all-invalid
   batches, first/middle/final invalid events, Methods A/B/C, bounds, all
   corruptions, production-permit custody, and cleanup.
-- **M4 — active:** focused and full authorization-free acceptance plus draft
-  PR creation and passing draft-PR checks.
-- **M5 — pending:** exact execution-freeze commit and matching remote draft-PR
+- **M4 — complete:** focused and full authorization-free acceptance, draft PR
+  creation, and passing draft-PR checks.
+- **M5 — active:** exact execution-freeze commit and matching remote draft-PR
   head.
 - **M6 — pending:** committed generic owner gate, live authorization-free gate
   validation, schema-valid handoff, and exact stop.
@@ -196,7 +196,7 @@ implementation disagreement; or unsafe retained state.
 - [x] Complete M1 policy and versioned execution contracts.
 - [x] Complete M2 implementation and focused acceptance.
 - [x] Complete M3 rehearsals and corruption suite.
-- [ ] Complete M4 full validation and draft PR.
+- [x] Complete M4 full validation and draft PR.
 - [ ] Freeze and push M5 execution commit.
 - [ ] Commit and validate the M6 generic owner gate, render the exact handoff,
   and stop before credentials, real private generation, calls, or spend.
@@ -231,6 +231,11 @@ implementation disagreement; or unsafe retained state.
   execution schemas raise the exact Agents v1 schema count from 42 to 48.
   Updating only that expected count made the focused 11-test file pass; the
   complete wall then passed all 725 tests and every downstream audit.
+- The first final-candidate wall passed 724 tests and found one stale DD-010
+  site-state assertion after the prospective AO-0010 public status changed.
+  The public Agents v1 projection now validates and renders policy v2, the
+  aggregate v4 rehearsal, and the owner-gate boundary; its focused two-test
+  integration file passes before the full candidate rerun.
 
 ## Decision log
 
@@ -288,6 +293,26 @@ implementation disagreement; or unsafe retained state.
   compendium verification all pass. The first wall's sole stale 42-schema
   snapshot was corrected to the exact 48 registered schemas and the entire
   wall rerun cleanly. GitHub draft-PR checks remain the last M4 condition.
+- `2026-07-29T14:36:34Z`: complete M4 after both GitHub CI runs on pushed
+  prerefreeze head `d6204966e795b6f4da8256bc8ddc14d3a60c7ce3` pass. Reverify
+  issue #208 open, draft PR #209 open and merge-clean, the remote task branch
+  exact, and remote main unchanged at
+  `8054542064651d61e6b286536fc477093e0f3530`. Freeze the request status and
+  regenerated registration/rehearsal hashes, add public-safe AO-0010 state,
+  and begin the final candidate validation for M5.
+- `2026-07-29T14:50:00Z`: the first exact-candidate wall passes Ruff, MyPy,
+  and 724 tests, then fails closed on one stale site-state assertion after the
+  DD-010 registry status moved from the AO-0009 policy gate to the prospective
+  AO-0010 owner gate. Update the governed public Agents v1 projection and
+  assertions to expose policy v2, aggregate-only v4 rehearsal facts, and the
+  no-authorization boundary. The focused site build passes 2/2; rerun the
+  complete wall before freezing.
+- `2026-07-29T14:57:12Z`: the final exact-candidate rerun passes formatting,
+  lint, MyPy over 208 source files, all 725 tests, 110 claims, 51 run
+  manifests, editorial and program-memory governance, Agent Operations,
+  publication infrastructure, TreasureBench naming, release readiness, site
+  safety, and offline compendium verification. Proceed to the M5 execution
+  commit without further execution-sensitive changes.
 
 ## Validation strategy
 
@@ -330,8 +355,8 @@ contract, master-plan continuation, prospective policy v2 and public
 explanation, versioned v4 request/allocation/private-state/budget/corruption
 contracts, current official provider audit, recalculated budget, runtime,
 independent classifier/bound reconstruction, 76-case corruption audit, tests,
-and public rehearsal records are created. Full validation, draft PR,
-execution freeze, owner gate, and handoff remain pending.
+public rehearsal records, complete authorization-free validation, and draft PR
+#209 are created. Execution freeze, owner gate, and handoff remain pending.
 
 ## Blockers
 

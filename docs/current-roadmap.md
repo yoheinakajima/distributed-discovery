@@ -1,4 +1,34 @@
-# Current roadmap — agent protocol policy decision required
+# Current roadmap — fresh v4 exact freeze and owner gate
+
+## AO-0010 prospective protocol-validity policy v2
+
+Issue #208 and draft PR #209 combine the owner-selected forward-only policy
+change and one wholly fresh v4 engineering pilot in a single Agent Operations
+task. The registered campaign is
+`treasurebench-agents-v1-repair-confirmation-v4`; the registered batch is
+`tb-agents-v1-repair-confirmation-v4-b01`.
+
+Policy v2 preserves the bounded transport and one schema-only repair contract
+while treating a completed response that remains nonconforming as
+protocol-invalid evaluated-system behavior, not by itself a batch-integrity
+failure. Such pairings remain in all intended denominators without
+replacement, semantic retry, invented action, or invalid credit. Registered
+metric-specific feasible bounds and architecture-contrast bounds use the full
+intended matrix; valid-output-conditional estimates are explicitly secondary
+and cannot be presented as unconditional architecture effects.
+
+The 50-task/500-pairing public rehearsal and zero/mixed/all-invalid scenarios
+pass Methods A/B/C, independent bound reconstruction, custody, output-lock,
+post-lock unseal, redaction, deterministic cleanup, 104 relevant corruption
+rejections, 62 focused tests, and the complete 725-test repository wall.
+Protocol-invalid traces alone do not quarantine; provider-terminal and
+integrity failures do.
+
+The next action is the exact execution freeze, one committed generic owner
+gate, and an exact stop. Credentials, real private generation, provider calls,
+spend, and unsealing remain unauthorized. AO-0008 and all earlier campaigns
+remain permanently quarantined and receive no authority from AO-0010. This is
+DD-010 engineering only, not performance or scientific evidence.
 
 ## AO-0009 aggregate diagnosis
 
@@ -12,12 +42,12 @@ parse/schema-repair exhaustion traces, with zero terminal-provider,
 contamination, final-cardinality, cap, or integrity findings. The frozen
 post-loop precedence selects `agent-protocol-policy-decision-required`.
 
-The current fail-closed protocol remains unchanged. Any prospective
-normalization, retry, invalid-output credit, acceptance, or scoring change
-requires a separate explicit owner decision and task. Any future private
-evaluation additionally requires wholly new identities, execution freeze,
-and owner gate. AO-0008 and all prior Agents v1 campaigns remain permanently
-quarantined; v4 is not registered.
+AO-0009 itself left the then-current fail-closed protocol unchanged. Any
+prospective normalization, retry, invalid-output credit, acceptance, or
+scoring change required a separate explicit owner decision and task. Any
+future private evaluation additionally required wholly new identities,
+execution freeze, and owner gate. AO-0008 and all prior Agents v1 campaigns
+remain permanently quarantined; at AO-0009 closeout, v4 was not registered.
 
 ## Fresh repair-confirmation v3 quarantine
 

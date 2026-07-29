@@ -1,0 +1,76 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-v4-readiness-v1
+recorded_at_utc: "2026-07-29T14:57:12Z"
+status: pass-execution-freeze-candidate-owner-gate-required
+classification: DD-010-engineering-only-no-scientific-evidence
+task_id: AO-0010
+issue: 208
+draft_pull_request: 209
+policy_version: treasurebench-agents-v1-protocol-validity-policy-v2
+campaign_id: treasurebench-agents-v1-repair-confirmation-v4
+batch_id: tb-agents-v1-repair-confirmation-v4-b01
+acceptance:
+  bootstrap: pass
+  agent_ops: pass
+  program_memory: pass
+  treasurebench_naming: pass
+  agents_v1_registration: pass
+  agents_v1_evaluation: pass
+  agents_v1_dry_run: pass
+  agents_v1_readiness: pass
+  v4_audit: pass
+  v4_full_rehearsal: pass
+  formatting: pass
+  lint: pass
+  typecheck: pass-208-source-files
+  tests: {status: pass, passed: 725, failed: 0}
+  claims: pass-110
+  runs: pass-51-manifests
+  full_verify: pass
+  draft_pr_checks:
+    status: pass-prerefreeze-head
+    head: d6204966e795b6f4da8256bc8ddc14d3a60c7ce3
+    runs: [30461373459, 30461364571]
+task_specific:
+  synthetic_tasks: 50
+  synthetic_runs: 500
+  matrix_turns: 3014
+  normal_calls: 3016
+  exact_pairings: 500
+  terminal_pairings_classified: 500
+  zero_invalid_batch: pass-500-valid-0-invalid-no-quarantine
+  mixed_invalid_batch: pass-497-valid-3-invalid-no-quarantine
+  all_invalid_batch: pass-0-valid-500-invalid-no-quarantine
+  first_middle_final_invalid_positions: pass
+  provider_terminal_failure_quarantines: true
+  integrity_failure_quarantines: true
+  replacement_pairings: 0
+  semantic_answer_retries: 0
+  invalid_actions_constructed_or_credited: 0
+  complete_case_unconditional_overclaim_rejected: true
+  method_a_b_disagreements: 0
+  method_c_failures: 0
+  metric_intervals: 6400
+  architecture_contrast_bounds: 120
+  independent_metric_bound_agreement: true
+  invalid_final_action_cardinalities: 0
+  metric_range_errors: 0
+  contamination_findings: 0
+  v4_corruptions_rejected: 76
+  inherited_corruptions_rejected: 28
+  total_relevant_corruptions_rejected: 104
+  production_custody_negative_checks: 6
+  output_lock_verified: true
+  no_call_after_lock: true
+  post_lock_unseal_and_commitment_verification: pass
+  staged_mock_stable_resume: true
+  rehearsal_hash: sha256:85f3b2e9820bc70c9b9020f866f44da646edcc1066531a95b6b9ef2845622110
+failures_preserved:
+  - The first complete repository wall found one stale expected Agents v1 schema count of 42 after six prospective v4 schemas raised the exact total to 48; the snapshot alone was corrected, its focused tests passed, and the complete wall then passed all 725 tests.
+  - The first final-candidate wall passed 724 tests and found one stale DD-010 site-state assertion after the prospective AO-0010 public status was added; the governed Agents v1 projection and its assertions were updated together, and the focused two-test site build then passed.
+activity:
+  provider_calls: 0
+  credential_reads: 0
+  prior_private_state_reads: 0
+  private_objects_created: 0
+  spend_usd: "0"
+next_gate: exact-execution-freeze-then-committed-generic-AOG-AO-0010-FRESH-PILOT-V4

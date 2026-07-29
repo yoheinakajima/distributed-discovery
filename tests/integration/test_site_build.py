@@ -65,6 +65,8 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "verified 3,576-object output lock" in program
     assert "AO-0009’s exactly once aggregate diagnostic" in program
     assert "agent-protocol-policy-decision-required" in program
+    assert "AO-0010 now prospectively freezes protocol-validity policy v2" in program
+    assert "one wholly fresh v4 engineering pilot at an unconsumed owner gate" in program
     assert 'id="information-sharing-frontier"' in program
     assert 'href="publications/information-sharing-frontier.html"' in program
     assert "docs/theorem-spine.md" in program
@@ -143,7 +145,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         assert (output / f"benchmark/{route}.html").is_file()
         assert (output / f"treasurebench/{route}.html").is_file()
     agents_registration = (output / "benchmark/agents-v1.html").read_text(encoding="utf-8")
-    assert "DD-010 instrument · four quarantined pilots · agent protocol policy gated" in (
+    assert "DD-010 instrument · four quarantined pilots · prospective policy v2" in (
         agents_registration
     )
     assert "Original pilot quarantined" in agents_registration
@@ -162,10 +164,15 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "authenticated all 450 fixed-full-batch traces" in agents_registration
     assert "32 protocol-nonconforming traces" in agents_registration
     assert "agent-protocol-policy-decision-required" in agents_registration
-    assert "v4 is not registered" in agents_registration
+    assert "at AO-0009 closeout v4 was not registered" in agents_registration
+    assert "AO-0010 prospective policy v2 and fresh v4 preparation" in agents_registration
+    assert "Protocol-invalid traces alone do not quarantine" in agents_registration
+    assert "6,400 pairing metric intervals" in agents_registration
+    assert "All 104 relevant corruptions reject" in agents_registration
     dd010_data = json.loads((output / "data/studies/dd-010.json").read_text(encoding="utf-8"))
     assert "AO-0009-one-use-aggregate-r2-diagnostic" in dd010_data["evidence_status"]
-    assert dd010_data["registry_status"].endswith("agent-protocol-policy-gated")
+    assert "AO-0010-forward-only-protocol-validity-policy-v2" in dd010_data["evidence_status"]
+    assert dd010_data["registry_status"].endswith("owner-gate-required")
     assert any(
         item["path"]
         == "reports/benchmark/treasurebench-ao0008-fixed-batch-diagnostic-r2-closeout.md"
@@ -203,7 +210,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     )
     assert agents_implementation["status"] == (
         "implementation-and-custody-path-repaired-all-four-pilots-quarantined-"
-        "agent-protocol-policy-gated"
+        "prospective-policy-v2-fresh-v4-owner-gate-required"
     )
     assert agents_implementation["public_rehearsal"]["cases"] == 50
     assert agents_implementation["public_rehearsal"]["corruptions_rejected"] == 24
@@ -243,6 +250,36 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "protocol_nonconformance_traces": 32,
         "provider_calls": 0,
         "retained_state_mutated": False,
+    }
+    assert agents_implementation["prospective_policy_v2"] == {
+        "global_protocol_conformance_threshold": None,
+        "policy_version": "treasurebench-agents-v1-protocol-validity-policy-v2",
+        "protocol_invalid_alone_quarantines": False,
+        "provider_or_model_ranking": False,
+        "status": "prospective-frozen-not-executed",
+        "statuses": [
+            "batch-integrity-valid",
+            "provider-terminal-missing",
+            "protocol-valid",
+            "protocol-invalid",
+        ],
+    }
+    assert agents_implementation["fresh_v4_preparation"] == {
+        "architecture_contrast_bounds": 120,
+        "batch_id": "tb-agents-v1-repair-confirmation-v4-b01",
+        "campaign_id": "treasurebench-agents-v1-repair-confirmation-v4",
+        "credential_reads": 0,
+        "external_cost_usd": "0",
+        "intended_pairings": 500,
+        "metric_intervals": 6400,
+        "owner_gate_required": True,
+        "provider_calls": 0,
+        "status": "pass-offline-exact-execution-frozen-owner-gate-required",
+        "task_id": "AO-0010",
+        "tasks": 50,
+        "terminal_pairings_classified": 500,
+        "total_relevant_corruptions_rejected": 104,
+        "zero_mixed_all_invalid_scenarios": "pass",
     }
     agents_evaluation = json.loads(
         (output / "data/benchmark/agents-v1-evaluation.json").read_text(encoding="utf-8")
