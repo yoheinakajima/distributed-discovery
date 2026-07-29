@@ -52,7 +52,7 @@ boundary, authenticated all 450 fixed-full-batch traces, emitted only the
 allowed public aggregate, and permanently closed private-read authority. The
 evidence selected `agent-protocol-policy-decision-required`; AO-0009 makes no
 silent protocol normalization, retry, credit, or prospective implementation
-repair. Exactly one milestone is active: **M8 — public-safe closeout**.
+repair. All milestones are complete.
 
 The AO-0008 boundary is permanent: task `AO-0008`, campaign
 `treasurebench-agents-v1-repair-confirmation-v3`, batch
@@ -181,7 +181,7 @@ one-trace authority surface.
   close private-read authority permanently, and select one permitted outcome.
 - **M7 — complete:** record the evidence-determined agent-protocol policy gate
   without changing protocol acceptance, retry, normalization, or scoring.
-- **M8 — active:** reconcile public-safe records, repeat the delta audit,
+- **M8 — complete:** reconcile public-safe records, repeat the delta audit,
   validate, merge after checks, verify CI/Pages and named routes, close the
   issue, and synchronize `main`.
 
@@ -237,7 +237,7 @@ one-trace authority surface.
   wall.
 - [x] Ready and squash-merge PR #207 after both exact-head CI runs pass.
 - [x] Verify the first post-merge CI and Pages workflows.
-- [ ] Correct the stale program and TreasureBench Agents v1 route sources
+- [x] Correct the stale program and TreasureBench Agents v1 route sources
   found during named live-route verification, verify the corrective CI/Pages
   cycle and all five routes, close issue #206, synchronize `main`, and record
   the terminal handoff.
@@ -337,6 +337,14 @@ one-trace authority surface.
   at AO-0008 even though the DD-010 study status is reconciled. Correct those
   public site sources, bind them to the tracked AO-0009 outcome, and require a
   fresh exact-SHA CI/Pages cycle before issue closure.
+- `2026-07-29T01:42:05Z`: corrective main commit
+  `13fc70843c7ded3a4affb7a5a72c3514e03e6006` passes exact-SHA CI run
+  `30414407168` and Pages run `30414407156`. Each named production route
+  returns HTTP 200 with reconciled content: `program.html`,
+  `treasurebench/agents-v1.html`, `research/dd-010.html`,
+  `data/studies/dd-010.json`, and
+  `data/treasurebench/agents-v1-implementation.json`. Issue #206 closes as
+  completed and local `main` matches `origin/main`.
 
 ## Decision log
 
@@ -388,6 +396,10 @@ one-trace authority surface.
   not alter invalid-output credit, normalization, semantic retry, protocol
   acceptance, or scoring. Any such prospective change requires a separate
   explicit owner decision and task.
+- `2026-07-29T01:42:05Z`: complete M8 after the merge and corrective
+  exact-SHA CI/Pages cycles pass, all five live routes agree with the public
+  outcome, issue #206 closes, and `main` synchronizes. No AO-0009 authority
+  remains.
 
 ## Validation strategy
 
@@ -431,17 +443,17 @@ one-trace authority surface.
 
 ## Blockers
 
-None. Private-read authority is permanently closed; any request for another
-read, provider or credential access, protocol-policy mutation, or new campaign
-would be a new boundary requiring separate owner action.
+None. AO-0009 is complete. Private-read authority is permanently closed; any
+request for another read, provider or credential access, protocol-policy
+mutation, or new campaign is outside AO-0009 and requires separate owner
+action.
 
 ## Recovery and restart instructions
 
-Resume from this plan on the registered AO-0009 branch. Confirm issue #206,
-draft PR #207, all five unrelated untracked files, permanent private-read
-closure, and M8 as the sole active milestone. Continue the first unchecked
-administrative closeout item. Never run the diagnostic again or access the
-retained AO-0008 private root.
+AO-0009 requires no resume. Preserve the terminal handoff, all five unrelated
+untracked files, permanent private-read closure, the merged PR, the closed
+issue, and exact `main`. Never run the diagnostic again or access the retained
+AO-0008 private root.
 
 ## Outcome and retrospective
 
@@ -459,3 +471,9 @@ therefore closes with a policy gate, preserves all four Agents v1 campaign
 quarantines, creates no scientific or performance result, does not register
 v4, and requires a separate explicit owner decision for any future protocol
 change or private evaluation.
+
+Administrative closeout is complete. PR #207 passed both exact-head checks and
+squash-merged as `0835efe39450a2a51862d6f2c2bfb43ab78a7099`. Exact-merge and
+corrective exact-SHA CI/Pages cycles passed; the five named live routes agree
+with the public outcome; issue #206 is closed as completed; and local `main`
+matches `origin/main`.

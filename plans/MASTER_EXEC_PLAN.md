@@ -1,6 +1,6 @@
 # Master execution plan
 
-## Active closeout — AO-0009 AO-0008 fixed-full-batch adjudication (2026-07-29)
+## Completed continuation — AO-0009 AO-0008 fixed-full-batch adjudication (2026-07-29)
 
 Issue #206, branch
 `codex/treasurebench-ao0008-fixed-batch-adjudication`, fixed contract
@@ -49,6 +49,13 @@ requires wholly new identities, execution freeze, and owner gate. Provider
 calls, credentials, spend, new real private material, scientific mutation,
 paper/publication action, release, submission, new private-pilot
 registration, and v4 identity allocation remain zero.
+
+PR #207 passed both exact-head CI runs and squash-merged as
+`0835efe39450a2a51862d6f2c2bfb43ab78a7099`. Exact-merge CI and Pages passed.
+Corrective route commit `13fc70843c7ded3a4affb7a5a72c3514e03e6006`
+then passed exact-SHA CI and Pages; all five named live routes returned HTTP
+200 with the reconciled policy gate. Issue #206 closed completed and `main`
+synchronized exactly. AO-0009 is complete.
 
 ## Active closeout — AO-0008 fresh repair-confirmation pilot v3 quarantined (2026-07-28)
 

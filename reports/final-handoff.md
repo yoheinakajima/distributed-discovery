@@ -26,6 +26,14 @@ requires wholly new identities, execution freeze, and owner gate. AO-0008
 remains permanently quarantined, v4 is not registered, and no scientific or
 performance evidence is created.
 
+PR #207 passed both exact-head CI runs and squash-merged as
+`0835efe39450a2a51862d6f2c2bfb43ab78a7099`. Exact-merge CI and Pages passed.
+Corrective public-route commit
+`13fc70843c7ded3a4affb7a5a72c3514e03e6006` passed exact-SHA CI and Pages.
+The program, TreasureBench Agents v1, DD-010 study, DD-010 data, and Agents v1
+implementation routes all return HTTP 200 with reconciled AO-0009 content.
+Issue #206 is closed as completed and `main` is synchronized exactly.
+
 ## AO-0008 fresh repair-confirmation v3 closeout (2026-07-28)
 
 AO-0008 campaign `treasurebench-agents-v1-repair-confirmation-v3`, batch
