@@ -12,7 +12,7 @@
     "currency": {"const": "USD"},
     "graph": {"const": {"matrix_runs": 500, "matrix_calls": 3014, "public_canary_calls": 2, "normal_calls": 3016, "maximum_calls": 5200}},
     "costs": {"const": {"expected": "11.51", "conservative": "15", "hard_cap": "25", "OpenAI_cap": "10", "Anthropic_cap": "15"}},
-    "request_caps": {"const": {"output_tokens": 256, "transport_attempts": 2, "schema_repairs": 1}},
+    "request_caps": {"const": {"output_tokens": 256, "transport_attempts": 2, "schema_repairs": 1, "retry_delay_minimum_seconds": 1, "retry_after_maximum_seconds": 30, "retry_delay_fallback_seconds": {"timeout": 2, "transient-transport": 2, "invalid-provider-json": 2, "rate-limit": 5, "transient-provider": 5}, "random_jitter": false}},
     "policy_caps": {"const": {"semantic_answer_retries": 0, "outcome_dependent_retries": 0, "replacement_pairings": 0, "replacement_batches": 0, "protocol_invalid_pairings": 500, "provider_operational_missing_below_circuit_breaker": true, "consecutive_same_provider_operational_missing": 3, "cumulative_provider_operational_missing": 10, "provider_contract_or_safety_failures": 0, "provider_missingness_scientific_threshold": null}},
     "route_caps": {"const": {"OpenAI": {"calls": 2600, "input_tokens": 1680000, "output_tokens": 386048}, "Anthropic": {"calls": 2600, "input_tokens": 3000000, "output_tokens": 386048}}},
     "activity": {"const": {"calls": 0, "spend": "0", "credentials_read": 0, "private_objects_created": 0}}

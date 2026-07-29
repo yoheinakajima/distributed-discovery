@@ -80,6 +80,25 @@ corruptions:
   - RETRY-02-second-schema-repair
   - RETRY-03-semantic-answer-retry
   - RETRY-04-outcome-dependent-retry
+  - RETRY-05-delay-below-minimum
+  - RETRY-06-delay-above-maximum
+  - RETRY-07-malformed-delay-persisted
+  - RETRY-08-fallback-table-changed
+  - RETRY-09-changed-delay-after-restart
+  - RETRY-10-duplicate-retry-after-success
+  - RETRY-11-provider-phase-closed-before-retry
+  - RETRY-12-cap-failure-before-wait
+  - RETRY-13-authorization-identity-failure-before-wait
+  - RETRY-14-raw-header-leakage
+  - RETRY-15-raw-error-message-leakage
+  - RETRY-16-second-attempt-before-delay-completion
+  - RETRY-17-inside-range-retry-after-changed
+  - RETRY-18-missing-retry-after-not-fallback
+  - RETRY-19-timeout-fallback-changed
+  - RETRY-20-transient-transport-fallback-changed
+  - RETRY-21-invalid-provider-json-fallback-changed
+  - RETRY-22-rate-limit-fallback-changed
+  - RETRY-23-transient-provider-fallback-changed
   - OUTCOME-01-ambiguous-rate-limit-as-missing
   - OUTCOME-02-quota-as-missing
   - OUTCOME-03-unregistered-error-as-missing

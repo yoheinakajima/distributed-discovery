@@ -10,6 +10,6 @@
     "campaign_id": {"const": "treasurebench-agents-v1-repair-confirmation-v5"},
     "batch_id": {"const": "tb-agents-v1-repair-confirmation-v5-b01"},
     "required_outcome": {"const": "rejected"},
-    "corruptions": {"type": "array", "minItems": 96, "maxItems": 96, "uniqueItems": true, "items": {"type": "string", "pattern": "^[A-Z]+(?:-[A-Z]+)*-[0-9]{2}-.+$"}}
+    "corruptions": {"type": "array", "minItems": 115, "maxItems": 115, "uniqueItems": true, "items": {"type": "string", "pattern": "^[A-Z]+(?:-[A-Z]+)*-[0-9]{2}-.+$"}}
   }
 }

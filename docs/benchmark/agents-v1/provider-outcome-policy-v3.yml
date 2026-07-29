@@ -89,6 +89,42 @@ retry_and_replacement:
     maximum_attempts: 2
     identical_logical_request_only: true
     provider_sdk_automatic_retries: disabled
+    second_attempt_requires_completed_delay_record: true
+    retry_delay:
+      minimum_seconds: 1
+      maximum_retry_after_seconds: 30
+      accepted_provider_value: safely-parsed-direct-response-Retry-After
+      provider_value_clamped_to_bounds: true
+      parser_formats: [nonnegative-delta-seconds, HTTP-date]
+      fallback_seconds:
+        timeout: 2
+        transient-transport: 2
+        invalid-provider-json: 2
+        rate-limit: 5
+        transient-provider: 5
+      random_jitter: false
+      retained_operational_fields:
+        - retry_delay_seconds
+        - retry_delay_source
+        - retry_class
+        - transport_attempt
+      raw_headers_retained: false
+      raw_error_bodies_or_messages_retained: false
+      append_only_events:
+        - provider-retry-delay-selected
+        - provider-retry-delay-completed
+      restart_replays_recorded_decision: true
+      live_sleeper: injected-real-sleeper
+      test_and_authorization_free_sleeper: deterministic-no-wait-recorder
+      never_wait_or_retry_after:
+        - provider-contract-or-safety-failure
+        - provider-phase-closure
+        - authorization-failure
+        - identity-failure
+        - cap-failure
+        - route-or-model-failure
+        - retained-state-failure
+        - second-transport-attempt
   schema:
     maximum_repairs: 1
     repair_receives: [validation-error-class, schema]
@@ -183,6 +219,7 @@ batch_acceptance:
     - primary-and-independent-all-pairing-bounds-agree
     - corruptions-and-redaction-pass
     - retained-private-state-safe
+    - retry-delay-ledger-selection-completion-and-two-attempt-ceiling-pass
   isolated_protocol_invalid_alone_quarantines: false
   isolated_provider_operational_missing_alone_quarantines: false
   quarantine_triggers:

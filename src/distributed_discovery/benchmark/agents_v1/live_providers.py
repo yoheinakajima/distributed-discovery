@@ -23,6 +23,13 @@ from distributed_discovery.benchmark.agents_v1.provider_schema import (
     compile_anthropic_action_schema,
     compile_openai_action_schema,
 )
+from distributed_discovery.benchmark.agents_v1.retry_backoff import (
+    RetryClock,
+    RetryDelayDecision,
+    select_retry_delay,
+    select_retry_delay_from_headers,
+    utc_now,
+)
 
 OPENAI_MODEL = "gpt-5.4-2026-03-05"
 ANTHROPIC_MODEL = "claude-sonnet-4-6"
@@ -84,6 +91,9 @@ class HttpTransport(Protocol):
 class UrllibTransport:
     """Small standard-library JSON transport with no request logging."""
 
+    def __init__(self, *, retry_clock: RetryClock = utc_now) -> None:
+        self._retry_clock = retry_clock
+
     def send(self, request: HttpRequest) -> HttpResponse:
         encoded = (
             json.dumps(request.body, separators=(",", ":")).encode("utf-8")
@@ -114,14 +124,39 @@ class UrllibTransport:
         try:
             loaded = json.loads(raw.decode("utf-8"))
         except (UnicodeDecodeError, json.JSONDecodeError) as exc:
-            raise ProviderTransportError("invalid-provider-json") from exc
+            decision = select_retry_delay_from_headers(
+                "invalid-provider-json",
+                headers,
+                clock=self._retry_clock,
+            )
+            raise ProviderTransportError(
+                "invalid-provider-json",
+                retry_decision=decision,
+            ) from exc
         if not isinstance(loaded, Mapping):
-            raise ProviderTransportError("invalid-provider-json")
+            decision = select_retry_delay_from_headers(
+                "invalid-provider-json",
+                headers,
+                clock=self._retry_clock,
+            )
+            raise ProviderTransportError(
+                "invalid-provider-json",
+                retry_decision=decision,
+            )
         return HttpResponse(status=status, body=dict(loaded), response_headers=headers)
 
 
 class ProviderTransportError(RuntimeError):
     """Redacted transport error whose message is a normalized class only."""
+
+    def __init__(
+        self,
+        error_class: str,
+        *,
+        retry_decision: RetryDelayDecision | None = None,
+    ) -> None:
+        super().__init__(error_class)
+        self.retry_decision = retry_decision
 
 
 @dataclass(frozen=True)
@@ -188,6 +223,7 @@ class LiveAdapterBase:
         ledger: CostLedger,
         pricing: RoutePricing,
         input_token_ceiling: int = 4_000,
+        retry_clock: RetryClock = utc_now,
     ) -> None:
         self._api_key = api_key
         self._transport = transport
@@ -195,6 +231,7 @@ class LiveAdapterBase:
         self._ledger = ledger
         self._pricing = pricing
         self._input_token_ceiling = input_token_ceiling
+        self._retry_clock = retry_clock
 
     def __repr__(self) -> str:
         return (
@@ -258,7 +295,17 @@ class LiveAdapterBase:
             },
         )
 
-    def _transport_failure(self, error_class: str) -> AdapterResponse:
+    def _transport_failure(
+        self,
+        error_class: str,
+        *,
+        retry_decision: RetryDelayDecision | None = None,
+    ) -> AdapterResponse:
+        decision = (
+            retry_decision
+            if retry_decision is not None
+            else select_retry_delay(error_class, clock=self._retry_clock)
+        )
         return AdapterResponse(
             "",
             error_class=error_class,
@@ -271,6 +318,7 @@ class LiveAdapterBase:
                 "route_id": self.route_id,
                 "model": self.manifest.exact_snapshot,
                 "hidden_reasoning_stored": False,
+                **decision.metadata(),
             },
         )
 
@@ -280,13 +328,22 @@ class LiveAdapterBase:
         status: int,
         error_class: str | None,
         body: Mapping[str, object],
+        response_headers: Mapping[str, str],
     ) -> Mapping[str, object]:
+        retry_metadata: Mapping[str, object] = {}
+        if error_class in RETRYABLE_ERROR_CLASSES:
+            retry_metadata = select_retry_delay_from_headers(
+                error_class,
+                response_headers,
+                clock=self._retry_clock,
+            ).metadata()
         return {
             "error_contract_version": ERROR_ENVELOPE_VERSION,
             "error_locus": "provider-http-response" if error_class is not None else "none",
             "http_status": status,
             "retry_eligible": error_class in RETRYABLE_ERROR_CLASSES,
             **_safe_provider_error_fields(body),
+            **retry_metadata,
         }
 
 
@@ -395,7 +452,10 @@ class OpenAIResponsesAdapter(LiveAdapterBase):
                 )
             )
         except ProviderTransportError as exc:
-            return self._transport_failure(str(exc))
+            return self._transport_failure(
+                str(exc),
+                retry_decision=exc.retry_decision,
+            )
         error = normalize_http_error("openai", response.status, response.body)
         input_tokens, output_tokens = _openai_usage(response.body)
         output = _openai_output_text(response.body) if error is None else ""
@@ -409,6 +469,7 @@ class OpenAIResponsesAdapter(LiveAdapterBase):
                     status=response.status,
                     error_class=error,
                     body=response.body,
+                    response_headers=response.response_headers,
                 ),
                 "gateway": self.gateway_id,
                 "route_id": self.route_id,
@@ -467,7 +528,10 @@ class AnthropicMessagesAdapter(LiveAdapterBase):
                 )
             )
         except ProviderTransportError as exc:
-            return self._transport_failure(str(exc))
+            return self._transport_failure(
+                str(exc),
+                retry_decision=exc.retry_decision,
+            )
         error = normalize_http_error("anthropic", response.status, response.body)
         input_tokens, output_tokens = _anthropic_usage(response.body)
         output = _anthropic_output_text(response.body) if error is None else ""
@@ -481,6 +545,7 @@ class AnthropicMessagesAdapter(LiveAdapterBase):
                     status=response.status,
                     error_class=error,
                     body=response.body,
+                    response_headers=response.response_headers,
                 ),
                 "gateway": self.gateway_id,
                 "route_id": self.route_id,
@@ -567,7 +632,10 @@ class OpenRouterAdapter(LiveAdapterBase):
                 )
             )
         except ProviderTransportError as exc:
-            return self._transport_failure(str(exc))
+            return self._transport_failure(
+                str(exc),
+                retry_decision=exc.retry_decision,
+            )
         error = normalize_http_error("openrouter", response.status, response.body)
         if response.status == 404:
             error = "policy-ineligible"
@@ -594,6 +662,7 @@ class OpenRouterAdapter(LiveAdapterBase):
                     status=response.status,
                     error_class=error,
                     body=response.body,
+                    response_headers=response.response_headers,
                 ),
                 "gateway": self.gateway_id,
                 "route_id": self.route_id,

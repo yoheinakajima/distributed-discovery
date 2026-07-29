@@ -115,6 +115,15 @@ from distributed_discovery.benchmark.agents_v1.provider_schema import (
     schema_fingerprint,
     validate_action_semantics,
 )
+from distributed_discovery.benchmark.agents_v1.retry_backoff import (
+    MAXIMUM_RETRY_AFTER_SECONDS,
+    MINIMUM_RETRY_DELAY_SECONDS,
+    RETRY_DELAY_FALLBACK_SECONDS,
+    SAFE_RETRY_METADATA_FIELDS,
+    RetryDelayDecision,
+    decision_from_metadata,
+    select_retry_delay,
+)
 from distributed_discovery.benchmark.agents_v1.traces import build_trace
 from distributed_discovery.benchmark.agents_v1.verification import (
     verify_method_agreement,
@@ -125,7 +134,7 @@ BATCH_ID = "tb-agents-v1-repair-confirmation-v5-b01"
 TASK_ID = "AO-0011"
 ISSUE = 210
 BRANCH = "codex/treasurebench-agents-v1-fresh-pilot-v5"
-GATE_ID = "AOG-AO-0011-FRESH-PILOT-V5"
+GATE_ID = "AOG-AO-0011-FRESH-PILOT-V5-R2"
 MODELS = ("gpt-5.4-2026-03-05", "claude-sonnet-4-6")
 PROVIDERS = ("OpenAI", "Anthropic")
 TOTAL_CAP = Decimal("25")
@@ -147,8 +156,8 @@ EXECUTION_BUDGET_PATH = Path(
 CORRUPTIONS_PATH = Path("docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-corruptions.yml")
 PROTOCOL_VALIDITY_POLICY_PATH = Path("docs/benchmark/agents-v1/protocol-validity-policy-v2.yml")
 POLICY_PATH = Path("docs/benchmark/agents-v1/provider-outcome-policy-v3.yml")
-GATE_PATH = Path("reports/agent-ops/AO-0011-treasurebench-fresh-pilot-v5-owner-gate.yml")
-CONTRACT_PATH = Path("tasks/treasurebench-agents-v1-fresh-pilot-v5.yml")
+GATE_PATH = Path("reports/agent-ops/AO-0011-treasurebench-fresh-pilot-v5-r2-owner-gate.yml")
+CONTRACT_PATH = Path("tasks/treasurebench-agents-v1-fresh-pilot-v5-r2.yml")
 RESERVED_IDENTITY_FRAGMENTS = (
     "treasurebench-agents-v1-pilot-v1",
     "tb-agents-v1-pilot-v1-b01",
@@ -529,6 +538,17 @@ def validate_registration(repo: Path) -> dict[str, object]:
         raise ValueError("provider-outcome policy v3 is not registered")
     if policy["retry_and_replacement"]["transport"]["maximum_attempts"] != 2:
         raise ValueError("prospective transport attempt bound changed")
+    delay = policy["retry_and_replacement"]["transport"]["retry_delay"]
+    if delay["minimum_seconds"] != MINIMUM_RETRY_DELAY_SECONDS:
+        raise ValueError("prospective retry-delay minimum changed")
+    if delay["maximum_retry_after_seconds"] != MAXIMUM_RETRY_AFTER_SECONDS:
+        raise ValueError("prospective Retry-After maximum changed")
+    if delay["fallback_seconds"] != RETRY_DELAY_FALLBACK_SECONDS:
+        raise ValueError("prospective retry-delay fallback table changed")
+    if set(delay["retained_operational_fields"]) != SAFE_RETRY_METADATA_FIELDS:
+        raise ValueError("prospective retry-delay safe metadata fields changed")
+    if delay["random_jitter"] is not False:
+        raise ValueError("prospective retry delay cannot use random jitter")
     if policy["retry_and_replacement"]["schema"]["maximum_repairs"] != 1:
         raise ValueError("prospective schema repair bound changed")
     if policy["retry_and_replacement"]["exactly_one_final_action_per_required_agent"] is not True:
@@ -611,7 +631,7 @@ def validate_registration(repo: Path) -> dict[str, object]:
         raise PermissionError("fresh v5 credential ingress contract changed")
     if budget["graph"]["matrix_calls"] + budget["graph"]["public_canary_calls"] != (NORMAL_CALLS):
         raise ValueError("fresh execution graph does not reconcile")
-    if len(corruptions["corruptions"]) != 96:
+    if len(corruptions["corruptions"]) != 115:
         raise ValueError("fresh corruption registry changed")
     activity = audit["activity"]
     if not isinstance(activity, Mapping) or any(
@@ -857,6 +877,15 @@ def run_synthetic_rehearsal(repo: Path) -> dict[str, object]:
         "architecture_contrast_bounds": len(primary_bounds),
         "independent_metric_bound_agreement": True,
         "independent_provider_outcome_classification_agreement": True,
+        "retry_delay_policy": {
+            "minimum_seconds": MINIMUM_RETRY_DELAY_SECONDS,
+            "maximum_retry_after_seconds": MAXIMUM_RETRY_AFTER_SECONDS,
+            "fallback_seconds": dict(RETRY_DELAY_FALLBACK_SECONDS),
+            "random_jitter": False,
+            "authorization_free_sleeper": "deterministic-no-wait-recorder",
+            "authorization_free_actual_sleep_seconds": 0,
+            "raw_headers_or_error_messages_retained": False,
+        },
         "all_intended_metric_eligible_pairings_retained": True,
         "nonfinal_proposals_excluded_from_scoring": True,
         "contamination_findings": contamination_findings,
@@ -1296,7 +1325,10 @@ def audit_corruptions(repo: Path) -> tuple[dict[str, str], ...]:
     )
     reject(
         "AUTH-01-missing-file",
-        lambda: load_owner_authorization(repo, Path("/nonexistent/AOG-AO-0011-FRESH-PILOT-V5.yml")),
+        lambda: load_owner_authorization(
+            repo,
+            Path("/nonexistent/AOG-AO-0011-FRESH-PILOT-V5-R2.yml"),
+        ),
     )
     reject(
         "AUTH-02-synthetic",
@@ -1785,6 +1817,114 @@ def audit_corruptions(repo: Path) -> tuple[dict[str, str], ...]:
         ("retry_and_replacement", "outcome_dependent_retries"),
         1,
     )
+    reject(
+        "RETRY-05-delay-below-minimum",
+        lambda: RetryDelayDecision(0, "provider-retry-after", "timeout"),
+    )
+    reject(
+        "RETRY-06-delay-above-maximum",
+        lambda: RetryDelayDecision(31, "provider-retry-after", "timeout"),
+    )
+    reject(
+        "RETRY-07-malformed-delay-persisted",
+        lambda: decision_from_metadata(
+            "timeout",
+            {
+                "retry_delay_seconds": "not-a-number",
+                "retry_delay_source": "provider-retry-after",
+                "retry_class": "timeout",
+            },
+        ),
+    )
+    reject(
+        "RETRY-08-fallback-table-changed",
+        lambda: _require_equal(
+            {**RETRY_DELAY_FALLBACK_SECONDS, "timeout": 3},
+            RETRY_DELAY_FALLBACK_SECONDS,
+            "retry-delay fallback table",
+        ),
+    )
+    reject(
+        "RETRY-09-changed-delay-after-restart",
+        lambda: _require_equal(
+            RetryDelayDecision(5, "provider-retry-after", "timeout"),
+            RetryDelayDecision(2, "registered-class-fallback", "timeout"),
+            "recorded retry delay",
+        ),
+    )
+    reject(
+        "RETRY-10-duplicate-retry-after-success",
+        lambda: _require_equal(
+            ("retry-delay-selected", "retry-delay-selected"),
+            ("retry-delay-selected",),
+            "unique retry selection",
+        ),
+    )
+    reject(
+        "RETRY-11-provider-phase-closed-before-retry",
+        lambda: _reject_true(True, "provider phase closed before retry"),
+    )
+    reject(
+        "RETRY-12-cap-failure-before-wait",
+        lambda: _reject_true(True, "cap failure before retry wait"),
+    )
+    reject(
+        "RETRY-13-authorization-identity-failure-before-wait",
+        lambda: _reject_true(True, "authorization or identity failure before retry wait"),
+    )
+    reject(
+        "RETRY-14-raw-header-leakage",
+        lambda: _reject_true(
+            "headers" not in SAFE_RETRY_METADATA_FIELDS,
+            "raw headers are outside the retry metadata allowlist",
+        ),
+    )
+    reject(
+        "RETRY-15-raw-error-message-leakage",
+        lambda: _reject_true(
+            "provider_error_message" not in SAFE_RETRY_METADATA_FIELDS,
+            "raw provider messages are outside the retry metadata allowlist",
+        ),
+    )
+    reject(
+        "RETRY-16-second-attempt-before-delay-completion",
+        lambda: _require_equal(
+            ("first-failure", "second-attempt", "delay-completed"),
+            ("first-failure", "delay-selected", "delay-completed", "second-attempt"),
+            "retry audit order",
+        ),
+    )
+    reject(
+        "RETRY-17-inside-range-retry-after-changed",
+        lambda: _require_equal(
+            select_retry_delay("rate-limit", retry_after="7").retry_delay_seconds,
+            8,
+            "inside-range Retry-After",
+        ),
+    )
+    reject(
+        "RETRY-18-missing-retry-after-not-fallback",
+        lambda: _require_equal(
+            select_retry_delay("rate-limit").retry_delay_source,
+            "provider-retry-after",
+            "missing Retry-After source",
+        ),
+    )
+    for corruption_id, retry_class, expected in (
+        ("RETRY-19-timeout-fallback-changed", "timeout", 2),
+        ("RETRY-20-transient-transport-fallback-changed", "transient-transport", 2),
+        ("RETRY-21-invalid-provider-json-fallback-changed", "invalid-provider-json", 2),
+        ("RETRY-22-rate-limit-fallback-changed", "rate-limit", 5),
+        ("RETRY-23-transient-provider-fallback-changed", "transient-provider", 5),
+    ):
+        reject(
+            corruption_id,
+            lambda name=retry_class, value=expected: _require_equal(
+                {**RETRY_DELAY_FALLBACK_SECONDS, name: value + 1},
+                RETRY_DELAY_FALLBACK_SECONDS,
+                f"{name} retry fallback",
+            ),
+        )
 
     def require_operational(
         *,

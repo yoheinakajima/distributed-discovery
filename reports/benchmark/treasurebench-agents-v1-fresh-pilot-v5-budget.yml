@@ -68,6 +68,18 @@ policies:
   output_ceiling_matches_AO-0004-R4: true
   prompt_or-task-change-on-retry: false
   same-request-transport-attempts: 2
+  deterministic-retry-delay:
+    minimum_seconds: 1
+    maximum_retry_after_seconds: 30
+    fallback_seconds:
+      timeout: 2
+      transient-transport: 2
+      invalid-provider-json: 2
+      rate-limit: 5
+      transient-provider: 5
+    random_jitter: false
+    call-token-cost-and-denominator-accounting-changed: false
+    wall-clock-wait-is-provider-spend: false
   schema-only-repairs-per-request: 1
   recovered-retries-may-be-warnings: true
   protocol-invalid-pairings-allowed: 500

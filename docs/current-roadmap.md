@@ -8,7 +8,9 @@ protocol-validity policy v2 and is forward-only; no v4 retained state,
 diagnostic, inference, or historical reclassification is authorized.
 
 The exact OpenAI and Anthropic operational taxonomies, contract/safety
-classes, two-attempt transport bound, one schema-only repair, zero semantic
+classes, two-attempt transport bound, deterministic one-to-30-second
+Retry-After or frozen two/five-second fallback before the sole retry, one
+schema-only repair, zero semantic
 retry, zero replacement, denominator-retained missingness intervals,
 independent classification, independent all-pairing bound reconstruction, and
 the sequence-only 3-consecutive/10-cumulative circuit breaker are frozen
@@ -16,12 +18,13 @@ before live authorization.
 
 Authorization-free implementation passes the complete 500-pairing rehearsal,
 zero/mixed/all-invalid matrices, all registered missingness and circuit
-scenarios, provider protected classes, 96 v5 boundary corruptions, 28
+scenarios, provider protected classes, 115 v5 boundary corruptions, 28
 repaired-instrument corruptions, and production-path temporary custody,
 commitment, lock, post-lock replay, redaction, and cleanup. The cost plan is
 USD 11.51 expected, USD 15 conservative, with unchanged owner ceilings of USD
 25 total, USD 10 OpenAI, USD 15 Anthropic, 5,200 calls, and 256 output tokens
-per request.
+per request. All 176 focused tests, all 857 repository tests, Ruff, MyPy over
+215 source files, and the complete repository verification wall pass.
 
 The task must freeze and push the exact execution commit, open one draft PR,
 commit the generic owner gate, and stop before `.env.txt`, real v5 seed or
@@ -30,12 +33,11 @@ authorization only, the same task may continue through the registered
 engineering-complete or honest-quarantine path and administrative closeout.
 This is not performance or scientific evidence.
 
-That authorization-free boundary is now complete. Execution commit
-`f51728746b83e0d22cb2d6f5be0513a9cb2b5a00`, draft PR #211, its exact-head
-CI, all 32 protected hashes, and committed gate-manifest head
-`35fea430ba5f6ff0b5ac18752aaba1d504c292c0` validate. No authorization was
-created. The roadmap is stopped at exact owner challenge
-`AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5 f517287`.
+The unused original execution freeze and gate are prospectively superseded
+before authorization because the second transport attempt previously lacked
+the required delay. R2 implementation, full rehearsal, execution refreeze,
+draft-PR CI, and `AOG-AO-0011-FRESH-PILOT-V5-R2` are now the sole active
+continuation. No authorization was created or consumed.
 
 ## AO-0010 prospective protocol-validity policy v2
 

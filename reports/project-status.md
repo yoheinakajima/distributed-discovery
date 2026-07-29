@@ -25,16 +25,18 @@ canary. No performance outcome or missingness-rate target is an input.
 The authorization-free candidate passes the full 50-task/500-pairing
 rehearsal, Methods A/B/C, independent provider classification, 7,900 metric
 intervals, 144 independently reproduced all-pairing contrast bounds,
-zero/mixed/all-invalid and missingness matrices, all exact circuit cases, 96
+zero/mixed/all-invalid and missingness matrices, all exact circuit cases, 115
 v5 boundary corruptions, 28 inherited repaired-instrument corruptions, and
 temporary production-path custody/lock/replay/redaction/cleanup. There have
 been zero credential reads, real private objects, provider calls, spend, or
-real unseals. Execution is frozen at
-`f51728746b83e0d22cb2d6f5be0513a9cb2b5a00`; draft PR #211 and exact-head
-CI pass. The committed generic gate at
-`35fea430ba5f6ff0b5ac18752aaba1d504c292c0` passes live validate-only without
-creating an authorization. The task is stopped at exact owner challenge
-`AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5 f517287`.
+real unseals. The unused original execution freeze and gate are
+prospectively superseded before authorization because the sole
+identical-request retry lacked the required deterministic delay. The same
+task, issue, branch, draft PR #211, campaign, and batch continue through R2
+revalidation and refreeze. All 176 focused tests, all 857 repository tests,
+Ruff, MyPy over 215 source files, and the complete verification wall pass.
+The future gate ID is
+`AOG-AO-0011-FRESH-PILOT-V5-R2`.
 
 ## Preserved AO-0010 closeout
 

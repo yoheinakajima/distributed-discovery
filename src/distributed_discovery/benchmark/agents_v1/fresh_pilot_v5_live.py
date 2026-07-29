@@ -15,6 +15,7 @@ import secrets
 import stat
 import subprocess
 import tempfile
+import time
 from collections.abc import Mapping, Sequence
 from dataclasses import asdict, dataclass, replace
 from datetime import datetime
@@ -111,6 +112,10 @@ from distributed_discovery.benchmark.agents_v1.protocol_validity_independent imp
 )
 from distributed_discovery.benchmark.agents_v1.provider_outcome import (
     ProspectiveProviderOutcomeAdapter,
+)
+from distributed_discovery.benchmark.agents_v1.retry_backoff import (
+    DeterministicNoWaitSleeper,
+    RetryDelayRuntime,
 )
 from distributed_discovery.benchmark.agents_v1.traces import build_trace
 from distributed_discovery.benchmark.agents_v1.verification import verify_method_agreement
@@ -511,7 +516,11 @@ def _resumable(
     ledger: AppendOnlyLedger,
     response_root: Path,
     response_key: bytes,
+    retry_delay_runtime: RetryDelayRuntime | None = None,
 ) -> AgentAdapter:
+    runtime = retry_delay_runtime or RetryDelayRuntime(
+        sleeper=DeterministicNoWaitSleeper(),
+    )
     return ResumablePilotAdapter(
         ProspectiveProviderOutcomeAdapter(underlying, provider=provider),
         provider=provider,
@@ -521,6 +530,7 @@ def _resumable(
         response_key=response_key,
         campaign_id=CAMPAIGN_ID,
         batch_id=BATCH_ID,
+        retry_delay_runtime=runtime,
     )
 
 
@@ -577,6 +587,14 @@ def _live_adapters(
         raise
     assert openai is not None and anthropic is not None
     underlying = (openai, anthropic)
+    private_root = response_root.parent
+
+    def retry_preflight() -> None:
+        current = load_owner_authorization(repo)
+        if current["authorization_digest"] != authorization["authorization_digest"]:
+            raise PermissionError("owner authorization changed before retry")
+        _bind_private_state(repo, private_root, current)
+
     adapters = {
         model: _resumable(
             underlying=underlying[index],
@@ -585,6 +603,10 @@ def _live_adapters(
             ledger=ledger,
             response_root=response_root / PROVIDERS[index].lower(),
             response_key=response_key,
+            retry_delay_runtime=RetryDelayRuntime(
+                sleeper=time.sleep,
+                preflight=retry_preflight,
+            ),
         )
         for index, model in enumerate(MODELS)
     }
@@ -710,6 +732,9 @@ def _replay_adapters(
             ledger=ledger,
             response_root=response_root / PROVIDERS[index].lower(),
             response_key=response_key,
+            retry_delay_runtime=RetryDelayRuntime(
+                sleeper=DeterministicNoWaitSleeper(),
+            ),
         )
         for index, model in enumerate(MODELS)
     }
@@ -727,6 +752,9 @@ def _mock_adapters(
             ledger=ledger,
             response_root=response_root / PROVIDERS[index].lower(),
             response_key=response_key,
+            retry_delay_runtime=RetryDelayRuntime(
+                sleeper=DeterministicNoWaitSleeper(),
+            ),
         )
         for index, model in enumerate(MODELS)
     }

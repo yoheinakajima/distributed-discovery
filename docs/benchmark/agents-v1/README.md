@@ -179,7 +179,11 @@ The wholly fresh v5 identity is campaign
 `tb-agents-v1-repair-confirmation-v5-b01`. The authorization-free 50-task,
 500-pairing rehearsal passes 7,900 metric intervals, 144 all-pairing contrast
 bounds, independent provider classification and bound reconstruction, and all
-96 v5 boundary corruptions plus 28 inherited repaired-instrument corruptions.
+115 v5 boundary corruptions plus 28 inherited repaired-instrument
+corruptions. The R2 correction requires a safely parsed one-to-30-second
+Retry-After value or the frozen two/five-second fallback before the sole
+permitted second transport attempt. Authorization-free rehearsals record that
+delay without sleeping.
 Production permit/custody, output-lock, post-lock replay, redaction, and
 deterministic cleanup are rehearsed without credentials, provider calls,
 spend, or retained real private state.

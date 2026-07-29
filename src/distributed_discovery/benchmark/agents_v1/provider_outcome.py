@@ -25,6 +25,9 @@ from distributed_discovery.benchmark.agents_v1.protocol_validity import (
     FORBIDDEN_UNCONDITIONAL_LABELS,
     PRIMARY_CONTRASTS,
 )
+from distributed_discovery.benchmark.agents_v1.retry_backoff import (
+    SAFE_RETRY_METADATA_FIELDS,
+)
 
 PairingStatusV3 = Literal[
     "protocol-valid",
@@ -433,6 +436,8 @@ class ProspectiveProviderOutcomeAdapter:
         }
         if classified.retry_eligible:
             return replace(response, operational_metadata=metadata)
+        for name in SAFE_RETRY_METADATA_FIELDS:
+            metadata.pop(name, None)
         return replace(
             response,
             error_class=f"provider-contract-or-safety:{classified.taxonomy_class}",

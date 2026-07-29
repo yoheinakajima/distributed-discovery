@@ -5,22 +5,23 @@
 AO-0011 freezes forward-only provider-outcome policy v3 and wholly fresh
 campaign `treasurebench-agents-v1-repair-confirmation-v5`, batch
 `tb-agents-v1-repair-confirmation-v5-b01`, without reopening or diagnosing
-AO-0010/v4. Execution is frozen at
-`f51728746b83e0d22cb2d6f5be0513a9cb2b5a00`; draft PR #211 and its
-exact-head CI pass.
+AO-0010/v4. The unused original execution freeze and gate are prospectively
+superseded before authorization. The same task, issue #210, branch, draft PR
+#211, campaign, and batch continue through the authorization-free R2
+deterministic retry-delay correction and refreeze.
 
-The 500-pairing rehearsal, 7,900 metric intervals, 144 independently
+The R2 500-pairing rehearsal, 7,900 metric intervals, 144 independently
 reconstructed all-pairing contrast bounds, exact missingness/circuit
-scenarios, 124 corruption rejections, 107 focused tests, all 832 repository
-tests, and the full governance/site/release wall pass. There were zero
-credential reads, real private objects, provider calls, spend, and real
-unseals.
+scenarios, 115 R2 boundary corruption rejections plus 28 inherited checks,
+176 focused tests, all 857 repository tests, and the full
+governance/site/release wall pass. There were zero credential reads, real
+private objects, provider calls, spend, and real unseals.
 
-The 32-path generic gate at manifest head
-`35fea430ba5f6ff0b5ac18752aaba1d504c292c0` passes live validate-only and
-created no authorization. AO-0011 stops at exact owner challenge
-`AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5 f517287`. This is DD-010 engineering
-only and creates no scientific or performance evidence.
+The original gate created no authorization and may not be used. The future
+gate is `AOG-AO-0011-FRESH-PILOT-V5-R2`; its exact execution commit and
+challenge will be frozen after the candidate is committed, pushed, and passes
+draft-PR CI. This is DD-010 engineering only and creates no scientific or
+performance evidence.
 
 ## AO-0010 fresh repair-confirmation v4 closeout (2026-07-29)
 

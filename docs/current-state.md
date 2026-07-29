@@ -20,19 +20,26 @@ pairings, plus any contract/safety failure or non-valid public canary. It uses
 no performance or scientific outcome and cannot be changed after live
 results. There is no missingness-rate acceptance threshold.
 
+The owner-directed R2 correction supersedes the unused original gate before
+authorization. The sole identical-request transport retry now requires one
+append-only, restart-safe deterministic delay: a safely parsed Retry-After
+value clamped to one through 30 seconds, otherwise a frozen two-second
+timeout/transport/invalid-JSON fallback or five-second rate/service fallback,
+with no jitter and no raw header or message retention.
+
 The complete authorization-free 50-task/500-pairing rehearsal passes Methods
 A/B/C, independent provider classification, 7,900 metric intervals, 144
 all-pairing contrast bounds with independent reconstruction, zero/mixed/all
 protocol-invalid matrices, isolated and mixed missingness, exact circuit
-thresholds, 96 v5 boundary corruptions, 28 inherited repaired-instrument
+thresholds, 115 v5 boundary corruptions, 28 inherited repaired-instrument
 corruptions, and disposable production custody, lock, replay, redaction, and
-cleanup. Activity remains zero credentials, zero real private objects, zero
-provider calls, zero spend, and zero real unseal. Execution is frozen at
-`f51728746b83e0d22cb2d6f5be0513a9cb2b5a00`; draft PR #211 and exact-head
-CI pass, and the generic gate at
-`35fea430ba5f6ff0b5ac18752aaba1d504c292c0` passes live validate-only
-without authorization. The next and only gate is exact owner challenge
-`AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5 f517287`.
+cleanup. All 176 focused tests, all 857 repository tests, Ruff, MyPy over 215
+source files, and the complete verification wall pass. Activity remains zero
+credentials, zero real private objects, zero provider calls, zero spend, and
+zero real unseal. The unused original execution freeze and gate are
+prospectively superseded. R2 execution refreeze and exact-head draft-PR CI on
+the same PR #211 are in progress. The next and only future gate is
+`AOG-AO-0011-FRESH-PILOT-V5-R2`.
 
 _TreasureBench protocol-validity policy v2 and fresh v4 quarantine,
 2026-07-29:_ AO-0010, issue #208 and draft PR #209, adopt one forward-only

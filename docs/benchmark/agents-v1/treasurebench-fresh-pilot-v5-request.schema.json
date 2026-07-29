@@ -50,7 +50,7 @@
     "issue": {"const": 210},
     "branch": {"const": "codex/treasurebench-agents-v1-fresh-pilot-v5"},
     "starting_main": {"const": "ab0340772f87b2b37e0e7f0d86d4a44f5a800248"},
-    "owner_gate_id": {"const": "AOG-AO-0011-FRESH-PILOT-V5"},
+    "owner_gate_id": {"const": "AOG-AO-0011-FRESH-PILOT-V5-R2"},
     "counts": {"const": {"tasks": 50, "families": 5, "tasks_per_family": 10, "batches": 1, "repeats": 1, "architectures": 5, "cloud_models": 2, "private_runs": 500, "normal_calls": 3016}},
     "providers": {
       "type": "array",
@@ -67,11 +67,29 @@
     "budget": {"type": "object", "minProperties": 10},
     "failure_policy": {
       "type": "object",
-      "required": ["protocol_validity_path", "provider_outcome_path", "total_transport_attempts_per_request", "schema_repairs_per_request", "semantic_answer_retries", "outcome_dependent_retries", "provider_operational_missing_pairings_allowed_below_circuit_breaker", "provider_contract_or_safety_failures_allowed", "consecutive_same_provider_operational_missing_limit", "cumulative_provider_operational_missing_limit", "provider_missingness_scientific_acceptance_threshold"],
+      "required": ["protocol_validity_path", "provider_outcome_path", "total_transport_attempts_per_request", "deterministic_retry_delay", "schema_repairs_per_request", "semantic_answer_retries", "outcome_dependent_retries", "provider_operational_missing_pairings_allowed_below_circuit_breaker", "provider_contract_or_safety_failures_allowed", "consecutive_same_provider_operational_missing_limit", "cumulative_provider_operational_missing_limit", "provider_missingness_scientific_acceptance_threshold"],
       "properties": {
         "protocol_validity_path": {"const": "docs/benchmark/agents-v1/protocol-validity-policy-v2.yml"},
         "provider_outcome_path": {"const": "docs/benchmark/agents-v1/provider-outcome-policy-v3.yml"},
         "total_transport_attempts_per_request": {"const": 2},
+        "deterministic_retry_delay": {
+          "const": {
+            "minimum_seconds": 1,
+            "maximum_retry_after_seconds": 30,
+            "fallback_seconds": {
+              "timeout": 2,
+              "transient-transport": 2,
+              "invalid-provider-json": 2,
+              "rate-limit": 5,
+              "transient-provider": 5
+            },
+            "random_jitter": false,
+            "provider_retry_after_safely_parsed_and_clamped": true,
+            "append_only_selection_and_completion_required": true,
+            "restart_replays_recorded_decision": true,
+            "retained_operational_fields": ["retry_delay_seconds", "retry_delay_source", "retry_class", "transport_attempt"]
+          }
+        },
         "schema_repairs_per_request": {"const": 1},
         "semantic_answer_retries": {"const": 0},
         "outcome_dependent_retries": {"const": 0},

@@ -103,13 +103,13 @@ def test_v5_complete_500_run_rehearsal() -> None:
     assert result["external_cost_usd"] == "0"
 
 
-def test_all_96_v5_corruptions_reject_and_match_registry() -> None:
+def test_all_115_v5_corruptions_reject_and_match_registry() -> None:
     observed = (
         *fresh_pilot_v5.audit_corruptions(ROOT),
         *audit_live_corruptions(ROOT),
     )
     registry = fresh_pilot_v5.load_corruption_registry(ROOT)
-    assert len(observed) == 96
+    assert len(observed) == 115
     assert {item["corruption_id"] for item in observed} == set(registry["corruptions"])
     assert all(item["status"] == "rejected" for item in observed)
 

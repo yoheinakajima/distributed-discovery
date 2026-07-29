@@ -5,7 +5,19 @@ batch_id: tb-agents-v1-repair-confirmation-v5-b01
 currency: USD
 graph: {matrix_runs: 500, matrix_calls: 3014, public_canary_calls: 2, normal_calls: 3016, maximum_calls: 5200}
 costs: {expected: "11.51", conservative: "15", hard_cap: "25", OpenAI_cap: "10", Anthropic_cap: "15"}
-request_caps: {output_tokens: 256, transport_attempts: 2, schema_repairs: 1}
+request_caps:
+  output_tokens: 256
+  transport_attempts: 2
+  schema_repairs: 1
+  retry_delay_minimum_seconds: 1
+  retry_after_maximum_seconds: 30
+  retry_delay_fallback_seconds:
+    timeout: 2
+    transient-transport: 2
+    invalid-provider-json: 2
+    rate-limit: 5
+    transient-provider: 5
+  random_jitter: false
 policy_caps:
   semantic_answer_retries: 0
   outcome_dependent_retries: 0

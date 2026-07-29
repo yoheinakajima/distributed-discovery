@@ -201,6 +201,13 @@ closeout.
   #211 head, 32-path tree freeze, and passing CI run `30481365591`.
 - **M6 — complete:** committed generic owner gate, live validate-only gate,
   schema-valid owner-gate-required handoff, and exact stop.
+- **M6R2a — complete:** additive R2 authority, deterministic bounded
+  retry-delay runtime, append-only restart audit, safe metadata boundary,
+  focused tests, 50-task/500-pairing rehearsal, corruption wall, full tests,
+  and repository verification.
+- **M6R2b — in progress:** exact R2 execution commit, push, protected-tree
+  freeze, exact-head draft-PR CI, committed R2 owner gate, validate-only gate,
+  schema-valid handoff, and exact stop.
 - **M7 — pending:** not authorized in this phase; after later exact
   authorization only, the fixed engineering-complete or honest-quarantine
   path and administrative closeout.
@@ -223,6 +230,10 @@ closeout.
 - [x] Complete M1 through M4 sequentially.
 - [x] Complete M5.
 - [x] Complete M6.
+- [x] Complete R2 authority, implementation, and authorization-free
+  revalidation without consuming the original gate.
+- [ ] Complete the R2 execution freeze, exact-head CI, gate, handoff, and
+  stop.
 - [x] Stop before `.env.txt`, credentials, real private material, provider
   calls, spend, or real v5 unseal.
 
@@ -314,6 +325,26 @@ closeout.
   validate-only successfully. The exact required challenge is
   `AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5 f517287`; no authorization or
   consequential action is created. Complete M6 and stop at the owner gate.
+- `2026-07-29T20:42:23Z`: register the owner-directed additive R2 contract
+  without creating a new task, issue, branch, PR, campaign, batch, or session.
+  The unused original gate is prospectively superseded without authorization.
+  Official direct-provider documentation confirms Retry-After and bounded
+  backoff handling; no official source requires a stricter upper bound than
+  the owner-frozen one-to-30-second range.
+- `2026-07-29T20:42:23Z`: implement the deterministic no-jitter delay parser,
+  class fallbacks, safe four-field metadata boundary, append-only selected and
+  completed delay records, restart replay, and live-only injected sleeper.
+  Authorization-free tests use a deterministic no-wait recorder. The complete
+  50-task/500-pairing rehearsal passes 7,900 intervals, 144 independently
+  reconstructed contrasts, exact provider/circuit cases, 115 v5 boundary
+  corruptions, 28 inherited checks, custody, lock, replay, redaction, and
+  cleanup with zero consequential activity.
+- `2026-07-29T20:42:23Z`: the first R2 full test wall preserved one failure:
+  the DD-010 site projection still expected the superseded v3 owner-gate
+  suffix. Reconcile it to the truthful R2-refreeze-in-progress status. All 176
+  focused tests, all 857 repository tests, Ruff, MyPy over 215 source files,
+  and the complete `make verify` wall then pass. Begin the exact execution
+  commit and draft-PR CI freeze.
 
 ## Validation strategy
 
@@ -359,15 +390,19 @@ contract, master-plan continuation, policy v3, v5 contracts, implementation,
 tests, provider audit, execution budget, registration, scenario, corruption,
 synthetic rehearsal, production-custody rehearsal, draft PR #211, exact
 execution freeze, generic owner gate, and owner-gate-required handoff are
-created. M7 remains unauthorized.
+created. The original execution freeze, gate, and handoff are preserved but
+superseded for authorization. The additive R2 contract, implementation,
+policy and audit corrections, tests, corruption and rehearsal records are
+complete; the R2 execution freeze, gate, and handoff remain to be committed.
+M7 remains unauthorized.
 
 ## Blockers
 
-The exact AO-0011 generic owner authorization is absent by design and is now
-the sole blocker. Five unrelated untracked files prevent a
-globally clean working tree but are outside AO-0011 and will remain untouched;
-all staging is path-explicit and tracked-tree identity checks exclude them as
-AO-0010 did.
+The exact R2 execution commit, exact-head CI result, and committed R2 generic
+gate must be completed before absent owner authorization becomes the sole
+blocker. Five unrelated untracked files prevent a globally clean working tree
+but are outside AO-0011 and will remain untouched; all staging is
+path-explicit and tracked-tree identity checks exclude them as AO-0010 did.
 
 ## Recovery and restart instructions
 

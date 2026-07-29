@@ -75,7 +75,63 @@
     },
     "contract_or_safety_taxonomy": {"type": "array", "minItems": 10, "maxItems": 10, "uniqueItems": true, "items": {"type": "string"}},
     "never_ordinary_missingness": {"type": "array", "minItems": 10, "uniqueItems": true, "items": {"type": "string"}},
-    "retry_and_replacement": {"type": "object", "minProperties": 8},
+    "retry_and_replacement": {
+      "type": "object",
+      "required": ["transport", "schema", "semantic_answer_retries", "outcome_dependent_retries", "replacement_pairings", "replacement_batches", "silent_normalization", "invalid_output_credit", "exactly_one_final_action_per_required_agent"],
+      "additionalProperties": false,
+      "properties": {
+        "transport": {
+          "type": "object",
+          "required": ["maximum_attempts", "identical_logical_request_only", "provider_sdk_automatic_retries", "second_attempt_requires_completed_delay_record", "retry_delay"],
+          "additionalProperties": false,
+          "properties": {
+            "maximum_attempts": {"const": 2},
+            "identical_logical_request_only": {"const": true},
+            "provider_sdk_automatic_retries": {"const": "disabled"},
+            "second_attempt_requires_completed_delay_record": {"const": true},
+            "retry_delay": {
+              "const": {
+                "minimum_seconds": 1,
+                "maximum_retry_after_seconds": 30,
+                "accepted_provider_value": "safely-parsed-direct-response-Retry-After",
+                "provider_value_clamped_to_bounds": true,
+                "parser_formats": ["nonnegative-delta-seconds", "HTTP-date"],
+                "fallback_seconds": {
+                  "timeout": 2,
+                  "transient-transport": 2,
+                  "invalid-provider-json": 2,
+                  "rate-limit": 5,
+                  "transient-provider": 5
+                },
+                "random_jitter": false,
+                "retained_operational_fields": ["retry_delay_seconds", "retry_delay_source", "retry_class", "transport_attempt"],
+                "raw_headers_retained": false,
+                "raw_error_bodies_or_messages_retained": false,
+                "append_only_events": ["provider-retry-delay-selected", "provider-retry-delay-completed"],
+                "restart_replays_recorded_decision": true,
+                "live_sleeper": "injected-real-sleeper",
+                "test_and_authorization_free_sleeper": "deterministic-no-wait-recorder",
+                "never_wait_or_retry_after": ["provider-contract-or-safety-failure", "provider-phase-closure", "authorization-failure", "identity-failure", "cap-failure", "route-or-model-failure", "retained-state-failure", "second-transport-attempt"]
+              }
+            }
+          }
+        },
+        "schema": {
+          "const": {
+            "maximum_repairs": 1,
+            "repair_receives": ["validation-error-class", "schema"],
+            "semantic_answer_change": false
+          }
+        },
+        "semantic_answer_retries": {"const": 0},
+        "outcome_dependent_retries": {"const": 0},
+        "replacement_pairings": {"const": 0},
+        "replacement_batches": {"const": 0},
+        "silent_normalization": {"const": false},
+        "invalid_output_credit": {"const": false},
+        "exactly_one_final_action_per_required_agent": {"const": true}
+      }
+    },
     "operational_missing_handling": {"type": "object", "minProperties": 9},
     "operational_circuit_breaker": {
       "type": "object",
@@ -107,7 +163,7 @@
       },
       "additionalProperties": false
     },
-    "batch_acceptance": {"type": "object", "required": ["engineering_completion_requires", "isolated_protocol_invalid_alone_quarantines", "isolated_provider_operational_missing_alone_quarantines", "quarantine_triggers"], "additionalProperties": false, "properties": {"engineering_completion_requires": {"type": "array", "minItems": 19, "uniqueItems": true, "items": {"type": "string"}}, "isolated_protocol_invalid_alone_quarantines": {"const": false}, "isolated_provider_operational_missing_alone_quarantines": {"const": false}, "quarantine_triggers": {"type": "array", "minItems": 14, "uniqueItems": true, "items": {"type": "string"}}}},
+    "batch_acceptance": {"type": "object", "required": ["engineering_completion_requires", "isolated_protocol_invalid_alone_quarantines", "isolated_provider_operational_missing_alone_quarantines", "quarantine_triggers"], "additionalProperties": false, "properties": {"engineering_completion_requires": {"type": "array", "minItems": 20, "uniqueItems": true, "items": {"type": "string"}}, "isolated_protocol_invalid_alone_quarantines": {"const": false}, "isolated_provider_operational_missing_alone_quarantines": {"const": false}, "quarantine_triggers": {"type": "array", "minItems": 14, "uniqueItems": true, "items": {"type": "string"}}}},
     "stopping": {"const": {"fixed_intended_pairings": 500, "provider_missingness_scientific_acceptance_threshold": null, "rerun_until_preferred_availability_rate": false, "later_informativeness_criterion": "width-of-registered-all-pairing-bounds"}},
     "reporting": {"type": "object", "required": ["public_closeout_allowed", "public_closeout_prohibited"], "additionalProperties": false, "properties": {"public_closeout_allowed": {"type": "array", "minItems": 9, "uniqueItems": true, "items": {"type": "string"}}, "public_closeout_prohibited": {"type": "array", "minItems": 10, "uniqueItems": true, "items": {"type": "string"}}}},
     "scientific_boundary": {"type": "object", "additionalProperties": {"const": false}, "properties": {"engineering_only": {"const": true}}}

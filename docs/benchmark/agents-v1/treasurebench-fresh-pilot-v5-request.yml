@@ -11,7 +11,7 @@ batch_id: tb-agents-v1-repair-confirmation-v5-b01
 issue: 210
 branch: codex/treasurebench-agents-v1-fresh-pilot-v5
 starting_main: ab0340772f87b2b37e0e7f0d86d4a44f5a800248
-owner_gate_id: AOG-AO-0011-FRESH-PILOT-V5
+owner_gate_id: AOG-AO-0011-FRESH-PILOT-V5-R2
 counts:
   tasks: 50
   families: 5
@@ -77,6 +77,24 @@ failure_policy:
   provider_outcome_path: docs/benchmark/agents-v1/provider-outcome-policy-v3.yml
   policy_frozen_before_authorization_or_generation: true
   total_transport_attempts_per_request: 2
+  deterministic_retry_delay:
+    minimum_seconds: 1
+    maximum_retry_after_seconds: 30
+    fallback_seconds:
+      timeout: 2
+      transient-transport: 2
+      invalid-provider-json: 2
+      rate-limit: 5
+      transient-provider: 5
+    random_jitter: false
+    provider_retry_after_safely_parsed_and_clamped: true
+    append_only_selection_and_completion_required: true
+    restart_replays_recorded_decision: true
+    retained_operational_fields:
+      - retry_delay_seconds
+      - retry_delay_source
+      - retry_class
+      - transport_attempt
   schema_repairs_per_request: 1
   semantic_answer_retries: 0
   outcome_dependent_retries: 0
@@ -143,7 +161,7 @@ operational_circuit_breaker:
   reset_loosen_or_reinterpret_after_live_results: false
 private_state:
   symbolic_root: XDG_STATE_HOME/distributed-discovery/treasurebench-agents-v1/repair-confirmation-v5
-  authorization_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0011-FRESH-PILOT-V5.yml
+  authorization_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0011-FRESH-PILOT-V5-R2.yml
   retention_days_after_closeout: 365
   fresh_os_csprng_seed: true
   tasks_and_answers_encrypted_separately: true
@@ -277,6 +295,7 @@ boundaries:
   submission_allowed: false
   base_campaign_allowed: false
 execution_sensitive_paths:
+  - tasks/treasurebench-agents-v1-fresh-pilot-v5-r2.yml
   - tasks/treasurebench-agents-v1-fresh-pilot-v5.yml
   - src/distributed_discovery/agent_ops
   - src/distributed_discovery/benchmark/agents_v1
@@ -308,4 +327,6 @@ execution_sensitive_paths:
   - tests/test_treasurebench_agents_v1_fresh_pilot_v5.py
   - tests/test_treasurebench_agents_v1_fresh_pilot_v5_session.py
   - tests/test_treasurebench_agents_v1_provider_outcome_v3.py
+  - tests/test_agents_v1_live_providers.py
+  - tests/test_treasurebench_agents_v1_retry_backoff.py
   - Makefile

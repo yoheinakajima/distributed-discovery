@@ -27,10 +27,29 @@ may become ordinary missingness. Unregistered or ambiguous errors quarantine.
 
 ## Retry, trace, and circuit breaker
 
-Each logical request has at most two bounded transport attempts and exactly
-one schema-only repair. There are zero semantic or outcome-dependent retries,
-replacement pairings or batches, silent normalizations, or invalid-output
-credits.
+Each logical request has at most two bounded transport attempts. The sole
+permitted second attempt is the identical logical request and follows one
+deterministic delay. A safely parsed direct-provider `Retry-After` value is
+clamped to one through 30 seconds. Without one, the frozen fallbacks are two
+seconds for client timeout, transient transport, and invalid provider JSON,
+and five seconds for rate limit or transient provider, overload, and service
+errors. There is no random jitter.
+
+Only `retry_delay_seconds`, `retry_delay_source`, `retry_class`, and
+`transport_attempt` may be retained as retry metadata. Raw headers and raw
+error bodies or messages are never retained. The append-only ledger records
+the failed first attempt, registered operational disposition, immutable delay
+selection and source, delay completion, and second attempt. A restart replays
+the recorded decision; it cannot bypass the delay, change the delay, duplicate
+the retry, or make a third attempt. Authorized live mode injects the real
+sleeper. Tests and authorization-free rehearsals inject a deterministic
+no-wait recorder and never sleep.
+
+No delay or retry occurs after contract/safety, provider closure,
+authorization, identity, cap, route, model, or retained-state failure. The
+request still has exactly one schema-only repair. There are zero semantic or
+outcome-dependent retries, replacement pairings or batches, silent
+normalizations, or invalid-output credits.
 
 An operationally missing pairing stops immediately within that pairing,
 retains every safely completed prior turn in one unique terminal missing

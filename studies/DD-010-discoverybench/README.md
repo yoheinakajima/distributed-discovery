@@ -264,7 +264,7 @@ semantic retry, invalid credit, ranking, scientific evidence, or base-campaign
 authority exists. V4 and every prior campaign are permanently closed and
 immutable.
 
-## AO-0011 provider-outcome policy v3 and wholly fresh v5 preparation
+## AO-0011 provider-outcome policy v3 and wholly fresh v5 R2 preparation
 
 Issue #210 registers one forward-only provider-outcome policy v3 and one
 wholly fresh engineering campaign,
@@ -287,9 +287,20 @@ pairings, with immediate quarantine for any contract/safety failure or
 non-valid public canary. There is no scientific missingness threshold and no
 rerun-until-availability rule.
 
+The owner-directed R2 correction prospectively supersedes the unused original
+gate and adds one deterministic, restart-safe delay before the sole permitted
+second identical-request transport attempt. A safely parsed Retry-After value
+is clamped to one through 30 seconds; otherwise the frozen class fallback is
+two seconds for timeout, transient transport, or invalid provider JSON and
+five seconds for rate limit, transient provider, overload, or service error.
+There is no jitter, third attempt, semantic retry, outcome-dependent retry,
+replacement, or wait after authorization, identity, cap, phase-closure,
+retained-state, route, model, contract, or safety failure. Only normalized
+retry delay, source, class, and attempt may enter operational records.
+
 Authorization-free validation passes a complete 50-task/500-pairing
 rehearsal, 7,900 metric intervals, 144 all-pairing contrast bounds,
-zero/mixed/all-invalid and missingness scenarios, 96 v5 boundary corruptions,
+zero/mixed/all-invalid and missingness scenarios, 115 v5 boundary corruptions,
 28 inherited repaired-instrument corruptions, and disposable
 production-path custody, lock, replay, redaction, and cleanup rehearsals. No
 credential, real seed, private campaign object, provider call, spend, or

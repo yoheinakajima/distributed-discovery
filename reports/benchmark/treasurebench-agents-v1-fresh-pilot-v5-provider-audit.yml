@@ -1,5 +1,5 @@
 schema_version: treasurebench-agents-v1-fresh-pilot-v5-provider-audit-v1
-audited_at_utc: "2026-07-29T17:27:13Z"
+audited_at_utc: "2026-07-29T20:23:30Z"
 status: pass-current-official-docs-no-credential-or-provider-api-call
 task_id: AO-0011
 campaign_id: treasurebench-agents-v1-repair-confirmation-v5
@@ -58,7 +58,8 @@ models:
     bounded_transport:
       identical_request_maximum_attempts: 2
       SDK_automatic_retries_relied_on: false
-      retry_after_or_bounded_backoff: required
+      retry_after_or_bounded_backoff: implemented-deterministic-bounded-R2
+      second_attempt_requires_delay_completion: true
     standard_short-context_price_usd_per_million_tokens:
       input: "2.50"
       cached_input_credit_assumed: false
@@ -68,6 +69,7 @@ models:
       structured_output: https://developers.openai.com/api/docs/guides/structured-outputs
       retention: https://platform.openai.com/docs/models/default-usage-policies-by-endpoint
       errors: https://developers.openai.com/api/docs/guides/error-codes
+      rate_limits_and_backoff: https://developers.openai.com/api/docs/guides/rate-limits
       pricing: https://developers.openai.com/api/docs/models/gpt-5.4
   - provider: Anthropic
     route: anthropic_direct
@@ -121,7 +123,8 @@ models:
     bounded_transport:
       identical_request_maximum_attempts: 2
       SDK_default_two-retries_relied_on: false
-      retry_after_or_bounded_backoff: required
+      retry_after_or_bounded_backoff: implemented-deterministic-bounded-R2
+      second_attempt_requires_delay_completion: true
     standard_global_price_usd_per_million_tokens:
       input: "3.00"
       cache_credit_assumed: false
@@ -132,6 +135,7 @@ models:
       structured_output: https://platform.claude.com/docs/en/build-with-claude/structured-outputs
       retention: https://platform.claude.com/docs/en/build-with-claude/structured-outputs
       errors: https://platform.claude.com/docs/en/api/errors
+      rate_limits_and_retry_after: https://platform.claude.com/docs/en/api/rate-limits
       pricing: https://www.anthropic.com/claude/sonnet
 decisions:
   exact_route_and_model_continuity_required: true
@@ -146,6 +150,13 @@ decisions:
   structured_output_contracts_match_AO-0004-boundary: true
   output_ceiling_remains_256: true
   retry_contract_uses_SDK_defaults: false
+  retry_delay_parser_uses_only_exact_direct_response_retry_after: true
+  retry_delay_parser_accepts_nonnegative_delta_seconds_and_HTTP_date: true
+  retry_delay_provider_value_clamped_to_one_through_30_seconds: true
+  retry_delay_random_jitter: false
+  retry_delay_live_sleeper_injected: true
+  retry_delay_authorization_free_sleeper: deterministic-no-wait-recorder
+  raw_retry_headers_or_error_messages_retained: false
   standard_prices_current: true
   completed_refusal_or_nonconformance_is_transport_missing: false
   operational_missingness_requires_no-completed-usable-response: true
@@ -153,6 +164,30 @@ decisions:
   protocol_invalid_alone_quarantines: false
   isolated_operational_missing_alone_quarantines: false
   circuit_breaker_is_scientific_threshold: false
+retry_delay_policy:
+  minimum_seconds: 1
+  maximum_retry_after_seconds: 30
+  fallback_seconds:
+    timeout: 2
+    transient-transport: 2
+    invalid-provider-json: 2
+    rate-limit: 5
+    transient-provider: 5
+  retry_delay_sources:
+    - provider-retry-after
+    - registered-class-fallback
+  safe_operational_fields:
+    - retry_delay_seconds
+    - retry_delay_source
+    - retry_class
+    - transport_attempt
+  append_only_events:
+    - provider-retry-delay-selected
+    - provider-retry-delay-completed
+  restart_replays_immutable_decision: true
+  no_third_attempt: true
+  no_wait_after_contract_safety_phase_closure_authorization_identity_cap_route_model_or_retained_state_failure: true
+  official_source_requires_stricter_bounded_value_than_committed_table: false
 cost_reproduction:
   normal_calls: 3016
   OpenAI_calls: 1508

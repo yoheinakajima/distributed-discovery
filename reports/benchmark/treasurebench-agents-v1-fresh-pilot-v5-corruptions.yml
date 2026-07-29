@@ -81,6 +81,25 @@ corruptions:
   - {corruption_id: RETRY-02-second-schema-repair, status: rejected}
   - {corruption_id: RETRY-03-semantic-answer-retry, status: rejected}
   - {corruption_id: RETRY-04-outcome-dependent-retry, status: rejected}
+  - {corruption_id: RETRY-05-delay-below-minimum, status: rejected}
+  - {corruption_id: RETRY-06-delay-above-maximum, status: rejected}
+  - {corruption_id: RETRY-07-malformed-delay-persisted, status: rejected}
+  - {corruption_id: RETRY-08-fallback-table-changed, status: rejected}
+  - {corruption_id: RETRY-09-changed-delay-after-restart, status: rejected}
+  - {corruption_id: RETRY-10-duplicate-retry-after-success, status: rejected}
+  - {corruption_id: RETRY-11-provider-phase-closed-before-retry, status: rejected}
+  - {corruption_id: RETRY-12-cap-failure-before-wait, status: rejected}
+  - {corruption_id: RETRY-13-authorization-identity-failure-before-wait, status: rejected}
+  - {corruption_id: RETRY-14-raw-header-leakage, status: rejected}
+  - {corruption_id: RETRY-15-raw-error-message-leakage, status: rejected}
+  - {corruption_id: RETRY-16-second-attempt-before-delay-completion, status: rejected}
+  - {corruption_id: RETRY-17-inside-range-retry-after-changed, status: rejected}
+  - {corruption_id: RETRY-18-missing-retry-after-not-fallback, status: rejected}
+  - {corruption_id: RETRY-19-timeout-fallback-changed, status: rejected}
+  - {corruption_id: RETRY-20-transient-transport-fallback-changed, status: rejected}
+  - {corruption_id: RETRY-21-invalid-provider-json-fallback-changed, status: rejected}
+  - {corruption_id: RETRY-22-rate-limit-fallback-changed, status: rejected}
+  - {corruption_id: RETRY-23-transient-provider-fallback-changed, status: rejected}
   - {corruption_id: OUTCOME-01-ambiguous-rate-limit-as-missing, status: rejected}
   - {corruption_id: OUTCOME-02-quota-as-missing, status: rejected}
   - {corruption_id: OUTCOME-03-unregistered-error-as-missing, status: rejected}
