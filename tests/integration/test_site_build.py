@@ -51,7 +51,10 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "stopped decentralized-recovery overlap gate" in program
     assert "Phase 2 holds theorem-family execution" in program
     assert "Reliable Discovery remains a major candidate but is deferred" in program
-    assert "has five permanently quarantined DD-010 engineering pilots" in program
+    assert "plus one engineering-complete v5 batch" in program
+    assert "500 terminal pairings comprise 496 protocol-valid and four protocol-invalid" in (
+        program
+    )
     assert "public-only provider-schema conformance" in program
     assert "sealed-pilot-quarantined-provider-failure" in program
     assert (
@@ -146,7 +149,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         assert (output / f"benchmark/{route}.html").is_file()
         assert (output / f"treasurebench/{route}.html").is_file()
     agents_registration = (output / "benchmark/agents-v1.html").read_text(encoding="utf-8")
-    assert "DD-010 instrument · five quarantined pilots · protocol-validity policy v2" in (
+    assert "DD-010 instrument · five quarantined pilots · v5 engineering complete" in (
         agents_registration
     )
     assert "Original pilot quarantined" in agents_registration
@@ -154,6 +157,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "Repair-confirmation v2 quarantined" in agents_registration
     assert "Repair-confirmation v3 quarantined" in agents_registration
     assert "Repair-confirmation v4 quarantined" in agents_registration
+    assert "Repair-confirmation v5 engineering complete" in agents_registration
     assert "Custody path repaired" in agents_registration
     assert "custody-creation-failure" in agents_registration
     assert "v2-campaign-absent-from-private-generation-permit-allowlist" in (agents_registration)
@@ -174,16 +178,25 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "provider-terminal-missing" in agents_registration
     assert "USD 0.3470610" in agents_registration
     assert "150 retained objects" in agents_registration
+    assert "AO-0011 policy v3 and fresh v5 closeout" in agents_registration
+    assert "496 protocol-valid and 4 protocol-invalid pairings" in agents_registration
+    assert "frozen 5-second fallback" in agents_registration
+    assert "USD 13.0413660" in agents_registration
+    assert "4,067 objects" in agents_registration
     dd010_data = json.loads((output / "data/studies/dd-010.json").read_text(encoding="utf-8"))
     assert "AO-0009-one-use-aggregate-r2-diagnostic" in dd010_data["evidence_status"]
     assert "AO-0010-forward-only-protocol-validity-policy-v2" in dd010_data["evidence_status"]
     assert "AO-0011-forward-only-provider-outcome-policy-v3" in (dd010_data["evidence_status"])
     assert dd010_data["registry_status"].endswith(
-        "provider-outcome-policy-v3-r2-owner-gate-required"
+        "fresh-v5-engineering-complete-under-policies-v2-v3"
     )
     assert any(
         item["path"]
         == "reports/benchmark/treasurebench-ao0008-fixed-batch-diagnostic-r2-closeout.md"
+        for item in dd010_data["public_artifacts"]
+    )
+    assert any(
+        item["path"] == "reports/benchmark/treasurebench-agents-v1-fresh-pilot-v5-closeout.md"
         for item in dd010_data["public_artifacts"]
     )
     assert "3,037 attempts, 3,035 successes" in agents_registration
@@ -217,8 +230,8 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         (output / "data/benchmark/agents-v1-implementation.json").read_text(encoding="utf-8")
     )
     assert agents_implementation["status"] == (
-        "implementation-and-custody-path-repaired-all-five-pilots-quarantined-"
-        "protocol-validity-policy-v2-frozen"
+        "implementation-and-custody-path-repaired-five-pilots-quarantined-"
+        "fresh-v5-engineering-complete-policies-v2-v3-frozen"
     )
     assert agents_implementation["public_rehearsal"]["cases"] == 50
     assert agents_implementation["public_rehearsal"]["corruptions_rejected"] == 24
@@ -232,8 +245,8 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         ),
         "status": "pass",
     }
-    assert agents_implementation["boundaries"]["provider_calls"] == 116
-    assert agents_implementation["boundaries"]["external_cost_usd"] == "0.3470610"
+    assert agents_implementation["boundaries"]["provider_calls"] == 3058
+    assert agents_implementation["boundaries"]["external_cost_usd"] == "13.0413660"
     assert agents_implementation["boundaries"]["private_material_exists"] is True
     assert agents_implementation["boundaries"]["performance_results_exist"] is False
     assert agents_implementation["custody_path_conformance"] == {
@@ -309,6 +322,31 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
         "provider_phase_closed": True,
         "real_batch_protocol_classification": "not-run-incomplete-pairings",
         "stage": "private-prefix",
+    }
+    assert agents_implementation["fresh_v5_closeout"] == {
+        "batch_id": "tb-agents-v1-repair-confirmation-v5-b01",
+        "calls": 3058,
+        "campaign_id": "treasurebench-agents-v1-repair-confirmation-v5",
+        "circuit_breaker_fired": False,
+        "cost_usd": "13.0413660",
+        "decision": "fresh-pilot-v5-engineering-complete-no-scientific-evidence",
+        "independent_metric_bound_agreement": True,
+        "input_tokens": 2290993,
+        "objects_locked": 4067,
+        "output_lock_commitment": (
+            "sha256:e18e7f8173f9ac0026f74cd6ff9b577010abdf65620ad269606f6862ff16e47b"
+        ),
+        "output_tokens": 437027,
+        "performance_results_exist": False,
+        "protocol_invalid_pairings": 4,
+        "protocol_valid_pairings": 496,
+        "provider_contract_or_safety_failure_pairings": 0,
+        "provider_operational_missing_pairings": 0,
+        "provider_phase_closed": True,
+        "retry_delay_seconds": 5,
+        "terminal_pairings_classified": 500,
+        "third_transport_attempts": 0,
+        "unseal_after_lock_verified": True,
     }
     agents_evaluation = json.loads(
         (output / "data/benchmark/agents-v1-evaluation.json").read_text(encoding="utf-8")

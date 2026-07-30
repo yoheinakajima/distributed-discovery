@@ -1,6 +1,6 @@
-# Current roadmap — provider-outcome policy v3 and wholly fresh v5
+# Current roadmap — provider-outcome policy v3 and v5 engineering closeout
 
-## AO-0011 generic owner gate
+## AO-0011 engineering-complete public closeout
 
 Issue #210 combines one prospective provider-outcome policy v3 with one wholly
 fresh v5 DD-010 engineering campaign. Policy v3 composes with unchanged
@@ -16,7 +16,7 @@ independent classification, independent all-pairing bound reconstruction, and
 the sequence-only 3-consecutive/10-cumulative circuit breaker are frozen
 before live authorization.
 
-Authorization-free implementation passes the complete 500-pairing rehearsal,
+Authorization-free implementation passed the complete 500-pairing rehearsal,
 zero/mixed/all-invalid matrices, all registered missingness and circuit
 scenarios, provider protected classes, 115 v5 boundary corruptions, 28
 repaired-instrument corruptions, and production-path temporary custody,
@@ -24,23 +24,31 @@ commitment, lock, post-lock replay, redaction, and cleanup. The cost plan is
 USD 11.51 expected, USD 15 conservative, with unchanged owner ceilings of USD
 25 total, USD 10 OpenAI, USD 15 Anthropic, 5,200 calls, and 256 output tokens
 per request. All 176 focused tests, all 857 repository tests, Ruff, MyPy over
-215 source files, and the complete repository verification wall pass.
+215 source files, and the complete repository verification wall passed before
+authorization.
 
-The task must freeze and push the exact execution commit, open one draft PR,
-commit the generic owner gate, and stop before `.env.txt`, real v5 seed or
-private material, provider calls, spend, or real unseal. After exact owner
-authorization only, the same task may continue through the registered
-engineering-complete or honest-quarantine path and administrative closeout.
-This is not performance or scientific evidence.
-
-The unused original execution freeze and gate are prospectively superseded
-before authorization because the second transport attempt previously lacked
-the required delay. R2 implementation, full rehearsal, execution refreeze,
-and draft-PR CI pass at execution commit
+The unused original execution freeze and gate remain superseded. R2
+implementation, full rehearsal, execution refreeze, and draft-PR CI passed at
+execution commit
 `19e36df62a6ba5ad9392588a1c59acf8b01adc10`. The committed 35-path
-`AOG-AO-0011-FRESH-PILOT-V5-R2` gate passes live validate-only without
-creating authorization. AO-0011 is stopped at that exact owner gate; no
-authorization was created or consumed.
+`AOG-AO-0011-FRESH-PILOT-V5-R2` gate was the only authorization consumed.
+
+Both public canaries, wholly fresh 50-task custody, the private prefix, and all
+500 pairings completed. The terminal matrix contains 496 protocol-valid and
+four protocol-invalid pairings, zero provider-operational missingness, zero
+contract/safety failure, and no circuit-breaker trigger. One
+transient-provider first attempt selected and completed the frozen five-second
+fallback before the sole identical retry recovered.
+
+Provider access closed after 3,058 calls and USD 13.0413660. A verified
+4,067-object lock binds the provider phase under
+`sha256:e18e7f8173f9ac0026f74cd6ff9b577010abdf65620ad269606f6862ff16e47b`.
+Post-lock replay/unseal, Methods A/B/C, independent provider classification
+and all-pairing bounds, correspondence, exact cost, contamination,
+corruptions, redaction, and retained-state checks pass. Only public-safe
+administrative closeout remains. This is DD-010 engineering only, with no
+performance publication, scientific run, claim, paper result, ranking,
+release, submission, DD-023, or base-campaign authority.
 
 ## AO-0010 prospective protocol-validity policy v2
 

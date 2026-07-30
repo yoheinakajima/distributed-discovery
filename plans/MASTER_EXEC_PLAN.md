@@ -1,6 +1,6 @@
 # Master execution plan
 
-## Active continuation — AO-0011 provider-outcome policy v3 and fresh pilot v5 R2 (2026-07-29)
+## Active closeout — AO-0011 provider-outcome policy v3 and fresh pilot v5 R2 (2026-07-29)
 
 Issue #210, draft PR #211, branch
 `codex/treasurebench-agents-v1-fresh-pilot-v5`, additive R2 task contract
@@ -67,8 +67,25 @@ verification wall pass. Execution is frozen at
 `19e36df62a6ba5ad9392588a1c59acf8b01adc10`; exact-head draft-PR CI runs
 `30490541676` and `30490543736` pass. The committed 35-path gate
 `AOG-AO-0011-FRESH-PILOT-V5-R2` passes live validate-only without creating
-authorization. AO-0011 is stopped at exact challenge
-`AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5-R2 19e36df`.
+authorization.
+
+The owner later consumed the exact R2 challenge and the exact live command
+completed the full engineering matrix. Both public canaries, wholly fresh
+50-task custody, the private prefix, and all 500 pairings passed. Terminal
+classification contains 496 protocol-valid and four protocol-invalid
+pairings, zero provider-operational missingness, and zero contract/safety
+failure. Neither circuit breaker fired.
+
+One transient-provider first attempt selected and completed the frozen
+five-second fallback before the sole identical retry recovered. Provider
+access then closed after 3,058 calls, 2,290,993 input tokens, 437,027 output
+tokens, and USD 13.0413660. A verified 4,067-object lock binds the provider
+phase under
+`sha256:e18e7f8173f9ac0026f74cd6ff9b577010abdf65620ad269606f6862ff16e47b`.
+Post-lock replay/unseal, Methods A/B/C, independent provider classification and
+all-pairing bounds, correspondence, exact cost, contamination, corruptions,
+redaction, and retained-state checks pass. Provider and private access are
+closed; only public-safe administrative closeout remains.
 
 ## Completed continuation — AO-0010 protocol-validity policy v2 and fresh pilot v4 (2026-07-29)
 

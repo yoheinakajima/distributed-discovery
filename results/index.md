@@ -20,12 +20,14 @@ access after 116 calls and USD 0.3470610, and preserved 150 locked objects
 without unsealing. The immutable inventory remains 51 manifests and 48 passing
 runs.
 
-AO-0011's prospective provider-outcome policy v3 and wholly fresh v5
-preparation are also engineering-only and create no scientific run or
-result-index entry. Its complete public synthetic rehearsal, missingness
-scenarios, independent classifiers and bounds, and corruption reports are
-authorization-free instrument evidence only; the immutable inventory remains
-51 manifests and 48 passing runs.
+AO-0011's provider-outcome policy v3 and wholly fresh v5 completion are also
+engineering-only and create no scientific run or result-index entry. Its 500
+terminal pairings comprise 496 protocol-valid and four protocol-invalid
+outcomes, zero provider-operational missingness, zero contract/safety failure,
+and no circuit breaker. Provider access closed after 3,058 calls and USD
+13.0413660; 4,067 objects are locked before verified post-lock replay and
+unseal. Only aggregate operational and validity status is public; the
+immutable inventory remains 51 manifests and 48 passing runs.
 
 AO-0009's one-use aggregate fixed-batch diagnostic is engineering-only and
 creates no scientific run or result-index entry. Its public-safe protocol

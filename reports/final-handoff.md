@@ -1,8 +1,8 @@
-# Final handoff — TreasureBench provider-outcome policy v3 owner gate
+# Final handoff — TreasureBench provider-outcome policy v3 engineering closeout
 
-## AO-0011 fresh repair-confirmation v5 owner gate (2026-07-29)
+## AO-0011 fresh repair-confirmation v5 engineering closeout (2026-07-29)
 
-AO-0011 freezes forward-only provider-outcome policy v3 and wholly fresh
+AO-0011 freezes forward-only provider-outcome policy v3 and completes wholly fresh
 campaign `treasurebench-agents-v1-repair-confirmation-v5`, batch
 `tb-agents-v1-repair-confirmation-v5-b01`, without reopening or diagnosing
 AO-0010/v4. The unused original execution freeze and gate are prospectively
@@ -14,16 +14,28 @@ The R2 500-pairing rehearsal, 7,900 metric intervals, 144 independently
 reconstructed all-pairing contrast bounds, exact missingness/circuit
 scenarios, 115 R2 boundary corruption rejections plus 28 inherited checks,
 176 focused tests, all 857 repository tests, and the full
-governance/site/release wall pass. There were zero credential reads, real
-private objects, provider calls, spend, and real unseals.
+governance/site/release wall passed before authorization.
 
-The original gate created no authorization and may not be used. The future
-gate is `AOG-AO-0011-FRESH-PILOT-V5-R2`. Execution is frozen at
-`19e36df62a6ba5ad9392588a1c59acf8b01adc10`; both exact-head CI workflows
-pass, and the committed 35-path gate passes live validate-only. AO-0011 stops
-at exact challenge `AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5-R2 19e36df`.
-This is DD-010 engineering only and creates no scientific or performance
-evidence.
+The original gate created no authorization and was never used. The owner
+consumed only `AOG-AO-0011-FRESH-PILOT-V5-R2` against execution commit
+`19e36df62a6ba5ad9392588a1c59acf8b01adc10` and all 35 protected hashes.
+Both public canaries, wholly fresh 50-task custody, the private prefix, and all
+500 pairings completed. Terminal classification contains 496 protocol-valid
+and four protocol-invalid pairings, zero provider-operational missingness,
+zero contract/safety failure, and no circuit-breaker trigger.
+
+One transient-provider first attempt selected and completed the frozen
+five-second fallback before the sole identical retry recovered. Provider
+access closed after 3,058 calls, 2,290,993 input tokens, 437,027 output tokens,
+and USD 13.0413660. The verified lock covers 4,067 objects under
+`sha256:e18e7f8173f9ac0026f74cd6ff9b577010abdf65620ad269606f6862ff16e47b`.
+Post-lock replay/unseal, Methods A/B/C, independent classification and bounds,
+identity, cost, contamination, corruptions, redaction, and retained-state
+checks pass.
+
+This is DD-010 engineering only and publishes no task-level or comparative
+performance. It creates no DD-023, claim, scientific run, paper result,
+ranking, composite, release, submission, or base-campaign authority.
 
 ## AO-0010 fresh repair-confirmation v4 closeout (2026-07-29)
 

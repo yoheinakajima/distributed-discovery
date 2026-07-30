@@ -1,0 +1,24 @@
+schema_version: agent-ops-handoff-v1
+status: legitimate-checkpoint
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0011
+issue: 210
+pull_request: 211
+branch: codex/treasurebench-agents-v1-fresh-pilot-v5
+base_main: ab0340772f87b2b37e0e7f0d86d4a44f5a800248
+head_merge_sha: 3fc96bda354ce24db059cab9031a2f1874976791
+task_contract: tasks/treasurebench-agents-v1-fresh-pilot-v5-r2.yml
+exec_plan: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V5.md
+last_completed_gate: The exact R2 owner authorization passed against execution commit 19e36df62a6ba5ad9392588a1c59acf8b01adc10 and all 35 protected hashes. Both public canaries, wholly fresh 50-task custody, the private prefix, and all 500 pairings completed. The 500 terminal outcomes are 496 protocol-valid and four protocol-invalid, with zero provider-operational missing, zero contract/safety failure, and no circuit breaker. One transient-provider first attempt selected and completed the frozen five-second fallback before the sole identical retry recovered. Provider access closed after 3,058 calls and USD 13.0413660; 4,067 objects were locked under sha256:e18e7f8173f9ac0026f74cd6ff9b577010abdf65620ad269606f6862ff16e47b before post-lock replay and unseal; Methods A/B/C, independent classifications and bounds, correspondence, contamination, corruptions, cost, redaction, and retained-state checks passed. Public reconciliation, the exact live audit, the complete 50-task/500-pairing rehearsal, 143 corruptions, 156 focused tests, Ruff, MyPy over 215 source files, 857 repository tests, governance audits, site and compendium builds, and the release dry-run all passed without reopening provider or private access.
+next_gate: The consumed R2 authority continues only through PR readiness and squash merge after required checks, normal post-merge CI and Pages, named live-route verification, issue closure, main synchronization, and one final schema-valid handoff. No further provider call, private read, or unseal is permitted.
+decision: fresh-pilot-v5-engineering-complete-no-scientific-evidence
+external_calls_cost: {calls: 3058, cost: "13.0413660", currency: USD}
+private_state_change: One wholly fresh v5 retained root contains 50-task custody, encrypted provider responses and traces, append-only attempt and retry-delay ledgers, terminal classifications, metric bounds, post-lock derived objects, and a verified output lock. The provider phase is permanently closed and 4,067 objects are locked under sha256:e18e7f8173f9ac0026f74cd6ff9b577010abdf65620ad269606f6862ff16e47b. Post-lock replay and unseal completed; no private task, answer, key, prompt, output, raw trace, pairing identity, task-level metric, or model/provider/architecture/family performance was published.
+scientific_state_change: none; this is DD-010 aggregate engineering completion only, with no DD-023, claim, scientific run, evidence or proof promotion, paper result, ranking, composite, release, submission, or base-campaign authority.
+validation:
+  profile: private-evaluation-protocol-validity-v2-provider-outcome-v3-v5-engineering-closeout
+  result: pass-r2-authorization-35-protected-hashes-current-provider-reaudit-2-public-canaries-50-task-custody-500-terminal-pairings-496-protocol-valid-4-protocol-invalid-zero-provider-missing-zero-contract-safety-no-circuit-breaker-3058-calls-usd13.0413660-one-5-second-transient-provider-retry-recovered-provider-closed-4067-object-lock-post-lock-unseal-methods-a-b-c-independent-classification-and-bounds-143-corruptions-redaction-retained-state-156-focused-tests-ruff-mypy-215-files-857-repository-tests-governance-site-compendium-release-dry-run
+owner_action: No additional owner action is required for the authorized normal administrative closeout.
+exact_next_command: gh pr checks 211 --watch --interval 10
+exact_next_file: reports/benchmark/treasurebench-agents-v1-fresh-pilot-v5-closeout.yml
+blocker: null

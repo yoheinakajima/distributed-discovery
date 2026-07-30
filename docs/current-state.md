@@ -1,6 +1,6 @@
 # Current program state
 
-_TreasureBench provider-outcome policy v3 and wholly fresh v5 preparation,
+_TreasureBench provider-outcome policy v3 and wholly fresh v5 engineering closeout,
 2026-07-29:_ AO-0011 and issue #210 register the forward-only
 `treasurebench-agents-v1-provider-outcome-policy-v3`, campaign
 `treasurebench-agents-v1-repair-confirmation-v5`, and batch
@@ -27,21 +27,38 @@ value clamped to one through 30 seconds, otherwise a frozen two-second
 timeout/transport/invalid-JSON fallback or five-second rate/service fallback,
 with no jitter and no raw header or message retention.
 
-The complete authorization-free 50-task/500-pairing rehearsal passes Methods
+The complete authorization-free 50-task/500-pairing rehearsal passed Methods
 A/B/C, independent provider classification, 7,900 metric intervals, 144
 all-pairing contrast bounds with independent reconstruction, zero/mixed/all
 protocol-invalid matrices, isolated and mixed missingness, exact circuit
 thresholds, 115 v5 boundary corruptions, 28 inherited repaired-instrument
 corruptions, and disposable production custody, lock, replay, redaction, and
 cleanup. All 176 focused tests, all 857 repository tests, Ruff, MyPy over 215
-source files, and the complete verification wall pass. Activity remains zero
-credentials, zero real private objects, zero provider calls, zero spend, and
-zero real unseal. The unused original execution freeze and gate are
-prospectively superseded. R2 execution is frozen at
+source files, and the complete verification wall passed before authorization.
+The unused original execution freeze and gate remain superseded. R2 execution
+was frozen at
 `19e36df62a6ba5ad9392588a1c59acf8b01adc10`; exact-head draft-PR CI runs
-`30490541676` and `30490543736` pass. The 35-path R2 gate passes live
-validate-only without creating authorization. AO-0011 is stopped at exact
-challenge `AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5-R2 19e36df`.
+`30490541676` and `30490543736` passed. The owner then consumed only the
+35-path R2 gate and ran the exact live command.
+
+Both public canaries, wholly fresh 50-task custody, the private prefix, and all
+500 pairings completed. Terminal classification contains 496 protocol-valid
+and four protocol-invalid pairings, with zero provider-operational missingness,
+zero provider-contract/safety failure, and no circuit breaker. One
+transient-provider first attempt selected and completed the immutable
+five-second fallback before the sole identical retry recovered; no third,
+changed, duplicate, semantic, outcome-dependent, or replacement retry
+occurred.
+
+Provider access closed after 3,058 calls, 2,290,993 input tokens, 437,027
+output tokens, and USD 13.0413660. The verified output lock covers 4,067
+objects under
+`sha256:e18e7f8173f9ac0026f74cd6ff9b577010abdf65620ad269606f6862ff16e47b`.
+No call followed the lock. Post-lock replay and unseal, Methods A/B/C,
+independent classification and all-pairing bounds, exact correspondence and
+cost, contamination, corruptions, redaction, and retained-state checks pass.
+No task-level or comparative performance is published, and no scientific
+authority is created.
 
 _TreasureBench protocol-validity policy v2 and fresh v4 quarantine,
 2026-07-29:_ AO-0010, issue #208 and draft PR #209, adopt one forward-only

@@ -264,7 +264,7 @@ semantic retry, invalid credit, ranking, scientific evidence, or base-campaign
 authority exists. V4 and every prior campaign are permanently closed and
 immutable.
 
-## AO-0011 provider-outcome policy v3 and wholly fresh v5 R2 preparation
+## AO-0011 provider-outcome policy v3 and wholly fresh v5 closeout
 
 Issue #210 registers one forward-only provider-outcome policy v3 and one
 wholly fresh engineering campaign,
@@ -298,13 +298,26 @@ replacement, or wait after authorization, identity, cap, phase-closure,
 retained-state, route, model, contract, or safety failure. Only normalized
 retry delay, source, class, and attempt may enter operational records.
 
-Authorization-free validation passes a complete 50-task/500-pairing
+Authorization-free validation passed a complete 50-task/500-pairing
 rehearsal, 7,900 metric intervals, 144 all-pairing contrast bounds,
 zero/mixed/all-invalid and missingness scenarios, 115 v5 boundary corruptions,
 28 inherited repaired-instrument corruptions, and disposable
-production-path custody, lock, replay, redaction, and cleanup rehearsals. No
-credential, real seed, private campaign object, provider call, spend, or
-unseal has occurred. This remains DD-010 engineering only.
+production-path custody, lock, replay, redaction, and cleanup rehearsals.
+
+The exact R2 authorization then completed both public canaries, wholly fresh
+50-task custody, the private prefix, and all 500 pairings. Terminal
+classification contains 496 protocol-valid and four protocol-invalid
+pairings, zero provider-operational missingness, zero contract/safety failure,
+and no circuit breaker. One transient-provider first attempt used the frozen
+five-second fallback and recovered on the sole identical retry.
+
+Provider access closed after 3,058 calls and USD 13.0413660. The verified
+4,067-object output lock is
+`sha256:e18e7f8173f9ac0026f74cd6ff9b577010abdf65620ad269606f6862ff16e47b`.
+Post-lock replay/unseal, Methods A/B/C, independent classification and bounds,
+identity, cost, contamination, corruptions, redaction, and retained-state
+checks pass. This remains aggregate DD-010 engineering only and publishes no
+task-level or comparative performance.
 
 ## Registered evaluation campaign
 

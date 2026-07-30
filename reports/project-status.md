@@ -1,9 +1,9 @@
-# Project status — TreasureBench provider-outcome policy v3 and fresh v5 gate
+# Project status — TreasureBench provider-outcome policy v3 and fresh v5 engineering closeout
 
 Date: 2026-07-29 (America/Los_Angeles).
 
 AO-0011 and issue #210 freeze one forward-only provider-outcome policy v3 and
-prepare campaign `treasurebench-agents-v1-repair-confirmation-v5`, batch
+complete campaign `treasurebench-agents-v1-repair-confirmation-v5`, batch
 `tb-agents-v1-repair-confirmation-v5-b01`, under unchanged protocol-validity
 policy v2. AO-0010 and v4 remain permanently quarantined; no retrospective
 diagnosis, inference, private read, or historical mutation occurs.
@@ -22,24 +22,34 @@ three consecutive missing pairings for one provider or ten cumulative missing
 pairings quarantine, as do any contract/safety failure or non-valid public
 canary. No performance outcome or missingness-rate target is an input.
 
-The authorization-free candidate passes the full 50-task/500-pairing
+The authorization-free candidate passed the full 50-task/500-pairing
 rehearsal, Methods A/B/C, independent provider classification, 7,900 metric
 intervals, 144 independently reproduced all-pairing contrast bounds,
 zero/mixed/all-invalid and missingness matrices, all exact circuit cases, 115
 v5 boundary corruptions, 28 inherited repaired-instrument corruptions, and
-temporary production-path custody/lock/replay/redaction/cleanup. There have
-been zero credential reads, real private objects, provider calls, spend, or
-real unseals. The unused original execution freeze and gate are
-prospectively superseded before authorization because the sole
-identical-request retry lacked the required deterministic delay. The same
-task, issue, branch, draft PR #211, campaign, and batch continue through R2
-revalidation and refreeze. All 176 focused tests, all 857 repository tests,
-Ruff, MyPy over 215 source files, and the complete verification wall pass.
-The sole current gate ID is
-`AOG-AO-0011-FRESH-PILOT-V5-R2`. Execution is frozen and pushed at
+temporary production-path custody/lock/replay/redaction/cleanup. The unused
+original execution freeze and gate remain superseded because the sole
+identical-request retry lacked the required deterministic delay. All 176
+focused tests, all 857 repository tests, Ruff, MyPy over 215 source files,
+and the complete verification wall passed before authorization. The only
+consumed gate is `AOG-AO-0011-FRESH-PILOT-V5-R2`. Execution was frozen at
 `19e36df62a6ba5ad9392588a1c59acf8b01adc10`; both exact-head CI workflows
-pass, and the committed 35-path gate passes live validate-only without
-creating authorization. AO-0011 is stopped at owner-gate-required.
+passed.
+
+Both public canaries, wholly fresh 50-task custody, the private prefix, and all
+500 pairings completed. The matrix contains 496 protocol-valid and four
+protocol-invalid pairings, zero provider-operational missingness, zero
+contract/safety failure, and no circuit breaker. One transient-provider first
+attempt selected and completed the frozen five-second fallback before the sole
+identical retry recovered.
+
+Provider access closed after 3,058 calls, 2,290,993 input tokens, 437,027
+output tokens, and USD 13.0413660. The verified 4,067-object output lock is
+`sha256:e18e7f8173f9ac0026f74cd6ff9b577010abdf65620ad269606f6862ff16e47b`.
+No call followed the lock. Post-lock replay and unseal, Methods A/B/C,
+independent classification and bounds, identity, cost, contamination,
+corruptions, redaction, and retained-state verification pass. This creates no
+task-level performance or scientific evidence.
 
 ## Preserved AO-0010 closeout
 

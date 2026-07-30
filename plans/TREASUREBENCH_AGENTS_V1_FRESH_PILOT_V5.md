@@ -55,9 +55,23 @@ inherited repaired-instrument corruptions reject. Disposable production-path
 custody, commitment, lock, post-lock replay, redaction, and cleanup pass.
 Focused validation passes 176 tests and the complete repository wall passes
 857 tests. Execution is frozen at `19e36df62a6ba5ad9392588a1c59acf8b01adc10`;
-both exact-head CI workflows and the live validate-only R2 gate pass. Activity
-remains zero credentials, real private objects, provider calls, spend, and
-real unseal.
+both exact-head CI workflows and the live validate-only R2 gate pass.
+
+The exact R2 owner authorization was later consumed. Both public canaries,
+wholly fresh 50-task custody, the private prefix, and the complete 500-pairing
+matrix passed. The terminal matrix contains 496 protocol-valid and four
+protocol-invalid pairings, with zero provider-operational missingness, zero
+provider-contract/safety failure, and no circuit-breaker trigger. One
+transient-provider first attempt selected and completed the frozen five-second
+fallback before the sole permitted identical retry recovered.
+
+Provider access closed after 3,058 calls, 2,290,993 input tokens, 437,027
+output tokens, and USD 13.0413660. The 4,067-object output lock
+`sha256:e18e7f8173f9ac0026f74cd6ff9b577010abdf65620ad269606f6862ff16e47b`
+verified before post-lock replay and unseal. Methods A/B/C, independent
+provider classification, independent all-pairing bounds, exact identity and
+cost correspondence, contamination, corruptions, redaction, and retained
+state all pass. Only the authorized public administrative closeout remains.
 
 AO-0010 is complete. Its v4 campaign and batch remain permanently
 quarantined at the private prefix under public class
@@ -211,9 +225,14 @@ closeout.
 - **M6R2b — complete:** exact R2 execution commit, push, protected-tree
   freeze, exact-head draft-PR CI, committed R2 owner gate, validate-only gate,
   schema-valid handoff, and exact stop.
-- **M7 — pending:** not authorized in this phase; after later exact
-  authorization only, the fixed engineering-complete or honest-quarantine
-  path and administrative closeout.
+- **M7 — active authorized engineering-complete closeout:** exact R2
+  authorization, provider revalidation, canaries, fresh custody, all 500
+  pairings, retry-delay audit, provider closure, output lock, post-lock
+  replay/unseal, Methods A/B/C, independent classification and bounds,
+  identity, cost, contamination, corruptions, redaction, and retained-state
+  checks are complete. Public reconciliation and the complete validation wall
+  pass. Merge, CI/Pages, live routes, issue closure, main synchronization, and
+  the final handoff remain.
 
 ## Progress checklist
 
@@ -239,6 +258,20 @@ closeout.
   stop.
 - [x] Stop before `.env.txt`, credentials, real private material, provider
   calls, spend, or real v5 unseal.
+- [x] Consume only the exact R2 authorization and revalidate the provider,
+  Git, GitHub, contract, identity, protected-tree, route, model, cap, retry,
+  circuit-breaker, and retained-state surfaces.
+- [x] Complete both public canaries, wholly fresh custody and commitment, the
+  private prefix, all 500 pairings, provider terminalization, one frozen
+  five-second retry delay and recovery, provider closure, and the pushed
+  4,067-object output-lock commitment.
+- [x] Complete post-lock replay/unseal, Methods A/B/C, independent provider
+  classification and all-pairing bounds, exact correspondence and cost,
+  contamination, corruptions, redaction, and retained-state verification.
+- [x] Complete public-safe reconciliation and the full validation wall.
+- [ ] Complete PR readiness and squash merge, exact-merge CI/Pages, named
+  live routes, issue closure, main synchronization, and the final
+  schema-valid handoff.
 
 ## Discoveries and surprises
 
@@ -356,6 +389,32 @@ closeout.
   exact challenge `AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5-R2 19e36df` and
   creates no authorization or consequential activity. Complete M6R2b and stop
   at owner-gate-required.
+- `2026-07-30T04:14:08Z`: consume the exact R2 challenge and run the exact
+  live command. Current official provider models, structured outputs,
+  retry/error contracts, retention assumptions, and standard pricing remain
+  compatible with the freeze. Both public canaries, wholly fresh custody, the
+  private prefix, and all 500 pairings complete. The matrix terminalizes as
+  496 protocol-valid and four protocol-invalid, with zero provider-operational
+  missingness, zero contract/safety failure, and no circuit breaker.
+- `2026-07-30T04:14:08Z`: one transient-provider first attempt selects and
+  completes the immutable five-second registered fallback and recovers on the
+  sole identical retry. No third attempt, delay mutation, duplicate retry,
+  semantic or outcome-dependent retry, replacement, raw header, or raw
+  provider message enters the audit. Provider access closes after 3,058 calls
+  and USD 13.0413660. Commit and push the 4,067-object lock
+  `sha256:e18e7f8173f9ac0026f74cd6ff9b577010abdf65620ad269606f6862ff16e47b`,
+  then pass post-lock replay/unseal, Methods A/B/C, independent
+  classifications and bounds, correspondence, cost, contamination,
+  corruptions, redaction, and retained-state checks. Begin the public-safe
+  administrative closeout with provider and private access closed.
+- `2026-07-30T04:38:01Z`: complete the public-safe reconciliation and pass
+  the live audit, full 50-task/500-pairing rehearsal, exact provider and
+  circuit-breaker scenarios, 143-corruption wall, custody, commitment, lock,
+  post-lock replay, redaction, deterministic cleanup, Agent Ops and
+  program-memory audits, 156 focused tests, and the complete repository wall:
+  Ruff, MyPy over 215 source files, 857 tests, all governance checks, the
+  89-page site build, the 119-page compendium build, and the release dry-run.
+  No provider or private access reopens.
 
 ## Validation strategy
 
@@ -405,29 +464,34 @@ created. The original execution freeze, gate, and handoff are preserved but
 superseded for authorization. The additive R2 contract, implementation,
 policy and audit corrections, tests, corruption and rehearsal records are
 complete. The R2 execution freeze, gate, readiness record, and handoff are
-committed and validated. M7 remains unauthorized.
+committed and validated. The consumed authorization additionally created
+fresh custody, custody and output-lock commitments, the complete terminal
+matrix, post-lock derived state, and the redacted engineering closeout.
 
 ## Blockers
 
-The exact R2 owner authorization is absent by design and is now the sole
-blocker. Five unrelated untracked files prevent a globally clean working tree
-but are outside AO-0011 and remain untouched; all staging is path-explicit and
-tracked-tree identity checks exclude them as AO-0010 did.
+No engineering blocker remains. Provider and private access are closed. The
+consumed R2 authority covers only the public-safe administrative closeout.
+Five unrelated untracked files prevent a globally clean working tree but are
+outside AO-0011 and remain untouched; all staging is path-explicit.
 
 ## Recovery and restart instructions
 
 Read the mandatory repository files, this plan, and the fixed AO-0011 task
-contract once committed. Verify local/remote/live GitHub state and preserve
-the five unrelated untracked files. Resume at the sole milestone marked
-in progress. Do not read `.env.txt`, credentials, owner authorization, or any
-retained private campaign state before the committed generic owner gate is
-later authorized.
+contract. Verify local/remote/live GitHub state and preserve the five unrelated
+untracked files. Resume at the sole milestone marked in progress. Provider and
+private access are closed; continue only the public-safe administrative
+closeout.
 
 ## Outcome and retrospective
 
 The R2 authorization-free phase completed with the exact v3 policy,
 deterministic retry-delay correction, v5 execution tree, rehearsal evidence,
-draft PR, execution freeze, exact-head CI, and generic R2 gate validated. No
-authorization, credential, real private object, provider call, spend, or real
-unseal occurred. AO-0011 is paused exactly at the owner-gate-required
-boundary; no scientific or performance evidence was created.
+draft PR, execution freeze, exact-head CI, and validated gate. The later exact
+authorization produced one engineering-complete 500-pairing batch with 496
+protocol-valid and four protocol-invalid outcomes, zero provider missingness,
+zero contract/safety failure, one safely recovered five-second retry, and no
+circuit breaker. Provider access is closed, 4,067 objects are locked, and
+post-lock verification passes. No scientific or task-level performance
+evidence was created. Final outcome remains pending only the authorized
+administrative closeout.
