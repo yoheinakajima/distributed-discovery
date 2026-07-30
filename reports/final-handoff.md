@@ -37,6 +37,16 @@ This is DD-010 engineering only and publishes no task-level or comparative
 performance. It creates no DD-023, claim, scientific run, paper result,
 ranking, composite, release, submission, or base-campaign authority.
 
+Public closeout head `b3f54bdb033b76d2bc5cdf4b548da35d656943ef` passed
+exact-head CI runs `30514416276` and `30514419138`. PR #211 was marked ready
+and squash-merged as `4c571d0fdabff9a157765eac81c478dabc5ae8db`.
+Exact-merge CI `30514577966` and Pages `30514578006` passed. The root,
+program, legacy Agents v1, canonical TreasureBench Agents v1, and DD-010
+routes returned HTTP 200 with the expected v5 public-safe content. Issue #210
+is closed completed, `main` is synchronized, and the terminal Agent
+Operations handoff is
+`reports/agent-ops/AO-0011-complete-handoff.yml`. AO-0011 is complete.
+
 ## AO-0010 fresh repair-confirmation v4 closeout (2026-07-29)
 
 AO-0010 adopted forward-only protocol-validity policy v2 and ran one wholly

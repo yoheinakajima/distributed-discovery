@@ -1,8 +1,8 @@
 # Master execution plan
 
-## Active closeout — AO-0011 provider-outcome policy v3 and fresh pilot v5 R2 (2026-07-29)
+## Completed continuation — AO-0011 provider-outcome policy v3 and fresh pilot v5 R2 (2026-07-29)
 
-Issue #210, draft PR #211, branch
+Issue #210, merged PR #211, branch
 `codex/treasurebench-agents-v1-fresh-pilot-v5`, additive R2 task contract
 `tasks/treasurebench-agents-v1-fresh-pilot-v5-r2.yml`, and living
 ExecPlan `plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V5.md` own the sole
@@ -85,7 +85,16 @@ phase under
 Post-lock replay/unseal, Methods A/B/C, independent provider classification and
 all-pairing bounds, correspondence, exact cost, contamination, corruptions,
 redaction, and retained-state checks pass. Provider and private access are
-closed; only public-safe administrative closeout remains.
+closed.
+
+Public closeout head `b3f54bdb033b76d2bc5cdf4b548da35d656943ef` passed
+exact-head CI runs `30514416276` and `30514419138`. PR #211 was marked ready
+and squash-merged as `4c571d0fdabff9a157765eac81c478dabc5ae8db`.
+Exact-merge CI `30514577966` and Pages `30514578006` passed. The root,
+program, legacy Agents v1, canonical TreasureBench Agents v1, and DD-010
+routes returned HTTP 200 with the expected public-safe v5 content. Issue #210
+closed completed and `main` synchronized exactly. AO-0011 is complete; no
+scientific authority or additional private action was created.
 
 ## Completed continuation — AO-0010 protocol-validity policy v2 and fresh pilot v4 (2026-07-29)
 

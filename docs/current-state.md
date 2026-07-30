@@ -60,6 +60,13 @@ cost, contamination, corruptions, redaction, and retained-state checks pass.
 No task-level or comparative performance is published, and no scientific
 authority is created.
 
+Public closeout head `b3f54bdb033b76d2bc5cdf4b548da35d656943ef` passed
+both exact-head checks. PR #211 squash-merged as
+`4c571d0fdabff9a157765eac81c478dabc5ae8db`; exact-merge CI
+`30514577966` and Pages `30514578006` passed. The five named production
+routes returned HTTP 200 with expected v5 content, issue #210 closed
+completed, and `main` synchronized. AO-0011 is complete.
+
 _TreasureBench protocol-validity policy v2 and fresh v4 quarantine,
 2026-07-29:_ AO-0010, issue #208 and draft PR #209, adopt one forward-only
 policy and execute one wholly fresh v4 campaign

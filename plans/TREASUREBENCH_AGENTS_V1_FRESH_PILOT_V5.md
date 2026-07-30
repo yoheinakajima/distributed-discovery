@@ -71,7 +71,7 @@ output tokens, and USD 13.0413660. The 4,067-object output lock
 verified before post-lock replay and unseal. Methods A/B/C, independent
 provider classification, independent all-pairing bounds, exact identity and
 cost correspondence, contamination, corruptions, redaction, and retained
-state all pass. Only the authorized public administrative closeout remains.
+state all pass. The authorized public administrative closeout is complete.
 
 AO-0010 is complete. Its v4 campaign and batch remain permanently
 quarantined at the private prefix under public class
@@ -225,14 +225,14 @@ closeout.
 - **M6R2b — complete:** exact R2 execution commit, push, protected-tree
   freeze, exact-head draft-PR CI, committed R2 owner gate, validate-only gate,
   schema-valid handoff, and exact stop.
-- **M7 — active authorized engineering-complete closeout:** exact R2
+- **M7 — complete:** exact R2
   authorization, provider revalidation, canaries, fresh custody, all 500
   pairings, retry-delay audit, provider closure, output lock, post-lock
   replay/unseal, Methods A/B/C, independent classification and bounds,
   identity, cost, contamination, corruptions, redaction, and retained-state
-  checks are complete. Public reconciliation and the complete validation wall
-  pass. Merge, CI/Pages, live routes, issue closure, main synchronization, and
-  the final handoff remain.
+  checks, public reconciliation, complete validation, exact-head checks,
+  squash merge, exact-merge CI/Pages, five live routes, issue closure, main
+  synchronization, and the final handoff are complete.
 
 ## Progress checklist
 
@@ -269,7 +269,7 @@ closeout.
   classification and all-pairing bounds, exact correspondence and cost,
   contamination, corruptions, redaction, and retained-state verification.
 - [x] Complete public-safe reconciliation and the full validation wall.
-- [ ] Complete PR readiness and squash merge, exact-merge CI/Pages, named
+- [x] Complete PR readiness and squash merge, exact-merge CI/Pages, named
   live routes, issue closure, main synchronization, and the final
   schema-valid handoff.
 
@@ -415,6 +415,15 @@ closeout.
   Ruff, MyPy over 215 source files, 857 tests, all governance checks, the
   89-page site build, the 119-page compendium build, and the release dry-run.
   No provider or private access reopens.
+- `2026-07-30T04:51:08Z`: push public closeout head
+  `b3f54bdb033b76d2bc5cdf4b548da35d656943ef`; exact-head CI runs
+  `30514416276` and `30514419138` pass. Mark PR #211 ready and squash-merge
+  it as `4c571d0fdabff9a157765eac81c478dabc5ae8db`. Exact-merge CI
+  `30514577966` and Pages `30514578006` pass. The root, program, legacy
+  Agents v1, canonical TreasureBench Agents v1, and DD-010 routes return HTTP
+  200 with the expected v5 public-safe content. Close issue #210 completed,
+  synchronize `main`, and write the terminal schema-valid handoff. AO-0011 is
+  complete.
 
 ## Validation strategy
 
@@ -470,18 +479,19 @@ matrix, post-lock derived state, and the redacted engineering closeout.
 
 ## Blockers
 
-No engineering blocker remains. Provider and private access are closed. The
-consumed R2 authority covers only the public-safe administrative closeout.
-Five unrelated untracked files prevent a globally clean working tree but are
-outside AO-0011 and remain untouched; all staging is path-explicit.
+No blocker remains. Provider and private access are closed, the authorized
+public-safe administrative closeout is complete, and no further AO-0011
+action is authorized or required. Five unrelated untracked files prevent a
+globally clean working tree but are outside AO-0011 and remain untouched; all
+staging is path-explicit.
 
 ## Recovery and restart instructions
 
-Read the mandatory repository files, this plan, and the fixed AO-0011 task
-contract. Verify local/remote/live GitHub state and preserve the five unrelated
-untracked files. Resume at the sole milestone marked in progress. Provider and
-private access are closed; continue only the public-safe administrative
-closeout.
+AO-0011 is complete and has no resumable milestone. Preserve the five
+unrelated untracked files. Any future private evaluation or policy task
+requires a new owner decision, task registration, wholly new identities,
+execution freeze, and owner gate; the v5 provider and private phases cannot
+reopen.
 
 ## Outcome and retrospective
 
@@ -493,5 +503,7 @@ protocol-valid and four protocol-invalid outcomes, zero provider missingness,
 zero contract/safety failure, one safely recovered five-second retry, and no
 circuit breaker. Provider access is closed, 4,067 objects are locked, and
 post-lock verification passes. No scientific or task-level performance
-evidence was created. Final outcome remains pending only the authorized
-administrative closeout.
+evidence was created. The authorized administrative closeout passed
+exact-head checks, squash merge, exact-merge CI/Pages, five production-route
+checks, issue closure, main synchronization, and the terminal handoff.
+AO-0011 is complete.

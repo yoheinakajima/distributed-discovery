@@ -51,6 +51,14 @@ independent classification and bounds, identity, cost, contamination,
 corruptions, redaction, and retained-state verification pass. This creates no
 task-level performance or scientific evidence.
 
+Public closeout head `b3f54bdb033b76d2bc5cdf4b548da35d656943ef` passed
+exact-head CI runs `30514416276` and `30514419138`. PR #211 was marked ready
+and squash-merged as `4c571d0fdabff9a157765eac81c478dabc5ae8db`.
+Exact-merge CI `30514577966` and Pages `30514578006` passed. The root,
+program, legacy Agents v1, canonical TreasureBench Agents v1, and DD-010
+routes returned HTTP 200 with expected v5 content. Issue #210 is closed
+completed, `main` is synchronized, and AO-0011 is complete.
+
 ## Preserved AO-0010 closeout
 
 AO-0010, issue #208 and PR #209, adopt the owner-selected forward-only

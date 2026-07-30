@@ -1,6 +1,6 @@
 # Current roadmap — provider-outcome policy v3 and v5 engineering closeout
 
-## AO-0011 engineering-complete public closeout
+## AO-0011 engineering-complete public closeout — complete
 
 Issue #210 combines one prospective provider-outcome policy v3 with one wholly
 fresh v5 DD-010 engineering campaign. Policy v3 composes with unchanged
@@ -45,8 +45,14 @@ Provider access closed after 3,058 calls and USD 13.0413660. A verified
 `sha256:e18e7f8173f9ac0026f74cd6ff9b577010abdf65620ad269606f6862ff16e47b`.
 Post-lock replay/unseal, Methods A/B/C, independent provider classification
 and all-pairing bounds, correspondence, exact cost, contamination,
-corruptions, redaction, and retained-state checks pass. Only public-safe
-administrative closeout remains. This is DD-010 engineering only, with no
+corruptions, redaction, and retained-state checks pass.
+
+Public closeout head `b3f54bdb033b76d2bc5cdf4b548da35d656943ef` passed
+both exact-head checks. PR #211 squash-merged as
+`4c571d0fdabff9a157765eac81c478dabc5ae8db`; exact-merge CI and Pages
+passed, all five named production routes returned HTTP 200 with expected v5
+content, issue #210 closed completed, and `main` synchronized. AO-0011 is
+complete. This is DD-010 engineering only, with no
 performance publication, scientific run, claim, paper result, ranking,
 release, submission, DD-023, or base-campaign authority.
 
