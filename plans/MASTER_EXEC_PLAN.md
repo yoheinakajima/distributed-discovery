@@ -1,5 +1,45 @@
 # Master execution plan
 
+## Active continuation — AO-0012 open-weight self-operated cloud runtime (2026-07-30)
+
+Issue #212, branch `agent/treasurebench-open-weight-cloud-runtime`, fixed task
+contract `tasks/treasurebench-open-weight-cloud-runtime.yml`, and living
+ExecPlan `plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md` own the sole
+substantive lane as AO-0012.
+
+AO-0011 is complete and immutable: all 500 intended pairings received terminal
+classification, including 496 protocol-valid and four protocol-invalid
+pairings, zero provider-operational missingness, zero contract/safety failure,
+one recovered frozen five-second retry, and passing Methods A/B/C plus
+independent all-pairing bounds. Provider access and the v5 retained root are
+permanently closed. No DD-023, claim, scientific run, paper result, ranking,
+release, submission, or base-campaign authority exists.
+
+AO-0012 prospectively tests whether the registered third-model purpose can be
+satisfied by an **open-weight, self-operated cloud runtime**. The owner must
+control and verify the exact weights, tokenizer, inference engine, immutable
+container, configuration, prompts, sampling, retention boundary, and
+authenticated endpoint; the infrastructure provider supplies raw GPU compute.
+This supplies prospective model-family and serving-stack independence, not
+physical locality or complete infrastructure independence.
+
+The primary candidate is one RunPod Secure Cloud dedicated Pod with one NVIDIA
+A100 80GB, official unquantized BF16 weights for exact Mistral revision
+`68faf511d618ef198fef186659617cfd2eb8e33a`, pinned vLLM under official Mistral
+serving guidance, and a repository-controlled OpenAI-compatible adapter. If
+that exact single-GPU identity is infeasible, AO-0012 stops rather than
+quantizing, sharding, changing models, or changing GPU classes.
+
+All definition, official-source audit, manifest, startup, adapter, attestation,
+synthetic corruption, public-calibration design, acceptance, and draft-PR work
+must complete without credentials, model download, provisioning, endpoint
+launch, calls, or spend. The task then stops once at its committed generic
+owner gate. A later exact authorization may cover only ten public tasks, five
+architectures, one repeat, 50 intended pairings, one A100 80GB, six GPU-hours,
+400 inference calls, and USD 20 total. The task cannot allocate DD-023, alter
+the 200-slot base allocation, create private material, use a managed model API,
+publish performance, change a paper, or create a release or submission.
+
 ## Completed continuation — AO-0011 provider-outcome policy v3 and fresh pilot v5 R2 (2026-07-29)
 
 Issue #210, merged PR #211, branch
