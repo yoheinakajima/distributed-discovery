@@ -723,3 +723,22 @@ records:
     review_after: explicit-owner-decision
     owner_decision: adopted
     last_reviewed: "2026-07-29"
+  - idea_id: PM-0039
+    title: TreasureBench provider-outcome policy v3 and wholly fresh pilot v5 R2
+    status: implemented
+    capture_classification: capture-now
+    visibility: public
+    source_type: owner-decision
+    captured_date: "2026-07-29"
+    proposition: AO-0011 adopts one forward-only provider-outcome and missingness policy v3 that separates completed-response protocol validity from bounded operational missingness and contract or safety failures, retains missing pairings in all intended denominators under frozen circuit breakers, and completes one wholly fresh sealed v5 engineering pilot whose sole identical-request retry uses a deterministic bounded restart-safe delay.
+    why_it_matters: It preserves AO-0010 and the intentionally coarse v4 quarantine while prospectively allowing isolated typed availability failures to remain denominator-retained unknown outcomes instead of forcing immediate batch quarantine, and the additive R2 correction closes the preauthorization Retry-After or bounded-backoff mismatch without weakening request, route, model, authority, identity, retention, cap, or safety invariants.
+    canonical_destination: {type: decision-record, path: tasks/treasurebench-agents-v1-fresh-pilot-v5-r2.yml}
+    dependencies: [DD-010, PM-0031, PM-0032, PM-0033, PM-0034, PM-0035, PM-0036, PM-0037, PM-0038]
+    promotion_trigger: null
+    permitted_stops: [implemented, deferred, rejected, superseded]
+    not_a_result_boundaries: [prospective policy deterministic retry-delay correction and engineering pilot only, no retrospective v4 diagnosis task-level performance result scientific run claim paper ranking composite release submission or base-campaign authority]
+    supersedes: []
+    superseded_by: null
+    review_after: explicit-owner-decision
+    owner_decision: adopted
+    last_reviewed: "2026-07-29"

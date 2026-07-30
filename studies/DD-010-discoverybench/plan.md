@@ -237,3 +237,46 @@ It cannot be retried, replaced, repaired, reopened, reused, rescored, spliced,
 executed, unsealed, or reauthorized. This is DD-010 engineering only and
 creates no DD-023, claim, scientific run, evidence promotion, performance
 result, ranking, release, submission, or base campaign.
+
+## AO-0011 provider-outcome policy v3 and wholly fresh v5 closeout
+
+AO-0011 adopts the forward-only
+provider-outcome policy v3, composes it with unchanged protocol-validity policy
+v2, and allocates campaign
+`treasurebench-agents-v1-repair-confirmation-v5`, batch
+`tb-agents-v1-repair-confirmation-v5-b01`. It creates no retrospective v4
+diagnostic and preserves every prior campaign and retained boundary.
+
+Before owner authorization, the implementation must classify the complete
+registered provider taxonomy independently, persist one safe terminal trace
+per operationally missing pairing, enforce the sequence-only 3-consecutive
+and 10-cumulative circuit breaker, quarantine contract/safety failures,
+retain missing pairings in all metric denominators, and independently
+reconstruct every all-pairing contrast endpoint. The frozen retry contract
+remains two identical transport attempts, one schema-only repair, no semantic
+or outcome-dependent retry, and no replacement.
+
+The authorization-free acceptance wall comprises the complete 500-pairing
+synthetic rehearsal, zero/mixed/all-invalid matrices, first/middle/final
+logical-request and pairing missingness, isolated and mixed missingness,
+exact circuit thresholds, provider protected classes, post-lock no-call
+replay, production custody/commitment/lock/unseal/redaction/cleanup
+rehearsals, all inherited and new corruptions, and full repository validation.
+Only after the exact execution commit and R2 owner gate were committed did the
+task read the two-name credential subset, create real v5 custody, call
+providers, spend, and unseal after lock.
+
+The authorized execution completed both public canaries, wholly fresh
+50-task custody, the private prefix, and all 500 pairings. The terminal matrix
+contains 496 protocol-valid and four protocol-invalid pairings, zero
+provider-operational missingness, zero contract/safety failure, and no circuit
+breaker. One transient-provider first attempt selected and completed the
+frozen five-second fallback before the sole identical retry recovered.
+
+Provider access closed after 3,058 calls and USD 13.0413660. The verified
+4,067-object output lock is
+`sha256:e18e7f8173f9ac0026f74cd6ff9b577010abdf65620ad269606f6862ff16e47b`.
+Post-lock replay/unseal, Methods A/B/C, independent classification and
+all-pairing bounds, exact correspondence and cost, contamination,
+corruptions, redaction, and retained-state verification pass. No task-level
+or comparative performance and no scientific evidence is created.

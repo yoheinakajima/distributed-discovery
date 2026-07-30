@@ -1,0 +1,149 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0011
+title: TreasureBench Agents v1 provider-outcome policy v3 and wholly fresh pilot v5
+task_type: private-evaluation
+status: active
+objective: Adopt and freeze one forward-only provider-outcome and missingness policy v3, then prepare, freeze, and, only after one later exact generic owner authorization, execute and honestly close out one wholly fresh 50-task and 500-pairing DD-010 engineering repair-confirmation pilot v5 under protocol-validity policy v2 and provider-outcome policy v3.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: policy, path: docs/benchmark/agents-v1/AGENTS.md}
+  - {type: policy, path: src/distributed_discovery/benchmark/agents_v1/AGENTS.md}
+  - {type: decision, path: docs/program-memory/registry.yml}
+  - {type: record, path: tasks/treasurebench-agents-v1-fresh-pilot-v4.yml}
+  - {type: record, path: reports/benchmark/treasurebench-agents-v1-fresh-pilot-v4-closeout.yml}
+  - {type: record, path: reports/agent-ops/AO-0010-complete-handoff.yml}
+  - {type: policy, path: docs/benchmark/agents-v1/protocol-validity-policy-v2.yml}
+  - {type: plan, path: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V5.md}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/210"}
+owner_decisions:
+  - Register AO-0011 as the sole substantive lane for prospective provider-outcome and missingness policy v3 and one wholly fresh sealed repair-confirmation pilot v5; create no separate retrospective v4 diagnostic task.
+  - Preserve AO-0010, protocol-validity policy treasurebench-agents-v1-protocol-validity-policy-v2, campaign treasurebench-agents-v1-repair-confirmation-v4, batch tb-agents-v1-repair-confirmation-v4-b01, execution commit 5289882dca6b8912a0518bba72aba1f4d595c2a8, decision fresh-pilot-v4-quarantined-engineering-only, both passing public canaries, passing wholly fresh custody, provider-terminal-missing prefix stop, exact usage and cost, 150 locked objects, output lock sha256:88c442bf6cb5e1b99a893808d423b488d2b1062543a49fcfb32b77f276abaa1c, closed provider phase, zero calls after lock, no unseal, and no real-batch methods, classifications, bounds, performance interpretation, or scientific evidence.
+  - Never reopen, read, unseal, diagnose, rerun, repair in place, reuse, rescore, splice, mutate, delete, execute, or reauthorize v4 or any earlier campaign; infer or claim no provider, route, or exact private error for v4.
+  - Treat v4 only as the public engineering observation that zero-tolerance provider-terminal handling can prevent even a 10-percent prefix from completing; do not choose thresholds to make v4 retroactively pass or tune policy, prompts, schemas, retries, or thresholds against the hidden event.
+  - Freeze one prospective forward-only provider-outcome policy v3 separating protocol-valid, protocol-invalid, provider-operational-missing, and provider-contract-or-safety-failure without rewriting any historical policy, schema, campaign, trace, decision, or lock.
+  - Classify a safely retainable completed provider response by protocol validity, including refusals, token-limited or otherwise nonconforming structured responses; never silently downgrade a completed response to transport missingness.
+  - Register OpenAI operational classes openai-client-timeout, openai-transient-transport, openai-rate-limit-reached, openai-server-error, openai-overloaded, and openai-invalid-provider-envelope-exhausted, each only after the bounded identical-request transport policy yields no completed usable response.
+  - Register Anthropic operational classes anthropic-client-timeout, anthropic-transient-transport, anthropic-rate-limit-error, anthropic-api-error, anthropic-timeout-error, anthropic-overloaded-error, and anthropic-invalid-provider-envelope-exhausted, each only after the bounded identical-request transport policy yields no completed usable response.
+  - Treat quota or billing exhaustion, request/schema/parameter rejection, exact-model mismatch, route/alias/fallback/regional/batch/provider substitution, hidden-reasoning boundary failure, credential or authorization failure, retained-state/ledger/trace/response identity failure, execution identity failure, unregistered error class, unsafe response retention, and ambiguous operational-versus-contract status as provider-contract-or-safety-failure with immediate quarantine.
+  - Preserve at most two bounded transport attempts for the identical logical request, exactly one schema-only repair, zero semantic-answer retries, zero outcome-dependent retries, zero replacement pairing, zero replacement batch, zero silent normalization, zero invalid-output credit, and exactly-one-final-action semantics.
+  - After provider-operational-missing, stop calls within the pairing, write one unique terminal missing trace and safe classification, retain every safely completed prior turn, create and credit no action, retain the pairing in every intended denominator, continue only if the prospective circuit breaker has not fired, and never retry, replace, splice, or regenerate the pairing.
+  - Freeze the engineering circuit breaker at three consecutive provider-operational-missing pairings for one provider, ten cumulative provider-operational-missing pairings across the 500-pairing campaign, immediate quarantine for any provider-contract-or-safety-failure, and immediate quarantine if a public canary is not protocol-valid; never reset, loosen, or reinterpret it after live results.
+  - Use only terminal operational status and sequence for the circuit breaker; inspect no performance, action, target, architecture, family, or scientific outcome.
+  - Retain protocol-valid exact metrics; retain policy-v2 metric-specific feasible intervals for protocol-invalid pairings; retain provider-operational-missing pairings in every denominator with registered metric-specific supports or comparator bounds and no invented latent point estimate.
+  - Record calls, tokens, cost, retry count, completion status, and an exact provider-response-completion or missingness metric as operational quantities; do not count provider missingness as an invalid submitted action or label missing protocol compliance pass/fail when the status is nonapplicable.
+  - Require architecture-contrast bounds over all intended eligible pairings and exact independent reconstruction of endpoints and denominators; valid-output-only and completed-response-only estimates are secondary selection-conditioned diagnostics, and no complete-case unconditional effect, ranking, composite, or leaderboard is permitted.
+  - Permit engineering completion only when both canaries pass, fresh custody passes, all 500 pairings have exactly one protocol-valid, protocol-invalid, or provider-operational-missing terminal status, no contract/safety failure or circuit-breaker trigger occurs, all identities and correspondences pass, contamination is zero, caps hold, provider closure precedes lock, no call follows lock, commitments pass, unseal follows verified lock, Methods A/B agree where exact metrics exist, Method C classifies every completed response, missingness and bounds independently agree, and corruption, redaction, and retained-state checks pass.
+  - Do not quarantine solely for isolated protocol-invalid or provider-operational-missing outcomes; quarantine for canary failure, contract/safety failure, circuit-breaker trigger, missing/duplicate terminal classification, correspondence/integrity failure, contamination, cap or execution identity breach, lock/unseal-order failure, method/classifier/bound disagreement, corruption acceptance, redaction failure, or unsafe retained state.
+  - Freeze campaign treasurebench-agents-v1-repair-confirmation-v5 and batch tb-agents-v1-repair-confirmation-v5-b01 after collision checks; allocate every real seed, task, answer, key, nonce, ciphertext, commitment, log, ledger, response, trace, classification, bound, custody, lock, derived commitment, and audit identity wholly fresh only after authorization.
+  - Freeze 50 private tasks, ten from each registered family, five registered architectures, direct OpenAI gpt-5.4-2026-03-05, direct Anthropic claude-sonnet-4-6, one repeat, 500 intended pairings, the exact passing provider-specific schemas, and 256 output tokens per request unless a prospectively justified official-contract change is fixed before execution freeze.
+  - Preserve the v4 prompts, action contract, provider schemas, and protocol-validity policy v2 unchanged except where policy-v3 integration strictly requires terminal-status and missing-trace behavior.
+  - Prohibit aliases, fallback, OpenRouter, batch routes, regional substitution, provider-managed tools, local models, and substitute providers, models, or routes.
+  - Freeze USD 11.51 expected subject to exact v5 graph reproduction, USD 15 conservative, USD 25 total hard cap, USD 10 OpenAI cap, USD 15 Anthropic cap, 5200 maximum calls, and 256 output tokens per request; no ceiling may increase.
+  - One later exact generic owner authorization conditionally covers the normal engineering-complete or honest-quarantine path through revalidation, provider audit, canaries, fresh custody and commitment, private prefix, complete matrix unless a hard stop fires, provider closure, output lock and commitment, post-lock replay/unseal, terminal classifications, Methods A/B/C, independent provider-outcome verification, metric intervals and independent all-pairing bounds, safety and corruption checks, deterministic public-safe closeout, validation, PR readiness and squash merge, CI and Pages, live routes, issue closure, synchronized main, and one final schema-valid handoff.
+scope:
+  paths:
+    - tasks/treasurebench-agents-v1-fresh-pilot-v5.yml
+    - plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V5.md
+    - plans/MASTER_EXEC_PLAN.md
+    - docs/agent-ops
+    - docs/benchmark/agents-v1
+    - docs/current-state.md
+    - docs/current-roadmap.md
+    - docs/program-memory
+    - reports/agent-ops
+    - reports/benchmark
+    - reports/final-handoff.md
+    - reports/project-status.md
+    - studies/DD-010-discoverybench
+    - src/distributed_discovery/agent_ops
+    - src/distributed_discovery/benchmark/agents_v1
+    - src/distributed_discovery/cli.py
+    - scripts
+    - site
+    - tests
+    - .github/workflows
+    - Makefile
+  actions:
+    - Register and freeze prospective provider-outcome policy v3 and wholly fresh v5 engineering campaign under one task.
+    - Re-audit official direct-provider availability, structured outputs, refusal and token-limit behavior, retention, retries, errors, and prices without credentials or provider calls.
+    - Implement primary and independent provider-outcome classification, terminal missing traces, the frozen operational circuit breaker, provider-contract/safety quarantines, metric-specific feasible intervals, all-pairing architecture-contrast bounds, exact completion/missingness metrics, and selection-conditioned diagnostics.
+    - Run complete authorization-free synthetic and production-path temporary-state rehearsals, Methods A/B/C, independent classification and bounds reconstruction, corruptions, custody, lock, contamination, redaction, cleanup, and cost checks.
+    - Commit and push one exact execution freeze, draft pull request, generic owner-gate manifest, and schema-valid owner-gate-required handoff.
+    - After one later exact owner authorization only, run the fixed live engineering-complete or honest-quarantine path and its public-safe administrative closeout.
+non_goals:
+  - No DD-023, claim, immutable scientific run, evidence or proof promotion, paper result, task/model/provider/architecture/family performance publication, ranking, composite, leaderboard, package, release, DOI, submission, or base campaign.
+  - No retrospective v4 diagnostic and no read, reopen, unseal, diagnose, rerun, reuse, rescore, splice, mutate, delete, execute, or reauthorize v4 or any prior campaign.
+  - No inference about the hidden v4 provider, route, or exact error and no tuning against v4.
+  - No scientific provider-missingness threshold and no rerun until a preferred availability rate appears.
+  - No semantic or outcome-dependent retry, replacement pairing or batch, invented action, invalid or missing action credit, silent normalization, denominator drop, complete-case unconditional effect, or unregistered metric.
+  - No credential read, provider call, spend, real seed, private task, answer, key, nonce, ciphertext, commitment, custody object, or retained real v5 campaign state before exact owner authorization.
+  - No execution-sensitive change, identity change, model or route substitution, cap or circuit-breaker increase, replacement batch, new private identity, or authority expansion after authorization without a separate owner decision.
+permissions:
+  repository_write: true
+  git_branch_commit: true
+  github_issue_pr: true
+  merge_after_checks: true
+  ci_pages: true
+external_action_permissions:
+  network_observation: true
+  github_mutation: true
+  provider_calls: true
+  spend: true
+  release_publication: false
+  submission: false
+scientific_mutation_permissions:
+  create_study: false
+  create_claim: false
+  create_run: false
+  change_evidence_status: false
+  change_proof_status: false
+  change_paper_lifecycle: false
+private_data_permissions: {read: true, write: true, generate: true, publish: false}
+budget:
+  currency: USD
+  expected: "11.51"
+  hard_cap: "25"
+  call_cap: 5200
+  category_caps: {OpenAI: "10", Anthropic: "15"}
+  cumulative_spend: "0"
+expected_outcomes:
+  - One authorization-free package freezing prospective provider-outcome policy v3 and proving exact provider classification, terminal missing traces, circuit breakers, denominator retention, no replacement or invented credit, all-pairing bounds, and complete v5 custody, verification, corruption, lock, redaction, contamination, cleanup, and cost invariants.
+  - One committed generic owner gate that stops before `.env.txt`, credentials, real private generation, provider calls, spend, or real unseal.
+  - After later authorization only, one complete engineering outcome with aggregate terminal-status reporting or one honest whole-batch quarantine with exact public-safe closeout.
+stop_conditions:
+  - Before authorization, stop exactly once after the committed generic owner gate and schema-valid owner-gate-required handoff.
+  - After authorization, stop if execution-sensitive code, campaign, batch, seed domain, model, route, cap, circuit breaker, execution tree, or private identity must change.
+  - Stop if authorization validity is uncertain or retained private state cannot be safely preserved or locked.
+  - Stop if a replacement pairing or batch, record splice, semantic retry, new private identity, or authority beyond the fixed DD-010 engineering contract is proposed.
+  - Do not stop or quarantine solely because one or more completed pairings are protocol-invalid or isolated pairings are provider-operational-missing below the frozen circuit breaker.
+  - Quarantine immediately on public-canary failure, provider-contract-or-safety-failure, a frozen circuit-breaker trigger, missing or duplicate terminal classification, correspondence/integrity failure, contamination, cap or execution-identity breach, lock or unseal-order failure, method/classifier/bounds disagreement, unsafe retained state, corruption acceptance, or redaction failure.
+acceptance_profile: private-evaluation
+canonical_destinations:
+  - tasks/treasurebench-agents-v1-fresh-pilot-v5.yml
+  - plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V5.md
+  - docs/benchmark/agents-v1
+  - reports/agent-ops
+  - reports/benchmark
+  - studies/DD-010-discoverybench
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 210
+  branch: codex/treasurebench-agents-v1-fresh-pilot-v5
+  pull_request: null
+  base: main
+exec_plan: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V5.md
+task_delta: null
+frozen_identifiers:
+  study_id: DD-010
+  protocol_validity_policy: treasurebench-agents-v1-protocol-validity-policy-v2
+  provider_outcome_policy: treasurebench-agents-v1-provider-outcome-policy-v3
+  campaign_id: treasurebench-agents-v1-repair-confirmation-v5
+  batch_id: tb-agents-v1-repair-confirmation-v5-b01
+  slot_namespace: RCV5-SLOT
+  generation_domain: fresh-private-v5
+  gate_id: AOG-AO-0011-FRESH-PILOT-V5
+supersession: {supersedes: [], superseded_by: null, reason: null}
+next_gate: Complete every authorization-free policy, taxonomy, classifier, circuit-breaker, interval, bounds, rehearsal, corruption, custody, lock, redaction, cleanup, and repository check; freeze and push the exact execution commit; commit the generic owner gate; and stop before `.env.txt`, credentials, real private generation, provider calls, spend, or real unseal.

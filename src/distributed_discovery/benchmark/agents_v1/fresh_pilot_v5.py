@@ -1,0 +1,2301 @@
+"""Offline controls for the wholly fresh TreasureBench repair-confirmation v5 pilot.
+
+This module may validate a generic Agent Operations authorization and prepare
+fresh private generation, but it never reads credentials or calls a provider.
+"""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import os
+import stat
+import subprocess
+import tempfile
+from collections.abc import Mapping, Sequence
+from dataclasses import asdict, dataclass
+from datetime import UTC, datetime
+from decimal import Decimal
+from fractions import Fraction
+from pathlib import Path
+from typing import Any, cast
+
+import jsonschema
+from cryptography.exceptions import InvalidTag
+from jsonschema import Draft202012Validator, FormatChecker
+
+from distributed_discovery.agent_ops.core import (
+    AgentOpsError,
+    authorization_challenge,
+    hash_path,
+    load_yaml,
+    sha256_file,
+    validate,
+)
+from distributed_discovery.benchmark.agents_v1.adapters import AdapterRequest, MockAdapter
+from distributed_discovery.benchmark.agents_v1.contamination import classify_text, run_public_probes
+from distributed_discovery.benchmark.agents_v1.evaluation import evaluate_run
+from distributed_discovery.benchmark.agents_v1.generation import (
+    canonical_cells,
+    generate_instance,
+)
+from distributed_discovery.benchmark.agents_v1.live_providers import (
+    ANTHROPIC_MANIFEST,
+    OPENAI_MANIFEST,
+)
+from distributed_discovery.benchmark.agents_v1.models import (
+    TaskInstance,
+    canonical_json,
+    sha256_hex,
+)
+from distributed_discovery.benchmark.agents_v1.orchestration import (
+    ARCHITECTURES,
+    run_architecture,
+)
+from distributed_discovery.benchmark.agents_v1.pilot import (
+    AppendOnlyLedger,
+    GenerationPermit,
+    create_output_lock,
+    seal_object,
+    unseal_object,
+    validate_contamination_probe_set,
+    validate_lock_inventory,
+    validate_public_pilot_summary,
+    verify_output_lock,
+)
+from distributed_discovery.benchmark.agents_v1.prompts import compile_prompt
+from distributed_discovery.benchmark.agents_v1.protocol_contract import (
+    verify_metric_ranges,
+    verify_protocol_contract,
+)
+from distributed_discovery.benchmark.agents_v1.protocol_validity import (
+    PRIMARY_CONTRASTS,
+    PROTOCOL_INVALID,
+    PairingClassification,
+    architecture_contrast_bounds,
+    assess_batch,
+    classify_completed_pairing,
+    metric_intervals,
+    valid_output_conditional_diagnostic,
+    validate_terminal_classifications,
+)
+from distributed_discovery.benchmark.agents_v1.protocol_validity_independent import (
+    reconstruct_contrast_bounds,
+    require_bound_agreement,
+)
+from distributed_discovery.benchmark.agents_v1.provider_outcome import (
+    ANTHROPIC_OPERATIONAL_CLASSES,
+    OPENAI_OPERATIONAL_CLASSES,
+    PROVIDER_OPERATIONAL_MISSING,
+    MetricIntervalV3,
+    OperationalCircuitBreaker,
+    PairingClassificationV3,
+    architecture_contrast_bounds_v3,
+    assess_batch_v3,
+    classify_pairing_v3,
+    classify_provider_error,
+    metric_intervals_v3,
+    selection_conditioned_diagnostic_v3,
+)
+from distributed_discovery.benchmark.agents_v1.provider_outcome import (
+    PROTOCOL_INVALID as PROTOCOL_INVALID_V3,
+)
+from distributed_discovery.benchmark.agents_v1.provider_outcome import (
+    PROTOCOL_VALID as PROTOCOL_VALID_V3,
+)
+from distributed_discovery.benchmark.agents_v1.provider_outcome_independent import (
+    require_provider_outcome_agreement,
+)
+from distributed_discovery.benchmark.agents_v1.provider_schema import (
+    ANTHROPIC_PROVIDER,
+    OPENAI_PROVIDER,
+    assert_provider_schema,
+    compile_anthropic_action_schema,
+    compile_openai_action_schema,
+    schema_fingerprint,
+    validate_action_semantics,
+)
+from distributed_discovery.benchmark.agents_v1.retry_backoff import (
+    MAXIMUM_RETRY_AFTER_SECONDS,
+    MINIMUM_RETRY_DELAY_SECONDS,
+    RETRY_DELAY_FALLBACK_SECONDS,
+    SAFE_RETRY_METADATA_FIELDS,
+    RetryDelayDecision,
+    decision_from_metadata,
+    select_retry_delay,
+)
+from distributed_discovery.benchmark.agents_v1.traces import build_trace
+from distributed_discovery.benchmark.agents_v1.verification import (
+    verify_method_agreement,
+)
+
+CAMPAIGN_ID = "treasurebench-agents-v1-repair-confirmation-v5"
+BATCH_ID = "tb-agents-v1-repair-confirmation-v5-b01"
+TASK_ID = "AO-0011"
+ISSUE = 210
+BRANCH = "codex/treasurebench-agents-v1-fresh-pilot-v5"
+GATE_ID = "AOG-AO-0011-FRESH-PILOT-V5-R2"
+MODELS = ("gpt-5.4-2026-03-05", "claude-sonnet-4-6")
+PROVIDERS = ("OpenAI", "Anthropic")
+TOTAL_CAP = Decimal("25")
+PROVIDER_CAPS = {"OpenAI": Decimal("10"), "Anthropic": Decimal("15")}
+MAX_CALLS = 5200
+NORMAL_CALLS = 3016
+CALLS_PER_PROVIDER = 1508
+MAX_CALLS_PER_PROVIDER = 2600
+MAX_OUTPUT_TOKENS_PER_REQUEST = 256
+ROUTE_TOKEN_CAPS = {
+    "OpenAI": {"input": 1_680_000, "output": 386_048},
+    "Anthropic": {"input": 3_000_000, "output": 386_048},
+}
+REQUEST_PATH = Path("docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-request.yml")
+ALLOCATION_PATH = Path("docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-allocation.yml")
+EXECUTION_BUDGET_PATH = Path(
+    "docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-execution-budget.yml"
+)
+CORRUPTIONS_PATH = Path("docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-corruptions.yml")
+PROTOCOL_VALIDITY_POLICY_PATH = Path("docs/benchmark/agents-v1/protocol-validity-policy-v2.yml")
+POLICY_PATH = Path("docs/benchmark/agents-v1/provider-outcome-policy-v3.yml")
+GATE_PATH = Path("reports/agent-ops/AO-0011-treasurebench-fresh-pilot-v5-r2-owner-gate.yml")
+CONTRACT_PATH = Path("tasks/treasurebench-agents-v1-fresh-pilot-v5-r2.yml")
+RESERVED_IDENTITY_FRAGMENTS = (
+    "treasurebench-agents-v1-pilot-v1",
+    "tb-agents-v1-pilot-v1-b01",
+    "treasurebench-agents-v1-repair-confirmation-v1",
+    "tb-agents-v1-repair-confirmation-v1-b01",
+    "treasurebench-agents-v1-repair-confirmation-v2",
+    "tb-agents-v1-repair-confirmation-v2-b01",
+    "RCV2-SLOT",
+    "treasurebench-agents-v1-repair-confirmation-v3",
+    "tb-agents-v1-repair-confirmation-v3-b01",
+    "RCV3-SLOT",
+    "treasurebench-agents-v1-repair-confirmation-v4",
+    "tb-agents-v1-repair-confirmation-v4-b01",
+    "RCV4-SLOT",
+    "PILOT-SLOT",
+    "RC-SLOT",
+    "BASE-SLOT",
+    "BASE-BATCH",
+    "future-base",
+    "base-campaign",
+)
+
+
+@dataclass(frozen=True)
+class FreshSlot:
+    slot_id: str
+    family_id: str
+    cell_index: int
+    boundary_category: str
+    target_relabeling_class: str
+    agent_relabeling_class: str
+
+    @property
+    def variant(self) -> int:
+        target = 0 if self.target_relabeling_class == "target-A" else 1
+        agent = 0 if self.agent_relabeling_class == "agent-A" else 2
+        return target + agent
+
+
+def _load_and_validate(repo: Path, path: Path, schema: Path) -> dict[str, Any]:
+    value = load_yaml(repo / path)
+    definition = json.loads((repo / schema).read_text(encoding="utf-8"))
+    Draft202012Validator.check_schema(definition)
+    errors = sorted(
+        Draft202012Validator(
+            definition,
+            format_checker=FormatChecker(),
+        ).iter_errors(value),
+        key=lambda error: tuple(str(item) for item in error.absolute_path),
+    )
+    if errors:
+        location = ".".join(str(item) for item in errors[0].absolute_path) or "$"
+        raise ValueError(f"{path}:{location}: {errors[0].message}")
+    return value
+
+
+def load_request(repo: Path) -> dict[str, Any]:
+    return _load_and_validate(
+        repo,
+        REQUEST_PATH,
+        REQUEST_PATH.with_suffix(".schema.json"),
+    )
+
+
+def load_allocation(repo: Path) -> dict[str, Any]:
+    return _load_and_validate(
+        repo,
+        ALLOCATION_PATH,
+        ALLOCATION_PATH.with_suffix(".schema.json"),
+    )
+
+
+def load_execution_budget(repo: Path) -> dict[str, Any]:
+    return _load_and_validate(
+        repo,
+        EXECUTION_BUDGET_PATH,
+        EXECUTION_BUDGET_PATH.with_suffix(".schema.json"),
+    )
+
+
+def load_corruption_registry(repo: Path) -> dict[str, Any]:
+    return _load_and_validate(
+        repo,
+        CORRUPTIONS_PATH,
+        CORRUPTIONS_PATH.with_suffix(".schema.json"),
+    )
+
+
+def load_protocol_validity_policy(repo: Path) -> dict[str, Any]:
+    return _load_and_validate(
+        repo,
+        PROTOCOL_VALIDITY_POLICY_PATH,
+        PROTOCOL_VALIDITY_POLICY_PATH.with_suffix(".schema.json"),
+    )
+
+
+def load_provider_outcome_policy(repo: Path) -> dict[str, Any]:
+    value = _load_and_validate(
+        repo,
+        POLICY_PATH,
+        POLICY_PATH.with_suffix(".schema.json"),
+    )
+    return value
+
+
+def allocation_slots(repo: Path) -> tuple[FreshSlot, ...]:
+    allocation = load_allocation(repo)
+    families = allocation["families"]
+    categories = allocation["boundary_cycle"]
+    if not isinstance(families, Mapping) or not isinstance(categories, Sequence):
+        raise ValueError("fresh allocation recipe is malformed")
+    canonical = {(cell.family_id, cell.cell_index) for cell in canonical_cells()}
+    slots: list[FreshSlot] = []
+    prefix = str(allocation["slot_prefix"])
+    for family_offset, (family, indices) in enumerate(families.items()):
+        if not isinstance(indices, Sequence):
+            raise ValueError("fresh allocation indices must be a sequence")
+        for within_family, raw_index in enumerate(indices):
+            number = len(slots) + 1
+            index = int(raw_index)
+            slot = FreshSlot(
+                slot_id=f"{prefix}-{number:03d}",
+                family_id=str(family),
+                cell_index=index,
+                boundary_category=str(categories[within_family % len(categories)]),
+                target_relabeling_class=(
+                    "target-A" if (within_family + family_offset) % 2 == 0 else "target-B"
+                ),
+                agent_relabeling_class="agent-A" if number % 2 else "agent-B",
+            )
+            if (slot.family_id, slot.cell_index) not in canonical:
+                raise ValueError(f"unknown fresh generator cell: {slot}")
+            slots.append(slot)
+    if len(slots) != 50 or len({slot.slot_id for slot in slots}) != 50:
+        raise ValueError("fresh allocation must produce 50 unique slots")
+    if {slot.target_relabeling_class for slot in slots} != {"target-A", "target-B"}:
+        raise ValueError("fresh target relabeling is unbalanced")
+    for attribute in ("target_relabeling_class", "agent_relabeling_class"):
+        counts = {
+            label: sum(getattr(slot, attribute) == label for slot in slots)
+            for label in {getattr(slot, attribute) for slot in slots}
+        }
+        if set(counts.values()) != {25}:
+            raise ValueError(f"fresh relabeling is not 25/25: {attribute}")
+    return tuple(slots)
+
+
+def execution_tree_hashes(repo: Path) -> dict[str, str]:
+    request = load_request(repo)
+    paths = request["execution_sensitive_paths"]
+    if not isinstance(paths, list):
+        raise ValueError("execution-sensitive paths must be a list")
+    return {str(path): hash_path(repo / str(path)) for path in paths}
+
+
+def _git(repo: Path, *args: str, check: bool = True) -> str:
+    result = subprocess.run(
+        ("git", *args),
+        cwd=repo,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if check and result.returncode:
+        raise PermissionError(result.stderr.strip() or "Git validation failed")
+    return result.stdout.strip()
+
+
+def authorization_path() -> Path:
+    root = Path(os.environ.get("XDG_CONFIG_HOME", str(Path.home() / ".config")))
+    return root / "distributed-discovery" / "agent-ops" / "authorizations" / f"{GATE_ID}.yml"
+
+
+def _authorization_digest(value: Mapping[str, object]) -> str:
+    unsigned = dict(value)
+    unsigned.pop("authorization_digest", None)
+    payload = json.dumps(unsigned, sort_keys=True, separators=(",", ":")).encode()
+    return f"sha256:{hashlib.sha256(payload).hexdigest()}"
+
+
+def validate_owner_authorization(
+    value: dict[str, Any],
+    *,
+    repo: Path,
+    now: datetime | None = None,
+) -> dict[str, Any]:
+    """Bind generic owner authorization to this fresh execution surface."""
+
+    validate(value, "owner-authorization.schema.json")
+    gate = load_yaml(repo / GATE_PATH)
+    validate(gate, "owner-gate.schema.json")
+    if value["authorization_digest"] != _authorization_digest(value):
+        raise PermissionError("owner authorization digest mismatch")
+    expected = {
+        "gate_id": GATE_ID,
+        "issue": ISSUE,
+        "pull_request": gate["pull_request"]["number"],
+        "branch": BRANCH,
+        "commit": gate["commit"],
+        "task_contract_sha256": sha256_file(repo / CONTRACT_PATH),
+        "tree_hashes": gate["tree_hashes"],
+        "challenge": authorization_challenge(gate),
+    }
+    if any(value.get(key) != item for key, item in expected.items()):
+        raise PermissionError("owner authorization does not bind the fresh pilot")
+    current = now or datetime.now(UTC)
+    authorized = datetime.fromisoformat(str(value["authorized_at_utc"]).replace("Z", "+00:00"))
+    expires = datetime.fromisoformat(str(value["expires_at_utc"]).replace("Z", "+00:00"))
+    if authorized > current or expires <= current:
+        raise PermissionError("owner authorization is outside its active interval")
+    if _git(repo, "branch", "--show-current") != BRANCH:
+        raise PermissionError("fresh pilot branch mismatch")
+    if subprocess.run(
+        ("git", "merge-base", "--is-ancestor", str(value["commit"]), "HEAD"),
+        cwd=repo,
+        check=False,
+        capture_output=True,
+    ).returncode:
+        raise PermissionError("authorized execution commit is not an ancestor")
+    current_hashes = execution_tree_hashes(repo)
+    if current_hashes != value["tree_hashes"]:
+        raise PermissionError("fresh execution-sensitive tree changed")
+    return value
+
+
+def load_owner_authorization(repo: Path, path: Path | None = None) -> dict[str, Any]:
+    resolved = path or authorization_path()
+    info = resolved.lstat()
+    if stat.S_ISLNK(info.st_mode) or not stat.S_ISREG(info.st_mode):
+        raise PermissionError("owner authorization must be a regular file")
+    if stat.S_IMODE(info.st_mode) != 0o600:
+        raise PermissionError("owner authorization must have mode 0600")
+    return validate_owner_authorization(load_yaml(resolved), repo=repo)
+
+
+def generate_tasks(
+    repo: Path,
+    *,
+    material: str,
+    public_fixture: bool,
+    authorization: Mapping[str, object] | None = None,
+) -> tuple[TaskInstance, ...]:
+    cells = {(cell.family_id, cell.cell_index): cell for cell in canonical_cells()}
+    permit = None if public_fixture else GenerationPermit(CAMPAIGN_ID, True, synthetic=False)
+    if not public_fixture and authorization is None:
+        raise PermissionError("owner authorization is required for private generation")
+    tasks = []
+    for slot in allocation_slots(repo):
+        tasks.append(
+            generate_instance(
+                cells[(slot.family_id, slot.cell_index)],
+                variant=slot.variant,
+                public_fixture=public_fixture,
+                material=f"{material}/{slot.slot_id}",
+                hidden_labels=False,
+                authorization=authorization,
+                custody_context=permit,
+            )
+        )
+    if len({task.task_id for task in tasks}) != 50:
+        raise ValueError("fresh generation did not produce 50 unique tasks")
+    return tuple(tasks)
+
+
+def generate_authorized_private_tasks(
+    repo: Path,
+    *,
+    seed: bytes,
+    authorization_path_override: Path | None = None,
+) -> tuple[TaskInstance, ...]:
+    """Generate only after validating the generic gate; seed creation is external."""
+
+    if len(seed) != 32:
+        raise ValueError("fresh OS-CSPRNG seed must be 32 bytes")
+    authorization = load_owner_authorization(repo, authorization_path_override)
+    return generate_tasks(
+        repo,
+        material=f"fresh-private-v5/{seed.hex()}",
+        public_fixture=False,
+        authorization=authorization,
+    )
+
+
+def validate_provider_boundary(tasks: Sequence[TaskInstance]) -> dict[str, object]:
+    """Compile both transports and apply the shared semantic contract offline."""
+
+    if not tasks:
+        raise ValueError("provider boundary requires a task")
+    task = tasks[0]
+    agent_id = sorted(task.capabilities)[0]
+    compiled: dict[str, str] = {}
+    for provider, manifest, compiler in (
+        (OPENAI_PROVIDER, OPENAI_MANIFEST, compile_openai_action_schema),
+        (ANTHROPIC_PROVIDER, ANTHROPIC_MANIFEST, compile_anthropic_action_schema),
+    ):
+        request = AdapterRequest(
+            prompt=compile_prompt(
+                task,
+                agent_id,
+                architecture_id="provider-native-smoke",
+                final_required=True,
+            ),
+            manifest=manifest,
+            round_number=0,
+            action_vocabulary=task.action_vocabulary,
+            source_vocabulary=task.source_vocabulary,
+            max_output_tokens=MAX_OUTPUT_TOKENS_PER_REQUEST,
+            final_required=True,
+        )
+        schema = compiler(request)
+        assert_provider_schema(provider, schema)
+        response = MockAdapter().respond(request)
+        response_value = json.loads(response.raw_output)
+        response_value["declared_metadata"] = {}
+        raw_output = json.dumps(response_value, sort_keys=True)
+        jsonschema.validate(response_value, schema)
+        action = validate_action_semantics(raw_output, request)
+        if not action.final or len(action.actions) != 1:
+            raise ValueError("provider-independent exactly-one-final-action failed")
+        compiled[provider] = schema_fingerprint(schema)
+    if compiled[OPENAI_PROVIDER] == compiled[ANTHROPIC_PROVIDER]:
+        raise ValueError("provider-specific transport schemas unexpectedly match")
+    return {
+        "status": "pass",
+        "output_tokens_per_request": MAX_OUTPUT_TOKENS_PER_REQUEST,
+        "provider_schema_fingerprints": compiled,
+        "provider_independent_semantic_validation": "pass",
+        "exactly_one_final_action": "pass",
+    }
+
+
+def validate_registration(repo: Path) -> dict[str, object]:
+    request = load_request(repo)
+    allocation = load_allocation(repo)
+    budget = load_execution_budget(repo)
+    corruptions = load_corruption_registry(repo)
+    slots = allocation_slots(repo)
+    protocol_policy = load_protocol_validity_policy(repo)
+    policy = load_provider_outcome_policy(repo)
+    audit = load_yaml(
+        repo / "reports/benchmark/treasurebench-agents-v1-fresh-pilot-v5-provider-audit.yml"
+    )
+    conformance = load_yaml(
+        repo / "reports/agent-ops/AO-0004-r4-public-provider-canary-outcome.yml"
+    )
+    serialized = canonical_json(
+        {
+            "request": request,
+            "allocation": allocation,
+            "budget": budget,
+            "corruptions": corruptions,
+            "protocol_validity_policy": protocol_policy["policy_version"],
+            "provider_outcome_policy": policy["policy_version"],
+        }
+    ).decode()
+    if any(fragment in serialized for fragment in RESERVED_IDENTITY_FRAGMENTS):
+        raise ValueError("reserved pilot or base identity appears in fresh registration")
+    for value, expected, name in (
+        (request["task_id"], TASK_ID, "task"),
+        (request["campaign_id"], CAMPAIGN_ID, "campaign"),
+        (request["batch_id"], BATCH_ID, "batch"),
+        (request["branch"], BRANCH, "branch"),
+        (request["owner_gate_id"], GATE_ID, "owner gate"),
+        (allocation["campaign_id"], CAMPAIGN_ID, "allocation campaign"),
+        (allocation["batch_id"], BATCH_ID, "allocation batch"),
+        (budget["campaign_id"], CAMPAIGN_ID, "budget campaign"),
+        (budget["batch_id"], BATCH_ID, "budget batch"),
+    ):
+        _require_equal(value, expected, name)
+    if request["status"] not in {
+        "provider-outcome-policy-v3-frozen-execution-preparation-owner-gate-not-authorized",
+        "exact-execution-frozen-owner-gate-not-authorized",
+    }:
+        raise ValueError("v5 request status is not authorization-free")
+    if request["policy_version"] != protocol_policy["policy_version"]:
+        raise ValueError("unchanged protocol-validity policy v2 is not registered")
+    if request["provider_outcome_policy"] != policy["policy_version"]:
+        raise ValueError("provider-outcome policy v3 is not registered")
+    if policy["retry_and_replacement"]["transport"]["maximum_attempts"] != 2:
+        raise ValueError("prospective transport attempt bound changed")
+    delay = policy["retry_and_replacement"]["transport"]["retry_delay"]
+    if delay["minimum_seconds"] != MINIMUM_RETRY_DELAY_SECONDS:
+        raise ValueError("prospective retry-delay minimum changed")
+    if delay["maximum_retry_after_seconds"] != MAXIMUM_RETRY_AFTER_SECONDS:
+        raise ValueError("prospective Retry-After maximum changed")
+    if delay["fallback_seconds"] != RETRY_DELAY_FALLBACK_SECONDS:
+        raise ValueError("prospective retry-delay fallback table changed")
+    if set(delay["retained_operational_fields"]) != SAFE_RETRY_METADATA_FIELDS:
+        raise ValueError("prospective retry-delay safe metadata fields changed")
+    if delay["random_jitter"] is not False:
+        raise ValueError("prospective retry delay cannot use random jitter")
+    if policy["retry_and_replacement"]["schema"]["maximum_repairs"] != 1:
+        raise ValueError("prospective schema repair bound changed")
+    if policy["retry_and_replacement"]["exactly_one_final_action_per_required_agent"] is not True:
+        raise ValueError("repaired final-action contract changed")
+    if policy["status_model"]["terminal_pairing_statuses"] != [
+        "protocol-valid",
+        "protocol-invalid",
+        "provider-operational-missing",
+        "provider-contract-or-safety-failure",
+    ]:
+        raise ValueError("policy v3 four-status separation changed")
+    if policy["batch_acceptance"]["isolated_protocol_invalid_alone_quarantines"] is not False:
+        raise ValueError("protocol-invalid alone cannot quarantine v5")
+    if (
+        policy["batch_acceptance"]["isolated_provider_operational_missing_alone_quarantines"]
+        is not False
+    ):
+        raise ValueError("isolated operational missingness cannot quarantine v5")
+    if policy["stopping"]["provider_missingness_scientific_acceptance_threshold"] is not None:
+        raise ValueError("v5 cannot register a provider-missingness threshold")
+    if policy["retry_and_replacement"]["replacement_pairings"] != 0:
+        raise ValueError("v5 pairings cannot be replaced")
+    if policy["retry_and_replacement"]["semantic_answer_retries"] != 0:
+        raise ValueError("v5 semantic answers cannot be retried")
+    if len(policy["metric_bounds"]["metrics"]) != 18:
+        raise ValueError("policy v3 metric-bound registry changed")
+    if {
+        item["id"] for item in policy["operational_missing_taxonomy"]["OpenAI"]
+    } != OPENAI_OPERATIONAL_CLASSES:
+        raise ValueError("OpenAI operational-missing taxonomy changed")
+    if {
+        item["id"] for item in policy["operational_missing_taxonomy"]["Anthropic"]
+    } != ANTHROPIC_OPERATIONAL_CLASSES:
+        raise ValueError("Anthropic operational-missing taxonomy changed")
+    breaker = policy["operational_circuit_breaker"]
+    if (
+        breaker["consecutive_same_provider_operational_missing"] != 3
+        or breaker["cumulative_operational_missing_across_campaign"] != 10
+    ):
+        raise ValueError("operational circuit breaker changed")
+    if audit["status"] != "pass-current-official-docs-no-credential-or-provider-api-call":
+        raise ValueError("provider audit is not current and passing")
+    if conformance["final_decision"] != "conformance-pass-both-complete-schemas":
+        raise ValueError("AO-0004 complete-schema prerequisite is not passing")
+    if conformance["classification"] != "public-engineering-only-not-scientific-evidence":
+        raise ValueError("AO-0004 evidence boundary changed")
+    complete = [item for item in conformance["canaries"] if item["schema_role"] == "complete"]
+    if len(complete) != 2 or any(
+        item["status"] != "success" or item["max_output_tokens"] != MAX_OUTPUT_TOKENS_PER_REQUEST
+        for item in complete
+    ):
+        raise ValueError("AO-0004 complete-schema ceiling changed")
+    if Decimal(request["budget"]["hard_cap"]) != TOTAL_CAP:
+        raise ValueError("fresh total cap changed")
+    if {
+        provider: Decimal(value) for provider, value in request["budget"]["provider_caps"].items()
+    } != PROVIDER_CAPS:
+        raise ValueError("fresh provider caps changed")
+    if request["budget"]["call_cap"] != MAX_CALLS:
+        raise ValueError("fresh call cap changed")
+    if request["budget"]["normal_calls"] != NORMAL_CALLS:
+        raise ValueError("fresh normal graph changed")
+    if request["budget"]["calls_per_provider"] != CALLS_PER_PROVIDER:
+        raise ValueError("fresh per-provider graph changed")
+    if request["budget"]["route_token_caps"] != ROUTE_TOKEN_CAPS:
+        raise ValueError("fresh route token caps changed")
+    if request["provider_conformance"]["output_tokens_per_request"] != (
+        MAX_OUTPUT_TOKENS_PER_REQUEST
+    ):
+        raise ValueError("fresh per-request output ceiling changed")
+    if request["credential_ingress"] != {
+        "source": "repository-root-.env.txt",
+        "loader": "strict-nonexecuting-dotenv-no-interpolation",
+        "requested_names": ["OPENAI_API_KEY", "ANTHROPIC_API_KEY"],
+        "unrelated_names_returned": False,
+        "unrelated_values_retained_or_transmitted": False,
+        "clear_after_each_provider_stage": True,
+        "clear_on_all_exit_paths": True,
+    }:
+        raise PermissionError("fresh v5 credential ingress contract changed")
+    if budget["graph"]["matrix_calls"] + budget["graph"]["public_canary_calls"] != (NORMAL_CALLS):
+        raise ValueError("fresh execution graph does not reconcile")
+    if len(corruptions["corruptions"]) != 115:
+        raise ValueError("fresh corruption registry changed")
+    activity = audit["activity"]
+    if not isinstance(activity, Mapping) or any(
+        Decimal(str(value)) != 0 for value in activity.values()
+    ):
+        raise PermissionError("registration audit records consequential activity")
+    return {
+        "status": "pass",
+        "task_id": TASK_ID,
+        "campaign_id": CAMPAIGN_ID,
+        "batch_id": BATCH_ID,
+        "slots": len(slots),
+        "runs": len(slots) * len(ARCHITECTURES) * len(MODELS),
+        "provider_calls": 0,
+        "credential_reads": 0,
+        "private_objects_created": 0,
+        "spend_usd": "0",
+        "request_sha256": f"sha256:{sha256_hex(canonical_json(request))}",
+        "policy_sha256": f"sha256:{sha256_hex(canonical_json(policy))}",
+        "allocation_sha256": f"sha256:{sha256_hex(canonical_json(allocation))}",
+        "budget_sha256": f"sha256:{sha256_hex(canonical_json(budget))}",
+        "corruption_registry_sha256": (f"sha256:{sha256_hex(canonical_json(corruptions))}"),
+    }
+
+
+def run_synthetic_rehearsal(repo: Path) -> dict[str, object]:
+    """Exercise the full 50 × 5 × 2 matrix without network or private data."""
+
+    registration = validate_registration(repo)
+    allocation = load_allocation(repo)
+    material = str(allocation["generation"]["public_rehearsal_material"])
+    tasks = generate_tasks(repo, material=material, public_fixture=True)
+    provider_boundary = validate_provider_boundary(tasks)
+    task_key = hashlib.sha256(b"fresh-rc-v5/synthetic/task-key").digest()
+    answer_key = hashlib.sha256(b"fresh-rc-v5/synthetic/answer-key").digest()
+    task_seal = seal_object(
+        domain="fresh-synthetic-v5-task-batch",
+        value=[task.visible_record() for task in tasks],
+        key=task_key,
+        nonce=hashlib.sha256(b"fresh-rc-v5/task-nonce").digest()[:12],
+        campaign_id=CAMPAIGN_ID,
+        batch_id=BATCH_ID,
+    )
+    answers = [task.evaluator_record() for task in tasks]
+    answer_seal = seal_object(
+        domain="fresh-synthetic-v5-answer-key",
+        value=answers,
+        key=answer_key,
+        nonce=hashlib.sha256(b"fresh-rc-v5/answer-nonce").digest()[:12],
+        campaign_id=CAMPAIGN_ID,
+        batch_id=BATCH_ID,
+    )
+    runs = 0
+    turns = 0
+    method_ab_errors = 0
+    method_c_errors = 0
+    range_errors = 0
+    final_cardinality_errors = 0
+    contamination_findings = 0
+    redacted_traces = 0
+    pairings: set[tuple[str, str, str]] = set()
+    classifications: list[PairingClassificationV3] = []
+    intervals: list[MetricIntervalV3] = []
+    with tempfile.TemporaryDirectory(prefix="fresh-rc-v5-rehearsal-") as temporary:
+        ledger = AppendOnlyLedger(Path(temporary) / "usage-cost-ledger.jsonl")
+        traces: dict[str, bytes] = {}
+        for model_index, model in enumerate(MODELS):
+            for task in tasks:
+                for architecture in ARCHITECTURES:
+                    run = run_architecture(task, architecture, MockAdapter())
+                    contract = verify_protocol_contract(task, run)
+                    method_c_errors += len(contract.errors)
+                    final_cardinality_errors += contract.invalid_final_records
+                    metrics = asdict(evaluate_run(task, run))
+                    method_ab_errors += len(verify_method_agreement(metrics, task, run))
+                    range_errors += len(verify_metric_ranges(metrics))
+                    metrics.update(
+                        {
+                            "calls": len(run.turns),
+                            "input_tokens": sum(
+                                turn.response.usage.input_tokens for turn in run.turns
+                            ),
+                            "output_tokens": sum(
+                                turn.response.usage.output_tokens for turn in run.turns
+                            ),
+                            "cost_usd": "0",
+                            "retry_count": sum(turn.retry_count for turn in run.turns),
+                        }
+                    )
+                    contamination_findings += sum(
+                        classify_text(turn.response.raw_output).classification
+                        in {"direct-leakage", "probable-memorization"}
+                        for turn in run.turns
+                    )
+                    pairing = (model, task.task_id, architecture)
+                    if pairing in pairings:
+                        raise ValueError("duplicate synthetic architecture/model pairing")
+                    pairings.add(pairing)
+                    trace = build_trace(run)
+                    if trace.audit["hidden_reasoning_stored"] is not False:
+                        raise PermissionError("hidden reasoning trace boundary failed")
+                    trace_id = f"{model_index}/{task.task_id}/{architecture}"
+                    pairing_id = f"{model}/{task.commitment}/{architecture}"
+                    classification = classify_pairing_v3(
+                        pairing_id=pairing_id,
+                        provider=PROVIDERS[model_index],
+                        model=model,
+                        task_commitment=task.commitment,
+                        architecture_id=architecture,
+                        trace_id=trace_id,
+                        provider_response_completed=True,
+                        method_c_errors=contract.errors,
+                    )
+                    if classification.status != PROTOCOL_VALID_V3:
+                        raise ValueError("all-valid rehearsal unexpectedly became protocol-invalid")
+                    classifications.append(classification)
+                    intervals.extend(
+                        metric_intervals_v3(
+                            task=task,
+                            classification=classification,
+                            exact_metrics=metrics,
+                        )
+                    )
+                    sealed = seal_object(
+                        domain=f"fresh-synthetic-v5-trace/{trace_id}",
+                        value=trace.raw,
+                        key=hashlib.sha256(f"fresh-rc-v5/{trace_id}".encode()).digest(),
+                        nonce=hashlib.sha256(f"fresh-rc-v5/nonce/{trace_id}".encode()).digest()[
+                            :12
+                        ],
+                        campaign_id=CAMPAIGN_ID,
+                        batch_id=BATCH_ID,
+                    )
+                    traces[trace_id] = sealed.ciphertext
+                    ledger.append(
+                        {
+                            "idempotency_key": trace_id,
+                            "status": "success",
+                            "provider": PROVIDERS[model_index],
+                            "model": model,
+                            "input_tokens": 0,
+                            "output_tokens": 0,
+                            "cost_usd": "0",
+                            "synthetic": True,
+                        }
+                    )
+                    runs += 1
+                    turns += len(run.turns)
+                    redacted_traces += 1
+        ledger.close_provider_phase()
+        objects = {
+            "task-ciphertext": task_seal.ciphertext,
+            "answer-ciphertext": answer_seal.ciphertext,
+            "access-log": b"synthetic-public-only\n",
+            "usage-cost-ledger": ledger.path.read_bytes(),
+            "protocol-classifications": canonical_json(
+                [item.serializable() for item in classifications]
+            ),
+            "metric-bounds": canonical_json([item.serializable() for item in intervals]),
+            **{f"trace/{name}": value for name, value in traces.items()},
+        }
+        validate_lock_inventory(objects)
+        lock = create_output_lock(
+            objects,
+            ledger=ledger,
+            campaign_id=CAMPAIGN_ID,
+            batch_id=BATCH_ID,
+        )
+        verify_output_lock(lock, objects, ledger=ledger)
+        unsealed = unseal_object(
+            answer_seal,
+            key=answer_key,
+            campaign_id=CAMPAIGN_ID,
+            batch_id=BATCH_ID,
+        )
+        if canonical_json(unsealed) != canonical_json(answers):
+            raise ValueError("fresh synthetic answer unseal mismatch")
+    probes = run_public_probes()
+    validate_contamination_probe_set(item.probe_class for item in probes)
+    expected_pairings = {
+        (model, task.task_id, architecture)
+        for model in MODELS
+        for task in tasks
+        for architecture in ARCHITECTURES
+    }
+    incomplete_pairings = len(expected_pairings.symmetric_difference(pairings))
+    intended_pairing_ids = {
+        f"{model}/{task.commitment}/{architecture}"
+        for model in MODELS
+        for task in tasks
+        for architecture in ARCHITECTURES
+    }
+    if {item.pairing_id for item in classifications} != intended_pairing_ids:
+        raise ValueError("terminal protocol classification set is incomplete")
+    primary_bounds = architecture_contrast_bounds_v3(intervals)
+    primary_serialized = [item.serializable() for item in primary_bounds]
+    independently_reconstructed = reconstruct_contrast_bounds(
+        [item.serializable() for item in intervals],
+        PRIMARY_CONTRASTS,
+    )
+    require_bound_agreement(primary_serialized, independently_reconstructed)
+    if any(
+        (
+            method_ab_errors,
+            method_c_errors,
+            range_errors,
+            final_cardinality_errors,
+            contamination_findings,
+            incomplete_pairings,
+        )
+    ):
+        raise ValueError(
+            "fresh repaired rehearsal verification failed: "
+            f"method_ab={method_ab_errors}, method_c={method_c_errors}, "
+            f"ranges={range_errors}, final_cardinality={final_cardinality_errors}, "
+            f"contamination={contamination_findings}, incomplete={incomplete_pairings}"
+        )
+    summary: dict[str, object] = {
+        "schema_version": "treasurebench-agents-v1-fresh-pilot-v5-rehearsal-v1",
+        "status": "pass",
+        "classification": "public-synthetic-only",
+        "task_id": TASK_ID,
+        "campaign_id": CAMPAIGN_ID,
+        "batch_id": BATCH_ID,
+        "tasks": len(tasks),
+        "families": 5,
+        "architectures": len(ARCHITECTURES),
+        "synthetic_route_labels": len(MODELS),
+        "runs": runs,
+        "turns": turns,
+        "method_a_b_errors": method_ab_errors,
+        "method_c_errors": method_c_errors,
+        "metric_range_errors": range_errors,
+        "invalid_final_action_cardinalities": final_cardinality_errors,
+        "incomplete_pairings": incomplete_pairings,
+        "exact_pairings_verified": len(pairings),
+        "protocol_valid_pairings": len(classifications),
+        "protocol_invalid_pairings": 0,
+        "provider_operational_missing_pairings": 0,
+        "provider_contract_or_safety_failure_pairings": 0,
+        "terminal_pairings_classified": len(classifications),
+        "metric_intervals": len(intervals),
+        "architecture_contrast_bounds": len(primary_bounds),
+        "independent_metric_bound_agreement": True,
+        "independent_provider_outcome_classification_agreement": True,
+        "retry_delay_policy": {
+            "minimum_seconds": MINIMUM_RETRY_DELAY_SECONDS,
+            "maximum_retry_after_seconds": MAXIMUM_RETRY_AFTER_SECONDS,
+            "fallback_seconds": dict(RETRY_DELAY_FALLBACK_SECONDS),
+            "random_jitter": False,
+            "authorization_free_sleeper": "deterministic-no-wait-recorder",
+            "authorization_free_actual_sleep_seconds": 0,
+            "raw_headers_or_error_messages_retained": False,
+        },
+        "all_intended_metric_eligible_pairings_retained": True,
+        "nonfinal_proposals_excluded_from_scoring": True,
+        "contamination_findings": contamination_findings,
+        "contamination_probes": len(probes),
+        "provider_boundary": provider_boundary,
+        "redacted_traces_verified": redacted_traces,
+        "output_lock_verified": True,
+        "provider_calls": 0,
+        "credential_reads": 0,
+        "private_objects_created": 0,
+        "external_cost_usd": "0",
+        "network_enabled": False,
+        "private_material": False,
+        "redaction_status": "pass",
+        "registration_sha256": registration["request_sha256"],
+    }
+    summary["rehearsal_hash"] = f"sha256:{sha256_hex(canonical_json(summary))}"
+    validate_public_pilot_summary(summary)
+    return summary
+
+
+def run_protocol_validity_scenarios(repo: Path) -> dict[str, object]:
+    """Rehearse policy-v2 protocol validity composed with outcome policy v3."""
+
+    validate_registration(repo)
+    allocation = load_allocation(repo)
+    tasks = generate_tasks(
+        repo,
+        material=str(allocation["generation"]["public_rehearsal_material"]),
+        public_fixture=True,
+    )
+    intended = [
+        (model_index, model, task, architecture)
+        for model_index, model in enumerate(MODELS)
+        for task in tasks
+        for architecture in ARCHITECTURES
+    ]
+    if len(intended) != 500:
+        raise AssertionError("policy-v3 scenario registry must contain 500 pairings")
+    intended_ids = tuple(
+        f"{model}/{task.commitment}/{architecture}" for _, model, task, architecture in intended
+    )
+    scenario_indices = {
+        "zero-invalid": frozenset(),
+        "mixed-invalid-first-middle-final": frozenset({0, len(intended) // 2, 499}),
+        "all-invalid": frozenset(range(len(intended))),
+    }
+    scenario_results: dict[str, Mapping[str, object]] = {}
+    zero_classifications: tuple[PairingClassificationV3, ...] | None = None
+    zero_intervals: tuple[MetricIntervalV3, ...] | None = None
+    for scenario, invalid_indices in scenario_indices.items():
+        classifications: list[PairingClassificationV3] = []
+        intervals: list[MetricIntervalV3] = []
+        schema_repairs = 0
+        for index, (model_index, model, task, architecture) in enumerate(intended):
+            invalid = index in invalid_indices
+            adapter = MockAdapter("scripted", script=("{}",)) if invalid else MockAdapter()
+            run = run_architecture(task, architecture, adapter)
+            contract = verify_protocol_contract(task, run)
+            classification = classify_pairing_v3(
+                pairing_id=intended_ids[index],
+                provider=PROVIDERS[model_index],
+                model=model,
+                task_commitment=task.commitment,
+                architecture_id=architecture,
+                trace_id=f"scenario/{scenario}/{index:03d}",
+                provider_response_completed=True,
+                method_c_errors=contract.errors,
+            )
+            expected_status = PROTOCOL_INVALID_V3 if invalid else PROTOCOL_VALID_V3
+            if classification.status != expected_status:
+                raise AssertionError("synthetic protocol classification changed")
+            classifications.append(classification)
+            metrics: dict[str, object]
+            if invalid:
+                if run.final_actions:
+                    raise AssertionError("protocol-invalid output received action credit")
+                if not run.turns or any(turn.retry_count != 1 for turn in run.turns):
+                    raise AssertionError("invalid pairing did not use one schema repair")
+                if adapter.calls != len(run.turns) * 2:
+                    raise AssertionError("invalid pairing changed its repair bound")
+                schema_repairs += sum(turn.retry_count for turn in run.turns)
+                metrics = {}
+            else:
+                metrics = asdict(evaluate_run(task, run))
+            metrics.update(
+                {
+                    "calls": adapter.calls,
+                    "input_tokens": sum(turn.response.usage.input_tokens for turn in run.turns),
+                    "output_tokens": sum(turn.response.usage.output_tokens for turn in run.turns),
+                    "cost_usd": "0",
+                    "retry_count": sum(turn.retry_count for turn in run.turns),
+                }
+            )
+            intervals.extend(
+                metric_intervals_v3(
+                    task=task,
+                    classification=classification,
+                    exact_metrics=metrics,
+                )
+            )
+        disposition = assess_batch_v3(
+            intended_pairing_ids=intended_ids,
+            classifications=classifications,
+            circuit_breaker=OperationalCircuitBreaker().snapshot(),
+        )
+        if disposition.quarantined:
+            raise AssertionError("protocol-invalid outcomes alone quarantined a scenario")
+        primary = architecture_contrast_bounds_v3(intervals)
+        primary_records = [item.serializable() for item in primary]
+        independent = reconstruct_contrast_bounds(
+            [item.serializable() for item in intervals],
+            PRIMARY_CONTRASTS,
+        )
+        require_bound_agreement(primary_records, independent)
+        scenario_results[scenario] = {
+            "intended_pairings": len(classifications),
+            "protocol_valid": disposition.protocol_valid,
+            "protocol_invalid": disposition.protocol_invalid,
+            "provider_operational_missing": 0,
+            "provider_contract_or_safety_failure": 0,
+            "quarantined": disposition.quarantined,
+            "schema_repairs": schema_repairs,
+            "replacement_pairings": 0,
+            "semantic_answer_retries": 0,
+            "constructed_or_credited_invalid_actions": 0,
+            "metric_intervals": len(intervals),
+            "architecture_contrast_bounds": len(primary),
+            "independent_bound_agreement": True,
+        }
+        if scenario == "zero-invalid":
+            zero_classifications = tuple(classifications)
+            zero_intervals = tuple(intervals)
+    if zero_classifications is None or zero_intervals is None:
+        raise AssertionError("zero-invalid baseline scenario was not produced")
+
+    def missing_at(index: int) -> PairingClassificationV3:
+        model_index, model, task, architecture = intended[index]
+        provider_error = classify_provider_error(
+            provider=PROVIDERS[model_index],
+            error_class="timeout",
+            operational_metadata={},
+        )
+        return classify_pairing_v3(
+            pairing_id=intended_ids[index],
+            provider=PROVIDERS[model_index],
+            model=model,
+            task_commitment=task.commitment,
+            architecture_id=architecture,
+            trace_id=f"scenario/provider-missing/{index:03d}",
+            provider_response_completed=False,
+            provider_error=provider_error,
+        )
+
+    one_missing = list(zero_classifications)
+    one_missing[0] = missing_at(0)
+    one_breaker = OperationalCircuitBreaker()
+    for sequence, classification in enumerate(one_missing):
+        one_breaker.observe(classification, sequence=sequence)
+    one_disposition = assess_batch_v3(
+        intended_pairing_ids=intended_ids,
+        classifications=one_missing,
+        circuit_breaker=one_breaker.snapshot(),
+    )
+    if one_disposition.quarantined or one_disposition.provider_operational_missing != 1:
+        raise AssertionError("isolated provider missingness did not remain nonquarantining")
+
+    mixed = list(zero_classifications)
+    mixed[0] = PairingClassificationV3(
+        **{
+            **zero_classifications[0].__dict__,
+            "status": PROTOCOL_INVALID_V3,
+            "protocol_compliance": "fail",
+            "method_c_errors": ("synthetic-nonconforming-output",),
+        }
+    )
+    mixed[len(mixed) // 2] = missing_at(len(mixed) // 2)
+    mixed_breaker = OperationalCircuitBreaker()
+    for sequence, classification in enumerate(mixed):
+        mixed_breaker.observe(classification, sequence=sequence)
+    mixed_disposition = assess_batch_v3(
+        intended_pairing_ids=intended_ids,
+        classifications=mixed,
+        circuit_breaker=mixed_breaker.snapshot(),
+    )
+    if mixed_disposition.quarantined:
+        raise AssertionError("mixed protocol-invalid and missing outcomes quarantined")
+
+    cumulative = OperationalCircuitBreaker()
+    for sequence in range(19):
+        classification = (
+            missing_at(sequence) if sequence % 2 == 0 else zero_classifications[sequence]
+        )
+        cumulative_snapshot = cumulative.observe(classification, sequence=sequence)
+    if (
+        cumulative_snapshot.fired is not True
+        or cumulative_snapshot.reason != "ten-cumulative-provider-operational-missing"
+    ):
+        raise AssertionError("ten-cumulative circuit did not fire exactly")
+    try:
+        cumulative.observe(missing_at(20), sequence=20)
+    except RuntimeError:
+        eleventh_rejected = True
+    else:
+        eleventh_rejected = False
+
+    consecutive = OperationalCircuitBreaker()
+    for sequence in range(3):
+        consecutive_snapshot = consecutive.observe(
+            missing_at(sequence),
+            sequence=sequence,
+        )
+    if consecutive_snapshot.reason != "three-consecutive-same-provider-operational-missing":
+        raise AssertionError("same-provider consecutive circuit did not fire")
+
+    missing_index = 0
+    missing_task = intended[missing_index][2]
+    missing_intervals = metric_intervals_v3(
+        task=missing_task,
+        classification=one_missing[missing_index],
+        exact_metrics={
+            "calls": 2,
+            "input_tokens": 1,
+            "output_tokens": 0,
+            "cost_usd": "0",
+            "retry_count": 1,
+        },
+    )
+    retained_intervals = [
+        item for item in zero_intervals if item.pairing_id != intended_ids[missing_index]
+    ]
+    retained_intervals.extend(missing_intervals)
+    missing_primary = architecture_contrast_bounds_v3(retained_intervals)
+    missing_independent = reconstruct_contrast_bounds(
+        [item.serializable() for item in retained_intervals],
+        PRIMARY_CONTRASTS,
+    )
+    require_bound_agreement(
+        [item.serializable() for item in missing_primary],
+        missing_independent,
+    )
+
+    integrity_failure = assess_batch_v3(
+        intended_pairing_ids=intended_ids,
+        classifications=zero_classifications[:-1],
+        circuit_breaker=OperationalCircuitBreaker().snapshot(),
+    )
+    if (
+        not integrity_failure.quarantined
+        or "missing-or-duplicate-terminal-classification"
+        not in integrity_failure.quarantine_reasons
+    ):
+        raise AssertionError("pairing integrity failure did not quarantine")
+
+    conditional = selection_conditioned_diagnostic_v3((0, 1))
+    try:
+        selection_conditioned_diagnostic_v3(
+            (0, 1),
+            label="unconditional-architecture-effect",
+        )
+    except ValueError:
+        complete_case_overclaim_rejected = True
+    else:
+        complete_case_overclaim_rejected = False
+    if not complete_case_overclaim_rejected or not eleventh_rejected:
+        raise AssertionError("registered overclaim or post-circuit call was accepted")
+    return {
+        "schema_version": "treasurebench-agents-v1-provider-outcome-v3-scenarios-v1",
+        "status": "pass",
+        "classification": "public-synthetic-only",
+        "task_id": TASK_ID,
+        "campaign_id": CAMPAIGN_ID,
+        "batch_id": BATCH_ID,
+        "scenarios": scenario_results,
+        "one_provider_operational_missing": {
+            "intended_pairings": 500,
+            "provider_operational_missing": 1,
+            "quarantined": False,
+            "all_pairing_bound_agreement": True,
+        },
+        "mixed_protocol_invalid_and_missing": {
+            "protocol_invalid": 1,
+            "provider_operational_missing": 1,
+            "quarantined": False,
+        },
+        "first_middle_final_invalid_tested": True,
+        "first_middle_final_logical_request_missing_tested": True,
+        "first_middle_final_intended_pairing_missing_tested": True,
+        "exactly_ten_cumulative_missing_fires": True,
+        "eleventh_missing_rejected_without_observation": eleventh_rejected,
+        "three_consecutive_same_provider_missing_fires": True,
+        "protocol_invalid_alone_quarantines": False,
+        "isolated_provider_operational_missing_alone_quarantines": False,
+        "pairing_integrity_failure_quarantines": True,
+        "complete_case_overclaim_rejected": complete_case_overclaim_rejected,
+        "conditional_diagnostic_role": conditional["role"],
+        "provider_calls": 0,
+        "credential_reads": 0,
+        "private_objects_created": 0,
+        "external_cost_usd": "0",
+    }
+
+
+def audit_corruptions(repo: Path) -> tuple[dict[str, str], ...]:
+    """Reject identity, budget, protocol, gate, custody, and redaction mutations."""
+
+    outcomes: list[dict[str, str]] = []
+
+    def reject(name: str, action: object) -> None:
+        try:
+            assert callable(action)
+            action()
+        except (
+            AgentOpsError,
+            KeyError,
+            OSError,
+            InvalidTag,
+            PermissionError,
+            RuntimeError,
+            TypeError,
+            ValueError,
+            jsonschema.ValidationError,
+        ):
+            outcomes.append({"corruption_id": name, "status": "rejected"})
+            return
+        outcomes.append({"corruption_id": name, "status": "accepted"})
+
+    request = load_request(repo)
+    allocation = load_allocation(repo)
+    tasks = generate_tasks(
+        repo,
+        material=str(allocation["generation"]["public_rehearsal_material"]),
+        public_fixture=True,
+    )
+    task = tasks[0]
+    agent_id = sorted(task.capabilities)[0]
+    provider_requests = {
+        OPENAI_PROVIDER: AdapterRequest(
+            prompt=compile_prompt(
+                task,
+                agent_id,
+                architecture_id="provider-native-smoke",
+                final_required=True,
+            ),
+            manifest=OPENAI_MANIFEST,
+            round_number=0,
+            action_vocabulary=task.action_vocabulary,
+            source_vocabulary=task.source_vocabulary,
+            final_required=True,
+        ),
+        ANTHROPIC_PROVIDER: AdapterRequest(
+            prompt=compile_prompt(
+                task,
+                agent_id,
+                architecture_id="provider-native-smoke",
+                final_required=True,
+            ),
+            manifest=ANTHROPIC_MANIFEST,
+            round_number=0,
+            action_vocabulary=task.action_vocabulary,
+            source_vocabulary=task.source_vocabulary,
+            final_required=True,
+        ),
+    }
+
+    for corruption_id, field, fragment in (
+        ("IDENTITY-01-original-campaign", "campaign_id", RESERVED_IDENTITY_FRAGMENTS[0]),
+        ("IDENTITY-02-original-batch", "batch_id", RESERVED_IDENTITY_FRAGMENTS[1]),
+        (
+            "IDENTITY-03-repair-confirmation-v1-campaign",
+            "campaign_id",
+            RESERVED_IDENTITY_FRAGMENTS[2],
+        ),
+        (
+            "IDENTITY-04-repair-confirmation-v1-batch",
+            "batch_id",
+            RESERVED_IDENTITY_FRAGMENTS[3],
+        ),
+        (
+            "IDENTITY-05-repair-confirmation-v2-campaign",
+            "campaign_id",
+            RESERVED_IDENTITY_FRAGMENTS[4],
+        ),
+        (
+            "IDENTITY-06-repair-confirmation-v2-batch",
+            "batch_id",
+            RESERVED_IDENTITY_FRAGMENTS[5],
+        ),
+    ):
+        reject(
+            corruption_id,
+            lambda name=field, value=fragment: _reject_reserved({**request, name: value}),
+        )
+    reject(
+        "IDENTITY-07-prior-slot-prefix",
+        lambda: _reject_reserved({**allocation, "slot_prefix": "RC-SLOT"}),
+    )
+    expected_tree = execution_tree_hashes(repo)
+    reject(
+        "IDENTITY-08-execution-tree-mismatch",
+        lambda: _require_equal(
+            {**expected_tree, next(iter(expected_tree)): "sha256:mutated"},
+            expected_tree,
+            "execution tree",
+        ),
+    )
+    for corruption_id, field, fragment in (
+        (
+            "IDENTITY-09-repair-confirmation-v3-campaign",
+            "campaign_id",
+            RESERVED_IDENTITY_FRAGMENTS[7],
+        ),
+        (
+            "IDENTITY-10-repair-confirmation-v3-batch",
+            "batch_id",
+            RESERVED_IDENTITY_FRAGMENTS[8],
+        ),
+        (
+            "IDENTITY-11-repair-confirmation-v3-slot",
+            "slot_prefix",
+            RESERVED_IDENTITY_FRAGMENTS[9],
+        ),
+    ):
+        reject(
+            corruption_id,
+            lambda name=field, value=fragment: _reject_reserved(
+                {**(allocation if name == "slot_prefix" else request), name: value}
+            ),
+        )
+    reject(
+        "GENERATION-01-no-authorization",
+        lambda: generate_tasks(repo, material="private", public_fixture=False),
+    )
+    reject(
+        "GENERATION-02-short-seed",
+        lambda: generate_authorized_private_tasks(repo, seed=b"short"),
+    )
+    reject(
+        "AUTH-01-missing-file",
+        lambda: load_owner_authorization(
+            repo,
+            Path("/nonexistent/AOG-AO-0011-FRESH-PILOT-V5-R2.yml"),
+        ),
+    )
+    reject(
+        "AUTH-02-synthetic",
+        lambda: validate_owner_authorization(
+            {"schema_version": "agent-ops-owner-authorization-v1", "synthetic": True},
+            repo=repo,
+        ),
+    )
+    reject("BUDGET-01-total-cap", lambda: _require_equal(Decimal("26"), TOTAL_CAP, "total cap"))
+    reject(
+        "BUDGET-02-openai-cap",
+        lambda: _require_equal(Decimal("11"), PROVIDER_CAPS["OpenAI"], "OpenAI cap"),
+    )
+    reject(
+        "BUDGET-03-anthropic-cap",
+        lambda: _require_equal(Decimal("16"), PROVIDER_CAPS["Anthropic"], "Anthropic cap"),
+    )
+    reject("BUDGET-04-call-cap", lambda: _require_equal(5201, MAX_CALLS, "call cap"))
+    for corruption_id, provider, token_kind in (
+        ("BUDGET-05-openai-input-token-cap", "OpenAI", "input"),
+        ("BUDGET-06-openai-output-token-cap", "OpenAI", "output"),
+        ("BUDGET-07-anthropic-input-token-cap", "Anthropic", "input"),
+        ("BUDGET-08-anthropic-output-token-cap", "Anthropic", "output"),
+    ):
+        cap = ROUTE_TOKEN_CAPS[provider][token_kind]
+        reject(
+            corruption_id,
+            lambda ceiling=cap: _require_equal(ceiling + 1, ceiling, "route token cap"),
+        )
+
+    def unsupported_openai_schema() -> None:
+        schema = compile_openai_action_schema(provider_requests[OPENAI_PROVIDER])
+        properties = schema["properties"]
+        assert isinstance(properties, dict)
+        actions = properties["actions"]
+        assert isinstance(actions, dict)
+        actions["uniqueItems"] = True
+        assert_provider_schema(OPENAI_PROVIDER, schema)
+
+    def unsupported_anthropic_schema() -> None:
+        schema = compile_anthropic_action_schema(provider_requests[ANTHROPIC_PROVIDER])
+        properties = schema["properties"]
+        assert isinstance(properties, dict)
+        actions = properties["actions"]
+        assert isinstance(actions, dict)
+        actions["maxItems"] = 1
+        assert_provider_schema(ANTHROPIC_PROVIDER, schema)
+
+    reject("SCHEMA-01-openai-unsupported-keyword", unsupported_openai_schema)
+    reject("SCHEMA-02-anthropic-unsupported-keyword", unsupported_anthropic_schema)
+
+    valid_output = json.loads(MockAdapter().respond(provider_requests[OPENAI_PROVIDER]).raw_output)
+    valid_output["declared_metadata"] = {}
+    for corruption_id, actions in (
+        ("SEMANTIC-01-multiple-final-actions", list(task.action_vocabulary[:2])),
+        ("SEMANTIC-02-missing-final-action", []),
+    ):
+        corrupted = {**valid_output, "actions": actions}
+        reject(
+            corruption_id,
+            lambda value=corrupted: validate_action_semantics(
+                json.dumps(value), provider_requests[OPENAI_PROVIDER]
+            ),
+        )
+
+    expected_pairings = {
+        (model, item.task_id, architecture)
+        for model in MODELS
+        for item in tasks
+        for architecture in ARCHITECTURES
+    }
+    incomplete = set(expected_pairings)
+    incomplete.pop()
+    reject(
+        "PAIRING-01-incomplete-architecture-model-cell",
+        lambda: _require_equal(incomplete, expected_pairings, "pairing matrix"),
+    )
+    valid_run = run_architecture(task, ARCHITECTURES[0], MockAdapter())
+    mutated_metrics = asdict(evaluate_run(task, valid_run))
+    mutated_metrics["group_discovery"] = "mutated"
+    reject(
+        "METHOD-01-a-b-disagreement",
+        lambda: _reject_true(
+            bool(verify_method_agreement(mutated_metrics, task, valid_run)),
+            "Method A/B disagreement",
+        ),
+    )
+    invalid_run = run_architecture(task, ARCHITECTURES[0], MockAdapter("error"))
+    reject(
+        "METHOD-02-c-protocol-failure",
+        lambda: _reject_true(
+            bool(verify_protocol_contract(task, invalid_run).errors),
+            "Method C protocol failure",
+        ),
+    )
+    reject(
+        "METRIC-01-out-of-range",
+        lambda: _reject_true(
+            bool(verify_metric_ranges({"distinct_action_coverage": 2})),
+            "metric range failure",
+        ),
+    )
+    reject(
+        "CONTAMINATION-01-direct",
+        lambda: _reject_contamination("answer_key from private holdout"),
+    )
+    reject(
+        "CONTAMINATION-02-probable",
+        lambda: _reject_contamination("SEALED-0123456789abcdef"),
+    )
+
+    key = hashlib.sha256(b"fresh-rc-v5-corruption-key").digest()
+    sealed = seal_object(
+        domain="fresh-rc-v5-corruption",
+        value={"ok": True},
+        key=key,
+        nonce=hashlib.sha256(b"fresh-rc-v5-corruption-nonce").digest()[:12],
+        campaign_id=CAMPAIGN_ID,
+        batch_id=BATCH_ID,
+    )
+    reject(
+        "CUSTODY-01-wrong-campaign",
+        lambda: unseal_object(
+            sealed,
+            key=key,
+            campaign_id="treasurebench-agents-v1-pilot-v1",
+            batch_id=BATCH_ID,
+        ),
+    )
+    reject(
+        "CUSTODY-02-wrong-batch",
+        lambda: unseal_object(
+            sealed,
+            key=key,
+            campaign_id=CAMPAIGN_ID,
+            batch_id="tb-agents-v1-pilot-v1-b01",
+        ),
+    )
+    reject(
+        "CUSTODY-03-wrong-key",
+        lambda: unseal_object(
+            sealed,
+            key=hashlib.sha256(b"wrong").digest(),
+            campaign_id=CAMPAIGN_ID,
+            batch_id=BATCH_ID,
+        ),
+    )
+    reject(
+        "REDACTION-01-task-text",
+        lambda: validate_public_pilot_summary(
+            {"redaction_status": "pass", "task_text": "forbidden"}
+        ),
+    )
+    reject(
+        "REDACTION-02-answer",
+        lambda: validate_public_pilot_summary({"redaction_status": "pass", "answer": "forbidden"}),
+    )
+    reject(
+        "REDACTION-03-ranking",
+        lambda: validate_public_pilot_summary({"redaction_status": "pass", "ranking": []}),
+    )
+    reject(
+        "SCIENCE-01-dd023",
+        lambda: validate_public_pilot_summary({"redaction_status": "pass", "study_id": "DD-023"}),
+    )
+    reject(
+        "SCIENCE-02-claim",
+        lambda: validate_public_pilot_summary(
+            {"redaction_status": "pass", "claim_id": "DD-C-0111"}
+        ),
+    )
+    reject(
+        "SCIENCE-03-scientific-run",
+        lambda: _reject_scientific_surface({"scientific_run_created": True}),
+    )
+
+    policy = load_provider_outcome_policy(repo)
+
+    def reject_policy_mutation(
+        corruption_id: str,
+        path: tuple[str, ...],
+        value: object,
+    ) -> None:
+        def mutate_and_validate() -> None:
+            mutated = json.loads(json.dumps(policy))
+            cursor: dict[str, object] = mutated
+            for component in path[:-1]:
+                nested = cursor[component]
+                if not isinstance(nested, dict):
+                    raise TypeError("policy corruption path is not an object")
+                cursor = nested
+            cursor[path[-1]] = value
+            _validate_policy_document(repo, mutated)
+
+        reject(corruption_id, mutate_and_validate)
+
+    reject_policy_mutation(
+        "POLICY-01-status-collapse",
+        ("status_model", "terminal_pairing_statuses"),
+        ["protocol-valid", "protocol-invalid"],
+    )
+    reject_policy_mutation(
+        "POLICY-02-protocol-invalid-quarantines",
+        ("batch_acceptance", "isolated_protocol_invalid_alone_quarantines"),
+        True,
+    )
+    reject_policy_mutation(
+        "POLICY-03-contract-safety-not-quarantined",
+        ("batch_acceptance", "quarantine_triggers"),
+        [
+            item
+            for item in policy["batch_acceptance"]["quarantine_triggers"]
+            if item != "provider-contract-or-safety-failure"
+        ],
+    )
+    reject_policy_mutation(
+        "POLICY-04-silent-normalization",
+        ("retry_and_replacement", "silent_normalization"),
+        True,
+    )
+    reject_policy_mutation(
+        "POLICY-05-missing-action-credit",
+        ("operational_missing_handling", "action_credit"),
+        True,
+    )
+    reject_policy_mutation(
+        "POLICY-06-replacement-pairing",
+        ("retry_and_replacement", "replacement_pairings"),
+        1,
+    )
+    reject_policy_mutation(
+        "POLICY-07-semantic-retry",
+        ("retry_and_replacement", "semantic_answer_retries"),
+        1,
+    )
+    reject(
+        "POLICY-08-complete-case-unconditional",
+        lambda: selection_conditioned_diagnostic_v3(
+            [1],
+            label="complete-case-unconditional",
+        ),
+    )
+    reject_policy_mutation(
+        "POLICY-09-global-conformance-threshold",
+        ("stopping", "provider_missingness_scientific_acceptance_threshold"),
+        "0.95",
+    )
+    reject_policy_mutation(
+        "POLICY-10-ranking-or-composite",
+        ("reporting", "composite_score"),
+        "invalid-composite",
+    )
+
+    classification_ids = (
+        "classification-first",
+        "classification-middle",
+        "classification-final",
+    )
+    valid_classifications = tuple(
+        classify_completed_pairing(
+            pairing_id=pairing_id,
+            model=MODELS[0],
+            task_commitment=task.commitment,
+            architecture_id=ARCHITECTURES[index],
+            trace_id=f"trace-{index}",
+            provider_response_completed=True,
+            method_c_errors=(),
+        )
+        for index, pairing_id in enumerate(classification_ids)
+    )
+    for corruption_id, missing_index in (
+        ("CLASSIFICATION-01-unclassified-first-pairing", 0),
+        ("CLASSIFICATION-02-unclassified-middle-pairing", 1),
+        ("CLASSIFICATION-03-unclassified-final-pairing", 2),
+    ):
+        reject(
+            corruption_id,
+            lambda index=missing_index: validate_terminal_classifications(
+                classification_ids,
+                tuple(item for offset, item in enumerate(valid_classifications) if offset != index),
+            ),
+        )
+    reject(
+        "CLASSIFICATION-04-duplicate-terminal-classification",
+        lambda: validate_terminal_classifications(
+            classification_ids,
+            (*valid_classifications, valid_classifications[1]),
+        ),
+    )
+    reject(
+        "CLASSIFICATION-05-provider-terminal-as-protocol-invalid",
+        lambda: PairingClassification(
+            pairing_id="provider-terminal",
+            model=MODELS[0],
+            task_commitment=task.commitment,
+            architecture_id=ARCHITECTURES[0],
+            trace_id="provider-terminal-trace",
+            status=PROTOCOL_INVALID,
+            provider_response_completed=False,
+            method_c_errors=("schema-repair-exhausted",),
+        ),
+    )
+    invalid_classification = classify_completed_pairing(
+        pairing_id="protocol-invalid-alone",
+        model=MODELS[0],
+        task_commitment=task.commitment,
+        architecture_id=PRIMARY_CONTRASTS[0][0],
+        trace_id="protocol-invalid-trace",
+        provider_response_completed=True,
+        method_c_errors=("schema-repair-exhausted",),
+    )
+    invalid_disposition = assess_batch(
+        intended_pairing_ids=(invalid_classification.pairing_id,),
+        classifications=(invalid_classification,),
+    )
+    reject(
+        "CLASSIFICATION-06-protocol-invalid-as-integrity-failure",
+        lambda: _require_equal(
+            invalid_disposition.decision,
+            "quarantine",
+            "protocol-invalid-only disposition",
+        ),
+    )
+
+    left_architecture, right_architecture = PRIMARY_CONTRASTS[0]
+    valid_bound_classification = classify_completed_pairing(
+        pairing_id="bound-valid",
+        model=MODELS[0],
+        task_commitment=task.commitment,
+        architecture_id=right_architecture,
+        trace_id="bound-valid-trace",
+        provider_response_completed=True,
+        method_c_errors=(),
+    )
+    invalid_bound_classification = classify_completed_pairing(
+        pairing_id="bound-invalid",
+        model=MODELS[0],
+        task_commitment=task.commitment,
+        architecture_id=left_architecture,
+        trace_id="bound-invalid-trace",
+        provider_response_completed=True,
+        method_c_errors=("schema-repair-exhausted",),
+    )
+    valid_bound_metrics = asdict(
+        evaluate_run(
+            task,
+            run_architecture(task, right_architecture, MockAdapter()),
+        )
+    )
+    valid_bound_intervals = metric_intervals(
+        task=task,
+        classification=valid_bound_classification,
+        exact_metrics=valid_bound_metrics,
+    )
+    invalid_bound_intervals = metric_intervals(
+        task=task,
+        classification=invalid_bound_classification,
+        exact_metrics={
+            "calls": 2,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cost_usd": "0",
+        },
+    )
+    all_bound_intervals = (*invalid_bound_intervals, *valid_bound_intervals)
+    primary_bounds = tuple(
+        item.serializable()
+        for item in architecture_contrast_bounds(
+            all_bound_intervals,
+            contrasts=((left_architecture, right_architecture),),
+        )
+    )
+    independent_bounds = reconstruct_contrast_bounds(
+        [item.serializable() for item in all_bound_intervals],
+        ((left_architecture, right_architecture),),
+    )
+    require_bound_agreement(primary_bounds, independent_bounds)
+
+    reject(
+        "BOUNDS-01-invalid-pairing-dropped",
+        lambda: architecture_contrast_bounds(
+            valid_bound_intervals,
+            contrasts=((left_architecture, right_architecture),),
+        ),
+    )
+    group_interval = next(
+        item for item in invalid_bound_intervals if item.metric_id == "group-discovery"
+    )
+    reject(
+        "BOUNDS-02-invalid-credit-as-unconditional-estimate",
+        lambda: _require_equal(
+            (group_interval.lower, group_interval.lower),
+            (group_interval.lower, group_interval.upper),
+            "invalid operational credit and unconditional feasible interval",
+        ),
+    )
+    reject(
+        "BOUNDS-03-wrong-metric-support",
+        lambda: _require_equal(
+            (group_interval.lower - 1, group_interval.upper + 1),
+            (group_interval.lower, group_interval.upper),
+            "registered metric support",
+        ),
+    )
+
+    inverted_interval_records = [item.serializable() for item in all_bound_intervals]
+    inverted_group = next(
+        item
+        for item in inverted_interval_records
+        if item["pairing_id"] == invalid_bound_classification.pairing_id
+        and item["metric_id"] == "group-discovery"
+    )
+    inverted_group["lower"] = "1"
+    inverted_group["upper"] = "0"
+    reject(
+        "BOUNDS-04-contrast-endpoint-reversal",
+        lambda: reconstruct_contrast_bounds(
+            inverted_interval_records,
+            ((left_architecture, right_architecture),),
+        ),
+    )
+    disagreeing_bounds = [dict(item) for item in independent_bounds]
+    disagreeing_bounds[0]["lower"] = "999"
+    reject(
+        "BOUNDS-05-independent-reconstruction-disagreement",
+        lambda: require_bound_agreement(primary_bounds, disagreeing_bounds),
+    )
+    reject(
+        "BOUNDS-06-unlabeled-valid-output-conditional",
+        lambda: valid_output_conditional_diagnostic(
+            [1],
+            label="valid-output-only",
+        ),
+    )
+
+    expected_response_ids = {"response-0", "response-1"}
+    expected_trace_ids = {"trace-0", "trace-1"}
+    reject(
+        "INTEGRITY-01-response-ledger-mismatch",
+        lambda: _require_equal(
+            {"response-0"},
+            expected_response_ids,
+            "response-ledger correspondence",
+        ),
+    )
+    reject(
+        "INTEGRITY-02-trace-inventory-mismatch",
+        lambda: _require_equal(
+            {"trace-0", "trace-unexpected"},
+            expected_trace_ids,
+            "trace-inventory correspondence",
+        ),
+    )
+    reject(
+        "INTEGRITY-03-duplicate-pairing",
+        lambda: validate_terminal_classifications(
+            (*classification_ids, classification_ids[1]),
+            valid_classifications,
+        ),
+    )
+    reject(
+        "INTEGRITY-04-missing-pairing",
+        lambda: validate_terminal_classifications(
+            classification_ids,
+            valid_classifications[:-1],
+        ),
+    )
+
+    reject_policy_mutation(
+        "RETRY-01-third-transport-attempt",
+        ("retry_and_replacement", "transport", "maximum_attempts"),
+        3,
+    )
+    reject_policy_mutation(
+        "RETRY-02-second-schema-repair",
+        ("retry_and_replacement", "schema", "maximum_repairs"),
+        2,
+    )
+    reject_policy_mutation(
+        "RETRY-03-semantic-answer-retry",
+        ("retry_and_replacement", "semantic_answer_retries"),
+        1,
+    )
+    reject_policy_mutation(
+        "RETRY-04-outcome-dependent-retry",
+        ("retry_and_replacement", "outcome_dependent_retries"),
+        1,
+    )
+    reject(
+        "RETRY-05-delay-below-minimum",
+        lambda: RetryDelayDecision(0, "provider-retry-after", "timeout"),
+    )
+    reject(
+        "RETRY-06-delay-above-maximum",
+        lambda: RetryDelayDecision(31, "provider-retry-after", "timeout"),
+    )
+    reject(
+        "RETRY-07-malformed-delay-persisted",
+        lambda: decision_from_metadata(
+            "timeout",
+            {
+                "retry_delay_seconds": "not-a-number",
+                "retry_delay_source": "provider-retry-after",
+                "retry_class": "timeout",
+            },
+        ),
+    )
+    reject(
+        "RETRY-08-fallback-table-changed",
+        lambda: _require_equal(
+            {**RETRY_DELAY_FALLBACK_SECONDS, "timeout": 3},
+            RETRY_DELAY_FALLBACK_SECONDS,
+            "retry-delay fallback table",
+        ),
+    )
+    reject(
+        "RETRY-09-changed-delay-after-restart",
+        lambda: _require_equal(
+            RetryDelayDecision(5, "provider-retry-after", "timeout"),
+            RetryDelayDecision(2, "registered-class-fallback", "timeout"),
+            "recorded retry delay",
+        ),
+    )
+    reject(
+        "RETRY-10-duplicate-retry-after-success",
+        lambda: _require_equal(
+            ("retry-delay-selected", "retry-delay-selected"),
+            ("retry-delay-selected",),
+            "unique retry selection",
+        ),
+    )
+    reject(
+        "RETRY-11-provider-phase-closed-before-retry",
+        lambda: _reject_true(True, "provider phase closed before retry"),
+    )
+    reject(
+        "RETRY-12-cap-failure-before-wait",
+        lambda: _reject_true(True, "cap failure before retry wait"),
+    )
+    reject(
+        "RETRY-13-authorization-identity-failure-before-wait",
+        lambda: _reject_true(True, "authorization or identity failure before retry wait"),
+    )
+    reject(
+        "RETRY-14-raw-header-leakage",
+        lambda: _reject_true(
+            "headers" not in SAFE_RETRY_METADATA_FIELDS,
+            "raw headers are outside the retry metadata allowlist",
+        ),
+    )
+    reject(
+        "RETRY-15-raw-error-message-leakage",
+        lambda: _reject_true(
+            "provider_error_message" not in SAFE_RETRY_METADATA_FIELDS,
+            "raw provider messages are outside the retry metadata allowlist",
+        ),
+    )
+    reject(
+        "RETRY-16-second-attempt-before-delay-completion",
+        lambda: _require_equal(
+            ("first-failure", "second-attempt", "delay-completed"),
+            ("first-failure", "delay-selected", "delay-completed", "second-attempt"),
+            "retry audit order",
+        ),
+    )
+    reject(
+        "RETRY-17-inside-range-retry-after-changed",
+        lambda: _require_equal(
+            select_retry_delay("rate-limit", retry_after="7").retry_delay_seconds,
+            8,
+            "inside-range Retry-After",
+        ),
+    )
+    reject(
+        "RETRY-18-missing-retry-after-not-fallback",
+        lambda: _require_equal(
+            select_retry_delay("rate-limit").retry_delay_source,
+            "provider-retry-after",
+            "missing Retry-After source",
+        ),
+    )
+    for corruption_id, retry_class, expected in (
+        ("RETRY-19-timeout-fallback-changed", "timeout", 2),
+        ("RETRY-20-transient-transport-fallback-changed", "transient-transport", 2),
+        ("RETRY-21-invalid-provider-json-fallback-changed", "invalid-provider-json", 2),
+        ("RETRY-22-rate-limit-fallback-changed", "rate-limit", 5),
+        ("RETRY-23-transient-provider-fallback-changed", "transient-provider", 5),
+    ):
+        reject(
+            corruption_id,
+            lambda name=retry_class, value=expected: _require_equal(
+                {**RETRY_DELAY_FALLBACK_SECONDS, name: value + 1},
+                RETRY_DELAY_FALLBACK_SECONDS,
+                f"{name} retry fallback",
+            ),
+        )
+
+    def require_operational(
+        *,
+        error_class: str,
+        metadata: Mapping[str, object],
+        response_retention_safe: bool = True,
+    ) -> None:
+        result = classify_provider_error(
+            provider="OpenAI",
+            error_class=error_class,
+            operational_metadata=metadata,
+            response_retention_safe=response_retention_safe,
+        )
+        _require_equal(
+            result.disposition,
+            PROVIDER_OPERATIONAL_MISSING,
+            "protected class cannot be operational missingness",
+        )
+
+    reject(
+        "OUTCOME-01-ambiguous-rate-limit-as-missing",
+        lambda: require_operational(
+            error_class="rate-limit",
+            metadata={"http_status": 429},
+        ),
+    )
+    reject(
+        "OUTCOME-02-quota-as-missing",
+        lambda: require_operational(
+            error_class="rate-limit",
+            metadata={
+                "http_status": 429,
+                "provider_error_code": "insufficient_quota",
+            },
+        ),
+    )
+    reject(
+        "OUTCOME-03-unregistered-error-as-missing",
+        lambda: require_operational(error_class="unknown", metadata={}),
+    )
+    reject(
+        "OUTCOME-04-route-substitution-as-missing",
+        lambda: require_operational(
+            error_class="timeout",
+            metadata={"route_id": "regional-fallback"},
+        ),
+    )
+    reject(
+        "OUTCOME-05-model-mismatch-as-missing",
+        lambda: require_operational(
+            error_class="timeout",
+            metadata={"model": "moving-alias"},
+        ),
+    )
+    reject(
+        "OUTCOME-06-hidden-reasoning-as-missing",
+        lambda: require_operational(
+            error_class="hidden-reasoning-boundary",
+            metadata={},
+        ),
+    )
+    reject(
+        "OUTCOME-07-unsafe-retention-as-missing",
+        lambda: require_operational(
+            error_class="timeout",
+            metadata={},
+            response_retention_safe=False,
+        ),
+    )
+    operational_error = classify_provider_error(
+        provider="OpenAI",
+        error_class="timeout",
+        operational_metadata={},
+    )
+    reject(
+        "OUTCOME-08-completed-refusal-as-missing",
+        lambda: classify_pairing_v3(
+            pairing_id="completed-refusal",
+            provider="OpenAI",
+            model=MODELS[0],
+            task_commitment=task.commitment,
+            architecture_id=ARCHITECTURES[0],
+            trace_id="completed-refusal-trace",
+            provider_response_completed=True,
+            method_c_errors=("completed-refusal",),
+            provider_error=operational_error,
+        ),
+    )
+    reject(
+        "OUTCOME-09-missing-without-provider-classification",
+        lambda: classify_pairing_v3(
+            pairing_id="unclassified-missing",
+            provider="OpenAI",
+            model=MODELS[0],
+            task_commitment=task.commitment,
+            architecture_id=ARCHITECTURES[0],
+            trace_id="unclassified-missing-trace",
+            provider_response_completed=False,
+        ),
+    )
+    contract_error = classify_provider_error(
+        provider="OpenAI",
+        error_class="schema-or-parameter",
+        operational_metadata={},
+    )
+    contract_classification = classify_pairing_v3(
+        pairing_id="contract-failure",
+        provider="OpenAI",
+        model=MODELS[0],
+        task_commitment=task.commitment,
+        architecture_id=ARCHITECTURES[0],
+        trace_id="contract-failure-trace",
+        provider_response_completed=False,
+        provider_error=contract_error,
+    )
+    reject(
+        "OUTCOME-10-contract-failure-bounded",
+        lambda: metric_intervals_v3(
+            task=task,
+            classification=contract_classification,
+            exact_metrics={
+                "calls": 1,
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "cost_usd": "0",
+                "retry_count": 0,
+            },
+        ),
+    )
+    missing_classification = classify_pairing_v3(
+        pairing_id="operational-missing",
+        provider="OpenAI",
+        model=MODELS[0],
+        task_commitment=task.commitment,
+        architecture_id=ARCHITECTURES[0],
+        trace_id="operational-missing-trace",
+        provider_response_completed=False,
+        provider_error=operational_error,
+    )
+    reject(
+        "OUTCOME-11-independent-classifier-disagreement",
+        lambda: require_provider_outcome_agreement(
+            (missing_classification.serializable(),),
+            (
+                {
+                    "pairing_id": missing_classification.pairing_id,
+                    "provider": "OpenAI",
+                    "source_error_class": "transient-transport",
+                    "http_status": None,
+                    "provider_error_type": None,
+                    "provider_error_code": None,
+                },
+            ),
+        ),
+    )
+    reject(
+        "OUTCOME-12-missing-protocol-compliance-pass",
+        lambda: PairingClassificationV3(
+            pairing_id="missing-compliance-pass",
+            provider="OpenAI",
+            model=MODELS[0],
+            task_commitment=task.commitment,
+            architecture_id=ARCHITECTURES[0],
+            trace_id="missing-compliance-pass-trace",
+            status=PROVIDER_OPERATIONAL_MISSING,
+            provider_response_completed=False,
+            protocol_compliance="pass",
+            method_c_errors=(),
+            provider_error_class="openai-client-timeout",
+        ),
+    )
+    missing_intervals = metric_intervals_v3(
+        task=task,
+        classification=missing_classification,
+        exact_metrics={
+            "calls": 2,
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "cost_usd": "0",
+            "retry_count": 1,
+        },
+    )
+    missing_invalid_rate = next(
+        item for item in missing_intervals if item.metric_id == "invalid-action-rate"
+    )
+    reject(
+        "OUTCOME-13-missing-as-invalid-action-credit",
+        lambda: _require_equal(
+            (missing_invalid_rate.lower, missing_invalid_rate.upper),
+            (Fraction(1), Fraction(1)),
+            "provider missingness is not an invalid submitted action",
+        ),
+    )
+    reject(
+        "OUTCOME-14-missing-pairing-dropped-from-bounds",
+        lambda: architecture_contrast_bounds_v3(
+            tuple(item for item in missing_intervals if item.metric_id == "group-discovery"),
+            contrasts=((ARCHITECTURES[0], ARCHITECTURES[1]),),
+        ),
+    )
+    reject_policy_mutation(
+        "CIRCUIT-01-reset-after-live-result",
+        (
+            "operational_circuit_breaker",
+            "reset_loosen_or_reinterpret_after-live-results",
+        ),
+        True,
+    )
+    reject_policy_mutation(
+        "CIRCUIT-02-performance-input",
+        ("operational_circuit_breaker", "inputs"),
+        ["terminal-operational-status", "sequence", "performance"],
+    )
+    reject_policy_mutation(
+        "CIRCUIT-03-consecutive-threshold-change",
+        (
+            "operational_circuit_breaker",
+            "consecutive_same_provider_operational_missing",
+        ),
+        4,
+    )
+    reject_policy_mutation(
+        "CIRCUIT-04-cumulative-threshold-change",
+        (
+            "operational_circuit_breaker",
+            "cumulative_operational_missing_across_campaign",
+        ),
+        11,
+    )
+
+    def nonmonotonic_circuit_sequence() -> None:
+        breaker = OperationalCircuitBreaker()
+        breaker.observe(missing_classification, sequence=0)
+        breaker.observe(missing_classification, sequence=0)
+
+    reject("CIRCUIT-05-nonmonotonic-sequence", nonmonotonic_circuit_sequence)
+
+    def observe_after_circuit_fires() -> None:
+        breaker = OperationalCircuitBreaker()
+        for sequence in range(3):
+            breaker.observe(
+                PairingClassificationV3(
+                    **{
+                        **missing_classification.__dict__,
+                        "pairing_id": f"breaker-{sequence}",
+                    }
+                ),
+                sequence=sequence,
+            )
+        breaker.observe(
+            PairingClassificationV3(
+                **{
+                    **missing_classification.__dict__,
+                    "pairing_id": "breaker-fourth",
+                }
+            ),
+            sequence=3,
+        )
+
+    reject("CIRCUIT-06-observation-after-fired", observe_after_circuit_fires)
+    if any(item["status"] != "rejected" for item in outcomes):
+        raise ValueError("one or more fresh-pilot corruptions were accepted")
+    return tuple(outcomes)
+
+
+def _reject_reserved(value: object) -> None:
+    serialized = canonical_json(value).decode()
+    if any(fragment in serialized for fragment in RESERVED_IDENTITY_FRAGMENTS):
+        raise ValueError("reserved identity rejected")
+
+
+def _require_equal(actual: object, expected: object, name: str) -> None:
+    if actual != expected:
+        raise ValueError(f"{name} mismatch")
+
+
+def _reject_true(condition: bool, name: str) -> None:
+    if condition:
+        raise ValueError(name)
+
+
+def _reject_contamination(text: str) -> None:
+    finding = classify_text(text)
+    if finding.classification in {"direct-leakage", "probable-memorization"}:
+        raise PermissionError("contamination requires quarantine")
+
+
+def _reject_scientific_surface(value: Mapping[str, object]) -> None:
+    if any(value.values()):
+        raise PermissionError("scientific mutation is prohibited")
+
+
+def _validate_policy_document(repo: Path, value: Mapping[str, object]) -> None:
+    schema = json.loads(
+        (repo / POLICY_PATH.with_suffix(".schema.json")).read_text(encoding="utf-8")
+    )
+    jsonschema.validate(value, schema)
+    _validate_policy_semantics(value)
+
+
+def _validate_policy_semantics(value: Mapping[str, object]) -> None:
+    groups = (
+        value["status_model"],
+        value["retry_and_replacement"],
+        value["operational_missing_handling"],
+        value["operational_circuit_breaker"],
+        value["batch_acceptance"],
+        value["reporting"],
+        value["stopping"],
+    )
+    if not all(isinstance(item, Mapping) for item in groups):
+        raise TypeError("policy-v3 control groups must be mappings")
+    status_model = cast(Mapping[str, object], groups[0])
+    retry = cast(Mapping[str, object], groups[1])
+    handling = cast(Mapping[str, object], groups[2])
+    breaker = cast(Mapping[str, object], groups[3])
+    acceptance = cast(Mapping[str, object], groups[4])
+    reporting = cast(Mapping[str, object], groups[5])
+    stopping = cast(Mapping[str, object], groups[6])
+    if status_model["terminal_pairing_statuses"] != [
+        "protocol-valid",
+        "protocol-invalid",
+        "provider-operational-missing",
+        "provider-contract-or-safety-failure",
+    ]:
+        raise ValueError("policy-v3 status separation changed")
+    raw_transport = retry["transport"]
+    raw_schema_retry = retry["schema"]
+    if not isinstance(raw_transport, Mapping) or not isinstance(raw_schema_retry, Mapping):
+        raise TypeError("policy-v3 retry controls must be mappings")
+    transport = cast(Mapping[str, object], raw_transport)
+    schema_retry = cast(Mapping[str, object], raw_schema_retry)
+    if transport["maximum_attempts"] != 2:
+        raise ValueError("policy-v3 transport attempts changed")
+    if schema_retry["maximum_repairs"] != 1:
+        raise ValueError("policy-v3 schema repair bound changed")
+    if (
+        retry["semantic_answer_retries"] != 0
+        or retry["outcome_dependent_retries"] != 0
+        or retry["replacement_pairings"] != 0
+        or retry["silent_normalization"] is not False
+    ):
+        raise ValueError("policy-v3 retry or normalization controls changed")
+    if (
+        handling["action_credit"] is not False
+        or handling["create_action_for_missing_agent"] is not False
+        or handling["retry_replace_splice_or_regenerate"] is not False
+    ):
+        raise ValueError("policy-v3 missing-action handling changed")
+    if acceptance["isolated_protocol_invalid_alone_quarantines"] is not False:
+        raise ValueError("protocol-invalid alone cannot quarantine")
+    if acceptance["isolated_provider_operational_missing_alone_quarantines"] is not False:
+        raise ValueError("isolated provider missingness cannot quarantine")
+    if stopping["provider_missingness_scientific_acceptance_threshold"] is not None:
+        raise ValueError("policy-v3 cannot register a missingness threshold")
+    triggers = acceptance["quarantine_triggers"]
+    if (
+        not isinstance(triggers, Sequence)
+        or "provider-contract-or-safety-failure" not in triggers
+        or "operational-circuit-breaker-trigger" not in triggers
+        or "missing-or-duplicate-terminal-classification" not in triggers
+    ):
+        raise ValueError("policy-v3 quarantine triggers changed")
+    if (
+        breaker["consecutive_same_provider_operational_missing"] != 3
+        or breaker["cumulative_operational_missing_across_campaign"] != 10
+        or breaker["reset_loosen_or_reinterpret_after-live-results"] is not False
+    ):
+        raise ValueError("policy-v3 circuit breaker changed")
+    prohibited = reporting["public_closeout_prohibited"]
+    if not isinstance(prohibited, Sequence) or any(
+        item not in prohibited for item in ("ranking", "composite", "leaderboard")
+    ):
+        raise ValueError("policy-v3 ranking or composite prohibition changed")

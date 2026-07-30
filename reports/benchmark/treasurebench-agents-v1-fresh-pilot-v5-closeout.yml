@@ -1,0 +1,158 @@
+schema_version: treasurebench-fresh-pilot-v5-engineering-closeout-v1
+status: pass
+decision: fresh-pilot-v5-engineering-complete-no-scientific-evidence
+classification: redacted-engineering-only-no-task-level-performance
+recorded_at_utc: "2026-07-30T04:14:08Z"
+task_id: AO-0011
+owner_study: DD-010
+issue: 210
+pull_request: 211
+branch: codex/treasurebench-agents-v1-fresh-pilot-v5
+protocol_validity_policy: treasurebench-agents-v1-protocol-validity-policy-v2
+provider_outcome_policy: treasurebench-agents-v1-provider-outcome-policy-v3
+campaign_id: treasurebench-agents-v1-repair-confirmation-v5
+batch_id: tb-agents-v1-repair-confirmation-v5-b01
+execution_commit: 19e36df62a6ba5ad9392588a1c59acf8b01adc10
+custody_commit: 27a4f80bed82ae2d63a049d631dc80a864a7d74d
+output_lock_commit: 3fc96bda354ce24db059cab9031a2f1874976791
+gate_id: AOG-AO-0011-FRESH-PILOT-V5-R2
+authorization_digest: sha256:3f30d5827958194a1864aa9f36ae577f6b0294fa21339bfb4489b31b8cd7e33c
+provider_reaudit:
+  status: pass-current-official-docs-and-live-routes
+  verified_at_utc: "2026-07-30T04:14:08Z"
+  exact_models_available: true
+  structured_output_routes_listed: true
+  retention_assumptions_remained_conservative: true
+  retry_error_contracts_reconfirmed: true
+  registered_standard_prices_reconfirmed: true
+  openai_sources:
+    model: https://developers.openai.com/api/docs/models/gpt-5.4
+    structured_outputs: https://developers.openai.com/api/docs/guides/structured-outputs
+    retention: https://developers.openai.com/api/docs/guides/your-data
+    errors: https://developers.openai.com/api/docs/guides/error-codes
+    pricing: https://developers.openai.com/api/docs/pricing
+  anthropic_sources:
+    model: https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions
+    messages: https://platform.claude.com/docs/en/api/messages/create
+    structured_outputs: https://platform.claude.com/docs/en/build-with-claude/structured-outputs
+    retention: https://platform.claude.com/docs/en/manage-claude/api-and-data-retention
+    errors: https://platform.claude.com/docs/en/api/errors
+    pricing: https://platform.claude.com/docs/en/about-claude/pricing
+registered:
+  models: [gpt-5.4-2026-03-05, claude-sonnet-4-6]
+  tasks: 50
+  families: 5
+  architectures: 5
+  repeats: 1
+  intended_pairings: 500
+  normal_calls: 3016
+  maximum_calls: 5200
+  expected_cost_usd: "11.51"
+  conservative_cost_usd: "15"
+  hard_cap_usd: "25"
+  provider_caps_usd: {OpenAI: "10", Anthropic: "15"}
+  maximum_output_tokens_per_request: 256
+executed:
+  public_canary_complete: true
+  custody_complete: true
+  private_prefix_complete: true
+  fixed_full_batch_complete: true
+  intended_pairings_complete: true
+  private_pairings: 500
+  terminal_pairings_classified: 500
+  protocol_valid_pairings: 496
+  protocol_invalid_pairings: 4
+  provider_operational_missing_pairings: 0
+  provider_contract_or_safety_failure_pairings: 0
+  calls: 3058
+  input_tokens: 2290993
+  output_tokens: 437027
+  cost_usd: "13.0413660"
+  recovered_transport_warnings: 1
+  terminal_provider_operational_errors: 0
+  semantic_answer_retries: 0
+  outcome_dependent_retries: 0
+  replacement_or_splice_performed: false
+retry_delay:
+  selected_records: 1
+  completed_records: 1
+  retry_delay_seconds: 5
+  retry_delay_source: registered-class-fallback
+  retry_class: transient-provider
+  transport_attempt: 1
+  second_identical_request_recovered: true
+  third_transport_attempts: 0
+  changed_or_duplicate_delay_records: 0
+  raw_headers_or_provider_messages_persisted: false
+circuit_breaker:
+  consecutive_same_provider_missing: 0
+  cumulative_operational_missing: 0
+  fired: false
+  firing_sequence: null
+custody:
+  tasks: 50
+  retention_days: 365
+  retained_state_preserved: true
+  seed_commitment: sha256:df72f86d035e15acdaad312fdc1f1b40e9be7af8829c50faf0403cc5c2737fa5
+  task_ciphertext_commitment: sha256:4012c675d29d1c7debd947371d9b300635eb6d9d4e5c80ce9f2cd233077a82dc
+  answer_ciphertext_commitment: sha256:d6f715723a854f4b24e67273638543571a462873e8427d138a0db0479601da55
+lock:
+  output_lock_commitment: sha256:e18e7f8173f9ac0026f74cd6ff9b577010abdf65620ad269606f6862ff16e47b
+  objects_locked: 4067
+  provider_phase_closed: true
+  provider_calls_after_lock: 0
+  output_lock_verified: true
+  unsealed_before_lock: false
+  unseal_after_lock_verified: true
+  post_lock_derived_objects: 1000
+  post_lock_derived_state_commitment: sha256:58abd9c045d08b5ff125fb21f2686c59632161647679487a8a8f30ddfa246737
+verification:
+  public_canary_status: pass
+  custody_status: pass
+  private_prefix_status: pass
+  fixed_full_batch_status: pass
+  exact_cost_reconciliation: true
+  method_a_b_disagreements: 0
+  method_c_classification_failures: 0
+  metric_bound_disagreements: 0
+  independent_provider_classification: pass
+  independent_metric_bound_agreement: true
+  invalid_final_action_cardinalities: 4
+  metric_range_errors: 0
+  incomplete_pairings: 0
+  contamination_findings: 0
+  response_attempt_outcome_trace_classification_bound_correspondence: exact
+  corruptions: 143
+  corruptions_rejected: 143
+redaction:
+  status: pass
+  task_text_disclosed: false
+  answer_disclosed: false
+  seed_or_key_disclosed: false
+  prompt_or_provider_output_disclosed: false
+  raw_header_or_error_message_disclosed: false
+  raw_trace_disclosed: false
+  task_level_performance_disclosed: false
+  model_provider_architecture_or_family_performance_disclosed: false
+  performance_comparison_created: false
+  ranking_created: false
+  composite_created: false
+authority:
+  dd023_authorized: false
+  claim_created: false
+  scientific_run_created: false
+  paper_result_created: false
+  package_created: false
+  release_created: false
+  arxiv_action: false
+  journal_action: false
+  base_campaign_authorized: false
+disposition:
+  further_provider_calls_permitted: false
+  replacement_or_splice_permitted: false
+  semantic_retry_permitted: false
+  private_read_or_unseal_permitted: false
+  provider_phase_permanently_closed: true
+  campaign_and_batch_engineering_complete: true
+  scientific_interpretation_permitted: false
+  next_gate: no-additional-gate-normal-administrative-closeout-only

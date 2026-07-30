@@ -264,6 +264,61 @@ semantic retry, invalid credit, ranking, scientific evidence, or base-campaign
 authority exists. V4 and every prior campaign are permanently closed and
 immutable.
 
+## AO-0011 provider-outcome policy v3 and wholly fresh v5 closeout
+
+Issue #210 registers one forward-only provider-outcome policy v3 and one
+wholly fresh engineering campaign,
+`treasurebench-agents-v1-repair-confirmation-v5`, batch
+`tb-agents-v1-repair-confirmation-v5-b01`. AO-0010 and the intentionally
+coarse v4 quarantine remain permanent; no retrospective v4 diagnosis,
+reclassification, private read, unseal, or inference is performed.
+
+Policy v3 separates completed protocol-valid and protocol-invalid responses
+from prospectively typed provider-operational missingness and immediate
+provider-contract/safety quarantine. Operationally missing pairings preserve
+safe prior turns, receive no action or replacement, remain in every intended
+denominator, and use metric-specific feasible intervals plus exact operational
+metrics. Independent provider classification and independent all-pairing
+contrast reconstruction are required.
+
+The sequence-only engineering circuit breaker is frozen at three consecutive
+same-provider operationally missing pairings or ten cumulative missing
+pairings, with immediate quarantine for any contract/safety failure or
+non-valid public canary. There is no scientific missingness threshold and no
+rerun-until-availability rule.
+
+The owner-directed R2 correction prospectively supersedes the unused original
+gate and adds one deterministic, restart-safe delay before the sole permitted
+second identical-request transport attempt. A safely parsed Retry-After value
+is clamped to one through 30 seconds; otherwise the frozen class fallback is
+two seconds for timeout, transient transport, or invalid provider JSON and
+five seconds for rate limit, transient provider, overload, or service error.
+There is no jitter, third attempt, semantic retry, outcome-dependent retry,
+replacement, or wait after authorization, identity, cap, phase-closure,
+retained-state, route, model, contract, or safety failure. Only normalized
+retry delay, source, class, and attempt may enter operational records.
+
+Authorization-free validation passed a complete 50-task/500-pairing
+rehearsal, 7,900 metric intervals, 144 all-pairing contrast bounds,
+zero/mixed/all-invalid and missingness scenarios, 115 v5 boundary corruptions,
+28 inherited repaired-instrument corruptions, and disposable
+production-path custody, lock, replay, redaction, and cleanup rehearsals.
+
+The exact R2 authorization then completed both public canaries, wholly fresh
+50-task custody, the private prefix, and all 500 pairings. Terminal
+classification contains 496 protocol-valid and four protocol-invalid
+pairings, zero provider-operational missingness, zero contract/safety failure,
+and no circuit breaker. One transient-provider first attempt used the frozen
+five-second fallback and recovered on the sole identical retry.
+
+Provider access closed after 3,058 calls and USD 13.0413660. The verified
+4,067-object output lock is
+`sha256:e18e7f8173f9ac0026f74cd6ff9b577010abdf65620ad269606f6862ff16e47b`.
+Post-lock replay/unseal, Methods A/B/C, independent classification and bounds,
+identity, cost, contamination, corruptions, redaction, and retained-state
+checks pass. This remains aggregate DD-010 engineering only and publishes no
+task-level or comparative performance.
+
 ## Registered evaluation campaign
 
 Issue #173 registers, but does not authorize or execute, the evaluation

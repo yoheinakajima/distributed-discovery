@@ -1,0 +1,33 @@
+schema_version: agent-ops-owner-gate-supersession-v1
+recorded_at_utc: "2026-07-29T21:02:46Z"
+status: superseded-before-authorization
+task_id: AO-0011
+issue: 210
+pull_request: 211
+branch: codex/treasurebench-agents-v1-fresh-pilot-v5
+superseded:
+  gate_id: AOG-AO-0011-FRESH-PILOT-V5
+  path: reports/agent-ops/AO-0011-treasurebench-fresh-pilot-v5-owner-gate.yml
+  execution_commit: f51728746b83e0d22cb2d6f5be0513a9cb2b5a00
+  authorization_created_or_consumed: false
+  gate_command_run: false
+  live_command_run: false
+superseding:
+  gate_id: AOG-AO-0011-FRESH-PILOT-V5-R2
+  path: reports/agent-ops/AO-0011-treasurebench-fresh-pilot-v5-r2-owner-gate.yml
+  execution_commit: 19e36df62a6ba5ad9392588a1c59acf8b01adc10
+reason: The unused original execution surface dispatched the sole permitted second identical-request transport attempt without the provider-audit-required Retry-After handling or bounded backoff. R2 adds only the owner-frozen deterministic bounded restart-safe delay and safe metadata audit.
+preserved:
+  same_task_issue_branch_pull_request_campaign_batch: true
+  same_protocol_validity_policy_v2: true
+  same_provider_outcome_policy_v3: true
+  same_routes_models_credential_subset_caps_and_circuit_breakers: true
+  same_attempt_schema_repair_replacement_and_denominator_rules: true
+  prior_campaigns_immutable: true
+activity:
+  authorization_created_or_consumed: false
+  credential_reads: 0
+  provider_calls: 0
+  private_objects_created: 0
+  real_unseals: 0
+  spend_usd: "0"

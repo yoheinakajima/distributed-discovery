@@ -1,0 +1,24 @@
+schema_version: agent-ops-handoff-v1
+status: owner-gate-required
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0011
+issue: 210
+pull_request: 211
+branch: codex/treasurebench-agents-v1-fresh-pilot-v5
+base_main: ab0340772f87b2b37e0e7f0d86d4a44f5a800248
+head_merge_sha: 12b7895009e37332a96eb538770e6b8adaeeceb0
+task_contract: tasks/treasurebench-agents-v1-fresh-pilot-v5-r2.yml
+exec_plan: plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V5.md
+last_completed_gate: Exact corrected execution commit 19e36df62a6ba5ad9392588a1c59acf8b01adc10 and committed R2 gate-manifest head 12b7895009e37332a96eb538770e6b8adaeeceb0 passed exact-head CI and live authorization-free validation for all 35 protected paths, the parser hash, one-to-30-second Retry-After clamp, two/five-second fallbacks, safe retry metadata, append-only restart audit, unchanged policies, identities, routes, models, credential subset, caps, circuit breakers, prohibitions, and zero activity.
+next_gate: "Resume AO-0011 in this same Codex task and repository from plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V5.md, issue #210, branch codex/treasurebench-agents-v1-fresh-pilot-v5, and draft PR #211. Use only reports/agent-ops/AO-0011-treasurebench-fresh-pilot-v5-r2-owner-gate.yml and its exact R2 authorization; never use the superseded original gate. Revalidate current official provider terms, authorization, execution-commit ancestry, current PR head, the R2 contract, all 35 protected tree hashes, the exact one-to-30-second Retry-After clamp and two/five-second fallback parser, policies v2 and v3, campaign, batch, OPENAI_API_KEY and ANTHROPIC_API_KEY subset, routes, models, zero calls and spend, ledgers, circuit breakers, and caps. Then run exactly make treasurebench-fresh-pilot-v5-live and continue the authorized normal engineering-complete or honest-quarantine path through provider terminalization, delay audit, provider closure, lock, post-lock classification, Methods A/B/C, independent provider classification and all-pairing bounds, public-safe closeout, full validation, required checks, PR readiness and squash merge, normal CI and Pages, named live routes, issue closure, synchronized main, and one final schema-valid handoff without routine checkpoints. Stop only for an execution-sensitive, authorization, identity, model, route, cap, circuit-breaker, delay-decision, execution-tree, or retained-state failure; any third, changed, duplicate, semantic, outcome-dependent, or replacement retry; unsafe retained state; or authority expansion beyond DD-010 engineering."
+decision: Stop at owner-gate-required. Do not read .env.txt, credentials, or retained private state; generate real private material; call a provider; spend; unseal; or use the superseded original gate until the exact R2 owner authorization exists.
+external_calls_cost: {calls: 0, cost: "0", currency: USD}
+private_state_change: none; no authorization, credential, prior private state, real seed, task, answer, key, nonce, ciphertext, commitment, custody, trace, ledger, provider response, terminal classification, metric bound, output lock, or derived-state commitment was read, written, generated, disclosed, or unsealed.
+scientific_state_change: none; no DD-023, claim, scientific run, evidence or proof promotion, paper result, performance result, ranking, composite, leaderboard, package, release, DOI, submission, or base-campaign state was created or changed.
+validation:
+  profile: private-evaluation
+  result: pass-R2-50-tasks-500-pairings-3014-turns-7900-intervals-144-contrast-bounds-115-v5-plus-28-inherited-corruptions-176-focused-857-full-tests-ruff-mypy-110-claims-51-runs-full-verify-35-path-freeze-two-exact-head-CI-runs-live-gate-validate-only-no-authorization
+owner_action: "Review the R2 contract, ExecPlan, exact execution commit, 35 protected hashes, frozen retry table and parser, unchanged policies, identities, routes, models, credential subset, circuit breakers, denominators, caps, and prohibitions; then run: make owner-gate GATE=reports/agent-ops/AO-0011-treasurebench-fresh-pilot-v5-r2-owner-gate.yml OWNER_GATE_CHALLENGE='AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5-R2 19e36df'. Only after it succeeds may this same task run: make treasurebench-fresh-pilot-v5-live."
+exact_next_command: "make owner-gate GATE=reports/agent-ops/AO-0011-treasurebench-fresh-pilot-v5-r2-owner-gate.yml OWNER_GATE_CHALLENGE='AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5-R2 19e36df'"
+exact_next_file: reports/agent-ops/AO-0011-treasurebench-fresh-pilot-v5-r2-owner-gate.yml
+blocker: The exact AO-0011 R2 owner authorization is required and absent by design; the original gate is superseded and no credential, real private generation, provider call, spend, unseal, or live v5 action is authorized.

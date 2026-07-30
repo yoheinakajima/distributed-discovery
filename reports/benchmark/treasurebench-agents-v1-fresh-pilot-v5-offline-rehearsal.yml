@@ -1,0 +1,63 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-v5-rehearsal-v1
+status: pass
+classification: public-synthetic-only
+task_id: AO-0011
+campaign_id: treasurebench-agents-v1-repair-confirmation-v5
+batch_id: tb-agents-v1-repair-confirmation-v5-b01
+tasks: 50
+families: 5
+architectures: 5
+synthetic_route_labels: 2
+runs: 500
+turns: 3014
+method_a_b_errors: 0
+method_c_errors: 0
+metric_range_errors: 0
+invalid_final_action_cardinalities: 0
+incomplete_pairings: 0
+exact_pairings_verified: 500
+protocol_valid_pairings: 500
+protocol_invalid_pairings: 0
+provider_operational_missing_pairings: 0
+provider_contract_or_safety_failure_pairings: 0
+terminal_pairings_classified: 500
+metric_intervals: 7900
+architecture_contrast_bounds: 144
+independent_metric_bound_agreement: true
+independent_provider_outcome_classification_agreement: true
+retry_delay_policy:
+  minimum_seconds: 1
+  maximum_retry_after_seconds: 30
+  fallback_seconds:
+    timeout: 2
+    transient-transport: 2
+    invalid-provider-json: 2
+    rate-limit: 5
+    transient-provider: 5
+  random_jitter: false
+  authorization_free_sleeper: deterministic-no-wait-recorder
+  authorization_free_actual_sleep_seconds: 0
+  raw_headers_or_error_messages_retained: false
+all_intended_metric_eligible_pairings_retained: true
+nonfinal_proposals_excluded_from_scoring: true
+contamination_findings: 0
+contamination_probes: 12
+provider_boundary:
+  status: pass
+  output_tokens_per_request: 256
+  provider_schema_fingerprints:
+    openai: sha256:6b78c441e73a57aa98bf39234037a182685ace370f60dc02f24f94610d1f82f4
+    anthropic: sha256:1b28b3a1a61afe3ce821e66d61bf2d9ec93e6aa8d0cfd3d6f33a71b66bd1c372
+  provider_independent_semantic_validation: pass
+  exactly_one_final_action: pass
+redacted_traces_verified: 500
+output_lock_verified: true
+provider_calls: 0
+credential_reads: 0
+private_objects_created: 0
+external_cost_usd: '0'
+network_enabled: false
+private_material: false
+redaction_status: pass
+registration_sha256: sha256:64322cc820873692db8d205cfe3d2e74e1006d592f957aa0d61a6e7e7e737c9c
+rehearsal_hash: sha256:9e69787ba54cea5820520f34ac2b0cbb77c0fecb83de3fdb24ebfef4bbe8c774

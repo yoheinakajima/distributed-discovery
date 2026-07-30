@@ -1,0 +1,332 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-v5-request-v1
+status: provider-outcome-policy-v3-frozen-execution-preparation-owner-gate-not-authorized
+task_id: AO-0011
+owner_study: DD-010
+new_study_allocated: false
+claim_eligible: false
+policy_version: treasurebench-agents-v1-protocol-validity-policy-v2
+provider_outcome_policy: treasurebench-agents-v1-provider-outcome-policy-v3
+campaign_id: treasurebench-agents-v1-repair-confirmation-v5
+batch_id: tb-agents-v1-repair-confirmation-v5-b01
+issue: 210
+branch: codex/treasurebench-agents-v1-fresh-pilot-v5
+starting_main: ab0340772f87b2b37e0e7f0d86d4a44f5a800248
+owner_gate_id: AOG-AO-0011-FRESH-PILOT-V5-R2
+counts:
+  tasks: 50
+  families: 5
+  tasks_per_family: 10
+  batches: 1
+  repeats: 1
+  architectures: 5
+  cloud_models: 2
+  private_runs: 500
+  normal_calls: 3016
+providers:
+  - provider: OpenAI
+    route_id: openai_direct
+    endpoint: https://api.openai.com/v1/responses
+    model: gpt-5.4-2026-03-05
+    credential_name: OPENAI_API_KEY
+    transport_schema: openai-specific
+  - provider: Anthropic
+    route_id: anthropic_direct
+    endpoint: https://api.anthropic.com/v1/messages
+    model: claude-sonnet-4-6
+    credential_name: ANTHROPIC_API_KEY
+    transport_schema: anthropic-specific
+architectures:
+  - isolated-private-agents
+  - full-broadcast-shared-transcript
+  - designated-reader-selective-sharing
+  - pooled-consensus
+  - portfolio-preserving-structured
+provider_conformance:
+  prerequisite_task: AO-0004
+  prerequisite_record: reports/agent-ops/AO-0004-r4-public-provider-canary-outcome.yml
+  provider_specific_compilation: true
+  provider_independent_semantic_validation: true
+  final_action_cardinality: exactly-one-per-required-agent
+  nonfinal_proposals_scored: false
+  output_tokens_per_request: 256
+credential_ingress:
+  source: repository-root-.env.txt
+  loader: strict-nonexecuting-dotenv-no-interpolation
+  requested_names: [OPENAI_API_KEY, ANTHROPIC_API_KEY]
+  unrelated_names_returned: false
+  unrelated_values_retained_or_transmitted: false
+  clear_after_each_provider_stage: true
+  clear_on_all_exit_paths: true
+budget:
+  currency: USD
+  expected_cost: "11.51"
+  conservative_cost: "15"
+  hard_cap: "25"
+  provider_caps: {OpenAI: "10", Anthropic: "15"}
+  call_cap: 5200
+  normal_calls: 3016
+  calls_per_provider: 1508
+  cumulative_spend: "0"
+  cumulative_calls: 0
+  maximum_live_concurrency: 2
+  route_token_caps:
+    OpenAI: {input: 1680000, output: 386048}
+    Anthropic: {input: 3000000, output: 386048}
+failure_policy:
+  protocol_validity_path: docs/benchmark/agents-v1/protocol-validity-policy-v2.yml
+  provider_outcome_path: docs/benchmark/agents-v1/provider-outcome-policy-v3.yml
+  policy_frozen_before_authorization_or_generation: true
+  total_transport_attempts_per_request: 2
+  deterministic_retry_delay:
+    minimum_seconds: 1
+    maximum_retry_after_seconds: 30
+    fallback_seconds:
+      timeout: 2
+      transient-transport: 2
+      invalid-provider-json: 2
+      rate-limit: 5
+      transient-provider: 5
+    random_jitter: false
+    provider_retry_after_safely_parsed_and_clamped: true
+    append_only_selection_and_completion_required: true
+    restart_replays_recorded_decision: true
+    retained_operational_fields:
+      - retry_delay_seconds
+      - retry_delay_source
+      - retry_class
+      - transport_attempt
+  schema_repairs_per_request: 1
+  semantic_answer_retries: 0
+  outcome_dependent_retries: 0
+  silent_normalization: false
+  recovered_transport_retries: preserved-warning-only
+  protocol_invalid_pairings_allowed: 500
+  provider_operational_missing_pairings_allowed_below_circuit_breaker: true
+  provider_contract_or_safety_failures_allowed: 0
+  consecutive_same_provider_operational_missing_limit: 3
+  cumulative_provider_operational_missing_limit: 10
+  global_protocol_conformance_threshold: null
+  provider_missingness_scientific_acceptance_threshold: null
+  unclassified_pairings_allowed: 0
+  incomplete_pairings_allowed: 0
+  method_a_b_disagreements_allowed: 0
+  method_c_classification_failures_allowed: 0
+  metric_bound_disagreements_allowed: 0
+  contamination_findings_allowed: 0
+  metric_range_errors_allowed: 0
+  protocol_invalid_disposition: retain-classify-bound-no-replacement-no-quarantine
+  provider_operational_missing_disposition: retain-classify-bound-no-replacement-continue-unless-circuit-breaker
+  contract_safety_or_integrity_disposition: quarantine-entire-batch-no-splice-or-replacement
+protocol_invalid_handling:
+  preserve_terminal_trace: true
+  preserve_safe_classification: true
+  retain_in_all_intended_pairing_denominators: true
+  replace_or_rerun: false
+  parse_invalid_action: false
+  invalid_action_credit: false
+  silently_construct_valid_portfolio: false
+  report_protocol_conformance_separately: true
+  exact_metrics_only_where-defined: true
+  metric_specific_feasible_bounds: required
+  all_pairing_architecture_contrast_bounds: required
+  valid_output_conditional_role: secondary-selection-conditioned-only
+  complete_case_unconditional_effect: prohibited
+provider_operational_missing_handling:
+  stop_calls_within_pairing: true
+  unique_terminal_missing_trace: true
+  retain_safely_completed_prior_turns: true
+  preserve_safe_classification: true
+  retain_in_all_intended_pairing_denominators: true
+  create_or_credit_action: false
+  replace_rerun_splice_or_regenerate: false
+  metric_specific_feasible_bounds: required
+  all_pairing_architecture_contrast_bounds: required
+  exact_operational_metrics:
+    - calls
+    - tokens
+    - cost
+    - retry-count
+    - provider-response-completion
+    - provider-missingness
+  protocol_compliance_status: not-applicable
+  invalid_submitted_action: false
+  valid_or_completed_only_role: secondary-selection-conditioned-only
+operational_circuit_breaker:
+  consecutive_same_provider_operational_missing: 3
+  cumulative_operational_missing: 10
+  provider_contract_or_safety_failure: immediate-quarantine
+  public_canary_not_protocol_valid: immediate-quarantine
+  inputs: [terminal-operational-status, sequence]
+  performance_or_scientific_inputs: false
+  reset_loosen_or_reinterpret_after_live_results: false
+private_state:
+  symbolic_root: XDG_STATE_HOME/distributed-discovery/treasurebench-agents-v1/repair-confirmation-v5
+  authorization_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0011-FRESH-PILOT-V5-R2.yml
+  retention_days_after_closeout: 365
+  fresh_os_csprng_seed: true
+  tasks_and_answers_encrypted_separately: true
+  output_lock_before_unseal: true
+  no_call_after_output_lock: true
+  raw_trace_encrypted: true
+verification:
+  method_a: required
+  method_b_independent_reconstruction: required
+  method_c_independent_protocol_contract_before_metrics: required
+  four_status_separation: required
+  one_terminal_classification_per_pairing: required
+  metric_ranges_where-defined: required
+  independent_metric_bound_reconstruction: required
+  independent_provider_outcome_classification: required
+  exact_response_ledger_trace_classification_bound_identity_correspondence: required
+  all_500_intended_pairings: required
+  contamination_controls: required
+  corruptions: required
+  exact_cost_reconciliation: required
+  private_state_and_output_lock: required
+  deterministic_redacted_closeout: required
+long_session:
+  authorization_scope: conditional-success-or-quarantine-through-normal-final-closeout
+  routine_owner_checkpoints: false
+  staged_provider_execution:
+    - public-canary
+    - custody
+    - custody-commitment-commit-and-push
+    - private-prefix
+    - fixed-full-batch
+    - provider-outcome-terminalization
+    - operational-circuit-breaker-evaluation
+    - provider-phase-close
+    - output-lock
+    - output-lock-commitment-commit-and-push
+    - unseal-after-pushed-lock-revalidation
+    - terminal-pairing-classification
+    - independent-provider-outcome-classification
+    - methods-a-b-c
+    - metric-intervals-and-all-pairing-contrast-bounds
+    - independent-bound-reconstruction
+    - correspondence-contamination-corruption-and-redaction
+    - retained-state-and-public-safe-closeout
+  administrative_closeout:
+    - public-safe-reconciliation
+    - full-validation-wall
+    - update-draft-pr
+    - required-checks
+    - mark-ready
+    - squash-merge
+    - post-merge-ci-and-pages
+    - named-live-public-routes
+    - close-issue-210
+    - synchronize-main
+    - final-schema-valid-handoff
+  stop_only_for:
+    - execution-sensitive-change
+    - campaign-batch-model-route-cap-circuit-breaker-execution-tree-or-private-identity-change
+    - authorization-invalidity
+    - proposed-replacement-splice-semantic-retry-or-new-private-identity
+    - unsafe-retained-private-state
+    - authority-expansion
+batch_acceptance:
+  protocol_invalid_alone_quarantines_batch: false
+  isolated_provider_operational_missing_alone_quarantines_batch: false
+  engineering_completion_requires:
+    - both-public-canaries-protocol-valid
+    - fresh-custody-pass
+    - all-500-pairings-have-one-unique-protocol-valid-protocol-invalid-or-provider-operational-missing-terminal-status
+    - zero-provider-contract-or-safety-failures
+    - operational-circuit-breaker-not-fired
+    - exact-response-ledger-trace-classification-bound-identity-correspondence
+    - all-500-pairings-accounted
+    - zero-contamination
+    - execution-and-cost-caps-hold
+    - provider-phase-closes-before-output-lock
+    - output-lock-and-commitments-pass
+    - no-call-after-lock
+    - post-lock-unseal-and-commitment-verification-pass
+    - method-a-b-agreement-where-defined
+    - method-c-classifies-every-completed-response
+    - independent-provider-missing-classification-agreement
+    - independent-metric-bound-agreement
+    - corruptions-and-redaction-pass
+    - retained-private-state-safe
+quarantine:
+  failure_points:
+    - public-canary
+    - custody-creation
+    - cap-guard
+    - provider-contract-or-safety-failure
+    - operational-circuit-breaker
+    - missing-or-duplicate-terminal-classification
+    - response-ledger-trace-classification-bound-integrity
+    - contamination
+    - execution-identity-mismatch
+    - output-lock
+    - unseal-before-lock
+    - method-implementation-disagreement
+    - independent-provider-classification-disagreement
+    - independent-bound-reconstruction-disagreement
+    - corruption-acceptance
+    - redaction-failure
+    - unsafe-retained-state
+  stop_provider_calls_immediately: true
+  preserve_append_only_encrypted_state: true
+  replacement_splice_rescore_or_semantic_retry: false
+  close_provider_phase_when_present: true
+  lock_every_safely_lockable_existing_object: true
+  unseal_only_after_lock_and_only_when_safe: true
+  deterministic_public_safe_closeout: true
+  same_authority_through_merge_and_deploy: true
+  protocol_invalid_only: false
+  isolated_provider_operational_missing_only: false
+boundaries:
+  private_material_before_authorization: false
+  credential_read_before_authorization: false
+  live_calls_before_authorization: false
+  custody_creation_before_authorization: false
+  prior_private_state_read: false
+  prior_campaign_reuse: false
+  dd023_allowed: false
+  claim_allowed: false
+  scientific_run_allowed: false
+  paper_result_allowed: false
+  ranking_allowed: false
+  composite_allowed: false
+  package_allowed: false
+  release_allowed: false
+  submission_allowed: false
+  base_campaign_allowed: false
+execution_sensitive_paths:
+  - tasks/treasurebench-agents-v1-fresh-pilot-v5-r2.yml
+  - tasks/treasurebench-agents-v1-fresh-pilot-v5.yml
+  - src/distributed_discovery/agent_ops
+  - src/distributed_discovery/benchmark/agents_v1
+  - src/distributed_discovery/cli.py
+  - scripts/audit_agent_ops.py
+  - scripts/audit_treasurebench_agents_v1_fresh_pilot_v5.py
+  - docs/agent-ops
+  - docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-request.yml
+  - docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-request.schema.json
+  - docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-allocation.yml
+  - docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-allocation.schema.json
+  - docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-private-state.schema.json
+  - docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-execution-budget.yml
+  - docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-execution-budget.schema.json
+  - docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-corruptions.yml
+  - docs/benchmark/agents-v1/treasurebench-fresh-pilot-v5-corruptions.schema.json
+  - docs/benchmark/agents-v1/protocol-validity-policy-v2.yml
+  - docs/benchmark/agents-v1/protocol-validity-policy-v2.schema.json
+  - docs/benchmark/agents-v1/protocol-validity-policy-v2.md
+  - docs/benchmark/agents-v1/provider-outcome-policy-v3.yml
+  - docs/benchmark/agents-v1/provider-outcome-policy-v3.schema.json
+  - docs/benchmark/agents-v1/provider-outcome-policy-v3.md
+  - reports/benchmark/treasurebench-agents-v1-fresh-pilot-v5-provider-audit.yml
+  - reports/benchmark/treasurebench-agents-v1-fresh-pilot-v5-budget.yml
+  - reports/benchmark/treasurebench-agents-v1-fresh-pilot-v5-registration.yml
+  - reports/benchmark/treasurebench-agents-v1-fresh-pilot-v5-offline-rehearsal.yml
+  - reports/benchmark/treasurebench-agents-v1-fresh-pilot-v5-provider-outcome-scenarios.yml
+  - reports/benchmark/treasurebench-agents-v1-fresh-pilot-v5-corruptions.yml
+  - tests/test_treasurebench_agents_v1_fresh_pilot_v5.py
+  - tests/test_treasurebench_agents_v1_fresh_pilot_v5_session.py
+  - tests/test_treasurebench_agents_v1_provider_outcome_v3.py
+  - tests/test_agents_v1_live_providers.py
+  - tests/test_treasurebench_agents_v1_retry_backoff.py
+  - Makefile

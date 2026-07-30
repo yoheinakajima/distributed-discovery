@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TreasureBench Agents v1 repair-confirmation v5 corruptions",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "status", "campaign_id", "batch_id", "required_outcome", "corruptions"],
+  "properties": {
+    "schema_version": {"const": "treasurebench-agents-v1-fresh-pilot-v5-corruptions-v1"},
+    "status": {"const": "frozen-before-execution"},
+    "campaign_id": {"const": "treasurebench-agents-v1-repair-confirmation-v5"},
+    "batch_id": {"const": "tb-agents-v1-repair-confirmation-v5-b01"},
+    "required_outcome": {"const": "rejected"},
+    "corruptions": {"type": "array", "minItems": 115, "maxItems": 115, "uniqueItems": true, "items": {"type": "string", "pattern": "^[A-Z]+(?:-[A-Z]+)*-[0-9]{2}-.+$"}}
+  }
+}

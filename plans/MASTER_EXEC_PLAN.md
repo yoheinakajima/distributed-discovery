@@ -1,5 +1,92 @@
 # Master execution plan
 
+## Active closeout — AO-0011 provider-outcome policy v3 and fresh pilot v5 R2 (2026-07-29)
+
+Issue #210, draft PR #211, branch
+`codex/treasurebench-agents-v1-fresh-pilot-v5`, additive R2 task contract
+`tasks/treasurebench-agents-v1-fresh-pilot-v5-r2.yml`, and living
+ExecPlan `plans/TREASUREBENCH_AGENTS_V1_FRESH_PILOT_V5.md` own the sole
+substantive lane as AO-0011.
+
+The owner-directed preauthorization amendment supersedes the unused original
+gate because the frozen resumable adapter dispatched its second identical
+transport attempt immediately while the provider audit required Retry-After
+handling or bounded backoff. R2 preserves the same task and every campaign,
+batch, route, model, credential, cap, policy, circuit-breaker, retry-ceiling,
+denominator, and prohibition identity. It adds only one deterministic,
+one-to-30-second, class-bounded, append-only and restart-safe delay before the
+sole permitted second attempt, using no random jitter and retaining no raw
+headers or error messages.
+
+AO-0011 preserves AO-0010, provider-terminal quarantine of campaign
+`treasurebench-agents-v1-repair-confirmation-v4`, batch
+`tb-agents-v1-repair-confirmation-v4-b01`, exact public operational totals,
+the 150-object output lock
+`sha256:88c442bf6cb5e1b99a893808d423b488d2b1062543a49fcfb32b77f276abaa1c`,
+closed provider phase, zero post-lock calls, no unseal, and no scientific
+evidence. V4 and every earlier campaign remain permanently immutable. No
+retrospective v4 diagnostic is registered, and the hidden provider, route, and
+exact private error remain unknown.
+
+The prospective forward-only policy v3 separates `protocol-valid`,
+`protocol-invalid`, `provider-operational-missing`, and
+`provider-contract-or-safety-failure`. Only prospectively registered typed
+availability classes may become operational missingness after bounded
+identical-request transport attempts; completed safely retainable responses
+remain under protocol validity. Missing pairings receive no invented action or
+credit, remain in all intended denominators with registered feasible intervals
+and independent all-pairing contrast bounds, and cannot be retried, replaced,
+spliced, or regenerated.
+
+The engineering circuit breaker is frozen at three consecutive operational
+missing pairings for one provider, ten cumulative operational missing
+pairings across the campaign, immediate contract/safety quarantine, and
+immediate quarantine for a non-valid public canary. It uses terminal status and
+sequence only and is not a scientific threshold.
+
+The wholly fresh prospective identities are campaign
+`treasurebench-agents-v1-repair-confirmation-v5` and batch
+`tb-agents-v1-repair-confirmation-v5-b01`: 50 new private tasks, ten from each
+family, five architectures, direct OpenAI `gpt-5.4-2026-03-05`, direct
+Anthropic `claude-sonnet-4-6`, one repeat, 500 intended pairings, and 256
+output tokens per request. Hard caps remain USD 25 total, USD 10 OpenAI, USD
+15 Anthropic, and 5,200 calls.
+
+All authorization-free implementation, independent verification, corruption,
+complete synthetic rehearsal, production-path custody/lock/post-lock
+replay/redaction/cleanup rehearsal, exact execution freeze, draft-PR checks,
+and one generic owner gate must pass before the task stops once. Before later
+exact authorization there is no `.env.txt` or credential read, real seed or
+private material, provider call, spend, or real v5 unseal.
+
+The original authorization-free phase froze execution at
+`f51728746b83e0d22cb2d6f5be0513a9cb2b5a00`, but that execution surface and
+unused gate are now superseded for future authorization. No authorization was
+created or consumed. R2 implementation, full rehearsal, and the repository
+verification wall pass. Execution is frozen at
+`19e36df62a6ba5ad9392588a1c59acf8b01adc10`; exact-head draft-PR CI runs
+`30490541676` and `30490543736` pass. The committed 35-path gate
+`AOG-AO-0011-FRESH-PILOT-V5-R2` passes live validate-only without creating
+authorization.
+
+The owner later consumed the exact R2 challenge and the exact live command
+completed the full engineering matrix. Both public canaries, wholly fresh
+50-task custody, the private prefix, and all 500 pairings passed. Terminal
+classification contains 496 protocol-valid and four protocol-invalid
+pairings, zero provider-operational missingness, and zero contract/safety
+failure. Neither circuit breaker fired.
+
+One transient-provider first attempt selected and completed the frozen
+five-second fallback before the sole identical retry recovered. Provider
+access then closed after 3,058 calls, 2,290,993 input tokens, 437,027 output
+tokens, and USD 13.0413660. A verified 4,067-object lock binds the provider
+phase under
+`sha256:e18e7f8173f9ac0026f74cd6ff9b577010abdf65620ad269606f6862ff16e47b`.
+Post-lock replay/unseal, Methods A/B/C, independent provider classification and
+all-pairing bounds, correspondence, exact cost, contamination, corruptions,
+redaction, and retained-state checks pass. Provider and private access are
+closed; only public-safe administrative closeout remains.
+
 ## Completed continuation — AO-0010 protocol-validity policy v2 and fresh pilot v4 (2026-07-29)
 
 Issue #208, branch `codex/treasurebench-agents-v1-fresh-pilot-v4`, fixed task

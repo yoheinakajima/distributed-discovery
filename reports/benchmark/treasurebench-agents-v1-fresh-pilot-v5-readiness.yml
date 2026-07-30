@@ -1,0 +1,90 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-v5-readiness-v1
+recorded_at_utc: "2026-07-29T18:51:23Z"
+status: pass-execution-frozen-owner-gate-validated-authorization-required
+classification: DD-010-engineering-only-no-scientific-evidence
+task_id: AO-0011
+issue: 210
+draft_pull_request: 211
+execution_commit: f51728746b83e0d22cb2d6f5be0513a9cb2b5a00
+protocol_validity_policy: treasurebench-agents-v1-protocol-validity-policy-v2
+provider_outcome_policy: treasurebench-agents-v1-provider-outcome-policy-v3
+campaign_id: treasurebench-agents-v1-repair-confirmation-v5
+batch_id: tb-agents-v1-repair-confirmation-v5-b01
+acceptance:
+  bootstrap: pass
+  agent_ops: pass
+  program_memory: pass
+  treasurebench_naming: pass
+  agents_v1_registration: pass
+  v5_audit: pass
+  v5_full_rehearsal: pass
+  formatting: pass
+  lint: pass
+  typecheck: pass-214-source-files
+  focused_tests: {status: pass, passed: 107, failed: 0}
+  tests: {status: pass, passed: 832, failed: 0}
+  claims: pass-110
+  runs: pass-51-manifests
+  full_verify: pass
+  draft_pr_execution_head_ci:
+    status: pass
+    head: f51728746b83e0d22cb2d6f5be0513a9cb2b5a00
+    run: 30481365591
+  generic_owner_gate:
+    status: pass-live-validate-only-no-authorization
+    path: reports/agent-ops/AO-0011-treasurebench-fresh-pilot-v5-owner-gate.yml
+    manifest_head: 35fea430ba5f6ff0b5ac18752aaba1d504c292c0
+    protected_paths: 32
+    exact_challenge: AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5 f517287
+task_specific:
+  synthetic_tasks: 50
+  intended_pairings: 500
+  matrix_turns: 3014
+  normal_calls: 3016
+  terminal_pairings_classified: 500
+  zero_invalid_batch: pass-500-valid-0-invalid-no-quarantine
+  mixed_invalid_batch: pass-497-valid-3-invalid-no-quarantine
+  all_invalid_batch: pass-0-valid-500-invalid-no-quarantine
+  one_operational_missing: pass-retained-no-quarantine
+  mixed_invalid_and_missing: pass-retained-no-quarantine
+  first_middle_final_invalid_and_missing_positions: pass
+  exact_ten_cumulative_missing_fires: true
+  eleventh_missing_rejected_without_observation: true
+  three_consecutive_same_provider_missing_fires: true
+  contract_safety_failure_quarantines: true
+  nonvalid_public_canary_quarantines: true
+  replacement_pairings: 0
+  semantic_answer_retries: 0
+  invalid_or_missing_actions_constructed_or_credited: 0
+  complete_case_unconditional_overclaim_rejected: true
+  method_a_b_disagreements: 0
+  method_c_failures: 0
+  metric_intervals: 7900
+  architecture_contrast_bounds: 144
+  independent_metric_bound_agreement: true
+  independent_provider_outcome_classification_agreement: true
+  invalid_final_action_cardinalities: 0
+  metric_range_errors: 0
+  contamination_findings: 0
+  v5_corruptions_rejected: 96
+  inherited_corruptions_rejected: 28
+  total_registered_corruptions_rejected: 124
+  production_custody_negative_checks: 6
+  output_lock_verified: true
+  no_call_after_lock: true
+  post_lock_replay_and_commitment_verification: pass
+  staged_mock_stable_resume: true
+  rehearsal_hash: sha256:b09b7f7a6b2e989ed7c9171f9722729de0b17fe058afde9e5d1c7b4923b30971
+failures_preserved:
+  - A focused contract/safety test found that the v5 runner attempted metric bounds before re-raising an immediate quarantine; the exception ordering was corrected and all 107 focused tests passed.
+  - The first full wall found the expected Agents v1 schema inventory stale at 48 after six v5 schemas raised it to 54; the hand-checkable expectation was corrected and all 832 tests passed.
+  - The first full verification wall found the DD-010 site registry-status assertion stale after policy v3 was registered; source and assertion were reconciled and the complete verification wall passed.
+  - The first live validate-only gate attempt failed closed because a v3-specific combined cap token omitted the generic engine's exact canonical cap-increase token; the exact token was added in commit 35fea430ba5f6ff0b5ac18752aaba1d504c292c0 and live validate-only then passed without authorization.
+activity:
+  provider_calls: 0
+  credential_reads: 0
+  prior_private_state_reads: 0
+  private_objects_created: 0
+  real_unseals: 0
+  spend_usd: "0"
+next_gate: exact-owner-authorization-AOG-AO-0011-FRESH-PILOT-V5

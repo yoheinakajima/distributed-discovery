@@ -5,10 +5,11 @@ the frozen `discoverybench-agents-v1` instrument and schema identifiers remain
 unchanged for compatibility; the formal suite rename creates no protocol or
 content version.
 
-Status: all four completed sealed engineering pilots remain permanently
-quarantined. AO-0010 now freezes prospective protocol-validity policy v2 and
-prepares one wholly fresh v4 pilot under a separate owner gate. No v4 private
-material, credential read, provider call, spend, or scientific evidence exists.
+Status: the original pilot and repair-confirmation v1 through v4 remain
+permanently quarantined. AO-0011 freezes forward-only provider-outcome policy
+v3 and completes one wholly fresh v5 engineering pilot under unchanged
+protocol-validity policy v2. No task-level performance or scientific evidence
+is published.
 
 DiscoveryBench Agents v1 measures how declared software-agent team
 architectures convert dispersed synthetic evidence into structured search
@@ -146,6 +147,62 @@ has no real-data protocol classification, Methods A/B/C, metric bounds, or
 performance interpretation. V4 is permanently quarantined and cannot be
 retried, replaced, repaired, reopened, reused, rescored, spliced, executed,
 unsealed, or reauthorized.
+
+## AO-0011 provider-outcome policy v3 and wholly fresh v5
+
+AO-0011 separates `protocol-valid`, `protocol-invalid`,
+`provider-operational-missing`, and
+`provider-contract-or-safety-failure`. Only prospectively registered direct
+route availability classes can become operational missingness after the two
+identical-request transport attempts. Request, schema, model, route,
+credential, retention, identity, unregistered, unsafe, and ambiguous failures
+quarantine immediately. A safely retainable completed refusal or
+nonconforming response remains a protocol-validity outcome, never a transport
+outage.
+
+An operationally missing pairing stops locally, preserves every safely
+completed prior call in one encrypted terminal trace, creates and credits no
+action, receives no replacement or regeneration, and remains in every
+intended denominator. Metric-specific feasible intervals cover its unknown
+action-dependent outcomes; calls, tokens, cost, retry count, completion, and
+missingness remain exact. Independent classification and bound
+reconstruction must reproduce identities, endpoints, and denominators.
+
+The frozen engineering circuit breaker quarantines on three consecutive
+operationally missing pairings for one provider, ten cumulative operationally
+missing pairings, any contract/safety failure, or a non-valid public canary.
+It consumes only terminal operational status and sequence and cannot be
+reset, loosened, or performance-tuned after live results.
+
+The wholly fresh v5 identity is campaign
+`treasurebench-agents-v1-repair-confirmation-v5`, batch
+`tb-agents-v1-repair-confirmation-v5-b01`. The authorization-free 50-task,
+500-pairing rehearsal passes 7,900 metric intervals, 144 all-pairing contrast
+bounds, independent provider classification and bound reconstruction, and all
+115 v5 boundary corruptions plus 28 inherited repaired-instrument
+corruptions. The R2 correction requires a safely parsed one-to-30-second
+Retry-After value or the frozen two/five-second fallback before the sole
+permitted second transport attempt. Authorization-free rehearsals record that
+delay without sleeping.
+Production permit/custody, output-lock, post-lock replay, redaction, and
+deterministic cleanup are rehearsed without credentials, provider calls,
+spend, or retained real private state.
+
+The owner-authorized R2 execution then completed both public canaries, wholly
+fresh 50-task custody, the private prefix, and all 500 pairings. Terminal
+classification contains 496 protocol-valid and four protocol-invalid
+pairings, zero provider-operational missingness, zero contract/safety failure,
+and no circuit-breaker trigger. One transient-provider first attempt selected
+and completed the frozen five-second fallback before the sole identical retry
+recovered.
+
+Provider access closed after 3,058 calls and USD 13.0413660. The verified
+4,067-object output lock is
+`sha256:e18e7f8173f9ac0026f74cd6ff9b577010abdf65620ad269606f6862ff16e47b`.
+No call followed the lock. Post-lock replay/unseal, Methods A/B/C, independent
+provider classification and all-pairing bounds, exact correspondence and
+cost, contamination, corruptions, redaction, and retained-state checks pass.
+The public closeout remains aggregate engineering status only.
 
 ## Registered package
 

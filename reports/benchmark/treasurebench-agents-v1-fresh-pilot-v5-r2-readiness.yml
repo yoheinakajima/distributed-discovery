@@ -1,0 +1,90 @@
+schema_version: treasurebench-agents-v1-fresh-pilot-v5-r2-readiness-v1
+recorded_at_utc: "2026-07-29T21:06:47Z"
+status: pass-execution-frozen-owner-gate-validated-authorization-required
+classification: DD-010-engineering-only-no-scientific-evidence
+task_id: AO-0011
+issue: 210
+draft_pull_request: 211
+execution_commit: 19e36df62a6ba5ad9392588a1c59acf8b01adc10
+gate_manifest_head: 12b7895009e37332a96eb538770e6b8adaeeceb0
+protocol_validity_policy: treasurebench-agents-v1-protocol-validity-policy-v2
+provider_outcome_policy: treasurebench-agents-v1-provider-outcome-policy-v3
+campaign_id: treasurebench-agents-v1-repair-confirmation-v5
+batch_id: tb-agents-v1-repair-confirmation-v5-b01
+retry_delay:
+  minimum_seconds: 1
+  maximum_retry_after_seconds: 30
+  fallback_seconds:
+    timeout: 2
+    transient-transport: 2
+    invalid-provider-json: 2
+    rate-limit: 5
+    transient-provider: 5
+  random_jitter: false
+  parser_sha256: sha256:42968dfd8b33da700c1b391e64a0a0ed2e07f82b7eaab6534bdf98c685a1dcce
+acceptance:
+  bootstrap: pass
+  agent_ops: pass
+  program_memory: pass
+  treasurebench_naming: pass
+  agents_v1_registration: pass
+  v5_audit: pass-115-boundary-plus-28-inherited-corruptions
+  v5_full_rehearsal: pass-50-tasks-500-pairings
+  provider_outcome_and_circuit_scenarios: pass
+  independent_provider_classification: pass
+  all_pairing_interval_and_contrast_reconstruction: pass
+  custody_commitment_lock_post_lock_replay_redaction_cleanup: pass
+  formatting: pass
+  lint: pass
+  typecheck: pass-215-source-files
+  focused_tests: {status: pass, passed: 176, failed: 0}
+  tests: {status: pass, passed: 857, failed: 0}
+  claims: pass-110
+  runs: pass-51-manifests
+  full_verify: pass
+  draft_pr_execution_head_ci:
+    status: pass
+    head: 19e36df62a6ba5ad9392588a1c59acf8b01adc10
+    runs: [30490541676, 30490543736]
+  generic_owner_gate:
+    status: pass-live-validate-only-no-authorization
+    path: reports/agent-ops/AO-0011-treasurebench-fresh-pilot-v5-r2-owner-gate.yml
+    manifest_head: 12b7895009e37332a96eb538770e6b8adaeeceb0
+    protected_paths: 35
+    exact_challenge: AUTHORIZE AOG-AO-0011-FRESH-PILOT-V5-R2 19e36df
+task_specific:
+  synthetic_tasks: 50
+  intended_pairings: 500
+  matrix_turns: 3014
+  normal_calls: 3016
+  terminal_pairings_classified: 500
+  exact_ten_cumulative_missing_fires: true
+  three_consecutive_same_provider_missing_fires: true
+  contract_safety_failure_quarantines: true
+  replacement_pairings: 0
+  semantic_answer_retries: 0
+  outcome_dependent_retries: 0
+  invalid_or_missing_actions_constructed_or_credited: 0
+  metric_intervals: 7900
+  architecture_contrast_bounds: 144
+  independent_metric_bound_agreement: true
+  independent_provider_outcome_classification_agreement: true
+  v5_corruptions_rejected: 115
+  inherited_corruptions_rejected: 28
+  total_registered_corruptions_rejected: 143
+  production_custody_negative_checks: 6
+  output_lock_verified: true
+  no_call_after_lock: true
+  post_lock_replay_and_commitment_verification: pass
+  rehearsal_hash: sha256:9e69787ba54cea5820520f34ac2b0cbb77c0fecb83de3fdb24ebfef4bbe8c774
+failures_preserved:
+  - The first broad focused run after the R2 registration checkpoint correctly rejected a locally committed but not-yet-remote execution identity; pushing that same-branch checkpoint restored the pre-existing remote-commit custody invariant and all 176 focused tests passed.
+  - The first R2 full repository wall found the DD-010 site projection still expected the superseded v3 owner-gate suffix; source and assertion were reconciled to the truthful R2 refreeze state and all 857 tests passed.
+activity:
+  provider_calls: 0
+  credential_reads: 0
+  prior_private_state_reads: 0
+  private_objects_created: 0
+  real_unseals: 0
+  spend_usd: "0"
+next_gate: exact-owner-authorization-AOG-AO-0011-FRESH-PILOT-V5-R2

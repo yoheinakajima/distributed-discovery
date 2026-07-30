@@ -354,6 +354,9 @@ def test_transport_error_envelope_is_retryable_and_redacted() -> None:
         "hidden_reasoning_stored": False,
         "http_status": None,
         "model": "gpt-5.4-2026-03-05",
+        "retry_class": "transient-transport",
+        "retry_delay_seconds": 2,
+        "retry_delay_source": "registered-class-fallback",
         "retry_eligible": True,
         "route_id": "openai_direct",
     }

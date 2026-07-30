@@ -15,7 +15,7 @@ import subprocess
 import tempfile
 from collections.abc import Iterable, Mapping, Sequence
 from copy import deepcopy
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from datetime import UTC, datetime
 from decimal import Decimal
 from pathlib import Path
@@ -52,6 +52,12 @@ from distributed_discovery.benchmark.agents_v1.orchestration import (
 from distributed_discovery.benchmark.agents_v1.protocol_contract import (
     verify_metric_ranges,
     verify_protocol_contract,
+)
+from distributed_discovery.benchmark.agents_v1.retry_backoff import (
+    RETRY_DELAY_FALLBACK_SECONDS,
+    RetryDelayDecision,
+    RetryDelayRuntime,
+    decision_from_metadata,
 )
 from distributed_discovery.benchmark.agents_v1.traces import build_trace, verify_trace_hashes
 from distributed_discovery.benchmark.agents_v1.verification import verify_method_agreement
@@ -677,6 +683,7 @@ class ResumablePilotAdapter:
         response_key: bytes,
         campaign_id: str = CAMPAIGN_ID,
         batch_id: str = BATCH_ID,
+        retry_delay_runtime: RetryDelayRuntime | None = None,
     ) -> None:
         validate_provider_route(provider, model)
         if adapter.manifest.exact_snapshot not in {model, "deterministic-mock-v1"}:
@@ -689,6 +696,7 @@ class ResumablePilotAdapter:
         self.response_key = response_key
         self.campaign_id = campaign_id
         self.batch_id = batch_id
+        self.retry_delay_runtime = retry_delay_runtime
         self.manifest = ModelManifest(
             provider=adapter.manifest.provider,
             model_id=adapter.manifest.model_id,
@@ -758,8 +766,22 @@ class ResumablePilotAdapter:
         records = tuple(
             item
             for item in self.ledger.records
-            if item.get("call_key") == call_key and "transport_attempt" in item
+            if item.get("event_type") == "provider-call" and item.get("call_key") == call_key
         )
+        attempts = tuple(int(str(item["transport_attempt"])) for item in records)
+        if attempts not in {(), (0,), (0, 1)}:
+            raise PermissionError("transport attempt sequence exceeds the frozen ceiling")
+        delay_records = tuple(
+            item
+            for item in self.ledger.records
+            if item.get("call_key") == call_key
+            and item.get("event_type")
+            in {"provider-retry-delay-selected", "provider-retry-delay-completed"}
+        )
+        if self.retry_delay_runtime is not None:
+            self._validate_retry_audit(call_key, records, delay_records)
+        elif delay_records:
+            raise PermissionError("retry-delay records exist outside the R2 runtime")
         recorded_attempts = {int(str(item["transport_attempt"])) for item in records}
         for path in self.response_root.glob(f"{call_key}-attempt-*.sealed.json"):
             attempt = int(path.stem.rsplit("-", 1)[-1].split(".", 1)[0])
@@ -810,6 +832,151 @@ class ResumablePilotAdapter:
             records,
         )
 
+    def _decision_from_call_record(self, record: Mapping[str, object]) -> RetryDelayDecision:
+        return decision_from_metadata(str(record.get("error_class")), record)
+
+    def _validate_retry_audit(
+        self,
+        call_key: str,
+        call_records: Sequence[Mapping[str, object]],
+        delay_records: Sequence[Mapping[str, object]],
+    ) -> None:
+        selected = tuple(
+            record
+            for record in delay_records
+            if record.get("event_type") == "provider-retry-delay-selected"
+        )
+        completed = tuple(
+            record
+            for record in delay_records
+            if record.get("event_type") == "provider-retry-delay-completed"
+        )
+        if len(selected) > 1 or len(completed) > 1:
+            raise PermissionError("duplicate retry-delay audit record")
+        if completed and not selected:
+            raise PermissionError("retry delay completed without a recorded decision")
+        if not call_records:
+            if delay_records:
+                raise PermissionError("retry delay exists without a failed first attempt")
+            return
+        first = call_records[0]
+        retryable = first.get("error_class") in RETRY_DELAY_FALLBACK_SECONDS
+        if first.get("status") == "success" or not retryable:
+            if delay_records or len(call_records) > 1:
+                raise PermissionError("retry follows a successful or nonretryable attempt")
+            return
+        if first.get("provider_outcome_disposition") != "provider-operational-missing":
+            raise PermissionError("retry lacks a registered provider-outcome disposition")
+        expected = self._decision_from_call_record(first)
+        for record in (*selected, *completed):
+            actual = decision_from_metadata(expected.retry_class, record)
+            if actual != expected:
+                raise PermissionError("recorded retry delay changed after the first attempt")
+            if record.get("transport_attempt") != 1:
+                raise PermissionError("retry delay does not bind the second attempt")
+            if record.get("first_failed_attempt_identity") != f"{call_key}/attempt-0":
+                raise PermissionError("retry delay first-attempt identity mismatch")
+            if (
+                record.get("registered_provider_outcome_disposition")
+                != "provider-operational-missing"
+            ):
+                raise PermissionError("retry delay disposition mismatch")
+        if selected and int(str(selected[0]["sequence"])) <= int(str(first["sequence"])):
+            raise PermissionError("retry delay was selected before the first failure")
+        if completed and int(str(completed[0]["sequence"])) <= int(str(selected[0]["sequence"])):
+            raise PermissionError("retry delay completion order is invalid")
+        if len(call_records) == 2:
+            if not selected or not completed:
+                raise PermissionError("second attempt bypassed the recorded retry delay")
+            if int(str(call_records[1]["sequence"])) <= int(str(completed[0]["sequence"])):
+                raise PermissionError("second attempt preceded retry-delay completion")
+
+    def _delay_records(self, call_key: str) -> tuple[Mapping[str, object], ...]:
+        return tuple(
+            item
+            for item in self.ledger.records
+            if item.get("call_key") == call_key
+            and item.get("event_type")
+            in {"provider-retry-delay-selected", "provider-retry-delay-completed"}
+        )
+
+    def _guard_attempt(
+        self,
+        *,
+        request: AdapterRequest,
+        maximum_cost: Decimal,
+    ) -> None:
+        self.ledger.guard_next(
+            provider=self.provider,
+            input_tokens=4_000,
+            output_tokens=request.max_output_tokens,
+            cost_usd=maximum_cost,
+        )
+
+    def _execute_retry_delay(
+        self,
+        *,
+        call_key: str,
+        first_record: Mapping[str, object],
+        request: AdapterRequest,
+        maximum_cost: Decimal,
+    ) -> None:
+        runtime = self.retry_delay_runtime
+        if runtime is None:
+            return
+        runtime.preflight()
+        self._guard_attempt(request=request, maximum_cost=maximum_cost)
+        decision = self._decision_from_call_record(first_record)
+        delay_records = self._delay_records(call_key)
+        self._validate_retry_audit(call_key, (first_record,), delay_records)
+        selected = next(
+            (
+                record
+                for record in delay_records
+                if record.get("event_type") == "provider-retry-delay-selected"
+            ),
+            None,
+        )
+        if selected is None:
+            selected = self.ledger.append(
+                {
+                    "event_type": "provider-retry-delay-selected",
+                    "idempotency_key": f"{call_key}/retry-delay-selected",
+                    "call_key": call_key,
+                    "status": "selected",
+                    "first_failed_attempt_identity": f"{call_key}/attempt-0",
+                    "registered_provider_outcome_disposition": ("provider-operational-missing"),
+                    "transport_attempt": 1,
+                    **decision.metadata(),
+                }
+            )
+        completed = next(
+            (
+                record
+                for record in delay_records
+                if record.get("event_type") == "provider-retry-delay-completed"
+            ),
+            None,
+        )
+        if completed is None:
+            runtime.preflight()
+            self._guard_attempt(request=request, maximum_cost=maximum_cost)
+            runtime.sleeper(float(decision.retry_delay_seconds))
+            self.ledger.append(
+                {
+                    "event_type": "provider-retry-delay-completed",
+                    "idempotency_key": f"{call_key}/retry-delay-completed",
+                    "call_key": call_key,
+                    "status": "completed",
+                    "first_failed_attempt_identity": f"{call_key}/attempt-0",
+                    "registered_provider_outcome_disposition": ("provider-operational-missing"),
+                    "transport_attempt": 1,
+                    **decision.metadata(),
+                }
+            )
+        runtime.preflight()
+        self._guard_attempt(request=request, maximum_cost=maximum_cost)
+
     def respond(self, request: AdapterRequest) -> AdapterResponse:
         call_key = self._key(request)
         prompt_payload = json.loads(request.prompt.user)
@@ -831,20 +998,17 @@ class ResumablePilotAdapter:
         prior_attempts = len(records)
         if prior_attempts >= 2:
             raise PermissionError("registered transport retry budget is exhausted")
-        retryable = {
-            "timeout",
-            "transient-transport",
-            "invalid-provider-json",
-            "rate-limit",
-            "transient-provider",
-        }
+        retryable = set(RETRY_DELAY_FALLBACK_SECONDS)
         for attempt in range(prior_attempts, 2):
-            self.ledger.guard_next(
-                provider=self.provider,
-                input_tokens=4_000,
-                output_tokens=request.max_output_tokens,
-                cost_usd=maximum_cost,
-            )
+            if attempt == 1 and self.retry_delay_runtime is not None:
+                self._execute_retry_delay(
+                    call_key=call_key,
+                    first_record=records[0],
+                    request=request,
+                    maximum_cost=maximum_cost,
+                )
+            else:
+                self._guard_attempt(request=request, maximum_cost=maximum_cost)
             response = self.adapter.respond(request)
             if (
                 response.error_class is None
@@ -858,6 +1022,22 @@ class ResumablePilotAdapter:
                     declared_tool_calls=response.declared_tool_calls,
                     operational_metadata=response.operational_metadata,
                 )
+            if self.retry_delay_runtime is not None:
+                metadata = {
+                    **response.operational_metadata,
+                    "transport_attempt": attempt,
+                }
+                if response.error_class in retryable:
+                    if (
+                        metadata.get("provider_outcome_disposition")
+                        != "provider-operational-missing"
+                    ):
+                        raise PermissionError(
+                            "retryable response lacks registered operational disposition"
+                        )
+                    decision = decision_from_metadata(response.error_class, metadata)
+                    metadata.update(decision.metadata())
+                response = replace(response, operational_metadata=metadata)
             if (
                 response.error_class is None
                 and self.adapter.manifest.live_capable
@@ -888,7 +1068,7 @@ class ResumablePilotAdapter:
                 )
                 + b"\n",
             )
-            self.ledger.append(
+            call_record = self.ledger.append(
                 {
                     "event_type": "provider-call",
                     "idempotency_key": f"{call_key}/attempt-{attempt}",
@@ -907,8 +1087,20 @@ class ResumablePilotAdapter:
                     "cost_usd": str(response.usage.cost_usd),
                     "error_class": response.error_class,
                     "schema_retry": request.schema_retry,
+                    **{
+                        name: response.operational_metadata[name]
+                        for name in (
+                            "provider_outcome_disposition",
+                            "provider_outcome_class",
+                            "retry_delay_seconds",
+                            "retry_delay_source",
+                            "retry_class",
+                        )
+                        if name in response.operational_metadata
+                    },
                 }
             )
+            records = (*records, call_record)
             if response.error_class not in retryable:
                 return response
         return response
