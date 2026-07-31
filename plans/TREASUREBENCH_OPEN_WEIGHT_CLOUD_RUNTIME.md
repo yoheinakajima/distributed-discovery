@@ -116,9 +116,9 @@ conversation.
 - **M3 — complete:** frozen public-only 50-pairing calibration, acceptance,
   permitted-decision record, complete synthetic corruptions, independent
   checks, and focused tests.
-- **M4 — active:** authorization-free full acceptance, clean execution
+- **M4 — complete:** authorization-free full acceptance, clean execution
   commit, push, draft PR, exact-head checks, and protected-tree freeze.
-- **M5 — pending:** committed generic owner gate, live validate-only pass,
+- **M5 — active:** committed generic owner gate, live validate-only pass,
   schema-valid owner-gate-required handoff, and exact stop.
 - **M6 — pending owner authorization:** provision, download, start, attest,
   execute only the public calibration, measure, stop, teardown or detach under
@@ -139,7 +139,7 @@ conversation.
 - [x] Add and validate PM-0040, the fixed contract, living plan, and master
   continuation.
 - [x] Complete M1 through M3 sequentially without consequential activity.
-- [ ] Complete M4 without consequential activity.
+- [x] Complete M4 without consequential activity.
 - [ ] Commit and validate the generic gate and owner-gate-required handoff.
 - [ ] Stop before every gated action.
 
@@ -279,6 +279,12 @@ conversation.
   no circuit-breaker firing, Methods A/B/C agreement, and 72 primary and
   independently reconstructed agreeing bounds. Credential reads, downloads,
   provider calls, GPU provisioning, private state, and spend all remain zero.
+- `2026-07-31T23:40:00Z`: local `make verify` passes with 883 tests plus every
+  claim, run, program-memory, Agent Operations, paper, publication, naming,
+  release, and offline compendium check. Both exact-head GitHub CI runs pass.
+  Freeze execution commit `37162565b3a46e495a8764af4979e2a74b03a72f`,
+  draft PR #213, and all 19 execution-sensitive tree hashes in the generic
+  owner gate; no authorization exists.
 
 ## Validation strategy
 

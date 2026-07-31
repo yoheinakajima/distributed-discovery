@@ -45,9 +45,11 @@ offline rehearsal in 294 synthetic calls with 50 terminal protocol-valid
 outcomes, zero missing or runtime failures, and agreeing Methods A/B/C plus 72
 primary and independent bounds. It also freezes exact post-teardown Pod billing
 reconciliation, DELETE-plus-absence verification, and the CUDA 13.0 Linux host
-minimum of driver 580.65.06. The sole active work is execution-commit push,
-remote-containment verification, draft PR, exact tree freeze, and the unauthorized
-generic owner-gate-required checkpoint.
+minimum of driver 580.65.06. Execution commit
+`37162565b3a46e495a8764af4979e2a74b03a72f`, draft PR #213, the complete
+local wall, both exact-head CI checks, and all execution-sensitive tree hashes
+are frozen. The sole active work is the unauthorized generic
+owner-gate-required checkpoint.
 
 ## Completed continuation — AO-0011 provider-outcome policy v3 and fresh pilot v5 R2 (2026-07-29)
 
