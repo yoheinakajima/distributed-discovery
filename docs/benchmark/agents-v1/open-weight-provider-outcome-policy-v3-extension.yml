@@ -1,0 +1,71 @@
+schema_version: treasurebench-open-weight-provider-outcome-policy-v3-extension-v1
+policy_version: treasurebench-agents-v1-provider-outcome-policy-v3-open-weight-runtime-extension-r1
+status: prospective-frozen-not-executed
+authority_task: AO-0012
+composes_with: treasurebench-agents-v1-provider-outcome-policy-v3
+scope: treasurebench-open-weight-public-calibration-r1-only
+provider_role:
+  recorded_provider: RunPod-raw-compute
+  model_origin: Mistral-AI
+  inference_engine: vLLM
+  managed_model_provider: false
+terminal_statuses:
+  - protocol-valid
+  - protocol-invalid
+  - provider-operational-missing
+  - provider-contract-or-safety-failure
+operational_missing_taxonomy:
+  - self-operated-client-timeout
+  - self-operated-transient-transport
+  - self-operated-http-429
+  - self-operated-http-500
+  - self-operated-http-502
+  - self-operated-http-503
+  - self-operated-http-504
+  - self-operated-invalid-json-envelope
+contract_or_safety_taxonomy:
+  - runtime-attestation-failure
+  - exact-runtime-identity-mismatch
+  - exact-model-mismatch
+  - exact-engine-or-container-mismatch
+  - gpu-or-cuda-mismatch
+  - request-contract-rejection
+  - endpoint-authentication-failure
+  - logging-or-retention-boundary-failure
+  - hidden-fallback-or-substitution
+  - cap-or-authorization-failure
+  - teardown-verification-failure
+  - unregistered-runtime-error
+retry:
+  transport:
+    maximum_attempts: 2
+    identical_logical_request_only: true
+    first_attempt_timeout_seconds: 180
+    second_attempt_requires_completed_delay: true
+    delay_seconds:
+      timeout_or_transport: 2
+      http_429_or_5xx: 5
+      invalid_json: 2
+  schema:
+    maximum_repairs: 1
+    repair_receives: [validation-error-class, schema]
+  semantic_answer_retries: 0
+  outcome_dependent_retries: 0
+  provider_fallback: false
+  replacement_pairings: 0
+circuit_breaker:
+  consecutive_operational_missing: 3
+  cumulative_operational_missing: 10
+  any_contract_or_safety_failure: immediate-stop
+  inputs: [terminal-operational-status, sequence]
+  performance_inputs: prohibited
+cost_extension:
+  billing_unit: GPU-and-selected-storage-wall-clock
+  exact_total_required: true
+  pairing_cost_for_policy_v3_operational_interval: equal-allocation-of-reconciled-total-over-50-intended-pairings
+  performance_interpretation: prohibited
+retention:
+  completed_safe_responses: ephemeral-owner-runner-memory-until-classification
+  raw_prompts_outputs_public_logs: prohibited
+  pod_disk_prompt_output_write: prohibited
+  public_record: operational-identity-counts-method-agreement-bounds-agreement-and-cost-only

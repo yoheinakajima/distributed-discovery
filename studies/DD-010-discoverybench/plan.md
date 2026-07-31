@@ -80,6 +80,23 @@ exact next gate is DiscoveryBench Agents v1 evaluation campaign registration
 and cost authorization. It must be opened separately; this plan creates no
 authority for that campaign.
 
+## AO-0012 prospective open-weight runtime work
+
+AO-0012 audits whether the third-model purpose can be met without a
+physically owner-held GPU by a reproducible open-weight, self-operated cloud
+runtime. Authorization-free work freezes the exact model revision, original
+BF16 artifact checksums, tokenizer, vLLM release and container digest, one
+A100 80GB PCIe, CUDA boundary, RunPod Secure Cloud Pod manifest, authenticated
+endpoint, no-log proxy, lifecycle, public calibration, corruptions, and
+permitted decisions. It changes no base allocation or scientific design.
+
+The sole next execution gate is the generic AO-0012 owner gate for 50 public
+pairings. No credential, authenticated RunPod or Hugging Face request, model
+download, GPU provision, endpoint, inference, or spend is permitted before
+that gate. A later claim-grade registration must independently decide whether
+the measured runtime satisfies the third-model design; AO-0012 allocates no
+study and creates no claim-grade authority.
+
 The 2026-07-23 evaluation registration under issue #173 selects a sealed
 engineering pilot pending owner authorization and keeps the claim-grade base
 blocked on local/open feasibility. The inactive authorization has zero caps

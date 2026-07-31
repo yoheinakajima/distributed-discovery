@@ -1,0 +1,127 @@
+schema_version: treasurebench-open-weight-cloud-runtime-feasibility-v1
+audit_version: ow-cloud-feasibility-2026-07-30
+status: prospective-feasible-owner-gated-calibration-required
+authority_task: AO-0012
+audited_at_utc: "2026-07-30T21:30:00Z"
+official_sources_only: true
+selected_identity:
+  runtime_class: rented-raw-gpu-owner-operated
+  name: open-weight, self-operated cloud runtime
+  compute: RunPod Secure Cloud dedicated Pod
+  gpu: one NVIDIA A100 80GB PCIe
+  model: mistralai/Mistral-Small-3.1-24B-Instruct-2503
+  revision: 68faf511d618ef198fef186659617cfd2eb8e33a
+  weights: official BF16 original Mistral format, unquantized
+  engine: vLLM 0.23.0
+  container: docker.io/vllm/vllm-openai@sha256:3a1e7f5904e1a1192a02aa0086ceaffc33985d7044c7bb25b3a43d61bdbe3ac0
+  cuda: "13.0.2"
+current_base_design_audit:
+  selection_record: docs/benchmark/agents-v1/provider-model-candidates.yml
+  allocation_record: docs/benchmark/agents-v1/base-campaign-allocation.yml
+  existing_requirements:
+    minimum_cloud_families: 2
+    local_open_candidate_required: true
+    exact_snapshot_required: true
+    provider_family_independence_claimed: false
+  exact_reason_for_third_model: The existing local/open label bundled an exact open-weight third family with a separately operated inference path so the base design was not only a comparison of two proprietary provider stacks. Its registered role combined model-family diversity, transparent reproducible inference, independence from the two proprietary model providers, owner control, physical locality, and infrastructure-provider independence.
+  separation_result:
+    open_weight_model_family_diversity: supplied-prospectively
+    inference_stack_transparency_and_reproducibility: supplied-prospectively
+    independence_from_two_proprietary_model_providers: supplied-prospectively
+    owner_control_weights_engine_configuration_retention: supplied-prospectively
+    physical_locality: not-supplied
+    infrastructure_provider_independence: not-supplied
+  design_change_made: false
+  later_registration_must_decide_sufficiency: true
+model_audit:
+  license: Apache-2.0
+  parameters: 24B
+  context_window_tokens: 128000
+  official_minimum_vllm: 0.8.1
+  selected_current_vllm: 0.23.0
+  tokenizer_chat_template_authority: mistral-common V7 Tekken at exact revision
+  official_memory_statement: approximately 55 GB in BF16 or FP16; an official example also describes more than 60 GB including execution overhead
+  exact_repository_storage_bytes: 96115639662
+  original_weight_bytes: 48022792280
+  duplicate_hf_shard_bytes_approximately: 48022792000
+  download_policy: original Mistral-format required artifacts only; never download or load a community quantization
+  cache_plan_gb: 120
+  fatal_incompatibility_found_in_public_sources: false
+  measured_single_gpu_fit_required: true
+engine_container_audit:
+  official_model_specific_recipe: Mistral tokenizer/config/load modes with vLLM; tool parser flags apply only when tools are used
+  selected_text_only_deviation: tools and automatic tool choice disabled because TreasureBench uses a repository action JSON schema and no tools
+  vllm_release_commit: 91df0fad4dc98a67c7659d9dbd915245d5c43d96
+  linux_amd64_digest: sha256:3a1e7f5904e1a1192a02aa0086ceaffc33985d7044c7bb25b3a43d61bdbe3ac0
+  image_size_bytes: 9190790035
+  python: "3.12"
+  cuda: "13.0.2"
+  cuda_arch_includes_a100_sm80: true
+  runpod_allowed_cuda_version: "13.0"
+  minimum_linux_driver_version: "580.65.06"
+  accepted_driver_branches: ["580", "595", "610"]
+  driver_identity: must be checked before model download and recorded; NVIDIA's CUDA 13.0 table requires Linux driver 580.65.06 or newer, so every 535 through 575 host is rejected
+  recreate_elsewhere: same amd64 image digest, A100 80GB, exact artifact checksums, manifest, startup, and proxy
+runpod_audit:
+  product: Secure Cloud Pod
+  rental: dedicated-on-demand-noninterruptible
+  gpu_type_id: NVIDIA A100 80GB PCIe
+  availability: public GPU list indicates the exact type; authenticated live stock must be rechecked only after authorization
+  price_usd_per_gpu_hour: "1.39"
+  price_observed_at: "2026-07-30"
+  six_hour_compute_usd: "8.34"
+  expected_total_under_usd: "10"
+  conservative_planning_envelope_usd: "10"
+  hard_total_cap_usd: "20"
+  billing: per-second Pod billing subject to account credit minimums
+  api: REST /v1/pods supports SECURE cloud, exact GPU IDs/count, allowed CUDA versions, region restrictions, image, entrypoint, start command, environment, ports, disks, and desired status
+  storage:
+    container_disk: temporary and cleared on stop/restart
+    volume_disk: mounted at /workspace, survives stop, deleted with Pod termination
+    selected: 120 GB encrypted volume disk plus 50 GB container disk
+    network_volume: not selected
+  network:
+    selected: RunPod HTTPS proxy to one bearer-authenticated application port
+    caveat: the HTTP proxy route is public once exposed; the Pod ID is not an authentication control
+    raw_prompt_output_logging: prohibited at owner proxy and vLLM
+  logs:
+    provider_system_lifecycle_logs: exist
+    prompt_or_raw_output_in_public_logs: prohibited-by-application
+    provider_wide_nonretention_claim: not-made
+  lifecycle:
+    create: POST exact manifest with desired RUNNING
+    startup: reconstruct scripts from committed bytes, verify identity and checksums, load exact model, emit authenticated attestation, expose endpoint
+    normal_finish: terminate Pod immediately
+    timeout: terminate at or before six hours
+    teardown_verification: after DELETE the exact Pod ID must become unaddressable before billing reconciliation; otherwise fail closed and require owner intervention
+    billing_verification: sum only billing records for the exact created Pod ID and require positive billed milliseconds and amount after teardown
+    stopped_persistence: prohibited
+    retained_network_volume: none
+controls_and_limits:
+  passes_definition_prospectively: true
+  requires_live_attestation: true
+  requires_public_calibration: true
+  physical_locality: false
+  full_infrastructure_independence: false
+  legal_security_privacy_conclusion: none
+  provider_adversary_resistance_claim: none
+alternatives:
+  - {class: managed-model-endpoint, examples: [Mistral hosted API, FlyMyAI hosted inference], self_operated_condition: fail-unless-actual-artifact-and-stack-control-independently-proved}
+  - {class: third-party-routed-model-api, examples: [OpenRouter], self_operated_condition: fail}
+  - {class: managed-custom-container, examples: [], self_operated_condition: conditional-exact-independent-reproduction-and-no-hidden-transformation}
+official_sources:
+  - {authority: Mistral AI model repository, url: "https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503", supports: revision-model-card-license-tokenizer-recipe-memory}
+  - {authority: Hugging Face model metadata API, url: "https://huggingface.co/api/models/mistralai/Mistral-Small-3.1-24B-Instruct-2503/revision/68faf511d618ef198fef186659617cfd2eb8e33a?blobs=true", supports: exact-revision-storage-files-lfs-sha256}
+  - {authority: Mistral AI deployment docs, url: "https://docs.mistral.ai/models/deployment/local-deployment/vllm", supports: vllm-recommendation-and-openai-compatible-serving}
+  - {authority: vLLM model recipe, url: "https://docs.vllm.ai/en/v0.8.5/getting_started/examples/mistral-small.html", supports: model-specific-mistral-modes}
+  - {authority: vLLM current supported models, url: "https://docs.vllm.ai/en/latest/models/supported_models.html", supports: Mistral3ForConditionalGeneration-support}
+  - {authority: vLLM release, url: "https://github.com/vllm-project/vllm/releases/tag/v0.23.0", supports: release-version-commit-cuda}
+  - {authority: NVIDIA CUDA 13.0 release notes, url: "https://docs.nvidia.com/cuda/archive/13.0.0/cuda-toolkit-release-notes/index.html#cuda-driver", supports: cuda-13-minimum-linux-driver-580-65-06}
+  - {authority: vLLM Docker Hub, url: "https://hub.docker.com/v2/repositories/vllm/vllm-openai/tags/v0.23.0", supports: immutable-container-digests-size-date}
+  - {authority: RunPod Pod API, url: "https://docs.runpod.io/api-reference/pods/POST/pods", supports: pod-manifest-fields-lifecycle}
+  - {authority: RunPod pricing, url: "https://www.runpod.io/pricing", supports: current-a100-80gb-secure-cloud-price}
+  - {authority: RunPod Pod pricing docs, url: "https://docs.runpod.io/pods/pricing", supports: billing-and-storage-prices}
+  - {authority: RunPod Pod billing API, url: "https://docs.runpod.io/api-reference/billing/GET/billing/pods", supports: exact-post-teardown-pod-cost-reconciliation}
+  - {authority: RunPod storage docs, url: "https://docs.runpod.io/storage/overview", supports: persistence-encryption-deletion}
+  - {authority: RunPod connection docs, url: "https://docs.runpod.io/pods/connect-to-a-pod", supports: proxy-exposure-and-endpoint-shape}
+  - {authority: RunPod security docs, url: "https://docs.runpod.io/pods/security", supports: stated-pod-isolation-boundary}

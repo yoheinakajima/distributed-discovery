@@ -1,0 +1,30 @@
+schema_version: treasurebench-open-weight-cloud-runtime-decision-v1
+authority_task: AO-0012
+status: pending-owner-authorized-public-calibration
+calibration_id: treasurebench-open-weight-public-calibration-r1
+selected_decision: null
+permitted_decisions:
+  - open-weight-self-operated-cloud-runtime-feasible-base-registration-next
+  - open-weight-runtime-technically-feasible-budget-owner-decision-required
+  - open-weight-runtime-feasible-but-bound-informativeness-gate-required
+  - exact-bf16-runtime-infeasible-quantized-or-sharded-identity-gate-required
+  - self-operated-control-boundary-failed-managed-api-rejected
+  - calibration-integrity-failure-stop
+preselection: false
+decision_evidence: []
+next_candidate_if_pass:
+  title: TreasureBench Agents v1 claim-grade base-campaign registration and open-weight runtime authorization
+  must_independently_decide:
+    - scientific-study-registration
+    - whether-self-operated-cloud-runtime-satisfies-third-model-design
+    - final-three-model-identities
+    - 200-task-allocation
+    - four-batches
+    - three-repeats
+    - 9000-intended-pairings
+    - scientific-hypotheses-and-estimands
+    - bound-informativeness-criteria
+    - total-budget-and-duration
+    - private-custody
+    - publication-authority
+scientific_authority_created: false

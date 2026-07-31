@@ -107,16 +107,16 @@ conversation.
 - **M0 — complete:** issue, branch, PM-0040, fixed task contract, living
   ExecPlan, master-plan registration, schema validation, and first
   authority-bearing commit.
-- **M1 — active:** existing-design audit, five-class runtime definition, and
+- **M1 — complete:** existing-design audit, five-class runtime definition, and
   current official-source model/engine/container/CUDA/RunPod feasibility
   record.
-- **M2 — pending:** immutable runtime manifest, fail-closed container startup,
+- **M2 — complete:** immutable runtime manifest, fail-closed container startup,
   repository endpoint adapter, authenticated attestation, safe telemetry and
   cost ledger, and no-credential deployment package.
-- **M3 — pending:** frozen public-only 50-pairing calibration, acceptance,
+- **M3 — complete:** frozen public-only 50-pairing calibration, acceptance,
   permitted-decision record, complete synthetic corruptions, independent
   checks, and focused tests.
-- **M4 — pending:** authorization-free full acceptance, clean execution
+- **M4 — active:** authorization-free full acceptance, clean execution
   commit, push, draft PR, exact-head checks, and protected-tree freeze.
 - **M5 — pending:** committed generic owner gate, live validate-only pass,
   schema-valid owner-gate-required handoff, and exact stop.
@@ -138,7 +138,8 @@ conversation.
   `agent/treasurebench-open-weight-cloud-runtime`.
 - [x] Add and validate PM-0040, the fixed contract, living plan, and master
   continuation.
-- [ ] Complete M1 through M4 sequentially without consequential activity.
+- [x] Complete M1 through M3 sequentially without consequential activity.
+- [ ] Complete M4 without consequential activity.
 - [ ] Commit and validate the generic gate and owner-gate-required handoff.
 - [ ] Stop before every gated action.
 
@@ -167,6 +168,57 @@ conversation.
   sandbox could not create `.git/index.lock`. The task paths remained
   unstaged and no commit was created; the explicit Git operations require the
   repository's approved Git permission.
+- The exact Hugging Face revision remains
+  `68faf511d618ef198fef186659617cfd2eb8e33a`. Its public metadata records
+  96,115,639,662 bytes because it contains both the original 48,022,792,280
+  byte consolidated BF16 artifact and a duplicate ten-shard HF-format set.
+  AO-0012 pins and checksum-verifies the original Mistral load format, exact
+  Tekken tokenizer, and every downloaded small revision file.
+- Current vLLM release `0.23.0` supports the exact Mistral3 architecture. The
+  selected Linux/amd64 image is
+  `sha256:3a1e7f5904e1a1192a02aa0086ceaffc33985d7044c7bb25b3a43d61bdbe3ac0`,
+  built from `91df0fad4dc98a67c7659d9dbd915245d5c43d96` with CUDA
+  13.0.2 and SM80 support. Startup forces the native vLLM implementation,
+  Mistral tokenizer/config/load modes, BF16, one GPU, no request logging, no
+  tools, no quantization, and no implementation fallback.
+- RunPod's public price for Secure Cloud A100 80GB PCIe is USD 1.39/GPU-hour,
+  so six compute hours are USD 8.34 before low storage charges. Its HTTPS
+  proxy route is public once exposed; the Pod ID is not treated as a secret,
+  and bearer authentication is required for every endpoint operation.
+- RunPod documentation says volume encryption is selected at creation and
+  returns `volumeEncrypted`, while the current OpenAPI `PodCreateInput` omits
+  that property. The package requests encryption and verifies the response,
+  then terminates on omission or false. The volume contains public model cache
+  only; prompts and raw outputs are prohibited from Pod disk and logs.
+- The deterministic public matrix needs 294 normal inference calls, leaving
+  106 calls inside the 400-call cap for frozen schema-only repair and bounded
+  transport-retry paths. The executor refuses the 401st inference attempt.
+- The first focused validation after adding the complete matrix stopped only
+  on Ruff import ordering. A second focused validation after adding exact
+  billing and teardown tests exposed the same mechanical import-order issue in
+  the test module. Both failures are preserved here; import order was corrected
+  without changing runtime semantics, after which Ruff, mypy, and all 26
+  focused tests passed.
+- The first billing implementation supplied a pre-matrix accrued-cost estimate
+  to policy-v3 bounds. That was not exact billed-cost reconciliation. Bounds
+  now remain pending in memory until the exact post-teardown Pod bill is
+  available, then allocate that reconciled amount equally over all 50 intended
+  pairings before primary and independent reconstruction.
+- The first teardown implementation treated a successful Pod DELETE response
+  as sufficient verification. It now requires the exact Pod ID to become
+  unaddressable before billing reconciliation; otherwise the calibration fails
+  closed and reports that retained-volume deletion is unverified.
+- NVIDIA's current CUDA 13.0 release table invalidated the original provisional
+  driver allowance: CUDA 13.0 GA requires Linux driver 580.65.06 or newer.
+  The manifest, feasibility audit, startup order, attestation validation, and
+  tests now reject 535 through 575 hosts before model download and accept only
+  a numerically compatible recorded driver.
+- The first full `make verify` reached 879 passing tests and four failures in
+  legacy pilot synthetic-live tests. Those tests require the current HEAD to be
+  present on a remote branch; the AO-0012 implementation head had deliberately
+  not yet been pushed. No AO-0012 test failed. This is an expected sequencing
+  failure, preserved here and to be rerun after the path-explicit commit and
+  branch push.
 
 ## Decision log
 
@@ -196,12 +248,44 @@ conversation.
   `git diff --check` passes. Begin M1.
 - `2026-07-30T13:48:43Z`: preserve the stopped pre-staging Git attempt; rerun
   path-explicit `git add` and `git commit` with approved Git permissions.
+- `2026-07-30T22:30:00Z`: freeze runtime-definition version `ow-runtime-v1`
+  and class B, `rented-raw-gpu-owner-operated`. It prospectively supplies
+  open-weight family diversity, transparent reproducible inference,
+  independence from the two proprietary model providers, and owner control;
+  it supplies neither physical locality nor complete infrastructure
+  independence.
+- `2026-07-30T22:30:00Z`: freeze vLLM 0.23.0, the exact Linux/amd64 digest,
+  original Mistral BF16 format, CUDA 13.0.2, one A100 80GB PCIe, native-engine
+  enforcement, and authenticated attestation as one prospective identity.
+  The model-specific minimum remains vLLM 0.8.1; no moving tag is used.
+- `2026-07-30T22:30:00Z`: freeze a 120-GB encrypted volume, 50-GB container
+  disk, exact artifact verification, bearer-authenticated no-log proxy,
+  HMAC-authenticated attestation, 21,600-second deadline, automatic
+  termination, and post-termination billing reconciliation.
+- `2026-07-30T22:30:00Z`: freeze the ten existing public task commitments,
+  five architectures, one repeat, 50 pairings, policy v2 plus the prospective
+  self-operated policy-v3 extension, Methods A/B/C, independent bounds,
+  operational-only reporting, and no protocol-validity-rate threshold.
+- `2026-07-31T23:26:23Z`: correct exact-cost handling so Methods and bounds use
+  the post-teardown bill rather than a provisional accrual; require DELETE plus
+  exact-Pod absence before billing; add deterministic exact billing aggregation
+  and teardown tests; and preserve the superseded implementations above.
+- `2026-07-31T23:26:23Z`: correct the CUDA 13.0 host minimum to NVIDIA Linux
+  driver 580.65.06, fail before model download on any lower driver, and record
+  the correction as an official-source audit finding rather than silently
+  preserving an incompatible branch list.
+- `2026-07-31T23:26:23Z`: complete the no-network 50-pairing rehearsal with 294
+  calls, 50 protocol-valid terminal outcomes, zero missing or runtime failure,
+  no circuit-breaker firing, Methods A/B/C agreement, and 72 primary and
+  independently reconstructed agreeing bounds. Credential reads, downloads,
+  provider calls, GPU provisioning, private state, and spend all remain zero.
 
 ## Validation strategy
 
-1. JSON Schema and cross-record validation for the task contract, runtime
-   definition, feasibility record, manifest, attestation, calibration,
-   corruptions, decision, owner gate, and handoff.
+1. Repository JSON Schema validation for the task contract, owner gate, and
+   handoff, plus fail-closed machine-readable cross-record validation for the
+   runtime definition, feasibility record, manifest, attestation, calibration,
+   corruptions, and decision record.
 2. Hand-checkable five-class conformance matrix plus independent reconstruction
    of every class/property result.
 3. Manifest rejection tests for revision, tokenizer, image digest, GPU,
@@ -230,9 +314,10 @@ conversation.
 
 ## Artifacts produced
 
-Issue #212 and the task branch exist. This plan, fixed task contract, PM-0040,
-and the master-plan continuation are the M0 registration artifacts. Later
-artifacts are recorded only after they exist and validate.
+Issue #212 and the task branch exist. The M0 registration, runtime definition,
+official-source feasibility record, immutable manifest, startup and proxy
+package, repository adapter, policy-v3 extension, public calibration,
+corruptions, focused tests, and pending permitted-decision record exist.
 
 ## Blockers
 

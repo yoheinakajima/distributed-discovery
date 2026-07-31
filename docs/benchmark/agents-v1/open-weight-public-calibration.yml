@@ -1,0 +1,98 @@
+schema_version: treasurebench-open-weight-public-calibration-v1
+calibration_id: treasurebench-open-weight-public-calibration-r1
+status: frozen-owner-gate-not-authorized
+authority_task: AO-0012
+scientific_run: false
+public_only: true
+runtime_identity: treasurebench-mistral-small-3.1-24b-bf16-vllm-0.23.0-a100-80gb-pcie-r1
+model_count: 1
+repeat_count: 1
+task_count: 10
+architecture_count: 5
+intended_pairings: 50
+tasks:
+  - {task_id: PUBLIC-CAL-COM-001-V0, family_id: common-source-acquisition, cell_id: CELL-COMMON-SOURCE-ACQUISITION-001, commitment: e1ca5e3c8334ed56b5fbdd2de536269de69debdde78904a2f3fe48d675eecd16}
+  - {task_id: PUBLIC-CAL-COM-027-V1, family_id: common-source-acquisition, cell_id: CELL-COMMON-SOURCE-ACQUISITION-027, commitment: ea6ec316e4d26b29638b4ee09904593bfafb5d225cde303e3c22694b31014068}
+  - {task_id: PUBLIC-CAL-ONE-001-V2, family_id: one-reader-versus-broadcast-attention, cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-001, commitment: 07424f912df0c02c73ded2593008b77b2b3cb086d318f142a2929d53e7a59e64}
+  - {task_id: PUBLIC-CAL-ONE-027-V3, family_id: one-reader-versus-broadcast-attention, cell_id: CELL-ONE-READER-VERSUS-BROADCAST-ATTENTION-027, commitment: 6f64160ebf8a1b76405f2d9746ff5748dc459a7e2473bf4b2af4bca88c53c43a}
+  - {task_id: PUBLIC-CAL-POI-001-V0, family_id: point-versus-shortlist-sharing, cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-001, commitment: b3fa0e977ed83e55b21ed10cd2044039d22b4ce875dcb30d89781aae231d2d5e}
+  - {task_id: PUBLIC-CAL-POI-030-V1, family_id: point-versus-shortlist-sharing, cell_id: CELL-POINT-VERSUS-SHORTLIST-SHARING-030, commitment: 358a828d2c05dd98b5dbf5d7da85a2c8edb3a49a5af4d9f6b14a9c2fa7e8a7e7}
+  - {task_id: PUBLIC-CAL-CON-001-V2, family_id: consensus-collapse-versus-portfolio-recovery, cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-001, commitment: b1a82feed8892d099af44c5d83481af367065e6204d64d0847b1971555ba8ec7}
+  - {task_id: PUBLIC-CAL-CON-030-V3, family_id: consensus-collapse-versus-portfolio-recovery, cell_id: CELL-CONSENSUS-COLLAPSE-VERSUS-PORTFOLIO-RECOVERY-030, commitment: b616fb103e4c2f35bac1b01550ac5b91330ec1d288fa1cc88af6723422fd84d3}
+  - {task_id: PUBLIC-CAL-THR-001-V0, family_id: threshold-team-formation, cell_id: CELL-THRESHOLD-TEAM-FORMATION-001, commitment: 2861e804b6932ae0f961a08573f3ef85e4ad66762c699e966d6c7adb083d403d}
+  - {task_id: PUBLIC-CAL-THR-024-V1, family_id: threshold-team-formation, cell_id: CELL-THRESHOLD-TEAM-FORMATION-024, commitment: ef9196cd84886fe33e825a14cf374526a30b24152e100d1deb98a2ffaa9190cf}
+architectures:
+  - isolated-private-agents
+  - full-broadcast-shared-transcript
+  - designated-reader-selective-sharing
+  - pooled-consensus
+  - portfolio-preserving-structured
+policies:
+  protocol_validity: treasurebench-agents-v1-protocol-validity-policy-v2
+  provider_outcome: treasurebench-agents-v1-provider-outcome-policy-v3-open-weight-runtime-extension-r1
+  extension_rule: Self-operated runtime transport failures use the same four terminal dispositions, identical-request transport bound, zero semantic retry, and no replacement; runtime identity, endpoint, logging, attestation, or control-boundary failure is contract-or-safety failure.
+theoretical_validation:
+  exact_baselines: required-for-all-ten-public-tasks
+  method_a: exact-evaluator
+  method_b: independent-formula
+  method_c: protocol-validity-classifier
+  independent_all_pairing_bounds: required
+allowed_report_fields:
+  - runtime_identity
+  - model_identity
+  - engine_identity
+  - hardware_identity
+  - startup_seconds
+  - model_load_seconds
+  - total_wall_clock_seconds
+  - input_tokens
+  - output_tokens
+  - throughput_tokens_per_second
+  - gpu_memory_observations_mib
+  - calls
+  - failures
+  - protocol_valid_count
+  - protocol_invalid_count
+  - provider_operational_missing_count
+  - runtime_failure_count
+  - exact_cost_usd
+  - all_50_pairings_completed
+  - methods_and_bounds_agree
+  - projected_open_weight_arm_runtime_and_cost
+  - projected_complete_base_campaign_runtime_and_cost
+prohibited_report_fields:
+  - task_performance
+  - family_performance
+  - architecture_performance
+  - model_performance
+  - ranking
+  - composite
+  - leaderboard
+projection:
+  observed_pairing_denominator: 50
+  open_weight_arm_pairings: 3000
+  complete_base_campaign_pairings: 9000
+  method: Multiply measured per-pairing wall-clock and compute cost by 60 and 180 respectively; separately report startup/load amortization and do not imply the two proprietary arms use GPU runtime.
+acceptance:
+  exact_runtime_identity_passes: true
+  exact_official_bf16_model_revision_passes: true
+  quantization: prohibited
+  terminal_classifications_required: 50
+  contract_or_safety_failures_maximum: 0
+  circuit_breaker_fires: false
+  hidden_fallback_or_substitution: false
+  endpoint_authentication_and_logging_boundary_pass: true
+  response_trace_ledger_identity_correspondence: exact
+  methods_a_b_c_and_independent_bounds: agree-where-applicable
+  cost_reconciliation: exact
+  maximum_runtime_seconds: 21600
+  hard_total_cost_usd: "20"
+  measured_projection_required: true
+  observed_protocol_validity_rate_threshold: null
+  protocol_invalid_outcomes_preserved: true
+  projected_bound_informativeness_assessed_separately: true
+publication_boundary:
+  raw_prompts_or_outputs: prohibited
+  performance_values: prohibited
+  operational_identity_and_conformance_only: true
+  private_seed_task_answer_or_holdout: prohibited

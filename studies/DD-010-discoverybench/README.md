@@ -54,6 +54,26 @@ explicit owner cost authorization, custody material, and immutable evidence
 package. The current v1/v2/v3 commands, outputs, default, and disabled external
 adapter remain unchanged.
 
+## AO-0012 open-weight self-operated cloud-runtime gate
+
+AO-0012 is a prospective DD-010 infrastructure task, not a scientific run or
+claim-grade campaign. It separates open-weight model-family diversity,
+inference-stack transparency, independence from the two proprietary model
+providers, owner control, physical locality, and infrastructure-provider
+independence. The primary candidate is an open-weight, self-operated cloud
+runtime on one RunPod Secure Cloud A100 80GB PCIe with the exact registered
+Mistral Small 3.1 24B revision, original BF16 weights, and an immutable vLLM
+container. It is never called local and supplies neither physical locality nor
+complete infrastructure independence.
+
+Only one ten-task, five-architecture, one-repeat public calibration may later
+run behind the exact generic owner gate. It has 50 intended pairings, no
+private material, no performance publication, no model-provider API, and no
+scientific authority. Until that gate is authorized, credential access,
+model download, provisioning, endpoint launch, inference, and spend remain
+zero and prohibited. The exact BF16 single-A100 identity fails closed rather
+than quantizing, sharding, changing model, or changing GPU class.
+
 ## Agents v1 sealed-pilot repair adjudication
 
 The first sealed engineering pilot remains permanently

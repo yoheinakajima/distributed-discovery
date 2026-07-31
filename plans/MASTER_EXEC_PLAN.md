@@ -1,6 +1,6 @@
 # Master execution plan
 
-## Active continuation — AO-0012 open-weight self-operated cloud runtime (2026-07-30)
+## Active continuation — AO-0012 open-weight self-operated cloud runtime (2026-07-31)
 
 Issue #212, branch `agent/treasurebench-open-weight-cloud-runtime`, fixed task
 contract `tasks/treasurebench-open-weight-cloud-runtime.yml`, and living
@@ -39,6 +39,15 @@ architectures, one repeat, 50 intended pairings, one A100 80GB, six GPU-hours,
 400 inference calls, and USD 20 total. The task cannot allocate DD-023, alter
 the 200-slot base allocation, create private material, use a managed model API,
 publish performance, change a paper, or create a release or submission.
+
+The authorization-free package now completes the exact deterministic 50-pairing
+offline rehearsal in 294 synthetic calls with 50 terminal protocol-valid
+outcomes, zero missing or runtime failures, and agreeing Methods A/B/C plus 72
+primary and independent bounds. It also freezes exact post-teardown Pod billing
+reconciliation, DELETE-plus-absence verification, and the CUDA 13.0 Linux host
+minimum of driver 580.65.06. The sole active work is execution-commit push,
+remote-containment verification, draft PR, exact tree freeze, and the unauthorized
+generic owner-gate-required checkpoint.
 
 ## Completed continuation — AO-0011 provider-outcome policy v3 and fresh pilot v5 R2 (2026-07-29)
 
