@@ -118,7 +118,7 @@ conversation.
   checks, and focused tests.
 - **M4 — complete:** authorization-free full acceptance, clean execution
   commit, push, draft PR, exact-head checks, and protected-tree freeze.
-- **M5 — active:** committed generic owner gate, live validate-only pass,
+- **M5 — complete:** committed generic owner gate, live validate-only pass,
   schema-valid owner-gate-required handoff, and exact stop.
 - **M6 — pending owner authorization:** provision, download, start, attest,
   execute only the public calibration, measure, stop, teardown or detach under
@@ -140,8 +140,8 @@ conversation.
   continuation.
 - [x] Complete M1 through M3 sequentially without consequential activity.
 - [x] Complete M4 without consequential activity.
-- [ ] Commit and validate the generic gate and owner-gate-required handoff.
-- [ ] Stop before every gated action.
+- [x] Commit and validate the generic gate and owner-gate-required handoff.
+- [x] Stop before every gated action.
 
 ## Discoveries and surprises
 
@@ -285,6 +285,11 @@ conversation.
   Freeze execution commit `37162565b3a46e495a8764af4979e2a74b03a72f`,
   draft PR #213, and all 19 execution-sensitive tree hashes in the generic
   owner gate; no authorization exists.
+- `2026-07-31T23:45:00Z`: the committed generic gate passes live validate-only
+  contract, issue, open draft PR, branch, descendant, cap, permission,
+  prohibition, expiry, and all 19 protected-tree checks. It reports
+  `validated-no-authorization-or-consequential-action-performed`. Complete M5
+  and stop exactly once at owner-gate-required.
 
 ## Validation strategy
 
@@ -327,10 +332,11 @@ corruptions, focused tests, and pending permitted-decision record exist.
 
 ## Blockers
 
-No registration blocker. Consequential execution is intentionally blocked
-until M1 through M5 pass and the owner supplies the exact generic-gate
-challenge. The unrelated untracked files prevent a globally clean worktree but
-do not overlap AO-0012; all staging is path-explicit.
+The only blocker is intentional: the exact generic owner authorization is
+absent. M1 through M5 pass. Consequential execution remains prohibited until
+the owner supplies the exact challenge. The unrelated untracked files prevent
+a globally clean worktree but do not overlap AO-0012; all staging is
+path-explicit.
 
 ## Recovery and restart instructions
 

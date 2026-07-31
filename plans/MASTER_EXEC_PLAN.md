@@ -48,8 +48,8 @@ reconciliation, DELETE-plus-absence verification, and the CUDA 13.0 Linux host
 minimum of driver 580.65.06. Execution commit
 `37162565b3a46e495a8764af4979e2a74b03a72f`, draft PR #213, the complete
 local wall, both exact-head CI checks, and all execution-sensitive tree hashes
-are frozen. The sole active work is the unauthorized generic
-owner-gate-required checkpoint.
+are frozen. The generic gate passes live validate-only checks without creating
+authorization. AO-0012 is stopped at the sole owner-gate-required checkpoint.
 
 ## Completed continuation — AO-0011 provider-outcome policy v3 and fresh pilot v5 R2 (2026-07-29)
 
