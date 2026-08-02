@@ -297,3 +297,15 @@ Post-lock replay/unseal, Methods A/B/C, independent classification and
 all-pairing bounds, exact correspondence and cost, contamination,
 corruptions, redaction, and retained-state verification pass. No task-level
 or comparative performance and no scientific evidence is created.
+
+
+### AO-0012 R2 preauthorization correction
+
+The unused R1 gate is superseded without authorization. The same public
+calibration and runtime identity remain behind
+`AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R2`, which adds repository-local
+two-name credential ingress, temporary RunPod Secret/template lifecycle,
+authorization-bound orphan controls, measured attestation, and exact
+success/failure teardown and billing. This remains infrastructure engineering
+only and adds no DD-023, private, scientific, base-campaign, performance, or
+publication authority.

@@ -359,3 +359,15 @@ operational totals only and no task-level or comparative performance.
 No DD-023, claim, scientific run, paper result, ranking, leaderboard, or
 composite exists. No completed or archived authorization permits the base
 campaign, reuse of any quarantined pilot, or a new private pilot.
+
+
+### AO-0012 R2 preauthorization correction
+
+The unused R1 gate is superseded without authorization. The same public
+calibration and runtime identity remain behind
+`AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R2`, which adds repository-local
+two-name credential ingress, temporary RunPod Secret/template lifecycle,
+authorization-bound orphan controls, measured attestation, and exact
+success/failure teardown and billing. This remains infrastructure engineering
+only and adds no DD-023, private, scientific, base-campaign, performance, or
+publication authority.

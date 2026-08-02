@@ -119,10 +119,11 @@ treasurebench-open-weight-runtime-audit:
 
 treasurebench-open-weight-runtime-rehearsal:
 	$(PY) scripts/audit_treasurebench_open_weight_cloud_runtime.py --rehearsal
-	$(RUN) pytest -q tests/test_treasurebench_open_weight_cloud_runtime.py
+	$(PY) -m distributed_discovery.benchmark.agents_v1.open_weight_cloud_runtime_r2 --rehearsal
+	$(RUN) pytest -q tests/test_treasurebench_open_weight_cloud_runtime.py tests/test_treasurebench_open_weight_cloud_runtime_r2.py
 
 treasurebench-open-weight-runtime-live:
-	$(PY) -m distributed_discovery.benchmark.agents_v1.open_weight_cloud_runtime --live
+	$(PY) -m distributed_discovery.benchmark.agents_v1.open_weight_cloud_runtime_r2 --live
 
 treasurebench-custody-repair-audit:
 	$(PY) scripts/audit_treasurebench_custody_repair.py

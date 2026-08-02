@@ -1,5 +1,121 @@
 # TreasureBench open-weight cloud-runtime feasibility and conformance
 
+## R2 preauthorization safety and closeout repair (2026-08-01)
+
+The owner superseded only the unused R1 live surface and gate
+`AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION`. No R1 authorization was
+created or consumed. AO-0012 continues in issue #212, draft PR #213, branch
+`agent/treasurebench-open-weight-cloud-runtime`, this living plan, the same
+runtime identity, exact model/tokenizer/engine/container/GPU identity, public
+10-task/50-pairing calibration, and unchanged six-hour, 400-call, and USD 20
+hard caps. The draft PR now says `Tracks #212`; closure remains post-calibration
+or honest failure closeout, exact teardown and billing, squash merge,
+post-merge CI/Pages, and named-route verification only.
+
+The additive fixed R2 contract is
+`tasks/treasurebench-open-weight-cloud-runtime-r2.yml`. R2 requires the
+repository-root `.env.txt` strict nonexecuting loader to return only
+`RUNPOD_API_KEY` and `HF_TOKEN`, after exact authorization, contract,
+protected-tree, branch, issue, draft-PR/head, ancestry, zero-cumulative-state,
+and local lifecycle-conflict checks. Tests inject synthetic credentials and
+never inspect the real file.
+
+Three authorization-bound RunPod Secrets carry the HF token, generated
+endpoint bearer, and generated attestation HMAC key. A temporary private Pod
+template contains only `{{ RUNPOD_SECRET_name }}` references. The exact Pod
+namespace derives from AO-0012, the R2 gate, and the authorization digest.
+Every possible Pod enters one finalizer that stops dispatch, deletes and
+verifies the Pod and disposable volume boundary, deletes and verifies all
+temporary secrets and the template, polls the exact Pod bill, reconciles
+positive billed time/amount plus returned storage usage, applies the caps, and
+writes one schema-validated redacted success or failure outcome.
+
+Current official RunPod GraphQL spec 1.1.0 and tagged runpodctl v2.8.0 expose
+`PodFindAndDeployOnDemandInput.terminateAfter`; R2 freezes authorization time
+plus six hours as the native server-side backstop. The same public GraphQL
+input does not expose `volumeEncrypted`. R2 does not invent that field:
+both the authenticated create response and a Pod-scoped self-query must report
+`volumeEncrypted: true` before the startup script writes any secret to disk.
+False or absent is an exact bounded control-boundary failure followed by
+teardown and billing.
+
+Measured HMAC attestation now distinguishes requested CUDA compatibility from
+measured toolkit, CUDA runtime, and PyTorch CUDA. It measures the actual GPU
+name/count/memory, driver, vLLM, mistral-common at least 1.11.3, exact model and
+tokenizer SHA-256, no quantization, tensor parallel size one, startup/load
+times, and peak GPU memory. vLLM and the proxy launch under `env -i`; the HF
+token, Pod-scoped RunPod key, attestation key, base64 payloads, and endpoint
+bearer environment variable are cleared before either child. The bearer is
+read once from one mode-0600 file on the verified encrypted disposable volume.
+
+### R2 milestones
+
+- **R2-M0 — complete:** verify live Git/GitHub state, register the additive R2
+  authority, preserve R1 unconsumed, and change PR #213 to track rather than
+  auto-close issue #212.
+- **R2-M1 — complete:** audit current official Secrets, templates, Pod
+  inventory, `terminateAfter`, storage-encryption, billing, and deletion
+  surfaces; record the exact encrypted-volume API limitation.
+- **R2-M2 — complete:** implement credential ingress, temporary
+  secret/template lifecycle, in-Pod secret minimization, deterministic
+  namespace and ambiguous-create reconciliation, server-side termination,
+  measured attestation, finalizer, redacted outcome schema, and separated
+  projections.
+- **R2-M3 — complete:** preserve the original 50-pairing rehearsal and
+  corruptions; add 36 R2 corruptions and focused authorization-free tests for
+  ingress, secrets, inheritance, orphan control, attestation, every bounded
+  post-create failure, teardown, billing, ambiguity, false-feasibility, and
+  leakage.
+- **R2-M4 — in progress:** complete focused validation and the full repository
+  wall, commit and push only AO-0012 files, obtain exact-head draft-PR CI, and
+  freeze the corrected execution commit and protected trees.
+- **R2-M5 — pending R2-M4:** commit and validate
+  `AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R2`, write the schema-valid R2
+  owner-gate-required handoff, and stop without authorization.
+
+### R2 preserved failures and corrections
+
+- Public official-source retrieval first failed under sandbox DNS isolation;
+  the approved public-network retry succeeded. A quoted URL correction was
+  required after zsh treated the GitHub tree query string as a glob.
+- The repository patch helper failed before mutation because its bundled Codex
+  executable path did not exist. Patch-format `git apply` was used as the
+  narrow fallback. Two hand-authored patch-count attempts and one quoted Perl
+  replacement failed without changing files; the resulting diffs were
+  rechecked.
+- The first focused command failed because uv could not initialize its default
+  cache under sandbox permissions. The task-local `UV_CACHE_DIR` correction
+  preserved dependency identity. The next focused pass found only Ruff import,
+  unused-value, annotation, and line-length errors; after correction 39 R2
+  tests and the combined original/R2 focused suites pass.
+- The first targeted mypy pass found 21 narrowing and object-conversion errors.
+  Explicit type guards and string-normalized numeric conversion fixed them
+  without changing lifecycle semantics. A later insertion temporarily placed
+  an authorization return inside the live-GitHub verifier; Ruff/mypy caught
+  it immediately and the function boundary was corrected before tests.
+- A mistakenly named `tests/test_live_inputs.py` focused command ran zero
+  tests and failed path resolution. It was corrected to
+  `tests/test_agents_v1_live_inputs.py`, after which the combined credential
+  and runtime suite passed.
+- The first full `make verify` passed formatting, Ruff, and mypy, then finished
+  with 915 passing and seven failures. Six nested `uv run` CLI previews
+  attempted an isolated package build and failed only because sandbox DNS
+  blocked build-dependency retrieval. The seventh correctly detected that the
+  new outcome schema raised the registered schema count from 54 to 55; the
+  exact-count regression was updated. The public-network rerun and the final
+  post-correction wall both passed: Ruff, mypy, all 922 tests, claim and run
+  validation, every repository audit, and the compendium release dry run.
+- The original R2 draft wrote the endpoint bearer before checking the volume
+  encryption observation. That contradicted the R2 custody boundary. Startup
+  now performs an authenticated Pod-scoped self-query and requires encrypted
+  disposable storage before writing the bearer, then clears the Pod key.
+- The original R2 finalizer call preceded credential clearing in one outer
+  `finally`; an unexpected finalizer exception could therefore skip clearing.
+  Nested finalization now converts that exception to a teardown hard stop and
+  clears all selected and generated secret references in its inner
+  unconditional cleanup.
+
+
 ## Purpose and intended outcome
 
 Execute AO-0012 as an infrastructure-only feasibility and conformance task.

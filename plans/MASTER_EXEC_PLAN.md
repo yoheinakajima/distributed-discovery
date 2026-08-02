@@ -1,5 +1,33 @@
 # Master execution plan
 
+## Active R2 continuation — AO-0012 preauthorization safety repair (2026-08-01)
+
+The owner superseded only the unused AO-0012 R1 live surface and gate. The same
+issue #212, draft PR #213, branch, living ExecPlan, runtime identity, exact
+Mistral BF16 model/tokenizer, vLLM 0.23.0 container, one Secure Cloud A100 80GB,
+public 50-pairing calibration, and caps remain fixed. The additive R2 contract
+`tasks/treasurebench-open-weight-cloud-runtime-r2.yml` now governs.
+
+R2 loads only `RUNPOD_API_KEY` and `HF_TOKEN` from repository-root
+`.env.txt` after exact authority and zero-state checks; uses three temporary
+RunPod Secrets and one private template; scrubs credentials before vLLM and
+proxy launch; binds an authorization-derived resource namespace; freezes the
+documented `terminateAfter` server-side six-hour backstop; measures rather
+than echoes runtime facts; and sends every possible Pod through one teardown,
+temporary-resource deletion, billing, cap, and schema-valid redacted-outcome
+finalizer. The current documented GraphQL create input does not expose
+`volumeEncrypted`, so R2 requires both control-plane and Pod-scoped
+observations of encrypted disposable storage before any secret is written and
+fails closed otherwise.
+
+No R2 authorization exists. No real `.env.txt`, provider account, model
+artifact, GPU, endpoint, inference call, private state, scientific state, or
+spend has been accessed. R2 stops at
+`AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R2` after the corrected execution
+commit, protected trees, exact-head CI, and owner-gate validation are frozen.
+
+
+
 ## Active continuation — AO-0012 open-weight self-operated cloud runtime (2026-07-31)
 
 Issue #212, branch `agent/treasurebench-open-weight-cloud-runtime`, fixed task

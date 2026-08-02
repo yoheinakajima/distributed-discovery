@@ -1,6 +1,6 @@
 schema_version: treasurebench-open-weight-public-calibration-v1
 calibration_id: treasurebench-open-weight-public-calibration-r1
-status: frozen-owner-gate-not-authorized
+status: frozen-r2-owner-gate-not-authorized
 authority_task: AO-0012
 scientific_run: false
 public_only: true
@@ -58,8 +58,13 @@ allowed_report_fields:
   - exact_cost_usd
   - all_50_pairings_completed
   - methods_and_bounds_agree
-  - projected_open_weight_arm_runtime_and_cost
-  - projected_complete_base_campaign_runtime_and_cost
+  - fixed_startup_download_model_load_time_and_cost
+  - marginal_50_pairing_generation_time_and_cost
+  - observed_retries
+  - peak_measured_gpu_memory_mib
+  - projected_open_weight_arm_continuous_runtime
+  - projected_open_weight_arm_repeated_batch_upper_bound
+  - projected_complete_base_campaign_mechanical_reference
 prohibited_report_fields:
   - task_performance
   - family_performance
@@ -68,11 +73,15 @@ prohibited_report_fields:
   - ranking
   - composite
   - leaderboard
+owner_gate:
+  superseded_unused_gate: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION
+  required_gate: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R2
+  authorization_exists: false
 projection:
   observed_pairing_denominator: 50
   open_weight_arm_pairings: 3000
   complete_base_campaign_pairings: 9000
-  method: Multiply measured per-pairing wall-clock and compute cost by 60 and 180 respectively; separately report startup/load amortization and do not imply the two proprietary arms use GPU runtime.
+  method: Report fixed startup, download, and model-load time and allocated billed cost separately from marginal 50-pairing generation; project 3,000 pairings once with one fixed startup plus 60 times generation and conservatively with 60 repeated startups; report 9,000 as a mechanical runtime reference that supplies no OpenAI or Anthropic cost.
 acceptance:
   exact_runtime_identity_passes: true
   exact_official_bf16_model_revision_passes: true
@@ -84,13 +93,19 @@ acceptance:
   endpoint_authentication_and_logging_boundary_pass: true
   response_trace_ledger_identity_correspondence: exact
   methods_a_b_c_and_independent_bounds: agree-where-applicable
-  cost_reconciliation: exact
+  cost_reconciliation: exact-Pod-bill-positive-time-amount-and-storage-field-after-teardown
   maximum_runtime_seconds: 21600
   hard_total_cost_usd: "20"
   measured_projection_required: true
   observed_protocol_validity_rate_threshold: null
   protocol_invalid_outcomes_preserved: true
   projected_bound_informativeness_assessed_separately: true
+teardown_and_closeout:
+  exact_pod_unaddressable: required
+  disposable_volume_deletion: required
+  temporary_secret_and_template_absence: required
+  billing_exact: required
+  ambiguity_prohibits_merge_or_issue_closure: true
 publication_boundary:
   raw_prompts_or_outputs: prohibited
   performance_values: prohibited
