@@ -751,13 +751,13 @@ records:
     captured_date: "2026-07-30"
     proposition: The claim-grade third-model feasibility gate may treat owner-controlled exact open weights and a reproducible self-operated serving stack on rented raw cloud GPU compute as an open-weight self-operated cloud runtime, while explicitly withholding physical locality and complete infrastructure independence.
     why_it_matters: It separates the registered model-family and inference-stack independence purposes from physical hardware ownership, rejects managed model APIs as substitutes, and creates a bounded public-only calibration path without weakening the third-model or claim-grade registration gates.
-    canonical_destination: {type: decision-record, path: tasks/treasurebench-open-weight-cloud-runtime-r2.yml}
+    canonical_destination: {type: decision-record, path: tasks/treasurebench-open-weight-cloud-runtime-r3.yml}
     dependencies: [DD-010, PM-0031, PM-0032, PM-0038, PM-0039]
-    promotion_trigger: AO-0012 completes its R2-authorized public calibration or honest bounded failure closeout with exact teardown and billing and selects one registered final decision.
+    promotion_trigger: AO-0012 completes its R3-authorized public calibration or honest bounded failure closeout with exact teardown and billing and selects one registered final decision.
     permitted_stops: [implemented, deferred, rejected, superseded, closed-by-null]
     not_a_result_boundaries: [prospective infrastructure definition feasibility and public engineering calibration only, no scientific-study allocation run claim performance comparison paper release submission or base-campaign authority]
     supersedes: []
     superseded_by: null
     review_after: explicit-owner-decision
     owner_decision: adopted
-    last_reviewed: "2026-08-01"
+    last_reviewed: "2026-08-02"

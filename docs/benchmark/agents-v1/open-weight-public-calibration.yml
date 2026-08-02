@@ -1,6 +1,6 @@
 schema_version: treasurebench-open-weight-public-calibration-v1
 calibration_id: treasurebench-open-weight-public-calibration-r1
-status: frozen-r2-owner-gate-not-authorized
+status: frozen-r3-owner-gate-not-authorized
 authority_task: AO-0012
 scientific_run: false
 public_only: true
@@ -74,8 +74,8 @@ prohibited_report_fields:
   - composite
   - leaderboard
 owner_gate:
-  superseded_unused_gate: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION
-  required_gate: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R2
+  superseded_unused_gates: [AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION, AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R2]
+  required_gate: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R3
   authorization_exists: false
 projection:
   observed_pairing_denominator: 50
@@ -111,3 +111,13 @@ publication_boundary:
   performance_values: prohibited
   operational_identity_and_conformance_only: true
   private_seed_task_answer_or_holdout: prohibited
+
+control_plane_contract:
+  graphql_authentication: URL-encoded-api_key-query-parameter-only
+  graphql_authorization_header: false
+  rest_authentication: Authorization-Bearer-header-only
+  rest_api_key_query_parameter: false
+  pod_create_cuda:
+    allowedCudaVersions: ["13.0"]
+    minCudaVersion: prohibited
+  terminateAfter: authorization-start-plus-six-hours

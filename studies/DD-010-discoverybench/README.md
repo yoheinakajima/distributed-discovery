@@ -74,6 +74,16 @@ model download, provisioning, endpoint launch, inference, and spend remain
 zero and prohibited. The exact BF16 single-A100 identity fails closed rather
 than quantizing, sharding, changing model, or changing GPU class.
 
+The unused R1 and R2 gates are superseded without authorization. R3 preserves
+the accepted R2 repository-local credential ingress, temporary RunPod
+Secret/template lifecycle, orphan controls, measured attestation, deterministic
+success/failure finalizer, exact teardown and billing, and reporting boundary.
+It prospectively corrects the frozen control plane to use URL-encoded
+`api_key` query authentication only for RunPod GraphQL, Bearer authentication
+only for RunPod REST, and `allowedCudaVersions: ["13.0"]` in the exact Pod
+create input. No real credential, account, artifact, resource, or spend is
+accessed by this correction.
+
 ## Agents v1 sealed-pilot repair adjudication
 
 The first sealed engineering pilot remains permanently

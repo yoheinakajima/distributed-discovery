@@ -309,3 +309,16 @@ authorization-bound orphan controls, measured attestation, and exact
 success/failure teardown and billing. This remains infrastructure engineering
 only and adds no DD-023, private, scientific, base-campaign, performance, or
 publication authority.
+
+
+### AO-0012 R3 exact RunPod API correction
+
+The unused R2 gate is superseded without authorization. R3 preserves the
+accepted R2 lifecycle and closeout design while prospectively binding GraphQL
+requests to the documented URL-encoded `api_key` query parameter with no
+Authorization header, REST requests to Bearer authentication with no API-key
+query parameter, and Pod creation to the exact frozen supported field set with
+`allowedCudaVersions: ["13.0"]` and no `minCudaVersion`. All R3 rehearsals,
+corruptions, transport tests, and validation remain synthetic and
+credential-free. Only the unconsumed R3 generic owner gate may later authorize
+the public calibration or honest bounded failure closeout.

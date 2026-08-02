@@ -1,5 +1,101 @@
 # TreasureBench open-weight cloud-runtime feasibility and conformance
 
+## R3 exact RunPod API contract correction (2026-08-02)
+
+The owner superseded both unused gates
+`AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION` and
+`AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R2` without creating or consuming
+authorization. AO-0012 continues under issue #212, draft PR #213, branch
+`agent/treasurebench-open-weight-cloud-runtime`, and this living plan. The
+runtime identity, exact model, tokenizer, vLLM, immutable container, one Secure
+Cloud A100 80GB PCIe, R2 credential/resource/attestation/finalizer design,
+public 50-pairing calibration, six-hour limit, 400-call cap, and USD 20 hard cap
+remain unchanged.
+
+R3 corrects only the prospective RunPod control-plane contract. Current
+official GraphQL guidance sends requests to
+`https://api.runpod.io/graphql?api_key=<URL-ENCODED-KEY>`; R3 therefore uses
+the URL-encoded `api_key` query parameter and no Authorization header for
+GraphQL inventory, `secretCreate`, `secretDelete`, and
+`podFindAndDeployOnDemand`. Current REST references require
+`Authorization: Bearer <token>`; R3 preserves that header and prohibits the
+`api_key` query parameter for template creation/deletion, Pod deletion and
+lookup, and exact Pod billing. HTTP failures expose only the fixed GraphQL or
+REST operation class and numeric status; raw authenticated URLs, credentials,
+headers, responses, and provider bodies remain redacted.
+
+The official Pod guide demonstrates `allowedCudaVersions` for
+`podFindAndDeployOnDemand`. R3 freezes `allowedCudaVersions: ["13.0"]`,
+prohibits `minCudaVersion`, `cudaVersion`, and unregistered CUDA fields, and
+freezes the complete supported input field set. The current GraphQL schema
+continues to expose `terminateAfter`, so the authorization-start-plus-six-hour
+server-side backstop remains. The schema also lists `minCudaVersion` as an
+available input, but AO-0012 deliberately follows the current Pod guide's
+exact-list field; R3 does not claim the schema field is nonexistent.
+
+The additive fixed R3 contract is
+`tasks/treasurebench-open-weight-cloud-runtime-r3.yml`. No R3 authorization
+exists. No real `.env.txt`, RunPod or Hugging Face account, model artifact,
+GPU, endpoint, inference call, private/scientific state, or spend has been
+accessed.
+
+### R3 milestones
+
+- **R3-M0 — complete:** verify local/live branch, issue, draft PR, exact head,
+  checks, and five unrelated untracked files; audit current official GraphQL,
+  Pod-create, REST, and `terminateAfter` sources.
+- **R3-M1 — complete:** the additive R3 contract, official-source audit, 18-case
+  corruption layer, query-only GraphQL transport, Bearer-only REST transport,
+  and exact Pod create-input implementation are registered.
+- **R3-M2 — complete:** 101 combined focused runtime/input tests, the complete
+  50-pairing rehearsal, all 54 inherited-plus-R3 corruptions, focused audits,
+  Ruff, mypy on 218 source files, all 939 tests, and the complete repository
+  verification wall pass.
+- **R3-M3 — in progress:** commit and push only intended AO-0012 files,
+  update draft PR #213 while retaining `Tracks #212`, and pass both exact-head
+  checks.
+- **R3-M4 — pending R3-M3:** freeze the new execution commit and protected
+  tree, then commit and live-validate
+  `AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R3` without authorization.
+- **R3-M5 — pending R3-M4:** commit the schema-valid owner-gate-required
+  handoff and stop without running the live command.
+
+### R3 preserved failures and corrections
+
+- The repository patch helper again failed before mutation because its bundled
+  Codex executable is absent. Exact, assertion-checked mechanical edits are the
+  narrow fallback, and every resulting diff is reviewed.
+- The first assertion-checked R3 module rewrite stopped before writing because
+  one offline-rehearsal block had a different key order than expected. The
+  corrected exact pattern then applied successfully.
+- The first Makefile replacement exposed shell command substitution of
+  `$(PY)` and `$(RUN)` inside a double-quoted synthetic edit payload. The
+  commands were not found, the replacement assertion failed, and the Makefile
+  remained unchanged; a single-quoted JSON payload corrected the edit.
+- The first R3 focused format check correctly reported both new Python files
+  required formatting. The next Ruff pass found only import ordering and two
+  unused imports. After correction, 17 new transport/create-input tests passed.
+- The first focused mypy pass found seven test-only type errors in request-body,
+  synthetic HTTP-header, and rehearsal-object narrowing. Explicit byte,
+  `Message`, `Mapping`, and cast guards corrected them without runtime
+  semantic change.
+- Two subsequent combined Ruff passes each found one import-order correction
+  after new imports were added; both were fixed mechanically before the next
+  passing mypy and 17-test run.
+- The first ExecPlan insertion attempt passed Markdown backticks through a
+  double-quoted shell argument, so the shell rejected the command before Python
+  ran and the plan remained unchanged. The corrected single-quoted payload
+  preserved the literal registration text.
+- The first milestone/status update used a mismatched assertion marker and
+  stopped before writing. The corrected exact-indentation marker applied the
+  same intended documentation-only update.
+- The first complete `make verify` passed formatting, Ruff, and mypy, then
+  reached 933 passing tests with six nested `uv run` CLI previews failing only
+  because sandbox DNS blocked build-dependency resolution. The approved
+  network-enabled rerun passed all 939 tests and the complete claims, runs,
+  audits, site, and compendium release dry-run wall.
+
+
 ## R2 preauthorization safety and closeout repair (2026-08-01)
 
 The owner superseded only the unused R1 live surface and gate

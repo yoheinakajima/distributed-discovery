@@ -1,5 +1,26 @@
 # Master execution plan
 
+## Active R3 continuation — AO-0012 exact RunPod API contract correction (2026-08-02)
+
+The unused R1 and R2 owner gates remain unauthorized and are superseded. The
+same issue #212, draft PR #213, branch, living ExecPlan, runtime identity,
+model, engine, container, Secure Cloud A100 80GB hardware, public 50-pairing
+calibration, R2 lifecycle controls, and caps remain fixed under additive
+contract `tasks/treasurebench-open-weight-cloud-runtime-r3.yml`.
+
+R3 changes only the control-plane request contract: GraphQL operations use the
+documented URL-encoded `api_key` query parameter with no Authorization header;
+REST operations retain documented Bearer-header authentication with no
+`api_key` query parameter; and Pod creation uses
+`allowedCudaVersions: ["13.0"]` with no `minCudaVersion` or other guessed
+CUDA field. The current GraphQL schema still exposes `terminateAfter`, so the
+six-hour server-side backstop remains. No R3 authorization, real credential
+read, authenticated provider action, model download, Pod, GPU, endpoint,
+inference call, private/scientific state, or spend exists. The authorization-
+free lane stops at
+`AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R3`.
+
+
 ## Active R2 continuation — AO-0012 preauthorization safety repair (2026-08-01)
 
 The owner superseded only the unused AO-0012 R1 live surface and gate. The same
