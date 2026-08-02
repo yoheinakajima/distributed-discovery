@@ -66,15 +66,30 @@ read once from one mode-0600 file on the verified encrypted disposable volume.
   ingress, secrets, inheritance, orphan control, attestation, every bounded
   post-create failure, teardown, billing, ambiguity, false-feasibility, and
   leakage.
-- **R2-M4 — in progress:** complete focused validation and the full repository
-  wall, commit and push only AO-0012 files, obtain exact-head draft-PR CI, and
-  freeze the corrected execution commit and protected trees.
-- **R2-M5 — pending R2-M4:** commit and validate
-  `AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R2`, write the schema-valid R2
-  owner-gate-required handoff, and stop without authorization.
+- **R2-M4 — complete:** focused validation and the full repository wall pass;
+  execution commit `09dd13837093d3c4ff7fa52f57fce4b84ab0acc3` is pushed;
+  all 28 execution-sensitive hashes are frozen; and both exact-head draft-PR
+  checks passed.
+- **R2-M5 — complete:** the generic unconsumed
+  `AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R2` gate validates live at
+  committed gate head `986bb339662bd15e388c0d7a5c77c321b06a2b2f`; the
+  schema-valid R2 owner-gate-required handoff is frozen. Stop without
+  authorization.
 
 ### R2 preserved failures and corrections
 
+- The final plan patch-helper retry again failed before mutation because the
+  bundled Codex executable is absent, and the stdin-less `git apply` fallback
+  rejected an empty input. Exact mechanical replacements were used and their
+  diffs were rechecked.
+- The first live generic-gate validate-only attempt failed only because the
+  sandbox could not resolve GitHub for `git ls-remote`. The identical approved
+  network-enabled command passed and explicitly created no authorization.
+- A PR-body update passed Markdown backticks through a double-quoted shell
+  argument, causing local command substitution and inserting public validation
+  output in draft PR #213. No secret or private value was involved. The body was
+  immediately replaced with a compact no-substitution R2 summary, re-read live,
+  and still says `Tracks #212`.
 - Public official-source retrieval first failed under sandbox DNS isolation;
   the approved public-network retry succeeded. A quoted URL correction was
   required after zsh treated the GitHub tree query string as a glob.
