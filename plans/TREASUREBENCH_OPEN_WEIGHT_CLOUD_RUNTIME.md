@@ -55,12 +55,15 @@ accessed.
   `1b6845d5cec11cdf64da66a23ecbd96ae8927fc7` contains only the 13 intended
   R3 files and is pushed; draft PR #213 accurately retains `Tracks #212`,
   points to the exact execution head, and both required checks pass.
-- **R3-M4 — in progress:** the execution commit and 33-path protected tree are
-  frozen and the schema-valid unconsumed gate is constructed; commit it, push,
-  and live-validate
-  `AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R3` without authorization.
-- **R3-M5 — pending R3-M4:** commit the schema-valid owner-gate-required
-  handoff and stop without running the live command.
+- **R3-M4 — complete:** the 33-path protected tree and execution commit are
+  frozen in committed gate head `efe5c53838c0eb6b1b41cdfd5553c76d9a047394`;
+  the generic engine live-validates the gate with exact challenge
+  `AUTHORIZE AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R3 1b6845d` and creates
+  no authorization or consequential action.
+- **R3-M5 — complete:** the schema-valid owner-gate-required handoff is frozen
+  at `reports/agent-ops/AO-0012-r3-owner-gate-required-handoff.yml`; commit and
+  push this final public-safe record, confirm exact-head checks, and stop without
+  running the owner-gate or live command.
 
 ### R3 preserved failures and corrections
 
