@@ -51,11 +51,13 @@ accessed.
   50-pairing rehearsal, all 54 inherited-plus-R3 corruptions, focused audits,
   Ruff, mypy on 218 source files, all 939 tests, and the complete repository
   verification wall pass.
-- **R3-M3 — in progress:** commit and push only intended AO-0012 files,
-  update draft PR #213 while retaining `Tracks #212`, and pass both exact-head
-  checks.
-- **R3-M4 — pending R3-M3:** freeze the new execution commit and protected
-  tree, then commit and live-validate
+- **R3-M3 — complete:** execution commit
+  `1b6845d5cec11cdf64da66a23ecbd96ae8927fc7` contains only the 13 intended
+  R3 files and is pushed; draft PR #213 accurately retains `Tracks #212`,
+  points to the exact execution head, and both required checks pass.
+- **R3-M4 — in progress:** the execution commit and 33-path protected tree are
+  frozen and the schema-valid unconsumed gate is constructed; commit it, push,
+  and live-validate
   `AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R3` without authorization.
 - **R3-M5 — pending R3-M4:** commit the schema-valid owner-gate-required
   handoff and stop without running the live command.
@@ -94,6 +96,24 @@ accessed.
   because sandbox DNS blocked build-dependency resolution. The approved
   network-enabled rerun passed all 939 tests and the complete claims, runs,
   audits, site, and compendium release dry-run wall.
+- A later milestone-update payload contained an unescaped apostrophe inside its
+  single-quoted shell argument, so the shell rejected it before Python ran and
+  the plan remained unchanged. The corrected payload removed that ambiguity.
+- The first sandboxed GitHub authentication check reported the keyring token as
+  unavailable and the combined PR/issue read failed DNS. The approved
+  network-enabled checks verified the keyring session, open issue #212, exact
+  open draft PR #213, execution head, body, and checks without provider access.
+- The first explicit `git add` attempt was refused because the sandbox exposes
+  `.git` read-only. The approved retry staged only the 13 named AO-0012 files;
+  the five unrelated untracked files remain untouched.
+- The first protected-hash command used the default uv cache and failed before
+  hashing because the sandbox denied that cache. The task-local cache retry
+  froze all 33 hashes. The first gate generator then used system Python 3.9,
+  which lacks `datetime.UTC`; the pinned uv Python 3.11 retry created the gate.
+- The first direct gate-schema check imported a nonexistent validation module
+  and failed before validation. Importing the repository validator from the
+  Agent Operations core then passed the owner-gate schema, exact contract hash,
+  and all 33 protected tree hashes without creating authorization.
 
 
 ## R2 preauthorization safety and closeout repair (2026-08-01)
