@@ -113,6 +113,9 @@ limitations:
 - RunPod necessarily sees authenticated control-plane traffic and supplies the host; AO-0012 does not claim cryptographic infrastructure independence, legal nonretention, or provider inability to inspect or misreport its own infrastructure.
 - The public GitHub surfaces are live network dependencies and may be unavailable; any failure occurs before repository credential ingress.
 external_state_changed: false
+execution_commit: 710fcc333b78e153ba317d76f0e68303f7617092
+draft_pull_request: 213
+exact_head_checks: 2-passed
 credential_read: false
 provider_call: false
 model_download: false

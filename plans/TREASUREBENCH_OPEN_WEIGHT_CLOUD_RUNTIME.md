@@ -59,9 +59,11 @@ accessed.
   Ruff, strict focused mypy, repository mypy on 219 source files, all 1,001
   repository tests, every repository audit, the offline compendium release
   wall, and the site build pass.
-- **R4-M3 — in progress:** commit and push only intended AO-0012 files, update PR
-  #213 while retaining `Tracks #212`, and pass both exact-head PR checks.
-- **R4-M4 — pending:** freeze the exact execution commit and protected tree,
+- **R4-M3 — complete:** execution commit
+  `710fcc333b78e153ba317d76f0e68303f7617092` contains only the 17 intended
+  R4 files and is pushed; PR #213 remains open and draft, retains `Tracks
+  #212`, points to that exact head, and both exact-head validation checks pass.
+- **R4-M4 — in progress:** freeze the protected tree,
   create and validate the unconsumed generic R4 owner gate, freeze the
   schema-valid handoff, and stop once at owner-gate-required.
 
