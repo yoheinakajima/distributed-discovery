@@ -97,6 +97,13 @@ that gate. A later claim-grade registration must independently decide whether
 the measured runtime satisfies the third-model design; AO-0012 allocates no
 study and creates no claim-grade authority.
 
+The final prospective R4 gate performs pre-ingress issue and draft-PR checks
+through unauthenticated public GitHub REST and exact remote-head comparison,
+then uses a documented encrypted REST Pod-create body. Its orphan boundary is
+an unconditional controller finalizer plus a Pod-resident six-hour self-delete
+watchdog, not a native `terminateAfter` claim. R1 through R3 remain unused and
+unauthorized.
+
 The 2026-07-23 evaluation registration under issue #173 selects a sealed
 engineering pilot pending owner authorization and keeps the claim-grade base
 blocked on local/open feasibility. The inactive authorization has zero caps
@@ -322,3 +329,16 @@ query parameter, and Pod creation to the exact frozen supported field set with
 corruptions, transport tests, and validation remain synthetic and
 credential-free. Only the unconsumed R3 generic owner gate may later authorize
 the public calibration or honest bounded failure closeout.
+
+
+### AO-0012 R4 public preflight and encrypted REST Pod correction
+
+The unused R3 gate is superseded without authorization. R4 removes the live
+dependency on `gh` authentication, verifies issue #212 and draft PR #213 from
+public unauthenticated GitHub REST plus exact remote branch state, and creates
+the Pod only through documented REST with `volumeEncrypted: true`, no network
+volume, and the frozen exact field set. Because that REST surface has no
+documented `terminateAfter` field, orphan control is an unconditional
+controller finalizer plus a Pod-resident six-hour exact-Pod deletion watchdog.
+Only the unconsumed R4 generic owner gate may authorize the unchanged public
+calibration or honest bounded failure closeout.

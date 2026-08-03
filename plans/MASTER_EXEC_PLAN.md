@@ -1,5 +1,34 @@
 # Master execution plan
 
+## Active R4 continuation — AO-0012 public preflight and encrypted REST Pod (2026-08-02)
+
+The unused R1, R2, and R3 gates remain unauthorized and superseded. AO-0012
+continues under issue #212, draft PR #213, the same branch and living ExecPlan,
+and additive contract `tasks/treasurebench-open-weight-cloud-runtime-r4.yml`.
+The model, tokenizer, vLLM, immutable container, one Secure Cloud A100 80GB
+PCIe, public 50-pairing calibration, measured attestation, finalizer, billing,
+and caps do not change.
+
+R4 replaces authenticated `gh` preflight calls with public unauthenticated
+issue/PR REST GETs and exact `git ls-remote` head verification before
+repository-local credential ingress. It replaces GraphQL Pod creation with the
+documented REST Pod-create operation and an exact body requiring encrypted
+120-GB disposable storage, no network volume, no public IP, one exact GPU, and
+the temporary private template. Both the create response and a fresh Pod GET
+must prove the requested storage and runtime boundary.
+
+The selected encrypted REST operation has no documented `terminateAfter`
+field. R4 therefore freezes an unconditional controller finalizer plus a
+Pod-resident six-hour deletion watchdog, accurately withholding any claim of a
+native RunPod terminate-after guarantee. GraphQL remains query-key-only for
+account inventory and temporary Secrets; REST remains Bearer-only for
+templates, Pod create/get/delete, and billing. No R4 authorization, real
+credential read, authenticated provider call, model download, Pod, GPU,
+endpoint, inference, private/scientific state, or spend exists. The
+authorization-free lane stops at
+`AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R4`.
+
+
 ## Active R3 continuation — AO-0012 exact RunPod API contract correction (2026-08-02)
 
 The unused R1 and R2 owner gates remain unauthorized and are superseded. The

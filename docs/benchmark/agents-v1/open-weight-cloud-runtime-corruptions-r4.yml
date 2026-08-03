@@ -1,0 +1,39 @@
+schema_version: treasurebench-open-weight-cloud-runtime-r4-corruptions-v1
+task_id: AO-0012
+inherits: docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r3.yml
+inherited_cases: 54
+expected_result: every-R1-through-R4-corruption-rejected-with-zero-real-live-action
+cases:
+- {id: OW-R4-001, mutation: live-preflight-invokes-gh, expected: rejected}
+- {id: OW-R4-002, mutation: public-issue-closed-or-wrong-number, expected: rejected-before-credential-ingress}
+- {id: OW-R4-003, mutation: public-pull-not-open-or-not-draft, expected: rejected-before-credential-ingress}
+- {id: OW-R4-004, mutation: public-pull-base-or-head-ref-drift, expected: rejected-before-credential-ingress}
+- {id: OW-R4-005, mutation: public-pull-head-local-head-mismatch, expected: rejected-before-credential-ingress}
+- {id: OW-R4-006, mutation: ls-remote-head-local-head-mismatch, expected: rejected-before-credential-ingress}
+- {id: OW-R4-007, mutation: public-github-raw-body-or-unexpected-field-retained, expected: rejected}
+- {id: OW-R4-008, mutation: public-github-timeout-or-user-agent-drift, expected: fail-closed}
+- {id: OW-R4-009, mutation: graphql-pod-create-invoked, expected: rejected}
+- {id: OW-R4-010, mutation: rest-pod-create-missing-bearer-or-using-query-key, expected: rejected}
+- {id: OW-R4-011, mutation: rest-pod-create-volume-encrypted-false-or-missing, expected: rejected}
+- {id: OW-R4-012, mutation: rest-pod-create-allowed-cuda-version-drift, expected: rejected}
+- {id: OW-R4-013, mutation: rest-pod-create-min-cuda-version, expected: rejected}
+- {id: OW-R4-014, mutation: rest-pod-create-terminate-after, expected: rejected}
+- {id: OW-R4-015, mutation: rest-pod-create-network-volume, expected: rejected}
+- {id: OW-R4-016, mutation: rest-pod-create-raw-secret-or-env-override, expected: rejected}
+- {id: OW-R4-017, mutation: rest-pod-create-field-set-drift, expected: rejected}
+- {id: OW-R4-018, mutation: create-response-encryption-or-identity-drift, expected: finalized-without-calibration}
+- {id: OW-R4-019, mutation: fresh-pod-get-encryption-or-network-volume-drift, expected: finalized-without-calibration}
+- {id: OW-R4-020, mutation: watchdog-starts-after-model-download, expected: rejected}
+- {id: OW-R4-021, mutation: watchdog-self-query-fails, expected: startup-fails-before-model-download}
+- {id: OW-R4-022, mutation: watchdog-uses-account-key-or-wrong-pod-id, expected: rejected}
+- {id: OW-R4-023, mutation: watchdog-deadline-or-delete-target-drift, expected: rejected}
+- {id: OW-R4-024, mutation: runpod-key-inherited-by-vllm-or-proxy, expected: rejected}
+- {id: OW-R4-025, mutation: endpoint-bearer-written-under-workspace, expected: rejected}
+- {id: OW-R4-026, mutation: ambiguous-rest-create-retries-create, expected: rejected}
+- {id: OW-R4-027, mutation: multiple-exact-namespace-pods-after-ambiguous-create, expected: hard-stop}
+- {id: OW-R4-028, mutation: post-create-controller-failure-disarms-watchdog, expected: rejected}
+- {id: OW-R4-029, mutation: finalizer-skips-network-volume-or-billing-check, expected: rejected}
+- {id: OW-R4-030, mutation: teardown-resource-or-billing-ambiguity-marks-feasible-or-mergeable, expected: rejected}
+live_action: false
+credential_source_read: false
+authenticated_provider_call: false

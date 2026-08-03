@@ -1,0 +1,121 @@
+schema_version: treasurebench-open-weight-cloud-runtime-r4-api-contract-audit-v1
+task_id: AO-0012
+status: authorization-free-r4-correction-complete
+audited_at_utc: '2026-08-03T02:01:50Z'
+supersedes_unused_r3:
+  contract: tasks/treasurebench-open-weight-cloud-runtime-r3.yml
+  gate_id: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R3
+  authorized_or_consumed: false
+  reason: R3 live preflight depended on authenticated gh, GraphQL Pod creation did not request volume encryption, and the selected encrypted REST create operation cannot carry R3's GraphQL terminateAfter field.
+preserved_identity:
+  runtime_identity: treasurebench-mistral-small-3.1-24b-bf16-vllm-0.23.0-a100-80gb-pcie-r1
+  provider: RunPod
+  product: Secure-Cloud-dedicated-noninterruptible-Pod
+  gpu: NVIDIA-A100-80GB-PCIe
+  gpu_count: 1
+  model_revision: 68faf511d618ef198fef186659617cfd2eb8e33a
+  weight_artifact: consolidated.safetensors
+  weight_sha256: d446ca97599fa9d98b2e3744d8b83019837a2fe34a80f4353120b1e9b6249b1e
+  tokenizer_artifact: tekken.json
+  tokenizer_sha256: c604f35d1035f534519622c0ec83fed6184978d4fdee92a5bd2a50bc05438094
+  vllm_version: 0.23.0
+  container_digest: sha256:3a1e7f5904e1a1192a02aa0086ceaffc33985d7044c7bb25b3a43d61bdbe3ac0
+  calibration: {public_tasks: 10, architectures: 5, repeats: 1, intended_pairings: 50}
+  caps: {gpu_hours: 6, calls: 400, expected_usd_under: 10, hard_usd: 20}
+public_github_preflight:
+  authentication: none
+  user_agent: distributed-discovery-ao0012-r4-preflight
+  timeout_seconds: 20
+  issue_operation: GET https://api.github.com/repos/yoheinakajima/distributed-discovery/issues/212
+  pull_operation: GET https://api.github.com/repos/yoheinakajima/distributed-discovery/pulls/213
+  branch_operation: git ls-remote origin refs/heads/agent/treasurebench-open-weight-cloud-runtime
+  exact_requirements: [issue-open, pull-open-and-draft, base-main, exact-head-ref, pull-head-equals-local-head, remote-head-equals-local-head, execution-commit-ancestor, tracked-worktree-clean, protected-tree-exact]
+  gh_cli_required: false
+  raw_response_retention: prohibited
+  error_surface: fixed-operation-class-and-http-status-only
+  live_public_observation:
+    issue: {number: 212, state: open, pull_request: false}
+    pull_request: {number: 213, state: open, draft: true, base: main, head_ref: agent/treasurebench-open-weight-cloud-runtime}
+    head_at_initial_r4_audit: 785aae500d88228fb7a7f67ad3abb009d7c7196f
+runpod_graphql_transport:
+  base_url: https://api.runpod.io/graphql
+  authentication: URL-encoded-api_key-query-parameter-only
+  authorization_header: false
+  operations: [account-inventory, secretCreate, secretDelete]
+  pod_create: prohibited
+runpod_rest_transport:
+  base_url: https://rest.runpod.io/v1
+  authentication: Authorization-Bearer-header-only
+  api_key_query_parameter: false
+  operations: [template-create-list-delete, Pod-create-get-delete, Pod-billing]
+pod_create:
+  operation: POST https://rest.runpod.io/v1/pods
+  exact_fields: [name, cloudType, computeType, gpuTypeIds, gpuTypePriority, gpuCount, allowedCudaVersions, templateId, containerDiskInGb, volumeInGb, volumeMountPath, volumeEncrypted, countryCodes, ports, supportPublicIp]
+  exact_values:
+    cloudType: SECURE
+    computeType: GPU
+    gpuTypeIds: [NVIDIA A100 80GB PCIe]
+    gpuTypePriority: availability
+    gpuCount: 1
+    allowedCudaVersions: ['13.0']
+    containerDiskInGb: 50
+    volumeInGb: 120
+    volumeMountPath: /workspace
+    volumeEncrypted: true
+    countryCodes: [US]
+    ports: [8000/http]
+    supportPublicIp: false
+  prohibited_fields: [minCudaVersion, terminateAfter, networkVolumeId, env, GraphQL-only-input, raw-secret, alternate-GPU, fallback]
+  post_create_evidence: exact create response plus one fresh REST Pod GET must independently agree on Pod ID, namespace, template, Secure Cloud, GPU, image, disks, mount, encryption, no network volume, and hourly rate.
+orphan_controls:
+  native_terminate_after: unavailable-on-selected-encrypted-rest-create-surface
+  controller: unconditional exact Pod DELETE, repeated GET-until-absent, no-network-volume check, temporary-resource deletion, and billing reconciliation
+  pod_resident_watchdog:
+    start: first-substantive-runtime-operation-before-model-download
+    inputs: [RUNPOD_POD_ID, Pod-scoped-RUNPOD_API_KEY]
+    verification: one-bounded-REST-Pod-GET-for-exact-ID-namespace-encryption-and-no-network-volume
+    deadline: six-hour-monotonic
+    action: REST-DELETE-own-exact-Pod-ID
+    environment_inheritance: isolated-minimal-environment
+    public_attestation: [pid, verified, deadline_seconds]
+    output: no-stdout-or-stderr
+temporary_resources:
+  secrets: [read-only-Hugging-Face-token, generated-endpoint-bearer, generated-attestation-HMAC-key]
+  template: one-private-authorization-bound-template
+  pod_environment: supported-RunPod-secret-references-only
+  deletion: after-Pod-termination-delete-and-verify-all-Secrets-and-template-absent
+  ambiguity: hard-stop-no-merge-no-issue-close
+official_primary_sources:
+- {url: https://docs.runpod.io/api-reference/pods/POST/pods, supports: documented REST Pod-create Bearer transport and create fields including allowedCudaVersions and volumeEncrypted}
+- {url: https://docs.runpod.io/api-reference/pods/GET/pods/podId, supports: documented REST Pod lookup and returned identity storage encryption network-volume machine GPU and cost fields}
+- {url: https://docs.runpod.io/api-reference/pods/DELETE/pods/podId, supports: documented REST Pod deletion with Bearer authentication}
+- {url: https://docs.runpod.io/api-reference/pods/GET/pods, supports: documented Pod inventory including volumeEncrypted and networkVolume}
+- {url: https://docs.runpod.io/pods/templates/environment-variables, supports: automatic RUNPOD_POD_ID and Pod-scoped RUNPOD_API_KEY environment variables}
+- {url: https://docs.runpod.io/pods/templates/manage-templates, supports: template environment variables and RunPod Secret references}
+- {url: https://docs.runpod.io/pods/storage/types, supports: Pod volume encryption-at-rest statement and storage lifecycle classes}
+- {url: https://docs.github.com/en/rest/issues/issues#get-an-issue, supports: public-repository issue GET can be used without authentication}
+- {url: https://docs.github.com/en/rest/pulls/pulls#get-a-pull-request, supports: public-repository pull-request GET can be used without authentication}
+corrected_design_decisions:
+- R3 GraphQL Pod create is replaced, not supplemented, by one exact REST Pod create; GraphQL Pod create is prohibited.
+- volumeEncrypted true is requested at create time and measured again in both returned create state and a fresh GET.
+- terminateAfter is removed from the create body; the design accurately states controller finalizer plus Pod-resident watchdog rather than a native server-side termination guarantee.
+- The endpoint bearer moves from /workspace to a mode-0600 /run file so the encrypted public-artifact volume contains no credential.
+- The live GitHub preflight uses no gh command and no GitHub token.
+failed_validation_or_observation_attempts:
+- The direct web-page opener rejected the raw GitHub API URL under its safety filter; fixed public curl requests with the registered User-Agent and normalized jq projection verified the same read-only state without retaining raw bodies.
+- The local ripgrep executable was unavailable during the initial R4 source scan; the read-only scan was repeated with grep and found the expected copied R2/R3 strings before correction.
+- Initial focused validation stopped on one unused import, then one unimportable scripts-package test path, then one overbroad gh substring assertion; each was corrected and the 62-test R4 suite passed.
+- Initial strict mypy found ten explicit narrowing and test-wrapper typing errors; the typed correction passed strict focused mypy without semantic change.
+- Initial sandboxed make verify reached 995 passing tests with six nested uv previews failing only on blocked DNS; the network-enabled rerun passed all 1001 tests and the complete audit wall.
+- An explicit make papers command was unavailable because the host lacks pdfinfo; paper invariant tests passed in the complete test wall and make site passed independently.
+limitations:
+- The watchdog is an owner-controlled in-Pod process, not a provider-native terminateAfter guarantee; host or provider failure can defeat it, while the independent controller finalizer remains the primary deletion control.
+- RunPod necessarily sees authenticated control-plane traffic and supplies the host; AO-0012 does not claim cryptographic infrastructure independence, legal nonretention, or provider inability to inspect or misreport its own infrastructure.
+- The public GitHub surfaces are live network dependencies and may be unavailable; any failure occurs before repository credential ingress.
+external_state_changed: false
+credential_read: false
+provider_call: false
+model_download: false
+gpu_provisioned: false
+inference_calls: 0
+spend_usd: '0'

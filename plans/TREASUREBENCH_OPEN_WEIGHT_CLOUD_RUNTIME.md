@@ -1,5 +1,104 @@
 # TreasureBench open-weight cloud-runtime feasibility and conformance
 
+## R4 final live-preflight and encrypted-Pod correction (2026-08-02)
+
+The owner superseded the unused, unauthorized R3 gate without creating or
+consuming it. AO-0012 remains the same task under issue #212, draft PR #213,
+branch `agent/treasurebench-open-weight-cloud-runtime`, and this living plan.
+The exact model revision and BF16 checksums, Tekken tokenizer, vLLM 0.23.0,
+immutable Linux/amd64 container, one Secure Cloud dedicated noninterruptible
+A100 80GB PCIe, repository-local two-name credential ingress, temporary
+Secrets/template, measured attestation, 50-pairing public calibration, six
+GPU-hour and 400-call ceilings, and USD 10 expected/USD 20 hard limits remain
+unchanged.
+
+R4 removes the live-path dependency on GitHub CLI authentication. Before
+`.env.txt` ingress, the controller performs bounded, fixed-User-Agent,
+unauthenticated public GETs for issue #212 and PR #213 plus exact `git
+ls-remote` branch verification. It retains only the normalized issue number and
+state and the PR number/state/draft/base/head identity required for the gate;
+raw bodies and unexpected fields are not written to logs or artifacts.
+
+R4 replaces GraphQL Pod creation with the documented Bearer-authenticated
+`POST https://rest.runpod.io/v1/pods`. Its exact frozen body requests Secure
+Cloud, one A100 80GB PCIe, CUDA compatibility list `['13.0']`, the exact
+temporary template, 50-GB container disk, 120-GB `/workspace` volume,
+`volumeEncrypted: true`, US placement, port `8000/http`, and no public IP.
+It prohibits `minCudaVersion`, `terminateAfter`, network volume, raw secret,
+environment override, alternate hardware, and fallback fields. The create
+response and one fresh Pod GET must independently agree on identity, template,
+image, Secure Cloud hardware, storage, encryption, no network volume, and rate
+before any model work.
+
+Because this encrypted REST operation has no documented `terminateAfter`
+input, R4 does not claim a native termination guarantee. Orphan control is the
+unconditional controller finalizer plus a minimal Pod-resident watchdog armed
+before model download. The watchdog uses only the automatically supplied Pod
+ID and Pod-scoped RunPod key, verifies its exact encrypted/no-network-volume
+Pod by bounded REST GET, records only public-safe PID/existence/deadline data,
+and issues REST DELETE for its own Pod at a six-hour monotonic deadline. The
+parent removes the Pod key before vLLM or proxy launch. The endpoint bearer is
+stored only in a mode-0600 `/run` file, never under `/workspace`.
+
+The additive fixed R4 contract is
+`tasks/treasurebench-open-weight-cloud-runtime-r4.yml`. No R4 authorization
+exists. No real `.env.txt`, RunPod or Hugging Face account, model artifact,
+GPU, endpoint, inference call, private/scientific state, or spend has been
+accessed.
+
+### R4 milestones
+
+- **R4-M0 — complete:** verify local branch/head, public issue #212, public
+  draft PR #213, remote branch head, R3 unconsumed state, and official RunPod
+  REST Pod-create/storage/Pod-variable surfaces without credential access.
+- **R4-M1 — complete:** register the additive R4 contract, official-source
+  audit, 30-case corruption layer, public GitHub preflight, exact encrypted
+  REST Pod creation, dual observed-state verification, and Pod watchdog.
+- **R4-M2 — complete:** the complete 50-pairing rehearsal, all 84
+  inherited-plus-R4 corruptions, 62 R4 tests, 144 combined open-weight tests,
+  Ruff, strict focused mypy, repository mypy on 219 source files, all 1,001
+  repository tests, every repository audit, the offline compendium release
+  wall, and the site build pass.
+- **R4-M3 — in progress:** commit and push only intended AO-0012 files, update PR
+  #213 while retaining `Tracks #212`, and pass both exact-head PR checks.
+- **R4-M4 — pending:** freeze the exact execution commit and protected tree,
+  create and validate the unconsumed generic R4 owner gate, freeze the
+  schema-valid handoff, and stop once at owner-gate-required.
+
+### R4 preserved failures and corrections
+
+- The initial direct web opener refused the raw GitHub API URL under its safe
+  URL policy. A fixed public curl request with the registered User-Agent and a
+  normalized jq projection verified the issue and PR state without retaining
+  response bodies.
+- `rg` was unavailable for the first local R4 source scan. The read-only scan
+  was repeated with `grep`, which found the expected copied R2/R3 terms before
+  they were corrected.
+- The first focused Ruff run found one unused test-only `subprocess` import and
+  stopped before pytest. Removing that import changed no runtime behavior.
+- The next focused pytest collection failed because `scripts` is not an
+  importable installed package. The test now loads the watchdog file through
+  `runpy` without modifying packaging or deployment identity.
+- The first complete R4 test execution found one overly broad assertion that
+  searched for substring `gh`; the word `weight` contains that substring. The
+  regression now rejects only an exact `gh` executable. All 62 R4 tests then
+  passed.
+- The first strict focused mypy pass found ten narrowing and test-wrapper type
+  errors. Explicit Mapping guards, one nonoptional Pod-ID local, and an
+  annotated synthetic `Path.open` guard corrected the types without changing
+  runtime semantics; strict mypy then passed all four R4 Python files.
+- The first complete `make verify` passed Ruff and mypy and reached 995 passing
+  tests; six nested `uv run` preview tests failed only because sandbox DNS
+  blocked isolated build dependency resolution. The identical approved
+  network-enabled rerun passed all 1,001 tests, claims and runs, every audit,
+  and the offline compendium release wall.
+- An explicit `make papers` invariant command stopped because `pdfinfo` is not
+  installed in this host environment. Paper source, visual-QA, and generated
+  invariant tests had already passed inside the 1,001-test wall; no paper
+  source or artifact was changed. The separate `make site` build passed 89
+  pages and 26 studies.
+
+
 ## R3 exact RunPod API contract correction (2026-08-02)
 
 The owner superseded both unused gates

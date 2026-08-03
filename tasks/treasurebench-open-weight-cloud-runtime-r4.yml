@@ -1,0 +1,114 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0012
+title: TreasureBench open-weight cloud-runtime R4 final live-preflight and encrypted-Pod correction
+task_type: infrastructure
+status: active
+objective: Prospectively replace the unused R3 live preflight and Pod-create path with unauthenticated public GitHub verification, documented encrypted REST Pod creation, and a Pod-resident six-hour deletion watchdog while preserving the accepted runtime identity, calibration, lifecycle, caps, and zero-scientific boundary.
+authority_references:
+- {type: instruction, path: AGENTS.md}
+- {type: policy, path: docs/repository-contract.md}
+- {type: policy, path: docs/agent-ops/README.md}
+- {type: policy, path: docs/benchmark/agents-v1/AGENTS.md}
+- {type: policy, path: src/distributed_discovery/benchmark/agents_v1/AGENTS.md}
+- {type: policy, path: docs/benchmark/agents-v1/protocol-validity-policy-v2.yml}
+- {type: policy, path: docs/benchmark/agents-v1/provider-outcome-policy-v3.yml}
+- {type: record, path: docs/benchmark/agents-v1/base-campaign-allocation.yml}
+- {type: plan, path: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md}
+- {type: issue, path: https://github.com/yoheinakajima/distributed-discovery/issues/212}
+- {type: pull-request, path: https://github.com/yoheinakajima/distributed-discovery/pull/213}
+owner_decisions:
+- Physical ownership of the GPU is not scientifically necessary; the candidate is an open-weight, self-operated cloud runtime and supplies model and inference-stack independence, not physical locality or complete infrastructure independence.
+- The exact identity remains Mistral Small 3.1 24B Instruct revision 68faf511d618ef198fef186659617cfd2eb8e33a, original unquantized BF16 artifacts, Tekken tokenizer, vLLM 0.23.0 immutable Linux/amd64 container, and one RunPod Secure Cloud dedicated noninterruptible NVIDIA A100 80GB PCIe.
+- R1, R2, and R3 owner gates are unused, unauthorized, and superseded; none may be created, consumed, or treated as authority.
+- Before credential ingress, issue #212 and draft PR #213 are checked through fixed unauthenticated public GitHub REST GETs and the branch through git ls-remote; the live path never depends on gh authentication.
+- Repository-root .env.txt is read only after exact R4 authorization and pre-ingress validation, through the strict nonexecuting loader, and may return only RUNPOD_API_KEY and HF_TOKEN.
+- GraphQL uses only URL-encoded api_key query authentication for inventory and temporary Secrets; REST uses only Authorization Bearer for templates, encrypted Pod create/get/delete, and billing.
+- Pod creation uses POST https://rest.runpod.io/v1/pods with one exact field set, volumeEncrypted true, no network volume, no public IP, no fallback, and no second create under one authorization.
+- Three short-lived RunPod Secrets and one temporary private template are deleted and verified absent after the exact Pod is deleted and verified absent.
+- Because the selected encrypted REST create surface has no native terminateAfter field, orphan control is the unconditional controller finalizer plus a Pod-resident watchdog that verifies and self-deletes the exact Pod at a six-hour monotonic deadline using only its Pod-scoped key.
+- The ten-public-task, five-architecture, one-repeat, 50-pairing calibration remains operational-only with six GPU-hours, 400 calls, expected spend under USD 10, and USD 20 hard total cap.
+- Every possible Pod path performs teardown, temporary-resource deletion, positive exact billed-time and amount reconciliation including returned storage charge, cap enforcement, and one schema-valid redacted outcome before any merge or issue closure.
+- This task creates no DD-023, scientific run, claim, private task or holdout, base campaign, performance publication, paper, release, DOI, submission, managed-model call, quantized identity, sharded identity, or alternate hardware identity.
+scope:
+  paths:
+  - tasks/treasurebench-open-weight-cloud-runtime-r4.yml
+  - plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+  - plans/MASTER_EXEC_PLAN.md
+  - docs/program-memory/registry.yml
+  - docs/benchmark/agents-v1/open-weight-cloud-runtime-manifest-r4.yml
+  - docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r4.yml
+  - reports/benchmark/treasurebench-open-weight-cloud-runtime-r4-api-contract-audit.yml
+  - reports/agent-ops/AO-0012-open-weight-public-calibration-r4-owner-gate.yml
+  - reports/agent-ops/AO-0012-r4-owner-gate-required-handoff.yml
+  - src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r4.py
+  - scripts/treasurebench_open_weight_runtime_start_r4.sh
+  - scripts/treasurebench_open_weight_proxy_r4.py
+  - scripts/treasurebench_open_weight_watchdog_r4.py
+  - tests/test_treasurebench_open_weight_cloud_runtime_r4.py
+  - studies/DD-010-discoverybench
+  - Makefile
+  actions:
+  - implement and test public unauthenticated GitHub preflight before credential ingress
+  - implement and test exact encrypted REST Pod create and dual create-response/fresh-GET conformance
+  - implement and test controller finalization plus Pod-resident six-hour self-delete watchdog
+  - preserve the complete offline rehearsal, inherited corruptions, billing, teardown, attestation, and reporting guarantees
+  - freeze and validate one unconsumed generic R4 owner gate
+non_goals:
+- No use of any superseded gate or any live action before exact R4 authorization.
+- No managed endpoint, routed API, quantization, sharding, alternate model, alternate GPU, network volume, public IP, or fallback.
+- No scientific, private, performance-publication, paper, release, DOI, submission, or upstream action.
+permissions: {repository_write: true, git_branch_commit: true, github_issue_pr: true, merge_after_checks: true, ci_pages: true}
+external_action_permissions: {network_observation: true, github_mutation: true, provider_calls: true, spend: true, release_publication: false, submission: false}
+scientific_mutation_permissions: {create_study: false, create_claim: false, create_run: false, change_evidence_status: false, change_proof_status: false, change_paper_lifecycle: false}
+private_data_permissions: {read: true, write: true, generate: true, publish: false}
+budget:
+  currency: USD
+  expected: '10'
+  hard_cap: '20'
+  call_cap: 400
+  category_caps: {runpod_gpu_compute_and_storage: '20'}
+  cumulative_spend: '0'
+expected_outcomes:
+- One authorization-free R4 control plane with public GitHub preflight, exact encrypted REST Pod creation, measured attestation, watchdog, and deterministic finalizer.
+- One complete no-network 50-pairing rehearsal and inherited-plus-R4 corruption suite with zero credential read, provider call, model download, GPU, endpoint, inference, or spend.
+- One frozen execution commit, protected tree, validated generic R4 owner gate, and schema-valid owner-gate-required handoff.
+stop_conditions:
+- Stop before credential ingress on authorization, protected-tree, GitHub, remote-head, ancestry, tracked-worktree, zero-state, credential-file, or resource-conflict mismatch.
+- Stop after possible Pod creation on identity, encryption, storage, GPU, image, attestation, watchdog, retention, leakage, circuit-breaker, call, runtime, spend, teardown, temporary-resource deletion, or billing mismatch.
+- Stop exactly once at owner-gate-required before authorization or live execution.
+acceptance_profile: infrastructure
+canonical_destinations:
+- tasks/treasurebench-open-weight-cloud-runtime-r4.yml
+- plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+- docs/benchmark/agents-v1/open-weight-cloud-runtime-manifest-r4.yml
+- reports/benchmark/treasurebench-open-weight-cloud-runtime-r4-api-contract-audit.yml
+- reports/agent-ops/AO-0012-open-weight-public-calibration-r4-owner-gate.yml
+- reports/agent-ops/AO-0012-r4-owner-gate-required-handoff.yml
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 212
+  branch: agent/treasurebench-open-weight-cloud-runtime
+  pull_request: 213
+  base: main
+exec_plan: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+task_delta: null
+frozen_identifiers:
+  model_repository: mistralai/Mistral-Small-3.1-24B-Instruct-2503
+  model_revision: 68faf511d618ef198fef186659617cfd2eb8e33a
+  model_weight_format: official-bf16-unquantized
+  compute_provider: RunPod
+  compute_product: Secure-Cloud-dedicated-Pod
+  gpu_type: NVIDIA-A100-80GB-PCIe
+  gpu_count: '1'
+  gate_id: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R4
+  superseded_gate_id: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R3
+supersession:
+  supersedes:
+  - tasks/treasurebench-open-weight-cloud-runtime-r3.yml
+  - AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R3
+  - AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R2
+  - AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION
+  superseded_by: null
+  reason: The unused R3 live path depended on authenticated gh state, used a GraphQL Pod create without requesting documented volume encryption, and assumed a GraphQL terminateAfter field that cannot be sent on the selected encrypted REST create surface; R4 corrects these prospective controls without changing runtime identity, calibration, or caps.
+next_gate: Complete authorization-free R4 validation, push, exact-head checks, execution refreeze, protected-tree freeze, and generic R4 gate validation without creating or consuming authorization.

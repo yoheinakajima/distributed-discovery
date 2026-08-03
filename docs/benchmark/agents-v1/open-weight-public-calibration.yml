@@ -1,6 +1,6 @@
 schema_version: treasurebench-open-weight-public-calibration-v1
 calibration_id: treasurebench-open-weight-public-calibration-r1
-status: frozen-r3-owner-gate-not-authorized
+status: frozen-r4-owner-gate-not-authorized
 authority_task: AO-0012
 scientific_run: false
 public_only: true
@@ -74,8 +74,8 @@ prohibited_report_fields:
   - composite
   - leaderboard
 owner_gate:
-  superseded_unused_gates: [AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION, AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R2]
-  required_gate: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R3
+  superseded_unused_gates: [AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION, AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R2, AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R3]
+  required_gate: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R4
   authorization_exists: false
 projection:
   observed_pairing_denominator: 50
@@ -113,6 +113,7 @@ publication_boundary:
   private_seed_task_answer_or_holdout: prohibited
 
 control_plane_contract:
+  github_preflight: unauthenticated-public-issue-and-pull-GET-plus-exact-git-ls-remote
   graphql_authentication: URL-encoded-api_key-query-parameter-only
   graphql_authorization_header: false
   rest_authentication: Authorization-Bearer-header-only
@@ -120,4 +121,8 @@ control_plane_contract:
   pod_create_cuda:
     allowedCudaVersions: ["13.0"]
     minCudaVersion: prohibited
-  terminateAfter: authorization-start-plus-six-hours
+  pod_create_surface: REST-POST-v1-pods
+  volumeEncrypted: true
+  networkVolume: prohibited
+  terminateAfter: prohibited-on-selected-rest-create-surface
+  orphan_control: controller-finalizer-plus-pod-resident-six-hour-delete-watchdog
