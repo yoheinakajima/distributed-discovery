@@ -1,0 +1,102 @@
+schema_version: agent-ops-handoff-v1
+status: owner-gate-required
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0012
+issue: 212
+pull_request: 213
+branch: agent/treasurebench-open-weight-cloud-runtime
+base_main: 6e86b43a8db8d20380dd64bf9490772b7152f484
+head_merge_sha: 0abff66364d333c44e09829df01825f6990aeb6c
+task_contract: tasks/treasurebench-open-weight-cloud-runtime-r4.yml
+exec_plan: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+last_completed_gate: >-
+  R4 execution commit 710fcc333b78e153ba317d76f0e68303f7617092 and
+  committed unconsumed R4 gate head
+  0abff66364d333c44e09829df01825f6990aeb6c pass the complete offline
+  10-task/five-architecture/50-pairing rehearsal with 294 synthetic calls, 50
+  terminal protocol-valid pairings, 72 agreeing bounds, all 84 inherited-plus-R4
+  corruptions, 62 R4-focused and 144 combined R1-R4 tests, Ruff, strict MyPy on
+  219 source files, all 1,001 repository tests, every audit, site invariants,
+  the 48-path freeze, exact public issue/PR/remote-head preflight, and generic
+  gate validate-only. The first sandboxed full wall, public preflight, and final
+  validate-only remote observation failed only on blocked DNS; their
+  network-enabled reruns passed. The separate paper wrapper lacked host pdfinfo,
+  while all paper source, visual, and invariant tests passed in the full wall.
+  No authorization or live resource was created.
+next_gate: >-
+  Resume AO-0012 in this same Codex session and repository from
+  plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md, issue #212, branch
+  agent/treasurebench-open-weight-cloud-runtime, and draft PR #213. Use only
+  reports/agent-ops/AO-0012-open-weight-public-calibration-r4-owner-gate.yml and
+  its exact R4 authorization; never create, authorize, consume, or use R1, R2,
+  or R3. Revalidate authorization, execution ancestry, clean tracked tree,
+  public token-free issue/PR/remote-head state, R4 contract, all 48 hashes, zero
+  calls/spend/local state, then load only RUNPOD_API_KEY and HF_TOKEN from
+  repository-root .env.txt. Enforce GraphQL query-key-only and REST Bearer-only
+  transport, three short-lived Secrets and one private template, one exact
+  encrypted REST Pod create with no retry, exact create/GET conformance,
+  controller finalizer plus Pod-resident six-hour delete watchdog, exact
+  one-A100 BF16 identity, measured attestation, in-Pod scrubbing, and the frozen
+  50-pairing public calibration. Run exactly make
+  treasurebench-open-weight-runtime-live and continue normal or honest
+  bounded-failure closeout through unconditional deletion verification, exact
+  billing, one permitted redacted decision, full validation, PR
+  readiness/squash merge, CI/Pages, named routes, issue closure, main
+  synchronization, and one final handoff. Stop on
+  authorization/tree/GitHub drift, missing or unsafe credentials, conflicts or
+  ambiguity, identity/encryption/attestation/watchdog mismatch, cap or leakage,
+  resource or billing ambiguity, managed fallback, scientific/publication
+  expansion, or a new runtime identity.
+decision: >-
+  Stop exactly once at owner-gate-required. Public pre-ingress uses bounded,
+  token-free GitHub issue/PR GETs with a fixed User-Agent plus exact git
+  ls-remote, never gh. After exact R4 authorization only, repository-root
+  .env.txt may return exactly RUNPOD_API_KEY and HF_TOKEN. GraphQL inventory and
+  temporary Secret operations use the URL-encoded api_key query only; REST
+  template, Pod create/get/delete, and billing operations use Bearer only. The
+  one encrypted REST Pod create freezes exactly name, cloudType SECURE,
+  computeType GPU, gpuTypeIds [NVIDIA A100 80GB PCIe], gpuTypePriority
+  availability, gpuCount 1, allowedCudaVersions [13.0], templateId,
+  containerDiskInGb 50, volumeInGb 120, volumeMountPath /workspace,
+  volumeEncrypted true, countryCodes [US], ports [8000/http], and
+  supportPublicIp false. Three short-lived Secrets and one private template are
+  deleted and verified. The controller finalizer and a Pod-resident six-hour
+  exact-self-delete watchdog bound orphan risk. Measured attestation covers
+  actual GPU name/count/memory, driver, requested CUDA class, toolkit/runtime,
+  PyTorch CUDA, vLLM 0.23.0, mistral-common >=1.11.3, exact model/tokenizer
+  hashes, no quantization/sharding, startup/load, peak memory, and watchdog
+  identity/deadline. Success and every bounded failure delete and verify the Pod,
+  encrypted disposable volume, Secrets, and template, then reconcile exact
+  positive Pod billing plus returned storage charges. Any resource or billing
+  ambiguity keeps PR #213 and issue #212 open. Expected spend is under USD 10,
+  conservative planning is USD 10, and hard caps are USD 20, six GPU-hours, and
+  400 calls.
+external_calls_cost:
+  calls: 0
+  cost: '0'
+  currency: USD
+private_state_change: >-
+  none; no real .env.txt or credential was read, selected, copied, hashed,
+  fingerprinted, displayed, logged, persisted, transmitted, or inherited; no
+  RunPod or Hugging Face account, Secret, template, Pod, model, GPU, endpoint,
+  inference, or spend was accessed or created.
+scientific_state_change: >-
+  none; no DD-023, scientific run, private task or answer, base campaign,
+  performance publication, claim, paper, release, DOI, arXiv, journal, or
+  submission state was created or changed.
+validation:
+  profile: infrastructure
+  result: pass-R4-50-offline-pairings-294-synthetic-calls-50-terminal-valid-72-bounds-84-corruptions-62-R4-focused-144-combined-tests-1001-full-tests-ruff-strict-mypy-all-audits-site-48-tree-freeze-public-preflight-exact-head-checks-gate-validate-only-zero-authorization
+owner_action: >-
+  Review R4 and, only if approved, run: make owner-gate
+  GATE=reports/agent-ops/AO-0012-open-weight-public-calibration-r4-owner-gate.yml
+  OWNER_GATE_CHALLENGE="AUTHORIZE
+  AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R4 710fcc3". Only after it
+  succeeds may this same task run: make treasurebench-open-weight-runtime-live.
+exact_next_command: 'make owner-gate GATE=reports/agent-ops/AO-0012-open-weight-public-calibration-r4-owner-gate.yml OWNER_GATE_CHALLENGE="AUTHORIZE AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R4 710fcc3"'
+exact_next_file: reports/agent-ops/AO-0012-open-weight-public-calibration-r4-owner-gate.yml
+blocker: >-
+  The exact AO-0012 R4 owner authorization is required and absent by design; R1,
+  R2, and R3 remain unused and superseded. No .env.txt read, authenticated
+  provider access, model download, Pod/GPU/endpoint, calibration/inference, or
+  spend is authorized.
