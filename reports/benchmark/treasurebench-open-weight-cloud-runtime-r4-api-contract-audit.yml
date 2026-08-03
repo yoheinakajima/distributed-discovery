@@ -108,6 +108,7 @@ failed_validation_or_observation_attempts:
 - Initial strict mypy found ten explicit narrowing and test-wrapper typing errors; the typed correction passed strict focused mypy without semantic change.
 - Initial sandboxed make verify reached 995 passing tests with six nested uv previews failing only on blocked DNS; the network-enabled rerun passed all 1001 tests and the complete audit wall.
 - An explicit make papers command was unavailable because the host lacks pdfinfo; paper invariant tests passed in the complete test wall and make site passed independently.
+- The final sandboxed git-ls-remote/public preflight was blocked by DNS; the network-enabled token-free rerun matched local, remote, issue, and draft-PR state and passed.
 limitations:
 - The watchdog is an owner-controlled in-Pod process, not a provider-native terminateAfter guarantee; host or provider failure can defeat it, while the independent controller finalizer remains the primary deletion control.
 - RunPod necessarily sees authenticated control-plane traffic and supplies the host; AO-0012 does not claim cryptographic infrastructure independence, legal nonretention, or provider inability to inspect or misreport its own infrastructure.

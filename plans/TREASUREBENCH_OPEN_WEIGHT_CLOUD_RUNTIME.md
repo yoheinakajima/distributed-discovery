@@ -99,6 +99,10 @@ accessed.
   invariant tests had already passed inside the 1,001-test wall; no paper
   source or artifact was changed. The separate `make site` build passed 89
   pages and 26 studies.
+- The final sandboxed public preflight stopped at `git ls-remote` because DNS
+  resolution was blocked before the Python verifier ran. The identical
+  approved network-enabled command then matched local, remote, and public draft
+  PR heads and passed the complete token-free R4 pre-ingress verifier.
 
 
 ## R3 exact RunPod API contract correction (2026-08-02)
