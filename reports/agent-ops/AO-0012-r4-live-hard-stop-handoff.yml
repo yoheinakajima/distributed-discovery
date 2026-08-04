@@ -1,0 +1,56 @@
+schema_version: agent-ops-handoff-v1
+status: stop-by-policy
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0012
+issue: 212
+pull_request: 213
+branch: agent/treasurebench-open-weight-cloud-runtime
+base_main: 6e86b43a8db8d20380dd64bf9490772b7152f484
+head_merge_sha: 32e25db058c123189b4113203b6c03b17617c1c0
+task_contract: tasks/treasurebench-open-weight-cloud-runtime-r4.yml
+exec_plan: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+last_completed_gate: >-
+  The exact R4 owner challenge succeeded and created the registered mode-0600
+  generic authorization. The exact make treasurebench-open-weight-runtime-live
+  command then stopped inside validate_owner_authorization before .env.txt
+  ingress because the runtime requested gate[budget], while the validated
+  generic owner-gate schema supplies cumulative_state, hard_caps, and
+  remaining_caps. No lifecycle state file, credential object, provider control
+  plane, RunPod resource, model download, endpoint, inference call, or bill was
+  created.
+next_gate: >-
+  An explicit owner amendment is required before an additive AO-0012 correction
+  may repair the generic-authorization/cumulative-state validator and guarantee
+  schema-valid pre-ingress failure closeout. The corrected protected tree must
+  be refrozen behind a new exact owner gate; the attempted R4 authorization may
+  not be rerun or reused.
+decision: >-
+  calibration-integrity-failure-stop. The failure preceded credential ingress
+  and resource creation, so Pod, template, Secret, volume, billing, inference,
+  and teardown identities are all not applicable rather than ambiguous. PR
+  #213 remains draft and issue #212 remains open.
+external_calls_cost:
+  calls: 0
+  cost: '0'
+  currency: USD
+private_state_change: >-
+  The generic engine created only the authorized mode-0600 R4 authorization.
+  The live command did not read .env.txt or any credential and created no
+  provider or model state.
+scientific_state_change: >-
+  none; no DD-023, scientific run, private task, base campaign, performance
+  result, claim, paper, release, DOI, or submission was created or changed.
+validation:
+  profile: infrastructure
+  result: hard-stop-pre-ingress-zero-resources-calls-spend-outcome-handoff-decision-valid-144-focused-1001-full-ruff-strict-mypy-all-audits-site-pass
+owner_action: >-
+  No remediation command is safe under the attempted R4 authorization. Provide
+  an explicit AO-0012 additive-repair amendment before any protected-source
+  correction, refreeze, new owner gate, or live retry.
+exact_next_command: none-owner-amendment-required
+exact_next_file: reports/agent-ops/AO-0012-r4-live-hard-stop-handoff.yml
+blocker: >-
+  The protected R4 runtime cannot consume the generic owner authorization it
+  was built to validate. Repairing that protected code and retrying requires a
+  new prospective authority and gate; reuse of the attempted R4 authorization
+  is prohibited.

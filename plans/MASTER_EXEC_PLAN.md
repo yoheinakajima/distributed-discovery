@@ -1,5 +1,22 @@
 # Master execution plan
 
+## Active R4 live hard stop — AO-0012 authorization adapter integrity (2026-08-04)
+
+The exact R4 owner gate was authorized once. The exact live command then
+stopped before `.env.txt` ingress because the protected runtime expected a
+nonexistent owner-gate `budget` mapping instead of the generic gate's
+`cumulative_state`, `hard_caps`, and `remaining_caps`. No credential, provider
+control plane, RunPod resource, model download, endpoint, inference call, or
+spend occurred; the local lifecycle state path is absent and there is no
+teardown or billing ambiguity.
+
+The permitted decision is `calibration-integrity-failure-stop`. The attempted
+R4 authorization cannot be reused. PR #213 remains draft and issue #212 remains
+open. Any additive validator repair, protected-tree refreeze, new gate, or live
+retry requires an explicit owner amendment; no DD-023, scientific, private,
+base-campaign, performance, paper, release, DOI, or submission authority was
+created.
+
 ## Active R4 continuation — AO-0012 public preflight and encrypted REST Pod (2026-08-02)
 
 The unused R1, R2, and R3 gates remain unauthorized and superseded. AO-0012

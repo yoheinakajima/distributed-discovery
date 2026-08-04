@@ -1,8 +1,8 @@
 schema_version: treasurebench-open-weight-cloud-runtime-decision-v1
 authority_task: AO-0012
-status: pending-owner-authorized-public-calibration
+status: calibration-integrity-failure-stop
 calibration_id: treasurebench-open-weight-public-calibration-r1
-selected_decision: null
+selected_decision: calibration-integrity-failure-stop
 permitted_decisions:
   - open-weight-self-operated-cloud-runtime-feasible-base-registration-next
   - open-weight-runtime-technically-feasible-budget-owner-decision-required
@@ -11,7 +11,9 @@ permitted_decisions:
   - self-operated-control-boundary-failed-managed-api-rejected
   - calibration-integrity-failure-stop
 preselection: false
-decision_evidence: []
+decision_evidence:
+  - reports/benchmark/treasurebench-open-weight-public-calibration-outcome-r4.yml
+  - The exact owner gate succeeded, but the exact live command stopped before credential ingress because the R4 authorization validator requested a nonexistent owner-gate budget mapping instead of the generic gate cumulative-state fields.
 next_candidate_if_pass:
   title: TreasureBench Agents v1 claim-grade base-campaign registration and open-weight runtime authorization
   must_independently_decide:

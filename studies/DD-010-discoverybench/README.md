@@ -87,6 +87,15 @@ six-hour delete watchdog because the selected encrypted REST surface has no
 documented `terminateAfter` field. No real credential, account, artifact,
 resource, or spend is accessed by this correction.
 
+The exact R4 owner authorization was later created once, but the exact live
+command stopped before `.env.txt` ingress because the protected runtime looked
+for a nonexistent generic owner-gate `budget` mapping. The registered outcome
+is `calibration-integrity-failure-stop`: zero credentials, RunPod resources,
+model downloads, endpoints, inference calls, or spend occurred, and no
+teardown or billing ambiguity exists. The attempted authorization cannot be
+reused; PR #213 and issue #212 remain open for a separately owner-authorized
+prospective repair and refreeze.
+
 ## Agents v1 sealed-pilot repair adjudication
 
 The first sealed engineering pilot remains permanently

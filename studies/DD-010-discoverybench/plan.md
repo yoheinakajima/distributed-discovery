@@ -104,6 +104,14 @@ an unconditional controller finalizer plus a Pod-resident six-hour self-delete
 watchdog, not a native `terminateAfter` claim. R1 through R3 remain unused and
 unauthorized.
 
+The exact R4 authorization was later accepted, but the exact live command
+stopped before credential ingress because the protected runtime expected a
+nonexistent `budget` mapping on the generic owner-gate manifest. No provider
+resource, model download, endpoint, inference call, or spend occurred. The
+permitted decision is `calibration-integrity-failure-stop`; the attempted R4
+authorization is not reusable, and any prospective repair requires a new
+owner amendment, protected-tree freeze, and exact gate.
+
 The 2026-07-23 evaluation registration under issue #173 selects a sealed
 engineering pilot pending owner authorization and keeps the claim-grade base
 blocked on local/open feasibility. The inactive authorization has zero caps

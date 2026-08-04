@@ -1,5 +1,31 @@
 # TreasureBench open-weight cloud-runtime feasibility and conformance
 
+## R4 owner-authorized live attempt hard stop (2026-08-04)
+
+The owner supplied and the generic Agent Operations engine accepted the exact
+R4 challenge at `2026-08-04T13:45:02Z`. The immediately following exact command
+`make treasurebench-open-weight-runtime-live` failed closed in
+`validate_owner_authorization` before repository-root `.env.txt` ingress. The
+protected R4 runtime attempted to read `gate["budget"]`, but the validated
+generic owner-gate manifest and authorization surface use `cumulative_state`,
+`hard_caps`, and `remaining_caps`; Python raised `KeyError: 'budget'`.
+
+The failure preceded credential loading, control-plane construction, namespace
+inventory, Secret or template creation, Pod creation, model download, endpoint
+startup, inference, and spend. The AO-0012 lifecycle state path is absent, so
+there is no possible Pod, temporary resource, disposable volume, billing, or
+teardown ambiguity. The registered decision is
+`calibration-integrity-failure-stop`. The attempted R4 authorization must not
+be rerun or reused. PR #213 remains draft and issue #212 remains open pending an
+explicit owner-authorized additive repair, protected-tree refreeze, and new
+gate.
+
+Public-safe hard-stop closeout validation passes the outcome and handoff
+schemas, the selected-decision validator, all 144 combined open-weight tests,
+Ruff, strict MyPy on 219 source files, all 1,001 repository tests, every audit,
+the offline compendium wall, and the 89-page/26-study site build. These checks
+do not repair or authorize reuse of the failed R4 live surface.
+
 ## R4 final live-preflight and encrypted-Pod correction (2026-08-02)
 
 The owner superseded the unused, unauthorized R3 gate without creating or
@@ -63,9 +89,13 @@ accessed.
   `710fcc333b78e153ba317d76f0e68303f7617092` contains only the 17 intended
   R4 files and is pushed; PR #213 remains open and draft, retains `Tracks
   #212`, points to that exact head, and both exact-head validation checks pass.
-- **R4-M4 — in progress:** freeze the protected tree,
-  create and validate the unconsumed generic R4 owner gate, freeze the
-  schema-valid handoff, and stop once at owner-gate-required.
+- **R4-M4 — complete:** freeze the protected tree, create and validate the
+  unconsumed generic R4 owner gate, freeze the schema-valid handoff, and stop
+  once at owner-gate-required.
+- **R4-M5 — hard stop:** the exact owner authorization succeeded, but the exact
+  live command stopped before credential ingress on the generic-authorization
+  versus owner-gate cumulative-state mismatch. Zero resources, calls, and spend
+  exist; repair and retry require a new prospective gate.
 
 ### R4 preserved failures and corrections
 
@@ -475,12 +505,12 @@ conversation.
   commit, push, draft PR, exact-head checks, and protected-tree freeze.
 - **M5 — complete:** committed generic owner gate, live validate-only pass,
   schema-valid owner-gate-required handoff, and exact stop.
-- **M6 — pending owner authorization:** provision, download, start, attest,
-  execute only the public calibration, measure, stop, teardown or detach under
-  policy, and reconcile.
-- **M7 — pending M6:** select one permitted final decision, validate public-safe
-  closeout, merge after checks, verify CI/Pages/routes, close issue, synchronize
-  main, repeat the delta audit, and complete the handoff.
+- **M6 — hard stop before credential ingress:** the exact owner authorization
+  succeeded, but the runtime authorization adapter raised `KeyError: 'budget'`
+  before `.env.txt`, provider, or resource access.
+- **M7 — blocked pending owner amendment:** preserve the selected
+  `calibration-integrity-failure-stop`; do not merge or close the issue; repair,
+  refreeze, and retry only under a new exact prospective gate.
 
 ## Progress checklist
 
@@ -497,6 +527,8 @@ conversation.
 - [x] Complete M4 without consequential activity.
 - [x] Commit and validate the generic gate and owner-gate-required handoff.
 - [x] Stop before every gated action.
+- [x] Consume the exact R4 owner direction once, preserve the pre-ingress
+  integrity failure, and stop with zero credentials, resources, calls, or spend.
 
 ## Discoveries and surprises
 
@@ -687,25 +719,26 @@ corruptions, focused tests, and pending permitted-decision record exist.
 
 ## Blockers
 
-The only blocker is intentional: the exact generic owner authorization is
-absent. M1 through M5 pass. Consequential execution remains prohibited until
-the owner supplies the exact challenge. The unrelated untracked files prevent
-a globally clean worktree but do not overlap AO-0012; all staging is
-path-explicit.
+The attempted R4 authorization cannot be reused. The protected runtime expects
+a nonexistent `budget` mapping on the generic owner-gate manifest, so it cannot
+reach credential ingress safely. An explicit owner amendment must authorize an
+additive repair, protected-tree refreeze, and new exact gate. The unrelated
+untracked files remain outside AO-0012 and every stage stays path-explicit.
 
 ## Recovery and restart instructions
 
-Resume on `agent/treasurebench-open-weight-cloud-runtime`. Read the fixed task
-contract and this plan, verify issue #212 and the current draft PR if one
-exists, preserve the five unrelated untracked files, and continue the sole
-active milestone. Never inspect prior retained roots or authorizations. Before
-M5, do not access credentials, RunPod or authenticated Hugging Face APIs,
-download weights, provision a GPU, launch an endpoint, run calibration, or
-spend.
+Resume on `agent/treasurebench-open-weight-cloud-runtime`. Read the R4 task
+contract, this plan, the R4 hard-stop outcome, and the stop-by-policy handoff;
+verify issue #212 and draft PR #213 and preserve the five unrelated untracked
+files. Do not reuse the attempted R4 authorization. Never inspect prior
+retained roots. No credential, RunPod or authenticated Hugging Face access,
+model download, GPU, endpoint, calibration, or spend is permitted without a
+new explicit owner amendment and exact prospective gate.
 
 ## Outcome and retrospective
 
-Pending. AO-0012 is complete only after either a permitted calibrated decision
-and public-safe closeout or an honest fail-closed terminal decision. The
-current required checkpoint is owner-gate-required after authorization-free
-work, not completion.
+R4 selected `calibration-integrity-failure-stop` before credential ingress.
+AO-0012 remains open because this is a protected live-path integrity failure,
+not a calibrated feasibility decision. There are zero provider resources,
+calls, or spend and no teardown or billing ambiguity. A future additive repair
+requires explicit owner authority and a new exact gate.
