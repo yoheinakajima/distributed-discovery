@@ -6,7 +6,7 @@ issue: 212
 pull_request: 213
 branch: agent/treasurebench-open-weight-cloud-runtime
 base_main: 6e86b43a8db8d20380dd64bf9490772b7152f484
-head_merge_sha: 32e25db058c123189b4113203b6c03b17617c1c0
+head_merge_sha: d3d7fb09f251767358a36d92b3412143dad4653b
 task_contract: tasks/treasurebench-open-weight-cloud-runtime-r4.yml
 exec_plan: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
 last_completed_gate: >-
@@ -17,7 +17,9 @@ last_completed_gate: >-
   generic owner-gate schema supplies cumulative_state, hard_caps, and
   remaining_caps. No lifecycle state file, credential object, provider control
   plane, RunPod resource, model download, endpoint, inference call, or bill was
-  created.
+  created. Public-safe closeout commit
+  d3d7fb09f251767358a36d92b3412143dad4653b is pushed, PR #213 remains
+  draft, and both exact-head validation checks pass.
 next_gate: >-
   An explicit owner amendment is required before an additive AO-0012 correction
   may repair the generic-authorization/cumulative-state validator and guarantee
@@ -42,7 +44,7 @@ scientific_state_change: >-
   result, claim, paper, release, DOI, or submission was created or changed.
 validation:
   profile: infrastructure
-  result: hard-stop-pre-ingress-zero-resources-calls-spend-outcome-handoff-decision-valid-144-focused-1001-full-ruff-strict-mypy-all-audits-site-pass
+  result: hard-stop-pre-ingress-zero-resources-calls-spend-outcome-handoff-decision-valid-144-focused-1001-full-ruff-strict-mypy-all-audits-site-two-exact-head-checks-pass
 owner_action: >-
   No remediation command is safe under the attempted R4 authorization. Provide
   an explicit AO-0012 additive-repair amendment before any protected-source
