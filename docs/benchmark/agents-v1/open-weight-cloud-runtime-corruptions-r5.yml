@@ -1,0 +1,24 @@
+schema_version: treasurebench-open-weight-cloud-runtime-r5-corruptions-v1
+task_id: AO-0012
+inherits: docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r4.yml
+inherited_cases: 84
+expected_result: every-R1-through-R5-corruption-rejected-with-zero-real-live-action
+cases:
+- {id: OW-R5-001, mutation: canonical-gate-budget-field-required, expected: valid-gate-without-budget-passes}
+- {id: OW-R5-002, mutation: cumulative-state-nonzero-spend, expected: rejected-before-credential-ingress}
+- {id: OW-R5-003, mutation: cumulative-state-nonzero-calls, expected: rejected-before-credential-ingress}
+- {id: OW-R5-004, mutation: hard-spend-or-call-cap-drift, expected: rejected-before-credential-ingress}
+- {id: OW-R5-005, mutation: remaining-cap-mismatch, expected: rejected-before-credential-ingress}
+- {id: OW-R5-006, mutation: category-cap-value-mismatch, expected: rejected-before-credential-ingress}
+- {id: OW-R5-007, mutation: hidden-category, expected: rejected-before-credential-ingress}
+- {id: OW-R5-008, mutation: currency-mismatch, expected: rejected-before-credential-ingress}
+- {id: OW-R5-009, mutation: legacy-budget-insertion, expected: rejected-not-authority}
+- {id: OW-R5-010, mutation: consumed-r4-authorization-presented-to-r5, expected: rejected-before-credential-ingress}
+- {id: OW-R5-011, mutation: authorization-or-cap-mismatch-at-live-entry, expected: zero-credential-network-resource-model-call-and-spend}
+live_action: false
+credential_source_read: false
+authenticated_provider_call: false
+model_download: false
+gpu_provisioned: false
+inference_calls: 0
+spend_usd: '0'

@@ -393,3 +393,13 @@ authorization-bound orphan controls, measured attestation, and exact
 success/failure teardown and billing. This remains infrastructure engineering
 only and adds no DD-023, private, scientific, base-campaign, performance, or
 publication authority.
+
+### AO-0012 R5 generic-gate compatibility repair
+
+R4 was authorized and consumed by a legitimate hard stop before credential
+ingress because its task validator read a nonexistent owner-gate `budget`
+mapping. R5 may never reuse that authorization and changes only the prospective
+adapter to require exact canonical `cumulative_state`, `hard_caps`, and
+`remaining_caps`. The runtime, public calibration, caps, lifecycle, and
+zero-scientific boundary remain unchanged; only a later exact R5 authorization
+can permit live work.

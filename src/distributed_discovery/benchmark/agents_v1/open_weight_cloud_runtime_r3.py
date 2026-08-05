@@ -558,6 +558,7 @@ def validate_owner_authorization(repo: Path, value: Mapping[str, Any]) -> dict[s
     validate(dict(value), "owner-authorization.schema.json")
     gate = load_yaml(repo / GATE_PATH)
     validate(gate, "owner-gate.schema.json")
+    _require(False, "R3 owner gate was superseded unused and may never be used")
     _require(value.get("gate_id") == GATE_ID, "R3 owner authorization required")
     _require(value.get("issue") == ISSUE, "authorization issue mismatch")
     _require(value.get("branch") == BRANCH, "authorization branch mismatch")
@@ -572,8 +573,6 @@ def validate_owner_authorization(repo: Path, value: Mapping[str, Any]) -> dict[s
         value.get("authorization_digest") == _authorization_digest(value),
         "authorization digest mismatch",
     )
-    _require(gate["budget"]["cumulative_spend"] == "0", "nonzero gate spend rejected")
-    _require(gate["budget"]["cumulative_calls"] == 0, "nonzero gate calls rejected")
     now = datetime.now(UTC)
     authorized = datetime.fromisoformat(str(value["authorized_at_utc"]).replace("Z", "+00:00"))
     expires = datetime.fromisoformat(str(value["expires_at_utc"]).replace("Z", "+00:00"))

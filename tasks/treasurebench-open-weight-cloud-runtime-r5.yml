@@ -1,0 +1,92 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0012
+title: TreasureBench open-weight cloud-runtime R5 generic-gate compatibility repair
+task_type: infrastructure
+status: owner-gate-required
+objective: Make the minimum forward-only repair that validates the canonical generic Agent Operations cumulative_state, hard_caps, and remaining_caps before the unchanged R4 runtime lifecycle can begin.
+authority_references:
+- {type: instruction, path: AGENTS.md}
+- {type: policy, path: docs/agent-ops/README.md}
+- {type: policy, path: docs/benchmark/agents-v1/AGENTS.md}
+- {type: plan, path: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md}
+- {type: issue, path: 'https://github.com/yoheinakajima/distributed-discovery/issues/212'}
+- {type: pull-request, path: 'https://github.com/yoheinakajima/distributed-discovery/pull/213'}
+owner_decisions:
+- R1 through R3 were superseded unused; R4 was validly authorized and consumed by the recorded pre-ingress hard stop and may never be reused.
+- R5 changes only the task-specific generic-gate schema adapter and retains the complete R4 runtime, lifecycle, calibration, cap, closeout, and zero-scientific design.
+- No real credential, authenticated provider access, resource, model download, inference, or spend is authorized while preparing and validating R5.
+scope:
+  paths:
+  - tasks/treasurebench-open-weight-cloud-runtime-r5.yml
+  - plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+  - plans/MASTER_EXEC_PLAN.md
+  - docs/program-memory/registry.yml
+  - docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r5.yml
+  - reports/benchmark/treasurebench-open-weight-cloud-runtime-r5-generic-gate-compatibility-audit.yml
+  - reports/agent-ops/AO-0012-open-weight-public-calibration-r5-owner-gate.yml
+  - reports/agent-ops/AO-0012-r5-owner-gate-required-handoff.yml
+  - src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r4.py
+  - src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r5.py
+  - tests/test_treasurebench_open_weight_cloud_runtime_r5.py
+  - studies/DD-010-discoverybench
+  - Makefile
+  actions:
+  - validate the exact canonical generic gate cap mappings without a legacy budget fallback
+  - prove compatibility with the real generic authorization writer and all corruption cases
+  - preserve and delegate to the complete frozen R4 runtime lifecycle
+  - freeze and validate one unconsumed R5 owner gate
+non_goals:
+- No reuse, reactivation, overwrite, or consumption of the R4 authorization.
+- No change to provider, runtime identity, model, tokenizer, engine, container, GPU, storage, watchdog, credential, calibration, billing, closeout, or caps.
+- No live calibration, credential read, authenticated provider call, resource, model download, inference, spend, DD-023, private or scientific task, performance publication, paper, release, DOI, or submission.
+permissions: {repository_write: true, git_branch_commit: true, github_issue_pr: true, merge_after_checks: true, ci_pages: true}
+external_action_permissions: {network_observation: true, github_mutation: true, provider_calls: true, spend: true, release_publication: false, submission: false}
+scientific_mutation_permissions: {create_study: false, create_claim: false, create_run: false, change_evidence_status: false, change_proof_status: false, change_paper_lifecycle: false}
+private_data_permissions: {read: true, write: true, generate: true, publish: false}
+budget:
+  currency: USD
+  expected: '10'
+  hard_cap: '20'
+  call_cap: 400
+  category_caps: {runpod_gpu_compute_and_storage: '20'}
+  cumulative_spend: '0'
+expected_outcomes:
+- One real-writer compatibility regression for the canonical generic owner-gate shape and exact cap corruptions.
+- One forward-only R5 adapter that reaches the unchanged R4 lifecycle only after exact R5 authorization validation.
+- One complete offline rehearsal, full repository verification, frozen execution commit, protected tree, validated R5 gate, and owner-gate-required handoff.
+stop_conditions:
+- Stop before credential ingress on any authorization, canonical cap, protected-tree, GitHub, ancestry, tracked-worktree, zero-state, or resource conflict mismatch.
+- Stop exactly once at owner-gate-required without authorizing or executing R5.
+acceptance_profile: infrastructure
+canonical_destinations:
+- tasks/treasurebench-open-weight-cloud-runtime-r5.yml
+- plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+- reports/benchmark/treasurebench-open-weight-cloud-runtime-r5-generic-gate-compatibility-audit.yml
+- reports/agent-ops/AO-0012-open-weight-public-calibration-r5-owner-gate.yml
+- reports/agent-ops/AO-0012-r5-owner-gate-required-handoff.yml
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 212
+  branch: agent/treasurebench-open-weight-cloud-runtime
+  pull_request: 213
+  base: main
+exec_plan: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+task_delta: null
+frozen_identifiers:
+  model_repository: mistralai/Mistral-Small-3.1-24B-Instruct-2503
+  model_revision: 68faf511d618ef198fef186659617cfd2eb8e33a
+  model_weight_format: official-bf16-unquantized
+  compute_provider: RunPod
+  compute_product: Secure-Cloud-dedicated-Pod
+  gpu_type: NVIDIA-A100-80GB-PCIe
+  gpu_count: '1'
+  gate_id: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R5
+  consumed_gate_id: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R4
+supersession:
+  supersedes:
+  - tasks/treasurebench-open-weight-cloud-runtime-r4.yml
+  - AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R4
+  superseded_by: null
+  reason: R4 was consumed by a legitimate pre-ingress hard stop because its task-specific validator referenced a nonexistent owner-gate budget mapping; R5 fixes only that adapter and cannot reuse R4 authority.
+next_gate: Complete authorization-free R5 validation, push, exact-head checks, execution and protected-tree refreeze, and generic R5 gate validation without creating authorization.

@@ -1,5 +1,64 @@
 # TreasureBench open-weight cloud-runtime feasibility and conformance
 
+## R5 generic owner-gate compatibility repair (2026-08-04)
+
+The owner authorized one forward-only preauthorization repair after the R4
+authorization was consumed by its legitimate pre-ingress hard stop. R1 through
+R3 remain superseded unused; R4 remains consumed and nonreusable. R5 changes
+only the task-specific authorization adapter: it validates the canonical
+generic owner-gate `cumulative_state`, `hard_caps`, and `remaining_caps`
+mappings at exact zero cumulative spend/calls, USD 20 and 400 hard caps, and
+fully reconciled remaining caps. It accepts no legacy `budget` fallback and
+does not change the generic Agent Operations engine.
+
+The complete R4 runtime is inherited unchanged: public unauthenticated GitHub
+and Git preflight, repository-root `.env.txt` exact two-name ingress, temporary
+RunPod Secrets/template, encrypted REST Pod creation, controller finalizer,
+Pod-resident six-hour watchdog, measured attestation, public 50-pairing
+calibration, exact teardown/billing/projections, and one-session administrative
+closeout. No credential, authenticated provider call, resource, download,
+inference, or spend is permitted while R5 is prepared and validated.
+
+### R5 milestones
+
+- **R5-M0 — complete:** verify issue #212, draft PR #213, branch and remote
+  head, the clean tracked tree, five unrelated untracked files, and the exact
+  R4 hard-stop boundary; register the additive R5 contract.
+- **R5-M1 — complete:** implement the forward-only validator/entry point,
+  real-writer regressions, corruption layer, and exact offline rehearsal.
+- **R5-M2 — complete:** 15 focused and 159 inherited-plus-R5 tests, 95
+  corruptions, the exact 50-pairing/294-call rehearsal, Ruff on 379 files,
+  strict MyPy on 220 source files, 1,016 repository tests, all audits, seven
+  papers/119 pages, and the 89-page/26-study site pass.
+- **R5-M3 — pending:** commit and push the execution tree, update PR #213,
+  pass exact-head checks, and freeze every execution-sensitive hash.
+- **R5-M4 — pending:** create and validate, but do not authorize or execute,
+  `AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R5`; freeze the schema-valid
+  owner-gate-required handoff and stop once.
+
+### R5 preserved failures and corrections
+
+- The first combined focused command invoked `load_yaml` with a string instead
+  of a `Path`; that one-off contract check failed before any task action. The
+  same run then found the rehearsal test expected a nonexistent aggregate
+  `methods_agree` key, and Ruff found import ordering, two unused imports, two
+  long lines, and an overly broad exception assertion. MyPy also found unsafe
+  optional narrowing and test mapping/type annotations. These were mechanical
+  test/typing defects; the contract check now uses `Path`, the rehearsal checks
+  the actual Method A/B and Method C fields, imports/lines were normalized,
+  schema failure is asserted specifically, and explicit narrowing/types were
+  added. The next focused run passed 15 tests and strict focused MyPy; a final
+  Ruff import-order pass then succeeded.
+- A final source-wide search found the same obsolete `gate["budget"]` reads in
+  superseded R2 and R3. Their live validators, plus consumed R4, now fail
+  explicitly as nonusable before any authorization-dependent work, and the
+  obsolete reads were removed. The R5 regression searches every AO-0012
+  open-weight live adapter, so no legacy gate-budget dependency remains.
+- The first post-documentation `make verify` was intentionally interrupted
+  after 43 passing tests when that source-wide search identified the R2/R3
+  cleanup while the wall was already running. The partial run was not counted;
+  validation restarted from Ruff and strict MyPy after the correction.
+
 ## R4 owner-authorized live attempt hard stop (2026-08-04)
 
 The owner supplied and the generic Agent Operations engine accepted the exact
@@ -508,9 +567,9 @@ conversation.
 - **M6 — hard stop before credential ingress:** the exact owner authorization
   succeeded, but the runtime authorization adapter raised `KeyError: 'budget'`
   before `.env.txt`, provider, or resource access.
-- **M7 — blocked pending owner amendment:** preserve the selected
-  `calibration-integrity-failure-stop`; do not merge or close the issue; repair,
-  refreeze, and retry only under a new exact prospective gate.
+- **M7 — R5 repair in progress:** the explicit owner amendment permits only
+  generic-gate compatibility repair, validation, refreeze, and a new
+  unconsumed R5 owner gate. No live retry is authorized.
 
 ## Progress checklist
 

@@ -617,6 +617,7 @@ def validate_owner_authorization(repo: Path, value: Mapping[str, Any]) -> dict[s
     validate(dict(value), "owner-authorization.schema.json")
     gate = load_yaml(repo / GATE_PATH)
     validate(gate, "owner-gate.schema.json")
+    _require(False, "R4 owner authorization was consumed and may never be reused")
     _require(value.get("gate_id") == GATE_ID, "R4 owner authorization required")
     _require(value.get("issue") == ISSUE, "authorization issue mismatch")
     _require(value.get("branch") == BRANCH, "authorization branch mismatch")
@@ -631,8 +632,6 @@ def validate_owner_authorization(repo: Path, value: Mapping[str, Any]) -> dict[s
         value.get("authorization_digest") == _authorization_digest(value),
         "authorization digest mismatch",
     )
-    _require(gate["budget"]["cumulative_spend"] == "0", "nonzero gate spend rejected")
-    _require(gate["budget"]["cumulative_calls"] == 0, "nonzero gate calls rejected")
     now = datetime.now(UTC)
     authorized = datetime.fromisoformat(str(value["authorized_at_utc"]).replace("Z", "+00:00"))
     expires = datetime.fromisoformat(str(value["expires_at_utc"]).replace("Z", "+00:00"))
@@ -1245,16 +1244,21 @@ def run_live_calibration(
     *,
     credential_loader: Callable[..., CredentialSet] = load_credentials,
     plane_factory: Callable[[str], ControlPlane] = RunPodControlPlane,
+    authorization_file: Path | None = None,
+    pre_ingress_validator: Callable[[Path, Mapping[str, Any]], Lifecycle] = validate_pre_ingress,
+    live_state_file: Path | None = None,
+    outcome_path: Path = OUTCOME_PATH,
 ) -> dict[str, object]:
-    """Execute R4 only after authorization; every possible Pod enters one finalizer."""
+    """Execute the frozen R4 lifecycle after an injected prospective gate validates."""
 
-    auth_file = authorization_path()
+    auth_file = authorization_file or authorization_path()
+    state_file = live_state_file or state_path()
     _require(auth_file.exists(), "R4 owner authorization required")
     metadata = auth_file.lstat()
     _require(stat.S_ISREG(metadata.st_mode), "authorization must be regular")
     _require(stat.S_IMODE(metadata.st_mode) == 0o600, "authorization mode must be 0600")
     authorization = load_yaml(auth_file)
-    lifecycle = validate_pre_ingress(repo, authorization)
+    lifecycle = pre_ingress_validator(repo, authorization)
     credentials: CredentialSet | None = None
     runtime_client: RunPodRuntimeClient | None = None
     runpod_value = ""
@@ -1287,9 +1291,9 @@ def run_live_calibration(
         }
         for kind, name in _secret_names(lifecycle.namespace).items():
             lifecycle.secrets.append(plane.create_secret(name, secret_values[kind]))
-            _write_state(state_path(), lifecycle)
+            _write_state(state_file, lifecycle)
         lifecycle.template = plane.create_template(build_template_spec(repo, lifecycle.namespace))
-        _write_state(state_path(), lifecycle)
+        _write_state(state_file, lifecycle)
         lifecycle.possible_pod = True
         try:
             pod = plane.create_pod(build_pod_spec(lifecycle.namespace, lifecycle.template.id))
@@ -1301,7 +1305,7 @@ def run_live_calibration(
                 raise RuntimeConformanceError("ambiguous create reconciled and deleted") from None
             lifecycle.possible_pod = False
             raise RuntimeConformanceError("Pod create rejected before resource creation") from None
-        _write_state(state_path(), lifecycle)
+        _write_state(state_file, lifecycle)
         manifest = load_yaml(repo / MANIFEST_PATH)
         pod_id = lifecycle.pod_id
         if pod_id is None:
@@ -1431,9 +1435,9 @@ def run_live_calibration(
     )
     schema = json.loads((repo / OUTCOME_SCHEMA_PATH).read_text(encoding="utf-8"))
     Draft202012Validator(schema).validate(outcome)
-    (repo / OUTCOME_PATH).write_text(yaml.safe_dump(outcome, sort_keys=False), encoding="utf-8")
-    if finalization.exact and state_path().exists():
-        state_path().unlink()
+    (repo / outcome_path).write_text(yaml.safe_dump(outcome, sort_keys=False), encoding="utf-8")
+    if finalization.exact and state_file.exists():
+        state_file.unlink()
     return outcome
 
 

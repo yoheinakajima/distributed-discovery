@@ -350,3 +350,12 @@ documented `terminateAfter` field, orphan control is an unconditional
 controller finalizer plus a Pod-resident six-hour exact-Pod deletion watchdog.
 Only the unconsumed R4 generic owner gate may authorize the unchanged public
 calibration or honest bounded failure closeout.
+
+### AO-0012 R5 generic-gate compatibility repair
+
+The R4 authorization was consumed by its fail-closed pre-ingress validator
+failure and cannot be reused. R5 adds only a forward authorization adapter for
+the generic gate's exact `cumulative_state`, `hard_caps`, and `remaining_caps`
+shape, backed by the real generic authorization writer and corruption tests.
+All R4 runtime, lifecycle, calibration, cap, reporting, and zero-scientific
+requirements remain frozen.

@@ -1,5 +1,22 @@
 # Master execution plan
 
+## Active R5 continuation — AO-0012 generic-gate compatibility (2026-08-04)
+
+R4 was validly authorized once and consumed by the recorded pre-ingress
+`KeyError: 'budget'` hard stop. It may never be reused. Under the explicit R5
+amendment, AO-0012 changes only its task-specific authorization adapter to
+consume the generic owner gate's exact `cumulative_state`, `hard_caps`, and
+`remaining_caps` mappings. No legacy gate `budget` fallback is accepted and
+the generic Agent Operations engine is unchanged.
+
+The entire R4 runtime identity and lifecycle remain fixed. Authorization-free
+R5 work may add the forward adapter, real-writer regressions, corruption and
+audit records, full validation, execution/protected-tree refreeze, and one
+unconsumed gate
+`AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R5`. It authorizes no credential
+read, provider action, resource, model download, inference, spend, private or
+scientific action, performance publication, merge, or issue closure.
+
 ## Active R4 live hard stop — AO-0012 authorization adapter integrity (2026-08-04)
 
 The exact R4 owner gate was authorized once. The exact live command then
