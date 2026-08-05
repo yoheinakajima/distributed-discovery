@@ -1,0 +1,71 @@
+schema_version: agent-ops-handoff-v1
+status: owner-gate-required
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0012
+issue: 212
+pull_request: 213
+branch: agent/treasurebench-open-weight-cloud-runtime
+base_main: 6e86b43a8db8d20380dd64bf9490772b7152f484
+head_merge_sha: f0b1afa3adefd2ac722e4efeed5e720df6adfc98
+task_contract: tasks/treasurebench-open-weight-cloud-runtime-r6.yml
+exec_plan: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+last_completed_gate: >-
+  R6 execution commit 5fead7960829e1f0377b59ebc8998456794a7c8a and
+  committed unconsumed gate head f0b1afa3adefd2ac722e4efeed5e720df6adfc98
+  pass the exact 50-pairing/294-synthetic-call offline rehearsal, 17 R6 and
+  176 combined open-weight tests, 112 inherited-plus-R6 corruptions, Ruff on
+  381 files, strict MyPy on 221 source files, all 1,033 repository tests and
+  audits, seven papers/119 pages, the 89-page/26-study site, all 23 protected
+  paths, and generic owner-gate validate-only. The first gate-manifest check
+  failed safely on one unquoted YAML colon and passed after a gate-only
+  quoting correction. No R6 authorization or consequential action exists.
+next_gate: >-
+  Only after a new owner decision, run the generic owner-gate command for
+  AOG-AO-0012-R6-RUNPOD-SECRET-STATUS-CONDITIONAL-CLEANUP. If it succeeds,
+  this same task may run exactly make
+  treasurebench-open-weight-secret-cleanup-r6-live. The command consumes R6
+  before credential ingress, loads only RUNPOD_API_KEY, makes one Secrets
+  inventory, conditionally deletes only one unique exact
+  ao0012-owcal-r5-01b41c9aa04bf2a4-hf match, makes one verification query,
+  writes one redacted outcome, and stops. Never use R1 through R5.
+decision: >-
+  Stop at owner-gate-required. Repository execution order and absent R5
+  lifecycle state prove the sole possible provider resource is exact Secret
+  ao0012-owcal-r5-01b41c9aa04bf2a4-hf, while both provider presence and the
+  conflict-inventory-versus-first-create root cause remain ambiguous. R6
+  authorizes at most three authenticated GraphQL operations and USD 0, then
+  stops; it grants no Hugging Face, Pod, template, model, inference, billing,
+  calibration, merge, issue-close, scientific, private-task, or publication
+  authority.
+external_calls_cost:
+  calls: 0
+  cost: '0'
+  currency: USD
+private_state_change: >-
+  none; no real .env.txt, owner authorization, or credential was read,
+  selected, copied, hashed, fingerprinted, displayed, logged, persisted, or
+  transmitted; no RunPod or Hugging Face account or authorization-derived
+  namespace was queried and no provider resource was created, modified, or
+  deleted.
+scientific_state_change: >-
+  none; no DD-023, scientific run, private task, base campaign, performance
+  result, claim, paper, release, DOI, arXiv, journal, or submission state was
+  created or changed.
+validation:
+  profile: infrastructure
+  result: pass-R6-50-offline-pairings-294-synthetic-calls-17-focused-176-combined-112-corruptions-1033-full-tests-ruff-strict-mypy-all-audits-119-paper-pages-89-site-pages-23-tree-freeze-gate-validate-only-zero-authorization
+owner_action: >-
+  Review the R6 contract, postmortem, cleanup audit, and gate. Only if approved,
+  run: make owner-gate
+  GATE=reports/agent-ops/AO-0012-runpod-secret-status-cleanup-r6-owner-gate.yml
+  OWNER_GATE_CHALLENGE="AUTHORIZE
+  AOG-AO-0012-R6-RUNPOD-SECRET-STATUS-CONDITIONAL-CLEANUP 5fead79". Only
+  after it succeeds may this same task run: make
+  treasurebench-open-weight-secret-cleanup-r6-live.
+exact_next_command: 'make owner-gate GATE=reports/agent-ops/AO-0012-runpod-secret-status-cleanup-r6-owner-gate.yml OWNER_GATE_CHALLENGE="AUTHORIZE AOG-AO-0012-R6-RUNPOD-SECRET-STATUS-CONDITIONAL-CLEANUP 5fead79"'
+exact_next_file: reports/agent-ops/AO-0012-runpod-secret-status-cleanup-r6-owner-gate.yml
+blocker: >-
+  The exact R6 owner authorization is required and absent by design. R1 through
+  R5 remain superseded or consumed and nonreusable. No credential, provider
+  status query, Secret deletion, or any other provider/resource action is
+  authorized.
