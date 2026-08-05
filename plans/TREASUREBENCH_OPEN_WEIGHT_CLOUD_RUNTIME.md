@@ -1,5 +1,27 @@
 # TreasureBench open-weight cloud-runtime feasibility and conformance
 
+## R6 authorization-free Secret cleanup-gate preparation (2026-08-05)
+
+R1 through R5 remain superseded, consumed, or immutable exactly as recorded.
+The R5 execution order and absent local lifecycle state prove that the only
+possible provider resource is exact Secret
+`ao0012-owcal-r5-01b41c9aa04bf2a4-hf`. They do not prove whether that Secret
+exists or whether the stop occurred during conflict inventory or its first
+create request; both questions remain ambiguous.
+
+The owner authorized a local-only R6 preparation slice. It may correct the
+stale R5-future documentation, preserve a machine-readable postmortem, add
+synthetic early-stop tests, and freeze an unconsumed generic gate. During this
+work no `.env.txt`, authorization, credential, RunPod or Hugging Face account,
+provider namespace, resource, model, inference, or spend may be accessed.
+
+A later exact R6 gate may load only `RUNPOD_API_KEY`, issue one RunPod Secrets
+inventory query, conditionally delete only one unique exact target match,
+issue one verification query, and stop. The cap is three authenticated
+operations and zero spend. R6 has no Pod, template, billing, model, inference,
+calibration, merge, issue-close, scientific, private-task, or publication
+authority. PR #213 remains draft and continues to track issue #212.
+
 ## R5 owner-authorized control-plane hard stop (2026-08-05)
 
 The owner supplied and the generic Agent Operations engine accepted the exact
@@ -628,6 +650,11 @@ conversation.
   creation because temporary-Secret absence could not be proven. PR #213 and
   issue #212 remain open; remediation or another prospective repair requires
   new explicit owner direction.
+- **M8 — R6 authorization-free cleanup-gate preparation:** active. Preserve a
+  machine-readable execution-order proof, add synthetic conflict-inventory and
+  ambiguous-first-Secret regressions, freeze the exact one-query/conditional-
+  delete/one-verification surface, validate the generic R6 gate without
+  authorization, and stop at owner-gate-required.
 
 ## Progress checklist
 
@@ -649,6 +676,9 @@ conversation.
 - [x] Complete the R5 generic-gate repair, consume its exact authorization
   once, preserve the control-plane/Secret-deletion ambiguity, and stop before
   Pod creation with zero inference calls and no Pod bill.
+- [ ] Complete R6 local-only documentation, postmortem, synthetic regression,
+  execution/protected-tree freeze, generic gate validation, and exact stop
+  without reading credentials or contacting the provider.
 
 ## Discoveries and surprises
 
@@ -726,6 +756,47 @@ conversation.
   not yet been pushed. No AO-0012 test failed. This is an expected sequencing
   failure, preserved here and to be rerun after the path-explicit commit and
   branch push.
+- R5's ordered lifecycle first performs remote conflict inventory, then creates
+  Secrets in `hf`, `endpoint`, `attestation` order, writing local state after
+  each returned identity. The absent lifecycle state therefore excludes every
+  returned Secret identity and all later resource/model paths, but cannot
+  exclude a transport-ambiguous first `-hf` Secret create. The new R5
+  postmortem preserves that exact limit instead of inferring provider absence.
+- The first R6 focused wall stopped before test collection on one hyphenated
+  Python test name and six Ruff line-length findings; strict MyPy and pytest
+  consequently could not run. No credential, authorization, network, provider,
+  resource, inference, or spend path was invoked. The syntax and formatting
+  defects were corrected without changing the cleanup contract.
+- The next R6 Ruff-only check found one mechanical import-order mismatch in the
+  new test module. Ruff's deterministic import formatter corrected it; no
+  runtime or authority behavior changed.
+- The first strict R6 MyPy check found 13 type-proof gaps in nested YAML
+  mapping narrowing and synthetic HTTP/matrix fixtures. Explicit runtime type
+  checks and typed casts now make those failure surfaces visible without
+  accepting malformed provider or repository data.
+- The second strict R6 MyPy check found one remaining list-iteration narrowing
+  gap after the runtime Secret-inventory type check. An explicit typed local
+  list closed the proof; provider semantics remain unchanged.
+- The first complete R6 `make verify` stopped at Ruff's format check because
+  the new test file needed canonical wrapping. The formatter changed only test
+  layout; the full wall was restarted from the beginning.
+- After the formatting, exact gate-ID, and consumed-gate corrections, all 17
+  R6 tests and 176 combined open-weight tests, 112 inherited-plus-R6
+  corruptions, the exact
+  50-pairing/294-call rehearsal,
+  Ruff on 381 files, strict MyPy on 221 source files, all 1,033 repository
+  tests and audits, seven papers/119 pages, and the 89-page/26-study site pass.
+  The execution commit and owner gate remain to be frozen.
+- The exact owner-mandated R6 gate ID is 55 characters, while the generic
+  owner-gate schema allowed at most 53. The first prospective gate validation
+  would therefore reject before any authorization. The generic identifier
+  bound is minimally raised by two characters, from 53 to 55, with an exact-ID
+  regression; schema shape, engine behavior, permissions, caps, and
+  authorization semantics are unchanged.
+- Pre-freeze review found that a valid R6 authorization could otherwise be
+  reused after its one bounded status/cleanup attempt. The live entry now
+  writes one mode-0600 authorization-bound consumption marker before credential
+  ingress and rejects every repeat before `.env.txt` or provider access.
 
 ## Decision log
 
@@ -797,6 +868,12 @@ conversation.
   prohibition, expiry, and all 19 protected-tree checks. It reports
   `validated-no-authorization-or-consequential-action-performed`. Complete M5
   and stop exactly once at owner-gate-required.
+- `2026-08-05T22:47:55Z`: accept the owner-directed local-only R6 slice. Freeze
+  the only possible provider resource as exact Secret
+  `ao0012-owcal-r5-01b41c9aa04bf2a4-hf`, preserve both presence and root cause
+  as ambiguous, and restrict any later R6 authority to one Secrets inventory,
+  one conditional exact deletion, one verification, three authenticated
+  operations total, zero spend, and no calibration or merge authority.
 
 ## Validation strategy
 
@@ -840,23 +917,23 @@ corruptions, focused tests, and pending permitted-decision record exist.
 ## Blockers
 
 The R5 authorization is consumed and nonreusable. The control-plane attempt
-returned no resource ID, and its finalizer could not prove that the exact
-temporary Secret namespace is absent. PR #213 must remain draft and issue #212
-must remain open. Exact-namespace status inspection or cleanup, any control-
-plane repair, protected-tree refreeze, or live retry requires a new explicit
-owner direction. The five unrelated untracked files remain outside AO-0012 and
-every stage stays path-explicit.
+returned no resource ID, and its finalizer could not prove that the exact first
+temporary Secret is absent. PR #213 must remain draft and issue #212 must
+remain open. R6 preparation is authorized locally, but status inspection or
+conditional cleanup remains blocked on the new exact R6 generic gate. The five
+unrelated untracked files remain outside AO-0012 and every stage stays
+path-explicit.
 
 ## Recovery and restart instructions
 
-Resume on `agent/treasurebench-open-weight-cloud-runtime`. Read the R5 task
-contract, this plan, the R5 hard-stop outcome, and the stop-by-policy handoff;
-verify issue #212 and draft PR #213 and preserve the five unrelated untracked
-files. Do not rerun R5 or reuse R1 through R4. Never inspect prior retained
-roots. No further credential, RunPod, or authenticated Hugging Face access,
-resource status query or deletion, model download, GPU, endpoint, calibration,
-or spend is permitted without new explicit owner direction and an exact
-prospective gate.
+Resume on `agent/treasurebench-open-weight-cloud-runtime`. Read the R6 task
+contract, this plan, the R5 postmortem and hard-stop records, and the R6
+owner-gate-required handoff; verify issue #212 and draft PR #213 and preserve
+the five unrelated untracked files. Do not rerun R5 or reuse R1 through R5.
+Never inspect prior retained roots. Only the exact R6 gate may later permit one
+name-only credential ingress and the frozen three-operation Secret cleanup
+surface; every model, GPU, endpoint, calibration, spend, merge, issue-close,
+private, scientific, or publication action remains prohibited.
 
 ## Outcome and retrospective
 

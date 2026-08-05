@@ -1,0 +1,32 @@
+schema_version: treasurebench-open-weight-cloud-runtime-r6-corruptions-v1
+task_id: AO-0012
+inherits: docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r5.yml
+inherited_cases: 95
+expected_result: every-R1-through-R6-corruption-rejected-with-zero-real-live-action-during-preparation
+cases:
+- {id: OW-R6-001, mutation: conflict-inventory-transport-failure, expected: later-secrets-template-pod-model-inference-and-billing-unreachable}
+- {id: OW-R6-002, mutation: first-hf-secret-create-ambiguous, expected: later-secrets-template-pod-model-inference-and-billing-unreachable}
+- {id: OW-R6-003, mutation: missing-or-unsafe-r6-authorization, expected: rejected-before-credential-ingress}
+- {id: OW-R6-004, mutation: credential-request-includes-hf-token-or-other-name, expected: rejected-before-provider-plane}
+- {id: OW-R6-005, mutation: inventory-zero-exact-match, expected: verified-absent-with-one-operation-and-no-delete}
+- {id: OW-R6-006, mutation: inventory-one-exact-match, expected: one-delete-one-verification-three-operations-total}
+- {id: OW-R6-007, mutation: inventory-multiple-exact-matches, expected: hard-stop-with-no-delete}
+- {id: OW-R6-008, mutation: sibling-authorization-namespace-secret, expected: hard-stop-with-no-delete}
+- {id: OW-R6-009, mutation: inventory-transport-or-shape-ambiguity, expected: hard-stop-with-no-delete-or-retry}
+- {id: OW-R6-010, mutation: delete-transport-ambiguity, expected: one-verification-query-then-exact-absence-or-hard-stop}
+- {id: OW-R6-011, mutation: verification-transport-or-presence-ambiguity, expected: hard-stop-with-no-fourth-operation}
+- {id: OW-R6-012, mutation: graphql-authorization-header-or-rest-operation, expected: rejected-as-outside-cleanup-surface}
+- {id: OW-R6-013, mutation: fourth-authenticated-operation, expected: rejected-before-network}
+- {id: OW-R6-014, mutation: raw-key-authenticated-url-provider-body-or-unrelated-secret-metadata-publication, expected: redacted-fixed-failure-class-only}
+- {id: OW-R6-015, mutation: merge-calibration-model-pod-template-billing-inference-or-spend-attempt, expected: unreachable-and-unauthorized}
+- {id: OW-R6-016, mutation: generic-owner-gate-id-bound-shorter-than-exact-r6-id, expected: exact-owner-mandated-gate-id-schema-compatible}
+- {id: OW-R6-017, mutation: consumed-r6-authorization-reused, expected: rejected-before-credential-ingress-and-provider-call}
+live_action: false
+credential_source_read: false
+owner_authorization_read: false
+authenticated_provider_call: false
+resource_query_or_mutation: false
+model_download: false
+gpu_provisioned: false
+inference_calls: 0
+spend_usd: '0'

@@ -1,0 +1,103 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0012
+title: TreasureBench R5 RunPod Secret status and conditional cleanup gate
+task_type: infrastructure
+status: owner-gate-required
+objective: Freeze one minimal forward-only R6 surface that can determine and, only if uniquely present, delete the sole possible R5 temporary Hugging Face Secret without reopening calibration or merge authority.
+authority_references:
+- {type: instruction, path: AGENTS.md}
+- {type: policy, path: docs/agent-ops/README.md}
+- {type: policy, path: docs/benchmark/agents-v1/AGENTS.md}
+- {type: plan, path: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md}
+- {type: issue, path: 'https://github.com/yoheinakajima/distributed-discovery/issues/212'}
+- {type: pull-request, path: 'https://github.com/yoheinakajima/distributed-discovery/pull/213'}
+- {type: record, path: reports/agent-ops/AO-0012-r5-live-hard-stop-handoff.yml}
+- {type: record, path: reports/benchmark/treasurebench-open-weight-public-calibration-outcome-r5.yml}
+owner_decisions:
+- R1 through R4 remain superseded or consumed exactly as recorded; R5 is consumed by its control-plane hard stop and may never be rerun or reused.
+- Authorization-free R6 preparation may use repository, public GitHub, and synthetic provider evidence only; it may not read .env.txt, an authorization, or a credential or contact RunPod or Hugging Face.
+- The only possible R5 provider resource is the exact Secret ao0012-owcal-r5-01b41c9aa04bf2a4-hf; provider presence and whether failure occurred during conflict inventory or the first Secret create remain ambiguous.
+- A later exact R6 authorization may load only RUNPOD_API_KEY, make at most three authenticated RunPod GraphQL operations, conditionally delete only one unique exact target match, verify absence once, and then stop.
+- The R6 authorization is consumed by a mode-0600 local marker before credential ingress and may never be reused, even when the first inventory reports the target absent or any later operation fails.
+scope:
+  paths:
+  - tasks/treasurebench-open-weight-cloud-runtime-r6.yml
+  - plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+  - plans/MASTER_EXEC_PLAN.md
+  - docs/program-memory/registry.yml
+  - docs/agent-ops/owner-gate.schema.json
+  - studies/DD-010-discoverybench/README.md
+  - docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r6.yml
+  - reports/benchmark/treasurebench-open-weight-cloud-runtime-r5-control-plane-postmortem.yml
+  - reports/benchmark/treasurebench-open-weight-cloud-runtime-r6-cleanup-gate-audit.yml
+  - reports/benchmark/treasurebench-open-weight-secret-cleanup-outcome-r6.yml
+  - reports/agent-ops/AO-0012-runpod-secret-status-cleanup-r6-owner-gate.yml
+  - reports/agent-ops/AO-0012-r6-owner-gate-required-handoff.yml
+  - src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r6.py
+  - tests/test_treasurebench_open_weight_cloud_runtime_r6.py
+  - Makefile
+  actions:
+  - correct the stale R5-future documentation without changing the historical R5 records
+  - preserve a public-safe machine-readable R5 execution-order postmortem
+  - prove conflict-inventory and ambiguous-first-Secret stops with synthetic control planes
+  - freeze one exact three-operation status and conditional cleanup surface
+  - validate one unconsumed generic R6 owner gate without authorizing or executing it
+non_goals:
+- No R5 rerun, R1 through R5 authorization reuse, calibration repair, provider retry, model download, Pod, template, endpoint, inference, billing, spend, merge, issue closure, publication, or release.
+- No query, mutation, or disclosure concerning any Secret other than the exact target name; no template, Pod, billing, model, storage, GPU, or Hugging Face surface.
+- No DD-023, scientific run, private task, base campaign, performance result, claim, paper, DOI, submission, or scientific authority.
+permissions: {repository_write: true, git_branch_commit: true, github_issue_pr: true, merge_after_checks: false, ci_pages: false}
+external_action_permissions: {network_observation: true, github_mutation: true, provider_calls: true, spend: false, release_publication: false, submission: false}
+scientific_mutation_permissions: {create_study: false, create_claim: false, create_run: false, change_evidence_status: false, change_proof_status: false, change_paper_lifecycle: false}
+private_data_permissions: {read: true, write: false, generate: false, publish: false}
+budget:
+  currency: USD
+  expected: '0'
+  hard_cap: '0'
+  call_cap: 3
+  category_caps: {runpod_secret_status_cleanup: '0'}
+  cumulative_spend: '0'
+expected_outcomes:
+- One machine-readable proof that the only possible R5 provider resource is the exact first Secret while presence and root cause remain ambiguous.
+- Synthetic regressions proving conflict inventory and ambiguous first-Secret creation cannot reach later Secrets, template, Pod, model work, inference, or billing.
+- One exact cleanup adapter that loads only RUNPOD_API_KEY after authority validation, lists Secrets once, conditionally deletes one unique exact target, verifies once, clears credentials, and stops.
+- One pre-ingress consumption marker proving the exact R6 authorization cannot be reused for another credential or provider attempt.
+- One minimal generic owner-gate identifier-bound compatibility correction that admits the exact owner-mandated R6 gate ID without changing engine behavior or authority.
+- One frozen execution commit, protected tree, validated unconsumed R6 gate, draft PR, and owner-gate-required handoff with zero credential, provider, resource, inference, or spend activity during preparation.
+stop_conditions:
+- Stop before credential ingress on any gate, issue, draft PR, branch, execution ancestry, protected tree, tracked-worktree, R5-evidence, or credential-source mismatch.
+- During later authorized cleanup, stop without deletion on inventory ambiguity, zero-or-multiple exact-match ambiguity, any sibling AO-0012 namespace resource, malformed response, cap drift, or authorization drift.
+- After a unique exact target deletion attempt, make only the one verification query and stop; absence ambiguity remains a hard stop and cannot authorize another provider operation.
+- Stop exactly once at owner-gate-required without authorizing or executing R6 during this preparation.
+acceptance_profile: infrastructure
+canonical_destinations:
+- tasks/treasurebench-open-weight-cloud-runtime-r6.yml
+- plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+- reports/benchmark/treasurebench-open-weight-cloud-runtime-r5-control-plane-postmortem.yml
+- reports/benchmark/treasurebench-open-weight-cloud-runtime-r6-cleanup-gate-audit.yml
+- reports/agent-ops/AO-0012-runpod-secret-status-cleanup-r6-owner-gate.yml
+- reports/agent-ops/AO-0012-r6-owner-gate-required-handoff.yml
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 212
+  branch: agent/treasurebench-open-weight-cloud-runtime
+  pull_request: 213
+  base: main
+exec_plan: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+task_delta: null
+frozen_identifiers:
+  consumed_gate_id: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R5
+  gate_id: AOG-AO-0012-R6-RUNPOD-SECRET-STATUS-CONDITIONAL-CLEANUP
+  target_secret_name: ao0012-owcal-r5-01b41c9aa04bf2a4-hf
+  credential_source: repository-root-.env.txt
+  credential_name: RUNPOD_API_KEY
+  provider_surface: RunPod-GraphQL-Secrets-only
+  maximum_authenticated_operations: '3'
+supersession:
+  supersedes:
+  - tasks/treasurebench-open-weight-cloud-runtime-r5.yml
+  - AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R5
+  superseded_by: null
+  reason: R5 was consumed by a hard stop that left the first temporary Secret's provider presence ambiguous; R6 narrows authority to exact status and conditional cleanup only and cannot reactivate R5 calibration authority.
+next_gate: Validate and, only under a new exact owner decision, authorize AOG-AO-0012-R6-RUNPOD-SECRET-STATUS-CONDITIONAL-CLEANUP; R6 must stop after status or conditional cleanup and cannot merge or calibrate.

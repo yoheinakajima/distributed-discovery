@@ -412,5 +412,8 @@ ingress because its task validator read a nonexistent owner-gate `budget`
 mapping. R5 may never reuse that authorization and changes only the prospective
 adapter to require exact canonical `cumulative_state`, `hard_caps`, and
 `remaining_caps`. The runtime, public calibration, caps, lifecycle, and
-zero-scientific boundary remain unchanged; only a later exact R5 authorization
-can permit live work.
+zero-scientific boundary remained unchanged. R5 was later authorized once and
+consumed by a control-plane hard stop before Pod creation; its exact first
+temporary Secret remains provider-ambiguous. R5 cannot be reused. Only a new,
+narrow prospective gate may authorize exact status inspection or conditional
+cleanup, and no calibration or merge authority follows from that cleanup.
