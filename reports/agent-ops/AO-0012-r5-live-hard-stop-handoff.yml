@@ -6,7 +6,7 @@ issue: 212
 pull_request: 213
 branch: agent/treasurebench-open-weight-cloud-runtime
 base_main: 6e86b43a8db8d20380dd64bf9490772b7152f484
-head_merge_sha: 47328095762cf24628af30369766cd43386d90ec
+head_merge_sha: 0f76953c4f4745c217721b6418c7c46d69bead21
 task_contract: tasks/treasurebench-open-weight-cloud-runtime-r5.yml
 exec_plan: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
 last_completed_gate: >-
@@ -17,7 +17,9 @@ last_completed_gate: >-
   authenticated RunPod control plane. It returned no Pod, template, or Secret
   ID and stopped before Pod creation, model download, endpoint startup,
   inference, or spend. The finalizer could not prove the exact temporary
-  Secret namespace ao0012-owcal-r5-01b41c9aa04bf2a4 absent.
+  Secret namespace ao0012-owcal-r5-01b41c9aa04bf2a4 absent. Public-safe
+  closeout commit 0f76953c4f4745c217721b6418c7c46d69bead21 is pushed;
+  exact-head push run 31038259201 and pull-request run 31038262881 passed.
 next_gate: >-
   A new explicit owner direction is required before the exact RunPod Secrets
   inventory status query may be run, any matching AO-0012 temporary Secret may
@@ -46,7 +48,7 @@ scientific_state_change: >-
   created or changed.
 validation:
   profile: infrastructure
-  result: hard-stop-secret-namespace-ambiguity-outcome-handoff-decision-valid-159-focused-1016-full-ruff-strict-mypy-all-audits-119-paper-pages-89-site-pages-pass
+  result: hard-stop-secret-namespace-ambiguity-outcome-handoff-decision-valid-159-focused-1016-full-ruff-strict-mypy-all-audits-119-paper-pages-89-site-pages-exact-head-push-and-pr-pass
 owner_action: >-
   Under a new explicit authorization, inspect the RunPod Secrets inventory for
   the exact namespace ao0012-owcal-r5-01b41c9aa04bf2a4 using only the frozen
