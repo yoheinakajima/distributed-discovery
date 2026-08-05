@@ -1,5 +1,23 @@
 # Master execution plan
 
+## Active R5 live hard stop — AO-0012 RunPod control boundary (2026-08-05)
+
+The exact R5 owner gate was authorized once. The exact live command passed all
+public GitHub/Git, authorization, protected-tree, cap, and credential-ingress
+checks, then made authenticated RunPod control-plane calls. It stopped before
+Pod creation, model download, endpoint startup, inference, or spend. No Pod,
+template, or Secret ID was returned and no local lifecycle state file exists,
+but the finalizer could not prove the authorization-derived temporary Secret
+namespace absent.
+
+The permitted decision is
+`self-operated-control-boundary-failed-managed-api-rejected`; PR #213 remains
+draft and issue #212 remains open. The R5 authorization is consumed and cannot
+be rerun. Exact-namespace status inspection or cleanup, protected-source
+repair, refreeze, or another live attempt requires a new explicit owner
+direction and prospective gate. No DD-023, scientific, private, base-campaign,
+performance, paper, release, DOI, or submission authority was created.
+
 ## Active R5 continuation — AO-0012 generic-gate compatibility (2026-08-04)
 
 R4 was validly authorized once and consumed by the recorded pre-ingress

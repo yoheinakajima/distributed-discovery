@@ -112,6 +112,15 @@ permitted decision is `calibration-integrity-failure-stop`; the attempted R4
 authorization is not reusable, and any prospective repair requires a new
 owner amendment, protected-tree freeze, and exact gate.
 
+The forward-only R5 generic-gate repair later passed and its exact owner
+authorization was consumed once. The live path reached authenticated RunPod
+control-plane access but stopped before Pod creation because its finalizer
+could not prove the exact temporary Secret namespace absent. No model,
+endpoint, inference, or Pod billing exists. The selected permitted decision is
+`self-operated-control-boundary-failed-managed-api-rejected`; status inspection,
+cleanup, repair, or retry requires new explicit owner direction and a new exact
+prospective gate.
+
 The 2026-07-23 evaluation registration under issue #173 selects a sealed
 engineering pilot pending owner authorization and keeps the claim-grade base
 blocked on local/open feasibility. The inactive authorization has zero caps

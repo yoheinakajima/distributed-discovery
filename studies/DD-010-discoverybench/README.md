@@ -96,6 +96,17 @@ teardown or billing ambiguity exists. The attempted authorization cannot be
 reused; PR #213 and issue #212 remain open for a separately owner-authorized
 prospective repair and refreeze.
 
+The forward-only R5 generic-gate repair subsequently passed and its exact owner
+authorization was consumed once. The live path passed credential ingress and
+made authenticated RunPod control-plane calls, but stopped before Pod creation
+because the finalizer could not prove the authorization-derived temporary
+Secret namespace absent. No Pod, model download, endpoint, inference call, or
+bill exists. The permitted operational decision is
+`self-operated-control-boundary-failed-managed-api-rejected`; it is not
+performance or scientific evidence. R5 cannot be rerun, and PR #213 and issue
+#212 remain open pending explicit owner direction for status inspection,
+cleanup, or a prospective repair.
+
 ## Agents v1 sealed-pilot repair adjudication
 
 The first sealed engineering pilot remains permanently

@@ -1,5 +1,37 @@
 # TreasureBench open-weight cloud-runtime feasibility and conformance
 
+## R5 owner-authorized control-plane hard stop (2026-08-05)
+
+The owner supplied and the generic Agent Operations engine accepted the exact
+R5 challenge at `2026-08-05T18:58:05Z`. The immediately following exact
+`make treasurebench-open-weight-runtime-live` command passed the public
+GitHub/Git, authorization, canonical-cap, execution-ancestry, protected-tree,
+tracked-worktree, and repository-local credential checks. It loaded only
+`RUNPOD_API_KEY` and `HF_TOKEN`, constructed the authenticated RunPod control
+plane, and then failed closed before Pod creation, model download, endpoint
+startup, inference, or spend.
+
+The controller returned no Pod, template, or Secret ID and created no local
+lifecycle state file. Its unconditional finalizer nevertheless could not prove
+that the exact authorization-derived temporary Secret namespace
+`ao0012-owcal-r5-01b41c9aa04bf2a4` is absent. It therefore emitted the
+schema-valid `secret-template-deletion-ambiguity` hard stop with the permitted
+decision `self-operated-control-boundary-failed-managed-api-rejected`, zero
+inference calls, no Pod billing, and `merge_or_issue_close_allowed: false`.
+The exact two selected credential values and all generated mutable secrets
+were cleared; no credential, authenticated URL, header, raw provider body,
+prompt, or output entered Git or the public outcome.
+
+The R5 authorization is consumed and must not be rerun. PR #213 remains draft
+and issue #212 remains open. The only registered owner-safe status query is
+`query { myself { secrets { id name } } }`; running it, deleting any exact
+namespace match, changing the control plane, or attempting a new live run
+requires a new explicit owner direction and prospective protected-tree gate.
+Public-safe closeout validation passes the outcome and handoff schemas, the
+selected-decision validator, all 159 combined open-weight tests, Ruff, strict
+MyPy on 220 source files, all 1,016 repository tests and audits, seven papers
+with 119 pages, and the 89-page/26-study site build.
+
 ## R5 generic owner-gate compatibility repair (2026-08-04)
 
 The owner authorized one forward-only preauthorization repair after the R4
@@ -30,13 +62,32 @@ inference, or spend is permitted while R5 is prepared and validated.
   corruptions, the exact 50-pairing/294-call rehearsal, Ruff on 379 files,
   strict MyPy on 220 source files, 1,016 repository tests, all audits, seven
   papers/119 pages, and the 89-page/26-study site pass.
-- **R5-M3 — pending:** commit and push the execution tree, update PR #213,
+- **R5-M3 — complete:** commit and push the execution tree, update PR #213,
   pass exact-head checks, and freeze every execution-sensitive hash.
-- **R5-M4 — pending:** create and validate, but do not authorize or execute,
+- **R5-M4 — complete:** create and validate without authorizing or executing
   `AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R5`; freeze the schema-valid
   owner-gate-required handoff and stop once.
+- **R5-M5 — hard stop:** consume the exact owner authorization once; stop
+  before Pod creation when the finalizer cannot prove the exact temporary
+  Secret namespace absent; preserve the redacted outcome and prohibit PR
+  readiness, merge, and issue closure.
 
 ### R5 preserved failures and corrections
+
+- The first manual public preflight attempt used a temporary-file cleanup
+  pattern rejected by the local command safety policy. It made no request and
+  changed no state. The same checks were rerun without temporary files and
+  passed before owner-gate mutation.
+- The exact owner-authorized live command passed every pre-ingress check and
+  loaded the exact two credentials, but the RunPod control-plane path did not
+  return a resource identity and the finalizer could not prove the temporary
+  Secret namespace absent. The redacted outcome intentionally retains no raw
+  provider body or guessed root cause. No second create or live retry occurred.
+- The first post-stop five-file focused test command incorrectly added
+  `uv run --no-editable`, so pytest resolved the older installed package and
+  stopped during collection with five missing-module errors. The handoff and
+  outcome schema checks and repository audit earlier in that same command had
+  passed. The exact suite was rerun through the normal checkout environment.
 
 - The first combined focused command invoked `load_yaml` with a string instead
   of a `Path`; that one-off contract check failed before any task action. The
@@ -572,9 +623,11 @@ conversation.
 - **M6 — hard stop before credential ingress:** the exact owner authorization
   succeeded, but the runtime authorization adapter raised `KeyError: 'budget'`
   before `.env.txt`, provider, or resource access.
-- **M7 — R5 repair in progress:** the explicit owner amendment permits only
-  generic-gate compatibility repair, validation, refreeze, and a new
-  unconsumed R5 owner gate. No live retry is authorized.
+- **M7 — R5 control-plane hard stop:** the generic-gate repair passed and the
+  exact R5 authorization was consumed once. The live path stopped before Pod
+  creation because temporary-Secret absence could not be proven. PR #213 and
+  issue #212 remain open; remediation or another prospective repair requires
+  new explicit owner direction.
 
 ## Progress checklist
 
@@ -593,6 +646,9 @@ conversation.
 - [x] Stop before every gated action.
 - [x] Consume the exact R4 owner direction once, preserve the pre-ingress
   integrity failure, and stop with zero credentials, resources, calls, or spend.
+- [x] Complete the R5 generic-gate repair, consume its exact authorization
+  once, preserve the control-plane/Secret-deletion ambiguity, and stop before
+  Pod creation with zero inference calls and no Pod bill.
 
 ## Discoveries and surprises
 
@@ -783,26 +839,31 @@ corruptions, focused tests, and pending permitted-decision record exist.
 
 ## Blockers
 
-The attempted R4 authorization cannot be reused. The protected runtime expects
-a nonexistent `budget` mapping on the generic owner-gate manifest, so it cannot
-reach credential ingress safely. An explicit owner amendment must authorize an
-additive repair, protected-tree refreeze, and new exact gate. The unrelated
-untracked files remain outside AO-0012 and every stage stays path-explicit.
+The R5 authorization is consumed and nonreusable. The control-plane attempt
+returned no resource ID, and its finalizer could not prove that the exact
+temporary Secret namespace is absent. PR #213 must remain draft and issue #212
+must remain open. Exact-namespace status inspection or cleanup, any control-
+plane repair, protected-tree refreeze, or live retry requires a new explicit
+owner direction. The five unrelated untracked files remain outside AO-0012 and
+every stage stays path-explicit.
 
 ## Recovery and restart instructions
 
-Resume on `agent/treasurebench-open-weight-cloud-runtime`. Read the R4 task
-contract, this plan, the R4 hard-stop outcome, and the stop-by-policy handoff;
+Resume on `agent/treasurebench-open-weight-cloud-runtime`. Read the R5 task
+contract, this plan, the R5 hard-stop outcome, and the stop-by-policy handoff;
 verify issue #212 and draft PR #213 and preserve the five unrelated untracked
-files. Do not reuse the attempted R4 authorization. Never inspect prior
-retained roots. No credential, RunPod or authenticated Hugging Face access,
-model download, GPU, endpoint, calibration, or spend is permitted without a
-new explicit owner amendment and exact prospective gate.
+files. Do not rerun R5 or reuse R1 through R4. Never inspect prior retained
+roots. No further credential, RunPod, or authenticated Hugging Face access,
+resource status query or deletion, model download, GPU, endpoint, calibration,
+or spend is permitted without new explicit owner direction and an exact
+prospective gate.
 
 ## Outcome and retrospective
 
-R4 selected `calibration-integrity-failure-stop` before credential ingress.
-AO-0012 remains open because this is a protected live-path integrity failure,
-not a calibrated feasibility decision. There are zero provider resources,
-calls, or spend and no teardown or billing ambiguity. A future additive repair
+R5 selected `self-operated-control-boundary-failed-managed-api-rejected` after
+credential ingress and authenticated control-plane access but before Pod
+creation. AO-0012 remains open because temporary-Secret absence is ambiguous;
+this is not a calibrated feasibility or performance result. There are zero
+inference calls, no Pod bill, and no model, endpoint, GPU, private task, or
+scientific state. Status inspection, cleanup, or a future additive repair
 requires explicit owner authority and a new exact gate.

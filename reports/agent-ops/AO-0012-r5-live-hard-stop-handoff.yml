@@ -1,0 +1,61 @@
+schema_version: agent-ops-handoff-v1
+status: stop-by-policy
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0012
+issue: 212
+pull_request: 213
+branch: agent/treasurebench-open-weight-cloud-runtime
+base_main: 6e86b43a8db8d20380dd64bf9490772b7152f484
+head_merge_sha: 47328095762cf24628af30369766cd43386d90ec
+task_contract: tasks/treasurebench-open-weight-cloud-runtime-r5.yml
+exec_plan: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+last_completed_gate: >-
+  The exact R5 challenge succeeded at 2026-08-05T18:58:05Z and created the
+  registered mode-0600 generic authorization. The exact live command passed
+  public GitHub/Git, authorization, canonical-cap, ancestry, protected-tree,
+  tracked-worktree, and exact two-name credential checks, then constructed the
+  authenticated RunPod control plane. It returned no Pod, template, or Secret
+  ID and stopped before Pod creation, model download, endpoint startup,
+  inference, or spend. The finalizer could not prove the exact temporary
+  Secret namespace ao0012-owcal-r5-01b41c9aa04bf2a4 absent.
+next_gate: >-
+  A new explicit owner direction is required before the exact RunPod Secrets
+  inventory status query may be run, any matching AO-0012 temporary Secret may
+  be deleted, protected control-plane code may change, a new prospective gate
+  may be frozen, or live execution may be attempted again. R5 is consumed and
+  must not be rerun.
+decision: >-
+  self-operated-control-boundary-failed-managed-api-rejected. The
+  authorization-derived temporary Secret boundary is ambiguous, so PR #213
+  remains draft, issue #212 remains open, and no feasibility, performance, or
+  scientific conclusion is permitted.
+external_calls_cost:
+  calls: 0
+  cost: '0'
+  currency: USD
+private_state_change: >-
+  The strict loader selected only RUNPOD_API_KEY and HF_TOKEN. The account key
+  was used for authenticated RunPod control-plane access; a first temporary
+  Secret operation may be ambiguous. All local credential objects, selected
+  values, generated endpoint bearer, generated attestation key, and control-
+  plane credential state were cleared. No secret value, authenticated URL,
+  header, provider body, prompt, or output entered Git or public records.
+scientific_state_change: >-
+  none; no DD-023, scientific run, private task, base campaign, performance
+  result, claim, paper, release, DOI, arXiv, journal, or submission state was
+  created or changed.
+validation:
+  profile: infrastructure
+  result: hard-stop-secret-namespace-ambiguity-outcome-handoff-decision-valid-159-focused-1016-full-ruff-strict-mypy-all-audits-119-paper-pages-89-site-pages-pass
+owner_action: >-
+  Under a new explicit authorization, inspect the RunPod Secrets inventory for
+  the exact namespace ao0012-owcal-r5-01b41c9aa04bf2a4 using only the frozen
+  public-safe query below; delete and verify any exact match before considering
+  repair or retry. Do not rerun or reuse R5.
+exact_next_command: 'query { myself { secrets { id name } } }'
+exact_next_file: reports/benchmark/treasurebench-open-weight-public-calibration-outcome-r5.yml
+blocker: >-
+  The finalizer could not prove the authorization-derived temporary Secret
+  namespace absent. No merge, issue closure, further credential access,
+  provider status query, cleanup, protected-source repair, or live retry is
+  authorized while that boundary remains ambiguous.
