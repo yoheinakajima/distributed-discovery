@@ -65,6 +65,7 @@ failed_validation_preserved:
 - initial-mypy-optional-and-test-type-findings
 - first-paper-build-missing-pdfinfo-then-poppler-installed-and-all-papers-passed
 - post-documentation-verify-interrupted-after-43-passes-for-r2-r3-budget-read-cleanup
+- first-r5-gate-schema-parse-rejected-unquoted-colon-owner-statement
 credential_read: false
 authenticated_provider_call: false
 spend_usd: '0'

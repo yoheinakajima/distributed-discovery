@@ -58,6 +58,11 @@ inference, or spend is permitted while R5 is prepared and validated.
   after 43 passing tests when that source-wide search identified the R2/R3
   cleanup while the wall was already running. The partial run was not counted;
   validation restarted from Ruff and strict MyPy after the correction.
+- The first local R5 gate-schema validation parsed one unquoted owner statement
+  containing a colon as a YAML mapping instead of a string. Validation failed
+  before commit or authorization. The statement now uses a folded scalar; the
+  gate was refrozen from a new execution commit rather than rewriting the
+  already pushed compatibility commit.
 
 ## R4 owner-authorized live attempt hard stop (2026-08-04)
 
