@@ -1,62 +1,66 @@
 schema_version: agent-ops-handoff-v1
-status: stop-by-policy
+status: legitimate-checkpoint
 repository: yoheinakajima/distributed-discovery
 task_id: AO-0014
 issue: 220
 pull_request: 221
 branch: agent/common-source-trap-review-packet
 base_main: 7268e445347c4d7f9106d129af42d0e8667eb115
-head_merge_sha: 843e1b581ca425f467a505e032fb9e9654225751
-task_contract: tasks/common-source-trap-independent-review.yml
+head_merge_sha: 71f6239dc0a6a642fef0cbf94743a701af8c5e03
+task_contract: tasks/common-source-trap-current-working-paper-pointers-r2.yml
 exec_plan: plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
 last_completed_gate: >-
-  The complete simultaneous ChatGPT, Claude, Gemini, and Grok Round 1 bundle
-  was verified by its five supplied SHA-256 values and dispositioned without
-  manufacturing consensus. The evidence-bound revision was rebuilt twice to
-  the same 21-page PDF at reviewed-artifact commit
-  4fa15aa7f77dcae9f02a42c64273a04969247571, source SHA-256
-  87a6e85450c72fc9c93b281646ecfbd60193747c80aae9eac0a022301e1f06e1,
-  and PDF SHA-256
-  ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150.
-  Every rendered page passed visual review, focused validation passed 17
-  tests, and draft PR #221 was opened against issue #220.
+  Current Common-Source Trap working-paper pointers now bind the exact revised
+  21-page PDF at SHA-256
+  ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150,
+  while every Compendium v0.1.0 registry, tag, source revision, DOI, and asset
+  hash remains immutable. Release tooling reconstructs v0.1.0 only from source
+  revision 3ca173f4e9e81a6d0e3e56205e428c596edc050e. The final repository wall
+  passed formatting, Ruff, strict MyPy, all 1,065 tests, every governance and
+  publication audit, exact release reconstruction, the 21-page active-paper
+  build, and the 89-page site build.
 next_gate: >-
-  A separate additive owner decision must choose a current-working-paper
-  pointer and versioning treatment that preserves immutable v0.1.0 release
-  snapshots, authorize only the necessary paths, rerun the complete repository
-  wall, and then decide whether four fresh isolated Round 2 reviews may be
-  dispatched. No such gate is registered by AO-0014.
+  Research Atlas must create four fresh isolated Round 2 review sessions for
+  ChatGPT, Claude, Gemini, and Grok using only packet common-source-trap-r2,
+  the exact revised manuscript, and the exact revised PDF. Atlas must return
+  all four results simultaneously with the required provenance. No prior
+  packet, review, disposition, synthesis, or reviewer session is reusable.
 decision: >-
-  Preserve the revised candidate and stop before out-of-scope publication,
-  lifecycle, compendium, or release-pointer mutation. Keep PR #221 draft and
-  do not dispatch Round 2, mark ready, merge, publish, deploy, or upload.
+  Keep PR #221 draft and stop repository mutation at round2-review-bundle-required.
+  Route the correctly labeled packet to Research Atlas, then wait for the
+  complete simultaneous bundle before any further manuscript edit or owner
+  decision.
 external_calls_cost:
   calls: 0
   cost: '0'
   currency: USD
 private_state_change: >-
-  none; no credentials or private data were read, generated, changed, or
-  published. Research Atlas retains raw reviewer session locators; this public
-  repository records only the supplied public-safe review hashes and synthesis.
+  none; this repository continuation read no credential or private reviewer
+  state and made no provider call. Research Atlas remains the authority for
+  raw reviewer-session provenance.
 scientific_state_change: >-
-  none; the manuscript and generated PDF received bounded editorial revisions,
-  but no study, claim, proof, run, evidence status, proof status, paper
-  lifecycle, release, or publication state was created or changed.
+  none; current editorial pointers changed, but no paper lifecycle status,
+  claim, proof, study, run, evidence status, release, or publication state
+  changed.
 validation:
   profile: docs-editorial
   result: >-
-    focused-17-passed-paper-build-byte-reproducible-21-pages-all-page-visual-pass;
-    first-complete-post-revision-wall-ruff-pass-strict-mypy-pass-1052-of-1060-tests-pass;
-    eight-pointer-identity-failures-require-additive-authority
+    focused-pointer-release-closeout-and-packet-tests-pass;
+    complete-wall-ruff-pass-strict-mypy-pass-1065-tests-pass;
+    active-paper-21-pages-ab53c6e4-pass;
+    site-89-pages-pass;
+    immutable-v0.1.0-papers-asset-08bab6f3-pass;
+    immutable-v0.1.0-citation-asset-37c66ed1-pass
 owner_action: >-
-  Decide whether to authorize one narrow additive task for current working-paper
-  publication/lifecycle pointers and immutable release-snapshot semantics, or
-  direct a revision rework that does not change the frozen PDF identity. Do not
-  authorize a blanket replacement of historical release hashes.
+  No repository owner action is required before review routing. Research Atlas
+  should dispatch the four already-authorized fresh isolated Round 2 sessions
+  and return one complete provenance-bound bundle. Later PR readiness, merge,
+  publication, deployment, DOI, submission, and Explore Science actions remain
+  owner-gated.
 exact_next_command: ''
-exact_next_file: reports/editorial/common-source-trap-review-disposition.yml
+exact_next_file: reports/editorial/common-source-trap-round2-review-packet.yml
 blocker: >-
-  The revised PDF identity conflicts with current publication, lifecycle,
-  compendium, release-readiness, and site pointers outside AO-0014's fixed task
-  paths, while AO-0014 explicitly forbids paper-lifecycle and release mutation.
-  The complete repository wall therefore has eight known identity failures.
+  This Distributed Discovery worker cannot truthfully instantiate or label
+  external Claude, Gemini, and Grok sessions. The packet is complete and must
+  cross the established Research Atlas reviewer-provenance boundary for named
+  session dispatch.

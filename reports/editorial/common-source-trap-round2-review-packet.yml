@@ -1,0 +1,141 @@
+schema_version: common-source-trap-review-packet-v1
+packet_id: common-source-trap-r2
+status: frozen-ready-for-fresh-isolated-dispatch
+task_id: AO-0014
+issue: 220
+pull_request: 221
+paper:
+  id: common-source-trap
+  title: "The Common-Source Trap: Endogenous Independent Evidence in Distributed Discovery"
+  lifecycle: working-paper
+  submission_authorized: false
+  peer_reviewed: false
+authority:
+  manuscript_claim_proof_run_evidence: repository-only
+  repository: yoheinakajima/distributed-discovery
+  atlas_role:
+    - exact-pointer-management
+    - review-round-status
+    - reviewer-provenance
+    - complete-bundle-handoff
+  atlas_scientific_authority: false
+  review_dispatch_authorized_by_owner: true
+  merge_or_publication_authorized: false
+source:
+  artifact_commit: 4fa15aa7f77dcae9f02a42c64273a04969247571
+  receipt_commit: 843e1b581ca425f467a505e032fb9e9654225751
+  pointer_validation_commit: 71f6239dc0a6a642fef0cbf94743a701af8c5e03
+  ref_at_freeze: agent/common-source-trap-review-packet
+  paper_tree_oid: e2ed6ff41fbb79830b9827d9e218974d2fad2368
+  manuscript:
+    path: papers/common-source-trap/main.tex
+    sha256: 87a6e85450c72fc9c93b281646ecfbd60193747c80aae9eac0a022301e1f06e1
+    url: https://github.com/yoheinakajima/distributed-discovery/blob/4fa15aa7f77dcae9f02a42c64273a04969247571/papers/common-source-trap/main.tex
+  pdf:
+    path: papers/common-source-trap/The_Common_Source_Trap.pdf
+    sha256: ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150
+    page_count: 21
+    url: https://raw.githubusercontent.com/yoheinakajima/distributed-discovery/4fa15aa7f77dcae9f02a42c64273a04969247571/papers/common-source-trap/The_Common_Source_Trap.pdf
+  receipts:
+    - {path: papers/common-source-trap/validation.json, sha256: 6ecfb908a547cf3a57a26275eabbd30e452ca1799c7d40716ba7f721ddc53f23, role: deterministic-build-and-input-validation}
+    - {path: papers/common-source-trap/generated/provenance.json, sha256: 2bc633e9c88fa8165f999861cdef4dc48d6538d11aaf4e2bffd087f66205c753, role: source-run-input-and-generated-asset-provenance}
+    - {path: papers/common-source-trap/visual-qa.md, sha256: 2db136353dc7346b5968524600d9e938ff18246a5d1c1141b06ea99e166641f9, role: all-page-render-review}
+review_input_policy:
+  exact_inputs_only:
+    - {path: papers/common-source-trap/main.tex, sha256: 87a6e85450c72fc9c93b281646ecfbd60193747c80aae9eac0a022301e1f06e1, role: revised-manuscript}
+    - {path: papers/common-source-trap/The_Common_Source_Trap.pdf, sha256: ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150, role: revised-rendered-paper}
+    - {path: reports/editorial/common-source-trap-round2-review-packet.yml, role: round2-rubric-and-response-contract}
+  prior_review_packets_shared: false
+  prior_reviewer_outputs_shared: false
+  prior_disposition_shared: false
+  other_reviewer_outputs_shared: false
+  chat_or_manager_synthesis_shared: false
+  round1_sessions_reusable: false
+review_round:
+  id: common-source-trap-r2
+  required_reviewers: [chatgpt, claude, gemini, grok]
+  fresh_isolated_sessions: true
+  exact_packet_for_every_reviewer: true
+  reviewer_must_not_receive_other_reviews: true
+  atlas_must_return_complete_bundle_simultaneously: true
+  model_selection: strong-below-maximum-or-top-tier
+  reasoning_ceiling: xhigh-never-ultra
+  owner_authority_limited_to_review_sessions: true
+  provider_api_or_spend_authorized_by_packet: false
+  requested_checks:
+    - theorem-and-proof-correctness
+    - claim-status-and-scope-calibration
+    - citation-support-and-neighboring-literature
+    - self-containment-and-dependency-clarity
+    - exposition-structure-and-reader-comprehension
+    - figures-tables-and-visual-legibility
+    - limitations-negative-results-and-counterboundaries
+    - whether-prior-revision-left-any-critical-major-or-minor-defect
+response_contract:
+  reviewer_provenance_required:
+    - reviewer_system
+    - exact_model_identity_if_exposed
+    - review_started_utc
+    - review_completed_utc
+    - artifact_commit
+    - packet_id
+    - manuscript_sha256
+    - pdf_sha256
+    - independence_attestation
+  finding_fields:
+    - finding_id
+    - severity
+    - manuscript_location
+    - affected_claim_or_citation
+    - finding
+    - repository_evidence_needed
+    - recommended_disposition
+  severity_values: [critical, major, minor, optional]
+  verdict_values: [ready, minor-revision, major-revision, reject]
+  partial_bundle_accepted: false
+reviewer_prompt: >-
+  This is a fresh isolated Round 2 review of the exact revised Common-Source
+  Trap working paper identified by packet common-source-trap-r2. Verify the
+  artifact commit and SHA-256 values before review. Use only the revised
+  manuscript, revised PDF, and this packet. Do not request, infer, or use prior
+  reviews, prior dispositions, other reviewers' outputs, or manager synthesis.
+  Assess every requested check independently and return the complete response
+  contract with precise manuscript locations. Distinguish demonstrated errors
+  from questions, preferences, missing explanations, and requests for new
+  evidence. This review creates no scientific, merge, submission, or
+  publication authority.
+validation:
+  pointer_validation_commit: 71f6239dc0a6a642fef0cbf94743a701af8c5e03
+  repository_wall:
+    ruff: pass
+    strict_mypy: pass
+    pytest: {passed: 1064, failed: 0}
+    claim_and_run_validation: pass
+    agent_operations: pass
+    program_memory: pass
+    publication_and_lifecycle: pass
+    release_readiness: pass
+    compendium_snapshot_reconstruction: pass
+  active_paper:
+    command: make common-source-trap
+    page_count: 21
+    pdf_sha256: ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150
+    byte_reproducible_two_builds: true
+    all_pages_visually_inspected: true
+  site_build: {pages: 89, status: pass, deployment_authorized: false}
+bundle_gate:
+  required_reviews: 4
+  partial_bundle_accepted: false
+  repository_edit_before_complete_bundle: false
+  complete_bundle_handoff: research-atlas-manager-only
+  next_consequential_gate: owner-review-after-complete-round2-bundle
+prohibitions:
+  - reuse-or-contact-of-any-prior-review-session
+  - partial-or-mislabeled-review-dispatch
+  - information-sharing-frontier-work
+  - new-scientific-execution-or-claim
+  - manuscript-edit-before-complete-bundle
+  - pull-request-readiness-or-merge
+  - publication-deployment-submission-doi-release-or-explore-science
+  - branch-deletion
+  - historical-untracked-file-action

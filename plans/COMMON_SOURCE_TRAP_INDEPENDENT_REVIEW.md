@@ -143,8 +143,10 @@ scientific evidence and authorizes no manuscript merge or publication.
   exact authorized head `9cf1720c2b23737f1937ea2c3f1a35a898fa9809`.
 - [x] Added and schema-validated the narrow superseding AO-0014 pointer task.
 - [x] Implement the current-versus-v0.1.0 versioning seam and its regressions.
-- [ ] Run the focused and complete validation wall, freeze the exact green
-  Round 2 packet, and route it only through fresh isolated sessions.
+- [x] Run the focused and complete validation wall and freeze the correctly
+  labeled Round 2 packet against the revised artifact.
+- [ ] Commit and push the packet and legitimate-checkpoint handoff, revalidate
+  the exact final head, and route it only through fresh isolated sessions.
 
 ## Discoveries and surprises
 
@@ -298,6 +300,23 @@ scientific evidence and authorizes no manuscript merge or publication.
   build was refused before execution by the filesystem sandbox because its
   subprocess could not open the normal `uv` cache; rerun that one local build
   with the same already-validated cache access used by the green wall.
+- 2026-08-06: The first correctly labeled Round 2 packet test passed eight of
+  nine checks and rejected a false receipt relationship: the final visual-QA
+  correction was committed at `843e1b5`, after reviewed-artifact commit
+  `4fa15aa`. The packet now freezes the source/PDF at the artifact commit and
+  the three canonical receipts at the later exact receipt commit instead of
+  pretending one Git tree contains both histories.
+- 2026-08-06: Corrected Round 2 packet validation passes nine checks. The packet
+  names only the revised manuscript, revised PDF, and Round 2 rubric/response
+  contract as reviewer inputs; it explicitly excludes prior packets, reviews,
+  dispositions, manager synthesis, and prior sessions.
+- 2026-08-06: The final packet-inclusive complete wall passed formatting, Ruff,
+  strict MyPy, all 1,065 tests in 347.98 seconds, and every claim, run,
+  literature, Agent Operations, program-memory, publication, naming, release,
+  and Compendium audit. The immutable v0.1.0 paper ZIP, citation metadata, and
+  release notes remained byte-identical. Freeze one public-safe checkpoint
+  handoff for Research Atlas reviewer dispatch; do not impersonate named model
+  providers from this repository worker.
 
 ## Validation strategy
 

@@ -12,6 +12,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[2]
 PACKET_PATH = ROOT / "reports/editorial/common-source-trap-review-packet.yml"
 DISPOSITION_PATH = ROOT / "reports/editorial/common-source-trap-review-disposition.yml"
+ROUND2_PACKET_PATH = ROOT / "reports/editorial/common-source-trap-round2-review-packet.yml"
 
 
 def _packet() -> dict[str, Any]:
@@ -22,6 +23,12 @@ def _packet() -> dict[str, Any]:
 
 def _disposition() -> dict[str, Any]:
     loaded = yaml.safe_load(DISPOSITION_PATH.read_text(encoding="utf-8"))
+    assert isinstance(loaded, dict)
+    return loaded
+
+
+def _round2_packet() -> dict[str, Any]:
+    loaded = yaml.safe_load(ROUND2_PACKET_PATH.read_text(encoding="utf-8"))
     assert isinstance(loaded, dict)
     return loaded
 
@@ -147,12 +154,59 @@ def test_review_packet_and_guide_are_public_safe() -> None:
             encoding="utf-8"
         )
         + DISPOSITION_PATH.read_text(encoding="utf-8")
+        + ROUND2_PACKET_PATH.read_text(encoding="utf-8")
     )
     assert "/Users/" not in text
     assert ".env.txt" not in text
     assert "api_key" not in text.lower()
     assert "authorization:" not in text.lower()
     assert "papers/information-sharing-frontier" not in text
+
+
+def test_round_two_packet_is_revised_fresh_isolated_and_correctly_labeled() -> None:
+    packet = _round2_packet()
+    source = packet["source"]
+    commit = source["artifact_commit"]
+    assert packet["packet_id"] == packet["review_round"]["id"] == "common-source-trap-r2"
+    assert packet["status"] == "frozen-ready-for-fresh-isolated-dispatch"
+    assert commit == "4fa15aa7f77dcae9f02a42c64273a04969247571"
+    tree = subprocess.check_output(
+        ["git", "rev-parse", f"{commit}:papers/common-source-trap"],
+        cwd=ROOT,
+        text=True,
+    ).strip()
+    assert tree == source["paper_tree_oid"] == "e2ed6ff41fbb79830b9827d9e218974d2fad2368"
+    _assert_frozen_file(commit, source["manuscript"])
+    _assert_frozen_file(commit, source["pdf"])
+    assert source["receipt_commit"] == "843e1b581ca425f467a505e032fb9e9654225751"
+    for record in source["receipts"]:
+        _assert_frozen_file(source["receipt_commit"], record)
+
+    policy = packet["review_input_policy"]
+    assert policy["round1_sessions_reusable"] is False
+    assert policy["prior_review_packets_shared"] is False
+    assert policy["prior_reviewer_outputs_shared"] is False
+    assert policy["prior_disposition_shared"] is False
+    assert policy["other_reviewer_outputs_shared"] is False
+    assert [record["role"] for record in policy["exact_inputs_only"]] == [
+        "revised-manuscript",
+        "revised-rendered-paper",
+        "round2-rubric-and-response-contract",
+    ]
+    review = packet["review_round"]
+    assert review["required_reviewers"] == ["chatgpt", "claude", "gemini", "grok"]
+    assert review["fresh_isolated_sessions"] is True
+    assert review["reasoning_ceiling"] == "xhigh-never-ultra"
+    assert packet["bundle_gate"]["required_reviews"] == 4
+    assert packet["bundle_gate"]["partial_bundle_accepted"] is False
+
+    text = ROUND2_PACKET_PATH.read_text(encoding="utf-8")
+    for stale_identity in [
+        "7268e445347c4d7f9106d129af42d0e8667eb115",
+        "2f7d9ead7e54a7c4b852935b9648361cc682772c5fe41853d0193b86ce3fbdad",
+        "afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7",
+    ]:
+        assert stale_identity not in text
 
 
 def test_complete_round_one_bundle_and_dispositions_preserve_boundaries() -> None:

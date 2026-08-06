@@ -49,8 +49,11 @@ paper to the revised PDF while release builders, verifiers, and readiness
 audits reconstruct Compendium v0.1.0 only from registered source revision
 `3ca173f4e9e81a6d0e3e56205e428c596edc050e`. The immutable registry, dry-run
 record, tag, DOI, and published asset hashes remain unchanged. Focused pointer,
-release, closeout, and review-packet validation passes; the complete wall and a
-correctly labeled Round 2 freeze remain next.
+release, closeout, and review-packet validation passes, as does the complete
+1,064-test wall, active 21-page paper build, and 89-page site build. A correctly
+labeled Round 2 packet is frozen against artifact commit `4fa15aa7...` and
+receipt commit `843e1b58...`; exact final-head validation and fresh isolated
+Research Atlas routing remain next.
 
 ## Completed AO-0013 repair; Pages closeout remains open (2026-08-06)
 
