@@ -1,6 +1,33 @@
 # Master execution plan
 
-## Active AO-0013 Pages branch-context repair (2026-08-06)
+## Active AO-0014 Common-Source Trap independent review (2026-08-06)
+
+Issue #220, contract `tasks/common-source-trap-independent-review.yml`, branch
+`agent/common-source-trap-review-packet`, and living plan
+`plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md` own the sole substantive lane.
+The task freezes exact current-main manuscript, PDF, receipt, evidence, and
+build pointers for four fresh independent reviews coordinated by Research
+Atlas. The repository remains the sole manuscript and scientific authority;
+Atlas owns review pointers, round state, reviewer provenance, and handoffs
+only.
+
+Common-Source Trap is the only active paper. Information Sharing Frontier is
+parked. No manuscript edit is permitted until fresh independent ChatGPT,
+Claude, Gemini, and Grok reviews are complete and returned simultaneously as
+one provenance-bound Atlas bundle. The later revision must disposition every
+finding against repository evidence and rerun all native checks. No manuscript
+merge, Explore Science upload, publication, submission, DOI, release, provider
+call, spend, scientific execution, or paper-lifecycle change is authorized.
+
+The review baseline is public main
+`7268e445347c4d7f9106d129af42d0e8667eb115`, paper tree
+`2c34089accf3e9bbd2d6d038aceb2156bc0aa2a4`, manuscript SHA-256
+`2f7d9ead7e54a7c4b852935b9648361cc682772c5fe41853d0193b86ce3fbdad`,
+and 21-page PDF SHA-256
+`afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7`.
+AO-0014 first stops at `review-bundle-required` with one draft PR.
+
+## Completed AO-0013 repair; Pages closeout remains open (2026-08-06)
 
 PR #213 merged its exact immutable AO-0012 head as
 `3dc9c66b62dac1d6e407f80755e31631acc8159f`; issue #212 remains open and the
@@ -12,14 +39,14 @@ used its registered historical pilot branch context.
 Issue #218, contract
 `tasks/agent-operations-historical-gate-branch-context-repair.yml`, branch
 `agent/agent-ops-historical-gate-branch-context-repair`, and living plan
-`plans/AGENT_OPERATIONS_HISTORICAL_GATE_BRANCH_CONTEXT_REPAIR.md` own the narrow
-repository-only repair as AO-0013. Only an explicit synthetic branch-context
-seam and its deterministic regressions are permitted; the real live-branch
-guard remains unchanged. The task must pass the complete repository and
-Pages-equivalent wall, open one draft PR, and stop at
-`AOG-AO-0013-PAGES-BRANCH-CONTEXT-REPAIR` before merge.
+`plans/AGENT_OPERATIONS_HISTORICAL_GATE_BRANCH_CONTEXT_REPAIR.md` own AO-0013.
+The exact authorized repair PR #219 squash-merged as
+`7268e445347c4d7f9106d129af42d0e8667eb115`; main CI passed and the Pages
+artifact built, but final deployment run `31110671871` timed out and recorded a
+terminal public deployment failure. Issue #218 remains open. No retry,
+deployment mutation, or administrative closeout belongs to AO-0014.
 
-The RunPod path remains closed and R7 remains consumed. AO-0013 authorizes no
+The RunPod path remains closed and R7 remains consumed. AO-0013 created no
 provider-neutral task, credential, provider, resource, model, inference,
 calibration, spend, private or scientific work, publication, issue #212
 closure, or branch deletion.
