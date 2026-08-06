@@ -1,0 +1,92 @@
+schema_version: treasurebench-open-weight-cloud-runtime-r7-calibration-gate-audit-v1
+task_id: AO-0012
+status: authorization-free-validation-passed
+audited_at_utc: '2026-08-05T00:00:00Z'
+owner_observation:
+  observed_date: '2026-08-05'
+  surface: RunPod-mobile-UI-Secrets-tab
+  current_secrets_tab: empty
+  evidence_class: typed-owner-observation
+  api_proof: false
+  historical_absence_proven: false
+  every_account_or_team_scope_proven: false
+  prior_r6b_provider_response_reconstructable: false
+  cleanup_disposition: no-automated-r5-secret-query-delete-or-retry-without-supported-exact-lookup
+account_balance_observation:
+  observed_date: '2026-08-05'
+  balance_usd: '200'
+  creates_spend_authority: false
+  gate_expected_spend_usd: '3'
+  gate_hard_spend_usd: '10'
+runtime_identity:
+  name: treasurebench-mistral-small-3.1-24b-bf16-vllm-0.23.0-a100-80gb-pcie-r1
+  model: mistralai/Mistral-Small-3.1-24B-Instruct-2503
+  revision: 68faf511d618ef198fef186659617cfd2eb8e33a
+  weight_format: official-unquantized-BF16
+  weight_sha256: d446ca97599fa9d98b2e3744d8b83019837a2fe34a80f4353120b1e9b6249b1e
+  tokenizer_sha256: c604f35d1035f534519622c0ec83fed6184978d4fdee92a5bd2a50bc05438094
+  engine: vLLM-0.23.0
+  container: docker.io/vllm/vllm-openai@sha256:3a1e7f5904e1a1192a02aa0086ceaffc33985d7044c7bb25b3a43d61bdbe3ac0
+resource_identity:
+  provider: RunPod
+  product: Secure-Cloud-dedicated-noninterruptible-Pod
+  gpu: one-NVIDIA-A100-80GB-PCIe
+  allowed_cuda_versions: ['13.0']
+  container_disk_gb: 50
+  encrypted_volume_gb: 120
+  volume_mount: /workspace
+  network_volume: prohibited
+  public_ip: prohibited
+  region: US
+  fresh_namespace_prefix: ao0012-owcal-r7
+  prior_r5_namespace_access: prohibited
+public_calibration:
+  tasks: 10
+  families: 5
+  architectures: 5
+  repeats: 1
+  intended_pairings: 50
+  inference_call_cap: 400
+  scientific_run: false
+  private_material: prohibited
+  performance_reporting: prohibited
+pricing_audit:
+  observed_date: '2026-08-05'
+  official_secure_cloud_a100_pcie_usd_per_hour: '1.39'
+  frozen_maximum_accepted_hourly_rate_usd: '1.50'
+  maximum_gpu_hours: '6'
+  maximum_compute_at_rate_ceiling_usd: '9.00'
+  running_container_and_volume_storage_usd_per_gb_month: '0.10'
+  selected_running_storage_gb: '170'
+  approximate_six_hour_storage_usd: '0.15'
+  expected_total_usd: '3'
+  hard_total_usd: '10'
+  balance_usd: '200'
+  balance_is_not_authority: true
+control_boundary:
+  credentials: [RUNPOD_API_KEY, HF_TOKEN]
+  credential_source: repository-root-.env.txt
+  temporary_new_r7_secrets: 3
+  temporary_private_templates: 1
+  pod_create_maximum: 1
+  controller_finalizer: required
+  pod_resident_watchdog_seconds: 21600
+  exact_teardown_and_billing: required
+  ambiguity_allows_merge_or_issue_close: false
+  prior_r5_secret_cleanup: prohibited
+official_sources:
+- {authority: RunPod Secrets documentation, url: 'https://docs.runpod.io/pods/templates/secrets', supports: account-or-team-scoped-secrets-and-template-references}
+- {authority: RunPod GraphQL template documentation, url: 'https://docs.runpod.io/sdks/graphql/manage-pod-templates', supports: secretCreate-secretDelete-and-query-key-authentication}
+- {authority: RunPod Pod create API, url: 'https://docs.runpod.io/api-reference/pods/POST/pods', supports: exact-rest-create-encrypted-volume-cuda-storage-and-pod-fields}
+- {authority: RunPod pricing, url: 'https://www.runpod.io/pricing', supports: current-secure-cloud-a100-pcie-hourly-price}
+- {authority: RunPod Pod pricing, url: 'https://docs.runpod.io/pods/pricing', supports: compute-and-storage-billing}
+validation:
+  focused_tests: 29-r6-r7-passed-and-12-r7-audit-passed
+  complete_offline_rehearsal: 50-terminal-pairings-294-synthetic-calls-methods-and-72-bounds-agree
+  full_repository_verification: 1046-tests-ruff-383-files-strict-mypy-222-sources-all-audits-119-paper-pages-pass
+  gate_validate_only: pending
+credential_read: false
+authenticated_provider_call: false
+resource_activity: false
+inference_calls: 0
+spend_usd: '0'

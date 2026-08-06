@@ -1,0 +1,269 @@
+schema_version: treasurebench-open-weight-cloud-runtime-manifest-r4-v1
+runtime_definition_version: ow-runtime-v1
+runtime_identity: treasurebench-mistral-small-3.1-24b-bf16-vllm-0.23.0-a100-80gb-pcie-r1
+status: frozen-authorization-free-not-deployed
+authority_task: AO-0012
+runtime_class: rented-raw-gpu-owner-operated
+roles:
+  compute_infrastructure: RunPod
+  model_origin: Mistral AI
+  inference_engine: vLLM
+compute:
+  provider: RunPod
+  product: Secure Cloud dedicated Pod
+  cloud_type: SECURE
+  interruptible: false
+  gpu_type_id: NVIDIA A100 80GB PCIe
+  gpu_count: 1
+  hardware_identity_policy: exact-single-type-no-substitution
+  allowed_cuda_versions: ["13.0"]
+  expected_container_cuda: "13.0.2"
+  minimum_linux_driver_version: "580.65.06"
+  accepted_driver_branches: ["580", "595", "610"]
+  region_constraints:
+    country_codes: [US]
+    data_center_ids: []
+  maximum_runtime_seconds: 21600
+container:
+  repository: docker.io/vllm/vllm-openai
+  release: v0.23.0
+  release_commit: 91df0fad4dc98a67c7659d9dbd915245d5c43d96
+  platform: linux/amd64
+  multiarch_digest: sha256:6d8429e38e3747723ca07ee1b17972e09bb9c51c4032b266f24fb1cc3b22ed8f
+  image_digest: sha256:3a1e7f5904e1a1192a02aa0086ceaffc33985d7044c7bb25b3a43d61bdbe3ac0
+  immutable_reference: docker.io/vllm/vllm-openai@sha256:3a1e7f5904e1a1192a02aa0086ceaffc33985d7044c7bb25b3a43d61bdbe3ac0
+  entrypoint_override: [/bin/bash]
+  startup_script: scripts/treasurebench_open_weight_runtime_start_r4.sh
+  endpoint_proxy: scripts/treasurebench_open_weight_proxy_r4.py
+  deletion_watchdog: scripts/treasurebench_open_weight_watchdog_r4.py
+engine:
+  name: vLLM
+  version: 0.23.0
+  tokenizer_mode: mistral
+  config_format: mistral
+  load_format: mistral
+  tensor_parallel_size: 1
+  dtype: bfloat16
+  quantization: null
+  generation_config: vllm
+  model_implementation: vllm
+  served_model_name: mistralai/Mistral-Small-3.1-24B-Instruct-2503@68faf511d618ef198fef186659617cfd2eb8e33a
+  tool_parser: disabled
+  auto_tool_choice: false
+  hidden_fallbacks: false
+  request_logging: false
+  usage_stats: false
+model:
+  repository: mistralai/Mistral-Small-3.1-24B-Instruct-2503
+  revision: 68faf511d618ef198fef186659617cfd2eb8e33a
+  license: Apache-2.0
+  weight_format: original-mistral-consolidated-safetensors
+  precision: BF16
+  quantized: false
+  sharded_across_gpus: false
+  primary_weight:
+    path: consolidated.safetensors
+    bytes: 48022792280
+    sha256: d446ca97599fa9d98b2e3744d8b83019837a2fe34a80f4353120b1e9b6249b1e
+  required_artifacts:
+    - {path: consolidated.safetensors, bytes: 48022792280, sha256: d446ca97599fa9d98b2e3744d8b83019837a2fe34a80f4353120b1e9b6249b1e}
+    - {path: tekken.json, bytes: 14801330, sha256: c604f35d1035f534519622c0ec83fed6184978d4fdee92a5bd2a50bc05438094}
+  exact_small_files:
+    .gitattributes: 0d4cb185280917cac60ef7195f2a6250b2b90d83
+    README.md: 49db182b24260e990b8c73990d47086723484ab7
+    chat_template.json: d55f535097412122ac3724c76c903294da3c1152
+    config.json: c83e216efe7b6355ec25ad037f0471fd24bc47d1
+    generation_config.json: e88987414d68707443ffc03c9cac772d95cfce2e
+    params.json: ba80d5d1ebf33f2b8e7ad064f7a0c05057af7ab0
+    processor_config.json: 0092b0f4fb04cc78378859f013badda71e5262c5
+    tokenizer_config.json: c61ab81def9a66ae3c0789385d9587904ca2d840
+tokenizer:
+  authority: mistral-common V7 Tekken chat template at the exact model revision
+  repository: mistralai/Mistral-Small-3.1-24B-Instruct-2503
+  revision: 68faf511d618ef198fef186659617cfd2eb8e33a
+  mode: mistral
+  artifact: tekken.json
+  sha256: c604f35d1035f534519622c0ec83fed6184978d4fdee92a5bd2a50bc05438094
+  mistral_common_minimum: 1.11.3
+generation:
+  maximum_context_tokens: 8192
+  maximum_output_tokens: 256
+  temperature: "0.15"
+  top_p: "1.0"
+  seed_policy: pairing-id-derived-unsigned-32-bit
+  structured_output:
+    mode: json-schema
+    schema_version: treasurebench-agents-v1-action-v1
+    additional_properties: false
+  schema_repairs: 1
+  semantic_retries: 0
+  hidden_repairs: 0
+  provider_managed_retries: 0
+  tools_enabled: false
+endpoint:
+  inner_vllm_bind: 127.0.0.1:8001
+  owner_proxy_bind: 0.0.0.0:8000
+  exposed_ports: [8000/http]
+  transport: HTTPS-through-RunPod-proxy
+  authentication: bearer
+  public_unauthenticated_access: false
+  runtime_attestation_path: /runtime-attestation
+  completion_path: /v1/chat/completions
+  moving_aliases: false
+  fallback_routes: []
+  prompt_transformations: none
+logging_and_retention:
+  application_request_logging: prohibited
+  application_response_logging: prohibited
+  vllm_request_logging: disabled
+  vllm_debug_response_logging: disabled
+  usage_telemetry: disabled
+  public_logs_may_contain_prompt_or_output: false
+  provider_system_lifecycle_metadata_exists: true
+  legal_or_provider_nonretention_claimed: false
+  raw_benchmark_data_written_to_pod_disk: false
+  safe_operational_records_returned_to_owner_runner: true
+storage:
+  container_disk_gb: 50
+  volume_disk_gb: 120
+  mount_path: /workspace
+  network_volume: null
+  create_surface: POST-https-rest-runpod-io-v1-pods
+  encrypted_volume_creation_request: true
+  encrypted_volume_required: true
+  encrypted_volume_verified_in-create-response-and-fresh-pod-get: true
+  model_cache_path: /workspace/model
+  workspace_content_allowlist: [exact-public-model-artifacts, exact-public-tokenizer-artifacts, nonsecret-public-runtime-files]
+  secret_or_benchmark_content_on_workspace: prohibited
+  termination_deletes_volume_disk: true
+  stopped_pod_retention_allowed: false
+lifecycle:
+  provision: exact-manifest-only
+  readiness: attestation-before-any-pairing
+  stop_conditions: [mismatch, cap, timeout, calibration-complete]
+  normal_end: terminate-pod
+  teardown_verification: delete-then-require-exact-pod-id-unaddressable
+  billing_verification: exact-post-teardown-pod-id-records-positive-amount-and-billed-milliseconds
+  maximum_unattended_runtime_seconds: 21600
+  retained_network_volume_action: not-applicable
+environment_allowlist:
+  - RUNPOD_API_KEY
+  - RUNPOD_POD_ID
+  - HF_TOKEN
+  - TREASUREBENCH_RUNTIME_API_KEY
+  - TREASUREBENCH_RUNTIME_ATTESTATION_KEY
+  - TREASUREBENCH_EXPECTED_IMAGE_DIGEST
+  - TREASUREBENCH_EXPECTED_NAMESPACE
+  - TREASUREBENCH_RUNTIME_MANIFEST_B64
+  - TREASUREBENCH_STARTUP_SCRIPT_B64
+  - TREASUREBENCH_PROXY_SCRIPT_B64
+  - TREASUREBENCH_WATCHDOG_SCRIPT_B64
+environment_allowlist_scope: temporary-RunPod-secret-reference-and-startup-materialization-only
+forbidden_environment_names:
+  - OPENAI_API_KEY
+  - ANTHROPIC_API_KEY
+  - OPENROUTER_API_KEY
+  - MISTRAL_API_KEY
+  - FLYMYAI_API_KEY
+  - MONID_API_KEY
+attestation:
+  authentication: HMAC-SHA256
+  canonicalization: RFC8785-subset-sorted-compact-JSON
+  required_fields:
+    - runtime_identity
+    - manifest_sha256
+    - image_digest
+    - model_repository
+    - model_revision
+    - model_weight_sha256
+    - tokenizer_sha256
+    - vllm_version
+    - mistral_common_version
+    - python_version
+    - os_release
+    - gpu_names
+    - gpu_count
+    - gpu_memory_mib
+    - driver_version
+    - requested_cuda_compatibility_class
+    - measured_container_cuda_toolkit
+    - measured_cuda_runtime
+    - pytorch_cuda_runtime
+    - quantization
+    - tensor_parallel_size
+    - peak_gpu_memory_mib
+    - startup_seconds
+    - model_load_seconds
+    - watchdog_pid
+    - watchdog_verified
+    - watchdog_deadline_seconds
+credential_ingress:
+  source: .env.txt
+  requested_names: [RUNPOD_API_KEY, HF_TOKEN]
+  loader: strict-nonexecuting-no-interpolation
+  pre_ingress_validation_required: true
+secret_and_template_lifecycle:
+  provider_surface: RunPod-GraphQL-secretCreate-secretDelete-plus-REST-template-create-list-delete
+  pod_secret_reference_format: "{{ RUNPOD_SECRET_secret_name }}"
+  temporary_private_template: required
+  raw_secret_in_pod_or_template_env: prohibited
+  absence_verification_after_pod_termination: required
+in_pod_secret_minimization:
+  hf_token_cleared_after_artifact_verification: true
+  attestation_key_cleared_after_signing: true
+  runpod_pod_key_never_inherited_by_children: true
+  endpoint_bearer_file: /run/treasurebench-runtime-r4/endpoint-bearer
+  endpoint_bearer_file_mode: "0600"
+  endpoint_bearer_on_workspace: prohibited
+  base64_payloads_cleared_after_materialization: true
+orphan_controls:
+  namespace: AO-0012-plus-R4-gate-plus-authorization-digest
+  create_conflict_check: exact-name-and-namespace-zero
+  ambiguous_create_reconciliation: unique-exact-match-in-registered-window
+  second_create_under_same_authorization: prohibited
+  native_terminate_after: unavailable-on-selected-encrypted-rest-create-surface
+  controller_finalizer: unconditional-after-pod-may-exist
+  pod_resident_watchdog:
+    launch_order: before-model-download-or-engine-launch
+    provider_credentials: [RUNPOD_POD_ID, pod-scoped-RUNPOD_API_KEY]
+    self_query: one-bounded-REST-GET-before-arming
+    self_delete: exact-Pod-REST-DELETE-at-monotonic-deadline
+    status_fields: [pid, verified, deadline_seconds]
+    stdout_stderr: prohibited
+  automatic_termination_seconds: 21600
+  local_finalizer: always-after-possible-Pod
+control_plane:
+  github_preflight:
+    authentication: none-public-read-only
+    issue: GET-https-api-github-com-repos-yoheinakajima-distributed-discovery-issues-212
+    pull_request: GET-https-api-github-com-repos-yoheinakajima-distributed-discovery-pulls-213
+    branch: git-ls-remote-origin-exact-ref
+    gh_cli_required: false
+  runpod_graphql:
+    authentication: urlencoded-api-key-query-parameter-only
+    operations: [account-inventory, secretCreate, secretDelete]
+  runpod_rest:
+    authentication: authorization-bearer-header-only
+    operations: [template-create-list-delete, pod-create-get-delete, billing]
+  pod_create_exact_fields:
+    - name
+    - cloudType
+    - computeType
+    - gpuTypeIds
+    - gpuTypePriority
+    - gpuCount
+    - allowedCudaVersions
+    - templateId
+    - containerDiskInGb
+    - volumeInGb
+    - volumeMountPath
+    - volumeEncrypted
+    - countryCodes
+    - ports
+    - supportPublicIp
+closeout:
+  billing_fields: [podId, amount, timeBilledMs, diskSpaceBilledGb]
+  positive_amount_and_billed_time_required_when_pod_existed: true
+  ambiguity_prohibits_merge_and_issue_closure: true
+known_control_limit:
+  statement: Authenticated runtime attestation and application controls establish operational correspondence under the owner/provider trust boundary; they do not make the cloud infrastructure provider cryptographically unable to inspect or misreport its own host.

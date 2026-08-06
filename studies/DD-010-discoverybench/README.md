@@ -54,6 +54,59 @@ explicit owner cost authorization, custody material, and immutable evidence
 package. The current v1/v2/v3 commands, outputs, default, and disabled external
 adapter remain unchanged.
 
+## AO-0012 open-weight self-operated cloud-runtime gate
+
+AO-0012 is a prospective DD-010 infrastructure task, not a scientific run or
+claim-grade campaign. It separates open-weight model-family diversity,
+inference-stack transparency, independence from the two proprietary model
+providers, owner control, physical locality, and infrastructure-provider
+independence. The primary candidate is an open-weight, self-operated cloud
+runtime on one RunPod Secure Cloud A100 80GB PCIe with the exact registered
+Mistral Small 3.1 24B revision, original BF16 weights, and an immutable vLLM
+container. It is never called local and supplies neither physical locality nor
+complete infrastructure independence.
+
+Only one ten-task, five-architecture, one-repeat public calibration may later
+run behind the exact generic owner gate. It has 50 intended pairings, no
+private material, no performance publication, no model-provider API, and no
+scientific authority. Until that gate is authorized, credential access,
+model download, provisioning, endpoint launch, inference, and spend remain
+zero and prohibited. The exact BF16 single-A100 identity fails closed rather
+than quantizing, sharding, changing model, or changing GPU class.
+
+The unused R1, R2, and R3 gates are superseded without authorization. R4 preserves
+the accepted R2 repository-local credential ingress, temporary RunPod
+Secret/template lifecycle, orphan controls, measured attestation, deterministic
+success/failure finalizer, exact teardown and billing, and reporting boundary.
+It retains URL-encoded
+`api_key` query authentication only for RunPod GraphQL, Bearer authentication
+only for RunPod REST, and `allowedCudaVersions: ["13.0"]`. R4 also removes any
+live `gh` authentication dependency, requires `volumeEncrypted: true` in one
+exact REST Pod-create request, and uses a controller finalizer plus Pod-resident
+six-hour delete watchdog because the selected encrypted REST surface has no
+documented `terminateAfter` field. No real credential, account, artifact,
+resource, or spend is accessed by this correction.
+
+The exact R4 owner authorization was later created once, but the exact live
+command stopped before `.env.txt` ingress because the protected runtime looked
+for a nonexistent generic owner-gate `budget` mapping. The registered outcome
+is `calibration-integrity-failure-stop`: zero credentials, RunPod resources,
+model downloads, endpoints, inference calls, or spend occurred, and no
+teardown or billing ambiguity exists. The attempted authorization cannot be
+reused; PR #213 and issue #212 remain open for a separately owner-authorized
+prospective repair and refreeze.
+
+The forward-only R5 generic-gate repair subsequently passed and its exact owner
+authorization was consumed once. The live path passed credential ingress and
+made authenticated RunPod control-plane calls, but stopped before Pod creation
+because the finalizer could not prove the authorization-derived temporary
+Secret namespace absent. No Pod, model download, endpoint, inference call, or
+bill exists. The permitted operational decision is
+`self-operated-control-boundary-failed-managed-api-rejected`; it is not
+performance or scientific evidence. R5 cannot be rerun, and PR #213 and issue
+#212 remain open pending explicit owner direction for status inspection,
+cleanup, or a prospective repair.
+
 ## Agents v1 sealed-pilot repair adjudication
 
 The first sealed engineering pilot remains permanently
@@ -339,3 +392,70 @@ operational totals only and no task-level or comparative performance.
 No DD-023, claim, scientific run, paper result, ranking, leaderboard, or
 composite exists. No completed or archived authorization permits the base
 campaign, reuse of any quarantined pilot, or a new private pilot.
+
+
+### AO-0012 R2 preauthorization correction
+
+The unused R1 gate is superseded without authorization. The same public
+calibration and runtime identity remain behind
+`AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R2`, which adds repository-local
+two-name credential ingress, temporary RunPod Secret/template lifecycle,
+authorization-bound orphan controls, measured attestation, and exact
+success/failure teardown and billing. This remains infrastructure engineering
+only and adds no DD-023, private, scientific, base-campaign, performance, or
+publication authority.
+
+### AO-0012 R5 generic-gate compatibility repair
+
+R4 was authorized and consumed by a legitimate hard stop before credential
+ingress because its task validator read a nonexistent owner-gate `budget`
+mapping. R5 may never reuse that authorization and changes only the prospective
+adapter to require exact canonical `cumulative_state`, `hard_caps`, and
+`remaining_caps`. The runtime, public calibration, caps, lifecycle, and
+zero-scientific boundary remained unchanged. R5 was later authorized once and
+consumed by a control-plane hard stop before Pod creation; its exact first
+temporary Secret remains provider-ambiguous. R5 cannot be reused. Only a new,
+narrow prospective gate may authorize exact status inspection or conditional
+cleanup, and no calibration or merge authority follows from that cleanup.
+
+### AO-0012 R6 cleanup-gate identifier compatibility repair
+
+The first R6 cleanup gate and its handoff remain immutable. Its 55-character
+identifier passed the owner-gate schema but the exact owner challenge failed
+closed before authorization creation because the owner-authorization schema
+was two characters stricter. No authorization, credential read, provider
+operation, resource query or mutation, inference call, or spend occurred, and
+that challenge is not reusable.
+
+The additive repair narrows the generic gate ID rule to the unchanged
+authorization rule and freezes shorter identity
+`AOG-AO-0012-R6-RUNPOD-SECRET-CLEANUP`. It changes no operational authority:
+a fresh later owner decision may still load only `RUNPOD_API_KEY`, make one
+Secrets inventory, conditionally delete only one unique exact
+`ao0012-owcal-r5-01b41c9aa04bf2a4-hf` match, make one verification query, and
+stop within three authenticated operations, zero inference, and zero spend.
+
+### AO-0012 R7 qualified cleanup outcome and calibration refreeze
+
+R6b was later authorized once and consumed by one fail-closed Secrets inventory
+ambiguity. No deletion, Pod, model, inference, or spend occurred. The owner then
+observed the current RunPod mobile Secrets tab empty. This is qualified UI
+evidence only; it does not reconstruct the provider response or prove
+historical absence across every account or team scope. Further automated R5
+Secret cleanup is abandoned without a supported exact lookup surface.
+
+The owner-observed USD 200 account balance creates no spending authority. R7
+prepares the unchanged public-only 50-pairing calibration under a new namespace
+and a tighter USD 3 expected/USD 10 hard envelope, USD 1.50 hourly ceiling, six
+GPU-hours, and 400 inference calls. It remains infrastructure engineering only
+and creates no DD-023, private, scientific, base-campaign, performance,
+publication, merge, or issue-close authority before its exact owner gate.
+
+The exact R7 owner gate was later consumed once. The live command passed every
+local and public pre-ingress check, loaded only the two allowed credentials,
+and stopped at the fresh account-inventory boundary before any Secret,
+template, Pod, encrypted volume, model download, endpoint, inference, billing,
+or spend. The public-safe record cannot recover which of the ordered inventory
+requests failed, so it preserves a two-to-four authenticated read-only request
+bound rather than an invented exact count. R7 is nonreusable; PR #213 remains
+draft, issue #212 remains open, and no feasibility or performance result exists.

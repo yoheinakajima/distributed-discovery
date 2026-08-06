@@ -1,0 +1,192 @@
+schema_version: agent-ops-owner-gate-v1
+kind: owner-gate
+synthetic: false
+gate_id: AOG-AO-0012-R7-PUBLIC-CALIBRATION
+task_contract:
+  path: tasks/treasurebench-open-weight-cloud-runtime-r7.yml
+  sha256: sha256:cb9fdb8062a9c4be3a4302d4599d8a2f5811bba75ca17d368738544a094fb106
+issue: 212
+pull_request:
+  number: 213
+  expected_state: OPEN
+  head_sha: bf79d688a673d0752cce694901e79bcc00d9bc7b
+branch: agent/treasurebench-open-weight-cloud-runtime
+commit: bf79d688a673d0752cce694901e79bcc00d9bc7b
+tree_hashes:
+  Makefile: sha256:4eb4088c63ddaef05dfd999b93a55610f02c969956aa8c23fabbce8f4618fe62
+  pyproject.toml: sha256:6064f6b622ae24bb3341310a6a6d4a2017884d9596dab47e12cc334b8c6d882b
+  uv.lock: sha256:0766c91477cdc28e1ed36ec7bcd60669ed6e80fd0a6f55892bc8fba2c57a3588
+  tasks/treasurebench-open-weight-cloud-runtime.yml: sha256:7da149cfc4358a5fe78145424ee247cec87cb19757173862909741abffa40356
+  tasks/treasurebench-open-weight-cloud-runtime-r2.yml: sha256:937ce13a47a708d7f3c5258cb6158bb88f378ae2d8023b219342a96ea2a4d5cb
+  tasks/treasurebench-open-weight-cloud-runtime-r3.yml: sha256:3543f1dd058679bf1b6d2647d4e4a4f384e9bd1334cb12dad016bf9604c49d6c
+  tasks/treasurebench-open-weight-cloud-runtime-r4.yml: sha256:1a44164e2f403eb2f17fb65e98977fdae82e7eaf141b444a800eb35d6a1b3609
+  tasks/treasurebench-open-weight-cloud-runtime-r5.yml: sha256:6f4494b82cc5043dccf439de54b1e7e661826efc654c26f83df322d06b1b80b9
+  tasks/treasurebench-open-weight-cloud-runtime-r6.yml: sha256:b8c2fdc995584fb9071ee87fb9393393f14fe2be9e3210274ae7aef91f36f0e1
+  tasks/treasurebench-open-weight-cloud-runtime-r6b.yml: sha256:1d674296b8441015724565bd884e85c1d5e901354adb35e14c4ccebcedf8ef92
+  tasks/treasurebench-open-weight-cloud-runtime-r7.yml: sha256:cb9fdb8062a9c4be3a4302d4599d8a2f5811bba75ca17d368738544a094fb106
+  plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md: sha256:eaa774b1f2b8c330976875569a58ddd350f26e652231cc736661c5f8c4b475ba
+  plans/MASTER_EXEC_PLAN.md: sha256:89be0474efac3578d2a04446ce044aca92999d329423dae93af15b18e1271e05
+  docs/program-memory/registry.yml: sha256:b3d4e7b8591d12de8ac2ba06e5262ebc924609235be4c9d16ae745d9125af2ab
+  docs/agent-ops: sha256:fe94862b1b7cad4d472a9e7b3e25749c7311986ec062a4040e8031621ab190f1
+  src/distributed_discovery/agent_ops: sha256:84a44c60d7c7a6a159c8beb5cfb8bc25b19bcae8992c1781fa396225d9f11376
+  scripts/audit_agent_ops.py: sha256:336d9e0735f8fe2acc93268053d09f3af4089f189c582882eac084dd607bca29
+  docs/benchmark/agents-v1/open-weight-runtime-definition.yml: sha256:53cf734782afd6e115781291578d723040f104f7633d76c7c2440b9337c34ca4
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-manifest.yml: sha256:eeb5b90ffd396c99b1ae2b6896c791e01f177c019580c51cc40b622a35d426c8
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-manifest-r2.yml: sha256:eb99c2023d65a4e474505319f62f3426166f25355708efe6e97f0f3bb7a66832
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-manifest-r4.yml: sha256:aaa8da20f2812c3d30a3bc1e6f79090e8ca67cef6c2fc811784ab6ac88fb6c86
+  docs/benchmark/agents-v1/open-weight-provider-outcome-policy-v3-extension.yml: sha256:8790b7c60e3ce0b1fdbfdf2dcab58929794708a1b02f346a7e1c9be463e58e8b
+  docs/benchmark/agents-v1/protocol-validity-policy-v2.yml: sha256:884708e8da7b3a7f763094dc274f7f792e45b71f560dc5bb60f6d7c0e9cdbb3e
+  docs/benchmark/agents-v1/provider-outcome-policy-v3.yml: sha256:6bbb86b6c6b7cb9c8fa346e8b629361e8acedeb9ae2b95b64ad52a580d1f8c50
+  docs/benchmark/agents-v1/open-weight-public-calibration.yml: sha256:f34411fc638a96e39fe7068fe18bb52c325769f97c15e49ab72bc2f0e65f084d
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions.yml: sha256:f26eb195a0d077896b2945cfdbd974b87281928f725dc8bfac69aa109d2f3306
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r2.yml: sha256:156db0ade3c58e2775a726476b716f4175ce9fbc9c7cf5b23a06f4d69b35205e
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r3.yml: sha256:83fec43606f60b7fa296250cf19c827b11948ab91a7af5ae501221c47d526c03
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r4.yml: sha256:71d9afdda56df8f9558ff5203e869a1b2240d4cd14e34037a6ae6437384c06ec
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r5.yml: sha256:c82004b2df767a7f8258c97db5bce02e7702d020599b9630dc46aa1a2fd98167
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r6.yml: sha256:efd7174ea6ca88eaad4dcb7120c9f047e1b4287c7465b632629232d434b1d309
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r7.yml: sha256:069e71cd38181bf42feca257465abeb63432cd56d6230441eb68ed3e684df301
+  docs/benchmark/agents-v1/open-weight-public-calibration-outcome-r2.schema.json: sha256:6e0a1bccb4db509e1fa6ad57ea1342cf5c4267e65352c7f669f0bab92b68477f
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-feasibility.yml: sha256:2fe819c6bacb2ea1e0b8912aed11aca67cbbf04f550376a858c1b6c5c337ab31
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-r2-preauthorization-audit.yml: sha256:dcab8873b5064dc79dcbd4c18fbfda56babeeca7066242405bbb8df3f6c7bf51
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-r3-api-contract-audit.yml: sha256:064f150687591f0c50aed18c1a5c355c701b381df0bbafcdf64812b81c6c6b25
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-r4-api-contract-audit.yml: sha256:34f6caa4f7820e5f654628c4936069c6f3213c47cb8d6926e7294b700163399d
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-r5-control-plane-postmortem.yml: sha256:2881b6f05d91befcaef2b3964f1ad8e62aeb6d0604ad99e6fdfe4064a9358bf1
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-r5-generic-gate-compatibility-audit.yml: sha256:f4d8f12ac943a94157446e4b9f63eb25fb8016cdf176d0b50ac33fa0872379ca
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-r6-cleanup-gate-audit.yml: sha256:3af74270113093c9e86c11cee5edfe4bac7b2872ecb271a880f3c6f18fb30cda
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-r6b-gate-compatibility-audit.yml: sha256:801e363b99b5966f4328841fe6301f5b06d6c9c46bcb53a8b7fda1bf63855fa6
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-r7-calibration-gate-audit.yml: sha256:3d5f6c1c4a491f5baa42fd677284c8d47e461c340bc3a55f50abbd2eb4f9e571
+  reports/benchmark/treasurebench-open-weight-secret-cleanup-outcome-r6.yml: sha256:9d5a5ad89db26737c2d28615b3f5648f35fb4c7ed2bf6182bbd1c83fc20be115
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-decision.yml: sha256:d00cd733ea5abd34dbf7665ce622a02e92b671a36117f9ea9f9177ed3b09d824
+  reports/benchmark/treasurebench-open-weight-public-calibration-outcome-r4.yml: sha256:174885b759789a8723b9c6aea2e333fd055473c30e729712a63f9dd7b21c9aa0
+  reports/benchmark/treasurebench-open-weight-public-calibration-outcome-r5.yml: sha256:6857ad6b6d341f85b47c5f53af2c8dd6354aa71f06a0597a09d06e8636596743
+  reports/agent-ops/AO-0012-open-weight-public-calibration-r5-owner-gate.yml: sha256:56b7cf31c25999620750ea1bbfef76dc453d1ed959b334479ba3b007db7bf6a9
+  reports/agent-ops/AO-0012-r5-live-hard-stop-handoff.yml: sha256:dc62fb96786ffb68a491c8ad10a9363c3d2eaa1aa032270e12dd0f0a0433394f
+  reports/agent-ops/AO-0012-runpod-secret-status-cleanup-r6-owner-gate.yml: sha256:c5d8930923836857f0b91f93496fd24d8b323c4e9703e586ba3c7a1d1826641a
+  reports/agent-ops/AO-0012-runpod-secret-status-cleanup-r6b-owner-gate.yml: sha256:c0be579c8c2fe060c0cfb47479f745b10c156469be3c79c1b0e09c9cebb54183
+  reports/agent-ops/AO-0012-r6b-owner-gate-required-handoff.yml: sha256:33047216302a6472978ff987567532f51a10095d7091951d04d5322731862758
+  scripts/audit_treasurebench_open_weight_cloud_runtime.py: sha256:9e4cd5b723aeded22da18a9fd8298c5d488c7c52aabbe4e0342a4c2456853139
+  scripts/treasurebench_open_weight_proxy_r2.py: sha256:6e3c2f413b917b8bb66acb88308bd43c355af7f77e7f82ab9f8386de0a4868b5
+  scripts/treasurebench_open_weight_runtime_start_r2.sh: sha256:8e78d39415f3ad978d5ed394a5b7eb81b61bbb87a2a9d7c7acd9c39218119ff8
+  scripts/treasurebench_open_weight_proxy_r4.py: sha256:4bc5d3beb7f2ddc43b6ac89b5f795ccf0dab6c98894edf14cb67d79a1b25c575
+  scripts/treasurebench_open_weight_runtime_start_r4.sh: sha256:0305f08ccd50c9b31b1722a7d3dff2407d341126052ef3fcafdefab9c79199cb
+  scripts/treasurebench_open_weight_watchdog_r4.py: sha256:f893d15062db57ea11a640b0f51a99498175b162aca91879e93c62008a746bc6
+  src/distributed_discovery/benchmark/agents_v1/live_inputs.py: sha256:f8723dc1f64993fe851abcd4185bbdd28df695dcc0de2acb06b48f848d5435ad
+  src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime.py: sha256:1640b27527da0709bdff977a09d89590909e12fc741324d673275fe4ec8c1d3d
+  src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r2.py: sha256:b417162051e721db689bbd2de49f2a899074e48032fb0d7af5485223983e282f
+  src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r3.py: sha256:ec94fe6b13338b75e28457c3b3592897c85fa63e8e1c81a4b537ec569877b794
+  src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r4.py: sha256:a6d1153a2d5940920ea590a3b93434749411c81a86b896a85bfac25202a00710
+  src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r5.py: sha256:2daaa9f9e3aca73633c1e13648d3e4cfa4e74d2559e4ddafa9d085bc41867f86
+  src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r6.py: sha256:45ee4c7854ee314e4b717ba692722803ab2b6a0825aec710a951f3f6a471b64e
+  src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r7.py: sha256:ece5b4a9075e7695f6462d4d6c7ee562ec5862c5b5077b2d56c3b417633e13ca
+  tests/test_treasurebench_open_weight_cloud_runtime.py: sha256:2d524140d23b81a0465f06d99581e50615fa483dc759113604f024912615573b
+  tests/test_treasurebench_open_weight_cloud_runtime_r2.py: sha256:d70894687f8b1e00d6daa8ed6e95ee5ed8ab4e937e6e442ef57d80f9e88f42ac
+  tests/test_treasurebench_open_weight_cloud_runtime_r3.py: sha256:0a13e0f006433b105185cd39d71b7623025a9847c653482a4ea94d5c6c8ad7e6
+  tests/test_treasurebench_open_weight_cloud_runtime_r4.py: sha256:5d5007d6f7e0781a1a321724317c9f81f7779024f5d35ec014e89c5c2c04303a
+  tests/test_treasurebench_open_weight_cloud_runtime_r5.py: sha256:75598e8163b9656976b4fbd78183c742ee8e9a975d5f8315a508c7a883bc12a8
+  tests/test_treasurebench_open_weight_cloud_runtime_r6.py: sha256:eccafe4bc55231ddd599cdd1c7336019e8db893b0ad4a825bf0ee626311f4dc7
+  tests/test_treasurebench_open_weight_cloud_runtime_r7.py: sha256:f68a75c734111ddb2e280cfebc79e0a3aebe6f6b83076d006241e7fff4462e56
+  tests/unit/test_agent_ops.py: sha256:d24ff46cebe8fb6ce0a43a4777a5f37d86560fbd450e89a2ed9c15f3673a3eee
+  studies/DD-010-discoverybench/README.md: sha256:3fe6b811748e5be8321212f0eb7d3ed20ccc6d01410ee7989a23b626b9e072e5
+  studies/DD-010-discoverybench/plan.md: sha256:f4d0e9db720b7759ac82f376351407358a39fc19cdca6dc25628ae17a7c2f95e
+  studies/DD-010-discoverybench/status.yml: sha256:c92312f296e7633c2f613e21489ff632df471c9f0aacb4791758464b3271407d
+purpose: Authorize only one fresh public engineering calibration of the exact open-weight self-operated cloud runtime under the R7 namespace and tighter caps, followed by normal or honest bounded-failure closeout.
+irreversible_actions:
+- permission: external_action_permissions.spend
+  description: Spend at most USD 10 for one exact RunPod Secure Cloud A100 Pod and its disposable encrypted storage.
+- permission: permissions.merge_after_checks
+  description: Mark PR 213 ready and squash-merge only after exact teardown, billing, public-safe closeout, validation, and required checks.
+- permission: permissions.ci_pages
+  description: Permit normal post-merge CI and Pages followed by named public-safe route verification.
+private_actions:
+- permission: private_data_permissions.read
+  description: After exact R7 validation, load only RUNPOD_API_KEY and HF_TOKEN from repository-root .env.txt through the strict exact-subset loader.
+- permission: private_data_permissions.generate
+  description: Generate only one short-lived endpoint bearer and one runtime-attestation HMAC key for the fresh R7 namespace.
+- permission: private_data_permissions.write
+  description: Transmit short-lived values only through official RunPod Secrets and keep the endpoint bearer only in a mode-0600 disposable /run file.
+external_actions:
+- permission: external_action_permissions.network_observation
+  description: Revalidate public GitHub, exact new R7 provider lifecycle, billing, checks, Pages, and named public-safe routes.
+- permission: external_action_permissions.provider_calls
+  description: Use only the frozen RunPod inventory, three new R7 Secrets, one template, one encrypted REST Pod, billing, and exact public Hugging Face artifact download surfaces.
+- permission: external_action_permissions.spend
+  description: Spend only within USD 10 total, six GPU-hours, USD 1.50 per GPU-hour, and 400 inference calls.
+- permission: permissions.repository_write
+  description: Write only one public operational calibration or bounded-failure outcome, one permitted decision, and public-safe closeout records.
+- permission: permissions.git_branch_commit
+  description: Commit and push only the authorized public-safe closeout on the registered branch.
+- permission: permissions.github_issue_pr
+  description: Update PR 213 and close issue 212 only after the complete authorized verification sequence succeeds.
+- permission: permissions.merge_after_checks
+  description: Mark ready and squash-merge only after exact teardown, billing, validation, and required checks.
+- permission: permissions.ci_pages
+  description: Observe post-merge CI and Pages and verify named public-safe routes.
+cumulative_state:
+  currency: USD
+  spend: '0'
+  calls: 0
+  category_spend: {runpod_gpu_compute_and_storage: '0'}
+hard_caps:
+  currency: USD
+  spend: '10'
+  calls: 400
+  category_spend: {runpod_gpu_compute_and_storage: '10'}
+remaining_caps:
+  currency: USD
+  spend: '10'
+  calls: 400
+  category_spend: {runpod_gpu_compute_and_storage: '10'}
+owner_confirmation_statements:
+- I authorize only AO-0012 R7 at execution commit bf79d688a673d0752cce694901e79bcc00d9bc7b, issue 212, open draft PR 213, the additive R7 contract, registered branch, 76-path protected tree, exact runtime identity, actions, caps, prohibitions, and expiry in this manifest; every R1-through-R6b gate remains superseded, consumed, failed, or immutable and nonreusable.
+- I understand the current owner-observed empty RunPod mobile Secrets tab is UI evidence only, not API or historical proof; R7 may perform only the frozen account inventory needed to reject conflicts for its fresh authorization-derived ao0012-owcal-r7 names and must not target, select, delete, or retry cleanup of ao0012-owcal-r5-01b41c9aa04bf2a4-hf.
+- I understand the owner-observed USD 200 account balance is not spending authority; expected R7 spend is USD 3 and hard limits are USD 10 total, USD 1.50 per GPU-hour, 21,600 GPU seconds, and 400 inference calls.
+- I require bounded unauthenticated public GitHub issue/PR GETs plus exact git ls-remote, ancestry, clean tracked worktree, protected hashes, zero R7 calls/spend/state, and no exact new-namespace conflict before repository-root .env.txt may return only RUNPOD_API_KEY and HF_TOKEN.
+- I authorize GraphQL query-key authentication only for new R7 inventory and three temporary Secrets and REST Bearer authentication only for one template, one encrypted Pod create/get/delete, and billing; authenticated URLs, keys, headers, bodies, prompts, and outputs remain redacted.
+- >-
+  I authorize one encrypted REST Pod create only: Secure Cloud dedicated
+  noninterruptible, one NVIDIA A100 80GB PCIe at no more than USD 1.50/hour,
+  allowed CUDA 13.0, exact immutable container/template, 50-GB container disk,
+  120-GB encrypted disposable /workspace volume, US placement, no network
+  volume, alternate identity, fallback, or second create.
+- I require the controller finalizer plus Pod-resident six-hour exact-self-delete watchdog, ambiguous-create reconciliation, exact Pod/volume/new-Secret/template deletion verification, positive exact billing including returned storage charges, and hard-stop no-merge behavior on every ambiguity.
+- I authorize only docker.io/vllm/vllm-openai Linux/amd64 digest sha256:3a1e7f5904e1a1192a02aa0086ceaffc33985d7044c7bb25b3a43d61bdbe3ac0, vLLM 0.23.0, mistral-common at least 1.11.3, and exact measured GPU/driver/CUDA/toolkit/PyTorch/package/artifact/startup/load/watchdog attestation.
+- I authorize only mistralai/Mistral-Small-3.1-24B-Instruct-2503 revision 68faf511d618ef198fef186659617cfd2eb8e33a, original unquantized BF16 consolidated.safetensors SHA256 d446ca97599fa9d98b2e3744d8b83019837a2fe34a80f4353120b1e9b6249b1e, and Tekken tokenizer SHA256 c604f35d1035f534519622c0ec83fed6184978d4fdee92a5bd2a50bc05438094, with no quantization, sharding, second GPU, managed endpoint, router, or model-provider API.
+- I authorize exactly ten frozen public tasks, five architectures, one repeat, 50 intended pairings, protocol-validity policy v2 and provider-outcome v3 extension, Methods A/B/C, independent bounds, no semantic retry or hidden fallback, and operational-only reporting with no performance comparison.
+- I require success or every bounded failure to stop dispatch, finalize all new R7 resources, reconcile billing and caps, write one schema-valid redacted outcome and permitted decision, and keep PR 213 and issue 212 open on any teardown, deletion, billing, identity, watchdog, retention, leakage, or integrity ambiguity.
+- I authorize the same session after normal or honest bounded-failure closeout to run full validation and, only if every closeout condition passes, mark PR 213 ready, squash-merge after checks, verify post-merge CI/Pages and named routes, close issue 212, synchronize main, and return one final handoff.
+- I understand no DD-023, scientific run, private task, base campaign, performance publication, paper, release, DOI, arXiv, journal, or submission is authorized.
+- I understand the generic owner-gate engine writes only one mode-0600 R7 authorization outside Git and itself reads no .env.txt, calls no provider, creates no resource, downloads no model, runs no inference, and spends nothing.
+explicit_prohibitions:
+- provider-calls-outside-manifest
+- credential-read-outside-manifest
+- unauthorized-private-access
+- scientific-mutation-outside-contract
+- cap-increase
+- consequential-action-by-gate-engine
+- authorization-or-gate-r1-through-r6b-reuse-reactivation-overwrite-or-replay
+- r5-secret-targeted-status-query-selection-delete-cleanup-retry-or-historical-absence-claim
+- account-balance-as-spend-authority-or-cap-above-usd-10
+- hourly-rate-above-usd-1-50-runtime-above-21600-seconds-or-more-than-400-inference-calls
+- raw-secret-provider-body-pod-log-header-authenticated-url-prompt-output-or-host-path-publication
+- raw-secret-in-pod-env-template-provider-config-process-environment-or-workspace
+- long-lived-secret-template-pod-volume-endpoint-or-unattended-gpu
+- graphql-rest-dual-authentication-or-wrong-authentication-surface
+- namespace-conflict-multiple-match-second-create-or-ambiguous-create-continuation
+- missing-late-unverified-or-disarmed-pod-resident-watchdog
+- exception-after-possible-pod-bypassing-finalizer-deletion-verification-or-billing
+- moving-model-moving-container-hidden-substitution-fallback-quantization-sharding-second-gpu-alternate-model-or-hardware
+- managed-model-endpoint-routed-model-api-openrouter-or-model-provider-api-call
+- manifest-echo-as-measured-attestation-or-mistral-common-below-minimum
+- unauthenticated-endpoint-public-prompt-output-log-semantic-retry-hidden-repair-or-replacement
+- protocol-invalid-or-runtime-missing-drop-observed-validity-threshold-or-performance-publication
+- nonpositive-inexact-or-storage-omitting-billing
+- teardown-new-secret-template-pod-volume-or-billing-ambiguity-merge-or-issue-close
+- prior-campaign-authorization-ledger-output-lock-private-root-read-unseal-mutation-or-reuse
+- private-task-answer-seed-holdout-dd-023-claim-scientific-run-base-allocation-or-base-campaign
+- paper-release-doi-arxiv-journal-submission-or-pages-outside-normal-main-workflow
+- pr-ready-or-merge-before-exact-closeout-validation-and-checks
+- issue-close-before-post-merge-ci-pages-and-named-route-verification
+expires_at_utc: '2026-08-20T23:59:59Z'
+authorization_output_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0012-R7-PUBLIC-CALIBRATION.yml
+next_milestone: R7 owner-authorized one-session public-only calibration or honest bounded-failure closeout, exact new-resource deletion and billing, one permitted decision, validation, PR merge only after checks, post-merge route verification, issue closure, main synchronization, and final handoff.
+generated_resume_message: 'Resume AO-0012 in this same repository from plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md, issue #212, branch agent/treasurebench-open-weight-cloud-runtime, draft PR #213, and only the exact R7 gate/authorization. Revalidate public GitHub/Git, execution ancestry, 76 protected paths, zero R7 state/spend/calls, and the fresh namespace; use account inventory only to reject fresh R7 conflicts and never target, select, or mutate the R5 namespace. Then load only RUNPOD_API_KEY and HF_TOKEN from repository-root .env.txt and run make treasurebench-open-weight-runtime-r7-live. Continue normal or honest bounded-failure closeout through the exact A100 runtime, 50 public pairings, finalizer/watchdog, new-resource deletion, billing, USD 10/six-hour/400-call caps, redacted decision, validation, and conditional PR/CI/Pages/issue closeout. Stop on any authority, identity, credential, namespace, resource, rate, watchdog, retention, teardown, billing, managed-fallback, scientific, or publication ambiguity.'

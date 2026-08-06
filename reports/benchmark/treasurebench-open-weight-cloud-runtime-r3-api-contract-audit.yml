@@ -1,0 +1,124 @@
+schema_version: treasurebench-open-weight-cloud-runtime-r3-api-contract-audit-v1
+task_id: AO-0012
+status: authorization-free-api-contract-correction-complete
+audited_at_utc: '2026-08-02T07:25:58Z'
+supersedes_unused_r2:
+  contract: tasks/treasurebench-open-weight-cloud-runtime-r2.yml
+  gate_id: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R2
+  authorized_or_consumed: false
+  reason: R2 used Authorization Bearer on the bare GraphQL endpoint and minCudaVersion in PodFindAndDeployOnDemandInput; the current official GraphQL guide documents api_key query authentication and allowedCudaVersions for Pod CUDA filtering.
+preserved_identity:
+  runtime_identity: treasurebench-mistral-small-3.1-24b-bf16-vllm-0.23.0-a100-80gb-pcie-r1
+  provider: RunPod
+  product: Secure-Cloud-dedicated-noninterruptible-Pod
+  gpu: NVIDIA-A100-80GB-PCIe
+  gpu_count: 1
+  model_revision: 68faf511d618ef198fef186659617cfd2eb8e33a
+  weight_format: original-unquantized-BF16
+  vllm_version: 0.23.0
+  container_digest: sha256:3a1e7f5904e1a1192a02aa0086ceaffc33985d7044c7bb25b3a43d61bdbe3ac0
+  calibration:
+    public_tasks: 10
+    architectures: 5
+    repeats: 1
+    intended_pairings: 50
+  caps:
+    gpu_hours: 6
+    calls: 400
+    expected_usd_under: 10
+    hard_usd: 20
+graphql_transport:
+  base_url: https://api.runpod.io/graphql
+  authentication: query-parameter-only
+  parameter: api_key
+  encoding: urllib.parse.quote-safe-empty-UTF-8-percent-encoding
+  authorization_header: false
+  content_type: application/json
+  operations:
+  - inventory-myself-pods-podTemplates-secrets
+  - secretCreate
+  - secretDelete
+  - podFindAndDeployOnDemand
+  redaction: fixed-GraphQL-operation-class-and-HTTP-status-only; no-key-URL-query-header-response-or-provider-body
+rest_transport:
+  base_url: https://rest.runpod.io/v1
+  authentication: Authorization-Bearer-header-only
+  api_key_query_parameter: false
+  operations:
+  - template-create
+  - template-delete
+  - Pod-delete
+  - Pod-lookup
+  - Pod-billing
+  redaction: fixed-REST-operation-class-and-HTTP-status-only; no-key-Authorization-response-or-provider-body
+pod_find_and_deploy_input:
+  supported_frozen_fields:
+  - name
+  - cloudType
+  - gpuCount
+  - gpuTypeId
+  - allowedCudaVersions
+  - templateId
+  - containerDiskInGb
+  - volumeInGb
+  - volumeMountPath
+  - countryCode
+  - startSsh
+  - supportPublicIp
+  - terminateAfter
+  exact_values:
+    cloudType: SECURE
+    gpuCount: 1
+    gpuTypeId: NVIDIA A100 80GB PCIe
+    allowedCudaVersions:
+    - '13.0'
+    containerDiskInGb: 50
+    volumeInGb: 120
+    volumeMountPath: /workspace
+    countryCode: US
+    startSsh: false
+    supportPublicIp: false
+    terminateAfter: authorization-start-plus-six-hours
+  prohibited_fields:
+  - minCudaVersion
+  - cudaVersion
+  - unregistered-CUDA-field
+  template_id: exact-authorization-bound-temporary-private-template-ID
+  terminate_after_support: current GraphQL schema exposes PodFindAndDeployOnDemandInput.terminateAfter as DateTime
+preserved_r2_controls:
+- repository-root strict exact-subset credential ingress
+- temporary RunPod Secret and private template lifecycle
+- authorization-bound namespace and ambiguous-create reconciliation
+- native six-hour terminateAfter plus unconditional local finalizer
+- in-Pod credential minimization
+- measured HMAC runtime attestation
+- success and bounded-failure teardown and exact billing
+- redacted operational-only reporting and no-merge-on-ambiguity
+- one-session public calibration and administrative closeout authority after later exact authorization only
+official_primary_sources:
+- url: https://docs.runpod.io/sdks/graphql/configurations
+  supports: GraphQL endpoint with api_key query parameter and content-type only example
+- url: https://docs.runpod.io/sdks/graphql/manage-pods
+  supports: podFindAndDeployOnDemand allowedCudaVersions list and query-parameter authentication examples
+- url: https://graphql-spec.runpod.io/
+  supports: PodFindAndDeployOnDemandInput supported fields including allowedCudaVersions and terminateAfter
+- url: https://docs.runpod.io/api-reference/templates/POST/templates
+  supports: REST template creation with Authorization Bearer
+- url: https://docs.runpod.io/api-reference/pods/GET/pods
+  supports: REST Pod inventory and Authorization Bearer
+- url: https://docs.runpod.io/api-reference/pods/GET/pods/podId
+  supports: REST Pod lookup and Authorization Bearer
+- url: https://docs.runpod.io/api-reference/pods/DELETE/pods/podId
+  supports: REST Pod deletion and Authorization Bearer
+- url: https://docs.runpod.io/api-reference/billing/GET/billing/pods
+  supports: REST billing and Authorization Bearer
+limitations:
+- The GraphQL schema exposes minCudaVersion as an available field, but R3 deliberately freezes the current guide's exact allowedCudaVersions list and rejects minCudaVersion; no claim is made that the schema field is nonexistent.
+- Secrets sent to secretCreate necessarily transit the authenticated GraphQL request; R3 controls redaction, lifetime, provider configuration, and deletion but does not claim the infrastructure provider cannot observe its own control plane.
+- R3 does not change the accepted R2 volume-encryption observation limitation, infrastructure trust boundary, runtime identity, or scientific boundary.
+external_state_changed: false
+credential_read: false
+provider_call: false
+model_download: false
+gpu_provisioned: false
+spend_usd: '0'

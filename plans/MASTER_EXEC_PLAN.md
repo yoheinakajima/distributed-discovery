@@ -1,5 +1,256 @@
 # Master execution plan
 
+## Active R7 continuation — AO-0012 public open-weight calibration gate (2026-08-05)
+
+R6b was validly authorized once and consumed by a fail-closed
+`inventory-ambiguity` result after one authenticated query, with no deletion,
+model, Pod, inference, or spend. On 2026-08-05 the owner subsequently observed
+the RunPod mobile Secrets tab empty. That is current UI evidence only: it is
+not API proof, historical proof, or proof across every account or team scope.
+The prior provider response remains unreconstructable, and no further R5
+Secret query, deletion, or cleanup retry is planned without a supported exact
+lookup surface.
+
+The owner also observed a USD 200 RunPod balance. The balance is not spending
+authority. Additive R7 contract
+`tasks/treasurebench-open-weight-cloud-runtime-r7.yml` prepares the unchanged
+public-only 50-pairing runtime under a new authorization-derived R7 namespace,
+current official USD 1.39/hour A100 PCIe pricing, a USD 1.50/hour acceptance
+ceiling, USD 3 expected spend, USD 10 hard cap, six GPU-hours, and 400 inference
+calls. Preparation is local and public-source-only and must stop at unconsumed
+gate `AOG-AO-0012-R7-PUBLIC-CALIBRATION`.
+
+## Active R6 gate-compatibility repair — AO-0012 exact Secret cleanup (2026-08-05)
+
+The first R6 cleanup gate remains immutable and unused. Its 55-character ID
+passed the then-current owner-gate schema, but the generic authorization writer
+failed closed because the owner-authorization schema admits at most 53
+characters. No authorization, consumption marker, credential read, provider
+operation, resource query or mutation, inference call, or spend occurred. The
+supplied challenge is not reusable.
+
+The additive R6 compatibility contract narrows the owner-gate ID rule to exact
+parity with the unchanged owner-authorization rule and freezes shorter gate
+`AOG-AO-0012-R6-RUNPOD-SECRET-CLEANUP`. Cleanup semantics remain identical:
+only `RUNPOD_API_KEY`, one Secrets inventory, conditional deletion only of the
+unique exact `ao0012-owcal-r5-01b41c9aa04bf2a4-hf` target, one verification,
+three authenticated operations maximum, zero spend, and zero inference. This
+preparation may commit and push validation records but must stop before creating
+an authorization or contacting RunPod.
+
+## Active R6 continuation — AO-0012 exact R5 Secret status and cleanup (2026-08-05)
+
+R5 is consumed and cannot be rerun. Repository execution order plus the absent
+R5 lifecycle state proves that the only possible provider resource is
+`ao0012-owcal-r5-01b41c9aa04bf2a4-hf`; whether that Secret exists and whether
+the stop originated in conflict inventory or the first Secret create remain
+ambiguous. No later Secret, template, Pod, model, endpoint, inference, billing,
+or spend path was reachable.
+
+Under the explicit R6 amendment, authorization-free work may correct the stale
+README, preserve this proof, add synthetic early-stop regressions, and freeze a
+new generic gate. A later exact R6 authorization may load only
+`RUNPOD_API_KEY`, issue one RunPod Secrets inventory query, conditionally
+delete only one unique exact target, issue one verification query, and stop.
+The cap is three authenticated operations and zero spend. R6 cannot contact
+Hugging Face, inspect or mutate Pods/templates/billing, run calibration or
+inference, mark PR #213 ready, merge, close issue #212, or publish. That lane
+stopped at the immutable long-ID gate; its later authorization-write failure is
+preserved by the additive compatibility repair above.
+
+## Active R5 live hard stop — AO-0012 RunPod control boundary (2026-08-05)
+
+The exact R5 owner gate was authorized once. The exact live command passed all
+public GitHub/Git, authorization, protected-tree, cap, and credential-ingress
+checks, then made authenticated RunPod control-plane calls. It stopped before
+Pod creation, model download, endpoint startup, inference, or spend. No Pod,
+template, or Secret ID was returned and no local lifecycle state file exists,
+but the finalizer could not prove the authorization-derived temporary Secret
+namespace absent.
+
+The permitted decision is
+`self-operated-control-boundary-failed-managed-api-rejected`; PR #213 remains
+draft and issue #212 remains open. The R5 authorization is consumed and cannot
+be rerun. Exact-namespace status inspection or cleanup, protected-source
+repair, refreeze, or another live attempt requires a new explicit owner
+direction and prospective gate. No DD-023, scientific, private, base-campaign,
+performance, paper, release, DOI, or submission authority was created.
+
+## Active R5 continuation — AO-0012 generic-gate compatibility (2026-08-04)
+
+R4 was validly authorized once and consumed by the recorded pre-ingress
+`KeyError: 'budget'` hard stop. It may never be reused. Under the explicit R5
+amendment, AO-0012 changes only its task-specific authorization adapter to
+consume the generic owner gate's exact `cumulative_state`, `hard_caps`, and
+`remaining_caps` mappings. No legacy gate `budget` fallback is accepted and
+the generic Agent Operations engine is unchanged.
+
+The entire R4 runtime identity and lifecycle remain fixed. Authorization-free
+R5 work may add the forward adapter, real-writer regressions, corruption and
+audit records, full validation, execution/protected-tree refreeze, and one
+unconsumed gate
+`AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R5`. It authorizes no credential
+read, provider action, resource, model download, inference, spend, private or
+scientific action, performance publication, merge, or issue closure.
+
+## Active R4 live hard stop — AO-0012 authorization adapter integrity (2026-08-04)
+
+The exact R4 owner gate was authorized once. The exact live command then
+stopped before `.env.txt` ingress because the protected runtime expected a
+nonexistent owner-gate `budget` mapping instead of the generic gate's
+`cumulative_state`, `hard_caps`, and `remaining_caps`. No credential, provider
+control plane, RunPod resource, model download, endpoint, inference call, or
+spend occurred; the local lifecycle state path is absent and there is no
+teardown or billing ambiguity.
+
+The permitted decision is `calibration-integrity-failure-stop`. The attempted
+R4 authorization cannot be reused. PR #213 remains draft and issue #212 remains
+open. Any additive validator repair, protected-tree refreeze, new gate, or live
+retry requires an explicit owner amendment; no DD-023, scientific, private,
+base-campaign, performance, paper, release, DOI, or submission authority was
+created.
+
+## Active R4 continuation — AO-0012 public preflight and encrypted REST Pod (2026-08-02)
+
+The unused R1, R2, and R3 gates remain unauthorized and superseded. AO-0012
+continues under issue #212, draft PR #213, the same branch and living ExecPlan,
+and additive contract `tasks/treasurebench-open-weight-cloud-runtime-r4.yml`.
+The model, tokenizer, vLLM, immutable container, one Secure Cloud A100 80GB
+PCIe, public 50-pairing calibration, measured attestation, finalizer, billing,
+and caps do not change.
+
+R4 replaces authenticated `gh` preflight calls with public unauthenticated
+issue/PR REST GETs and exact `git ls-remote` head verification before
+repository-local credential ingress. It replaces GraphQL Pod creation with the
+documented REST Pod-create operation and an exact body requiring encrypted
+120-GB disposable storage, no network volume, no public IP, one exact GPU, and
+the temporary private template. Both the create response and a fresh Pod GET
+must prove the requested storage and runtime boundary.
+
+The selected encrypted REST operation has no documented `terminateAfter`
+field. R4 therefore freezes an unconditional controller finalizer plus a
+Pod-resident six-hour deletion watchdog, accurately withholding any claim of a
+native RunPod terminate-after guarantee. GraphQL remains query-key-only for
+account inventory and temporary Secrets; REST remains Bearer-only for
+templates, Pod create/get/delete, and billing. No R4 authorization, real
+credential read, authenticated provider call, model download, Pod, GPU,
+endpoint, inference, private/scientific state, or spend exists. The
+authorization-free lane stops at
+`AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R4`.
+
+
+## Active R3 continuation — AO-0012 exact RunPod API contract correction (2026-08-02)
+
+The unused R1 and R2 owner gates remain unauthorized and are superseded. The
+same issue #212, draft PR #213, branch, living ExecPlan, runtime identity,
+model, engine, container, Secure Cloud A100 80GB hardware, public 50-pairing
+calibration, R2 lifecycle controls, and caps remain fixed under additive
+contract `tasks/treasurebench-open-weight-cloud-runtime-r3.yml`.
+
+R3 changes only the control-plane request contract: GraphQL operations use the
+documented URL-encoded `api_key` query parameter with no Authorization header;
+REST operations retain documented Bearer-header authentication with no
+`api_key` query parameter; and Pod creation uses
+`allowedCudaVersions: ["13.0"]` with no `minCudaVersion` or other guessed
+CUDA field. The current GraphQL schema still exposes `terminateAfter`, so the
+six-hour server-side backstop remains. No R3 authorization, real credential
+read, authenticated provider action, model download, Pod, GPU, endpoint,
+inference call, private/scientific state, or spend exists. The authorization-
+free lane stops at
+`AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R3`.
+
+
+## Active R2 continuation — AO-0012 preauthorization safety repair (2026-08-01)
+
+The owner superseded only the unused AO-0012 R1 live surface and gate. The same
+issue #212, draft PR #213, branch, living ExecPlan, runtime identity, exact
+Mistral BF16 model/tokenizer, vLLM 0.23.0 container, one Secure Cloud A100 80GB,
+public 50-pairing calibration, and caps remain fixed. The additive R2 contract
+`tasks/treasurebench-open-weight-cloud-runtime-r2.yml` now governs.
+
+R2 loads only `RUNPOD_API_KEY` and `HF_TOKEN` from repository-root
+`.env.txt` after exact authority and zero-state checks; uses three temporary
+RunPod Secrets and one private template; scrubs credentials before vLLM and
+proxy launch; binds an authorization-derived resource namespace; freezes the
+documented `terminateAfter` server-side six-hour backstop; measures rather
+than echoes runtime facts; and sends every possible Pod through one teardown,
+temporary-resource deletion, billing, cap, and schema-valid redacted-outcome
+finalizer. The current documented GraphQL create input does not expose
+`volumeEncrypted`, so R2 requires both control-plane and Pod-scoped
+observations of encrypted disposable storage before any secret is written and
+fails closed otherwise.
+
+No R2 authorization exists. No real `.env.txt`, provider account, model
+artifact, GPU, endpoint, inference call, private state, scientific state, or
+spend has been accessed. R2 stops at
+`AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R2` after the corrected execution
+commit, protected trees, exact-head CI, and owner-gate validation are frozen.
+
+
+
+## Active continuation — AO-0012 open-weight self-operated cloud runtime (2026-07-31)
+
+Issue #212, branch `agent/treasurebench-open-weight-cloud-runtime`, fixed task
+contract `tasks/treasurebench-open-weight-cloud-runtime.yml`, and living
+ExecPlan `plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md` own the sole
+substantive lane as AO-0012.
+
+AO-0011 is complete and immutable: all 500 intended pairings received terminal
+classification, including 496 protocol-valid and four protocol-invalid
+pairings, zero provider-operational missingness, zero contract/safety failure,
+one recovered frozen five-second retry, and passing Methods A/B/C plus
+independent all-pairing bounds. Provider access and the v5 retained root are
+permanently closed. No DD-023, claim, scientific run, paper result, ranking,
+release, submission, or base-campaign authority exists.
+
+AO-0012 prospectively tests whether the registered third-model purpose can be
+satisfied by an **open-weight, self-operated cloud runtime**. The owner must
+control and verify the exact weights, tokenizer, inference engine, immutable
+container, configuration, prompts, sampling, retention boundary, and
+authenticated endpoint; the infrastructure provider supplies raw GPU compute.
+This supplies prospective model-family and serving-stack independence, not
+physical locality or complete infrastructure independence.
+
+The primary candidate is one RunPod Secure Cloud dedicated Pod with one NVIDIA
+A100 80GB, official unquantized BF16 weights for exact Mistral revision
+`68faf511d618ef198fef186659617cfd2eb8e33a`, pinned vLLM under official Mistral
+serving guidance, and a repository-controlled OpenAI-compatible adapter. If
+that exact single-GPU identity is infeasible, AO-0012 stops rather than
+quantizing, sharding, changing models, or changing GPU classes.
+
+All definition, official-source audit, manifest, startup, adapter, attestation,
+synthetic corruption, public-calibration design, acceptance, and draft-PR work
+must complete without credentials, model download, provisioning, endpoint
+launch, calls, or spend. The task then stops once at its committed generic
+owner gate. A later exact authorization may cover only ten public tasks, five
+architectures, one repeat, 50 intended pairings, one A100 80GB, six GPU-hours,
+400 inference calls, and USD 20 total. The task cannot allocate DD-023, alter
+the 200-slot base allocation, create private material, use a managed model API,
+publish performance, change a paper, or create a release or submission.
+
+The authorization-free package now completes the exact deterministic 50-pairing
+offline rehearsal in 294 synthetic calls with 50 terminal protocol-valid
+outcomes, zero missing or runtime failures, and agreeing Methods A/B/C plus 72
+primary and independent bounds. It also freezes exact post-teardown Pod billing
+reconciliation, DELETE-plus-absence verification, and the CUDA 13.0 Linux host
+minimum of driver 580.65.06. Execution commit
+`37162565b3a46e495a8764af4979e2a74b03a72f`, draft PR #213, the complete
+local wall, both exact-head CI checks, and all execution-sensitive tree hashes
+are frozen. The generic gate passes live validate-only checks without creating
+authorization. AO-0012 is stopped at the sole owner-gate-required checkpoint.
+
+The later additive R7 gate tightened the same public calibration to USD 3
+expected, USD 10 hard, USD 1.50/hour, six GPU-hours, and 400 inference calls
+under a fresh authorization-derived namespace. Its exact authorization was
+consumed once at execution commit
+`bf79d688a673d0752cce694901e79bcc00d9bc7b`. All local and public pre-ingress
+checks passed, but the authenticated whole-account inventory failed closed
+before any Secret, template, Pod, encrypted volume, model download, endpoint,
+inference, billing, or spend. The selected operational decision is
+`self-operated-control-boundary-failed-managed-api-rejected`; R7 is
+nonreusable, PR #213 remains draft, issue #212 remains open, and any diagnosis,
+provider query, repair gate, or retry requires a fresh explicit owner decision.
+
 ## Completed continuation — AO-0011 provider-outcome policy v3 and fresh pilot v5 R2 (2026-07-29)
 
 Issue #210, merged PR #211, branch

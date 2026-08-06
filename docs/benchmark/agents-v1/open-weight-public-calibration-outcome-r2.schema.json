@@ -1,0 +1,245 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "treasurebench-open-weight-public-calibration-outcome-r2.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "task_id",
+    "scientific_run",
+    "status",
+    "runtime_identity",
+    "model_identity",
+    "failure_class",
+    "decision",
+    "resource_ids",
+    "teardown",
+    "billing",
+    "operational_counts",
+    "projections",
+    "remediation",
+    "raw_provider_bodies_published",
+    "prompts_or_outputs_published",
+    "performance_values_published",
+    "merge_or_issue_close_allowed"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "treasurebench-open-weight-public-calibration-outcome-r2-v1"
+    },
+    "task_id": {
+      "const": "AO-0012"
+    },
+    "scientific_run": {
+      "const": false
+    },
+    "status": {
+      "enum": [
+        "public-calibration-operational-closeout",
+        "hard-stop"
+      ]
+    },
+    "runtime_identity": {
+      "type": "string"
+    },
+    "model_identity": {
+      "type": "string"
+    },
+    "failure_class": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "decision": {
+      "enum": [
+        "open-weight-self-operated-cloud-runtime-feasible-base-registration-next",
+        "open-weight-runtime-technically-feasible-budget-owner-decision-required",
+        "open-weight-runtime-feasible-but-bound-informativeness-gate-required",
+        "exact-bf16-runtime-infeasible-quantized-or-sharded-identity-gate-required",
+        "self-operated-control-boundary-failed-managed-api-rejected",
+        "calibration-integrity-failure-stop"
+      ]
+    },
+    "resource_ids": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pod",
+        "template",
+        "secrets"
+      ],
+      "properties": {
+        "pod": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "template": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "secrets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "teardown": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dispatch_stopped",
+        "pod_deleted",
+        "pod_unaddressable",
+        "disposable_volume_deleted",
+        "template_deleted",
+        "secrets_deleted"
+      ],
+      "properties": {
+        "dispatch_stopped": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "pod_deleted": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "pod_unaddressable": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "disposable_volume_deleted": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "template_deleted": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "secrets_deleted": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "billing": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "exact_amount_usd",
+            "billed_milliseconds",
+            "disk_space_billed_gb",
+            "record_count"
+          ],
+          "properties": {
+            "exact_amount_usd": {
+              "type": "string"
+            },
+            "billed_milliseconds": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "disk_space_billed_gb": {
+              "type": "string"
+            },
+            "record_count": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        }
+      ]
+    },
+    "operational_counts": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "projections": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "remediation": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "raw_provider_bodies_published": {
+      "const": false
+    },
+    "prompts_or_outputs_published": {
+      "const": false
+    },
+    "performance_values_published": {
+      "const": false
+    },
+    "merge_or_issue_close_allowed": {
+      "type": "boolean"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "merge_or_issue_close_allowed": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "const": "public-calibration-operational-closeout"
+          },
+          "failure_class": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "hard-stop"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "merge_or_issue_close_allowed": {
+            "const": false
+          }
+        }
+      }
+    }
+  ]
+}

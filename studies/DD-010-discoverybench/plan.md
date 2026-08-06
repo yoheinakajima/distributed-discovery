@@ -80,6 +80,57 @@ exact next gate is DiscoveryBench Agents v1 evaluation campaign registration
 and cost authorization. It must be opened separately; this plan creates no
 authority for that campaign.
 
+## AO-0012 prospective open-weight runtime work
+
+AO-0012 audits whether the third-model purpose can be met without a
+physically owner-held GPU by a reproducible open-weight, self-operated cloud
+runtime. Authorization-free work freezes the exact model revision, original
+BF16 artifact checksums, tokenizer, vLLM release and container digest, one
+A100 80GB PCIe, CUDA boundary, RunPod Secure Cloud Pod manifest, authenticated
+endpoint, no-log proxy, lifecycle, public calibration, corruptions, and
+permitted decisions. It changes no base allocation or scientific design.
+
+The sole next execution gate is the generic AO-0012 owner gate for 50 public
+pairings. No credential, authenticated RunPod or Hugging Face request, model
+download, GPU provision, endpoint, inference, or spend is permitted before
+that gate. A later claim-grade registration must independently decide whether
+the measured runtime satisfies the third-model design; AO-0012 allocates no
+study and creates no claim-grade authority.
+
+The final prospective R4 gate performs pre-ingress issue and draft-PR checks
+through unauthenticated public GitHub REST and exact remote-head comparison,
+then uses a documented encrypted REST Pod-create body. Its orphan boundary is
+an unconditional controller finalizer plus a Pod-resident six-hour self-delete
+watchdog, not a native `terminateAfter` claim. R1 through R3 remain unused and
+unauthorized.
+
+The exact R4 authorization was later accepted, but the exact live command
+stopped before credential ingress because the protected runtime expected a
+nonexistent `budget` mapping on the generic owner-gate manifest. No provider
+resource, model download, endpoint, inference call, or spend occurred. The
+permitted decision is `calibration-integrity-failure-stop`; the attempted R4
+authorization is not reusable, and any prospective repair requires a new
+owner amendment, protected-tree freeze, and exact gate.
+
+The forward-only R5 generic-gate repair later passed and its exact owner
+authorization was consumed once. The live path reached authenticated RunPod
+control-plane access but stopped before Pod creation because its finalizer
+could not prove the exact temporary Secret namespace absent. No model,
+endpoint, inference, or Pod billing exists. The selected permitted decision is
+`self-operated-control-boundary-failed-managed-api-rejected`; status inspection,
+cleanup, repair, or retry requires new explicit owner direction and a new exact
+prospective gate.
+
+R7 later froze a fresh namespace and a tighter USD 3 expected/USD 10 hard
+public-calibration envelope. Its exact authorization was consumed once, every
+local and public pre-ingress check passed, and the live path stopped at the
+fresh account-inventory boundary. No Secret, template, Pod, encrypted volume,
+model, endpoint, inference, billing, or spend was created. The redacted record
+supports only a two-to-four authenticated read-only inventory-request bound,
+so the exact ordered failure point remains unknown. R7 is nonreusable, and any
+diagnosis, provider query, repair gate, or retry requires a fresh owner
+decision.
+
 The 2026-07-23 evaluation registration under issue #173 selects a sealed
 engineering pilot pending owner authorization and keeps the claim-grade base
 blocked on local/open feasibility. The inactive authorization has zero caps
@@ -280,3 +331,50 @@ Post-lock replay/unseal, Methods A/B/C, independent classification and
 all-pairing bounds, exact correspondence and cost, contamination,
 corruptions, redaction, and retained-state verification pass. No task-level
 or comparative performance and no scientific evidence is created.
+
+
+### AO-0012 R2 preauthorization correction
+
+The unused R1 gate is superseded without authorization. The same public
+calibration and runtime identity remain behind
+`AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R2`, which adds repository-local
+two-name credential ingress, temporary RunPod Secret/template lifecycle,
+authorization-bound orphan controls, measured attestation, and exact
+success/failure teardown and billing. This remains infrastructure engineering
+only and adds no DD-023, private, scientific, base-campaign, performance, or
+publication authority.
+
+
+### AO-0012 R3 exact RunPod API correction
+
+The unused R2 gate is superseded without authorization. R3 preserves the
+accepted R2 lifecycle and closeout design while prospectively binding GraphQL
+requests to the documented URL-encoded `api_key` query parameter with no
+Authorization header, REST requests to Bearer authentication with no API-key
+query parameter, and Pod creation to the exact frozen supported field set with
+`allowedCudaVersions: ["13.0"]` and no `minCudaVersion`. All R3 rehearsals,
+corruptions, transport tests, and validation remain synthetic and
+credential-free. Only the unconsumed R3 generic owner gate may later authorize
+the public calibration or honest bounded failure closeout.
+
+
+### AO-0012 R4 public preflight and encrypted REST Pod correction
+
+The unused R3 gate is superseded without authorization. R4 removes the live
+dependency on `gh` authentication, verifies issue #212 and draft PR #213 from
+public unauthenticated GitHub REST plus exact remote branch state, and creates
+the Pod only through documented REST with `volumeEncrypted: true`, no network
+volume, and the frozen exact field set. Because that REST surface has no
+documented `terminateAfter` field, orphan control is an unconditional
+controller finalizer plus a Pod-resident six-hour exact-Pod deletion watchdog.
+Only the unconsumed R4 generic owner gate may authorize the unchanged public
+calibration or honest bounded failure closeout.
+
+### AO-0012 R5 generic-gate compatibility repair
+
+The R4 authorization was consumed by its fail-closed pre-ingress validator
+failure and cannot be reused. R5 adds only a forward authorization adapter for
+the generic gate's exact `cumulative_state`, `hard_caps`, and `remaining_caps`
+shape, backed by the real generic authorization writer and corruption tests.
+All R4 runtime, lifecycle, calibration, cap, reporting, and zero-scientific
+requirements remain frozen.

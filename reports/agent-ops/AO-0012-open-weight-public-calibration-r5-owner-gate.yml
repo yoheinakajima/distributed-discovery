@@ -1,0 +1,175 @@
+schema_version: agent-ops-owner-gate-v1
+kind: owner-gate
+synthetic: false
+gate_id: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R5
+task_contract:
+  path: tasks/treasurebench-open-weight-cloud-runtime-r5.yml
+  sha256: sha256:6f4494b82cc5043dccf439de54b1e7e661826efc654c26f83df322d06b1b80b9
+issue: 212
+pull_request:
+  number: 213
+  expected_state: OPEN
+  head_sha: dad4cdb620a37344eff864391dbf70f409840170
+branch: agent/treasurebench-open-weight-cloud-runtime
+commit: dad4cdb620a37344eff864391dbf70f409840170
+tree_hashes:
+  Makefile: sha256:9e21ae9c82c4b56d96bcc03d5af0d591315f5f6219c0abeb526133a26754caf6
+  pyproject.toml: sha256:6064f6b622ae24bb3341310a6a6d4a2017884d9596dab47e12cc334b8c6d882b
+  uv.lock: sha256:0766c91477cdc28e1ed36ec7bcd60669ed6e80fd0a6f55892bc8fba2c57a3588
+  tasks/treasurebench-open-weight-cloud-runtime.yml: sha256:7da149cfc4358a5fe78145424ee247cec87cb19757173862909741abffa40356
+  tasks/treasurebench-open-weight-cloud-runtime-r2.yml: sha256:937ce13a47a708d7f3c5258cb6158bb88f378ae2d8023b219342a96ea2a4d5cb
+  tasks/treasurebench-open-weight-cloud-runtime-r3.yml: sha256:3543f1dd058679bf1b6d2647d4e4a4f384e9bd1334cb12dad016bf9604c49d6c
+  tasks/treasurebench-open-weight-cloud-runtime-r4.yml: sha256:1a44164e2f403eb2f17fb65e98977fdae82e7eaf141b444a800eb35d6a1b3609
+  tasks/treasurebench-open-weight-cloud-runtime-r5.yml: sha256:6f4494b82cc5043dccf439de54b1e7e661826efc654c26f83df322d06b1b80b9
+  plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md: sha256:e1333e1a0efb4972404ebdc0b5e6178d739a6e68a24affa2dd67aa64aaa502e0
+  plans/MASTER_EXEC_PLAN.md: sha256:cd842f0eab5db18906339a79eb8bb2062bbab255d6c62d53c7b600c80682a645
+  docs/program-memory/registry.yml: sha256:6245133f68d8711f010cc27dfd752f96b9bfab4c5c29f94b27a698b468517442
+  docs/agent-ops: sha256:fe94862b1b7cad4d472a9e7b3e25749c7311986ec062a4040e8031621ab190f1
+  src/distributed_discovery/agent_ops: sha256:84a44c60d7c7a6a159c8beb5cfb8bc25b19bcae8992c1781fa396225d9f11376
+  scripts/audit_agent_ops.py: sha256:336d9e0735f8fe2acc93268053d09f3af4089f189c582882eac084dd607bca29
+  docs/benchmark/agents-v1/open-weight-runtime-definition.yml: sha256:53cf734782afd6e115781291578d723040f104f7633d76c7c2440b9337c34ca4
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-manifest.yml: sha256:eeb5b90ffd396c99b1ae2b6896c791e01f177c019580c51cc40b622a35d426c8
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-manifest-r2.yml: sha256:eb99c2023d65a4e474505319f62f3426166f25355708efe6e97f0f3bb7a66832
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-manifest-r4.yml: sha256:aaa8da20f2812c3d30a3bc1e6f79090e8ca67cef6c2fc811784ab6ac88fb6c86
+  docs/benchmark/agents-v1/open-weight-provider-outcome-policy-v3-extension.yml: sha256:8790b7c60e3ce0b1fdbfdf2dcab58929794708a1b02f346a7e1c9be463e58e8b
+  docs/benchmark/agents-v1/protocol-validity-policy-v2.yml: sha256:884708e8da7b3a7f763094dc274f7f792e45b71f560dc5bb60f6d7c0e9cdbb3e
+  docs/benchmark/agents-v1/provider-outcome-policy-v3.yml: sha256:6bbb86b6c6b7cb9c8fa346e8b629361e8acedeb9ae2b95b64ad52a580d1f8c50
+  docs/benchmark/agents-v1/open-weight-public-calibration.yml: sha256:9800737cb226b44d4aea282f2cd894eb79ff1f46100f3858923f30e425b9c5a0
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions.yml: sha256:f26eb195a0d077896b2945cfdbd974b87281928f725dc8bfac69aa109d2f3306
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r2.yml: sha256:156db0ade3c58e2775a726476b716f4175ce9fbc9c7cf5b23a06f4d69b35205e
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r3.yml: sha256:83fec43606f60b7fa296250cf19c827b11948ab91a7af5ae501221c47d526c03
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r4.yml: sha256:71d9afdda56df8f9558ff5203e869a1b2240d4cd14e34037a6ae6437384c06ec
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r5.yml: sha256:c82004b2df767a7f8258c97db5bce02e7702d020599b9630dc46aa1a2fd98167
+  docs/benchmark/agents-v1/open-weight-public-calibration-outcome-r2.schema.json: sha256:6e0a1bccb4db509e1fa6ad57ea1342cf5c4267e65352c7f669f0bab92b68477f
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-feasibility.yml: sha256:2fe819c6bacb2ea1e0b8912aed11aca67cbbf04f550376a858c1b6c5c337ab31
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-r2-preauthorization-audit.yml: sha256:dcab8873b5064dc79dcbd4c18fbfda56babeeca7066242405bbb8df3f6c7bf51
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-r3-api-contract-audit.yml: sha256:064f150687591f0c50aed18c1a5c355c701b381df0bbafcdf64812b81c6c6b25
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-r4-api-contract-audit.yml: sha256:34f6caa4f7820e5f654628c4936069c6f3213c47cb8d6926e7294b700163399d
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-r5-generic-gate-compatibility-audit.yml: sha256:f4d8f12ac943a94157446e4b9f63eb25fb8016cdf176d0b50ac33fa0872379ca
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-decision.yml: sha256:7ae5fca119741241994df936865d357de91bb710d27ec47ed11945d5d92b5060
+  reports/benchmark/treasurebench-open-weight-public-calibration-outcome-r4.yml: sha256:174885b759789a8723b9c6aea2e333fd055473c30e729712a63f9dd7b21c9aa0
+  reports/agent-ops/AO-0012-open-weight-public-calibration-r4-owner-gate.yml: sha256:4e5a3e85153553d0e0caf0389dd43d03cfc2fde214896c22a3ff9127cf286b89
+  reports/agent-ops/AO-0012-r4-live-hard-stop-handoff.yml: sha256:07c7df8f1252bdd7485415f1ba60294969594b8c5d26d7db59018348b8de1798
+  scripts/audit_treasurebench_open_weight_cloud_runtime.py: sha256:9e4cd5b723aeded22da18a9fd8298c5d488c7c52aabbe4e0342a4c2456853139
+  scripts/treasurebench_open_weight_proxy_r2.py: sha256:6e3c2f413b917b8bb66acb88308bd43c355af7f77e7f82ab9f8386de0a4868b5
+  scripts/treasurebench_open_weight_runtime_start_r2.sh: sha256:8e78d39415f3ad978d5ed394a5b7eb81b61bbb87a2a9d7c7acd9c39218119ff8
+  scripts/treasurebench_open_weight_proxy_r4.py: sha256:4bc5d3beb7f2ddc43b6ac89b5f795ccf0dab6c98894edf14cb67d79a1b25c575
+  scripts/treasurebench_open_weight_runtime_start_r4.sh: sha256:0305f08ccd50c9b31b1722a7d3dff2407d341126052ef3fcafdefab9c79199cb
+  scripts/treasurebench_open_weight_watchdog_r4.py: sha256:f893d15062db57ea11a640b0f51a99498175b162aca91879e93c62008a746bc6
+  src/distributed_discovery/benchmark/agents_v1/live_inputs.py: sha256:f8723dc1f64993fe851abcd4185bbdd28df695dcc0de2acb06b48f848d5435ad
+  src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime.py: sha256:1640b27527da0709bdff977a09d89590909e12fc741324d673275fe4ec8c1d3d
+  src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r2.py: sha256:b417162051e721db689bbd2de49f2a899074e48032fb0d7af5485223983e282f
+  src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r3.py: sha256:ec94fe6b13338b75e28457c3b3592897c85fa63e8e1c81a4b537ec569877b794
+  src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r4.py: sha256:a6d1153a2d5940920ea590a3b93434749411c81a86b896a85bfac25202a00710
+  src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r5.py: sha256:2daaa9f9e3aca73633c1e13648d3e4cfa4e74d2559e4ddafa9d085bc41867f86
+  tests/test_treasurebench_open_weight_cloud_runtime.py: sha256:2d524140d23b81a0465f06d99581e50615fa483dc759113604f024912615573b
+  tests/test_treasurebench_open_weight_cloud_runtime_r2.py: sha256:d70894687f8b1e00d6daa8ed6e95ee5ed8ab4e937e6e442ef57d80f9e88f42ac
+  tests/test_treasurebench_open_weight_cloud_runtime_r3.py: sha256:0a13e0f006433b105185cd39d71b7623025a9847c653482a4ea94d5c6c8ad7e6
+  tests/test_treasurebench_open_weight_cloud_runtime_r4.py: sha256:5d5007d6f7e0781a1a321724317c9f81f7779024f5d35ec014e89c5c2c04303a
+  tests/test_treasurebench_open_weight_cloud_runtime_r5.py: sha256:75598e8163b9656976b4fbd78183c742ee8e9a975d5f8315a508c7a883bc12a8
+  studies/DD-010-discoverybench/README.md: sha256:7d532557ae8b6a7185059f91f74d401cb18ad0ea264a44ff5ccdacbf0f52dd06
+  studies/DD-010-discoverybench/plan.md: sha256:2afbc49119afcefbc046ae6881dfb768dbb4df1eb69683e9fa8ddbaeb8165df0
+  studies/DD-010-discoverybench/status.yml: sha256:f905d6cf752bfb7343c476e4df8c12bd95129a68cc0cfae9e0816d18b49340b2
+purpose: Authorize only the R5-compatible public engineering calibration of the unchanged open-weight, self-operated cloud runtime and its normal or honest bounded-failure one-session closeout.
+irreversible_actions:
+- permission: external_action_permissions.spend
+  description: Spend only for one RunPod Secure Cloud dedicated Pod with one NVIDIA A100 80GB PCIe and exact temporary encrypted storage within every cap.
+- permission: permissions.merge_after_checks
+  description: Mark PR 213 ready and squash-merge only after exact teardown, billing, public-safe closeout, validation, and required checks.
+- permission: permissions.ci_pages
+  description: Permit normal post-merge CI and Pages followed by named public-safe route verification.
+private_actions:
+- permission: private_data_permissions.read
+  description: After exact R5 validation, load only RUNPOD_API_KEY and HF_TOKEN from repository-root .env.txt through the strict nonexecuting exact-subset loader.
+- permission: private_data_permissions.generate
+  description: Generate only one short-lived endpoint bearer and one runtime-attestation HMAC key for the authorization-bound namespace.
+- permission: private_data_permissions.write
+  description: Transmit short-lived values only through official RunPod Secrets and keep the endpoint bearer only in a mode-0600 disposable /run file.
+external_actions:
+- permission: permissions.repository_write
+  description: Write only one public operational calibration or bounded-failure outcome, one permitted decision, and public-safe closeout records.
+- permission: permissions.git_branch_commit
+  description: Commit and push only the authorized public-safe closeout on the registered branch.
+- permission: permissions.github_issue_pr
+  description: Update PR 213 and close issue 212 only after the complete authorized verification sequence succeeds.
+- permission: permissions.merge_after_checks
+  description: Mark ready and squash-merge only after teardown, billing, validation, and required checks are exact.
+- permission: permissions.ci_pages
+  description: Observe post-merge CI and Pages and verify named public-safe routes.
+- permission: external_action_permissions.network_observation
+  description: Revalidate public GitHub, exact provider lifecycle and billing state, checks, Pages, and named public-safe routes.
+- permission: external_action_permissions.github_mutation
+  description: Push closeout commits, update PR 213, mark ready, squash-merge, and close issue 212 only in the registered order.
+- permission: external_action_permissions.provider_calls
+  description: Use authenticated RunPod inventory, Secrets, template, one encrypted REST Pod create/get/delete, billing, and exact public Hugging Face artifact download only.
+- permission: external_action_permissions.spend
+  description: Spend only within USD 20 total, six GPU-hours, and 400 inference calls for this calibration and exact closeout.
+cumulative_state:
+  currency: USD
+  spend: '0'
+  calls: 0
+  category_spend: {runpod_gpu_compute_and_storage: '0'}
+hard_caps:
+  currency: USD
+  spend: '20'
+  calls: 400
+  category_spend: {runpod_gpu_compute_and_storage: '20'}
+remaining_caps:
+  currency: USD
+  spend: '20'
+  calls: 400
+  category_spend: {runpod_gpu_compute_and_storage: '20'}
+owner_confirmation_statements:
+- I authorize only AO-0012 R5 at execution commit dad4cdb620a37344eff864391dbf70f409840170, issue 212, open draft PR 213, the additive R5 contract, registered branch, 57-path protected tree, unchanged runtime identity, actions, caps, prohibitions, and expiry in this manifest; R1 through R3 remain superseded unused and R4 remains consumed and nonreusable.
+- I require the canonical generic cumulative_state, hard_caps, and remaining_caps mappings to be exact before credential ingress; no owner-gate budget mapping or compatibility fallback is authority.
+- I require bounded unauthenticated public GitHub issue/PR GETs plus exact git ls-remote, ancestry, clean tracked worktree, protected hashes, zero calls/spend/state, and no resource conflict before repository-root .env.txt may return only RUNPOD_API_KEY and HF_TOKEN.
+- I authorize GraphQL query-key authentication only for inventory and temporary Secrets, REST Bearer authentication only for template, Pod create/get/delete, and billing, three short-lived Secrets, and one private temporary template; secrets, authenticated URLs, headers, bodies, prompts, and outputs remain redacted.
+- >-
+  I authorize one encrypted REST Pod create only: Secure Cloud dedicated
+  noninterruptible, one NVIDIA A100 80GB PCIe, allowed CUDA 13.0, exact
+  immutable container/template, 50-GB container disk, 120-GB encrypted
+  disposable /workspace volume, US placement, no public IP, no network volume,
+  no alternate identity, no fallback, and no second create.
+- I require the controller finalizer plus a Pod-resident six-hour exact-self-delete watchdog, unique-namespace ambiguous-create reconciliation, exact Pod/volume/Secret/template deletion verification, and positive exact billing including returned storage charges on every path where a Pod may exist.
+- I authorize only docker.io/vllm/vllm-openai Linux/amd64 digest sha256:3a1e7f5904e1a1192a02aa0086ceaffc33985d7044c7bb25b3a43d61bdbe3ac0, vLLM 0.23.0, mistral-common at least 1.11.3, and exact measured GPU/driver/CUDA/toolkit/PyTorch/package/artifact/startup/load/watchdog attestation.
+- I authorize only mistralai/Mistral-Small-3.1-24B-Instruct-2503 revision 68faf511d618ef198fef186659617cfd2eb8e33a, original unquantized BF16 consolidated.safetensors SHA256 d446ca97599fa9d98b2e3744d8b83019837a2fe34a80f4353120b1e9b6249b1e, and exact Tekken tokenizer SHA256 c604f35d1035f534519622c0ec83fed6184978d4fdee92a5bd2a50bc05438094, with no quantization, sharding, second GPU, managed endpoint, router, or model-provider API.
+- I authorize exactly ten frozen public tasks, five architectures, one repeat, 50 intended pairings, protocol-validity policy v2 and provider-outcome v3 extension, at most 400 calls, six GPU-hours, Methods A/B/C, independent bounds, no semantic retry or hidden fallback, and operational-only reporting with no performance comparison.
+- I require normal success or every bounded failure to stop dispatch, finalize resources, reconcile exact billing and caps, write one schema-valid redacted outcome and permitted decision, and keep PR 213 and issue 212 open on any teardown, deletion, billing, identity, watchdog, retention, leakage, or other ambiguity.
+- I authorize the same session to continue after normal or honest bounded-failure closeout through full validation, PR readiness and squash merge after checks, post-merge CI/Pages, named live-route verification, issue closure only after verification, main synchronization, and one final handoff without routine checkpoints.
+- I understand expected and conservative spend are under USD 10 and USD 10, while hard limits are USD 20 total, 21,600 GPU seconds, and 400 calls; no DD-023, scientific run, private task, base campaign, performance publication, paper, release, DOI, arXiv, journal, or submission is authorized.
+- I understand the generic owner-gate engine writes only one mode-0600 R5 authorization outside Git and itself reads no .env.txt, calls no provider, creates no resource, downloads no model, launches no endpoint, runs no calibration, and spends nothing.
+explicit_prohibitions:
+- provider-calls-outside-manifest
+- credential-read-outside-manifest
+- unauthorized-private-access
+- scientific-mutation-outside-contract
+- cap-increase
+- consequential-action-by-gate-engine
+- r1-r2-r3-or-consumed-r4-authorization-use-reactivation-overwrite-or-reuse
+- legacy-owner-gate-budget-field-dependency-or-fallback
+- credential-source-or-name-outside-repository-root-env-txt-runpod-api-key-and-hf-token
+- authenticated-github-cli-or-token-dependent-live-preflight
+- raw-secret-provider-body-pod-log-header-authenticated-url-prompt-output-or-host-path-publication
+- raw-secret-in-pod-env-template-provider-config-process-environment-or-workspace
+- long-lived-secret-template-pod-volume-endpoint-or-unattended-gpu
+- graphql-rest-dual-authentication-or-wrong-authentication-surface
+- graphql-pod-create-min-cuda-version-terminate-after-network-volume-public-ip-env-override-or-unregistered-create-field
+- namespace-conflict-multiple-match-second-create-or-ambiguous-create-continuation
+- missing-late-unverified-or-disarmed-pod-resident-watchdog
+- exception-after-possible-pod-bypassing-finalizer-deletion-verification-or-billing
+- moving-model-moving-container-hidden-substitution-fallback-quantization-sharding-second-gpu-alternate-model-or-hardware
+- managed-model-endpoint-routed-model-api-openrouter-or-model-provider-api-call
+- manifest-echo-as-measured-attestation-or-mistral-common-below-minimum
+- unauthenticated-endpoint-public-prompt-output-log-semantic-retry-hidden-repair-or-replacement
+- protocol-invalid-or-runtime-missing-drop-observed-validity-threshold-or-performance-publication
+- nonpositive-inexact-or-storage-omitting-billing
+- teardown-secret-template-pod-volume-or-billing-ambiguity-merge-or-issue-close
+- prior-campaign-authorization-ledger-output-lock-private-root-read-unseal-mutation-or-reuse
+- private-task-answer-seed-holdout-dd-023-claim-scientific-run-base-allocation-or-base-campaign
+- paper-release-doi-arxiv-journal-submission-or-pages-outside-normal-main-workflow
+- pr-ready-or-merge-before-exact-closeout-validation-and-checks
+- issue-close-before-post-merge-ci-pages-and-named-route-verification
+expires_at_utc: '2026-08-20T23:59:59Z'
+authorization_output_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R5.yml
+next_milestone: R5 owner-authorized one-session public-only calibration or honest bounded-failure closeout, exact resource deletion and billing, one permitted decision, validation, PR merge after checks, post-merge route verification, issue closure, main synchronization, and one final handoff.
+generated_resume_message: 'Resume AO-0012 in this same Codex session and repository from plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md, issue #212, branch agent/treasurebench-open-weight-cloud-runtime, and draft PR #213. Use only reports/agent-ops/AO-0012-open-weight-public-calibration-r5-owner-gate.yml and its exact R5 authorization; never use R1-R3 or consumed R4. Revalidate canonical caps, authorization, execution ancestry, clean protected tree, public token-free GitHub and remote head, zero calls/spend/state/conflicts, then load only RUNPOD_API_KEY and HF_TOKEN from repository-root .env.txt. Run exactly make treasurebench-open-weight-runtime-live and continue normal or honest bounded-failure closeout through the frozen encrypted REST Pod, Secrets/template, controller finalizer, six-hour watchdog, measured attestation, 50 public pairings, deletion verification, exact billing, one redacted decision, validation, PR readiness/squash merge, CI/Pages, named routes, issue closure, main synchronization, and one final handoff. Stop on any authority, identity, credential, resource, watchdog, cap, retention, teardown, billing, managed-fallback, scientific, or publication ambiguity.'

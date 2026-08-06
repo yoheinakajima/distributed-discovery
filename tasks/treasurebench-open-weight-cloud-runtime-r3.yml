@@ -1,0 +1,183 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0012
+title: TreasureBench open-weight cloud-runtime R3 exact RunPod API contract correction
+task_type: infrastructure
+status: active
+objective: Prospectively correct only the unused AO-0012 RunPod API surface so documented GraphQL query-parameter authentication, REST Bearer authentication, and allowedCudaVersions Pod creation are exact while preserving the accepted R2 runtime, lifecycle, attestation, finalizer, calibration, identity, and caps.
+authority_references:
+- type: instruction
+  path: AGENTS.md
+- type: policy
+  path: docs/repository-contract.md
+- type: policy
+  path: docs/agent-ops/README.md
+- type: policy
+  path: docs/benchmark/agents-v1/AGENTS.md
+- type: policy
+  path: src/distributed_discovery/benchmark/agents_v1/AGENTS.md
+- type: policy
+  path: docs/benchmark/agents-v1/protocol-validity-policy-v2.yml
+- type: policy
+  path: docs/benchmark/agents-v1/provider-outcome-policy-v3.yml
+- type: record
+  path: docs/benchmark/agents-v1/provider-model-candidates.yml
+- type: record
+  path: docs/benchmark/agents-v1/base-campaign-allocation.yml
+- type: record
+  path: reports/benchmark/agents-v1-local-hardware-audit.yml
+- type: decision
+  path: docs/program-memory/registry.yml
+- type: plan
+  path: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+- type: issue
+  path: https://github.com/yoheinakajima/distributed-discovery/issues/212
+owner_decisions:
+- Physical ownership of the GPU is not scientifically necessary for this feasibility gate; physical locality and infrastructure-provider independence remain separate properties that are not supplied by rented cloud compute.
+- A qualifying candidate is called an open-weight, self-operated cloud runtime, never local, and must give the owner control of the exact weight artifact, tokenizer, inference engine, container, configuration, prompts, sampling, retention boundary, and authenticated endpoint.
+- RunPod Secure Cloud dedicated Pod with one NVIDIA A100 80GB, official BF16 weights for the exact registered Mistral Small 3.1 24B Instruct revision, pinned vLLM under Mistral's official serving guidance, and a repository-controlled OpenAI-compatible adapter is the primary candidate unless current official evidence proves a fatal incompatibility.
+- The exact BF16 single-A100-80GB identity fails closed if infeasible; quantization, sharding, another model, another GPU class, two GPUs, or a managed endpoint is a separate prospective identity and gate.
+- OpenRouter, Mistral hosted API, FlyMyAI hosted inference, other routed APIs, and managed model endpoints cannot satisfy the self-operated condition unless the owner controls and verifies the actual weight artifact and serving stack.
+- A managed custom-container product qualifies only when the exact container, weights, and configuration can be independently reproduced and the platform performs no hidden model substitution, prompt transformation, semantic retry, or fallback.
+- Authorization-free work may use public official-source network observations and synthetic public fixtures only; it may not read credentials, call RunPod or Hugging Face authenticated APIs, provision compute, download model weights, launch an endpoint, run the calibration, or spend.
+- A later exact generic owner gate may authorize at most one public-only calibration with ten public tasks, five architectures, one repeat, 50 intended pairings, one A100 80GB Pod, six GPU-hours, 400 inference calls, and USD 20 total spend.
+- The calibration creates only public operational engineering measurements and conformance counts; it cannot publish task, family, architecture, or model performance.
+- AO-0011 v5 and every earlier campaign, authorization, ledger, output lock, retained root, private object, and terminal decision remain immutable, closed, unread, unsealed, and unauthorized for reuse.
+- This task does not allocate DD-023, register or execute a scientific run, create or promote a claim, create private tasks or holdouts, alter the 200-task base allocation, weaken the third-model requirement, call a model-provider API, publish a performance comparison, change a paper, or create a release or submission.
+- The unused R1 gate receives no authorization and is superseded only by R2 in the same task, issue, branch, PR, runtime identity, calibration, and caps.
+- The exact live command loads only RUNPOD_API_KEY and HF_TOKEN from repository-root .env.txt after R2 authority, protected-tree, zero-state, and conflict validation; tests inject fakes and never read that file.
+- Three uniquely named short-lived RunPod Secrets and one temporary private template are mandatory; raw secret values in Pod configuration are prohibited and absence after teardown is exact.
+- A six-hour server-side podFindAndDeployOnDemand terminateAfter backstop and one deterministic local finalizer cover every path after a Pod may exist.
+- Runtime attestation measures GPU, memory, driver, CUDA toolkit and runtime, PyTorch CUDA, packages, artifacts, no quantization or sharding, startup, load, and peak memory; manifest echo is insufficient.
+- Exact billed amount, positive billed milliseconds, storage amount, teardown, secret and template deletion, and public redacted outcome are mandatory before merge or issue closure.
+- The unused R2 gate is superseded without authorization because its GraphQL bearer-only transport and minCudaVersion Pod input do not match the current documented RunPod request contract.
+- R3 GraphQL calls use only the URL-encoded api_key query parameter and no Authorization header; REST calls use only the documented Authorization Bearer header and no api_key query parameter.
+- 'Pod creation uses exactly allowedCudaVersions: [''13.0'']; minCudaVersion and every other unregistered CUDA create field are prohibited, while terminateAfter remains frozen because the current GraphQL schema still exposes it.'
+scope:
+  paths:
+  - tasks/treasurebench-open-weight-cloud-runtime-r3.yml
+  - reports/benchmark/treasurebench-open-weight-cloud-runtime-r3-api-contract-audit.yml
+  - docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r3.yml
+  - src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r3.py
+  - tests/test_treasurebench_open_weight_cloud_runtime_r3.py
+  - tasks/treasurebench-open-weight-cloud-runtime-r2.yml
+  - tasks/treasurebench-open-weight-cloud-runtime.yml
+  - plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+  - docs/program-memory/registry.yml
+  - plans/MASTER_EXEC_PLAN.md
+  - docs/benchmark/agents-v1
+  - reports/benchmark
+  - reports/agent-ops
+  - src/distributed_discovery/benchmark/agents_v1
+  - scripts
+  - tests
+  - Makefile
+  - studies/DD-010-discoverybench
+  actions:
+  - audit and define open-weight runtime control classes
+  - audit current official model engine container CUDA hardware and RunPod surfaces
+  - implement an authorization-free immutable manifest startup package endpoint adapter and attestation verifier
+  - freeze and test one public-only calibration design and permitted decision schema
+  - commit and validate one generic owner gate and owner-gate-required handoff
+  - after exact later authorization only execute the public calibration teardown reconciliation and permitted decision closeout
+non_goals:
+- No DD-023 allocation or claim-grade base-campaign registration or execution.
+- No private seed task answer holdout key custody object retained-root read or unseal.
+- No managed model endpoint routed model API fallback autosubstitution or model-provider API call.
+- No quantized sharded multi-GPU alternate-model or alternate-GPU identity.
+- No change to the frozen 200-slot base allocation scientific hypotheses estimands repeats batches or private custody.
+- No performance comparison ranking composite leaderboard claim paper release DOI submission or upstream mutation.
+permissions:
+  repository_write: true
+  git_branch_commit: true
+  github_issue_pr: true
+  merge_after_checks: true
+  ci_pages: true
+external_action_permissions:
+  network_observation: true
+  github_mutation: true
+  provider_calls: true
+  spend: true
+  release_publication: false
+  submission: false
+scientific_mutation_permissions:
+  create_study: false
+  create_claim: false
+  create_run: false
+  change_evidence_status: false
+  change_proof_status: false
+  change_paper_lifecycle: false
+private_data_permissions:
+  read: true
+  write: true
+  generate: true
+  publish: false
+budget:
+  currency: USD
+  expected: '10'
+  hard_cap: '20'
+  call_cap: 400
+  category_caps:
+    runpod_gpu_compute: '20'
+  cumulative_spend: '0'
+expected_outcomes:
+- A versioned machine-readable open-weight runtime definition separating physical locality, model and serving-stack control, provider independence, and infrastructure independence.
+- A current official-source feasibility audit for the exact model revision, BF16 weights, pinned engine and container, CUDA and driver compatibility, one A100 80GB, and RunPod Secure Cloud Pod controls and price.
+- An authorization-free fail-closed deployment and conformance package with synthetic corruption coverage and no credential or model download.
+- One frozen ten-task five-architecture one-repeat public calibration design with 50 intended pairings and predeclared acceptance.
+- One exact generic owner gate and schema-valid owner-gate-required handoff.
+- After a later authorized calibration only, one permitted final decision and the next-task candidate if warranted.
+stop_conditions:
+- Stop on any authority contract Git GitHub identity credential retention endpoint authentication logging model revision tokenizer engine container CUDA driver GPU quantization fallback attestation cap or teardown mismatch.
+- Stop with exact-bf16-runtime-infeasible-quantized-or-sharded-identity-gate-required if official or measured evidence shows the exact BF16 model cannot run on one A100 80GB under the pinned engine.
+- Stop with self-operated-control-boundary-failed-managed-api-rejected if the owner cannot control and verify the actual weights serving stack endpoint and retention boundary.
+- Stop exactly once at owner-gate-required before any credential access authenticated RunPod or Hugging Face API model download provisioning endpoint launch calibration or spend.
+acceptance_profile: infrastructure
+canonical_destinations:
+- tasks/treasurebench-open-weight-cloud-runtime-r3.yml
+- reports/benchmark/treasurebench-open-weight-cloud-runtime-r3-api-contract-audit.yml
+- docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r3.yml
+- reports/agent-ops/AO-0012-open-weight-public-calibration-r3-owner-gate.yml
+- reports/agent-ops/AO-0012-r3-owner-gate-required-handoff.yml
+- tasks/treasurebench-open-weight-cloud-runtime-r2.yml
+- docs/benchmark/agents-v1/open-weight-cloud-runtime-manifest-r2.yml
+- docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r2.yml
+- docs/benchmark/agents-v1/open-weight-public-calibration-outcome-r2.schema.json
+- reports/benchmark/treasurebench-open-weight-cloud-runtime-r2-preauthorization-audit.yml
+- reports/agent-ops/AO-0012-open-weight-public-calibration-r2-owner-gate.yml
+- reports/agent-ops/AO-0012-r2-owner-gate-required-handoff.yml
+- docs/benchmark/agents-v1/open-weight-runtime-definition.yml
+- docs/benchmark/agents-v1/open-weight-cloud-runtime-manifest.yml
+- docs/benchmark/agents-v1/open-weight-public-calibration.yml
+- reports/benchmark/treasurebench-open-weight-cloud-runtime-feasibility.yml
+- reports/benchmark/treasurebench-open-weight-cloud-runtime-decision.yml
+- reports/agent-ops/AO-0012-open-weight-public-calibration-owner-gate.yml
+- reports/agent-ops/AO-0012-owner-gate-required-handoff.yml
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 212
+  branch: agent/treasurebench-open-weight-cloud-runtime
+  pull_request: 213
+  base: main
+exec_plan: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+task_delta: null
+frozen_identifiers:
+  model_repository: mistralai/Mistral-Small-3.1-24B-Instruct-2503
+  model_revision: 68faf511d618ef198fef186659617cfd2eb8e33a
+  model_weight_format: official-bf16-unquantized
+  compute_provider: RunPod
+  compute_product: Secure-Cloud-dedicated-Pod
+  gpu_type: NVIDIA-A100-80GB
+  gpu_count: '1'
+  runtime_term: open-weight-self-operated-cloud-runtime
+  superseded_gate_id: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R2
+  gate_id: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R3
+  original_superseded_gate_id: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION
+supersession:
+  supersedes:
+  - tasks/treasurebench-open-weight-cloud-runtime-r2.yml
+  - AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R2
+  - AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION
+  superseded_by: null
+  reason: 'Owner-directed R3 corrects the unused R2 control-plane API contract: GraphQL authentication moves from undocumented bearer-only transport to documented URL-encoded api_key query authentication, and Pod creation moves from minCudaVersion to documented allowedCudaVersions without changing runtime identity, provider, model, GPU, lifecycle, calibration, or caps.'
+next_gate: Complete authorization-free R3 API correction, regression and corruption coverage, full validation, execution refreeze, exact-head draft-PR CI, and commit AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R3 without creating or consuming authorization.

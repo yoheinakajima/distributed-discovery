@@ -1,0 +1,100 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0012
+title: TreasureBench R6 generic-gate identifier compatibility repair
+task_type: infrastructure
+status: owner-gate-required
+objective: Freeze a shorter R6 gate identifier that is valid for both generic gate and authorization schemas while preserving the exact R5 Secret status-and-conditional-cleanup surface, caps, and stop boundary.
+authority_references:
+- {type: instruction, path: AGENTS.md}
+- {type: policy, path: docs/agent-ops/README.md}
+- {type: policy, path: docs/benchmark/agents-v1/AGENTS.md}
+- {type: plan, path: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md}
+- {type: issue, path: 'https://github.com/yoheinakajima/distributed-discovery/issues/212'}
+- {type: pull-request, path: 'https://github.com/yoheinakajima/distributed-discovery/pull/213'}
+- {type: record, path: reports/agent-ops/AO-0012-runpod-secret-status-cleanup-r6-owner-gate.yml}
+- {type: record, path: reports/agent-ops/AO-0012-r6-owner-gate-required-handoff.yml}
+owner_decisions:
+- The long-ID R6 gate, its owner challenge, and its failed authorization attempt remain immutable audit history; no authorization was created and the old owner decision is not reusable.
+- The generic owner-gate identifier contract must narrow to the existing owner-authorization identifier contract; the authorization schema must not be widened.
+- The corrected gate identifier is AOG-AO-0012-R6-RUNPOD-SECRET-CLEANUP and changes no cleanup permission, credential, provider operation, cap, or outcome.
+- R1 through R5 remain superseded or consumed exactly as recorded; no prior gate or authorization may be reused.
+- Preparation uses repository, public GitHub, and synthetic evidence only and must stop before authorization, credential ingress, RunPod or Hugging Face access, resource activity, inference, or spend.
+scope:
+  paths:
+  - tasks/treasurebench-open-weight-cloud-runtime-r6b.yml
+  - plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+  - plans/MASTER_EXEC_PLAN.md
+  - studies/DD-010-discoverybench/README.md
+  - studies/DD-010-discoverybench/status.yml
+  - docs/agent-ops/owner-gate.schema.json
+  - docs/agent-ops/owner-authorization.schema.json
+  - reports/benchmark/treasurebench-open-weight-cloud-runtime-r6b-gate-compatibility-audit.yml
+  - reports/agent-ops/AO-0012-runpod-secret-status-cleanup-r6b-owner-gate.yml
+  - reports/agent-ops/AO-0012-r6b-owner-gate-required-handoff.yml
+  - src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r6.py
+  - tests/test_treasurebench_open_weight_cloud_runtime_r6.py
+  - tests/unit/test_agent_ops.py
+  actions:
+  - narrow the generic owner-gate ID pattern to exact parity with the unchanged owner-authorization pattern
+  - prove every ID admitted by the gate schema can be written as a schema-valid synthetic authorization
+  - preserve and hash the failed long-ID gate, contract, audit, and handoff without rewriting them
+  - bind the existing cleanup implementation to one shorter additive R6 gate and contract
+  - validate the corrected gate without creating an authorization or invoking the cleanup
+non_goals:
+- No owner authorization creation or reuse; no .env.txt or credential read; no RunPod, Hugging Face, provider, Secret, template, Pod, model, endpoint, inference, billing, spend, calibration, merge, issue closure, publication, or release action.
+- No widening of the owner-authorization schema or cleanup semantics; no fourth operation, retry, sibling-resource deletion, alternative target, or other resource surface.
+- No DD-023, scientific run, private task, base campaign, performance result, claim, paper, DOI, submission, or scientific authority.
+permissions: {repository_write: true, git_branch_commit: true, github_issue_pr: true, merge_after_checks: false, ci_pages: false}
+external_action_permissions: {network_observation: true, github_mutation: true, provider_calls: true, spend: false, release_publication: false, submission: false}
+scientific_mutation_permissions: {create_study: false, create_claim: false, create_run: false, change_evidence_status: false, change_proof_status: false, change_paper_lifecycle: false}
+private_data_permissions: {read: true, write: false, generate: false, publish: false}
+budget:
+  currency: USD
+  expected: '0'
+  hard_cap: '0'
+  call_cap: 3
+  category_caps: {runpod_secret_status_cleanup: '0'}
+  cumulative_spend: '0'
+expected_outcomes:
+- Exact owner-gate and owner-authorization gate_id properties are identical and reject the immutable failed 55-character identifier.
+- A boundary-length gate ID admitted by the owner-gate schema creates a schema-valid synthetic authorization in a temporary test directory.
+- The shorter exact gate preserves only RUNPOD_API_KEY, one inventory, conditional deletion of one unique exact ao0012-owcal-r5-01b41c9aa04bf2a4-hf Secret, one verification, three authenticated operations maximum, zero spend, and zero inference.
+- One frozen execution commit, protected tree, validated unconsumed corrected gate, draft PR, and owner-gate-required handoff record zero credential, provider, resource, inference, and spend activity during repair.
+stop_conditions:
+- Stop before credential ingress or provider access on any schema, contract, issue, draft PR, branch, execution ancestry, protected tree, tracked-worktree, failed-gate-evidence, or authorization-state mismatch.
+- Do not create an authorization during compatibility preparation; the earlier owner challenge applies only to the failed long-ID gate and is not reusable.
+- During any later separately authorized cleanup, preserve the existing one-inventory, conditional-exact-delete, one-verification, three-operation, zero-spend boundary and stop on every ambiguity.
+- Stop at owner-gate-required after validate-only succeeds; do not run the cleanup command.
+acceptance_profile: infrastructure
+canonical_destinations:
+- tasks/treasurebench-open-weight-cloud-runtime-r6b.yml
+  - plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+  - studies/DD-010-discoverybench/status.yml
+- reports/benchmark/treasurebench-open-weight-cloud-runtime-r6b-gate-compatibility-audit.yml
+- reports/agent-ops/AO-0012-runpod-secret-status-cleanup-r6b-owner-gate.yml
+- reports/agent-ops/AO-0012-r6b-owner-gate-required-handoff.yml
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 212
+  branch: agent/treasurebench-open-weight-cloud-runtime
+  pull_request: 213
+  base: main
+exec_plan: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+task_delta: null
+frozen_identifiers:
+  consumed_gate_id: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R5
+  failed_gate_id: AOG-AO-0012-R6-RUNPOD-SECRET-STATUS-CONDITIONAL-CLEANUP
+  gate_id: AOG-AO-0012-R6-RUNPOD-SECRET-CLEANUP
+  target_secret_name: ao0012-owcal-r5-01b41c9aa04bf2a4-hf
+  credential_source: repository-root-.env.txt
+  credential_name: RUNPOD_API_KEY
+  provider_surface: RunPod-GraphQL-Secrets-only
+  maximum_authenticated_operations: '3'
+supersession:
+  supersedes:
+  - tasks/treasurebench-open-weight-cloud-runtime-r6.yml
+  - AOG-AO-0012-R6-RUNPOD-SECRET-STATUS-CONDITIONAL-CLEANUP
+  superseded_by: null
+  reason: The immutable long-ID gate passed owner-gate validation but failed before authorization write because the authorization schema was two characters stricter; this additive repair shortens the identity and restores generic schema parity without changing authority.
+next_gate: Validate and, only under a fresh exact owner decision, authorize AOG-AO-0012-R6-RUNPOD-SECRET-CLEANUP; the old challenge is nonreusable and the cleanup must stop after status or conditional cleanup without merge or calibration.

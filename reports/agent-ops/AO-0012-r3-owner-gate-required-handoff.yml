@@ -1,0 +1,29 @@
+schema_version: agent-ops-handoff-v1
+status: owner-gate-required
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0012
+issue: 212
+pull_request: 213
+branch: agent/treasurebench-open-weight-cloud-runtime
+base_main: 6e86b43a8db8d20380dd64bf9490772b7152f484
+head_merge_sha: efe5c53838c0eb6b1b41cdfd5553c76d9a047394
+task_contract: tasks/treasurebench-open-weight-cloud-runtime-r3.yml
+exec_plan: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+last_completed_gate: Execution commit 1b6845d5cec11cdf64da66a23ecbd96ae8927fc7 and committed unconsumed R3 gate head efe5c53838c0eb6b1b41cdfd5553c76d9a047394 pass the complete 10-task/five-architecture/50-pairing offline rehearsal with 294 synthetic calls, 50 terminal protocol-valid pairings, 72 agreeing bounds, all 54 inherited-plus-R3 corruptions, 101 focused runtime/input tests, Ruff, mypy on 218 source files, all 939 repository tests, every audit, two exact-execution-head PR checks, the 33-path freeze, and generic-gate live validate-only. GraphQL is URL-encoded api_key query-only with no Authorization header; REST is Bearer-header-only with no api_key query; Pod input freezes allowedCudaVersions [13.0] and rejects minCudaVersion. No authorization or live resource was created.
+next_gate: 'Resume AO-0012 in this same Codex session and repository from plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md, issue #212, branch agent/treasurebench-open-weight-cloud-runtime, and draft PR #213. Use only reports/agent-ops/AO-0012-open-weight-public-calibration-r3-owner-gate.yml and its exact R3 authorization; never create, authorize, consume, or use the superseded R1 or R2 gate. Revalidate authorization, execution ancestry, exact PR head, R3 contract, all 33 protected hashes, zero calls/spend/resources, then load only RUNPOD_API_KEY and HF_TOKEN from repository-root .env.txt. Enforce query-only URL-encoded GraphQL authentication, Bearer-only REST authentication, no dual auth, exact allowedCudaVersions [13.0] Pod input, short-lived Secrets/template, unique namespace, six-hour terminateAfter, ambiguous-create reconciliation, exact one-A100 BF16 identity, encrypted disposable storage, measured attestation, in-Pod scrubbing, and the fixed 50-pairing public calibration. Run exactly
+  make treasurebench-open-weight-runtime-live and continue normal or honest bounded-failure closeout through unconditional teardown, deletion verification, exact billing, one permitted redacted decision, full validation, PR readiness/squash merge, CI/Pages, named routes, issue closure, main synchronization, and one final handoff. Stop on authorization/tree drift, credential or identity mismatch, provider/body leakage, resource or billing ambiguity, any cap or integrity failure, managed fallback, scientific/publication expansion, or a new runtime identity.'
+decision: 'Stop exactly once at owner-gate-required. After exact R3 authorization only, repository-root .env.txt may return exactly RUNPOD_API_KEY and HF_TOKEN after pre-ingress validation. Three short-lived RunPod Secrets and one temporary private template use secret references only; a unique authorization namespace, zero-conflict inventory, exact-window ambiguous-create reconciliation, and terminateAfter at 21,600 seconds bound orphan risk. Measured HMAC attestation covers actual GPU name/count/memory, driver, container toolkit/runtime, PyTorch CUDA, vLLM 0.23.0, mistral-common >=1.11.3, exact model/tokenizer hashes, no quantization/sharding, startup/load, and peak memory. Every success or bounded failure enters one finalizer that stops dispatch, deletes and verifies the Pod/volume/Secrets/template, polls exact Pod billing including storage, enforces expected-under-USD-10, conservative-USD-10, hard-USD-20, six-GPU-hour, and 400-call caps, and writes one redacted permitted outcome. Any
+  resource or billing ambiguity keeps PR #213 and issue #212 open.'
+external_calls_cost:
+  calls: 0
+  cost: '0'
+  currency: USD
+private_state_change: none; no real .env.txt or credential was read, selected, copied, hashed, fingerprinted, displayed, logged, persisted, transmitted, or inherited; no RunPod or Hugging Face account, Secret, template, Pod, model, GPU, endpoint, inference, or spend was accessed or created.
+scientific_state_change: none; no DD-023, scientific run, private task or answer, base campaign, performance publication, claim, paper, release, DOI, arXiv, journal, or submission state was created or changed.
+validation:
+  profile: infrastructure
+  result: pass-R3-50-offline-pairings-294-synthetic-calls-50-terminal-valid-72-bounds-54-corruptions-101-focused-tests-939-full-tests-ruff-mypy-all-audits-33-tree-freeze-two-exact-execution-head-CI-live-gate-validate-only-zero-authorization
+owner_action: 'Review the R3 contract, ExecPlan, execution commit, 33 hashes, exact GraphQL/REST authentication split, allowedCudaVersions [13.0], credential/resource/finalizer controls, and caps. Exact challenge: AUTHORIZE AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R3 1b6845d. Exact owner-gate command: make owner-gate GATE=reports/agent-ops/AO-0012-open-weight-public-calibration-r3-owner-gate.yml OWNER_GATE_CHALLENGE="AUTHORIZE AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R3 1b6845d". Only after it succeeds may this same task run: make treasurebench-open-weight-runtime-live.'
+exact_next_command: make owner-gate GATE=reports/agent-ops/AO-0012-open-weight-public-calibration-r3-owner-gate.yml OWNER_GATE_CHALLENGE="AUTHORIZE AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R3 1b6845d"
+exact_next_file: reports/agent-ops/AO-0012-open-weight-public-calibration-r3-owner-gate.yml
+blocker: The exact AO-0012 R3 owner authorization is required and absent by design; R1 and R2 remain unused and superseded. No .env.txt read, authenticated provider access, model download, Pod/GPU/endpoint, calibration/inference, or spend is authorized.

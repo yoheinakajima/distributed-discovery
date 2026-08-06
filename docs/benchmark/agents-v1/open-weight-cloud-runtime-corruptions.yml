@@ -1,0 +1,19 @@
+schema_version: treasurebench-open-weight-cloud-runtime-corruptions-v1
+authority_task: AO-0012
+status: synthetic-public-only
+corruptions:
+  - {id: wrong-model-revision, target: manifest.model.revision, mutation: replace, expected: reject}
+  - {id: wrong-tokenizer, target: manifest.tokenizer.sha256, mutation: replace, expected: reject}
+  - {id: wrong-container-digest, target: manifest.container.image_digest, mutation: replace, expected: reject}
+  - {id: wrong-gpu-type, target: manifest.compute.gpu_type_id, mutation: replace, expected: reject}
+  - {id: wrong-gpu-count, target: manifest.compute.gpu_count, mutation: increment, expected: reject}
+  - {id: quantized-weights, target: manifest.model.quantized, mutation: true, expected: reject}
+  - {id: managed-endpoint, target: manifest.runtime_class, mutation: managed-model-endpoint, expected: reject}
+  - {id: routed-api, target: manifest.runtime_class, mutation: third-party-routed-model-api, expected: reject}
+  - {id: hidden-fallback, target: manifest.engine.hidden_fallbacks, mutation: true, expected: reject}
+  - {id: no-endpoint-authentication, target: manifest.endpoint.authentication, mutation: none, expected: reject}
+  - {id: prompt-output-logging, target: manifest.logging_and_retention.public_logs_may_contain_prompt_or_output, mutation: true, expected: reject}
+  - {id: engine-version-drift, target: manifest.engine.version, mutation: replace, expected: reject}
+  - {id: malformed-runtime-attestation, target: attestation.signature, mutation: delete, expected: reject}
+  - {id: answer-or-generator-leak, target: endpoint.request, mutation: add-forbidden-field, expected: reject}
+  - {id: credential-in-git-or-log, target: repository-and-public-output, mutation: synthetic-secret, expected: reject}

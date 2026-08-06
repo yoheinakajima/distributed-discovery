@@ -1,0 +1,82 @@
+schema_version: agent-ops-handoff-v1
+status: owner-gate-required
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0012
+issue: 212
+pull_request: 213
+branch: agent/treasurebench-open-weight-cloud-runtime
+base_main: 6e86b43a8db8d20380dd64bf9490772b7152f484
+head_merge_sha: ea2718aa981f46bd00fa7b81b96cada7c9786724
+task_contract: tasks/treasurebench-open-weight-cloud-runtime-r5.yml
+exec_plan: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+last_completed_gate: >-
+  R5 execution commit dad4cdb620a37344eff864391dbf70f409840170 and
+  committed unconsumed R5 gate head ea2718aa981f46bd00fa7b81b96cada7c9786724
+  pass the exact 10-task/five-architecture/50-pairing offline rehearsal with
+  294 synthetic calls, 50 terminal protocol-valid pairings, Methods A/B/C and
+  72 independent bounds agreeing, all 95 inherited-plus-R5 corruptions, 15
+  R5-focused and 159 combined open-weight tests, Ruff on 379 files, strict
+  MyPy on 220 source files, all 1,016 repository tests and audits, seven
+  papers/119 pages, the 89-page/26-study site, the 57-path protected tree,
+  exact public issue/PR/remote-head verification, exact-head CI runs
+  30983135893 and 30983138776, and generic gate validate-only. No R5
+  authorization or consequential action exists.
+next_gate: >-
+  Resume AO-0012 in this same Codex session and repository from
+  plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md, issue #212, branch
+  agent/treasurebench-open-weight-cloud-runtime, and draft PR #213. Use only
+  reports/agent-ops/AO-0012-open-weight-public-calibration-r5-owner-gate.yml
+  and its exact R5 authorization; never use R1-R3 or consumed R4. Revalidate
+  canonical caps, authorization, execution ancestry, clean protected tree,
+  public token-free GitHub and remote head, zero calls/spend/state/conflicts,
+  then load only RUNPOD_API_KEY and HF_TOKEN from repository-root .env.txt.
+  Run exactly make treasurebench-open-weight-runtime-live and continue normal
+  or honest bounded-failure closeout through the frozen encrypted REST Pod,
+  Secrets/template, controller finalizer, six-hour watchdog, measured
+  attestation, 50 public pairings, deletion verification, exact billing, one
+  redacted decision, validation, PR readiness/squash merge, CI/Pages, named
+  routes, issue closure, main synchronization, and one final handoff. Stop on
+  any authority, identity, credential, resource, watchdog, cap, retention,
+  teardown, billing, managed-fallback, scientific, or publication ambiguity.
+decision: >-
+  Stop exactly once at owner-gate-required. The R5 task validator uses the
+  canonical generic cumulative_state, hard_caps, and remaining_caps mappings
+  at zero cumulative spend/calls, USD 20 and 400 hard caps, and exactly
+  reconciled remaining caps; no AO-0012 live adapter retains a gate budget
+  dependency. The real generic authorization-writer regression passes. The
+  runtime and resource lifecycle remain the frozen R4 public GitHub/Git
+  preflight, repository-root exact two-name credential ingress, GraphQL
+  query-key inventory/Secrets, REST Bearer template and one encrypted Pod,
+  controller finalizer, Pod-resident six-hour watchdog, measured attestation,
+  50 public pairings, exact deletion/billing/projections, and one-session
+  administrative closeout. Expected and conservative spend are under USD 10
+  and USD 10; hard caps are USD 20, six GPU-hours, and 400 calls.
+external_calls_cost:
+  calls: 0
+  cost: '0'
+  currency: USD
+private_state_change: >-
+  none; no real .env.txt or credential was read, selected, copied, hashed,
+  fingerprinted, displayed, logged, persisted, transmitted, or inherited; no
+  RunPod or Hugging Face account, Secret, template, Pod, volume, model, GPU,
+  endpoint, inference, or spend was accessed or created.
+scientific_state_change: >-
+  none; no DD-023, scientific run, private task or answer, base campaign,
+  performance publication, claim, paper, release, DOI, arXiv, journal, or
+  submission state was created or changed.
+validation:
+  profile: infrastructure
+  result: pass-R5-50-offline-pairings-294-synthetic-calls-50-terminal-valid-72-bounds-95-corruptions-15-R5-focused-159-combined-1016-full-tests-ruff-strict-mypy-all-audits-119-paper-pages-89-site-pages-57-tree-freeze-two-exact-head-checks-gate-validate-only-zero-authorization
+owner_action: >-
+  Review R5 and, only if approved, run: make owner-gate
+  GATE=reports/agent-ops/AO-0012-open-weight-public-calibration-r5-owner-gate.yml
+  OWNER_GATE_CHALLENGE="AUTHORIZE
+  AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R5 dad4cdb". Only after it
+  succeeds may this same task run: make treasurebench-open-weight-runtime-live.
+exact_next_command: 'make owner-gate GATE=reports/agent-ops/AO-0012-open-weight-public-calibration-r5-owner-gate.yml OWNER_GATE_CHALLENGE="AUTHORIZE AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R5 dad4cdb"'
+exact_next_file: reports/agent-ops/AO-0012-open-weight-public-calibration-r5-owner-gate.yml
+blocker: >-
+  The exact AO-0012 R5 owner authorization is required and absent by design;
+  R1 through R3 remain superseded unused and R4 remains consumed and
+  nonreusable. No .env.txt read, authenticated provider access, model
+  download, Pod/GPU/endpoint, calibration/inference, or spend is authorized.

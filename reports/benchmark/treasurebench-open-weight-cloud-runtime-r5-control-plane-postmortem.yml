@@ -1,0 +1,65 @@
+schema_version: treasurebench-open-weight-cloud-runtime-r5-control-plane-postmortem-v1
+task_id: AO-0012
+classification: public-safe-control-plane-execution-order-proof
+recorded_at_utc: '2026-08-05T22:47:55Z'
+consumed_gate: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R5
+authorization_reusable: false
+namespace: ao0012-owcal-r5-01b41c9aa04bf2a4
+exact_possible_resource:
+  provider: RunPod
+  resource_class: Secret
+  name: ao0012-owcal-r5-01b41c9aa04bf2a4-hf
+  presence: ambiguous
+  id: unknown
+provider_presence_conclusion: ambiguous
+root_cause_conclusion: ambiguous-between-conflict-inventory-and-first-secret-create
+evidence:
+  frozen_execution_source:
+    path: src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r4.py
+    sha256: sha256:a6d1153a2d5940920ea590a3b93434749411c81a86b896a85bfac25202a00710
+    ordered_symbols:
+    - require_remote_conflict_free
+    - _secret_names
+    - RunPodControlPlane.create_secret
+    - _write_state
+    - RunPodControlPlane.create_template
+    - RunPodControlPlane.create_pod
+  hard_stop_outcome:
+    path: reports/benchmark/treasurebench-open-weight-public-calibration-outcome-r5.yml
+    sha256: sha256:6857ad6b6d341f85b47c5f53af2c8dd6354aa71f06a0597a09d06e8636596743
+    recorded_resource_ids: {pod: null, template: null, secrets: []}
+    billing: null
+    operational_counts: null
+  hard_stop_handoff:
+    path: reports/agent-ops/AO-0012-r5-live-hard-stop-handoff.yml
+    sha256: sha256:dc62fb96786ffb68a491c8ad10a9363c3d2eaa1aa032270e12dd0f0a0433394f
+    provider_resource_id_returned: false
+    temporary_secret_absence_proven: false
+  local_lifecycle_state:
+    symbolic_path: XDG_STATE_HOME/distributed-discovery/agent-ops/AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R5.json
+    observed_at_utc: '2026-08-05T22:47:55Z'
+    observed_state: absent
+execution_order_proof:
+- Conflict inventory runs before any Secret create.
+- Secret creation order is hf, endpoint, attestation.
+- Local lifecycle state is written immediately after each successful Secret create that returns an identity.
+- Template creation is unreachable until all three Secret identities have returned and been written.
+- Pod creation, model work, endpoint launch, inference, and billing are unreachable until the template identity has returned and been written.
+- The absent lifecycle state and empty recorded resource identities exclude a returned first-Secret identity, every later Secret, the template, and the Pod.
+- A transport-ambiguous first hf Secret create could have created that exact Secret without returning its identity, so absence cannot be inferred.
+excluded_possible_resources:
+- ao0012-owcal-r5-01b41c9aa04bf2a4-endpoint
+- ao0012-owcal-r5-01b41c9aa04bf2a4-attestation
+- ao0012-owcal-r5-01b41c9aa04bf2a4-template
+- ao0012-owcal-r5-01b41c9aa04bf2a4-pod
+excluded_activity:
+  model_download: true
+  endpoint_launch: true
+  inference: true
+  billing: true
+  spend: true
+limitations:
+- Repository and local evidence cannot distinguish conflict-inventory failure from an ambiguous first Secret creation response.
+- Repository and local evidence cannot establish whether the exact possible Secret currently exists at RunPod.
+- No provider query was performed to create this postmortem.
+required_next_authority: AOG-AO-0012-R6-RUNPOD-SECRET-STATUS-CONDITIONAL-CLEANUP

@@ -1,0 +1,63 @@
+schema_version: treasurebench-open-weight-cloud-runtime-r3-corruptions-v1
+task_id: AO-0012
+inherits: docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r2.yml
+inherited_cases: 36
+expected_result: every-R2-and-R3-corruption-rejected-with-zero-real-live-action
+cases:
+- id: OW-R3-001
+  mutation: graphql-bearer-header-present
+  expected: rejected
+- id: OW-R3-002
+  mutation: graphql-api-key-query-parameter-missing
+  expected: rejected
+- id: OW-R3-003
+  mutation: graphql-api-key-query-encoding-drift
+  expected: rejected
+- id: OW-R3-004
+  mutation: graphql-and-rest-auth-mechanisms-combined
+  expected: rejected
+- id: OW-R3-005
+  mutation: rest-bearer-header-missing
+  expected: rejected
+- id: OW-R3-006
+  mutation: rest-api-key-query-parameter-present
+  expected: rejected
+- id: OW-R3-007
+  mutation: graphql-http-exception-authenticated-url-leak
+  expected: rejected
+- id: OW-R3-008
+  mutation: rest-http-exception-authorization-leak
+  expected: rejected
+- id: OW-R3-009
+  mutation: graphql-errors-provider-body-leak
+  expected: rejected
+- id: OW-R3-010
+  mutation: malformed-json-raw-body-leak
+  expected: rejected
+- id: OW-R3-011
+  mutation: inventory-routed-through-rest
+  expected: rejected
+- id: OW-R3-012
+  mutation: secret-create-routed-through-rest
+  expected: rejected
+- id: OW-R3-013
+  mutation: secret-delete-routed-through-rest
+  expected: rejected
+- id: OW-R3-014
+  mutation: pod-create-routed-through-rest
+  expected: rejected
+- id: OW-R3-015
+  mutation: template-pod-delete-lookup-or-billing-routed-through-graphql
+  expected: rejected
+- id: OW-R3-016
+  mutation: pod-create-min-cuda-version
+  expected: rejected
+- id: OW-R3-017
+  mutation: pod-create-allowed-cuda-version-drift
+  expected: rejected
+- id: OW-R3-018
+  mutation: pod-create-unsupported-field-set
+  expected: rejected
+live_action: false
+credential_source_read: false
+authenticated_provider_call: false

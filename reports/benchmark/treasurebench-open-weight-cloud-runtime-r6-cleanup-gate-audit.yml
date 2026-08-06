@@ -1,0 +1,76 @@
+schema_version: treasurebench-open-weight-cloud-runtime-r6-cleanup-gate-audit-v1
+task_id: AO-0012
+status: authorization-free-validation-passed
+gate_id: AOG-AO-0012-R6-RUNPOD-SECRET-STATUS-CONDITIONAL-CLEANUP
+consumed_gate: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R5
+target_secret_name: ao0012-owcal-r5-01b41c9aa04bf2a4-hf
+provider_presence: ambiguous
+root_cause: ambiguous-between-conflict-inventory-and-first-secret-create
+credential_contract:
+  source: repository-root-.env.txt
+  exact_allowlist: [RUNPOD_API_KEY]
+  load_after_authorization_and-public-preflight_only: true
+  clear_on_every_exit: true
+  authorization_consumed_before_ingress: true
+  authorization_reuse: rejected-before-credential-ingress
+provider_contract:
+  provider: RunPod
+  surface: GraphQL-Secrets-only
+  authentication: url-encoded-api-key-query-parameter-only
+  inventory_query_count: 1
+  conditional_delete_count: 1
+  verification_query_count: 1
+  maximum_authenticated_operations: 3
+  retries: 0
+  raw_response_retention: false
+  unrelated_secret_metadata_retention: false
+conditional_cleanup:
+  zero_exact_matches: record-verified-absent-and-stop
+  one_exact_match_and_no-sibling-conflict: delete-exact-id-verify-absence-and-stop
+  multiple_exact_matches: hard-stop-without-delete
+  sibling-namespace-match: hard-stop-without-delete
+  ambiguous-delete: perform-only-frozen-verification-then-stop
+  ambiguous-verification: hard-stop-no-fourth-operation
+prohibited_surfaces:
+- Hugging-Face
+- template
+- Pod
+- storage
+- model
+- GPU
+- endpoint
+- inference
+- billing
+- spend
+- calibration
+- merge
+- issue-closure
+- publication
+preparation_activity:
+  real_env_txt_read: false
+  owner_authorization_read: false
+  authenticated_provider_call: false
+  provider_resource_query: false
+  provider_resource_mutation: false
+  inference_calls: 0
+  spend_usd: '0'
+validation:
+  focused_r6_tests: 17-passed
+  inherited_plus_r6_open_weight_tests: 176-passed
+  inherited_plus_r6_corruptions: 112-covered
+  offline_50_pairing_rehearsal: 50-terminal-294-synthetic-calls-methods-and-72-bounds-agree
+  ruff: pass-381-files
+  strict_mypy: pass-221-source-files
+  repository_verification: pass-1033-tests-all-audits
+  papers: pass-seven-pdfs-119-pages
+  site: pass-89-pages-26-studies
+  agent_operations: pass-20-task-contracts-zero-private-paths
+  program_memory: pass-40-records-zero-adopted-unrouted-or-duplicate-canonical
+failed_validation_preserved:
+- first-focused-wall-stopped-on-one-test-name-syntax-error-and-six-ruff-line-length-findings-before-tests
+- second-ruff-check-found-one-mechanical-test-import-order-mismatch
+- first-strict-mypy-check-found-thirteen-nested-mapping-and-synthetic-fixture-type-proof-gaps
+- second-strict-mypy-check-found-one-secret-inventory-list-narrowing-gap
+- first-complete-verify-stopped-at-ruff-format-check-for-new-r6-test-file
+- prospective-generic-gate-schema-rejected-owner-mandated-55-character-id-under-53-character-bound
+- pre-freeze-review-found-r6-authorization-reuse-gap-before-consumption-marker

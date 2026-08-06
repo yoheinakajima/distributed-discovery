@@ -1,0 +1,44 @@
+schema_version: treasurebench-open-weight-cloud-runtime-r2-corruptions-v1
+task_id: AO-0012
+preserves:
+  - docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions.yml
+expected_result: every-corruption-rejected-with-zero-real-live-action
+cases:
+  - {id: OW-R2-001, mutation: pre-ingress-authorization-drift, expected: rejected}
+  - {id: OW-R2-002, mutation: credential-file-missing, expected: rejected}
+  - {id: OW-R2-003, mutation: credential-file-unsafe-mode, expected: rejected}
+  - {id: OW-R2-004, mutation: credential-file-symlink, expected: rejected}
+  - {id: OW-R2-005, mutation: credential-extra-name-request, expected: rejected}
+  - {id: OW-R2-006, mutation: credential-clear-success, expected: rejected}
+  - {id: OW-R2-007, mutation: credential-clear-provider-error, expected: rejected}
+  - {id: OW-R2-008, mutation: credential-clear-parser-error, expected: rejected}
+  - {id: OW-R2-009, mutation: credential-clear-teardown-error, expected: rejected}
+  - {id: OW-R2-010, mutation: pod-raw-secret-env, expected: rejected}
+  - {id: OW-R2-011, mutation: temporary-secret-delete-ambiguity, expected: rejected}
+  - {id: OW-R2-012, mutation: temporary-template-delete-ambiguity, expected: rejected}
+  - {id: OW-R2-013, mutation: vllm-secret-inheritance, expected: rejected}
+  - {id: OW-R2-014, mutation: proxy-secret-inheritance, expected: rejected}
+  - {id: OW-R2-015, mutation: duplicate-pod-namespace, expected: rejected}
+  - {id: OW-R2-016, mutation: ambiguous-create-unique-match, expected: rejected}
+  - {id: OW-R2-017, mutation: ambiguous-create-multiple-match, expected: rejected}
+  - {id: OW-R2-018, mutation: server-termination-control-missing, expected: rejected}
+  - {id: OW-R2-019, mutation: manifest-echoed-cuda, expected: rejected}
+  - {id: OW-R2-020, mutation: mistral-common-below-minimum, expected: rejected}
+  - {id: OW-R2-021, mutation: attestation-gpu-count-two, expected: rejected}
+  - {id: OW-R2-022, mutation: attestation-quantized, expected: rejected}
+  - {id: OW-R2-023, mutation: startup-failure-finalizer, expected: rejected}
+  - {id: OW-R2-024, mutation: download-failure-finalizer, expected: rejected}
+  - {id: OW-R2-025, mutation: attestation-failure-finalizer, expected: rejected}
+  - {id: OW-R2-026, mutation: endpoint-failure-finalizer, expected: rejected}
+  - {id: OW-R2-027, mutation: calibration-failure-finalizer, expected: rejected}
+  - {id: OW-R2-028, mutation: runtime-cap-failure-finalizer, expected: rejected}
+  - {id: OW-R2-029, mutation: integrity-failure-finalizer, expected: rejected}
+  - {id: OW-R2-030, mutation: teardown-ambiguity, expected: rejected}
+  - {id: OW-R2-031, mutation: billing-unavailable, expected: rejected}
+  - {id: OW-R2-032, mutation: false-feasible-on-failure, expected: rejected}
+  - {id: OW-R2-033, mutation: merge-close-on-ambiguity, expected: rejected}
+  - {id: OW-R2-034, mutation: raw-secret-public-leak, expected: rejected}
+  - {id: OW-R2-035, mutation: raw-provider-body-public-leak, expected: rejected}
+  - {id: OW-R2-036, mutation: prompt-output-public-leak, expected: rejected}
+live_action: false
+credential_source_read: false

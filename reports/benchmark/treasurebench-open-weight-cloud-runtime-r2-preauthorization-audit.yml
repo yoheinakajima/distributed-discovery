@@ -1,0 +1,139 @@
+schema_version: treasurebench-open-weight-cloud-runtime-r2-preauthorization-audit-v1
+task_id: AO-0012
+status: authorization-free-audit-complete
+audited_at_utc: "2026-08-01T23:07:57Z"
+supersedes_live_surface_only:
+  contract: tasks/treasurebench-open-weight-cloud-runtime.yml
+  gate_id: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION
+  authorized_or_consumed: false
+preserved_identity:
+  runtime_identity: treasurebench-mistral-small-3.1-24b-bf16-vllm-0.23.0-a100-80gb-pcie-r1
+  model_repository: mistralai/Mistral-Small-3.1-24B-Instruct-2503
+  model_revision: 68faf511d618ef198fef186659617cfd2eb8e33a
+  model_weight:
+    path: consolidated.safetensors
+    format: original-unquantized-BF16
+    sha256: d446ca97599fa9d98b2e3744d8b83019837a2fe34a80f4353120b1e9b6249b1e
+  tokenizer:
+    artifact: tekken.json
+    authority: Mistral-V7-Tekken-at-exact-model-revision
+    sha256: c604f35d1035f534519622c0ec83fed6184978d4fdee92a5bd2a50bc05438094
+  engine: {name: vLLM, version: 0.23.0}
+  container:
+    platform: linux/amd64
+    digest: sha256:3a1e7f5904e1a1192a02aa0086ceaffc33985d7044c7bb25b3a43d61bdbe3ac0
+  compute:
+    product: RunPod-Secure-Cloud-dedicated-noninterruptible-Pod
+    gpu: NVIDIA-A100-80GB-PCIe
+    count: 1
+  caps: {gpu_hours: 6, calls: 400, expected_usd_under: 10, hard_usd: 20}
+credential_ingress:
+  source: repository-root-.env.txt
+  loader: src/distributed_discovery/benchmark/agents_v1/live_inputs.py
+  requested_names: [RUNPOD_API_KEY, HF_TOKEN]
+  order:
+    - validate exact R2 authorization and protected repository/GitHub identity
+    - validate zero cumulative calls and spend and no local lifecycle conflict
+    - load exact requested subset from regular nonsymlink mode-0600-or-stricter file
+    - use RunPod credential only for the selected control plane and HF token only as a temporary RunPod secret
+  no_export_source_or_wrapper_required: true
+  synthetic_tests_read_real_source: false
+runpod_secret_and_template_surface:
+  official_operations:
+    secrets: [secretCreate, secretDelete, "myself.secrets"]
+    templates: [REST-POST-templates, REST-GET-templates, REST-DELETE-templateId, "myself.podTemplates"]
+  secret_reference: "{{ RUNPOD_SECRET_secret_name }}"
+  temporary_secrets:
+    - read-only-Hugging-Face-token
+    - generated-runtime-endpoint-bearer
+    - generated-runtime-attestation-HMAC-key
+  template:
+    temporary: true
+    private: true
+    serverless: false
+    raw_secret_values: prohibited
+  deletion_and_absence_verification: required
+orphan_controls:
+  namespace: deterministic-AO-0012-R2-gate-authorization-digest
+  precreate_conflict_rule: zero-exact-name-or-namespace-match
+  ambiguous_create_rule: one-match-maximum-in-registered-window-then-delete-and-verify
+  native_server_side_backstop:
+    operation: podFindAndDeployOnDemand
+    field: terminateAfter
+    value: authorization-start-plus-six-hours
+    official_cli_cross_check:
+      repository: runpod/runpodctl
+      release: v2.8.0
+      published_at_utc: "2026-07-29T16:42:33Z"
+      create_flag: --terminate-after
+      linux_amd64_sha256: 33184eb9b4ede3524582d81dfb84a0a632402cec11feb97d9ae46e26d3090c4c
+  local_finalizer: always-after-possible-Pod
+measured_attestation:
+  requested_not_measured:
+    - CUDA-compatibility-class-13.0
+    - exact-Pod-and-container-identity-from-authenticated-control-plane
+  measured_and_HMAC_authenticated:
+    - actual-GPU-name-and-count
+    - actual-GPU-memory
+    - actual-NVIDIA-driver
+    - actual-container-CUDA-toolkit
+    - actual-CUDA-runtime-library
+    - PyTorch-reported-CUDA
+    - vLLM-version
+    - mistral-common-version-at-least-1.11.3
+    - exact-model-weight-SHA256
+    - exact-tokenizer-SHA256
+    - no-quantization
+    - tensor-parallel-size-one
+    - startup-and-model-load-times
+    - peak-GPU-memory
+  manifest_echo_sufficient: false
+finalizer:
+  order:
+    - stop-inference-dispatch
+    - terminate-exact-Pod
+    - verify-Pod-unaddressable-and-disposable-volume-deleted
+    - delete-and-verify-temporary-template
+    - delete-and-verify-all-temporary-secrets
+    - poll-exact-Pod-billing
+    - reconcile-positive-amount-positive-time-and-storage-field
+    - enforce-six-hour-and-USD-20-caps
+    - write-one-redacted-outcome-and-permitted-decision
+  ambiguity:
+    further_gpu_or_inference_calls: prohibited
+    merge_pr_213: prohibited
+    close_issue_212: prohibited
+    output: exact-resource-IDs-and-owner-safe-status-query-only
+official_primary_sources:
+  - url: https://docs.runpod.io/sdks/graphql/manage-pod-templates
+    supports: secretCreate-secretDelete-saveTemplate-deleteTemplate-and-template-secret-references
+  - url: https://docs.runpod.io/pods/templates/environment-variables
+    supports: RunPod-secret-reference-syntax-and-Pod-scoped-RUNPOD_API_KEY
+  - url: https://graphql-spec.runpod.io/
+    version: 1.1.0
+    supports: Authorization-Bearer-myself-secrets-podTemplates-pods-and-Pod-fields
+  - url: https://github.com/runpod/runpodctl/blob/v2.8.0/docs/runpodctl_pod_create.md
+    supports: documented-terminate-after-and-template-id-create-flags
+  - url: https://github.com/runpod/runpodctl/blob/v2.8.0/cmd/pod/create.go
+    supports: terminateAfter-transmission-in-PodFindAndDeployOnDemandInput
+  - url: https://docs.runpod.io/api-reference/templates/POST/templates
+    supports: private-template-create-with-entrypoint-start-command-ports-disks-and-secret-reference-environment
+  - url: https://docs.runpod.io/api-reference/templates/DELETE/templates/templateId
+    supports: exact-temporary-template-deletion
+  - url: https://docs.runpod.io/api-reference/pods/GET/pods
+    supports: exact-current-Pod-inventory
+  - url: https://docs.runpod.io/api-reference/pods/DELETE/pods/podId
+    supports: exact-Pod-termination
+  - url: https://docs.runpod.io/api-reference/billing/GET/billing/pods
+    supports: podId-amount-timeBilledMs-and-diskSpaceBilledGb
+limitations:
+  - RunPod remains the infrastructure provider and may observe or misreport host-level facts; this runtime is not physically local or fully infrastructure independent.
+  - Control-plane container identity plus measured in-container facts do not make the provider cryptographically unable to substitute infrastructure.
+  - The current documented PodFindAndDeployOnDemand input exposes terminateAfter but not volumeEncrypted; R2 therefore requires both the authenticated create response and the Pod-scoped self-query to report volumeEncrypted true before any secret is written. False or absent is an exact bounded control-boundary failure, not permission to send an undocumented field.
+  - Exact post-termination volume deletion is inferred only from the selected disposable non-network Pod volume semantics and exact Pod absence; any provider ambiguity hard-stops closeout.
+external_state_changed: false
+credential_read: false
+provider_call: false
+model_download: false
+gpu_provisioned: false
+spend_usd: "0"

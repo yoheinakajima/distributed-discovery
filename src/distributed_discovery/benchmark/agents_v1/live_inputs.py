@@ -22,6 +22,8 @@ ALLOWED_CREDENTIAL_NAMES = frozenset(
         "GEMINI_API_KEY",
         "GOOGLE_API_KEY",
         "MISTRAL_API_KEY",
+        "RUNPOD_API_KEY",
+        "HF_TOKEN",
     }
 )
 OUT_OF_SCOPE_CREDENTIAL_NAMES = frozenset({"FLYMYAI_API_KEY", "MONID_API_KEY"})
@@ -78,7 +80,7 @@ class CredentialSet:
 
     def get_secret(self, name: str) -> str | None:
         if name not in self._allowed_names:
-            raise PermissionError("credential name is outside the live LLM allowlist")
+            raise PermissionError("credential name is outside the live credential allowlist")
         return self._values.get(name)
 
     def clear(self) -> None:
@@ -186,7 +188,7 @@ def load_credentials(
         raise PermissionError("at least one credential name must be requested")
     invalid_names = selected_names - ALLOWED_CREDENTIAL_NAMES
     if invalid_names:
-        raise PermissionError("credential name is outside the live LLM allowlist")
+        raise PermissionError("credential name is outside the live credential allowlist")
     metadata = path.lstat()
     if stat.S_ISLNK(metadata.st_mode):
         raise PermissionError("credential file must not be a symlink")

@@ -1,0 +1,28 @@
+schema_version: treasurebench-open-weight-public-calibration-outcome-r2-v1
+task_id: AO-0012
+scientific_run: false
+status: hard-stop
+runtime_identity: treasurebench-mistral-small-3.1-24b-bf16-vllm-0.23.0-a100-80gb-pcie-r1
+model_identity: mistralai/Mistral-Small-3.1-24B-Instruct-2503@68faf511d618ef198fef186659617cfd2eb8e33a
+failure_class: secret-template-deletion-ambiguity
+decision: self-operated-control-boundary-failed-managed-api-rejected
+resource_ids:
+  pod: null
+  template: null
+  secrets: []
+teardown:
+  dispatch_stopped: true
+  pod_deleted: null
+  pod_unaddressable: null
+  disposable_volume_deleted: null
+  template_deleted: null
+  secrets_deleted: false
+billing: null
+operational_counts: null
+projections: null
+remediation:
+- query { myself { secrets { id name } } }
+raw_provider_bodies_published: false
+prompts_or_outputs_published: false
+performance_values_published: false
+merge_or_issue_close_allowed: false

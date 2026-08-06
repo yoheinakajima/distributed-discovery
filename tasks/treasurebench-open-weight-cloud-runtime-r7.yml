@@ -1,0 +1,112 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0012
+title: TreasureBench R7 public-only open-weight runtime calibration gate
+task_type: infrastructure
+status: owner-gate-required
+objective: Freeze a fresh public-only calibration gate after the qualified R6b cleanup outcome, using a new namespace and a USD 10 hard cap while preserving the exact open-weight runtime identity and zero-scientific boundary.
+authority_references:
+- {type: instruction, path: AGENTS.md}
+- {type: policy, path: docs/agent-ops/README.md}
+- {type: policy, path: docs/benchmark/agents-v1/AGENTS.md}
+- {type: plan, path: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md}
+- {type: issue, path: 'https://github.com/yoheinakajima/distributed-discovery/issues/212'}
+- {type: pull-request, path: 'https://github.com/yoheinakajima/distributed-discovery/pull/213'}
+- {type: record, path: reports/benchmark/treasurebench-open-weight-secret-cleanup-outcome-r6.yml}
+owner_decisions:
+- On 2026-08-05 the owner observed the RunPod mobile Secrets tab empty; this is current UI evidence only, not API proof, historical proof, or proof across every possible account or team scope.
+- The prior R6b inventory response remains unreconstructable and R6b remains consumed; no R5 orphan query, automated deletion, or cleanup retry is authorized by R7.
+- The RunPod account balance is owner-observed as USD 200, but that balance creates no spending authority; R7 expected spend is USD 3 and its hard cap is USD 10.
+- R7 uses a fresh authorization-derived namespace and otherwise preserves the exact R4/R5 model, engine, container, A100, encrypted storage, watchdog, attestation, 50-pairing calibration, teardown, billing, and public-only boundaries.
+- R1 through R6b remain superseded, consumed, failed, or immutable exactly as recorded and may not authorize R7.
+scope:
+  paths:
+  - tasks/treasurebench-open-weight-cloud-runtime-r7.yml
+  - plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+  - plans/MASTER_EXEC_PLAN.md
+  - studies/DD-010-discoverybench/README.md
+  - studies/DD-010-discoverybench/status.yml
+  - docs/program-memory/registry.yml
+  - docs/benchmark/agents-v1/open-weight-public-calibration.yml
+  - docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r7.yml
+  - reports/benchmark/treasurebench-open-weight-secret-cleanup-outcome-r6.yml
+  - reports/benchmark/treasurebench-open-weight-cloud-runtime-r7-calibration-gate-audit.yml
+  - reports/agent-ops/AO-0012-open-weight-public-calibration-r7-owner-gate.yml
+  - reports/agent-ops/AO-0012-r7-owner-gate-required-handoff.yml
+  - src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r7.py
+  - tests/test_treasurebench_open_weight_cloud_runtime_r7.py
+  - Makefile
+  actions:
+  - qualify and preserve the R6b outcome with the typed owner UI observation
+  - audit current official RunPod Secret, Pod, encrypted-storage, and pricing documentation
+  - enforce a new namespace, USD 1.50 hourly-rate ceiling, USD 10 total cap, six-hour watchdog, and 400-call ceiling
+  - validate the unchanged public 50-pairing runtime package entirely offline
+  - freeze and validate one unconsumed R7 generic owner gate without creating authorization
+non_goals:
+- No R5 Secret status query, cleanup, deletion, retry, or historical-absence claim.
+- No authorization creation; no .env.txt, credential, RunPod or Hugging Face account access; no resource, model, endpoint, inference, billing, or spend during preparation.
+- No DD-023, scientific run, private task, base campaign, performance publication, claim, paper, release, DOI, arXiv, journal, submission, PR readiness, merge, or issue closure.
+permissions: {repository_write: true, git_branch_commit: true, github_issue_pr: true, merge_after_checks: true, ci_pages: true}
+external_action_permissions: {network_observation: true, github_mutation: true, provider_calls: true, spend: true, release_publication: false, submission: false}
+scientific_mutation_permissions: {create_study: false, create_claim: false, create_run: false, change_evidence_status: false, change_proof_status: false, change_paper_lifecycle: false}
+private_data_permissions: {read: true, write: true, generate: true, publish: false}
+budget:
+  currency: USD
+  expected: '3'
+  hard_cap: '10'
+  call_cap: 400
+  category_caps: {runpod_gpu_compute_and_storage: '10'}
+  cumulative_spend: '0'
+expected_outcomes:
+- One qualified R6b outcome that preserves both the current empty Secrets-tab observation and the unreconstructable prior provider result.
+- One exact R7 adapter that rejects hourly rates above USD 1.50, total billed cost above USD 10, more than 21,600 GPU seconds, or more than 400 inference calls.
+- One fresh namespace with no operation against the prior ambiguous R5 namespace.
+- One complete offline rehearsal, full repository verification, frozen execution commit, protected tree, validated R7 gate, and owner-gate-required handoff.
+stop_conditions:
+- Stop before credential ingress on any authorization, cap, protected-tree, public GitHub, remote-head, ancestry, tracked-worktree, state, or exact new-namespace conflict mismatch.
+- Stop before Pod model work if Secrets inventory, Secret create, template, Pod identity, rate, encrypted storage, watchdog, attestation, authentication, or logging boundaries are ambiguous.
+- Stop and keep PR 213 draft and issue 212 open on any teardown, Secret/template deletion, Pod/volume absence, billing, cap, leakage, or integrity ambiguity.
+- Stop at owner-gate-required after validate-only; do not authorize or execute R7 during preparation.
+acceptance_profile: infrastructure
+canonical_destinations:
+- tasks/treasurebench-open-weight-cloud-runtime-r7.yml
+- plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+- reports/benchmark/treasurebench-open-weight-secret-cleanup-outcome-r6.yml
+- reports/benchmark/treasurebench-open-weight-cloud-runtime-r7-calibration-gate-audit.yml
+- reports/agent-ops/AO-0012-open-weight-public-calibration-r7-owner-gate.yml
+- reports/agent-ops/AO-0012-r7-owner-gate-required-handoff.yml
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 212
+  branch: agent/treasurebench-open-weight-cloud-runtime
+  pull_request: 213
+  base: main
+exec_plan: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+task_delta: null
+frozen_identifiers:
+  model_repository: mistralai/Mistral-Small-3.1-24B-Instruct-2503
+  model_revision: 68faf511d618ef198fef186659617cfd2eb8e33a
+  model_weight_format: official-bf16-unquantized
+  weight_sha256: d446ca97599fa9d98b2e3744d8b83019837a2fe34a80f4353120b1e9b6249b1e
+  tokenizer_sha256: c604f35d1035f534519622c0ec83fed6184978d4fdee92a5bd2a50bc05438094
+  engine: vLLM-0.23.0
+  container_digest: sha256:3a1e7f5904e1a1192a02aa0086ceaffc33985d7044c7bb25b3a43d61bdbe3ac0
+  compute: RunPod-Secure-Cloud-dedicated-noninterruptible
+  gpu_type: NVIDIA-A100-80GB-PCIe
+  gpu_count: '1'
+  gate_id: AOG-AO-0012-R7-PUBLIC-CALIBRATION
+  credential_source: repository-root-.env.txt
+  credential_names: RUNPOD_API_KEY-and-HF_TOKEN-only
+  expected_total_cost_usd: '3'
+  hard_total_cost_usd: '10'
+  maximum_hourly_rate_usd: '1.50'
+  maximum_gpu_seconds: '21600'
+  maximum_inference_calls: '400'
+  intended_pairings: '50'
+supersession:
+  supersedes:
+  - tasks/treasurebench-open-weight-cloud-runtime-r6b.yml
+  - AOG-AO-0012-R6-RUNPOD-SECRET-CLEANUP
+  superseded_by: null
+  reason: R6b was consumed by an inventory-ambiguity hard stop; the owner subsequently observed an empty Secrets tab and funded the account, so R7 additively prepares a new namespace and tighter calibration cap without claiming historical absence or retrying cleanup.
+next_gate: Review and, only under a fresh exact owner decision, authorize AOG-AO-0012-R7-PUBLIC-CALIBRATION; no earlier gate or authorization is reusable.

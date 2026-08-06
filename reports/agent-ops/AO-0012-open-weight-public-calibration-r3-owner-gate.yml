@@ -1,0 +1,181 @@
+schema_version: agent-ops-owner-gate-v1
+kind: owner-gate
+synthetic: false
+gate_id: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R3
+task_contract:
+  path: tasks/treasurebench-open-weight-cloud-runtime-r3.yml
+  sha256: sha256:3543f1dd058679bf1b6d2647d4e4a4f384e9bd1334cb12dad016bf9604c49d6c
+issue: 212
+pull_request:
+  number: 213
+  expected_state: OPEN
+  head_sha: 1b6845d5cec11cdf64da66a23ecbd96ae8927fc7
+branch: agent/treasurebench-open-weight-cloud-runtime
+commit: 1b6845d5cec11cdf64da66a23ecbd96ae8927fc7
+tree_hashes:
+  Makefile: sha256:81fd4cc69da601722110beaf76f1be3f0fe36efb054a9d6b406fd006e5cbc499
+  pyproject.toml: sha256:6064f6b622ae24bb3341310a6a6d4a2017884d9596dab47e12cc334b8c6d882b
+  uv.lock: sha256:0766c91477cdc28e1ed36ec7bcd60669ed6e80fd0a6f55892bc8fba2c57a3588
+  tasks/treasurebench-open-weight-cloud-runtime-r3.yml: sha256:3543f1dd058679bf1b6d2647d4e4a4f384e9bd1334cb12dad016bf9604c49d6c
+  tasks/treasurebench-open-weight-cloud-runtime-r2.yml: sha256:937ce13a47a708d7f3c5258cb6158bb88f378ae2d8023b219342a96ea2a4d5cb
+  tasks/treasurebench-open-weight-cloud-runtime.yml: sha256:7da149cfc4358a5fe78145424ee247cec87cb19757173862909741abffa40356
+  docs/agent-ops: sha256:fe94862b1b7cad4d472a9e7b3e25749c7311986ec062a4040e8031621ab190f1
+  src/distributed_discovery/agent_ops: sha256:84a44c60d7c7a6a159c8beb5cfb8bc25b19bcae8992c1781fa396225d9f11376
+  scripts/audit_agent_ops.py: sha256:336d9e0735f8fe2acc93268053d09f3af4089f189c582882eac084dd607bca29
+  docs/benchmark/agents-v1/open-weight-runtime-definition.yml: sha256:53cf734782afd6e115781291578d723040f104f7633d76c7c2440b9337c34ca4
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-manifest.yml: sha256:eeb5b90ffd396c99b1ae2b6896c791e01f177c019580c51cc40b622a35d426c8
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-manifest-r2.yml: sha256:eb99c2023d65a4e474505319f62f3426166f25355708efe6e97f0f3bb7a66832
+  docs/benchmark/agents-v1/open-weight-provider-outcome-policy-v3-extension.yml: sha256:8790b7c60e3ce0b1fdbfdf2dcab58929794708a1b02f346a7e1c9be463e58e8b
+  docs/benchmark/agents-v1/protocol-validity-policy-v2.yml: sha256:884708e8da7b3a7f763094dc274f7f792e45b71f560dc5bb60f6d7c0e9cdbb3e
+  docs/benchmark/agents-v1/provider-outcome-policy-v3.yml: sha256:6bbb86b6c6b7cb9c8fa346e8b629361e8acedeb9ae2b95b64ad52a580d1f8c50
+  docs/benchmark/agents-v1/open-weight-public-calibration.yml: sha256:1c8182f3bdf5c14fec44a276e56018d13abd13557e1b784c44922727a36909a9
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions.yml: sha256:f26eb195a0d077896b2945cfdbd974b87281928f725dc8bfac69aa109d2f3306
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r2.yml: sha256:156db0ade3c58e2775a726476b716f4175ce9fbc9c7cf5b23a06f4d69b35205e
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r3.yml: sha256:83fec43606f60b7fa296250cf19c827b11948ab91a7af5ae501221c47d526c03
+  docs/benchmark/agents-v1/open-weight-public-calibration-outcome-r2.schema.json: sha256:6e0a1bccb4db509e1fa6ad57ea1342cf5c4267e65352c7f669f0bab92b68477f
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-feasibility.yml: sha256:2fe819c6bacb2ea1e0b8912aed11aca67cbbf04f550376a858c1b6c5c337ab31
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-r2-preauthorization-audit.yml: sha256:dcab8873b5064dc79dcbd4c18fbfda56babeeca7066242405bbb8df3f6c7bf51
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-r3-api-contract-audit.yml: sha256:064f150687591f0c50aed18c1a5c355c701b381df0bbafcdf64812b81c6c6b25
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-decision.yml: sha256:99a5a7b4d369bdb4070a6d45cd8a3816f9f6cec179666bff2e8ade91c20e3969
+  scripts/audit_treasurebench_open_weight_cloud_runtime.py: sha256:9e4cd5b723aeded22da18a9fd8298c5d488c7c52aabbe4e0342a4c2456853139
+  scripts/treasurebench_open_weight_proxy_r2.py: sha256:6e3c2f413b917b8bb66acb88308bd43c355af7f77e7f82ab9f8386de0a4868b5
+  scripts/treasurebench_open_weight_runtime_start_r2.sh: sha256:8e78d39415f3ad978d5ed394a5b7eb81b61bbb87a2a9d7c7acd9c39218119ff8
+  src/distributed_discovery/benchmark/agents_v1/live_inputs.py: sha256:f8723dc1f64993fe851abcd4185bbdd28df695dcc0de2acb06b48f848d5435ad
+  src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r2.py: sha256:f8f7aaeee602f4341bf9c48541c56163d8e5bc142e438f2f023f5bd6f5847ae0
+  src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r3.py: sha256:7b727a4d0fcef389814be7467d3c95825447bda4050632109898fe7325aaed2c
+  tests/test_treasurebench_open_weight_cloud_runtime.py: sha256:2d524140d23b81a0465f06d99581e50615fa483dc759113604f024912615573b
+  tests/test_treasurebench_open_weight_cloud_runtime_r2.py: sha256:d70894687f8b1e00d6daa8ed6e95ee5ed8ab4e937e6e442ef57d80f9e88f42ac
+  tests/test_treasurebench_open_weight_cloud_runtime_r3.py: sha256:0a13e0f006433b105185cd39d71b7623025a9847c653482a4ea94d5c6c8ad7e6
+purpose: Authorize only the R3-corrected public engineering calibration of the exact open-weight, self-operated cloud runtime, including documented query-parameter-only RunPod GraphQL authentication, Bearer-only REST authentication, exact allowedCudaVersions Pod creation, and the preserved R2 credential, short-lived resource, orphan, attestation, finalizer, teardown, and billing controls.
+irreversible_actions:
+- permission: external_action_permissions.spend
+  description: Spend only for one RunPod Secure Cloud dedicated Pod with one NVIDIA A100 80GB PCIe and associated selected temporary storage, within the exact total and category caps below.
+- permission: permissions.merge_after_checks
+  description: Mark draft PR 213 ready and squash-merge only after normal calibration completion or honest fail-closed public-safe closeout passes the complete validation wall and required GitHub checks.
+- permission: permissions.ci_pages
+  description: Permit only normal post-merge CI and Pages, followed by named public-safe route verification.
+private_actions:
+- permission: private_data_permissions.read
+  description: After exact R3 authorization and all pre-ingress validation only, load exactly RUNPOD_API_KEY and HF_TOKEN from repository-root .env.txt using the strict nonexecuting no-interpolation exact-subset loader; read no unrelated credential.
+- permission: private_data_permissions.generate
+  description: Generate only one short-lived endpoint bearer and one runtime-attestation HMAC key for the authorization-bound AO-0012 resource namespace.
+- permission: private_data_permissions.write
+  description: Transmit the three short-lived secret values only through official RunPod Secrets and keep the endpoint bearer in one mode-0600 file on the disposable encrypted Pod volume; persist no secret value in Git, public output, provider configuration, or logs.
+external_actions:
+- permission: permissions.repository_write
+  description: Write only the frozen public operational calibration outcome, one permitted final decision, gate-consistent plan and study status, and public-safe AO-0012 closeout records.
+- permission: permissions.git_branch_commit
+  description: Commit and push only the normal calibration or honest failure closeout on the registered branch without routine conversational checkpoints.
+- permission: permissions.github_issue_pr
+  description: Update PR 213 accurately and close issue 212 only after the authorized validation, merge, CI, Pages, and route-verification sequence succeeds.
+- permission: permissions.merge_after_checks
+  description: Mark PR 213 ready and squash-merge only after the appropriate complete closeout validation and every required check passes.
+- permission: permissions.ci_pages
+  description: Observe normal CI and Pages and verify only named public-safe routes after merge.
+- permission: external_action_permissions.network_observation
+  description: Revalidate only the exact official model, vLLM, NVIDIA, and RunPod terms and identities, GitHub checks, normal CI and Pages, and named public-safe routes.
+- permission: external_action_permissions.github_mutation
+  description: Push public-safe commits, update PR 213, mark it ready after checks, squash-merge after checks, and close issue 212 after post-merge verification.
+- permission: external_action_permissions.provider_calls
+  description: Use authenticated RunPod Secrets, templates, Pod inventory/create/delete/billing surfaces and Hugging Face artifact download only for the exact pinned public model and one authenticated self-operated endpoint; make no model-provider API call.
+- permission: external_action_permissions.spend
+  description: Spend only within USD 20 total, USD 20 RunPod-compute category, six GPU-hours, and 400 inference calls for this single calibration, exact teardown, and billing reconciliation.
+cumulative_state:
+  currency: USD
+  spend: '0'
+  calls: 0
+  category_spend:
+    runpod_gpu_compute: '0'
+hard_caps:
+  currency: USD
+  spend: '20'
+  calls: 400
+  category_spend:
+    runpod_gpu_compute: '20'
+remaining_caps:
+  currency: USD
+  spend: '20'
+  calls: 400
+  category_spend:
+    runpod_gpu_compute: '20'
+owner_confirmation_statements:
+- I authorize only AO-0012 R3 at execution commit 1b6845d5cec11cdf64da66a23ecbd96ae8927fc7, issue 212, draft PR 213, the additive R3 contract, branch, 33-path protected tree, unchanged runtime identity, actions, caps, prohibitions, and expiry in this manifest; the unused R1 and R2 gates remain superseded and unauthorized.
+- I authorize credential ingress only after R3 authorization, issue, PR, branch, execution ancestry, contract, every protected hash, zero calls and spend, and zero local resource conflict pass, through the strict nonexecuting no-interpolation loader reading repository-root .env.txt as a regular non-symlink mode-0600-or-stricter file and returning exactly RUNPOD_API_KEY and HF_TOKEN.
+- I authorize no owner export, sourced shell file, preparatory wrapper, unrelated credential access, or credential return, copy, hash, fingerprint, display, log, persistence, or transmission outside the exact official surfaces; every selected or generated credential value must be cleared on every exit.
+- I authorize RunPod GraphQL only through the documented URL-encoded api_key query parameter with no Authorization header, and RunPod REST only through Authorization Bearer with no api_key query parameter; no request may combine mechanisms, and only fixed operation class plus numeric HTTP status may survive redaction.
+- I authorize three uniquely named authorization-bound short-lived RunPod Secrets for the read-only Hugging Face token, generated endpoint bearer, and generated attestation HMAC key, plus one temporary private template containing only supported secret references and the exact immutable container, startup, ports, disks, and nonsecret identity payloads.
+- I require the exact Pod, every AO-0012 RunPod Secret, and the temporary template to be deleted and verified absent after success or bounded failure; any Pod, secret, template, disposable-volume, or billing ambiguity is a hard stop that keeps PR 213 open and issue 212 open.
+- I authorize one unique namespace derived from AO-0012, the R3 gate ID, and the authorization digest; inventory must show zero exact conflicts before create, and an ambiguous create must reconcile only one exact namespace/time-window match, delete it, verify absence, and fail closed on multiple matches.
+- I authorize the documented podFindAndDeployOnDemand terminateAfter value fixed to authorization time plus 21,600 seconds as a native server-side backstop, together with local unconditional finalization; no undocumented create field may be guessed.
+- I authorize podFindAndDeployOnDemand only with the exact frozen fields name, cloudType SECURE, gpuCount 1, gpuTypeId NVIDIA A100 80GB PCIe, allowedCudaVersions [13.0], exact temporary template ID, 50-GB container disk, 120-GB disposable volume, /workspace mount, US constraint, disabled SSH/public IP, and authorization-start-plus-six-hour terminateAfter; minCudaVersion and every unregistered field are prohibited.
+- I authorize one RunPod Secure Cloud dedicated noninterruptible SECURE Pod, one NVIDIA A100 80GB PCIe, one hardware identity, US region constraint, CUDA 13.0 compatibility request, Linux driver 580.65.06 or newer, 50-GB container disk, and 120-GB disposable encrypted non-network volume; encrypted volume must be observed in both create response and the Pod-scoped self-query before any secret is written to disk.
+- I authorize only docker.io/vllm/vllm-openai at Linux-amd64 digest sha256:3a1e7f5904e1a1192a02aa0086ceaffc33985d7044c7bb25b3a43d61bdbe3ac0, vLLM 0.23.0 native implementation, measured CUDA toolkit/runtime and PyTorch CUDA compatibility, mistral-common at least 1.11.3, and no moving tag, fallback, quantization, sharding, alternate model, alternate GPU, or second GPU.
+- I authorize only mistralai/Mistral-Small-3.1-24B-Instruct-2503 revision 68faf511d618ef198fef186659617cfd2eb8e33a, original unquantized BF16 consolidated.safetensors SHA256 d446ca97599fa9d98b2e3744d8b83019837a2fe34a80f4353120b1e9b6249b1e, and exact-revision mistral-common V7 Tekken tokenizer SHA256 c604f35d1035f534519622c0ec83fed6184978d4fdee92a5bd2a50bc05438094.
+- I require measured HMAC-authenticated attestation of actual GPU name/count/memory, NVIDIA driver, container CUDA toolkit/runtime, PyTorch CUDA, vLLM, mistral-common, exact model and tokenizer hashes, no quantization, tensor parallel size one, startup/load times, and peak GPU memory; a manifest echo is insufficient.
+- I require HF_TOKEN to be cleared after verified download, the attestation key cleared after signing, the Pod-scoped RUNPOD_API_KEY cleared before vLLM or proxy, base64 payloads cleared after mode-0600 materialization, and vLLM and proxy launched with no credential inheritance; the proxy reads the endpoint bearer file once and clears its inherited environment.
+- I authorize exactly ten frozen public tasks, five architectures, one repeat, and 50 intended pairings under protocol-validity policy v2 and the prospective self-operated provider-outcome policy-v3 extension, at most two identical transport attempts and one schema-only repair, no semantic retry or hidden fallback, fixed circuit breakers, and no observed validity-rate acceptance threshold.
+- 'I require one deterministic lifecycle finalizer after any Pod may exist: stop dispatch; delete and verify the exact Pod and disposable volume; delete and verify all temporary secrets and template; poll official billing for the exact Pod ID; reconcile positive billed milliseconds, exact amount, and any returned storage charge; enforce six GPU-hours and USD 20; and write one schema-valid redacted outcome and permitted decision.'
+- I authorize reporting only runtime/model/engine/hardware identity, fixed startup/download/load time and cost, marginal 50-pairing generation time, tokens per second, calls/retries, peak memory, terminal conformance counts, exact billed cost, continuous one-startup 3,000-pairing projection, conservative repeated-startup bound, and a mechanical 9,000-pairing reference that explicitly excludes OpenAI and Anthropic costs; no performance comparison may be published.
+- I understand expected external spend remains under USD 10, the conservative planning envelope is USD 10, audited compute is USD 1.39 per GPU-hour before brief storage charges, and hard limits are USD 20 total, USD 20 RunPod compute category, 21,600 GPU seconds, and 400 inference calls.
+- I authorize only normal calibration completion or honest bounded failure closeout to continue without routine checkpoints through exact teardown and billing, one permitted decision, public-safe records, complete validation, required checks, PR readiness and squash merge, normal CI and Pages, named route verification, issue closure, and synchronized main; ambiguity prohibits merge and closure.
+- I understand this runtime supplies prospective model and inference-stack independence, not physical locality or complete infrastructure independence, and this gate authorizes no DD-023, scientific run, private task or answer, base campaign, performance publication, paper, release, DOI, arXiv, journal, or submission.
+- I understand the generic owner-gate engine creates only this exact mode-0600 local authorization and itself reads no .env.txt or credential, calls no RunPod or Hugging Face authenticated surface, downloads no model, provisions no GPU, launches no endpoint, runs no calibration, spends nothing, and mutates no repository or GitHub state.
+explicit_prohibitions:
+- provider-calls-outside-manifest
+- credential-read-outside-manifest
+- unauthorized-private-access
+- scientific-mutation-outside-contract
+- cap-increase
+- consequential-action-by-gate-engine
+- r1-or-r2-gate-authorization-or-use
+- credential-source-outside-repository-root-env-txt
+- credential-name-outside-runpod-api-key-and-hf-token
+- credential-pre-ingress-validation-bypass
+- env-txt-symlink-nonregular-or-unsafe-mode
+- owner-export-source-or-preparatory-wrapper-requirement
+- unrelated-credential-return-copy-hash-fingerprint-display-log-persist-or-transmit
+- raw-secret-in-pod-env-template-or-plain-provider-configuration
+- long-lived-runpod-secret-or-template
+- secret-template-delete-unverified-or-ambiguous
+- namespace-conflict-duplicate-name-multiple-match-or-ambiguous-create-continuation
+- undocumented-provider-field
+- terminate-after-bypass-increase-reset-or-removal
+- unbounded-orphan-pod
+- pod-scoped-runpod-key-hf-token-attestation-key-or-unrelated-credential-in-vllm-or-proxy-environment
+- endpoint-bearer-long-lived-environment-or-nonencrypted-disk
+- moving-model-branch-moving-container-tag-hidden-model-substitution-or-prompt-transformation
+- quantized-community-quantized-sharded-two-gpu-alternate-model-or-alternate-gpu-identity
+- managed-model-endpoint-routed-api-openrouter-fallback-autosubstitution-or-provider-routing
+- model-provider-api-call
+- openai-anthropic-openrouter-flymyai-monid-or-mistral-hosted-api-credential-access
+- manifest-echo-as-measured-attestation
+- mistral-common-below-1-11-3
+- wrong-gpu-count-memory-driver-cuda-toolkit-runtime-pytorch-vllm-model-tokenizer-container-or-weight
+- nonsecure-interruptible-serverless-mixed-hardware-or-multiple-hardware-identity
+- unauthenticated-endpoint-public-prompt-output-log-hidden-retry-semantic-retry-or-replacement
+- second-schema-repair-third-transport-attempt-silent-normalization-or-invalid-or-missing-action-credit
+- protocol-invalid-or-operational-missing-pairing-drop-or-observed-validity-rate-acceptance-threshold
+- circuit-breaker-cap-identity-policy-or-bound-rule-reset-loosening-or-reinterpretation
+- exception-after-pod-create-bypassing-finalizer-or-billing
+- pod-delete-unverified-volume-delete-unverified-or-persistent-unattended-gpu
+- nonpositive-or-inexact-pod-billing-or-storage-charge-omission
+- teardown-secret-template-or-billing-ambiguity-merge-or-issue-close
+- raw-provider-body-pod-log-environment-prompt-output-header-secret-or-host-path-publication
+- false-feasible-decision-on-failure
+- prior-campaign-authorization-ledger-output-lock-retained-root-private-state-read-unseal-mutation-or-reuse
+- private-task-answer-seed-holdout-key-ciphertext-custody-or-base-campaign-material
+- dd-023-claim-scientific-run-evidence-proof-base-allocation-or-base-campaign-registration-or-execution
+- task-family-architecture-model-performance-ranking-composite-leaderboard-or-comparison-publication
+- paper-package-release-doi-arxiv-journal-or-submission-action
+- pr-ready-or-merge-before-complete-validation-required-checks-exact-teardown-and-billing
+- issue-closure-before-post-merge-ci-pages-and-route-verification
+- pages-deployment-outside-normal-main-workflow
+- graphql-authorization-header-missing-api-key-query-unencoded-api-key-or-dual-authentication
+- rest-api-key-query-missing-bearer-or-dual-authentication
+- authenticated-graphql-url-query-api-key-authorization-header-raw-response-or-provider-body-leak
+- pod-create-min-cuda-version-cuda-version-allowed-cuda-drift-or-unregistered-field
+expires_at_utc: '2026-08-16T23:59:59Z'
+authorization_output_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R3.yml
+next_milestone: R3 owner-authorized one-session public-only calibration or honest bounded-failure closeout, followed by exact deterministic resource deletion, billing, permitted decision, validation, PR/merge, post-merge route verification, issue closure, main synchronization, and one final handoff.
+generated_resume_message: 'Resume AO-0012 in this same Codex session and repository from plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md, issue #212, branch agent/treasurebench-open-weight-cloud-runtime, and draft PR #213. Use only reports/agent-ops/AO-0012-open-weight-public-calibration-r3-owner-gate.yml and its exact R3 authorization; never create, authorize, consume, or use the superseded R1 or R2 gate. Revalidate authorization, execution ancestry, exact PR head, R3 contract, all 33 protected hashes, zero calls/spend/resources, then load only RUNPOD_API_KEY and HF_TOKEN from repository-root .env.txt. Enforce query-only URL-encoded GraphQL authentication, Bearer-only REST authentication, no dual auth, exact allowedCudaVersions [13.0] Pod input, short-lived Secrets/template, unique namespace, six-hour terminateAfter, ambiguous-create reconciliation, exact one-A100 BF16 identity, encrypted disposable storage, measured attestation, in-Pod scrubbing, and the fixed 50-pairing public calibration.
+  Run exactly make treasurebench-open-weight-runtime-live and continue normal or honest bounded-failure closeout through unconditional teardown, deletion verification, exact billing, one permitted redacted decision, full validation, PR readiness/squash merge, CI/Pages, named routes, issue closure, main synchronization, and one final handoff. Stop on authorization/tree drift, credential or identity mismatch, provider/body leakage, resource or billing ambiguity, any cap or integrity failure, managed fallback, scientific/publication expansion, or a new runtime identity.'

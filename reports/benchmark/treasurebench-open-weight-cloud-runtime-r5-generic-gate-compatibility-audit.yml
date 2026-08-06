@@ -1,0 +1,71 @@
+schema_version: treasurebench-open-weight-cloud-runtime-r5-generic-gate-compatibility-audit-v1
+task_id: AO-0012
+status: authorization-free-validation-passed
+correction_scope: task-specific-owner-authorization-validator-only
+generic_agent_ops_engine_changed: false
+root_cause:
+  consumed_gate: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R4
+  failure: task-specific-validator-read-nonexistent-gate-budget-mapping
+  boundary: pre-credential-ingress
+  outcome: calibration-integrity-failure-stop
+  credentials_read: false
+  authenticated_provider_call: false
+  resources_created: false
+  model_download: false
+  inference_calls: 0
+  spend_usd: '0'
+supersession:
+  r1_r2_r3: superseded-unused
+  r4: authorized-consumed-pre-ingress-hard-stop-never-reusable
+  r5: sole-prospective-gate-after-explicit-authorization
+canonical_gate_contract:
+  cumulative_state:
+    currency: USD
+    spend: '0'
+    calls: 0
+    category_spend: {runpod_gpu_compute_and_storage: '0'}
+  hard_caps:
+    currency: USD
+    spend: '20'
+    calls: 400
+    category_spend: {runpod_gpu_compute_and_storage: '20'}
+  remaining_caps:
+    currency: USD
+    spend: '20'
+    calls: 400
+    category_spend: {runpod_gpu_compute_and_storage: '20'}
+  legacy_budget_fallback: false
+  legacy_budget_dependency_any_ao0012_live_adapter: false
+  superseded_r2_r3_and_consumed_r4_adapters: explicit-fail-closed
+runtime_design_changed: false
+inherited_r4_runtime:
+- public-unauthenticated-github-and-git-preflight
+- repository-root-env-txt-two-name-ingress
+- graphql-query-key-and-rest-bearer-authentication-split
+- temporary-runpod-secrets-and-private-template
+- one-encrypted-rest-pod-create
+- controller-finalizer-and-pod-resident-six-hour-watchdog
+- measured-runtime-attestation
+- deterministic-public-50-pairing-calibration
+- exact-teardown-billing-projections-and-redacted-closeout
+validation:
+  real_generic_writer_regression: pass
+  focused_tests: 15-passed
+  inherited_tests_and_corruptions: 159-passed-95-corruptions-covered
+  offline_50_pairing_rehearsal: 50-terminal-294-calls-methods-and-72-bounds-agree
+  ruff: pass-379-files
+  strict_mypy: pass-220-source-files
+  repository_verification: pass-1016-tests-all-audits
+  papers: pass-119-pages-seven-pdfs
+  site: pass-89-pages-26-studies
+failed_validation_preserved:
+- initial-contract-check-used-string-not-path
+- initial-rehearsal-test-expected-nonexistent-methods-agree-key
+- initial-ruff-import-unused-line-and-exception-assertion-findings
+- initial-mypy-optional-and-test-type-findings
+- first-paper-build-missing-pdfinfo-then-poppler-installed-and-all-papers-passed
+- post-documentation-verify-interrupted-after-43-passes-for-r2-r3-budget-read-cleanup
+- first-r5-gate-schema-parse-rejected-unquoted-colon-owner-statement
+credential_read: false
+authenticated_provider_call: false
+spend_usd: '0'

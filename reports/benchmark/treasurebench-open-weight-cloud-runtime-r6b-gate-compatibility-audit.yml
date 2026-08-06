@@ -1,0 +1,85 @@
+schema_version: treasurebench-open-weight-cloud-runtime-r6b-gate-compatibility-audit-v1
+task_id: AO-0012
+status: authorization-free-pre-freeze-validation-passed
+failed_gate_id: AOG-AO-0012-R6-RUNPOD-SECRET-STATUS-CONDITIONAL-CLEANUP
+failed_gate_path: reports/agent-ops/AO-0012-runpod-secret-status-cleanup-r6-owner-gate.yml
+failed_gate_sha256: sha256:c5d8930923836857f0b91f93496fd24d8b323c4e9703e586ba3c7a1d1826641a
+failed_gate_contract_path: tasks/treasurebench-open-weight-cloud-runtime-r6.yml
+failed_gate_contract_sha256: sha256:b8c2fdc995584fb9071ee87fb9393393f14fe2be9e3210274ae7aef91f36f0e1
+failed_gate_handoff_path: reports/agent-ops/AO-0012-r6-owner-gate-required-handoff.yml
+failed_gate_handoff_sha256: sha256:1202d6404f00831d89e5755ad816cb64309281bbfa25ce55922458a44f3a0d3d
+failed_gate_preparation_audit_path: reports/benchmark/treasurebench-open-weight-cloud-runtime-r6-cleanup-gate-audit.yml
+failed_gate_preparation_audit_sha256: sha256:3af74270113093c9e86c11cee5edfe4bac7b2872ecb271a880f3c6f18fb30cda
+failed_owner_challenge:
+  exact: AUTHORIZE AOG-AO-0012-R6-RUNPOD-SECRET-STATUS-CONDITIONAL-CLEANUP 5fead79
+  disposition: supplied-once-to-failed-long-id-gate-and-not-reusable
+authorization_creation_result: failed-closed-before-authorization-write
+failure_class: owner-gate-owner-authorization-id-contract-mismatch
+failure_detail:
+  owner_gate_pattern_before_repair: ^AOG-[A-Z0-9][A-Z0-9-]{2,50}$
+  owner_authorization_pattern: ^AOG-[A-Z0-9][A-Z0-9-]{2,48}$
+  failed_gate_length: 55
+  generic_authorization_error: gate-id-rejected-by-owner-authorization-schema
+  authorization_file_created: false
+  authorization_temporary_file_created: false
+  authorization_history_entry_created: false
+  authorization_consumption_marker_created: false
+  cleanup_outcome_created: false
+  credential_read: false
+  authenticated_provider_operations: 0
+  resource_queries: 0
+  resource_mutations: 0
+  inference_calls: 0
+  spend_usd: '0'
+corrected_contract:
+  parity_rule: owner-gate-and-owner-authorization-gate-id-properties-identical
+  owner_gate_pattern_after_repair: ^AOG-[A-Z0-9][A-Z0-9-]{2,48}$
+  owner_authorization_pattern_changed: false
+  shorter_gate_id: AOG-AO-0012-R6-RUNPOD-SECRET-CLEANUP
+  shorter_gate_length: 36
+  earlier_gate_or_challenge_reused: false
+  boundary_regression: every-owner-gate-valid-id-can-create-schema-valid-authorization
+cleanup_semantics:
+  credential_source: repository-root-.env.txt
+  exact_credential_allowlist: [RUNPOD_API_KEY]
+  provider_surface: RunPod-GraphQL-Secrets-only
+  target_secret_name: ao0012-owcal-r5-01b41c9aa04bf2a4-hf
+  inventory_queries: 1
+  conditional_exact_deletions: 1
+  verification_queries: 1
+  maximum_authenticated_operations: 3
+  retries: 0
+  spend_usd: '0'
+  inference_calls: 0
+  sibling_or_nonexact_deletion: prohibited
+  ambiguity_behavior: hard-stop-without-authority-expansion
+preparation_activity:
+  real_env_txt_read: false
+  owner_authorization_created_or_read: false
+  credential_read: false
+  authenticated_provider_call: false
+  runpod_or_hugging_face_contact: false
+  resource_query_or_mutation: false
+  inference_calls: 0
+  spend_usd: '0'
+  pr_ready_merge_issue_close_or_publication: false
+validation:
+  focused_selected_tests: 26
+  r6_cleanup_tests: 17
+  synthetic_public_pairings: 50
+  synthetic_public_calls: 294
+  ruff_files: 381
+  strict_mypy_source_files: 221
+  repository_tests: 1034
+  run_manifests: 51
+  claims: 110
+  program_memory_records: 40
+  papers: 7
+  paper_pages: 119
+  site_pages: 89
+  site_studies: 26
+  result: pass
+failed_validation_history:
+- The first focused command passed 26 tests and then incorrectly sent a JSON schema to Ruff as Python; Python-only lint and strict MyPy passed on the corrected command.
+- The first complete verification stopped at Ruff format-check for two edited Python files; canonical formatting was applied and the complete wall then passed from the beginning.
+next_required_state: fresh-owner-decision-for-shorter-corrected-gate

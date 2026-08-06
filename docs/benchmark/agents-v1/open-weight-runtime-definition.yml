@@ -1,0 +1,176 @@
+schema_version: treasurebench-open-weight-runtime-definition-v1
+definition_version: ow-runtime-v1
+status: prospective-definition-not-executed
+authority_task: AO-0012
+term: open-weight-self-operated-cloud-runtime
+selected_class: rented-raw-gpu-owner-operated
+wording:
+  qualifying_cloud_term: open-weight, self-operated cloud runtime
+  rented_gpu_is_local: false
+  selected_runtime_supplies:
+    - open-weight-model-family-diversity
+    - inference-stack-transparency-and-reproducibility
+    - independence-from-the-two-evaluated-proprietary-model-providers
+    - owner-control-over-weights-engine-configuration-and-retention
+  selected_runtime_does_not_supply:
+    - physical-locality
+    - complete-infrastructure-independence
+goals:
+  open_weight_model_family_diversity:
+    meaning: The third model originates from a pinned, inspectable open-weight family rather than either evaluated proprietary model family.
+    selected_class_satisfies: yes
+  inference_stack_transparency_and_reproducibility:
+    meaning: The owner pins and can recreate the tokenizer, engine, container, CUDA-facing configuration, sampling, and protocol adapter.
+    selected_class_satisfies: yes
+  proprietary_model_provider_independence:
+    meaning: Neither evaluated proprietary model provider supplies or routes the third model inference.
+    selected_class_satisfies: yes
+  owner_control:
+    meaning: The owner controls and verifies the exact weight artifact, serving stack, prompts, sampling, endpoint authentication, and application retention boundary.
+    selected_class_satisfies: yes
+  physical_locality:
+    meaning: GPU compute physically runs on owner-held hardware.
+    selected_class_satisfies: no
+  infrastructure_provider_independence:
+    meaning: No third-party infrastructure provider supplies the physical GPU, host, network, or storage control plane.
+    selected_class_satisfies: no
+property_order:
+  - weights_controlled_and_checksum_verifiable
+  - exact_upstream_revision_pinned
+  - tokenizer_pinned
+  - inference_engine_and_version_pinned
+  - container_digest_pinned
+  - cuda_driver_and_hardware_recorded
+  - sampling_and_structured_output_configuration_controlled
+  - no_provider_side_model_substitution
+  - no_moving_model_alias
+  - no_hidden_provider_prompt_transformation
+  - no_provider_managed_semantic_retry
+  - prompt_output_retention_controllable
+  - raw_task_and_answer_custody_isolated
+  - benchmark_runner_can_authenticate_endpoint
+  - independently_recreatable_on_compatible_gpu
+  - cloud_infrastructure_provider_distinct_from_model_origin
+  - physical_locality
+  - full_infrastructure_independence
+value_semantics:
+  yes: The class definition itself requires the property.
+  no: The class definition cannot supply the property.
+  conditional: The class may supply the property only when the deployment proves the stated condition.
+  not_applicable: The property does not apply to the class.
+classes:
+  physical-local-owner-operated:
+    label: A. physical-local-owner-operated
+    self_operated_open_weight_condition: yes
+    properties:
+      weights_controlled_and_checksum_verifiable: yes
+      exact_upstream_revision_pinned: yes
+      tokenizer_pinned: yes
+      inference_engine_and_version_pinned: yes
+      container_digest_pinned: yes
+      cuda_driver_and_hardware_recorded: yes
+      sampling_and_structured_output_configuration_controlled: yes
+      no_provider_side_model_substitution: yes
+      no_moving_model_alias: yes
+      no_hidden_provider_prompt_transformation: yes
+      no_provider_managed_semantic_retry: yes
+      prompt_output_retention_controllable: yes
+      raw_task_and_answer_custody_isolated: yes
+      benchmark_runner_can_authenticate_endpoint: yes
+      independently_recreatable_on_compatible_gpu: yes
+      cloud_infrastructure_provider_distinct_from_model_origin: not_applicable
+      physical_locality: yes
+      full_infrastructure_independence: conditional
+    condition: Full independence additionally requires owner control of the host, storage, network, power, and relevant supply-chain boundary.
+  rented-raw-gpu-owner-operated:
+    label: B. rented-raw-gpu-owner-operated
+    self_operated_open_weight_condition: yes
+    properties:
+      weights_controlled_and_checksum_verifiable: yes
+      exact_upstream_revision_pinned: yes
+      tokenizer_pinned: yes
+      inference_engine_and_version_pinned: yes
+      container_digest_pinned: yes
+      cuda_driver_and_hardware_recorded: yes
+      sampling_and_structured_output_configuration_controlled: yes
+      no_provider_side_model_substitution: yes
+      no_moving_model_alias: yes
+      no_hidden_provider_prompt_transformation: yes
+      no_provider_managed_semantic_retry: yes
+      prompt_output_retention_controllable: yes
+      raw_task_and_answer_custody_isolated: yes
+      benchmark_runner_can_authenticate_endpoint: yes
+      independently_recreatable_on_compatible_gpu: yes
+      cloud_infrastructure_provider_distinct_from_model_origin: yes
+      physical_locality: no
+      full_infrastructure_independence: no
+    condition: The infrastructure provider supplies raw GPU compute only; owner code must verify the frozen image, artifacts, configuration, endpoint, application logging, and lifecycle.
+  managed-custom-container:
+    label: C. managed-custom-container
+    self_operated_open_weight_condition: conditional
+    properties:
+      weights_controlled_and_checksum_verifiable: conditional
+      exact_upstream_revision_pinned: conditional
+      tokenizer_pinned: conditional
+      inference_engine_and_version_pinned: conditional
+      container_digest_pinned: conditional
+      cuda_driver_and_hardware_recorded: conditional
+      sampling_and_structured_output_configuration_controlled: conditional
+      no_provider_side_model_substitution: conditional
+      no_moving_model_alias: conditional
+      no_hidden_provider_prompt_transformation: conditional
+      no_provider_managed_semantic_retry: conditional
+      prompt_output_retention_controllable: conditional
+      raw_task_and_answer_custody_isolated: conditional
+      benchmark_runner_can_authenticate_endpoint: conditional
+      independently_recreatable_on_compatible_gpu: conditional
+      cloud_infrastructure_provider_distinct_from_model_origin: conditional
+      physical_locality: no
+      full_infrastructure_independence: no
+    condition: Qualifies only if the exact container, weights, tokenizer, engine, and configuration can be independently recreated and the platform performs no hidden substitution, prompt transformation, semantic retry, or fallback.
+  managed-model-endpoint:
+    label: D. managed-model-endpoint
+    self_operated_open_weight_condition: no
+    properties:
+      weights_controlled_and_checksum_verifiable: no
+      exact_upstream_revision_pinned: conditional
+      tokenizer_pinned: no
+      inference_engine_and_version_pinned: no
+      container_digest_pinned: no
+      cuda_driver_and_hardware_recorded: no
+      sampling_and_structured_output_configuration_controlled: conditional
+      no_provider_side_model_substitution: no
+      no_moving_model_alias: conditional
+      no_hidden_provider_prompt_transformation: no
+      no_provider_managed_semantic_retry: no
+      prompt_output_retention_controllable: conditional
+      raw_task_and_answer_custody_isolated: conditional
+      benchmark_runner_can_authenticate_endpoint: yes
+      independently_recreatable_on_compatible_gpu: no
+      cloud_infrastructure_provider_distinct_from_model_origin: conditional
+      physical_locality: no
+      full_infrastructure_independence: no
+    condition: Mistral hosted inference, FlyMyAI hosted inference, and similar managed endpoints remain alternatives only and fail the self-operated condition unless actual artifact and serving-stack control is independently proved.
+  third-party-routed-model-api:
+    label: E. third-party-routed-model-api
+    self_operated_open_weight_condition: no
+    properties:
+      weights_controlled_and_checksum_verifiable: no
+      exact_upstream_revision_pinned: no
+      tokenizer_pinned: no
+      inference_engine_and_version_pinned: no
+      container_digest_pinned: no
+      cuda_driver_and_hardware_recorded: no
+      sampling_and_structured_output_configuration_controlled: conditional
+      no_provider_side_model_substitution: no
+      no_moving_model_alias: no
+      no_hidden_provider_prompt_transformation: no
+      no_provider_managed_semantic_retry: no
+      prompt_output_retention_controllable: no
+      raw_task_and_answer_custody_isolated: no
+      benchmark_runner_can_authenticate_endpoint: yes
+      independently_recreatable_on_compatible_gpu: no
+      cloud_infrastructure_provider_distinct_from_model_origin: conditional
+      physical_locality: no
+      full_infrastructure_independence: no
+    condition: OpenRouter and any comparable routed model API are categorically outside the AO-0012 self-operated runtime identity.

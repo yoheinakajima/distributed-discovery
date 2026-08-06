@@ -1,0 +1,124 @@
+schema_version: agent-ops-owner-gate-v1
+kind: owner-gate
+synthetic: false
+gate_id: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION
+task_contract:
+  path: tasks/treasurebench-open-weight-cloud-runtime.yml
+  sha256: sha256:7da149cfc4358a5fe78145424ee247cec87cb19757173862909741abffa40356
+issue: 212
+pull_request:
+  number: 213
+  expected_state: OPEN
+  head_sha: 37162565b3a46e495a8764af4979e2a74b03a72f
+branch: agent/treasurebench-open-weight-cloud-runtime
+commit: 37162565b3a46e495a8764af4979e2a74b03a72f
+tree_hashes:
+  Makefile: sha256:ef7d170e83624343f564d1d0dad44853ceab978cb032e5f15b31cbb4775ece6a
+  pyproject.toml: sha256:6064f6b622ae24bb3341310a6a6d4a2017884d9596dab47e12cc334b8c6d882b
+  uv.lock: sha256:0766c91477cdc28e1ed36ec7bcd60669ed6e80fd0a6f55892bc8fba2c57a3588
+  tasks/treasurebench-open-weight-cloud-runtime.yml: sha256:7da149cfc4358a5fe78145424ee247cec87cb19757173862909741abffa40356
+  docs/agent-ops: sha256:fe94862b1b7cad4d472a9e7b3e25749c7311986ec062a4040e8031621ab190f1
+  src/distributed_discovery/agent_ops: sha256:84a44c60d7c7a6a159c8beb5cfb8bc25b19bcae8992c1781fa396225d9f11376
+  scripts/audit_agent_ops.py: sha256:336d9e0735f8fe2acc93268053d09f3af4089f189c582882eac084dd607bca29
+  docs/benchmark/agents-v1/open-weight-runtime-definition.yml: sha256:53cf734782afd6e115781291578d723040f104f7633d76c7c2440b9337c34ca4
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-manifest.yml: sha256:eeb5b90ffd396c99b1ae2b6896c791e01f177c019580c51cc40b622a35d426c8
+  docs/benchmark/agents-v1/open-weight-provider-outcome-policy-v3-extension.yml: sha256:8790b7c60e3ce0b1fdbfdf2dcab58929794708a1b02f346a7e1c9be463e58e8b
+  docs/benchmark/agents-v1/open-weight-public-calibration.yml: sha256:cec8c617c3025e629a825417ec32d6a880a859fd0193a44c2de76fab08fcec44
+  docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions.yml: sha256:f26eb195a0d077896b2945cfdbd974b87281928f725dc8bfac69aa109d2f3306
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-feasibility.yml: sha256:2fe819c6bacb2ea1e0b8912aed11aca67cbbf04f550376a858c1b6c5c337ab31
+  reports/benchmark/treasurebench-open-weight-cloud-runtime-decision.yml: sha256:99a5a7b4d369bdb4070a6d45cd8a3816f9f6cec179666bff2e8ade91c20e3969
+  scripts/audit_treasurebench_open_weight_cloud_runtime.py: sha256:9e4cd5b723aeded22da18a9fd8298c5d488c7c52aabbe4e0342a4c2456853139
+  scripts/treasurebench_open_weight_proxy.py: sha256:6261d492897ee69310051ae8ba07464ba3e16d453e79da073f9f54a2ab1938d5
+  scripts/treasurebench_open_weight_runtime_start.sh: sha256:3c12cb613a36e8af922e1e44ec75a052cf7f657b61555e2d71f68daef4ab9555
+  src/distributed_discovery/benchmark/agents_v1: sha256:3e4639b35012a0ad89b6be9eca1bf4ee1ec85dafde2bdf03c37631bf213e9421
+  tests/test_treasurebench_open_weight_cloud_runtime.py: sha256:2d524140d23b81a0465f06d99581e50615fa483dc759113604f024912615573b
+purpose: Authorize only one exact public-only engineering calibration of the open-weight, self-operated cloud runtime and, conditionally on normal completion or honest failure, its teardown, billing reconciliation, public-safe decision closeout, checks, merge, CI and Pages verification, issue closure, and main synchronization.
+irreversible_actions:
+  - permission: external_action_permissions.spend
+    description: Spend only for one RunPod Secure Cloud dedicated Pod with one NVIDIA A100 80GB PCIe and associated selected temporary storage, within the exact total and category caps below.
+  - permission: permissions.merge_after_checks
+    description: Mark draft PR 213 ready and squash-merge only after normal calibration completion or honest fail-closed public-safe closeout passes the complete validation wall and required GitHub checks.
+  - permission: permissions.ci_pages
+    description: Permit only normal post-merge CI and Pages, followed by named public-safe route verification.
+private_actions: []
+external_actions:
+  - permission: permissions.repository_write
+    description: Write only the frozen public operational calibration outcome, one permitted final decision, gate-consistent plan and study status, and public-safe AO-0012 closeout records.
+  - permission: permissions.git_branch_commit
+    description: Commit and push only the normal calibration or honest failure closeout on the registered branch without routine conversational checkpoints.
+  - permission: permissions.github_issue_pr
+    description: Update PR 213 accurately and close issue 212 only after the authorized validation, merge, CI, Pages, and route-verification sequence succeeds.
+  - permission: permissions.merge_after_checks
+    description: Mark PR 213 ready and squash-merge only after the appropriate complete closeout validation and every required check passes.
+  - permission: permissions.ci_pages
+    description: Observe normal CI and Pages and verify only named public-safe routes after merge.
+  - permission: external_action_permissions.network_observation
+    description: Revalidate only the exact official model, vLLM, NVIDIA, and RunPod terms and identities, GitHub checks, normal CI and Pages, and named public-safe routes.
+  - permission: external_action_permissions.github_mutation
+    description: Push public-safe commits, update PR 213, mark it ready after checks, squash-merge after checks, and close issue 212 after post-merge verification.
+  - permission: external_action_permissions.provider_calls
+    description: Use the RunPod Pod, billing, proxy, and termination surfaces and Hugging Face artifact download only for the exact pinned public model and one authenticated self-operated endpoint; make no model-provider API call.
+  - permission: external_action_permissions.spend
+    description: Spend only within USD 20 total, USD 20 RunPod GPU-compute category, six GPU-hours, and 400 inference calls for this single calibration and teardown.
+cumulative_state:
+  currency: USD
+  spend: "0"
+  calls: 0
+  category_spend: {runpod_gpu_compute: "0"}
+hard_caps:
+  currency: USD
+  spend: "20"
+  calls: 400
+  category_spend: {runpod_gpu_compute: "20"}
+remaining_caps:
+  currency: USD
+  spend: "20"
+  calls: 400
+  category_spend: {runpod_gpu_compute: "20"}
+owner_confirmation_statements:
+  - I authorize only AO-0012 at execution commit 37162565b3a46e495a8764af4979e2a74b03a72f, issue 212, draft PR 213, the exact fixed contract, branch, 19-path execution tree, runtime identity, actions, caps, prohibitions, and expiry in this manifest.
+  - I authorize opaque credential ingress only through process-environment names RUNPOD_API_KEY and HF_TOKEN; no OpenAI, Anthropic, OpenRouter, FlyMyAI, Monid, or Mistral hosted-API credential may be read, requested, returned, displayed, printed, copied, hashed, fingerprinted, logged, or retained.
+  - I authorize one RunPod Secure Cloud dedicated noninterruptible Pod, SECURE cloud type, one NVIDIA A100 80GB PCIe, one hardware identity, US region constraint, CUDA 13.0 request, container CUDA 13.0.2, Linux driver 580.65.06 or newer, 50-GB container disk, and 120-GB encrypted volume deleted with Pod termination.
+  - I authorize only docker.io/vllm/vllm-openai at Linux-amd64 digest sha256:3a1e7f5904e1a1192a02aa0086ceaffc33985d7044c7bb25b3a43d61bdbe3ac0, vLLM 0.23.0 native implementation, and no moving tag, implementation fallback, quantization, sharding, alternate model, alternate GPU, or second GPU.
+  - I authorize only mistralai/Mistral-Small-3.1-24B-Instruct-2503 revision 68faf511d618ef198fef186659617cfd2eb8e33a, original BF16 consolidated.safetensors SHA256 d446ca97599fa9d98b2e3744d8b83019837a2fe34a80f4353120b1e9b6249b1e, and Tekken tokenizer SHA256 c604f35d1035f534519622c0ec83fed6184978d4fdee92a5bd2a50bc05438094.
+  - I authorize only the bearer-authenticated no-request-log owner proxy, HMAC-authenticated runtime attestation, exact TreasureBench action schema, protocol-validity policy v2, prospective self-operated provider-outcome policy-v3 extension, at most two identical transport attempts, one schema-only repair, and zero semantic or outcome retry, fallback, substitution, or replacement.
+  - I authorize exactly ten frozen public tasks, five architectures, one repeat, and 50 intended pairings; every pairing receives one terminal classification, protocol-invalid outcomes remain preserved, no observed validity-rate threshold is introduced, and the 3-consecutive or 10-cumulative operational-missing circuit breaker and any contract/safety failure stop remain fixed.
+  - I authorize reporting only runtime, model, engine, hardware, startup/load/wall-clock, tokens, throughput, GPU memory, calls, failures, terminal counts, exact cost, completion, Method and bound agreement, and mechanical runtime/cost projections; no task, family, architecture, or model performance, ranking, composite, or comparison may be published.
+  - I understand the expected external spend remains under USD 10, the conservative planning envelope is USD 10, six GPU-hours of audited compute are USD 8.34 before brief storage charges, and the hard limits are USD 20 total, 400 inference calls, and 21,600 seconds.
+  - I require mismatch, cap, timeout, circuit-breaker firing, contract/safety failure, or calibration completion to stop calls and trigger Pod DELETE; the exact Pod ID must become unaddressable and its positive billed milliseconds and amount must reconcile before any feasible decision.
+  - I authorize only normal calibration completion or honest failure closeout to continue without routine checkpoints through one permitted decision, public-safe records, complete validation, required checks, PR readiness and squash merge, normal CI and Pages, named route verification, issue closure, and synchronized main.
+  - I understand this runtime supplies prospective model and inference-stack independence, not physical locality or complete infrastructure independence, and this gate authorizes no DD-023, scientific run, private task or answer, claim-grade campaign, base-allocation change, performance publication, paper, release, DOI, arXiv, journal, or submission action.
+  - I understand the generic owner-gate engine validates and creates only this exact mode-0600 local authorization; it does not itself read credentials, access RunPod or Hugging Face, download weights, provision a GPU, launch an endpoint, run calibration, spend, edit the repository, mutate GitHub, merge, deploy, or close the issue.
+explicit_prohibitions:
+  - provider-calls-outside-manifest
+  - credential-read-outside-manifest
+  - unauthorized-private-access
+  - scientific-mutation-outside-contract
+  - cap-increase
+  - consequential-action-by-gate-engine
+  - credential-name-outside-runpod-api-key-and-hf-token
+  - model-provider-api-call
+  - openai-anthropic-openrouter-flymyai-monid-or-mistral-hosted-api-credential-access
+  - credential-return-display-print-copy-hash-fingerprint-log-or-retention
+  - managed-model-endpoint-routed-api-openrouter-fallback-autosubstitution-or-provider-routing
+  - moving-model-branch-moving-container-tag-hidden-model-substitution-or-prompt-transformation
+  - quantized-community-quantized-sharded-two-gpu-alternate-model-or-alternate-gpu-identity
+  - nonsecure-interruptible-serverless-mixed-hardware-or-multiple-hardware-identity
+  - driver-below-580-65-06-wrong-cuda-wrong-container-wrong-engine-wrong-tokenizer-or-wrong-weight
+  - unauthenticated-endpoint-public-prompt-output-log-hidden-retry-semantic-retry-or-replacement
+  - second-schema-repair-third-transport-attempt-silent-normalization-or-invalid-or-missing-action-credit
+  - protocol-invalid-or-operational-missing-pairing-drop-or-observed-validity-rate-acceptance-threshold
+  - circuit-breaker-cap-identity-policy-or-bound-rule-reset-loosening-or-reinterpretation
+  - pod-stop-with-retained-volume-unverified-delete-unverified-billing-or-persistent-unattended-gpu
+  - prior-campaign-authorization-ledger-output-lock-retained-root-private-state-read-unseal-mutation-or-reuse
+  - private-task-answer-seed-holdout-key-ciphertext-custody-or-base-campaign-material
+  - dd-023-claim-scientific-run-evidence-proof-base-allocation-or-base-campaign-registration-or-execution
+  - task-family-architecture-model-performance-ranking-composite-leaderboard-or-comparison-publication
+  - paper-package-release-doi-arxiv-journal-or-submission-action
+  - pr-ready-or-merge-before-complete-validation-and-required-checks
+  - issue-closure-before-post-merge-ci-pages-and-route-verification
+  - pages-deployment-outside-normal-main-workflow
+expires_at_utc: "2026-08-07T23:59:59Z"
+authorization_output_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION.yml
+next_milestone: Owner-authorized one-session public-only calibration followed by one permitted decision and normal completion or honest fail-closed public-safe AO-0012 closeout.
+generated_resume_message: "Resume AO-0012 in this same Codex session and repository from plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md, issue #212, branch agent/treasurebench-open-weight-cloud-runtime, and draft PR #213. Use only reports/agent-ops/AO-0012-open-weight-public-calibration-owner-gate.yml and its exact generic authorization. Revalidate the authorization, execution-commit ancestry, current draft-PR head, fixed contract, all 19 protected tree hashes, exact RUNPOD_API_KEY and HF_TOKEN credential-name boundary, RunPod Secure Cloud one-A100-80GB identity, exact model, tokenizer, vLLM, container, CUDA and driver requirements, zero cumulative calls and spend, six-hour, 400-call, and USD 20 caps, authentication, logging, retention, teardown, billing, calibration, circuit-breaker, and reporting prohibitions. Then run exactly make treasurebench-open-weight-runtime-live and continue the authorized normal calibration or honest failure path through teardown, exact billing, one permitted decision, public-safe closeout, complete validation, required checks, PR readiness and squash merge, normal CI and Pages, named route verification, issue closure, synchronized main, and one final schema-valid handoff without routine checkpoints. Stop only for authorization invalidity, execution-sensitive drift, cap or identity change, unsafe retention, teardown or billing ambiguity, managed endpoint or fallback, scientific or publication authority expansion, or a required new prospective identity."

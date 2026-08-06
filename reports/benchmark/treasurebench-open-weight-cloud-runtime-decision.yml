@@ -1,0 +1,34 @@
+schema_version: treasurebench-open-weight-cloud-runtime-decision-v1
+authority_task: AO-0012
+status: self-operated-control-boundary-failed-managed-api-rejected
+calibration_id: treasurebench-open-weight-public-calibration-r1
+selected_decision: self-operated-control-boundary-failed-managed-api-rejected
+permitted_decisions:
+  - open-weight-self-operated-cloud-runtime-feasible-base-registration-next
+  - open-weight-runtime-technically-feasible-budget-owner-decision-required
+  - open-weight-runtime-feasible-but-bound-informativeness-gate-required
+  - exact-bf16-runtime-infeasible-quantized-or-sharded-identity-gate-required
+  - self-operated-control-boundary-failed-managed-api-rejected
+  - calibration-integrity-failure-stop
+preselection: false
+decision_evidence:
+  - reports/benchmark/treasurebench-open-weight-public-calibration-outcome-r5.yml
+  - The exact R5 owner gate succeeded and pre-ingress validation passed, but the authenticated RunPod control-plane path returned no resource identity and the finalizer could not prove the authorization-derived temporary Secret namespace absent. The flow stopped before Pod creation, model download, endpoint startup, inference, or spend.
+  - reports/benchmark/treasurebench-open-weight-public-calibration-outcome-r7.yml
+  - The exact R7 owner gate was consumed once. The live path passed every local and public pre-ingress check, then stopped at the fresh account-inventory boundary before any Secret, template, Pod, volume, model download, endpoint, inference, billing, or spend. The redacted record bounds authenticated read-only inventory requests at two through four but cannot recover the exact ordered failure point.
+next_candidate_if_pass:
+  title: TreasureBench Agents v1 claim-grade base-campaign registration and open-weight runtime authorization
+  must_independently_decide:
+    - scientific-study-registration
+    - whether-self-operated-cloud-runtime-satisfies-third-model-design
+    - final-three-model-identities
+    - 200-task-allocation
+    - four-batches
+    - three-repeats
+    - 9000-intended-pairings
+    - scientific-hypotheses-and-estimands
+    - bound-informativeness-criteria
+    - total-budget-and-duration
+    - private-custody
+    - publication-authority
+scientific_authority_created: false
