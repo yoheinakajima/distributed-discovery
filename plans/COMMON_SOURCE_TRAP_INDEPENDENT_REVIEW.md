@@ -90,9 +90,12 @@ scientific evidence and authorizes no manuscript merge or publication.
 - [x] Read root, paper, study, research-governance, Agent Operations, and
   program-memory authority.
 - [x] Registered issue #220 and the AO-0014 task branch.
-- [ ] Validate and commit the fixed task contract and living plan.
-- [ ] Freeze the review packet and reviewer guide without changing the paper.
-- [ ] Run focused packet tests and the complete docs-editorial wall.
+- [x] Validated and committed the fixed task contract and living plan as
+  `724e131`.
+- [x] Froze the review packet and reviewer guide without changing the paper.
+- [ ] Run focused packet tests and the complete docs-editorial wall. Focused
+  tests, lint, typing, exact rebuild, and visual inspection pass; the full wall
+  remains.
 - [ ] Push and open the draft PR.
 - [ ] Stop with a schema-valid `review-bundle-required` handoff.
 - [ ] Receive all four reviews simultaneously through Research Atlas.
@@ -108,6 +111,10 @@ scientific evidence and authorizes no manuscript merge or publication.
   the frozen Git tree. The first packet test correctly rejected it as a
   canonical receipt. The packet now excludes it and relies only on tracked
   `validation.json`, generated provenance, visual QA, and the exact PDF.
+- The first disposable-checkout command created the checkout correctly but ran
+  `make` from `/tmp` instead of the printed checkout path, so both targets
+  failed with `No rule to make target`. The same already-created checkout was
+  then used with the correct working directory; no repository state changed.
 
 ## Decision log
 
@@ -128,6 +135,15 @@ scientific evidence and authorizes no manuscript merge or publication.
   overbroad `object` annotation in the new test helper. The test now uses an
   explicit `Any` boundary at YAML ingress; no production or scientific type
   surface was weakened.
+- 2026-08-06T16:49:22Z: Corrected focused validation passed five tests, Ruff,
+  and strict MyPy. The exact frozen commit rebuilt in a disposable checkout to
+  the registered 21-page PDF and identical PDF, validation, and provenance
+  hashes with no tracked paper diff.
+- 2026-08-06T16:49:22Z: Poppler rendered all 21 pages. Two contact sheets plus
+  full-size inspection of dense figures/tables, the extension audit, and both
+  reference pages showed no clipping, overlap, malformed glyph, missing page,
+  or new visual defect. This confirms the existing visual-QA receipt without
+  changing it.
 
 ## Validation strategy
 
