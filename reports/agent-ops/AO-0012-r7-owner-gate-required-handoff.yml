@@ -1,0 +1,65 @@
+schema_version: agent-ops-handoff-v1
+status: owner-gate-required
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0012
+issue: 212
+pull_request: 213
+branch: agent/treasurebench-open-weight-cloud-runtime
+base_main: 6e86b43a8db8d20380dd64bf9490772b7152f484
+head_merge_sha: a3eca9fcf9acc0682f322798a6a8c03775cbb5a9
+task_contract: tasks/treasurebench-open-weight-cloud-runtime-r7.yml
+exec_plan: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+last_completed_gate: >-
+  Authorization-free R7 preparation execution commit
+  bf79d688a673d0752cce694901e79bcc00d9bc7b and current gate head
+  a3eca9fcf9acc0682f322798a6a8c03775cbb5a9 preserve the qualified R6b
+  inventory ambiguity, typed current empty-Secrets-tab owner observation, and
+  no-historical-absence boundary; freeze the exact R7 runtime under a fresh
+  namespace, USD 3 expected/USD 10 hard cap, USD 1.50 hourly ceiling, six
+  GPU-hours, 400 calls, and 76 protected paths; and pass generic gate
+  validate-only without creating authorization or performing a consequential
+  action. PR 213 remains open and draft and tracks issue 212.
+next_gate: >-
+  Only after a fresh exact owner decision, run the generic owner-gate command
+  for AOG-AO-0012-R7-PUBLIC-CALIBRATION. If and only if it succeeds, this same
+  task may run exactly make treasurebench-open-weight-runtime-r7-live. The
+  calibration must use only the fresh R7 namespace and must never query,
+  delete, or retry cleanup of the ambiguous R5 namespace.
+decision: >-
+  Recommend the bounded R7 public calibration. Current official public pricing
+  supports USD 3 expected and USD 10 hard spend; the USD 200 account balance is
+  not authority. The exact Mistral BF16/vLLM/A100 identity, encrypted storage,
+  controller finalizer, six-hour Pod watchdog, measured attestation, 50 public
+  pairings, exact billing, and no-scientific boundary remain fixed.
+external_calls_cost:
+  calls: 0
+  cost: '0'
+  currency: USD
+private_state_change: >-
+  none; preparation created or read no owner authorization, .env.txt, or
+  credential; made no authenticated RunPod or Hugging Face request; queried or
+  mutated no provider resource; downloaded no model; launched no endpoint; ran
+  no inference; and spent USD 0. Public unauthenticated GitHub metadata and
+  official provider documentation were observed only.
+scientific_state_change: >-
+  none; no DD-023, scientific run, private task, base campaign, performance
+  result, claim, paper, release, DOI, arXiv, journal, or submission state was
+  created or changed.
+validation:
+  profile: infrastructure
+  result: >-
+    pass-R7-50-offline-pairings-294-synthetic-calls-29-r6-r7-tests-12-r7-audit-tests-1046-full-tests-ruff-383-files-strict-mypy-222-sources-all-audits-119-paper-pages-site-and-compendium-invariants-76-tree-freeze-public-pr-head-exact-gate-validate-only-zero-authorization; preserved failures: initial lint/type mechanical findings, initial full-wall format stop, contract authority-reference enum rejection, contract frozen-identifier list rejection, initial gate hash transcription and YAML-colon schema rejections, and first generic gate validation missing stable prohibition tokens, all corrected before final validation
+owner_action: >-
+  Review the qualified R6b record and additive R7 gate. Only if approved, run:
+  make owner-gate
+  GATE=reports/agent-ops/AO-0012-open-weight-public-calibration-r7-owner-gate.yml
+  OWNER_GATE_CHALLENGE="AUTHORIZE AOG-AO-0012-R7-PUBLIC-CALIBRATION
+  bf79d68". Only after it succeeds may this same task run: make
+  treasurebench-open-weight-runtime-r7-live.
+exact_next_command: 'make owner-gate GATE=reports/agent-ops/AO-0012-open-weight-public-calibration-r7-owner-gate.yml OWNER_GATE_CHALLENGE="AUTHORIZE AOG-AO-0012-R7-PUBLIC-CALIBRATION bf79d68"'
+exact_next_file: reports/agent-ops/AO-0012-open-weight-public-calibration-r7-owner-gate.yml
+blocker: >-
+  The exact R7 owner authorization is absent by design. No credential,
+  authenticated provider access, new Secret/template/Pod, model download,
+  inference, spend, PR readiness, merge, issue closure, scientific action, or
+  publication is authorized.
