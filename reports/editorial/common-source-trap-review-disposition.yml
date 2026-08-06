@@ -4,7 +4,7 @@ paper_id: common-source-trap
 task_id: AO-0014
 issue: 220
 review_round: common-source-trap-r1
-status: revised-candidate-frozen-round2-required
+status: revised-candidate-frozen-additive-pointer-authority-required
 authority:
   manuscript_claim_proof_run_evidence: repository-only
   atlas_role: provenance-and-complete-bundle-handoff-only
@@ -271,7 +271,7 @@ revision_candidate:
   page_count: 21
   validation_sha256: 6ecfb908a547cf3a57a26275eabbd30e452ca1799c7d40716ba7f721ddc53f23
   provenance_sha256: 2bc633e9c88fa8165f999861cdef4dc48d6538d11aaf4e2bffd087f66205c753
-  visual_qa_sha256: 8f969ef9f671cc5c7fb08dea2a06433962dfc102b9d992aba9a17e14ad701a32
+  visual_qa_sha256: 2db136353dc7346b5968524600d9e938ff18246a5d1c1141b06ea99e166641f9
   byte_reproducible_two_builds: true
   all_pages_visually_inspected: true
 section_diff:
@@ -288,6 +288,37 @@ section_diff:
   - {section: Experimental-predictions, change: calibration-definition-separated-power-statements-and-candidate-package-language}
   - {section: Conclusion, change: precise-all-common-boundary-and-nonduplicative-positive-ending}
   - {section: References, change: smaller-block-to-remove-excessive-blank-final-page}
+validation:
+  focused:
+    command: uv run --no-editable pytest -q tests/integration/test_paper_visual_qa.py tests/integration/test_common_source_trap_review_packet.py tests/integration/test_common_source_trap_paper.py tests/unit/test_common_source_analysis.py
+    result: 17-passed
+  active_paper:
+    command: make common-source-trap
+    result: byte-reproducible-21-pages-no-compiler-reference-citation-or-overfull-box-failure
+  full_repository_first_post_revision:
+    command: make verify
+    result: scope-blocked-1052-passed-8-failed
+    failures:
+      - visual-qa-first-hash-selected-historical-receipt
+      - site-lifecycle-checksum-stale
+      - compendium-dry-run-hash-stale-three-tests
+      - paper-lifecycle-audit-hash-stale
+      - release-readiness-dry-run-hash-stale
+      - treasurebench-naming-site-build-blocked-by-lifecycle-hash
+    allowed_correction: visual-qa-current-pointer-updated
+    remaining_failure_root: revised-pdf-publication-and-release-pointers-outside-fixed-task-paths
+scope_conflict:
+  fixed_task_contract: tasks/common-source-trap-independent-review.yml
+  manuscript_revision_authorized: true
+  publication_release_pointer_mutation_authorized: false
+  out_of_scope_paths_required_by_remaining_checks:
+    - docs/paper-lifecycle.yml
+    - docs/publication/paper-citation-metadata.yml
+    - docs/releases/compendium-v0.1.0-content.yml
+    - reports/releases/release-evidence-manifest.dry-run.json
+    - papers/README.md
+  historical_release_rewrite_prohibited: true
+  smallest_safe_next_action: owner-decide-additive-pointer-update-versus-revision-rework-without-pdf-identity-change
 round2_packet:
   id: common-source-trap-r2-candidate
   status: frozen-not-dispatched

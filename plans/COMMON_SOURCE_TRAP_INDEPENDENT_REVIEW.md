@@ -212,6 +212,14 @@ scientific evidence and authorizes no manuscript merge or publication.
   revised render; final pages 20--21 were inspected directly. All 21 pages pass
   clipping, collision, glyph, equation, table, figure, heading, missing-content,
   and blank-space review.
+- 2026-08-06: The first complete post-revision wall passed Ruff, strict MyPy,
+  1,052 of 1,060 tests, and every unrelated test. Eight failures all traced to
+  the new PDF identity: the visual-QA reader selected the historical hash, and
+  site, lifecycle, compendium, release-readiness, and naming checks selected
+  stale publication/release pointers. The visual-QA pointer is inside AO-0014
+  and is corrected. The other pointer files are outside the fixed task paths,
+  and release mutation is explicitly unauthorized, so they remain unchanged
+  pending additive owner authority.
 
 ## Validation strategy
 
