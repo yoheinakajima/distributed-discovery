@@ -32,6 +32,15 @@ scientific evidence and authorizes no manuscript merge or publication.
   `ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150`.
 - Draft PR #221 tracks issue #220. AO-0014 is stopped before out-of-scope
   publication/lifecycle/release pointer mutation and before Round 2 dispatch.
+- At `2026-08-06T20:06:00Z`, the owner authorized additive contract
+  `tasks/common-source-trap-current-working-paper-pointers-r2.yml` against exact
+  PR head `9cf1720c2b23737f1937ea2c3f1a35a898fa9809`. The contract preserves the
+  immutable Compendium v0.1.0 snapshot while permitting only the current-paper
+  pointer/versioning repair, full validation, and an exact revised Round 2
+  packet.
+- At `2026-08-06T20:11:54Z`, the owner requested an orderly computer restart.
+  Work is paused before pointer implementation, long validation, or Round 2
+  dispatch; the additive contract is the only new implementation checkpoint.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -90,6 +99,9 @@ scientific evidence and authorizes no manuscript merge or publication.
 6. Add reviewer provenance and a disposition table, revise from repository
    evidence, rebuild, and rerun every native check.
 7. Freeze the exact revised PR head and stop before manuscript merge.
+8. Under the additive owner decision, separate current working-paper pointers
+   from the immutable v0.1.0 release snapshot, restore the complete wall, and
+   freeze the correctly labeled Round 2 packet before any review dispatch.
 
 ## Progress checklist
 
@@ -118,6 +130,12 @@ scientific evidence and authorizes no manuscript merge or publication.
 - [x] Freeze a fresh-session Round 2 packet without dispatching it.
 - [x] Stopped before pointer mutation, Round 2 dispatch, PR readiness,
   manuscript merge, and publication.
+- [x] Reverified local, remote, PR, base, issue, and five-file worktree state at
+  exact authorized head `9cf1720c2b23737f1937ea2c3f1a35a898fa9809`.
+- [x] Added and schema-validated the narrow superseding AO-0014 pointer task.
+- [ ] Implement the current-versus-v0.1.0 versioning seam and its regressions.
+- [ ] Run the focused and complete validation wall, freeze the exact green
+  Round 2 packet, and route it only through fresh isolated sessions.
 
 ## Discoveries and surprises
 
@@ -234,6 +252,11 @@ scientific evidence and authorizes no manuscript merge or publication.
   while Agent Operations handoffs are YAML. No handoff field was weakened or
   changed in response; the repository-native `make audit-agent-ops` validator
   remains authoritative for the YAML handoff.
+- 2026-08-06T20:11:54Z: The additive pointer contract passed the repository-
+  native Agent Operations audit with 25 task contracts and unchanged
+  scientific authority. The owner then requested an orderly restart, so no
+  pointer, release tool, test, site, review packet, reviewer session, or long
+  validation action began. Preserve this as the clean resumption boundary.
 
 ## Validation strategy
 
@@ -276,30 +299,28 @@ scientific evidence and authorizes no manuscript merge or publication.
 
 - Round 1 no longer blocks revision: the complete simultaneous bundle is
   present and provenance-bound.
-- The revised PDF identity conflicts with current publication, lifecycle,
-  compendium, release-readiness, and site pointers outside AO-0014's fixed task
-  paths. AO-0014 explicitly forbids paper-lifecycle and release mutation, so an
-  additive owner decision is required before those eight checks can be made
-  green without rewriting immutable release history.
+- The prior authority blocker is resolved prospectively by the additive owner
+  decision and superseding R2 contract. Implementation remains deliberately
+  unstarted at the owner's restart checkpoint.
 - Round 2 dispatch, manuscript merge, and every publication action remain
   unauthorized.
 
 ## Recovery and restart instructions
 
 Resume AO-0014 from issue #220, branch
-`agent/common-source-trap-review-packet`, the fixed task contract, and this
-plan. Confirm the five unrelated untracked files remain untouched. Continue
-from the first unchecked milestone. Round 1 is complete and nonreusable; any
-Round 2 review must use four fresh isolated sessions and only the revised
-manuscript, rubric, and revised packet.
+`agent/common-source-trap-review-packet`, additive contract
+`tasks/common-source-trap-current-working-paper-pointers-r2.yml`, and this
+plan. Confirm local, remote, and draft PR #221 still share the checkpoint head;
+confirm main remains the authorized base and the five unrelated untracked files
+remain untouched. Continue with the current-versus-v0.1.0 pointer/versioning
+regression before any long wall. Round 1 is complete and nonreusable; any
+Round 2 review must use four fresh isolated sessions and only the reverified
+revised manuscript, rubric, and correctly labeled Round 2 packet.
 
 ## Outcome and retrospective
 
-Round 1 hardening is complete: the exact baseline, simultaneous four-review
-bundle, provenance-preserving disposition, evidence-bound revision, two-build
-byte reproduction, and all-page visual review are frozen in draft PR #221.
-Focused validation passes. The complete wall is intentionally not declared
-green: eight identity-pointer checks require authority outside the fixed task
-contract. The safe outcome is `stop-by-policy` with the revised candidate
-preserved and no Round 2, readiness, merge, lifecycle, release, deployment, or
-publication action.
+Round 1 hardening remains complete and frozen in draft PR #221. The owner has
+authorized the narrow additive pointer/versioning continuation, and its task
+contract validates, but implementation is intentionally paused for an orderly
+restart. No Round 2, readiness, merge, lifecycle-status, release, deployment,
+or publication action has begun.

@@ -27,6 +27,23 @@ and 21-page PDF SHA-256
 `afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7`.
 AO-0014 first stops at `review-bundle-required` with one draft PR.
 
+Round 1 subsequently completed and produced a reviewed 21-page revision at
+source SHA-256
+`87a6e85450c72fc9c93b281646ecfbd60193747c80aae9eac0a022301e1f06e1`
+and PDF SHA-256
+`ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150`
+in draft PR #221. The first complete post-revision wall correctly stopped on
+current-pointer versus immutable Compendium v0.1.0 identity conflicts.
+
+At `2026-08-06T20:06Z`, the owner authorized the narrow additive contract
+`tasks/common-source-trap-current-working-paper-pointers-r2.yml` at exact PR
+head `9cf1720c2b23737f1937ea2c3f1a35a898fa9809`. It may update only current
+working-paper pointers and historical-release-aware validation, must preserve
+every v0.1.0 tag/source/asset/hash/DOI record, and may freeze the exact revised
+Round 2 packet only after the complete wall passes. The owner requested an
+orderly restart at `2026-08-06T20:11:54Z`; implementation and Round 2 dispatch
+remain unstarted at this committed checkpoint.
+
 ## Completed AO-0013 repair; Pages closeout remains open (2026-08-06)
 
 PR #213 merged its exact immutable AO-0012 head as
