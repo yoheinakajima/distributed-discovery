@@ -1,5 +1,25 @@
 # Master execution plan
 
+## Active R7 continuation — AO-0012 public open-weight calibration gate (2026-08-05)
+
+R6b was validly authorized once and consumed by a fail-closed
+`inventory-ambiguity` result after one authenticated query, with no deletion,
+model, Pod, inference, or spend. On 2026-08-05 the owner subsequently observed
+the RunPod mobile Secrets tab empty. That is current UI evidence only: it is
+not API proof, historical proof, or proof across every account or team scope.
+The prior provider response remains unreconstructable, and no further R5
+Secret query, deletion, or cleanup retry is planned without a supported exact
+lookup surface.
+
+The owner also observed a USD 200 RunPod balance. The balance is not spending
+authority. Additive R7 contract
+`tasks/treasurebench-open-weight-cloud-runtime-r7.yml` prepares the unchanged
+public-only 50-pairing runtime under a new authorization-derived R7 namespace,
+current official USD 1.39/hour A100 PCIe pricing, a USD 1.50/hour acceptance
+ceiling, USD 3 expected spend, USD 10 hard cap, six GPU-hours, and 400 inference
+calls. Preparation is local and public-source-only and must stop at unconsumed
+gate `AOG-AO-0012-R7-PUBLIC-CALIBRATION`.
+
 ## Active R6 gate-compatibility repair — AO-0012 exact Secret cleanup (2026-08-05)
 
 The first R6 cleanup gate remains immutable and unused. Its 55-character ID

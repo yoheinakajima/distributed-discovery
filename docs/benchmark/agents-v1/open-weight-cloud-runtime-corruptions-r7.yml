@@ -1,0 +1,25 @@
+schema_version: treasurebench-open-weight-cloud-runtime-r7-corruptions-v1
+task_id: AO-0012
+inherits: docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r5.yml
+inherited_cases: 95
+expected_result: every-R1-through-R7-corruption-rejected-with-zero-unapproved-live-action
+cases:
+- {id: OW-R7-001, mutation: owner-ui-observation-promoted-to-api-proof, expected: rejected}
+- {id: OW-R7-002, mutation: historical-secret-absence-claimed, expected: rejected}
+- {id: OW-R7-003, mutation: prior-r5-namespace-query-or-delete, expected: rejected}
+- {id: OW-R7-004, mutation: r5-r6-authorization-reuse, expected: rejected-before-credential-ingress}
+- {id: OW-R7-005, mutation: hard-spend-cap-above-usd-10, expected: rejected-before-credential-ingress}
+- {id: OW-R7-006, mutation: hourly-rate-above-usd-1-50, expected: rejected-and-finalized}
+- {id: OW-R7-007, mutation: gpu-runtime-above-21600-seconds, expected: hard-stop-no-merge}
+- {id: OW-R7-008, mutation: inference-calls-above-400, expected: hard-stop-no-merge}
+- {id: OW-R7-009, mutation: namespace-prefix-not-r7, expected: rejected}
+- {id: OW-R7-010, mutation: account-balance-treated-as-spend-authority, expected: rejected}
+- {id: OW-R7-011, mutation: model-engine-container-gpu-storage-drift, expected: rejected}
+- {id: OW-R7-012, mutation: teardown-or-billing-ambiguity-allows-merge, expected: rejected}
+live_action: false
+credential_source_read: false
+authenticated_provider_call: false
+model_download: false
+gpu_provisioned: false
+inference_calls: 0
+spend_usd: '0'

@@ -1,5 +1,72 @@
 # TreasureBench open-weight cloud-runtime feasibility and conformance
 
+## R7 qualified cleanup outcome and public calibration refreeze (2026-08-05)
+
+R6b was authorized and consumed exactly once. Its one authenticated inventory
+operation returned the public-safe `inventory-ambiguity` outcome; selection,
+deletion, verification, Pod, model, inference, and spend remained unreachable.
+The response body was intentionally not retained, so its root cause and the
+historical presence of exact R5 Secret
+`ao0012-owcal-r5-01b41c9aa04bf2a4-hf` remain unreconstructable.
+
+The owner then reported that the current RunPod mobile Secrets tab showed no
+saved secrets. This is a typed owner observation about the current visible UI,
+not API proof, not historical proof, and not proof across every possible
+account or team scope. Automated R5 Secret query, deletion, or cleanup retry is
+abandoned unless a supported exact lookup surface is later established.
+
+The owner also reported adding USD 200 to the RunPod account. Account balance
+is not authorization to spend that amount. Current official public pricing
+lists Secure Cloud A100 PCIe at USD 1.39/hour and running container and volume
+storage at USD 0.10/GB/month. R7 therefore retains the six-hour watchdog but
+narrows the gate to USD 3 expected, USD 1.50 maximum accepted hourly rate, and
+USD 10 hard total. It uses a fresh `ao0012-owcal-r7-<authorization>` namespace
+and does not inspect or mutate the prior R5 namespace.
+
+### R7 milestones
+
+- **R7-M0 — complete:** reverify issue #212, draft PR #213, branch and remote
+  head, tracked and untracked state, and current official provider pricing and
+  API documentation without authenticated access.
+- **R7-M1 — complete:** preserve the qualified R6b outcome; add the R7
+  contract, cap adapter, corruption layer, tests, audit, and exact offline
+  rehearsal.
+- **R7-M2 — complete:** run focused validation and the complete repository wall;
+  preserve every failed validation and correction.
+- **R7-M3 — in progress:** commit and push only intended AO-0012 files, refreeze the
+  exact execution commit and protected tree, validate the additive generic gate
+  without authorization, update draft PR #213, and stop at owner-gate-required.
+
+### R7 preserved failures and corrections
+
+- The first focused R7 lint/type pass found one unused import, three long lines,
+  three comparison-style findings, and seven missing type narrowings in the new
+  audit parser. All 29 R6/R7 behavioral tests passed in that same attempt. The
+  import, line wrapping, comparisons, and explicit mapping/list narrowings were
+  corrected before repeating focused validation.
+- The next focused pass found only a remaining import-order and line-length
+  finding in the same new module; MyPy, 29 combined R6/R7 tests, the full
+  50-pairing rehearsal, and all 12 R7 audit tests passed. The import block was
+  normalized before the validation wall restarted.
+- The first complete `make verify` attempt stopped at its initial Ruff format
+  check because the new R7 test file required canonical formatting. No later
+  verification stage or external action ran. The repository formatter changed
+  that test file only, and the complete wall was restarted from the beginning.
+- The restarted wall passed Ruff, strict MyPy, and 1,045 of 1,046 tests before
+  the Agent Operations semantic audit rejected `owner-observation` as a task-
+  contract authority-reference type. The observation record itself was valid;
+  the contract reference was corrected to the allowed `record` type and the
+  complete wall was restarted.
+- The subsequent focused Agent Operations audit found that task-contract
+  `frozen_identifiers` values must be scalar strings, while R7 encoded its two
+  credential names as a YAML list. The value was normalized to the exact
+  `RUNPOD_API_KEY-and-HF_TOKEN-only` string; no permission or credential scope
+  changed.
+- The restarted complete wall then passed Ruff formatting and lint across 383
+  files, strict MyPy across 222 source files, all 1,046 tests, claim/run
+  validation, Agent Operations and program-memory audits, publication and
+  compendium invariants, seven papers/119 pages, and the 89-page site.
+
 ## R6 generic-gate identifier compatibility repair (2026-08-05)
 
 The immutable long-ID R6 gate passed its then-current gate schema, but the

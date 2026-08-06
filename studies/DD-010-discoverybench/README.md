@@ -434,3 +434,19 @@ a fresh later owner decision may still load only `RUNPOD_API_KEY`, make one
 Secrets inventory, conditionally delete only one unique exact
 `ao0012-owcal-r5-01b41c9aa04bf2a4-hf` match, make one verification query, and
 stop within three authenticated operations, zero inference, and zero spend.
+
+### AO-0012 R7 qualified cleanup outcome and calibration refreeze
+
+R6b was later authorized once and consumed by one fail-closed Secrets inventory
+ambiguity. No deletion, Pod, model, inference, or spend occurred. The owner then
+observed the current RunPod mobile Secrets tab empty. This is qualified UI
+evidence only; it does not reconstruct the provider response or prove
+historical absence across every account or team scope. Further automated R5
+Secret cleanup is abandoned without a supported exact lookup surface.
+
+The owner-observed USD 200 account balance creates no spending authority. R7
+prepares the unchanged public-only 50-pairing calibration under a new namespace
+and a tighter USD 3 expected/USD 10 hard envelope, USD 1.50 hourly ceiling, six
+GPU-hours, and 400 inference calls. It remains infrastructure engineering only
+and creates no DD-023, private, scientific, base-campaign, performance,
+publication, merge, or issue-close authority before its exact owner gate.

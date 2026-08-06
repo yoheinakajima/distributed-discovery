@@ -1,6 +1,6 @@
 schema_version: treasurebench-open-weight-public-calibration-v1
 calibration_id: treasurebench-open-weight-public-calibration-r1
-status: frozen-r4-owner-gate-not-authorized
+status: frozen-r7-owner-gate-not-authorized
 authority_task: AO-0012
 scientific_run: false
 public_only: true
@@ -75,7 +75,8 @@ prohibited_report_fields:
   - leaderboard
 owner_gate:
   superseded_unused_gates: [AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION, AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R2, AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R3]
-  required_gate: AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R4
+  consumed_or_failed_gates: [AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R4, AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R5, AOG-AO-0012-R6-RUNPOD-SECRET-CLEANUP]
+  required_gate: AOG-AO-0012-R7-PUBLIC-CALIBRATION
   authorization_exists: false
 projection:
   observed_pairing_denominator: 50
@@ -95,7 +96,9 @@ acceptance:
   methods_a_b_c_and_independent_bounds: agree-where-applicable
   cost_reconciliation: exact-Pod-bill-positive-time-amount-and-storage-field-after-teardown
   maximum_runtime_seconds: 21600
-  hard_total_cost_usd: "20"
+  expected_total_cost_usd: "3"
+  maximum_hourly_rate_usd: "1.50"
+  hard_total_cost_usd: "10"
   measured_projection_required: true
   observed_protocol_validity_rate_threshold: null
   protocol_invalid_outcomes_preserved: true
