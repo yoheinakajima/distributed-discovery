@@ -1,5 +1,29 @@
 # Master execution plan
 
+## Active AO-0013 Pages branch-context repair (2026-08-06)
+
+PR #213 merged its exact immutable AO-0012 head as
+`3dc9c66b62dac1d6e407f80755e31631acc8159f`; issue #212 remains open and the
+historical source branch remains retained. Normal main CI passed, but Pages run
+`31076078996` failed because two synthetic R5/R7 authorization fixtures invoked
+the correct production live-branch guard while the Pages workflow intentionally
+used its registered historical pilot branch context.
+
+Issue #218, contract
+`tasks/agent-operations-historical-gate-branch-context-repair.yml`, branch
+`agent/agent-ops-historical-gate-branch-context-repair`, and living plan
+`plans/AGENT_OPERATIONS_HISTORICAL_GATE_BRANCH_CONTEXT_REPAIR.md` own the narrow
+repository-only repair as AO-0013. Only an explicit synthetic branch-context
+seam and its deterministic regressions are permitted; the real live-branch
+guard remains unchanged. The task must pass the complete repository and
+Pages-equivalent wall, open one draft PR, and stop at
+`AOG-AO-0013-PAGES-BRANCH-CONTEXT-REPAIR` before merge.
+
+The RunPod path remains closed and R7 remains consumed. AO-0013 authorizes no
+provider-neutral task, credential, provider, resource, model, inference,
+calibration, spend, private or scientific work, publication, issue #212
+closure, or branch deletion.
+
 ## Active R7 continuation — AO-0012 public open-weight calibration gate (2026-08-05)
 
 R6b was validly authorized once and consumed by a fail-closed
