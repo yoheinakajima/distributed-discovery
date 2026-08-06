@@ -39,8 +39,17 @@ scientific evidence and authorizes no manuscript merge or publication.
   pointer/versioning repair, full validation, and an exact revised Round 2
   packet.
 - At `2026-08-06T20:11:54Z`, the owner requested an orderly computer restart.
-  Work is paused before pointer implementation, long validation, or Round 2
-  dispatch; the additive contract is the only new implementation checkpoint.
+  Work paused before pointer implementation, long validation, or Round 2
+  dispatch at committed checkpoint
+  `5f388fbb145421ddfad129825d8742ab8a36fb9d`.
+- After restart, local HEAD, remote branch, and draft PR #221 reverified at the
+  exact checkpoint; main remained `7268e445...`, issue #220 remained open, and
+  the tracked tree was clean with exactly the five protected historical files
+  untracked.
+- The current working-paper pointers now bind revised PDF
+  `ab53c6e4...`, while v0.1.0 build, verify, and readiness paths resolve paper,
+  citation, registry, and release-note bytes from registered source revision
+  `3ca173f4...`. No immutable release record or published hash changed.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -133,7 +142,7 @@ scientific evidence and authorizes no manuscript merge or publication.
 - [x] Reverified local, remote, PR, base, issue, and five-file worktree state at
   exact authorized head `9cf1720c2b23737f1937ea2c3f1a35a898fa9809`.
 - [x] Added and schema-validated the narrow superseding AO-0014 pointer task.
-- [ ] Implement the current-versus-v0.1.0 versioning seam and its regressions.
+- [x] Implement the current-versus-v0.1.0 versioning seam and its regressions.
 - [ ] Run the focused and complete validation wall, freeze the exact green
   Round 2 packet, and route it only through fresh isolated sessions.
 
@@ -257,6 +266,38 @@ scientific evidence and authorizes no manuscript merge or publication.
   scientific authority. The owner then requested an orderly restart, so no
   pointer, release tool, test, site, review packet, reviewer session, or long
   validation action began. Preserve this as the clean resumption boundary.
+- 2026-08-06: Restart preflight passed exactly at local, remote, and draft PR
+  head `5f388fbb145421ddfad129825d8742ab8a36fb9d`, base
+  `7268e445347c4d7f9106d129af42d0e8667eb115`, open issue #220, and the five
+  protected untracked files. No mutation preceded this verification.
+- 2026-08-06: The first new-code style check failed on one 101-character test
+  line and reported four files requiring canonical formatting. Repository Ruff
+  formatting corrected only the intended files; the next focused style checks
+  passed.
+- 2026-08-06: The first focused pointer/release run passed 25 checks and failed
+  one new regression because the lifecycle YAML collection is named `records`,
+  not `papers`. Correcting the test to the existing schema yielded 26 passing
+  focused checks; no production behavior was weakened.
+- 2026-08-06: Compendium readiness rebuilt and verified 132 archive members,
+  seven papers, and 119 pages from immutable release source `3ca173f4...` even
+  when invoked from moving checkpoint `5f388fbb...`. The historical paper ZIP,
+  citation asset, and release notes retained hashes `08bab6f3...`,
+  `37c66ed...`, and `35d757da...` respectively.
+- 2026-08-06: The first complete-wall rerun passed formatting, Ruff, strict
+  MyPy, and 1,058 tests, with six CLI integration failures. Each failure was an
+  identical nested-`uv` DNS lookup caused by the deliberately isolated
+  `/tmp/uv-cache-ao0014`; no repository assertion failed. A first retry against
+  the normal cache was itself refused by the filesystem sandbox before test
+  collection. The same six tests then passed in 26.02 seconds with read access
+  to the existing normal cache. Repeat the full wall in that established
+  environment and preserve both failed receipts.
+- 2026-08-06: The established-cache complete wall passed formatting, Ruff,
+  strict MyPy, all 1,064 tests in 336.27 seconds, all claim/run/literature,
+  Agent Operations, program-memory, publication, naming, release-readiness,
+  and Compendium checks. The site then built 89 pages. A parallel active-paper
+  build was refused before execution by the filesystem sandbox because its
+  subprocess could not open the normal `uv` cache; rerun that one local build
+  with the same already-validated cache access used by the green wall.
 
 ## Validation strategy
 

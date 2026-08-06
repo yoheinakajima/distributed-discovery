@@ -15,11 +15,28 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def _sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+def _git_blob(source_revision: str, repository_path: str) -> bytes:
+    completed = subprocess.run(
+        ["git", "show", f"{source_revision}:{repository_path}"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+    )
+    return completed.stdout
 
 
 def audit() -> dict[str, Any]:
+    release_registry = yaml.safe_load((ROOT / "docs/releases/releases.yml").read_text())
+    release_schema = json.loads((ROOT / "docs/releases/releases.schema.json").read_text())
+    jsonschema.validate(
+        release_registry,
+        release_schema,
+        format_checker=jsonschema.FormatChecker(),
+    )
+    assert len(release_registry["releases"]) == 1
+    release = release_registry["releases"][0]
+    release_source_revision = release["source_revision"]
+
     schema = json.loads((ROOT / "docs/releases/release-evidence-manifest.schema.json").read_text())
     example = json.loads(
         (ROOT / "docs/releases/release-evidence-manifest.example.json").read_text()
@@ -51,8 +68,16 @@ def audit() -> dict[str, Any]:
     assert len(dry_run["artifacts"]) == 7
     assert sum(item["page_count"] for item in dry_run["artifacts"]) == 119
     for artifact in dry_run["artifacts"]:
-        assert _sha256(ROOT / artifact["pdf_path"]) == artifact["pdf_sha256"]
-        assert _sha256(ROOT / artifact["source_bundle"]) == artifact["source_sha256"]
+        assert (
+            hashlib.sha256(_git_blob(release_source_revision, artifact["pdf_path"])).hexdigest()
+            == artifact["pdf_sha256"]
+        )
+        assert (
+            hashlib.sha256(
+                _git_blob(release_source_revision, artifact["source_bundle"])
+            ).hexdigest()
+            == artifact["source_sha256"]
+        )
     cff = yaml.safe_load((ROOT / "CITATION.cff").read_text())
     assert cff["cff-version"] == "1.2.0"
     assert cff["title"] == "Distributed Discovery Research Compendium"
@@ -63,19 +88,10 @@ def audit() -> dict[str, Any]:
     assert cff["doi"] == "10.5281/zenodo.21535005"
     assert not (ROOT / ".zenodo.json").exists()
 
-    release_registry = yaml.safe_load((ROOT / "docs/releases/releases.yml").read_text())
-    release_schema = json.loads((ROOT / "docs/releases/releases.schema.json").read_text())
-    jsonschema.validate(
-        release_registry,
-        release_schema,
-        format_checker=jsonschema.FormatChecker(),
-    )
     assert release_registry["citation_convention"] == {
         "exact_version": "10.5281/zenodo.21535005",
         "evolving_compendium": "10.5281/zenodo.21535004",
     }
-    assert len(release_registry["releases"]) == 1
-    release = release_registry["releases"][0]
     assert release["version"] == "0.1.0"
     assert release["tag"] == "dd-compendium-v0.1.0"
     assert release["tag_type"] == "annotated"

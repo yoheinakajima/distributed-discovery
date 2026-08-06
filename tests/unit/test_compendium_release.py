@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[2]
 BUILD_SCRIPT = ROOT / "scripts/build_compendium_release.py"
 VERIFY_SCRIPT = ROOT / "scripts/verify_compendium_release.py"
 AUTH_SCRIPT = ROOT / "scripts/validate_first_compendium_release_authorization.py"
-SOURCE_REVISION = "ec29be1bd632e11dedf02ea18ab14b817fcc8074"
+SOURCE_REVISION = "3ca173f4e9e81a6d0e3e56205e428c596edc050e"
 GENERATED_UTC = "2026-07-24T00:00:00Z"
 
 

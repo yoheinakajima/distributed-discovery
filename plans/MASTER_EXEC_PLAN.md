@@ -42,7 +42,15 @@ working-paper pointers and historical-release-aware validation, must preserve
 every v0.1.0 tag/source/asset/hash/DOI record, and may freeze the exact revised
 Round 2 packet only after the complete wall passes. The owner requested an
 orderly restart at `2026-08-06T20:11:54Z`; implementation and Round 2 dispatch
-remain unstarted at this committed checkpoint.
+were unstarted at checkpoint `5f388fbb145421ddfad129825d8742ab8a36fb9d`.
+After restart, local, remote, issue, base, draft-PR, and five protected-file
+identities reverified exactly. The implementation now points the active working
+paper to the revised PDF while release builders, verifiers, and readiness
+audits reconstruct Compendium v0.1.0 only from registered source revision
+`3ca173f4e9e81a6d0e3e56205e428c596edc050e`. The immutable registry, dry-run
+record, tag, DOI, and published asset hashes remain unchanged. Focused pointer,
+release, closeout, and review-packet validation passes; the complete wall and a
+correctly labeled Round 2 freeze remain next.
 
 ## Completed AO-0013 repair; Pages closeout remains open (2026-08-06)
 

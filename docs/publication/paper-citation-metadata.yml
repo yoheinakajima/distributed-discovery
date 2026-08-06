@@ -16,12 +16,12 @@ papers:
     title: The Common-Source Trap
     authors: [Yohei Nakajima]
     status: working-paper
-    version: repository-artifact-sha256-afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7
+    version: repository-artifact-sha256-ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150
     arxiv_id: null
     doi: null
     recommended_citation: "Nakajima, Yohei (2026). The Common-Source Trap. Working paper."
     source_bundle: papers/common-source-trap
-    pdf_sha256: afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7
+    pdf_sha256: ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150
     claim_ownership: [DD-C-0057]
   - paper_id: incentive-to-ignore
     title: "The Incentive to Ignore: Selective Attention and Audience Design in Distributed Discovery"
@@ -96,7 +96,7 @@ examples:
     doi: null
     claim_id: DD-C-0057
     run_id: null
-    artifact_sha256: afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7
+    artifact_sha256: ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150
   - purpose: claim and immutable-run evidence before an external identifier exists
     paper_id: information-sharing-frontier
     arxiv_id: null
