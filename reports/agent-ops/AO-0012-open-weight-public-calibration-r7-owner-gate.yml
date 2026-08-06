@@ -159,6 +159,10 @@ owner_confirmation_statements:
 explicit_prohibitions:
 - provider-calls-outside-manifest
 - credential-read-outside-manifest
+- unauthorized-private-access
+- scientific-mutation-outside-contract
+- cap-increase
+- consequential-action-by-gate-engine
 - authorization-or-gate-r1-through-r6b-reuse-reactivation-overwrite-or-replay
 - r5-secret-namespace-query-delete-cleanup-retry-or-historical-absence-claim
 - account-balance-as-spend-authority-or-cap-above-usd-10
