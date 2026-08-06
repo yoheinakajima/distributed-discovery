@@ -1,0 +1,25 @@
+schema_version: agent-ops-handoff-v1
+status: owner-gate-required
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0013
+issue: 218
+pull_request: 219
+branch: agent/agent-ops-historical-gate-branch-context-repair
+base_main: 3dc9c66b62dac1d6e407f80755e31631acc8159f
+head_merge_sha: 69274f4f7e284ba503c261c6a6f2e1c60991f25c
+task_contract: tasks/agent-operations-historical-gate-branch-context-repair.yml
+exec_plan: plans/AGENT_OPERATIONS_HISTORICAL_GATE_BRANCH_CONTEXT_REPAIR.md
+last_completed_gate: Exact execution commit 2f0e4962a328e08a402e457a80b16ab9e371a302 and committed generic gate-manifest head 69274f4f7e284ba503c261c6a6f2e1c60991f25c preserve the 11-path repair tree, two passing exact-head checks, task-branch and exact Pages-context walls, zero credentials, zero provider calls, zero spend, no authorization, and no scientific or private mutation.
+next_gate: Resume AO-0013 from issue 218, draft PR 219, the fixed contract, living ExecPlan, and only the exact AOG-AO-0013-PAGES-BRANCH-CONTEXT-REPAIR authorization. Revalidate execution ancestry, protected hashes, clean tracked tree, exact local/remote/PR head, fresh required checks, PR open-draft-clean state, issue 218 open, issue 212 open, and retained AO-0012 branch. Then mark only PR 219 ready, squash-merge its exact head without deleting the branch, require normal post-merge CI and Pages to pass at the merge commit, close issue 218 only after both pass, synchronize main, and stop before any provider-neutral task.
+decision: Stop at owner-gate-required before creating an authorization, marking PR 219 ready, merging it, closing issue 218, or triggering the post-merge main workflows.
+external_calls_cost: {calls: 0, cost: "0", currency: USD}
+private_state_change: none; no owner authorization, credential, private path, retained campaign state, or historical Secret was read, written, generated, disclosed, queried, or changed.
+scientific_state_change: none; no DD-023, study, claim, scientific run, evidence, proof, performance result, paper, release, publication, submission, or base-campaign state was created or changed.
+validation:
+  profile: infrastructure
+  result: >-
+    pass-33-focused-r5-r7-tests-ruff-strict-mypy-222-source-files-1052-tests-110-claims-51-run-manifests-agent-operations-program-memory-paper-publication-naming-release-audits-119-page-offline-compendium-exact-pages-branch-context-1052-tests-and-89-page-site-two-exact-head-ci-checks-11-path-freeze; initial temporary-cleanup command rejected before execution for prohibited force-delete and corrected with exact bounded non-force cleanup; initial gate-schema helper call failed locally on a string-versus-Path invocation and was corrected before gate commit
+owner_action: Review the exact AO-0013 execution commit, 11 protected hashes, passing task-branch and Pages-equivalent walls, draft PR 219, zero-state boundary, and merge-only gate; then create only the exact authorization with challenge AUTHORIZE AOG-AO-0013-PAGES-BRANCH-CONTEXT-REPAIR 2f0e496. The same task may then perform only exact readiness, squash merge, post-merge CI and Pages verification, issue 218 closure after both pass, branch retention, and main synchronization.
+exact_next_command: 'make owner-gate GATE=reports/agent-ops/AO-0013-pages-branch-context-repair-owner-gate.yml OWNER_GATE_CHALLENGE="AUTHORIZE AOG-AO-0013-PAGES-BRANCH-CONTEXT-REPAIR 2f0e496"'
+exact_next_file: reports/agent-ops/AO-0013-pages-branch-context-repair-owner-gate.yml
+blocker: The exact AO-0013 merge authorization is intentionally absent. PR 219 must remain draft and unmerged; issue 218 and issue 212 remain open; the provider-neutral task remains unregistered until a separately authorized merge is followed by green post-merge Pages.
