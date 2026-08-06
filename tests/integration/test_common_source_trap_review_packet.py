@@ -66,15 +66,19 @@ def test_review_packet_claims_match_manuscript_and_canonical_ledger() -> None:
     manuscript = _git_bytes(commit, "papers/common-source-trap/main.tex").decode()
     manuscript_claims = set(re.findall(r"DD-C-\d{4}", manuscript))
     packet_claims = {record["id"] for record in packet["evidence"]["claims"]}
-    assert packet_claims == manuscript_claims == {
-        "DD-C-0051",
-        "DD-C-0052",
-        "DD-C-0053",
-        "DD-C-0054",
-        "DD-C-0056",
-        "DD-C-0057",
-        "DD-C-0058",
-    }
+    assert (
+        packet_claims
+        == manuscript_claims
+        == {
+            "DD-C-0051",
+            "DD-C-0052",
+            "DD-C-0053",
+            "DD-C-0054",
+            "DD-C-0056",
+            "DD-C-0057",
+            "DD-C-0058",
+        }
+    )
 
     ledger = yaml.safe_load(_git_bytes(commit, "claims/claims.yml"))["claims"]
     canonical = {record["id"]: record for record in ledger}
@@ -88,9 +92,7 @@ def test_review_packet_claims_match_manuscript_and_canonical_ledger() -> None:
 def test_review_packet_matches_validation_and_provenance_receipts() -> None:
     packet = _packet()
     commit = packet["source"]["commit"]
-    validation = yaml.safe_load(
-        _git_bytes(commit, "papers/common-source-trap/validation.json")
-    )
+    validation = yaml.safe_load(_git_bytes(commit, "papers/common-source-trap/validation.json"))
     provenance = yaml.safe_load(
         _git_bytes(commit, "papers/common-source-trap/generated/provenance.json")
     )
@@ -98,9 +100,7 @@ def test_review_packet_matches_validation_and_provenance_receipts() -> None:
     assert validation["page_count"] == packet["source"]["pdf"]["page_count"]
     assert validation["source_runs"] == packet["evidence"]["source_runs"]
     assert provenance["source_runs"] == packet["evidence"]["source_runs"]
-    packet_inputs = {
-        record["path"]: record["sha256"] for record in packet["evidence"]["inputs"]
-    }
+    packet_inputs = {record["path"]: record["sha256"] for record in packet["evidence"]["inputs"]}
     assert validation["inputs"] == packet_inputs
     assert provenance["inputs"] == packet_inputs
     assert validation["byte_reproducible_two_builds"] is True
@@ -112,8 +112,7 @@ def test_review_round_is_complete_bundle_only_and_zero_authority_expansion() -> 
     assert packet["paper"] == {
         "id": "common-source-trap",
         "title": (
-            "The Common-Source Trap: Endogenous Independent Evidence in "
-            "Distributed Discovery"
+            "The Common-Source Trap: Endogenous Independent Evidence in Distributed Discovery"
         ),
         "lifecycle": "working-paper",
         "submission_authorized": False,

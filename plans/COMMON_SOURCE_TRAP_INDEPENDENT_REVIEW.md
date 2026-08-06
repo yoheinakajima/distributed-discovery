@@ -144,6 +144,21 @@ scientific evidence and authorizes no manuscript merge or publication.
   reference pages showed no clipping, overlap, malformed glyph, missing page,
   or new visual defect. This confirms the existing visual-QA receipt without
   changing it.
+- 2026-08-06: The first complete `make verify` attempt stopped at Ruff's format
+  check because the new typed test had not been run through `ruff format`.
+  Subsequent shell commands continued and `make papers` passed all six paper
+  builds, but that all-paper generator refreshed two parked Information Sharing
+  Frontier `source_commit` fields to the AO-0014 head. Both out-of-scope changes
+  were immediately restored byte-for-byte with no commit. AO-0014 retains the
+  successful all-paper build observation and reruns the repository wall plus
+  the active paper target after formatting.
+- 2026-08-06: After formatting, the next `make verify` passed Ruff, strict MyPy,
+  paper-specific integrations, and 1,053 tests, but four historical pilot
+  fixtures rejected the unpushed AO-0014 head because their production guard
+  requires the synthetic authorization commit to exist on a remote branch.
+  This is the expected fail-closed remote-ancestry invariant. Commit and push
+  the intended packet changes, then rerun the exact wall; do not weaken or
+  bypass the guard.
 
 ## Validation strategy
 
