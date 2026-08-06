@@ -147,6 +147,7 @@ def validate_owner_authorization(
     gate_override: Mapping[str, Any] | None = None,
     live_state_validator: Callable[[Path, Mapping[str, Any]], None] = _validate_live_github_and_git,
     now: datetime | None = None,
+    synthetic_branch_context: str | None = None,
 ) -> dict[str, Any]:
     """Validate a real generic R5 authorization before credential ingress."""
 
@@ -183,13 +184,21 @@ def validate_owner_authorization(
     _require(authorized <= observed_now < expires, "authorization outside active interval")
     for relative, expected in gate["tree_hashes"].items():
         _require(hash_path(repo / relative) == expected, f"authorized tree drift: {relative}")
-    branch = subprocess.run(
-        ("git", "branch", "--show-current"),
-        cwd=repo,
-        check=True,
-        capture_output=True,
-        text=True,
-    ).stdout.strip()
+    if synthetic_branch_context is None:
+        branch = subprocess.run(
+            ("git", "branch", "--show-current"),
+            cwd=repo,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.strip()
+    else:
+        _require(gate_override is not None, "synthetic branch context requires gate override")
+        _require(
+            live_state_validator is not _validate_live_github_and_git,
+            "synthetic branch context requires synthetic live-state validator",
+        )
+        branch = synthetic_branch_context
     _require(branch == BRANCH, "live branch mismatch")
     ancestry = subprocess.run(
         ("git", "merge-base", "--is-ancestor", str(value["commit"]), "HEAD"),

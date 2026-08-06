@@ -85,8 +85,8 @@ enforce the actual Git branch by default.
 - [x] Reverified PR #213 merge, issue #212, retained branch, main CI, and failed Pages state.
 - [x] Read the applicable instructions, Agent Operations policy, study context, and program-memory registry.
 - [x] Registered issue #218 and the AO-0013 task branch.
-- [ ] Validate and commit the fixed task contract and living ExecPlan.
-- [ ] Implement and test the synthetic-only seam.
+- [x] Validated and committed the fixed task contract and living ExecPlan as `412c4e3`.
+- [x] Implemented and focused-tested the synthetic-only seam.
 - [ ] Run the complete verification wall and Pages-equivalent branch-context wall.
 - [ ] Push and open one draft PR.
 - [ ] Freeze and validate the exact merge owner gate and handoff.
@@ -99,6 +99,10 @@ enforce the actual Git branch by default.
 - The Pages workflow's historical pilot branch switch is intentional and
   predates AO-0012. Replacing that branch is outside this task and would risk
   changing other historical verification semantics.
+- The smallest fail-closed seam requires all three synthetic signals together:
+  an explicit branch context, an in-memory gate override, and a nonproduction
+  live-state validator. Supplying a branch context to the production live-state
+  validator is rejected before branch comparison.
 
 ## Decision log
 
@@ -108,6 +112,9 @@ enforce the actual Git branch by default.
   keep the production default tied to the actual repository branch.
 - 2026-08-06: Defer provider-neutral work until a later authorized merge makes
   Pages green.
+- 2026-08-06T13:38:59Z: Focused Ruff and strict MyPy passed; 33 R5/R7 tests
+  passed, including exact synthetic context, wrong-context rejection,
+  production-validator override rejection, and default live-branch rejection.
 
 ## Validation strategy
 

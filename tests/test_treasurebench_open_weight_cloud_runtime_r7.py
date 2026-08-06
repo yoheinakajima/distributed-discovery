@@ -129,7 +129,86 @@ def test_r7_gate_id_validates_against_gate_and_authorization_schemas(tmp_path: P
         gate_override=gate,
         live_state_validator=no_live_state,
         now=NOW,
+        synthetic_branch_context=BRANCH,
     )
+
+
+def test_r7_synthetic_branch_context_rejects_wrong_registered_branch(tmp_path: Path) -> None:
+    gate = exact_gate()
+    path, prior = write_authorization(
+        gate,
+        authorization_challenge(gate),
+        config_root=tmp_path,
+        now=NOW,
+    )
+    assert prior is None
+    authorization = load_yaml(path)
+    with pytest.raises(RuntimeConformanceError, match="live branch mismatch"):
+        validate_owner_authorization(
+            REPO,
+            authorization,
+            gate_override=gate,
+            live_state_validator=no_live_state,
+            now=NOW,
+            synthetic_branch_context="main",
+        )
+
+
+def test_r7_synthetic_branch_context_cannot_override_real_live_validation(
+    tmp_path: Path,
+) -> None:
+    gate = exact_gate()
+    path, prior = write_authorization(
+        gate,
+        authorization_challenge(gate),
+        config_root=tmp_path,
+        now=NOW,
+    )
+    assert prior is None
+    authorization = load_yaml(path)
+    with pytest.raises(
+        RuntimeConformanceError,
+        match="synthetic branch context requires synthetic live-state validator",
+    ):
+        validate_owner_authorization(
+            REPO,
+            authorization,
+            gate_override=gate,
+            now=NOW,
+            synthetic_branch_context=BRANCH,
+        )
+
+
+def test_default_r7_path_still_reads_and_rejects_wrong_live_branch(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    gate = exact_gate()
+    path, prior = write_authorization(
+        gate,
+        authorization_challenge(gate),
+        config_root=tmp_path,
+        now=NOW,
+    )
+    assert prior is None
+    authorization = load_yaml(path)
+    monkeypatch.setattr(
+        subprocess,
+        "run",
+        lambda *args, **kwargs: subprocess.CompletedProcess(
+            args[0],
+            0,
+            stdout="main\n",
+        ),
+    )
+    with pytest.raises(RuntimeConformanceError, match="live branch mismatch"):
+        validate_owner_authorization(
+            REPO,
+            authorization,
+            gate_override=gate,
+            live_state_validator=no_live_state,
+            now=NOW,
+        )
 
 
 @pytest.mark.parametrize(
