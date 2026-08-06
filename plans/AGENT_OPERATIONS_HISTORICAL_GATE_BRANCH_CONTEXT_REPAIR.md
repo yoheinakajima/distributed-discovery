@@ -87,8 +87,8 @@ enforce the actual Git branch by default.
 - [x] Registered issue #218 and the AO-0013 task branch.
 - [x] Validated and committed the fixed task contract and living ExecPlan as `412c4e3`.
 - [x] Implemented and focused-tested the synthetic-only seam.
-- [ ] Run the complete verification wall and Pages-equivalent branch-context wall.
-- [ ] Push and open one draft PR.
+- [x] Ran the complete verification wall and Pages-equivalent branch-context wall.
+- [x] Pushed and opened draft PR #219.
 - [ ] Freeze and validate the exact merge owner gate and handoff.
 
 ## Discoveries and surprises
@@ -103,6 +103,12 @@ enforce the actual Git branch by default.
   an explicit branch context, an in-memory gate override, and a nonproduction
   live-state validator. Supplying a branch context to the production live-state
   validator is rejected before branch comparison.
+- The first isolated Pages-equivalent command was rejected before execution
+  because its cleanup trap used prohibited force-delete syntax. The accepted
+  retry used a newly created `/tmp/dd-ao0013-pages.*` clone and non-force
+  cleanup. macOS requested confirmation for a read-only Git pack during that
+  cleanup; after making only that exact temporary tree owner-writable, cleanup
+  completed and the temporary directory was removed.
 
 ## Decision log
 
@@ -115,6 +121,14 @@ enforce the actual Git branch by default.
 - 2026-08-06T13:38:59Z: Focused Ruff and strict MyPy passed; 33 R5/R7 tests
   passed, including exact synthetic context, wrong-context rejection,
   production-validator override rejection, and default live-branch rejection.
+- 2026-08-06: The task-branch `make verify` wall passed Ruff, strict MyPy on
+  222 source files, all 1,052 tests, 110 claims, 51 run manifests, Agent
+  Operations, program-memory, paper, publication, naming, and release audits,
+  plus the 119-page offline compendium release verification.
+- 2026-08-06: An isolated clone at execution source `7987169` was switched to
+  exact Pages branch context `benchmark/treasurebench-agents-v1-sealed-pilot`.
+  Its bootstrap, identical `make verify` wall, and `make site` all passed; the
+  site build produced 89 pages across 26 studies. No deployment occurred.
 
 ## Validation strategy
 
@@ -162,5 +176,7 @@ stop before merge unless the exact committed AO-0013 owner gate is authorized.
 
 ## Outcome and retrospective
 
-Pending. Record every failed validation and the exact final owner-gate state
-without rewriting earlier observations.
+The minimal seam and every required local validation pass. Draft PR #219
+remains unmerged. Freeze the exact execution commit and protected tree, commit
+one generic merge gate and schema-valid handoff, validate them without creating
+an authorization, and stop at `owner-gate-required`.
