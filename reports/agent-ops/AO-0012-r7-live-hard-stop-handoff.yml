@@ -1,0 +1,62 @@
+schema_version: agent-ops-handoff-v1
+status: stop-by-policy
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0012
+issue: 212
+pull_request: 213
+branch: agent/treasurebench-open-weight-cloud-runtime
+base_main: 6e86b43a8db8d20380dd64bf9490772b7152f484
+head_merge_sha: 9f5fe8ede88267d7a779292e39f419cb37fc877f
+task_contract: tasks/treasurebench-open-weight-cloud-runtime-r7.yml
+exec_plan: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+last_completed_gate: >-
+  The exact R7 challenge succeeded at 2026-08-06T04:12:14Z and created the
+  registered mode-0600 generic authorization for execution commit
+  bf79d688a673d0752cce694901e79bcc00d9bc7b. The exact live command passed
+  public GitHub/Git, authorization, canonical-cap, ancestry, protected-tree,
+  tracked-worktree, and exact two-name credential checks. It reached only the
+  fresh R7 account-inventory boundary and returned a public-safe hard stop.
+  The frozen implementation made between two and four authenticated read-only
+  GraphQL inventory requests: one through three ordered preflight inventory
+  requests before the failure, plus one finalizer inventory request. The
+  redacted receipt intentionally cannot recover which ordered preflight call
+  failed. No Secret, template, Pod, model download, endpoint, inference, or
+  bill was created.
+next_gate: >-
+  R7 is consumed and nonreusable. A new explicit owner decision is required
+  before any provider query, control-plane repair, new calibration gate, or
+  live attempt. No next gate is registered by this closeout.
+decision: >-
+  self-operated-control-boundary-failed-managed-api-rejected. The fresh R7
+  inventory and deletion-verification boundary is not exact, so PR #213
+  remains draft, issue #212 remains open, and no feasibility, performance, or
+  scientific conclusion is permitted.
+external_calls_cost:
+  calls: 0
+  cost: '0'
+  currency: USD
+private_state_change: >-
+  The strict loader selected only RUNPOD_API_KEY and HF_TOKEN. Only the RunPod
+  account key was used for authenticated read-only inventory. The Hugging Face
+  token was not transmitted. All local selected credential values, generated
+  endpoint bearer, generated attestation key, and control-plane credential
+  state were cleared. No secret value, authenticated URL, header, provider
+  body, prompt, or output entered Git or public records.
+scientific_state_change: >-
+  none; no DD-023, scientific run, private task, base campaign, performance
+  result, claim, paper, release, DOI, arXiv, journal, or submission state was
+  created or changed.
+validation:
+  profile: infrastructure
+  result: hard-stop-inventory-boundary-outcome-handoff-decision-valid-29-focused-1046-full-ruff-strict-mypy-all-audits-119-paper-pages-89-site-pages
+owner_action: >-
+  Decide whether to abandon this provider control-plane path or authorize a
+  separate local-only diagnosis and fresh additive gate. Do not rerun R7 or
+  make any provider query under its consumed authorization.
+exact_next_command: ''
+exact_next_file: reports/benchmark/treasurebench-open-weight-public-calibration-outcome-r7.yml
+blocker: >-
+  The authenticated fresh-namespace inventory could not be established and
+  the finalizer could not verify the Secret inventory boundary. No provider
+  query, calibration retry, PR readiness, merge, or issue closure is
+  authorized.

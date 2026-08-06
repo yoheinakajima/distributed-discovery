@@ -239,6 +239,18 @@ local wall, both exact-head CI checks, and all execution-sensitive tree hashes
 are frozen. The generic gate passes live validate-only checks without creating
 authorization. AO-0012 is stopped at the sole owner-gate-required checkpoint.
 
+The later additive R7 gate tightened the same public calibration to USD 3
+expected, USD 10 hard, USD 1.50/hour, six GPU-hours, and 400 inference calls
+under a fresh authorization-derived namespace. Its exact authorization was
+consumed once at execution commit
+`bf79d688a673d0752cce694901e79bcc00d9bc7b`. All local and public pre-ingress
+checks passed, but the authenticated whole-account inventory failed closed
+before any Secret, template, Pod, encrypted volume, model download, endpoint,
+inference, billing, or spend. The selected operational decision is
+`self-operated-control-boundary-failed-managed-api-rejected`; R7 is
+nonreusable, PR #213 remains draft, issue #212 remains open, and any diagnosis,
+provider query, repair gate, or retry requires a fresh explicit owner decision.
+
 ## Completed continuation — AO-0011 provider-outcome policy v3 and fresh pilot v5 R2 (2026-07-29)
 
 Issue #210, merged PR #211, branch

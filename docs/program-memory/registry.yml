@@ -753,11 +753,11 @@ records:
     why_it_matters: It separates the registered model-family and inference-stack independence purposes from physical hardware ownership, rejects managed model APIs as substitutes, and creates a bounded public-only calibration path without weakening the third-model or claim-grade registration gates.
     canonical_destination: {type: decision-record, path: tasks/treasurebench-open-weight-cloud-runtime-r7.yml}
     dependencies: [DD-010, PM-0031, PM-0032, PM-0038, PM-0039]
-    promotion_trigger: AO-0012 preserves the consumed R6b inventory ambiguity and qualified owner-observed empty Secrets tab, then requires a fresh exact R7 owner gate before the public-only calibration; the USD 200 account balance is not spending authority and every R1-through-R6b authorization remains nonreusable.
+    promotion_trigger: AO-0012 preserves the consumed R6b ambiguity and qualified owner-observed empty Secrets tab; exact R7 authorization was consumed at the fresh account-inventory boundary with zero resource mutation, inference, billing, or spend, and any diagnosis, provider query, repair gate, or retry requires a fresh owner decision.
     permitted_stops: [implemented, deferred, rejected, superseded, closed-by-null]
     not_a_result_boundaries: [prospective infrastructure definition feasibility and public engineering calibration only, no scientific-study allocation run claim performance comparison paper release submission or base-campaign authority]
     supersedes: []
     superseded_by: null
     review_after: explicit-owner-decision
     owner_decision: adopted
-    last_reviewed: "2026-08-05"
+    last_reviewed: "2026-08-06"

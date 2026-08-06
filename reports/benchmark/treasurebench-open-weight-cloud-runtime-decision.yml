@@ -14,6 +14,8 @@ preselection: false
 decision_evidence:
   - reports/benchmark/treasurebench-open-weight-public-calibration-outcome-r5.yml
   - The exact R5 owner gate succeeded and pre-ingress validation passed, but the authenticated RunPod control-plane path returned no resource identity and the finalizer could not prove the authorization-derived temporary Secret namespace absent. The flow stopped before Pod creation, model download, endpoint startup, inference, or spend.
+  - reports/benchmark/treasurebench-open-weight-public-calibration-outcome-r7.yml
+  - The exact R7 owner gate was consumed once. The live path passed every local and public pre-ingress check, then stopped at the fresh account-inventory boundary before any Secret, template, Pod, volume, model download, endpoint, inference, billing, or spend. The redacted record bounds authenticated read-only inventory requests at two through four but cannot recover the exact ordered failure point.
 next_candidate_if_pass:
   title: TreasureBench Agents v1 claim-grade base-campaign registration and open-weight runtime authorization
   must_independently_decide:

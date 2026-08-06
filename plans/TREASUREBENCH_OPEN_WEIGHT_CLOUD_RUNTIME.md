@@ -2,6 +2,23 @@
 
 ## R7 qualified cleanup outcome and public calibration refreeze (2026-08-05)
 
+The exact R7 challenge was accepted once at `2026-08-06T04:12:14Z` for
+execution commit `bf79d688a673d0752cce694901e79bcc00d9bc7b`. The registered
+live command passed every local/public pre-ingress check and loaded only the
+two allowed credentials. It then failed closed at the fresh R7 account-
+inventory boundary. No Secret, template, Pod, volume, model download,
+endpoint, inference, or bill was created; cost and inference calls are zero.
+
+The control plane performs the same whole-account GraphQL inventory separately
+for the ordered Pod, template, and Secret conflict checks. The public-safe
+receipt does not retain which of those one through three preflight requests
+failed, and the finalizer made one further inventory request that also failed.
+The authenticated read-only request count is therefore bounded at two through
+four, not known exactly. This is preserved as an instrumentation limitation;
+it is not evidence about any old namespace or provider resource. R7 is
+consumed, nonreusable, and stopped at
+`self-operated-control-boundary-failed-managed-api-rejected`.
+
 R6b was authorized and consumed exactly once. Its one authenticated inventory
 operation returned the public-safe `inventory-ambiguity` outcome; selection,
 deletion, verification, Pod, model, inference, and spend remained unreachable.
@@ -33,11 +50,43 @@ and does not inspect or mutate the prior R5 namespace.
   rehearsal.
 - **R7-M2 — complete:** run focused validation and the complete repository wall;
   preserve every failed validation and correction.
-- **R7-M3 — in progress:** commit and push only intended AO-0012 files, refreeze the
-  exact execution commit and protected tree, validate the additive generic gate
-  without authorization, update draft PR #213, and stop at owner-gate-required.
+- **R7-M3 — complete:** commit and push only intended AO-0012 files, refreeze
+  execution commit `bf79d688a673d0752cce694901e79bcc00d9bc7b` and the 76-path
+  protected tree, validate the additive generic gate, and update draft PR
+  #213.
+- **R7-M4 — hard stop:** consume the exact R7 authorization once; pass every
+  local/public pre-ingress check; stop at the fresh account-inventory boundary
+  before any resource creation, model work, inference, billing, or spend. R7
+  may not be rerun, and PR #213 and issue #212 remain draft/open.
 
 ### R7 preserved failures and corrections
+
+- The owner-authorized live attempt returned
+  `secret-template-deletion-ambiguity` before resource creation. The redacted
+  transport deliberately preserved no provider body, so the ordered preflight
+  failure point and exact inventory-request count cannot be reconstructed.
+  The code path proves a two-to-four request bound and proves every mutation,
+  model, endpoint, inference, and billing path remained unreachable.
+- The first local closeout schema command invoked the repository package with
+  the system Python instead of the pinned project environment and stopped on
+  `ModuleNotFoundError: distributed_discovery` before validating either file.
+  It performed no provider action. The same read-only validation was rerun
+  through the pinned project environment.
+- The first pinned schema rerun validated the Agent Operations handoff, then
+  looked for the benchmark outcome schema under `docs/agent-ops` and stopped
+  on `FileNotFoundError`; the outcome schema is correctly stored under
+  `docs/benchmark/agents-v1`. A separate combined focused-test command also
+  omitted the repository's required `PYTHONPATH=src` and stopped at collection
+  with two package-import errors. The registered R7 audit target had already
+  passed all 12 R7 tests in the same sequence. Both mechanical commands were
+  corrected before the validation wall, with no further credential or
+  provider action.
+- The corrected closeout wall validates the redacted outcome and handoff,
+  preserves the 50-pairing offline rehearsal, passes all 29 focused R6/R7
+  tests, Ruff across 383 files, strict MyPy across 222 source files, all 1,046
+  tests, every claim/run/program-memory/Agent Operations/publication/paper/site
+  audit, seven papers with 119 pages, the 89-page site, and the offline
+  compendium release check.
 
 - The first focused R7 lint/type pass found one unused import, three long lines,
   three comparison-style findings, and seven missing type narrowings in the new

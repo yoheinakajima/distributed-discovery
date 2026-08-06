@@ -121,6 +121,16 @@ endpoint, inference, or Pod billing exists. The selected permitted decision is
 cleanup, repair, or retry requires new explicit owner direction and a new exact
 prospective gate.
 
+R7 later froze a fresh namespace and a tighter USD 3 expected/USD 10 hard
+public-calibration envelope. Its exact authorization was consumed once, every
+local and public pre-ingress check passed, and the live path stopped at the
+fresh account-inventory boundary. No Secret, template, Pod, encrypted volume,
+model, endpoint, inference, billing, or spend was created. The redacted record
+supports only a two-to-four authenticated read-only inventory-request bound,
+so the exact ordered failure point remains unknown. R7 is nonreusable, and any
+diagnosis, provider query, repair gate, or retry requires a fresh owner
+decision.
+
 The 2026-07-23 evaluation registration under issue #173 selects a sealed
 engineering pilot pending owner authorization and keeps the claim-grade base
 blocked on local/open feasibility. The inactive authorization has zero caps

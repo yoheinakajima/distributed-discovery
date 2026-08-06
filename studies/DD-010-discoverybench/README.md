@@ -450,3 +450,12 @@ and a tighter USD 3 expected/USD 10 hard envelope, USD 1.50 hourly ceiling, six
 GPU-hours, and 400 inference calls. It remains infrastructure engineering only
 and creates no DD-023, private, scientific, base-campaign, performance,
 publication, merge, or issue-close authority before its exact owner gate.
+
+The exact R7 owner gate was later consumed once. The live command passed every
+local and public pre-ingress check, loaded only the two allowed credentials,
+and stopped at the fresh account-inventory boundary before any Secret,
+template, Pod, encrypted volume, model download, endpoint, inference, billing,
+or spend. The public-safe record cannot recover which of the ordered inventory
+requests failed, so it preserves a two-to-four authenticated read-only request
+bound rather than an invented exact count. R7 is nonreusable; PR #213 remains
+draft, issue #212 remains open, and no feasibility or performance result exists.
