@@ -1,5 +1,25 @@
 # TreasureBench open-weight cloud-runtime feasibility and conformance
 
+## R6 generic-gate identifier compatibility repair (2026-08-05)
+
+The immutable long-ID R6 gate passed its then-current gate schema, but the
+generic authorization writer rejected the same 55-character ID under the
+two-character-stricter owner-authorization schema. The failure occurred before
+an authorization file, temporary authorization, history entry, consumption
+marker, `.env.txt` read, credential, provider operation, resource query or
+mutation, inference call, or spend. The supplied owner challenge applies only
+to that failed gate and is not reusable.
+
+The owner authorized local-only preparation of a shorter additive gate. The
+generic owner-gate ID rule is narrowed to exact parity with the unchanged
+owner-authorization rule, with a boundary regression proving any admitted ID
+can create a schema-valid synthetic authorization. The corrected identity is
+`AOG-AO-0012-R6-RUNPOD-SECRET-CLEANUP`; it preserves only
+`RUNPOD_API_KEY`, one inventory, conditional deletion of the sole unique exact
+`ao0012-owcal-r5-01b41c9aa04bf2a4-hf` target, one verification, three
+authenticated operations maximum, zero spend, and zero inference. Preparation
+must stop before authorization or provider access.
+
 ## R6 authorization-free Secret cleanup-gate preparation (2026-08-05)
 
 R1 through R5 remain superseded, consumed, or immutable exactly as recorded.
@@ -558,6 +578,13 @@ historical 16-GB owner host failed the registered environment gate. AO-0012
 tests whether physical ownership was an unnecessary proxy for the separable
 model-control and serving-stack-control goals.
 
+The R6 status/cleanup authorization attempt later failed closed before writing
+an authorization because its long gate ID was valid only under the gate schema,
+not the stricter authorization schema. The long-ID gate and supplied challenge
+remain immutable and nonreusable. The active authorization-free lane is the
+additive shorter-ID compatibility repair; PR #213 remains draft and issue #212
+remains open.
+
 ## DISCUSSION AND DECISION DELTA AUDIT
 
 All 39 pre-existing program-memory records were read before issue or branch
@@ -575,6 +602,12 @@ locality, and infrastructure-provider independence. It adopts no scientific
 conclusion and creates no external execution authority before the generic
 owner gate. Repeat this audit at closeout; no owner decision may remain only in
 conversation.
+
+The R6 compatibility amendment is routed additively through
+`tasks/treasurebench-open-weight-cloud-runtime-r6b.yml`, this living plan, and
+the machine-readable compatibility audit. It changes no PM-0040 proposition,
+scientific trigger, cleanup scope, or cap. No program-memory item became due,
+and the failed long-ID gate remains immutable audit history.
 
 ## Scope
 
@@ -650,11 +683,14 @@ conversation.
   creation because temporary-Secret absence could not be proven. PR #213 and
   issue #212 remain open; remediation or another prospective repair requires
   new explicit owner direction.
-- **M8 — R6 authorization-free cleanup-gate preparation:** active. Preserve a
-  machine-readable execution-order proof, add synthetic conflict-inventory and
-  ambiguous-first-Secret regressions, freeze the exact one-query/conditional-
-  delete/one-verification surface, validate the generic R6 gate without
-  authorization, and stop at owner-gate-required.
+- **M8 — R6 authorization-free cleanup-gate preparation:** complete through
+  the immutable long-ID gate and owner-gate-required handoff. Its later
+  authorization writer failed closed on the gate/authorization ID mismatch;
+  no authorization or consequential action occurred.
+- **M9 — R6 generic-gate ID compatibility repair:** active. Preserve the failed
+  gate, narrow the gate ID pattern to authorization parity, freeze a shorter
+  additive contract and gate with unchanged cleanup semantics, run the full
+  validation wall, push draft PR #213, and stop before authorization.
 
 ## Progress checklist
 
@@ -676,9 +712,12 @@ conversation.
 - [x] Complete the R5 generic-gate repair, consume its exact authorization
   once, preserve the control-plane/Secret-deletion ambiguity, and stop before
   Pod creation with zero inference calls and no Pod bill.
-- [ ] Complete R6 local-only documentation, postmortem, synthetic regression,
+- [x] Complete R6 local-only documentation, postmortem, synthetic regression,
   execution/protected-tree freeze, generic gate validation, and exact stop
   without reading credentials or contacting the provider.
+- [ ] Complete the additive R6 ID-parity repair, shorter execution/protected-
+  tree freeze, full validation, validate-only gate, and exact stop without
+  creating authorization or contacting the provider.
 
 ## Discoveries and surprises
 
@@ -797,6 +836,23 @@ conversation.
   reused after its one bounded status/cleanup attempt. The live entry now
   writes one mode-0600 authorization-bound consumption marker before credential
   ingress and rejects every repeat before `.env.txt` or provider access.
+- The generic gate schema admitted the immutable 55-character R6 ID with
+  `{2,50}`, while the authorization schema retained `{2,48}`. Validate-only
+  therefore passed, but the exact authorization writer rejected `gate_id`
+  before writing any authorization. The smallest generic correction narrows
+  the gate schema to the existing authorization contract and adds a
+  maximum-length synthetic writer regression; the authorization schema is not
+  widened.
+- The first R6 compatibility focused command passed all 26 selected tests, then
+  incorrectly passed the JSON owner-gate schema to Ruff as though it were
+  Python. Ruff reported JSON literals and line lengths as Python errors and the
+  chained MyPy step did not run. The command was corrected to lint only Python;
+  the schema remained valid JSON and no task behavior changed.
+- The first R6 compatibility `make verify` stopped at Ruff format-check because
+  the runtime constant wrapping and generic parity regression needed canonical
+  layout. It reached no test, provider, credential, or consequential path. The
+  formatter changed only those two Python files, after which the full wall was
+  restarted from the beginning.
 
 ## Decision log
 
@@ -874,6 +930,10 @@ conversation.
   as ambiguous, and restrict any later R6 authority to one Secrets inventory,
   one conditional exact deletion, one verification, three authenticated
   operations total, zero spend, and no calibration or merge authority.
+- `2026-08-06T00:02:16Z`: preserve the failed long-ID gate and supplied
+  challenge as immutable, nonreusable audit history. Adopt shorter gate
+  `AOG-AO-0012-R6-RUNPOD-SECRET-CLEANUP`, narrow the generic gate ID pattern
+  to exact authorization parity, and retain every cleanup semantic and cap.
 
 ## Validation strategy
 
@@ -920,20 +980,23 @@ The R5 authorization is consumed and nonreusable. The control-plane attempt
 returned no resource ID, and its finalizer could not prove that the exact first
 temporary Secret is absent. PR #213 must remain draft and issue #212 must
 remain open. R6 preparation is authorized locally, but status inspection or
-conditional cleanup remains blocked on the new exact R6 generic gate. The five
-unrelated untracked files remain outside AO-0012 and every stage stays
-path-explicit.
+conditional cleanup remains blocked. The first R6 challenge failed before
+authorization creation on generic schema mismatch and is nonreusable. The
+shorter corrected gate remains authorization-free until a fresh owner decision.
+The five unrelated untracked files remain outside AO-0012 and every stage
+stays path-explicit.
 
 ## Recovery and restart instructions
 
-Resume on `agent/treasurebench-open-weight-cloud-runtime`. Read the R6 task
-contract, this plan, the R5 postmortem and hard-stop records, and the R6
-owner-gate-required handoff; verify issue #212 and draft PR #213 and preserve
-the five unrelated untracked files. Do not rerun R5 or reuse R1 through R5.
-Never inspect prior retained roots. Only the exact R6 gate may later permit one
-name-only credential ingress and the frozen three-operation Secret cleanup
-surface; every model, GPU, endpoint, calibration, spend, merge, issue-close,
-private, scientific, or publication action remains prohibited.
+Resume on `agent/treasurebench-open-weight-cloud-runtime`. Read the additive
+R6b task contract, this plan, the R5 postmortem, failed long-ID R6 gate and
+handoff, and the R6b compatibility audit; verify issue #212 and draft PR #213
+and preserve the five unrelated untracked files. Do not rerun R5 or reuse R1
+through R5. Never inspect prior retained roots. Only a fresh authorization for
+the shorter exact R6 gate may later permit one name-only credential ingress and
+the frozen three-operation Secret cleanup surface; every model, GPU, endpoint,
+calibration, spend, merge, issue-close, private, scientific, or publication
+action remains prohibited.
 
 ## Outcome and retrospective
 

@@ -1,5 +1,23 @@
 # Master execution plan
 
+## Active R6 gate-compatibility repair — AO-0012 exact Secret cleanup (2026-08-05)
+
+The first R6 cleanup gate remains immutable and unused. Its 55-character ID
+passed the then-current owner-gate schema, but the generic authorization writer
+failed closed because the owner-authorization schema admits at most 53
+characters. No authorization, consumption marker, credential read, provider
+operation, resource query or mutation, inference call, or spend occurred. The
+supplied challenge is not reusable.
+
+The additive R6 compatibility contract narrows the owner-gate ID rule to exact
+parity with the unchanged owner-authorization rule and freezes shorter gate
+`AOG-AO-0012-R6-RUNPOD-SECRET-CLEANUP`. Cleanup semantics remain identical:
+only `RUNPOD_API_KEY`, one Secrets inventory, conditional deletion only of the
+unique exact `ao0012-owcal-r5-01b41c9aa04bf2a4-hf` target, one verification,
+three authenticated operations maximum, zero spend, and zero inference. This
+preparation may commit and push validation records but must stop before creating
+an authorization or contacting RunPod.
+
 ## Active R6 continuation — AO-0012 exact R5 Secret status and cleanup (2026-08-05)
 
 R5 is consumed and cannot be rerun. Repository execution order plus the absent
@@ -16,10 +34,9 @@ new generic gate. A later exact R6 authorization may load only
 delete only one unique exact target, issue one verification query, and stop.
 The cap is three authenticated operations and zero spend. R6 cannot contact
 Hugging Face, inspect or mutate Pods/templates/billing, run calibration or
-inference, mark PR #213 ready, merge, close issue #212, or publish. The current
-lane stops at
-`AOG-AO-0012-R6-RUNPOD-SECRET-STATUS-CONDITIONAL-CLEANUP` without authorizing
-or executing it.
+inference, mark PR #213 ready, merge, close issue #212, or publish. That lane
+stopped at the immutable long-ID gate; its later authorization-write failure is
+preserved by the additive compatibility repair above.
 
 ## Active R5 live hard stop — AO-0012 RunPod control boundary (2026-08-05)
 

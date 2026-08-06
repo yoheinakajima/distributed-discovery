@@ -417,3 +417,20 @@ consumed by a control-plane hard stop before Pod creation; its exact first
 temporary Secret remains provider-ambiguous. R5 cannot be reused. Only a new,
 narrow prospective gate may authorize exact status inspection or conditional
 cleanup, and no calibration or merge authority follows from that cleanup.
+
+### AO-0012 R6 cleanup-gate identifier compatibility repair
+
+The first R6 cleanup gate and its handoff remain immutable. Its 55-character
+identifier passed the owner-gate schema but the exact owner challenge failed
+closed before authorization creation because the owner-authorization schema
+was two characters stricter. No authorization, credential read, provider
+operation, resource query or mutation, inference call, or spend occurred, and
+that challenge is not reusable.
+
+The additive repair narrows the generic gate ID rule to the unchanged
+authorization rule and freezes shorter identity
+`AOG-AO-0012-R6-RUNPOD-SECRET-CLEANUP`. It changes no operational authority:
+a fresh later owner decision may still load only `RUNPOD_API_KEY`, make one
+Secrets inventory, conditionally delete only one unique exact
+`ao0012-owcal-r5-01b41c9aa04bf2a4-hf` match, make one verification query, and
+stop within three authenticated operations, zero inference, and zero spend.

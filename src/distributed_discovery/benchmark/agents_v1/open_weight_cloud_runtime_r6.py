@@ -48,17 +48,19 @@ from distributed_discovery.benchmark.agents_v1.open_weight_cloud_runtime_r5 impo
 )
 
 TASK_ID = "AO-0012"
-GATE_ID = "AOG-AO-0012-R6-RUNPOD-SECRET-STATUS-CONDITIONAL-CLEANUP"
+FAILED_GATE_ID = "AOG-AO-0012-R6-RUNPOD-SECRET-STATUS-CONDITIONAL-CLEANUP"
+GATE_ID = "AOG-AO-0012-R6-RUNPOD-SECRET-CLEANUP"
 CONSUMED_GATE_ID = "AOG-AO-0012-OPEN-WEIGHT-PUBLIC-CALIBRATION-R5"
 NAMESPACE = "ao0012-owcal-r5-01b41c9aa04bf2a4"
 TARGET_SECRET_NAME = f"{NAMESPACE}-hf"
-CONTRACT_PATH = Path("tasks/treasurebench-open-weight-cloud-runtime-r6.yml")
-GATE_PATH = Path("reports/agent-ops/AO-0012-runpod-secret-status-cleanup-r6-owner-gate.yml")
+CONTRACT_PATH = Path("tasks/treasurebench-open-weight-cloud-runtime-r6b.yml")
+GATE_PATH = Path("reports/agent-ops/AO-0012-runpod-secret-status-cleanup-r6b-owner-gate.yml")
+FAILED_GATE_PATH = Path("reports/agent-ops/AO-0012-runpod-secret-status-cleanup-r6-owner-gate.yml")
 POSTMORTEM_PATH = Path(
     "reports/benchmark/treasurebench-open-weight-cloud-runtime-r5-control-plane-postmortem.yml"
 )
 AUDIT_PATH = Path(
-    "reports/benchmark/treasurebench-open-weight-cloud-runtime-r6-cleanup-gate-audit.yml"
+    "reports/benchmark/treasurebench-open-weight-cloud-runtime-r6b-gate-compatibility-audit.yml"
 )
 CORRUPTIONS_PATH = Path("docs/benchmark/agents-v1/open-weight-cloud-runtime-corruptions-r6.yml")
 OUTCOME_PATH = Path("reports/benchmark/treasurebench-open-weight-secret-cleanup-outcome-r6.yml")
@@ -214,8 +216,11 @@ def validate_r6_registration(repo: Path) -> dict[str, object]:
     _require(isinstance(identifiers, Mapping), "R6 identifiers missing")
     frozen = cast(Mapping[str, Any], identifiers)
     _require(frozen.get("gate_id") == GATE_ID, "R6 gate identity drift")
+    _require(frozen.get("failed_gate_id") == FAILED_GATE_ID, "failed R6 gate identity drift")
     _require(frozen.get("consumed_gate_id") == CONSUMED_GATE_ID, "R5 gate drift")
     _require(frozen.get("target_secret_name") == TARGET_SECRET_NAME, "target Secret drift")
+    failed_gate = load_yaml(repo / FAILED_GATE_PATH)
+    _require(failed_gate.get("gate_id") == FAILED_GATE_ID, "failed R6 gate record drift")
     postmortem = load_yaml(repo / POSTMORTEM_PATH)
     _require(
         postmortem.get("provider_presence_conclusion") == "ambiguous",
@@ -251,6 +256,14 @@ def validate_r6_registration(repo: Path) -> dict[str, object]:
     preparation = audit.get("preparation_activity")
     _require(isinstance(preparation, Mapping), "R6 preparation audit missing")
     preparation_map = cast(Mapping[str, Any], preparation)
+    _require(
+        audit.get("failed_gate_sha256") == sha256_file(repo / FAILED_GATE_PATH),
+        "failed R6 gate evidence drift",
+    )
+    _require(
+        audit.get("authorization_creation_result") == "failed-closed-before-authorization-write",
+        "failed authorization result drift",
+    )
     _require(preparation_map.get("real_env_txt_read") is False, "credential audit drift")
     _require(
         preparation_map.get("authenticated_provider_call") is False,

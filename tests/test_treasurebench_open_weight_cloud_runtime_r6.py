@@ -25,6 +25,8 @@ from distributed_discovery.benchmark.agents_v1.open_weight_cloud_runtime_r4 impo
 )
 from distributed_discovery.benchmark.agents_v1.open_weight_cloud_runtime_r6 import (
     CREDENTIAL_NAMES,
+    FAILED_GATE_ID,
+    FAILED_GATE_PATH,
     GATE_ID,
     MAX_AUTHENTICATED_OPERATIONS,
     NAMESPACE,
@@ -234,11 +236,20 @@ def test_postmortem_preserves_exact_only_possible_resource_and_ambiguity() -> No
     assert value["limitations"][1].endswith("currently exists at RunPod.")
 
 
-def test_exact_owner_mandated_r6_gate_id_is_generic_schema_compatible() -> None:
-    schema = json.loads((REPO / "docs/agent-ops/owner-gate.schema.json").read_text())
-    pattern = schema["properties"]["gate_id"]["pattern"]
-    assert len(GATE_ID) == 55
-    assert re.fullmatch(pattern, GATE_ID)
+def test_short_r6_gate_is_compatible_and_failed_long_gate_remains_immutable() -> None:
+    gate_schema = json.loads((REPO / "docs/agent-ops/owner-gate.schema.json").read_text())
+    authorization_schema = json.loads(
+        (REPO / "docs/agent-ops/owner-authorization.schema.json").read_text()
+    )
+    gate_pattern = gate_schema["properties"]["gate_id"]["pattern"]
+    authorization_pattern = authorization_schema["properties"]["gate_id"]["pattern"]
+    assert gate_pattern == authorization_pattern
+    assert GATE_ID == "AOG-AO-0012-R6-RUNPOD-SECRET-CLEANUP"
+    assert re.fullmatch(gate_pattern, GATE_ID)
+    assert len(FAILED_GATE_ID) == 55
+    assert re.fullmatch(gate_pattern, FAILED_GATE_ID) is None
+    failed_gate = yaml.safe_load((REPO / FAILED_GATE_PATH).read_text(encoding="utf-8"))
+    assert failed_gate["gate_id"] == FAILED_GATE_ID
 
 
 def test_runpod_cleanup_transport_is_query_key_only_and_url_encoded() -> None:
