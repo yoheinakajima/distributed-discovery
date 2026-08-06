@@ -103,9 +103,11 @@ scientific evidence and authorizes no manuscript merge or publication.
 - [x] Received all four reviews simultaneously through Research Atlas.
 - [x] Read all four reviews and the provenance record completely; recorded
   their exact input hashes, verdicts, scores, limitations, and disagreements.
-- [ ] Complete every Round 1 disposition and the evidence-bound revision.
-- [ ] Rebuild, render every page, and run the post-revision validation wall.
-- [ ] Freeze a fresh-session Round 2 packet in the draft PR.
+- [x] Complete every Round 1 disposition and the evidence-bound revision.
+- [x] Rebuild the revised artifact twice to identical bytes and inspect every
+  page of the final 21-page PDF.
+- [ ] Run the complete post-revision validation wall.
+- [x] Freeze a fresh-session Round 2 packet without dispatching it.
 - [ ] Stop before manuscript merge.
 
 ## Discoveries and surprises
@@ -204,6 +206,12 @@ scientific evidence and authorizes no manuscript merge or publication.
   defect: only one two-line reference appeared on page 22. Use a conventional
   smaller bibliography block, rebuild from a committed source, and repeat the
   complete visual review.
+- 2026-08-06: The layout repair produced a byte-reproducible 21-page PDF at
+  `ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150`.
+  Final rendered pages 1--19 are byte-identical to the already inspected
+  revised render; final pages 20--21 were inspected directly. All 21 pages pass
+  clipping, collision, glyph, equation, table, figure, heading, missing-content,
+  and blank-space review.
 
 ## Validation strategy
 

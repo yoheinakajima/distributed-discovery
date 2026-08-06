@@ -4,7 +4,7 @@ paper_id: common-source-trap
 task_id: AO-0014
 issue: 220
 review_round: common-source-trap-r1
-status: revision-in-progress
+status: revised-candidate-frozen-round2-required
 authority:
   manuscript_claim_proof_run_evidence: repository-only
   atlas_role: provenance-and-complete-bundle-handoff-only
@@ -262,25 +262,58 @@ additional_findings:
     edit: Preserve as future work only; AO-0014 authorizes no new study or scientific execution.
     validation: Task-boundary audit.
 revision_candidate:
-  source_commit: null
-  manuscript_sha256: null
-  pdf_sha256: null
-  page_count: null
-  validation_sha256: null
-  provenance_sha256: null
-  visual_qa_sha256: null
+  manuscript_revision_commit: 6e1d0d0041b1374f56e761d80398f404f8105eeb
+  reviewed_artifact_commit: 4fa15aa7f77dcae9f02a42c64273a04969247571
+  manuscript_path: papers/common-source-trap/main.tex
+  manuscript_sha256: 87a6e85450c72fc9c93b281646ecfbd60193747c80aae9eac0a022301e1f06e1
+  pdf_path: papers/common-source-trap/The_Common_Source_Trap.pdf
+  pdf_sha256: ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150
+  page_count: 21
+  validation_sha256: 6ecfb908a547cf3a57a26275eabbd30e452ca1799c7d40716ba7f721ddc53f23
+  provenance_sha256: 2bc633e9c88fa8165f999861cdef4dc48d6538d11aaf4e2bffd087f66205c753
+  visual_qa_sha256: 8f969ef9f671cc5c7fb08dea2a06433962dfc102b9d992aba9a17e14ad701a32
+  byte_reproducible_two_builds: true
+  all_pages_visually_inspected: true
+section_diff:
+  - {section: Abstract, change: calibrated-net-value-generality-artifact-and-companion-language}
+  - {section: Introduction, change: all-finite-N-homogeneous-model-scope}
+  - {section: Related-literature, change: conditional-residual-novelty-and-no-certificate-boundary}
+  - {section: Model, change: target-count-dependence-and-equation-3-endpoint}
+  - {section: Finite-team-classification, change: removed-unsupported-fixed-cost-nonmonotonicity}
+  - {section: General-finite-team-thresholds, change: explicit-coupling-connection-domain-endpoint-and-N2-check}
+  - {section: Planner-comparison, change: removed-unsupported-complexity-aside-and-calibrated-mechanism-language}
+  - {section: Institutional-remedies, change: subsidy-infimum-exactly-one-condition-k-star-and-assignment-language}
+  - {section: Joint-mechanisms, change: explicit-companion-model-boundary}
+  - {section: Architecture-Atlas, change: total-cost-transfer-accounting-and-bounded-cherry-picking-language}
+  - {section: Experimental-predictions, change: calibration-definition-separated-power-statements-and-candidate-package-language}
+  - {section: Conclusion, change: precise-all-common-boundary-and-nonduplicative-positive-ending}
+  - {section: References, change: smaller-block-to-remove-excessive-blank-final-page}
 round2_packet:
   id: common-source-trap-r2-candidate
-  status: proposed-not-dispatched
+  status: frozen-not-dispatched
+  reviewed_artifact_commit: 4fa15aa7f77dcae9f02a42c64273a04969247571
+  manuscript_sha256: 87a6e85450c72fc9c93b281646ecfbd60193747c80aae9eac0a022301e1f06e1
+  pdf_sha256: ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150
+  page_count: 21
   required_reviewers: [chatgpt, claude, gemini, grok]
   fresh_isolated_sessions: true
   round1_sessions_reusable: false
   inputs_only:
-    - exact-revised-manuscript
-    - exact-revised-pdf
-    - common-source-trap-review-guide
-    - revised-machine-readable-packet
+    - {path: papers/common-source-trap/main.tex, sha256: 87a6e85450c72fc9c93b281646ecfbd60193747c80aae9eac0a022301e1f06e1}
+    - {path: papers/common-source-trap/The_Common_Source_Trap.pdf, sha256: ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150}
+    - {path: reports/editorial/common-source-trap-review-disposition.yml, role: revised-machine-readable-packet-and-rubric}
   other_reviews_shared: false
+  complete_bundle_required: true
+  partial_bundle_accepted: false
+  reviewer_provenance_required:
+    - reviewer_system
+    - exact_model_identity_if_exposed
+    - review_started_utc
+    - review_completed_utc
+    - reviewed_artifact_commit
+    - manuscript_sha256
+    - pdf_sha256
+    - independence_attestation
   required_focus:
     - proof-connection-and-endpoint
     - conditional-novelty-positioning

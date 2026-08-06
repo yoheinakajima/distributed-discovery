@@ -173,8 +173,20 @@ def test_complete_round_one_bundle_and_dispositions_preserve_boundaries() -> Non
     ]
     assert record["authority"]["new_scientific_claim_authorized"] is False
     assert record["authority"]["manuscript_merge_authorized"] is False
+    revision = record["revision_candidate"]
+    artifact_commit = revision["reviewed_artifact_commit"]
+    assert artifact_commit == "4fa15aa7f77dcae9f02a42c64273a04969247571"
+    for kind in ["manuscript", "pdf"]:
+        path = revision[f"{kind}_path"]
+        assert _sha256(_git_bytes(artifact_commit, path)) == revision[f"{kind}_sha256"]
+    assert revision["page_count"] == 21
+    assert revision["byte_reproducible_two_builds"] is True
+    assert revision["all_pages_visually_inspected"] is True
     assert record["round2_packet"]["fresh_isolated_sessions"] is True
     assert record["round2_packet"]["round1_sessions_reusable"] is False
+    assert record["round2_packet"]["status"] == "frozen-not-dispatched"
+    assert record["round2_packet"]["reviewed_artifact_commit"] == artifact_commit
+    assert record["round2_packet"]["complete_bundle_required"] is True
     assert record["round2_packet"]["dispatch_authorized"] is False
 
 
