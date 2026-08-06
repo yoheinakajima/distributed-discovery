@@ -1,0 +1,66 @@
+schema_version: agent-ops-handoff-v1
+status: owner-gate-required
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0012
+issue: 212
+pull_request: 213
+branch: agent/treasurebench-open-weight-cloud-runtime
+base_main: 6e86b43a8db8d20380dd64bf9490772b7152f484
+head_merge_sha: 5c3f8f2f352ad40ba7b9a356c77753daa5c0abd8
+task_contract: tasks/treasurebench-open-weight-cloud-runtime-r6b.yml
+exec_plan: plans/TREASUREBENCH_OPEN_WEIGHT_CLOUD_RUNTIME.md
+last_completed_gate: >-
+  Authorization-free R6 compatibility repair execution commit
+  dbc5a0a78dad0eb49f6adff80ae2e6c32ea2905e and committed gate head
+  5c3f8f2f352ad40ba7b9a356c77753daa5c0abd8 preserve the immutable failed
+  long-ID gate, narrow the generic gate ID contract to exact parity with the
+  unchanged authorization schema, and validate shorter gate
+  AOG-AO-0012-R6-RUNPOD-SECRET-CLEANUP against all 30 protected paths. The
+  generic engine returned validated-no-authorization-or-consequential-action-
+  performed. No authorization was created or read.
+next_gate: >-
+  Only after a fresh exact owner decision, run the generic owner-gate command
+  for AOG-AO-0012-R6-RUNPOD-SECRET-CLEANUP. If and only if it succeeds, this
+  same task may run exactly make treasurebench-open-weight-secret-cleanup-r6-live.
+  The command consumes the corrected R6 authorization before credential
+  ingress, loads only RUNPOD_API_KEY, makes one Secrets inventory,
+  conditionally deletes only one unique exact
+  ao0012-owcal-r5-01b41c9aa04bf2a4-hf match, makes one verification, writes
+  one redacted outcome, and stops within three authenticated operations and
+  USD 0. Never use the failed long-ID gate or R1 through R5.
+decision: >-
+  Stop at owner-gate-required. The failed long-ID gate and earlier supplied
+  challenge are immutable and nonreusable. The shorter gate changes no cleanup
+  semantics or cap and grants no Hugging Face, Pod, template, model, inference,
+  billing, calibration, merge, issue-close, scientific, private-task, or
+  publication authority.
+external_calls_cost:
+  calls: 0
+  cost: '0'
+  currency: USD
+private_state_change: >-
+  none; the compatibility repair created or read no owner authorization,
+  .env.txt, or credential; contacted no RunPod or Hugging Face account;
+  queried or mutated no provider resource; and created no consumption marker
+  or cleanup outcome.
+scientific_state_change: >-
+  none; no DD-023, scientific run, private task, base campaign, performance
+  result, claim, paper, release, DOI, arXiv, journal, or submission state was
+  created or changed.
+validation:
+  profile: infrastructure
+  result: pass-R6-ID-parity-26-focused-17-cleanup-50-pairing-294-call-rehearsal-1034-repository-tests-ruff-strict-mypy-all-audits-119-paper-pages-89-site-pages-30-tree-freeze-gate-validate-only-zero-authorization
+owner_action: >-
+  Review the additive R6b contract, compatibility audit, immutable failed gate,
+  and corrected gate. Only if approved, run: make owner-gate
+  GATE=reports/agent-ops/AO-0012-runpod-secret-status-cleanup-r6b-owner-gate.yml
+  OWNER_GATE_CHALLENGE="AUTHORIZE AOG-AO-0012-R6-RUNPOD-SECRET-CLEANUP
+  dbc5a0a". Only after it succeeds may this same task run: make
+  treasurebench-open-weight-secret-cleanup-r6-live.
+exact_next_command: 'make owner-gate GATE=reports/agent-ops/AO-0012-runpod-secret-status-cleanup-r6b-owner-gate.yml OWNER_GATE_CHALLENGE="AUTHORIZE AOG-AO-0012-R6-RUNPOD-SECRET-CLEANUP dbc5a0a"'
+exact_next_file: reports/agent-ops/AO-0012-runpod-secret-status-cleanup-r6b-owner-gate.yml
+blocker: >-
+  A fresh exact owner authorization for the shorter corrected gate is required
+  and absent by design. The earlier long-ID owner decision is not reusable.
+  No credential, provider status query, Secret deletion, or other
+  provider/resource action is authorized.
