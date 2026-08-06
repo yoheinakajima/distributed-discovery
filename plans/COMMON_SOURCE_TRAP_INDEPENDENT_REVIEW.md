@@ -24,8 +24,14 @@ scientific evidence and authorizes no manuscript merge or publication.
   `afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7`.
 - Research Atlas returned the complete independent ChatGPT, Claude, Gemini, and
   Grok Round 1 bundle simultaneously at `2026-08-06T17:04:40.316Z`. All four
-  inputs match the frozen commit, manuscript hash, and PDF hash. Post-bundle
-  editorial revision is now active under the original fixed contract.
+  inputs match the frozen commit, manuscript hash, and PDF hash.
+- The evidence-bound revision is frozen at reviewed-artifact commit
+  `4fa15aa7f77dcae9f02a42c64273a04969247571`, source SHA-256
+  `87a6e85450c72fc9c93b281646ecfbd60193747c80aae9eac0a022301e1f06e1`,
+  and 21-page PDF SHA-256
+  `ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150`.
+- Draft PR #221 tracks issue #220. AO-0014 is stopped before out-of-scope
+  publication/lifecycle/release pointer mutation and before Round 2 dispatch.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -99,16 +105,19 @@ scientific evidence and authorizes no manuscript merge or publication.
   pushed-head rerun passed Ruff, strict MyPy, all 1,057 tests, claim/run and
   literature audits, all Agent Operations/program-memory/publication audits,
   and a byte-identical 21-page active-paper build.
-- [ ] Push and open the draft PR.
+- [x] Pushed the AO-0014 branch and opened draft PR #221.
 - [x] Received all four reviews simultaneously through Research Atlas.
 - [x] Read all four reviews and the provenance record completely; recorded
   their exact input hashes, verdicts, scores, limitations, and disagreements.
 - [x] Complete every Round 1 disposition and the evidence-bound revision.
 - [x] Rebuild the revised artifact twice to identical bytes and inspect every
   page of the final 21-page PDF.
-- [ ] Run the complete post-revision validation wall.
+- [x] Ran the complete post-revision validation wall. Ruff and strict MyPy
+  passed; 1,052 of 1,060 tests passed. The eight remaining failures all require
+  a revised-PDF pointer/versioning decision outside AO-0014's fixed paths.
 - [x] Freeze a fresh-session Round 2 packet without dispatching it.
-- [ ] Stop before manuscript merge.
+- [x] Stopped before pointer mutation, Round 2 dispatch, PR readiness,
+  manuscript merge, and publication.
 
 ## Discoveries and surprises
 
@@ -220,6 +229,11 @@ scientific evidence and authorizes no manuscript merge or publication.
   and is corrected. The other pointer files are outside the fixed task paths,
   and release mutation is explicitly unauthorized, so they remain unchanged
   pending additive owner authority.
+- 2026-08-06: A direct `python -m jsonschema` handoff check failed before
+  schema evaluation because that deprecated CLI parses instance files as JSON,
+  while Agent Operations handoffs are YAML. No handoff field was weakened or
+  changed in response; the repository-native `make audit-agent-ops` validator
+  remains authoritative for the YAML handoff.
 
 ## Validation strategy
 
@@ -262,6 +276,11 @@ scientific evidence and authorizes no manuscript merge or publication.
 
 - Round 1 no longer blocks revision: the complete simultaneous bundle is
   present and provenance-bound.
+- The revised PDF identity conflicts with current publication, lifecycle,
+  compendium, release-readiness, and site pointers outside AO-0014's fixed task
+  paths. AO-0014 explicitly forbids paper-lifecycle and release mutation, so an
+  additive owner decision is required before those eight checks can be made
+  green without rewriting immutable release history.
 - Round 2 dispatch, manuscript merge, and every publication action remain
   unauthorized.
 
@@ -276,5 +295,11 @@ manuscript, rubric, and revised packet.
 
 ## Outcome and retrospective
 
-Pending. The first checkpoint is complete only when the exact packet and draft
-PR pass validation and the task stops at `review-bundle-required`.
+Round 1 hardening is complete: the exact baseline, simultaneous four-review
+bundle, provenance-preserving disposition, evidence-bound revision, two-build
+byte reproduction, and all-page visual review are frozen in draft PR #221.
+Focused validation passes. The complete wall is intentionally not declared
+green: eight identity-pointer checks require authority outside the fixed task
+contract. The safe outcome is `stop-by-policy` with the revised candidate
+preserved and no Round 2, readiness, merge, lifecycle, release, deployment, or
+publication action.
