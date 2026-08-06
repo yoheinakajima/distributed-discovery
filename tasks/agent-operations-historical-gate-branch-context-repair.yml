@@ -1,0 +1,107 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0013
+title: Historical owner-gate synthetic branch-context repair
+task_type: infrastructure
+status: active
+objective: Repair the post-AO-0012 Pages verification failure by adding an explicit synthetic-only branch-context seam to the historical R5 and R7 authorization fixtures while preserving real live-branch enforcement.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: plan, path: plans/MASTER_EXEC_PLAN.md}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/218"}
+  - {type: pull-request, path: "https://github.com/yoheinakajima/distributed-discovery/pull/213"}
+owner_decisions:
+  - Register one narrow governed repair after the exact-head squash merge of PR 213 exposed two branch-bound synthetic fixtures in the Pages verification wall.
+  - Add only an explicit synthetic-only branch-context seam for the historical R5 and R7 fixtures; the real production live-branch guard must remain unchanged.
+  - Run focused, complete repository, governance, and Pages-equivalent validation and stop at an exact owner gate before merging the repair PR.
+  - Do not register or run the provider-neutral task until the repair is separately authorized to merge and post-merge Pages is green.
+  - Preserve AO-0012, consumed R7, the closed RunPod path, issue 212, PR 213, and its retained branch as immutable history.
+scope:
+  paths:
+    - tasks/agent-operations-historical-gate-branch-context-repair.yml
+    - plans/AGENT_OPERATIONS_HISTORICAL_GATE_BRANCH_CONTEXT_REPAIR.md
+    - plans/MASTER_EXEC_PLAN.md
+    - reports/agent-ops
+    - src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r5.py
+    - src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r7.py
+    - tests/test_treasurebench_open_weight_cloud_runtime_r5.py
+    - tests/test_treasurebench_open_weight_cloud_runtime_r7.py
+  actions:
+    - Register AO-0013 and preserve the exact post-merge CI and Pages observations.
+    - Add a fail-closed synthetic-only branch-context seam to the R5 and R7 authorization validators.
+    - Update only the two historical synthetic fixtures to use the explicit seam.
+    - Prove synthetic portability and unchanged default live-branch enforcement with deterministic tests.
+    - Run the focused and complete repository verification wall in the normal task branch and Pages-equivalent branch context.
+    - Commit, push, open one draft PR, freeze its exact head and protected tree, and stop at an unconsumed merge owner gate.
+non_goals:
+  - No repair PR readiness, merge, issue closure, branch deletion, or post-merge deployment without a later exact owner authorization.
+  - No provider-neutral portable package registration or implementation.
+  - No provider or account access, credential read, resource action, model download, endpoint, inference, calibration, or spend.
+  - No RunPod gate, retry, inventory, cleanup, historical Secret action, or characterization.
+  - No DD-023, private or scientific execution, performance result, claim, paper, release, DOI, submission, or publication.
+  - No modification of AO-0012 immutable records or the five historical untracked files.
+permissions:
+  repository_write: true
+  git_branch_commit: true
+  github_issue_pr: true
+  merge_after_checks: true
+  ci_pages: true
+external_action_permissions:
+  network_observation: true
+  github_mutation: true
+  provider_calls: false
+  spend: false
+  release_publication: false
+  submission: false
+scientific_mutation_permissions:
+  create_study: false
+  create_claim: false
+  create_run: false
+  change_evidence_status: false
+  change_proof_status: false
+  change_paper_lifecycle: false
+private_data_permissions: {read: false, write: false, generate: false, publish: false}
+budget:
+  currency: USD
+  expected: "0"
+  hard_cap: "0"
+  call_cap: 0
+  category_caps: {}
+  cumulative_spend: "0"
+expected_outcomes:
+  - One minimal typed production seam that can be selected only by explicit synthetic test calls while live callers continue to resolve and enforce the real Git branch.
+  - Passing regressions for the R5 and R7 synthetic fixtures, rejected wrong synthetic context, and unchanged default live-branch mismatch behavior.
+  - Passing focused, complete repository, Agent Operations, program-memory, and Pages-equivalent verification.
+  - One draft repair PR and an exact unconsumed merge owner gate.
+stop_conditions:
+  - Stop if any change weakens, bypasses, or changes the default real live-branch guard.
+  - Stop on scope expansion beyond the two historical validators and fixtures plus required governance records.
+  - Stop before any credential, provider, resource, model, inference, private, scientific, publication, or spending action.
+  - Stop before marking the repair PR ready or merging it until the exact committed owner gate is separately authorized.
+  - Stop if issue 212, PR 213, the retained AO-0012 branch, or immutable AO-0012 records would change.
+acceptance_profile: infrastructure
+canonical_destinations:
+  - tasks/agent-operations-historical-gate-branch-context-repair.yml
+  - plans/AGENT_OPERATIONS_HISTORICAL_GATE_BRANCH_CONTEXT_REPAIR.md
+  - reports/agent-ops/AO-0013-pages-branch-context-repair-owner-gate.yml
+  - reports/agent-ops/AO-0013-owner-gate-required-handoff.yml
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 218
+  branch: agent/agent-ops-historical-gate-branch-context-repair
+  pull_request: null
+  base: main
+exec_plan: plans/AGENT_OPERATIONS_HISTORICAL_GATE_BRANCH_CONTEXT_REPAIR.md
+task_delta: null
+frozen_identifiers:
+  starting_main: 3dc9c66b62dac1d6e407f80755e31631acc8159f
+  ao0012_merge_commit: 3dc9c66b62dac1d6e407f80755e31631acc8159f
+  ao0012_pr_head: 6794ee7b44e35f79cef72a958d2cf82f8139e368
+  ao0012_issue: "212"
+  failed_pages_run: "31076078996"
+  failing_fixture_count: "2"
+  repair_gate_id: AOG-AO-0013-PAGES-BRANCH-CONTEXT-REPAIR
+supersession: {supersedes: [], superseded_by: null, reason: null}
+next_gate: Freeze the exact draft-PR head and protected tree, then stop at AOG-AO-0013-PAGES-BRANCH-CONTEXT-REPAIR before repair merge.
