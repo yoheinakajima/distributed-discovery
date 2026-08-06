@@ -22,8 +22,10 @@ scientific evidence and authorizes no manuscript merge or publication.
   `2f7d9ead7e54a7c4b852935b9648361cc682772c5fe41853d0193b86ce3fbdad`.
 - The byte-reproducible 21-page PDF SHA-256 is
   `afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7`.
-- No review in round `common-source-trap-r1` has been accepted into the task,
-  and no manuscript edit is permitted before the complete bundle.
+- Research Atlas returned the complete independent ChatGPT, Claude, Gemini, and
+  Grok Round 1 bundle simultaneously at `2026-08-06T17:04:40.316Z`. All four
+  inputs match the frozen commit, manuscript hash, and PDF hash. Post-bundle
+  editorial revision is now active under the original fixed contract.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -93,13 +95,17 @@ scientific evidence and authorizes no manuscript merge or publication.
 - [x] Validated and committed the fixed task contract and living plan as
   `724e131`.
 - [x] Froze the review packet and reviewer guide without changing the paper.
-- [ ] Run focused packet tests and the complete docs-editorial wall. Focused
-  tests, lint, typing, exact rebuild, and visual inspection pass; the full wall
-  remains.
+- [x] Run focused packet tests and the complete docs-editorial wall. The clean
+  pushed-head rerun passed Ruff, strict MyPy, all 1,057 tests, claim/run and
+  literature audits, all Agent Operations/program-memory/publication audits,
+  and a byte-identical 21-page active-paper build.
 - [ ] Push and open the draft PR.
-- [ ] Stop with a schema-valid `review-bundle-required` handoff.
-- [ ] Receive all four reviews simultaneously through Research Atlas.
-- [ ] Prepare dispositions and an evidence-bound revision.
+- [x] Received all four reviews simultaneously through Research Atlas.
+- [x] Read all four reviews and the provenance record completely; recorded
+  their exact input hashes, verdicts, scores, limitations, and disagreements.
+- [ ] Complete every Round 1 disposition and the evidence-bound revision.
+- [ ] Rebuild, render every page, and run the post-revision validation wall.
+- [ ] Freeze a fresh-session Round 2 packet in the draft PR.
 - [ ] Stop before manuscript merge.
 
 ## Discoveries and surprises
@@ -115,6 +121,15 @@ scientific evidence and authorizes no manuscript merge or publication.
   `make` from `/tmp` instead of the printed checkout path, so both targets
   failed with `No rule to make target`. The same already-created checkout was
   then used with the correct working directory; no repository state changed.
+- The complete review bundle supplies exact reviewer models and session
+  locators but not separate review-start and review-completion timestamps. The
+  disposition records the missing fields rather than inventing them; Atlas
+  retains the raw locators while the public repository binds the inputs by
+  SHA-256.
+- Claude proposed a closed-form interior sign boundary. Independent algebra and
+  a rational-grid regression agree with the formula, but adding it to the paper
+  would create a new scientific result. AO-0014 therefore records and defers it
+  instead of silently promoting reviewer output.
 
 ## Decision log
 
@@ -159,6 +174,31 @@ scientific evidence and authorizes no manuscript merge or publication.
   This is the expected fail-closed remote-ancestry invariant. Commit and push
   the intended packet changes, then rerun the exact wall; do not weaken or
   bypass the guard.
+- 2026-08-06: The exact pushed-head rerun passed all 1,057 tests in 375.18
+  seconds, every repository audit, the compendium dry-run verification, and the
+  active Common-Source Trap build. This closes the packet-preparation
+  validation wall without relying on the truncated prior process receipt.
+- 2026-08-06: Research Atlas returned one simultaneous four-review bundle. The
+  fixed AO-0014 contract already authorizes a repository-evidence-bound
+  post-bundle revision, so no contract expansion or competing substantive lane
+  is needed.
+- 2026-08-06: Public primary records verify that R&D portfolio choice,
+  duplication, and innovation contests are close mechanism-level neighbors.
+  They do not establish equivalence or non-equivalence to the exact finite
+  threshold theorem. The revision therefore sharpens conditional novelty and
+  does not import reviewer-supplied citations into the manuscript.
+- 2026-08-06: Preserve the reviewer disagreement on the proposed interior
+  formula. It is algebraically consistent with the existing definitions on the
+  tested rational grid, but it remains outside the manuscript because AO-0014
+  cannot create or promote a new scientific claim.
+- 2026-08-06: The first post-edit focused run passed 14 checks and failed two
+  source-string regressions because required boundary phrases were split across
+  TeX source lines. The manuscript now retains the exact tested strings; no
+  assertion or scientific boundary was weakened.
+- 2026-08-06: The second focused run passed 15 checks and retained one failure
+  because the universal-under-acquisition phrase still broke before its final
+  word. The exact full phrase is now contiguous in source for the native paper
+  boundary test.
 
 ## Validation strategy
 
@@ -199,18 +239,19 @@ scientific evidence and authorizes no manuscript merge or publication.
 
 ## Blockers
 
-- Manuscript revision is blocked until Research Atlas returns one complete
-  simultaneous bundle containing independent ChatGPT, Claude, Gemini, and Grok
-  reviews with exact packet and reviewer provenance.
-- Manuscript merge and every publication action remain unauthorized.
+- Round 1 no longer blocks revision: the complete simultaneous bundle is
+  present and provenance-bound.
+- Round 2 dispatch, manuscript merge, and every publication action remain
+  unauthorized.
 
 ## Recovery and restart instructions
 
 Resume AO-0014 from issue #220, branch
 `agent/common-source-trap-review-packet`, the fixed task contract, and this
 plan. Confirm the five unrelated untracked files remain untouched. Continue
-from the first unchecked milestone. Never expose one review to another or edit
-the manuscript before the complete bundle is received.
+from the first unchecked milestone. Round 1 is complete and nonreusable; any
+Round 2 review must use four fresh isolated sessions and only the revised
+manuscript, rubric, and revised packet.
 
 ## Outcome and retrospective
 

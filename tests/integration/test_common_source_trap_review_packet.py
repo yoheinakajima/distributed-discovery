@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import re
 import subprocess
+from fractions import Fraction
 from pathlib import Path
 from typing import Any
 
@@ -10,10 +11,17 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
 PACKET_PATH = ROOT / "reports/editorial/common-source-trap-review-packet.yml"
+DISPOSITION_PATH = ROOT / "reports/editorial/common-source-trap-review-disposition.yml"
 
 
 def _packet() -> dict[str, Any]:
     loaded = yaml.safe_load(PACKET_PATH.read_text(encoding="utf-8"))
+    assert isinstance(loaded, dict)
+    return loaded
+
+
+def _disposition() -> dict[str, Any]:
+    loaded = yaml.safe_load(DISPOSITION_PATH.read_text(encoding="utf-8"))
     assert isinstance(loaded, dict)
     return loaded
 
@@ -133,11 +141,81 @@ def test_review_round_is_complete_bundle_only_and_zero_authority_expansion() -> 
 
 
 def test_review_packet_and_guide_are_public_safe() -> None:
-    text = PACKET_PATH.read_text(encoding="utf-8") + (
-        ROOT / "reports/editorial/common-source-trap-review-guide.md"
-    ).read_text(encoding="utf-8")
+    text = (
+        PACKET_PATH.read_text(encoding="utf-8")
+        + (ROOT / "reports/editorial/common-source-trap-review-guide.md").read_text(
+            encoding="utf-8"
+        )
+        + DISPOSITION_PATH.read_text(encoding="utf-8")
+    )
     assert "/Users/" not in text
     assert ".env.txt" not in text
     assert "api_key" not in text.lower()
     assert "authorization:" not in text.lower()
     assert "papers/information-sharing-frontier" not in text
+
+
+def test_complete_round_one_bundle_and_dispositions_preserve_boundaries() -> None:
+    record = _disposition()
+    assert record["bundle"]["received_complete_simultaneously"] is True
+    assert record["bundle"]["partial_bundle_used"] is False
+    assert [item["reviewer"] for item in record["bundle"]["reviewers"]] == [
+        "chatgpt",
+        "claude",
+        "gemini",
+        "grok",
+    ]
+    assert all(len(item["input_sha256"]) == 64 for item in record["bundle"]["reviewers"])
+    assert record["synthesis"]["critical_objections"] == 0
+    assert record["synthesis"]["ready_or_minor_vote"] == "4-of-4"
+    assert [item["finding_id"] for item in record["dispositions"]] == [
+        f"CST-R1-M{number:02d}" for number in range(1, 12)
+    ]
+    assert record["authority"]["new_scientific_claim_authorized"] is False
+    assert record["authority"]["manuscript_merge_authorized"] is False
+    assert record["round2_packet"]["fresh_isolated_sessions"] is True
+    assert record["round2_packet"]["round1_sessions_reusable"] is False
+    assert record["round2_packet"]["dispatch_authorized"] is False
+
+
+def test_reviewer_interior_condition_is_derived_but_not_promoted() -> None:
+    def sign(value: Fraction) -> int:
+        return (value > 0) - (value < 0)
+
+    for n in range(3, 33):
+        for denominator in range(2, 34):
+            for numerator in range(1, denominator):
+                p = Fraction(numerator, denominator)
+                q = 1 - p
+                a1 = p * q * (n - 2) * (q / (n - 1) + p / (2 * n))
+                b1 = p * q * q
+                proposed_boundary = p * (n * n - n + 2) - 2 * n
+                assert sign(a1 - b1) == sign(proposed_boundary)
+
+    record = _disposition()
+    finding = next(item for item in record["dispositions"] if item["finding_id"] == "CST-R1-M05")
+    assert finding["disposition"] == "defer-needs-evidence"
+    source = (ROOT / "papers/common-source-trap/main.tex").read_text(encoding="utf-8")
+    assert "N^2-N+2" not in source
+
+
+def test_round_one_edits_are_evidence_bounded() -> None:
+    source = (ROOT / "papers/common-source-trap/main.tex").read_text(encoding="utf-8")
+    for phrase in [
+        "net social value",
+        "all-finite-$N$ threshold characterization",
+        "the exact connection",
+        "infimum required subsidy",
+        "total information cost $1/4$ across both channels",
+        "candidate synthetic preregistration package",
+        "precise all-common boundary in the frozen model",
+    ]:
+        assert phrase in source
+    for rejected_phrase in [
+        "raises net discovery",
+        "The smallest strict subsidy is any",
+        "Assignment is mechanically stronger",
+        "The Atlas also prevents favorable cherry-picking",
+        "The Common-Source Trap has a precise general boundary",
+    ]:
+        assert rejected_phrase not in source
