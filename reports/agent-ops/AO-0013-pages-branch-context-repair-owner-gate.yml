@@ -1,0 +1,93 @@
+schema_version: agent-ops-owner-gate-v1
+kind: owner-gate
+synthetic: false
+gate_id: AOG-AO-0013-PAGES-BRANCH-CONTEXT-REPAIR
+task_contract:
+  path: tasks/agent-operations-historical-gate-branch-context-repair.yml
+  sha256: sha256:1ff0f90a15d94a67e655a8d8ffc74c61016776af80adbff768912ae66a5086ce
+issue: 218
+pull_request:
+  number: 219
+  expected_state: OPEN
+  head_sha: 2f0e4962a328e08a402e457a80b16ab9e371a302
+branch: agent/agent-ops-historical-gate-branch-context-repair
+commit: 2f0e4962a328e08a402e457a80b16ab9e371a302
+tree_hashes:
+  tasks/agent-operations-historical-gate-branch-context-repair.yml: sha256:1ff0f90a15d94a67e655a8d8ffc74c61016776af80adbff768912ae66a5086ce
+  plans/AGENT_OPERATIONS_HISTORICAL_GATE_BRANCH_CONTEXT_REPAIR.md: sha256:0ee7909f54c7cee59f650337e318d9ec5d5f344ba8043e2d1e9562a1db03ec33
+  plans/MASTER_EXEC_PLAN.md: sha256:f3676f5e3f0783c0c81fa8a553dab705d5a499e9e16e41dc4c0131ee3202b537
+  src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r5.py: sha256:dc668f3287c15bc0cadea94236e1f5d06c2f550354a104f7463e9f7ef0e3c2ce
+  src/distributed_discovery/benchmark/agents_v1/open_weight_cloud_runtime_r7.py: sha256:2c606ebaac81595109f4041e8b639e691bb3ccb4e06155a6c4f2c45f1b16adb0
+  tests/test_treasurebench_open_weight_cloud_runtime_r5.py: sha256:0de2f310619de9960b0bb54c8a8c63110fb88c11f6756f337e5042aee1f61555
+  tests/test_treasurebench_open_weight_cloud_runtime_r7.py: sha256:c1f1b8359f811ae0f02f6b9a3b3906573d7e1fc7ce20b4427ec19117133d7da8
+  .github/workflows/pages.yml: sha256:e1c4e4a1b4b6f635786d949e01dfc0a9ba7bb5db47d0fd17f3c954bfe0adb15a
+  src/distributed_discovery/agent_ops: sha256:84a44c60d7c7a6a159c8beb5cfb8bc25b19bcae8992c1781fa396225d9f11376
+  docs/agent-ops: sha256:fe94862b1b7cad4d472a9e7b3e25749c7311986ec062a4040e8031621ab190f1
+  Makefile: sha256:4eb4088c63ddaef05dfd999b93a55610f02c969956aa8c23fabbce8f4618fe62
+purpose: Authorize only the exact administrative readiness and squash merge of AO-0013 draft PR 219 after fresh exact-head validation, followed by normal main CI and Pages verification, issue 218 closure only after both pass, retained source branch, and synchronized main.
+irreversible_actions:
+  - permission: permissions.merge_after_checks
+    description: Mark draft PR 219 ready and squash-merge only its exact validated gate head after all protected hashes and required checks pass.
+  - permission: permissions.ci_pages
+    description: Permit only the normal main-triggered CI and Pages workflows and their read-only verification after the repair merge.
+private_actions: []
+external_actions:
+  - permission: permissions.github_issue_pr
+    description: Mark PR 219 ready, record the exact merge, and close issue 218 only after post-merge CI and Pages pass; issue 212 must remain open.
+  - permission: permissions.merge_after_checks
+    description: Squash-merge PR 219 without deleting its source branch and without merging any other pull request.
+  - permission: permissions.ci_pages
+    description: Observe the normal post-merge CI and Pages workflows and require both to pass at the exact merge commit.
+  - permission: external_action_permissions.network_observation
+    description: Reverify public GitHub issue, pull-request, branch, check, main, CI, and Pages state before and after the exact merge.
+  - permission: external_action_permissions.github_mutation
+    description: Perform only PR 219 readiness and squash merge plus issue 218 closure after verified green post-merge CI and Pages.
+cumulative_state:
+  currency: USD
+  spend: "0"
+  calls: 0
+  category_spend: {}
+hard_caps:
+  currency: USD
+  spend: "0"
+  calls: 0
+  category_spend: {}
+remaining_caps:
+  currency: USD
+  spend: "0"
+  calls: 0
+  category_spend: {}
+owner_confirmation_statements:
+  - I authorize only AO-0013 issue 218 and draft PR 219, execution commit 2f0e4962a328e08a402e457a80b16ab9e371a302, the exact protected tree, and a gate-and-handoff-only descendant head that passes fresh required checks.
+  - I understand the production R5 and R7 validators still read and enforce the actual Git branch by default; the new branch context is accepted only with an explicit in-memory gate override and nonproduction live-state validator.
+  - I require PR 219 to remain open, draft, cleanly mergeable, based on main, on the registered branch, and at the exact remote and local head before readiness or merge.
+  - I authorize marking PR 219 ready and one verification-only squash merge only after all required checks pass at that exact head; no source branch may be deleted.
+  - I require the squash merge to be followed by exact main, merge-commit, normal CI, and Pages verification; any failed, missing, stale, or ambiguous check keeps issue 218 open and stops further work.
+  - I authorize issue 218 closure only after both post-merge CI and Pages pass at the exact merge commit; issue 212 must remain open.
+  - I understand the five historical untracked files remain unrelated and untouched, and local roadmap checkpoint 87e263005a7d968f4465429c963a2e155cc7ee85 remains planning evidence only.
+  - I understand this gate does not register or start the provider-neutral task and creates no RunPod, provider, credential, model, inference, calibration, spend, private, scientific, performance, publication, release, or submission authority.
+  - I understand the generic owner-gate engine validates and creates only one mode-0600 authorization outside Git; it does not ready or merge the PR, close an issue, run CI or Pages, access a provider, or perform any other consequential action.
+explicit_prohibitions:
+  - provider-calls-outside-manifest
+  - credential-read-outside-manifest
+  - unauthorized-private-access
+  - scientific-mutation-outside-contract
+  - cap-increase
+  - consequential-action-by-gate-engine
+  - runpod-or-other-provider-account-access-login-query-mutation-or-cleanup
+  - historical-secret-status-characterization-selection-or-action
+  - model-download-endpoint-inference-calibration-or-spend
+  - dd-023-private-task-scientific-run-claim-evidence-or-proof-mutation
+  - performance-result-ranking-composite-paper-release-doi-submission-or-publication
+  - provider-neutral-task-registration-or-implementation
+  - ao-0012-r7-or-earlier-gate-authorization-reuse-or-history-mutation
+  - issue-212-closure
+  - source-branch-deletion-or-force-push
+  - five-historical-untracked-file-read-stage-edit-delete-or-commit
+  - pr-219-ready-or-merge-before-fresh-exact-head-protected-tree-and-required-check-validation
+  - issue-218-closure-before-exact-post-merge-ci-and-pages-success
+  - pages-deployment-outside-the-normal-main-workflow
+expires_at_utc: "2026-08-20T23:59:59Z"
+authorization_output_symbolic_path: XDG_CONFIG_HOME/distributed-discovery/agent-ops/authorizations/AOG-AO-0013-PAGES-BRANCH-CONTEXT-REPAIR.yml
+next_milestone: Owner-authorized exact PR 219 readiness and squash merge, green post-merge main CI and Pages, retained branch, issue 218 closure, synchronized main, and stop before the provider-neutral task.
+generated_resume_message: "Resume AO-0013 in this same repository from issue #218, branch agent/agent-ops-historical-gate-branch-context-repair, draft PR #219, the fixed contract, living ExecPlan, and only the exact AO-0013 gate authorization. Revalidate execution ancestry, the complete protected tree, clean tracked worktree, local/remote/PR head equality, PR open-draft-clean state, fresh required checks, issue #218 open, issue #212 open, and retained AO-0012 branch. Then mark only PR #219 ready and squash-merge its exact head without deleting the branch. Verify exact main and merge state and require normal post-merge CI and Pages to pass at the merge commit. Close issue #218 only after both pass, keep issue #212 open, synchronize main, and stop. Do not register or start the provider-neutral task or access any provider, credential, model, inference, spend, private, scientific, performance, publication, or historical Secret surface."
