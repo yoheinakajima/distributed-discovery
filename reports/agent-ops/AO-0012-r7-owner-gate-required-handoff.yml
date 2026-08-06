@@ -23,8 +23,9 @@ next_gate: >-
   Only after a fresh exact owner decision, run the generic owner-gate command
   for AOG-AO-0012-R7-PUBLIC-CALIBRATION. If and only if it succeeds, this same
   task may run exactly make treasurebench-open-weight-runtime-r7-live. The
-  calibration must use only the fresh R7 namespace and must never query,
-  delete, or retry cleanup of the ambiguous R5 namespace.
+  calibration may use account inventory only to reject conflicts for its fresh
+  R7 names and must never target, select, delete, or retry cleanup of the
+  ambiguous R5 namespace.
 decision: >-
   Recommend the bounded R7 public calibration. Current official public pricing
   supports USD 3 expected and USD 10 hard spend; the USD 200 account balance is
