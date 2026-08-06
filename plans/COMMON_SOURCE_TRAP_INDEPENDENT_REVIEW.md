@@ -199,6 +199,11 @@ scientific evidence and authorizes no manuscript merge or publication.
   because the universal-under-acquisition phrase still broke before its final
   word. The exact full phrase is now contiguous in source for the native paper
   boundary test.
+- 2026-08-06: The first revised build was byte-reproducible and passed compiler
+  checks at 22 pages, but all-page rendering found an excessive-blank-page
+  defect: only one two-line reference appeared on page 22. Use a conventional
+  smaller bibliography block, rebuild from a committed source, and repeat the
+  complete visual review.
 
 ## Validation strategy
 
