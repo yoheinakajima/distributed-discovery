@@ -188,6 +188,10 @@ scientific evidence and authorizes no manuscript merge or publication.
 - [x] Run the complete verification wall until its inherited protected-file
   blocker, then rerun its recorded final failure in isolation and preserve the
   exact file-absence cause without repair or cleanup.
+- [x] Commit and push the standing-review contract, wrapper, synthetic tests,
+  redacted checkpoint, and plan updates to draft PR 221 at
+  `07f41b99b22d2b1d8445a23a067ce8e149d71b57` while leaving every inherited
+  protected dirty entry unstaged.
 
 ## Discoveries and surprises
 
@@ -399,6 +403,13 @@ scientific evidence and authorizes no manuscript merge or publication.
   to the protected dirty worktree; do not restore, delete, stage, or otherwise
   change it in this lane. The focused 18-test review suite and all repository
   audits completed green.
+- 2026-08-07: The intended standing-review changes were committed as
+  `5a09e839751a08779fa465d19e7594380217ffff` and the credential checkpoint as
+  `07f41b99b22d2b1d8445a23a067ce8e149d71b57`, then pushed to the existing
+  draft PR #221. Public GitHub revalidation confirms the PR is open, draft,
+  based on `main`, headed by the exact branch SHA, and retains `Tracks #220`.
+  No protected dirty entry was staged, and no credential, provider, or spend
+  surface was used after the recorded absent-entry stop.
 
 ## Validation strategy
 
