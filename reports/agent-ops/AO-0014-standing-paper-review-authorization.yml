@@ -40,3 +40,4 @@ execution_checkpoint:
   provider_calls: 0
   spend_usd: "0"
   no_fallback_or_retry: true
+  required_execution_form: PYTHONPATH=src-uv-run-no-editable-python-module

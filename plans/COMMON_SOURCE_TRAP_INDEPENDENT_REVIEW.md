@@ -384,6 +384,13 @@ scientific evidence and authorizes no manuscript merge or publication.
   not locate the frozen packet. It stopped before Keychain ingress. Resolve the
   repository from the current checkout instead, add a regression, and rerun the
   installed no-execute command before treating the wrapper as ready.
+- 2026-08-07: This local `uv --no-editable` environment retained an older wheel
+  even after the wrapper commit and package reinstall, so its no-execute command
+  repeated the already-corrected root failure. The repository-source invocation
+  `PYTHONPATH=src uv run --no-editable python -m
+  distributed_discovery.editorial_review` loads the committed source, passes
+  the frozen preflight, and is the sole permitted execution form for this
+  wrapper. Do not use a stale installed wheel for the consequential call.
 - 2026-08-07: The complete `make verify` wall passed formatting, Ruff, and
   strict MyPy, then encountered the inherited missing
   `AO-0004-public-engineering-ledger.jsonl` during the full pytest stage. Its
