@@ -2,9 +2,12 @@
 
 ## Active AO-0014 Common-Source Trap independent review (2026-08-06)
 
-Issue #220, contract `tasks/common-source-trap-independent-review.yml`, branch
-`agent/common-source-trap-review-packet`, and living plan
+Issue #220, branch `agent/common-source-trap-review-packet`, and living plan
 `plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md` own the sole substantive lane.
+The active additive contract is
+`tasks/common-source-trap-round2-standing-review-completion-r3.yml`, which
+records the owner’s 2026-08-07 standing paper-review authorization without
+weakening the frozen Round 2 packet or any publication boundary.
 The task freezes exact current-main manuscript, PDF, receipt, evidence, and
 build pointers for four fresh independent reviews coordinated by Research
 Atlas. The repository remains the sole manuscript and scientific authority;
@@ -17,7 +20,11 @@ Claude, Gemini, and Grok reviews are complete and returned simultaneously as
 one provenance-bound Atlas bundle. The later revision must disposition every
 finding against repository evidence and rerun all native checks. No manuscript
 merge, Explore Science upload, publication, submission, DOI, release, provider
-call, spend, scientific execution, or paper-lifecycle change is authorized.
+call, spend, scientific execution, or paper-lifecycle change is authorized
+outside the bounded standing-review contract. That contract permits only one
+fresh no-retry call per missing named reviewer, with existing credentials only,
+USD 1 per call, USD 3 for this task, and USD 10 aggregate across the named
+paper-review lane.
 
 The review baseline is public main
 `7268e445347c4d7f9106d129af42d0e8667eb115`, paper tree
@@ -54,6 +61,13 @@ release, closeout, and review-packet validation passes, as does the complete
 labeled Round 2 packet is frozen against artifact commit `4fa15aa7...` and
 receipt commit `843e1b58...`; exact final-head validation and fresh isolated
 Research Atlas routing remain next.
+
+The standing-review wrapper and synthetic tests are green. Its exact OpenAI
+Keychain service is absent, so no credential value, provider request, or spend
+occurred and the replacement-review sequence stops at owner credential setup.
+The new complete wall is otherwise green through formatting, Ruff, strict MyPy,
+focused tests, and all audits; its full pytest stage remains blocked only by an
+inherited protected deletion of the unrelated AO-0004 provider-canary ledger.
 
 ## Completed AO-0013 repair; Pages closeout remains open (2026-08-06)
 

@@ -50,6 +50,30 @@ scientific evidence and authorizes no manuscript merge or publication.
   `ab53c6e4...`, while v0.1.0 build, verify, and readiness paths resolve paper,
   citation, registry, and release-note bytes from registered source revision
   `3ca173f4...`. No immutable release record or published hash changed.
+- At 2026-08-07, the owner activated the bounded paper-review standing lane.
+  Additive contract
+  `tasks/common-source-trap-round2-standing-review-completion-r3.yml` records
+  only its Common-Source Trap authority: existing-credential-only headless
+  replacement reviews, private receipts, a USD 1 per-provider-call ceiling,
+  and a USD 3 current-task ceiling within the owner-wide USD 10 aggregate.
+  It does not authorize credential changes, merge, publication, deployment,
+  Explore Science, new research, or Information Sharing Frontier work.
+- The new OpenAI replacement wrapper reconstructs the frozen artifact through
+  Git, validates its manuscript/PDF/packet hashes and 21 extracted PDF pages,
+  constructs one no-tool `gpt-5.6-terra` Responses request at medium reasoning,
+  requires strict closed-schema output, and stores success or redacted failure
+  receipts outside Git at mode 0600. Its default command is local preflight;
+  it cannot read Keychain or contact a provider without the explicit execute
+  flag. Synthetic coverage is green. The exact service-only Keychain presence
+  check then returned absent. No credential value was read, and no OpenAI
+  request or spend occurred.
+- The complete verification wall is currently blocked by a protected unrelated
+  tracked deletion: `reports/benchmark/treasurebench-provider-schema-canaries/`
+  `AO-0004-public-engineering-ledger.jsonl` is absent in the inherited dirty
+  worktree. Its immutable-artifact test fails at file read. Formatting, Ruff,
+  strict MyPy, the 18 focused Common-Source Trap tests, Agent Operations,
+  program-memory, claim, editorial, publication, naming, and release audits
+  pass. The missing historical file is neither restored nor modified here.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -147,6 +171,23 @@ scientific evidence and authorizes no manuscript merge or publication.
   labeled Round 2 packet against the revised artifact.
 - [ ] Commit and push the packet and legitimate-checkpoint handoff, revalidate
   the exact final head, and route it only through fresh isolated sessions.
+- [x] Record the owner standing paper-review authorization in an additive
+  AO-0014 contract without copying any credential, private receipt, or owner
+  private path into Git.
+- [x] Implement and run synthetic tests for the headless OpenAI replacement
+  wrapper: frozen source/PDF/packet/page validation, strict schema, no-tool
+  request, private receipt permissions, credential clearing, missing
+  credential, ambiguous delivery, page-coverage failure, model drift, and
+  exact Keychain-service lookup.
+- [ ] Run the wrapper only after complete local validation and an exact existing
+  credential check; stop before provider contact if the credential or aggregate
+  spend bound is unavailable.
+- [x] Check only the exact OpenAI reviewer Keychain service after local
+  validation. It is absent; preserve this as a no-contact, no-spend blocker and
+  require owner credential setup outside this task before any execution.
+- [x] Run the complete verification wall until its inherited protected-file
+  blocker, then rerun its recorded final failure in isolation and preserve the
+  exact file-absence cause without repair or cleanup.
 
 ## Discoveries and surprises
 
@@ -317,6 +358,40 @@ scientific evidence and authorizes no manuscript merge or publication.
   release notes remained byte-identical. Freeze one public-safe checkpoint
   handoff for Research Atlas reviewer dispatch; do not impersonate named model
   providers from this repository worker.
+- 2026-08-07: The owner activated a milestone-bounded standing paper-review
+  lane. Because the prior AO-0014 contract correctly prohibited provider calls,
+  private receipts, and spend, record the standing decision in a new additive
+  contract rather than silently widening the old one. The new contract keeps
+  the exact packet, one-call-per-missing-reviewer, no-retry, existing-
+  credential-only, per-call USD 1, aggregate USD 10, and no-merge/publication
+  boundaries explicit.
+- 2026-08-07: The first wrapper style pass found only one unused import,
+  import-order normalization, and three overlong test lines. Ruff corrected
+  the mechanical issues in the two intended files; no behavioral test or
+  frozen-input invariant failed. A direct installed-package preflight initially
+  could not import the uninstalled new module, so the validation command now
+  uses the repository source path explicitly. The source-path preflight passed
+  without Keychain or provider contact.
+- 2026-08-07: After the local wall passed, the exact non-enumerating Keychain
+  presence check for `com.yoheinakajima.chief-of-staff.openai-reviewer` returned
+  absent. No credential value was requested or read, no provider endpoint was
+  contacted, and no spend occurred. The standing authorization expressly
+  prohibits credential creation or changes, so the OpenAI replacement review
+  stops at owner credential setup rather than falling back to a browser, Codex
+  session, another provider, or another model.
+- 2026-08-07: A post-build no-execute command found a local-only portability
+  defect: the wrapper inferred `ROOT` from its installed wheel path and could
+  not locate the frozen packet. It stopped before Keychain ingress. Resolve the
+  repository from the current checkout instead, add a regression, and rerun the
+  installed no-execute command before treating the wrapper as ready.
+- 2026-08-07: The complete `make verify` wall passed formatting, Ruff, and
+  strict MyPy, then encountered the inherited missing
+  `AO-0004-public-engineering-ledger.jsonl` during the full pytest stage. Its
+  isolated last-failure rerun reproduces `FileNotFoundError` at the immutable
+  provider-canary preservation test. This is unrelated to AO-0014 and belongs
+  to the protected dirty worktree; do not restore, delete, stage, or otherwise
+  change it in this lane. The focused 18-test review suite and all repository
+  audits completed green.
 
 ## Validation strategy
 
@@ -360,22 +435,24 @@ scientific evidence and authorizes no manuscript merge or publication.
 - Round 1 no longer blocks revision: the complete simultaneous bundle is
   present and provenance-bound.
 - The prior authority blocker is resolved prospectively by the additive owner
-  decision and superseding R2 contract. Implementation remains deliberately
-  unstarted at the owner's restart checkpoint.
-- Round 2 dispatch, manuscript merge, and every publication action remain
-  unauthorized.
+  decision and standing-review contract. The review path remains blocked until
+  the owner establishes the missing exact Keychain credential and the
+  aggregate-spend bound verifies after the local validation wall.
+- Manuscript merge and every publication action remain unauthorized.
 
 ## Recovery and restart instructions
 
 Resume AO-0014 from issue #220, branch
-`agent/common-source-trap-review-packet`, additive contract
-`tasks/common-source-trap-current-working-paper-pointers-r2.yml`, and this
+`agent/common-source-trap-review-packet`, additive standing-review contract
+`tasks/common-source-trap-round2-standing-review-completion-r3.yml`, and this
 plan. Confirm local, remote, and draft PR #221 still share the checkpoint head;
-confirm main remains the authorized base and the five unrelated untracked files
-remain untouched. Continue with the current-versus-v0.1.0 pointer/versioning
-regression before any long wall. Round 1 is complete and nonreusable; any
-Round 2 review must use four fresh isolated sessions and only the reverified
-revised manuscript, rubric, and correctly labeled Round 2 packet.
+preserve every protected dirty worktree entry; then run the source-path wrapper
+preflight and its focused tests before reading the exact OpenAI Keychain entry.
+Stop with zero provider contact if that one entry is absent or the aggregate
+spend bound is not provable. Round 1 and every prior failed or excluded Round 2
+attempt remain nonreusable. Any qualifying Round 2 review must use only the
+reverified revised manuscript, rubric, page-labelled rendered-paper input, and
+correctly labeled Round 2 packet.
 
 ## Outcome and retrospective
 

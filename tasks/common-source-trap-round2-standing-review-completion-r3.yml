@@ -1,0 +1,116 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0014
+title: Common-Source Trap Round 2 standing-authorized review completion
+task_type: documentation-editorial
+status: active
+objective: Complete only the missing, fresh, independently captured Round 2 reviews against the frozen Common-Source Trap packet, then perform the already-authorized evidence-bound editorial closeout without authorizing merge or publication.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: instruction, path: papers/AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/research-governance.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: plan, path: plans/MASTER_EXEC_PLAN.md}
+  - {type: plan, path: plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md}
+  - {type: record, path: reports/agent-ops/AO-0014-standing-paper-review-authorization.yml}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/220"}
+  - {type: pull-request, path: "https://github.com/yoheinakajima/distributed-discovery/pull/221"}
+owner_decisions:
+  - On 2026-08-07, the owner activated the milestone-bounded paper-review standing authorization, recorded in the owner-managed source at commit 6b5a089; this additive contract records its Common-Source Trap subset without copying credentials or owner-private state into the repository.
+  - The missing ChatGPT review may be replaced by exactly one fresh headless OpenAI Responses API review using the strongest supported non-top-tier model permitted by the frozen Round 2 packet, with deterministic preflight, private receipt capture, no tools, and no retry after any delivery ambiguity.
+  - If and only if the replacement qualifies, one fresh Anthropic review and one fresh Google review may complete the other missing named reviewer slots under the same packet, independence, receipt, and no-retry requirements.
+  - Existing credentials may be read only through the exact, project-restricted Keychain ingress after all local checks pass. Credential creation, rotation, enumeration, display, logging, persistence, and repository inclusion remain prohibited.
+  - Once all four qualifying independent reviews are available as one provenance-bound bundle, one synthesis, one writer handoff, one bounded evidence-bound revision, deterministic rebuild and validation, and draft-PR update are authorized. Merge, undraft, release, deployment, and publication remain owner gates.
+scope:
+  paths:
+    - tasks/common-source-trap-round2-standing-review-completion-r3.yml
+    - reports/agent-ops/AO-0014-standing-paper-review-authorization.yml
+    - plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
+    - plans/MASTER_EXEC_PLAN.md
+    - reports/editorial/common-source-trap-round2-review-packet.yml
+    - src/distributed_discovery/editorial_review.py
+    - tests/unit/test_common_source_trap_headless_review.py
+  actions:
+    - Build and test a deterministic, headless OpenAI replacement-review wrapper with a strict closed response schema, frozen-artifact validation, page-coverage validation, private mode-0600 receipts, and redacted terminal outcomes.
+    - Use only an existing exact Keychain credential after local preflight; stop without provider contact if it is absent, unsafe, or mismatched.
+    - Make at most one successful request for each missing named reviewer, preserve every nonqualifying outcome, and never retry after provider delivery may have occurred.
+    - After a complete qualifying bundle, synthesize once, hand the full bundle to the writer once, make one evidence-bound revision, rebuild deterministically, validate, and update only draft PR 221.
+non_goals:
+  - No credential creation, rotation, enumeration, display, logging, persistence, or repository inclusion.
+  - No reuse of the missing-receipt ChatGPT review, the excluded Claude UI review, the ambiguous Gemini attempt, or any Round 1 session or reviewer output.
+  - No cross-provider substitution, browser review session, tool, connector, retry, continuation, provider fallback, or unbounded provider operation.
+  - No new study, claim, proof, run, evidence-status change, lifecycle-status change, scientific execution, Information Sharing Frontier work, or action on protected unrelated worktree entries.
+  - No PR readiness, merge, issue closure, publication, deployment, Explore Science upload, DOI, release, submission, branch deletion, or provider spend above the standing caps.
+permissions:
+  repository_write: true
+  git_branch_commit: true
+  github_issue_pr: true
+  merge_after_checks: false
+  ci_pages: false
+external_action_permissions:
+  network_observation: true
+  github_mutation: true
+  provider_calls: true
+  spend: true
+  release_publication: false
+  submission: false
+scientific_mutation_permissions:
+  create_study: false
+  create_claim: false
+  create_run: false
+  change_evidence_status: false
+  change_proof_status: false
+  change_paper_lifecycle: false
+private_data_permissions: {read: true, write: true, generate: true, publish: false}
+budget:
+  currency: USD
+  expected: "0.60"
+  hard_cap: "3.00"
+  call_cap: 3
+  category_caps:
+    openai_chatgpt_replacement: "1.00"
+    anthropic_claude_replacement: "1.00"
+    google_gemini_replacement: "1.00"
+  cumulative_spend: "0"
+expected_outcomes:
+  - One independently reproducible, private, closed-schema OpenAI replacement receipt or an honest local/provider failure receipt with no retry.
+  - At most three new bounded provider calls, each below USD 1, with aggregate new paper-review-lane spend below USD 10 when reconciled with preserved receipts.
+  - A complete four-review provenance-bound Round 2 bundle before any editorial revision.
+  - One evidence-bound revision candidate in existing draft PR 221, with deterministic rebuild and validation, stopped before merge or publication.
+stop_conditions:
+  - Stop before provider contact if the exact frozen packet, manuscript, PDF, page count, response schema, local preflight, credential ingress, existing-spend bound, or provider/model/cost bound does not pass.
+  - Stop after every ambiguous provider delivery, malformed or incomplete response, missing receipt, schema mismatch, page-coverage failure, cap breach, provider/model drift, or unsafe retention observation; do not retry or substitute.
+  - Stop if the exact existing Keychain credential is absent. The owner must perform credential setup separately; this task may not create or change credentials.
+  - Stop before merge, PR readiness, issue closure, deployment, publication, Explore Science, release, submission, DOI, branch deletion, new research, or Information Sharing Frontier work.
+acceptance_profile: docs-editorial
+canonical_destinations:
+  - tasks/common-source-trap-round2-standing-review-completion-r3.yml
+  - reports/agent-ops/AO-0014-standing-paper-review-authorization.yml
+  - plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
+  - reports/editorial/common-source-trap-round2-review-packet.yml
+  - src/distributed_discovery/editorial_review.py
+  - tests/unit/test_common_source_trap_headless_review.py
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 220
+  branch: agent/common-source-trap-review-packet
+  pull_request: 221
+  base: main
+exec_plan: plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
+task_delta: null
+frozen_identifiers:
+  standing_authorization_source_commit: 6b5a089
+  round2_packet_commit: c4fcb7798284d8ec576010c85b39bfcff17a7124
+  round2_packet_sha256: 8d4e55adcb94161ff315be17c90945642695e531ad43770cde4154760457bbfe
+  reviewed_artifact_commit: 4fa15aa7f77dcae9f02a42c64273a04969247571
+  revised_manuscript_sha256: 87a6e85450c72fc9c93b281646ecfbd60193747c80aae9eac0a022301e1f06e1
+  revised_pdf_sha256: ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150
+  revised_page_count: "21"
+  required_reviewers: chatgpt-claude-gemini-grok
+supersession:
+  supersedes:
+    - tasks/common-source-trap-current-working-paper-pointers-r2.yml
+  superseded_by: null
+  reason: The owner activated a bounded standing paper-review lane that adds provider-call, private-receipt, and evidence-bound editorial-completion authority while preserving every existing anti-scope boundary.
+next_gate: Standing authorization permits only the bounded review-completion sequence in this contract. Stop for missing credentials, ambiguous delivery, incomplete review bundle, cap breach, any scientific or retention boundary, or before PR readiness, merge, deployment, publication, or Explore Science.
