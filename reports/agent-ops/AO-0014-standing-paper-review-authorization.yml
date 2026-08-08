@@ -1,0 +1,67 @@
+schema_version: agent-ops-standing-authorization-reference-v1
+kind: standing-authorization-reference
+task_id: AO-0014
+status: active
+owner_decision_date: "2026-08-07"
+source_commit: 6b5a089
+source_description: typed owner decision activating the milestone-bounded paper-review lane
+scope:
+  paper: common-source-trap
+  round: common-source-trap-r2
+  authorized:
+    - local-review-wrapper-and-deterministic-test-work
+    - one-fresh-projectless-codex-gpt-5-6-terra-medium-reviewer-replacement
+    - one-successful-call-per-missing-named-reviewer
+    - private-receipt-capture-and-schema-validation
+    - one-synthesis-one-writer-handoff-one-bounded-revision-after-complete-bundle
+  limits:
+    per_provider_call_usd: "1.00"
+    aggregate_new_spend_across_ouroboros_and_common_source_trap_usd: "10.00"
+    retries_after_ambiguous_delivery: 0
+  required_preconditions:
+    - exact-frozen-artifact-packet-schema-and-page-coverage-validation
+    - codex-replacement-requires-no-credential-provider-api-browser-or-spend
+    - existing-project-restricted-credential-only-for-later-provider-calls
+    - deterministic-private-receipt-or-honest-failure-receipt
+  prohibited:
+    - credential-change-or-enumeration
+    - cross-provider-substitution
+    - merge-undraft-publication-deployment-explore-science-submission-or-doi
+    - new-research-or-information-sharing-frontier-work
+    - retry-after-ambiguous-delivery
+  expires_at: owner-ready-explore-science-packet-or-usd-10-aggregate-cap-or-named-hard-stop
+public_safety:
+  credential_value_present: false
+  credential_path_present: false
+  provider_response_present: false
+  scientific_authority_created: false
+execution_checkpoint:
+  status: codex-task-dispatch-control-plane-nonterminal-no-task-created
+  exact_openai_keychain_service_present: false
+  credential_value_read: false
+  provider_calls: 0
+  spend_usd: "0"
+  no_fallback_or_retry: true
+  required_execution_form: PYTHONPATH=src-uv-run-no-editable-python-module
+  transport_replacement:
+    owner_direction_date: "2026-08-08"
+    prior_api_blocker_preserved: true
+    surface: projectless-codex-task
+    model: gpt-5.6-terra
+    reasoning_effort: medium
+    task_count_cap: 1
+    prior_context_shared: false
+    browser_used: false
+    provider_api_call: false
+    incremental_spend_usd: "0"
+    dispatch_observation:
+      observed_at_utc: "2026-08-08T04:16:18Z"
+      create_request_returned: false
+      task_id_returned: false
+      local_task_registry_exact_match_count: 0
+      local_task_registry_new_thread_count: 0
+      orchestration_request_cancelled_after_nonterminal_wait: true
+      duplicate_dispatch_attempted: false
+      reviewer_prompt_submitted_to_task: false
+      reviewer_result_present: false
+      qualifying_receipt_present: false

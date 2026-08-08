@@ -19,7 +19,7 @@ accepted.
 - `discovery-institutions/`: validated institutional synthesis note.
 - `common-source-trap/`: validated 21-page finite-team source-choice theorem and
   working paper; SHA-256
-  `afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7`.
+  `ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150`.
 
 - `information-sharing-frontier/`: validated 26-page theorem-family working
   paper synthesizing DD-019 through DD-022; SHA-256

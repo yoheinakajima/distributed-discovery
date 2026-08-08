@@ -1,0 +1,363 @@
+schema_version: common-source-trap-review-disposition-v1
+kind: independent-review-disposition
+paper_id: common-source-trap
+task_id: AO-0014
+issue: 220
+review_round: common-source-trap-r1
+status: revised-candidate-frozen-additive-pointer-authority-required
+authority:
+  manuscript_claim_proof_run_evidence: repository-only
+  atlas_role: provenance-and-complete-bundle-handoff-only
+  new_scientific_claim_authorized: false
+  manuscript_merge_authorized: false
+  publication_authorized: false
+reviewed_artifact:
+  commit: 7268e445347c4d7f9106d129af42d0e8667eb115
+  manuscript_sha256: 2f7d9ead7e54a7c4b852935b9648361cc682772c5fe41853d0193b86ce3fbdad
+  pdf_sha256: afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7
+  page_count: 21
+bundle:
+  received_complete_simultaneously: true
+  manager_handoff_utc: "2026-08-06T17:04:40.316Z"
+  manager_source_thread: 019fd386-540a-7852-8667-2d9369835e6d
+  provenance_sha256: 45bb1ccba7d1d87c654775fe39b757c6de60e8f574470ecfd800f5e4b95615db
+  partial_bundle_used: false
+  raw_session_locators_retained_by_atlas_not_published: true
+  start_and_completion_timestamps_supplied: false
+  reviewers:
+    - reviewer: chatgpt
+      model: ChatGPT Medium
+      input_sha256: c7774bff9124a7d77394a02db861d3c199b9c626fa5b7e0c52d285d4362d19b4
+      verdict: minor-revision
+      scores: {novelty: 3, significance: 3, correctness: 4, evidence: 4, clarity: 4, reproducibility: 5, venue_fit: 3}
+      independence_attestation: supplied
+    - reviewer: claude
+      model: Claude Opus 5 High
+      input_sha256: 5d808dad1bfa0ee295848ddbb2bd0ed8d8416893b4bb5d49238193e09439f40f
+      verdict: minor-revision-borderline-major
+      scores: {novelty: 3, significance: 3, correctness: 4, evidence: 4, clarity: 3, reproducibility: 5, venue_fit: 3}
+      independence_attestation: supplied
+    - reviewer: gemini
+      model: Gemini Pro temporary chat
+      input_sha256: 756825da92379aab574ff456d39ff817ecac3aa8a1f34ba550d1daa9c3354e48
+      verdict: ready
+      scores: {novelty: 4, significance: 4, correctness: 5, evidence: 5, clarity: 5, reproducibility: 5, venue_fit: 5}
+      independence_attestation: supplied
+    - reviewer: grok
+      model: Grok Expert private chat
+      input_sha256: e156da4e947cbfa68f779e6c98e6d72d38d17151ff773ff2bd5e703200ec111f
+      verdict: ready
+      scores: {novelty: 4, significance: 4, correctness: 5, evidence: 5, clarity: 5, reproducibility: 5, venue_fit: 4}
+      independence_attestation: supplied
+synthesis:
+  ready_or_minor_vote: 4-of-4
+  critical_objections: 0
+  conservative_explore_science_state: not-ready-owner-gated
+  agreement:
+    - strongest-contribution-is-strict-threshold-ordering-and-complete-weak-pure-count-classification
+    - n3-counterexample-blocks-universal-under-acquisition-reading
+    - core-reproducibility-is-strong
+    - no-critical-correctness-defect-found
+    - residual-novelty-is-the-exact-finite-team-characterization-not-the-qualitative-wedge
+  preserved_disagreements:
+    - ChatGPT and Claude treat unverified nearest prior art as blocking; Gemini and Grok are more optimistic.
+    - ChatGPT and Claude find the companion sections underdefined or overlong; Gemini and Grok largely accept them.
+    - Claude proposes a new interior condition; no other reviewer requests it, and AO-0014 cannot promote it as a claim.
+    - ChatGPT requests a more explicit monotonicity proof; Claude independently re-derived the proof and found it correct.
+    - Two reviewers say Explore Science ready now and two require revision; the conservative state governs.
+dispositions:
+  - finding_id: CST-R1-M01
+    reviewers: [chatgpt, claude, gemini, grok]
+    source_refs: [chatgpt-major-3, chatgpt-must-do-novelty, claude-M1, gemini-closest-collision, grok-closest-collision]
+    severity: major
+    manuscript_location: Sections 1, 2, and 13
+    finding: Closest prior art may contain the qualitative acquisition or duplication wedge; exact theorem-level novelty remains unverified.
+    disposition: accept-with-edit
+    canonical_evidence:
+      - {record: https://doi.org/10.2307/2232925, use: verified-title-authors-year-and-market-research-portfolio-bias}
+      - {record: https://www.gsb.stanford.edu/faculty-research/working-papers/portfolio-choice-research-development, use: verified-winner-take-all-R-and-D-portfolio-adjacency}
+      - {record: https://pure.psu.edu/en/publications/rivals-search-for-buried-treasure-competition-and-duplication-in-, use: verified-dynamic-two-firm-duplication-model-and-nonuniversal-sign}
+      - {record: https://doi.org/10.1287/mnsc.1080.0884, use: verified-innovation-contest-effort-and-diversity-adjacency}
+    edit: Retain and sharpen conditional novelty language; do not claim that the primary-source abstract records establish theorem equivalence or non-equivalence.
+    validation: Citation audit uses only existing manuscript citations; no reviewer-supplied citation is imported without a repository bibliography record.
+  - finding_id: CST-R1-M02
+    reviewers: [chatgpt, claude, gemini]
+    source_refs: [chatgpt-major-1, chatgpt-must-do-proof, claude-strongest-contribution, gemini-optional-intuition]
+    severity: major
+    manuscript_location: Section 6 and Appendix A.2
+    finding: The proof did not explicitly connect the coupled kernel to A_k minus A_{k+1}, state the m-domain, separate the endpoint, or offer a smallest-team check.
+    disposition: accept-with-edit
+    canonical_evidence: [DD-C-0057, equation-ak, equation-positive-kernel]
+    edit: Add the exact expectation identity, m=N-k at least 2, the separate A_{N-1}=0 endpoint, the N=2 hand check, and an intuition sentence.
+    validation: Native analytic and corruption tests plus a deterministic paper build.
+  - finding_id: CST-R1-M03
+    reviewers: [chatgpt, claude]
+    source_refs: [chatgpt-unsupported-1-through-7, claude-unsupported-1, claude-unsupported-3]
+    severity: major
+    manuscript_location: Abstract; Sections 1, 2.4, 7.1, 9, 11, 12, and 14
+    finding: Several phrases overstated generality, net discovery, mechanism exclusivity, architectural strength, artifact generation, readiness, or prevention.
+    disposition: accept-with-edit
+    canonical_evidence: [DD-C-0052, DD-C-0054, DD-C-0056, DD-C-0057, DD-C-0058]
+    edit: Use net social value, all-finite-N homogeneous-model scope, conditional novelty, driven-by wording, direct-control wording, bounded-atlas visibility, candidate-package wording, and an all-common boundary.
+    validation: Source phrase regression and complete paper build.
+  - finding_id: CST-R1-M04
+    reviewers: [chatgpt, claude]
+    source_refs: [chatgpt-minor-subsidy, chatgpt-must-do-subsidy, claude-unsupported-6, claude-m2]
+    severity: minor-mathematical-wording
+    manuscript_location: Section 9
+    finding: An open subsidy interval has no smallest element, and inducing at least one purchase is not the same as inducing exactly one.
+    disposition: accept-with-edit
+    canonical_evidence: [Theorem-1, thresholds-A0-A1]
+    edit: State the infimum c-A0, strict inequality, and the additional c-s at least A1 condition for exactly one purchase.
+    validation: Source assertion and deterministic build.
+  - finding_id: CST-R1-M05
+    reviewers: [claude]
+    source_refs: [claude-M2, claude-must-do-interior-condition, claude-optional-large-N-A1]
+    severity: proposed-new-scientific-result
+    manuscript_location: Section 7.1
+    finding: Reviewer proposes p greater than 2N divided by N squared minus N plus 2 as the k=1 interior sign boundary.
+    disposition: defer-needs-evidence
+    canonical_evidence: [equation-ak, equation-bk]
+    edit: Do not add the formula, proposition, region claim, or asymptotic claim to the manuscript under AO-0014.
+    validation: Independently derive the algebra and compare its sign with direct rational evaluation on a bounded synthetic grid; record that agreement does not create claim authority.
+  - finding_id: CST-R1-M06
+    reviewers: [chatgpt, claude, grok]
+    source_refs: [chatgpt-major-2, chatgpt-must-do-companions, claude-M4, grok-optional-cross-reference]
+    severity: major
+    manuscript_location: Sections 10 through 12 and Limitation 7
+    finding: Exact companion-model numbers can look like one cumulative or self-contained evidence chain even though the fixtures are non-nested.
+    disposition: accept-with-edit
+    canonical_evidence: [DD-C-0053, DD-C-0054, DD-C-0056]
+    edit: Add a companion-map boundary before the three sections and retain the explicit non-nesting limitation; do not promote companion outputs into support for the core theorem.
+    validation: Claim-role and paper-dependency audits.
+  - finding_id: CST-R1-M07
+    reviewers: [claude]
+    source_refs: [claude-M3, claude-M6]
+    severity: major
+    manuscript_location: Section 11 and Figure 8
+    finding: Figure 8 did not say that 1/4 is total two-channel information cost or that DD-009 subtracts external transfer budgets from its net-value column.
+    disposition: accept-with-edit
+    canonical_evidence: [DD-C-0054, A145, A199, A209, A210, A229, A254]
+    edit: State total information cost explicitly and separate DD-009 net value from the core W_N convention; identify A210's 7/4 external transfer budget.
+    validation: Recompute every displayed discovery, cost, transfer, and net-value identity from the immutable architectures JSON.
+  - finding_id: CST-R1-M08
+    reviewers: [chatgpt, claude]
+    source_refs: [chatgpt-unsupported-preregistration, claude-M5, claude-unsupported-8-and-9]
+    severity: major
+    manuscript_location: Section 12 and Figure 9
+    finding: Calibration failure was undefined, favorable-scenario power and all-scenario failures were conflated, and preregistration-ready was too broad.
+    disposition: accept-with-edit
+    canonical_evidence: [DD-C-0056, calibration-report-json, DD-011-report]
+    edit: Define the below-0.80 criterion at N 640, 800, or 960; separate the rational scenario from 140 of 192 failures; call the package a candidate and bound the inherited figure label.
+    validation: Reconcile counts against the immutable calibration report and build the paper.
+  - finding_id: CST-R1-M09
+    reviewers: [claude]
+    source_refs: [claude-unsupported-4-and-5, claude-m3, claude-m4]
+    severity: minor
+    manuscript_location: Sections 5 and 7
+    finding: Fixed-cost nonmonotonicity was unsupported by the displayed slice and the computational-hardness aside established no complexity result.
+    disposition: accept-with-edit
+    canonical_evidence: [DD-C-0052, thresholds-Ak-Bk]
+    edit: Replace the first with the narrower need for interior thresholds and remove the complexity claim.
+    validation: Source phrase regression and finite-grid checks.
+  - finding_id: CST-R1-M10
+    reviewers: [chatgpt, claude, grok]
+    source_refs: [chatgpt-minors-numbering-gap-taxonomy, claude-m6-m7-m8-m9, grok-minor-gap]
+    severity: minor
+    manuscript_location: Sections 3, 5 through 6, 9, 11 through 12
+    finding: Audit equation range, existence, numbering, k-star, hyphenation, hypothesis taxonomy, and max-min interpretation.
+    disposition: accept-with-edit-and-partial-defer
+    canonical_evidence: [main-tex, generated-tables, validation-json]
+    edit: Extend I_k to k=N, state equilibrium existence, correct k-star and split hyphens, name six primary plus two secondary hypotheses, and retain the no-frequency warning. Source audit shows unique section numbering. Figure-to-table renaming is deferred because it requires an out-of-scope generator redesign.
+    validation: Source assertions, all-reference build, and all-page render review.
+  - finding_id: CST-R1-M11
+    reviewers: [chatgpt, claude, grok]
+    source_refs: [chatgpt-minor-conclusion, chatgpt-must-do-conclusion, claude-m5, grok-minor-repetition]
+    severity: minor
+    manuscript_location: Conclusion
+    finding: The ending repeated the universal-under-acquisition disclaimer and finished defensively.
+    disposition: accept-with-edit
+    canonical_evidence: [DD-C-0057, DD-C-0058]
+    edit: End once on the scoped positive mapping, exact all-common boundary, and explicit counterboundary.
+    validation: Source phrase count and visual review.
+additional_findings:
+  - finding_id: CST-R1-O01
+    reviewers: [chatgpt]
+    source_refs: [chatgpt-minor-terminal-redundancy]
+    severity: minor
+    manuscript_location: Section 3, Equation 1
+    finding: Explain why the last purchase adds no source draw.
+    disposition: already-satisfied
+    canonical_evidence: [equation-discovery]
+    edit: Existing sentence retained.
+    validation: Source assertion.
+  - finding_id: CST-R1-O02
+    reviewers: [chatgpt]
+    source_refs: [chatgpt-minor-payoff-notation]
+    severity: minor
+    manuscript_location: Section 3, Equations 2 through 4
+    finding: Alternative payoff notation could lower cognitive load.
+    disposition: reject
+    canonical_evidence: [equations-common-payoff-independent-payoff-ak]
+    edit: Retain C_k, I_k, and the explicit switch sentence to avoid a paper-wide notation migration.
+    validation: No change required.
+  - finding_id: CST-R1-O03
+    reviewers: [chatgpt]
+    source_refs: [chatgpt-minor-corollary-endpoints]
+    severity: minor
+    manuscript_location: Corollary 1
+    finding: Distinguish every planner optimum from at least one planner optimum.
+    disposition: already-satisfied
+    canonical_evidence: [equation-general-trap]
+    edit: Existing endpoint paragraph retained.
+    validation: Source assertion.
+  - finding_id: CST-R1-O04
+    reviewers: [chatgpt]
+    source_refs: [chatgpt-optional-theorem-map, chatgpt-optional-n3-table]
+    severity: optional
+    manuscript_location: Sections 6 through 7
+    finding: Add a theorem map or another N=3 table.
+    disposition: defer-needs-evidence
+    canonical_evidence: [DD-C-0057, DD-C-0058]
+    edit: Existing theorem, corollary, and exact rational chain are sufficient for this bounded revision.
+    validation: Round 2 clarity review.
+  - finding_id: CST-R1-O05
+    reviewers: [chatgpt, claude]
+    source_refs: [chatgpt-optional-tie-markers, claude-m9]
+    severity: optional
+    manuscript_location: Figures 2 through 6 and 8
+    finding: Redesign generated tables as tables or add tie markers.
+    disposition: defer-needs-evidence
+    canonical_evidence: [DD-C-0052, generated-assets]
+    edit: Preserve generated evidence assets; strengthen prose that max-min gaps are not selection or frequency predictions.
+    validation: Round 2 visual and interpretation review.
+  - finding_id: CST-R1-O06
+    reviewers: [chatgpt, claude]
+    source_refs: [chatgpt-optional-provenance-compression, claude-optional-provenance-table]
+    severity: optional
+    manuscript_location: Generated figures and Appendix C
+    finding: Compress repeated provenance strings.
+    disposition: defer-needs-evidence
+    canonical_evidence: [generated-provenance-json, validation-json]
+    edit: Retain per-figure provenance for the current auditable build; reassess only with a generator-scoped task.
+    validation: Round 2 visual review.
+  - finding_id: CST-R1-O07
+    reviewers: [gemini]
+    source_refs: [gemini-optional-intuition]
+    severity: optional
+    manuscript_location: Section 6
+    finding: Add intuition before the monotonicity proof.
+    disposition: accept-with-edit
+    canonical_evidence: [equation-positive-kernel]
+    edit: Explain why both the binomial winner count and common-block size change before the coupling.
+    validation: Source assertion and Round 2 clarity review.
+  - finding_id: CST-R1-O08
+    reviewers: [grok]
+    source_refs: [grok-optional-extensions]
+    severity: optional-new-science
+    manuscript_location: Future work
+    finding: Explore heterogeneous accuracy and bounded subsidy mechanisms.
+    disposition: defer-needs-evidence
+    canonical_evidence: [extension-audit]
+    edit: Preserve as future work only; AO-0014 authorizes no new study or scientific execution.
+    validation: Task-boundary audit.
+revision_candidate:
+  manuscript_revision_commit: 6e1d0d0041b1374f56e761d80398f404f8105eeb
+  reviewed_artifact_commit: 4fa15aa7f77dcae9f02a42c64273a04969247571
+  manuscript_path: papers/common-source-trap/main.tex
+  manuscript_sha256: 87a6e85450c72fc9c93b281646ecfbd60193747c80aae9eac0a022301e1f06e1
+  pdf_path: papers/common-source-trap/The_Common_Source_Trap.pdf
+  pdf_sha256: ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150
+  page_count: 21
+  validation_sha256: 6ecfb908a547cf3a57a26275eabbd30e452ca1799c7d40716ba7f721ddc53f23
+  provenance_sha256: 2bc633e9c88fa8165f999861cdef4dc48d6538d11aaf4e2bffd087f66205c753
+  visual_qa_sha256: 2db136353dc7346b5968524600d9e938ff18246a5d1c1141b06ea99e166641f9
+  byte_reproducible_two_builds: true
+  all_pages_visually_inspected: true
+section_diff:
+  - {section: Abstract, change: calibrated-net-value-generality-artifact-and-companion-language}
+  - {section: Introduction, change: all-finite-N-homogeneous-model-scope}
+  - {section: Related-literature, change: conditional-residual-novelty-and-no-certificate-boundary}
+  - {section: Model, change: target-count-dependence-and-equation-3-endpoint}
+  - {section: Finite-team-classification, change: removed-unsupported-fixed-cost-nonmonotonicity}
+  - {section: General-finite-team-thresholds, change: explicit-coupling-connection-domain-endpoint-and-N2-check}
+  - {section: Planner-comparison, change: removed-unsupported-complexity-aside-and-calibrated-mechanism-language}
+  - {section: Institutional-remedies, change: subsidy-infimum-exactly-one-condition-k-star-and-assignment-language}
+  - {section: Joint-mechanisms, change: explicit-companion-model-boundary}
+  - {section: Architecture-Atlas, change: total-cost-transfer-accounting-and-bounded-cherry-picking-language}
+  - {section: Experimental-predictions, change: calibration-definition-separated-power-statements-and-candidate-package-language}
+  - {section: Conclusion, change: precise-all-common-boundary-and-nonduplicative-positive-ending}
+  - {section: References, change: smaller-block-to-remove-excessive-blank-final-page}
+validation:
+  focused:
+    command: uv run --no-editable pytest -q tests/integration/test_paper_visual_qa.py tests/integration/test_common_source_trap_review_packet.py tests/integration/test_common_source_trap_paper.py tests/unit/test_common_source_analysis.py
+    result: 17-passed
+  active_paper:
+    command: make common-source-trap
+    result: byte-reproducible-21-pages-no-compiler-reference-citation-or-overfull-box-failure
+  full_repository_first_post_revision:
+    command: make verify
+    result: scope-blocked-1052-passed-8-failed
+    failures:
+      - visual-qa-first-hash-selected-historical-receipt
+      - site-lifecycle-checksum-stale
+      - compendium-dry-run-hash-stale-three-tests
+      - paper-lifecycle-audit-hash-stale
+      - release-readiness-dry-run-hash-stale
+      - treasurebench-naming-site-build-blocked-by-lifecycle-hash
+    allowed_correction: visual-qa-current-pointer-updated
+    remaining_failure_root: revised-pdf-publication-and-release-pointers-outside-fixed-task-paths
+scope_conflict:
+  fixed_task_contract: tasks/common-source-trap-independent-review.yml
+  manuscript_revision_authorized: true
+  publication_release_pointer_mutation_authorized: false
+  out_of_scope_paths_required_by_remaining_checks:
+    - docs/paper-lifecycle.yml
+    - docs/publication/paper-citation-metadata.yml
+    - docs/releases/compendium-v0.1.0-content.yml
+    - reports/releases/release-evidence-manifest.dry-run.json
+    - papers/README.md
+  historical_release_rewrite_prohibited: true
+  smallest_safe_next_action: owner-decide-additive-pointer-update-versus-revision-rework-without-pdf-identity-change
+round2_packet:
+  id: common-source-trap-r2-candidate
+  status: frozen-not-dispatched
+  reviewed_artifact_commit: 4fa15aa7f77dcae9f02a42c64273a04969247571
+  manuscript_sha256: 87a6e85450c72fc9c93b281646ecfbd60193747c80aae9eac0a022301e1f06e1
+  pdf_sha256: ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150
+  page_count: 21
+  required_reviewers: [chatgpt, claude, gemini, grok]
+  fresh_isolated_sessions: true
+  round1_sessions_reusable: false
+  inputs_only:
+    - {path: papers/common-source-trap/main.tex, sha256: 87a6e85450c72fc9c93b281646ecfbd60193747c80aae9eac0a022301e1f06e1}
+    - {path: papers/common-source-trap/The_Common_Source_Trap.pdf, sha256: ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150}
+    - {path: reports/editorial/common-source-trap-review-disposition.yml, role: revised-machine-readable-packet-and-rubric}
+  other_reviews_shared: false
+  complete_bundle_required: true
+  partial_bundle_accepted: false
+  reviewer_provenance_required:
+    - reviewer_system
+    - exact_model_identity_if_exposed
+    - review_started_utc
+    - review_completed_utc
+    - reviewed_artifact_commit
+    - manuscript_sha256
+    - pdf_sha256
+    - independence_attestation
+  required_focus:
+    - proof-connection-and-endpoint
+    - conditional-novelty-positioning
+    - companion-model-separation
+    - figure-8-cost-and-transfer-accounting
+    - calibration-definition-and-readiness-language
+    - conclusion-and-visual-legibility
+  dispatch_authorized: false
+  publication_authorized: false
+prohibitions:
+  - manuscript-merge
+  - pull-request-readiness
+  - publication-or-explore-science-upload
+  - new-scientific-claim-or-run
+  - new-review-session-before-revised-packet-freeze
+  - information-sharing-frontier-work

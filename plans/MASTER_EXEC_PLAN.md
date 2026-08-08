@@ -1,6 +1,88 @@
 # Master execution plan
 
-## Active AO-0013 Pages branch-context repair (2026-08-06)
+## Active AO-0014 Common-Source Trap independent review (2026-08-06)
+
+Issue #220, branch `agent/common-source-trap-review-packet`, and living plan
+`plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md` own the sole substantive lane.
+The active additive contract is
+`tasks/common-source-trap-round2-standing-review-completion-r3.yml`, which
+records the owner’s 2026-08-07 standing paper-review authorization without
+weakening the frozen Round 2 packet or any publication boundary.
+The task freezes exact current-main manuscript, PDF, receipt, evidence, and
+build pointers for four fresh independent reviews coordinated by Research
+Atlas. The repository remains the sole manuscript and scientific authority;
+Atlas owns review pointers, round state, reviewer provenance, and handoffs
+only.
+
+Common-Source Trap is the only active paper. Information Sharing Frontier is
+parked. No manuscript edit is permitted until fresh independent ChatGPT,
+Claude, Gemini, and Grok reviews are complete and returned simultaneously as
+one provenance-bound Atlas bundle. The later revision must disposition every
+finding against repository evidence and rerun all native checks. No manuscript
+merge, Explore Science upload, publication, submission, DOI, release, provider
+call, spend, scientific execution, or paper-lifecycle change is authorized
+outside the bounded standing-review contract. That contract permits only one
+fresh no-retry call per missing named reviewer, with existing credentials only,
+USD 1 per call, USD 3 for this task, and USD 10 aggregate across the named
+paper-review lane.
+
+The review baseline is public main
+`7268e445347c4d7f9106d129af42d0e8667eb115`, paper tree
+`2c34089accf3e9bbd2d6d038aceb2156bc0aa2a4`, manuscript SHA-256
+`2f7d9ead7e54a7c4b852935b9648361cc682772c5fe41853d0193b86ce3fbdad`,
+and 21-page PDF SHA-256
+`afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7`.
+AO-0014 first stops at `review-bundle-required` with one draft PR.
+
+Round 1 subsequently completed and produced a reviewed 21-page revision at
+source SHA-256
+`87a6e85450c72fc9c93b281646ecfbd60193747c80aae9eac0a022301e1f06e1`
+and PDF SHA-256
+`ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150`
+in draft PR #221. The first complete post-revision wall correctly stopped on
+current-pointer versus immutable Compendium v0.1.0 identity conflicts.
+
+At `2026-08-06T20:06Z`, the owner authorized the narrow additive contract
+`tasks/common-source-trap-current-working-paper-pointers-r2.yml` at exact PR
+head `9cf1720c2b23737f1937ea2c3f1a35a898fa9809`. It may update only current
+working-paper pointers and historical-release-aware validation, must preserve
+every v0.1.0 tag/source/asset/hash/DOI record, and may freeze the exact revised
+Round 2 packet only after the complete wall passes. The owner requested an
+orderly restart at `2026-08-06T20:11:54Z`; implementation and Round 2 dispatch
+were unstarted at checkpoint `5f388fbb145421ddfad129825d8742ab8a36fb9d`.
+After restart, local, remote, issue, base, draft-PR, and five protected-file
+identities reverified exactly. The implementation now points the active working
+paper to the revised PDF while release builders, verifiers, and readiness
+audits reconstruct Compendium v0.1.0 only from registered source revision
+`3ca173f4e9e81a6d0e3e56205e428c596edc050e`. The immutable registry, dry-run
+record, tag, DOI, and published asset hashes remain unchanged. Focused pointer,
+release, closeout, and review-packet validation passes, as does the complete
+1,064-test wall, active 21-page paper build, and 89-page site build. A correctly
+labeled Round 2 packet is frozen against artifact commit `4fa15aa7...` and
+receipt commit `843e1b58...`; exact final-head validation and fresh isolated
+Research Atlas routing remain next.
+
+The standing-review wrapper and synthetic tests are green. Its exact OpenAI
+Keychain service is absent, so no credential value, provider request, or spend
+occurred. On 2026-08-08 the owner replaced only that blocked API transport with
+one fresh projectless Codex `gpt-5.6-terra` reviewer at medium reasoning. The
+Codex surface receives only the exact revised manuscript, the page-labelled
+21-page PDF text, the frozen Round 2 packet/rubric, and the closed response
+schema; it receives no prior paper or reviewer context, credential, provider
+API, browser state, or spend authority. The review-completion lane may continue
+only if that one result passes exact identity, isolation, schema, requested-
+check, and ordered-page validation. The first task-creation request remained
+nonterminal without returning a task identifier. After cancelling the hung
+orchestration request, the local Codex task registry contained zero matching
+reviewer tasks and zero newly created threads. No prompt reached a reviewer and
+no review or receipt exists. The lane stops without a duplicate dispatch; its
+missing OpenAI reviewer is now a Codex task-control-plane gap rather than an API
+credential gap. The new complete wall is otherwise green through formatting,
+Ruff, strict MyPy, focused tests, and all audits; its full
+pytest stage remains blocked only by an inherited protected deletion of the
+unrelated AO-0004 provider-canary ledger.
+
+## Completed AO-0013 repair; Pages closeout remains open (2026-08-06)
 
 PR #213 merged its exact immutable AO-0012 head as
 `3dc9c66b62dac1d6e407f80755e31631acc8159f`; issue #212 remains open and the
@@ -12,14 +94,14 @@ used its registered historical pilot branch context.
 Issue #218, contract
 `tasks/agent-operations-historical-gate-branch-context-repair.yml`, branch
 `agent/agent-ops-historical-gate-branch-context-repair`, and living plan
-`plans/AGENT_OPERATIONS_HISTORICAL_GATE_BRANCH_CONTEXT_REPAIR.md` own the narrow
-repository-only repair as AO-0013. Only an explicit synthetic branch-context
-seam and its deterministic regressions are permitted; the real live-branch
-guard remains unchanged. The task must pass the complete repository and
-Pages-equivalent wall, open one draft PR, and stop at
-`AOG-AO-0013-PAGES-BRANCH-CONTEXT-REPAIR` before merge.
+`plans/AGENT_OPERATIONS_HISTORICAL_GATE_BRANCH_CONTEXT_REPAIR.md` own AO-0013.
+The exact authorized repair PR #219 squash-merged as
+`7268e445347c4d7f9106d129af42d0e8667eb115`; main CI passed and the Pages
+artifact built, but final deployment run `31110671871` timed out and recorded a
+terminal public deployment failure. Issue #218 remains open. No retry,
+deployment mutation, or administrative closeout belongs to AO-0014.
 
-The RunPod path remains closed and R7 remains consumed. AO-0013 authorizes no
+The RunPod path remains closed and R7 remains consumed. AO-0013 created no
 provider-neutral task, credential, provider, resource, model, inference,
 calibration, spend, private or scientific work, publication, issue #212
 closure, or branch deletion.

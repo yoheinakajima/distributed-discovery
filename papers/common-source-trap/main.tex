@@ -26,21 +26,22 @@
 \begin{abstract}
 When several searchers can use a free common signal or purchase independent
 signals, the group may remain concentrated on the common source even though one
-independent source raises net discovery. This paper studies that wedge in a
+independent source raises net social value. This paper studies that wedge in a
 finite, exact source-choice model. For arbitrary finite team size $N\geq2$, it
 derives each common-to-independent payoff threshold, proves that the thresholds
 are strictly decreasing, and characterizes every weak pure source-count
 equilibrium. The planner thresholds are also explicit. At the all-common
 boundary, an equilibrium/planner wedge exists exactly for
 $p(1-p)(N-1)/N\leq c<p(1-p)$, an interval of width $p(1-p)/N$. Exact
-enumeration for $N=2,\ldots,8$ reproduces the formulas. The result is not a
-universal under-acquisition theorem: at $N=3$, $p=4/5$, and $c=13/375$, the
+enumeration for $N=2,\ldots,8$ reproduces the formulas. The result is not a universal under-acquisition theorem:
+at $N=3$, $p=4/5$, and $c=13/375$, the
 unique equilibrium purchases two independent sources while the planner
 purchases one. The paper uses that counterexample to separate source diversity,
 action diversity, disclosure, and rewards. It relates the theorem to bounded
 mechanism and architecture results and states experimental predictions without
-claiming human evidence. Every numerical table and figure is generated from
-checksum-validated immutable artifacts.
+claiming human evidence. Its finite grids and analytic curves are generated
+from checksum-validated immutable artifacts; companion figures reproduce
+separately registered, non-nested models.
 \end{abstract}
 
 \noindent\textbf{Keywords:} information acquisition; strategic experimentation;
@@ -92,8 +93,9 @@ The model removes social histories, dynamic experimentation, arbitrary signal
 design, and strategic action choice. Those omissions make the theorem auditable;
 they also define its limits.
 
-The first result is a general finite-team threshold characterization. If $k$
-agents currently use independent sources, a common user compares its shared
+The first result is an all-finite-$N$ threshold characterization for the
+homogeneous equal-prize model. If $k$ agents currently use independent sources,
+a common user compares its shared
 prize to the prize it would earn as the $(k+1)$st independent user. The gross
 gain is
 \[
@@ -240,13 +242,17 @@ change localized experimentation \citep{Bernstein2012}. Parallel R\&D and
 uncoordinated-search models likewise make duplication a strategic or algorithmic
 object \citep{BranderAmitAntweiler2002,KormanRodeh2020}. These works use
 different error, timing, and payoff structures. The threshold proved here
-belongs only to the frozen homogeneous equal-prize source-choice game.
+belongs only to the frozen homogeneous equal-prize source-choice game. This
+paper therefore treats its residual mathematical novelty as conditional: a
+targeted review can establish adjacency, but it cannot exclude an equivalent
+finite-count result under different terminology.
 
 \Boundary{The literature review supports adjacency statements, not a novelty
 certificate. Information-acquisition externalities, public-good experimentation,
 costly herding, source-choice coordination, and cognitive division of labor all
-predate this paper. The new claim recorded here is only the exact theorem for the
-declared coverage-and-prize model.}
+predate this paper. The paper's claimed contribution is only the exact theorem
+for the declared coverage-and-prize model; the project makes no verified
+novelty claim.}
 
 \section{Model}
 
@@ -267,6 +273,11 @@ a unit prize is split equally among correct agents. An incorrect agent receives
 zero. The planner's gross discovery is the probability that the target appears
 in the action union. Social net value subtracts the real acquisition cost $kc$
 when $k$ agents use independent sources.
+
+Only the Bernoulli event that a source is correct enters the core payoff and
+coverage formulas. The three-target, symmetric-error specification fixes the
+companion mechanism examples, but the source-count theorem itself does not use
+the number or relative probabilities of incorrect labels.
 
 The source-count representation is lossless because agents of a given type are
 symmetric. Let $k\in\{0,\ldots,N\}$ denote the number of $I$ users and
@@ -294,7 +305,7 @@ The common user receives a prize only if the common draw is correct; then all
 $m=N-k$ common users are correct together and share with $X_k$ correct
 independent users.
 
-For $0<k<N$, an independent user's gross payoff is
+For $0<k\leq N$, an independent user's gross payoff is
 \begin{equation}
  I_k=p\left[(1-p)\E\frac{1}{1+X_{k-1}}
  +p\E\frac{1}{N-k+1+X_{k-1}}\right].
@@ -302,7 +313,7 @@ For $0<k<N$, an independent user's gross payoff is
 \end{equation}
 When the common draw is wrong, the independent winner shares only with correct
 independent peers. When it is correct, the $N-k$ common users join the prize.
-At $k=N$, the second case collapses and
+At $k=N$, the two conditional shares coincide and the expression collapses to
 $I_N=p\E[1/(1+X_{N-1})]$. Net independent payoff is $I_k-c$.
 
 Two accounting checks are useful. First,
@@ -380,8 +391,8 @@ $55/72>2/3$. The wedge is not caused by mistaken Bayesian updating: both source
 laws and payoffs are common knowledge. It comes from prize sharing. The buyer
 pays the full source cost but captures only part of the new union probability.
 
-The name ``Common-Source Trap'' refers to this exact coexistence of a common-
-source equilibrium and a planner preference for at least one independent
+The name ``Common-Source Trap'' refers to this exact coexistence of a
+common-source equilibrium and a planner preference for at least one independent
 source. It does not mean that a common source is intrinsically bad. When cost is
 high, all-common can be both equilibrium and planner optimal. When cost is low,
 private users acquire independence. If robustness, common calibration, or
@@ -410,9 +421,9 @@ Figure \ref{fig:equilibrium-counts} reports the minimum weak-equilibrium count
 at $p=2/3$. At zero cost, the minimum is $N-1$: once all but one users have
 independent sources, the remaining common source is already an independent draw
 and switching the last user is payoff-neutral. Positive costs reduce equilibrium
-acquisition. At larger $N$, however, the count need not fall monotonically for a
-fixed cost in a way that can be summarized by the all-common boundary alone;
-interior prize competition matters.
+acquisition. At larger $N$, the count cannot be inferred from the all-common
+boundary alone; the interior thresholds and prize-sharing comparisons remain
+necessary.
 
 \input{generated/planner-counts.tex}
 
@@ -442,10 +453,14 @@ denote the gross payoff gain before paying $c$. Substituting equations
 \eqref{eq:common-payoff} and \eqref{eq:independent-payoff} and coupling the
 other $k$ independent outcomes gives
 \begin{equation}
- A_k=pq\E\left[\frac{1}{1+X_k}-\frac{1}{N-k+X_k}\right],
- \qquad X_k\sim\operatorname{Binomial}(k,p).
- \label{eq:ak}
+A_k=pq\E\left[\frac{1}{1+X_k}-\frac{1}{N-k+X_k}\right],
+\qquad X_k\sim\operatorname{Binomial}(k,p).
+\label{eq:ak}
 \end{equation}
+
+The ordering is not immediate: adding an independent user changes both the
+binomial winner count and the size of the common block. The coupling below
+holds those changes together and exposes a strictly positive difference kernel.
 
 \paragraph{Theorem 1 (private thresholds and equilibrium counts).}
 For every finite $N\ge2$ and $0<p<1$,
@@ -464,9 +479,9 @@ omitted at $k=0$.
 The characterization follows directly from unilateral deviations. At count
 $k$, a common user does not switch if $c\ge A_k$. An independent user does not
 switch back if $c\le A_{k-1}$, because that reverse deviation compares the same
-two adjacent source-count profiles. Strict threshold ordering then implies a
-unique equilibrium count except at a threshold, where two adjacent counts are
-weak equilibria.
+two adjacent source-count profiles. Strict threshold ordering implies that at
+least one weak equilibrium count exists and that it is unique except at a
+threshold, where two adjacent counts are weak equilibria.
 
 The nontrivial step is monotonicity. Define
 \[
@@ -474,6 +489,12 @@ The nontrivial step is monotonicity. Define
  \qquad m=N-k.
 \]
 Couple $X_{k+1}=X_k+Y$ with $Y\sim\operatorname{Bernoulli}(p)$ independent.
+For $k=0,\ldots,N-2$, set $m=N-k\geq2$. Equation \eqref{eq:ak} and the
+coupling give the exact connection
+\[
+ A_k-A_{k+1}
+ =pq\E\left[f_m(X_k)-f_{m-1}(X_k+Y)\right].
+\]
 Conditional on $X_k=x$,
 \begin{align}
  f_m(x)-\E[f_{m-1}(x+Y)]
@@ -483,14 +504,15 @@ Conditional on $X_k=x$,
 \end{align}
 For $m\ge2$, numerator and denominator are positive. Multiplying by $pq$ and
 averaging proves $A_k>A_{k+1}$ for $k=0,\ldots,N-2$. Equation
-\eqref{eq:ak} gives $A_{N-1}=0$.
+\eqref{eq:ak} separately gives the terminal value $A_{N-1}=0$. For the
+smallest team, this reduces to the hand check $A_0=pq/2>A_1=0$.
 
 The proof is analytic. The DD-008B executable audit instantiates 16,368
 positive-kernel identities through $N=32$, matches 84 independently enumerated
 private and planner margins through $N=5$, reproduces all 126 immutable DD-008A
 classifications, and rejects altered threshold and census artifacts. Those
-checks audit transcription and implementation; they do not replace the positive-
-kernel proof.
+checks audit transcription and implementation; they do not replace the
+positive-kernel proof.
 
 \subsection{Boundary and large-team behavior}
 
@@ -528,9 +550,8 @@ $k\to k+1$ is
 The sequence is strictly decreasing through the positive margins. A planner
 count $k$ is optimal if and only if $B_k\le c\le B_{k-1}$, with the same
 boundary conventions. Thus equilibrium and planner counts are generated by two
-ordered threshold sequences. The source-choice problem is not computationally
-hard once those sequences are known; the economic content lies in their
-differences.
+ordered threshold sequences. The source-choice comparison is encoded by those
+sequences; the economic content lies in their differences.
 
 \paragraph{Corollary 1 (general all-common trap).}
 For every finite $N\ge2$ and $0<p<1$, all-common source use is a weak
@@ -575,9 +596,10 @@ Since the threshold sequences are decreasing, the unique equilibrium count is
 $k=2$ and the unique planner count is $k=1$ (DD-C-0058). Direct target/signal
 enumeration reproduces both payoffs and rejects a corrupted threshold.
 
-The mechanism is rent competition rather than a discovery externality with a
-fixed sign. Moving from one to two independent users changes how a prospective
-buyer shares the prize with common and independent winners. When accuracy is
+The reversal is driven by rent competition, showing that the acquisition
+externality does not have a fixed sign across interior margins. Moving from one
+to two independent users changes how a prospective buyer shares the prize with
+common and independent winners. When accuracy is
 high, avoiding the block of common winners can raise private prize share even
 after the planner's incremental union probability has become small. The exact
 example does not show that over-acquisition is typical. It shows that the phrase
@@ -640,15 +662,18 @@ actions. A joint reward can make truth-telling and differentiated action
 privately attractive. These instruments should not be treated as aliases.
 
 At the all-common boundary, a per-independent-source subsidy $s$ changes the
-private condition to $c-s<A_0$. The smallest strict subsidy is any
-$s>c-A_0$ when $c\ge A_0$. If the planner wants the first independent source,
+private condition to $c-s<A_0$. Strict inducement requires $s>c-A_0$, so the
+infimum required subsidy is $c-A_0$; no smallest strict subsidy exists.
+Inducing exactly one purchase additionally requires $c-s\geq A_1$, whereas
+$s>c-A_0$ establishes only that at least one purchase is privately profitable.
+If the planner wants the first independent source,
 $c<B_0$, then the set of subsidies that strictly induce a unilateral purchase is
 nonempty. This is a local implementation observation, not a budget-balance
 result. Subsidy finance and selection among multiple buyers are outside the
 model.
 
-Assignment is mechanically stronger. A planner can designate exactly $k^star$
-independent users and thereby attain the source-count optimum without changing
+Assignment controls the source count more directly. A planner can designate
+exactly $k^\star$ independent users and thereby attain the source-count optimum without changing
 private source rewards. Yet assignment creates participation and observability
 questions. Can the organization verify that the source is independent? Can it
 observe source cost? Is an assigned user compensated? Does the source remain
@@ -675,6 +700,11 @@ allocation fixture do not describe successive outcomes of one unified game.
 
 \section{Joint truth and allocation mechanisms}
 
+This and the next two sections are a companion-model map, not additional
+evidence for the source-count theorem. They preserve registered qualitative
+implications and bounded outputs, while their primitives and estimands remain
+those of DD-006B, DD-009, and DD-011 rather than the core model above.
+
 Source acquisition is only the first layer of distributed discovery. Once
 evidence exists, agents may report strategically or ignore recommended actions.
 DD-006B studies a separate two-agent, three-target mechanism class with
@@ -687,8 +717,8 @@ recommendation for both fixed tie roles. The maximum exact all-tie margin is
 $13/72$, and truthful differentiated discovery is $11/12$ (DD-C-0053). No weak
 row exists when the target is hidden and actions are observed only through the
 restricted target-hidden/action-hidden regime. These are exact results for the
-registered normalized class, not a dominant-strategy theorem or an arbitrary-
-transfer characterization.
+registered normalized class, not a dominant-strategy theorem or an
+arbitrary-transfer characterization.
 
 The mechanism is also externally subsidized. Minimum strict expected subsidy in
 the best regime is positive, and the Architecture Atlas accounts for transfer
@@ -724,23 +754,32 @@ a universal ranking (DD-C-0054).
 \input{generated/atlas-slice.tex}
 
 The acquisition slice in Figure \ref{fig:atlas-slice} holds two independent
-channels and information cost $1/4$ fixed. Direct private action yields discovery
+channels and total information cost $1/4$ across both channels fixed. Direct
+private action yields discovery
 $8/9$. Sequential action or planner-style differentiated allocation yields
 $11/12$. Pooling followed by consensus collapses discovery back to $2/3$
 despite the independent sources. This is the source/action distinction in its
 clearest form: acquiring independent evidence is not sufficient if the action
 protocol compresses it.
 
-Reward changes can also alter accounting without changing discovery. A sole-
-rescue or marginal-coverage transfer can use budget while preserving the same
+Figure \ref{fig:atlas-slice}'s ``net value'' follows the registered DD-009
+Atlas convention: discovery minus total information cost minus any external
+transfer budget. Thus A210 subtracts its $7/4$ DD-006B subsidy, whereas
+equation \eqref{eq:welfare} treats the core unit prize as an internal transfer.
+The columns are exact within their respective models but are not one
+commensurable welfare ranking.
+
+Reward changes can also alter accounting without changing discovery. A
+sole-rescue or marginal-coverage transfer can use budget while preserving the same
 direct actions. The DD-006A row weakly supports truth and obedience with zero
 recorded transfer budget under its restricted accounting; the DD-006B row is
 strict but carries a large external budget. Those rows are not ordered by one
 score. The Atlas retains discovery, social net value, transfer budget,
 truthfulness, obedience, action quality, and operating quantities separately.
 
-The Atlas also prevents favorable cherry-picking. A claim that ``independent
-evidence plus pooling works'' must specify the allocation rule. A claim that a
+The Atlas makes favorable cherry-picking within its declared architecture space
+more visible. A claim that ``independent evidence plus pooling works'' must
+specify the allocation rule. A claim that a
 joint mechanism is preferable must include its subsidy and observability. A
 claim that sequential action improves discovery must report expected rounds and
 actions. The relevant architecture is a tuple, not a label.
@@ -753,11 +792,12 @@ model proves that downstream behavior does not feed back into source payoffs.
 
 \section{Experimental predictions}
 
-DD-011 translates the project's exact mechanisms into a preregistration-ready
-synthetic design. The selected design has 20 treatment cells spanning acquisition,
-attribution, disclosure, action timing, and rewards. It registers eight
-hypotheses, fifteen outcomes, eight explicit synthetic response scenarios, and
-six sample sizes. A seeded 384,000-draw Monte Carlo run reports conditional power
+DD-011 translates the project's exact mechanisms into a candidate synthetic preregistration package.
+The selected design has 20 treatment cells spanning
+acquisition, attribution, disclosure, action timing, and rewards. It registers
+eight hypotheses---six primary and two secondary---fifteen outcomes, eight
+explicit synthetic response scenarios, and six sample sizes. A seeded
+384,000-draw Monte Carlo run reports conditional power
 and minimum detectable effects; a separate verifier recreates every random
 stream (DD-C-0056).
 
@@ -775,11 +815,14 @@ the latter rewards diverse actions.
 
 The exact model does not supply behavioral effect sizes. DD-011 therefore uses
 declared synthetic assumptions rather than treating theorem differences as human
-treatment effects. Under its rational synthetic scenario, all eight assumed
-effects reach estimated power at least $0.80$ by total sample size 960, while 140
-of 192 rows at sample sizes 640 or greater remain retained calibration failures
-across all scenarios. Those failures are evidence about sensitivity of the
-simulation design, not evidence that a real experiment is infeasible.
+treatment effects. Under its favorable rational synthetic scenario, all eight
+assumed effects reach estimated power at least $0.80$ by total sample size 960.
+Separately, a retained calibration failure is a registered
+scenario--hypothesis row whose estimated power remains below $0.80$ at a
+registered sample size of 640, 800, or 960. Across all scenarios, 140 of those
+192 large-sample rows fail that criterion. Those failures diagnose sensitivity
+of the synthetic assumptions; they neither estimate human power nor establish
+that a real experiment is infeasible.
 
 Several observations would be especially informative. If participants acquire
 more independence than the planner benchmark in high-accuracy interior cells,
@@ -792,8 +835,11 @@ acquisition incentives.
 
 \Boundary{No participants were recruited. No human data were collected. No
 experiment was conducted. Separate ethics and institutional review are required
-before deployment. The materials are an unsubmitted preregistration-ready kit,
-not a preregistration or a claim of empirical power.}
+before deployment. The materials are an unsubmitted candidate preregistration
+package, not a preregistration, an externally reviewed protocol, or a claim of
+empirical power. Figure \ref{fig:experiment-map}'s inherited
+``preregistration-ready'' label denotes the presence of registered materials,
+not an owner decision that the design is ready to deploy.}
 
 \section{Limitations}
 
@@ -854,8 +900,9 @@ for the registered mechanism, not ownership of a field or universal phenomenon.
 
 \section{Conclusion}
 
-The Common-Source Trap has a precise general boundary. In the frozen finite-team
-model, a prospective independent-source buyer compares two expected reciprocal
+The Common-Source Trap has a precise all-common boundary in the frozen model.
+In that finite-team model, a prospective independent-source buyer compares two
+expected reciprocal
 prize shares. Those gross gains form a strictly decreasing sequence, yielding a
 complete weak pure equilibrium-count characterization. Planner gains are the
 declining increments of union discovery. At the first-source boundary, the two
@@ -884,11 +931,10 @@ but no single mechanism solves all layers under all constraints.
 The practical research standard is therefore explicitness: declare the source
 law, cost, information boundary, action technology, reward, equilibrium
 selection, and social objective; preserve exact and negative results; and test
-each intervention at the layer it changes. Under that discipline, the Common-
-Source Trap is neither a slogan that common information is bad nor a universal under-acquisition theorem.
-It is an auditable mechanism linking private source
-choice to collective discovery.
-In particular, it is not a universal under-acquisition theorem.
+each intervention at the layer it changes. Under that discipline, the
+Common-Source Trap is an auditable mapping from private source choice to collective
+discovery, with an exact all-common boundary and an explicit interior
+counterboundary.
 
 \appendix
 \section{Proof details}
@@ -1064,11 +1110,14 @@ provider labels. It would replace the anonymous count $k$ by a profile of source
 qualities and could reveal sorting or asymmetric free-riding. The most direct
 institutional extension combines verifiable source assignment with the joint
 truth-and-allocation mechanism, including a balanced-budget constraint. The
-most direct empirical extension uses DD-011's preregistration-ready cells after
+most direct empirical extension uses DD-011's candidate preregistration cells after
 ethics review, pilot calibration, and an explicit mapping from experimental
 actions to source independence. None of those extensions is executed or claimed
 here; the table makes their proof and evidence obligations inspectable.
 
+\begingroup
+\small
 \bibliographystyle{plainnat}
 \bibliography{generated/references}
+\endgroup
 \end{document}
