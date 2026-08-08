@@ -41,6 +41,9 @@ OPENAI_KEYCHAIN_SERVICE = "com.yoheinakajima.chief-of-staff.openai-reviewer"
 OPENAI_MODEL = "gpt-5.6-terra"
 OPENAI_REASONING_EFFORT = "medium"
 OPENAI_RESPONSES_URL = "https://api.openai.com/v1/responses"
+CODEX_REVIEWER_SYSTEM = "openai-codex-isolated-reviewer"
+CODEX_MODEL = "gpt-5.6-terra"
+CODEX_REASONING_EFFORT = "medium"
 MAX_PROMPT_BYTES = 170_000
 MAX_OUTPUT_TOKENS = 3_000
 MAX_COST_USD = 1.0
@@ -265,7 +268,13 @@ def build_frozen_review_input(root: Path = ROOT) -> FrozenReviewInput:
     )
 
 
-def _review_schema(frozen: FrozenReviewInput) -> dict[str, Any]:
+def _review_schema(
+    frozen: FrozenReviewInput,
+    *,
+    reviewer_system: str = "openai-responses-chatgpt-replacement",
+    model: str = OPENAI_MODEL,
+    reasoning_effort: str = OPENAI_REASONING_EFFORT,
+) -> dict[str, Any]:
     """Return the strict model-output schema; envelope provenance is measured locally."""
 
     finding = {
@@ -300,9 +309,9 @@ def _review_schema(frozen: FrozenReviewInput) -> dict[str, Any]:
         "type": "object",
         "additionalProperties": False,
         "properties": {
-            "reviewer_system": {"type": "string", "const": "openai-responses-chatgpt-replacement"},
-            "model": {"type": "string", "const": OPENAI_MODEL},
-            "reasoning_effort": {"type": "string", "const": OPENAI_REASONING_EFFORT},
+            "reviewer_system": {"type": "string", "const": reviewer_system},
+            "model": {"type": "string", "const": model},
+            "reasoning_effort": {"type": "string", "const": reasoning_effort},
             "packet_id": {"type": "string", "const": frozen.packet_id},
             "artifact_commit": {"type": "string", "const": frozen.artifact_commit},
             "manuscript_sha256": {"type": "string", "const": frozen.manuscript_sha256},
@@ -338,6 +347,106 @@ def _review_schema(frozen: FrozenReviewInput) -> dict[str, Any]:
             "limitations",
         ],
     }
+
+
+def build_codex_review_prompt(frozen: FrozenReviewInput) -> str:
+    """Bind one projectless Codex reviewer to the same frozen closed contract."""
+
+    schema = _review_schema(
+        frozen,
+        reviewer_system=CODEX_REVIEWER_SYSTEM,
+        model=CODEX_MODEL,
+        reasoning_effort=CODEX_REASONING_EFFORT,
+    )
+    prompt = "\n\n".join(
+        (
+            "You are the single fresh, isolated OpenAI reviewer for Common-Source Trap "
+            "Round 2. You are projectless and must use only the inputs below. Do not use "
+            "prior paper or reviewer context, tools, browser state, connectors, network "
+            "retrieval, or other sessions. Inspect all 21 page-labelled pages explicitly.",
+            frozen.prompt,
+            "Return exactly one JSON object and no Markdown or surrounding prose. It must "
+            "validate against this closed JSON Schema, including all eight requested checks "
+            "in their frozen order and exactly 21 ordered nonempty page notes:",
+            json.dumps(schema, sort_keys=True, separators=(",", ":")),
+        )
+    )
+    if len(prompt.encode("utf-8")) > MAX_PROMPT_BYTES:
+        raise PreflightError("codex-prompt-byte-cap-exceeded")
+    return prompt
+
+
+def validate_codex_review_output(output_text: str, frozen: FrozenReviewInput) -> dict[str, Any]:
+    """Validate one projectless Codex final response against the frozen contract."""
+
+    try:
+        review = json.loads(output_text)
+    except json.JSONDecodeError as error:
+        raise QualificationError("codex-response-nonqualifying") from error
+    if not isinstance(review, dict):
+        raise QualificationError("codex-response-nonqualifying")
+    schema = _review_schema(
+        frozen,
+        reviewer_system=CODEX_REVIEWER_SYSTEM,
+        model=CODEX_MODEL,
+        reasoning_effort=CODEX_REASONING_EFFORT,
+    )
+    try:
+        jsonschema.Draft202012Validator(schema).validate(review)
+    except jsonschema.ValidationError as error:
+        raise QualificationError("codex-response-nonqualifying") from error
+    if tuple(review["requested_checks"]) != REQUESTED_CHECKS:
+        raise QualificationError("codex-response-nonqualifying")
+    notes = review["page_notes"]
+    if not isinstance(notes, list) or len(notes) != frozen.page_count:
+        raise QualificationError("codex-response-nonqualifying")
+    if [note.get("page") for note in notes] != list(range(1, frozen.page_count + 1)):
+        raise QualificationError("codex-response-nonqualifying")
+    if any(not isinstance(note.get("note"), str) or not note["note"].strip() for note in notes):
+        raise QualificationError("codex-response-nonqualifying")
+    return review
+
+
+def write_codex_review_receipt(
+    output_text: str,
+    *,
+    thread_id: str,
+    receipt_root: Path | None = None,
+    clock: Clock = _utc_now,
+) -> ReviewOutcome:
+    """Write one private receipt after local validation of an isolated Codex review."""
+
+    if not thread_id.strip():
+        raise PreflightError("codex-thread-id-missing")
+    frozen = build_frozen_review_input(ROOT)
+    review = validate_codex_review_output(output_text, frozen)
+    observed_at = clock().astimezone(UTC).isoformat()
+    receipt_id = "cst-r2-codex-" + hashlib.sha256(thread_id.encode()).hexdigest()[:16]
+    payload = {
+        "schema_version": "common-source-trap-codex-review-receipt-v1",
+        "status": "qualifying",
+        "reviewer_surface": "codex-projectless",
+        "thread_id": thread_id,
+        "observed_at_utc": observed_at,
+        "artifact_commit": frozen.artifact_commit,
+        "packet_id": frozen.packet_id,
+        "packet_sha256": frozen.packet_sha256,
+        "manuscript_sha256": frozen.manuscript_sha256,
+        "pdf_sha256": frozen.pdf_sha256,
+        "page_count": frozen.page_count,
+        "provider_calls": 0,
+        "spend_usd": "0",
+        "review": review,
+    }
+    target_root = receipt_root or _private_receipt_root()
+    _, receipt_sha256 = _write_private_receipt(target_root, receipt_id, payload)
+    return ReviewOutcome(
+        status="qualifying",
+        receipt_id=receipt_id,
+        receipt_sha256=receipt_sha256,
+        provider_calls=0,
+        cost_upper_bound_usd="0",
+    )
 
 
 def build_openai_request(frozen: FrozenReviewInput) -> dict[str, Any]:

@@ -185,6 +185,19 @@ scientific evidence and authorizes no manuscript merge or publication.
 - [x] Check only the exact OpenAI reviewer Keychain service after local
   validation. It is absent; preserve this as a no-contact, no-spend blocker and
   require owner credential setup outside this task before any execution.
+- [x] Receive the additive owner direction replacing only the blocked OpenAI
+  API transport with one fresh projectless Codex `gpt-5.6-terra` reviewer at
+  medium reasoning; preserve the absent-key checkpoint and every excluded or
+  ambiguous prior review.
+- [x] Implement and validate the Codex-specific frozen prompt, exact reviewer
+  identity, closed schema, all-eight-check, ordered-21-page, isolation, and
+  private mode-0600 receipt seam with synthetic success and corruption tests.
+- [ ] Create exactly one fresh isolated projectless Codex reviewer task and
+  accept it only if the complete final response qualifies; never create a
+  replacement task after any submitted result.
+- [ ] If and only if it qualifies, complete the genuinely missing Claude and
+  Gemini reviews, synthesize the four-review bundle once, deliver it to the
+  writer all at once, and perform the one bounded evidence-bound revision.
 - [x] Run the complete verification wall until its inherited protected-file
   blocker, then rerun its recorded final failure in isolation and preserve the
   exact file-absence cause without repair or cleanup.
@@ -410,6 +423,30 @@ scientific evidence and authorizes no manuscript merge or publication.
   based on `main`, headed by the exact branch SHA, and retains `Tracks #220`.
   No protected dirty entry was staged, and no credential, provider, or spend
   surface was used after the recorded absent-entry stop.
+- 2026-08-08: The owner directed the lane to continue without the missing
+  OpenAI API key by replacing only the blocked transport with exactly one fresh
+  projectless Codex `gpt-5.6-terra` reviewer at medium reasoning. This is a new
+  isolated same-provider-equivalent reviewer surface, not a retry or resend.
+  The prior API blocker remains true and no credential setup is authorized.
+  Additive contract
+  `tasks/common-source-trap-codex-reviewer-completion-r4.yml` preserves the
+  exact Round 2 packet and all merge, publication, scientific, and protected-
+  worktree boundaries.
+- 2026-08-08: The initial Codex transport implementation passes Ruff, strict
+  MyPy, and 21 focused review/packet tests. Its prompt contains only the exact
+  frozen packet, revised source, page-labelled PDF text, and a surface-specific
+  closed JSON Schema. Synthetic tests require exact model/reasoning/surface
+  identity and ordered nonempty notes for all 21 pages before a mode-0600
+  private receipt can be written.
+- 2026-08-08T04:16:18Z: The projectless Codex task-creation request remained
+  nonterminal and never returned a task identifier. Repeated observation found
+  no reviewer task. The orchestration request was cancelled, then a direct
+  read-only query of the local Codex task registry found zero exact prompt
+  matches and zero threads newer than the pre-dispatch registry head. No
+  reviewer prompt was delivered, no review ran, and no receipt exists. Do not
+  issue a duplicate creation request while the dispatch surface is unresolved.
+  This preserves the one-task/no-duplicate rule and leaves the required OpenAI
+  reviewer slot unfilled without reverting to the missing API key.
 
 ## Validation strategy
 

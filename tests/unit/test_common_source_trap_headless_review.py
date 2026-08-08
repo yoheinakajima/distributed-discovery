@@ -36,6 +36,14 @@ def _valid_review(frozen: editorial_review.FrozenReviewInput) -> dict[str, Any]:
     }
 
 
+def _valid_codex_review(frozen: editorial_review.FrozenReviewInput) -> dict[str, Any]:
+    review = _valid_review(frozen)
+    review["reviewer_system"] = editorial_review.CODEX_REVIEWER_SYSTEM
+    review["model"] = editorial_review.CODEX_MODEL
+    review["reasoning_effort"] = editorial_review.CODEX_REASONING_EFFORT
+    return review
+
+
 def _valid_response(frozen: editorial_review.FrozenReviewInput) -> dict[str, Any]:
     return {
         "id": "resp_synthetic_001",
@@ -90,6 +98,53 @@ def test_request_is_single_call_strict_schema_and_tool_free() -> None:
     assert response_format["strict"] is True
     assert response_format["schema"]["additionalProperties"] is False
     assert "page_notes" in response_format["schema"]["required"]
+
+
+def test_codex_prompt_is_frozen_closed_schema_and_context_isolated() -> None:
+    frozen = editorial_review.build_frozen_review_input(ROOT)
+    prompt = editorial_review.build_codex_review_prompt(frozen)
+    assert editorial_review.CODEX_REVIEWER_SYSTEM in prompt
+    assert editorial_review.CODEX_MODEL in prompt
+    assert "projectless" in prompt
+    assert "exactly 21 ordered nonempty page notes" in prompt
+    assert "RENDERED PDF PAGE 1 OF 21" in prompt
+    assert "RENDERED PDF PAGE 21 OF 21" in prompt
+    assert "prior paper or reviewer context" in prompt
+
+
+def test_codex_review_writes_private_receipt_without_provider_activity(tmp_path: Path) -> None:
+    frozen = editorial_review.build_frozen_review_input(ROOT)
+    outcome = editorial_review.write_codex_review_receipt(
+        json.dumps(_valid_codex_review(frozen)),
+        thread_id="019f-synthetic-isolated-cst-review",
+        receipt_root=tmp_path,
+        clock=lambda: datetime(2026, 8, 8, tzinfo=UTC),
+    )
+    assert outcome.status == "qualifying"
+    assert outcome.provider_calls == 0
+    assert outcome.cost_upper_bound_usd == "0"
+    receipt_path = tmp_path / f"{outcome.receipt_id}.json"
+    assert stat.S_IMODE(receipt_path.stat().st_mode) == 0o600
+    receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+    assert receipt["reviewer_surface"] == "codex-projectless"
+    assert receipt["review"]["model"] == editorial_review.CODEX_MODEL
+    assert receipt["review"]["page_notes"][-1]["page"] == 21
+
+
+def test_codex_review_rejects_identity_schema_and_page_coverage_drift(tmp_path: Path) -> None:
+    frozen = editorial_review.build_frozen_review_input(ROOT)
+    invalid = _valid_codex_review(frozen)
+    invalid["model"] = "gpt-5.6-sol"
+    with pytest.raises(editorial_review.QualificationError):
+        editorial_review.write_codex_review_receipt(
+            json.dumps(invalid), thread_id="wrong-model", receipt_root=tmp_path
+        )
+    invalid = _valid_codex_review(frozen)
+    invalid["page_notes"].pop()
+    with pytest.raises(editorial_review.QualificationError):
+        editorial_review.write_codex_review_receipt(
+            json.dumps(invalid), thread_id="missing-page", receipt_root=tmp_path
+        )
 
 
 def test_success_writes_private_complete_receipt_and_clears_key(tmp_path: Path) -> None:

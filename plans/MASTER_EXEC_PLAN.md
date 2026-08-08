@@ -64,10 +64,23 @@ Research Atlas routing remain next.
 
 The standing-review wrapper and synthetic tests are green. Its exact OpenAI
 Keychain service is absent, so no credential value, provider request, or spend
-occurred and the replacement-review sequence stops at owner credential setup.
-The new complete wall is otherwise green through formatting, Ruff, strict MyPy,
-focused tests, and all audits; its full pytest stage remains blocked only by an
-inherited protected deletion of the unrelated AO-0004 provider-canary ledger.
+occurred. On 2026-08-08 the owner replaced only that blocked API transport with
+one fresh projectless Codex `gpt-5.6-terra` reviewer at medium reasoning. The
+Codex surface receives only the exact revised manuscript, the page-labelled
+21-page PDF text, the frozen Round 2 packet/rubric, and the closed response
+schema; it receives no prior paper or reviewer context, credential, provider
+API, browser state, or spend authority. The review-completion lane may continue
+only if that one result passes exact identity, isolation, schema, requested-
+check, and ordered-page validation. The first task-creation request remained
+nonterminal without returning a task identifier. After cancelling the hung
+orchestration request, the local Codex task registry contained zero matching
+reviewer tasks and zero newly created threads. No prompt reached a reviewer and
+no review or receipt exists. The lane stops without a duplicate dispatch; its
+missing OpenAI reviewer is now a Codex task-control-plane gap rather than an API
+credential gap. The new complete wall is otherwise green through formatting,
+Ruff, strict MyPy, focused tests, and all audits; its full
+pytest stage remains blocked only by an inherited protected deletion of the
+unrelated AO-0004 provider-canary ledger.
 
 ## Completed AO-0013 repair; Pages closeout remains open (2026-08-06)
 
