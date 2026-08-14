@@ -100,5 +100,21 @@ execution_checkpoint:
       retry_permitted: false
       qualifying_slot_filled: false
       failure_detail_public: false
-    google: {provider_calls: 0, qualifying_slot_filled: false}
-    bundle_status: incomplete
+    google:
+      requested_model: gemini-3.1-pro-preview
+      requested_thinking_level: medium
+      provider_calls: 1
+      terminal_status: provider-rejected-http-400
+      private_receipt_sha256: fe9878d990921d64f180ba421aa000f0de5948aeaa025b3e4ebfa4487f14cd66
+      actual_usage_and_cost_reconstructable: false
+      conservative_preflight_maximum_usd: "0.36242800"
+      retry_permitted: false
+      qualifying_slot_filled: false
+      provider_body_public: false
+    total_new_provider_calls: 2
+    actual_incremental_spend_usd: unknown
+    conservative_maximum_incremental_spend_usd: "0.71825600"
+    qualifying_slots: [openai-codex-replacement, grok]
+    unfilled_slots: [claude, gemini]
+    bundle_status: threshold-failed-owner-decision-required
+    synthesis_or_writer_authority_reached: false

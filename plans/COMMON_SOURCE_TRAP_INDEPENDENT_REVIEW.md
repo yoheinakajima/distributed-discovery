@@ -96,6 +96,16 @@ scientific evidence and authorizes no manuscript merge or publication.
   unreconstructable; preserve USD 0.355828 as the prospective maximum and do
   not infer a lower value. A local-only additive repair now retains future
   nonqualifying provider envelopes only inside the mode-0600 private receipt.
+- At `2026-08-14T02:34:06Z`, after committing that receipt-only repair and
+  revalidating exact local/remote/PR head `7b2469d4...`, frozen input, no prior
+  Google receipt, configured exact Gemini Keychain service, no tools, 21 pages,
+  and the USD 0.362428 maximum, the sole Google call returned HTTP 400. The
+  private redacted receipt SHA-256 is
+  `fe9878d990921d64f180ba421aa000f0de5948aeaa025b3e4ebfa4487f14cd66`.
+  No usable review, usage, or billing record exists. Do not retry or infer a
+  provider-side cause from the redacted status. Across both calls, actual spend
+  is unknown and the conservative combined maximum is USD 0.718256. Claude
+  and Gemini remain unfilled; Codex and Grok remain the only qualifying slots.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -230,6 +240,11 @@ scientific evidence and authorizes no manuscript merge or publication.
 - [x] Execute the Claude slot exactly once after exact preflight. Preserve its
   clearly delivered nonqualifying receipt and no-retry stop; do not count it
   toward the four-review threshold.
+- [x] Execute the Gemini slot exactly once after exact preflight. Preserve its
+  HTTP-400 rejection receipt and no-retry stop; do not count it toward the
+  four-review threshold.
+- [x] Stop the complete-bundle lane before synthesis, writer handoff, or
+  manuscript mutation because only two of four required reviews qualify.
 - [x] Run the complete verification wall until its inherited protected-file
   blocker, then rerun its recorded final failure in isolation and preserve the
   exact file-absence cause without repair or cleanup.
@@ -537,6 +552,13 @@ scientific evidence and authorizes no manuscript merge or publication.
   not authority for a retry. Fix only future failure capture and add a
   synthetic regression before the independent Gemini call; retain the Claude
   slot as unfilled and the complete-bundle gate as locked.
+- 2026-08-14: The Gemini API returned a fixed public-safe HTTP-400 rejection.
+  The wrapper intentionally did not expose or publish the provider body and no
+  usable review or usage record exists. Treat the slot as consumed and
+  nonqualifying, retain the USD 0.362428 prospective maximum, and do not retry,
+  substitute models, or infer a transport/schema cause without a fresh owner-
+  governed investigation. Because only Codex and Grok qualify, no synthesis or
+  writer action is authorized from this Round 2 state.
 
 ## Validation strategy
 

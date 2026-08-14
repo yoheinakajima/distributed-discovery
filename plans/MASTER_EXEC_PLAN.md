@@ -110,6 +110,16 @@ maximum as the only defensible spend bound. The Claude slot remains unfilled,
 so synthesis and manuscript revision remain locked regardless of the later
 Gemini result.
 
+The sole Google call was then clearly rejected at HTTP 400 before a usable
+review or usage record. It is also consumed and cannot be retried. Its private
+receipt proves the call, status, and frozen binding without publishing the
+provider body. Actual incremental spend across the two calls is unknown; the
+combined prospective maximum is USD 0.718256, safely below both per-call and
+aggregate caps. Only the Codex and Grok reviews qualify. The four-review
+threshold failed, so the standing lane stops before synthesis, writer handoff,
+manuscript revision, PR readiness, merge, or publication and requires a new
+owner decision for any replacement-review strategy.
+
 ## Completed AO-0013 repair; Pages closeout remains open (2026-08-06)
 
 PR #213 merged its exact immutable AO-0012 head as
