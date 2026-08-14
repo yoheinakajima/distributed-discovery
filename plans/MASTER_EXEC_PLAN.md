@@ -5,7 +5,7 @@
 Issue #220, branch `agent/common-source-trap-review-packet`, and living plan
 `plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md` own the sole substantive lane.
 The active additive contract is
-`tasks/common-source-trap-round2-standing-review-completion-r3.yml`, which
+`tasks/common-source-trap-codex-reviewer-completion-r4.yml`, which
 records the owner’s 2026-08-07 standing paper-review authorization without
 weakening the frozen Round 2 packet or any publication boundary.
 The task freezes exact current-main manuscript, PDF, receipt, evidence, and
@@ -81,6 +81,17 @@ credential gap. The new complete wall is otherwise green through formatting,
 Ruff, strict MyPy, focused tests, and all audits; its full
 pytest stage remains blocked only by an inherited protected deletion of the
 unrelated AO-0004 provider-canary ledger.
+
+On 2026-08-14, a fresh preflight reconfirmed zero matching reviewer tasks, zero
+private Codex receipts, exact local/remote/draft-PR head `02864da7`, the frozen
+source/PDF/packet hashes, all 21 pages, the closed response schema, and zero
+incremental Codex spend. Exactly one projectless `gpt-5.6-terra` task at medium
+reasoning then completed in one turn. Its private response qualifies against
+all eight requested checks and all 21 ordered page notes; the receipt remains
+outside Git and only its hash is public. The four-review bundle remains
+incomplete because the genuine Claude and Gemini slots are still outstanding.
+No synthesis, writer handoff, manuscript edit, or later provider call is
+permitted from this checkpoint.
 
 ## Completed AO-0013 repair; Pages closeout remains open (2026-08-06)
 

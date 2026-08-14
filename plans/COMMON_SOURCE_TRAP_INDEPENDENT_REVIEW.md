@@ -192,7 +192,7 @@ scientific evidence and authorizes no manuscript merge or publication.
 - [x] Implement and validate the Codex-specific frozen prompt, exact reviewer
   identity, closed schema, all-eight-check, ordered-21-page, isolation, and
   private mode-0600 receipt seam with synthetic success and corruption tests.
-- [ ] Create exactly one fresh isolated projectless Codex reviewer task and
+- [x] Create exactly one fresh isolated projectless Codex reviewer task and
   accept it only if the complete final response qualifies; never create a
   replacement task after any submitted result.
 - [ ] If and only if it qualifies, complete the genuinely missing Claude and
@@ -447,6 +447,27 @@ scientific evidence and authorizes no manuscript merge or publication.
   issue a duplicate creation request while the dispatch surface is unresolved.
   This preserves the one-task/no-duplicate rule and leaves the required OpenAI
   reviewer slot unfilled without reverting to the missing API key.
+- 2026-08-14T01:58:25Z: The resumed preflight passed at exact local, remote,
+  and open/draft PR head `02864da76fe82b449179543e99c5a8e48bf63083`.
+  The local task registry and private receipt namespace each contained zero
+  matching Codex reviews; the source, PDF, and packet hashes recomputed; the
+  no-contact preflight reported 21 pages; Ruff, strict MyPy, 21 focused tests,
+  Agent Operations, and program-memory audits passed. The frozen Codex prompt
+  was 149,494 bytes with SHA-256 `f0718de14763c9cc58f35547c770ce8a1a87c0538f4e21c5bdbcab0f8901101b`.
+- 2026-08-14T01:58:25Z: Exactly one fresh projectless Codex reviewer using
+  `gpt-5.6-terra` at medium reasoning completed in one turn. Local validation
+  accepted the exact model/surface/packet/artifact identities, all eight checks,
+  and 21 ordered nonempty page notes. A mode-0600 private qualifying receipt
+  exists outside Git with SHA-256
+  `43212eda8e14dedc6e25745c404f4d4f01b3da5639f1cf24466a4559d20e00d2`.
+  No credential, provider API, browser, retry, duplicate task, or spend was
+  used. Preserve the raw review until the complete four-review bundle; do not
+  expose its finding or edit the manuscript from this partial bundle.
+- 2026-08-14: The Round 2 bundle remains incomplete. The OpenAI replacement and
+  preserved Grok slots qualify; the genuine Claude and Gemini slots remain
+  outstanding. Stop before synthesis, writer handoff, manuscript edit, PR
+  readiness, merge, or publication until both missing slots qualify under a
+  separately executable bounded surface.
 
 ## Validation strategy
 
