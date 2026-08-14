@@ -559,6 +559,14 @@ scientific evidence and authorizes no manuscript merge or publication.
   substitute models, or infer a transport/schema cause without a fresh owner-
   governed investigation. Because only Codex and Grok qualify, no synthesis or
   writer action is authorized from this Round 2 state.
+- 2026-08-14: The first pushed R5 CI-history repair made all frozen Git objects
+  available, but both Linux validation jobs still failed in the provider-
+  wrapper unit suite because the clean runner lacked `pdftotext`. The local
+  clean-checkout wall had Poppler installed and therefore did not expose this
+  environment gap. Reuse the exact `poppler-utils` installation already
+  present in the repository's paper-build workflow and extend the CI setup
+  regression; do not replace PDF page extraction, weaken 21-page coverage, or
+  change a frozen artifact.
 
 ## Validation strategy
 

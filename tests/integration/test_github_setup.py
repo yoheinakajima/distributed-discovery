@@ -63,6 +63,9 @@ def test_github_setup_defaults_to_offline_dry_run() -> None:
 
 def test_ci_fetches_history_for_commit_bound_review_packets() -> None:
     workflow = yaml.safe_load((ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8"))
-    checkout = workflow["jobs"]["validate"]["steps"][0]
+    steps = workflow["jobs"]["validate"]["steps"]
+    checkout = steps[0]
     assert checkout["uses"] == "actions/checkout@v7"
     assert checkout["with"]["fetch-depth"] == 0
+    commands = [step.get("run", "") for step in steps]
+    assert any("apt-get install --yes poppler-utils" in command for command in commands)
