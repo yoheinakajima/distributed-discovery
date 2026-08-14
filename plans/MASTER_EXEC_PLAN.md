@@ -120,6 +120,15 @@ threshold failed, so the standing lane stops before synthesis, writer handoff,
 manuscript revision, PR readiness, merge, or publication and requires a new
 owner decision for any replacement-review strategy.
 
+The deterministic repository repair is complete at implementation head
+`ff4d618309663f0062a264b53b8702a9218f666e`: CI fetches full history and
+installs the same Poppler dependency used by paper builds. A clean checkout
+passes 1,088 tests, all audits, exact Compendium reconstruction, the 21-page
+paper build, and the 89-page site build; both GitHub validation jobs and the
+build job pass. PR #221 remains draft and issue #220 remains open. The next
+gate is an owner decision on the failed two-of-four reviewer threshold, not a
+technical retry under the consumed standing slots.
+
 ## Completed AO-0013 repair; Pages closeout remains open (2026-08-06)
 
 PR #213 merged its exact immutable AO-0012 head as

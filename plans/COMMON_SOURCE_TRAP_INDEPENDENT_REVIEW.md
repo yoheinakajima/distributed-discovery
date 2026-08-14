@@ -245,6 +245,12 @@ scientific evidence and authorizes no manuscript merge or publication.
   four-review threshold.
 - [x] Stop the complete-bundle lane before synthesis, writer handoff, or
   manuscript mutation because only two of four required reviews qualify.
+- [x] Run the complete clean-checkout validation wall at final implementation
+  head `ff4d6183...`: formatting, Ruff, strict MyPy, all 1,088 tests, claims,
+  51 run manifests, every editorial/governance/publication/release audit,
+  exact Compendium v0.1.0 reconstruction, the 21-page Common-Source Trap build,
+  and the 89-page site build pass. Both GitHub validation jobs and the build
+  job pass at that exact head.
 - [x] Run the complete verification wall until its inherited protected-file
   blocker, then rerun its recorded final failure in isolation and preserve the
   exact file-absence cause without repair or cleanup.
@@ -567,6 +573,14 @@ scientific evidence and authorizes no manuscript merge or publication.
   present in the repository's paper-build workflow and extend the CI setup
   regression; do not replace PDF page extraction, weaken 21-page coverage, or
   change a frozen artifact.
+- 2026-08-14: Adding the repository's existing `poppler-utils` setup to the CI
+  validation job resolved the clean-runner dependency without changing the
+  extractor, paper, packet, or response contract. Final GitHub runs
+  `31764591789` and `31764594370` passed validation and run `31764594499`
+  passed the paper/site build at implementation head `ff4d6183...`. A clean
+  detached checkout independently passed `make verify` with 1,088 tests, then
+  rebuilt the exact 21-page PDF `ab53c6e4...` and 89-page site with no tracked
+  diff.
 
 ## Validation strategy
 
@@ -614,6 +628,12 @@ scientific evidence and authorizes no manuscript merge or publication.
   the owner establishes the missing exact Keychain credential and the
   aggregate-spend bound verifies after the local validation wall.
 - Manuscript merge and every publication action remain unauthorized.
+- Round 2 now has only two qualifying reviews: the isolated Codex replacement
+  and preserved Grok review. The one authorized Anthropic call was
+  nonqualifying and the one authorized Gemini call was rejected at HTTP 400;
+  both are consumed and nonreusable. A fresh owner decision and additive
+  contract are required to abandon Round 2 or define any new same-provider
+  replacement-review strategy. No synthesis or manuscript revision is due.
 
 ## Recovery and restart instructions
 
