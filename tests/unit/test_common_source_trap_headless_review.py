@@ -44,6 +44,66 @@ def _valid_codex_review(frozen: editorial_review.FrozenReviewInput) -> dict[str,
     return review
 
 
+def _valid_named_review(
+    frozen: editorial_review.FrozenReviewInput,
+    *,
+    reviewer_system: str,
+    model: str,
+    effort: str,
+) -> dict[str, Any]:
+    review = _valid_review(frozen)
+    review["reviewer_system"] = reviewer_system
+    review["model"] = model
+    review["reasoning_effort"] = effort
+    return review
+
+
+def _valid_anthropic_response(frozen: editorial_review.FrozenReviewInput) -> dict[str, Any]:
+    review = _valid_named_review(
+        frozen,
+        reviewer_system=editorial_review.ANTHROPIC_REVIEWER_SYSTEM,
+        model=editorial_review.ANTHROPIC_MODEL,
+        effort=editorial_review.ANTHROPIC_REASONING_EFFORT,
+    )
+    return {
+        "id": "msg_synthetic_claude",
+        "type": "message",
+        "role": "assistant",
+        "model": editorial_review.ANTHROPIC_MODEL,
+        "content": [{"type": "text", "text": json.dumps(review)}],
+        "stop_reason": "end_turn",
+        "usage": {"input_tokens": 40_000, "output_tokens": 2_000},
+    }
+
+
+def _valid_gemini_response(frozen: editorial_review.FrozenReviewInput) -> dict[str, Any]:
+    review = _valid_named_review(
+        frozen,
+        reviewer_system=editorial_review.GEMINI_REVIEWER_SYSTEM,
+        model=editorial_review.GEMINI_MODEL,
+        effort=editorial_review.GEMINI_REASONING_EFFORT,
+    )
+    return {
+        "responseId": "resp_synthetic_gemini",
+        "modelVersion": editorial_review.GEMINI_MODEL,
+        "candidates": [
+            {
+                "finishReason": "STOP",
+                "content": {
+                    "role": "model",
+                    "parts": [{"text": json.dumps(review)}],
+                },
+            }
+        ],
+        "usageMetadata": {
+            "promptTokenCount": 40_000,
+            "candidatesTokenCount": 1_800,
+            "thoughtsTokenCount": 200,
+            "totalTokenCount": 42_000,
+        },
+    }
+
+
 def _valid_response(frozen: editorial_review.FrozenReviewInput) -> dict[str, Any]:
     return {
         "id": "resp_synthetic_001",
@@ -98,6 +158,37 @@ def test_request_is_single_call_strict_schema_and_tool_free() -> None:
     assert response_format["strict"] is True
     assert response_format["schema"]["additionalProperties"] is False
     assert "page_notes" in response_format["schema"]["required"]
+
+
+def test_anthropic_request_uses_exact_model_effort_schema_and_no_tools() -> None:
+    frozen = editorial_review.build_frozen_review_input(ROOT)
+    request = editorial_review.build_anthropic_request(frozen)
+    assert request["model"] == "claude-sonnet-5"
+    assert request["max_tokens"] == 3_000
+    assert request["thinking"] == {"type": "adaptive"}
+    assert request["output_config"]["effort"] == "medium"
+    assert request["output_config"]["format"]["type"] == "json_schema"
+    schema = request["output_config"]["format"]["schema"]
+    assert schema["properties"]["model"]["enum"] == ["claude-sonnet-5"]
+    assert "const" not in json.dumps(schema)
+    assert "tools" not in request
+
+
+def test_gemini_request_uses_exact_model_effort_schema_and_no_tools() -> None:
+    frozen = editorial_review.build_frozen_review_input(ROOT)
+    request = editorial_review.build_gemini_request(frozen)
+    config = request["generationConfig"]
+    assert editorial_review.GEMINI_MODEL in editorial_review.GEMINI_GENERATE_URL
+    assert config["maxOutputTokens"] == 3_000
+    assert config["thinkingConfig"] == {
+        "thinkingLevel": "medium",
+        "includeThoughts": False,
+    }
+    assert config["responseFormat"]["text"]["mimeType"] == "application/json"
+    schema = config["responseFormat"]["text"]["schema"]
+    assert schema["properties"]["model"]["enum"] == ["gemini-3.1-pro-preview"]
+    assert "const" not in json.dumps(schema)
+    assert "tools" not in request
 
 
 def test_codex_prompt_is_frozen_closed_schema_and_context_isolated() -> None:
@@ -290,3 +381,144 @@ def test_keychain_reader_uses_one_exact_service_without_enumeration(
     ]
     assert "list-keychains" not in captured
     editorial_review._clear(value)
+
+
+@pytest.mark.parametrize(
+    ("reader", "service"),
+    [
+        (
+            editorial_review.read_existing_anthropic_key,
+            editorial_review.ANTHROPIC_KEYCHAIN_SERVICE,
+        ),
+        (
+            editorial_review.read_existing_gemini_key,
+            editorial_review.GEMINI_KEYCHAIN_SERVICE,
+        ),
+    ],
+)
+def test_named_provider_keychain_reader_uses_only_exact_service(
+    monkeypatch: pytest.MonkeyPatch,
+    reader: Any,
+    service: str,
+) -> None:
+    captured: list[str] = []
+
+    class Result:
+        returncode = 0
+        stdout = b"synthetic-project-key\n"
+
+    def fake_run(arguments: list[str], **_kwargs: object) -> Result:
+        captured.extend(arguments)
+        return Result()
+
+    monkeypatch.setenv("USER", "synthetic-user")
+    monkeypatch.setattr(editorial_review.subprocess, "run", fake_run)
+    value = reader()
+    assert value == bytearray(b"synthetic-project-key")
+    assert captured == [
+        "/usr/bin/security",
+        "find-generic-password",
+        "-a",
+        "synthetic-user",
+        "-s",
+        service,
+        "-w",
+    ]
+    editorial_review._clear(value)
+
+
+@pytest.mark.parametrize(
+    ("runner", "response_factory", "expected_cost", "provider_prefix"),
+    [
+        (
+            editorial_review.run_anthropic_replacement_review,
+            _valid_anthropic_response,
+            "0.11000000",
+            "cst-r2-anthropic-messages-",
+        ),
+        (
+            editorial_review.run_gemini_replacement_review,
+            _valid_gemini_response,
+            "0.11440000",
+            "cst-r2-google-gemini-",
+        ),
+    ],
+)
+def test_named_provider_success_is_one_call_private_and_clears_key(
+    tmp_path: Path,
+    runner: Any,
+    response_factory: Any,
+    expected_cost: str,
+    provider_prefix: str,
+) -> None:
+    frozen = editorial_review.build_frozen_review_input(ROOT)
+    key = bytearray(b"synthetic-project-key")
+    calls = 0
+
+    def sender(_api_key: bytes, _request: Mapping[str, Any]) -> Mapping[str, Any]:
+        nonlocal calls
+        calls += 1
+        return response_factory(frozen)
+
+    outcome = runner(
+        root=ROOT,
+        receipt_root=tmp_path,
+        key_reader=lambda: key,
+        provider_sender=sender,
+        clock=lambda: datetime(2026, 8, 13, tzinfo=UTC),
+    )
+    assert outcome.status == "qualifying"
+    assert outcome.provider_calls == 1
+    assert outcome.cost_upper_bound_usd == expected_cost
+    assert outcome.receipt_id.startswith(provider_prefix)
+    assert calls == 1
+    assert key == bytearray(len(key))
+    receipt_path = tmp_path / f"{outcome.receipt_id}.json"
+    assert stat.S_IMODE(receipt_path.stat().st_mode) == 0o600
+    assert "synthetic-project-key" not in receipt_path.read_text(encoding="utf-8")
+
+
+@pytest.mark.parametrize(
+    "runner",
+    [
+        editorial_review.run_anthropic_replacement_review,
+        editorial_review.run_gemini_replacement_review,
+    ],
+)
+def test_named_provider_ambiguous_delivery_is_terminal_and_clears_key(
+    tmp_path: Path, runner: Any
+) -> None:
+    key = bytearray(b"synthetic-project-key")
+    calls = 0
+
+    def sender(_api_key: bytes, _request: Mapping[str, Any]) -> Mapping[str, Any]:
+        nonlocal calls
+        calls += 1
+        raise editorial_review.AmbiguousDelivery("synthetic-timeout")
+
+    outcome = runner(
+        root=ROOT,
+        receipt_root=tmp_path,
+        key_reader=lambda: key,
+        provider_sender=sender,
+        clock=lambda: datetime(2026, 8, 13, tzinfo=UTC),
+    )
+    assert outcome.status == "ambiguous-delivery-no-retry"
+    assert outcome.provider_calls == 1
+    assert calls == 1
+    assert key == bytearray(len(key))
+
+
+def test_named_provider_wrong_model_or_page_coverage_is_nonqualifying() -> None:
+    frozen = editorial_review.build_frozen_review_input(ROOT)
+    anthropic = _valid_anthropic_response(frozen)
+    anthropic["model"] = "claude-opus-5"
+    with pytest.raises(editorial_review.QualificationError):
+        editorial_review.validate_anthropic_response(anthropic, frozen)
+
+    gemini = _valid_gemini_response(frozen)
+    review = json.loads(gemini["candidates"][0]["content"]["parts"][0]["text"])
+    review["page_notes"].pop()
+    gemini["candidates"][0]["content"]["parts"][0]["text"] = json.dumps(review)
+    with pytest.raises(editorial_review.QualificationError):
+        editorial_review.validate_gemini_response(gemini, frozen)

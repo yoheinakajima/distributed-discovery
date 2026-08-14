@@ -5,7 +5,7 @@
 Issue #220, branch `agent/common-source-trap-review-packet`, and living plan
 `plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md` own the sole substantive lane.
 The active additive contract is
-`tasks/common-source-trap-codex-reviewer-completion-r4.yml`, which
+`tasks/common-source-trap-provider-review-and-ci-completion-r5.yml`, which
 records the owner’s 2026-08-07 standing paper-review authorization without
 weakening the frozen Round 2 packet or any publication boundary.
 The task freezes exact current-main manuscript, PDF, receipt, evidence, and
@@ -92,6 +92,14 @@ outside Git and only its hash is public. The four-review bundle remains
 incomplete because the genuine Claude and Gemini slots are still outstanding.
 No synthesis, writer handoff, manuscript edit, or later provider call is
 permitted from this checkpoint.
+
+The owner then made the two genuine provider slots and the clean-checkout
+history repair executable in the same standing lane. The R5 contract freezes
+Claude Sonnet 5 at medium effort and Gemini 3.1 Pro Preview at medium thinking,
+one call and USD 1 maximum per slot, no retry, exact private receipts, and no
+tools or prior-review sharing. It also permits only a full-history checkout
+repair so CI can reconstruct the already-frozen artifact and receipt commits;
+no manuscript, claim, or review input may change for that repair.
 
 ## Completed AO-0013 repair; Pages closeout remains open (2026-08-06)
 

@@ -41,6 +41,19 @@ OPENAI_KEYCHAIN_SERVICE = "com.yoheinakajima.chief-of-staff.openai-reviewer"
 OPENAI_MODEL = "gpt-5.6-terra"
 OPENAI_REASONING_EFFORT = "medium"
 OPENAI_RESPONSES_URL = "https://api.openai.com/v1/responses"
+ANTHROPIC_KEYCHAIN_SERVICE = "com.yoheinakajima.chief-of-staff.anthropic-reviewer"
+ANTHROPIC_MODEL = "claude-sonnet-5"
+ANTHROPIC_REASONING_EFFORT = "medium"
+ANTHROPIC_REVIEWER_SYSTEM = "anthropic-messages-claude-replacement"
+ANTHROPIC_MESSAGES_URL = "https://api.anthropic.com/v1/messages"
+ANTHROPIC_API_VERSION = "2023-06-01"
+GEMINI_KEYCHAIN_SERVICE = "com.yoheinakajima.chief-of-staff.gemini-reviewer"
+GEMINI_MODEL = "gemini-3.1-pro-preview"
+GEMINI_REASONING_EFFORT = "medium"
+GEMINI_REVIEWER_SYSTEM = "google-gemini-generate-content-replacement"
+GEMINI_GENERATE_URL = (
+    f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
+)
 CODEX_REVIEWER_SYSTEM = "openai-codex-isolated-reviewer"
 CODEX_MODEL = "gpt-5.6-terra"
 CODEX_REASONING_EFFORT = "medium"
@@ -349,6 +362,25 @@ def _review_schema(
     }
 
 
+def _provider_schema(schema: Mapping[str, Any]) -> dict[str, Any]:
+    """Use only the documented shared JSON-Schema subset for provider decoding."""
+
+    def convert(value: Any) -> Any:
+        if isinstance(value, dict):
+            converted = {key: convert(item) for key, item in value.items() if key != "const"}
+            if "const" in value:
+                converted["enum"] = [value["const"]]
+            return converted
+        if isinstance(value, list):
+            return [convert(item) for item in value]
+        return value
+
+    converted = convert(dict(schema))
+    if not isinstance(converted, dict):
+        raise PreflightError("provider-schema-invalid")
+    return converted
+
+
 def build_codex_review_prompt(frozen: FrozenReviewInput) -> str:
     """Bind one projectless Codex reviewer to the same frozen closed contract."""
 
@@ -475,6 +507,71 @@ def build_openai_request(frozen: FrozenReviewInput) -> dict[str, Any]:
     return request
 
 
+def build_anthropic_request(frozen: FrozenReviewInput) -> dict[str, Any]:
+    """Construct the one-request, no-tool Anthropic Messages payload."""
+
+    request = {
+        "model": ANTHROPIC_MODEL,
+        "max_tokens": MAX_OUTPUT_TOKENS,
+        "thinking": {"type": "adaptive"},
+        "messages": [{"role": "user", "content": frozen.prompt}],
+        "output_config": {
+            "effort": ANTHROPIC_REASONING_EFFORT,
+            "format": {
+                "type": "json_schema",
+                "schema": _provider_schema(
+                    _review_schema(
+                        frozen,
+                        reviewer_system=ANTHROPIC_REVIEWER_SYSTEM,
+                        model=ANTHROPIC_MODEL,
+                        reasoning_effort=ANTHROPIC_REASONING_EFFORT,
+                    )
+                ),
+            },
+        },
+    }
+    if "tools" in request:
+        raise PreflightError("tools-must-be-absent")
+    serialized = json.dumps(request, separators=(",", ":")).encode("utf-8")
+    if len(serialized) > MAX_PROMPT_BYTES:
+        raise PreflightError("serialized-request-byte-cap-exceeded")
+    return request
+
+
+def build_gemini_request(frozen: FrozenReviewInput) -> dict[str, Any]:
+    """Construct the one-request, no-tool Gemini GenerateContent payload."""
+
+    request = {
+        "contents": [{"role": "user", "parts": [{"text": frozen.prompt}]}],
+        "generationConfig": {
+            "maxOutputTokens": MAX_OUTPUT_TOKENS,
+            "thinkingConfig": {
+                "thinkingLevel": GEMINI_REASONING_EFFORT,
+                "includeThoughts": False,
+            },
+            "responseFormat": {
+                "text": {
+                    "mimeType": "application/json",
+                    "schema": _provider_schema(
+                        _review_schema(
+                            frozen,
+                            reviewer_system=GEMINI_REVIEWER_SYSTEM,
+                            model=GEMINI_MODEL,
+                            reasoning_effort=GEMINI_REASONING_EFFORT,
+                        )
+                    ),
+                }
+            },
+        },
+    }
+    if "tools" in request:
+        raise PreflightError("tools-must-be-absent")
+    serialized = json.dumps(request, separators=(",", ":")).encode("utf-8")
+    if len(serialized) > MAX_PROMPT_BYTES:
+        raise PreflightError("serialized-request-byte-cap-exceeded")
+    return request
+
+
 def _clear(value: bytearray) -> None:
     for index in range(len(value)):
         value[index] = 0
@@ -505,6 +602,41 @@ def read_existing_openai_key() -> bytearray:
     if result.returncode != 0 or not result.stdout.strip():
         raise CredentialUnavailable("credential-unavailable-no-provider-contact")
     return bytearray(result.stdout.strip())
+
+
+def _read_existing_key(service: str) -> bytearray:
+    """Read one exact Keychain service without enumeration or fallback."""
+
+    account = os.environ.get("USER")
+    if not account:
+        raise CredentialUnavailable("credential-unavailable-no-provider-contact")
+    try:
+        result = subprocess.run(
+            [
+                "/usr/bin/security",
+                "find-generic-password",
+                "-a",
+                account,
+                "-s",
+                service,
+                "-w",
+            ],
+            check=False,
+            capture_output=True,
+        )
+    except OSError as error:
+        raise CredentialUnavailable("credential-unavailable-no-provider-contact") from error
+    if result.returncode != 0 or not result.stdout.strip():
+        raise CredentialUnavailable("credential-unavailable-no-provider-contact")
+    return bytearray(result.stdout.strip())
+
+
+def read_existing_anthropic_key() -> bytearray:
+    return _read_existing_key(ANTHROPIC_KEYCHAIN_SERVICE)
+
+
+def read_existing_gemini_key() -> bytearray:
+    return _read_existing_key(GEMINI_KEYCHAIN_SERVICE)
 
 
 def _send_openai_response(api_key: bytes, request: Mapping[str, Any]) -> Mapping[str, Any]:
@@ -539,6 +671,75 @@ def _send_openai_response(api_key: bytes, request: Mapping[str, Any]) -> Mapping
     if not isinstance(decoded, dict):
         raise QualificationError("response-nonqualifying")
     return decoded
+
+
+def _send_json_request(
+    *,
+    api_key: bytes,
+    request: Mapping[str, Any],
+    url: str,
+    headers: Mapping[str, str],
+) -> Mapping[str, Any]:
+    """Issue one bounded JSON request while keeping provider bodies out of errors."""
+
+    body = json.dumps(request, separators=(",", ":")).encode("utf-8")
+    try:
+        http_request = urllib.request.Request(
+            url,
+            data=body,
+            headers=dict(headers),
+            method="POST",
+        )
+        with urllib.request.urlopen(http_request, timeout=180) as response:  # noqa: S310
+            raw = response.read()
+    except urllib.error.HTTPError as error:
+        raise ProviderRejected(error.code) from None
+    except (urllib.error.URLError, TimeoutError, OSError) as error:
+        raise AmbiguousDelivery("ambiguous-delivery-no-retry") from error
+    finally:
+        body = b""
+    try:
+        decoded = json.loads(raw)
+    except (UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise QualificationError("response-nonqualifying") from error
+    if not isinstance(decoded, dict):
+        raise QualificationError("response-nonqualifying")
+    return decoded
+
+
+def _send_anthropic_message(api_key: bytes, request: Mapping[str, Any]) -> Mapping[str, Any]:
+    key_text = api_key.decode("ascii")
+    try:
+        return _send_json_request(
+            api_key=api_key,
+            request=request,
+            url=ANTHROPIC_MESSAGES_URL,
+            headers={
+                "Content-Type": "application/json",
+                "x-api-key": key_text,
+                "anthropic-version": ANTHROPIC_API_VERSION,
+                "User-Agent": "distributed-discovery-cst-review/1.0",
+            },
+        )
+    finally:
+        key_text = ""
+
+
+def _send_gemini_content(api_key: bytes, request: Mapping[str, Any]) -> Mapping[str, Any]:
+    key_text = api_key.decode("ascii")
+    try:
+        return _send_json_request(
+            api_key=api_key,
+            request=request,
+            url=GEMINI_GENERATE_URL,
+            headers={
+                "Content-Type": "application/json",
+                "x-goog-api-key": key_text,
+                "User-Agent": "distributed-discovery-cst-review/1.0",
+            },
+        )
+    finally:
+        key_text = ""
 
 
 def _response_text(response: Mapping[str, Any]) -> str:
@@ -617,6 +818,154 @@ def _usage_cost_upper_bound(response: Mapping[str, Any]) -> str:
     return f"{cost:.8f}"
 
 
+def _validate_review_payload(
+    review_text: str,
+    frozen: FrozenReviewInput,
+    *,
+    reviewer_system: str,
+    model: str,
+    reasoning_effort: str,
+) -> dict[str, Any]:
+    try:
+        review = json.loads(review_text)
+    except json.JSONDecodeError as error:
+        raise QualificationError("response-nonqualifying") from error
+    if not isinstance(review, dict):
+        raise QualificationError("response-nonqualifying")
+    schema = _review_schema(
+        frozen,
+        reviewer_system=reviewer_system,
+        model=model,
+        reasoning_effort=reasoning_effort,
+    )
+    try:
+        jsonschema.Draft202012Validator(schema).validate(review)
+    except jsonschema.ValidationError as error:
+        raise QualificationError("response-nonqualifying") from error
+    if tuple(review["requested_checks"]) != REQUESTED_CHECKS:
+        raise QualificationError("response-nonqualifying")
+    notes = review["page_notes"]
+    if not isinstance(notes, list) or len(notes) != frozen.page_count:
+        raise QualificationError("response-nonqualifying")
+    if [note.get("page") for note in notes] != list(range(1, frozen.page_count + 1)):
+        raise QualificationError("response-nonqualifying")
+    if any(not isinstance(note.get("note"), str) or not note["note"].strip() for note in notes):
+        raise QualificationError("response-nonqualifying")
+    return review
+
+
+def validate_anthropic_response(
+    response: Mapping[str, Any], frozen: FrozenReviewInput
+) -> tuple[dict[str, Any], str, str]:
+    """Validate exact Messages identity, usage, schema, and page coverage."""
+
+    if (
+        response.get("type") != "message"
+        or response.get("role") != "assistant"
+        or response.get("model") != ANTHROPIC_MODEL
+        or response.get("stop_reason") != "end_turn"
+    ):
+        raise QualificationError("response-nonqualifying")
+    response_id = response.get("id")
+    if not isinstance(response_id, str) or not response_id:
+        raise QualificationError("response-nonqualifying")
+    content = response.get("content")
+    if not isinstance(content, list):
+        raise QualificationError("response-nonqualifying")
+    texts = [
+        item.get("text")
+        for item in content
+        if isinstance(item, dict) and item.get("type") == "text"
+    ]
+    if len(texts) != 1 or not isinstance(texts[0], str):
+        raise QualificationError("response-nonqualifying")
+    review = _validate_review_payload(
+        texts[0],
+        frozen,
+        reviewer_system=ANTHROPIC_REVIEWER_SYSTEM,
+        model=ANTHROPIC_MODEL,
+        reasoning_effort=ANTHROPIC_REASONING_EFFORT,
+    )
+    usage = response.get("usage")
+    if not isinstance(usage, dict):
+        raise QualificationError("response-nonqualifying")
+    input_tokens = usage.get("input_tokens")
+    output_tokens = usage.get("output_tokens")
+    if (
+        not isinstance(input_tokens, int)
+        or not isinstance(output_tokens, int)
+        or input_tokens < 0
+        or output_tokens < 0
+        or output_tokens > MAX_OUTPUT_TOKENS
+    ):
+        raise QualificationError("response-nonqualifying")
+    # Introductory Sonnet 5 pricing through 2026-08-31 is USD 2/M input and
+    # USD 10/M output. The 10% uplift keeps this receipt conservative.
+    cost = ((input_tokens * 2.0) + (output_tokens * 10.0)) / 1_000_000 * 1.1
+    if cost > MAX_COST_USD:
+        raise QualificationError("response-nonqualifying")
+    return review, response_id, f"{cost:.8f}"
+
+
+def validate_gemini_response(
+    response: Mapping[str, Any], frozen: FrozenReviewInput
+) -> tuple[dict[str, Any], str, str]:
+    """Validate exact GenerateContent identity, usage, schema, and page coverage."""
+
+    if response.get("modelVersion") != GEMINI_MODEL:
+        raise QualificationError("response-nonqualifying")
+    response_id = response.get("responseId")
+    if not isinstance(response_id, str) or not response_id:
+        raise QualificationError("response-nonqualifying")
+    candidates = response.get("candidates")
+    if not isinstance(candidates, list) or len(candidates) != 1:
+        raise QualificationError("response-nonqualifying")
+    candidate = candidates[0]
+    if not isinstance(candidate, dict) or candidate.get("finishReason") != "STOP":
+        raise QualificationError("response-nonqualifying")
+    content = candidate.get("content")
+    if not isinstance(content, dict) or content.get("role") != "model":
+        raise QualificationError("response-nonqualifying")
+    parts = content.get("parts")
+    if not isinstance(parts, list):
+        raise QualificationError("response-nonqualifying")
+    texts = [
+        part.get("text")
+        for part in parts
+        if isinstance(part, dict) and part.get("thought") is not True and "text" in part
+    ]
+    if len(texts) != 1 or not isinstance(texts[0], str):
+        raise QualificationError("response-nonqualifying")
+    review = _validate_review_payload(
+        texts[0],
+        frozen,
+        reviewer_system=GEMINI_REVIEWER_SYSTEM,
+        model=GEMINI_MODEL,
+        reasoning_effort=GEMINI_REASONING_EFFORT,
+    )
+    usage = response.get("usageMetadata")
+    if not isinstance(usage, dict):
+        raise QualificationError("response-nonqualifying")
+    input_tokens = usage.get("promptTokenCount")
+    total_tokens = usage.get("totalTokenCount")
+    if (
+        not isinstance(input_tokens, int)
+        or not isinstance(total_tokens, int)
+        or input_tokens < 0
+        or total_tokens < input_tokens
+    ):
+        raise QualificationError("response-nonqualifying")
+    output_tokens = total_tokens - input_tokens
+    if output_tokens > MAX_OUTPUT_TOKENS:
+        raise QualificationError("response-nonqualifying")
+    # Standard Gemini 3.1 Pro Preview pricing below 200k prompt tokens is
+    # USD 2/M input and USD 12/M output, including thinking tokens.
+    cost = ((input_tokens * 2.0) + (output_tokens * 12.0)) / 1_000_000 * 1.1
+    if cost > MAX_COST_USD:
+        raise QualificationError("response-nonqualifying")
+    return review, response_id, f"{cost:.8f}"
+
+
 def _private_receipt_root() -> Path:
     return (
         Path.home()
@@ -656,6 +1005,14 @@ def _write_private_receipt(
 
 def _receipt_id(started: datetime) -> str:
     return f"cst-r2-openai-{started.strftime('%Y%m%dT%H%M%SZ')}"
+
+
+def _named_receipt_id(provider: str, started: datetime) -> str:
+    return f"cst-r2-{provider}-{started.strftime('%Y%m%dT%H%M%SZ')}"
+
+
+def _provider_receipt_collision(receipt_root: Path, provider: str) -> bool:
+    return any(receipt_root.glob(f"cst-r2-{provider}-*.json"))
 
 
 def _failure_outcome(
@@ -783,6 +1140,193 @@ def run_openai_replacement_review(
             _clear(credential)
 
 
+def _run_named_provider_review(
+    *,
+    provider: str,
+    reviewer_slot: str,
+    model: str,
+    reasoning_effort: str,
+    build_request: Callable[[FrozenReviewInput], dict[str, Any]],
+    validate_response: Callable[
+        [Mapping[str, Any], FrozenReviewInput], tuple[dict[str, Any], str, str]
+    ],
+    key_reader: KeyReader,
+    provider_sender: ProviderSender,
+    root: Path,
+    receipt_root: Path | None,
+    clock: Clock,
+) -> ReviewOutcome:
+    started = clock()
+    destination = receipt_root or _private_receipt_root()
+    frozen: FrozenReviewInput | None = None
+    provider_calls = 0
+    credential: bytearray | None = None
+    receipt_id = _named_receipt_id(provider, started)
+    try:
+        if _provider_receipt_collision(destination, provider):
+            raise PreflightError("provider-slot-receipt-already-exists")
+        frozen = build_frozen_review_input(root)
+        request = build_request(frozen)
+        # A UTF-8 token cannot consume fewer than one encoded byte. Using the
+        # prompt byte count plus the hard output ceiling therefore proves the
+        # maximum standard-tier request remains below the USD 1 task cap.
+        if len(frozen.prompt.encode("utf-8")) > MAX_PROMPT_BYTES:
+            raise PreflightError("prompt-byte-cap-exceeded")
+        credential = key_reader()
+        if not isinstance(credential, bytearray) or not credential:
+            raise CredentialUnavailable("credential-unavailable-no-provider-contact")
+        provider_calls = 1
+        response = provider_sender(bytes(credential), request)
+        review, response_id, cost_upper_bound = validate_response(response, frozen)
+        _path, receipt_hash = _write_private_receipt(
+            destination,
+            receipt_id,
+            {
+                "schema_version": "common-source-trap-private-review-receipt-v1",
+                "status": "qualifying",
+                "reviewer_slot": reviewer_slot,
+                "provider": provider,
+                "actual_model": model,
+                "reasoning_effort": reasoning_effort,
+                "started_utc": started.isoformat(),
+                "completed_utc": clock().isoformat(),
+                "provider_calls": provider_calls,
+                "cost_upper_bound_usd": cost_upper_bound,
+                "response_id": response_id,
+                "frozen_binding": {
+                    "packet_id": frozen.packet_id,
+                    "artifact_commit": frozen.artifact_commit,
+                    "manuscript_sha256": frozen.manuscript_sha256,
+                    "pdf_sha256": frozen.pdf_sha256,
+                    "packet_sha256": frozen.packet_sha256,
+                    "page_count": frozen.page_count,
+                },
+                "review": review,
+                "provider_response": response,
+            },
+        )
+        return ReviewOutcome(
+            status="qualifying",
+            receipt_id=receipt_id,
+            receipt_sha256=receipt_hash,
+            provider_calls=provider_calls,
+            cost_upper_bound_usd=cost_upper_bound,
+        )
+    except ReviewError as error:
+        _path, receipt_hash = _write_private_receipt(
+            destination,
+            receipt_id,
+            {
+                "schema_version": "common-source-trap-private-review-receipt-v1",
+                "status": _redacted_error(error),
+                "reviewer_slot": reviewer_slot,
+                "provider": provider,
+                "started_utc": started.isoformat(),
+                "completed_utc": clock().isoformat(),
+                "provider_calls": provider_calls,
+                "frozen_binding": (
+                    {
+                        "packet_id": frozen.packet_id,
+                        "artifact_commit": frozen.artifact_commit,
+                        "manuscript_sha256": frozen.manuscript_sha256,
+                        "pdf_sha256": frozen.pdf_sha256,
+                        "packet_sha256": frozen.packet_sha256,
+                    }
+                    if frozen is not None
+                    else None
+                ),
+            },
+        )
+        return ReviewOutcome(
+            status=_redacted_error(error),
+            receipt_id=receipt_id,
+            receipt_sha256=receipt_hash,
+            provider_calls=provider_calls,
+            cost_upper_bound_usd=None,
+        )
+    except Exception as error:
+        _path, receipt_hash = _write_private_receipt(
+            destination,
+            receipt_id,
+            {
+                "schema_version": "common-source-trap-private-review-receipt-v1",
+                "status": _redacted_error(error),
+                "reviewer_slot": reviewer_slot,
+                "provider": provider,
+                "started_utc": started.isoformat(),
+                "completed_utc": clock().isoformat(),
+                "provider_calls": provider_calls,
+                "frozen_binding": (
+                    {
+                        "packet_id": frozen.packet_id,
+                        "artifact_commit": frozen.artifact_commit,
+                        "manuscript_sha256": frozen.manuscript_sha256,
+                        "pdf_sha256": frozen.pdf_sha256,
+                        "packet_sha256": frozen.packet_sha256,
+                    }
+                    if frozen is not None
+                    else None
+                ),
+            },
+        )
+        return ReviewOutcome(
+            status=_redacted_error(error),
+            receipt_id=receipt_id,
+            receipt_sha256=receipt_hash,
+            provider_calls=provider_calls,
+            cost_upper_bound_usd=None,
+        )
+    finally:
+        if credential is not None:
+            _clear(credential)
+
+
+def run_anthropic_replacement_review(
+    *,
+    root: Path = ROOT,
+    receipt_root: Path | None = None,
+    key_reader: KeyReader = read_existing_anthropic_key,
+    provider_sender: ProviderSender = _send_anthropic_message,
+    clock: Clock = _utc_now,
+) -> ReviewOutcome:
+    return _run_named_provider_review(
+        provider="anthropic-messages",
+        reviewer_slot="claude",
+        model=ANTHROPIC_MODEL,
+        reasoning_effort=ANTHROPIC_REASONING_EFFORT,
+        build_request=build_anthropic_request,
+        validate_response=validate_anthropic_response,
+        key_reader=key_reader,
+        provider_sender=provider_sender,
+        root=root,
+        receipt_root=receipt_root,
+        clock=clock,
+    )
+
+
+def run_gemini_replacement_review(
+    *,
+    root: Path = ROOT,
+    receipt_root: Path | None = None,
+    key_reader: KeyReader = read_existing_gemini_key,
+    provider_sender: ProviderSender = _send_gemini_content,
+    clock: Clock = _utc_now,
+) -> ReviewOutcome:
+    return _run_named_provider_review(
+        provider="google-gemini",
+        reviewer_slot="gemini",
+        model=GEMINI_MODEL,
+        reasoning_effort=GEMINI_REASONING_EFFORT,
+        build_request=build_gemini_request,
+        validate_response=validate_gemini_response,
+        key_reader=key_reader,
+        provider_sender=provider_sender,
+        root=root,
+        receipt_root=receipt_root,
+        clock=clock,
+    )
+
+
 def _parse_args(arguments: Sequence[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(prog="python -m distributed_discovery.editorial_review")
     parser.add_argument(
@@ -790,14 +1334,35 @@ def _parse_args(arguments: Sequence[str]) -> argparse.Namespace:
         action="store_true",
         help="perform the one authorized OpenAI request after local preflight",
     )
+    parser.add_argument(
+        "--execute-anthropic-claude-replacement",
+        action="store_true",
+        help="perform the one authorized Anthropic request after local preflight",
+    )
+    parser.add_argument(
+        "--execute-google-gemini-replacement",
+        action="store_true",
+        help="perform the one authorized Gemini request after local preflight",
+    )
     return parser.parse_args(arguments)
 
 
 def main(arguments: Sequence[str] | None = None) -> NoReturn:
     args = _parse_args(arguments or sys.argv[1:])
-    if not args.execute_openai_chatgpt_replacement:
+    execute_flags = (
+        args.execute_openai_chatgpt_replacement,
+        args.execute_anthropic_claude_replacement,
+        args.execute_google_gemini_replacement,
+    )
+    if sum(execute_flags) > 1:
+        raise SystemExit("select-exactly-one-provider")
+    if not any(execute_flags):
         frozen = build_frozen_review_input()
-        request = build_openai_request(frozen)
+        requests = {
+            "openai": build_openai_request(frozen),
+            "anthropic": build_anthropic_request(frozen),
+            "gemini": build_gemini_request(frozen),
+        }
         print(
             json.dumps(
                 {
@@ -805,13 +1370,20 @@ def main(arguments: Sequence[str] | None = None) -> NoReturn:
                     "packet_id": frozen.packet_id,
                     "artifact_commit": frozen.artifact_commit,
                     "page_count": frozen.page_count,
-                    "request_has_tools": "tools" in request,
+                    "request_has_tools": {
+                        name: "tools" in request for name, request in requests.items()
+                    },
                 },
                 sort_keys=True,
             )
         )
         raise SystemExit(0)
-    outcome = run_openai_replacement_review()
+    if args.execute_openai_chatgpt_replacement:
+        outcome = run_openai_replacement_review()
+    elif args.execute_anthropic_claude_replacement:
+        outcome = run_anthropic_replacement_review()
+    else:
+        outcome = run_gemini_replacement_review()
     print(
         json.dumps(
             {

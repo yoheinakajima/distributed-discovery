@@ -59,3 +59,10 @@ def test_github_setup_defaults_to_offline_dry_run() -> None:
     )
     assert "23 labels, 6 milestones, 5 initial issues" in completed.stdout
     assert "no GitHub calls made" in completed.stdout
+
+
+def test_ci_fetches_history_for_commit_bound_review_packets() -> None:
+    workflow = yaml.safe_load((ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8"))
+    checkout = workflow["jobs"]["validate"]["steps"][0]
+    assert checkout["uses"] == "actions/checkout@v7"
+    assert checkout["with"]["fetch-depth"] == 0

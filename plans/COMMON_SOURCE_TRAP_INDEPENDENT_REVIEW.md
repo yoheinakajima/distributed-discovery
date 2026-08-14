@@ -74,6 +74,17 @@ scientific evidence and authorizes no manuscript merge or publication.
   strict MyPy, the 18 focused Common-Source Trap tests, Agent Operations,
   program-memory, claim, editorial, publication, naming, and release audits
   pass. The missing historical file is neither restored nor modified here.
+- At `2026-08-14T02:30:16Z`, the owner-authorized R5 provider/CI continuation
+  reverified exact local, remote, and open/draft PR head `57ad70df...`, the
+  artifact, source, PDF, packet, rubric, schema, and all 21 page labels. The
+  only private CST Round 2 receipt remains the qualifying Codex receipt; no
+  Anthropic or Google receipt exists. Exact non-enumerating Keychain status
+  checks confirm both project-restricted reviewer services are configured,
+  without reading either value. Official current primary documentation supports
+  `claude-sonnet-5` with medium effort and structured outputs and
+  `gemini-3.1-pro-preview` with medium thinking and structured outputs.
+  Conservative maximum envelopes are USD 0.355828 and USD 0.362428,
+  respectively, below the USD 1 per-call cap.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -198,6 +209,13 @@ scientific evidence and authorizes no manuscript merge or publication.
 - [ ] If and only if it qualifies, complete the genuinely missing Claude and
   Gemini reviews, synthesize the four-review bundle once, deliver it to the
   writer all at once, and perform the one bounded evidence-bound revision.
+- [x] Register the additive R5 provider-review and clean-checkout contract;
+  build exact one-call Anthropic and Google transports with synthetic success,
+  rejection, ambiguity, identity, schema, page-coverage, private-receipt,
+  credential-isolation, and cost-bound tests.
+- [x] Diagnose the two GitHub validation failures as shallow-checkout history
+  absence and implement the smallest full-history checkout seam plus a workflow
+  regression; clean-clone reconstruction and all nine frozen packet tests pass.
 - [x] Run the complete verification wall until its inherited protected-file
   blocker, then rerun its recorded final failure in isolation and preserve the
   exact file-absence cause without repair or cleanup.
@@ -468,6 +486,37 @@ scientific evidence and authorizes no manuscript merge or publication.
   outstanding. Stop before synthesis, writer handoff, manuscript edit, PR
   readiness, merge, or publication until both missing slots qualify under a
   separately executable bounded surface.
+- 2026-08-14: Both GitHub validation jobs failed only because the default clean
+  checkout did not contain historical objects `7268e445...`, `4fa15aa...`, and
+  `843e1b5...`; all five observed failures were packet Git-object reads. A
+  depth-one clean clone reproduced the absence, and `git fetch --unshallow`
+  restored the objects and all nine tests. Use `fetch-depth: 0` in CI rather
+  than weakening commit-bound packet validation. The first Ruff command in
+  this repair mistakenly parsed the YAML workflow as Python and failed; the
+  corrected Python-only Ruff check and direct YAML parse pass. An initial
+  disposable-clone probe was rejected locally because its cleanup trap used a
+  destructive command; a no-cleanup probe passed and preserved the temporary
+  evidence.
+- 2026-08-14: The first provider-envelope calculation invoked the system
+  Python 3.9 and failed because `datetime.UTC` is unavailable there. The same
+  exact calculation through the repository runtime passed, reporting a
+  146,740-byte frozen prompt, 3,000-token output ceiling, USD 0.355828 Claude
+  maximum, and USD 0.362428 Gemini maximum. Preserve the failed invocation and
+  use only the source-bound repository runtime for live review commands.
+- 2026-08-14: A first Agent Operations validation command named a nonexistent
+  `scripts/validate_agent_ops.py` and failed before validation. The
+  repository-native `make audit-agent-ops` target then passed all schemas,
+  corruptions, instruction bounds, private-path checks, and unchanged-
+  scientific-authority checks with 28 task contracts. No contract rule was
+  weakened in response to the mistaken command.
+- 2026-08-14: Current official Anthropic documentation identifies
+  `claude-sonnet-5`, medium `output_config.effort`, adaptive thinking,
+  `output_config.format` JSON Schema, and introductory USD 2/M input plus USD
+  10/M output pricing through 2026-08-31. Current official Gemini documentation
+  identifies `gemini-3.1-pro-preview`, medium thinking, JSON-schema structured
+  output, and USD 2/M input plus USD 12/M output pricing below 200k prompt
+  tokens. These are current feasibility observations, not permanent model or
+  price claims; any drift before contact stops the affected slot.
 
 ## Validation strategy
 
