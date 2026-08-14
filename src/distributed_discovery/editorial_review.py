@@ -1074,6 +1074,7 @@ def run_openai_replacement_review(
     frozen: FrozenReviewInput | None = None
     provider_calls = 0
     credential: bytearray | None = None
+    response: Mapping[str, Any] | None = None
     try:
         frozen = build_frozen_review_input(root)
         request = build_openai_request(frozen)
@@ -1161,6 +1162,7 @@ def _run_named_provider_review(
     frozen: FrozenReviewInput | None = None
     provider_calls = 0
     credential: bytearray | None = None
+    response: Mapping[str, Any] | None = None
     receipt_id = _named_receipt_id(provider, started)
     try:
         if _provider_receipt_collision(destination, provider):
@@ -1224,6 +1226,7 @@ def _run_named_provider_review(
                 "started_utc": started.isoformat(),
                 "completed_utc": clock().isoformat(),
                 "provider_calls": provider_calls,
+                "provider_response": response,
                 "frozen_binding": (
                     {
                         "packet_id": frozen.packet_id,
@@ -1256,6 +1259,7 @@ def _run_named_provider_review(
                 "started_utc": started.isoformat(),
                 "completed_utc": clock().isoformat(),
                 "provider_calls": provider_calls,
+                "provider_response": response,
                 "frozen_binding": (
                     {
                         "packet_id": frozen.packet_id,

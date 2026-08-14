@@ -88,3 +88,17 @@ execution_checkpoint:
       bundle_status: incomplete
       qualifying_slots: [openai-codex-replacement, grok]
       outstanding_slots: [claude, gemini]
+  provider_completion:
+    anthropic:
+      requested_model: claude-sonnet-5
+      requested_effort: medium
+      provider_calls: 1
+      terminal_status: response-nonqualifying
+      private_receipt_sha256: 18bf337fe906cb31497a9a6a8ad15d41c47e3ce174f417326728b9015b024641
+      actual_usage_and_cost_reconstructable: false
+      conservative_preflight_maximum_usd: "0.35582800"
+      retry_permitted: false
+      qualifying_slot_filled: false
+      failure_detail_public: false
+    google: {provider_calls: 0, qualifying_slot_filled: false}
+    bundle_status: incomplete

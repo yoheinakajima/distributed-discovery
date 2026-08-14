@@ -85,6 +85,17 @@ scientific evidence and authorizes no manuscript merge or publication.
   `gemini-3.1-pro-preview` with medium thinking and structured outputs.
   Conservative maximum envelopes are USD 0.355828 and USD 0.362428,
   respectively, below the USD 1 per-call cap.
+- At `2026-08-14T02:31:43Z`, the exact pushed R5 head passed local/remote/PR,
+  issue, frozen-input, no-tool, 21-page, receipt-namespace, and credential-
+  service preflight. The sole Anthropic call then returned a clearly delivered
+  but nonqualifying terminal result. It consumed the Claude slot and cannot be
+  retried. The redacted private receipt SHA-256 is
+  `18bf337fe906cb31497a9a6a8ad15d41c47e3ce174f417326728b9015b024641`.
+  The first R5 failure writer did not retain the returned provider envelope,
+  so actual usage, exact cost, and the response-level qualification defect are
+  unreconstructable; preserve USD 0.355828 as the prospective maximum and do
+  not infer a lower value. A local-only additive repair now retains future
+  nonqualifying provider envelopes only inside the mode-0600 private receipt.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -216,6 +227,9 @@ scientific evidence and authorizes no manuscript merge or publication.
 - [x] Diagnose the two GitHub validation failures as shallow-checkout history
   absence and implement the smallest full-history checkout seam plus a workflow
   regression; clean-clone reconstruction and all nine frozen packet tests pass.
+- [x] Execute the Claude slot exactly once after exact preflight. Preserve its
+  clearly delivered nonqualifying receipt and no-retry stop; do not count it
+  toward the four-review threshold.
 - [x] Run the complete verification wall until its inherited protected-file
   blocker, then rerun its recorded final failure in isolation and preserve the
   exact file-absence cause without repair or cleanup.
@@ -517,6 +531,12 @@ scientific evidence and authorizes no manuscript merge or publication.
   output, and USD 2/M input plus USD 12/M output pricing below 200k prompt
   tokens. These are current feasibility observations, not permanent model or
   price claims; any drift before contact stops the affected slot.
+- 2026-08-14: The Anthropic response was clearly delivered but did not qualify.
+  The failure receipt preserved the terminal status, one call, frozen binding,
+  and hash, but not the returned envelope. This is a receipt-integrity defect,
+  not authority for a retry. Fix only future failure capture and add a
+  synthetic regression before the independent Gemini call; retain the Claude
+  slot as unfilled and the complete-bundle gate as locked.
 
 ## Validation strategy
 

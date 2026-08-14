@@ -101,6 +101,15 @@ tools or prior-review sharing. It also permits only a full-history checkout
 repair so CI can reconstruct the already-frozen artifact and receipt commits;
 no manuscript, claim, or review input may change for that repair.
 
+The sole Anthropic call was clearly delivered and returned a nonqualifying
+terminal response. It is consumed and cannot be retried. Its private redacted
+receipt proves one call, but the first R5 failure writer omitted the returned
+provider envelope; exact usage, cost, and the response-level qualification
+cause are therefore unreconstructable. Preserve the USD 0.355828 prospective
+maximum as the only defensible spend bound. The Claude slot remains unfilled,
+so synthesis and manuscript revision remain locked regardless of the later
+Gemini result.
+
 ## Completed AO-0013 repair; Pages closeout remains open (2026-08-06)
 
 PR #213 merged its exact immutable AO-0012 head as

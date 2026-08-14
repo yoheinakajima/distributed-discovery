@@ -522,3 +522,22 @@ def test_named_provider_wrong_model_or_page_coverage_is_nonqualifying() -> None:
     gemini["candidates"][0]["content"]["parts"][0]["text"] = json.dumps(review)
     with pytest.raises(editorial_review.QualificationError):
         editorial_review.validate_gemini_response(gemini, frozen)
+
+
+def test_named_provider_nonqualifying_response_is_retained_privately(tmp_path: Path) -> None:
+    frozen = editorial_review.build_frozen_review_input(ROOT)
+    response = _valid_gemini_response(frozen)
+    response["modelVersion"] = "gemini-drifted-model"
+
+    outcome = editorial_review.run_gemini_replacement_review(
+        root=ROOT,
+        receipt_root=tmp_path,
+        key_reader=lambda: bytearray(b"synthetic-project-key"),
+        provider_sender=lambda _key, _request: response,
+        clock=lambda: datetime(2026, 8, 13, tzinfo=UTC),
+    )
+    assert outcome.status == "response-nonqualifying"
+    assert outcome.provider_calls == 1
+    receipt = json.loads((tmp_path / f"{outcome.receipt_id}.json").read_text(encoding="utf-8"))
+    assert receipt["provider_response"]["modelVersion"] == "gemini-drifted-model"
+    assert "synthetic-project-key" not in json.dumps(receipt)
