@@ -37,6 +37,12 @@ jobs:
       - name: Install Python
         run: uv python install 3.12
 
+      - uses: wtfjoke/setup-tectonic@v4
+        with:
+          tectonic-version: 0.16.9
+
+      - run: sudo apt-get update && sudo apt-get install --yes poppler-utils
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v6
 

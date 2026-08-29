@@ -71,3 +71,23 @@ def test_ci_fetches_history_and_installs_pdf_toolchain() -> None:
     tectonic = next(step for step in steps if step.get("uses") == "wtfjoke/setup-tectonic@v4")
     assert tectonic["with"]["tectonic-version"] == "0.16.9"
     assert any("apt-get install --yes poppler-utils" in command for command in commands)
+
+
+def test_pages_installs_pdf_toolchain_before_repository_verification() -> None:
+    workflow = yaml.safe_load((ROOT / ".github/workflows/pages.yml").read_text(encoding="utf-8"))
+    steps = workflow["jobs"]["build"]["steps"]
+    tectonic_index = next(
+        index for index, step in enumerate(steps) if step.get("uses") == "wtfjoke/setup-tectonic@v4"
+    )
+    tectonic = steps[tectonic_index]
+    poppler_index = next(
+        index
+        for index, step in enumerate(steps)
+        if "apt-get install --yes poppler-utils" in step.get("run", "")
+    )
+    verify_index = next(
+        index for index, step in enumerate(steps) if step.get("run") == "make verify"
+    )
+    assert tectonic["with"]["tectonic-version"] == "0.16.9"
+    assert tectonic_index < verify_index
+    assert poppler_index < verify_index

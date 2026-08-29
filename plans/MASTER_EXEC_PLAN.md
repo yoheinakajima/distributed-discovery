@@ -1,6 +1,20 @@
 # Master execution plan
 
-## Active AO-0014 Common-Source Trap independent review (2026-08-06)
+## Active AO-0014 Common-Source Trap Pages closeout (2026-08-29)
+
+The accepted Common-Source Trap revision merged to `main` as
+`ed55ce3e31a8cb6f53b162cab05d2169266b128d`. Merge-commit CI run
+`33279199756` passed, while latest exact-head Pages run `33279199769` failed
+because its runner lacked Tectonic and Poppler even though CI installs both.
+Issue #220 remains open. Additive contract
+`tasks/common-source-trap-pages-runner-deps-r7.yml`, branch
+`codex/cst-pages-runner-deps`, and the existing AO-0014 living plan own one
+runner-only repair: add the CI-equivalent Tectonic 0.16.9 and `poppler-utils`
+steps before `make verify`, prove their ordering, pass deterministic validation,
+and open one draft PR. No manuscript, evidence, paper artifact, site content,
+manual Pages retry, deployment, publication, or submission action is in scope.
+
+## Completed AO-0014 Common-Source Trap independent review (2026-08-06)
 
 Issue #220, branch `agent/common-source-trap-review-packet`, and living plan
 `plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md` own the sole substantive lane.

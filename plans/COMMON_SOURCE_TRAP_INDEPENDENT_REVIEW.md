@@ -127,6 +127,23 @@ scientific evidence and authorizes no manuscript merge or publication.
   compiles twice to the exact canonical PDF. Metadata recommends `cs.GT` with
   `econ.TH` as an owner-confirmed cross-list candidate, leaves `submitted`
   false and DOI null, and keeps the irrevocable arXiv license owner-gated.
+- The accepted R6 paper merged to public `main`
+  `ed55ce3e31a8cb6f53b162cab05d2169266b128d`. Exact merge-commit CI run
+  `33279199756` passed, but latest Pages run `33279199769` failed before site
+  construction because its runner lacked `tectonic` and `pdftotext`. Additive
+  R7 contract `tasks/common-source-trap-pages-runner-deps-r7.yml` owns only the
+  CI-equivalent runner dependency repair on branch
+  `codex/cst-pages-runner-deps`; issue #220 remains open. No manuscript,
+  artifact, claim, site content, manual retry, or deployment is in scope.
+- The R7 branch now installs the exact CI toolchain before Pages verification.
+  Its focused workflow regression passes 4 tests, and the complete `make
+  verify` wall passes formatting, Ruff, strict MyPy on 223 source files, all
+  1,092 tests, 110 claims, 51 run manifests, every governance/publication audit,
+  and exact offline Compendium v0.1.0 reconstruction. The tracked diff remains
+  limited to the workflow, regression, and governance records.
+- Draft PR #222 tracks the validated runner-only repair. It remains stopped
+  before readiness, merge, manual workflow dispatch, deployment, or issue
+  closure.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -239,8 +256,16 @@ scientific evidence and authorizes no manuscript merge or publication.
 - [x] Diagnose the first exact-head CI failure as an absent Tectonic executable
   in the validation job, reuse the paper-build workflow's pinned Tectonic
   setup, and add a workflow regression without weakening the package test.
-- [ ] Push the same draft PR and reverify exact-head GitHub checks before
-  presenting the owner merge gate.
+- [x] Push the same draft PR, pass its exact-head GitHub checks, and merge the
+  accepted R6 paper as `ed55ce3e31a8cb6f53b162cab05d2169266b128d`.
+- [x] Diagnose exact-head Pages run `33279199769` as a runner-only dependency
+  failure: `tectonic` and `pdftotext` are absent although CI installs both.
+- [x] Add the CI-equivalent pinned Tectonic and Poppler setup to Pages, prove
+  both occur before `make verify`, and pass the deterministic wall.
+- [x] Commit, push, and open draft repair PR #222 without dispatching or
+  retrying Pages.
+- [ ] Reverify the final exact head and its GitHub checks, then stop at the
+  owner merge gate.
 - [x] Reverified local, remote, PR, base, issue, and five-file worktree state at
   exact authorized head `9cf1720c2b23737f1937ea2c3f1a35a898fa9809`.
 - [x] Added and schema-validated the narrow superseding AO-0014 pointer task.
@@ -329,6 +354,17 @@ scientific evidence and authorizes no manuscript merge or publication.
   instead of silently promoting reviewer output.
 
 ## Decision log
+
+- 2026-08-29: Preserve the accepted Common-Source paper, evidence, PDF, arXiv
+  package, and generated site byte-for-byte. Repair only the Pages runner by
+  installing the same Tectonic 0.16.9 and `poppler-utils` dependencies already
+  proven in CI, with a regression that checks both steps precede `make verify`.
+  Keep issue #220 open and stop at a draft-PR merge gate; do not manually retry
+  or claim deployment.
+- 2026-08-29: The focused four-test workflow regression and complete 1,092-test
+  repository wall pass with all audits and the immutable Compendium
+  reconstruction. Treat this as validation of runner configuration only; it is
+  not a Pages deployment or publication result.
 
 - 2026-08-06: Use AO-0014 documentation-editorial governance because the work
   creates a durable review artifact and later editorial revision but no new
