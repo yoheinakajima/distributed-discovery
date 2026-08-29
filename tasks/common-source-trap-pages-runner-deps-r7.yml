@@ -1,0 +1,70 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0014
+title: Common-Source Trap Pages runner PDF-toolchain repair
+task_type: infrastructure
+status: active
+objective: Restore the accepted Common-Source Trap Pages build by installing the same pinned Tectonic and Poppler dependencies already used by CI, prove the dependency ordering with one regression, and stop at an exact-head draft-PR owner gate.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: plan, path: plans/MASTER_EXEC_PLAN.md}
+  - {type: plan, path: plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/220"}
+owner_decisions:
+  - On 2026-08-29 the owner authorized one narrow draft-PR repair after the accepted Common-Source Trap merge passed CI but its exact-head Pages build failed because the runner lacked Tectonic and Poppler.
+  - The repair may add only the CI-equivalent Tectonic 0.16.9 setup and poppler-utils installation to Pages plus the smallest ordering regression and governance records.
+  - Issue 220 remains open and merge, manual Pages dispatch or retry, deployment, publication, and arXiv submission remain separate owner-controlled actions.
+scope:
+  paths:
+    - tasks/common-source-trap-pages-runner-deps-r7.yml
+    - plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
+    - plans/MASTER_EXEC_PLAN.md
+    - .github/workflows/pages.yml
+    - tests/integration/test_github_setup.py
+  actions:
+    - Install wtfjoke/setup-tectonic@v4 at Tectonic 0.16.9 in the Pages build job before repository verification.
+    - Install poppler-utils in the Pages build job before repository verification.
+    - Prove both dependencies precede make verify while preserving the existing CI PDF-toolchain assertions.
+    - Run focused workflow validation and the complete deterministic repository wall.
+    - Commit, push, and open one draft pull request against exact accepted main, then stop at the exact-head owner gate.
+non_goals:
+  - No manuscript, evidence, claim, figure, paper artifact, arXiv package, generated site, or scientific-source change.
+  - No new study, run, claim, result, provider or reviewer call, credential access, or spend.
+  - No PR readiness, merge, manual workflow dispatch, Pages retry or cancellation, deployment claim, publication, submission, DOI, release, issue closure, or branch deletion.
+permissions: {repository_write: true, git_branch_commit: true, github_issue_pr: true, merge_after_checks: false, ci_pages: false}
+external_action_permissions: {network_observation: true, github_mutation: true, provider_calls: false, spend: false, release_publication: false, submission: false}
+scientific_mutation_permissions: {create_study: false, create_claim: false, create_run: false, change_evidence_status: false, change_proof_status: false, change_paper_lifecycle: false}
+private_data_permissions: {read: false, write: false, generate: false, publish: false}
+budget: {currency: USD, expected: "0", hard_cap: "0", call_cap: 0, category_caps: {}, cumulative_spend: "0"}
+expected_outcomes:
+  - One draft pull request whose workflow-only change gives the Pages runner the same pinned PDF toolchain as CI.
+  - A regression proving Tectonic and Poppler are installed before make verify in Pages while retaining the CI dependency assertions.
+  - Passing focused workflow checks, Agent Operations audit, complete repository verification, and exact-head GitHub checks.
+stop_conditions:
+  - Stop before editing if main is not ed55ce3e31a8cb6f53b162cab05d2169266b128d, CI run 33279199756 is not green at that head, Pages run 33279199769 is not the latest terminal failure at that head, or issue 220 is not open.
+  - Stop if the failure is not explained by absent tectonic and pdftotext on the Pages runner or if the repair would require a manuscript, evidence, artifact, site-content, or scientific change.
+  - Stop if the dependency steps cannot be proven to precede make verify or the complete deterministic wall fails from this exact branch.
+  - Stop before PR readiness, merge, manual workflow dispatch, Pages retry or cancellation, deployment, publication, submission, DOI, release, issue closure, or branch deletion.
+acceptance_profile: infrastructure
+canonical_destinations:
+  - tasks/common-source-trap-pages-runner-deps-r7.yml
+  - plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
+  - .github/workflows/pages.yml
+  - tests/integration/test_github_setup.py
+github: {repository: yoheinakajima/distributed-discovery, issue: 220, branch: codex/cst-pages-runner-deps, pull_request: null, base: main}
+exec_plan: plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
+task_delta: null
+frozen_identifiers:
+  accepted_main: ed55ce3e31a8cb6f53b162cab05d2169266b128d
+  accepted_pr_head: 4f5dccc56d8d6e5feea27ebb5b29b6b3d0d94ffc
+  accepted_ci_run: "33279199756"
+  failed_pages_run: "33279199769"
+  expected_tectonic_version: 0.16.9
+  expected_poppler_package: poppler-utils
+supersession:
+  supersedes: [tasks/common-source-trap-explore-science-closeout-r6.yml]
+  superseded_by: null
+  reason: The paper closeout is accepted on main; this additive contract owns only its merge-triggered Pages runner dependency failure and preserves the scientific result unchanged.
+next_gate: After exact-head checks pass on the draft repair PR, the owner may separately authorize marking that exact head ready and merging it so the existing main-triggered Pages workflow can run. No manual retry is authorized.
