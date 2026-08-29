@@ -1,0 +1,108 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0014
+title: Common-Source Trap Explore Science disposition and arXiv handoff
+task_type: documentation-editorial
+status: active
+objective: Apply only the owner-authorized, evidence-bounded 2026-08-29 Explore Science disposition to Common-Source Trap, validate the revised working paper, and prepare a portable owner-gated arXiv handoff without merging or submitting.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: instruction, path: papers/AGENTS.md}
+  - {type: instruction, path: claims/AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/research-governance.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: policy, path: docs/publication/arxiv-freeze-checklist.md}
+  - {type: plan, path: plans/MASTER_EXEC_PLAN.md}
+  - {type: plan, path: plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/220"}
+  - {type: pull-request, path: "https://github.com/yoheinakajima/distributed-discovery/pull/221"}
+owner_decisions:
+  - On 2026-08-29 the owner supplied the Explore Science report for the exact Common-Source Trap PDF and authorized applying defensible low-risk improvements and preparing the paper for arXiv.
+  - The supplied report is review input, not repository scientific authority; its complete proprietary PDF remains local and only its identity, score, findings, and dispositions may enter Git.
+  - The owner authorized a bounded corollary of existing analytic claim DD-C-0057, clearer disclosure of existing DD-C-0051 and DD-C-0056 evidence, and a Figure 1 label repair; no new study, run, externally verified theorem, or evidence-status promotion is authorized.
+  - A portable source bundle, exact checksums, metadata, category recommendation, and upload checklist may be prepared, but the irrevocable arXiv license choice, PR merge, and submission remain separate owner gates.
+scope:
+  paths:
+    - tasks/common-source-trap-explore-science-closeout-r6.yml
+    - plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
+    - plans/MASTER_EXEC_PLAN.md
+    - papers/common-source-trap/main.tex
+    - papers/common-source-trap/The_Common_Source_Trap.pdf
+    - papers/common-source-trap/validation.json
+    - papers/common-source-trap/visual-qa.md
+    - papers/common-source-trap/arxiv-metadata.yml
+    - papers/common-source-trap/generated/provenance.json
+    - papers/common-source-trap/generated/trap-region.tex
+    - studies/DD-008B-common-source-analysis/proof.md
+    - src/distributed_discovery/papers/build_common_source_trap.py
+    - scripts/build_common_source_trap_arxiv_package.py
+    - reports/editorial/common-source-trap-review-disposition.yml
+    - reports/editorial/common-source-trap-arxiv-package.yml
+    - reports/editorial/arxiv-readiness-map.yml
+    - reports/editorial/arxiv-readiness-map.md
+    - papers/README.md
+    - docs/paper-lifecycle.yml
+    - docs/publication/paper-citation-metadata.yml
+    - tests/unit/test_common_source_analysis.py
+    - tests/unit/test_common_source_trap_pointer_versioning.py
+    - tests/integration/test_common_source_trap_paper.py
+    - tests/integration/test_common_source_trap_arxiv_package.py
+    - tests/integration/test_github_setup.py
+    - .github/workflows/ci.yml
+    - Makefile
+  actions:
+    - Record the exact owner-supplied review identity and bounded disposition without committing the report PDF.
+    - Add the exact fixed-margin large-team corollary of DD-C-0057 and preserve its no-prevalence, no-all-finite-N, and no-universal-policy boundaries.
+    - Clarify existing DD-C-0051 evidence status and DD-C-0056 Bonferroni-family adjustment without changing any registered result.
+    - Move only the Figure 1 explanatory annotation, rebuild twice, and inspect every rendered page.
+    - Create and validate a deterministic portable source archive plus owner upload metadata and checklist.
+    - Reuse the repository's pinned Tectonic setup in CI validation so the portable-compile regression runs in clean Linux checkouts.
+    - Update only moving current-working-paper pointers; preserve every Compendium v0.1.0 record and historical review artifact.
+non_goals:
+  - No new study, run, claim ID, empirical assertion, prevalence estimate, provider review, reviewer call, or spend.
+  - No alteration of registered Monte Carlo results, sample sizes, power values, claim status, proof status, or lifecycle status.
+  - No rewrite of immutable Compendium v0.1.0 or frozen Round 1/Round 2 review identities.
+  - No PR readiness, merge, issue closure, arXiv or Explore Science submission, external upload, publication, deployment, DOI, release, credential, or branch deletion.
+permissions: {repository_write: true, git_branch_commit: true, github_issue_pr: true, merge_after_checks: false, ci_pages: false}
+external_action_permissions: {network_observation: true, github_mutation: true, provider_calls: false, spend: false, release_publication: false, submission: false}
+scientific_mutation_permissions: {create_study: false, create_claim: false, create_run: false, change_evidence_status: false, change_proof_status: false, change_paper_lifecycle: false}
+private_data_permissions: {read: true, write: false, generate: false, publish: false}
+budget: {currency: USD, expected: "0", hard_cap: "0", call_cap: 0, category_caps: {}, cumulative_spend: "0"}
+expected_outcomes:
+  - A byte-reproducible, visually verified 21-page revised working paper with exact source and PDF hashes.
+  - A deterministic source archive that compiles twice to the exact canonical PDF with no host paths or missing inputs.
+  - A complete owner upload packet that leaves submitted false, DOI null, category confirmation and arXiv license choice owner-gated.
+stop_conditions:
+  - Stop before any edit if PR 221 is not open, draft, clean, and mergeable at exact head 93a46fe17e871b4adebab101ae164e2e37dbb978 and exact base 7268e445347c4d7f9106d129af42d0e8667eb115.
+  - Stop if the supplied review hash/page count differs, an accepted edit needs a new study/run/claim, or registered evidence would change.
+  - Stop if the portable archive cannot compile twice to the canonical PDF or any current pointer repair touches immutable release evidence.
+  - Stop before PR readiness, merge, submission, publication, deployment, DOI, release, provider call, spend, or branch deletion.
+acceptance_profile: docs-editorial
+canonical_destinations:
+  - tasks/common-source-trap-explore-science-closeout-r6.yml
+  - plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
+  - reports/editorial/common-source-trap-review-disposition.yml
+  - reports/editorial/common-source-trap-arxiv-package.yml
+  - papers/common-source-trap/main.tex
+  - papers/common-source-trap/arxiv-metadata.yml
+  - scripts/build_common_source_trap_arxiv_package.py
+github: {repository: yoheinakajima/distributed-discovery, issue: 220, branch: agent/common-source-trap-review-packet, pull_request: 221, base: main}
+exec_plan: plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
+task_delta: null
+frozen_identifiers:
+  authorized_pr_head: 93a46fe17e871b4adebab101ae164e2e37dbb978
+  authorized_base_main: 7268e445347c4d7f9106d129af42d0e8667eb115
+  explore_science_report_sha256: 255d214b4e7b91f24eafc350e3f8d2188d512292560e639ec9eeea9f6c9e93c5
+  explore_science_report_pages: "9"
+  explore_science_score: "96"
+  prior_pdf_sha256: ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150
+  revised_manuscript_sha256: cca15a9b23a5b4221f7e66c8cce5dcd9857a4f53325556705370dff6c4d0050c
+  revised_pdf_sha256: 3dc1d06c509121ff1668979344e1b343d559353e0723e9589dac4da61a70794c
+  revised_page_count: "21"
+  arxiv_source_archive_sha256: 54dd757422370312b874627dba6a980d47a450843ac951b47f500cfcfd148a44
+supersession:
+  supersedes: [tasks/common-source-trap-provider-review-and-ci-completion-r5.yml]
+  superseded_by: null
+  reason: The owner directly supplied a later external review and authorized a new bounded evidence-governed revision and submission-preparation slice; failed or incomplete Round 2 provider slots are preserved as history and not reused.
+next_gate: After exact-head checks and the full wall pass, owner may approve ready-for-review plus normal merge of the exact PR head. ArXiv upload, license selection, and final submission remain separately owner-controlled.

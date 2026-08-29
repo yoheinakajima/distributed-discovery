@@ -1,0 +1,147 @@
+schema_version: common-source-trap-review-packet-v1
+packet_id: common-source-trap-r1
+status: frozen-awaiting-complete-independent-review-bundle
+paper:
+  id: common-source-trap
+  title: "The Common-Source Trap: Endogenous Independent Evidence in Distributed Discovery"
+  lifecycle: working-paper
+  submission_authorized: false
+  peer_reviewed: false
+authority:
+  manuscript_claim_proof_run_evidence: repository-only
+  repository: yoheinakajima/distributed-discovery
+  atlas_role:
+    - exact-pointer-management
+    - review-round-status
+    - reviewer-provenance
+    - complete-bundle-handoff
+  atlas_scientific_authority: false
+source:
+  commit: 7268e445347c4d7f9106d129af42d0e8667eb115
+  ref_at_freeze: main
+  paper_tree_oid: 2c34089accf3e9bbd2d6d038aceb2156bc0aa2a4
+  manuscript:
+    path: papers/common-source-trap/main.tex
+    sha256: 2f7d9ead7e54a7c4b852935b9648361cc682772c5fe41853d0193b86ce3fbdad
+    url: https://github.com/yoheinakajima/distributed-discovery/blob/7268e445347c4d7f9106d129af42d0e8667eb115/papers/common-source-trap/main.tex
+  pdf:
+    path: papers/common-source-trap/The_Common_Source_Trap.pdf
+    sha256: afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7
+    page_count: 21
+    url: https://raw.githubusercontent.com/yoheinakajima/distributed-discovery/7268e445347c4d7f9106d129af42d0e8667eb115/papers/common-source-trap/The_Common_Source_Trap.pdf
+  supporting_files:
+    - {path: papers/common-source-trap/README.md, sha256: c35aa2926de7d6511d57d832c3fd53e0efcb220caacb3eb0123ed43f3991858d}
+    - {path: papers/common-source-trap/citation.bib, sha256: dcc33a881ad8dcdfe20abfd0c6723a9967c719f28171761fc294fe4e6d0234ae}
+    - {path: papers/common-source-trap/metadata.yml, sha256: 25e3b1ef4f114b4d12eaf77f0efc1390df4845f03f47a7ebcae1991ab748dc30}
+receipts:
+  - {path: papers/common-source-trap/validation.json, sha256: 565996564ea530556ee504e737a6379cf4df3de5721e6ca44ca0cacef4dd55e5, role: deterministic-build-and-input-validation}
+  - {path: papers/common-source-trap/generated/provenance.json, sha256: 2bc633e9c88fa8165f999861cdef4dc48d6538d11aaf4e2bffd087f66205c753, role: source-run-input-and-generated-asset-provenance}
+  - {path: papers/common-source-trap/visual-qa.md, sha256: 7d0fbfd3dc9d38490766628381e0768480df1f3930cb301160805abb8af36820, role: all-page-render-review}
+  # Compiler logs are ignored build intermediates, not canonical receipts.
+  # Fresh compiler status is recorded by validation.json and AO-0014 validation.
+evidence:
+  claims:
+    - {id: DD-C-0051, study_id: DD-008, status: independently-reproduced, run_id: 20260721T141527Z_DD-008_0d11dc77_7e0c8f1d66}
+    - {id: DD-C-0052, study_id: DD-008A, status: independently-reproduced, run_id: 20260721T163030Z_DD-008A_8b70668b_06307caab4}
+    - {id: DD-C-0053, study_id: DD-006B, status: independently-reproduced, run_id: 20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b}
+    - {id: DD-C-0054, study_id: DD-009, status: independently-reproduced, run_id: 20260721T171249Z_DD-009_bc78d249_0c3851c41a}
+    - {id: DD-C-0056, study_id: DD-011, status: verified, run_id: 20260721T185647Z_DD-011_fa0271d9_fcaa647c55}
+    - {id: DD-C-0057, study_id: DD-008B, status: verified, run_id: 20260721T192412Z_DD-008B_649deb08_29dbeaf3a9}
+    - {id: DD-C-0058, study_id: DD-008B, status: independently-reproduced, run_id: 20260721T192412Z_DD-008B_649deb08_29dbeaf3a9}
+  source_runs:
+    two_agent: 20260721T141527Z_DD-008_0d11dc77_7e0c8f1d66
+    finite_n: 20260721T163030Z_DD-008A_8b70668b_06307caab4
+    mechanism: 20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b
+    atlas: 20260721T171249Z_DD-009_bc78d249_0c3851c41a
+    experiment: 20260721T185647Z_DD-011_fa0271d9_fcaa647c55
+    analytic: 20260721T192412Z_DD-008B_649deb08_29dbeaf3a9
+  inputs:
+    - {path: results/verified/20260721T141527Z_DD-008_0d11dc77_7e0c8f1d66/outputs/source-choice-grid.json, sha256: 5e1da8ec2e34378a18cc8431ee11cde6ba78c71cb0bf25be556429b19cb3db9f}
+    - {path: results/verified/20260721T163030Z_DD-008A_8b70668b_06307caab4/outputs/n-agent-census.json, sha256: 6df75b7bf2b1f03687d4182ab4e5ab91711d279777bee66769aa7461bf558e7b}
+    - {path: results/verified/20260721T165512Z_DD-006B_f022a1a5_3be21d0b9b/outputs/joint-mechanism-summary.json, sha256: 34542e79cb887ca504909eb27842d1b734803fbac0c286f8bd051f13f1e163ad}
+    - {path: results/verified/20260721T171249Z_DD-009_bc78d249_0c3851c41a/outputs/architectures.json, sha256: acf90df6a2dc2271773f831a5c2a8e640e5a88e38a9d97f09acf62221e938a94}
+    - {path: results/verified/20260721T185647Z_DD-011_fa0271d9_fcaa647c55/outputs/hypotheses.json, sha256: 0d586f4001c82d6771e0969b3a183b352a120591d84c0a27141c011e1307758f}
+    - {path: results/verified/20260721T192412Z_DD-008B_649deb08_29dbeaf3a9/outputs/summary.json, sha256: a877471e90750a38b48d37c9d37d6e9dfca05bb6f9bdb90217f36b908381465e}
+    - {path: results/verified/20260721T192412Z_DD-008B_649deb08_29dbeaf3a9/outputs/thresholds.json, sha256: a9d7c5143d758e6dca919734ae934dab3f02b23a3fe07c609113834815760ae6}
+build:
+  canonical_command: make common-source-trap
+  complete_paper_command: make papers
+  repository_validation_command: make verify
+  generator:
+    path: src/distributed_discovery/papers/build_common_source_trap.py
+    sha256: 35717375c57ecf382125b6472758c91793e6ba9e54949479da0aa56e9ba6a5a1
+  wrapper:
+    path: scripts/build_papers.sh
+    sha256: a1a85ca3aef925e5db2b0f2377fab51c39e2d782144a859811897446b752dc50
+  dependency_lock:
+    path: uv.lock
+    sha256: 0766c91477cdc28e1ed36ec7bcd60669ed6e80fd0a6f55892bc8fba2c57a3588
+  observed_tools:
+    uv: 0.11.16
+    python: 3.11.15
+    tectonic: 0.16.9
+    poppler: 26.08.0
+  acceptance:
+    page_count: 21
+    pdf_sha256: afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7
+    byte_reproducible_two_builds: true
+    unresolved_references_citations_or_overfull_boxes: false
+  compiler_log_policy: ignored-intermediate-never-review-authority
+review_round:
+  id: common-source-trap-r1
+  required_reviewers: [chatgpt, claude, gemini, grok]
+  exact_packet_for_every_reviewer: true
+  independent: true
+  reviewer_must_not_receive_other_reviews: true
+  atlas_must_return_complete_bundle_simultaneously: true
+  model_selection: strong-non-top-tier
+  reasoning_ceiling: xhigh-never-ultra
+  provider_api_or_spend_authorized: false
+  reviewer_provenance_required:
+    - reviewer_system
+    - exact_model_identity_if_exposed
+    - review_started_utc
+    - review_completed_utc
+    - source_commit
+    - packet_id
+    - manuscript_sha256
+    - pdf_sha256
+    - independence_attestation
+  requested_checks:
+    - theorem-and-proof-correctness
+    - claim-status-and-scope-calibration
+    - citation-support-and-neighboring-literature
+    - self-containment-and-dependency-clarity
+    - exposition-structure-and-reader-comprehension
+    - figures-tables-and-visual-legibility
+    - limitations-negative-results-and-counterboundaries
+  finding_fields:
+    - finding_id
+    - severity
+    - manuscript_location
+    - affected_claim_or_citation
+    - finding
+    - repository_evidence_needed
+    - recommended_disposition
+bundle_gate:
+  required_reviews: 4
+  partial_bundle_accepted: false
+  manuscript_edit_authorized_before_complete_bundle: false
+  required_next_record: reports/editorial/common-source-trap-review-disposition.yml
+  disposition_values: [accept, accept-with-edit, reject, defer-needs-evidence, duplicate]
+prohibitions:
+  - information-sharing-frontier-work
+  - manuscript-edit-before-complete-bundle
+  - new-scientific-execution
+  - claim-proof-run-or-lifecycle-mutation
+  - provider-api-call-or-spend
+  - explore-science-upload
+  - publication-submission-doi-release-or-journal-contact
+  - pull-request-readiness-or-merge
+  - pages-retry-or-deployment
+  - historical-untracked-file-action
+operational_context:
+  pages_incident_nonblocking: true
+  pages_failure_run: 31110671871
+  issue_218_must_remain_open: true
+  issue_212_must_remain_open: true

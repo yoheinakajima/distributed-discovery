@@ -77,8 +77,12 @@ def _safe_member_name(name: str) -> None:
         raise ReleaseVerificationError(f"collision-copy member rejected: {name}")
 
 
-def _verify_zip(path: Path, registry: dict[str, Any], version: str) -> dict[str, Any]:
-    expected_members, expected_inventory = builder._paper_members(registry, version)
+def _verify_zip(
+    path: Path, registry: dict[str, Any], version: str, *, source_revision: str
+) -> dict[str, Any]:
+    expected_members, expected_inventory = builder._paper_members(
+        registry, version, source_revision=source_revision
+    )
     expected = dict(expected_members)
     with zipfile.ZipFile(path) as archive:
         infos = archive.infolist()
@@ -154,8 +158,14 @@ def verify_release(*, version: str, output_dir: Path) -> dict[str, Any]:
         ):
             if manifest[field] is not None:
                 raise ReleaseVerificationError(f"dry-run {field} must be null")
-    registry = builder.load_content_registry()
-    if manifest["content_registry"]["sha256"] != builder.sha256_file(builder.CONTENT_PATH):
+    source_revision = manifest["source_revision"]
+    if source_revision != builder._release_source_revision(version):
+        raise ReleaseVerificationError("manifest does not use registered release source")
+    registry = builder.load_content_registry(source_revision)
+    historical_registry = builder.git_blob(
+        source_revision, builder.CONTENT_PATH.relative_to(builder.ROOT).as_posix()
+    )
+    if manifest["content_registry"]["sha256"] != builder.sha256_bytes(historical_registry):
         raise ReleaseVerificationError("content registry hash mismatch")
     if len(manifest["artifacts"]) != 7:
         raise ReleaseVerificationError("manifest must describe seven paper artifacts")
@@ -164,11 +174,17 @@ def verify_release(*, version: str, output_dir: Path) -> dict[str, Any]:
     for artifact, paper in zip(manifest["artifacts"], registry["papers"], strict=True):
         if artifact["paper_id"] != paper["paper_id"]:
             raise ReleaseVerificationError("paper order or identity changed")
-        if builder.sha256_file(builder.ROOT / artifact["pdf_path"]) != artifact["pdf_sha256"]:
+        if (
+            builder.sha256_bytes(builder.git_blob(source_revision, artifact["pdf_path"]))
+            != artifact["pdf_sha256"]
+        ):
             raise ReleaseVerificationError(f"PDF hash mismatch: {artifact['paper_id']}")
-        if builder.sha256_file(builder.ROOT / paper["main_source"]) != artifact["source_sha256"]:
+        if (
+            builder.sha256_bytes(builder.git_blob(source_revision, paper["main_source"]))
+            != artifact["source_sha256"]
+        ):
             raise ReleaseVerificationError(f"main source hash mismatch: {artifact['paper_id']}")
-    zip_result = _verify_zip(papers_path, registry, version)
+    zip_result = _verify_zip(papers_path, registry, version, source_revision=source_revision)
     if manifest["paper_bundle"]["sha256"] != builder.sha256_file(papers_path):
         raise ReleaseVerificationError("paper-bundle hash mismatch")
     if manifest["paper_bundle"]["archive_members"] != zip_result["members"]:
@@ -195,6 +211,16 @@ def verify_release(*, version: str, output_dir: Path) -> dict[str, Any]:
             raise ReleaseVerificationError(f"manifest asset hash mismatch: {filename}")
         if record["bytes"] != path.stat().st_size:
             raise ReleaseVerificationError(f"manifest asset size mismatch: {filename}")
+    historical_asset_paths = {
+        f"{stem}-paper-citation-metadata.yml": builder.CITATION_PATH,
+        f"{stem}-release-notes.md": builder.RELEASE_NOTES_PATH,
+    }
+    for filename, repository_path in historical_asset_paths.items():
+        expected = builder.git_blob(
+            source_revision, repository_path.relative_to(builder.ROOT).as_posix()
+        )
+        if (output_dir / filename).read_bytes() != expected:
+            raise ReleaseVerificationError(f"historical release asset bytes changed: {filename}")
     return {
         "status": "verified-offline",
         "assets": 5,

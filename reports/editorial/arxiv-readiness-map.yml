@@ -1,5 +1,5 @@
 schema_version: 1
-audit_date: "2026-07-23"
+audit_date: "2026-08-29"
 status: internal-readiness-not-submission
 rubric:
   central_question: 20
@@ -12,23 +12,25 @@ first_freeze_candidate: common-source-trap
 records:
   - paper_id: common-source-trap
     score: 82
-    current_status: validated-working-paper
+    explore_science_score: 96
+    explore_science_tier: Platinum
+    current_status: validated-explore-science-hardened-working-paper
     central_question: When do equal-share incentives induce excessive reliance on a common source?
-    self_containment: likely-contained-proof-audit-required
+    self_containment: complete-paper-and-proof-audited
     logical_dependencies: [shared-discovery-paradox-background]
     stable_identifiers: {arxiv: null, doi: null, release: null}
     literature_engagement: primary-base-present-gaps-remain
     conditional_contribution: Exact source-choice thresholds in the frozen equal-prize model conditional on established acquisition and search literatures.
     de_labification_need: moderate
     evidence_appendix: present
-    source_package_readiness: deterministic-build-needs-portable-freeze-bundle
-    licensing: MIT-project-source-owner-confirm-venue-license-at-freeze
-    arxiv_category_hypothesis: [cs.GT, cs.AI]
-    moderation_risk: medium-because-contribution-positioning-needs-stronger-primary-context
-    freeze_blockers: [canonical-anchor-citation-timing, business-stealing-and-excess-entry-gap, de-labification, no-stable-identifier]
-    estimated_edit_scope: bounded-medium
-    exact_next_file: papers/common-source-trap/main.tex
-    readiness_decision: first-freeze-candidate-no-edit-authorized
+    source_package_readiness: portable-source-bundle-reproduces-canonical-pdf-twice
+    licensing: MIT-project-source-arxiv-irrevocable-license-owner-selection-required
+    arxiv_category_hypothesis: [cs.GT, econ.TH]
+    moderation_risk: low-to-medium-category-and-endorsement-remain-arxiv-controlled
+    freeze_blockers: [exact-pr-merge-owner-gate, category-owner-confirmation, arxiv-license-owner-selection, no-stable-identifier]
+    estimated_edit_scope: complete
+    exact_next_file: reports/editorial/common-source-trap-arxiv-package.yml
+    readiness_decision: submission-package-ready-owner-upload-gated
   - paper_id: information-sharing-frontier
     score: 78
     current_status: validated-working-paper

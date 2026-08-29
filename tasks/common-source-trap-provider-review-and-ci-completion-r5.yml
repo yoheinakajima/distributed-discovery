@@ -1,0 +1,95 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0014
+title: Common-Source Trap genuine provider-review and clean-checkout completion
+task_type: documentation-editorial
+status: active
+objective: Complete at most one genuine Anthropic and one genuine Google Round 2 review from the exact frozen packet, while repairing only the deterministic clean-checkout history seam that blocks the frozen packet tests.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: instruction, path: papers/AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/research-governance.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: plan, path: plans/MASTER_EXEC_PLAN.md}
+  - {type: plan, path: plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md}
+  - {type: record, path: reports/agent-ops/AO-0014-standing-paper-review-authorization.yml}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/220"}
+  - {type: pull-request, path: "https://github.com/yoheinakajima/distributed-discovery/pull/221"}
+owner_decisions:
+  - The owner confirmed the qualifying projectless Codex review and preserved Grok review fill two Round 2 slots; genuine Claude and Gemini reviews remain missing.
+  - The standing paper-review lane permits one fresh same-provider call for each missing slot using the strongest currently supported below-top-tier equivalent, an existing project-restricted credential, no retry, USD 1 per call, and USD 10 aggregate across the named paper-review lane.
+  - The owner authorized only the deterministic clean-checkout history repair needed for packet tests to reconstruct the frozen historical commits; paper claims and frozen review inputs cannot change.
+  - Only two new qualifying receipts complete the four-review bundle and unlock one synthesis, one all-at-once writer handoff, one bounded evidence-bound revision, rebuild, validation, and an update to the existing draft PR.
+scope:
+  paths:
+    - tasks/common-source-trap-provider-review-and-ci-completion-r5.yml
+    - reports/agent-ops/AO-0014-standing-paper-review-authorization.yml
+    - plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
+    - plans/MASTER_EXEC_PLAN.md
+    - src/distributed_discovery/editorial_review.py
+    - tests/unit/test_common_source_trap_headless_review.py
+    - .github/workflows/ci.yml
+    - tests/integration/test_github_setup.py
+    - reports/editorial/common-source-trap-review-disposition.yml
+    - papers/common-source-trap/main.tex
+    - papers/common-source-trap/The_Common_Source_Trap.pdf
+    - papers/common-source-trap/validation.json
+    - papers/common-source-trap/visual-qa.md
+  actions:
+    - Add and synthetically validate exact one-call no-tool Anthropic and Google review transports, private success/failure receipts, credential clearing, cost bounds, exact model identity, closed schema, and ordered 21-page coverage.
+    - Use only exact existing Keychain services and contact each missing provider at most once after all local and live-PR preconditions pass.
+    - Fetch complete Git history in the validation workflow and prove that clean CI can reconstruct the frozen artifact, receipt, and baseline commits.
+    - Continue to synthesis and one evidence-bound writer revision only if the complete four-review threshold is satisfied.
+non_goals:
+  - No retry after ambiguous delivery, cross-provider substitution, browser review, tool use, connector, attachment, prior-review sharing, credential creation, or credential change.
+  - No paper or packet change to repair CI history and no use of any excluded, ambiguous, or missing-receipt review.
+  - No new science, study, claim, run, proof, evidence-status or lifecycle mutation, Information Sharing Frontier work, or protected-worktree action.
+  - No PR readiness, merge, issue closure, publication, deployment, Explore Science, submission, DOI, release, or branch deletion.
+permissions: {repository_write: true, git_branch_commit: true, github_issue_pr: true, merge_after_checks: false, ci_pages: false}
+external_action_permissions: {network_observation: true, github_mutation: true, provider_calls: true, spend: true, release_publication: false, submission: false}
+scientific_mutation_permissions: {create_study: false, create_claim: false, create_run: false, change_evidence_status: false, change_proof_status: false, change_paper_lifecycle: false}
+private_data_permissions: {read: true, write: true, generate: true, publish: false}
+budget:
+  currency: USD
+  expected: "0.40"
+  hard_cap: "2.00"
+  call_cap: 2
+  category_caps: {anthropic_claude_replacement: "1.00", google_gemini_replacement: "1.00"}
+  cumulative_spend: "0"
+expected_outcomes:
+  - One terminal private receipt for the Anthropic slot and one for the Google slot, each from at most one provider call and below USD 1.
+  - Clean-checkout packet tests reproduce every frozen historical commit without changing review inputs.
+  - A complete four-review bundle and bounded revision only if both new receipts qualify; otherwise an exact stopped slot with no retry.
+stop_conditions:
+  - Stop a slot before credential read if the PR, branch, head, frozen hashes, packet, rubric, schema, page count, receipt namespace, model, credential-service presence, or cost bound differs.
+  - Stop a slot after any ambiguous delivery, rejection, malformed response, missing receipt, model drift, incomplete page coverage, or cap breach; never retry or substitute.
+  - Stop before synthesis or manuscript edit unless four independent qualifying reviews exist.
+  - Stop before PR readiness, merge, issue closure, deployment, publication, Explore Science, release, DOI, submission, new research, branch deletion, or protected-file action.
+acceptance_profile: docs-editorial
+canonical_destinations:
+  - tasks/common-source-trap-provider-review-and-ci-completion-r5.yml
+  - reports/agent-ops/AO-0014-standing-paper-review-authorization.yml
+  - plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
+  - src/distributed_discovery/editorial_review.py
+  - tests/unit/test_common_source_trap_headless_review.py
+  - .github/workflows/ci.yml
+  - tests/integration/test_github_setup.py
+github: {repository: yoheinakajima/distributed-discovery, issue: 220, branch: agent/common-source-trap-review-packet, pull_request: 221, base: main}
+exec_plan: plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
+task_delta: null
+frozen_identifiers:
+  reviewed_artifact_commit: 4fa15aa7f77dcae9f02a42c64273a04969247571
+  packet_sha256: 8d4e55adcb94161ff315be17c90945642695e531ad43770cde4154760457bbfe
+  manuscript_sha256: 87a6e85450c72fc9c93b281646ecfbd60193747c80aae9eac0a022301e1f06e1
+  pdf_sha256: ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150
+  page_count: "21"
+  anthropic_model: claude-sonnet-5
+  anthropic_effort: medium
+  gemini_model: gemini-3.1-pro-preview
+  gemini_thinking_level: medium
+supersession:
+  supersedes: [tasks/common-source-trap-codex-reviewer-completion-r4.yml]
+  superseded_by: null
+  reason: The qualifying Codex checkpoint made the two genuine provider slots due, and the owner separately authorized the smallest clean-checkout history repair without changing any frozen review input or scientific authority.
+next_gate: Run each missing provider slot at most once after exact preflight. Continue to the complete-bundle writer lane only if both qualify; otherwise stop the affected slot without retry. Stop before PR readiness, merge, publication, or deployment.

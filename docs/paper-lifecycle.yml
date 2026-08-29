@@ -47,7 +47,7 @@ records:
     scientific_correction_record: null
     publication_evidence: [public repository PDF and validation record]
     recommended_citation: "Nakajima, Yohei (2026). The Common-Source Trap. Working paper."
-    pdf_sha256: afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7
+    pdf_sha256: 3dc1d06c509121ff1668979344e1b343d559353e0723e9589dac4da61a70794c
     page_count: 21
     build_policy: active-deterministic-build
     upstream_lock: null

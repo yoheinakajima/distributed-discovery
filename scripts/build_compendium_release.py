@@ -25,6 +25,7 @@ MANIFEST_SCHEMA_PATH = ROOT / "docs/releases/release-evidence-manifest.schema.js
 AUTH_SCHEMA_PATH = ROOT / "docs/releases/first-compendium-release-authorization.schema.json"
 CITATION_PATH = ROOT / "docs/publication/paper-citation-metadata.yml"
 RELEASE_NOTES_PATH = ROOT / "docs/releases/compendium-v0.1.0-release-notes.md"
+RELEASE_REGISTRY_PATH = ROOT / "docs/releases/releases.yml"
 ZIP_TIMESTAMP = (1980, 1, 1, 0, 0, 0)
 FILE_MODE = 0o100644 << 16
 SHA_RE = re.compile(r"^[0-9a-f]{40}$")
@@ -69,8 +70,61 @@ def _load_yaml(path: Path) -> dict[str, Any]:
     return data
 
 
-def load_content_registry() -> dict[str, Any]:
-    registry = _load_yaml(CONTENT_PATH)
+def _load_yaml_bytes(data: bytes, *, label: str) -> dict[str, Any]:
+    loaded = yaml.safe_load(data.decode("utf-8"))
+    if not isinstance(loaded, dict):
+        raise ReleaseBuildError(f"{label} must contain a mapping")
+    return loaded
+
+
+def git_blob(source_revision: str, repository_path: str) -> bytes:
+    """Read one exact regular-file blob from an immutable Git revision."""
+    if not SHA_RE.fullmatch(source_revision):
+        raise ReleaseBuildError("source revision must be a full lowercase 40-hex SHA")
+    if PurePosixPath(repository_path).is_absolute() or ".." in PurePosixPath(repository_path).parts:
+        raise ReleaseBuildError(f"unsafe repository path: {repository_path}")
+    completed = subprocess.run(
+        ["git", "show", f"{source_revision}:{repository_path}"],
+        cwd=ROOT,
+        check=False,
+        capture_output=True,
+    )
+    if completed.returncode != 0:
+        raise ReleaseBuildError(f"immutable release blob unavailable: {repository_path}")
+    return completed.stdout
+
+
+def _release_source_revision(version: str) -> str:
+    release_registry = _load_yaml(RELEASE_REGISTRY_PATH)
+    matches = [
+        release
+        for release in release_registry.get("releases", [])
+        if release.get("version") == version
+    ]
+    if len(matches) != 1:
+        raise ReleaseBuildError(f"version {version} must have one release registry entry")
+    source_revision = str(matches[0].get("source_revision", ""))
+    if not SHA_RE.fullmatch(source_revision):
+        raise ReleaseBuildError("registered release source revision is not a full SHA")
+    completed = subprocess.run(
+        ["git", "cat-file", "-e", f"{source_revision}^{{commit}}"],
+        cwd=ROOT,
+        check=False,
+        capture_output=True,
+    )
+    if completed.returncode != 0:
+        raise ReleaseBuildError("registered release source revision is unavailable")
+    return source_revision
+
+
+def load_content_registry(source_revision: str | None = None) -> dict[str, Any]:
+    if source_revision is None:
+        registry = _load_yaml(CONTENT_PATH)
+    else:
+        registry = _load_yaml_bytes(
+            git_blob(source_revision, CONTENT_PATH.relative_to(ROOT).as_posix()),
+            label=CONTENT_PATH.relative_to(ROOT).as_posix(),
+        )
     schema = json.loads(CONTENT_SCHEMA_PATH.read_text(encoding="utf-8"))
     jsonschema.validate(registry, schema, format_checker=jsonschema.FormatChecker())
     paper_ids = [paper["paper_id"] for paper in registry["papers"]]
@@ -111,17 +165,28 @@ def validate_authorization(
     return authorization
 
 
-def _tracked_files(root: str) -> list[Path]:
+def _tracked_files(source_revision: str, root: str) -> list[str]:
     completed = subprocess.run(
-        ["git", "ls-files", "-z", "--", root],
+        ["git", "ls-tree", "-r", "-z", source_revision, "--", root],
         cwd=ROOT,
-        check=True,
+        check=False,
         capture_output=True,
     )
-    paths = [ROOT / item.decode("utf-8") for item in completed.stdout.split(b"\0") if item]
+    if completed.returncode != 0:
+        raise ReleaseBuildError(f"immutable release tree unavailable under {root}")
+    paths: list[str] = []
+    for item in completed.stdout.split(b"\0"):
+        if not item:
+            continue
+        metadata, raw_path = item.split(b"\t", 1)
+        mode, object_type, _object_id = metadata.decode("ascii").split(" ", 2)
+        path = raw_path.decode("utf-8")
+        if object_type != "blob" or mode not in {"100644", "100755"}:
+            raise ReleaseBuildError(f"non-regular immutable release member: {path}")
+        paths.append(path)
     if not paths:
         raise ReleaseBuildError(f"no tracked files found under {root}")
-    return sorted(paths, key=lambda path: path.relative_to(ROOT).as_posix())
+    return sorted(paths)
 
 
 def _is_excluded(relative_to_paper: str, patterns: list[str]) -> bool:
@@ -132,64 +197,66 @@ def _is_excluded(relative_to_paper: str, patterns: list[str]) -> bool:
     )
 
 
-def _validate_member(path: Path, paper_root: Path, patterns: list[str]) -> bytes:
-    if path.is_symlink():
-        raise ReleaseBuildError(f"symlink rejected: {path.relative_to(ROOT)}")
-    if not path.is_file():
-        raise ReleaseBuildError(f"non-file rejected: {path.relative_to(ROOT)}")
-    relative = path.relative_to(paper_root).as_posix()
+def _validate_member(
+    *, repository_path: str, paper_root: str, patterns: list[str], data: bytes
+) -> bytes:
+    relative = PurePosixPath(repository_path).relative_to(paper_root).as_posix()
     if _is_excluded(relative, patterns):
         raise ReleaseBuildError("excluded members must be filtered before validation")
     parts = {part.lower() for part in PurePosixPath(relative).parts}
     if parts & FORBIDDEN_PATH_PARTS or " 2." in relative:
         raise ReleaseBuildError(f"forbidden archive member path: {relative}")
-    data = path.read_bytes()
     for marker in FORBIDDEN_BYTES:
         if marker in data:
-            raise ReleaseBuildError(f"secret or host-path marker in {path.relative_to(ROOT)}")
+            raise ReleaseBuildError(f"secret or host-path marker in {repository_path}")
     return data
 
 
 def _paper_members(
-    registry: dict[str, Any], version: str
+    registry: dict[str, Any], version: str, *, source_revision: str
 ) -> tuple[list[tuple[str, bytes]], dict[str, Any]]:
     members: list[tuple[str, bytes]] = []
     inventory_files: list[dict[str, Any]] = []
     paper_summaries: list[dict[str, Any]] = []
     prefix = f"distributed-discovery-compendium-v{version}/papers"
     for paper in registry["papers"]:
-        root = ROOT / str(paper["root"])
+        root = str(paper["root"])
         exclude_patterns = [str(item) for item in paper["exclude_patterns"]]
-        selected: list[Path] = []
-        for path in _tracked_files(str(paper["root"])):
-            relative = path.relative_to(root).as_posix()
+        selected: list[str] = []
+        for path in _tracked_files(source_revision, root):
+            relative = PurePosixPath(path).relative_to(root).as_posix()
             if _is_excluded(relative, exclude_patterns):
                 continue
             selected.append(path)
         if not selected:
             raise ReleaseBuildError(f"paper has no selected members: {paper['paper_id']}")
-        pdf = ROOT / str(paper["pdf"])
-        source = ROOT / str(paper["main_source"])
+        pdf = str(paper["pdf"])
+        source = str(paper["main_source"])
         if pdf not in selected or source not in selected:
             raise ReleaseBuildError(f"paper PDF or main source omitted: {paper['paper_id']}")
-        if sha256_file(pdf) != paper["pdf_sha256"]:
+        if sha256_bytes(git_blob(source_revision, pdf)) != paper["pdf_sha256"]:
             raise ReleaseBuildError(f"PDF hash changed: {paper['paper_id']}")
-        if sha256_file(source) != paper["main_source_sha256"]:
+        if sha256_bytes(git_blob(source_revision, source)) != paper["main_source_sha256"]:
             raise ReleaseBuildError(f"main source hash changed: {paper['paper_id']}")
-        validation = json.loads((root / "validation.json").read_text(encoding="utf-8"))
+        validation = json.loads(git_blob(source_revision, f"{root}/validation.json"))
         if validation.get("pdf_sha256") != paper["pdf_sha256"]:
             raise ReleaseBuildError(f"validation PDF hash mismatch: {paper['paper_id']}")
         if validation.get("page_count") != paper["page_count"]:
             raise ReleaseBuildError(f"validation page count mismatch: {paper['paper_id']}")
         for path in selected:
-            data = _validate_member(path, root, exclude_patterns)
-            relative = path.relative_to(root).as_posix()
+            data = _validate_member(
+                repository_path=path,
+                paper_root=root,
+                patterns=exclude_patterns,
+                data=git_blob(source_revision, path),
+            )
+            relative = PurePosixPath(path).relative_to(root).as_posix()
             archive_name = f"{prefix}/{paper['paper_id']}/{relative}"
             members.append((archive_name, data))
             inventory_files.append(
                 {
                     "archive_path": archive_name,
-                    "repository_path": path.relative_to(ROOT).as_posix(),
+                    "repository_path": path,
                     "bytes": len(data),
                     "sha256": sha256_bytes(data),
                 }
@@ -291,7 +358,12 @@ def build_release(
     elif authorization is not None:
         raise ReleaseBuildError("dry-run mode must not read an authorization")
 
-    registry = load_content_registry()
+    release_source_revision = _release_source_revision(version)
+    if mode == "release" and source_revision != release_source_revision:
+        raise ReleaseBuildError(
+            "release mode source revision must equal the immutable registered release source"
+        )
+    registry = load_content_registry(release_source_revision)
     output_dir.mkdir(parents=True, exist_ok=True)
     stem = f"distributed-discovery-compendium-v{version}"
     names = {
@@ -306,13 +378,19 @@ def build_release(
         if target.exists():
             target.unlink()
 
-    members, bundle_inventory = _paper_members(registry, version)
+    members, bundle_inventory = _paper_members(
+        registry, version, source_revision=release_source_revision
+    )
     papers_path = output_dir / names["papers"]
     _write_zip(papers_path, members)
     citation_path = output_dir / names["citation"]
-    citation_path.write_bytes(CITATION_PATH.read_bytes())
+    citation_path.write_bytes(
+        git_blob(release_source_revision, CITATION_PATH.relative_to(ROOT).as_posix())
+    )
     notes_path = output_dir / names["notes"]
-    notes_path.write_bytes(RELEASE_NOTES_PATH.read_bytes())
+    notes_path.write_bytes(
+        git_blob(release_source_revision, RELEASE_NOTES_PATH.relative_to(ROOT).as_posix())
+    )
 
     release_assets = []
     for path in sorted((citation_path, papers_path, notes_path), key=lambda p: p.name):
@@ -337,14 +415,19 @@ def build_release(
         "compendium_version": version,
         "candidate_tag": registry["candidate_tag"],
         "tag": None if mode == "dry-run" else registry["candidate_tag"],
-        "source_revision": source_revision,
+        "source_revision": release_source_revision,
         "github_release_url": release_url,
         "version_doi": version_doi,
         "concept_doi": concept_doi,
         "generated_utc": generated_utc,
         "content_registry": {
             "path": CONTENT_PATH.relative_to(ROOT).as_posix(),
-            "sha256": sha256_file(CONTENT_PATH),
+            "sha256": sha256_bytes(
+                git_blob(
+                    release_source_revision,
+                    CONTENT_PATH.relative_to(ROOT).as_posix(),
+                )
+            ),
         },
         "inventory": {
             "claims": 110,
@@ -394,6 +477,8 @@ def build_release(
         "assets": [names[key] for key in ("manifest", "checksums", "citation", "papers", "notes")],
         "hashes": {name: sha256_file(output_dir / name) for name in sorted(names.values())},
         "archive_members": len(members),
+        "requested_build_revision": source_revision,
+        "release_source_revision": release_source_revision,
     }
 
 

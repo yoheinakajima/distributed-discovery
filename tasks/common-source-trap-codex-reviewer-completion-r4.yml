@@ -1,0 +1,124 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0014
+title: Common-Source Trap isolated Codex reviewer and standing-lane completion
+task_type: documentation-editorial
+status: active
+objective: Replace only the blocked ChatGPT API transport with one fresh projectless Codex gpt-5.6-terra review of the frozen Round 2 packet, then complete the already-authorized review and evidence-bound editorial lane only if that review qualifies.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: instruction, path: papers/AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/research-governance.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: plan, path: plans/MASTER_EXEC_PLAN.md}
+  - {type: plan, path: plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md}
+  - {type: record, path: reports/agent-ops/AO-0014-standing-paper-review-authorization.yml}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/220"}
+  - {type: pull-request, path: "https://github.com/yoheinakajima/distributed-discovery/pull/221"}
+owner_decisions:
+  - On 2026-08-07, the owner activated the milestone-bounded paper-review standing authorization recorded in the owner-managed source at commit 6b5a089.
+  - On 2026-08-08, the owner replaced only the unavailable OpenAI API transport with exactly one fresh projectless Codex reviewer using gpt-5.6-terra at medium reasoning and no prior paper or review context beyond the exact frozen manuscript, packet, rubric, and closed response contract.
+  - The Codex review must inspect all 21 page-labelled pages, validate exact identity and isolation, return the closed schema, and produce a private deterministic receipt. It is a new isolated surface, not a resend to any prior reviewer.
+  - If and only if the Codex review qualifies, the missing Anthropic and Google reviews and the complete-bundle synthesis, writer handoff, one bounded evidence-bound revision, rebuild, validation, and existing draft-PR update remain authorized under the standing lane.
+  - The Codex surface uses no credential, provider API call, browser, or incremental spend. Existing per-provider and aggregate caps remain binding for any later Anthropic or Google review.
+scope:
+  paths:
+    - tasks/common-source-trap-codex-reviewer-completion-r4.yml
+    - reports/agent-ops/AO-0014-standing-paper-review-authorization.yml
+    - plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
+    - plans/MASTER_EXEC_PLAN.md
+    - reports/editorial/common-source-trap-round2-review-packet.yml
+    - reports/editorial/common-source-trap-review-disposition.yml
+    - papers/common-source-trap/main.tex
+    - papers/common-source-trap/The_Common_Source_Trap.pdf
+    - papers/common-source-trap/validation.json
+    - papers/common-source-trap/visual-qa.md
+    - src/distributed_discovery/editorial_review.py
+    - tests/unit/test_common_source_trap_headless_review.py
+  actions:
+    - Construct and test one projectless Codex prompt containing only the exact frozen Round 2 packet, revised manuscript source, page-labelled PDF text, rubric, and closed response schema.
+    - Create exactly one fresh gpt-5.6-terra medium Codex reviewer task, validate its final response locally, and store one mode-0600 private receipt outside Git.
+    - Preserve the qualifying Grok receipt and every excluded or ambiguous earlier review without reuse, retry, or cross-sharing.
+    - Only after four qualifying independent reviews exist, synthesize once, deliver the full bundle to the writer once, make one evidence-bound revision, rebuild deterministically, validate, and update only draft PR 221.
+non_goals:
+  - No OpenAI API credential setup, credential access or change, provider API call, browser session, connector, attachment, prior-review context, retry, continuation, or duplicate reviewer submission for the Codex replacement.
+  - No reuse of the missing-receipt ChatGPT review, the excluded Claude UI review, the ambiguous Gemini attempt, or any Round 1 reviewer session or output as a Round 2 review.
+  - No fourth review round, new study, claim, proof, run, evidence-status change, lifecycle-status change, scientific execution, Information Sharing Frontier work, or action on protected unrelated worktree entries.
+  - No PR readiness, merge, issue closure, publication, deployment, Explore Science upload, DOI, release, submission, branch deletion, or spend above the standing caps.
+permissions:
+  repository_write: true
+  git_branch_commit: true
+  github_issue_pr: true
+  merge_after_checks: false
+  ci_pages: false
+external_action_permissions:
+  network_observation: true
+  github_mutation: true
+  provider_calls: true
+  spend: true
+  release_publication: false
+  submission: false
+scientific_mutation_permissions:
+  create_study: false
+  create_claim: false
+  create_run: false
+  change_evidence_status: false
+  change_proof_status: false
+  change_paper_lifecycle: false
+private_data_permissions: {read: true, write: true, generate: true, publish: false}
+budget:
+  currency: USD
+  expected: "0.40"
+  hard_cap: "2.00"
+  call_cap: 2
+  category_caps:
+    codex_chatgpt_replacement: "0"
+    anthropic_claude_replacement: "1.00"
+    google_gemini_replacement: "1.00"
+  cumulative_spend: "0"
+expected_outcomes:
+  - One fresh isolated qualifying Codex receipt or one exact nonqualifying stop with no retry.
+  - If the Codex review qualifies, one complete four-review provenance-bound Round 2 bundle before any editorial revision.
+  - At most two later provider calls, each below USD 1, while aggregate new Ouroboros and Common-Source Trap review spend remains below USD 10.
+  - One evidence-bound revision candidate in existing draft PR 221, stopped before PR readiness, merge, publication, or deployment.
+stop_conditions:
+  - Stop before creating the Codex task if live PR, branch, head, packet, manuscript, PDF, page count, rubric, response schema, or isolation preflight differs from the frozen record.
+  - Stop after a nonqualifying, malformed, incomplete, identity-mismatched, nonisolated, or page-incomplete Codex result; do not create another replacement task.
+  - Stop after any ambiguous later provider delivery, malformed response, missing receipt, cap breach, provider/model drift, unsafe retention observation, or incomplete four-review bundle; do not retry or substitute.
+  - Stop before merge, PR readiness, issue closure, deployment, publication, Explore Science, release, submission, DOI, fourth-round review, branch deletion, new research, or Information Sharing Frontier work.
+acceptance_profile: docs-editorial
+canonical_destinations:
+  - tasks/common-source-trap-codex-reviewer-completion-r4.yml
+  - reports/agent-ops/AO-0014-standing-paper-review-authorization.yml
+  - plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
+  - reports/editorial/common-source-trap-round2-review-packet.yml
+  - reports/editorial/common-source-trap-review-disposition.yml
+  - papers/common-source-trap
+  - src/distributed_discovery/editorial_review.py
+  - tests/unit/test_common_source_trap_headless_review.py
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 220
+  branch: agent/common-source-trap-review-packet
+  pull_request: 221
+  base: main
+exec_plan: plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
+task_delta: null
+frozen_identifiers:
+  standing_authorization_source_commit: 6b5a089
+  round2_packet_commit: c4fcb7798284d8ec576010c85b39bfcff17a7124
+  round2_packet_sha256: 8d4e55adcb94161ff315be17c90945642695e531ad43770cde4154760457bbfe
+  reviewed_artifact_commit: 4fa15aa7f77dcae9f02a42c64273a04969247571
+  revised_manuscript_sha256: 87a6e85450c72fc9c93b281646ecfbd60193747c80aae9eac0a022301e1f06e1
+  revised_pdf_sha256: ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150
+  revised_page_count: "21"
+  codex_model: gpt-5.6-terra
+  codex_reasoning_effort: medium
+  required_reviewers: chatgpt-claude-gemini-grok
+supersession:
+  supersedes:
+    - tasks/common-source-trap-round2-standing-review-completion-r3.yml
+  superseded_by: null
+  reason: The owner replaced only the blocked OpenAI API transport with one fresh isolated projectless Codex reviewer while preserving the standing lane, frozen packet, reviewer identities, caps, and all anti-scope boundaries.
+next_gate: Create exactly one isolated Codex reviewer task after local preflight. Continue only if it qualifies; otherwise stop with the exact reviewer gap. Stop before PR readiness, merge, deployment, publication, or Explore Science.

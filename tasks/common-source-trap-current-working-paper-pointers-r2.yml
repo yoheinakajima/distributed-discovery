@@ -1,0 +1,137 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0014
+title: Common-Source Trap current-working-paper pointers and Round 2 freeze
+task_type: documentation-editorial
+status: active
+objective: Separate the revised Common-Source Trap current-working-paper identity from the immutable Compendium v0.1.0 snapshot, restore the complete validation wall, and freeze the exact fresh-session Round 2 review packet without authorizing merge or publication.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: instruction, path: papers/AGENTS.md}
+  - {type: instruction, path: docs/releases/AGENTS.md}
+  - {type: instruction, path: reports/releases/AGENTS.md}
+  - {type: instruction, path: site/AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/research-governance.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: plan, path: plans/MASTER_EXEC_PLAN.md}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/220"}
+  - {type: pull-request, path: "https://github.com/yoheinakajima/distributed-discovery/pull/221"}
+  - {type: record, path: reports/agent-ops/AO-0014-review-bundle-required-handoff.yml}
+owner_decisions:
+  - At 2026-08-06T20:06Z the owner authorized this narrow additive task against exact draft PR 221 head 9cf1720c2b23737f1937ea2c3f1a35a898fa9809 and base 7268e445347c4d7f9106d129af42d0e8667eb115.
+  - The revised current working paper is exact source SHA-256 87a6e85450c72fc9c93b281646ecfbd60193747c80aae9eac0a022301e1f06e1 and PDF SHA-256 ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150.
+  - Compendium v0.1.0, its tag source revision, seven-paper bundle, citation asset, release manifest, and every published asset hash remain immutable historical release evidence.
+  - Current publication, lifecycle, paper-index, compendium-verification, and site projections may change only enough to distinguish the revised current working paper from the immutable release snapshot.
+  - Only after the complete repository wall passes may the exact Round 2 packet be frozen and routed for four fresh isolated ChatGPT, Claude, Gemini, and Grok review sessions; no Round 1 baseline or session is reusable.
+scope:
+  paths:
+    - tasks/common-source-trap-current-working-paper-pointers-r2.yml
+    - plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
+    - plans/MASTER_EXEC_PLAN.md
+    - papers/README.md
+    - docs/paper-lifecycle.yml
+    - docs/publication/paper-citation-metadata.yml
+    - docs/releases/compendium-v0.1.0-content.yml
+    - docs/releases/releases.yml
+    - reports/releases/release-evidence-manifest.dry-run.json
+    - scripts/build_compendium_release.py
+    - scripts/verify_compendium_release.py
+    - scripts/audit_release_readiness.py
+    - reports/editorial/common-source-trap-review-disposition.yml
+    - reports/editorial/common-source-trap-round2-review-packet.yml
+    - reports/agent-ops/AO-0014-review-bundle-required-handoff.yml
+    - tests/integration/test_common_source_trap_review_packet.py
+    - tests/unit/test_compendium_release.py
+    - tests/unit/test_common_source_trap_pointer_versioning.py
+  actions:
+    - Preserve the exact v0.1.0 tag, source revision, content registry, dry-run manifest, custom assets, DOI records, and published hashes byte-for-byte.
+    - Update only current Common-Source Trap working-paper artifact pointers to the revised source and PDF hashes without changing lifecycle or scientific status.
+    - Make release builders, verifiers, and audits resolve v0.1.0 paper bytes and citation metadata from its frozen source revision rather than the moving worktree.
+    - Add regressions proving current and historical identities remain distinct and exact.
+    - Run focused paper, release, publication, lifecycle, site, governance, and complete repository validation.
+    - Commit and push the exact green draft-PR head, freeze a correctly labeled Round 2 packet, and route it for four fresh isolated reviews only after revalidation.
+non_goals:
+  - No rewrite or regeneration of Compendium v0.1.0 content, manifest, assets, hashes, tag, source revision, DOI, release, or historical records.
+  - No lifecycle-status, scientific-status, claim, proof, study, run, evidence, or manuscript-content change.
+  - No Round 1 baseline or reviewer-session reuse and no partial or mislabeled Round 2 dispatch.
+  - No Information Sharing Frontier or unrelated Distributed Discovery work and no action on the five historical untracked files.
+  - No PR readiness, merge, issue closure, Pages deployment, publication, Explore Science upload, DOI, submission, release, provider credential, spend, or scientific execution.
+permissions:
+  repository_write: true
+  git_branch_commit: true
+  github_issue_pr: true
+  merge_after_checks: false
+  ci_pages: false
+external_action_permissions:
+  network_observation: true
+  github_mutation: true
+  provider_calls: false
+  spend: false
+  release_publication: false
+  submission: false
+scientific_mutation_permissions:
+  create_study: false
+  create_claim: false
+  create_run: false
+  change_evidence_status: false
+  change_proof_status: false
+  change_paper_lifecycle: false
+private_data_permissions: {read: false, write: false, generate: false, publish: false}
+budget:
+  currency: USD
+  expected: "0"
+  hard_cap: "0"
+  call_cap: 0
+  category_caps: {}
+  cumulative_spend: "0"
+expected_outcomes:
+  - Current working-paper projections identify the revised Common-Source Trap artifact exactly.
+  - Compendium v0.1.0 remains reproducible and auditable from its immutable source revision without comparing historical hashes to the moving worktree.
+  - The full repository wall passes with explicit current-versus-release-snapshot regressions.
+  - One exact Round 2 packet names only the revised artifact and four fresh isolated review sessions; draft PR 221 remains unmerged.
+stop_conditions:
+  - Stop if local, remote, or PR head/base no longer descends from the exact authorized head or if PR 221 is not open and draft.
+  - Stop if any proposed edit changes an immutable v0.1.0 record, asset hash, tag, DOI, source revision, or release claim.
+  - Stop if current pointer repair requires scientific, lifecycle-status, manuscript-content, release, deployment, or publication mutation.
+  - Stop before review dispatch unless the exact revised head and all protected identities reverify and the complete repository wall passes.
+  - Stop before PR readiness, merge, issue closure, publication, deployment, or any external action outside the four owner-authorized review sessions.
+acceptance_profile: docs-editorial
+canonical_destinations:
+  - tasks/common-source-trap-current-working-paper-pointers-r2.yml
+  - plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
+  - papers/README.md
+  - docs/paper-lifecycle.yml
+  - docs/publication/paper-citation-metadata.yml
+  - reports/editorial/common-source-trap-review-disposition.yml
+  - reports/editorial/common-source-trap-round2-review-packet.yml
+  - reports/agent-ops/AO-0014-review-bundle-required-handoff.yml
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 220
+  branch: agent/common-source-trap-review-packet
+  pull_request: 221
+  base: main
+exec_plan: plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
+task_delta: null
+frozen_identifiers:
+  authorized_pr_head: 9cf1720c2b23737f1937ea2c3f1a35a898fa9809
+  authorized_base_main: 7268e445347c4d7f9106d129af42d0e8667eb115
+  revised_manuscript_sha256: 87a6e85450c72fc9c93b281646ecfbd60193747c80aae9eac0a022301e1f06e1
+  revised_pdf_sha256: ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150
+  revised_page_count: "21"
+  compendium_version: 0.1.0
+  compendium_tag: dd-compendium-v0.1.0
+  compendium_source_revision: 3ca173f4e9e81a6d0e3e56205e428c596edc050e
+  compendium_common_source_manuscript_sha256: 2f7d9ead7e54a7c4b852935b9648361cc682772c5fe41853d0193b86ce3fbdad
+  compendium_common_source_pdf_sha256: afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7
+  compendium_papers_asset_sha256: 08bab6f3d0fb7b1c6282b8663a11e1709ded0ee93769f7ee60fec690e01af469
+  compendium_citation_asset_sha256: 37c66ed19a9d84cc021eb27567fa74fd399b0f73b34b7aae845486c9420e538c
+  round2_reviewers: chatgpt-claude-gemini-grok
+supersession:
+  supersedes:
+    - tasks/common-source-trap-independent-review.yml
+    - reports/agent-ops/AO-0014-review-bundle-required-handoff.yml
+  superseded_by: null
+  reason: The owner additively authorized a current-working-paper versus immutable-release pointer boundary after the AO-0014 revision changed the paper identity and the prior contract correctly stopped before out-of-scope lifecycle and release surfaces.
+next_gate: After the complete wall passes, freeze the exact revised Round 2 packet and route it through Research Atlas for four fresh isolated reviews; stop before PR readiness, merge, or publication.

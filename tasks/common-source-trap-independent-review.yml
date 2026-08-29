@@ -1,0 +1,115 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0014
+title: Common-Source Trap independent-review hardening
+task_type: documentation-editorial
+status: active
+objective: Freeze an exact repository-authoritative Common-Source Trap review packet, wait for one complete four-review bundle, and then prepare an evidence-bound editorial revision without authorizing manuscript merge or publication.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: instruction, path: papers/AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/research-governance.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: plan, path: plans/MASTER_EXEC_PLAN.md}
+  - {type: decision, path: reports/editorial/preprint-queue.yml}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/220"}
+owner_decisions:
+  - Common-Source Trap is the only active paper in this task; Information Sharing Frontier is parked.
+  - The repository remains the sole manuscript, claim, proof, run, and evidence authority; Research Atlas manages exact pointers, review-round status, reviewer provenance, and handoffs only.
+  - Freeze the current main manuscript source, PDF, hashes, validation receipts, evidence pointers, and build instructions before independent review.
+  - Do not edit the manuscript until fresh independent ChatGPT, Claude, Gemini, and Grok reviews are all complete and Research Atlas returns the complete bundle simultaneously.
+  - After that complete bundle arrives, preserve reviewer provenance, create a disposition table, revise only against repository evidence, rebuild, and rerun all paper-native checks.
+  - The active Pages incident does not block offline review preparation.
+scope:
+  paths:
+    - tasks/common-source-trap-independent-review.yml
+    - plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
+    - plans/MASTER_EXEC_PLAN.md
+    - reports/editorial/common-source-trap-review-packet.yml
+    - reports/editorial/common-source-trap-review-guide.md
+    - reports/editorial/common-source-trap-review-disposition.yml
+    - reports/agent-ops
+    - papers/common-source-trap
+    - tests/integration/test_common_source_trap_review_packet.py
+  actions:
+    - Register AO-0014 from the exact verified main commit, issue, and task branch.
+    - Freeze a public-safe machine-readable review packet and concise reviewer guide without modifying the manuscript or its generated artifacts.
+    - Validate every frozen hash, claim, run, receipt, toolchain pointer, lifecycle boundary, and build command against the exact source commit.
+    - Rebuild the paper in a disposable checkout and run focused and complete docs-editorial validation.
+    - Commit, push, and open one draft pull request, then stop at a legitimate checkpoint awaiting the complete four-review bundle.
+    - Only after the complete simultaneous bundle arrives, record reviewer provenance and dispositions, revise from repository evidence, rebuild, and stop before manuscript merge.
+non_goals:
+  - No manuscript edit before the complete four-review bundle is returned simultaneously.
+  - No action on Information Sharing Frontier or its five historical untracked files.
+  - No new study, claim, proof, run, evidence-status change, proof-status change, or paper-lifecycle change.
+  - No Explore Science upload, provider call, credential access, spend, scientific execution, publication, submission, DOI, release, or journal contact.
+  - No draft-PR readiness, manuscript merge, issue closure, branch deletion, Pages retry, deployment, or live-site mutation.
+  - No mutation of issue 212, issue 218, AO-0012 or AO-0013 history, or retained historical branches.
+permissions:
+  repository_write: true
+  git_branch_commit: true
+  github_issue_pr: true
+  merge_after_checks: false
+  ci_pages: false
+external_action_permissions:
+  network_observation: true
+  github_mutation: true
+  provider_calls: false
+  spend: false
+  release_publication: false
+  submission: false
+scientific_mutation_permissions:
+  create_study: false
+  create_claim: false
+  create_run: false
+  change_evidence_status: false
+  change_proof_status: false
+  change_paper_lifecycle: false
+private_data_permissions: {read: false, write: false, generate: false, publish: false}
+budget:
+  currency: USD
+  expected: "0"
+  hard_cap: "0"
+  call_cap: 0
+  category_caps: {}
+  cumulative_spend: "0"
+expected_outcomes:
+  - One exact immutable review baseline for the 21-page Common-Source Trap working paper at the verified source commit.
+  - One machine-readable packet and reviewer guide that preserve repository authority and permit Atlas to coordinate four independent reviews without becoming scientific authority.
+  - Passing deterministic packet, claim, citation, provenance, reproducibility, paper-build, and repository-governance checks.
+  - One draft PR that remains unmerged while AO-0014 waits for the complete four-review bundle.
+  - After that bundle, one provenance-complete disposition table and evidence-bound revision candidate that stops before merge.
+stop_conditions:
+  - Stop if the manuscript, PDF, generated paper artifact, claim record, proof, immutable run, or evidence status changes before the complete review bundle arrives.
+  - Stop if any reviewer sees another review before completing an independent review or if Atlas cannot return all four reviews as one complete provenance-bound bundle.
+  - Stop if a review recommendation cannot be resolved to repository evidence or requires new scientific execution.
+  - Stop before any credential, provider, private-data, spending, publication, release, submission, DOI, or live-deployment action.
+  - Stop before marking the draft PR ready or merging the manuscript; that remains a separate consequential repository gate.
+acceptance_profile: docs-editorial
+canonical_destinations:
+  - tasks/common-source-trap-independent-review.yml
+  - plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
+  - reports/editorial/common-source-trap-review-packet.yml
+  - reports/editorial/common-source-trap-review-guide.md
+  - reports/editorial/common-source-trap-review-disposition.yml
+  - reports/agent-ops/AO-0014-review-bundle-required-handoff.yml
+github:
+  repository: yoheinakajima/distributed-discovery
+  issue: 220
+  branch: agent/common-source-trap-review-packet
+  pull_request: null
+  base: main
+exec_plan: plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
+task_delta: null
+frozen_identifiers:
+  starting_main: 7268e445347c4d7f9106d129af42d0e8667eb115
+  paper_id: common-source-trap
+  paper_tree_oid: 2c34089accf3e9bbd2d6d038aceb2156bc0aa2a4
+  manuscript_sha256: 2f7d9ead7e54a7c4b852935b9648361cc682772c5fe41853d0193b86ce3fbdad
+  pdf_sha256: afa9384eca60cf2a0291c2c42012f15ca59bf3d29b7c939b1882a0237ea58ff7
+  review_round: common-source-trap-r1
+  required_reviewers: chatgpt-claude-gemini-grok
+  pages_failure_run: "31110671871"
+supersession: {supersedes: [], superseded_by: null, reason: null}
+next_gate: Freeze and validate the draft-PR packet commit, then stop at review-bundle-required until Research Atlas returns all four independent reviews simultaneously; manuscript merge remains unauthorized.

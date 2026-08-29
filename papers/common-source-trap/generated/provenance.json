@@ -8,7 +8,7 @@
     "independence-gap.tex": "7a1e45e7e9a140c485762d4d479c21b2fefbc03cddadb412ef01ce5d1da7359e",
     "interventions.tex": "8da995d3ffd6e294a2248ced60399af9d1948e084d4703ab6dc5b32603824ee9",
     "planner-counts.tex": "a1c357419515a845edadd2e56288ef3814f2c57736b8a94333ce96d54eb25611",
-    "trap-region.tex": "155cad302643335b9ebf4556ad6a4222c6674d08b1b400d3964bf785884d5533",
+    "trap-region.tex": "1effed89918837a644d4537f51f34af149fd70c779a64625e7d10399aaf4f0ed",
     "welfare-gap.tex": "46ca33d78c05d2c8d0b355cc0addf0386c61592a05dfb5deab52dc0be9318670"
   },
   "generator": "distributed_discovery.papers.build_common_source_trap",
