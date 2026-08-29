@@ -81,6 +81,21 @@ For fixed `k`, equation (1) also gives
 because the second reciprocal expectation vanishes and
 `E[1/(1+X_k)]=(1-q^(k+1))/((k+1)p)`.
 
+For every fixed interior `k>=1` and `0<p<1`,
+
+`1-q^(k+1)=p sum_(j=0)^k q^j > p(k+1)q^k`,
+
+because `0<q<1`, so each of the first `k` summands strictly exceeds `q^k`.
+It follows that
+
+`lim_(N->infinity) A_k > pq^(k+1)=B_k`.
+
+Therefore, for each fixed `p` and interior margin `k`, there is a finite team
+size beyond which the private margin exceeds the corresponding planner margin.
+This exact corollary is margin-by-margin and asymptotic. It does not establish
+a common finite-`N` cutoff across margins, empirical prevalence, or a universal
+ordering of equilibrium and planner source counts.
+
 ## Exact limit to a universal under-acquisition claim
 
 Private thresholds need not lie below planner thresholds in the interior. At
@@ -88,7 +103,9 @@ Private thresholds need not lie below planner thresholds in the interior. At
 
 `A_1=pq(3-2p)/6`, while `B_1=pq^2`.
 
-Hence `A_1>B_1` exactly when `p>3/4`. With `p=4/5` and `c=13/375`,
+Hence `A_1>B_1` exactly when `p>3/4`. Because `N=3` is the smallest team with
+a nonterminal interior transition, this is the smallest registered finite-team
+witness of the fixed-margin asymptotic reversal. With `p=4/5` and `c=13/375`,
 `A_1=14/375>c>12/375=B_1`; the unique equilibrium has `k=2`, while the unique
 planner optimum has `k=1`. The model therefore supports a general boundary
 under-acquisition theorem, not a universal ordering of equilibrium and planner

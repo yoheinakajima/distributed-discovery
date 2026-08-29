@@ -67,6 +67,26 @@ def test_general_all_common_trap_and_large_n_limit() -> None:
         assert limit - private_threshold(10_000, k, p) < Fraction(1, 1000)
 
 
+def test_fixed_interior_large_n_margin_reversal_corollary() -> None:
+    for p in (Fraction(1, 5), Fraction(1, 2), Fraction(4, 5)):
+        q = 1 - p
+        for k in range(1, 6):
+            geometric_sum = sum((q**j for j in range(k + 1)), start=Fraction())
+            assert 1 - q ** (k + 1) == p * geometric_sum
+            assert geometric_sum > (k + 1) * q**k
+            assert fixed_k_large_n_limit(k, p) > planner_threshold(k + 2, k, p)
+
+            first_reversal = next(
+                n
+                for n in range(k + 2, 10_000)
+                if private_threshold(n, k, p) > planner_threshold(n, k, p)
+            )
+            assert all(
+                private_threshold(n, k, p) > planner_threshold(n, k, p)
+                for n in range(first_reversal, first_reversal + 10)
+            )
+
+
 def test_exact_interior_overacquisition_counterexample() -> None:
     result = overacquisition_counterexample()
     assert result == {

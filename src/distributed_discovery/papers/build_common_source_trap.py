@@ -99,7 +99,7 @@ def _trap_region(paths: list[Path]) -> str:
             r"\node[private,anchor=west] at (.73,.093) {$N=2$};",
             r"\node[market,anchor=west] at (.73,.132) {$N=4$};",
             r"\node[inktwo,anchor=west] at (.73,.163) {$N=8$};",
-            r"\node[align=center,fill=white,draw,rounded corners] at (.50,.065) {all-common equilibrium below planner boundary\\between each $A_0(N,p)$ curve and $B_0(p)$};",
+            r"\node[align=center,fill=white,draw,rounded corners] at (.50,.028) {all-common equilibrium below planner boundary\\between each $A_0(N,p)$ curve and $B_0(p)$};",
             r"\end{tikzpicture}",
             r"\caption{The exact all-common trap region. The upper curve is the planner's first-source threshold $B_0=p(1-p)$; lower curves are private thresholds $A_0=p(1-p)(N-1)/N$. The vertical width is $p(1-p)/N$.}",
             r"\label{fig:trap-region}",

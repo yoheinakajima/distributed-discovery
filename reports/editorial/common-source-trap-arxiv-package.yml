@@ -1,0 +1,76 @@
+schema_version: 1
+paper_id: common-source-trap
+prepared_utc: "2026-08-29"
+status: owner-upload-gated
+repository_state:
+  base: 7268e445347c4d7f9106d129af42d0e8667eb115
+  pull_request: 221
+  branch: agent/common-source-trap-review-packet
+paper:
+  source_path: papers/common-source-trap/main.tex
+  source_sha256: cca15a9b23a5b4221f7e66c8cce5dcd9857a4f53325556705370dff6c4d0050c
+  pdf_path: papers/common-source-trap/The_Common_Source_Trap.pdf
+  pdf_sha256: 3dc1d06c509121ff1668979344e1b343d559353e0723e9589dac4da61a70794c
+  page_count: 21
+  byte_reproducible_two_builds: true
+  all_pages_visually_inspected: true
+local_handoff:
+  directory_name: common-source-trap-2026-08-29
+  location_policy: outside-git-owner-local-handoff
+  source_archive: common-source-trap-arxiv-source.zip
+  source_archive_sha256: 54dd757422370312b874627dba6a980d47a450843ac951b47f500cfcfd148a44
+  manifest: package-manifest.json
+  manifest_sha256: e37363a8b29e7c8a4535b242cc12cef98cd299b789e50fa5a574d5c895f988cb
+  metadata: SUBMISSION_METADATA.yml
+  metadata_sha256: 797d73acbd2a54b3e9e1bc8985f82c84f8d882c56a197a70528971303405fe79
+  owner_checklist: OWNER_UPLOAD_CHECKLIST.md
+  owner_checklist_sha256: 4d3339b1ddf230f655616af354c870a0a6a2a37d608de62f1e637f50fb0a6eae
+validation:
+  deterministic_archive: true
+  archive_members_complete: true
+  host_paths_absent: true
+  canonical_pdf_in_source_archive: false
+  extracted_source_compiles_twice: true
+  extracted_pdf_sha256:
+    - 3dc1d06c509121ff1668979344e1b343d559353e0723e9589dac4da61a70794c
+    - 3dc1d06c509121ff1668979344e1b343d559353e0723e9589dac4da61a70794c
+  full_repository_wall:
+    formatting: passed
+    ruff: passed
+    strict_mypy: passed
+    pytest: 1091-passed
+    claim_and_run_validation: passed
+    governance_and_publication_audits: passed
+    immutable_compendium_verification: passed
+    all_papers: passed
+    site: 89-pages-26-studies
+submission_metadata:
+  title: "The Common-Source Trap: Endogenous Independent Evidence in Distributed Discovery"
+  authors: [Yohei Nakajima]
+  affiliation: Untapped Capital
+  abstract_source: papers/common-source-trap/arxiv-metadata.yml
+  primary_category_recommendation: cs.GT
+  cross_list_candidates: [econ.TH]
+  category_owner_confirmation_required: true
+  repository_source_license: MIT
+  arxiv_license: owner-selection-required
+  submitted: false
+  arxiv_id: null
+  doi: null
+  publication_status: working-paper
+policy:
+  checked: "2026-08-29"
+  official_sources:
+    - https://info.arxiv.org/help/submit/index.html
+    - https://info.arxiv.org/help/submit_tex.html
+    - https://info.arxiv.org/help/license/index.html
+    - https://arxiv.org/category_taxonomy
+  observations:
+    - TeX source is preferred and a TeX-generated PDF cannot be submitted as PDF-only.
+    - A zip source package with subdirectories is supported and compilation occurs from the archive root.
+    - cs.GT covers computer-science/game-theory intersections, mechanism design, and coordination.
+    - econ.TH is a plausible cross-list for this theoretical game and mechanism-design contribution.
+    - The arXiv license choice is irrevocable and remains an explicit owner decision.
+owner_upload_gate:
+  recommendation: Merge the exact green draft PR first, then upload the frozen source archive manually, confirm cs.GT and any econ.TH cross-list, choose the license, inspect the arXiv-generated PDF, and stop again before final submission if submission authority is not explicit.
+  still_prohibited: [pull-request-merge-without-exact-owner-gate, arxiv-upload, final-submission, publication-claim, doi-fabrication]

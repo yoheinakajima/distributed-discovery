@@ -4,7 +4,7 @@ paper_id: common-source-trap
 task_id: AO-0014
 issue: 220
 review_round: common-source-trap-r1
-status: revised-candidate-frozen-additive-pointer-authority-required
+status: explore-science-revised-candidate-owner-merge-gate-pending
 authority:
   manuscript_claim_proof_run_evidence: repository-only
   atlas_role: provenance-and-complete-bundle-handoff-only
@@ -361,3 +361,53 @@ prohibitions:
   - new-scientific-claim-or-run
   - new-review-session-before-revised-packet-freeze
   - information-sharing-frontier-work
+explore_science_2026_08_29:
+  authority: owner-supplied-review-input-not-repository-scientific-authority
+  report:
+    committed: false
+    sha256: 255d214b4e7b91f24eafc350e3f8d2188d512292560e639ec9eeea9f6c9e93c5
+    page_count: 9
+    score: 96
+    tier: Platinum
+    major_issues: 0
+    minor_issues: 4
+    merits: 40
+  dispositions:
+    - finding_id: CST-ES-A1
+      disposition: accept
+      finding: The abstract Evidence Status did not name DD-C-0051's bounded-grid evidence category.
+      edit: Identify DD-C-0051 as an independently reproduced exact bounded-grid result and preserve DD-C-0057 as analytic.
+      evidence: [DD-C-0051, DD-C-0057]
+      authority_change: none
+    - finding_id: CST-ES-B1
+      disposition: accept-with-bounds
+      finding: The N=3 counterexample can be connected to the fixed-margin large-team limit already proved under DD-C-0057.
+      edit: Add only the geometric-sum corollary showing each fixed interior private margin eventually exceeds its corresponding planner margin; identify N=3 as the smallest registered finite witness.
+      evidence: [DD-C-0057, DD-C-0058, studies/DD-008B-common-source-analysis/proof.md]
+      prohibited_interpretations: [empirical-prevalence, every-finite-N-reversal, universal-policy-direction, externally-verified-new-theorem]
+    - finding_id: CST-ES-B2
+      disposition: correct-review-with-disclosure
+      finding: The review suggested a multiple-testing caveat, but DD-C-0056 already uses the conservative registered Bonferroni family alpha.
+      edit: State explicitly that every reported 384000-draw power-grid row uses 0.05 divided by its frozen multiplicity-family size.
+      evidence: [DD-C-0056]
+      rerun: false
+    - finding_id: CST-ES-C1
+      disposition: accept
+      finding: Figure 1's explanatory annotation obscured the N=2 curve label.
+      edit: Move only the generated annotation below the curve labels and rebuild.
+      evidence: [src/distributed_discovery/papers/build_common_source_trap.py]
+  final_candidate:
+    source_path: papers/common-source-trap/main.tex
+    source_sha256: cca15a9b23a5b4221f7e66c8cce5dcd9857a4f53325556705370dff6c4d0050c
+    pdf_path: papers/common-source-trap/The_Common_Source_Trap.pdf
+    pdf_sha256: 3dc1d06c509121ff1668979344e1b343d559353e0723e9589dac4da61a70794c
+    page_count: 21
+    byte_reproducible_two_builds: true
+    all_pages_visually_inspected: true
+    publication_status: working-paper
+    submitted: false
+    doi: null
+  arxiv_handoff:
+    record: reports/editorial/common-source-trap-arxiv-package.yml
+    source_archive_sha256: 54dd757422370312b874627dba6a980d47a450843ac951b47f500cfcfd148a44
+    submission_and_license_owner_gated: true

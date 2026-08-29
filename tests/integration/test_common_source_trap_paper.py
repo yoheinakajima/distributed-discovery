@@ -28,6 +28,10 @@ def test_common_source_paper_has_required_structure_and_boundaries() -> None:
     ]:
         assert rf"\section{{{title}}}" in source
     assert "not a universal under-acquisition theorem" in source
+    assert "independently reproduced exact bounded-grid result (DD-C-0051)" in source
+    assert "private margin eventually exceeds the corresponding planner" in source
+    assert "registered conservative Bonferroni family alpha" in source
+    assert "grid is not an unadjusted per-hypothesis" in source
     assert "No participants were recruited" in source
     assert "no verified novelty claim" in source
     assert set(re.findall(r"DD-C-\d{4}", source)) >= {

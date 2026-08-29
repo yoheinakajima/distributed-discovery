@@ -106,6 +106,27 @@ scientific evidence and authorizes no manuscript merge or publication.
   provider-side cause from the redacted status. Across both calls, actual spend
   is unknown and the conservative combined maximum is USD 0.718256. Claude
   and Gemini remain unfilled; Codex and Grok remain the only qualifying slots.
+- On 2026-08-29 the owner supplied a 9-page Explore Science report at SHA-256
+  `255d214b4e7b91f24eafc350e3f8d2188d512292560e639ec9eeea9f6c9e93c5`.
+  It scored the paper 96/100 Platinum with zero major and four minor findings.
+  The owner authorized only the bounded defensible edits and arXiv preparation
+  in additive R6 contract
+  `tasks/common-source-trap-explore-science-closeout-r6.yml`. The report is
+  owner-supplied review input, not repository scientific authority, and its
+  complete PDF is not committed.
+- The R6 revision adds DD-C-0051's exact bounded-grid evidence category, an
+  algebraic fixed-margin corollary of existing analytic DD-C-0057, an explicit
+  disclosure that the DD-C-0056 power grid already uses registered Bonferroni
+  family alpha, and a Figure 1 label repair. It creates no new study, run, claim
+  ID, result, or evidence-status change. The resulting source SHA-256 is
+  `cca15a9b23a5b4221f7e66c8cce5dcd9857a4f53325556705370dff6c4d0050c`;
+  the byte-reproducible 21-page PDF SHA-256 is
+  `3dc1d06c509121ff1668979344e1b343d559353e0723e9589dac4da61a70794c`.
+- A deterministic portable source archive at SHA-256
+  `54dd757422370312b874627dba6a980d47a450843ac951b47f500cfcfd148a44`
+  compiles twice to the exact canonical PDF. Metadata recommends `cs.GT` with
+  `econ.TH` as an owner-confirmed cross-list candidate, leaves `submitted`
+  false and DOI null, and keeps the irrevocable arXiv license owner-gated.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -124,6 +145,9 @@ scientific evidence and authorizes no manuscript merge or publication.
   the active lane.
 - The current owner decision is fixed in the AO-0014 task contract and this
   plan. No scientific claim or owner authorization is delegated to Atlas.
+- The later direct owner decision supersedes the incomplete Round 2 provider
+  path for this bounded closeout; it does not retroactively qualify failed or
+  missing reviewer slots. Those receipts remain historical provenance only.
 
 ## Scope
 
@@ -167,6 +191,10 @@ scientific evidence and authorizes no manuscript merge or publication.
 8. Under the additive owner decision, separate current working-paper pointers
    from the immutable v0.1.0 release snapshot, restore the complete wall, and
    freeze the correctly labeled Round 2 packet before any review dispatch.
+9. Under additive R6, disposition the exact owner-supplied Explore Science
+   report, make only evidence-bounded edits, validate a portable arXiv source
+   package, update moving current-paper pointers, and stop at exact-head owner
+   merge review before every upload or submission.
 
 ## Progress checklist
 
@@ -195,6 +223,21 @@ scientific evidence and authorizes no manuscript merge or publication.
 - [x] Freeze a fresh-session Round 2 packet without dispatching it.
 - [x] Stopped before pointer mutation, Round 2 dispatch, PR readiness,
   manuscript merge, and publication.
+- [x] Reverified PR #221 open, draft, clean, and mergeable at exact head
+  `93a46fe17e871b4adebab101ae164e2e37dbb978` and exact base
+  `7268e445347c4d7f9106d129af42d0e8667eb115` before the R6 edit.
+- [x] Verify the supplied Explore Science report identity and all nine rendered
+  pages; record only the review provenance and bounded disposition in Git.
+- [x] Apply A1, bounded B1, corrected B2, and C1 without rerunning research or
+  changing any registered result.
+- [x] Rebuild twice to the exact 21-page PDF and inspect all rendered pages.
+- [x] Build a portable source archive and prove two extracted-source builds
+  reproduce the canonical PDF exactly.
+- [x] Run the complete local repository wall: formatting, Ruff, strict MyPy,
+  all 1,091 tests, claim/run and governance audits, immutable Compendium
+  verification, all-paper builds, and the 89-page site build passed.
+- [ ] Push the same draft PR and reverify exact-head GitHub checks before
+  presenting the owner merge gate.
 - [x] Reverified local, remote, PR, base, issue, and five-file worktree state at
   exact authorized head `9cf1720c2b23737f1937ea2c3f1a35a898fa9809`.
 - [x] Added and schema-validated the narrow superseding AO-0014 pointer task.
@@ -656,3 +699,9 @@ authorized the narrow additive pointer/versioning continuation, and its task
 contract validates, but implementation is intentionally paused for an orderly
 restart. No Round 2, readiness, merge, lifecycle-status, release, deployment,
 or publication action has begun.
+
+The 2026-08-29 R6 closeout supersedes that older paused outcome for current
+work. The evidence-bounded Explore Science edits and local arXiv handoff are
+prepared, while the paper remains a working paper in the existing draft PR.
+PR readiness/merge, arXiv license selection, upload, and final submission
+remain separate owner actions.

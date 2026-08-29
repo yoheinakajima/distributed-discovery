@@ -1,8 +1,8 @@
 # Common-Source Trap visual QA
 
-- Audit date: 2026-08-06
+- Audit date: 2026-08-29
 - Artifact: `The_Common_Source_Trap.pdf`
-- SHA-256: `ab53c6e4bd099234e42178646abdd7c9692533dfb0b63cea9d3d60ba1ccf1150`
+- SHA-256: `3dc1d06c509121ff1668979344e1b343d559353e0723e9589dac4da61a70794c`
 - Render: Poppler `pdftoppm`, PNG at 120 DPI
 - Pages inspected: all 21 pages
 - Result: passed
@@ -42,3 +42,17 @@ figure collisions, stranded headings, missing content, or excessive blank
 space. The provisional 22-page build was rejected because its final page held
 only one short reference; the smaller bibliography block restores a balanced
 21-page artifact.
+
+## Explore Science closeout revision
+
+Reviewed 2026-08-29 after the bounded Explore Science disposition. Two
+consecutive native builds were byte-identical at SHA-256
+`3dc1d06c509121ff1668979344e1b343d559353e0723e9589dac4da61a70794c`.
+Poppler rendered all 21 pages at 120 DPI and every page was inspected. The
+Figure 1 annotation now sits below the curves without covering the `N=2`
+label. The new fixed-margin asymptotic corollary, N=3 boundary statement,
+Bonferroni disclosure, and conclusion fit without collision or overflow. The
+first 22-page build was rejected because its last page held only two references;
+the final 21-page build uses a smaller but legible references block. No page has
+observed clipping, overlap, malformed glyphs, broken equation, table or figure
+collision, stranded heading, missing content, or excessive blank space.

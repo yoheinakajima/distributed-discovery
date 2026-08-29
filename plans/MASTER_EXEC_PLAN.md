@@ -5,26 +5,36 @@
 Issue #220, branch `agent/common-source-trap-review-packet`, and living plan
 `plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md` own the sole substantive lane.
 The active additive contract is
-`tasks/common-source-trap-provider-review-and-ci-completion-r5.yml`, which
-records the owner’s 2026-08-07 standing paper-review authorization without
-weakening the frozen Round 2 packet or any publication boundary.
+`tasks/common-source-trap-explore-science-closeout-r6.yml`. On 2026-08-29 the
+owner supplied the exact Explore Science report, authorized its bounded
+evidence-governed dispositions, and requested an arXiv-ready handoff without
+authorizing merge or submission. Earlier R5 provider receipts and the frozen
+Round 2 packet remain immutable history and are not reused as current authority.
 The task freezes exact current-main manuscript, PDF, receipt, evidence, and
 build pointers for four fresh independent reviews coordinated by Research
 Atlas. The repository remains the sole manuscript and scientific authority;
 Atlas owns review pointers, round state, reviewer provenance, and handoffs
 only.
 
+R6 produces source SHA-256
+`cca15a9b23a5b4221f7e66c8cce5dcd9857a4f53325556705370dff6c4d0050c`,
+a byte-reproducible 21-page PDF at SHA-256
+`3dc1d06c509121ff1668979344e1b343d559353e0723e9589dac4da61a70794c`,
+and a portable source archive at SHA-256
+`54dd757422370312b874627dba6a980d47a450843ac951b47f500cfcfd148a44`
+that rebuilds twice to the canonical PDF. The report PDF remains uncommitted;
+only its SHA-256, score, finding summary, and dispositions are recorded. The
+arXiv category, irrevocable license, upload, final submission, PR readiness,
+and merge remain owner-controlled gates.
+
 Common-Source Trap is the only active paper. Information Sharing Frontier is
-parked. No manuscript edit is permitted until fresh independent ChatGPT,
-Claude, Gemini, and Grok reviews are complete and returned simultaneously as
-one provenance-bound Atlas bundle. The later revision must disposition every
-finding against repository evidence and rerun all native checks. No manuscript
-merge, Explore Science upload, publication, submission, DOI, release, provider
-call, spend, scientific execution, or paper-lifecycle change is authorized
-outside the bounded standing-review contract. That contract permits only one
-fresh no-retry call per missing named reviewer, with existing credentials only,
-USD 1 per call, USD 3 for this task, and USD 10 aggregate across the named
-paper-review lane.
+parked. The earlier Round 2 continuation required a four-review simultaneous
+bundle and allowed only one fresh no-retry call per missing named reviewer.
+That provider lane stopped with two qualifying slots. R6 does not rewrite or
+reuse those receipts: the owner's later direct Explore Science instruction is
+the independent authority for this bounded final revision. No manuscript
+merge, upload, publication, submission, DOI, release, provider call, spend,
+scientific execution, or paper-lifecycle change is authorized.
 
 The review baseline is public main
 `7268e445347c4d7f9106d129af42d0e8667eb115`, paper tree

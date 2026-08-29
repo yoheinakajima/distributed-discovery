@@ -1,0 +1,44 @@
+schema_version: 1
+paper_id: common-source-trap
+status: working-paper
+submitted: false
+arxiv_id: null
+doi: null
+title: "The Common-Source Trap: Endogenous Independent Evidence in Distributed Discovery"
+authors: [Yohei Nakajima]
+affiliation: Untapped Capital
+abstract: >-
+  When several searchers can use a free common signal or purchase independent
+  signals, the group may remain concentrated on the common source even though
+  one independent source raises net social value. This paper studies that
+  wedge in a finite, exact source-choice model. For arbitrary finite team size
+  N at least 2, it derives each common-to-independent payoff threshold, proves
+  that the thresholds are strictly decreasing, and characterizes every weak
+  pure source-count equilibrium. The planner thresholds are also explicit. At
+  the all-common boundary, an equilibrium/planner wedge exists exactly for
+  p(1-p)(N-1)/N <= c < p(1-p), an interval of width p(1-p)/N. Exact
+  enumeration for N=2,...,8 reproduces the formulas. The result is not a
+  universal under-acquisition theorem: at N=3, p=4/5, and c=13/375, the unique
+  equilibrium purchases two independent sources while the planner purchases
+  one. The paper uses that counterexample to separate source diversity, action
+  diversity, disclosure, and rewards. It relates the theorem to bounded
+  mechanism and architecture results and states experimental predictions
+  without claiming human evidence. Its finite grids and analytic curves are
+  generated from checksum-validated immutable artifacts; companion figures
+  reproduce separately registered, non-nested models.
+comments: "21 pages; 9 figures; deterministic source package"
+primary_category_recommendation: cs.GT
+cross_list_candidates: [econ.TH]
+category_owner_confirmation_required: true
+repository_source_license: MIT
+arxiv_license: owner-selection-required
+arxiv_license_candidates: [CC-BY-4.0, arXiv-perpetual-non-exclusive-1.0]
+license_owner_note: >-
+  arXiv states that the submitter's license choice is irrevocable. The owner
+  must choose at upload after considering future journal and funder policies.
+official_policy_checked: "2026-08-29"
+official_sources:
+  - https://info.arxiv.org/help/submit/index.html
+  - https://info.arxiv.org/help/submit_tex.html
+  - https://info.arxiv.org/help/license/index.html
+  - https://arxiv.org/category_taxonomy

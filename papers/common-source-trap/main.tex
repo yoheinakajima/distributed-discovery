@@ -48,10 +48,11 @@ separately registered, non-nested models.
 source diversity; collective search; public goods; distributed discovery.
 
 \Evidence{The central threshold ordering and all-common interval are analytic
-theorems (DD-C-0057). The $N=2,\ldots,8$ tables are exact finite
-classifications (DD-C-0052). The interior over-acquisition fixture is an exact
-negative result (DD-C-0058). DD-011 contributes synthetic predictions only; no
-participant was recruited and no human experiment was conducted.}
+theorems (DD-C-0057). The two-agent trap interval is an independently reproduced exact bounded-grid result (DD-C-0051), while the
+$N=2,\ldots,8$ tables are exact finite classifications (DD-C-0052). The
+interior over-acquisition fixture is an exact negative result (DD-C-0058).
+DD-011 contributes synthetic predictions only; no participant was recruited
+and no human experiment was conducted.}
 \noindent\textbf{Publication status:} Working paper; not submitted, not peer
 reviewed, and no DOI.
 
@@ -532,8 +533,19 @@ gives
  \label{eq:large-n}
 \end{equation}
 At fixed $k=0$, the private threshold approaches the planner's first-source
-threshold from below. For interior fixed $k$, the limit need not lie below the
-planner margin, foreshadowing the counterexample in Section 7.
+threshold from below. For every fixed interior $k\geq1$, however,
+\begin{equation}
+ 1-q^{k+1}=p\sum_{j=0}^{k}q^j
+ >p(k+1)q^k,
+ \label{eq:large-n-reversal}
+\end{equation}
+because $0<q<1$ and every term before the last strictly exceeds $q^k$.
+Equations \eqref{eq:large-n} and \eqref{eq:large-n-reversal} imply
+\(\lim_{N\to\infty}A_k>pq^{k+1}=B_k\). Thus, for each fixed $p\in(0,1)$
+and $k\geq1$, the private margin eventually exceeds the corresponding planner
+margin as $N$ grows. This is a margin-by-margin asymptotic statement; it does
+not claim a common finite-$N$ cutoff across margins, empirical prevalence, or a
+universal ordering of equilibrium and planner source counts.
 
 \section{Planner comparison}
 
@@ -602,9 +614,11 @@ to two independent users changes how a prospective buyer shares the prize with
 common and independent winners. When accuracy is
 high, avoiding the block of common winners can raise private prize share even
 after the planner's incremental union probability has become small. The exact
-example does not show that over-acquisition is typical. It shows that the phrase
-``the Common-Source Trap'' cannot stand for a universal equilibrium ordering at
-every interior count.
+example is the smallest registered finite-team witness of the broader
+fixed-margin asymptotic reversal in equation \eqref{eq:large-n-reversal}. It
+does not establish empirical prevalence, a reversal at every finite $N$, or a
+universal policy direction. It shows that the phrase ``the Common-Source Trap''
+cannot stand for a universal equilibrium ordering at every interior count.
 
 \section{Acquisition, discovery, and welfare gaps}
 
@@ -799,7 +813,9 @@ eight hypotheses---six primary and two secondary---fifteen outcomes, eight
 explicit synthetic response scenarios, and six sample sizes. A seeded
 384,000-draw Monte Carlo run reports conditional power
 and minimum detectable effects; a separate verifier recreates every random
-stream (DD-C-0056).
+stream (DD-C-0056). Every reported power row already uses the registered conservative Bonferroni family alpha, $0.05$ divided by the size of its frozen
+multiplicity family; the grid is not an unadjusted per-hypothesis
+$\alpha=0.05$ analysis.
 
 \input{generated/experiment-map.tex}
 
@@ -915,11 +931,14 @@ new route to discovery. For costs between the thresholds, all-common use can be
 an equilibrium even though every planner optimum includes independence.
 
 The result is also narrower than the label may suggest. Private thresholds do
-not remain below planner thresholds at every interior count. The exact
-$N=3$, $p=4/5$ fixture produces more equilibrium independence than the planner
-wants. Any policy or empirical design built from the theorem must therefore
-measure the relevant margin rather than assume that ``more independent sources''
-is always the corrective direction.
+not remain below planner thresholds at every interior count. At the first-source
+margin, the all-common trap interval has width $p(1-p)/N$ and shrinks with team
+size. At every fixed interior margin, the private threshold instead eventually
+exceeds the corresponding planner threshold as the team grows. The exact
+$N=3$, $p=4/5$ fixture is the smallest registered finite witness of that
+asymptotic reversal. Any policy or empirical design built from the theorem must
+therefore measure the relevant margin rather than assume that ``more independent
+sources'' is always the corrective direction.
 
 The institutional implication is layered. Acquisition determines whether
 distinct evidence exists. Disclosure determines who can use it. Allocation
@@ -1116,7 +1135,7 @@ actions to source independence. None of those extensions is executed or claimed
 here; the table makes their proof and evidence obligations inspectable.
 
 \begingroup
-\small
+\footnotesize
 \bibliographystyle{plainnat}
 \bibliography{generated/references}
 \endgroup
