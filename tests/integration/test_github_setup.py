@@ -61,11 +61,13 @@ def test_github_setup_defaults_to_offline_dry_run() -> None:
     assert "no GitHub calls made" in completed.stdout
 
 
-def test_ci_fetches_history_for_commit_bound_review_packets() -> None:
+def test_ci_fetches_history_and_installs_pdf_toolchain() -> None:
     workflow = yaml.safe_load((ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8"))
     steps = workflow["jobs"]["validate"]["steps"]
     checkout = steps[0]
     assert checkout["uses"] == "actions/checkout@v7"
     assert checkout["with"]["fetch-depth"] == 0
     commands = [step.get("run", "") for step in steps]
+    tectonic = next(step for step in steps if step.get("uses") == "wtfjoke/setup-tectonic@v4")
+    assert tectonic["with"]["tectonic-version"] == "0.16.9"
     assert any("apt-get install --yes poppler-utils" in command for command in commands)

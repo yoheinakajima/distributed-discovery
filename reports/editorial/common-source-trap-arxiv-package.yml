@@ -44,6 +44,13 @@ validation:
     immutable_compendium_verification: passed
     all_papers: passed
     site: 89-pages-26-studies
+  first_exact_head_ci:
+    head: a40185ea89f1501f00742b41a47991654d021440
+    result: failed-environment-dependency
+    run: 33278796737
+    failure: validation-runner-missing-tectonic-executable
+    package_or-paper_defect: false
+    correction: reuse-pinned-tectonic-0.16.9-setup-in-validation-workflow
 submission_metadata:
   title: "The Common-Source Trap: Endogenous Independent Evidence in Distributed Discovery"
   authors: [Yohei Nakajima]

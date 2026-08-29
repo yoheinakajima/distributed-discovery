@@ -236,6 +236,9 @@ scientific evidence and authorizes no manuscript merge or publication.
 - [x] Run the complete local repository wall: formatting, Ruff, strict MyPy,
   all 1,091 tests, claim/run and governance audits, immutable Compendium
   verification, all-paper builds, and the 89-page site build passed.
+- [x] Diagnose the first exact-head CI failure as an absent Tectonic executable
+  in the validation job, reuse the paper-build workflow's pinned Tectonic
+  setup, and add a workflow regression without weakening the package test.
 - [ ] Push the same draft PR and reverify exact-head GitHub checks before
   presenting the owner merge gate.
 - [x] Reverified local, remote, PR, base, issue, and five-file worktree state at
