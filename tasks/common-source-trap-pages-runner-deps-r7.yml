@@ -53,7 +53,7 @@ canonical_destinations:
   - plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
   - .github/workflows/pages.yml
   - tests/integration/test_github_setup.py
-github: {repository: yoheinakajima/distributed-discovery, issue: 220, branch: codex/cst-pages-runner-deps, pull_request: null, base: main}
+github: {repository: yoheinakajima/distributed-discovery, issue: 220, branch: codex/cst-pages-runner-deps, pull_request: 222, base: main}
 exec_plan: plans/COMMON_SOURCE_TRAP_INDEPENDENT_REVIEW.md
 task_delta: null
 frozen_identifiers:

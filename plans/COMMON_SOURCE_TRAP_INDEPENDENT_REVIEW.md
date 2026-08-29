@@ -141,6 +141,9 @@ scientific evidence and authorizes no manuscript merge or publication.
   1,092 tests, 110 claims, 51 run manifests, every governance/publication audit,
   and exact offline Compendium v0.1.0 reconstruction. The tracked diff remains
   limited to the workflow, regression, and governance records.
+- Draft PR #222 tracks the validated runner-only repair. It remains stopped
+  before readiness, merge, manual workflow dispatch, deployment, or issue
+  closure.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -259,8 +262,10 @@ scientific evidence and authorizes no manuscript merge or publication.
   failure: `tectonic` and `pdftotext` are absent although CI installs both.
 - [x] Add the CI-equivalent pinned Tectonic and Poppler setup to Pages, prove
   both occur before `make verify`, and pass the deterministic wall.
-- [ ] Commit, push, and open one exact-head draft repair PR without dispatching
-  or retrying Pages.
+- [x] Commit, push, and open draft repair PR #222 without dispatching or
+  retrying Pages.
+- [ ] Reverify the final exact head and its GitHub checks, then stop at the
+  owner merge gate.
 - [x] Reverified local, remote, PR, base, issue, and five-file worktree state at
   exact authorized head `9cf1720c2b23737f1937ea2c3f1a35a898fa9809`.
 - [x] Added and schema-validated the narrow superseding AO-0014 pointer task.
