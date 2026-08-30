@@ -3,7 +3,7 @@ kind: external-review-disposition
 paper_id: information-sharing-frontier
 task_id: AO-0015
 issue: 223
-status: implemented-awaiting-validation
+status: implemented-and-locally-validated-awaiting-exact-head-ci
 authority:
   report_role: owner-supplied-review-input-not-scientific-authority
   manuscript_claim_proof_run_evidence: repository-only

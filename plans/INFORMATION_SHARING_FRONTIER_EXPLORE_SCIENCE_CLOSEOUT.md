@@ -66,9 +66,10 @@ handoff. Create no new scientific evidence and stop before merge or submission.
 4. [x] Apply the evidence-bounded manuscript/generator/disposition edits.
 5. [x] Build and extract-test the deterministic arXiv source package.
 6. [x] Rebuild twice, inspect every PDF page, and run focused/native checks.
-7. [ ] Run `make verify`, `make papers`, and `make site`; inspect the public
-   diff and exact-head GitHub checks.
-8. [ ] Freeze exact hashes and stop at owner merge review.
+7. [x] Run `make verify`, `make papers`, and `make site`; inspect the bounded
+   six-file public artifact/pointer delta.
+8. [ ] Await exact-head GitHub checks, freeze the live head, and stop at owner
+   merge review.
 
 ## Restart instructions
 
