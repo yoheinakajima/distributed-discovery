@@ -16,8 +16,9 @@ five-channel counterexample. See `report.md` for exact results and limits.
 
 The public Incremental Sharing Lab is generated directly from that run's
 2,555-row point census and five channel profiles. Its 2,054 adjacent-transition
-table decomposes every displayed increment into aggregation gain and lost
-independent rescue; it does not rerun or interpolate the study.
+table comprises 2,044 point-census transitions plus ten fixed-channel profile
+transitions; each displayed increment is decomposed into aggregation gain and
+lost independent rescue without rerunning or interpolating the study.
 
 DD-022 supplies a complementary strategic result: under a hidden-dependence
 source mixture and one posterior-only symmetric selection, sharing can strictly

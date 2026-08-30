@@ -49,12 +49,12 @@ papers:
     title: "When Does Information Sharing Improve Decentralized Discovery? Aggregation, Independent Rescue, and Equilibrium Selection"
     authors: [Yohei Nakajima]
     status: working-paper
-    version: repository-artifact-sha256-a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13
+    version: repository-artifact-sha256-cfc892fd1a74f6fc7ebbc9b4152f678f4696448e37fdeb46ba376f0ac30a4c58
     arxiv_id: null
     doi: null
     recommended_citation: "Nakajima, Yohei (2026). When Does Information Sharing Improve Decentralized Discovery? Aggregation, Independent Rescue, and Equilibrium Selection. Working paper."
     source_bundle: papers/information-sharing-frontier
-    pdf_sha256: a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13
+    pdf_sha256: cfc892fd1a74f6fc7ebbc9b4152f678f4696448e37fdeb46ba376f0ac30a4c58
     claim_ownership: [DD-C-0089, DD-C-0092, DD-C-0097, DD-C-0098, DD-C-0102, DD-C-0106]
   - paper_id: foundations
     title: Foundations of Distributed Discovery
@@ -103,4 +103,4 @@ examples:
     doi: null
     claim_id: DD-C-0106
     run_id: 20260722T210334Z_DD-022_2376d5b7_ad67765ca8
-    artifact_sha256: a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13
+    artifact_sha256: cfc892fd1a74f6fc7ebbc9b4152f678f4696448e37fdeb46ba376f0ac30a4c58

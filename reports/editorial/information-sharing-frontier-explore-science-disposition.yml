@@ -1,0 +1,40 @@
+schema_version: information-sharing-frontier-explore-science-disposition-v1
+kind: external-review-disposition
+paper_id: information-sharing-frontier
+task_id: AO-0015
+issue: 223
+status: implemented-and-locally-validated-awaiting-exact-head-ci
+authority:
+  report_role: owner-supplied-review-input-not-scientific-authority
+  manuscript_claim_proof_run_evidence: repository-only
+  new_scientific_claim_authorized: false
+  merge_authorized: false
+  submission_authorized: false
+review:
+  date: "2026-08-30"
+  committed: false
+  sha256: 38da612da7f1889a219ae5c6cfd2db2a95190feb7cf94deb2d6815c62f7282de
+  page_count: 13
+  score: 97
+  tier: Platinum
+  major_issues: 0
+  minor_issues: 13
+  merits: 37
+  printed_issue_details: 10
+  unavailable_online_only_issue_details: 3
+dispositions:
+  - {finding_id: ISF-ES-B1, disposition: accept, edit: formalize the registered point and set-valued direct rule including uniform within-correspondence randomization, evidence: [DD-019-channel-fixtures]}
+  - {finding_id: ISF-ES-C1, disposition: correct-review-with-disclosure, edit: explain 2555 rows as 511 chains and 2044 adjacent transitions equal to 1848 negative plus 196 neutral plus zero positive, evidence: [DD-C-0095, DD-020-summary]}
+  - {finding_id: ISF-ES-C2, disposition: partially-accept-and-correct-review, edit: give exact public commit paths and full hashes and package compact immutable outputs without calling the evidence inaccessible or DOI archived, evidence: [DD-019, DD-020, DD-021, DD-022]}
+  - {finding_id: ISF-ES-C3, disposition: clarify, edit: use independently implemented repository verification and explicitly state it is not external replication, evidence: [repository-verification-policy]}
+  - {finding_id: ISF-ES-C4, disposition: accept, edit: state the exact and intentionally different DD-020 and DD-021 grids, evidence: [DD-020-config, DD-021-config]}
+  - {finding_id: ISF-ES-C5, disposition: accept, edit: source-generate the existing DD-022 gain-class breakdown by accuracy, evidence: [DD-C-0108, DD-022-registry]}
+  - {finding_id: ISF-ES-C6, disposition: accept, edit: separate the rho-star-to-7/12 full-clue-following regime from the above-7/12 anti-crowding regime, evidence: [DD-C-0106, DD-022-threshold-certificate]}
+  - {finding_id: ISF-ES-C7, disposition: accept, edit: source-generate all five existing pooled C2 values alongside the sharing paths, evidence: [DD-C-0094, DD-020-channel-profiles]}
+  - {finding_id: ISF-ES-C8, disposition: partial-defer-new-research, edit: state that mixed-curve feasibility within each registered family was not tested, evidence: [DD-C-0103]}
+  - {finding_id: ISF-ES-D1, disposition: accept, edit: map registry counts to DD-C-0099 and DD-C-0101 through DD-C-0103 and minimal witnesses only to DD-C-0100, evidence: [claim-ledger, DD-021-artifacts]}
+unavailable_findings:
+  - {finding_id: ISF-ES-ONLINE-01, location: Abstract, disposition: unavailable-not-guessed}
+  - {finding_id: ISF-ES-ONLINE-02, location: Abstract, disposition: unavailable-not-guessed}
+  - {finding_id: ISF-ES-ONLINE-03, location: Results-and-Analysis, disposition: unavailable-not-guessed}
+prohibitions: [new-research, immutable-run-rerun, claim-or-evidence-inflation, provider-call, merge, submission, publication]

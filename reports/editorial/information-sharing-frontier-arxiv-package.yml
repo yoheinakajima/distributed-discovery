@@ -1,0 +1,92 @@
+schema_version: 1
+paper_id: information-sharing-frontier
+prepared_utc: "2026-08-29"
+status: owner-upload-gated
+repository_state:
+  base: 66ba4449572b20c519a4629ef20cfc030fae1762
+  pull_request: 224
+  branch: agent/information-sharing-frontier-explore-closeout
+paper:
+  source_path: papers/information-sharing-frontier/main.tex
+  source_sha256: 3e671abbd5381d29fe55e273d153aa2ec5124d311103bd75ba6444e40e5fad32
+  pdf_path: papers/information-sharing-frontier/When_Does_Information_Sharing_Improve_Decentralized_Discovery.pdf
+  pdf_sha256: cfc892fd1a74f6fc7ebbc9b4152f678f4696448e37fdeb46ba376f0ac30a4c58
+  page_count: 28
+  byte_reproducible_two_builds: true
+  all_pages_visually_inspected: true
+local_handoff:
+  directory_name: information-sharing-frontier-arxiv-handoff
+  location_policy: outside-git-owner-local-handoff
+  source_archive: information-sharing-frontier-arxiv-source.zip
+  source_archive_sha256: fcb20936d0769ef5816e2094fc3c0d143eaad01f0868d1ecad459c549975e062
+  manifest: package-manifest.json
+  manifest_sha256: a3aa2df5884017f996b8e5e0b2dbc15fc9bc30d2b8054a91b6d0a25a9bfc801d
+  metadata: SUBMISSION_METADATA.yml
+  metadata_sha256: 5007f1b02225195e76a1b553b898108addb095c62de138c3011666d498300966
+  owner_checklist: OWNER_UPLOAD_CHECKLIST.md
+  owner_checklist_sha256: 5fe31d1b98d0e540669070800263be80fb70dd4f853e297256461d4b5e60d955
+validation:
+  deterministic_archive: true
+  archive_members_complete: true
+  compact_immutable_evidence_included: true
+  host_paths_absent: true
+  canonical_pdf_in_source_archive: false
+  extracted_source_compiles_twice: true
+  extracted_pdf_sha256:
+    - cfc892fd1a74f6fc7ebbc9b4152f678f4696448e37fdeb46ba376f0ac30a4c58
+    - cfc892fd1a74f6fc7ebbc9b4152f678f4696448e37fdeb46ba376f0ac30a4c58
+  full_repository_wall:
+    formatting: passed
+    ruff: passed
+    strict_mypy: passed
+    pytest: 1100-passed
+    claim_and_run_validation: passed
+    governance_and_publication_audits: passed
+    immutable_compendium_verification: passed
+    all_papers: 121-pages-7-project-pdfs
+    site: 89-pages-26-studies
+  exact_head_ci: pending-final-receipt-commit
+public_projection_delta:
+  changed_files: 6
+  changes:
+    - Replace only the Information Sharing Frontier PDF download with the revised exact bytes.
+    - Update its public page count from 26 to 28 and its SHA-256 to the revised artifact.
+    - Update only the corresponding download, lifecycle, and publication JSON entries and the papers index card.
+  unchanged:
+    - Every other generated site file.
+    - Scientific, editorial, lifecycle, submission, peer-review, and DOI status.
+paper_provenance_boundary:
+  content_commit: ac544ab986fee882f0c4306cf6167c107b08426b
+  explanation: Later pointer, packaging compatibility, and task-schema commits do not change manuscript source, generated assets, or PDF bytes; generated provenance remains bound to the content commit to avoid self-referential receipt churn.
+submission_metadata:
+  title: "When Does Information Sharing Improve Decentralized Discovery?"
+  authors: [Yohei Nakajima]
+  affiliation: Untapped Capital
+  abstract_source: papers/information-sharing-frontier/arxiv-metadata.yml
+  primary_category_recommendation: cs.GT
+  cross_list_candidates: [econ.TH]
+  alternative_primary_candidates: [cs.MA, econ.TH]
+  category_owner_confirmation_required: true
+  repository_source_license: MIT
+  arxiv_license: owner-selection-required
+  submitted: false
+  peer_reviewed: false
+  arxiv_id: null
+  doi: null
+  publication_status: working-paper
+policy:
+  checked: "2026-08-29"
+  official_sources:
+    - https://info.arxiv.org/help/submit/index.html
+    - https://info.arxiv.org/help/submit_tex.html
+    - https://info.arxiv.org/help/license/index.html
+    - https://arxiv.org/category_taxonomy
+  observations:
+    - TeX source is preferred and a TeX-generated PDF cannot be submitted as PDF-only.
+    - A zip source package with subdirectories is supported and compilation occurs from the archive root.
+    - cs.GT covers computer-science/game-theory intersections, mechanism design, and coordination.
+    - econ.TH is a plausible cross-list for this theoretical game and mechanism-design contribution.
+    - The arXiv license choice is irrevocable and remains an explicit owner decision.
+owner_upload_gate:
+  recommendation: Merge the exact green draft PR first, then upload the frozen source archive manually, confirm cs.GT and any econ.TH cross-list, choose the license, inspect the arXiv-generated PDF, and stop again before final submission if submission authority is not explicit.
+  still_prohibited: [pull-request-merge-without-exact-owner-gate, arxiv-upload, final-submission, publication-claim, doi-fabrication]

@@ -1,0 +1,87 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0015
+title: Information Sharing Frontier Explore Science closeout and arXiv handoff
+task_type: documentation-editorial
+status: active
+objective: Apply only evidence-backed editorial, provenance, generator, and packaging improvements from the owner-supplied 2026-08-30 Explore Science report to Information Sharing Frontier, validate the revised working paper, and stop at a draft-PR owner gate before merge or submission.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: instruction, path: papers/AGENTS.md}
+  - {type: instruction, path: studies/AGENTS.md}
+  - {type: instruction, path: claims/AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/research-governance.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: policy, path: docs/publication/arxiv-freeze-checklist.md}
+  - {type: plan, path: plans/MASTER_EXEC_PLAN.md}
+  - {type: plan, path: plans/INFORMATION_SHARING_FRONTIER_PAPER.md}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/223"}
+owner_decisions:
+  - On 2026-08-29 the owner supplied a 2026-08-30 Explore Science report and authorized applying defensible improvements to Information Sharing Frontier and preparing it for final review and arXiv.
+  - The report is owner-supplied review input, not scientific authority; the complete proprietary PDF remains local, and the three online-only findings absent from that PDF must not be guessed.
+  - Existing immutable DD-019 through DD-022 outputs may be explained, exposed, packaged, and source-generated, but no new study, run, claim, theorem, counterexample, or scientific execution is authorized.
+  - The arXiv source package, metadata, category recommendation, license alternatives, and upload checklist may be prepared; merge, irrevocable license selection, upload, submission, DOI, release, and publication remain separate owner gates.
+scope:
+  paths:
+    - tasks/information-sharing-frontier-explore-science-closeout.yml
+    - plans/INFORMATION_SHARING_FRONTIER_EXPLORE_SCIENCE_CLOSEOUT.md
+    - plans/MASTER_EXEC_PLAN.md
+    - reports/editorial/information-sharing-frontier-explore-science-disposition.yml
+    - reports/editorial/information-sharing-frontier-arxiv-package.yml
+    - papers/information-sharing-frontier/
+    - studies/DD-020-incremental-sharing/README.md
+    - src/distributed_discovery/papers/build_information_sharing_frontier.py
+    - scripts/build_information_sharing_frontier_arxiv_package.py
+    - tests/integration/test_information_sharing_frontier_paper.py
+    - tests/integration/test_information_sharing_frontier_arxiv_package.py
+    - Makefile
+  actions:
+    - Record the exact review identity, ten printed dispositions, and three unavailable findings without committing or reconstructing the report.
+    - Clarify only existing direct-rule, census-accounting, auditability, verification-provenance, parameter-scope, strategic-count, mechanism, intermediate-coverage, and bounded-null evidence.
+    - Repair source-generated figure and table claim mappings against the canonical claim-evidence map.
+    - Build and validate a deterministic portable arXiv source archive with compact public evidence, metadata, hashes, and an owner upload checklist.
+    - Rebuild twice to identical bytes, inspect every page, run the complete deterministic wall, and open one draft pull request.
+non_goals:
+  - No new scientific claim, study, run, proof, algebraic search, computational search, counterexample, provider/reviewer call, or spend.
+  - No immutable-run rerun, registered-result change, claim or proof status change, evidence promotion, or paper-lifecycle change.
+  - No PR readiness, merge, issue closure, Pages dispatch, publication claim, arXiv or Explore Science upload/submission, license selection, DOI, release, credential access, branch deletion, or unrelated work.
+permissions: {repository_write: true, git_branch_commit: true, github_issue_pr: true, merge_after_checks: false, ci_pages: false}
+external_action_permissions: {network_observation: true, github_mutation: true, provider_calls: false, spend: false, release_publication: false, submission: false}
+scientific_mutation_permissions: {create_study: false, create_claim: false, create_run: false, change_evidence_status: false, change_proof_status: false, change_paper_lifecycle: false}
+private_data_permissions: {read: true, write: false, generate: false, publish: false}
+budget: {currency: USD, expected: "0", hard_cap: "0", call_cap: 0, category_caps: {}, cumulative_spend: "0"}
+expected_outcomes:
+  - A byte-reproducible and visually verified revised working paper whose changes are traceable to existing immutable evidence.
+  - A disposition record covering all ten printed findings and explicitly preserving the three unavailable findings as unavailable and unguessed.
+  - A deterministic portable source archive that rebuilds the canonical PDF and leaves submission, DOI, category confirmation, and license owner-gated.
+stop_conditions:
+  - Stop before editing if main differs from 66ba4449572b20c519a4629ef20cfc030fae1762, another substantive paper PR is open, or the frozen source/PDF/review identities differ.
+  - Stop if an accepted change needs new research, an immutable run, a new claim, a status promotion, or an unavailable online-only review finding.
+  - Stop if package extraction cannot compile twice to the canonical PDF, any page fails visual QA, or the complete deterministic wall fails from the exact branch.
+  - Stop before PR readiness, merge, Pages dispatch, upload, submission, license selection, DOI, release, publication, credential access, spend, or branch deletion.
+acceptance_profile: docs-editorial
+canonical_destinations:
+  - tasks/information-sharing-frontier-explore-science-closeout.yml
+  - plans/INFORMATION_SHARING_FRONTIER_EXPLORE_SCIENCE_CLOSEOUT.md
+  - reports/editorial/information-sharing-frontier-explore-science-disposition.yml
+  - reports/editorial/information-sharing-frontier-arxiv-package.yml
+  - papers/information-sharing-frontier/main.tex
+  - papers/information-sharing-frontier/arxiv-metadata.yml
+  - scripts/build_information_sharing_frontier_arxiv_package.py
+github: {repository: yoheinakajima/distributed-discovery, issue: 223, branch: agent/information-sharing-frontier-explore-closeout, pull_request: null, base: main}
+exec_plan: plans/INFORMATION_SHARING_FRONTIER_EXPLORE_SCIENCE_CLOSEOUT.md
+task_delta: null
+frozen_identifiers:
+  authorized_base_main: 66ba4449572b20c519a4629ef20cfc030fae1762
+  explore_science_report_sha256: 38da612da7f1889a219ae5c6cfd2db2a95190feb7cf94deb2d6815c62f7282de
+  explore_science_report_pages: "13"
+  explore_science_score: "97"
+  prior_main_tex_sha256: 41cb86cb4ea4fc1221c3fb4c88a31418b2f5bff0fbc35777d9c895e35084982f
+  prior_pdf_sha256: a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13
+  prior_pdf_pages: "26"
+supersession:
+  supersedes: []
+  superseded_by: null
+  reason: null
+next_gate: After the exact draft PR head passes the complete validation wall and GitHub checks, the owner may separately authorize marking that exact head ready and merging it. ArXiv category, license, upload, and final submission remain later owner decisions.

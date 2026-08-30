@@ -1,6 +1,16 @@
 # Master execution plan
 
-## Active AO-0014 Common-Source Trap Pages closeout (2026-08-29)
+## Active AO-0015 Information Sharing Frontier closeout (2026-08-29)
+
+Common-Source Trap is accepted on `main`, its runner repair is merged, and
+exact-head CI and Pages are green. Under PM-0009, Information Sharing Frontier
+is now the next internal preprint candidate. Issue #223 and branch
+`agent/information-sharing-frontier-explore-closeout` own an evidence-bounded
+Explore Science disposition and deterministic arXiv handoff. No new research,
+merge, license choice, upload, DOI, release, or publication is authorized. See
+`plans/INFORMATION_SHARING_FRONTIER_EXPLORE_SCIENCE_CLOSEOUT.md`.
+
+## Completed AO-0014 Common-Source Trap Pages closeout (2026-08-29)
 
 The accepted Common-Source Trap revision merged to `main` as
 `ed55ce3e31a8cb6f53b162cab05d2169266b128d`. Merge-commit CI run

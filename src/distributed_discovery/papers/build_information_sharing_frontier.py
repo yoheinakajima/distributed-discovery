@@ -417,13 +417,14 @@ def build(root: Path) -> dict[str, object]:
         ),
         "sharing-paths.tex": _table(
             "tab:sharing-paths",
-            "Exact DD-020 sharing paths. The pooled block grows from $s=1$ to $3$ while the remaining private rescue actions disappear.",
-            r"channel & $(G_1,G_2,G_3)$ & adjacent changes & sign",
+            "Exact DD-020 sharing paths and intermediate two-signal pooled coverage. The pooled block grows from $s=1$ to $3$ while the remaining private rescue actions disappear.",
+            r"channel & $C_2$ & $(G_1,G_2,G_3)$ & adjacent changes & sign",
             [
-                f"{_escape(row['channel_id'])} & $({','.join(row['profile'])})$ & $({','.join(row['increments'])})$ & {_escape('increasing' if all(_fraction(v) > 0 for v in row['increments']) else 'decreasing')}\\\\"
+                f"{_escape(row['channel_id'])} & ${row['pooled_accuracy'][1]}$ & $({','.join(row['profile'])})$ & $({','.join(row['increments'])})$ & {_escape('increasing' if all(_fraction(v) > 0 for v in row['increments']) else 'decreasing')}\\\\"
                 for row in sharing
             ],
             _note(["incremental"], ["DD-C-0092", "DD-C-0096"], [sources["sharing"]]),
+            spec="Yllll",
         ),
         "registry-counts.tex": _table(
             "tab:registry-counts",
@@ -434,12 +435,18 @@ def build(root: Path) -> dict[str, object]:
                 for key, value in frontier_summary["sharing_class_counts"].items()
             ]
             + [
+                f"full sharing & {_escape(key)} & {value} & exact bounded\\\\"
+                for key, value in frontier_summary["full_sharing_class_counts"].items()
+            ]
+            + [
                 f"recovery budget & $L^*={key}$ & {value} & centralized\\\\"
                 for key, value in frontier_summary["recovery_budget_counts"].items()
             ]
             + [r"sharing curve & mixed & 0 & bounded null\\"],
             _note(
-                ["frontier"], ["DD-C-0099", "DD-C-0102", "DD-C-0103"], [sources["frontier_summary"]]
+                ["frontier"],
+                ["DD-C-0099", "DD-C-0101", "DD-C-0102", "DD-C-0103"],
+                [sources["frontier_summary"]],
             ),
         ),
         "minimal-witnesses.tex": _table(
@@ -452,7 +459,7 @@ def build(root: Path) -> dict[str, object]:
                 r"Shared Discovery Paradox & $q=3/8$ & $C_N=27/64<P_N=39/64$ & noisy shortlist\\",
                 r"consensus dominance & $P_N=3/4$ & $C_N=5/6$ & guaranteed shortlist\\",
             ],
-            _note(["frontier"], ["DD-C-0100", "DD-C-0101", "DD-C-0102"], [sources["witnesses"]]),
+            _note(["frontier"], ["DD-C-0100"], [sources["witnesses"]]),
         ),
         "equilibrium-formulas.tex": _table(
             "tab:equilibrium-formulas",
@@ -482,19 +489,30 @@ def build(root: Path) -> dict[str, object]:
                 [sources["threshold"], sources["strategic_summary"]],
             ),
         ),
+        "strategic-gain-by-accuracy.tex": _table(
+            "tab:strategic-gain-by-accuracy",
+            "Exact DD-022 selected-sharing gain classes by signal accuracy. Each row contains the seven registered dependence values; counts are bounded cells, not empirical frequencies.",
+            r"accuracy $p$ & positive & neutral & negative",
+            [
+                f"${accuracy}$ & {sum(row['gain_class'] == 'positive' for row in strategic if row['accuracy'] == accuracy)} & {sum(row['gain_class'] == 'neutral' for row in strategic if row['accuracy'] == accuracy)} & {sum(row['gain_class'] == 'negative' for row in strategic if row['accuracy'] == accuracy)}\\\\"
+                for accuracy in ["1/2", "11/20", "3/5", "13/20", "2/3", "1"]
+            ],
+            _note(["strategic"], ["DD-C-0108"], [sources["strategic_registry"]]),
+            spec="Ylll",
+        ),
         "claim-evidence-map.tex": _table(
             "tab:claim-map",
-            "Claim, evidence, and ownership map. Status belongs to each claim, not to the paper as a whole.",
+            "Claim, evidence, and ownership map. Here independently implemented repository verification is not external replication. Status belongs to each claim, not to the paper as a whole.",
             r"claim range & owner & evidence class & manuscript role",
             [
-                r"DD-C-0089--0091 & DD-019 & independently reproduced exact bounded & geometry and recovery\\",
+                r"DD-C-0089--0091 & DD-019 & independent repository method & geometry and recovery\\",
                 r"DD-C-0092--0094 & DD-020 & identity and verified theorems & aggregation versus rescue\\",
-                r"DD-C-0095--0096 & DD-020 & independently reproduced bounded & census and counterchannel\\",
+                r"DD-C-0095--0096 & DD-020 & independent repository method & census and counterchannel\\",
                 r"DD-C-0097--0098 & DD-021 & verified theorems & frontier and centralized recovery\\",
-                r"DD-C-0099--0102 & DD-021 & independently reproduced bounded & classes, witnesses, budgets\\",
+                r"DD-C-0099--0102 & DD-021 & independent repository method & classes, witnesses, budgets\\",
                 r"DD-C-0103 & DD-021 & verified bounded negative & mixed-curve null\\",
                 r"DD-C-0104--0107 & DD-022 & verified theorem/corollary & selected equilibria and interval\\",
-                r"DD-C-0108 & DD-022 & independently reproduced bounded & 42-cell classification\\",
+                r"DD-C-0108 & DD-022 & independent repository method & 42-cell classification\\",
                 r"DD-C-0109 & DD-022 & verified negative & selection failure\\",
                 r"DD-C-0110 & DD-022 & verified theorem & implementation gap\\",
             ],
@@ -503,6 +521,64 @@ def build(root: Path) -> dict[str, object]:
     }
     for name, content in table_assets.items():
         (tables / name).write_text(content + "\n", encoding="utf-8")
+
+    asset_claim_contract = {
+        "figures/architecture.tex": {"DD-C-0092", "DD-C-0097"},
+        "figures/dependence-discovery.tex": {
+            "DD-C-0104",
+            "DD-C-0105",
+            "DD-C-0106",
+            "DD-C-0110",
+        },
+        "figures/evidence-authority-map.tex": {"DD-C-0089", "DD-C-0110"},
+        "figures/incremental-curves.tex": {"DD-C-0094", "DD-C-0096"},
+        "figures/registry-classification.tex": {"DD-C-0099", "DD-C-0103"},
+        "figures/residual-frontier.tex": {"DD-C-0097", "DD-C-0100"},
+        "figures/same-accuracy-profile.tex": {
+            "DD-C-0089",
+            "DD-C-0090",
+            "DD-C-0091",
+        },
+        "figures/selection-map.tex": {"DD-C-0106", "DD-C-0109", "DD-C-0110"},
+        "tables/action-budget-profiles.tex": {"DD-C-0089", "DD-C-0091"},
+        "tables/channel-definitions.tex": {"DD-C-0089"},
+        "tables/claim-evidence-map.tex": {
+            "DD-C-0089",
+            "DD-C-0092",
+            "DD-C-0095",
+            "DD-C-0097",
+            "DD-C-0099",
+            "DD-C-0103",
+            "DD-C-0104",
+            "DD-C-0108",
+            "DD-C-0109",
+            "DD-C-0110",
+        },
+        "tables/equilibrium-formulas.tex": {"DD-C-0104", "DD-C-0105"},
+        "tables/minimal-witnesses.tex": {"DD-C-0100"},
+        "tables/registry-counts.tex": {
+            "DD-C-0099",
+            "DD-C-0101",
+            "DD-C-0102",
+            "DD-C-0103",
+        },
+        "tables/sharing-paths.tex": {"DD-C-0092", "DD-C-0096"},
+        "tables/strategic-gain-by-accuracy.tex": {"DD-C-0108"},
+        "tables/threshold-gap.tex": {"DD-C-0106", "DD-C-0110"},
+    }
+    generated_assets = {
+        **{f"figures/{name}": content for name, content in figure_assets.items()},
+        **{f"tables/{name}": content for name, content in table_assets.items()},
+    }
+    if set(generated_assets) != set(asset_claim_contract):
+        raise RuntimeError("generated asset claim contract is incomplete")
+    for name, content in generated_assets.items():
+        actual = set(re.findall(r"DD-C-\d{4}", content))
+        if actual != asset_claim_contract[name]:
+            raise RuntimeError(
+                f"generated asset claim mapping mismatch: {name}: "
+                f"actual={sorted(actual)}, expected={sorted(asset_claim_contract[name])}"
+            )
 
     # Exact chart data, including conceptual node/edge records for diagrams.
     csv_specs: dict[str, tuple[list[str], list[dict[str, object]]]] = {
