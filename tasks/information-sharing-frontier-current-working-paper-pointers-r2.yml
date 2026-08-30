@@ -10,7 +10,7 @@ authority_references:
   - {type: instruction, path: papers/AGENTS.md}
   - {type: policy, path: docs/repository-contract.md}
   - {type: policy, path: docs/agent-ops/README.md}
-  - {type: contract, path: tasks/information-sharing-frontier-explore-science-closeout.yml}
+  - {type: record, path: tasks/information-sharing-frontier-explore-science-closeout.yml}
   - {type: plan, path: plans/INFORMATION_SHARING_FRONTIER_EXPLORE_SCIENCE_CLOSEOUT.md}
   - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/223"}
   - {type: pull-request, path: "https://github.com/yoheinakajima/distributed-discovery/pull/224"}
