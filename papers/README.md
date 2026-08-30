@@ -21,9 +21,9 @@ accepted.
   working paper; SHA-256
   `3dc1d06c509121ff1668979344e1b343d559353e0723e9589dac4da61a70794c`.
 
-- `information-sharing-frontier/`: validated 26-page theorem-family working
+- `information-sharing-frontier/`: validated 28-page theorem-family working
   paper synthesizing DD-019 through DD-022; SHA-256
-  `a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13`.
+  `cfc892fd1a74f6fc7ebbc9b4152f678f4696448e37fdeb46ba376f0ac30a4c58`.
 
 Seven project-authored PDFs have root validation records. The current 14-page
 Three Results artifact has provenance-refreshed SHA-256
@@ -35,7 +35,7 @@ and the 21-page Threshold Discovery artifact has SHA-256
 All builds follow the
 `$build-paper` workflow and preserve claim IDs, input checksums, deterministic
 artifact checks, and visual-QA records. The upstream extension remains a patch
-preview rather than a project-authored publication. All 119 project-paper pages
+preview rather than a project-authored publication. All 121 project-paper pages
 have current visual-QA records. No paper is represented as peer reviewed.
 
 Editorial admission and theorem-family ownership are governed by

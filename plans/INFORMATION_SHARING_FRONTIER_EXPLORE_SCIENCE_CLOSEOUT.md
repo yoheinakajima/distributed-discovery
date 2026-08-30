@@ -38,6 +38,10 @@ handoff. Create no new scientific evidence and stop before merge or submission.
 - The owner-supplied review is diagnostic input only. DD-019 through DD-022,
   the claim ledger, proofs, immutable outputs, and repository policy retain all
   manuscript and evidence authority.
+- The first full-wall run exposed stale current-working-paper pointers in the
+  lifecycle and citation registries after the PDF identity changed. Additive
+  contract R2 authorizes only those exact current pointers and a regression;
+  Compendium v0.1.0 and every historical release identity remain unchanged.
 
 ## Scope and boundaries
 

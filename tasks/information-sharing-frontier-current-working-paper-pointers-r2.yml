@@ -1,0 +1,75 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0015
+title: Information Sharing Frontier current-working-paper pointers R2
+task_type: documentation-editorial
+status: active
+objective: Update only the current Information Sharing Frontier working-paper pointers to the Explore Science closeout artifact so the required validation wall can distinguish current paper truth from the immutable Compendium v0.1.0 snapshot.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: instruction, path: papers/AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: contract, path: tasks/information-sharing-frontier-explore-science-closeout.yml}
+  - {type: plan, path: plans/INFORMATION_SHARING_FRONTIER_EXPLORE_SCIENCE_CLOSEOUT.md}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/223"}
+  - {type: pull-request, path: "https://github.com/yoheinakajima/distributed-discovery/pull/224"}
+owner_decisions:
+  - The owner authorized evidence-backed Explore Science improvements and a deterministic arXiv-ready working paper, requiring a changed current PDF identity and the full repository validation wall.
+  - The first full-wall run showed that docs/paper-lifecycle.yml and docs/publication/paper-citation-metadata.yml still bound the moving current paper to the prior PDF; these are required current pointers, not immutable scientific evidence.
+  - Update only current-working-paper hashes and page counts to the verified 28-page artifact; preserve lifecycle and scientific statuses, submission false, peer reviewed false, DOI null, and all frozen release artifacts.
+scope:
+  paths:
+    - tasks/information-sharing-frontier-current-working-paper-pointers-r2.yml
+    - plans/INFORMATION_SHARING_FRONTIER_EXPLORE_SCIENCE_CLOSEOUT.md
+    - papers/README.md
+    - papers/information-sharing-frontier/visual-qa.md
+    - docs/paper-lifecycle.yml
+    - docs/publication/paper-citation-metadata.yml
+    - tests/unit/test_information_sharing_frontier_pointer_versioning.py
+  actions:
+    - Bind current lifecycle, citation, example, paper-index, and visual-QA pointers to PDF SHA-256 cfc892fd1a74f6fc7ebbc9b4152f678f4696448e37fdeb46ba376f0ac30a4c58 and 28 pages.
+    - Add a regression proving current working-paper pointers use the revised artifact while the Compendium v0.1.0 source/PDF identities remain historical and unchanged.
+    - Rerun the exact focused checks and complete validation wall.
+non_goals:
+  - No manuscript, scientific claim, study, run, evidence, proof, lifecycle-status, submission-status, release, DOI, or historical record change.
+  - No Compendium v0.1.0 registry, manifest, source revision, archive, PDF, or hash change.
+  - No PR readiness, merge, Pages dispatch, arXiv upload, submission, license selection, publication, branch deletion, provider call, credential access, or spend.
+permissions: {repository_write: true, git_branch_commit: true, github_issue_pr: true, merge_after_checks: false, ci_pages: false}
+external_action_permissions: {network_observation: true, github_mutation: true, provider_calls: false, spend: false, release_publication: false, submission: false}
+scientific_mutation_permissions: {create_study: false, create_claim: false, create_run: false, change_evidence_status: false, change_proof_status: false, change_paper_lifecycle: false}
+private_data_permissions: {read: false, write: false, generate: false, publish: false}
+budget: {currency: USD, expected: "0", hard_cap: "0", call_cap: 0, category_caps: {}, cumulative_spend: "0"}
+expected_outcomes:
+  - Current working-paper pointers resolve to the revised 28-page artifact exactly.
+  - Compendium v0.1.0 remains reproducible from its frozen source revision with the prior Information Sharing Frontier source/PDF hashes.
+  - The complete repository wall passes without changing scientific or publication status.
+stop_conditions:
+  - Stop if the current artifact differs from source SHA-256 3e671abbd5381d29fe55e273d153aa2ec5124d311103bd75ba6444e40e5fad32, PDF SHA-256 cfc892fd1a74f6fc7ebbc9b4152f678f4696448e37fdeb46ba376f0ac30a4c58, or 28 pages.
+  - Stop if a pointer repair requires any scientific, lifecycle-status, submission-status, historical-release, or publication mutation.
+  - Stop before PR readiness, merge, Pages dispatch, upload, submission, license selection, DOI, release, publication, credentials, spend, or branch deletion.
+acceptance_profile: docs-editorial
+canonical_destinations:
+  - tasks/information-sharing-frontier-current-working-paper-pointers-r2.yml
+  - plans/INFORMATION_SHARING_FRONTIER_EXPLORE_SCIENCE_CLOSEOUT.md
+  - papers/README.md
+  - docs/paper-lifecycle.yml
+  - docs/publication/paper-citation-metadata.yml
+  - tests/unit/test_information_sharing_frontier_pointer_versioning.py
+github: {repository: yoheinakajima/distributed-discovery, issue: 223, branch: agent/information-sharing-frontier-explore-closeout, pull_request: 224, base: main}
+exec_plan: plans/INFORMATION_SHARING_FRONTIER_EXPLORE_SCIENCE_CLOSEOUT.md
+task_delta: null
+frozen_identifiers:
+  prior_base_main: 66ba4449572b20c519a4629ef20cfc030fae1762
+  revised_source_sha256: 3e671abbd5381d29fe55e273d153aa2ec5124d311103bd75ba6444e40e5fad32
+  revised_pdf_sha256: cfc892fd1a74f6fc7ebbc9b4152f678f4696448e37fdeb46ba376f0ac30a4c58
+  revised_page_count: "28"
+  compendium_version: 0.1.0
+  compendium_source_revision: 3ca173f4e9e81a6d0e3e56205e428c596edc050e
+  compendium_information_sharing_source_sha256: 41cb86cb4ea4fc1221c3fb4c88a31418b2f5bff0fbc35777d9c895e35084982f
+  compendium_information_sharing_pdf_sha256: a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13
+supersession:
+  supersedes: [tasks/information-sharing-frontier-explore-science-closeout.yml]
+  superseded_by: null
+  reason: The first required full-wall run exposed fixed current-pointer surfaces omitted from the initial contract; R2 adds only those paths and preserves all scientific, lifecycle, and historical-release boundaries.
+next_gate: After the exact draft PR head passes the complete wall and GitHub checks, the owner may separately authorize marking it ready and merging it; arXiv category, license, upload, and final submission remain later owner decisions.

@@ -1,20 +1,20 @@
 # Visual QA — Information Sharing Frontier
 
-- Reviewed UTC: `2026-07-22T22:54:18Z`
-- Source commit: `d05b4072e91739680ab7918dde50909130d81b4b`
+- Reviewed UTC: `2026-08-29`
+- Source commit: `ac544ab337a6a3f54fc3e82c9124ccb9eb54e9c2`
 - Build command: `make information-sharing-frontier`
 - Artifact: `When_Does_Information_Sharing_Improve_Decentralized_Discovery.pdf`
-- PDF SHA-256: `a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13`
-- Page count: `26`
+- PDF SHA-256: `cfc892fd1a74f6fc7ebbc9b4152f678f4696448e37fdeb46ba376f0ac30a4c58`
+- Page count: `28`
 - Page size: US Letter, `612 × 792` points
 
-All 26 pages were rendered to PNG with Poppler and reviewed in four complete
-contact sheets. Pages containing dense generated assets were also inspected at
-full rendered resolution: 3, 10, 14, 16, 18, and 19. The title, abstract,
-theorem statements, equations, citations, footers, bibliography, eight figures,
-eight tables, and their provenance notes are legible. No clipping, collision,
-overflow, broken glyph, blank page, unresolved reference, or unintended host
-path is visible.
+All 28 pages were rendered individually with Poppler and inspected at full
+rendered resolution. The title, abstract, theorem statements, equations,
+citations, footers, bibliography, eight figures, nine tables, and provenance
+notes are legible. No clipping, collision, overflow, broken glyph, blank page,
+unresolved reference, or unintended host path is visible.
+
+## Historical visual corrections
 
 The first inspection found three defects: registry labels touched, strategic
 curve labels overlapped, and the equilibrium-selection diagram was unreadable.
