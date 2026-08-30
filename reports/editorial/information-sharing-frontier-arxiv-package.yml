@@ -55,8 +55,8 @@ public_projection_delta:
     - Every other generated site file.
     - Scientific, editorial, lifecycle, submission, peer-review, and DOI status.
 paper_provenance_boundary:
-  content_commit: pending-draft-commit
-  explanation: The draft PR will bind provenance to its content commit after the paper source and generated assets are committed, avoiding a self-referential receipt revision.
+  content_commit: 8372583e552f774424ad4e90bf9455e9aea26190
+  explanation: This is the committed paper-content tree. The following receipt-only commit records this stable content identity without self-referential package churn.
 submission_metadata:
   title: "When Does Information Sharing Improve Decentralized Discovery?"
   authors: [Yohei Nakajima]

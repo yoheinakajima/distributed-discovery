@@ -1,7 +1,7 @@
 # Visual QA — Information Sharing Frontier
 
 - Reviewed UTC: `2026-08-30`
-- Source branch: `agent/information-sharing-frontier-explore-polish` (commit frozen at draft-PR creation)
+- Source commit: `8372583e552f774424ad4e90bf9455e9aea26190`
 - Build command: `make information-sharing-frontier`
 - Artifact: `When_Does_Information_Sharing_Improve_Decentralized_Discovery.pdf`
 - PDF SHA-256: `8d116b86cdbbc6cda66d65ac72077d29c15b05b86f4dc862ee8ec8e69d8f4ac0`

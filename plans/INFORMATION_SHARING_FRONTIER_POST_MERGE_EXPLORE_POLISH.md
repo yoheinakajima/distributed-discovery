@@ -53,7 +53,9 @@ manual deployment, or branch deletion.
 3. [x] Record a discrepancy table and implement only supported manuscript/generator/test changes.
 4. [x] Rebuild paper and source package twice; render and inspect all pages.
 5. [x] Run focused and complete validation walls; regenerate site; prepare versioned owner-local handoff.
-6. [ ] Push one draft PR, await exact-head checks, and stop at owner merge gate.
+6. [ ] Push one draft PR, await exact-head checks, and stop at owner merge gate. The
+   content commit is `8372583e552f774424ad4e90bf9455e9aea26190`; a following
+   receipt-only commit binds the local handoff without self-reference.
 
 ## Discoveries and surprises
 
