@@ -1,0 +1,80 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0016
+title: Information Sharing Frontier post-merge Explore Science polish R2
+task_type: documentation-editorial
+status: active
+objective: Apply only six evidence-backed editorial clarifications from the owner-supplied 2026-08-30 Explore Science report to the accepted Information Sharing Frontier working paper, then produce one deterministic draft-PR review surface and a versioned local arXiv handoff.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: instruction, path: papers/AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: plan, path: plans/MASTER_EXEC_PLAN.md}
+  - {type: record, path: docs/program-memory/registry.yml}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/225"}
+owner_decisions:
+  - The owner supplied the local 10-page Explore Science report on 2026-08-30 and authorized applying improvements only where repository evidence supports them.
+  - The report is review input, not scientific authority. Its page/table references align with the accepted 28-page manuscript, but it contains no input-manuscript hash; exact-byte identity is strongly supported, not cryptographically proved.
+  - Existing DD-019 through DD-022 immutable outputs may be clarified and re-rendered but may not be rerun, extended, or replaced.
+scope:
+  paths:
+    - tasks/information-sharing-frontier-explore-science-polish-r2.yml
+    - plans/MASTER_EXEC_PLAN.md
+    - plans/INFORMATION_SHARING_FRONTIER_POST_MERGE_EXPLORE_POLISH.md
+    - reports/editorial/information-sharing-frontier-explore-science-polish-r2-disposition.yml
+    - papers/information-sharing-frontier/
+    - papers/README.md
+    - docs/paper-lifecycle.yml
+    - docs/publication/paper-citation-metadata.yml
+    - src/distributed_discovery/papers/build_information_sharing_frontier.py
+    - tests/integration/test_information_sharing_frontier_paper.py
+    - tests/unit/test_general_sharing_post_run_audit.py
+    - tests/unit/test_information_sharing_frontier_pointer_versioning.py
+    - scripts/build_information_sharing_frontier_arxiv_package.py
+    - reports/editorial/information-sharing-frontier-arxiv-package.yml
+  actions:
+    - Record the report identity, six printed finding dispositions, and no-input-hash limitation without committing the report.
+    - Make bounded manuscript clarifications backed by existing proofs, formulas, generator code, and immutable DD-021/DD-022 outputs.
+    - Update only current working-paper checksum/provenance pointers, rebuild deterministic paper/site/package artifacts, and prepare a new local sibling submission handoff without changing public lifecycle status metadata.
+    - Open one draft pull request and stop at the owner merge gate.
+non_goals:
+  - No new research, study, run, claim, proof, algebraic or computational search, evidence-status change, or paper-lifecycle/status promotion.
+  - No reviewer/provider call, credential access, spend, arXiv upload/submission, category or license selection, DOI, release, merge, undraft, manual deployment, branch deletion, or work on dependency PRs.
+permissions: {repository_write: true, git_branch_commit: true, github_issue_pr: true, merge_after_checks: false, ci_pages: false}
+external_action_permissions: {network_observation: true, github_mutation: true, provider_calls: false, spend: false, release_publication: false, submission: false}
+scientific_mutation_permissions: {create_study: false, create_claim: false, create_run: false, change_evidence_status: false, change_proof_status: false, change_paper_lifecycle: false}
+private_data_permissions: {read: true, write: false, generate: false, publish: false}
+budget: {currency: USD, expected: "0", hard_cap: "0", call_cap: 0, category_caps: {}, cumulative_spend: "0"}
+expected_outcomes:
+  - A revised source-generated, byte-reproducible, visually inspected working-paper PDF with six evidence-backed dispositions.
+  - A new versioned owner-local arXiv handoff that rebuilds twice to the canonical PDF.
+  - One exact-head draft PR with a complete validation record and no status change.
+stop_conditions:
+  - Stop if main differs from 41987a6a35e0d967ee75ef6e4acf214c808fef92, a substantive open PR appears, or the supplied report identity differs.
+  - Stop if B2 or C1 cannot be supported solely by existing registered formulas/code/evidence, or if a change requires a new scientific object, lifecycle status, or public submission state.
+  - Stop before PR readiness, merge, Pages dispatch, arXiv/Explore Science action, license selection, DOI, release, publication, credentials, spend, or branch deletion.
+acceptance_profile: docs-editorial
+canonical_destinations:
+  - tasks/information-sharing-frontier-explore-science-polish-r2.yml
+  - plans/INFORMATION_SHARING_FRONTIER_POST_MERGE_EXPLORE_POLISH.md
+  - reports/editorial/information-sharing-frontier-explore-science-polish-r2-disposition.yml
+  - papers/information-sharing-frontier/main.tex
+  - reports/editorial/information-sharing-frontier-arxiv-package.yml
+github: {repository: yoheinakajima/distributed-discovery, issue: 225, branch: agent/information-sharing-frontier-explore-polish, pull_request: null, base: main}
+exec_plan: plans/INFORMATION_SHARING_FRONTIER_POST_MERGE_EXPLORE_POLISH.md
+task_delta: null
+frozen_identifiers:
+  base_main: 41987a6a35e0d967ee75ef6e4acf214c808fef92
+  accepted_source_sha256: 3e671abbd5381d29fe55e273d153aa2ec5124d311103bd75ba6444e40e5fad32
+  accepted_pdf_sha256: cfc892fd1a74f6fc7ebbc9b4152f678f4696448e37fdeb46ba376f0ac30a4c58
+  accepted_pdf_pages: "28"
+  explore_science_report_sha256: 9dadff0334b67d33c169a1dc659142aed655574aef22d95d0d75fb6fc2d26924
+  explore_science_report_pages: "10"
+  explore_science_score: "97"
+  immutable_runs: "20260722T084145Z_DD-019_a77bb786_04a5e9f0c5, 20260722T142551Z_DD-020_3854fff6_37c11a850a, 20260722T185924Z_DD-021_3cdbbc40_2fea269a9a, 20260722T210334Z_DD-022_2376d5b7_ad67765ca8"
+supersession:
+  supersedes: [tasks/information-sharing-frontier-explore-science-closeout.yml, tasks/information-sharing-frontier-current-working-paper-pointers-r2.yml]
+  superseded_by: null
+  reason: The prior closeout was merged as PR 224; this is a new post-merge editorial-only task with a distinct owner-supplied report and no changed scientific authority.
+next_gate: After the exact draft-PR head passes the complete validation wall and GitHub checks, the owner may separately authorize marking that exact head ready and merging it. Category, license, upload, and final submission remain later owner decisions.

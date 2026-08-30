@@ -1,0 +1,41 @@
+schema_version: information-sharing-frontier-explore-science-disposition-v2
+paper_id: information-sharing-frontier
+report:
+  local_only: true
+  sha256: 9dadff0334b67d33c169a1dc659142aed655574aef22d95d0d75fb6fc2d26924
+  pages: 10
+  created_local: "2026-08-30T03:46:55Z"
+  score: 97
+  tier: Platinum
+  findings: {major: 0, minor: 6, merits: 37}
+  manuscript_identity: strongly-supported-not-cryptographically-proved
+  manuscript_identity_note: The report cites the accepted 28-page manuscript's theorem, appendix, and table numbering but supplies no input-manuscript hash.
+  committed_report_copy: false
+discrepancy_table:
+  - finding: A1 epistemological standing of the atomic information/action separation
+    verdict: confirmed
+    evidence: main.tex introduction; self-contained theorem/proof text and Appendix A; DD-020/DD-021 claim authority
+    action: State that the relevant theorem/proof is self-contained and recast Nakajima 2026b as motivating context and conceptual precedent.
+  - finding: B1 rho notation collision
+    verdict: confirmed
+    evidence: main.tex General Sharing Frontier defines rho_s and strategic section independently introduces rho
+    action: Add an explicit distinction at the strategic definition.
+  - finding: B2 strategic positive interval across accuracies
+    verdict: partially-supported
+    evidence: DD-022 immutable grid/table has positive cells at p=11/20 and p=3/5 and none at 13/20 or 2/3; exact theorem/certificate is only p=3/5
+    action: Add an exact registered-grid scope sentence only; do not state an unproved mechanism or general theorem.
+  - finding: B3 conceptual label for A
+    verdict: confirmed
+    evidence: Appendix C already identifies A as unconditional clue alignment and gives its components
+    action: Add that label and components at first definition.
+  - finding: B4 q<1 in General Sharing Frontier sign equivalence
+    verdict: confirmed
+    evidence: Appendix A states the degenerate q=1 boundary; theorem proof already relies on positive prefactor for q<1
+    action: Add q<1 to theorem assumptions and a focused source regression.
+  - finding: C1 full-sharing labels in Table 4
+    verdict: confirmed-with-reviewer-correction
+    evidence: DD-021 generator _full_sharing_class and immutable registry cross-tab
+    action: Define full sharing as s=N; B as q<C_N<P_N; C as C_N>P_N; D as remaining equality boundary. State B is 78 of 126 strict-compression curves, C is all 16 strict-aggregation curves, and D is 35 all-neutral plus 48 strict-compression curves.
+unavailable_online_findings: []
+scientific_authority: Existing DD-019 through DD-022 immutable evidence, registered claims, proofs, and repository policies; report is diagnostic only.
+status: implemented-pending-validation

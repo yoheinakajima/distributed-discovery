@@ -74,6 +74,25 @@ def test_manifest_hashes_and_independent_row_identities() -> None:
     }
     assert budgets == {"1": 51, "2": 55, "3": 64, "4": 7}
 
+    cross_tab = Counter((row["sharing_class"], row["full_sharing_class"]) for row in rows)
+    assert cross_tab == {
+        ("all-neutral", "D-boundary"): 35,
+        ("strict-aggregation-dominated", "C-strict-aggregation-dominated-consensus"): 16,
+        ("strict-compression-dominated", "B-shared-discovery-paradox"): 78,
+        ("strict-compression-dominated", "D-boundary"): 48,
+    }
+    for row in rows:
+        q = _fraction(row["q"])
+        private = _fraction(row["private_discovery"])
+        consensus = _fraction(row["pooled_accuracy"][-1])
+        label = row["full_sharing_class"]
+        if label == "B-shared-discovery-paradox":
+            assert q < consensus < private
+        elif label == "C-strict-aggregation-dominated-consensus":
+            assert consensus > private
+        elif label == "D-boundary":
+            assert consensus in (q, private)
+
 
 def test_certificate_witnesses_and_bounded_null() -> None:
     certificate = _load("method-agreement-certificate.json")
