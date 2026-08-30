@@ -44,6 +44,23 @@ def test_information_sharing_frontier_structure_and_boundaries() -> None:
     assert "2,044 adjacent transitions" in compact
     assert "whether mixed curves are feasible within each registered family" in compact
     assert "was not tested" in compact
+    assert "motivating context and a" in compact
+    assert "not a foundational dependency" in compact
+    assert "self-contained in" in compact
+    assert "with $q<1$" in source
+    assert "unconditional clue-alignment statistic" in compact
+    assert "distinct from the" in compact and "contraction ratio $\\rho_s$" in compact
+    assert "positive cells" in compact and "higher listed" in compact
+    assert "neither proves a monotone accuracy mechanism" in compact
+    for token in [
+        "the pooled block has $s=N$",
+        "$q<C_N<P_N$",
+        "$C_N>P_N$",
+        "$C_N=q$ or $C_N=P_N$",
+        "78 of the 126 strict-compression-dominated curves",
+        "remaining 48 strict-compression-dominated curves",
+    ]:
+        assert token in compact
 
 
 def test_information_sharing_frontier_generated_contract() -> None:

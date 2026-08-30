@@ -1,30 +1,30 @@
 schema_version: 1
 paper_id: information-sharing-frontier
-prepared_utc: "2026-08-29"
+prepared_utc: "2026-08-30"
 status: owner-upload-gated
 repository_state:
-  base: 66ba4449572b20c519a4629ef20cfc030fae1762
-  pull_request: 224
-  branch: agent/information-sharing-frontier-explore-closeout
+  base: 41987a6a35e0d967ee75ef6e4acf214c808fef92
+  pull_request: 226
+  branch: agent/information-sharing-frontier-explore-polish
 paper:
   source_path: papers/information-sharing-frontier/main.tex
-  source_sha256: 3e671abbd5381d29fe55e273d153aa2ec5124d311103bd75ba6444e40e5fad32
+  source_sha256: b7a6489bc96acbfbfa6fe57cf20fdf97d25e81fe62bf2e250d985291afcb2688
   pdf_path: papers/information-sharing-frontier/When_Does_Information_Sharing_Improve_Decentralized_Discovery.pdf
-  pdf_sha256: cfc892fd1a74f6fc7ebbc9b4152f678f4696448e37fdeb46ba376f0ac30a4c58
+  pdf_sha256: 8d116b86cdbbc6cda66d65ac72077d29c15b05b86f4dc862ee8ec8e69d8f4ac0
   page_count: 28
   byte_reproducible_two_builds: true
   all_pages_visually_inspected: true
 local_handoff:
-  directory_name: information-sharing-frontier-arxiv-handoff
+  directory_name: information-sharing-frontier-2026-08-30-explore-polish
   location_policy: outside-git-owner-local-handoff
   source_archive: information-sharing-frontier-arxiv-source.zip
-  source_archive_sha256: fcb20936d0769ef5816e2094fc3c0d143eaad01f0868d1ecad459c549975e062
+  source_archive_sha256: 02c2090e239a8799fc751bee1b20074991502616f2053140b127a867228612e2
   manifest: package-manifest.json
-  manifest_sha256: a3aa2df5884017f996b8e5e0b2dbc15fc9bc30d2b8054a91b6d0a25a9bfc801d
+  manifest_sha256: 4e54f0989c00d40a57ba6f32d8bee16a1d882d0c3a977098e89a4adcd220d423
   metadata: SUBMISSION_METADATA.yml
   metadata_sha256: 5007f1b02225195e76a1b553b898108addb095c62de138c3011666d498300966
   owner_checklist: OWNER_UPLOAD_CHECKLIST.md
-  owner_checklist_sha256: 5fe31d1b98d0e540669070800263be80fb70dd4f853e297256461d4b5e60d955
+  owner_checklist_sha256: f5be230f9f06807f31b9ab1d09844c68b5d69043a4ec58a944f26e41fef4caa1
 validation:
   deterministic_archive: true
   archive_members_complete: true
@@ -33,8 +33,8 @@ validation:
   canonical_pdf_in_source_archive: false
   extracted_source_compiles_twice: true
   extracted_pdf_sha256:
-    - cfc892fd1a74f6fc7ebbc9b4152f678f4696448e37fdeb46ba376f0ac30a4c58
-    - cfc892fd1a74f6fc7ebbc9b4152f678f4696448e37fdeb46ba376f0ac30a4c58
+    - 8d116b86cdbbc6cda66d65ac72077d29c15b05b86f4dc862ee8ec8e69d8f4ac0
+    - 8d116b86cdbbc6cda66d65ac72077d29c15b05b86f4dc862ee8ec8e69d8f4ac0
   full_repository_wall:
     formatting: passed
     ruff: passed
@@ -49,15 +49,14 @@ validation:
 public_projection_delta:
   changed_files: 6
   changes:
-    - Replace only the Information Sharing Frontier PDF download with the revised exact bytes.
-    - Update its public page count from 26 to 28 and its SHA-256 to the revised artifact.
-    - Update only the corresponding download, lifecycle, and publication JSON entries and the papers index card.
+    - Replace only the Information Sharing Frontier PDF download with the post-merge editorial-polish bytes.
+    - Update its public checksum and current-paper provenance pointers without changing page count, status, identifiers, or claims.
   unchanged:
     - Every other generated site file.
     - Scientific, editorial, lifecycle, submission, peer-review, and DOI status.
 paper_provenance_boundary:
-  content_commit: ac544ab986fee882f0c4306cf6167c107b08426b
-  explanation: Later pointer, packaging compatibility, and task-schema commits do not change manuscript source, generated assets, or PDF bytes; generated provenance remains bound to the content commit to avoid self-referential receipt churn.
+  content_commit: 8372583e552f774424ad4e90bf9455e9aea26190
+  explanation: This is the committed paper-content tree. The following receipt-only commit records this stable content identity without self-referential package churn.
 submission_metadata:
   title: "When Does Information Sharing Improve Decentralized Discovery?"
   authors: [Yohei Nakajima]

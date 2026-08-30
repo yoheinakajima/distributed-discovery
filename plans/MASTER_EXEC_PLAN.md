@@ -1,6 +1,20 @@
 # Master execution plan
 
-## Active AO-0015 Information Sharing Frontier closeout (2026-08-29)
+## Active AO-0016 Information Sharing Frontier post-merge Explore Science polish (2026-08-30)
+
+Issue #225, branch `agent/information-sharing-frontier-explore-polish`, contract
+`tasks/information-sharing-frontier-explore-science-polish-r2.yml`, and living plan
+`plans/INFORMATION_SHARING_FRONTIER_POST_MERGE_EXPLORE_POLISH.md` own one
+editorial-only follow-up to accepted PR #224 / main
+`41987a6a35e0d967ee75ef6e4acf214c808fef92`. The owner-supplied 10-page Explore
+Science report (local-only SHA-256
+`9dadff0334b67d33c169a1dc659142aed655574aef22d95d0d75fb6fc2d26924`) reports
+97/100 Platinum, zero major issues, six minor issues, and 37 merits. The task may
+apply only evidence-backed clarifications, regenerate derived paper/site/package assets,
+and stop at one draft PR. No new research/claim/run, lifecycle change, provider call,
+spend, upload, category/license decision, DOI, release, merge, or publication is authorized.
+
+## Completed AO-0015 Information Sharing Frontier closeout (2026-08-29)
 
 Common-Source Trap is accepted on `main`, its runner repair is merged, and
 exact-head CI and Pages are green. Under PM-0009, Information Sharing Frontier

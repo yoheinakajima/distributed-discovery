@@ -1,18 +1,20 @@
 # Visual QA — Information Sharing Frontier
 
-- Reviewed UTC: `2026-08-29`
-- Source commit: `ac544ab337a6a3f54fc3e82c9124ccb9eb54e9c2`
+- Reviewed UTC: `2026-08-30`
+- Source commit: `8372583e552f774424ad4e90bf9455e9aea26190`
 - Build command: `make information-sharing-frontier`
 - Artifact: `When_Does_Information_Sharing_Improve_Decentralized_Discovery.pdf`
-- PDF SHA-256: `cfc892fd1a74f6fc7ebbc9b4152f678f4696448e37fdeb46ba376f0ac30a4c58`
+- PDF SHA-256: `8d116b86cdbbc6cda66d65ac72077d29c15b05b86f4dc862ee8ec8e69d8f4ac0`
 - Page count: `28`
 - Page size: US Letter, `612 × 792` points
 
 All 28 pages were rendered individually with Poppler and inspected at full
 rendered resolution. The title, abstract, theorem statements, equations,
 citations, footers, bibliography, eight figures, nine tables, and provenance
-notes are legible. No clipping, collision, overflow, broken glyph, blank page,
-unresolved reference, or unintended host path is visible.
+notes are legible. The post-merge source/provenance clarifications, full-sharing
+cross-tab, and registered-grid scope note are legible. No clipping, collision,
+overflow, broken glyph, blank page, unresolved reference, or unintended host
+path is visible.
 
 ## Historical visual corrections
 

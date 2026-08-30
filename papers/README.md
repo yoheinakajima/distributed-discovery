@@ -23,7 +23,7 @@ accepted.
 
 - `information-sharing-frontier/`: validated 28-page theorem-family working
   paper synthesizing DD-019 through DD-022; SHA-256
-  `cfc892fd1a74f6fc7ebbc9b4152f678f4696448e37fdeb46ba376f0ac30a4c58`.
+  `8d116b86cdbbc6cda66d65ac72077d29c15b05b86f4dc862ee8ec8e69d8f4ac0`.
 
 Seven project-authored PDFs have root validation records. The current 14-page
 Three Results artifact has provenance-refreshed SHA-256

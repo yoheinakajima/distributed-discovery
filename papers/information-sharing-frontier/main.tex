@@ -126,9 +126,13 @@ curves but no mixed curve. The zero is preserved as a bounded negative result,
 not promoted to a general monotonicity theorem (DD-C-0099--DD-C-0103).
 
 The paper contributes a theorem-family synthesis rather than a novelty claim.
-The canonical Shared Discovery Paradox supplies the atomic information/action
-separation \citep{Nakajima2026SharedDiscovery}, while the companion Incentive
-to Ignore paper owns selective attention and audience design
+The canonical Shared Discovery Paradox provides motivating context and a
+conceptual precedent for the atomic information/action separation
+\citep{Nakajima2026SharedDiscovery}; it is not a foundational dependency for the
+sharing identity used here. That identity and its proof are self-contained in
+the incremental-sharing theorem and Appendix~A and retain their DD-020 and
+DD-021 authorities regardless of the companion paper's status. The companion
+Incentive to Ignore paper owns selective attention and audience design
 \citep{Nakajima2026IncentiveToIgnore}.
 Decision theory studies comparisons of experiments \citep{Blackwell1953}; team
 theory studies decentralized use of information \citep{Radner1962}; social
@@ -342,7 +346,7 @@ errors. Let $e_s=1-C_s$. When $e_s>0$, define the contraction ratio
 $\rho_s=e_{s+1}/e_s$. The private rescue threshold is $1-q$.
 
 \begin{theorem}[General Sharing Frontier; DD-C-0097]
-Under the registered independent-rescue protocol,
+Under the registered independent-rescue protocol with $q<1$,
 \[
  \operatorname{sign}(G_{s+1}-G_s)
  =\operatorname{sign}\big((1-q)e_s-e_{s+1}\big).
@@ -389,6 +393,17 @@ error did not contract fast enough relative to rescue at each applicable step;
 frontier held with equality. The registry is a systematic stress test across
 named finite channel families and parameter values, not a probability sample of
 real organizations.
+
+For the full-sharing endpoint, the pooled block has $s=N$ and its one-action
+consensus coverage is $C_N$. The full-sharing labels in
+\cref{tab:registry-counts} are generated directly from that endpoint: class B
+means $q<C_N<P_N$ (a shared-discovery paradox), class C means $C_N>P_N$
+(strict aggregation-dominated consensus), and class D is the remaining
+equality boundary after those strict cases (so $C_N=q$ or $C_N=P_N$). In the
+frozen registry, B comprises 78 of the 126 strict-compression-dominated curves;
+C comprises all 16 strict-aggregation-dominated curves; and D comprises the 35
+all-neutral curves plus the remaining 48 strict-compression-dominated curves.
+These are registry cross-tabs, not additional frontier theorems.
 
 DD-021 and DD-020 deliberately use different scopes. DD-021 enumerates five
 registered channel families over $M=3,4,5$, $N=2,3,4$, and
@@ -486,6 +501,10 @@ Let $t=2p-1$ and
 \[
  A=t^2+\rho(1-t^2).
 \]
+Here $A$ is the unconditional clue-alignment statistic: $t^2$ is its
+accuracy-driven component and $\rho(1-t^2)$ is its source-dependence component.
+The source-dependence mixture probability $\rho$ is distinct from the
+residual-error contraction ratio $\rho_s$ in the General Sharing Frontier.
 The private selection is the registered anonymous, label-equivariant Bayesian
 Nash equilibrium. The shared selection uses identical mixing as a function of
 the common posterior only. These restrictions make the compared objects exact
@@ -567,6 +586,13 @@ the registered grid, not a measure of the interval's size and not evidence about
 empirical frequencies.
 
 \input{tables/strategic-gain-by-accuracy.tex}
+
+The exact positive-interval theorem is intentionally fixed at $p=3/5$. On the
+separate registered grid in \cref{tab:strategic-gain-by-accuracy}, positive cells
+appear at $p=11/20$ and $p=3/5$ and have count zero at the higher listed
+accuracies $p=13/20$ and $p=2/3$. This finite cross-tab describes the registered
+cells only: it neither proves a monotone accuracy mechanism nor rules out a
+positive interval outside the registered grid.
 
 \section{Equilibrium selection and implementation failure}
 
