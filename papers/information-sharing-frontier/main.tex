@@ -3,7 +3,7 @@
 % contributing claim IDs, immutable run IDs, and input checksum prefixes.
 \usepackage[letterpaper,margin=1in]{geometry}
 \usepackage[T1]{fontenc}
-\usepackage{amsmath,amssymb,amsthm,booktabs,tabularx,array,enumitem,float,tikz,natbib,graphicx,xcolor}
+\usepackage{amsmath,amssymb,amsthm,booktabs,tabularx,array,enumitem,float,tikz,natbib,graphicx,xcolor,xurl}
 \usepackage[hidelinks]{hyperref}
 \usepackage[nameinlink,noabbrev]{cleveref}
 \usetikzlibrary{positioning,arrows.meta}
@@ -157,7 +157,13 @@ same evidence can therefore enter architectures with different action authority.
 
 \begin{definition}[Direct private baseline]
 With $N$ private agents, each agent maps its own signal to one action under the
-registered direct rule. The resulting discovery probability is $P_N$.
+registered direct rule. For a point signal (including a confidence-tagged
+point), the action is its nominated target. For a shortlist, the action is drawn
+uniformly from the reported set; for an exclusion signal, it is drawn uniformly
+from the non-excluded targets. Equivalently, set-valued signals use uniform
+randomization over the registered private Bayes-action correspondence, with
+independent private randomization across agents. The resulting discovery
+probability is $P_N$.
 \end{definition}
 
 \begin{definition}[Centralized action-budget profile]
@@ -309,9 +315,15 @@ guaranteed-shortlist path is $7/8,11/12,17/18$, with changes
 $1/24,1/36$.
 \end{proposition}
 
-Across 2,555 frozen rows, 1,848 adjacent moves are negative, 196 are neutral,
-and none is positive for the noisy-point monotonicity census (DD-C-0095). Those
-counts reproduce the theorem's sign on a bounded grid; they are not the proof.
+The DD-020 census has 2,555 protocol rows arranged into 511 parameter chains,
+each containing one row for every sharing-block size. Each chain contributes
+one initial row, so 2,555 rows minus 511 chain starts yields 2,044 adjacent
+transitions. The chain starts are not unclassified observations: the adjacent
+transitions are exactly 1,848
+negative, 196 neutral, and zero positive (DD-C-0095). The registered grid is
+$M=2,\ldots,8$, $N=2,\ldots,8$, every declared accuracy in the 73 $(M,p)$
+cells, and all $s=1,\ldots,N$. Those counts reproduce the theorem's sign on a
+bounded grid; they are not the proof.
 The guaranteed-shortlist row is a verified counterchannel to any claim that
 sharing must decrease simply because the private portfolio loses independent
 actions (DD-C-0096).
@@ -378,6 +390,16 @@ frontier held with equality. The registry is a systematic stress test across
 named finite channel families and parameter values, not a probability sample of
 real organizations.
 
+DD-021 and DD-020 deliberately use different scopes. DD-021 enumerates five
+registered channel families over $M=3,4,5$, $N=2,3,4$, and
+$L=1,\ldots,\min(N,M)$: 59 channel laws produce 177 scenarios for the general
+frontier and centralized recovery classification. DD-020 instead isolates the
+symmetric noisy-point monotonicity theorem on the broader $M=2,\ldots,8$,
+$N=2,\ldots,8$ declared accuracy grid, while carrying the five fixed DD-019
+channels only as named comparison paths. The larger DD-020 row count tests one
+channel theorem across more parameters; the smaller DD-021 registry compares
+more channel geometries and recovery budgets on a deliberately bounded grid.
+
 \begin{proposition}[Minimal registered witnesses; DD-C-0100]
 Under the frozen lexicographic ordering, the registry contains minimal witnesses
 for equal-baseline opposite signs, equal-accuracy recovery differences, a
@@ -395,7 +417,9 @@ compression dominated, or conversely, over its recorded sharing steps.
 \Boundary{The zero mixed count is a verified bounded negative result. It does
 not imply that arbitrary channels have monotone sharing curves. A mixed curve
 outside the registry would not contradict the theorem; it would simply place
-different steps on different sides of the exact frontier.}
+different steps on different sides of the exact frontier. The bounded zero also
+does not establish whether mixed curves are feasible within each registered
+family's unrestricted parameterization; that structural question was not tested.}
 
 This distinction illustrates the paper's evidence discipline. The analytic
 criterion applies wherever its assumptions hold. The class counts apply only to
@@ -527,17 +551,22 @@ under the registered selections.
 \input{tables/threshold-gap.tex}
 
 The mechanism is not ``correlation is good.'' At low dependence, private clues
-provide useful diversity and sharing induces avoidable crowding. At intermediate
-dependence, the private selected response itself becomes anti-crowding, while
-agreement after sharing is informative enough to support a better selected
-balance. At perfect dependence, sharing adds no information relative to the
-identical private clues, and the selected values meet again. Dependence affects
-both posterior aggregation and strategic duplication.
+provide useful diversity and sharing induces avoidable crowding. On
+$(\rho^*,7/12)$, private selected play still follows each clue fully; the gain
+comes from sufficiently informative agreement posteriors under the selected
+shared rule. On $(7/12,1)$, the private selected response also becomes
+anti-crowding, reinforcing the selected sharing gain. At perfect dependence,
+sharing adds no information relative to identical private clues, and the
+selected values meet again. Dependence affects both posterior aggregation and
+strategic duplication, but anti-crowding is not the mechanism throughout the
+whole positive interval.
 
 The bounded $7\times6$ registry contains 42 exact $(p,\rho)$ cells: six positive,
 18 negative, and 18 neutral comparisons (DD-C-0108). This is a complete count of
 the registered grid, not a measure of the interval's size and not evidence about
 empirical frequencies.
+
+\input{tables/strategic-gain-by-accuracy.tex}
 
 \section{Equilibrium selection and implementation failure}
 
@@ -929,6 +958,35 @@ generator name, and input checksum prefixes. It then builds the PDF twice under
 a fixed source epoch and requires byte-identical hashes. An independent paper
 audit rechecks the source contracts without importing the generator and performs
 deliberate corruption tests on copied metadata.
+
+Here ``independent'' means independently implemented repository verification:
+the second method or audit does not import or call the primary generator path.
+It is not external replication by an unaffiliated team. The complete immutable
+records, independent verifier outputs, deliberate corruption checks, and paper
+generator are public at repository commit
+\nolinkurl{66ba4449572b20c519a4629ef20cfc030fae1762}. The four run directories and
+their complete manifest SHA-256 digests are:
+\begin{itemize}[leftmargin=1.4em]
+\item \url{https://github.com/yoheinakajima/distributed-discovery/tree/66ba4449572b20c519a4629ef20cfc030fae1762/results/verified/20260722T084145Z_DD-019_a77bb786_04a5e9f0c5},
+  \nolinkurl{011c7699e6bf2bb90b1201797a430b88b74228385e74df61d23d03a124670c53};
+\item \url{https://github.com/yoheinakajima/distributed-discovery/tree/66ba4449572b20c519a4629ef20cfc030fae1762/results/verified/20260722T142551Z_DD-020_3854fff6_37c11a850a},
+  \nolinkurl{82f8c71d65b27a48b075d06d0a186040cc9e6015aaee9bc695ff2e9fa823a972};
+\item \url{https://github.com/yoheinakajima/distributed-discovery/tree/66ba4449572b20c519a4629ef20cfc030fae1762/results/verified/20260722T185924Z_DD-021_3cdbbc40_2fea269a9a},
+  \nolinkurl{69ac4c760d7a34b6ee315ae619287b7928f69cc8a20eaf4a62202868baadcacd};
+\item \url{https://github.com/yoheinakajima/distributed-discovery/tree/66ba4449572b20c519a4629ef20cfc030fae1762/results/verified/20260722T210334Z_DD-022_2376d5b7_ad67765ca8},
+  \nolinkurl{3d905723eda6069cf870f1fb7b2a241cfa592ea43e9009473bd2b0878bdd5bb1}.
+\end{itemize}
+The principal review-facing outputs are DD-020
+\path{outputs/channel-profiles.json} at
+\nolinkurl{a4f63d52f402ce14f91e469d4b425ce65a92740b31530c7da9384cc726030e3a},
+DD-021 \path{outputs/registry.json} at
+\nolinkurl{3521286a341595d27b95248a0720f4df672bb1b811d17edf7f286b5520912697},
+and DD-022 \path{outputs/registry.json} at
+\nolinkurl{98fb7d475365548fcc723603b3c3721e673b0b0423bc89579c411c3252ac54f1}.
+Their run directories also contain the full verification and corruption-test
+records. The paper generator is
+\url{https://github.com/yoheinakajima/distributed-discovery/blob/66ba4449572b20c519a4629ef20cfc030fae1762/src/distributed_discovery/papers/build_information_sharing_frontier.py};
+the arXiv source package includes compact copies of the cited immutable evidence.
 
 The manuscript makes no new claim record and no new study or run. DD-019 owns
 the signal-geometry results, DD-020 the incremental identity and counterchannel,

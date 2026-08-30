@@ -59,7 +59,7 @@
     "results/verified/20260722T210334Z_DD-022_2376d5b7_ad67765ca8/outputs/threshold-certificate.json": "146dcfba3f74b76285dd9ae83a03bf811ea0ad4a1029b7773d7c5d6079fbd6bf"
   },
   "schema_version": 1,
-  "source_commit": "232aaa3f39be8d33bc12c3034c5e435348f61aae",
+  "source_commit": "3e55de0d388940656432309ee75519851e886526",
   "source_runs": {
     "frontier": "20260722T185924Z_DD-021_3cdbbc40_2fea269a9a",
     "incremental": "20260722T142551Z_DD-020_3854fff6_37c11a850a",
@@ -69,11 +69,12 @@
   "tables": {
     "action-budget-profiles.tex": "fd1a40e9c9381b40747e780e7786eefbff32f095da5583c622a81d2968fc9577",
     "channel-definitions.tex": "4c1d63de93f67bde4757b0b63ae1af73f4e9fe160ce323368b67a96dd734774f",
-    "claim-evidence-map.tex": "29df022f44920eef75a5fe0d24e6504acfa798c00fff6f7f0d5d5d76f45bd082",
+    "claim-evidence-map.tex": "737fca54c778eeae13c53c3f408c6481f796ff83aadb53d629dd3b1cd1e2ac15",
     "equilibrium-formulas.tex": "3249d5afb7011b12317721da0284df3340a18afc46e33a4c73ceb602952651d1",
-    "minimal-witnesses.tex": "69adbe64dd9f53b57644bb493feedc3904a3993f081f9ba9e3b3549b1e641589",
-    "registry-counts.tex": "6e7376c5a5f10b1aa0e3eb8c9fa7db01e55b436096fa3d9210659e1ff58f3f78",
-    "sharing-paths.tex": "f2421ba87432891cc71a338b6aedea9587a98d166f89940630df67668c2184d8",
+    "minimal-witnesses.tex": "68e719b9769adb8988079a94489e228dfa1a15fd2f885d6b3071249cf90bc29f",
+    "registry-counts.tex": "efcba0c7a577ce68ef6b1b1df2e852d850347fd91c6a0d20a544f007a328fe38",
+    "sharing-paths.tex": "f94586995c5e56e64342db525b276d05df5d9d5f72870f2e730a7a88f939917a",
+    "strategic-gain-by-accuracy.tex": "43373f49b73a6351b8f0ac232479db2a5b7da5fd4a0e7eb9b826ca2ef75f43fe",
     "threshold-gap.tex": "b23f5fd445b35a2c3a6a4b57108b027608f96af45b5d053d18a5d8eff348a710"
   }
 }

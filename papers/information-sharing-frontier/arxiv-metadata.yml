@@ -2,6 +2,7 @@ schema_version: 1
 paper_id: information-sharing-frontier
 status: working-paper
 submitted: false
+peer_reviewed: false
 arxiv_id: null
 doi: null
 title: "When Does Information Sharing Improve Decentralized Discovery?"
@@ -25,8 +26,22 @@ abstract: >-
 comments: "working paper; deterministic source package; exact bounded evidence"
 primary_category_recommendation: cs.GT
 cross_list_candidates: [econ.TH]
+alternative_primary_candidates: [cs.MA, econ.TH]
+category_rationale: >-
+  cs.GT is the narrowest primary fit because the paper centers exact game-theoretic
+  coordination, mechanism, and equilibrium-selection questions. econ.TH is a
+  plausible cross-list or alternative for the decision-theory and game-theory
+  contribution; cs.MA is a secondary alternative for the decentralized-agent
+  framing. Final classification remains an owner decision and is subject to
+  arXiv moderation.
 category_owner_confirmation_required: true
 repository_source_license: MIT
 arxiv_license: owner-selection-required
 arxiv_license_candidates: [CC-BY-4.0, arXiv-perpetual-non-exclusive-1.0]
 license_owner_note: The arXiv distribution license is irrevocable and remains an owner decision at upload.
+official_policy_checked: "2026-08-29"
+official_sources:
+  - https://info.arxiv.org/help/submit/index.html
+  - https://info.arxiv.org/help/submit_tex.html
+  - https://info.arxiv.org/help/license/index.html
+  - https://arxiv.org/category_taxonomy

@@ -56,6 +56,7 @@
     "minimal-witnesses.tex",
     "registry-counts.tex",
     "sharing-paths.tex",
+    "strategic-gain-by-accuracy.tex",
     "threshold-gap.tex"
   ],
   "generator": "distributed_discovery.papers.build_information_sharing_frontier",
@@ -71,8 +72,8 @@
     "results/verified/20260722T210334Z_DD-022_2376d5b7_ad67765ca8/outputs/summary.json": "8ae5af15a2f7de115cc3f38ff158eb65f3dd8a529f0fe1bdb2d1824ca1604033",
     "results/verified/20260722T210334Z_DD-022_2376d5b7_ad67765ca8/outputs/threshold-certificate.json": "146dcfba3f74b76285dd9ae83a03bf811ea0ad4a1029b7773d7c5d6079fbd6bf"
   },
-  "page_count": 26,
-  "pdf_sha256": "a317e8851a84b494d8ef30eccc1e31dd4448dc1bbcd3fb2de0fc2849bd581a13",
+  "page_count": 28,
+  "pdf_sha256": "cfc892fd1a74f6fc7ebbc9b4152f678f4696448e37fdeb46ba376f0ac30a4c58",
   "provenance_validated": true,
   "schema_version": 1,
   "source_runs": {

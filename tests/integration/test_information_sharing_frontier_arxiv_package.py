@@ -26,6 +26,7 @@ def test_information_sharing_frontier_metadata_preserves_owner_gates() -> None:
     metadata = yaml.safe_load((PAPER / "arxiv-metadata.yml").read_text(encoding="utf-8"))
     assert metadata["status"] == "working-paper"
     assert metadata["submitted"] is False
+    assert metadata["peer_reviewed"] is False
     assert metadata["arxiv_id"] is None
     assert metadata["doi"] is None
     assert metadata["primary_category_recommendation"] == "cs.GT"
