@@ -1,0 +1,32 @@
+schema_version: 1
+paper_id: information-sharing-frontier
+status: working-paper
+submitted: false
+arxiv_id: null
+doi: null
+title: "When Does Information Sharing Improve Decentralized Discovery?"
+subtitle: "Aggregation, Independent Rescue, and Equilibrium Selection"
+authors: [Yohei Nakajima]
+affiliation: Untapped Capital
+abstract: >-
+  Information sharing can improve a pooled estimate while eliminating independent
+  rescue actions. This paper separates those effects in exact finite discovery
+  models. A centralized action-budget profile shows that equal one-person
+  accuracy can coexist with different portfolio values. Under a registered
+  incremental-sharing protocol, a sharing step improves discovery exactly when
+  pooled residual error contracts faster than an independent rescue attempt.
+  Exact bounded registries exhibit compression, aggregation, neutral curves, and
+  a bounded zero mixed class. In a two-agent Bayesian game with a hidden mixture
+  of common and independent signal sources, the registered selected equilibrium
+  yields a strict positive sharing interval at signal accuracy 3/5, while
+  alternative equilibria show that the result is selection-dependent rather
+  than universal. The models are synthetic and finite; no human or organizational
+  data are used.
+comments: "working paper; deterministic source package; exact bounded evidence"
+primary_category_recommendation: cs.GT
+cross_list_candidates: [econ.TH]
+category_owner_confirmation_required: true
+repository_source_license: MIT
+arxiv_license: owner-selection-required
+arxiv_license_candidates: [CC-BY-4.0, arXiv-perpetual-non-exclusive-1.0]
+license_owner_note: The arXiv distribution license is irrevocable and remains an owner decision at upload.
