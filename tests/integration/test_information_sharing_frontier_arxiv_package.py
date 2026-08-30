@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import importlib.util
+import os
+import subprocess
 import sys
 import zipfile
 from pathlib import Path
@@ -33,6 +35,23 @@ def test_information_sharing_frontier_metadata_preserves_owner_gates() -> None:
     assert metadata["cross_list_candidates"] == ["econ.TH"]
     assert metadata["category_owner_confirmation_required"] is True
     assert metadata["arxiv_license"] == "owner-selection-required"
+
+
+def test_information_sharing_frontier_packager_starts_without_source_package(
+    tmp_path: Path,
+) -> None:
+    environment = os.environ.copy()
+    environment.pop("PYTHONPATH", None)
+    completed = subprocess.run(
+        [sys.executable, "-I", str(SCRIPT), "--help"],
+        cwd=tmp_path,
+        env=environment,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    assert "--output-dir" in completed.stdout
+    assert "distributed_discovery" not in SCRIPT.read_text(encoding="utf-8")
 
 
 def test_information_sharing_frontier_source_package_is_portable_and_exact(tmp_path: Path) -> None:

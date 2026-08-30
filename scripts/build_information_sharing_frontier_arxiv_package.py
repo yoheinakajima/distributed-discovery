@@ -11,12 +11,11 @@ import shutil
 import subprocess
 import tempfile
 import zipfile
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 import yaml
-
-from distributed_discovery.papers.build_information_sharing_frontier import _source_epoch
 
 ROOT = Path(__file__).resolve().parents[1]
 PAPER = ROOT / "papers/information-sharing-frontier"
@@ -98,6 +97,13 @@ def _load_yaml(path: Path) -> dict[str, Any]:
     return loaded
 
 
+def _source_epoch() -> str:
+    manifest_path = ROOT / "results/verified" / RUNS["DD-019"] / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    stamp = datetime.fromisoformat(str(manifest["started_utc"]).replace("Z", "+00:00"))
+    return str(int(stamp.timestamp()))
+
+
 def _evidence_members() -> dict[str, bytes]:
     members: dict[str, bytes] = {}
     index: dict[str, Any] = {
@@ -157,7 +163,7 @@ def _compile_twice(archive_path: Path, expected_pdf: bytes) -> list[str]:
             result = subprocess.run(
                 ["tectonic", "main.tex", "--outdir", str(output)],
                 cwd=extracted,
-                env={**os.environ, "SOURCE_DATE_EPOCH": _source_epoch(ROOT)},
+                env={**os.environ, "SOURCE_DATE_EPOCH": _source_epoch()},
                 capture_output=True,
                 text=True,
             )
