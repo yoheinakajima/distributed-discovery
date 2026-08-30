@@ -61,7 +61,7 @@ canonical_destinations:
   - reports/editorial/information-sharing-frontier-explore-science-polish-r2-disposition.yml
   - papers/information-sharing-frontier/main.tex
   - reports/editorial/information-sharing-frontier-arxiv-package.yml
-github: {repository: yoheinakajima/distributed-discovery, issue: 225, branch: agent/information-sharing-frontier-explore-polish, pull_request: null, base: main}
+github: {repository: yoheinakajima/distributed-discovery, issue: 225, branch: agent/information-sharing-frontier-explore-polish, pull_request: 226, base: main}
 exec_plan: plans/INFORMATION_SHARING_FRONTIER_POST_MERGE_EXPLORE_POLISH.md
 task_delta: null
 frozen_identifiers:

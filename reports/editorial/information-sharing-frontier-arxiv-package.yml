@@ -4,7 +4,7 @@ prepared_utc: "2026-08-30"
 status: owner-upload-gated
 repository_state:
   base: 41987a6a35e0d967ee75ef6e4acf214c808fef92
-  pull_request: pending-draft
+  pull_request: 226
   branch: agent/information-sharing-frontier-explore-polish
 paper:
   source_path: papers/information-sharing-frontier/main.tex
