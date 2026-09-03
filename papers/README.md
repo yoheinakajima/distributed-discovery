@@ -2,9 +2,11 @@
 
 The public hierarchy is canonical upstream entry; four flagship theorem-family
 working papers; three project notes/syntheses; and evidence/infrastructure.
-The seven PDFs below are all not submitted, not peer reviewed, and have no DOI.
-“Validated,” “deployed,” and “archival candidate” do not mean published or
-accepted.
+No project-authored paper is represented as peer reviewed. Information Sharing
+Frontier is an arXiv-submitted working-paper/preprint; the other project PDFs
+remain repository working papers without paper-specific identifiers unless their
+own metadata says otherwise. “Validated,” “deployed,” and “archival candidate”
+do not mean accepted.
 
 - `incentive-to-ignore/` — validated 21-page working paper synthesizing DD-012
   through DD-014, with source-generated exact figures and prediction labels.
@@ -22,7 +24,8 @@ accepted.
   `3dc1d06c509121ff1668979344e1b343d559353e0723e9589dac4da61a70794c`.
 
 - `information-sharing-frontier/`: validated 28-page theorem-family working
-  paper synthesizing DD-019 through DD-022; SHA-256
+  paper/preprint synthesizing DD-019 through DD-022; arXiv:2609.01814 [cs.AI]
+  with cs.GT cross-list; SHA-256
   `8d116b86cdbbc6cda66d65ac72077d29c15b05b86f4dc862ee8ec8e69d8f4ac0`.
 
 Seven project-authored PDFs have root validation records. The current 14-page
@@ -44,6 +47,7 @@ Editorial admission and theorem-family ownership are governed by
 validated PDF is not automatically an archival-paper candidate or submission.
 The DD-020 editorial gate passed for *The Incentive to Ignore* as a companion
 result, while assigning DD-019 through DD-022 primary ownership to the
-completed Information Sharing Frontier working paper. Its selected-equilibrium
+completed Information Sharing Frontier working paper/preprint. Its selected-equilibrium
 qualifier, every-equilibrium negative result, and centralized-recovery boundary
-are mandatory. No submission, release, DOI, or journal contact is authorized.
+are mandatory. The recorded arXiv v1 does not imply peer review, DOI registration,
+release, or journal contact.

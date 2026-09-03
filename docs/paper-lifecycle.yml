@@ -113,7 +113,7 @@ records:
     download: downloads/When_Does_Information_Sharing_Improve_Decentralized_Discovery.pdf
     scientific_status: valid-with-scope
     editorial_status: active
-    publication_status: public-working-paper
+    publication_status: submitted
     lifecycle_class: active-working-paper
     primary_theorem_family: information-sharing-attention-recovery
     primary_paper_claims: [DD-C-0089, DD-C-0092, DD-C-0097, DD-C-0098, DD-C-0102, DD-C-0106]
@@ -123,8 +123,8 @@ records:
     archive_reason: null
     archive_date: null
     scientific_correction_record: null
-    publication_evidence: [public repository PDF and validation record]
-    recommended_citation: "Nakajima, Yohei (2026). When Does Information Sharing Improve Decentralized Discovery? Aggregation, Independent Rescue, and Equilibrium Selection. Working paper."
+    publication_evidence: [public repository PDF and validation record, arXiv v1 2609.01814]
+    recommended_citation: "Nakajima, Yohei (2026). When Does Information Sharing Improve Decentralized Discovery? Aggregation, Independent Rescue, and Equilibrium Selection. arXiv:2609.01814 [cs.AI]."
     pdf_sha256: 8d116b86cdbbc6cda66d65ac72077d29c15b05b86f4dc862ee8ec8e69d8f4ac0
     page_count: 28
     build_policy: active-deterministic-build

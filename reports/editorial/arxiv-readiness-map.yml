@@ -33,23 +33,23 @@ records:
     readiness_decision: submission-package-ready-owner-upload-gated
   - paper_id: information-sharing-frontier
     score: 78
-    current_status: validated-working-paper
+    current_status: arxiv-v1-working-paper-preprint
     central_question: When does aggregation improve the map faster than common action removes independent rescue?
     self_containment: proof-owned-but-selected-equilibrium-prominence-audit-required
     logical_dependencies: [shared-discovery-paradox-background, incentive-to-ignore-companion-scope]
-    stable_identifiers: {arxiv: null, doi: null, release: null}
+    stable_identifiers: {arxiv: "2609.01814", doi: "10.48550/arXiv.2609.01814", release: null}
     literature_engagement: strong-base-primary-source-gaps-remain
     conditional_contribution: Exact channel and selected-equilibrium results within declared finite portfolio protocols.
     de_labification_need: moderate
     evidence_appendix: present
-    source_package_readiness: deterministic-build-needs-portable-freeze-bundle
-    licensing: MIT-project-source-owner-confirm-venue-license-at-freeze
-    arxiv_category_hypothesis: [cs.GT, cs.MA, cs.AI]
-    moderation_risk: medium-because-category-and-selected-equilibrium-scope
-    freeze_blockers: [selected-equilibrium-and-every-equilibrium-prominence, category-choice, de-labification, no-stable-identifier]
-    estimated_edit_scope: bounded-medium
-    exact_next_file: papers/information-sharing-frontier/main.tex
-    readiness_decision: second-freeze-candidate-no-edit-authorized
+    source_package_readiness: public-arxiv-v1-recorded-portable-source-receipt-historical
+    licensing: MIT-project-source; arXiv-perpetual-non-exclusive-v1; not-CC-BY
+    arxiv_category_record: {primary: cs.AI, cross_list: [cs.GT]}
+    moderation_risk: arXiv-v1-recorded; no further moderation claim
+    freeze_blockers: []
+    estimated_edit_scope: metadata-record-only
+    exact_next_file: reports/editorial/information-sharing-frontier-arxiv-public-record.yml
+    readiness_decision: public-arxiv-v1-recorded-no-new-action-authorized
   - paper_id: incentive-to-ignore
     score: 66
     current_status: validated-working-paper

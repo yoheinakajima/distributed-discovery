@@ -718,6 +718,12 @@ def build(root: Path) -> dict[str, object]:
     shutil.copy2(root / "bibliography/references.bib", generated / "references.bib")
     source = (paper / "main.tex").read_text(encoding="utf-8")
     abstract = (paper / "abstract.tex").read_text(encoding="utf-8")
+    metadata = yaml.safe_load((paper / "metadata.yml").read_text(encoding="utf-8"))
+    canonical_content_commit = metadata.get("canonical_content_commit")
+    if not isinstance(canonical_content_commit, str) or not re.fullmatch(
+        r"[0-9a-f]{40}", canonical_content_commit
+    ):
+        raise RuntimeError("missing or invalid canonical content commit")
     ledger = yaml.safe_load((root / "claims/claims.yml").read_text(encoding="utf-8"))["claims"]
     claim_ids = {item["id"] for item in ledger}
     mentioned = set(
@@ -783,9 +789,7 @@ def build(root: Path) -> dict[str, object]:
     provenance = {
         "schema_version": 1,
         "generator": GENERATOR,
-        "source_commit": subprocess.check_output(
-            ["git", "rev-parse", "HEAD"], cwd=root, text=True
-        ).strip(),
+        "source_commit": canonical_content_commit,
         "source_runs": RUNS,
         "claim_ids": CLAIMS,
         "inputs": {str(path.relative_to(root)): _sha(path) for path in sources.values()},

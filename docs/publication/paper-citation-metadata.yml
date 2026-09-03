@@ -49,10 +49,10 @@ papers:
     title: "When Does Information Sharing Improve Decentralized Discovery? Aggregation, Independent Rescue, and Equilibrium Selection"
     authors: [Yohei Nakajima]
     status: working-paper
-    version: repository-artifact-sha256-8d116b86cdbbc6cda66d65ac72077d29c15b05b86f4dc862ee8ec8e69d8f4ac0
-    arxiv_id: null
-    doi: null
-    recommended_citation: "Nakajima, Yohei (2026). When Does Information Sharing Improve Decentralized Discovery? Aggregation, Independent Rescue, and Equilibrium Selection. Working paper."
+    version: arXiv:2609.01814v1; repository-artifact-sha256-8d116b86cdbbc6cda66d65ac72077d29c15b05b86f4dc862ee8ec8e69d8f4ac0
+    arxiv_id: "2609.01814"
+    doi: "10.48550/arXiv.2609.01814"
+    recommended_citation: "Nakajima, Yohei (2026). When Does Information Sharing Improve Decentralized Discovery? Aggregation, Independent Rescue, and Equilibrium Selection. arXiv:2609.01814 [cs.AI]."
     source_bundle: papers/information-sharing-frontier
     pdf_sha256: 8d116b86cdbbc6cda66d65ac72077d29c15b05b86f4dc862ee8ec8e69d8f4ac0
     claim_ownership: [DD-C-0089, DD-C-0092, DD-C-0097, DD-C-0098, DD-C-0102, DD-C-0106]
@@ -97,10 +97,10 @@ examples:
     claim_id: DD-C-0057
     run_id: null
     artifact_sha256: 3dc1d06c509121ff1668979344e1b343d559353e0723e9589dac4da61a70794c
-  - purpose: claim and immutable-run evidence before an external identifier exists
+  - purpose: claim and immutable-run evidence for the recorded arXiv v1 preprint
     paper_id: information-sharing-frontier
-    arxiv_id: null
-    doi: null
+    arxiv_id: "2609.01814"
+    doi: "10.48550/arXiv.2609.01814"
     claim_id: DD-C-0106
     run_id: 20260722T210334Z_DD-022_2376d5b7_ad67765ca8
     artifact_sha256: 8d116b86cdbbc6cda66d65ac72077d29c15b05b86f4dc862ee8ec8e69d8f4ac0

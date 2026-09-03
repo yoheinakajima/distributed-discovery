@@ -60,6 +60,14 @@ def load_json(path: Path) -> Any:
 
 
 def assert_provenance(record: dict[str, Any]) -> None:
+    metadata = yaml.safe_load((PAPER / "metadata.yml").read_text(encoding="utf-8"))
+    canonical_content_commit = metadata.get("canonical_content_commit")
+    if not isinstance(canonical_content_commit, str) or not re.fullmatch(
+        r"[0-9a-f]{40}", canonical_content_commit
+    ):
+        raise ValueError("missing or invalid canonical content commit")
+    if record.get("source_commit") != canonical_content_commit:
+        raise ValueError("provenance source commit differs from canonical content commit")
     if record.get("source_runs") != {
         "signal": RUNS["DD-019"],
         "incremental": RUNS["DD-020"],

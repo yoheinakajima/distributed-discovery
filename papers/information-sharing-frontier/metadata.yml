@@ -5,9 +5,26 @@ affiliation: Untapped Capital
 date: 2026-07
 status: working-paper
 license: MIT
-doi: null
-submitted: false
+doi: "10.48550/arXiv.2609.01814"
+doi_registration_status: pending-at-observation
+arxiv_id: "2609.01814"
+arxiv_version: v1
+arxiv_v1_submitted_utc: "2026-09-01T19:41:30Z"
+arxiv_primary_category: cs.AI
+arxiv_cross_list_categories: [cs.GT]
+arxiv_license: arXiv-perpetual-non-exclusive-1.0
+submitted: true
 peer_reviewed: false
 repository: https://github.com/yoheinakajima/distributed-discovery
 public_url: https://yoheinakajima.github.io/distributed-discovery/publications/information-sharing-frontier.html
 pdf_url: https://yoheinakajima.github.io/distributed-discovery/downloads/When_Does_Information_Sharing_Improve_Decentralized_Discovery.pdf
+arxiv_public_record: https://arxiv.org/abs/2609.01814
+arxiv_license_display_name: arXiv perpetual non-exclusive distribution license
+doi_observation_note: >-
+  arXiv displayed DOI 10.48550/arXiv.2609.01814 with DataCite registration
+  pending at the recorded observation; no registration or resolution is claimed.
+canonical_content_commit: 29264f89ab0f4dbd11b31b05faf36fdc1854bdff
+canonical_content_commit_note: >-
+  Accepted commit for the unchanged current manuscript and PDF content.
+  Metadata-only branches retain this binding in deterministic provenance rather
+  than substituting their mutable branch HEAD.

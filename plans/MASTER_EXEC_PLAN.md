@@ -1,6 +1,23 @@
 # Master execution plan
 
-## Active AO-0016 Information Sharing Frontier post-merge Explore Science polish (2026-08-30)
+## Active AO-0017 Information Sharing Frontier public arXiv metadata record (2026-09-03)
+
+Issue #228, branch `agent/information-sharing-frontier-arxiv-record`, contract
+`tasks/information-sharing-frontier-arxiv-public-record.yml`, and living plan
+`plans/INFORMATION_SHARING_FRONTIER_ARXIV_PUBLIC_RECORD.md` own one sourced,
+metadata-only reconciliation of the already-public arXiv v1 record. It is bound
+to DD `main` `29264f89ab0f4dbd11b31b05faf36fdc1854bdff` and the unchanged
+28-page repository PDF SHA-256
+`8d116b86cdbbc6cda66d65ac72077d29c15b05b86f4dc862ee8ec8e69d8f4ac0`.
+The public observation is arXiv `2609.01814`, v1 submitted
+`2026-09-01T19:41:30Z`, primary `cs.AI`, cross-list `cs.GT`, displayed DOI
+`10.48550/arXiv.2609.01814` with registration pending at observation, and the
+arXiv perpetual non-exclusive distribution license (not CC BY 4.0). This task
+does not touch manuscript/PDF bytes, claims, studies, runs, evidence, external
+arXiv state, DOI state, or the immutable prior package receipt; it stops at one
+draft PR and an owner merge gate.
+
+## Completed AO-0016 Information Sharing Frontier post-merge Explore Science polish (2026-08-30)
 
 Issue #225, branch `agent/information-sharing-frontier-explore-polish`, contract
 `tasks/information-sharing-frontier-explore-science-polish-r2.yml`, and living plan

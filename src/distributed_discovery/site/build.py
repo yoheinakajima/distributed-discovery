@@ -464,6 +464,11 @@ def _publications(root: Path) -> list[dict[str, Any]]:
                 "archive_reason": lifecycle_record["archive_reason"],
                 "related_formulations": _related_formulations(root, paper_id=directory),
                 "doi": metadata.get("doi"),
+                "doi_registration_status": metadata.get("doi_registration_status"),
+                "arxiv_id": metadata.get("arxiv_id"),
+                "arxiv_primary_category": metadata.get("arxiv_primary_category"),
+                "arxiv_cross_list_categories": metadata.get("arxiv_cross_list_categories", []),
+                "arxiv_license_display_name": metadata.get("arxiv_license_display_name"),
                 "submitted": metadata.get("submitted"),
                 "peer_reviewed": metadata.get("peer_reviewed"),
             }
@@ -4225,7 +4230,7 @@ def _render(
 <section class="card-grid paper-grid">
 <article class="card"><p class="eyebrow">1 · Canonical upstream entry</p><h2>Shared Discovery Paradox</h2><p><strong>Question:</strong> Can better pooled ranking produce worse group discovery?</p><p><strong>Title result:</strong> in the atomic fixture, one pooled answer can compress several searches into duplication.</p><p><strong>Strongest limitation:</strong> the separation depends on the declared signal, action, and protocol classes.</p><p><strong>Evidence:</strong> sourced upstream exact result. <strong>Status:</strong> canonical upstream entry; no submission or peer-review status represented here.</p><p><a href="https://yoheinakajima.github.io/shared-discovery-paradox/">Read the anchor</a> · <a href="research/dd-000.html">Study</a> · <a href="claims.html#DD-C-0005">Claim</a> · <a href="evidence.html">Evidence</a> · <a href="publications/incentive-to-ignore.html">Next paper</a></p></article>
 <article class="card"><p class="eyebrow">2 · Strategic-attention family</p><h2>The Incentive to Ignore</h2><p><strong>Question:</strong> Who should use a shared clue when independent private action routes remain?</p><p><strong>Title result:</strong> one shared-clue reader maximizes discovery in the frozen role class.</p><p><strong>Strongest limitation:</strong> unrestricted constant territorial policies can escape the evidence-responsive class.</p><p><strong>Evidence:</strong> analytic theorems plus independently reproduced bounded classifications. <strong>Status:</strong> working paper; not submitted, not peer reviewed, no DOI.</p><p><a href="publications/incentive-to-ignore.html">Read the paper</a> · <a href="research/dd-012.html">Study</a> · <a href="claims.html#DD-C-0059">Claim</a> · <a href="evidence.html">Evidence</a> · <a href="publications/information-sharing-frontier.html">Next paper</a></p></article>
-<article class="card"><p class="eyebrow">3 · Sharing-frontier family</p><h2>When Does Information Sharing Improve Decentralized Discovery?</h2><p><strong>Question:</strong> When does aggregation improve faster than sharing removes independent rescue?</p><p><strong>Title result:</strong> a residual-error criterion determines the sign of an adjacent sharing step under the registered rescue protocol.</p><p><strong>Strongest limitation:</strong> the decentralized positive interval is selection-dependent; it is not an every-equilibrium theorem.</p><p><strong>Evidence:</strong> analytic identities/theorems, independently reproduced bounded classifications, and a bounded null. <strong>Status:</strong> working paper; not submitted, not peer reviewed, no DOI.</p><p><a href="publications/information-sharing-frontier.html">Read the paper</a> · <a href="research/dd-021.html">Study</a> · <a href="claims.html#DD-C-0097">Claim</a> · <a href="evidence.html">Evidence</a> · <a href="publications/common-source-trap.html">Next theorem-family paper</a></p></article>
+<article class="card"><p class="eyebrow">3 · Sharing-frontier family</p><h2>When Does Information Sharing Improve Decentralized Discovery?</h2><p><strong>Question:</strong> When does aggregation improve faster than sharing removes independent rescue?</p><p><strong>Title result:</strong> a residual-error criterion determines the sign of an adjacent sharing step under the registered rescue protocol.</p><p><strong>Strongest limitation:</strong> the decentralized positive interval is selection-dependent; it is not an every-equilibrium theorem.</p><p><strong>Evidence:</strong> analytic identities/theorems, independently reproduced bounded classifications, and a bounded null. <strong>Status:</strong> arXiv v1 preprint 2609.01814 [cs.AI; cs.GT]; not peer reviewed. The displayed DOI registration was pending at observation.</p><p><a href="publications/information-sharing-frontier.html">Read the paper</a> · <a href="research/dd-021.html">Study</a> · <a href="claims.html#DD-C-0097">Claim</a> · <a href="evidence.html">Evidence</a> · <a href="publications/common-source-trap.html">Next theorem-family paper</a></p></article>
 </section>
 <section class="content-section prose"><h2>Continue through the canon</h2><p><a href="publications/common-source-trap.html">Common-Source Trap</a> · <a href="publications/threshold-discovery.html">Threshold Discovery</a> · <a href="publications.html">notes and syntheses</a> · <a href="research.html">studies</a> · <a href="labs.html">Labs</a> · <a href="treasurebench.html">TreasureBench</a> · <a href="treasure-hunt.html">Treasure Hunt companion</a> · <a href="methods.html">methods</a></p></section>"""
     start_here += _render_related_formulations(
@@ -4448,8 +4453,8 @@ def _render(
 <section class="content-section"><p class="eyebrow">Canonical public anchor</p><h2>The public entry point</h2><div class="card-grid paper-grid">{canonical_anchor_card}</div></section>
 <section class="content-section"><p class="eyebrow">Active theorem-family papers</p><h2>Flagship working papers</h2><div class="card-grid paper-grid">{flagship_items}</div></section>
 <section class="content-section"><p class="eyebrow">Supporting publications</p><h2>Research notes and syntheses</h2><div class="card-grid paper-grid">{note_items}</div></section>
-<section class="content-section prose"><h2>Stable citation and dependencies</h2><p>The site is a living discovery and verification layer, not the sole load-bearing source. The compendium version DOI supplies an immutable repository archive; per-paper DOI and arXiv fields remain null. Cite the working-paper or note metadata together with the compendium version, claim or run identifier, and checksum where applicable.</p><p><a href="{REPOSITORY_URL}/blob/main/docs/publication/stable-citation-policy.md">Stable citation policy</a> · <a href="{REPOSITORY_URL}/blob/main/docs/releases/releases.yml">Release registry</a> · <a href="data/paper-dependencies.json">Paper dependency roles</a></p></section>
-{historical_section}<p class="quiet-meta">All local project PDFs remain not submitted and not peer reviewed, with no paper-specific DOI. The compendium DOI identifies the archival repository release, not a publication-status promotion. There are currently no historical lifecycle items. <a href="data/downloads.json">Complete download checksum manifest</a> · <a href="data/paper-lifecycle.json">Lifecycle registry</a></p>"""
+<section class="content-section prose"><h2>Stable citation and dependencies</h2><p>The site is a living discovery and verification layer, not the sole load-bearing source. The compendium version DOI supplies an immutable repository archive. Per-paper arXiv and DOI fields are shown only when their own metadata records a public source; cite those fields together with the claim or run identifier and checksum where applicable.</p><p><a href="{REPOSITORY_URL}/blob/main/docs/publication/stable-citation-policy.md">Stable citation policy</a> · <a href="{REPOSITORY_URL}/blob/main/docs/releases/releases.yml">Release registry</a> · <a href="data/paper-dependencies.json">Paper dependency roles</a></p></section>
+{historical_section}<p class="quiet-meta">No local project paper is represented as peer reviewed. Information Sharing Frontier has a recorded arXiv v1 preprint; all other local paper status remains in each paper's metadata. The compendium DOI identifies the archival repository release, not a paper-specific publication-status promotion. There are currently no historical lifecycle items. <a href="data/downloads.json">Complete download checksum manifest</a> · <a href="data/paper-lifecycle.json">Lifecycle registry</a></p>"""
     _write(
         output,
         "publications.html",
@@ -4470,8 +4475,19 @@ def _render(
         ]
         if item["doi"]:
             status_bits.append(f"DOI {item['doi']}")
+            if item["doi_registration_status"] == "pending-at-observation":
+                status_bits.append("DOI registration pending at observation")
         else:
             status_bits.append("no DOI")
+        if item["arxiv_id"]:
+            categories = [str(item["arxiv_primary_category"])] + [
+                str(category) for category in item["arxiv_cross_list_categories"]
+            ]
+            status_bits.append(f"arXiv {item['arxiv_id']} [{', '.join(categories)}]")
+        if item["arxiv_license_display_name"]:
+            status_bits.append(f"arXiv license: {item['arxiv_license_display_name']}")
+        if item["submitted"] is True:
+            status_bits.append("arXiv submitted")
         if item["submitted"] is False:
             status_bits.append("not submitted")
         if item["peer_reviewed"] is False:

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import subprocess
 from pathlib import Path
 
@@ -55,11 +56,24 @@ def test_current_information_sharing_pointers_use_revised_artifact() -> None:
     assert _sha256(CURRENT_PDF.read_bytes()) == CURRENT_PDF_SHA256
     assert lifecycle_record["pdf_sha256"] == CURRENT_PDF_SHA256
     assert lifecycle_record["page_count"] == 28
-    assert lifecycle_record["publication_status"] == "public-working-paper"
+    assert lifecycle_record["publication_status"] == "submitted"
     assert citation_record["pdf_sha256"] == CURRENT_PDF_SHA256
-    assert citation_record["version"] == f"repository-artifact-sha256-{CURRENT_PDF_SHA256}"
+    assert citation_record["version"] == (
+        f"arXiv:2609.01814v1; repository-artifact-sha256-{CURRENT_PDF_SHA256}"
+    )
+    assert citation_record["arxiv_id"] == "2609.01814"
+    assert citation_record["doi"] == "10.48550/arXiv.2609.01814"
     assert example["artifact_sha256"] == CURRENT_PDF_SHA256
     assert CURRENT_PDF_SHA256 in (ROOT / "papers/README.md").read_text()
+    metadata = yaml.safe_load(
+        (ROOT / "papers/information-sharing-frontier/metadata.yml").read_text()
+    )
+    provenance = json.loads(
+        (ROOT / "papers/information-sharing-frontier/source-provenance.json").read_text()
+    )
+    assert metadata["canonical_content_commit"] == "29264f89ab0f4dbd11b31b05faf36fdc1854bdff"
+    assert provenance["source_commit"] == metadata["canonical_content_commit"]
+    assert set(provenance["source_runs"]) == {"frontier", "incremental", "signal", "strategic"}
 
 
 def test_compendium_v010_keeps_information_sharing_snapshot() -> None:
