@@ -1,0 +1,83 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0017
+title: Record Information Sharing Frontier public arXiv metadata
+task_type: documentation-editorial
+status: active
+objective: Record only the already-public Information Sharing Frontier arXiv v1 metadata in canonical publication, citation, lifecycle, and deterministic public-projection records without changing the manuscript, PDF, scientific evidence, or any external publication state.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: instruction, path: papers/AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: plan, path: plans/MASTER_EXEC_PLAN.md}
+  - {type: record, path: docs/program-memory/registry.yml}
+  - {type: issue, path: "https://github.com/yoheinakajima/distributed-discovery/issues/228"}
+owner_decisions:
+  - Record the verified public arXiv v1 facts for Information Sharing Frontier without treating its arXiv submission as authority for a manuscript revision, scientific promotion, DOI registration, or any further external action.
+  - Preserve the prior owner-upload package record as historical preparation evidence and create a separate sourced public-record receipt rather than rewriting history.
+scope:
+  paths:
+    - tasks/information-sharing-frontier-arxiv-public-record.yml
+    - plans/INFORMATION_SHARING_FRONTIER_ARXIV_PUBLIC_RECORD.md
+    - plans/MASTER_EXEC_PLAN.md
+    - papers/information-sharing-frontier/metadata.yml
+    - papers/information-sharing-frontier/arxiv-metadata.yml
+    - papers/information-sharing-frontier/ownership.yml
+    - reports/editorial/information-sharing-frontier-arxiv-public-record.yml
+    - reports/editorial/arxiv-readiness-map.yml
+    - docs/paper-lifecycle.yml
+    - docs/publication/paper-citation-metadata.yml
+    - papers/README.md
+    - scripts/build_information_sharing_frontier_arxiv_package.py
+    - scripts/audit_publication_infrastructure.py
+    - src/distributed_discovery/site/build.py
+    - tests/integration/test_information_sharing_frontier_arxiv_package.py
+    - tests/integration/test_information_sharing_frontier_paper.py
+    - tests/integration/test_site_build.py
+    - tests/unit/test_information_sharing_frontier_pointer_versioning.py
+  actions:
+    - Record public arXiv identifier, category, license, and registration-pending DOI metadata against the frozen canonical repository PDF.
+    - Regenerate only deterministic public projections and validation fixtures that surface the recorded metadata.
+    - Open one draft pull request and stop at owner review.
+non_goals:
+  - No manuscript, PDF, claim, run, study, evidence, proof, or scientific-status change.
+  - No arXiv edit, resubmission, withdrawal, license change, DOI action, release, provider call, credential access, spend, merge, undraft, deployment, or branch deletion.
+permissions: {repository_write: true, git_branch_commit: true, github_issue_pr: true, merge_after_checks: false, ci_pages: false}
+external_action_permissions: {network_observation: true, github_mutation: true, provider_calls: false, spend: false, release_publication: false, submission: false}
+scientific_mutation_permissions: {create_study: false, create_claim: false, create_run: false, change_evidence_status: false, change_proof_status: false, change_paper_lifecycle: false}
+private_data_permissions: {read: false, write: false, generate: false, publish: false}
+budget: {currency: USD, expected: "0", hard_cap: "0", call_cap: 0, category_caps: {}, cumulative_spend: "0"}
+expected_outcomes:
+  - A sourced public-record receipt bound to the unchanged 28-page canonical repository PDF.
+  - Deterministic citation, lifecycle, package, and public-site projections that distinguish arXiv v1 from peer review and DOI registration.
+  - One exact-head draft PR with complete validation and no scientific or external-action delta.
+stop_conditions:
+  - Stop if main, public arXiv facts, canonical PDF identity, or collision state differs from the frozen binding.
+  - Stop if a change would alter manuscript/PDF bytes, scientific authority, a historical preparation receipt, or require an external action.
+  - Stop before PR readiness, merge, deployment, arXiv action, DOI action, release, credential access, spend, or branch deletion.
+acceptance_profile: docs-editorial
+canonical_destinations:
+  - tasks/information-sharing-frontier-arxiv-public-record.yml
+  - plans/INFORMATION_SHARING_FRONTIER_ARXIV_PUBLIC_RECORD.md
+  - reports/editorial/information-sharing-frontier-arxiv-public-record.yml
+  - papers/information-sharing-frontier/arxiv-metadata.yml
+github: {repository: yoheinakajima/distributed-discovery, issue: 228, branch: agent/information-sharing-frontier-arxiv-record, pull_request: null, base: main}
+exec_plan: plans/INFORMATION_SHARING_FRONTIER_ARXIV_PUBLIC_RECORD.md
+task_delta: null
+frozen_identifiers:
+  base_main: 29264f89ab0f4dbd11b31b05faf36fdc1854bdff
+  canonical_pdf_sha256: 8d116b86cdbbc6cda66d65ac72077d29c15b05b86f4dc862ee8ec8e69d8f4ac0
+  canonical_pdf_pages: "28"
+  arxiv_id: "2609.01814"
+  arxiv_v1_submitted_utc: "2026-09-01T19:41:30Z"
+  arxiv_primary_category: cs.AI
+  arxiv_cross_list: cs.GT
+  displayed_doi: 10.48550/arXiv.2609.01814
+  doi_registration_status: pending-at-observation
+  arxiv_license: arXiv-perpetual-non-exclusive-1.0
+supersession:
+  supersedes: []
+  superseded_by: null
+  reason: AO-0016 and issue #225 are frozen Explore Science polish history; this separate task records a later public metadata fact only.
+next_gate: After the exact draft-PR head passes metadata, package, site, and full validation checks, the owner may separately authorize marking that exact head ready and merging it. No external publication action follows from that merge.

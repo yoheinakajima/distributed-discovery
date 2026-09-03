@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build and verify the owner-gated Information Sharing Frontier arXiv handoff."""
+"""Rebuild the historical Information Sharing Frontier arXiv source package."""
 
 from __future__ import annotations
 
@@ -184,14 +184,18 @@ def build(output_dir: Path) -> dict[str, Any]:
     pdf_sha = _sha256(pdf)
     if validation["pdf_sha256"] != pdf_sha:
         raise RuntimeError("canonical PDF does not match its validation receipt")
-    if metadata["status"] != "working-paper" or metadata["submitted"] is not False:
-        raise RuntimeError("submission metadata must remain a working paper and unsubmitted")
+    if metadata["status"] != "working-paper" or metadata["submitted"] is not True:
+        raise RuntimeError("public metadata must remain a submitted working-paper/preprint")
     if metadata["peer_reviewed"] is not False:
         raise RuntimeError("submission metadata must remain not peer reviewed")
-    if metadata["arxiv_id"] is not None or metadata["doi"] is not None:
-        raise RuntimeError("submission identifiers must remain null")
-    if metadata["arxiv_license"] != "owner-selection-required":
-        raise RuntimeError("the irrevocable arXiv license must remain an owner choice")
+    if metadata["arxiv_id"] != "2609.01814" or metadata["doi"] != "10.48550/arXiv.2609.01814":
+        raise RuntimeError("public arXiv identifiers do not match the recorded v1")
+    if metadata["doi_registration_status"] != "pending-at-observation":
+        raise RuntimeError("DOI registration status must remain explicitly pending at observation")
+    if metadata["primary_category"] != "cs.AI" or metadata["cross_list_categories"] != ["cs.GT"]:
+        raise RuntimeError("public arXiv category metadata does not match the recorded v1")
+    if metadata["arxiv_license"] != "arXiv-perpetual-non-exclusive-1.0":
+        raise RuntimeError("the recorded arXiv license does not match the public v1")
 
     members = {name: (PAPER / name).read_bytes() for name in SOURCE_MEMBERS}
     members.update(_evidence_members())
@@ -212,11 +216,12 @@ def build(output_dir: Path) -> dict[str, Any]:
     manifest: dict[str, Any] = {
         "schema_version": 1,
         "paper_id": "information-sharing-frontier",
-        "status": "owner-upload-gated",
-        "submitted": False,
+        "status": "public-arxiv-v1-record",
+        "submitted": True,
         "peer_reviewed": False,
-        "arxiv_id": None,
-        "doi": None,
+        "arxiv_id": metadata["arxiv_id"],
+        "doi": metadata["doi"],
+        "doi_registration_status": metadata["doi_registration_status"],
         "source_archive": {
             "path": archive_path.name,
             "sha256": archive_sha,
@@ -233,29 +238,25 @@ def build(output_dir: Path) -> dict[str, Any]:
         "metadata": {
             "path": "SUBMISSION_METADATA.yml",
             "sha256": _sha256((output_dir / "SUBMISSION_METADATA.yml").read_bytes()),
-            "primary_category_recommendation": metadata["primary_category_recommendation"],
-            "cross_list_candidates": metadata["cross_list_candidates"],
+            "primary_category": metadata["primary_category"],
+            "cross_list_categories": metadata["cross_list_categories"],
             "arxiv_license": metadata["arxiv_license"],
         },
     }
     (output_dir / "package-manifest.json").write_text(
         json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
-    page_count = validation["page_count"]
-    checklist = f"""# Information Sharing Frontier owner upload checklist
+    checklist = f"""# Information Sharing Frontier arXiv v1 source-record checklist
 
-- Upload `{ARCHIVE_NAME}` (SHA-256 `{archive_sha}`).
-- Confirm arXiv detects `main.tex` and PDFLaTeX, then inspect all {page_count}
-  rendered pages.
-- Copy title, author, abstract, comments, and category fields from `SUBMISSION_METADATA.yml`.
-- Confirm primary category `cs.GT`; add `econ.TH` only if the interface permits
-  and the owner wants that cross-list.
-- Choose the arXiv distribution license personally; the package intentionally does not preselect it.
-- Keep the paper a working paper with submitted false and DOI blank until a
-  public arXiv record is verified.
-- Stop before the final Submit Article action unless that external action is separately authorized.
+- Historical source archive reconstructed as `{ARCHIVE_NAME}` (SHA-256 `{archive_sha}`).
+- The recorded public arXiv v1 is `2609.01814`, primary `cs.AI`, cross-list `cs.GT`.
+- The recorded arXiv license is perpetual non-exclusive distribution, not CC BY 4.0.
+- The displayed DOI is `10.48550/arXiv.2609.01814`; DataCite registration was pending
+  at observation, so this receipt does not claim DOI registration or resolution.
+- This is a receipt only. Do not upload, edit, resubmit, withdraw, or otherwise act at
+  arXiv from this package.
 
-Canonical PDF SHA-256: `{pdf_sha}`.
+Canonical repository PDF SHA-256: `{pdf_sha}`.
 """
     (output_dir / "OWNER_UPLOAD_CHECKLIST.md").write_text(checklist, encoding="utf-8")
     return manifest

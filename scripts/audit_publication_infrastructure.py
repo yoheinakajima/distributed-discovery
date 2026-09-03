@@ -38,14 +38,45 @@ def audit() -> dict[str, Any]:
     jsonschema.validate(citation, citation_schema, format_checker=jsonschema.FormatChecker())
     assert len(citation["papers"]) == 8
     assert len({paper["paper_id"] for paper in citation["papers"]}) == 8
-    assert all(paper["arxiv_id"] is None and paper["doi"] is None for paper in citation["papers"])
+    information_sharing = next(
+        paper for paper in citation["papers"] if paper["paper_id"] == "information-sharing-frontier"
+    )
+    assert information_sharing["arxiv_id"] == "2609.01814"
+    assert information_sharing["doi"] == "10.48550/arXiv.2609.01814"
+    public_record = _yaml("reports/editorial/information-sharing-frontier-arxiv-public-record.yml")
+    observation = public_record["public_arxiv_observation"]
+    assert (
+        public_record["repository_binding"]["commit"] == "29264f89ab0f4dbd11b31b05faf36fdc1854bdff"
+    )
+    assert public_record["repository_binding"]["pdf_sha256"] == information_sharing["pdf_sha256"]
+    assert public_record["repository_binding"]["pdf_page_count"] == 28
+    assert observation["arxiv_id"] == information_sharing["arxiv_id"]
+    assert observation["doi"] == information_sharing["doi"]
+    assert observation["doi_registration_status"] == "pending-at-observation"
+    assert observation["primary_category"] == "cs.AI"
+    assert observation["cross_list_categories"] == ["cs.GT"]
+    assert observation["arxiv_license"] == "arXiv-perpetual-non-exclusive-1.0"
+    assert observation["license_not"] == "CC-BY-4.0"
+    assert (
+        public_record["historical_preparation_receipt"]["rewritten_as_current_public_record"]
+        is False
+    )
+    assert all(
+        paper["arxiv_id"] is None and paper["doi"] is None
+        for paper in citation["papers"]
+        if paper["paper_id"] != "information-sharing-frontier"
+    )
     claim_ids = {claim["id"] for claim in _yaml("claims/claims.yml")["claims"]}
     assert all(set(paper["claim_ownership"]) <= claim_ids for paper in citation["papers"])
     existing_run_ids = {
         path.parent.name for path in (ROOT / "results/verified").glob("*/manifest.json")
     }
     for example in citation["examples"]:
-        assert example["arxiv_id"] is None and example["doi"] is None
+        if example["paper_id"] == "information-sharing-frontier":
+            assert example["arxiv_id"] == "2609.01814"
+            assert example["doi"] == "10.48550/arXiv.2609.01814"
+        else:
+            assert example["arxiv_id"] is None and example["doi"] is None
         if example["run_id"]:
             assert example["run_id"] in existing_run_ids
 

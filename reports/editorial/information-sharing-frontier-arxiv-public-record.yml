@@ -1,0 +1,46 @@
+schema_version: 1
+paper_id: information-sharing-frontier
+recorded_utc: "2026-09-03T01:22:23Z"
+record_type: sourced-public-arxiv-v1-metadata
+authority_boundary: >-
+  This is a publication-metadata record. The Distributed Discovery repository
+  remains the manuscript, claim, run, and evidence authority; it does not infer
+  peer review, DOI registration, later moderation, or external PDF byte identity.
+repository_binding:
+  commit: 29264f89ab0f4dbd11b31b05faf36fdc1854bdff
+  source_path: papers/information-sharing-frontier/main.tex
+  pdf_path: papers/information-sharing-frontier/When_Does_Information_Sharing_Improve_Decentralized_Discovery.pdf
+  pdf_sha256: 8d116b86cdbbc6cda66d65ac72077d29c15b05b86f4dc862ee8ec8e69d8f4ac0
+  pdf_page_count: 28
+  arxiv_pdf_byte_identity: unverified-not-asserted
+public_arxiv_observation:
+  url: https://arxiv.org/abs/2609.01814
+  arxiv_id: "2609.01814"
+  title: "When Does Information Sharing Improve Decentralized Discovery? Aggregation, Independent Rescue, and Equilibrium Selection"
+  authors: [Yohei Nakajima]
+  submitted_date: "2026-09-01"
+  version: v1
+  v1_submitted_utc: "2026-09-01T19:41:30Z"
+  primary_category: cs.AI
+  cross_list_categories: [cs.GT]
+  venue_state: submitted
+  public_artifact_state: arxiv
+  peer_reviewed: false
+  doi: "10.48550/arXiv.2609.01814"
+  doi_registration_status: pending-at-observation
+  arxiv_license: arXiv-perpetual-non-exclusive-1.0
+  arxiv_license_display_name: arXiv perpetual non-exclusive distribution license
+  license_not: CC-BY-4.0
+  repository_source_license: MIT
+sources:
+  - https://arxiv.org/abs/2609.01814
+  - https://arxiv.org/licenses/nonexclusive-distrib/1.0/license.html
+historical_preparation_receipt:
+  path: reports/editorial/information-sharing-frontier-arxiv-package.yml
+  status: owner-upload-gated-at-pre-publication-preparation
+  preserved_as: historical-immutable-preparation-evidence
+  rewritten_as_current_public_record: false
+next_gate: >-
+  Owner review of the exact draft PR and its metadata/public-projection checks;
+  no arXiv edit, resubmission, withdrawal, DOI action, release, or deployment is
+  authorized by this record.

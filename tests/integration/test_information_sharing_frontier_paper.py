@@ -88,8 +88,12 @@ def test_information_sharing_frontier_metadata_and_ownership() -> None:
     metadata = yaml.safe_load((PAPER / "metadata.yml").read_text(encoding="utf-8"))
     ownership = yaml.safe_load((PAPER / "ownership.yml").read_text(encoding="utf-8"))
     assert metadata["status"] == "working-paper"
-    assert metadata["doi"] is None
-    assert metadata["submitted"] is False
+    assert metadata["doi"] == "10.48550/arXiv.2609.01814"
+    assert metadata["doi_registration_status"] == "pending-at-observation"
+    assert metadata["arxiv_id"] == "2609.01814"
+    assert metadata["arxiv_primary_category"] == "cs.AI"
+    assert metadata["arxiv_cross_list_categories"] == ["cs.GT"]
+    assert metadata["submitted"] is True
     assert metadata["peer_reviewed"] is False
     assert ownership["paper"]["status"] == "working-paper"
     assert set(ownership["studies"]) == {"DD-019", "DD-020", "DD-021", "DD-022"}

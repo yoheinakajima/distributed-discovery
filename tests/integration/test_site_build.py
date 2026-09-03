@@ -686,8 +686,10 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     )
     sharing_html = (output / sharing["detail"]).read_text(encoding="utf-8")
     assert (
-        "lifecycle: active-working-paper · no DOI · not submitted · not peer reviewed"
-        in sharing_html
+        "publication: submitted · lifecycle: active-working-paper · DOI "
+        "10.48550/arXiv.2609.01814 · DOI registration pending at observation · "
+        "arXiv 2609.01814 [cs.AI, cs.GT] · arXiv license: arXiv perpetual "
+        "non-exclusive distribution license · arXiv submitted · not peer reviewed" in sharing_html
     )
     assert "Nakajima2026InformationSharingFrontier" in sharing_html
     assert "BibTeX" in sharing_html
@@ -1234,7 +1236,7 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "releases/tag/dd-compendium-v0.1.0" in papers
     assert "zenodo.org/records/21535005" in papers
     assert "does not imply that any included paper was submitted" in papers
-    assert "not submitted and not peer reviewed" in papers
+    assert "Information Sharing Frontier has a recorded arXiv v1 preprint" in papers
     assert "There are currently no historical lifecycle items" in papers
     assert "SHA-256" in papers
     assert "Technical details" in papers

@@ -24,17 +24,44 @@ def _module() -> ModuleType:
     return module
 
 
-def test_information_sharing_frontier_metadata_preserves_owner_gates() -> None:
+def test_information_sharing_frontier_metadata_records_public_v1_without_doi_promotion() -> None:
     metadata = yaml.safe_load((PAPER / "arxiv-metadata.yml").read_text(encoding="utf-8"))
     assert metadata["status"] == "working-paper"
-    assert metadata["submitted"] is False
+    assert metadata["submitted"] is True
     assert metadata["peer_reviewed"] is False
-    assert metadata["arxiv_id"] is None
-    assert metadata["doi"] is None
-    assert metadata["primary_category_recommendation"] == "cs.GT"
-    assert metadata["cross_list_candidates"] == ["econ.TH"]
-    assert metadata["category_owner_confirmation_required"] is True
-    assert metadata["arxiv_license"] == "owner-selection-required"
+    assert metadata["arxiv_id"] == "2609.01814"
+    assert metadata["doi"] == "10.48550/arXiv.2609.01814"
+    assert metadata["doi_registration_status"] == "pending-at-observation"
+    assert metadata["primary_category"] == "cs.AI"
+    assert metadata["cross_list_categories"] == ["cs.GT"]
+    assert metadata["arxiv_license"] == "arXiv-perpetual-non-exclusive-1.0"
+
+
+def test_information_sharing_frontier_public_record_preserves_preparation_history() -> None:
+    public_record = yaml.safe_load(
+        (ROOT / "reports/editorial/information-sharing-frontier-arxiv-public-record.yml").read_text(
+            encoding="utf-8"
+        )
+    )
+    observation = public_record["public_arxiv_observation"]
+    assert public_record["repository_binding"]["pdf_sha256"] == (
+        "8d116b86cdbbc6cda66d65ac72077d29c15b05b86f4dc862ee8ec8e69d8f4ac0"
+    )
+    assert public_record["repository_binding"]["pdf_page_count"] == 28
+    assert (
+        public_record["repository_binding"]["arxiv_pdf_byte_identity"] == "unverified-not-asserted"
+    )
+    assert observation["arxiv_id"] == "2609.01814"
+    assert observation["doi"] == "10.48550/arXiv.2609.01814"
+    assert observation["doi_registration_status"] == "pending-at-observation"
+    assert observation["primary_category"] == "cs.AI"
+    assert observation["cross_list_categories"] == ["cs.GT"]
+    assert observation["arxiv_license"] == "arXiv-perpetual-non-exclusive-1.0"
+    assert observation["license_not"] == "CC-BY-4.0"
+    assert (
+        public_record["historical_preparation_receipt"]["rewritten_as_current_public_record"]
+        is False
+    )
 
 
 def test_information_sharing_frontier_packager_starts_without_source_package(
@@ -79,4 +106,7 @@ def test_information_sharing_frontier_source_package_is_portable_and_exact(tmp_p
         validation["pdf_sha256"],
     ]
     assert manifest["pdf"]["sha256"] == validation["pdf_sha256"]
-    assert manifest["status"] == "owner-upload-gated"
+    assert manifest["status"] == "public-arxiv-v1-record"
+    assert manifest["arxiv_id"] == "2609.01814"
+    assert manifest["doi"] == "10.48550/arXiv.2609.01814"
+    assert manifest["doi_registration_status"] == "pending-at-observation"
