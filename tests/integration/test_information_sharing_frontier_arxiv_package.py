@@ -52,6 +52,9 @@ def test_information_sharing_frontier_public_record_preserves_preparation_histor
         public_record["repository_binding"]["arxiv_pdf_byte_identity"] == "unverified-not-asserted"
     )
     assert observation["arxiv_id"] == "2609.01814"
+    assert observation["arxiv_submission_state"] == "submitted"
+    assert observation["peer_review_venue_state"] == "unknown-not-asserted"
+    assert "venue_state" not in observation
     assert observation["doi"] == "10.48550/arXiv.2609.01814"
     assert observation["doi_registration_status"] == "pending-at-observation"
     assert observation["primary_category"] == "cs.AI"

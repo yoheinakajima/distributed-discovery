@@ -11,7 +11,9 @@ tables, and exact figure data, resolves all 22 claim records and citations,
 compiles twice under a fixed source epoch, and requires a byte-reproducible
 26–40 page PDF.
 
-This is a working paper with no DOI. It is not submitted or peer reviewed,
-makes no verified novelty claim, reports no human or real data, and does not
-create a study, claim, or research run. The positive DD-022 result is
-selection-dependent and is not an every-equilibrium result.
+This is a working paper/preprint, publicly available as arXiv:2609.01814
+(primary category cs.AI; cross-list cs.GT). Its displayed DOI is
+10.48550/arXiv.2609.01814; registration was pending at observation. It is not
+peer reviewed, makes no verified novelty claim, reports no human or real data,
+and does not create a study, claim, or research run. The positive DD-022 result
+is selection-dependent and is not an every-equilibrium result.

@@ -65,10 +65,14 @@ def test_current_information_sharing_pointers_use_revised_artifact() -> None:
     assert citation_record["doi"] == "10.48550/arXiv.2609.01814"
     assert example["artifact_sha256"] == CURRENT_PDF_SHA256
     assert CURRENT_PDF_SHA256 in (ROOT / "papers/README.md").read_text()
+    metadata = yaml.safe_load(
+        (ROOT / "papers/information-sharing-frontier/metadata.yml").read_text()
+    )
     provenance = json.loads(
         (ROOT / "papers/information-sharing-frontier/source-provenance.json").read_text()
     )
-    assert provenance["source_commit"] == "29264f89ab0f4dbd11b31b05faf36fdc1854bdff"
+    assert metadata["canonical_content_commit"] == "29264f89ab0f4dbd11b31b05faf36fdc1854bdff"
+    assert provenance["source_commit"] == metadata["canonical_content_commit"]
     assert set(provenance["source_runs"]) == {"frontier", "incremental", "signal", "strategic"}
 
 

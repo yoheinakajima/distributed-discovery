@@ -99,6 +99,14 @@ that only public metadata projections change.
   `paper-audit.json` PDF hash to the same unchanged canonical PDF identity.
   Immutable DD-019--DD-022 outputs, all 22 claim authorities, and Compendium
   v0.1.0 bytes are unchanged.
+- `main.tex` and the unchanged canonical PDF retain their frozen pre-submission
+  wording. That manuscript content is not treated as current publication
+  metadata; the current canonical metadata surfaces and this receipt record the
+  public arXiv v1 fact instead.
+- The Information Sharing generator derives its source-provenance commit from
+  the paper's explicit accepted-content binding, not mutable branch HEAD. Two
+  paper-target rebuilds retain that frozen content commit while the paper source
+  and PDF hashes remain unchanged.
 
 ## Recovery and restart instructions
 

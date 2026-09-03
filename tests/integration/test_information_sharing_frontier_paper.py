@@ -87,6 +87,8 @@ def test_information_sharing_frontier_generated_contract() -> None:
 def test_information_sharing_frontier_metadata_and_ownership() -> None:
     metadata = yaml.safe_load((PAPER / "metadata.yml").read_text(encoding="utf-8"))
     ownership = yaml.safe_load((PAPER / "ownership.yml").read_text(encoding="utf-8"))
+    readme = (PAPER / "README.md").read_text(encoding="utf-8")
+    citation = (PAPER / "citation.bib").read_text(encoding="utf-8")
     assert metadata["status"] == "working-paper"
     assert metadata["doi"] == "10.48550/arXiv.2609.01814"
     assert metadata["doi_registration_status"] == "pending-at-observation"
@@ -95,13 +97,20 @@ def test_information_sharing_frontier_metadata_and_ownership() -> None:
     assert metadata["arxiv_cross_list_categories"] == ["cs.GT"]
     assert metadata["submitted"] is True
     assert metadata["peer_reviewed"] is False
+    assert metadata["canonical_content_commit"] == "29264f89ab0f4dbd11b31b05faf36fdc1854bdff"
     assert ownership["paper"]["status"] == "working-paper"
     assert set(ownership["studies"]) == {"DD-019", "DD-020", "DD-021", "DD-022"}
     claims = [claim for study in ownership["studies"].values() for claim in study["claims"]]
     assert claims == [f"DD-C-{number:04d}" for number in range(89, 111)]
-    assert "@misc{Nakajima2026InformationSharingFrontier" in (PAPER / "citation.bib").read_text(
-        encoding="utf-8"
-    )
+    assert "arXiv:2609.01814" in readme
+    assert "primary category cs.AI; cross-list cs.GT" in readme
+    assert "registration was pending at observation" in readme
+    assert "not peer reviewed" in readme.replace("\n", " ")
+    assert "@misc{Nakajima2026InformationSharingFrontier" in citation
+    assert "eprint       = {2609.01814}" in citation
+    assert "primaryClass = {cs.AI}" in citation
+    assert "doi          = {10.48550/arXiv.2609.01814}" in citation
+    assert "DOI registration pending at observation; not peer reviewed" in citation
 
 
 def test_information_sharing_frontier_review_corrections_are_source_generated() -> None:

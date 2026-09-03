@@ -23,3 +23,8 @@ arxiv_license_display_name: arXiv perpetual non-exclusive distribution license
 doi_observation_note: >-
   arXiv displayed DOI 10.48550/arXiv.2609.01814 with DataCite registration
   pending at the recorded observation; no registration or resolution is claimed.
+canonical_content_commit: 29264f89ab0f4dbd11b31b05faf36fdc1854bdff
+canonical_content_commit_note: >-
+  Accepted commit for the unchanged current manuscript and PDF content.
+  Metadata-only branches retain this binding in deterministic provenance rather
+  than substituting their mutable branch HEAD.

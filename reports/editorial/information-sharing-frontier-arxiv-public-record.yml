@@ -23,7 +23,8 @@ public_arxiv_observation:
   v1_submitted_utc: "2026-09-01T19:41:30Z"
   primary_category: cs.AI
   cross_list_categories: [cs.GT]
-  venue_state: submitted
+  arxiv_submission_state: submitted
+  peer_review_venue_state: unknown-not-asserted
   public_artifact_state: arxiv
   peer_reviewed: false
   doi: "10.48550/arXiv.2609.01814"
