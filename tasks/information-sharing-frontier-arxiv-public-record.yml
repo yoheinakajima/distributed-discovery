@@ -3,7 +3,7 @@ kind: task-contract
 task_id: AO-0017
 title: Record Information Sharing Frontier public arXiv metadata
 task_type: documentation-editorial
-status: active
+status: owner-gate-required
 objective: Record only the already-public Information Sharing Frontier arXiv v1 metadata in canonical publication, citation, lifecycle, and deterministic public-projection records without changing the manuscript, PDF, scientific evidence, or any external publication state.
 authority_references:
   - {type: instruction, path: AGENTS.md}
@@ -62,7 +62,7 @@ canonical_destinations:
   - plans/INFORMATION_SHARING_FRONTIER_ARXIV_PUBLIC_RECORD.md
   - reports/editorial/information-sharing-frontier-arxiv-public-record.yml
   - papers/information-sharing-frontier/arxiv-metadata.yml
-github: {repository: yoheinakajima/distributed-discovery, issue: 228, branch: agent/information-sharing-frontier-arxiv-record, pull_request: null, base: main}
+github: {repository: yoheinakajima/distributed-discovery, issue: 228, branch: agent/information-sharing-frontier-arxiv-record, pull_request: 229, base: main}
 exec_plan: plans/INFORMATION_SHARING_FRONTIER_ARXIV_PUBLIC_RECORD.md
 task_delta: null
 frozen_identifiers:

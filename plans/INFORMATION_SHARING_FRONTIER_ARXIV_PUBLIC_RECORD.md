@@ -63,7 +63,7 @@ deletion.
 5. [x] Run the full non-executing validation wall: lint, strict typing, 1,101
    tests, claim/run validation, editorial/program-memory/Agent Ops/publication
    audits, release/Compendium verification, all-paper build, and site build.
-6. [ ] Stop at exact-head owner merge review.
+6. [x] Open draft PR #229 and stop at exact-head owner merge review.
 
 ## Validation strategy
 
