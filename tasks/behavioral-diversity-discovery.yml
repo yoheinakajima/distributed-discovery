@@ -93,7 +93,7 @@ canonical_destinations:
   - studies/index.md
   - claims/claims.yml
   - results/index.md
-github: {repository: yoheinakajima/distributed-discovery, issue: 231, branch: agent/behavioral-diversity-discovery, pull_request: null, base: main}
+github: {repository: yoheinakajima/distributed-discovery, issue: 231, branch: agent/behavioral-diversity-discovery, pull_request: 232, base: main}
 exec_plan: plans/BEHAVIORAL_DIVERSITY_DISCOVERY.md
 task_delta: null
 frozen_identifiers:

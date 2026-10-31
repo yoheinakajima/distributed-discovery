@@ -1,5 +1,5 @@
 study_id: DD-024
-status: implementation-before-primary-freeze
+status: registered-source-freeze
 evidence_status: no-new-experiment-or-result
-next_action: freeze admitted track02 track03 track04 models and evaluators; retain track01 track05 track06 overlap closures
-updated_utc: 2026-10-31T21:20:00Z
+next_action: execute three registered primary attempts once from clean detached worktrees at the source-freeze commit; retain track01 track05 track06 overlap closures
+updated_utc: 2026-10-31T21:58:22Z

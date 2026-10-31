@@ -407,3 +407,22 @@ all: verify reproduce-baseline papers site
 
 clean:
 	rm -rf build site/dist .pytest_cache .mypy_cache .ruff_cache
+
+.PHONY: dd024-readiness audit-dd024 dd024-track02 dd024-track03 dd024-track04
+
+dd024-readiness:
+	$(PY) -m distributed_discovery.behavioral_diversity.study --track track-02 --readiness
+	$(PY) -m distributed_discovery.behavioral_diversity.study --track track-03 --readiness
+	$(PY) -m distributed_discovery.behavioral_diversity.study --track track-04 --readiness
+
+audit-dd024:
+	$(RUN) pytest -q tests/unit/test_behavioral_diversity_study.py tests/unit/test_behavioral_diversity_robustness.py tests/unit/test_behavioral_diversity_feedback.py tests/unit/test_behavioral_diversity_timing.py
+
+dd024-track02:
+	$(PY) -m distributed_discovery.behavioral_diversity.study --track track-02
+
+dd024-track03:
+	$(PY) -m distributed_discovery.behavioral_diversity.study --track track-03
+
+dd024-track04:
+	$(PY) -m distributed_discovery.behavioral_diversity.study --track track-04

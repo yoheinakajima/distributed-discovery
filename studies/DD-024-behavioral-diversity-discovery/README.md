@@ -23,3 +23,9 @@ At most six bounded primary sub-runs, initially capped at 120 seconds and 1 GiB 
 ## Current status
 
 Six novelty screens complete: tracks 01, 05 and 06 stop for overlap; tracks 02, 03 and 04 proceed as bounded interaction diagnostics with worldwide novelty unestablished. Models and implementations are being frozen; no primary experiment has run.
+
+## Execution and verification
+
+Read [model boundaries](model.md), the [novelty matrix](novelty/index.md), and the [complete configuration bindings](registered-configs.json). `make dd024-readiness` reads files and hashes without evaluating a scientific cell. `make audit-dd024` runs small development fixtures and guardrail tests.
+
+The three `make dd024-track02`, `make dd024-track03`, and `make dd024-track04` targets create primary evidence and are one-use within this campaign. The coordinator executes them from separate clean detached worktrees at the same frozen source commit. Do not rerun these merely to refresh timestamps. Existing outputs can be independently reconstructed with `python -m distributed_discovery.behavioral_diversity.study --track <track-id> --verify-existing <run-directory>`; this reads evidence without creating a primary run.

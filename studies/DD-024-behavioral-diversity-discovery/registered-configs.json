@@ -1,0 +1,30 @@
+{
+  "maximum_aggregate_memory_mib": 3072,
+  "parallel_workers": 3,
+  "primary_grid_change_policy": "no changes after source freeze or outcome inspection",
+  "primary_subruns": 3,
+  "study_id": "DD-024",
+  "tracks": {
+    "track-02": {
+      "config_hash_sha256": "1d0ab47ae53bd3526cc3150d4dc9bccbed896d2a4aec070ac488bb439c96c616",
+      "configuration": "studies/DD-024-behavioral-diversity-discovery/tracks/track-02/config.json",
+      "memory_cap_mb": 1024,
+      "parameter_cells": 18,
+      "time_cap_seconds": 120
+    },
+    "track-03": {
+      "config_hash_sha256": "614ce37ebcb099aa0b032214b27be53e373c44aeab0056df5066ae5bae4c9ab5",
+      "configuration": "studies/DD-024-behavioral-diversity-discovery/tracks/track-03/config.json",
+      "memory_cap_mb": 1024,
+      "parameter_cells": 80,
+      "time_cap_seconds": 120
+    },
+    "track-04": {
+      "config_hash_sha256": "30b8369b0c82b6c717f9e4d9e0ad594eca0edc5c07abd63ca6b261466fb78383",
+      "configuration": "studies/DD-024-behavioral-diversity-discovery/tracks/track-04/config.json",
+      "memory_cap_mb": 1024,
+      "parameter_cells": 36,
+      "time_cap_seconds": 120
+    }
+  }
+}

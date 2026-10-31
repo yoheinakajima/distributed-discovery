@@ -17,13 +17,12 @@ The scientific registration belongs in
 
 ## Current state
 
-At `2026-10-31T21:17:05Z`, local `main` is clean at
+At the initial reconciliation, `2026-10-31T21:17:05Z`, local `main` was clean at
 `b02b4877b3cf11e9361be9e6aaa04e4c319461bf`. The coordinating task's live GitHub
 reconciliation records AO-0017 PR #229 as merged and only Dependabot PRs open.
 The older active label in the master-plan history is not current task
-authority. Issue #231 is registered; the draft PR is pending the first remote checkpoint. Its intended
-branch is `agent/behavioral-diversity-discovery`; this scaffolding creates no
-branch or GitHub object.
+authority. Issue #231 and draft PR #232 are registered. The first literature/novelty checkpoint is `2ce35ccb1a8d12c720bdda713de830b9ecfc7ae9` on
+`agent/behavioral-diversity-discovery`.
 
 The baseline inventory is 26 studies through DD-022, 110 claims through
 DD-C-0110, and 51 immutable run manifests, including 48 passing runs. DD-023
@@ -34,10 +33,13 @@ The owner has authorized saving the literature and carrying out parallel
 quantified synthetic research. This is current scientific-execution authority
 for the bounded campaign, rather than authority inferred from the older
 editorial tasks. Per-track scientific registrations and computational gates
-still must be completed before any primary run. No scientific code,
-experiment, claim, result, or test has been created by this scaffolding.
+must be completed before any primary run. The initial scaffolding created no
+scientific code or evidence. Three real evaluators, distinct verifiers, exact
+configurations, and development tests now exist; no primary run has started.
 
-Exactly one milestone is active: **M2 — model, evaluator, and registration freeze**.
+Exactly one milestone is active: **M3 — bounded parallel primary sub-runs**.
+M2 closes with the source-freeze commit containing this record; its exact SHA
+will be captured by every run manifest and the subsequent results index.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -85,6 +87,40 @@ historical commit referenced by existing tests, and the new study's initial
 public-phase label. These are retained validation failures, not experiments.
 The build dependencies and registered public phase are being corrected;
 no test or governance requirement is weakened.
+
+### Implementation and pre-run review — 2026-10-31
+
+All three admitted tracks have full model registrations, exact grids,
+implemented policy evaluators, saved-output verification, and deliberate
+corruptions. The final grid contains 18, 80, and 36 parameter cells (134 in
+total). The full configuration hashes and a tighter allocation of exactly
+three primary attempts are bound by `registered-configs.json`: three workers,
+120 seconds and 1024 MiB per worker, at most 3072 MiB aggregate on an 8192 MiB
+host. The cap includes evaluation, persistence, and independent verification.
+
+Reciprocal reviews are saved in `review-pre-run.md`, `review-track03.md`, and
+`review-track04.md`. The runner review required atomic shared-worktree attempt
+reservations, complete grid binding, saved-output verification, incomplete
+manifests before execution, signal-aware failures, and checksum checks after
+execution; all are implemented. Track 04's initially shallow corruption
+fixtures were strengthened to pass damaged evidence through the substantive
+audit. No unresolved mathematical blocker remains. The label-conjugation
+check is a bounded invariance check, not an independent optimized solution.
+
+All 28 initial focused scientific/runner tests pass, Ruff passes, and mypy
+passes on 228 sources. All seven paper builds and the 90-page/27-study site
+build pass. The full `make verify` rerun passed, including all 1,129 tests in
+413.37 seconds, ledger/provenance checks, all required audits, and offline
+release-readiness checks. A subsequent runner-only compatibility correction
+preserves logs/scripts in a complete manifest-bound checksum inventory while
+listing safe JSON/Markdown artifacts in public outputs. All eight runner
+fixtures pass, including two new successful-worker/site and damaged-log/path
+checks; targeted Ruff and mypy pass. No scientific model or grid changed.
+The earlier build failures were repaired by installing locked public build
+dependencies, the pinned Tectonic runtime and official bundle index, fetching
+the existing historical custody commit, and adding DD-024's public relation
+and current study-count expectations. Scientific tests and gates were not
+relaxed. Incidental first-use download notes in paper logs are excluded.
 
 ## Scope
 
@@ -148,7 +184,7 @@ falsifier, and a proceed/pivot/defer/stop disposition. Save this assessment
 before scientific code or primary work for that track. Novelty screening may
 proceed in parallel; a positive result is not a prerequisite for closeout.
 
-### M2 — Active: model, evaluator, and registration freeze
+### M2 — Complete: model, evaluator, and registration freeze
 
 For each admitted track, freeze the model, exact configuration, policy class,
 primary and secondary estimands, comparator resource accounting, state-space
@@ -163,7 +199,7 @@ draft PR, and record the exact source SHA and input/configuration hashes.
 The computational gate is not an additional permission request: the current
 owner instruction already authorizes the registered synthetic execution.
 
-### M3 — Pending: bounded parallel primary sub-runs
+### M3 — Active: bounded parallel primary sub-runs
 
 Only after M2, create clean detached worktrees at the frozen commit and run
 each admitted track at most once. Each sub-run has a unique configuration and
@@ -218,7 +254,7 @@ Stop before marking the PR ready, merge, deployment, release, or submission.
 - [x] Review PM-0001 through PM-0040 and route the new decision as PM-0041.
 - [x] Create the initial AO-0018 fixed contract and living ExecPlan.
 - [x] M1: Preserve literature and save all six track dispositions.
-- [ ] M2: Register admitted models, build real evaluators, validate, and freeze.
+- [x] M2: Register admitted models, build real evaluators, validate, and freeze.
 - [ ] M3: Preserve at most six bounded primary sub-runs from clean source.
 - [ ] M4: Complete independent verification and corruption checks.
 - [ ] M5: Complete separate claim audit and synchronized evidence integration.
@@ -295,18 +331,28 @@ make papers
 make site
 ```
 
-The primary command is deliberately not invented here. M2 must register its
-exact track/config arguments and producing module before execution. Generated
-context is a non-authoritative view; it does not allocate studies or prove
-claims. Issue and PR numbers are live observations to add to handoffs or the
-plan when known, rather than guessed identifiers.
+The registered primary command in each clean detached worktree is:
+
+```bash
+PYTHONPATH=src /path/to/locked/.venv/bin/python -m distributed_discovery.behavioral_diversity.study --track track-02
+```
+
+Use the corresponding `track-03` and `track-04` argument in the other two
+worktrees, all at the same recorded source SHA. The interpreter is from this
+checkout's locked environment. `--readiness` performs only file/hash checks;
+`--verify-existing <run-directory>` checks preserved evidence without a new
+primary attempt. Generated agent context is a non-authoritative view and
+does not allocate studies or prove claims.
 
 ## Artifacts produced
 
-Initial scaffolding only: the AO-0018 task contract, this living ExecPlan, a
-concise master-plan entry, and PM-0041. Literature, study registration,
-scientific source, tests, configurations, runs, claims, and report artifacts
-are pending and owned by their subsequent milestones.
+The literature archive preserves all 51 annotated references, the complete
+review and source JSON, and an explicit map to four existing bibliography
+keys. Six saved novelty screens close three tracks and admit three bounded
+audits. The study contains model/configuration bindings, real evaluator and
+independent verifier modules, 28 focused tests, reciprocal reviews, and a
+one-attempt resource-bounded runner. Primary results and the final separate
+claim audit remain pending.
 
 The scaffold-only check passed the task-contract and program-memory JSON
 schemas with format checks enabled, and confirmed 41 unique memory IDs.
@@ -317,10 +363,9 @@ scientific test or experiment was executed by this check.
 ## Blockers
 
 No additional owner permission blocks the authorized local synthetic
-campaign. Primary work is not ready until its saved novelty dispositions,
-per-track scientific registrations, real evaluator/verifier, clean committed
-freeze, resource enforcement, and draft PR exist. Issue and PR creation are
-not performed by the initial scaffolding subtask.
+campaign. The pre-execution acceptance checks and runner compatibility
+follow-up pass. Execute only after this complete source-freeze record is
+committed and three detached worktrees are clean at that same revision.
 
 ## Recovery and restart instructions
 

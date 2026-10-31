@@ -5,6 +5,7 @@ This directory preserves the 31 October 2026 interdisciplinary literature review
 - [Full review and 51 annotated references](review.md)
 - [Machine-readable reference list](references.json)
 - [Structured source report](source-report.json)
+- [Reference-number and existing citation-key crosswalk](reference-map.json)
 - [DD-024 campaign](../../../studies/DD-024-behavioral-diversity-discovery/README.md)
 - [Living execution plan](../../../plans/BEHAVIORAL_DIVERSITY_DISCOVERY.md)
 

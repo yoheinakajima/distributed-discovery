@@ -2,7 +2,7 @@ study_id: DD-024
 title: Behavioral Diversity in Discovery
 slug: dd-024
 phase: registered
-summary: A prospective six-track synthetic campaign testing stable behavioral differences against matched adaptive and rotating-role baselines; no new results yet.
+summary: A novelty-screened synthetic campaign separating coordinated randomness, persistent search failures, and information in message timing; three exact diagnostic grids are registered and no primary result exists yet.
 public_artifacts:
   - path: studies/DD-024-behavioral-diversity-discovery/README.md
     description: Research question, scope, and novelty-first registration sequence
