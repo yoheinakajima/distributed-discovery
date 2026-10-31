@@ -1,0 +1,590 @@
+{
+  "budget": {
+    "attempts_per_trial": 4,
+    "clues_per_trial": 2,
+    "rounds": 2,
+    "searchers": 2,
+    "shared_detection_bits_after_round_one": 2,
+    "targets": 3
+  },
+  "cell_id": "p=5/6|r=1/2|law=iid",
+  "continuation_audit": [
+    {
+      "candidate_rescue_masses": {
+        "0,0": "25/576",
+        "0,1": "13/432",
+        "0,2": "13/432",
+        "1,0": "13/432",
+        "1,1": "1/576",
+        "1,2": "1/432",
+        "2,0": "13/432",
+        "2,1": "1/432",
+        "2,2": "1/576"
+      },
+      "clues": [
+        0,
+        0
+      ],
+      "first_failure_mass": "1/16",
+      "perfect_elimination_fallback": false,
+      "signal_pair_probability": "17/72"
+    },
+    {
+      "candidate_rescue_masses": {
+        "0,0": "5/576",
+        "0,1": "5/432",
+        "0,2": "1/144",
+        "1,0": "5/432",
+        "1,1": "5/576",
+        "1,2": "1/144",
+        "2,0": "1/144",
+        "2,1": "1/144",
+        "2,2": "1/576"
+      },
+      "clues": [
+        0,
+        1
+      ],
+      "first_failure_mass": "11/432",
+      "perfect_elimination_fallback": false,
+      "signal_pair_probability": "7/144"
+    },
+    {
+      "candidate_rescue_masses": {
+        "0,0": "5/576",
+        "0,1": "1/144",
+        "0,2": "5/432",
+        "1,0": "1/144",
+        "1,1": "1/576",
+        "1,2": "1/144",
+        "2,0": "5/432",
+        "2,1": "1/144",
+        "2,2": "5/576"
+      },
+      "clues": [
+        0,
+        2
+      ],
+      "first_failure_mass": "11/432",
+      "perfect_elimination_fallback": false,
+      "signal_pair_probability": "7/144"
+    },
+    {
+      "candidate_rescue_masses": {
+        "0,0": "5/576",
+        "0,1": "5/432",
+        "0,2": "1/144",
+        "1,0": "5/432",
+        "1,1": "5/576",
+        "1,2": "1/144",
+        "2,0": "1/144",
+        "2,1": "1/144",
+        "2,2": "1/576"
+      },
+      "clues": [
+        1,
+        0
+      ],
+      "first_failure_mass": "11/432",
+      "perfect_elimination_fallback": false,
+      "signal_pair_probability": "7/144"
+    },
+    {
+      "candidate_rescue_masses": {
+        "0,0": "1/576",
+        "0,1": "13/432",
+        "0,2": "1/432",
+        "1,0": "13/432",
+        "1,1": "25/576",
+        "1,2": "13/432",
+        "2,0": "1/432",
+        "2,1": "13/432",
+        "2,2": "1/576"
+      },
+      "clues": [
+        1,
+        1
+      ],
+      "first_failure_mass": "1/16",
+      "perfect_elimination_fallback": false,
+      "signal_pair_probability": "17/72"
+    },
+    {
+      "candidate_rescue_masses": {
+        "0,0": "1/576",
+        "0,1": "1/144",
+        "0,2": "1/144",
+        "1,0": "1/144",
+        "1,1": "5/576",
+        "1,2": "5/432",
+        "2,0": "1/144",
+        "2,1": "5/432",
+        "2,2": "5/576"
+      },
+      "clues": [
+        1,
+        2
+      ],
+      "first_failure_mass": "11/432",
+      "perfect_elimination_fallback": false,
+      "signal_pair_probability": "7/144"
+    },
+    {
+      "candidate_rescue_masses": {
+        "0,0": "5/576",
+        "0,1": "1/144",
+        "0,2": "5/432",
+        "1,0": "1/144",
+        "1,1": "1/576",
+        "1,2": "1/144",
+        "2,0": "5/432",
+        "2,1": "1/144",
+        "2,2": "5/576"
+      },
+      "clues": [
+        2,
+        0
+      ],
+      "first_failure_mass": "11/432",
+      "perfect_elimination_fallback": false,
+      "signal_pair_probability": "7/144"
+    },
+    {
+      "candidate_rescue_masses": {
+        "0,0": "1/576",
+        "0,1": "1/144",
+        "0,2": "1/144",
+        "1,0": "1/144",
+        "1,1": "5/576",
+        "1,2": "5/432",
+        "2,0": "1/144",
+        "2,1": "5/432",
+        "2,2": "5/576"
+      },
+      "clues": [
+        2,
+        1
+      ],
+      "first_failure_mass": "11/432",
+      "perfect_elimination_fallback": false,
+      "signal_pair_probability": "7/144"
+    },
+    {
+      "candidate_rescue_masses": {
+        "0,0": "1/576",
+        "0,1": "1/432",
+        "0,2": "13/432",
+        "1,0": "1/432",
+        "1,1": "1/576",
+        "1,2": "13/432",
+        "2,0": "13/432",
+        "2,1": "13/432",
+        "2,2": "25/576"
+      },
+      "clues": [
+        2,
+        2
+      ],
+      "first_failure_mass": "1/16",
+      "perfect_elimination_fallback": false,
+      "signal_pair_probability": "17/72"
+    }
+  ],
+  "detector_pattern_weights": {
+    "0000": "1/16",
+    "0001": "1/16",
+    "0010": "1/16",
+    "0011": "1/16",
+    "0100": "1/16",
+    "0101": "1/16",
+    "0110": "1/16",
+    "0111": "1/16",
+    "1000": "1/16",
+    "1001": "1/16",
+    "1010": "1/16",
+    "1011": "1/16",
+    "1100": "1/16",
+    "1101": "1/16",
+    "1110": "1/16",
+    "1111": "1/16"
+  },
+  "disagreement_clue_probability": "7/24",
+  "disagreement_policy_values": {
+    "calibrated_joint": "5/7",
+    "cross_searcher_revisit": "5/7",
+    "iid_assumed_joint": "5/7",
+    "perfect_elimination_joint": "43/84",
+    "precommitted_calibrated": "5/7",
+    "same_searcher_revisit": "5/7",
+    "unvisited_only": "43/84"
+  },
+  "double_failure_probability": "49/144",
+  "estimands": {
+    "cross_searcher_rescue_contrast": "0/1",
+    "failure_elimination_regret": "35/192",
+    "iid_misspecification_regret": "0/1",
+    "schedule_equivalence_control": "0/1"
+  },
+  "failure_law": "iid",
+  "first_round_success": "95/144",
+  "optimal_continuations": {
+    "0,0": [
+      [
+        0,
+        0
+      ]
+    ],
+    "0,1": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "0,2": [
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "1,0": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "1,1": [
+      [
+        1,
+        1
+      ]
+    ],
+    "1,2": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "2,0": [
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "2,1": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "2,2": [
+      [
+        2,
+        2
+      ]
+    ]
+  },
+  "p": "5/6",
+  "perfect_elimination_fallback_true_mass": "0/1",
+  "policies": {
+    "calibrated_joint": {
+      "0,0": [
+        0,
+        0
+      ],
+      "0,1": [
+        0,
+        1
+      ],
+      "0,2": [
+        0,
+        2
+      ],
+      "1,0": [
+        0,
+        1
+      ],
+      "1,1": [
+        1,
+        1
+      ],
+      "1,2": [
+        1,
+        2
+      ],
+      "2,0": [
+        0,
+        2
+      ],
+      "2,1": [
+        1,
+        2
+      ],
+      "2,2": [
+        2,
+        2
+      ]
+    },
+    "cross_searcher_revisit": {
+      "0,0": [
+        0,
+        0
+      ],
+      "0,1": [
+        1,
+        0
+      ],
+      "0,2": [
+        2,
+        0
+      ],
+      "1,0": [
+        0,
+        1
+      ],
+      "1,1": [
+        1,
+        1
+      ],
+      "1,2": [
+        2,
+        1
+      ],
+      "2,0": [
+        0,
+        2
+      ],
+      "2,1": [
+        1,
+        2
+      ],
+      "2,2": [
+        2,
+        2
+      ]
+    },
+    "iid_assumed_joint": {
+      "0,0": [
+        0,
+        0
+      ],
+      "0,1": [
+        0,
+        1
+      ],
+      "0,2": [
+        0,
+        2
+      ],
+      "1,0": [
+        0,
+        1
+      ],
+      "1,1": [
+        1,
+        1
+      ],
+      "1,2": [
+        1,
+        2
+      ],
+      "2,0": [
+        0,
+        2
+      ],
+      "2,1": [
+        1,
+        2
+      ],
+      "2,2": [
+        2,
+        2
+      ]
+    },
+    "perfect_elimination_joint": {
+      "0,0": [
+        1,
+        2
+      ],
+      "0,1": [
+        2,
+        2
+      ],
+      "0,2": [
+        1,
+        1
+      ],
+      "1,0": [
+        2,
+        2
+      ],
+      "1,1": [
+        0,
+        2
+      ],
+      "1,2": [
+        0,
+        0
+      ],
+      "2,0": [
+        1,
+        1
+      ],
+      "2,1": [
+        0,
+        0
+      ],
+      "2,2": [
+        0,
+        1
+      ]
+    },
+    "precommitted_calibrated": {
+      "0,0": [
+        0,
+        0
+      ],
+      "0,1": [
+        0,
+        1
+      ],
+      "0,2": [
+        0,
+        2
+      ],
+      "1,0": [
+        0,
+        1
+      ],
+      "1,1": [
+        1,
+        1
+      ],
+      "1,2": [
+        1,
+        2
+      ],
+      "2,0": [
+        0,
+        2
+      ],
+      "2,1": [
+        1,
+        2
+      ],
+      "2,2": [
+        2,
+        2
+      ]
+    },
+    "same_searcher_revisit": {
+      "0,0": [
+        0,
+        0
+      ],
+      "0,1": [
+        0,
+        1
+      ],
+      "0,2": [
+        0,
+        2
+      ],
+      "1,0": [
+        1,
+        0
+      ],
+      "1,1": [
+        1,
+        1
+      ],
+      "1,2": [
+        1,
+        2
+      ],
+      "2,0": [
+        2,
+        0
+      ],
+      "2,1": [
+        2,
+        1
+      ],
+      "2,2": [
+        2,
+        2
+      ]
+    },
+    "unvisited_only": {
+      "0,0": [
+        1,
+        2
+      ],
+      "0,1": [
+        2,
+        2
+      ],
+      "0,2": [
+        1,
+        1
+      ],
+      "1,0": [
+        2,
+        2
+      ],
+      "1,1": [
+        0,
+        2
+      ],
+      "1,2": [
+        0,
+        0
+      ],
+      "2,0": [
+        1,
+        1
+      ],
+      "2,1": [
+        0,
+        0
+      ],
+      "2,2": [
+        0,
+        1
+      ]
+    }
+  },
+  "policy_values": {
+    "calibrated_joint": "55/64",
+    "cross_searcher_revisit": "55/64",
+    "iid_assumed_joint": "55/64",
+    "perfect_elimination_joint": "65/96",
+    "precommitted_calibrated": "55/64",
+    "same_searcher_revisit": "55/64",
+    "unvisited_only": "65/96"
+  },
+  "r": "1/2"
+}

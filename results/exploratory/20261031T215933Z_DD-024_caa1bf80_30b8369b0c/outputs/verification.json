@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "emulations": 144,
+    "local_deviations": 285208,
+    "policy_label_conjugation": true,
+    "raw_rows": 576,
+    "source_label_symmetry": true
+  },
+  "corruptions": {
+    "arrival": true,
+    "payload_alphabet": true,
+    "silence_likelihood": true,
+    "trigger": true,
+    "value": true
+  },
+  "errors": [],
+  "passed": true
+}

@@ -2,6 +2,39 @@
 
 Status: active owner directive, 2026-07-23.
 
+## Scoped AO-0018 owner exception — 2026-10-31
+
+The owner separately authorized preserving the academic landscape and
+conducting one bounded novelty-first synthetic campaign under
+[AO-0018](../tasks/behavioral-diversity-discovery.yml),
+[PM-0041](program-memory/registry.yml), and
+[DD-024](../studies/DD-024-behavioral-diversity-discovery/README.md).
+This exception supersedes the general no-new-study/no-new-run restriction
+below only for that registered campaign; it does not reopen the general
+Phase 2 scientific gate or any stopped historical formulation.
+
+The scoped work saved 51 academic references and six novelty dispositions.
+Three tracks closed for overlap, and three registered primary attempts
+passed from frozen source `caa1bf800bde9033e6b317e46bad0aff73828338`,
+covering 134 finite-model cells under the registered 120-second / 1024-MiB
+per-worker limits. The evidence remains audited exploratory material, with
+zero central claim promotions and no paper-provenance or lifecycle change.
+M1 through M6 and AO-0018 are complete under the
+[living plan](../plans/BEHAVIORAL_DIVERSITY_DISCOVERY.md); no execution
+milestone is active. Full integrated acceptance and all three remote checks
+passed at reviewed code/evidence commit H1
+`02e95e8a6d0aa7aa0d17364d15011f07e823e240`. The later metadata-only closeout
+records the receipt and handoff on draft PR #232; draft review is next.
+
+The three primary attempts are consumed. This exception provides no new
+provider calls, private data, spend, theorem/proof promotion, paper admission,
+human-engagement, release, DOI, submission, merge, deployment, or additional
+primary-execution authority. Reliable Discovery and the separate benchmark
+gates remain unchanged. The general directive below retains its dated
+scope and applies outside this explicitly bounded exception.
+
+## General Phase 2 boundary — 2026-07-23
+
 Phase 1 is complete. This means Programs V1--V5, the Information Sharing
 Frontier, post-V5 theorem-spine consolidation, and the stopped
 decentralized-recovery overlap check form a completed program boundary. It

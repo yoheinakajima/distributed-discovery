@@ -1,0 +1,12 @@
+{
+  "cell_id": "m5-p1of1-q1of5",
+  "channel_id": "m5-p1of1-q1of5/yoked_disagreement",
+  "id": "m5-p1of1-q1of5/yoked_disagreement/individual_map",
+  "m": 5,
+  "p": "1/1",
+  "policy_id": "m5-p1of1-q1of5/yoked_disagreement/individual_map",
+  "protocol": "yoked_disagreement",
+  "q": "1/5",
+  "receiver": "individual_map",
+  "value": "1/1"
+}

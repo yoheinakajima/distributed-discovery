@@ -1,0 +1,12 @@
+{
+  "cell_id": "m4-p3of4-q3of4",
+  "channel_id": "m4-p3of4-q3of4/agreement_trigger",
+  "id": "m4-p3of4-q3of4/agreement_trigger/coverage_aware",
+  "m": 4,
+  "p": "3/4",
+  "policy_id": "m4-p3of4-q3of4/agreement_trigger/coverage_aware",
+  "protocol": "agreement_trigger",
+  "q": "3/4",
+  "receiver": "coverage_aware",
+  "value": "859/864"
+}

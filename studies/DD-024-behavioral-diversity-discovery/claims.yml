@@ -1,0 +1,4 @@
+study_id: DD-024
+ledger: ../../claims/claims.yml
+filter: "study_id == 'DD-024'"
+# No central claims admitted; see claim-audit.md for audited exploratory findings.

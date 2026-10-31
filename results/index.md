@@ -1,6 +1,6 @@
 # Result index
 
-Current inventory: 51 immutable manifests, of which 48 have passing validation
+Current inventory (2026-10-31): 54 immutable manifests, of which 51 have passing validation
 and exit status zero. Later validation and closeout runs are recorded without
 overwriting prior evidence.
 
@@ -8,6 +8,16 @@ overwriting prior evidence.
 - [`verified/`](verified/README.md): policy-verified results.
 - [`exploratory/`](exploratory/README.md): observations and lower bounds not promoted.
 - [`refuted/`](refuted/README.md): preserved negative, failed, and superseded results.
+
+## DD-024 — bounded behavioral-diversity campaign
+
+Three primary attempts from frozen source `caa1bf800bde9033e6b317e46bad0aff73828338` completed with exit zero and passing independent checks. They remain exploratory and add no central claim. The [study results index](../studies/DD-024-behavioral-diversity-discovery/results/README.md) links complete provenance and the separate audit.
+
+- [Track 02: 20261031T215933Z_DD-024_caa1bf80_1d0ab47ae5](exploratory/20261031T215933Z_DD-024_caa1bf80_1d0ab47ae5/README.md): 18 parameter cells.
+- [Track 03: 20261031T215933Z_DD-024_caa1bf80_614ce37ebc](exploratory/20261031T215933Z_DD-024_caa1bf80_614ce37ebc/README.md): 80 parameter cells.
+- [Track 04: 20261031T215933Z_DD-024_caa1bf80_30b8369b0c](exploratory/20261031T215933Z_DD-024_caa1bf80_30b8369b0c/README.md): 36 parameter cells.
+
+The older 51-manifest/48-passing statements below describe their dated historical checkpoints.
 
 The M9 acceptance reproduction is `baseline/20260720T202314Z_DD-000_88613408_217c602fa0`; it started from a clean research commit and passed upstream plus independent checks. Claim records continue to cite their originally audited run IDs. DD-001 through DD-003 passing research runs are under [`verified/`](verified/README.md); each manifest distinguishes analytic, exhaustive, checked, and heuristic evidence.
 

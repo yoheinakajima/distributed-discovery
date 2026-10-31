@@ -1,0 +1,12 @@
+{
+  "cell_id": "m3-p3of4-q1of1",
+  "channel_id": "m3-p3of4-q1of1/yoked_disagreement",
+  "id": "m3-p3of4-q1of1/yoked_disagreement/individual_map",
+  "m": 3,
+  "p": "3/4",
+  "policy_id": "m3-p3of4-q1of1/yoked_disagreement/individual_map",
+  "protocol": "yoked_disagreement",
+  "q": "1/1",
+  "receiver": "individual_map",
+  "value": "1/1"
+}

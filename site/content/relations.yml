@@ -196,3 +196,7 @@ studies:
     lab_slugs: [coordination-free-positive-sharing]
     paper_slugs: [information-sharing-frontier]
     data_routes: [data/labs/coordination-free-positive-sharing.json, data/coordination-free-positive-sharing/registry.json, data/coordination-free-positive-sharing/threshold-certificate.json]
+  DD-024:
+    program: foundations
+    theorem_family: portfolios-feedback
+    paper_slugs: []

@@ -1,5 +1,64 @@
 # Master execution plan
 
+## Completed AO-0018; draft review next (2026-10-31)
+
+Issue #231 and draft PR #232 coordinate DD-024 on
+`agent/behavioral-diversity-discovery`, under
+[`tasks/behavioral-diversity-discovery.yml`](../tasks/behavioral-diversity-discovery.yml)
+and the [living plan](BEHAVIORAL_DIVERSITY_DISCOVERY.md). **M1 through M6 and
+the task are complete; no execution milestone is active.** Final integrated
+acceptance and the remote checks passed; draft review is next.
+
+The preserved literature contains 51 references. Six saved novelty screens
+produced three overlap closures and three admitted primary attempts. All
+three passed from clean detached worktrees at frozen source
+`caa1bf800bde9033e6b317e46bad0aff73828338`, covering 134 registered cells.
+Their immutable evidence and independent reviews are routed by the
+[study results index](../studies/DD-024-behavioral-diversity-discovery/results/README.md).
+They remain audited exploratory findings with **zero central claim
+promotions**; the central ledger remains at 110 claims. The current inventory
+contains 27 studies and 54 immutable runs, including 51 passing runs.
+
+All 41 program-memory records were reconciled. PM-0041 is implemented within
+this bounded synthetic lane; no earlier pending trigger was satisfied by the
+campaign. The [Phase 2 directive](../docs/phase-2-program-directive.md) records
+only this scoped exception to its general freeze. Provider calls, private
+data, spend, additional primary attempts, proof promotion, publication,
+submission, merge, and deployment remain outside this closeout.
+
+`make bootstrap verify papers site` exited zero: 1,145 tests in 399.31 seconds,
+Ruff on 402 files, mypy on 228 sources, all required audits over 54 manifests,
+seven paper builds with unchanged PDFs, and a 90-page/27-study site. DD-024's
+actual site record includes three passing runs and no central claims.
+Reviewed code/evidence commit H1 is
+`02e95e8a6d0aa7aa0d17364d15011f07e823e240`; CI `41246991408`, CI
+`41246995309`, and paper-site `41246995313` passed. The later metadata-only
+closeout commit records this receipt and handoff; the PR supplies its current
+head without treating H1 as a self-referential closeout SHA.
+
+## AO-0018 registration checkpoint (2026-10-31; historical)
+
+The current owner instruction authorizes preserving the sourced academic
+landscape and conducting novelty-first parallel synthetic research under one
+coordinated task. Contract `tasks/behavioral-diversity-discovery.yml`, living
+plan `plans/BEHAVIORAL_DIVERSITY_DISCOVERY.md`, branch
+`agent/behavioral-diversity-discovery`, and PM-0041 own the new DD-024 lane.
+The clean baseline is `b02b4877b3cf11e9361be9e6aaa04e4c319461bf`; AO-0017
+PR #229 is merged, with only Dependabot PRs open at reconciliation. Issue and
+draft-PR identifiers for AO-0018 remain unassigned.
+
+At most six candidate mechanism tracks must save novelty/overlap checks before
+scientific code or primary work. Each admitted model, real policy evaluator,
+config, comparator budget, seeds, independent verifier, corruptions, and
+stopping rule must be frozen before bounded parallel sub-runs from clean
+detached worktrees. Initial limits are six primary sub-runs total, 120 seconds
+and 1024 MiB each. Nulls, failures, and classical-overlap stops are valid
+outcomes. DD-023 remains unallocated for its separate benchmark prospectus.
+This instruction supersedes the prior editorial-only limitation only for
+AO-0018; provider calls, private data, spend, proof promotion, publication,
+submission, merge, and deployment remain outside scope. No primary result or
+claim exists at this scaffolding checkpoint.
+
 ## Active AO-0017 Information Sharing Frontier public arXiv metadata record (2026-09-03)
 
 Issue #228, branch `agent/information-sharing-frontier-arxiv-record`, contract

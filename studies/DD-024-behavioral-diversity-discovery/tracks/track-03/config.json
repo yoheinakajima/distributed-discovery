@@ -1,0 +1,34 @@
+{
+  "study_id": "DD-024",
+  "track_id": "track-03",
+  "title": "Negative-feedback dependence and cross-searcher rescue",
+  "budget": {
+    "targets": 3,
+    "searchers": 2,
+    "rounds": 2,
+    "attempts_per_trial": 4,
+    "clues_per_trial": 2,
+    "shared_detection_bits_after_round_one": 2
+  },
+  "p_values": ["1/3", "1/2", "2/3", "5/6", "1/1"],
+  "r_values": ["1/4", "1/2", "3/4", "1/1"],
+  "failure_laws": ["iid", "searcher_persistent", "round_common", "global_common"],
+  "policies": [
+    "calibrated_joint",
+    "precommitted_calibrated",
+    "iid_assumed_joint",
+    "perfect_elimination_joint",
+    "same_searcher_revisit",
+    "cross_searcher_revisit",
+    "unvisited_only"
+  ],
+  "expected_cells": 80,
+  "time_cap_seconds": 120,
+  "memory_cap_mb": 1024,
+  "random_seeds": {"algorithm": [], "model": null},
+  "arithmetic": "exact rational",
+  "tie_breaking": "lexicographically first ordered target pair",
+  "after_success_default": [0, 0],
+  "coordination_boundary": "Joint continuation allocators have assignment authority; none is represented as a decentralized personality type.",
+  "stopping_rule": "One primary run; preserve cap, normalization, budget, or independent-verification failures without retry or claim promotion."
+}

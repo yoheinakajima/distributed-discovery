@@ -1,0 +1,1098 @@
+{
+  "cell": {
+    "diagnostic": "none",
+    "id": "rho0-none-tau1",
+    "rho": "0/1",
+    "threshold": 1
+  },
+  "contrasts": {
+    "heterogeneous_departure_minus_deterministic": "-1/3",
+    "homogeneous_departure_minus_deterministic": "-1/3",
+    "mixture_minus_deterministic": "0/1"
+  },
+  "coordinated_mixture": {
+    "by_regime": {
+      "A": "8/9",
+      "B": "8/9"
+    },
+    "certificate": {
+      "policy_count": 36,
+      "regime_a_weight": "1/5",
+      "support_size": 1,
+      "upper_bound": "8/9"
+    },
+    "support": [
+      {
+        "plan_id": "d0001",
+        "weight": "1/1"
+      }
+    ],
+    "worst_case": "8/9"
+  },
+  "deterministic_maximin": {
+    "by_regime": {
+      "A": "8/9",
+      "B": "8/9"
+    },
+    "plan_id": "d0001",
+    "worst_case": "8/9"
+  },
+  "diagnostic_probabilities": {
+    "A": {
+      "none": "1/1"
+    },
+    "B": {
+      "none": "1/1"
+    }
+  },
+  "independent_departures": {
+    "heterogeneous": {
+      "by_regime": {
+        "A": "8/9",
+        "B": "5/9"
+      },
+      "candidate_count": 25,
+      "epsilon_by_diagnostic": {
+        "none": [
+          "0/1",
+          "1/1"
+        ]
+      },
+      "worst_case": "5/9"
+    },
+    "homogeneous": {
+      "by_regime": {
+        "A": "5/9",
+        "B": "5/9"
+      },
+      "candidate_count": 5,
+      "epsilon_by_diagnostic": {
+        "none": [
+          "1/1",
+          "1/1"
+        ]
+      },
+      "worst_case": "5/9"
+    }
+  },
+  "known_prior": [
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "8/9"
+      },
+      "expected_success": "8/9",
+      "plan_id": "d0001",
+      "prior_a": "1/4",
+      "worst_case": "8/9"
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "8/9"
+      },
+      "expected_success": "8/9",
+      "plan_id": "d0001",
+      "prior_a": "1/2",
+      "worst_case": "8/9"
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "8/9"
+      },
+      "expected_success": "8/9",
+      "plan_id": "d0001",
+      "prior_a": "3/4",
+      "worst_case": "8/9"
+    }
+  ],
+  "nominal_a": {
+    "by_regime": {
+      "A": "8/9",
+      "B": "8/9"
+    },
+    "plan_id": "d0001",
+    "worst_case": "8/9"
+  },
+  "plans": [
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "35/36"
+      },
+      "plan_id": "d0000",
+      "profile_ids": [
+        0
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "P",
+          "P"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "8/9"
+      },
+      "plan_id": "d0001",
+      "profile_ids": [
+        1
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "P",
+          "S"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "8/9"
+      },
+      "plan_id": "d0002",
+      "profile_ids": [
+        2
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "P",
+          "C"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "8/9"
+      },
+      "plan_id": "d0003",
+      "profile_ids": [
+        3
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "P",
+          "K0"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "8/9"
+      },
+      "plan_id": "d0004",
+      "profile_ids": [
+        4
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "P",
+          "K1"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "8/9"
+      },
+      "plan_id": "d0005",
+      "profile_ids": [
+        5
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "P",
+          "K2"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "8/9"
+      },
+      "plan_id": "d0006",
+      "profile_ids": [
+        6
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "S",
+          "P"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "5/6",
+        "B": "1/3"
+      },
+      "plan_id": "d0007",
+      "profile_ids": [
+        7
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "S",
+          "S"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "7/18"
+      },
+      "plan_id": "d0008",
+      "profile_ids": [
+        8
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "S",
+          "C"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "5/9"
+      },
+      "plan_id": "d0009",
+      "profile_ids": [
+        9
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "S",
+          "K0"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "5/9"
+      },
+      "plan_id": "d0010",
+      "profile_ids": [
+        10
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "S",
+          "K1"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "5/9"
+      },
+      "plan_id": "d0011",
+      "profile_ids": [
+        11
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "S",
+          "K2"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "8/9"
+      },
+      "plan_id": "d0012",
+      "profile_ids": [
+        12
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "C",
+          "P"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "7/18"
+      },
+      "plan_id": "d0013",
+      "profile_ids": [
+        13
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "C",
+          "S"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "31/72"
+      },
+      "plan_id": "d0014",
+      "profile_ids": [
+        14
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "C",
+          "C"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "5/9"
+      },
+      "plan_id": "d0015",
+      "profile_ids": [
+        15
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "C",
+          "K0"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "5/9"
+      },
+      "plan_id": "d0016",
+      "profile_ids": [
+        16
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "C",
+          "K1"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "5/9"
+      },
+      "plan_id": "d0017",
+      "profile_ids": [
+        17
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "C",
+          "K2"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "8/9"
+      },
+      "plan_id": "d0018",
+      "profile_ids": [
+        18
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "K0",
+          "P"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "5/9"
+      },
+      "plan_id": "d0019",
+      "profile_ids": [
+        19
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "K0",
+          "S"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "5/9"
+      },
+      "plan_id": "d0020",
+      "profile_ids": [
+        20
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "K0",
+          "C"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "1/3",
+        "B": "1/3"
+      },
+      "plan_id": "d0021",
+      "profile_ids": [
+        21
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "K0",
+          "K0"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "2/3",
+        "B": "2/3"
+      },
+      "plan_id": "d0022",
+      "profile_ids": [
+        22
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "K0",
+          "K1"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "2/3",
+        "B": "2/3"
+      },
+      "plan_id": "d0023",
+      "profile_ids": [
+        23
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "K0",
+          "K2"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "8/9"
+      },
+      "plan_id": "d0024",
+      "profile_ids": [
+        24
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "K1",
+          "P"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "5/9"
+      },
+      "plan_id": "d0025",
+      "profile_ids": [
+        25
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "K1",
+          "S"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "5/9"
+      },
+      "plan_id": "d0026",
+      "profile_ids": [
+        26
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "K1",
+          "C"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "2/3",
+        "B": "2/3"
+      },
+      "plan_id": "d0027",
+      "profile_ids": [
+        27
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "K1",
+          "K0"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "1/3",
+        "B": "1/3"
+      },
+      "plan_id": "d0028",
+      "profile_ids": [
+        28
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "K1",
+          "K1"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "2/3",
+        "B": "2/3"
+      },
+      "plan_id": "d0029",
+      "profile_ids": [
+        29
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "K1",
+          "K2"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "8/9"
+      },
+      "plan_id": "d0030",
+      "profile_ids": [
+        30
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "K2",
+          "P"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "5/9"
+      },
+      "plan_id": "d0031",
+      "profile_ids": [
+        31
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "K2",
+          "S"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "5/9"
+      },
+      "plan_id": "d0032",
+      "profile_ids": [
+        32
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "K2",
+          "C"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "2/3",
+        "B": "2/3"
+      },
+      "plan_id": "d0033",
+      "profile_ids": [
+        33
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "K2",
+          "K0"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "2/3",
+        "B": "2/3"
+      },
+      "plan_id": "d0034",
+      "profile_ids": [
+        34
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "K2",
+          "K1"
+        ]
+      }
+    },
+    {
+      "by_regime": {
+        "A": "1/3",
+        "B": "1/3"
+      },
+      "plan_id": "d0035",
+      "profile_ids": [
+        35
+      ],
+      "roles_by_diagnostic": {
+        "none": [
+          "K2",
+          "K2"
+        ]
+      }
+    }
+  ],
+  "profile_payoffs": [
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "35/36"
+      },
+      "profile_id": 0,
+      "roles": [
+        "P",
+        "P"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "8/9"
+      },
+      "profile_id": 1,
+      "roles": [
+        "P",
+        "S"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "8/9"
+      },
+      "profile_id": 2,
+      "roles": [
+        "P",
+        "C"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "8/9"
+      },
+      "profile_id": 3,
+      "roles": [
+        "P",
+        "K0"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "8/9"
+      },
+      "profile_id": 4,
+      "roles": [
+        "P",
+        "K1"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "8/9"
+      },
+      "profile_id": 5,
+      "roles": [
+        "P",
+        "K2"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "8/9"
+      },
+      "profile_id": 6,
+      "roles": [
+        "S",
+        "P"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "5/6",
+        "B": "1/3"
+      },
+      "profile_id": 7,
+      "roles": [
+        "S",
+        "S"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "7/18"
+      },
+      "profile_id": 8,
+      "roles": [
+        "S",
+        "C"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "5/9"
+      },
+      "profile_id": 9,
+      "roles": [
+        "S",
+        "K0"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "5/9"
+      },
+      "profile_id": 10,
+      "roles": [
+        "S",
+        "K1"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "5/9"
+      },
+      "profile_id": 11,
+      "roles": [
+        "S",
+        "K2"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "8/9"
+      },
+      "profile_id": 12,
+      "roles": [
+        "C",
+        "P"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "7/18"
+      },
+      "profile_id": 13,
+      "roles": [
+        "C",
+        "S"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "31/72"
+      },
+      "profile_id": 14,
+      "roles": [
+        "C",
+        "C"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "5/9"
+      },
+      "profile_id": 15,
+      "roles": [
+        "C",
+        "K0"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "5/9"
+      },
+      "profile_id": 16,
+      "roles": [
+        "C",
+        "K1"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "5/9"
+      },
+      "profile_id": 17,
+      "roles": [
+        "C",
+        "K2"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "8/9"
+      },
+      "profile_id": 18,
+      "roles": [
+        "K0",
+        "P"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "5/9"
+      },
+      "profile_id": 19,
+      "roles": [
+        "K0",
+        "S"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "5/9"
+      },
+      "profile_id": 20,
+      "roles": [
+        "K0",
+        "C"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "1/3",
+        "B": "1/3"
+      },
+      "profile_id": 21,
+      "roles": [
+        "K0",
+        "K0"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "2/3",
+        "B": "2/3"
+      },
+      "profile_id": 22,
+      "roles": [
+        "K0",
+        "K1"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "2/3",
+        "B": "2/3"
+      },
+      "profile_id": 23,
+      "roles": [
+        "K0",
+        "K2"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "8/9"
+      },
+      "profile_id": 24,
+      "roles": [
+        "K1",
+        "P"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "5/9"
+      },
+      "profile_id": 25,
+      "roles": [
+        "K1",
+        "S"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "5/9"
+      },
+      "profile_id": 26,
+      "roles": [
+        "K1",
+        "C"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "2/3",
+        "B": "2/3"
+      },
+      "profile_id": 27,
+      "roles": [
+        "K1",
+        "K0"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "1/3",
+        "B": "1/3"
+      },
+      "profile_id": 28,
+      "roles": [
+        "K1",
+        "K1"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "2/3",
+        "B": "2/3"
+      },
+      "profile_id": 29,
+      "roles": [
+        "K1",
+        "K2"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "8/9"
+      },
+      "profile_id": 30,
+      "roles": [
+        "K2",
+        "P"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "8/9",
+        "B": "5/9"
+      },
+      "profile_id": 31,
+      "roles": [
+        "K2",
+        "S"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "5/9",
+        "B": "5/9"
+      },
+      "profile_id": 32,
+      "roles": [
+        "K2",
+        "C"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "2/3",
+        "B": "2/3"
+      },
+      "profile_id": 33,
+      "roles": [
+        "K2",
+        "K0"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "2/3",
+        "B": "2/3"
+      },
+      "profile_id": 34,
+      "roles": [
+        "K2",
+        "K1"
+      ]
+    },
+    {
+      "by_regime": {
+        "A": "1/3",
+        "B": "1/3"
+      },
+      "profile_id": 35,
+      "roles": [
+        "K2",
+        "K2"
+      ]
+    }
+  ],
+  "source_branch_probabilities": {
+    "independent": "1/1",
+    "shared": "0/1"
+  }
+}

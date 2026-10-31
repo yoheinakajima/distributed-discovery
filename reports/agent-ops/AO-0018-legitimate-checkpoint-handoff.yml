@@ -1,0 +1,36 @@
+schema_version: agent-ops-handoff-v1
+status: legitimate-checkpoint
+repository: yoheinakajima/distributed-discovery
+task_id: AO-0018
+issue: 231
+pull_request: 232
+branch: agent/behavioral-diversity-discovery
+base_main: b02b4877b3cf11e9361be9e6aaa04e4c319461bf
+head_merge_sha: 02e95e8a6d0aa7aa0d17364d15011f07e823e240
+task_contract: tasks/behavioral-diversity-discovery.yml
+exec_plan: plans/BEHAVIORAL_DIVERSITY_DISCOVERY.md
+last_completed_gate: Authorized scientific execution and integrated acceptance complete; three immutable
+  passing DD-024 runs from caa1bf800bde9033e6b317e46bad0aff73828338; reviewed code/evidence head 02e95e8a6d0aa7aa0d17364d15011f07e823e240
+  has passing local and GitHub checks.
+next_gate: Draft PR 232 review; no new primary, claim promotion, merge, publication, or deployment is
+  implied.
+decision: Preserve the 51-reference archive, six novelty dispositions, three exact runs, and separate
+  audits as exploratory evidence. This metadata receipt records the reviewed integration head before its
+  own closeout commit; the live PR identifies the current receipt head.
+external_calls_cost:
+  calls: 0
+  cost: '0'
+  currency: USD
+private_state_change: none
+scientific_state_change: Created DD-024, six saved novelty screens, three overlap closures, and three
+  immutable passing exploratory runs across 134 parameter cells; audited finite findings, zero central
+  claim or paper promotions.
+validation:
+  profile: scientific-execution
+  result: 'Passed make bootstrap verify papers site: 1145 tests, Ruff, mypy, required audits, 54 manifests,
+    seven paper builds, and 90-page/27-study site. Reviewed-head CI 41246991408 and 41246995309 and paper/site
+    41246995313 all passed. Closeout metadata schemas and projection are checked separately.'
+owner_action: Review the completed draft PR and its current checks when ready.
+exact_next_command: git show 02e95e8a6d0aa7aa0d17364d15011f07e823e240:studies/DD-024-behavioral-diversity-discovery/report.md
+exact_next_file: studies/DD-024-behavioral-diversity-discovery/report.md
+blocker: null

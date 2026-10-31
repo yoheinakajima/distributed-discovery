@@ -1,0 +1,119 @@
+schema_version: agent-ops-task-contract-v1
+kind: task-contract
+task_id: AO-0018
+title: Novelty-first behavioral diversity and distributed discovery campaign
+task_type: scientific-execution
+status: complete
+objective: Preserve the academic landscape and conduct at most six bounded, novelty-screened synthetic research tracks under DD-024, with genuine policy evaluation, fair comparators, immutable provenance, independent checks, and calibrated conclusions.
+authority_references:
+  - {type: instruction, path: AGENTS.md}
+  - {type: instruction, path: studies/AGENTS.md}
+  - {type: instruction, path: results/AGENTS.md}
+  - {type: instruction, path: claims/AGENTS.md}
+  - {type: policy, path: docs/repository-contract.md}
+  - {type: policy, path: docs/reproducibility.md}
+  - {type: policy, path: docs/claim-status-policy.md}
+  - {type: policy, path: docs/research-governance.md}
+  - {type: policy, path: docs/agent-ops/README.md}
+  - {type: record, path: docs/program-memory/registry.yml}
+  - {type: plan, path: plans/BEHAVIORAL_DIVERSITY_DISCOVERY.md}
+owner_decisions:
+  - The current owner instruction authorizes preserving the academic literature and performing parallel quantified synthetic research; this explicitly supersedes the prior editorial-only scientific-execution limitation for this campaign alone.
+  - Use one coordinated task branch and draft pull request for DD-024, leave the expected DD-023 benchmark evaluation unallocated, and coordinate at most six research tracks within the same study.
+  - Screen and save each track's literature overlap and potential contribution before writing its scientific implementation or executing its primary configuration; classical overlap and null findings are valid outcomes.
+  - Freeze each admitted model, configuration, estimands, comparators, resources, seeds, independent verifier, corruptions, and stopping rules before primary execution from clean committed source in isolated detached worktrees.
+  - Authorize no provider calls, private data, spend, publication, submission, merge, or deployment; synthetic findings do not establish personality, human-behavior, or societal-welfare conclusions.
+  - Preserve the completed three-run allocation as audited exploratory evidence with zero central claim promotions; final repository acceptance and remote validation passed, draft review is next, and no additional primary attempt or paper promotion is inferred.
+scope:
+  paths:
+    - tasks/behavioral-diversity-discovery.yml
+    - plans/BEHAVIORAL_DIVERSITY_DISCOVERY.md
+    - plans/MASTER_EXEC_PLAN.md
+    - docs/program-memory/registry.yml
+    - docs/literature/spontaneity-exploration-planning
+    - docs/literature/index.md
+    - bibliography/references.bib
+    - docs/current-state.md
+    - docs/current-roadmap.md
+    - docs/phase-2-program-directive.md
+    - docs/phase-2-program-directive.yml
+    - studies/index.md
+    - studies/DD-024-behavioral-diversity-discovery
+    - src/distributed_discovery/behavioral_diversity
+    - src/distributed_discovery/site/build.py
+    - tests
+    - Makefile
+    - claims/claims.yml
+    - docs/claim-prominence.yml
+    - docs/paper-claim-roles.yml
+    - results/index.md
+    - results/exploratory
+    - results/verified
+    - results/refuted
+    - reports/agent-ops
+    - site/content/relations.yml
+  actions:
+    - Store the sourced literature landscape, search limitations, evidence distinctions, and repository overlap map without copying private conversation transcripts.
+    - Register DD-024 and at most six prospective tracks covering persistence and role rotation, nonstationary adaptation, commitment and switching costs, communication timing, reliability and downside, and information externalities or robustness.
+    - Admit, narrow, pivot, defer, or stop candidate tracks using recorded prior-art and classical-reduction checks before scientific code or primary execution; these mechanism areas are not fixed experimental models.
+    - Implement a genuine policy evaluator and a materially distinct verification route; an evaluator returning expected or hand-entered metrics is not evidence.
+    - Compare relevant homogeneous intermediate policies, adaptive generalists, rotating specialists, fixed mixtures, and a coordination upper benchmark where meaningful under equal evidence and action budgets.
+    - Freeze code and all per-track registrations before at most one primary sub-run per admitted track, with an initial hard cap of 120 seconds and 1024 MiB per primary sub-run.
+    - Execute admitted sub-runs in parallel only after the shared freeze, using isolated detached worktrees and noncolliding immutable output directories; serialize shared-source and ledger integration.
+    - Preserve null, negative, overlap, failed, interrupted, and resource-limited outcomes and report simulation uncertainty without turning synthetic estimates into human or social claims.
+    - Audit every proposed numerical claim separately against its immutable run and independent checks before updating the claim ledger, study status, result index, and current plans together.
+    - Maintain required scientific and public-projection mappings, validate the registered acceptance profile, and prepare one reviewable draft PR and truthful typed handoff.
+non_goals:
+  - No claim that personality types, low conscientiousness, unpredictability, or a fixed population mixture improve human welfare.
+  - No human experiment, observational human dataset, private evaluation, credential access, provider model call, cloud resource, or spend.
+  - No reuse or reclassification of historical benchmark pilots, benchmark evaluation allocation, or reopening of stopped historical formulations merely under a new label.
+  - No passing-primary rerun for freshness, unregistered parameter expansion, silent replacement of failed runs, or invented novelty or optimality.
+  - No theorem or proof promotion, paper admission or lifecycle change, canonical-upstream mutation, merge, deployment, release, DOI, submission, or external outreach.
+permissions: {repository_write: true, git_branch_commit: true, github_issue_pr: true, merge_after_checks: false, ci_pages: false}
+external_action_permissions: {network_observation: true, github_mutation: true, provider_calls: false, spend: false, release_publication: false, submission: false}
+scientific_mutation_permissions: {create_study: true, create_claim: true, create_run: true, change_evidence_status: true, change_proof_status: false, change_paper_lifecycle: false}
+private_data_permissions: {read: false, write: false, generate: false, publish: false}
+budget: {currency: USD, expected: "0", hard_cap: "0", call_cap: 0, category_caps: {}, cumulative_spend: "0"}
+expected_outcomes:
+  - A durable cited literature landscape with evidence boundaries and a saved novelty disposition for every proposed track.
+  - One registered synthetic study containing at most six exact frozen track configurations and at most six primary sub-runs, or recorded reasons for stopping without execution.
+  - Reproducible policy-evaluated outputs, independent checks, corruption results, uncertainty where applicable, and preserved nulls and failures.
+  - A separate claim audit and a source-traceable research report that distinguishes bounded computational findings from unresolved empirical questions.
+  - One validated draft PR and restartable handoff without merge or publication.
+stop_conditions:
+  - Stop a track before scientific code or primary work until its novelty and classical-overlap disposition has been saved.
+  - Stop a primary run unless the exact model, source, config, resources, estimator, seeds, comparator budgets, independent verifier, corruptions, and stopping outcomes are frozen and a draft PR exists.
+  - Stop on dirty or mismatched source, output collision, resource-cap breach, invalid comparator accounting, corruption-test failure, or unresolved independent-verifier disagreement; preserve the attempted run.
+  - Stop at six admitted tracks or six primary sub-runs; do not expand a frozen model or consume additional primary runs without a newly recorded scope decision.
+  - Stop before provider access, private-data access, spend, proof promotion, paper-lifecycle change, merge, deployment, release, DOI, submission, or external outreach.
+acceptance_profile: scientific-execution
+canonical_destinations:
+  - tasks/behavioral-diversity-discovery.yml
+  - plans/BEHAVIORAL_DIVERSITY_DISCOVERY.md
+  - docs/literature/spontaneity-exploration-planning
+  - studies/DD-024-behavioral-diversity-discovery
+  - studies/index.md
+  - claims/claims.yml
+  - results/index.md
+github: {repository: yoheinakajima/distributed-discovery, issue: 231, branch: agent/behavioral-diversity-discovery, pull_request: 232, base: main}
+exec_plan: plans/BEHAVIORAL_DIVERSITY_DISCOVERY.md
+task_delta: null
+frozen_identifiers:
+  base_main: b02b4877b3cf11e9361be9e6aaa04e4c319461bf
+  study_id: DD-024
+  program_memory_id: PM-0041
+  max_tracks: "6"
+  max_primary_subruns: "6"
+  per_primary_time_cap_seconds: "120"
+  per_primary_memory_cap_mib: "1024"
+  primary_source_commit: caa1bf800bde9033e6b317e46bad0aff73828338
+  reviewed_code_evidence_commit: 02e95e8a6d0aa7aa0d17364d15011f07e823e240
+  registered_primary_attempts: "3"
+  track_02_run: 20261031T215933Z_DD-024_caa1bf80_1d0ab47ae5
+  track_03_run: 20261031T215933Z_DD-024_caa1bf80_614ce37ebc
+  track_04_run: 20261031T215933Z_DD-024_caa1bf80_30b8369b0c
+supersession:
+  supersedes: []
+  superseded_by: null
+  reason: This new owner-authorized campaign is an additive scoped exception to the prior editorial-only execution boundary; historical tasks and their provider, private, publication, and benchmark gates remain unchanged.
+next_gate: Draft review of PR 232; M1 through M6 and final integrated acceptance are complete at reviewed code/evidence commit 02e95e8a6d0aa7aa0d17364d15011f07e823e240, with the later metadata-only closeout head identified by the PR. No execution milestone is active and no primary rerun, central claim promotion, merge, or publication is inferred.

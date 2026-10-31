@@ -1,0 +1,12 @@
+{
+  "cell_id": "m3-p1of3-q1of3",
+  "channel_id": "m3-p1of3-q1of3/disagreement_trigger",
+  "id": "m3-p1of3-q1of3/disagreement_trigger/coverage_aware",
+  "m": 3,
+  "p": "1/3",
+  "policy_id": "m3-p1of3-q1of3/disagreement_trigger/coverage_aware",
+  "protocol": "disagreement_trigger",
+  "q": "1/3",
+  "receiver": "coverage_aware",
+  "value": "1/1"
+}

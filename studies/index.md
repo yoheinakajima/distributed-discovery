@@ -28,6 +28,7 @@
 | DD-020 | Incremental Sharing and Independent Rescue | complete bounded study; output-connected Lab deployed through PR #140 | Preserve DD-C-0092 through DD-C-0096, the immutable run, theorem scope, exact Lab inputs, and arbitrary-channel counterexample |
 | DD-021 | General Sharing Frontier | complete bounded study; deployed through PR #147 | Preserve DD-C-0097 through DD-C-0103, the sole immutable run, two-method registry, minimal witnesses, centralized-authority boundary, and bounded mixed-curve null |
 | DD-022 | Coordination-Free Positive Sharing | complete bounded study; deployed through PR #151 | Preserve DD-C-0104 through DD-C-0110, the exact run, posterior-only selection scope, and every-equilibrium negative result. |
+| DD-024 | Behavioral Diversity in Discovery | three passing bounded exploratory computations; quantitative audit | Preserve six novelty dispositions and three immutable exact runs; no central claim promotion or further primary execution |
 
 Each executed directory contains its question, model, plan, claims view, status,
 results index, and report. Program V3's completed sequence is governed by

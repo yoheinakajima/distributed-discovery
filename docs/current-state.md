@@ -1,5 +1,45 @@
 # Current program state
 
+## AO-0018 complete; draft review next — 2026-10-31
+
+Issue #231 and draft PR #232 preserve the behavioral-diversity literature
+archive and DD-024 synthetic campaign. The archive contains 51 academic
+references; all six novelty screens were saved before scientific
+implementation. Tracks 01, 05, and 06 closed for overlap without primary
+execution. Tracks 02, 03, and 04 each completed one frozen primary attempt,
+covering 134 cells in total, with independent saved-output verification and
+corruption checks passed. These are execution and routing facts; their
+scientific interpretations remain in the study's report and claim audit.
+
+The primary source is `caa1bf800bde9033e6b317e46bad0aff73828338`. The
+[study results index](../studies/DD-024-behavioral-diversity-discovery/results/README.md)
+links all three unchanged run directories and post-run reviews. They remain
+audited exploratory evidence, with zero new or promoted central claims and
+no paper-provenance change. The current inventory is 27 registered studies,
+110 central claims, and 54 immutable run manifests, including 51 passing
+runs. DD-023 remains reserved for the separately gated benchmark prospectus.
+
+M1 through M6 of the [living plan](../plans/BEHAVIORAL_DIVERSITY_DISCOVERY.md)
+and AO-0018 are complete; no execution milestone is active. Full integrated
+acceptance and remote checks passed, and draft review is next. All 41 memory triggers were
+reviewed: PM-0041 is implemented within its bounded synthetic authority, and
+the previous 40 dispositions are unchanged. The
+[Phase 2 exception](phase-2-program-directive.md) applies only to AO-0018.
+This campaign used zero provider calls, private data, or spend. No further
+primary execution, central claim promotion, merge, deployment, release, or
+submission is inferred. Historical checkpoints below retain their dated
+authority and evidence boundaries.
+
+Final `make bootstrap verify papers site` exited zero with 1,145 tests in
+399.31 seconds, Ruff on 402 files, mypy on 228 sources, all required audits
+over 54 manifests, seven paper builds with unchanged PDFs, and a
+90-page/27-study site. The generated DD-024 research-index record contains
+three passing run IDs and `claim_ids: []`. Reviewed code/evidence commit H1,
+`02e95e8a6d0aa7aa0d17364d15011f07e823e240`, passed CI `41246991408`, CI
+`41246995309`, and paper-site `41246995313`. The subsequent metadata-only
+closeout commit records the receipt and handoff; its actual head is on
+draft PR #232 and is distinct from the reviewed H1 and primary-source SHAs.
+
 _TreasureBench provider-outcome policy v3 and wholly fresh v5 engineering closeout,
 2026-07-29:_ AO-0011 and issue #210 register the forward-only
 `treasurebench-agents-v1-provider-outcome-policy-v3`, campaign

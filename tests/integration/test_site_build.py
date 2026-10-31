@@ -830,12 +830,12 @@ def test_research_library_builds_from_validated_repository_evidence(tmp_path: Pa
     assert "Program V3 results" not in results_page
 
     relations = json.loads((output / "data/relations.json").read_text(encoding="utf-8"))
-    assert relations["entity_counts"]["studies"] == 26
+    assert relations["entity_counts"]["studies"] == 27
     assert relations["entity_counts"]["findings"] == 15
     assert relations["entity_counts"]["labs"] == 18
     assert relations["entity_counts"]["papers"] == 7
     assert relations["entity_counts"]["benchmark_tasks"] == 24
-    assert len(relations["relations"]) == 26
+    assert len(relations["relations"]) == 27
     for relation in relations["relations"]:
         assert (output / f"research/{relation['study_id'].lower()}.html").is_file()
         for result_id in relation["result_ids"]:

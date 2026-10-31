@@ -1,0 +1,40 @@
+{
+  "schema_version": "dd024-timing-v1",
+  "study_id": "DD-024",
+  "track_id": "track-04",
+  "target_counts": [3, 4, 5],
+  "p_values": ["chance", "1/2", "3/4", "1/1"],
+  "q_values": ["chance", "3/4", "1/1"],
+  "protocols": [
+    "early", "late", "agreement_trigger", "disagreement_trigger",
+    "yoked_agreement", "yoked_disagreement", "early_augmented", "late_augmented"
+  ],
+  "receivers": ["individual_map", "coverage_aware"],
+  "objective": "terminal_team_union_discovery",
+  "sender_policy": "posterior_mode_then_next_after_failure_lowest_label_ties",
+  "success_continuation_action": 0,
+  "clue_budget": {"sender": 2, "receiver": 1, "total": 3},
+  "action_budget": {"sender": 2, "receiver": 2, "total": 4},
+  "packet_budget": 1,
+  "own_feedback": "perfect_detection",
+  "other_agent_actions_and_outcomes": "unobserved",
+  "silence": "observed_and_conditioned_on",
+  "arithmetic": "exact_rational",
+  "tie_break": "lowest_target_label",
+  "zero_mass_information_sets": "omitted_with_action_zero_default",
+  "evidence_class": "bounded_exact_finite_computation",
+  "time_cap_seconds": 120,
+  "memory_cap_mb": 1024,
+  "random_seeds": {"algorithm": [], "model": null},
+  "verification": {
+    "method": "independent_raw_world_policy_execution_and_all_local_deviations",
+    "label_check": "cyclic_conjugation_with_transformed_tie_priority",
+    "emulation": "both_event_policies_under_early_augmented_transcript",
+    "corruptions": ["trigger", "arrival", "silence_likelihood", "payload_alphabet", "value"]
+  },
+  "stop_conditions": [
+    "resource_cap", "source_or_config_mismatch", "probability_or_budget_mismatch",
+    "information_leakage", "independent_verifier_disagreement", "corruption_not_detected",
+    "event_emulation_failure", "positive_coverage_aware_transcript_matched_residual"
+  ]
+}

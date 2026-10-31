@@ -1,5 +1,54 @@
 schema_version: 1
 effective_date: "2026-07-23"
+scoped_owner_exceptions:
+  - task_id: AO-0018
+    effective_date: "2026-10-31"
+    authority: tasks/behavioral-diversity-discovery.yml
+    program_memory: PM-0041
+    study_id: DD-024
+    exec_plan: plans/BEHAVIORAL_DIVERSITY_DISCOVERY.md
+    status: complete-draft-review-next
+    scope: Preserve the sourced academic landscape and complete one bounded novelty-first synthetic campaign; this exception does not change the general Phase 2 gate.
+    execution:
+      primary_source_commit: caa1bf800bde9033e6b317e46bad0aff73828338
+      archived_references: 51
+      saved_novelty_screens: 6
+      overlap_closures_without_primary: 3
+      registered_primary_attempts: 3
+      completed_passing_primary_attempts: 3
+      registered_cells: 134
+      per_worker_time_cap_seconds: 120
+      per_worker_memory_cap_mib: 1024
+      results_index: studies/DD-024-behavioral-diversity-discovery/results/README.md
+      evidence_disposition: audited-exploratory
+      central_claim_promotions: 0
+      primary_attempts_consumed: true
+    acceptance:
+      status: passed
+      reviewed_code_evidence_commit: 02e95e8a6d0aa7aa0d17364d15011f07e823e240
+      command: make bootstrap verify papers site
+      exit_code: 0
+      tests_passed: 1145
+      test_duration_seconds: 399.31
+      ruff_files: 402
+      mypy_sources: 228
+      audited_manifests: 54
+      paper_builds: 7
+      paper_pdfs_unchanged: true
+      site_pages: 90
+      site_studies: 27
+      github_check_runs: [41246991408, 41246995309, 41246995313]
+      github_check_conclusions: success
+      closeout_head: Later metadata-only receipt and handoff commit identified by draft PR 232; distinct from the reviewed code/evidence commit.
+    next_gate: Draft review on PR 232; all six milestones and the task are complete, with no active execution milestone or merge authority.
+    no_authority_for:
+      - additional primary execution or parameter expansion
+      - central claim or proof promotion
+      - paper admission or lifecycle change
+      - provider or model calls, private data, or spend
+      - Reliable Discovery or claim-grade benchmark execution
+      - human engagement or external outreach
+      - publication, release, DOI, submission, merge, or deployment
 phase_1:
   status: complete
   boundary:

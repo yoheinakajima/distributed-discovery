@@ -1,0 +1,363 @@
+{
+  "status": "intake-crosswalk-not-manuscript-bibliography-promotion",
+  "access_date": "2026-10-31",
+  "references": [
+    {
+      "review_number": 1,
+      "title": "Exploration and Exploitation in Organizational Learning",
+      "stable_url": "https://doi.org/10.1287/orsc.2.1.71",
+      "existing_bibtex_key": "March1991",
+      "evidence_class": "Formal models"
+    },
+    {
+      "review_number": 2,
+      "title": "Maintaining Transient Diversity Is a General Principle for Improving Collective Problem Solving",
+      "stable_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10913329/",
+      "existing_bibtex_key": null,
+      "evidence_class": "Interdisciplinary synthesis"
+    },
+    {
+      "review_number": 3,
+      "title": "The Evolution of Complementary Cognition: Humans Cooperatively Adapt and Evolve through a System of Collective Cognitive Search",
+      "stable_url": "https://doi.org/10.1017/S0959774321000329",
+      "existing_bibtex_key": null,
+      "evidence_class": "Evolutionary theory"
+    },
+    {
+      "review_number": 4,
+      "title": "The diversity advantage: An explanatory framework for personality traits",
+      "stable_url": "https://doi.org/10.1177/08902070241228327",
+      "existing_bibtex_key": null,
+      "evidence_class": "Theoretical framework"
+    },
+    {
+      "review_number": 5,
+      "title": "Bounded personality diversity boosts collective intelligence: a swarm optimization approach",
+      "stable_url": "https://doi.org/10.3389/fpsyg.2026.1774466",
+      "existing_bibtex_key": null,
+      "evidence_class": "Computational study"
+    },
+    {
+      "review_number": 6,
+      "title": "The Big Five and divergent thinking: A meta-analysis",
+      "stable_url": "https://doi.org/10.1016/j.paid.2023.112338",
+      "existing_bibtex_key": null,
+      "evidence_class": "Meta-analysis"
+    },
+    {
+      "review_number": 7,
+      "title": "A meta-analysis of personality in scientific and artistic creativity",
+      "stable_url": "https://doi.org/10.1207/s15327957pspr0204_5",
+      "existing_bibtex_key": null,
+      "evidence_class": "Meta-analysis"
+    },
+    {
+      "review_number": 8,
+      "title": "Meta-analytic relations between personality and cognitive ability",
+      "stable_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10266031/",
+      "existing_bibtex_key": null,
+      "evidence_class": "Meta-analytic synthesis"
+    },
+    {
+      "review_number": 9,
+      "title": "Humans use directed and random exploration to solve the explore-exploit dilemma",
+      "stable_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5635655/",
+      "existing_bibtex_key": null,
+      "evidence_class": "Human experiment"
+    },
+    {
+      "review_number": 10,
+      "title": "Coping flexibility and psychological adjustment to stressful life changes: A meta-analytic review",
+      "stable_url": "https://pubmed.ncbi.nlm.nih.gov/25222637/",
+      "existing_bibtex_key": null,
+      "evidence_class": "Meta-analysis"
+    },
+    {
+      "review_number": 11,
+      "title": "A meta-analytic review and conceptual model of the antecedents and outcomes of goal adjustment in response to striving difficulties",
+      "stable_url": "https://doi.org/10.1038/s41562-025-02312-4",
+      "existing_bibtex_key": null,
+      "evidence_class": "Meta-analysis"
+    },
+    {
+      "review_number": 12,
+      "title": "Does time management work? A meta-analysis",
+      "stable_url": "https://doi.org/10.1371/journal.pone.0245066",
+      "existing_bibtex_key": null,
+      "evidence_class": "Meta-analysis"
+    },
+    {
+      "review_number": 13,
+      "title": "A gradient of childhood self-control predicts health, wealth, and public safety",
+      "stable_url": "https://pubmed.ncbi.nlm.nih.gov/21262822/",
+      "existing_bibtex_key": null,
+      "evidence_class": "Longitudinal observational study"
+    },
+    {
+      "review_number": 14,
+      "title": "Planned Happenstance: Constructing Unexpected Career Opportunities",
+      "stable_url": "https://doi.org/10.1002/j.1556-6676.1999.tb02431.x",
+      "existing_bibtex_key": null,
+      "evidence_class": "Career theory"
+    },
+    {
+      "review_number": 15,
+      "title": "Longitudinal Relationships Between Planned Happenstance Skills and Life Adjustment and the Moderating Role of Career Barriers",
+      "stable_url": "https://doi.org/10.1177/0894845316681078",
+      "existing_bibtex_key": null,
+      "evidence_class": "Longitudinal observational study"
+    },
+    {
+      "review_number": 16,
+      "title": "The Chaos Theory of Careers",
+      "stable_url": "https://doi.org/10.1177/103841620301200304",
+      "existing_bibtex_key": null,
+      "evidence_class": "Career theory"
+    },
+    {
+      "review_number": 17,
+      "title": "The Calendar Mindset: Scheduling Takes the Fun Out and Puts the Work In",
+      "stable_url": "https://doi.org/10.1509/jmr.14.0591",
+      "existing_bibtex_key": null,
+      "evidence_class": "Series of experiments"
+    },
+    {
+      "review_number": 18,
+      "title": "Does incubation enhance problem solving? A meta-analytic review",
+      "stable_url": "https://pubmed.ncbi.nlm.nih.gov/19210055/",
+      "existing_bibtex_key": null,
+      "evidence_class": "Meta-analysis"
+    },
+    {
+      "review_number": 19,
+      "title": "Causation and Effectuation: Toward a Theoretical Shift from Economic Inevitability to Entrepreneurial Contingency",
+      "stable_url": "https://doi.org/10.5465/amr.2001.4378020",
+      "existing_bibtex_key": null,
+      "evidence_class": "Entrepreneurship theory"
+    },
+    {
+      "review_number": 20,
+      "title": "Should entrepreneurs plan or just storm the castle? A meta-analysis on contextual factors impacting the business planning-performance relationship in small firms",
+      "stable_url": "https://doi.org/10.1016/j.jbusvent.2008.10.007",
+      "existing_bibtex_key": null,
+      "evidence_class": "Meta-analysis"
+    },
+    {
+      "review_number": 21,
+      "title": "Get It Together! Synergistic Effects of Causal and Effectual Decision-Making Logics on Venture Performance",
+      "stable_url": "https://doi.org/10.1177/1042258718783429",
+      "existing_bibtex_key": null,
+      "evidence_class": "Cross-country observational survey"
+    },
+    {
+      "review_number": 22,
+      "title": "Organizational Ambidexterity and Performance: A Meta-Analysis",
+      "stable_url": "https://doi.org/10.5465/amp.2012.0015",
+      "existing_bibtex_key": null,
+      "evidence_class": "Meta-analysis"
+    },
+    {
+      "review_number": 23,
+      "title": "Planning and Performance in Teams: A Bayesian Meta-Analytic Structural Equation Modeling Approach",
+      "stable_url": "https://doi.org/10.1371/journal.pone.0279933",
+      "existing_bibtex_key": null,
+      "evidence_class": "Meta-analysis"
+    },
+    {
+      "review_number": 24,
+      "title": "Personality and Team Performance: A Meta-Analysis",
+      "stable_url": "https://doi.org/10.1002/per.588",
+      "existing_bibtex_key": null,
+      "evidence_class": "Meta-analysis"
+    },
+    {
+      "review_number": 25,
+      "title": "The Big Five and Collaborative Problem Solving: A Narrative Systematic Review",
+      "stable_url": "https://doi.org/10.1177/08902070231198650",
+      "existing_bibtex_key": null,
+      "evidence_class": "Systematic narrative review"
+    },
+    {
+      "review_number": 26,
+      "title": "Minority Dissent and Team Innovation: The Importance of Participation in Decision Making",
+      "stable_url": "https://doi.org/10.1037/0021-9010.86.6.1191",
+      "existing_bibtex_key": null,
+      "evidence_class": "Two organizational field studies"
+    },
+    {
+      "review_number": 27,
+      "title": "Devil's Advocate versus Authentic Dissent: Stimulating Quantity and Quality",
+      "stable_url": "https://doi.org/10.1002/ejsp.58",
+      "existing_bibtex_key": null,
+      "evidence_class": "Experiment"
+    },
+    {
+      "review_number": 28,
+      "title": "The Paradox of Intragroup Conflict: A Meta-Analysis",
+      "stable_url": "https://pubmed.ncbi.nlm.nih.gov/21842974/",
+      "existing_bibtex_key": null,
+      "evidence_class": "Meta-analysis"
+    },
+    {
+      "review_number": 29,
+      "title": "Locally noisy autonomous agents improve global human coordination in network experiments",
+      "stable_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5912653/",
+      "existing_bibtex_key": null,
+      "evidence_class": "Randomized network experiments"
+    },
+    {
+      "review_number": 30,
+      "title": "How intermittent breaks in interaction improve collective intelligence",
+      "stable_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6126746/",
+      "existing_bibtex_key": null,
+      "evidence_class": "Human group experiments"
+    },
+    {
+      "review_number": 31,
+      "title": "Groups of diverse problem solvers can outperform groups of high-ability problem solvers",
+      "stable_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC528939/",
+      "existing_bibtex_key": "HongPage2004",
+      "evidence_class": "Mathematical model and simulations"
+    },
+    {
+      "review_number": 32,
+      "title": "Collaborative learning in networks",
+      "stable_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3271930/",
+      "existing_bibtex_key": null,
+      "evidence_class": "Human network experiments"
+    },
+    {
+      "review_number": 33,
+      "title": "Partial connectivity increases cultural accumulation within groups",
+      "stable_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4801235/",
+      "existing_bibtex_key": null,
+      "evidence_class": "Human cultural-evolution experiment"
+    },
+    {
+      "review_number": 34,
+      "title": "Collective incentives reduce over-exploitation of social information in unconstrained human groups",
+      "stable_url": "https://doi.org/10.1038/s41467-024-47010-3",
+      "existing_bibtex_key": null,
+      "evidence_class": "Immersive human group experiment"
+    },
+    {
+      "review_number": 35,
+      "title": "Payoff selectivity drives collective intelligence during dynamic resource tracking in humans",
+      "stable_url": "https://doi.org/10.1038/s41467-026-77762-z",
+      "existing_bibtex_key": null,
+      "evidence_class": "Human experiment and computational analysis"
+    },
+    {
+      "review_number": 36,
+      "title": "Strategic Experimentation",
+      "stable_url": "https://doi.org/10.1111/1468-0262.00022",
+      "existing_bibtex_key": "BoltonHarris1999",
+      "evidence_class": "Economic model"
+    },
+    {
+      "review_number": 37,
+      "title": "Incentives and Creativity: Evidence from the Academic Life Sciences",
+      "stable_url": "https://doi.org/10.1111/j.1756-2171.2011.00140.x",
+      "existing_bibtex_key": null,
+      "evidence_class": "Observational quasi-experimental analysis"
+    },
+    {
+      "review_number": 38,
+      "title": "Structural Holes and Good Ideas",
+      "stable_url": "https://doi.org/10.1086/421787",
+      "existing_bibtex_key": null,
+      "evidence_class": "Organizational network study"
+    },
+    {
+      "review_number": 39,
+      "title": "The Impact of Culture on Creativity: How Cultural Tightness and Cultural Distance Affect Global Innovation Crowdsourcing Work",
+      "stable_url": "https://doi.org/10.1177/0001839214563595",
+      "existing_bibtex_key": null,
+      "evidence_class": "Cross-cultural field study"
+    },
+    {
+      "review_number": 40,
+      "title": "Atypical Combinations and Scientific Impact",
+      "stable_url": "https://doi.org/10.1126/science.1240474",
+      "existing_bibtex_key": null,
+      "evidence_class": "Bibliometric observational study"
+    },
+    {
+      "review_number": 41,
+      "title": "Large teams develop and small teams disrupt science and technology",
+      "stable_url": "https://doi.org/10.1038/s41586-019-0941-9",
+      "existing_bibtex_key": null,
+      "evidence_class": "Large-scale observational analysis"
+    },
+    {
+      "review_number": 42,
+      "title": "Evolutionary emergence of responsive and unresponsive personalities",
+      "stable_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2572984/",
+      "existing_bibtex_key": null,
+      "evidence_class": "Evolutionary model"
+    },
+    {
+      "review_number": 43,
+      "title": "Molecular determinants of scouting behavior in honey bees",
+      "stable_url": "https://pubmed.ncbi.nlm.nih.gov/22403390/",
+      "existing_bibtex_key": null,
+      "evidence_class": "Animal behavior and biological experiments"
+    },
+    {
+      "review_number": 44,
+      "title": "Why Copy Others? Insights from the Social Learning Strategies Tournament",
+      "stable_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2989663/",
+      "existing_bibtex_key": null,
+      "evidence_class": "Computational strategy tournament"
+    },
+    {
+      "review_number": 45,
+      "title": "Changes in cognitive flexibility and hypothesis search across human life history from childhood to adolescence to adulthood",
+      "stable_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5544286/",
+      "existing_bibtex_key": null,
+      "evidence_class": "Developmental experiments and synthesis"
+    },
+    {
+      "review_number": 46,
+      "title": "The Epistemic Benefit of Transient Diversity",
+      "stable_url": "https://doi.org/10.1007/s10670-009-9194-6",
+      "existing_bibtex_key": "Zollman2010",
+      "evidence_class": "Formal social-epistemology model"
+    },
+    {
+      "review_number": 47,
+      "title": "How should we promote transient diversity in science?",
+      "stable_url": "https://doi.org/10.1007/s11229-023-04037-1",
+      "existing_bibtex_key": null,
+      "evidence_class": "Theoretical and methodological analysis"
+    },
+    {
+      "review_number": 48,
+      "title": "The Impact of Cognitive Style Diversity on Implicit Learning in Teams",
+      "stable_url": "https://doi.org/10.3389/fpsyg.2019.00112",
+      "existing_bibtex_key": null,
+      "evidence_class": "Human team study"
+    },
+    {
+      "review_number": 49,
+      "title": "The evolution of personality variation in humans and other animals",
+      "stable_url": "https://pubmed.ncbi.nlm.nih.gov/16953749/",
+      "existing_bibtex_key": null,
+      "evidence_class": "Evolutionary theoretical review"
+    },
+    {
+      "review_number": 50,
+      "title": "Optimal Structure, Market Dynamism, and the Strategy of Simple Rules",
+      "stable_url": "https://doi.org/10.2189/asqu.2009.54.3.413",
+      "existing_bibtex_key": null,
+      "evidence_class": "Computational and mathematical model"
+    },
+    {
+      "review_number": 51,
+      "title": "Implementation Intentions and Goal Achievement: A Meta-Analysis of Effects and Processes",
+      "stable_url": "https://doi.org/10.1016/S0065-2601(06)38002-1",
+      "existing_bibtex_key": null,
+      "evidence_class": "Meta-analysis"
+    }
+  ]
+}
