@@ -1,0 +1,10 @@
+{
+  "claim_promotion": "separate audit required",
+  "elapsed_seconds": 2.471802,
+  "exactness_scope": "declared finite model and policy class only",
+  "memory_cap_mb": 1024,
+  "passed": true,
+  "problems": [],
+  "termination": "completed",
+  "time_cap_seconds": 120
+}

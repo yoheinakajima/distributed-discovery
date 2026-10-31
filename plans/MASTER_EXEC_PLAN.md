@@ -1,6 +1,34 @@
 # Master execution plan
 
-## Active AO-0018 behavioral-diversity discovery campaign (2026-10-31)
+## Active AO-0018 final integration and draft review (2026-10-31)
+
+Issue #231 and draft PR #232 coordinate DD-024 on
+`agent/behavioral-diversity-discovery`, under
+[`tasks/behavioral-diversity-discovery.yml`](../tasks/behavioral-diversity-discovery.yml)
+and the [living plan](BEHAVIORAL_DIVERSITY_DISCOVERY.md). M1 through M5 are
+complete; **M6 is the sole active milestone**, covering final integrated
+acceptance, the remote checkpoint, and a truthful typed handoff.
+
+The preserved literature contains 51 references. Six saved novelty screens
+produced three overlap closures and three admitted primary attempts. All
+three passed from clean detached worktrees at frozen source
+`caa1bf800bde9033e6b317e46bad0aff73828338`, covering 134 registered cells.
+Their immutable evidence and independent reviews are routed by the
+[study results index](../studies/DD-024-behavioral-diversity-discovery/results/README.md).
+They remain audited exploratory findings with **zero central claim
+promotions**; the central ledger remains at 110 claims. The current inventory
+contains 27 studies and 54 immutable runs, including 51 passing runs.
+
+All 41 program-memory records were reconciled. PM-0041 is implemented within
+this bounded synthetic lane; no earlier pending trigger was satisfied by the
+campaign. The [Phase 2 directive](../docs/phase-2-program-directive.md) records
+only this scoped exception to its general freeze. Provider calls, private
+data, spend, additional primary attempts, proof promotion, publication,
+submission, merge, and deployment remain outside this closeout. Final
+acceptance and the remote draft checkpoint are pending, not implied by the
+earlier source-freeze checks.
+
+## AO-0018 registration checkpoint (2026-10-31; historical)
 
 The current owner instruction authorizes preserving the sourced academic
 landscape and conducting novelty-first parallel synthetic research under one

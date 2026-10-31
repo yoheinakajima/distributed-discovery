@@ -1,4 +1,31 @@
-# Current roadmap — provider-outcome policy v3 and v5 engineering closeout
+# Current roadmap
+
+## AO-0018 final acceptance and draft review — active, 2026-10-31
+
+The current work is M6 of
+[`plans/BEHAVIORAL_DIVERSITY_DISCOVERY.md`](../plans/BEHAVIORAL_DIVERSITY_DISCOVERY.md),
+on issue #231 and draft PR #232. M1 through M5 are complete: 51 academic
+references are archived, six novelty screens are saved, three tracks closed
+for overlap, and three bounded primary runs passed across 134 registered
+cells. The immutable primary source is
+`caa1bf800bde9033e6b317e46bad0aff73828338`; the
+[study results index](../studies/DD-024-behavioral-diversity-discovery/results/README.md)
+routes the saved evidence and independent reviews. The three runs remain
+exploratory, and zero central claims are added or promoted.
+
+The remaining authorized steps are final integrated acceptance under the
+scientific-execution profile, source-to-report reconciliation, the current
+branch-head remote checkpoint, and a truthful typed handoff on draft
+PR #232. Do not rerun the consumed primary configurations for freshness.
+PM-0041 is implemented; the dated 41-record trigger audit is in the living
+plan, and no earlier gate is newly satisfied by this campaign.
+
+The scoped [AO-0018 Phase 2 exception](phase-2-program-directive.md) does not
+open the Reliable Discovery theorem family, claim-grade benchmark,
+provider/private-data/spend, human-engagement, publication, or merge gates.
+The campaign makes no new scientific effect assertion in this roadmap.
+Further research requires a newly recorded scope decision. The following
+dated roadmap entries remain historical records of their own tasks.
 
 ## AO-0011 engineering-complete public closeout — complete
 

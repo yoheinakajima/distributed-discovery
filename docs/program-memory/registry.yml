@@ -763,18 +763,18 @@ records:
     last_reviewed: "2026-08-06"
   - idea_id: PM-0041
     title: Novelty-first behavioral diversity and distributed discovery campaign
-    status: routed
+    status: implemented
     capture_classification: capture-now
     visibility: public
     source_type: owner-decision
     captured_date: "2026-10-31"
     proposition: The owner authorizes preserving the sourced academic landscape and conducting at most six novelty-screened parallel synthetic research tracks under one coordinated study, with frozen models and fair comparators, real policy evaluation, immutable provenance, independent verification, and calibrated claim audit.
-    why_it_matters: This creates a bounded additive scientific-execution lane beyond the prior editorial-only scope while preserving historical evidence and the separate provider, private-data, benchmark, and publication boundaries.
+    why_it_matters: This implements a bounded additive scientific-execution lane beyond the prior editorial-only scope through 51 archived references, six saved novelty screens, three overlap closures, and three frozen primary attempts with independent verification and a separate exploratory claim audit; final acceptance and draft review remain active while historical evidence and separate provider, private-data, benchmark, and publication boundaries are preserved.
     canonical_destination: {type: decision-record, path: tasks/behavioral-diversity-discovery.yml}
     dependencies: [PM-0001, PM-0003, PM-0004, PM-0032]
-    promotion_trigger: Each admitted track saves its novelty disposition before scientific code and freezes its exact model, config, evaluator, independent verifier, corruptions, and stopping rules before a clean-source bounded primary sub-run.
+    promotion_trigger: null
     permitted_stops: [implemented, deferred, rejected, superseded, closed-by-overlap, closed-by-null]
-    not_a_result_boundaries: [synthetic campaign authorization only, no guaranteed novelty or positive mixture effect, no personality or human-welfare inference, no provider calls private data spend proof promotion publication submission merge or deployment]
+    not_a_result_boundaries: [synthetic campaign authorization only, no guaranteed novelty or positive mixture effect, no personality or human-welfare inference, no provider calls private data spend proof promotion publication submission merge or deployment, three registered primary attempts consumed; additional execution requires a newly recorded scope decision, zero central claim promotions; implemented authorization is not scientific evidence or paper admission]
     supersedes: []
     superseded_by: null
     review_after: explicit-owner-decision

@@ -1,0 +1,12 @@
+{
+  "cell_id": "m3-p1of1-q1of1",
+  "channel_id": "m3-p1of1-q1of1/yoked_agreement",
+  "id": "m3-p1of1-q1of1/yoked_agreement/coverage_aware",
+  "m": 3,
+  "p": "1/1",
+  "policy_id": "m3-p1of1-q1of1/yoked_agreement/coverage_aware",
+  "protocol": "yoked_agreement",
+  "q": "1/1",
+  "receiver": "coverage_aware",
+  "value": "1/1"
+}

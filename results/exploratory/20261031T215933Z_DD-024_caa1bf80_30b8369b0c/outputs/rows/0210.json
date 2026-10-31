@@ -1,0 +1,12 @@
+{
+  "cell_id": "m4-p1of4-q3of4",
+  "channel_id": "m4-p1of4-q3of4/late",
+  "id": "m4-p1of4-q3of4/late/individual_map",
+  "m": 4,
+  "p": "1/4",
+  "policy_id": "m4-p1of4-q3of4/late/individual_map",
+  "protocol": "late",
+  "q": "3/4",
+  "receiver": "individual_map",
+  "value": "7/8"
+}

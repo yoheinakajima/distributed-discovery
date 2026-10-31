@@ -1,5 +1,6 @@
 study_id: DD-024
-status: registered-source-freeze
-evidence_status: no-new-experiment-or-result
-next_action: execute three registered primary attempts once from clean detached worktrees at the source-freeze commit; retain track01 track05 track06 overlap closures
-updated_utc: 2026-10-31T21:58:22Z
+status: complete-bounded-study
+evidence_status: audited-exploratory-synthetic-computations-no-central-claim-promotion
+next_action: preserve the three immutable runs and bounded interpretations; complete integration acceptance
+  and draft PR review without another primary
+updated_utc: '2026-10-31T22:07:52Z'

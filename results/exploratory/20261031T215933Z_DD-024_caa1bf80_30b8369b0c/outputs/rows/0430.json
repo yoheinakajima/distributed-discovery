@@ -1,0 +1,12 @@
+{
+  "cell_id": "m5-p1of5-q1of1",
+  "channel_id": "m5-p1of5-q1of1/late_augmented",
+  "id": "m5-p1of5-q1of1/late_augmented/individual_map",
+  "m": 5,
+  "p": "1/5",
+  "policy_id": "m5-p1of5-q1of1/late_augmented/individual_map",
+  "protocol": "late_augmented",
+  "q": "1/1",
+  "receiver": "individual_map",
+  "value": "1/1"
+}

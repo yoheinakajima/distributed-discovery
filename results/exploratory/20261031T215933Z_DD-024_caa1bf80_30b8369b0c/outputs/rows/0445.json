@@ -1,0 +1,12 @@
+{
+  "cell_id": "m5-p1of2-q1of5",
+  "channel_id": "m5-p1of2-q1of5/early_augmented",
+  "id": "m5-p1of2-q1of5/early_augmented/coverage_aware",
+  "m": 5,
+  "p": "1/2",
+  "policy_id": "m5-p1of2-q1of5/early_augmented/coverage_aware",
+  "protocol": "early_augmented",
+  "q": "1/5",
+  "receiver": "coverage_aware",
+  "value": "59/64"
+}

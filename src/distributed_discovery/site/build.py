@@ -235,8 +235,9 @@ def _canonical_data(run: Path) -> dict[str, Any]:
 
 
 def _study_data(
-    root: Path, claims_by_id: dict[str, dict[str, Any]], run_ids: set[str]
+    root: Path, claims_by_id: dict[str, dict[str, Any]], run_studies: dict[str, str]
 ) -> list[dict[str, Any]]:
+    """Associate claims and declared evidence with validated passing manifests."""
     studies: list[dict[str, Any]] = []
     for directory in sorted((root / "studies").glob("DD-0*")):
         public_path = directory / "public.yml"
@@ -273,12 +274,26 @@ def _study_data(
                 raise RuntimeError(f"unsafe public artifact for {study_id}: {path}")
             checked_artifacts.append({"path": path, "description": description})
         study_claims = [claim for claim in claims_by_id.values() if claim["study_id"] == study_id]
-        referenced_runs = sorted(
-            {run_id for claim in study_claims for run_id in (claim.get("run_ids") or [])}
-        )
-        missing_runs = set(referenced_runs) - run_ids
+        claim_runs = {run_id for claim in study_claims for run_id in (claim.get("run_ids") or [])}
+        missing_runs = claim_runs - run_studies.keys()
         if missing_runs:
             raise RuntimeError(f"claim refers to missing/nonpassing run(s): {sorted(missing_runs)}")
+        declared_runs = public.get("run_ids", [])
+        if not isinstance(declared_runs, list) or any(
+            not isinstance(run_id, str) or not run_id for run_id in declared_runs
+        ):
+            raise RuntimeError(f"invalid declared run IDs for {study_id}")
+        missing_declared = set(declared_runs) - run_studies.keys()
+        if missing_declared:
+            raise RuntimeError(
+                f"{study_id} declares missing/nonpassing run(s): {sorted(missing_declared)}"
+            )
+        for run_id in declared_runs:
+            if run_studies[run_id] != study_id:
+                raise RuntimeError(
+                    f"declared run {run_id} belongs to a different study: {study_id}"
+                )
+        referenced_runs = sorted(claim_runs | set(declared_runs))
         question = " ".join(
             line.strip()
             for line in (directory / "question.md").read_text(encoding="utf-8").splitlines()
@@ -5091,8 +5106,9 @@ def validate_site(output: Path, routes: list[dict[str, str]]) -> dict[str, Any]:
 def build(root: Path, output: Path) -> dict[str, Any]:
     load_copy_map(root / "design/site-refresh/copy-map.yml")
     claims, claims_by_id = _claim_data(root)
-    runs, run_ids = _runs(root)
-    studies = _study_data(root, claims_by_id, run_ids)
+    runs, _ = _runs(root)
+    run_studies = {run["run_id"]: run["study_id"] for run in runs}
+    studies = _study_data(root, claims_by_id, run_studies)
     publications = _publications(root)
     source = root / "site/src"
     if output.exists():

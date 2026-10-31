@@ -1,0 +1,28 @@
+{
+  "cell_count": 18,
+  "deterministic_plan_count": 15768,
+  "evidence_scope": "exact-finite-six-role-class-not-unrestricted-policies",
+  "maximum_mixture_gap": "1/4",
+  "positive_mixture_gap_cells": [
+    "rho0-none-tau2",
+    "rho0-noisy-tau2",
+    "rhohalf-none-tau2",
+    "rhohalf-noisy-tau2",
+    "rho1-none-tau2"
+  ],
+  "zero_mixture_gap_cells": [
+    "rho0-none-tau1",
+    "rho0-noisy-tau1",
+    "rho0-perfect-tau1",
+    "rho0-perfect-tau2",
+    "rhohalf-none-tau1",
+    "rhohalf-noisy-tau1",
+    "rhohalf-perfect-tau1",
+    "rhohalf-perfect-tau2",
+    "rho1-none-tau1",
+    "rho1-noisy-tau1",
+    "rho1-noisy-tau2",
+    "rho1-perfect-tau1",
+    "rho1-perfect-tau2"
+  ]
+}

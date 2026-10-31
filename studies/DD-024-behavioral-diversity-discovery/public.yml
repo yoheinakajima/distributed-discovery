@@ -1,12 +1,21 @@
 study_id: DD-024
 title: Behavioral Diversity in Discovery
 slug: dd-024
-phase: registered
-summary: A novelty-screened synthetic campaign separating coordinated randomness, persistent search failures, and information in message timing; three exact diagnostic grids are registered and no primary result exists yet.
+phase: complete-bounded-study
+summary: Three exact finite experiments distinguish coordinated ambiguity hedging, dependent search failures,
+  and information in message timing; six novelty screens and audited exploratory evidence, with no central
+  claim promotion.
 public_artifacts:
-  - path: studies/DD-024-behavioral-diversity-discovery/README.md
-    description: Research question, scope, and novelty-first registration sequence
-  - path: docs/literature/spontaneity-exploration-planning/review.md
-    description: Interdisciplinary background review with 51 annotated academic sources
+- path: studies/DD-024-behavioral-diversity-discovery/report.md
+  description: Complete bounded findings, null controls, literature integration, and interpretation limits
+- path: studies/DD-024-behavioral-diversity-discovery/claim-audit.md
+  description: Separate quantitative audit with no central claim promotion
+- path: studies/DD-024-behavioral-diversity-discovery/results/README.md
+  description: Three immutable passing runs and frozen-source verification instructions
+- path: docs/literature/spontaneity-exploration-planning/review.md
+  description: Interdisciplinary literature landscape with 51 annotated academic sources
 claim_ids: []
-run_ids: []
+run_ids:
+- 20261031T215933Z_DD-024_caa1bf80_1d0ab47ae5
+- 20261031T215933Z_DD-024_caa1bf80_614ce37ebc
+- 20261031T215933Z_DD-024_caa1bf80_30b8369b0c

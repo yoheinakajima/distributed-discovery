@@ -23,6 +23,7 @@ owner_decisions:
   - Screen and save each track's literature overlap and potential contribution before writing its scientific implementation or executing its primary configuration; classical overlap and null findings are valid outcomes.
   - Freeze each admitted model, configuration, estimands, comparators, resources, seeds, independent verifier, corruptions, and stopping rules before primary execution from clean committed source in isolated detached worktrees.
   - Authorize no provider calls, private data, spend, publication, submission, merge, or deployment; synthetic findings do not establish personality, human-behavior, or societal-welfare conclusions.
+  - Preserve the completed three-run allocation as audited exploratory evidence with zero central claim promotions; final repository validation and draft review remain authorized, while no additional primary attempt or paper promotion is inferred.
 scope:
   paths:
     - tasks/behavioral-diversity-discovery.yml
@@ -39,6 +40,7 @@ scope:
     - studies/index.md
     - studies/DD-024-behavioral-diversity-discovery
     - src/distributed_discovery/behavioral_diversity
+    - src/distributed_discovery/site/build.py
     - tests
     - Makefile
     - claims/claims.yml
@@ -104,8 +106,13 @@ frozen_identifiers:
   max_primary_subruns: "6"
   per_primary_time_cap_seconds: "120"
   per_primary_memory_cap_mib: "1024"
+  primary_source_commit: caa1bf800bde9033e6b317e46bad0aff73828338
+  registered_primary_attempts: "3"
+  track_02_run: 20261031T215933Z_DD-024_caa1bf80_1d0ab47ae5
+  track_03_run: 20261031T215933Z_DD-024_caa1bf80_614ce37ebc
+  track_04_run: 20261031T215933Z_DD-024_caa1bf80_30b8369b0c
 supersession:
   supersedes: []
   superseded_by: null
   reason: This new owner-authorized campaign is an additive scoped exception to the prior editorial-only execution boundary; historical tasks and their provider, private, publication, and benchmark gates remain unchanged.
-next_gate: Complete source preservation and saved novelty dispositions, then freeze each admitted DD-024 track and its real evaluator before clean-source bounded primary execution; no additional permission request is required for synthetic work already authorized here.
+next_gate: Complete final integrated scientific-execution acceptance, source-to-report validation, and the current-head remote checkpoint on draft PR 232, then record a truthful typed handoff for draft review; M1 through M5 are complete, M6 remains active, and no primary rerun, central claim promotion, merge, or publication is inferred.

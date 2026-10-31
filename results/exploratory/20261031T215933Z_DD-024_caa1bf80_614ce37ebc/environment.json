@@ -1,0 +1,9 @@
+{
+  "packages": {
+    "PyYAML": "6.0.3",
+    "jsonschema": "4.26.0",
+    "pytest": "8.4.2"
+  },
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "python": "3.12.14"
+}

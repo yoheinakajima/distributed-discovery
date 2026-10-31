@@ -1,0 +1,20 @@
+{
+  "checks": {
+    "attempts_per_policy_per_trial": 4,
+    "candidate_pairs_checked": 6480,
+    "cells_checked": 80,
+    "method": "independent explicit detector-world execution and finite action checks",
+    "permutation_equalities_checked": 45360,
+    "shared_clues_per_policy": 2,
+    "shared_first_round_outcomes_per_policy": 2,
+    "shared_with_primary": "configuration/schema constants, rational serialization, summary formatting"
+  },
+  "corruptions": {
+    "attempt_budget": true,
+    "detector_weight": true,
+    "revisit_mapping": true,
+    "saved_value": true
+  },
+  "errors": [],
+  "passed": true
+}

@@ -1,0 +1,12 @@
+{
+  "cell_id": "m3-p3of4-q1of1",
+  "channel_id": "m3-p3of4-q1of1/late",
+  "id": "m3-p3of4-q1of1/late/coverage_aware",
+  "m": 3,
+  "p": "3/4",
+  "policy_id": "m3-p3of4-q1of1/late/coverage_aware",
+  "protocol": "late",
+  "q": "1/1",
+  "receiver": "coverage_aware",
+  "value": "1/1"
+}

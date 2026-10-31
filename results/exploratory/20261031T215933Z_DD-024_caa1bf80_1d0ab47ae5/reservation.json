@@ -1,0 +1,9 @@
+{
+  "config_hash_sha256": "1d0ab47ae53bd3526cc3150d4dc9bccbed896d2a4aec070ac488bb439c96c616",
+  "created_utc": "2026-10-31T21:59:33.526844Z",
+  "git_commit": "caa1bf800bde9033e6b317e46bad0aff73828338",
+  "run_id": "20261031T215933Z_DD-024_caa1bf80_1d0ab47ae5",
+  "state": "consumed-before-worker-launch",
+  "study_id": "DD-024",
+  "track_id": "track-02"
+}

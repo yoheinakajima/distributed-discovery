@@ -1,0 +1,9 @@
+{
+  "base_row_count": 576,
+  "cell_count": 36,
+  "comparison_count": 144,
+  "emulation_count": 144,
+  "max_coverage_transcript_residual": "0/1",
+  "positive_coverage_transcript_residual_count": 0,
+  "saved_policy_count": 720
+}

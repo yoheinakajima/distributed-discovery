@@ -1,0 +1,226 @@
+{
+  "input_config": {
+    "arithmetic": "exact-rational",
+    "cells": [
+      {
+        "diagnostic": "none",
+        "id": "rho0-none-tau1",
+        "rho": "0/1",
+        "threshold": 1
+      },
+      {
+        "diagnostic": "none",
+        "id": "rho0-none-tau2",
+        "rho": "0/1",
+        "threshold": 2
+      },
+      {
+        "diagnostic": "noisy",
+        "id": "rho0-noisy-tau1",
+        "rho": "0/1",
+        "threshold": 1
+      },
+      {
+        "diagnostic": "noisy",
+        "id": "rho0-noisy-tau2",
+        "rho": "0/1",
+        "threshold": 2
+      },
+      {
+        "diagnostic": "perfect",
+        "id": "rho0-perfect-tau1",
+        "rho": "0/1",
+        "threshold": 1
+      },
+      {
+        "diagnostic": "perfect",
+        "id": "rho0-perfect-tau2",
+        "rho": "0/1",
+        "threshold": 2
+      },
+      {
+        "diagnostic": "none",
+        "id": "rhohalf-none-tau1",
+        "rho": "1/2",
+        "threshold": 1
+      },
+      {
+        "diagnostic": "none",
+        "id": "rhohalf-none-tau2",
+        "rho": "1/2",
+        "threshold": 2
+      },
+      {
+        "diagnostic": "noisy",
+        "id": "rhohalf-noisy-tau1",
+        "rho": "1/2",
+        "threshold": 1
+      },
+      {
+        "diagnostic": "noisy",
+        "id": "rhohalf-noisy-tau2",
+        "rho": "1/2",
+        "threshold": 2
+      },
+      {
+        "diagnostic": "perfect",
+        "id": "rhohalf-perfect-tau1",
+        "rho": "1/2",
+        "threshold": 1
+      },
+      {
+        "diagnostic": "perfect",
+        "id": "rhohalf-perfect-tau2",
+        "rho": "1/2",
+        "threshold": 2
+      },
+      {
+        "diagnostic": "none",
+        "id": "rho1-none-tau1",
+        "rho": "1/1",
+        "threshold": 1
+      },
+      {
+        "diagnostic": "none",
+        "id": "rho1-none-tau2",
+        "rho": "1/1",
+        "threshold": 2
+      },
+      {
+        "diagnostic": "noisy",
+        "id": "rho1-noisy-tau1",
+        "rho": "1/1",
+        "threshold": 1
+      },
+      {
+        "diagnostic": "noisy",
+        "id": "rho1-noisy-tau2",
+        "rho": "1/1",
+        "threshold": 2
+      },
+      {
+        "diagnostic": "perfect",
+        "id": "rho1-perfect-tau1",
+        "rho": "1/1",
+        "threshold": 1
+      },
+      {
+        "diagnostic": "perfect",
+        "id": "rho1-perfect-tau2",
+        "rho": "1/1",
+        "threshold": 2
+      }
+    ],
+    "comparators": {
+      "diagnostic_accuracy": {
+        "noisy": "3/4",
+        "none": null,
+        "perfect": "1/1"
+      },
+      "epsilon_grid": [
+        "0/1",
+        "1/4",
+        "1/2",
+        "3/4",
+        "1/1"
+      ],
+      "known_prior_a": [
+        "1/4",
+        "1/2",
+        "3/4"
+      ],
+      "tie_break": "first-in-declared-enumeration"
+    },
+    "memory_cap_mb": 1024,
+    "model": {
+      "agents": 2,
+      "candidates": 3,
+      "private_source_law": "shared-with-probability-rho-otherwise-independent",
+      "regime_timing": "chosen-before-signals-and-randomization",
+      "regimes": {
+        "A": {
+          "private_accuracy": "1/3",
+          "public_accuracy": "5/6"
+        },
+        "B": {
+          "private_accuracy": "5/6",
+          "public_accuracy": "1/3"
+        }
+      },
+      "role_assignment": "diagnostic-only-before-target-signals",
+      "roles": [
+        "P",
+        "S",
+        "C",
+        "K0",
+        "K1",
+        "K2"
+      ],
+      "target_prior": "uniform"
+    },
+    "random_seeds": {
+      "algorithm": [],
+      "model": null
+    },
+    "resource_caps": {
+      "memory_mib": 1024,
+      "wall_seconds": 120
+    },
+    "schema_version": "dd-024-robustness-config-v1",
+    "stopping_rule": "one-primary-run-preserve-failure-no-grid-expansion",
+    "study_id": "DD-024",
+    "time_cap_seconds": 120,
+    "track_id": "track-02"
+  },
+  "row_files": [
+    "rows/0000.json",
+    "rows/0001.json",
+    "rows/0002.json",
+    "rows/0003.json",
+    "rows/0004.json",
+    "rows/0005.json",
+    "rows/0006.json",
+    "rows/0007.json",
+    "rows/0008.json",
+    "rows/0009.json",
+    "rows/0010.json",
+    "rows/0011.json",
+    "rows/0012.json",
+    "rows/0013.json",
+    "rows/0014.json",
+    "rows/0015.json",
+    "rows/0016.json",
+    "rows/0017.json"
+  ],
+  "schema_version": "dd-024-robustness-result-v1",
+  "study_id": "DD-024",
+  "summary": {
+    "cell_count": 18,
+    "deterministic_plan_count": 15768,
+    "evidence_scope": "exact-finite-six-role-class-not-unrestricted-policies",
+    "maximum_mixture_gap": "1/4",
+    "positive_mixture_gap_cells": [
+      "rho0-none-tau2",
+      "rho0-noisy-tau2",
+      "rhohalf-none-tau2",
+      "rhohalf-noisy-tau2",
+      "rho1-none-tau2"
+    ],
+    "zero_mixture_gap_cells": [
+      "rho0-none-tau1",
+      "rho0-noisy-tau1",
+      "rho0-perfect-tau1",
+      "rho0-perfect-tau2",
+      "rhohalf-none-tau1",
+      "rhohalf-noisy-tau1",
+      "rhohalf-perfect-tau1",
+      "rhohalf-perfect-tau2",
+      "rho1-none-tau1",
+      "rho1-noisy-tau1",
+      "rho1-noisy-tau2",
+      "rho1-perfect-tau1",
+      "rho1-perfect-tau2"
+    ]
+  },
+  "track_id": "track-02"
+}

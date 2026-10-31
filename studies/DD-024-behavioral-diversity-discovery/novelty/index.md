@@ -12,3 +12,7 @@ These are targeted literature and repository overlap screens, not systematic-rev
 | 06 | Diversification, reliability, and downside | Close: common-cause reliability, robust coverage and policy emulation | [screen](track-06.md) |
 
 The broad effects remain known. Admitted diagnostics can add a reproducible finite comparison to this repository without establishing a new general scientific mechanism. A zero or adverse result remains useful and is retained.
+
+## Preserved primary outcomes
+
+The three admitted tracks each completed one bounded primary run from frozen commit `caa1bf800bde9033e6b317e46bad0aff73828338`. Their exact outputs, null controls, and limitations are indexed in [results/README.md](../results/README.md) and audited in [claim-audit.md](../claim-audit.md). Tracks 01, 05, and 06 remain overlap closures, not empirical null results. The dated screens above are the pre-implementation records and are not rewritten after seeing outcomes.

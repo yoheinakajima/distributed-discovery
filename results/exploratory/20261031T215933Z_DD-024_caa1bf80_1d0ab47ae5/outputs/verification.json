@@ -1,0 +1,32 @@
+{
+  "checks": {
+    "cell_count": 18,
+    "checks_include": [
+      "complete-policy-coverage",
+      "probability-bounds",
+      "saved-policy-execution",
+      "primal-dual-equality",
+      "same-diagnostic-budget",
+      "known-prior-purification",
+      "independent-device-enumeration",
+      "agent-and-target-permutations",
+      "source-endpoint-identities",
+      "perfect-diagnostic-limit",
+      "threshold-event-containment-when-paired",
+      "summary-reconciliation"
+    ],
+    "method": "direct-joint-state-enumeration-and-all-policy-dual-inequalities",
+    "normalization_checks": 60,
+    "plan_vectors_checked": 15768,
+    "primary_scientific_helpers_called": false,
+    "source_scope": "six-role-library-with-diagnostic-only-role-assignment"
+  },
+  "corruptions": {
+    "diagnostic_probability": true,
+    "dual_upper_bound": true,
+    "mixture_weight": true,
+    "source_branch_probability": true
+  },
+  "errors": [],
+  "passed": true
+}

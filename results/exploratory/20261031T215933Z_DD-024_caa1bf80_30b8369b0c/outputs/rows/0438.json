@@ -1,0 +1,12 @@
+{
+  "cell_id": "m5-p1of2-q1of5",
+  "channel_id": "m5-p1of2-q1of5/disagreement_trigger",
+  "id": "m5-p1of2-q1of5/disagreement_trigger/individual_map",
+  "m": 5,
+  "p": "1/2",
+  "policy_id": "m5-p1of2-q1of5/disagreement_trigger/individual_map",
+  "protocol": "disagreement_trigger",
+  "q": "1/5",
+  "receiver": "individual_map",
+  "value": "13/16"
+}

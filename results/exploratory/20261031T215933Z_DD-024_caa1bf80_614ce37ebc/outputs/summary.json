@@ -1,0 +1,31 @@
+{
+  "cells": 80,
+  "cross_searcher_rescue_contrast": {
+    "maximum": "1/8",
+    "minimum": "0/1",
+    "negative_cells": 0,
+    "positive_cells": 12,
+    "zero_cells": 68
+  },
+  "failure_elimination_regret": {
+    "maximum": "1/4",
+    "minimum": "0/1",
+    "negative_cells": 0,
+    "positive_cells": 36,
+    "zero_cells": 44
+  },
+  "iid_misspecification_regret": {
+    "maximum": "1/12",
+    "minimum": "0/1",
+    "negative_cells": 0,
+    "positive_cells": 31,
+    "zero_cells": 49
+  },
+  "schedule_equivalence_control": {
+    "maximum": "0/1",
+    "minimum": "0/1",
+    "negative_cells": 0,
+    "positive_cells": 0,
+    "zero_cells": 80
+  }
+}

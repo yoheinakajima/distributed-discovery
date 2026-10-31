@@ -17,6 +17,30 @@ The scientific registration belongs in
 
 ## Current state
 
+At the post-run integration checkpoint, `2026-10-31T22:06:38Z`, M1 through M5
+are complete. Exactly one milestone is active: **M6 — final acceptance,
+draft-PR integration, and handoff**. AO-0018 remains active on issue #231 and
+draft PR #232; final integrated acceptance and the remote checkpoint are
+pending. No merge or publication is authorized.
+
+The archive contains 51 annotated academic references. All six novelty
+screens are saved: tracks 01, 05, and 06 closed for overlap without primary
+execution; tracks 02, 03, and 04 completed their one registered primary
+attempt each, covering 18, 80, and 36 cells respectively (134 total). All
+three passed independent saved-output verification and their corruption
+checks. The completed evidence remains exploratory, with zero central claim
+promotions. The live inventory is 27 registered studies, 110 central claims,
+and 54 immutable run manifests, of which 51 pass.
+
+The primary source is the clean committed freeze
+`caa1bf800bde9033e6b317e46bad0aff73828338`. The three immutable identities are
+`20261031T215933Z_DD-024_caa1bf80_1d0ab47ae5` (track 02),
+`20261031T215933Z_DD-024_caa1bf80_614ce37ebc` (track 03), and
+`20261031T215933Z_DD-024_caa1bf80_30b8369b0c` (track 04).
+The [study results index](../studies/DD-024-behavioral-diversity-discovery/results/README.md)
+routes every run and the independent post-run reviews. Later task and status
+edits record integration; they do not replace the frozen input hashes.
+
 At the initial reconciliation, `2026-10-31T21:17:05Z`, local `main` was clean at
 `b02b4877b3cf11e9361be9e6aaa04e4c319461bf`. The coordinating task's live GitHub
 reconciliation records AO-0017 PR #229 as merged and only Dependabot PRs open.
@@ -33,13 +57,10 @@ The owner has authorized saving the literature and carrying out parallel
 quantified synthetic research. This is current scientific-execution authority
 for the bounded campaign, rather than authority inferred from the older
 editorial tasks. Per-track scientific registrations and computational gates
-must be completed before any primary run. The initial scaffolding created no
+were completed before primary execution. The initial scaffolding created no
 scientific code or evidence. Three real evaluators, distinct verifiers, exact
-configurations, and development tests now exist; no primary run has started.
-
-Exactly one milestone is active: **M3 — bounded parallel primary sub-runs**.
-M2 closes with the source-freeze commit containing this record; its exact SHA
-will be captured by every run manifest and the subsequent results index.
+configurations, and development tests were subsequently frozen before the
+three concurrent clean-worktree runs.
 
 ## DISCUSSION AND DECISION DELTA AUDIT
 
@@ -60,9 +81,34 @@ execution limitation **for this campaign only**. It does not reopen the
 stopped decentralized-recovery formulation, the benchmark's private or paid
 evaluation gates, paper admission, publication, or provider authority.
 
-At closeout, repeat this audit, reconcile any newly triggered items, and state
-whether any owner decision remains only in conversation. Do not store raw
-conversation transcripts or private conversation links.
+The post-run audit at `2026-10-31T22:06:38Z` reread all 41 records, including
+each trigger, status, boundary, and canonical destination. The disposition
+matrix is exhaustive:
+
+| Records | Closeout disposition | Trigger assessment |
+| --- | --- | --- |
+| PM-0001 through PM-0004 | Routed, unchanged | The bounded finite computations do not register a bridge theorem, mechanism characterization, adaptive theorem, or separate complexity-theory problem. State counts and finite enumeration do not satisfy those broader gates. |
+| PM-0008 and PM-0021 | Routed / rejected, unchanged | No distinct Foundations theorem family or paper admission. |
+| PM-0009 | Routed, unchanged | This campaign creates no paper freeze or preprint-queue transition. |
+| PM-0010, PM-0011, and PM-0022 | Deferred, unchanged | No claim-grade Agents v1 completion, qualifying preprint sequence, or journal-track reopening. |
+| PM-0014 and PM-0015 | Evidence-dependent, unchanged | The synthetic campaign is not a claim-grade benchmark or a cross-family paper-recomposition decision. |
+| PM-0016 | Superseded, unchanged | No human-engagement reauthorization. |
+| PM-0017 through PM-0020 | Rejected, unchanged | No monitoring, new publication channel, admitted bridge theorem, or owner reopening of rejected paper architectures. |
+| PM-0024 | Routed, unchanged | No venue-specific copyright or license decision. |
+| PM-0028 | Evidence-dependent, unchanged | No owner-supplied sustained third-party naming evidence. |
+| PM-0040 | Routed, unchanged | No fresh provider, account, diagnosis, repair, or runtime authority; the consumed R7 boundary remains closed. |
+| PM-0005 through PM-0007, PM-0012, PM-0013, PM-0023, PM-0025 through PM-0027, and PM-0029 through PM-0039 | Implemented, unchanged | Existing publication, naming, immutable-release, workflow, and quarantined-engineering decisions remain implemented; this campaign changes none of their authority or historical evidence. |
+| PM-0041 | Implemented | Literature preservation, six saved novelty dispositions, three frozen and independently verified primary attempts, and the separate exploratory claim audit implement the scoped owner decision. Final integration remains M6. |
+
+No prior promotion trigger was newly satisfied by this campaign. PM-0001
+through PM-0040 retain their historical records; this dated audit records the
+new review without rewriting their history. No owner decision remains only
+in conversation. PM-0041 supplies authority only for this completed bounded
+synthetic lane; its implementation does not authorize additional primary
+attempts, central claim promotion, or any provider, private-data, spend,
+publication, submission, merge, or deployment action. The general Phase 2
+freeze retains a [narrow AO-0018 exception](../docs/phase-2-program-directive.md).
+No raw conversation transcript or private conversation link is retained.
 
 ### Novelty-gate disposition — 2026-10-31
 
@@ -72,7 +118,8 @@ for overlap and adaptive-class containment; tracks 05 and 06 close for
 strategic-experimentation/difference-reward and reliability/robust-coverage
 overlap. Tracks 02, 03 and 04 are admitted as bounded diagnostic interaction
 audits, not as established worldwide novelties. Their exact registrations
-and code remain under M2; no primary run has started.
+and code remained under M2 at that screening checkpoint; no primary had yet
+started.
 
 Track 02 separates independent noise from coordinated randomization under
 regime ambiguity and common diagnostics. Track 03 pivots from the prospective
@@ -199,7 +246,7 @@ draft PR, and record the exact source SHA and input/configuration hashes.
 The computational gate is not an additional permission request: the current
 owner instruction already authorizes the registered synthetic execution.
 
-### M3 — Active: bounded parallel primary sub-runs
+### M3 — Complete: bounded parallel primary sub-runs
 
 Only after M2, create clean detached worktrees at the frozen commit and run
 each admitted track at most once. Each sub-run has a unique configuration and
@@ -217,7 +264,15 @@ partial outcomes. Do not rerun toward a desired result. Copy verified new
 evidence into the coordinating branch serially without overwriting any
 existing run directory.
 
-### M4 — Pending: independent verification and adversarial checks
+Completion: the final allocation admitted exactly three primary attempts,
+all launched concurrently at `2026-10-31T21:59:33Z` from clean detached
+worktrees at `caa1bf800bde9033e6b317e46bad0aff73828338`. All three passed
+within the registered 120-second / 1024-MiB per-worker limits and were copied
+unchanged into the coordinating checkout. No replacement or expanded run
+occurred. The other three tracks stopped before execution for saved overlap
+reasons; those stops are not numerical nulls or failed runs.
+
+### M4 — Complete: independent verification and adversarial checks
 
 Use a materially distinct mathematical or computational route on each
 run's frozen inputs and outputs. Test hand-solvable limits, normalization,
@@ -226,7 +281,14 @@ inputs or outputs. Record shared code and limitations; context isolation or
 another agent alone does not establish method independence. Unresolved
 disagreement blocks promotion and remains visible.
 
-### M5 — Pending: separate claim audit and evidence integration
+Completion: the independent verifiers passed on all 134 cells, and the
+registered corruptions were rejected. Independent post-run reviews are saved
+as `review-results-track02.md`, `review-results-track03.md`, and
+`review-results-track04.md` in the study. They audit saved evidence and its
+provenance without consuming additional primary attempts. Exactness remains
+limited to each registered finite model and policy class.
+
+### M5 — Complete: separate claim audit and evidence integration
 
 Assess each candidate claim independently of whether its runner completed.
 Use only the evidence category warranted by the audit: bounded computation,
@@ -240,13 +302,29 @@ and paper-role maps, and this plan together. Preserve all old records. New
 claims need not acquire a manuscript owner or a new paper. Public study
 metadata and relationship mappings must accurately describe the new evidence.
 
-### M6 — Pending: acceptance, draft PR, and handoff
+Completion: the study-local report and claim audit retain the three passing
+runs as audited exploratory findings. Zero central claims are added or
+promoted, so the 110-claim ledger, claim-prominence map, and paper-role map
+remain unchanged. The study and results indexes link the new evidence, and
+the public projection can associate declared study runs independently of
+central claim promotion. No paper ownership, admission, or provenance change
+is inferred from this integration.
+
+### M6 — Active: acceptance, draft PR, and handoff
 
 Complete the `scientific-execution` acceptance profile, reconcile all stored
 numbers to source outputs, and prepare a report with the whole outcome
 matrix, limitations, and next research decisions. Repeat the decision-delta
 audit. Open or update one draft PR and produce a truthful typed handoff.
 Stop before marking the PR ready, merge, deployment, release, or submission.
+
+Remaining: complete acceptance on the integrated source and evidence, retain
+the final command outcomes and current branch-head identity, update draft
+PR #232 with the full disposition and remote validation, and save a truthful
+typed handoff. The scientific state change is one new study and three
+exploratory runs with zero central claim promotions; provider calls, private
+state, and spend remain zero. Final acceptance must not be described as
+complete merely because the earlier source-freeze checks passed.
 
 ## Progress checklist
 
@@ -255,9 +333,9 @@ Stop before marking the PR ready, merge, deployment, release, or submission.
 - [x] Create the initial AO-0018 fixed contract and living ExecPlan.
 - [x] M1: Preserve literature and save all six track dispositions.
 - [x] M2: Register admitted models, build real evaluators, validate, and freeze.
-- [ ] M3: Preserve at most six bounded primary sub-runs from clean source.
-- [ ] M4: Complete independent verification and corruption checks.
-- [ ] M5: Complete separate claim audit and synchronized evidence integration.
+- [x] M3: Preserve the three registered bounded primary sub-runs from clean source.
+- [x] M4: Complete independent verification and corruption checks.
+- [x] M5: Complete separate claim audit and synchronized evidence integration.
 - [ ] M6: Complete acceptance, final decision audit, draft PR, and handoff.
 
 ## Discoveries and surprises
@@ -287,6 +365,14 @@ Stop before marking the PR ready, merge, deployment, release, or submission.
 - `2026-10-31T21:17:05Z`: Set initial primary limits of six total sub-runs,
   120 seconds and 1024 MiB per sub-run, with frozen clean-source detached
   worktrees and serial shared-artifact integration.
+- `2026-10-31T22:06:38Z`: Record completion of the narrower three-attempt
+  allocation from source `caa1bf800bde9033e6b317e46bad0aff73828338`: six novelty
+  screens, three overlap stops, three passing runs, and 134 cells. Retain
+  audited exploratory evidence with zero central claim promotions and no
+  paper-provenance change. Mark M1 through M5 complete and M6 active.
+- `2026-10-31T22:06:38Z`: Reconcile all 41 memory records, mark PM-0041
+  implemented within its bounded authority, preserve all prior dispositions,
+  and add only the scoped AO-0018 exception to the general Phase 2 freeze.
 
 ## Validation strategy
 
@@ -307,6 +393,17 @@ The declared acceptance profile requires `make bootstrap`, `make verify`,
 the complete required wall at the appropriate milestone. Preserve historical
 release identities; generated artifacts must not silently change a frozen
 paper or publication record.
+
+Post-run governance validation passed both task/memory schemas, the
+program-memory audit (41 records, 21 implemented, zero unrouted owner
+decisions), the Agent Operations audit (35 task contracts), and scoped
+`git diff --check`. Direct comparison confirms PM-0001 through PM-0040 are
+byte-identical to the frozen checkpoint and the general Phase 2 YAML is
+unchanged outside the additive exception. The first final-integration
+acceptance attempt passed bootstrap and stopped at Ruff's format gate for
+the narrow site association change; the coordinator is formatting that
+file and restarting the required acceptance. This is an integration check,
+not a primary-run failure or a reason to regenerate scientific evidence.
 
 ## Commands and expected observations
 
@@ -341,7 +438,12 @@ Use the corresponding `track-03` and `track-04` argument in the other two
 worktrees, all at the same recorded source SHA. The interpreter is from this
 checkout's locked environment. `--readiness` performs only file/hash checks;
 `--verify-existing <run-directory>` checks preserved evidence without a new
-primary attempt. Generated agent context is a non-authoritative view and
+primary attempt. For complete input-hash checks, use a detached checkout of
+the frozen source and the unchanged run directory at its registered relative
+path. Later task/status edits in the integration checkout are expected and
+must not be used to relabel frozen provenance. Do not repeat the primary
+commands above: their three registered attempts are consumed.
+Generated agent context is a non-authoritative view and
 does not allocate studies or prove claims.
 
 ## Artifacts produced
@@ -351,8 +453,10 @@ review and source JSON, and an explicit map to four existing bibliography
 keys. Six saved novelty screens close three tracks and admit three bounded
 audits. The study contains model/configuration bindings, real evaluator and
 independent verifier modules, 28 focused tests, reciprocal reviews, and a
-one-attempt resource-bounded runner. Primary results and the final separate
-claim audit remain pending.
+one-attempt resource-bounded runner. Three immutable primary directories,
+their complete artifact inventories, all saved-output checks, independent
+post-run reviews, a study-local report and separate claim audit now record
+the bounded results. No central claim or paper artifact is promoted.
 
 The scaffold-only check passed the task-contract and program-memory JSON
 schemas with format checks enabled, and confirmed 41 unique memory IDs.
@@ -362,10 +466,11 @@ scientific test or experiment was executed by this check.
 
 ## Blockers
 
-No additional owner permission blocks the authorized local synthetic
-campaign. The pre-execution acceptance checks and runner compatibility
-follow-up pass. Execute only after this complete source-freeze record is
-committed and three detached worktrees are clean at that same revision.
+No additional owner permission blocks final local acceptance or the
+authorized draft-PR integration. The three registered primary attempts are
+complete and must not be rerun. Integrated acceptance, the remote checkpoint,
+and the final typed handoff remain open under M6. Merge, deployment, release,
+submission, and any new scientific execution are outside this closeout.
 
 ## Recovery and restart instructions
 
@@ -380,6 +485,14 @@ outcome under its frozen rule.
 
 ## Outcome and retrospective
 
-Pending. Initial scaffolding establishes a restartable, bounded workflow and
-records the current owner decision; it is not a research result, an asserted
-novelty contribution, a completed scientific registration, or an experiment.
+The scientific portion is complete: 51 archived references, six saved
+novelty dispositions, three overlap closures, and three passing primary runs
+covering 134 registered cells. Independent verification and separate claim
+review support preserving these as audited exploratory finite computations,
+with zero central claim promotions. The campaign makes no general novelty,
+personality, human-behavior, societal-welfare, or optimal-mixture claim.
+
+The early acceptance failures and verifier/runner corrections remain in the
+history above. Their prospective repair preceded the immutable primary
+freeze. Final repository acceptance and remote draft-review handoff remain
+M6, so AO-0018 is active rather than prematurely complete.
