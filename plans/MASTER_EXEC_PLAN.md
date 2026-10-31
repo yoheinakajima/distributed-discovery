@@ -1,5 +1,28 @@
 # Master execution plan
 
+## Active AO-0018 behavioral-diversity discovery campaign (2026-10-31)
+
+The current owner instruction authorizes preserving the sourced academic
+landscape and conducting novelty-first parallel synthetic research under one
+coordinated task. Contract `tasks/behavioral-diversity-discovery.yml`, living
+plan `plans/BEHAVIORAL_DIVERSITY_DISCOVERY.md`, branch
+`agent/behavioral-diversity-discovery`, and PM-0041 own the new DD-024 lane.
+The clean baseline is `b02b4877b3cf11e9361be9e6aaa04e4c319461bf`; AO-0017
+PR #229 is merged, with only Dependabot PRs open at reconciliation. Issue and
+draft-PR identifiers for AO-0018 remain unassigned.
+
+At most six candidate mechanism tracks must save novelty/overlap checks before
+scientific code or primary work. Each admitted model, real policy evaluator,
+config, comparator budget, seeds, independent verifier, corruptions, and
+stopping rule must be frozen before bounded parallel sub-runs from clean
+detached worktrees. Initial limits are six primary sub-runs total, 120 seconds
+and 1024 MiB each. Nulls, failures, and classical-overlap stops are valid
+outcomes. DD-023 remains unallocated for its separate benchmark prospectus.
+This instruction supersedes the prior editorial-only limitation only for
+AO-0018; provider calls, private data, spend, proof promotion, publication,
+submission, merge, and deployment remain outside scope. No primary result or
+claim exists at this scaffolding checkpoint.
+
 ## Active AO-0017 Information Sharing Frontier public arXiv metadata record (2026-09-03)
 
 Issue #228, branch `agent/information-sharing-frontier-arxiv-record`, contract

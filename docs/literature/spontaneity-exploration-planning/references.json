@@ -1,0 +1,516 @@
+{
+  "search_completed": "2026-10-31",
+  "source": "source-report.json",
+  "references": [
+    {
+      "id": 1,
+      "authors": "March, J. G.",
+      "year": "1991",
+      "title": "Exploration and Exploitation in Organizational Learning",
+      "journal": "Organization Science, 2(1), 71-87",
+      "url": "https://doi.org/10.1287/orsc.2.1.71",
+      "kind": "Formal models",
+      "note": "Foundational treatment of discovering alternatives versus refining existing knowledge. Directly relevant mechanism; organizational learning, not human lifestyle categories."
+    },
+    {
+      "id": 2,
+      "authors": "Smaldino, P. E., Moser, C., Perez Velilla, A., & Werling, M.",
+      "year": "2024; online 2023",
+      "title": "Maintaining Transient Diversity Is a General Principle for Improving Collective Problem Solving",
+      "journal": "Perspectives on Psychological Science, 19(2), 454-464",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10913329/",
+      "kind": "Interdisciplinary synthesis",
+      "note": "Unifies diverse mechanisms that prevent premature convergence. Useful overview of conditions and tradeoffs; not a meta-analysis of societal personality composition."
+    },
+    {
+      "id": 3,
+      "authors": "Taylor, H., Fernandes, B., & Wraight, S.",
+      "year": "2022; online 2021",
+      "title": "The Evolution of Complementary Cognition: Humans Cooperatively Adapt and Evolve through a System of Collective Cognitive Search",
+      "journal": "Cambridge Archaeological Journal, 32(1), 61-77",
+      "url": "https://doi.org/10.1017/S0959774321000329",
+      "kind": "Evolutionary theory",
+      "note": "Proposes complementary specializations in human cognitive search. A close conceptual match whose evolutionary and contemporary implications require further testing."
+    },
+    {
+      "id": 4,
+      "authors": "Pringle, T. A., & Robinson, M. D.",
+      "year": "2024",
+      "title": "The diversity advantage: An explanatory framework for personality traits",
+      "journal": "European Journal of Personality, 38(6)",
+      "url": "https://doi.org/10.1177/08902070241228327",
+      "kind": "Theoretical framework",
+      "note": "Proposes that personality variation contributes to collective cognition and group processes. This is one possible explanatory framework, not settled evidence about why personality evolved."
+    },
+    {
+      "id": 5,
+      "authors": "Pringle, T. A., Stramer, L., & Robinson, M. D.",
+      "year": "2026",
+      "title": "Bounded personality diversity boosts collective intelligence: a swarm optimization approach",
+      "journal": "Frontiers in Psychology, 17, 1774466",
+      "url": "https://doi.org/10.3389/fpsyg.2026.1774466",
+      "kind": "Computational study",
+      "note": "Compares agent compositions across 11 mathematical landscapes. Personality is approximated through limited algorithmic parameters; real human validation is explicitly outstanding."
+    },
+    {
+      "id": 6,
+      "authors": "Grajzel, K., Acar, S., & Singer, G.",
+      "year": "2023",
+      "title": "The Big Five and divergent thinking: A meta-analysis",
+      "journal": "Personality and Individual Differences, 214, 112338",
+      "url": "https://doi.org/10.1016/j.paid.2023.112338",
+      "kind": "Meta-analysis",
+      "note": "63 studies and 24,298 participants; a modest openness-divergent thinking association. Creative potential and consequential innovation remain different outcomes."
+    },
+    {
+      "id": 7,
+      "authors": "Feist, G. J.",
+      "year": "1998",
+      "title": "A meta-analysis of personality in scientific and artistic creativity",
+      "journal": "Personality and Social Psychology Review, 2, 290-309",
+      "url": "https://doi.org/10.1207/s15327957pspr0204_5",
+      "kind": "Meta-analysis",
+      "note": "Classic evidence linking creativity with unconventionality and openness, alongside drive and ambition. Occupational comparisons and heterogeneity limit causal interpretation."
+    },
+    {
+      "id": 8,
+      "authors": "Stanek, K. C., & Ones, D. S.",
+      "year": "2023",
+      "title": "Meta-analytic relations between personality and cognitive ability",
+      "journal": "PNAS, 120, e2212794120",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10266031/",
+      "kind": "Meta-analytic synthesis",
+      "note": "Distinguishes broad traits, aspects and facets. Industriousness relates positively to originality/creativity ability, illustrating the limits of an order-versus-creativity dichotomy."
+    },
+    {
+      "id": 9,
+      "authors": "Wilson, R. C., Geana, A., White, J. M., Ludvig, E. A., & Cohen, J. D.",
+      "year": "2014",
+      "title": "Humans use directed and random exploration to solve the explore-exploit dilemma",
+      "journal": "Journal of Experimental Psychology: General, 143(6), 2074-2081",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5635655/",
+      "kind": "Human experiment",
+      "note": "Separates information-seeking and choice variability in 30 participants. Evidence about how exploration is deployed; random noise was not optimal in this task's normative model."
+    },
+    {
+      "id": 10,
+      "authors": "Cheng, C., Lau, H.-P. B., & Chan, M.-P. S.",
+      "year": "2014",
+      "title": "Coping flexibility and psychological adjustment to stressful life changes: A meta-analytic review",
+      "journal": "Psychological Bulletin, 140, 1582-1607",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25222637/",
+      "kind": "Meta-analysis",
+      "note": "58,946 participants; situation-sensitive adaptation shows stronger associations than variability alone. Individual adjustment, not social innovation, is the outcome."
+    },
+    {
+      "id": 11,
+      "authors": "Riddell, H., et al.",
+      "year": "2026; online 2025",
+      "title": "A meta-analytic review and conceptual model of the antecedents and outcomes of goal adjustment in response to striving difficulties",
+      "journal": "Nature Human Behaviour, 10, 317-332",
+      "url": "https://doi.org/10.1038/s41562-025-02312-4",
+      "kind": "Meta-analysis",
+      "note": "235 studies; distinguishes disengagement, reengagement and flexibility. Authors rate accumulated evidence low to moderate because of design, heterogeneity and publication-bias limitations."
+    },
+    {
+      "id": 12,
+      "authors": "Aeon, B., Faber, A., & Panaccio, A.",
+      "year": "2021",
+      "title": "Does time management work? A meta-analysis",
+      "journal": "PLOS ONE, 16, e0245066",
+      "url": "https://doi.org/10.1371/journal.pone.0245066",
+      "kind": "Meta-analysis",
+      "note": "158 studies; positive relationships with performance and wellbeing. Time management includes adaptation, and much of the evidence is correlational."
+    },
+    {
+      "id": 13,
+      "authors": "Moffitt, T. E., et al.",
+      "year": "2011",
+      "title": "A gradient of childhood self-control predicts health, wealth, and public safety",
+      "journal": "PNAS, 108, 2693-2698",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21262822/",
+      "kind": "Longitudinal observational study",
+      "note": "Birth-cohort and sibling evidence links self-control with later life outcomes. Useful counterweight to conflating exploration with poor regulation; causality is not experimentally established."
+    },
+    {
+      "id": 14,
+      "authors": "Mitchell, K. E., Levin, A. S., & Krumboltz, J. D.",
+      "year": "1999",
+      "title": "Planned Happenstance: Constructing Unexpected Career Opportunities",
+      "journal": "Journal of Counseling & Development, 77, 115-124",
+      "url": "https://doi.org/10.1002/j.1556-6676.1999.tb02431.x",
+      "kind": "Career theory",
+      "note": "Frames chance events as opportunities that active exploration can help create and use. Conceptual foundation, not a comparative trial of planned versus unplanned lives."
+    },
+    {
+      "id": 15,
+      "authors": "Kim, B., et al.",
+      "year": "2018; online 2016",
+      "title": "Longitudinal Relationships Between Planned Happenstance Skills and Life Adjustment and the Moderating Role of Career Barriers",
+      "journal": "Journal of Career Development, 45(3)",
+      "url": "https://doi.org/10.1177/0894845316681078",
+      "kind": "Longitudinal observational study",
+      "note": "307 Korean students during school-to-work transition. A bundled set of happenstance skills preceded adjustment; contextual and causal limits remain."
+    },
+    {
+      "id": 16,
+      "authors": "Pryor, R. G. L., & Bright, J.",
+      "year": "2003",
+      "title": "The Chaos Theory of Careers",
+      "journal": "Australian Journal of Career Development, 12(3), 12-20",
+      "url": "https://doi.org/10.1177/103841620301200304",
+      "kind": "Career theory",
+      "note": "Emphasizes complexity, chance and nonlinear changes in careers. The term chaos describes career dynamics, rather than a validated personality category."
+    },
+    {
+      "id": 17,
+      "authors": "Tonietto, G. N., & Malkoc, S. A.",
+      "year": "2016",
+      "title": "The Calendar Mindset: Scheduling Takes the Fun Out and Puts the Work In",
+      "journal": "Journal of Marketing Research, 53(6)",
+      "url": "https://doi.org/10.1509/jmr.14.0591",
+      "kind": "Series of experiments",
+      "note": "13 studies identify costs of precise scheduling for leisure enjoyment, removed by rough scheduling. Directly relevant to everyday spontaneity but narrow in scope."
+    },
+    {
+      "id": 18,
+      "authors": "Sio, U. N., & Ormerod, T. C.",
+      "year": "2009",
+      "title": "Does incubation enhance problem solving? A meta-analytic review",
+      "journal": "Psychological Bulletin, 135, 94-120",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19210055/",
+      "kind": "Meta-analysis",
+      "note": "Supports setting a problem aside before returning, with important task and break moderators. Concerns alternating activities rather than a fixed personality."
+    },
+    {
+      "id": 19,
+      "authors": "Sarasvathy, S. D.",
+      "year": "2001",
+      "title": "Causation and Effectuation: Toward a Theoretical Shift from Economic Inevitability to Entrepreneurial Contingency",
+      "journal": "Academy of Management Review, 26(2), 243-263",
+      "url": "https://doi.org/10.5465/amr.2001.4378020",
+      "kind": "Entrepreneurship theory",
+      "note": "Contrasts prediction-led reasoning with constructing possibilities from available means. Effectuation is active and resource-aware, not passive drift."
+    },
+    {
+      "id": 20,
+      "authors": "Brinckmann, J., Grichnik, D., & Kapsa, D.",
+      "year": "2010",
+      "title": "Should entrepreneurs plan or just storm the castle? A meta-analysis on contextual factors impacting the business planning-performance relationship in small firms",
+      "journal": "Journal of Business Venturing, 25(1), 24-40",
+      "url": "https://doi.org/10.1016/j.jbusvent.2008.10.007",
+      "kind": "Meta-analysis",
+      "note": "46 studies; positive average planning-performance relationship with context dependence. The authors recommend a dynamic combination of planning and learning."
+    },
+    {
+      "id": 21,
+      "authors": "Smolka, K. M., Verheul, I., Burmeister-Lamp, K., & Heugens, P. P. M. A. R.",
+      "year": "2018",
+      "title": "Get It Together! Synergistic Effects of Causal and Effectual Decision-Making Logics on Venture Performance",
+      "journal": "Entrepreneurship Theory and Practice, 42(4), 571-604",
+      "url": "https://doi.org/10.1177/1042258718783429",
+      "kind": "Cross-country observational survey",
+      "note": "1,453 entrepreneurs in 25 countries; combined approaches associated with better performance. This DOI is the retained publication, rather than its withdrawn duplicate."
+    },
+    {
+      "id": 22,
+      "authors": "Junni, P., Sarala, R. M., Taras, V., & Tarba, S. Y.",
+      "year": "2013",
+      "title": "Organizational Ambidexterity and Performance: A Meta-Analysis",
+      "journal": "Academy of Management Perspectives, 27(4), 299-312",
+      "url": "https://doi.org/10.5465/amp.2012.0015",
+      "kind": "Meta-analysis",
+      "note": "Combining exploratory and exploitative activities is associated with performance, moderated by setting and methodology. Does not determine a personality mix."
+    },
+    {
+      "id": 23,
+      "authors": "Konradt, U., Nath, A., & Oldeweme, M.",
+      "year": "2023",
+      "title": "Planning and Performance in Teams: A Bayesian Meta-Analytic Structural Equation Modeling Approach",
+      "journal": "PLOS ONE, 18, e0279933",
+      "url": "https://doi.org/10.1371/journal.pone.0279933",
+      "kind": "Meta-analysis",
+      "note": "33 samples and 1,885 teams; moderate positive planning-performance association. Planning quality is more informative than quantity; long-term evidence is limited."
+    },
+    {
+      "id": 24,
+      "authors": "Peeters, M. A. G., van Tuijl, H. F. J. M., Rutte, C. G., & Reymen, I. M. M. J.",
+      "year": "2006",
+      "title": "Personality and Team Performance: A Meta-Analysis",
+      "journal": "European Journal of Personality, 20(5), 377-396",
+      "url": "https://doi.org/10.1002/per.588",
+      "kind": "Meta-analysis",
+      "note": "Mean conscientiousness is positively associated with team performance; within-team variation is negatively associated. A direct caution against treating all personality diversity as beneficial."
+    },
+    {
+      "id": 25,
+      "authors": "Jolic Marjanovic, Z., et al.",
+      "year": "2024",
+      "title": "The Big Five and Collaborative Problem Solving: A Narrative Systematic Review",
+      "journal": "European Journal of Personality, 38(3), 457-475",
+      "url": "https://doi.org/10.1177/08902070231198650",
+      "kind": "Systematic narrative review",
+      "note": "47 papers; conscientiousness and agreeableness support different aspects of collaboration. Aggregation methods and levels of analysis affect conclusions."
+    },
+    {
+      "id": 26,
+      "authors": "De Dreu, C. K. W., & West, M. A.",
+      "year": "2001",
+      "title": "Minority Dissent and Team Innovation: The Importance of Participation in Decision Making",
+      "journal": "Journal of Applied Psychology, 86(6), 1191-1201",
+      "url": "https://doi.org/10.1037/0021-9010.86.6.1191",
+      "kind": "Two organizational field studies",
+      "note": "Dissent was associated with innovation when participation was high. The capacity to consider different ideas conditions their value."
+    },
+    {
+      "id": 27,
+      "authors": "Nemeth, C., Brown, K., & Rogers, J.",
+      "year": "2001",
+      "title": "Devil's Advocate versus Authentic Dissent: Stimulating Quantity and Quality",
+      "journal": "European Journal of Social Psychology, 31(6), 707-720",
+      "url": "https://doi.org/10.1002/ejsp.58",
+      "kind": "Experiment",
+      "note": "Authentic dissent stimulated better solutions than assigned disagreement. Relevant to independent perspectives; not an endorsement of arbitrary conflict."
+    },
+    {
+      "id": 28,
+      "authors": "de Wit, F. R. C., Greer, L. L., & Jehn, K. A.",
+      "year": "2012",
+      "title": "The Paradox of Intragroup Conflict: A Meta-Analysis",
+      "journal": "Journal of Applied Psychology, 97(2), 360-390",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21842974/",
+      "kind": "Meta-analysis",
+      "note": "116 studies and 8,880 groups; interpersonal/process conflict show negative relationships, while task disagreement has more conditional effects."
+    },
+    {
+      "id": 29,
+      "authors": "Shirado, H., & Christakis, N. A.",
+      "year": "2017",
+      "title": "Locally noisy autonomous agents improve global human coordination in network experiments",
+      "journal": "Nature, 545, 370-374",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5912653/",
+      "kind": "Randomized network experiments",
+      "note": "Small, centrally placed behavioral noise improved a coordination game. The manipulated actors were bots; the effective noise level and network location were task-specific."
+    },
+    {
+      "id": 30,
+      "authors": "Bernstein, E., Shore, J., & Lazer, D.",
+      "year": "2018",
+      "title": "How intermittent breaks in interaction improve collective intelligence",
+      "journal": "PNAS, 115(35), 8734-8739",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6126746/",
+      "kind": "Human group experiments",
+      "note": "Alternating independent search with social influence combined strong average and best-solution performance. A temporal alternative to permanent personality roles."
+    },
+    {
+      "id": 31,
+      "authors": "Hong, L., & Page, S. E.",
+      "year": "2004",
+      "title": "Groups of diverse problem solvers can outperform groups of high-ability problem solvers",
+      "journal": "PNAS, 101(46), 16385-16389",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC528939/",
+      "kind": "Mathematical model and simulations",
+      "note": "Functional diversity can overcome correlated blind spots under specified conditions. This is neither an unconditional theorem about diversity nor a real-person composition experiment."
+    },
+    {
+      "id": 32,
+      "authors": "Mason, W., & Watts, D. J.",
+      "year": "2012; online 2011",
+      "title": "Collaborative learning in networks",
+      "journal": "PNAS, 109(3), 764-769",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3271930/",
+      "kind": "Human network experiments",
+      "note": "256 experiments; efficient networks outperformed inefficient ones, challenging simple diffusion models. Participants adjusted their exploration to context."
+    },
+    {
+      "id": 33,
+      "authors": "Derex, M., & Boyd, R.",
+      "year": "2016",
+      "title": "Partial connectivity increases cultural accumulation within groups",
+      "journal": "PNAS, 113(11), 2982-2987",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4801235/",
+      "kind": "Human cultural-evolution experiment",
+      "note": "Partially connected groups preserved distinct trajectories needed for recombinant innovation. The artificial task's structure is an important boundary condition."
+    },
+    {
+      "id": 34,
+      "authors": "Deffner, D., et al.",
+      "year": "2024",
+      "title": "Collective incentives reduce over-exploitation of social information in unconstrained human groups",
+      "journal": "Nature Communications, 15, 2683",
+      "url": "https://doi.org/10.1038/s41467-024-47010-3",
+      "kind": "Immersive human group experiment",
+      "note": "Copying can yield individual gains and group losses under concentrated resources. Collective incentives changed information use and adaptation."
+    },
+    {
+      "id": 35,
+      "authors": "Chirkov, V., Kurvers, R. H. J. M., Romanczuk, P., & Deffner, D.",
+      "year": "2026",
+      "title": "Payoff selectivity drives collective intelligence during dynamic resource tracking in humans",
+      "journal": "Nature Communications, 17, 10133",
+      "url": "https://doi.org/10.1038/s41467-026-77762-z",
+      "kind": "Human experiment and computational analysis",
+      "note": "621 participants; continuous payoff visibility enabled a group advantage over solitary search. Social information without quality cues did not reliably help."
+    },
+    {
+      "id": 36,
+      "authors": "Bolton, P., & Harris, C.",
+      "year": "1999",
+      "title": "Strategic Experimentation",
+      "journal": "Econometrica, 67(2), 349-374",
+      "url": "https://doi.org/10.1111/1468-0262.00022",
+      "kind": "Economic model",
+      "note": "Experimentation creates information with benefits beyond the experimenter. Models the resulting strategic incentives and gap from socially optimal learning."
+    },
+    {
+      "id": 37,
+      "authors": "Azoulay, P., Graff Zivin, J. S., & Manso, G.",
+      "year": "2011",
+      "title": "Incentives and Creativity: Evidence from the Academic Life Sciences",
+      "journal": "RAND Journal of Economics, 42(3), 527-554",
+      "url": "https://doi.org/10.1111/j.1756-2171.2011.00140.x",
+      "kind": "Observational quasi-experimental analysis",
+      "note": "Funding systems that allow freedom and early failure were associated with more high-impact and exploratory research. Matching and longitudinal methods reduce but cannot eliminate selection concerns."
+    },
+    {
+      "id": 38,
+      "authors": "Burt, R. S.",
+      "year": "2004",
+      "title": "Structural Holes and Good Ideas",
+      "journal": "American Journal of Sociology, 110(2)",
+      "url": "https://doi.org/10.1086/421787",
+      "kind": "Organizational network study",
+      "note": "Bridging otherwise separated groups is associated with valuable ideas. Provides an information-access mechanism rather than a personality-based randomness account."
+    },
+    {
+      "id": 39,
+      "authors": "Chua, R. Y. J., Roth, Y., & Lemoine, J.-F.",
+      "year": "2015",
+      "title": "The Impact of Culture on Creativity: How Cultural Tightness and Cultural Distance Affect Global Innovation Crowdsourcing Work",
+      "journal": "Administrative Science Quarterly, 60(2)",
+      "url": "https://doi.org/10.1177/0001839214563595",
+      "kind": "Cross-cultural field study",
+      "note": "Tightness has different relationships with creative work in familiar and distant cultural contexts. Evidence about norms and audiences, not lifetime planning."
+    },
+    {
+      "id": 40,
+      "authors": "Uzzi, B., Mukherjee, S., Stringer, M., & Jones, B.",
+      "year": "2013",
+      "title": "Atypical Combinations and Scientific Impact",
+      "journal": "Science, 342(6157), 468-472",
+      "url": "https://doi.org/10.1126/science.1240474",
+      "kind": "Bibliometric observational study",
+      "note": "17.9 million papers; high impact associates with conventional foundations plus unusual combinations. Citation impact is not equivalent to social welfare."
+    },
+    {
+      "id": 41,
+      "authors": "Wu, L., Wang, D., & Evans, J. A.",
+      "year": "2019",
+      "title": "Large teams develop and small teams disrupt science and technology",
+      "journal": "Nature, 566, 378-382",
+      "url": "https://doi.org/10.1038/s41586-019-0941-9",
+      "kind": "Large-scale observational analysis",
+      "note": "Team size relates to developing versus disrupting knowledge trajectories. Institutional arrangements can shape contribution without a fixed personality explanation."
+    },
+    {
+      "id": 42,
+      "authors": "Wolf, M., van Doorn, G. S., & Weissing, F. J.",
+      "year": "2008",
+      "title": "Evolutionary emergence of responsive and unresponsive personalities",
+      "journal": "PNAS, 105(41), 15825-15830",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2572984/",
+      "kind": "Evolutionary model",
+      "note": "Frequency-dependent benefits and experience-dependent costs produce persistent responsiveness differences. Evolutionary fitness does not establish societal welfare maximization."
+    },
+    {
+      "id": 43,
+      "authors": "Liang, Z. S., et al.",
+      "year": "2012",
+      "title": "Molecular determinants of scouting behavior in honey bees",
+      "journal": "Science, 335(6073), 1225-1228",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22403390/",
+      "kind": "Animal behavior and biological experiments",
+      "note": "Consistent exploratory tendencies across contexts, with molecular and neurochemical correlates. Biological analogy rather than evidence about human nonplanners."
+    },
+    {
+      "id": 44,
+      "authors": "Rendell, L., et al.",
+      "year": "2010",
+      "title": "Why Copy Others? Insights from the Social Learning Strategies Tournament",
+      "journal": "Science, 328(5975), 208-213",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2989663/",
+      "kind": "Computational strategy tournament",
+      "note": "Social learning performs well because observed behavior is already filtered by others' experience. Relative strategy success depends on the tournament rules."
+    },
+    {
+      "id": 45,
+      "authors": "Gopnik, A., et al.",
+      "year": "2017",
+      "title": "Changes in cognitive flexibility and hypothesis search across human life history from childhood to adolescence to adulthood",
+      "journal": "PNAS, 114(30), 7892-7899",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5544286/",
+      "kind": "Developmental experiments and synthesis",
+      "note": "Examines age-related hypothesis search in physical and social domains. Suggests life-stage allocation as an alternative to fixed adult explorer and planner types."
+    },
+    {
+      "id": 46,
+      "authors": "Zollman, K. J. S.",
+      "year": "2010",
+      "title": "The Epistemic Benefit of Transient Diversity",
+      "journal": "Erkenntnis, 72(1), 17-35",
+      "url": "https://doi.org/10.1007/s10670-009-9194-6",
+      "kind": "Formal social-epistemology model",
+      "note": "Maintaining alternative research directions can avoid premature consensus; persistent fragmentation can also prevent learning. Benefits concern temporary, useful diversity."
+    },
+    {
+      "id": 47,
+      "authors": "Wu, J., & O'Connor, C.",
+      "year": "2023",
+      "title": "How should we promote transient diversity in science?",
+      "journal": "Synthese, 201, 37",
+      "url": "https://doi.org/10.1007/s11229-023-04037-1",
+      "kind": "Theoretical and methodological analysis",
+      "note": "Evaluates ways to protect diverse scientific practice while accounting for costs, feasibility, and ethics. Helpful bridge from models to institutional proposals."
+    },
+    {
+      "id": 48,
+      "authors": "Aggarwal, I., Woolley, A. W., Chabris, C. F., & Malone, T. W.",
+      "year": "2019",
+      "title": "The Impact of Cognitive Style Diversity on Implicit Learning in Teams",
+      "journal": "Frontiers in Psychology, 10, 112",
+      "url": "https://doi.org/10.3389/fpsyg.2019.00112",
+      "kind": "Human team study",
+      "note": "98 teams; an inverted-U association between cognitive-style diversity and collective intelligence. The styles are not planning/spontaneity, and composition was not randomly manipulated."
+    },
+    {
+      "id": 49,
+      "authors": "Nettle, D.",
+      "year": "2006",
+      "title": "The evolution of personality variation in humans and other animals",
+      "journal": "American Psychologist, 61(6), 622-631",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16953749/",
+      "kind": "Evolutionary theoretical review",
+      "note": "Personality dimensions can involve different fitness costs and benefits. Provides an alternative to assuming that variation exists for collective social advantage."
+    },
+    {
+      "id": 50,
+      "authors": "Davis, J. P., Eisenhardt, K. M., & Bingham, C. B.",
+      "year": "2009",
+      "title": "Optimal Structure, Market Dynamism, and the Strategy of Simple Rules",
+      "journal": "Administrative Science Quarterly, 54(3), 413-452",
+      "url": "https://doi.org/10.2189/asqu.2009.54.3.413",
+      "kind": "Computational and mathematical model",
+      "note": "Examines the costs of too much and too little structure as environments change. Conclusions depend on the modeled tasks and organizational assumptions."
+    },
+    {
+      "id": 51,
+      "authors": "Gollwitzer, P. M., & Sheeran, P.",
+      "year": "2006",
+      "title": "Implementation Intentions and Goal Achievement: A Meta-Analysis of Effects and Processes",
+      "journal": "Advances in Experimental Social Psychology, 38, 69-119",
+      "url": "https://doi.org/10.1016/S0065-2601(06)38002-1",
+      "kind": "Meta-analysis",
+      "note": "Classic synthesis of 94 tests of concrete if-then action plans. Supports goal execution, which is distinct from committing to an inflexible lifelong plan."
+    }
+  ]
+}

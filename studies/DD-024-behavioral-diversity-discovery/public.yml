@@ -1,0 +1,12 @@
+study_id: DD-024
+title: Behavioral Diversity in Discovery
+slug: dd-024
+phase: registered
+summary: A prospective six-track synthetic campaign testing stable behavioral differences against matched adaptive and rotating-role baselines; no new results yet.
+public_artifacts:
+  - path: studies/DD-024-behavioral-diversity-discovery/README.md
+    description: Research question, scope, and novelty-first registration sequence
+  - path: docs/literature/spontaneity-exploration-planning/review.md
+    description: Interdisciplinary background review with 51 annotated academic sources
+claim_ids: []
+run_ids: []
