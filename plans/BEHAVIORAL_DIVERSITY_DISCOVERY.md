@@ -17,11 +17,14 @@ The scientific registration belongs in
 
 ## Current state
 
-At the post-run integration checkpoint, `2026-10-31T22:06:38Z`, M1 through M5
-are complete. Exactly one milestone is active: **M6 — final acceptance,
-draft-PR integration, and handoff**. AO-0018 remains active on issue #231 and
-draft PR #232; final integrated acceptance and the remote checkpoint are
-pending. No merge or publication is authorized.
+At the final closeout checkpoint, `2026-10-31T22:19:20Z`, **M1 through M6 and
+AO-0018 are complete**. No execution milestone is active. Final integrated
+acceptance and the remote checks passed on reviewed code/evidence commit
+`02e95e8a6d0aa7aa0d17364d15011f07e823e240` (H1). Issue #231 and draft PR #232
+retain the review boundary. The next step is draft review; no merge or
+publication is authorized. A later metadata-only closeout commit records
+this receipt and handoff on the PR without relabeling H1 as that commit's
+own SHA or changing the immutable primary source.
 
 The archive contains 51 annotated academic references. All six novelty
 screens are saved: tracks 01, 05, and 06 closed for overlap without primary
@@ -98,7 +101,7 @@ matrix is exhaustive:
 | PM-0028 | Evidence-dependent, unchanged | No owner-supplied sustained third-party naming evidence. |
 | PM-0040 | Routed, unchanged | No fresh provider, account, diagnosis, repair, or runtime authority; the consumed R7 boundary remains closed. |
 | PM-0005 through PM-0007, PM-0012, PM-0013, PM-0023, PM-0025 through PM-0027, and PM-0029 through PM-0039 | Implemented, unchanged | Existing publication, naming, immutable-release, workflow, and quarantined-engineering decisions remain implemented; this campaign changes none of their authority or historical evidence. |
-| PM-0041 | Implemented | Literature preservation, six saved novelty dispositions, three frozen and independently verified primary attempts, and the separate exploratory claim audit implement the scoped owner decision. Final integration remains M6. |
+| PM-0041 | Implemented | Literature preservation, six saved novelty dispositions, three frozen and independently verified primary attempts, and the separate exploratory claim audit implement the scoped owner decision. M6 final acceptance and remote validation are complete; draft review is next. |
 
 No prior promotion trigger was newly satisfied by this campaign. PM-0001
 through PM-0040 retain their historical records; this dated audit records the
@@ -154,7 +157,7 @@ fixtures were strengthened to pass damaged evidence through the substantive
 audit. No unresolved mathematical blocker remains. The label-conjugation
 check is a bounded invariance check, not an independent optimized solution.
 
-All 28 initial focused scientific/runner tests pass, Ruff passes, and mypy
+The 28 initial focused scientific/runner tests passed, Ruff passed, and mypy
 passes on 228 sources. All seven paper builds and the 90-page/27-study site
 build pass. The full `make verify` rerun passed, including all 1,129 tests in
 413.37 seconds, ledger/provenance checks, all required audits, and offline
@@ -163,6 +166,7 @@ preserves logs/scripts in a complete manifest-bound checksum inventory while
 listing safe JSON/Markdown artifacts in public outputs. All eight runner
 fixtures pass, including two new successful-worker/site and damaged-log/path
 checks; targeted Ruff and mypy pass. No scientific model or grid changed.
+Those two added runner fixtures bring the current focused count to 30.
 The earlier build failures were repaired by installing locked public build
 dependencies, the pinned Tectonic runtime and official bundle index, fetching
 the existing historical custody commit, and adding DD-024's public relation
@@ -310,7 +314,7 @@ the public projection can associate declared study runs independently of
 central claim promotion. No paper ownership, admission, or provenance change
 is inferred from this integration.
 
-### M6 — Active: acceptance, draft PR, and handoff
+### M6 — Complete: acceptance, draft PR, and handoff
 
 Complete the `scientific-execution` acceptance profile, reconcile all stored
 numbers to source outputs, and prepare a report with the whole outcome
@@ -318,13 +322,22 @@ matrix, limitations, and next research decisions. Repeat the decision-delta
 audit. Open or update one draft PR and produce a truthful typed handoff.
 Stop before marking the PR ready, merge, deployment, release, or submission.
 
-Remaining: complete acceptance on the integrated source and evidence, retain
-the final command outcomes and current branch-head identity, update draft
-PR #232 with the full disposition and remote validation, and save a truthful
-typed handoff. The scientific state change is one new study and three
-exploratory runs with zero central claim promotions; provider calls, private
-state, and spend remain zero. Final acceptance must not be described as
-complete merely because the earlier source-freeze checks passed.
+Completion: `make bootstrap verify papers site` exited zero after integration.
+All 1,145 tests passed in 399.31 seconds; Ruff checked 402 files and mypy
+checked 228 sources. Required audits validated 54 manifests; all seven paper
+builds passed with unchanged PDF bytes. The site built 90 pages and 27 study
+records. Its actual `site/dist/data/research-index.json` record for DD-024
+contains all three passing run IDs and an empty `claim_ids` list.
+
+Reviewed code/evidence commit H1 is
+`02e95e8a6d0aa7aa0d17364d15011f07e823e240`, pushed on draft PR #232. GitHub
+checks CI `41246991408`, CI `41246995309`, and paper-site `41246995313` all
+succeeded. The final metadata-only closeout commit records this acceptance
+receipt and typed handoff; its current SHA is discoverable from the PR and
+is not represented by H1. The scientific state change is one new study and
+three exploratory runs with zero central claim promotions. Provider calls,
+private state, and spend remain zero. No execution milestone remains active;
+draft review is next.
 
 ## Progress checklist
 
@@ -336,7 +349,7 @@ complete merely because the earlier source-freeze checks passed.
 - [x] M3: Preserve the three registered bounded primary sub-runs from clean source.
 - [x] M4: Complete independent verification and corruption checks.
 - [x] M5: Complete separate claim audit and synchronized evidence integration.
-- [ ] M6: Complete acceptance, final decision audit, draft PR, and handoff.
+- [x] M6: Complete acceptance, final decision audit, draft PR, and handoff.
 
 ## Discoveries and surprises
 
@@ -373,6 +386,11 @@ complete merely because the earlier source-freeze checks passed.
 - `2026-10-31T22:06:38Z`: Reconcile all 41 memory records, mark PM-0041
   implemented within its bounded authority, preserve all prior dispositions,
   and add only the scoped AO-0018 exception to the general Phase 2 freeze.
+- `2026-10-31T22:19:20Z`: Record full integrated acceptance and three passing
+  GitHub checks at reviewed code/evidence commit H1
+  `02e95e8a6d0aa7aa0d17364d15011f07e823e240`. Complete M6 and AO-0018 with no
+  active execution milestone. Preserve the earlier M6-active checkpoint as
+  history; the next boundary is draft review, with no merge or publication.
 
 ## Validation strategy
 
@@ -401,9 +419,10 @@ decisions), the Agent Operations audit (35 task contracts), and scoped
 byte-identical to the frozen checkpoint and the general Phase 2 YAML is
 unchanged outside the additive exception. The first final-integration
 acceptance attempt passed bootstrap and stopped at Ruff's format gate for
-the narrow site association change; the coordinator is formatting that
-file and restarting the required acceptance. This is an integration check,
-not a primary-run failure or a reason to regenerate scientific evidence.
+the narrow site association change. The coordinator formatted that file and
+restarted acceptance; the complete required command then exited zero with
+the results and H1 remote checks recorded under M6. This was an integration
+check, not a primary-run failure or a reason to regenerate scientific evidence.
 
 ## Commands and expected observations
 
@@ -452,7 +471,7 @@ The literature archive preserves all 51 annotated references, the complete
 review and source JSON, and an explicit map to four existing bibliography
 keys. Six saved novelty screens close three tracks and admit three bounded
 audits. The study contains model/configuration bindings, real evaluator and
-independent verifier modules, 28 focused tests, reciprocal reviews, and a
+independent verifier modules, 30 focused tests, reciprocal reviews, and a
 one-attempt resource-bounded runner. Three immutable primary directories,
 their complete artifact inventories, all saved-output checks, independent
 post-run reviews, a study-local report and separate claim audit now record
@@ -466,11 +485,11 @@ scientific test or experiment was executed by this check.
 
 ## Blockers
 
-No additional owner permission blocks final local acceptance or the
-authorized draft-PR integration. The three registered primary attempts are
-complete and must not be rerun. Integrated acceptance, the remote checkpoint,
-and the final typed handoff remain open under M6. Merge, deployment, release,
-submission, and any new scientific execution are outside this closeout.
+No execution blocker remains: final integrated acceptance, remote validation,
+and the review handoff are complete. The three registered primary attempts
+are consumed and must not be rerun. The next boundary is draft review on
+PR #232. Merge, deployment, release, submission, and any new scientific
+execution are outside this closeout.
 
 ## Recovery and restart instructions
 
@@ -494,5 +513,7 @@ personality, human-behavior, societal-welfare, or optimal-mixture claim.
 
 The early acceptance failures and verifier/runner corrections remain in the
 history above. Their prospective repair preceded the immutable primary
-freeze. Final repository acceptance and remote draft-review handoff remain
-M6, so AO-0018 is active rather than prematurely complete.
+freeze. Final repository acceptance and the remote draft-review handoff are
+complete at reviewed code/evidence commit H1. The metadata-only closeout
+records that receipt without changing frozen evidence. AO-0018 and all six
+milestones are complete; draft review is next, with no merge or publication.

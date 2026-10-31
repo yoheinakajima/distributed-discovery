@@ -1,6 +1,6 @@
 study_id: DD-024
 status: complete-bounded-study
 evidence_status: audited-exploratory-synthetic-computations-no-central-claim-promotion
-next_action: preserve the three immutable runs and bounded interpretations; complete integration acceptance
-  and draft PR review without another primary
-updated_utc: '2026-10-31T22:07:52Z'
+next_action: review draft PR 232 and preserve the three immutable runs; all authorized execution and acceptance
+  are complete
+updated_utc: '2026-10-31T22:19:28Z'

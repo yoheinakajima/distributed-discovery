@@ -769,7 +769,7 @@ records:
     source_type: owner-decision
     captured_date: "2026-10-31"
     proposition: The owner authorizes preserving the sourced academic landscape and conducting at most six novelty-screened parallel synthetic research tracks under one coordinated study, with frozen models and fair comparators, real policy evaluation, immutable provenance, independent verification, and calibrated claim audit.
-    why_it_matters: This implements a bounded additive scientific-execution lane beyond the prior editorial-only scope through 51 archived references, six saved novelty screens, three overlap closures, and three frozen primary attempts with independent verification and a separate exploratory claim audit; final acceptance and draft review remain active while historical evidence and separate provider, private-data, benchmark, and publication boundaries are preserved.
+    why_it_matters: This implements a bounded additive scientific-execution lane beyond the prior editorial-only scope through 51 archived references, six saved novelty screens, three overlap closures, and three frozen primary attempts with independent verification and a separate exploratory claim audit; final acceptance and remote validation are complete with draft review next, while historical evidence and separate provider, private-data, benchmark, and publication boundaries are preserved.
     canonical_destination: {type: decision-record, path: tasks/behavioral-diversity-discovery.yml}
     dependencies: [PM-0001, PM-0003, PM-0004, PM-0032]
     promotion_trigger: null

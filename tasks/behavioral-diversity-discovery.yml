@@ -3,7 +3,7 @@ kind: task-contract
 task_id: AO-0018
 title: Novelty-first behavioral diversity and distributed discovery campaign
 task_type: scientific-execution
-status: active
+status: complete
 objective: Preserve the academic landscape and conduct at most six bounded, novelty-screened synthetic research tracks under DD-024, with genuine policy evaluation, fair comparators, immutable provenance, independent checks, and calibrated conclusions.
 authority_references:
   - {type: instruction, path: AGENTS.md}
@@ -23,7 +23,7 @@ owner_decisions:
   - Screen and save each track's literature overlap and potential contribution before writing its scientific implementation or executing its primary configuration; classical overlap and null findings are valid outcomes.
   - Freeze each admitted model, configuration, estimands, comparators, resources, seeds, independent verifier, corruptions, and stopping rules before primary execution from clean committed source in isolated detached worktrees.
   - Authorize no provider calls, private data, spend, publication, submission, merge, or deployment; synthetic findings do not establish personality, human-behavior, or societal-welfare conclusions.
-  - Preserve the completed three-run allocation as audited exploratory evidence with zero central claim promotions; final repository validation and draft review remain authorized, while no additional primary attempt or paper promotion is inferred.
+  - Preserve the completed three-run allocation as audited exploratory evidence with zero central claim promotions; final repository acceptance and remote validation passed, draft review is next, and no additional primary attempt or paper promotion is inferred.
 scope:
   paths:
     - tasks/behavioral-diversity-discovery.yml
@@ -107,6 +107,7 @@ frozen_identifiers:
   per_primary_time_cap_seconds: "120"
   per_primary_memory_cap_mib: "1024"
   primary_source_commit: caa1bf800bde9033e6b317e46bad0aff73828338
+  reviewed_code_evidence_commit: 02e95e8a6d0aa7aa0d17364d15011f07e823e240
   registered_primary_attempts: "3"
   track_02_run: 20261031T215933Z_DD-024_caa1bf80_1d0ab47ae5
   track_03_run: 20261031T215933Z_DD-024_caa1bf80_614ce37ebc
@@ -115,4 +116,4 @@ supersession:
   supersedes: []
   superseded_by: null
   reason: This new owner-authorized campaign is an additive scoped exception to the prior editorial-only execution boundary; historical tasks and their provider, private, publication, and benchmark gates remain unchanged.
-next_gate: Complete final integrated scientific-execution acceptance, source-to-report validation, and the current-head remote checkpoint on draft PR 232, then record a truthful typed handoff for draft review; M1 through M5 are complete, M6 remains active, and no primary rerun, central claim promotion, merge, or publication is inferred.
+next_gate: Draft review of PR 232; M1 through M6 and final integrated acceptance are complete at reviewed code/evidence commit 02e95e8a6d0aa7aa0d17364d15011f07e823e240, with the later metadata-only closeout head identified by the PR. No execution milestone is active and no primary rerun, central claim promotion, merge, or publication is inferred.

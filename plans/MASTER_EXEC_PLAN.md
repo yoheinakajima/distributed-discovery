@@ -1,13 +1,13 @@
 # Master execution plan
 
-## Active AO-0018 final integration and draft review (2026-10-31)
+## Completed AO-0018; draft review next (2026-10-31)
 
 Issue #231 and draft PR #232 coordinate DD-024 on
 `agent/behavioral-diversity-discovery`, under
 [`tasks/behavioral-diversity-discovery.yml`](../tasks/behavioral-diversity-discovery.yml)
-and the [living plan](BEHAVIORAL_DIVERSITY_DISCOVERY.md). M1 through M5 are
-complete; **M6 is the sole active milestone**, covering final integrated
-acceptance, the remote checkpoint, and a truthful typed handoff.
+and the [living plan](BEHAVIORAL_DIVERSITY_DISCOVERY.md). **M1 through M6 and
+the task are complete; no execution milestone is active.** Final integrated
+acceptance and the remote checks passed; draft review is next.
 
 The preserved literature contains 51 references. Six saved novelty screens
 produced three overlap closures and three admitted primary attempts. All
@@ -24,9 +24,17 @@ this bounded synthetic lane; no earlier pending trigger was satisfied by the
 campaign. The [Phase 2 directive](../docs/phase-2-program-directive.md) records
 only this scoped exception to its general freeze. Provider calls, private
 data, spend, additional primary attempts, proof promotion, publication,
-submission, merge, and deployment remain outside this closeout. Final
-acceptance and the remote draft checkpoint are pending, not implied by the
-earlier source-freeze checks.
+submission, merge, and deployment remain outside this closeout.
+
+`make bootstrap verify papers site` exited zero: 1,145 tests in 399.31 seconds,
+Ruff on 402 files, mypy on 228 sources, all required audits over 54 manifests,
+seven paper builds with unchanged PDFs, and a 90-page/27-study site. DD-024's
+actual site record includes three passing runs and no central claims.
+Reviewed code/evidence commit H1 is
+`02e95e8a6d0aa7aa0d17364d15011f07e823e240`; CI `41246991408`, CI
+`41246995309`, and paper-site `41246995313` passed. The later metadata-only
+closeout commit records this receipt and handoff; the PR supplies its current
+head without treating H1 as a self-referential closeout SHA.
 
 ## AO-0018 registration checkpoint (2026-10-31; historical)
 

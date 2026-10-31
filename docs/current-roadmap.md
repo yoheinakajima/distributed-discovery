@@ -1,10 +1,10 @@
 # Current roadmap
 
-## AO-0018 final acceptance and draft review — active, 2026-10-31
+## AO-0018 complete; draft review next — 2026-10-31
 
-The current work is M6 of
+All six milestones are complete in
 [`plans/BEHAVIORAL_DIVERSITY_DISCOVERY.md`](../plans/BEHAVIORAL_DIVERSITY_DISCOVERY.md),
-on issue #231 and draft PR #232. M1 through M5 are complete: 51 academic
+on issue #231 and draft PR #232. No execution milestone is active: 51 academic
 references are archived, six novelty screens are saved, three tracks closed
 for overlap, and three bounded primary runs passed across 134 registered
 cells. The immutable primary source is
@@ -13,12 +13,19 @@ cells. The immutable primary source is
 routes the saved evidence and independent reviews. The three runs remain
 exploratory, and zero central claims are added or promoted.
 
-The remaining authorized steps are final integrated acceptance under the
-scientific-execution profile, source-to-report reconciliation, the current
-branch-head remote checkpoint, and a truthful typed handoff on draft
-PR #232. Do not rerun the consumed primary configurations for freshness.
+Final integrated acceptance, source-to-report reconciliation, remote
+validation, and the typed handoff are complete. The next boundary is draft
+review on PR #232. Do not rerun the consumed primary configurations for freshness.
 PM-0041 is implemented; the dated 41-record trigger audit is in the living
 plan, and no earlier gate is newly satisfied by this campaign.
+
+The complete acceptance command exited zero: 1,145 tests in 399.31 seconds,
+Ruff on 402 files, mypy on 228 sources, all required audits over 54 manifests,
+seven unchanged paper PDFs, and the 90-page/27-study site. Reviewed
+code/evidence commit H1 `02e95e8a6d0aa7aa0d17364d15011f07e823e240` passed
+CI `41246991408`, CI `41246995309`, and paper-site `41246995313`. A later
+metadata-only closeout records this receipt and handoff; the current PR head
+identifies that commit without claiming it is H1.
 
 The scoped [AO-0018 Phase 2 exception](phase-2-program-directive.md) does not
 open the Reliable Discovery theorem family, claim-grade benchmark,

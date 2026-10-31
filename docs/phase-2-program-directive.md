@@ -19,8 +19,12 @@ passed from frozen source `caa1bf800bde9033e6b317e46bad0aff73828338`,
 covering 134 finite-model cells under the registered 120-second / 1024-MiB
 per-worker limits. The evidence remains audited exploratory material, with
 zero central claim promotions and no paper-provenance or lifecycle change.
-M1 through M5 are complete; M6 remains active for final integrated acceptance
-and draft review under the [living plan](../plans/BEHAVIORAL_DIVERSITY_DISCOVERY.md).
+M1 through M6 and AO-0018 are complete under the
+[living plan](../plans/BEHAVIORAL_DIVERSITY_DISCOVERY.md); no execution
+milestone is active. Full integrated acceptance and all three remote checks
+passed at reviewed code/evidence commit H1
+`02e95e8a6d0aa7aa0d17364d15011f07e823e240`. The later metadata-only closeout
+records the receipt and handoff on draft PR #232; draft review is next.
 
 The three primary attempts are consumed. This exception provides no new
 provider calls, private data, spend, theorem/proof promotion, paper admission,

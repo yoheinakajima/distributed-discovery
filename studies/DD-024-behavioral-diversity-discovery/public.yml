@@ -14,6 +14,8 @@ public_artifacts:
   description: Three immutable passing runs and frozen-source verification instructions
 - path: docs/literature/spontaneity-exploration-planning/review.md
   description: Interdisciplinary literature landscape with 51 annotated academic sources
+- path: studies/DD-024-behavioral-diversity-discovery/acceptance.md
+  description: Integrated acceptance and reviewed commit/check receipt
 claim_ids: []
 run_ids:
 - 20261031T215933Z_DD-024_caa1bf80_1d0ab47ae5
